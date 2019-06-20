@@ -25,6 +25,7 @@
     <PackageReference Update="NUnit3TestAdapter" Version="3.13.0" />
     <PackageReference Update="System.Composition" Version="1.3.0-preview5.19224.8" />
     <PackageReference Update="System.Runtime.CompilerServices.Unsafe" Version="4.6.0-preview6.19259.10" />
+    <PackageReference Update="TerraFX.Utilities" Version="0.1.0-alpha-20190620.1" />
   </ItemGroup>
 
 </Project>
