@@ -1,0 +1,5 @@
+pr:
+- master
+
+jobs:
+- template: azure-pipelines.yml

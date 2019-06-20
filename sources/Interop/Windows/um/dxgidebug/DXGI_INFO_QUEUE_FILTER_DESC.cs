@@ -1,0 +1,33 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from um\dxgidebug.h in the Windows SDK for Windows 10.0.15063.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+using TerraFX.Utilities;
+
+namespace TerraFX.Interop
+{
+    [Unmanaged]
+    public unsafe struct DXGI_INFO_QUEUE_FILTER_DESC
+    {
+        #region Fields
+        [NativeTypeName("UINT")]
+        public uint NumCategories;
+
+        [NativeTypeName("DXGI_INFO_QUEUE_MESSAGE_CATEGORY[]")]
+        public DXGI_INFO_QUEUE_MESSAGE_CATEGORY* pCategoryList;
+
+        [NativeTypeName("UINT")]
+        public uint NumSeverities;
+
+        [NativeTypeName("DXGI_INFO_QUEUE_MESSAGE_SEVERITY[]")]
+        public DXGI_INFO_QUEUE_MESSAGE_SEVERITY* pSeverityList;
+
+        [NativeTypeName("UINT")]
+        public uint NumIDs;
+
+        [NativeTypeName("DXGI_INFO_QUEUE_MESSAGE_ID[]")]
+        public int* pIDList;
+        #endregion
+    }
+}

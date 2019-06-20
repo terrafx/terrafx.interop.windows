@@ -1,0 +1,28 @@
+jobs:
+- template: azure-windows.yml
+  parameters:
+    name: windows_debug_x86
+    pool: Hosted
+    configuration: Debug
+    architecture: x86
+
+- template: azure-windows.yml
+  parameters:
+    name: windows_release_x86
+    pool: Hosted
+    configuration: Release
+    architecture: x86
+
+- template: azure-windows.yml
+  parameters:
+    name: windows_debug_x64
+    pool: Hosted
+    configuration: Debug
+    architecture: x64
+
+- template: azure-windows.yml
+  parameters:
+    name: windows_release_x64
+    pool: Hosted
+    configuration: Release
+    architecture: x64

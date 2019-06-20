@@ -1,0 +1,119 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28721.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".root", ".root", "{2F337CB6-0B9E-4765-A277-487E429DE9F1}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		build.cmd = build.cmd
+		build.sh = build.sh
+		Directory.Build.props = Directory.Build.props
+		Directory.Build.targets = Directory.Build.targets
+		LICENSE.md = LICENSE.md
+		pack.cmd = pack.cmd
+		pack.sh = pack.sh
+		restore.cmd = restore.cmd
+		restore.sh = restore.sh
+		TerraFX.snk = TerraFX.snk
+		test.cmd = test.cmd
+		test.sh = test.sh
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{8793898A-6542-4606-AA82-AB14151D2D20}"
+	ProjectSection(SolutionItems) = preProject
+		docs\CODE_OF_CONDUCT.md = docs\CODE_OF_CONDUCT.md
+		docs\CODEOWNERS = docs\CODEOWNERS
+		docs\CONTRIBUTING.md = docs\CONTRIBUTING.md
+		docs\ISSUE_TEMPLATE.md = docs\ISSUE_TEMPLATE.md
+		docs\PULL_REQUEST_TEMPLATE.md = docs\PULL_REQUEST_TEMPLATE.md
+		docs\README.md = docs\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{1054E499-981F-4EFA-855B-EC6FA604C6FB}"
+	ProjectSection(SolutionItems) = preProject
+		samples\Directory.Build.props = samples\Directory.Build.props
+		samples\Directory.Build.targets = samples\Directory.Build.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DirectX", "DirectX", "{058D8853-1B5A-4AB0-AC39-80D4C1E802D6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraFX.Samples.DirectX", "samples\DirectX\TerraFX.Samples.DirectX.csproj", "{4D7EE8D8-9A02-43D4-8D7A-15E734E4D9AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sources", "sources", "{0B821858-8E47-4485-AC06-D2E971A53EB2}"
+	ProjectSection(SolutionItems) = preProject
+		sources\Directory.Build.props = sources\Directory.Build.props
+		sources\Directory.Build.targets = sources\Directory.Build.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interop", "Interop", "{70FBCFD9-B96E-4E72-B35C-681D9B2DA3D6}"
+	ProjectSection(SolutionItems) = preProject
+		sources\Interop\.editorconfig = sources\Interop\.editorconfig
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows", "Windows", "{70B9DF97-05BA-4BF3-A945-60DF431235E0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraFX.Interop.Windows", "sources\Interop\Windows\TerraFX.Interop.Windows.csproj", "{6AB1F14A-F6F7-4B43-85C8-1C9703A0A1B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{EFB05081-EC44-49D3-B6D1-52AE42085B5B}"
+	ProjectSection(SolutionItems) = preProject
+		tests\Directory.Build.props = tests\Directory.Build.props
+		tests\Directory.Build.targets = tests\Directory.Build.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interop", "Interop", "{7E31C739-2787-44ED-8304-7EFCEE1A2B2C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows", "Windows", "{83A9C646-8419-4C1C-886C-5340C90A7D5B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraFX.Interop.Windows.UnitTests", "tests\Interop\Windows\TerraFX.Interop.Windows.UnitTests.csproj", "{37ACC069-F0C9-4DC3-8E13-12C61ACF269D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{48E1F49D-7103-4DE6-9F69-915183B85095}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\azure-ci.yml = scripts\azure-ci.yml
+		scripts\azure-pipelines.yml = scripts\azure-pipelines.yml
+		scripts\azure-pr.yml = scripts\azure-pr.yml
+		scripts\azure-unix.yml = scripts\azure-unix.yml
+		scripts\azure-windows.yml = scripts\azure-windows.yml
+		scripts\build.ps1 = scripts\build.ps1
+		scripts\build.sh = scripts\build.sh
+		scripts\cibuild.cmd = scripts\cibuild.cmd
+		scripts\cibuild.sh = scripts\cibuild.sh
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D7EE8D8-9A02-43D4-8D7A-15E734E4D9AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D7EE8D8-9A02-43D4-8D7A-15E734E4D9AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D7EE8D8-9A02-43D4-8D7A-15E734E4D9AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D7EE8D8-9A02-43D4-8D7A-15E734E4D9AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AB1F14A-F6F7-4B43-85C8-1C9703A0A1B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AB1F14A-F6F7-4B43-85C8-1C9703A0A1B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AB1F14A-F6F7-4B43-85C8-1C9703A0A1B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AB1F14A-F6F7-4B43-85C8-1C9703A0A1B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37ACC069-F0C9-4DC3-8E13-12C61ACF269D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37ACC069-F0C9-4DC3-8E13-12C61ACF269D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37ACC069-F0C9-4DC3-8E13-12C61ACF269D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37ACC069-F0C9-4DC3-8E13-12C61ACF269D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{058D8853-1B5A-4AB0-AC39-80D4C1E802D6} = {1054E499-981F-4EFA-855B-EC6FA604C6FB}
+		{4D7EE8D8-9A02-43D4-8D7A-15E734E4D9AA} = {058D8853-1B5A-4AB0-AC39-80D4C1E802D6}
+		{70FBCFD9-B96E-4E72-B35C-681D9B2DA3D6} = {0B821858-8E47-4485-AC06-D2E971A53EB2}
+		{70B9DF97-05BA-4BF3-A945-60DF431235E0} = {70FBCFD9-B96E-4E72-B35C-681D9B2DA3D6}
+		{6AB1F14A-F6F7-4B43-85C8-1C9703A0A1B8} = {70B9DF97-05BA-4BF3-A945-60DF431235E0}
+		{7E31C739-2787-44ED-8304-7EFCEE1A2B2C} = {EFB05081-EC44-49D3-B6D1-52AE42085B5B}
+		{83A9C646-8419-4C1C-886C-5340C90A7D5B} = {7E31C739-2787-44ED-8304-7EFCEE1A2B2C}
+		{37ACC069-F0C9-4DC3-8E13-12C61ACF269D} = {83A9C646-8419-4C1C-886C-5340C90A7D5B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
+	EndGlobalSection
+EndGlobal
