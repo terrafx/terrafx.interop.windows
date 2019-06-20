@@ -12,15 +12,15 @@
 
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileDirectory)..\Directory.Build.props</MSBuildAllProjects>
-    <TerraFXProjectCategory>tests</TerraFXProjectCategory>
   </PropertyGroup>
 
-  <Import Project="$(MSBuildThisFileDirectory)..\Directory.Build.props" />
-
   <PropertyGroup>
+    <TerraFXProjectCategory>tests</TerraFXProjectCategory>
     <VSTestLogger>trx</VSTestLogger>
     <VSTestResultsDirectory>$(BaseArtifactsPath)tst/$(Configuration)/</VSTestResultsDirectory>
   </PropertyGroup>
+
+  <Import Project="$(MSBuildThisFileDirectory)..\Directory.Build.props" />
 
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" IsImplicitlyDefined="true" />
