@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>The commandList interface.</summary>
     [Guid("B4F34A19-2383-4D76-94F6-EC343657C3DC")]
-    [Unmanaged]
     public unsafe struct ID2D1CommandList
     {
         #region Fields
@@ -157,7 +155,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

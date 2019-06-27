@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>Provides access to an device context that can accept GDI drawing commands.</summary>
     [Guid("E0DB51C3-6F77-4BAE-B3D5-E47509B35838")]
-    [Unmanaged]
     public unsafe struct ID2D1GdiInteropRenderTarget
     {
         #region Fields
@@ -137,7 +135,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

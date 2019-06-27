@@ -23,9 +23,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" IsImplicitlyDefined="true" />
-    <PackageReference Include="NUnit" IsImplicitlyDefined="true" />
-    <PackageReference Include="NUnit3TestAdapter" IsImplicitlyDefined="true" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" IsImplicitlyDefined="true" PrivateAssets="all" />
+    <PackageReference Include="NUnit" IsImplicitlyDefined="true" PrivateAssets="all" />
+    <PackageReference Include="NUnit3TestAdapter" IsImplicitlyDefined="true" PrivateAssets="all" />
   </ItemGroup>
 
 </Project>

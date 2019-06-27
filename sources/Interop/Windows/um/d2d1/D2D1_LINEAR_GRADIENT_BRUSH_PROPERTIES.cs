@@ -3,12 +3,9 @@
 // Ported from um\d2d1.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>Contains the starting point and endpoint of the gradient axis for an ID2D1LinearGradientBrush.</summary>
-    [Unmanaged]
     public struct D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES
     {
         #region Fields

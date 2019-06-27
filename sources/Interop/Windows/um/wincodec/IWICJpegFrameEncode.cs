@@ -6,13 +6,11 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     [Guid("2F0C601F-D2C6-468C-ABFA-49495D983ED1")]
-    [Unmanaged]
     public unsafe struct IWICJpegFrameEncode
     {
         #region Fields
@@ -198,7 +196,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

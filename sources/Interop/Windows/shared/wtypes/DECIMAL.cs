@@ -4,11 +4,9 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
-using TerraFX.Utilities;
 
 namespace TerraFX.Interop
 {
-    [Unmanaged]
     public struct DECIMAL
     {
         #region Fields
@@ -24,7 +22,6 @@ namespace TerraFX.Interop
 
         #region Structs
         [StructLayout(LayoutKind.Explicit)]
-        [Unmanaged]
         public struct _Anonymous1_e__Union
         {
             #region Fields
@@ -37,7 +34,6 @@ namespace TerraFX.Interop
             #endregion
 
             #region Structs
-            [Unmanaged]
             public struct _Anonymous_e__Struct
             {
                 #region Fields
@@ -52,7 +48,6 @@ namespace TerraFX.Interop
         }
 
         [StructLayout(LayoutKind.Explicit)]
-        [Unmanaged]
         public struct _Anonymous2_e__Union
         {
             #region Fields
@@ -65,7 +60,6 @@ namespace TerraFX.Interop
             #endregion
 
             #region Structs
-            [Unmanaged]
             public struct _Anonymous_e__Struct
             {
                 #region Fields

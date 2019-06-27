@@ -3,12 +3,9 @@
 // Ported from um\dwrite.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>The DWRITE_TRIMMING public structure specifies the trimming option for text overflowing the layout box.</summary>
-    [Unmanaged]
     public struct DWRITE_TRIMMING
     {
         #region Fields

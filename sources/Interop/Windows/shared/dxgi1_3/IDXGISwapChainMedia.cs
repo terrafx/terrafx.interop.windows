@@ -6,13 +6,11 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     [Guid("DD95B90B-F05F-4F6A-BD65-25BFB264BD84")]
-    [Unmanaged]
     public unsafe struct IDXGISwapChainMedia
     {
         #region Fields
@@ -161,7 +159,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

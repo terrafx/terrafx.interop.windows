@@ -3,12 +3,9 @@
 // Ported from um\dwrite.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>The DWRITE_GLYPH_METRICS structure specifies the metrics of an individual glyph. The units depend on how the metrics are obtained.</summary>
-    [Unmanaged]
     public struct DWRITE_GLYPH_METRICS
     {
         #region Fields

@@ -3,11 +3,8 @@
 // Ported from um\d3d12.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
-    [Unmanaged]
     public struct D3D12_RT_FORMAT_ARRAY
     {
         #region Fields
@@ -19,7 +16,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public unsafe struct _RTFormats_e__FixedBuffer
         {
             #region Fields

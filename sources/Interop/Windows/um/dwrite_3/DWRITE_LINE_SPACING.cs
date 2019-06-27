@@ -3,12 +3,9 @@
 // Ported from um\dwrite_3.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>The DWRITE_LINE_SPACING public structure specifies the parameters used to specify how to manage space between lines.</summary>
-    [Unmanaged]
     public struct DWRITE_LINE_SPACING
     {
         #region Fields

@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>Interface describing an SVG attribute.</summary>
     [Guid("C9CDB0DD-F8C9-4E70-B7C2-301C80292C5E")]
-    [Unmanaged]
     public unsafe struct ID2D1SvgAttribute
     {
         #region Fields
@@ -159,7 +157,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

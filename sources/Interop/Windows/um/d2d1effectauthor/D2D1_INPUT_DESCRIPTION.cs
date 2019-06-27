@@ -3,12 +3,9 @@
 // Ported from um\d2d1effectauthor.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>Describes options transforms may select to use on their input textures.</summary>
-    [Unmanaged]
     public struct D2D1_INPUT_DESCRIPTION
     {
         #region Fields

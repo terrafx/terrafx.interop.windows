@@ -3,12 +3,9 @@
 // Ported from um\d2d1_1.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>This describes the drawing state.</summary>
-    [Unmanaged]
     public struct D2D1_DRAWING_STATE_DESCRIPTION1
     {
         #region Fields

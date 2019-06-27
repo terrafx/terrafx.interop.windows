@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>Describes a rounded rectangle.</summary>
     [Guid("2CD906A3-12E2-11DC-9FED-001143A055F9")]
-    [Unmanaged]
     public unsafe struct ID2D1RoundedRectangleGeometry
     {
         #region Fields
@@ -555,7 +553,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

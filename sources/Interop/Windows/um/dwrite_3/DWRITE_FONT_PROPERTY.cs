@@ -4,13 +4,11 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
-using TerraFX.Utilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>Font property used for filtering font sets and building a font set with explicit properties.</summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
-    [Unmanaged]
     public unsafe struct DWRITE_FONT_PROPERTY
     {
         #region Fields

@@ -5,7 +5,6 @@
 
 using System;
 using TerraFX.Interop;
-using TerraFX.Utilities;
 using static TerraFX.Interop.D3D_FEATURE_LEVEL;
 using static TerraFX.Interop.D3D12;
 using static TerraFX.Interop.D3D12_COMMAND_LIST_TYPE;
@@ -442,7 +441,6 @@ namespace TerraFX.Samples.DirectX.D3D12
         #endregion
 
         #region Structs
-        [Unmanaged]
         private unsafe struct RenderTargets_e__FixedBuffer
         {
             #region Fields

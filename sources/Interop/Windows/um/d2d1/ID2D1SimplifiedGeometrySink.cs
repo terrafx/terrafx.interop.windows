@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>Describes a geometric path that does not contain quadratic bezier curves or arcs.</summary>
     [Guid("2CD9069E-12E2-11DC-9FED-001143A055F9")]
-    [Unmanaged]
     public unsafe struct ID2D1SimplifiedGeometrySink
     {
         #region Fields
@@ -237,7 +235,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

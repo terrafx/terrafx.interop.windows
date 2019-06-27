@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>Represents a composite geometry, composed of other ID2D1Geometry objects.</summary>
     [Guid("2CD906A6-12E2-11DC-9FED-001143A055F9")]
-    [Unmanaged]
     public unsafe struct ID2D1GeometryGroup
     {
         #region Fields
@@ -592,7 +590,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

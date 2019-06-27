@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>The interface implemented by the client to receive the output of the text analyzers.</summary>
     [Guid("B0D941A0-85E7-4D8B-9FD3-5CED9934482A")]
-    [Unmanaged]
     public unsafe struct IDWriteTextAnalysisSink1
     {
         #region Fields
@@ -276,7 +274,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

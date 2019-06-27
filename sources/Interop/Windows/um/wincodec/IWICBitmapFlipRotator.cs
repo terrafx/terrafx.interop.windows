@@ -6,13 +6,11 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     [Guid("5009834F-2D6A-41CE-9E1B-17C5AFF7A782")]
-    [Unmanaged]
     public unsafe struct IWICBitmapFlipRotator
     {
         #region Fields
@@ -243,7 +241,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

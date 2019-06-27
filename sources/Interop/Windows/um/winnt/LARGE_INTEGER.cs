@@ -4,12 +4,10 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
-using TerraFX.Utilities;
 
 namespace TerraFX.Interop
 {
     [StructLayout(LayoutKind.Explicit)]
-    [Unmanaged]
     public struct LARGE_INTEGER
     {
         #region Fields
@@ -25,7 +23,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct _Anonymous_e__Struct
         {
             #region Fields
@@ -37,7 +34,6 @@ namespace TerraFX.Interop
             #endregion
         }
 
-        [Unmanaged]
         public struct _u_e__Struct
         {
             #region Fields

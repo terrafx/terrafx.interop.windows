@@ -3,12 +3,9 @@
 // Ported from um\dwrite_1.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>Metrics for caret placement in a font.</summary>
-    [Unmanaged]
     public struct DWRITE_CARET_METRICS
     {
         #region Fields

@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>An effect uses this interface to offset an image without inserting a rendering pass.</summary>
     [Guid("3FE6ADEA-7643-4F53-BD14-A0CE63F24042")]
-    [Unmanaged]
     public unsafe struct ID2D1OffsetTransform
     {
         #region Fields
@@ -154,7 +152,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

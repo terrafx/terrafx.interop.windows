@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>Represents an image source which shares resources with an original image source.</summary>
     [Guid("7F1F79E5-2796-416C-8F55-700F911445E5")]
-    [Unmanaged]
     public unsafe struct ID2D1TransformedImageSource
     {
         #region Fields
@@ -155,7 +153,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

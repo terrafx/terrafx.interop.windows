@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>The implementation of the actual graph.</summary>
     [Guid("13D29038-C3E6-4034-9081-13B53A417992")]
-    [Unmanaged]
     public unsafe struct ID2D1TransformGraph
     {
         #region Fields
@@ -299,7 +297,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

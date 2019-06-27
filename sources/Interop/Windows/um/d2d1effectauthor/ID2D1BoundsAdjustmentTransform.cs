@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>An effect uses this interface to alter the image rectangle of its input.</summary>
     [Guid("90F732E2-5092-4606-A819-8651970BACCD")]
-    [Unmanaged]
     public unsafe struct ID2D1BoundsAdjustmentTransform
     {
         #region Fields
@@ -153,7 +151,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

@@ -4,13 +4,11 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
-using TerraFX.Utilities;
 using static TerraFX.Interop.D3D12_ROOT_PARAMETER_TYPE;
 using static TerraFX.Interop.D3D12_SHADER_VISIBILITY;
 
 namespace TerraFX.Interop
 {
-    [Unmanaged]
     public unsafe struct D3D12_ROOT_PARAMETER
     {
         #region Fields
@@ -100,7 +98,6 @@ namespace TerraFX.Interop
 
         #region Structs
         [StructLayout(LayoutKind.Explicit)]
-        [Unmanaged]
         public struct _Anonymous_e__Union
         {
             #region Fields

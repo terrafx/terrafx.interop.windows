@@ -3,12 +3,9 @@
 // Ported from um\dwrite.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>The DWRITE_GLYPH_RUN public structure contains the information needed by renderers to draw glyph runs. All coordinates are in device independent pixels (DIPs).</summary>
-    [Unmanaged]
     public unsafe struct DWRITE_GLYPH_RUN
     {
         #region Fields

@@ -3,12 +3,9 @@
 // Ported from um\d2d1_1.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>This controls advanced settings of the Direct2D imaging pipeline.</summary>
-    [Unmanaged]
     public struct D2D1_RENDERING_CONTROLS
     {
         #region Fields

@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Interop.D2D1_BITMAP_INTERPOLATION_MODE;
 using static TerraFX.Interop.D2D1_COMPOSITE_MODE;
 using static TerraFX.Interop.D2D1_DRAW_TEXT_OPTIONS;
@@ -18,7 +17,6 @@ namespace TerraFX.Interop
 {
     /// <summary>This interface performs all the same functions as the ID2D1DeviceContext1 interface, plus it enables functionality such as ink rendering, gradient mesh rendering, and improved image loading.</summary>
     [Guid("394EA6A3-0C34-4321-950B-6CA20F0BE6C7")]
-    [Unmanaged]
     public unsafe struct ID2D1DeviceContext2
     {
         #region Fields
@@ -2814,7 +2812,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

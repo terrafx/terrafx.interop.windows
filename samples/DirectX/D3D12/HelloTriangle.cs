@@ -7,7 +7,6 @@ using System;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using TerraFX.Interop;
-using TerraFX.Utilities;
 using static TerraFX.Interop.D3D_FEATURE_LEVEL;
 using static TerraFX.Interop.D3D_PRIMITIVE_TOPOLOGY;
 using static TerraFX.Interop.D3D_ROOT_SIGNATURE_VERSION;
@@ -774,7 +773,6 @@ namespace TerraFX.Samples.DirectX.D3D12
         #endregion
 
         #region Structs
-        [Unmanaged]
         private unsafe struct RenderTargets_e__FixedBuffer
         {
             #region Fields
@@ -807,7 +805,6 @@ namespace TerraFX.Samples.DirectX.D3D12
             #endregion
         }
 
-        [Unmanaged]
         private struct Vertex
         {
             #region Fields

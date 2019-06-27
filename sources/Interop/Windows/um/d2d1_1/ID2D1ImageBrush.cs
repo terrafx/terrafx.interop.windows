@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>Provides a brush that can take any effect, command list or bitmap and use it to fill a 2D shape.</summary>
     [Guid("FE9E984D-3F95-407C-B5DB-CB94D4E8F87C")]
-    [Unmanaged]
     public unsafe struct ID2D1ImageBrush
     {
         #region Fields
@@ -387,7 +385,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

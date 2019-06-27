@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>User-implementable interface for introspecting on a metafile.</summary>
     [Guid("82237326-8111-4F7C-BCF4-B5C1175564FE")]
-    [Unmanaged]
     public unsafe struct ID2D1GdiMetafileSink
     {
         #region Fields
@@ -119,7 +117,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

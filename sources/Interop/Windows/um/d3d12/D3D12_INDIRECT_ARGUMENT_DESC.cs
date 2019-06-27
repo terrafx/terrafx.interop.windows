@@ -4,11 +4,9 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
-using TerraFX.Utilities;
 
 namespace TerraFX.Interop
 {
-    [Unmanaged]
     public struct D3D12_INDIRECT_ARGUMENT_DESC
     {
         #region Fields
@@ -19,7 +17,6 @@ namespace TerraFX.Interop
 
         #region Structs
         [StructLayout(LayoutKind.Explicit)]
-        [Unmanaged]
         public struct _Anonymous_e__Union
         {
             #region Fields
@@ -40,7 +37,6 @@ namespace TerraFX.Interop
             #endregion
 
             #region Structs
-            [Unmanaged]
             public struct _VertexBuffer_e__Struct
             {
                 #region Fields
@@ -48,7 +44,6 @@ namespace TerraFX.Interop
                 #endregion
             }
 
-            [Unmanaged]
             public struct _Constant_e__Struct
             {
                 #region Fields
@@ -58,7 +53,6 @@ namespace TerraFX.Interop
                 #endregion
             }
 
-            [Unmanaged]
             public struct _ConstantBufferView_e__Struct
             {
                 #region Fields
@@ -66,7 +60,6 @@ namespace TerraFX.Interop
                 #endregion
             }
 
-            [Unmanaged]
             public struct _ShaderResourceView_e__Struct
             {
                 #region Fields
@@ -74,7 +67,6 @@ namespace TerraFX.Interop
                 #endregion
             }
 
-            [Unmanaged]
             public struct _UnorderedAccessView_e__Struct
             {
                 #region Fields

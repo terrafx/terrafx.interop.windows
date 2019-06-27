@@ -3,12 +3,9 @@
 // Ported from um\dwrite.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>Shaping output properties per output glyph.</summary>
-    [Unmanaged]
     public struct DWRITE_SHAPING_GLYPH_PROPERTIES
     {
         #region Fields

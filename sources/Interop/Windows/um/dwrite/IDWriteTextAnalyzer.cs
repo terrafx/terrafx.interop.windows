@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>Analyzes various text properties for complex script processing.</summary>
     [Guid("B7E6163E-7F46-43B4-84B3-E4E6249C365D")]
-    [Unmanaged]
     public unsafe struct IDWriteTextAnalyzer
     {
         #region Fields
@@ -532,7 +530,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

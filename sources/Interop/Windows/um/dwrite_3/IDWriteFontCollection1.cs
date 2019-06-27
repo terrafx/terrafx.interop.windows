@@ -6,13 +6,11 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     [Guid("53585141-D9F8-4095-8321-D73CF6BD116C")]
-    [Unmanaged]
     public unsafe struct IDWriteFontCollection1
     {
         #region Fields
@@ -257,7 +255,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

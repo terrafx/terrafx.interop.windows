@@ -3,7 +3,6 @@
 // Ported from um\d3d12.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
 using static TerraFX.Interop.D3D12;
 using static TerraFX.Interop.D3D12_COMPARISON_FUNC;
 using static TerraFX.Interop.D3D12_DEPTH_WRITE_MASK;
@@ -11,7 +10,6 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop
 {
-    [Unmanaged]
     public struct D3D12_DEPTH_STENCIL_DESC
     {
         #region Default Instances

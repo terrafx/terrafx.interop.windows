@@ -3,11 +3,8 @@
 // Ported from um\oaidl.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
-    [Unmanaged]
     public unsafe struct DISPPARAMS
     {
         #region Fields

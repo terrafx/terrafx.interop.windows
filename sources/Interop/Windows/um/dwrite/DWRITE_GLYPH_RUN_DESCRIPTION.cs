@@ -4,13 +4,11 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
-using TerraFX.Utilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>The DWRITE_GLYPH_RUN_DESCRIPTION public structure contains additional properties related to those in DWRITE_GLYPH_RUN.</summary>
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
-    [Unmanaged]
     public unsafe struct DWRITE_GLYPH_RUN_DESCRIPTION
     {
         #region Fields

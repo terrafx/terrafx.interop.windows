@@ -6,13 +6,11 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     [Guid("ABA958BF-C672-44D1-8D61-CE6DF2E682C2")]
-    [Unmanaged]
     public unsafe struct IWICMetadataHandlerInfo
     {
         #region Fields
@@ -465,7 +463,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

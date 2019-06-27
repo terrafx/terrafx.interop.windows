@@ -3,12 +3,10 @@
 // Ported from um\oaidl.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
-    [Unmanaged]
     public struct ARRAYDESC
     {
         #region Fields
@@ -22,7 +20,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public unsafe struct _rgbounds_e__FixedBuffer
         {
             #region Fields

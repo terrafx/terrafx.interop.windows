@@ -3,12 +3,9 @@
 // Ported from um\d2d1.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>Contains the content bounds, mask information, opacity settings, and other options for a layer resource.</summary>
-    [Unmanaged]
     public unsafe struct D2D1_LAYER_PARAMETERS
     {
         #region Fields

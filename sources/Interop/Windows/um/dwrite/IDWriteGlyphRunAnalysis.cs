@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>Interface that encapsulates information used to render a glyph run.</summary>
     [Guid("7D97DBF7-E085-42D4-81E3-6A883BDED118")]
-    [Unmanaged]
     public unsafe struct IDWriteGlyphRunAnalysis
     {
         #region Fields
@@ -192,7 +190,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

@@ -3,11 +3,8 @@
 // Ported from um\d3d12.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
-    [Unmanaged]
     public unsafe struct D3D12_GRAPHICS_PIPELINE_STATE_DESC
     {
         #region Fields
@@ -59,7 +56,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct _RTVFormats_e__FixedBuffer
         {
             #region Fields

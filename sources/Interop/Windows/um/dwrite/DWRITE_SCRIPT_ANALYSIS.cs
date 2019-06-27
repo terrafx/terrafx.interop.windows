@@ -3,12 +3,9 @@
 // Ported from um\dwrite.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>Association of text and its writing system script as well as some display attributes.</summary>
-    [Unmanaged]
     public struct DWRITE_SCRIPT_ANALYSIS
     {
         #region Fields

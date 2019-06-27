@@ -3,12 +3,9 @@
 // Ported from um\dwrite_3.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>Data for a single glyph from GetGlyphImageData.</summary>
-    [Unmanaged]
     public unsafe struct DWRITE_GLYPH_IMAGE_DATA
     {
         #region Fields

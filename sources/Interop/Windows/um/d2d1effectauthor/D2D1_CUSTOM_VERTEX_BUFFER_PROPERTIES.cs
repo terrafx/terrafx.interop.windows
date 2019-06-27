@@ -3,12 +3,9 @@
 // Ported from um\d2d1effectauthor.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>This defines the input layout of vertices and the vertex shader which processes them.</summary>
-    [Unmanaged]
     public unsafe struct D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES
     {
         #region Fields
