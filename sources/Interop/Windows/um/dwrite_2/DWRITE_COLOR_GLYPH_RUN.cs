@@ -3,12 +3,9 @@
 // Ported from um\dwrite_2.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>Represents a color glyph run. The IDWriteFactory2::TranslateColorGlyphRun method returns an ordered collection of color glyph runs, which can be layered on top of each other to produce a color representation of the given base glyph run.</summary>
-    [Unmanaged]
     public unsafe struct DWRITE_COLOR_GLYPH_RUN
     {
         #region Fields

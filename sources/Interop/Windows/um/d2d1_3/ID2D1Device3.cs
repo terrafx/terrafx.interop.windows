@@ -6,13 +6,11 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     [Guid("852F2087-802C-4037-AB60-FF2E7EE6FC01")]
-    [Unmanaged]
     public unsafe struct ID2D1Device3
     {
         #region Fields
@@ -405,7 +403,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

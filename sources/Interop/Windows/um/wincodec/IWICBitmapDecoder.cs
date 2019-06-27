@@ -6,13 +6,11 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     [Guid("9EDDE9E7-8DEE-47EA-99DF-E6FAF2ED44BF")]
-    [Unmanaged]
     public unsafe struct IWICBitmapDecoder
     {
         #region Fields
@@ -346,7 +344,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

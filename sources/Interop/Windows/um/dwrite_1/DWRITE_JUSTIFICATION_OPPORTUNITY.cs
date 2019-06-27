@@ -3,12 +3,9 @@
 // Ported from um\dwrite_1.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>Justification information per glyph.</summary>
-    [Unmanaged]
     public struct DWRITE_JUSTIFICATION_OPPORTUNITY
     {
         #region Fields

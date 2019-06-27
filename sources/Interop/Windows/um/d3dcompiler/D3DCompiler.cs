@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Interop.D3D12;
 
 namespace TerraFX.Interop

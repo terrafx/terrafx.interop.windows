@@ -6,13 +6,11 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     [Guid("BEBEE9CB-83B0-4DCC-8132-B0AAA55EAC96")]
-    [Unmanaged]
     public unsafe struct IWICPlanarFormatConverter
     {
         #region Fields
@@ -289,7 +287,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

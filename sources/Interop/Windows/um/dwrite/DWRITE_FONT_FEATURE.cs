@@ -3,12 +3,9 @@
 // Ported from um\dwrite.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>The DWRITE_FONT_FEATURE public structure specifies properties used to identify and execute typographic feature in the font.</summary>
-    [Unmanaged]
     public struct DWRITE_FONT_FEATURE
     {
         #region Fields

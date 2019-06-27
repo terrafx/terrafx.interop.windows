@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>The font file enumerator interface encapsulates a collection of font files. The font system uses this interface to enumerate font files when building a font collection.</summary>
     [Guid("72755049-5FF7-435D-8348-4BE97CFA6C7C")]
-    [Unmanaged]
     public unsafe struct IDWriteFontFileEnumerator
     {
         #region Fields
@@ -140,7 +138,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

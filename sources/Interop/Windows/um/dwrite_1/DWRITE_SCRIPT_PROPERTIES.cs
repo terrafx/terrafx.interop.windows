@@ -3,12 +3,9 @@
 // Ported from um\dwrite_1.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>Script-specific properties for caret navigation and justification.</summary>
-    [Unmanaged]
     public struct DWRITE_SCRIPT_PROPERTIES
     {
         #region Fields

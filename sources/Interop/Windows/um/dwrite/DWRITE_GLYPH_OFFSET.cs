@@ -3,12 +3,9 @@
 // Ported from um\dwrite.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>Optional adjustment to a glyph's position. A glyph offset changes the position of a glyph without affecting the pen position. Offsets are in logical, pre-transform units.</summary>
-    [Unmanaged]
     public struct DWRITE_GLYPH_OFFSET
     {
         #region Fields

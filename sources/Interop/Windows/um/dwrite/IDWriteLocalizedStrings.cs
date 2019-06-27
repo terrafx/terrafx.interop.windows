@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     // <summary>Represents a collection of strings indexed by locale name.</summary>
     [Guid("08256209-099A-4B34-B86D-C22B110E7771")]
-    [Unmanaged]
     public unsafe struct IDWriteLocalizedStrings
     {
         #region Fields
@@ -266,7 +264,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

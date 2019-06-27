@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>Enumerator for an ordered collection of color glyph runs.</summary>
     [Guid("D31FBE17-F157-41A2-8D24-CB779E0560E8")]
-    [Unmanaged]
     public unsafe struct IDWriteColorGlyphRunEnumerator
     {
         #region Fields
@@ -140,7 +138,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

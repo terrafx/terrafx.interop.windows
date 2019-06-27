@@ -6,13 +6,11 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     [Guid("1B8EFEC4-3019-4C27-964E-367202156906")]
-    [Unmanaged]
     public unsafe struct IPrintDocumentPackageTarget
     {
         #region Fields
@@ -160,7 +158,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

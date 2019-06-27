@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>The root interface for all resources in D2D.</summary>
     [Guid("2CD90691-12E2-11DC-9FED-001143A055F9")]
-    [Unmanaged]
     public unsafe struct ID2D1Resource
     {
         #region Fields
@@ -111,7 +109,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

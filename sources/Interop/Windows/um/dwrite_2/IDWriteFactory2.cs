@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Interop.Windows;
 using static TerraFX.Utilities.InteropUtilities;
 
@@ -14,7 +13,6 @@ namespace TerraFX.Interop
 {
     /// <summary>The root factory interface for all DWrite objects.</summary>
     [Guid("0439FC60-CA44-4994-8DEE-3A9AF7B732EC")]
-    [Unmanaged]
     public unsafe struct IDWriteFactory2
     {
         #region Fields
@@ -1121,7 +1119,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

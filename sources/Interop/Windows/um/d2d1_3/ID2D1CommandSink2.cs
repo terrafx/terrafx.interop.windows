@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>This interface performs all the same functions as the existing ID2D1CommandSink1 interface. It also enables access to ink rendering and gradient mesh rendering.</summary>
     [Guid("3BAB440E-417E-47DF-A2E2-BC0BE6A00916")]
-    [Unmanaged]
     public unsafe struct ID2D1CommandSink2
     {
         #region Fields
@@ -835,7 +833,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

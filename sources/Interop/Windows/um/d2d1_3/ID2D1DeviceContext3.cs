@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Interop.D2D1_BITMAP_INTERPOLATION_MODE;
 using static TerraFX.Interop.D2D1_COMPOSITE_MODE;
 using static TerraFX.Interop.D2D1_DRAW_TEXT_OPTIONS;
@@ -18,7 +17,6 @@ using static TerraFX.Utilities.InteropUtilities;
 namespace TerraFX.Interop
 {
     [Guid("235A7496-8351-414C-BCD4-6672AB2D8E00")]
-    [Unmanaged]
     public unsafe struct ID2D1DeviceContext3
     {
         #region Fields
@@ -2877,7 +2875,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

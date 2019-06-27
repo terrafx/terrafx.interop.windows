@@ -3,12 +3,9 @@
 // Ported from um\d2d1_3.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>Properties of a transformed image source.</summary>
-    [Unmanaged]
     public struct D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES
     {
         #region Fields

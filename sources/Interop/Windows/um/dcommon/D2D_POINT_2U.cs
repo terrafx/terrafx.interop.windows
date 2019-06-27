@@ -3,12 +3,9 @@
 // Ported from um\dcommon.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>Represents an x-coordinate and y-coordinate pair in two-dimensional space.</summary>
-    [Unmanaged]
     public struct D2D_POINT_2U
     {
         #region Fields

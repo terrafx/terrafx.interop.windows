@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>Caller-supplied implementation of an interface to receive the recorded command list.</summary>
     [Guid("54D7898A-A061-40A7-BEC7-E465BCBA2C4F")]
-    [Unmanaged]
     public unsafe struct ID2D1CommandSink
     {
         #region Fields
@@ -726,7 +724,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

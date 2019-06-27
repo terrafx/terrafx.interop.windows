@@ -6,13 +6,11 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     [Guid("64C1024E-C3CF-4462-8078-88C2B11C46D9")]
-    [Unmanaged]
     public unsafe struct IWICBitmapCodecProgressNotification
     {
         #region Fields
@@ -117,7 +115,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

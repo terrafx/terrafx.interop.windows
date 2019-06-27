@@ -4,12 +4,10 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
-using TerraFX.Utilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>Contains the HWND, pixel size, and presentation options for an ID2D1HwndRenderTarget.</summary>
-    [Unmanaged]
     public unsafe struct D2D1_HWND_RENDER_TARGET_PROPERTIES
     {
         #region Fields

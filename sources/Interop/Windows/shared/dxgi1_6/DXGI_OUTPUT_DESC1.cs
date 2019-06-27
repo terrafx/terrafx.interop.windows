@@ -5,12 +5,10 @@
 
 using System;
 using System.Runtime.InteropServices;
-using TerraFX.Utilities;
 
 namespace TerraFX.Interop
 {
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
-    [Unmanaged]
     public unsafe struct DXGI_OUTPUT_DESC1
     {
         #region Fields

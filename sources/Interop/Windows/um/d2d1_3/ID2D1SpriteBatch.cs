@@ -6,13 +6,11 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     [Guid("4DC583BF-3A10-438A-8722-E9765224F1F1")]
-    [Unmanaged]
     public unsafe struct ID2D1SpriteBatch
     {
         #region Fields
@@ -285,7 +283,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

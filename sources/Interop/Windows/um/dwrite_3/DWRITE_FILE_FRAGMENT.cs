@@ -3,12 +3,9 @@
 // Ported from um\dwrite_3.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>DWRITE_FILE_FRAGMENT represents a range of bytes in a font file.</summary>
-    [Unmanaged]
     public struct DWRITE_FILE_FRAGMENT
     {
         #region Fields

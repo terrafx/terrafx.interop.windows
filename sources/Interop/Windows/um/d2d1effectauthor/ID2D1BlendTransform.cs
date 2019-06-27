@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>An effect uses this interface to configure a blending operation.</summary>
     [Guid("63AC0B32-BA44-450F-8806-7F4CA1FF2F1B")]
-    [Unmanaged]
     public unsafe struct ID2D1BlendTransform
     {
         #region Fields
@@ -204,7 +202,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

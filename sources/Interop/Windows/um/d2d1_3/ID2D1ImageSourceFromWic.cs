@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>Produces 2D pixel data that has been sourced from WIC.</summary>
     [Guid("77395441-1C8F-4555-8683-F50DAB0FE792")]
-    [Unmanaged]
     public unsafe struct ID2D1ImageSourceFromWic
     {
         #region Fields
@@ -223,7 +221,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

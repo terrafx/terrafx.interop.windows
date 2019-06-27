@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>The interface implemented by the text analyzer's client to provide text to the analyzer. It allows the separation between the logical view of text as a continuous stream of characters identifiable by unique text positions, and the actual memory layout of potentially discrete blocks of text in the client's backing store. If any of these callbacks returns an error, the analysis functions will stop prematurely and return a callback error. Rather than return E_NOTIMPL, an application should stub the method and return a constant/null and S_OK.</summary>
     [Guid("688E1A58-5094-47C8-ADC8-FBCEA60AE92B")]
-    [Unmanaged]
     public unsafe struct IDWriteTextAnalysisSource
     {
         #region Fields
@@ -241,7 +239,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

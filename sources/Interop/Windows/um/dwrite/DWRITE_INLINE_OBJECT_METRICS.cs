@@ -3,12 +3,9 @@
 // Ported from um\dwrite.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>Properties describing the geometric measurement of an application-defined inline object.</summary>
-    [Unmanaged]
     public struct DWRITE_INLINE_OBJECT_METRICS
     {
         #region Fields

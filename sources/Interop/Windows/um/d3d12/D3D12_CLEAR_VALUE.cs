@@ -5,11 +5,9 @@
 
 using System;
 using System.Runtime.InteropServices;
-using TerraFX.Utilities;
 
 namespace TerraFX.Interop
 {
-    [Unmanaged]
     public unsafe struct D3D12_CLEAR_VALUE
     {
         #region Fields
@@ -42,7 +40,6 @@ namespace TerraFX.Interop
 
         #region Structs
         [StructLayout(LayoutKind.Explicit)]
-        [Unmanaged]
         public struct _Anonymous_e__Union
         {
             [FieldOffset(0)]

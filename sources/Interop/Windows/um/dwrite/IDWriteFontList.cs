@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>The IDWriteFontList interface represents a list of fonts.</summary>
     [Guid("1A0D8438-1D97-4EC1-AEF9-A2FB86ED6ACB")]
-    [Unmanaged]
     public unsafe struct IDWriteFontList
     {
         #region Fields
@@ -163,7 +161,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

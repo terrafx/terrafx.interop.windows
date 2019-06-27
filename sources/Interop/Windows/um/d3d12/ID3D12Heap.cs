@@ -6,13 +6,11 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     [Guid("6B3B2502-6E51-45B3-90EE-9884265E8DF3")]
-    [Unmanaged]
     public unsafe struct ID3D12Heap
     {
         #region Fields
@@ -244,7 +242,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

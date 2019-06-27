@@ -3,7 +3,6 @@
 // Ported from um\d3d12.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
 using static TerraFX.Interop.D3D12_BLEND;
 using static TerraFX.Interop.D3D12_BLEND_OP;
 using static TerraFX.Interop.D3D12_COLOR_WRITE_ENABLE;
@@ -12,7 +11,6 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop
 {
-    [Unmanaged]
     public struct D3D12_RENDER_TARGET_BLEND_DESC
     {
         #region Default Instances

@@ -3,12 +3,9 @@
 // Ported from um\d2d1svg.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>Represents all SVG preserveAspectRatio settings.</summary>
-    [Unmanaged]
     public struct D2D1_SVG_PRESERVE_ASPECT_RATIO
     {
         #region Fields

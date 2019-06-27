@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Interop.Windows;
 using static TerraFX.Utilities.InteropUtilities;
 
@@ -14,7 +13,6 @@ namespace TerraFX.Interop
 {
     /// <summary>The interface that represents an absolute reference to a font face. It contains font face type, appropriate file references and face identification data. Various font data such as metrics, names and glyph outlines is obtained from IDWriteFontFace.</summary>
     [Guid("5F49804D-7024-4D43-BFA9-D25984F53849")]
-    [Unmanaged]
     public unsafe struct IDWriteFontFace
     {
         #region Fields
@@ -550,7 +548,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

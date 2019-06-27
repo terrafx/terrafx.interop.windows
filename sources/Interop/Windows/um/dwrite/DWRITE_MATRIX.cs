@@ -3,12 +3,9 @@
 // Ported from um\dwrite.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>The DWRITE_MATRIX public structure specifies the graphics transform to be applied to rendered glyphs.</summary>
-    [Unmanaged]
     public struct DWRITE_MATRIX
     {
         #region Fields

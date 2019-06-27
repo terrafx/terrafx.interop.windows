@@ -3,12 +3,9 @@
 // Ported from um\dwrite_3.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>Information about a formatted line of text.</summary>
-    [Unmanaged]
     public struct DWRITE_LINE_METRICS1
     {
         #region Fields

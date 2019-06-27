@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>A transform uses this interface to specify how to render a particular pass in D2D.</summary>
     [Guid("519AE1BD-D19A-420D-B849-364F594776B7")]
-    [Unmanaged]
     public unsafe struct ID2D1RenderInfo
     {
         #region Fields
@@ -184,7 +182,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

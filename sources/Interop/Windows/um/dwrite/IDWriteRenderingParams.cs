@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>The interface that represents text rendering settings for glyph rasterization and filtering.</summary>
     [Guid("2F0DA53A-2ADD-47CD-82EE-D9EC34688E75")]
-    [Unmanaged]
     public unsafe struct IDWriteRenderingParams
     {
         #region Fields
@@ -179,7 +177,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

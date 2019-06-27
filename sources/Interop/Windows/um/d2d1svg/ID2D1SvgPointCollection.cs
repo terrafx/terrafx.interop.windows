@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>Interface describing an SVG 'points' value in a 'polyline' or 'polygon' element.</summary>
     [Guid("9DBE4C0D-3572-4DD9-9825-5530813BB712")]
-    [Unmanaged]
     public unsafe struct ID2D1SvgPointCollection
     {
         #region Fields
@@ -270,7 +268,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

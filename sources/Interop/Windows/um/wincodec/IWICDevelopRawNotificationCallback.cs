@@ -6,13 +6,11 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     [Guid("95C75A6E-3E8C-4EC2-85A8-AEBCC551E59B")]
-    [Unmanaged]
     public unsafe struct IWICDevelopRawNotificationCallback
     {
         #region Fields
@@ -111,7 +109,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

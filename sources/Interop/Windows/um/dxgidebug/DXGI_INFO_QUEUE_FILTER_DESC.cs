@@ -3,11 +3,8 @@
 // Ported from um\dxgidebug.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
-    [Unmanaged]
     public unsafe struct DXGI_INFO_QUEUE_FILTER_DESC
     {
         #region Fields

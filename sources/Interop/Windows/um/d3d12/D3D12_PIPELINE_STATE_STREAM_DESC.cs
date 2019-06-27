@@ -4,11 +4,9 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
-using TerraFX.Utilities;
 
 namespace TerraFX.Interop
 {
-    [Unmanaged]
     public unsafe struct D3D12_PIPELINE_STATE_STREAM_DESC
     {
         #region Fields

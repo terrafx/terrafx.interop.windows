@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>Interface that enqueues download requests for remote fonts, characters, glyphs, and font fragments. Provides methods to asynchronously execute a download, cancel pending downloads, and be notified of download completion. Callbacks to listeners will occur on the downloading thread, and objects must be must be able to handle calls on their methods from other threads at any time.</summary>
     [Guid("B71E6052-5AEA-4FA3-832E-F60D431F7E91")]
-    [Unmanaged]
     public unsafe struct IDWriteFontDownloadQueue
     {
         #region Fields
@@ -231,7 +229,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

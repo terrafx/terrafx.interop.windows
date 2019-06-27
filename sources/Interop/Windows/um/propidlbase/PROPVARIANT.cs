@@ -5,11 +5,9 @@
 
 using System;
 using System.Runtime.InteropServices;
-using TerraFX.Utilities;
 
 namespace TerraFX.Interop
 {
-    [Unmanaged]
     public unsafe struct PROPVARIANT
     {
         #region Fields
@@ -18,7 +16,6 @@ namespace TerraFX.Interop
 
         #region Structs
         [StructLayout(LayoutKind.Explicit)]
-        [Unmanaged]
         public struct _Anonymous_e__Union
         {
             #region Fields
@@ -50,7 +47,6 @@ namespace TerraFX.Interop
 
                 #region Structs
                 [StructLayout(LayoutKind.Explicit, CharSet = CharSet.Unicode)]
-                [Unmanaged]
                 public struct _Anonymous_e__Union
                 {
                     #region Fields

@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>Creates Direct2D resources.</summary>
     [Guid("BB12D362-DAEE-4B9A-AA1D-14BA401CFA1F")]
-    [Unmanaged]
     public unsafe struct ID2D1Factory1
     {
         #region Fields
@@ -758,7 +756,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>The GDI interop interface provides interoperability with GDI.</summary>
     [Guid("4556BE70-3ABD-4F70-90BE-421780A6F515")]
-    [Unmanaged]
     public unsafe struct IDWriteGdiInterop1
     {
         #region Fields
@@ -372,7 +370,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

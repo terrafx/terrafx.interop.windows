@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Interop.D2D1_BITMAP_INTERPOLATION_MODE;
 using static TerraFX.Interop.D2D1_COMPOSITE_MODE;
 using static TerraFX.Interop.D2D1_DRAW_TEXT_OPTIONS;
@@ -18,7 +17,6 @@ namespace TerraFX.Interop
 {
     /// <summary>The device context represents a set of state and a command buffer that is used to render to a target bitmap.</summary>
     [Guid("E8F7FE7A-191C-466D-AD95-975678BDA998")]
-    [Unmanaged]
     public unsafe struct ID2D1DeviceContext
     {
         #region Fields
@@ -2411,7 +2409,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

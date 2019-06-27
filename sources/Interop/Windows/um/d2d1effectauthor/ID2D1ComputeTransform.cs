@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>The interface implemented by a transform author to provide a Compute Shader based effect.</summary>
     [Guid("0D85573C-01E3-4F7D-BFD9-0D60608BF3C3")]
-    [Unmanaged]
     public unsafe struct ID2D1ComputeTransform
     {
         #region Fields
@@ -260,7 +258,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

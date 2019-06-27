@@ -3,13 +3,10 @@
 // Ported from um\dwrite_3.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>Represents a color glyph run. The IDWriteFactory4::TranslateColorGlyphRun method returns an ordered collection of color glyph runs of varying types depending on what the font supports.</summary>
     /// <summary>For runs without any specific color, such as PNG data, the runColor field will be zero.</summary>
-    [Unmanaged]
     public struct DWRITE_COLOR_GLYPH_RUN1
     {
         #region Fields

@@ -3,7 +3,6 @@
 // Ported from um\d3d12.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
 using static TerraFX.Interop.D3D12;
 using static TerraFX.Interop.D3D12_RESOURCE_DIMENSION;
 using static TerraFX.Interop.D3D12_RESOURCE_FLAGS;
@@ -14,7 +13,6 @@ using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
-    [Unmanaged]
     public unsafe struct D3D12_RESOURCE_DESC
     {
         #region Fields

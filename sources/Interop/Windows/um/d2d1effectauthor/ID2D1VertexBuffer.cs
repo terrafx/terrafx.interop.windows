@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>A transform uses this interface to write new vertices to a vertex buffer.</summary>
     [Guid("9B8B1336-00A5-4668-92B7-CED5D8BF9B7B")]
-    [Unmanaged]
     public unsafe struct ID2D1VertexBuffer
     {
         #region Fields
@@ -133,7 +131,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields

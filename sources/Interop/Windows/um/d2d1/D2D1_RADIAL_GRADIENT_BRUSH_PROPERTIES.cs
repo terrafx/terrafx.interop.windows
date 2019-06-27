@@ -3,12 +3,9 @@
 // Ported from um\d2d1.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>Contains the gradient origin offset and the size and position of the gradient ellipse for an ID2D1RadialGradientBrush.</summary>
-    [Unmanaged]
     public struct D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES
     {
         #region Fields

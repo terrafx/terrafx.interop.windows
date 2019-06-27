@@ -3,12 +3,9 @@
 // Ported from um\dwrite.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Utilities;
-
 namespace TerraFX.Interop
 {
     /// <summary>The DWRITE_CLUSTER_METRICS public structure contains information about a glyph cluster.</summary>
-    [Unmanaged]
     public struct DWRITE_CLUSTER_METRICS
     {
         #region Fields

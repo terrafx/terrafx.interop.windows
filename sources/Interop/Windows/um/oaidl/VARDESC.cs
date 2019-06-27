@@ -4,12 +4,10 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
-using TerraFX.Utilities;
 
 namespace TerraFX.Interop
 {
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
-    [Unmanaged]
     public unsafe struct VARDESC
     {
         #region Fields
@@ -59,7 +57,6 @@ namespace TerraFX.Interop
 
         #region Structs
         [StructLayout(LayoutKind.Explicit)]
-        [Unmanaged]
         public struct _Anonymous_e__Union
         {
             #region Fields

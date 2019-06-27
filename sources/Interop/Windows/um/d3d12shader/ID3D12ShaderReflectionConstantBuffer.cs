@@ -6,13 +6,11 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     [Guid("C59598B4-48B3-4869-B9B1-B1618B14A8B7")]
-    [Unmanaged]
     public unsafe struct ID3D12ShaderReflectionConstantBuffer
     {
         #region Fields
@@ -86,7 +84,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region Fields

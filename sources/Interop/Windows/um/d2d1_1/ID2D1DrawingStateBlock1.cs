@@ -6,14 +6,12 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using TerraFX.Utilities;
 using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
     /// <summary>Represents drawing state.</summary>
     [Guid("689F1F85-C72E-4E33-8F19-85754EFD5ACE")]
-    [Unmanaged]
     public unsafe struct ID2D1DrawingStateBlock1
     {
         #region Fields
@@ -245,7 +243,6 @@ namespace TerraFX.Interop
         #endregion
 
         #region Structs
-        [Unmanaged]
         public struct Vtbl
         {
             #region IUnknown Fields
