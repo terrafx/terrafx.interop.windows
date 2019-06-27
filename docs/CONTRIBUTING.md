@@ -2,8 +2,6 @@
 
 The following is a set of guidelines for contributing to TerraFX.
 
-[![Gitter](https://badges.gitter.im/terrafx/terrafx.svg)](https://gitter.im/terrafx/terrafx?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-
 ## Table of Contents
 
 * [Code of Conduct](#code-of-conduct)
@@ -16,24 +14,24 @@ The following is a set of guidelines for contributing to TerraFX.
 ### Code of Conduct
 
 TerraFX and everyone contributing (this includes issues, pull requests, the
-wiki, etc) must abide by the [CODE_OF_CONDUCT](docs/CODE_OF_CONDUCT.md).
+wiki, etc) must abide by the [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md).
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported by contacting the project team at admin@terrafx.dev.
 
 ### License
 
 Copyright © Tanner Gooding and Contributors. Licensed under the MIT License
-(MIT). See [LICENSE](LICENSE.md) in the repository root for more information.
+(MIT). See [LICENSE](../LICENSE.md) in the repository root for more information.
 
 ### What should I know?
 
 Most of the basics of the project, such as what it is about, and its goals are
-covered in our [README](docs/README.md).
+covered in our [README](README.md).
 
 ### Pull Requests
 
 All pull requests should follow our
-[PULL_REQUEST_TEMPLATE](docs/PULL_REQUEST_TEMPALTE.md). It is additionally
+[PULL_REQUEST_TEMPLATE](PULL_REQUEST_TEMPLATE.md). It is additionally
 recommended that an issue be opened, discussed, and approved first to ensure
 that the change will be accepted. Any pull requests not following pull request
 template will be requested to be updated. Any pull requests opened without a
