@@ -11,10 +11,8 @@
   -->
 
   <PropertyGroup>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileDirectory)..\Directory.Build.props</MSBuildAllProjects>
-  </PropertyGroup>
-
-  <PropertyGroup>
     <TerraFXProjectCategory>sources</TerraFXProjectCategory>
   </PropertyGroup>
 
@@ -22,6 +20,10 @@
 
   <ItemGroup>
     <InternalsVisibleTo Include="$(MSBuildProjectName).UnitTests" PublicKey="$(AssemblyOriginatorPublicKey)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" IsImplicitlyDefined="true" PrivateAssets="all" />
   </ItemGroup>
 
 </Project>
