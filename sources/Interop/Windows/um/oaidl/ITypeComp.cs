@@ -109,49 +109,49 @@ namespace TerraFX.Interop
         #endregion
 
         #region Methods
-        [return: NativeTypeName("HRESULT")]
-        public int Bind(
-            [In, NativeTypeName("LPOLESTR")] char* szName,
-            [In, NativeTypeName("ULONG")] uint lHashVal,
-            [In, NativeTypeName("WORD")] ushort wFlags,
-            [Out] ITypeInfo** ppTInfo,
-            [Out] DESCKIND* pDescKind,
-            [Out] BINDPTR* pBindPtr
-        )
-        {
-            fixed (ITypeComp* This = &this)
-            {
-                return MarshalFunction<_Bind>(lpVtbl->Bind)(
-                    This,
-                    szName,
-                    lHashVal,
-                    wFlags,
-                    ppTInfo,
-                    pDescKind,
-                    pBindPtr
-                );
-            }
-        }
+        // [return: NativeTypeName("HRESULT")]
+        // public int Bind(
+        //     [In, NativeTypeName("LPOLESTR")] char* szName,
+        //     [In, NativeTypeName("ULONG")] uint lHashVal,
+        //     [In, NativeTypeName("WORD")] ushort wFlags,
+        //     [Out] ITypeInfo** ppTInfo,
+        //     [Out] DESCKIND* pDescKind,
+        //     [Out] BINDPTR* pBindPtr
+        // )
+        // {
+        //     fixed (ITypeComp* This = &this)
+        //     {
+        //         return MarshalFunction<_Bind>(lpVtbl->Bind)(
+        //             This,
+        //             szName,
+        //             lHashVal,
+        //             wFlags,
+        //             ppTInfo,
+        //             pDescKind,
+        //             pBindPtr
+        //         );
+        //     }
+        // }
 
-        [return: NativeTypeName("HRESULT")]
-        public int BindType(
-            [In, NativeTypeName("LPOLESTR")] char* szName,
-            [In, NativeTypeName("ULONG")] uint lHashVal,
-            [Out] ITypeInfo** ppTInfo,
-            [Out] ITypeComp** ppTComp
-        )
-        {
-            fixed (ITypeComp* This = &this)
-            {
-                return MarshalFunction<_BindType>(lpVtbl->BindType)(
-                    This,
-                    szName,
-                    lHashVal,
-                    ppTInfo,
-                    ppTComp
-                );
-            }
-        }
+        // [return: NativeTypeName("HRESULT")]
+        // public int BindType(
+        //     [In, NativeTypeName("LPOLESTR")] char* szName,
+        //     [In, NativeTypeName("ULONG")] uint lHashVal,
+        //     [Out] ITypeInfo** ppTInfo,
+        //     [Out] ITypeComp** ppTComp
+        // )
+        // {
+        //     fixed (ITypeComp* This = &this)
+        //     {
+        //         return MarshalFunction<_BindType>(lpVtbl->BindType)(
+        //             This,
+        //             szName,
+        //             lHashVal,
+        //             ppTInfo,
+        //             ppTComp
+        //         );
+        //     }
+        // }
         #endregion
 
         #region Structs
