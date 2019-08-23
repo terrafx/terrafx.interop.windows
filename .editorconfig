@@ -146,6 +146,7 @@ dotnet_naming_symbols.private_and_internal_static_fields.applicable_kinds = fiel
 dotnet_naming_symbols.private_and_internal_static_fields.required_modifiers = static
 
 dotnet_naming_symbols.public_and_protected_declarations.applicable_accessibilities = public, protected
+dotnet_naming_symbols.public_and_protected_declarations.applicable_kinds = namespace, class, struct, enum, property, method, field, event, delegate, local_function
 
 dotnet_naming_symbols.static_readonly_declarations.required_modifiers = static, readonly
 
@@ -360,11 +361,11 @@ csharp_style_deconstructed_variable_declaration = true:suggestion
 
 csharp_style_expression_bodied_accessors = false:suggestion
 csharp_style_expression_bodied_constructors = false:suggestion
-csharp_style_expression_bodied_indexers = false:suggestion
+csharp_style_expression_bodied_indexers = when_on_single_line:suggestion
 csharp_style_expression_bodied_lambdas = true:suggestion
-csharp_style_expression_bodied_methods = false:suggestion
-csharp_style_expression_bodied_operators = false:suggestion
-csharp_style_expression_bodied_properties = false:suggestion
+csharp_style_expression_bodied_methods = when_on_single_line:suggestion
+csharp_style_expression_bodied_operators = when_on_single_line:suggestion
+csharp_style_expression_bodied_properties = when_on_single_line:suggestion
 
 csharp_style_inlined_variable_declaration = true:suggestion
 
