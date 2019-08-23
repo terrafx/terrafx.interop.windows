@@ -26,6 +26,7 @@ jobs:
     pool: Hosted
     configuration: Release
     architecture: x64
+    publish: ${{parameters.ci}}
 
 - template: azure-unix.yml
   parameters:

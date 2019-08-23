@@ -3,3 +3,5 @@ trigger:
 
 jobs:
 - template: azure-pipelines.yml
+  parameters:
+    ci: true

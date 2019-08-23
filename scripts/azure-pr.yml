@@ -3,3 +3,5 @@ pr:
 
 jobs:
 - template: azure-pipelines.yml
+  parameters:
+    ci: false
