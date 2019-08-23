@@ -24,8 +24,8 @@ namespace TerraFX.Samples.DirectX.D3D12
 
         public static string GetAssetsPath()
         {
-            var entryAssembly = Assembly.GetEntryAssembly();
-            return Path.GetDirectoryName(entryAssembly.Location);
+            var entryAssembly = Assembly.GetEntryAssembly()!;
+            return Path.GetDirectoryName(entryAssembly.Location)!;
         }
 
         public static byte[] ReadDataFromFile(string filename)

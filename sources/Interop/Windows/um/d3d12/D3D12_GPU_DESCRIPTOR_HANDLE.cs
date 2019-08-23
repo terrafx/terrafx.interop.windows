@@ -87,7 +87,7 @@ namespace TerraFX.Interop
         #endregion
 
         #region System.Object
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return (obj is D3D12_GPU_DESCRIPTOR_HANDLE other) && (this == other);
         }

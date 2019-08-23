@@ -103,7 +103,7 @@ namespace TerraFX.Samples.DirectX.D3D12
         private static IntPtr WindowProc(IntPtr hWnd, uint message, UIntPtr wParam, IntPtr lParam)
         {
             var handle = GetWindowLongPtr(hWnd, GWLP_USERDATA);
-            var pSample = (handle != IntPtr.Zero) ? (DXSample)GCHandle.FromIntPtr(handle).Target : null;
+            var pSample = (handle != IntPtr.Zero) ? (DXSample?)GCHandle.FromIntPtr(handle).Target : null;
 
             switch (message)
             {
