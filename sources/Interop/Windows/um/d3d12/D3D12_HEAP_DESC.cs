@@ -3,9 +3,8 @@
 // Ported from um\d3d12.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using static TerraFX.Interop.D3D12_HEAP_FLAGS;
-using static TerraFX.Utilities.HashUtilities;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -104,17 +103,12 @@ namespace TerraFX.Interop
             return (obj is D3D12_HEAP_DESC other) && (this == other);
         }
 
-        public override int GetHashCode()
-        {
-            var combinedValue = 0;
-            {
-                combinedValue = CombineValue(SizeInBytes.GetHashCode(), combinedValue);
-                combinedValue = CombineValue(Properties.GetHashCode(), combinedValue);
-                combinedValue = CombineValue(Alignment.GetHashCode(), combinedValue);
-                combinedValue = CombineValue(Flags.GetHashCode(), combinedValue);
-            }
-            return FinalizeValue(combinedValue, SizeOf<D3D12_HEAP_DESC>());
-        }
+        public override int GetHashCode() => HashCode.Combine(
+            SizeInBytes,
+            Properties,
+            Alignment,
+            Flags
+        );
         #endregion
     }
 }

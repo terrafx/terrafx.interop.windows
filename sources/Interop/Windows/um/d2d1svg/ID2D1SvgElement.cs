@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -376,7 +375,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -389,7 +388,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -400,7 +399,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -414,7 +413,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                MarshalFunction<_GetFactory>(lpVtbl->GetFactory)(
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
                     This,
                     factory
                 );
@@ -429,7 +428,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                MarshalFunction<_GetDocument>(lpVtbl->GetDocument)(
+                Marshal.GetDelegateForFunctionPointer<_GetDocument>(lpVtbl->GetDocument)(
                     This,
                     document
                 );
@@ -444,7 +443,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_GetTagName>(lpVtbl->GetTagName)(
+                return Marshal.GetDelegateForFunctionPointer<_GetTagName>(lpVtbl->GetTagName)(
                     This,
                     name,
                     nameCount
@@ -457,7 +456,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_GetTagNameLength>(lpVtbl->GetTagNameLength)(
+                return Marshal.GetDelegateForFunctionPointer<_GetTagNameLength>(lpVtbl->GetTagNameLength)(
                     This
                 );
             }
@@ -468,7 +467,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_IsTextContent>(lpVtbl->IsTextContent)(
+                return Marshal.GetDelegateForFunctionPointer<_IsTextContent>(lpVtbl->IsTextContent)(
                     This
                 );
             }
@@ -480,7 +479,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                MarshalFunction<_GetParent>(lpVtbl->GetParent)(
+                Marshal.GetDelegateForFunctionPointer<_GetParent>(lpVtbl->GetParent)(
                     This,
                     parent
                 );
@@ -492,7 +491,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_HasChildren>(lpVtbl->HasChildren)(
+                return Marshal.GetDelegateForFunctionPointer<_HasChildren>(lpVtbl->HasChildren)(
                     This
                 );
             }
@@ -504,7 +503,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                MarshalFunction<_GetFirstChild>(lpVtbl->GetFirstChild)(
+                Marshal.GetDelegateForFunctionPointer<_GetFirstChild>(lpVtbl->GetFirstChild)(
                     This,
                     child
                 );
@@ -517,7 +516,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                MarshalFunction<_GetLastChild>(lpVtbl->GetLastChild)(
+                Marshal.GetDelegateForFunctionPointer<_GetLastChild>(lpVtbl->GetLastChild)(
                     This,
                     child
                 );
@@ -532,7 +531,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_GetPreviousChild>(lpVtbl->GetPreviousChild)(
+                return Marshal.GetDelegateForFunctionPointer<_GetPreviousChild>(lpVtbl->GetPreviousChild)(
                     This,
                     referenceChild,
                     previousChild
@@ -548,7 +547,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_GetNextChild>(lpVtbl->GetNextChild)(
+                return Marshal.GetDelegateForFunctionPointer<_GetNextChild>(lpVtbl->GetNextChild)(
                     This,
                     referenceChild,
                     nextChild
@@ -564,7 +563,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_InsertChildBefore>(lpVtbl->InsertChildBefore)(
+                return Marshal.GetDelegateForFunctionPointer<_InsertChildBefore>(lpVtbl->InsertChildBefore)(
                     This,
                     newChild,
                     referenceChild
@@ -579,7 +578,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_AppendChild>(lpVtbl->AppendChild)(
+                return Marshal.GetDelegateForFunctionPointer<_AppendChild>(lpVtbl->AppendChild)(
                     This,
                     newChild
                 );
@@ -594,7 +593,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_ReplaceChild>(lpVtbl->ReplaceChild)(
+                return Marshal.GetDelegateForFunctionPointer<_ReplaceChild>(lpVtbl->ReplaceChild)(
                     This,
                     newChild,
                     oldChild
@@ -609,7 +608,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_RemoveChild>(lpVtbl->RemoveChild)(
+                return Marshal.GetDelegateForFunctionPointer<_RemoveChild>(lpVtbl->RemoveChild)(
                     This,
                     oldChild
                 );
@@ -624,7 +623,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_CreateChild>(lpVtbl->CreateChild)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateChild>(lpVtbl->CreateChild)(
                     This,
                     tagName,
                     newChild
@@ -640,7 +639,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_IsAttributeSpecified>(lpVtbl->IsAttributeSpecified)(
+                return Marshal.GetDelegateForFunctionPointer<_IsAttributeSpecified>(lpVtbl->IsAttributeSpecified)(
                     This,
                     name,
                     inherited
@@ -653,7 +652,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_GetSpecifiedAttributeCount>(lpVtbl->GetSpecifiedAttributeCount)(
+                return Marshal.GetDelegateForFunctionPointer<_GetSpecifiedAttributeCount>(lpVtbl->GetSpecifiedAttributeCount)(
                     This
                 );
             }
@@ -669,7 +668,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_GetSpecifiedAttributeName>(lpVtbl->GetSpecifiedAttributeName)(
+                return Marshal.GetDelegateForFunctionPointer<_GetSpecifiedAttributeName>(lpVtbl->GetSpecifiedAttributeName)(
                     This,
                     index,
                     name,
@@ -688,7 +687,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_GetSpecifiedAttributeNameLength>(lpVtbl->GetSpecifiedAttributeNameLength)(
+                return Marshal.GetDelegateForFunctionPointer<_GetSpecifiedAttributeNameLength>(lpVtbl->GetSpecifiedAttributeNameLength)(
                     This,
                     index,
                     nameLength,
@@ -704,7 +703,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_RemoveAttribute>(lpVtbl->RemoveAttribute)(
+                return Marshal.GetDelegateForFunctionPointer<_RemoveAttribute>(lpVtbl->RemoveAttribute)(
                     This,
                     name
                 );
@@ -719,7 +718,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_SetTextValue>(lpVtbl->SetTextValue)(
+                return Marshal.GetDelegateForFunctionPointer<_SetTextValue>(lpVtbl->SetTextValue)(
                     This,
                     name,
                     nameCount
@@ -735,7 +734,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_GetTextValue>(lpVtbl->GetTextValue)(
+                return Marshal.GetDelegateForFunctionPointer<_GetTextValue>(lpVtbl->GetTextValue)(
                     This,
                     name,
                     nameCount
@@ -748,7 +747,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_GetTextValueLength>(lpVtbl->GetTextValueLength)(
+                return Marshal.GetDelegateForFunctionPointer<_GetTextValueLength>(lpVtbl->GetTextValueLength)(
                     This
                 );
             }
@@ -763,7 +762,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_SetAttributeValue>(lpVtbl->SetAttributeValue)(
+                return Marshal.GetDelegateForFunctionPointer<_SetAttributeValue>(lpVtbl->SetAttributeValue)(
                     This,
                     name,
                     type,
@@ -782,7 +781,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_GetAttributeValue>(lpVtbl->GetAttributeValue)(
+                return Marshal.GetDelegateForFunctionPointer<_GetAttributeValue>(lpVtbl->GetAttributeValue)(
                     This,
                     name,
                     type,
@@ -801,7 +800,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_GetAttributeValueLength>(lpVtbl->GetAttributeValueLength)(
+                return Marshal.GetDelegateForFunctionPointer<_GetAttributeValueLength>(lpVtbl->GetAttributeValueLength)(
                     This,
                     name,
                     type,
@@ -820,7 +819,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_SetAttributeValue1>(lpVtbl->SetAttributeValue1)(
+                return Marshal.GetDelegateForFunctionPointer<_SetAttributeValue1>(lpVtbl->SetAttributeValue1)(
                     This,
                     name,
                     type,
@@ -840,7 +839,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_GetAttributeValue1>(lpVtbl->GetAttributeValue1)(
+                return Marshal.GetDelegateForFunctionPointer<_GetAttributeValue1>(lpVtbl->GetAttributeValue1)(
                     This,
                     name,
                     type,
@@ -858,7 +857,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_SetAttributeValue2>(lpVtbl->SetAttributeValue2)(
+                return Marshal.GetDelegateForFunctionPointer<_SetAttributeValue2>(lpVtbl->SetAttributeValue2)(
                     This,
                     name,
                     value
@@ -875,7 +874,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgElement* This = &this)
             {
-                return MarshalFunction<_GetAttributeValue2>(lpVtbl->GetAttributeValue2)(
+                return Marshal.GetDelegateForFunctionPointer<_GetAttributeValue2>(lpVtbl->GetAttributeValue2)(
                     This,
                     name,
                     riid,

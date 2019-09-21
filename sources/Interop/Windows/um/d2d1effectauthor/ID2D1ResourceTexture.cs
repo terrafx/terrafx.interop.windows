@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -67,7 +66,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ResourceTexture* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -80,7 +79,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ResourceTexture* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -91,7 +90,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ResourceTexture* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -111,7 +110,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ResourceTexture* This = &this)
             {
-                return MarshalFunction<_Update>(lpVtbl->Update)(
+                return Marshal.GetDelegateForFunctionPointer<_Update>(lpVtbl->Update)(
                     This,
                     minimumExtents,
                     maximimumExtents,

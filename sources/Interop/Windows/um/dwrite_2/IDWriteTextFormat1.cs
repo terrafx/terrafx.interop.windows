@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -383,7 +382,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -396,7 +395,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -407,7 +406,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -422,7 +421,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_SetTextAlignment>(lpVtbl->SetTextAlignment)(
+                return Marshal.GetDelegateForFunctionPointer<_SetTextAlignment>(lpVtbl->SetTextAlignment)(
                     This,
                     textAlignment
                 );
@@ -436,7 +435,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_SetParagraphAlignment>(lpVtbl->SetParagraphAlignment)(
+                return Marshal.GetDelegateForFunctionPointer<_SetParagraphAlignment>(lpVtbl->SetParagraphAlignment)(
                     This,
                     paragraphAlignment
                 );
@@ -450,7 +449,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_SetWordWrapping>(lpVtbl->SetWordWrapping)(
+                return Marshal.GetDelegateForFunctionPointer<_SetWordWrapping>(lpVtbl->SetWordWrapping)(
                     This,
                     wordWrapping
                 );
@@ -464,7 +463,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_SetReadingDirection>(lpVtbl->SetReadingDirection)(
+                return Marshal.GetDelegateForFunctionPointer<_SetReadingDirection>(lpVtbl->SetReadingDirection)(
                     This,
                     readingDirection
                 );
@@ -478,7 +477,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_SetFlowDirection>(lpVtbl->SetFlowDirection)(
+                return Marshal.GetDelegateForFunctionPointer<_SetFlowDirection>(lpVtbl->SetFlowDirection)(
                     This,
                     flowDirection
                 );
@@ -492,7 +491,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_SetIncrementalTabStop>(lpVtbl->SetIncrementalTabStop)(
+                return Marshal.GetDelegateForFunctionPointer<_SetIncrementalTabStop>(lpVtbl->SetIncrementalTabStop)(
                     This,
                     incrementalTabStop
                 );
@@ -507,7 +506,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_SetTrimming>(lpVtbl->SetTrimming)(
+                return Marshal.GetDelegateForFunctionPointer<_SetTrimming>(lpVtbl->SetTrimming)(
                     This,
                     trimmingOptions,
                     trimmingSign
@@ -524,7 +523,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_SetLineSpacing>(lpVtbl->SetLineSpacing)(
+                return Marshal.GetDelegateForFunctionPointer<_SetLineSpacing>(lpVtbl->SetLineSpacing)(
                     This,
                     lineSpacingMethod,
                     lineSpacing,
@@ -537,7 +536,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_GetTextAlignment>(lpVtbl->GetTextAlignment)(
+                return Marshal.GetDelegateForFunctionPointer<_GetTextAlignment>(lpVtbl->GetTextAlignment)(
                     This
                 );
             }
@@ -547,7 +546,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_GetParagraphAlignment>(lpVtbl->GetParagraphAlignment)(
+                return Marshal.GetDelegateForFunctionPointer<_GetParagraphAlignment>(lpVtbl->GetParagraphAlignment)(
                     This
                 );
             }
@@ -557,7 +556,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_GetWordWrapping>(lpVtbl->GetWordWrapping)(
+                return Marshal.GetDelegateForFunctionPointer<_GetWordWrapping>(lpVtbl->GetWordWrapping)(
                     This
                 );
             }
@@ -567,7 +566,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_GetReadingDirection>(lpVtbl->GetReadingDirection)(
+                return Marshal.GetDelegateForFunctionPointer<_GetReadingDirection>(lpVtbl->GetReadingDirection)(
                     This
                 );
             }
@@ -577,7 +576,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_GetFlowDirection>(lpVtbl->GetFlowDirection)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFlowDirection>(lpVtbl->GetFlowDirection)(
                     This
                 );
             }
@@ -588,7 +587,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_GetIncrementalTabStop>(lpVtbl->GetIncrementalTabStop)(
+                return Marshal.GetDelegateForFunctionPointer<_GetIncrementalTabStop>(lpVtbl->GetIncrementalTabStop)(
                     This
                 );
             }
@@ -602,7 +601,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_GetTrimming>(lpVtbl->GetTrimming)(
+                return Marshal.GetDelegateForFunctionPointer<_GetTrimming>(lpVtbl->GetTrimming)(
                     This,
                     trimmingOptions,
                     trimmingSign
@@ -619,7 +618,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_GetLineSpacing>(lpVtbl->GetLineSpacing)(
+                return Marshal.GetDelegateForFunctionPointer<_GetLineSpacing>(lpVtbl->GetLineSpacing)(
                     This,
                     lineSpacingMethod,
                     lineSpacing,
@@ -635,7 +634,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_GetFontCollection>(lpVtbl->GetFontCollection)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFontCollection>(lpVtbl->GetFontCollection)(
                     This,
                     fontCollection
                 );
@@ -647,7 +646,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_GetFontFamilyNameLength>(lpVtbl->GetFontFamilyNameLength)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFontFamilyNameLength>(lpVtbl->GetFontFamilyNameLength)(
                     This
                 );
             }
@@ -661,7 +660,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_GetFontFamilyName>(lpVtbl->GetFontFamilyName)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFontFamilyName>(lpVtbl->GetFontFamilyName)(
                     This,
                     fontFamilyName,
                     nameSize
@@ -673,7 +672,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_GetFontWeight>(lpVtbl->GetFontWeight)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFontWeight>(lpVtbl->GetFontWeight)(
                     This
                 );
             }
@@ -683,7 +682,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_GetFontStyle>(lpVtbl->GetFontStyle)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFontStyle>(lpVtbl->GetFontStyle)(
                     This
                 );
             }
@@ -693,7 +692,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_GetFontStretch>(lpVtbl->GetFontStretch)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFontStretch>(lpVtbl->GetFontStretch)(
                     This
                 );
             }
@@ -704,7 +703,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_GetFontSize>(lpVtbl->GetFontSize)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFontSize>(lpVtbl->GetFontSize)(
                     This
                 );
             }
@@ -715,7 +714,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_GetLocaleNameLength>(lpVtbl->GetLocaleNameLength)(
+                return Marshal.GetDelegateForFunctionPointer<_GetLocaleNameLength>(lpVtbl->GetLocaleNameLength)(
                     This
                 );
             }
@@ -729,7 +728,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_GetLocaleName>(lpVtbl->GetLocaleName)(
+                return Marshal.GetDelegateForFunctionPointer<_GetLocaleName>(lpVtbl->GetLocaleName)(
                     This,
                     localeName,
                     nameSize
@@ -746,7 +745,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_SetVerticalGlyphOrientation>(lpVtbl->SetVerticalGlyphOrientation)(
+                return Marshal.GetDelegateForFunctionPointer<_SetVerticalGlyphOrientation>(lpVtbl->SetVerticalGlyphOrientation)(
                     This,
                     glyphOrientation
                 );
@@ -757,7 +756,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_GetVerticalGlyphOrientation>(lpVtbl->GetVerticalGlyphOrientation)(
+                return Marshal.GetDelegateForFunctionPointer<_GetVerticalGlyphOrientation>(lpVtbl->GetVerticalGlyphOrientation)(
                     This
                 );
             }
@@ -770,7 +769,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_SetLastLineWrapping>(lpVtbl->SetLastLineWrapping)(
+                return Marshal.GetDelegateForFunctionPointer<_SetLastLineWrapping>(lpVtbl->SetLastLineWrapping)(
                     This,
                     isLastLineWrappingEnabled
                 );
@@ -782,7 +781,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_GetLastLineWrapping>(lpVtbl->GetLastLineWrapping)(
+                return Marshal.GetDelegateForFunctionPointer<_GetLastLineWrapping>(lpVtbl->GetLastLineWrapping)(
                     This
                 );
             }
@@ -795,7 +794,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_SetOpticalAlignment>(lpVtbl->SetOpticalAlignment)(
+                return Marshal.GetDelegateForFunctionPointer<_SetOpticalAlignment>(lpVtbl->SetOpticalAlignment)(
                     This,
                     opticalAlignment
                 );
@@ -806,7 +805,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_GetOpticalAlignment>(lpVtbl->GetOpticalAlignment)(
+                return Marshal.GetDelegateForFunctionPointer<_GetOpticalAlignment>(lpVtbl->GetOpticalAlignment)(
                     This
                 );
             }
@@ -819,7 +818,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_SetFontFallback>(lpVtbl->SetFontFallback)(
+                return Marshal.GetDelegateForFunctionPointer<_SetFontFallback>(lpVtbl->SetFontFallback)(
                     This,
                     fontFallback
                 );
@@ -833,7 +832,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextFormat1* This = &this)
             {
-                return MarshalFunction<_GetFontFallback>(lpVtbl->GetFontFallback)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFontFallback>(lpVtbl->GetFontFallback)(
                     This,
                     fontFallback
                 );

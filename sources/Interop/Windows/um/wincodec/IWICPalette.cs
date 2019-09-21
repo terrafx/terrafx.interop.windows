@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -139,7 +138,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPalette* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -152,7 +151,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPalette* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -163,7 +162,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPalette* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -179,7 +178,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPalette* This = &this)
             {
-                return MarshalFunction<_InitializePredefined>(lpVtbl->InitializePredefined)(
+                return Marshal.GetDelegateForFunctionPointer<_InitializePredefined>(lpVtbl->InitializePredefined)(
                     This,
                     ePaletteType,
                     fAddTransparentColor
@@ -195,7 +194,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPalette* This = &this)
             {
-                return MarshalFunction<_InitializeCustom>(lpVtbl->InitializeCustom)(
+                return Marshal.GetDelegateForFunctionPointer<_InitializeCustom>(lpVtbl->InitializeCustom)(
                     This,
                     pColors,
                     cCount
@@ -212,7 +211,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPalette* This = &this)
             {
-                return MarshalFunction<_InitializeFromBitmap>(lpVtbl->InitializeFromBitmap)(
+                return Marshal.GetDelegateForFunctionPointer<_InitializeFromBitmap>(lpVtbl->InitializeFromBitmap)(
                     This,
                     pISurface,
                     cCount,
@@ -228,7 +227,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPalette* This = &this)
             {
-                return MarshalFunction<_InitializeFromPalette>(lpVtbl->InitializeFromPalette)(
+                return Marshal.GetDelegateForFunctionPointer<_InitializeFromPalette>(lpVtbl->InitializeFromPalette)(
                     This,
                     pIPalette
                 );
@@ -242,7 +241,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPalette* This = &this)
             {
-                return MarshalFunction<__GetType>(lpVtbl->_GetType)(
+                return Marshal.GetDelegateForFunctionPointer<__GetType>(lpVtbl->_GetType)(
                     This,
                     pePaletteType
                 );
@@ -256,7 +255,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPalette* This = &this)
             {
-                return MarshalFunction<_GetColorCount>(lpVtbl->GetColorCount)(
+                return Marshal.GetDelegateForFunctionPointer<_GetColorCount>(lpVtbl->GetColorCount)(
                     This,
                     pcCount
                 );
@@ -272,7 +271,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPalette* This = &this)
             {
-                return MarshalFunction<_GetColors>(lpVtbl->GetColors)(
+                return Marshal.GetDelegateForFunctionPointer<_GetColors>(lpVtbl->GetColors)(
                     This,
                     cCount,
                     pColors,
@@ -288,7 +287,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPalette* This = &this)
             {
-                return MarshalFunction<_IsBlackWhite>(lpVtbl->IsBlackWhite)(
+                return Marshal.GetDelegateForFunctionPointer<_IsBlackWhite>(lpVtbl->IsBlackWhite)(
                     This,
                     pfIsBlackWhite
                 );
@@ -302,7 +301,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPalette* This = &this)
             {
-                return MarshalFunction<_IsGrayscale>(lpVtbl->IsGrayscale)(
+                return Marshal.GetDelegateForFunctionPointer<_IsGrayscale>(lpVtbl->IsGrayscale)(
                     This,
                     pfIsGrayscale
                 );
@@ -316,7 +315,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPalette* This = &this)
             {
-                return MarshalFunction<_HasAlpha>(lpVtbl->HasAlpha)(
+                return Marshal.GetDelegateForFunctionPointer<_HasAlpha>(lpVtbl->HasAlpha)(
                     This,
                     pfHasAlpha
                 );

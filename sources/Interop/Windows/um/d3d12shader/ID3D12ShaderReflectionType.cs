@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -106,7 +105,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflectionType* This = &this)
             {
-                return MarshalFunction<_GetDesc>(lpVtbl->GetDesc)(
+                return Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)(
                     This,
                     pDesc
                 );
@@ -119,7 +118,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflectionType* This = &this)
             {
-                return MarshalFunction<_GetMemberTypeByIndex>(lpVtbl->GetMemberTypeByIndex)(
+                return Marshal.GetDelegateForFunctionPointer<_GetMemberTypeByIndex>(lpVtbl->GetMemberTypeByIndex)(
                     This,
                     Index
                 );
@@ -132,7 +131,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflectionType* This = &this)
             {
-                return MarshalFunction<_GetMemberTypeByName>(lpVtbl->GetMemberTypeByName)(
+                return Marshal.GetDelegateForFunctionPointer<_GetMemberTypeByName>(lpVtbl->GetMemberTypeByName)(
                     This,
                     Name
                 );
@@ -146,7 +145,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflectionType* This = &this)
             {
-                return MarshalFunction<_GetMemberTypeName>(lpVtbl->GetMemberTypeName)(
+                return Marshal.GetDelegateForFunctionPointer<_GetMemberTypeName>(lpVtbl->GetMemberTypeName)(
                     This,
                     Index
                 );
@@ -160,7 +159,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflectionType* This = &this)
             {
-                return MarshalFunction<_IsEqual>(lpVtbl->IsEqual)(
+                return Marshal.GetDelegateForFunctionPointer<_IsEqual>(lpVtbl->IsEqual)(
                     This,
                     pType
                 );
@@ -171,7 +170,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflectionType* This = &this)
             {
-                return MarshalFunction<_GetSubType>(lpVtbl->GetSubType)(
+                return Marshal.GetDelegateForFunctionPointer<_GetSubType>(lpVtbl->GetSubType)(
                     This
                 );
             }
@@ -181,7 +180,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflectionType* This = &this)
             {
-                return MarshalFunction<_GetBaseClass>(lpVtbl->GetBaseClass)(
+                return Marshal.GetDelegateForFunctionPointer<_GetBaseClass>(lpVtbl->GetBaseClass)(
                     This
                 );
             }
@@ -191,7 +190,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflectionType* This = &this)
             {
-                return MarshalFunction<_GetNumInterfaces>(lpVtbl->GetNumInterfaces)(
+                return Marshal.GetDelegateForFunctionPointer<_GetNumInterfaces>(lpVtbl->GetNumInterfaces)(
                     This
                 );
             }
@@ -203,7 +202,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflectionType* This = &this)
             {
-                return MarshalFunction<_GetInterfaceByIndex>(lpVtbl->GetInterfaceByIndex)(
+                return Marshal.GetDelegateForFunctionPointer<_GetInterfaceByIndex>(lpVtbl->GetInterfaceByIndex)(
                     This,
                     uIndex
                 );
@@ -217,7 +216,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflectionType* This = &this)
             {
-                return MarshalFunction<_IsOfType>(lpVtbl->IsOfType)(
+                return Marshal.GetDelegateForFunctionPointer<_IsOfType>(lpVtbl->IsOfType)(
                     This,
                     pType
                 );
@@ -231,7 +230,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflectionType* This = &this)
             {
-                return MarshalFunction<_ImplementsInterface>(lpVtbl->ImplementsInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_ImplementsInterface>(lpVtbl->ImplementsInterface)(
                     This,
                     pBase
                 );

@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -78,7 +77,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1TransformedImageSource* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -91,7 +90,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1TransformedImageSource* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -102,7 +101,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1TransformedImageSource* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -116,7 +115,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1TransformedImageSource* This = &this)
             {
-                MarshalFunction<_GetFactory>(lpVtbl->GetFactory)(
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
                     This,
                     factory
                 );
@@ -131,7 +130,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1TransformedImageSource* This = &this)
             {
-                MarshalFunction<_GetSource>(lpVtbl->GetSource)(
+                Marshal.GetDelegateForFunctionPointer<_GetSource>(lpVtbl->GetSource)(
                     This,
                     imageSource
                 );
@@ -144,7 +143,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1TransformedImageSource* This = &this)
             {
-                MarshalFunction<_GetProperties>(lpVtbl->GetProperties)(
+                Marshal.GetDelegateForFunctionPointer<_GetProperties>(lpVtbl->GetProperties)(
                     This,
                     properties
                 );

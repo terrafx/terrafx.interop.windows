@@ -3,7 +3,8 @@
 // Ported from um\oaidl.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using static TerraFX.Utilities.InteropUtilities;
+using System;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
@@ -37,17 +38,10 @@ namespace TerraFX.Interop
             #endregion
 
             #region Properties
-            public ref SAFEARRAYBOUND this[int index]
-            {
-                get
-                {
-                    fixed (SAFEARRAYBOUND* e = &e0)
-                    {
-                        return ref AsRef<SAFEARRAYBOUND>(e + index);
-                    }
-                }
-            }
+            public ref SAFEARRAYBOUND this[int index] => ref AsSpan(int.MaxValue)[index];
             #endregion
+
+            public Span<SAFEARRAYBOUND> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
         #endregion
     }

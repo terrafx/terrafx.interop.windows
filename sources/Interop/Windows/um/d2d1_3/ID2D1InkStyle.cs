@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -91,7 +90,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1InkStyle* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -104,7 +103,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1InkStyle* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -115,7 +114,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1InkStyle* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -129,7 +128,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1InkStyle* This = &this)
             {
-                MarshalFunction<_GetFactory>(lpVtbl->GetFactory)(
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
                     This,
                     factory
                 );
@@ -144,7 +143,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1InkStyle* This = &this)
             {
-                MarshalFunction<_SetNibTransform>(lpVtbl->SetNibTransform)(
+                Marshal.GetDelegateForFunctionPointer<_SetNibTransform>(lpVtbl->SetNibTransform)(
                     This,
                     transform
                 );
@@ -157,7 +156,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1InkStyle* This = &this)
             {
-                MarshalFunction<_GetNibTransform>(lpVtbl->GetNibTransform)(
+                Marshal.GetDelegateForFunctionPointer<_GetNibTransform>(lpVtbl->GetNibTransform)(
                     This,
                     transform
                 );
@@ -170,7 +169,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1InkStyle* This = &this)
             {
-                MarshalFunction<_SetNibShape>(lpVtbl->SetNibShape)(
+                Marshal.GetDelegateForFunctionPointer<_SetNibShape>(lpVtbl->SetNibShape)(
                     This,
                     nibShape
                 );
@@ -181,7 +180,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1InkStyle* This = &this)
             {
-                return MarshalFunction<_GetNibShape>(lpVtbl->GetNibShape)(
+                return Marshal.GetDelegateForFunctionPointer<_GetNibShape>(lpVtbl->GetNibShape)(
                     This
                 );
             }

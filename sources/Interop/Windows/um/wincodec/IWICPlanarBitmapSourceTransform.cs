@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -82,7 +81,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPlanarBitmapSourceTransform* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -95,7 +94,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPlanarBitmapSourceTransform* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -106,7 +105,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPlanarBitmapSourceTransform* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -128,7 +127,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPlanarBitmapSourceTransform* This = &this)
             {
-                return MarshalFunction<_DoesSupportTransform>(lpVtbl->DoesSupportTransform)(
+                return Marshal.GetDelegateForFunctionPointer<_DoesSupportTransform>(lpVtbl->DoesSupportTransform)(
                     This,
                     puiWidth,
                     puiHeight,
@@ -155,7 +154,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPlanarBitmapSourceTransform* This = &this)
             {
-                return MarshalFunction<_CopyPixels>(lpVtbl->CopyPixels)(
+                return Marshal.GetDelegateForFunctionPointer<_CopyPixels>(lpVtbl->CopyPixels)(
                     This,
                     prcSource,
                     uiWidth,

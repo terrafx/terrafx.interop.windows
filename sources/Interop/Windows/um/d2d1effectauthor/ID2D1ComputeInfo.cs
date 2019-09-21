@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -121,7 +120,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ComputeInfo* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -134,7 +133,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ComputeInfo* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -145,7 +144,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ComputeInfo* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -161,7 +160,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ComputeInfo* This = &this)
             {
-                return MarshalFunction<_SetInputDescription>(lpVtbl->SetInputDescription)(
+                return Marshal.GetDelegateForFunctionPointer<_SetInputDescription>(lpVtbl->SetInputDescription)(
                     This,
                     inputIndex,
                     inputDescription
@@ -177,7 +176,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ComputeInfo* This = &this)
             {
-                return MarshalFunction<_SetOutputBuffer>(lpVtbl->SetOutputBuffer)(
+                return Marshal.GetDelegateForFunctionPointer<_SetOutputBuffer>(lpVtbl->SetOutputBuffer)(
                     This,
                     bufferPrecision,
                     channelDepth
@@ -191,7 +190,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ComputeInfo* This = &this)
             {
-                MarshalFunction<_SetCached>(lpVtbl->SetCached)(
+                Marshal.GetDelegateForFunctionPointer<_SetCached>(lpVtbl->SetCached)(
                     This,
                     isCached
                 );
@@ -204,7 +203,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ComputeInfo* This = &this)
             {
-                MarshalFunction<_SetInstructionCountHint>(lpVtbl->SetInstructionCountHint)(
+                Marshal.GetDelegateForFunctionPointer<_SetInstructionCountHint>(lpVtbl->SetInstructionCountHint)(
                     This,
                     instructionCount
                 );
@@ -221,7 +220,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ComputeInfo* This = &this)
             {
-                return MarshalFunction<_SetComputeShaderConstantBuffer>(lpVtbl->SetComputeShaderConstantBuffer)(
+                return Marshal.GetDelegateForFunctionPointer<_SetComputeShaderConstantBuffer>(lpVtbl->SetComputeShaderConstantBuffer)(
                     This,
                     buffer,
                     bufferCount
@@ -236,7 +235,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ComputeInfo* This = &this)
             {
-                return MarshalFunction<_SetComputeShader>(lpVtbl->SetComputeShader)(
+                return Marshal.GetDelegateForFunctionPointer<_SetComputeShader>(lpVtbl->SetComputeShader)(
                     This,
                     shaderId
                 );
@@ -251,7 +250,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ComputeInfo* This = &this)
             {
-                return MarshalFunction<_SetResourceTexture>(lpVtbl->SetResourceTexture)(
+                return Marshal.GetDelegateForFunctionPointer<_SetResourceTexture>(lpVtbl->SetResourceTexture)(
                     This,
                     textureIndex,
                     resourceTexture

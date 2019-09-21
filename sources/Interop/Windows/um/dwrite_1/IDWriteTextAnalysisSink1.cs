@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -140,7 +139,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalysisSink1* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -153,7 +152,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalysisSink1* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -164,7 +163,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalysisSink1* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -181,7 +180,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalysisSink1* This = &this)
             {
-                return MarshalFunction<_SetScriptAnalysis>(lpVtbl->SetScriptAnalysis)(
+                return Marshal.GetDelegateForFunctionPointer<_SetScriptAnalysis>(lpVtbl->SetScriptAnalysis)(
                     This,
                     textPosition,
                     textLength,
@@ -199,7 +198,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalysisSink1* This = &this)
             {
-                return MarshalFunction<_SetLineBreakpoints>(lpVtbl->SetLineBreakpoints)(
+                return Marshal.GetDelegateForFunctionPointer<_SetLineBreakpoints>(lpVtbl->SetLineBreakpoints)(
                     This,
                     textPosition,
                     textLength,
@@ -218,7 +217,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalysisSink1* This = &this)
             {
-                return MarshalFunction<_SetBidiLevel>(lpVtbl->SetBidiLevel)(
+                return Marshal.GetDelegateForFunctionPointer<_SetBidiLevel>(lpVtbl->SetBidiLevel)(
                     This,
                     textPosition,
                     textLength,
@@ -237,7 +236,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalysisSink1* This = &this)
             {
-                return MarshalFunction<_SetNumberSubstitution>(lpVtbl->SetNumberSubstitution)(
+                return Marshal.GetDelegateForFunctionPointer<_SetNumberSubstitution>(lpVtbl->SetNumberSubstitution)(
                     This,
                     textPosition,
                     textLength,
@@ -260,7 +259,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalysisSink1* This = &this)
             {
-                return MarshalFunction<_SetGlyphOrientation>(lpVtbl->SetGlyphOrientation)(
+                return Marshal.GetDelegateForFunctionPointer<_SetGlyphOrientation>(lpVtbl->SetGlyphOrientation)(
                     This,
                     textPosition,
                     textLength,

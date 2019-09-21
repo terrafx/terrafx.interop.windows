@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -268,7 +267,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -281,7 +280,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -292,7 +291,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -310,7 +309,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer* This = &this)
             {
-                return MarshalFunction<_AnalyzeScript>(lpVtbl->AnalyzeScript)(
+                return Marshal.GetDelegateForFunctionPointer<_AnalyzeScript>(lpVtbl->AnalyzeScript)(
                     This,
                     analysisSource,
                     textPosition,
@@ -330,7 +329,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer* This = &this)
             {
-                return MarshalFunction<_AnalyzeBidi>(lpVtbl->AnalyzeBidi)(
+                return Marshal.GetDelegateForFunctionPointer<_AnalyzeBidi>(lpVtbl->AnalyzeBidi)(
                     This,
                     analysisSource,
                     textPosition,
@@ -350,7 +349,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer* This = &this)
             {
-                return MarshalFunction<_AnalyzeNumberSubstitution>(lpVtbl->AnalyzeNumberSubstitution)(
+                return Marshal.GetDelegateForFunctionPointer<_AnalyzeNumberSubstitution>(lpVtbl->AnalyzeNumberSubstitution)(
                     This,
                     analysisSource,
                     textPosition,
@@ -370,7 +369,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer* This = &this)
             {
-                return MarshalFunction<_AnalyzeLineBreakpoints>(lpVtbl->AnalyzeLineBreakpoints)(
+                return Marshal.GetDelegateForFunctionPointer<_AnalyzeLineBreakpoints>(lpVtbl->AnalyzeLineBreakpoints)(
                     This,
                     analysisSource,
                     textPosition,
@@ -403,7 +402,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer* This = &this)
             {
-                return MarshalFunction<_GetGlyphs>(lpVtbl->GetGlyphs)(
+                return Marshal.GetDelegateForFunctionPointer<_GetGlyphs>(lpVtbl->GetGlyphs)(
                     This,
                     textString,
                     textLength,
@@ -450,7 +449,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer* This = &this)
             {
-                return MarshalFunction<_GetGlyphPlacements>(lpVtbl->GetGlyphPlacements)(
+                return Marshal.GetDelegateForFunctionPointer<_GetGlyphPlacements>(lpVtbl->GetGlyphPlacements)(
                     This,
                     textString,
                     clusterMap,
@@ -501,7 +500,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer* This = &this)
             {
-                return MarshalFunction<_GetGdiCompatibleGlyphPlacements>(lpVtbl->GetGdiCompatibleGlyphPlacements)(
+                return Marshal.GetDelegateForFunctionPointer<_GetGdiCompatibleGlyphPlacements>(lpVtbl->GetGdiCompatibleGlyphPlacements)(
                     This,
                     textString,
                     clusterMap,

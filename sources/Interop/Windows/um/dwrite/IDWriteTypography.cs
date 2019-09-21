@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -86,7 +85,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTypography* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -99,7 +98,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTypography* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -110,7 +109,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTypography* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -125,7 +124,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTypography* This = &this)
             {
-                return MarshalFunction<_AddFontFeature>(lpVtbl->AddFontFeature)(
+                return Marshal.GetDelegateForFunctionPointer<_AddFontFeature>(lpVtbl->AddFontFeature)(
                     This,
                     fontFeature
                 );
@@ -137,7 +136,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTypography* This = &this)
             {
-                return MarshalFunction<_GetFontFeatureCount>(lpVtbl->GetFontFeatureCount)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFontFeatureCount>(lpVtbl->GetFontFeatureCount)(
                     This
                 );
             }
@@ -151,7 +150,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTypography* This = &this)
             {
-                return MarshalFunction<_GetFontFeature>(lpVtbl->GetFontFeature)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFontFeature>(lpVtbl->GetFontFeature)(
                     This,
                     fontFeatureIndex,
                     fontFeature

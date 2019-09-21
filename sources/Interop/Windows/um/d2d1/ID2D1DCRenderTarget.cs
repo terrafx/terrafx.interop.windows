@@ -9,7 +9,6 @@ using System.Security;
 using static TerraFX.Interop.D2D1_BITMAP_INTERPOLATION_MODE;
 using static TerraFX.Interop.D2D1_DRAW_TEXT_OPTIONS;
 using static TerraFX.Interop.DWRITE_MEASURING_MODE;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -577,7 +576,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -590,7 +589,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -601,7 +600,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -615,7 +614,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_GetFactory>(lpVtbl->GetFactory)(
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
                     This,
                     factory
                 );
@@ -635,7 +634,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                return MarshalFunction<_CreateBitmap>(lpVtbl->CreateBitmap)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateBitmap>(lpVtbl->CreateBitmap)(
                     This,
                     size,
                     srcData,
@@ -655,7 +654,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                return MarshalFunction<_CreateBitmapFromWicBitmap>(lpVtbl->CreateBitmapFromWicBitmap)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapFromWicBitmap>(lpVtbl->CreateBitmapFromWicBitmap)(
                     This,
                     wicBitmapSource,
                     bitmapProperties,
@@ -674,7 +673,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                return MarshalFunction<_CreateSharedBitmap>(lpVtbl->CreateSharedBitmap)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateSharedBitmap>(lpVtbl->CreateSharedBitmap)(
                     This,
                     riid,
                     data,
@@ -694,7 +693,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                return MarshalFunction<_CreateBitmapBrush>(lpVtbl->CreateBitmapBrush)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapBrush>(lpVtbl->CreateBitmapBrush)(
                     This,
                     bitmap,
                     bitmapBrushProperties,
@@ -713,7 +712,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                return MarshalFunction<_CreateSolidColorBrush>(lpVtbl->CreateSolidColorBrush)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateSolidColorBrush>(lpVtbl->CreateSolidColorBrush)(
                     This,
                     color,
                     brushProperties,
@@ -733,7 +732,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                return MarshalFunction<_CreateGradientStopCollection>(lpVtbl->CreateGradientStopCollection)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateGradientStopCollection>(lpVtbl->CreateGradientStopCollection)(
                     This,
                     gradientStops,
                     gradientStopsCount,
@@ -754,7 +753,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                return MarshalFunction<_CreateLinearGradientBrush>(lpVtbl->CreateLinearGradientBrush)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateLinearGradientBrush>(lpVtbl->CreateLinearGradientBrush)(
                     This,
                     linearGradientBrushProperties,
                     brushProperties,
@@ -774,7 +773,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                return MarshalFunction<_CreateRadialGradientBrush>(lpVtbl->CreateRadialGradientBrush)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateRadialGradientBrush>(lpVtbl->CreateRadialGradientBrush)(
                     This,
                     radialGradientBrushProperties,
                     brushProperties,
@@ -795,7 +794,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                return MarshalFunction<_CreateCompatibleRenderTarget>(lpVtbl->CreateCompatibleRenderTarget)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateCompatibleRenderTarget>(lpVtbl->CreateCompatibleRenderTarget)(
                     This,
                     desiredSize,
                     desiredPixelSize,
@@ -814,7 +813,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                return MarshalFunction<_CreateLayer>(lpVtbl->CreateLayer)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateLayer>(lpVtbl->CreateLayer)(
                     This,
                     size,
                     layer
@@ -829,7 +828,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                return MarshalFunction<_CreateMesh>(lpVtbl->CreateMesh)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateMesh>(lpVtbl->CreateMesh)(
                     This,
                     mesh
                 );
@@ -846,7 +845,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_DrawLine>(lpVtbl->DrawLine)(
+                Marshal.GetDelegateForFunctionPointer<_DrawLine>(lpVtbl->DrawLine)(
                     This,
                     point0,
                     point1,
@@ -866,7 +865,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_DrawRectangle>(lpVtbl->DrawRectangle)(
+                Marshal.GetDelegateForFunctionPointer<_DrawRectangle>(lpVtbl->DrawRectangle)(
                     This,
                     rect,
                     brush,
@@ -883,7 +882,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_FillRectangle>(lpVtbl->FillRectangle)(
+                Marshal.GetDelegateForFunctionPointer<_FillRectangle>(lpVtbl->FillRectangle)(
                     This,
                     rect,
                     brush
@@ -900,7 +899,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_DrawRoundedRectangle>(lpVtbl->DrawRoundedRectangle)(
+                Marshal.GetDelegateForFunctionPointer<_DrawRoundedRectangle>(lpVtbl->DrawRoundedRectangle)(
                     This,
                     roundedRect,
                     brush,
@@ -917,7 +916,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_FillRoundedRectangle>(lpVtbl->FillRoundedRectangle)(
+                Marshal.GetDelegateForFunctionPointer<_FillRoundedRectangle>(lpVtbl->FillRoundedRectangle)(
                     This,
                     roundedRect,
                     brush
@@ -934,7 +933,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_DrawEllipse>(lpVtbl->DrawEllipse)(
+                Marshal.GetDelegateForFunctionPointer<_DrawEllipse>(lpVtbl->DrawEllipse)(
                     This,
                     ellipse,
                     brush,
@@ -951,7 +950,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_FillEllipse>(lpVtbl->FillEllipse)(
+                Marshal.GetDelegateForFunctionPointer<_FillEllipse>(lpVtbl->FillEllipse)(
                     This,
                     ellipse,
                     brush
@@ -968,7 +967,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_DrawGeometry>(lpVtbl->DrawGeometry)(
+                Marshal.GetDelegateForFunctionPointer<_DrawGeometry>(lpVtbl->DrawGeometry)(
                     This,
                     geometry,
                     brush,
@@ -986,7 +985,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_FillGeometry>(lpVtbl->FillGeometry)(
+                Marshal.GetDelegateForFunctionPointer<_FillGeometry>(lpVtbl->FillGeometry)(
                     This,
                     geometry,
                     brush,
@@ -1002,7 +1001,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_FillMesh>(lpVtbl->FillMesh)(
+                Marshal.GetDelegateForFunctionPointer<_FillMesh>(lpVtbl->FillMesh)(
                     This,
                     mesh,
                     brush
@@ -1020,7 +1019,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_FillOpacityMask>(lpVtbl->FillOpacityMask)(
+                Marshal.GetDelegateForFunctionPointer<_FillOpacityMask>(lpVtbl->FillOpacityMask)(
                     This,
                     opacityMask,
                     brush,
@@ -1041,7 +1040,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_DrawBitmap>(lpVtbl->DrawBitmap)(
+                Marshal.GetDelegateForFunctionPointer<_DrawBitmap>(lpVtbl->DrawBitmap)(
                     This,
                     bitmap,
                     destinationRectangle,
@@ -1064,7 +1063,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_DrawText>(lpVtbl->DrawText)(
+                Marshal.GetDelegateForFunctionPointer<_DrawText>(lpVtbl->DrawText)(
                     This,
                     @string,
                     stringLength,
@@ -1086,7 +1085,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_DrawTextLayout>(lpVtbl->DrawTextLayout)(
+                Marshal.GetDelegateForFunctionPointer<_DrawTextLayout>(lpVtbl->DrawTextLayout)(
                     This,
                     origin,
                     textLayout,
@@ -1105,7 +1104,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_DrawGlyphRun>(lpVtbl->DrawGlyphRun)(
+                Marshal.GetDelegateForFunctionPointer<_DrawGlyphRun>(lpVtbl->DrawGlyphRun)(
                     This,
                     baselineOrigin,
                     glyphRun,
@@ -1121,7 +1120,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_SetTransform>(lpVtbl->SetTransform)(
+                Marshal.GetDelegateForFunctionPointer<_SetTransform>(lpVtbl->SetTransform)(
                     This,
                     transform
                 );
@@ -1134,7 +1133,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_GetTransform>(lpVtbl->GetTransform)(
+                Marshal.GetDelegateForFunctionPointer<_GetTransform>(lpVtbl->GetTransform)(
                     This,
                     transform
                 );
@@ -1147,7 +1146,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_SetAntialiasMode>(lpVtbl->SetAntialiasMode)(
+                Marshal.GetDelegateForFunctionPointer<_SetAntialiasMode>(lpVtbl->SetAntialiasMode)(
                     This,
                     antialiasMode
                 );
@@ -1158,7 +1157,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                return MarshalFunction<_GetAntialiasMode>(lpVtbl->GetAntialiasMode)(
+                return Marshal.GetDelegateForFunctionPointer<_GetAntialiasMode>(lpVtbl->GetAntialiasMode)(
                     This
                 );
             }
@@ -1170,7 +1169,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_SetTextAntialiasMode>(lpVtbl->SetTextAntialiasMode)(
+                Marshal.GetDelegateForFunctionPointer<_SetTextAntialiasMode>(lpVtbl->SetTextAntialiasMode)(
                     This,
                     textAntialiasMode
                 );
@@ -1181,7 +1180,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                return MarshalFunction<_GetTextAntialiasMode>(lpVtbl->GetTextAntialiasMode)(
+                return Marshal.GetDelegateForFunctionPointer<_GetTextAntialiasMode>(lpVtbl->GetTextAntialiasMode)(
                     This
                 );
             }
@@ -1193,7 +1192,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_SetTextRenderingParams>(lpVtbl->SetTextRenderingParams)(
+                Marshal.GetDelegateForFunctionPointer<_SetTextRenderingParams>(lpVtbl->SetTextRenderingParams)(
                     This,
                     textRenderingParams
                 );
@@ -1206,7 +1205,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_GetTextRenderingParams>(lpVtbl->GetTextRenderingParams)(
+                Marshal.GetDelegateForFunctionPointer<_GetTextRenderingParams>(lpVtbl->GetTextRenderingParams)(
                     This,
                     textRenderingParams
                 );
@@ -1220,7 +1219,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_SetTags>(lpVtbl->SetTags)(
+                Marshal.GetDelegateForFunctionPointer<_SetTags>(lpVtbl->SetTags)(
                     This,
                     tag1,
                     tag2
@@ -1235,7 +1234,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_GetTags>(lpVtbl->GetTags)(
+                Marshal.GetDelegateForFunctionPointer<_GetTags>(lpVtbl->GetTags)(
                     This,
                     tag1,
                     tag2
@@ -1250,7 +1249,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_PushLayer>(lpVtbl->PushLayer)(
+                Marshal.GetDelegateForFunctionPointer<_PushLayer>(lpVtbl->PushLayer)(
                     This,
                     layerParameters,
                     layer
@@ -1262,7 +1261,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_PopLayer>(lpVtbl->PopLayer)(
+                Marshal.GetDelegateForFunctionPointer<_PopLayer>(lpVtbl->PopLayer)(
                     This
                 );
             }
@@ -1276,7 +1275,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                return MarshalFunction<_Flush>(lpVtbl->Flush)(
+                return Marshal.GetDelegateForFunctionPointer<_Flush>(lpVtbl->Flush)(
                     This,
                     tag1,
                     tag2
@@ -1290,7 +1289,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_SaveDrawingState>(lpVtbl->SaveDrawingState)(
+                Marshal.GetDelegateForFunctionPointer<_SaveDrawingState>(lpVtbl->SaveDrawingState)(
                     This,
                     drawingStateBlock
                 );
@@ -1303,7 +1302,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_RestoreDrawingState>(lpVtbl->RestoreDrawingState)(
+                Marshal.GetDelegateForFunctionPointer<_RestoreDrawingState>(lpVtbl->RestoreDrawingState)(
                     This,
                     drawingStateBlock
                 );
@@ -1317,7 +1316,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_PushAxisAlignedClip>(lpVtbl->PushAxisAlignedClip)(
+                Marshal.GetDelegateForFunctionPointer<_PushAxisAlignedClip>(lpVtbl->PushAxisAlignedClip)(
                     This,
                     clipRect,
                     antialiasMode
@@ -1329,7 +1328,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_PopAxisAlignedClip>(lpVtbl->PopAxisAlignedClip)(
+                Marshal.GetDelegateForFunctionPointer<_PopAxisAlignedClip>(lpVtbl->PopAxisAlignedClip)(
                     This
                 );
             }
@@ -1341,7 +1340,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_Clear>(lpVtbl->Clear)(
+                Marshal.GetDelegateForFunctionPointer<_Clear>(lpVtbl->Clear)(
                     This,
                     clearColor
                 );
@@ -1352,7 +1351,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_BeginDraw>(lpVtbl->BeginDraw)(
+                Marshal.GetDelegateForFunctionPointer<_BeginDraw>(lpVtbl->BeginDraw)(
                     This
                 );
             }
@@ -1366,7 +1365,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                return MarshalFunction<_EndDraw>(lpVtbl->EndDraw)(
+                return Marshal.GetDelegateForFunctionPointer<_EndDraw>(lpVtbl->EndDraw)(
                     This,
                     tag1,
                     tag2
@@ -1379,7 +1378,7 @@ namespace TerraFX.Interop
             fixed (ID2D1DCRenderTarget* This = &this)
             {
                 D2D1_PIXEL_FORMAT result;
-                return *MarshalFunction<_GetPixelFormat>(lpVtbl->GetPixelFormat)(
+                return *Marshal.GetDelegateForFunctionPointer<_GetPixelFormat>(lpVtbl->GetPixelFormat)(
                     This,
                     &result
                 );
@@ -1393,7 +1392,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_SetDpi>(lpVtbl->SetDpi)(
+                Marshal.GetDelegateForFunctionPointer<_SetDpi>(lpVtbl->SetDpi)(
                     This,
                     dpiX,
                     dpiY
@@ -1408,7 +1407,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                MarshalFunction<_GetDpi>(lpVtbl->GetDpi)(
+                Marshal.GetDelegateForFunctionPointer<_GetDpi>(lpVtbl->GetDpi)(
                     This,
                     dpiX,
                     dpiY
@@ -1422,7 +1421,7 @@ namespace TerraFX.Interop
             fixed (ID2D1DCRenderTarget* This = &this)
             {
                 D2D_SIZE_F result;
-                return *MarshalFunction<_GetSize>(lpVtbl->GetSize)(
+                return *Marshal.GetDelegateForFunctionPointer<_GetSize>(lpVtbl->GetSize)(
                     This,
                     &result
                 );
@@ -1435,7 +1434,7 @@ namespace TerraFX.Interop
             fixed (ID2D1DCRenderTarget* This = &this)
             {
                 D2D_SIZE_U result;
-                return *MarshalFunction<_GetPixelSize>(lpVtbl->GetPixelSize)(
+                return *Marshal.GetDelegateForFunctionPointer<_GetPixelSize>(lpVtbl->GetPixelSize)(
                     This,
                     &result
                 );
@@ -1447,7 +1446,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                return MarshalFunction<_GetMaximumBitmapSize>(lpVtbl->GetMaximumBitmapSize)(
+                return Marshal.GetDelegateForFunctionPointer<_GetMaximumBitmapSize>(lpVtbl->GetMaximumBitmapSize)(
                     This
                 );
             }
@@ -1460,7 +1459,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                return MarshalFunction<_IsSupported>(lpVtbl->IsSupported)(
+                return Marshal.GetDelegateForFunctionPointer<_IsSupported>(lpVtbl->IsSupported)(
                     This,
                     renderTargetProperties
                 );
@@ -1477,7 +1476,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DCRenderTarget* This = &this)
             {
-                return MarshalFunction<_BindDC>(lpVtbl->BindDC)(
+                return Marshal.GetDelegateForFunctionPointer<_BindDC>(lpVtbl->BindDC)(
                     This,
                     hDC,
                     pSubRect

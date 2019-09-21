@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -133,7 +132,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteLocalizedStrings* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -146,7 +145,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteLocalizedStrings* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -157,7 +156,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteLocalizedStrings* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -170,7 +169,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteLocalizedStrings* This = &this)
             {
-                return MarshalFunction<_GetCount>(lpVtbl->GetCount)(
+                return Marshal.GetDelegateForFunctionPointer<_GetCount>(lpVtbl->GetCount)(
                     This
                 );
             }
@@ -185,7 +184,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteLocalizedStrings* This = &this)
             {
-                return MarshalFunction<_FindLocaleName>(lpVtbl->FindLocaleName)(
+                return Marshal.GetDelegateForFunctionPointer<_FindLocaleName>(lpVtbl->FindLocaleName)(
                     This,
                     localeName,
                     index,
@@ -202,7 +201,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteLocalizedStrings* This = &this)
             {
-                return MarshalFunction<_GetLocaleNameLength>(lpVtbl->GetLocaleNameLength)(
+                return Marshal.GetDelegateForFunctionPointer<_GetLocaleNameLength>(lpVtbl->GetLocaleNameLength)(
                     This,
                     index,
                     length
@@ -219,7 +218,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteLocalizedStrings* This = &this)
             {
-                return MarshalFunction<_GetLocaleName>(lpVtbl->GetLocaleName)(
+                return Marshal.GetDelegateForFunctionPointer<_GetLocaleName>(lpVtbl->GetLocaleName)(
                     This,
                     index,
                     localeName,
@@ -236,7 +235,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteLocalizedStrings* This = &this)
             {
-                return MarshalFunction<_GetStringLength>(lpVtbl->GetStringLength)(
+                return Marshal.GetDelegateForFunctionPointer<_GetStringLength>(lpVtbl->GetStringLength)(
                     This,
                     index,
                     length
@@ -253,7 +252,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteLocalizedStrings* This = &this)
             {
-                return MarshalFunction<_GetString>(lpVtbl->GetString)(
+                return Marshal.GetDelegateForFunctionPointer<_GetString>(lpVtbl->GetString)(
                     This,
                     index,
                     stringBuffer,

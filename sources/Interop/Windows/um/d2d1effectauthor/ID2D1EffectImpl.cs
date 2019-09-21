@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -82,7 +81,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectImpl* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -95,7 +94,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectImpl* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -106,7 +105,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectImpl* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -122,7 +121,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectImpl* This = &this)
             {
-                return MarshalFunction<_Initialize>(lpVtbl->Initialize)(
+                return Marshal.GetDelegateForFunctionPointer<_Initialize>(lpVtbl->Initialize)(
                     This,
                     effectContext,
                     transformGraph
@@ -137,7 +136,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectImpl* This = &this)
             {
-                return MarshalFunction<_PrepareForRender>(lpVtbl->PrepareForRender)(
+                return Marshal.GetDelegateForFunctionPointer<_PrepareForRender>(lpVtbl->PrepareForRender)(
                     This,
                     changeType
                 );
@@ -151,7 +150,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectImpl* This = &this)
             {
-                return MarshalFunction<_SetGraph>(lpVtbl->SetGraph)(
+                return Marshal.GetDelegateForFunctionPointer<_SetGraph>(lpVtbl->SetGraph)(
                     This,
                     transformGraph
                 );

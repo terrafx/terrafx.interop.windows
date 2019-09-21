@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -84,7 +83,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICStreamProvider* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -97,7 +96,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICStreamProvider* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -108,7 +107,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICStreamProvider* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -123,7 +122,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICStreamProvider* This = &this)
             {
-                return MarshalFunction<_GetStream>(lpVtbl->GetStream)(
+                return Marshal.GetDelegateForFunctionPointer<_GetStream>(lpVtbl->GetStream)(
                     This,
                     ppIStream
                 );
@@ -137,7 +136,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICStreamProvider* This = &this)
             {
-                return MarshalFunction<_GetPersistOptions>(lpVtbl->GetPersistOptions)(
+                return Marshal.GetDelegateForFunctionPointer<_GetPersistOptions>(lpVtbl->GetPersistOptions)(
                     This,
                     pdwPersistOptions
                 );
@@ -151,7 +150,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICStreamProvider* This = &this)
             {
-                return MarshalFunction<_GetPreferredVendorGUID>(lpVtbl->GetPreferredVendorGUID)(
+                return Marshal.GetDelegateForFunctionPointer<_GetPreferredVendorGUID>(lpVtbl->GetPreferredVendorGUID)(
                     This,
                     pguidPreferredVendor
                 );
@@ -163,7 +162,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICStreamProvider* This = &this)
             {
-                return MarshalFunction<_RefreshStream>(lpVtbl->RefreshStream)(
+                return Marshal.GetDelegateForFunctionPointer<_RefreshStream>(lpVtbl->RefreshStream)(
                     This
                 );
             }

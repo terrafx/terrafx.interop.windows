@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -200,7 +199,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -213,7 +212,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -224,7 +223,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -239,7 +238,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return MarshalFunction<_GetDesc>(lpVtbl->GetDesc)(
+                return Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)(
                     This,
                     pDesc
                 );
@@ -252,7 +251,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return MarshalFunction<_GetConstantBufferByIndex>(lpVtbl->GetConstantBufferByIndex)(
+                return Marshal.GetDelegateForFunctionPointer<_GetConstantBufferByIndex>(lpVtbl->GetConstantBufferByIndex)(
                     This,
                     Index
                 );
@@ -265,7 +264,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return MarshalFunction<_GetConstantBufferByName>(lpVtbl->GetConstantBufferByName)(
+                return Marshal.GetDelegateForFunctionPointer<_GetConstantBufferByName>(lpVtbl->GetConstantBufferByName)(
                     This,
                     Name
                 );
@@ -280,7 +279,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return MarshalFunction<_GetResourceBindingDesc>(lpVtbl->GetResourceBindingDesc)(
+                return Marshal.GetDelegateForFunctionPointer<_GetResourceBindingDesc>(lpVtbl->GetResourceBindingDesc)(
                     This,
                     ResourceIndex,
                     pDesc
@@ -296,7 +295,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return MarshalFunction<_GetInputParameterDesc>(lpVtbl->GetInputParameterDesc)(
+                return Marshal.GetDelegateForFunctionPointer<_GetInputParameterDesc>(lpVtbl->GetInputParameterDesc)(
                     This,
                     ParameterIndex,
                     pDesc
@@ -312,7 +311,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return MarshalFunction<_GetOutputParameterDesc>(lpVtbl->GetOutputParameterDesc)(
+                return Marshal.GetDelegateForFunctionPointer<_GetOutputParameterDesc>(lpVtbl->GetOutputParameterDesc)(
                     This,
                     ParameterIndex,
                     pDesc
@@ -328,7 +327,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return MarshalFunction<_GetPatchConstantParameterDesc>(lpVtbl->GetPatchConstantParameterDesc)(
+                return Marshal.GetDelegateForFunctionPointer<_GetPatchConstantParameterDesc>(lpVtbl->GetPatchConstantParameterDesc)(
                     This,
                     ParameterIndex,
                     pDesc
@@ -342,7 +341,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return MarshalFunction<_GetVariableByName>(lpVtbl->GetVariableByName)(
+                return Marshal.GetDelegateForFunctionPointer<_GetVariableByName>(lpVtbl->GetVariableByName)(
                     This,
                     Name
                 );
@@ -357,7 +356,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return MarshalFunction<_GetResourceBindingDescByName>(lpVtbl->GetResourceBindingDescByName)(
+                return Marshal.GetDelegateForFunctionPointer<_GetResourceBindingDescByName>(lpVtbl->GetResourceBindingDescByName)(
                     This,
                     Name,
                     pDesc
@@ -370,7 +369,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return MarshalFunction<_GetMovInstructionCount>(lpVtbl->GetMovInstructionCount)(
+                return Marshal.GetDelegateForFunctionPointer<_GetMovInstructionCount>(lpVtbl->GetMovInstructionCount)(
                     This
                 );
             }
@@ -381,7 +380,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return MarshalFunction<_GetMovcInstructionCount>(lpVtbl->GetMovcInstructionCount)(
+                return Marshal.GetDelegateForFunctionPointer<_GetMovcInstructionCount>(lpVtbl->GetMovcInstructionCount)(
                     This
                 );
             }
@@ -392,7 +391,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return MarshalFunction<_GetConversionInstructionCount>(lpVtbl->GetConversionInstructionCount)(
+                return Marshal.GetDelegateForFunctionPointer<_GetConversionInstructionCount>(lpVtbl->GetConversionInstructionCount)(
                     This
                 );
             }
@@ -403,7 +402,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return MarshalFunction<_GetBitwiseInstructionCount>(lpVtbl->GetBitwiseInstructionCount)(
+                return Marshal.GetDelegateForFunctionPointer<_GetBitwiseInstructionCount>(lpVtbl->GetBitwiseInstructionCount)(
                     This
                 );
             }
@@ -413,7 +412,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return MarshalFunction<_GetGSInputPrimitive>(lpVtbl->GetGSInputPrimitive)(
+                return Marshal.GetDelegateForFunctionPointer<_GetGSInputPrimitive>(lpVtbl->GetGSInputPrimitive)(
                     This
                 );
             }
@@ -424,7 +423,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return MarshalFunction<_IsSampleFrequencyShader>(lpVtbl->IsSampleFrequencyShader)(
+                return Marshal.GetDelegateForFunctionPointer<_IsSampleFrequencyShader>(lpVtbl->IsSampleFrequencyShader)(
                     This
                 );
             }
@@ -435,7 +434,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return MarshalFunction<_GetNumInterfaceSlots>(lpVtbl->GetNumInterfaceSlots)(
+                return Marshal.GetDelegateForFunctionPointer<_GetNumInterfaceSlots>(lpVtbl->GetNumInterfaceSlots)(
                     This
                 );
             }
@@ -448,7 +447,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return MarshalFunction<_GetMinFeatureLevel>(lpVtbl->GetMinFeatureLevel)(
+                return Marshal.GetDelegateForFunctionPointer<_GetMinFeatureLevel>(lpVtbl->GetMinFeatureLevel)(
                     This,
                     pLevel
                 );
@@ -464,7 +463,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return MarshalFunction<_GetThreadGroupSize>(lpVtbl->GetThreadGroupSize)(
+                return Marshal.GetDelegateForFunctionPointer<_GetThreadGroupSize>(lpVtbl->GetThreadGroupSize)(
                     This,
                     pSizeX,
                     pSizeY,
@@ -478,7 +477,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return MarshalFunction<_GetRequiresFlags>(lpVtbl->GetRequiresFlags)(
+                return Marshal.GetDelegateForFunctionPointer<_GetRequiresFlags>(lpVtbl->GetRequiresFlags)(
                     This
                 );
             }

@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -129,7 +128,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPointCollection* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -142,7 +141,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPointCollection* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -153,7 +152,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPointCollection* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -167,7 +166,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPointCollection* This = &this)
             {
-                MarshalFunction<_GetFactory>(lpVtbl->GetFactory)(
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
                     This,
                     factory
                 );
@@ -182,7 +181,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPointCollection* This = &this)
             {
-                MarshalFunction<_GetElement>(lpVtbl->GetElement)(
+                Marshal.GetDelegateForFunctionPointer<_GetElement>(lpVtbl->GetElement)(
                     This,
                     element
                 );
@@ -196,7 +195,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPointCollection* This = &this)
             {
-                return MarshalFunction<_Clone>(lpVtbl->Clone)(
+                return Marshal.GetDelegateForFunctionPointer<_Clone>(lpVtbl->Clone)(
                     This,
                     attribute
                 );
@@ -212,7 +211,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPointCollection* This = &this)
             {
-                return MarshalFunction<_RemovePointsAtEnd>(lpVtbl->RemovePointsAtEnd)(
+                return Marshal.GetDelegateForFunctionPointer<_RemovePointsAtEnd>(lpVtbl->RemovePointsAtEnd)(
                     This,
                     pointsCount
                 );
@@ -228,7 +227,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPointCollection* This = &this)
             {
-                return MarshalFunction<_UpdatePoints>(lpVtbl->UpdatePoints)(
+                return Marshal.GetDelegateForFunctionPointer<_UpdatePoints>(lpVtbl->UpdatePoints)(
                     This,
                     points,
                     pointsCount,
@@ -246,7 +245,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPointCollection* This = &this)
             {
-                return MarshalFunction<_GetPoints>(lpVtbl->GetPoints)(
+                return Marshal.GetDelegateForFunctionPointer<_GetPoints>(lpVtbl->GetPoints)(
                     This,
                     points,
                     pointsCount,
@@ -260,7 +259,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPointCollection* This = &this)
             {
-                return MarshalFunction<_GetPointsCount>(lpVtbl->GetPointsCount)(
+                return Marshal.GetDelegateForFunctionPointer<_GetPointsCount>(lpVtbl->GetPointsCount)(
                     This
                 );
             }

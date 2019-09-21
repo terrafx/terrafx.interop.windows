@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -193,7 +192,7 @@ namespace TerraFX.Interop
         {
             fixed (IRecordInfo* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -206,7 +205,7 @@ namespace TerraFX.Interop
         {
             fixed (IRecordInfo* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -217,7 +216,7 @@ namespace TerraFX.Interop
         {
             fixed (IRecordInfo* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -232,7 +231,7 @@ namespace TerraFX.Interop
         {
             fixed (IRecordInfo* This = &this)
             {
-                return MarshalFunction<_RecordInit>(lpVtbl->RecordInit)(
+                return Marshal.GetDelegateForFunctionPointer<_RecordInit>(lpVtbl->RecordInit)(
                     This,
                     pvNew
                 );
@@ -246,7 +245,7 @@ namespace TerraFX.Interop
         {
             fixed (IRecordInfo* This = &this)
             {
-                return MarshalFunction<_RecordClear>(lpVtbl->RecordClear)(
+                return Marshal.GetDelegateForFunctionPointer<_RecordClear>(lpVtbl->RecordClear)(
                     This,
                     pvExisting
                 );
@@ -261,7 +260,7 @@ namespace TerraFX.Interop
         {
             fixed (IRecordInfo* This = &this)
             {
-                return MarshalFunction<_RecordCopy>(lpVtbl->RecordCopy)(
+                return Marshal.GetDelegateForFunctionPointer<_RecordCopy>(lpVtbl->RecordCopy)(
                     This,
                     pvExisting,
                     pvNew
@@ -276,7 +275,7 @@ namespace TerraFX.Interop
         {
             fixed (IRecordInfo* This = &this)
             {
-                return MarshalFunction<_GetGuid>(lpVtbl->GetGuid)(
+                return Marshal.GetDelegateForFunctionPointer<_GetGuid>(lpVtbl->GetGuid)(
                     This,
                     pGuid
                 );
@@ -290,7 +289,7 @@ namespace TerraFX.Interop
         {
             fixed (IRecordInfo* This = &this)
             {
-                return MarshalFunction<_GetName>(lpVtbl->GetName)(
+                return Marshal.GetDelegateForFunctionPointer<_GetName>(lpVtbl->GetName)(
                     This,
                     pbstrName
                 );
@@ -304,7 +303,7 @@ namespace TerraFX.Interop
         {
             fixed (IRecordInfo* This = &this)
             {
-                return MarshalFunction<_GetSize>(lpVtbl->GetSize)(
+                return Marshal.GetDelegateForFunctionPointer<_GetSize>(lpVtbl->GetSize)(
                     This,
                     pcbSize
                 );
@@ -318,7 +317,7 @@ namespace TerraFX.Interop
         {
             fixed (IRecordInfo* This = &this)
             {
-                return MarshalFunction<_GetTypeInfo>(lpVtbl->GetTypeInfo)(
+                return Marshal.GetDelegateForFunctionPointer<_GetTypeInfo>(lpVtbl->GetTypeInfo)(
                     This,
                     ppTypeInfo
                 );
@@ -334,7 +333,7 @@ namespace TerraFX.Interop
         {
             fixed (IRecordInfo* This = &this)
             {
-                return MarshalFunction<_GetField>(lpVtbl->GetField)(
+                return Marshal.GetDelegateForFunctionPointer<_GetField>(lpVtbl->GetField)(
                     This,
                     pvData,
                     szFieldName,
@@ -353,7 +352,7 @@ namespace TerraFX.Interop
         {
             fixed (IRecordInfo* This = &this)
             {
-                return MarshalFunction<_GetFieldNoCopy>(lpVtbl->GetFieldNoCopy)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFieldNoCopy>(lpVtbl->GetFieldNoCopy)(
                     This,
                     pvData,
                     szFieldName,
@@ -373,7 +372,7 @@ namespace TerraFX.Interop
         {
             fixed (IRecordInfo* This = &this)
             {
-                return MarshalFunction<_PutField>(lpVtbl->PutField)(
+                return Marshal.GetDelegateForFunctionPointer<_PutField>(lpVtbl->PutField)(
                     This,
                     wFlags,
                     pvData,
@@ -393,7 +392,7 @@ namespace TerraFX.Interop
         {
             fixed (IRecordInfo* This = &this)
             {
-                return MarshalFunction<_PutFieldNoCopy>(lpVtbl->PutFieldNoCopy)(
+                return Marshal.GetDelegateForFunctionPointer<_PutFieldNoCopy>(lpVtbl->PutFieldNoCopy)(
                     This,
                     wFlags,
                     pvData,
@@ -411,7 +410,7 @@ namespace TerraFX.Interop
         {
             fixed (IRecordInfo* This = &this)
             {
-                return MarshalFunction<_GetFieldNames>(lpVtbl->GetFieldNames)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFieldNames>(lpVtbl->GetFieldNames)(
                     This,
                     pcNames,
                     rgBstrNames
@@ -426,7 +425,7 @@ namespace TerraFX.Interop
         {
             fixed (IRecordInfo* This = &this)
             {
-                return MarshalFunction<_IsMatchingType>(lpVtbl->IsMatchingType)(
+                return Marshal.GetDelegateForFunctionPointer<_IsMatchingType>(lpVtbl->IsMatchingType)(
                     This,
                     pRecordInfo
                 );
@@ -437,7 +436,7 @@ namespace TerraFX.Interop
         {
             fixed (IRecordInfo* This = &this)
             {
-                return MarshalFunction<_RecordCreate>(lpVtbl->RecordCreate)(
+                return Marshal.GetDelegateForFunctionPointer<_RecordCreate>(lpVtbl->RecordCreate)(
                     This
                 );
             }
@@ -451,7 +450,7 @@ namespace TerraFX.Interop
         {
             fixed (IRecordInfo* This = &this)
             {
-                return MarshalFunction<_RecordCreateCopy>(lpVtbl->RecordCreateCopy)(
+                return Marshal.GetDelegateForFunctionPointer<_RecordCreateCopy>(lpVtbl->RecordCreateCopy)(
                     This,
                     pvSource,
                     ppvDest
@@ -466,7 +465,7 @@ namespace TerraFX.Interop
         {
             fixed (IRecordInfo* This = &this)
             {
-                return MarshalFunction<_RecordDestroy>(lpVtbl->RecordDestroy)(
+                return Marshal.GetDelegateForFunctionPointer<_RecordDestroy>(lpVtbl->RecordDestroy)(
                     This,
                     pvRecord
                 );

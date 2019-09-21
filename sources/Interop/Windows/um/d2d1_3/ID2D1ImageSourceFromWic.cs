@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -104,7 +103,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ImageSourceFromWic* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -117,7 +116,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ImageSourceFromWic* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -128,7 +127,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ImageSourceFromWic* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -142,7 +141,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ImageSourceFromWic* This = &this)
             {
-                MarshalFunction<_GetFactory>(lpVtbl->GetFactory)(
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
                     This,
                     factory
                 );
@@ -156,7 +155,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ImageSourceFromWic* This = &this)
             {
-                return MarshalFunction<_OfferResources>(lpVtbl->OfferResources)(
+                return Marshal.GetDelegateForFunctionPointer<_OfferResources>(lpVtbl->OfferResources)(
                     This
                 );
             }
@@ -169,7 +168,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ImageSourceFromWic* This = &this)
             {
-                return MarshalFunction<_TryReclaimResources>(lpVtbl->TryReclaimResources)(
+                return Marshal.GetDelegateForFunctionPointer<_TryReclaimResources>(lpVtbl->TryReclaimResources)(
                     This,
                     resourcesDiscarded
                 );
@@ -185,7 +184,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ImageSourceFromWic* This = &this)
             {
-                return MarshalFunction<_EnsureCached>(lpVtbl->EnsureCached)(
+                return Marshal.GetDelegateForFunctionPointer<_EnsureCached>(lpVtbl->EnsureCached)(
                     This,
                     rectangleToFill
                 );
@@ -199,7 +198,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ImageSourceFromWic* This = &this)
             {
-                return MarshalFunction<_TrimCache>(lpVtbl->TrimCache)(
+                return Marshal.GetDelegateForFunctionPointer<_TrimCache>(lpVtbl->TrimCache)(
                     This,
                     rectangleToPreserve
                 );
@@ -212,7 +211,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ImageSourceFromWic* This = &this)
             {
-                MarshalFunction<_GetSource>(lpVtbl->GetSource)(
+                Marshal.GetDelegateForFunctionPointer<_GetSource>(lpVtbl->GetSource)(
                     This,
                     wicBitmapSource
                 );

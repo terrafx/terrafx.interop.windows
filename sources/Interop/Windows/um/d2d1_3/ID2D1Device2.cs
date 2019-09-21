@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -166,7 +165,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Device2* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -179,7 +178,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Device2* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -190,7 +189,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Device2* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -204,7 +203,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Device2* This = &this)
             {
-                MarshalFunction<_GetFactory>(lpVtbl->GetFactory)(
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
                     This,
                     factory
                 );
@@ -221,7 +220,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Device2* This = &this)
             {
-                return MarshalFunction<_CreateDeviceContext>(lpVtbl->CreateDeviceContext)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateDeviceContext>(lpVtbl->CreateDeviceContext)(
                     This,
                     options,
                     deviceContext
@@ -239,7 +238,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Device2* This = &this)
             {
-                return MarshalFunction<_CreatePrintControl>(lpVtbl->CreatePrintControl)(
+                return Marshal.GetDelegateForFunctionPointer<_CreatePrintControl>(lpVtbl->CreatePrintControl)(
                     This,
                     wicFactory,
                     documentTarget,
@@ -255,7 +254,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Device2* This = &this)
             {
-                MarshalFunction<_SetMaximumTextureMemory>(lpVtbl->SetMaximumTextureMemory)(
+                Marshal.GetDelegateForFunctionPointer<_SetMaximumTextureMemory>(lpVtbl->SetMaximumTextureMemory)(
                     This,
                     maximumInBytes
                 );
@@ -267,7 +266,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Device2* This = &this)
             {
-                return MarshalFunction<_GetMaximumTextureMemory>(lpVtbl->GetMaximumTextureMemory)(
+                return Marshal.GetDelegateForFunctionPointer<_GetMaximumTextureMemory>(lpVtbl->GetMaximumTextureMemory)(
                     This
                 );
             }
@@ -279,7 +278,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Device2* This = &this)
             {
-                MarshalFunction<_ClearResources>(lpVtbl->ClearResources)(
+                Marshal.GetDelegateForFunctionPointer<_ClearResources>(lpVtbl->ClearResources)(
                     This,
                     millisecondsSinceUse
                 );
@@ -292,7 +291,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Device2* This = &this)
             {
-                return MarshalFunction<_GetRenderingPriority>(lpVtbl->GetRenderingPriority)(
+                return Marshal.GetDelegateForFunctionPointer<_GetRenderingPriority>(lpVtbl->GetRenderingPriority)(
                     This
                 );
             }
@@ -304,7 +303,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Device2* This = &this)
             {
-                MarshalFunction<_SetRenderingPriority>(lpVtbl->SetRenderingPriority)(
+                Marshal.GetDelegateForFunctionPointer<_SetRenderingPriority>(lpVtbl->SetRenderingPriority)(
                     This,
                     renderingPriority
                 );
@@ -319,7 +318,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Device2* This = &this)
             {
-                return MarshalFunction<_CreateDeviceContext1>(lpVtbl->CreateDeviceContext1)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateDeviceContext1>(lpVtbl->CreateDeviceContext1)(
                     This,
                     options,
                     deviceContext1
@@ -337,7 +336,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Device2* This = &this)
             {
-                return MarshalFunction<_CreateDeviceContext2>(lpVtbl->CreateDeviceContext2)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateDeviceContext2>(lpVtbl->CreateDeviceContext2)(
                     This,
                     options,
                     deviceContext2
@@ -351,7 +350,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Device2* This = &this)
             {
-                MarshalFunction<_FlushDeviceContexts>(lpVtbl->FlushDeviceContexts)(
+                Marshal.GetDelegateForFunctionPointer<_FlushDeviceContexts>(lpVtbl->FlushDeviceContexts)(
                     This,
                     bitmap
                 );
@@ -365,7 +364,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Device2* This = &this)
             {
-                return MarshalFunction<_GetDxgiDevice>(lpVtbl->GetDxgiDevice)(
+                return Marshal.GetDelegateForFunctionPointer<_GetDxgiDevice>(lpVtbl->GetDxgiDevice)(
                     This,
                     dxgiDevice
                 );

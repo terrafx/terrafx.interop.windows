@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -169,7 +168,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1BitmapBrush1* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -182,7 +181,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1BitmapBrush1* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -193,7 +192,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1BitmapBrush1* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -207,7 +206,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1BitmapBrush1* This = &this)
             {
-                MarshalFunction<_GetFactory>(lpVtbl->GetFactory)(
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
                     This,
                     factory
                 );
@@ -222,7 +221,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1BitmapBrush1* This = &this)
             {
-                MarshalFunction<_SetOpacity>(lpVtbl->SetOpacity)(
+                Marshal.GetDelegateForFunctionPointer<_SetOpacity>(lpVtbl->SetOpacity)(
                     This,
                     opacity
                 );
@@ -235,7 +234,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1BitmapBrush1* This = &this)
             {
-                MarshalFunction<_SetTransform>(lpVtbl->SetTransform)(
+                Marshal.GetDelegateForFunctionPointer<_SetTransform>(lpVtbl->SetTransform)(
                     This,
                     transform
                 );
@@ -247,7 +246,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1BitmapBrush1* This = &this)
             {
-                return MarshalFunction<_GetOpacity>(lpVtbl->GetOpacity)(
+                return Marshal.GetDelegateForFunctionPointer<_GetOpacity>(lpVtbl->GetOpacity)(
                     This
                 );
             }
@@ -259,7 +258,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1BitmapBrush1* This = &this)
             {
-                MarshalFunction<_GetTransform>(lpVtbl->GetTransform)(
+                Marshal.GetDelegateForFunctionPointer<_GetTransform>(lpVtbl->GetTransform)(
                     This,
                     transform
                 );
@@ -274,7 +273,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1BitmapBrush1* This = &this)
             {
-                MarshalFunction<_SetExtendModeX>(lpVtbl->SetExtendModeX)(
+                Marshal.GetDelegateForFunctionPointer<_SetExtendModeX>(lpVtbl->SetExtendModeX)(
                     This,
                     extendModeX
                 );
@@ -287,7 +286,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1BitmapBrush1* This = &this)
             {
-                MarshalFunction<_SetExtendModeY>(lpVtbl->SetExtendModeY)(
+                Marshal.GetDelegateForFunctionPointer<_SetExtendModeY>(lpVtbl->SetExtendModeY)(
                     This,
                     extendModeY
                 );
@@ -300,7 +299,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1BitmapBrush1* This = &this)
             {
-                MarshalFunction<_SetInterpolationMode>(lpVtbl->SetInterpolationMode)(
+                Marshal.GetDelegateForFunctionPointer<_SetInterpolationMode>(lpVtbl->SetInterpolationMode)(
                     This,
                     interpolationMode
                 );
@@ -313,7 +312,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1BitmapBrush1* This = &this)
             {
-                MarshalFunction<_SetBitmap>(lpVtbl->SetBitmap)(
+                Marshal.GetDelegateForFunctionPointer<_SetBitmap>(lpVtbl->SetBitmap)(
                     This,
                     bitmap
                 );
@@ -324,7 +323,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1BitmapBrush1* This = &this)
             {
-                return MarshalFunction<_GetExtendModeX>(lpVtbl->GetExtendModeX)(
+                return Marshal.GetDelegateForFunctionPointer<_GetExtendModeX>(lpVtbl->GetExtendModeX)(
                     This
                 );
             }
@@ -334,7 +333,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1BitmapBrush1* This = &this)
             {
-                return MarshalFunction<_GetExtendModeY>(lpVtbl->GetExtendModeY)(
+                return Marshal.GetDelegateForFunctionPointer<_GetExtendModeY>(lpVtbl->GetExtendModeY)(
                     This
                 );
             }
@@ -344,7 +343,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1BitmapBrush1* This = &this)
             {
-                return MarshalFunction<_GetInterpolationMode>(lpVtbl->GetInterpolationMode)(
+                return Marshal.GetDelegateForFunctionPointer<_GetInterpolationMode>(lpVtbl->GetInterpolationMode)(
                     This
                 );
             }
@@ -356,7 +355,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1BitmapBrush1* This = &this)
             {
-                MarshalFunction<_GetBitmap>(lpVtbl->GetBitmap)(
+                Marshal.GetDelegateForFunctionPointer<_GetBitmap>(lpVtbl->GetBitmap)(
                     This,
                     bitmap
                 );
@@ -371,7 +370,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1BitmapBrush1* This = &this)
             {
-                MarshalFunction<_SetInterpolationMode1>(lpVtbl->SetInterpolationMode1)(
+                Marshal.GetDelegateForFunctionPointer<_SetInterpolationMode1>(lpVtbl->SetInterpolationMode1)(
                     This,
                     interpolationMode
                 );
@@ -382,7 +381,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1BitmapBrush1* This = &this)
             {
-                return MarshalFunction<_GetInterpolationMode1>(lpVtbl->GetInterpolationMode1)(
+                return Marshal.GetDelegateForFunctionPointer<_GetInterpolationMode1>(lpVtbl->GetInterpolationMode1)(
                     This
                 );
             }

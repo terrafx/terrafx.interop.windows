@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -163,7 +162,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -176,7 +175,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -187,7 +186,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -201,7 +200,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
-                MarshalFunction<_GetFactory>(lpVtbl->GetFactory)(
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
                     This,
                     factory
                 );
@@ -216,7 +215,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
-                MarshalFunction<_SetOpacity>(lpVtbl->SetOpacity)(
+                Marshal.GetDelegateForFunctionPointer<_SetOpacity>(lpVtbl->SetOpacity)(
                     This,
                     opacity
                 );
@@ -229,7 +228,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
-                MarshalFunction<_SetTransform>(lpVtbl->SetTransform)(
+                Marshal.GetDelegateForFunctionPointer<_SetTransform>(lpVtbl->SetTransform)(
                     This,
                     transform
                 );
@@ -241,7 +240,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
-                return MarshalFunction<_GetOpacity>(lpVtbl->GetOpacity)(
+                return Marshal.GetDelegateForFunctionPointer<_GetOpacity>(lpVtbl->GetOpacity)(
                     This
                 );
             }
@@ -253,7 +252,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
-                MarshalFunction<_GetTransform>(lpVtbl->GetTransform)(
+                Marshal.GetDelegateForFunctionPointer<_GetTransform>(lpVtbl->GetTransform)(
                     This,
                     transform
                 );
@@ -268,7 +267,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
-                MarshalFunction<_SetCenter>(lpVtbl->SetCenter)(
+                Marshal.GetDelegateForFunctionPointer<_SetCenter>(lpVtbl->SetCenter)(
                     This,
                     center
                 );
@@ -281,7 +280,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
-                MarshalFunction<_SetGradientOriginOffset>(lpVtbl->SetGradientOriginOffset)(
+                Marshal.GetDelegateForFunctionPointer<_SetGradientOriginOffset>(lpVtbl->SetGradientOriginOffset)(
                     This,
                     gradientOriginOffset
                 );
@@ -294,7 +293,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
-                MarshalFunction<_SetRadiusX>(lpVtbl->SetRadiusX)(
+                Marshal.GetDelegateForFunctionPointer<_SetRadiusX>(lpVtbl->SetRadiusX)(
                     This,
                     radiusX
                 );
@@ -307,7 +306,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
-                MarshalFunction<_SetRadiusY>(lpVtbl->SetRadiusY)(
+                Marshal.GetDelegateForFunctionPointer<_SetRadiusY>(lpVtbl->SetRadiusY)(
                     This,
                     radiusY
                 );
@@ -320,7 +319,7 @@ namespace TerraFX.Interop
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
                 D2D_POINT_2F result;
-                return *MarshalFunction<_GetCenter>(lpVtbl->GetCenter)(
+                return *Marshal.GetDelegateForFunctionPointer<_GetCenter>(lpVtbl->GetCenter)(
                     This,
                     &result
                 );
@@ -333,7 +332,7 @@ namespace TerraFX.Interop
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
                 D2D_POINT_2F result;
-                return *MarshalFunction<_GetGradientOriginOffset>(lpVtbl->GetGradientOriginOffset)(
+                return *Marshal.GetDelegateForFunctionPointer<_GetGradientOriginOffset>(lpVtbl->GetGradientOriginOffset)(
                     This,
                     &result
                 );
@@ -345,7 +344,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
-                return MarshalFunction<_GetRadiusX>(lpVtbl->GetRadiusX)(
+                return Marshal.GetDelegateForFunctionPointer<_GetRadiusX>(lpVtbl->GetRadiusX)(
                     This
                 );
             }
@@ -356,7 +355,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
-                return MarshalFunction<_GetRadiusY>(lpVtbl->GetRadiusY)(
+                return Marshal.GetDelegateForFunctionPointer<_GetRadiusY>(lpVtbl->GetRadiusY)(
                     This
                 );
             }
@@ -368,7 +367,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
-                MarshalFunction<_GetGradientStopCollection>(lpVtbl->GetGradientStopCollection)(
+                Marshal.GetDelegateForFunctionPointer<_GetGradientStopCollection>(lpVtbl->GetGradientStopCollection)(
                     This,
                     gradientStopCollection
                 );

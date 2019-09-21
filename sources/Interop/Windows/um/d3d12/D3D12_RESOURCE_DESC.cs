@@ -3,13 +3,12 @@
 // Ported from um\d3d12.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using static TerraFX.Interop.D3D12;
 using static TerraFX.Interop.D3D12_RESOURCE_DIMENSION;
 using static TerraFX.Interop.D3D12_RESOURCE_FLAGS;
 using static TerraFX.Interop.D3D12_TEXTURE_LAYOUT;
 using static TerraFX.Interop.DXGI_FORMAT;
-using static TerraFX.Utilities.HashUtilities;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -148,20 +147,20 @@ namespace TerraFX.Interop
 
         public override int GetHashCode()
         {
-            var combinedValue = 0;
+            var hashCode = new HashCode();
             {
-                combinedValue = CombineValue(Dimension.GetHashCode(), combinedValue);
-                combinedValue = CombineValue(Alignment.GetHashCode(), combinedValue);
-                combinedValue = CombineValue(Width.GetHashCode(), combinedValue);
-                combinedValue = CombineValue(Height.GetHashCode(), combinedValue);
-                combinedValue = CombineValue(DepthOrArraySize.GetHashCode(), combinedValue);
-                combinedValue = CombineValue(MipLevels.GetHashCode(), combinedValue);
-                combinedValue = CombineValue(Format.GetHashCode(), combinedValue);
-                combinedValue = CombineValue(SampleDesc.GetHashCode(), combinedValue);
-                combinedValue = CombineValue(Layout.GetHashCode(), combinedValue);
-                combinedValue = CombineValue(Flags.GetHashCode(), combinedValue);
+                hashCode.Add(Dimension);
+                hashCode.Add(Alignment);
+                hashCode.Add(Width);
+                hashCode.Add(Height);
+                hashCode.Add(DepthOrArraySize);
+                hashCode.Add(MipLevels);
+                hashCode.Add(Format);
+                hashCode.Add(SampleDesc);
+                hashCode.Add(Layout);
+                hashCode.Add(Flags);
             }
-            return FinalizeValue(combinedValue, SizeOf<D3D12_RESOURCE_DESC>());
+            return hashCode.ToHashCode();
         }
         #endregion
     }

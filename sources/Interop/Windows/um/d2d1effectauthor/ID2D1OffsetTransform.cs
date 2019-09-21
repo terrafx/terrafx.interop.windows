@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -79,7 +78,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1OffsetTransform* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -92,7 +91,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1OffsetTransform* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -103,7 +102,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1OffsetTransform* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -116,7 +115,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1OffsetTransform* This = &this)
             {
-                return MarshalFunction<_GetInputCount>(lpVtbl->GetInputCount)(
+                return Marshal.GetDelegateForFunctionPointer<_GetInputCount>(lpVtbl->GetInputCount)(
                     This
                 );
             }
@@ -130,7 +129,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1OffsetTransform* This = &this)
             {
-                MarshalFunction<_SetOffset>(lpVtbl->SetOffset)(
+                Marshal.GetDelegateForFunctionPointer<_SetOffset>(lpVtbl->SetOffset)(
                     This,
                     offset
                 );
@@ -143,7 +142,7 @@ namespace TerraFX.Interop
             fixed (ID2D1OffsetTransform* This = &this)
             {
                 POINT result;
-                return *MarshalFunction<_GetOffset>(lpVtbl->GetOffset)(
+                return *Marshal.GetDelegateForFunctionPointer<_GetOffset>(lpVtbl->GetOffset)(
                     This,
                     &result
                 );

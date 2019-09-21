@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -253,7 +252,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutput3* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -266,7 +265,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutput3* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -277,7 +276,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutput3* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -294,7 +293,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutput3* This = &this)
             {
-                return MarshalFunction<_SetPrivateData>(lpVtbl->SetPrivateData)(
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)(
                     This,
                     Name,
                     DataSize,
@@ -311,7 +310,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutput3* This = &this)
             {
-                return MarshalFunction<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(
                     This,
                     Name,
                     pUnknown
@@ -328,7 +327,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutput3* This = &this)
             {
-                return MarshalFunction<_GetPrivateData>(lpVtbl->GetPrivateData)(
+                return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)(
                     This,
                     Name,
                     pDataSize,
@@ -345,7 +344,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutput3* This = &this)
             {
-                return MarshalFunction<_GetParent>(lpVtbl->GetParent)(
+                return Marshal.GetDelegateForFunctionPointer<_GetParent>(lpVtbl->GetParent)(
                     This,
                     riid,
                     ppParent
@@ -362,7 +361,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutput3* This = &this)
             {
-                return MarshalFunction<_GetDesc>(lpVtbl->GetDesc)(
+                return Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)(
                     This,
                     pDesc
                 );
@@ -379,7 +378,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutput3* This = &this)
             {
-                return MarshalFunction<_GetDisplayModeList>(lpVtbl->GetDisplayModeList)(
+                return Marshal.GetDelegateForFunctionPointer<_GetDisplayModeList>(lpVtbl->GetDisplayModeList)(
                     This,
                     EnumFormat,
                     Flags,
@@ -398,7 +397,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutput3* This = &this)
             {
-                return MarshalFunction<_FindClosestMatchingMode>(lpVtbl->FindClosestMatchingMode)(
+                return Marshal.GetDelegateForFunctionPointer<_FindClosestMatchingMode>(lpVtbl->FindClosestMatchingMode)(
                     This,
                     pModeToMatch,
                     pClosestMatch,
@@ -412,7 +411,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutput3* This = &this)
             {
-                return MarshalFunction<_WaitForVBlank>(lpVtbl->WaitForVBlank)(
+                return Marshal.GetDelegateForFunctionPointer<_WaitForVBlank>(lpVtbl->WaitForVBlank)(
                     This
                 );
             }
@@ -426,7 +425,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutput3* This = &this)
             {
-                return MarshalFunction<_TakeOwnership>(lpVtbl->TakeOwnership)(
+                return Marshal.GetDelegateForFunctionPointer<_TakeOwnership>(lpVtbl->TakeOwnership)(
                     This,
                     pDevice,
                     Exclusive
@@ -438,7 +437,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutput3* This = &this)
             {
-                MarshalFunction<_ReleaseOwnership>(lpVtbl->ReleaseOwnership)(
+                Marshal.GetDelegateForFunctionPointer<_ReleaseOwnership>(lpVtbl->ReleaseOwnership)(
                     This
                 );
             }
@@ -451,7 +450,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutput3* This = &this)
             {
-                return MarshalFunction<_GetGammaControlCapabilities>(lpVtbl->GetGammaControlCapabilities)(
+                return Marshal.GetDelegateForFunctionPointer<_GetGammaControlCapabilities>(lpVtbl->GetGammaControlCapabilities)(
                     This,
                     pGammaCaps
                 );
@@ -465,7 +464,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutput3* This = &this)
             {
-                return MarshalFunction<_SetGammaControl>(lpVtbl->SetGammaControl)(
+                return Marshal.GetDelegateForFunctionPointer<_SetGammaControl>(lpVtbl->SetGammaControl)(
                     This,
                     pArray
                 );
@@ -479,7 +478,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutput3* This = &this)
             {
-                return MarshalFunction<_GetGammaControl>(lpVtbl->GetGammaControl)(
+                return Marshal.GetDelegateForFunctionPointer<_GetGammaControl>(lpVtbl->GetGammaControl)(
                     This,
                     pArray
                 );
@@ -493,7 +492,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutput3* This = &this)
             {
-                return MarshalFunction<_SetDisplaySurface>(lpVtbl->SetDisplaySurface)(
+                return Marshal.GetDelegateForFunctionPointer<_SetDisplaySurface>(lpVtbl->SetDisplaySurface)(
                     This,
                     pScanoutSurface
                 );
@@ -507,7 +506,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutput3* This = &this)
             {
-                return MarshalFunction<_GetDisplaySurfaceData>(lpVtbl->GetDisplaySurfaceData)(
+                return Marshal.GetDelegateForFunctionPointer<_GetDisplaySurfaceData>(lpVtbl->GetDisplaySurfaceData)(
                     This,
                     pDestination
                 );
@@ -521,7 +520,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutput3* This = &this)
             {
-                return MarshalFunction<_GetFrameStatistics>(lpVtbl->GetFrameStatistics)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFrameStatistics>(lpVtbl->GetFrameStatistics)(
                     This,
                     pStats
                 );
@@ -540,7 +539,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutput3* This = &this)
             {
-                return MarshalFunction<_GetDisplayModeList1>(lpVtbl->GetDisplayModeList1)(
+                return Marshal.GetDelegateForFunctionPointer<_GetDisplayModeList1>(lpVtbl->GetDisplayModeList1)(
                     This,
                     EnumFormat,
                     Flags,
@@ -559,7 +558,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutput3* This = &this)
             {
-                return MarshalFunction<_FindClosestMatchingMode1>(lpVtbl->FindClosestMatchingMode1)(
+                return Marshal.GetDelegateForFunctionPointer<_FindClosestMatchingMode1>(lpVtbl->FindClosestMatchingMode1)(
                     This,
                     pModeToMatch,
                     pClosestMatch,
@@ -575,7 +574,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutput3* This = &this)
             {
-                return MarshalFunction<_GetDisplaySurfaceData1>(lpVtbl->GetDisplaySurfaceData1)(
+                return Marshal.GetDelegateForFunctionPointer<_GetDisplaySurfaceData1>(lpVtbl->GetDisplaySurfaceData1)(
                     This,
                     pDestination
                 );
@@ -590,7 +589,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutput3* This = &this)
             {
-                return MarshalFunction<_DuplicateOutput>(lpVtbl->DuplicateOutput)(
+                return Marshal.GetDelegateForFunctionPointer<_DuplicateOutput>(lpVtbl->DuplicateOutput)(
                     This,
                     pDevice,
                     ppOutputDuplication
@@ -605,7 +604,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutput3* This = &this)
             {
-                return MarshalFunction<_SupportsOverlays>(lpVtbl->SupportsOverlays)(
+                return Marshal.GetDelegateForFunctionPointer<_SupportsOverlays>(lpVtbl->SupportsOverlays)(
                     This
                 );
             }
@@ -622,7 +621,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutput3* This = &this)
             {
-                return MarshalFunction<_CheckOverlaySupport>(lpVtbl->CheckOverlaySupport)(
+                return Marshal.GetDelegateForFunctionPointer<_CheckOverlaySupport>(lpVtbl->CheckOverlaySupport)(
                     This,
                     EnumFormat,
                     pConcernedDevice,

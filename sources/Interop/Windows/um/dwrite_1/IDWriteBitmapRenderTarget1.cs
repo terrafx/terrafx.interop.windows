@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -174,7 +173,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteBitmapRenderTarget1* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -187,7 +186,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteBitmapRenderTarget1* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -198,7 +197,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteBitmapRenderTarget1* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -219,7 +218,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteBitmapRenderTarget1* This = &this)
             {
-                return MarshalFunction<_DrawGlyphRun>(lpVtbl->DrawGlyphRun)(
+                return Marshal.GetDelegateForFunctionPointer<_DrawGlyphRun>(lpVtbl->DrawGlyphRun)(
                     This,
                     baselineOriginX,
                     baselineOriginY,
@@ -237,7 +236,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteBitmapRenderTarget1* This = &this)
             {
-                return MarshalFunction<_GetMemoryDC>(lpVtbl->GetMemoryDC)(
+                return Marshal.GetDelegateForFunctionPointer<_GetMemoryDC>(lpVtbl->GetMemoryDC)(
                     This
                 );
             }
@@ -248,7 +247,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteBitmapRenderTarget1* This = &this)
             {
-                return MarshalFunction<_GetPixelsPerDip>(lpVtbl->GetPixelsPerDip)(
+                return Marshal.GetDelegateForFunctionPointer<_GetPixelsPerDip>(lpVtbl->GetPixelsPerDip)(
                     This
                 );
             }
@@ -261,7 +260,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteBitmapRenderTarget1* This = &this)
             {
-                return MarshalFunction<_SetPixelsPerDip>(lpVtbl->SetPixelsPerDip)(
+                return Marshal.GetDelegateForFunctionPointer<_SetPixelsPerDip>(lpVtbl->SetPixelsPerDip)(
                     This,
                     pixelsPerDip
                 );
@@ -275,7 +274,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteBitmapRenderTarget1* This = &this)
             {
-                return MarshalFunction<_GetCurrentTransform>(lpVtbl->GetCurrentTransform)(
+                return Marshal.GetDelegateForFunctionPointer<_GetCurrentTransform>(lpVtbl->GetCurrentTransform)(
                     This,
                     transform
                 );
@@ -289,7 +288,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteBitmapRenderTarget1* This = &this)
             {
-                return MarshalFunction<_SetCurrentTransform>(lpVtbl->SetCurrentTransform)(
+                return Marshal.GetDelegateForFunctionPointer<_SetCurrentTransform>(lpVtbl->SetCurrentTransform)(
                     This,
                     transform
                 );
@@ -303,7 +302,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteBitmapRenderTarget1* This = &this)
             {
-                return MarshalFunction<_GetSize>(lpVtbl->GetSize)(
+                return Marshal.GetDelegateForFunctionPointer<_GetSize>(lpVtbl->GetSize)(
                     This,
                     size
                 );
@@ -318,7 +317,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteBitmapRenderTarget1* This = &this)
             {
-                return MarshalFunction<_Resize>(lpVtbl->Resize)(
+                return Marshal.GetDelegateForFunctionPointer<_Resize>(lpVtbl->Resize)(
                     This,
                     width,
                     height
@@ -332,7 +331,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteBitmapRenderTarget1* This = &this)
             {
-                return MarshalFunction<_GetTextAntialiasMode>(lpVtbl->GetTextAntialiasMode)(
+                return Marshal.GetDelegateForFunctionPointer<_GetTextAntialiasMode>(lpVtbl->GetTextAntialiasMode)(
                     This
                 );
             }
@@ -345,7 +344,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteBitmapRenderTarget1* This = &this)
             {
-                return MarshalFunction<_SetTextAntialiasMode>(lpVtbl->SetTextAntialiasMode)(
+                return Marshal.GetDelegateForFunctionPointer<_SetTextAntialiasMode>(lpVtbl->SetTextAntialiasMode)(
                     This,
                     antialiasMode
                 );

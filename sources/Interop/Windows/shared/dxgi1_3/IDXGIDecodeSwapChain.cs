@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -127,7 +126,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDecodeSwapChain* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -140,7 +139,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDecodeSwapChain* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -151,7 +150,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDecodeSwapChain* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -168,7 +167,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDecodeSwapChain* This = &this)
             {
-                return MarshalFunction<_PresentBuffer>(lpVtbl->PresentBuffer)(
+                return Marshal.GetDelegateForFunctionPointer<_PresentBuffer>(lpVtbl->PresentBuffer)(
                     This,
                     BufferToPresent,
                     SyncInterval,
@@ -184,7 +183,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDecodeSwapChain* This = &this)
             {
-                return MarshalFunction<_SetSourceRect>(lpVtbl->SetSourceRect)(
+                return Marshal.GetDelegateForFunctionPointer<_SetSourceRect>(lpVtbl->SetSourceRect)(
                     This,
                     pRect
                 );
@@ -198,7 +197,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDecodeSwapChain* This = &this)
             {
-                return MarshalFunction<_SetTargetRect>(lpVtbl->SetTargetRect)(
+                return Marshal.GetDelegateForFunctionPointer<_SetTargetRect>(lpVtbl->SetTargetRect)(
                     This,
                     pRect
                 );
@@ -213,7 +212,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDecodeSwapChain* This = &this)
             {
-                return MarshalFunction<_SetDestSize>(lpVtbl->SetDestSize)(
+                return Marshal.GetDelegateForFunctionPointer<_SetDestSize>(lpVtbl->SetDestSize)(
                     This,
                     Width,
                     Height
@@ -228,7 +227,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDecodeSwapChain* This = &this)
             {
-                return MarshalFunction<_GetSourceRect>(lpVtbl->GetSourceRect)(
+                return Marshal.GetDelegateForFunctionPointer<_GetSourceRect>(lpVtbl->GetSourceRect)(
                     This,
                     pRect
                 );
@@ -242,7 +241,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDecodeSwapChain* This = &this)
             {
-                return MarshalFunction<_GetTargetRect>(lpVtbl->GetTargetRect)(
+                return Marshal.GetDelegateForFunctionPointer<_GetTargetRect>(lpVtbl->GetTargetRect)(
                     This,
                     pRect
                 );
@@ -257,7 +256,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDecodeSwapChain* This = &this)
             {
-                return MarshalFunction<_GetDestSize>(lpVtbl->GetDestSize)(
+                return Marshal.GetDelegateForFunctionPointer<_GetDestSize>(lpVtbl->GetDestSize)(
                     This,
                     pWidth,
                     pHeight
@@ -272,7 +271,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDecodeSwapChain* This = &this)
             {
-                return MarshalFunction<_SetColorSpace>(lpVtbl->SetColorSpace)(
+                return Marshal.GetDelegateForFunctionPointer<_SetColorSpace>(lpVtbl->SetColorSpace)(
                     This,
                     ColorSpace
                 );
@@ -283,7 +282,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDecodeSwapChain* This = &this)
             {
-                return MarshalFunction<_GetColorSpace>(lpVtbl->GetColorSpace)(
+                return Marshal.GetDelegateForFunctionPointer<_GetColorSpace>(lpVtbl->GetColorSpace)(
                     This
                 );
             }

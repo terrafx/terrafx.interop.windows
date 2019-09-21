@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -193,7 +192,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChain* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -206,7 +205,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChain* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -217,7 +216,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChain* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -234,7 +233,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChain* This = &this)
             {
-                return MarshalFunction<_SetPrivateData>(lpVtbl->SetPrivateData)(
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)(
                     This,
                     Name,
                     DataSize,
@@ -251,7 +250,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChain* This = &this)
             {
-                return MarshalFunction<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(
                     This,
                     Name,
                     pUnknown
@@ -268,7 +267,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChain* This = &this)
             {
-                return MarshalFunction<_GetPrivateData>(lpVtbl->GetPrivateData)(
+                return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)(
                     This,
                     Name,
                     pDataSize,
@@ -285,7 +284,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChain* This = &this)
             {
-                return MarshalFunction<_GetParent>(lpVtbl->GetParent)(
+                return Marshal.GetDelegateForFunctionPointer<_GetParent>(lpVtbl->GetParent)(
                     This,
                     riid,
                     ppParent
@@ -303,7 +302,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChain* This = &this)
             {
-                return MarshalFunction<_GetDevice>(lpVtbl->GetDevice)(
+                return Marshal.GetDelegateForFunctionPointer<_GetDevice>(lpVtbl->GetDevice)(
                     This,
                     riid,
                     ppDevice
@@ -321,7 +320,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChain* This = &this)
             {
-                return MarshalFunction<_Present>(lpVtbl->Present)(
+                return Marshal.GetDelegateForFunctionPointer<_Present>(lpVtbl->Present)(
                     This,
                     SyncInterval,
                     Flags
@@ -338,7 +337,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChain* This = &this)
             {
-                return MarshalFunction<_GetBuffer>(lpVtbl->GetBuffer)(
+                return Marshal.GetDelegateForFunctionPointer<_GetBuffer>(lpVtbl->GetBuffer)(
                     This,
                     Buffer,
                     riid,
@@ -355,7 +354,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChain* This = &this)
             {
-                return MarshalFunction<_SetFullscreenState>(lpVtbl->SetFullscreenState)(
+                return Marshal.GetDelegateForFunctionPointer<_SetFullscreenState>(lpVtbl->SetFullscreenState)(
                     This,
                     Fullscreen,
                     pTarget
@@ -371,7 +370,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChain* This = &this)
             {
-                return MarshalFunction<_GetFullscreenState>(lpVtbl->GetFullscreenState)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFullscreenState>(lpVtbl->GetFullscreenState)(
                     This,
                     pFullscreen,
                     ppTarget
@@ -386,7 +385,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChain* This = &this)
             {
-                return MarshalFunction<_GetDesc>(lpVtbl->GetDesc)(
+                return Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)(
                     This,
                     pDesc
                 );
@@ -404,7 +403,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChain* This = &this)
             {
-                return MarshalFunction<_ResizeBuffers>(lpVtbl->ResizeBuffers)(
+                return Marshal.GetDelegateForFunctionPointer<_ResizeBuffers>(lpVtbl->ResizeBuffers)(
                     This,
                     BufferCount,
                     Width,
@@ -422,7 +421,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChain* This = &this)
             {
-                return MarshalFunction<_ResizeTarget>(lpVtbl->ResizeTarget)(
+                return Marshal.GetDelegateForFunctionPointer<_ResizeTarget>(lpVtbl->ResizeTarget)(
                     This,
                     pNewTargetParameters
                 );
@@ -436,7 +435,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChain* This = &this)
             {
-                return MarshalFunction<_GetContainingOutput>(lpVtbl->GetContainingOutput)(
+                return Marshal.GetDelegateForFunctionPointer<_GetContainingOutput>(lpVtbl->GetContainingOutput)(
                     This,
                     ppOutput
                 );
@@ -450,7 +449,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChain* This = &this)
             {
-                return MarshalFunction<_GetFrameStatistics>(lpVtbl->GetFrameStatistics)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFrameStatistics>(lpVtbl->GetFrameStatistics)(
                     This,
                     pStats
                 );
@@ -464,7 +463,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChain* This = &this)
             {
-                return MarshalFunction<_GetLastPresentCount>(lpVtbl->GetLastPresentCount)(
+                return Marshal.GetDelegateForFunctionPointer<_GetLastPresentCount>(lpVtbl->GetLastPresentCount)(
                     This,
                     pLastPresentCount
                 );

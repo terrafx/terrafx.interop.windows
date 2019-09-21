@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -232,7 +231,7 @@ namespace TerraFX.Interop
         {
             fixed (ITypeInfo* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -245,7 +244,7 @@ namespace TerraFX.Interop
         {
             fixed (ITypeInfo* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -256,7 +255,7 @@ namespace TerraFX.Interop
         {
             fixed (ITypeInfo* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -271,7 +270,7 @@ namespace TerraFX.Interop
         // {
         //     fixed (ITypeInfo* This = &this)
         //     {
-        //         return MarshalFunction<_GetTypeAttr>(lpVtbl->GetTypeAttr)(
+        //         return Marshal.GetDelegateForFunctionPointer<_GetTypeAttr>(lpVtbl->GetTypeAttr)(
         //             This,
         //             ppTypeAttr
         //         );
@@ -285,7 +284,7 @@ namespace TerraFX.Interop
         // {
         //     fixed (ITypeInfo* This = &this)
         //     {
-        //         return MarshalFunction<_GetTypeComp>(lpVtbl->GetTypeComp)(
+        //         return Marshal.GetDelegateForFunctionPointer<_GetTypeComp>(lpVtbl->GetTypeComp)(
         //             This,
         //             ppTComp
         //         );
@@ -300,7 +299,7 @@ namespace TerraFX.Interop
         // {
         //     fixed (ITypeInfo* This = &this)
         //     {
-        //         return MarshalFunction<_GetFuncDesc>(lpVtbl->GetFuncDesc)(
+        //         return Marshal.GetDelegateForFunctionPointer<_GetFuncDesc>(lpVtbl->GetFuncDesc)(
         //             This,
         //             index,
         //             ppFuncDesc
@@ -316,7 +315,7 @@ namespace TerraFX.Interop
         // {
         //     fixed (ITypeInfo* This = &this)
         //     {
-        //         return MarshalFunction<_GetVarDesc>(lpVtbl->GetVarDesc)(
+        //         return Marshal.GetDelegateForFunctionPointer<_GetVarDesc>(lpVtbl->GetVarDesc)(
         //             This,
         //             index,
         //             ppVarDesc
@@ -334,7 +333,7 @@ namespace TerraFX.Interop
         // {
         //     fixed (ITypeInfo* This = &this)
         //     {
-        //         return MarshalFunction<_GetNames>(lpVtbl->GetNames)(
+        //         return Marshal.GetDelegateForFunctionPointer<_GetNames>(lpVtbl->GetNames)(
         //             This,
         //             memid,
         //             rgBstrNames,
@@ -352,7 +351,7 @@ namespace TerraFX.Interop
         // {
         //     fixed (ITypeInfo* This = &this)
         //     {
-        //         return MarshalFunction<_GetRefTypeOfImplType>(lpVtbl->GetRefTypeOfImplType)(
+        //         return Marshal.GetDelegateForFunctionPointer<_GetRefTypeOfImplType>(lpVtbl->GetRefTypeOfImplType)(
         //             This,
         //             index,
         //             pRefType
@@ -368,7 +367,7 @@ namespace TerraFX.Interop
         // {
         //     fixed (ITypeInfo* This = &this)
         //     {
-        //         return MarshalFunction<_GetImplTypeFlags>(lpVtbl->GetImplTypeFlags)(
+        //         return Marshal.GetDelegateForFunctionPointer<_GetImplTypeFlags>(lpVtbl->GetImplTypeFlags)(
         //             This,
         //             index,
         //             pImplTypeFlags
@@ -385,7 +384,7 @@ namespace TerraFX.Interop
         // {
         //     fixed (ITypeInfo* This = &this)
         //     {
-        //         return MarshalFunction<_GetIDsOfNames>(lpVtbl->GetIDsOfNames)(
+        //         return Marshal.GetDelegateForFunctionPointer<_GetIDsOfNames>(lpVtbl->GetIDsOfNames)(
         //             This,
         //             rgszNames,
         //             cNames,
@@ -407,7 +406,7 @@ namespace TerraFX.Interop
         // {
         //     fixed (ITypeInfo* This = &this)
         //     {
-        //         return MarshalFunction<_Invoke>(lpVtbl->Invoke)(
+        //         return Marshal.GetDelegateForFunctionPointer<_Invoke>(lpVtbl->Invoke)(
         //             This,
         //             pvInstance,
         //             memid,
@@ -431,7 +430,7 @@ namespace TerraFX.Interop
         // {
         //     fixed (ITypeInfo* This = &this)
         //     {
-        //         return MarshalFunction<_GetDocumentation>(lpVtbl->GetDocumentation)(
+        //         return Marshal.GetDelegateForFunctionPointer<_GetDocumentation>(lpVtbl->GetDocumentation)(
         //             This,
         //             memid,
         //             pBstrName,
@@ -453,7 +452,7 @@ namespace TerraFX.Interop
         // {
         //     fixed (ITypeInfo* This = &this)
         //     {
-        //         return MarshalFunction<_GetDllEntry>(lpVtbl->GetDllEntry)(
+        //         return Marshal.GetDelegateForFunctionPointer<_GetDllEntry>(lpVtbl->GetDllEntry)(
         //             This,
         //             memid,
         //             invKind,
@@ -472,7 +471,7 @@ namespace TerraFX.Interop
         // {
         //     fixed (ITypeInfo* This = &this)
         //     {
-        //         return MarshalFunction<_GetRefTypeInfo>(lpVtbl->GetRefTypeInfo)(
+        //         return Marshal.GetDelegateForFunctionPointer<_GetRefTypeInfo>(lpVtbl->GetRefTypeInfo)(
         //             This,
         //             hRefType,
         //             ppTInfo
@@ -489,7 +488,7 @@ namespace TerraFX.Interop
         // {
         //     fixed (ITypeInfo* This = &this)
         //     {
-        //         return MarshalFunction<_AddressOfMember>(lpVtbl->AddressOfMember)(
+        //         return Marshal.GetDelegateForFunctionPointer<_AddressOfMember>(lpVtbl->AddressOfMember)(
         //             This,
         //             memid,
         //             invKind,
@@ -507,7 +506,7 @@ namespace TerraFX.Interop
         // {
         //     fixed (ITypeInfo* This = &this)
         //     {
-        //         return MarshalFunction<_CreateInstance>(lpVtbl->CreateInstance)(
+        //         return Marshal.GetDelegateForFunctionPointer<_CreateInstance>(lpVtbl->CreateInstance)(
         //             This,
         //             pUnkOuter,
         //             riid,
@@ -524,7 +523,7 @@ namespace TerraFX.Interop
         // {
         //     fixed (ITypeInfo* This = &this)
         //     {
-        //         return MarshalFunction<_GetMops>(lpVtbl->GetMops)(
+        //         return Marshal.GetDelegateForFunctionPointer<_GetMops>(lpVtbl->GetMops)(
         //             This,
         //             memid,
         //             pBstrMops
@@ -540,7 +539,7 @@ namespace TerraFX.Interop
         // {
         //     fixed (ITypeInfo* This = &this)
         //     {
-        //         return MarshalFunction<_GetContainingTypeLib>(lpVtbl->GetContainingTypeLib)(
+        //         return Marshal.GetDelegateForFunctionPointer<_GetContainingTypeLib>(lpVtbl->GetContainingTypeLib)(
         //             This,
         //             ppTLib,
         //             pIndex
@@ -554,7 +553,7 @@ namespace TerraFX.Interop
         // {
         //     fixed (ITypeInfo* This = &this)
         //     {
-        //         MarshalFunction<_ReleaseTypeAttr>(lpVtbl->ReleaseTypeAttr)(
+        //         Marshal.GetDelegateForFunctionPointer<_ReleaseTypeAttr>(lpVtbl->ReleaseTypeAttr)(
         //             This,
         //             pTypeAttr
         //         );
@@ -567,7 +566,7 @@ namespace TerraFX.Interop
         // {
         //     fixed (ITypeInfo* This = &this)
         //     {
-        //         MarshalFunction<_ReleaseFuncDesc>(lpVtbl->ReleaseFuncDesc)(
+        //         Marshal.GetDelegateForFunctionPointer<_ReleaseFuncDesc>(lpVtbl->ReleaseFuncDesc)(
         //             This,
         //             pFuncDesc
         //         );
@@ -580,7 +579,7 @@ namespace TerraFX.Interop
         // {
         //     fixed (ITypeInfo* This = &this)
         //     {
-        //         MarshalFunction<_ReleaseVarDesc>(lpVtbl->ReleaseVarDesc)(
+        //         Marshal.GetDelegateForFunctionPointer<_ReleaseVarDesc>(lpVtbl->ReleaseVarDesc)(
         //             This,
         //             pVarDesc
         //         );

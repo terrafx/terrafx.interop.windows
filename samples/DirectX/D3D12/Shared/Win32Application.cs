@@ -6,17 +6,16 @@
 using System;
 using System.Runtime.InteropServices;
 using TerraFX.Interop;
-using TerraFX.Utilities;
 using static TerraFX.Interop.User32;
 using static TerraFX.Interop.Windows;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Samples.DirectX.D3D12
 {
     public static unsafe class Win32Application
     {
         #region Static Fields
-        private static readonly NativeDelegate<WNDPROC> s_wndProc = new NativeDelegate<WNDPROC>(WindowProc);
+        private static readonly WNDPROC s_wndProc = WindowProc;
+        private static readonly IntPtr s_wndProcHandle = Marshal.GetFunctionPointerForDelegate(s_wndProc);
 
         private static IntPtr s_hwnd;
         #endregion
@@ -42,9 +41,9 @@ namespace TerraFX.Samples.DirectX.D3D12
             {
                 // Initialize the window class.
                 var windowClass = new WNDCLASSEX {
-                    cbSize = SizeOf<WNDCLASSEX>(),
+                    cbSize = (uint)sizeof(WNDCLASSEX),
                     style = CS_HREDRAW | CS_VREDRAW,
-                    lpfnWndProc = s_wndProc,
+                    lpfnWndProc = s_wndProcHandle,
                     hInstance = hInstance,
                     hCursor = LoadCursor(IntPtr.Zero, (char*)IDC_ARROW),
                     lpszClassName = lpszClassName

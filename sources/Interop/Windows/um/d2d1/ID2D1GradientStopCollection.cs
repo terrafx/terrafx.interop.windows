@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -95,7 +94,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1GradientStopCollection* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -108,7 +107,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1GradientStopCollection* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -119,7 +118,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1GradientStopCollection* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -133,7 +132,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1GradientStopCollection* This = &this)
             {
-                MarshalFunction<_GetFactory>(lpVtbl->GetFactory)(
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
                     This,
                     factory
                 );
@@ -147,7 +146,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1GradientStopCollection* This = &this)
             {
-                return MarshalFunction<_GetGradientStopCount>(lpVtbl->GetGradientStopCount)(
+                return Marshal.GetDelegateForFunctionPointer<_GetGradientStopCount>(lpVtbl->GetGradientStopCount)(
                     This
                 );
             }
@@ -160,7 +159,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1GradientStopCollection* This = &this)
             {
-                MarshalFunction<_GetGradientStops>(lpVtbl->GetGradientStops)(
+                Marshal.GetDelegateForFunctionPointer<_GetGradientStops>(lpVtbl->GetGradientStops)(
                     This,
                     gradientStops,
                     gradientStopsCount
@@ -172,7 +171,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1GradientStopCollection* This = &this)
             {
-                return MarshalFunction<_GetColorInterpolationGamma>(lpVtbl->GetColorInterpolationGamma)(
+                return Marshal.GetDelegateForFunctionPointer<_GetColorInterpolationGamma>(lpVtbl->GetColorInterpolationGamma)(
                     This
                 );
             }
@@ -182,7 +181,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1GradientStopCollection* This = &this)
             {
-                return MarshalFunction<_GetExtendMode>(lpVtbl->GetExtendMode)(
+                return Marshal.GetDelegateForFunctionPointer<_GetExtendMode>(lpVtbl->GetExtendMode)(
                     This
                 );
             }

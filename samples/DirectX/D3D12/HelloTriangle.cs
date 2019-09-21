@@ -6,6 +6,7 @@
 using System;
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using TerraFX.Interop;
 using static TerraFX.Interop.D3D_FEATURE_LEVEL;
 using static TerraFX.Interop.D3D_PRIMITIVE_TOPOLOGY;
@@ -43,8 +44,6 @@ using static TerraFX.Interop.DXGI_SWAP_EFFECT;
 using static TerraFX.Interop.Kernel32;
 using static TerraFX.Interop.Windows;
 using static TerraFX.Samples.DirectX.D3D12.DXSampleHelper;
-using static TerraFX.Utilities.ExceptionUtilities;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Samples.DirectX.D3D12
 {
@@ -475,7 +474,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                         };
                     }
 
-                    var vertexBufferSize = SizeOf<Vertex>() * 3;
+                    var vertexBufferSize = (uint)sizeof(Vertex) * 3;
 
                     // Note: using upload heaps to transfer static data like vert buffers is not
                     // recommended. Every time the GPU needs it, the upload heap will be marshalled
@@ -531,7 +530,7 @@ namespace TerraFX.Samples.DirectX.D3D12
 
                     // Initialize the vertex buffer view.
                     _vertexBufferView.BufferLocation = _vertexBuffer->GetGPUVirtualAddress();
-                    _vertexBufferView.StrideInBytes = SizeOf<Vertex>();
+                    _vertexBufferView.StrideInBytes = (uint)sizeof(Vertex);
                     _vertexBufferView.SizeInBytes = vertexBufferSize;
                 }
 
@@ -548,7 +547,8 @@ namespace TerraFX.Samples.DirectX.D3D12
                     _fenceEvent = CreateEvent(null, FALSE, FALSE, null);
                     if (_fenceEvent == IntPtr.Zero)
                     {
-                        ThrowExternalExceptionForLastHRESULT(nameof(CreateEvent));
+                        var hr = Marshal.GetHRForLastWin32Error();
+                        Marshal.ThrowExceptionForHR(hr);
                     }
 
                     // Wait for the command list to execute; we are reusing the same command

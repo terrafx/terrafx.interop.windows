@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -215,7 +214,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFont2* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -228,7 +227,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFont2* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -239,7 +238,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFont2* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -254,7 +253,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFont2* This = &this)
             {
-                return MarshalFunction<_GetFontFamily>(lpVtbl->GetFontFamily)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFontFamily>(lpVtbl->GetFontFamily)(
                     This,
                     fontFamily
                 );
@@ -265,7 +264,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFont2* This = &this)
             {
-                return MarshalFunction<_GetWeight>(lpVtbl->GetWeight)(
+                return Marshal.GetDelegateForFunctionPointer<_GetWeight>(lpVtbl->GetWeight)(
                     This
                 );
             }
@@ -275,7 +274,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFont2* This = &this)
             {
-                return MarshalFunction<_GetStretch>(lpVtbl->GetStretch)(
+                return Marshal.GetDelegateForFunctionPointer<_GetStretch>(lpVtbl->GetStretch)(
                     This
                 );
             }
@@ -285,7 +284,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFont2* This = &this)
             {
-                return MarshalFunction<_GetStyle>(lpVtbl->GetStyle)(
+                return Marshal.GetDelegateForFunctionPointer<_GetStyle>(lpVtbl->GetStyle)(
                     This
                 );
             }
@@ -296,7 +295,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFont2* This = &this)
             {
-                return MarshalFunction<_IsSymbolFont>(lpVtbl->IsSymbolFont)(
+                return Marshal.GetDelegateForFunctionPointer<_IsSymbolFont>(lpVtbl->IsSymbolFont)(
                     This
                 );
             }
@@ -309,7 +308,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFont2* This = &this)
             {
-                return MarshalFunction<_GetFaceNames>(lpVtbl->GetFaceNames)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFaceNames>(lpVtbl->GetFaceNames)(
                     This,
                     names
                 );
@@ -325,7 +324,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFont2* This = &this)
             {
-                return MarshalFunction<_GetInformationalStrings>(lpVtbl->GetInformationalStrings)(
+                return Marshal.GetDelegateForFunctionPointer<_GetInformationalStrings>(lpVtbl->GetInformationalStrings)(
                     This,
                     informationalStringID,
                     informationalStrings,
@@ -338,7 +337,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFont2* This = &this)
             {
-                return MarshalFunction<_GetSimulations>(lpVtbl->GetSimulations)(
+                return Marshal.GetDelegateForFunctionPointer<_GetSimulations>(lpVtbl->GetSimulations)(
                     This
                 );
             }
@@ -350,7 +349,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFont2* This = &this)
             {
-                MarshalFunction<_GetMetrics>(lpVtbl->GetMetrics)(
+                Marshal.GetDelegateForFunctionPointer<_GetMetrics>(lpVtbl->GetMetrics)(
                     This,
                     fontMetrics
                 );
@@ -365,7 +364,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFont2* This = &this)
             {
-                return MarshalFunction<_HasCharacter>(lpVtbl->HasCharacter)(
+                return Marshal.GetDelegateForFunctionPointer<_HasCharacter>(lpVtbl->HasCharacter)(
                     This,
                     unicodeValue,
                     exists
@@ -380,7 +379,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFont2* This = &this)
             {
-                return MarshalFunction<_CreateFontFace>(lpVtbl->CreateFontFace)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateFontFace>(lpVtbl->CreateFontFace)(
                     This,
                     fontFace
                 );
@@ -395,7 +394,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFont2* This = &this)
             {
-                MarshalFunction<_GetMetrics1>(lpVtbl->GetMetrics1)(
+                Marshal.GetDelegateForFunctionPointer<_GetMetrics1>(lpVtbl->GetMetrics1)(
                     This,
                     fontMetrics
                 );
@@ -408,7 +407,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFont2* This = &this)
             {
-                MarshalFunction<_GetPanose>(lpVtbl->GetPanose)(
+                Marshal.GetDelegateForFunctionPointer<_GetPanose>(lpVtbl->GetPanose)(
                     This,
                     panose
                 );
@@ -424,7 +423,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFont2* This = &this)
             {
-                return MarshalFunction<_GetUnicodeRanges>(lpVtbl->GetUnicodeRanges)(
+                return Marshal.GetDelegateForFunctionPointer<_GetUnicodeRanges>(lpVtbl->GetUnicodeRanges)(
                     This,
                     maxRangeCount,
                     unicodeRanges,
@@ -438,7 +437,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFont2* This = &this)
             {
-                return MarshalFunction<_IsMonospacedFont>(lpVtbl->IsMonospacedFont)(
+                return Marshal.GetDelegateForFunctionPointer<_IsMonospacedFont>(lpVtbl->IsMonospacedFont)(
                     This
                 );
             }
@@ -451,7 +450,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFont2* This = &this)
             {
-                return MarshalFunction<_IsColorFont>(lpVtbl->IsColorFont)(
+                return Marshal.GetDelegateForFunctionPointer<_IsColorFont>(lpVtbl->IsColorFont)(
                     This
                 );
             }

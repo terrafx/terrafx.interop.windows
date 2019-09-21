@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -88,7 +87,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICEnumMetadataItem* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -101,7 +100,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICEnumMetadataItem* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -112,7 +111,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICEnumMetadataItem* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -131,7 +130,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICEnumMetadataItem* This = &this)
             {
-                return MarshalFunction<_Next>(lpVtbl->Next)(
+                return Marshal.GetDelegateForFunctionPointer<_Next>(lpVtbl->Next)(
                     This,
                     celt,
                     rgeltSchema,
@@ -149,7 +148,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICEnumMetadataItem* This = &this)
             {
-                return MarshalFunction<_Skip>(lpVtbl->Skip)(
+                return Marshal.GetDelegateForFunctionPointer<_Skip>(lpVtbl->Skip)(
                     This,
                     celt
                 );
@@ -161,7 +160,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICEnumMetadataItem* This = &this)
             {
-                return MarshalFunction<_Reset>(lpVtbl->Reset)(
+                return Marshal.GetDelegateForFunctionPointer<_Reset>(lpVtbl->Reset)(
                     This
                 );
             }
@@ -174,7 +173,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICEnumMetadataItem* This = &this)
             {
-                return MarshalFunction<_Clone>(lpVtbl->Clone)(
+                return Marshal.GetDelegateForFunctionPointer<_Clone>(lpVtbl->Clone)(
                     This,
                     ppIEnumMetadataItem
                 );

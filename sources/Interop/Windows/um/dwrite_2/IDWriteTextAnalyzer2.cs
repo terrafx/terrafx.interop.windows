@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -559,7 +558,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -572,7 +571,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -583,7 +582,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -601,7 +600,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
-                return MarshalFunction<_AnalyzeScript>(lpVtbl->AnalyzeScript)(
+                return Marshal.GetDelegateForFunctionPointer<_AnalyzeScript>(lpVtbl->AnalyzeScript)(
                     This,
                     analysisSource,
                     textPosition,
@@ -621,7 +620,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
-                return MarshalFunction<_AnalyzeBidi>(lpVtbl->AnalyzeBidi)(
+                return Marshal.GetDelegateForFunctionPointer<_AnalyzeBidi>(lpVtbl->AnalyzeBidi)(
                     This,
                     analysisSource,
                     textPosition,
@@ -641,7 +640,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
-                return MarshalFunction<_AnalyzeNumberSubstitution>(lpVtbl->AnalyzeNumberSubstitution)(
+                return Marshal.GetDelegateForFunctionPointer<_AnalyzeNumberSubstitution>(lpVtbl->AnalyzeNumberSubstitution)(
                     This,
                     analysisSource,
                     textPosition,
@@ -661,7 +660,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
-                return MarshalFunction<_AnalyzeLineBreakpoints>(lpVtbl->AnalyzeLineBreakpoints)(
+                return Marshal.GetDelegateForFunctionPointer<_AnalyzeLineBreakpoints>(lpVtbl->AnalyzeLineBreakpoints)(
                     This,
                     analysisSource,
                     textPosition,
@@ -694,7 +693,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
-                return MarshalFunction<_GetGlyphs>(lpVtbl->GetGlyphs)(
+                return Marshal.GetDelegateForFunctionPointer<_GetGlyphs>(lpVtbl->GetGlyphs)(
                     This,
                     textString,
                     textLength,
@@ -741,7 +740,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
-                return MarshalFunction<_GetGlyphPlacements>(lpVtbl->GetGlyphPlacements)(
+                return Marshal.GetDelegateForFunctionPointer<_GetGlyphPlacements>(lpVtbl->GetGlyphPlacements)(
                     This,
                     textString,
                     clusterMap,
@@ -792,7 +791,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
-                return MarshalFunction<_GetGdiCompatibleGlyphPlacements>(lpVtbl->GetGdiCompatibleGlyphPlacements)(
+                return Marshal.GetDelegateForFunctionPointer<_GetGdiCompatibleGlyphPlacements>(lpVtbl->GetGdiCompatibleGlyphPlacements)(
                     This,
                     textString,
                     clusterMap,
@@ -838,7 +837,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
-                return MarshalFunction<_ApplyCharacterSpacing>(lpVtbl->ApplyCharacterSpacing)(
+                return Marshal.GetDelegateForFunctionPointer<_ApplyCharacterSpacing>(lpVtbl->ApplyCharacterSpacing)(
                     This,
                     leadingSpacing,
                     trailingSpacing,
@@ -869,7 +868,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
-                return MarshalFunction<_GetBaseline>(lpVtbl->GetBaseline)(
+                return Marshal.GetDelegateForFunctionPointer<_GetBaseline>(lpVtbl->GetBaseline)(
                     This,
                     fontFace,
                     baseline,
@@ -893,7 +892,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
-                return MarshalFunction<_AnalyzeVerticalGlyphOrientation>(lpVtbl->AnalyzeVerticalGlyphOrientation)(
+                return Marshal.GetDelegateForFunctionPointer<_AnalyzeVerticalGlyphOrientation>(lpVtbl->AnalyzeVerticalGlyphOrientation)(
                     This,
                     analysisSource,
                     textPosition,
@@ -912,7 +911,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
-                return MarshalFunction<_GetGlyphOrientationTransform>(lpVtbl->GetGlyphOrientationTransform)(
+                return Marshal.GetDelegateForFunctionPointer<_GetGlyphOrientationTransform>(lpVtbl->GetGlyphOrientationTransform)(
                     This,
                     glyphOrientationAngle,
                     isSideways,
@@ -929,7 +928,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
-                return MarshalFunction<_GetScriptProperties>(lpVtbl->GetScriptProperties)(
+                return Marshal.GetDelegateForFunctionPointer<_GetScriptProperties>(lpVtbl->GetScriptProperties)(
                     This,
                     scriptAnalysis,
                     scriptProperties
@@ -949,7 +948,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
-                return MarshalFunction<_GetTextComplexity>(lpVtbl->GetTextComplexity)(
+                return Marshal.GetDelegateForFunctionPointer<_GetTextComplexity>(lpVtbl->GetTextComplexity)(
                     This,
                     textString,
                     textLength,
@@ -976,7 +975,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
-                return MarshalFunction<_GetJustificationOpportunities>(lpVtbl->GetJustificationOpportunities)(
+                return Marshal.GetDelegateForFunctionPointer<_GetJustificationOpportunities>(lpVtbl->GetJustificationOpportunities)(
                     This,
                     fontFace,
                     fontEmSize,
@@ -1004,7 +1003,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
-                return MarshalFunction<_JustifyGlyphAdvances>(lpVtbl->JustifyGlyphAdvances)(
+                return Marshal.GetDelegateForFunctionPointer<_JustifyGlyphAdvances>(lpVtbl->JustifyGlyphAdvances)(
                     This,
                     lineWidth,
                     glyphCount,
@@ -1040,7 +1039,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
-                return MarshalFunction<_GetJustifiedGlyphs>(lpVtbl->GetJustifiedGlyphs)(
+                return Marshal.GetDelegateForFunctionPointer<_GetJustifiedGlyphs>(lpVtbl->GetJustifiedGlyphs)(
                     This,
                     fontFace,
                     fontEmSize,
@@ -1076,7 +1075,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
-                return MarshalFunction<_GetGlyphOrientationTransform1>(lpVtbl->GetGlyphOrientationTransform1)(
+                return Marshal.GetDelegateForFunctionPointer<_GetGlyphOrientationTransform1>(lpVtbl->GetGlyphOrientationTransform1)(
                     This,
                     glyphOrientationAngle,
                     isSideways,
@@ -1099,7 +1098,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
-                return MarshalFunction<_GetTypographicFeatures>(lpVtbl->GetTypographicFeatures)(
+                return Marshal.GetDelegateForFunctionPointer<_GetTypographicFeatures>(lpVtbl->GetTypographicFeatures)(
                     This,
                     fontFace,
                     scriptAnalysis,
@@ -1124,7 +1123,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
-                return MarshalFunction<_CheckTypographicFeature>(lpVtbl->CheckTypographicFeature)(
+                return Marshal.GetDelegateForFunctionPointer<_CheckTypographicFeature>(lpVtbl->CheckTypographicFeature)(
                     This,
                     fontFace,
                     scriptAnalysis,

@@ -3,11 +3,10 @@
 // Ported from um\d3d12.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using static TerraFX.Interop.D3D12_CPU_PAGE_PROPERTY;
 using static TerraFX.Interop.D3D12_HEAP_TYPE;
 using static TerraFX.Interop.D3D12_MEMORY_POOL;
-using static TerraFX.Utilities.HashUtilities;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -79,18 +78,13 @@ namespace TerraFX.Interop
             return (obj is D3D12_HEAP_PROPERTIES other) && (this == other);
         }
 
-        public override int GetHashCode()
-        {
-            var combinedValue = 0;
-            {
-                combinedValue = CombineValue(Type.GetHashCode(), combinedValue);
-                combinedValue = CombineValue(CPUPageProperty.GetHashCode(), combinedValue);
-                combinedValue = CombineValue(MemoryPoolPreference.GetHashCode(), combinedValue);
-                combinedValue = CombineValue(CreationNodeMask.GetHashCode(), combinedValue);
-                combinedValue = CombineValue(VisibleNodeMask.GetHashCode(), combinedValue);
-            }
-            return FinalizeValue(combinedValue, SizeOf<D3D12_HEAP_PROPERTIES>());
-        }
+        public override int GetHashCode() => HashCode.Combine(
+            Type,
+            CPUPageProperty,
+            MemoryPoolPreference,
+            CreationNodeMask,
+            VisibleNodeMask
+        );
         #endregion
     }
 }

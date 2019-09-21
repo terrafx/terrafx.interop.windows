@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -157,7 +156,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgStrokeDashArray* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -170,7 +169,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgStrokeDashArray* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -181,7 +180,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgStrokeDashArray* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -195,7 +194,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgStrokeDashArray* This = &this)
             {
-                MarshalFunction<_GetFactory>(lpVtbl->GetFactory)(
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
                     This,
                     factory
                 );
@@ -210,7 +209,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgStrokeDashArray* This = &this)
             {
-                MarshalFunction<_GetElement>(lpVtbl->GetElement)(
+                Marshal.GetDelegateForFunctionPointer<_GetElement>(lpVtbl->GetElement)(
                     This,
                     element
                 );
@@ -224,7 +223,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgStrokeDashArray* This = &this)
             {
-                return MarshalFunction<_Clone>(lpVtbl->Clone)(
+                return Marshal.GetDelegateForFunctionPointer<_Clone>(lpVtbl->Clone)(
                     This,
                     attribute
                 );
@@ -240,7 +239,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgStrokeDashArray* This = &this)
             {
-                return MarshalFunction<_RemoveDashesAtEnd>(lpVtbl->RemoveDashesAtEnd)(
+                return Marshal.GetDelegateForFunctionPointer<_RemoveDashesAtEnd>(lpVtbl->RemoveDashesAtEnd)(
                     This,
                     dashesCount
                 );
@@ -256,7 +255,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgStrokeDashArray* This = &this)
             {
-                return MarshalFunction<_UpdateDashes>(lpVtbl->UpdateDashes)(
+                return Marshal.GetDelegateForFunctionPointer<_UpdateDashes>(lpVtbl->UpdateDashes)(
                     This,
                     dashes,
                     dashesCount,
@@ -274,7 +273,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgStrokeDashArray* This = &this)
             {
-                return MarshalFunction<_UpdateDashes1>(lpVtbl->UpdateDashes1)(
+                return Marshal.GetDelegateForFunctionPointer<_UpdateDashes1>(lpVtbl->UpdateDashes1)(
                     This,
                     dashes,
                     dashesCount,
@@ -292,7 +291,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgStrokeDashArray* This = &this)
             {
-                return MarshalFunction<_GetDashes>(lpVtbl->GetDashes)(
+                return Marshal.GetDelegateForFunctionPointer<_GetDashes>(lpVtbl->GetDashes)(
                     This,
                     dashes,
                     dashesCount,
@@ -310,7 +309,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgStrokeDashArray* This = &this)
             {
-                return MarshalFunction<_GetDashes1>(lpVtbl->GetDashes1)(
+                return Marshal.GetDelegateForFunctionPointer<_GetDashes1>(lpVtbl->GetDashes1)(
                     This,
                     dashes,
                     dashesCount,
@@ -324,7 +323,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgStrokeDashArray* This = &this)
             {
-                return MarshalFunction<_GetDashesCount>(lpVtbl->GetDashesCount)(
+                return Marshal.GetDelegateForFunctionPointer<_GetDashesCount>(lpVtbl->GetDashesCount)(
                     This
                 );
             }

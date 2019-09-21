@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -86,7 +85,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontList* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -99,7 +98,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontList* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -110,7 +109,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontList* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -125,7 +124,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontList* This = &this)
             {
-                return MarshalFunction<_GetFontCollection>(lpVtbl->GetFontCollection)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFontCollection>(lpVtbl->GetFontCollection)(
                     This,
                     fontCollection
                 );
@@ -137,7 +136,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontList* This = &this)
             {
-                return MarshalFunction<_GetFontCount>(lpVtbl->GetFontCount)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFontCount>(lpVtbl->GetFontCount)(
                     This
                 );
             }
@@ -151,7 +150,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontList* This = &this)
             {
-                return MarshalFunction<_GetFont>(lpVtbl->GetFont)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFont>(lpVtbl->GetFont)(
                     This,
                     index,
                     font

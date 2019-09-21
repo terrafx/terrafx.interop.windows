@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -50,7 +49,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3DInclude* This = &this)
             {
-                return MarshalFunction<_Open>(lpVtbl->Open)(
+                return Marshal.GetDelegateForFunctionPointer<_Open>(lpVtbl->Open)(
                     This,
                     IncludeType,
                     pFileName,
@@ -68,7 +67,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3DInclude* This = &this)
             {
-                return MarshalFunction<_Close>(lpVtbl->Close)(
+                return Marshal.GetDelegateForFunctionPointer<_Close>(lpVtbl->Close)(
                     This,
                     pData
                 );

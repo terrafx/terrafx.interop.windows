@@ -7,7 +7,6 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security;
 using static TerraFX.Interop.D2D1_PIXEL_OPTIONS;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -146,7 +145,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DrawInfo* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -159,7 +158,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DrawInfo* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -170,7 +169,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DrawInfo* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -186,7 +185,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DrawInfo* This = &this)
             {
-                return MarshalFunction<_SetInputDescription>(lpVtbl->SetInputDescription)(
+                return Marshal.GetDelegateForFunctionPointer<_SetInputDescription>(lpVtbl->SetInputDescription)(
                     This,
                     inputIndex,
                     inputDescription
@@ -202,7 +201,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DrawInfo* This = &this)
             {
-                return MarshalFunction<_SetOutputBuffer>(lpVtbl->SetOutputBuffer)(
+                return Marshal.GetDelegateForFunctionPointer<_SetOutputBuffer>(lpVtbl->SetOutputBuffer)(
                     This,
                     bufferPrecision,
                     channelDepth
@@ -216,7 +215,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DrawInfo* This = &this)
             {
-                MarshalFunction<_SetCached>(lpVtbl->SetCached)(
+                Marshal.GetDelegateForFunctionPointer<_SetCached>(lpVtbl->SetCached)(
                     This,
                     isCached
                 );
@@ -229,7 +228,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DrawInfo* This = &this)
             {
-                MarshalFunction<_SetInstructionCountHint>(lpVtbl->SetInstructionCountHint)(
+                Marshal.GetDelegateForFunctionPointer<_SetInstructionCountHint>(lpVtbl->SetInstructionCountHint)(
                     This,
                     instructionCount
                 );
@@ -246,7 +245,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DrawInfo* This = &this)
             {
-                return MarshalFunction<_SetPixelShaderConstantBuffer>(lpVtbl->SetPixelShaderConstantBuffer)(
+                return Marshal.GetDelegateForFunctionPointer<_SetPixelShaderConstantBuffer>(lpVtbl->SetPixelShaderConstantBuffer)(
                     This,
                     buffer,
                     bufferCount
@@ -262,7 +261,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DrawInfo* This = &this)
             {
-                return MarshalFunction<_SetResourceTexture>(lpVtbl->SetResourceTexture)(
+                return Marshal.GetDelegateForFunctionPointer<_SetResourceTexture>(lpVtbl->SetResourceTexture)(
                     This,
                     textureIndex,
                     resourceTexture
@@ -278,7 +277,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DrawInfo* This = &this)
             {
-                return MarshalFunction<_SetVertexShaderConstantBuffer>(lpVtbl->SetVertexShaderConstantBuffer)(
+                return Marshal.GetDelegateForFunctionPointer<_SetVertexShaderConstantBuffer>(lpVtbl->SetVertexShaderConstantBuffer)(
                     This,
                     buffer,
                     bufferCount
@@ -294,7 +293,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DrawInfo* This = &this)
             {
-                return MarshalFunction<_SetPixelShader>(lpVtbl->SetPixelShader)(
+                return Marshal.GetDelegateForFunctionPointer<_SetPixelShader>(lpVtbl->SetPixelShader)(
                     This,
                     shaderId,
                     pixelOptions
@@ -313,7 +312,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DrawInfo* This = &this)
             {
-                return MarshalFunction<_SetVertexProcessing>(lpVtbl->SetVertexProcessing)(
+                return Marshal.GetDelegateForFunctionPointer<_SetVertexProcessing>(lpVtbl->SetVertexProcessing)(
                     This,
                     vertexBuffer,
                     vertexOptions,

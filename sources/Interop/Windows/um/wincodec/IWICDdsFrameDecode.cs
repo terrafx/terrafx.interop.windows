@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -81,7 +80,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDdsFrameDecode* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -94,7 +93,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDdsFrameDecode* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -105,7 +104,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDdsFrameDecode* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -121,7 +120,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDdsFrameDecode* This = &this)
             {
-                return MarshalFunction<_GetSizeInBlocks>(lpVtbl->GetSizeInBlocks)(
+                return Marshal.GetDelegateForFunctionPointer<_GetSizeInBlocks>(lpVtbl->GetSizeInBlocks)(
                     This,
                     pWidthInBlocks,
                     pHeightInBlocks
@@ -136,7 +135,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDdsFrameDecode* This = &this)
             {
-                return MarshalFunction<_GetFormatInfo>(lpVtbl->GetFormatInfo)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFormatInfo>(lpVtbl->GetFormatInfo)(
                     This,
                     pFormatInfo
                 );
@@ -153,7 +152,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDdsFrameDecode* This = &this)
             {
-                return MarshalFunction<_CopyBlocks>(lpVtbl->CopyBlocks)(
+                return Marshal.GetDelegateForFunctionPointer<_CopyBlocks>(lpVtbl->CopyBlocks)(
                     This,
                     prcBoundsInBlocks,
                     cbStride,

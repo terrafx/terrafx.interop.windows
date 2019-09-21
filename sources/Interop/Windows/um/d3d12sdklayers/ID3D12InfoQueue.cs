@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -320,7 +319,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -333,7 +332,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -344,7 +343,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -359,7 +358,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_SetMessageCountLimit>(lpVtbl->SetMessageCountLimit)(
+                return Marshal.GetDelegateForFunctionPointer<_SetMessageCountLimit>(lpVtbl->SetMessageCountLimit)(
                     This,
                     MessageCountLimit
                 );
@@ -370,7 +369,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                MarshalFunction<_ClearStoredMessages>(lpVtbl->ClearStoredMessages)(
+                Marshal.GetDelegateForFunctionPointer<_ClearStoredMessages>(lpVtbl->ClearStoredMessages)(
                     This
                 );
             }
@@ -385,7 +384,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_GetMessage>(lpVtbl->GetMessage)(
+                return Marshal.GetDelegateForFunctionPointer<_GetMessage>(lpVtbl->GetMessage)(
                     This,
                     MessageIndex,
                     pMessage,
@@ -399,7 +398,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_GetNumMessagesAllowedByStorageFilter>(lpVtbl->GetNumMessagesAllowedByStorageFilter)(
+                return Marshal.GetDelegateForFunctionPointer<_GetNumMessagesAllowedByStorageFilter>(lpVtbl->GetNumMessagesAllowedByStorageFilter)(
                     This
                 );
             }
@@ -410,7 +409,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_GetNumMessagesDeniedByStorageFilter>(lpVtbl->GetNumMessagesDeniedByStorageFilter)(
+                return Marshal.GetDelegateForFunctionPointer<_GetNumMessagesDeniedByStorageFilter>(lpVtbl->GetNumMessagesDeniedByStorageFilter)(
                     This
                 );
             }
@@ -421,7 +420,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_GetNumStoredMessages>(lpVtbl->GetNumStoredMessages)(
+                return Marshal.GetDelegateForFunctionPointer<_GetNumStoredMessages>(lpVtbl->GetNumStoredMessages)(
                     This
                 );
             }
@@ -432,7 +431,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_GetNumStoredMessagesAllowedByRetrievalFilter>(lpVtbl->GetNumStoredMessagesAllowedByRetrievalFilter)(
+                return Marshal.GetDelegateForFunctionPointer<_GetNumStoredMessagesAllowedByRetrievalFilter>(lpVtbl->GetNumStoredMessagesAllowedByRetrievalFilter)(
                     This
                 );
             }
@@ -443,7 +442,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_GetNumMessagesDiscardedByMessageCountLimit>(lpVtbl->GetNumMessagesDiscardedByMessageCountLimit)(
+                return Marshal.GetDelegateForFunctionPointer<_GetNumMessagesDiscardedByMessageCountLimit>(lpVtbl->GetNumMessagesDiscardedByMessageCountLimit)(
                     This
                 );
             }
@@ -454,7 +453,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_GetMessageCountLimit>(lpVtbl->GetMessageCountLimit)(
+                return Marshal.GetDelegateForFunctionPointer<_GetMessageCountLimit>(lpVtbl->GetMessageCountLimit)(
                     This
                 );
             }
@@ -467,7 +466,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_AddStorageFilterEntries>(lpVtbl->AddStorageFilterEntries)(
+                return Marshal.GetDelegateForFunctionPointer<_AddStorageFilterEntries>(lpVtbl->AddStorageFilterEntries)(
                     This,
                     pFilter
                 );
@@ -482,7 +481,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_GetStorageFilter>(lpVtbl->GetStorageFilter)(
+                return Marshal.GetDelegateForFunctionPointer<_GetStorageFilter>(lpVtbl->GetStorageFilter)(
                     This,
                     pFilter,
                     pFilterByteLength
@@ -494,7 +493,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                MarshalFunction<_ClearStorageFilter>(lpVtbl->ClearStorageFilter)(
+                Marshal.GetDelegateForFunctionPointer<_ClearStorageFilter>(lpVtbl->ClearStorageFilter)(
                     This
                 );
             }
@@ -505,7 +504,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_PushEmptyStorageFilter>(lpVtbl->PushEmptyStorageFilter)(
+                return Marshal.GetDelegateForFunctionPointer<_PushEmptyStorageFilter>(lpVtbl->PushEmptyStorageFilter)(
                     This
                 );
             }
@@ -516,7 +515,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_PushCopyOfStorageFilter>(lpVtbl->PushCopyOfStorageFilter)(
+                return Marshal.GetDelegateForFunctionPointer<_PushCopyOfStorageFilter>(lpVtbl->PushCopyOfStorageFilter)(
                     This
                 );
             }
@@ -529,7 +528,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_PushStorageFilter>(lpVtbl->PushStorageFilter)(
+                return Marshal.GetDelegateForFunctionPointer<_PushStorageFilter>(lpVtbl->PushStorageFilter)(
                     This,
                     pFilter
                 );
@@ -540,7 +539,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                MarshalFunction<_PopStorageFilter>(lpVtbl->PopStorageFilter)(
+                Marshal.GetDelegateForFunctionPointer<_PopStorageFilter>(lpVtbl->PopStorageFilter)(
                     This
                 );
             }
@@ -551,7 +550,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_GetStorageFilterStackSize>(lpVtbl->GetStorageFilterStackSize)(
+                return Marshal.GetDelegateForFunctionPointer<_GetStorageFilterStackSize>(lpVtbl->GetStorageFilterStackSize)(
                     This
                 );
             }
@@ -564,7 +563,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_AddRetrievalFilterEntries>(lpVtbl->AddRetrievalFilterEntries)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRetrievalFilterEntries>(lpVtbl->AddRetrievalFilterEntries)(
                     This,
                     pFilter
                 );
@@ -579,7 +578,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_GetRetrievalFilter>(lpVtbl->GetRetrievalFilter)(
+                return Marshal.GetDelegateForFunctionPointer<_GetRetrievalFilter>(lpVtbl->GetRetrievalFilter)(
                     This,
                     pFilter,
                     pFilterByteLength
@@ -591,7 +590,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                MarshalFunction<_ClearRetrievalFilter>(lpVtbl->ClearRetrievalFilter)(
+                Marshal.GetDelegateForFunctionPointer<_ClearRetrievalFilter>(lpVtbl->ClearRetrievalFilter)(
                     This
                 );
             }
@@ -602,7 +601,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_PushEmptyRetrievalFilter>(lpVtbl->PushEmptyRetrievalFilter)(
+                return Marshal.GetDelegateForFunctionPointer<_PushEmptyRetrievalFilter>(lpVtbl->PushEmptyRetrievalFilter)(
                     This
                 );
             }
@@ -613,7 +612,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_PushCopyOfRetrievalFilter>(lpVtbl->PushCopyOfRetrievalFilter)(
+                return Marshal.GetDelegateForFunctionPointer<_PushCopyOfRetrievalFilter>(lpVtbl->PushCopyOfRetrievalFilter)(
                     This
                 );
             }
@@ -626,7 +625,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_PushRetrievalFilter>(lpVtbl->PushRetrievalFilter)(
+                return Marshal.GetDelegateForFunctionPointer<_PushRetrievalFilter>(lpVtbl->PushRetrievalFilter)(
                     This,
                     pFilter
                 );
@@ -637,7 +636,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                MarshalFunction<_PopRetrievalFilter>(lpVtbl->PopRetrievalFilter)(
+                Marshal.GetDelegateForFunctionPointer<_PopRetrievalFilter>(lpVtbl->PopRetrievalFilter)(
                     This
                 );
             }
@@ -648,7 +647,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_GetRetrievalFilterStackSize>(lpVtbl->GetRetrievalFilterStackSize)(
+                return Marshal.GetDelegateForFunctionPointer<_GetRetrievalFilterStackSize>(lpVtbl->GetRetrievalFilterStackSize)(
                     This
                 );
             }
@@ -664,7 +663,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_AddMessage>(lpVtbl->AddMessage)(
+                return Marshal.GetDelegateForFunctionPointer<_AddMessage>(lpVtbl->AddMessage)(
                     This,
                     Category,
                     Severity,
@@ -682,7 +681,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_AddApplicationMessage>(lpVtbl->AddApplicationMessage)(
+                return Marshal.GetDelegateForFunctionPointer<_AddApplicationMessage>(lpVtbl->AddApplicationMessage)(
                     This,
                     Severity,
                     pDescription
@@ -698,7 +697,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_SetBreakOnCategory>(lpVtbl->SetBreakOnCategory)(
+                return Marshal.GetDelegateForFunctionPointer<_SetBreakOnCategory>(lpVtbl->SetBreakOnCategory)(
                     This,
                     Category,
                     bEnable
@@ -714,7 +713,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_SetBreakOnSeverity>(lpVtbl->SetBreakOnSeverity)(
+                return Marshal.GetDelegateForFunctionPointer<_SetBreakOnSeverity>(lpVtbl->SetBreakOnSeverity)(
                     This,
                     Severity,
                     bEnable
@@ -730,7 +729,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_SetBreakOnID>(lpVtbl->SetBreakOnID)(
+                return Marshal.GetDelegateForFunctionPointer<_SetBreakOnID>(lpVtbl->SetBreakOnID)(
                     This,
                     ID,
                     bEnable
@@ -745,7 +744,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_GetBreakOnCategory>(lpVtbl->GetBreakOnCategory)(
+                return Marshal.GetDelegateForFunctionPointer<_GetBreakOnCategory>(lpVtbl->GetBreakOnCategory)(
                     This,
                     Category
                 );
@@ -759,7 +758,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_GetBreakOnSeverity>(lpVtbl->GetBreakOnSeverity)(
+                return Marshal.GetDelegateForFunctionPointer<_GetBreakOnSeverity>(lpVtbl->GetBreakOnSeverity)(
                     This,
                     Severity
                 );
@@ -773,7 +772,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_GetBreakOnID>(lpVtbl->GetBreakOnID)(
+                return Marshal.GetDelegateForFunctionPointer<_GetBreakOnID>(lpVtbl->GetBreakOnID)(
                     This,
                     ID
                 );
@@ -786,7 +785,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                MarshalFunction<_SetMuteDebugOutput>(lpVtbl->SetMuteDebugOutput)(
+                Marshal.GetDelegateForFunctionPointer<_SetMuteDebugOutput>(lpVtbl->SetMuteDebugOutput)(
                     This,
                     bMute
                 );
@@ -798,7 +797,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12InfoQueue* This = &this)
             {
-                return MarshalFunction<_GetMuteDebugOutput>(lpVtbl->GetMuteDebugOutput)(
+                return Marshal.GetDelegateForFunctionPointer<_GetMuteDebugOutput>(lpVtbl->GetMuteDebugOutput)(
                     This
                 );
             }

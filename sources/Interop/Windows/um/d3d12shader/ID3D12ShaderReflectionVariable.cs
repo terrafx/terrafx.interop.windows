@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -54,7 +53,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflectionVariable* This = &this)
             {
-                return MarshalFunction<_GetDesc>(lpVtbl->GetDesc)(
+                return Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)(
                     This,
                     pDesc
                 );
@@ -65,7 +64,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflectionVariable* This = &this)
             {
-                return MarshalFunction<__GetType>(lpVtbl->_GetType)(
+                return Marshal.GetDelegateForFunctionPointer<__GetType>(lpVtbl->_GetType)(
                     This
                 );
             }
@@ -75,7 +74,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflectionVariable* This = &this)
             {
-                return MarshalFunction<_GetBuffer>(lpVtbl->GetBuffer)(
+                return Marshal.GetDelegateForFunctionPointer<_GetBuffer>(lpVtbl->GetBuffer)(
                     This
                 );
             }
@@ -87,7 +86,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflectionVariable* This = &this)
             {
-                return MarshalFunction<_GetInterfaceSlot>(lpVtbl->GetInterfaceSlot)(
+                return Marshal.GetDelegateForFunctionPointer<_GetInterfaceSlot>(lpVtbl->GetInterfaceSlot)(
                     This,
                     uArrayIndex
                 );

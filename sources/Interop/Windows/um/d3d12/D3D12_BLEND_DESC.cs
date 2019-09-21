@@ -3,8 +3,9 @@
 // Ported from um\d3d12.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -60,17 +61,10 @@ namespace TerraFX.Interop
             #endregion
 
             #region Properties
-            public ref D3D12_RENDER_TARGET_BLEND_DESC this[int index]
-            {
-                get
-                {
-                    fixed (D3D12_RENDER_TARGET_BLEND_DESC* e = &e0)
-                    {
-                        return ref AsRef<D3D12_RENDER_TARGET_BLEND_DESC>(e + index);
-                    }
-                }
-            }
+            public ref D3D12_RENDER_TARGET_BLEND_DESC this[int index] => ref AsSpan(int.MaxValue)[index];
             #endregion
+
+            public Span<D3D12_RENDER_TARGET_BLEND_DESC> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
         #endregion
     }

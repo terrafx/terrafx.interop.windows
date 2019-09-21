@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -143,7 +142,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPaint* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -156,7 +155,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPaint* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -167,7 +166,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPaint* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -181,7 +180,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPaint* This = &this)
             {
-                MarshalFunction<_GetFactory>(lpVtbl->GetFactory)(
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
                     This,
                     factory
                 );
@@ -196,7 +195,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPaint* This = &this)
             {
-                MarshalFunction<_GetElement>(lpVtbl->GetElement)(
+                Marshal.GetDelegateForFunctionPointer<_GetElement>(lpVtbl->GetElement)(
                     This,
                     element
                 );
@@ -210,7 +209,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPaint* This = &this)
             {
-                return MarshalFunction<_Clone>(lpVtbl->Clone)(
+                return Marshal.GetDelegateForFunctionPointer<_Clone>(lpVtbl->Clone)(
                     This,
                     attribute
                 );
@@ -226,7 +225,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPaint* This = &this)
             {
-                return MarshalFunction<_SetPaintType>(lpVtbl->SetPaintType)(
+                return Marshal.GetDelegateForFunctionPointer<_SetPaintType>(lpVtbl->SetPaintType)(
                     This,
                     paintType
                 );
@@ -237,7 +236,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPaint* This = &this)
             {
-                return MarshalFunction<_GetPaintType>(lpVtbl->GetPaintType)(
+                return Marshal.GetDelegateForFunctionPointer<_GetPaintType>(lpVtbl->GetPaintType)(
                     This
                 );
             }
@@ -250,7 +249,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPaint* This = &this)
             {
-                return MarshalFunction<_SetColor>(lpVtbl->SetColor)(
+                return Marshal.GetDelegateForFunctionPointer<_SetColor>(lpVtbl->SetColor)(
                     This,
                     color
                 );
@@ -263,7 +262,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPaint* This = &this)
             {
-                MarshalFunction<_GetColor>(lpVtbl->GetColor)(
+                Marshal.GetDelegateForFunctionPointer<_GetColor>(lpVtbl->GetColor)(
                     This,
                     color
                 );
@@ -277,7 +276,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPaint* This = &this)
             {
-                return MarshalFunction<_SetId>(lpVtbl->SetId)(
+                return Marshal.GetDelegateForFunctionPointer<_SetId>(lpVtbl->SetId)(
                     This,
                     id
                 );
@@ -292,7 +291,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPaint* This = &this)
             {
-                return MarshalFunction<_GetId>(lpVtbl->GetId)(
+                return Marshal.GetDelegateForFunctionPointer<_GetId>(lpVtbl->GetId)(
                     This,
                     id,
                     idCount
@@ -305,7 +304,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPaint* This = &this)
             {
-                return MarshalFunction<_GetIdLength>(lpVtbl->GetIdLength)(
+                return Marshal.GetDelegateForFunctionPointer<_GetIdLength>(lpVtbl->GetIdLength)(
                     This
                 );
             }

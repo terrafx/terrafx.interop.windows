@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -128,7 +127,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontCollection1* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -141,7 +140,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontCollection1* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -152,7 +151,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontCollection1* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -165,7 +164,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontCollection1* This = &this)
             {
-                return MarshalFunction<_GetFontFamilyCount>(lpVtbl->GetFontFamilyCount)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFontFamilyCount>(lpVtbl->GetFontFamilyCount)(
                     This
                 );
             }
@@ -179,7 +178,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontCollection1* This = &this)
             {
-                return MarshalFunction<_GetFontFamily>(lpVtbl->GetFontFamily)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFontFamily>(lpVtbl->GetFontFamily)(
                     This,
                     index,
                     fontFamily
@@ -196,7 +195,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontCollection1* This = &this)
             {
-                return MarshalFunction<_FindFamilyName>(lpVtbl->FindFamilyName)(
+                return Marshal.GetDelegateForFunctionPointer<_FindFamilyName>(lpVtbl->FindFamilyName)(
                     This,
                     familyName,
                     index,
@@ -213,7 +212,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontCollection1* This = &this)
             {
-                return MarshalFunction<_GetFontFromFontFace>(lpVtbl->GetFontFromFontFace)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFontFromFontFace>(lpVtbl->GetFontFromFontFace)(
                     This,
                     fontFace,
                     font
@@ -230,7 +229,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontCollection1* This = &this)
             {
-                return MarshalFunction<_GetFontSet>(lpVtbl->GetFontSet)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFontSet>(lpVtbl->GetFontSet)(
                     This,
                     fontSet
                 );
@@ -245,7 +244,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontCollection1* This = &this)
             {
-                return MarshalFunction<_GetFontFamily1>(lpVtbl->GetFontFamily1)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFontFamily1>(lpVtbl->GetFontFamily1)(
                     This,
                     index,
                     fontFamily

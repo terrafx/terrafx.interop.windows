@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -393,7 +392,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -406,7 +405,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -417,7 +416,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -433,7 +432,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_GetSize>(lpVtbl->GetSize)(
+                return Marshal.GetDelegateForFunctionPointer<_GetSize>(lpVtbl->GetSize)(
                     This,
                     puiWidth,
                     puiHeight
@@ -448,7 +447,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_GetPixelFormat>(lpVtbl->GetPixelFormat)(
+                return Marshal.GetDelegateForFunctionPointer<_GetPixelFormat>(lpVtbl->GetPixelFormat)(
                     This,
                     pPixelFormat
                 );
@@ -463,7 +462,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_GetResolution>(lpVtbl->GetResolution)(
+                return Marshal.GetDelegateForFunctionPointer<_GetResolution>(lpVtbl->GetResolution)(
                     This,
                     pDpiX,
                     pDpiY
@@ -478,7 +477,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_CopyPalette>(lpVtbl->CopyPalette)(
+                return Marshal.GetDelegateForFunctionPointer<_CopyPalette>(lpVtbl->CopyPalette)(
                     This,
                     pIPalette
                 );
@@ -495,7 +494,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_CopyPixels>(lpVtbl->CopyPixels)(
+                return Marshal.GetDelegateForFunctionPointer<_CopyPixels>(lpVtbl->CopyPixels)(
                     This,
                     prc,
                     cbStride,
@@ -514,7 +513,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_GetMetadataQueryReader>(lpVtbl->GetMetadataQueryReader)(
+                return Marshal.GetDelegateForFunctionPointer<_GetMetadataQueryReader>(lpVtbl->GetMetadataQueryReader)(
                     This,
                     ppIMetadataQueryReader
                 );
@@ -530,7 +529,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_GetColorContexts>(lpVtbl->GetColorContexts)(
+                return Marshal.GetDelegateForFunctionPointer<_GetColorContexts>(lpVtbl->GetColorContexts)(
                     This,
                     cCount,
                     ppIColorContexts,
@@ -546,7 +545,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_GetThumbnail>(lpVtbl->GetThumbnail)(
+                return Marshal.GetDelegateForFunctionPointer<_GetThumbnail>(lpVtbl->GetThumbnail)(
                     This,
                     ppIThumbnail
                 );
@@ -562,7 +561,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_QueryRawCapabilitiesInfo>(lpVtbl->QueryRawCapabilitiesInfo)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryRawCapabilitiesInfo>(lpVtbl->QueryRawCapabilitiesInfo)(
                     This,
                     pInfo
                 );
@@ -576,7 +575,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_LoadParameterSet>(lpVtbl->LoadParameterSet)(
+                return Marshal.GetDelegateForFunctionPointer<_LoadParameterSet>(lpVtbl->LoadParameterSet)(
                     This,
                     ParameterSet
                 );
@@ -590,7 +589,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_GetCurrentParameterSet>(lpVtbl->GetCurrentParameterSet)(
+                return Marshal.GetDelegateForFunctionPointer<_GetCurrentParameterSet>(lpVtbl->GetCurrentParameterSet)(
                     This,
                     ppCurrentParameterSet
                 );
@@ -604,7 +603,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_SetExposureCompensation>(lpVtbl->SetExposureCompensation)(
+                return Marshal.GetDelegateForFunctionPointer<_SetExposureCompensation>(lpVtbl->SetExposureCompensation)(
                     This,
                     ev
                 );
@@ -618,7 +617,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_GetExposureCompensation>(lpVtbl->GetExposureCompensation)(
+                return Marshal.GetDelegateForFunctionPointer<_GetExposureCompensation>(lpVtbl->GetExposureCompensation)(
                     This,
                     pEV
                 );
@@ -634,7 +633,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_SetWhitePointRGB>(lpVtbl->SetWhitePointRGB)(
+                return Marshal.GetDelegateForFunctionPointer<_SetWhitePointRGB>(lpVtbl->SetWhitePointRGB)(
                     This,
                     Red,
                     Green,
@@ -652,7 +651,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_GetWhitePointRGB>(lpVtbl->GetWhitePointRGB)(
+                return Marshal.GetDelegateForFunctionPointer<_GetWhitePointRGB>(lpVtbl->GetWhitePointRGB)(
                     This,
                     pRed,
                     pGreen,
@@ -668,7 +667,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_SetNamedWhitePoint>(lpVtbl->SetNamedWhitePoint)(
+                return Marshal.GetDelegateForFunctionPointer<_SetNamedWhitePoint>(lpVtbl->SetNamedWhitePoint)(
                     This,
                     WhitePoint
                 );
@@ -682,7 +681,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_GetNamedWhitePoint>(lpVtbl->GetNamedWhitePoint)(
+                return Marshal.GetDelegateForFunctionPointer<_GetNamedWhitePoint>(lpVtbl->GetNamedWhitePoint)(
                     This,
                     pWhitePoint
                 );
@@ -696,7 +695,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_SetWhitePointKelvin>(lpVtbl->SetWhitePointKelvin)(
+                return Marshal.GetDelegateForFunctionPointer<_SetWhitePointKelvin>(lpVtbl->SetWhitePointKelvin)(
                     This,
                     WhitePointKelvin
                 );
@@ -710,7 +709,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_GetWhitePointKelvin>(lpVtbl->GetWhitePointKelvin)(
+                return Marshal.GetDelegateForFunctionPointer<_GetWhitePointKelvin>(lpVtbl->GetWhitePointKelvin)(
                     This,
                     pWhitePointKelvin
                 );
@@ -726,7 +725,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_GetKelvinRangeInfo>(lpVtbl->GetKelvinRangeInfo)(
+                return Marshal.GetDelegateForFunctionPointer<_GetKelvinRangeInfo>(lpVtbl->GetKelvinRangeInfo)(
                     This,
                     pMinKelvinTemp,
                     pMaxKelvinTemp,
@@ -742,7 +741,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_SetContrast>(lpVtbl->SetContrast)(
+                return Marshal.GetDelegateForFunctionPointer<_SetContrast>(lpVtbl->SetContrast)(
                     This,
                     Contrast
                 );
@@ -756,7 +755,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_GetContrast>(lpVtbl->GetContrast)(
+                return Marshal.GetDelegateForFunctionPointer<_GetContrast>(lpVtbl->GetContrast)(
                     This,
                     pContrast
                 );
@@ -770,7 +769,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_SetGamma>(lpVtbl->SetGamma)(
+                return Marshal.GetDelegateForFunctionPointer<_SetGamma>(lpVtbl->SetGamma)(
                     This,
                     Gamma
                 );
@@ -784,7 +783,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_GetGamma>(lpVtbl->GetGamma)(
+                return Marshal.GetDelegateForFunctionPointer<_GetGamma>(lpVtbl->GetGamma)(
                     This,
                     pGamma
                 );
@@ -798,7 +797,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_SetSharpness>(lpVtbl->SetSharpness)(
+                return Marshal.GetDelegateForFunctionPointer<_SetSharpness>(lpVtbl->SetSharpness)(
                     This,
                     Sharpness
                 );
@@ -812,7 +811,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_GetSharpness>(lpVtbl->GetSharpness)(
+                return Marshal.GetDelegateForFunctionPointer<_GetSharpness>(lpVtbl->GetSharpness)(
                     This,
                     pSharpness
                 );
@@ -826,7 +825,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_SetSaturation>(lpVtbl->SetSaturation)(
+                return Marshal.GetDelegateForFunctionPointer<_SetSaturation>(lpVtbl->SetSaturation)(
                     This,
                     Saturation
                 );
@@ -840,7 +839,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_GetSaturation>(lpVtbl->GetSaturation)(
+                return Marshal.GetDelegateForFunctionPointer<_GetSaturation>(lpVtbl->GetSaturation)(
                     This,
                     pSaturation
                 );
@@ -854,7 +853,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_SetTint>(lpVtbl->SetTint)(
+                return Marshal.GetDelegateForFunctionPointer<_SetTint>(lpVtbl->SetTint)(
                     This,
                     Tint
                 );
@@ -868,7 +867,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_GetTint>(lpVtbl->GetTint)(
+                return Marshal.GetDelegateForFunctionPointer<_GetTint>(lpVtbl->GetTint)(
                     This,
                     pTint
                 );
@@ -882,7 +881,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_SetNoiseReduction>(lpVtbl->SetNoiseReduction)(
+                return Marshal.GetDelegateForFunctionPointer<_SetNoiseReduction>(lpVtbl->SetNoiseReduction)(
                     This,
                     NoiseReduction
                 );
@@ -896,7 +895,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_GetNoiseReduction>(lpVtbl->GetNoiseReduction)(
+                return Marshal.GetDelegateForFunctionPointer<_GetNoiseReduction>(lpVtbl->GetNoiseReduction)(
                     This,
                     pNoiseReduction
                 );
@@ -910,7 +909,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_SetDestinationColorContext>(lpVtbl->SetDestinationColorContext)(
+                return Marshal.GetDelegateForFunctionPointer<_SetDestinationColorContext>(lpVtbl->SetDestinationColorContext)(
                     This,
                     pColorContext
                 );
@@ -925,7 +924,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_SetToneCurve>(lpVtbl->SetToneCurve)(
+                return Marshal.GetDelegateForFunctionPointer<_SetToneCurve>(lpVtbl->SetToneCurve)(
                     This,
                     cbToneCurveSize,
                     pToneCurve
@@ -942,7 +941,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_GetToneCurve>(lpVtbl->GetToneCurve)(
+                return Marshal.GetDelegateForFunctionPointer<_GetToneCurve>(lpVtbl->GetToneCurve)(
                     This,
                     cbToneCurveBufferSize,
                     pToneCurve,
@@ -958,7 +957,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_SetRotation>(lpVtbl->SetRotation)(
+                return Marshal.GetDelegateForFunctionPointer<_SetRotation>(lpVtbl->SetRotation)(
                     This,
                     Rotation
                 );
@@ -972,7 +971,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_GetRotation>(lpVtbl->GetRotation)(
+                return Marshal.GetDelegateForFunctionPointer<_GetRotation>(lpVtbl->GetRotation)(
                     This,
                     pRotation
                 );
@@ -986,7 +985,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_SetRenderMode>(lpVtbl->SetRenderMode)(
+                return Marshal.GetDelegateForFunctionPointer<_SetRenderMode>(lpVtbl->SetRenderMode)(
                     This,
                     RenderMode
                 );
@@ -1000,7 +999,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_GetRenderMode>(lpVtbl->GetRenderMode)(
+                return Marshal.GetDelegateForFunctionPointer<_GetRenderMode>(lpVtbl->GetRenderMode)(
                     This,
                     pRenderMode
                 );
@@ -1014,7 +1013,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return MarshalFunction<_SetNotificationCallback>(lpVtbl->SetNotificationCallback)(
+                return Marshal.GetDelegateForFunctionPointer<_SetNotificationCallback>(lpVtbl->SetNotificationCallback)(
                     This,
                     pCallback
                 );

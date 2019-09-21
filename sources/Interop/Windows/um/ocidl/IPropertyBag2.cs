@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -105,7 +104,7 @@ namespace TerraFX.Interop
         {
             fixed (IPropertyBag2* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -118,7 +117,7 @@ namespace TerraFX.Interop
         {
             fixed (IPropertyBag2* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -129,7 +128,7 @@ namespace TerraFX.Interop
         {
             fixed (IPropertyBag2* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -148,7 +147,7 @@ namespace TerraFX.Interop
         {
             fixed (IPropertyBag2* This = &this)
             {
-                return MarshalFunction<_Read>(lpVtbl->Read)(
+                return Marshal.GetDelegateForFunctionPointer<_Read>(lpVtbl->Read)(
                     This,
                     cProperties,
                     pPropBag,
@@ -168,7 +167,7 @@ namespace TerraFX.Interop
         {
             fixed (IPropertyBag2* This = &this)
             {
-                return MarshalFunction<_Write>(lpVtbl->Write)(
+                return Marshal.GetDelegateForFunctionPointer<_Write>(lpVtbl->Write)(
                     This,
                     cProperties,
                     pPropBag,
@@ -184,7 +183,7 @@ namespace TerraFX.Interop
         {
             fixed (IPropertyBag2* This = &this)
             {
-                return MarshalFunction<_CountProperties>(lpVtbl->CountProperties)(
+                return Marshal.GetDelegateForFunctionPointer<_CountProperties>(lpVtbl->CountProperties)(
                     This,
                     pcProperties
                 );
@@ -201,7 +200,7 @@ namespace TerraFX.Interop
         {
             fixed (IPropertyBag2* This = &this)
             {
-                return MarshalFunction<_GetPropertyInfo>(lpVtbl->GetPropertyInfo)(
+                return Marshal.GetDelegateForFunctionPointer<_GetPropertyInfo>(lpVtbl->GetPropertyInfo)(
                     This,
                     iProperty,
                     cProperties,
@@ -221,7 +220,7 @@ namespace TerraFX.Interop
         {
             fixed (IPropertyBag2* This = &this)
             {
-                return MarshalFunction<_LoadObject>(lpVtbl->LoadObject)(
+                return Marshal.GetDelegateForFunctionPointer<_LoadObject>(lpVtbl->LoadObject)(
                     This,
                     pstrName,
                     dwHint,

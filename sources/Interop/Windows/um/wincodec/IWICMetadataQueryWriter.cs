@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -107,7 +106,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataQueryWriter* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -120,7 +119,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataQueryWriter* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -131,7 +130,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataQueryWriter* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -146,7 +145,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataQueryWriter* This = &this)
             {
-                return MarshalFunction<_GetContainerFormat>(lpVtbl->GetContainerFormat)(
+                return Marshal.GetDelegateForFunctionPointer<_GetContainerFormat>(lpVtbl->GetContainerFormat)(
                     This,
                     pguidContainerFormat
                 );
@@ -162,7 +161,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataQueryWriter* This = &this)
             {
-                return MarshalFunction<_GetLocation>(lpVtbl->GetLocation)(
+                return Marshal.GetDelegateForFunctionPointer<_GetLocation>(lpVtbl->GetLocation)(
                     This,
                     cchMaxLength,
                     wzNamespace,
@@ -179,7 +178,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataQueryWriter* This = &this)
             {
-                return MarshalFunction<_GetMetadataByName>(lpVtbl->GetMetadataByName)(
+                return Marshal.GetDelegateForFunctionPointer<_GetMetadataByName>(lpVtbl->GetMetadataByName)(
                     This,
                     wzName,
                     pvarValue
@@ -194,7 +193,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataQueryWriter* This = &this)
             {
-                return MarshalFunction<_GetEnumerator>(lpVtbl->GetEnumerator)(
+                return Marshal.GetDelegateForFunctionPointer<_GetEnumerator>(lpVtbl->GetEnumerator)(
                     This,
                     ppIEnumString
                 );
@@ -211,7 +210,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataQueryWriter* This = &this)
             {
-                return MarshalFunction<_SetMetadataByName>(lpVtbl->SetMetadataByName)(
+                return Marshal.GetDelegateForFunctionPointer<_SetMetadataByName>(lpVtbl->SetMetadataByName)(
                     This,
                     wzName,
                     pvarValue
@@ -226,7 +225,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataQueryWriter* This = &this)
             {
-                return MarshalFunction<_RemoveMetadataByName>(lpVtbl->RemoveMetadataByName)(
+                return Marshal.GetDelegateForFunctionPointer<_RemoveMetadataByName>(lpVtbl->RemoveMetadataByName)(
                     This,
                     wzName
                 );

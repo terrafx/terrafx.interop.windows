@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -163,7 +162,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12PipelineLibrary1* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -176,7 +175,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12PipelineLibrary1* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -187,7 +186,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12PipelineLibrary1* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -204,7 +203,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12PipelineLibrary1* This = &this)
             {
-                return MarshalFunction<_GetPrivateData>(lpVtbl->GetPrivateData)(
+                return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)(
                     This,
                     guid,
                     pDataSize,
@@ -222,7 +221,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12PipelineLibrary1* This = &this)
             {
-                return MarshalFunction<_SetPrivateData>(lpVtbl->SetPrivateData)(
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)(
                     This,
                     guid,
                     DataSize,
@@ -239,7 +238,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12PipelineLibrary1* This = &this)
             {
-                return MarshalFunction<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(
                     This,
                     guid,
                     pData
@@ -254,7 +253,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12PipelineLibrary1* This = &this)
             {
-                return MarshalFunction<_SetName>(lpVtbl->SetName)(
+                return Marshal.GetDelegateForFunctionPointer<_SetName>(lpVtbl->SetName)(
                     This,
                     Name
                 );
@@ -271,7 +270,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12PipelineLibrary1* This = &this)
             {
-                return MarshalFunction<_GetDevice>(lpVtbl->GetDevice)(
+                return Marshal.GetDelegateForFunctionPointer<_GetDevice>(lpVtbl->GetDevice)(
                     This,
                     riid,
                     ppvDevice
@@ -289,7 +288,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12PipelineLibrary1* This = &this)
             {
-                return MarshalFunction<_StorePipeline>(lpVtbl->StorePipeline)(
+                return Marshal.GetDelegateForFunctionPointer<_StorePipeline>(lpVtbl->StorePipeline)(
                     This,
                     pName,
                     pPipeline
@@ -307,7 +306,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12PipelineLibrary1* This = &this)
             {
-                return MarshalFunction<_LoadGraphicsPipeline>(lpVtbl->LoadGraphicsPipeline)(
+                return Marshal.GetDelegateForFunctionPointer<_LoadGraphicsPipeline>(lpVtbl->LoadGraphicsPipeline)(
                     This,
                     pName,
                     pDesc,
@@ -327,7 +326,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12PipelineLibrary1* This = &this)
             {
-                return MarshalFunction<_LoadComputePipeline>(lpVtbl->LoadComputePipeline)(
+                return Marshal.GetDelegateForFunctionPointer<_LoadComputePipeline>(lpVtbl->LoadComputePipeline)(
                     This,
                     pName,
                     pDesc,
@@ -342,7 +341,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12PipelineLibrary1* This = &this)
             {
-                return MarshalFunction<_GetSerializedSize>(lpVtbl->GetSerializedSize)(
+                return Marshal.GetDelegateForFunctionPointer<_GetSerializedSize>(lpVtbl->GetSerializedSize)(
                     This
                 );
             }
@@ -356,7 +355,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12PipelineLibrary1* This = &this)
             {
-                return MarshalFunction<_Serialize>(lpVtbl->Serialize)(
+                return Marshal.GetDelegateForFunctionPointer<_Serialize>(lpVtbl->Serialize)(
                     This,
                     pData,
                     DataSizeInBytes
@@ -376,7 +375,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12PipelineLibrary1* This = &this)
             {
-                return MarshalFunction<_LoadPipeline>(lpVtbl->LoadPipeline)(
+                return Marshal.GetDelegateForFunctionPointer<_LoadPipeline>(lpVtbl->LoadPipeline)(
                     This,
                     pName,
                     pDesc,

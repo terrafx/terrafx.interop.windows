@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -161,7 +160,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Ink* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -174,7 +173,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Ink* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -185,7 +184,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Ink* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -199,7 +198,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Ink* This = &this)
             {
-                MarshalFunction<_GetFactory>(lpVtbl->GetFactory)(
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
                     This,
                     factory
                 );
@@ -214,7 +213,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Ink* This = &this)
             {
-                MarshalFunction<_SetStartPoint>(lpVtbl->SetStartPoint)(
+                Marshal.GetDelegateForFunctionPointer<_SetStartPoint>(lpVtbl->SetStartPoint)(
                     This,
                     startPoint
                 );
@@ -226,7 +225,7 @@ namespace TerraFX.Interop
             fixed (ID2D1Ink* This = &this)
             {
                 D2D1_INK_POINT result;
-                return *MarshalFunction<_GetStartPoint>(lpVtbl->GetStartPoint)(
+                return *Marshal.GetDelegateForFunctionPointer<_GetStartPoint>(lpVtbl->GetStartPoint)(
                     This,
                     &result
                 );
@@ -241,7 +240,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Ink* This = &this)
             {
-                return MarshalFunction<_AddSegments>(lpVtbl->AddSegments)(
+                return Marshal.GetDelegateForFunctionPointer<_AddSegments>(lpVtbl->AddSegments)(
                     This,
                     segments,
                     segmentsCount
@@ -256,7 +255,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Ink* This = &this)
             {
-                return MarshalFunction<_RemoveSegmentsAtEnd>(lpVtbl->RemoveSegmentsAtEnd)(
+                return Marshal.GetDelegateForFunctionPointer<_RemoveSegmentsAtEnd>(lpVtbl->RemoveSegmentsAtEnd)(
                     This,
                     segmentsCount
                 );
@@ -272,7 +271,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Ink* This = &this)
             {
-                return MarshalFunction<_SetSegments>(lpVtbl->SetSegments)(
+                return Marshal.GetDelegateForFunctionPointer<_SetSegments>(lpVtbl->SetSegments)(
                     This,
                     startSegment,
                     segments,
@@ -288,7 +287,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Ink* This = &this)
             {
-                return MarshalFunction<_SetSegmentAtEnd>(lpVtbl->SetSegmentAtEnd)(
+                return Marshal.GetDelegateForFunctionPointer<_SetSegmentAtEnd>(lpVtbl->SetSegmentAtEnd)(
                     This,
                     segment
                 );
@@ -300,7 +299,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Ink* This = &this)
             {
-                return MarshalFunction<_GetSegmentCount>(lpVtbl->GetSegmentCount)(
+                return Marshal.GetDelegateForFunctionPointer<_GetSegmentCount>(lpVtbl->GetSegmentCount)(
                     This
                 );
             }
@@ -315,7 +314,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Ink* This = &this)
             {
-                return MarshalFunction<_GetSegments>(lpVtbl->GetSegments)(
+                return Marshal.GetDelegateForFunctionPointer<_GetSegments>(lpVtbl->GetSegments)(
                     This,
                     startSegment,
                     segments,
@@ -334,7 +333,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Ink* This = &this)
             {
-                return MarshalFunction<_StreamAsGeometry>(lpVtbl->StreamAsGeometry)(
+                return Marshal.GetDelegateForFunctionPointer<_StreamAsGeometry>(lpVtbl->StreamAsGeometry)(
                     This,
                     inkStyle,
                     worldTransform,
@@ -353,7 +352,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Ink* This = &this)
             {
-                return MarshalFunction<_GetBounds>(lpVtbl->GetBounds)(
+                return Marshal.GetDelegateForFunctionPointer<_GetBounds>(lpVtbl->GetBounds)(
                     This,
                     inkStyle,
                     worldTransform,

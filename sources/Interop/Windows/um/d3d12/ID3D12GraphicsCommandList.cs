@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -565,7 +564,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -578,7 +577,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -589,7 +588,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -606,7 +605,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                return MarshalFunction<_GetPrivateData>(lpVtbl->GetPrivateData)(
+                return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)(
                     This,
                     guid,
                     pDataSize,
@@ -624,7 +623,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                return MarshalFunction<_SetPrivateData>(lpVtbl->SetPrivateData)(
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)(
                     This,
                     guid,
                     DataSize,
@@ -641,7 +640,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                return MarshalFunction<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(
                     This,
                     guid,
                     pData
@@ -656,7 +655,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                return MarshalFunction<_SetName>(lpVtbl->SetName)(
+                return Marshal.GetDelegateForFunctionPointer<_SetName>(lpVtbl->SetName)(
                     This,
                     Name
                 );
@@ -673,7 +672,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                return MarshalFunction<_GetDevice>(lpVtbl->GetDevice)(
+                return Marshal.GetDelegateForFunctionPointer<_GetDevice>(lpVtbl->GetDevice)(
                     This,
                     riid,
                     ppvDevice
@@ -687,7 +686,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                return MarshalFunction<__GetType>(lpVtbl->_GetType)(
+                return Marshal.GetDelegateForFunctionPointer<__GetType>(lpVtbl->_GetType)(
                     This
                 );
             }
@@ -700,7 +699,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                return MarshalFunction<_Close>(lpVtbl->Close)(
+                return Marshal.GetDelegateForFunctionPointer<_Close>(lpVtbl->Close)(
                     This
                 );
             }
@@ -714,7 +713,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                return MarshalFunction<_Reset>(lpVtbl->Reset)(
+                return Marshal.GetDelegateForFunctionPointer<_Reset>(lpVtbl->Reset)(
                     This,
                     pAllocator,
                     pInitialState
@@ -728,7 +727,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_ClearState>(lpVtbl->ClearState)(
+                Marshal.GetDelegateForFunctionPointer<_ClearState>(lpVtbl->ClearState)(
                     This,
                     pPipelineState
                 );
@@ -744,7 +743,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_DrawInstanced>(lpVtbl->DrawInstanced)(
+                Marshal.GetDelegateForFunctionPointer<_DrawInstanced>(lpVtbl->DrawInstanced)(
                     This,
                     VertexCountPerInstance,
                     InstanceCount,
@@ -764,7 +763,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_DrawIndexedInstanced>(lpVtbl->DrawIndexedInstanced)(
+                Marshal.GetDelegateForFunctionPointer<_DrawIndexedInstanced>(lpVtbl->DrawIndexedInstanced)(
                     This,
                     IndexCountPerInstance,
                     InstanceCount,
@@ -783,7 +782,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_Dispatch>(lpVtbl->Dispatch)(
+                Marshal.GetDelegateForFunctionPointer<_Dispatch>(lpVtbl->Dispatch)(
                     This,
                     ThreadGroupCountX,
                     ThreadGroupCountY,
@@ -802,7 +801,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_CopyBufferRegion>(lpVtbl->CopyBufferRegion)(
+                Marshal.GetDelegateForFunctionPointer<_CopyBufferRegion>(lpVtbl->CopyBufferRegion)(
                     This,
                     pDstBuffer,
                     DstOffset,
@@ -824,7 +823,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_CopyTextureRegion>(lpVtbl->CopyTextureRegion)(
+                Marshal.GetDelegateForFunctionPointer<_CopyTextureRegion>(lpVtbl->CopyTextureRegion)(
                     This,
                     pDst,
                     DstX,
@@ -843,7 +842,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_CopyResource>(lpVtbl->CopyResource)(
+                Marshal.GetDelegateForFunctionPointer<_CopyResource>(lpVtbl->CopyResource)(
                     This,
                     pDstResource,
                     pSrcResource
@@ -862,7 +861,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_CopyTiles>(lpVtbl->CopyTiles)(
+                Marshal.GetDelegateForFunctionPointer<_CopyTiles>(lpVtbl->CopyTiles)(
                     This,
                     pTiledResource,
                     pTileRegionStartCoordinate,
@@ -884,7 +883,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_ResolveSubresource>(lpVtbl->ResolveSubresource)(
+                Marshal.GetDelegateForFunctionPointer<_ResolveSubresource>(lpVtbl->ResolveSubresource)(
                     This,
                     pDstResource,
                     DstSubresource,
@@ -901,7 +900,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_IASetPrimitiveTopology>(lpVtbl->IASetPrimitiveTopology)(
+                Marshal.GetDelegateForFunctionPointer<_IASetPrimitiveTopology>(lpVtbl->IASetPrimitiveTopology)(
                     This,
                     PrimitiveTopology
                 );
@@ -915,7 +914,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_RSSetViewports>(lpVtbl->RSSetViewports)(
+                Marshal.GetDelegateForFunctionPointer<_RSSetViewports>(lpVtbl->RSSetViewports)(
                     This,
                     NumViewports,
                     pViewports
@@ -930,7 +929,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_RSSetScissorRects>(lpVtbl->RSSetScissorRects)(
+                Marshal.GetDelegateForFunctionPointer<_RSSetScissorRects>(lpVtbl->RSSetScissorRects)(
                     This,
                     NumRects,
                     pRects
@@ -944,7 +943,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_OMSetBlendFactor>(lpVtbl->OMSetBlendFactor)(
+                Marshal.GetDelegateForFunctionPointer<_OMSetBlendFactor>(lpVtbl->OMSetBlendFactor)(
                     This,
                     BlendFactor
                 );
@@ -957,7 +956,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_OMSetStencilRef>(lpVtbl->OMSetStencilRef)(
+                Marshal.GetDelegateForFunctionPointer<_OMSetStencilRef>(lpVtbl->OMSetStencilRef)(
                     This,
                     StencilRef
                 );
@@ -970,7 +969,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_SetPipelineState>(lpVtbl->SetPipelineState)(
+                Marshal.GetDelegateForFunctionPointer<_SetPipelineState>(lpVtbl->SetPipelineState)(
                     This,
                     pPipelineState
                 );
@@ -984,7 +983,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_ResourceBarrier>(lpVtbl->ResourceBarrier)(
+                Marshal.GetDelegateForFunctionPointer<_ResourceBarrier>(lpVtbl->ResourceBarrier)(
                     This,
                     NumBarriers,
                     pBarriers
@@ -998,7 +997,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_ExecuteBundle>(lpVtbl->ExecuteBundle)(
+                Marshal.GetDelegateForFunctionPointer<_ExecuteBundle>(lpVtbl->ExecuteBundle)(
                     This,
                     pCommandList
                 );
@@ -1012,7 +1011,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_SetDescriptorHeaps>(lpVtbl->SetDescriptorHeaps)(
+                Marshal.GetDelegateForFunctionPointer<_SetDescriptorHeaps>(lpVtbl->SetDescriptorHeaps)(
                     This,
                     NumDescriptorHeaps,
                     ppDescriptorHeaps
@@ -1026,7 +1025,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_SetComputeRootSignature>(lpVtbl->SetComputeRootSignature)(
+                Marshal.GetDelegateForFunctionPointer<_SetComputeRootSignature>(lpVtbl->SetComputeRootSignature)(
                     This,
                     pRootSignature
                 );
@@ -1039,7 +1038,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_SetGraphicsRootSignature>(lpVtbl->SetGraphicsRootSignature)(
+                Marshal.GetDelegateForFunctionPointer<_SetGraphicsRootSignature>(lpVtbl->SetGraphicsRootSignature)(
                     This,
                     pRootSignature
                 );
@@ -1053,7 +1052,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_SetComputeRootDescriptorTable>(lpVtbl->SetComputeRootDescriptorTable)(
+                Marshal.GetDelegateForFunctionPointer<_SetComputeRootDescriptorTable>(lpVtbl->SetComputeRootDescriptorTable)(
                     This,
                     RootParameterIndex,
                     BaseDescriptor
@@ -1068,7 +1067,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_SetGraphicsRootDescriptorTable>(lpVtbl->SetGraphicsRootDescriptorTable)(
+                Marshal.GetDelegateForFunctionPointer<_SetGraphicsRootDescriptorTable>(lpVtbl->SetGraphicsRootDescriptorTable)(
                     This,
                     RootParameterIndex,
                     BaseDescriptor
@@ -1084,7 +1083,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_SetComputeRoot32BitConstant>(lpVtbl->SetComputeRoot32BitConstant)(
+                Marshal.GetDelegateForFunctionPointer<_SetComputeRoot32BitConstant>(lpVtbl->SetComputeRoot32BitConstant)(
                     This,
                     RootParameterIndex,
                     SrcData,
@@ -1101,7 +1100,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_SetGraphicsRoot32BitConstant>(lpVtbl->SetGraphicsRoot32BitConstant)(
+                Marshal.GetDelegateForFunctionPointer<_SetGraphicsRoot32BitConstant>(lpVtbl->SetGraphicsRoot32BitConstant)(
                     This,
                     RootParameterIndex,
                     SrcData,
@@ -1119,7 +1118,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_SetComputeRoot32BitConstants>(lpVtbl->SetComputeRoot32BitConstants)(
+                Marshal.GetDelegateForFunctionPointer<_SetComputeRoot32BitConstants>(lpVtbl->SetComputeRoot32BitConstants)(
                     This,
                     RootParameterIndex,
                     Num32BitValuesToSet,
@@ -1138,7 +1137,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_SetGraphicsRoot32BitConstants>(lpVtbl->SetGraphicsRoot32BitConstants)(
+                Marshal.GetDelegateForFunctionPointer<_SetGraphicsRoot32BitConstants>(lpVtbl->SetGraphicsRoot32BitConstants)(
                     This,
                     RootParameterIndex,
                     Num32BitValuesToSet,
@@ -1155,7 +1154,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_SetComputeRootConstantBufferView>(lpVtbl->SetComputeRootConstantBufferView)(
+                Marshal.GetDelegateForFunctionPointer<_SetComputeRootConstantBufferView>(lpVtbl->SetComputeRootConstantBufferView)(
                     This,
                     RootParameterIndex,
                     BufferLocation
@@ -1170,7 +1169,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_SetGraphicsRootConstantBufferView>(lpVtbl->SetGraphicsRootConstantBufferView)(
+                Marshal.GetDelegateForFunctionPointer<_SetGraphicsRootConstantBufferView>(lpVtbl->SetGraphicsRootConstantBufferView)(
                     This,
                     RootParameterIndex,
                     BufferLocation
@@ -1185,7 +1184,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_SetComputeRootShaderResourceView>(lpVtbl->SetComputeRootShaderResourceView)(
+                Marshal.GetDelegateForFunctionPointer<_SetComputeRootShaderResourceView>(lpVtbl->SetComputeRootShaderResourceView)(
                     This,
                     RootParameterIndex,
                     BufferLocation
@@ -1200,7 +1199,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_SetGraphicsRootShaderResourceView>(lpVtbl->SetGraphicsRootShaderResourceView)(
+                Marshal.GetDelegateForFunctionPointer<_SetGraphicsRootShaderResourceView>(lpVtbl->SetGraphicsRootShaderResourceView)(
                     This,
                     RootParameterIndex,
                     BufferLocation
@@ -1215,7 +1214,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_SetComputeRootUnorderedAccessView>(lpVtbl->SetComputeRootUnorderedAccessView)(
+                Marshal.GetDelegateForFunctionPointer<_SetComputeRootUnorderedAccessView>(lpVtbl->SetComputeRootUnorderedAccessView)(
                     This,
                     RootParameterIndex,
                     BufferLocation
@@ -1230,7 +1229,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_SetGraphicsRootUnorderedAccessView>(lpVtbl->SetGraphicsRootUnorderedAccessView)(
+                Marshal.GetDelegateForFunctionPointer<_SetGraphicsRootUnorderedAccessView>(lpVtbl->SetGraphicsRootUnorderedAccessView)(
                     This,
                     RootParameterIndex,
                     BufferLocation
@@ -1244,7 +1243,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_IASetIndexBuffer>(lpVtbl->IASetIndexBuffer)(
+                Marshal.GetDelegateForFunctionPointer<_IASetIndexBuffer>(lpVtbl->IASetIndexBuffer)(
                     This,
                     pView
                 );
@@ -1259,7 +1258,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_IASetVertexBuffers>(lpVtbl->IASetVertexBuffers)(
+                Marshal.GetDelegateForFunctionPointer<_IASetVertexBuffers>(lpVtbl->IASetVertexBuffers)(
                     This,
                     StartSlot,
                     NumViews,
@@ -1276,7 +1275,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_SOSetTargets>(lpVtbl->SOSetTargets)(
+                Marshal.GetDelegateForFunctionPointer<_SOSetTargets>(lpVtbl->SOSetTargets)(
                     This,
                     StartSlot,
                     NumViews,
@@ -1294,7 +1293,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_OMSetRenderTargets>(lpVtbl->OMSetRenderTargets)(
+                Marshal.GetDelegateForFunctionPointer<_OMSetRenderTargets>(lpVtbl->OMSetRenderTargets)(
                     This,
                     NumRenderTargetDescriptors,
                     pRenderTargetDescriptors,
@@ -1315,7 +1314,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_ClearDepthStencilView>(lpVtbl->ClearDepthStencilView)(
+                Marshal.GetDelegateForFunctionPointer<_ClearDepthStencilView>(lpVtbl->ClearDepthStencilView)(
                     This,
                     DepthStencilView,
                     ClearFlags,
@@ -1336,7 +1335,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_ClearRenderTargetView>(lpVtbl->ClearRenderTargetView)(
+                Marshal.GetDelegateForFunctionPointer<_ClearRenderTargetView>(lpVtbl->ClearRenderTargetView)(
                     This,
                     RenderTargetView,
                     ColorRGBA,
@@ -1357,7 +1356,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_ClearUnorderedAccessViewUint>(lpVtbl->ClearUnorderedAccessViewUint)(
+                Marshal.GetDelegateForFunctionPointer<_ClearUnorderedAccessViewUint>(lpVtbl->ClearUnorderedAccessViewUint)(
                     This,
                     ViewGPUHandleInCurrentHeap,
                     ViewCPUHandle,
@@ -1380,7 +1379,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_ClearUnorderedAccessViewFloat>(lpVtbl->ClearUnorderedAccessViewFloat)(
+                Marshal.GetDelegateForFunctionPointer<_ClearUnorderedAccessViewFloat>(lpVtbl->ClearUnorderedAccessViewFloat)(
                     This,
                     ViewGPUHandleInCurrentHeap,
                     ViewCPUHandle,
@@ -1399,7 +1398,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_DiscardResource>(lpVtbl->DiscardResource)(
+                Marshal.GetDelegateForFunctionPointer<_DiscardResource>(lpVtbl->DiscardResource)(
                     This,
                     pResource,
                     pRegion
@@ -1415,7 +1414,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_BeginQuery>(lpVtbl->BeginQuery)(
+                Marshal.GetDelegateForFunctionPointer<_BeginQuery>(lpVtbl->BeginQuery)(
                     This,
                     pQueryHeap,
                     Type,
@@ -1432,7 +1431,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_EndQuery>(lpVtbl->EndQuery)(
+                Marshal.GetDelegateForFunctionPointer<_EndQuery>(lpVtbl->EndQuery)(
                     This,
                     pQueryHeap,
                     Type,
@@ -1452,7 +1451,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_ResolveQueryData>(lpVtbl->ResolveQueryData)(
+                Marshal.GetDelegateForFunctionPointer<_ResolveQueryData>(lpVtbl->ResolveQueryData)(
                     This,
                     pQueryHeap,
                     Type,
@@ -1472,7 +1471,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_SetPredication>(lpVtbl->SetPredication)(
+                Marshal.GetDelegateForFunctionPointer<_SetPredication>(lpVtbl->SetPredication)(
                     This,
                     pBuffer,
                     AlignedBufferOffset,
@@ -1489,7 +1488,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_SetMarker>(lpVtbl->SetMarker)(
+                Marshal.GetDelegateForFunctionPointer<_SetMarker>(lpVtbl->SetMarker)(
                     This,
                     Metadata,
                     pData,
@@ -1506,7 +1505,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_BeginEvent>(lpVtbl->BeginEvent)(
+                Marshal.GetDelegateForFunctionPointer<_BeginEvent>(lpVtbl->BeginEvent)(
                     This,
                     Metadata,
                     pData,
@@ -1519,7 +1518,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_EndEvent>(lpVtbl->EndEvent)(
+                Marshal.GetDelegateForFunctionPointer<_EndEvent>(lpVtbl->EndEvent)(
                     This
                 );
             }
@@ -1536,7 +1535,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList* This = &this)
             {
-                MarshalFunction<_ExecuteIndirect>(lpVtbl->ExecuteIndirect)(
+                Marshal.GetDelegateForFunctionPointer<_ExecuteIndirect>(lpVtbl->ExecuteIndirect)(
                     This,
                     pCommandSignature,
                     MaxCommandCount,
