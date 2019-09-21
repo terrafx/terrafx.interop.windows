@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -259,7 +258,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectContext* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -272,7 +271,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectContext* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -283,7 +282,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectContext* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -298,7 +297,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectContext* This = &this)
             {
-                MarshalFunction<_GetDpi>(lpVtbl->GetDpi)(
+                Marshal.GetDelegateForFunctionPointer<_GetDpi>(lpVtbl->GetDpi)(
                     This,
                     dpiX,
                     dpiY
@@ -314,7 +313,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectContext* This = &this)
             {
-                return MarshalFunction<_CreateEffect>(lpVtbl->CreateEffect)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateEffect>(lpVtbl->CreateEffect)(
                     This,
                     effectId,
                     effect
@@ -331,7 +330,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectContext* This = &this)
             {
-                return MarshalFunction<_GetMaximumSupportedFeatureLevel>(lpVtbl->GetMaximumSupportedFeatureLevel)(
+                return Marshal.GetDelegateForFunctionPointer<_GetMaximumSupportedFeatureLevel>(lpVtbl->GetMaximumSupportedFeatureLevel)(
                     This,
                     featureLevels,
                     featureLevelsCount,
@@ -348,7 +347,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectContext* This = &this)
             {
-                return MarshalFunction<_CreateTransformNodeFromEffect>(lpVtbl->CreateTransformNodeFromEffect)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateTransformNodeFromEffect>(lpVtbl->CreateTransformNodeFromEffect)(
                     This,
                     effect,
                     transformNode
@@ -365,7 +364,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectContext* This = &this)
             {
-                return MarshalFunction<_CreateBlendTransform>(lpVtbl->CreateBlendTransform)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateBlendTransform>(lpVtbl->CreateBlendTransform)(
                     This,
                     numInputs,
                     blendDescription,
@@ -383,7 +382,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectContext* This = &this)
             {
-                return MarshalFunction<_CreateBorderTransform>(lpVtbl->CreateBorderTransform)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateBorderTransform>(lpVtbl->CreateBorderTransform)(
                     This,
                     extendModeX,
                     extendModeY,
@@ -400,7 +399,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectContext* This = &this)
             {
-                return MarshalFunction<_CreateOffsetTransform>(lpVtbl->CreateOffsetTransform)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateOffsetTransform>(lpVtbl->CreateOffsetTransform)(
                     This,
                     offset,
                     transform
@@ -416,7 +415,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectContext* This = &this)
             {
-                return MarshalFunction<_CreateBoundsAdjustmentTransform>(lpVtbl->CreateBoundsAdjustmentTransform)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateBoundsAdjustmentTransform>(lpVtbl->CreateBoundsAdjustmentTransform)(
                     This,
                     outputRectangle,
                     transform
@@ -433,7 +432,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectContext* This = &this)
             {
-                return MarshalFunction<_LoadPixelShader>(lpVtbl->LoadPixelShader)(
+                return Marshal.GetDelegateForFunctionPointer<_LoadPixelShader>(lpVtbl->LoadPixelShader)(
                     This,
                     shaderId,
                     shaderBuffer,
@@ -451,7 +450,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectContext* This = &this)
             {
-                return MarshalFunction<_LoadVertexShader>(lpVtbl->LoadVertexShader)(
+                return Marshal.GetDelegateForFunctionPointer<_LoadVertexShader>(lpVtbl->LoadVertexShader)(
                     This,
                     resourceId,
                     shaderBuffer,
@@ -469,7 +468,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectContext* This = &this)
             {
-                return MarshalFunction<_LoadComputeShader>(lpVtbl->LoadComputeShader)(
+                return Marshal.GetDelegateForFunctionPointer<_LoadComputeShader>(lpVtbl->LoadComputeShader)(
                     This,
                     resourceId,
                     shaderBuffer,
@@ -485,7 +484,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectContext* This = &this)
             {
-                return MarshalFunction<_IsShaderLoaded>(lpVtbl->IsShaderLoaded)(
+                return Marshal.GetDelegateForFunctionPointer<_IsShaderLoaded>(lpVtbl->IsShaderLoaded)(
                     This,
                     shaderId
                 );
@@ -504,7 +503,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectContext* This = &this)
             {
-                return MarshalFunction<_CreateResourceTexture>(lpVtbl->CreateResourceTexture)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateResourceTexture>(lpVtbl->CreateResourceTexture)(
                     This,
                     resourceId,
                     resourceTextureProperties,
@@ -524,7 +523,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectContext* This = &this)
             {
-                return MarshalFunction<_FindResourceTexture>(lpVtbl->FindResourceTexture)(
+                return Marshal.GetDelegateForFunctionPointer<_FindResourceTexture>(lpVtbl->FindResourceTexture)(
                     This,
                     resourceId,
                     resourceTexture
@@ -542,7 +541,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectContext* This = &this)
             {
-                return MarshalFunction<_CreateVertexBuffer>(lpVtbl->CreateVertexBuffer)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateVertexBuffer>(lpVtbl->CreateVertexBuffer)(
                     This,
                     vertexBufferProperties,
                     resourceId,
@@ -560,7 +559,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectContext* This = &this)
             {
-                return MarshalFunction<_FindVertexBuffer>(lpVtbl->FindVertexBuffer)(
+                return Marshal.GetDelegateForFunctionPointer<_FindVertexBuffer>(lpVtbl->FindVertexBuffer)(
                     This,
                     resourceId,
                     buffer
@@ -578,7 +577,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectContext* This = &this)
             {
-                return MarshalFunction<_CreateColorContext>(lpVtbl->CreateColorContext)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateColorContext>(lpVtbl->CreateColorContext)(
                     This,
                     space,
                     profile,
@@ -596,7 +595,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectContext* This = &this)
             {
-                return MarshalFunction<_CreateColorContextFromFilename>(lpVtbl->CreateColorContextFromFilename)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateColorContextFromFilename>(lpVtbl->CreateColorContextFromFilename)(
                     This,
                     filename,
                     colorContext
@@ -612,7 +611,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectContext* This = &this)
             {
-                return MarshalFunction<_CreateColorContextFromWicColorContext>(lpVtbl->CreateColorContextFromWicColorContext)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateColorContextFromWicColorContext>(lpVtbl->CreateColorContextFromWicColorContext)(
                     This,
                     wicColorContext,
                     colorContext
@@ -629,7 +628,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectContext* This = &this)
             {
-                return MarshalFunction<_CheckFeatureSupport>(lpVtbl->CheckFeatureSupport)(
+                return Marshal.GetDelegateForFunctionPointer<_CheckFeatureSupport>(lpVtbl->CheckFeatureSupport)(
                     This,
                     feature,
                     featureSupportData,
@@ -645,7 +644,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectContext* This = &this)
             {
-                return MarshalFunction<_IsBufferPrecisionSupported>(lpVtbl->IsBufferPrecisionSupported)(
+                return Marshal.GetDelegateForFunctionPointer<_IsBufferPrecisionSupported>(lpVtbl->IsBufferPrecisionSupported)(
                     This,
                     bufferPrecision
                 );

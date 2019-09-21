@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -102,7 +101,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFallbackBuilder* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -115,7 +114,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFallbackBuilder* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -126,7 +125,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFallbackBuilder* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -148,7 +147,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFallbackBuilder* This = &this)
             {
-                return MarshalFunction<_AddMapping>(lpVtbl->AddMapping)(
+                return Marshal.GetDelegateForFunctionPointer<_AddMapping>(lpVtbl->AddMapping)(
                     This,
                     ranges,
                     rangesCount,
@@ -169,7 +168,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFallbackBuilder* This = &this)
             {
-                return MarshalFunction<_AddMappings>(lpVtbl->AddMappings)(
+                return Marshal.GetDelegateForFunctionPointer<_AddMappings>(lpVtbl->AddMappings)(
                     This,
                     fontFallback
                 );
@@ -183,7 +182,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFallbackBuilder* This = &this)
             {
-                return MarshalFunction<_CreateFontFallback>(lpVtbl->CreateFontFallback)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateFontFallback>(lpVtbl->CreateFontFallback)(
                     This,
                     fontFallback
                 );

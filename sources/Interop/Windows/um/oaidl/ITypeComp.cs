@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -77,7 +76,7 @@ namespace TerraFX.Interop
         {
             fixed (ITypeComp* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -90,7 +89,7 @@ namespace TerraFX.Interop
         {
             fixed (ITypeComp* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -101,7 +100,7 @@ namespace TerraFX.Interop
         {
             fixed (ITypeComp* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -121,7 +120,7 @@ namespace TerraFX.Interop
         // {
         //     fixed (ITypeComp* This = &this)
         //     {
-        //         return MarshalFunction<_Bind>(lpVtbl->Bind)(
+        //         return Marshal.GetDelegateForFunctionPointer<_Bind>(lpVtbl->Bind)(
         //             This,
         //             szName,
         //             lHashVal,
@@ -143,7 +142,7 @@ namespace TerraFX.Interop
         // {
         //     fixed (ITypeComp* This = &this)
         //     {
-        //         return MarshalFunction<_BindType>(lpVtbl->BindType)(
+        //         return Marshal.GetDelegateForFunctionPointer<_BindType>(lpVtbl->BindType)(
         //             This,
         //             szName,
         //             lHashVal,

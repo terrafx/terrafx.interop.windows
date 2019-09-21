@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -121,7 +120,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIKeyedMutex* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -134,7 +133,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIKeyedMutex* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -145,7 +144,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIKeyedMutex* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -162,7 +161,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIKeyedMutex* This = &this)
             {
-                return MarshalFunction<_SetPrivateData>(lpVtbl->SetPrivateData)(
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)(
                     This,
                     Name,
                     DataSize,
@@ -179,7 +178,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIKeyedMutex* This = &this)
             {
-                return MarshalFunction<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(
                     This,
                     Name,
                     pUnknown
@@ -196,7 +195,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIKeyedMutex* This = &this)
             {
-                return MarshalFunction<_GetPrivateData>(lpVtbl->GetPrivateData)(
+                return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)(
                     This,
                     Name,
                     pDataSize,
@@ -213,7 +212,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIKeyedMutex* This = &this)
             {
-                return MarshalFunction<_GetParent>(lpVtbl->GetParent)(
+                return Marshal.GetDelegateForFunctionPointer<_GetParent>(lpVtbl->GetParent)(
                     This,
                     riid,
                     ppParent
@@ -231,7 +230,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIKeyedMutex* This = &this)
             {
-                return MarshalFunction<_GetDevice>(lpVtbl->GetDevice)(
+                return Marshal.GetDelegateForFunctionPointer<_GetDevice>(lpVtbl->GetDevice)(
                     This,
                     riid,
                     ppDevice
@@ -249,7 +248,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIKeyedMutex* This = &this)
             {
-                return MarshalFunction<_AcquireSync>(lpVtbl->AcquireSync)(
+                return Marshal.GetDelegateForFunctionPointer<_AcquireSync>(lpVtbl->AcquireSync)(
                     This,
                     Key,
                     dwMilliseconds
@@ -264,7 +263,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIKeyedMutex* This = &this)
             {
-                return MarshalFunction<_ReleaseSync>(lpVtbl->ReleaseSync)(
+                return Marshal.GetDelegateForFunctionPointer<_ReleaseSync>(lpVtbl->ReleaseSync)(
                     This,
                     Key
                 );

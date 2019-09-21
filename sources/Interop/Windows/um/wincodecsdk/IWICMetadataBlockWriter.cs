@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -130,7 +129,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataBlockWriter* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -143,7 +142,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataBlockWriter* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -154,7 +153,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataBlockWriter* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -169,7 +168,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataBlockWriter* This = &this)
             {
-                return MarshalFunction<_GetContainerFormat>(lpVtbl->GetContainerFormat)(
+                return Marshal.GetDelegateForFunctionPointer<_GetContainerFormat>(lpVtbl->GetContainerFormat)(
                     This,
                     pguidContainerFormat
                 );
@@ -183,7 +182,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataBlockWriter* This = &this)
             {
-                return MarshalFunction<_GetCount>(lpVtbl->GetCount)(
+                return Marshal.GetDelegateForFunctionPointer<_GetCount>(lpVtbl->GetCount)(
                     This,
                     pcCount
                 );
@@ -198,7 +197,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataBlockWriter* This = &this)
             {
-                return MarshalFunction<_GetReaderByIndex>(lpVtbl->GetReaderByIndex)(
+                return Marshal.GetDelegateForFunctionPointer<_GetReaderByIndex>(lpVtbl->GetReaderByIndex)(
                     This,
                     nIndex,
                     ppIMetadataReader
@@ -213,7 +212,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataBlockWriter* This = &this)
             {
-                return MarshalFunction<_GetEnumerator>(lpVtbl->GetEnumerator)(
+                return Marshal.GetDelegateForFunctionPointer<_GetEnumerator>(lpVtbl->GetEnumerator)(
                     This,
                     ppIEnumMetadata
                 );
@@ -229,7 +228,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataBlockWriter* This = &this)
             {
-                return MarshalFunction<_InitializeFromBlockReader>(lpVtbl->InitializeFromBlockReader)(
+                return Marshal.GetDelegateForFunctionPointer<_InitializeFromBlockReader>(lpVtbl->InitializeFromBlockReader)(
                     This,
                     pIMDBlockReader
                 );
@@ -244,7 +243,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataBlockWriter* This = &this)
             {
-                return MarshalFunction<_GetWriterByIndex>(lpVtbl->GetWriterByIndex)(
+                return Marshal.GetDelegateForFunctionPointer<_GetWriterByIndex>(lpVtbl->GetWriterByIndex)(
                     This,
                     nIndex,
                     ppIMetadataWriter
@@ -259,7 +258,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataBlockWriter* This = &this)
             {
-                return MarshalFunction<_AddWriter>(lpVtbl->AddWriter)(
+                return Marshal.GetDelegateForFunctionPointer<_AddWriter>(lpVtbl->AddWriter)(
                     This,
                     pIMetadataWriter
                 );
@@ -274,7 +273,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataBlockWriter* This = &this)
             {
-                return MarshalFunction<_SetWriterByIndex>(lpVtbl->SetWriterByIndex)(
+                return Marshal.GetDelegateForFunctionPointer<_SetWriterByIndex>(lpVtbl->SetWriterByIndex)(
                     This,
                     nIndex,
                     pIMetadataWriter
@@ -289,7 +288,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataBlockWriter* This = &this)
             {
-                return MarshalFunction<_RemoveWriterByIndex>(lpVtbl->RemoveWriterByIndex)(
+                return Marshal.GetDelegateForFunctionPointer<_RemoveWriterByIndex>(lpVtbl->RemoveWriterByIndex)(
                     This,
                     nIndex
                 );

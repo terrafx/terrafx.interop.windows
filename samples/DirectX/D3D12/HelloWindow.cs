@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
 using System;
+using System.Runtime.InteropServices;
 using TerraFX.Interop;
 using static TerraFX.Interop.D3D_FEATURE_LEVEL;
 using static TerraFX.Interop.D3D12;
@@ -21,7 +22,6 @@ using static TerraFX.Interop.DXGI_SWAP_EFFECT;
 using static TerraFX.Interop.Kernel32;
 using static TerraFX.Interop.Windows;
 using static TerraFX.Samples.DirectX.D3D12.DXSampleHelper;
-using static TerraFX.Utilities.ExceptionUtilities;
 
 namespace TerraFX.Samples.DirectX.D3D12
 {
@@ -282,7 +282,8 @@ namespace TerraFX.Samples.DirectX.D3D12
                 _fenceEvent = CreateEvent(null, FALSE, FALSE, null);
                 if (_fenceEvent == IntPtr.Zero)
                 {
-                    ThrowExternalExceptionForLastHRESULT(nameof(CreateEvent));
+                    var hr = Marshal.GetHRForLastWin32Error();
+                    Marshal.ThrowExceptionForHR(hr);
                 }
             }
         }

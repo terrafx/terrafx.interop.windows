@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -218,7 +217,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDevice4* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -231,7 +230,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDevice4* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -242,7 +241,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDevice4* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -259,7 +258,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDevice4* This = &this)
             {
-                return MarshalFunction<_SetPrivateData>(lpVtbl->SetPrivateData)(
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)(
                     This,
                     Name,
                     DataSize,
@@ -276,7 +275,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDevice4* This = &this)
             {
-                return MarshalFunction<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(
                     This,
                     Name,
                     pUnknown
@@ -293,7 +292,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDevice4* This = &this)
             {
-                return MarshalFunction<_GetPrivateData>(lpVtbl->GetPrivateData)(
+                return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)(
                     This,
                     Name,
                     pDataSize,
@@ -310,7 +309,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDevice4* This = &this)
             {
-                return MarshalFunction<_GetParent>(lpVtbl->GetParent)(
+                return Marshal.GetDelegateForFunctionPointer<_GetParent>(lpVtbl->GetParent)(
                     This,
                     riid,
                     ppParent
@@ -327,7 +326,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDevice4* This = &this)
             {
-                return MarshalFunction<_GetAdapter>(lpVtbl->GetAdapter)(
+                return Marshal.GetDelegateForFunctionPointer<_GetAdapter>(lpVtbl->GetAdapter)(
                     This,
                     pAdapter
                 );
@@ -345,7 +344,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDevice4* This = &this)
             {
-                return MarshalFunction<_CreateSurface>(lpVtbl->CreateSurface)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateSurface>(lpVtbl->CreateSurface)(
                     This,
                     pDesc,
                     NumSurfaces,
@@ -365,7 +364,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDevice4* This = &this)
             {
-                return MarshalFunction<_QueryResourceResidency>(lpVtbl->QueryResourceResidency)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryResourceResidency>(lpVtbl->QueryResourceResidency)(
                     This,
                     ppResources,
                     pResidencyStatus,
@@ -381,7 +380,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDevice4* This = &this)
             {
-                return MarshalFunction<_SetGPUThreadPriority>(lpVtbl->SetGPUThreadPriority)(
+                return Marshal.GetDelegateForFunctionPointer<_SetGPUThreadPriority>(lpVtbl->SetGPUThreadPriority)(
                     This,
                     Priority
                 );
@@ -395,7 +394,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDevice4* This = &this)
             {
-                return MarshalFunction<_GetGPUThreadPriority>(lpVtbl->GetGPUThreadPriority)(
+                return Marshal.GetDelegateForFunctionPointer<_GetGPUThreadPriority>(lpVtbl->GetGPUThreadPriority)(
                     This,
                     pPriority
                 );
@@ -411,7 +410,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDevice4* This = &this)
             {
-                return MarshalFunction<_SetMaximumFrameLatency>(lpVtbl->SetMaximumFrameLatency)(
+                return Marshal.GetDelegateForFunctionPointer<_SetMaximumFrameLatency>(lpVtbl->SetMaximumFrameLatency)(
                     This,
                     MaxLatency
                 );
@@ -425,7 +424,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDevice4* This = &this)
             {
-                return MarshalFunction<_GetMaximumFrameLatency>(lpVtbl->GetMaximumFrameLatency)(
+                return Marshal.GetDelegateForFunctionPointer<_GetMaximumFrameLatency>(lpVtbl->GetMaximumFrameLatency)(
                     This,
                     pMaxLatency
                 );
@@ -443,7 +442,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDevice4* This = &this)
             {
-                return MarshalFunction<_OfferResources>(lpVtbl->OfferResources)(
+                return Marshal.GetDelegateForFunctionPointer<_OfferResources>(lpVtbl->OfferResources)(
                     This,
                     NumResources,
                     ppResources,
@@ -461,7 +460,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDevice4* This = &this)
             {
-                return MarshalFunction<_ReclaimResources>(lpVtbl->ReclaimResources)(
+                return Marshal.GetDelegateForFunctionPointer<_ReclaimResources>(lpVtbl->ReclaimResources)(
                     This,
                     NumResources,
                     ppResources,
@@ -477,7 +476,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDevice4* This = &this)
             {
-                return MarshalFunction<_EnqueueSetEvent>(lpVtbl->EnqueueSetEvent)(
+                return Marshal.GetDelegateForFunctionPointer<_EnqueueSetEvent>(lpVtbl->EnqueueSetEvent)(
                     This,
                     hEvent
                 );
@@ -490,7 +489,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDevice4* This = &this)
             {
-                MarshalFunction<_Trim>(lpVtbl->Trim)(
+                Marshal.GetDelegateForFunctionPointer<_Trim>(lpVtbl->Trim)(
                     This
                 );
             }
@@ -508,7 +507,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDevice4* This = &this)
             {
-                return MarshalFunction<_OfferResources1>(lpVtbl->OfferResources1)(
+                return Marshal.GetDelegateForFunctionPointer<_OfferResources1>(lpVtbl->OfferResources1)(
                     This,
                     NumResources,
                     ppResources,
@@ -527,7 +526,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDevice4* This = &this)
             {
-                return MarshalFunction<_ReclaimResources1>(lpVtbl->ReclaimResources1)(
+                return Marshal.GetDelegateForFunctionPointer<_ReclaimResources1>(lpVtbl->ReclaimResources1)(
                     This,
                     NumResources,
                     ppResources,

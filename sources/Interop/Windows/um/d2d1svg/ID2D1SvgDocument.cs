@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -181,7 +180,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgDocument* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -194,7 +193,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgDocument* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -205,7 +204,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgDocument* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -219,7 +218,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgDocument* This = &this)
             {
-                MarshalFunction<_GetFactory>(lpVtbl->GetFactory)(
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
                     This,
                     factory
                 );
@@ -235,7 +234,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgDocument* This = &this)
             {
-                return MarshalFunction<_SetViewportSize>(lpVtbl->SetViewportSize)(
+                return Marshal.GetDelegateForFunctionPointer<_SetViewportSize>(lpVtbl->SetViewportSize)(
                     This,
                     viewportSize
                 );
@@ -248,7 +247,7 @@ namespace TerraFX.Interop
             fixed (ID2D1SvgDocument* This = &this)
             {
                 D2D_SIZE_F result;
-                return *MarshalFunction<_GetViewportSize>(lpVtbl->GetViewportSize)(
+                return *Marshal.GetDelegateForFunctionPointer<_GetViewportSize>(lpVtbl->GetViewportSize)(
                     This,
                     &result
                 );
@@ -262,7 +261,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgDocument* This = &this)
             {
-                return MarshalFunction<_SetRoot>(lpVtbl->SetRoot)(
+                return Marshal.GetDelegateForFunctionPointer<_SetRoot>(lpVtbl->SetRoot)(
                     This,
                     root
                 );
@@ -275,7 +274,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgDocument* This = &this)
             {
-                MarshalFunction<_GetRoot>(lpVtbl->GetRoot)(
+                Marshal.GetDelegateForFunctionPointer<_GetRoot>(lpVtbl->GetRoot)(
                     This,
                     root
                 );
@@ -290,7 +289,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgDocument* This = &this)
             {
-                return MarshalFunction<_FindElementById>(lpVtbl->FindElementById)(
+                return Marshal.GetDelegateForFunctionPointer<_FindElementById>(lpVtbl->FindElementById)(
                     This,
                     id,
                     svgElement
@@ -306,7 +305,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgDocument* This = &this)
             {
-                return MarshalFunction<_Serialize>(lpVtbl->Serialize)(
+                return Marshal.GetDelegateForFunctionPointer<_Serialize>(lpVtbl->Serialize)(
                     This,
                     outputXmlStream,
                     subtree
@@ -322,7 +321,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgDocument* This = &this)
             {
-                return MarshalFunction<_Deserialize>(lpVtbl->Deserialize)(
+                return Marshal.GetDelegateForFunctionPointer<_Deserialize>(lpVtbl->Deserialize)(
                     This,
                     inputXmlStream,
                     subtree
@@ -340,7 +339,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgDocument* This = &this)
             {
-                return MarshalFunction<_CreatePaint>(lpVtbl->CreatePaint)(
+                return Marshal.GetDelegateForFunctionPointer<_CreatePaint>(lpVtbl->CreatePaint)(
                     This,
                     paintType,
                     color,
@@ -359,7 +358,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgDocument* This = &this)
             {
-                return MarshalFunction<_CreateStrokeDashArray>(lpVtbl->CreateStrokeDashArray)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateStrokeDashArray>(lpVtbl->CreateStrokeDashArray)(
                     This,
                     dashes,
                     dashesCount,
@@ -377,7 +376,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgDocument* This = &this)
             {
-                return MarshalFunction<_CreatePointCollection>(lpVtbl->CreatePointCollection)(
+                return Marshal.GetDelegateForFunctionPointer<_CreatePointCollection>(lpVtbl->CreatePointCollection)(
                     This,
                     points,
                     pointsCount,
@@ -397,7 +396,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgDocument* This = &this)
             {
-                return MarshalFunction<_CreatePathData>(lpVtbl->CreatePathData)(
+                return Marshal.GetDelegateForFunctionPointer<_CreatePathData>(lpVtbl->CreatePathData)(
                     This,
                     segmentData,
                     segmentDataCount,

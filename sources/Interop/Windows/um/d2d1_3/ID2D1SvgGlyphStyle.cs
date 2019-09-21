@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -119,7 +118,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgGlyphStyle* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -132,7 +131,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgGlyphStyle* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -143,7 +142,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgGlyphStyle* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -157,7 +156,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgGlyphStyle* This = &this)
             {
-                MarshalFunction<_GetFactory>(lpVtbl->GetFactory)(
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
                     This,
                     factory
                 );
@@ -173,7 +172,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgGlyphStyle* This = &this)
             {
-                return MarshalFunction<_SetFill>(lpVtbl->SetFill)(
+                return Marshal.GetDelegateForFunctionPointer<_SetFill>(lpVtbl->SetFill)(
                     This,
                     brush
                 );
@@ -186,7 +185,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgGlyphStyle* This = &this)
             {
-                MarshalFunction<_GetFill>(lpVtbl->GetFill)(
+                Marshal.GetDelegateForFunctionPointer<_GetFill>(lpVtbl->GetFill)(
                     This,
                     brush
                 );
@@ -204,7 +203,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgGlyphStyle* This = &this)
             {
-                return MarshalFunction<_SetStroke>(lpVtbl->SetStroke)(
+                return Marshal.GetDelegateForFunctionPointer<_SetStroke>(lpVtbl->SetStroke)(
                     This,
                     brush,
                     strokeWidth,
@@ -220,7 +219,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgGlyphStyle* This = &this)
             {
-                return MarshalFunction<_GetStrokeDashesCount>(lpVtbl->GetStrokeDashesCount)(
+                return Marshal.GetDelegateForFunctionPointer<_GetStrokeDashesCount>(lpVtbl->GetStrokeDashesCount)(
                     This
                 );
             }
@@ -236,7 +235,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgGlyphStyle* This = &this)
             {
-                MarshalFunction<_GetStroke>(lpVtbl->GetStroke)(
+                Marshal.GetDelegateForFunctionPointer<_GetStroke>(lpVtbl->GetStroke)(
                     This,
                     brush,
                     strokeWidth,

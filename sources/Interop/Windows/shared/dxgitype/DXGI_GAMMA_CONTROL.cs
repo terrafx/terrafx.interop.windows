@@ -3,7 +3,8 @@
 // Ported from shared\dxgitype.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using static TerraFX.Utilities.InteropUtilities;
+using System;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
@@ -2074,17 +2075,10 @@ namespace TerraFX.Interop
             #endregion
 
             #region Properties
-            public ref DXGI_RGB this[int index]
-            {
-                get
-                {
-                    fixed (DXGI_RGB* e = &e0)
-                    {
-                        return ref AsRef<DXGI_RGB>(e + index);
-                    }
-                }
-            }
+            public ref DXGI_RGB this[int index] => ref AsSpan(int.MaxValue)[index];
             #endregion
+
+            public Span<DXGI_RGB> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
         #endregion
     }

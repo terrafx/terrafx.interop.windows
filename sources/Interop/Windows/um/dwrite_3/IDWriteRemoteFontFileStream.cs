@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -159,7 +158,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteRemoteFontFileStream* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -172,7 +171,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteRemoteFontFileStream* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -183,7 +182,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteRemoteFontFileStream* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -201,7 +200,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteRemoteFontFileStream* This = &this)
             {
-                return MarshalFunction<_ReadFileFragment>(lpVtbl->ReadFileFragment)(
+                return Marshal.GetDelegateForFunctionPointer<_ReadFileFragment>(lpVtbl->ReadFileFragment)(
                     This,
                     fragmentStart,
                     fileOffset,
@@ -217,7 +216,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteRemoteFontFileStream* This = &this)
             {
-                MarshalFunction<_ReleaseFileFragment>(lpVtbl->ReleaseFileFragment)(
+                Marshal.GetDelegateForFunctionPointer<_ReleaseFileFragment>(lpVtbl->ReleaseFileFragment)(
                     This,
                     fragmentContext
                 );
@@ -231,7 +230,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteRemoteFontFileStream* This = &this)
             {
-                return MarshalFunction<_GetFileSize>(lpVtbl->GetFileSize)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFileSize>(lpVtbl->GetFileSize)(
                     This,
                     fileSize
                 );
@@ -245,7 +244,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteRemoteFontFileStream* This = &this)
             {
-                return MarshalFunction<_GetLastWriteTime>(lpVtbl->GetLastWriteTime)(
+                return Marshal.GetDelegateForFunctionPointer<_GetLastWriteTime>(lpVtbl->GetLastWriteTime)(
                     This,
                     lastWriteTime
                 );
@@ -261,7 +260,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteRemoteFontFileStream* This = &this)
             {
-                return MarshalFunction<_GetLocalFileSize>(lpVtbl->GetLocalFileSize)(
+                return Marshal.GetDelegateForFunctionPointer<_GetLocalFileSize>(lpVtbl->GetLocalFileSize)(
                     This,
                     localFileSize
                 );
@@ -278,7 +277,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteRemoteFontFileStream* This = &this)
             {
-                return MarshalFunction<_GetFileFragmentLocality>(lpVtbl->GetFileFragmentLocality)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFileFragmentLocality>(lpVtbl->GetFileFragmentLocality)(
                     This,
                     fileOffset,
                     fragmentSize,
@@ -292,7 +291,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteRemoteFontFileStream* This = &this)
             {
-                return MarshalFunction<_GetLocality>(lpVtbl->GetLocality)(
+                return Marshal.GetDelegateForFunctionPointer<_GetLocality>(lpVtbl->GetLocality)(
                     This
                 );
             }
@@ -308,7 +307,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteRemoteFontFileStream* This = &this)
             {
-                return MarshalFunction<_BeginDownload>(lpVtbl->BeginDownload)(
+                return Marshal.GetDelegateForFunctionPointer<_BeginDownload>(lpVtbl->BeginDownload)(
                     This,
                     downloadOperationID,
                     fileFragments,

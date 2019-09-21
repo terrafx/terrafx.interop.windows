@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -120,7 +119,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteRemoteFontFileLoader* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -133,7 +132,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteRemoteFontFileLoader* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -144,7 +143,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteRemoteFontFileLoader* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -161,7 +160,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteRemoteFontFileLoader* This = &this)
             {
-                return MarshalFunction<_CreateStreamFromKey>(lpVtbl->CreateStreamFromKey)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateStreamFromKey>(lpVtbl->CreateStreamFromKey)(
                     This,
                     fontFileReferenceKey,
                     fontFileReferenceKeySize,
@@ -181,7 +180,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteRemoteFontFileLoader* This = &this)
             {
-                return MarshalFunction<_CreateRemoteStreamFromKey>(lpVtbl->CreateRemoteStreamFromKey)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateRemoteStreamFromKey>(lpVtbl->CreateRemoteStreamFromKey)(
                     This,
                     fontFileReferenceKey,
                     fontFileReferenceKeySize,
@@ -199,7 +198,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteRemoteFontFileLoader* This = &this)
             {
-                return MarshalFunction<_GetLocalityFromKey>(lpVtbl->GetLocalityFromKey)(
+                return Marshal.GetDelegateForFunctionPointer<_GetLocalityFromKey>(lpVtbl->GetLocalityFromKey)(
                     This,
                     fontFileReferenceKey,
                     fontFileReferenceKeySize,
@@ -218,7 +217,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteRemoteFontFileLoader* This = &this)
             {
-                return MarshalFunction<_CreateFontFileReferenceFromUrl>(lpVtbl->CreateFontFileReferenceFromUrl)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateFontFileReferenceFromUrl>(lpVtbl->CreateFontFileReferenceFromUrl)(
                     This,
                     factory,
                     baseUrl,

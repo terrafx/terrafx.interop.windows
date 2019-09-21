@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -104,7 +103,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICColorContext* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -117,7 +116,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICColorContext* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -128,7 +127,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICColorContext* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -143,7 +142,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICColorContext* This = &this)
             {
-                return MarshalFunction<_InitializeFromFilename>(lpVtbl->InitializeFromFilename)(
+                return Marshal.GetDelegateForFunctionPointer<_InitializeFromFilename>(lpVtbl->InitializeFromFilename)(
                     This,
                     wzFilename
                 );
@@ -158,7 +157,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICColorContext* This = &this)
             {
-                return MarshalFunction<_InitializeFromMemory>(lpVtbl->InitializeFromMemory)(
+                return Marshal.GetDelegateForFunctionPointer<_InitializeFromMemory>(lpVtbl->InitializeFromMemory)(
                     This,
                     pbBuffer,
                     cbBufferSize
@@ -173,7 +172,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICColorContext* This = &this)
             {
-                return MarshalFunction<_InitializeFromExifColorSpace>(lpVtbl->InitializeFromExifColorSpace)(
+                return Marshal.GetDelegateForFunctionPointer<_InitializeFromExifColorSpace>(lpVtbl->InitializeFromExifColorSpace)(
                     This,
                     value
                 );
@@ -187,7 +186,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICColorContext* This = &this)
             {
-                return MarshalFunction<__GetType>(lpVtbl->_GetType)(
+                return Marshal.GetDelegateForFunctionPointer<__GetType>(lpVtbl->_GetType)(
                     This,
                     pType
                 );
@@ -203,7 +202,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICColorContext* This = &this)
             {
-                return MarshalFunction<_GetProfileBytes>(lpVtbl->GetProfileBytes)(
+                return Marshal.GetDelegateForFunctionPointer<_GetProfileBytes>(lpVtbl->GetProfileBytes)(
                     This,
                     cbBuffer,
                     pbBuffer,
@@ -219,7 +218,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICColorContext* This = &this)
             {
-                return MarshalFunction<_GetExifColorSpace>(lpVtbl->GetExifColorSpace)(
+                return Marshal.GetDelegateForFunctionPointer<_GetExifColorSpace>(lpVtbl->GetExifColorSpace)(
                     This,
                     pValue
                 );

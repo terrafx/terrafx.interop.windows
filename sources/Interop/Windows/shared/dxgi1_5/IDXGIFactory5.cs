@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -304,7 +303,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -317,7 +316,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -328,7 +327,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -345,7 +344,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                return MarshalFunction<_SetPrivateData>(lpVtbl->SetPrivateData)(
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)(
                     This,
                     Name,
                     DataSize,
@@ -362,7 +361,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                return MarshalFunction<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(
                     This,
                     Name,
                     pUnknown
@@ -379,7 +378,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                return MarshalFunction<_GetPrivateData>(lpVtbl->GetPrivateData)(
+                return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)(
                     This,
                     Name,
                     pDataSize,
@@ -396,7 +395,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                return MarshalFunction<_GetParent>(lpVtbl->GetParent)(
+                return Marshal.GetDelegateForFunctionPointer<_GetParent>(lpVtbl->GetParent)(
                     This,
                     riid,
                     ppParent
@@ -414,7 +413,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                return MarshalFunction<_EnumAdapters>(lpVtbl->EnumAdapters)(
+                return Marshal.GetDelegateForFunctionPointer<_EnumAdapters>(lpVtbl->EnumAdapters)(
                     This,
                     Adapter,
                     ppAdapter
@@ -430,7 +429,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                return MarshalFunction<_MakeWindowAssociation>(lpVtbl->MakeWindowAssociation)(
+                return Marshal.GetDelegateForFunctionPointer<_MakeWindowAssociation>(lpVtbl->MakeWindowAssociation)(
                     This,
                     WindowHandle,
                     Flags
@@ -445,7 +444,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                return MarshalFunction<_GetWindowAssociation>(lpVtbl->GetWindowAssociation)(
+                return Marshal.GetDelegateForFunctionPointer<_GetWindowAssociation>(lpVtbl->GetWindowAssociation)(
                     This,
                     pWindowHandle
                 );
@@ -461,7 +460,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                return MarshalFunction<_CreateSwapChain>(lpVtbl->CreateSwapChain)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateSwapChain>(lpVtbl->CreateSwapChain)(
                     This,
                     pDevice,
                     pDesc,
@@ -478,7 +477,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                return MarshalFunction<_CreateSoftwareAdapter>(lpVtbl->CreateSoftwareAdapter)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateSoftwareAdapter>(lpVtbl->CreateSoftwareAdapter)(
                     This,
                     Module,
                     ppAdapter
@@ -496,7 +495,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                return MarshalFunction<_EnumAdapters1>(lpVtbl->EnumAdapters1)(
+                return Marshal.GetDelegateForFunctionPointer<_EnumAdapters1>(lpVtbl->EnumAdapters1)(
                     This,
                     Adapter,
                     ppAdapter
@@ -509,7 +508,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                return MarshalFunction<_IsCurrent>(lpVtbl->IsCurrent)(
+                return Marshal.GetDelegateForFunctionPointer<_IsCurrent>(lpVtbl->IsCurrent)(
                     This
                 );
             }
@@ -522,7 +521,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                return MarshalFunction<_IsWindowedStereoEnabled>(lpVtbl->IsWindowedStereoEnabled)(
+                return Marshal.GetDelegateForFunctionPointer<_IsWindowedStereoEnabled>(lpVtbl->IsWindowedStereoEnabled)(
                     This
                 );
             }
@@ -540,7 +539,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                return MarshalFunction<_CreateSwapChainForHwnd>(lpVtbl->CreateSwapChainForHwnd)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateSwapChainForHwnd>(lpVtbl->CreateSwapChainForHwnd)(
                     This,
                     pDevice,
                     hWnd,
@@ -563,7 +562,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                return MarshalFunction<_CreateSwapChainForCoreWindow>(lpVtbl->CreateSwapChainForCoreWindow)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateSwapChainForCoreWindow>(lpVtbl->CreateSwapChainForCoreWindow)(
                     This,
                     pDevice,
                     pWindow,
@@ -582,7 +581,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                return MarshalFunction<_GetSharedResourceAdapterLuid>(lpVtbl->GetSharedResourceAdapterLuid)(
+                return Marshal.GetDelegateForFunctionPointer<_GetSharedResourceAdapterLuid>(lpVtbl->GetSharedResourceAdapterLuid)(
                     This,
                     hResource,
                     pLuid
@@ -599,7 +598,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                return MarshalFunction<_RegisterStereoStatusWindow>(lpVtbl->RegisterStereoStatusWindow)(
+                return Marshal.GetDelegateForFunctionPointer<_RegisterStereoStatusWindow>(lpVtbl->RegisterStereoStatusWindow)(
                     This,
                     WindowHandle,
                     wMsg,
@@ -616,7 +615,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                return MarshalFunction<_RegisterStereoStatusEvent>(lpVtbl->RegisterStereoStatusEvent)(
+                return Marshal.GetDelegateForFunctionPointer<_RegisterStereoStatusEvent>(lpVtbl->RegisterStereoStatusEvent)(
                     This,
                     hEvent,
                     pdwCookie
@@ -630,7 +629,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                MarshalFunction<_UnregisterStereoStatus>(lpVtbl->UnregisterStereoStatus)(
+                Marshal.GetDelegateForFunctionPointer<_UnregisterStereoStatus>(lpVtbl->UnregisterStereoStatus)(
                     This,
                     dwCookie
                 );
@@ -646,7 +645,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                return MarshalFunction<_RegisterOcclusionStatusWindow>(lpVtbl->RegisterOcclusionStatusWindow)(
+                return Marshal.GetDelegateForFunctionPointer<_RegisterOcclusionStatusWindow>(lpVtbl->RegisterOcclusionStatusWindow)(
                     This,
                     WindowHandle,
                     wMsg,
@@ -663,7 +662,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                return MarshalFunction<_RegisterOcclusionStatusEvent>(lpVtbl->RegisterOcclusionStatusEvent)(
+                return Marshal.GetDelegateForFunctionPointer<_RegisterOcclusionStatusEvent>(lpVtbl->RegisterOcclusionStatusEvent)(
                     This,
                     hEvent,
                     pdwCookie
@@ -677,7 +676,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                MarshalFunction<_UnregisterOcclusionStatus>(lpVtbl->UnregisterOcclusionStatus)(
+                Marshal.GetDelegateForFunctionPointer<_UnregisterOcclusionStatus>(lpVtbl->UnregisterOcclusionStatus)(
                     This,
                     dwCookie
                 );
@@ -694,7 +693,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                return MarshalFunction<_CreateSwapChainForComposition>(lpVtbl->CreateSwapChainForComposition)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateSwapChainForComposition>(lpVtbl->CreateSwapChainForComposition)(
                     This,
                     pDevice,
                     pDesc,
@@ -711,7 +710,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                return MarshalFunction<_GetCreationFlags>(lpVtbl->GetCreationFlags)(
+                return Marshal.GetDelegateForFunctionPointer<_GetCreationFlags>(lpVtbl->GetCreationFlags)(
                     This
                 );
             }
@@ -728,7 +727,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                return MarshalFunction<_EnumAdapterByLuid>(lpVtbl->EnumAdapterByLuid)(
+                return Marshal.GetDelegateForFunctionPointer<_EnumAdapterByLuid>(lpVtbl->EnumAdapterByLuid)(
                     This,
                     AdapterLuid,
                     riid,
@@ -745,7 +744,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                return MarshalFunction<_EnumWarpAdapter>(lpVtbl->EnumWarpAdapter)(
+                return Marshal.GetDelegateForFunctionPointer<_EnumWarpAdapter>(lpVtbl->EnumWarpAdapter)(
                     This,
                     riid,
                     ppvAdapter
@@ -764,7 +763,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory5* This = &this)
             {
-                return MarshalFunction<_CheckFeatureSupport>(lpVtbl->CheckFeatureSupport)(
+                return Marshal.GetDelegateForFunctionPointer<_CheckFeatureSupport>(lpVtbl->CheckFeatureSupport)(
                     This,
                     Feature,
                     pFeatureSupportData,

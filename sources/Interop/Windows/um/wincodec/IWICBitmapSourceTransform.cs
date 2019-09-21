@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -94,7 +93,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapSourceTransform* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -107,7 +106,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapSourceTransform* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -118,7 +117,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapSourceTransform* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -140,7 +139,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapSourceTransform* This = &this)
             {
-                return MarshalFunction<_CopyPixels>(lpVtbl->CopyPixels)(
+                return Marshal.GetDelegateForFunctionPointer<_CopyPixels>(lpVtbl->CopyPixels)(
                     This,
                     prc,
                     uiWidth,
@@ -162,7 +161,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapSourceTransform* This = &this)
             {
-                return MarshalFunction<_GetClosestSize>(lpVtbl->GetClosestSize)(
+                return Marshal.GetDelegateForFunctionPointer<_GetClosestSize>(lpVtbl->GetClosestSize)(
                     This,
                     puiWidth,
                     puiHeight
@@ -177,7 +176,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapSourceTransform* This = &this)
             {
-                return MarshalFunction<_GetClosestPixelFormat>(lpVtbl->GetClosestPixelFormat)(
+                return Marshal.GetDelegateForFunctionPointer<_GetClosestPixelFormat>(lpVtbl->GetClosestPixelFormat)(
                     This,
                     pguidDstFormat
                 );
@@ -192,7 +191,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapSourceTransform* This = &this)
             {
-                return MarshalFunction<_DoesSupportTransform>(lpVtbl->DoesSupportTransform)(
+                return Marshal.GetDelegateForFunctionPointer<_DoesSupportTransform>(lpVtbl->DoesSupportTransform)(
                     This,
                     dstTransform,
                     pfIsSupported

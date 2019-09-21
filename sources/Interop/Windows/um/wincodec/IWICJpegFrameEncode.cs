@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -92,7 +91,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICJpegFrameEncode* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -105,7 +104,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICJpegFrameEncode* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -116,7 +115,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICJpegFrameEncode* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -133,7 +132,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICJpegFrameEncode* This = &this)
             {
-                return MarshalFunction<_GetAcHuffmanTable>(lpVtbl->GetAcHuffmanTable)(
+                return Marshal.GetDelegateForFunctionPointer<_GetAcHuffmanTable>(lpVtbl->GetAcHuffmanTable)(
                     This,
                     scanIndex,
                     tableIndex,
@@ -151,7 +150,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICJpegFrameEncode* This = &this)
             {
-                return MarshalFunction<_GetDcHuffmanTable>(lpVtbl->GetDcHuffmanTable)(
+                return Marshal.GetDelegateForFunctionPointer<_GetDcHuffmanTable>(lpVtbl->GetDcHuffmanTable)(
                     This,
                     scanIndex,
                     tableIndex,
@@ -169,7 +168,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICJpegFrameEncode* This = &this)
             {
-                return MarshalFunction<_GetQuantizationTable>(lpVtbl->GetQuantizationTable)(
+                return Marshal.GetDelegateForFunctionPointer<_GetQuantizationTable>(lpVtbl->GetQuantizationTable)(
                     This,
                     scanIndex,
                     tableIndex,
@@ -186,7 +185,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICJpegFrameEncode* This = &this)
             {
-                return MarshalFunction<_WriteScan>(lpVtbl->WriteScan)(
+                return Marshal.GetDelegateForFunctionPointer<_WriteScan>(lpVtbl->WriteScan)(
                     This,
                     cbScanData,
                     pbScanData

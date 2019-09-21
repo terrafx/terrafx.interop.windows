@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -204,7 +203,7 @@ namespace TerraFX.Interop
         {
             fixed (IStorage* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -217,7 +216,7 @@ namespace TerraFX.Interop
         {
             fixed (IStorage* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -228,7 +227,7 @@ namespace TerraFX.Interop
         {
             fixed (IStorage* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -247,7 +246,7 @@ namespace TerraFX.Interop
         {
             fixed (IStorage* This = &this)
             {
-                return MarshalFunction<_CreateStream>(lpVtbl->CreateStream)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateStream>(lpVtbl->CreateStream)(
                     This,
                     pwcsName,
                     grfMode,
@@ -269,7 +268,7 @@ namespace TerraFX.Interop
         {
             fixed (IStorage* This = &this)
             {
-                return MarshalFunction<_OpenStream>(lpVtbl->OpenStream)(
+                return Marshal.GetDelegateForFunctionPointer<_OpenStream>(lpVtbl->OpenStream)(
                     This,
                     pwcsName,
                     reserved1,
@@ -291,7 +290,7 @@ namespace TerraFX.Interop
         {
             fixed (IStorage* This = &this)
             {
-                return MarshalFunction<_CreateStorage>(lpVtbl->CreateStorage)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateStorage>(lpVtbl->CreateStorage)(
                     This,
                     pwcsName,
                     grfMode,
@@ -314,7 +313,7 @@ namespace TerraFX.Interop
         {
             fixed (IStorage* This = &this)
             {
-                return MarshalFunction<_OpenStorage>(lpVtbl->OpenStorage)(
+                return Marshal.GetDelegateForFunctionPointer<_OpenStorage>(lpVtbl->OpenStorage)(
                     This,
                     pwcsName,
                     pstgPriority,
@@ -336,7 +335,7 @@ namespace TerraFX.Interop
         {
             fixed (IStorage* This = &this)
             {
-                return MarshalFunction<_CopyTo>(lpVtbl->CopyTo)(
+                return Marshal.GetDelegateForFunctionPointer<_CopyTo>(lpVtbl->CopyTo)(
                     This,
                     ciidExclude,
                     rgiidExclude,
@@ -356,7 +355,7 @@ namespace TerraFX.Interop
         {
             fixed (IStorage* This = &this)
             {
-                return MarshalFunction<_MoveElementTo>(lpVtbl->MoveElementTo)(
+                return Marshal.GetDelegateForFunctionPointer<_MoveElementTo>(lpVtbl->MoveElementTo)(
                     This,
                     pwcsName,
                     pstgDest,
@@ -373,7 +372,7 @@ namespace TerraFX.Interop
         {
             fixed (IStorage* This = &this)
             {
-                return MarshalFunction<_Commit>(lpVtbl->Commit)(
+                return Marshal.GetDelegateForFunctionPointer<_Commit>(lpVtbl->Commit)(
                     This,
                     grfCommitFlags
                 );
@@ -385,7 +384,7 @@ namespace TerraFX.Interop
         {
             fixed (IStorage* This = &this)
             {
-                return MarshalFunction<_Revert>(lpVtbl->Revert)(
+                return Marshal.GetDelegateForFunctionPointer<_Revert>(lpVtbl->Revert)(
                     This
                 );
             }
@@ -401,7 +400,7 @@ namespace TerraFX.Interop
         {
             fixed (IStorage* This = &this)
             {
-                return MarshalFunction<_EnumElements>(lpVtbl->EnumElements)(
+                return Marshal.GetDelegateForFunctionPointer<_EnumElements>(lpVtbl->EnumElements)(
                     This,
                     reserved1,
                     reserved2,
@@ -418,7 +417,7 @@ namespace TerraFX.Interop
         {
             fixed (IStorage* This = &this)
             {
-                return MarshalFunction<_DestroyElement>(lpVtbl->DestroyElement)(
+                return Marshal.GetDelegateForFunctionPointer<_DestroyElement>(lpVtbl->DestroyElement)(
                     This,
                     pwcsName
                 );
@@ -433,7 +432,7 @@ namespace TerraFX.Interop
         {
             fixed (IStorage* This = &this)
             {
-                return MarshalFunction<_RenameElement>(lpVtbl->RenameElement)(
+                return Marshal.GetDelegateForFunctionPointer<_RenameElement>(lpVtbl->RenameElement)(
                     This,
                     pwcsOldName,
                     pwcsNewName
@@ -451,7 +450,7 @@ namespace TerraFX.Interop
         {
             fixed (IStorage* This = &this)
             {
-                return MarshalFunction<_SetElementTimes>(lpVtbl->SetElementTimes)(
+                return Marshal.GetDelegateForFunctionPointer<_SetElementTimes>(lpVtbl->SetElementTimes)(
                     This,
                     pwcsName,
                     pctime,
@@ -468,7 +467,7 @@ namespace TerraFX.Interop
         {
             fixed (IStorage* This = &this)
             {
-                return MarshalFunction<_SetClass>(lpVtbl->SetClass)(
+                return Marshal.GetDelegateForFunctionPointer<_SetClass>(lpVtbl->SetClass)(
                     This,
                     clsid
                 );
@@ -483,7 +482,7 @@ namespace TerraFX.Interop
         {
             fixed (IStorage* This = &this)
             {
-                return MarshalFunction<_SetStateBits>(lpVtbl->SetStateBits)(
+                return Marshal.GetDelegateForFunctionPointer<_SetStateBits>(lpVtbl->SetStateBits)(
                     This,
                     grfStateBits,
                     grfMask
@@ -499,7 +498,7 @@ namespace TerraFX.Interop
         {
             fixed (IStorage* This = &this)
             {
-                return MarshalFunction<_Stat>(lpVtbl->Stat)(
+                return Marshal.GetDelegateForFunctionPointer<_Stat>(lpVtbl->Stat)(
                     This,
                     pstatstg,
                     grfStatFlag

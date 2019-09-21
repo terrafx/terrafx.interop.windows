@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -124,7 +123,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteGdiInterop* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -137,7 +136,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteGdiInterop* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -148,7 +147,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteGdiInterop* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -164,7 +163,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteGdiInterop* This = &this)
             {
-                return MarshalFunction<_CreateFontFromLOGFONT>(lpVtbl->CreateFontFromLOGFONT)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateFontFromLOGFONT>(lpVtbl->CreateFontFromLOGFONT)(
                     This,
                     logFont,
                     font
@@ -181,7 +180,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteGdiInterop* This = &this)
             {
-                return MarshalFunction<_ConvertFontToLOGFONT>(lpVtbl->ConvertFontToLOGFONT)(
+                return Marshal.GetDelegateForFunctionPointer<_ConvertFontToLOGFONT>(lpVtbl->ConvertFontToLOGFONT)(
                     This,
                     font,
                     logFont,
@@ -198,7 +197,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteGdiInterop* This = &this)
             {
-                return MarshalFunction<_ConvertFontFaceToLOGFONT>(lpVtbl->ConvertFontFaceToLOGFONT)(
+                return Marshal.GetDelegateForFunctionPointer<_ConvertFontFaceToLOGFONT>(lpVtbl->ConvertFontFaceToLOGFONT)(
                     This,
                     font,
                     logFont
@@ -214,7 +213,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteGdiInterop* This = &this)
             {
-                return MarshalFunction<_CreateFontFaceFromHdc>(lpVtbl->CreateFontFaceFromHdc)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateFontFaceFromHdc>(lpVtbl->CreateFontFaceFromHdc)(
                     This,
                     hdc,
                     fontFace
@@ -232,7 +231,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteGdiInterop* This = &this)
             {
-                return MarshalFunction<_CreateBitmapRenderTarget>(lpVtbl->CreateBitmapRenderTarget)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapRenderTarget>(lpVtbl->CreateBitmapRenderTarget)(
                     This,
                     hdc,
                     width,

@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -127,7 +126,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SpriteBatch* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -140,7 +139,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SpriteBatch* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -151,7 +150,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SpriteBatch* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -165,7 +164,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SpriteBatch* This = &this)
             {
-                MarshalFunction<_GetFactory>(lpVtbl->GetFactory)(
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
                     This,
                     factory
                 );
@@ -189,7 +188,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SpriteBatch* This = &this)
             {
-                return MarshalFunction<_AddSprites>(lpVtbl->AddSprites)(
+                return Marshal.GetDelegateForFunctionPointer<_AddSprites>(lpVtbl->AddSprites)(
                     This,
                     spriteCount,
                     destinationRectangles,
@@ -220,7 +219,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SpriteBatch* This = &this)
             {
-                return MarshalFunction<_SetSprites>(lpVtbl->SetSprites)(
+                return Marshal.GetDelegateForFunctionPointer<_SetSprites>(lpVtbl->SetSprites)(
                     This,
                     startIndex,
                     spriteCount,
@@ -248,7 +247,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SpriteBatch* This = &this)
             {
-                return MarshalFunction<_GetSprites>(lpVtbl->GetSprites)(
+                return Marshal.GetDelegateForFunctionPointer<_GetSprites>(lpVtbl->GetSprites)(
                     This,
                     startIndex,
                     spriteCount,
@@ -265,7 +264,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SpriteBatch* This = &this)
             {
-                return MarshalFunction<_GetSpriteCount>(lpVtbl->GetSpriteCount)(
+                return Marshal.GetDelegateForFunctionPointer<_GetSpriteCount>(lpVtbl->GetSpriteCount)(
                     This
                 );
             }
@@ -275,7 +274,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SpriteBatch* This = &this)
             {
-                MarshalFunction<_Clear>(lpVtbl->Clear)(
+                Marshal.GetDelegateForFunctionPointer<_Clear>(lpVtbl->Clear)(
                     This
                 );
             }

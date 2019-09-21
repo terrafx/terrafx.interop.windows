@@ -6,9 +6,9 @@
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using TerraFX.Interop;
 using static TerraFX.Interop.Windows;
-using static TerraFX.Utilities.ExceptionUtilities;
 
 namespace TerraFX.Samples.DirectX.D3D12
 {
@@ -18,7 +18,7 @@ namespace TerraFX.Samples.DirectX.D3D12
         {
             if (FAILED(hr))
             {
-                ThrowExternalException(methodName, hr);
+                Marshal.ThrowExceptionForHR(hr);
             }
         }
 
@@ -38,7 +38,7 @@ namespace TerraFX.Samples.DirectX.D3D12
 
                 if (endOfFile > int.MaxValue)
                 {
-                    ThrowIOException();
+                    throw new IOException();
                 }
 
                 var size = (int)endOfFile;

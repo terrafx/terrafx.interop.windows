@@ -3,8 +3,7 @@
 // Ported from um\d3d12.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using static TerraFX.Utilities.HashUtilities;
-using static TerraFX.Utilities.InteropUtilities;
+using System;
 
 namespace TerraFX.Interop
 {
@@ -53,19 +52,14 @@ namespace TerraFX.Interop
             return (obj is D3D12_VIEWPORT other) && (this == other);
         }
 
-        public override int GetHashCode()
-        {
-            var combinedValue = 0;
-            {
-                combinedValue = CombineValue(TopLeftX.GetHashCode(), combinedValue);
-                combinedValue = CombineValue(TopLeftY.GetHashCode(), combinedValue);
-                combinedValue = CombineValue(Width.GetHashCode(), combinedValue);
-                combinedValue = CombineValue(Height.GetHashCode(), combinedValue);
-                combinedValue = CombineValue(MinDepth.GetHashCode(), combinedValue);
-                combinedValue = CombineValue(MaxDepth.GetHashCode(), combinedValue);
-            }
-            return FinalizeValue(combinedValue, SizeOf<D3D12_VIEWPORT>());
-        }
+        public override int GetHashCode() => HashCode.Combine(
+            TopLeftX,
+            TopLeftY,
+            Width,
+            Height,
+            MinDepth,
+            MaxDepth
+        );
         #endregion
     }
 }

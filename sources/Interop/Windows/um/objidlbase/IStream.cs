@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -156,7 +155,7 @@ namespace TerraFX.Interop
         {
             fixed (IStream* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -169,7 +168,7 @@ namespace TerraFX.Interop
         {
             fixed (IStream* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -180,7 +179,7 @@ namespace TerraFX.Interop
         {
             fixed (IStream* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -197,7 +196,7 @@ namespace TerraFX.Interop
         {
             fixed (IStream* This = &this)
             {
-                return MarshalFunction<_Read>(lpVtbl->Read)(
+                return Marshal.GetDelegateForFunctionPointer<_Read>(lpVtbl->Read)(
                     This,
                     pv,
                     cb,
@@ -215,7 +214,7 @@ namespace TerraFX.Interop
         {
             fixed (IStream* This = &this)
             {
-                return MarshalFunction<_Write>(lpVtbl->Write)(
+                return Marshal.GetDelegateForFunctionPointer<_Write>(lpVtbl->Write)(
                     This,
                     pv,
                     cb,
@@ -235,7 +234,7 @@ namespace TerraFX.Interop
         {
             fixed (IStream* This = &this)
             {
-                return MarshalFunction<_Seek>(lpVtbl->Seek)(
+                return Marshal.GetDelegateForFunctionPointer<_Seek>(lpVtbl->Seek)(
                     This,
                     dlibMove,
                     dwOrigin,
@@ -251,7 +250,7 @@ namespace TerraFX.Interop
         {
             fixed (IStream* This = &this)
             {
-                return MarshalFunction<_SetSize>(lpVtbl->SetSize)(
+                return Marshal.GetDelegateForFunctionPointer<_SetSize>(lpVtbl->SetSize)(
                     This,
                     libNewSize
                 );
@@ -268,7 +267,7 @@ namespace TerraFX.Interop
         {
             fixed (IStream* This = &this)
             {
-                return MarshalFunction<_CopyTo>(lpVtbl->CopyTo)(
+                return Marshal.GetDelegateForFunctionPointer<_CopyTo>(lpVtbl->CopyTo)(
                     This,
                     pstm,
                     cb,
@@ -285,7 +284,7 @@ namespace TerraFX.Interop
         {
             fixed (IStream* This = &this)
             {
-                return MarshalFunction<_Commit>(lpVtbl->Commit)(
+                return Marshal.GetDelegateForFunctionPointer<_Commit>(lpVtbl->Commit)(
                     This,
                     grfCommitFlags
                 );
@@ -297,7 +296,7 @@ namespace TerraFX.Interop
         {
             fixed (IStream* This = &this)
             {
-                return MarshalFunction<_Revert>(lpVtbl->Revert)(
+                return Marshal.GetDelegateForFunctionPointer<_Revert>(lpVtbl->Revert)(
                     This
                 );
             }
@@ -312,7 +311,7 @@ namespace TerraFX.Interop
         {
             fixed (IStream* This = &this)
             {
-                return MarshalFunction<_LockRegion>(lpVtbl->LockRegion)(
+                return Marshal.GetDelegateForFunctionPointer<_LockRegion>(lpVtbl->LockRegion)(
                     This,
                     libOffset,
                     cb,
@@ -330,7 +329,7 @@ namespace TerraFX.Interop
         {
             fixed (IStream* This = &this)
             {
-                return MarshalFunction<_UnlockRegion>(lpVtbl->UnlockRegion)(
+                return Marshal.GetDelegateForFunctionPointer<_UnlockRegion>(lpVtbl->UnlockRegion)(
                     This,
                     libOffset,
                     cb,
@@ -347,7 +346,7 @@ namespace TerraFX.Interop
         {
             fixed (IStream* This = &this)
             {
-                return MarshalFunction<_Stat>(lpVtbl->Stat)(
+                return Marshal.GetDelegateForFunctionPointer<_Stat>(lpVtbl->Stat)(
                     This,
                     pstatstg,
                     grfStatFlag
@@ -362,7 +361,7 @@ namespace TerraFX.Interop
         {
             fixed (IStream* This = &this)
             {
-                return MarshalFunction<_Clone>(lpVtbl->Clone)(
+                return Marshal.GetDelegateForFunctionPointer<_Clone>(lpVtbl->Clone)(
                     This,
                     ppstm
                 );

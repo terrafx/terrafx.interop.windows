@@ -3,7 +3,8 @@
 // Ported from um\wincodec.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using static TerraFX.Utilities.InteropUtilities;
+using System;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
@@ -25,17 +26,10 @@ namespace TerraFX.Interop
             #endregion
 
             #region Properties
-            public ref WICRawToneCurvePoint this[int index]
-            {
-                get
-                {
-                    fixed (WICRawToneCurvePoint* e = &e0)
-                    {
-                        return ref AsRef<WICRawToneCurvePoint>(e + index);
-                    }
-                }
-            }
+            public ref WICRawToneCurvePoint this[int index] => ref AsSpan(int.MaxValue)[index];
             #endregion
+
+            public Span<WICRawToneCurvePoint> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
         #endregion
     }

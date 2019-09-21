@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -106,7 +105,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SimplifiedGeometrySink* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -119,7 +118,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SimplifiedGeometrySink* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -130,7 +129,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SimplifiedGeometrySink* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -144,7 +143,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SimplifiedGeometrySink* This = &this)
             {
-                MarshalFunction<_SetFillMode>(lpVtbl->SetFillMode)(
+                Marshal.GetDelegateForFunctionPointer<_SetFillMode>(lpVtbl->SetFillMode)(
                     This,
                     fillMode
                 );
@@ -157,7 +156,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SimplifiedGeometrySink* This = &this)
             {
-                MarshalFunction<_SetSegmentFlags>(lpVtbl->SetSegmentFlags)(
+                Marshal.GetDelegateForFunctionPointer<_SetSegmentFlags>(lpVtbl->SetSegmentFlags)(
                     This,
                     vertexFlags
                 );
@@ -171,7 +170,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SimplifiedGeometrySink* This = &this)
             {
-                MarshalFunction<_BeginFigure>(lpVtbl->BeginFigure)(
+                Marshal.GetDelegateForFunctionPointer<_BeginFigure>(lpVtbl->BeginFigure)(
                     This,
                     startPoint,
                     figureBegin
@@ -186,7 +185,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SimplifiedGeometrySink* This = &this)
             {
-                MarshalFunction<_AddLines>(lpVtbl->AddLines)(
+                Marshal.GetDelegateForFunctionPointer<_AddLines>(lpVtbl->AddLines)(
                     This,
                     points,
                     pointsCount
@@ -201,7 +200,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SimplifiedGeometrySink* This = &this)
             {
-                MarshalFunction<_AddBeziers>(lpVtbl->AddBeziers)(
+                Marshal.GetDelegateForFunctionPointer<_AddBeziers>(lpVtbl->AddBeziers)(
                     This,
                     beziers,
                     beziersCount
@@ -215,7 +214,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SimplifiedGeometrySink* This = &this)
             {
-                MarshalFunction<_EndFigure>(lpVtbl->EndFigure)(
+                Marshal.GetDelegateForFunctionPointer<_EndFigure>(lpVtbl->EndFigure)(
                     This,
                     figureEnd
                 );
@@ -227,7 +226,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SimplifiedGeometrySink* This = &this)
             {
-                return MarshalFunction<_Close>(lpVtbl->Close)(
+                return Marshal.GetDelegateForFunctionPointer<_Close>(lpVtbl->Close)(
                     This
                 );
             }

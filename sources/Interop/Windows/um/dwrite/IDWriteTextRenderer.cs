@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -182,7 +181,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextRenderer* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -195,7 +194,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextRenderer* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -206,7 +205,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextRenderer* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -222,7 +221,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextRenderer* This = &this)
             {
-                return MarshalFunction<_IsPixelSnappingDisabled>(lpVtbl->IsPixelSnappingDisabled)(
+                return Marshal.GetDelegateForFunctionPointer<_IsPixelSnappingDisabled>(lpVtbl->IsPixelSnappingDisabled)(
                     This,
                     clientDrawingContext,
                     isDisabled
@@ -238,7 +237,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextRenderer* This = &this)
             {
-                return MarshalFunction<_GetCurrentTransform>(lpVtbl->GetCurrentTransform)(
+                return Marshal.GetDelegateForFunctionPointer<_GetCurrentTransform>(lpVtbl->GetCurrentTransform)(
                     This,
                     clientDrawingContext,
                     transform
@@ -254,7 +253,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextRenderer* This = &this)
             {
-                return MarshalFunction<_GetPixelsPerDip>(lpVtbl->GetPixelsPerDip)(
+                return Marshal.GetDelegateForFunctionPointer<_GetPixelsPerDip>(lpVtbl->GetPixelsPerDip)(
                     This,
                     clientDrawingContext,
                     pixelsPerDip
@@ -277,7 +276,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextRenderer* This = &this)
             {
-                return MarshalFunction<_DrawGlyphRun>(lpVtbl->DrawGlyphRun)(
+                return Marshal.GetDelegateForFunctionPointer<_DrawGlyphRun>(lpVtbl->DrawGlyphRun)(
                     This,
                     clientDrawingContext,
                     baselineOriginX,
@@ -301,7 +300,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextRenderer* This = &this)
             {
-                return MarshalFunction<_DrawUnderline>(lpVtbl->DrawUnderline)(
+                return Marshal.GetDelegateForFunctionPointer<_DrawUnderline>(lpVtbl->DrawUnderline)(
                     This,
                     clientDrawingContext,
                     baselineOriginX,
@@ -323,7 +322,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextRenderer* This = &this)
             {
-                return MarshalFunction<_DrawStrikethrough>(lpVtbl->DrawStrikethrough)(
+                return Marshal.GetDelegateForFunctionPointer<_DrawStrikethrough>(lpVtbl->DrawStrikethrough)(
                     This,
                     clientDrawingContext,
                     baselineOriginX,
@@ -347,7 +346,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextRenderer* This = &this)
             {
-                return MarshalFunction<_DrawInlineObject>(lpVtbl->DrawInlineObject)(
+                return Marshal.GetDelegateForFunctionPointer<_DrawInlineObject>(lpVtbl->DrawInlineObject)(
                     This,
                     clientDrawingContext,
                     originX,

@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -87,7 +86,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapLock* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -100,7 +99,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapLock* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -111,7 +110,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapLock* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -127,7 +126,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapLock* This = &this)
             {
-                return MarshalFunction<_GetSize>(lpVtbl->GetSize)(
+                return Marshal.GetDelegateForFunctionPointer<_GetSize>(lpVtbl->GetSize)(
                     This,
                     puiWidth,
                     puiHeight
@@ -142,7 +141,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapLock* This = &this)
             {
-                return MarshalFunction<_GetStride>(lpVtbl->GetStride)(
+                return Marshal.GetDelegateForFunctionPointer<_GetStride>(lpVtbl->GetStride)(
                     This,
                     pcbStride
                 );
@@ -157,7 +156,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapLock* This = &this)
             {
-                return MarshalFunction<_GetDataPointer>(lpVtbl->GetDataPointer)(
+                return Marshal.GetDelegateForFunctionPointer<_GetDataPointer>(lpVtbl->GetDataPointer)(
                     This,
                     pcbBufferSize,
                     ppbData
@@ -172,7 +171,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapLock* This = &this)
             {
-                return MarshalFunction<_GetPixelFormat>(lpVtbl->GetPixelFormat)(
+                return Marshal.GetDelegateForFunctionPointer<_GetPixelFormat>(lpVtbl->GetPixelFormat)(
                     This,
                     pPixelFormat
                 );

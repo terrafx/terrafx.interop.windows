@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -117,7 +116,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPersistStream* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -130,7 +129,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPersistStream* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -141,7 +140,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPersistStream* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -156,7 +155,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPersistStream* This = &this)
             {
-                return MarshalFunction<_GetClassID>(lpVtbl->GetClassID)(
+                return Marshal.GetDelegateForFunctionPointer<_GetClassID>(lpVtbl->GetClassID)(
                     This,
                     pClassID
                 );
@@ -170,7 +169,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPersistStream* This = &this)
             {
-                return MarshalFunction<_IsDirty>(lpVtbl->IsDirty)(
+                return Marshal.GetDelegateForFunctionPointer<_IsDirty>(lpVtbl->IsDirty)(
                     This
                 );
             }
@@ -183,7 +182,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPersistStream* This = &this)
             {
-                return MarshalFunction<_Load>(lpVtbl->Load)(
+                return Marshal.GetDelegateForFunctionPointer<_Load>(lpVtbl->Load)(
                     This,
                     pStm
                 );
@@ -198,7 +197,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPersistStream* This = &this)
             {
-                return MarshalFunction<_Save>(lpVtbl->Save)(
+                return Marshal.GetDelegateForFunctionPointer<_Save>(lpVtbl->Save)(
                     This,
                     pStm,
                     fClearDirty
@@ -213,7 +212,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPersistStream* This = &this)
             {
-                return MarshalFunction<_GetSizeMax>(lpVtbl->GetSizeMax)(
+                return Marshal.GetDelegateForFunctionPointer<_GetSizeMax>(lpVtbl->GetSizeMax)(
                     This,
                     pcbSize
                 );
@@ -231,7 +230,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPersistStream* This = &this)
             {
-                return MarshalFunction<_LoadEx>(lpVtbl->LoadEx)(
+                return Marshal.GetDelegateForFunctionPointer<_LoadEx>(lpVtbl->LoadEx)(
                     This,
                     pIStream,
                     pguidPreferredVendor,
@@ -249,7 +248,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPersistStream* This = &this)
             {
-                return MarshalFunction<_SaveEx>(lpVtbl->SaveEx)(
+                return Marshal.GetDelegateForFunctionPointer<_SaveEx>(lpVtbl->SaveEx)(
                     This,
                     pIStream,
                     dwPersistOptions,

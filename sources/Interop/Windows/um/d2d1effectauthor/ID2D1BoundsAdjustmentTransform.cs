@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -78,7 +77,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1BoundsAdjustmentTransform* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -91,7 +90,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1BoundsAdjustmentTransform* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -102,7 +101,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1BoundsAdjustmentTransform* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -115,7 +114,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1BoundsAdjustmentTransform* This = &this)
             {
-                return MarshalFunction<_GetInputCount>(lpVtbl->GetInputCount)(
+                return Marshal.GetDelegateForFunctionPointer<_GetInputCount>(lpVtbl->GetInputCount)(
                     This
                 );
             }
@@ -129,7 +128,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1BoundsAdjustmentTransform* This = &this)
             {
-                MarshalFunction<_SetOutputBounds>(lpVtbl->SetOutputBounds)(
+                Marshal.GetDelegateForFunctionPointer<_SetOutputBounds>(lpVtbl->SetOutputBounds)(
                     This,
                     outputBounds
                 );
@@ -142,7 +141,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1BoundsAdjustmentTransform* This = &this)
             {
-                MarshalFunction<_GetOutputBounds>(lpVtbl->GetOutputBounds)(
+                Marshal.GetDelegateForFunctionPointer<_GetOutputBounds>(lpVtbl->GetOutputBounds)(
                     This,
                     outputBounds
                 );

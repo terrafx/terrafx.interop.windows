@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -129,7 +128,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Bitmap* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -142,7 +141,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Bitmap* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -153,7 +152,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Bitmap* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -167,7 +166,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Bitmap* This = &this)
             {
-                MarshalFunction<_GetFactory>(lpVtbl->GetFactory)(
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
                     This,
                     factory
                 );
@@ -182,7 +181,7 @@ namespace TerraFX.Interop
             fixed (ID2D1Bitmap* This = &this)
             {
                 D2D_SIZE_F result;
-                return *MarshalFunction<_GetSize>(lpVtbl->GetSize)(
+                return *Marshal.GetDelegateForFunctionPointer<_GetSize>(lpVtbl->GetSize)(
                     This,
                     &result
                 );
@@ -195,7 +194,7 @@ namespace TerraFX.Interop
             fixed (ID2D1Bitmap* This = &this)
             {
                 D2D_SIZE_U result;
-                return *MarshalFunction<_GetPixelSize>(lpVtbl->GetPixelSize)(
+                return *Marshal.GetDelegateForFunctionPointer<_GetPixelSize>(lpVtbl->GetPixelSize)(
                     This,
                     &result
                 );
@@ -207,7 +206,7 @@ namespace TerraFX.Interop
             fixed (ID2D1Bitmap* This = &this)
             {
                 D2D1_PIXEL_FORMAT result;
-                return *MarshalFunction<_GetPixelFormat>(lpVtbl->GetPixelFormat)(
+                return *Marshal.GetDelegateForFunctionPointer<_GetPixelFormat>(lpVtbl->GetPixelFormat)(
                     This,
                     &result
                 );
@@ -221,7 +220,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Bitmap* This = &this)
             {
-                MarshalFunction<_GetDpi>(lpVtbl->GetDpi)(
+                Marshal.GetDelegateForFunctionPointer<_GetDpi>(lpVtbl->GetDpi)(
                     This,
                     dpiX,
                     dpiY
@@ -238,7 +237,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Bitmap* This = &this)
             {
-                return MarshalFunction<_CopyFromBitmap>(lpVtbl->CopyFromBitmap)(
+                return Marshal.GetDelegateForFunctionPointer<_CopyFromBitmap>(lpVtbl->CopyFromBitmap)(
                     This,
                     destPoint,
                     bitmap,
@@ -256,7 +255,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Bitmap* This = &this)
             {
-                return MarshalFunction<_CopyFromRenderTarget>(lpVtbl->CopyFromRenderTarget)(
+                return Marshal.GetDelegateForFunctionPointer<_CopyFromRenderTarget>(lpVtbl->CopyFromRenderTarget)(
                     This,
                     destPoint,
                     renderTarget,
@@ -274,7 +273,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Bitmap* This = &this)
             {
-                return MarshalFunction<_CopyFromMemory>(lpVtbl->CopyFromMemory)(
+                return Marshal.GetDelegateForFunctionPointer<_CopyFromMemory>(lpVtbl->CopyFromMemory)(
                     This,
                     dstRect,
                     srcData,

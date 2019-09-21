@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -118,7 +117,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontDownloadQueue* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -131,7 +130,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontDownloadQueue* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -142,7 +141,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontDownloadQueue* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -158,7 +157,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontDownloadQueue* This = &this)
             {
-                return MarshalFunction<_AddListener>(lpVtbl->AddListener)(
+                return Marshal.GetDelegateForFunctionPointer<_AddListener>(lpVtbl->AddListener)(
                     This,
                     listener,
                     token
@@ -173,7 +172,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontDownloadQueue* This = &this)
             {
-                return MarshalFunction<_RemoveListener>(lpVtbl->RemoveListener)(
+                return Marshal.GetDelegateForFunctionPointer<_RemoveListener>(lpVtbl->RemoveListener)(
                     This,
                     token
                 );
@@ -185,7 +184,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontDownloadQueue* This = &this)
             {
-                return MarshalFunction<_IsEmpty>(lpVtbl->IsEmpty)(
+                return Marshal.GetDelegateForFunctionPointer<_IsEmpty>(lpVtbl->IsEmpty)(
                     This
                 );
             }
@@ -198,7 +197,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontDownloadQueue* This = &this)
             {
-                return MarshalFunction<_BeginDownload>(lpVtbl->BeginDownload)(
+                return Marshal.GetDelegateForFunctionPointer<_BeginDownload>(lpVtbl->BeginDownload)(
                     This,
                     context
                 );
@@ -210,7 +209,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontDownloadQueue* This = &this)
             {
-                return MarshalFunction<_CancelDownload>(lpVtbl->CancelDownload)(
+                return Marshal.GetDelegateForFunctionPointer<_CancelDownload>(lpVtbl->CancelDownload)(
                     This
                 );
             }
@@ -221,7 +220,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontDownloadQueue* This = &this)
             {
-                return MarshalFunction<_GetGenerationCount>(lpVtbl->GetGenerationCount)(
+                return Marshal.GetDelegateForFunctionPointer<_GetGenerationCount>(lpVtbl->GetGenerationCount)(
                     This
                 );
             }

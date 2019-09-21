@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -135,7 +134,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapEncoder* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -148,7 +147,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapEncoder* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -159,7 +158,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapEncoder* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -175,7 +174,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapEncoder* This = &this)
             {
-                return MarshalFunction<_Initialize>(lpVtbl->Initialize)(
+                return Marshal.GetDelegateForFunctionPointer<_Initialize>(lpVtbl->Initialize)(
                     This,
                     pIStream,
                     cacheOption
@@ -190,7 +189,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapEncoder* This = &this)
             {
-                return MarshalFunction<_GetContainerFormat>(lpVtbl->GetContainerFormat)(
+                return Marshal.GetDelegateForFunctionPointer<_GetContainerFormat>(lpVtbl->GetContainerFormat)(
                     This,
                     pguidContainerFormat
                 );
@@ -204,7 +203,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapEncoder* This = &this)
             {
-                return MarshalFunction<_GetEncoderInfo>(lpVtbl->GetEncoderInfo)(
+                return Marshal.GetDelegateForFunctionPointer<_GetEncoderInfo>(lpVtbl->GetEncoderInfo)(
                     This,
                     ppIEncoderInfo
                 );
@@ -219,7 +218,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapEncoder* This = &this)
             {
-                return MarshalFunction<_SetColorContexts>(lpVtbl->SetColorContexts)(
+                return Marshal.GetDelegateForFunctionPointer<_SetColorContexts>(lpVtbl->SetColorContexts)(
                     This,
                     cCount,
                     ppIColorContext
@@ -234,7 +233,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapEncoder* This = &this)
             {
-                return MarshalFunction<_SetPalette>(lpVtbl->SetPalette)(
+                return Marshal.GetDelegateForFunctionPointer<_SetPalette>(lpVtbl->SetPalette)(
                     This,
                     pIPalette
                 );
@@ -248,7 +247,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapEncoder* This = &this)
             {
-                return MarshalFunction<_SetThumbnail>(lpVtbl->SetThumbnail)(
+                return Marshal.GetDelegateForFunctionPointer<_SetThumbnail>(lpVtbl->SetThumbnail)(
                     This,
                     pIThumbnail
                 );
@@ -262,7 +261,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapEncoder* This = &this)
             {
-                return MarshalFunction<_SetPreview>(lpVtbl->SetPreview)(
+                return Marshal.GetDelegateForFunctionPointer<_SetPreview>(lpVtbl->SetPreview)(
                     This,
                     pIPreview
                 );
@@ -277,7 +276,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapEncoder* This = &this)
             {
-                return MarshalFunction<_CreateNewFrame>(lpVtbl->CreateNewFrame)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateNewFrame>(lpVtbl->CreateNewFrame)(
                     This,
                     ppIFrameEncode,
                     ppIEncoderOptions
@@ -290,7 +289,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapEncoder* This = &this)
             {
-                return MarshalFunction<_Commit>(lpVtbl->Commit)(
+                return Marshal.GetDelegateForFunctionPointer<_Commit>(lpVtbl->Commit)(
                     This
                 );
             }
@@ -303,7 +302,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapEncoder* This = &this)
             {
-                return MarshalFunction<_GetMetadataQueryWriter>(lpVtbl->GetMetadataQueryWriter)(
+                return Marshal.GetDelegateForFunctionPointer<_GetMetadataQueryWriter>(lpVtbl->GetMetadataQueryWriter)(
                     This,
                     ppIMetadataQueryWriter
                 );

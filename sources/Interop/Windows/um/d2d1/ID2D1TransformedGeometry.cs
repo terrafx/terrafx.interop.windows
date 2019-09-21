@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -236,7 +235,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1TransformedGeometry* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -249,7 +248,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1TransformedGeometry* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -260,7 +259,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1TransformedGeometry* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -274,7 +273,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1TransformedGeometry* This = &this)
             {
-                MarshalFunction<_GetFactory>(lpVtbl->GetFactory)(
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
                     This,
                     factory
                 );
@@ -291,7 +290,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1TransformedGeometry* This = &this)
             {
-                return MarshalFunction<_GetBounds>(lpVtbl->GetBounds)(
+                return Marshal.GetDelegateForFunctionPointer<_GetBounds>(lpVtbl->GetBounds)(
                     This,
                     worldTransform,
                     bounds
@@ -310,7 +309,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1TransformedGeometry* This = &this)
             {
-                return MarshalFunction<_GetWidenedBounds>(lpVtbl->GetWidenedBounds)(
+                return Marshal.GetDelegateForFunctionPointer<_GetWidenedBounds>(lpVtbl->GetWidenedBounds)(
                     This,
                     strokeWidth,
                     strokeStyle,
@@ -333,7 +332,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1TransformedGeometry* This = &this)
             {
-                return MarshalFunction<_StrokeContainsPoint>(lpVtbl->StrokeContainsPoint)(
+                return Marshal.GetDelegateForFunctionPointer<_StrokeContainsPoint>(lpVtbl->StrokeContainsPoint)(
                     This,
                     point,
                     strokeWidth,
@@ -355,7 +354,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1TransformedGeometry* This = &this)
             {
-                return MarshalFunction<_FillContainsPoint>(lpVtbl->FillContainsPoint)(
+                return Marshal.GetDelegateForFunctionPointer<_FillContainsPoint>(lpVtbl->FillContainsPoint)(
                     This,
                     point,
                     worldTransform,
@@ -375,7 +374,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1TransformedGeometry* This = &this)
             {
-                return MarshalFunction<_CompareWithGeometry>(lpVtbl->CompareWithGeometry)(
+                return Marshal.GetDelegateForFunctionPointer<_CompareWithGeometry>(lpVtbl->CompareWithGeometry)(
                     This,
                     inputGeometry,
                     inputGeometryTransform,
@@ -395,7 +394,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1TransformedGeometry* This = &this)
             {
-                return MarshalFunction<_Simplify>(lpVtbl->Simplify)(
+                return Marshal.GetDelegateForFunctionPointer<_Simplify>(lpVtbl->Simplify)(
                     This,
                     simplificationOption,
                     worldTransform,
@@ -414,7 +413,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1TransformedGeometry* This = &this)
             {
-                return MarshalFunction<_Tessellate>(lpVtbl->Tessellate)(
+                return Marshal.GetDelegateForFunctionPointer<_Tessellate>(lpVtbl->Tessellate)(
                     This,
                     worldTransform,
                     flatteningTolerance,
@@ -434,7 +433,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1TransformedGeometry* This = &this)
             {
-                return MarshalFunction<_CombineWithGeometry>(lpVtbl->CombineWithGeometry)(
+                return Marshal.GetDelegateForFunctionPointer<_CombineWithGeometry>(lpVtbl->CombineWithGeometry)(
                     This,
                     inputGeometry,
                     combineMode,
@@ -454,7 +453,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1TransformedGeometry* This = &this)
             {
-                return MarshalFunction<_Outline>(lpVtbl->Outline)(
+                return Marshal.GetDelegateForFunctionPointer<_Outline>(lpVtbl->Outline)(
                     This,
                     worldTransform,
                     flatteningTolerance,
@@ -472,7 +471,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1TransformedGeometry* This = &this)
             {
-                return MarshalFunction<_ComputeArea>(lpVtbl->ComputeArea)(
+                return Marshal.GetDelegateForFunctionPointer<_ComputeArea>(lpVtbl->ComputeArea)(
                     This,
                     worldTransform,
                     flatteningTolerance,
@@ -490,7 +489,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1TransformedGeometry* This = &this)
             {
-                return MarshalFunction<_ComputeLength>(lpVtbl->ComputeLength)(
+                return Marshal.GetDelegateForFunctionPointer<_ComputeLength>(lpVtbl->ComputeLength)(
                     This,
                     worldTransform,
                     flatteningTolerance,
@@ -510,7 +509,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1TransformedGeometry* This = &this)
             {
-                return MarshalFunction<_ComputePointAtLength>(lpVtbl->ComputePointAtLength)(
+                return Marshal.GetDelegateForFunctionPointer<_ComputePointAtLength>(lpVtbl->ComputePointAtLength)(
                     This,
                     length,
                     worldTransform,
@@ -532,7 +531,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1TransformedGeometry* This = &this)
             {
-                return MarshalFunction<_Widen>(lpVtbl->Widen)(
+                return Marshal.GetDelegateForFunctionPointer<_Widen>(lpVtbl->Widen)(
                     This,
                     strokeWidth,
                     strokeStyle,
@@ -551,7 +550,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1TransformedGeometry* This = &this)
             {
-                MarshalFunction<_GetSourceGeometry>(lpVtbl->GetSourceGeometry)(
+                Marshal.GetDelegateForFunctionPointer<_GetSourceGeometry>(lpVtbl->GetSourceGeometry)(
                     This,
                     sourceGeometry
                 );
@@ -564,7 +563,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1TransformedGeometry* This = &this)
             {
-                MarshalFunction<_GetTransform>(lpVtbl->GetTransform)(
+                Marshal.GetDelegateForFunctionPointer<_GetTransform>(lpVtbl->GetTransform)(
                     This,
                     transform
                 );

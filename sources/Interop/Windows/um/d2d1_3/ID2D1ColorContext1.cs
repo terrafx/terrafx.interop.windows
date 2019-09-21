@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -114,7 +113,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ColorContext1* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -127,7 +126,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ColorContext1* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -138,7 +137,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ColorContext1* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -152,7 +151,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ColorContext1* This = &this)
             {
-                MarshalFunction<_GetFactory>(lpVtbl->GetFactory)(
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
                     This,
                     factory
                 );
@@ -165,7 +164,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ColorContext1* This = &this)
             {
-                return MarshalFunction<_GetColorSpace>(lpVtbl->GetColorSpace)(
+                return Marshal.GetDelegateForFunctionPointer<_GetColorSpace>(lpVtbl->GetColorSpace)(
                     This
                 );
             }
@@ -176,7 +175,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ColorContext1* This = &this)
             {
-                return MarshalFunction<_GetProfileSize>(lpVtbl->GetProfileSize)(
+                return Marshal.GetDelegateForFunctionPointer<_GetProfileSize>(lpVtbl->GetProfileSize)(
                     This
                 );
             }
@@ -190,7 +189,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ColorContext1* This = &this)
             {
-                return MarshalFunction<_GetProfile>(lpVtbl->GetProfile)(
+                return Marshal.GetDelegateForFunctionPointer<_GetProfile>(lpVtbl->GetProfile)(
                     This,
                     profile,
                     profileSize
@@ -204,7 +203,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ColorContext1* This = &this)
             {
-                return MarshalFunction<_GetColorContextType>(lpVtbl->GetColorContextType)(
+                return Marshal.GetDelegateForFunctionPointer<_GetColorContextType>(lpVtbl->GetColorContextType)(
                     This
                 );
             }
@@ -214,7 +213,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ColorContext1* This = &this)
             {
-                return MarshalFunction<_GetDXGIColorSpace>(lpVtbl->GetDXGIColorSpace)(
+                return Marshal.GetDelegateForFunctionPointer<_GetDXGIColorSpace>(lpVtbl->GetDXGIColorSpace)(
                     This
                 );
             }
@@ -227,7 +226,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ColorContext1* This = &this)
             {
-                return MarshalFunction<_GetSimpleColorProfile>(lpVtbl->GetSimpleColorProfile)(
+                return Marshal.GetDelegateForFunctionPointer<_GetSimpleColorProfile>(lpVtbl->GetSimpleColorProfile)(
                     This,
                     simpleProfile
                 );

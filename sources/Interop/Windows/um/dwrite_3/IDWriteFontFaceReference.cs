@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -198,7 +197,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFaceReference* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -211,7 +210,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFaceReference* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -222,7 +221,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFaceReference* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -237,7 +236,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFaceReference* This = &this)
             {
-                return MarshalFunction<_CreateFontFace>(lpVtbl->CreateFontFace)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateFontFace>(lpVtbl->CreateFontFace)(
                     This,
                     fontFace
                 );
@@ -252,7 +251,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFaceReference* This = &this)
             {
-                return MarshalFunction<_CreateFontFaceWithSimulations>(lpVtbl->CreateFontFaceWithSimulations)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateFontFaceWithSimulations>(lpVtbl->CreateFontFaceWithSimulations)(
                     This,
                     fontFaceSimulationFlags,
                     fontFace
@@ -267,7 +266,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFaceReference* This = &this)
             {
-                return MarshalFunction<__Equals>(lpVtbl->_Equals)(
+                return Marshal.GetDelegateForFunctionPointer<__Equals>(lpVtbl->_Equals)(
                     This,
                     fontFaceReference
                 );
@@ -279,7 +278,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFaceReference* This = &this)
             {
-                return MarshalFunction<_GetFontFaceIndex>(lpVtbl->GetFontFaceIndex)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFontFaceIndex>(lpVtbl->GetFontFaceIndex)(
                     This
                 );
             }
@@ -289,7 +288,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFaceReference* This = &this)
             {
-                return MarshalFunction<_GetSimulations>(lpVtbl->GetSimulations)(
+                return Marshal.GetDelegateForFunctionPointer<_GetSimulations>(lpVtbl->GetSimulations)(
                     This
                 );
             }
@@ -302,7 +301,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFaceReference* This = &this)
             {
-                return MarshalFunction<_GetFontFile>(lpVtbl->GetFontFile)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFontFile>(lpVtbl->GetFontFile)(
                     This,
                     fontFile
                 );
@@ -314,7 +313,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFaceReference* This = &this)
             {
-                return MarshalFunction<_GetLocalFileSize>(lpVtbl->GetLocalFileSize)(
+                return Marshal.GetDelegateForFunctionPointer<_GetLocalFileSize>(lpVtbl->GetLocalFileSize)(
                     This
                 );
             }
@@ -325,7 +324,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFaceReference* This = &this)
             {
-                return MarshalFunction<_GetFileSize>(lpVtbl->GetFileSize)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFileSize>(lpVtbl->GetFileSize)(
                     This
                 );
             }
@@ -338,7 +337,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFaceReference* This = &this)
             {
-                return MarshalFunction<_GetFileTime>(lpVtbl->GetFileTime)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFileTime>(lpVtbl->GetFileTime)(
                     This,
                     lastWriteTime
                 );
@@ -349,7 +348,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFaceReference* This = &this)
             {
-                return MarshalFunction<_GetLocality>(lpVtbl->GetLocality)(
+                return Marshal.GetDelegateForFunctionPointer<_GetLocality>(lpVtbl->GetLocality)(
                     This
                 );
             }
@@ -360,7 +359,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFaceReference* This = &this)
             {
-                return MarshalFunction<_EnqueueFontDownloadRequest>(lpVtbl->EnqueueFontDownloadRequest)(
+                return Marshal.GetDelegateForFunctionPointer<_EnqueueFontDownloadRequest>(lpVtbl->EnqueueFontDownloadRequest)(
                     This
                 );
             }
@@ -374,7 +373,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFaceReference* This = &this)
             {
-                return MarshalFunction<_EnqueueCharacterDownloadRequest>(lpVtbl->EnqueueCharacterDownloadRequest)(
+                return Marshal.GetDelegateForFunctionPointer<_EnqueueCharacterDownloadRequest>(lpVtbl->EnqueueCharacterDownloadRequest)(
                     This,
                     characters,
                     characterCount
@@ -390,7 +389,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFaceReference* This = &this)
             {
-                return MarshalFunction<_EnqueueGlyphDownloadRequest>(lpVtbl->EnqueueGlyphDownloadRequest)(
+                return Marshal.GetDelegateForFunctionPointer<_EnqueueGlyphDownloadRequest>(lpVtbl->EnqueueGlyphDownloadRequest)(
                     This,
                     glyphIndices,
                     glyphCount
@@ -406,7 +405,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFaceReference* This = &this)
             {
-                return MarshalFunction<_EnqueueFileFragmentDownloadRequest>(lpVtbl->EnqueueFileFragmentDownloadRequest)(
+                return Marshal.GetDelegateForFunctionPointer<_EnqueueFileFragmentDownloadRequest>(lpVtbl->EnqueueFileFragmentDownloadRequest)(
                     This,
                     fileOffset,
                     fragmentSize

@@ -12,7 +12,6 @@ using static TerraFX.Interop.D3D12_FILTER_REDUCTION_TYPE;
 using static TerraFX.Interop.D3D12_RESOURCE_DIMENSION;
 using static TerraFX.Interop.D3D12_TEXTURE_LAYOUT;
 using static TerraFX.Interop.Windows;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -1039,7 +1038,7 @@ namespace TerraFX.Interop
         public static byte D3D12GetFormatPlaneCount(ID3D12Device* pDevice, DXGI_FORMAT Format)
         {
             var formatInfo = new D3D12_FEATURE_DATA_FORMAT_INFO() { Format = Format };
-            if (FAILED(pDevice->CheckFeatureSupport(D3D12_FEATURE_FORMAT_INFO, &formatInfo, SizeOf<D3D12_FEATURE_DATA_FORMAT_INFO>())))
+            if (FAILED(pDevice->CheckFeatureSupport(D3D12_FEATURE_FORMAT_INFO, &formatInfo, (uint)sizeof(D3D12_FEATURE_DATA_FORMAT_INFO))))
             {
                 return 0;
             }

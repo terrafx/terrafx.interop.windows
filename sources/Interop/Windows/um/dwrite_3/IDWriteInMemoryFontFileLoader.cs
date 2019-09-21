@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -98,7 +97,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteInMemoryFontFileLoader* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -111,7 +110,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteInMemoryFontFileLoader* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -122,7 +121,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteInMemoryFontFileLoader* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -139,7 +138,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteInMemoryFontFileLoader* This = &this)
             {
-                return MarshalFunction<_CreateStreamFromKey>(lpVtbl->CreateStreamFromKey)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateStreamFromKey>(lpVtbl->CreateStreamFromKey)(
                     This,
                     fontFileReferenceKey,
                     fontFileReferenceKeySize,
@@ -161,7 +160,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteInMemoryFontFileLoader* This = &this)
             {
-                return MarshalFunction<_CreateInMemoryFontFileReference>(lpVtbl->CreateInMemoryFontFileReference)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateInMemoryFontFileReference>(lpVtbl->CreateInMemoryFontFileReference)(
                     This,
                     factory,
                     fontData,
@@ -177,7 +176,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteInMemoryFontFileLoader* This = &this)
             {
-                return MarshalFunction<_GetFileCount>(lpVtbl->GetFileCount)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFileCount>(lpVtbl->GetFileCount)(
                     This
                 );
             }

@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -123,7 +122,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICFormatConverter* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -136,7 +135,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICFormatConverter* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -147,7 +146,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICFormatConverter* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -163,7 +162,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICFormatConverter* This = &this)
             {
-                return MarshalFunction<_GetSize>(lpVtbl->GetSize)(
+                return Marshal.GetDelegateForFunctionPointer<_GetSize>(lpVtbl->GetSize)(
                     This,
                     puiWidth,
                     puiHeight
@@ -178,7 +177,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICFormatConverter* This = &this)
             {
-                return MarshalFunction<_GetPixelFormat>(lpVtbl->GetPixelFormat)(
+                return Marshal.GetDelegateForFunctionPointer<_GetPixelFormat>(lpVtbl->GetPixelFormat)(
                     This,
                     pPixelFormat
                 );
@@ -193,7 +192,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICFormatConverter* This = &this)
             {
-                return MarshalFunction<_GetResolution>(lpVtbl->GetResolution)(
+                return Marshal.GetDelegateForFunctionPointer<_GetResolution>(lpVtbl->GetResolution)(
                     This,
                     pDpiX,
                     pDpiY
@@ -208,7 +207,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICFormatConverter* This = &this)
             {
-                return MarshalFunction<_CopyPalette>(lpVtbl->CopyPalette)(
+                return Marshal.GetDelegateForFunctionPointer<_CopyPalette>(lpVtbl->CopyPalette)(
                     This,
                     pIPalette
                 );
@@ -225,7 +224,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICFormatConverter* This = &this)
             {
-                return MarshalFunction<_CopyPixels>(lpVtbl->CopyPixels)(
+                return Marshal.GetDelegateForFunctionPointer<_CopyPixels>(lpVtbl->CopyPixels)(
                     This,
                     prc,
                     cbStride,
@@ -249,7 +248,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICFormatConverter* This = &this)
             {
-                return MarshalFunction<_Initialize>(lpVtbl->Initialize)(
+                return Marshal.GetDelegateForFunctionPointer<_Initialize>(lpVtbl->Initialize)(
                     This,
                     pISource,
                     dstFormat,
@@ -270,7 +269,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICFormatConverter* This = &this)
             {
-                return MarshalFunction<_CanConvert>(lpVtbl->CanConvert)(
+                return Marshal.GetDelegateForFunctionPointer<_CanConvert>(lpVtbl->CanConvert)(
                     This,
                     srcPixelFormat,
                     dstPixelFormat,

@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -110,7 +109,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12Heap* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -123,7 +122,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12Heap* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -134,7 +133,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12Heap* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -151,7 +150,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12Heap* This = &this)
             {
-                return MarshalFunction<_GetPrivateData>(lpVtbl->GetPrivateData)(
+                return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)(
                     This,
                     guid,
                     pDataSize,
@@ -169,7 +168,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12Heap* This = &this)
             {
-                return MarshalFunction<_SetPrivateData>(lpVtbl->SetPrivateData)(
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)(
                     This,
                     guid,
                     DataSize,
@@ -186,7 +185,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12Heap* This = &this)
             {
-                return MarshalFunction<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(
                     This,
                     guid,
                     pData
@@ -201,7 +200,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12Heap* This = &this)
             {
-                return MarshalFunction<_SetName>(lpVtbl->SetName)(
+                return Marshal.GetDelegateForFunctionPointer<_SetName>(lpVtbl->SetName)(
                     This,
                     Name
                 );
@@ -218,7 +217,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12Heap* This = &this)
             {
-                return MarshalFunction<_GetDevice>(lpVtbl->GetDevice)(
+                return Marshal.GetDelegateForFunctionPointer<_GetDevice>(lpVtbl->GetDevice)(
                     This,
                     riid,
                     ppvDevice
@@ -233,7 +232,7 @@ namespace TerraFX.Interop
             fixed (ID3D12Heap* This = &this)
             {
                 D3D12_HEAP_DESC result;
-                return *MarshalFunction<_GetDesc>(lpVtbl->GetDesc)(
+                return *Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)(
                     This,
                     &result
                 );

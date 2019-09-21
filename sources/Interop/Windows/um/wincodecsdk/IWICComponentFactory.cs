@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -372,7 +371,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -385,7 +384,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -396,7 +395,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -415,7 +414,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateDecoderFromFilename>(lpVtbl->CreateDecoderFromFilename)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateDecoderFromFilename>(lpVtbl->CreateDecoderFromFilename)(
                     This,
                     wzFilename,
                     pguidVendor,
@@ -436,7 +435,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateDecoderFromStream>(lpVtbl->CreateDecoderFromStream)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateDecoderFromStream>(lpVtbl->CreateDecoderFromStream)(
                     This,
                     pIStream,
                     pguidVendor,
@@ -456,7 +455,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateDecoderFromFileHandle>(lpVtbl->CreateDecoderFromFileHandle)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateDecoderFromFileHandle>(lpVtbl->CreateDecoderFromFileHandle)(
                     This,
                     hFile,
                     pguidVendor,
@@ -474,7 +473,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateComponentInfo>(lpVtbl->CreateComponentInfo)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateComponentInfo>(lpVtbl->CreateComponentInfo)(
                     This,
                     clsidComponent,
                     ppIInfo
@@ -491,7 +490,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateDecoder>(lpVtbl->CreateDecoder)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateDecoder>(lpVtbl->CreateDecoder)(
                     This,
                     guidContainerFormat,
                     pguidVendor,
@@ -509,7 +508,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateEncoder>(lpVtbl->CreateEncoder)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateEncoder>(lpVtbl->CreateEncoder)(
                     This,
                     guidContainerFormat,
                     pguidVendor,
@@ -525,7 +524,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreatePalette>(lpVtbl->CreatePalette)(
+                return Marshal.GetDelegateForFunctionPointer<_CreatePalette>(lpVtbl->CreatePalette)(
                     This,
                     ppIPalette
                 );
@@ -539,7 +538,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateFormatConverter>(lpVtbl->CreateFormatConverter)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateFormatConverter>(lpVtbl->CreateFormatConverter)(
                     This,
                     ppIFormatConverter
                 );
@@ -553,7 +552,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateBitmapScaler>(lpVtbl->CreateBitmapScaler)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapScaler>(lpVtbl->CreateBitmapScaler)(
                     This,
                     ppIBitmapScaler
                 );
@@ -567,7 +566,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateBitmapClipper>(lpVtbl->CreateBitmapClipper)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapClipper>(lpVtbl->CreateBitmapClipper)(
                     This,
                     ppIBitmapClipper
                 );
@@ -581,7 +580,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateBitmapFlipRotator>(lpVtbl->CreateBitmapFlipRotator)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapFlipRotator>(lpVtbl->CreateBitmapFlipRotator)(
                     This,
                     ppIBitmapFlipRotator
                 );
@@ -595,7 +594,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateStream>(lpVtbl->CreateStream)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateStream>(lpVtbl->CreateStream)(
                     This,
                     ppIWICStream
                 );
@@ -609,7 +608,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateColorContext>(lpVtbl->CreateColorContext)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateColorContext>(lpVtbl->CreateColorContext)(
                     This,
                     ppIWICColorContext
                 );
@@ -623,7 +622,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateColorTransformer>(lpVtbl->CreateColorTransformer)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateColorTransformer>(lpVtbl->CreateColorTransformer)(
                     This,
                     ppIWICColorTransform
                 );
@@ -641,7 +640,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateBitmap>(lpVtbl->CreateBitmap)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateBitmap>(lpVtbl->CreateBitmap)(
                     This,
                     uiWidth,
                     uiHeight,
@@ -661,7 +660,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateBitmapFromSource>(lpVtbl->CreateBitmapFromSource)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapFromSource>(lpVtbl->CreateBitmapFromSource)(
                     This,
                     pIBitmapSource,
                     option,
@@ -682,7 +681,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateBitmapFromSourceRect>(lpVtbl->CreateBitmapFromSourceRect)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapFromSourceRect>(lpVtbl->CreateBitmapFromSourceRect)(
                     This,
                     pIBitmapSource,
                     x,
@@ -707,7 +706,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateBitmapFromMemory>(lpVtbl->CreateBitmapFromMemory)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapFromMemory>(lpVtbl->CreateBitmapFromMemory)(
                     This,
                     uiWidth,
                     uiHeight,
@@ -730,7 +729,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateBitmapFromHBITMAP>(lpVtbl->CreateBitmapFromHBITMAP)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapFromHBITMAP>(lpVtbl->CreateBitmapFromHBITMAP)(
                     This,
                     hBitmap,
                     hPalette,
@@ -748,7 +747,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateBitmapFromHICON>(lpVtbl->CreateBitmapFromHICON)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapFromHICON>(lpVtbl->CreateBitmapFromHICON)(
                     This,
                     hIcon,
                     ppIBitmap
@@ -765,7 +764,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateComponentEnumerator>(lpVtbl->CreateComponentEnumerator)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateComponentEnumerator>(lpVtbl->CreateComponentEnumerator)(
                     This,
                     componentTypes,
                     options,
@@ -782,7 +781,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateFastMetadataEncoderFromDecoder>(lpVtbl->CreateFastMetadataEncoderFromDecoder)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateFastMetadataEncoderFromDecoder>(lpVtbl->CreateFastMetadataEncoderFromDecoder)(
                     This,
                     pIDecoder,
                     ppIFastEncoder
@@ -798,7 +797,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateFastMetadataEncoderFromFrameDecode>(lpVtbl->CreateFastMetadataEncoderFromFrameDecode)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateFastMetadataEncoderFromFrameDecode>(lpVtbl->CreateFastMetadataEncoderFromFrameDecode)(
                     This,
                     pIFrameDecoder,
                     ppIFastEncoder
@@ -815,7 +814,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateQueryWriter>(lpVtbl->CreateQueryWriter)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateQueryWriter>(lpVtbl->CreateQueryWriter)(
                     This,
                     guidMetadataFormat,
                     pguidVendor,
@@ -833,7 +832,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateQueryWriterFromReader>(lpVtbl->CreateQueryWriterFromReader)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateQueryWriterFromReader>(lpVtbl->CreateQueryWriterFromReader)(
                     This,
                     pIQueryReader,
                     pguidVendor,
@@ -855,7 +854,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateMetadataReader>(lpVtbl->CreateMetadataReader)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateMetadataReader>(lpVtbl->CreateMetadataReader)(
                     This,
                     guidMetadataFormat,
                     pguidVendor,
@@ -877,7 +876,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateMetadataReaderFromContainer>(lpVtbl->CreateMetadataReaderFromContainer)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateMetadataReaderFromContainer>(lpVtbl->CreateMetadataReaderFromContainer)(
                     This,
                     guidContainerFormat,
                     pguidVendor,
@@ -898,7 +897,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateMetadataWriter>(lpVtbl->CreateMetadataWriter)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateMetadataWriter>(lpVtbl->CreateMetadataWriter)(
                     This,
                     guidMetadataFormat,
                     pguidVendor,
@@ -917,7 +916,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateMetadataWriterFromReader>(lpVtbl->CreateMetadataWriterFromReader)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateMetadataWriterFromReader>(lpVtbl->CreateMetadataWriterFromReader)(
                     This,
                     pIReader,
                     pguidVendor,
@@ -934,7 +933,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateQueryReaderFromBlockReader>(lpVtbl->CreateQueryReaderFromBlockReader)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateQueryReaderFromBlockReader>(lpVtbl->CreateQueryReaderFromBlockReader)(
                     This,
                     pIBlockReader,
                     ppIQueryReader
@@ -950,7 +949,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateQueryWriterFromBlockWriter>(lpVtbl->CreateQueryWriterFromBlockWriter)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateQueryWriterFromBlockWriter>(lpVtbl->CreateQueryWriterFromBlockWriter)(
                     This,
                     pIBlockWriter,
                     ppIQueryWriter
@@ -967,7 +966,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentFactory* This = &this)
             {
-                return MarshalFunction<_CreateEncoderPropertyBag>(lpVtbl->CreateEncoderPropertyBag)(
+                return Marshal.GetDelegateForFunctionPointer<_CreateEncoderPropertyBag>(lpVtbl->CreateEncoderPropertyBag)(
                     This,
                     ppropOptions,
                     cCount,

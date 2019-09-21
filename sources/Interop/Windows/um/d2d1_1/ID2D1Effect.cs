@@ -7,7 +7,6 @@ using System;
 using System.Runtime.InteropServices;
 using System.Security;
 using static TerraFX.Interop.Windows;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -213,7 +212,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Effect* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -226,7 +225,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Effect* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -237,7 +236,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Effect* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -250,7 +249,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Effect* This = &this)
             {
-                return MarshalFunction<_GetPropertyCount>(lpVtbl->GetPropertyCount)(
+                return Marshal.GetDelegateForFunctionPointer<_GetPropertyCount>(lpVtbl->GetPropertyCount)(
                     This
                 );
             }
@@ -265,7 +264,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Effect* This = &this)
             {
-                return MarshalFunction<_GetPropertyName>(lpVtbl->GetPropertyName)(
+                return Marshal.GetDelegateForFunctionPointer<_GetPropertyName>(lpVtbl->GetPropertyName)(
                     This,
                     index,
                     name,
@@ -281,7 +280,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Effect* This = &this)
             {
-                return MarshalFunction<_GetPropertyNameLength>(lpVtbl->GetPropertyNameLength)(
+                return Marshal.GetDelegateForFunctionPointer<_GetPropertyNameLength>(lpVtbl->GetPropertyNameLength)(
                     This,
                     index
                 );
@@ -294,7 +293,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Effect* This = &this)
             {
-                return MarshalFunction<__GetType>(lpVtbl->_GetType)(
+                return Marshal.GetDelegateForFunctionPointer<__GetType>(lpVtbl->_GetType)(
                     This,
                     index
                 );
@@ -308,7 +307,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Effect* This = &this)
             {
-                return MarshalFunction<_GetPropertyIndex>(lpVtbl->GetPropertyIndex)(
+                return Marshal.GetDelegateForFunctionPointer<_GetPropertyIndex>(lpVtbl->GetPropertyIndex)(
                     This,
                     name
                 );
@@ -325,7 +324,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Effect* This = &this)
             {
-                return MarshalFunction<_SetValueByName>(lpVtbl->SetValueByName)(
+                return Marshal.GetDelegateForFunctionPointer<_SetValueByName>(lpVtbl->SetValueByName)(
                     This,
                     name,
                     type,
@@ -345,7 +344,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Effect* This = &this)
             {
-                return MarshalFunction<_SetValue>(lpVtbl->SetValue)(
+                return Marshal.GetDelegateForFunctionPointer<_SetValue>(lpVtbl->SetValue)(
                     This,
                     index,
                     type,
@@ -365,7 +364,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Effect* This = &this)
             {
-                return MarshalFunction<_GetValueByName>(lpVtbl->GetValueByName)(
+                return Marshal.GetDelegateForFunctionPointer<_GetValueByName>(lpVtbl->GetValueByName)(
                     This,
                     name,
                     type,
@@ -385,7 +384,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Effect* This = &this)
             {
-                return MarshalFunction<_GetValue>(lpVtbl->GetValue)(
+                return Marshal.GetDelegateForFunctionPointer<_GetValue>(lpVtbl->GetValue)(
                     This,
                     index,
                     type,
@@ -402,7 +401,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Effect* This = &this)
             {
-                return MarshalFunction<_GetValueSize>(lpVtbl->GetValueSize)(
+                return Marshal.GetDelegateForFunctionPointer<_GetValueSize>(lpVtbl->GetValueSize)(
                     This,
                     index
                 );
@@ -417,7 +416,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Effect* This = &this)
             {
-                return MarshalFunction<_GetSubProperties>(lpVtbl->GetSubProperties)(
+                return Marshal.GetDelegateForFunctionPointer<_GetSubProperties>(lpVtbl->GetSubProperties)(
                     This,
                     index,
                     subProperties
@@ -435,7 +434,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Effect* This = &this)
             {
-                MarshalFunction<_SetInput>(lpVtbl->SetInput)(
+                Marshal.GetDelegateForFunctionPointer<_SetInput>(lpVtbl->SetInput)(
                     This,
                     index,
                     input,
@@ -451,7 +450,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Effect* This = &this)
             {
-                return MarshalFunction<_SetInputCount>(lpVtbl->SetInputCount)(
+                return Marshal.GetDelegateForFunctionPointer<_SetInputCount>(lpVtbl->SetInputCount)(
                     This,
                     inputCount
                 );
@@ -465,7 +464,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Effect* This = &this)
             {
-                MarshalFunction<_GetInput>(lpVtbl->GetInput)(
+                Marshal.GetDelegateForFunctionPointer<_GetInput>(lpVtbl->GetInput)(
                     This,
                     index,
                     input
@@ -478,7 +477,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Effect* This = &this)
             {
-                return MarshalFunction<_GetInputCount>(lpVtbl->GetInputCount)(
+                return Marshal.GetDelegateForFunctionPointer<_GetInputCount>(lpVtbl->GetInputCount)(
                     This
                 );
             }
@@ -490,7 +489,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Effect* This = &this)
             {
-                MarshalFunction<_GetOutput>(lpVtbl->GetOutput)(
+                Marshal.GetDelegateForFunctionPointer<_GetOutput>(lpVtbl->GetOutput)(
                     This,
                     outputImage
                 );

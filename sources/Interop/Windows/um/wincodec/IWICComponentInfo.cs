@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -125,7 +124,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentInfo* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -138,7 +137,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentInfo* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -149,7 +148,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentInfo* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -164,7 +163,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentInfo* This = &this)
             {
-                return MarshalFunction<_GetComponentType>(lpVtbl->GetComponentType)(
+                return Marshal.GetDelegateForFunctionPointer<_GetComponentType>(lpVtbl->GetComponentType)(
                     This,
                     pType
                 );
@@ -178,7 +177,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentInfo* This = &this)
             {
-                return MarshalFunction<_GetCLSID>(lpVtbl->GetCLSID)(
+                return Marshal.GetDelegateForFunctionPointer<_GetCLSID>(lpVtbl->GetCLSID)(
                     This,
                     pclsid
                 );
@@ -192,7 +191,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentInfo* This = &this)
             {
-                return MarshalFunction<_GetSigningStatus>(lpVtbl->GetSigningStatus)(
+                return Marshal.GetDelegateForFunctionPointer<_GetSigningStatus>(lpVtbl->GetSigningStatus)(
                     This,
                     pStatus
                 );
@@ -208,7 +207,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentInfo* This = &this)
             {
-                return MarshalFunction<_GetAuthor>(lpVtbl->GetAuthor)(
+                return Marshal.GetDelegateForFunctionPointer<_GetAuthor>(lpVtbl->GetAuthor)(
                     This,
                     cchAuthor,
                     wzAuthor,
@@ -224,7 +223,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentInfo* This = &this)
             {
-                return MarshalFunction<_GetVendorGUID>(lpVtbl->GetVendorGUID)(
+                return Marshal.GetDelegateForFunctionPointer<_GetVendorGUID>(lpVtbl->GetVendorGUID)(
                     This,
                     pguidVendor
                 );
@@ -240,7 +239,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentInfo* This = &this)
             {
-                return MarshalFunction<_GetVersion>(lpVtbl->GetVersion)(
+                return Marshal.GetDelegateForFunctionPointer<_GetVersion>(lpVtbl->GetVersion)(
                     This,
                     cchVersion,
                     wzVersion,
@@ -258,7 +257,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentInfo* This = &this)
             {
-                return MarshalFunction<_GetSpecVersion>(lpVtbl->GetSpecVersion)(
+                return Marshal.GetDelegateForFunctionPointer<_GetSpecVersion>(lpVtbl->GetSpecVersion)(
                     This,
                     cchSpecVersion,
                     wzSpecVersion,
@@ -276,7 +275,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICComponentInfo* This = &this)
             {
-                return MarshalFunction<_GetFriendlyName>(lpVtbl->GetFriendlyName)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFriendlyName>(lpVtbl->GetFriendlyName)(
                     This,
                     cchFriendlyName,
                     wzFriendlyName,

@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -96,7 +95,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFile* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -109,7 +108,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFile* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -120,7 +119,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFile* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -136,7 +135,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFile* This = &this)
             {
-                return MarshalFunction<_GetReferenceKey>(lpVtbl->GetReferenceKey)(
+                return Marshal.GetDelegateForFunctionPointer<_GetReferenceKey>(lpVtbl->GetReferenceKey)(
                     This,
                     fontFileReferenceKey,
                     fontFileReferenceKeySize
@@ -151,7 +150,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFile* This = &this)
             {
-                return MarshalFunction<_GetLoader>(lpVtbl->GetLoader)(
+                return Marshal.GetDelegateForFunctionPointer<_GetLoader>(lpVtbl->GetLoader)(
                     This,
                     fontFileLoader
                 );
@@ -168,7 +167,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFile* This = &this)
             {
-                return MarshalFunction<_Analyze>(lpVtbl->Analyze)(
+                return Marshal.GetDelegateForFunctionPointer<_Analyze>(lpVtbl->Analyze)(
                     This,
                     isSupportedFontType,
                     fontFileType,

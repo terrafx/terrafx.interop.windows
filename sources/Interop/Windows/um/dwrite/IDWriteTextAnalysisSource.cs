@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -123,7 +122,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalysisSource* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -136,7 +135,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalysisSource* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -147,7 +146,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalysisSource* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -164,7 +163,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalysisSource* This = &this)
             {
-                return MarshalFunction<_GetTextAtPosition>(lpVtbl->GetTextAtPosition)(
+                return Marshal.GetDelegateForFunctionPointer<_GetTextAtPosition>(lpVtbl->GetTextAtPosition)(
                     This,
                     textPosition,
                     textString,
@@ -182,7 +181,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalysisSource* This = &this)
             {
-                return MarshalFunction<_GetTextBeforePosition>(lpVtbl->GetTextBeforePosition)(
+                return Marshal.GetDelegateForFunctionPointer<_GetTextBeforePosition>(lpVtbl->GetTextBeforePosition)(
                     This,
                     textPosition,
                     textString,
@@ -195,7 +194,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalysisSource* This = &this)
             {
-                return MarshalFunction<_GetParagraphReadingDirection>(lpVtbl->GetParagraphReadingDirection)(
+                return Marshal.GetDelegateForFunctionPointer<_GetParagraphReadingDirection>(lpVtbl->GetParagraphReadingDirection)(
                     This
                 );
             }
@@ -210,7 +209,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalysisSource* This = &this)
             {
-                return MarshalFunction<_GetLocaleName>(lpVtbl->GetLocaleName)(
+                return Marshal.GetDelegateForFunctionPointer<_GetLocaleName>(lpVtbl->GetLocaleName)(
                     This,
                     textPosition,
                     textLength,
@@ -228,7 +227,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalysisSource* This = &this)
             {
-                return MarshalFunction<_GetNumberSubstitution>(lpVtbl->GetNumberSubstitution)(
+                return Marshal.GetDelegateForFunctionPointer<_GetNumberSubstitution>(lpVtbl->GetNumberSubstitution)(
                     This,
                     textPosition,
                     textLength,

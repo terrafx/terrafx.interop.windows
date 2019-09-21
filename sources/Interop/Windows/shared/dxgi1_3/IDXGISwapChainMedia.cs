@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -79,7 +78,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChainMedia* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -92,7 +91,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChainMedia* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -103,7 +102,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChainMedia* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -118,7 +117,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChainMedia* This = &this)
             {
-                return MarshalFunction<_GetFrameStatisticsMedia>(lpVtbl->GetFrameStatisticsMedia)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFrameStatisticsMedia>(lpVtbl->GetFrameStatisticsMedia)(
                     This,
                     pStats
                 );
@@ -132,7 +131,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChainMedia* This = &this)
             {
-                return MarshalFunction<_SetPresentDuration>(lpVtbl->SetPresentDuration)(
+                return Marshal.GetDelegateForFunctionPointer<_SetPresentDuration>(lpVtbl->SetPresentDuration)(
                     This,
                     Duration
                 );
@@ -148,7 +147,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChainMedia* This = &this)
             {
-                return MarshalFunction<_CheckPresentDurationSupport>(lpVtbl->CheckPresentDurationSupport)(
+                return Marshal.GetDelegateForFunctionPointer<_CheckPresentDurationSupport>(lpVtbl->CheckPresentDurationSupport)(
                     This,
                     DesiredPresentDuration,
                     pClosestSmallerPresentDuration,

@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -81,7 +80,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12FunctionReflection* This = &this)
             {
-                return MarshalFunction<_GetDesc>(lpVtbl->GetDesc)(
+                return Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)(
                     This,
                     pDesc
                 );
@@ -94,7 +93,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12FunctionReflection* This = &this)
             {
-                return MarshalFunction<_GetConstantBufferByIndex>(lpVtbl->GetConstantBufferByIndex)(
+                return Marshal.GetDelegateForFunctionPointer<_GetConstantBufferByIndex>(lpVtbl->GetConstantBufferByIndex)(
                     This,
                     BufferIndex
                 );
@@ -107,7 +106,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12FunctionReflection* This = &this)
             {
-                return MarshalFunction<_GetConstantBufferByName>(lpVtbl->GetConstantBufferByName)(
+                return Marshal.GetDelegateForFunctionPointer<_GetConstantBufferByName>(lpVtbl->GetConstantBufferByName)(
                     This,
                     Name
                 );
@@ -122,7 +121,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12FunctionReflection* This = &this)
             {
-                return MarshalFunction<_GetResourceBindingDesc>(lpVtbl->GetResourceBindingDesc)(
+                return Marshal.GetDelegateForFunctionPointer<_GetResourceBindingDesc>(lpVtbl->GetResourceBindingDesc)(
                     This,
                     ResourceIndex,
                     pDesc
@@ -136,7 +135,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12FunctionReflection* This = &this)
             {
-                return MarshalFunction<_GetVariableByName>(lpVtbl->GetVariableByName)(
+                return Marshal.GetDelegateForFunctionPointer<_GetVariableByName>(lpVtbl->GetVariableByName)(
                     This,
                     Name
                 );
@@ -151,7 +150,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12FunctionReflection* This = &this)
             {
-                return MarshalFunction<_GetResourceBindingDescByName>(lpVtbl->GetResourceBindingDescByName)(
+                return Marshal.GetDelegateForFunctionPointer<_GetResourceBindingDescByName>(lpVtbl->GetResourceBindingDescByName)(
                     This,
                     Name,
                     pDesc
@@ -165,7 +164,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12FunctionReflection* This = &this)
             {
-                return MarshalFunction<_GetFunctionParameter>(lpVtbl->GetFunctionParameter)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFunctionParameter>(lpVtbl->GetFunctionParameter)(
                     This,
                     ParameterIndex
                 );

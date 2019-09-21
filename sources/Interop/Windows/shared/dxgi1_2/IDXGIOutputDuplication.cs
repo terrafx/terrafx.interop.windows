@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -163,7 +162,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -176,7 +175,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -187,7 +186,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -204,7 +203,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                return MarshalFunction<_SetPrivateData>(lpVtbl->SetPrivateData)(
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)(
                     This,
                     Name,
                     DataSize,
@@ -221,7 +220,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                return MarshalFunction<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(
                     This,
                     Name,
                     pUnknown
@@ -238,7 +237,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                return MarshalFunction<_GetPrivateData>(lpVtbl->GetPrivateData)(
+                return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)(
                     This,
                     Name,
                     pDataSize,
@@ -255,7 +254,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                return MarshalFunction<_GetParent>(lpVtbl->GetParent)(
+                return Marshal.GetDelegateForFunctionPointer<_GetParent>(lpVtbl->GetParent)(
                     This,
                     riid,
                     ppParent
@@ -271,7 +270,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                MarshalFunction<_GetDesc>(lpVtbl->GetDesc)(
+                Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)(
                     This,
                     pDesc
                 );
@@ -287,7 +286,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                return MarshalFunction<_AcquireNextFrame>(lpVtbl->AcquireNextFrame)(
+                return Marshal.GetDelegateForFunctionPointer<_AcquireNextFrame>(lpVtbl->AcquireNextFrame)(
                     This,
                     TimeoutInMilliseconds,
                     pFrameInfo,
@@ -305,7 +304,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                return MarshalFunction<_GetFrameDirtyRects>(lpVtbl->GetFrameDirtyRects)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFrameDirtyRects>(lpVtbl->GetFrameDirtyRects)(
                     This,
                     DirtyRectsBufferSize,
                     pDirtyRectsBuffer,
@@ -323,7 +322,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                return MarshalFunction<_GetFrameMoveRects>(lpVtbl->GetFrameMoveRects)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFrameMoveRects>(lpVtbl->GetFrameMoveRects)(
                     This,
                     MoveRectsBufferSize,
                     pMoveRectBuffer,
@@ -342,7 +341,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                return MarshalFunction<_GetFramePointerShape>(lpVtbl->GetFramePointerShape)(
+                return Marshal.GetDelegateForFunctionPointer<_GetFramePointerShape>(lpVtbl->GetFramePointerShape)(
                     This,
                     PointerShapeBufferSize,
                     pPointerShapeBuffer,
@@ -359,7 +358,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                return MarshalFunction<_MapDesktopSurface>(lpVtbl->MapDesktopSurface)(
+                return Marshal.GetDelegateForFunctionPointer<_MapDesktopSurface>(lpVtbl->MapDesktopSurface)(
                     This,
                     pLockedRect
                 );
@@ -371,7 +370,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                return MarshalFunction<_UnMapDesktopSurface>(lpVtbl->UnMapDesktopSurface)(
+                return Marshal.GetDelegateForFunctionPointer<_UnMapDesktopSurface>(lpVtbl->UnMapDesktopSurface)(
                     This
                 );
             }
@@ -382,7 +381,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                return MarshalFunction<_ReleaseFrame>(lpVtbl->ReleaseFrame)(
+                return Marshal.GetDelegateForFunctionPointer<_ReleaseFrame>(lpVtbl->ReleaseFrame)(
                     This
                 );
             }

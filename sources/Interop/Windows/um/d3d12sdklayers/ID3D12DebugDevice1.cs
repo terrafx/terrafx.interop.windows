@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -81,7 +80,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12DebugDevice1* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -94,7 +93,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12DebugDevice1* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -105,7 +104,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12DebugDevice1* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -122,7 +121,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12DebugDevice1* This = &this)
             {
-                return MarshalFunction<_SetDebugParameter>(lpVtbl->SetDebugParameter)(
+                return Marshal.GetDelegateForFunctionPointer<_SetDebugParameter>(lpVtbl->SetDebugParameter)(
                     This,
                     Type,
                     pData,
@@ -140,7 +139,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12DebugDevice1* This = &this)
             {
-                return MarshalFunction<_GetDebugParameter>(lpVtbl->GetDebugParameter)(
+                return Marshal.GetDelegateForFunctionPointer<_GetDebugParameter>(lpVtbl->GetDebugParameter)(
                     This,
                     Type,
                     pData,
@@ -156,7 +155,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12DebugDevice1* This = &this)
             {
-                return MarshalFunction<_ReportLiveDeviceObjects>(lpVtbl->ReportLiveDeviceObjects)(
+                return Marshal.GetDelegateForFunctionPointer<_ReportLiveDeviceObjects>(lpVtbl->ReportLiveDeviceObjects)(
                     This,
                     Flags
                 );

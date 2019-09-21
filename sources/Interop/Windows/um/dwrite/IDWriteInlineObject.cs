@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -113,7 +112,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteInlineObject* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -126,7 +125,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteInlineObject* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -137,7 +136,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteInlineObject* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -158,7 +157,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteInlineObject* This = &this)
             {
-                return MarshalFunction<_Draw>(lpVtbl->Draw)(
+                return Marshal.GetDelegateForFunctionPointer<_Draw>(lpVtbl->Draw)(
                     This,
                     clientDrawingContext,
                     renderer,
@@ -178,7 +177,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteInlineObject* This = &this)
             {
-                return MarshalFunction<_GetMetrics>(lpVtbl->GetMetrics)(
+                return Marshal.GetDelegateForFunctionPointer<_GetMetrics>(lpVtbl->GetMetrics)(
                     This,
                     metrics
                 );
@@ -192,7 +191,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteInlineObject* This = &this)
             {
-                return MarshalFunction<_GetOverhangMetrics>(lpVtbl->GetOverhangMetrics)(
+                return Marshal.GetDelegateForFunctionPointer<_GetOverhangMetrics>(lpVtbl->GetOverhangMetrics)(
                     This,
                     overhangs
                 );
@@ -207,7 +206,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteInlineObject* This = &this)
             {
-                return MarshalFunction<_GetBreakConditions>(lpVtbl->GetBreakConditions)(
+                return Marshal.GetDelegateForFunctionPointer<_GetBreakConditions>(lpVtbl->GetBreakConditions)(
                     This,
                     breakConditionBefore,
                     breakConditionAfter

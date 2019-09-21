@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -83,7 +82,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDebug1* This = &this)
             {
-                return MarshalFunction<_QueryInterface>(lpVtbl->QueryInterface)(
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
                     This,
                     riid,
                     ppvObject
@@ -96,7 +95,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDebug1* This = &this)
             {
-                return MarshalFunction<_AddRef>(lpVtbl->AddRef)(
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
                     This
                 );
             }
@@ -107,7 +106,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDebug1* This = &this)
             {
-                return MarshalFunction<_Release>(lpVtbl->Release)(
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
                     This
                 );
             }
@@ -123,7 +122,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDebug1* This = &this)
             {
-                return MarshalFunction<_ReportLiveObjects>(lpVtbl->ReportLiveObjects)(
+                return Marshal.GetDelegateForFunctionPointer<_ReportLiveObjects>(lpVtbl->ReportLiveObjects)(
                     This,
                     apiid,
                     flags
@@ -137,7 +136,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDebug1* This = &this)
             {
-                MarshalFunction<_EnableLeakTrackingForThread>(lpVtbl->EnableLeakTrackingForThread)(
+                Marshal.GetDelegateForFunctionPointer<_EnableLeakTrackingForThread>(lpVtbl->EnableLeakTrackingForThread)(
                     This
                 );
             }
@@ -147,7 +146,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDebug1* This = &this)
             {
-                MarshalFunction<_DisableLeakTrackingForThread>(lpVtbl->DisableLeakTrackingForThread)(
+                Marshal.GetDelegateForFunctionPointer<_DisableLeakTrackingForThread>(lpVtbl->DisableLeakTrackingForThread)(
                     This
                 );
             }
@@ -158,7 +157,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDebug1* This = &this)
             {
-                return MarshalFunction<_IsLeakTrackingEnabledForThread>(lpVtbl->IsLeakTrackingEnabledForThread)(
+                return Marshal.GetDelegateForFunctionPointer<_IsLeakTrackingEnabledForThread>(lpVtbl->IsLeakTrackingEnabledForThread)(
                     This
                 );
             }
