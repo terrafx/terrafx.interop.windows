@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.StdCall)]
     [return: NativeTypeName("HRESULT")]
-    public /* static */ unsafe delegate int pfnDeferredFillIn(
+    public unsafe delegate int pfnDeferredFillIn(
         [In] EXCEPINFO* pExcepInfo
     );
 }

@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDWriteTextAnalyzer* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,13 +24,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDWriteTextAnalyzer* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDWriteTextAnalyzer* This
         );
 
@@ -42,7 +42,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AnalyzeScript(
+        public delegate int _AnalyzeScript(
             [In] IDWriteTextAnalyzer* This,
             [In] IDWriteTextAnalysisSource* analysisSource,
             [In, NativeTypeName("UINT32")] uint textPosition,
@@ -60,7 +60,7 @@ namespace TerraFX.Interop
         /// <remarks> Embedded control codes (LRE/LRO/RLE/RLO/PDF) are taken into account.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AnalyzeBidi(
+        public delegate int _AnalyzeBidi(
             [In] IDWriteTextAnalyzer* This,
             [In] IDWriteTextAnalysisSource* analysisSource,
             [In, NativeTypeName("UINT32")] uint textPosition,
@@ -78,7 +78,7 @@ namespace TerraFX.Interop
         /// <remarks> Embedded control codes (LRE/LRO/RLE/RLO/PDF) are taken into account.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AnalyzeNumberSubstitution(
+        public delegate int _AnalyzeNumberSubstitution(
             [In] IDWriteTextAnalyzer* This,
             [In] IDWriteTextAnalysisSource* analysisSource,
             [In, NativeTypeName("UINT32")] uint textPosition,
@@ -96,7 +96,7 @@ namespace TerraFX.Interop
         /// <remarks> Special cases include the first, last, and surrogate characters. Any text span is treated as if adjacent to inline objects on either side. So the rules with contingent-break opportunities are used, where the edge between text and inline objects is always treated as a potential break opportunity, dependent on any overriding rules of the adjacent objects to prohibit or force the break (see Unicode TR #14). Surrogate pairs never break between.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AnalyzeLineBreakpoints(
+        public delegate int _AnalyzeLineBreakpoints(
             [In] IDWriteTextAnalyzer* This,
             [In] IDWriteTextAnalysisSource* analysisSource,
             [In, NativeTypeName("UINT32")] uint textPosition,
@@ -126,7 +126,7 @@ namespace TerraFX.Interop
         /// <remarks> Note that the mapping from characters to glyphs is, in general, many- to-many.  The recommended estimate for the per-glyph output buffers is (3 * textLength / 2 + 16).  This is not guaranteed to be sufficient. The value of the actualGlyphCount parameter is only valid if the call succeeds.  In the event that maxGlyphCount is not big enough E_NOT_SUFFICIENT_BUFFER, which is equivalent to HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER), will be returned.  The application should allocate a larger buffer and try again.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetGlyphs(
+        public delegate int _GetGlyphs(
             [In] IDWriteTextAnalyzer* This,
             [In, NativeTypeName("WCHAR[]")] char* textString,
             [In, NativeTypeName("UINT32")] uint textLength,
@@ -169,7 +169,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetGlyphPlacements(
+        public delegate int _GetGlyphPlacements(
             [In] IDWriteTextAnalyzer* This,
             [In, NativeTypeName("WCHAR[]")] char* textString,
             [In, NativeTypeName("UINT16[]")] ushort* clusterMap,
@@ -216,7 +216,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetGdiCompatibleGlyphPlacements(
+        public delegate int _GetGdiCompatibleGlyphPlacements(
             [In] IDWriteTextAnalyzer* This,
             [In, NativeTypeName("WCHAR[]")] char* textString,
             [In, NativeTypeName("UINT16[]")] ushort* clusterMap,

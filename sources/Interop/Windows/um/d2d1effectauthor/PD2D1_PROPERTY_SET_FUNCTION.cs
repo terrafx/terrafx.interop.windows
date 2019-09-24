@@ -10,7 +10,7 @@ namespace TerraFX.Interop
     /// <summary>Function pointer that sets a property on an effect.</summary>
     [UnmanagedFunctionPointer(CallingConvention.StdCall)]
     [return: NativeTypeName("HRESULT")]
-    public /* static */ unsafe delegate int PD2D1_PROPERTY_SET_FUNCTION(
+    public unsafe delegate int PD2D1_PROPERTY_SET_FUNCTION(
         [In] IUnknown* effect,
         [In, NativeTypeName("BYTE[]")] byte* data,
         [In, NativeTypeName("UINT32")] uint dataSize

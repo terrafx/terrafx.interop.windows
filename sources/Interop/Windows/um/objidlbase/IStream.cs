@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IStream* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IStream* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IStream* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Read(
+        public delegate int _Read(
             [In] IStream* This,
             [Out] void* pv,
             [In, NativeTypeName("ULONG")] uint cb,
@@ -44,7 +44,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Write(
+        public delegate int _Write(
             [In] IStream* This,
             [In] void* pv,
             [In, NativeTypeName("ULONG")] uint cb,
@@ -53,7 +53,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Seek(
+        public delegate int _Seek(
             [In] IStream* This,
             [In] LARGE_INTEGER dlibMove,
             [In, NativeTypeName("DWORD")] uint dwOrigin,
@@ -62,14 +62,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetSize(
+        public delegate int _SetSize(
             [In] IStream* This,
             [In] ULARGE_INTEGER libNewSize
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CopyTo(
+        public delegate int _CopyTo(
             [In] IStream* This,
             [In] IStream* pstm,
             [In] ULARGE_INTEGER cb,
@@ -79,20 +79,20 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Commit(
+        public delegate int _Commit(
             [In] IStream* This,
             [In, NativeTypeName("DWORD")] uint grfCommitFlags
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Revert(
+        public delegate int _Revert(
             [In] IStream* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _LockRegion(
+        public delegate int _LockRegion(
             [In] IStream* This,
             [In] ULARGE_INTEGER libOffset,
             [In] ULARGE_INTEGER cb,
@@ -101,7 +101,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _UnlockRegion(
+        public delegate int _UnlockRegion(
             [In] IStream* This,
             [In] ULARGE_INTEGER libOffset,
             [In] ULARGE_INTEGER cb,
@@ -110,7 +110,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Stat(
+        public delegate int _Stat(
             [In] IStream* This,
             [Out] STATSTG* pstatstg,
             [In, NativeTypeName("DWORD")] uint grfStatFlag
@@ -118,7 +118,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Clone(
+        public delegate int _Clone(
             [In] IStream* This,
             [Out] IStream** ppstm = null
         );

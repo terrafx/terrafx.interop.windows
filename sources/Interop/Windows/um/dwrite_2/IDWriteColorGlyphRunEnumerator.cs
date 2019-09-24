@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDWriteColorGlyphRunEnumerator* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,13 +24,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDWriteColorGlyphRunEnumerator* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDWriteColorGlyphRunEnumerator* This
         );
 
@@ -39,7 +39,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _MoveNext(
+        public delegate int _MoveNext(
             [In] IDWriteColorGlyphRunEnumerator* This,
             [Out, NativeTypeName("BOOL")] int* hasRun
         );
@@ -49,7 +49,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code. An error is returned if there is no current glyph run, i.e., if MoveNext has not yet been called or if the end of the sequence has been reached.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetCurrentRun(
+        public delegate int _GetCurrentRun(
             [In] IDWriteColorGlyphRunEnumerator* This,
             [Out] DWRITE_COLOR_GLYPH_RUN** colorGlyphRun
         );

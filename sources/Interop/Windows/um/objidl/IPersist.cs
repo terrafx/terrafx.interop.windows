@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IPersist* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IPersist* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IPersist* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetClassID(
+        public delegate int _GetClassID(
             [In] IPersist* This,
             [Out, NativeTypeName("CLSID")] Guid* pClassID
         );

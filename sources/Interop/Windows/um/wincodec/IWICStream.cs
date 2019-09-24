@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IWICStream* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IWICStream* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IWICStream* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Read(
+        public delegate int _Read(
             [In] IWICStream* This,
             [Out] void* pv,
             [In, NativeTypeName("ULONG")] uint cb,
@@ -44,7 +44,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Write(
+        public delegate int _Write(
             [In] IWICStream* This,
             [In] void* pv,
             [In, NativeTypeName("ULONG")] uint cb,
@@ -53,7 +53,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Seek(
+        public delegate int _Seek(
             [In] IWICStream* This,
             [In] LARGE_INTEGER dlibMove,
             [In, NativeTypeName("DWORD")] uint dwOrigin,
@@ -62,14 +62,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetSize(
+        public delegate int _SetSize(
             [In] IWICStream* This,
             [In] ULARGE_INTEGER libNewSize
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CopyTo(
+        public delegate int _CopyTo(
             [In] IWICStream* This,
             [In] IStream* pstm,
             [In] ULARGE_INTEGER cb,
@@ -79,20 +79,20 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Commit(
+        public delegate int _Commit(
             [In] IWICStream* This,
             [In, NativeTypeName("DWORD")] uint grfCommitFlags
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Revert(
+        public delegate int _Revert(
             [In] IWICStream* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _LockRegion(
+        public delegate int _LockRegion(
             [In] IWICStream* This,
             [In] ULARGE_INTEGER libOffset,
             [In] ULARGE_INTEGER cb,
@@ -101,7 +101,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _UnlockRegion(
+        public delegate int _UnlockRegion(
             [In] IWICStream* This,
             [In] ULARGE_INTEGER libOffset,
             [In] ULARGE_INTEGER cb,
@@ -110,7 +110,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Stat(
+        public delegate int _Stat(
             [In] IWICStream* This,
             [Out] STATSTG* pstatstg,
             [In, NativeTypeName("DWORD")] uint grfStatFlag
@@ -118,21 +118,21 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Clone(
+        public delegate int _Clone(
             [In] IWICStream* This,
             [Out] IStream** ppstm = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _InitializeFromIStream(
+        public delegate int _InitializeFromIStream(
             [In] IWICStream* This,
             [In] IStream* pIStream = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _InitializeFromFilename(
+        public delegate int _InitializeFromFilename(
             [In] IWICStream* This,
             [In, NativeTypeName("LPCWSTR")] char* wzFileName,
             [In, NativeTypeName("DWORD")] uint dwDesiredAccess
@@ -140,7 +140,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _InitializeFromMemory(
+        public delegate int _InitializeFromMemory(
             [In] IWICStream* This,
             [In, NativeTypeName("WICInProcPointer")] byte* pbBuffer,
             [In, NativeTypeName("DWORD")] uint cbBufferSize
@@ -148,7 +148,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _InitializeFromIStreamRegion(
+        public delegate int _InitializeFromIStreamRegion(
             [In] IWICStream* This,
             [In, Optional] IStream* pIStream,
             [In] ULARGE_INTEGER ulOffset,

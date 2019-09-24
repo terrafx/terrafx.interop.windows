@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDXGISwapChainMedia* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,33 +23,33 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDXGISwapChainMedia* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDXGISwapChainMedia* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFrameStatisticsMedia(
+        public delegate int _GetFrameStatisticsMedia(
             [In] IDXGISwapChainMedia* This,
             [Out] DXGI_FRAME_STATISTICS_MEDIA* pStats
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPresentDuration(
+        public delegate int _SetPresentDuration(
             [In] IDXGISwapChainMedia* This,
             [In, NativeTypeName("UINT")] uint Duration
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CheckPresentDurationSupport(
+        public delegate int _CheckPresentDurationSupport(
             [In] IDXGISwapChainMedia* This,
             [In, NativeTypeName("UINT")] uint DesiredPresentDuration,
             [Out, NativeTypeName("UINT")] uint* pClosestSmallerPresentDuration,

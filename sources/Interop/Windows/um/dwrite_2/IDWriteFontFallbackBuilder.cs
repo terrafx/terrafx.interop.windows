@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDWriteFontFallbackBuilder* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -25,13 +25,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDWriteFontFallbackBuilder* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDWriteFontFallbackBuilder* This
         );
 
@@ -47,7 +47,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AddMapping(
+        public delegate int _AddMapping(
             [In] IDWriteFontFallbackBuilder* This,
             [In, NativeTypeName("DWRITE_UNICODE_RANGE[]")] DWRITE_UNICODE_RANGE* ranges,
             [In, NativeTypeName("UINT32")] uint rangesCount,
@@ -64,7 +64,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AddMappings(
+        public delegate int _AddMappings(
             [In] IDWriteFontFallbackBuilder* This,
             [In] IDWriteFontFallback* fontFallback
         );
@@ -74,7 +74,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateFontFallback(
+        public delegate int _CreateFontFallback(
             [In] IDWriteFontFallbackBuilder* This,
             [Out] IDWriteFontFallback** fontFallback
         );

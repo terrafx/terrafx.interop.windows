@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDXGIDecodeSwapChain* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDXGIDecodeSwapChain* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDXGIDecodeSwapChain* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _PresentBuffer(
+        public delegate int _PresentBuffer(
             [In] IDXGIDecodeSwapChain* This,
             [In, NativeTypeName("UINT")] uint BufferToPresent,
             [In, NativeTypeName("UINT")] uint SyncInterval,
@@ -44,21 +44,21 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetSourceRect(
+        public delegate int _SetSourceRect(
             [In] IDXGIDecodeSwapChain* This,
             [In] RECT* pRect
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetTargetRect(
+        public delegate int _SetTargetRect(
             [In] IDXGIDecodeSwapChain* This,
             [In] RECT* pRect
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetDestSize(
+        public delegate int _SetDestSize(
             [In] IDXGIDecodeSwapChain* This,
             [In, NativeTypeName("UINT")] uint Width,
             [In, NativeTypeName("UINT")] uint Height
@@ -66,21 +66,21 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSourceRect(
+        public delegate int _GetSourceRect(
             [In] IDXGIDecodeSwapChain* This,
             [Out] RECT* pRect
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetTargetRect(
+        public delegate int _GetTargetRect(
             [In] IDXGIDecodeSwapChain* This,
             [Out] RECT* pRect
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDestSize(
+        public delegate int _GetDestSize(
             [In] IDXGIDecodeSwapChain* This,
             [Out, NativeTypeName("UINT")] uint* pWidth,
             [Out, NativeTypeName("UINT")] uint* pHeight
@@ -88,13 +88,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetColorSpace(
+        public delegate int _SetColorSpace(
             [In] IDXGIDecodeSwapChain* This,
             [In] DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS ColorSpace
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS _GetColorSpace(
+        public delegate DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS _GetColorSpace(
             [In] IDXGIDecodeSwapChain* This
         );
 

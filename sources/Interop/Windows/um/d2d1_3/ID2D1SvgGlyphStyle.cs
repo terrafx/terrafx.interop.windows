@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID2D1SvgGlyphStyle* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,19 +24,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID2D1SvgGlyphStyle* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID2D1SvgGlyphStyle* This
         );
 
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetFactory(
+        public delegate void _GetFactory(
             [In] ID2D1SvgGlyphStyle* This,
             [Out] ID2D1Factory** factory
         );
@@ -45,14 +45,14 @@ namespace TerraFX.Interop
         /// <param name="brush">A null brush will cause the context-fill value to come from the defaultFillBrush. If the defaultFillBrush is also null, the context-fill value will be 'none'.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetFill(
+        public delegate int _SetFill(
             [In] ID2D1SvgGlyphStyle* This,
             [In] ID2D1Brush* brush = null
         );
 
         /// <summary>Returns the requested fill parameters.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetFill(
+        public delegate void _GetFill(
             [In] ID2D1SvgGlyphStyle* This,
             [Out] ID2D1Brush** brush
         );
@@ -64,7 +64,7 @@ namespace TerraFX.Interop
         /// <param name="dashOffset">Specifies the 'context-value' for the 'stroke-dashoffset' property.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetStroke(
+        public delegate int _SetStroke(
             [In] ID2D1SvgGlyphStyle* This,
             [In] ID2D1Brush* brush = null,
             [In, NativeTypeName("FLOAT")] float strokeWidth = 1.0f,
@@ -76,13 +76,13 @@ namespace TerraFX.Interop
         /// <summary>Returns the number of dashes in the dash array.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetStrokeDashesCount(
+        public delegate uint _GetStrokeDashesCount(
             [In] ID2D1SvgGlyphStyle* This
         );
 
         /// <summary>Returns the requested stroke parameters.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetStroke(
+        public delegate void _GetStroke(
             [In] ID2D1SvgGlyphStyle* This,
             [Out] ID2D1Brush** brush = null,
             [Out, NativeTypeName("FLOAT")] float* strokeWidth = null,

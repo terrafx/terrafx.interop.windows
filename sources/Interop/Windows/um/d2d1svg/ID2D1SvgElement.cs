@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID2D1SvgElement* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,26 +24,26 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID2D1SvgElement* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID2D1SvgElement* This
         );
 
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetFactory(
+        public delegate void _GetFactory(
             [In] ID2D1SvgElement* This,
             [Out] ID2D1Factory** factory
         );
 
         /// <summary>Gets the document that contains this element. Returns null if the element has been removed from the tree.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetDocument(
+        public delegate void _GetDocument(
             [In] ID2D1SvgElement* This,
             [Out] ID2D1SvgDocument** document
         );
@@ -51,7 +51,7 @@ namespace TerraFX.Interop
         /// <summary>Gets the tag name.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetTagName(
+        public delegate int _GetTagName(
             [In] ID2D1SvgElement* This,
             [Out, NativeTypeName("PWSTR")] char* name,
             [In, NativeTypeName("UINT32")] uint nameCount
@@ -60,20 +60,20 @@ namespace TerraFX.Interop
         /// <summary>Gets the string length of the tag name. The returned string length does not include room for the null terminator.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetTagNameLength(
+        public delegate uint _GetTagNameLength(
             [In] ID2D1SvgElement* This
         );
 
         /// <summary>Returns TRUE if this element represents text content, e.g. the content of a 'title' or 'desc' element. Text content does not have a tag name.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _IsTextContent(
+        public delegate int _IsTextContent(
             [In] ID2D1SvgElement* This
         );
 
         /// <summary>Gets the parent element.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetParent(
+        public delegate void _GetParent(
             [In] ID2D1SvgElement* This,
             [Out] ID2D1SvgElement** parent
         );
@@ -81,20 +81,20 @@ namespace TerraFX.Interop
         /// <summary>Returns whether this element has children.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _HasChildren(
+        public delegate int _HasChildren(
             [In] ID2D1SvgElement* This
         );
 
         /// <summary>Gets the first child of this element.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetFirstChild(
+        public delegate void _GetFirstChild(
             [In] ID2D1SvgElement* This,
             [Out] ID2D1SvgElement** child
         );
 
         /// <summary>Gets the last child of this element.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetLastChild(
+        public delegate void _GetLastChild(
             [In] ID2D1SvgElement* This,
             [Out] ID2D1SvgElement** child
         );
@@ -104,7 +104,7 @@ namespace TerraFX.Interop
         /// <param name="previousChild">The output previousChild element will be non-null if the referenceChild has a previous sibling. If the referenceChild is the first child, the output is null.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPreviousChild(
+        public delegate int _GetPreviousChild(
             [In] ID2D1SvgElement* This,
             [In] ID2D1SvgElement* referenceChild,
             [Out] ID2D1SvgElement** previousChild
@@ -115,7 +115,7 @@ namespace TerraFX.Interop
         /// <param name="nextChild">The output nextChild element will be non-null if the referenceChild has a next sibling. If the referenceChild is the last child, the output is null.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetNextChild(
+        public delegate int _GetNextChild(
             [In] ID2D1SvgElement* This,
             [In] ID2D1SvgElement* referenceChild,
             [Out] ID2D1SvgElement** nextChild
@@ -126,7 +126,7 @@ namespace TerraFX.Interop
         /// <param name="referenceChild">The element that the child should be inserted before. If referenceChild is null, the newChild is placed as the last child. If referenceChild is non-null, it must be an immediate child of this element.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _InsertChildBefore(
+        public delegate int _InsertChildBefore(
             [In] ID2D1SvgElement* This,
             [In] ID2D1SvgElement* newChild,
             [In] ID2D1SvgElement* referenceChild = null
@@ -136,7 +136,7 @@ namespace TerraFX.Interop
         /// <param name="newChild">The element to be appended.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AppendChild(
+        public delegate int _AppendChild(
             [In] ID2D1SvgElement* This,
             [In] ID2D1SvgElement* newChild
         );
@@ -146,7 +146,7 @@ namespace TerraFX.Interop
         /// <param name="oldChild">The child element to be replaced. The oldChild element must be an immediate child of this element.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _ReplaceChild(
+        public delegate int _ReplaceChild(
             [In] ID2D1SvgElement* This,
             [In] ID2D1SvgElement* newChild,
             [In] ID2D1SvgElement* oldChild
@@ -156,7 +156,7 @@ namespace TerraFX.Interop
         /// <param name="oldChild">The child element to be removed. The oldChild element must be an immediate child of this element.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RemoveChild(
+        public delegate int _RemoveChild(
             [In] ID2D1SvgElement* This,
             [In] ID2D1SvgElement* oldChild
         );
@@ -166,7 +166,7 @@ namespace TerraFX.Interop
         /// <param name="newChild">The new child element.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateChild(
+        public delegate int _CreateChild(
             [In] ID2D1SvgElement* This,
             [In, Optional, NativeTypeName("PCWSTR")] char* tagName,
             [Out] ID2D1SvgElement** newChild
@@ -177,7 +177,7 @@ namespace TerraFX.Interop
         /// <param name="inherited">Outputs whether the attribute is set to the 'inherit' value.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _IsAttributeSpecified(
+        public delegate int _IsAttributeSpecified(
             [In] ID2D1SvgElement* This,
             [In, NativeTypeName("PCWSTR")] char* name,
             [Out, NativeTypeName("BOOL")] int* inherited = null
@@ -186,7 +186,7 @@ namespace TerraFX.Interop
         /// <summary>Returns the number of specified attributes on this element. Attributes are only considered specified if they are explicitly set on the element or present within an inline style. Properties that receive their value through CSS inheritance are not considered specified. An attribute can become specified if it is set through a method call. It can become unspecified if it is removed via RemoveAttribute.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetSpecifiedAttributeCount(
+        public delegate uint _GetSpecifiedAttributeCount(
             [In] ID2D1SvgElement* This
         );
 
@@ -196,7 +196,7 @@ namespace TerraFX.Interop
         /// <param name="inherited">Outputs whether the attribute is set to the 'inherit' value.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSpecifiedAttributeName(
+        public delegate int _GetSpecifiedAttributeName(
             [In] ID2D1SvgElement* This,
             [In, NativeTypeName("UINT32")] uint index,
             [Out, NativeTypeName("PWSTR")] char* name,
@@ -210,7 +210,7 @@ namespace TerraFX.Interop
         /// <param name="inherited">Outputs whether the attribute is set to the 'inherit' value.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSpecifiedAttributeNameLength(
+        public delegate int _GetSpecifiedAttributeNameLength(
             [In] ID2D1SvgElement* This,
             [In, NativeTypeName("UINT32")] uint index,
             [Out, NativeTypeName("UINT32")] uint* nameLength,
@@ -220,7 +220,7 @@ namespace TerraFX.Interop
         /// <summary>Removes the attribute from this element. Also removes this attribute from within an inline style if present. Returns an error if the attribute name is not valid on this element.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RemoveAttribute(
+        public delegate int _RemoveAttribute(
             [In] ID2D1SvgElement* This,
             [In, NativeTypeName("PCWSTR")] char* name
         );
@@ -228,7 +228,7 @@ namespace TerraFX.Interop
         /// <summary>Sets the value of a text content element.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetTextValue(
+        public delegate int _SetTextValue(
             [In] ID2D1SvgElement* This,
             [In, NativeTypeName("WCHAR[]")] char* name,
             [In, NativeTypeName("UINT32")] uint nameCount
@@ -237,7 +237,7 @@ namespace TerraFX.Interop
         /// <summary>Gets the value of a text content element.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetTextValue(
+        public delegate int _GetTextValue(
             [In] ID2D1SvgElement* This,
             [Out, NativeTypeName("PWSTR")] char* name,
             [In, NativeTypeName("UINT32")] uint nameCount
@@ -246,14 +246,14 @@ namespace TerraFX.Interop
         /// <summary>Gets the length of the text content value. The returned string length does not include room for the null terminator.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetTextValueLength(
+        public delegate uint _GetTextValueLength(
             [In] ID2D1SvgElement* This
         );
 
         /// <summary>Sets an attribute of this element using a string. Returns an error if the attribute name is not valid on this element. Returns an error if the attribute cannot be expressed as the specified type.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetAttributeValue(
+        public delegate int _SetAttributeValue(
             [In] ID2D1SvgElement* This,
             [In, NativeTypeName("PCWSTR")] char* name,
             [In] D2D1_SVG_ATTRIBUTE_STRING_TYPE type,
@@ -263,7 +263,7 @@ namespace TerraFX.Interop
         /// <summary>Gets an attribute of this element as a string. Returns an error if the attribute is not specified. Returns an error if the attribute name is not valid on this element. Returns an error if the attribute cannot be expressed as the specified string type.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetAttributeValue(
+        public delegate int _GetAttributeValue(
             [In] ID2D1SvgElement* This,
             [In, NativeTypeName("PCWSTR")] char* name,
             [In] D2D1_SVG_ATTRIBUTE_STRING_TYPE type,
@@ -274,7 +274,7 @@ namespace TerraFX.Interop
         /// <summary>Gets the string length of an attribute of this element. The returned string length does not include room for the null terminator. Returns an error if the attribute is not specified. Returns an error if the attribute name is not valid on this element. Returns an error if the attribute cannot be expressed as the specified string type.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetAttributeValueLength(
+        public delegate int _GetAttributeValueLength(
             [In] ID2D1SvgElement* This,
             [In, NativeTypeName("PCWSTR")] char* name,
             [In] D2D1_SVG_ATTRIBUTE_STRING_TYPE type,
@@ -284,7 +284,7 @@ namespace TerraFX.Interop
         /// <summary>Sets an attribute of this element using a POD type. Returns an error if the attribute name is not valid on this element. Returns an error if the attribute cannot be expressed as the specified type.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetAttributeValue1(
+        public delegate int _SetAttributeValue1(
             [In] ID2D1SvgElement* This,
             [In, NativeTypeName("PCWSTR")] char* name,
             [In] D2D1_SVG_ATTRIBUTE_POD_TYPE type,
@@ -295,7 +295,7 @@ namespace TerraFX.Interop
         /// <summary>Gets an attribute of this element as a POD type. Returns an error if the attribute is not specified. Returns an error if the attribute name is not valid on this element. Returns an error if the attribute cannot be expressed as the specified POD type.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetAttributeValue1(
+        public delegate int _GetAttributeValue1(
             [In] ID2D1SvgElement* This,
             [In, NativeTypeName("PCWSTR")] char* name,
             [In] D2D1_SVG_ATTRIBUTE_POD_TYPE type,
@@ -306,7 +306,7 @@ namespace TerraFX.Interop
         /// <summary>Sets an attribute of this element using an interface. Returns an error if the attribute name is not valid on this element. Returns an error if the attribute cannot be expressed as the specified interface type. Returns an error if the attribute object is already set on an element. A given attribute object may only be set on one element in one attribute location at a time.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetAttributeValue2(
+        public delegate int _SetAttributeValue2(
             [In] ID2D1SvgElement* This,
             [In, NativeTypeName("PCWSTR")] char* name,
             [In] ID2D1SvgAttribute* value
@@ -316,7 +316,7 @@ namespace TerraFX.Interop
         /// <param name="riid">The interface ID of the attribute value.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetAttributeValue2(
+        public delegate int _GetAttributeValue2(
             [In] ID2D1SvgElement* This,
             [In, NativeTypeName("PCWSTR")] char* name,
             [In, NativeTypeName("REFIID")] Guid* riid,

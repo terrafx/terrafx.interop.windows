@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID2D1ImageBrush* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,102 +24,102 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID2D1ImageBrush* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID2D1ImageBrush* This
         );
 
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetFactory(
+        public delegate void _GetFactory(
             [In] ID2D1ImageBrush* This,
             [Out] ID2D1Factory** factory
         );
 
         /// <summary>Sets the opacity for when the brush is drawn over the entire fill of the brush.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetOpacity(
+        public delegate void _SetOpacity(
             [In] ID2D1ImageBrush* This,
             [In, NativeTypeName("FLOAT")] float opacity
         );
 
         /// <summary>Sets the transform that applies to everything drawn by the brush.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetTransform(
+        public delegate void _SetTransform(
             [In] ID2D1ImageBrush* This,
             [In, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public /* static */ delegate float _GetOpacity(
+        public delegate float _GetOpacity(
             [In] ID2D1ImageBrush* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetTransform(
+        public delegate void _GetTransform(
             [In] ID2D1ImageBrush* This,
             [Out, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetImage(
+        public delegate void _SetImage(
             [In] ID2D1ImageBrush* This,
             [In] ID2D1Image* image = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetExtendModeX(
+        public delegate void _SetExtendModeX(
             [In] ID2D1ImageBrush* This,
             [In] D2D1_EXTEND_MODE extendModeX
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetExtendModeY(
+        public delegate void _SetExtendModeY(
             [In] ID2D1ImageBrush* This,
             [In] D2D1_EXTEND_MODE extendModeY
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetInterpolationMode(
+        public delegate void _SetInterpolationMode(
             [In] ID2D1ImageBrush* This,
             [In] D2D1_INTERPOLATION_MODE interpolationMode
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetSourceRectangle(
+        public delegate void _SetSourceRectangle(
             [In] ID2D1ImageBrush* This,
             [In, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* sourceRectangle
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetImage(
+        public delegate void _GetImage(
             [In] ID2D1ImageBrush* This,
             [Out] ID2D1Image** image
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate D2D1_EXTEND_MODE _GetExtendModeX(
+        public delegate D2D1_EXTEND_MODE _GetExtendModeX(
             [In] ID2D1ImageBrush* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate D2D1_EXTEND_MODE _GetExtendModeY(
+        public delegate D2D1_EXTEND_MODE _GetExtendModeY(
             [In] ID2D1ImageBrush* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate D2D1_INTERPOLATION_MODE _GetInterpolationMode(
+        public delegate D2D1_INTERPOLATION_MODE _GetInterpolationMode(
             [In] ID2D1ImageBrush* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetSourceRectangle(
+        public delegate void _GetSourceRectangle(
             [In] ID2D1ImageBrush* This,
             [Out, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* sourceRectangle
         );

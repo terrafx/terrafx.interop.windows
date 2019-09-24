@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,33 +23,33 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDXGIInfoQueue* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDXGIInfoQueue* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetMessageCountLimit(
+        public delegate int _SetMessageCountLimit(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer,
             [In, NativeTypeName("UINT64")] ulong MessageCountLimit
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _ClearStoredMessages(
+        public delegate void _ClearStoredMessages(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetMessage(
+        public delegate int _GetMessage(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer,
             [In, NativeTypeName("UINT64")] ulong MessageIndex,
@@ -59,49 +59,49 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
-        public /* static */ delegate ulong _GetNumStoredMessagesAllowedByRetrievalFilters(
+        public delegate ulong _GetNumStoredMessagesAllowedByRetrievalFilters(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
-        public /* static */ delegate ulong _GetNumStoredMessages(
+        public delegate ulong _GetNumStoredMessages(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
-        public /* static */ delegate ulong _GetNumMessagesDiscardedByMessageCountLimit(
+        public delegate ulong _GetNumMessagesDiscardedByMessageCountLimit(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
-        public /* static */ delegate ulong _GetMessageCountLimit(
+        public delegate ulong _GetMessageCountLimit(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
-        public /* static */ delegate ulong _GetNumMessagesAllowedByStorageFilter(
+        public delegate ulong _GetNumMessagesAllowedByStorageFilter(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
-        public /* static */ delegate ulong _GetNumMessagesDeniedByStorageFilter(
+        public delegate ulong _GetNumMessagesDeniedByStorageFilter(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AddStorageFilterEntries(
+        public delegate int _AddStorageFilterEntries(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer,
             [In] DXGI_INFO_QUEUE_FILTER* pFilter
@@ -109,7 +109,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetStorageFilter(
+        public delegate int _GetStorageFilter(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer,
             [Out, Optional] DXGI_INFO_QUEUE_FILTER* pFilter,
@@ -118,56 +118,56 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _ClearStorageFilter(
+        public delegate int _ClearStorageFilter(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _PushEmptyStorageFilter(
+        public delegate int _PushEmptyStorageFilter(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _PushDenyAllStorageFilter(
+        public delegate int _PushDenyAllStorageFilter(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _PushCopyOfStorageFilter(
+        public delegate int _PushCopyOfStorageFilter(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _PushStorageFilter(
+        public delegate int _PushStorageFilter(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer,
             [In] DXGI_INFO_QUEUE_FILTER* pFilter
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _PopStorageFilter(
+        public delegate void _PopStorageFilter(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT")]
-        public /* static */ delegate uint _GetStorageFilterStackSize(
+        public delegate uint _GetStorageFilterStackSize(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AddRetrievalFilterEntries(
+        public delegate int _AddRetrievalFilterEntries(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer,
             [In] DXGI_INFO_QUEUE_FILTER* pFilter
@@ -175,7 +175,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetRetrievalFilter(
+        public delegate int _GetRetrievalFilter(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer,
             [Out, Optional] DXGI_INFO_QUEUE_FILTER* pFilter,
@@ -183,56 +183,56 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _ClearRetrievalFilter(
+        public delegate void _ClearRetrievalFilter(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _PushEmptyRetrievalFilter(
+        public delegate int _PushEmptyRetrievalFilter(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _PushDenyAllRetrievalFilter(
+        public delegate int _PushDenyAllRetrievalFilter(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _PushCopyOfRetrievalFilter(
+        public delegate int _PushCopyOfRetrievalFilter(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _PushRetrievalFilter(
+        public delegate int _PushRetrievalFilter(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer,
             [In] DXGI_INFO_QUEUE_FILTER* pFilter
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _PopRetrievalFilter(
+        public delegate void _PopRetrievalFilter(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT")]
-        public /* static */ delegate uint _GetRetrievalFilterStackSize(
+        public delegate uint _GetRetrievalFilterStackSize(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AddMessage(
+        public delegate int _AddMessage(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer,
             [In] DXGI_INFO_QUEUE_MESSAGE_CATEGORY Category,
@@ -243,7 +243,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AddApplicationMessage(
+        public delegate int _AddApplicationMessage(
             [In] IDXGIInfoQueue* This,
             [In] DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity,
             [In, NativeTypeName("LPCSTR")] sbyte* pDescription
@@ -251,7 +251,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetBreakOnCategory(
+        public delegate int _SetBreakOnCategory(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer,
             [In] DXGI_INFO_QUEUE_MESSAGE_CATEGORY Category,
@@ -260,7 +260,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetBreakOnSeverity(
+        public delegate int _SetBreakOnSeverity(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer,
             [In] DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity,
@@ -269,7 +269,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetBreakOnID(
+        public delegate int _SetBreakOnID(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer,
             [In, NativeTypeName("DXGI_INFO_QUEUE_MESSAGE_ID")] int ID,
@@ -278,7 +278,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _GetBreakOnCategory(
+        public delegate int _GetBreakOnCategory(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer,
             [In] DXGI_INFO_QUEUE_MESSAGE_CATEGORY Category
@@ -286,7 +286,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _GetBreakOnSeverity(
+        public delegate int _GetBreakOnSeverity(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer,
             [In] DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity
@@ -294,14 +294,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _GetBreakOnID(
+        public delegate int _GetBreakOnID(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer,
             [In, NativeTypeName("DXGI_INFO_QUEUE_MESSAGE_ID")] int ID
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetMuteDebugOutput(
+        public delegate void _SetMuteDebugOutput(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer,
             [In, NativeTypeName("BOOL")] int bMute
@@ -309,7 +309,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _GetMuteDebugOutput(
+        public delegate int _GetMuteDebugOutput(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );

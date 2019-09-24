@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDXGIDebug1* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,37 +23,37 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDXGIDebug1* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDXGIDebug1* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _ReportLiveObjects(
+        public delegate int _ReportLiveObjects(
             [In] IDXGIDebug1* This,
             [In, NativeTypeName("GUID")] Guid apiid,
             [In] DXGI_DEBUG_RLO_FLAGS flags
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _EnableLeakTrackingForThread(
+        public delegate void _EnableLeakTrackingForThread(
             [In] IDXGIDebug1* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _DisableLeakTrackingForThread(
+        public delegate void _DisableLeakTrackingForThread(
             [In] IDXGIDebug1* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _IsLeakTrackingEnabledForThread(
+        public delegate int _IsLeakTrackingEnabledForThread(
             [In] IDXGIDebug1* This
         );
 

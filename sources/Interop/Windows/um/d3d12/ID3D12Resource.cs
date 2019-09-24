@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID3D12Resource* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID3D12Resource* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID3D12Resource* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPrivateData(
+        public delegate int _GetPrivateData(
             [In] ID3D12Resource* This,
             [In, NativeTypeName("REFGUID")] Guid* guid,
             [In, Out, NativeTypeName("UINT")] uint* pDataSize,
@@ -44,7 +44,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrivateData(
+        public delegate int _SetPrivateData(
             [In] ID3D12Resource* This,
             [In, NativeTypeName("REFGUID")] Guid* guid,
             [In, NativeTypeName("UINT")] uint DataSize,
@@ -53,7 +53,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrivateDataInterface(
+        public delegate int _SetPrivateDataInterface(
             [In] ID3D12Resource* This,
             [In, NativeTypeName("REFGUID")] Guid* guid,
             [In] IUnknown* pData = null
@@ -61,14 +61,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetName(
+        public delegate int _SetName(
             [In] ID3D12Resource* This,
             [In, NativeTypeName("LPCWSTR")] char* Name
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDevice(
+        public delegate int _GetDevice(
             [In] ID3D12Resource* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvDevice = null
@@ -76,7 +76,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Map(
+        public delegate int _Map(
             [In] ID3D12Resource* This,
             [In, NativeTypeName("UINT")] uint Subresource,
             [In] D3D12_RANGE* pReadRange = null,
@@ -84,27 +84,27 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _Unmap(
+        public delegate void _Unmap(
             [In] ID3D12Resource* This,
             [In, NativeTypeName("UINT")] uint Subresource,
             [In] D3D12_RANGE* pWrittenRange = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate D3D12_RESOURCE_DESC* _GetDesc(
+        public delegate D3D12_RESOURCE_DESC* _GetDesc(
             [In] ID3D12Resource* This,
             [Out] D3D12_RESOURCE_DESC* _result
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")]
-        public /* static */ delegate ulong _GetGPUVirtualAddress(
+        public delegate ulong _GetGPUVirtualAddress(
             [In] ID3D12Resource* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _WriteToSubresource(
+        public delegate int _WriteToSubresource(
             [In] ID3D12Resource* This,
             [In, NativeTypeName("UINT")] uint DstSubresource,
             [In, Optional] D3D12_BOX* pDstBox,
@@ -115,7 +115,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _ReadFromSubresource(
+        public delegate int _ReadFromSubresource(
             [In] ID3D12Resource* This,
             [Out] void* pDstData,
             [In, NativeTypeName("UINT")] uint DstRowPitch,
@@ -126,7 +126,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetHeapProperties(
+        public delegate int _GetHeapProperties(
             [In] ID3D12Resource* This,
             [Out] D3D12_HEAP_PROPERTIES* pHeapProperties = null,
             [Out] D3D12_HEAP_FLAGS* pHeapFlags = null

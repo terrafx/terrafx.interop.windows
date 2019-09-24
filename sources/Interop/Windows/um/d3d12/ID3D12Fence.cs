@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID3D12Fence* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID3D12Fence* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID3D12Fence* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPrivateData(
+        public delegate int _GetPrivateData(
             [In] ID3D12Fence* This,
             [In, NativeTypeName("REFGUID")] Guid* guid,
             [In, Out, NativeTypeName("UINT")] uint* pDataSize,
@@ -44,7 +44,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrivateData(
+        public delegate int _SetPrivateData(
             [In] ID3D12Fence* This,
             [In, NativeTypeName("REFGUID")] Guid* guid,
             [In, NativeTypeName("UINT")] uint DataSize,
@@ -53,7 +53,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrivateDataInterface(
+        public delegate int _SetPrivateDataInterface(
             [In] ID3D12Fence* This,
             [In, NativeTypeName("REFGUID")] Guid* guid,
             [In] IUnknown* pData = null
@@ -61,14 +61,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetName(
+        public delegate int _SetName(
             [In] ID3D12Fence* This,
             [In, NativeTypeName("LPCWSTR")] char* Name
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDevice(
+        public delegate int _GetDevice(
             [In] ID3D12Fence* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvDevice = null
@@ -76,13 +76,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
-        public /* static */ delegate ulong _GetCompletedValue(
+        public delegate ulong _GetCompletedValue(
             [In] ID3D12Fence* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetEventOnCompletion(
+        public delegate int _SetEventOnCompletion(
             [In] ID3D12Fence* This,
             [In, NativeTypeName("UINT64")] ulong Value,
             [In, NativeTypeName("HANDLE")] IntPtr hEvent
@@ -90,7 +90,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Signal(
+        public delegate int _Signal(
             [In] ID3D12Fence* This,
             [In, NativeTypeName("UINT64")] ulong Value
         );

@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IWICPlanarBitmapFrameEncode* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IWICPlanarBitmapFrameEncode* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IWICPlanarBitmapFrameEncode* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _WritePixels(
+        public delegate int _WritePixels(
             [In] IWICPlanarBitmapFrameEncode* This,
             [In, NativeTypeName("UINT")] uint lineCount,
             [In, NativeTypeName("WICBitmapPlane[]")] WICBitmapPlane* pPlanes,
@@ -44,7 +44,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _WriteSource(
+        public delegate int _WriteSource(
             [In] IWICPlanarBitmapFrameEncode* This,
             [In, NativeTypeName("IWICBitmapSource*[]")] IWICBitmapSource** ppPlanes,
             [In, NativeTypeName("UINT")] uint cPlanes,

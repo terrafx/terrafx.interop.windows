@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IWICMetadataBlockReader* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,33 +23,33 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IWICMetadataBlockReader* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IWICMetadataBlockReader* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetContainerFormat(
+        public delegate int _GetContainerFormat(
             [In] IWICMetadataBlockReader* This,
             [Out, NativeTypeName("GUID")] Guid* pguidContainerFormat
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetCount(
+        public delegate int _GetCount(
             [In] IWICMetadataBlockReader* This,
             [Out, NativeTypeName("UINT")] uint* pcCount
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetReaderByIndex(
+        public delegate int _GetReaderByIndex(
             [In] IWICMetadataBlockReader* This,
             [In, NativeTypeName("UINT")] uint nIndex,
             [Out] IWICMetadataReader** ppIMetadataReader = null
@@ -57,7 +57,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetEnumerator(
+        public delegate int _GetEnumerator(
             [In] IWICMetadataBlockReader* This,
             [Out] IEnumUnknown** ppIEnumMetadata = null
         );

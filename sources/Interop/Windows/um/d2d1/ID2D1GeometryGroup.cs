@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID2D1GeometryGroup* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,19 +24,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID2D1GeometryGroup* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID2D1GeometryGroup* This
         );
 
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetFactory(
+        public delegate void _GetFactory(
             [In] ID2D1GeometryGroup* This,
             [Out] ID2D1Factory** factory
         );
@@ -44,7 +44,7 @@ namespace TerraFX.Interop
         /// <summary>Retrieve the bounds of the geometry, with an optional applied transform.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetBounds(
+        public delegate int _GetBounds(
             [In] ID2D1GeometryGroup* This,
             [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
             [Out, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* bounds
@@ -53,7 +53,7 @@ namespace TerraFX.Interop
         /// <summary>Get the bounds of the corresponding geometry after it has been widened or have an optional pen style applied.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetWidenedBounds(
+        public delegate int _GetWidenedBounds(
             [In] ID2D1GeometryGroup* This,
             [In, NativeTypeName("FLOAT")] float strokeWidth,
             [In, Optional] ID2D1StrokeStyle* strokeStyle,
@@ -65,7 +65,7 @@ namespace TerraFX.Interop
         /// <summary>Checks to see whether the corresponding penned and widened geometry contains the given point.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _StrokeContainsPoint(
+        public delegate int _StrokeContainsPoint(
             [In] ID2D1GeometryGroup* This,
             [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point,
             [In, NativeTypeName("FLOAT")] float strokeWidth,
@@ -78,7 +78,7 @@ namespace TerraFX.Interop
         /// <summary>Test whether the given fill of this geometry would contain this point.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _FillContainsPoint(
+        public delegate int _FillContainsPoint(
             [In] ID2D1GeometryGroup* This,
             [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point,
             [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
@@ -89,7 +89,7 @@ namespace TerraFX.Interop
         /// <summary>Compare how one geometry intersects or contains another geometry.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CompareWithGeometry(
+        public delegate int _CompareWithGeometry(
             [In] ID2D1GeometryGroup* This,
             [In] ID2D1Geometry* inputGeometry,
             [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* inputGeometryTransform,
@@ -100,7 +100,7 @@ namespace TerraFX.Interop
         /// <summary>Converts a geometry to a simplified geometry that has arcs and quadratic beziers removed.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Simplify(
+        public delegate int _Simplify(
             [In] ID2D1GeometryGroup* This,
             [In] D2D1_GEOMETRY_SIMPLIFICATION_OPTION simplificationOption,
             [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
@@ -111,7 +111,7 @@ namespace TerraFX.Interop
         /// <summary>Tessellates a geometry into triangles.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Tessellate(
+        public delegate int _Tessellate(
             [In] ID2D1GeometryGroup* This,
             [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
             [In, NativeTypeName("FLOAT")] float flatteningTolerance,
@@ -121,7 +121,7 @@ namespace TerraFX.Interop
         /// <summary>Performs a combine operation between the two geometries to produce a resulting geometry.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CombineWithGeometry(
+        public delegate int _CombineWithGeometry(
             [In] ID2D1GeometryGroup* This,
             [In] ID2D1Geometry* inputGeometry,
             [In] D2D1_COMBINE_MODE combineMode,
@@ -133,7 +133,7 @@ namespace TerraFX.Interop
         /// <summary>Computes the outline of the geometry. The result is written back into a simplified geometry sink.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Outline(
+        public delegate int _Outline(
             [In] ID2D1GeometryGroup* This,
             [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
             [In, NativeTypeName("FLOAT")] float flatteningTolerance,
@@ -143,7 +143,7 @@ namespace TerraFX.Interop
         /// <summary>Computes the area of the geometry.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _ComputeArea(
+        public delegate int _ComputeArea(
             [In] ID2D1GeometryGroup* This,
             [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
             [In, NativeTypeName("FLOAT")] float flatteningTolerance,
@@ -153,7 +153,7 @@ namespace TerraFX.Interop
         /// <summary>Computes the length of the geometry.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _ComputeLength(
+        public delegate int _ComputeLength(
             [In] ID2D1GeometryGroup* This,
             [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
             [In, NativeTypeName("FLOAT")] float flatteningTolerance,
@@ -163,7 +163,7 @@ namespace TerraFX.Interop
         /// <summary>Computes the point and tangent a given distance along the path.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _ComputePointAtLength(
+        public delegate int _ComputePointAtLength(
             [In] ID2D1GeometryGroup* This,
             [In, NativeTypeName("FLOAT")] float length,
             [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
@@ -175,7 +175,7 @@ namespace TerraFX.Interop
         /// <summary>Get the geometry and widen it as well as apply an optional pen style.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Widen(
+        public delegate int _Widen(
             [In] ID2D1GeometryGroup* This,
             [In, NativeTypeName("FLOAT")] float strokeWidth,
             [In, Optional] ID2D1StrokeStyle* strokeStyle,
@@ -185,18 +185,18 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate D2D1_FILL_MODE _GetFillMode(
+        public delegate D2D1_FILL_MODE _GetFillMode(
             [In] ID2D1GeometryGroup* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetSourceGeometryCount(
+        public delegate uint _GetSourceGeometryCount(
             [In] ID2D1GeometryGroup* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetSourceGeometries(
+        public delegate void _GetSourceGeometries(
             [In] ID2D1GeometryGroup* This,
             [Out, NativeTypeName("ID2D1Geometry*[]")] ID2D1Geometry** geometries,
             [In, NativeTypeName("UINT32")] uint geometriesCount

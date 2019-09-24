@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDWriteLocalizedStrings* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,20 +24,20 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDWriteLocalizedStrings* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDWriteLocalizedStrings* This
         );
 
         /// <summary>Gets the number of language/string pairs.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetCount(
+        public delegate uint _GetCount(
             [In] IDWriteLocalizedStrings* This
         );
 
@@ -48,7 +48,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code. If the specified locale name does not exist, the return value is S_OK, but *index is UINT_MAX and *exists is FALSE.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _FindLocaleName(
+        public delegate int _FindLocaleName(
             [In] IDWriteLocalizedStrings* This,
             [In, NativeTypeName("WCHAR[]")] char* localeName,
             [Out, NativeTypeName("UINT32")] uint* index,
@@ -61,7 +61,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetLocaleNameLength(
+        public delegate int _GetLocaleNameLength(
             [In] IDWriteLocalizedStrings* This,
             [In, NativeTypeName("UINT32")] uint index,
             [Out, NativeTypeName("UINT32")] uint* length
@@ -74,7 +74,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetLocaleName(
+        public delegate int _GetLocaleName(
             [In] IDWriteLocalizedStrings* This,
             [In, NativeTypeName("UINT32")] uint index,
             [Out, NativeTypeName("WCHAR[]")] char* localeName,
@@ -87,7 +87,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetStringLength(
+        public delegate int _GetStringLength(
             [In] IDWriteLocalizedStrings* This,
             [In, NativeTypeName("UINT32")] uint index,
             [Out, NativeTypeName("UINT32")] uint* length
@@ -100,7 +100,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetString(
+        public delegate int _GetString(
             [In] IDWriteLocalizedStrings* This,
             [In, NativeTypeName("UINT32")] uint index,
             [Out, NativeTypeName("WCHAR[]")] char* stringBuffer,

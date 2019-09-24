@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDWriteInlineObject* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,13 +24,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDWriteInlineObject* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDWriteInlineObject* This
         );
 
@@ -45,7 +45,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Draw(
+        public delegate int _Draw(
             [In] IDWriteInlineObject* This,
             [In, Optional] void* clientDrawingContext,
             [In] IDWriteTextRenderer* renderer,
@@ -61,7 +61,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetMetrics(
+        public delegate int _GetMetrics(
             [In] IDWriteInlineObject* This,
             [Out] DWRITE_INLINE_OBJECT_METRICS* metrics
         );
@@ -72,7 +72,7 @@ namespace TerraFX.Interop
         /// <remarks> The overhangs should be returned relative to the reported size of the object (DWRITE_INLINE_OBJECT_METRICS::width/height), and should not be baseline adjusted. If you have an image that is actually 100x100 DIPs, but you want it slightly inset (perhaps it has a glow) by 20 DIPs on each side, you would return a width/height of 60x60 and four overhangs of 20 DIPs.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetOverhangMetrics(
+        public delegate int _GetOverhangMetrics(
             [In] IDWriteInlineObject* This,
             [Out] DWRITE_OVERHANG_METRICS* overhangs
         );
@@ -83,7 +83,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetBreakConditions(
+        public delegate int _GetBreakConditions(
             [In] IDWriteInlineObject* This,
             [Out] DWRITE_BREAK_CONDITION* breakConditionBefore,
             [Out] DWRITE_BREAK_CONDITION* breakConditionAfter

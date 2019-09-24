@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID2D1OffsetTransform* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,32 +24,32 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID2D1OffsetTransform* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID2D1OffsetTransform* This
         );
 
         /// <summary>Return the number of input this node has.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetInputCount(
+        public delegate uint _GetInputCount(
             [In] ID2D1OffsetTransform* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetOffset(
+        public delegate void _SetOffset(
             [In] ID2D1OffsetTransform* This,
             [In, NativeTypeName("D2D1_POINT_2L")] POINT offset
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("D2D1_POINT_2L")]
-        public /* static */ delegate POINT* _GetOffset(
+        public delegate POINT* _GetOffset(
             [In] ID2D1OffsetTransform* This,
             [Out] POINT* _result
         );

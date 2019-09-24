@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IStorage* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IStorage* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IStorage* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateStream(
+        public delegate int _CreateStream(
             [In] IStorage* This,
             [In, NativeTypeName("OLECHAR")] char* pwcsName,
             [In, NativeTypeName("DWORD")] uint grfMode,
@@ -46,7 +46,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _OpenStream(
+        public delegate int _OpenStream(
             [In] IStorage* This,
             [In, NativeTypeName("OLECHAR")] char* pwcsName,
             [In] void* reserved1,
@@ -57,7 +57,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateStorage(
+        public delegate int _CreateStorage(
             [In] IStorage* This,
             [In, NativeTypeName("OLECHAR")] char* pwcsName,
             [In, NativeTypeName("DWORD")] uint grfMode,
@@ -68,7 +68,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _OpenStorage(
+        public delegate int _OpenStorage(
             [In] IStorage* This,
             [In, Optional, NativeTypeName("OLECHAR")] char* pwcsName,
             [In, Optional] IStorage* pstgPriority,
@@ -80,7 +80,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CopyTo(
+        public delegate int _CopyTo(
             [In] IStorage* This,
             [In, NativeTypeName("IID")] Guid* ciidExclude,
             [In, Optional] Guid* rgiidExclude,
@@ -90,7 +90,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _MoveElementTo(
+        public delegate int _MoveElementTo(
             [In] IStorage* This,
             [In, NativeTypeName("OLECHAR")] char* pwcsName,
             [In, Optional] IStorage* pstgDest,
@@ -100,20 +100,20 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Commit(
+        public delegate int _Commit(
             [In] IStorage* This,
             [In, NativeTypeName("DWORD")] uint grfCommitFlags
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Revert(
+        public delegate int _Revert(
             [In] IStorage* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _EnumElements(
+        public delegate int _EnumElements(
             [In] IStorage* This,
             [In, NativeTypeName("DWORD")] uint reserved1,
             [In] void* reserved2,
@@ -123,14 +123,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DestroyElement(
+        public delegate int _DestroyElement(
             [In] IStorage* This,
             [In, NativeTypeName("OLECHAR")] char* pwcsName
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RenameElement(
+        public delegate int _RenameElement(
             [In] IStorage* This,
             [In, NativeTypeName("OLECHAR")] char* pwcsOldName,
             [In, NativeTypeName("OLECHAR")] char* pwcsNewName
@@ -138,7 +138,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetElementTimes(
+        public delegate int _SetElementTimes(
             [In] IStorage* This,
             [In, NativeTypeName("OLECHAR")] char* pwcsName = null,
             [In] FILETIME* pctime = null,
@@ -148,14 +148,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetClass(
+        public delegate int _SetClass(
             [In] IStorage* This,
             [In, NativeTypeName("REFCLSID")] Guid* clsid
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetStateBits(
+        public delegate int _SetStateBits(
             [In] IStorage* This,
             [In, NativeTypeName("DWORD")] uint grfStateBits,
             [In, NativeTypeName("DWORD")] uint grfMask
@@ -163,7 +163,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Stat(
+        public delegate int _Stat(
             [In] IStorage* This,
             [Out] STATSTG* pstatstg,
             [In, NativeTypeName("DWORD")] uint grfStatFlag

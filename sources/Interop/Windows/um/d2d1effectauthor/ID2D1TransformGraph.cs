@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID2D1TransformGraph* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,27 +24,27 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID2D1TransformGraph* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID2D1TransformGraph* This
         );
 
         /// <summary>Return the number of input this graph has.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetInputCount(
+        public delegate uint _GetInputCount(
             [In] ID2D1TransformGraph* This
         );
 
         /// <summary>Sets the graph to contain a single transform whose inputs map 1:1 with effect inputs.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetSingleTransformNode(
+        public delegate int _SetSingleTransformNode(
             [In] ID2D1TransformGraph* This,
             [In] ID2D1TransformNode* node
         );
@@ -52,7 +52,7 @@ namespace TerraFX.Interop
         /// <summary>Adds the given transform node to the graph.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AddNode(
+        public delegate int _AddNode(
             [In] ID2D1TransformGraph* This,
             [In] ID2D1TransformNode* node
         );
@@ -60,7 +60,7 @@ namespace TerraFX.Interop
         /// <summary>Removes the given transform node from the graph.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RemoveNode(
+        public delegate int _RemoveNode(
             [In] ID2D1TransformGraph* This,
             [In] ID2D1TransformNode* node
         );
@@ -68,7 +68,7 @@ namespace TerraFX.Interop
         /// <summary>Indicates that the given transform node should be considered to be the output node of the graph.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetOutputNode(
+        public delegate int _SetOutputNode(
             [In] ID2D1TransformGraph* This,
             [In] ID2D1TransformNode* node
         );
@@ -76,7 +76,7 @@ namespace TerraFX.Interop
         /// <summary>Connects one node to another node inside the graph.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _ConnectNode(
+        public delegate int _ConnectNode(
             [In] ID2D1TransformGraph* This,
             [In] ID2D1TransformNode* fromNode,
             [In] ID2D1TransformNode* toNode,
@@ -86,7 +86,7 @@ namespace TerraFX.Interop
         /// <summary>Connects a transform node inside the graph to the corresponding input of the encapsulating effect.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _ConnectToEffectInput(
+        public delegate int _ConnectToEffectInput(
             [In] ID2D1TransformGraph* This,
             [In, NativeTypeName("UINT32")] uint toEffectInputIndex,
             [In] ID2D1TransformNode* node,
@@ -95,14 +95,14 @@ namespace TerraFX.Interop
 
         /// <summary>Clears all nodes and connections from the transform graph.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _Clear(
+        public delegate void _Clear(
             [In] ID2D1TransformGraph* This
         );
 
         /// <summary>Uses the specified input as the effect output.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPassthroughGraph(
+        public delegate int _SetPassthroughGraph(
             [In] ID2D1TransformGraph* This,
             [In, NativeTypeName("UINT32")] uint effectInputIndex
         );

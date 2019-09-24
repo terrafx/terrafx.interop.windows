@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IRecordInfo* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,33 +23,33 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IRecordInfo* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IRecordInfo* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RecordInit(
+        public delegate int _RecordInit(
             [In] IRecordInfo* This,
             [Out, NativeTypeName("PVOID")] void* pvNew
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RecordClear(
+        public delegate int _RecordClear(
             [In] IRecordInfo* This,
             [In, NativeTypeName("PVOID")] void* pvExisting
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RecordCopy(
+        public delegate int _RecordCopy(
             [In] IRecordInfo* This,
             [In, NativeTypeName("PVOID")] void* pvExisting,
             [Out, NativeTypeName("PVOID")] void* pvNew
@@ -57,35 +57,35 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetGuid(
+        public delegate int _GetGuid(
             [In] IRecordInfo* This,
             [Out, NativeTypeName("GUID")] Guid* pGuid
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetName(
+        public delegate int _GetName(
             [In] IRecordInfo* This,
             [Out, NativeTypeName("BSTR")] char** pbstrName = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSize(
+        public delegate int _GetSize(
             [In] IRecordInfo* This,
             [Out, NativeTypeName("ULONG")] uint* pcbSize
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetTypeInfo(
+        public delegate int _GetTypeInfo(
             [In] IRecordInfo* This,
             [Out] ITypeInfo** ppTypeInfo
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetField(
+        public delegate int _GetField(
             [In] IRecordInfo* This,
             [In, NativeTypeName("PVOID")] void* pvData,
             [In, NativeTypeName("LPCOLESTR")] char* szFieldName,
@@ -94,7 +94,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFieldNoCopy(
+        public delegate int _GetFieldNoCopy(
             [In] IRecordInfo* This,
             [In, NativeTypeName("PVOID")] void* pvData,
             [In, NativeTypeName("LPCOLESTR")] char* szFieldName,
@@ -104,7 +104,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _PutField(
+        public delegate int _PutField(
             [In] IRecordInfo* This,
             [In, NativeTypeName("ULONG")] uint wFlags,
             [In, Out, NativeTypeName("PVOID")] void* pvData,
@@ -114,7 +114,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _PutFieldNoCopy(
+        public delegate int _PutFieldNoCopy(
             [In] IRecordInfo* This,
             [In, NativeTypeName("ULONG")] uint wFlags,
             [In, Out, NativeTypeName("PVOID")] void* pvData,
@@ -124,7 +124,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFieldNames(
+        public delegate int _GetFieldNames(
             [In] IRecordInfo* This,
             [In, Out, NativeTypeName("ULONG")] uint* pcNames,
             [Out, NativeTypeName("BSTR[]")] char** rgBstrNames
@@ -132,19 +132,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _IsMatchingType(
+        public delegate int _IsMatchingType(
             [In] IRecordInfo* This,
             [In] IRecordInfo* pRecordInfo
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void* _RecordCreate(
+        public delegate void* _RecordCreate(
             [In] IRecordInfo* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RecordCreateCopy(
+        public delegate int _RecordCreateCopy(
             [In] IRecordInfo* This,
             [In, NativeTypeName("PVOID")] void* pvSource,
             [Out, NativeTypeName("PVOID")] void** ppvDest
@@ -152,7 +152,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RecordDestroy(
+        public delegate int _RecordDestroy(
             [In] IRecordInfo* This,
             [In, NativeTypeName("PVOID")] void* pvRecord
         );

@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDWriteFontFamily1* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,13 +24,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDWriteFontFamily1* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDWriteFontFamily1* This
         );
 
@@ -39,7 +39,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFontCollection(
+        public delegate int _GetFontCollection(
             [In] IDWriteFontFamily1* This,
             [Out] IDWriteFontCollection** fontCollection
         );
@@ -47,7 +47,7 @@ namespace TerraFX.Interop
         /// <summary>Gets the number of fonts in the font list.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetFontCount(
+        public delegate uint _GetFontCount(
             [In] IDWriteFontFamily1* This
         );
 
@@ -57,7 +57,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFont(
+        public delegate int _GetFont(
             [In] IDWriteFontFamily1* This,
             [In, NativeTypeName("UINT32")] uint index,
             [Out] IDWriteFont** font
@@ -68,7 +68,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFamilyNames(
+        public delegate int _GetFamilyNames(
             [In] IDWriteFontFamily1* This,
             [Out] IDWriteLocalizedStrings** names
         );
@@ -81,7 +81,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFirstMatchingFont(
+        public delegate int _GetFirstMatchingFont(
             [In] IDWriteFontFamily1* This,
             [In] DWRITE_FONT_WEIGHT weight,
             [In] DWRITE_FONT_STRETCH stretch,
@@ -97,7 +97,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetMatchingFonts(
+        public delegate int _GetMatchingFonts(
             [In] IDWriteFontFamily1* This,
             [In] DWRITE_FONT_WEIGHT weight,
             [In] DWRITE_FONT_STRETCH stretch,
@@ -110,7 +110,7 @@ namespace TerraFX.Interop
         /// <remarks> The locality enumeration. For fully local files, the result will always be DWRITE_LOCALITY_LOCAL. For downloadable files, the result depends on how much of the file has been downloaded, and GetFont() fails if the locality is REMOTE and potentially fails if PARTIAL. The application can explicitly ask for the font to be enqueued for download via EnqueueFontDownloadRequest followed by BeginDownload().</remarks>
         /// <returns> The locality enumeration.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate DWRITE_LOCALITY _GetFontLocality(
+        public delegate DWRITE_LOCALITY _GetFontLocality(
             [In] IDWriteFontFamily1* This,
             [In, NativeTypeName("UINT32")] uint listIndex
         );
@@ -121,7 +121,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFont1(
+        public delegate int _GetFont1(
             [In] IDWriteFontFamily1* This,
             [In, NativeTypeName("UINT32")] uint listIndex,
             [Out] IDWriteFont3** font
@@ -133,7 +133,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFontFaceReference(
+        public delegate int _GetFontFaceReference(
             [In] IDWriteFontFamily1* This,
             [In, NativeTypeName("UINT32")] uint listIndex,
             [Out] IDWriteFontFaceReference** fontFaceReference

@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDXGIFactory2* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDXGIFactory2* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDXGIFactory2* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrivateData(
+        public delegate int _SetPrivateData(
             [In] IDXGIFactory2* This,
             [In, NativeTypeName("REFGUID")] Guid* Name,
             [In, NativeTypeName("UINT")] uint DataSize,
@@ -44,7 +44,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrivateDataInterface(
+        public delegate int _SetPrivateDataInterface(
             [In] IDXGIFactory2* This,
             [In, NativeTypeName("REFGUID")] Guid* Name,
             [In] IUnknown* pUnknown = null
@@ -52,7 +52,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPrivateData(
+        public delegate int _GetPrivateData(
             [In] IDXGIFactory2* This,
             [In, NativeTypeName("REFGUID")] Guid* Name,
             [In, Out, NativeTypeName("UINT")] uint* pDataSize,
@@ -61,7 +61,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetParent(
+        public delegate int _GetParent(
             [In] IDXGIFactory2* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppParent
@@ -69,7 +69,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _EnumAdapters(
+        public delegate int _EnumAdapters(
             [In] IDXGIFactory2* This,
             [In, NativeTypeName("UINT")] uint Adapter,
             [Out] IDXGIAdapter** ppAdapter
@@ -77,7 +77,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _MakeWindowAssociation(
+        public delegate int _MakeWindowAssociation(
             [In] IDXGIFactory2* This,
             [In, NativeTypeName("HWND")] IntPtr WindowHandle,
             [In, NativeTypeName("UINT")] uint Flags
@@ -85,14 +85,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetWindowAssociation(
+        public delegate int _GetWindowAssociation(
             [In] IDXGIFactory2* This,
             [Out, NativeTypeName("HWND")] IntPtr* pWindowHandle
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateSwapChain(
+        public delegate int _CreateSwapChain(
             [In] IDXGIFactory2* This,
             [In] IUnknown* pDevice,
             [In] DXGI_SWAP_CHAIN_DESC* pDesc,
@@ -101,7 +101,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateSoftwareAdapter(
+        public delegate int _CreateSoftwareAdapter(
             [In] IDXGIFactory2* This,
             [In, NativeTypeName("HMODULE")] IntPtr Module,
             [Out] IDXGIAdapter** ppAdapter
@@ -109,7 +109,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _EnumAdapters1(
+        public delegate int _EnumAdapters1(
             [In] IDXGIFactory2* This,
             [In, NativeTypeName("UINT")] uint Adapter,
             [Out] IDXGIAdapter1** ppAdapter
@@ -117,19 +117,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _IsCurrent(
+        public delegate int _IsCurrent(
             [In] IDXGIFactory2* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _IsWindowedStereoEnabled(
+        public delegate int _IsWindowedStereoEnabled(
             [In] IDXGIFactory2* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateSwapChainForHwnd(
+        public delegate int _CreateSwapChainForHwnd(
             [In] IDXGIFactory2* This,
             [In] IUnknown* pDevice,
             [In, NativeTypeName("HWND")] IntPtr hWnd,
@@ -141,7 +141,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateSwapChainForCoreWindow(
+        public delegate int _CreateSwapChainForCoreWindow(
             [In] IDXGIFactory2* This,
             [In] IUnknown* pDevice,
             [In] IUnknown* pWindow,
@@ -152,7 +152,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSharedResourceAdapterLuid(
+        public delegate int _GetSharedResourceAdapterLuid(
             [In] IDXGIFactory2* This,
             [In, NativeTypeName("HANDLE")] IntPtr hResource,
             [Out] LUID* pLuid
@@ -160,7 +160,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RegisterStereoStatusWindow(
+        public delegate int _RegisterStereoStatusWindow(
             [In] IDXGIFactory2* This,
             [In, NativeTypeName("HWND")] IntPtr WindowHandle,
             [In, NativeTypeName("UINT")] uint wMsg,
@@ -169,21 +169,21 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RegisterStereoStatusEvent(
+        public delegate int _RegisterStereoStatusEvent(
             [In] IDXGIFactory2* This,
             [In, NativeTypeName("HANDLE")] IntPtr hEvent,
             [Out, NativeTypeName("DWORD")] uint* pdwCookie
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _UnregisterStereoStatus(
+        public delegate void _UnregisterStereoStatus(
             [In] IDXGIFactory2* This,
             [In, NativeTypeName("DWORD")] uint dwCookie
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RegisterOcclusionStatusWindow(
+        public delegate int _RegisterOcclusionStatusWindow(
             [In] IDXGIFactory2* This,
             [In, NativeTypeName("HWND")] IntPtr WindowHandle,
             [In, NativeTypeName("UINT")] uint wMsg,
@@ -192,21 +192,21 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RegisterOcclusionStatusEvent(
+        public delegate int _RegisterOcclusionStatusEvent(
             [In] IDXGIFactory2* This,
             [In, NativeTypeName("HANDLE")] IntPtr hEvent,
             [Out, NativeTypeName("DWORD")] uint* pdwCookie
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _UnregisterOcclusionStatus(
+        public delegate void _UnregisterOcclusionStatus(
             [In] IDXGIFactory2* This,
             [In, NativeTypeName("UINT")] uint dwCookie
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateSwapChainForComposition(
+        public delegate int _CreateSwapChainForComposition(
             [In] IDXGIFactory2* This,
             [In] IUnknown* pDevice,
             [In] DXGI_SWAP_CHAIN_DESC1* pDesc,

@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IWICMetadataQueryWriter* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,26 +23,26 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IWICMetadataQueryWriter* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IWICMetadataQueryWriter* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetContainerFormat(
+        public delegate int _GetContainerFormat(
             [In] IWICMetadataQueryWriter* This,
             [Out, NativeTypeName("GUID")] Guid* pguidContainerFormat
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetLocation(
+        public delegate int _GetLocation(
             [In] IWICMetadataQueryWriter* This,
             [In, NativeTypeName("UINT")] uint cchMaxLength,
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzNamespace,
@@ -51,7 +51,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetMetadataByName(
+        public delegate int _GetMetadataByName(
             [In] IWICMetadataQueryWriter* This,
             [In, NativeTypeName("LPCWSTR")] char* wzName,
             [In, Out] PROPVARIANT* pvarValue = null
@@ -59,14 +59,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetEnumerator(
+        public delegate int _GetEnumerator(
             [In] IWICMetadataQueryWriter* This,
             [Out] IEnumString** ppIEnumString = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetMetadataByName(
+        public delegate int _SetMetadataByName(
             [In] IWICMetadataQueryWriter* This,
             [In, NativeTypeName("LPCWSTR")] char* wzName,
             [In] PROPVARIANT* pvarValue
@@ -74,7 +74,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RemoveMetadataByName(
+        public delegate int _RemoveMetadataByName(
             [In] IWICMetadataQueryWriter* This,
             [In, NativeTypeName("LPCWSTR")] char* wzName
         );

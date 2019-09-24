@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDWriteAsyncResult* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,27 +24,27 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDWriteAsyncResult* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDWriteAsyncResult* This
         );
 
         /// <summary>The GetWaitHandleMethod method returns a handle that can be used to wait for the asynchronous operation to complete. The handle remains valid until the interface is released.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HANDLE")]
-        public /* static */ delegate IntPtr _GetWaitHandle(
+        public delegate IntPtr _GetWaitHandle(
             [In] IDWriteAsyncResult* This
         );
 
         /// <summary>The GetResult method returns the result of the asynchronous operation. The return value is E_PENDING if the operation has not yet completed.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetResult(
+        public delegate int _GetResult(
             [In] IDWriteAsyncResult* This
         );
 

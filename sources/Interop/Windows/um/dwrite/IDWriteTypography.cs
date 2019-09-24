@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDWriteTypography* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,13 +24,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDWriteTypography* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDWriteTypography* This
         );
 
@@ -39,7 +39,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AddFontFeature(
+        public delegate int _AddFontFeature(
             [In] IDWriteTypography* This,
             [In] DWRITE_FONT_FEATURE fontFeature
         );
@@ -47,7 +47,7 @@ namespace TerraFX.Interop
         /// <summary>Get the number of font features.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetFontFeatureCount(
+        public delegate uint _GetFontFeatureCount(
             [In] IDWriteTypography* This
         );
 
@@ -57,7 +57,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFontFeature(
+        public delegate int _GetFontFeature(
             [In] IDWriteTypography* This,
             [In, NativeTypeName("UINT32")] uint fontFeatureIndex,
             [Out] DWRITE_FONT_FEATURE* fontFeature

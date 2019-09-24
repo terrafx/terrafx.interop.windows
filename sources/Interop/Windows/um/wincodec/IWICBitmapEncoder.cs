@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IWICBitmapEncoder* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IWICBitmapEncoder* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IWICBitmapEncoder* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Initialize(
+        public delegate int _Initialize(
             [In] IWICBitmapEncoder* This,
             [In, Optional] IStream* pIStream,
             [In] WICBitmapEncoderCacheOption cacheOption
@@ -43,21 +43,21 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetContainerFormat(
+        public delegate int _GetContainerFormat(
             [In] IWICBitmapEncoder* This,
             [Out, NativeTypeName("GUID")] Guid* pguidContainerFormat
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetEncoderInfo(
+        public delegate int _GetEncoderInfo(
             [In] IWICBitmapEncoder* This,
             [Out] IWICBitmapEncoderInfo** ppIEncoderInfo = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetColorContexts(
+        public delegate int _SetColorContexts(
             [In] IWICBitmapEncoder* This,
             [In, NativeTypeName("UINT")] uint cCount,
             [In, NativeTypeName("IWICColorContext*[]")] IWICColorContext** ppIColorContext
@@ -65,28 +65,28 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPalette(
+        public delegate int _SetPalette(
             [In] IWICBitmapEncoder* This,
             [In] IWICPalette* pIPalette = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetThumbnail(
+        public delegate int _SetThumbnail(
             [In] IWICBitmapEncoder* This,
             [In] IWICBitmapSource* pIThumbnail = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPreview(
+        public delegate int _SetPreview(
             [In] IWICBitmapEncoder* This,
             [In] IWICBitmapSource* pIPreview = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateNewFrame(
+        public delegate int _CreateNewFrame(
             [In] IWICBitmapEncoder* This,
             [Out] IWICBitmapFrameEncode** ppIFrameEncode = null,
             [In, Out] IPropertyBag2** ppIEncoderOptions = null
@@ -94,13 +94,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Commit(
+        public delegate int _Commit(
             [In] IWICBitmapEncoder* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetMetadataQueryWriter(
+        public delegate int _GetMetadataQueryWriter(
             [In] IWICBitmapEncoder* This,
             [Out] IWICMetadataQueryWriter** ppIMetadataQueryWriter = null
         );

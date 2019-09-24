@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID2D1SvgDocument* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID2D1SvgDocument* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID2D1SvgDocument* This
         );
 
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetFactory(
+        public delegate void _GetFactory(
             [In] ID2D1SvgDocument* This,
             [Out] ID2D1Factory** factory
         );
@@ -43,7 +43,7 @@ namespace TerraFX.Interop
         /// <summary>Sets the size of the initial viewport.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetViewportSize(
+        public delegate int _SetViewportSize(
             [In] ID2D1SvgDocument* This,
             [In, NativeTypeName("D2D1_SIZE_F")] D2D_SIZE_F viewportSize
         );
@@ -51,7 +51,7 @@ namespace TerraFX.Interop
         /// <summary>Returns the size of the initial viewport.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("D2D1_SIZE_F")]
-        public /* static */ delegate D2D_SIZE_F* _GetViewportSize(
+        public delegate D2D_SIZE_F* _GetViewportSize(
             [In] ID2D1SvgDocument* This,
             [Out] D2D_SIZE_F* _result
         );
@@ -59,14 +59,14 @@ namespace TerraFX.Interop
         /// <summary>Sets the root element of the document. The root element must be an 'svg' element. If the element already exists within an svg tree, it is first removed.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetRoot(
+        public delegate int _SetRoot(
             [In] ID2D1SvgDocument* This,
             [In] ID2D1SvgElement* root = null
         );
 
         /// <summary>Gets the root element of the document.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetRoot(
+        public delegate void _GetRoot(
             [In] ID2D1SvgDocument* This,
             [Out] ID2D1SvgElement** root
         );
@@ -74,7 +74,7 @@ namespace TerraFX.Interop
         /// <summary>Gets the SVG element with the specified ID. If the element cannot be found, the returned element will be null.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _FindElementById(
+        public delegate int _FindElementById(
             [In] ID2D1SvgDocument* This,
             [In, NativeTypeName("PCWSTR")] char* id,
             [Out] ID2D1SvgElement** svgElement
@@ -85,7 +85,7 @@ namespace TerraFX.Interop
         /// <param name="subtree">The root of the subtree. If null, the entire document is serialized.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Serialize(
+        public delegate int _Serialize(
             [In] ID2D1SvgDocument* This,
             [In] IStream* outputXmlStream,
             [In] ID2D1SvgElement* subtree = null
@@ -96,7 +96,7 @@ namespace TerraFX.Interop
         /// <param name="subtree">The root of the subtree.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Deserialize(
+        public delegate int _Deserialize(
             [In] ID2D1SvgDocument* This,
             [In] IStream* inputXmlStream,
             [Out] ID2D1SvgElement** subtree
@@ -107,7 +107,7 @@ namespace TerraFX.Interop
         /// <param name="id">The element id which acts as the paint server. This id is used if the paint type is D2D1_SVG_PAINT_TYPE_URI.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreatePaint(
+        public delegate int _CreatePaint(
             [In] ID2D1SvgDocument* This,
             [In] D2D1_SVG_PAINT_TYPE paintType,
             [In, Optional, NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA* color,
@@ -118,7 +118,7 @@ namespace TerraFX.Interop
         /// <summary>Creates a dash array object which can be used to set the 'stroke-dasharray' property.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateStrokeDashArray(
+        public delegate int _CreateStrokeDashArray(
             [In] ID2D1SvgDocument* This,
             [In, Optional, NativeTypeName("D2D1_SVG_LENGTH[]")] D2D1_SVG_LENGTH* dashes,
             [In, NativeTypeName("UINT32")] uint dashesCount,
@@ -128,7 +128,7 @@ namespace TerraFX.Interop
         /// <summary>Creates a points object which can be used to set a 'points' attribute on a 'polygon' or 'polyline' element.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreatePointCollection(
+        public delegate int _CreatePointCollection(
             [In] ID2D1SvgDocument* This,
             [In, Optional, NativeTypeName("D2D1_POINT_2F[]")] D2D_POINT_2F* points,
             [In, NativeTypeName("UINT32")] uint pointsCount,
@@ -138,7 +138,7 @@ namespace TerraFX.Interop
         /// <summary>Creates a path data object which can be used to set a 'd' attribute on a 'path' element.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreatePathData(
+        public delegate int _CreatePathData(
             [In] ID2D1SvgDocument* This,
             [In, Optional, NativeTypeName("FLOAT[]")] float* segmentData,
             [In, NativeTypeName("UINT32")] uint segmentDataCount,

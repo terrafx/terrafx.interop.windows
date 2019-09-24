@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IWICBitmapSourceTransform* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IWICBitmapSourceTransform* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IWICBitmapSourceTransform* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CopyPixels(
+        public delegate int _CopyPixels(
             [In] IWICBitmapSourceTransform* This,
             [In, Optional] WICRect* prc,
             [In, NativeTypeName("UINT")] uint uiWidth,
@@ -49,7 +49,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetClosestSize(
+        public delegate int _GetClosestSize(
             [In] IWICBitmapSourceTransform* This,
             [In, Out, NativeTypeName("UINT")] uint* puiWidth,
             [In, Out, NativeTypeName("UINT")] uint* puiHeight
@@ -57,14 +57,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetClosestPixelFormat(
+        public delegate int _GetClosestPixelFormat(
             [In] IWICBitmapSourceTransform* This,
             [In, Out, NativeTypeName("WICPixelFormatGUID")] Guid* pguidDstFormat
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DoesSupportTransform(
+        public delegate int _DoesSupportTransform(
             [In] IWICBitmapSourceTransform* This,
             [In] WICBitmapTransformOptions dstTransform,
             [Out, NativeTypeName("BOOL")] int* pfIsSupported

@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IWICJpegFrameDecode* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,26 +23,26 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IWICJpegFrameDecode* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IWICJpegFrameDecode* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DoesSupportIndexing(
+        public delegate int _DoesSupportIndexing(
             [In] IWICJpegFrameDecode* This,
             [Out, NativeTypeName("BOOL")] int* pfIndexingSupported
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetIndexing(
+        public delegate int _SetIndexing(
             [In] IWICJpegFrameDecode* This,
             [In] WICJpegIndexingOptions options,
             [In, NativeTypeName("UINT")] uint horizontalIntervalSize
@@ -50,13 +50,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _ClearIndexing(
+        public delegate int _ClearIndexing(
             [In] IWICJpegFrameDecode* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetAcHuffmanTable(
+        public delegate int _GetAcHuffmanTable(
             [In] IWICJpegFrameDecode* This,
             [In, NativeTypeName("UINT")] uint scanIndex,
             [In, NativeTypeName("UINT")] uint tableIndex,
@@ -65,7 +65,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDcHuffmanTable(
+        public delegate int _GetDcHuffmanTable(
             [In] IWICJpegFrameDecode* This,
             [In, NativeTypeName("UINT")] uint scanIndex,
             [In, NativeTypeName("UINT")] uint tableIndex,
@@ -74,7 +74,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetQuantizationTable(
+        public delegate int _GetQuantizationTable(
             [In] IWICJpegFrameDecode* This,
             [In, NativeTypeName("UINT")] uint scanIndex,
             [In, NativeTypeName("UINT")] uint tableIndex,
@@ -83,14 +83,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFrameHeader(
+        public delegate int _GetFrameHeader(
             [In] IWICJpegFrameDecode* This,
             [Out] WICJpegFrameHeader* pFrameHeader
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetScanHeader(
+        public delegate int _GetScanHeader(
             [In] IWICJpegFrameDecode* This,
             [In, NativeTypeName("UINT")] uint scanIndex,
             [Out] WICJpegScanHeader* pScanHeader
@@ -98,7 +98,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CopyScan(
+        public delegate int _CopyScan(
             [In] IWICJpegFrameDecode* This,
             [In, NativeTypeName("UINT")] uint scanIndex,
             [In, NativeTypeName("UINT")] uint scanOffset,
@@ -109,7 +109,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CopyMinimalStream(
+        public delegate int _CopyMinimalStream(
             [In] IWICJpegFrameDecode* This,
             [In, NativeTypeName("UINT")] uint streamOffset,
             [In, NativeTypeName("UINT")] uint cbStreamData,

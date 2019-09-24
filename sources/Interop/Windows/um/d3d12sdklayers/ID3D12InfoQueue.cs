@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID3D12InfoQueue* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,31 +23,31 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID3D12InfoQueue* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID3D12InfoQueue* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetMessageCountLimit(
+        public delegate int _SetMessageCountLimit(
             [In] ID3D12InfoQueue* This,
             [In, NativeTypeName("UINT64")] ulong MessageCountLimit
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _ClearStoredMessages(
+        public delegate void _ClearStoredMessages(
             [In] ID3D12InfoQueue* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetMessage(
+        public delegate int _GetMessage(
             [In] ID3D12InfoQueue* This,
             [In, NativeTypeName("UINT64")] ulong MessageIndex,
             [Out, Optional] D3D12_MESSAGE* pMessage,
@@ -56,143 +56,143 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
-        public /* static */ delegate ulong _GetNumMessagesAllowedByStorageFilter(
+        public delegate ulong _GetNumMessagesAllowedByStorageFilter(
             [In] ID3D12InfoQueue* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
-        public /* static */ delegate ulong _GetNumMessagesDeniedByStorageFilter(
+        public delegate ulong _GetNumMessagesDeniedByStorageFilter(
             [In] ID3D12InfoQueue* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
-        public /* static */ delegate ulong _GetNumStoredMessages(
+        public delegate ulong _GetNumStoredMessages(
             [In] ID3D12InfoQueue* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
-        public /* static */ delegate ulong _GetNumStoredMessagesAllowedByRetrievalFilter(
+        public delegate ulong _GetNumStoredMessagesAllowedByRetrievalFilter(
             [In] ID3D12InfoQueue* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
-        public /* static */ delegate ulong _GetNumMessagesDiscardedByMessageCountLimit(
+        public delegate ulong _GetNumMessagesDiscardedByMessageCountLimit(
             [In] ID3D12InfoQueue* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
-        public /* static */ delegate ulong _GetMessageCountLimit(
+        public delegate ulong _GetMessageCountLimit(
             [In] ID3D12InfoQueue* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AddStorageFilterEntries(
+        public delegate int _AddStorageFilterEntries(
             [In] ID3D12InfoQueue* This,
             [In] D3D12_INFO_QUEUE_FILTER* pFilter
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetStorageFilter(
+        public delegate int _GetStorageFilter(
             [In] ID3D12InfoQueue* This,
             [Out, Optional] D3D12_INFO_QUEUE_FILTER* pFilter,
             [In, Out, NativeTypeName("SIZE_T")] UIntPtr* pFilterByteLength
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _ClearStorageFilter(
+        public delegate void _ClearStorageFilter(
             [In] ID3D12InfoQueue* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _PushEmptyStorageFilter(
+        public delegate int _PushEmptyStorageFilter(
             [In] ID3D12InfoQueue* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _PushCopyOfStorageFilter(
+        public delegate int _PushCopyOfStorageFilter(
             [In] ID3D12InfoQueue* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _PushStorageFilter(
+        public delegate int _PushStorageFilter(
             [In] ID3D12InfoQueue* This,
             [In] D3D12_INFO_QUEUE_FILTER* pFilter
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _PopStorageFilter(
+        public delegate void _PopStorageFilter(
             [In] ID3D12InfoQueue* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT")]
-        public /* static */ delegate uint _GetStorageFilterStackSize(
+        public delegate uint _GetStorageFilterStackSize(
             [In] ID3D12InfoQueue* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AddRetrievalFilterEntries(
+        public delegate int _AddRetrievalFilterEntries(
             [In] ID3D12InfoQueue* This,
             [In] D3D12_INFO_QUEUE_FILTER* pFilter
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetRetrievalFilter(
+        public delegate int _GetRetrievalFilter(
             [In] ID3D12InfoQueue* This,
             [Out, Optional] D3D12_INFO_QUEUE_FILTER* pFilter,
             [In, Out, NativeTypeName("SIZE_T")] UIntPtr* pFilterByteLength
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _ClearRetrievalFilter(
+        public delegate void _ClearRetrievalFilter(
             [In] ID3D12InfoQueue* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _PushEmptyRetrievalFilter(
+        public delegate int _PushEmptyRetrievalFilter(
             [In] ID3D12InfoQueue* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _PushCopyOfRetrievalFilter(
+        public delegate int _PushCopyOfRetrievalFilter(
             [In] ID3D12InfoQueue* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _PushRetrievalFilter(
+        public delegate int _PushRetrievalFilter(
             [In] ID3D12InfoQueue* This,
             [In] D3D12_INFO_QUEUE_FILTER* pFilter
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _PopRetrievalFilter(
+        public delegate void _PopRetrievalFilter(
             [In] ID3D12InfoQueue* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT")]
-        public /* static */ delegate uint _GetRetrievalFilterStackSize(
+        public delegate uint _GetRetrievalFilterStackSize(
             [In] ID3D12InfoQueue* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AddMessage(
+        public delegate int _AddMessage(
             [In] ID3D12InfoQueue* This,
             [In] D3D12_MESSAGE_CATEGORY Category,
             [In] D3D12_MESSAGE_SEVERITY Severity,
@@ -202,7 +202,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AddApplicationMessage(
+        public delegate int _AddApplicationMessage(
             [In] ID3D12InfoQueue* This,
             [In] D3D12_MESSAGE_SEVERITY Severity,
             [In, NativeTypeName("LPCSTR")] sbyte* pDescription
@@ -210,7 +210,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetBreakOnCategory(
+        public delegate int _SetBreakOnCategory(
             [In] ID3D12InfoQueue* This,
             [In] D3D12_MESSAGE_CATEGORY Category,
             [In, NativeTypeName("BOOL")] int bEnable
@@ -218,7 +218,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetBreakOnSeverity(
+        public delegate int _SetBreakOnSeverity(
             [In] ID3D12InfoQueue* This,
             [In] D3D12_MESSAGE_SEVERITY Severity,
             [In, NativeTypeName("BOOL")] int bEnable
@@ -226,7 +226,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetBreakOnID(
+        public delegate int _SetBreakOnID(
             [In] ID3D12InfoQueue* This,
             [In] D3D12_MESSAGE_ID ID,
             [In, NativeTypeName("BOOL")] int bEnable
@@ -234,34 +234,34 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _GetBreakOnCategory(
+        public delegate int _GetBreakOnCategory(
             [In] ID3D12InfoQueue* This,
             [In] D3D12_MESSAGE_CATEGORY Category
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _GetBreakOnSeverity(
+        public delegate int _GetBreakOnSeverity(
             [In] ID3D12InfoQueue* This,
             [In] D3D12_MESSAGE_SEVERITY Severity
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _GetBreakOnID(
+        public delegate int _GetBreakOnID(
             [In] ID3D12InfoQueue* This,
             [In] D3D12_MESSAGE_ID ID
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetMuteDebugOutput(
+        public delegate void _SetMuteDebugOutput(
             [In] ID3D12InfoQueue* This,
             [In, NativeTypeName("BOOL")] int bMute
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _GetMuteDebugOutput(
+        public delegate int _GetMuteDebugOutput(
             [In] ID3D12InfoQueue* This
         );
 

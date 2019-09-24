@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IWICMetadataHandlerInfo* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,40 +23,40 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IWICMetadataHandlerInfo* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IWICMetadataHandlerInfo* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetComponentType(
+        public delegate int _GetComponentType(
             [In] IWICMetadataHandlerInfo* This,
             [Out] WICComponentType* pType
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetCLSID(
+        public delegate int _GetCLSID(
             [In] IWICMetadataHandlerInfo* This,
             [Out, NativeTypeName("CLSID")] Guid* pclsid
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSigningStatus(
+        public delegate int _GetSigningStatus(
             [In] IWICMetadataHandlerInfo* This,
             [Out, NativeTypeName("DWORD")] uint* pStatus
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetAuthor(
+        public delegate int _GetAuthor(
             [In] IWICMetadataHandlerInfo* This,
             [In, NativeTypeName("UINT")] uint cchAuthor,
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzAuthor,
@@ -65,14 +65,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetVendorGUID(
+        public delegate int _GetVendorGUID(
             [In] IWICMetadataHandlerInfo* This,
             [Out, NativeTypeName("GUID")] Guid* pguidVendor
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetVersion(
+        public delegate int _GetVersion(
             [In] IWICMetadataHandlerInfo* This,
             [In, NativeTypeName("UINT")] uint cchVersion,
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzVersion,
@@ -81,7 +81,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSpecVersion(
+        public delegate int _GetSpecVersion(
             [In] IWICMetadataHandlerInfo* This,
             [In, NativeTypeName("UINT")] uint cchSpecVersion,
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzSpecVersion,
@@ -90,7 +90,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFriendlyName(
+        public delegate int _GetFriendlyName(
             [In] IWICMetadataHandlerInfo* This,
             [In, NativeTypeName("UINT")] uint cchFriendlyName,
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzFriendlyName,
@@ -99,14 +99,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetMetadataFormat(
+        public delegate int _GetMetadataFormat(
             [In] IWICMetadataHandlerInfo* This,
             [Out, NativeTypeName("GUID")] Guid* pguidMetadataFormat
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetContainerFormats(
+        public delegate int _GetContainerFormats(
             [In] IWICMetadataHandlerInfo* This,
             [In, NativeTypeName("UINT")] uint cContainerFormats,
             [In, Out, Optional, NativeTypeName("GUID[]")] Guid* pguidContainerFormats,
@@ -115,7 +115,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDeviceManufacturer(
+        public delegate int _GetDeviceManufacturer(
             [In] IWICMetadataHandlerInfo* This,
             [In, NativeTypeName("UINT")] uint cchDeviceManufacturer,
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzDeviceManufacturer,
@@ -124,7 +124,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDeviceModels(
+        public delegate int _GetDeviceModels(
             [In] IWICMetadataHandlerInfo* This,
             [In, NativeTypeName("UINT")] uint cchDeviceModels,
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzDeviceModels,
@@ -133,21 +133,21 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DoesRequireFullStream(
+        public delegate int _DoesRequireFullStream(
             [In] IWICMetadataHandlerInfo* This,
             [Out, NativeTypeName("BOOL")] int* pfRequiresFullStream
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DoesSupportPadding(
+        public delegate int _DoesSupportPadding(
             [In] IWICMetadataHandlerInfo* This,
             [Out, NativeTypeName("BOOL")] int* pfSupportsPadding
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DoesRequireFixedSize(
+        public delegate int _DoesRequireFixedSize(
             [In] IWICMetadataHandlerInfo* This,
             [Out, NativeTypeName("BOOL")] int* pfFixedSize
         );

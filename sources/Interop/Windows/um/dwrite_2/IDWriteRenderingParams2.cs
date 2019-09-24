@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDWriteRenderingParams2* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,58 +24,58 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDWriteRenderingParams2* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDWriteRenderingParams2* This
         );
 
         /// <summary>Gets the gamma value used for gamma correction. Valid values must be greater than zero and cannot exceed 256.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public /* static */ delegate float _GetGamma(
+        public delegate float _GetGamma(
             [In] IDWriteRenderingParams2* This
         );
 
         /// <summary>Gets the amount of contrast enhancement. Valid values are greater than or equal to zero.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public /* static */ delegate float _GetEnhancedContrast(
+        public delegate float _GetEnhancedContrast(
             [In] IDWriteRenderingParams2* This
         );
 
         /// <summary>Gets the ClearType level. Valid values range from 0.0f (no ClearType) to 1.0f (full ClearType).</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate float _GetClearTypeLevel(
+        public delegate float _GetClearTypeLevel(
             [In] IDWriteRenderingParams2* This
         );
 
         /// <summary>Gets the pixel geometry.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate DWRITE_PIXEL_GEOMETRY _GetPixelGeometry(
+        public delegate DWRITE_PIXEL_GEOMETRY _GetPixelGeometry(
             [In] IDWriteRenderingParams2* This
         );
 
         /// <summary>Gets the rendering mode.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate DWRITE_RENDERING_MODE _GetRenderingMode(
+        public delegate DWRITE_RENDERING_MODE _GetRenderingMode(
             [In] IDWriteRenderingParams2* This
         );
 
         /// <summary>Gets the amount of contrast enhancement to use for grayscale antialiasing. Valid values are greater than or equal to zero.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public /* static */ delegate float _GetGrayscaleEnhancedContrast(
+        public delegate float _GetGrayscaleEnhancedContrast(
             [In] IDWriteRenderingParams2* This
         );
 
         /// <summary>Gets the grid fitting mode.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate DWRITE_GRID_FIT_MODE _GetGridFitMode(
+        public delegate DWRITE_GRID_FIT_MODE _GetGridFitMode(
             [In] IDWriteRenderingParams2* This
         );
 

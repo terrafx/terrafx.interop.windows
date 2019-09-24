@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDWriteGlyphRunAnalysis* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,13 +24,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDWriteGlyphRunAnalysis* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDWriteGlyphRunAnalysis* This
         );
 
@@ -40,7 +40,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetAlphaTextureBounds(
+        public delegate int _GetAlphaTextureBounds(
             [In] IDWriteGlyphRunAnalysis* This,
             [In] DWRITE_TEXTURE_TYPE textureType,
             [Out] RECT* textureBounds
@@ -54,7 +54,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateAlphaTexture(
+        public delegate int _CreateAlphaTexture(
             [In] IDWriteGlyphRunAnalysis* This,
             [In] DWRITE_TEXTURE_TYPE textureType,
             [In] RECT* textureBounds,
@@ -69,7 +69,7 @@ namespace TerraFX.Interop
         /// <param name="blendClearTypeLevel">Receives the ClearType level.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetAlphaBlendParams(
+        public delegate int _GetAlphaBlendParams(
             [In] IDWriteGlyphRunAnalysis* This,
             [In] IDWriteRenderingParams* renderingParams,
             [Out, NativeTypeName("FLOAT")] float* blendGamma,

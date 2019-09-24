@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID2D1SpriteBatch* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID2D1SpriteBatch* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID2D1SpriteBatch* This
         );
 
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetFactory(
+        public delegate void _GetFactory(
             [In] ID2D1SpriteBatch* This,
             [Out] ID2D1Factory** factory
         );
@@ -43,7 +43,7 @@ namespace TerraFX.Interop
         /// <summary>Adds sprites to the end of the sprite batch.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AddSprites(
+        public delegate int _AddSprites(
             [In] ID2D1SpriteBatch* This,
             [In, NativeTypeName("UINT32")] uint spriteCount,
             [In, NativeTypeName("D2D1_RECT_F[]")] D2D_RECT_F* destinationRectangles,
@@ -59,7 +59,7 @@ namespace TerraFX.Interop
         /// <summary>Set properties for existing sprites. All properties not specified are unmodified.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetSprites(
+        public delegate int _SetSprites(
             [In] ID2D1SpriteBatch* This,
             [In, NativeTypeName("UINT32")] uint startIndex,
             [In, NativeTypeName("UINT32")] uint spriteCount,
@@ -76,7 +76,7 @@ namespace TerraFX.Interop
         /// <summary>Retrieves sprite properties.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSprites(
+        public delegate int _GetSprites(
             [In] ID2D1SpriteBatch* This,
             [In, NativeTypeName("UINT32")] uint startIndex,
             [In, NativeTypeName("UINT32")] uint spriteCount,
@@ -89,13 +89,13 @@ namespace TerraFX.Interop
         /// <summary>Retrieves the number of sprites in the sprite batch.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetSpriteCount(
+        public delegate uint _GetSpriteCount(
             [In] ID2D1SpriteBatch* This
         );
 
         /// <summary>Removes all sprites from the sprite batch.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _Clear(
+        public delegate void _Clear(
             [In] ID2D1SpriteBatch* This
         );
 

@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IWICJpegFrameEncode* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IWICJpegFrameEncode* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IWICJpegFrameEncode* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetAcHuffmanTable(
+        public delegate int _GetAcHuffmanTable(
             [In] IWICJpegFrameEncode* This,
             [In, NativeTypeName("UINT")] uint scanIndex,
             [In, NativeTypeName("UINT")] uint tableIndex,
@@ -44,7 +44,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDcHuffmanTable(
+        public delegate int _GetDcHuffmanTable(
             [In] IWICJpegFrameEncode* This,
             [In, NativeTypeName("UINT")] uint scanIndex,
             [In, NativeTypeName("UINT")] uint tableIndex,
@@ -53,7 +53,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetQuantizationTable(
+        public delegate int _GetQuantizationTable(
             [In] IWICJpegFrameEncode* This,
             [In, NativeTypeName("UINT")] uint scanIndex,
             [In, NativeTypeName("UINT")] uint tableIndex,
@@ -62,7 +62,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _WriteScan(
+        public delegate int _WriteScan(
             [In] IWICJpegFrameEncode* This,
             [In, NativeTypeName("UINT")] uint cbScanData,
             [In, NativeTypeName("BYTE[]")] byte* pbScanData

@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IWICFormatConverter* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IWICFormatConverter* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IWICFormatConverter* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSize(
+        public delegate int _GetSize(
             [In] IWICFormatConverter* This,
             [Out, NativeTypeName("UINT")] uint* puiWidth,
             [Out, NativeTypeName("UINT")] uint* puiHeight
@@ -43,14 +43,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPixelFormat(
+        public delegate int _GetPixelFormat(
             [In] IWICFormatConverter* This,
             [Out, NativeTypeName("WICPixelFormatGUID")] Guid* pPixelFormat
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetResolution(
+        public delegate int _GetResolution(
             [In] IWICFormatConverter* This,
             [Out] double* pDpiX,
             [Out] double* pDpiY
@@ -58,14 +58,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CopyPalette(
+        public delegate int _CopyPalette(
             [In] IWICFormatConverter* This,
             [In] IWICPalette* pIPalette = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CopyPixels(
+        public delegate int _CopyPixels(
             [In] IWICFormatConverter* This,
             [In, Optional] WICRect* prc,
             [In, NativeTypeName("UINT")] uint cbStride,
@@ -75,7 +75,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Initialize(
+        public delegate int _Initialize(
             [In] IWICFormatConverter* This,
             [In, Optional] IWICBitmapSource* pISource,
             [In, NativeTypeName("REFWICPixelFormatGUID")] Guid* dstFormat,
@@ -87,7 +87,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CanConvert(
+        public delegate int _CanConvert(
             [In] IWICFormatConverter* This,
             [In, NativeTypeName("REFWICPixelFormatGUID")] Guid* srcPixelFormat,
             [In, NativeTypeName("REFWICPixelFormatGUID")] Guid* dstPixelFormat,

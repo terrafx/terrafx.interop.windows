@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDWriteTextRenderer* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,13 +24,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDWriteTextRenderer* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDWriteTextRenderer* This
         );
 
@@ -40,7 +40,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _IsPixelSnappingDisabled(
+        public delegate int _IsPixelSnappingDisabled(
             [In] IDWriteTextRenderer* This,
             [In, Optional] void* clientDrawingContext,
             [Out, NativeTypeName("BOOL")] int* isDisabled
@@ -52,7 +52,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetCurrentTransform(
+        public delegate int _GetCurrentTransform(
             [In] IDWriteTextRenderer* This,
             [In, Optional] void* clientDrawingContext,
             [Out] DWRITE_MATRIX* transform
@@ -64,7 +64,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPixelsPerDip(
+        public delegate int _GetPixelsPerDip(
             [In] IDWriteTextRenderer* This,
             [In, Optional] void* clientDrawingContext,
             [Out, NativeTypeName("FLOAT")] float* pixelsPerDip
@@ -81,7 +81,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DrawGlyphRun(
+        public delegate int _DrawGlyphRun(
             [In] IDWriteTextRenderer* This,
             [In, Optional] void* clientDrawingContext,
             [In, NativeTypeName("FLOAT")] float baselineOriginX,
@@ -102,7 +102,7 @@ namespace TerraFX.Interop
         /// <remarks> A single underline can be broken into multiple calls, depending on how the formatting changes attributes. If font sizes/styles change within an underline, the thickness and offset will be averaged weighted according to characters. To get the correct top coordinate of the underline rect, add underline::offset to the baseline's Y. Otherwise the underline will be immediately under the text. The x coordinate will always be passed as the left side, regardless of text directionality. This simplifies drawing and reduces the problem of round-off that could potentially cause gaps or a double stamped alpha blend. To avoid alpha overlap, round the end points to the nearest device pixel.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DrawUnderline(
+        public delegate int _DrawUnderline(
             [In] IDWriteTextRenderer* This,
             [In, Optional] void* clientDrawingContext,
             [In, NativeTypeName("FLOAT")] float baselineOriginX,
@@ -121,7 +121,7 @@ namespace TerraFX.Interop
         /// <remarks> A single strikethrough can be broken into multiple calls, depending on how the formatting changes attributes. Strikethrough is not averaged across font sizes/styles changes. To get the correct top coordinate of the strikethrough rect, add strikethrough::offset to the baseline's Y. Like underlines, the x coordinate will always be passed as the left side, regardless of text directionality.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DrawStrikethrough(
+        public delegate int _DrawStrikethrough(
             [In] IDWriteTextRenderer* This,
             [In, Optional] void* clientDrawingContext,
             [In, NativeTypeName("FLOAT")] float baselineOriginX,
@@ -142,7 +142,7 @@ namespace TerraFX.Interop
         /// <remarks> The right-to-left flag is a hint for those cases where it would look strange for the image to be shown normally (like an arrow pointing to right to indicate a submenu).</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DrawInlineObject(
+        public delegate int _DrawInlineObject(
             [In] IDWriteTextRenderer* This,
             [In, Optional] void* clientDrawingContext,
             [In, NativeTypeName("FLOAT")] float originX,

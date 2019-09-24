@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ITypeLib* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,24 +23,24 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ITypeLib* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ITypeLib* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate uint _GetTypeInfoCount(
+        public delegate uint _GetTypeInfoCount(
             [In] ITypeLib* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetTypeInfo(
+        public delegate int _GetTypeInfo(
             [In] ITypeLib* This,
             [In, NativeTypeName("UINT")] uint index,
             [Out] ITypeInfo** ppTInfo = null
@@ -48,7 +48,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetTypeInfoType(
+        public delegate int _GetTypeInfoType(
             [In] ITypeLib* This,
             [In, NativeTypeName("UINT")] uint index,
             [Out] TYPEKIND* pTKind
@@ -56,7 +56,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetTypeInfoOfGuid(
+        public delegate int _GetTypeInfoOfGuid(
             [In] ITypeLib* This,
             [In, NativeTypeName("REFGUID")] Guid* guid,
             [Out] ITypeInfo** ppTinfo = null
@@ -64,21 +64,21 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetLibAttr(
+        public delegate int _GetLibAttr(
             [In] ITypeLib* This,
             [Out] TLIBATTR** ppTLibAttr
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetTypeComp(
+        public delegate int _GetTypeComp(
             [In] ITypeLib* This,
             [Out] ITypeComp** ppTComp = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDocumentation(
+        public delegate int _GetDocumentation(
             [In] ITypeLib* This,
             [In, NativeTypeName("INT")] int index,
             [Out, Optional, NativeTypeName("BSTR")] char** pBstrName,
@@ -89,7 +89,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _IsName(
+        public delegate int _IsName(
             [In] ITypeLib* This,
             [In, Out, NativeTypeName("LPOLESTR")] char* szNameBuf,
             [In, NativeTypeName("ULONG")] uint lHashVal,
@@ -98,7 +98,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _FindName(
+        public delegate int _FindName(
             [In] ITypeLib* This,
             [In, Out, NativeTypeName("LPOLESTR")] char* szNameBuf,
             [In, NativeTypeName("ULONG")] uint lHashVal,
@@ -108,7 +108,7 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _ReleaseTLibAttr(
+        public delegate void _ReleaseTLibAttr(
             [In] ITypeLib* This,
             [In] TLIBATTR* pTLibAttr
         );

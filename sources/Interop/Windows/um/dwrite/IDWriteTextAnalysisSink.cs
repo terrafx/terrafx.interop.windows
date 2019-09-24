@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDWriteTextAnalysisSink* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,13 +24,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDWriteTextAnalysisSink* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDWriteTextAnalysisSink* This
         );
 
@@ -41,7 +41,7 @@ namespace TerraFX.Interop
         /// <returns>A successful code or error code to abort analysis.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetScriptAnalysis(
+        public delegate int _SetScriptAnalysis(
             [In] IDWriteTextAnalysisSink* This,
             [In, NativeTypeName("UINT32")] uint textPosition,
             [In, NativeTypeName("UINT32")] uint textLength,
@@ -55,7 +55,7 @@ namespace TerraFX.Interop
         /// <returns>A successful code or error code to abort analysis.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetLineBreakpoints(
+        public delegate int _SetLineBreakpoints(
             [In] IDWriteTextAnalysisSink* This,
             [In, NativeTypeName("UINT32")] uint textPosition,
             [In, NativeTypeName("UINT32")] uint textLength,
@@ -70,7 +70,7 @@ namespace TerraFX.Interop
         /// <returns>A successful code or error code to abort analysis.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetBidiLevel(
+        public delegate int _SetBidiLevel(
             [In] IDWriteTextAnalysisSink* This,
             [In, NativeTypeName("UINT32")] uint textPosition,
             [In, NativeTypeName("UINT32")] uint textLength,
@@ -86,7 +86,7 @@ namespace TerraFX.Interop
         /// <remark> Unlike script and bidi analysis, where every character passed to the analyzer has a result, this will only be called for those ranges where substitution is applicable. For any other range, you will simply not be called.</remark>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetNumberSubstitution(
+        public delegate int _SetNumberSubstitution(
             [In] IDWriteTextAnalysisSink* This,
             [In, NativeTypeName("UINT32")] uint textPosition,
             [In, NativeTypeName("UINT32")] uint textLength,

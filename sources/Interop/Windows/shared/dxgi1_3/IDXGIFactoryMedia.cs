@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDXGIFactoryMedia* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDXGIFactoryMedia* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDXGIFactoryMedia* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateSwapChainForCompositionSurfaceHandle(
+        public delegate int _CreateSwapChainForCompositionSurfaceHandle(
             [In] IDXGIFactoryMedia* This,
             [In] IUnknown* pDevice,
             [In, Optional, NativeTypeName("HANDLE")] IntPtr hSurface,
@@ -46,7 +46,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateDecodeSwapChainForCompositionSurfaceHandle(
+        public delegate int _CreateDecodeSwapChainForCompositionSurfaceHandle(
             [In] IDXGIFactoryMedia* This,
             [In] IUnknown* pDevice,
             [In, Optional, NativeTypeName("HANDLE")] IntPtr hSurface,

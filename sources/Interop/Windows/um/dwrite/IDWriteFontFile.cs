@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDWriteFontFile* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,13 +24,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDWriteFontFile* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDWriteFontFile* This
         );
 
@@ -40,7 +40,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetReferenceKey(
+        public delegate int _GetReferenceKey(
             [In] IDWriteFontFile* This,
             [Out] void** fontFileReferenceKey,
             [Out, NativeTypeName("UINT32")] uint* fontFileReferenceKeySize
@@ -51,7 +51,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetLoader(
+        public delegate int _GetLoader(
             [In] IDWriteFontFile* This,
             [Out] IDWriteFontFileLoader** fontFileLoader
         );
@@ -65,7 +65,7 @@ namespace TerraFX.Interop
         /// <remarks>IMPORTANT: certain font file types are recognized, but not supported by the font system. For example, the font system will recognize a file as a Type 1 font file, but will not be able to construct a font face object from it. In such situations, Analyze will set isSupportedFontType output parameter to FALSE.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Analyze(
+        public delegate int _Analyze(
             [In] IDWriteFontFile* This,
             [Out, NativeTypeName("BOOL")] int* isSupportedFontType,
             [Out] DWRITE_FONT_FILE_TYPE* fontFileType,

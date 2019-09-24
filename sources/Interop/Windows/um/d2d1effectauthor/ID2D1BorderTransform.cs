@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID2D1BorderTransform* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,27 +24,27 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID2D1BorderTransform* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID2D1BorderTransform* This
         );
 
         /// <summary>Return the number of input this node has.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetInputCount(
+        public delegate uint _GetInputCount(
             [In] ID2D1BorderTransform* This
         );
 
         /// <summary>Controls the output precision and channel-depth for this transform.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetOutputBuffer(
+        public delegate int _SetOutputBuffer(
             [In] ID2D1BorderTransform* This,
             [In] D2D1_BUFFER_PRECISION bufferPrecision,
             [In] D2D1_CHANNEL_DEPTH channelDepth
@@ -52,30 +52,30 @@ namespace TerraFX.Interop
 
         /// <summary>Controls whether the output of this transform is cached.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetCached(
+        public delegate void _SetCached(
             [In] ID2D1BorderTransform* This,
             [In, NativeTypeName("BOOL")] int isCached
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetExtendModeX(
+        public delegate void _SetExtendModeX(
             [In] ID2D1BorderTransform* This,
             [In] D2D1_EXTEND_MODE extendMode
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetExtendModeY(
+        public delegate void _SetExtendModeY(
             [In] ID2D1BorderTransform* This,
             [In] D2D1_EXTEND_MODE extendMode
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate D2D1_EXTEND_MODE _GetExtendModeX(
+        public delegate D2D1_EXTEND_MODE _GetExtendModeX(
             [In] ID2D1BorderTransform* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate D2D1_EXTEND_MODE _GetExtendModeY(
+        public delegate D2D1_EXTEND_MODE _GetExtendModeY(
             [In] ID2D1BorderTransform* This
         );
 

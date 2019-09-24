@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDWriteTextAnalysisSource* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,13 +24,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDWriteTextAnalysisSource* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDWriteTextAnalysisSource* This
         );
 
@@ -42,7 +42,7 @@ namespace TerraFX.Interop
         /// <remarks> Although apps can implement sparse textual content that only maps part of the backing store, the app must map any text that is in the range passed to any analysis functions.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetTextAtPosition(
+        public delegate int _GetTextAtPosition(
             [In] IDWriteTextAnalysisSource* This,
             [In, NativeTypeName("UINT32")] uint textPosition,
             [Out, NativeTypeName("WCHAR[]")] char** textString,
@@ -57,7 +57,7 @@ namespace TerraFX.Interop
         /// <remarks> Although apps can implement sparse textual content that only maps part of the backing store, the app must map any text that is in the range passed to any analysis functions.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetTextBeforePosition(
+        public delegate int _GetTextBeforePosition(
             [In] IDWriteTextAnalysisSource* This,
             [In, NativeTypeName("UINT32")] uint textPosition,
             [Out, NativeTypeName("WCHAR[]")] char** textString,
@@ -66,7 +66,7 @@ namespace TerraFX.Interop
 
         /// <summary>Get paragraph reading direction.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate DWRITE_READING_DIRECTION _GetParagraphReadingDirection(
+        public delegate DWRITE_READING_DIRECTION _GetParagraphReadingDirection(
             [In] IDWriteTextAnalysisSource* This
         );
 
@@ -77,7 +77,7 @@ namespace TerraFX.Interop
         /// <remarks> The localeName pointer must remain valid until the next call or until the analysis returns.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetLocaleName(
+        public delegate int _GetLocaleName(
             [In] IDWriteTextAnalysisSource* This,
             [In, NativeTypeName("UINT32")] uint textPosition,
             [Out, NativeTypeName("UINT32")] uint* textLength,
@@ -91,7 +91,7 @@ namespace TerraFX.Interop
         /// <remarks> Any implementation should return the number substitution with an incremented ref count, and the analysis will release when finished with it (either before the next call or before it returns). However, the sink callback may hold onto it after that.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetNumberSubstitution(
+        public delegate int _GetNumberSubstitution(
             [In] IDWriteTextAnalysisSource* This,
             [In, NativeTypeName("UINT32")] uint textPosition,
             [Out, NativeTypeName("UINT32")] uint* textLength,

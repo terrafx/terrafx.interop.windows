@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID2D1Factory* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,26 +24,26 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID2D1Factory* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID2D1Factory* This
         );
 
         /// <summary>Cause the factory to refresh any system metrics that it might have been snapped on factory creation.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _ReloadSystemMetrics(
+        public delegate int _ReloadSystemMetrics(
             [In] ID2D1Factory* This
         );
 
         /// <summary>Retrieves the current desktop DPI. To refresh this, call ReloadSystemMetrics.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetDesktopDpi(
+        public delegate void _GetDesktopDpi(
             [In] ID2D1Factory* This,
             [Out, NativeTypeName("FLOAT")] float* dpiX,
             [Out, NativeTypeName("FLOAT")] float* dpiY
@@ -51,7 +51,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateRectangleGeometry(
+        public delegate int _CreateRectangleGeometry(
             [In] ID2D1Factory* This,
             [In, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* rectangle,
             [Out] ID2D1RectangleGeometry** rectangleGeometry
@@ -59,7 +59,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateRoundedRectangleGeometry(
+        public delegate int _CreateRoundedRectangleGeometry(
             [In] ID2D1Factory* This,
             [In] D2D1_ROUNDED_RECT* roundedRectangle,
             [Out] ID2D1RoundedRectangleGeometry** roundedRectangleGeometry
@@ -67,7 +67,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateEllipseGeometry(
+        public delegate int _CreateEllipseGeometry(
             [In] ID2D1Factory* This,
             [In] D2D1_ELLIPSE* ellipse,
             [Out] ID2D1EllipseGeometry** ellipseGeometry
@@ -76,7 +76,7 @@ namespace TerraFX.Interop
         /// <summary>Create a geometry which holds other geometries.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateGeometryGroup(
+        public delegate int _CreateGeometryGroup(
             [In] ID2D1Factory* This,
             [In] D2D1_FILL_MODE fillMode,
             [In, NativeTypeName("ID2D1Geometry*[]")] ID2D1Geometry** geometries,
@@ -86,7 +86,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateTransformedGeometry(
+        public delegate int _CreateTransformedGeometry(
             [In] ID2D1Factory* This,
             [In] ID2D1Geometry* sourceGeometry,
             [In, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform,
@@ -96,7 +96,7 @@ namespace TerraFX.Interop
         /// <summary>Returns an initially empty path geometry interface. A geometry sink is created off the interface to populate it.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreatePathGeometry(
+        public delegate int _CreatePathGeometry(
             [In] ID2D1Factory* This,
             [Out] ID2D1PathGeometry** pathGeometry
         );
@@ -104,7 +104,7 @@ namespace TerraFX.Interop
         /// <summary>Allows a non-default stroke style to be specified for a given geometry at draw time.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateStrokeStyle(
+        public delegate int _CreateStrokeStyle(
             [In] ID2D1Factory* This,
             [In] D2D1_STROKE_STYLE_PROPERTIES* strokeStyleProperties,
             [In, Optional, NativeTypeName("FLOAT[]")] float* dashes,
@@ -115,7 +115,7 @@ namespace TerraFX.Interop
         /// <summary>Creates a new drawing state block, this can be used in subsequent SaveDrawingState and RestoreDrawingState operations on the render target.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateDrawingStateBlock(
+        public delegate int _CreateDrawingStateBlock(
             [In] ID2D1Factory* This,
             [In, Optional] D2D1_DRAWING_STATE_DESCRIPTION* drawingStateDescription,
             [In, Optional] IDWriteRenderingParams* textRenderingParams,
@@ -125,7 +125,7 @@ namespace TerraFX.Interop
         /// <summary>Creates a render target which is a source of bitmaps.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateWicBitmapRenderTarget(
+        public delegate int _CreateWicBitmapRenderTarget(
             [In] ID2D1Factory* This,
             [In] IWICBitmap* target,
             [In] D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties,
@@ -135,7 +135,7 @@ namespace TerraFX.Interop
         /// <summary>Creates a render target that appears on the display.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateHwndRenderTarget(
+        public delegate int _CreateHwndRenderTarget(
             [In] ID2D1Factory* This,
             [In] D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties,
             [In] D2D1_HWND_RENDER_TARGET_PROPERTIES* hwndRenderTargetProperties,
@@ -145,7 +145,7 @@ namespace TerraFX.Interop
         /// <summary>Creates a render target that draws to a DXGI Surface. The device that owns the surface is used for rendering.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateDxgiSurfaceRenderTarget(
+        public delegate int _CreateDxgiSurfaceRenderTarget(
             [In] ID2D1Factory* This,
             [In] IDXGISurface* dxgiSurface,
             [In] D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties,
@@ -155,7 +155,7 @@ namespace TerraFX.Interop
         /// <summary>Creates a render target that draws to a GDI device context.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateDCRenderTarget(
+        public delegate int _CreateDCRenderTarget(
             [In] ID2D1Factory* This,
             [In] D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties,
             [Out] ID2D1DCRenderTarget** dcRenderTarget

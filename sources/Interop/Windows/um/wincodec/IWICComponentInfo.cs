@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IWICComponentInfo* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,40 +23,40 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IWICComponentInfo* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IWICComponentInfo* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetComponentType(
+        public delegate int _GetComponentType(
             [In] IWICComponentInfo* This,
             [Out] WICComponentType* pType
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetCLSID(
+        public delegate int _GetCLSID(
             [In] IWICComponentInfo* This,
             [Out, NativeTypeName("CLSID")] Guid* pclsid
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSigningStatus(
+        public delegate int _GetSigningStatus(
             [In] IWICComponentInfo* This,
             [Out, NativeTypeName("DWORD")] uint* pStatus
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetAuthor(
+        public delegate int _GetAuthor(
             [In] IWICComponentInfo* This,
             [In, NativeTypeName("UINT")] uint cchAuthor,
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzAuthor,
@@ -65,14 +65,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetVendorGUID(
+        public delegate int _GetVendorGUID(
             [In] IWICComponentInfo* This,
             [Out, NativeTypeName("GUID")] Guid* pguidVendor
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetVersion(
+        public delegate int _GetVersion(
             [In] IWICComponentInfo* This,
             [In, NativeTypeName("UINT")] uint cchVersion,
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzVersion,
@@ -81,7 +81,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSpecVersion(
+        public delegate int _GetSpecVersion(
             [In] IWICComponentInfo* This,
             [In, NativeTypeName("UINT")] uint cchSpecVersion,
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzSpecVersion,
@@ -90,7 +90,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFriendlyName(
+        public delegate int _GetFriendlyName(
             [In] IWICComponentInfo* This,
             [In, NativeTypeName("UINT")] uint cchFriendlyName,
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzFriendlyName,

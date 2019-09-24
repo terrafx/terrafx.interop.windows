@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDXGIOutput3* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDXGIOutput3* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDXGIOutput3* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrivateData(
+        public delegate int _SetPrivateData(
             [In] IDXGIOutput3* This,
             [In, NativeTypeName("REFGUID")] Guid* Name,
             [In, NativeTypeName("UINT")] uint DataSize,
@@ -44,7 +44,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrivateDataInterface(
+        public delegate int _SetPrivateDataInterface(
             [In] IDXGIOutput3* This,
             [In, NativeTypeName("REFGUID")] Guid* Name,
             [In] IUnknown* pUnknown = null
@@ -52,7 +52,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPrivateData(
+        public delegate int _GetPrivateData(
             [In] IDXGIOutput3* This,
             [In, NativeTypeName("REFGUID")] Guid* Name,
             [In, Out, NativeTypeName("UINT")] uint* pDataSize,
@@ -61,7 +61,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetParent(
+        public delegate int _GetParent(
             [In] IDXGIOutput3* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppParent
@@ -69,14 +69,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDesc(
+        public delegate int _GetDesc(
             [In] IDXGIOutput3* This,
             [Out] DXGI_OUTPUT_DESC* pDesc
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDisplayModeList(
+        public delegate int _GetDisplayModeList(
             [In] IDXGIOutput3* This,
             [In] DXGI_FORMAT EnumFormat,
             [In, NativeTypeName("UINT")] uint Flags,
@@ -86,7 +86,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _FindClosestMatchingMode(
+        public delegate int _FindClosestMatchingMode(
             [In] IDXGIOutput3* This,
             [In] DXGI_MODE_DESC* pModeToMatch,
             [Out] DXGI_MODE_DESC* pClosestMatch,
@@ -95,68 +95,68 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _WaitForVBlank(
+        public delegate int _WaitForVBlank(
             [In] IDXGIOutput3* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _TakeOwnership(
+        public delegate int _TakeOwnership(
             [In] IDXGIOutput3* This,
             [In] IUnknown* pDevice,
             [In, NativeTypeName("BOOL")] int Exclusive
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _ReleaseOwnership(
+        public delegate void _ReleaseOwnership(
             [In] IDXGIOutput3* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetGammaControlCapabilities(
+        public delegate int _GetGammaControlCapabilities(
             [In] IDXGIOutput3* This,
             [Out] DXGI_GAMMA_CONTROL_CAPABILITIES* pGammaCaps
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetGammaControl(
+        public delegate int _SetGammaControl(
             [In] IDXGIOutput3* This,
             [In] DXGI_GAMMA_CONTROL* pArray
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetGammaControl(
+        public delegate int _GetGammaControl(
             [In] IDXGIOutput3* This,
             [Out] DXGI_GAMMA_CONTROL* pArray
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetDisplaySurface(
+        public delegate int _SetDisplaySurface(
             [In] IDXGIOutput3* This,
             [In] IDXGISurface* pScanoutSurface
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDisplaySurfaceData(
+        public delegate int _GetDisplaySurfaceData(
             [In] IDXGIOutput3* This,
             [In] IDXGISurface* pDestination
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFrameStatistics(
+        public delegate int _GetFrameStatistics(
             [In] IDXGIOutput3* This,
             [Out] DXGI_FRAME_STATISTICS* pStats
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDisplayModeList1(
+        public delegate int _GetDisplayModeList1(
             [In] IDXGIOutput3* This,
             [In] DXGI_FORMAT EnumFormat,
             [In, NativeTypeName("UINT")] uint Flags,
@@ -166,7 +166,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _FindClosestMatchingMode1(
+        public delegate int _FindClosestMatchingMode1(
             [In] IDXGIOutput3* This,
             [In] DXGI_MODE_DESC1* pModeToMatch,
             [Out] DXGI_MODE_DESC1* pClosestMatch,
@@ -175,14 +175,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDisplaySurfaceData1(
+        public delegate int _GetDisplaySurfaceData1(
             [In] IDXGIOutput3* This,
             [In] IDXGIResource* pDestination
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DuplicateOutput(
+        public delegate int _DuplicateOutput(
             [In] IDXGIOutput3* This,
             [In] IUnknown* pDevice,
             [Out] IDXGIOutputDuplication** ppOutputDuplication
@@ -190,13 +190,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _SupportsOverlays(
+        public delegate int _SupportsOverlays(
             [In] IDXGIOutput3* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CheckOverlaySupport(
+        public delegate int _CheckOverlaySupport(
             [In] IDXGIOutput3* This,
             [In] DXGI_FORMAT EnumFormat,
             [In] IUnknown* pConcernedDevice,

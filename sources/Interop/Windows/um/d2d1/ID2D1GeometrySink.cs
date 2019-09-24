@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID2D1GeometrySink* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,88 +24,88 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID2D1GeometrySink* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID2D1GeometrySink* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetFillMode(
+        public delegate void _SetFillMode(
             [In] ID2D1GeometrySink* This,
             [In] D2D1_FILL_MODE fillMode
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetSegmentFlags(
+        public delegate void _SetSegmentFlags(
             [In] ID2D1GeometrySink* This,
             [In] D2D1_PATH_SEGMENT vertexFlags
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _BeginFigure(
+        public delegate void _BeginFigure(
             [In] ID2D1GeometrySink* This,
             [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F startPoint,
             [In] D2D1_FIGURE_BEGIN figureBegin
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _AddLines(
+        public delegate void _AddLines(
             [In] ID2D1GeometrySink* This,
             [In, NativeTypeName("D2D1_POINT_2F[]")] D2D_POINT_2F* points,
             [In, NativeTypeName("UINT32")] uint pointsCount
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _AddBeziers(
+        public delegate void _AddBeziers(
             [In] ID2D1GeometrySink* This,
             [In, NativeTypeName("D2D1_BEZIER_SEGMENT[]")] D2D1_BEZIER_SEGMENT* beziers,
             [In, NativeTypeName("UINT32")] uint beziersCount
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _EndFigure(
+        public delegate void _EndFigure(
             [In] ID2D1GeometrySink* This,
             [In] D2D1_FIGURE_END figureEnd
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Close(
+        public delegate int _Close(
             [In] ID2D1GeometrySink* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _AddLine(
+        public delegate void _AddLine(
             [In] ID2D1GeometrySink* This,
             [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _AddBezier(
+        public delegate void _AddBezier(
             [In] ID2D1GeometrySink* This,
             [In] D2D1_BEZIER_SEGMENT* bezier
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _AddQuadraticBezier(
+        public delegate void _AddQuadraticBezier(
             [In] ID2D1GeometrySink* This,
             [In] D2D1_QUADRATIC_BEZIER_SEGMENT* bezier
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _AddQuadraticBeziers(
+        public delegate void _AddQuadraticBeziers(
             [In] ID2D1GeometrySink* This,
             [In, NativeTypeName("D2D1_QUADRATIC_BEZIER_SEGMENT[]")] D2D1_QUADRATIC_BEZIER_SEGMENT* beziers,
             [In, NativeTypeName("UINT32")] uint beziersCount
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _AddArc(
+        public delegate void _AddArc(
             [In] ID2D1GeometrySink* This,
             [In] D2D1_ARC_SEGMENT* arc
         );

@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID3D12CommandQueue* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID3D12CommandQueue* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID3D12CommandQueue* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPrivateData(
+        public delegate int _GetPrivateData(
             [In] ID3D12CommandQueue* This,
             [In, NativeTypeName("REFGUID")] Guid* guid,
             [In, Out, NativeTypeName("UINT")] uint* pDataSize,
@@ -44,7 +44,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrivateData(
+        public delegate int _SetPrivateData(
             [In] ID3D12CommandQueue* This,
             [In, NativeTypeName("REFGUID")] Guid* guid,
             [In, NativeTypeName("UINT")] uint DataSize,
@@ -53,7 +53,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrivateDataInterface(
+        public delegate int _SetPrivateDataInterface(
             [In] ID3D12CommandQueue* This,
             [In, NativeTypeName("REFGUID")] Guid* guid,
             [In] IUnknown* pData = null
@@ -61,21 +61,21 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetName(
+        public delegate int _SetName(
             [In] ID3D12CommandQueue* This,
             [In, NativeTypeName("LPCWSTR")] char* Name
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDevice(
+        public delegate int _GetDevice(
             [In] ID3D12CommandQueue* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvDevice = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _UpdateTileMappings(
+        public delegate void _UpdateTileMappings(
             [In] ID3D12CommandQueue* This,
             [In] ID3D12Resource* pResource,
             [In, NativeTypeName("UINT")] uint NumResourceRegions,
@@ -90,7 +90,7 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _CopyTileMappings(
+        public delegate void _CopyTileMappings(
             [In] ID3D12CommandQueue* This,
             [In] ID3D12Resource* pDstResource,
             [In] D3D12_TILED_RESOURCE_COORDINATE* pDstRegionStartCoordinate,
@@ -101,14 +101,14 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _ExecuteCommandLists(
+        public delegate void _ExecuteCommandLists(
             [In] ID3D12CommandQueue* This,
             [In, NativeTypeName("UINT")] uint NumCommandLists,
             [In, NativeTypeName("ID3D12CommandList*[]")] ID3D12CommandList** ppCommandLists
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetMarker(
+        public delegate void _SetMarker(
             [In] ID3D12CommandQueue* This,
             [In, NativeTypeName("UINT")] uint Metadata,
             [In, Optional] void* pData,
@@ -116,7 +116,7 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _BeginEvent(
+        public delegate void _BeginEvent(
             [In] ID3D12CommandQueue* This,
             [In, NativeTypeName("UINT")] uint Metadata,
             [In, Optional] void* pData,
@@ -124,13 +124,13 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _EndEvent(
+        public delegate void _EndEvent(
             [In] ID3D12CommandQueue* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Signal(
+        public delegate int _Signal(
             [In] ID3D12CommandQueue* This,
             [In] ID3D12Fence* pFence,
             [In, NativeTypeName("UINT64")] ulong Value
@@ -138,7 +138,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Wait(
+        public delegate int _Wait(
             [In] ID3D12CommandQueue* This,
             [In] ID3D12Fence* pFence,
             [In, NativeTypeName("UINT64")] ulong Value
@@ -146,21 +146,21 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetTimestampFrequency(
+        public delegate int _GetTimestampFrequency(
             [In] ID3D12CommandQueue* This,
             [Out, NativeTypeName("UINT64")] ulong* pFrequency
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetClockCalibration(
+        public delegate int _GetClockCalibration(
             [In] ID3D12CommandQueue* This,
             [Out, NativeTypeName("UINT64")] ulong* pGpuTimestamp,
             [Out, NativeTypeName("UINT64")] ulong* pCpuTimestamp
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate D3D12_COMMAND_QUEUE_DESC* _GetDesc(
+        public delegate D3D12_COMMAND_QUEUE_DESC* _GetDesc(
             [In] ID3D12CommandQueue* This,
             [Out] D3D12_COMMAND_QUEUE_DESC* _result
         );

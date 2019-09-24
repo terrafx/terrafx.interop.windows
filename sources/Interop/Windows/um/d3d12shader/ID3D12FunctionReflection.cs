@@ -15,47 +15,47 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDesc(
+        public delegate int _GetDesc(
             [In] ID3D12FunctionReflection* This,
             [Out] D3D12_FUNCTION_DESC* pDesc
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate ID3D12ShaderReflectionConstantBuffer* _GetConstantBufferByIndex(
+        public delegate ID3D12ShaderReflectionConstantBuffer* _GetConstantBufferByIndex(
             [In] ID3D12FunctionReflection* This,
             [In, NativeTypeName("UINT")] uint BufferIndex
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate ID3D12ShaderReflectionConstantBuffer* _GetConstantBufferByName(
+        public delegate ID3D12ShaderReflectionConstantBuffer* _GetConstantBufferByName(
             [In] ID3D12FunctionReflection* This,
             [In, NativeTypeName("LPCSTR")] sbyte* Name
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetResourceBindingDesc(
+        public delegate int _GetResourceBindingDesc(
             [In] ID3D12FunctionReflection* This,
             [In, NativeTypeName("UINT")] uint ResourceIndex,
             [Out] D3D12_SHADER_INPUT_BIND_DESC* pDesc
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate ID3D12ShaderReflectionVariable* _GetVariableByName(
+        public delegate ID3D12ShaderReflectionVariable* _GetVariableByName(
             [In] ID3D12FunctionReflection* This,
             [In, NativeTypeName("LPCSTR")] sbyte* Name
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetResourceBindingDescByName(
+        public delegate int _GetResourceBindingDescByName(
             [In] ID3D12FunctionReflection* This,
             [In, NativeTypeName("LPCSTR")] sbyte* Name,
             [Out] D3D12_SHADER_INPUT_BIND_DESC* pDesc
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate ID3D12FunctionParameterReflection* _GetFunctionParameter(
+        public delegate ID3D12FunctionParameterReflection* _GetFunctionParameter(
             [In] ID3D12FunctionReflection* This,
             [In, NativeTypeName("INT")] int ParameterIndex
         );

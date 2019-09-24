@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDXGIOutputDuplication* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDXGIOutputDuplication* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDXGIOutputDuplication* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrivateData(
+        public delegate int _SetPrivateData(
             [In] IDXGIOutputDuplication* This,
             [In, NativeTypeName("REFGUID")] Guid* Name,
             [In, NativeTypeName("UINT")] uint DataSize,
@@ -44,7 +44,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrivateDataInterface(
+        public delegate int _SetPrivateDataInterface(
             [In] IDXGIOutputDuplication* This,
             [In, NativeTypeName("REFGUID")] Guid* Name,
             [In] IUnknown* pUnknown = null
@@ -52,7 +52,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPrivateData(
+        public delegate int _GetPrivateData(
             [In] IDXGIOutputDuplication* This,
             [In, NativeTypeName("REFGUID")] Guid* Name,
             [In, Out, NativeTypeName("UINT")] uint* pDataSize,
@@ -61,21 +61,21 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetParent(
+        public delegate int _GetParent(
             [In] IDXGIOutputDuplication* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppParent
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetDesc(
+        public delegate void _GetDesc(
             [In] IDXGIOutputDuplication* This,
             [Out] DXGI_OUTDUPL_DESC* pDesc
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AcquireNextFrame(
+        public delegate int _AcquireNextFrame(
             [In] IDXGIOutputDuplication* This,
             [In, NativeTypeName("UINT")] uint TimeoutInMilliseconds,
             [Out] DXGI_OUTDUPL_FRAME_INFO* pFrameInfo,
@@ -84,7 +84,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFrameDirtyRects(
+        public delegate int _GetFrameDirtyRects(
             [In] IDXGIOutputDuplication* This,
             [In, NativeTypeName("UINT")] uint DirtyRectsBufferSize,
             [Out, NativeTypeName("RECT[]")] RECT* pDirtyRectsBuffer,
@@ -93,7 +93,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFrameMoveRects(
+        public delegate int _GetFrameMoveRects(
             [In] IDXGIOutputDuplication* This,
             [In, NativeTypeName("UINT")] uint MoveRectsBufferSize,
             [Out, NativeTypeName("DXGI_OUTDUPL_MOVE_RECT[]")] DXGI_OUTDUPL_MOVE_RECT* pMoveRectBuffer,
@@ -102,7 +102,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFramePointerShape(
+        public delegate int _GetFramePointerShape(
             [In] IDXGIOutputDuplication* This,
             [In, NativeTypeName("UINT")] uint PointerShapeBufferSize,
             [Out] void* pPointerShapeBuffer,
@@ -112,20 +112,20 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _MapDesktopSurface(
+        public delegate int _MapDesktopSurface(
             [In] IDXGIOutputDuplication* This,
             [Out] DXGI_MAPPED_RECT* pLockedRect
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _UnMapDesktopSurface(
+        public delegate int _UnMapDesktopSurface(
             [In] IDXGIOutputDuplication* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _ReleaseFrame(
+        public delegate int _ReleaseFrame(
             [In] IDXGIOutputDuplication* This
         );
 

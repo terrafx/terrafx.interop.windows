@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID2D1Transform* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,26 +24,26 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID2D1Transform* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID2D1Transform* This
         );
 
         /// <summary>Return the number of input this node has.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetInputCount(
+        public delegate uint _GetInputCount(
             [In] ID2D1Transform* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _MapOutputRectToInputRects(
+        public delegate int _MapOutputRectToInputRects(
             [In] ID2D1Transform* This,
             [In, NativeTypeName("D2D1_RECT_L")] RECT* outputRect,
             [Out, NativeTypeName("D2D1_RECT_L[]")] RECT* inputRects,
@@ -52,7 +52,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _MapInputRectsToOutputRect(
+        public delegate int _MapInputRectsToOutputRect(
             [In] ID2D1Transform* This,
             [In, NativeTypeName("D2D1_RECT_L[]")] RECT* inputRects,
             [In, NativeTypeName("D2D1_RECT_L[]")] RECT* inputOpaqueSubRects,
@@ -63,7 +63,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _MapInvalidRect(
+        public delegate int _MapInvalidRect(
             [In] ID2D1Transform* This,
             [In, NativeTypeName("UINT32")] uint inputIndex,
             [In, NativeTypeName("D2D1_RECT_L")] RECT invalidInputRect,

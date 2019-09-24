@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDXGIKeyedMutex* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDXGIKeyedMutex* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDXGIKeyedMutex* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrivateData(
+        public delegate int _SetPrivateData(
             [In] IDXGIKeyedMutex* This,
             [In, NativeTypeName("REFGUID")] Guid* Name,
             [In, NativeTypeName("UINT")] uint DataSize,
@@ -44,7 +44,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrivateDataInterface(
+        public delegate int _SetPrivateDataInterface(
             [In] IDXGIKeyedMutex* This,
             [In, NativeTypeName("REFGUID")] Guid* Name,
             [In] IUnknown* pUnknown = null
@@ -52,7 +52,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPrivateData(
+        public delegate int _GetPrivateData(
             [In] IDXGIKeyedMutex* This,
             [In, NativeTypeName("REFGUID")] Guid* Name,
             [In, Out, NativeTypeName("UINT")] uint* pDataSize,
@@ -61,7 +61,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetParent(
+        public delegate int _GetParent(
             [In] IDXGIKeyedMutex* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppParent
@@ -69,7 +69,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDevice(
+        public delegate int _GetDevice(
             [In] IDXGIKeyedMutex* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppDevice
@@ -77,7 +77,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AcquireSync(
+        public delegate int _AcquireSync(
             [In] IDXGIKeyedMutex* This,
             [In, NativeTypeName("UINT64")] ulong Key,
             [In, NativeTypeName("DWORD")] uint dwMilliseconds
@@ -85,7 +85,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _ReleaseSync(
+        public delegate int _ReleaseSync(
             [In] IDXGIKeyedMutex* This,
             [In, NativeTypeName("UINT64")] ulong Key
         );

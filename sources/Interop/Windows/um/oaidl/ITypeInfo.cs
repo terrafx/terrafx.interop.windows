@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ITypeInfo* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,33 +23,33 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ITypeInfo* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ITypeInfo* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetTypeAttr(
+        public delegate int _GetTypeAttr(
             [In] ITypeInfo* This,
             [Out] TYPEATTR** ppTypeAttr
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetTypeComp(
+        public delegate int _GetTypeComp(
             [In] ITypeInfo* This,
             [Out] ITypeComp** ppTComp = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFuncDesc(
+        public delegate int _GetFuncDesc(
             [In] ITypeInfo* This,
             [In, NativeTypeName("UINT")] uint index,
             [Out] FUNCDESC** ppFuncDesc
@@ -57,7 +57,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetVarDesc(
+        public delegate int _GetVarDesc(
             [In] ITypeInfo* This,
             [In, NativeTypeName("UINT")] uint index,
             [Out] VARDESC** ppVarDesc
@@ -65,7 +65,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetNames(
+        public delegate int _GetNames(
             [In] ITypeInfo* This,
             [In, NativeTypeName("MEMBERID")] int memid,
             [Out, NativeTypeName("BSTR[]")] char** rgBstrNames,
@@ -75,7 +75,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetRefTypeOfImplType(
+        public delegate int _GetRefTypeOfImplType(
             [In] ITypeInfo* This,
             [In, NativeTypeName("UINT")] uint index,
             [Out, NativeTypeName("HREFTYPE")] uint* pRefType
@@ -83,7 +83,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetImplTypeFlags(
+        public delegate int _GetImplTypeFlags(
             [In] ITypeInfo* This,
             [In, NativeTypeName("UINT")] uint index,
             [Out, NativeTypeName("INT")] int* pImplTypeFlags
@@ -91,7 +91,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetIDsOfNames(
+        public delegate int _GetIDsOfNames(
             [In] ITypeInfo* This,
             [In, NativeTypeName("LPOLESTR[]")] char** rgszNames,
             [In, NativeTypeName("UINT")] uint cNames,
@@ -100,7 +100,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Invoke(
+        public delegate int _Invoke(
             [In] ITypeInfo* This,
             [In, NativeTypeName("PVOID")] void* pvInstance,
             [In, NativeTypeName("MEMBERID")] int memid,
@@ -113,7 +113,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDocumentation(
+        public delegate int _GetDocumentation(
             [In] ITypeInfo* This,
             [In, NativeTypeName("MEMBERID")] int memid,
             [Out, Optional, NativeTypeName("BSTR")] char** pBstrName,
@@ -124,7 +124,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDllEntry(
+        public delegate int _GetDllEntry(
             [In] ITypeInfo* This,
             [In, NativeTypeName("MEMBERID")] int memid,
             [In] INVOKEKIND invKind,
@@ -135,7 +135,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetRefTypeInfo(
+        public delegate int _GetRefTypeInfo(
             [In] ITypeInfo* This,
             [In, NativeTypeName("HREFTYPE")] uint hRefType,
             [Out] ITypeInfo** ppTInfo = null
@@ -143,7 +143,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AddressOfMember(
+        public delegate int _AddressOfMember(
             [In] ITypeInfo* This,
             [In, NativeTypeName("MEMBERID")] int memid,
             [In] INVOKEKIND invKind,
@@ -152,7 +152,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateInstance(
+        public delegate int _CreateInstance(
             [In] ITypeInfo* This,
             [In] IUnknown* pUnkOuter,
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -161,7 +161,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetMops(
+        public delegate int _GetMops(
             [In] ITypeInfo* This,
             [In, NativeTypeName("MEMBERID")] int memid,
             [Out, NativeTypeName("BSTR")] char** pBstrMops = null
@@ -169,26 +169,26 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetContainingTypeLib(
+        public delegate int _GetContainingTypeLib(
             [In] ITypeInfo* This,
             [Out] ITypeLib** ppTLib,
             [Out, NativeTypeName("UINT")] uint* pIndex
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _ReleaseTypeAttr(
+        public delegate void _ReleaseTypeAttr(
             [In] ITypeInfo* This,
             [In] TYPEATTR* pTypeAttr
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _ReleaseFuncDesc(
+        public delegate void _ReleaseFuncDesc(
             [In] ITypeInfo* This,
             [In] FUNCDESC* pFuncDesc
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _ReleaseVarDesc(
+        public delegate void _ReleaseVarDesc(
             [In] ITypeInfo* This,
             [In] VARDESC* pVarDesc
         );

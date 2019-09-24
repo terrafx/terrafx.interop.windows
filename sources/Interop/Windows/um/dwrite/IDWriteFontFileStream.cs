@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDWriteFontFileStream* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,13 +24,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDWriteFontFileStream* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDWriteFontFileStream* This
         );
 
@@ -43,7 +43,7 @@ namespace TerraFX.Interop
         /// <remarks>IMPORTANT: ReadFileFragment() implementations must check whether the requested file fragment is within the file bounds. Otherwise, an error should be returned from ReadFileFragment.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _ReadFileFragment(
+        public delegate int _ReadFileFragment(
             [In] IDWriteFontFileStream* This,
             [Out] void** fragmentStart,
             [In, NativeTypeName("UINT64")] ulong fileOffset,
@@ -54,7 +54,7 @@ namespace TerraFX.Interop
         /// <summary>Releases a fragment from a file.</summary>
         /// <param name="fragmentContext">The client defined context of a font fragment returned from ReadFileFragment.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _ReleaseFileFragment(
+        public delegate void _ReleaseFileFragment(
             [In] IDWriteFontFileStream* This,
             [In] void* fragmentContext
         );
@@ -65,7 +65,7 @@ namespace TerraFX.Interop
         /// <remarks>Implementing GetFileSize() for asynchronously loaded font files may require downloading the complete file contents, therefore this method should only be used for operations that either require complete font file to be loaded (e.g., copying a font file) or need to make decisions based on the value of the file size (e.g., validation against a persisted file size).</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFileSize(
+        public delegate int _GetFileSize(
             [In] IDWriteFontFileStream* This,
             [Out, NativeTypeName("UINT64")] ulong* fileSize
         );
@@ -75,7 +75,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code. For resources that don't have a concept of the last modified time, the implementation of GetLastWriteTime should return E_NOTIMPL.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetLastWriteTime(
+        public delegate int _GetLastWriteTime(
             [In] IDWriteFontFileStream* This,
             [Out, NativeTypeName("UINT64")] ulong* lastWriteTime
         );

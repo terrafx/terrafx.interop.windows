@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDWriteGdiInterop* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,13 +24,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDWriteGdiInterop* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDWriteGdiInterop* This
         );
 
@@ -40,7 +40,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateFontFromLOGFONT(
+        public delegate int _CreateFontFromLOGFONT(
             [In] IDWriteGdiInterop* This,
             [In] LOGFONT* logFont,
             [Out] IDWriteFont** font
@@ -53,7 +53,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _ConvertFontToLOGFONT(
+        public delegate int _ConvertFontToLOGFONT(
             [In] IDWriteGdiInterop* This,
             [In] IDWriteFont* font,
             [Out] LOGFONT* logFont,
@@ -66,7 +66,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _ConvertFontFaceToLOGFONT(
+        public delegate int _ConvertFontFaceToLOGFONT(
             [In] IDWriteGdiInterop* This,
             [In] IDWriteFontFace* font,
             [Out] LOGFONT* logFont
@@ -78,7 +78,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateFontFaceFromHdc(
+        public delegate int _CreateFontFaceFromHdc(
             [In] IDWriteGdiInterop* This,
             [In, NativeTypeName("HDC")] IntPtr hdc,
             [Out] IDWriteFontFace** fontFace
@@ -91,7 +91,7 @@ namespace TerraFX.Interop
         /// <param name="renderTarget">Receives a pointer to the newly created render target.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateBitmapRenderTarget(
+        public delegate int _CreateBitmapRenderTarget(
             [In] IDWriteGdiInterop* This,
             [In, Optional, NativeTypeName("HDC")] IntPtr hdc,
             [In, NativeTypeName("UINT32")] uint width,

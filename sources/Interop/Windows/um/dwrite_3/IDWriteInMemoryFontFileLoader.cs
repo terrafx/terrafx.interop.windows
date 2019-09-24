@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDWriteInMemoryFontFileLoader* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,13 +24,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDWriteInMemoryFontFileLoader* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDWriteInMemoryFontFileLoader* This
         );
 
@@ -41,7 +41,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateStreamFromKey(
+        public delegate int _CreateStreamFromKey(
             [In] IDWriteInMemoryFontFileLoader* This,
             [In] void* fontFileReferenceKey,
             [In, NativeTypeName("UINT32")] uint fontFileReferenceKeySize,
@@ -57,7 +57,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateInMemoryFontFileReference(
+        public delegate int _CreateInMemoryFontFileReference(
             [In] IDWriteInMemoryFontFileLoader* This,
             [In] IDWriteFactory* factory,
             [In] void* fontData,
@@ -69,7 +69,7 @@ namespace TerraFX.Interop
         /// <summary>The GetFileCount method returns the number of font file references that have been created using this loader instance.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetFileCount(
+        public delegate uint _GetFileCount(
             [In] IDWriteInMemoryFontFileLoader* This
         );
 

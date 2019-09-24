@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDWriteFactory5* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -25,13 +25,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDWriteFactory5* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDWriteFactory5* This
         );
 
@@ -41,7 +41,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSystemFontCollection(
+        public delegate int _GetSystemFontCollection(
             [In] IDWriteFactory5* This,
             [Out] IDWriteFontCollection** fontCollection,
             [In, NativeTypeName("BOOL")] int checkForUpdates = FALSE
@@ -55,7 +55,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateCustomFontCollection(
+        public delegate int _CreateCustomFontCollection(
             [In] IDWriteFactory5* This,
             [In] IDWriteFontCollectionLoader* collectionLoader,
             [In] void* collectionKey,
@@ -68,7 +68,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RegisterFontCollectionLoader(
+        public delegate int _RegisterFontCollectionLoader(
             [In] IDWriteFactory5* This,
             [In] IDWriteFontCollectionLoader* fontCollectionLoader
         );
@@ -78,7 +78,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _UnregisterFontCollectionLoader(
+        public delegate int _UnregisterFontCollectionLoader(
             [In] IDWriteFactory5* This,
             [In] IDWriteFontCollectionLoader* fontCollectionLoader
         );
@@ -90,7 +90,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateFontFileReference(
+        public delegate int _CreateFontFileReference(
             [In] IDWriteFactory5* This,
             [In, NativeTypeName("WCHAR[]")] char* filePath,
             [In, Optional] FILETIME* lastWriteTime,
@@ -106,7 +106,7 @@ namespace TerraFX.Interop
         /// <remarks> This function is provided for cases when an application or a document needs to use a font without having to install it on the system. fontFileReferenceKey has to be unique only in the scope of the fontFileLoader used in this call.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateCustomFontFileReference(
+        public delegate int _CreateCustomFontFileReference(
             [In] IDWriteFactory5* This,
             [In] void* fontFileReferenceKey,
             [In, NativeTypeName("UINT32")] uint fontFileReferenceKeySize,
@@ -124,7 +124,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateFontFace(
+        public delegate int _CreateFontFace(
             [In] IDWriteFactory5* This,
             [In] DWRITE_FONT_FACE_TYPE fontFaceType,
             [In, NativeTypeName("UINT32")] uint numberOfFiles,
@@ -139,7 +139,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateRenderingParams(
+        public delegate int _CreateRenderingParams(
             [In] IDWriteFactory5* This,
             [Out] IDWriteRenderingParams** renderingParams
         );
@@ -150,7 +150,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateMonitorRenderingParams(
+        public delegate int _CreateMonitorRenderingParams(
             [In] IDWriteFactory5* This,
             [In, NativeTypeName("HMONITOR")] IntPtr monitor,
             [Out] IDWriteRenderingParams** renderingParams
@@ -166,7 +166,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateCustomRenderingParams(
+        public delegate int _CreateCustomRenderingParams(
             [In] IDWriteFactory5* This,
             [In, NativeTypeName("FLOAT")] float gamma,
             [In, NativeTypeName("FLOAT")] float enhancedContrast,
@@ -182,7 +182,7 @@ namespace TerraFX.Interop
         /// <remarks> This function registers a font file loader with DirectWrite. Font file loader interface handles loading font file resources of a particular type from a key. The font file loader interface is recommended to be implemented by a singleton object. A given instance can only be registered once. Succeeding attempts will return an error that it has already been registered. IMPORTANT: font file loader implementations must not register themselves with DirectWrite inside their constructors and must not unregister themselves in their destructors, because registration and unregistration operations increment and decrement the object reference count respectively. Instead, registration and unregistration of font file loaders with DirectWrite should be performed outside of the font file loader implementation as a separate step.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RegisterFontFileLoader(
+        public delegate int _RegisterFontFileLoader(
             [In] IDWriteFactory5* This,
             [In] IDWriteFontFileLoader* fontFileLoader
         );
@@ -193,7 +193,7 @@ namespace TerraFX.Interop
         /// <remarks> This function unregisters font file loader callbacks with the DirectWrite font system. The font file loader interface is recommended to be implemented by a singleton object. IMPORTANT: font file loader implementations must not register themselves with DirectWrite inside their constructors and must not unregister themselves in their destructors, because registration and unregistration operations increment and decrement the object reference count respectively. Instead, registration and unregistration of font file loaders with DirectWrite should be performed outside of the font file loader implementation as a separate step.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _UnregisterFontFileLoader(
+        public delegate int _UnregisterFontFileLoader(
             [In] IDWriteFactory5* This,
             [In] IDWriteFontFileLoader* fontFileLoader
         );
@@ -210,7 +210,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateTextFormat(
+        public delegate int _CreateTextFormat(
             [In] IDWriteFactory5* This,
             [In, NativeTypeName("WCHAR[]")] char* fontFamilyName,
             [In, Optional] IDWriteFontCollection* fontCollection,
@@ -227,7 +227,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateTypography(
+        public delegate int _CreateTypography(
             [In] IDWriteFactory5* This,
             [Out] IDWriteTypography** typography
         );
@@ -237,7 +237,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetGdiInterop(
+        public delegate int _GetGdiInterop(
             [In] IDWriteFactory5* This,
             [Out] IDWriteGdiInterop** gdiInterop
         );
@@ -252,7 +252,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateTextLayout(
+        public delegate int _CreateTextLayout(
             [In] IDWriteFactory5* This,
             [In, NativeTypeName("WCHAR[]")] char* @string,
             [In, NativeTypeName("UINT32")] uint stringLength,
@@ -275,7 +275,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateGdiCompatibleTextLayout(
+        public delegate int _CreateGdiCompatibleTextLayout(
             [In] IDWriteFactory5* This,
             [In, NativeTypeName("WCHAR[]")] char* @string,
             [In, NativeTypeName("UINT32")] uint stringLength,
@@ -294,7 +294,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateEllipsisTrimmingSign(
+        public delegate int _CreateEllipsisTrimmingSign(
             [In] IDWriteFactory5* This,
             [In] IDWriteTextFormat* textFormat,
             [Out] IDWriteInlineObject** trimmingSign
@@ -305,7 +305,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateTextAnalyzer(
+        public delegate int _CreateTextAnalyzer(
             [In] IDWriteFactory5* This,
             [Out] IDWriteTextAnalyzer** textAnalyzer
         );
@@ -317,7 +317,7 @@ namespace TerraFX.Interop
         /// <param name="numberSubstitution">Receives a pointer to the newly created object.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateNumberSubstitution(
+        public delegate int _CreateNumberSubstitution(
             [In] IDWriteFactory5* This,
             [In] DWRITE_NUMBER_SUBSTITUTION_METHOD substitutionMethod,
             [In, NativeTypeName("WCHAR[]")] char* localeName,
@@ -337,7 +337,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateGlyphRunAnalysis(
+        public delegate int _CreateGlyphRunAnalysis(
             [In] IDWriteFactory5* This,
             [In] DWRITE_GLYPH_RUN* glyphRun,
             [In, NativeTypeName("FLOAT")] float pixelsPerDip,
@@ -357,7 +357,7 @@ namespace TerraFX.Interop
         /// Be aware that eudcedit.exe can create placeholder empty glyphs that have zero advance width and no glyph outline. Although they are present in the font (HasCharacter returns true), you are best to ignore these and continue on with font fallback in your layout if the metrics for the glyph are zero.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetEudcFontCollection(
+        public delegate int _GetEudcFontCollection(
             [In] IDWriteFactory5* This,
             [Out] IDWriteFontCollection** fontCollection,
             [In, NativeTypeName("BOOL")] int checkForUpdates = FALSE
@@ -374,7 +374,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateCustomRenderingParams1(
+        public delegate int _CreateCustomRenderingParams1(
             [In] IDWriteFactory5* This,
             [In, NativeTypeName("FLOAT")] float gamma,
             [In, NativeTypeName("FLOAT")] float enhancedContrast,
@@ -390,7 +390,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSystemFontFallback(
+        public delegate int _GetSystemFontFallback(
             [In] IDWriteFactory5* This,
             [Out] IDWriteFontFallback** fontFallback
         );
@@ -400,7 +400,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateFontFallbackBuilder(
+        public delegate int _CreateFontFallbackBuilder(
             [In] IDWriteFactory5* This,
             [Out] IDWriteFontFallbackBuilder** fontFallbackBuilder
         );
@@ -417,7 +417,7 @@ namespace TerraFX.Interop
         /// <returns> Returns DWRITE_E_NOCOLOR if the font has no color information, the base glyph run does not contain any color glyphs, or the specified color palette index is out of range. In this case, the client should render the base glyph run. Otherwise, returns a standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _TranslateColorGlyphRun(
+        public delegate int _TranslateColorGlyphRun(
             [In] IDWriteFactory5* This,
             [In, NativeTypeName("FLOAT")] float baselineOriginX,
             [In, NativeTypeName("FLOAT")] float baselineOriginY,
@@ -440,7 +440,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateCustomRenderingParams2(
+        public delegate int _CreateCustomRenderingParams2(
             [In] IDWriteFactory5* This,
             [In, NativeTypeName("FLOAT")] float gamma,
             [In, NativeTypeName("FLOAT")] float enhancedContrast,
@@ -464,7 +464,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateGlyphRunAnalysis1(
+        public delegate int _CreateGlyphRunAnalysis1(
             [In] IDWriteFactory5* This,
             [In] DWRITE_GLYPH_RUN* glyphRun,
             [In, Optional] DWRITE_MATRIX* transform,
@@ -489,7 +489,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateGlyphRunAnalysis2(
+        public delegate int _CreateGlyphRunAnalysis2(
             [In] IDWriteFactory5* This,
             [In] DWRITE_GLYPH_RUN* glyphRun,
             [In, Optional] DWRITE_MATRIX* transform,
@@ -514,7 +514,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateCustomRenderingParams3(
+        public delegate int _CreateCustomRenderingParams3(
             [In] IDWriteFactory5* This,
             [In, NativeTypeName("FLOAT")] float gamma,
             [In, NativeTypeName("FLOAT")] float enhancedContrast,
@@ -535,7 +535,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateFontFaceReference(
+        public delegate int _CreateFontFaceReference(
             [In] IDWriteFactory5* This,
             [In, NativeTypeName("WCHAR[]")] char* filePath,
             [In, Optional] FILETIME* lastWriteTime,
@@ -552,7 +552,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateFontFaceReference1(
+        public delegate int _CreateFontFaceReference1(
             [In] IDWriteFactory5* This,
             [In] IDWriteFontFile* fontFile,
             [In, NativeTypeName("UINT32")] uint faceIndex,
@@ -565,7 +565,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSystemFontSet(
+        public delegate int _GetSystemFontSet(
             [In] IDWriteFactory5* This,
             [Out] IDWriteFontSet** fontSet
         );
@@ -575,7 +575,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateFontSetBuilder(
+        public delegate int _CreateFontSetBuilder(
             [In] IDWriteFactory5* This,
             [Out] IDWriteFontSetBuilder** fontSetBuilder
         );
@@ -586,7 +586,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateFontCollectionFromFontSet(
+        public delegate int _CreateFontCollectionFromFontSet(
             [In] IDWriteFactory5* This,
             [In] IDWriteFontSet* fontSet,
             [Out] IDWriteFontCollection1** fontCollection
@@ -599,7 +599,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSystemFontCollection1(
+        public delegate int _GetSystemFontCollection1(
             [In] IDWriteFactory5* This,
             [In, NativeTypeName("BOOL")] int includeDownloadableFonts,
             [Out] IDWriteFontCollection1** fontCollection,
@@ -611,7 +611,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFontDownloadQueue(
+        public delegate int _GetFontDownloadQueue(
             [In] IDWriteFactory5* This,
             [Out] IDWriteFontDownloadQueue** fontDownloadQueue
         );
@@ -629,7 +629,7 @@ namespace TerraFX.Interop
         /// <remarks> The old IDWriteFactory2::TranslateColorGlyphRun is equivalent to passing DWRITE_GLYPH_IMAGE_FORMATS_TRUETYPE|CFF|COLR.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _TranslateColorGlyphRun1(
+        public delegate int _TranslateColorGlyphRun1(
             [In] IDWriteFactory5* This,
             [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F baselineOrigin,
             [In] DWRITE_GLYPH_RUN* glyphRun,
@@ -646,7 +646,7 @@ namespace TerraFX.Interop
         /// <remarks> The transform and DPI have no affect on the origin scaling. They are solely used to compute glyph advances when not supplied and align glyphs in pixel aligned measuring modes.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _ComputeGlyphOrigins(
+        public delegate int _ComputeGlyphOrigins(
             [In] IDWriteFactory5* This,
             [In] DWRITE_GLYPH_RUN* glyphRun,
             [In] DWRITE_MEASURING_MODE measuringMode,
@@ -658,7 +658,7 @@ namespace TerraFX.Interop
         /// <summary>Converts glyph run placements to glyph origins. This overload is for natural metrics, which includes SVG, TrueType natural modes, and bitmap placement.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _ComputeGlyphOrigins1(
+        public delegate int _ComputeGlyphOrigins1(
             [In] IDWriteFactory5* This,
             [In] DWRITE_GLYPH_RUN* glyphRun,
             [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F baselineOrigin,
@@ -670,7 +670,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateFontSetBuilder1(
+        public delegate int _CreateFontSetBuilder1(
             [In] IDWriteFactory5* This,
             [Out] IDWriteFontSetBuilder1** fontSetBuilder
         );
@@ -680,7 +680,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateInMemoryFontFileLoader(
+        public delegate int _CreateInMemoryFontFileLoader(
             [In] IDWriteFactory5* This,
             [Out] IDWriteInMemoryFontFileLoader** newLoader
         );
@@ -692,7 +692,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateHttpFontFileLoader(
+        public delegate int _CreateHttpFontFileLoader(
             [In] IDWriteFactory5* This,
             [In, Optional, NativeTypeName("WCHAR[]")] char* referrerUrl,
             [In, Optional, NativeTypeName("WCHAR[]")] char* extraHeaders,
@@ -702,7 +702,7 @@ namespace TerraFX.Interop
         /// <summary>The AnalyzeContainerType method analyzes the specified file data to determine whether it is a known font container format (e.g., WOFF or WOFF2).</summary>
         /// <returns> Returns the container type if recognized. DWRITE_CONTAINER_TYPE_UNKOWNN is returned for all other files, including uncompressed font files.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate DWRITE_CONTAINER_TYPE _AnalyzeContainerType(
+        public delegate DWRITE_CONTAINER_TYPE _AnalyzeContainerType(
             [In] IDWriteFactory5* This,
             [In] void* fileData,
             [In, NativeTypeName("UINT32")] uint fileDataSize
@@ -716,7 +716,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code. The return value is E_INVALIDARG if the container type is DWRITE_CONTAINER_TYPE_UNKNOWN.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _UnpackFontFile(
+        public delegate int _UnpackFontFile(
             [In] IDWriteFactory5* This,
             [In] DWRITE_CONTAINER_TYPE containerType,
             [In] void* fileData,

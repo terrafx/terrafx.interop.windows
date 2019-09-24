@@ -14,7 +14,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Open(
+        public delegate int _Open(
             [In] ID3DInclude* This,
             [In] D3D_INCLUDE_TYPE IncludeType,
             [In, NativeTypeName("LPCSTR")] sbyte* pFileName,
@@ -25,7 +25,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Close(
+        public delegate int _Close(
             [In] ID3DInclude* This,
             [In, NativeTypeName("LPCVOID")] void* pData
         );

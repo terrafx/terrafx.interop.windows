@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID2D1CommandSink3* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,38 +23,38 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID2D1CommandSink3* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID2D1CommandSink3* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _BeginDraw(
+        public delegate int _BeginDraw(
             [In] ID2D1CommandSink3* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _EndDraw(
+        public delegate int _EndDraw(
             [In] ID2D1CommandSink3* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetAntialiasMode(
+        public delegate int _SetAntialiasMode(
             [In] ID2D1CommandSink3* This,
             [In] D2D1_ANTIALIAS_MODE antialiasMode
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetTags(
+        public delegate int _SetTags(
             [In] ID2D1CommandSink3* This,
             [In, NativeTypeName("D2D1_TAG")] ulong tag1,
             [In, NativeTypeName("D2D1_TAG")] ulong tag2
@@ -62,49 +62,49 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetTextAntialiasMode(
+        public delegate int _SetTextAntialiasMode(
             [In] ID2D1CommandSink3* This,
             [In] D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetTextRenderingParams(
+        public delegate int _SetTextRenderingParams(
             [In] ID2D1CommandSink3* This,
             [In] IDWriteRenderingParams* textRenderingParams = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetTransform(
+        public delegate int _SetTransform(
             [In] ID2D1CommandSink3* This,
             [In, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrimitiveBlend(
+        public delegate int _SetPrimitiveBlend(
             [In] ID2D1CommandSink3* This,
             [In] D2D1_PRIMITIVE_BLEND primitiveBlend
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetUnitMode(
+        public delegate int _SetUnitMode(
             [In] ID2D1CommandSink3* This,
             [In] D2D1_UNIT_MODE unitMode
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Clear(
+        public delegate int _Clear(
             [In] ID2D1CommandSink3* This,
             [In, NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA* color = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DrawGlyphRun(
+        public delegate int _DrawGlyphRun(
             [In] ID2D1CommandSink3* This,
             [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F baselineOrigin,
             [In] DWRITE_GLYPH_RUN* glyphRun,
@@ -115,7 +115,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DrawLine(
+        public delegate int _DrawLine(
             [In] ID2D1CommandSink3* This,
             [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point0,
             [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point1,
@@ -126,7 +126,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DrawGeometry(
+        public delegate int _DrawGeometry(
             [In] ID2D1CommandSink3* This,
             [In] ID2D1Geometry* geometry,
             [In] ID2D1Brush* brush,
@@ -136,7 +136,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DrawRectangle(
+        public delegate int _DrawRectangle(
             [In] ID2D1CommandSink3* This,
             [In, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* rect,
             [In] ID2D1Brush* brush,
@@ -146,7 +146,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DrawBitmap(
+        public delegate int _DrawBitmap(
             [In] ID2D1CommandSink3* This,
             [In] ID2D1Bitmap* bitmap,
             [In, Optional, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* destinationRectangle,
@@ -158,7 +158,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DrawImage(
+        public delegate int _DrawImage(
             [In] ID2D1CommandSink3* This,
             [In] ID2D1Image* image,
             [In, Optional, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F* targetOffset,
@@ -169,7 +169,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DrawGdiMetafile(
+        public delegate int _DrawGdiMetafile(
             [In] ID2D1CommandSink3* This,
             [In] ID2D1GdiMetafile* gdiMetafile,
             [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F* targetOffset = null
@@ -177,7 +177,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _FillMesh(
+        public delegate int _FillMesh(
             [In] ID2D1CommandSink3* This,
             [In] ID2D1Mesh* mesh,
             [In] ID2D1Brush* brush
@@ -185,7 +185,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _FillOpacityMask(
+        public delegate int _FillOpacityMask(
             [In] ID2D1CommandSink3* This,
             [In] ID2D1Bitmap* opacityMask,
             [In] ID2D1Brush* brush,
@@ -195,7 +195,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _FillGeometry(
+        public delegate int _FillGeometry(
             [In] ID2D1CommandSink3* This,
             [In] ID2D1Geometry* geometry,
             [In] ID2D1Brush* brush,
@@ -204,7 +204,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _FillRectangle(
+        public delegate int _FillRectangle(
             [In] ID2D1CommandSink3* This,
             [In, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* rect,
             [In] ID2D1Brush* brush
@@ -212,7 +212,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _PushAxisAlignedClip(
+        public delegate int _PushAxisAlignedClip(
             [In] ID2D1CommandSink3* This,
             [In, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* clipRect,
             [In] D2D1_ANTIALIAS_MODE antialiasMode
@@ -220,7 +220,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _PushLayer(
+        public delegate int _PushLayer(
             [In] ID2D1CommandSink3* This,
             [In] D2D1_LAYER_PARAMETERS1* layerParameters1,
             [In] ID2D1Layer* layer = null
@@ -228,27 +228,27 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _PopAxisAlignedClip(
+        public delegate int _PopAxisAlignedClip(
             [In] ID2D1CommandSink3* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _PopLayer(
+        public delegate int _PopLayer(
             [In] ID2D1CommandSink3* This
         );
 
         /// <summary>This method is called if primitiveBlend value was added after Windows 8. SetPrimitiveBlend method is used for Win8 values (_SOURCE_OVER and _COPY).</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrimitiveBlend1(
+        public delegate int _SetPrimitiveBlend1(
             [In] ID2D1CommandSink3* This,
             [In] D2D1_PRIMITIVE_BLEND primitiveBlend
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DrawInk(
+        public delegate int _DrawInk(
             [In] ID2D1CommandSink3* This,
             [In] ID2D1Ink* ink,
             [In] ID2D1Brush* brush,
@@ -257,14 +257,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DrawGradientMesh(
+        public delegate int _DrawGradientMesh(
             [In] ID2D1CommandSink3* This,
             [In] ID2D1GradientMesh* gradientMesh
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DrawGdiMetafile1(
+        public delegate int _DrawGdiMetafile1(
             [In] ID2D1CommandSink3* This,
             [In] ID2D1GdiMetafile* gdiMetafile,
             [In, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* destinationRectangle = null,
@@ -273,7 +273,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DrawSpriteBatch(
+        public delegate int _DrawSpriteBatch(
             [In] ID2D1CommandSink3* This,
             [In] ID2D1SpriteBatch* spriteBatch,
             [In, NativeTypeName("UINT32")] uint startIndex,

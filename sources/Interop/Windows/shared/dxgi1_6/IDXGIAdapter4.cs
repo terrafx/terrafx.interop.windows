@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDXGIAdapter4* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDXGIAdapter4* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDXGIAdapter4* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrivateData(
+        public delegate int _SetPrivateData(
             [In] IDXGIAdapter4* This,
             [In, NativeTypeName("REFGUID")] Guid* Name,
             [In, NativeTypeName("UINT")] uint DataSize,
@@ -44,7 +44,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrivateDataInterface(
+        public delegate int _SetPrivateDataInterface(
             [In] IDXGIAdapter4* This,
             [In, NativeTypeName("REFGUID")] Guid* Name,
             [In] IUnknown* pUnknown = null
@@ -52,7 +52,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPrivateData(
+        public delegate int _GetPrivateData(
             [In] IDXGIAdapter4* This,
             [In, NativeTypeName("REFGUID")] Guid* Name,
             [In, Out, NativeTypeName("UINT")] uint* pDataSize,
@@ -61,7 +61,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetParent(
+        public delegate int _GetParent(
             [In] IDXGIAdapter4* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppParent
@@ -69,7 +69,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _EnumOutputs(
+        public delegate int _EnumOutputs(
             [In] IDXGIAdapter4* This,
             [In, NativeTypeName("UINT")] uint Output,
             [In, Out] IDXGIOutput** ppOutput
@@ -77,14 +77,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDesc(
+        public delegate int _GetDesc(
             [In] IDXGIAdapter4* This,
             [Out] DXGI_ADAPTER_DESC* pDesc
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CheckInterfaceSupport(
+        public delegate int _CheckInterfaceSupport(
             [In] IDXGIAdapter4* This,
             [In, NativeTypeName("REFGUID")] Guid* InterfaceName,
             [Out] LARGE_INTEGER* pUMDVersion
@@ -92,35 +92,35 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDesc1(
+        public delegate int _GetDesc1(
             [In] IDXGIAdapter4* This,
             [Out] DXGI_ADAPTER_DESC1* pDesc
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDesc2(
+        public delegate int _GetDesc2(
             [In] IDXGIAdapter4* This,
             [Out] DXGI_ADAPTER_DESC2* pDesc
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RegisterHardwareContentProtectionTeardownStatusEvent(
+        public delegate int _RegisterHardwareContentProtectionTeardownStatusEvent(
             [In] IDXGIAdapter4* This,
             [In, NativeTypeName("HANDLE")] IntPtr hEvent,
             [Out, NativeTypeName("DWORD")] uint* pdwCookie
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _UnregisterHardwareContentProtectionTeardownStatus(
+        public delegate void _UnregisterHardwareContentProtectionTeardownStatus(
             [In] IDXGIAdapter4* This,
             [In, NativeTypeName("DWORD")] uint dwCookie
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryVideoMemoryInfo(
+        public delegate int _QueryVideoMemoryInfo(
             [In] IDXGIAdapter4* This,
             [In, NativeTypeName("UINT")] uint NodeIndex,
             [In] DXGI_MEMORY_SEGMENT_GROUP MemorySegmentGroup,
@@ -129,7 +129,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetVideoMemoryReservation(
+        public delegate int _SetVideoMemoryReservation(
             [In] IDXGIAdapter4* This,
             [In, NativeTypeName("UINT")] uint NodeIndex,
             [In] DXGI_MEMORY_SEGMENT_GROUP MemorySegmentGroup,
@@ -138,21 +138,21 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RegisterVideoMemoryBudgetChangeNotificationEvent(
+        public delegate int _RegisterVideoMemoryBudgetChangeNotificationEvent(
             [In] IDXGIAdapter4* This,
             [In, NativeTypeName("HANDLE")] IntPtr hEvent,
             [Out, NativeTypeName("DWORD")] uint* pdwCookie
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _UnregisterVideoMemoryBudgetChangeNotification(
+        public delegate void _UnregisterVideoMemoryBudgetChangeNotification(
             [In] IDXGIAdapter4* This,
             [In, NativeTypeName("DWORD")] uint dwCookie
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDesc3(
+        public delegate int _GetDesc3(
             [In] IDXGIAdapter4* This,
             [Out] DXGI_ADAPTER_DESC3* pDesc
         );

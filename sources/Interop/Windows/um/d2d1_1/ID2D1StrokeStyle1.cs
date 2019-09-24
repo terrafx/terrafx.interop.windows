@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID2D1StrokeStyle1* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,76 +24,76 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID2D1StrokeStyle1* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID2D1StrokeStyle1* This
         );
 
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetFactory(
+        public delegate void _GetFactory(
             [In] ID2D1StrokeStyle1* This,
             [Out] ID2D1Factory** factory
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate D2D1_CAP_STYLE _GetStartCap(
+        public delegate D2D1_CAP_STYLE _GetStartCap(
             [In] ID2D1StrokeStyle1* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate D2D1_CAP_STYLE _GetEndCap(
+        public delegate D2D1_CAP_STYLE _GetEndCap(
             [In] ID2D1StrokeStyle1* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate D2D1_CAP_STYLE _GetDashCap(
-            [In] ID2D1StrokeStyle1* This
-        );
-
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        [return: NativeTypeName("FLOAT")]
-        public /* static */ delegate float _GetMiterLimit(
-            [In] ID2D1StrokeStyle1* This
-        );
-
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate D2D1_LINE_JOIN _GetLineJoin(
+        public delegate D2D1_CAP_STYLE _GetDashCap(
             [In] ID2D1StrokeStyle1* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public /* static */ delegate float _GetDashOffset(
+        public delegate float _GetMiterLimit(
             [In] ID2D1StrokeStyle1* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate D2D1_DASH_STYLE _GetDashStyle(
+        public delegate D2D1_LINE_JOIN _GetLineJoin(
+            [In] ID2D1StrokeStyle1* This
+        );
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [return: NativeTypeName("FLOAT")]
+        public delegate float _GetDashOffset(
+            [In] ID2D1StrokeStyle1* This
+        );
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate D2D1_DASH_STYLE _GetDashStyle(
             [In] ID2D1StrokeStyle1* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetDashesCount(
+        public delegate uint _GetDashesCount(
             [In] ID2D1StrokeStyle1* This
         );
 
         /// <summary>Returns the dashes from the object into a user allocated array. The user must call GetDashesCount to retrieve the required size.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetDashes(
+        public delegate void _GetDashes(
             [In] ID2D1StrokeStyle1* This,
             [Out, NativeTypeName("FLOAT[]")] float* dashes,
             [In, NativeTypeName("UINT32")] uint dashesCount
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate D2D1_STROKE_TRANSFORM_TYPE _GetStrokeTransformType(
+        public delegate D2D1_STROKE_TRANSFORM_TYPE _GetStrokeTransformType(
             [In] ID2D1StrokeStyle1* This
         );
 

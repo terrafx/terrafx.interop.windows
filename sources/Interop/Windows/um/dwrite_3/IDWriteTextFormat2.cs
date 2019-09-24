@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDWriteTextFormat2* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,13 +23,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDWriteTextFormat2* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDWriteTextFormat2* This
         );
 
@@ -38,7 +38,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetTextAlignment(
+        public delegate int _SetTextAlignment(
             [In] IDWriteTextFormat2* This,
             [In] DWRITE_TEXT_ALIGNMENT textAlignment
         );
@@ -48,7 +48,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetParagraphAlignment(
+        public delegate int _SetParagraphAlignment(
             [In] IDWriteTextFormat2* This,
             [In] DWRITE_PARAGRAPH_ALIGNMENT paragraphAlignment
         );
@@ -58,7 +58,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetWordWrapping(
+        public delegate int _SetWordWrapping(
             [In] IDWriteTextFormat2* This,
             [In] DWRITE_WORD_WRAPPING wordWrapping
         );
@@ -69,7 +69,7 @@ namespace TerraFX.Interop
         /// <remarks> The flow direction must be perpendicular to the reading direction. Setting both to a vertical direction or both to horizontal yields DWRITE_E_FLOWDIRECTIONCONFLICTS when calling GetMetrics or Draw.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetReadingDirection(
+        public delegate int _SetReadingDirection(
             [In] IDWriteTextFormat2* This,
             [In] DWRITE_READING_DIRECTION readingDirection
         );
@@ -80,7 +80,7 @@ namespace TerraFX.Interop
         /// <remarks> The flow direction must be perpendicular to the reading direction. Setting both to a vertical direction or both to horizontal yields DWRITE_E_FLOWDIRECTIONCONFLICTS when calling GetMetrics or Draw.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetFlowDirection(
+        public delegate int _SetFlowDirection(
             [In] IDWriteTextFormat2* This,
             [In] DWRITE_FLOW_DIRECTION flowDirection
         );
@@ -90,7 +90,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetIncrementalTabStop(
+        public delegate int _SetIncrementalTabStop(
             [In] IDWriteTextFormat2* This,
             [In, NativeTypeName("FLOAT")] float incrementalTabStop
         );
@@ -102,7 +102,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetTrimming(
+        public delegate int _SetTrimming(
             [In] IDWriteTextFormat2* This,
             [In] DWRITE_TRIMMING* trimmingOptions,
             [In] IDWriteInlineObject* trimmingSign = null
@@ -116,7 +116,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetLineSpacing(
+        public delegate int _SetLineSpacing(
             [In] IDWriteTextFormat2* This,
             [In] DWRITE_LINE_SPACING_METHOD lineSpacingMethod,
             [In, NativeTypeName("FLOAT")] float lineSpacing,
@@ -125,38 +125,38 @@ namespace TerraFX.Interop
 
         /// <summary>Get alignment option of text relative to layout box's leading and trailing edge.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate DWRITE_TEXT_ALIGNMENT _GetTextAlignment(
+        public delegate DWRITE_TEXT_ALIGNMENT _GetTextAlignment(
             [In] IDWriteTextFormat2* This
         );
 
         /// <summary>Get alignment option of paragraph relative to layout box's top and bottom edge.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate DWRITE_PARAGRAPH_ALIGNMENT _GetParagraphAlignment(
+        public delegate DWRITE_PARAGRAPH_ALIGNMENT _GetParagraphAlignment(
             [In] IDWriteTextFormat2* This
         );
 
         /// <summary>Get word wrapping option.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate DWRITE_WORD_WRAPPING _GetWordWrapping(
+        public delegate DWRITE_WORD_WRAPPING _GetWordWrapping(
             [In] IDWriteTextFormat2* This
         );
 
         /// <summary>Get paragraph reading direction.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate DWRITE_READING_DIRECTION _GetReadingDirection(
+        public delegate DWRITE_READING_DIRECTION _GetReadingDirection(
             [In] IDWriteTextFormat2* This
         );
 
         /// <summary>Get paragraph flow direction.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate DWRITE_FLOW_DIRECTION _GetFlowDirection(
+        public delegate DWRITE_FLOW_DIRECTION _GetFlowDirection(
             [In] IDWriteTextFormat2* This
         );
 
         /// <summary>Get incremental tab stop position.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public /* static */ delegate float _GetIncrementalTabStop(
+        public delegate float _GetIncrementalTabStop(
             [In] IDWriteTextFormat2* This
         );
 
@@ -166,7 +166,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetTrimming(
+        public delegate int _GetTrimming(
             [In] IDWriteTextFormat2* This,
             [Out] DWRITE_TRIMMING* trimmingOptions,
             [Out] IDWriteInlineObject** trimmingSign
@@ -179,7 +179,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetLineSpacing(
+        public delegate int _GetLineSpacing(
             [In] IDWriteTextFormat2* This,
             [Out] DWRITE_LINE_SPACING_METHOD* lineSpacingMethod,
             [Out, NativeTypeName("FLOAT")] float* lineSpacing,
@@ -191,7 +191,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFontCollection(
+        public delegate int _GetFontCollection(
             [In] IDWriteTextFormat2* This,
             [Out] IDWriteFontCollection** fontCollection
         );
@@ -199,7 +199,7 @@ namespace TerraFX.Interop
         /// <summary>Get the length of the font family name, in characters, not including the terminating NULL character.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetFontFamilyNameLength(
+        public delegate uint _GetFontFamilyNameLength(
             [In] IDWriteTextFormat2* This
         );
 
@@ -209,7 +209,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFontFamilyName(
+        public delegate int _GetFontFamilyName(
             [In] IDWriteTextFormat2* This,
             [Out, NativeTypeName("WCHAR[]")] char* fontFamilyName,
             [In, NativeTypeName("UINT32")] uint nameSize
@@ -217,33 +217,33 @@ namespace TerraFX.Interop
 
         /// <summary>Get the font weight.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate DWRITE_FONT_WEIGHT _GetFontWeight(
+        public delegate DWRITE_FONT_WEIGHT _GetFontWeight(
             [In] IDWriteTextFormat2* This
         );
 
         /// <summary>Get the font style.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate DWRITE_FONT_STYLE _GetFontStyle(
+        public delegate DWRITE_FONT_STYLE _GetFontStyle(
             [In] IDWriteTextFormat2* This
         );
 
         /// <summary>Get the font stretch.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate DWRITE_FONT_STRETCH _GetFontStretch(
+        public delegate DWRITE_FONT_STRETCH _GetFontStretch(
             [In] IDWriteTextFormat2* This
         );
 
         /// <summary>Get the font em height.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public /* static */ delegate float _GetFontSize(
+        public delegate float _GetFontSize(
             [In] IDWriteTextFormat2* This
         );
 
         /// <summary>Get the length of the locale name, in characters, not including the terminating NULL character.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetLocaleNameLength(
+        public delegate uint _GetLocaleNameLength(
             [In] IDWriteTextFormat2* This
         );
 
@@ -253,7 +253,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetLocaleName(
+        public delegate int _GetLocaleName(
             [In] IDWriteTextFormat2* This,
             [Out, NativeTypeName("WCHAR[]")] char* localeName,
             [In, NativeTypeName("UINT32")] uint nameSize
@@ -264,14 +264,14 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetVerticalGlyphOrientation(
+        public delegate int _SetVerticalGlyphOrientation(
             [In] IDWriteTextFormat2* This,
             [In] DWRITE_VERTICAL_GLYPH_ORIENTATION glyphOrientation
         );
 
         /// <summary>Get the preferred orientation of glyphs when using a vertical reading direction.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate DWRITE_VERTICAL_GLYPH_ORIENTATION _GetVerticalGlyphOrientation(
+        public delegate DWRITE_VERTICAL_GLYPH_ORIENTATION _GetVerticalGlyphOrientation(
             [In] IDWriteTextFormat2* This
         );
 
@@ -280,7 +280,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetLastLineWrapping(
+        public delegate int _SetLastLineWrapping(
             [In] IDWriteTextFormat2* This,
             [In, NativeTypeName("BOOL")] int isLastLineWrappingEnabled
         );
@@ -288,7 +288,7 @@ namespace TerraFX.Interop
         /// <summary>Get whether or not the last word on the last line is wrapped.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _GetLastLineWrapping(
+        public delegate int _GetLastLineWrapping(
             [In] IDWriteTextFormat2* This
         );
 
@@ -297,14 +297,14 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetOpticalAlignment(
+        public delegate int _SetOpticalAlignment(
             [In] IDWriteTextFormat2* This,
             [In] DWRITE_OPTICAL_ALIGNMENT opticalAlignment
         );
 
         /// <summary>Get how the glyphs align to the edges the margin.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate DWRITE_OPTICAL_ALIGNMENT _GetOpticalAlignment(
+        public delegate DWRITE_OPTICAL_ALIGNMENT _GetOpticalAlignment(
             [In] IDWriteTextFormat2* This
         );
 
@@ -313,7 +313,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetFontFallback(
+        public delegate int _SetFontFallback(
             [In] IDWriteTextFormat2* This,
             [In] IDWriteFontFallback* fontFallback
         );
@@ -321,7 +321,7 @@ namespace TerraFX.Interop
         /// <summary>Get the current font fallback object.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFontFallback(
+        public delegate int _GetFontFallback(
             [In] IDWriteTextFormat2* This,
             [Out] IDWriteFontFallback** fontFallback
         );
@@ -331,7 +331,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetLineSpacing1(
+        public delegate int _SetLineSpacing1(
             [In] IDWriteTextFormat2* This,
             [In] DWRITE_LINE_SPACING* lineSpacingOptions
         );
@@ -341,7 +341,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetLineSpacing1(
+        public delegate int _GetLineSpacing1(
             [In] IDWriteTextFormat2* This,
             [Out] DWRITE_LINE_SPACING* lineSpacingOptions
         );

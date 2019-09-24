@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID3D12DebugCommandList1* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID3D12DebugCommandList1* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID3D12DebugCommandList1* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _AssertResourceState(
+        public delegate int _AssertResourceState(
             [In] ID3D12DebugCommandList1* This,
             [In] ID3D12Resource* pResource,
             [In, NativeTypeName("UINT")] uint Subresource,
@@ -44,7 +44,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetDebugParameter(
+        public delegate int _SetDebugParameter(
             [In] ID3D12DebugCommandList1* This,
             [In] D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE Type,
             [In] void* pData,
@@ -53,7 +53,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDebugParameter(
+        public delegate int _GetDebugParameter(
             [In] ID3D12DebugCommandList1* This,
             [In] D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE Type,
             [Out] void* pData,

@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDWriteFontFaceReference* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,13 +24,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDWriteFontFaceReference* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDWriteFontFaceReference* This
         );
 
@@ -40,7 +40,7 @@ namespace TerraFX.Interop
         /// <remarks> This function can fail with DWRITE_E_REMOTEFONT if the font is not local.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateFontFace(
+        public delegate int _CreateFontFace(
             [In] IDWriteFontFaceReference* This,
             [Out] IDWriteFontFace3** fontFace
         );
@@ -52,7 +52,7 @@ namespace TerraFX.Interop
         /// <remarks> This function can fail with DWRITE_E_REMOTEFONT if the font is not local.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateFontFaceWithSimulations(
+        public delegate int _CreateFontFaceWithSimulations(
             [In] IDWriteFontFaceReference* This,
             [In] DWRITE_FONT_SIMULATIONS fontFaceSimulationFlags,
             [Out] IDWriteFontFace3** fontFace
@@ -61,7 +61,7 @@ namespace TerraFX.Interop
         /// <summary>Compares two instances of a font face references for equality.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int __Equals(
+        public delegate int __Equals(
             [In] IDWriteFontFaceReference* This,
             [In] IDWriteFontFaceReference* fontFaceReference
         );
@@ -69,20 +69,20 @@ namespace TerraFX.Interop
         /// <summary>Obtains the zero-based index of the font face in its font file or files. If the font files contain a single face, the return value is zero.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetFontFaceIndex(
+        public delegate uint _GetFontFaceIndex(
             [In] IDWriteFontFaceReference* This
         );
 
         /// <summary>Obtains the algorithmic style simulation flags of a font face.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate DWRITE_FONT_SIMULATIONS _GetSimulations(
+        public delegate DWRITE_FONT_SIMULATIONS _GetSimulations(
             [In] IDWriteFontFaceReference* This
         );
 
         /// <summary>Obtains the font file representing a font face.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFontFile(
+        public delegate int _GetFontFile(
             [In] IDWriteFontFaceReference* This,
             [Out] IDWriteFontFile** fontFile
         );
@@ -91,7 +91,7 @@ namespace TerraFX.Interop
         /// <remarks> The value returned by GetLocalFileSize will always be less than or equal to the value returned by GetFullSize. If the locality is remote, the GetLocalFileSize value is zero. If the locality is local, this value will equal the value returned by GetFileSize. If the locality is partial, this value will equal the size of the portions of the font data that have been downloaded, which will be greater than zero and less than or equal to the GetFileSize value.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
-        public /* static */ delegate ulong _GetLocalFileSize(
+        public delegate ulong _GetLocalFileSize(
             [In] IDWriteFontFaceReference* This
         );
 
@@ -99,7 +99,7 @@ namespace TerraFX.Interop
         /// <remarks> If the locality is remote, this value is unknown and will be zero. If the locality is partial or local, the value is the full size of the font face.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
-        public /* static */ delegate ulong _GetFileSize(
+        public delegate ulong _GetFileSize(
             [In] IDWriteFontFaceReference* This
         );
 
@@ -107,14 +107,14 @@ namespace TerraFX.Interop
         /// <remarks> The time may be zero if the font file loader does not expose file time.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFileTime(
+        public delegate int _GetFileTime(
             [In] IDWriteFontFaceReference* This,
             [Out] FILETIME* lastWriteTime
         );
 
         /// <summary>Get the locality of this font face reference. You can always successfully create a font face from a fully local font. Attempting to create a font face on a remote or partially local font may fail with DWRITE_E_REMOTEFONT. This function may change between calls depending on background downloads and whether cached data expires.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate DWRITE_LOCALITY _GetLocality(
+        public delegate DWRITE_LOCALITY _GetLocality(
             [In] IDWriteFontFaceReference* This
         );
 
@@ -122,7 +122,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _EnqueueFontDownloadRequest(
+        public delegate int _EnqueueFontDownloadRequest(
             [In] IDWriteFontFaceReference* This
         );
 
@@ -133,7 +133,7 @@ namespace TerraFX.Interop
         /// <remarks> Downloading a character involves downloading every glyph it depends on directly or indirectly, via font tables (cmap, GSUB, COLR, glyf).</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _EnqueueCharacterDownloadRequest(
+        public delegate int _EnqueueCharacterDownloadRequest(
             [In] IDWriteFontFaceReference* This,
             [In, NativeTypeName("WCHAR[]")] char* characters,
             [In, NativeTypeName("UINT32")] uint characterCount
@@ -146,7 +146,7 @@ namespace TerraFX.Interop
         /// <remarks> Downloading a glyph involves downloading any other glyphs it depends on from the font tables (GSUB, COLR, glyf).</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _EnqueueGlyphDownloadRequest(
+        public delegate int _EnqueueGlyphDownloadRequest(
             [In] IDWriteFontFaceReference* This,
             [In, NativeTypeName("UINT16[]")] ushort* glyphIndices,
             [In, NativeTypeName("UINT32")] uint glyphCount
@@ -158,7 +158,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _EnqueueFileFragmentDownloadRequest(
+        public delegate int _EnqueueFileFragmentDownloadRequest(
             [In] IDWriteFontFaceReference* This,
             [In, NativeTypeName("UINT64")] ulong fileOffset,
             [In, NativeTypeName("UINT64")] ulong fragmentSize

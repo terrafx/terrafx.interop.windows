@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID2D1ImageSourceFromWic* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,52 +24,52 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID2D1ImageSourceFromWic* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID2D1ImageSourceFromWic* This
         );
 
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetFactory(
+        public delegate void _GetFactory(
             [In] ID2D1ImageSourceFromWic* This,
             [Out] ID2D1Factory** factory
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _OfferResources(
+        public delegate int _OfferResources(
             [In] ID2D1ImageSourceFromWic* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _TryReclaimResources(
+        public delegate int _TryReclaimResources(
             [In] ID2D1ImageSourceFromWic* This,
             [Out, NativeTypeName("BOOL")] int* resourcesDiscarded
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _EnsureCached(
+        public delegate int _EnsureCached(
             [In] ID2D1ImageSourceFromWic* This,
             [In, NativeTypeName("D2D1_RECT_U")] D2D_RECT_U* rectangleToFill = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _TrimCache(
+        public delegate int _TrimCache(
             [In] ID2D1ImageSourceFromWic* This,
             [In, NativeTypeName("D2D1_RECT_U")] D2D_RECT_U* rectangleToPreserve = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetSource(
+        public delegate void _GetSource(
             [In] ID2D1ImageSourceFromWic* This,
             [Out] IWICBitmapSource** wicBitmapSource
         );

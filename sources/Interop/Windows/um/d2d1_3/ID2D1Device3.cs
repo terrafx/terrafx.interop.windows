@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID2D1Device3* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID2D1Device3* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID2D1Device3* This
         );
 
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetFactory(
+        public delegate void _GetFactory(
             [In] ID2D1Device3* This,
             [Out] ID2D1Factory** factory
         );
@@ -43,7 +43,7 @@ namespace TerraFX.Interop
         /// <summary>Creates a new device context with no initially assigned target.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateDeviceContext(
+        public delegate int _CreateDeviceContext(
             [In] ID2D1Device3* This,
             [In] D2D1_DEVICE_CONTEXT_OPTIONS options,
             [Out] ID2D1DeviceContext** deviceContext
@@ -52,7 +52,7 @@ namespace TerraFX.Interop
         /// <summary>Creates a D2D print control.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreatePrintControl(
+        public delegate int _CreatePrintControl(
             [In] ID2D1Device3* This,
             [In] IWICImagingFactory* wicFactory,
             [In] IPrintDocumentPackageTarget* documentTarget,
@@ -62,7 +62,7 @@ namespace TerraFX.Interop
 
         /// <summary>Sets the maximum amount of texture memory to maintain before evicting caches.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetMaximumTextureMemory(
+        public delegate void _SetMaximumTextureMemory(
             [In] ID2D1Device3* This,
             [In, NativeTypeName("UINT64")] ulong maximumInBytes
         );
@@ -70,26 +70,26 @@ namespace TerraFX.Interop
         /// <summary>Gets the maximum amount of texture memory to maintain before evicting caches.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
-        public /* static */ delegate ulong _GetMaximumTextureMemory(
+        public delegate ulong _GetMaximumTextureMemory(
             [In] ID2D1Device3* This
         );
 
         /// <summary>Clears all resources that are cached but not held in use by the application through an interface reference.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _ClearResources(
+        public delegate void _ClearResources(
             [In] ID2D1Device3* This,
             [In, NativeTypeName("UINT32")] uint millisecondsSinceUse = 0
         );
 
         /// <summary>Retrieves the rendering priority currently set on the device.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate D2D1_RENDERING_PRIORITY _GetRenderingPriority(
+        public delegate D2D1_RENDERING_PRIORITY _GetRenderingPriority(
             [In] ID2D1Device3* This
         );
 
         /// <summary>Sets the rendering priority of the device.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetRenderingPriority(
+        public delegate void _SetRenderingPriority(
             [In] ID2D1Device3* This,
             [In] D2D1_RENDERING_PRIORITY renderingPriority
         );
@@ -97,7 +97,7 @@ namespace TerraFX.Interop
         /// <summary>Creates a new device context with no initially assigned target.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateDeviceContext1(
+        public delegate int _CreateDeviceContext1(
             [In] ID2D1Device3* This,
             [In] D2D1_DEVICE_CONTEXT_OPTIONS options,
             [Out] ID2D1DeviceContext1** deviceContext1
@@ -106,7 +106,7 @@ namespace TerraFX.Interop
         /// <summary>Creates a new device context with no initially assigned target.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateDeviceContext2(
+        public delegate int _CreateDeviceContext2(
             [In] ID2D1Device3* This,
             [In] D2D1_DEVICE_CONTEXT_OPTIONS options,
             [Out] ID2D1DeviceContext2** deviceContext2
@@ -114,7 +114,7 @@ namespace TerraFX.Interop
 
         /// <summary>Flush all device contexts that reference a given bitmap.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _FlushDeviceContexts(
+        public delegate void _FlushDeviceContexts(
             [In] ID2D1Device3* This,
             [In] ID2D1Bitmap* bitmap
         );
@@ -122,7 +122,7 @@ namespace TerraFX.Interop
         /// <summary>Returns the DXGI device associated with this D2D device.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDxgiDevice(
+        public delegate int _GetDxgiDevice(
             [In] ID2D1Device3* This,
             [Out] IDXGIDevice** dxgiDevice
         );
@@ -130,7 +130,7 @@ namespace TerraFX.Interop
         /// <summary>Creates a new device context with no initially assigned target.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateDeviceContext3(
+        public delegate int _CreateDeviceContext3(
             [In] ID2D1Device3* This,
             [In] D2D1_DEVICE_CONTEXT_OPTIONS options,
             [Out] ID2D1DeviceContext3** deviceContext3

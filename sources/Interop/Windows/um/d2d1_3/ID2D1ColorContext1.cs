@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID2D1ColorContext1* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,40 +24,40 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID2D1ColorContext1* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID2D1ColorContext1* This
         );
 
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetFactory(
+        public delegate void _GetFactory(
             [In] ID2D1ColorContext1* This,
             [Out] ID2D1Factory** factory
         );
 
         /// <summary>Retrieves the color space of the color context.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate D2D1_COLOR_SPACE _GetColorSpace(
+        public delegate D2D1_COLOR_SPACE _GetColorSpace(
             [In] ID2D1ColorContext1* This
         );
 
         /// <summary>Retrieves the size of the color profile, in bytes.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetProfileSize(
+        public delegate uint _GetProfileSize(
             [In] ID2D1ColorContext1* This
         );
 
         /// <summary>Retrieves the color profile bytes.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetProfile(
+        public delegate int _GetProfile(
             [In] ID2D1ColorContext1* This,
             [Out, NativeTypeName("BYTE[]")] byte* profile,
             [In, NativeTypeName("UINT32")] uint profileSize
@@ -65,20 +65,20 @@ namespace TerraFX.Interop
 
         /// <summary>Retrieves the color context type.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate D2D1_COLOR_CONTEXT_TYPE _GetColorContextType(
+        public delegate D2D1_COLOR_CONTEXT_TYPE _GetColorContextType(
             [In] ID2D1ColorContext1* This
         );
 
         /// <summary>Retrieves the DXGI color space of this context. Returns DXGI_COLOR_SPACE_CUSTOM when color context type is ICC.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate DXGI_COLOR_SPACE_TYPE _GetDXGIColorSpace(
+        public delegate DXGI_COLOR_SPACE_TYPE _GetDXGIColorSpace(
             [In] ID2D1ColorContext1* This
         );
 
         /// <summary>Retrieves a set simple color profile.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSimpleColorProfile(
+        public delegate int _GetSimpleColorProfile(
             [In] ID2D1ColorContext1* This,
             [Out] D2D1_SIMPLE_COLOR_PROFILE* simpleProfile
         );

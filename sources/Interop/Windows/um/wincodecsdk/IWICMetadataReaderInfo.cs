@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IWICMetadataReaderInfo* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,40 +23,40 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IWICMetadataReaderInfo* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IWICMetadataReaderInfo* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetComponentType(
+        public delegate int _GetComponentType(
             [In] IWICMetadataReaderInfo* This,
             [Out] WICComponentType* pType
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetCLSID(
+        public delegate int _GetCLSID(
             [In] IWICMetadataReaderInfo* This,
             [Out, NativeTypeName("CLSID")] Guid* pclsid
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSigningStatus(
+        public delegate int _GetSigningStatus(
             [In] IWICMetadataReaderInfo* This,
             [Out, NativeTypeName("DWORD")] uint* pStatus
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetAuthor(
+        public delegate int _GetAuthor(
             [In] IWICMetadataReaderInfo* This,
             [In, NativeTypeName("UINT")] uint cchAuthor,
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzAuthor,
@@ -65,14 +65,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetVendorGUID(
+        public delegate int _GetVendorGUID(
             [In] IWICMetadataReaderInfo* This,
             [Out, NativeTypeName("GUID")] Guid* pguidVendor
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetVersion(
+        public delegate int _GetVersion(
             [In] IWICMetadataReaderInfo* This,
             [In, NativeTypeName("UINT")] uint cchVersion,
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzVersion,
@@ -81,7 +81,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSpecVersion(
+        public delegate int _GetSpecVersion(
             [In] IWICMetadataReaderInfo* This,
             [In, NativeTypeName("UINT")] uint cchSpecVersion,
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzSpecVersion,
@@ -90,7 +90,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFriendlyName(
+        public delegate int _GetFriendlyName(
             [In] IWICMetadataReaderInfo* This,
             [In, NativeTypeName("UINT")] uint cchFriendlyName,
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzFriendlyName,
@@ -99,14 +99,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetMetadataFormat(
+        public delegate int _GetMetadataFormat(
             [In] IWICMetadataReaderInfo* This,
             [Out, NativeTypeName("GUID")] Guid* pguidMetadataFormat
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetContainerFormats(
+        public delegate int _GetContainerFormats(
             [In] IWICMetadataReaderInfo* This,
             [In, NativeTypeName("UINT")] uint cContainerFormats,
             [In, Out, Optional, NativeTypeName("GUID[]")] Guid* pguidContainerFormats,
@@ -115,7 +115,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDeviceManufacturer(
+        public delegate int _GetDeviceManufacturer(
             [In] IWICMetadataReaderInfo* This,
             [In, NativeTypeName("UINT")] uint cchDeviceManufacturer,
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzDeviceManufacturer,
@@ -124,7 +124,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDeviceModels(
+        public delegate int _GetDeviceModels(
             [In] IWICMetadataReaderInfo* This,
             [In, NativeTypeName("UINT")] uint cchDeviceModels,
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzDeviceModels,
@@ -133,28 +133,28 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DoesRequireFullStream(
+        public delegate int _DoesRequireFullStream(
             [In] IWICMetadataReaderInfo* This,
             [Out, NativeTypeName("BOOL")] int* pfRequiresFullStream
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DoesSupportPadding(
+        public delegate int _DoesSupportPadding(
             [In] IWICMetadataReaderInfo* This,
             [Out, NativeTypeName("BOOL")] int* pfSupportsPadding
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DoesRequireFixedSize(
+        public delegate int _DoesRequireFixedSize(
             [In] IWICMetadataReaderInfo* This,
             [Out, NativeTypeName("BOOL")] int* pfFixedSize
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPatterns(
+        public delegate int _GetPatterns(
             [In] IWICMetadataReaderInfo* This,
             [In, NativeTypeName("REFGUID")] Guid* guidContainerFormat,
             [In, NativeTypeName("UINT")] uint cbSize,
@@ -165,7 +165,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _MatchesPattern(
+        public delegate int _MatchesPattern(
             [In] IWICMetadataReaderInfo* This,
             [In, NativeTypeName("REFGUID")] Guid* guidContainerFormat,
             [In, Optional] IStream* pIStream,
@@ -174,7 +174,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateInstance(
+        public delegate int _CreateInstance(
             [In] IWICMetadataReaderInfo* This,
             [Out] IWICMetadataReader** ppIReader = null
         );

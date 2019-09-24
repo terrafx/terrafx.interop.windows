@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IWICPersistStream* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,39 +23,39 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IWICPersistStream* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IWICPersistStream* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetClassID(
+        public delegate int _GetClassID(
             [In] IWICPersistStream* This,
             [Out, NativeTypeName("CLSID")] Guid* pClassID
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _IsDirty(
+        public delegate int _IsDirty(
             [In] IWICPersistStream* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Load(
+        public delegate int _Load(
             [In] IWICPersistStream* This,
             [In] IStream* pStm = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Save(
+        public delegate int _Save(
             [In] IWICPersistStream* This,
             [In, Optional] IStream* pStm,
             [In, NativeTypeName("BOOL")] int fClearDirty
@@ -63,14 +63,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSizeMax(
+        public delegate int _GetSizeMax(
             [In] IWICPersistStream* This,
             [Out] ULARGE_INTEGER* pcbSize
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _LoadEx(
+        public delegate int _LoadEx(
             [In] IWICPersistStream* This,
             [In, Optional] IStream* pIStream,
             [In, Optional, NativeTypeName("GUID")] Guid* pguidPreferredVendor,
@@ -79,7 +79,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SaveEx(
+        public delegate int _SaveEx(
             [In] IWICPersistStream* This,
             [In, Optional] IStream* pIStream,
             [In, NativeTypeName("DWORD")] uint dwPersistOptions,

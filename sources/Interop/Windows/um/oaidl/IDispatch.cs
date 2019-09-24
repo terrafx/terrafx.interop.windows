@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDispatch* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,26 +23,26 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDispatch* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDispatch* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetTypeInfoCount(
+        public delegate int _GetTypeInfoCount(
             [In] IDispatch* This,
             [Out, NativeTypeName("UINT")] uint* pctinfo
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetTypeInfo(
+        public delegate int _GetTypeInfo(
             [In] IDispatch* This,
             [In, NativeTypeName("UINT")] uint iTInfo,
             [In, NativeTypeName("LCID")] uint lcid,
@@ -51,7 +51,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetIDsOfNames(
+        public delegate int _GetIDsOfNames(
             [In] IDispatch* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [In, NativeTypeName("LPOLESTR[]")] char** rgszNames,
@@ -62,7 +62,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Invoke(
+        public delegate int _Invoke(
             [In] IDispatch* This,
             [In, NativeTypeName("DISPID")] int dispIdMember,
             [In, NativeTypeName("REFIID")] Guid* riid,

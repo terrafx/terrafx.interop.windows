@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IWICBitmapLock* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IWICBitmapLock* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IWICBitmapLock* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSize(
+        public delegate int _GetSize(
             [In] IWICBitmapLock* This,
             [Out, NativeTypeName("UINT")] uint* puiWidth,
             [Out, NativeTypeName("UINT")] uint* puiHeight
@@ -43,14 +43,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetStride(
+        public delegate int _GetStride(
             [In] IWICBitmapLock* This,
             [Out, NativeTypeName("UINT")] uint* pcbStride
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDataPointer(
+        public delegate int _GetDataPointer(
             [In] IWICBitmapLock* This,
             [Out, NativeTypeName("UINT")] uint* pcbBufferSize,
             [Out, NativeTypeName("WICInProcPointer[]")] byte** ppbData = null
@@ -58,7 +58,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPixelFormat(
+        public delegate int _GetPixelFormat(
             [In] IWICBitmapLock* This,
             [Out, NativeTypeName("WICPixelFormatGUID")] Guid* pPixelFormat
         );

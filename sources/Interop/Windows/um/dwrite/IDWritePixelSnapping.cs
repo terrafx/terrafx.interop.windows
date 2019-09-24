@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDWritePixelSnapping* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,13 +24,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDWritePixelSnapping* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDWritePixelSnapping* This
         );
 
@@ -40,7 +40,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _IsPixelSnappingDisabled(
+        public delegate int _IsPixelSnappingDisabled(
             [In] IDWritePixelSnapping* This,
             [In, Optional] void* clientDrawingContext,
             [Out, NativeTypeName("BOOL")] int* isDisabled
@@ -52,7 +52,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetCurrentTransform(
+        public delegate int _GetCurrentTransform(
             [In] IDWritePixelSnapping* This,
             [In, Optional] void* clientDrawingContext,
             [Out] DWRITE_MATRIX* transform
@@ -64,7 +64,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPixelsPerDip(
+        public delegate int _GetPixelsPerDip(
             [In] IDWritePixelSnapping* This,
             [In, Optional] void* clientDrawingContext,
             [Out, NativeTypeName("FLOAT")] float* pixelsPerDip

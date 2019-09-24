@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDXGIDevice3* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDXGIDevice3* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDXGIDevice3* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrivateData(
+        public delegate int _SetPrivateData(
             [In] IDXGIDevice3* This,
             [In, NativeTypeName("REFGUID")] Guid* Name,
             [In, NativeTypeName("UINT")] uint DataSize,
@@ -44,7 +44,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrivateDataInterface(
+        public delegate int _SetPrivateDataInterface(
             [In] IDXGIDevice3* This,
             [In, NativeTypeName("REFGUID")] Guid* Name,
             [In] IUnknown* pUnknown = null
@@ -52,7 +52,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPrivateData(
+        public delegate int _GetPrivateData(
             [In] IDXGIDevice3* This,
             [In, NativeTypeName("REFGUID")] Guid* Name,
             [In, Out, NativeTypeName("UINT")] uint* pDataSize,
@@ -61,7 +61,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetParent(
+        public delegate int _GetParent(
             [In] IDXGIDevice3* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppParent
@@ -69,14 +69,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetAdapter(
+        public delegate int _GetAdapter(
             [In] IDXGIDevice3* This,
             [Out] IDXGIAdapter** pAdapter
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateSurface(
+        public delegate int _CreateSurface(
             [In] IDXGIDevice3* This,
             [In] DXGI_SURFACE_DESC* pDesc,
             [In, NativeTypeName("UINT")] uint NumSurfaces,
@@ -87,7 +87,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryResourceResidency(
+        public delegate int _QueryResourceResidency(
             [In] IDXGIDevice3* This,
             [In, NativeTypeName("IUnknown*[]")] IUnknown** ppResources,
             [Out, NativeTypeName("DXGI_RESIDENCY[]")] DXGI_RESIDENCY* pResidencyStatus,
@@ -96,35 +96,35 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetGPUThreadPriority(
+        public delegate int _SetGPUThreadPriority(
             [In] IDXGIDevice3* This,
             [In, NativeTypeName("INT")] int Priority
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetGPUThreadPriority(
+        public delegate int _GetGPUThreadPriority(
             [In] IDXGIDevice3* This,
             [Out, NativeTypeName("INT")] int* pPriority
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetMaximumFrameLatency(
+        public delegate int _SetMaximumFrameLatency(
             [In] IDXGIDevice3* This,
             [In, NativeTypeName("UINT")] uint MaxLatency
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetMaximumFrameLatency(
+        public delegate int _GetMaximumFrameLatency(
             [In] IDXGIDevice3* This,
             [Out, NativeTypeName("UINT")] uint* pMaxLatency
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _OfferResources(
+        public delegate int _OfferResources(
             [In] IDXGIDevice3* This,
             [In, NativeTypeName("UINT")] uint NumResources,
             [In, NativeTypeName("IDXGIResource*[]")] IDXGIResource** ppResources,
@@ -133,7 +133,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _ReclaimResources(
+        public delegate int _ReclaimResources(
             [In] IDXGIDevice3* This,
             [In, NativeTypeName("UINT")] uint NumResources,
             [In, NativeTypeName("IDXGIResource*[]")] IDXGIResource** ppResources,
@@ -142,13 +142,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _EnqueueSetEvent(
+        public delegate int _EnqueueSetEvent(
             [In] IDXGIDevice3* This,
             [In, NativeTypeName("HANDLE")] IntPtr hEvent
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _Trim(
+        public delegate void _Trim(
             [In] IDXGIDevice3* This
         );
 

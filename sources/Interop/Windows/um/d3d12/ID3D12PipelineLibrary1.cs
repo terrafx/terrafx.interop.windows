@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID3D12PipelineLibrary1* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID3D12PipelineLibrary1* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID3D12PipelineLibrary1* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPrivateData(
+        public delegate int _GetPrivateData(
             [In] ID3D12PipelineLibrary1* This,
             [In, NativeTypeName("REFGUID")] Guid* guid,
             [In, Out, NativeTypeName("UINT")] uint* pDataSize,
@@ -44,7 +44,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrivateData(
+        public delegate int _SetPrivateData(
             [In] ID3D12PipelineLibrary1* This,
             [In, NativeTypeName("REFGUID")] Guid* guid,
             [In, NativeTypeName("UINT")] uint DataSize,
@@ -53,7 +53,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrivateDataInterface(
+        public delegate int _SetPrivateDataInterface(
             [In] ID3D12PipelineLibrary1* This,
             [In, NativeTypeName("REFGUID")] Guid* guid,
             [In] IUnknown* pData = null
@@ -61,14 +61,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetName(
+        public delegate int _SetName(
             [In] ID3D12PipelineLibrary1* This,
             [In, NativeTypeName("LPCWSTR")] char* Name
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDevice(
+        public delegate int _GetDevice(
             [In] ID3D12PipelineLibrary1* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvDevice = null
@@ -76,7 +76,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _StorePipeline(
+        public delegate int _StorePipeline(
             [In] ID3D12PipelineLibrary1* This,
             [In, Optional, NativeTypeName("LPCWSTR")] char* pName,
             [In] ID3D12PipelineState* pPipeline
@@ -84,7 +84,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _LoadGraphicsPipeline(
+        public delegate int _LoadGraphicsPipeline(
             [In] ID3D12PipelineLibrary1* This,
             [In, NativeTypeName("LPCWSTR")] char* pName,
             [In] D3D12_GRAPHICS_PIPELINE_STATE_DESC* pDesc,
@@ -94,7 +94,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _LoadComputePipeline(
+        public delegate int _LoadComputePipeline(
             [In] ID3D12PipelineLibrary1* This,
             [In, NativeTypeName("LPCWSTR")] char* pName,
             [In] D3D12_COMPUTE_PIPELINE_STATE_DESC* pDesc,
@@ -104,13 +104,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("SIZE_T")]
-        public /* static */ delegate UIntPtr _GetSerializedSize(
+        public delegate UIntPtr _GetSerializedSize(
             [In] ID3D12PipelineLibrary1* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Serialize(
+        public delegate int _Serialize(
             [In] ID3D12PipelineLibrary1* This,
             [Out] void* pData,
             [In, NativeTypeName("SIZE_T")] UIntPtr DataSizeInBytes
@@ -118,7 +118,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _LoadPipeline(
+        public delegate int _LoadPipeline(
             [In] ID3D12PipelineLibrary1* This,
             [In, NativeTypeName("LPCWSTR")] char* pName,
             [In] D3D12_PIPELINE_STATE_STREAM_DESC* pDesc,

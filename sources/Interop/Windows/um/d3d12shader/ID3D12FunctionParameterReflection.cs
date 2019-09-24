@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDesc(
+        public delegate int _GetDesc(
             [In] ID3D12FunctionParameterReflection* This,
             [Out] D3D12_PARAMETER_DESC* pDesc
         );

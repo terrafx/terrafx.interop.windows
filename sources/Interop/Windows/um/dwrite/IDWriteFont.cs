@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDWriteFont* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,13 +24,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDWriteFont* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDWriteFont* This
         );
 
@@ -39,33 +39,33 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFontFamily(
+        public delegate int _GetFontFamily(
             [In] IDWriteFont* This,
             [Out] IDWriteFontFamily** fontFamily
         );
 
         /// <summary>Gets the weight of the specified font.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate DWRITE_FONT_WEIGHT _GetWeight(
+        public delegate DWRITE_FONT_WEIGHT _GetWeight(
             [In] IDWriteFont* This
         );
 
         /// <summary>Gets the stretch (aka. width) of the specified font.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate DWRITE_FONT_STRETCH _GetStretch(
+        public delegate DWRITE_FONT_STRETCH _GetStretch(
             [In] IDWriteFont* This
         );
 
         /// <summary>Gets the style (aka. slope) of the specified font.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate DWRITE_FONT_STYLE _GetStyle(
+        public delegate DWRITE_FONT_STYLE _GetStyle(
             [In] IDWriteFont* This
         );
 
         /// <summary>Returns TRUE if the font is a symbol font or FALSE if not.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _IsSymbolFont(
+        public delegate int _IsSymbolFont(
             [In] IDWriteFont* This
         );
 
@@ -74,7 +74,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFaceNames(
+        public delegate int _GetFaceNames(
             [In] IDWriteFont* This,
             [Out] IDWriteLocalizedStrings** names
         );
@@ -86,7 +86,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code. If the font does not contain the specified string, the return value is S_OK but informationalStrings receives a NULL pointer and exists receives the value FALSE.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetInformationalStrings(
+        public delegate int _GetInformationalStrings(
             [In] IDWriteFont* This,
             [In] DWRITE_INFORMATIONAL_STRING_ID informationalStringID,
             [Out] IDWriteLocalizedStrings** informationalStrings,
@@ -95,14 +95,14 @@ namespace TerraFX.Interop
 
         /// <summary>Gets a value that indicates what simulation are applied to the specified font.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate DWRITE_FONT_SIMULATIONS _GetSimulations(
+        public delegate DWRITE_FONT_SIMULATIONS _GetSimulations(
             [In] IDWriteFont* This
         );
 
         /// <summary>Gets the metrics for the font.</summary>
         /// <param name="fontMetrics">Receives the font metrics.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetMetrics(
+        public delegate void _GetMetrics(
             [In] IDWriteFont* This,
             [Out] DWRITE_FONT_METRICS* fontMetrics
         );
@@ -113,7 +113,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _HasCharacter(
+        public delegate int _HasCharacter(
             [In] IDWriteFont* This,
             [In, NativeTypeName("UINT32")] uint unicodeValue,
             [Out, NativeTypeName("BOOL")] int* exists
@@ -124,7 +124,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateFontFace(
+        public delegate int _CreateFontFace(
             [In] IDWriteFont* This,
             [Out] IDWriteFontFace** fontFace
         );

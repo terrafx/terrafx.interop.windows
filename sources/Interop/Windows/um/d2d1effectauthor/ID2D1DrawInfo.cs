@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID2D1DrawInfo* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -25,20 +25,20 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID2D1DrawInfo* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID2D1DrawInfo* This
         );
 
         /// <summary>Sets options for sampling the specified image input</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetInputDescription(
+        public delegate int _SetInputDescription(
             [In] ID2D1DrawInfo* This,
             [In, NativeTypeName("UINT32")] uint inputIndex,
             [In] D2D1_INPUT_DESCRIPTION inputDescription
@@ -47,7 +47,7 @@ namespace TerraFX.Interop
         /// <summary>Controls the output precision and channel-depth for the associated transform.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetOutputBuffer(
+        public delegate int _SetOutputBuffer(
             [In] ID2D1DrawInfo* This,
             [In] D2D1_BUFFER_PRECISION bufferPrecision,
             [In] D2D1_CHANNEL_DEPTH channelDepth
@@ -55,14 +55,14 @@ namespace TerraFX.Interop
 
         /// <summary>Controls whether the output of the associated transform is cached.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetCached(
+        public delegate void _SetCached(
             [In] ID2D1DrawInfo* This,
             [In, NativeTypeName("BOOL")] int isCached
         );
 
         /// <summary>Provides a hint of the approximate shader instruction count per pixel.  If provided, it may improve performance when processing large images.  Instructions should be counted multiple times if occurring within loops.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetInstructionCountHint(
+        public delegate void _SetInstructionCountHint(
             [In] ID2D1DrawInfo* This,
             [In, NativeTypeName("UINT32")] uint instructionCount
         );
@@ -70,7 +70,7 @@ namespace TerraFX.Interop
         /// <summary>Set the constant buffer for this transform's pixel shader.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPixelShaderConstantBuffer(
+        public delegate int _SetPixelShaderConstantBuffer(
             [In] ID2D1DrawInfo* This,
             [In, NativeTypeName("BYTE[]")] byte* buffer,
             [In, NativeTypeName("UINT32")] uint bufferCount
@@ -79,7 +79,7 @@ namespace TerraFX.Interop
         /// <summary>Sets the resource texture corresponding to the given shader texture index.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetResourceTexture(
+        public delegate int _SetResourceTexture(
             [In] ID2D1DrawInfo* This,
             [In, NativeTypeName("UINT32")] uint textureIndex,
             [In] ID2D1ResourceTexture* resourceTexture
@@ -88,7 +88,7 @@ namespace TerraFX.Interop
         /// <summary>Set the constant buffer for this transform's vertex shader.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetVertexShaderConstantBuffer(
+        public delegate int _SetVertexShaderConstantBuffer(
             [In] ID2D1DrawInfo* This,
             [In, NativeTypeName("BYTE[]")] byte* buffer,
             [In, NativeTypeName("UINT32")] uint bufferCount
@@ -97,7 +97,7 @@ namespace TerraFX.Interop
         /// <summary>Set the shader instructions for this transform.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPixelShader(
+        public delegate int _SetPixelShader(
             [In] ID2D1DrawInfo* This,
             [In, NativeTypeName("REFGUID")] Guid* shaderId,
             [In] D2D1_PIXEL_OPTIONS pixelOptions = D2D1_PIXEL_OPTIONS_NONE
@@ -106,7 +106,7 @@ namespace TerraFX.Interop
         /// <summary>Set custom vertices for the associated transform.  A blend mode if foreground-over will be used if blendDescription is NULL.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetVertexProcessing(
+        public delegate int _SetVertexProcessing(
             [In] ID2D1DrawInfo* This,
             [In, Optional] ID2D1VertexBuffer* vertexBuffer,
             [In] D2D1_VERTEX_OPTIONS vertexOptions,

@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IPropertyBag2* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IPropertyBag2* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IPropertyBag2* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Read(
+        public delegate int _Read(
             [In] IPropertyBag2* This,
             [In, NativeTypeName("ULONG")] uint cProperties,
             [In, NativeTypeName("PROPBAG2[]")] PROPBAG2* pPropBag,
@@ -46,7 +46,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Write(
+        public delegate int _Write(
             [In] IPropertyBag2* This,
             [In, NativeTypeName("ULONG")] uint cProperties,
             [In, NativeTypeName("PROPBAG2[]")] PROPBAG2* pPropBag,
@@ -55,14 +55,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CountProperties(
+        public delegate int _CountProperties(
             [In] IPropertyBag2* This,
             [Out, NativeTypeName("ULONG")] uint* pcProperties
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPropertyInfo(
+        public delegate int _GetPropertyInfo(
             [In] IPropertyBag2* This,
             [In, NativeTypeName("ULONG")] uint iProperty,
             [In, NativeTypeName("ULONG")] uint cProperties,
@@ -72,7 +72,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _LoadObject(
+        public delegate int _LoadObject(
             [In] IPropertyBag2* This,
             [In, NativeTypeName("LPCOLESTR")] char* pstrName,
             [In, NativeTypeName("DWORD")] uint dwHint,

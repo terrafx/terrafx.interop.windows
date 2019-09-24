@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IWICBitmapDecoderInfo* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,40 +23,40 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IWICBitmapDecoderInfo* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IWICBitmapDecoderInfo* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetComponentType(
+        public delegate int _GetComponentType(
             [In] IWICBitmapDecoderInfo* This,
             [Out] WICComponentType* pType
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetCLSID(
+        public delegate int _GetCLSID(
             [In] IWICBitmapDecoderInfo* This,
             [Out, NativeTypeName("CLSID")] Guid* pclsid
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSigningStatus(
+        public delegate int _GetSigningStatus(
             [In] IWICBitmapDecoderInfo* This,
             [Out, NativeTypeName("DWORD")] uint* pStatus
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetAuthor(
+        public delegate int _GetAuthor(
             [In] IWICBitmapDecoderInfo* This,
             [In, NativeTypeName("UINT")] uint cchAuthor,
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzAuthor,
@@ -65,14 +65,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetVendorGUID(
+        public delegate int _GetVendorGUID(
             [In] IWICBitmapDecoderInfo* This,
             [Out, NativeTypeName("GUID")] Guid* pguidVendor
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetVersion(
+        public delegate int _GetVersion(
             [In] IWICBitmapDecoderInfo* This,
             [In, NativeTypeName("UINT")] uint cchVersion,
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzVersion,
@@ -81,7 +81,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSpecVersion(
+        public delegate int _GetSpecVersion(
             [In] IWICBitmapDecoderInfo* This,
             [In, NativeTypeName("UINT")] uint cchSpecVersion,
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzSpecVersion,
@@ -90,7 +90,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFriendlyName(
+        public delegate int _GetFriendlyName(
             [In] IWICBitmapDecoderInfo* This,
             [In, NativeTypeName("UINT")] uint cchFriendlyName,
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzFriendlyName,
@@ -99,14 +99,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetContainerFormat(
+        public delegate int _GetContainerFormat(
             [In] IWICBitmapDecoderInfo* This,
             [Out, NativeTypeName("GUID")] Guid* pguidContainerFormat
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPixelFormats(
+        public delegate int _GetPixelFormats(
             [In] IWICBitmapDecoderInfo* This,
             [In, NativeTypeName("UINT")] uint cFormats,
             [In, Out, Optional, NativeTypeName("GUID[]")] Guid* pguidPixelFormats,
@@ -115,7 +115,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetColorManagementVersion(
+        public delegate int _GetColorManagementVersion(
             [In] IWICBitmapDecoderInfo* This,
             [In, NativeTypeName("UINT")] uint cchColorManagementVersion,
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzColorManagementVersion,
@@ -124,7 +124,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDeviceManufacturer(
+        public delegate int _GetDeviceManufacturer(
             [In] IWICBitmapDecoderInfo* This,
             [In, NativeTypeName("UINT")] uint cchDeviceManufacturer,
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzDeviceManufacturer,
@@ -133,7 +133,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDeviceModels(
+        public delegate int _GetDeviceModels(
             [In] IWICBitmapDecoderInfo* This,
             [In, NativeTypeName("UINT")] uint cchDeviceModels,
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzDeviceModels,
@@ -142,7 +142,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetMimeTypes(
+        public delegate int _GetMimeTypes(
             [In] IWICBitmapDecoderInfo* This,
             [In, NativeTypeName("UINT")] uint cchMimeTypes,
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzMimeTypes,
@@ -151,7 +151,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFileExtensions(
+        public delegate int _GetFileExtensions(
             [In] IWICBitmapDecoderInfo* This,
             [In, NativeTypeName("UINT")] uint cchFileExtensions,
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzFileExtensions,
@@ -160,35 +160,35 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DoesSupportAnimation(
+        public delegate int _DoesSupportAnimation(
             [In] IWICBitmapDecoderInfo* This,
             [Out, NativeTypeName("BOOL")] int* pfSupportAnimation
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DoesSupportChromakey(
+        public delegate int _DoesSupportChromakey(
             [In] IWICBitmapDecoderInfo* This,
             [Out, NativeTypeName("BOOL")] int* pfSupportChromakey
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DoesSupportLossless(
+        public delegate int _DoesSupportLossless(
             [In] IWICBitmapDecoderInfo* This,
             [Out, NativeTypeName("BOOL")] int* pfSupportLossless
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DoesSupportMultiframe(
+        public delegate int _DoesSupportMultiframe(
             [In] IWICBitmapDecoderInfo* This,
             [Out, NativeTypeName("BOOL")] int* pfSupportMultiframe
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _MatchesMimeType(
+        public delegate int _MatchesMimeType(
             [In] IWICBitmapDecoderInfo* This,
             [In, NativeTypeName("LPCWSTR")] char* wzMimeType,
             [Out, NativeTypeName("BOOL")] int* pfMatches
@@ -196,7 +196,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPatterns(
+        public delegate int _GetPatterns(
             [In] IWICBitmapDecoderInfo* This,
             [In, NativeTypeName("UINT")] uint cbSizePatterns,
             [Out, Optional, NativeTypeName("WICBitmapPattern[]")] WICBitmapPattern* pPatterns,
@@ -206,7 +206,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _MatchesPattern(
+        public delegate int _MatchesPattern(
             [In] IWICBitmapDecoderInfo* This,
             [In, Optional] IStream* pIStream,
             [Out, NativeTypeName("BOOL")] int* pfMatches
@@ -214,7 +214,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateInstance(
+        public delegate int _CreateInstance(
             [In] IWICBitmapDecoderInfo* This,
             [Out] IWICBitmapDecoder** ppIBitmapDecoder = null
         );

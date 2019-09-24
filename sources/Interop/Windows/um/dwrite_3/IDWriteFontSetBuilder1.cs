@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDWriteFontSetBuilder1* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,13 +23,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDWriteFontSetBuilder1* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDWriteFontSetBuilder1* This
         );
 
@@ -38,7 +38,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AddFontFaceReference(
+        public delegate int _AddFontFaceReference(
             [In] IDWriteFontSetBuilder1* This,
             [In] IDWriteFontFaceReference* fontFaceReference
         );
@@ -50,7 +50,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AddFontFaceReference1(
+        public delegate int _AddFontFaceReference1(
             [In] IDWriteFontSetBuilder1* This,
             [In] IDWriteFontFaceReference* fontFaceReference,
             [In, NativeTypeName("DWRITE_FONT_PROPERTY[]")] DWRITE_FONT_PROPERTY* properties,
@@ -62,7 +62,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AddFontSet(
+        public delegate int _AddFontSet(
             [In] IDWriteFontSetBuilder1* This,
             [In] IDWriteFontSet* fontSet
         );
@@ -73,7 +73,7 @@ namespace TerraFX.Interop
         /// <remarks> Creating a font set takes less time if the references were added with metadata rather than needing to extract the metadata from the font file.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateFontSet(
+        public delegate int _CreateFontSet(
             [In] IDWriteFontSetBuilder1* This,
             [Out] IDWriteFontSet** fontSet
         );
@@ -83,7 +83,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AddFontFile(
+        public delegate int _AddFontFile(
             [In] IDWriteFontSetBuilder1* This,
             [In] IDWriteFontFile* fontFile
         );

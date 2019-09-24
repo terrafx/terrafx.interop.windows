@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDXGISwapChain2* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDXGISwapChain2* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDXGISwapChain2* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrivateData(
+        public delegate int _SetPrivateData(
             [In] IDXGISwapChain2* This,
             [In, NativeTypeName("REFGUID")] Guid* Name,
             [In, NativeTypeName("UINT")] uint DataSize,
@@ -44,7 +44,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrivateDataInterface(
+        public delegate int _SetPrivateDataInterface(
             [In] IDXGISwapChain2* This,
             [In, NativeTypeName("REFGUID")] Guid* Name,
             [In] IUnknown* pUnknown = null
@@ -52,7 +52,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPrivateData(
+        public delegate int _GetPrivateData(
             [In] IDXGISwapChain2* This,
             [In, NativeTypeName("REFGUID")] Guid* Name,
             [In, Out, NativeTypeName("UINT")] uint* pDataSize,
@@ -61,7 +61,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetParent(
+        public delegate int _GetParent(
             [In] IDXGISwapChain2* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppParent
@@ -69,7 +69,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDevice(
+        public delegate int _GetDevice(
             [In] IDXGISwapChain2* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppDevice
@@ -77,7 +77,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Present(
+        public delegate int _Present(
             [In] IDXGISwapChain2* This,
             [In, NativeTypeName("UINT")] uint SyncInterval,
             [In, NativeTypeName("UINT")] uint Flags
@@ -85,7 +85,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetBuffer(
+        public delegate int _GetBuffer(
             [In] IDXGISwapChain2* This,
             [In, NativeTypeName("UINT")] uint Buffer,
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -94,7 +94,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetFullscreenState(
+        public delegate int _SetFullscreenState(
             [In] IDXGISwapChain2* This,
             [In, NativeTypeName("BOOL")] int Fullscreen,
             [In] IDXGIOutput* pTarget = null
@@ -102,7 +102,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFullscreenState(
+        public delegate int _GetFullscreenState(
             [In] IDXGISwapChain2* This,
             [Out, NativeTypeName("BOOL")] int* pFullscreen = null,
             [Out] IDXGIOutput** ppTarget = null
@@ -110,14 +110,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDesc(
+        public delegate int _GetDesc(
             [In] IDXGISwapChain2* This,
             [Out] DXGI_SWAP_CHAIN_DESC* pDesc
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _ResizeBuffers(
+        public delegate int _ResizeBuffers(
             [In] IDXGISwapChain2* This,
             [In, NativeTypeName("UINT")] uint BufferCount,
             [In, NativeTypeName("UINT")] uint Width,
@@ -128,56 +128,56 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _ResizeTarget(
+        public delegate int _ResizeTarget(
             [In] IDXGISwapChain2* This,
             [In] DXGI_MODE_DESC* pNewTargetParameters
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetContainingOutput(
+        public delegate int _GetContainingOutput(
             [In] IDXGISwapChain2* This,
             [Out] IDXGIOutput** ppOutput
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFrameStatistics(
+        public delegate int _GetFrameStatistics(
             [In] IDXGISwapChain2* This,
             [Out] DXGI_FRAME_STATISTICS* pStats
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetLastPresentCount(
+        public delegate int _GetLastPresentCount(
             [In] IDXGISwapChain2* This,
             [Out, NativeTypeName("UINT")] uint* pLastPresentCount
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDesc1(
+        public delegate int _GetDesc1(
             [In] IDXGISwapChain2* This,
             [Out] DXGI_SWAP_CHAIN_DESC1* pDesc
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFullscreenDesc(
+        public delegate int _GetFullscreenDesc(
             [In] IDXGISwapChain2* This,
             [Out] DXGI_SWAP_CHAIN_FULLSCREEN_DESC* pDesc
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetHwnd(
+        public delegate int _GetHwnd(
             [In] IDXGISwapChain2* This,
             [Out, NativeTypeName("HWND")] IntPtr* pHwnd
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetCoreWindow(
+        public delegate int _GetCoreWindow(
             [In] IDXGISwapChain2* This,
             [In, NativeTypeName("REFIID")] Guid* refiid,
             [Out] void** ppUnk
@@ -185,7 +185,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Present1(
+        public delegate int _Present1(
             [In] IDXGISwapChain2* This,
             [In, NativeTypeName("UINT")] uint SyncInterval,
             [In, NativeTypeName("UINT")] uint PresentFlags,
@@ -194,48 +194,48 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _IsTemporaryMonoSupported(
+        public delegate int _IsTemporaryMonoSupported(
             [In] IDXGISwapChain2* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetRestrictToOutput(
+        public delegate int _GetRestrictToOutput(
             [In] IDXGISwapChain2* This,
             [Out] IDXGIOutput** ppRestrictToOutput
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetBackgroundColor(
+        public delegate int _SetBackgroundColor(
             [In] IDXGISwapChain2* This,
             [In] DXGI_RGBA* pColor
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetBackgroundColor(
+        public delegate int _GetBackgroundColor(
             [In] IDXGISwapChain2* This,
             [Out] DXGI_RGBA* pColor
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetRotation(
+        public delegate int _SetRotation(
             [In] IDXGISwapChain2* This,
             [In] DXGI_MODE_ROTATION Rotation
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetRotation(
+        public delegate int _GetRotation(
             [In] IDXGISwapChain2* This,
             [Out] DXGI_MODE_ROTATION* pRotation
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetSourceSize(
+        public delegate int _SetSourceSize(
             [In] IDXGISwapChain2* This,
             [In, NativeTypeName("UINT")] uint Width,
             [In, NativeTypeName("UINT")] uint Height
@@ -243,7 +243,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSourceSize(
+        public delegate int _GetSourceSize(
             [In] IDXGISwapChain2* This,
             [Out, NativeTypeName("UINT")] uint* pWidth,
             [Out, NativeTypeName("UINT")] uint* pHeight
@@ -251,34 +251,34 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetMaximumFrameLatency(
+        public delegate int _SetMaximumFrameLatency(
             [In] IDXGISwapChain2* This,
             [In, NativeTypeName("UINT")] uint MaxLatency
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetMaximumFrameLatency(
+        public delegate int _GetMaximumFrameLatency(
             [In] IDXGISwapChain2* This,
             [Out, NativeTypeName("UINT")] uint* pMaxLatency
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HANDLE")]
-        public /* static */ delegate IntPtr _GetFrameLatencyWaitableObject(
+        public delegate IntPtr _GetFrameLatencyWaitableObject(
             [In] IDXGISwapChain2* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetMatrixTransform(
+        public delegate int _SetMatrixTransform(
             [In] IDXGISwapChain2* This,
             [In] DXGI_MATRIX_3X2_F* pMatrix
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetMatrixTransform(
+        public delegate int _GetMatrixTransform(
             [In] IDXGISwapChain2* This,
             [Out] DXGI_MATRIX_3X2_F* pMatrix
         );

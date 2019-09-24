@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IWICBitmapFrameDecode* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IWICBitmapFrameDecode* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IWICBitmapFrameDecode* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSize(
+        public delegate int _GetSize(
             [In] IWICBitmapFrameDecode* This,
             [Out, NativeTypeName("UINT")] uint* puiWidth,
             [Out, NativeTypeName("UINT")] uint* puiHeight
@@ -43,14 +43,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPixelFormat(
+        public delegate int _GetPixelFormat(
             [In] IWICBitmapFrameDecode* This,
             [Out, NativeTypeName("WICPixelFormatGUID")] Guid* pPixelFormat
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetResolution(
+        public delegate int _GetResolution(
             [In] IWICBitmapFrameDecode* This,
             [Out] double* pDpiX,
             [Out] double* pDpiY
@@ -58,14 +58,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CopyPalette(
+        public delegate int _CopyPalette(
             [In] IWICBitmapFrameDecode* This,
             [In] IWICPalette* pIPalette = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CopyPixels(
+        public delegate int _CopyPixels(
             [In] IWICBitmapFrameDecode* This,
             [In, Optional] WICRect* prc,
             [In, NativeTypeName("UINT")] uint cbStride,
@@ -75,14 +75,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetMetadataQueryReader(
+        public delegate int _GetMetadataQueryReader(
             [In] IWICBitmapFrameDecode* This,
             [Out] IWICMetadataQueryReader** ppIMetadataQueryReader = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetColorContexts(
+        public delegate int _GetColorContexts(
             [In] IWICBitmapFrameDecode* This,
             [In, NativeTypeName("UINT")] uint cCount,
             [In, Out, Optional, NativeTypeName("IWICColorContext*[]")] IWICColorContext** ppIColorContexts,
@@ -91,7 +91,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetThumbnail(
+        public delegate int _GetThumbnail(
             [In] IWICBitmapFrameDecode* This,
             [Out] IWICBitmapSource** ppIThumbnail = null
         );

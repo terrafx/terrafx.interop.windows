@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID2D1EffectContext* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,18 +24,18 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID2D1EffectContext* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID2D1EffectContext* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetDpi(
+        public delegate void _GetDpi(
             [In] ID2D1EffectContext* This,
             [Out, NativeTypeName("FLOAT")] float* dpiX,
             [Out, NativeTypeName("FLOAT")] float* dpiY
@@ -44,7 +44,7 @@ namespace TerraFX.Interop
         /// <summary>Create a new effect, the effect must either be built in or previously registered through ID2D1Factory1::RegisterEffect.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateEffect(
+        public delegate int _CreateEffect(
             [In] ID2D1EffectContext* This,
             [In, NativeTypeName("REFCLSID")] Guid* effectId,
             [Out] ID2D1Effect** effect
@@ -52,7 +52,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetMaximumSupportedFeatureLevel(
+        public delegate int _GetMaximumSupportedFeatureLevel(
             [In] ID2D1EffectContext* This,
             [In, NativeTypeName("D3D_FEATURE_LEVEL[]")] D3D_FEATURE_LEVEL* featureLevels,
             [In, NativeTypeName("UINT32")] uint featureLevelsCount,
@@ -62,7 +62,7 @@ namespace TerraFX.Interop
         /// <summary>Create a transform node from the passed in effect.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateTransformNodeFromEffect(
+        public delegate int _CreateTransformNodeFromEffect(
             [In] ID2D1EffectContext* This,
             [In] ID2D1Effect* effect,
             [Out] ID2D1TransformNode** transformNode
@@ -70,7 +70,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateBlendTransform(
+        public delegate int _CreateBlendTransform(
             [In] ID2D1EffectContext* This,
             [In, NativeTypeName("UINT32")] uint numInputs,
             [In] D2D1_BLEND_DESCRIPTION* blendDescription,
@@ -79,7 +79,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateBorderTransform(
+        public delegate int _CreateBorderTransform(
             [In] ID2D1EffectContext* This,
             [In] D2D1_EXTEND_MODE extendModeX,
             [In] D2D1_EXTEND_MODE extendModeY,
@@ -88,7 +88,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateOffsetTransform(
+        public delegate int _CreateOffsetTransform(
             [In] ID2D1EffectContext* This,
             [In, NativeTypeName("D2D1_POINT_2L")] POINT offset,
             [Out] ID2D1OffsetTransform** transform
@@ -96,7 +96,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateBoundsAdjustmentTransform(
+        public delegate int _CreateBoundsAdjustmentTransform(
             [In] ID2D1EffectContext* This,
             [In, NativeTypeName("D2D1_RECT_L")] RECT* outputRectangle,
             [Out] ID2D1BoundsAdjustmentTransform** transform
@@ -104,7 +104,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _LoadPixelShader(
+        public delegate int _LoadPixelShader(
             [In] ID2D1EffectContext* This,
             [In, NativeTypeName("REFGUID")] Guid* shaderId,
             [In, NativeTypeName("BYTE[]")] byte* shaderBuffer,
@@ -113,7 +113,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _LoadVertexShader(
+        public delegate int _LoadVertexShader(
             [In] ID2D1EffectContext* This,
             [In, NativeTypeName("REFGUID")] Guid* resourceId,
             [In, NativeTypeName("BYTE[]")] byte* shaderBuffer,
@@ -122,7 +122,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _LoadComputeShader(
+        public delegate int _LoadComputeShader(
             [In] ID2D1EffectContext* This,
             [In, NativeTypeName("REFGUID")] Guid* resourceId,
             [In, NativeTypeName("BYTE[]")]  byte* shaderBuffer,
@@ -131,14 +131,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _IsShaderLoaded(
+        public delegate int _IsShaderLoaded(
             [In] ID2D1EffectContext* This,
             [In, NativeTypeName("REFGUID")] Guid* shaderId
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateResourceTexture(
+        public delegate int _CreateResourceTexture(
             [In] ID2D1EffectContext* This,
             [In, Optional, NativeTypeName("GUID")] Guid* resourceId,
             [In] D2D1_RESOURCE_TEXTURE_PROPERTIES* resourceTextureProperties,
@@ -150,7 +150,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _FindResourceTexture(
+        public delegate int _FindResourceTexture(
             [In] ID2D1EffectContext* This,
             [In, NativeTypeName("GUID")] Guid* resourceId,
             [Out] ID2D1ResourceTexture** resourceTexture
@@ -158,7 +158,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateVertexBuffer(
+        public delegate int _CreateVertexBuffer(
             [In] ID2D1EffectContext* This,
             [In] D2D1_VERTEX_BUFFER_PROPERTIES* vertexBufferProperties,
             [In, Optional, NativeTypeName("GUID")] Guid* resourceId,
@@ -168,7 +168,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _FindVertexBuffer(
+        public delegate int _FindVertexBuffer(
             [In] ID2D1EffectContext* This,
             [In, NativeTypeName("GUID")] Guid* resourceId,
             [Out] ID2D1VertexBuffer** buffer
@@ -177,7 +177,7 @@ namespace TerraFX.Interop
         /// <summary>Creates a color context from a color space.  If the space is Custom, the context is initialized from the profile/profileSize arguments.  Otherwise the context is initialized with the profile bytes associated with the space and profile/profileSize are ignored.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateColorContext(
+        public delegate int _CreateColorContext(
             [In] ID2D1EffectContext* This,
             [In] D2D1_COLOR_SPACE space,
             [In, Optional, NativeTypeName("BYTE[]")] byte* profile,
@@ -187,7 +187,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateColorContextFromFilename(
+        public delegate int _CreateColorContextFromFilename(
             [In] ID2D1EffectContext* This,
             [In, NativeTypeName("PCWSTR")] char* filename,
             [Out] ID2D1ColorContext** colorContext
@@ -195,7 +195,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateColorContextFromWicColorContext(
+        public delegate int _CreateColorContextFromWicColorContext(
             [In] ID2D1EffectContext* This,
             [In] IWICColorContext* wicColorContext,
             [Out] ID2D1ColorContext** colorContext
@@ -203,7 +203,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CheckFeatureSupport(
+        public delegate int _CheckFeatureSupport(
             [In] ID2D1EffectContext* This,
             [In] D2D1_FEATURE feature,
             [Out] void* featureSupportData,
@@ -213,7 +213,7 @@ namespace TerraFX.Interop
         /// <summary>Indicates whether the buffer precision is supported by D2D.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _IsBufferPrecisionSupported(
+        public delegate int _IsBufferPrecisionSupported(
             [In] ID2D1EffectContext* This,
             [In] D2D1_BUFFER_PRECISION bufferPrecision
         );

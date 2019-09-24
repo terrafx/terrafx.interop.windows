@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDWriteFontDownloadQueue* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,13 +24,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDWriteFontDownloadQueue* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDWriteFontDownloadQueue* This
         );
 
@@ -41,7 +41,7 @@ namespace TerraFX.Interop
         /// <remarks> An IDWriteFontDownloadListener can also be passed to BeginDownload via the context parameter, rather than globally registered to the queue.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AddListener(
+        public delegate int _AddListener(
             [In] IDWriteFontDownloadQueue* This,
             [In] IDWriteFontDownloadListener* listener,
             [Out, NativeTypeName("UINT32")] uint* token
@@ -52,7 +52,7 @@ namespace TerraFX.Interop
         /// <returns> Returns S_OK if successful or E_INVALIDARG if the specified token does not correspond to a registered listener.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RemoveListener(
+        public delegate int _RemoveListener(
             [In] IDWriteFontDownloadQueue* This,
             [In, NativeTypeName("UINT32")] uint token
         );
@@ -61,7 +61,7 @@ namespace TerraFX.Interop
         /// <returns> TRUE if the queue is empty, FALSE if there are requests pending for BeginDownload.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _IsEmpty(
+        public delegate int _IsEmpty(
             [In] IDWriteFontDownloadQueue* This
         );
 
@@ -71,7 +71,7 @@ namespace TerraFX.Interop
         /// <remarks> BeginDownload removes all download requests from the queue, transferring them to a background download operation. If any previous downloads are still ongoing when BeginDownload is called again, the new download does not complete until the previous downloads have finished. If the queue is empty and no active downloads are pending, the DownloadCompleted callback is called immediately with DWRITE_DOWNLOAD_RESULT_NONE.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _BeginDownload(
+        public delegate int _BeginDownload(
             [In] IDWriteFontDownloadQueue* This,
             [In] IUnknown* context = null
         );
@@ -80,7 +80,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CancelDownload(
+        public delegate int _CancelDownload(
             [In] IDWriteFontDownloadQueue* This
         );
 
@@ -88,7 +88,7 @@ namespace TerraFX.Interop
         /// <returns> The number of download queue generations.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
-        public /* static */ delegate ulong _GetGenerationCount(
+        public delegate ulong _GetGenerationCount(
             [In] IDWriteFontDownloadQueue* This
         );
 

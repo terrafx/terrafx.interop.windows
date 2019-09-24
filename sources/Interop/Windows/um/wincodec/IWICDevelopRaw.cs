@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IWICDevelopRaw* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IWICDevelopRaw* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IWICDevelopRaw* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSize(
+        public delegate int _GetSize(
             [In] IWICDevelopRaw* This,
             [Out, NativeTypeName("UINT")] uint* puiWidth,
             [Out, NativeTypeName("UINT")] uint* puiHeight
@@ -43,14 +43,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPixelFormat(
+        public delegate int _GetPixelFormat(
             [In] IWICDevelopRaw* This,
             [Out, NativeTypeName("WICPixelFormatGUID")] Guid* pPixelFormat
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetResolution(
+        public delegate int _GetResolution(
             [In] IWICDevelopRaw* This,
             [Out] double* pDpiX,
             [Out] double* pDpiY
@@ -58,14 +58,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CopyPalette(
+        public delegate int _CopyPalette(
             [In] IWICDevelopRaw* This,
             [In] IWICPalette* pIPalette = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CopyPixels(
+        public delegate int _CopyPixels(
             [In] IWICDevelopRaw* This,
             [In, Optional] WICRect* prc,
             [In, NativeTypeName("UINT")] uint cbStride,
@@ -75,14 +75,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetMetadataQueryReader(
+        public delegate int _GetMetadataQueryReader(
             [In] IWICDevelopRaw* This,
             [Out] IWICMetadataQueryReader** ppIMetadataQueryReader = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetColorContexts(
+        public delegate int _GetColorContexts(
             [In] IWICDevelopRaw* This,
             [In, NativeTypeName("UINT")] uint cCount,
             [In, Out, Optional, NativeTypeName("IWICColorContext*[]")] IWICColorContext** ppIColorContexts,
@@ -91,49 +91,49 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetThumbnail(
+        public delegate int _GetThumbnail(
             [In] IWICDevelopRaw* This,
             [Out] IWICBitmapSource** ppIThumbnail = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryRawCapabilitiesInfo(
+        public delegate int _QueryRawCapabilitiesInfo(
             [In] IWICDevelopRaw* This,
             [In, Out] WICRawCapabilitiesInfo* pInfo
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _LoadParameterSet(
+        public delegate int _LoadParameterSet(
             [In] IWICDevelopRaw* This,
             [In] WICRawParameterSet ParameterSet
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetCurrentParameterSet(
+        public delegate int _GetCurrentParameterSet(
             [In] IWICDevelopRaw* This,
             [Out] IPropertyBag2** ppCurrentParameterSet = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetExposureCompensation(
+        public delegate int _SetExposureCompensation(
             [In] IWICDevelopRaw* This,
             [In] double ev
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetExposureCompensation(
+        public delegate int _GetExposureCompensation(
             [In] IWICDevelopRaw* This,
             [Out] double* pEV
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetWhitePointRGB(
+        public delegate int _SetWhitePointRGB(
             [In] IWICDevelopRaw* This,
             [In, NativeTypeName("UINT")] uint Red,
             [In, NativeTypeName("UINT")] uint Green,
@@ -142,7 +142,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetWhitePointRGB(
+        public delegate int _GetWhitePointRGB(
             [In] IWICDevelopRaw* This,
             [Out, NativeTypeName("UINT")] uint* pRed,
             [Out, NativeTypeName("UINT")] uint* pGreen,
@@ -151,35 +151,35 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetNamedWhitePoint(
+        public delegate int _SetNamedWhitePoint(
             [In] IWICDevelopRaw* This,
             [In] WICNamedWhitePoint WhitePoint
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetNamedWhitePoint(
+        public delegate int _GetNamedWhitePoint(
             [In] IWICDevelopRaw* This,
             [Out] WICNamedWhitePoint* pWhitePoint
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetWhitePointKelvin(
+        public delegate int _SetWhitePointKelvin(
             [In] IWICDevelopRaw* This,
             [In, NativeTypeName("UINT")] uint WhitePointKelvin
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetWhitePointKelvin(
+        public delegate int _GetWhitePointKelvin(
             [In] IWICDevelopRaw* This,
             [Out, NativeTypeName("UINT")] uint* pWhitePointKelvin
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetKelvinRangeInfo(
+        public delegate int _GetKelvinRangeInfo(
             [In] IWICDevelopRaw* This,
             [Out, NativeTypeName("UINT")] uint* pMinKelvinTemp,
             [Out, NativeTypeName("UINT")] uint* pMaxKelvinTemp,
@@ -188,98 +188,98 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetContrast(
+        public delegate int _SetContrast(
             [In] IWICDevelopRaw* This,
             [In] double Contrast
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetContrast(
+        public delegate int _GetContrast(
             [In] IWICDevelopRaw* This,
             [Out] double* pContrast
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetGamma(
+        public delegate int _SetGamma(
             [In] IWICDevelopRaw* This,
             [In] double Gamma
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetGamma(
+        public delegate int _GetGamma(
             [In] IWICDevelopRaw* This,
             [Out] double* pGamma
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetSharpness(
+        public delegate int _SetSharpness(
             [In] IWICDevelopRaw* This,
             [In] double Sharpness
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSharpness(
+        public delegate int _GetSharpness(
             [In] IWICDevelopRaw* This,
             [Out] double* pSharpness
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetSaturation(
+        public delegate int _SetSaturation(
             [In] IWICDevelopRaw* This,
             [In] double Saturation
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSaturation(
+        public delegate int _GetSaturation(
             [In] IWICDevelopRaw* This,
             [Out] double* pSaturation
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetTint(
+        public delegate int _SetTint(
             [In] IWICDevelopRaw* This,
             [In] double Tint
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetTint(
+        public delegate int _GetTint(
             [In] IWICDevelopRaw* This,
             [Out] double* pTint
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetNoiseReduction(
+        public delegate int _SetNoiseReduction(
             [In] IWICDevelopRaw* This,
             [In] double NoiseReduction
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetNoiseReduction(
+        public delegate int _GetNoiseReduction(
             [In] IWICDevelopRaw* This,
             [Out] double* pNoiseReduction
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetDestinationColorContext(
+        public delegate int _SetDestinationColorContext(
             [In] IWICDevelopRaw* This,
             [In] IWICColorContext* pColorContext = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetToneCurve(
+        public delegate int _SetToneCurve(
             [In] IWICDevelopRaw* This,
             [In, NativeTypeName("UINT")] uint cbToneCurveSize,
             [In, NativeTypeName("WICRawToneCurve[]")] WICRawToneCurve* pToneCurve
@@ -287,7 +287,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetToneCurve(
+        public delegate int _GetToneCurve(
             [In] IWICDevelopRaw* This,
             [In, NativeTypeName("UINT")] uint cbToneCurveBufferSize,
             [Out, NativeTypeName("WICRawToneCurve[]")] WICRawToneCurve* pToneCurve = null,
@@ -296,35 +296,35 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetRotation(
+        public delegate int _SetRotation(
             [In] IWICDevelopRaw* This,
             [In] double Rotation
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetRotation(
+        public delegate int _GetRotation(
             [In] IWICDevelopRaw* This,
             [Out] double* pRotation
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetRenderMode(
+        public delegate int _SetRenderMode(
             [In] IWICDevelopRaw* This,
             [In] WICRawRenderMode RenderMode
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetRenderMode(
+        public delegate int _GetRenderMode(
             [In] IWICDevelopRaw* This,
             [Out] WICRawRenderMode* pRenderMode
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetNotificationCallback(
+        public delegate int _SetNotificationCallback(
             [In] IWICDevelopRaw* This,
             [In] IWICDevelopRawNotificationCallback* pCallback = null
         );

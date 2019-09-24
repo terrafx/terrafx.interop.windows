@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID2D1DrawingStateBlock* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,47 +24,47 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID2D1DrawingStateBlock* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID2D1DrawingStateBlock* This
         );
 
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetFactory(
+        public delegate void _GetFactory(
             [In] ID2D1DrawingStateBlock* This,
             [Out] ID2D1Factory** factory
         );
 
         /// <summary>Retrieves the state currently contained within this state block resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetDescription(
+        public delegate void _GetDescription(
             [In] ID2D1DrawingStateBlock* This,
             [Out] D2D1_DRAWING_STATE_DESCRIPTION* stateDescription
         );
 
         /// <summary>Sets the state description of this state block resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetDescription(
+        public delegate void _SetDescription(
             [In] ID2D1DrawingStateBlock* This,
             [In] D2D1_DRAWING_STATE_DESCRIPTION* stateDescription
         );
 
         /// <summary>Sets the text rendering parameters of this state block resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetTextRenderingParams(
+        public delegate void _SetTextRenderingParams(
             [In] ID2D1DrawingStateBlock* This,
             [In] IDWriteRenderingParams* textRenderingParams = null
         );
 
         /// <summary>Retrieves the text rendering parameters contained within this state block resource. If a NULL text rendering parameter was specified, NULL will be returned.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetTextRenderingParams(
+        public delegate void _GetTextRenderingParams(
             [In] ID2D1DrawingStateBlock* This,
             [Out] IDWriteRenderingParams** textRenderingParams
         );

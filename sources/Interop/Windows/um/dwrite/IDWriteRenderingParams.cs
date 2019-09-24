@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDWriteRenderingParams* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,45 +24,45 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDWriteRenderingParams* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDWriteRenderingParams* This
         );
 
         /// <summary>Gets the gamma value used for gamma correction. Valid values must be greater than zero and cannot exceed 256.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public /* static */ delegate float _GetGamma(
+        public delegate float _GetGamma(
             [In] IDWriteRenderingParams* This
         );
 
         /// <summary>Gets the amount of contrast enhancement. Valid values are greater than or equal to zero.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public /* static */ delegate float _GetEnhancedContrast(
+        public delegate float _GetEnhancedContrast(
             [In] IDWriteRenderingParams* This
         );
 
         /// <summary>Gets the ClearType level. Valid values range from 0.0f (no ClearType) to 1.0f (full ClearType).</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate float _GetClearTypeLevel(
+        public delegate float _GetClearTypeLevel(
             [In] IDWriteRenderingParams* This
         );
 
         /// <summary>Gets the pixel geometry.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate DWRITE_PIXEL_GEOMETRY _GetPixelGeometry(
+        public delegate DWRITE_PIXEL_GEOMETRY _GetPixelGeometry(
             [In] IDWriteRenderingParams* This
         );
 
         /// <summary>Gets the rendering mode.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate DWRITE_RENDERING_MODE _GetRenderingMode(
+        public delegate DWRITE_RENDERING_MODE _GetRenderingMode(
             [In] IDWriteRenderingParams* This
         );
 

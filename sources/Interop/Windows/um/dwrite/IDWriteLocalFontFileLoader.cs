@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDWriteLocalFontFileLoader* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,13 +24,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDWriteLocalFontFileLoader* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDWriteLocalFontFileLoader* This
         );
 
@@ -41,7 +41,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateStreamFromKey(
+        public delegate int _CreateStreamFromKey(
             [In] IDWriteLocalFontFileLoader* This,
             [In] void* fontFileReferenceKey,
             [In, NativeTypeName("UINT32")] uint fontFileReferenceKeySize,
@@ -55,7 +55,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFilePathLengthFromKey(
+        public delegate int _GetFilePathLengthFromKey(
             [In] IDWriteLocalFontFileLoader* This,
             [In] void* fontFileReferenceKey,
             [In, NativeTypeName("UINT32")] uint fontFileReferenceKeySize,
@@ -70,7 +70,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFilePathFromKey(
+        public delegate int _GetFilePathFromKey(
             [In] IDWriteLocalFontFileLoader* This,
             [In] void* fontFileReferenceKey,
             [In, NativeTypeName("UINT32")] uint fontFileReferenceKeySize,
@@ -85,7 +85,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetLastWriteTimeFromKey(
+        public delegate int _GetLastWriteTimeFromKey(
             [In] IDWriteLocalFontFileLoader* This,
             [In] void* fontFileReferenceKey,
             [In, NativeTypeName("UINT32")] uint fontFileReferenceKeySize,

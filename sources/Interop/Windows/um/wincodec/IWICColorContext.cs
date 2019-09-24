@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IWICColorContext* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,26 +23,26 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IWICColorContext* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IWICColorContext* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _InitializeFromFilename(
+        public delegate int _InitializeFromFilename(
             [In] IWICColorContext* This,
             [In, NativeTypeName("LPCWSTR")] char* wzFilename
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _InitializeFromMemory(
+        public delegate int _InitializeFromMemory(
             [In] IWICColorContext* This,
             [In, NativeTypeName("BYTE[]")] byte* pbBuffer,
             [In, NativeTypeName("UINT")] uint cbBufferSize
@@ -50,21 +50,21 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _InitializeFromExifColorSpace(
+        public delegate int _InitializeFromExifColorSpace(
             [In] IWICColorContext* This,
             [In, NativeTypeName("UINT")] uint value
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int __GetType(
+        public delegate int __GetType(
             [In] IWICColorContext* This,
             [Out] WICColorContextType* pType
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetProfileBytes(
+        public delegate int _GetProfileBytes(
             [In] IWICColorContext* This,
             [In, NativeTypeName("UINT")] uint cbBuffer,
             [In, Out, Optional, NativeTypeName("BYTE[]")] byte* pbBuffer,
@@ -73,7 +73,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetExifColorSpace(
+        public delegate int _GetExifColorSpace(
             [In] IWICColorContext* This,
             [Out, NativeTypeName("UINT")] uint* pValue
         );

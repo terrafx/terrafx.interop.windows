@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDWriteFontDownloadListener* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,13 +24,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDWriteFontDownloadListener* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDWriteFontDownloadListener* This
         );
 
@@ -39,7 +39,7 @@ namespace TerraFX.Interop
         /// <param name="context">Optional context object that was passed to BeginDownload. AddRef is called on the context object by BeginDownload and Release is called after the DownloadCompleted method returns.</param>
         /// <param name="downloadResult">Result of the download operation.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _DownloadCompleted(
+        public delegate void _DownloadCompleted(
             [In] IDWriteFontDownloadListener* This,
             [In] IDWriteFontDownloadQueue* downloadQueue,
             [In, Optional] IUnknown* context,

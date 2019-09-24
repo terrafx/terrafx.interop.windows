@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IWICMetadataWriter* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,40 +23,40 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IWICMetadataWriter* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IWICMetadataWriter* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetMetadataFormat(
+        public delegate int _GetMetadataFormat(
             [In] IWICMetadataWriter* This,
             [Out, NativeTypeName("GUID")] Guid* pguidMetadataFormat
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetMetadataHandlerInfo(
+        public delegate int _GetMetadataHandlerInfo(
             [In] IWICMetadataWriter* This,
             [Out] IWICMetadataHandlerInfo** ppIHandler = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetCount(
+        public delegate int _GetCount(
             [In] IWICMetadataWriter* This,
             [Out, NativeTypeName("UINT")] uint* pcCount
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetValueByIndex(
+        public delegate int _GetValueByIndex(
             [In] IWICMetadataWriter* This,
             [In, NativeTypeName("UINT")] uint nIndex,
             [In, Out] PROPVARIANT* pvarSchema = null,
@@ -66,7 +66,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetValue(
+        public delegate int _GetValue(
             [In] IWICMetadataWriter* This,
             [In, Optional] PROPVARIANT* pvarSchema,
             [In] PROPVARIANT* pvarId,
@@ -75,14 +75,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetEnumerator(
+        public delegate int _GetEnumerator(
             [In] IWICMetadataWriter* This,
             [Out] IWICEnumMetadataItem** ppIEnumMetadata = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetValue(
+        public delegate int _SetValue(
             [In] IWICMetadataWriter* This,
             [In, Optional] PROPVARIANT* pvarSchema,
             [In] PROPVARIANT* pvarId,
@@ -91,7 +91,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetValueByIndex(
+        public delegate int _SetValueByIndex(
             [In] IWICMetadataWriter* This,
             [In, NativeTypeName("UINT")] uint nIndex,
             [In, Optional] PROPVARIANT* pvarSchema,
@@ -101,7 +101,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RemoveValue(
+        public delegate int _RemoveValue(
             [In] IWICMetadataWriter* This,
             [In, Optional] PROPVARIANT* pvarSchema,
             [In] PROPVARIANT* pvarId
@@ -109,7 +109,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RemoveValueByIndex(
+        public delegate int _RemoveValueByIndex(
             [In] IWICMetadataWriter* This,
             [In, NativeTypeName("UINT")] uint nIndex
         );

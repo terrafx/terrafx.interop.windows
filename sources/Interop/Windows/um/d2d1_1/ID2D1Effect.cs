@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID2D1Effect* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -25,27 +25,27 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID2D1Effect* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID2D1Effect* This
         );
 
         /// <summary>Returns the total number of custom properties in this interface.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetPropertyCount(
+        public delegate uint _GetPropertyCount(
             [In] ID2D1Effect* This
         );
 
         /// <summary>Retrieves the property name from the given property index.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPropertyName(
+        public delegate int _GetPropertyName(
             [In] ID2D1Effect* This,
             [In, NativeTypeName("UINT32")] uint index,
             [Out, NativeTypeName("PWSTR")] char* name,
@@ -55,14 +55,14 @@ namespace TerraFX.Interop
         /// <summary>Returns the length of the property name from the given index.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetPropertyNameLength(
+        public delegate uint _GetPropertyNameLength(
             [In] ID2D1Effect* This,
             [In, NativeTypeName("UINT32")] uint index
         );
 
         /// <summary>Retrieves the type of the given property.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate D2D1_PROPERTY_TYPE __GetType(
+        public delegate D2D1_PROPERTY_TYPE __GetType(
             [In] ID2D1Effect* This,
             [In, NativeTypeName("UINT32")] uint index
         );
@@ -70,7 +70,7 @@ namespace TerraFX.Interop
         /// <summary>Retrieves the property index for the given property name.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetPropertyIndex(
+        public delegate uint _GetPropertyIndex(
             [In] ID2D1Effect* This,
             [In, NativeTypeName("PCWSTR")] char* name
         );
@@ -78,7 +78,7 @@ namespace TerraFX.Interop
         /// <summary>Sets the value of the given property using its name.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetValueByName(
+        public delegate int _SetValueByName(
             [In] ID2D1Effect* This,
             [In, NativeTypeName("PCWSTR")] char* name,
             [In] D2D1_PROPERTY_TYPE type,
@@ -89,7 +89,7 @@ namespace TerraFX.Interop
         /// <summary>Sets the given value using the property index.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetValue(
+        public delegate int _SetValue(
             [In] ID2D1Effect* This,
             [In, NativeTypeName("UINT32")] uint index,
             [In] D2D1_PROPERTY_TYPE type,
@@ -100,7 +100,7 @@ namespace TerraFX.Interop
         /// <summary>Retrieves the given property or sub-property by name. '.' is the delimiter for sub-properties.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetValueByName(
+        public delegate int _GetValueByName(
             [In] ID2D1Effect* This,
             [In, NativeTypeName("PCWSTR")] char* name,
             [In] D2D1_PROPERTY_TYPE type,
@@ -111,7 +111,7 @@ namespace TerraFX.Interop
         /// <summary>Retrieves the given value by index.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetValue(
+        public delegate int _GetValue(
             [In] ID2D1Effect* This,
             [In, NativeTypeName("UINT32")] uint index,
             [In] D2D1_PROPERTY_TYPE type,
@@ -122,7 +122,7 @@ namespace TerraFX.Interop
         /// <summary>Returns the value size for the given property index.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetValueSize(
+        public delegate uint _GetValueSize(
             [In] ID2D1Effect* This,
             [In, NativeTypeName("UINT32")] uint index
         );
@@ -130,7 +130,7 @@ namespace TerraFX.Interop
         /// <summary>Retrieves the sub-properties of the given property by index.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSubProperties(
+        public delegate int _GetSubProperties(
             [In] ID2D1Effect* This,
             [In, NativeTypeName("UINT32")] uint index,
             [Out] ID2D1Properties** subProperties
@@ -138,7 +138,7 @@ namespace TerraFX.Interop
 
         /// <summary>Sets the input to the given effect. The input can be a concrete bitmap or the output of another effect.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetInput(
+        public delegate void _SetInput(
             [In] ID2D1Effect* This,
             [In, NativeTypeName("UINT32")] uint index,
             [In] ID2D1Image* input = null,
@@ -148,14 +148,14 @@ namespace TerraFX.Interop
         /// <summary>If the effect supports a variable number of inputs, this sets the number of input that are currently active on the effect.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetInputCount(
+        public delegate int _SetInputCount(
             [In] ID2D1Effect* This,
             [In, NativeTypeName("UINT32")] uint inputCount
         );
 
         /// <summary>Returns the input image to the effect. The input could be another effect or a bitmap.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetInput(
+        public delegate void _GetInput(
             [In] ID2D1Effect* This,
             [In, NativeTypeName("UINT32")] uint index,
             [Out] ID2D1Image** input
@@ -164,13 +164,13 @@ namespace TerraFX.Interop
         /// <summary>This returns the number of input that are bound into this effect.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetInputCount(
+        public delegate uint _GetInputCount(
             [In] ID2D1Effect* This
         );
 
         /// <summary>Returns the output image of the given effect. This can be set as the input to another effect or can be drawn with DrawImage.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _GetOutput(
+        public delegate void _GetOutput(
             [In] ID2D1Effect* This,
             [Out] ID2D1Image** outputImage
         );

@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID2D1Multithread* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,32 +24,32 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID2D1Multithread* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID2D1Multithread* This
         );
 
         /// <summary>Returns whether the D2D factory was created with D2D1_FACTORY_TYPE_MULTI_THREADED.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _GetMultithreadProtected(
+        public delegate int _GetMultithreadProtected(
             [In] ID2D1Multithread* This
         );
 
         /// <summary>Enters the D2D API critical section, if it exists.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _Enter(
+        public delegate void _Enter(
             [In] ID2D1Multithread* This
         );
 
         /// <summary>Leaves the D2D API critical section, if it exists.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _Leave(
+        public delegate void _Leave(
             [In] ID2D1Multithread* This
         );
 

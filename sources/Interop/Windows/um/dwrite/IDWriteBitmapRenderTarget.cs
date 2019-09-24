@@ -16,7 +16,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IDWriteBitmapRenderTarget* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -24,13 +24,13 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IDWriteBitmapRenderTarget* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IDWriteBitmapRenderTarget* This
         );
 
@@ -45,7 +45,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DrawGlyphRun(
+        public delegate int _DrawGlyphRun(
             [In] IDWriteBitmapRenderTarget* This,
             [In, NativeTypeName("FLOAT")] float baselineOriginX,
             [In, NativeTypeName("FLOAT")] float baselineOriginY,
@@ -61,7 +61,7 @@ namespace TerraFX.Interop
         /// <remarks> An application can use the device context to draw using GDI functions. An application can obtain the bitmap handle (HBITMAP) by calling GetCurrentObject. An application that wants information about the underlying bitmap, including a pointer to the pixel data, can call GetObject to fill in a DIBSECTION public structure. The bitmap is always a 32-bit top-down DIB.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HDC")]
-        public /* static */ delegate IntPtr _GetMemoryDC(
+        public delegate IntPtr _GetMemoryDC(
             [In] IDWriteBitmapRenderTarget* This
         );
 
@@ -69,7 +69,7 @@ namespace TerraFX.Interop
         /// <returns>Returns the number of bitmap pixels per DIP.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public /* static */ delegate float _GetPixelsPerDip(
+        public delegate float _GetPixelsPerDip(
             [In] IDWriteBitmapRenderTarget* This
         );
 
@@ -78,7 +78,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPixelsPerDip(
+        public delegate int _SetPixelsPerDip(
             [In] IDWriteBitmapRenderTarget* This,
             [In, NativeTypeName("FLOAT")] float pixelsPerDip
         );
@@ -88,7 +88,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetCurrentTransform(
+        public delegate int _GetCurrentTransform(
             [In] IDWriteBitmapRenderTarget* This,
             [Out] DWRITE_MATRIX* transform
         );
@@ -98,7 +98,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetCurrentTransform(
+        public delegate int _SetCurrentTransform(
             [In] IDWriteBitmapRenderTarget* This,
             [In] DWRITE_MATRIX* transform = null
         );
@@ -108,7 +108,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSize(
+        public delegate int _GetSize(
             [In] IDWriteBitmapRenderTarget* This,
             [Out] SIZE* size
         );
@@ -119,7 +119,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Resize(
+        public delegate int _Resize(
             [In] IDWriteBitmapRenderTarget* This,
             [In, NativeTypeName("UINT32")] uint width,
             [In, NativeTypeName("UINT32")] uint height

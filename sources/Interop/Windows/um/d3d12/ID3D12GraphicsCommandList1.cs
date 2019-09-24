@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] ID3D12GraphicsCommandList1* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] ID3D12GraphicsCommandList1* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPrivateData(
+        public delegate int _GetPrivateData(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("REFGUID")] Guid* guid,
             [In, Out, NativeTypeName("UINT")] uint* pDataSize,
@@ -44,7 +44,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrivateData(
+        public delegate int _SetPrivateData(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("REFGUID")] Guid* guid,
             [In, NativeTypeName("UINT")] uint DataSize,
@@ -53,7 +53,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrivateDataInterface(
+        public delegate int _SetPrivateDataInterface(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("REFGUID")] Guid* guid,
             [In] IUnknown* pData = null
@@ -61,46 +61,46 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetName(
+        public delegate int _SetName(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("LPCWSTR")] char* Name
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDevice(
+        public delegate int _GetDevice(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvDevice = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate D3D12_COMMAND_LIST_TYPE __GetType(
+        public delegate D3D12_COMMAND_LIST_TYPE __GetType(
             [In] ID3D12GraphicsCommandList1* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Close(
+        public delegate int _Close(
             [In] ID3D12GraphicsCommandList1* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Reset(
+        public delegate int _Reset(
             [In] ID3D12GraphicsCommandList1* This,
             [In] ID3D12CommandAllocator* pAllocator,
             [In] ID3D12PipelineState* pInitialState = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _ClearState(
+        public delegate void _ClearState(
             [In] ID3D12GraphicsCommandList1* This,
             [In] ID3D12PipelineState* pPipelineState = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _DrawInstanced(
+        public delegate void _DrawInstanced(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("UINT")] uint VertexCountPerInstance,
             [In, NativeTypeName("UINT")] uint InstanceCount,
@@ -109,7 +109,7 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _DrawIndexedInstanced(
+        public delegate void _DrawIndexedInstanced(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("UINT")] uint IndexCountPerInstance,
             [In, NativeTypeName("UINT")] uint InstanceCount,
@@ -119,7 +119,7 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _Dispatch(
+        public delegate void _Dispatch(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("UINT")] uint ThreadGroupCountX,
             [In, NativeTypeName("UINT")] uint ThreadGroupCountY,
@@ -127,7 +127,7 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _CopyBufferRegion(
+        public delegate void _CopyBufferRegion(
             [In] ID3D12GraphicsCommandList1* This,
             [In] ID3D12Resource* pDstBuffer,
             [In, NativeTypeName("UINT64")] ulong DstOffset,
@@ -137,7 +137,7 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _CopyTextureRegion(
+        public delegate void _CopyTextureRegion(
             [In] ID3D12GraphicsCommandList1* This,
             [In] D3D12_TEXTURE_COPY_LOCATION* pDst,
             [In, NativeTypeName("UINT")] uint DstX,
@@ -148,14 +148,14 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _CopyResource(
+        public delegate void _CopyResource(
             [In] ID3D12GraphicsCommandList1* This,
             [In] ID3D12Resource* pDstResource,
             [In] ID3D12Resource* pSrcResource
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _CopyTiles(
+        public delegate void _CopyTiles(
             [In] ID3D12GraphicsCommandList1* This,
             [In] ID3D12Resource* pTiledResource,
             [In] D3D12_TILED_RESOURCE_COORDINATE* pTileRegionStartCoordinate,
@@ -166,7 +166,7 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _ResolveSubresource(
+        public delegate void _ResolveSubresource(
             [In] ID3D12GraphicsCommandList1* This,
             [In] ID3D12Resource* pDstResource,
             [In, NativeTypeName("UINT")] uint DstSubresource,
@@ -176,91 +176,91 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _IASetPrimitiveTopology(
+        public delegate void _IASetPrimitiveTopology(
             [In] ID3D12GraphicsCommandList1* This,
             [In] D3D_PRIMITIVE_TOPOLOGY PrimitiveTopology
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _RSSetViewports(
+        public delegate void _RSSetViewports(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("UINT")] uint NumViewports,
             [In] D3D12_VIEWPORT* pViewports
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _RSSetScissorRects(
+        public delegate void _RSSetScissorRects(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("UINT")] uint NumRects,
             [In, NativeTypeName("D3D12_RECT")] RECT* pRects
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _OMSetBlendFactor(
+        public delegate void _OMSetBlendFactor(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("FLOAT")] float* BlendFactor = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _OMSetStencilRef(
+        public delegate void _OMSetStencilRef(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("UINT")] uint StencilRef
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetPipelineState(
+        public delegate void _SetPipelineState(
             [In] ID3D12GraphicsCommandList1* This,
             [In] ID3D12PipelineState* pPipelineState
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _ResourceBarrier(
+        public delegate void _ResourceBarrier(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("UINT")] uint NumBarriers,
             [In, NativeTypeName("D3D12_RESOURCE_BARRIER[]")] D3D12_RESOURCE_BARRIER* pBarriers
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _ExecuteBundle(
+        public delegate void _ExecuteBundle(
             [In] ID3D12GraphicsCommandList1* This,
             [In] ID3D12GraphicsCommandList* pCommandList
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetDescriptorHeaps(
+        public delegate void _SetDescriptorHeaps(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("UINT")] uint NumDescriptorHeaps,
             [In, NativeTypeName("ID3D12DescriptorHeap*[]")] ID3D12DescriptorHeap** ppDescriptorHeaps
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetComputeRootSignature(
+        public delegate void _SetComputeRootSignature(
             [In] ID3D12GraphicsCommandList1* This,
             [In] ID3D12RootSignature* pRootSignature = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetGraphicsRootSignature(
+        public delegate void _SetGraphicsRootSignature(
             [In] ID3D12GraphicsCommandList1* This,
             [In] ID3D12RootSignature* pRootSignature = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetComputeRootDescriptorTable(
+        public delegate void _SetComputeRootDescriptorTable(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("UINT")] uint RootParameterIndex,
             [In] D3D12_GPU_DESCRIPTOR_HANDLE BaseDescriptor
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetGraphicsRootDescriptorTable(
+        public delegate void _SetGraphicsRootDescriptorTable(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("UINT")] uint RootParameterIndex,
             [In] D3D12_GPU_DESCRIPTOR_HANDLE BaseDescriptor
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetComputeRoot32BitConstant(
+        public delegate void _SetComputeRoot32BitConstant(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("UINT")] uint RootParameterIndex,
             [In, NativeTypeName("UINT")] uint SrcData,
@@ -268,7 +268,7 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetGraphicsRoot32BitConstant(
+        public delegate void _SetGraphicsRoot32BitConstant(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("UINT")] uint RootParameterIndex,
             [In, NativeTypeName("UINT")] uint SrcData,
@@ -276,7 +276,7 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetComputeRoot32BitConstants(
+        public delegate void _SetComputeRoot32BitConstants(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("UINT")] uint RootParameterIndex,
             [In, NativeTypeName("UINT")] uint Num32BitValuesToSet,
@@ -285,7 +285,7 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetGraphicsRoot32BitConstants(
+        public delegate void _SetGraphicsRoot32BitConstants(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("UINT")] uint RootParameterIndex,
             [In, NativeTypeName("UINT")] uint Num32BitValuesToSet,
@@ -294,55 +294,55 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetComputeRootConstantBufferView(
+        public delegate void _SetComputeRootConstantBufferView(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("UINT")] uint RootParameterIndex,
             [In, NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetGraphicsRootConstantBufferView(
+        public delegate void _SetGraphicsRootConstantBufferView(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("UINT")] uint RootParameterIndex,
             [In, NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetComputeRootShaderResourceView(
+        public delegate void _SetComputeRootShaderResourceView(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("UINT")] uint RootParameterIndex,
             [In, NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetGraphicsRootShaderResourceView(
+        public delegate void _SetGraphicsRootShaderResourceView(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("UINT")] uint RootParameterIndex,
             [In, NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetComputeRootUnorderedAccessView(
+        public delegate void _SetComputeRootUnorderedAccessView(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("UINT")] uint RootParameterIndex,
             [In, NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetGraphicsRootUnorderedAccessView(
+        public delegate void _SetGraphicsRootUnorderedAccessView(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("UINT")] uint RootParameterIndex,
             [In, NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _IASetIndexBuffer(
+        public delegate void _IASetIndexBuffer(
             [In] ID3D12GraphicsCommandList1* This,
             [In] D3D12_INDEX_BUFFER_VIEW* pView = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _IASetVertexBuffers(
+        public delegate void _IASetVertexBuffers(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("UINT")] uint StartSlot,
             [In, NativeTypeName("UINT")] uint NumViews,
@@ -350,7 +350,7 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SOSetTargets(
+        public delegate void _SOSetTargets(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("UINT")] uint StartSlot,
             [In, NativeTypeName("UINT")] uint NumViews,
@@ -358,7 +358,7 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _OMSetRenderTargets(
+        public delegate void _OMSetRenderTargets(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("UINT")] uint NumRenderTargetDescriptors,
             [In, Optional, NativeTypeName("D3D12_CPU_DESCRIPTOR_HANDLE[]")] D3D12_CPU_DESCRIPTOR_HANDLE* pRenderTargetDescriptors,
@@ -367,7 +367,7 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _ClearDepthStencilView(
+        public delegate void _ClearDepthStencilView(
             [In] ID3D12GraphicsCommandList1* This,
             [In] D3D12_CPU_DESCRIPTOR_HANDLE DepthStencilView,
             [In] D3D12_CLEAR_FLAGS ClearFlags,
@@ -378,7 +378,7 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _ClearRenderTargetView(
+        public delegate void _ClearRenderTargetView(
             [In] ID3D12GraphicsCommandList1* This,
             [In] D3D12_CPU_DESCRIPTOR_HANDLE RenderTargetView,
             [In, NativeTypeName("FLOAT")] float* ColorRGBA,
@@ -387,7 +387,7 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _ClearUnorderedAccessViewUint(
+        public delegate void _ClearUnorderedAccessViewUint(
             [In] ID3D12GraphicsCommandList1* This,
             [In] D3D12_GPU_DESCRIPTOR_HANDLE ViewGPUHandleInCurrentHeap,
             [In] D3D12_CPU_DESCRIPTOR_HANDLE ViewCPUHandle,
@@ -398,7 +398,7 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _ClearUnorderedAccessViewFloat(
+        public delegate void _ClearUnorderedAccessViewFloat(
             [In] ID3D12GraphicsCommandList1* This,
             [In] D3D12_GPU_DESCRIPTOR_HANDLE ViewGPUHandleInCurrentHeap,
             [In] D3D12_CPU_DESCRIPTOR_HANDLE ViewCPUHandle,
@@ -409,14 +409,14 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _DiscardResource(
+        public delegate void _DiscardResource(
             [In] ID3D12GraphicsCommandList1* This,
             [In] ID3D12Resource* pResource,
             [In] D3D12_DISCARD_REGION* pRegion = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _BeginQuery(
+        public delegate void _BeginQuery(
             [In] ID3D12GraphicsCommandList1* This,
             [In] ID3D12QueryHeap* pQueryHeap,
             [In] D3D12_QUERY_TYPE Type,
@@ -424,7 +424,7 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _EndQuery(
+        public delegate void _EndQuery(
             [In] ID3D12GraphicsCommandList1* This,
             [In] ID3D12QueryHeap* pQueryHeap,
             [In] D3D12_QUERY_TYPE Type,
@@ -432,7 +432,7 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _ResolveQueryData(
+        public delegate void _ResolveQueryData(
             [In] ID3D12GraphicsCommandList1* This,
             [In] ID3D12QueryHeap* pQueryHeap,
             [In] D3D12_QUERY_TYPE Type,
@@ -443,7 +443,7 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetPredication(
+        public delegate void _SetPredication(
             [In] ID3D12GraphicsCommandList1* This,
             [In, Optional] ID3D12Resource* pBuffer,
             [In, NativeTypeName("UINT64")] ulong AlignedBufferOffset,
@@ -451,7 +451,7 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetMarker(
+        public delegate void _SetMarker(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("UINT")] uint Metadata,
             [In, Optional] void* pData,
@@ -459,7 +459,7 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _BeginEvent(
+        public delegate void _BeginEvent(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("UINT")] uint Metadata,
             [In, Optional] void* pData,
@@ -467,12 +467,12 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _EndEvent(
+        public delegate void _EndEvent(
             [In] ID3D12GraphicsCommandList1* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _ExecuteIndirect(
+        public delegate void _ExecuteIndirect(
             [In] ID3D12GraphicsCommandList1* This,
             [In] ID3D12CommandSignature* pCommandSignature,
             [In, NativeTypeName("UINT")] uint MaxCommandCount,
@@ -483,7 +483,7 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _AtomicCopyBufferUINT(
+        public delegate void _AtomicCopyBufferUINT(
             [In] ID3D12GraphicsCommandList1* This,
             [In] ID3D12Resource* pDstBuffer,
             [In, NativeTypeName("UINT64")] ulong DstOffset,
@@ -495,7 +495,7 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _AtomicCopyBufferUINT64(
+        public delegate void _AtomicCopyBufferUINT64(
             [In] ID3D12GraphicsCommandList1* This,
             [In] ID3D12Resource* pDstBuffer,
             [In, NativeTypeName("UINT64")] ulong DstOffset,
@@ -507,14 +507,14 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _OMSetDepthBounds(
+        public delegate void _OMSetDepthBounds(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("FLOAT")] float Min,
             [In, NativeTypeName("FLOAT")] float Max
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _SetSamplePositions(
+        public delegate void _SetSamplePositions(
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("UINT")] uint NumSamplesPerPixel,
             [In, NativeTypeName("UINT")] uint NumPixels,
@@ -522,7 +522,7 @@ namespace TerraFX.Interop
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public /* static */ delegate void _ResolveSubresourceRegion(
+        public delegate void _ResolveSubresourceRegion(
             [In] ID3D12GraphicsCommandList1* This,
             [In] ID3D12Resource* pDstResource,
             [In, NativeTypeName("UINT")] uint DstSubresource,

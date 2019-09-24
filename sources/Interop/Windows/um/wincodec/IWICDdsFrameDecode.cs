@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IWICDdsFrameDecode* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IWICDdsFrameDecode* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IWICDdsFrameDecode* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSizeInBlocks(
+        public delegate int _GetSizeInBlocks(
             [In] IWICDdsFrameDecode* This,
             [Out, NativeTypeName("UINT")] uint* pWidthInBlocks,
             [Out, NativeTypeName("UINT")] uint* pHeightInBlocks
@@ -43,14 +43,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFormatInfo(
+        public delegate int _GetFormatInfo(
             [In] IWICDdsFrameDecode* This,
             [Out] WICDdsFormatInfo* pFormatInfo
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CopyBlocks(
+        public delegate int _CopyBlocks(
             [In] IWICDdsFrameDecode* This,
             [In] WICRect* prcBoundsInBlocks,
             [In, NativeTypeName("UINT")] uint cbStride,

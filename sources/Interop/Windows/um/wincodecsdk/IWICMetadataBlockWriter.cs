@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IWICMetadataBlockWriter* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,33 +23,33 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IWICMetadataBlockWriter* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IWICMetadataBlockWriter* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetContainerFormat(
+        public delegate int _GetContainerFormat(
             [In] IWICMetadataBlockWriter* This,
             [Out, NativeTypeName("GUID")] Guid* pguidContainerFormat
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetCount(
+        public delegate int _GetCount(
             [In] IWICMetadataBlockWriter* This,
             [Out, NativeTypeName("UINT")] uint* pcCount
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetReaderByIndex(
+        public delegate int _GetReaderByIndex(
             [In] IWICMetadataBlockWriter* This,
             [In, NativeTypeName("UINT")] uint nIndex,
             [Out] IWICMetadataReader** ppIMetadataReader = null
@@ -57,21 +57,21 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetEnumerator(
+        public delegate int _GetEnumerator(
             [In] IWICMetadataBlockWriter* This,
             [Out] IEnumUnknown** ppIEnumMetadata = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _InitializeFromBlockReader(
+        public delegate int _InitializeFromBlockReader(
             [In] IWICMetadataBlockWriter* This,
             [In] IWICMetadataBlockReader* pIMDBlockReader = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetWriterByIndex(
+        public delegate int _GetWriterByIndex(
             [In] IWICMetadataBlockWriter* This,
             [In, NativeTypeName("UINT")] uint nIndex,
             [Out] IWICMetadataWriter** ppIMetadataWriter = null
@@ -79,14 +79,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AddWriter(
+        public delegate int _AddWriter(
             [In] IWICMetadataBlockWriter* This,
             [In] IWICMetadataWriter* pIMetadataWriter = null
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetWriterByIndex(
+        public delegate int _SetWriterByIndex(
             [In] IWICMetadataBlockWriter* This,
             [In, NativeTypeName("UINT")] uint nIndex,
             [In] IWICMetadataWriter* pIMetadataWriter = null
@@ -94,7 +94,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RemoveWriterByIndex(
+        public delegate int _RemoveWriterByIndex(
             [In] IWICMetadataBlockWriter* This,
             [In, NativeTypeName("UINT")] uint nIndex
         );

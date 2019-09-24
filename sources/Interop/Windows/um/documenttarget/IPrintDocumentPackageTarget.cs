@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
+        public delegate int _QueryInterface(
             [In] IPrintDocumentPackageTarget* This,
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvObject
@@ -23,19 +23,19 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
+        public delegate uint _AddRef(
             [In] IPrintDocumentPackageTarget* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
+        public delegate uint _Release(
             [In] IPrintDocumentPackageTarget* This
         );
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPackageTargetTypes(
+        public delegate int _GetPackageTargetTypes(
             [In] IPrintDocumentPackageTarget* This,
             [Out, NativeTypeName("UINT32")] uint* targetCount,
             [Out, NativeTypeName("GUID[]")] Guid** targetTypes = null
@@ -43,7 +43,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPackageTarget(
+        public delegate int _GetPackageTarget(
             [In] IPrintDocumentPackageTarget* This,
             [In, NativeTypeName("REFGUID")] Guid* guidTargetType,
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -52,7 +52,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Cancel(
+        public delegate int _Cancel(
             [In] IPrintDocumentPackageTarget* This
         );
 
