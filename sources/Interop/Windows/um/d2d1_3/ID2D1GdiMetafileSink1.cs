@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -15,7 +14,7 @@ namespace TerraFX.Interop
     {
         public readonly Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _QueryInterface(
             [In] ID2D1GdiMetafileSink1* This,
@@ -23,20 +22,20 @@ namespace TerraFX.Interop
             [Out] void** ppvObject
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
         public /* static */ delegate uint _AddRef(
             [In] ID2D1GdiMetafileSink1* This
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
         public /* static */ delegate uint _Release(
             [In] ID2D1GdiMetafileSink1* This
         );
 
         /// <summary>Callback for examining a metafile record.</summary>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _ProcessRecord(
             [In] ID2D1GdiMetafileSink1* This,
@@ -46,7 +45,7 @@ namespace TerraFX.Interop
         );
 
         /// <summary>Callback for examining a metafile record.</summary>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _ProcessRecord1(
             [In] ID2D1GdiMetafileSink1* This,

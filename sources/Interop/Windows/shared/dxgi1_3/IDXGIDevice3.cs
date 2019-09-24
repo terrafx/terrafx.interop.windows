@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -14,7 +13,7 @@ namespace TerraFX.Interop
     {
         public readonly Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _QueryInterface(
             [In] IDXGIDevice3* This,
@@ -22,19 +21,19 @@ namespace TerraFX.Interop
             [Out] void** ppvObject
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
         public /* static */ delegate uint _AddRef(
             [In] IDXGIDevice3* This
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
         public /* static */ delegate uint _Release(
             [In] IDXGIDevice3* This
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _SetPrivateData(
             [In] IDXGIDevice3* This,
@@ -43,7 +42,7 @@ namespace TerraFX.Interop
             [In] void* pData
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _SetPrivateDataInterface(
             [In] IDXGIDevice3* This,
@@ -51,7 +50,7 @@ namespace TerraFX.Interop
             [In] IUnknown* pUnknown = null
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetPrivateData(
             [In] IDXGIDevice3* This,
@@ -60,7 +59,7 @@ namespace TerraFX.Interop
             [Out] void* pData
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetParent(
             [In] IDXGIDevice3* This,
@@ -68,14 +67,14 @@ namespace TerraFX.Interop
             [Out] void** ppParent
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetAdapter(
             [In] IDXGIDevice3* This,
             [Out] IDXGIAdapter** pAdapter
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _CreateSurface(
             [In] IDXGIDevice3* This,
@@ -86,7 +85,7 @@ namespace TerraFX.Interop
             [Out, NativeTypeName("IDXGISurface*[]")] IDXGISurface** ppSurface
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _QueryResourceResidency(
             [In] IDXGIDevice3* This,
@@ -95,35 +94,35 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT")] uint NumResources
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _SetGPUThreadPriority(
             [In] IDXGIDevice3* This,
             [In, NativeTypeName("INT")] int Priority
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetGPUThreadPriority(
             [In] IDXGIDevice3* This,
             [Out, NativeTypeName("INT")] int* pPriority
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _SetMaximumFrameLatency(
             [In] IDXGIDevice3* This,
             [In, NativeTypeName("UINT")] uint MaxLatency
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetMaximumFrameLatency(
             [In] IDXGIDevice3* This,
             [Out, NativeTypeName("UINT")] uint* pMaxLatency
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _OfferResources(
             [In] IDXGIDevice3* This,
@@ -132,7 +131,7 @@ namespace TerraFX.Interop
             [In] DXGI_OFFER_RESOURCE_PRIORITY Priority
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _ReclaimResources(
             [In] IDXGIDevice3* This,
@@ -141,14 +140,14 @@ namespace TerraFX.Interop
             [Out, NativeTypeName("BOOL")] int* pDiscarded = null
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _EnqueueSetEvent(
             [In] IDXGIDevice3* This,
             [In, NativeTypeName("HANDLE")] IntPtr hEvent
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate void _Trim(
             [In] IDXGIDevice3* This
         );

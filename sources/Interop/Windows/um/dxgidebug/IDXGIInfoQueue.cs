@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -14,7 +13,7 @@ namespace TerraFX.Interop
     {
         public readonly Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _QueryInterface(
             [In] IDXGIInfoQueue* This,
@@ -22,19 +21,19 @@ namespace TerraFX.Interop
             [Out] void** ppvObject
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
         public /* static */ delegate uint _AddRef(
             [In] IDXGIInfoQueue* This
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
         public /* static */ delegate uint _Release(
             [In] IDXGIInfoQueue* This
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _SetMessageCountLimit(
             [In] IDXGIInfoQueue* This,
@@ -42,13 +41,13 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT64")] ulong MessageCountLimit
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate void _ClearStoredMessages(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetMessage(
             [In] IDXGIInfoQueue* This,
@@ -58,49 +57,49 @@ namespace TerraFX.Interop
             [In, Out, NativeTypeName("SIZE_T")] UIntPtr* pMessageByteLength
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
         public /* static */ delegate ulong _GetNumStoredMessagesAllowedByRetrievalFilters(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
         public /* static */ delegate ulong _GetNumStoredMessages(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
         public /* static */ delegate ulong _GetNumMessagesDiscardedByMessageCountLimit(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
         public /* static */ delegate ulong _GetMessageCountLimit(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
         public /* static */ delegate ulong _GetNumMessagesAllowedByStorageFilter(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
         public /* static */ delegate ulong _GetNumMessagesDeniedByStorageFilter(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _AddStorageFilterEntries(
             [In] IDXGIInfoQueue* This,
@@ -108,7 +107,7 @@ namespace TerraFX.Interop
             [In] DXGI_INFO_QUEUE_FILTER* pFilter
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetStorageFilter(
             [In] IDXGIInfoQueue* This,
@@ -117,35 +116,35 @@ namespace TerraFX.Interop
             [In, Out, NativeTypeName("SIZE_T")] UIntPtr* pFilterByteLength
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _ClearStorageFilter(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _PushEmptyStorageFilter(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _PushDenyAllStorageFilter(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _PushCopyOfStorageFilter(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _PushStorageFilter(
             [In] IDXGIInfoQueue* This,
@@ -153,20 +152,20 @@ namespace TerraFX.Interop
             [In] DXGI_INFO_QUEUE_FILTER* pFilter
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate void _PopStorageFilter(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT")]
         public /* static */ delegate uint _GetStorageFilterStackSize(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _AddRetrievalFilterEntries(
             [In] IDXGIInfoQueue* This,
@@ -174,7 +173,7 @@ namespace TerraFX.Interop
             [In] DXGI_INFO_QUEUE_FILTER* pFilter
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetRetrievalFilter(
             [In] IDXGIInfoQueue* This,
@@ -183,34 +182,34 @@ namespace TerraFX.Interop
             [In, Out, NativeTypeName("SIZE_T")] UIntPtr* pFilterByteLength
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate void _ClearRetrievalFilter(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _PushEmptyRetrievalFilter(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _PushDenyAllRetrievalFilter(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _PushCopyOfRetrievalFilter(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _PushRetrievalFilter(
             [In] IDXGIInfoQueue* This,
@@ -218,20 +217,20 @@ namespace TerraFX.Interop
             [In] DXGI_INFO_QUEUE_FILTER* pFilter
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate void _PopRetrievalFilter(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT")]
         public /* static */ delegate uint _GetRetrievalFilterStackSize(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _AddMessage(
             [In] IDXGIInfoQueue* This,
@@ -242,7 +241,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("LPCSTR")] sbyte* pDescription
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _AddApplicationMessage(
             [In] IDXGIInfoQueue* This,
@@ -250,7 +249,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("LPCSTR")] sbyte* pDescription
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _SetBreakOnCategory(
             [In] IDXGIInfoQueue* This,
@@ -259,7 +258,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("BOOL")] int bEnable
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _SetBreakOnSeverity(
             [In] IDXGIInfoQueue* This,
@@ -268,7 +267,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("BOOL")] int bEnable
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _SetBreakOnID(
             [In] IDXGIInfoQueue* This,
@@ -277,7 +276,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("BOOL")] int bEnable
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
         public /* static */ delegate int _GetBreakOnCategory(
             [In] IDXGIInfoQueue* This,
@@ -285,7 +284,7 @@ namespace TerraFX.Interop
             [In] DXGI_INFO_QUEUE_MESSAGE_CATEGORY Category
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
         public /* static */ delegate int _GetBreakOnSeverity(
             [In] IDXGIInfoQueue* This,
@@ -293,7 +292,7 @@ namespace TerraFX.Interop
             [In] DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
         public /* static */ delegate int _GetBreakOnID(
             [In] IDXGIInfoQueue* This,
@@ -301,14 +300,14 @@ namespace TerraFX.Interop
             [In, NativeTypeName("DXGI_INFO_QUEUE_MESSAGE_ID")] int ID
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate void _SetMuteDebugOutput(
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer,
             [In, NativeTypeName("BOOL")] int bMute
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
         public /* static */ delegate int _GetMuteDebugOutput(
             [In] IDXGIInfoQueue* This,

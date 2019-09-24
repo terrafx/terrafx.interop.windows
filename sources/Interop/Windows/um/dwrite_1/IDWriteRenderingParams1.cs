@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -15,7 +14,7 @@ namespace TerraFX.Interop
     {
         public readonly Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _QueryInterface(
             [In] IDWriteRenderingParams1* This,
@@ -23,52 +22,52 @@ namespace TerraFX.Interop
             [Out] void** ppvObject
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
         public /* static */ delegate uint _AddRef(
             [In] IDWriteRenderingParams1* This
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
         public /* static */ delegate uint _Release(
             [In] IDWriteRenderingParams1* This
         );
 
         /// <summary>Gets the gamma value used for gamma correction. Valid values must be greater than zero and cannot exceed 256.</summary>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
         public /* static */ delegate float _GetGamma(
             [In] IDWriteRenderingParams1* This
         );
 
         /// <summary>Gets the amount of contrast enhancement. Valid values are greater than or equal to zero.</summary>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
         public /* static */ delegate float _GetEnhancedContrast(
             [In] IDWriteRenderingParams1* This
         );
 
         /// <summary>Gets the ClearType level. Valid values range from 0.0f (no ClearType) to 1.0f (full ClearType).</summary>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate float _GetClearTypeLevel(
             [In] IDWriteRenderingParams1* This
         );
 
         /// <summary>Gets the pixel geometry.</summary>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate DWRITE_PIXEL_GEOMETRY _GetPixelGeometry(
             [In] IDWriteRenderingParams1* This
         );
 
         /// <summary>Gets the rendering mode.</summary>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate DWRITE_RENDERING_MODE _GetRenderingMode(
             [In] IDWriteRenderingParams1* This
         );
 
         /// <summary>Gets the amount of contrast enhancement to use for grayscale antialiasing. Valid values are greater than or equal to zero.</summary>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
         public /* static */ delegate float _GetGrayscaleEnhancedContrast(
             [In] IDWriteRenderingParams1* This

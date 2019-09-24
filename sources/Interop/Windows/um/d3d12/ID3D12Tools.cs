@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -14,7 +13,7 @@ namespace TerraFX.Interop
     {
         public readonly Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _QueryInterface(
             [In] ID3D12Tools* This,
@@ -22,25 +21,25 @@ namespace TerraFX.Interop
             [Out] void** ppvObject
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
         public /* static */ delegate uint _AddRef(
             [In] ID3D12Tools* This
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
         public /* static */ delegate uint _Release(
             [In] ID3D12Tools* This
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate void _EnableShaderInstrumentation(
             [In] ID3D12Tools* This,
             [In, NativeTypeName("BOOL")] int bEnable
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
         public /* static */ delegate int _ShaderInstrumentationEnabled(
             [In] ID3D12Tools* This

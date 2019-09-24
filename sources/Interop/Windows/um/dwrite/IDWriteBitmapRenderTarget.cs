@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -15,7 +14,7 @@ namespace TerraFX.Interop
     {
         public readonly Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _QueryInterface(
             [In] IDWriteBitmapRenderTarget* This,
@@ -23,13 +22,13 @@ namespace TerraFX.Interop
             [Out] void** ppvObject
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
         public /* static */ delegate uint _AddRef(
             [In] IDWriteBitmapRenderTarget* This
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
         public /* static */ delegate uint _Release(
             [In] IDWriteBitmapRenderTarget* This
@@ -44,7 +43,7 @@ namespace TerraFX.Interop
         /// <param name="textColor">Specifies the foreground color of the text.</param>
         /// <param name="blackBoxRect">Optional rectangle that receives the bounding box (in pixels not DIPs) of all the pixels affected by drawing the glyph run. The black box rectangle may extend beyond the dimensions of the bitmap.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _DrawGlyphRun(
             [In] IDWriteBitmapRenderTarget* This,
@@ -60,7 +59,7 @@ namespace TerraFX.Interop
         /// <summary>Gets a handle to the memory device context.</summary>
         /// <returns>Returns the device context handle.</returns>
         /// <remarks> An application can use the device context to draw using GDI functions. An application can obtain the bitmap handle (HBITMAP) by calling GetCurrentObject. An application that wants information about the underlying bitmap, including a pointer to the pixel data, can call GetObject to fill in a DIBSECTION public structure. The bitmap is always a 32-bit top-down DIB.</remarks>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HDC")]
         public /* static */ delegate IntPtr _GetMemoryDC(
             [In] IDWriteBitmapRenderTarget* This
@@ -68,7 +67,7 @@ namespace TerraFX.Interop
 
         /// <summary>Gets the number of bitmap pixels per DIP. A DIP (device-independent pixel) is 1/96 inch so this value is the number if pixels per inch divided by 96.</summary>
         /// <returns>Returns the number of bitmap pixels per DIP.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
         public /* static */ delegate float _GetPixelsPerDip(
             [In] IDWriteBitmapRenderTarget* This
@@ -77,7 +76,7 @@ namespace TerraFX.Interop
         /// <summary>Sets the number of bitmap pixels per DIP. A DIP (device-independent pixel) is 1/96 inch so this value is the number if pixels per inch divided by 96.</summary>
         /// <param name="pixelsPerDip">Specifies the number of pixels per DIP.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _SetPixelsPerDip(
             [In] IDWriteBitmapRenderTarget* This,
@@ -87,7 +86,7 @@ namespace TerraFX.Interop
         /// <summary>Gets the transform that maps abstract coordinate to DIPs. By default this is the identity transform. Note that this is unrelated to the world transform of the underlying device context.</summary>
         /// <param name="transform">Receives the transform.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetCurrentTransform(
             [In] IDWriteBitmapRenderTarget* This,
@@ -97,7 +96,7 @@ namespace TerraFX.Interop
         /// <summary>Sets the transform that maps abstract coordinate to DIPs. This does not affect the world transform of the underlying device context.</summary>
         /// <param name="transform">Specifies the new transform. This parameter can be NULL, in which case the identity transform is implied.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _SetCurrentTransform(
             [In] IDWriteBitmapRenderTarget* This,
@@ -107,7 +106,7 @@ namespace TerraFX.Interop
         /// <summary>Gets the dimensions of the bitmap.</summary>
         /// <param name="size">Receives the size of the bitmap in pixels.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetSize(
             [In] IDWriteBitmapRenderTarget* This,
@@ -118,7 +117,7 @@ namespace TerraFX.Interop
         /// <param name="width">New bitmap width, in pixels.</param>
         /// <param name="height">New bitmap height, in pixels.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _Resize(
             [In] IDWriteBitmapRenderTarget* This,

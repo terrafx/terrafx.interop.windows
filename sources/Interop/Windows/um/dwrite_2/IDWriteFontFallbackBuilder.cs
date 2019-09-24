@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -16,7 +15,7 @@ namespace TerraFX.Interop
     {
         public readonly Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _QueryInterface(
             [In] IDWriteFontFallbackBuilder* This,
@@ -24,13 +23,13 @@ namespace TerraFX.Interop
             [Out] void** ppvObject
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
         public /* static */ delegate uint _AddRef(
             [In] IDWriteFontFallbackBuilder* This
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
         public /* static */ delegate uint _Release(
             [In] IDWriteFontFallbackBuilder* This
@@ -46,7 +45,7 @@ namespace TerraFX.Interop
         /// <param name="targetFamilyNamesCount">Number of target family names.</param>
         /// <param name="scale">Scale factor to multiply the result target font by.</param>
         /// <returns> Standard HRESULT error code.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _AddMapping(
             [In] IDWriteFontFallbackBuilder* This,
@@ -63,7 +62,7 @@ namespace TerraFX.Interop
         /// <summary>Appends all the mappings from an existing font fallback object.</summary>
         /// <param name="fontFallback">Font fallback to read mappings from.</param>
         /// <returns> Standard HRESULT error code.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _AddMappings(
             [In] IDWriteFontFallbackBuilder* This,
@@ -73,7 +72,7 @@ namespace TerraFX.Interop
         /// <summary>Creates the finalized fallback object from the mappings added.</summary>
         /// <param name="fontFallback">Created fallback list.</param>
         /// <returns> Standard HRESULT error code.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _CreateFontFallback(
             [In] IDWriteFontFallbackBuilder* This,

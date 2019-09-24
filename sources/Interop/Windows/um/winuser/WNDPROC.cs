@@ -5,11 +5,10 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
-    [UnmanagedFunctionPointer(CallingConvention.Winapi, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+    [UnmanagedFunctionPointer(CallingConvention.Winapi)]
     [return: NativeTypeName("LRESULT")]
     public /* static */ unsafe delegate IntPtr WNDPROC(
         [In, NativeTypeName("HWND")] IntPtr hWnd,

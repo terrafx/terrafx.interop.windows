@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -14,7 +13,7 @@ namespace TerraFX.Interop
     {
         public readonly Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _QueryInterface(
             [In] ID3D12Device* This,
@@ -22,19 +21,19 @@ namespace TerraFX.Interop
             [Out] void** ppvObject
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
         public /* static */ delegate uint _AddRef(
             [In] ID3D12Device* This
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
         public /* static */ delegate uint _Release(
             [In] ID3D12Device* This
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetPrivateData(
             [In] ID3D12Device* This,
@@ -43,7 +42,7 @@ namespace TerraFX.Interop
             [Out] void* pData = null
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _SetPrivateData(
             [In] ID3D12Device* This,
@@ -52,7 +51,7 @@ namespace TerraFX.Interop
             [In] void* pData = null
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _SetPrivateDataInterface(
             [In] ID3D12Device* This,
@@ -60,20 +59,20 @@ namespace TerraFX.Interop
             [In] IUnknown* pData = null
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _SetName(
             [In] ID3D12Device* This,
             [In, NativeTypeName("LPCWSTR")] char* Name
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT")]
         public /* static */ delegate uint _GetNodeCount(
             [In] ID3D12Device* This
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _CreateCommandQueue(
             [In] ID3D12Device* This,
@@ -82,7 +81,7 @@ namespace TerraFX.Interop
             [Out] void** ppCommandQueue
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _CreateCommandAllocator(
             [In] ID3D12Device* This,
@@ -91,7 +90,7 @@ namespace TerraFX.Interop
             [Out] void** ppCommandAllocator
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _CreateGraphicsPipelineState(
             [In] ID3D12Device* This,
@@ -100,7 +99,7 @@ namespace TerraFX.Interop
             [Out] void** ppPipelineState
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _CreateComputePipelineState(
             [In] ID3D12Device* This,
@@ -109,7 +108,7 @@ namespace TerraFX.Interop
             [Out] void** ppPipelineState
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _CreateCommandList(
             [In] ID3D12Device* This,
@@ -121,7 +120,7 @@ namespace TerraFX.Interop
             [Out] void** ppCommandList
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _CheckFeatureSupport(
             [In] ID3D12Device* This,
@@ -130,7 +129,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT")] uint FeatureSupportDataSize
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _CreateDescriptorHeap(
             [In] ID3D12Device* This,
@@ -139,14 +138,14 @@ namespace TerraFX.Interop
             [Out] void** ppvHeap
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT")]
         public /* static */ delegate uint _GetDescriptorHandleIncrementSize(
             [In] ID3D12Device* This,
             [In] D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapType
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _CreateRootSignature(
             [In] ID3D12Device* This,
@@ -157,14 +156,14 @@ namespace TerraFX.Interop
             [Out] void** ppvRootSignature
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate void _CreateConstantBufferView(
             [In] ID3D12Device* This,
             [In, Optional] D3D12_CONSTANT_BUFFER_VIEW_DESC* pDesc,
             [In] D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate void _CreateShaderResourceView(
             [In] ID3D12Device* This,
             [In, Optional] ID3D12Resource* pResource,
@@ -172,7 +171,7 @@ namespace TerraFX.Interop
             [In] D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate void _CreateUnorderedAccessView(
             [In] ID3D12Device* This,
             [In, Optional] ID3D12Resource* pResource,
@@ -181,7 +180,7 @@ namespace TerraFX.Interop
             [In] D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate void _CreateRenderTargetView(
             [In] ID3D12Device* This,
             [In, Optional] ID3D12Resource* pResource,
@@ -189,7 +188,7 @@ namespace TerraFX.Interop
             [In] D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate void _CreateDepthStencilView(
             [In] ID3D12Device* This,
             [In, Optional] ID3D12Resource* pResource,
@@ -197,14 +196,14 @@ namespace TerraFX.Interop
             [In] D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate void _CreateSampler(
             [In] ID3D12Device* This,
             [In] D3D12_SAMPLER_DESC* pDesc,
             [In] D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate void _CopyDescriptors(
             [In] ID3D12Device* This,
             [In, NativeTypeName("UINT")] uint NumDestDescriptorRanges,
@@ -216,7 +215,7 @@ namespace TerraFX.Interop
             [In] D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapsType
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate void _CopyDescriptorsSimple(
             [In] ID3D12Device* This,
             [In, NativeTypeName("UINT")] uint NumDescriptors,
@@ -225,7 +224,7 @@ namespace TerraFX.Interop
             [In] D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapsType
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate D3D12_RESOURCE_ALLOCATION_INFO* _GetResourceAllocationInfo(
             [In] ID3D12Device* This,
             [Out] D3D12_RESOURCE_ALLOCATION_INFO* _result,
@@ -234,7 +233,7 @@ namespace TerraFX.Interop
             [In] D3D12_RESOURCE_DESC* pResourceDescs
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate D3D12_HEAP_PROPERTIES* _GetCustomHeapProperties(
             [In] ID3D12Device* This,
             [Out] D3D12_HEAP_PROPERTIES* _result,
@@ -242,7 +241,7 @@ namespace TerraFX.Interop
             [In] D3D12_HEAP_TYPE heapType
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _CreateCommittedResource(
             [In] ID3D12Device* This,
@@ -255,7 +254,7 @@ namespace TerraFX.Interop
             [Out] void** ppvResource = null
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _CreateHeap(
             [In] ID3D12Device* This,
@@ -264,7 +263,7 @@ namespace TerraFX.Interop
             [Out] void** ppvHeap = null
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _CreatePlacedResource(
             [In] ID3D12Device* This,
@@ -277,7 +276,7 @@ namespace TerraFX.Interop
             [Out] void** ppvResource = null
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _CreateReservedResource(
             [In] ID3D12Device* This,
@@ -288,7 +287,7 @@ namespace TerraFX.Interop
             [Out] void** ppvResource = null
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _CreateSharedHandle(
             [In] ID3D12Device* This,
@@ -299,7 +298,7 @@ namespace TerraFX.Interop
             [Out, NativeTypeName("HANDLE")] IntPtr* pHandle
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _OpenSharedHandle(
             [In] ID3D12Device* This,
@@ -308,7 +307,7 @@ namespace TerraFX.Interop
             [Out] void** ppvObj = null
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _OpenSharedHandleByName(
             [In] ID3D12Device* This,
@@ -317,7 +316,7 @@ namespace TerraFX.Interop
             [Out, NativeTypeName("HANDLE")] IntPtr* pNTHandle
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _MakeResident(
             [In] ID3D12Device* This,
@@ -325,7 +324,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("ID3D12Pageable*[]")] ID3D12Pageable** ppObjects
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _Evict(
             [In] ID3D12Device* This,
@@ -333,7 +332,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("ID3D12Pageable*[]")] ID3D12Pageable** ppObjects
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _CreateFence(
             [In] ID3D12Device* This,
@@ -343,14 +342,14 @@ namespace TerraFX.Interop
             [Out] void** ppFence
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetDeviceRemovedReason(
             [In] ID3D12Device* This
 
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate void _GetCopyableFootprints(
             [In] ID3D12Device* This,
             [In] D3D12_RESOURCE_DESC* pResourceDesc,
@@ -363,7 +362,7 @@ namespace TerraFX.Interop
             [Out, NativeTypeName("UINT64")] ulong* pTotalBytes = null
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _CreateQueryHeap(
             [In] ID3D12Device* This,
@@ -372,14 +371,14 @@ namespace TerraFX.Interop
             [Out] void** ppvHeap = null
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _SetStablePowerState(
             [In] ID3D12Device* This,
             [In, NativeTypeName("BOOL")] int Enable
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _CreateCommandSignature(
             [In] ID3D12Device* This,
@@ -389,7 +388,7 @@ namespace TerraFX.Interop
             [Out] void** ppvCommandSignature = null
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate void _GetResourceTiling(
             [In] ID3D12Device* This,
             [In] ID3D12Resource* pTiledResource,
@@ -401,7 +400,7 @@ namespace TerraFX.Interop
             [Out] D3D12_SUBRESOURCE_TILING* pSubresourceTilingsForNonPackedMips
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate LUID* _GetAdapterLuid(
             [In] ID3D12Device* This,
             [Out] LUID* _result

@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop

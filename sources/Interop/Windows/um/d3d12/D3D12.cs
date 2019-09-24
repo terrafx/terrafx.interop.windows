@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 using static TerraFX.Interop.D3D12_FEATURE;
 using static TerraFX.Interop.D3D12_FILTER_TYPE;
 using static TerraFX.Interop.D3D12_FILTER_REDUCTION_TYPE;

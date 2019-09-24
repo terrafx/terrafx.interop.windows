@@ -4,12 +4,11 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     /// <summary>Function pointer that sets a property on an effect.</summary>
-    [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
     [return: NativeTypeName("HRESULT")]
     public /* static */ unsafe delegate int PD2D1_PROPERTY_SET_FUNCTION(
         [In] IUnknown* effect,

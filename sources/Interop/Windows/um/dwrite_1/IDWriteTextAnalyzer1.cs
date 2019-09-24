@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -15,7 +14,7 @@ namespace TerraFX.Interop
     {
         public readonly Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _QueryInterface(
             [In] IDWriteTextAnalyzer1* This,
@@ -23,13 +22,13 @@ namespace TerraFX.Interop
             [Out] void** ppvObject
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
         public /* static */ delegate uint _AddRef(
             [In] IDWriteTextAnalyzer1* This
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
         public /* static */ delegate uint _Release(
             [In] IDWriteTextAnalyzer1* This
@@ -41,7 +40,7 @@ namespace TerraFX.Interop
         /// <param name="textLength">Length to analyze.</param>
         /// <param name="analysisSink">Callback object.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _AnalyzeScript(
             [In] IDWriteTextAnalyzer1* This,
@@ -59,7 +58,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         /// <remarks> While the function can handle multiple paragraphs, the text range should not arbitrarily split the middle of paragraphs. Otherwise the returned levels may be wrong, since the Bidi algorithm is meant to apply to the paragraph as a whole.</remarks>
         /// <remarks> Embedded control codes (LRE/LRO/RLE/RLO/PDF) are taken into account.</remarks>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _AnalyzeBidi(
             [In] IDWriteTextAnalyzer1* This,
@@ -77,7 +76,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         /// <remarks> While the function can handle multiple ranges of differing number substitutions, the text ranges should not arbitrarily split the middle of numbers. Otherwise it will treat the numbers separately and will not translate any intervening punctuation.</remarks>
         /// <remarks> Embedded control codes (LRE/LRO/RLE/RLO/PDF) are taken into account.</remarks>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _AnalyzeNumberSubstitution(
             [In] IDWriteTextAnalyzer1* This,
@@ -95,7 +94,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         /// <remarks> While the function can handle multiple paragraphs, the text range should not arbitrarily split the middle of paragraphs, unless the given text span is considered a whole unit. Otherwise the returned properties for the first and last characters will inappropriately allow breaks.</remarks>
         /// <remarks> Special cases include the first, last, and surrogate characters. Any text span is treated as if adjacent to inline objects on either side. So the rules with contingent-break opportunities are used, where the edge between text and inline objects is always treated as a potential break opportunity, dependent on any overriding rules of the adjacent objects to prohibit or force the break (see Unicode TR #14). Surrogate pairs never break between.</remarks>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _AnalyzeLineBreakpoints(
             [In] IDWriteTextAnalyzer1* This,
@@ -125,7 +124,7 @@ namespace TerraFX.Interop
         /// <param name="actualGlyphCount">The actual number of glyphs returned if the call succeeds.</param>
         /// <returns>Standard HRESULT error code.</returns>
         /// <remarks> Note that the mapping from characters to glyphs is, in general, many- to-many.  The recommended estimate for the per-glyph output buffers is (3 * textLength / 2 + 16).  This is not guaranteed to be sufficient. The value of the actualGlyphCount parameter is only valid if the call succeeds.  In the event that maxGlyphCount is not big enough E_NOT_SUFFICIENT_BUFFER, which is equivalent to HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER), will be returned.  The application should allocate a larger buffer and try again.</remarks>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetGlyphs(
             [In] IDWriteTextAnalyzer1* This,
@@ -168,7 +167,7 @@ namespace TerraFX.Interop
         /// <param name="glyphAdvances">The advance width of each glyph.</param>
         /// <param name="glyphOffsets">The offset of the origin of each glyph.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetGlyphPlacements(
             [In] IDWriteTextAnalyzer1* This,
@@ -215,7 +214,7 @@ namespace TerraFX.Interop
         /// <param name="glyphAdvances">The advance width of each glyph.</param>
         /// <param name="glyphOffsets">The offset of the origin of each glyph.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetGdiCompatibleGlyphPlacements(
             [In] IDWriteTextAnalyzer1* This,
@@ -256,7 +255,7 @@ namespace TerraFX.Interop
         /// <param name="modifiedGlyphOffsets">The new offset of the origin of each glyph.</param>
         /// <remarks> The input and output advances/offsets are allowed to alias the same array.</remarks>
         /// <returns> Standard HRESULT error code.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _ApplyCharacterSpacing(
             [In] IDWriteTextAnalyzer1* This,
@@ -284,7 +283,7 @@ namespace TerraFX.Interop
         /// <param name="exists">Whether the returned baseline exists in the font.</param>
         /// <remarks> If the baseline does not exist in the font, it is not considered an error, but the function will return exists = false. You may then use heuristics to calculate the missing base, or, if the flag simulationAllowed is true, the function will compute a reasonable approximation for you.</remarks>
         /// <returns> Standard HRESULT error code.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetBaseline(
             [In] IDWriteTextAnalyzer1* This,
@@ -305,7 +304,7 @@ namespace TerraFX.Interop
         /// <param name="analysisSink">Callback object.</param>
         /// <returns> Standard HRESULT error code.</returns>
         /// <remarks> All bidi analysis should be resolved before calling this.</remarks>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _AnalyzeVerticalGlyphOrientation(
             [In] IDWriteTextAnalyzer1* This,
@@ -321,7 +320,7 @@ namespace TerraFX.Interop
         /// <param name="transform">Returned transform.</param>
         /// <returns> Standard HRESULT error code.</returns>
         /// <remarks> The returned displacement is zero.</remarks>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetGlyphOrientationTransform(
             [In] IDWriteTextAnalyzer1* This,
@@ -334,7 +333,7 @@ namespace TerraFX.Interop
         /// <param name="scriptAnalysis">The script for a run of text returned from IDWriteTextAnalyzer::AnalyzeScript.</param>
         /// <param name="scriptProperties">Information for the script.</param>
         /// <returns> Returns properties for the given script. If the script is invalid, it returns generic properties for the unknown script and E_INVALIDARG.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetScriptProperties(
             [In] IDWriteTextAnalyzer1* This,
@@ -351,7 +350,7 @@ namespace TerraFX.Interop
         /// <param name="glyphIndices">Optional glyph indices for the text. If the function returned that the text was simple, you already have the glyphs you need. Otherwise the glyph indices are not meaningful, and you should call shaping instead.</param>
         /// <remarks> Text is not simple if the characters are part of a script that has complex shaping requirements, require bidi analysis, combine with other characters, reside in the supplementary planes, or have glyphs which participate in standard OpenType features. The length returned will not split combining marks from their base characters.</remarks>
         /// <returns> Standard HRESULT error code.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetTextComplexity(
             [In] IDWriteTextAnalyzer1* This,
@@ -375,7 +374,7 @@ namespace TerraFX.Interop
         /// <param name="justificationOpportunities">Receives information for the allowed justification expansion/compression for each glyph.</param>
         /// <remarks> This function is called per-run, after shaping is done via GetGlyphs(). Note this function only supports natural metrics (DWRITE_MEASURING_MODE_NATURAL).</remarks>
         /// <returns> Standard HRESULT error code.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetJustificationOpportunities(
             [In] IDWriteTextAnalyzer1* This,
@@ -400,7 +399,7 @@ namespace TerraFX.Interop
         /// <param name="justifiedGlyphOffsets">Justified glyph offsets.</param>
         /// <remarks> This is called after all the opportunities have been collected, and it spans across the entire line. The input and output arrays are allowed to alias each other, permitting in-place update.</remarks>
         /// <returns> Standard HRESULT error code.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _JustifyGlyphAdvances(
             [In] IDWriteTextAnalyzer1* This,
@@ -433,7 +432,7 @@ namespace TerraFX.Interop
         /// <param name="modifiedGlyphOffsets">Updated glyph offsets.</param>
         /// <remarks> This is called after the line has been justified, and it is per-run. It only needs to be called if the script has a specific justification character via GetScriptProperties, and it is mainly for cursive scripts like Arabic. If maxGlyphCount is not large enough, the error E_NOT_SUFFICIENT_BUFFER will be returned, with actualGlyphCount holding the final/needed glyph count.</remarks>
         /// <returns> Standard HRESULT error code.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetJustifiedGlyphs(
             [In] IDWriteTextAnalyzer1* This,

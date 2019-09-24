@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -16,7 +15,7 @@ namespace TerraFX.Interop
     {
         public readonly Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _QueryInterface(
             [In] IDWriteRemoteFontFileLoader* This,
@@ -24,13 +23,13 @@ namespace TerraFX.Interop
             [Out] void** ppvObject
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
         public /* static */ delegate uint _AddRef(
             [In] IDWriteRemoteFontFileLoader* This
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
         public /* static */ delegate uint _Release(
             [In] IDWriteRemoteFontFileLoader* This
@@ -41,7 +40,7 @@ namespace TerraFX.Interop
         /// <param name="fontFileReferenceKeySize">Size of font file reference key in bytes.</param>
         /// <param name="fontFileStream">Pointer to the newly created font file stream.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _CreateStreamFromKey(
             [In] IDWriteRemoteFontFileLoader* This,
@@ -56,7 +55,7 @@ namespace TerraFX.Interop
         /// <param name="fontFileStream">Pointer to the newly created font file stream.</param>
         /// <returns> Standard HRESULT error code.</returns>
         /// <remarks> Unlike CreateStreamFromKey, this method can be used to create a stream for a remote file. If the file is remote, the client must call IDWriteRemoteFontFileStream::DownloadFileInformation before the stream can be used to get the file size or access data.</remarks>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _CreateRemoteStreamFromKey(
             [In] IDWriteRemoteFontFileLoader* This,
@@ -70,7 +69,7 @@ namespace TerraFX.Interop
         /// <param name="fontFileReferenceKeySize">Size of font file reference key in bytes.</param>
         /// <param name="locality">Locality of the file.</param>
         /// <returns> Standard HRESULT error code.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetLocalityFromKey(
             [In] IDWriteRemoteFontFileLoader* This,
@@ -85,7 +84,7 @@ namespace TerraFX.Interop
         /// <param name="fontFileUrl">URL of the font resource.</param>
         /// <param name="fontFile">Receives a pointer to the newly created font file reference.</param>
         /// <returns> Standard HRESULT error code, or E_NOTIMPL if the loader does not implement this method.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _CreateFontFileReferenceFromUrl(
             [In] IDWriteRemoteFontFileLoader* This,

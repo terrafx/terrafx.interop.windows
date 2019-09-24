@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -15,7 +14,7 @@ namespace TerraFX.Interop
     {
         public readonly Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _QueryInterface(
             [In] IDWriteFont3* This,
@@ -23,13 +22,13 @@ namespace TerraFX.Interop
             [Out] void** ppvObject
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
         public /* static */ delegate uint _AddRef(
             [In] IDWriteFont3* This
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
         public /* static */ delegate uint _Release(
             [In] IDWriteFont3* This
@@ -38,7 +37,7 @@ namespace TerraFX.Interop
         /// <summary>Gets the font family to which the specified font belongs.</summary>
         /// <param name="fontFamily">Receives a pointer to the font family object.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetFontFamily(
             [In] IDWriteFont3* This,
@@ -46,25 +45,25 @@ namespace TerraFX.Interop
         );
 
         /// <summary>Gets the weight of the specified font.</summary>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate DWRITE_FONT_WEIGHT _GetWeight(
             [In] IDWriteFont3* This
         );
 
         /// <summary>Gets the stretch (aka. width) of the specified font.</summary>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate DWRITE_FONT_STRETCH _GetStretch(
             [In] IDWriteFont3* This
         );
 
         /// <summary>Gets the style (aka. slope) of the specified font.</summary>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate DWRITE_FONT_STYLE _GetStyle(
             [In] IDWriteFont3* This
         );
 
         /// <summary>Returns TRUE if the font is a symbol font or FALSE if not.</summary>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
         public /* static */ delegate int _IsSymbolFont(
             [In] IDWriteFont3* This
@@ -73,7 +72,7 @@ namespace TerraFX.Interop
         /// <summary>Gets a localized strings collection containing the face names for the font (e.g., Regular or Bold), indexed by locale name.</summary>
         /// <param name="names">Receives a pointer to the newly created localized strings object.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetFaceNames(
             [In] IDWriteFont3* This,
@@ -85,7 +84,7 @@ namespace TerraFX.Interop
         /// <param name="informationalStrings">Receives a pointer to the newly created localized strings object.</param>
         /// <param name="exists">Receives the value TRUE if the font contains the specified string ID or FALSE if not.</param>
         /// <returns>Standard HRESULT error code. If the font does not contain the specified string, the return value is S_OK but informationalStrings receives a NULL pointer and exists receives the value FALSE.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetInformationalStrings(
             [In] IDWriteFont3* This,
@@ -95,14 +94,14 @@ namespace TerraFX.Interop
         );
 
         /// <summary>Gets a value that indicates what simulation are applied to the specified font.</summary>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate DWRITE_FONT_SIMULATIONS _GetSimulations(
             [In] IDWriteFont3* This
         );
 
         /// <summary>Gets the metrics for the font.</summary>
         /// <param name="fontMetrics">Receives the font metrics.</param>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate void _GetMetrics(
             [In] IDWriteFont3* This,
             [Out] DWRITE_FONT_METRICS* fontMetrics
@@ -112,7 +111,7 @@ namespace TerraFX.Interop
         /// <param name="unicodeValue">Unicode (UCS-4) character value.</param>
         /// <param name="exists">Receives the value TRUE if the font supports the specified character or FALSE if not.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _HasCharacter(
             [In] IDWriteFont3* This,
@@ -123,7 +122,7 @@ namespace TerraFX.Interop
         /// <summary>Creates a font face object for the font.</summary>
         /// <param name="fontFace">Receives a pointer to the newly created font face object.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _CreateFontFace(
             [In] IDWriteFont3* This,
@@ -132,7 +131,7 @@ namespace TerraFX.Interop
 
         /// <summary>Gets common metrics for the font in design units. These metrics are applicable to all the glyphs within a font, and are used by applications for layout calculations.</summary>
         /// <param name="fontMetrics">Metrics public structure to fill in.</param>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate void _GetMetrics1(
             [In] IDWriteFont3* This,
             [Out] DWRITE_FONT_METRICS1* fontMetrics
@@ -141,7 +140,7 @@ namespace TerraFX.Interop
         /// <summary>Gets the PANOSE values from the font, used for font selection and matching.</summary>
         /// <param name="panose">PANOSE public structure to fill in.</param>
         /// <remarks> The function does not simulate these, such as substituting a weight or proportion inferred on other values. If the font does not specify them, they are all set to 'any' (0).</remarks>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate void _GetPanose(
             [In] IDWriteFont3* This,
             [Out] DWRITE_PANOSE* panose
@@ -153,7 +152,7 @@ namespace TerraFX.Interop
         /// <param name="actualRangeCount">Actual number of character ranges, regardless of the maximum count.</param>
         /// <remarks> These ranges are from the cmap, not the OS/2::ulCodePageRange1.</remarks>
         /// <returns> Standard HRESULT error code.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetUnicodeRanges(
             [In] IDWriteFont3* This,
@@ -163,14 +162,14 @@ namespace TerraFX.Interop
         );
 
         /// <summary>Returns true if the font is monospaced, meaning its characters are the same fixed-pitch width (non-proportional).</summary>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
         public /* static */ delegate int _IsMonospacedFont(
             [In] IDWriteFont3* This
         );
 
         /// <summary>Returns TRUE if the font contains tables that can provide color information (including COLR, CPAL, SVG, CBDT, sbix  tables), or FALSE if not. Note that TRUE is returned even in the case when the font tables contain only grayscale images.</summary>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
         public /* static */ delegate int _IsColorFont(
             [In] IDWriteFont3* This
@@ -179,7 +178,7 @@ namespace TerraFX.Interop
         /// <summary>Creates a font face object for the font.</summary>
         /// <param name="fontFace">Receives a pointer to the newly created font face object.</param>
         /// <returns> Standard HRESULT error code. The function returns DWRITE_E_REMOTEFONT if it could not construct a remote font.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _CreateFontFace1(
             [In] IDWriteFont3* This,
@@ -187,7 +186,7 @@ namespace TerraFX.Interop
         );
 
         /// <summary>Compares two instances of a font references for equality.</summary>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
         public /* static */ delegate int __Equals(
             [In] IDWriteFont3* This,
@@ -197,7 +196,7 @@ namespace TerraFX.Interop
         /// <summary>Return a font face reference identifying this font.</summary>
         /// <param name="fontFaceReference">A uniquely identifying reference to a font face.</param>
         /// <returns> Standard HRESULT error code.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetFontFaceReference(
             [In] IDWriteFont3* This,
@@ -207,7 +206,7 @@ namespace TerraFX.Interop
         /// <summary>Determines whether the font supports the specified character.</summary>
         /// <param name="unicodeValue">Unicode (UCS-4) character value.</param>
         /// <returns> Returns TRUE if the font has the specified character, FALSE if not.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
         public /* static */ delegate int _HasCharacter1(
             [In] IDWriteFont3* This,
@@ -217,7 +216,7 @@ namespace TerraFX.Interop
         /// <summary>Gets the current locality of the font.</summary>
         /// <remarks> The locality enumeration. For fully local files, the result will always be DWRITE_LOCALITY_LOCAL. A downloadable file may be any of the states, and this function may change between calls.</remarks>
         /// <returns> The locality enumeration.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public /* static */ delegate DWRITE_LOCALITY _GetLocality(
             [In] IDWriteFont3* This
         );

@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -15,7 +14,7 @@ namespace TerraFX.Interop
     {
         public readonly Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _QueryInterface(
             [In] IDWriteFontDownloadQueue* This,
@@ -23,13 +22,13 @@ namespace TerraFX.Interop
             [Out] void** ppvObject
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
         public /* static */ delegate uint _AddRef(
             [In] IDWriteFontDownloadQueue* This
         );
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
         public /* static */ delegate uint _Release(
             [In] IDWriteFontDownloadQueue* This
@@ -40,7 +39,7 @@ namespace TerraFX.Interop
         /// <param name="token">Receives a token value, which the caller must subsequently pass to RemoveListener.</param>
         /// <returns> Standard HRESULT error code.</returns>
         /// <remarks> An IDWriteFontDownloadListener can also be passed to BeginDownload via the context parameter, rather than globally registered to the queue.</remarks>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _AddListener(
             [In] IDWriteFontDownloadQueue* This,
@@ -51,7 +50,7 @@ namespace TerraFX.Interop
         /// <summary>Unregisters a notification handler that was previously registered using AddListener.</summary>
         /// <param name="token">Token value previously returned by AddListener.</param>
         /// <returns> Returns S_OK if successful or E_INVALIDARG if the specified token does not correspond to a registered listener.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _RemoveListener(
             [In] IDWriteFontDownloadQueue* This,
@@ -60,7 +59,7 @@ namespace TerraFX.Interop
 
         /// <summary>Determines whether the download queue is empty. Note that the queue does not include requests that are already being downloaded. In other words, BeginDownload clears the queue.</summary>
         /// <returns> TRUE if the queue is empty, FALSE if there are requests pending for BeginDownload.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
         public /* static */ delegate int _IsEmpty(
             [In] IDWriteFontDownloadQueue* This
@@ -70,7 +69,7 @@ namespace TerraFX.Interop
         /// <param name="context">Optional context object that is passed back to the download notification handler's DownloadCompleted method. If the context object implements IDWriteFontDownloadListener, its DownloadCompleted will be called when done.</param>
         /// <returns> Returns S_OK if a download was successfully begun, S_FALSE if the queue was empty, or a standard HRESULT error code.</returns>
         /// <remarks> BeginDownload removes all download requests from the queue, transferring them to a background download operation. If any previous downloads are still ongoing when BeginDownload is called again, the new download does not complete until the previous downloads have finished. If the queue is empty and no active downloads are pending, the DownloadCompleted callback is called immediately with DWRITE_DOWNLOAD_RESULT_NONE.</remarks>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _BeginDownload(
             [In] IDWriteFontDownloadQueue* This,
@@ -79,7 +78,7 @@ namespace TerraFX.Interop
 
         /// <summary>Removes all download requests from the queue and cancels any active download operations. This calls DownloadCompleted with DWRITE_E_DOWNLOADCANCELLED. Applications should call this when shutting down if they started any downloads that have not finished yet with a call to DownloadCompleted.</summary>
         /// <returns> Standard HRESULT error code.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _CancelDownload(
             [In] IDWriteFontDownloadQueue* This
@@ -87,7 +86,7 @@ namespace TerraFX.Interop
 
         /// <summary>Get the current generation number of the download queue, which is incremented every time after a download completes, whether failed or successful. This cookie comparison value may be used to compared against cached data to know when it is stale.</summary>
         /// <returns> The number of download queue generations.</returns>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
         public /* static */ delegate ulong _GetGenerationCount(
             [In] IDWriteFontDownloadQueue* This
