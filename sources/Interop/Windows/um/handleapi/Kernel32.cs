@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     {
         private const string DllName = nameof(Kernel32);
 
-        [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "CloseHandle", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
+        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "CloseHandle", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CloseHandle([NativeTypeName("HANDLE")] IntPtr hObject);
     }

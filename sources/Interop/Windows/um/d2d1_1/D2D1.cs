@@ -50,26 +50,26 @@ namespace TerraFX.Interop
 
         public static readonly Guid IID_ID2D1Multithread = new Guid(0x31E6E7BC, 0xE0FF, 0x4D46, 0x8C, 0x64, 0xA0, 0xA8, 0xC4, 0x1C, 0x15, 0xD3);
 
-        [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D2D1CreateDevice", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "D2D1CreateDevice", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D2D1CreateDevice(IDXGIDevice* dxgiDevice, [Optional] D2D1_CREATION_PROPERTIES* creationProperties, ID2D1Device** d2dDevice);
 
-        [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D2D1CreateDeviceContext", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "D2D1CreateDeviceContext", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D2D1CreateDeviceContext(IDXGISurface* dxgiSurface, [Optional] D2D1_CREATION_PROPERTIES* creationProperties, ID2D1DeviceContext** d2dDeviceContext);
 
-        [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D2D1ConvertColorSpace", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "D2D1ConvertColorSpace", ExactSpelling = true)]
         [return: NativeTypeName("D2D1_COLOR_F")]
         public static extern DXGI_RGBA D2D1ConvertColorSpace(D2D1_COLOR_SPACE sourceColorSpace, D2D1_COLOR_SPACE destinationColorSpace, [NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA* color);
 
-        [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D2D1SinCos", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "D2D1SinCos", ExactSpelling = true)]
         public static extern void D2D1SinCos([NativeTypeName("FLOAT")] float angle, [NativeTypeName("FLOAT")] float* s, [NativeTypeName("FLOAT")] float* c);
 
-        [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D2D1Tan", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "D2D1Tan", ExactSpelling = true)]
         [return: NativeTypeName("FLOAT")]
         public static extern float D2D1Tan([NativeTypeName("FLOAT")] float angle);
 
-        [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D2D1Vec3Length", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "D2D1Vec3Length", ExactSpelling = true)]
         [return: NativeTypeName("FLOAT")]
         public static extern float D2D1Vec3Length([NativeTypeName("FLOAT")] float x, [NativeTypeName("FLOAT")] float y, [NativeTypeName("FLOAT")] float z);
     }

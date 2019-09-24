@@ -258,15 +258,15 @@ namespace TerraFX.Interop
 
         public static readonly Guid IID_IWICComponentFactory = new Guid(0x412D0C3A, 0x9650, 0x44FA, 0xAF, 0x5B, 0xDD, 0x2A, 0x06, 0xC8, 0xE8, 0xFB);
 
-        [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "WICMatchMetadataContent", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "WICMatchMetadataContent", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int WICMatchMetadataContent([NativeTypeName("REFGUID")] Guid* guidContainerFormat, [Optional, NativeTypeName("GUID")] Guid* pguidVendor, IStream* pIStream, [NativeTypeName("GUID")] Guid* pguidMetadataFormat);
 
-        [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "WICSerializeMetadataContent", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "WICSerializeMetadataContent", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int WICSerializeMetadataContent([NativeTypeName("REFGUID")] Guid* guidContainerFormat, IWICMetadataWriter* pIWriter, [NativeTypeName("DWORD")] uint dwPersistOptions, IStream* pIStream);
 
-        [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "WICGetMetadataContentSize", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "WICGetMetadataContentSize", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int WICGetMetadataContentSize([NativeTypeName("REFGUID")] Guid* guidContainerFormat, IWICMetadataWriter* pIWriter, ULARGE_INTEGER* pcbSize);
     }

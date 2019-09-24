@@ -101,87 +101,87 @@ namespace TerraFX.Interop
 
         public const uint D3D_DISASM_PRINT_HEX_LITERALS = 0x00000080;
 
-        [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DReadFileToBlob", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(D3DCOMPILER_DLL, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3DReadFileToBlob", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DReadFileToBlob([NativeTypeName("LPCWSTR")] char* pFileName, ID3DBlob** ppContents);
 
-        [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DWriteBlobToFile", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(D3DCOMPILER_DLL, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3DWriteBlobToFile", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DWriteBlobToFile(ID3DBlob* pBlob, [NativeTypeName("LPCWSTR")] char* pFileName, [NativeTypeName("BOOL")] int bOverwrite);
 
-        [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Ansi, EntryPoint = "D3DCompile", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(D3DCOMPILER_DLL, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Ansi, EntryPoint = "D3DCompile", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DCompile([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] UIntPtr SrcDataSize, [Optional, NativeTypeName("LPCSTR")] sbyte* pSourceName, [Optional] D3D_SHADER_MACRO* pDefines, [Optional] ID3DInclude* pInclude, [Optional, NativeTypeName("LPCSTR")] sbyte* pEntrypoint, [NativeTypeName("LPCSTR")] sbyte* pTarget, [NativeTypeName("UINT")] uint Flags1, [NativeTypeName("UINT")] uint Flags2, ID3DBlob** ppCode, [Optional] ID3DBlob** ppErrorMsgs);
 
-        [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Ansi, EntryPoint = "D3DCompile2", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(D3DCOMPILER_DLL, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Ansi, EntryPoint = "D3DCompile2", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DCompile2([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] UIntPtr SrcDataSize, [Optional, NativeTypeName("LPCSTR")] sbyte* pSourceName, [Optional] D3D_SHADER_MACRO* pDefines, [Optional] ID3DInclude* pInclude, [NativeTypeName("LPCSTR")] sbyte* pEntrypoint, [NativeTypeName("LPCSTR")] sbyte* pTarget, [NativeTypeName("UINT")] uint Flags1, [NativeTypeName("UINT")] uint Flags2, [NativeTypeName("UINT")] uint SecondaryDataFlags, [Optional, NativeTypeName("LPCVOID")] void* pSecondaryData, [NativeTypeName("SIZE_T")] UIntPtr SecondaryDataSize, ID3DBlob** ppCode, [Optional] ID3DBlob** ppErrorMsgs);
 
-        [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DCompileFromFile", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(D3DCOMPILER_DLL, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3DCompileFromFile", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DCompileFromFile([NativeTypeName("LPCWSTR")] char* pFileName, [Optional] D3D_SHADER_MACRO* pDefines, [Optional] ID3DInclude* pInclude, [NativeTypeName("LPCSTR")] sbyte* pEntrypoint, [NativeTypeName("LPCSTR")] sbyte* pTarget, [NativeTypeName("UINT")] uint Flags1, [NativeTypeName("UINT")] uint Flags2, ID3DBlob** ppCode, [Optional] ID3DBlob** ppErrorMsgs);
 
-        [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DPreprocess", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(D3DCOMPILER_DLL, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3DPreprocess", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DPreprocess([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] UIntPtr SrcDataSize, [Optional, NativeTypeName("LPCSTR")] sbyte* pSourceName, [Optional] D3D_SHADER_MACRO* pDefines, [Optional] ID3DInclude* pInclude, ID3DBlob** ppCodeText, [Optional] ID3DBlob** ppErrorMsgs);
 
-        [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DGetDebugInfo", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(D3DCOMPILER_DLL, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3DGetDebugInfo", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DGetDebugInfo([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] UIntPtr SrcDataSize, ID3DBlob** ppDebugInfo);
 
-        [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DReflect", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(D3DCOMPILER_DLL, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3DReflect", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DReflect([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] UIntPtr SrcDataSize, [NativeTypeName("REFIID")] Guid* pInterface, void** ppReflector);
 
-        [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DReflectLibrary", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(D3DCOMPILER_DLL, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3DReflectLibrary", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DReflectLibrary([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] UIntPtr SrcDataSize, [NativeTypeName("REFIID")] Guid* riid, [NativeTypeName("LPVOID")] void** ppReflector);
 
-        [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DDisassemble", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(D3DCOMPILER_DLL, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3DDisassemble", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DDisassemble([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] UIntPtr SrcDataSize, [NativeTypeName("UINT")] uint Flags, [Optional, NativeTypeName("LPCSTR")] sbyte* szComments, ID3DBlob** ppDisassembly);
 
-        [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DDisassembleRegion", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(D3DCOMPILER_DLL, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3DDisassembleRegion", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DDisassembleRegion([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] UIntPtr SrcDataSize, [NativeTypeName("UINT")] uint Flags, [Optional, NativeTypeName("LPCSTR")] sbyte* szComments, [NativeTypeName("SIZE_T")] UIntPtr StartByteOffset, [NativeTypeName("SIZE_T")] UIntPtr NumInsts, [Optional, NativeTypeName("SIZE_T")] UIntPtr* pFinishByteOffset, ID3DBlob** ppDisassembly);
 
-        [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DGetTraceInstructionOffsets", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(D3DCOMPILER_DLL, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3DGetTraceInstructionOffsets", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DGetTraceInstructionOffsets([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] UIntPtr SrcDataSize, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("SIZE_T")] UIntPtr StartInstIndex, [NativeTypeName("SIZE_T")] UIntPtr NumInsts, [Optional, NativeTypeName("SIZE_T")] UIntPtr* pOffsets, [Optional, NativeTypeName("SIZE_T")] UIntPtr* pTotalInsts);
 
-        [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DGetInputSignatureBlob", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(D3DCOMPILER_DLL, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3DGetInputSignatureBlob", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DGetInputSignatureBlob([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] UIntPtr SrcDataSize, ID3DBlob** ppSignatureBlob);
 
-        [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DGetOutputSignatureBlob", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(D3DCOMPILER_DLL, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3DGetOutputSignatureBlob", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DGetOutputSignatureBlob([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] UIntPtr SrcDataSize, ID3DBlob** ppSignatureBlob);
 
-        [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DGetInputAndOutputSignatureBlob", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(D3DCOMPILER_DLL, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3DGetInputAndOutputSignatureBlob", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DGetInputAndOutputSignatureBlob([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] UIntPtr SrcDataSize, ID3DBlob** ppSignatureBlob);
 
-        [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DStripShader", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(D3DCOMPILER_DLL, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3DStripShader", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DStripShader([NativeTypeName("LPCVOID")] void* pShaderBytecode, [NativeTypeName("SIZE_T")] UIntPtr BytecodeLength, [NativeTypeName("UINT")] uint uStripFlags, ID3DBlob** ppStrippedBlob);
 
-        [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DGetBlobPart", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(D3DCOMPILER_DLL, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3DGetBlobPart", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DGetBlobPart([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] UIntPtr SrcDataSize, D3D_BLOB_PART Part, [NativeTypeName("UINT")] uint Flags, ID3DBlob** ppPart);
 
-        [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DSetBlobPart", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(D3DCOMPILER_DLL, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3DSetBlobPart", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DSetBlobPart([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] UIntPtr SrcDataSize, D3D_BLOB_PART Part, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("LPCVOID")] void* pPart, [NativeTypeName("SIZE_T")] UIntPtr PartSize, ID3DBlob** ppNewShader);
 
-        [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DCreateBlob", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(D3DCOMPILER_DLL, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3DCreateBlob", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DCreateBlob([NativeTypeName("SIZE_T")] UIntPtr Size, ID3DBlob** ppBlob);
 
-        [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DCompressShaders", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(D3DCOMPILER_DLL, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3DCompressShaders", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DCompressShaders([NativeTypeName("UINT")] uint uNumShaders, [NativeTypeName("D3D_SHADER_DATA[]")] D3D_SHADER_DATA* pShaderData, [NativeTypeName("UINT")] uint uFlags, ID3DBlob** ppCompressedData);
 
-        [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DDecompressShaders", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(D3DCOMPILER_DLL, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3DDecompressShaders", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DDecompressShaders([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] UIntPtr SrcDataSize, [NativeTypeName("UINT")] uint uNumShaders, [NativeTypeName("UINT")] uint uStartIndex, [Optional, NativeTypeName("UINT[]")] uint* pIndices, [NativeTypeName("UINT")] uint uFlags, ID3DBlob** ppShaders, [Optional, NativeTypeName("UINT")] uint* pTotalShaders);
 

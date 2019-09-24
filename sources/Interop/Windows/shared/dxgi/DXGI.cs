@@ -102,11 +102,11 @@ namespace TerraFX.Interop
 
         public static readonly Guid IID_IDXGIDevice1 = new Guid(0x77DB970F, 0x6276, 0x48BA, 0xBA, 0x28, 0x07, 0x01, 0x43, 0xB4, 0x39, 0x2C);
 
-        [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "CreateDXGIFactory", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateDXGIFactory", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CreateDXGIFactory([NativeTypeName("REFIID")] Guid* riid, void** ppFactory);
 
-        [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "CreateDXGIFactory1", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateDXGIFactory1", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CreateDXGIFactory1([NativeTypeName("REFIID")] Guid* riid, void** ppFactory);
     }
