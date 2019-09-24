@@ -43,7 +43,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetName(IRecordInfo* This, [NativeTypeName("BSTR")] char** pbstrName = null);
+        public delegate int _GetName(IRecordInfo* This, [NativeTypeName("BSTR")] ushort** pbstrName = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
@@ -55,23 +55,23 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetField(IRecordInfo* This, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] char* szFieldName, VARIANT* pvarField);
+        public delegate int _GetField(IRecordInfo* This, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFieldNoCopy(IRecordInfo* This, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] char* szFieldName, VARIANT* pvarField, [NativeTypeName("PVOID")] void** ppvDataCArray);
+        public delegate int _GetFieldNoCopy(IRecordInfo* This, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField, [NativeTypeName("PVOID")] void** ppvDataCArray);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _PutField(IRecordInfo* This, [NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] char* szFieldName, VARIANT* pvarField);
+        public delegate int _PutField(IRecordInfo* This, [NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _PutFieldNoCopy(IRecordInfo* This, [NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] char* szFieldName, VARIANT* pvarField);
+        public delegate int _PutFieldNoCopy(IRecordInfo* This, [NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFieldNames(IRecordInfo* This, [NativeTypeName("ULONG")] uint* pcNames, [NativeTypeName("BSTR[]")] char** rgBstrNames);
+        public delegate int _GetFieldNames(IRecordInfo* This, [NativeTypeName("ULONG")] uint* pcNames, [NativeTypeName("BSTR[]")] ushort** rgBstrNames);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
@@ -152,7 +152,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetName([NativeTypeName("BSTR")] char** pbstrName = null)
+        public int GetName([NativeTypeName("BSTR")] ushort** pbstrName = null)
         {
             fixed (IRecordInfo* This = &this)
             {
@@ -179,7 +179,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetField([NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] char* szFieldName, VARIANT* pvarField)
+        public int GetField([NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField)
         {
             fixed (IRecordInfo* This = &this)
             {
@@ -188,7 +188,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFieldNoCopy([NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] char* szFieldName, VARIANT* pvarField, [NativeTypeName("PVOID")] void** ppvDataCArray)
+        public int GetFieldNoCopy([NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField, [NativeTypeName("PVOID")] void** ppvDataCArray)
         {
             fixed (IRecordInfo* This = &this)
             {
@@ -197,7 +197,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int PutField([NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] char* szFieldName, VARIANT* pvarField)
+        public int PutField([NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField)
         {
             fixed (IRecordInfo* This = &this)
             {
@@ -206,7 +206,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int PutFieldNoCopy([NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] char* szFieldName, VARIANT* pvarField)
+        public int PutFieldNoCopy([NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField)
         {
             fixed (IRecordInfo* This = &this)
             {
@@ -215,7 +215,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFieldNames([NativeTypeName("ULONG")] uint* pcNames, [NativeTypeName("BSTR[]")] char** rgBstrNames)
+        public int GetFieldNames([NativeTypeName("ULONG")] uint* pcNames, [NativeTypeName("BSTR[]")] ushort** rgBstrNames)
         {
             fixed (IRecordInfo* This = &this)
             {

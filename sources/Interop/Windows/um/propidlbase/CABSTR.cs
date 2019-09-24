@@ -11,6 +11,6 @@ namespace TerraFX.Interop
         public uint cElems;
 
         [NativeTypeName("BSTR[]")]
-        public char** pElems;
+        public ushort** pElems;
     }
 }

@@ -22,7 +22,7 @@ namespace TerraFX.Interop
         public uint dwHint;
 
         [NativeTypeName("LPOLESTR")]
-        public char* pstrName;
+        public ushort* pstrName;
 
         [NativeTypeName("CLSID")]
         public Guid clsid;

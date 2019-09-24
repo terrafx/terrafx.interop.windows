@@ -16,13 +16,13 @@ namespace TerraFX.Interop
         public ushort wReserved;
 
         [NativeTypeName("BSTR")]
-        public char* bstrSource;
+        public ushort* bstrSource;
 
         [NativeTypeName("BSTR")]
-        public char* bstrDescription;
+        public ushort* bstrDescription;
 
         [NativeTypeName("BSTR")]
-        public char* bstrHelpFile;
+        public ushort* bstrHelpFile;
 
         [NativeTypeName("DWORD")]
         public uint dwHelpContext;

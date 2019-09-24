@@ -50,15 +50,15 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDocumentation(ITypeLib* This, [NativeTypeName("INT")] int index, [Optional, NativeTypeName("BSTR")] char** pBstrName, [Optional, NativeTypeName("BSTR")] char** pBstrDocString, [NativeTypeName("DWORD")] uint* pdwHelpContext, [NativeTypeName("BSTR")] char** pBstrHelpFile = null);
+        public delegate int _GetDocumentation(ITypeLib* This, [NativeTypeName("INT")] int index, [Optional, NativeTypeName("BSTR")] ushort** pBstrName, [Optional, NativeTypeName("BSTR")] ushort** pBstrDocString, [NativeTypeName("DWORD")] uint* pdwHelpContext, [NativeTypeName("BSTR")] ushort** pBstrHelpFile = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _IsName(ITypeLib* This, [NativeTypeName("LPOLESTR")] char* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, [NativeTypeName("BOOL")] int* pfName);
+        public delegate int _IsName(ITypeLib* This, [NativeTypeName("LPOLESTR")] ushort* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, [NativeTypeName("BOOL")] int* pfName);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _FindName(ITypeLib* This, [NativeTypeName("LPOLESTR")] char* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, ITypeInfo** ppTInfo, [NativeTypeName("MEMBERID")] int* rgMemId, [NativeTypeName("USHORT")] ushort* pcFound);
+        public delegate int _FindName(ITypeLib* This, [NativeTypeName("LPOLESTR")] ushort* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, ITypeInfo** ppTInfo, [NativeTypeName("MEMBERID")] int* rgMemId, [NativeTypeName("USHORT")] ushort* pcFound);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public delegate void _ReleaseTLibAttr(ITypeLib* This, TLIBATTR* pTLibAttr);
@@ -144,7 +144,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetDocumentation([NativeTypeName("INT")] int index, [Optional, NativeTypeName("BSTR")] char** pBstrName, [Optional, NativeTypeName("BSTR")] char** pBstrDocString, [NativeTypeName("DWORD")] uint* pdwHelpContext, [NativeTypeName("BSTR")] char** pBstrHelpFile = null)
+        public int GetDocumentation([NativeTypeName("INT")] int index, [Optional, NativeTypeName("BSTR")] ushort** pBstrName, [Optional, NativeTypeName("BSTR")] ushort** pBstrDocString, [NativeTypeName("DWORD")] uint* pdwHelpContext, [NativeTypeName("BSTR")] ushort** pBstrHelpFile = null)
         {
             fixed (ITypeLib* This = &this)
             {
@@ -153,7 +153,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int IsName([NativeTypeName("LPOLESTR")] char* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, [NativeTypeName("BOOL")] int* pfName)
+        public int IsName([NativeTypeName("LPOLESTR")] ushort* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, [NativeTypeName("BOOL")] int* pfName)
         {
             fixed (ITypeLib* This = &this)
             {
@@ -162,7 +162,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int FindName([NativeTypeName("LPOLESTR")] char* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, ITypeInfo** ppTInfo, [NativeTypeName("MEMBERID")] int* rgMemId, [NativeTypeName("USHORT")] ushort* pcFound)
+        public int FindName([NativeTypeName("LPOLESTR")] ushort* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, ITypeInfo** ppTInfo, [NativeTypeName("MEMBERID")] int* rgMemId, [NativeTypeName("USHORT")] ushort* pcFound)
         {
             fixed (ITypeLib* This = &this)
             {

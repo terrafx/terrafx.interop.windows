@@ -35,7 +35,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetIDsOfNames(IDispatch* This, [NativeTypeName("REFIID")] Guid* riid, [NativeTypeName("LPOLESTR[]")] char** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID[]")] int* rgDispId);
+        public delegate int _GetIDsOfNames(IDispatch* This, [NativeTypeName("REFIID")] Guid* riid, [NativeTypeName("LPOLESTR[]")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID[]")] int* rgDispId);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
@@ -87,7 +87,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetIDsOfNames([NativeTypeName("REFIID")] Guid* riid, [NativeTypeName("LPOLESTR[]")] char** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID[]")] int* rgDispId)
+        public int GetIDsOfNames([NativeTypeName("REFIID")] Guid* riid, [NativeTypeName("LPOLESTR[]")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID[]")] int* rgDispId)
         {
             fixed (IDispatch* This = &this)
             {

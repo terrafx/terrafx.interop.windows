@@ -330,11 +330,11 @@ namespace TerraFX.Samples.DirectX.D3D12
                     {
                         var entryPoint = 0x00006E69614D5356;    // VSMain
                         var target = 0x0000305F355F7376;        // vs_5_0
-                        ThrowIfFailed(nameof(D3DCompileFromFile), D3DCompileFromFile(fileName, null, null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, 0, &vertexShader, null));
+                        ThrowIfFailed(nameof(D3DCompileFromFile), D3DCompileFromFile((ushort*)fileName, null, null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, 0, &vertexShader, null));
 
                         entryPoint = 0x00006E69614D5350;        // PSMain
                         target = 0x0000305F355F7370;            // ps_5_0
-                        ThrowIfFailed(nameof(D3DCompileFromFile), D3DCompileFromFile(fileName, null, null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, 0, &pixelShader, null));
+                        ThrowIfFailed(nameof(D3DCompileFromFile), D3DCompileFromFile((ushort*)fileName, null, null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, 0, &pixelShader, null));
                     }
 
                     // Define the vertex input layout.

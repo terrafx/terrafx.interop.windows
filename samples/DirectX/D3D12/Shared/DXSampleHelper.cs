@@ -55,7 +55,7 @@ namespace TerraFX.Samples.DirectX.D3D12
         {
             fixed (char* pName = name)
             {
-                pObject->SetName(pName);
+                pObject->SetName((ushort*)pName);
             }
         }
 

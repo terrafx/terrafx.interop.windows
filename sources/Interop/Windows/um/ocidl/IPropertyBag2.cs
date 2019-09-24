@@ -43,7 +43,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _LoadObject(IPropertyBag2* This, [NativeTypeName("LPCOLESTR")] char* pstrName, [NativeTypeName("DWORD")] uint dwHint, IUnknown* pUnkObject = null, IErrorLog* pErrLog = null);
+        public delegate int _LoadObject(IPropertyBag2* This, [NativeTypeName("LPCOLESTR")] ushort* pstrName, [NativeTypeName("DWORD")] uint dwHint, IUnknown* pUnkObject = null, IErrorLog* pErrLog = null);
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
@@ -109,7 +109,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int LoadObject([NativeTypeName("LPCOLESTR")] char* pstrName, [NativeTypeName("DWORD")] uint dwHint, IUnknown* pUnkObject = null, IErrorLog* pErrLog = null)
+        public int LoadObject([NativeTypeName("LPCOLESTR")] ushort* pstrName, [NativeTypeName("DWORD")] uint dwHint, IUnknown* pUnkObject = null, IErrorLog* pErrLog = null)
         {
             fixed (IPropertyBag2* This = &this)
             {

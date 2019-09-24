@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _AddError(IErrorLog* This, [NativeTypeName("LPCOLESTR")] char* pszPropName, EXCEPINFO* pExcepInfo);
+        public delegate int _AddError(IErrorLog* This, [NativeTypeName("LPCOLESTR")] ushort* pszPropName, EXCEPINFO* pExcepInfo);
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
@@ -57,7 +57,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int AddError([NativeTypeName("LPCOLESTR")] char* pszPropName, EXCEPINFO* pExcepInfo)
+        public int AddError([NativeTypeName("LPCOLESTR")] ushort* pszPropName, EXCEPINFO* pExcepInfo)
         {
             fixed (IErrorLog* This = &this)
             {

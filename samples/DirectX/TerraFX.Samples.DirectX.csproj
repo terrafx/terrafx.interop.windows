@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\sources\Interop\Windows\TerraFX.Interop.Windows.csproj" />
+    <ProjectReference Include="..\..\sources\Interop\D3D12\TerraFX.Interop.D3D12.csproj" />
+    <ProjectReference Include="..\..\sources\Interop\User32\TerraFX.Interop.User32.csproj" />
   </ItemGroup>
 
 </Project>

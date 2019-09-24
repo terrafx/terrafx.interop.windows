@@ -43,7 +43,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetNames(ITypeInfo* This, [NativeTypeName("MEMBERID")] int memid, [NativeTypeName("BSTR[]")] char** rgBstrNames, [NativeTypeName("UINT")] uint cMaxNames, [NativeTypeName("UINT")] uint* pcNames);
+        public delegate int _GetNames(ITypeInfo* This, [NativeTypeName("MEMBERID")] int memid, [NativeTypeName("BSTR[]")] ushort** rgBstrNames, [NativeTypeName("UINT")] uint cMaxNames, [NativeTypeName("UINT")] uint* pcNames);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
@@ -55,7 +55,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetIDsOfNames(ITypeInfo* This, [NativeTypeName("LPOLESTR[]")] char** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("MEMBERID")] int* pMemId);
+        public delegate int _GetIDsOfNames(ITypeInfo* This, [NativeTypeName("LPOLESTR[]")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("MEMBERID")] int* pMemId);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
@@ -63,11 +63,11 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDocumentation(ITypeInfo* This, [NativeTypeName("MEMBERID")] int memid, [Optional, NativeTypeName("BSTR")] char** pBstrName, [Optional, NativeTypeName("BSTR")] char** pBstrDocString, [NativeTypeName("DWORD")] uint* pdwHelpContext, [NativeTypeName("BSTR")] char** pBstrHelpFile = null);
+        public delegate int _GetDocumentation(ITypeInfo* This, [NativeTypeName("MEMBERID")] int memid, [Optional, NativeTypeName("BSTR")] ushort** pBstrName, [Optional, NativeTypeName("BSTR")] ushort** pBstrDocString, [NativeTypeName("DWORD")] uint* pdwHelpContext, [NativeTypeName("BSTR")] ushort** pBstrHelpFile = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDllEntry(ITypeInfo* This, [NativeTypeName("MEMBERID")] int memid, INVOKEKIND invKind, [Optional, NativeTypeName("BSTR")] char** pBstrDllName, [Optional, NativeTypeName("BSTR")] char** pBstrName, [NativeTypeName("WORD")] ushort* pwOrdinal);
+        public delegate int _GetDllEntry(ITypeInfo* This, [NativeTypeName("MEMBERID")] int memid, INVOKEKIND invKind, [Optional, NativeTypeName("BSTR")] ushort** pBstrDllName, [Optional, NativeTypeName("BSTR")] ushort** pBstrName, [NativeTypeName("WORD")] ushort* pwOrdinal);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
@@ -83,7 +83,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetMops(ITypeInfo* This, [NativeTypeName("MEMBERID")] int memid, [NativeTypeName("BSTR")] char** pBstrMops = null);
+        public delegate int _GetMops(ITypeInfo* This, [NativeTypeName("MEMBERID")] int memid, [NativeTypeName("BSTR")] ushort** pBstrMops = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
@@ -162,7 +162,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetNames([NativeTypeName("MEMBERID")] int memid, [NativeTypeName("BSTR[]")] char** rgBstrNames, [NativeTypeName("UINT")] uint cMaxNames, [NativeTypeName("UINT")] uint* pcNames)
+        public int GetNames([NativeTypeName("MEMBERID")] int memid, [NativeTypeName("BSTR[]")] ushort** rgBstrNames, [NativeTypeName("UINT")] uint cMaxNames, [NativeTypeName("UINT")] uint* pcNames)
         {
             fixed (ITypeInfo* This = &this)
             {
@@ -189,7 +189,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetIDsOfNames([NativeTypeName("LPOLESTR[]")] char** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("MEMBERID")] int* pMemId)
+        public int GetIDsOfNames([NativeTypeName("LPOLESTR[]")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("MEMBERID")] int* pMemId)
         {
             fixed (ITypeInfo* This = &this)
             {
@@ -207,7 +207,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetDocumentation([NativeTypeName("MEMBERID")] int memid, [Optional, NativeTypeName("BSTR")] char** pBstrName, [Optional, NativeTypeName("BSTR")] char** pBstrDocString, [NativeTypeName("DWORD")] uint* pdwHelpContext, [NativeTypeName("BSTR")] char** pBstrHelpFile = null)
+        public int GetDocumentation([NativeTypeName("MEMBERID")] int memid, [Optional, NativeTypeName("BSTR")] ushort** pBstrName, [Optional, NativeTypeName("BSTR")] ushort** pBstrDocString, [NativeTypeName("DWORD")] uint* pdwHelpContext, [NativeTypeName("BSTR")] ushort** pBstrHelpFile = null)
         {
             fixed (ITypeInfo* This = &this)
             {
@@ -216,7 +216,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetDllEntry([NativeTypeName("MEMBERID")] int memid, INVOKEKIND invKind, [Optional, NativeTypeName("BSTR")] char** pBstrDllName, [Optional, NativeTypeName("BSTR")] char** pBstrName, [NativeTypeName("WORD")] ushort* pwOrdinal)
+        public int GetDllEntry([NativeTypeName("MEMBERID")] int memid, INVOKEKIND invKind, [Optional, NativeTypeName("BSTR")] ushort** pBstrDllName, [Optional, NativeTypeName("BSTR")] ushort** pBstrName, [NativeTypeName("WORD")] ushort* pwOrdinal)
         {
             fixed (ITypeInfo* This = &this)
             {
@@ -252,7 +252,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetMops([NativeTypeName("MEMBERID")] int memid, [NativeTypeName("BSTR")] char** pBstrMops = null)
+        public int GetMops([NativeTypeName("MEMBERID")] int memid, [NativeTypeName("BSTR")] ushort** pBstrMops = null)
         {
             fixed (ITypeInfo* This = &this)
             {
