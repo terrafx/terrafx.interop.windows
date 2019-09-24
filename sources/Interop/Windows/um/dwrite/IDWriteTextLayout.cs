@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("53737037-6D14-410B-9BFE-0B182BB70961")]
     public unsafe struct IDWriteTextLayout
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteTextLayout* This
         );
-        #endregion
 
-        #region IDWriteTextFormat Delegates
         /// <summary>Set alignment option of text relative to layout box's leading and trailing edge.</summary>
         /// <param name="textAlignment">Text alignment option</param>
         /// <returns>Standard HRESULT error code.</returns>
@@ -293,9 +288,7 @@ namespace TerraFX.Interop
             [Out, NativeTypeName("WCHAR[]")] char* localeName,
             [In, NativeTypeName("UINT32")] uint nameSize
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Set layout maximum width</summary>
         /// <param name="maxWidth">Layout maximum width</param>
         /// <returns>Standard HRESULT error code.</returns>
@@ -852,9 +845,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT32")] uint maxHitTestMetricsCount,
             [Out, NativeTypeName("UINT32")] uint* actualHitTestMetricsCount
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -892,9 +883,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteTextFormat Methods
         [return: NativeTypeName("HRESULT")]
         public int SetTextAlignment(
             [In] DWRITE_TEXT_ALIGNMENT textAlignment
@@ -1216,9 +1205,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int SetMaxWidth(
             [In, NativeTypeName("FLOAT")] float maxWidth
@@ -1884,20 +1871,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDWriteTextFormat Fields
             public IntPtr SetTextAlignment;
 
             public IntPtr SetParagraphAlignment;
@@ -1947,9 +1929,7 @@ namespace TerraFX.Interop
             public IntPtr GetLocaleNameLength;
 
             public IntPtr GetLocaleName;
-            #endregion
 
-            #region Fields
             public IntPtr SetMaxWidth;
 
             public IntPtr SetMaxHeight;
@@ -2027,8 +2007,6 @@ namespace TerraFX.Interop
             public IntPtr HitTestTextPosition;
 
             public IntPtr HitTestTextRange;
-            #endregion
         }
-        #endregion
     }
 }

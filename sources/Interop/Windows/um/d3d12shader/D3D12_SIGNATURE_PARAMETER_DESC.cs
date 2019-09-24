@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_SIGNATURE_PARAMETER_DESC
     {
-        #region Fields
         [NativeTypeName("LPCSTR")]
         public sbyte* SemanticName;
 
@@ -31,6 +30,5 @@ namespace TerraFX.Interop
         public uint Stream;
 
         public D3D_MIN_PRECISION MinPrecision;
-        #endregion
     }
 }

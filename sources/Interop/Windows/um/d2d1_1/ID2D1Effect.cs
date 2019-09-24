@@ -14,11 +14,8 @@ namespace TerraFX.Interop
     [Guid("28211A43-7D89-476F-8181-2D6159B220AD")]
     public unsafe struct ID2D1Effect
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -41,9 +38,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1Effect* This
         );
-        #endregion
 
-        #region ID2D1Properties Delegates
         /// <summary>Returns the total number of custom properties in this interface.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -155,9 +150,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT32")] uint index,
             [Out] ID2D1Properties** subProperties
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Sets the input to the given effect. The input can be a concrete bitmap or the output of another effect.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -201,9 +194,7 @@ namespace TerraFX.Interop
             [In] ID2D1Effect* This,
             [Out] ID2D1Image** outputImage
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -241,9 +232,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1Properties Methods
         [return: NativeTypeName("UINT32")]
         public uint GetPropertyCount()
         {
@@ -423,9 +412,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         public void SetInput(
             [In, NativeTypeName("UINT32")] uint index,
             [In] ID2D1Image* input = null,
@@ -495,20 +482,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1Properties Fields
             public IntPtr GetPropertyCount;
 
             public IntPtr GetPropertyName;
@@ -530,9 +512,7 @@ namespace TerraFX.Interop
             public IntPtr GetValueSize;
 
             public IntPtr GetSubProperties;
-            #endregion
 
-            #region Fields
             public IntPtr SetInput;
 
             public IntPtr SetInputCount;
@@ -542,8 +522,6 @@ namespace TerraFX.Interop
             public IntPtr GetInputCount;
 
             public IntPtr GetOutput;
-            #endregion
         }
-        #endregion
     }
 }

@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>The DWRITE_LINE_SPACING public structure specifies the parameters used to specify how to manage space between lines.</summary>
     public struct DWRITE_LINE_SPACING
     {
-        #region Fields
         /// <summary>Method used to determine line spacing.</summary>
         public DWRITE_LINE_SPACING_METHOD method;
 
@@ -26,6 +25,5 @@ namespace TerraFX.Interop
 
         /// <summary>Specify whether DWRITE_FONT_METRICS::lineGap value should be part of the line metrics.</summary>
         public DWRITE_FONT_LINE_GAP_USAGE fontLineGapUsage;
-        #endregion
     }
 }

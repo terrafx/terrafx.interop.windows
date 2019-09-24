@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>Contains the dimensions and corner radii of a rounded rectangle.</summary>
     public struct D2D1_ROUNDED_RECT
     {
-        #region Fields
         [NativeTypeName("D2D1_RECT_F")]
         public D2D_RECT_F rect;
 
@@ -17,6 +16,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("FLOAT")]
         public float radiusY;
-        #endregion
     }
 }

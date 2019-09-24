@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct D3D12_BUFFER_SRV
     {
-        #region Fields
         [NativeTypeName("UINT64")]
         public ulong FirstElement;
 
@@ -18,6 +17,5 @@ namespace TerraFX.Interop
         public uint StructureByteStride;
 
         public D3D12_BUFFER_SRV_FLAGS Flags;
-        #endregion
     }
 }

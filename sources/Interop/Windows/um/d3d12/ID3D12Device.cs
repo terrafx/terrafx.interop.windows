@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("189819F1-1DB6-4B57-BE54-1821339B85F7")]
     public unsafe struct ID3D12Device
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID3D12Device* This
         );
-        #endregion
 
-        #region ID3D12Object Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -78,9 +73,7 @@ namespace TerraFX.Interop
             [In] ID3D12Device* This,
             [In, NativeTypeName("LPCWSTR")] char* Name
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("UINT")]
@@ -457,9 +450,7 @@ namespace TerraFX.Interop
             [In] ID3D12Device* This,
             [Out] LUID* _result
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -497,9 +488,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID3D12Object Methods
         [return: NativeTypeName("HRESULT")]
         public int GetPrivateData(
             [In, NativeTypeName("REFGUID")] Guid* guid,
@@ -565,9 +554,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("UINT")]
         public uint GetNodeCount()
         {
@@ -1255,20 +1242,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID3D12Object Fields
             public IntPtr GetPrivateData;
 
             public IntPtr SetPrivateData;
@@ -1276,9 +1258,7 @@ namespace TerraFX.Interop
             public IntPtr SetPrivateDataInterface;
 
             public IntPtr SetName;
-            #endregion
 
-            #region Fields
             public IntPtr GetNodeCount;
 
             public IntPtr CreateCommandQueue;
@@ -1352,8 +1332,6 @@ namespace TerraFX.Interop
             public IntPtr GetResourceTiling;
 
             public IntPtr GetAdapterLuid;
-            #endregion
         }
-        #endregion
     }
 }

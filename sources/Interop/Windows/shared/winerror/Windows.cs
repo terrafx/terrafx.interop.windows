@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        #region FACILITY_* Constants
         public const int FACILITY_NULL = 0;
 
         public const int FACILITY_WIN32 = 7;
@@ -21,9 +20,7 @@ namespace TerraFX.Interop
         public const int FACILITY_WINCODEC_DWRITE_DWM = 2200;
 
         public const int FACILITY_DIRECT2D = 2201;
-        #endregion
 
-        #region ERROR_* Constants
         public const int ERROR_FILE_NOT_FOUND = 2;
 
         public const int ERROR_ACCESS_DENIED = 5;
@@ -37,15 +34,11 @@ namespace TerraFX.Interop
         public const int ERROR_INSUFFICIENT_BUFFER = 122;
 
         public const int ERROR_ARITHMETIC_OVERFLOW = 534;
-        #endregion
 
-        #region SEVERITY_* Constants 27912
         public const int SEVERITY_SUCCESS = 0;
 
         public const int SEVERITY_ERROR = 1;
-        #endregion
 
-        #region E_* Constants
         public const int E_UNEXPECTED = unchecked((int)0x8000FFFF);
 
         public const int E_NOTIMPL = unchecked((int)0x80004001);
@@ -65,9 +58,7 @@ namespace TerraFX.Interop
         public const int E_FAIL = unchecked((int)0x80004005);
 
         public const int E_ACCESSDENIED = unchecked((int)0x80070005);
-        #endregion
 
-        #region DXGI_STATUS_* Constants
         public const int DXGI_STATUS_OCCLUDED = 0x087A0001;
 
         public const int DXGI_STATUS_CLIPPED = 0x087A0002;
@@ -87,9 +78,7 @@ namespace TerraFX.Interop
         public const int DXGI_STATUS_DDA_WAS_STILL_DRAWING = 0x087A000A;
 
         public const int DXGI_STATUS_PRESENT_REQUIRED = 0x087A002F;
-        #endregion
 
-        #region DXGI_ERROR_* Constants
         public const int DXGI_ERROR_INVALID_CALL = unchecked((int)0x887A0001);
 
         public const int DXGI_ERROR_NOT_FOUND = unchecked((int)0x887A0002);
@@ -153,15 +142,11 @@ namespace TerraFX.Interop
         public const int DXGI_ERROR_CACHE_HASH_COLLISION = unchecked((int)0x887A0035);
 
         public const int DXGI_ERROR_ALREADY_EXISTS = unchecked((int)0x887A0036);
-        #endregion
 
-        #region D3D12_ERROR_* Constants
         public const int D3D12_ERROR_ADAPTER_NOT_FOUND = unchecked((int)0x887E0001);
 
         public const int D3D12_ERROR_DRIVER_VERSION_MISMATCH = unchecked((int)0x887E0002);
-        #endregion
 
-        #region D2DERR_* Constants
         public const int D2DERR_WRONG_STATE = unchecked((int)0x88990001);
 
         public const int D2DERR_NOT_INITIALIZED = unchecked((int)0x88990002);
@@ -253,9 +238,7 @@ namespace TerraFX.Interop
         public const int D2DERR_TOO_MANY_TRANSFORM_INPUTS = unchecked((int)0x8899002D);
 
         public const int D2DERR_INVALID_GLYPH_IMAGE = unchecked((int)0x8899002E);
-        #endregion
 
-        #region WINCODEC_ERR_* Constants
         public const int WINCODEC_ERR_WRONGSTATE = unchecked((int)0x88982F04);
 
         public const int WINCODEC_ERR_VALUEOUTOFRANGE = unchecked((int)0x88982F05);
@@ -337,9 +320,7 @@ namespace TerraFX.Interop
         public const int WINCODEC_ERR_INVALIDPROGRESSIVELEVEL = unchecked((int)0x88982F95);
 
         public const int WINCODEC_ERR_INVALIDJPEGSCANINDEX = unchecked((int)0x88982F96);
-        #endregion
 
-        #region Methods
         public static bool SUCCEEDED(int hr)
         {
             return hr >= 0;
@@ -404,6 +385,5 @@ namespace TerraFX.Interop
         {
             return __HRESULT_FROM_WIN32(x);
         }
-        #endregion
     }
 }

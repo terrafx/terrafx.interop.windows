@@ -9,24 +9,18 @@ namespace TerraFX.Interop
 {
     public struct ELEMDESC
     {
-        #region Fields
         public TYPEDESC tdesc;
 
         public _Anonymous_e__Union Anonymous;
-        #endregion
 
-        #region Structs
         [StructLayout(LayoutKind.Explicit)]
         public struct _Anonymous_e__Union
         {
-            #region Fields
             [FieldOffset(0)]
             public IDLDESC idldesc;
 
             [FieldOffset(0)]
             public PARAMDESC paramdesc;
-            #endregion
         }
-        #endregion
     }
 }

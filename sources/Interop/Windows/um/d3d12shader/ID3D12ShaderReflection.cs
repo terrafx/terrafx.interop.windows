@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("5A58797D-A72C-478D-8BA2-EFC6B0EFE88E")]
     public unsafe struct ID3D12ShaderReflection
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID3D12ShaderReflection* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -188,9 +183,7 @@ namespace TerraFX.Interop
         public /* static */ delegate ulong _GetRequiresFlags(
             [In] ID3D12ShaderReflection* This
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -228,9 +221,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetDesc(
             [Out] D3D12_SHADER_DESC* pDesc
@@ -482,20 +473,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetDesc;
 
             public IntPtr GetConstantBufferByIndex;
@@ -533,8 +519,6 @@ namespace TerraFX.Interop
             public IntPtr GetThreadGroupSize;
 
             public IntPtr GetRequiresFlags;
-            #endregion
         }
-        #endregion
     }
 }

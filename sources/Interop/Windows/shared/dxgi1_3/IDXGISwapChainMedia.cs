@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("DD95B90B-F05F-4F6A-BD65-25BFB264BD84")]
     public unsafe struct IDXGISwapChainMedia
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDXGISwapChainMedia* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -67,9 +62,7 @@ namespace TerraFX.Interop
             [Out, NativeTypeName("UINT")] uint* pClosestSmallerPresentDuration,
             [Out, NativeTypeName("UINT")] uint* pClosestLargerPresentDuration
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -107,9 +100,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetFrameStatisticsMedia(
             [Out] DXGI_FRAME_STATISTICS_MEDIA* pStats
@@ -155,27 +146,20 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetFrameStatisticsMedia;
 
             public IntPtr SetPresentDuration;
 
             public IntPtr CheckPresentDurationSupport;
-            #endregion
         }
-        #endregion
     }
 }

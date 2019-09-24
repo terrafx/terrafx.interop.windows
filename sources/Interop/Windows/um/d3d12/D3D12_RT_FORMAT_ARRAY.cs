@@ -7,18 +7,14 @@ namespace TerraFX.Interop
 {
     public struct D3D12_RT_FORMAT_ARRAY
     {
-        #region Fields
         [NativeTypeName("DXGI_FORMAT[8]")]
         public _RTFormats_e__FixedBuffer RTFormats;
 
         [NativeTypeName("UINT")]
         public uint NumRenderTargets;
-        #endregion
 
-        #region Structs
         public unsafe struct _RTFormats_e__FixedBuffer
         {
-            #region Fields
             public DXGI_FORMAT e0;
 
             public DXGI_FORMAT e1;
@@ -34,9 +30,7 @@ namespace TerraFX.Interop
             public DXGI_FORMAT e6;
 
             public DXGI_FORMAT e7;
-            #endregion
 
-            #region Properties
             public DXGI_FORMAT this[int index]
             {
                 get
@@ -55,8 +49,6 @@ namespace TerraFX.Interop
                     }
                 }
             }
-            #endregion
         }
-        #endregion
     }
 }

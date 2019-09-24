@@ -14,11 +14,8 @@ namespace TerraFX.Interop
     [Guid("1093C18F-8D5E-43F0-B064-0917311B525E")]
     public unsafe struct IDWriteTextLayout2
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -41,9 +38,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteTextLayout2* This
         );
-        #endregion
 
-        #region IDWriteTextFormat Delegates
         /// <summary>Set alignment option of text relative to layout box's leading and trailing edge.</summary>
         /// <param name="textAlignment">Text alignment option</param>
         /// <returns>Standard HRESULT error code.</returns>
@@ -294,9 +289,7 @@ namespace TerraFX.Interop
             [Out, NativeTypeName("WCHAR[]")] char* localeName,
             [In, NativeTypeName("UINT32")] uint nameSize
         );
-        #endregion
 
-        #region IDWriteTextLayout Delegates
         /// <summary>Set layout maximum width</summary>
         /// <param name="maxWidth">Layout maximum width</param>
         /// <returns>Standard HRESULT error code.</returns>
@@ -853,9 +846,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT32")] uint maxHitTestMetricsCount,
             [Out, NativeTypeName("UINT32")] uint* actualHitTestMetricsCount
         );
-        #endregion
 
-        #region IDWriteTextLayout1 Delegates
         /// <summary>Enables/disables pair-kerning on the given range.</summary>
         /// <param name="isPairKerningEnabled">The Boolean flag indicates whether text is pair-kerned.</param>
         /// <param name="textRange">Text range to which this change applies.</param>
@@ -919,9 +910,7 @@ namespace TerraFX.Interop
             [Out, NativeTypeName("FLOAT")] float* minimumAdvanceWidth,
             [Out] DWRITE_TEXT_RANGE* textRange = null
         );
-        #endregion
 
-        #region Delegates
         /// <summary>GetMetrics retrieves overall metrics for the formatted string.</summary>
         /// <param name="textMetrics">The returned metrics.</param>
         /// <returns> Standard HRESULT error code.</returns>
@@ -1008,9 +997,7 @@ namespace TerraFX.Interop
             [In] IDWriteTextLayout2* This,
             [Out] IDWriteFontFallback** fontFallback
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -1048,9 +1035,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteTextFormat Methods
         [return: NativeTypeName("HRESULT")]
         public int SetTextAlignment(
             [In] DWRITE_TEXT_ALIGNMENT textAlignment
@@ -1372,9 +1357,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteTextLayout Methods
         [return: NativeTypeName("HRESULT")]
         public int SetMaxWidth(
             [In, NativeTypeName("FLOAT")] float maxWidth
@@ -2040,9 +2023,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteTextLayout1 Methods
         [return: NativeTypeName("HRESULT")]
         public int SetPairKerning(
             [In, NativeTypeName("BOOL")] int isPairKerningEnabled,
@@ -2118,9 +2099,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetMetrics1(
             [Out] DWRITE_TEXT_METRICS1* textMetrics
@@ -2235,20 +2214,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDWriteTextFormat Fields
             public IntPtr SetTextAlignment;
 
             public IntPtr SetParagraphAlignment;
@@ -2298,9 +2272,7 @@ namespace TerraFX.Interop
             public IntPtr GetLocaleNameLength;
 
             public IntPtr GetLocaleName;
-            #endregion
 
-            #region IDWriteTextLayout Fields
             public IntPtr SetMaxWidth;
 
             public IntPtr SetMaxHeight;
@@ -2378,9 +2350,7 @@ namespace TerraFX.Interop
             public IntPtr HitTestTextPosition;
 
             public IntPtr HitTestTextRange;
-            #endregion
 
-            #region IDWriteTextLayout1 Fields
             public IntPtr SetPairKerning;
 
             public IntPtr GetPairKerning;
@@ -2388,9 +2358,7 @@ namespace TerraFX.Interop
             public IntPtr SetCharacterSpacing;
 
             public IntPtr GetCharacterSpacing;
-            #endregion
 
-            #region Fields
             public IntPtr GetMetrics1;
 
             public IntPtr SetVerticalGlyphOrientation;
@@ -2408,8 +2376,6 @@ namespace TerraFX.Interop
             public IntPtr SetFontFallback;
 
             public IntPtr GetFontFallback;
-            #endregion
         }
-        #endregion
     }
 }

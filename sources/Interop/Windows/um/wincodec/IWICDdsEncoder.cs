@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("5CACDB4C-407E-41B3-B936-D0F010CD6732")]
     public unsafe struct IWICDdsEncoder
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IWICDdsEncoder* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -68,9 +63,7 @@ namespace TerraFX.Interop
             [Out, NativeTypeName("UINT")] uint* pMipLevel = null,
             [Out, NativeTypeName("UINT")] uint* pSliceIndex = null
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -108,9 +101,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int SetParameters(
             [In] WICDdsParameters* pParameters
@@ -158,27 +149,20 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr SetParameters;
 
             public IntPtr GetParameters;
 
             public IntPtr CreateNewFrame;
-            #endregion
         }
-        #endregion
     }
 }

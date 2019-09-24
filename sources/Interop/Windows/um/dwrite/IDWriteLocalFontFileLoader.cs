@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("B2D9F3EC-C9FE-4A11-A2EC-D86208F7C0A2")]
     public unsafe struct IDWriteLocalFontFileLoader
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteLocalFontFileLoader* This
         );
-        #endregion
 
-        #region IDWriteFontFileLoader Delegates
         /// <summary>Creates a font file stream object that encapsulates an open file resource. The resource is closed when the last reference to fontFileStream is released.</summary>
         /// <param name="fontFileReferenceKey">Font file reference key that uniquely identifies the font file resource within the scope of the font loader being used.</param>
         /// <param name="fontFileReferenceKeySize">Size of font file reference key in bytes.</param>
@@ -57,9 +52,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT32")] uint fontFileReferenceKeySize,
             [Out] IDWriteFontFileStream** fontFileStream
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Obtains the length of the absolute file path from the font file reference key.</summary>
         /// <param name="fontFileReferenceKey">Font file reference key that uniquely identifies the local font file within the scope of the font loader being used.</param>
         /// <param name="fontFileReferenceKeySize">Size of font file reference key in bytes.</param>
@@ -106,9 +99,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT32")] uint fontFileReferenceKeySize,
             [Out] FILETIME* lastWriteTime
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -146,9 +137,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteFontFileLoader Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateStreamFromKey(
             [In] void* fontFileReferenceKey,
@@ -166,9 +155,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetFilePathLengthFromKey(
             [In] void* fontFileReferenceKey,
@@ -224,31 +211,22 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDWriteFontFileLoader Fields
             public IntPtr CreateStreamFromKey;
-            #endregion
 
-            #region Fields
             public IntPtr GetFilePathLengthFromKey;
 
             public IntPtr GetFilePathFromKey;
 
             public IntPtr GetLastWriteTimeFromKey;
-            #endregion
         }
-        #endregion
     }
 }

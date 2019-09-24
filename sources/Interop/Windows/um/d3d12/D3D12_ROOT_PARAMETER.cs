@@ -11,15 +11,12 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_ROOT_PARAMETER
     {
-        #region Fields
         public D3D12_ROOT_PARAMETER_TYPE ParameterType;
 
         public _Anonymous_e__Union Anonymous;
 
         public D3D12_SHADER_VISIBILITY ShaderVisibility;
-        #endregion
 
-        #region Methods
         public static void InitAsDescriptorTable(D3D12_ROOT_PARAMETER* rootParam, uint numDescriptorRanges, D3D12_DESCRIPTOR_RANGE* pDescriptorRanges, D3D12_SHADER_VISIBILITY visibility = D3D12_SHADER_VISIBILITY_ALL)
         {
             rootParam->ParameterType = D3D12_ROOT_PARAMETER_TYPE_DESCRIPTOR_TABLE;
@@ -94,13 +91,10 @@ namespace TerraFX.Interop
                 InitAsUnorderedAccessView(pThis, shaderRegister, registerSpace, visibility);
             }
         }
-        #endregion
 
-        #region Structs
         [StructLayout(LayoutKind.Explicit)]
         public struct _Anonymous_e__Union
         {
-            #region Fields
             [FieldOffset(0)]
             public D3D12_ROOT_DESCRIPTOR_TABLE DescriptorTable;
 
@@ -109,8 +103,6 @@ namespace TerraFX.Interop
 
             [FieldOffset(0)]
             public D3D12_ROOT_DESCRIPTOR Descriptor;
-            #endregion
         }
-        #endregion
     }
 }

@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct PROPBAG2
     {
-        #region Fields
         [NativeTypeName("DWORD")]
         public uint dwType;
 
@@ -27,6 +26,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("CLSID")]
         public Guid clsid;
-        #endregion
     }
 }

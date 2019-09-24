@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("412D0C3A-9650-44FA-AF5B-DD2A06C8E8FB")]
     public unsafe struct IWICComponentFactory
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IWICComponentFactory* This
         );
-        #endregion
 
-        #region IWICImagingFactory Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -285,9 +280,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("GUID")] Guid* pguidVendor = null,
             [Out] IWICMetadataQueryWriter** ppIQueryWriter = null
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -360,9 +353,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT")] uint cCount,
             [Out] IPropertyBag2** ppIPropertyBag = null
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -400,9 +391,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IWICImagingFactory Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateDecoderFromFilename(
             [In, NativeTypeName("LPCWSTR")] char* wzFilename,
@@ -840,9 +829,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateMetadataReader(
             [In, NativeTypeName("REFGUID")] Guid* guidMetadataFormat,
@@ -974,20 +961,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IWICImagingFactory Fields
             public IntPtr CreateDecoderFromFilename;
 
             public IntPtr CreateDecoderFromStream;
@@ -1037,9 +1019,7 @@ namespace TerraFX.Interop
             public IntPtr CreateQueryWriter;
 
             public IntPtr CreateQueryWriterFromReader;
-            #endregion
 
-            #region Fields
             public IntPtr CreateMetadataReader;
 
             public IntPtr CreateMetadataReaderFromContainer;
@@ -1053,8 +1033,6 @@ namespace TerraFX.Interop
             public IntPtr CreateQueryWriterFromBlockWriter;
 
             public IntPtr CreateEncoderPropertyBag;
-            #endregion
         }
-        #endregion
     }
 }

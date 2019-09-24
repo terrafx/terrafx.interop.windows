@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("8337A8A6-A216-444A-B2F4-314733A73AEA")]
     public unsafe struct ID3D12ShaderReflectionVariable
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -43,9 +40,7 @@ namespace TerraFX.Interop
             [In] ID3D12ShaderReflectionVariable* This,
             [In, NativeTypeName("UINT")] uint uArrayIndex
         );
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetDesc(
             [Out] D3D12_SHADER_VARIABLE_DESC* pDesc
@@ -92,12 +87,9 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region Fields
             public IntPtr GetDesc;
 
             public IntPtr _GetType;
@@ -105,8 +97,6 @@ namespace TerraFX.Interop
             public IntPtr GetBuffer;
 
             public IntPtr GetInterfaceSlot;
-            #endregion
         }
-        #endregion
     }
 }

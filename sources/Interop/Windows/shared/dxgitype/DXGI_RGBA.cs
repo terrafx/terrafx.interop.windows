@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct DXGI_RGBA
     {
-        #region Fields
         public float r;
 
         public float g;
@@ -15,6 +14,5 @@ namespace TerraFX.Interop
         public float b;
 
         public float a;
-        #endregion
     }
 }

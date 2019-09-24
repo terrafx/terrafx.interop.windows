@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("2CD906A1-12E2-11DC-9FED-001143A055F9")]
     public unsafe struct ID2D1Geometry
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1Geometry* This
         );
-        #endregion
 
-        #region ID2D1Resource Delegates
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -50,9 +45,7 @@ namespace TerraFX.Interop
             [In] ID2D1Geometry* This,
             [Out] ID2D1Factory** factory
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Retrieve the bounds of the geometry, with an optional applied transform.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -208,9 +201,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("FLOAT")] float flatteningTolerance,
             [In] ID2D1SimplifiedGeometrySink* geometrySink
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -248,9 +239,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1Resource Methods
         public void GetFactory(
             [Out] ID2D1Factory** factory
         )
@@ -263,9 +252,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetBounds(
             [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
@@ -525,24 +512,17 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1Resource Fields
             public IntPtr GetFactory;
-            #endregion
 
-            #region Fields
             public IntPtr GetBounds;
 
             public IntPtr GetWidenedBounds;
@@ -568,8 +548,6 @@ namespace TerraFX.Interop
             public IntPtr ComputePointAtLength;
 
             public IntPtr Widen;
-            #endregion
         }
-        #endregion
     }
 }

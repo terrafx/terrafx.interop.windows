@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("A248FD3F-3E6C-4E63-9F03-7F68ECC91DB9")]
     public unsafe struct ID2D1EffectImpl
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1EffectImpl* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Initialize the effect with a context and a transform graph. The effect must populate the transform graph with a topology and can update it later.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -70,9 +65,7 @@ namespace TerraFX.Interop
             [In] ID2D1EffectImpl* This,
             [In] ID2D1TransformGraph* transformGraph
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -110,9 +103,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int Initialize(
             [In] ID2D1EffectContext* effectContext,
@@ -156,27 +147,20 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr Initialize;
 
             public IntPtr PrepareForRender;
 
             public IntPtr SetGraph;
-            #endregion
         }
-        #endregion
     }
 }

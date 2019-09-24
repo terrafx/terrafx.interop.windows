@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public static partial class DXGI
     {
-        #region Constants
         public const uint DXGI_STANDARD_MULTISAMPLE_QUALITY_PATTERN = 0xFFFFFFFF;
 
         public const uint DXGI_CENTER_MULTISAMPLE_QUALITY_PATTERN = 0xFFFFFFFE;
-        #endregion
     }
 }

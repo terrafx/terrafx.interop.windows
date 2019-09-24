@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("4DC583BF-3A10-438A-8722-E9765224F1F1")]
     public unsafe struct ID2D1SpriteBatch
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1SpriteBatch* This
         );
-        #endregion
 
-        #region ID2D1Resource Delegates
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -49,9 +44,7 @@ namespace TerraFX.Interop
             [In] ID2D1SpriteBatch* This,
             [Out] ID2D1Factory** factory
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Adds sprites to the end of the sprite batch.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -115,9 +108,7 @@ namespace TerraFX.Interop
         public /* static */ delegate void _Clear(
             [In] ID2D1SpriteBatch* This
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -155,9 +146,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1Resource Methods
         public void GetFactory(
             [Out] ID2D1Factory** factory
         )
@@ -170,9 +159,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int AddSprites(
             [In, NativeTypeName("UINT32")] uint spriteCount,
@@ -279,24 +266,17 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1Resource Fields
             public IntPtr GetFactory;
-            #endregion
 
-            #region Fields
             public IntPtr AddSprites;
 
             public IntPtr SetSprites;
@@ -306,8 +286,6 @@ namespace TerraFX.Interop
             public IntPtr GetSpriteCount;
 
             public IntPtr Clear;
-            #endregion
         }
-        #endregion
     }
 }

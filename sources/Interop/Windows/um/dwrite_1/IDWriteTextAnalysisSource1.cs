@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("639CFAD8-0FB4-4B21-A58A-067920120009")]
     public unsafe struct IDWriteTextAnalysisSource1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteTextAnalysisSource1* This
         );
-        #endregion
 
-        #region IDWriteTextAnalysisSource Delegates
         /// <summary>Get a block of text starting at the specified text position. Returning NULL indicates the end of text - the position is after the last character. This function is called iteratively for each consecutive block, tying together several fragmented blocks in the backing store into a virtual contiguous string.</summary>
         /// <param name="textPosition">First position of the piece to obtain. All positions are in UTF16 code-units, not whole characters, which matters when supplementary characters are used.</param>
         /// <param name="textString">Address that receives a pointer to the text block at the specified position.</param>
@@ -111,9 +106,7 @@ namespace TerraFX.Interop
             [Out, NativeTypeName("UINT32")] uint* textLength,
             [Out] IDWriteNumberSubstitution** numberSubstitution
         );
-        #endregion
 
-        #region Delegates
         /// <summary>The text analyzer calls back to this to get the desired glyph orientation and resolved bidi level, which it uses along with the script properties of the text to determine the actual orientation of each character, which it reports back to the client via the sink SetGlyphOrientation method.</summary>
         /// <param name="textPosition">First position of the piece to obtain. All positions are in UTF-16 code-units, not whole characters, which matters when supplementary characters are used.</param>
         /// <param name="textLength">Number of UTF-16 units of the retrieved chunk. The returned length is not the length of the block, but the length remaining in the block, from the given position until its end. So querying for a position that is 75 positions into a 100 postition block would return 25.</param>
@@ -130,9 +123,7 @@ namespace TerraFX.Interop
             [Out] DWRITE_VERTICAL_GLYPH_ORIENTATION* glyphOrientation,
             [Out, NativeTypeName("UINT8")] byte* bidiLevel
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -170,9 +161,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteTextAnalysisSource Methods
         [return: NativeTypeName("HRESULT")]
         public int GetTextAtPosition(
             [In, NativeTypeName("UINT32")] uint textPosition,
@@ -254,9 +243,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetVerticalGlyphOrientation(
             [In, NativeTypeName("UINT32")] uint textPosition,
@@ -276,20 +263,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDWriteTextAnalysisSource Fields
             public IntPtr GetTextAtPosition;
 
             public IntPtr GetTextBeforePosition;
@@ -299,12 +281,8 @@ namespace TerraFX.Interop
             public IntPtr GetLocaleName;
 
             public IntPtr GetNumberSubstitution;
-            #endregion
 
-            #region Fields
             public IntPtr GetVerticalGlyphOrientation;
-            #endregion
         }
-        #endregion
     }
 }

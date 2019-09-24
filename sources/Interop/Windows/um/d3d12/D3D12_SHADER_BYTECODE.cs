@@ -9,14 +9,11 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_SHADER_BYTECODE
     {
-        #region Fields
         public void* pShaderBytecode;
 
         [NativeTypeName("SIZE_T")]
         public UIntPtr BytecodeLength;
-        #endregion
 
-        #region Constructors
         public D3D12_SHADER_BYTECODE(ID3DBlob* pShaderBlob)
         {
             pShaderBytecode = pShaderBlob->GetBufferPointer();
@@ -28,6 +25,5 @@ namespace TerraFX.Interop
             pShaderBytecode = _pShaderBytecode;
             BytecodeLength = bytecodeLength;
         }
-        #endregion
     }
 }

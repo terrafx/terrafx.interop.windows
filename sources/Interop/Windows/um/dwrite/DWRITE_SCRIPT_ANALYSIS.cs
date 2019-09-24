@@ -8,13 +8,11 @@ namespace TerraFX.Interop
     /// <summary>Association of text and its writing system script as well as some display attributes.</summary>
     public struct DWRITE_SCRIPT_ANALYSIS
     {
-        #region Fields
         /// <summary>Zero-based index representation of writing system script.</summary>
         [NativeTypeName("UINT16")]
         public ushort script;
 
         /// <summary>Additional shaping requirement of text.</summary>
         public DWRITE_SCRIPT_SHAPES shapes;
-        #endregion
     }
 }

@@ -9,12 +9,10 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D_SHADER_DATA
     {
-        #region Fields
         [NativeTypeName("LPCVOID")]
         public void* pBytecode;
 
         [NativeTypeName("SIZE_T")]
         public UIntPtr BytecodeLength;
-        #endregion
     }
 }

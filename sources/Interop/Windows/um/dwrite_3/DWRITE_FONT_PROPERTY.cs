@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>Font property used for filtering font sets and building a font set with explicit properties.</summary>
     public unsafe struct DWRITE_FONT_PROPERTY
     {
-        #region Fields
         /// <summary>Specifies the requested font property, such as DWRITE_FONT_PROPERTY_ID_FAMILY_NAME.</summary>
         public DWRITE_FONT_PROPERTY_ID propertyId;
 
@@ -21,6 +20,5 @@ namespace TerraFX.Interop
         /// When used for font set filtering, leave this empty: a match will be found regardless of language associated with property values.</remarks>
         [NativeTypeName("WCHAR[]")]
         public char* localeName;
-        #endregion
     }
 }

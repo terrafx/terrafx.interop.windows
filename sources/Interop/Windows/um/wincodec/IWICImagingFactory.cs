@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("EC5EC8A9-C395-4314-9C77-54D7A935FF70")]
     public unsafe struct IWICImagingFactory
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IWICImagingFactory* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -285,9 +280,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("GUID")] Guid* pguidVendor = null,
             [Out] IWICMetadataQueryWriter** ppIQueryWriter = null
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -325,9 +318,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateDecoderFromFilename(
             [In, NativeTypeName("LPCWSTR")] char* wzFilename,
@@ -765,20 +756,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr CreateDecoderFromFilename;
 
             public IntPtr CreateDecoderFromStream;
@@ -828,8 +814,6 @@ namespace TerraFX.Interop
             public IntPtr CreateQueryWriter;
 
             public IntPtr CreateQueryWriterFromReader;
-            #endregion
         }
-        #endregion
     }
 }

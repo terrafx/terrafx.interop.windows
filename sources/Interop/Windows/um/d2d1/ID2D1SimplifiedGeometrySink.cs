@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("2CD9069E-12E2-11DC-9FED-001143A055F9")]
     public unsafe struct ID2D1SimplifiedGeometrySink
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1SimplifiedGeometrySink* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _SetFillMode(
@@ -94,9 +89,7 @@ namespace TerraFX.Interop
         public /* static */ delegate int _Close(
             [In] ID2D1SimplifiedGeometrySink* This
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -134,9 +127,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         public void SetFillMode(
             [In] D2D1_FILL_MODE fillMode
         )
@@ -231,20 +222,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr SetFillMode;
 
             public IntPtr SetSegmentFlags;
@@ -258,8 +244,6 @@ namespace TerraFX.Interop
             public IntPtr EndFigure;
 
             public IntPtr Close;
-            #endregion
         }
-        #endregion
     }
 }

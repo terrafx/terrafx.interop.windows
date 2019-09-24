@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("135FF860-22B7-4DDF-B0F6-218F4F299A43")]
     public unsafe struct IWICStream
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IWICStream* This
         );
-        #endregion
 
-        #region ISequentialStream Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -61,9 +56,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("ULONG")] uint cb,
             [Out, NativeTypeName("ULONG")] uint* pcbWritten = null
         );
-        #endregion
 
-        #region IStream Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -144,9 +137,7 @@ namespace TerraFX.Interop
             [In] IWICStream* This,
             [Out] IStream** ppstm = null
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -182,9 +173,7 @@ namespace TerraFX.Interop
             [In] ULARGE_INTEGER ulOffset,
             [In] ULARGE_INTEGER ulMaxSize
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -222,9 +211,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ISequentialStream Methods
         [return: NativeTypeName("HRESULT")]
         public int Read(
             [Out] void* pv,
@@ -260,9 +247,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IStream Methods
         [return: NativeTypeName("HRESULT")]
         public int Seek(
             [In] LARGE_INTEGER dlibMove,
@@ -405,9 +390,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int InitializeFromIStream(
             [In] IStream* pIStream = null
@@ -471,26 +454,19 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ISequentialStream Fields
             public IntPtr Read;
 
             public IntPtr Write;
-            #endregion
 
-            #region IStream Fields
             public IntPtr Seek;
 
             public IntPtr SetSize;
@@ -508,9 +484,7 @@ namespace TerraFX.Interop
             public IntPtr Stat;
 
             public IntPtr Clone;
-            #endregion
 
-            #region Fields
             public IntPtr InitializeFromIStream;
 
             public IntPtr InitializeFromFilename;
@@ -518,8 +492,6 @@ namespace TerraFX.Interop
             public IntPtr InitializeFromMemory;
 
             public IntPtr InitializeFromIStreamRegion;
-            #endregion
         }
-        #endregion
     }
 }

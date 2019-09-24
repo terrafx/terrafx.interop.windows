@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("FBEC5E44-F7BE-4B65-B7F8-C0C81FEF026D")]
     public unsafe struct IWICDevelopRaw
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IWICDevelopRaw* This
         );
-        #endregion
 
-        #region IWICBitmapSource Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -86,9 +81,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT")] uint cbBufferSize,
             [Out, NativeTypeName("BYTE[]")] byte* pbBuffer
         );
-        #endregion
 
-        #region IWICBitmapFrameDecode Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -114,9 +107,7 @@ namespace TerraFX.Interop
             [In] IWICDevelopRaw* This,
             [Out] IWICBitmapSource** ppIThumbnail = null
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -381,9 +372,7 @@ namespace TerraFX.Interop
             [In] IWICDevelopRaw* This,
             [In] IWICDevelopRawNotificationCallback* pCallback = null
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -421,9 +410,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IWICBitmapSource Methods
         [return: NativeTypeName("HRESULT")]
         public int GetSize(
             [Out, NativeTypeName("UINT")] uint* puiWidth,
@@ -503,9 +490,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IWICBitmapFrameDecode Methods
         [return: NativeTypeName("HRESULT")]
         public int GetMetadataQueryReader(
             [Out] IWICMetadataQueryReader** ppIMetadataQueryReader = null
@@ -551,9 +536,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryRawCapabilitiesInfo(
             [In, Out] WICRawCapabilitiesInfo* pInfo
@@ -1019,20 +1002,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IWICBitmapSource Fields
             public IntPtr GetSize;
 
             public IntPtr GetPixelFormat;
@@ -1042,17 +1020,13 @@ namespace TerraFX.Interop
             public IntPtr CopyPalette;
 
             public IntPtr CopyPixels;
-            #endregion
 
-            #region IWICBitmapFrameDecode Fields
             public IntPtr GetMetadataQueryReader;
 
             public IntPtr GetColorContexts;
 
             public IntPtr GetThumbnail;
-            #endregion
 
-            #region Fields
             public IntPtr QueryRawCapabilitiesInfo;
 
             public IntPtr LoadParameterSet;
@@ -1116,8 +1090,6 @@ namespace TerraFX.Interop
             public IntPtr GetRenderMode;
 
             public IntPtr SetNotificationCallback;
-            #endregion
         }
-        #endregion
     }
 }

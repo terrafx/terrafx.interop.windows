@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct D3D12_COMMAND_QUEUE_DESC
     {
-        #region Fields
         public D3D12_COMMAND_LIST_TYPE Type;
 
         [NativeTypeName("INT")]
@@ -17,6 +16,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint NodeMask;
-        #endregion
     }
 }

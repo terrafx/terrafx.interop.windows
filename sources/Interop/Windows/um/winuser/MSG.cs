@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct MSG
     {
-        #region Fields
         [NativeTypeName("HWND")]
         public IntPtr hwnd;
 
@@ -26,6 +25,5 @@ namespace TerraFX.Interop
         public uint time;
 
         public POINT pt;
-        #endregion
     }
 }

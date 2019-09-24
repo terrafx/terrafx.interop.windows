@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("D67441C7-672A-476F-9E82-CD55B44949CE")]
     public unsafe struct IDXGIInfoQueue
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDXGIInfoQueue* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -359,9 +354,7 @@ namespace TerraFX.Interop
             [In] IDXGIInfoQueue* This,
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -399,9 +392,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int SetMessageCountLimit(
             [In, NativeTypeName("DXGI_DEBUG_ID")] Guid Producer,
@@ -968,20 +959,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr SetMessageCountLimit;
 
             public IntPtr ClearStoredMessages;
@@ -1055,8 +1041,6 @@ namespace TerraFX.Interop
             public IntPtr SetMuteDebugOutput;
 
             public IntPtr GetMuteDebugOutput;
-            #endregion
         }
-        #endregion
     }
 }

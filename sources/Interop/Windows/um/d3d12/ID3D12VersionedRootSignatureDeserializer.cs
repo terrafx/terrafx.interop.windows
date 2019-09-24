@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("7F91CE67-090C-4BB7-B78E-ED8FF2E31DA0")]
     public unsafe struct ID3D12VersionedRootSignatureDeserializer
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID3D12VersionedRootSignatureDeserializer* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -56,9 +51,7 @@ namespace TerraFX.Interop
         public /* static */ delegate D3D12_VERSIONED_ROOT_SIGNATURE_DESC* _GetUnconvertedRootSignatureDesc(
             [In] ID3D12VersionedRootSignatureDeserializer* This
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -96,9 +89,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetRootSignatureDescAtVersion(
             [In] D3D_ROOT_SIGNATURE_VERSION convertToVersion,
@@ -124,25 +115,18 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetRootSignatureDescAtVersion;
 
             public IntPtr GetUnconvertedRootSignatureDesc;
-            #endregion
         }
-        #endregion
     }
 }

@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>Metrics for caret placement in a font.</summary>
     public struct DWRITE_CARET_METRICS
     {
-        #region Fields
         /// <summary>Vertical rise of the caret. Rise / Run yields the caret angle. Rise = 1 for perfectly upright fonts (non-italic).</summary>
         [NativeTypeName("INT16")]
         public short slopeRise;
@@ -20,6 +19,5 @@ namespace TerraFX.Interop
         /// <summary>Horizontal offset of the caret along the baseline for good appearance. Offset = 0 for perfectly upright fonts (non-italic).</summary>
         [NativeTypeName("INT16")]
         public short offset;
-        #endregion
     }
 }

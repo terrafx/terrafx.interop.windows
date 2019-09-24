@@ -14,11 +14,8 @@ namespace TerraFX.Interop
     [Guid("5F174B49-0D8B-4CFB-8BCA-F1CCE9D06C67")]
     public unsafe struct IDWriteTextFormat1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -41,9 +38,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteTextFormat1* This
         );
-        #endregion
 
-        #region IDWriteTextFormat Delegates
         /// <summary>Set alignment option of text relative to layout box's leading and trailing edge.</summary>
         /// <param name="textAlignment">Text alignment option</param>
         /// <returns>Standard HRESULT error code.</returns>
@@ -294,9 +289,7 @@ namespace TerraFX.Interop
             [Out, NativeTypeName("WCHAR[]")] char* localeName,
             [In, NativeTypeName("UINT32")] uint nameSize
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Set the preferred orientation of glyphs when using a vertical reading direction.</summary>
         /// <param name="glyphOrientation">Preferred glyph orientation.</param>
         /// <returns> Standard HRESULT error code.</returns>
@@ -371,9 +364,7 @@ namespace TerraFX.Interop
             [In] IDWriteTextFormat1* This,
             [Out] IDWriteFontFallback** fontFallback
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -411,9 +402,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteTextFormat Methods
         [return: NativeTypeName("HRESULT")]
         public int SetTextAlignment(
             [In] DWRITE_TEXT_ALIGNMENT textAlignment
@@ -735,9 +724,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int SetVerticalGlyphOrientation(
             [In] DWRITE_VERTICAL_GLYPH_ORIENTATION glyphOrientation
@@ -838,20 +825,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDWriteTextFormat Fields
             public IntPtr SetTextAlignment;
 
             public IntPtr SetParagraphAlignment;
@@ -901,9 +883,7 @@ namespace TerraFX.Interop
             public IntPtr GetLocaleNameLength;
 
             public IntPtr GetLocaleName;
-            #endregion
 
-            #region Fields
             public IntPtr SetVerticalGlyphOrientation;
 
             public IntPtr GetVerticalGlyphOrientation;
@@ -919,8 +899,6 @@ namespace TerraFX.Interop
             public IntPtr SetFontFallback;
 
             public IntPtr GetFontFallback;
-            #endregion
         }
-        #endregion
     }
 }

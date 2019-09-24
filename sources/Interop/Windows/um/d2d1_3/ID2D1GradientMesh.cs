@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("F292E401-C050-4CDE-83D7-04962D3B23C2")]
     public unsafe struct ID2D1GradientMesh
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1GradientMesh* This
         );
-        #endregion
 
-        #region ID2D1Resource Delegates
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -50,9 +45,7 @@ namespace TerraFX.Interop
             [In] ID2D1GradientMesh* This,
             [Out] ID2D1Factory** factory
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Returns the number of patches of the gradient mesh.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -71,9 +64,7 @@ namespace TerraFX.Interop
             [Out, NativeTypeName("D2D1_GRADIENT_MESH_PATCH[]")] D2D1_GRADIENT_MESH_PATCH* patches,
             [In, NativeTypeName("UINT32")] uint patchesCount
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -111,9 +102,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1Resource Methods
         public void GetFactory(
             [Out] ID2D1Factory** factory
         )
@@ -126,9 +115,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("UINT32")]
         public uint GetPatchCount()
         {
@@ -157,29 +144,20 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1Resource Fields
             public IntPtr GetFactory;
-            #endregion
 
-            #region Fields
             public IntPtr GetPatchCount;
 
             public IntPtr GetPatches;
-            #endregion
         }
-        #endregion
     }
 }

@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("C5A05F0C-16F2-4ADF-9F4D-A8C4D58AC550")]
     public unsafe struct IDXGIDebug1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDXGIDebug1* This
         );
-        #endregion
 
-        #region IDXGIDebug Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -50,9 +45,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("GUID")] Guid apiid,
             [In] DXGI_DEBUG_RLO_FLAGS flags
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _EnableLeakTrackingForThread(
@@ -71,9 +64,7 @@ namespace TerraFX.Interop
         public /* static */ delegate int _IsLeakTrackingEnabledForThread(
             [In] IDXGIDebug1* This
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -111,9 +102,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDXGIDebug Methods
         [return: NativeTypeName("HRESULT")]
         public int ReportLiveObjects(
             [In, NativeTypeName("GUID")] Guid apiid,
@@ -129,9 +118,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         public void EnableLeakTrackingForThread()
         {
             fixed (IDXGIDebug1* This = &this)
@@ -162,31 +149,22 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDXGIDebug Fields
             public IntPtr ReportLiveObjects;
-            #endregion
 
-            #region Fields
             public IntPtr EnableLeakTrackingForThread;
 
             public IntPtr DisableLeakTrackingForThread;
 
             public IntPtr IsLeakTrackingEnabledForThread;
-            #endregion
         }
-        #endregion
     }
 }

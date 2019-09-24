@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("688E1A58-5094-47C8-ADC8-FBCEA60AE92B")]
     public unsafe struct IDWriteTextAnalysisSource
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteTextAnalysisSource* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Get a block of text starting at the specified text position. Returning NULL indicates the end of text - the position is after the last character. This function is called iteratively for each consecutive block, tying together several fragmented blocks in the backing store into a virtual contiguous string.</summary>
         /// <param name="textPosition">First position of the piece to obtain. All positions are in UTF16 code-units, not whole characters, which matters when supplementary characters are used.</param>
         /// <param name="textString">Address that receives a pointer to the text block at the specified position.</param>
@@ -111,9 +106,7 @@ namespace TerraFX.Interop
             [Out, NativeTypeName("UINT32")] uint* textLength,
             [Out] IDWriteNumberSubstitution** numberSubstitution
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -151,9 +144,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetTextAtPosition(
             [In, NativeTypeName("UINT32")] uint textPosition,
@@ -235,20 +226,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetTextAtPosition;
 
             public IntPtr GetTextBeforePosition;
@@ -258,8 +244,6 @@ namespace TerraFX.Interop
             public IntPtr GetLocaleName;
 
             public IntPtr GetNumberSubstitution;
-            #endregion
         }
-        #endregion
     }
 }

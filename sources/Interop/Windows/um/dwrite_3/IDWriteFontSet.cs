@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("53585141-D9F8-4095-8321-D73CF6BD116B")]
     public unsafe struct IDWriteFontSet
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteFontSet* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Get the number of total fonts in the set.</summary>
         /// <returns> Standard HRESULT error code.</returns>
         [SuppressUnmanagedCodeSecurity]
@@ -190,9 +185,7 @@ namespace TerraFX.Interop
             [In] DWRITE_FONT_STYLE fontStyle,
             [Out] IDWriteFontSet** filteredSet
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -230,9 +223,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("UINT32")]
         public uint GetFontCount()
         {
@@ -405,20 +396,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetFontCount;
 
             public IntPtr GetFontFaceReference;
@@ -438,8 +424,6 @@ namespace TerraFX.Interop
             public IntPtr GetMatchingFonts;
 
             public IntPtr GetMatchingFonts1;
-            #endregion
         }
-        #endregion
     }
 }

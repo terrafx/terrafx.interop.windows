@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct DXGI_OUTPUT_DESC1
     {
-        #region Fields
         [NativeTypeName("WCHAR[32]")]
         public fixed char DeviceName[32];
 
@@ -48,6 +47,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("FLOAT")]
         public float MaxFullFrameLuminance;
-        #endregion
     }
 }

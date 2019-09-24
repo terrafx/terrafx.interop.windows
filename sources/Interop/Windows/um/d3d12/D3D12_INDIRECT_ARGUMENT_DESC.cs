@@ -9,17 +9,13 @@ namespace TerraFX.Interop
 {
     public struct D3D12_INDIRECT_ARGUMENT_DESC
     {
-        #region Fields
         public D3D12_INDIRECT_ARGUMENT_TYPE Type;
 
         public _Anonymous_e__Union Anonymous;
-        #endregion
 
-        #region Structs
         [StructLayout(LayoutKind.Explicit)]
         public struct _Anonymous_e__Union
         {
-            #region Fields
             [FieldOffset(0)]
             public _VertexBuffer_e__Struct VertexBuffer;
 
@@ -34,47 +30,33 @@ namespace TerraFX.Interop
 
             [FieldOffset(0)]
             public _UnorderedAccessView_e__Struct UnorderedAccessView;
-            #endregion
 
-            #region Structs
             public struct _VertexBuffer_e__Struct
             {
-                #region Fields
                 public uint Slot;
-                #endregion
             }
 
             public struct _Constant_e__Struct
             {
-                #region Fields
                 public uint RootParameterIndex;
                 public uint DestOffsetIn32BitValues;
                 public uint Num32BitValuesToSet;
-                #endregion
             }
 
             public struct _ConstantBufferView_e__Struct
             {
-                #region Fields
                 public uint RootParameterIndex;
-                #endregion
             }
 
             public struct _ShaderResourceView_e__Struct
             {
-                #region Fields
                 public uint RootParameterIndex;
-                #endregion
             }
 
             public struct _UnorderedAccessView_e__Struct
             {
-                #region Fields
                 public uint RootParameterIndex;
-                #endregion
             }
-            #endregion
         }
-        #endregion
     }
 }

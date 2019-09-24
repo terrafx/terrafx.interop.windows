@@ -8,12 +8,10 @@ namespace TerraFX.Interop
     /// <summary>Overall metrics associated with text after layout. All coordinates are in device independent pixels (DIPs).</summary>
     public struct DWRITE_TEXT_METRICS1
     {
-        #region Fields
         public DWRITE_TEXT_METRICS BaseValue;
 
         /// <summary>The height of the formatted text taking into account the trailing whitespace at the end of each line, which will matter for vertical reading directions.</summary>
         [NativeTypeName("FLOAT")]
         public float heightIncludingTrailingWhitespace;
-        #endregion
     }
 }

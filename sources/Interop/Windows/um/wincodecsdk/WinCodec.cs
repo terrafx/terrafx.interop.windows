@@ -11,7 +11,6 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class WinCodec
     {
-        #region Constants
         public static readonly Guid GUID_MetadataFormatUnknown = new Guid(0xA45E592F, 0x9078, 0x4A7C, 0xAD, 0xB5, 0x4E, 0xDC, 0x4F, 0xD6, 0x1B, 0x1F);
 
         public static readonly Guid GUID_MetadataFormatIfd = new Guid(0x537396C6, 0x2D8A, 0x4BB6, 0x9B, 0xF8, 0x2F, 0x0A, 0x8E, 0x2A, 0x3A, 0xDF);
@@ -239,9 +238,7 @@ namespace TerraFX.Interop
         public static readonly Guid CLSID_WICDdsMetadataReader = new Guid(0x276C88CA, 0x7533, 0x4A86, 0xB6, 0x76, 0x66, 0xB3, 0x60, 0x80, 0xD4, 0x84);
 
         public static readonly Guid CLSID_WICDdsMetadataWriter = new Guid(0xFD688BBD, 0x31ED, 0x4DB7, 0xA7, 0x23, 0x93, 0x49, 0x27, 0xD3, 0x83, 0x67);
-        #endregion
 
-        #region IID_* Constants
         public static readonly Guid IID_IWICMetadataBlockReader = new Guid(0xFEAA2A8D, 0xB3F3, 0x43E4, 0xB2, 0x5C, 0xD1, 0xDE, 0x99, 0x0A, 0x1A, 0xE1);
 
         public static readonly Guid IID_IWICMetadataBlockWriter = new Guid(0x08FB9676, 0xB444, 0x41E8, 0x8D, 0xBE, 0x6A, 0x53, 0xA5, 0x42, 0xBF, 0xF1);
@@ -261,9 +258,7 @@ namespace TerraFX.Interop
         public static readonly Guid IID_IWICMetadataWriterInfo = new Guid(0xB22E3FBA, 0x3925, 0x4323, 0xB5, 0xC1, 0x9E, 0xBF, 0xC4, 0x30, 0xF2, 0x36);
 
         public static readonly Guid IID_IWICComponentFactory = new Guid(0x412D0C3A, 0x9650, 0x44FA, 0xAF, 0x5B, 0xDD, 0x2A, 0x06, 0xC8, 0xE8, 0xFB);
-        #endregion
 
-        #region Methods
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "WICMatchMetadataContent", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
         [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
@@ -292,6 +287,5 @@ namespace TerraFX.Interop
             [In] IWICMetadataWriter* pIWriter,
             [Out] ULARGE_INTEGER* pcbSize
         );
-        #endregion
     }
 }

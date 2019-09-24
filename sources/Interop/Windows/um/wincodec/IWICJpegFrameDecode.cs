@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("8939F66E-C46A-4C21-A9D1-98B327CE1679")]
     public unsafe struct IWICJpegFrameDecode
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IWICJpegFrameDecode* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -135,9 +130,7 @@ namespace TerraFX.Interop
             [Out, NativeTypeName("BYTE[]")] byte* pbStreamData,
             [Out, NativeTypeName("UINT")] uint* pcbStreamDataActual
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -175,9 +168,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int DoesSupportIndexing(
             [Out, NativeTypeName("BOOL")] int* pfIndexingSupported
@@ -344,20 +335,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr DoesSupportIndexing;
 
             public IntPtr SetIndexing;
@@ -377,8 +363,6 @@ namespace TerraFX.Interop
             public IntPtr CopyScan;
 
             public IntPtr CopyMinimalStream;
-            #endregion
         }
-        #endregion
     }
 }

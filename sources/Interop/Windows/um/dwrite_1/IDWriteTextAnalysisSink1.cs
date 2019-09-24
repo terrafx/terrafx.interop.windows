@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("B0D941A0-85E7-4D8B-9FD3-5CED9934482A")]
     public unsafe struct IDWriteTextAnalysisSink1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteTextAnalysisSink1* This
         );
-        #endregion
 
-        #region IDWriteTextAnalysisSink Delegates
         /// <summary>Report script analysis for the text range.</summary>
         /// <param name="textPosition">Starting position to report from.</param>
         /// <param name="textLength">Number of UTF16 units of the reported range.</param>
@@ -105,9 +100,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT32")] uint textLength,
             [In] IDWriteNumberSubstitution* numberSubstitution
         );
-        #endregion
 
-        #region Delegates
         /// <summary>The text analyzer calls back to this to report the actual orientation of each character for shaping and drawing.</summary>
         /// <param name="textPosition">Starting position to report from.</param>
         /// <param name="textLength">Number of UTF-16 units of the reported range.</param>
@@ -128,9 +121,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("BOOL")] int isSideways,
             [In, NativeTypeName("BOOL")] int isRightToLeft
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -168,9 +159,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteTextAnalysisSink Methods
         [return: NativeTypeName("HRESULT")]
         public int SetScriptAnalysis(
             [In, NativeTypeName("UINT32")] uint textPosition,
@@ -244,9 +233,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int SetGlyphOrientation(
             [In, NativeTypeName("UINT32")] uint textPosition,
@@ -270,20 +257,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDWriteTextAnalysisSink Fields
             public IntPtr SetScriptAnalysis;
 
             public IntPtr SetLineBreakpoints;
@@ -291,12 +273,8 @@ namespace TerraFX.Interop
             public IntPtr SetBidiLevel;
 
             public IntPtr SetNumberSubstitution;
-            #endregion
 
-            #region Fields
             public IntPtr SetGlyphOrientation;
-            #endregion
         }
-        #endregion
     }
 }

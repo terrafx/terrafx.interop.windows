@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("ABA496DD-B617-4CB8-A866-BC44D7EB1FA2")]
     public unsafe struct IDXGISurface2
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDXGISurface2* This
         );
-        #endregion
 
-        #region IDXGIObject Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -79,9 +74,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppParent
         );
-        #endregion
 
-        #region IDXGIDeviceSubObject Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -90,9 +83,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppDevice
         );
-        #endregion
 
-        #region IDXGISurface Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -116,9 +107,7 @@ namespace TerraFX.Interop
         public /* static */ delegate int _Unmap(
             [In] IDXGISurface2* This
         );
-        #endregion
 
-        #region IDXGISurface1 Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -135,9 +124,7 @@ namespace TerraFX.Interop
             [In] IDXGISurface2* This,
             [In] RECT* pDirtyRect = null
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -147,9 +134,7 @@ namespace TerraFX.Interop
             [Out] void** ppParentResource,
             [Out, NativeTypeName("UINT")] uint* pSubresourceIndex
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -187,9 +172,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDXGIObject Methods
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData(
             [In, NativeTypeName("REFGUID")] Guid* Name,
@@ -257,9 +240,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDXGIDeviceSubObject Methods
         [return: NativeTypeName("HRESULT")]
         public int GetDevice(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -275,9 +256,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDXGISurface Methods
         [return: NativeTypeName("HRESULT")]
         public int GetDesc(
             [Out] DXGI_SURFACE_DESC* pDesc
@@ -318,9 +297,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDXGISurface1 Methods
         [return: NativeTypeName("HRESULT")]
         public int GetDC(
             [In, NativeTypeName("BOOL")] int Discard,
@@ -350,9 +327,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetResource(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -370,20 +345,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDXGIObject Fields
             public IntPtr SetPrivateData;
 
             public IntPtr SetPrivateDataInterface;
@@ -391,30 +361,20 @@ namespace TerraFX.Interop
             public IntPtr GetPrivateData;
 
             public IntPtr GetParent;
-            #endregion
 
-            #region IDXGIDeviceSubObject Fields
             public IntPtr GetDevice;
-            #endregion
 
-            #region IDXGISurface Fields
             public IntPtr GetDesc;
 
             public IntPtr Map;
 
             public IntPtr Unmap;
-            #endregion
 
-            #region IDXGISurface1 Fields
             public IntPtr GetDC;
 
             public IntPtr ReleaseDC;
-            #endregion
 
-            #region Fields
             public IntPtr GetResource;
-            #endregion
         }
-        #endregion
     }
 }

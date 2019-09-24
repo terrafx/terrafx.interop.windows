@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>Represents all SVG preserveAspectRatio settings.</summary>
     public struct D2D1_SVG_PRESERVE_ASPECT_RATIO
     {
-        #region Fields
         /// <summary>Sets the 'defer' portion of the preserveAspectRatio settings. This field only has an effect on an 'image' element that references another SVG document. As this is not currently supported, the field has no impact on rendering.</summary>
         [NativeTypeName("BOOL")]
         public int defer;
@@ -18,6 +17,5 @@ namespace TerraFX.Interop
 
         /// <summary>Sets the meetOrSlice portion of the preserveAspectRatio settings.</summary>
         public D2D1_SVG_ASPECT_SCALING meetOrSlice;
-        #endregion
     }
 }

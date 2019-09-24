@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct STATSTG
     {
-        #region Fields
         [NativeTypeName("LPOLESTR")]
         public char* pwcsName;
 
@@ -38,6 +37,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("DWORD")]
         public uint reserved;
-        #endregion
     }
 }

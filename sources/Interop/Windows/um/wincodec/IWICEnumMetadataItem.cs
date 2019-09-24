@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("DC2BB46D-3F07-481E-8625-220C4AEDBB33")]
     public unsafe struct IWICEnumMetadataItem
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IWICEnumMetadataItem* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -76,9 +71,7 @@ namespace TerraFX.Interop
             [In] IWICEnumMetadataItem* This,
             [Out] IWICEnumMetadataItem** ppIEnumMetadataItem = null
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -116,9 +109,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int Next(
             [In, NativeTypeName("ULONG")] uint celt,
@@ -179,20 +170,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr Next;
 
             public IntPtr Skip;
@@ -200,8 +186,6 @@ namespace TerraFX.Interop
             public IntPtr Reset;
 
             public IntPtr Clone;
-            #endregion
         }
-        #endregion
     }
 }

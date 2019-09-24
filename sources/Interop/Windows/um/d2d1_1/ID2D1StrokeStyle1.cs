@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("10A72A66-E91C-43F4-993F-DDF4B82B0B4A")]
     public unsafe struct ID2D1StrokeStyle1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1StrokeStyle1* This
         );
-        #endregion
 
-        #region ID2D1Resource Delegates
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -50,9 +45,7 @@ namespace TerraFX.Interop
             [In] ID2D1StrokeStyle1* This,
             [Out] ID2D1Factory** factory
         );
-        #endregion
 
-        #region ID2D1StrokeStyle Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate D2D1_CAP_STYLE _GetStartCap(
@@ -112,17 +105,13 @@ namespace TerraFX.Interop
             [Out, NativeTypeName("FLOAT[]")] float* dashes,
             [In, NativeTypeName("UINT32")] uint dashesCount
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate D2D1_STROKE_TRANSFORM_TYPE _GetStrokeTransformType(
             [In] ID2D1StrokeStyle1* This
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -160,9 +149,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1Resource Methods
         public void GetFactory(
             [Out] ID2D1Factory** factory
         )
@@ -175,9 +162,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1StrokeStyle Methods
         public D2D1_CAP_STYLE GetStartCap()
         {
             fixed (ID2D1StrokeStyle1* This = &this)
@@ -275,9 +260,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         public D2D1_STROKE_TRANSFORM_TYPE GetStrokeTransformType()
         {
             fixed (ID2D1StrokeStyle1* This = &this)
@@ -287,24 +270,17 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1Resource Fields
             public IntPtr GetFactory;
-            #endregion
 
-            #region ID2D1StrokeStyle Fields
             public IntPtr GetStartCap;
 
             public IntPtr GetEndCap;
@@ -322,12 +298,8 @@ namespace TerraFX.Interop
             public IntPtr GetDashesCount;
 
             public IntPtr GetDashes;
-            #endregion
 
-            #region Fields
             public IntPtr GetStrokeTransformType;
-            #endregion
         }
-        #endregion
     }
 }

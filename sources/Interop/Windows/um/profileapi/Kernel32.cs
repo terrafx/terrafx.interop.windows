@@ -10,7 +10,6 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Kernel32
     {
-        #region External Methods
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "QueryPerformanceCounter", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("BOOL")]
@@ -24,6 +23,5 @@ namespace TerraFX.Interop
         public static extern int QueryPerformanceFrequency(
             [Out] LARGE_INTEGER* lpFrequency
         );
-        #endregion
     }
 }

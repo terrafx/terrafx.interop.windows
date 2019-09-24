@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public struct DXGI_OUTDUPL_MOVE_RECT
     {
-        #region Fields
         public POINT SourcePoint;
 
         public RECT DestinationRect;
-        #endregion
     }
 }

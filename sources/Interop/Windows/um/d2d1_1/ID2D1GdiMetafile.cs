@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("2F543DC3-CFC1-4211-864F-CFD91C6F3395")]
     public unsafe struct ID2D1GdiMetafile
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1GdiMetafile* This
         );
-        #endregion
 
-        #region ID2D1Resource Delegates
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -50,9 +45,7 @@ namespace TerraFX.Interop
             [In] ID2D1GdiMetafile* This,
             [Out] ID2D1Factory** factory
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Play the metafile into a caller-supplied sink interface.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -70,9 +63,7 @@ namespace TerraFX.Interop
             [In] ID2D1GdiMetafile* This,
             [Out, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* bounds
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -110,9 +101,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1Resource Methods
         public void GetFactory(
             [Out] ID2D1Factory** factory
         )
@@ -125,9 +114,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int Stream(
             [In] ID2D1GdiMetafileSink* sink
@@ -155,29 +142,20 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1Resource Fields
             public IntPtr GetFactory;
-            #endregion
 
-            #region Fields
             public IntPtr Stream;
 
             public IntPtr GetBounds;
-            #endregion
         }
-        #endregion
     }
 }

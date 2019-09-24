@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("D55BA0A4-6405-4694-AEF5-08EE1A4358B4")]
     public unsafe struct ID2D1Device5
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1Device5* This
         );
-        #endregion
 
-        #region ID2D1Resource Delegates
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -49,9 +44,7 @@ namespace TerraFX.Interop
             [In] ID2D1Device5* This,
             [Out] ID2D1Factory** factory
         );
-        #endregion
 
-        #region ID2D1Device Delegates
         /// <summary>Creates a new device context with no initially assigned target.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -97,9 +90,7 @@ namespace TerraFX.Interop
             [In] ID2D1Device5* This,
             [In, NativeTypeName("UINT32")] uint millisecondsSinceUse = 0
         );
-        #endregion
 
-        #region ID2D1Device1 Delegates
         /// <summary>Retrieves the rendering priority currently set on the device.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -124,9 +115,7 @@ namespace TerraFX.Interop
             [In] D2D1_DEVICE_CONTEXT_OPTIONS options,
             [Out] ID2D1DeviceContext1** deviceContext1
         );
-        #endregion
 
-        #region ID2D1Device2 Delegates
         /// <summary>Creates a new device context with no initially assigned target.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -153,9 +142,7 @@ namespace TerraFX.Interop
             [In] ID2D1Device5* This,
             [Out] IDXGIDevice** dxgiDevice
         );
-        #endregion
 
-        #region ID2D1Device3 Delegates
         /// <summary>Creates a new device context with no initially assigned target.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -165,9 +152,7 @@ namespace TerraFX.Interop
             [In] D2D1_DEVICE_CONTEXT_OPTIONS options,
             [Out] ID2D1DeviceContext3** deviceContext3
         );
-        #endregion
 
-        #region ID2D1Device4 Delegates
         /// <summary>Creates a new device context with no initially assigned target.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -193,9 +178,7 @@ namespace TerraFX.Interop
         public /* static */ delegate ulong _GetMaximumColorGlyphCacheMemory(
             [In] ID2D1Device5* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Creates a new device context with no initially assigned target.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -205,9 +188,7 @@ namespace TerraFX.Interop
             [In] D2D1_DEVICE_CONTEXT_OPTIONS options,
             [Out] ID2D1DeviceContext5** deviceContext5
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -245,9 +226,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1Resource Methods
         public void GetFactory(
             [Out] ID2D1Factory** factory
         )
@@ -260,9 +239,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1Device Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateDeviceContext(
             [In] D2D1_DEVICE_CONTEXT_OPTIONS options,
@@ -335,9 +312,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1Device1 Methods
         public D2D1_RENDERING_PRIORITY GetRenderingPriority()
         {
             fixed (ID2D1Device5* This = &this)
@@ -376,9 +351,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1Device2 Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateDeviceContext2(
             [In] D2D1_DEVICE_CONTEXT_OPTIONS options,
@@ -421,9 +394,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1Device3 Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateDeviceContext3(
             [In] D2D1_DEVICE_CONTEXT_OPTIONS options,
@@ -439,9 +410,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1Device4 Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateDeviceContext4(
             [In] D2D1_DEVICE_CONTEXT_OPTIONS options,
@@ -481,9 +450,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateDeviceContext5(
             [In] D2D1_DEVICE_CONTEXT_OPTIONS options,
@@ -499,24 +466,17 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1Resource Fields
             public IntPtr GetFactory;
-            #endregion
 
-            #region ID2D1Device Fields
             public IntPtr CreateDeviceContext;
 
             public IntPtr CreatePrintControl;
@@ -526,40 +486,28 @@ namespace TerraFX.Interop
             public IntPtr GetMaximumTextureMemory;
 
             public IntPtr ClearResources;
-            #endregion
 
-            #region ID2D1Device1 Fields
             public IntPtr GetRenderingPriority;
 
             public IntPtr SetRenderingPriority;
 
             public IntPtr CreateDeviceContext1;
-            #endregion
 
-            #region ID2D1Device2 Fields
             public IntPtr CreateDeviceContext2;
 
             public IntPtr FlushDeviceContexts;
 
             public IntPtr GetDxgiDevice;
-            #endregion
 
-            #region ID2D1Device3 Fields
             public IntPtr CreateDeviceContext3;
-            #endregion
 
-            #region ID2D1Device4 Fields
             public IntPtr CreateDeviceContext4;
 
             public IntPtr SetMaximumColorGlyphCacheMemory;
 
             public IntPtr GetMaximumColorGlyphCacheMemory;
-            #endregion
 
-            #region Fields
             public IntPtr CreateDeviceContext5;
-            #endregion
         }
-        #endregion
     }
 }

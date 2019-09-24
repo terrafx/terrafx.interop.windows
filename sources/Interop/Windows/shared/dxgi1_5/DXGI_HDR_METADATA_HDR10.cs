@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct DXGI_HDR_METADATA_HDR10
     {
-        #region Fields
         [NativeTypeName("UINT16[2]")]
         public fixed ushort RedPrimary[2];
 
@@ -31,6 +30,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT16")]
         public ushort MaxFrameAverageLightLevel;
-        #endregion
     }
 }

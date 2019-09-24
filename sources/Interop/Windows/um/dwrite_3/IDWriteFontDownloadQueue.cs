@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("B71E6052-5AEA-4FA3-832E-F60D431F7E91")]
     public unsafe struct IDWriteFontDownloadQueue
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteFontDownloadQueue* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Registers a client-defined listener object that receives download notifications. All registered listener's DownloadCompleted will be called after BeginDownload completes.</summary>
         /// <param name="listener">Listener object to add.</param>
         /// <param name="token">Receives a token value, which the caller must subsequently pass to RemoveListener.</param>
@@ -106,9 +101,7 @@ namespace TerraFX.Interop
         public /* static */ delegate ulong _GetGenerationCount(
             [In] IDWriteFontDownloadQueue* This
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -146,9 +139,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int AddListener(
             [In] IDWriteFontDownloadListener* listener,
@@ -225,20 +216,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr AddListener;
 
             public IntPtr RemoveListener;
@@ -250,8 +236,6 @@ namespace TerraFX.Interop
             public IntPtr CancelDownload;
 
             public IntPtr GetGenerationCount;
-            #endregion
         }
-        #endregion
     }
 }

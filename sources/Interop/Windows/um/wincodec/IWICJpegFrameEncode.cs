@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("2F0C601F-D2C6-468C-ABFA-49495D983ED1")]
     public unsafe struct IWICJpegFrameEncode
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IWICJpegFrameEncode* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -80,9 +75,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT")] uint cbScanData,
             [In, NativeTypeName("BYTE[]")] byte* pbScanData
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -120,9 +113,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetAcHuffmanTable(
             [In, NativeTypeName("UINT")] uint scanIndex,
@@ -192,20 +183,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetAcHuffmanTable;
 
             public IntPtr GetDcHuffmanTable;
@@ -213,8 +199,6 @@ namespace TerraFX.Interop
             public IntPtr GetQuantizationTable;
 
             public IntPtr WriteScan;
-            #endregion
         }
-        #endregion
     }
 }

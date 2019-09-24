@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("DC102F47-A12D-4B1C-822D-9E117E33043F")]
     public unsafe struct IDWriteInMemoryFontFileLoader
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteInMemoryFontFileLoader* This
         );
-        #endregion
 
-        #region IDWriteFontFileLoader Delegates
         /// <summary>Creates a font file stream object that encapsulates an open file resource. The resource is closed when the last reference to fontFileStream is released.</summary>
         /// <param name="fontFileReferenceKey">Font file reference key that uniquely identifies the font file resource within the scope of the font loader being used.</param>
         /// <param name="fontFileReferenceKeySize">Size of font file reference key in bytes.</param>
@@ -57,9 +52,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT32")] uint fontFileReferenceKeySize,
             [Out] IDWriteFontFileStream** fontFileStream
         );
-        #endregion
 
-        #region Delegates
         /// <summary>The CreateInMemoryFontFileReference method creates a font file reference (IDWriteFontFile object) from an array of bytes. The font file reference is bound to the IDWRiteInMemoryFontFileLoader instance with which it was created and remains valid for as long as that loader is registered with the factory.</summary>
         /// <param name="factory">Factory object used to create the font file reference.</param>
         /// <param name="fontData">Pointer to a memory block containing the font data.</param>
@@ -86,9 +79,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _GetFileCount(
             [In] IDWriteInMemoryFontFileLoader* This
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -126,9 +117,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteFontFileLoader Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateStreamFromKey(
             [In] void* fontFileReferenceKey,
@@ -146,9 +135,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateInMemoryFontFileReference(
             [In] IDWriteFactory* factory,
@@ -181,29 +168,20 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDWriteFontFileLoader Fields
             public IntPtr CreateStreamFromKey;
-            #endregion
 
-            #region Fields
             public IntPtr CreateInMemoryFontFileReference;
 
             public IntPtr GetFileCount;
-            #endregion
         }
-        #endregion
     }
 }

@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct D3D12_TEX2D_SRV
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint MostDetailedMip;
 
@@ -19,6 +18,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("FLOAT")]
         public float ResourceMinLODClamp;
-        #endregion
     }
 }

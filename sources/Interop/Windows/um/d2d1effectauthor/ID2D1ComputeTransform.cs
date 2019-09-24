@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("0D85573C-01E3-4F7D-BFD9-0D60608BF3C3")]
     public unsafe struct ID2D1ComputeTransform
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1ComputeTransform* This
         );
-        #endregion
 
-        #region ID2D1TransformNode Delegates
         /// <summary>Return the number of input this node has.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -50,9 +45,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _GetInputCount(
             [In] ID2D1ComputeTransform* This
         );
-        #endregion
 
-        #region ID2D1Transform Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -84,9 +77,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("D2D1_RECT_L")] RECT invalidInputRect,
             [Out, NativeTypeName("D2D1_RECT_L")] RECT* invalidOutputRect
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -105,9 +96,7 @@ namespace TerraFX.Interop
             [Out, NativeTypeName("UINT32")] uint* dimensionY,
             [Out, NativeTypeName("UINT32")] uint* dimensionZ
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -145,9 +134,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1TransformNode Methods
         [return: NativeTypeName("UINT32")]
         public uint GetInputCount()
         {
@@ -158,9 +145,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1Transform Methods
         [return: NativeTypeName("HRESULT")]
         public int MapOutputRectToInputRects(
             [In, NativeTypeName("D2D1_RECT_L")] RECT* outputRect,
@@ -218,9 +203,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int SetComputeInfo(
             [In] ID2D1ComputeInfo* computeInfo
@@ -254,37 +237,26 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1TransformNode Fields
             public IntPtr GetInputCount;
-            #endregion
 
-            #region ID2D1Transform Fields
             public IntPtr MapOutputRectToInputRects;
 
             public IntPtr MapInputRectsToOutputRect;
 
             public IntPtr MapInvalidRect;
-            #endregion
 
-            #region Fields
             public IntPtr SetComputeInfo;
 
             public IntPtr CalculateThreadgroups;
-            #endregion
         }
-        #endregion
     }
 }

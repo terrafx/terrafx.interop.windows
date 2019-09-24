@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("EF8A8135-5CC6-45FE-8825-C5A0724EB819")]
     public unsafe struct IDWriteTextRenderer
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteTextRenderer* This
         );
-        #endregion
 
-        #region IDWritePixelSnapping Delegates
         /// <summary>Determines whether pixel snapping is disabled. The recommended default is FALSE, unless doing animation that requires subpixel vertical placement.</summary>
         /// <param name="clientDrawingContext">The context passed to IDWriteTextLayout::Draw.</param>
         /// <param name="isDisabled">Receives TRUE if pixel snapping is disabled or FALSE if it not.</param>
@@ -81,9 +76,7 @@ namespace TerraFX.Interop
             [In, Optional] void* clientDrawingContext,
             [Out, NativeTypeName("FLOAT")] float* pixelsPerDip
         );
-        #endregion
 
-        #region Delegates
         /// <summary>IDWriteTextLayout::Draw calls this function to instruct the client to render a run of glyphs.</summary>
         /// <param name="clientDrawingContext">The context passed to IDWriteTextLayout::Draw.</param>
         /// <param name="baselineOriginX">X-coordinate of the baseline.</param>
@@ -170,9 +163,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("BOOL")] int isRightToLeft,
             [In] IUnknown* clientDrawingEffect = null
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -210,9 +201,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWritePixelSnapping Methods
         [return: NativeTypeName("HRESULT")]
         public int IsPixelSnappingDisabled(
             [In, Optional] void* clientDrawingContext,
@@ -260,9 +249,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int DrawGlyphRun(
             [In, Optional] void* clientDrawingContext,
@@ -358,28 +345,21 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDWritePixelSnapping Fields
             public IntPtr IsPixelSnappingDisabled;
 
             public IntPtr GetCurrentTransform;
 
             public IntPtr GetPixelsPerDip;
-            #endregion
 
-            #region Fields
             public IntPtr DrawGlyphRun;
 
             public IntPtr DrawUnderline;
@@ -387,8 +367,6 @@ namespace TerraFX.Interop
             public IntPtr DrawStrikethrough;
 
             public IntPtr DrawInlineObject;
-            #endregion
         }
-        #endregion
     }
 }

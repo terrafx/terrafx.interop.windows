@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("FEAA2A8D-B3F3-43E4-B25C-D1DE990A1AE1")]
     public unsafe struct IWICMetadataBlockReader
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IWICMetadataBlockReader* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -74,9 +69,7 @@ namespace TerraFX.Interop
             [In] IWICMetadataBlockReader* This,
             [Out] IEnumUnknown** ppIEnumMetadata = null
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -114,9 +107,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetContainerFormat(
             [Out, NativeTypeName("GUID")] Guid* pguidContainerFormat
@@ -174,20 +165,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetContainerFormat;
 
             public IntPtr GetCount;
@@ -195,8 +181,6 @@ namespace TerraFX.Interop
             public IntPtr GetReaderByIndex;
 
             public IntPtr GetEnumerator;
-            #endregion
         }
-        #endregion
     }
 }

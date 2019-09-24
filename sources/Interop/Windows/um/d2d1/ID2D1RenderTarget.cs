@@ -16,11 +16,8 @@ namespace TerraFX.Interop
     [Guid("2CD90694-12E2-11DC-9FED-001143A055F9")]
     public unsafe struct ID2D1RenderTarget
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -43,9 +40,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1RenderTarget* This
         );
-        #endregion
 
-        #region ID2D1Resource Delegates
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -53,9 +48,7 @@ namespace TerraFX.Interop
             [In] ID2D1RenderTarget* This,
             [Out] ID2D1Factory** factory
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Create a D2D bitmap by copying from memory, or create uninitialized.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -554,9 +547,7 @@ namespace TerraFX.Interop
             [In] ID2D1RenderTarget* This,
             [In] D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -594,9 +585,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1Resource Methods
         public void GetFactory(
             [Out] ID2D1Factory** factory
         )
@@ -609,9 +598,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateBitmap(
             [In, NativeTypeName("D2D1_SIZE_U")] D2D_SIZE_U size,
@@ -1454,24 +1441,17 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1Resource Fields
             public IntPtr GetFactory;
-            #endregion
 
-            #region Fields
             public IntPtr CreateBitmap;
 
             public IntPtr CreateBitmapFromWicBitmap;
@@ -1577,8 +1557,6 @@ namespace TerraFX.Interop
             public IntPtr GetMaximumBitmapSize;
 
             public IntPtr IsSupported;
-            #endregion
         }
-        #endregion
     }
 }

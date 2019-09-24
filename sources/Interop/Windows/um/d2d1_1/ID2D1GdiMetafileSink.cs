@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("82237326-8111-4F7C-BCF4-B5C1175564FE")]
     public unsafe struct ID2D1GdiMetafileSink
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1GdiMetafileSink* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Callback for examining a metafile record.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -53,9 +48,7 @@ namespace TerraFX.Interop
             [In, Optional] void* recordData,
             [In, NativeTypeName("DWORD")] uint recordDataSize
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -93,9 +86,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int ProcessRecord(
             [In, NativeTypeName("DWORD")] uint recordType,
@@ -113,23 +104,16 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr ProcessRecord;
-            #endregion
         }
-        #endregion
     }
 }

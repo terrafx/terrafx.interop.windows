@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct D3D12_FEATURE_DATA_ARCHITECTURE
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint NodeIndex;
 
@@ -19,6 +18,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("BOOL")]
         public int CacheCoherentUMA;
-        #endregion
     }
 }

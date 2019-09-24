@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public unsafe struct CADATE
     {
-        #region Fields
         [NativeTypeName("ULONG")]
         public uint cElems;
 
         [NativeTypeName("DATE[]")]
         public double* pElems;
-        #endregion
     }
 }

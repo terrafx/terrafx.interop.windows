@@ -14,11 +14,8 @@ namespace TerraFX.Interop
     [Guid("693CE632-7F2F-45DE-93FE-18D88B37AA21")]
     public unsafe struct ID2D1DrawInfo
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -41,9 +38,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1DrawInfo* This
         );
-        #endregion
 
-        #region ID2D1RenderInfo Delegates
         /// <summary>Sets options for sampling the specified image input</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -79,9 +74,7 @@ namespace TerraFX.Interop
             [In] ID2D1DrawInfo* This,
             [In, NativeTypeName("UINT32")] uint instructionCount
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Set the constant buffer for this transform's pixel shader.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -134,9 +127,7 @@ namespace TerraFX.Interop
             [In] D2D1_VERTEX_RANGE* vertexRange = null,
             [In, NativeTypeName("GUID")] Guid* vertexShader = null
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -174,9 +165,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1RenderInfo Methods
         [return: NativeTypeName("HRESULT")]
         public int SetInputDescription(
             [In, NativeTypeName("UINT32")] uint inputIndex,
@@ -234,9 +223,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int SetPixelShaderConstantBuffer(
             [In, NativeTypeName("BYTE[]")] byte* buffer,
@@ -322,20 +309,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1RenderInfo Fields
             public IntPtr SetInputDescription;
 
             public IntPtr SetOutputBuffer;
@@ -343,9 +325,7 @@ namespace TerraFX.Interop
             public IntPtr SetCached;
 
             public IntPtr SetInstructionCountHint;
-            #endregion
 
-            #region Fields
             public IntPtr SetPixelShaderConstantBuffer;
 
             public IntPtr SetResourceTexture;
@@ -355,8 +335,6 @@ namespace TerraFX.Interop
             public IntPtr SetPixelShader;
 
             public IntPtr SetVertexProcessing;
-            #endregion
         }
-        #endregion
     }
 }

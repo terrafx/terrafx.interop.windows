@@ -8,12 +8,10 @@ namespace TerraFX.Interop
     /// <summary>A vector of 2 float values (x, y).</summary>
     public struct D2D_VECTOR_2F
     {
-        #region Fields
         [NativeTypeName("FLOAT")]
         public float x;
 
         [NativeTypeName("FLOAT")]
         public float y;
-        #endregion
     }
 }

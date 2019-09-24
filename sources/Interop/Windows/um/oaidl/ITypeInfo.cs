@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("00020401-0000-0000-C000-000000000046")]
     public unsafe struct ITypeInfo
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ITypeInfo* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -220,9 +215,7 @@ namespace TerraFX.Interop
             [In] ITypeInfo* This,
             [In] VARDESC* pVarDesc
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -260,9 +253,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         // [return: NativeTypeName("HRESULT")]
         // public int GetTypeAttr(
         //     [Out] TYPEATTR** ppTypeAttr
@@ -585,20 +576,15 @@ namespace TerraFX.Interop
         //         );
         //     }
         // }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetTypeAttr;
 
             public IntPtr GetTypeComp;
@@ -636,8 +622,6 @@ namespace TerraFX.Interop
             public IntPtr ReleaseFuncDesc;
 
             public IntPtr ReleaseVarDesc;
-            #endregion
         }
-        #endregion
     }
 }

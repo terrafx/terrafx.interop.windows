@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct DXGI_PRESENT_PARAMETERS
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint DirtyRectsCount;
 
@@ -17,6 +16,5 @@ namespace TerraFX.Interop
         public RECT* pScrollRect;
 
         public POINT* pScrollOffset;
-        #endregion
     }
 }

@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public unsafe struct DXGI_JPEG_DC_HUFFMAN_TABLE
     {
-        #region Fields
         [NativeTypeName("BYTE[12]")]
         public fixed byte CodeCounts[12];
 
         [NativeTypeName("BYTE[12]")]
         public fixed byte CodeValues[12];
-        #endregion
     }
 }

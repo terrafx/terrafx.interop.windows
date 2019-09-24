@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("791E8298-3EF3-4230-9880-C9BDECC42064")]
     public unsafe struct IDWriteBitmapRenderTarget1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteBitmapRenderTarget1* This
         );
-        #endregion
 
-        #region IDWriteBitmapRenderTarget Delegates
         /// <summary>Draws a run of glyphs to the bitmap.</summary>
         /// <param name="baselineOriginX">Horizontal position of the baseline origin, in DIPs, relative to the upper-left corner of the DIB.</param>
         /// <param name="baselineOriginY">Vertical position of the baseline origin, in DIPs, relative to the upper-left corner of the DIB.</param>
@@ -141,9 +136,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT32")] uint width,
             [In, NativeTypeName("UINT32")] uint height
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Gets the current text antialiasing mode of the bitmap render target.</summary>
         /// <returns> Returns the antialiasing mode.</returns>
         [SuppressUnmanagedCodeSecurity]
@@ -162,9 +155,7 @@ namespace TerraFX.Interop
             [In] IDWriteBitmapRenderTarget1* This,
             [In] DWRITE_TEXT_ANTIALIAS_MODE antialiasMode
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -202,9 +193,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteBitmapRenderTarget Methods
         [return: NativeTypeName("HRESULT")]
         public int DrawGlyphRun(
             [In, NativeTypeName("FLOAT")] float baselineOriginX,
@@ -324,9 +313,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         public DWRITE_TEXT_ANTIALIAS_MODE GetTextAntialiasMode()
         {
             fixed (IDWriteBitmapRenderTarget1* This = &this)
@@ -350,20 +337,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDWriteBitmapRenderTarget Fields
             public IntPtr DrawGlyphRun;
 
             public IntPtr GetMemoryDC;
@@ -379,14 +361,10 @@ namespace TerraFX.Interop
             public IntPtr GetSize;
 
             public IntPtr Resize;
-            #endregion
 
-            #region Fields
             public IntPtr GetTextAntialiasMode;
 
             public IntPtr SetTextAntialiasMode;
-            #endregion
         }
-        #endregion
     }
 }

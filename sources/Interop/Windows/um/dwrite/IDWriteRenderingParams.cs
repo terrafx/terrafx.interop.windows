@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("2F0DA53A-2ADD-47CD-82EE-D9EC34688E75")]
     public unsafe struct IDWriteRenderingParams
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteRenderingParams* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Gets the gamma value used for gamma correction. Valid values must be greater than zero and cannot exceed 256.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -79,9 +74,7 @@ namespace TerraFX.Interop
         public /* static */ delegate DWRITE_RENDERING_MODE _GetRenderingMode(
             [In] IDWriteRenderingParams* This
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -119,9 +112,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("FLOAT")]
         public float GetGamma()
         {
@@ -173,20 +164,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetGamma;
 
             public IntPtr GetEnhancedContrast;
@@ -196,8 +182,6 @@ namespace TerraFX.Interop
             public IntPtr GetPixelGeometry;
 
             public IntPtr GetRenderingMode;
-            #endregion
         }
-        #endregion
     }
 }

@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("5810CD44-0CA0-4701-B3FA-BEC5182AE4F6")]
     public unsafe struct IDWriteTextAnalysisSink
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteTextAnalysisSink* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Report script analysis for the text range.</summary>
         /// <param name="textPosition">Starting position to report from.</param>
         /// <param name="textLength">Number of UTF16 units of the reported range.</param>
@@ -105,9 +100,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT32")] uint textLength,
             [In] IDWriteNumberSubstitution* numberSubstitution
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -145,9 +138,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int SetScriptAnalysis(
             [In, NativeTypeName("UINT32")] uint textPosition,
@@ -221,20 +212,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr SetScriptAnalysis;
 
             public IntPtr SetLineBreakpoints;
@@ -242,8 +228,6 @@ namespace TerraFX.Interop
             public IntPtr SetBidiLevel;
 
             public IntPtr SetNumberSubstitution;
-            #endregion
         }
-        #endregion
     }
 }

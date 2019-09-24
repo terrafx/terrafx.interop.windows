@@ -7,8 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_RESOURCE_UAV_BARRIER
     {
-        #region Fields
         public ID3D12Resource* pResource;
-        #endregion
     }
 }

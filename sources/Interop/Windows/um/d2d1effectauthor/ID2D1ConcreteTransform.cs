@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("1A799D8A-69F7-4E4C-9FED-437CCC6684CC")]
     public unsafe struct ID2D1ConcreteTransform
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1ConcreteTransform* This
         );
-        #endregion
 
-        #region ID2D1TransformNode Delegates
         /// <summary>Return the number of input this node has.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -50,9 +45,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _GetInputCount(
             [In] ID2D1ConcreteTransform* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Controls the output precision and channel-depth for this transform.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -70,9 +63,7 @@ namespace TerraFX.Interop
             [In] ID2D1ConcreteTransform* This,
             [In, NativeTypeName("BOOL")] int isCached
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -110,9 +101,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1TransformNode Methods
         [return: NativeTypeName("UINT32")]
         public uint GetInputCount()
         {
@@ -123,9 +112,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int SetOutputBuffer(
             [In] D2D1_BUFFER_PRECISION bufferPrecision,
@@ -154,29 +141,20 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1TransformNode Fields
             public IntPtr GetInputCount;
-            #endregion
 
-            #region Fields
             public IntPtr SetOutputBuffer;
 
             public IntPtr SetCached;
-            #endregion
         }
-        #endregion
     }
 }

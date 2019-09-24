@@ -13,7 +13,6 @@ namespace TerraFX.Interop
 {
     public struct D3D12_RENDER_TARGET_BLEND_DESC
     {
-        #region Default Instances
         public static readonly D3D12_RENDER_TARGET_BLEND_DESC DEFAULT = new D3D12_RENDER_TARGET_BLEND_DESC() {
             BlendEnable = FALSE,
             LogicOpEnable = FALSE,
@@ -26,9 +25,7 @@ namespace TerraFX.Interop
             LogicOp = D3D12_LOGIC_OP_NOOP,
             RenderTargetWriteMask = (byte)D3D12_COLOR_WRITE_ENABLE_ALL
         };
-        #endregion
 
-        #region Fields
         [NativeTypeName("BOOL")]
         public int BlendEnable;
 
@@ -51,6 +48,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT8")]
         public byte RenderTargetWriteMask;
-        #endregion
     }
 }

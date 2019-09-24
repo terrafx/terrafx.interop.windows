@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("9F34FB65-13F4-4F15-BC57-3726B5E53D9F")]
     public unsafe struct IWICFormatConverterInfo
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IWICFormatConverterInfo* This
         );
-        #endregion
 
-        #region IWICComponentInfo Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -113,9 +108,7 @@ namespace TerraFX.Interop
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzFriendlyName,
             [Out, NativeTypeName("UINT")] uint* pcchActual
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -133,9 +126,7 @@ namespace TerraFX.Interop
             [In] IWICFormatConverterInfo* This,
             [Out] IWICFormatConverter** ppIConverter = null
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -173,9 +164,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IWICComponentInfo Methods
         [return: NativeTypeName("HRESULT")]
         public int GetComponentType(
             [Out] WICComponentType* pType
@@ -303,9 +292,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetPixelFormats(
             [In, NativeTypeName("UINT")] uint cFormats,
@@ -337,20 +324,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IWICComponentInfo Fields
             public IntPtr GetComponentType;
 
             public IntPtr GetCLSID;
@@ -366,14 +348,10 @@ namespace TerraFX.Interop
             public IntPtr GetSpecVersion;
 
             public IntPtr GetFriendlyName;
-            #endregion
 
-            #region Fields
             public IntPtr GetPixelFormats;
 
             public IntPtr CreateInstance;
-            #endregion
         }
-        #endregion
     }
 }

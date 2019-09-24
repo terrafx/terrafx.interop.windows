@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct D3D12_DRAW_INDEXED_ARGUMENTS
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint IndexCountPerInstance;
 
@@ -22,6 +21,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint StartInstanceLocation;
-        #endregion
     }
 }

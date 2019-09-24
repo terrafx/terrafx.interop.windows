@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("2411E7E1-12AC-4CCF-BD14-9798E8534DC0")]
     public unsafe struct IDXGIAdapter
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDXGIAdapter* This
         );
-        #endregion
 
-        #region IDXGIObject Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -79,9 +74,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppParent
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -107,9 +100,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("REFGUID")] Guid* InterfaceName,
             [Out] LARGE_INTEGER* pUMDVersion
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -147,9 +138,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDXGIObject Methods
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData(
             [In, NativeTypeName("REFGUID")] Guid* Name,
@@ -217,9 +206,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int EnumOutputs(
             [In, NativeTypeName("UINT")] uint Output,
@@ -265,20 +252,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDXGIObject Fields
             public IntPtr SetPrivateData;
 
             public IntPtr SetPrivateDataInterface;
@@ -286,16 +268,12 @@ namespace TerraFX.Interop
             public IntPtr GetPrivateData;
 
             public IntPtr GetParent;
-            #endregion
 
-            #region Fields
             public IntPtr EnumOutputs;
 
             public IntPtr GetDesc;
 
             public IntPtr CheckInterfaceSupport;
-            #endregion
         }
-        #endregion
     }
 }

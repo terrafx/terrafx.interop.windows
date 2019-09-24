@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>Contains the gradient origin offset and the size and position of the gradient ellipse for an ID2D1RadialGradientBrush.</summary>
     public struct D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES
     {
-        #region Fields
         [NativeTypeName("D2D1_POINT_2F")]
         public D2D_POINT_2F center;
 
@@ -20,6 +19,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("FLOAT")]
         public float radiusY;
-        #endregion
     }
 }

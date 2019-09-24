@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("EFA008F9-F7A1-48BF-B05C-F224713CC0FF")]
     public unsafe struct IDWriteFontFallback
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteFontFallback* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Determines an appropriate font to use to render the range of text.</summary>
         /// <param name="analysisSource">The text source implementation holds the text and locale.</param>
         /// <param name="textLength">Length of the text to analyze.</param>
@@ -72,9 +67,7 @@ namespace TerraFX.Interop
             [Out] IDWriteFont** mappedFont,
             [Out, NativeTypeName("FLOAT")] float* scale
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -112,9 +105,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int MapCharacters(
             [In] IDWriteTextAnalysisSource* analysisSource,
@@ -148,23 +139,16 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr MapCharacters;
-            #endregion
         }
-        #endregion
     }
 }

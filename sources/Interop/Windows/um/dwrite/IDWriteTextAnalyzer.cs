@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("B7E6163E-7F46-43B4-84B3-E4E6249C365D")]
     public unsafe struct IDWriteTextAnalyzer
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteTextAnalyzer* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Analyzes a text range for script boundaries, reading text attributes from the source and reporting the Unicode script ID to the sink callback SetScript.</summary>
         /// <param name="analysisSource">Source object to analyze.</param>
         /// <param name="textPosition">Starting position within the source object.</param>
@@ -256,9 +251,7 @@ namespace TerraFX.Interop
             [Out, NativeTypeName("FLOAT[]")] float* glyphAdvances,
             [Out, NativeTypeName("DWRITE_GLYPH_OFFSET[]")] DWRITE_GLYPH_OFFSET* glyphOffsets
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -296,9 +289,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int AnalyzeScript(
             [In] IDWriteTextAnalysisSource* analysisSource,
@@ -526,20 +517,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr AnalyzeScript;
 
             public IntPtr AnalyzeBidi;
@@ -553,8 +539,6 @@ namespace TerraFX.Interop
             public IntPtr GetGlyphPlacements;
 
             public IntPtr GetGdiCompatibleGlyphPlacements;
-            #endregion
         }
-        #endregion
     }
 }

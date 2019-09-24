@@ -9,19 +9,15 @@ namespace TerraFX.Interop
 {
     public struct D3D12_ROOT_PARAMETER1
     {
-        #region Fields
         public D3D12_ROOT_PARAMETER_TYPE ParameterType;
 
         public _Anonymous_e__Union Anonymous;
 
         public D3D12_SHADER_VISIBILITY ShaderVisibility;
-        #endregion
 
-        #region Structs
         [StructLayout(LayoutKind.Explicit)]
         public struct _Anonymous_e__Union
         {
-            #region Fields
             [FieldOffset(0)]
             public D3D12_ROOT_DESCRIPTOR_TABLE1 DescriptorTable;
 
@@ -30,8 +26,6 @@ namespace TerraFX.Interop
 
             [FieldOffset(0)]
             public D3D12_ROOT_DESCRIPTOR1 Descriptor;
-            #endregion
         }
-        #endregion
     }
 }

@@ -12,7 +12,6 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Explicit)]
     public unsafe struct DWRITE_PANOSE
     {
-        #region Fields
         [FieldOffset(0)]
         [NativeTypeName("UINT8[10]")]
         public fixed byte values[10];
@@ -32,12 +31,9 @@ namespace TerraFX.Interop
 
         [FieldOffset(0)]
         public _symbol_e__Struct symbol;
-        #endregion
 
-        #region Structs
         public struct _text_e__Struct
         {
-            #region Fields
             [NativeTypeName("UINT8")]
             public byte familyKind;
 
@@ -67,12 +63,10 @@ namespace TerraFX.Interop
 
             [NativeTypeName("UINT8")]
             public byte xHeight;
-            #endregion
         };
 
         public struct _script_e__Struct
         {
-            #region Fields
             [NativeTypeName("UINT8")]
             public byte familyKind;
 
@@ -102,12 +96,10 @@ namespace TerraFX.Interop
 
             [NativeTypeName("UINT8")]
             public byte xAscent;
-            #endregion
         }
 
         public struct _decorative_e__Struct
         {
-            #region Fields
             [NativeTypeName("UINT8")]
             public byte familyKind;
 
@@ -137,12 +129,10 @@ namespace TerraFX.Interop
 
             [NativeTypeName("UINT8")]
             public byte characterRange;
-            #endregion
         }
 
         public struct _symbol_e__Struct
         {
-            #region Fields
             [NativeTypeName("UINT8")]
             public byte familyKind;
 
@@ -172,8 +162,6 @@ namespace TerraFX.Interop
 
             [NativeTypeName("UINT8")]
             public byte aspectRatio211;
-            #endregion
         }
-        #endregion
     }
 }

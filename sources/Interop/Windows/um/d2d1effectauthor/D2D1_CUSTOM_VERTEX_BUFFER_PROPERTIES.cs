@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>This defines the input layout of vertices and the vertex shader which processes them.</summary>
     public unsafe struct D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES
     {
-        #region Fields
         [NativeTypeName("BYTE[]")]
         public byte* shaderBufferWithInputSignature;
 
@@ -23,6 +22,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT32")]
         public uint stride;
-        #endregion
     }
 }

@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_DISCARD_REGION
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint NumRects;
 
@@ -19,6 +18,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint NumSubresources;
-        #endregion
     }
 }

@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public unsafe struct CAUB
     {
-        #region Fields
         [NativeTypeName("ULONG")]
         public uint cElems;
 
         [NativeTypeName("UCHAR[]")]
         public byte* pElems;
-        #endregion
     }
 }

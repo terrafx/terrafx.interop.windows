@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("035F3AB4-482E-4E50-B41F-8A7F8BD8960B")]
     public unsafe struct IDXGIResource
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDXGIResource* This
         );
-        #endregion
 
-        #region IDXGIObject Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -79,9 +74,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppParent
         );
-        #endregion
 
-        #region IDXGIDeviceSubObject Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -90,9 +83,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppDevice
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -124,9 +115,7 @@ namespace TerraFX.Interop
             [In] IDXGIResource* This,
             [Out, NativeTypeName("UINT")] uint* pEvictionPriority
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -164,9 +153,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDXGIObject Methods
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData(
             [In, NativeTypeName("REFGUID")] Guid* Name,
@@ -234,9 +221,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDXGIDeviceSubObject Methods
         [return: NativeTypeName("HRESULT")]
         public int GetDevice(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -252,9 +237,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetSharedHandle(
             [Out, NativeTypeName("HANDLE")] IntPtr* pSharedHandle
@@ -310,20 +293,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDXGIObject Fields
             public IntPtr SetPrivateData;
 
             public IntPtr SetPrivateDataInterface;
@@ -331,13 +309,9 @@ namespace TerraFX.Interop
             public IntPtr GetPrivateData;
 
             public IntPtr GetParent;
-            #endregion
 
-            #region IDXGIDeviceSubObject Fields
             public IntPtr GetDevice;
-            #endregion
 
-            #region Fields
             public IntPtr GetSharedHandle;
 
             public IntPtr GetUsage;
@@ -345,8 +319,6 @@ namespace TerraFX.Interop
             public IntPtr SetEvictionPriority;
 
             public IntPtr GetEvictionPriority;
-            #endregion
         }
-        #endregion
     }
 }

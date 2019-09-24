@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public struct D3D12_RANGE_UINT64
     {
-        #region Fields
         [NativeTypeName("UINT64")]
         public ulong Begin;
 
         [NativeTypeName("UINT64")]
         public ulong End;
-        #endregion
     }
 }

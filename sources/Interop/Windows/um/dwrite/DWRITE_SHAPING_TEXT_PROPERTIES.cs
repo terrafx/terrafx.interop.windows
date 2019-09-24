@@ -8,11 +8,8 @@ namespace TerraFX.Interop
     /// <summary>Shaping output properties per input character.</summary>
     public struct DWRITE_SHAPING_TEXT_PROPERTIES
     {
-        #region Fields
         private ushort _bitField;
-        #endregion
 
-        #region Properties
         /// <summary>This character can be shaped independently from the others (usually set for the space character).</summary>
         [NativeTypeName("UINT16:1")]
         public ushort isShapedAlone
@@ -42,6 +39,5 @@ namespace TerraFX.Interop
                 _bitField = (ushort)((_bitField & 0b0000_0000_0000_0001) | ((value << 1) & 0b1111_1111_1111_1110));
             }
         }
-        #endregion
     }
 }

@@ -14,11 +14,8 @@ namespace TerraFX.Interop
     [Guid("30572F99-DAC6-41DB-A16E-0486307E606A")]
     public unsafe struct IDWriteFactory1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -41,9 +38,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteFactory1* This
         );
-        #endregion
 
-        #region IDWriteFactory Delegates
         /// <summary>Gets a font collection representing the set of installed fonts.</summary>
         /// <param name="fontCollection">Receives a pointer to the system font collection object, or NULL in case of failure.</param>
         /// <param name="checkForUpdates">If this parameter is nonzero, the function performs an immediate check for changes to the set of installed fonts. If this parameter is FALSE, the function will still detect changes if the font cache service is running, but there may be some latency. For example, an application might specify TRUE if it has itself just installed a font and wants to be sure the font collection contains that font.</param>
@@ -378,9 +373,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("FLOAT")] float baselineOriginY,
             [Out] IDWriteGlyphRunAnalysis** glyphRunAnalysis
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Gets a font collection representing the set of end-user defined custom fonts.</summary>
         /// <param name="fontCollection">Receives a pointer to the EUDC font collection object, or NULL in case of failure.</param>
         /// <param name="checkForUpdates">If this parameter is nonzero, the function performs an immediate check for changes to the set of EUDC fonts. If this parameter is FALSE, the function will still detect changes, but there may be some latency. For example, an application might specify TRUE if it has itself just modified a font and wants to be sure the font collection contains that font.</param>
@@ -418,9 +411,7 @@ namespace TerraFX.Interop
             [In] DWRITE_RENDERING_MODE renderingMode,
             [Out] IDWriteRenderingParams1** renderingParams
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -458,9 +449,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteFactory Methods
         [return: NativeTypeName("HRESULT")]
         public int GetSystemFontCollection(
             [Out] IDWriteFontCollection** fontCollection,
@@ -856,9 +845,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetEudcFontCollection(
             [Out] IDWriteFontCollection** fontCollection,
@@ -900,20 +887,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDWriteFactory Fields
             public IntPtr GetSystemFontCollection;
 
             public IntPtr CreateCustomFontCollection;
@@ -955,14 +937,10 @@ namespace TerraFX.Interop
             public IntPtr CreateNumberSubstitution;
 
             public IntPtr CreateGlyphRunAnalysis;
-            #endregion
 
-            #region Fields
             public IntPtr GetEudcFontCollection;
 
             public IntPtr CreateCustomRenderingParams1;
-            #endregion
         }
-        #endregion
     }
 }

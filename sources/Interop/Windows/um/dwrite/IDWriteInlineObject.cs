@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("8339FDE3-106F-47AB-8373-1C6295EB10B3")]
     public unsafe struct IDWriteInlineObject
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteInlineObject* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>The application implemented rendering callback (IDWriteTextRenderer::DrawInlineObject) can use this to draw the inline object without needing to cast or query the object type. The text layout does not call this method directly.</summary>
         /// <param name="clientDrawingContext">The context passed to IDWriteTextLayout::Draw.</param>
         /// <param name="renderer">The renderer passed to IDWriteTextLayout::Draw as the object's containing parent.</param>
@@ -101,9 +96,7 @@ namespace TerraFX.Interop
             [Out] DWRITE_BREAK_CONDITION* breakConditionBefore,
             [Out] DWRITE_BREAK_CONDITION* breakConditionAfter
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -141,9 +134,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int Draw(
             [In, Optional] void* clientDrawingContext,
@@ -213,20 +204,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr Draw;
 
             public IntPtr GetMetrics;
@@ -234,8 +220,6 @@ namespace TerraFX.Interop
             public IntPtr GetOverhangMetrics;
 
             public IntPtr GetBreakConditions;
-            #endregion
         }
-        #endregion
     }
 }

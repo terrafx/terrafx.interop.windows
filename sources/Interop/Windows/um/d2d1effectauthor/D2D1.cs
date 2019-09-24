@@ -9,11 +9,8 @@ namespace TerraFX.Interop
 {
     public static partial class D2D1
     {
-        #region Constants
         public const uint D2D1_APPEND_ALIGNED_ELEMENT = 0xFFFFFFFF;
-        #endregion
 
-        #region IID_* Constants
         public static readonly Guid IID_ID2D1VertexBuffer = new Guid(0x9B8B1336, 0x00A5, 0x4668, 0x92, 0xB7, 0xCE, 0xD5, 0xD8, 0xBF, 0x9B, 0x7B);
 
         public static readonly Guid IID_ID2D1ResourceTexture = new Guid(0x688D15C3, 0x02B0, 0x438D, 0xB1, 0x3A, 0xD1, 0xB4, 0x4C, 0x32, 0xC3, 0x9A);
@@ -51,6 +48,5 @@ namespace TerraFX.Interop
         public static readonly Guid IID_ID2D1EffectImpl = new Guid(0xA248FD3F, 0x3E6C, 0x4E63, 0x9F, 0x03, 0x7F, 0x68, 0xEC, 0xC9, 0x1D, 0xB9);
 
         public static readonly Guid IID_ID2D1EffectContext = new Guid(0x3D9F916B, 0x27DC, 0x4AD7, 0xB4, 0xF1, 0x64, 0x94, 0x53, 0x40, 0xF5, 0x63);
-        #endregion
     }
 }

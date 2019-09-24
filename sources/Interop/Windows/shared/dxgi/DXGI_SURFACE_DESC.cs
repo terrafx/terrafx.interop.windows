@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct DXGI_SURFACE_DESC
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint Width;
 
@@ -17,6 +16,5 @@ namespace TerraFX.Interop
         public DXGI_FORMAT Format;
 
         public DXGI_SAMPLE_DESC SampleDesc;
-        #endregion
     }
 }

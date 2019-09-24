@@ -10,7 +10,6 @@ namespace TerraFX.Interop
     /// <summary>Defines a property binding to a function. The name must match the property defined in the registration schema.</summary>
     public unsafe struct D2D1_PROPERTY_BINDING
     {
-        #region Fields
         /// <summary>The name of the property.</summary>
         [NativeTypeName("PCWSTR")]
         public char* propertyName;
@@ -22,6 +21,5 @@ namespace TerraFX.Interop
         /// <summary>The function that will be asked to write the output data.</summary>
         [NativeTypeName("PD2D1_PROPERTY_GET_FUNCTION")]
         public IntPtr getFunction;
-        #endregion
     }
 }

@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("0000002F-0000-0000-C000-000000000046")]
     public unsafe struct IRecordInfo
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IRecordInfo* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -181,9 +176,7 @@ namespace TerraFX.Interop
             [In] IRecordInfo* This,
             [In, NativeTypeName("PVOID")] void* pvRecord
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -221,9 +214,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int RecordInit(
             [Out, NativeTypeName("PVOID")] void* pvNew
@@ -471,20 +462,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr RecordInit;
 
             public IntPtr RecordClear;
@@ -516,8 +502,6 @@ namespace TerraFX.Interop
             public IntPtr RecordCreateCopy;
 
             public IntPtr RecordDestroy;
-            #endregion
         }
-        #endregion
     }
 }

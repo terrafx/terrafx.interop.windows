@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>The DWRITE_STRIKETHROUGH public structure contains information about the size and placement of strikethroughs. All coordinates are in device independent pixels (DIPs).</summary>
     public unsafe struct DWRITE_STRIKETHROUGH
     {
-        #region Fields
         /// <summary>Width of the strikethrough, measured parallel to the baseline.</summary>
         [NativeTypeName("FLOAT")]
         public float width;
@@ -35,6 +34,5 @@ namespace TerraFX.Interop
         /// underlines are rendered, e.g. rounding the thickness to a whole pixel
         /// in GDI-compatible modes.</summary>
         public DWRITE_MEASURING_MODE measuringMode;
-        #endregion
     }
 }

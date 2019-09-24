@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_INFO_QUEUE_FILTER_DESC
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint NumCategories;
 
@@ -25,6 +24,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("D3D12_MESSAGE_ID[]")]
         public D3D12_MESSAGE_ID* pIDList;
-        #endregion
     }
 }

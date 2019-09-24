@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct LOGFONT
     {
-        #region Fields
         [NativeTypeName("LONG")]
         public int lfHeight;
 
@@ -49,6 +48,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("WCHAR[32]")]
         public fixed char lfFaceName[32];
-        #endregion
     }
 }

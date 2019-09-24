@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_INPUT_ELEMENT_DESC
     {
-        #region Fields
         [NativeTypeName("LPCSTR")]
         public sbyte* SemanticName;
 
@@ -26,6 +25,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint InstanceDataStepRate;
-        #endregion
     }
 }

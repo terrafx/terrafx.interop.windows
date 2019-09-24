@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct D3D12_SUBRESOURCE_INFO
     {
-        #region Fields
         [NativeTypeName("UINT64")]
         public ulong Offset;
 
@@ -16,6 +15,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint DepthPitch;
-        #endregion
     }
 }

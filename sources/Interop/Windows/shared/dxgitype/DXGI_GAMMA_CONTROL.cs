@@ -10,19 +10,15 @@ namespace TerraFX.Interop
 {
     public struct DXGI_GAMMA_CONTROL
     {
-        #region Fields
         public DXGI_RGB Scale;
 
         public DXGI_RGB Offset;
 
         [NativeTypeName("DXGI_RGB[1025]")]
         public _GammaCurve_e__FixedBuffer GammaCurve;
-        #endregion
 
-        #region Structs
         public unsafe struct _GammaCurve_e__FixedBuffer
         {
-            #region Fields
             public DXGI_RGB e0;
 
             public DXGI_RGB e1;
@@ -2072,14 +2068,10 @@ namespace TerraFX.Interop
             public DXGI_RGB e1023;
 
             public DXGI_RGB e1024;
-            #endregion
 
-            #region Properties
             public ref DXGI_RGB this[int index] => ref AsSpan(int.MaxValue)[index];
-            #endregion
 
             public Span<DXGI_RGB> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
-        #endregion
     }
 }

@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>This defines the properties of a vertex buffer which uses the default vertex layout.</summary>
     public unsafe struct D2D1_VERTEX_BUFFER_PROPERTIES
     {
-        #region Fields
         [NativeTypeName("UINT32")]
         public uint inputCount;
 
@@ -19,6 +18,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT32")]
         public uint byteWidth;
-        #endregion
     }
 }

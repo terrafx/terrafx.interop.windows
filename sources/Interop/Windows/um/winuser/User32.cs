@@ -14,7 +14,6 @@ namespace TerraFX.Interop
     {
         private const string DllName = nameof(User32);
 
-        #region SW_* Constants
         public const int SW_HIDE = 0;
 
         public const int SW_SHOWNORMAL = 1;
@@ -44,9 +43,7 @@ namespace TerraFX.Interop
         public const int SW_FORCEMINIMIZE = 11;
 
         public const int SW_MAX = 11;
-        #endregion
 
-        #region GWL_* Constants
         public const int GWL_WNDPROC = -4;
 
         public const int GWL_HINSTANCE = -6;
@@ -60,9 +57,7 @@ namespace TerraFX.Interop
         public const int GWL_USERDATA = -21;
 
         public const int GWL_ID = -12;
-        #endregion
 
-        #region GWLP_* Constants
         public const int GWLP_WNDPROC = -4;
 
         public const int GWLP_HINSTANCE = -6;
@@ -72,9 +67,7 @@ namespace TerraFX.Interop
         public const int GWLP_USERDATA = -21;
 
         public const int GWLP_ID = -12;
-        #endregion
 
-        #region WM_* Constants
         public const uint WM_NULL = 0x0000;
 
         public const uint WM_CREATE = 0x0001;
@@ -588,17 +581,13 @@ namespace TerraFX.Interop
         public const uint WM_USER = 0x0400;
 
         public const uint WM_APP = 0x8000;
-        #endregion
 
-        #region WA_* Constants
         public const int WA_INACTIVE = 0;
 
         public const int WA_ACTIVE = 1;
 
         public const int WA_CLICKACTIVE = 2;
-        #endregion
 
-        #region SIZE_* Constants
         public const int SIZE_RESTORED = 0;
 
         public const int SIZE_MINIMIZED = 1;
@@ -608,9 +597,7 @@ namespace TerraFX.Interop
         public const int SIZE_MAXSHOW = 3;
 
         public const int SIZE_MAXHIDE = 4;
-        #endregion
 
-        #region WS_* Constants
         public const uint WS_OVERLAPPED = 0x00000000;
 
         public const uint WS_POPUP = 0x80000000;
@@ -664,9 +651,7 @@ namespace TerraFX.Interop
         public const uint WS_POPUPWINDOW = WS_POPUP | WS_BORDER | WS_SYSMENU;
 
         public const uint WS_CHILDWINDOW = WS_CHILD;
-        #endregion
 
-        #region WS_EX_* Constants
         public const uint WS_EX_DLGMODALFRAME = 0x00000001;
 
         public const uint WS_EX_NOPARENTNOTIFY = 0x00000004;
@@ -720,9 +705,7 @@ namespace TerraFX.Interop
         public const uint WS_EX_COMPOSITED = 0x02000000;
 
         public const uint WS_EX_NOACTIVATE = 0x08000000;
-        #endregion
 
-        #region CS_* Constants
         public const uint CS_VREDRAW = 0x0001;
 
         public const uint CS_HREDRAW = 0x0002;
@@ -748,9 +731,7 @@ namespace TerraFX.Interop
         public const uint CS_IME = 0x00010000;
 
         public const uint CS_DROPSHADOW = 0x00020000;
-        #endregion
 
-        #region PM_* Constants
         public const int PM_NOREMOVE = 0x0000;
 
         public const int PM_REMOVE = 0x0001;
@@ -764,17 +745,11 @@ namespace TerraFX.Interop
         public const int PM_QS_PAINT = QS_PAINT << 16;
 
         public const int PM_QS_SENDMESSAGE = QS_SENDMESSAGE << 16;
-        #endregion
 
-        #region CW_* Constants
         public const int CW_USEDEFAULT = unchecked((int)0x80000000);
-        #endregion
 
-        #region HWND_* Constants
         public const uint HWND_DESKTOP = 0;
-        #endregion
 
-        #region QS_* Constants
         public const int QS_KEY = 0x0001;
 
         public const int QS_MOUSEMOVE = 0x0002;
@@ -806,9 +781,7 @@ namespace TerraFX.Interop
         public const int QS_ALLEVENTS = QS_INPUT | QS_POSTMESSAGE | QS_TIMER | QS_PAINT | QS_HOTKEY;
 
         public const int QS_ALLINPUT = QS_INPUT | QS_POSTMESSAGE | QS_TIMER | QS_PAINT | QS_HOTKEY | QS_SENDMESSAGE;
-        #endregion
 
-        #region COLOR_* Constants
         public const int COLOR_SCROLLBAR = 0;
 
         public const int COLOR_BACKGROUND = 1;
@@ -880,9 +853,7 @@ namespace TerraFX.Interop
         public const int COLOR_3DHILIGHT = COLOR_BTNHIGHLIGHT;
 
         public const int COLOR_BTNHILIGHT = COLOR_BTNHIGHLIGHT;
-        #endregion
 
-        #region IDC_* Constants
         public const ushort IDC_ARROW = 32512;
 
         public const ushort IDC_IBEAM = 32513;
@@ -914,9 +885,7 @@ namespace TerraFX.Interop
         public const ushort IDC_APPSTARTING = 32650;
 
         public const ushort IDC_HELP = 32651;
-        #endregion
 
-        #region External Methods
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "AdjustWindowRect", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("BOOL")]
@@ -1147,9 +1116,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("LPCWSTR")] char* lpClassName,
             [In, NativeTypeName("HINSTANCE")] IntPtr hInstance = default
         );
-        #endregion
 
-        #region Methods
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IntPtr GetWindowLongPtr(IntPtr hWnd, int nIndex)
         {
@@ -1175,6 +1142,5 @@ namespace TerraFX.Interop
                 return _SetWindowLongPtr(hWnd, nIndex, dwNewLong);
             }
         }
-        #endregion
     }
 }

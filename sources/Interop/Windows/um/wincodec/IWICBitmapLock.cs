@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("00000123-A8F2-4877-BA0A-FD2B6645FB94")]
     public unsafe struct IWICBitmapLock
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IWICBitmapLock* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -75,9 +70,7 @@ namespace TerraFX.Interop
             [In] IWICBitmapLock* This,
             [Out, NativeTypeName("WICPixelFormatGUID")] Guid* pPixelFormat
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -115,9 +108,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetSize(
             [Out, NativeTypeName("UINT")] uint* puiWidth,
@@ -177,20 +168,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetSize;
 
             public IntPtr GetStride;
@@ -198,8 +184,6 @@ namespace TerraFX.Interop
             public IntPtr GetDataPointer;
 
             public IntPtr GetPixelFormat;
-            #endregion
         }
-        #endregion
     }
 }

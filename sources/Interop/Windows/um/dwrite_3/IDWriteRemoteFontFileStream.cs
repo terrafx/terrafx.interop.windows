@@ -14,11 +14,8 @@ namespace TerraFX.Interop
     [Guid("4DB3757A-2C72-4ED9-B2B6-1ABABE1AFF9C")]
     public unsafe struct IDWriteRemoteFontFileStream
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -41,9 +38,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteRemoteFontFileStream* This
         );
-        #endregion
 
-        #region IDWriteFontFileStream Delegates
         /// <summary>Reads a fragment from a file.</summary>
         /// <param name="fragmentStart">Receives the pointer to the start of the font file fragment.</param>
         /// <param name="fileOffset">Offset of the fragment from the beginning of the font file.</param>
@@ -93,9 +88,7 @@ namespace TerraFX.Interop
             [In] IDWriteRemoteFontFileStream* This,
             [Out, NativeTypeName("UINT64")] ulong* lastWriteTime
         );
-        #endregion
 
-        #region Delegates
         /// <summary>GetLocalFileSize returns the number of bytes of the font file that are currently local, which should always be less than or equal to the full file size returned by GetFileSize. If the locality is remote, the return value is zero. If the file is fully local, the return value must be the same as GetFileSize.</summary>
         /// <param name="localFileSize">Receives the local size of the file.</param>
         /// <returns> Standard HRESULT error code.</returns>
@@ -147,9 +140,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT32")] uint fragmentCount,
             [Out] IDWriteAsyncResult** asyncResult
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -187,9 +178,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteFontFileStream Methods
         [return: NativeTypeName("HRESULT")]
         public int ReadFileFragment(
             [Out] void** fragmentStart,
@@ -250,9 +239,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetLocalFileSize(
             [Out, NativeTypeName("UINT64")] ulong* localFileSize
@@ -316,20 +303,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDWriteFontFileStream Fields
             public IntPtr ReadFileFragment;
 
             public IntPtr ReleaseFileFragment;
@@ -337,9 +319,7 @@ namespace TerraFX.Interop
             public IntPtr GetFileSize;
 
             public IntPtr GetLastWriteTime;
-            #endregion
 
-            #region Fields
             public IntPtr GetLocalFileSize;
 
             public IntPtr GetFileFragmentLocality;
@@ -347,8 +327,6 @@ namespace TerraFX.Interop
             public IntPtr GetLocality;
 
             public IntPtr BeginDownload;
-            #endregion
         }
-        #endregion
     }
 }

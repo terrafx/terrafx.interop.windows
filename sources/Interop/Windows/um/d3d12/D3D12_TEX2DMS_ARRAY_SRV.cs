@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public struct D3D12_TEX2DMS_ARRAY_SRV
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint FirstArraySlice;
 
         [NativeTypeName("UINT")]
         public uint ArraySize;
-        #endregion
     }
 }

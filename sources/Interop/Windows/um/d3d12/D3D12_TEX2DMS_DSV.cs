@@ -7,9 +7,7 @@ namespace TerraFX.Interop
 {
     public struct D3D12_TEX2DMS_DSV
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint UnusedField_NothingToDefine;
-        #endregion
     }
 }

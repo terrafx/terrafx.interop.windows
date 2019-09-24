@@ -11,11 +11,8 @@ namespace TerraFX.Interop
 {
     public unsafe struct ID3DInclude
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -35,9 +32,7 @@ namespace TerraFX.Interop
             [In] ID3DInclude* This,
             [In, NativeTypeName("LPCVOID")] void* pData
         );
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int Open(
             [In] D3D_INCLUDE_TYPE IncludeType,
@@ -73,17 +68,12 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region Fields
             public IntPtr Open;
 
             public IntPtr Close;
-            #endregion
         }
-        #endregion
     }
 }

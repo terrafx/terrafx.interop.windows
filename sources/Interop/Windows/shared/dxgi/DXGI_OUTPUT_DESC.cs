@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct DXGI_OUTPUT_DESC
     {
-        #region Fields
         [NativeTypeName("WCHAR[32]")]
         public fixed char DeviceName[32];
 
@@ -22,6 +21,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("HMONITOR")]
         public IntPtr Monitor;
-        #endregion
     }
 }

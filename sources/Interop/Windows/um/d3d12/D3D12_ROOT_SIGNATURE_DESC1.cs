@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_ROOT_SIGNATURE_DESC1
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint NumParameters;
 
@@ -21,6 +20,5 @@ namespace TerraFX.Interop
         public D3D12_STATIC_SAMPLER_DESC* pStaticSamplers;
 
         public D3D12_ROOT_SIGNATURE_FLAGS Flags;
-        #endregion
     }
 }

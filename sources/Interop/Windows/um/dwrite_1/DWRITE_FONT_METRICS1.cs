@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct DWRITE_FONT_METRICS1
     {
-        #region Fields
         public DWRITE_FONT_METRICS BaseValue;
 
         /// <summary>Left edge of accumulated bounding blackbox of all glyphs in the font.</summary>
@@ -61,6 +60,5 @@ namespace TerraFX.Interop
         /// <summary>Indicates that the ascent, descent, and lineGap are based on newer 'typographic' values in the font, rather than legacy values.</summary>
         [NativeTypeName("BOOL")]
         public int hasTypographicMetrics;
-        #endregion
     }
 }

@@ -14,7 +14,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_STATIC_SAMPLER_DESC
     {
-        #region Fields
         public D3D12_FILTER Filter;
 
         public D3D12_TEXTURE_ADDRESS_MODE AddressU;
@@ -46,9 +45,7 @@ namespace TerraFX.Interop
         public uint RegisterSpace;
 
         public D3D12_SHADER_VISIBILITY ShaderVisibility;
-        #endregion
 
-        #region Constructors
         public D3D12_STATIC_SAMPLER_DESC(uint shaderRegister, D3D12_FILTER filter = D3D12_FILTER_ANISOTROPIC, D3D12_TEXTURE_ADDRESS_MODE addressU = D3D12_TEXTURE_ADDRESS_MODE_WRAP, D3D12_TEXTURE_ADDRESS_MODE addressV = D3D12_TEXTURE_ADDRESS_MODE_WRAP, D3D12_TEXTURE_ADDRESS_MODE addressW = D3D12_TEXTURE_ADDRESS_MODE_WRAP, float mipLODBias = 0, uint maxAnisotropy = 16, D3D12_COMPARISON_FUNC comparisonFunc = D3D12_COMPARISON_FUNC_LESS_EQUAL, D3D12_STATIC_BORDER_COLOR borderColor = D3D12_STATIC_BORDER_COLOR_OPAQUE_WHITE, float minLOD = 0, float maxLOD = D3D12_FLOAT32_MAX, D3D12_SHADER_VISIBILITY shaderVisibility = D3D12_SHADER_VISIBILITY_ALL, uint registerSpace = 0)
         {
             fixed (D3D12_STATIC_SAMPLER_DESC* pThis = &this)
@@ -56,9 +53,7 @@ namespace TerraFX.Interop
                 Init(pThis, shaderRegister, filter, addressU, addressV, addressW, mipLODBias, maxAnisotropy, comparisonFunc, borderColor, minLOD, maxLOD, shaderVisibility, registerSpace);
             }
         }
-        #endregion
 
-        #region Methods
         public static void Init(D3D12_STATIC_SAMPLER_DESC* samplerDesc, uint shaderRegister, D3D12_FILTER filter = D3D12_FILTER_ANISOTROPIC, D3D12_TEXTURE_ADDRESS_MODE addressU = D3D12_TEXTURE_ADDRESS_MODE_WRAP, D3D12_TEXTURE_ADDRESS_MODE addressV = D3D12_TEXTURE_ADDRESS_MODE_WRAP, D3D12_TEXTURE_ADDRESS_MODE addressW = D3D12_TEXTURE_ADDRESS_MODE_WRAP, float mipLODBias = 0, uint maxAnisotropy = 16, D3D12_COMPARISON_FUNC comparisonFunc = D3D12_COMPARISON_FUNC_LESS_EQUAL, D3D12_STATIC_BORDER_COLOR borderColor = D3D12_STATIC_BORDER_COLOR_OPAQUE_WHITE, float minLOD = 0, float maxLOD = D3D12_FLOAT32_MAX, D3D12_SHADER_VISIBILITY shaderVisibility = D3D12_SHADER_VISIBILITY_ALL, uint registerSpace = 0)
         {
             samplerDesc->ShaderRegister = shaderRegister;
@@ -82,6 +77,5 @@ namespace TerraFX.Interop
                 Init(pThis, shaderRegister, filter, addressU, addressV, addressW, mipLODBias, maxAnisotropy, comparisonFunc, borderColor, minLOD, maxLOD, shaderVisibility, registerSpace);
             }
         }
-        #endregion
     }
 }

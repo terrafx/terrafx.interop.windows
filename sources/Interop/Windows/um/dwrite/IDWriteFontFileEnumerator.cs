@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("72755049-5FF7-435D-8348-4BE97CFA6C7C")]
     public unsafe struct IDWriteFontFileEnumerator
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteFontFileEnumerator* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Advances to the next font file in the collection. When it is first created, the enumerator is positioned before the first element of the collection and the first call to MoveNext advances to the first file.</summary>
         /// <param name="hasCurrentFile">Receives the value TRUE if the enumerator advances to a file, or FALSE if the enumerator advanced past the last file in the collection.</param>
         /// <returns>Standard HRESULT error code.</returns>
@@ -64,9 +59,7 @@ namespace TerraFX.Interop
             [In] IDWriteFontFileEnumerator* This,
             [Out] IDWriteFontFile** fontFile
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -104,9 +97,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int MoveNext(
             [Out, NativeTypeName("BOOL")] int* hasCurrentFile
@@ -134,25 +125,18 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr MoveNext;
 
             public IntPtr GetCurrentFontFile;
-            #endregion
         }
-        #endregion
     }
 }

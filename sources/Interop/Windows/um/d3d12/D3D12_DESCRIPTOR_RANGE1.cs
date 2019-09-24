@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct D3D12_DESCRIPTOR_RANGE1
     {
-        #region Fields
         public D3D12_DESCRIPTOR_RANGE_TYPE RangeType;
 
         [NativeTypeName("UINT")]
@@ -23,6 +22,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint OffsetInDescriptorsFromTableStart;
-        #endregion
     }
 }

@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public struct WICBitmapPlaneDescription
     {
-        #region Fields
         [NativeTypeName("WICPixelFormatGUID")]
         public Guid Format;
 
@@ -18,6 +17,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint Height;
-        #endregion
     }
 }

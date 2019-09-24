@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>A vector of 3 float values (x, y, z).</summary>
     public struct D2D_VECTOR_3F
     {
-        #region Fields
         [NativeTypeName("FLOAT")]
         public float x;
 
@@ -17,6 +16,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("FLOAT")]
         public float z;
-        #endregion
     }
 }

@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("F7836E16-3BE0-470B-86BB-160D0AECD7DE")]
     public unsafe struct IWICMetadataWriter
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IWICMetadataWriter* This
         );
-        #endregion
 
-        #region IWICMetadataReader Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -94,9 +89,7 @@ namespace TerraFX.Interop
             [In] IWICMetadataWriter* This,
             [Out] IWICEnumMetadataItem** ppIEnumMetadata = null
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -134,9 +127,7 @@ namespace TerraFX.Interop
             [In] IWICMetadataWriter* This,
             [In, NativeTypeName("UINT")] uint nIndex
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -174,9 +165,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IWICMetadataReader Methods
         [return: NativeTypeName("HRESULT")]
         public int GetMetadataFormat(
             [Out, NativeTypeName("GUID")] Guid* pguidMetadataFormat
@@ -270,9 +259,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int SetValue(
             [In, Optional] PROPVARIANT* pvarSchema,
@@ -340,20 +327,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IWICMetadataReader Fields
             public IntPtr GetMetadataFormat;
 
             public IntPtr GetMetadataHandlerInfo;
@@ -365,9 +347,7 @@ namespace TerraFX.Interop
             public IntPtr GetValue;
 
             public IntPtr GetEnumerator;
-            #endregion
 
-            #region Fields
             public IntPtr SetValue;
 
             public IntPtr SetValueByIndex;
@@ -375,8 +355,6 @@ namespace TerraFX.Interop
             public IntPtr RemoveValue;
 
             public IntPtr RemoveValueByIndex;
-            #endregion
         }
-        #endregion
     }
 }

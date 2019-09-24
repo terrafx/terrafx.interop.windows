@@ -7,16 +7,11 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_GPU_DESCRIPTOR_HANDLE
     {
-        #region Default Instances
         public static readonly D3D12_GPU_DESCRIPTOR_HANDLE DEFAULT = new D3D12_GPU_DESCRIPTOR_HANDLE() { ptr = 0 };
-        #endregion
 
-        #region Fields
         [NativeTypeName("UINT64")]
         public ulong ptr;
-        #endregion
 
-        #region Constructors
         public D3D12_GPU_DESCRIPTOR_HANDLE(D3D12_GPU_DESCRIPTOR_HANDLE* other, int offsetScaledByIncrementSize)
         {
             fixed (D3D12_GPU_DESCRIPTOR_HANDLE* pThis = &this)
@@ -32,9 +27,7 @@ namespace TerraFX.Interop
                 InitOffsetted(pThis, other, offsetInDescriptors, descriptorIncrementSize);
             }
         }
-        #endregion
 
-        #region Operators
         public static bool operator ==(D3D12_GPU_DESCRIPTOR_HANDLE l, D3D12_GPU_DESCRIPTOR_HANDLE r)
         {
             return l.ptr == r.ptr;
@@ -44,9 +37,7 @@ namespace TerraFX.Interop
         {
             return l.ptr != r.ptr;
         }
-        #endregion
 
-        #region Methods
         public D3D12_GPU_DESCRIPTOR_HANDLE Offset(int offsetInDescriptors, uint descriptorIncrementSize)
         {
             ptr += (ulong)(offsetInDescriptors * descriptorIncrementSize);
@@ -84,9 +75,7 @@ namespace TerraFX.Interop
         {
             handle->ptr = @base->ptr + (ulong)(offsetInDescriptors * descriptorIncrementSize);
         }
-        #endregion
 
-        #region System.Object
         public override bool Equals(object? obj)
         {
             return (obj is D3D12_GPU_DESCRIPTOR_HANDLE other) && (this == other);
@@ -96,6 +85,5 @@ namespace TerraFX.Interop
         {
             return ptr.GetHashCode();
         }
-        #endregion
     }
 }

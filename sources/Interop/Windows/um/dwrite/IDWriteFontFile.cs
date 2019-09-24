@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("739D886A-CEF5-47DC-8769-1A8B41BEBBB0")]
     public unsafe struct IDWriteFontFile
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteFontFile* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>This method obtains the pointer to the reference key of a font file. The pointer is only valid until the object that refers to it is released.</summary>
         /// <param name="fontFileReferenceKey">Pointer to the font file reference key. IMPORTANT: The pointer value is valid until the font file reference object it is obtained from is released.</param>
         /// <param name="fontFileReferenceKeySize">Size of font file reference key in bytes.</param>
@@ -84,9 +79,7 @@ namespace TerraFX.Interop
             [Out, Optional] DWRITE_FONT_FACE_TYPE* fontFaceType,
             [Out, NativeTypeName("UINT32")] uint* numberOfFaces
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -124,9 +117,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetReferenceKey(
             [Out] void** fontFileReferenceKey,
@@ -176,27 +167,20 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetReferenceKey;
 
             public IntPtr GetLoader;
 
             public IntPtr Analyze;
-            #endregion
         }
-        #endregion
     }
 }

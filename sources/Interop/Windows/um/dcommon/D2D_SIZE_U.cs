@@ -8,12 +8,10 @@ namespace TerraFX.Interop
     /// <summary>Stores an ordered pair of integers, typically the width and height of a rectangle.</summary>
     public struct D2D_SIZE_U
     {
-        #region Fields
         [NativeTypeName("UINT32")]
         public uint width;
 
         [NativeTypeName("UINT32")]
         public uint height;
-        #endregion
     }
 }

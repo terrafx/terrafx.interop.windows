@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public unsafe struct CAFLT
     {
-        #region Fields
         [NativeTypeName("ULONG")]
         public uint cElems;
 
         [NativeTypeName("FLOAT[]")]
         public float* pElems;
-        #endregion
     }
 }

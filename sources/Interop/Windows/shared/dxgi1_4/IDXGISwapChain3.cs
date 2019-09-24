@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("94D99BDB-F1F8-4AB0-B236-7DA0170EDAB1")]
     public unsafe struct IDXGISwapChain3
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDXGISwapChain3* This
         );
-        #endregion
 
-        #region IDXGIObject Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -79,9 +74,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppParent
         );
-        #endregion
 
-        #region IDXGIDeviceSubObject Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -90,9 +83,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppDevice
         );
-        #endregion
 
-        #region IDXGISwapChain Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -181,9 +172,7 @@ namespace TerraFX.Interop
             [In] IDXGISwapChain3* This,
             [Out, NativeTypeName("UINT")] uint* pLastPresentCount
         );
-        #endregion
 
-        #region IDXGISwapChain1 Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -273,9 +262,7 @@ namespace TerraFX.Interop
             [In] IDXGISwapChain3* This,
             [Out] DXGI_MODE_ROTATION* pRotation
         );
-        #endregion
 
-        #region IDXGISwapChain2 Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -332,9 +319,7 @@ namespace TerraFX.Interop
             [In] IDXGISwapChain3* This,
             [Out] DXGI_MATRIX_3X2_F* pMatrix
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("UINT")]
@@ -372,9 +357,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT[]")] uint* pCreationNodeMask,
             [In, NativeTypeName("IUnknown*[]")] IUnknown** ppPresentQueue
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -412,9 +395,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDXGIObject Methods
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData(
             [In, NativeTypeName("REFGUID")] Guid* Name,
@@ -482,9 +463,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDXGIDeviceSubObject Methods
         [return: NativeTypeName("HRESULT")]
         public int GetDevice(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -500,9 +479,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDXGISwapChain Methods
         [return: NativeTypeName("HRESULT")]
         public int Present(
             [In, NativeTypeName("UINT")] uint SyncInterval,
@@ -660,9 +637,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDXGISwapChain1 Methods
         [return: NativeTypeName("HRESULT")]
         public int GetDesc1(
             [Out] DXGI_SWAP_CHAIN_DESC1* pDesc
@@ -819,9 +794,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDXGISwapChain2 Methods
         [return: NativeTypeName("HRESULT")]
         public int SetSourceSize(
             [In, NativeTypeName("UINT")] uint Width,
@@ -920,9 +893,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("UINT")]
         public uint GetCurrentBackBufferIndex()
         {
@@ -989,20 +960,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDXGIObject Fields
             public IntPtr SetPrivateData;
 
             public IntPtr SetPrivateDataInterface;
@@ -1010,13 +976,9 @@ namespace TerraFX.Interop
             public IntPtr GetPrivateData;
 
             public IntPtr GetParent;
-            #endregion
 
-            #region IDXGIDeviceSubObject Fields
             public IntPtr GetDevice;
-            #endregion
 
-            #region IDXGISwapChain Fields
             public IntPtr Present;
 
             public IntPtr GetBuffer;
@@ -1036,9 +998,7 @@ namespace TerraFX.Interop
             public IntPtr GetFrameStatistics;
 
             public IntPtr GetLastPresentCount;
-            #endregion
 
-            #region IDXGISwapChain1 Fields
             public IntPtr GetDesc1;
 
             public IntPtr GetFullscreenDesc;
@@ -1060,9 +1020,7 @@ namespace TerraFX.Interop
             public IntPtr SetRotation;
 
             public IntPtr GetRotation;
-            #endregion
 
-            #region IDXGISwapChain2 Fields
             public IntPtr SetSourceSize;
 
             public IntPtr GetSourceSize;
@@ -1076,9 +1034,7 @@ namespace TerraFX.Interop
             public IntPtr SetMatrixTransform;
 
             public IntPtr GetMatrixTransform;
-            #endregion
 
-            #region Fields
             public IntPtr GetCurrentBackBufferIndex;
 
             public IntPtr CheckColorSpaceSupport;
@@ -1086,8 +1042,6 @@ namespace TerraFX.Interop
             public IntPtr SetColorSpace1;
 
             public IntPtr ResizeBuffers1;
-            #endregion
         }
-        #endregion
     }
 }

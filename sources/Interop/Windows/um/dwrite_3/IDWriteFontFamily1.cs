@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("DA20D8EF-812A-4C43-9802-62EC4ABD7ADF")]
     public unsafe struct IDWriteFontFamily1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteFontFamily1* This
         );
-        #endregion
 
-        #region IDWriteFontList Delegates
         /// <summary>Gets the font collection that contains the fonts.</summary>
         /// <param name="fontCollection">Receives a pointer to the font collection object.</param>
         /// <returns>Standard HRESULT error code.</returns>
@@ -74,9 +69,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT32")] uint index,
             [Out] IDWriteFont** font
         );
-        #endregion
 
-        #region IDWriteFontFamily Delegates
         /// <summary>Creates a localized strings object that contains the family names for the font family, indexed by locale name.</summary>
         /// <param name="names">Receives a pointer to the newly created localized strings object.</param>
         /// <returns>Standard HRESULT error code.</returns>
@@ -121,9 +114,7 @@ namespace TerraFX.Interop
             [In] DWRITE_FONT_STYLE style,
             [Out] IDWriteFontList** matchingFonts
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Gets the current locality of a font given its zero-based index.</summary>
         /// <param name="listIndex">Zero-based index of the font in the font list.</param>
         /// <remarks> The locality enumeration. For fully local files, the result will always be DWRITE_LOCALITY_LOCAL. For downloadable files, the result depends on how much of the file has been downloaded, and GetFont() fails if the locality is REMOTE and potentially fails if PARTIAL. The application can explicitly ask for the font to be enqueued for download via EnqueueFontDownloadRequest followed by BeginDownload().</remarks>
@@ -160,9 +151,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT32")] uint listIndex,
             [Out] IDWriteFontFaceReference** fontFaceReference
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -200,9 +189,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteFontList Methods
         [return: NativeTypeName("HRESULT")]
         public int GetFontCollection(
             [Out] IDWriteFontCollection** fontCollection
@@ -243,9 +230,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteFontFamily Methods
         [return: NativeTypeName("HRESULT")]
         public int GetFamilyNames(
             [Out] IDWriteLocalizedStrings** names
@@ -299,9 +284,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         public DWRITE_LOCALITY GetFontLocality(
             [In, NativeTypeName("UINT32")] uint listIndex
         )
@@ -346,43 +329,32 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDWriteFontList Fields
             public IntPtr GetFontCollection;
 
             public IntPtr GetFontCount;
 
             public IntPtr GetFont;
-            #endregion
 
-            #region IDWriteFontFamily Fields
             public IntPtr GetFamilyNames;
 
             public IntPtr GetFirstMatchingFont;
 
             public IntPtr GetMatchingFonts;
-            #endregion
 
-            #region Fields
             public IntPtr GetFontLocality;
 
             public IntPtr GetFont1;
 
             public IntPtr GetFontFaceReference;
-            #endregion
         }
-        #endregion
     }
 }

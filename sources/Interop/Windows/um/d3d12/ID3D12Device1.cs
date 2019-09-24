@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("77ACCE80-638E-4E65-8895-C1F23386863E")]
     public unsafe struct ID3D12Device1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID3D12Device1* This
         );
-        #endregion
 
-        #region ID3D12Object Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -78,9 +73,7 @@ namespace TerraFX.Interop
             [In] ID3D12Device1* This,
             [In, NativeTypeName("LPCWSTR")] char* Name
         );
-        #endregion
 
-        #region ID3D12Device Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("UINT")]
@@ -457,9 +450,7 @@ namespace TerraFX.Interop
             [In] ID3D12Device1* This,
             [Out] LUID* _result
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -492,9 +483,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("ID3D12Pageable*[]")] ID3D12Pageable** ppObjects,
             [In, NativeTypeName("D3D12_RESIDENCY_PRIORITY[]")] D3D12_RESIDENCY_PRIORITY* pPriorities
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -532,9 +521,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID3D12Object Methods
         [return: NativeTypeName("HRESULT")]
         public int GetPrivateData(
             [In, NativeTypeName("REFGUID")] Guid* guid,
@@ -600,9 +587,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID3D12Device Methods
         [return: NativeTypeName("UINT")]
         public uint GetNodeCount()
         {
@@ -1290,9 +1275,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int CreatePipelineLibrary(
             [In] void* pLibraryBlob,
@@ -1352,20 +1335,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID3D12Object Fields
             public IntPtr GetPrivateData;
 
             public IntPtr SetPrivateData;
@@ -1373,9 +1351,7 @@ namespace TerraFX.Interop
             public IntPtr SetPrivateDataInterface;
 
             public IntPtr SetName;
-            #endregion
 
-            #region ID3D12Device Fields
             public IntPtr GetNodeCount;
 
             public IntPtr CreateCommandQueue;
@@ -1449,16 +1425,12 @@ namespace TerraFX.Interop
             public IntPtr GetResourceTiling;
 
             public IntPtr GetAdapterLuid;
-            #endregion
 
-            #region Fields
             public IntPtr CreatePipelineLibrary;
 
             public IntPtr SetEventOnMultipleFenceCompletion;
 
             public IntPtr SetResidencyPriority;
-            #endregion
         }
-        #endregion
     }
 }

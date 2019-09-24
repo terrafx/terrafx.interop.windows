@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("06152247-6F50-465A-9245-118BFD3B6007")]
     public unsafe struct ID2D1Factory
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1Factory* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Cause the factory to refresh any system metrics that it might have been snapped on factory creation.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -183,9 +178,7 @@ namespace TerraFX.Interop
             [In] D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties,
             [Out] ID2D1DCRenderTarget** dcRenderTarget
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -223,9 +216,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int ReloadSystemMetrics()
         {
@@ -459,20 +450,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr ReloadSystemMetrics;
 
             public IntPtr GetDesktopDpi;
@@ -500,8 +486,6 @@ namespace TerraFX.Interop
             public IntPtr CreateDxgiSurfaceRenderTarget;
 
             public IntPtr CreateDCRenderTarget;
-            #endregion
         }
-        #endregion
     }
 }

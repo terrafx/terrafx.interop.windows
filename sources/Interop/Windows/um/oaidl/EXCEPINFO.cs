@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct EXCEPINFO
     {
-        #region Fields
         [NativeTypeName("WORD")]
         public ushort wCode;
 
@@ -36,6 +35,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("SCODE")]
         public int scode;
-        #endregion
     }
 }

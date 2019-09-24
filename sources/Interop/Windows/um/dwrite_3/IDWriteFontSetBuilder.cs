@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("2F642AFE-9C68-4F40-B8BE-457401AFCB3D")]
     public unsafe struct IDWriteFontSetBuilder
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteFontSetBuilder* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Adds a reference to a font to the set being built. The necessary metadata will automatically be extracted from the font upon calling CreateFontSet.</summary>
         /// <param name="fontFaceReference">Font face reference object to add to the set.</param>
         /// <returns> Standard HRESULT error code.</returns>
@@ -90,9 +85,7 @@ namespace TerraFX.Interop
             [In] IDWriteFontSetBuilder* This,
             [Out] IDWriteFontSet** fontSet
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -130,9 +123,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int AddFontFaceReference(
             [In] IDWriteFontFaceReference* fontFaceReference
@@ -192,20 +183,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr AddFontFaceReference;
 
             public IntPtr AddFontFaceReference1;
@@ -213,8 +199,6 @@ namespace TerraFX.Interop
             public IntPtr AddFontSet;
 
             public IntPtr CreateFontSet;
-            #endregion
         }
-        #endregion
     }
 }

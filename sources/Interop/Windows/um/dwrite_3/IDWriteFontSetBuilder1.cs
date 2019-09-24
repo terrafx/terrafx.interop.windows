@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("3FF7715F-3CDC-4DC6-9B72-EC5621DCCAFD")]
     public unsafe struct IDWriteFontSetBuilder1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteFontSetBuilder1* This
         );
-        #endregion
 
-        #region IDWriteFontSetBuilder Delegates
         /// <summary>Adds a reference to a font to the set being built. The necessary metadata will automatically be extracted from the font upon calling CreateFontSet.</summary>
         /// <param name="fontFaceReference">Font face reference object to add to the set.</param>
         /// <returns> Standard HRESULT error code.</returns>
@@ -90,9 +85,7 @@ namespace TerraFX.Interop
             [In] IDWriteFontSetBuilder1* This,
             [Out] IDWriteFontSet** fontSet
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Adds references to all the fonts in the specified font file. The method parses the font file to determine the fonts and their properties.</summary>
         /// <param name="fontFile">Font file reference object to add to the set.</param>
         /// <returns> Standard HRESULT error code.</returns>
@@ -103,9 +96,7 @@ namespace TerraFX.Interop
             [In] IDWriteFontSetBuilder1* This,
             [In] IDWriteFontFile* fontFile
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -143,9 +134,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteFontSetBuilder Methods
         [return: NativeTypeName("HRESULT")]
         public int AddFontFaceReference(
             [In] IDWriteFontFaceReference* fontFaceReference
@@ -205,9 +194,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int AddFontFile(
             [In] IDWriteFontFile* fontFile
@@ -221,20 +208,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDWriteFontSetBuilder Fields
             public IntPtr AddFontFaceReference;
 
             public IntPtr AddFontFaceReference1;
@@ -242,12 +224,8 @@ namespace TerraFX.Interop
             public IntPtr AddFontSet;
 
             public IntPtr CreateFontSet;
-            #endregion
 
-            #region Fields
             public IntPtr AddFontFile;
-            #endregion
         }
-        #endregion
     }
 }

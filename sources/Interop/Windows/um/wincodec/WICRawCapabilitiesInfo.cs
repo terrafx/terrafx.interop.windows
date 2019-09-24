@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct WICRawCapabilitiesInfo
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint cbSize;
 
@@ -47,6 +46,5 @@ namespace TerraFX.Interop
         public WICRawRotationCapabilities RotationSupport;
 
         public WICRawCapabilities RenderModeSupport;
-        #endregion
     }
 }

@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct WICBitmapPlane
     {
-        #region Fields
         [NativeTypeName("WICPixelFormatGUID")]
         public Guid Format;
 
@@ -21,6 +20,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint cbBufferSize;
-        #endregion
     }
 }

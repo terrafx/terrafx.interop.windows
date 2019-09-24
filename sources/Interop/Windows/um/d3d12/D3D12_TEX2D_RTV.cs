@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public struct D3D12_TEX2D_RTV
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint MipSlice;
 
         [NativeTypeName("UINT")]
         public uint PlaneSlice;
-        #endregion
     }
 }

@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public struct D3D12_DEPTH_STENCIL_VALUE
     {
-        #region Fields
         [NativeTypeName("FLOAT")]
         public float Depth;
 
         [NativeTypeName("UINT8")]
         public byte Stencil;
-        #endregion
     }
 }

@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("62BAA2D2-AB54-41B7-B872-787E0106A421")]
     public unsafe struct ID2D1PathGeometry1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1PathGeometry1* This
         );
-        #endregion
 
-        #region ID2D1Resource Delegates
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -50,9 +45,7 @@ namespace TerraFX.Interop
             [In] ID2D1PathGeometry1* This,
             [Out] ID2D1Factory** factory
         );
-        #endregion
 
-        #region ID2D1Geometry Delegates
         /// <summary>Retrieve the bounds of the geometry, with an optional applied transform.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -208,9 +201,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("FLOAT")] float flatteningTolerance,
             [In] ID2D1SimplifiedGeometrySink* geometrySink
         );
-        #endregion
 
-        #region ID2D1PathGeometry Delegates
         /// <summary>Opens a geometry sink that will be used to create this path geometry.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -245,9 +236,7 @@ namespace TerraFX.Interop
             [In] ID2D1PathGeometry1* This,
             [Out, NativeTypeName("UINT32")] uint* count
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -259,9 +248,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("FLOAT")] float flatteningTolerance,
             [Out] D2D1_POINT_DESCRIPTION* pointDescription
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -299,9 +286,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1Resource Methods
         public void GetFactory(
             [Out] ID2D1Factory** factory
         )
@@ -314,9 +299,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1Geometry Methods
         [return: NativeTypeName("HRESULT")]
         public int GetBounds(
             [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
@@ -576,9 +559,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1PathGeometry Methods
         [return: NativeTypeName("HRESULT")]
         public int Open(
             [Out] ID2D1GeometrySink** geometrySink
@@ -634,9 +615,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int ComputePointAndSegmentAtLength(
             [In, NativeTypeName("FLOAT")] float length,
@@ -658,24 +637,17 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1Resource Fields
             public IntPtr GetFactory;
-            #endregion
 
-            #region ID2D1Geometry Fields
             public IntPtr GetBounds;
 
             public IntPtr GetWidenedBounds;
@@ -701,9 +673,7 @@ namespace TerraFX.Interop
             public IntPtr ComputePointAtLength;
 
             public IntPtr Widen;
-            #endregion
 
-            #region ID2D1PathGeometry Fields
             public IntPtr Open;
 
             public IntPtr Stream;
@@ -711,12 +681,8 @@ namespace TerraFX.Interop
             public IntPtr GetSegmentCount;
 
             public IntPtr GetFigureCount;
-            #endregion
 
-            #region Fields
             public IntPtr ComputePointAndSegmentAtLength;
-            #endregion
         }
-        #endregion
     }
 }

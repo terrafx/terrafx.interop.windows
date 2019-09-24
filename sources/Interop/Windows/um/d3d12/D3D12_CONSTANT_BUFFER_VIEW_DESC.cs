@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public struct D3D12_CONSTANT_BUFFER_VIEW_DESC
     {
-        #region Fields
         [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")]
         public ulong BufferLocation;
 
         [NativeTypeName("UINT")]
         public uint SizeInBytes;
-        #endregion
     }
 }

@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct WICJpegScanHeader
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint cComponents;
 
@@ -31,6 +30,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("BYTE")]
         public byte SuccessiveApproximationLow;
-        #endregion
     }
 }

@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("3D9F916B-27DC-4AD7-B4F1-64945340F563")]
     public unsafe struct ID2D1EffectContext
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1EffectContext* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _GetDpi(
@@ -247,9 +242,7 @@ namespace TerraFX.Interop
             [In] ID2D1EffectContext* This,
             [In] D2D1_BUFFER_PRECISION bufferPrecision
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -287,9 +280,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         public void GetDpi(
             [Out, NativeTypeName("FLOAT")] float* dpiX,
             [Out, NativeTypeName("FLOAT")] float* dpiY
@@ -650,20 +641,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetDpi;
 
             public IntPtr CreateEffect;
@@ -705,8 +691,6 @@ namespace TerraFX.Interop
             public IntPtr CheckFeatureSupport;
 
             public IntPtr IsBufferPrecisionSupported;
-            #endregion
         }
-        #endregion
     }
 }

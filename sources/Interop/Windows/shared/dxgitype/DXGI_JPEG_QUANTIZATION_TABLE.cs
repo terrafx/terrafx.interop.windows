@@ -7,9 +7,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct DXGI_JPEG_QUANTIZATION_TABLE
     {
-        #region Fields
         [NativeTypeName("BYTE[64]")]
         public fixed byte Elements[64];
-        #endregion
     }
 }

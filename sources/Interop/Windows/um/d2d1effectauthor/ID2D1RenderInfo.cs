@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("519AE1BD-D19A-420D-B849-364F594776B7")]
     public unsafe struct ID2D1RenderInfo
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1RenderInfo* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Sets options for sampling the specified image input</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -78,9 +73,7 @@ namespace TerraFX.Interop
             [In] ID2D1RenderInfo* This,
             [In, NativeTypeName("UINT32")] uint instructionCount
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -118,9 +111,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int SetInputDescription(
             [In, NativeTypeName("UINT32")] uint inputIndex,
@@ -178,20 +169,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr SetInputDescription;
 
             public IntPtr SetOutputBuffer;
@@ -199,8 +185,6 @@ namespace TerraFX.Interop
             public IntPtr SetCached;
 
             public IntPtr SetInstructionCountHint;
-            #endregion
         }
-        #endregion
     }
 }

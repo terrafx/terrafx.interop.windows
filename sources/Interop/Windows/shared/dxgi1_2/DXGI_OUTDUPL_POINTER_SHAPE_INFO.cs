@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct DXGI_OUTDUPL_POINTER_SHAPE_INFO
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint Type;
 
@@ -21,6 +20,5 @@ namespace TerraFX.Interop
         public uint Pitch;
 
         public POINT HotSpot;
-        #endregion
     }
 }

@@ -9,19 +9,15 @@ namespace TerraFX.Interop
 {
     public struct D3D12_RENDER_TARGET_VIEW_DESC
     {
-        #region Fields
         public DXGI_FORMAT Format;
 
         public D3D12_RTV_DIMENSION ViewDimension;
 
         public _Anonymous_e__Union Anonymous;
-        #endregion
 
-        #region Structs
         [StructLayout(LayoutKind.Explicit)]
         public struct _Anonymous_e__Union
         {
-            #region Fields
             [FieldOffset(0)]
             public D3D12_BUFFER_RTV Buffer;
 
@@ -45,8 +41,6 @@ namespace TerraFX.Interop
 
             [FieldOffset(0)]
             public D3D12_TEX3D_RTV Texture3D;
-            #endregion
         }
-        #endregion
     }
 }

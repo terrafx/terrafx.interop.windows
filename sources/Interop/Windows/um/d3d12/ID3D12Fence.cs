@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("0A753DCF-C4D8-4B91-ADF6-BE5A60D95A76")]
     public unsafe struct ID3D12Fence
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID3D12Fence* This
         );
-        #endregion
 
-        #region ID3D12Object Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -78,9 +73,7 @@ namespace TerraFX.Interop
             [In] ID3D12Fence* This,
             [In, NativeTypeName("LPCWSTR")] char* Name
         );
-        #endregion
 
-        #region ID3D12DeviceChild Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -89,9 +82,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvDevice = null
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("UINT64")]
@@ -115,9 +106,7 @@ namespace TerraFX.Interop
             [In] ID3D12Fence* This,
             [In, NativeTypeName("UINT64")] ulong Value
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -155,9 +144,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID3D12Object Methods
         [return: NativeTypeName("HRESULT")]
         public int GetPrivateData(
             [In, NativeTypeName("REFGUID")] Guid* guid,
@@ -223,9 +210,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID3D12DeviceChild Methods
         [return: NativeTypeName("HRESULT")]
         public int GetDevice(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -241,9 +226,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("UINT64")]
         public ulong GetCompletedValue()
         {
@@ -284,20 +267,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID3D12Object Fields
             public IntPtr GetPrivateData;
 
             public IntPtr SetPrivateData;
@@ -305,20 +283,14 @@ namespace TerraFX.Interop
             public IntPtr SetPrivateDataInterface;
 
             public IntPtr SetName;
-            #endregion
 
-            #region ID3D12DeviceChild Fields
             public IntPtr GetDevice;
-            #endregion
 
-            #region Fields
             public IntPtr GetCompletedValue;
 
             public IntPtr SetEventOnCompletion;
 
             public IntPtr Signal;
-            #endregion
         }
-        #endregion
     }
 }

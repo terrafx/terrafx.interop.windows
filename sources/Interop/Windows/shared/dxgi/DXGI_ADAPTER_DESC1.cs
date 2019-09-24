@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct DXGI_ADAPTER_DESC1
     {
-        #region Fields
         [NativeTypeName("WCHAR[128]")]
         public fixed char Description[128];
 
@@ -38,6 +37,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint Flags;
-        #endregion
     }
 }

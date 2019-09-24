@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("102CA951-311B-4B01-B11F-ECB83E061B37")]
     public unsafe struct ID3D12DebugCommandList1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID3D12DebugCommandList1* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("BOOL")]
@@ -71,9 +66,7 @@ namespace TerraFX.Interop
             [Out] void* pData,
             [In, NativeTypeName("UINT")] uint DataSize
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -111,9 +104,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("BOOL")]
         public int AssertResourceState(
             [In] ID3D12Resource* pResource,
@@ -167,27 +158,20 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr AssertResourceState;
 
             public IntPtr SetDebugParameter;
 
             public IntPtr GetDebugParameter;
-            #endregion
         }
-        #endregion
     }
 }

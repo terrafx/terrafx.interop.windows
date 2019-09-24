@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>Contains the content bounds, mask information, opacity settings, and other options for a layer resource.</summary>
     public unsafe struct D2D1_LAYER_PARAMETERS
     {
-        #region Fields
         /// <summary>The rectangular clip that will be applied to the layer. The clip is affected by the world transform. Content outside of the content bounds will not render.</summary>
         [NativeTypeName("D2D1_RECT_F")]
         public D2D_RECT_F contentBounds;
@@ -32,6 +31,5 @@ namespace TerraFX.Interop
 
         /// <summary>Specifies if ClearType will be rendered into the layer.</summary>
         public D2D1_LAYER_OPTIONS layerOptions;
-        #endregion
     }
 }

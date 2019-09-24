@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct D3D12_DESCRIPTOR_HEAP_DESC
     {
-        #region Fields
         public D3D12_DESCRIPTOR_HEAP_TYPE Type;
 
         [NativeTypeName("UINT")]
@@ -17,6 +16,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint NodeMask;
-        #endregion
     }
 }

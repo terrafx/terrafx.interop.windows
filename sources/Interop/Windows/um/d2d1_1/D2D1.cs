@@ -11,11 +11,8 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class D2D1
     {
-        #region Constants
         public const uint D2D1_INVALID_PROPERTY_INDEX = uint.MaxValue;
-        #endregion
 
-        #region IID_* Constants
         public static readonly Guid IID_ID2D1GdiMetafileSink = new Guid(0x82237326, 0x8111, 0x4F7C, 0xBC, 0xF4, 0xB5, 0xC1, 0x17, 0x55, 0x64, 0xFE);
 
         public static readonly Guid IID_ID2D1GdiMetafile = new Guid(0x2F543DC3, 0xCFC1, 0x4211, 0x86, 0x4F, 0xCF, 0xD9, 0x1C, 0x6F, 0x33, 0x95);
@@ -53,9 +50,7 @@ namespace TerraFX.Interop
         public static readonly Guid IID_ID2D1Factory1 = new Guid(0xBB12D362, 0xDAEE, 0x4B9A, 0xAA, 0x1D, 0x14, 0xBA, 0x40, 0x1C, 0xFA, 0x1F);
 
         public static readonly Guid IID_ID2D1Multithread = new Guid(0x31E6E7BC, 0xE0FF, 0x4D46, 0x8C, 0x64, 0xA0, 0xA8, 0xC4, 0x1C, 0x15, 0xD3);
-        #endregion
 
-        #region External Methods
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D2D1CreateDevice", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
         [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
@@ -106,6 +101,5 @@ namespace TerraFX.Interop
           [In, NativeTypeName("FLOAT")] float y,
           [In, NativeTypeName("FLOAT")] float z
         );
-        #endregion
     }
 }

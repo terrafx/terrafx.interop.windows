@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("3FE6ADEA-7643-4F53-BD14-A0CE63F24042")]
     public unsafe struct ID2D1OffsetTransform
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1OffsetTransform* This
         );
-        #endregion
 
-        #region ID2D1TransformNode Delegates
         /// <summary>Return the number of input this node has.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -50,9 +45,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _GetInputCount(
             [In] ID2D1OffsetTransform* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _SetOffset(
@@ -67,9 +60,7 @@ namespace TerraFX.Interop
             [In] ID2D1OffsetTransform* This,
             [Out] POINT* _result
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -107,9 +98,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1TransformNode Methods
         [return: NativeTypeName("UINT32")]
         public uint GetInputCount()
         {
@@ -120,9 +109,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         public void SetOffset(
             [In, NativeTypeName("D2D1_POINT_2L")] POINT offset
         )
@@ -148,29 +135,20 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1TransformNode Fields
             public IntPtr GetInputCount;
-            #endregion
 
-            #region Fields
             public IntPtr SetOffset;
 
             public IntPtr GetOffset;
-            #endregion
         }
-        #endregion
     }
 }

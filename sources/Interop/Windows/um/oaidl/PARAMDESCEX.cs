@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public struct PARAMDESCEX
     {
-        #region Fields
         [NativeTypeName("ULONG")]
         public uint cBytes;
 
         [NativeTypeName("VARIANTARG")]
         public VARIANT varDefaultValue;
-        #endregion
     }
 }

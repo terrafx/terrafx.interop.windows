@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("483473D7-CD46-4F9D-9D3A-3112AA80159D")]
     public unsafe struct ID2D1Properties
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1Properties* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Returns the total number of custom properties in this interface.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -154,9 +149,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT32")] uint index,
             [Out] ID2D1Properties** subProperties
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -194,9 +187,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("UINT32")]
         public uint GetPropertyCount()
         {
@@ -376,20 +367,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetPropertyCount;
 
             public IntPtr GetPropertyName;
@@ -411,8 +397,6 @@ namespace TerraFX.Interop
             public IntPtr GetValueSize;
 
             public IntPtr GetSubProperties;
-            #endregion
         }
-        #endregion
     }
 }

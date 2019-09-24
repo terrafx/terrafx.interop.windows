@@ -27,11 +27,8 @@ namespace TerraFX.Samples.DirectX.D3D12
 {
     public unsafe class HelloWindow : DXSample
     {
-        #region Constants
         private const uint FrameCount = 2;
-        #endregion
 
-        #region Fields
         // Pipeline objects
         private IDXGISwapChain3* _swapChain;
         private ID3D12Device* _device;
@@ -48,16 +45,12 @@ namespace TerraFX.Samples.DirectX.D3D12
         private IntPtr _fenceEvent;
         private ID3D12Fence* _fence;
         private ulong _fenceValue;
-        #endregion
 
-        #region Constructors
         public HelloWindow(uint width, uint height, string name)
             : base(width, height, name)
         {
         }
-        #endregion
 
-        #region Methods
         public override void OnInit()
         {
             LoadPipeline();
@@ -439,20 +432,15 @@ namespace TerraFX.Samples.DirectX.D3D12
 
             base.Dispose(isDisposing);
         }
-        #endregion
 
-        #region Structs
         private unsafe struct RenderTargets_e__FixedBuffer
         {
-            #region Fields
 #pragma warning disable CS0649
             public ID3D12Resource* e0;
 
             public ID3D12Resource* e1;
 #pragma warning restore CS0649
-            #endregion
 
-            #region Properties
             public ID3D12Resource* this[int index]
             {
                 get
@@ -471,8 +459,6 @@ namespace TerraFX.Samples.DirectX.D3D12
                     }
                 }
             }
-            #endregion
         }
-        #endregion
     }
 }

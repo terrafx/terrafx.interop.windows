@@ -7,8 +7,6 @@ namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        #region Constants
         public const uint INFINITE = 0xFFFFFFFF;
-        #endregion
     }
 }

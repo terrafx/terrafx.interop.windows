@@ -8,11 +8,8 @@ namespace TerraFX.Interop
     /// <summary>Line breakpoint characteristics of a character.</summary>
     public struct DWRITE_LINE_BREAKPOINT
     {
-        #region Fields
         private byte _bitField;
-        #endregion
 
-        #region Properties
         /// <summary>Breaking condition before the character.</summary>
         [NativeTypeName("UINT8:2")]
         public byte breakConditionBefore
@@ -86,6 +83,5 @@ namespace TerraFX.Interop
                 _bitField = (byte)((_bitField & 0b0011_1111) | ((value << 6) & 0b1100_0000));
             }
         }
-        #endregion
     }
 }

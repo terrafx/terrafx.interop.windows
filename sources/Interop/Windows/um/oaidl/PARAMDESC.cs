@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public unsafe struct PARAMDESC
     {
-        #region Fields
         [NativeTypeName("LPPARAMDESCEX")]
         public PARAMDESCEX* pparamdescex;
 
         [NativeTypeName("USHORT")]
         public ushort wParamFlags;
-        #endregion
     }
 }

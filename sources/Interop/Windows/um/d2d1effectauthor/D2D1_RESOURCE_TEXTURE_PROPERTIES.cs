@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>This is used to define a resource texture when that resource texture is created.</summary>
     public unsafe struct D2D1_RESOURCE_TEXTURE_PROPERTIES
     {
-        #region Fields
         [NativeTypeName("UINT32[]")]
         public uint* extents;
 
@@ -23,6 +22,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("D2D1_EXTEND_MODE[]")]
         public D2D1_EXTEND_MODE* extendModes;
-        #endregion
     }
 }

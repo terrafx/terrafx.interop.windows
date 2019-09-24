@@ -49,11 +49,8 @@ namespace TerraFX.Samples.DirectX.D3D12
 {
     public unsafe class HelloTriangle : DXSample
     {
-        #region Constants
         private const uint FrameCount = 2;
-        #endregion
 
-        #region Fields
         // Pipeline objects
         private D3D12_VIEWPORT _viewport;
         private RECT _scissorRect;
@@ -77,9 +74,7 @@ namespace TerraFX.Samples.DirectX.D3D12
         private IntPtr _fenceEvent;
         private ID3D12Fence* _fence;
         private ulong _fenceValue;
-        #endregion
 
-        #region Constructors
         public HelloTriangle(uint width, uint height, string name)
             : base(width, height, name)
         {
@@ -99,9 +94,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 bottom = unchecked((int)height)
             };
         }
-        #endregion
 
-        #region Methods
         public override void OnInit()
         {
             LoadPipeline();
@@ -770,20 +763,15 @@ namespace TerraFX.Samples.DirectX.D3D12
 
             base.Dispose(isDisposing);
         }
-        #endregion
 
-        #region Structs
         private unsafe struct RenderTargets_e__FixedBuffer
         {
-            #region Fields
 #pragma warning disable CS0649
             public ID3D12Resource* E0;
 
             public ID3D12Resource* E1;
 #pragma warning restore CS0649
-            #endregion
 
-            #region Properties
             public ID3D12Resource* this[int index]
             {
                 get
@@ -802,17 +790,13 @@ namespace TerraFX.Samples.DirectX.D3D12
                     }
                 }
             }
-            #endregion
         }
 
         private struct Vertex
         {
-            #region Fields
             public Vector3 Position;
 
             public Vector4 Color;
-            #endregion
         }
-        #endregion
     }
 }

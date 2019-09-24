@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>Properties of a transformed image source.</summary>
     public struct D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES
     {
-        #region Fields
         /// <summary>The orientation at which the image source is drawn.</summary>
         public D2D1_ORIENTATION orientation;
 
@@ -25,6 +24,5 @@ namespace TerraFX.Interop
 
         /// <summary>Option flags.</summary>
         public D2D1_TRANSFORMED_IMAGE_SOURCE_OPTIONS options;
-        #endregion
     }
 }

@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("B22E3FBA-3925-4323-B5C1-9EBFC430F236")]
     public unsafe struct IWICMetadataWriterInfo
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IWICMetadataWriterInfo* This
         );
-        #endregion
 
-        #region IWICComponentInfo Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -113,9 +108,7 @@ namespace TerraFX.Interop
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzFriendlyName,
             [Out, NativeTypeName("UINT")] uint* pcchActual
         );
-        #endregion
 
-        #region IWICMetadataHandlerInfo Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -177,9 +170,7 @@ namespace TerraFX.Interop
             [In] IWICMetadataWriterInfo* This,
             [Out, NativeTypeName("BOOL")] int* pfFixedSize
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -198,9 +189,7 @@ namespace TerraFX.Interop
             [In] IWICMetadataWriterInfo* This,
             [Out] IWICMetadataWriter** ppIWriter = null
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -238,9 +227,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IWICComponentInfo Methods
         [return: NativeTypeName("HRESULT")]
         public int GetComponentType(
             [Out] WICComponentType* pType
@@ -368,9 +355,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IWICMetadataHandlerInfo Methods
         [return: NativeTypeName("HRESULT")]
         public int GetMetadataFormat(
             [Out, NativeTypeName("GUID")] Guid* pguidMetadataFormat
@@ -480,9 +465,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetHeader(
             [In, NativeTypeName("REFGUID")] Guid* guidContainerFormat,
@@ -516,20 +499,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IWICComponentInfo Fields
             public IntPtr GetComponentType;
 
             public IntPtr GetCLSID;
@@ -545,9 +523,7 @@ namespace TerraFX.Interop
             public IntPtr GetSpecVersion;
 
             public IntPtr GetFriendlyName;
-            #endregion
 
-            #region IWICMetadataHandlerInfo Fields
             public IntPtr GetMetadataFormat;
 
             public IntPtr GetContainerFormats;
@@ -561,14 +537,10 @@ namespace TerraFX.Interop
             public IntPtr DoesSupportPadding;
 
             public IntPtr DoesRequireFixedSize;
-            #endregion
 
-            #region Fields
             public IntPtr GetHeader;
 
             public IntPtr CreateInstance;
-            #endregion
         }
-        #endregion
     }
 }

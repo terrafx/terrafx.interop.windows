@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("1AB42875-C57F-4BE9-BD85-9CD78D6F55EE")]
     public unsafe struct ID2D1ColorContext1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1ColorContext1* This
         );
-        #endregion
 
-        #region ID2D1Resource Delegates
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -50,9 +45,7 @@ namespace TerraFX.Interop
             [In] ID2D1ColorContext1* This,
             [Out] ID2D1Factory** factory
         );
-        #endregion
 
-        #region ID2D1ColorContext Delegates
         /// <summary>Retrieves the color space of the color context.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -77,9 +70,7 @@ namespace TerraFX.Interop
             [Out, NativeTypeName("BYTE[]")] byte* profile,
             [In, NativeTypeName("UINT32")] uint profileSize
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Retrieves the color context type.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -102,9 +93,7 @@ namespace TerraFX.Interop
             [In] ID2D1ColorContext1* This,
             [Out] D2D1_SIMPLE_COLOR_PROFILE* simpleProfile
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -142,9 +131,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1Resource Methods
         public void GetFactory(
             [Out] ID2D1Factory** factory
         )
@@ -157,9 +144,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1ColorContext Methods
         public D2D1_COLOR_SPACE GetColorSpace()
         {
             fixed (ID2D1ColorContext1* This = &this)
@@ -196,9 +181,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         public D2D1_COLOR_CONTEXT_TYPE GetColorContextType()
         {
             fixed (ID2D1ColorContext1* This = &this)
@@ -232,39 +215,28 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1Resource Fields
             public IntPtr GetFactory;
-            #endregion
 
-            #region ID2D1ColorContext Fields
             public IntPtr GetColorSpace;
 
             public IntPtr GetProfileSize;
 
             public IntPtr GetProfile;
-            #endregion
 
-            #region Fields
             public IntPtr GetColorContextType;
 
             public IntPtr GetDXGIColorSpace;
 
             public IntPtr GetSimpleColorProfile;
-            #endregion
         }
-        #endregion
     }
 }

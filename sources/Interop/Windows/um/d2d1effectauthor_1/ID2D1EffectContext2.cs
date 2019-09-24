@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("577AD2A0-9FC7-4DDA-8B18-DAB810140052")]
     public unsafe struct ID2D1EffectContext2
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1EffectContext2* This
         );
-        #endregion
 
-        #region ID2D1EffectContext Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _GetDpi(
@@ -247,9 +242,7 @@ namespace TerraFX.Interop
             [In] ID2D1EffectContext2* This,
             [In] D2D1_BUFFER_PRECISION bufferPrecision
         );
-        #endregion
 
-        #region ID2D1EffectContext1 Delegates
         /// <summary>Creates a 3D lookup table for mapping a 3-channel input to a 3-channel output. The table data must be provided in 4-channel format.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -263,9 +256,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT32[]")] uint* strides,
             [Out] ID2D1LookupTable3D** lookupTable
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Creates a color context from a DXGI color space type. It is only valid to use this with the Color Management Effect in 'Best' mode.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -285,9 +276,7 @@ namespace TerraFX.Interop
             [In] D2D1_SIMPLE_COLOR_PROFILE* simpleProfile,
             [Out] ID2D1ColorContext1** colorContext
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -325,9 +314,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1EffectContext Methods
         public void GetDpi(
             [Out, NativeTypeName("FLOAT")] float* dpiX,
             [Out, NativeTypeName("FLOAT")] float* dpiY
@@ -688,9 +675,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1EffectContext1 Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateLookupTable3D(
             [In] D2D1_BUFFER_PRECISION precision,
@@ -714,9 +699,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateColorContextFromDxgiColorSpace(
             [In] DXGI_COLOR_SPACE_TYPE colorSpace,
@@ -748,20 +731,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1EffectContext Fields
             public IntPtr GetDpi;
 
             public IntPtr CreateEffect;
@@ -803,18 +781,12 @@ namespace TerraFX.Interop
             public IntPtr CheckFeatureSupport;
 
             public IntPtr IsBufferPrecisionSupported;
-            #endregion
 
-            #region ID2D1EffectContext1 Fields
             public IntPtr CreateLookupTable3D;
-            #endregion
 
-            #region Fields
             public IntPtr CreateColorContextFromDxgiColorSpace;
 
             public IntPtr CreateColorContextFromSimpleColorProfile;
-            #endregion
         }
-        #endregion
     }
 }

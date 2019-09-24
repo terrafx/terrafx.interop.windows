@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("25483823-CD46-4C7D-86CA-47AA95B837BD")]
     public unsafe struct IDXGIFactory3
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDXGIFactory3* This
         );
-        #endregion
 
-        #region IDXGIObject Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -79,9 +74,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppParent
         );
-        #endregion
 
-        #region IDXGIFactory Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -126,9 +119,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("HMODULE")] IntPtr Module,
             [Out] IDXGIAdapter** ppAdapter
         );
-        #endregion
 
-        #region IDXGIFactory1 Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -144,9 +135,7 @@ namespace TerraFX.Interop
         public /* static */ delegate int _IsCurrent(
             [In] IDXGIFactory3* This
         );
-        #endregion
 
-        #region IDXGIFactory2 Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("BOOL")]
@@ -250,18 +239,14 @@ namespace TerraFX.Interop
             [In, Optional] IDXGIOutput* pRestrictToOutput,
             [Out] IDXGISwapChain1** ppSwapChain
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("UINT")]
         public /* static */ delegate uint _GetCreationFlags(
             [In] IDXGIFactory3* This
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -299,9 +284,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDXGIObject Methods
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData(
             [In, NativeTypeName("REFGUID")] Guid* Name,
@@ -369,9 +352,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDXGIFactory Methods
         [return: NativeTypeName("HRESULT")]
         public int EnumAdapters(
             [In, NativeTypeName("UINT")] uint Adapter,
@@ -451,9 +432,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDXGIFactory1 Methods
         [return: NativeTypeName("HRESULT")]
         public int EnumAdapters1(
             [In, NativeTypeName("UINT")] uint Adapter,
@@ -480,9 +459,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDXGIFactory2 Methods
         [return: NativeTypeName("BOOL")]
         public int IsWindowedStereoEnabled()
         {
@@ -669,9 +646,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("UINT")]
         public uint GetCreationFlags()
         {
@@ -682,20 +657,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDXGIObject Fields
             public IntPtr SetPrivateData;
 
             public IntPtr SetPrivateDataInterface;
@@ -703,9 +673,7 @@ namespace TerraFX.Interop
             public IntPtr GetPrivateData;
 
             public IntPtr GetParent;
-            #endregion
 
-            #region IDXGIFactory Fields
             public IntPtr EnumAdapters;
 
             public IntPtr MakeWindowAssociation;
@@ -715,15 +683,11 @@ namespace TerraFX.Interop
             public IntPtr CreateSwapChain;
 
             public IntPtr CreateSoftwareAdapter;
-            #endregion
 
-            #region IDXGIFactory1 Fields
             public IntPtr EnumAdapters1;
 
             public IntPtr IsCurrent;
-            #endregion
 
-            #region IDXGIFactory2 Fields
             public IntPtr IsWindowedStereoEnabled;
 
             public IntPtr CreateSwapChainForHwnd;
@@ -745,12 +709,8 @@ namespace TerraFX.Interop
             public IntPtr UnregisterOcclusionStatus;
 
             public IntPtr CreateSwapChainForComposition;
-            #endregion
 
-            #region Fields
             public IntPtr GetCreationFlags;
-            #endregion
         }
-        #endregion
     }
 }

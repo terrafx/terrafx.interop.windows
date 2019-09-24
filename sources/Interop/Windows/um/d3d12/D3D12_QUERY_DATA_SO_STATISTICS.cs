@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public struct D3D12_QUERY_DATA_SO_STATISTICS
     {
-        #region Fields
         [NativeTypeName("UINT64")]
         public ulong NumPrimitivesWritten;
 
         [NativeTypeName("UINT64")]
         public ulong PrimitivesStorageNeeded;
-        #endregion
     }
 }

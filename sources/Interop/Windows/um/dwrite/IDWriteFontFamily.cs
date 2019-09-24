@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("DA20D8EF-812A-4C43-9802-62EC4ABD7ADD")]
     public unsafe struct IDWriteFontFamily
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteFontFamily* This
         );
-        #endregion
 
-        #region IDWriteFontList Delegates
         /// <summary>Gets the font collection that contains the fonts.</summary>
         /// <param name="fontCollection">Receives a pointer to the font collection object.</param>
         /// <returns>Standard HRESULT error code.</returns>
@@ -74,9 +69,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT32")] uint index,
             [Out] IDWriteFont** font
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Creates a localized strings object that contains the family names for the font family, indexed by locale name.</summary>
         /// <param name="names">Receives a pointer to the newly created localized strings object.</param>
         /// <returns>Standard HRESULT error code.</returns>
@@ -121,9 +114,7 @@ namespace TerraFX.Interop
             [In] DWRITE_FONT_STYLE style,
             [Out] IDWriteFontList** matchingFonts
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -161,9 +152,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteFontList Methods
         [return: NativeTypeName("HRESULT")]
         public int GetFontCollection(
             [Out] IDWriteFontCollection** fontCollection
@@ -204,9 +193,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetFamilyNames(
             [Out] IDWriteLocalizedStrings** names
@@ -260,35 +247,26 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDWriteFontList Fields
             public IntPtr GetFontCollection;
 
             public IntPtr GetFontCount;
 
             public IntPtr GetFont;
-            #endregion
 
-            #region Fields
             public IntPtr GetFamilyNames;
 
             public IntPtr GetFirstMatchingFont;
 
             public IntPtr GetMatchingFonts;
-            #endregion
         }
-        #endregion
     }
 }

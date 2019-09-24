@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("C78A6519-40D6-4218-B2DE-BEEEB744BB3E")]
     public unsafe struct ID2D1CommandSink4
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1CommandSink4* This
         );
-        #endregion
 
-        #region ID2D1CommandSink Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -271,9 +266,7 @@ namespace TerraFX.Interop
         public /* static */ delegate int _PopLayer(
             [In] ID2D1CommandSink4* This
         );
-        #endregion
 
-        #region ID2D1CommandSink1 Delegates
         /// <summary>This method is called if primitiveBlend value was added after Windows 8. SetPrimitiveBlend method is used for Win8 values (_SOURCE_OVER and _COPY).</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -282,9 +275,7 @@ namespace TerraFX.Interop
             [In] ID2D1CommandSink4* This,
             [In] D2D1_PRIMITIVE_BLEND primitiveBlend
         );
-        #endregion
 
-        #region ID2D1CommandSink2 Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -312,9 +303,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* destinationRectangle = null,
             [In, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* sourceRectangle = null
         );
-        #endregion
 
-        #region ID2D1CommandSink3 Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -327,9 +316,7 @@ namespace TerraFX.Interop
             [In] D2D1_BITMAP_INTERPOLATION_MODE interpolationMode,
             [In] D2D1_SPRITE_OPTIONS spriteOptions
         );
-        #endregion
 
-        #region Delegates
         /// <summary>A new function to set blend mode that respects the new MAX blend. Implementers of SetPrimitiveBlend2 should expect and handle blend mode: D2D1_PRIMITIVE_BLEND_MAX Implementers of SetPrimitiveBlend1 should expect and handle blend modes: D2D1_PRIMITIVE_BLEND_MIN and D2D1_PRIMITIVE_BLEND_ADD Implementers of SetPrimitiveBlend should expect and handle blend modes: D2D1_PRIMITIVE_BLEND_SOURCE_OVER and D2D1_PRIMITIVE_BLEND_COPY</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -338,9 +325,7 @@ namespace TerraFX.Interop
             [In] ID2D1CommandSink4* This,
             [In] D2D1_PRIMITIVE_BLEND primitiveBlend
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -378,9 +363,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1CommandSink Methods
         [return: NativeTypeName("HRESULT")]
         public int BeginDraw()
         {
@@ -786,9 +769,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1CommandSink1 Methods
         [return: NativeTypeName("HRESULT")]
         public int SetPrimitiveBlend1(
             [In] D2D1_PRIMITIVE_BLEND primitiveBlend
@@ -802,9 +783,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1CommandSink2 Methods
         [return: NativeTypeName("HRESULT")]
         public int DrawInk(
             [In] ID2D1Ink* ink,
@@ -854,9 +833,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1CommandSink3 Methods
         [return: NativeTypeName("HRESULT")]
         public int DrawSpriteBatch(
             [In] ID2D1SpriteBatch* spriteBatch,
@@ -880,9 +857,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int SetPrimitiveBlend2(
             [In] D2D1_PRIMITIVE_BLEND primitiveBlend
@@ -896,20 +871,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1CommandSink Fields
             public IntPtr BeginDraw;
 
             public IntPtr EndDraw;
@@ -959,28 +929,18 @@ namespace TerraFX.Interop
             public IntPtr PopAxisAlignedClip;
 
             public IntPtr PopLayer;
-            #endregion
 
-            #region ID2D1CommandSink1 Fields
             public IntPtr SetPrimitiveBlend1;
-            #endregion
 
-            #region ID2D1CommandSink2 Fields
             public IntPtr DrawInk;
 
             public IntPtr DrawGradientMesh;
 
             public IntPtr DrawGdiMetafile1;
-            #endregion
 
-            #region ID2D1CommandSink3 Fields
             public IntPtr DrawSpriteBatch;
-            #endregion
 
-            #region Fields
             public IntPtr SetPrimitiveBlend2;
-            #endregion
         }
-        #endregion
     }
 }

@@ -9,9 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe struct DXGI_SHARED_RESOURCE
     {
-        #region Fields
         [NativeTypeName("HANDLE")]
         public IntPtr Handle;
-        #endregion
     }
 }

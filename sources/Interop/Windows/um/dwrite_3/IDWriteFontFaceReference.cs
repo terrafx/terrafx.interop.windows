@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("5E7FA7CA-DDE3-424C-89F0-9FCD6FED58CD")]
     public unsafe struct IDWriteFontFaceReference
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteFontFaceReference* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Creates a font face from the reference for use with layout, shaping, or rendering.</summary>
         /// <param name="fontFace">Newly created font face object, or nullptr in the case of failure.</param>
         /// <returns> Standard HRESULT error code.</returns>
@@ -186,9 +181,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT64")] ulong fileOffset,
             [In, NativeTypeName("UINT64")] ulong fragmentSize
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -226,9 +219,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateFontFace(
             [Out] IDWriteFontFace3** fontFace
@@ -412,20 +403,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr CreateFontFace;
 
             public IntPtr CreateFontFaceWithSimulations;
@@ -453,8 +439,6 @@ namespace TerraFX.Interop
             public IntPtr EnqueueGlyphDownloadRequest;
 
             public IntPtr EnqueueFileFragmentDownloadRequest;
-            #endregion
         }
-        #endregion
     }
 }

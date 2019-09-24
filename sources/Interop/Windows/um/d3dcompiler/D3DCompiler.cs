@@ -12,7 +12,6 @@ namespace TerraFX.Interop
 {
     public static unsafe class D3DCompiler
     {
-        #region Constants
         public const string D3DCOMPILER_DLL = "D3DCompiler_47.dll";
 
         public const int D3D_COMPILER_VERSION = 47;
@@ -22,9 +21,7 @@ namespace TerraFX.Interop
         public const uint D3D_GET_INST_OFFSETS_INCLUDE_NON_EXECUTABLE = 0x00000001;
 
         public const uint D3D_COMPRESS_SHADER_KEEP_ALL_PARTS = 0x00000001;
-        #endregion
 
-        #region D3DCOMPILE_* Constants
         public const uint D3DCOMPILE_DEBUG = 1 << 0;
 
         public const uint D3DCOMPILE_SKIP_VALIDATION = 1 << 1;
@@ -72,31 +69,23 @@ namespace TerraFX.Interop
         public const uint D3DCOMPILE_ENABLE_UNBOUNDED_DESCRIPTOR_TABLES = 1 << 20;
 
         public const uint D3DCOMPILE_ALL_RESOURCES_BOUND = 1 << 21;
-        #endregion
 
-        #region D3DCOMPILE_EFFECT_* Constants
         public const uint D3DCOMPILE_EFFECT_CHILD_EFFECT = 1 << 0;
 
         public const uint D3DCOMPILE_EFFECT_ALLOW_SLOW_OPS = 1 << 1;
-        #endregion
 
-        #region D3DCOMPILE_FLAGS2_* Constants
         public const uint D3DCOMPILE_FLAGS2_FORCE_ROOT_SIGNATURE_LATEST = 0;
 
         public const uint D3DCOMPILE_FLAGS2_FORCE_ROOT_SIGNATURE_1_0 = 1 << 4;
 
         public const uint D3DCOMPILE_FLAGS2_FORCE_ROOT_SIGNATURE_1_1 = 1 << 5;
-        #endregion
 
-        #region D3DCOMPILE_SECDATA_* Constants
         public const uint D3DCOMPILE_SECDATA_MERGE_UAV_SLOTS = 0x00000001;
 
         public const uint D3DCOMPILE_SECDATA_PRESERVE_TEMPLATE_SLOTS = 0x00000002;
 
         public const uint D3DCOMPILE_SECDATA_REQUIRE_TEMPLATE_MATCH = 0x00000004;
-        #endregion
 
-        #region D3D_DISASM_* Constants
         public const uint D3D_DISASM_ENABLE_COLOR_CODE = 0x00000001;
 
         public const uint D3D_DISASM_ENABLE_DEFAULT_VALUE_PRINTS = 0x00000002;
@@ -112,9 +101,7 @@ namespace TerraFX.Interop
         public const uint D3D_DISASM_INSTRUCTION_ONLY = 0x00000040;
 
         public const uint D3D_DISASM_PRINT_HEX_LITERALS = 0x00000080;
-        #endregion
 
-        #region External Methods
         [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DReadFileToBlob", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
         [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
@@ -356,14 +343,11 @@ namespace TerraFX.Interop
             [Out] ID3DBlob** ppShaders,
             [Out, Optional, NativeTypeName("UINT")] uint* pTotalShaders
         );
-        #endregion
 
-        #region Methods
         public static int D3D12ReflectLibrary(void* pSrcData, UIntPtr SrcDataSize, ID3D12LibraryReflection** ppReflector)
         {
             var iid = IID_ID3D12LibraryReflection;
             return D3DReflectLibrary(pSrcData, SrcDataSize, &iid, (void**)ppReflector);
         }
-        #endregion
     }
 }

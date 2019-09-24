@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("93A665C4-A3B2-4E5D-B692-A26AE14E3374")]
     public unsafe struct ID3D12Debug2
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,18 +36,14 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID3D12Debug2* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _SetGPUBasedValidationFlags(
             [In] ID3D12Debug2* This,
             [In] D3D12_GPU_BASED_VALIDATION_FLAGS Flags
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -88,9 +81,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         public void SetGPUBasedValidationFlags(
             [In] D3D12_GPU_BASED_VALIDATION_FLAGS Flags
         )
@@ -103,23 +94,16 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr SetGPUBasedValidationFlags;
-            #endregion
         }
-        #endregion
     }
 }

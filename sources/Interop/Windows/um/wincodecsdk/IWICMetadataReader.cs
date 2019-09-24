@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("9204FE99-D8FC-4FD5-A001-9536B067A899")]
     public unsafe struct IWICMetadataReader
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IWICMetadataReader* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -94,9 +89,7 @@ namespace TerraFX.Interop
             [In] IWICMetadataReader* This,
             [Out] IWICEnumMetadataItem** ppIEnumMetadata = null
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -134,9 +127,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetMetadataFormat(
             [Out, NativeTypeName("GUID")] Guid* pguidMetadataFormat
@@ -230,20 +221,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetMetadataFormat;
 
             public IntPtr GetMetadataHandlerInfo;
@@ -255,8 +241,6 @@ namespace TerraFX.Interop
             public IntPtr GetValue;
 
             public IntPtr GetEnumerator;
-            #endregion
         }
-        #endregion
     }
 }

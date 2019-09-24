@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>The DWRITE_CLUSTER_METRICS public structure contains information about a glyph cluster.</summary>
     public struct DWRITE_CLUSTER_METRICS
     {
-        #region Fields
         /// <summary>The total advance width of all glyphs in the cluster.</summary>
         [NativeTypeName("FLOAT")]
         public float width;
@@ -18,9 +17,7 @@ namespace TerraFX.Interop
         public ushort length;
 
         private ushort _bitField;
-        #endregion
 
-        #region Properties
         /// <summary>Indicate whether line can be broken right after the cluster.</summary>
         [NativeTypeName("UINT16:1")]
         public ushort canWrapLineAfter
@@ -109,6 +106,5 @@ namespace TerraFX.Interop
                 _bitField = (ushort)((_bitField & 0b0000_0000_0001_1111) | ((value << 5) & 0b1111_1111_1110_0000));
             }
         }
-        #endregion
     }
 }

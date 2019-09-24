@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct WNDCLASSEX
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint cbSize;
 
@@ -43,6 +42,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("HICON")]
         public IntPtr hIconSm;
-        #endregion
     }
 }

@@ -14,11 +14,8 @@ namespace TerraFX.Interop
     [Guid("B859EE5A-D838-4B5B-A2E8-1ADC7D93DB48")]
     public unsafe struct IDWriteFactory
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -41,9 +38,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteFactory* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Gets a font collection representing the set of installed fonts.</summary>
         /// <param name="fontCollection">Receives a pointer to the system font collection object, or NULL in case of failure.</param>
         /// <param name="checkForUpdates">If this parameter is nonzero, the function performs an immediate check for changes to the set of installed fonts. If this parameter is FALSE, the function will still detect changes if the font cache service is running, but there may be some latency. For example, an application might specify TRUE if it has itself just installed a font and wants to be sure the font collection contains that font.</param>
@@ -378,9 +373,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("FLOAT")] float baselineOriginY,
             [Out] IDWriteGlyphRunAnalysis** glyphRunAnalysis
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -418,9 +411,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetSystemFontCollection(
             [Out] IDWriteFontCollection** fontCollection,
@@ -816,20 +807,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetSystemFontCollection;
 
             public IntPtr CreateCustomFontCollection;
@@ -871,8 +857,6 @@ namespace TerraFX.Interop
             public IntPtr CreateNumberSubstitution;
 
             public IntPtr CreateGlyphRunAnalysis;
-            #endregion
         }
-        #endregion
     }
 }

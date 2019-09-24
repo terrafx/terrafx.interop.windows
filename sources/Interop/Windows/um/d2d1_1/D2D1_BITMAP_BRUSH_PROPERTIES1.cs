@@ -8,12 +8,10 @@ namespace TerraFX.Interop
     /// <summary>Describes the extend modes and the interpolation mode of an ID2D1BitmapBrush.</summary>
     public struct D2D1_BITMAP_BRUSH_PROPERTIES1
     {
-        #region Fields
         public D2D1_EXTEND_MODE extendModeX;
 
         public D2D1_EXTEND_MODE extendModeY;
 
         public D2D1_INTERPOLATION_MODE interpolationMode;
-        #endregion
     }
 }

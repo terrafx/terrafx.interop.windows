@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("A898A84C-3873-4588-B08B-EBBF978DF041")]
     public unsafe struct ID2D1Bitmap1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1Bitmap1* This
         );
-        #endregion
 
-        #region ID2D1Resource Delegates
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -50,9 +45,7 @@ namespace TerraFX.Interop
             [In] ID2D1Bitmap1* This,
             [Out] ID2D1Factory** factory
         );
-        #endregion
 
-        #region ID2D1Bitmap Delegates
         /// <summary>Returns the size of the bitmap in resolution independent units.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -117,9 +110,7 @@ namespace TerraFX.Interop
             [In] void* srcData,
             [In, NativeTypeName("UINT32")] uint pitch
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Retrieves the color context information associated with the bitmap.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -161,9 +152,7 @@ namespace TerraFX.Interop
         public /* static */ delegate int _Unmap(
             [In] ID2D1Bitmap1* This
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -201,9 +190,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1Resource Methods
         public void GetFactory(
             [Out] ID2D1Factory** factory
         )
@@ -216,9 +203,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1Bitmap Methods
         [return: NativeTypeName("D2D1_SIZE_F")]
         public D2D_SIZE_F GetSize()
         {
@@ -325,9 +310,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         public void GetColorContext(
             [Out] ID2D1ColorContext** colorContext
         )
@@ -391,24 +374,17 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1Resource Fields
             public IntPtr GetFactory;
-            #endregion
 
-            #region ID2D1Bitmap Fields
             public IntPtr GetSize;
 
             public IntPtr GetPixelSize;
@@ -422,9 +398,7 @@ namespace TerraFX.Interop
             public IntPtr CopyFromRenderTarget;
 
             public IntPtr CopyFromMemory;
-            #endregion
 
-            #region Fields
             public IntPtr GetColorContext;
 
             public IntPtr GetOptions;
@@ -434,8 +408,6 @@ namespace TerraFX.Interop
             public IntPtr Map;
 
             public IntPtr Unmap;
-            #endregion
         }
-        #endregion
     }
 }

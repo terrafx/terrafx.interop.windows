@@ -10,26 +10,19 @@ namespace TerraFX.Interop
 {
     public unsafe struct PROPVARIANT
     {
-        #region Fields
         public _Anonymous_e__Union Anonymous;
-        #endregion
 
-        #region Structs
         [StructLayout(LayoutKind.Explicit)]
         public struct _Anonymous_e__Union
         {
-            #region Fields
             [FieldOffset(0)]
             public _Anonymous_e__Struct Anonymous;
 
             [FieldOffset(0)]
             public DECIMAL decVal;
-            #endregion
 
-            #region Structs
             public struct _Anonymous_e__Struct
             {
-                #region Fields
                 [NativeTypeName("VARTYPE")]
                 public ushort vt;
 
@@ -43,13 +36,10 @@ namespace TerraFX.Interop
                 public ushort wReserved3;
 
                 public _Anonymous_e__Union Anonymous;
-                #endregion
 
-                #region Structs
                 [StructLayout(LayoutKind.Explicit)]
                 public struct _Anonymous_e__Union
                 {
-                    #region Fields
                     [FieldOffset(0)]
                     [NativeTypeName("CHAR")]
                     public sbyte cVal;
@@ -303,12 +293,8 @@ namespace TerraFX.Interop
 
                     [FieldOffset(0)]
                     public PROPVARIANT* pvarVal;
-                    #endregion
                 }
-                #endregion
             }
-            #endregion
         }
-        #endregion
     }
 }

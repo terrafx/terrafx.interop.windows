@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("30BAA41E-B15B-475C-A0BB-1AF5C5B64328")]
     public unsafe struct ID3D12Device2
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID3D12Device2* This
         );
-        #endregion
 
-        #region ID3D12Object Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -78,9 +73,7 @@ namespace TerraFX.Interop
             [In] ID3D12Device2* This,
             [In, NativeTypeName("LPCWSTR")] char* Name
         );
-        #endregion
 
-        #region ID3D12Device Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("UINT")]
@@ -457,9 +450,7 @@ namespace TerraFX.Interop
             [In] ID3D12Device2* This,
             [Out] LUID* _result
         );
-        #endregion
 
-        #region ID3D12Device1 Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -492,9 +483,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("ID3D12Pageable*[]")] ID3D12Pageable** ppObjects,
             [In, NativeTypeName("D3D12_RESIDENCY_PRIORITY[]")] D3D12_RESIDENCY_PRIORITY* pPriorities
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -504,9 +493,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppPipelineState
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -544,9 +531,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID3D12Object Methods
         [return: NativeTypeName("HRESULT")]
         public int GetPrivateData(
             [In, NativeTypeName("REFGUID")] Guid* guid,
@@ -612,9 +597,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID3D12Device Methods
         [return: NativeTypeName("UINT")]
         public uint GetNodeCount()
         {
@@ -1302,9 +1285,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID3D12Device1 Methods
         [return: NativeTypeName("HRESULT")]
         public int CreatePipelineLibrary(
             [In] void* pLibraryBlob,
@@ -1364,9 +1345,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int CreatePipelineState(
             [In] D3D12_PIPELINE_STATE_STREAM_DESC* pDesc,
@@ -1384,20 +1363,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID3D12Object Fields
             public IntPtr GetPrivateData;
 
             public IntPtr SetPrivateData;
@@ -1405,9 +1379,7 @@ namespace TerraFX.Interop
             public IntPtr SetPrivateDataInterface;
 
             public IntPtr SetName;
-            #endregion
 
-            #region ID3D12Device Fields
             public IntPtr GetNodeCount;
 
             public IntPtr CreateCommandQueue;
@@ -1481,20 +1453,14 @@ namespace TerraFX.Interop
             public IntPtr GetResourceTiling;
 
             public IntPtr GetAdapterLuid;
-            #endregion
 
-            #region ID3D12Device1 Fields
             public IntPtr CreatePipelineLibrary;
 
             public IntPtr SetEventOnMultipleFenceCompletion;
 
             public IntPtr SetResidencyPriority;
-            #endregion
 
-            #region Fields
             public IntPtr CreatePipelineState;
-            #endregion
         }
-        #endregion
     }
 }

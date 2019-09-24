@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public unsafe struct CAH
     {
-        #region Fields
         [NativeTypeName("ULONG")]
         public uint cElems;
 
         [NativeTypeName("LARGE_INTEGER[]")]
         public LARGE_INTEGER* pElems;
-        #endregion
     }
 }

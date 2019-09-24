@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_FUNCTION_DESC
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint Version;
 
@@ -105,6 +104,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("BOOL")]
         public int Has10Level9PixelShader;
-        #endregion
     }
 }

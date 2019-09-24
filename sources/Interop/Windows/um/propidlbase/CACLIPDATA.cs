@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public unsafe struct CACLIPDATA
     {
-        #region Fields
         [NativeTypeName("ULONG")]
         public uint cElems;
 
         [NativeTypeName("CLIPDATA[]")]
         public CLIPDATA* pElems;
-        #endregion
     }
 }

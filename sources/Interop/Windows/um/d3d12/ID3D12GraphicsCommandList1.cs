@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("553103FB-1FE7-4557-BB38-946D7D0E7CA7")]
     public unsafe struct ID3D12GraphicsCommandList1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID3D12GraphicsCommandList1* This
         );
-        #endregion
 
-        #region ID3D12Object Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -78,9 +73,7 @@ namespace TerraFX.Interop
             [In] ID3D12GraphicsCommandList1* This,
             [In, NativeTypeName("LPCWSTR")] char* Name
         );
-        #endregion
 
-        #region ID3D12DeviceChild Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -89,17 +82,13 @@ namespace TerraFX.Interop
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppvDevice = null
         );
-        #endregion
 
-        #region ID3D12CommandList Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate D3D12_COMMAND_LIST_TYPE __GetType(
             [In] ID3D12GraphicsCommandList1* This
         );
-        #endregion
 
-        #region ID3D12GraphicsCommandList Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -553,9 +542,7 @@ namespace TerraFX.Interop
             [In, Optional] ID3D12Resource* pCountBuffer,
             [In, NativeTypeName("UINT64")] ulong CountBufferOffset
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _AtomicCopyBufferUINT(
@@ -613,9 +600,7 @@ namespace TerraFX.Interop
             [In] DXGI_FORMAT Format,
             [In] D3D12_RESOLVE_MODE ResolveMode
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -653,9 +638,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID3D12Object Methods
         [return: NativeTypeName("HRESULT")]
         public int GetPrivateData(
             [In, NativeTypeName("REFGUID")] Guid* guid,
@@ -721,9 +704,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID3D12DeviceChild Methods
         [return: NativeTypeName("HRESULT")]
         public int GetDevice(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -739,9 +720,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID3D12CommandList Methods
         public D3D12_COMMAND_LIST_TYPE _GetType()
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
@@ -751,9 +730,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID3D12GraphicsCommandList Methods
         [return: NativeTypeName("HRESULT")]
         public int Close()
         {
@@ -1606,9 +1583,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         public void AtomicCopyBufferUINT(
             [In] ID3D12Resource* pDstBuffer,
             [In, NativeTypeName("UINT64")] ulong DstOffset,
@@ -1719,20 +1694,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID3D12Object Fields
             public IntPtr GetPrivateData;
 
             public IntPtr SetPrivateData;
@@ -1740,17 +1710,11 @@ namespace TerraFX.Interop
             public IntPtr SetPrivateDataInterface;
 
             public IntPtr SetName;
-            #endregion
 
-            #region ID3D12DeviceChild Fields
             public IntPtr GetDevice;
-            #endregion
 
-            #region ID3D12CommandList Fields
             public IntPtr _GetType;
-            #endregion
 
-            #region ID3D12GraphicsCommandList Fields
             public IntPtr Close;
 
             public IntPtr Reset;
@@ -1852,9 +1816,7 @@ namespace TerraFX.Interop
             public IntPtr EndEvent;
 
             public IntPtr ExecuteIndirect;
-            #endregion
 
-            #region Fields
             public IntPtr AtomicCopyBufferUINT;
 
             public IntPtr AtomicCopyBufferUINT64;
@@ -1864,8 +1826,6 @@ namespace TerraFX.Interop
             public IntPtr SetSamplePositions;
 
             public IntPtr ResolveSubresourceRegion;
-            #endregion
         }
-        #endregion
     }
 }

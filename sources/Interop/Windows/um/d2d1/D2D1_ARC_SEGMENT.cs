@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>Describes an arc that is defined as part of a path.</summary>
     public struct D2D1_ARC_SEGMENT
     {
-        #region Fields
         [NativeTypeName("D2D1_POINT_2F")]
         public D2D_POINT_2F point;
 
@@ -21,6 +20,5 @@ namespace TerraFX.Interop
         public D2D1_SWEEP_DIRECTION sweepDirection;
 
         public D2D1_ARC_SIZE arcSize;
-        #endregion
     }
 }

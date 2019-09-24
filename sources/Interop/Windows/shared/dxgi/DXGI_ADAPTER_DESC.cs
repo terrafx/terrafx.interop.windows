@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct DXGI_ADAPTER_DESC
     {
-        #region Fields
         [NativeTypeName("WCHAR[128]")]
         public fixed char Description[128];
 
@@ -35,6 +34,5 @@ namespace TerraFX.Interop
         public UIntPtr SharedSystemMemory;
 
         public LUID AdapterLuid;
-        #endregion
     }
 }

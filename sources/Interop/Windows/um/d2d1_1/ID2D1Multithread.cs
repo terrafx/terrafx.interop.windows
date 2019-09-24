@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("31E6E7BC-E0FF-4D46-8C64-A0A8C41C15D3")]
     public unsafe struct ID2D1Multithread
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1Multithread* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Returns whether the D2D factory was created with D2D1_FACTORY_TYPE_MULTI_THREADED.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -64,9 +59,7 @@ namespace TerraFX.Interop
         public /* static */ delegate void _Leave(
             [In] ID2D1Multithread* This
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -104,9 +97,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("BOOL")]
         public int GetMultithreadProtected()
         {
@@ -137,27 +128,20 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetMultithreadProtected;
 
             public IntPtr Enter;
 
             public IntPtr Leave;
-            #endregion
         }
-        #endregion
     }
 }

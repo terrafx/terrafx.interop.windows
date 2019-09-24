@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>The DWRITE_UNDERLINE public structure contains information about the size and placement of underlines. All coordinates are in device independent pixels (DIPs).</summary>
     public unsafe struct DWRITE_UNDERLINE
     {
-        #region Fields
         /// <summary>Width of the underline, measured parallel to the baseline.</summary>
         [NativeTypeName("FLOAT")]
         public float width;
@@ -40,6 +39,5 @@ namespace TerraFX.Interop
         /// underlines are rendered, e.g. rounding the thickness to a whole pixel
         /// in GDI-compatible modes.</summary>
         public DWRITE_MEASURING_MODE measuringMode;
-        #endregion
     }
 }

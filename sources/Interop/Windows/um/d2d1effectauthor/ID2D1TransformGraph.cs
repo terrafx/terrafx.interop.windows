@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("13D29038-C3E6-4034-9081-13B53A417992")]
     public unsafe struct ID2D1TransformGraph
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1TransformGraph* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Return the number of input this graph has.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -124,9 +119,7 @@ namespace TerraFX.Interop
             [In] ID2D1TransformGraph* This,
             [In, NativeTypeName("UINT32")] uint effectInputIndex
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -164,9 +157,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("UINT32")]
         public uint GetInputCount()
         {
@@ -293,20 +284,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetInputCount;
 
             public IntPtr SetSingleTransformNode;
@@ -324,8 +310,6 @@ namespace TerraFX.Interop
             public IntPtr Clear;
 
             public IntPtr SetPassthroughGraph;
-            #endregion
         }
-        #endregion
     }
 }

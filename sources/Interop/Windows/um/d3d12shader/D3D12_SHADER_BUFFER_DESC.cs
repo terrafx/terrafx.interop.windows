@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_SHADER_BUFFER_DESC
     {
-        #region Fields
         [NativeTypeName("LPCSTR")]
         public sbyte* Name;
 
@@ -21,6 +20,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint uFlags;
-        #endregion
     }
 }

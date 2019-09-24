@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public struct WICRawToneCurvePoint
     {
-        #region Fields
         public double Input;
 
         public double Output;
-        #endregion
     }
 }

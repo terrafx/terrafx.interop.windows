@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("00000109-0000-0000-C000-000000000046")]
     public unsafe struct IPersistStream
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IPersistStream* This
         );
-        #endregion
 
-        #region IPersist Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -49,9 +44,7 @@ namespace TerraFX.Interop
             [In] IPersistStream* This,
             [Out, NativeTypeName("CLSID")] Guid* pClassID
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -83,9 +76,7 @@ namespace TerraFX.Interop
             [In] IPersistStream* This,
             [Out] ULARGE_INTEGER* pcbSize
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -123,9 +114,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IPersist Methods
         [return: NativeTypeName("HRESULT")]
         public int GetClassID(
             [Out, NativeTypeName("CLSID")] Guid* pClassID
@@ -139,9 +128,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int IsDirty()
         {
@@ -196,24 +183,17 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IPersist Fields
             public IntPtr GetClassID;
-            #endregion
 
-            #region Fields
             public IntPtr IsDirty;
 
             public IntPtr Load;
@@ -221,8 +201,6 @@ namespace TerraFX.Interop
             public IntPtr Save;
 
             public IntPtr GetSizeMax;
-            #endregion
         }
-        #endregion
     }
 }

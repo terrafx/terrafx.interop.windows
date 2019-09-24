@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>Contains rendering options (hardware or software), pixel format, DPI information, remoting options, and Direct3D support requirements for a render target.</summary>
     public struct D2D1_RENDER_TARGET_PROPERTIES
     {
-        #region Fields
         public D2D1_RENDER_TARGET_TYPE type;
 
         public D2D1_PIXEL_FORMAT pixelFormat;
@@ -22,6 +21,5 @@ namespace TerraFX.Interop
         public D2D1_RENDER_TARGET_USAGE usage;
 
         public D2D1_FEATURE_LEVEL minLevel;
-        #endregion
     }
 }

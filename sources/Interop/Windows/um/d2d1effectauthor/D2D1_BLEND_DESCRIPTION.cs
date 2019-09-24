@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>Blend description which configures a blend transform object.</summary>
     public unsafe struct D2D1_BLEND_DESCRIPTION
     {
-        #region Fields
         public D2D1_BLEND sourceBlend;
 
         public D2D1_BLEND destinationBlend;
@@ -23,6 +22,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("FLOAT[4]")]
         public fixed float blendFactor[4];
-        #endregion
     }
 }

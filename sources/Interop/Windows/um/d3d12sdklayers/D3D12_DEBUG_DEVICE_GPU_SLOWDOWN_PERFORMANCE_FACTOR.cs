@@ -7,9 +7,7 @@ namespace TerraFX.Interop
 {
     public struct D3D12_DEBUG_DEVICE_GPU_SLOWDOWN_PERFORMANCE_FACTOR
     {
-        #region Fields
         [NativeTypeName("FLOAT")]
         public float SlowdownFactor;
-        #endregion
     }
 }

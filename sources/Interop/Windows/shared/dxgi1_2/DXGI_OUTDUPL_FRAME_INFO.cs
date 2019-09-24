@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct DXGI_OUTDUPL_FRAME_INFO
     {
-        #region Fields
         public LARGE_INTEGER LastPresentTime;
 
         public LARGE_INTEGER LastMouseUpdateTime;
@@ -28,6 +27,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint PointerShapeBufferSize;
-        #endregion
     }
 }

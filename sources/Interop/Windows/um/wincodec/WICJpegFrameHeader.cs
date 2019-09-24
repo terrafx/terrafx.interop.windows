@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct WICJpegFrameHeader
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint Width;
 
@@ -29,6 +28,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("DWORD")]
         public uint QuantizationTableIndices;
-        #endregion
     }
 }

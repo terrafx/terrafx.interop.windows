@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct DXGI_SWAP_CHAIN_DESC
     {
-        #region Fields
         public DXGI_MODE_DESC BufferDesc;
 
         public DXGI_SAMPLE_DESC SampleDesc;
@@ -30,6 +29,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint Flags;
-        #endregion
     }
 }

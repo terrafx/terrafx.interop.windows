@@ -8,11 +8,9 @@ namespace TerraFX.Interop
     /// <summary>Describes options transforms may select to use on their input textures.</summary>
     public struct D2D1_INPUT_DESCRIPTION
     {
-        #region Fields
         public D2D1_FILTER filter;
 
         [NativeTypeName("UINT32")]
         public uint levelOfDetailCount;
-        #endregion
     }
 }

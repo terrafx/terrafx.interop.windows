@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>Contains the center point, x-radius, and y-radius of an ellipse.</summary>
     public struct D2D1_ELLIPSE
     {
-        #region Fields
         [NativeTypeName("D2D1_POINT_2F")]
         public D2D_POINT_2F point;
 
@@ -17,6 +16,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("FLOAT")]
         public float radiusY;
-        #endregion
     }
 }

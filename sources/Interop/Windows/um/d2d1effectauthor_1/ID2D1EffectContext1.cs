@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("84AB595A-FC81-4546-BACD-E8EF4D8ABE7A")]
     public unsafe struct ID2D1EffectContext1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1EffectContext1* This
         );
-        #endregion
 
-        #region ID2D1EffectContext Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _GetDpi(
@@ -247,9 +242,7 @@ namespace TerraFX.Interop
             [In] ID2D1EffectContext1* This,
             [In] D2D1_BUFFER_PRECISION bufferPrecision
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Creates a 3D lookup table for mapping a 3-channel input to a 3-channel output. The table data must be provided in 4-channel format.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -263,9 +256,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT32[]")] uint* strides,
             [Out] ID2D1LookupTable3D** lookupTable
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -303,9 +294,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1EffectContext Methods
         public void GetDpi(
             [Out, NativeTypeName("FLOAT")] float* dpiX,
             [Out, NativeTypeName("FLOAT")] float* dpiY
@@ -666,9 +655,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateLookupTable3D(
             [In] D2D1_BUFFER_PRECISION precision,
@@ -692,20 +679,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1EffectContext Fields
             public IntPtr GetDpi;
 
             public IntPtr CreateEffect;
@@ -747,12 +729,8 @@ namespace TerraFX.Interop
             public IntPtr CheckFeatureSupport;
 
             public IntPtr IsBufferPrecisionSupported;
-            #endregion
 
-            #region Fields
             public IntPtr CreateLookupTable3D;
-            #endregion
         }
-        #endregion
     }
 }

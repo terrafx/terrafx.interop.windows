@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct TYPEATTR
     {
-        #region Fields
         [NativeTypeName("GUID")]
         public Guid guid;
 
@@ -60,6 +59,5 @@ namespace TerraFX.Interop
         public TYPEDESC tdescAlias;
 
         public IDLDESC idldescType;
-        #endregion
     }
 }

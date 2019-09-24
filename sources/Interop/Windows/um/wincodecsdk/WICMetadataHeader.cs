@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct WICMetadataHeader
     {
-        #region Fields
         public ULARGE_INTEGER Position;
 
         [NativeTypeName("ULONG")]
@@ -17,6 +16,5 @@ namespace TerraFX.Interop
         public byte* Header;
 
         public ULARGE_INTEGER DataOffset;
-        #endregion
     }
 }

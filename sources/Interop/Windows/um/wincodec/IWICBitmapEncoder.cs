@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("00000103-A8F2-4877-BA0A-FD2B6645FB94")]
     public unsafe struct IWICBitmapEncoder
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IWICBitmapEncoder* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -123,9 +118,7 @@ namespace TerraFX.Interop
             [In] IWICBitmapEncoder* This,
             [Out] IWICMetadataQueryWriter** ppIMetadataQueryWriter = null
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -163,9 +156,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int Initialize(
             [In, Optional] IStream* pIStream,
@@ -308,20 +299,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr Initialize;
 
             public IntPtr GetContainerFormat;
@@ -341,8 +327,6 @@ namespace TerraFX.Interop
             public IntPtr Commit;
 
             public IntPtr GetMetadataQueryWriter;
-            #endregion
         }
-        #endregion
     }
 }

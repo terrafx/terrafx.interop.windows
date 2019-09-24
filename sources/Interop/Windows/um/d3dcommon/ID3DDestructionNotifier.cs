@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("A06EB39A-50DA-425B-8C31-4EECD6C270F3")]
     public unsafe struct ID3DDestructionNotifier
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID3DDestructionNotifier* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -59,9 +54,7 @@ namespace TerraFX.Interop
             [In] ID3DDestructionNotifier* This,
             [In, NativeTypeName("UINT")] uint callbackID
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -99,9 +92,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int RegisterDestructionCallback(
             [In, NativeTypeName("PFN_DESTRUCTION_CALLBACK")] IntPtr callbackFn,
@@ -133,25 +124,18 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr RegisterDestructionCallback;
 
             public IntPtr UnregisterDestructionCallback;
-            #endregion
         }
-        #endregion
     }
 }

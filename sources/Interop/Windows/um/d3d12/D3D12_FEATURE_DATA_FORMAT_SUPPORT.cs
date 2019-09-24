@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public struct D3D12_FEATURE_DATA_FORMAT_SUPPORT
     {
-        #region Fields
         public DXGI_FORMAT Format;
 
         public D3D12_FORMAT_SUPPORT1 Support1;
 
         public D3D12_FORMAT_SUPPORT2 Support2;
-        #endregion
     }
 }

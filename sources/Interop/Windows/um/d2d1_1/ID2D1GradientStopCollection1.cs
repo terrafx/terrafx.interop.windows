@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("AE1572F4-5DD0-4777-998B-9279472AE63B")]
     public unsafe struct ID2D1GradientStopCollection1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1GradientStopCollection1* This
         );
-        #endregion
 
-        #region ID2D1Resource Delegates
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -50,9 +45,7 @@ namespace TerraFX.Interop
             [In] ID2D1GradientStopCollection1* This,
             [Out] ID2D1Factory** factory
         );
-        #endregion
 
-        #region ID2D1GradientStopCollection Delegates
         /// <summary>Returns the number of stops in the gradient.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -83,9 +76,7 @@ namespace TerraFX.Interop
         public /* static */ delegate D2D1_EXTEND_MODE _GetExtendMode(
             [In] ID2D1GradientStopCollection1* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Copies the gradient stops from the collection into the caller's memory. If this object was created using ID2D1DeviceContext::CreateGradientStopCollection, this method returns the same values as were specified in the creation method. If this object was created using ID2D1RenderTarget::CreateGradientStopCollection, the stops returned here will first be transformed into the gamma space specified by the colorInterpolationGamma parameter.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -122,9 +113,7 @@ namespace TerraFX.Interop
         public /* static */ delegate D2D1_COLOR_INTERPOLATION_MODE _GetColorInterpolationMode(
             [In] ID2D1GradientStopCollection1* This
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -162,9 +151,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1Resource Methods
         public void GetFactory(
             [Out] ID2D1Factory** factory
         )
@@ -177,9 +164,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1GradientStopCollection Methods
         [return: NativeTypeName("UINT32")]
         public uint GetGradientStopCount()
         {
@@ -225,9 +210,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         public void GetGradientStops1(
             [Out, NativeTypeName("D2D1_GRADIENT_STOP[]")] D2D1_GRADIENT_STOP* gradientStops,
             [In, NativeTypeName("UINT32")] uint gradientStopsCount
@@ -282,24 +265,17 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1Resource Fields
             public IntPtr GetFactory;
-            #endregion
 
-            #region ID2D1GradientStopCollection Fields
             public IntPtr GetGradientStopCount;
 
             public IntPtr GetGradientStops;
@@ -307,9 +283,7 @@ namespace TerraFX.Interop
             public IntPtr GetColorInterpolationGamma;
 
             public IntPtr GetExtendMode;
-            #endregion
 
-            #region Fields
             public IntPtr GetGradientStops1;
 
             public IntPtr GetPreInterpolationSpace;
@@ -319,8 +293,6 @@ namespace TerraFX.Interop
             public IntPtr GetBufferPrecision;
 
             public IntPtr GetColorInterpolationMode;
-            #endregion
         }
-        #endregion
     }
 }

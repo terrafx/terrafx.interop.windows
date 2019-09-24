@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("09E0BF36-54AC-484F-8847-4BAEEAB6053F")]
     public unsafe struct ID3D12DebugCommandList
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID3D12DebugCommandList* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate int _AssertResourceState(
@@ -64,9 +59,7 @@ namespace TerraFX.Interop
         public /* static */ delegate D3D12_DEBUG_FEATURE _GetFeatureMask(
             [In] ID3D12DebugCommandList* This
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -104,9 +97,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         public int AssertResourceState(
             [In] ID3D12Resource* pResource,
             [In, NativeTypeName("UINT")] uint Subresource,
@@ -147,27 +138,20 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr AssertResourceState;
 
             public IntPtr SetFeatureMask;
 
             public IntPtr GetFeatureMask;
-            #endregion
         }
-        #endregion
     }
 }

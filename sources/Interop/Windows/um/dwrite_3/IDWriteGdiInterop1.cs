@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("4556BE70-3ABD-4F70-90BE-421780A6F515")]
     public unsafe struct IDWriteGdiInterop1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteGdiInterop1* This
         );
-        #endregion
 
-        #region IDWriteGdiInterop Delegates
         /// <summary>Creates a font object that matches the properties specified by the LOGFONT public structure in the system font collection (GetSystemFontCollection).</summary>
         /// <param name="logFont">Structure containing a GDI-compatible font description.</param>
         /// <param name="font">Receives a newly created font object if successful, or NULL in case of error.</param>
@@ -112,9 +107,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT32")] uint height,
             [Out] IDWriteBitmapRenderTarget** renderTarget
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Creates a font object that matches the properties specified by the LOGFONT public structure.</summary>
         /// <param name="logFont">Structure containing a GDI-compatible font description.</param>
         /// <param name="fontCollection">The font collection to search. If NULL, the local system font collection is used.</param>
@@ -168,9 +161,7 @@ namespace TerraFX.Interop
             [In] IDWriteFontSet* fontSet,
             [Out] IDWriteFontSet** filteredSet
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -208,9 +199,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteGdiInterop Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateFontFromLOGFONT(
             [In] LOGFONT* logFont,
@@ -296,9 +285,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateFontFromLOGFONT1(
             [In] LOGFONT* logFont,
@@ -366,20 +353,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDWriteGdiInterop Fields
             public IntPtr CreateFontFromLOGFONT;
 
             public IntPtr ConvertFontToLOGFONT;
@@ -389,9 +371,7 @@ namespace TerraFX.Interop
             public IntPtr CreateFontFaceFromHdc;
 
             public IntPtr CreateBitmapRenderTarget;
-            #endregion
 
-            #region Fields
             public IntPtr CreateFontFromLOGFONT1;
 
             public IntPtr GetFontSignature;
@@ -399,8 +379,6 @@ namespace TerraFX.Interop
             public IntPtr GetFontSignature1;
 
             public IntPtr GetMatchingFontsByLOGFONT;
-            #endregion
         }
-        #endregion
     }
 }

@@ -14,11 +14,8 @@ namespace TerraFX.Interop
     [Guid("5F49804D-7024-4D43-BFA9-D25984F53849")]
     public unsafe struct IDWriteFontFace
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -41,9 +38,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteFontFace* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Obtains the file format type of a font face.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -249,9 +244,7 @@ namespace TerraFX.Interop
             [Out, NativeTypeName("DWRITE_GLYPH_METRICS[]")] DWRITE_GLYPH_METRICS* glyphMetrics,
             [In, NativeTypeName("BOOL")] int isSideways = FALSE
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -289,9 +282,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         public DWRITE_FONT_FACE_TYPE _GetType()
         {
             fixed (IDWriteFontFace* This = &this)
@@ -544,20 +535,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr _GetType;
 
             public IntPtr GetFiles;
@@ -587,8 +573,6 @@ namespace TerraFX.Interop
             public IntPtr GetGdiCompatibleMetrics;
 
             public IntPtr GetGdiCompatibleGlyphMetrics;
-            #endregion
         }
-        #endregion
     }
 }

@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("CCA920E4-52F0-492B-BFA8-29C72EE0A468")]
     public unsafe struct IDWriteFontCollectionLoader
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteFontCollectionLoader* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Creates a font file enumerator object that encapsulates a collection of font files. The font system calls back to this interface to create a font collection.</summary>
         /// <param name="factory">Factory associated with the loader.</param>
         /// <param name="collectionKey">Font collection key that uniquely identifies the collection of font files within the scope of the font collection loader being used.</param>
@@ -59,9 +54,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT32")] uint collectionKeySize,
             [Out] IDWriteFontFileEnumerator** fontFileEnumerator
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -99,9 +92,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateEnumeratorFromKey(
             [In] IDWriteFactory* factory,
@@ -121,23 +112,16 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr CreateEnumeratorFromKey;
-            #endregion
         }
-        #endregion
     }
 }

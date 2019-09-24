@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("4B0B5BD3-0797-4549-8AC5-FE915CC53856")]
     public unsafe struct IDWriteFactory4
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteFactory4* This
         );
-        #endregion
 
-        #region IDWriteFactory Delegates
         /// <summary>Gets a font collection representing the set of installed fonts.</summary>
         /// <param name="fontCollection">Receives a pointer to the system font collection object, or NULL in case of failure.</param>
         /// <param name="checkForUpdates">If this parameter is nonzero, the function performs an immediate check for changes to the set of installed fonts. If this parameter is FALSE, the function will still detect changes if the font cache service is running, but there may be some latency. For example, an application might specify TRUE if it has itself just installed a font and wants to be sure the font collection contains that font.</param>
@@ -377,9 +372,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("FLOAT")] float baselineOriginY,
             [Out] IDWriteGlyphRunAnalysis** glyphRunAnalysis
         );
-        #endregion
 
-        #region IDWriteFactory1 Delegates
         /// <summary>Gets a font collection representing the set of end-user defined custom fonts.</summary>
         /// <param name="fontCollection">Receives a pointer to the EUDC font collection object, or NULL in case of failure.</param>
         /// <param name="checkForUpdates">If this parameter is nonzero, the function performs an immediate check for changes to the set of EUDC fonts. If this parameter is FALSE, the function will still detect changes, but there may be some latency. For example, an application might specify TRUE if it has itself just modified a font and wants to be sure the font collection contains that font.</param>
@@ -417,9 +410,7 @@ namespace TerraFX.Interop
             [In] DWRITE_RENDERING_MODE renderingMode,
             [Out] IDWriteRenderingParams1** renderingParams
         );
-        #endregion
 
-        #region IDWriteFactory2 Delegates
         /// <summary>Get the system-appropriate font fallback mapping list.</summary>
         /// <param name="fontFallback">The system fallback list.</param>
         /// <returns> Standard HRESULT error code.</returns>
@@ -516,9 +507,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("FLOAT")] float baselineOriginY,
             [Out] IDWriteGlyphRunAnalysis** glyphRunAnalysis
         );
-        #endregion
 
-        #region IDWriteFactory3 Delegates
         /// <summary>Creates a glyph run analysis object, which encapsulates information used to render a glyph run.</summary>
         /// <param name="glyphRun">Structure specifying the properties of the glyph run.</param>
         /// <param name="transform">Optional transform applied to the glyphs and their positions. This transform is applied after the scaling specified by the emSize.</param>
@@ -666,9 +655,7 @@ namespace TerraFX.Interop
             [In] IDWriteFactory4* This,
             [Out] IDWriteFontDownloadQueue** fontDownloadQueue
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Translates a glyph run to a sequence of color glyph runs, which can be rendered to produce a color representation of the original "base" run.</summary>
         /// <param name="baselineOrigin">Horizontal and vertical origin of the base glyph run in pre-transform coordinates.</param>
         /// <param name="glyphRun">Pointer to the original "base" glyph run.</param>
@@ -720,9 +707,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F baselineOrigin,
             [Out, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F* glyphOrigins
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -760,9 +745,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteFactory Methods
         [return: NativeTypeName("HRESULT")]
         public int GetSystemFontCollection(
             [Out] IDWriteFontCollection** fontCollection,
@@ -1158,9 +1141,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteFactory1 Methods
         [return: NativeTypeName("HRESULT")]
         public int GetEudcFontCollection(
             [Out] IDWriteFontCollection** fontCollection,
@@ -1202,9 +1183,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteFactory2 Methods
         [return: NativeTypeName("HRESULT")]
         public int GetSystemFontFallback(
             [Out] IDWriteFontFallback** fontFallback
@@ -1318,9 +1297,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteFactory3 Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateGlyphRunAnalysis2(
             [In] DWRITE_GLYPH_RUN* glyphRun,
@@ -1496,9 +1473,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int TranslateColorGlyphRun1(
             [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F baselineOrigin,
@@ -1566,20 +1541,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDWriteFactory Fields
             public IntPtr GetSystemFontCollection;
 
             public IntPtr CreateCustomFontCollection;
@@ -1621,15 +1591,11 @@ namespace TerraFX.Interop
             public IntPtr CreateNumberSubstitution;
 
             public IntPtr CreateGlyphRunAnalysis;
-            #endregion
 
-            #region IDWriteFactory1 Fields
             public IntPtr GetEudcFontCollection;
 
             public IntPtr CreateCustomRenderingParams1;
-            #endregion
 
-            #region IDWriteFactory2 Fields
             public IntPtr GetSystemFontFallback;
 
             public IntPtr CreateFontFallbackBuilder;
@@ -1639,9 +1605,7 @@ namespace TerraFX.Interop
             public IntPtr CreateCustomRenderingParams2;
 
             public IntPtr CreateGlyphRunAnalysis1;
-            #endregion
 
-            #region IDWriteFactory3 Fields
             public IntPtr CreateGlyphRunAnalysis2;
 
             public IntPtr CreateCustomRenderingParams3;
@@ -1659,16 +1623,12 @@ namespace TerraFX.Interop
             public IntPtr GetSystemFontCollection1;
 
             public IntPtr GetFontDownloadQueue;
-            #endregion
 
-            #region Fields
             public IntPtr TranslateColorGlyphRun1;
 
             public IntPtr ComputeGlyphOrigins;
 
             public IntPtr ComputeGlyphOrigins1;
-            #endregion
         }
-        #endregion
     }
 }

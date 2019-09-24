@@ -13,14 +13,11 @@ namespace TerraFX.Samples.DirectX.D3D12
 {
     public static unsafe class Win32Application
     {
-        #region Static Fields
         private static readonly WNDPROC s_wndProc = WindowProc;
         private static readonly IntPtr s_wndProcHandle = Marshal.GetFunctionPointerForDelegate(s_wndProc);
 
         private static IntPtr s_hwnd;
-        #endregion
 
-        #region Static Properties
         public static IntPtr Hwnd
         {
             get
@@ -28,9 +25,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 return s_hwnd;
             }
         }
-        #endregion
 
-        #region Static Methods
         public static int Run(DXSample pSample, IntPtr hInstance, int nCmdShow)
         {
             // Parse the command line parameters
@@ -146,6 +141,5 @@ namespace TerraFX.Samples.DirectX.D3D12
             // Handle any messages the switch statement didn't.
             return DefWindowProc(hWnd, message, wParam, lParam);
         }
-        #endregion
     }
 }

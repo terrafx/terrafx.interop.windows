@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("EC25F42D-7006-4F2B-B33E-02CC3375733F")]
     public unsafe struct ID3D12FunctionParameterReflection
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -24,9 +21,7 @@ namespace TerraFX.Interop
             [In] ID3D12FunctionParameterReflection* This,
             [Out] D3D12_PARAMETER_DESC* pDesc
         );
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetDesc(
             [Out] D3D12_PARAMETER_DESC* pDesc
@@ -40,15 +35,10 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region Fields
             public IntPtr GetDesc;
-            #endregion
         }
-        #endregion
     }
 }

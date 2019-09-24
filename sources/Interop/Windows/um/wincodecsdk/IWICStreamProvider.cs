@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("449494BC-B468-4927-96D7-BA90D31AB505")]
     public unsafe struct IWICStreamProvider
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IWICStreamProvider* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -72,9 +67,7 @@ namespace TerraFX.Interop
         public /* static */ delegate int _RefreshStream(
             [In] IWICStreamProvider* This
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -112,9 +105,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetStream(
             [Out] IStream** ppIStream = null
@@ -167,20 +158,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetStream;
 
             public IntPtr GetPersistOptions;
@@ -188,8 +174,6 @@ namespace TerraFX.Interop
             public IntPtr GetPreferredVendorGUID;
 
             public IntPtr RefreshStream;
-            #endregion
         }
-        #endregion
     }
 }

@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct D3D12_DISPATCH_ARGUMENTS
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint ThreadGroupCountX;
 
@@ -16,6 +15,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint ThreadGroupCountZ;
-        #endregion
     }
 }

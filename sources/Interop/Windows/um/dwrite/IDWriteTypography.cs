@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("55F1112B-1DC2-4B3C-9541-F46894ED85B6")]
     public unsafe struct IDWriteTypography
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteTypography* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Add font feature.</summary>
         /// <param name="fontFeature">The font feature to add.</param>
         /// <returns>Standard HRESULT error code.</returns>
@@ -74,9 +69,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT32")] uint fontFeatureIndex,
             [Out] DWRITE_FONT_FEATURE* fontFeature
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -114,9 +107,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int AddFontFeature(
             [In] DWRITE_FONT_FEATURE fontFeature
@@ -157,27 +148,20 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr AddFontFeature;
 
             public IntPtr GetFontFeatureCount;
 
             public IntPtr GetFontFeature;
-            #endregion
         }
-        #endregion
     }
 }

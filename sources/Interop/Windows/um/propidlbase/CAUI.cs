@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public unsafe struct CAUI
     {
-        #region Fields
         [NativeTypeName("ULONG")]
         public uint cElems;
 
         [NativeTypeName("USHORT[]")]
         public ushort* pElems;
-        #endregion
     }
 }

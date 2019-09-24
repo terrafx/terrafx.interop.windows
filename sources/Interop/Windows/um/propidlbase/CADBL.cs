@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public unsafe struct CADBL
     {
-        #region Fields
         [NativeTypeName("ULONG")]
         public uint cElems;
 
         [NativeTypeName("DOUBLE[]")]
         public double* pElems;
-        #endregion
     }
 }

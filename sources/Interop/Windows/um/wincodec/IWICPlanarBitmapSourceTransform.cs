@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("3AFF9CCE-BE95-4303-B927-E7D16FF4A613")]
     public unsafe struct IWICPlanarBitmapSourceTransform
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IWICPlanarBitmapSourceTransform* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -70,9 +65,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("WICBitmapPlane[]")] WICBitmapPlane* pDstPlanes,
             [In, NativeTypeName("UINT")] uint cPlanes
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -110,9 +103,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int DoesSupportTransform(
             [In, Out, NativeTypeName("UINT")] uint* puiWidth,
@@ -166,25 +157,18 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr DoesSupportTransform;
 
             public IntPtr CopyPixels;
-            #endregion
         }
-        #endregion
     }
 }

@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("553A9FF3-5693-4DF7-B52B-74806F7F2EB9")]
     public unsafe struct IDWriteTextAnalyzer2
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteTextAnalyzer2* This
         );
-        #endregion
 
-        #region IDWriteTextAnalyzer Delegates
         /// <summary>Analyzes a text range for script boundaries, reading text attributes from the source and reporting the Unicode script ID to the sink callback SetScript.</summary>
         /// <param name="analysisSource">Source object to analyze.</param>
         /// <param name="textPosition">Starting position within the source object.</param>
@@ -256,9 +251,7 @@ namespace TerraFX.Interop
             [Out, NativeTypeName("FLOAT[]")] float* glyphAdvances,
             [Out, NativeTypeName("DWRITE_GLYPH_OFFSET[]")] DWRITE_GLYPH_OFFSET* glyphOffsets
         );
-        #endregion
 
-        #region IDWriteTextAnalyzer1 Delegates
         /// <summary>Applies spacing between characters, properly adjusting glyph clusters and diacritics.</summary>
         /// <param name="leadingSpacing">The spacing before each character, in reading order.</param>
         /// <param name="trailingSpacing">The spacing after each character, in reading order.</param>
@@ -481,9 +474,7 @@ namespace TerraFX.Interop
             [Out, NativeTypeName("FLOAT[]")] float* modifiedGlyphAdvances,
             [Out, NativeTypeName("DWRITE_GLYPH_OFFSET[]")] DWRITE_GLYPH_OFFSET* modifiedGlyphOffsets
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Returns 2x3 transform matrix for the respective angle to draw the glyph run or other object.</summary>
         /// <param name="glyphOrientationAngle">The angle reported to one of the application callbacks, including IDWriteTextAnalysisSink1::SetGlyphOrientation and IDWriteTextRenderer1::Draw*.</param>
         /// <param name="isSideways">Whether the run's glyphs are sideways or not.</param>
@@ -547,9 +538,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT16[]")] ushort* glyphIndices,
             [Out, NativeTypeName("UINT8[]")] byte* featureApplies
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -587,9 +576,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteTextAnalyzer Methods
         [return: NativeTypeName("HRESULT")]
         public int AnalyzeScript(
             [In] IDWriteTextAnalysisSource* analysisSource,
@@ -817,9 +804,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteTextAnalyzer1 Methods
         [return: NativeTypeName("HRESULT")]
         public int ApplyCharacterSpacing(
             [In, NativeTypeName("FLOAT")] float leadingSpacing,
@@ -1061,9 +1046,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetGlyphOrientationTransform1(
             [In] DWRITE_GLYPH_ORIENTATION_ANGLE glyphOrientationAngle,
@@ -1135,20 +1118,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDWriteTextAnalyzer Fields
             public IntPtr AnalyzeScript;
 
             public IntPtr AnalyzeBidi;
@@ -1162,9 +1140,7 @@ namespace TerraFX.Interop
             public IntPtr GetGlyphPlacements;
 
             public IntPtr GetGdiCompatibleGlyphPlacements;
-            #endregion
 
-            #region IDWriteTextAnalyzer1 Fields
             public IntPtr ApplyCharacterSpacing;
 
             public IntPtr GetBaseline;
@@ -1182,16 +1158,12 @@ namespace TerraFX.Interop
             public IntPtr JustifyGlyphAdvances;
 
             public IntPtr GetJustifiedGlyphs;
-            #endregion
 
-            #region Fields
             public IntPtr GetGlyphOrientationTransform1;
 
             public IntPtr GetTypographicFeatures;
 
             public IntPtr CheckTypographicFeature;
-            #endregion
         }
-        #endregion
     }
 }

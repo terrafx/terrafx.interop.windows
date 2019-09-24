@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>DWRITE_FILE_FRAGMENT represents a range of bytes in a font file.</summary>
     public struct DWRITE_FILE_FRAGMENT
     {
-        #region Fields
         /// <summary>Starting offset of the fragment from the beginning of the file.</summary>
         [NativeTypeName("UINT64")]
         public ulong fileOffset;
@@ -16,6 +15,5 @@ namespace TerraFX.Interop
         /// <summary>Size of the file fragment, in bytes.</summary>
         [NativeTypeName("UINT64")]
         public ulong fragmentSize;
-        #endregion
     }
 }

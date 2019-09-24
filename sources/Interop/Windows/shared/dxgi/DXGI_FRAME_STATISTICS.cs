@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct DXGI_FRAME_STATISTICS
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint PresentCount;
 
@@ -20,6 +19,5 @@ namespace TerraFX.Interop
         public LARGE_INTEGER SyncQPCTime;
 
         public LARGE_INTEGER SyncGPUTime;
-        #endregion
     }
 }

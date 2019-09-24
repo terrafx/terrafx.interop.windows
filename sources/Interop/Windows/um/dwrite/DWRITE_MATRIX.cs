@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>The DWRITE_MATRIX public structure specifies the graphics transform to be applied to rendered glyphs.</summary>
     public struct DWRITE_MATRIX
     {
-        #region Fields
         /// <summary>Horizontal scaling / cosine of rotation</summary>
         [NativeTypeName("FLOAT")]
         public float m11;
@@ -32,6 +31,5 @@ namespace TerraFX.Interop
         /// <summary>Vertical shift (always orthogonal regardless of rotation)</summary>
         [NativeTypeName("FLOAT")]
         public float dy;
-        #endregion
     }
 }

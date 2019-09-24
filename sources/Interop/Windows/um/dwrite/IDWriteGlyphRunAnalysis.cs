@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("7D97DBF7-E085-42D4-81E3-6A883BDED118")]
     public unsafe struct IDWriteGlyphRunAnalysis
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteGlyphRunAnalysis* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Gets the bounding rectangle of the physical pixels affected by the glyph run.</summary>
         /// <param name="textureType">Specifies the type of texture requested. If a bi-level texture is requested, the bounding rectangle includes only bi-level glyphs. Otherwise, the bounding rectangle includes only anti-aliased glyphs.</param>
         /// <param name="textureBounds">Receives the bounding rectangle, or an empty rectangle if there are no glyphs if the specified type.</param>
@@ -88,9 +83,7 @@ namespace TerraFX.Interop
             [Out, NativeTypeName("FLOAT")] float* blendEnhancedContrast,
             [Out, NativeTypeName("FLOAT")] float* blendClearTypeLevel
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -128,9 +121,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetAlphaTextureBounds(
             [In] DWRITE_TEXTURE_TYPE textureType,
@@ -186,27 +177,20 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetAlphaTextureBounds;
 
             public IntPtr CreateAlphaTexture;
 
             public IntPtr GetAlphaBlendParams;
-            #endregion
         }
-        #endregion
     }
 }

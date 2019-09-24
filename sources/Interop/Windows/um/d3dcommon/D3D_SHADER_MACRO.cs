@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D_SHADER_MACRO
     {
-        #region Fields
         [NativeTypeName("LPCSTR")]
         public sbyte* Name;
 
         [NativeTypeName("LPCSTR")]
         public sbyte* Definition;
-        #endregion
     }
 }

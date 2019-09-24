@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("6D4865FE-0AB8-4D91-8F62-5DD6BE34A3E0")]
     public unsafe struct IDWriteFontFileStream
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteFontFileStream* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Reads a fragment from a file.</summary>
         /// <param name="fragmentStart">Receives the pointer to the start of the font file fragment.</param>
         /// <param name="fileOffset">Offset of the fragment from the beginning of the font file.</param>
@@ -92,9 +87,7 @@ namespace TerraFX.Interop
             [In] IDWriteFontFileStream* This,
             [Out, NativeTypeName("UINT64")] ulong* lastWriteTime
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -132,9 +125,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int ReadFileFragment(
             [Out] void** fragmentStart,
@@ -195,20 +186,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr ReadFileFragment;
 
             public IntPtr ReleaseFileFragment;
@@ -216,8 +202,6 @@ namespace TerraFX.Interop
             public IntPtr GetFileSize;
 
             public IntPtr GetLastWriteTime;
-            #endregion
         }
-        #endregion
     }
 }

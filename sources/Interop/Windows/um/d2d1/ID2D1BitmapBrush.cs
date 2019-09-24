@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("2CD906AA-12E2-11DC-9FED-001143A055F9")]
     public unsafe struct ID2D1BitmapBrush
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1BitmapBrush* This
         );
-        #endregion
 
-        #region ID2D1Resource Delegates
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -50,9 +45,7 @@ namespace TerraFX.Interop
             [In] ID2D1BitmapBrush* This,
             [Out] ID2D1Factory** factory
         );
-        #endregion
 
-        #region ID2D1Brush Delegates
         /// <summary>Sets the opacity for when the brush is drawn over the entire fill of the brush.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -82,9 +75,7 @@ namespace TerraFX.Interop
             [In] ID2D1BitmapBrush* This,
             [Out, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Sets how the bitmap is to be treated outside of its natural extent on the X axis.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -141,9 +132,7 @@ namespace TerraFX.Interop
             [In] ID2D1BitmapBrush* This,
             [Out] ID2D1Bitmap** bitmap
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -181,9 +170,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1Resource Methods
         public void GetFactory(
             [Out] ID2D1Factory** factory
         )
@@ -196,9 +183,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1Brush Methods
         public void SetOpacity(
             [In, NativeTypeName("FLOAT")] float opacity
         )
@@ -248,9 +233,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         public void SetExtendModeX(
             [In] D2D1_EXTEND_MODE extendModeX
         )
@@ -345,24 +328,17 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1Resource Fields
             public IntPtr GetFactory;
-            #endregion
 
-            #region ID2D1Brush Fields
             public IntPtr SetOpacity;
 
             public IntPtr SetTransform;
@@ -370,9 +346,7 @@ namespace TerraFX.Interop
             public IntPtr GetOpacity;
 
             public IntPtr GetTransform;
-            #endregion
 
-            #region Fields
             public IntPtr SetExtendModeX;
 
             public IntPtr SetExtendModeY;
@@ -388,8 +362,6 @@ namespace TerraFX.Interop
             public IntPtr GetInterpolationMode;
 
             public IntPtr GetBitmap;
-            #endregion
         }
-        #endregion
     }
 }

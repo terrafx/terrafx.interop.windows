@@ -11,7 +11,6 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Kernel32
     {
-        #region Extern Methods
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "CreateEventW", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HANDLE")]
@@ -29,6 +28,5 @@ namespace TerraFX.Interop
             [In, NativeTypeName("HANDLE")] IntPtr hHandle,
             [In, NativeTypeName("DWORD")] uint dwMilliseconds
         );
-        #endregion
     }
 }

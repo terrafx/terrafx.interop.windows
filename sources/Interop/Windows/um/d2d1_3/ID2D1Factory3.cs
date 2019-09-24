@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("0869759F-4F00-413F-B03E-2BDA45404D0F")]
     public unsafe struct ID2D1Factory3
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1Factory3* This
         );
-        #endregion
 
-        #region ID2D1Factory Delegates
         /// <summary>Cause the factory to refresh any system metrics that it might have been snapped on factory creation.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -183,9 +178,7 @@ namespace TerraFX.Interop
             [In] D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties,
             [Out] ID2D1DCRenderTarget** dcRenderTarget
         );
-        #endregion
 
-        #region ID2D1Factory1 Delegates
         /// <summary>This creates a new Direct2D device from the given IDXGIDevice.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -296,9 +289,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("REFCLSID")] Guid* effectId,
             [Out] ID2D1Properties** properties
         );
-        #endregion
 
-        #region ID2D1Factory2 Delegates
         /// <summary>This creates a new Direct2D device from the given IDXGIDevice.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -308,9 +299,7 @@ namespace TerraFX.Interop
             [In] IDXGIDevice* dxgiDevice,
             [Out] ID2D1Device1** d2dDevice1
         );
-        #endregion
 
-        #region Delegates
         /// <summary>This creates a new Direct2D device from the given IDXGIDevice.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -320,9 +309,7 @@ namespace TerraFX.Interop
             [In] IDXGIDevice* dxgiDevice,
             [Out] ID2D1Device2** d2dDevice2
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -360,9 +347,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1Factory Methods
         [return: NativeTypeName("HRESULT")]
         public int ReloadSystemMetrics()
         {
@@ -596,9 +581,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1Factory1 Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateDevice(
             [In] IDXGIDevice* dxgiDevice,
@@ -776,9 +759,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1Factory2 Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateDevice1(
             [In] IDXGIDevice* dxgiDevice,
@@ -794,9 +775,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateDevice2(
             [In] IDXGIDevice* dxgiDevice,
@@ -812,20 +791,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1Factory Fields
             public IntPtr ReloadSystemMetrics;
 
             public IntPtr GetDesktopDpi;
@@ -853,9 +827,7 @@ namespace TerraFX.Interop
             public IntPtr CreateDxgiSurfaceRenderTarget;
 
             public IntPtr CreateDCRenderTarget;
-            #endregion
 
-            #region ID2D1Factory1 Fields
             public IntPtr CreateDevice;
 
             public IntPtr CreateStrokeStyle1;
@@ -875,16 +847,10 @@ namespace TerraFX.Interop
             public IntPtr GetRegisteredEffects;
 
             public IntPtr GetEffectProperties;
-            #endregion
 
-            #region ID2D1Factory2 Fields
             public IntPtr CreateDevice1;
-            #endregion
 
-            #region Fields
             public IntPtr CreateDevice2;
-            #endregion
         }
-        #endregion
     }
 }

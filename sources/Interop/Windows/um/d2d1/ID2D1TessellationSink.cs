@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("2CD906C1-12E2-11DC-9FED-001143A055F9")]
     public unsafe struct ID2D1TessellationSink
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1TessellationSink* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _AddTriangles(
@@ -57,9 +52,7 @@ namespace TerraFX.Interop
         public /* static */ delegate int _Close(
             [In] ID2D1TessellationSink* This
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -97,9 +90,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         public void AddTriangles(
             [In, NativeTypeName("D2D1_TRIANGLE[]")] D2D1_TRIANGLE* triangles,
             [In, NativeTypeName("UINT32")] uint trianglesCount
@@ -125,25 +116,18 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr AddTriangles;
 
             public IntPtr Close;
-            #endregion
         }
-        #endregion
     }
 }

@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("80DAD800-E21F-4E83-96CE-BFCCE500DB7C")]
     public unsafe struct IDWriteTextAnalyzer1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteTextAnalyzer1* This
         );
-        #endregion
 
-        #region IDWriteTextAnalyzer Delegates
         /// <summary>Analyzes a text range for script boundaries, reading text attributes from the source and reporting the Unicode script ID to the sink callback SetScript.</summary>
         /// <param name="analysisSource">Source object to analyze.</param>
         /// <param name="textPosition">Starting position within the source object.</param>
@@ -256,9 +251,7 @@ namespace TerraFX.Interop
             [Out, NativeTypeName("FLOAT[]")] float* glyphAdvances,
             [Out, NativeTypeName("DWRITE_GLYPH_OFFSET[]")] DWRITE_GLYPH_OFFSET* glyphOffsets
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Applies spacing between characters, properly adjusting glyph clusters and diacritics.</summary>
         /// <param name="leadingSpacing">The spacing before each character, in reading order.</param>
         /// <param name="trailingSpacing">The spacing after each character, in reading order.</param>
@@ -481,9 +474,7 @@ namespace TerraFX.Interop
             [Out, NativeTypeName("FLOAT[]")] float* modifiedGlyphAdvances,
             [Out, NativeTypeName("DWRITE_GLYPH_OFFSET[]")] DWRITE_GLYPH_OFFSET* modifiedGlyphOffsets
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -521,9 +512,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteTextAnalyzer Methods
         [return: NativeTypeName("HRESULT")]
         public int AnalyzeScript(
             [In] IDWriteTextAnalysisSource* analysisSource,
@@ -751,9 +740,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int ApplyCharacterSpacing(
             [In, NativeTypeName("FLOAT")] float leadingSpacing,
@@ -995,20 +982,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDWriteTextAnalyzer Fields
             public IntPtr AnalyzeScript;
 
             public IntPtr AnalyzeBidi;
@@ -1022,9 +1004,7 @@ namespace TerraFX.Interop
             public IntPtr GetGlyphPlacements;
 
             public IntPtr GetGdiCompatibleGlyphPlacements;
-            #endregion
 
-            #region Fields
             public IntPtr ApplyCharacterSpacing;
 
             public IntPtr GetBaseline;
@@ -1042,8 +1022,6 @@ namespace TerraFX.Interop
             public IntPtr JustifyGlyphAdvances;
 
             public IntPtr GetJustifiedGlyphs;
-            #endregion
         }
-        #endregion
     }
 }

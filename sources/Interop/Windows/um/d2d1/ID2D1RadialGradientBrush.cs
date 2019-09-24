@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("2CD906AC-12E2-11DC-9FED-001143A055F9")]
     public unsafe struct ID2D1RadialGradientBrush
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1RadialGradientBrush* This
         );
-        #endregion
 
-        #region ID2D1Resource Delegates
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -50,9 +45,7 @@ namespace TerraFX.Interop
             [In] ID2D1RadialGradientBrush* This,
             [Out] ID2D1Factory** factory
         );
-        #endregion
 
-        #region ID2D1Brush Delegates
         /// <summary>Sets the opacity for when the brush is drawn over the entire fill of the brush.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -82,9 +75,7 @@ namespace TerraFX.Interop
             [In] ID2D1RadialGradientBrush* This,
             [Out, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Sets the center of the radial gradient. This will be in local coordinates and will not depend on the geometry being filled.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -151,9 +142,7 @@ namespace TerraFX.Interop
             [In] ID2D1RadialGradientBrush* This,
             [Out] ID2D1GradientStopCollection** gradientStopCollection
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -191,9 +180,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1Resource Methods
         public void GetFactory(
             [Out] ID2D1Factory** factory
         )
@@ -206,9 +193,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1Brush Methods
         public void SetOpacity(
             [In, NativeTypeName("FLOAT")] float opacity
         )
@@ -258,9 +243,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         public void SetCenter(
             [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F center
         )
@@ -373,24 +356,17 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1Resource Fields
             public IntPtr GetFactory;
-            #endregion
 
-            #region ID2D1Brush Fields
             public IntPtr SetOpacity;
 
             public IntPtr SetTransform;
@@ -398,9 +374,7 @@ namespace TerraFX.Interop
             public IntPtr GetOpacity;
 
             public IntPtr GetTransform;
-            #endregion
 
-            #region Fields
             public IntPtr SetCenter;
 
             public IntPtr SetGradientOriginOffset;
@@ -418,8 +392,6 @@ namespace TerraFX.Interop
             public IntPtr GetRadiusY;
 
             public IntPtr GetGradientStopCollection;
-            #endregion
         }
-        #endregion
     }
 }

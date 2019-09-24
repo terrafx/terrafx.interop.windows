@@ -7,9 +7,7 @@ namespace TerraFX.Interop
 {
     public struct DXGI_DECODE_SWAP_CHAIN_DESC
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint Flags;
-        #endregion
     }
 }

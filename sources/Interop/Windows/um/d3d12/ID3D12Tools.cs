@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("7071E1F0-E84B-4B33-974F-12FA49DE65C5")]
     public unsafe struct ID3D12Tools
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID3D12Tools* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _EnableShaderInstrumentation(
@@ -55,9 +50,7 @@ namespace TerraFX.Interop
         public /* static */ delegate int _ShaderInstrumentationEnabled(
             [In] ID3D12Tools* This
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -95,9 +88,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         public void EnableShaderInstrumentation(
             [In, NativeTypeName("BOOL")] int bEnable
         )
@@ -121,25 +112,18 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr EnableShaderInstrumentation;
 
             public IntPtr ShaderInstrumentationEnabled;
-            #endregion
         }
-        #endregion
     }
 }

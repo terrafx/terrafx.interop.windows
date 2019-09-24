@@ -7,11 +7,9 @@ namespace TerraFX.Interop
 {
     public struct D3D12_FEATURE_DATA_FORMAT_INFO
     {
-        #region Fields
         public DXGI_FORMAT Format;
 
         [NativeTypeName("UINT8")]
         public byte PlaneCount;
-        #endregion
     }
 }

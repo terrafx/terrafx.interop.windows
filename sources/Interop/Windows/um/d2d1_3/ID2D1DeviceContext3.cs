@@ -18,11 +18,8 @@ namespace TerraFX.Interop
     [Guid("235A7496-8351-414C-BCD4-6672AB2D8E00")]
     public unsafe struct ID2D1DeviceContext3
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -45,9 +42,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1DeviceContext3* This
         );
-        #endregion
 
-        #region ID2D1Resource Delegates
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -55,9 +50,7 @@ namespace TerraFX.Interop
             [In] ID2D1DeviceContext3* This,
             [Out] ID2D1Factory** factory
         );
-        #endregion
 
-        #region ID2D1RenderTarget Delegates
         /// <summary>Create a D2D bitmap by copying from memory, or create uninitialized.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -556,9 +549,7 @@ namespace TerraFX.Interop
             [In] ID2D1DeviceContext3* This,
             [In] D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties
         );
-        #endregion
 
-        #region ID2D1DeviceContext Delegates
         /// <summary>Creates a bitmap with extended bitmap properties, potentially from a block of memory.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -916,9 +907,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* destinationRectangle = null,
             [In, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* sourceRectangle = null
         );
-        #endregion
 
-        #region ID2D1DeviceContext1 Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -948,9 +937,7 @@ namespace TerraFX.Interop
             [In] ID2D1GeometryRealization* geometryRealization,
             [In] ID2D1Brush* brush
         );
-        #endregion
 
-        #region ID2D1DeviceContext2 Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -1063,9 +1050,7 @@ namespace TerraFX.Interop
             [In] D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES* properties,
             [Out] ID2D1TransformedImageSource** transformedImageSource
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Creates a new sprite batch.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -1087,9 +1072,7 @@ namespace TerraFX.Interop
             [In] D2D1_BITMAP_INTERPOLATION_MODE interpolationMode = D2D1_BITMAP_INTERPOLATION_MODE_LINEAR,
             [In] D2D1_SPRITE_OPTIONS spriteOptions = D2D1_SPRITE_OPTIONS_NONE
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -1127,9 +1110,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1Resource Methods
         public void GetFactory(
             [Out] ID2D1Factory** factory
         )
@@ -1142,9 +1123,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1RenderTarget Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateBitmap(
             [In, NativeTypeName("D2D1_SIZE_U")] D2D_SIZE_U size,
@@ -1987,9 +1966,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1DeviceContext Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateBitmap1(
             [In, NativeTypeName("D2D1_SIZE_U")] D2D_SIZE_U size,
@@ -2576,9 +2553,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1DeviceContext1 Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateFilledGeometryRealization(
             [In] ID2D1Geometry* geometry,
@@ -2633,9 +2608,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1DeviceContext2 Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateInk(
             [In] D2D1_INK_POINT* startPoint,
@@ -2832,9 +2805,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateSpriteBatch(
             [Out] ID2D1SpriteBatch** spriteBatch
@@ -2871,24 +2842,17 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1Resource Fields
             public IntPtr GetFactory;
-            #endregion
 
-            #region ID2D1RenderTarget Fields
             public IntPtr CreateBitmap;
 
             public IntPtr CreateBitmapFromWicBitmap;
@@ -2994,9 +2958,7 @@ namespace TerraFX.Interop
             public IntPtr GetMaximumBitmapSize;
 
             public IntPtr IsSupported;
-            #endregion
 
-            #region ID2D1DeviceContext Fields
             public IntPtr CreateBitmap1;
 
             public IntPtr CreateBitmapFromWicBitmap1;
@@ -3066,17 +3028,13 @@ namespace TerraFX.Interop
             public IntPtr GetEffectRequiredInputRectangles;
 
             public IntPtr FillOpacityMask1;
-            #endregion
 
-            #region ID2D1DeviceContext1 Fields
             public IntPtr CreateFilledGeometryRealization;
 
             public IntPtr CreateStrokedGeometryRealization;
 
             public IntPtr DrawGeometryRealization;
-            #endregion
 
-            #region ID2D1DeviceContext2 Fields
             public IntPtr CreateInk;
 
             public IntPtr CreateInkStyle;
@@ -3098,14 +3056,10 @@ namespace TerraFX.Interop
             public IntPtr DrawGdiMetafile1;
 
             public IntPtr CreateTransformedImageSource;
-            #endregion
 
-            #region Fields
             public IntPtr CreateSpriteBatch;
 
             public IntPtr DrawSpriteBatch;
-            #endregion
         }
-        #endregion
     }
 }

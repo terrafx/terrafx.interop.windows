@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("B7924BAA-391B-412A-8C5C-E44CC2D867DC")]
     public unsafe struct IDWriteRenderingParams3
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteRenderingParams3* This
         );
-        #endregion
 
-        #region IDWriteRenderingParams Delegates
         /// <summary>Gets the gamma value used for gamma correction. Valid values must be greater than zero and cannot exceed 256.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -79,9 +74,7 @@ namespace TerraFX.Interop
         public /* static */ delegate DWRITE_RENDERING_MODE _GetRenderingMode(
             [In] IDWriteRenderingParams3* This
         );
-        #endregion
 
-        #region IDWriteRenderingParams1 Delegates
         /// <summary>Gets the amount of contrast enhancement to use for grayscale antialiasing. Valid values are greater than or equal to zero.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -89,27 +82,21 @@ namespace TerraFX.Interop
         public /* static */ delegate float _GetGrayscaleEnhancedContrast(
             [In] IDWriteRenderingParams3* This
         );
-        #endregion
 
-        #region IDWriteRenderingParams2 Delegates
         /// <summary>Gets the grid fitting mode.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate DWRITE_GRID_FIT_MODE _GetGridFitMode(
             [In] IDWriteRenderingParams3* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Gets the rendering mode.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate DWRITE_RENDERING_MODE1 _GetRenderingMode1(
             [In] IDWriteRenderingParams3* This
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -147,9 +134,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteRenderingParams Methods
         [return: NativeTypeName("FLOAT")]
         public float GetGamma()
         {
@@ -201,9 +186,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteRenderingParams1 Methods
         [return: NativeTypeName("FLOAT")]
         public float GetGrayscaleEnhancedContrast()
         {
@@ -214,9 +197,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteRenderingParams2 Methods
         public DWRITE_GRID_FIT_MODE GetGridFitMode()
         {
             fixed (IDWriteRenderingParams3* This = &this)
@@ -226,9 +207,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         public DWRITE_RENDERING_MODE1 GetRenderingMode1()
         {
             fixed (IDWriteRenderingParams3* This = &this)
@@ -238,20 +217,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDWriteRenderingParams Fields
             public IntPtr GetGamma;
 
             public IntPtr GetEnhancedContrast;
@@ -261,20 +235,12 @@ namespace TerraFX.Interop
             public IntPtr GetPixelGeometry;
 
             public IntPtr GetRenderingMode;
-            #endregion
 
-            #region IDWriteRenderingParams1 Fields
             public IntPtr GetGrayscaleEnhancedContrast;
-            #endregion
 
-            #region IDWriteRenderingParams2 Fields
             public IntPtr GetGridFitMode;
-            #endregion
 
-            #region Fields
             public IntPtr GetRenderingMode1;
-            #endregion
         }
-        #endregion
     }
 }

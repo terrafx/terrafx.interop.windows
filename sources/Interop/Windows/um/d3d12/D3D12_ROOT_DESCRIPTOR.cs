@@ -7,15 +7,12 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_ROOT_DESCRIPTOR
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint ShaderRegister;
 
         [NativeTypeName("UINT")]
         public uint RegisterSpace;
-        #endregion
 
-        #region Constructors
         public D3D12_ROOT_DESCRIPTOR(uint shaderRegister, uint registerSpace = 0)
         {
             fixed (D3D12_ROOT_DESCRIPTOR* pThis = &this)
@@ -23,9 +20,7 @@ namespace TerraFX.Interop
                 Init(pThis, shaderRegister, registerSpace);
             }
         }
-        #endregion
 
-        #region Methods
         public static void Init(D3D12_ROOT_DESCRIPTOR* table, uint shaderRegister, uint registerSpace = 0)
         {
             table->ShaderRegister = shaderRegister;
@@ -39,6 +34,5 @@ namespace TerraFX.Interop
                 Init(pThis, shaderRegister, registerSpace);
             }
         }
-        #endregion
     }
 }

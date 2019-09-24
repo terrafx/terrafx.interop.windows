@@ -10,7 +10,6 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Explicit)]
     public struct LARGE_INTEGER
     {
-        #region Fields
         [FieldOffset(0)]
         public _Anonymous_e__Struct Anonymous;
 
@@ -20,30 +19,23 @@ namespace TerraFX.Interop
         [FieldOffset(0)]
         [NativeTypeName("LONGLONG")]
         public long QuadPart;
-        #endregion
 
-        #region Structs
         public struct _Anonymous_e__Struct
         {
-            #region Fields
             [NativeTypeName("DWORD")]
             public uint LowPart;
 
             [NativeTypeName("LONG")]
             public int HighPart;
-            #endregion
         }
 
         public struct _u_e__Struct
         {
-            #region Fields
             [NativeTypeName("DWORD")]
             public uint LowPart;
 
             [NativeTypeName("LONG")]
             public int HighPart;
-            #endregion
         }
-        #endregion
     }
 }

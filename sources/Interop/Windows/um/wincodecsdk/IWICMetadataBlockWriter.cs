@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("08FB9676-B444-41E8-8DBE-6A53A542BFF1")]
     public unsafe struct IWICMetadataBlockWriter
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IWICMetadataBlockWriter* This
         );
-        #endregion
 
-        #region IWICMetadataBlockReader Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -74,9 +69,7 @@ namespace TerraFX.Interop
             [In] IWICMetadataBlockWriter* This,
             [Out] IEnumUnknown** ppIEnumMetadata = null
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -118,9 +111,7 @@ namespace TerraFX.Interop
             [In] IWICMetadataBlockWriter* This,
             [In, NativeTypeName("UINT")] uint nIndex
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -158,9 +149,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IWICMetadataBlockReader Methods
         [return: NativeTypeName("HRESULT")]
         public int GetContainerFormat(
             [Out, NativeTypeName("GUID")] Guid* pguidContainerFormat
@@ -218,9 +207,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int InitializeFromBlockReader(
             [In] IWICMetadataBlockReader* pIMDBlockReader = null
@@ -294,20 +281,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IWICMetadataBlockReader Fields
             public IntPtr GetContainerFormat;
 
             public IntPtr GetCount;
@@ -315,9 +297,7 @@ namespace TerraFX.Interop
             public IntPtr GetReaderByIndex;
 
             public IntPtr GetEnumerator;
-            #endregion
 
-            #region Fields
             public IntPtr InitializeFromBlockReader;
 
             public IntPtr GetWriterByIndex;
@@ -327,8 +307,6 @@ namespace TerraFX.Interop
             public IntPtr SetWriterByIndex;
 
             public IntPtr RemoveWriterByIndex;
-            #endregion
         }
-        #endregion
     }
 }

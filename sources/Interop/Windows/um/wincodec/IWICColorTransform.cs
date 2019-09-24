@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("B66F034F-D0E2-40AB-B436-6DE39E321A94")]
     public unsafe struct IWICColorTransform
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IWICColorTransform* This
         );
-        #endregion
 
-        #region IWICBitmapSource Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -86,9 +81,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT")] uint cbBufferSize,
             [Out, NativeTypeName("BYTE[]")] byte* pbBuffer
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -99,9 +92,7 @@ namespace TerraFX.Interop
             [In, Optional] IWICColorContext* pIContextDest,
             [In, NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFmtDest
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -139,9 +130,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IWICBitmapSource Methods
         [return: NativeTypeName("HRESULT")]
         public int GetSize(
             [Out, NativeTypeName("UINT")] uint* puiWidth,
@@ -221,9 +210,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int Initialize(
             [In, Optional] IWICBitmapSource* pIBitmapSource,
@@ -243,20 +230,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IWICBitmapSource Fields
             public IntPtr GetSize;
 
             public IntPtr GetPixelFormat;
@@ -266,12 +248,8 @@ namespace TerraFX.Interop
             public IntPtr CopyPalette;
 
             public IntPtr CopyPixels;
-            #endregion
 
-            #region Fields
             public IntPtr Initialize;
-            #endregion
         }
-        #endregion
     }
 }

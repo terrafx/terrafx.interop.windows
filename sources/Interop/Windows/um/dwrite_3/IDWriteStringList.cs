@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("CFEE3140-1157-47CA-8B85-31BFCF3F2D0E")]
     public unsafe struct IDWriteStringList
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteStringList* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Gets the number of strings.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -106,9 +101,7 @@ namespace TerraFX.Interop
             [Out, NativeTypeName("WCHAR[]")] char* stringBuffer,
             [In, NativeTypeName("UINT32")] uint stringBufferSize
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -146,9 +139,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("UINT32")]
         public uint GetCount()
         {
@@ -227,20 +218,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetCount;
 
             public IntPtr GetLocaleNameLength;
@@ -250,8 +236,6 @@ namespace TerraFX.Interop
             public IntPtr GetStringLength;
 
             public IntPtr GetString;
-            #endregion
         }
-        #endregion
     }
 }

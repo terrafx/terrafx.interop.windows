@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("00000040-A8F2-4877-BA0A-FD2B6645FB94")]
     public unsafe struct IWICPalette
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IWICPalette* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -127,9 +122,7 @@ namespace TerraFX.Interop
             [In] IWICPalette* This,
             [Out, NativeTypeName("BOOL")] int* pfHasAlpha
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -167,9 +160,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int InitializePredefined(
             [In] WICBitmapPaletteType ePaletteType,
@@ -321,20 +312,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr InitializePredefined;
 
             public IntPtr InitializeCustom;
@@ -354,8 +340,6 @@ namespace TerraFX.Interop
             public IntPtr IsGrayscale;
 
             public IntPtr HasAlpha;
-            #endregion
         }
-        #endregion
     }
 }

@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public unsafe struct CABSTR
     {
-        #region Fields
         [NativeTypeName("ULONG")]
         public uint cElems;
 
         [NativeTypeName("BSTR[]")]
         public char** pElems;
-        #endregion
     }
 }

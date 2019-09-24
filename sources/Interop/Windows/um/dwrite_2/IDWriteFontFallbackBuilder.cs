@@ -14,11 +14,8 @@ namespace TerraFX.Interop
     [Guid("FD882D06-8ABA-4FB8-B849-8BE8B73E14DE")]
     public unsafe struct IDWriteFontFallbackBuilder
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -41,9 +38,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteFontFallbackBuilder* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Appends a single mapping to the list. Call this once for each additional mapping.</summary>
         /// <param name="ranges">Unicode ranges that apply to this mapping.</param>
         /// <param name="rangesCount">Number of Unicode ranges.</param>
@@ -90,9 +85,7 @@ namespace TerraFX.Interop
             [In] IDWriteFontFallbackBuilder* This,
             [Out] IDWriteFontFallback** fontFallback
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -130,9 +123,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int AddMapping(
             [In, NativeTypeName("DWRITE_UNICODE_RANGE[]")] DWRITE_UNICODE_RANGE* ranges,
@@ -188,27 +179,20 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr AddMapping;
 
             public IntPtr AddMappings;
 
             public IntPtr CreateFontFallback;
-            #endregion
         }
-        #endregion
     }
 }

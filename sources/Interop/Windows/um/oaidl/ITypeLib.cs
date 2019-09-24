@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("00020402-0000-0000-C000-000000000046")]
     public unsafe struct ITypeLib
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ITypeLib* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate uint _GetTypeInfoCount(
@@ -131,9 +126,7 @@ namespace TerraFX.Interop
             [In] ITypeLib* This,
             [In] TLIBATTR* pTLibAttr
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -171,9 +164,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         public uint GetTypeInfoCount()
         {
             fixed (ITypeLib* This = &this)
@@ -334,20 +325,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetTypeInfoCount;
 
             public IntPtr GetTypeInfo;
@@ -367,8 +353,6 @@ namespace TerraFX.Interop
             public IntPtr FindName;
 
             public IntPtr ReleaseTLibAttr;
-            #endregion
         }
-        #endregion
     }
 }

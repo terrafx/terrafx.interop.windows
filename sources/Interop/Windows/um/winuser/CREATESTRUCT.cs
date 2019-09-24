@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct CREATESTRUCT
     {
-        #region Fields
         [NativeTypeName("LPVOID")]
         public void* lpCreateParams;
 
@@ -41,6 +40,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("DWORD")]
         public uint dwExStyle;
-        #endregion
     }
 }

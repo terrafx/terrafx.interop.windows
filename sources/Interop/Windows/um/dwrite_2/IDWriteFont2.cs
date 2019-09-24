@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("29748ED6-8C9C-4A6A-BE0B-D912E8538944")]
     public unsafe struct IDWriteFont2
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteFont2* This
         );
-        #endregion
 
-        #region IDWriteFont Delegates
         /// <summary>Gets the font family to which the specified font belongs.</summary>
         /// <param name="fontFamily">Receives a pointer to the font family object.</param>
         /// <returns>Standard HRESULT error code.</returns>
@@ -148,9 +143,7 @@ namespace TerraFX.Interop
             [In] IDWriteFont2* This,
             [Out] IDWriteFontFace** fontFace
         );
-        #endregion
 
-        #region IDWriteFont1 Delegates
         /// <summary>Gets common metrics for the font in design units. These metrics are applicable to all the glyphs within a font, and are used by applications for layout calculations.</summary>
         /// <param name="fontMetrics">Metrics public structure to fill in.</param>
         [SuppressUnmanagedCodeSecurity]
@@ -193,9 +186,7 @@ namespace TerraFX.Interop
         public /* static */ delegate int _IsMonospacedFont(
             [In] IDWriteFont2* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Returns TRUE if the font contains tables that can provide color information (including COLR, CPAL, SVG, CBDT, sbix  tables), or FALSE if not. Note that TRUE is returned even in the case when the font tables contain only grayscale images.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -203,9 +194,7 @@ namespace TerraFX.Interop
         public /* static */ delegate int _IsColorFont(
             [In] IDWriteFont2* This
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -243,9 +232,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteFont Methods
         [return: NativeTypeName("HRESULT")]
         public int GetFontFamily(
             [Out] IDWriteFontFamily** fontFamily
@@ -385,9 +372,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteFont1 Methods
         public void GetMetrics1(
             [Out] DWRITE_FONT_METRICS1* fontMetrics
         )
@@ -442,9 +427,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("BOOL")]
         public int IsColorFont()
         {
@@ -455,20 +438,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDWriteFont Fields
             public IntPtr GetFontFamily;
 
             public IntPtr GetWeight;
@@ -490,9 +468,7 @@ namespace TerraFX.Interop
             public IntPtr HasCharacter;
 
             public IntPtr CreateFontFace;
-            #endregion
 
-            #region IDWriteFont1 Fields
             public IntPtr GetMetrics1;
 
             public IntPtr GetPanose;
@@ -500,12 +476,8 @@ namespace TerraFX.Interop
             public IntPtr GetUnicodeRanges;
 
             public IntPtr IsMonospacedFont;
-            #endregion
 
-            #region Fields
             public IntPtr IsColorFont;
-            #endregion
         }
-        #endregion
     }
 }

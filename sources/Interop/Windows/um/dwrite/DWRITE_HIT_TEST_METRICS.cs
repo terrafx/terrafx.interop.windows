@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>Geometry enclosing of text positions.</summary>
     public struct DWRITE_HIT_TEST_METRICS
     {
-        #region Fields
         /// <summary>First text position within the geometry.</summary>
         [NativeTypeName("UINT32")]
         public uint textPosition;
@@ -44,6 +43,5 @@ namespace TerraFX.Interop
         /// <summary>Range is trimmed.</summary>
         [NativeTypeName("BOOL")]
         public int isTrimmed;
-        #endregion
     }
 }

@@ -14,11 +14,8 @@ namespace TerraFX.Interop
     [Guid("A71EFDB4-9FDB-4838-AD90-CFC3BE8C3DAF")]
     public unsafe struct IDWriteFontFace1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -41,9 +38,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteFontFace1* This
         );
-        #endregion
 
-        #region IDWriteFontFace Delegates
         /// <summary>Obtains the file format type of a font face.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -249,9 +244,7 @@ namespace TerraFX.Interop
             [Out, NativeTypeName("DWRITE_GLYPH_METRICS[]")] DWRITE_GLYPH_METRICS* glyphMetrics,
             [In, NativeTypeName("BOOL")] int isSideways = FALSE
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Gets common metrics for the font in design units. These metrics are applicable to all the glyphs within a font, and are used by applications for layout calculations.</summary>
         /// <param name="fontMetrics">Metrics public structure to fill in.</param>
         [SuppressUnmanagedCodeSecurity]
@@ -432,9 +425,7 @@ namespace TerraFX.Interop
         public /* static */ delegate int _HasVerticalGlyphVariants(
             [In] IDWriteFontFace1* This
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -472,9 +463,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteFontFace Methods
         public DWRITE_FONT_FACE_TYPE _GetType()
         {
             fixed (IDWriteFontFace1* This = &this)
@@ -727,9 +716,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         public void GetMetrics1(
             [Out] DWRITE_FONT_METRICS1* fontMetrics
         )
@@ -938,20 +925,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDWriteFontFace Fields
             public IntPtr _GetType;
 
             public IntPtr GetFiles;
@@ -981,9 +963,7 @@ namespace TerraFX.Interop
             public IntPtr GetGdiCompatibleMetrics;
 
             public IntPtr GetGdiCompatibleGlyphMetrics;
-            #endregion
 
-            #region Fields
             public IntPtr GetMetrics1;
 
             public IntPtr GetGdiCompatibleMetrics1;
@@ -1007,8 +987,6 @@ namespace TerraFX.Interop
             public IntPtr GetVerticalGlyphVariants;
 
             public IntPtr HasVerticalGlyphVariants;
-            #endregion
         }
-        #endregion
     }
 }

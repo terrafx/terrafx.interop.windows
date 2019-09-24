@@ -19,15 +19,12 @@ namespace TerraFX.Interop
     {
         private const string DllName = nameof(D3D12);
 
-        #region Constants
         public const int D3D12_ANISOTROPIC_FILTERING_BIT = 0x40;
 
         public const int D3D12_DEFAULT_SHADER_4_COMPONENT_MAPPING = 0x1688;
 
         public static readonly Guid D3D12ExperimentalShaderModels = new Guid(0x76F5573E, 0xF13A, 0x40F5, 0xB2, 0x97, 0x81, 0xCE, 0x9E, 0x18, 0x93, 0x3F);
-        #endregion
 
-        #region D3D12_* Constants
         public const uint D3D12_16BIT_INDEX_STRIP_CUT_VALUE = 0xffff;
 
         public const uint D3D12_32BIT_INDEX_STRIP_CUT_VALUE = 0xffffffff;
@@ -817,33 +814,25 @@ namespace TerraFX.Interop
         public const uint D3D12_WHQL_DRAWINDEXED_INDEX_COUNT_2_TO_EXP = 25;
 
         public const uint D3D12_WHQL_DRAW_VERTEX_COUNT_2_TO_EXP = 25;
-        #endregion
 
-        #region D3D12_SHADER_COMPONENT_MAPPING_* Constants
         public const int D3D12_SHADER_COMPONENT_MAPPING_MASK = 0x7;
 
         public const int D3D12_SHADER_COMPONENT_MAPPING_SHIFT = 3;
 
         public const int D3D12_SHADER_COMPONENT_MAPPING_ALWAYS_SET_BIT_AVOIDING_ZEROMEM_MISTAKES = 1 << (D3D12_SHADER_COMPONENT_MAPPING_SHIFT * 4);
-        #endregion
 
-        #region D3D12_FILTER_* Constants
         public const int D3D12_FILTER_REDUCTION_TYPE_MASK = 0x3;
 
         public const int D3D12_FILTER_REDUCTION_TYPE_SHIFT = 7;
 
         public const int D3D12_FILTER_TYPE_MASK = 0x3;
-        #endregion
 
-        #region D3D12_*_FILTER_SHIFT Constants
         public const int D3D12_MIN_FILTER_SHIFT = 4;
 
         public const int D3D12_MAG_FILTER_SHIFT = 2;
 
         public const int D3D12_MIP_FILTER_SHIFT = 0;
-        #endregion
 
-        #region IID_* Constants
         public static readonly Guid IID_ID3D12Object = new Guid(0xC4FEC28F, 0x7966, 0x4E95, 0x9F, 0x94, 0xF4, 0x31, 0xCB, 0x56, 0xC3, 0xB8);
 
         public static readonly Guid IID_ID3D12DeviceChild = new Guid(0x905DB94B, 0xA00C, 0x4140, 0x9D, 0xF5, 0x2B, 0x64, 0xCA, 0x9E, 0xA3, 0x57);
@@ -891,9 +880,7 @@ namespace TerraFX.Interop
         public static readonly Guid IID_ID3D12Device2 = new Guid(0x30BAA41E, 0xB15B, 0x475C, 0xA0, 0xBB, 0x1A, 0xF5, 0xC5, 0xB6, 0x43, 0x28);
 
         public static readonly Guid IID_ID3D12Tools = new Guid(0x7071E1F0, 0xE84B, 0x4B33, 0x97, 0x4F, 0x12, 0xFA, 0x49, 0xDE, 0x65, 0xC5);
-        #endregion
 
-        #region External Methods
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3D12SerializeRootSignature", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
         [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
@@ -960,9 +947,7 @@ namespace TerraFX.Interop
             [In] void* pConfigurationStructs = null,
             [In, NativeTypeName("UINT[]")] uint* pConfigurationStructSizes = null
         );
-        #endregion
 
-        #region Methods
         public static int D3D12_ENCODE_SHADER_4_COMPONENT_MAPPING(D3D12_SHADER_COMPONENT_MAPPING Src0, D3D12_SHADER_COMPONENT_MAPPING Src1, D3D12_SHADER_COMPONENT_MAPPING Src2, D3D12_SHADER_COMPONENT_MAPPING Src3)
         {
             return ((int)Src0 & D3D12_SHADER_COMPONENT_MAPPING_MASK)
@@ -1217,6 +1202,5 @@ namespace TerraFX.Interop
             // respect the const-ness of their arguments.
             return (ID3D12CommandList**)pp;
         }
-        #endregion
     }
 }

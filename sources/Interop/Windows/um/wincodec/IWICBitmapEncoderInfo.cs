@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("94C9B4EE-A09F-4F92-8A1E-4A9BCE7E76FB")]
     public unsafe struct IWICBitmapEncoderInfo
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IWICBitmapEncoderInfo* This
         );
-        #endregion
 
-        #region IWICComponentInfo Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -113,9 +108,7 @@ namespace TerraFX.Interop
             [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzFriendlyName,
             [Out, NativeTypeName("UINT")] uint* pcchActual
         );
-        #endregion
 
-        #region IWICBitmapCodecInfo Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -224,9 +217,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("LPCWSTR")] char* wzMimeType,
             [Out, NativeTypeName("BOOL")] int* pfMatches
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -234,9 +225,7 @@ namespace TerraFX.Interop
             [In] IWICBitmapEncoderInfo* This,
             [Out] IWICBitmapEncoder** ppIBitmapEncoder = null
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -274,9 +263,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IWICComponentInfo Methods
         [return: NativeTypeName("HRESULT")]
         public int GetComponentType(
             [Out] WICComponentType* pType
@@ -404,9 +391,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IWICBitmapCodecInfo Methods
         [return: NativeTypeName("HRESULT")]
         public int GetContainerFormat(
             [Out, NativeTypeName("GUID")] Guid* pguidContainerFormat
@@ -600,9 +585,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int CreateInstance(
             [Out] IWICBitmapEncoder** ppIBitmapEncoder = null
@@ -616,20 +599,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IWICComponentInfo Fields
             public IntPtr GetComponentType;
 
             public IntPtr GetCLSID;
@@ -645,9 +623,7 @@ namespace TerraFX.Interop
             public IntPtr GetSpecVersion;
 
             public IntPtr GetFriendlyName;
-            #endregion
 
-            #region IWICBitmapCodecInfo Fields
             public IntPtr GetContainerFormat;
 
             public IntPtr GetPixelFormats;
@@ -671,12 +647,8 @@ namespace TerraFX.Interop
             public IntPtr DoesSupportMultiframe;
 
             public IntPtr MatchesMimeType;
-            #endregion
 
-            #region Fields
             public IntPtr CreateInstance;
-            #endregion
         }
-        #endregion
     }
 }

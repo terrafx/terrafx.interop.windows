@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("C59598B4-48B3-4869-B9B1-B1618B14A8B7")]
     public unsafe struct ID3D12ShaderReflectionConstantBuffer
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -38,9 +35,7 @@ namespace TerraFX.Interop
             [In] ID3D12ShaderReflectionConstantBuffer* This,
             [In, NativeTypeName("LPCSTR")] sbyte* Name
         );
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetDesc(
             [Out] D3D12_SHADER_BUFFER_DESC* pDesc
@@ -80,19 +75,14 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region Fields
             public IntPtr GetDesc;
 
             public IntPtr GetVariableByIndex;
 
             public IntPtr GetVariableByName;
-            #endregion
         }
-        #endregion
     }
 }

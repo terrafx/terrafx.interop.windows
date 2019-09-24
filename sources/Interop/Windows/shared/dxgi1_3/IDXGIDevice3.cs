@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("6007896C-3244-4AFD-BF18-A6D3BEDA5023")]
     public unsafe struct IDXGIDevice3
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDXGIDevice3* This
         );
-        #endregion
 
-        #region IDXGIObject Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -79,9 +74,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppParent
         );
-        #endregion
 
-        #region IDXGIDevice Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -127,9 +120,7 @@ namespace TerraFX.Interop
             [In] IDXGIDevice3* This,
             [Out, NativeTypeName("INT")] int* pPriority
         );
-        #endregion
 
-        #region IDXGIDevice1 Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -145,9 +136,7 @@ namespace TerraFX.Interop
             [In] IDXGIDevice3* This,
             [Out, NativeTypeName("UINT")] uint* pMaxLatency
         );
-        #endregion
 
-        #region IDXGIDevice2 Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -175,17 +164,13 @@ namespace TerraFX.Interop
             [In] IDXGIDevice3* This,
             [In, NativeTypeName("HANDLE")] IntPtr hEvent
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _Trim(
             [In] IDXGIDevice3* This
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -223,9 +208,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDXGIObject Methods
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData(
             [In, NativeTypeName("REFGUID")] Guid* Name,
@@ -293,9 +276,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDXGIDevice Methods
         [return: NativeTypeName("HRESULT")]
         public int GetAdapter(
             [Out] IDXGIAdapter** pAdapter
@@ -377,9 +358,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDXGIDevice1 Methods
         [return: NativeTypeName("HRESULT")]
         public int SetMaximumFrameLatency(
             [In, NativeTypeName("UINT")] uint MaxLatency
@@ -407,9 +386,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDXGIDevice2 Methods
         [return: NativeTypeName("HRESULT")]
         public int OfferResources(
             [In, NativeTypeName("UINT")] uint NumResources,
@@ -459,9 +436,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         public void Trim()
         {
             fixed (IDXGIDevice3* This = &this)
@@ -471,20 +446,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDXGIObject Fields
             public IntPtr SetPrivateData;
 
             public IntPtr SetPrivateDataInterface;
@@ -492,9 +462,7 @@ namespace TerraFX.Interop
             public IntPtr GetPrivateData;
 
             public IntPtr GetParent;
-            #endregion
 
-            #region IDXGIDevice Fields
             public IntPtr GetAdapter;
 
             public IntPtr CreateSurface;
@@ -504,26 +472,18 @@ namespace TerraFX.Interop
             public IntPtr SetGPUThreadPriority;
 
             public IntPtr GetGPUThreadPriority;
-            #endregion
 
-            #region IDXGIDevice1 Fields
             public IntPtr SetMaximumFrameLatency;
 
             public IntPtr GetMaximumFrameLatency;
-            #endregion
 
-            #region IDXGIDevice2 Fields
             public IntPtr OfferResources;
 
             public IntPtr ReclaimResources;
 
             public IntPtr EnqueueSetEvent;
-            #endregion
 
-            #region Fields
             public IntPtr Trim;
-            #endregion
         }
-        #endregion
     }
 }

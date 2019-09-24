@@ -7,11 +7,9 @@ namespace TerraFX.Interop
 {
     public struct D3D12_PLACED_SUBRESOURCE_FOOTPRINT
     {
-        #region Fields
         [NativeTypeName("UINT64")]
         public ulong Offset;
 
         public D3D12_SUBRESOURCE_FOOTPRINT Footprint;
-        #endregion
     }
 }

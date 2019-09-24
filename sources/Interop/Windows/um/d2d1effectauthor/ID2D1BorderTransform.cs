@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("4998735C-3A19-473C-9781-656847E3A347")]
     public unsafe struct ID2D1BorderTransform
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1BorderTransform* This
         );
-        #endregion
 
-        #region ID2D1TransformNode Delegates
         /// <summary>Return the number of input this node has.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -50,9 +45,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _GetInputCount(
             [In] ID2D1BorderTransform* This
         );
-        #endregion
 
-        #region ID2D1ConcreteTransform Delegates
         /// <summary>Controls the output precision and channel-depth for this transform.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -70,9 +63,7 @@ namespace TerraFX.Interop
             [In] ID2D1BorderTransform* This,
             [In, NativeTypeName("BOOL")] int isCached
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _SetExtendModeX(
@@ -98,9 +89,7 @@ namespace TerraFX.Interop
         public /* static */ delegate D2D1_EXTEND_MODE _GetExtendModeY(
             [In] ID2D1BorderTransform* This
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -138,9 +127,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1TransformNode Methods
         [return: NativeTypeName("UINT32")]
         public uint GetInputCount()
         {
@@ -151,9 +138,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1ConcreteTransform Methods
         [return: NativeTypeName("HRESULT")]
         public int SetOutputBuffer(
             [In] D2D1_BUFFER_PRECISION bufferPrecision,
@@ -182,9 +167,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         public void SetExtendModeX(
             [In] D2D1_EXTEND_MODE extendMode
         )
@@ -230,30 +213,21 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1TransformNode Fields
             public IntPtr GetInputCount;
-            #endregion
 
-            #region ID2D1ConcreteTransform Fields
             public IntPtr SetOutputBuffer;
 
             public IntPtr SetCached;
-            #endregion
 
-            #region Fields
             public IntPtr SetExtendModeX;
 
             public IntPtr SetExtendModeY;
@@ -261,8 +235,6 @@ namespace TerraFX.Interop
             public IntPtr GetExtendModeX;
 
             public IntPtr GetExtendModeY;
-            #endregion
         }
-        #endregion
     }
 }

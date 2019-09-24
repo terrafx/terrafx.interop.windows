@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("3D4C0C61-18A4-41E4-BD80-481A4FC9F464")]
     public unsafe struct IWICDdsFrameDecode
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IWICDdsFrameDecode* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -69,9 +64,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT")] uint cbBufferSize,
             [Out, NativeTypeName("BYTE[]")] byte* pbBuffer
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -109,9 +102,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetSizeInBlocks(
             [Out, NativeTypeName("UINT")] uint* pWidthInBlocks,
@@ -161,27 +152,20 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetSizeInBlocks;
 
             public IntPtr GetFormatInfo;
 
             public IntPtr CopyBlocks;
-            #endregion
         }
-        #endregion
     }
 }

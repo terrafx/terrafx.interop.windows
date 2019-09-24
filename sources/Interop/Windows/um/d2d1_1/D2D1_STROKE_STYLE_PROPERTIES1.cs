@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>This defines how geometries should be drawn and widened.</summary>
     public struct D2D1_STROKE_STYLE_PROPERTIES1
     {
-        #region Fields
         public D2D1_CAP_STYLE startCap;
 
         public D2D1_CAP_STYLE endCap;
@@ -27,6 +26,5 @@ namespace TerraFX.Interop
 
         /// <summary>How the nib of the stroke is influenced by the context properties.</summary>
         public D2D1_STROKE_TRANSFORM_TYPE transformType;
-        #endregion
     }
 }

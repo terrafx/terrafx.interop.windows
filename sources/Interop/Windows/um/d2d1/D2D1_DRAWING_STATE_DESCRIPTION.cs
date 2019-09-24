@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>Allows the drawing state to be atomically created. This also specifies the drawing state that is saved into an IDrawingStateBlock object.</summary>
     public struct D2D1_DRAWING_STATE_DESCRIPTION
     {
-        #region Fields
         public D2D1_ANTIALIAS_MODE antialiasMode;
 
         public D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode;
@@ -21,6 +20,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("D2D1_MATRIX_3X2_F")]
         public D2D_MATRIX_3X2_F transform;
-        #endregion
     }
 }

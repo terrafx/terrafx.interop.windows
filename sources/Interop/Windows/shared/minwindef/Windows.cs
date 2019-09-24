@@ -10,13 +10,10 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        #region Constants
         public const int FALSE = 0;
 
         public const int TRUE = 1;
-        #endregion
 
-        #region Methods
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ushort MAKEWORD(IntPtr a, IntPtr b)
         {
@@ -88,6 +85,5 @@ namespace TerraFX.Interop
         {
             return (byte)((ushort)w >> 8);
         }
-        #endregion
     }
 }

@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("D31FBE17-F157-41A2-8D24-CB779E0560E8")]
     public unsafe struct IDWriteColorGlyphRunEnumerator
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteColorGlyphRunEnumerator* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Advances to the first or next color run. The runs are enumerated in order from back to front.</summary>
         /// <param name="hasRun">Receives TRUE if there is a current run or FALSE if the end of the sequence has been reached.</param>
         /// <returns> Standard HRESULT error code.</returns>
@@ -64,9 +59,7 @@ namespace TerraFX.Interop
             [In] IDWriteColorGlyphRunEnumerator* This,
             [Out] DWRITE_COLOR_GLYPH_RUN** colorGlyphRun
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -104,9 +97,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int MoveNext(
             [Out, NativeTypeName("BOOL")] int* hasRun
@@ -134,25 +125,18 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr MoveNext;
 
             public IntPtr GetCurrentRun;
-            #endregion
         }
-        #endregion
     }
 }

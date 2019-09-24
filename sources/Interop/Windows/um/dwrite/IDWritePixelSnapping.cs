@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("EAF3A2DA-ECF4-4D24-B644-B34F6842024B")]
     public unsafe struct IDWritePixelSnapping
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWritePixelSnapping* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Determines whether pixel snapping is disabled. The recommended default is FALSE, unless doing animation that requires subpixel vertical placement.</summary>
         /// <param name="clientDrawingContext">The context passed to IDWriteTextLayout::Draw.</param>
         /// <param name="isDisabled">Receives TRUE if pixel snapping is disabled or FALSE if it not.</param>
@@ -81,9 +76,7 @@ namespace TerraFX.Interop
             [In, Optional] void* clientDrawingContext,
             [Out, NativeTypeName("FLOAT")] float* pixelsPerDip
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -121,9 +114,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int IsPixelSnappingDisabled(
             [In, Optional] void* clientDrawingContext,
@@ -171,27 +162,20 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr IsPixelSnappingDisabled;
 
             public IntPtr GetCurrentTransform;
 
             public IntPtr GetPixelsPerDip;
-            #endregion
         }
-        #endregion
     }
 }

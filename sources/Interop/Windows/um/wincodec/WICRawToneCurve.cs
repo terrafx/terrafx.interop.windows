@@ -10,27 +10,19 @@ namespace TerraFX.Interop
 {
     public struct WICRawToneCurve
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint cPoints;
 
         [NativeTypeName("WICRawToneCurvePoint[1]")]
         public _aPoints_e__FixedBuffer aPoints;
-        #endregion
 
-        #region Structs
         public unsafe struct _aPoints_e__FixedBuffer
         {
-            #region Fields
             public WICRawToneCurvePoint e0;
-            #endregion
 
-            #region Properties
             public ref WICRawToneCurvePoint this[int index] => ref AsSpan(int.MaxValue)[index];
-            #endregion
 
             public Span<WICRawToneCurvePoint> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
-        #endregion
     }
 }

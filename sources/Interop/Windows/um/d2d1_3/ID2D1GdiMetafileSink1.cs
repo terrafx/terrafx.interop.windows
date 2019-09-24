@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("FD0ECB6B-91E6-411E-8655-395E760F91B4")]
     public unsafe struct ID2D1GdiMetafileSink1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ID2D1GdiMetafileSink1* This
         );
-        #endregion
 
-        #region ID2D1GdiMetafileSink Delegates
         /// <summary>Callback for examining a metafile record.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -53,9 +48,7 @@ namespace TerraFX.Interop
             [In, Optional] void* recordData,
             [In, NativeTypeName("DWORD")] uint recordDataSize
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Callback for examining a metafile record.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -67,9 +60,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("DWORD")] uint recordDataSize,
             [In, NativeTypeName("UINT32")] uint flags
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -107,9 +98,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region ID2D1GdiMetafileSink Methods
         [return: NativeTypeName("HRESULT")]
         public int ProcessRecord(
             [In, NativeTypeName("DWORD")] uint recordType,
@@ -127,9 +116,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int ProcessRecord1(
             [In, NativeTypeName("DWORD")] uint recordType,
@@ -149,27 +136,18 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1GdiMetafileSink Fields
             public IntPtr ProcessRecord;
-            #endregion
 
-            #region Fields
             public IntPtr ProcessRecord1;
-            #endregion
         }
-        #endregion
     }
 }

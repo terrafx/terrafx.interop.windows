@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct RECT
     {
-        #region Fields
         [NativeTypeName("LONG")]
         public int left;
 
@@ -19,9 +18,7 @@ namespace TerraFX.Interop
 
         [NativeTypeName("LONG")]
         public int bottom;
-        #endregion
 
-        #region Constructors
         public RECT(int Left, int Top, int Right, int Bottom)
         {
             left = Left;
@@ -29,6 +26,5 @@ namespace TerraFX.Interop
             right = Right;
             bottom = Bottom;
         }
-        #endregion
     }
 }

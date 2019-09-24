@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("00020403-0000-0000-C000-000000000046")]
     public unsafe struct ITypeComp
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] ITypeComp* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -65,9 +60,7 @@ namespace TerraFX.Interop
             [Out] ITypeInfo** ppTInfo,
             [Out] ITypeComp** ppTComp
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -105,9 +98,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         // [return: NativeTypeName("HRESULT")]
         // public int Bind(
         //     [In, NativeTypeName("LPOLESTR")] char* szName,
@@ -151,25 +142,18 @@ namespace TerraFX.Interop
         //         );
         //     }
         // }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr Bind;
 
             public IntPtr BindType;
-            #endregion
         }
-        #endregion
     }
 }

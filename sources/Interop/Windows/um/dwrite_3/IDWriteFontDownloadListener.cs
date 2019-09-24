@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("B06FE5B9-43EC-4393-881B-DBE4DC72FDA7")]
     public unsafe struct IDWriteFontDownloadListener
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteFontDownloadListener* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>The DownloadCompleted method is called back on an arbitrary thread when a download operation ends.</summary>
         /// <param name="downloadQueue">Pointer to the download queue interface on which the BeginDownload method was called.</param>
         /// <param name="context">Optional context object that was passed to BeginDownload. AddRef is called on the context object by BeginDownload and Release is called after the DownloadCompleted method returns.</param>
@@ -55,9 +50,7 @@ namespace TerraFX.Interop
             [In, Optional] IUnknown* context,
             [In, NativeTypeName("HRESULT")] int downloadResult
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -95,9 +88,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         public void DownloadCompleted(
             [In] IDWriteFontDownloadQueue* downloadQueue,
             [In, Optional] IUnknown* context,
@@ -114,23 +105,16 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr DownloadCompleted;
-            #endregion
         }
-        #endregion
     }
 }

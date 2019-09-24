@@ -9,11 +9,9 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_PIPELINE_STATE_STREAM_DESC
     {
-        #region Fields
         [NativeTypeName("SIZE_T")]
         public UIntPtr SizeInBytes;
 
         public void* pPipelineStateSubobjectStream;
-        #endregion
     }
 }

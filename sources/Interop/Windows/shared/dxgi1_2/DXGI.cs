@@ -9,19 +9,14 @@ namespace TerraFX.Interop
 {
     public static partial class DXGI
     {
-        #region DXGI_ENUM_MODES_* Constants
         public const uint DXGI_ENUM_MODES_STEREO = 4;
 
         public const uint DXGI_ENUM_MODES_DISABLED_STEREO = 8;
-        #endregion
 
-        #region DXGI_SHARED_RESOURCE_* Constants
         public const int DXGI_SHARED_RESOURCE_READ = unchecked((int)0x80000000);
 
         public const int DXGI_SHARED_RESOURCE_WRITE = 1;
-        #endregion
 
-        #region IID_* Constants
         public static readonly Guid IID_IDXGIDisplayControl = new Guid(0xEA9DBF1A, 0xC88E, 0x4486, 0x85, 0x4A, 0x98, 0xAA, 0x01, 0x38, 0xF3, 0x0C);
 
         public static readonly Guid IID_IDXGIOutputDuplication = new Guid(0x191CFAC3, 0xA341, 0x470D, 0xB2, 0x6E, 0xA8, 0x64, 0xF4, 0x28, 0x31, 0x9C);
@@ -39,6 +34,5 @@ namespace TerraFX.Interop
         public static readonly Guid IID_IDXGIAdapter2 = new Guid(0x0AA1AE0A, 0xFA0E, 0x4B84, 0x86, 0x44, 0xE0, 0x5F, 0xF8, 0xE5, 0xAC, 0xB5);
 
         public static readonly Guid IID_IDXGIOutput1 = new Guid(0x00CDDEA8, 0x939B, 0x4B83, 0xA3, 0x40, 0xA6, 0x85, 0x22, 0x66, 0x66, 0xCC);
-        #endregion
     }
 }

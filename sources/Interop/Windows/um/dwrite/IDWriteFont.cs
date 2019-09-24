@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("ACD16696-8C14-4F5D-877E-FE3FC1D32737")]
     public unsafe struct IDWriteFont
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteFont* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Gets the font family to which the specified font belongs.</summary>
         /// <param name="fontFamily">Receives a pointer to the font family object.</param>
         /// <returns>Standard HRESULT error code.</returns>
@@ -148,9 +143,7 @@ namespace TerraFX.Interop
             [In] IDWriteFont* This,
             [Out] IDWriteFontFace** fontFace
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -188,9 +181,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetFontFamily(
             [Out] IDWriteFontFamily** fontFamily
@@ -330,20 +321,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetFontFamily;
 
             public IntPtr GetWeight;
@@ -365,8 +351,6 @@ namespace TerraFX.Interop
             public IntPtr HasCharacter;
 
             public IntPtr CreateFontFace;
-            #endregion
         }
-        #endregion
     }
 }

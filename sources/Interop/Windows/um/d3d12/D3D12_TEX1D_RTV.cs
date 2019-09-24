@@ -7,9 +7,7 @@ namespace TerraFX.Interop
 {
     public struct D3D12_TEX1D_RTV
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint MipSlice;
-        #endregion
     }
 }

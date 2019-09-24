@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>Properties describing the geometric measurement of an application-defined inline object.</summary>
     public struct DWRITE_INLINE_OBJECT_METRICS
     {
-        #region Fields
         /// <summary>Width of the inline object.</summary>
         [NativeTypeName("FLOAT")]
         public float width;
@@ -24,6 +23,5 @@ namespace TerraFX.Interop
         /// <summary>Flag indicating whether the object is to be placed upright or alongside the text baseline for vertical text.</summary>
         [NativeTypeName("BOOL")]
         public int supportsSideways;
-        #endregion
     }
 }

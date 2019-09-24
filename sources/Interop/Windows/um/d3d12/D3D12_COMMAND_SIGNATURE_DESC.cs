@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_COMMAND_SIGNATURE_DESC
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint ByteStride;
 
@@ -19,6 +18,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint NodeMask;
-        #endregion
     }
 }

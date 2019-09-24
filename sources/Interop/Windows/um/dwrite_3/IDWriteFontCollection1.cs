@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("53585141-D9F8-4095-8321-D73CF6BD116C")]
     public unsafe struct IDWriteFontCollection1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteFontCollection1* This
         );
-        #endregion
 
-        #region IDWriteFontCollection Delegates
         /// <summary>Gets the number of font families in the collection.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -90,9 +85,7 @@ namespace TerraFX.Interop
             [In] IDWriteFontFace* fontFace,
             [Out] IDWriteFont** font
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Get the underlying font set used by this collection.</summary>
         /// <param name="fontSet">Contains font set used by the collection.</param>
         /// <returns> Standard HRESULT error code.</returns>
@@ -116,9 +109,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT32")] uint index,
             [Out] IDWriteFontFamily1** fontFamily
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -156,9 +147,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteFontCollection Methods
         [return: NativeTypeName("UINT32")]
         public uint GetFontFamilyCount()
         {
@@ -219,9 +208,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetFontSet(
             [Out] IDWriteFontSet** fontSet
@@ -251,20 +238,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDWriteFontCollection Fields
             public IntPtr GetFontFamilyCount;
 
             public IntPtr GetFontFamily;
@@ -272,14 +254,10 @@ namespace TerraFX.Interop
             public IntPtr FindFamilyName;
 
             public IntPtr GetFontFromFontFace;
-            #endregion
 
-            #region Fields
             public IntPtr GetFontSet;
 
             public IntPtr GetFontFamily1;
-            #endregion
         }
-        #endregion
     }
 }

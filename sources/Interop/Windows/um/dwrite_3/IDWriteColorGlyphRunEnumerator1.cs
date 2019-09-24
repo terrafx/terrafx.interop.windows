@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("7C5F86DA-C7A1-4F05-B8E1-55A179FE5A35")]
     public unsafe struct IDWriteColorGlyphRunEnumerator1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteColorGlyphRunEnumerator1* This
         );
-        #endregion
 
-        #region IDWriteColorGlyphRunEnumerator Delegates
         /// <summary>Advances to the first or next color run. The runs are enumerated in order from back to front.</summary>
         /// <param name="hasRun">Receives TRUE if there is a current run or FALSE if the end of the sequence has been reached.</param>
         /// <returns> Standard HRESULT error code.</returns>
@@ -64,9 +59,7 @@ namespace TerraFX.Interop
             [In] IDWriteColorGlyphRunEnumerator1* This,
             [Out] DWRITE_COLOR_GLYPH_RUN** colorGlyphRun
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Gets the current color glyph run.</summary>
         /// <param name="colorGlyphRun">Receives a pointer to the color glyph run. The pointer remains valid until the next call to MoveNext or until the interface is released.</param>
         /// <returns> Standard HRESULT error code. An error is returned if there is no current glyph run, i.e., if MoveNext has not yet been called or if the end of the sequence has been reached.</returns>
@@ -77,9 +70,7 @@ namespace TerraFX.Interop
             [In] IDWriteColorGlyphRunEnumerator1* This,
             [Out] DWRITE_COLOR_GLYPH_RUN1** colorGlyphRun
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -117,9 +108,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDWriteColorGlyphRunEnumerator Methods
         [return: NativeTypeName("HRESULT")]
         public int MoveNext(
             [Out, NativeTypeName("BOOL")] int* hasRun
@@ -147,9 +136,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int GetCurrentRun1(
             [Out] DWRITE_COLOR_GLYPH_RUN1** colorGlyphRun
@@ -163,29 +150,20 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDWriteColorGlyphRunEnumerator Fields
             public IntPtr MoveNext;
 
             public IntPtr GetCurrentRun;
-            #endregion
 
-            #region Fields
             public IntPtr GetCurrentRun1;
-            #endregion
         }
-        #endregion
     }
 }

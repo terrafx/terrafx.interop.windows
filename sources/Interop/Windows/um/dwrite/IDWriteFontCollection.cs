@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("A84CEE02-3EEA-4EEE-A827-87C1A02A0FCC")]
     public unsafe struct IDWriteFontCollection
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteFontCollection* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>Gets the number of font families in the collection.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -91,9 +86,7 @@ namespace TerraFX.Interop
             [In] IDWriteFontFace* fontFace,
             [Out] IDWriteFont** font
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -131,9 +124,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("UINT32")]
         public uint GetFontFamilyCount()
         {
@@ -194,20 +185,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetFontFamilyCount;
 
             public IntPtr GetFontFamily;
@@ -215,8 +201,6 @@ namespace TerraFX.Interop
             public IntPtr FindFamilyName;
 
             public IntPtr GetFontFromFontFace;
-            #endregion
         }
-        #endregion
     }
 }

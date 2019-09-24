@@ -13,11 +13,8 @@ namespace TerraFX.Interop
     [Guid("CE25F8FD-863B-4D13-9651-C1F88DC73FE2")]
     public unsafe struct IDWriteAsyncResult
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -40,9 +37,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDWriteAsyncResult* This
         );
-        #endregion
 
-        #region Delegates
         /// <summary>The GetWaitHandleMethod method returns a handle that can be used to wait for the asynchronous operation to complete. The handle remains valid until the interface is released.</summary>
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
@@ -58,9 +53,7 @@ namespace TerraFX.Interop
         public /* static */ delegate int _GetResult(
             [In] IDWriteAsyncResult* This
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -98,9 +91,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HANDLE")]
         public IntPtr GetWaitHandle()
         {
@@ -122,25 +113,18 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetWaitHandle;
 
             public IntPtr GetResult;
-            #endregion
         }
-        #endregion
     }
 }

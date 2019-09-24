@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct CLIPDATA
     {
-        #region Fields
         [NativeTypeName("ULONG")]
         public uint cbSize;
 
@@ -16,6 +15,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("BYTE[]")]
         public byte* pClipDAta;
-        #endregion
     }
 }

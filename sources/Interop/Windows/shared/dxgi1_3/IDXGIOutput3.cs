@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("8A6BB301-7E7E-41F4-A8E0-5B32F7F99B18")]
     public unsafe struct IDXGIOutput3
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IDXGIOutput3* This
         );
-        #endregion
 
-        #region IDXGIObject Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -79,9 +74,7 @@ namespace TerraFX.Interop
             [In, NativeTypeName("REFIID")] Guid* riid,
             [Out] void** ppParent
         );
-        #endregion
 
-        #region IDXGIOutput Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -180,9 +173,7 @@ namespace TerraFX.Interop
             [In] IDXGIOutput3* This,
             [Out] DXGI_FRAME_STATISTICS* pStats
         );
-        #endregion
 
-        #region IDXGIOutput1 Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -220,18 +211,14 @@ namespace TerraFX.Interop
             [In] IUnknown* pDevice,
             [Out] IDXGIOutputDuplication** ppOutputDuplication
         );
-        #endregion
 
-        #region IDXGIOutput2 Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("BOOL")]
         public /* static */ delegate int _SupportsOverlays(
             [In] IDXGIOutput3* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -241,9 +228,7 @@ namespace TerraFX.Interop
             [In] IUnknown* pConcernedDevice,
             [Out, NativeTypeName("UINT")] uint* pFlags
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -281,9 +266,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDXGIObject Methods
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData(
             [In, NativeTypeName("REFGUID")] Guid* Name,
@@ -351,9 +334,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDXGIOutput Methods
         [return: NativeTypeName("HRESULT")]
         public int GetDesc(
             [Out] DXGI_OUTPUT_DESC* pDesc
@@ -526,9 +507,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDXGIOutput1 Methods
         [return: NativeTypeName("HRESULT")]
         public int GetDisplayModeList1(
             [In] DXGI_FORMAT EnumFormat,
@@ -596,9 +575,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region IDXGIOutput2 Methods
         [return: NativeTypeName("BOOL")]
         public int SupportsOverlays()
         {
@@ -609,9 +586,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int CheckOverlaySupport(
             [In] DXGI_FORMAT EnumFormat,
@@ -629,20 +604,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDXGIObject Fields
             public IntPtr SetPrivateData;
 
             public IntPtr SetPrivateDataInterface;
@@ -650,9 +620,7 @@ namespace TerraFX.Interop
             public IntPtr GetPrivateData;
 
             public IntPtr GetParent;
-            #endregion
 
-            #region IDXGIOutput Fields
             public IntPtr GetDesc;
 
             public IntPtr GetDisplayModeList;
@@ -676,9 +644,7 @@ namespace TerraFX.Interop
             public IntPtr GetDisplaySurfaceData;
 
             public IntPtr GetFrameStatistics;
-            #endregion
 
-            #region IDXGIOutput1 Fields
             public IntPtr GetDisplayModeList1;
 
             public IntPtr FindClosestMatchingMode1;
@@ -686,16 +652,10 @@ namespace TerraFX.Interop
             public IntPtr GetDisplaySurfaceData1;
 
             public IntPtr DuplicateOutput;
-            #endregion
 
-            #region IDXGIOutput2 Fields
             public IntPtr SupportsOverlays;
-            #endregion
 
-            #region Fields
             public IntPtr CheckOverlaySupport;
-            #endregion
         }
-        #endregion
     }
 }

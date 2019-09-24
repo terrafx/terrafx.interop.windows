@@ -12,11 +12,8 @@ namespace TerraFX.Interop
     [Guid("3C613A02-34B2-44EA-9A7C-45AEA9C6FD6D")]
     public unsafe struct IWICColorContext
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -39,9 +36,7 @@ namespace TerraFX.Interop
         public /* static */ delegate uint _Release(
             [In] IWICColorContext* This
         );
-        #endregion
 
-        #region Delegates
         [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
@@ -92,9 +87,7 @@ namespace TerraFX.Interop
             [In] IWICColorContext* This,
             [Out, NativeTypeName("UINT")] uint* pValue
         );
-        #endregion
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -132,9 +125,7 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int InitializeFromFilename(
             [In, NativeTypeName("LPCWSTR")] char* wzFilename
@@ -224,20 +215,15 @@ namespace TerraFX.Interop
                 );
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr InitializeFromFilename;
 
             public IntPtr InitializeFromMemory;
@@ -249,8 +235,6 @@ namespace TerraFX.Interop
             public IntPtr GetProfileBytes;
 
             public IntPtr GetExifColorSpace;
-            #endregion
         }
-        #endregion
     }
 }
