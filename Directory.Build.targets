@@ -19,7 +19,7 @@
 
   <!-- Package versions for package references across all projects -->
   <ItemGroup>
-    <PackageReference Update="Microsoft.Net.Compilers.Toolset" Version="3.3.1-beta3-final" />
+    <PackageReference Update="Microsoft.Net.Compilers.Toolset" Version="3.3.1" />
     <PackageReference Update="Microsoft.NET.Test.Sdk" Version="16.3.0-preview-20190828-03" />
     <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-19367-01" />
     <PackageReference Update="NUnit" Version="3.12.0" />
