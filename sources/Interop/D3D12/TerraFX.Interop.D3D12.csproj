@@ -1,14 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <NoWarn>1573;1591;$(NoWarn)</NoWarn>
+    <RootNamespace>TerraFX.Interop</RootNamespace>
     <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\sources\Interop\D3D12\TerraFX.Interop.D3D12.csproj" />
-    <ProjectReference Include="..\..\sources\Interop\User32\TerraFX.Interop.User32.csproj" />
+    <ProjectReference Include="..\D3DCompiler\TerraFX.Interop.D3DCompiler.csproj" />
+    <ProjectReference Include="..\DXGI\TerraFX.Interop.DXGI.csproj" />
   </ItemGroup>
 
 </Project>
