@@ -9,7 +9,6 @@ using System.Security;
 
 namespace TerraFX.Interop
 {
-    [SuppressUnmanagedCodeSecurity]
     [UnmanagedFunctionPointer(CallingConvention.Winapi, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
     [return: NativeTypeName("LRESULT")]
     public /* static */ unsafe delegate IntPtr WNDPROC(

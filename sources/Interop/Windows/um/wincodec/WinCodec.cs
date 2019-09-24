@@ -437,7 +437,6 @@ namespace TerraFX.Interop
         public static readonly Guid IID_IWICJpegFrameEncode = new Guid(0x2F0C601F, 0xD2C6, 0x468C, 0xAB, 0xFA, 0x49, 0x49, 0x5D, 0x98, 0x3E, 0xD1);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "WICConvertBitmapSource", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int WICConvertBitmapSource(
             [In, NativeTypeName("REFWICPixelFormatGUID")] Guid* dstFormat,
@@ -446,7 +445,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "WICCreateBitmapFromSection", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int WICCreateBitmapFromSection(
              [In, NativeTypeName("UINT")] uint width,
@@ -459,7 +457,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "WICCreateBitmapFromSectionEx", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int WICCreateBitmapFromSectionEx(
              [In, NativeTypeName("UINT")] uint width,
@@ -473,7 +470,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "WICMapGuidToShortName", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int WICMapGuidToShortName(
             [In, NativeTypeName("REFGUID")] Guid* guid,
@@ -483,7 +479,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "WICMapShortNameToGuid", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int WICMapShortNameToGuid(
             [In, NativeTypeName("PCWSTR")] char* wzName,
@@ -491,7 +486,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "WICMapSchemaToName", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int WICMapSchemaToName(
             [In, NativeTypeName("REFGUID")] Guid* guidMetadataFormat,

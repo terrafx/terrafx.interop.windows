@@ -882,7 +882,6 @@ namespace TerraFX.Interop
         public static readonly Guid IID_ID3D12Tools = new Guid(0x7071E1F0, 0xE84B, 0x4B33, 0x97, 0x4F, 0x12, 0xFA, 0x49, 0xDE, 0x65, 0xC5);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3D12SerializeRootSignature", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3D12SerializeRootSignature(
             [In] D3D12_ROOT_SIGNATURE_DESC* pRootSignature,
@@ -892,7 +891,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3D12CreateRootSignatureDeserializer", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3D12CreateRootSignatureDeserializer(
             [In, NativeTypeName("LPCVOID")] void* pSrcData,
@@ -902,7 +900,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3D12SerializeVersionedRootSignature(
             [In] D3D12_VERSIONED_ROOT_SIGNATURE_DESC* pRootSignature,
@@ -911,7 +908,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3D12CreateVersionedRootSignatureDeserializer(
             [In, NativeTypeName("LPCVOID")] void* pSrcData,
@@ -921,7 +917,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3D12CreateDevice", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3D12CreateDevice(
             [In, Optional] IUnknown* pAdapter,
@@ -931,7 +926,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3D12GetDebugInterface", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3D12GetDebugInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,
@@ -939,7 +933,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3D12EnableExperimentalFeatures", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3D12EnableExperimentalFeatures(
             [In, NativeTypeName("UINT")] uint NumFeatures,

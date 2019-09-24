@@ -15,7 +15,6 @@ namespace TerraFX.Interop
     {
         public readonly Vtbl* lpVtbl;
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _QueryInterface(
@@ -24,14 +23,12 @@ namespace TerraFX.Interop
             [Out] void** ppvObject
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("ULONG")]
         public /* static */ delegate uint _AddRef(
             [In] ID2D1SvgStrokeDashArray* This
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("ULONG")]
         public /* static */ delegate uint _Release(
@@ -39,7 +36,6 @@ namespace TerraFX.Interop
         );
 
         /// <summary>Retrieve the factory associated with this resource.</summary>
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _GetFactory(
             [In] ID2D1SvgStrokeDashArray* This,
@@ -47,7 +43,6 @@ namespace TerraFX.Interop
         );
 
         /// <summary>Returns the element on which this attribute is set. Returns null if the attribute is not set on any element.</summary>
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _GetElement(
             [In] ID2D1SvgStrokeDashArray* This,
@@ -55,7 +50,6 @@ namespace TerraFX.Interop
         );
 
         /// <summary>Creates a clone of this attribute value. On creation, the cloned attribute is not set on any element.</summary>
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _Clone(
@@ -65,7 +59,6 @@ namespace TerraFX.Interop
 
         /// <summary>Removes dashes from the end of the array.</summary>
         /// <param name="dashesCount">Specifies how many dashes to remove.</param>
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _RemoveDashesAtEnd(
@@ -77,7 +70,6 @@ namespace TerraFX.Interop
         /// <param name="dashes">The dashes array.</param>
         /// <param name="dashesCount">The number of dashes to update.</param>
         /// <param name="startIndex">The index at which to begin updating dashes. Must be less than or equal to the size of the array.</param>
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _UpdateDashes(
@@ -91,7 +83,6 @@ namespace TerraFX.Interop
         /// <param name="dashes">The dashes array.</param>
         /// <param name="dashesCount">The number of dashes to update.</param>
         /// <param name="startIndex">The index at which to begin updating dashes. Must be less than or equal to the size of the array.</param>
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _UpdateDashes1(
@@ -105,7 +96,6 @@ namespace TerraFX.Interop
         /// <param name="dashes">Buffer to contain the dashes.</param>
         /// <param name="dashesCount">The element count of buffer.</param>
         /// <param name="startIndex">The index of the first dash to retrieve.</param>
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetDashes(
@@ -119,7 +109,6 @@ namespace TerraFX.Interop
         /// <param name="dashes">Buffer to contain the dashes.</param>
         /// <param name="dashesCount">The element count of buffer.</param>
         /// <param name="startIndex">The index of the first dash to retrieve.</param>
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetDashes1(
@@ -130,7 +119,6 @@ namespace TerraFX.Interop
         );
 
         /// <summary>Gets the number of the dashes in the array.</summary>
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("UINT32")]
         public /* static */ delegate uint _GetDashesCount(

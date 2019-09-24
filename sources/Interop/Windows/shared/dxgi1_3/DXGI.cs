@@ -30,7 +30,6 @@ namespace TerraFX.Interop
         public static readonly Guid IID_IDXGIOutput3 = new Guid(0x8A6BB301, 0x7E7E, 0x41F4, 0xA8, 0xE0, 0x5B, 0x32, 0xF7, 0xF9, 0x9B, 0x18);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "CreateDXGIFactory2", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int CreateDXGIFactory2(
             [In, NativeTypeName("UINT")] uint Flags,
@@ -39,7 +38,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "DXGIGetDebugInterface1", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int DXGIGetDebugInterface1(
             [In, NativeTypeName("UINT")] uint Flags,

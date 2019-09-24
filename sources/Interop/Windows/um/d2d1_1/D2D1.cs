@@ -52,7 +52,6 @@ namespace TerraFX.Interop
         public static readonly Guid IID_ID2D1Multithread = new Guid(0x31E6E7BC, 0xE0FF, 0x4D46, 0x8C, 0x64, 0xA0, 0xA8, 0xC4, 0x1C, 0x15, 0xD3);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D2D1CreateDevice", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D2D1CreateDevice(
             [In] IDXGIDevice* dxgiDevice,
@@ -61,7 +60,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D2D1CreateDeviceContext", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D2D1CreateDeviceContext(
             [In] IDXGISurface* dxgiSurface,
@@ -70,7 +68,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D2D1ConvertColorSpace", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("D2D1_COLOR_F")]
         public static extern DXGI_RGBA D2D1ConvertColorSpace(
             [In] D2D1_COLOR_SPACE sourceColorSpace,
@@ -79,7 +76,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D2D1SinCos", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         public static extern void D2D1SinCos(
           [In, NativeTypeName("FLOAT")] float angle,
           [Out, NativeTypeName("FLOAT")] float* s,
@@ -87,14 +83,12 @@ namespace TerraFX.Interop
         );
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D2D1Tan", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("FLOAT")]
         public static extern float D2D1Tan(
             [In, NativeTypeName("FLOAT")] float angle
         );
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D2D1Vec3Length", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("FLOAT")]
         public static extern float D2D1Vec3Length(
           [In, NativeTypeName("FLOAT")] float x,

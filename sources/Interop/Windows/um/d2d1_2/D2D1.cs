@@ -22,7 +22,6 @@ namespace TerraFX.Interop
         public static readonly Guid IID_ID2D1CommandSink1 = new Guid(0x9EB767FD, 0x4269, 0x4467, 0xB8, 0xC2, 0xEB, 0x30, 0xCB, 0x30, 0x57, 0x43);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D2D1ComputeMaximumScaleFactor", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("FLOAT")]
         public static extern float D2D1ComputeMaximumScaleFactor(
             [In, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* matrix

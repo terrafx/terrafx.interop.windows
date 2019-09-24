@@ -11,13 +11,11 @@ namespace TerraFX.Interop
     public static unsafe partial class Kernel32
     {
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "lstrlenA", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         public static extern int lstrlenA(
             [In, NativeTypeName("LPCSTR")] byte* lpString
         );
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "lstrlenW", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         public static extern int lstrlenW(
             [In, NativeTypeName("LPCWSTR")] char* lpString
         );

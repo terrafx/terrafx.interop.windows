@@ -11,14 +11,12 @@ namespace TerraFX.Interop
     public static unsafe partial class Kernel32
     {
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "QueryPerformanceCounter", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("BOOL")]
         public static extern int QueryPerformanceCounter(
             [Out] LARGE_INTEGER* lpPerformanceCount
         );
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "QueryPerformanceFrequency", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("BOOL")]
         public static extern int QueryPerformanceFrequency(
             [Out] LARGE_INTEGER* lpFrequency

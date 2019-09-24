@@ -32,7 +32,6 @@ namespace TerraFX.Interop
         public static readonly Guid IID_IDXGIDebug1 = new Guid(0xC5A05F0C, 0x16F2, 0x4ADF, 0x9F, 0x4D, 0xA8, 0xC4, 0xD5, 0x8A, 0xC5, 0x50);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "DXGIGetDebugInterface", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int DXGIGetDebugInterface(
             [In, NativeTypeName("REFIID")] Guid* riid,

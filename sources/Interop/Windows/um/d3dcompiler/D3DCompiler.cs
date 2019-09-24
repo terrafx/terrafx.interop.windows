@@ -103,7 +103,6 @@ namespace TerraFX.Interop
         public const uint D3D_DISASM_PRINT_HEX_LITERALS = 0x00000080;
 
         [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DReadFileToBlob", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DReadFileToBlob(
             [In, NativeTypeName("LPCWSTR")] char* pFileName,
@@ -111,7 +110,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DWriteBlobToFile", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DWriteBlobToFile(
             [In] ID3DBlob* pBlob,
@@ -120,7 +118,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Ansi, EntryPoint = "D3DCompile", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DCompile(
             [In, NativeTypeName("LPCVOID")] void* pSrcData,
@@ -137,7 +134,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Ansi, EntryPoint = "D3DCompile2", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DCompile2(
             [In, NativeTypeName("LPCVOID")] void* pSrcData,
@@ -157,7 +153,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DCompileFromFile", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DCompileFromFile(
             [In, NativeTypeName("LPCWSTR")] char* pFileName,
@@ -172,7 +167,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DPreprocess", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DPreprocess(
             [In, NativeTypeName("LPCVOID")] void* pSrcData,
@@ -185,7 +179,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DGetDebugInfo", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DGetDebugInfo(
             [In, NativeTypeName("LPCVOID")] void* pSrcData,
@@ -194,7 +187,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DReflect", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DReflect(
             [In, NativeTypeName("LPCVOID")] void* pSrcData,
@@ -204,7 +196,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DReflectLibrary", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DReflectLibrary(
             [In, NativeTypeName("LPCVOID")] void* pSrcData,
@@ -214,7 +205,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DDisassemble", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DDisassemble(
             [In, NativeTypeName("LPCVOID")] void* pSrcData,
@@ -225,7 +215,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DDisassembleRegion", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DDisassembleRegion(
             [In, NativeTypeName("LPCVOID")] void* pSrcData,
@@ -239,7 +228,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DGetTraceInstructionOffsets", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DGetTraceInstructionOffsets(
             [In, NativeTypeName("LPCVOID")] void* pSrcData,
@@ -252,7 +240,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DGetInputSignatureBlob", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DGetInputSignatureBlob(
             [In, NativeTypeName("LPCVOID")] void* pSrcData,
@@ -261,7 +248,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DGetOutputSignatureBlob", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DGetOutputSignatureBlob(
             [In, NativeTypeName("LPCVOID")] void* pSrcData,
@@ -270,7 +256,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DGetInputAndOutputSignatureBlob", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DGetInputAndOutputSignatureBlob(
             [In, NativeTypeName("LPCVOID")] void* pSrcData,
@@ -279,7 +264,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DStripShader", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DStripShader(
             [In, NativeTypeName("LPCVOID")] void* pShaderBytecode,
@@ -289,7 +273,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DGetBlobPart", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DGetBlobPart(
             [In, NativeTypeName("LPCVOID")] void* pSrcData,
@@ -300,7 +283,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DSetBlobPart", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DSetBlobPart(
             [In, NativeTypeName("LPCVOID")] void* pSrcData,
@@ -313,7 +295,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DCreateBlob", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DCreateBlob(
             [In, NativeTypeName("SIZE_T")] UIntPtr Size,
@@ -321,7 +302,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DCompressShaders", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DCompressShaders(
             [In, NativeTypeName("UINT")] uint uNumShaders,
@@ -331,7 +311,6 @@ namespace TerraFX.Interop
         );
 
         [DllImport(D3DCOMPILER_DLL, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3DDecompressShaders", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DDecompressShaders(
             [In, NativeTypeName("LPCVOID")] void* pSrcData,

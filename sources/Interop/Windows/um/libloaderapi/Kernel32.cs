@@ -12,7 +12,6 @@ namespace TerraFX.Interop
     public static unsafe partial class Kernel32
     {
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "GetModuleHandleW", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
         [return: NativeTypeName("HMODULE")]
         public static extern IntPtr GetModuleHandle(
             [In, NativeTypeName("LPCWSTR")] char* lpModuleName = null

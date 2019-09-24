@@ -9,7 +9,6 @@ using System.Security;
 namespace TerraFX.Interop
 {
     /// <summary>Function pointer that gets a property from an effect.</summary>
-    [SuppressUnmanagedCodeSecurity]
     [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
     [return: NativeTypeName("HRESULT")]
     public /* static */ unsafe delegate int PD2D1_PROPERTY_GET_FUNCTION(

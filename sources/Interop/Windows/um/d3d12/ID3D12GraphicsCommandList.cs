@@ -14,7 +14,6 @@ namespace TerraFX.Interop
     {
         public readonly Vtbl* lpVtbl;
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _QueryInterface(
@@ -23,21 +22,18 @@ namespace TerraFX.Interop
             [Out] void** ppvObject
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("ULONG")]
         public /* static */ delegate uint _AddRef(
             [In] ID3D12GraphicsCommandList* This
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("ULONG")]
         public /* static */ delegate uint _Release(
             [In] ID3D12GraphicsCommandList* This
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetPrivateData(
@@ -47,7 +43,6 @@ namespace TerraFX.Interop
             [Out] void* pData = null
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _SetPrivateData(
@@ -57,7 +52,6 @@ namespace TerraFX.Interop
             [In] void* pData = null
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _SetPrivateDataInterface(
@@ -66,7 +60,6 @@ namespace TerraFX.Interop
             [In] IUnknown* pData = null
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _SetName(
@@ -74,7 +67,6 @@ namespace TerraFX.Interop
             [In, NativeTypeName("LPCWSTR")] char* Name
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _GetDevice(
@@ -83,20 +75,17 @@ namespace TerraFX.Interop
             [Out] void** ppvDevice = null
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate D3D12_COMMAND_LIST_TYPE __GetType(
             [In] ID3D12GraphicsCommandList* This
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _Close(
             [In] ID3D12GraphicsCommandList* This
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
         public /* static */ delegate int _Reset(
@@ -105,14 +94,12 @@ namespace TerraFX.Interop
             [In] ID3D12PipelineState* pInitialState = null
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _ClearState(
             [In] ID3D12GraphicsCommandList* This,
             [In] ID3D12PipelineState* pPipelineState = null
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _DrawInstanced(
             [In] ID3D12GraphicsCommandList* This,
@@ -122,7 +109,6 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT")] uint StartInstanceLocation
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _DrawIndexedInstanced(
             [In] ID3D12GraphicsCommandList* This,
@@ -133,7 +119,6 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT")] uint StartInstanceLocation
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _Dispatch(
             [In] ID3D12GraphicsCommandList* This,
@@ -142,7 +127,6 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT")] uint ThreadGroupCountZ
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _CopyBufferRegion(
             [In] ID3D12GraphicsCommandList* This,
@@ -153,7 +137,6 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT64")] ulong NumBytes
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _CopyTextureRegion(
             [In] ID3D12GraphicsCommandList* This,
@@ -165,7 +148,6 @@ namespace TerraFX.Interop
             [In] D3D12_BOX* pSrcBox = null
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _CopyResource(
             [In] ID3D12GraphicsCommandList* This,
@@ -173,7 +155,6 @@ namespace TerraFX.Interop
             [In] ID3D12Resource* pSrcResource
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _CopyTiles(
             [In] ID3D12GraphicsCommandList* This,
@@ -185,7 +166,6 @@ namespace TerraFX.Interop
             [In] D3D12_TILE_COPY_FLAGS Flags
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _ResolveSubresource(
             [In] ID3D12GraphicsCommandList* This,
@@ -196,14 +176,12 @@ namespace TerraFX.Interop
             [In] DXGI_FORMAT Format
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _IASetPrimitiveTopology(
             [In] ID3D12GraphicsCommandList* This,
             [In] D3D_PRIMITIVE_TOPOLOGY PrimitiveTopology
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _RSSetViewports(
             [In] ID3D12GraphicsCommandList* This,
@@ -211,7 +189,6 @@ namespace TerraFX.Interop
             [In] D3D12_VIEWPORT* pViewports
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _RSSetScissorRects(
             [In] ID3D12GraphicsCommandList* This,
@@ -219,28 +196,24 @@ namespace TerraFX.Interop
             [In, NativeTypeName("D3D12_RECT")] RECT* pRects
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _OMSetBlendFactor(
             [In] ID3D12GraphicsCommandList* This,
             [In, NativeTypeName("FLOAT")] float* BlendFactor = null
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _OMSetStencilRef(
             [In] ID3D12GraphicsCommandList* This,
             [In, NativeTypeName("UINT")] uint StencilRef
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _SetPipelineState(
             [In] ID3D12GraphicsCommandList* This,
             [In] ID3D12PipelineState* pPipelineState
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _ResourceBarrier(
             [In] ID3D12GraphicsCommandList* This,
@@ -248,14 +221,12 @@ namespace TerraFX.Interop
             [In, NativeTypeName("D3D12_RESOURCE_BARRIER[]")] D3D12_RESOURCE_BARRIER* pBarriers
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _ExecuteBundle(
             [In] ID3D12GraphicsCommandList* This,
             [In] ID3D12GraphicsCommandList* pCommandList
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _SetDescriptorHeaps(
             [In] ID3D12GraphicsCommandList* This,
@@ -263,21 +234,18 @@ namespace TerraFX.Interop
             [In, NativeTypeName("ID3D12DescriptorHeap*[]")] ID3D12DescriptorHeap** ppDescriptorHeaps
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _SetComputeRootSignature(
             [In] ID3D12GraphicsCommandList* This,
             [In] ID3D12RootSignature* pRootSignature = null
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _SetGraphicsRootSignature(
             [In] ID3D12GraphicsCommandList* This,
             [In] ID3D12RootSignature* pRootSignature = null
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _SetComputeRootDescriptorTable(
             [In] ID3D12GraphicsCommandList* This,
@@ -285,7 +253,6 @@ namespace TerraFX.Interop
             [In] D3D12_GPU_DESCRIPTOR_HANDLE BaseDescriptor
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _SetGraphicsRootDescriptorTable(
             [In] ID3D12GraphicsCommandList* This,
@@ -293,7 +260,6 @@ namespace TerraFX.Interop
             [In] D3D12_GPU_DESCRIPTOR_HANDLE BaseDescriptor
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _SetComputeRoot32BitConstant(
             [In] ID3D12GraphicsCommandList* This,
@@ -302,7 +268,6 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT")] uint DestOffsetIn32BitValues
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _SetGraphicsRoot32BitConstant(
             [In] ID3D12GraphicsCommandList* This,
@@ -311,7 +276,6 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT")] uint DestOffsetIn32BitValues
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _SetComputeRoot32BitConstants(
             [In] ID3D12GraphicsCommandList* This,
@@ -321,7 +285,6 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT")] uint DestOffsetIn32BitValues
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _SetGraphicsRoot32BitConstants(
             [In] ID3D12GraphicsCommandList* This,
@@ -331,7 +294,6 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT")] uint DestOffsetIn32BitValues
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _SetComputeRootConstantBufferView(
             [In] ID3D12GraphicsCommandList* This,
@@ -339,7 +301,6 @@ namespace TerraFX.Interop
             [In, NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _SetGraphicsRootConstantBufferView(
             [In] ID3D12GraphicsCommandList* This,
@@ -347,7 +308,6 @@ namespace TerraFX.Interop
             [In, NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _SetComputeRootShaderResourceView(
             [In] ID3D12GraphicsCommandList* This,
@@ -355,7 +315,6 @@ namespace TerraFX.Interop
             [In, NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _SetGraphicsRootShaderResourceView(
             [In] ID3D12GraphicsCommandList* This,
@@ -363,7 +322,6 @@ namespace TerraFX.Interop
             [In, NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _SetComputeRootUnorderedAccessView(
             [In] ID3D12GraphicsCommandList* This,
@@ -371,7 +329,6 @@ namespace TerraFX.Interop
             [In, NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _SetGraphicsRootUnorderedAccessView(
             [In] ID3D12GraphicsCommandList* This,
@@ -379,14 +336,12 @@ namespace TerraFX.Interop
             [In, NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _IASetIndexBuffer(
             [In] ID3D12GraphicsCommandList* This,
             [In] D3D12_INDEX_BUFFER_VIEW* pView = null
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _IASetVertexBuffers(
             [In] ID3D12GraphicsCommandList* This,
@@ -395,7 +350,6 @@ namespace TerraFX.Interop
             [In, NativeTypeName("D3D12_VERTEX_BUFFER_VIEW[]")] D3D12_VERTEX_BUFFER_VIEW* pViews = null
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _SOSetTargets(
             [In] ID3D12GraphicsCommandList* This,
@@ -404,7 +358,6 @@ namespace TerraFX.Interop
             [In, NativeTypeName("D3D12_STREAM_OUTPUT_BUFFER_VIEW[]")] D3D12_STREAM_OUTPUT_BUFFER_VIEW* pViews = null
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _OMSetRenderTargets(
             [In] ID3D12GraphicsCommandList* This,
@@ -414,7 +367,6 @@ namespace TerraFX.Interop
             [In] D3D12_CPU_DESCRIPTOR_HANDLE* pDepthStencilDescriptor = null
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _ClearDepthStencilView(
             [In] ID3D12GraphicsCommandList* This,
@@ -426,7 +378,6 @@ namespace TerraFX.Interop
             [In, NativeTypeName("D3D12_RECT[]")] RECT* pRects
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _ClearRenderTargetView(
             [In] ID3D12GraphicsCommandList* This,
@@ -436,7 +387,6 @@ namespace TerraFX.Interop
             [In, NativeTypeName("D3D12_RECT[]")] RECT* pRects
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _ClearUnorderedAccessViewUint(
             [In] ID3D12GraphicsCommandList* This,
@@ -448,7 +398,6 @@ namespace TerraFX.Interop
             [In, NativeTypeName("D3D12_RECT[]")] RECT* pRects
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _ClearUnorderedAccessViewFloat(
             [In] ID3D12GraphicsCommandList* This,
@@ -460,7 +409,6 @@ namespace TerraFX.Interop
             [In, NativeTypeName("D3D12_RECT[]")] RECT* pRects
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _DiscardResource(
             [In] ID3D12GraphicsCommandList* This,
@@ -468,7 +416,6 @@ namespace TerraFX.Interop
             [In] D3D12_DISCARD_REGION* pRegion = null
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _BeginQuery(
             [In] ID3D12GraphicsCommandList* This,
@@ -477,7 +424,6 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT")] uint Index
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _EndQuery(
             [In] ID3D12GraphicsCommandList* This,
@@ -486,7 +432,6 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT")] uint Index
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _ResolveQueryData(
             [In] ID3D12GraphicsCommandList* This,
@@ -498,7 +443,6 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT64")] ulong AlignedDestinationBufferOffset
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _SetPredication(
             [In] ID3D12GraphicsCommandList* This,
@@ -507,7 +451,6 @@ namespace TerraFX.Interop
             [In] D3D12_PREDICATION_OP Operation
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _SetMarker(
             [In] ID3D12GraphicsCommandList* This,
@@ -516,7 +459,6 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT")] uint Size
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _BeginEvent(
             [In] ID3D12GraphicsCommandList* This,
@@ -525,13 +467,11 @@ namespace TerraFX.Interop
             [In, NativeTypeName("UINT")] uint Size
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _EndEvent(
             [In] ID3D12GraphicsCommandList* This
         );
 
-        [SuppressUnmanagedCodeSecurity]
         [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
         public /* static */ delegate void _ExecuteIndirect(
             [In] ID3D12GraphicsCommandList* This,
