@@ -8,12 +8,10 @@ namespace TerraFX.Interop
     /// <summary>Contains the position and color of a gradient stop.</summary>
     public struct D2D1_GRADIENT_STOP
     {
-        #region Fields
         [NativeTypeName("FLOAT")]
         public float position;
 
         [NativeTypeName("D2D1_COLOR_F")]
         public DXGI_RGBA color;
-        #endregion
     }
 }

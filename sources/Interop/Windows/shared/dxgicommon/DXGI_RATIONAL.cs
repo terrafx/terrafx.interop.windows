@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public struct DXGI_RATIONAL
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint Numerator;
 
         [NativeTypeName("UINT")]
         public uint Denominator;
-        #endregion
     }
 }

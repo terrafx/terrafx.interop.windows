@@ -12,20 +12,10 @@ namespace TerraFX.Interop
 {
     public struct D3D12_DEPTH_STENCIL_DESC
     {
-        #region Default Instances
         public static readonly D3D12_DEPTH_STENCIL_DESC DEFAULT = new D3D12_DEPTH_STENCIL_DESC() {
-            DepthEnable = TRUE,
-            DepthWriteMask = D3D12_DEPTH_WRITE_MASK_ALL,
-            DepthFunc = D3D12_COMPARISON_FUNC_LESS,
-            StencilEnable = FALSE,
-            StencilReadMask = (byte)D3D12_DEFAULT_STENCIL_READ_MASK,
-            StencilWriteMask = (byte)D3D12_DEFAULT_STENCIL_WRITE_MASK,
-            FrontFace = D3D12_DEPTH_STENCILOP_DESC.DEFAULT,
-            BackFace = D3D12_DEPTH_STENCILOP_DESC.DEFAULT
+            DepthEnable = TRUE, DepthWriteMask = D3D12_DEPTH_WRITE_MASK_ALL, DepthFunc = D3D12_COMPARISON_FUNC_LESS, StencilEnable = FALSE, StencilReadMask = (byte)D3D12_DEFAULT_STENCIL_READ_MASK, StencilWriteMask = (byte)D3D12_DEFAULT_STENCIL_WRITE_MASK, FrontFace = D3D12_DEPTH_STENCILOP_DESC.DEFAULT, BackFace = D3D12_DEPTH_STENCILOP_DESC.DEFAULT
         };
-        #endregion
 
-        #region Fields
         [NativeTypeName("BOOL")]
         public int DepthEnable;
 
@@ -45,9 +35,7 @@ namespace TerraFX.Interop
         public D3D12_DEPTH_STENCILOP_DESC FrontFace;
 
         public D3D12_DEPTH_STENCILOP_DESC BackFace;
-        #endregion
 
-        #region Constructors
         public D3D12_DEPTH_STENCIL_DESC(int depthEnable, D3D12_DEPTH_WRITE_MASK depthWriteMask, D3D12_COMPARISON_FUNC depthFunc, int  stencilEnable, byte stencilReadMask, byte stencilWriteMask, D3D12_STENCIL_OP frontStencilFailOp, D3D12_STENCIL_OP frontStencilDepthFailOp, D3D12_STENCIL_OP frontStencilPassOp, D3D12_COMPARISON_FUNC frontStencilFunc, D3D12_STENCIL_OP backStencilFailOp, D3D12_STENCIL_OP backStencilDepthFailOp, D3D12_STENCIL_OP backStencilPassOp, D3D12_COMPARISON_FUNC backStencilFunc)
         {
             DepthEnable = depthEnable;
@@ -65,6 +53,5 @@ namespace TerraFX.Interop
             BackFace.StencilPassOp = backStencilPassOp;
             BackFace.StencilFunc = backStencilFunc;
         }
-        #endregion
     }
 }

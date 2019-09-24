@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public struct DXGI_INFO_QUEUE_FILTER
     {
-        #region Fields
         public DXGI_INFO_QUEUE_FILTER_DESC AllowList;
 
         public DXGI_INFO_QUEUE_FILTER_DESC DenyList;
-        #endregion
     }
 }

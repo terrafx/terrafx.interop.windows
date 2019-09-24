@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>Describes a point along a path.</summary>
     public struct D2D1_POINT_DESCRIPTION
     {
-        #region Fields
         [NativeTypeName("D2D1_POINT_2F")]
         public D2D_POINT_2F point;
 
@@ -23,6 +22,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("FLOAT")]
         public float lengthToEndSegment;
-        #endregion
     }
 }

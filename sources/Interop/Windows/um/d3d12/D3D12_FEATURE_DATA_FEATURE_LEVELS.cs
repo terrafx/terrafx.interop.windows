@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_FEATURE_DATA_FEATURE_LEVELS
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint NumFeatureLevels;
 
@@ -15,6 +14,5 @@ namespace TerraFX.Interop
         public D3D_FEATURE_LEVEL* pFeatureLevelsRequested;
 
         public D3D_FEATURE_LEVEL MaxSupportedFeatureLevel;
-        #endregion
     }
 }

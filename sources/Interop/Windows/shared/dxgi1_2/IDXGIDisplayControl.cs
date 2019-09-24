@@ -5,72 +5,39 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     [Guid("EA9DBF1A-C88E-4486-854A-98AA0138F30C")]
     public unsafe struct IDXGIDisplayControl
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IDXGIDisplayControl* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDXGIDisplayControl* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IDXGIDisplayControl* This
-        );
+        public delegate uint _AddRef(IDXGIDisplayControl* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IDXGIDisplayControl* This
-        );
-        #endregion
+        public delegate uint _Release(IDXGIDisplayControl* This);
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _IsStereoEnabled(
-            [In] IDXGIDisplayControl* This
-        );
+        public delegate int _IsStereoEnabled(IDXGIDisplayControl* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _SetStereoEnabled(
-            [In] IDXGIDisplayControl* This,
-            [In, NativeTypeName("BOOL")] int enabled
-        );
-        #endregion
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _SetStereoEnabled(IDXGIDisplayControl* This, [NativeTypeName("BOOL")] int enabled);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDXGIDisplayControl* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -79,9 +46,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDisplayControl* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -90,56 +55,38 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDisplayControl* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("BOOL")]
         public int IsStereoEnabled()
         {
             fixed (IDXGIDisplayControl* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_IsStereoEnabled>(lpVtbl->IsStereoEnabled)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_IsStereoEnabled>(lpVtbl->IsStereoEnabled)(This);
             }
         }
 
-        public void SetStereoEnabled(
-            [In, NativeTypeName("BOOL")] int enabled
-        )
+        public void SetStereoEnabled([NativeTypeName("BOOL")] int enabled)
         {
             fixed (IDXGIDisplayControl* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetStereoEnabled>(lpVtbl->SetStereoEnabled)(
-                    This,
-                    enabled
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetStereoEnabled>(lpVtbl->SetStereoEnabled)(This, enabled);
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr IsStereoEnabled;
 
             public IntPtr SetStereoEnabled;
-            #endregion
         }
-        #endregion
     }
 }

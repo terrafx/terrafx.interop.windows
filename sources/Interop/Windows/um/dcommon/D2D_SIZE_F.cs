@@ -8,12 +8,10 @@ namespace TerraFX.Interop
     /// <summary>Stores an ordered pair of floats, typically the width and height of a rectangle.</summary>
     public struct D2D_SIZE_F
     {
-        #region Fields
         [NativeTypeName("FLOAT")]
         public float width;
 
         [NativeTypeName("FLOAT")]
         public float height;
-        #endregion
     }
 }

@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct D3D12_QUERY_DATA_PIPELINE_STATISTICS
     {
-        #region Fields
         [NativeTypeName("UINT64")]
         public ulong IAVertices;
 
@@ -40,6 +39,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT64")]
         public ulong CSInvocations;
-        #endregion
     }
 }

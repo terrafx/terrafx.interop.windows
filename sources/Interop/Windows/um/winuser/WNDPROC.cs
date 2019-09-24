@@ -5,17 +5,10 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
-    [SuppressUnmanagedCodeSecurity]
-    [UnmanagedFunctionPointer(CallingConvention.Winapi, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+    [UnmanagedFunctionPointer(CallingConvention.Winapi)]
     [return: NativeTypeName("LRESULT")]
-    public /* static */ unsafe delegate IntPtr WNDPROC(
-        [In, NativeTypeName("HWND")] IntPtr hWnd,
-        [In, NativeTypeName("UINT")] uint Msg,
-        [In, NativeTypeName("WPARAM")] UIntPtr wParam,
-        [In, NativeTypeName("LPARAM")] IntPtr lParam
-    );
+    public unsafe delegate IntPtr WNDPROC([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] UIntPtr wParam, [NativeTypeName("LPARAM")] IntPtr lParam);
 }

@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct WICImageParameters
     {
-        #region Fields
         public D2D1_PIXEL_FORMAT pixelFormat;
 
         [NativeTypeName("FLOAT")]
@@ -27,6 +26,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT32")]
         public uint PixelHeight;
-        #endregion
     }
 }

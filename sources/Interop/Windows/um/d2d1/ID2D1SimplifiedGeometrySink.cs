@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -13,103 +12,48 @@ namespace TerraFX.Interop
     [Guid("2CD9069E-12E2-11DC-9FED-001143A055F9")]
     public unsafe struct ID2D1SimplifiedGeometrySink
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] ID2D1SimplifiedGeometrySink* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1SimplifiedGeometrySink* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] ID2D1SimplifiedGeometrySink* This
-        );
+        public delegate uint _AddRef(ID2D1SimplifiedGeometrySink* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] ID2D1SimplifiedGeometrySink* This
-        );
-        #endregion
+        public delegate uint _Release(ID2D1SimplifiedGeometrySink* This);
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _SetFillMode(
-            [In] ID2D1SimplifiedGeometrySink* This,
-            [In] D2D1_FILL_MODE fillMode
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _SetFillMode(ID2D1SimplifiedGeometrySink* This, D2D1_FILL_MODE fillMode);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _SetSegmentFlags(
-            [In] ID2D1SimplifiedGeometrySink* This,
-            [In] D2D1_PATH_SEGMENT vertexFlags
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _SetSegmentFlags(ID2D1SimplifiedGeometrySink* This, D2D1_PATH_SEGMENT vertexFlags);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _BeginFigure(
-            [In] ID2D1SimplifiedGeometrySink* This,
-            [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F startPoint,
-            [In] D2D1_FIGURE_BEGIN figureBegin
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _BeginFigure(ID2D1SimplifiedGeometrySink* This, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F startPoint, D2D1_FIGURE_BEGIN figureBegin);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _AddLines(
-            [In] ID2D1SimplifiedGeometrySink* This,
-            [In, NativeTypeName("D2D1_POINT_2F[]")] D2D_POINT_2F* points,
-            [In, NativeTypeName("UINT32")] uint pointsCount
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _AddLines(ID2D1SimplifiedGeometrySink* This, [NativeTypeName("D2D1_POINT_2F[]")] D2D_POINT_2F* points, [NativeTypeName("UINT32")] uint pointsCount);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _AddBeziers(
-            [In] ID2D1SimplifiedGeometrySink* This,
-            [In, NativeTypeName("D2D1_BEZIER_SEGMENT[]")] D2D1_BEZIER_SEGMENT* beziers,
-            [In, NativeTypeName("UINT32")] uint beziersCount
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _AddBeziers(ID2D1SimplifiedGeometrySink* This, [NativeTypeName("D2D1_BEZIER_SEGMENT[]")] D2D1_BEZIER_SEGMENT* beziers, [NativeTypeName("UINT32")] uint beziersCount);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _EndFigure(
-            [In] ID2D1SimplifiedGeometrySink* This,
-            [In] D2D1_FIGURE_END figureEnd
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _EndFigure(ID2D1SimplifiedGeometrySink* This, D2D1_FIGURE_END figureEnd);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Close(
-            [In] ID2D1SimplifiedGeometrySink* This
-        );
-        #endregion
+        public delegate int _Close(ID2D1SimplifiedGeometrySink* This);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1SimplifiedGeometrySink* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -118,9 +62,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SimplifiedGeometrySink* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -129,95 +71,55 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SimplifiedGeometrySink* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region Methods
-        public void SetFillMode(
-            [In] D2D1_FILL_MODE fillMode
-        )
-        {
-            fixed (ID2D1SimplifiedGeometrySink* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_SetFillMode>(lpVtbl->SetFillMode)(
-                    This,
-                    fillMode
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
-        public void SetSegmentFlags(
-            [In] D2D1_PATH_SEGMENT vertexFlags
-        )
+        public void SetFillMode(D2D1_FILL_MODE fillMode)
         {
             fixed (ID2D1SimplifiedGeometrySink* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetSegmentFlags>(lpVtbl->SetSegmentFlags)(
-                    This,
-                    vertexFlags
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetFillMode>(lpVtbl->SetFillMode)(This, fillMode);
             }
         }
 
-        public void BeginFigure(
-            [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F startPoint,
-            [In] D2D1_FIGURE_BEGIN figureBegin
-        )
+        public void SetSegmentFlags(D2D1_PATH_SEGMENT vertexFlags)
         {
             fixed (ID2D1SimplifiedGeometrySink* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_BeginFigure>(lpVtbl->BeginFigure)(
-                    This,
-                    startPoint,
-                    figureBegin
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetSegmentFlags>(lpVtbl->SetSegmentFlags)(This, vertexFlags);
             }
         }
 
-        public void AddLines(
-            [In, NativeTypeName("D2D1_POINT_2F[]")] D2D_POINT_2F* points,
-            [In, NativeTypeName("UINT32")] uint pointsCount
-        )
+        public void BeginFigure([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F startPoint, D2D1_FIGURE_BEGIN figureBegin)
         {
             fixed (ID2D1SimplifiedGeometrySink* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_AddLines>(lpVtbl->AddLines)(
-                    This,
-                    points,
-                    pointsCount
-                );
+                Marshal.GetDelegateForFunctionPointer<_BeginFigure>(lpVtbl->BeginFigure)(This, startPoint, figureBegin);
             }
         }
 
-        public void AddBeziers(
-            [In, NativeTypeName("D2D1_BEZIER_SEGMENT[]")] D2D1_BEZIER_SEGMENT* beziers,
-            [In, NativeTypeName("UINT32")] uint beziersCount
-        )
+        public void AddLines([NativeTypeName("D2D1_POINT_2F[]")] D2D_POINT_2F* points, [NativeTypeName("UINT32")] uint pointsCount)
         {
             fixed (ID2D1SimplifiedGeometrySink* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_AddBeziers>(lpVtbl->AddBeziers)(
-                    This,
-                    beziers,
-                    beziersCount
-                );
+                Marshal.GetDelegateForFunctionPointer<_AddLines>(lpVtbl->AddLines)(This, points, pointsCount);
             }
         }
 
-        public void EndFigure(
-            [In] D2D1_FIGURE_END figureEnd
-        )
+        public void AddBeziers([NativeTypeName("D2D1_BEZIER_SEGMENT[]")] D2D1_BEZIER_SEGMENT* beziers, [NativeTypeName("UINT32")] uint beziersCount)
         {
             fixed (ID2D1SimplifiedGeometrySink* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_EndFigure>(lpVtbl->EndFigure)(
-                    This,
-                    figureEnd
-                );
+                Marshal.GetDelegateForFunctionPointer<_AddBeziers>(lpVtbl->AddBeziers)(This, beziers, beziersCount);
+            }
+        }
+
+        public void EndFigure(D2D1_FIGURE_END figureEnd)
+        {
+            fixed (ID2D1SimplifiedGeometrySink* This = &this)
+            {
+                Marshal.GetDelegateForFunctionPointer<_EndFigure>(lpVtbl->EndFigure)(This, figureEnd);
             }
         }
 
@@ -226,25 +128,18 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SimplifiedGeometrySink* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Close>(lpVtbl->Close)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Close>(lpVtbl->Close)(This);
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr SetFillMode;
 
             public IntPtr SetSegmentFlags;
@@ -258,8 +153,6 @@ namespace TerraFX.Interop
             public IntPtr EndFigure;
 
             public IntPtr Close;
-            #endregion
         }
-        #endregion
     }
 }

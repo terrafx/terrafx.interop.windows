@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_MEMCPY_DEST
     {
-        #region Fields
         public void* pData;
 
         [NativeTypeName("SIZE_T")]
@@ -17,6 +16,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("SIZE_T")]
         public UIntPtr SlicePitch;
-        #endregion
     }
 }

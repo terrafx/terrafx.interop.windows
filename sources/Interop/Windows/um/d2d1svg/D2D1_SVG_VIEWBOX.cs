@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>Represents an SVG viewBox.</summary>
     public struct D2D1_SVG_VIEWBOX
     {
-        #region Fields
         [NativeTypeName("FLOAT")]
         public float x;
 
@@ -20,6 +19,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("FLOAT")]
         public float height;
-        #endregion
     }
 }

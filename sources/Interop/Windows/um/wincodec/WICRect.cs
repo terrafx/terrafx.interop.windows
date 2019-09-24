@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct WICRect
     {
-        #region Fields
         [NativeTypeName("INT")]
         public int X;
 
@@ -19,6 +18,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("INT")]
         public int Height;
-        #endregion
     }
 }

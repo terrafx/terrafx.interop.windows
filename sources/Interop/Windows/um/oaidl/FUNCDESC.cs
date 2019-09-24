@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct FUNCDESC
     {
-        #region Fields
         [NativeTypeName("MEMBERID")]
         public int memid;
 
@@ -39,6 +38,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("WORD")]
         public ushort wFuncFlags;
-        #endregion
     }
 }

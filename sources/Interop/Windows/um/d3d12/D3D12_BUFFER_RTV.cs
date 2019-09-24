@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public struct D3D12_BUFFER_RTV
     {
-        #region Fields
         [NativeTypeName("UINT64")]
         public ulong FirstElement;
 
         [NativeTypeName("UINT")]
         public uint NumElements;
-        #endregion
     }
 }

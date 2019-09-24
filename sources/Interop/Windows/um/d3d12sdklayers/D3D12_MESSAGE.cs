@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_MESSAGE
     {
-        #region Fields
         public D3D12_MESSAGE_CATEGORY Category;
 
         public D3D12_MESSAGE_SEVERITY Severity;
@@ -21,6 +20,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("SIZE_T")]
         public UIntPtr DescriptionByteLength;
-        #endregion
     }
 }

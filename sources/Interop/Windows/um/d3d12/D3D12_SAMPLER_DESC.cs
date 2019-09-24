@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_SAMPLER_DESC
     {
-        #region Fields
         public D3D12_FILTER Filter;
 
         public D3D12_TEXTURE_ADDRESS_MODE AddressU;
@@ -32,6 +31,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("FLOAT")]
         public float MaxLOD;
-        #endregion
     }
 }

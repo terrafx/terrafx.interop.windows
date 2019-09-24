@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct D3D12_VERTEX_BUFFER_VIEW
     {
-        #region Fields
         [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")]
         public ulong BufferLocation;
 
@@ -16,6 +15,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint StrideInBytes;
-        #endregion
     }
 }

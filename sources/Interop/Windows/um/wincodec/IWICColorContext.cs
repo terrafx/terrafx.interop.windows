@@ -5,109 +5,56 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     [Guid("3C613A02-34B2-44EA-9A7C-45AEA9C6FD6D")]
     public unsafe struct IWICColorContext
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IWICColorContext* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICColorContext* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IWICColorContext* This
-        );
+        public delegate uint _AddRef(IWICColorContext* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IWICColorContext* This
-        );
-        #endregion
+        public delegate uint _Release(IWICColorContext* This);
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _InitializeFromFilename(
-            [In] IWICColorContext* This,
-            [In, NativeTypeName("LPCWSTR")] char* wzFilename
-        );
+        public delegate int _InitializeFromFilename(IWICColorContext* This, [NativeTypeName("LPCWSTR")] char* wzFilename);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _InitializeFromMemory(
-            [In] IWICColorContext* This,
-            [In, NativeTypeName("BYTE[]")] byte* pbBuffer,
-            [In, NativeTypeName("UINT")] uint cbBufferSize
-        );
+        public delegate int _InitializeFromMemory(IWICColorContext* This, [NativeTypeName("BYTE[]")] byte* pbBuffer, [NativeTypeName("UINT")] uint cbBufferSize);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _InitializeFromExifColorSpace(
-            [In] IWICColorContext* This,
-            [In, NativeTypeName("UINT")] uint value
-        );
+        public delegate int _InitializeFromExifColorSpace(IWICColorContext* This, [NativeTypeName("UINT")] uint value);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int __GetType(
-            [In] IWICColorContext* This,
-            [Out] WICColorContextType* pType
-        );
+        public delegate int __GetType(IWICColorContext* This, WICColorContextType* pType);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetProfileBytes(
-            [In] IWICColorContext* This,
-            [In, NativeTypeName("UINT")] uint cbBuffer,
-            [In, Out, Optional, NativeTypeName("BYTE[]")] byte* pbBuffer,
-            [Out, NativeTypeName("UINT")] uint* pcbActual
-        );
+        public delegate int _GetProfileBytes(IWICColorContext* This, [NativeTypeName("UINT")] uint cbBuffer, [Optional, NativeTypeName("BYTE[]")] byte* pbBuffer, [NativeTypeName("UINT")] uint* pcbActual);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetExifColorSpace(
-            [In] IWICColorContext* This,
-            [Out, NativeTypeName("UINT")] uint* pValue
-        );
-        #endregion
+        public delegate int _GetExifColorSpace(IWICColorContext* This, [NativeTypeName("UINT")] uint* pValue);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICColorContext* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -116,9 +63,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICColorContext* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -127,117 +72,72 @@ namespace TerraFX.Interop
         {
             fixed (IWICColorContext* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region Methods
-        [return: NativeTypeName("HRESULT")]
-        public int InitializeFromFilename(
-            [In, NativeTypeName("LPCWSTR")] char* wzFilename
-        )
-        {
-            fixed (IWICColorContext* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_InitializeFromFilename>(lpVtbl->InitializeFromFilename)(
-                    This,
-                    wzFilename
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int InitializeFromMemory(
-            [In, NativeTypeName("BYTE[]")] byte* pbBuffer,
-            [In, NativeTypeName("UINT")] uint cbBufferSize
-        )
+        public int InitializeFromFilename([NativeTypeName("LPCWSTR")] char* wzFilename)
         {
             fixed (IWICColorContext* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_InitializeFromMemory>(lpVtbl->InitializeFromMemory)(
-                    This,
-                    pbBuffer,
-                    cbBufferSize
-                );
+                return Marshal.GetDelegateForFunctionPointer<_InitializeFromFilename>(lpVtbl->InitializeFromFilename)(This, wzFilename);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int InitializeFromExifColorSpace(
-            [In, NativeTypeName("UINT")] uint value
-        )
+        public int InitializeFromMemory([NativeTypeName("BYTE[]")] byte* pbBuffer, [NativeTypeName("UINT")] uint cbBufferSize)
         {
             fixed (IWICColorContext* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_InitializeFromExifColorSpace>(lpVtbl->InitializeFromExifColorSpace)(
-                    This,
-                    value
-                );
+                return Marshal.GetDelegateForFunctionPointer<_InitializeFromMemory>(lpVtbl->InitializeFromMemory)(This, pbBuffer, cbBufferSize);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int _GetType(
-            [Out] WICColorContextType* pType
-        )
+        public int InitializeFromExifColorSpace([NativeTypeName("UINT")] uint value)
         {
             fixed (IWICColorContext* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<__GetType>(lpVtbl->_GetType)(
-                    This,
-                    pType
-                );
+                return Marshal.GetDelegateForFunctionPointer<_InitializeFromExifColorSpace>(lpVtbl->InitializeFromExifColorSpace)(This, value);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetProfileBytes(
-            [In, NativeTypeName("UINT")] uint cbBuffer,
-            [In, Out, Optional, NativeTypeName("BYTE[]")] byte* pbBuffer,
-            [Out, NativeTypeName("UINT")] uint* pcbActual
-        )
+        public int _GetType(WICColorContextType* pType)
         {
             fixed (IWICColorContext* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetProfileBytes>(lpVtbl->GetProfileBytes)(
-                    This,
-                    cbBuffer,
-                    pbBuffer,
-                    pcbActual
-                );
+                return Marshal.GetDelegateForFunctionPointer<__GetType>(lpVtbl->_GetType)(This, pType);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetExifColorSpace(
-            [Out, NativeTypeName("UINT")] uint* pValue
-        )
+        public int GetProfileBytes([NativeTypeName("UINT")] uint cbBuffer, [Optional, NativeTypeName("BYTE[]")] byte* pbBuffer, [NativeTypeName("UINT")] uint* pcbActual)
         {
             fixed (IWICColorContext* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetExifColorSpace>(lpVtbl->GetExifColorSpace)(
-                    This,
-                    pValue
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetProfileBytes>(lpVtbl->GetProfileBytes)(This, cbBuffer, pbBuffer, pcbActual);
             }
         }
-        #endregion
 
-        #region Structs
+        [return: NativeTypeName("HRESULT")]
+        public int GetExifColorSpace([NativeTypeName("UINT")] uint* pValue)
+        {
+            fixed (IWICColorContext* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetExifColorSpace>(lpVtbl->GetExifColorSpace)(This, pValue);
+            }
+        }
+
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr InitializeFromFilename;
 
             public IntPtr InitializeFromMemory;
@@ -249,8 +149,6 @@ namespace TerraFX.Interop
             public IntPtr GetProfileBytes;
 
             public IntPtr GetExifColorSpace;
-            #endregion
         }
-        #endregion
     }
 }

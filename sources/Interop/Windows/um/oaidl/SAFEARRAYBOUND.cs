@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public struct SAFEARRAYBOUND
     {
-        #region Fields
         [NativeTypeName("ULONG")]
         public uint cElements;
 
         [NativeTypeName("LONG")]
         public int lLbound;
-        #endregion
     }
 }

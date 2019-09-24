@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct DXGI_MODE_DESC
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint Width;
 
@@ -21,6 +20,5 @@ namespace TerraFX.Interop
         public DXGI_MODE_SCANLINE_ORDER ScanlineOrdering;
 
         public DXGI_MODE_SCALING Scaling;
-        #endregion
     }
 }

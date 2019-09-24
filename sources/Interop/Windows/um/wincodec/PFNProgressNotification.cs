@@ -4,17 +4,10 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
-    [SuppressUnmanagedCodeSecurity]
-    [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
     [return: NativeTypeName("HRESULT")]
-    public /* static */ unsafe delegate int PFNProgressNotification(
-        [In, NativeTypeName("LPVOID")] void* pvData,
-        [In, NativeTypeName("ULONG")] uint uFrameNum,
-        [In] WICProgressOperation operation,
-        [In] double dblProgress
-    );
+    public unsafe delegate int PFNProgressNotification([NativeTypeName("LPVOID")] void* pvData, [NativeTypeName("ULONG")] uint uFrameNum, WICProgressOperation operation, double dblProgress);
 }

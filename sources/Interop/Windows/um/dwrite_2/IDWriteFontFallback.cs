@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -13,36 +12,20 @@ namespace TerraFX.Interop
     [Guid("EFA008F9-F7A1-48BF-B05C-F224713CC0FF")]
     public unsafe struct IDWriteFontFallback
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IDWriteFontFallback* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDWriteFontFallback* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IDWriteFontFallback* This
-        );
+        public delegate uint _AddRef(IDWriteFontFallback* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IDWriteFontFallback* This
-        );
-        #endregion
+        public delegate uint _Release(IDWriteFontFallback* This);
 
-        #region Delegates
         /// <summary>Determines an appropriate font to use to render the range of text.</summary>
         /// <param name="analysisSource">The text source implementation holds the text and locale.</param>
         /// <param name="textLength">Length of the text to analyze.</param>
@@ -55,39 +38,16 @@ namespace TerraFX.Interop
         /// <param name="mappedFont">The font that should be used to render the first mappedLength characters of the text. If it returns NULL, then no known font can render the text, and mappedLength is the number of unsupported characters to skip.</param>
         /// <param name="scale">Scale factor to multiply the em size of the returned font by.</param>
         /// <returns> Standard HRESULT error code.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _MapCharacters(
-            [In] IDWriteFontFallback* This,
-            [In] IDWriteTextAnalysisSource* analysisSource,
-            [In, NativeTypeName("UINT32")] uint textPosition,
-            [In, NativeTypeName("UINT32")] uint textLength,
-            [In, Optional] IDWriteFontCollection* baseFontCollection,
-            [In, Optional, NativeTypeName("WCHAR[]")] char* baseFamilyName,
-            [In] DWRITE_FONT_WEIGHT baseWeight,
-            [In] DWRITE_FONT_STYLE baseStyle,
-            [In] DWRITE_FONT_STRETCH baseStretch,
-            [Out, NativeTypeName("UINT32")] uint* mappedLength,
-            [Out] IDWriteFont** mappedFont,
-            [Out, NativeTypeName("FLOAT")] float* scale
-        );
-        #endregion
+        public delegate int _MapCharacters(IDWriteFontFallback* This, IDWriteTextAnalysisSource* analysisSource, [NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint textLength, [Optional] IDWriteFontCollection* baseFontCollection, [Optional, NativeTypeName("WCHAR[]")] char* baseFamilyName, DWRITE_FONT_WEIGHT baseWeight, DWRITE_FONT_STYLE baseStyle, DWRITE_FONT_STRETCH baseStretch, [NativeTypeName("UINT32")] uint* mappedLength, IDWriteFont** mappedFont, [NativeTypeName("FLOAT")] float* scale);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDWriteFontFallback* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -96,9 +56,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFallback* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -107,64 +65,28 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFallback* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
-        public int MapCharacters(
-            [In] IDWriteTextAnalysisSource* analysisSource,
-            [In, NativeTypeName("UINT32")] uint textPosition,
-            [In, NativeTypeName("UINT32")] uint textLength,
-            [In, Optional] IDWriteFontCollection* baseFontCollection,
-            [In, Optional, NativeTypeName("WCHAR[]")] char* baseFamilyName,
-            [In] DWRITE_FONT_WEIGHT baseWeight,
-            [In] DWRITE_FONT_STYLE baseStyle,
-            [In] DWRITE_FONT_STRETCH baseStretch,
-            [Out, NativeTypeName("UINT32")] uint* mappedLength,
-            [Out] IDWriteFont** mappedFont,
-            [Out, NativeTypeName("FLOAT")] float* scale
-        )
+        public int MapCharacters(IDWriteTextAnalysisSource* analysisSource, [NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint textLength, [Optional] IDWriteFontCollection* baseFontCollection, [Optional, NativeTypeName("WCHAR[]")] char* baseFamilyName, DWRITE_FONT_WEIGHT baseWeight, DWRITE_FONT_STYLE baseStyle, DWRITE_FONT_STRETCH baseStretch, [NativeTypeName("UINT32")] uint* mappedLength, IDWriteFont** mappedFont, [NativeTypeName("FLOAT")] float* scale)
         {
             fixed (IDWriteFontFallback* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_MapCharacters>(lpVtbl->MapCharacters)(
-                    This,
-                    analysisSource,
-                    textPosition,
-                    textLength,
-                    baseFontCollection,
-                    baseFamilyName,
-                    baseWeight,
-                    baseStyle,
-                    baseStretch,
-                    mappedLength,
-                    mappedFont,
-                    scale
-                );
+                return Marshal.GetDelegateForFunctionPointer<_MapCharacters>(lpVtbl->MapCharacters)(This, analysisSource, textPosition, textLength, baseFontCollection, baseFamilyName, baseWeight, baseStyle, baseStretch, mappedLength, mappedFont, scale);
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr MapCharacters;
-            #endregion
         }
-        #endregion
     }
 }

@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct DXGI_SWAP_CHAIN_FULLSCREEN_DESC
     {
-        #region Fields
         public DXGI_RATIONAL RefreshRate;
 
         public DXGI_MODE_SCANLINE_ORDER ScanlineOrdering;
@@ -16,6 +15,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("BOOL")]
         public int Windowed;
-        #endregion
     }
 }

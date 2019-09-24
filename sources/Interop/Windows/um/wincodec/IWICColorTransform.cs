@@ -5,116 +5,56 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     [Guid("B66F034F-D0E2-40AB-B436-6DE39E321A94")]
     public unsafe struct IWICColorTransform
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IWICColorTransform* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICColorTransform* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IWICColorTransform* This
-        );
+        public delegate uint _AddRef(IWICColorTransform* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IWICColorTransform* This
-        );
-        #endregion
+        public delegate uint _Release(IWICColorTransform* This);
 
-        #region IWICBitmapSource Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSize(
-            [In] IWICColorTransform* This,
-            [Out, NativeTypeName("UINT")] uint* puiWidth,
-            [Out, NativeTypeName("UINT")] uint* puiHeight
-        );
+        public delegate int _GetSize(IWICColorTransform* This, [NativeTypeName("UINT")] uint* puiWidth, [NativeTypeName("UINT")] uint* puiHeight);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPixelFormat(
-            [In] IWICColorTransform* This,
-            [Out, NativeTypeName("WICPixelFormatGUID")] Guid* pPixelFormat
-        );
+        public delegate int _GetPixelFormat(IWICColorTransform* This, [NativeTypeName("WICPixelFormatGUID")] Guid* pPixelFormat);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetResolution(
-            [In] IWICColorTransform* This,
-            [Out] double* pDpiX,
-            [Out] double* pDpiY
-        );
+        public delegate int _GetResolution(IWICColorTransform* This, double* pDpiX, double* pDpiY);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CopyPalette(
-            [In] IWICColorTransform* This,
-            [In] IWICPalette* pIPalette = null
-        );
+        public delegate int _CopyPalette(IWICColorTransform* This, IWICPalette* pIPalette = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CopyPixels(
-            [In] IWICColorTransform* This,
-            [In, Optional] WICRect* prc,
-            [In, NativeTypeName("UINT")] uint cbStride,
-            [In, NativeTypeName("UINT")] uint cbBufferSize,
-            [Out, NativeTypeName("BYTE[]")] byte* pbBuffer
-        );
-        #endregion
+        public delegate int _CopyPixels(IWICColorTransform* This, [Optional] WICRect* prc, [NativeTypeName("UINT")] uint cbStride, [NativeTypeName("UINT")] uint cbBufferSize, [NativeTypeName("BYTE[]")] byte* pbBuffer);
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Initialize(
-            [In] IWICColorTransform* This,
-            [In, Optional] IWICBitmapSource* pIBitmapSource,
-            [In, Optional] IWICColorContext* pIContextSource,
-            [In, Optional] IWICColorContext* pIContextDest,
-            [In, NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFmtDest
-        );
-        #endregion
+        public delegate int _Initialize(IWICColorTransform* This, [Optional] IWICBitmapSource* pIBitmapSource, [Optional] IWICColorContext* pIContextSource, [Optional] IWICColorContext* pIContextDest, [NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFmtDest);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICColorTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -123,9 +63,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICColorTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -134,129 +72,72 @@ namespace TerraFX.Interop
         {
             fixed (IWICColorTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region IWICBitmapSource Methods
-        [return: NativeTypeName("HRESULT")]
-        public int GetSize(
-            [Out, NativeTypeName("UINT")] uint* puiWidth,
-            [Out, NativeTypeName("UINT")] uint* puiHeight
-        )
-        {
-            fixed (IWICColorTransform* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetSize>(lpVtbl->GetSize)(
-                    This,
-                    puiWidth,
-                    puiHeight
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetPixelFormat(
-            [Out, NativeTypeName("WICPixelFormatGUID")] Guid* pPixelFormat
-        )
+        public int GetSize([NativeTypeName("UINT")] uint* puiWidth, [NativeTypeName("UINT")] uint* puiHeight)
         {
             fixed (IWICColorTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetPixelFormat>(lpVtbl->GetPixelFormat)(
-                    This,
-                    pPixelFormat
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetSize>(lpVtbl->GetSize)(This, puiWidth, puiHeight);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetResolution(
-            [Out] double* pDpiX,
-            [Out] double* pDpiY
-        )
+        public int GetPixelFormat([NativeTypeName("WICPixelFormatGUID")] Guid* pPixelFormat)
         {
             fixed (IWICColorTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetResolution>(lpVtbl->GetResolution)(
-                    This,
-                    pDpiX,
-                    pDpiY
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetPixelFormat>(lpVtbl->GetPixelFormat)(This, pPixelFormat);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CopyPalette(
-            [In] IWICPalette* pIPalette = null
-        )
+        public int GetResolution(double* pDpiX, double* pDpiY)
         {
             fixed (IWICColorTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CopyPalette>(lpVtbl->CopyPalette)(
-                    This,
-                    pIPalette
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetResolution>(lpVtbl->GetResolution)(This, pDpiX, pDpiY);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CopyPixels(
-            [In, Optional] WICRect* prc,
-            [In, NativeTypeName("UINT")] uint cbStride,
-            [In, NativeTypeName("UINT")] uint cbBufferSize,
-            [Out, NativeTypeName("BYTE[]")] byte* pbBuffer
-        )
+        public int CopyPalette(IWICPalette* pIPalette = null)
         {
             fixed (IWICColorTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CopyPixels>(lpVtbl->CopyPixels)(
-                    This,
-                    prc,
-                    cbStride,
-                    cbBufferSize,
-                    pbBuffer
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CopyPalette>(lpVtbl->CopyPalette)(This, pIPalette);
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
-        public int Initialize(
-            [In, Optional] IWICBitmapSource* pIBitmapSource,
-            [In, Optional] IWICColorContext* pIContextSource,
-            [In, Optional] IWICColorContext* pIContextDest,
-            [In, NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFmtDest
-        )
+        public int CopyPixels([Optional] WICRect* prc, [NativeTypeName("UINT")] uint cbStride, [NativeTypeName("UINT")] uint cbBufferSize, [NativeTypeName("BYTE[]")] byte* pbBuffer)
         {
             fixed (IWICColorTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Initialize>(lpVtbl->Initialize)(
-                    This,
-                    pIBitmapSource,
-                    pIContextSource,
-                    pIContextDest,
-                    pixelFmtDest
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CopyPixels>(lpVtbl->CopyPixels)(This, prc, cbStride, cbBufferSize, pbBuffer);
             }
         }
-        #endregion
 
-        #region Structs
+        [return: NativeTypeName("HRESULT")]
+        public int Initialize([Optional] IWICBitmapSource* pIBitmapSource, [Optional] IWICColorContext* pIContextSource, [Optional] IWICColorContext* pIContextDest, [NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFmtDest)
+        {
+            fixed (IWICColorTransform* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_Initialize>(lpVtbl->Initialize)(This, pIBitmapSource, pIContextSource, pIContextDest, pixelFmtDest);
+            }
+        }
+
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IWICBitmapSource Fields
             public IntPtr GetSize;
 
             public IntPtr GetPixelFormat;
@@ -266,12 +147,8 @@ namespace TerraFX.Interop
             public IntPtr CopyPalette;
 
             public IntPtr CopyPixels;
-            #endregion
 
-            #region Fields
             public IntPtr Initialize;
-            #endregion
         }
-        #endregion
     }
 }

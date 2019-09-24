@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>Overall metrics associated with text after layout. All coordinates are in device independent pixels (DIPs).</summary>
     public struct DWRITE_TEXT_METRICS
     {
-        #region Fields
         /// <summary>Left-most point of formatted text relative to layout box (excluding any glyph overhang).</summary>
         [NativeTypeName("FLOAT")]
         public float left;
@@ -44,6 +43,5 @@ namespace TerraFX.Interop
         /// <summary>Total number of lines.</summary>
         [NativeTypeName("UINT32")]
         public uint lineCount;
-        #endregion
     }
 }

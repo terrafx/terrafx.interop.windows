@@ -5,72 +5,39 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     [Guid("7071E1F0-E84B-4B33-974F-12FA49DE65C5")]
     public unsafe struct ID3D12Tools
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] ID3D12Tools* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID3D12Tools* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] ID3D12Tools* This
-        );
+        public delegate uint _AddRef(ID3D12Tools* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] ID3D12Tools* This
-        );
-        #endregion
+        public delegate uint _Release(ID3D12Tools* This);
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _EnableShaderInstrumentation(
-            [In] ID3D12Tools* This,
-            [In, NativeTypeName("BOOL")] int bEnable
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _EnableShaderInstrumentation(ID3D12Tools* This, [NativeTypeName("BOOL")] int bEnable);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _ShaderInstrumentationEnabled(
-            [In] ID3D12Tools* This
-        );
-        #endregion
+        public delegate int _ShaderInstrumentationEnabled(ID3D12Tools* This);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID3D12Tools* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -79,9 +46,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12Tools* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -90,24 +55,15 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12Tools* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
-        #endregion
 
-        #region Methods
-        public void EnableShaderInstrumentation(
-            [In, NativeTypeName("BOOL")] int bEnable
-        )
+        public void EnableShaderInstrumentation([NativeTypeName("BOOL")] int bEnable)
         {
             fixed (ID3D12Tools* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_EnableShaderInstrumentation>(lpVtbl->EnableShaderInstrumentation)(
-                    This,
-                    bEnable
-                );
+                Marshal.GetDelegateForFunctionPointer<_EnableShaderInstrumentation>(lpVtbl->EnableShaderInstrumentation)(This, bEnable);
             }
         }
 
@@ -116,30 +72,21 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12Tools* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_ShaderInstrumentationEnabled>(lpVtbl->ShaderInstrumentationEnabled)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_ShaderInstrumentationEnabled>(lpVtbl->ShaderInstrumentationEnabled)(This);
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr EnableShaderInstrumentation;
 
             public IntPtr ShaderInstrumentationEnabled;
-            #endregion
         }
-        #endregion
     }
 }

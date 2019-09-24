@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -13,86 +12,47 @@ namespace TerraFX.Interop
     [Guid("7C5F86DA-C7A1-4F05-B8E1-55A179FE5A35")]
     public unsafe struct IDWriteColorGlyphRunEnumerator1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IDWriteColorGlyphRunEnumerator1* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDWriteColorGlyphRunEnumerator1* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IDWriteColorGlyphRunEnumerator1* This
-        );
+        public delegate uint _AddRef(IDWriteColorGlyphRunEnumerator1* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IDWriteColorGlyphRunEnumerator1* This
-        );
-        #endregion
+        public delegate uint _Release(IDWriteColorGlyphRunEnumerator1* This);
 
-        #region IDWriteColorGlyphRunEnumerator Delegates
         /// <summary>Advances to the first or next color run. The runs are enumerated in order from back to front.</summary>
         /// <param name="hasRun">Receives TRUE if there is a current run or FALSE if the end of the sequence has been reached.</param>
         /// <returns> Standard HRESULT error code.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _MoveNext(
-            [In] IDWriteColorGlyphRunEnumerator1* This,
-            [Out, NativeTypeName("BOOL")] int* hasRun
-        );
+        public delegate int _MoveNext(IDWriteColorGlyphRunEnumerator1* This, [NativeTypeName("BOOL")] int* hasRun);
 
         /// <summary>Gets the current color glyph run.</summary>
         /// <param name="colorGlyphRun">Receives a pointer to the color glyph run. The pointer remains valid until the next call to MoveNext or until the interface is released.</param>
         /// <returns> Standard HRESULT error code. An error is returned if there is no current glyph run, i.e., if MoveNext has not yet been called or if the end of the sequence has been reached.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetCurrentRun(
-            [In] IDWriteColorGlyphRunEnumerator1* This,
-            [Out] DWRITE_COLOR_GLYPH_RUN** colorGlyphRun
-        );
-        #endregion
+        public delegate int _GetCurrentRun(IDWriteColorGlyphRunEnumerator1* This, DWRITE_COLOR_GLYPH_RUN** colorGlyphRun);
 
-        #region Delegates
         /// <summary>Gets the current color glyph run.</summary>
         /// <param name="colorGlyphRun">Receives a pointer to the color glyph run. The pointer remains valid until the next call to MoveNext or until the interface is released.</param>
         /// <returns> Standard HRESULT error code. An error is returned if there is no current glyph run, i.e., if MoveNext has not yet been called or if the end of the sequence has been reached.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetCurrentRun1(
-            [In] IDWriteColorGlyphRunEnumerator1* This,
-            [Out] DWRITE_COLOR_GLYPH_RUN1** colorGlyphRun
-        );
-        #endregion
+        public delegate int _GetCurrentRun1(IDWriteColorGlyphRunEnumerator1* This, DWRITE_COLOR_GLYPH_RUN1** colorGlyphRun);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDWriteColorGlyphRunEnumerator1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -101,9 +61,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteColorGlyphRunEnumerator1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -112,80 +70,50 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteColorGlyphRunEnumerator1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region IDWriteColorGlyphRunEnumerator Methods
-        [return: NativeTypeName("HRESULT")]
-        public int MoveNext(
-            [Out, NativeTypeName("BOOL")] int* hasRun
-        )
-        {
-            fixed (IDWriteColorGlyphRunEnumerator1* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_MoveNext>(lpVtbl->MoveNext)(
-                    This,
-                    hasRun
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetCurrentRun(
-            [Out] DWRITE_COLOR_GLYPH_RUN** colorGlyphRun
-        )
+        public int MoveNext([NativeTypeName("BOOL")] int* hasRun)
         {
             fixed (IDWriteColorGlyphRunEnumerator1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetCurrentRun>(lpVtbl->GetCurrentRun)(
-                    This,
-                    colorGlyphRun
-                );
+                return Marshal.GetDelegateForFunctionPointer<_MoveNext>(lpVtbl->MoveNext)(This, hasRun);
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
-        public int GetCurrentRun1(
-            [Out] DWRITE_COLOR_GLYPH_RUN1** colorGlyphRun
-        )
+        public int GetCurrentRun(DWRITE_COLOR_GLYPH_RUN** colorGlyphRun)
         {
             fixed (IDWriteColorGlyphRunEnumerator1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetCurrentRun1>(lpVtbl->GetCurrentRun1)(
-                    This,
-                    colorGlyphRun
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetCurrentRun>(lpVtbl->GetCurrentRun)(This, colorGlyphRun);
             }
         }
-        #endregion
 
-        #region Structs
+        [return: NativeTypeName("HRESULT")]
+        public int GetCurrentRun1(DWRITE_COLOR_GLYPH_RUN1** colorGlyphRun)
+        {
+            fixed (IDWriteColorGlyphRunEnumerator1* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetCurrentRun1>(lpVtbl->GetCurrentRun1)(This, colorGlyphRun);
+            }
+        }
+
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDWriteColorGlyphRunEnumerator Fields
             public IntPtr MoveNext;
 
             public IntPtr GetCurrentRun;
-            #endregion
 
-            #region Fields
             public IntPtr GetCurrentRun1;
-            #endregion
         }
-        #endregion
     }
 }

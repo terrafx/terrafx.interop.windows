@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 using static TerraFX.Interop.D3D12_FEATURE;
 using static TerraFX.Interop.D3D12_FILTER_TYPE;
 using static TerraFX.Interop.D3D12_FILTER_REDUCTION_TYPE;
@@ -19,15 +18,12 @@ namespace TerraFX.Interop
     {
         private const string DllName = nameof(D3D12);
 
-        #region Constants
         public const int D3D12_ANISOTROPIC_FILTERING_BIT = 0x40;
 
         public const int D3D12_DEFAULT_SHADER_4_COMPONENT_MAPPING = 0x1688;
 
         public static readonly Guid D3D12ExperimentalShaderModels = new Guid(0x76F5573E, 0xF13A, 0x40F5, 0xB2, 0x97, 0x81, 0xCE, 0x9E, 0x18, 0x93, 0x3F);
-        #endregion
 
-        #region D3D12_* Constants
         public const uint D3D12_16BIT_INDEX_STRIP_CUT_VALUE = 0xffff;
 
         public const uint D3D12_32BIT_INDEX_STRIP_CUT_VALUE = 0xffffffff;
@@ -817,33 +813,25 @@ namespace TerraFX.Interop
         public const uint D3D12_WHQL_DRAWINDEXED_INDEX_COUNT_2_TO_EXP = 25;
 
         public const uint D3D12_WHQL_DRAW_VERTEX_COUNT_2_TO_EXP = 25;
-        #endregion
 
-        #region D3D12_SHADER_COMPONENT_MAPPING_* Constants
         public const int D3D12_SHADER_COMPONENT_MAPPING_MASK = 0x7;
 
         public const int D3D12_SHADER_COMPONENT_MAPPING_SHIFT = 3;
 
         public const int D3D12_SHADER_COMPONENT_MAPPING_ALWAYS_SET_BIT_AVOIDING_ZEROMEM_MISTAKES = 1 << (D3D12_SHADER_COMPONENT_MAPPING_SHIFT * 4);
-        #endregion
 
-        #region D3D12_FILTER_* Constants
         public const int D3D12_FILTER_REDUCTION_TYPE_MASK = 0x3;
 
         public const int D3D12_FILTER_REDUCTION_TYPE_SHIFT = 7;
 
         public const int D3D12_FILTER_TYPE_MASK = 0x3;
-        #endregion
 
-        #region D3D12_*_FILTER_SHIFT Constants
         public const int D3D12_MIN_FILTER_SHIFT = 4;
 
         public const int D3D12_MAG_FILTER_SHIFT = 2;
 
         public const int D3D12_MIP_FILTER_SHIFT = 0;
-        #endregion
 
-        #region IID_* Constants
         public static readonly Guid IID_ID3D12Object = new Guid(0xC4FEC28F, 0x7966, 0x4E95, 0x9F, 0x94, 0xF4, 0x31, 0xCB, 0x56, 0xC3, 0xB8);
 
         public static readonly Guid IID_ID3D12DeviceChild = new Guid(0x905DB94B, 0xA00C, 0x4140, 0x9D, 0xF5, 0x2B, 0x64, 0xCA, 0x9E, 0xA3, 0x57);
@@ -891,78 +879,35 @@ namespace TerraFX.Interop
         public static readonly Guid IID_ID3D12Device2 = new Guid(0x30BAA41E, 0xB15B, 0x475C, 0xA0, 0xBB, 0x1A, 0xF5, 0xC5, 0xB6, 0x43, 0x28);
 
         public static readonly Guid IID_ID3D12Tools = new Guid(0x7071E1F0, 0xE84B, 0x4B33, 0x97, 0x4F, 0x12, 0xFA, 0x49, 0xDE, 0x65, 0xC5);
-        #endregion
 
-        #region External Methods
-        [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3D12SerializeRootSignature", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
+        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3D12SerializeRootSignature", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3D12SerializeRootSignature(
-            [In] D3D12_ROOT_SIGNATURE_DESC* pRootSignature,
-            [In] D3D_ROOT_SIGNATURE_VERSION Version,
-            [Out] ID3DBlob** ppBlob,
-            [Out] ID3DBlob** ppErrorBlob = null
-        );
+        public static extern int D3D12SerializeRootSignature(D3D12_ROOT_SIGNATURE_DESC* pRootSignature, D3D_ROOT_SIGNATURE_VERSION Version, ID3DBlob** ppBlob, ID3DBlob** ppErrorBlob = null);
 
-        [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3D12CreateRootSignatureDeserializer", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
+        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3D12CreateRootSignatureDeserializer", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3D12CreateRootSignatureDeserializer(
-            [In, NativeTypeName("LPCVOID")] void* pSrcData,
-            [In, NativeTypeName("SIZE_T")] UIntPtr SrcDataSizeInBytes,
-            [In, NativeTypeName("REFIID")] Guid* pRootSignatureDeserializerInterface,
-            [Out] void** ppRootSignatureDeserializer
-        );
+        public static extern int D3D12CreateRootSignatureDeserializer([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] UIntPtr SrcDataSizeInBytes, [NativeTypeName("REFIID")] Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
 
-        [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
+        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3D12SerializeVersionedRootSignature(
-            [In] D3D12_VERSIONED_ROOT_SIGNATURE_DESC* pRootSignature,
-            [Out] ID3DBlob** ppBlob,
-            [Out] ID3DBlob** ppErrorBlob = null
-        );
+        public static extern int D3D12SerializeVersionedRootSignature(D3D12_VERSIONED_ROOT_SIGNATURE_DESC* pRootSignature, ID3DBlob** ppBlob, ID3DBlob** ppErrorBlob = null);
 
-        [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
+        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3D12CreateVersionedRootSignatureDeserializer(
-            [In, NativeTypeName("LPCVOID")] void* pSrcData,
-            [In, NativeTypeName("SIZE_T")] UIntPtr SrcDataSizeInBytes,
-            [In, NativeTypeName("REFIID")] Guid* pRootSignatureDeserializerInterface,
-            [Out] void** ppRootSignatureDeserializer
-        );
+        public static extern int D3D12CreateVersionedRootSignatureDeserializer([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] UIntPtr SrcDataSizeInBytes, [NativeTypeName("REFIID")] Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
 
-        [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3D12CreateDevice", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
+        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3D12CreateDevice", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3D12CreateDevice(
-            [In, Optional] IUnknown* pAdapter,
-            [In] D3D_FEATURE_LEVEL MinimumFeatureLevel,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppDevice = null
-        );
+        public static extern int D3D12CreateDevice([Optional] IUnknown* pAdapter, D3D_FEATURE_LEVEL MinimumFeatureLevel, [NativeTypeName("REFIID")] Guid* riid, void** ppDevice = null);
 
-        [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3D12GetDebugInterface", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
+        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3D12GetDebugInterface", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3D12GetDebugInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvDebug = null
-        );
+        public static extern int D3D12GetDebugInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvDebug = null);
 
-        [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "D3D12EnableExperimentalFeatures", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
+        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3D12EnableExperimentalFeatures", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3D12EnableExperimentalFeatures(
-            [In, NativeTypeName("UINT")] uint NumFeatures,
-            [In, NativeTypeName("IID[]")] Guid* pIIDs,
-            [In] void* pConfigurationStructs = null,
-            [In, NativeTypeName("UINT[]")] uint* pConfigurationStructSizes = null
-        );
-        #endregion
+        public static extern int D3D12EnableExperimentalFeatures([NativeTypeName("UINT")] uint NumFeatures, [NativeTypeName("IID[]")] Guid* pIIDs, void* pConfigurationStructs = null, [NativeTypeName("UINT[]")] uint* pConfigurationStructSizes = null);
 
-        #region Methods
         public static int D3D12_ENCODE_SHADER_4_COMPONENT_MAPPING(D3D12_SHADER_COMPONENT_MAPPING Src0, D3D12_SHADER_COMPONENT_MAPPING Src1, D3D12_SHADER_COMPONENT_MAPPING Src2, D3D12_SHADER_COMPONENT_MAPPING Src3)
         {
             return ((int)Src0 & D3D12_SHADER_COMPONENT_MAPPING_MASK)
@@ -1128,9 +1073,7 @@ namespace TerraFX.Interop
                 if (pRowSizesInBytes[i] > ((IntPtr.Size == 4) ? uint.MaxValue : ulong.MaxValue))
                     return 0;
                 var DestData = new D3D12_MEMCPY_DEST {
-                    pData = pData + pLayouts[i].Offset,
-                    RowPitch = (UIntPtr)pLayouts[i].Footprint.RowPitch,
-                    SlicePitch = (UIntPtr)(pLayouts[i].Footprint.RowPitch * pNumRows[i])
+                    pData = pData + pLayouts[i].Offset, RowPitch = (UIntPtr)pLayouts[i].Footprint.RowPitch, SlicePitch = (UIntPtr)(pLayouts[i].Footprint.RowPitch * pNumRows[i])
                 };
                 MemcpySubresource(&DestData, &pSrcData[i], (UIntPtr)pRowSizesInBytes[i], pNumRows[i], pLayouts[i].Footprint.Depth);
             }
@@ -1139,8 +1082,7 @@ namespace TerraFX.Interop
             if (DestinationDesc.Dimension == D3D12_RESOURCE_DIMENSION_BUFFER)
             {
                 var SrcBox = new D3D12_BOX((int)pLayouts[0].Offset, (int)(pLayouts[0].Offset + pLayouts[0].Footprint.Width));
-                pCmdList->CopyBufferRegion(
-                    pDestinationResource, 0, pIntermediate, pLayouts[0].Offset, pLayouts[0].Footprint.Width);
+                pCmdList->CopyBufferRegion(pDestinationResource, 0, pIntermediate, pLayouts[0].Offset, pLayouts[0].Footprint.Width);
             }
             else
             {
@@ -1217,6 +1159,5 @@ namespace TerraFX.Interop
             // respect the const-ness of their arguments.
             return (ID3D12CommandList**)pp;
         }
-        #endregion
     }
 }

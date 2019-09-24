@@ -4,13 +4,9 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
-    [SuppressUnmanagedCodeSecurity]
-    [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-    public /* static */ unsafe delegate void PFN_DESTRUCTION_CALLBACK(
-        [In] void* pData
-    );
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public unsafe delegate void PFN_DESTRUCTION_CALLBACK(void* pData);
 }

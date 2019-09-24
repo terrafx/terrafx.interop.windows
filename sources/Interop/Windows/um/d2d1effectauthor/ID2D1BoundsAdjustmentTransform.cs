@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -13,75 +12,37 @@ namespace TerraFX.Interop
     [Guid("90F732E2-5092-4606-A819-8651970BACCD")]
     public unsafe struct ID2D1BoundsAdjustmentTransform
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] ID2D1BoundsAdjustmentTransform* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1BoundsAdjustmentTransform* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] ID2D1BoundsAdjustmentTransform* This
-        );
+        public delegate uint _AddRef(ID2D1BoundsAdjustmentTransform* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] ID2D1BoundsAdjustmentTransform* This
-        );
-        #endregion
+        public delegate uint _Release(ID2D1BoundsAdjustmentTransform* This);
 
-        #region ID2D1TransformNode Delegates
         /// <summary>Return the number of input this node has.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetInputCount(
-            [In] ID2D1BoundsAdjustmentTransform* This
-        );
-        #endregion
+        public delegate uint _GetInputCount(ID2D1BoundsAdjustmentTransform* This);
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _SetOutputBounds(
-            [In] ID2D1BoundsAdjustmentTransform* This,
-            [In, NativeTypeName("D2D1_RECT_L")] RECT* outputBounds
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _SetOutputBounds(ID2D1BoundsAdjustmentTransform* This, [NativeTypeName("D2D1_RECT_L")] RECT* outputBounds);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _GetOutputBounds(
-            [In] ID2D1BoundsAdjustmentTransform* This,
-            [Out, NativeTypeName("D2D1_RECT_L")] RECT* outputBounds
-        );
-        #endregion
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _GetOutputBounds(ID2D1BoundsAdjustmentTransform* This, [NativeTypeName("D2D1_RECT_L")] RECT* outputBounds);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1BoundsAdjustmentTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -90,9 +51,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1BoundsAdjustmentTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -101,75 +60,48 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1BoundsAdjustmentTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
-        #endregion
 
-        #region ID2D1TransformNode Methods
         [return: NativeTypeName("UINT32")]
         public uint GetInputCount()
         {
             fixed (ID2D1BoundsAdjustmentTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetInputCount>(lpVtbl->GetInputCount)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetInputCount>(lpVtbl->GetInputCount)(This);
             }
         }
-        #endregion
 
-        #region Methods
-        public void SetOutputBounds(
-            [In, NativeTypeName("D2D1_RECT_L")] RECT* outputBounds
-        )
+        public void SetOutputBounds([NativeTypeName("D2D1_RECT_L")] RECT* outputBounds)
         {
             fixed (ID2D1BoundsAdjustmentTransform* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetOutputBounds>(lpVtbl->SetOutputBounds)(
-                    This,
-                    outputBounds
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetOutputBounds>(lpVtbl->SetOutputBounds)(This, outputBounds);
             }
         }
 
-        public void GetOutputBounds(
-            [Out, NativeTypeName("D2D1_RECT_L")] RECT* outputBounds
-        )
+        public void GetOutputBounds([NativeTypeName("D2D1_RECT_L")] RECT* outputBounds)
         {
             fixed (ID2D1BoundsAdjustmentTransform* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetOutputBounds>(lpVtbl->GetOutputBounds)(
-                    This,
-                    outputBounds
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetOutputBounds>(lpVtbl->GetOutputBounds)(This, outputBounds);
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1TransformNode Fields
             public IntPtr GetInputCount;
-            #endregion
 
-            #region Fields
             public IntPtr SetOutputBounds;
 
             public IntPtr GetOutputBounds;
-            #endregion
         }
-        #endregion
     }
 }

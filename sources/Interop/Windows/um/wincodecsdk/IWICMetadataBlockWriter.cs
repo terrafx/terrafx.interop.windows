@@ -5,135 +5,68 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     [Guid("08FB9676-B444-41E8-8DBE-6A53A542BFF1")]
     public unsafe struct IWICMetadataBlockWriter
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IWICMetadataBlockWriter* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICMetadataBlockWriter* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IWICMetadataBlockWriter* This
-        );
+        public delegate uint _AddRef(IWICMetadataBlockWriter* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IWICMetadataBlockWriter* This
-        );
-        #endregion
+        public delegate uint _Release(IWICMetadataBlockWriter* This);
 
-        #region IWICMetadataBlockReader Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetContainerFormat(
-            [In] IWICMetadataBlockWriter* This,
-            [Out, NativeTypeName("GUID")] Guid* pguidContainerFormat
-        );
+        public delegate int _GetContainerFormat(IWICMetadataBlockWriter* This, [NativeTypeName("GUID")] Guid* pguidContainerFormat);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetCount(
-            [In] IWICMetadataBlockWriter* This,
-            [Out, NativeTypeName("UINT")] uint* pcCount
-        );
+        public delegate int _GetCount(IWICMetadataBlockWriter* This, [NativeTypeName("UINT")] uint* pcCount);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetReaderByIndex(
-            [In] IWICMetadataBlockWriter* This,
-            [In, NativeTypeName("UINT")] uint nIndex,
-            [Out] IWICMetadataReader** ppIMetadataReader = null
-        );
+        public delegate int _GetReaderByIndex(IWICMetadataBlockWriter* This, [NativeTypeName("UINT")] uint nIndex, IWICMetadataReader** ppIMetadataReader = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetEnumerator(
-            [In] IWICMetadataBlockWriter* This,
-            [Out] IEnumUnknown** ppIEnumMetadata = null
-        );
-        #endregion
+        public delegate int _GetEnumerator(IWICMetadataBlockWriter* This, IEnumUnknown** ppIEnumMetadata = null);
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _InitializeFromBlockReader(
-            [In] IWICMetadataBlockWriter* This,
-            [In] IWICMetadataBlockReader* pIMDBlockReader = null
-        );
+        public delegate int _InitializeFromBlockReader(IWICMetadataBlockWriter* This, IWICMetadataBlockReader* pIMDBlockReader = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetWriterByIndex(
-            [In] IWICMetadataBlockWriter* This,
-            [In, NativeTypeName("UINT")] uint nIndex,
-            [Out] IWICMetadataWriter** ppIMetadataWriter = null
-        );
+        public delegate int _GetWriterByIndex(IWICMetadataBlockWriter* This, [NativeTypeName("UINT")] uint nIndex, IWICMetadataWriter** ppIMetadataWriter = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AddWriter(
-            [In] IWICMetadataBlockWriter* This,
-            [In] IWICMetadataWriter* pIMetadataWriter = null
-        );
+        public delegate int _AddWriter(IWICMetadataBlockWriter* This, IWICMetadataWriter* pIMetadataWriter = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetWriterByIndex(
-            [In] IWICMetadataBlockWriter* This,
-            [In, NativeTypeName("UINT")] uint nIndex,
-            [In] IWICMetadataWriter* pIMetadataWriter = null
-        );
+        public delegate int _SetWriterByIndex(IWICMetadataBlockWriter* This, [NativeTypeName("UINT")] uint nIndex, IWICMetadataWriter* pIMetadataWriter = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RemoveWriterByIndex(
-            [In] IWICMetadataBlockWriter* This,
-            [In, NativeTypeName("UINT")] uint nIndex
-        );
-        #endregion
+        public delegate int _RemoveWriterByIndex(IWICMetadataBlockWriter* This, [NativeTypeName("UINT")] uint nIndex);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICMetadataBlockWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -142,9 +75,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataBlockWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -153,161 +84,99 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataBlockWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region IWICMetadataBlockReader Methods
-        [return: NativeTypeName("HRESULT")]
-        public int GetContainerFormat(
-            [Out, NativeTypeName("GUID")] Guid* pguidContainerFormat
-        )
-        {
-            fixed (IWICMetadataBlockWriter* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetContainerFormat>(lpVtbl->GetContainerFormat)(
-                    This,
-                    pguidContainerFormat
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetCount(
-            [Out, NativeTypeName("UINT")] uint* pcCount
-        )
+        public int GetContainerFormat([NativeTypeName("GUID")] Guid* pguidContainerFormat)
         {
             fixed (IWICMetadataBlockWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetCount>(lpVtbl->GetCount)(
-                    This,
-                    pcCount
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetContainerFormat>(lpVtbl->GetContainerFormat)(This, pguidContainerFormat);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetReaderByIndex(
-            [In, NativeTypeName("UINT")] uint nIndex,
-            [Out] IWICMetadataReader** ppIMetadataReader = null
-        )
+        public int GetCount([NativeTypeName("UINT")] uint* pcCount)
         {
             fixed (IWICMetadataBlockWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetReaderByIndex>(lpVtbl->GetReaderByIndex)(
-                    This,
-                    nIndex,
-                    ppIMetadataReader
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetCount>(lpVtbl->GetCount)(This, pcCount);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetEnumerator(
-            [Out] IEnumUnknown** ppIEnumMetadata = null
-        )
+        public int GetReaderByIndex([NativeTypeName("UINT")] uint nIndex, IWICMetadataReader** ppIMetadataReader = null)
         {
             fixed (IWICMetadataBlockWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetEnumerator>(lpVtbl->GetEnumerator)(
-                    This,
-                    ppIEnumMetadata
-                );
-            }
-        }
-        #endregion
-
-        #region Methods
-        [return: NativeTypeName("HRESULT")]
-        public int InitializeFromBlockReader(
-            [In] IWICMetadataBlockReader* pIMDBlockReader = null
-        )
-        {
-            fixed (IWICMetadataBlockWriter* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_InitializeFromBlockReader>(lpVtbl->InitializeFromBlockReader)(
-                    This,
-                    pIMDBlockReader
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetReaderByIndex>(lpVtbl->GetReaderByIndex)(This, nIndex, ppIMetadataReader);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetWriterByIndex(
-            [In, NativeTypeName("UINT")] uint nIndex,
-            [Out] IWICMetadataWriter** ppIMetadataWriter = null
-        )
+        public int GetEnumerator(IEnumUnknown** ppIEnumMetadata = null)
         {
             fixed (IWICMetadataBlockWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetWriterByIndex>(lpVtbl->GetWriterByIndex)(
-                    This,
-                    nIndex,
-                    ppIMetadataWriter
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetEnumerator>(lpVtbl->GetEnumerator)(This, ppIEnumMetadata);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int AddWriter(
-            [In] IWICMetadataWriter* pIMetadataWriter = null
-        )
+        public int InitializeFromBlockReader(IWICMetadataBlockReader* pIMDBlockReader = null)
         {
             fixed (IWICMetadataBlockWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddWriter>(lpVtbl->AddWriter)(
-                    This,
-                    pIMetadataWriter
-                );
+                return Marshal.GetDelegateForFunctionPointer<_InitializeFromBlockReader>(lpVtbl->InitializeFromBlockReader)(This, pIMDBlockReader);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetWriterByIndex(
-            [In, NativeTypeName("UINT")] uint nIndex,
-            [In] IWICMetadataWriter* pIMetadataWriter = null
-        )
+        public int GetWriterByIndex([NativeTypeName("UINT")] uint nIndex, IWICMetadataWriter** ppIMetadataWriter = null)
         {
             fixed (IWICMetadataBlockWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetWriterByIndex>(lpVtbl->SetWriterByIndex)(
-                    This,
-                    nIndex,
-                    pIMetadataWriter
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetWriterByIndex>(lpVtbl->GetWriterByIndex)(This, nIndex, ppIMetadataWriter);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int RemoveWriterByIndex(
-            [In, NativeTypeName("UINT")] uint nIndex
-        )
+        public int AddWriter(IWICMetadataWriter* pIMetadataWriter = null)
         {
             fixed (IWICMetadataBlockWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_RemoveWriterByIndex>(lpVtbl->RemoveWriterByIndex)(
-                    This,
-                    nIndex
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddWriter>(lpVtbl->AddWriter)(This, pIMetadataWriter);
             }
         }
-        #endregion
 
-        #region Structs
+        [return: NativeTypeName("HRESULT")]
+        public int SetWriterByIndex([NativeTypeName("UINT")] uint nIndex, IWICMetadataWriter* pIMetadataWriter = null)
+        {
+            fixed (IWICMetadataBlockWriter* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_SetWriterByIndex>(lpVtbl->SetWriterByIndex)(This, nIndex, pIMetadataWriter);
+            }
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int RemoveWriterByIndex([NativeTypeName("UINT")] uint nIndex)
+        {
+            fixed (IWICMetadataBlockWriter* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_RemoveWriterByIndex>(lpVtbl->RemoveWriterByIndex)(This, nIndex);
+            }
+        }
+
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IWICMetadataBlockReader Fields
             public IntPtr GetContainerFormat;
 
             public IntPtr GetCount;
@@ -315,9 +184,7 @@ namespace TerraFX.Interop
             public IntPtr GetReaderByIndex;
 
             public IntPtr GetEnumerator;
-            #endregion
 
-            #region Fields
             public IntPtr InitializeFromBlockReader;
 
             public IntPtr GetWriterByIndex;
@@ -327,8 +194,6 @@ namespace TerraFX.Interop
             public IntPtr SetWriterByIndex;
 
             public IntPtr RemoveWriterByIndex;
-            #endregion
         }
-        #endregion
     }
 }

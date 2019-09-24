@@ -5,237 +5,105 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     [Guid("00020401-0000-0000-C000-000000000046")]
     public unsafe struct ITypeInfo
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] ITypeInfo* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ITypeInfo* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] ITypeInfo* This
-        );
+        public delegate uint _AddRef(ITypeInfo* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] ITypeInfo* This
-        );
-        #endregion
+        public delegate uint _Release(ITypeInfo* This);
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetTypeAttr(
-            [In] ITypeInfo* This,
-            [Out] TYPEATTR** ppTypeAttr
-        );
+        public delegate int _GetTypeAttr(ITypeInfo* This, TYPEATTR** ppTypeAttr);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetTypeComp(
-            [In] ITypeInfo* This,
-            [Out] ITypeComp** ppTComp = null
-        );
+        public delegate int _GetTypeComp(ITypeInfo* This, ITypeComp** ppTComp = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFuncDesc(
-            [In] ITypeInfo* This,
-            [In, NativeTypeName("UINT")] uint index,
-            [Out] FUNCDESC** ppFuncDesc
-        );
+        public delegate int _GetFuncDesc(ITypeInfo* This, [NativeTypeName("UINT")] uint index, FUNCDESC** ppFuncDesc);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetVarDesc(
-            [In] ITypeInfo* This,
-            [In, NativeTypeName("UINT")] uint index,
-            [Out] VARDESC** ppVarDesc
-        );
+        public delegate int _GetVarDesc(ITypeInfo* This, [NativeTypeName("UINT")] uint index, VARDESC** ppVarDesc);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetNames(
-            [In] ITypeInfo* This,
-            [In, NativeTypeName("MEMBERID")] int memid,
-            [Out, NativeTypeName("BSTR[]")] char** rgBstrNames,
-            [In, NativeTypeName("UINT")] uint cMaxNames,
-            [Out, NativeTypeName("UINT")] uint* pcNames
-        );
+        public delegate int _GetNames(ITypeInfo* This, [NativeTypeName("MEMBERID")] int memid, [NativeTypeName("BSTR[]")] char** rgBstrNames, [NativeTypeName("UINT")] uint cMaxNames, [NativeTypeName("UINT")] uint* pcNames);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetRefTypeOfImplType(
-            [In] ITypeInfo* This,
-            [In, NativeTypeName("UINT")] uint index,
-            [Out, NativeTypeName("HREFTYPE")] uint* pRefType
-        );
+        public delegate int _GetRefTypeOfImplType(ITypeInfo* This, [NativeTypeName("UINT")] uint index, [NativeTypeName("HREFTYPE")] uint* pRefType);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetImplTypeFlags(
-            [In] ITypeInfo* This,
-            [In, NativeTypeName("UINT")] uint index,
-            [Out, NativeTypeName("INT")] int* pImplTypeFlags
-        );
+        public delegate int _GetImplTypeFlags(ITypeInfo* This, [NativeTypeName("UINT")] uint index, [NativeTypeName("INT")] int* pImplTypeFlags);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetIDsOfNames(
-            [In] ITypeInfo* This,
-            [In, NativeTypeName("LPOLESTR[]")] char** rgszNames,
-            [In, NativeTypeName("UINT")] uint cNames,
-            [Out, NativeTypeName("MEMBERID")] int* pMemId
-        );
+        public delegate int _GetIDsOfNames(ITypeInfo* This, [NativeTypeName("LPOLESTR[]")] char** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("MEMBERID")] int* pMemId);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Invoke(
-            [In] ITypeInfo* This,
-            [In, NativeTypeName("PVOID")] void* pvInstance,
-            [In, NativeTypeName("MEMBERID")] int memid,
-            [In, NativeTypeName("WORD")] ushort wFlags,
-            [In, Out] DISPPARAMS* pDispParams,
-            [Out] VARIANT* pVarResult,
-            [Out] EXCEPINFO* pExcepInfo,
-            [Out, NativeTypeName("UINT")] uint* puArgErr
-        );
+        public delegate int _Invoke(ITypeInfo* This, [NativeTypeName("PVOID")] void* pvInstance, [NativeTypeName("MEMBERID")] int memid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, [NativeTypeName("UINT")] uint* puArgErr);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDocumentation(
-            [In] ITypeInfo* This,
-            [In, NativeTypeName("MEMBERID")] int memid,
-            [Out, Optional, NativeTypeName("BSTR")] char** pBstrName,
-            [Out, Optional, NativeTypeName("BSTR")] char** pBstrDocString,
-            [Out, NativeTypeName("DWORD")] uint* pdwHelpContext,
-            [Out, NativeTypeName("BSTR")] char** pBstrHelpFile = null
-        );
+        public delegate int _GetDocumentation(ITypeInfo* This, [NativeTypeName("MEMBERID")] int memid, [Optional, NativeTypeName("BSTR")] char** pBstrName, [Optional, NativeTypeName("BSTR")] char** pBstrDocString, [NativeTypeName("DWORD")] uint* pdwHelpContext, [NativeTypeName("BSTR")] char** pBstrHelpFile = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDllEntry(
-            [In] ITypeInfo* This,
-            [In, NativeTypeName("MEMBERID")] int memid,
-            [In] INVOKEKIND invKind,
-            [Out, Optional, NativeTypeName("BSTR")] char** pBstrDllName,
-            [Out, Optional, NativeTypeName("BSTR")] char** pBstrName,
-            [Out, NativeTypeName("WORD")] ushort* pwOrdinal
-        );
+        public delegate int _GetDllEntry(ITypeInfo* This, [NativeTypeName("MEMBERID")] int memid, INVOKEKIND invKind, [Optional, NativeTypeName("BSTR")] char** pBstrDllName, [Optional, NativeTypeName("BSTR")] char** pBstrName, [NativeTypeName("WORD")] ushort* pwOrdinal);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetRefTypeInfo(
-            [In] ITypeInfo* This,
-            [In, NativeTypeName("HREFTYPE")] uint hRefType,
-            [Out] ITypeInfo** ppTInfo = null
-        );
+        public delegate int _GetRefTypeInfo(ITypeInfo* This, [NativeTypeName("HREFTYPE")] uint hRefType, ITypeInfo** ppTInfo = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _AddressOfMember(
-            [In] ITypeInfo* This,
-            [In, NativeTypeName("MEMBERID")] int memid,
-            [In] INVOKEKIND invKind,
-            [Out, NativeTypeName("PVOID")] void** ppv
-        );
+        public delegate int _AddressOfMember(ITypeInfo* This, [NativeTypeName("MEMBERID")] int memid, INVOKEKIND invKind, [NativeTypeName("PVOID")] void** ppv);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateInstance(
-            [In] ITypeInfo* This,
-            [In] IUnknown* pUnkOuter,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out, NativeTypeName("PVOID")] void** ppvObj
-        );
+        public delegate int _CreateInstance(ITypeInfo* This, IUnknown* pUnkOuter, [NativeTypeName("REFIID")] Guid* riid, [NativeTypeName("PVOID")] void** ppvObj);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetMops(
-            [In] ITypeInfo* This,
-            [In, NativeTypeName("MEMBERID")] int memid,
-            [Out, NativeTypeName("BSTR")] char** pBstrMops = null
-        );
+        public delegate int _GetMops(ITypeInfo* This, [NativeTypeName("MEMBERID")] int memid, [NativeTypeName("BSTR")] char** pBstrMops = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetContainingTypeLib(
-            [In] ITypeInfo* This,
-            [Out] ITypeLib** ppTLib,
-            [Out, NativeTypeName("UINT")] uint* pIndex
-        );
+        public delegate int _GetContainingTypeLib(ITypeInfo* This, ITypeLib** ppTLib, [NativeTypeName("UINT")] uint* pIndex);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _ReleaseTypeAttr(
-            [In] ITypeInfo* This,
-            [In] TYPEATTR* pTypeAttr
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _ReleaseTypeAttr(ITypeInfo* This, TYPEATTR* pTypeAttr);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _ReleaseFuncDesc(
-            [In] ITypeInfo* This,
-            [In] FUNCDESC* pFuncDesc
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _ReleaseFuncDesc(ITypeInfo* This, FUNCDESC* pFuncDesc);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _ReleaseVarDesc(
-            [In] ITypeInfo* This,
-            [In] VARDESC* pVarDesc
-        );
-        #endregion
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _ReleaseVarDesc(ITypeInfo* This, VARDESC* pVarDesc);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ITypeInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -244,9 +112,7 @@ namespace TerraFX.Interop
         {
             fixed (ITypeInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -255,350 +121,186 @@ namespace TerraFX.Interop
         {
             fixed (ITypeInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
-        #endregion
 
-        #region Methods
-        // [return: NativeTypeName("HRESULT")]
-        // public int GetTypeAttr(
-        //     [Out] TYPEATTR** ppTypeAttr
-        // )
-        // {
-        //     fixed (ITypeInfo* This = &this)
-        //     {
-        //         return Marshal.GetDelegateForFunctionPointer<_GetTypeAttr>(lpVtbl->GetTypeAttr)(
-        //             This,
-        //             ppTypeAttr
-        //         );
-        //     }
-        // }
+        [return: NativeTypeName("HRESULT")]
+        public int GetTypeAttr(TYPEATTR** ppTypeAttr)
+        {
+            fixed (ITypeInfo* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetTypeAttr>(lpVtbl->GetTypeAttr)(This, ppTypeAttr);
+            }
+        }
 
-        // [return: NativeTypeName("HRESULT")]
-        // public int GetTypeComp(
-        //     [Out] ITypeComp** ppTComp = null
-        // )
-        // {
-        //     fixed (ITypeInfo* This = &this)
-        //     {
-        //         return Marshal.GetDelegateForFunctionPointer<_GetTypeComp>(lpVtbl->GetTypeComp)(
-        //             This,
-        //             ppTComp
-        //         );
-        //     }
-        // }
+        [return: NativeTypeName("HRESULT")]
+        public int GetTypeComp(ITypeComp** ppTComp = null)
+        {
+            fixed (ITypeInfo* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetTypeComp>(lpVtbl->GetTypeComp)(This, ppTComp);
+            }
+        }
 
-        // [return: NativeTypeName("HRESULT")]
-        // public int GetFuncDesc(
-        //     [In, NativeTypeName("UINT")] uint index,
-        //     [Out] FUNCDESC** ppFuncDesc
-        // )
-        // {
-        //     fixed (ITypeInfo* This = &this)
-        //     {
-        //         return Marshal.GetDelegateForFunctionPointer<_GetFuncDesc>(lpVtbl->GetFuncDesc)(
-        //             This,
-        //             index,
-        //             ppFuncDesc
-        //         );
-        //     }
-        // }
+        [return: NativeTypeName("HRESULT")]
+        public int GetFuncDesc([NativeTypeName("UINT")] uint index, FUNCDESC** ppFuncDesc)
+        {
+            fixed (ITypeInfo* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetFuncDesc>(lpVtbl->GetFuncDesc)(This, index, ppFuncDesc);
+            }
+        }
 
-        // [return: NativeTypeName("HRESULT")]
-        // public int GetVarDesc(
-        //     [In, NativeTypeName("UINT")] uint index,
-        //     [Out] VARDESC** ppVarDesc
-        // )
-        // {
-        //     fixed (ITypeInfo* This = &this)
-        //     {
-        //         return Marshal.GetDelegateForFunctionPointer<_GetVarDesc>(lpVtbl->GetVarDesc)(
-        //             This,
-        //             index,
-        //             ppVarDesc
-        //         );
-        //     }
-        // }
+        [return: NativeTypeName("HRESULT")]
+        public int GetVarDesc([NativeTypeName("UINT")] uint index, VARDESC** ppVarDesc)
+        {
+            fixed (ITypeInfo* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetVarDesc>(lpVtbl->GetVarDesc)(This, index, ppVarDesc);
+            }
+        }
 
-        // [return: NativeTypeName("HRESULT")]
-        // public int GetNames(
-        //     [In, NativeTypeName("MEMBERID")] int memid,
-        //     [Out, NativeTypeName("BSTR[]")] char** rgBstrNames,
-        //     [In, NativeTypeName("UINT")] uint cMaxNames,
-        //     [Out, NativeTypeName("UINT")] uint* pcNames
-        // )
-        // {
-        //     fixed (ITypeInfo* This = &this)
-        //     {
-        //         return Marshal.GetDelegateForFunctionPointer<_GetNames>(lpVtbl->GetNames)(
-        //             This,
-        //             memid,
-        //             rgBstrNames,
-        //             cMaxNames,
-        //             pcNames
-        //         );
-        //     }
-        // }
+        [return: NativeTypeName("HRESULT")]
+        public int GetNames([NativeTypeName("MEMBERID")] int memid, [NativeTypeName("BSTR[]")] char** rgBstrNames, [NativeTypeName("UINT")] uint cMaxNames, [NativeTypeName("UINT")] uint* pcNames)
+        {
+            fixed (ITypeInfo* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetNames>(lpVtbl->GetNames)(This, memid, rgBstrNames, cMaxNames, pcNames);
+            }
+        }
 
-        // [return: NativeTypeName("HRESULT")]
-        // public int GetRefTypeOfImplType(
-        //     [In, NativeTypeName("UINT")] uint index,
-        //     [Out, NativeTypeName("HREFTYPE")] uint* pRefType
-        // )
-        // {
-        //     fixed (ITypeInfo* This = &this)
-        //     {
-        //         return Marshal.GetDelegateForFunctionPointer<_GetRefTypeOfImplType>(lpVtbl->GetRefTypeOfImplType)(
-        //             This,
-        //             index,
-        //             pRefType
-        //         );
-        //     }
-        // }
+        [return: NativeTypeName("HRESULT")]
+        public int GetRefTypeOfImplType([NativeTypeName("UINT")] uint index, [NativeTypeName("HREFTYPE")] uint* pRefType)
+        {
+            fixed (ITypeInfo* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetRefTypeOfImplType>(lpVtbl->GetRefTypeOfImplType)(This, index, pRefType);
+            }
+        }
 
-        // [return: NativeTypeName("HRESULT")]
-        // public int GetImplTypeFlags(
-        //     [In, NativeTypeName("UINT")] uint index,
-        //     [Out, NativeTypeName("INT")] int* pImplTypeFlags
-        // )
-        // {
-        //     fixed (ITypeInfo* This = &this)
-        //     {
-        //         return Marshal.GetDelegateForFunctionPointer<_GetImplTypeFlags>(lpVtbl->GetImplTypeFlags)(
-        //             This,
-        //             index,
-        //             pImplTypeFlags
-        //         );
-        //     }
-        // }
+        [return: NativeTypeName("HRESULT")]
+        public int GetImplTypeFlags([NativeTypeName("UINT")] uint index, [NativeTypeName("INT")] int* pImplTypeFlags)
+        {
+            fixed (ITypeInfo* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetImplTypeFlags>(lpVtbl->GetImplTypeFlags)(This, index, pImplTypeFlags);
+            }
+        }
 
-        // [return: NativeTypeName("HRESULT")]
-        // public int GetIDsOfNames(
-        //     [In, NativeTypeName("LPOLESTR[]")] char** rgszNames,
-        //     [In, NativeTypeName("UINT")] uint cNames,
-        //     [Out, NativeTypeName("MEMBERID")] int* pMemId
-        // )
-        // {
-        //     fixed (ITypeInfo* This = &this)
-        //     {
-        //         return Marshal.GetDelegateForFunctionPointer<_GetIDsOfNames>(lpVtbl->GetIDsOfNames)(
-        //             This,
-        //             rgszNames,
-        //             cNames,
-        //             pMemId
-        //         );
-        //     }
-        // }
+        [return: NativeTypeName("HRESULT")]
+        public int GetIDsOfNames([NativeTypeName("LPOLESTR[]")] char** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("MEMBERID")] int* pMemId)
+        {
+            fixed (ITypeInfo* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetIDsOfNames>(lpVtbl->GetIDsOfNames)(This, rgszNames, cNames, pMemId);
+            }
+        }
 
-        // [return: NativeTypeName("HRESULT")]
-        // public int Invoke(
-        //     [In, NativeTypeName("PVOID")] void* pvInstance,
-        //     [In, NativeTypeName("MEMBERID")] int memid,
-        //     [In, NativeTypeName("WORD")] ushort wFlags,
-        //     [In, Out] DISPPARAMS* pDispParams,
-        //     [Out] VARIANT* pVarResult,
-        //     [Out] EXCEPINFO* pExcepInfo,
-        //     [Out, NativeTypeName("UINT")] uint* puArgErr
-        // )
-        // {
-        //     fixed (ITypeInfo* This = &this)
-        //     {
-        //         return Marshal.GetDelegateForFunctionPointer<_Invoke>(lpVtbl->Invoke)(
-        //             This,
-        //             pvInstance,
-        //             memid,
-        //             wFlags,
-        //             pDispParams,
-        //             pVarResult,
-        //             pExcepInfo,
-        //             puArgErr
-        //         );
-        //     }
-        // }
+        [return: NativeTypeName("HRESULT")]
+        public int Invoke([NativeTypeName("PVOID")] void* pvInstance, [NativeTypeName("MEMBERID")] int memid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, [NativeTypeName("UINT")] uint* puArgErr)
+        {
+            fixed (ITypeInfo* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_Invoke>(lpVtbl->Invoke)(This, pvInstance, memid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+            }
+        }
 
-        // [return: NativeTypeName("HRESULT")]
-        // public int GetDocumentation(
-        //     [In, NativeTypeName("MEMBERID")] int memid,
-        //     [Out, Optional, NativeTypeName("BSTR")] char** pBstrName,
-        //     [Out, Optional, NativeTypeName("BSTR")] char** pBstrDocString,
-        //     [Out, NativeTypeName("DWORD")] uint* pdwHelpContext,
-        //     [Out, NativeTypeName("BSTR")] char** pBstrHelpFile = null
-        // )
-        // {
-        //     fixed (ITypeInfo* This = &this)
-        //     {
-        //         return Marshal.GetDelegateForFunctionPointer<_GetDocumentation>(lpVtbl->GetDocumentation)(
-        //             This,
-        //             memid,
-        //             pBstrName,
-        //             pBstrDocString,
-        //             pdwHelpContext,
-        //             pBstrHelpFile
-        //         );
-        //     }
-        // }
+        [return: NativeTypeName("HRESULT")]
+        public int GetDocumentation([NativeTypeName("MEMBERID")] int memid, [Optional, NativeTypeName("BSTR")] char** pBstrName, [Optional, NativeTypeName("BSTR")] char** pBstrDocString, [NativeTypeName("DWORD")] uint* pdwHelpContext, [NativeTypeName("BSTR")] char** pBstrHelpFile = null)
+        {
+            fixed (ITypeInfo* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetDocumentation>(lpVtbl->GetDocumentation)(This, memid, pBstrName, pBstrDocString, pdwHelpContext, pBstrHelpFile);
+            }
+        }
 
-        // [return: NativeTypeName("HRESULT")]
-        // public int GetDllEntry(
-        //     [In, NativeTypeName("MEMBERID")] int memid,
-        //     [In] INVOKEKIND invKind,
-        //     [Out, Optional, NativeTypeName("BSTR")] char** pBstrDllName,
-        //     [Out, Optional, NativeTypeName("BSTR")] char** pBstrName,
-        //     [Out, NativeTypeName("WORD")] ushort* pwOrdinal
-        // )
-        // {
-        //     fixed (ITypeInfo* This = &this)
-        //     {
-        //         return Marshal.GetDelegateForFunctionPointer<_GetDllEntry>(lpVtbl->GetDllEntry)(
-        //             This,
-        //             memid,
-        //             invKind,
-        //             pBstrDllName,
-        //             pBstrName,
-        //             pwOrdinal
-        //         );
-        //     }
-        // }
+        [return: NativeTypeName("HRESULT")]
+        public int GetDllEntry([NativeTypeName("MEMBERID")] int memid, INVOKEKIND invKind, [Optional, NativeTypeName("BSTR")] char** pBstrDllName, [Optional, NativeTypeName("BSTR")] char** pBstrName, [NativeTypeName("WORD")] ushort* pwOrdinal)
+        {
+            fixed (ITypeInfo* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetDllEntry>(lpVtbl->GetDllEntry)(This, memid, invKind, pBstrDllName, pBstrName, pwOrdinal);
+            }
+        }
 
-        // [return: NativeTypeName("HRESULT")]
-        // public int GetRefTypeInfo(
-        //     [In, NativeTypeName("HREFTYPE")] uint hRefType,
-        //     [Out] ITypeInfo** ppTInfo = null
-        // )
-        // {
-        //     fixed (ITypeInfo* This = &this)
-        //     {
-        //         return Marshal.GetDelegateForFunctionPointer<_GetRefTypeInfo>(lpVtbl->GetRefTypeInfo)(
-        //             This,
-        //             hRefType,
-        //             ppTInfo
-        //         );
-        //     }
-        // }
+        [return: NativeTypeName("HRESULT")]
+        public int GetRefTypeInfo([NativeTypeName("HREFTYPE")] uint hRefType, ITypeInfo** ppTInfo = null)
+        {
+            fixed (ITypeInfo* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetRefTypeInfo>(lpVtbl->GetRefTypeInfo)(This, hRefType, ppTInfo);
+            }
+        }
 
-        // [return: NativeTypeName("HRESULT")]
-        // public int AddressOfMember(
-        //     [In, NativeTypeName("MEMBERID")] int memid,
-        //     [In] INVOKEKIND invKind,
-        //     [Out, NativeTypeName("PVOID")] void** ppv
-        // )
-        // {
-        //     fixed (ITypeInfo* This = &this)
-        //     {
-        //         return Marshal.GetDelegateForFunctionPointer<_AddressOfMember>(lpVtbl->AddressOfMember)(
-        //             This,
-        //             memid,
-        //             invKind,
-        //             ppv
-        //         );
-        //     }
-        // }
+        [return: NativeTypeName("HRESULT")]
+        public int AddressOfMember([NativeTypeName("MEMBERID")] int memid, INVOKEKIND invKind, [NativeTypeName("PVOID")] void** ppv)
+        {
+            fixed (ITypeInfo* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_AddressOfMember>(lpVtbl->AddressOfMember)(This, memid, invKind, ppv);
+            }
+        }
 
-        // [return: NativeTypeName("HRESULT")]
-        // public int CreateInstance(
-        //     [In] IUnknown* pUnkOuter,
-        //     [In, NativeTypeName("REFIID")] Guid* riid,
-        //     [Out, NativeTypeName("PVOID")] void** ppvObj
-        // )
-        // {
-        //     fixed (ITypeInfo* This = &this)
-        //     {
-        //         return Marshal.GetDelegateForFunctionPointer<_CreateInstance>(lpVtbl->CreateInstance)(
-        //             This,
-        //             pUnkOuter,
-        //             riid,
-        //             ppvObj
-        //         );
-        //     }
-        // }
+        [return: NativeTypeName("HRESULT")]
+        public int CreateInstance(IUnknown* pUnkOuter, [NativeTypeName("REFIID")] Guid* riid, [NativeTypeName("PVOID")] void** ppvObj)
+        {
+            fixed (ITypeInfo* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_CreateInstance>(lpVtbl->CreateInstance)(This, pUnkOuter, riid, ppvObj);
+            }
+        }
 
-        // [return: NativeTypeName("HRESULT")]
-        // public int GetMops(
-        //     [In, NativeTypeName("MEMBERID")] int memid,
-        //     [Out, NativeTypeName("BSTR")] char** pBstrMops = null
-        // )
-        // {
-        //     fixed (ITypeInfo* This = &this)
-        //     {
-        //         return Marshal.GetDelegateForFunctionPointer<_GetMops>(lpVtbl->GetMops)(
-        //             This,
-        //             memid,
-        //             pBstrMops
-        //         );
-        //     }
-        // }
+        [return: NativeTypeName("HRESULT")]
+        public int GetMops([NativeTypeName("MEMBERID")] int memid, [NativeTypeName("BSTR")] char** pBstrMops = null)
+        {
+            fixed (ITypeInfo* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetMops>(lpVtbl->GetMops)(This, memid, pBstrMops);
+            }
+        }
 
-        // [return: NativeTypeName("HRESULT")]
-        // public int GetContainingTypeLib(
-        //     [Out] ITypeLib** ppTLib,
-        //     [Out, NativeTypeName("UINT")] uint* pIndex
-        // )
-        // {
-        //     fixed (ITypeInfo* This = &this)
-        //     {
-        //         return Marshal.GetDelegateForFunctionPointer<_GetContainingTypeLib>(lpVtbl->GetContainingTypeLib)(
-        //             This,
-        //             ppTLib,
-        //             pIndex
-        //         );
-        //     }
-        // }
+        [return: NativeTypeName("HRESULT")]
+        public int GetContainingTypeLib(ITypeLib** ppTLib, [NativeTypeName("UINT")] uint* pIndex)
+        {
+            fixed (ITypeInfo* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetContainingTypeLib>(lpVtbl->GetContainingTypeLib)(This, ppTLib, pIndex);
+            }
+        }
 
-        // public void ReleaseTypeAttr(
-        //     [In] TYPEATTR* pTypeAttr
-        // )
-        // {
-        //     fixed (ITypeInfo* This = &this)
-        //     {
-        //         Marshal.GetDelegateForFunctionPointer<_ReleaseTypeAttr>(lpVtbl->ReleaseTypeAttr)(
-        //             This,
-        //             pTypeAttr
-        //         );
-        //     }
-        // }
+        public void ReleaseTypeAttr(TYPEATTR* pTypeAttr)
+        {
+            fixed (ITypeInfo* This = &this)
+            {
+                Marshal.GetDelegateForFunctionPointer<_ReleaseTypeAttr>(lpVtbl->ReleaseTypeAttr)(This, pTypeAttr);
+            }
+        }
 
-        // public void ReleaseFuncDesc(
-        //     [In] FUNCDESC* pFuncDesc
-        // )
-        // {
-        //     fixed (ITypeInfo* This = &this)
-        //     {
-        //         Marshal.GetDelegateForFunctionPointer<_ReleaseFuncDesc>(lpVtbl->ReleaseFuncDesc)(
-        //             This,
-        //             pFuncDesc
-        //         );
-        //     }
-        // }
+        public void ReleaseFuncDesc(FUNCDESC* pFuncDesc)
+        {
+            fixed (ITypeInfo* This = &this)
+            {
+                Marshal.GetDelegateForFunctionPointer<_ReleaseFuncDesc>(lpVtbl->ReleaseFuncDesc)(This, pFuncDesc);
+            }
+        }
 
-        // public void ReleaseVarDesc(
-        //     [In] VARDESC* pVarDesc
-        // )
-        // {
-        //     fixed (ITypeInfo* This = &this)
-        //     {
-        //         Marshal.GetDelegateForFunctionPointer<_ReleaseVarDesc>(lpVtbl->ReleaseVarDesc)(
-        //             This,
-        //             pVarDesc
-        //         );
-        //     }
-        // }
-        #endregion
+        public void ReleaseVarDesc(VARDESC* pVarDesc)
+        {
+            fixed (ITypeInfo* This = &this)
+            {
+                Marshal.GetDelegateForFunctionPointer<_ReleaseVarDesc>(lpVtbl->ReleaseVarDesc)(This, pVarDesc);
+            }
+        }
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetTypeAttr;
 
             public IntPtr GetTypeComp;
@@ -636,8 +338,6 @@ namespace TerraFX.Interop
             public IntPtr ReleaseFuncDesc;
 
             public IntPtr ReleaseVarDesc;
-            #endregion
         }
-        #endregion
     }
 }

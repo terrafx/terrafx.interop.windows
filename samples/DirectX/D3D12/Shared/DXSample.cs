@@ -17,7 +17,6 @@ namespace TerraFX.Samples.DirectX.D3D12
 {
     public abstract unsafe class DXSample : IDisposable
     {
-        #region Fields
         // Viewport dimensions
         protected uint _width;
 
@@ -33,9 +32,7 @@ namespace TerraFX.Samples.DirectX.D3D12
 
         // Window title
         private string _title;
-        #endregion
 
-        #region Constructors
         protected DXSample(uint width, uint height, string name)
         {
             _width = width;
@@ -44,16 +41,12 @@ namespace TerraFX.Samples.DirectX.D3D12
             _assetsPath = GetAssetsPath();
             _aspectRatio = width / ((float)height);
         }
-        #endregion
 
-        #region Destructors
         ~DXSample()
         {
             Dispose(isDisposing: false);
         }
-        #endregion
 
-        #region Properties
         public uint Width
         {
             get
@@ -77,9 +70,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 return _title;
             }
         }
-        #endregion
 
-        #region Methods
         public abstract void OnInit();
 
         public abstract void OnUpdate();
@@ -158,14 +149,11 @@ namespace TerraFX.Samples.DirectX.D3D12
                 SetWindowText(Win32Application.Hwnd, windowText);
             }
         }
-        #endregion
 
-        #region System.IDisposable Methods
         public void Dispose()
         {
             Dispose(isDisposing: true);
             GC.SuppressFinalize(this);
         }
-        #endregion
     }
 }

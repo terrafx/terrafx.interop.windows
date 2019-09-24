@@ -7,10 +7,8 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     public unsafe struct VARDESC
     {
-        #region Fields
         [NativeTypeName("MEMBERID")]
         public int memid;
 
@@ -25,9 +23,7 @@ namespace TerraFX.Interop
         public ushort wVarFlags;
 
         public VARKIND varkind;
-        #endregion
 
-        #region Properties
         public uint oInst
         {
             get
@@ -53,21 +49,16 @@ namespace TerraFX.Interop
                 Anonymous.lpvarValue = value;
             }
         }
-        #endregion
 
-        #region Structs
         [StructLayout(LayoutKind.Explicit)]
         public struct _Anonymous_e__Union
         {
-            #region Fields
             [FieldOffset(0)]
             [NativeTypeName("ULONG")]
             public uint oInst;
 
             [FieldOffset(0)]
             public VARIANT* lpvarValue;
-            #endregion
         }
-        #endregion
     }
 }

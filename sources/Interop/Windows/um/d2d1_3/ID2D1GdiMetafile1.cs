@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -13,100 +12,50 @@ namespace TerraFX.Interop
     [Guid("2E69F9E8-DD3F-4BF9-95BA-C04F49D788DF")]
     public unsafe struct ID2D1GdiMetafile1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] ID2D1GdiMetafile1* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1GdiMetafile1* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] ID2D1GdiMetafile1* This
-        );
+        public delegate uint _AddRef(ID2D1GdiMetafile1* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] ID2D1GdiMetafile1* This
-        );
-        #endregion
+        public delegate uint _Release(ID2D1GdiMetafile1* This);
 
-        #region ID2D1Resource Delegates
         /// <summary>Retrieve the factory associated with this resource.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _GetFactory(
-            [In] ID2D1GdiMetafile1* This,
-            [Out] ID2D1Factory** factory
-        );
-        #endregion
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _GetFactory(ID2D1GdiMetafile1* This, ID2D1Factory** factory);
 
-        #region ID2D1GdiMetafile Delegates
         /// <summary>Play the metafile into a caller-supplied sink interface.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Stream(
-            [In] ID2D1GdiMetafile1* This,
-            [In] ID2D1GdiMetafileSink* sink
-        );
+        public delegate int _Stream(ID2D1GdiMetafile1* This, ID2D1GdiMetafileSink* sink);
 
         /// <summary>Gets the bounds of the metafile.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetBounds(
-            [In] ID2D1GdiMetafile1* This,
-            [Out, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* bounds
-        );
-        #endregion
+        public delegate int _GetBounds(ID2D1GdiMetafile1* This, [NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* bounds);
 
-        #region Delegates
         /// <summary>Returns the DPI reported by the metafile.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDpi(
-            [In] ID2D1GdiMetafile1* This,
-            [Out, NativeTypeName("FLOAT")] float* dpiX,
-            [Out, NativeTypeName("FLOAT")] float* dpiY
-        );
+        public delegate int _GetDpi(ID2D1GdiMetafile1* This, [NativeTypeName("FLOAT")] float* dpiX, [NativeTypeName("FLOAT")] float* dpiY);
 
         /// <summary>Gets the bounds (in DIPs) of the metafile (as specified by the frame rect declared in the metafile).</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSourceBounds(
-            [In] ID2D1GdiMetafile1* This,
-            [Out, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* bounds
-        );
-        #endregion
+        public delegate int _GetSourceBounds(ID2D1GdiMetafile1* This, [NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* bounds);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1GdiMetafile1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -115,9 +64,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1GdiMetafile1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -126,117 +73,71 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1GdiMetafile1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
-        #endregion
 
-        #region ID2D1Resource Methods
-        public void GetFactory(
-            [Out] ID2D1Factory** factory
-        )
+        public void GetFactory(ID2D1Factory** factory)
         {
             fixed (ID2D1GdiMetafile1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
-                    This,
-                    factory
-                );
-            }
-        }
-        #endregion
-
-        #region ID2D1GdiMetafile Methods
-        [return: NativeTypeName("HRESULT")]
-        public int Stream(
-            [In] ID2D1GdiMetafileSink* sink
-        )
-        {
-            fixed (ID2D1GdiMetafile1* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Stream>(lpVtbl->Stream)(
-                    This,
-                    sink
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(This, factory);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetBounds(
-            [Out, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* bounds
-        )
+        public int Stream(ID2D1GdiMetafileSink* sink)
         {
             fixed (ID2D1GdiMetafile1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetBounds>(lpVtbl->GetBounds)(
-                    This,
-                    bounds
-                );
-            }
-        }
-        #endregion
-
-        #region Methods
-        [return: NativeTypeName("HRESULT")]
-        public int GetDpi(
-            [Out, NativeTypeName("FLOAT")] float* dpiX,
-            [Out, NativeTypeName("FLOAT")] float* dpiY
-        )
-        {
-            fixed (ID2D1GdiMetafile1* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetDpi>(lpVtbl->GetDpi)(
-                    This,
-                    dpiX,
-                    dpiY
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Stream>(lpVtbl->Stream)(This, sink);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetSourceBounds(
-            [Out, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* bounds
-        )
+        public int GetBounds([NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* bounds)
         {
             fixed (ID2D1GdiMetafile1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetSourceBounds>(lpVtbl->GetSourceBounds)(
-                    This,
-                    bounds
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetBounds>(lpVtbl->GetBounds)(This, bounds);
             }
         }
-        #endregion
 
-        #region Structs
+        [return: NativeTypeName("HRESULT")]
+        public int GetDpi([NativeTypeName("FLOAT")] float* dpiX, [NativeTypeName("FLOAT")] float* dpiY)
+        {
+            fixed (ID2D1GdiMetafile1* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetDpi>(lpVtbl->GetDpi)(This, dpiX, dpiY);
+            }
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetSourceBounds([NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* bounds)
+        {
+            fixed (ID2D1GdiMetafile1* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetSourceBounds>(lpVtbl->GetSourceBounds)(This, bounds);
+            }
+        }
+
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1Resource Fields
             public IntPtr GetFactory;
-            #endregion
 
-            #region ID2D1GdiMetafile Fields
             public IntPtr Stream;
 
             public IntPtr GetBounds;
-            #endregion
 
-            #region Fields
             public IntPtr GetDpi;
 
             public IntPtr GetSourceBounds;
-            #endregion
         }
-        #endregion
     }
 }

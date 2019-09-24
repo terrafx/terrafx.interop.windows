@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public struct LUID
     {
-        #region Fields
         [NativeTypeName("DWORD")]
         public uint LowPart;
 
         [NativeTypeName("LONG")]
         public int HighPart;
-        #endregion
     }
 }

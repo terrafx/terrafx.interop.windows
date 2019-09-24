@@ -5,100 +5,52 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     [Guid("00000109-0000-0000-C000-000000000046")]
     public unsafe struct IPersistStream
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IPersistStream* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IPersistStream* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IPersistStream* This
-        );
+        public delegate uint _AddRef(IPersistStream* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IPersistStream* This
-        );
-        #endregion
+        public delegate uint _Release(IPersistStream* This);
 
-        #region IPersist Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetClassID(
-            [In] IPersistStream* This,
-            [Out, NativeTypeName("CLSID")] Guid* pClassID
-        );
-        #endregion
+        public delegate int _GetClassID(IPersistStream* This, [NativeTypeName("CLSID")] Guid* pClassID);
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _IsDirty(
-            [In] IPersistStream* This
-        );
+        public delegate int _IsDirty(IPersistStream* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Load(
-            [In] IPersistStream* This,
-            [In] IStream* pStm = null
-        );
+        public delegate int _Load(IPersistStream* This, IStream* pStm = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Save(
-            [In] IPersistStream* This,
-            [In, Optional] IStream* pStm,
-            [In, NativeTypeName("BOOL")] int fClearDirty
-        );
+        public delegate int _Save(IPersistStream* This, [Optional] IStream* pStm, [NativeTypeName("BOOL")] int fClearDirty);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSizeMax(
-            [In] IPersistStream* This,
-            [Out] ULARGE_INTEGER* pcbSize
-        );
-        #endregion
+        public delegate int _GetSizeMax(IPersistStream* This, ULARGE_INTEGER* pcbSize);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IPersistStream* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -107,9 +59,7 @@ namespace TerraFX.Interop
         {
             fixed (IPersistStream* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -118,102 +68,65 @@ namespace TerraFX.Interop
         {
             fixed (IPersistStream* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
-        #endregion
 
-        #region IPersist Methods
         [return: NativeTypeName("HRESULT")]
-        public int GetClassID(
-            [Out, NativeTypeName("CLSID")] Guid* pClassID
-        )
+        public int GetClassID([NativeTypeName("CLSID")] Guid* pClassID)
         {
             fixed (IPersistStream* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetClassID>(lpVtbl->GetClassID)(
-                    This,
-                    pClassID
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetClassID>(lpVtbl->GetClassID)(This, pClassID);
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
         public int IsDirty()
         {
             fixed (IPersistStream* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_IsDirty>(lpVtbl->IsDirty)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_IsDirty>(lpVtbl->IsDirty)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Load(
-            [In] IStream* pStm = null
-        )
+        public int Load(IStream* pStm = null)
         {
             fixed (IPersistStream* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Load>(lpVtbl->Load)(
-                    This,
-                    pStm
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Load>(lpVtbl->Load)(This, pStm);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Save(
-            [In, Optional] IStream* pStm,
-            [In, NativeTypeName("BOOL")] int fClearDirty
-        )
+        public int Save([Optional] IStream* pStm, [NativeTypeName("BOOL")] int fClearDirty)
         {
             fixed (IPersistStream* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Save>(lpVtbl->Save)(
-                    This,
-                    pStm,
-                    fClearDirty
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Save>(lpVtbl->Save)(This, pStm, fClearDirty);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetSizeMax(
-            [Out] ULARGE_INTEGER* pcbSize
-        )
+        public int GetSizeMax(ULARGE_INTEGER* pcbSize)
         {
             fixed (IPersistStream* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetSizeMax>(lpVtbl->GetSizeMax)(
-                    This,
-                    pcbSize
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetSizeMax>(lpVtbl->GetSizeMax)(This, pcbSize);
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IPersist Fields
             public IntPtr GetClassID;
-            #endregion
 
-            #region Fields
             public IntPtr IsDirty;
 
             public IntPtr Load;
@@ -221,8 +134,6 @@ namespace TerraFX.Interop
             public IntPtr Save;
 
             public IntPtr GetSizeMax;
-            #endregion
         }
-        #endregion
     }
 }

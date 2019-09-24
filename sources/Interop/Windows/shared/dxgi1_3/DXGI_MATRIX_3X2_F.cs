@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct DXGI_MATRIX_3X2_F
     {
-        #region Fields
         [NativeTypeName("FLOAT")]
         public float _11;
 
@@ -25,6 +24,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("FLOAT")]
         public float _32;
-        #endregion
     }
 }

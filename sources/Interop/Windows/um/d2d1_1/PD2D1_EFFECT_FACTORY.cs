@@ -4,15 +4,11 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     /// <summary>Function pointer to construct a new effect once registered.</summary>
-    [SuppressUnmanagedCodeSecurity]
-    [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
     [return: NativeTypeName("HRESULT")]
-    public /* static */ unsafe delegate int PD2D1_EFFECT_FACTORY(
-        [Out] IUnknown** effectImpl
-    );
+    public unsafe delegate int PD2D1_EFFECT_FACTORY(IUnknown** effectImpl);
 }

@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public unsafe struct CASCODE
     {
-        #region Fields
         [NativeTypeName("ULONG")]
         public uint cElems;
 
         [NativeTypeName("SCODE[]")]
         public int* pElems;
-        #endregion
     }
 }

@@ -5,81 +5,42 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     [Guid("09E0BF36-54AC-484F-8847-4BAEEAB6053F")]
     public unsafe struct ID3D12DebugCommandList
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] ID3D12DebugCommandList* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID3D12DebugCommandList* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] ID3D12DebugCommandList* This
-        );
+        public delegate uint _AddRef(ID3D12DebugCommandList* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] ID3D12DebugCommandList* This
-        );
-        #endregion
+        public delegate uint _Release(ID3D12DebugCommandList* This);
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate int _AssertResourceState(
-            [In] ID3D12DebugCommandList* This,
-            [In] ID3D12Resource* pResource,
-            [In, NativeTypeName("UINT")] uint Subresource,
-            [In, NativeTypeName("UINT")] uint State
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate int _AssertResourceState(ID3D12DebugCommandList* This, ID3D12Resource* pResource, [NativeTypeName("UINT")] uint Subresource, [NativeTypeName("UINT")] uint State);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetFeatureMask(
-            [In] ID3D12DebugCommandList* This,
-            [In] D3D12_DEBUG_FEATURE Mask
-        );
+        public delegate int _SetFeatureMask(ID3D12DebugCommandList* This, D3D12_DEBUG_FEATURE Mask);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate D3D12_DEBUG_FEATURE _GetFeatureMask(
-            [In] ID3D12DebugCommandList* This
-        );
-        #endregion
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate D3D12_DEBUG_FEATURE _GetFeatureMask(ID3D12DebugCommandList* This);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID3D12DebugCommandList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -88,9 +49,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12DebugCommandList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -99,42 +58,24 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12DebugCommandList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
-        #endregion
 
-        #region Methods
-        public int AssertResourceState(
-            [In] ID3D12Resource* pResource,
-            [In, NativeTypeName("UINT")] uint Subresource,
-            [In, NativeTypeName("UINT")] uint State
-        )
+        public int AssertResourceState(ID3D12Resource* pResource, [NativeTypeName("UINT")] uint Subresource, [NativeTypeName("UINT")] uint State)
         {
             fixed (ID3D12DebugCommandList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AssertResourceState>(lpVtbl->AssertResourceState)(
-                    This,
-                    pResource,
-                    Subresource,
-                    State
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AssertResourceState>(lpVtbl->AssertResourceState)(This, pResource, Subresource, State);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetFeatureMask(
-            [In] D3D12_DEBUG_FEATURE Mask
-        )
+        public int SetFeatureMask(D3D12_DEBUG_FEATURE Mask)
         {
             fixed (ID3D12DebugCommandList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetFeatureMask>(lpVtbl->SetFeatureMask)(
-                    This,
-                    Mask
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetFeatureMask>(lpVtbl->SetFeatureMask)(This, Mask);
             }
         }
 
@@ -142,32 +83,23 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12DebugCommandList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetFeatureMask>(lpVtbl->GetFeatureMask)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetFeatureMask>(lpVtbl->GetFeatureMask)(This);
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr AssertResourceState;
 
             public IntPtr SetFeatureMask;
 
             public IntPtr GetFeatureMask;
-            #endregion
         }
-        #endregion
     }
 }

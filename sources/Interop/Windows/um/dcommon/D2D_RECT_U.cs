@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>Represents a rectangle defined by the coordinates of the upper-left corner (left, top) and the coordinates of the lower-right corner (right, bottom).</summary>
     public struct D2D_RECT_U
     {
-        #region Fields
         [NativeTypeName("UINT32")]
         public uint left;
 
@@ -20,6 +19,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT32")]
         public uint bottom;
-        #endregion
     }
 }

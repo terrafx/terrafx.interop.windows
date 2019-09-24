@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct WICBitmapPattern
     {
-        #region Fields
         public ULARGE_INTEGER Position;
 
         [NativeTypeName("ULONG")]
@@ -21,6 +20,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("BOOL")]
         public int EndOfStream;
-        #endregion
     }
 }

@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public struct D3D12_SHADER_RESOURCE_VIEW_DESC
     {
-        #region Fields
         public DXGI_FORMAT Format;
 
         public D3D12_SRV_DIMENSION ViewDimension;
@@ -17,13 +16,10 @@ namespace TerraFX.Interop
         public uint Shader4ComponentMapping;
 
         public _Anonymous_e__Union Anonymous;
-        #endregion
 
-        #region Structs
         [StructLayout(LayoutKind.Explicit)]
         public struct _Anonymous_e__Union
         {
-            #region Fields
             [FieldOffset(0)]
             public D3D12_BUFFER_SRV Buffer;
 
@@ -53,8 +49,6 @@ namespace TerraFX.Interop
 
             [FieldOffset(0)]
             public D3D12_TEXCUBE_ARRAY_SRV TextureCubeArray;
-            #endregion
         }
-        #endregion
     }
 }

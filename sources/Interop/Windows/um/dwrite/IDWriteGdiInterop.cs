@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -13,121 +12,68 @@ namespace TerraFX.Interop
     [Guid("1EDD9491-9853-4299-898F-6432983B6F3A")]
     public unsafe struct IDWriteGdiInterop
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IDWriteGdiInterop* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDWriteGdiInterop* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IDWriteGdiInterop* This
-        );
+        public delegate uint _AddRef(IDWriteGdiInterop* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IDWriteGdiInterop* This
-        );
-        #endregion
+        public delegate uint _Release(IDWriteGdiInterop* This);
 
-        #region Delegates
         /// <summary>Creates a font object that matches the properties specified by the LOGFONT public structure in the system font collection (GetSystemFontCollection).</summary>
         /// <param name="logFont">Structure containing a GDI-compatible font description.</param>
         /// <param name="font">Receives a newly created font object if successful, or NULL in case of error.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateFontFromLOGFONT(
-            [In] IDWriteGdiInterop* This,
-            [In] LOGFONT* logFont,
-            [Out] IDWriteFont** font
-        );
+        public delegate int _CreateFontFromLOGFONT(IDWriteGdiInterop* This, LOGFONT* logFont, IDWriteFont** font);
 
         /// <summary>Initializes a LOGFONT public structure based on the GDI-compatible properties of the specified font.</summary>
         /// <param name="font">Specifies a font.</param>
         /// <param name="logFont">Structure that receives a GDI-compatible font description.</param>
         /// <param name="isSystemFont">Contains TRUE if the specified font object is part of the system font collection or FALSE otherwise.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _ConvertFontToLOGFONT(
-            [In] IDWriteGdiInterop* This,
-            [In] IDWriteFont* font,
-            [Out] LOGFONT* logFont,
-            [Out, NativeTypeName("BOOL")] int* isSystemFont
-        );
+        public delegate int _ConvertFontToLOGFONT(IDWriteGdiInterop* This, IDWriteFont* font, LOGFONT* logFont, [NativeTypeName("BOOL")] int* isSystemFont);
 
         /// <summary>Initializes a LOGFONT public structure based on the GDI-compatible properties of the specified font.</summary>
         /// <param name="font">Specifies a font face.</param>
         /// <param name="logFont">Structure that receives a GDI-compatible font description.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _ConvertFontFaceToLOGFONT(
-            [In] IDWriteGdiInterop* This,
-            [In] IDWriteFontFace* font,
-            [Out] LOGFONT* logFont
-        );
+        public delegate int _ConvertFontFaceToLOGFONT(IDWriteGdiInterop* This, IDWriteFontFace* font, LOGFONT* logFont);
 
         /// <summary>Creates a font face object that corresponds to the currently selected HFONT.</summary>
         /// <param name="hdc">Handle to a device context into which a font has been selected. It is assumed that the client has already performed font mapping and that the font selected into the DC is the actual font that would be used for rendering glyphs.</param>
         /// <param name="fontFace">Contains the newly created font face object, or NULL in case of failure.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateFontFaceFromHdc(
-            [In] IDWriteGdiInterop* This,
-            [In, NativeTypeName("HDC")] IntPtr hdc,
-            [Out] IDWriteFontFace** fontFace
-        );
+        public delegate int _CreateFontFaceFromHdc(IDWriteGdiInterop* This, [NativeTypeName("HDC")] IntPtr hdc, IDWriteFontFace** fontFace);
 
         /// <summary>Creates an object that encapsulates a bitmap and memory DC which can be used for rendering glyphs.</summary>
         /// <param name="hdc">Optional device context used to create a compatible memory DC.</param>
         /// <param name="width">Width of the bitmap.</param>
         /// <param name="height">Height of the bitmap.</param>
         /// <param name="renderTarget">Receives a pointer to the newly created render target.</param>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateBitmapRenderTarget(
-            [In] IDWriteGdiInterop* This,
-            [In, Optional, NativeTypeName("HDC")] IntPtr hdc,
-            [In, NativeTypeName("UINT32")] uint width,
-            [In, NativeTypeName("UINT32")] uint height,
-            [Out] IDWriteBitmapRenderTarget** renderTarget
-        );
-        #endregion
+        public delegate int _CreateBitmapRenderTarget(IDWriteGdiInterop* This, [Optional, NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT32")] uint width, [NativeTypeName("UINT32")] uint height, IDWriteBitmapRenderTarget** renderTarget);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDWriteGdiInterop* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -136,9 +82,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteGdiInterop* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -147,113 +91,63 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteGdiInterop* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region Methods
-        [return: NativeTypeName("HRESULT")]
-        public int CreateFontFromLOGFONT(
-            [In] LOGFONT* logFont,
-            [Out] IDWriteFont** font
-        )
-        {
-            fixed (IDWriteGdiInterop* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_CreateFontFromLOGFONT>(lpVtbl->CreateFontFromLOGFONT)(
-                    This,
-                    logFont,
-                    font
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int ConvertFontToLOGFONT(
-            [In] IDWriteFont* font,
-            [Out] LOGFONT* logFont,
-            [Out, NativeTypeName("BOOL")] int* isSystemFont
-        )
+        public int CreateFontFromLOGFONT(LOGFONT* logFont, IDWriteFont** font)
         {
             fixed (IDWriteGdiInterop* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_ConvertFontToLOGFONT>(lpVtbl->ConvertFontToLOGFONT)(
-                    This,
-                    font,
-                    logFont,
-                    isSystemFont
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateFontFromLOGFONT>(lpVtbl->CreateFontFromLOGFONT)(This, logFont, font);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int ConvertFontFaceToLOGFONT(
-            [In] IDWriteFontFace* font,
-            [Out] LOGFONT* logFont
-        )
+        public int ConvertFontToLOGFONT(IDWriteFont* font, LOGFONT* logFont, [NativeTypeName("BOOL")] int* isSystemFont)
         {
             fixed (IDWriteGdiInterop* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_ConvertFontFaceToLOGFONT>(lpVtbl->ConvertFontFaceToLOGFONT)(
-                    This,
-                    font,
-                    logFont
-                );
+                return Marshal.GetDelegateForFunctionPointer<_ConvertFontToLOGFONT>(lpVtbl->ConvertFontToLOGFONT)(This, font, logFont, isSystemFont);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateFontFaceFromHdc(
-            [In, NativeTypeName("HDC")] IntPtr hdc,
-            [Out] IDWriteFontFace** fontFace
-        )
+        public int ConvertFontFaceToLOGFONT(IDWriteFontFace* font, LOGFONT* logFont)
         {
             fixed (IDWriteGdiInterop* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateFontFaceFromHdc>(lpVtbl->CreateFontFaceFromHdc)(
-                    This,
-                    hdc,
-                    fontFace
-                );
+                return Marshal.GetDelegateForFunctionPointer<_ConvertFontFaceToLOGFONT>(lpVtbl->ConvertFontFaceToLOGFONT)(This, font, logFont);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateBitmapRenderTarget(
-            [In, Optional, NativeTypeName("HDC")] IntPtr hdc,
-            [In, NativeTypeName("UINT32")] uint width,
-            [In, NativeTypeName("UINT32")] uint height,
-            [Out] IDWriteBitmapRenderTarget** renderTarget
-        )
+        public int CreateFontFaceFromHdc([NativeTypeName("HDC")] IntPtr hdc, IDWriteFontFace** fontFace)
         {
             fixed (IDWriteGdiInterop* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapRenderTarget>(lpVtbl->CreateBitmapRenderTarget)(
-                    This,
-                    hdc,
-                    width,
-                    height,
-                    renderTarget
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateFontFaceFromHdc>(lpVtbl->CreateFontFaceFromHdc)(This, hdc, fontFace);
             }
         }
-        #endregion
 
-        #region Structs
+        [return: NativeTypeName("HRESULT")]
+        public int CreateBitmapRenderTarget([Optional, NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT32")] uint width, [NativeTypeName("UINT32")] uint height, IDWriteBitmapRenderTarget** renderTarget)
+        {
+            fixed (IDWriteGdiInterop* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapRenderTarget>(lpVtbl->CreateBitmapRenderTarget)(This, hdc, width, height, renderTarget);
+            }
+        }
+
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr CreateFontFromLOGFONT;
 
             public IntPtr ConvertFontToLOGFONT;
@@ -263,8 +157,6 @@ namespace TerraFX.Interop
             public IntPtr CreateFontFaceFromHdc;
 
             public IntPtr CreateBitmapRenderTarget;
-            #endregion
         }
-        #endregion
     }
 }

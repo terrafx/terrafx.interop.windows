@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_SUBRESOURCE_FOOTPRINT
     {
-        #region Fields
         public DXGI_FORMAT Format;
 
         [NativeTypeName("UINT")]
@@ -23,9 +22,7 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint RowPitch;
-        #endregion
 
-        #region Constructors
         public D3D12_SUBRESOURCE_FOOTPRINT(DXGI_FORMAT format, uint width, uint height, uint depth, uint rowPitch)
         {
             Format = format;
@@ -43,6 +40,5 @@ namespace TerraFX.Interop
             Depth = resDesc->Dimension == D3D12_RESOURCE_DIMENSION_TEXTURE3D ? resDesc->DepthOrArraySize : (uint)1;
             RowPitch = rowPitch;
         }
-        #endregion
     }
 }

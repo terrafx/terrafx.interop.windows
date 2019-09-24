@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_LIBRARY_DESC
     {
-        #region Fields
         [NativeTypeName("LPCSTR")]
         public sbyte* Creator;
 
@@ -16,6 +15,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint FunctionCount;
-        #endregion
     }
 }

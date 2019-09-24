@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -13,68 +12,34 @@ namespace TerraFX.Interop
     [Guid("E0DB51C3-6F77-4BAE-B3D5-E47509B35838")]
     public unsafe struct ID2D1GdiInteropRenderTarget
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] ID2D1GdiInteropRenderTarget* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1GdiInteropRenderTarget* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] ID2D1GdiInteropRenderTarget* This
-        );
+        public delegate uint _AddRef(ID2D1GdiInteropRenderTarget* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] ID2D1GdiInteropRenderTarget* This
-        );
-        #endregion
+        public delegate uint _Release(ID2D1GdiInteropRenderTarget* This);
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDC(
-            [In] ID2D1GdiInteropRenderTarget* This,
-            [In] D2D1_DC_INITIALIZE_MODE mode,
-            [Out, NativeTypeName("HDC")] IntPtr* hdc
-        );
+        public delegate int _GetDC(ID2D1GdiInteropRenderTarget* This, D2D1_DC_INITIALIZE_MODE mode, [NativeTypeName("HDC")] IntPtr* hdc);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _ReleaseDC(
-            [In] ID2D1GdiInteropRenderTarget* This,
-            [In] RECT* update = null
-        );
-        #endregion
+        public delegate int _ReleaseDC(ID2D1GdiInteropRenderTarget* This, RECT* update = null);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1GdiInteropRenderTarget* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -83,9 +48,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1GdiInteropRenderTarget* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -94,62 +57,39 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1GdiInteropRenderTarget* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region Methods
-        [return: NativeTypeName("HRESULT")]
-        public int GetDC(
-            [In] D2D1_DC_INITIALIZE_MODE mode,
-            [Out, NativeTypeName("HDC")] IntPtr* hdc
-        )
-        {
-            fixed (ID2D1GdiInteropRenderTarget* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetDC>(lpVtbl->GetDC)(
-                    This,
-                    mode,
-                    hdc
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int ReleaseDC(
-            [In] RECT* update = null
-        )
+        public int GetDC(D2D1_DC_INITIALIZE_MODE mode, [NativeTypeName("HDC")] IntPtr* hdc)
         {
             fixed (ID2D1GdiInteropRenderTarget* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_ReleaseDC>(lpVtbl->ReleaseDC)(
-                    This,
-                    update
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDC>(lpVtbl->GetDC)(This, mode, hdc);
             }
         }
-        #endregion
 
-        #region Structs
+        [return: NativeTypeName("HRESULT")]
+        public int ReleaseDC(RECT* update = null)
+        {
+            fixed (ID2D1GdiInteropRenderTarget* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_ReleaseDC>(lpVtbl->ReleaseDC)(This, update);
+            }
+        }
+
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetDC;
 
             public IntPtr ReleaseDC;
-            #endregion
         }
-        #endregion
     }
 }

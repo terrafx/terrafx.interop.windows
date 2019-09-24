@@ -14,7 +14,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_RESOURCE_DESC
     {
-        #region Fields
         public D3D12_RESOURCE_DIMENSION Dimension;
 
         [NativeTypeName("UINT64")]
@@ -39,9 +38,7 @@ namespace TerraFX.Interop
         public D3D12_TEXTURE_LAYOUT Layout;
 
         public D3D12_RESOURCE_FLAGS Flags;
-        #endregion
 
-        #region Constructors
         public D3D12_RESOURCE_DESC(D3D12_RESOURCE_DIMENSION dimension, ulong alignment, ulong width, uint height, ushort depthOrArraySize, ushort mipLevels, DXGI_FORMAT format, uint sampleCount, uint sampleQuality, D3D12_TEXTURE_LAYOUT layout, D3D12_RESOURCE_FLAGS flags)
         {
             Dimension = dimension;
@@ -56,9 +53,7 @@ namespace TerraFX.Interop
             Layout = layout;
             Flags = flags;
         }
-        #endregion
 
-        #region Properties
         public ushort Depth
         {
             get
@@ -74,9 +69,7 @@ namespace TerraFX.Interop
                 return Dimension != D3D12_RESOURCE_DIMENSION_TEXTURE3D ? DepthOrArraySize : (ushort)1;
             }
         }
-        #endregion
 
-        #region Operators
         public static bool operator ==(D3D12_RESOURCE_DESC l, D3D12_RESOURCE_DESC r)
         {
              return (l.Dimension == r.Dimension)
@@ -96,16 +89,14 @@ namespace TerraFX.Interop
         {
             return !(l == r);
         }
-        #endregion
 
-        #region Methods
         public static D3D12_RESOURCE_DESC Buffer(D3D12_RESOURCE_ALLOCATION_INFO* resAllocInfo, D3D12_RESOURCE_FLAGS flags = D3D12_RESOURCE_FLAG_NONE)
         {
             return new D3D12_RESOURCE_DESC(D3D12_RESOURCE_DIMENSION_BUFFER, resAllocInfo->Alignment, resAllocInfo->SizeInBytes, 1, 1, 1, DXGI_FORMAT_UNKNOWN, 1, 0, D3D12_TEXTURE_LAYOUT_ROW_MAJOR, flags);
         }
         public static D3D12_RESOURCE_DESC Buffer(ulong width, D3D12_RESOURCE_FLAGS flags = D3D12_RESOURCE_FLAG_NONE, ulong alignment = 0)
         {
-            return new D3D12_RESOURCE_DESC( D3D12_RESOURCE_DIMENSION_BUFFER, alignment, width, 1, 1, 1, DXGI_FORMAT_UNKNOWN, 1, 0, D3D12_TEXTURE_LAYOUT_ROW_MAJOR, flags);
+            return new D3D12_RESOURCE_DESC(D3D12_RESOURCE_DIMENSION_BUFFER, alignment, width, 1, 1, 1, DXGI_FORMAT_UNKNOWN, 1, 0, D3D12_TEXTURE_LAYOUT_ROW_MAJOR, flags);
         }
 
         public static D3D12_RESOURCE_DESC Tex1D(DXGI_FORMAT format, ulong width, ushort arraySize = 1, ushort mipLevels = 0, D3D12_RESOURCE_FLAGS flags = D3D12_RESOURCE_FLAG_NONE, D3D12_TEXTURE_LAYOUT layout = D3D12_TEXTURE_LAYOUT_UNKNOWN, ulong alignment = 0)
@@ -137,9 +128,7 @@ namespace TerraFX.Interop
         {
             return D3D12CalcSubresource(MipSlice, ArraySlice, PlaneSlice, MipLevels, ArraySize);
         }
-        #endregion
 
-        #region System.Object
         public override bool Equals(object? obj)
         {
             return (obj is D3D12_RESOURCE_DESC other) && (this == other);
@@ -162,6 +151,5 @@ namespace TerraFX.Interop
             }
             return hashCode.ToHashCode();
         }
-        #endregion
     }
 }

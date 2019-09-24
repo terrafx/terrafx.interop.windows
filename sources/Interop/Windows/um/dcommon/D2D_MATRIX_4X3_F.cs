@@ -10,27 +10,20 @@ namespace TerraFX.Interop
     /// <summary>Represents a 4-by-3 matrix.</summary>
     public unsafe struct D2D_MATRIX_4X3_F
     {
-        #region Fields
         public _Anonymous_e__Union Anonymous;
-        #endregion
 
-        #region Structs
         [StructLayout(LayoutKind.Explicit)]
         public struct _Anonymous_e__Union
         {
-            #region Fields
             [FieldOffset(0)]
             public _Anonymous_e__Struct Anonymous;
 
             [FieldOffset(0)]
             [NativeTypeName("FLOAT[4][3]")]
             public fixed float m[4 * 3];
-            #endregion
 
-            #region Structs
             public struct _Anonymous_e__Struct
             {
-                #region Fields
                 [NativeTypeName("FLOAT")]
                 public float _11;
 
@@ -66,10 +59,7 @@ namespace TerraFX.Interop
 
                 [NativeTypeName("FLOAT")]
                 public float _43;
-                #endregion
             }
-            #endregion
         }
-        #endregion
     }
 }

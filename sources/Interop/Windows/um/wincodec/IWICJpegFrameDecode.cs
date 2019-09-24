@@ -5,152 +5,72 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     [Guid("8939F66E-C46A-4C21-A9D1-98B327CE1679")]
     public unsafe struct IWICJpegFrameDecode
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IWICJpegFrameDecode* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICJpegFrameDecode* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IWICJpegFrameDecode* This
-        );
+        public delegate uint _AddRef(IWICJpegFrameDecode* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IWICJpegFrameDecode* This
-        );
-        #endregion
+        public delegate uint _Release(IWICJpegFrameDecode* This);
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DoesSupportIndexing(
-            [In] IWICJpegFrameDecode* This,
-            [Out, NativeTypeName("BOOL")] int* pfIndexingSupported
-        );
+        public delegate int _DoesSupportIndexing(IWICJpegFrameDecode* This, [NativeTypeName("BOOL")] int* pfIndexingSupported);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetIndexing(
-            [In] IWICJpegFrameDecode* This,
-            [In] WICJpegIndexingOptions options,
-            [In, NativeTypeName("UINT")] uint horizontalIntervalSize
-        );
+        public delegate int _SetIndexing(IWICJpegFrameDecode* This, WICJpegIndexingOptions options, [NativeTypeName("UINT")] uint horizontalIntervalSize);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _ClearIndexing(
-            [In] IWICJpegFrameDecode* This
-        );
+        public delegate int _ClearIndexing(IWICJpegFrameDecode* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetAcHuffmanTable(
-            [In] IWICJpegFrameDecode* This,
-            [In, NativeTypeName("UINT")] uint scanIndex,
-            [In, NativeTypeName("UINT")] uint tableIndex,
-            [Out] DXGI_JPEG_AC_HUFFMAN_TABLE* pAcHuffmanTable
-        );
+        public delegate int _GetAcHuffmanTable(IWICJpegFrameDecode* This, [NativeTypeName("UINT")] uint scanIndex, [NativeTypeName("UINT")] uint tableIndex, DXGI_JPEG_AC_HUFFMAN_TABLE* pAcHuffmanTable);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDcHuffmanTable(
-            [In] IWICJpegFrameDecode* This,
-            [In, NativeTypeName("UINT")] uint scanIndex,
-            [In, NativeTypeName("UINT")] uint tableIndex,
-            [Out] DXGI_JPEG_DC_HUFFMAN_TABLE* pDcHuffmanTable
-        );
+        public delegate int _GetDcHuffmanTable(IWICJpegFrameDecode* This, [NativeTypeName("UINT")] uint scanIndex, [NativeTypeName("UINT")] uint tableIndex, DXGI_JPEG_DC_HUFFMAN_TABLE* pDcHuffmanTable);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetQuantizationTable(
-            [In] IWICJpegFrameDecode* This,
-            [In, NativeTypeName("UINT")] uint scanIndex,
-            [In, NativeTypeName("UINT")] uint tableIndex,
-            [Out] DXGI_JPEG_QUANTIZATION_TABLE* pQuantizationTable
-        );
+        public delegate int _GetQuantizationTable(IWICJpegFrameDecode* This, [NativeTypeName("UINT")] uint scanIndex, [NativeTypeName("UINT")] uint tableIndex, DXGI_JPEG_QUANTIZATION_TABLE* pQuantizationTable);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFrameHeader(
-            [In] IWICJpegFrameDecode* This,
-            [Out] WICJpegFrameHeader* pFrameHeader
-        );
+        public delegate int _GetFrameHeader(IWICJpegFrameDecode* This, WICJpegFrameHeader* pFrameHeader);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetScanHeader(
-            [In] IWICJpegFrameDecode* This,
-            [In, NativeTypeName("UINT")] uint scanIndex,
-            [Out] WICJpegScanHeader* pScanHeader
-        );
+        public delegate int _GetScanHeader(IWICJpegFrameDecode* This, [NativeTypeName("UINT")] uint scanIndex, WICJpegScanHeader* pScanHeader);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CopyScan(
-            [In] IWICJpegFrameDecode* This,
-            [In, NativeTypeName("UINT")] uint scanIndex,
-            [In, NativeTypeName("UINT")] uint scanOffset,
-            [In, NativeTypeName("UINT")] uint cbScanData,
-            [Out, NativeTypeName("BYTE[]")] byte* pbScanData,
-            [Out, NativeTypeName("UINT")] uint* pcbScanDataActual
-        );
+        public delegate int _CopyScan(IWICJpegFrameDecode* This, [NativeTypeName("UINT")] uint scanIndex, [NativeTypeName("UINT")] uint scanOffset, [NativeTypeName("UINT")] uint cbScanData, [NativeTypeName("BYTE[]")] byte* pbScanData, [NativeTypeName("UINT")] uint* pcbScanDataActual);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CopyMinimalStream(
-            [In] IWICJpegFrameDecode* This,
-            [In, NativeTypeName("UINT")] uint streamOffset,
-            [In, NativeTypeName("UINT")] uint cbStreamData,
-            [Out, NativeTypeName("BYTE[]")] byte* pbStreamData,
-            [Out, NativeTypeName("UINT")] uint* pcbStreamDataActual
-        );
-        #endregion
+        public delegate int _CopyMinimalStream(IWICJpegFrameDecode* This, [NativeTypeName("UINT")] uint streamOffset, [NativeTypeName("UINT")] uint cbStreamData, [NativeTypeName("BYTE[]")] byte* pbStreamData, [NativeTypeName("UINT")] uint* pcbStreamDataActual);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICJpegFrameDecode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -159,9 +79,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICJpegFrameDecode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -170,41 +88,25 @@ namespace TerraFX.Interop
         {
             fixed (IWICJpegFrameDecode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region Methods
-        [return: NativeTypeName("HRESULT")]
-        public int DoesSupportIndexing(
-            [Out, NativeTypeName("BOOL")] int* pfIndexingSupported
-        )
-        {
-            fixed (IWICJpegFrameDecode* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_DoesSupportIndexing>(lpVtbl->DoesSupportIndexing)(
-                    This,
-                    pfIndexingSupported
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetIndexing(
-            [In] WICJpegIndexingOptions options,
-            [In, NativeTypeName("UINT")] uint horizontalIntervalSize
-        )
+        public int DoesSupportIndexing([NativeTypeName("BOOL")] int* pfIndexingSupported)
         {
             fixed (IWICJpegFrameDecode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetIndexing>(lpVtbl->SetIndexing)(
-                    This,
-                    options,
-                    horizontalIntervalSize
-                );
+                return Marshal.GetDelegateForFunctionPointer<_DoesSupportIndexing>(lpVtbl->DoesSupportIndexing)(This, pfIndexingSupported);
+            }
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int SetIndexing(WICJpegIndexingOptions options, [NativeTypeName("UINT")] uint horizontalIntervalSize)
+        {
+            fixed (IWICJpegFrameDecode* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_SetIndexing>(lpVtbl->SetIndexing)(This, options, horizontalIntervalSize);
             }
         }
 
@@ -213,151 +115,81 @@ namespace TerraFX.Interop
         {
             fixed (IWICJpegFrameDecode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_ClearIndexing>(lpVtbl->ClearIndexing)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_ClearIndexing>(lpVtbl->ClearIndexing)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetAcHuffmanTable(
-            [In, NativeTypeName("UINT")] uint scanIndex,
-            [In, NativeTypeName("UINT")] uint tableIndex,
-            [Out] DXGI_JPEG_AC_HUFFMAN_TABLE* pAcHuffmanTable
-        )
+        public int GetAcHuffmanTable([NativeTypeName("UINT")] uint scanIndex, [NativeTypeName("UINT")] uint tableIndex, DXGI_JPEG_AC_HUFFMAN_TABLE* pAcHuffmanTable)
         {
             fixed (IWICJpegFrameDecode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetAcHuffmanTable>(lpVtbl->GetAcHuffmanTable)(
-                    This,
-                    scanIndex,
-                    tableIndex,
-                    pAcHuffmanTable
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetAcHuffmanTable>(lpVtbl->GetAcHuffmanTable)(This, scanIndex, tableIndex, pAcHuffmanTable);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetDcHuffmanTable(
-            [In, NativeTypeName("UINT")] uint scanIndex,
-            [In, NativeTypeName("UINT")] uint tableIndex,
-            [Out] DXGI_JPEG_DC_HUFFMAN_TABLE* pDcHuffmanTable
-        )
+        public int GetDcHuffmanTable([NativeTypeName("UINT")] uint scanIndex, [NativeTypeName("UINT")] uint tableIndex, DXGI_JPEG_DC_HUFFMAN_TABLE* pDcHuffmanTable)
         {
             fixed (IWICJpegFrameDecode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDcHuffmanTable>(lpVtbl->GetDcHuffmanTable)(
-                    This,
-                    scanIndex,
-                    tableIndex,
-                    pDcHuffmanTable
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDcHuffmanTable>(lpVtbl->GetDcHuffmanTable)(This, scanIndex, tableIndex, pDcHuffmanTable);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetQuantizationTable(
-            [In, NativeTypeName("UINT")] uint scanIndex,
-            [In, NativeTypeName("UINT")] uint tableIndex,
-            [Out] DXGI_JPEG_QUANTIZATION_TABLE* pQuantizationTable
-        )
+        public int GetQuantizationTable([NativeTypeName("UINT")] uint scanIndex, [NativeTypeName("UINT")] uint tableIndex, DXGI_JPEG_QUANTIZATION_TABLE* pQuantizationTable)
         {
             fixed (IWICJpegFrameDecode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetQuantizationTable>(lpVtbl->GetQuantizationTable)(
-                    This,
-                    scanIndex,
-                    tableIndex,
-                    pQuantizationTable
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetQuantizationTable>(lpVtbl->GetQuantizationTable)(This, scanIndex, tableIndex, pQuantizationTable);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFrameHeader(
-            [Out] WICJpegFrameHeader* pFrameHeader
-        )
+        public int GetFrameHeader(WICJpegFrameHeader* pFrameHeader)
         {
             fixed (IWICJpegFrameDecode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetFrameHeader>(lpVtbl->GetFrameHeader)(
-                    This,
-                    pFrameHeader
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetFrameHeader>(lpVtbl->GetFrameHeader)(This, pFrameHeader);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetScanHeader(
-            [In, NativeTypeName("UINT")] uint scanIndex,
-            [Out] WICJpegScanHeader* pScanHeader
-        )
+        public int GetScanHeader([NativeTypeName("UINT")] uint scanIndex, WICJpegScanHeader* pScanHeader)
         {
             fixed (IWICJpegFrameDecode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetScanHeader>(lpVtbl->GetScanHeader)(
-                    This,
-                    scanIndex,
-                    pScanHeader
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetScanHeader>(lpVtbl->GetScanHeader)(This, scanIndex, pScanHeader);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CopyScan(
-            [In, NativeTypeName("UINT")] uint scanIndex,
-            [In, NativeTypeName("UINT")] uint scanOffset,
-            [In, NativeTypeName("UINT")] uint cbScanData,
-            [Out, NativeTypeName("BYTE[]")] byte* pbScanData,
-            [Out, NativeTypeName("UINT")] uint* pcbScanDataActual
-        )
+        public int CopyScan([NativeTypeName("UINT")] uint scanIndex, [NativeTypeName("UINT")] uint scanOffset, [NativeTypeName("UINT")] uint cbScanData, [NativeTypeName("BYTE[]")] byte* pbScanData, [NativeTypeName("UINT")] uint* pcbScanDataActual)
         {
             fixed (IWICJpegFrameDecode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CopyScan>(lpVtbl->CopyScan)(
-                    This,
-                    scanIndex,
-                    scanOffset,
-                    cbScanData,
-                    pbScanData,
-                    pcbScanDataActual
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CopyScan>(lpVtbl->CopyScan)(This, scanIndex, scanOffset, cbScanData, pbScanData, pcbScanDataActual);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CopyMinimalStream(
-            [In, NativeTypeName("UINT")] uint streamOffset,
-            [In, NativeTypeName("UINT")] uint cbStreamData,
-            [Out, NativeTypeName("BYTE[]")] byte* pbStreamData,
-            [Out, NativeTypeName("UINT")] uint* pcbStreamDataActual
-        )
+        public int CopyMinimalStream([NativeTypeName("UINT")] uint streamOffset, [NativeTypeName("UINT")] uint cbStreamData, [NativeTypeName("BYTE[]")] byte* pbStreamData, [NativeTypeName("UINT")] uint* pcbStreamDataActual)
         {
             fixed (IWICJpegFrameDecode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CopyMinimalStream>(lpVtbl->CopyMinimalStream)(
-                    This,
-                    streamOffset,
-                    cbStreamData,
-                    pbStreamData,
-                    pcbStreamDataActual
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CopyMinimalStream>(lpVtbl->CopyMinimalStream)(This, streamOffset, cbStreamData, pbStreamData, pcbStreamDataActual);
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr DoesSupportIndexing;
 
             public IntPtr SetIndexing;
@@ -377,8 +209,6 @@ namespace TerraFX.Interop
             public IntPtr CopyScan;
 
             public IntPtr CopyMinimalStream;
-            #endregion
         }
-        #endregion
     }
 }

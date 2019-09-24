@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct DXGI_MODE_DESC1
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint Width;
 
@@ -24,6 +23,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("BOOL")]
         public int Stereo;
-        #endregion
     }
 }

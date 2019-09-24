@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -13,131 +12,67 @@ namespace TerraFX.Interop
     [Guid("AE1572F4-5DD0-4777-998B-9279472AE63B")]
     public unsafe struct ID2D1GradientStopCollection1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] ID2D1GradientStopCollection1* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1GradientStopCollection1* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] ID2D1GradientStopCollection1* This
-        );
+        public delegate uint _AddRef(ID2D1GradientStopCollection1* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] ID2D1GradientStopCollection1* This
-        );
-        #endregion
+        public delegate uint _Release(ID2D1GradientStopCollection1* This);
 
-        #region ID2D1Resource Delegates
         /// <summary>Retrieve the factory associated with this resource.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _GetFactory(
-            [In] ID2D1GradientStopCollection1* This,
-            [Out] ID2D1Factory** factory
-        );
-        #endregion
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _GetFactory(ID2D1GradientStopCollection1* This, ID2D1Factory** factory);
 
-        #region ID2D1GradientStopCollection Delegates
         /// <summary>Returns the number of stops in the gradient.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetGradientStopCount(
-            [In] ID2D1GradientStopCollection1* This
-        );
+        public delegate uint _GetGradientStopCount(ID2D1GradientStopCollection1* This);
 
         /// <summary>Copies the gradient stops from the collection into the caller's interface.  The
         /// returned colors have straight alpha.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _GetGradientStops(
-            [In] ID2D1GradientStopCollection1* This,
-            [Out, NativeTypeName("D2D1_GRADIENT_STOP[]")] D2D1_GRADIENT_STOP* gradientStops,
-            [In, NativeTypeName("UINT32")] uint gradientStopsCount
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _GetGradientStops(ID2D1GradientStopCollection1* This, [NativeTypeName("D2D1_GRADIENT_STOP[]")] D2D1_GRADIENT_STOP* gradientStops, [NativeTypeName("UINT32")] uint gradientStopsCount);
 
         /// <summary>Returns whether the interpolation occurs with 1.0 or 2.2 gamma.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate D2D1_GAMMA _GetColorInterpolationGamma(
-            [In] ID2D1GradientStopCollection1* This
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate D2D1_GAMMA _GetColorInterpolationGamma(ID2D1GradientStopCollection1* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate D2D1_EXTEND_MODE _GetExtendMode(
-            [In] ID2D1GradientStopCollection1* This
-        );
-        #endregion
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate D2D1_EXTEND_MODE _GetExtendMode(ID2D1GradientStopCollection1* This);
 
-        #region Delegates
         /// <summary>Copies the gradient stops from the collection into the caller's memory. If this object was created using ID2D1DeviceContext::CreateGradientStopCollection, this method returns the same values as were specified in the creation method. If this object was created using ID2D1RenderTarget::CreateGradientStopCollection, the stops returned here will first be transformed into the gamma space specified by the colorInterpolationGamma parameter.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _GetGradientStops1(
-            [In] ID2D1GradientStopCollection1* This,
-            [Out, NativeTypeName("D2D1_GRADIENT_STOP[]")] D2D1_GRADIENT_STOP* gradientStops,
-            [In, NativeTypeName("UINT32")] uint gradientStopsCount
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _GetGradientStops1(ID2D1GradientStopCollection1* This, [NativeTypeName("D2D1_GRADIENT_STOP[]")] D2D1_GRADIENT_STOP* gradientStops, [NativeTypeName("UINT32")] uint gradientStopsCount);
 
         /// <summary>Returns the color space in which interpolation occurs. If this object was created using ID2D1RenderTarget::CreateGradientStopCollection, this method returns the color space related to the color interpolation gamma.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate D2D1_COLOR_SPACE _GetPreInterpolationSpace(
-            [In] ID2D1GradientStopCollection1* This
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate D2D1_COLOR_SPACE _GetPreInterpolationSpace(ID2D1GradientStopCollection1* This);
 
         /// <summary>Returns the color space colors will be converted to after interpolation occurs. If this object was created using ID2D1RenderTarget::CreateGradientStopCollection, this method returns D2D1_COLOR_SPACE_SRGB.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate D2D1_COLOR_SPACE _GetPostInterpolationSpace(
-            [In] ID2D1GradientStopCollection1* This
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate D2D1_COLOR_SPACE _GetPostInterpolationSpace(ID2D1GradientStopCollection1* This);
 
         /// <summary>Returns the buffer precision of this gradient. If this object was created using ID2D1RenderTarget::CreateGradientStopCollection, this method returns D2D1_BUFFER_PRECISION_8BPC_UNORM.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate D2D1_BUFFER_PRECISION _GetBufferPrecision(
-            [In] ID2D1GradientStopCollection1* This
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate D2D1_BUFFER_PRECISION _GetBufferPrecision(ID2D1GradientStopCollection1* This);
 
         /// <summary>Returns the interpolation mode used to interpolate colors in the gradient.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate D2D1_COLOR_INTERPOLATION_MODE _GetColorInterpolationMode(
-            [In] ID2D1GradientStopCollection1* This
-        );
-        #endregion
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate D2D1_COLOR_INTERPOLATION_MODE _GetColorInterpolationMode(ID2D1GradientStopCollection1* This);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1GradientStopCollection1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -146,9 +81,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1GradientStopCollection1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -157,52 +90,32 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1GradientStopCollection1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
-        #endregion
 
-        #region ID2D1Resource Methods
-        public void GetFactory(
-            [Out] ID2D1Factory** factory
-        )
+        public void GetFactory(ID2D1Factory** factory)
         {
             fixed (ID2D1GradientStopCollection1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
-                    This,
-                    factory
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(This, factory);
             }
         }
-        #endregion
 
-        #region ID2D1GradientStopCollection Methods
         [return: NativeTypeName("UINT32")]
         public uint GetGradientStopCount()
         {
             fixed (ID2D1GradientStopCollection1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetGradientStopCount>(lpVtbl->GetGradientStopCount)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetGradientStopCount>(lpVtbl->GetGradientStopCount)(This);
             }
         }
 
-        public void GetGradientStops(
-            [Out, NativeTypeName("D2D1_GRADIENT_STOP[]")] D2D1_GRADIENT_STOP* gradientStops,
-            [In, NativeTypeName("UINT32")] uint gradientStopsCount
-        )
+        public void GetGradientStops([NativeTypeName("D2D1_GRADIENT_STOP[]")] D2D1_GRADIENT_STOP* gradientStops, [NativeTypeName("UINT32")] uint gradientStopsCount)
         {
             fixed (ID2D1GradientStopCollection1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetGradientStops>(lpVtbl->GetGradientStops)(
-                    This,
-                    gradientStops,
-                    gradientStopsCount
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetGradientStops>(lpVtbl->GetGradientStops)(This, gradientStops, gradientStopsCount);
             }
         }
 
@@ -210,9 +123,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1GradientStopCollection1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetColorInterpolationGamma>(lpVtbl->GetColorInterpolationGamma)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetColorInterpolationGamma>(lpVtbl->GetColorInterpolationGamma)(This);
             }
         }
 
@@ -220,26 +131,15 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1GradientStopCollection1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetExtendMode>(lpVtbl->GetExtendMode)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetExtendMode>(lpVtbl->GetExtendMode)(This);
             }
         }
-        #endregion
 
-        #region Methods
-        public void GetGradientStops1(
-            [Out, NativeTypeName("D2D1_GRADIENT_STOP[]")] D2D1_GRADIENT_STOP* gradientStops,
-            [In, NativeTypeName("UINT32")] uint gradientStopsCount
-        )
+        public void GetGradientStops1([NativeTypeName("D2D1_GRADIENT_STOP[]")] D2D1_GRADIENT_STOP* gradientStops, [NativeTypeName("UINT32")] uint gradientStopsCount)
         {
             fixed (ID2D1GradientStopCollection1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetGradientStops1>(lpVtbl->GetGradientStops1)(
-                    This,
-                    gradientStops,
-                    gradientStopsCount
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetGradientStops1>(lpVtbl->GetGradientStops1)(This, gradientStops, gradientStopsCount);
             }
         }
 
@@ -247,9 +147,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1GradientStopCollection1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetPreInterpolationSpace>(lpVtbl->GetPreInterpolationSpace)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetPreInterpolationSpace>(lpVtbl->GetPreInterpolationSpace)(This);
             }
         }
 
@@ -257,9 +155,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1GradientStopCollection1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetPostInterpolationSpace>(lpVtbl->GetPostInterpolationSpace)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetPostInterpolationSpace>(lpVtbl->GetPostInterpolationSpace)(This);
             }
         }
 
@@ -267,9 +163,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1GradientStopCollection1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetBufferPrecision>(lpVtbl->GetBufferPrecision)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetBufferPrecision>(lpVtbl->GetBufferPrecision)(This);
             }
         }
 
@@ -277,29 +171,20 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1GradientStopCollection1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetColorInterpolationMode>(lpVtbl->GetColorInterpolationMode)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetColorInterpolationMode>(lpVtbl->GetColorInterpolationMode)(This);
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1Resource Fields
             public IntPtr GetFactory;
-            #endregion
 
-            #region ID2D1GradientStopCollection Fields
             public IntPtr GetGradientStopCount;
 
             public IntPtr GetGradientStops;
@@ -307,9 +192,7 @@ namespace TerraFX.Interop
             public IntPtr GetColorInterpolationGamma;
 
             public IntPtr GetExtendMode;
-            #endregion
 
-            #region Fields
             public IntPtr GetGradientStops1;
 
             public IntPtr GetPreInterpolationSpace;
@@ -319,8 +202,6 @@ namespace TerraFX.Interop
             public IntPtr GetBufferPrecision;
 
             public IntPtr GetColorInterpolationMode;
-            #endregion
         }
-        #endregion
     }
 }

@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public struct TLIBATTR
     {
-        #region Fields
         [NativeTypeName("GUID")]
         public Guid guid;
 
@@ -26,6 +25,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("WORD")]
         public ushort wLibFlags;
-        #endregion
     }
 }

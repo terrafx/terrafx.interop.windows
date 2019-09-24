@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_SO_DECLARATION_ENTRY
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint Stream;
 
@@ -25,6 +24,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("BYTE")]
         public byte OutputSlot;
-        #endregion
     }
 }

@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -13,73 +12,40 @@ namespace TerraFX.Interop
     [Guid("72755049-5FF7-435D-8348-4BE97CFA6C7C")]
     public unsafe struct IDWriteFontFileEnumerator
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IDWriteFontFileEnumerator* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDWriteFontFileEnumerator* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IDWriteFontFileEnumerator* This
-        );
+        public delegate uint _AddRef(IDWriteFontFileEnumerator* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IDWriteFontFileEnumerator* This
-        );
-        #endregion
+        public delegate uint _Release(IDWriteFontFileEnumerator* This);
 
-        #region Delegates
         /// <summary>Advances to the next font file in the collection. When it is first created, the enumerator is positioned before the first element of the collection and the first call to MoveNext advances to the first file.</summary>
         /// <param name="hasCurrentFile">Receives the value TRUE if the enumerator advances to a file, or FALSE if the enumerator advanced past the last file in the collection.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _MoveNext(
-            [In] IDWriteFontFileEnumerator* This,
-            [Out, NativeTypeName("BOOL")] int* hasCurrentFile
-        );
+        public delegate int _MoveNext(IDWriteFontFileEnumerator* This, [NativeTypeName("BOOL")] int* hasCurrentFile);
 
         /// <summary>Gets a reference to the current font file.</summary>
         /// <param name="fontFile">Pointer to the newly created font file object.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetCurrentFontFile(
-            [In] IDWriteFontFileEnumerator* This,
-            [Out] IDWriteFontFile** fontFile
-        );
-        #endregion
+        public delegate int _GetCurrentFontFile(IDWriteFontFileEnumerator* This, IDWriteFontFile** fontFile);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDWriteFontFileEnumerator* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -88,9 +54,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFileEnumerator* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -99,60 +63,39 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFileEnumerator* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region Methods
-        [return: NativeTypeName("HRESULT")]
-        public int MoveNext(
-            [Out, NativeTypeName("BOOL")] int* hasCurrentFile
-        )
-        {
-            fixed (IDWriteFontFileEnumerator* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_MoveNext>(lpVtbl->MoveNext)(
-                    This,
-                    hasCurrentFile
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetCurrentFontFile(
-            [Out] IDWriteFontFile** fontFile
-        )
+        public int MoveNext([NativeTypeName("BOOL")] int* hasCurrentFile)
         {
             fixed (IDWriteFontFileEnumerator* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetCurrentFontFile>(lpVtbl->GetCurrentFontFile)(
-                    This,
-                    fontFile
-                );
+                return Marshal.GetDelegateForFunctionPointer<_MoveNext>(lpVtbl->MoveNext)(This, hasCurrentFile);
             }
         }
-        #endregion
 
-        #region Structs
+        [return: NativeTypeName("HRESULT")]
+        public int GetCurrentFontFile(IDWriteFontFile** fontFile)
+        {
+            fixed (IDWriteFontFileEnumerator* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetCurrentFontFile>(lpVtbl->GetCurrentFontFile)(This, fontFile);
+            }
+        }
+
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr MoveNext;
 
             public IntPtr GetCurrentFontFile;
-            #endregion
         }
-        #endregion
     }
 }

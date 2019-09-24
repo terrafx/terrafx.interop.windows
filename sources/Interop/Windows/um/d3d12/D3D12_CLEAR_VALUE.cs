@@ -10,13 +10,10 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_CLEAR_VALUE
     {
-        #region Fields
         public DXGI_FORMAT Format;
 
         public _Anonymous_e__Union Anonymous;
-        #endregion
 
-        #region Constructors
         public D3D12_CLEAR_VALUE(DXGI_FORMAT format, float* color)
         {
             fixed (D3D12_CLEAR_VALUE* pThis = &this)
@@ -36,9 +33,7 @@ namespace TerraFX.Interop
                 Anonymous.DepthStencil.Stencil = stencil;
             }
         }
-        #endregion
 
-        #region Structs
         [StructLayout(LayoutKind.Explicit)]
         public struct _Anonymous_e__Union
         {
@@ -49,6 +44,5 @@ namespace TerraFX.Interop
             [FieldOffset(0)]
             public D3D12_DEPTH_STENCIL_VALUE DepthStencil;
         }
-        #endregion
     }
 }

@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public unsafe struct FONTSIGNATURE
     {
-        #region Fields
         [NativeTypeName("DWORD[4]")]
         public fixed uint fsUsb[4];
 
         [NativeTypeName("DWORD[2]")]
         public fixed uint fsCsb[2];
-        #endregion
     }
 }

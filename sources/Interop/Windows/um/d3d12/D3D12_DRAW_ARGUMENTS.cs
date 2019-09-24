@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct D3D12_DRAW_ARGUMENTS
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint VertexCountPerInstance;
 
@@ -19,6 +18,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint StartInstanceLocation;
-        #endregion
     }
 }

@@ -5,91 +5,48 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     [Guid("FEAA2A8D-B3F3-43E4-B25C-D1DE990A1AE1")]
     public unsafe struct IWICMetadataBlockReader
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IWICMetadataBlockReader* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICMetadataBlockReader* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IWICMetadataBlockReader* This
-        );
+        public delegate uint _AddRef(IWICMetadataBlockReader* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IWICMetadataBlockReader* This
-        );
-        #endregion
+        public delegate uint _Release(IWICMetadataBlockReader* This);
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetContainerFormat(
-            [In] IWICMetadataBlockReader* This,
-            [Out, NativeTypeName("GUID")] Guid* pguidContainerFormat
-        );
+        public delegate int _GetContainerFormat(IWICMetadataBlockReader* This, [NativeTypeName("GUID")] Guid* pguidContainerFormat);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetCount(
-            [In] IWICMetadataBlockReader* This,
-            [Out, NativeTypeName("UINT")] uint* pcCount
-        );
+        public delegate int _GetCount(IWICMetadataBlockReader* This, [NativeTypeName("UINT")] uint* pcCount);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetReaderByIndex(
-            [In] IWICMetadataBlockReader* This,
-            [In, NativeTypeName("UINT")] uint nIndex,
-            [Out] IWICMetadataReader** ppIMetadataReader = null
-        );
+        public delegate int _GetReaderByIndex(IWICMetadataBlockReader* This, [NativeTypeName("UINT")] uint nIndex, IWICMetadataReader** ppIMetadataReader = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetEnumerator(
-            [In] IWICMetadataBlockReader* This,
-            [Out] IEnumUnknown** ppIEnumMetadata = null
-        );
-        #endregion
+        public delegate int _GetEnumerator(IWICMetadataBlockReader* This, IEnumUnknown** ppIEnumMetadata = null);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICMetadataBlockReader* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -98,9 +55,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataBlockReader* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -109,85 +64,54 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataBlockReader* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region Methods
-        [return: NativeTypeName("HRESULT")]
-        public int GetContainerFormat(
-            [Out, NativeTypeName("GUID")] Guid* pguidContainerFormat
-        )
-        {
-            fixed (IWICMetadataBlockReader* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetContainerFormat>(lpVtbl->GetContainerFormat)(
-                    This,
-                    pguidContainerFormat
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetCount(
-            [Out, NativeTypeName("UINT")] uint* pcCount
-        )
+        public int GetContainerFormat([NativeTypeName("GUID")] Guid* pguidContainerFormat)
         {
             fixed (IWICMetadataBlockReader* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetCount>(lpVtbl->GetCount)(
-                    This,
-                    pcCount
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetContainerFormat>(lpVtbl->GetContainerFormat)(This, pguidContainerFormat);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetReaderByIndex(
-            [In, NativeTypeName("UINT")] uint nIndex,
-            [Out] IWICMetadataReader** ppIMetadataReader = null
-        )
+        public int GetCount([NativeTypeName("UINT")] uint* pcCount)
         {
             fixed (IWICMetadataBlockReader* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetReaderByIndex>(lpVtbl->GetReaderByIndex)(
-                    This,
-                    nIndex,
-                    ppIMetadataReader
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetCount>(lpVtbl->GetCount)(This, pcCount);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetEnumerator(
-            [Out] IEnumUnknown** ppIEnumMetadata = null
-        )
+        public int GetReaderByIndex([NativeTypeName("UINT")] uint nIndex, IWICMetadataReader** ppIMetadataReader = null)
         {
             fixed (IWICMetadataBlockReader* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetEnumerator>(lpVtbl->GetEnumerator)(
-                    This,
-                    ppIEnumMetadata
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetReaderByIndex>(lpVtbl->GetReaderByIndex)(This, nIndex, ppIMetadataReader);
             }
         }
-        #endregion
 
-        #region Structs
+        [return: NativeTypeName("HRESULT")]
+        public int GetEnumerator(IEnumUnknown** ppIEnumMetadata = null)
+        {
+            fixed (IWICMetadataBlockReader* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetEnumerator>(lpVtbl->GetEnumerator)(This, ppIEnumMetadata);
+            }
+        }
+
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetContainerFormat;
 
             public IntPtr GetCount;
@@ -195,8 +119,6 @@ namespace TerraFX.Interop
             public IntPtr GetReaderByIndex;
 
             public IntPtr GetEnumerator;
-            #endregion
         }
-        #endregion
     }
 }

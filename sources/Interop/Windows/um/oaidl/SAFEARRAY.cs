@@ -10,7 +10,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct SAFEARRAY
     {
-        #region Fields
         [NativeTypeName("USHORT")]
         public ushort cDims;
 
@@ -28,21 +27,14 @@ namespace TerraFX.Interop
 
         [NativeTypeName("SAFEARRAYBOUND[1]")]
         public _rgsabound_e__FixedBuffer rgsabound;
-        #endregion
 
-        #region Structs
         public unsafe struct _rgsabound_e__FixedBuffer
         {
-            #region Fields
             public SAFEARRAYBOUND e0;
-            #endregion
 
-            #region Properties
             public ref SAFEARRAYBOUND this[int index] => ref AsSpan(int.MaxValue)[index];
-            #endregion
 
             public Span<SAFEARRAYBOUND> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
-        #endregion
     }
 }

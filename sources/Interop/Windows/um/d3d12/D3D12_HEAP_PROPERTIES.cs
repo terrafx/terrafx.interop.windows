@@ -12,7 +12,6 @@ namespace TerraFX.Interop
 {
     public struct D3D12_HEAP_PROPERTIES
     {
-        #region Fields
         public D3D12_HEAP_TYPE Type;
 
         public D3D12_CPU_PAGE_PROPERTY CPUPageProperty;
@@ -24,9 +23,7 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint VisibleNodeMask;
-        #endregion
 
-        #region Constructors
         public D3D12_HEAP_PROPERTIES(D3D12_CPU_PAGE_PROPERTY cpuPageProperty, D3D12_MEMORY_POOL memoryPoolPreference, uint creationNodeMask = 1, uint nodeMask = 1)
         {
             Type = D3D12_HEAP_TYPE_CUSTOM;
@@ -44,9 +41,7 @@ namespace TerraFX.Interop
             CreationNodeMask = creationNodeMask;
             VisibleNodeMask = nodeMask;
         }
-        #endregion
 
-        #region Properties
         public bool IsCPUAccessible
         {
             get
@@ -54,9 +49,7 @@ namespace TerraFX.Interop
                 return (Type == D3D12_HEAP_TYPE_UPLOAD) || (Type == D3D12_HEAP_TYPE_READBACK) || ((Type == D3D12_HEAP_TYPE_CUSTOM) && ((CPUPageProperty == D3D12_CPU_PAGE_PROPERTY_WRITE_COMBINE) || (CPUPageProperty == D3D12_CPU_PAGE_PROPERTY_WRITE_BACK)));
             }
         }
-        #endregion
 
-        #region Operators
         public static bool operator ==(D3D12_HEAP_PROPERTIES l, D3D12_HEAP_PROPERTIES r)
         {
             return (l.Type == r.Type)
@@ -70,21 +63,12 @@ namespace TerraFX.Interop
         {
             return !(l == r);
         }
-        #endregion
 
-        #region System.Object
         public override bool Equals(object? obj)
         {
             return (obj is D3D12_HEAP_PROPERTIES other) && (this == other);
         }
 
-        public override int GetHashCode() => HashCode.Combine(
-            Type,
-            CPUPageProperty,
-            MemoryPoolPreference,
-            CreationNodeMask,
-            VisibleNodeMask
-        );
-        #endregion
+        public override int GetHashCode() => HashCode.Combine(Type, CPUPageProperty, MemoryPoolPreference, CreationNodeMask, VisibleNodeMask);
     }
 }

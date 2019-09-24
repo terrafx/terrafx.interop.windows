@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct DXGI_QUERY_VIDEO_MEMORY_INFO
     {
-        #region Fields
         [NativeTypeName("UINT64")]
         public ulong Budget;
 
@@ -19,6 +18,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT64")]
         public ulong CurrentReservation;
-        #endregion
     }
 }

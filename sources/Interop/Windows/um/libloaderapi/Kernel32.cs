@@ -5,19 +5,13 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     public static unsafe partial class Kernel32
     {
-        #region External Methods
-        [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "GetModuleHandleW", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
+        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetModuleHandleW", ExactSpelling = true)]
         [return: NativeTypeName("HMODULE")]
-        public static extern IntPtr GetModuleHandle(
-            [In, NativeTypeName("LPCWSTR")] char* lpModuleName = null
-        );
-        #endregion
+        public static extern IntPtr GetModuleHandle([NativeTypeName("LPCWSTR")] char* lpModuleName = null);
     }
 }

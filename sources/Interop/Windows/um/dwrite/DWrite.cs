@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop
@@ -14,20 +13,13 @@ namespace TerraFX.Interop
     {
         private const string DllName = nameof(DWrite);
 
-        #region Constants
         /// <summary>Maximum alpha value in a texture returned by IDWriteGlyphRunAnalysis::CreateAlphaTexture.</summary>
         public const int DWRITE_ALPHA_MAX = 255;
-        #endregion
 
-        #region FACILITY_* Constants
         public const int FACILITY_DWRITE = 0x898;
-        #endregion
 
-        #region DWRITE_ERR_* Constants
         public const int DWRITE_ERR_BASE = 0x5000;
-        #endregion
 
-        #region IID_* Constants
         public static readonly Guid IID_IDWriteFontFileLoader = new Guid(0x727CAD4E, 0xD6AF, 0x4C9E, 0x8A, 0x08, 0xD6, 0x95, 0xB1, 0x1C, 0xAA, 0x49);
 
         public static readonly Guid IID_IDWriteLocalFontFileLoader = new Guid(0xB2D9F3EC, 0xC9FE, 0x4A11, 0xA2, 0xEC, 0xD8, 0x62, 0x08, 0xF7, 0xC0, 0xA2);
@@ -81,26 +73,17 @@ namespace TerraFX.Interop
         public static readonly Guid IID_IDWriteGlyphRunAnalysis = new Guid(0x7D97DBF7, 0xE085, 0x42D4, 0x81, 0xE3, 0x6A, 0x88, 0x3B, 0xDE, 0xD1, 0x18);
 
         public static readonly Guid IID_IDWriteFactory = new Guid(0xB859EE5A, 0xD838, 0x4B5B, 0xA2, 0xE8, 0x1A, 0xDC, 0x7D, 0x93, 0xDB, 0x48);
-        #endregion
 
-        #region External Methods
         /// <summary>Creates a DirectWrite factory object that is used for subsequent creation of individual DirectWrite objects.</summary>
         /// <param name="factoryType">Identifies whether the factory object will be shared or isolated.</param>
         /// <param name="iid">Identifies the DirectWrite factory interface, such as __uuidof(IDWriteFactory).</param>
         /// <param name="factory">Receives the DirectWrite factory object.</param>
         /// <returns>Standard HRESULT error code.</returns>
         /// <remarks>Obtains DirectWrite factory object that is used for subsequent creation of individual DirectWrite classes. DirectWrite factory contains internal state such as font loader registration and cached font data. In most cases it is recommended to use the shared factory object, because it allows multiple components that use DirectWrite to share internal DirectWrite state and reduce memory usage. However, there are cases when it is desirable to reduce the impact of a component, such as a plug-in from an untrusted source, on the rest of the process by sandboxing and isolating it from the rest of the process components. In such cases, it is recommended to use an isolated factory for the sandboxed component.</remarks>
-        [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "DWriteCreateFactory", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
+        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "DWriteCreateFactory", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DWriteCreateFactory(
-            [In] DWRITE_FACTORY_TYPE factoryType,
-            [In, NativeTypeName("REFIID")] Guid* iid,
-            [Out] IUnknown** factory
-        );
-        #endregion
+        public static extern int DWriteCreateFactory(DWRITE_FACTORY_TYPE factoryType, [NativeTypeName("REFIID")] Guid* iid, IUnknown** factory);
 
-        #region Methods
         public static uint DWRITE_MAKE_OPENTYPE_TAG(byte a, byte b, byte c, byte d)
         {
             return ((uint)d << 24) | ((uint)c << 16) | ((uint)b << 8) | a;
@@ -115,6 +98,5 @@ namespace TerraFX.Interop
         {
             return MAKE_DWRITE_HR(SEVERITY_ERROR, code);
         }
-        #endregion
     }
 }

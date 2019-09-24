@@ -9,12 +9,10 @@ namespace TerraFX.Interop
 {
     public unsafe struct CACLSID
     {
-        #region Fields
         [NativeTypeName("ULONG")]
         public uint cElems;
 
         [NativeTypeName("CLSID[]")]
         public Guid* pElems;
-        #endregion
     }
 }

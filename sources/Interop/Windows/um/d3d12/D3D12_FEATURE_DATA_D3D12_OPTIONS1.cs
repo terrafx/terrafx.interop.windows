@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct D3D12_FEATURE_DATA_D3D12_OPTIONS1
     {
-        #region Fields
         [NativeTypeName("BOOL")]
         public int WaveOps;
 
@@ -25,6 +24,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("BOOL")]
         public int Int64ShaderOps;
-        #endregion
     }
 }

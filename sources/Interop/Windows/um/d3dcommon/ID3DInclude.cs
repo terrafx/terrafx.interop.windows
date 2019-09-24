@@ -5,85 +5,44 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     public unsafe struct ID3DInclude
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Open(
-            [In] ID3DInclude* This,
-            [In] D3D_INCLUDE_TYPE IncludeType,
-            [In, NativeTypeName("LPCSTR")] sbyte* pFileName,
-            [In, NativeTypeName("LPCVOID")] void* pParentData,
-            [Out, NativeTypeName("LPCVOID")] void** ppData,
-            [Out, NativeTypeName("UINT")] uint* pBytes
-        );
+        public delegate int _Open(ID3DInclude* This, D3D_INCLUDE_TYPE IncludeType, [NativeTypeName("LPCSTR")] sbyte* pFileName, [NativeTypeName("LPCVOID")] void* pParentData, [NativeTypeName("LPCVOID")] void** ppData, [NativeTypeName("UINT")] uint* pBytes);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Close(
-            [In] ID3DInclude* This,
-            [In, NativeTypeName("LPCVOID")] void* pData
-        );
-        #endregion
+        public delegate int _Close(ID3DInclude* This, [NativeTypeName("LPCVOID")] void* pData);
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
-        public int Open(
-            [In] D3D_INCLUDE_TYPE IncludeType,
-            [In, NativeTypeName("LPCSTR")] sbyte* pFileName,
-            [In, NativeTypeName("LPCVOID")] void* pParentData,
-            [Out, NativeTypeName("LPCVOID")] void** ppData,
-            [Out, NativeTypeName("UINT")] uint* pBytes
-        )
+        public int Open(D3D_INCLUDE_TYPE IncludeType, [NativeTypeName("LPCSTR")] sbyte* pFileName, [NativeTypeName("LPCVOID")] void* pParentData, [NativeTypeName("LPCVOID")] void** ppData, [NativeTypeName("UINT")] uint* pBytes)
         {
             fixed (ID3DInclude* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Open>(lpVtbl->Open)(
-                    This,
-                    IncludeType,
-                    pFileName,
-                    pParentData,
-                    ppData,
-                    pBytes
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Open>(lpVtbl->Open)(This, IncludeType, pFileName, pParentData, ppData, pBytes);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Close(
-            [In, NativeTypeName("LPCVOID")] void* pData
-        )
+        public int Close([NativeTypeName("LPCVOID")] void* pData)
         {
             fixed (ID3DInclude* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Close>(lpVtbl->Close)(
-                    This,
-                    pData
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Close>(lpVtbl->Close)(This, pData);
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region Fields
             public IntPtr Open;
 
             public IntPtr Close;
-            #endregion
         }
-        #endregion
     }
 }

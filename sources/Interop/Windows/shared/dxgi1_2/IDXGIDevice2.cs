@@ -5,192 +5,88 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     [Guid("05008617-FBFD-4051-A790-144884B4F6A9")]
     public unsafe struct IDXGIDevice2
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IDXGIDevice2* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDXGIDevice2* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IDXGIDevice2* This
-        );
+        public delegate uint _AddRef(IDXGIDevice2* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IDXGIDevice2* This
-        );
-        #endregion
+        public delegate uint _Release(IDXGIDevice2* This);
 
-        #region IDXGIObject Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrivateData(
-            [In] IDXGIDevice2* This,
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In, NativeTypeName("UINT")] uint DataSize,
-            [In] void* pData
-        );
+        public delegate int _SetPrivateData(IDXGIDevice2* This, [NativeTypeName("REFGUID")] Guid* Name, [NativeTypeName("UINT")] uint DataSize, void* pData);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrivateDataInterface(
-            [In] IDXGIDevice2* This,
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In] IUnknown* pUnknown = null
-        );
+        public delegate int _SetPrivateDataInterface(IDXGIDevice2* This, [NativeTypeName("REFGUID")] Guid* Name, IUnknown* pUnknown = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPrivateData(
-            [In] IDXGIDevice2* This,
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In, Out, NativeTypeName("UINT")] uint* pDataSize,
-            [Out] void* pData
-        );
+        public delegate int _GetPrivateData(IDXGIDevice2* This, [NativeTypeName("REFGUID")] Guid* Name, [NativeTypeName("UINT")] uint* pDataSize, void* pData);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetParent(
-            [In] IDXGIDevice2* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppParent
-        );
-        #endregion
+        public delegate int _GetParent(IDXGIDevice2* This, [NativeTypeName("REFIID")] Guid* riid, void** ppParent);
 
-        #region IDXGIDevice Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetAdapter(
-            [In] IDXGIDevice2* This,
-            [Out] IDXGIAdapter** pAdapter
-        );
+        public delegate int _GetAdapter(IDXGIDevice2* This, IDXGIAdapter** pAdapter);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateSurface(
-            [In] IDXGIDevice2* This,
-            [In] DXGI_SURFACE_DESC* pDesc,
-            [In, NativeTypeName("UINT")] uint NumSurfaces,
-            [In, NativeTypeName("DXGI_USAGE")] uint Usage,
-            [In, Optional] DXGI_SHARED_RESOURCE* pSharedResource,
-            [Out, NativeTypeName("IDXGISurface*[]")] IDXGISurface** ppSurface
-        );
+        public delegate int _CreateSurface(IDXGIDevice2* This, DXGI_SURFACE_DESC* pDesc, [NativeTypeName("UINT")] uint NumSurfaces, [NativeTypeName("DXGI_USAGE")] uint Usage, [Optional] DXGI_SHARED_RESOURCE* pSharedResource, [NativeTypeName("IDXGISurface*[]")] IDXGISurface** ppSurface);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryResourceResidency(
-            [In] IDXGIDevice2* This,
-            [In, NativeTypeName("IUnknown*[]")] IUnknown** ppResources,
-            [Out, NativeTypeName("DXGI_RESIDENCY[]")] DXGI_RESIDENCY* pResidencyStatus,
-            [In, NativeTypeName("UINT")] uint NumResources
-        );
+        public delegate int _QueryResourceResidency(IDXGIDevice2* This, [NativeTypeName("IUnknown*[]")] IUnknown** ppResources, [NativeTypeName("DXGI_RESIDENCY[]")] DXGI_RESIDENCY* pResidencyStatus, [NativeTypeName("UINT")] uint NumResources);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetGPUThreadPriority(
-            [In] IDXGIDevice2* This,
-            [In, NativeTypeName("INT")] int Priority
-        );
+        public delegate int _SetGPUThreadPriority(IDXGIDevice2* This, [NativeTypeName("INT")] int Priority);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetGPUThreadPriority(
-            [In] IDXGIDevice2* This,
-            [Out, NativeTypeName("INT")] int* pPriority
-        );
-        #endregion
+        public delegate int _GetGPUThreadPriority(IDXGIDevice2* This, [NativeTypeName("INT")] int* pPriority);
 
-        #region IDXGIDevice1 Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetMaximumFrameLatency(
-            [In] IDXGIDevice2* This,
-            [In, NativeTypeName("UINT")] uint MaxLatency
-        );
+        public delegate int _SetMaximumFrameLatency(IDXGIDevice2* This, [NativeTypeName("UINT")] uint MaxLatency);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetMaximumFrameLatency(
-            [In] IDXGIDevice2* This,
-            [Out, NativeTypeName("UINT")] uint* pMaxLatency
-        );
-        #endregion
+        public delegate int _GetMaximumFrameLatency(IDXGIDevice2* This, [NativeTypeName("UINT")] uint* pMaxLatency);
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _OfferResources(
-            [In] IDXGIDevice2* This,
-            [In, NativeTypeName("UINT")] uint NumResources,
-            [In, NativeTypeName("IDXGIResource*[]")] IDXGIResource** ppResources,
-            [In] DXGI_OFFER_RESOURCE_PRIORITY Priority
-        );
+        public delegate int _OfferResources(IDXGIDevice2* This, [NativeTypeName("UINT")] uint NumResources, [NativeTypeName("IDXGIResource*[]")] IDXGIResource** ppResources, DXGI_OFFER_RESOURCE_PRIORITY Priority);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _ReclaimResources(
-            [In] IDXGIDevice2* This,
-            [In, NativeTypeName("UINT")] uint NumResources,
-            [In, NativeTypeName("IDXGIResource*[]")] IDXGIResource** ppResources,
-            [Out, NativeTypeName("BOOL")] int* pDiscarded = null
-        );
+        public delegate int _ReclaimResources(IDXGIDevice2* This, [NativeTypeName("UINT")] uint NumResources, [NativeTypeName("IDXGIResource*[]")] IDXGIResource** ppResources, [NativeTypeName("BOOL")] int* pDiscarded = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _EnqueueSetEvent(
-            [In] IDXGIDevice2* This,
-            [In, NativeTypeName("HANDLE")] IntPtr hEvent
-        );
-        #endregion
+        public delegate int _EnqueueSetEvent(IDXGIDevice2* This, [NativeTypeName("HANDLE")] IntPtr hEvent);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDXGIDevice2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -199,9 +95,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDevice2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -210,261 +104,144 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDevice2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region IDXGIObject Methods
-        [return: NativeTypeName("HRESULT")]
-        public int SetPrivateData(
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In, NativeTypeName("UINT")] uint DataSize,
-            [In] void* pData
-        )
-        {
-            fixed (IDXGIDevice2* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)(
-                    This,
-                    Name,
-                    DataSize,
-                    pData
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetPrivateDataInterface(
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In] IUnknown* pUnknown = null
-        )
+        public int SetPrivateData([NativeTypeName("REFGUID")] Guid* Name, [NativeTypeName("UINT")] uint DataSize, void* pData)
         {
             fixed (IDXGIDevice2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(
-                    This,
-                    Name,
-                    pUnknown
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)(This, Name, DataSize, pData);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetPrivateData(
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In, Out, NativeTypeName("UINT")] uint* pDataSize,
-            [Out] void* pData
-        )
+        public int SetPrivateDataInterface([NativeTypeName("REFGUID")] Guid* Name, IUnknown* pUnknown = null)
         {
             fixed (IDXGIDevice2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)(
-                    This,
-                    Name,
-                    pDataSize,
-                    pData
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(This, Name, pUnknown);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetParent(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppParent
-        )
+        public int GetPrivateData([NativeTypeName("REFGUID")] Guid* Name, [NativeTypeName("UINT")] uint* pDataSize, void* pData)
         {
             fixed (IDXGIDevice2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetParent>(lpVtbl->GetParent)(
-                    This,
-                    riid,
-                    ppParent
-                );
-            }
-        }
-        #endregion
-
-        #region IDXGIDevice Methods
-        [return: NativeTypeName("HRESULT")]
-        public int GetAdapter(
-            [Out] IDXGIAdapter** pAdapter
-        )
-        {
-            fixed (IDXGIDevice2* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetAdapter>(lpVtbl->GetAdapter)(
-                    This,
-                    pAdapter
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)(This, Name, pDataSize, pData);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateSurface(
-            [In] DXGI_SURFACE_DESC* pDesc,
-            [In, NativeTypeName("UINT")] uint NumSurfaces,
-            [In, NativeTypeName("DXGI_USAGE")] uint Usage,
-            [In, Optional] DXGI_SHARED_RESOURCE* pSharedResource,
-            [Out, NativeTypeName("IDXGISurface*[]")] IDXGISurface** ppSurface
-        )
+        public int GetParent([NativeTypeName("REFIID")] Guid* riid, void** ppParent)
         {
             fixed (IDXGIDevice2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateSurface>(lpVtbl->CreateSurface)(
-                    This,
-                    pDesc,
-                    NumSurfaces,
-                    Usage,
-                    pSharedResource,
-                    ppSurface
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetParent>(lpVtbl->GetParent)(This, riid, ppParent);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryResourceResidency(
-            [In, NativeTypeName("IUnknown*[]")] IUnknown** ppResources,
-            [Out, NativeTypeName("DXGI_RESIDENCY[]")] DXGI_RESIDENCY* pResidencyStatus,
-            [In, NativeTypeName("UINT")] uint NumResources
-        )
+        public int GetAdapter(IDXGIAdapter** pAdapter)
         {
             fixed (IDXGIDevice2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryResourceResidency>(lpVtbl->QueryResourceResidency)(
-                    This,
-                    ppResources,
-                    pResidencyStatus,
-                    NumResources
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetAdapter>(lpVtbl->GetAdapter)(This, pAdapter);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetGPUThreadPriority(
-            [In, NativeTypeName("INT")] int Priority
-        )
+        public int CreateSurface(DXGI_SURFACE_DESC* pDesc, [NativeTypeName("UINT")] uint NumSurfaces, [NativeTypeName("DXGI_USAGE")] uint Usage, [Optional] DXGI_SHARED_RESOURCE* pSharedResource, [NativeTypeName("IDXGISurface*[]")] IDXGISurface** ppSurface)
         {
             fixed (IDXGIDevice2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetGPUThreadPriority>(lpVtbl->SetGPUThreadPriority)(
-                    This,
-                    Priority
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateSurface>(lpVtbl->CreateSurface)(This, pDesc, NumSurfaces, Usage, pSharedResource, ppSurface);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetGPUThreadPriority(
-            [Out, NativeTypeName("INT")] int* pPriority
-        )
+        public int QueryResourceResidency([NativeTypeName("IUnknown*[]")] IUnknown** ppResources, [NativeTypeName("DXGI_RESIDENCY[]")] DXGI_RESIDENCY* pResidencyStatus, [NativeTypeName("UINT")] uint NumResources)
         {
             fixed (IDXGIDevice2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetGPUThreadPriority>(lpVtbl->GetGPUThreadPriority)(
-                    This,
-                    pPriority
-                );
-            }
-        }
-        #endregion
-
-        #region IDXGIDevice1 Methods
-        [return: NativeTypeName("HRESULT")]
-        public int SetMaximumFrameLatency(
-            [In, NativeTypeName("UINT")] uint MaxLatency
-        )
-        {
-            fixed (IDXGIDevice2* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetMaximumFrameLatency>(lpVtbl->SetMaximumFrameLatency)(
-                    This,
-                    MaxLatency
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryResourceResidency>(lpVtbl->QueryResourceResidency)(This, ppResources, pResidencyStatus, NumResources);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetMaximumFrameLatency(
-            [Out, NativeTypeName("UINT")] uint* pMaxLatency
-        )
+        public int SetGPUThreadPriority([NativeTypeName("INT")] int Priority)
         {
             fixed (IDXGIDevice2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetMaximumFrameLatency>(lpVtbl->GetMaximumFrameLatency)(
-                    This,
-                    pMaxLatency
-                );
-            }
-        }
-        #endregion
-
-        #region Methods
-        [return: NativeTypeName("HRESULT")]
-        public int OfferResources(
-            [In, NativeTypeName("UINT")] uint NumResources,
-            [In, NativeTypeName("IDXGIResource*[]")] IDXGIResource** ppResources,
-            [In] DXGI_OFFER_RESOURCE_PRIORITY Priority
-        )
-        {
-            fixed (IDXGIDevice2* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_OfferResources>(lpVtbl->OfferResources)(
-                    This,
-                    NumResources,
-                    ppResources,
-                    Priority
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetGPUThreadPriority>(lpVtbl->SetGPUThreadPriority)(This, Priority);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int ReclaimResources(
-            [In, NativeTypeName("UINT")] uint NumResources,
-            [In, NativeTypeName("IDXGIResource*[]")] IDXGIResource** ppResources,
-            [Out, NativeTypeName("BOOL")] int* pDiscarded = null
-        )
+        public int GetGPUThreadPriority([NativeTypeName("INT")] int* pPriority)
         {
             fixed (IDXGIDevice2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_ReclaimResources>(lpVtbl->ReclaimResources)(
-                    This,
-                    NumResources,
-                    ppResources,
-                    pDiscarded
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetGPUThreadPriority>(lpVtbl->GetGPUThreadPriority)(This, pPriority);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int EnqueueSetEvent(
-            [In, NativeTypeName("HANDLE")] IntPtr hEvent
-        )
+        public int SetMaximumFrameLatency([NativeTypeName("UINT")] uint MaxLatency)
         {
             fixed (IDXGIDevice2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_EnqueueSetEvent>(lpVtbl->EnqueueSetEvent)(
-                    This,
-                    hEvent
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetMaximumFrameLatency>(lpVtbl->SetMaximumFrameLatency)(This, MaxLatency);
             }
         }
-        #endregion
 
-        #region Structs
+        [return: NativeTypeName("HRESULT")]
+        public int GetMaximumFrameLatency([NativeTypeName("UINT")] uint* pMaxLatency)
+        {
+            fixed (IDXGIDevice2* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetMaximumFrameLatency>(lpVtbl->GetMaximumFrameLatency)(This, pMaxLatency);
+            }
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int OfferResources([NativeTypeName("UINT")] uint NumResources, [NativeTypeName("IDXGIResource*[]")] IDXGIResource** ppResources, DXGI_OFFER_RESOURCE_PRIORITY Priority)
+        {
+            fixed (IDXGIDevice2* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_OfferResources>(lpVtbl->OfferResources)(This, NumResources, ppResources, Priority);
+            }
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int ReclaimResources([NativeTypeName("UINT")] uint NumResources, [NativeTypeName("IDXGIResource*[]")] IDXGIResource** ppResources, [NativeTypeName("BOOL")] int* pDiscarded = null)
+        {
+            fixed (IDXGIDevice2* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_ReclaimResources>(lpVtbl->ReclaimResources)(This, NumResources, ppResources, pDiscarded);
+            }
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int EnqueueSetEvent([NativeTypeName("HANDLE")] IntPtr hEvent)
+        {
+            fixed (IDXGIDevice2* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_EnqueueSetEvent>(lpVtbl->EnqueueSetEvent)(This, hEvent);
+            }
+        }
+
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDXGIObject Fields
             public IntPtr SetPrivateData;
 
             public IntPtr SetPrivateDataInterface;
@@ -472,9 +249,7 @@ namespace TerraFX.Interop
             public IntPtr GetPrivateData;
 
             public IntPtr GetParent;
-            #endregion
 
-            #region IDXGIDevice Fields
             public IntPtr GetAdapter;
 
             public IntPtr CreateSurface;
@@ -484,22 +259,16 @@ namespace TerraFX.Interop
             public IntPtr SetGPUThreadPriority;
 
             public IntPtr GetGPUThreadPriority;
-            #endregion
 
-            #region IDXGIDevice1 Fields
             public IntPtr SetMaximumFrameLatency;
 
             public IntPtr GetMaximumFrameLatency;
-            #endregion
 
-            #region Fields
             public IntPtr OfferResources;
 
             public IntPtr ReclaimResources;
 
             public IntPtr EnqueueSetEvent;
-            #endregion
         }
-        #endregion
     }
 }

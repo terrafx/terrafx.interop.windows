@@ -5,152 +5,76 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     [Guid("00000105-A8F2-4877-BA0A-FD2B6645FB94")]
     public unsafe struct IWICBitmapFrameEncode
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IWICBitmapFrameEncode* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICBitmapFrameEncode* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IWICBitmapFrameEncode* This
-        );
+        public delegate uint _AddRef(IWICBitmapFrameEncode* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IWICBitmapFrameEncode* This
-        );
-        #endregion
+        public delegate uint _Release(IWICBitmapFrameEncode* This);
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Initialize(
-            [In] IWICBitmapFrameEncode* This,
-            [In] IPropertyBag2* pIEncoderOptions = null
-        );
+        public delegate int _Initialize(IWICBitmapFrameEncode* This, IPropertyBag2* pIEncoderOptions = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetSize(
-            [In] IWICBitmapFrameEncode* This,
-            [In, NativeTypeName("UINT")] uint uiWidth,
-            [In, NativeTypeName("UINT")] uint uiHeight
-        );
+        public delegate int _SetSize(IWICBitmapFrameEncode* This, [NativeTypeName("UINT")] uint uiWidth, [NativeTypeName("UINT")] uint uiHeight);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetResolution(
-            [In] IWICBitmapFrameEncode* This,
-            [In] double dpiX,
-            [In] double dpiY
-        );
+        public delegate int _SetResolution(IWICBitmapFrameEncode* This, double dpiX, double dpiY);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPixelFormat(
-            [In] IWICBitmapFrameEncode* This,
-            [In, Out, NativeTypeName("WICPixelFormatGUID")] Guid* pPixelFormat
-        );
+        public delegate int _SetPixelFormat(IWICBitmapFrameEncode* This, [NativeTypeName("WICPixelFormatGUID")] Guid* pPixelFormat);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetColorContexts(
-            [In] IWICBitmapFrameEncode* This,
-            [In, NativeTypeName("UINT")] uint cCount,
-            [In, NativeTypeName("IWICColorContext*[]")] IWICColorContext** ppIColorContext
-        );
+        public delegate int _SetColorContexts(IWICBitmapFrameEncode* This, [NativeTypeName("UINT")] uint cCount, [NativeTypeName("IWICColorContext*[]")] IWICColorContext** ppIColorContext);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPalette(
-            [In] IWICBitmapFrameEncode* This,
-            [In] IWICPalette* pIPalette = null
-        );
+        public delegate int _SetPalette(IWICBitmapFrameEncode* This, IWICPalette* pIPalette = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetThumbnail(
-            [In] IWICBitmapFrameEncode* This,
-            [In] IWICBitmapSource* pIThumbnail
-        );
+        public delegate int _SetThumbnail(IWICBitmapFrameEncode* This, IWICBitmapSource* pIThumbnail);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _WritePixels(
-            [In] IWICBitmapFrameEncode* This,
-            [In, NativeTypeName("UINT")] uint lineCount,
-            [In, NativeTypeName("UINT")] uint cbStride,
-            [In, NativeTypeName("UINT")] uint cbBufferSize,
-            [In, NativeTypeName("BYTE[]")] byte* pbPixels
-        );
+        public delegate int _WritePixels(IWICBitmapFrameEncode* This, [NativeTypeName("UINT")] uint lineCount, [NativeTypeName("UINT")] uint cbStride, [NativeTypeName("UINT")] uint cbBufferSize, [NativeTypeName("BYTE[]")] byte* pbPixels);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _WriteSource(
-            [In] IWICBitmapFrameEncode* This,
-            [In] IWICBitmapSource* pIBitmapSource = null,
-            [In] WICRect* prc = null
-        );
+        public delegate int _WriteSource(IWICBitmapFrameEncode* This, IWICBitmapSource* pIBitmapSource = null, WICRect* prc = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Commit(
-            [In] IWICBitmapFrameEncode* This
-        );
+        public delegate int _Commit(IWICBitmapFrameEncode* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetMetadataQueryWriter(
-            [In] IWICBitmapFrameEncode* This,
-            [Out] IWICMetadataQueryWriter** ppIMetadataQueryWriter = null
-        );
-        #endregion
+        public delegate int _GetMetadataQueryWriter(IWICBitmapFrameEncode* This, IWICMetadataQueryWriter** ppIMetadataQueryWriter = null);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICBitmapFrameEncode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -159,9 +83,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapFrameEncode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -170,151 +92,88 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapFrameEncode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region Methods
-        [return: NativeTypeName("HRESULT")]
-        public int Initialize(
-            [In] IPropertyBag2* pIEncoderOptions = null
-        )
-        {
-            fixed (IWICBitmapFrameEncode* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Initialize>(lpVtbl->Initialize)(
-                    This,
-                    pIEncoderOptions
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetSize(
-            [In, NativeTypeName("UINT")] uint uiWidth,
-            [In, NativeTypeName("UINT")] uint uiHeight
-        )
+        public int Initialize(IPropertyBag2* pIEncoderOptions = null)
         {
             fixed (IWICBitmapFrameEncode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetSize>(lpVtbl->SetSize)(
-                    This,
-                    uiWidth,
-                    uiHeight
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Initialize>(lpVtbl->Initialize)(This, pIEncoderOptions);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetResolution(
-            [In] double dpiX,
-            [In] double dpiY
-        )
+        public int SetSize([NativeTypeName("UINT")] uint uiWidth, [NativeTypeName("UINT")] uint uiHeight)
         {
             fixed (IWICBitmapFrameEncode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetResolution>(lpVtbl->SetResolution)(
-                    This,
-                    dpiX,
-                    dpiY
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetSize>(lpVtbl->SetSize)(This, uiWidth, uiHeight);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetPixelFormat(
-            [In, Out, NativeTypeName("WICPixelFormatGUID")] Guid* pPixelFormat
-        )
+        public int SetResolution(double dpiX, double dpiY)
         {
             fixed (IWICBitmapFrameEncode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetPixelFormat>(lpVtbl->SetPixelFormat)(
-                    This,
-                    pPixelFormat
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetResolution>(lpVtbl->SetResolution)(This, dpiX, dpiY);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetColorContexts(
-            [In, NativeTypeName("UINT")] uint cCount,
-            [In, NativeTypeName("IWICColorContext*[]")] IWICColorContext** ppIColorContext
-        )
+        public int SetPixelFormat([NativeTypeName("WICPixelFormatGUID")] Guid* pPixelFormat)
         {
             fixed (IWICBitmapFrameEncode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetColorContexts>(lpVtbl->SetColorContexts)(
-                    This,
-                    cCount,
-                    ppIColorContext
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetPixelFormat>(lpVtbl->SetPixelFormat)(This, pPixelFormat);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetPalette(
-            [In] IWICPalette* pIPalette = null
-        )
+        public int SetColorContexts([NativeTypeName("UINT")] uint cCount, [NativeTypeName("IWICColorContext*[]")] IWICColorContext** ppIColorContext)
         {
             fixed (IWICBitmapFrameEncode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetPalette>(lpVtbl->SetPalette)(
-                    This,
-                    pIPalette
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetColorContexts>(lpVtbl->SetColorContexts)(This, cCount, ppIColorContext);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetThumbnail(
-            [In] IWICBitmapSource* pIThumbnail
-        )
+        public int SetPalette(IWICPalette* pIPalette = null)
         {
             fixed (IWICBitmapFrameEncode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetThumbnail>(lpVtbl->SetThumbnail)(
-                    This,
-                    pIThumbnail
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetPalette>(lpVtbl->SetPalette)(This, pIPalette);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int WritePixels(
-            [In, NativeTypeName("UINT")] uint lineCount,
-            [In, NativeTypeName("UINT")] uint cbStride,
-            [In, NativeTypeName("UINT")] uint cbBufferSize,
-            [In, NativeTypeName("BYTE[]")] byte* pbPixels
-        )
+        public int SetThumbnail(IWICBitmapSource* pIThumbnail)
         {
             fixed (IWICBitmapFrameEncode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_WritePixels>(lpVtbl->WritePixels)(
-                    This,
-                    lineCount,
-                    cbStride,
-                    cbBufferSize,
-                    pbPixels
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetThumbnail>(lpVtbl->SetThumbnail)(This, pIThumbnail);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int WriteSource(
-            [In] IWICBitmapSource* pIBitmapSource = null,
-            [In] WICRect* prc = null
-        )
+        public int WritePixels([NativeTypeName("UINT")] uint lineCount, [NativeTypeName("UINT")] uint cbStride, [NativeTypeName("UINT")] uint cbBufferSize, [NativeTypeName("BYTE[]")] byte* pbPixels)
         {
             fixed (IWICBitmapFrameEncode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_WriteSource>(lpVtbl->WriteSource)(
-                    This,
-                    pIBitmapSource,
-                    prc
-                );
+                return Marshal.GetDelegateForFunctionPointer<_WritePixels>(lpVtbl->WritePixels)(This, lineCount, cbStride, cbBufferSize, pbPixels);
+            }
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int WriteSource(IWICBitmapSource* pIBitmapSource = null, WICRect* prc = null)
+        {
+            fixed (IWICBitmapFrameEncode* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_WriteSource>(lpVtbl->WriteSource)(This, pIBitmapSource, prc);
             }
         }
 
@@ -323,39 +182,27 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapFrameEncode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Commit>(lpVtbl->Commit)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Commit>(lpVtbl->Commit)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetMetadataQueryWriter(
-            [Out] IWICMetadataQueryWriter** ppIMetadataQueryWriter = null
-        )
+        public int GetMetadataQueryWriter(IWICMetadataQueryWriter** ppIMetadataQueryWriter = null)
         {
             fixed (IWICBitmapFrameEncode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetMetadataQueryWriter>(lpVtbl->GetMetadataQueryWriter)(
-                    This,
-                    ppIMetadataQueryWriter
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetMetadataQueryWriter>(lpVtbl->GetMetadataQueryWriter)(This, ppIMetadataQueryWriter);
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr Initialize;
 
             public IntPtr SetSize;
@@ -377,8 +224,6 @@ namespace TerraFX.Interop
             public IntPtr Commit;
 
             public IntPtr GetMetadataQueryWriter;
-            #endregion
         }
-        #endregion
     }
 }

@@ -7,13 +7,11 @@ namespace TerraFX.Interop
 {
     public struct DXGI_OUTDUPL_DESC
     {
-        #region Fields
         public DXGI_MODE_DESC ModeDesc;
 
         public DXGI_MODE_ROTATION Rotation;
 
         [NativeTypeName("BOOL")]
         public int DesktopImageInSystemMemory;
-        #endregion
     }
 }

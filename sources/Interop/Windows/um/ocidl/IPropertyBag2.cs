@@ -5,110 +5,52 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     [Guid("22F55882-280B-11d0-A8A9-00A0C90C2004")]
     public unsafe struct IPropertyBag2
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IPropertyBag2* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IPropertyBag2* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IPropertyBag2* This
-        );
+        public delegate uint _AddRef(IPropertyBag2* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IPropertyBag2* This
-        );
-        #endregion
+        public delegate uint _Release(IPropertyBag2* This);
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Read(
-            [In] IPropertyBag2* This,
-            [In, NativeTypeName("ULONG")] uint cProperties,
-            [In, NativeTypeName("PROPBAG2[]")] PROPBAG2* pPropBag,
-            [In, Optional] IErrorLog* pErrLog,
-            [Out] VARIANT* pvarValue,
-            [In, Out, NativeTypeName("HRESULT")] int* phrError = null
-        );
+        public delegate int _Read(IPropertyBag2* This, [NativeTypeName("ULONG")] uint cProperties, [NativeTypeName("PROPBAG2[]")] PROPBAG2* pPropBag, [Optional] IErrorLog* pErrLog, VARIANT* pvarValue, [NativeTypeName("HRESULT")] int* phrError = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Write(
-            [In] IPropertyBag2* This,
-            [In, NativeTypeName("ULONG")] uint cProperties,
-            [In, NativeTypeName("PROPBAG2[]")] PROPBAG2* pPropBag,
-            [In] VARIANT* pvarValue
-        );
+        public delegate int _Write(IPropertyBag2* This, [NativeTypeName("ULONG")] uint cProperties, [NativeTypeName("PROPBAG2[]")] PROPBAG2* pPropBag, VARIANT* pvarValue);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CountProperties(
-            [In] IPropertyBag2* This,
-            [Out, NativeTypeName("ULONG")] uint* pcProperties
-        );
+        public delegate int _CountProperties(IPropertyBag2* This, [NativeTypeName("ULONG")] uint* pcProperties);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPropertyInfo(
-            [In] IPropertyBag2* This,
-            [In, NativeTypeName("ULONG")] uint iProperty,
-            [In, NativeTypeName("ULONG")] uint cProperties,
-            [Out, NativeTypeName("PROPBAG2")] PROPBAG2* pPropBag,
-            [Out, NativeTypeName("ULONG")] uint* pcProperties
-        );
+        public delegate int _GetPropertyInfo(IPropertyBag2* This, [NativeTypeName("ULONG")] uint iProperty, [NativeTypeName("ULONG")] uint cProperties, [NativeTypeName("PROPBAG2")] PROPBAG2* pPropBag, [NativeTypeName("ULONG")] uint* pcProperties);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _LoadObject(
-            [In] IPropertyBag2* This,
-            [In, NativeTypeName("LPCOLESTR")] char* pstrName,
-            [In, NativeTypeName("DWORD")] uint dwHint,
-            [In] IUnknown* pUnkObject = null,
-            [In] IErrorLog* pErrLog = null
-        );
-        #endregion
+        public delegate int _LoadObject(IPropertyBag2* This, [NativeTypeName("LPCOLESTR")] char* pstrName, [NativeTypeName("DWORD")] uint dwHint, IUnknown* pUnkObject = null, IErrorLog* pErrLog = null);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IPropertyBag2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -117,9 +59,7 @@ namespace TerraFX.Interop
         {
             fixed (IPropertyBag2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -128,121 +68,63 @@ namespace TerraFX.Interop
         {
             fixed (IPropertyBag2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region Methods
-        [return: NativeTypeName("HRESULT")]
-        public int Read(
-            [In, NativeTypeName("ULONG")] uint cProperties,
-            [In, NativeTypeName("PROPBAG2[]")] PROPBAG2* pPropBag,
-            [In, Optional] IErrorLog* pErrLog,
-            [Out] VARIANT* pvarValue,
-            [In, Out, NativeTypeName("HRESULT")] int* phrError = null
-        )
-        {
-            fixed (IPropertyBag2* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Read>(lpVtbl->Read)(
-                    This,
-                    cProperties,
-                    pPropBag,
-                    pErrLog,
-                    pvarValue,
-                    phrError
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Write(
-            [In, NativeTypeName("ULONG")] uint cProperties,
-            [In, NativeTypeName("PROPBAG2[]")] PROPBAG2* pPropBag,
-            [In] VARIANT* pvarValue
-        )
+        public int Read([NativeTypeName("ULONG")] uint cProperties, [NativeTypeName("PROPBAG2[]")] PROPBAG2* pPropBag, [Optional] IErrorLog* pErrLog, VARIANT* pvarValue, [NativeTypeName("HRESULT")] int* phrError = null)
         {
             fixed (IPropertyBag2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Write>(lpVtbl->Write)(
-                    This,
-                    cProperties,
-                    pPropBag,
-                    pvarValue
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Read>(lpVtbl->Read)(This, cProperties, pPropBag, pErrLog, pvarValue, phrError);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CountProperties(
-            [Out, NativeTypeName("ULONG")] uint* pcProperties
-        )
+        public int Write([NativeTypeName("ULONG")] uint cProperties, [NativeTypeName("PROPBAG2[]")] PROPBAG2* pPropBag, VARIANT* pvarValue)
         {
             fixed (IPropertyBag2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CountProperties>(lpVtbl->CountProperties)(
-                    This,
-                    pcProperties
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Write>(lpVtbl->Write)(This, cProperties, pPropBag, pvarValue);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetPropertyInfo(
-            [In, NativeTypeName("ULONG")] uint iProperty,
-            [In, NativeTypeName("ULONG")] uint cProperties,
-            [Out, NativeTypeName("PROPBAG2")] PROPBAG2* pPropBag,
-            [Out, NativeTypeName("ULONG")] uint* pcProperties
-        )
+        public int CountProperties([NativeTypeName("ULONG")] uint* pcProperties)
         {
             fixed (IPropertyBag2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetPropertyInfo>(lpVtbl->GetPropertyInfo)(
-                    This,
-                    iProperty,
-                    cProperties,
-                    pPropBag,
-                    pcProperties
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CountProperties>(lpVtbl->CountProperties)(This, pcProperties);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int LoadObject(
-            [In, NativeTypeName("LPCOLESTR")] char* pstrName,
-            [In, NativeTypeName("DWORD")] uint dwHint,
-            [In] IUnknown* pUnkObject = null,
-            [In] IErrorLog* pErrLog = null
-        )
+        public int GetPropertyInfo([NativeTypeName("ULONG")] uint iProperty, [NativeTypeName("ULONG")] uint cProperties, [NativeTypeName("PROPBAG2")] PROPBAG2* pPropBag, [NativeTypeName("ULONG")] uint* pcProperties)
         {
             fixed (IPropertyBag2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_LoadObject>(lpVtbl->LoadObject)(
-                    This,
-                    pstrName,
-                    dwHint,
-                    pUnkObject,
-                    pErrLog
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetPropertyInfo>(lpVtbl->GetPropertyInfo)(This, iProperty, cProperties, pPropBag, pcProperties);
             }
         }
-        #endregion
 
-        #region Structs
+        [return: NativeTypeName("HRESULT")]
+        public int LoadObject([NativeTypeName("LPCOLESTR")] char* pstrName, [NativeTypeName("DWORD")] uint dwHint, IUnknown* pUnkObject = null, IErrorLog* pErrLog = null)
+        {
+            fixed (IPropertyBag2* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_LoadObject>(lpVtbl->LoadObject)(This, pstrName, dwHint, pUnkObject, pErrLog);
+            }
+        }
+
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr Read;
 
             public IntPtr Write;
@@ -252,8 +134,6 @@ namespace TerraFX.Interop
             public IntPtr GetPropertyInfo;
 
             public IntPtr LoadObject;
-            #endregion
         }
-        #endregion
     }
 }

@@ -9,14 +9,11 @@ namespace TerraFX.Interop
 {
     public unsafe struct TYPEDESC
     {
-        #region Fields
         private _Anonymous_e__Union Anonymous;
 
         [NativeTypeName("VARTYPE")]
         public ushort vt;
-        #endregion
 
-        #region Properties
         public TYPEDESC* lptdesc
         {
             get
@@ -55,13 +52,10 @@ namespace TerraFX.Interop
                 Anonymous.hreftype = value;
             }
         }
-        #endregion
 
-        #region Structs
         [StructLayout(LayoutKind.Explicit)]
         public struct _Anonymous_e__Union
         {
-            #region Fields
             [FieldOffset(0)]
             public TYPEDESC* lptdesc;
 
@@ -71,8 +65,6 @@ namespace TerraFX.Interop
             [FieldOffset(0)]
             [NativeTypeName("HREFTYPE")]
             public uint hreftype;
-            #endregion
         }
-        #endregion
     }
 }

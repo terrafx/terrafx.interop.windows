@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public struct SIZE
     {
-        #region Fields
         [NativeTypeName("LONG")]
         public int cx;
 
         [NativeTypeName("LONG")]
         public int cy;
-        #endregion
     }
 }

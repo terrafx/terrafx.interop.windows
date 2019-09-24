@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct WICDdsFormatInfo
     {
-        #region Fields
         public DXGI_FORMAT DxgiFormat;
 
         [NativeTypeName("UINT")]
@@ -18,6 +17,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint BlockHeight;
-        #endregion
     }
 }

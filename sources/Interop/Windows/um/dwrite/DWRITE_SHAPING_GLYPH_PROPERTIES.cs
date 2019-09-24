@@ -8,11 +8,8 @@ namespace TerraFX.Interop
     /// <summary>Shaping output properties per output glyph.</summary>
     public struct DWRITE_SHAPING_GLYPH_PROPERTIES
     {
-        #region Fields
         private ushort _bitField;
-        #endregion
 
-        #region Properties
         /// <summary>Justification class, whether to use spacing, kashidas, or another method. This exists for backwards compatibility with Uniscribe's SCRIPT_JUSTIFY enum.</summary>
         [NativeTypeName("UINT16:4")]
         public ushort justification
@@ -87,6 +84,5 @@ namespace TerraFX.Interop
                 _bitField = (ushort)((_bitField & 0b0000_0000_0111_1111) | ((value << 7) & 0b1111_1111_1000_0000));
             }
         }
-        #endregion
     }
 }

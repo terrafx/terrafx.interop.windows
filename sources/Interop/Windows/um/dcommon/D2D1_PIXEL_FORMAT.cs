@@ -8,10 +8,8 @@ namespace TerraFX.Interop
     /// <summary>Description of a pixel format.</summary>
     public struct D2D1_PIXEL_FORMAT
     {
-        #region Fields
         public DXGI_FORMAT format;
 
         public D2D1_ALPHA_MODE alphaMode;
-        #endregion
     }
 }

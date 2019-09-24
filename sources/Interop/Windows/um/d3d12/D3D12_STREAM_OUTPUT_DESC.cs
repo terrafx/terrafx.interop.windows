@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_STREAM_OUTPUT_DESC
     {
-        #region Fields
         [NativeTypeName("D3D12_SO_DECLARATION_ENTRY[]")]
         public D3D12_SO_DECLARATION_ENTRY* pSODeclaration;
 
@@ -22,6 +21,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint RasterizedStream;
-        #endregion
     }
 }

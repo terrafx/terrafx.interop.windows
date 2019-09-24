@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public struct DXGI_SAMPLE_DESC
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint Count;
 
         [NativeTypeName("UINT")]
         public uint Quality;
-        #endregion
     }
 }

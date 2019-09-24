@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public struct D3D12_BOX
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint left;
 
@@ -27,9 +26,7 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint back;
-        #endregion
 
-        #region Constructors
         public D3D12_BOX(int Left, int Right)
         {
             left = (uint)Left;
@@ -59,9 +56,7 @@ namespace TerraFX.Interop
             bottom = (uint)Bottom;
             back = (uint)Back;
         }
-        #endregion
 
-        #region Operators
         public static bool operator ==(D3D12_BOX l, D3D12_BOX r)
         {
             return (l.left == r.left)
@@ -76,22 +71,12 @@ namespace TerraFX.Interop
         {
             return !(l == r);
         }
-        #endregion
 
-        #region System.Object
         public override bool Equals(object? obj)
         {
             return (obj is D3D12_BOX other) && (this == other);
         }
 
-        public override int GetHashCode() => HashCode.Combine(
-            left,
-            top,
-            front,
-            right,
-            bottom,
-            back
-        );
-        #endregion
+        public override int GetHashCode() => HashCode.Combine(left, top, front, right, bottom, back);
     }
 }

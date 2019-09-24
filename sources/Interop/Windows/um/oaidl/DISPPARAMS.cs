@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct DISPPARAMS
     {
-        #region Fields
         [NativeTypeName("VARIANTARG[]")]
         public VARIANT* rgvarg;
 
@@ -19,6 +18,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint cNamedArgs;
-        #endregion
     }
 }

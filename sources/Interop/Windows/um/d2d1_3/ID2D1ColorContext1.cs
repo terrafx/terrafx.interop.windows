@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -13,111 +12,57 @@ namespace TerraFX.Interop
     [Guid("1AB42875-C57F-4BE9-BD85-9CD78D6F55EE")]
     public unsafe struct ID2D1ColorContext1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] ID2D1ColorContext1* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1ColorContext1* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] ID2D1ColorContext1* This
-        );
+        public delegate uint _AddRef(ID2D1ColorContext1* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] ID2D1ColorContext1* This
-        );
-        #endregion
+        public delegate uint _Release(ID2D1ColorContext1* This);
 
-        #region ID2D1Resource Delegates
         /// <summary>Retrieve the factory associated with this resource.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _GetFactory(
-            [In] ID2D1ColorContext1* This,
-            [Out] ID2D1Factory** factory
-        );
-        #endregion
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _GetFactory(ID2D1ColorContext1* This, ID2D1Factory** factory);
 
-        #region ID2D1ColorContext Delegates
         /// <summary>Retrieves the color space of the color context.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate D2D1_COLOR_SPACE _GetColorSpace(
-            [In] ID2D1ColorContext1* This
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate D2D1_COLOR_SPACE _GetColorSpace(ID2D1ColorContext1* This);
 
         /// <summary>Retrieves the size of the color profile, in bytes.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetProfileSize(
-            [In] ID2D1ColorContext1* This
-        );
+        public delegate uint _GetProfileSize(ID2D1ColorContext1* This);
 
         /// <summary>Retrieves the color profile bytes.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetProfile(
-            [In] ID2D1ColorContext1* This,
-            [Out, NativeTypeName("BYTE[]")] byte* profile,
-            [In, NativeTypeName("UINT32")] uint profileSize
-        );
-        #endregion
+        public delegate int _GetProfile(ID2D1ColorContext1* This, [NativeTypeName("BYTE[]")] byte* profile, [NativeTypeName("UINT32")] uint profileSize);
 
-        #region Delegates
         /// <summary>Retrieves the color context type.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate D2D1_COLOR_CONTEXT_TYPE _GetColorContextType(
-            [In] ID2D1ColorContext1* This
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate D2D1_COLOR_CONTEXT_TYPE _GetColorContextType(ID2D1ColorContext1* This);
 
         /// <summary>Retrieves the DXGI color space of this context. Returns DXGI_COLOR_SPACE_CUSTOM when color context type is ICC.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate DXGI_COLOR_SPACE_TYPE _GetDXGIColorSpace(
-            [In] ID2D1ColorContext1* This
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate DXGI_COLOR_SPACE_TYPE _GetDXGIColorSpace(ID2D1ColorContext1* This);
 
         /// <summary>Retrieves a set simple color profile.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSimpleColorProfile(
-            [In] ID2D1ColorContext1* This,
-            [Out] D2D1_SIMPLE_COLOR_PROFILE* simpleProfile
-        );
-        #endregion
+        public delegate int _GetSimpleColorProfile(ID2D1ColorContext1* This, D2D1_SIMPLE_COLOR_PROFILE* simpleProfile);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1ColorContext1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -126,9 +71,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ColorContext1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -137,36 +80,23 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ColorContext1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
-        #endregion
 
-        #region ID2D1Resource Methods
-        public void GetFactory(
-            [Out] ID2D1Factory** factory
-        )
+        public void GetFactory(ID2D1Factory** factory)
         {
             fixed (ID2D1ColorContext1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
-                    This,
-                    factory
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(This, factory);
             }
         }
-        #endregion
 
-        #region ID2D1ColorContext Methods
         public D2D1_COLOR_SPACE GetColorSpace()
         {
             fixed (ID2D1ColorContext1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetColorSpace>(lpVtbl->GetColorSpace)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetColorSpace>(lpVtbl->GetColorSpace)(This);
             }
         }
 
@@ -175,37 +105,24 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ColorContext1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetProfileSize>(lpVtbl->GetProfileSize)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetProfileSize>(lpVtbl->GetProfileSize)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetProfile(
-            [Out, NativeTypeName("BYTE[]")] byte* profile,
-            [In, NativeTypeName("UINT32")] uint profileSize
-        )
+        public int GetProfile([NativeTypeName("BYTE[]")] byte* profile, [NativeTypeName("UINT32")] uint profileSize)
         {
             fixed (ID2D1ColorContext1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetProfile>(lpVtbl->GetProfile)(
-                    This,
-                    profile,
-                    profileSize
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetProfile>(lpVtbl->GetProfile)(This, profile, profileSize);
             }
         }
-        #endregion
 
-        #region Methods
         public D2D1_COLOR_CONTEXT_TYPE GetColorContextType()
         {
             fixed (ID2D1ColorContext1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetColorContextType>(lpVtbl->GetColorContextType)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetColorContextType>(lpVtbl->GetColorContextType)(This);
             }
         }
 
@@ -213,58 +130,40 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ColorContext1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDXGIColorSpace>(lpVtbl->GetDXGIColorSpace)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDXGIColorSpace>(lpVtbl->GetDXGIColorSpace)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetSimpleColorProfile(
-            [Out] D2D1_SIMPLE_COLOR_PROFILE* simpleProfile
-        )
+        public int GetSimpleColorProfile(D2D1_SIMPLE_COLOR_PROFILE* simpleProfile)
         {
             fixed (ID2D1ColorContext1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetSimpleColorProfile>(lpVtbl->GetSimpleColorProfile)(
-                    This,
-                    simpleProfile
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetSimpleColorProfile>(lpVtbl->GetSimpleColorProfile)(This, simpleProfile);
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1Resource Fields
             public IntPtr GetFactory;
-            #endregion
 
-            #region ID2D1ColorContext Fields
             public IntPtr GetColorSpace;
 
             public IntPtr GetProfileSize;
 
             public IntPtr GetProfile;
-            #endregion
 
-            #region Fields
             public IntPtr GetColorContextType;
 
             public IntPtr GetDXGIColorSpace;
 
             public IntPtr GetSimpleColorProfile;
-            #endregion
         }
-        #endregion
     }
 }

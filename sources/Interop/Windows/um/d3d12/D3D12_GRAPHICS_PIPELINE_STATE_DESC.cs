@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_GRAPHICS_PIPELINE_STATE_DESC
     {
-        #region Fields
         public ID3D12RootSignature* pRootSignature;
 
         public D3D12_SHADER_BYTECODE VS;
@@ -53,12 +52,9 @@ namespace TerraFX.Interop
         public D3D12_CACHED_PIPELINE_STATE CachedPSO;
 
         public D3D12_PIPELINE_STATE_FLAGS Flags;
-        #endregion
 
-        #region Structs
         public struct _RTVFormats_e__FixedBuffer
         {
-            #region Fields
             public DXGI_FORMAT e0;
 
             public DXGI_FORMAT e1;
@@ -74,9 +70,7 @@ namespace TerraFX.Interop
             public DXGI_FORMAT e6;
 
             public DXGI_FORMAT e7;
-            #endregion
 
-            #region Properties
             public DXGI_FORMAT this[int index]
             {
                 get
@@ -95,8 +89,6 @@ namespace TerraFX.Interop
                     }
                 }
             }
-            #endregion
         }
-        #endregion
     }
 }

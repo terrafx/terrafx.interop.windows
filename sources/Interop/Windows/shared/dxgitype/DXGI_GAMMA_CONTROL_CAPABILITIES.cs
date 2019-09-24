@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct DXGI_GAMMA_CONTROL_CAPABILITIES
     {
-        #region Fields
         [NativeTypeName("BOOL")]
         public int ScaleAndOffsetSupported;
 
@@ -20,6 +19,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("FLOAT[1025]")]
         public fixed float ControlPointPositions[1025];
-        #endregion
     }
 }

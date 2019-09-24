@@ -10,7 +10,6 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Explicit)]
     public unsafe struct BINDPTR
     {
-        #region Fields
         [FieldOffset(0)]
         public FUNCDESC* lpfuncdesc;
 
@@ -19,6 +18,5 @@ namespace TerraFX.Interop
 
         [FieldOffset(0)]
         public ITypeComp* lptcomp;
-        #endregion
     }
 }

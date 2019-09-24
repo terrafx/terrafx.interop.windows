@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_SHADER_TYPE_DESC
     {
-        #region Fields
         public D3D_SHADER_VARIABLE_CLASS Class;
 
         public D3D_SHADER_VARIABLE_TYPE Type;
@@ -29,6 +28,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("LPCSTR")]
         public sbyte* Name;
-        #endregion
     }
 }

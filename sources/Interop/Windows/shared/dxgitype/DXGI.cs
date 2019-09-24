@@ -9,11 +9,8 @@ namespace TerraFX.Interop
 {
     public static partial class DXGI
     {
-        #region Constants
         public const int _FACDXGI = 0x87A;
-        #endregion
 
-        #region DXGI_CPU_ACCESS_* Constants
         public const int DXGI_CPU_ACCESS_NONE = 0;
 
         public const int DXGI_CPU_ACCESS_DYNAMIC = 1;
@@ -23,9 +20,7 @@ namespace TerraFX.Interop
         public const int DXGI_CPU_ACCESS_SCRATCH = 3;
 
         public const int DXGI_CPU_ACCESS_FIELD = 15;
-        #endregion
 
-        #region Methods
         public static int MAKE_DXGI_HRESULT(int code)
         {
             return MAKE_HRESULT(1, _FACDXGI, code);
@@ -35,6 +30,5 @@ namespace TerraFX.Interop
         {
             return MAKE_HRESULT(0, _FACDXGI, code);
         }
-        #endregion
     }
 }

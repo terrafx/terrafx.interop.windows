@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -13,130 +12,74 @@ namespace TerraFX.Interop
     [Guid("08256209-099A-4B34-B86D-C22B110E7771")]
     public unsafe struct IDWriteLocalizedStrings
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IDWriteLocalizedStrings* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDWriteLocalizedStrings* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IDWriteLocalizedStrings* This
-        );
+        public delegate uint _AddRef(IDWriteLocalizedStrings* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IDWriteLocalizedStrings* This
-        );
-        #endregion
+        public delegate uint _Release(IDWriteLocalizedStrings* This);
 
-        #region Delegates
         /// <summary>Gets the number of language/string pairs.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetCount(
-            [In] IDWriteLocalizedStrings* This
-        );
+        public delegate uint _GetCount(IDWriteLocalizedStrings* This);
 
         /// <summary>Gets the index of the item with the specified locale name.</summary>
         /// <param name="localeName">Locale name to look for.</param>
         /// <param name="index">Receives the zero-based index of the locale name/string pair.</param>
         /// <param name="exists">Receives TRUE if the locale name exists or FALSE if not.</param>
         /// <returns>Standard HRESULT error code. If the specified locale name does not exist, the return value is S_OK, but *index is UINT_MAX and *exists is FALSE.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _FindLocaleName(
-            [In] IDWriteLocalizedStrings* This,
-            [In, NativeTypeName("WCHAR[]")] char* localeName,
-            [Out, NativeTypeName("UINT32")] uint* index,
-            [Out, NativeTypeName("BOOL")] int* exists
-        );
+        public delegate int _FindLocaleName(IDWriteLocalizedStrings* This, [NativeTypeName("WCHAR[]")] char* localeName, [NativeTypeName("UINT32")] uint* index, [NativeTypeName("BOOL")] int* exists);
 
         /// <summary>Gets the length in characters (not including the null terminator) of the locale name with the specified index.</summary>
         /// <param name="index">Zero-based index of the locale name.</param>
         /// <param name="length">Receives the length in characters, not including the null terminator.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetLocaleNameLength(
-            [In] IDWriteLocalizedStrings* This,
-            [In, NativeTypeName("UINT32")] uint index,
-            [Out, NativeTypeName("UINT32")] uint* length
-        );
+        public delegate int _GetLocaleNameLength(IDWriteLocalizedStrings* This, [NativeTypeName("UINT32")] uint index, [NativeTypeName("UINT32")] uint* length);
 
         /// <summary>Copies the locale name with the specified index to the specified array.</summary>
         /// <param name="index">Zero-based index of the locale name.</param>
         /// <param name="localeName">Character array that receives the locale name.</param>
         /// <param name="size">Size of the array in characters. The size must include space for the terminating null character.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetLocaleName(
-            [In] IDWriteLocalizedStrings* This,
-            [In, NativeTypeName("UINT32")] uint index,
-            [Out, NativeTypeName("WCHAR[]")] char* localeName,
-            [In, NativeTypeName("UINT32")] uint size
-        );
+        public delegate int _GetLocaleName(IDWriteLocalizedStrings* This, [NativeTypeName("UINT32")] uint index, [NativeTypeName("WCHAR[]")] char* localeName, [NativeTypeName("UINT32")] uint size);
 
         /// <summary>Gets the length in characters (not including the null terminator) of the string with the specified index.</summary>
         /// <param name="index">Zero-based index of the string.</param>
         /// <param name="length">Receives the length in characters, not including the null terminator.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetStringLength(
-            [In] IDWriteLocalizedStrings* This,
-            [In, NativeTypeName("UINT32")] uint index,
-            [Out, NativeTypeName("UINT32")] uint* length
-        );
+        public delegate int _GetStringLength(IDWriteLocalizedStrings* This, [NativeTypeName("UINT32")] uint index, [NativeTypeName("UINT32")] uint* length);
 
         /// <summary>Copies the string with the specified index to the specified array.</summary>
         /// <param name="index">Zero-based index of the string.</param>
         /// <param name="stringBuffer">Character array that receives the string.</param>
         /// <param name="size">Size of the array in characters. The size must include space for the terminating null character.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetString(
-            [In] IDWriteLocalizedStrings* This,
-            [In, NativeTypeName("UINT32")] uint index,
-            [Out, NativeTypeName("WCHAR[]")] char* stringBuffer,
-            [In, NativeTypeName("UINT32")] uint size
-        );
-        #endregion
+        public delegate int _GetString(IDWriteLocalizedStrings* This, [NativeTypeName("UINT32")] uint index, [NativeTypeName("WCHAR[]")] char* stringBuffer, [NativeTypeName("UINT32")] uint size);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDWriteLocalizedStrings* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -145,9 +88,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteLocalizedStrings* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -156,124 +97,72 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteLocalizedStrings* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("UINT32")]
         public uint GetCount()
         {
             fixed (IDWriteLocalizedStrings* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetCount>(lpVtbl->GetCount)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetCount>(lpVtbl->GetCount)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int FindLocaleName(
-            [In, NativeTypeName("WCHAR[]")] char* localeName,
-            [Out, NativeTypeName("UINT32")] uint* index,
-            [Out, NativeTypeName("BOOL")] int* exists
-        )
+        public int FindLocaleName([NativeTypeName("WCHAR[]")] char* localeName, [NativeTypeName("UINT32")] uint* index, [NativeTypeName("BOOL")] int* exists)
         {
             fixed (IDWriteLocalizedStrings* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_FindLocaleName>(lpVtbl->FindLocaleName)(
-                    This,
-                    localeName,
-                    index,
-                    exists
-                );
+                return Marshal.GetDelegateForFunctionPointer<_FindLocaleName>(lpVtbl->FindLocaleName)(This, localeName, index, exists);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetLocaleNameLength(
-            [In, NativeTypeName("UINT32")] uint index,
-            [Out, NativeTypeName("UINT32")] uint* length
-        )
+        public int GetLocaleNameLength([NativeTypeName("UINT32")] uint index, [NativeTypeName("UINT32")] uint* length)
         {
             fixed (IDWriteLocalizedStrings* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetLocaleNameLength>(lpVtbl->GetLocaleNameLength)(
-                    This,
-                    index,
-                    length
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetLocaleNameLength>(lpVtbl->GetLocaleNameLength)(This, index, length);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetLocaleName(
-            [In, NativeTypeName("UINT32")] uint index,
-            [Out, NativeTypeName("WCHAR[]")] char* localeName,
-            [In, NativeTypeName("UINT32")] uint size
-        )
+        public int GetLocaleName([NativeTypeName("UINT32")] uint index, [NativeTypeName("WCHAR[]")] char* localeName, [NativeTypeName("UINT32")] uint size)
         {
             fixed (IDWriteLocalizedStrings* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetLocaleName>(lpVtbl->GetLocaleName)(
-                    This,
-                    index,
-                    localeName,
-                    size
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetLocaleName>(lpVtbl->GetLocaleName)(This, index, localeName, size);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetStringLength(
-            [In, NativeTypeName("UINT32")] uint index,
-            [Out, NativeTypeName("UINT32")] uint* length
-        )
+        public int GetStringLength([NativeTypeName("UINT32")] uint index, [NativeTypeName("UINT32")] uint* length)
         {
             fixed (IDWriteLocalizedStrings* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetStringLength>(lpVtbl->GetStringLength)(
-                    This,
-                    index,
-                    length
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetStringLength>(lpVtbl->GetStringLength)(This, index, length);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetString(
-            [In, NativeTypeName("UINT32")] uint index,
-            [Out, NativeTypeName("WCHAR[]")] char* stringBuffer,
-            [In, NativeTypeName("UINT32")] uint size
-        )
+        public int GetString([NativeTypeName("UINT32")] uint index, [NativeTypeName("WCHAR[]")] char* stringBuffer, [NativeTypeName("UINT32")] uint size)
         {
             fixed (IDWriteLocalizedStrings* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetString>(lpVtbl->GetString)(
-                    This,
-                    index,
-                    stringBuffer,
-                    size
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetString>(lpVtbl->GetString)(This, index, stringBuffer, size);
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetCount;
 
             public IntPtr FindLocaleName;
@@ -285,8 +174,6 @@ namespace TerraFX.Interop
             public IntPtr GetStringLength;
 
             public IntPtr GetString;
-            #endregion
         }
-        #endregion
     }
 }

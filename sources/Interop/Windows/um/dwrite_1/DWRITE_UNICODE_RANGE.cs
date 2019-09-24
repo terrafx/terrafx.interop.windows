@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>Range of Unicode codepoints.</summary>
     public struct DWRITE_UNICODE_RANGE
     {
-        #region Fields
         /// <summary>The first codepoint in the Unicode range.</summary>
         [NativeTypeName("UINT32")]
         public uint first;
@@ -16,6 +15,5 @@ namespace TerraFX.Interop
         /// <summary>The last codepoint in the Unicode range.</summary>
         [NativeTypeName("UINT32")]
         public uint last;
-        #endregion
     }
 }

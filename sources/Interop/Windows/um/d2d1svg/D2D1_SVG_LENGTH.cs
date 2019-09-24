@@ -8,11 +8,9 @@ namespace TerraFX.Interop
     /// <summary>Represents an SVG length.</summary>
     public struct D2D1_SVG_LENGTH
     {
-        #region Fields
         [NativeTypeName("FLOAT")]
         public float value;
 
         public D2D1_SVG_LENGTH_UNITS units;
-        #endregion
     }
 }

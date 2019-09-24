@@ -4,14 +4,11 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
-using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     public unsafe struct WNDCLASSEX
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint cbSize;
 
@@ -45,6 +42,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("HICON")]
         public IntPtr hIconSm;
-        #endregion
     }
 }

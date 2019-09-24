@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public unsafe struct DXGI_MAPPED_RECT
     {
-        #region Fields
         [NativeTypeName("INT")]
         public int Pitch;
 
         [NativeTypeName("BYTE[]")]
         public byte* pBits;
-        #endregion
     }
 }

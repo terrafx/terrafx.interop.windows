@@ -5,198 +5,95 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     [Guid("0000002F-0000-0000-C000-000000000046")]
     public unsafe struct IRecordInfo
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IRecordInfo* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IRecordInfo* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IRecordInfo* This
-        );
+        public delegate uint _AddRef(IRecordInfo* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IRecordInfo* This
-        );
-        #endregion
+        public delegate uint _Release(IRecordInfo* This);
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RecordInit(
-            [In] IRecordInfo* This,
-            [Out, NativeTypeName("PVOID")] void* pvNew
-        );
+        public delegate int _RecordInit(IRecordInfo* This, [NativeTypeName("PVOID")] void* pvNew);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RecordClear(
-            [In] IRecordInfo* This,
-            [In, NativeTypeName("PVOID")] void* pvExisting
-        );
+        public delegate int _RecordClear(IRecordInfo* This, [NativeTypeName("PVOID")] void* pvExisting);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RecordCopy(
-            [In] IRecordInfo* This,
-            [In, NativeTypeName("PVOID")] void* pvExisting,
-            [Out, NativeTypeName("PVOID")] void* pvNew
-        );
+        public delegate int _RecordCopy(IRecordInfo* This, [NativeTypeName("PVOID")] void* pvExisting, [NativeTypeName("PVOID")] void* pvNew);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetGuid(
-            [In] IRecordInfo* This,
-            [Out, NativeTypeName("GUID")] Guid* pGuid
-        );
+        public delegate int _GetGuid(IRecordInfo* This, [NativeTypeName("GUID")] Guid* pGuid);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetName(
-            [In] IRecordInfo* This,
-            [Out, NativeTypeName("BSTR")] char** pbstrName = null
-        );
+        public delegate int _GetName(IRecordInfo* This, [NativeTypeName("BSTR")] char** pbstrName = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSize(
-            [In] IRecordInfo* This,
-            [Out, NativeTypeName("ULONG")] uint* pcbSize
-        );
+        public delegate int _GetSize(IRecordInfo* This, [NativeTypeName("ULONG")] uint* pcbSize);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetTypeInfo(
-            [In] IRecordInfo* This,
-            [Out] ITypeInfo** ppTypeInfo
-        );
+        public delegate int _GetTypeInfo(IRecordInfo* This, ITypeInfo** ppTypeInfo);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetField(
-            [In] IRecordInfo* This,
-            [In, NativeTypeName("PVOID")] void* pvData,
-            [In, NativeTypeName("LPCOLESTR")] char* szFieldName,
-            [Out] VARIANT* pvarField
-        );
+        public delegate int _GetField(IRecordInfo* This, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] char* szFieldName, VARIANT* pvarField);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFieldNoCopy(
-            [In] IRecordInfo* This,
-            [In, NativeTypeName("PVOID")] void* pvData,
-            [In, NativeTypeName("LPCOLESTR")] char* szFieldName,
-            [Out] VARIANT* pvarField,
-            [Out, NativeTypeName("PVOID")] void** ppvDataCArray
-        );
+        public delegate int _GetFieldNoCopy(IRecordInfo* This, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] char* szFieldName, VARIANT* pvarField, [NativeTypeName("PVOID")] void** ppvDataCArray);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _PutField(
-            [In] IRecordInfo* This,
-            [In, NativeTypeName("ULONG")] uint wFlags,
-            [In, Out, NativeTypeName("PVOID")] void* pvData,
-            [In, NativeTypeName("LPCOLESTR")] char* szFieldName,
-            [In] VARIANT* pvarField
-        );
+        public delegate int _PutField(IRecordInfo* This, [NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] char* szFieldName, VARIANT* pvarField);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _PutFieldNoCopy(
-            [In] IRecordInfo* This,
-            [In, NativeTypeName("ULONG")] uint wFlags,
-            [In, Out, NativeTypeName("PVOID")] void* pvData,
-            [In, NativeTypeName("LPCOLESTR")] char* szFieldName,
-            [In] VARIANT* pvarField
-        );
+        public delegate int _PutFieldNoCopy(IRecordInfo* This, [NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] char* szFieldName, VARIANT* pvarField);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFieldNames(
-            [In] IRecordInfo* This,
-            [In, Out, NativeTypeName("ULONG")] uint* pcNames,
-            [Out, NativeTypeName("BSTR[]")] char** rgBstrNames
-        );
+        public delegate int _GetFieldNames(IRecordInfo* This, [NativeTypeName("ULONG")] uint* pcNames, [NativeTypeName("BSTR[]")] char** rgBstrNames);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _IsMatchingType(
-            [In] IRecordInfo* This,
-            [In] IRecordInfo* pRecordInfo
-        );
+        public delegate int _IsMatchingType(IRecordInfo* This, IRecordInfo* pRecordInfo);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void* _RecordCreate(
-            [In] IRecordInfo* This
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void* _RecordCreate(IRecordInfo* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RecordCreateCopy(
-            [In] IRecordInfo* This,
-            [In, NativeTypeName("PVOID")] void* pvSource,
-            [Out, NativeTypeName("PVOID")] void** ppvDest
-        );
+        public delegate int _RecordCreateCopy(IRecordInfo* This, [NativeTypeName("PVOID")] void* pvSource, [NativeTypeName("PVOID")] void** ppvDest);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RecordDestroy(
-            [In] IRecordInfo* This,
-            [In, NativeTypeName("PVOID")] void* pvRecord
-        );
-        #endregion
+        public delegate int _RecordDestroy(IRecordInfo* This, [NativeTypeName("PVOID")] void* pvRecord);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IRecordInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -205,9 +102,7 @@ namespace TerraFX.Interop
         {
             fixed (IRecordInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -216,219 +111,124 @@ namespace TerraFX.Interop
         {
             fixed (IRecordInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region Methods
-        [return: NativeTypeName("HRESULT")]
-        public int RecordInit(
-            [Out, NativeTypeName("PVOID")] void* pvNew
-        )
-        {
-            fixed (IRecordInfo* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_RecordInit>(lpVtbl->RecordInit)(
-                    This,
-                    pvNew
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int RecordClear(
-            [In, NativeTypeName("PVOID")] void* pvExisting
-        )
+        public int RecordInit([NativeTypeName("PVOID")] void* pvNew)
         {
             fixed (IRecordInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_RecordClear>(lpVtbl->RecordClear)(
-                    This,
-                    pvExisting
-                );
+                return Marshal.GetDelegateForFunctionPointer<_RecordInit>(lpVtbl->RecordInit)(This, pvNew);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int RecordCopy(
-            [In, NativeTypeName("PVOID")] void* pvExisting,
-            [Out, NativeTypeName("PVOID")] void* pvNew
-        )
+        public int RecordClear([NativeTypeName("PVOID")] void* pvExisting)
         {
             fixed (IRecordInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_RecordCopy>(lpVtbl->RecordCopy)(
-                    This,
-                    pvExisting,
-                    pvNew
-                );
+                return Marshal.GetDelegateForFunctionPointer<_RecordClear>(lpVtbl->RecordClear)(This, pvExisting);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetGuid(
-            [Out, NativeTypeName("GUID")] Guid* pGuid
-        )
+        public int RecordCopy([NativeTypeName("PVOID")] void* pvExisting, [NativeTypeName("PVOID")] void* pvNew)
         {
             fixed (IRecordInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetGuid>(lpVtbl->GetGuid)(
-                    This,
-                    pGuid
-                );
+                return Marshal.GetDelegateForFunctionPointer<_RecordCopy>(lpVtbl->RecordCopy)(This, pvExisting, pvNew);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetName(
-            [Out, NativeTypeName("BSTR")] char** pbstrName = null
-        )
+        public int GetGuid([NativeTypeName("GUID")] Guid* pGuid)
         {
             fixed (IRecordInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetName>(lpVtbl->GetName)(
-                    This,
-                    pbstrName
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetGuid>(lpVtbl->GetGuid)(This, pGuid);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetSize(
-            [Out, NativeTypeName("ULONG")] uint* pcbSize
-        )
+        public int GetName([NativeTypeName("BSTR")] char** pbstrName = null)
         {
             fixed (IRecordInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetSize>(lpVtbl->GetSize)(
-                    This,
-                    pcbSize
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetName>(lpVtbl->GetName)(This, pbstrName);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfo(
-            [Out] ITypeInfo** ppTypeInfo
-        )
+        public int GetSize([NativeTypeName("ULONG")] uint* pcbSize)
         {
             fixed (IRecordInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetTypeInfo>(lpVtbl->GetTypeInfo)(
-                    This,
-                    ppTypeInfo
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetSize>(lpVtbl->GetSize)(This, pcbSize);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetField(
-            [In, NativeTypeName("PVOID")] void* pvData,
-            [In, NativeTypeName("LPCOLESTR")] char* szFieldName,
-            [Out] VARIANT* pvarField
-        )
+        public int GetTypeInfo(ITypeInfo** ppTypeInfo)
         {
             fixed (IRecordInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetField>(lpVtbl->GetField)(
-                    This,
-                    pvData,
-                    szFieldName,
-                    pvarField
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetTypeInfo>(lpVtbl->GetTypeInfo)(This, ppTypeInfo);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFieldNoCopy(
-            [In, NativeTypeName("PVOID")] void* pvData,
-            [In, NativeTypeName("LPCOLESTR")] char* szFieldName,
-            [Out] VARIANT* pvarField,
-            [Out, NativeTypeName("PVOID")] void** ppvDataCArray
-        )
+        public int GetField([NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] char* szFieldName, VARIANT* pvarField)
         {
             fixed (IRecordInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetFieldNoCopy>(lpVtbl->GetFieldNoCopy)(
-                    This,
-                    pvData,
-                    szFieldName,
-                    pvarField,
-                    ppvDataCArray
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetField>(lpVtbl->GetField)(This, pvData, szFieldName, pvarField);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int PutField(
-            [In, NativeTypeName("ULONG")] uint wFlags,
-            [In, Out, NativeTypeName("PVOID")] void* pvData,
-            [In, NativeTypeName("LPCOLESTR")] char* szFieldName,
-            [In] VARIANT* pvarField
-        )
+        public int GetFieldNoCopy([NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] char* szFieldName, VARIANT* pvarField, [NativeTypeName("PVOID")] void** ppvDataCArray)
         {
             fixed (IRecordInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_PutField>(lpVtbl->PutField)(
-                    This,
-                    wFlags,
-                    pvData,
-                    szFieldName,
-                    pvarField
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetFieldNoCopy>(lpVtbl->GetFieldNoCopy)(This, pvData, szFieldName, pvarField, ppvDataCArray);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int PutFieldNoCopy(
-            [In, NativeTypeName("ULONG")] uint wFlags,
-            [In, Out, NativeTypeName("PVOID")] void* pvData,
-            [In, NativeTypeName("LPCOLESTR")] char* szFieldName,
-            [In] VARIANT* pvarField
-        )
+        public int PutField([NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] char* szFieldName, VARIANT* pvarField)
         {
             fixed (IRecordInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_PutFieldNoCopy>(lpVtbl->PutFieldNoCopy)(
-                    This,
-                    wFlags,
-                    pvData,
-                    szFieldName,
-                    pvarField
-                );
+                return Marshal.GetDelegateForFunctionPointer<_PutField>(lpVtbl->PutField)(This, wFlags, pvData, szFieldName, pvarField);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFieldNames(
-            [In, Out, NativeTypeName("ULONG")] uint* pcNames,
-            [Out, NativeTypeName("BSTR[]")] char** rgBstrNames
-        )
+        public int PutFieldNoCopy([NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] char* szFieldName, VARIANT* pvarField)
         {
             fixed (IRecordInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetFieldNames>(lpVtbl->GetFieldNames)(
-                    This,
-                    pcNames,
-                    rgBstrNames
-                );
+                return Marshal.GetDelegateForFunctionPointer<_PutFieldNoCopy>(lpVtbl->PutFieldNoCopy)(This, wFlags, pvData, szFieldName, pvarField);
+            }
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetFieldNames([NativeTypeName("ULONG")] uint* pcNames, [NativeTypeName("BSTR[]")] char** rgBstrNames)
+        {
+            fixed (IRecordInfo* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetFieldNames>(lpVtbl->GetFieldNames)(This, pcNames, rgBstrNames);
             }
         }
 
         [return: NativeTypeName("BOOL")]
-        public int IsMatchingType(
-            [In] IRecordInfo* pRecordInfo
-        )
+        public int IsMatchingType(IRecordInfo* pRecordInfo)
         {
             fixed (IRecordInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_IsMatchingType>(lpVtbl->IsMatchingType)(
-                    This,
-                    pRecordInfo
-                );
+                return Marshal.GetDelegateForFunctionPointer<_IsMatchingType>(lpVtbl->IsMatchingType)(This, pRecordInfo);
             }
         }
 
@@ -436,55 +236,36 @@ namespace TerraFX.Interop
         {
             fixed (IRecordInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_RecordCreate>(lpVtbl->RecordCreate)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_RecordCreate>(lpVtbl->RecordCreate)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int RecordCreateCopy(
-            [In, NativeTypeName("PVOID")] void* pvSource,
-            [Out, NativeTypeName("PVOID")] void** ppvDest
-        )
+        public int RecordCreateCopy([NativeTypeName("PVOID")] void* pvSource, [NativeTypeName("PVOID")] void** ppvDest)
         {
             fixed (IRecordInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_RecordCreateCopy>(lpVtbl->RecordCreateCopy)(
-                    This,
-                    pvSource,
-                    ppvDest
-                );
+                return Marshal.GetDelegateForFunctionPointer<_RecordCreateCopy>(lpVtbl->RecordCreateCopy)(This, pvSource, ppvDest);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int RecordDestroy(
-            [In, NativeTypeName("PVOID")] void* pvRecord
-        )
+        public int RecordDestroy([NativeTypeName("PVOID")] void* pvRecord)
         {
             fixed (IRecordInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_RecordDestroy>(lpVtbl->RecordDestroy)(
-                    This,
-                    pvRecord
-                );
+                return Marshal.GetDelegateForFunctionPointer<_RecordDestroy>(lpVtbl->RecordDestroy)(This, pvRecord);
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr RecordInit;
 
             public IntPtr RecordClear;
@@ -516,8 +297,6 @@ namespace TerraFX.Interop
             public IntPtr RecordCreateCopy;
 
             public IntPtr RecordDestroy;
-            #endregion
         }
-        #endregion
     }
 }

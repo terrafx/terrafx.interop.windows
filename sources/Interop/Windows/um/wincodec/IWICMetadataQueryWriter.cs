@@ -5,112 +5,56 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     [Guid("A721791A-0DEF-4D06-BD91-2118BF1DB10B")]
     public unsafe struct IWICMetadataQueryWriter
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IWICMetadataQueryWriter* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICMetadataQueryWriter* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IWICMetadataQueryWriter* This
-        );
+        public delegate uint _AddRef(IWICMetadataQueryWriter* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IWICMetadataQueryWriter* This
-        );
-        #endregion
+        public delegate uint _Release(IWICMetadataQueryWriter* This);
 
-        #region IWICMetadataQueryReader Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetContainerFormat(
-            [In] IWICMetadataQueryWriter* This,
-            [Out, NativeTypeName("GUID")] Guid* pguidContainerFormat
-        );
+        public delegate int _GetContainerFormat(IWICMetadataQueryWriter* This, [NativeTypeName("GUID")] Guid* pguidContainerFormat);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetLocation(
-            [In] IWICMetadataQueryWriter* This,
-            [In, NativeTypeName("UINT")] uint cchMaxLength,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzNamespace,
-            [Out, NativeTypeName("UINT")] uint* pcchActualLength
-        );
+        public delegate int _GetLocation(IWICMetadataQueryWriter* This, [NativeTypeName("UINT")] uint cchMaxLength, [Optional, NativeTypeName("WCHAR[]")] char* wzNamespace, [NativeTypeName("UINT")] uint* pcchActualLength);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetMetadataByName(
-            [In] IWICMetadataQueryWriter* This,
-            [In, NativeTypeName("LPCWSTR")] char* wzName,
-            [In, Out] PROPVARIANT* pvarValue = null
-        );
+        public delegate int _GetMetadataByName(IWICMetadataQueryWriter* This, [NativeTypeName("LPCWSTR")] char* wzName, PROPVARIANT* pvarValue = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetEnumerator(
-            [In] IWICMetadataQueryWriter* This,
-            [Out] IEnumString** ppIEnumString = null
-        );
-        #endregion
+        public delegate int _GetEnumerator(IWICMetadataQueryWriter* This, IEnumString** ppIEnumString = null);
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetMetadataByName(
-            [In] IWICMetadataQueryWriter* This,
-            [In, NativeTypeName("LPCWSTR")] char* wzName,
-            [In] PROPVARIANT* pvarValue
-        );
+        public delegate int _SetMetadataByName(IWICMetadataQueryWriter* This, [NativeTypeName("LPCWSTR")] char* wzName, PROPVARIANT* pvarValue);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RemoveMetadataByName(
-            [In] IWICMetadataQueryWriter* This,
-            [In, NativeTypeName("LPCWSTR")] char* wzName
-        );
-        #endregion
+        public delegate int _RemoveMetadataByName(IWICMetadataQueryWriter* This, [NativeTypeName("LPCWSTR")] char* wzName);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICMetadataQueryWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -119,9 +63,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataQueryWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -130,121 +72,72 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataQueryWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region IWICMetadataQueryReader Methods
-        [return: NativeTypeName("HRESULT")]
-        public int GetContainerFormat(
-            [Out, NativeTypeName("GUID")] Guid* pguidContainerFormat
-        )
-        {
-            fixed (IWICMetadataQueryWriter* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetContainerFormat>(lpVtbl->GetContainerFormat)(
-                    This,
-                    pguidContainerFormat
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetLocation(
-            [In, NativeTypeName("UINT")] uint cchMaxLength,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzNamespace,
-            [Out, NativeTypeName("UINT")] uint* pcchActualLength
-        )
+        public int GetContainerFormat([NativeTypeName("GUID")] Guid* pguidContainerFormat)
         {
             fixed (IWICMetadataQueryWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetLocation>(lpVtbl->GetLocation)(
-                    This,
-                    cchMaxLength,
-                    wzNamespace,
-                    pcchActualLength
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetContainerFormat>(lpVtbl->GetContainerFormat)(This, pguidContainerFormat);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetMetadataByName(
-            [In, NativeTypeName("LPCWSTR")] char* wzName,
-            [In, Out] PROPVARIANT* pvarValue = null
-        )
+        public int GetLocation([NativeTypeName("UINT")] uint cchMaxLength, [Optional, NativeTypeName("WCHAR[]")] char* wzNamespace, [NativeTypeName("UINT")] uint* pcchActualLength)
         {
             fixed (IWICMetadataQueryWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetMetadataByName>(lpVtbl->GetMetadataByName)(
-                    This,
-                    wzName,
-                    pvarValue
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetLocation>(lpVtbl->GetLocation)(This, cchMaxLength, wzNamespace, pcchActualLength);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetEnumerator(
-            [Out] IEnumString** ppIEnumString = null
-        )
+        public int GetMetadataByName([NativeTypeName("LPCWSTR")] char* wzName, PROPVARIANT* pvarValue = null)
         {
             fixed (IWICMetadataQueryWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetEnumerator>(lpVtbl->GetEnumerator)(
-                    This,
-                    ppIEnumString
-                );
-            }
-        }
-        #endregion
-
-        #region Methods
-        [return: NativeTypeName("HRESULT")]
-        public int SetMetadataByName(
-            [In, NativeTypeName("LPCWSTR")] char* wzName,
-            [In] PROPVARIANT* pvarValue
-        )
-        {
-            fixed (IWICMetadataQueryWriter* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetMetadataByName>(lpVtbl->SetMetadataByName)(
-                    This,
-                    wzName,
-                    pvarValue
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetMetadataByName>(lpVtbl->GetMetadataByName)(This, wzName, pvarValue);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int RemoveMetadataByName(
-            [In, NativeTypeName("LPCWSTR")] char* wzName
-        )
+        public int GetEnumerator(IEnumString** ppIEnumString = null)
         {
             fixed (IWICMetadataQueryWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_RemoveMetadataByName>(lpVtbl->RemoveMetadataByName)(
-                    This,
-                    wzName
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetEnumerator>(lpVtbl->GetEnumerator)(This, ppIEnumString);
             }
         }
-        #endregion
 
-        #region Structs
+        [return: NativeTypeName("HRESULT")]
+        public int SetMetadataByName([NativeTypeName("LPCWSTR")] char* wzName, PROPVARIANT* pvarValue)
+        {
+            fixed (IWICMetadataQueryWriter* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_SetMetadataByName>(lpVtbl->SetMetadataByName)(This, wzName, pvarValue);
+            }
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int RemoveMetadataByName([NativeTypeName("LPCWSTR")] char* wzName)
+        {
+            fixed (IWICMetadataQueryWriter* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_RemoveMetadataByName>(lpVtbl->RemoveMetadataByName)(This, wzName);
+            }
+        }
+
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IWICMetadataQueryReader Fields
             public IntPtr GetContainerFormat;
 
             public IntPtr GetLocation;
@@ -252,14 +145,10 @@ namespace TerraFX.Interop
             public IntPtr GetMetadataByName;
 
             public IntPtr GetEnumerator;
-            #endregion
 
-            #region Fields
             public IntPtr SetMetadataByName;
 
             public IntPtr RemoveMetadataByName;
-            #endregion
         }
-        #endregion
     }
 }

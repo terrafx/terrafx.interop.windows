@@ -4,14 +4,11 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
-using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     public unsafe struct TYPEATTR
     {
-        #region Fields
         [NativeTypeName("GUID")]
         public Guid guid;
 
@@ -62,6 +59,5 @@ namespace TerraFX.Interop
         public TYPEDESC tdescAlias;
 
         public IDLDESC idldescType;
-        #endregion
     }
 }

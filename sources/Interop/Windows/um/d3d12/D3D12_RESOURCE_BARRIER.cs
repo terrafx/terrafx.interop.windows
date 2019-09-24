@@ -12,15 +12,12 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_RESOURCE_BARRIER
     {
-        #region Fields
         public D3D12_RESOURCE_BARRIER_TYPE Type;
 
         public D3D12_RESOURCE_BARRIER_FLAGS Flags;
 
         public _Anonymous_e__Union Anonymous;
-        #endregion
 
-        #region Methods
         public static D3D12_RESOURCE_BARRIER InitTransition(ID3D12Resource* pResource, D3D12_RESOURCE_STATES stateBefore, D3D12_RESOURCE_STATES stateAfter, uint subresource = D3D12_RESOURCE_BARRIER_ALL_SUBRESOURCES, D3D12_RESOURCE_BARRIER_FLAGS flags = D3D12_RESOURCE_BARRIER_FLAG_NONE)
         {
             D3D12_RESOURCE_BARRIER result = default;
@@ -47,13 +44,10 @@ namespace TerraFX.Interop
             result.Anonymous.UAV.pResource = pResource;
             return result;
         }
-        #endregion
 
-        #region Structs
         [StructLayout(LayoutKind.Explicit)]
         public struct _Anonymous_e__Union
         {
-            #region Fields
             [FieldOffset(0)]
             public D3D12_RESOURCE_TRANSITION_BARRIER Transition;
 
@@ -62,8 +56,6 @@ namespace TerraFX.Interop
 
             [FieldOffset(0)]
             public D3D12_RESOURCE_UAV_BARRIER UAV;
-            #endregion
         }
-        #endregion
     }
 }

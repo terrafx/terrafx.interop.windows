@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public struct D3D12_SAMPLE_POSITION
     {
-        #region Fields
         [NativeTypeName("INT8")]
         public sbyte X;
 
         [NativeTypeName("INT8")]
         public sbyte Y;
-        #endregion
     }
 }

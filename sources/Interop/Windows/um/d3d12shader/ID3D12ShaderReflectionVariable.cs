@@ -5,58 +5,33 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     [Guid("8337A8A6-A216-444A-B2F4-314733A73AEA")]
     public unsafe struct ID3D12ShaderReflectionVariable
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDesc(
-            [In] ID3D12ShaderReflectionVariable* This,
-            [Out] D3D12_SHADER_VARIABLE_DESC* pDesc
-        );
+        public delegate int _GetDesc(ID3D12ShaderReflectionVariable* This, D3D12_SHADER_VARIABLE_DESC* pDesc);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate ID3D12ShaderReflectionType* __GetType(
-            [In] ID3D12ShaderReflectionVariable* This
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate ID3D12ShaderReflectionType* __GetType(ID3D12ShaderReflectionVariable* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate ID3D12ShaderReflectionConstantBuffer* _GetBuffer(
-            [In] ID3D12ShaderReflectionVariable* This
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate ID3D12ShaderReflectionConstantBuffer* _GetBuffer(ID3D12ShaderReflectionVariable* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate uint _GetInterfaceSlot(
-            [In] ID3D12ShaderReflectionVariable* This,
-            [In, NativeTypeName("UINT")] uint uArrayIndex
-        );
-        #endregion
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate uint _GetInterfaceSlot(ID3D12ShaderReflectionVariable* This, [NativeTypeName("UINT")] uint uArrayIndex);
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
-        public int GetDesc(
-            [Out] D3D12_SHADER_VARIABLE_DESC* pDesc
-        )
+        public int GetDesc(D3D12_SHADER_VARIABLE_DESC* pDesc)
         {
             fixed (ID3D12ShaderReflectionVariable* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)(
-                    This,
-                    pDesc
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)(This, pDesc);
             }
         }
 
@@ -64,9 +39,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflectionVariable* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<__GetType>(lpVtbl->_GetType)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<__GetType>(lpVtbl->_GetType)(This);
             }
         }
 
@@ -74,30 +47,20 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflectionVariable* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetBuffer>(lpVtbl->GetBuffer)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetBuffer>(lpVtbl->GetBuffer)(This);
             }
         }
 
-        public uint GetInterfaceSlot(
-            [In, NativeTypeName("UINT")] uint uArrayIndex
-        )
+        public uint GetInterfaceSlot([NativeTypeName("UINT")] uint uArrayIndex)
         {
             fixed (ID3D12ShaderReflectionVariable* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetInterfaceSlot>(lpVtbl->GetInterfaceSlot)(
-                    This,
-                    uArrayIndex
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetInterfaceSlot>(lpVtbl->GetInterfaceSlot)(This, uArrayIndex);
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region Fields
             public IntPtr GetDesc;
 
             public IntPtr _GetType;
@@ -105,8 +68,6 @@ namespace TerraFX.Interop
             public IntPtr GetBuffer;
 
             public IntPtr GetInterfaceSlot;
-            #endregion
         }
-        #endregion
     }
 }

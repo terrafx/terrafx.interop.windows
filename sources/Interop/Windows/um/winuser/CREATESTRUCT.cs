@@ -4,14 +4,11 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
-using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     public unsafe struct CREATESTRUCT
     {
-        #region Fields
         [NativeTypeName("LPVOID")]
         public void* lpCreateParams;
 
@@ -43,6 +40,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("DWORD")]
         public uint dwExStyle;
-        #endregion
     }
 }

@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>Information about a formatted line of text.</summary>
     public struct DWRITE_LINE_METRICS1
     {
-        #region Fields
         public DWRITE_LINE_METRICS BaseValue;
 
         /// <summary>White space before the content of the line. This is included in the line height and baseline distances. If the line is formatted horizontally either with a uniform line spacing or with proportional line spacing, this value represents the extra space above the content.</summary>
@@ -18,6 +17,5 @@ namespace TerraFX.Interop
         /// <summary>White space after the content of the line. This is included in the height of the line. If the line is formatted horizontally either with a uniform line spacing or with proportional line spacing, this value represents the extra space below the content.</summary>
         [NativeTypeName("FLOAT")]
         public float leadingAfter;
-        #endregion
     }
 }

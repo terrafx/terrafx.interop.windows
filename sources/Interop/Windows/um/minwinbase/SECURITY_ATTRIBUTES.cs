@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct SECURITY_ATTRIBUTES
     {
-        #region Fields
         [NativeTypeName("DWORD")]
         public uint nLength;
 
@@ -16,6 +15,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("BOOL")]
         public int bInheritHandle;
-        #endregion
     }
 }

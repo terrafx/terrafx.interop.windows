@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public struct D3D12_VIEWPORT
     {
-        #region Fields
         [NativeTypeName("FLOAT")]
         public float TopLeftX;
 
@@ -27,9 +26,7 @@ namespace TerraFX.Interop
 
         [NativeTypeName("FLOAT")]
         public float MaxDepth;
-        #endregion
 
-        #region Operators
         public static bool operator ==(D3D12_VIEWPORT l, D3D12_VIEWPORT r)
         {
             return (l.TopLeftX == r.TopLeftX)
@@ -44,22 +41,12 @@ namespace TerraFX.Interop
         {
             return !(l == r);
         }
-        #endregion
 
-        #region System.Object
         public override bool Equals(object? obj)
         {
             return (obj is D3D12_VIEWPORT other) && (this == other);
         }
 
-        public override int GetHashCode() => HashCode.Combine(
-            TopLeftX,
-            TopLeftY,
-            Width,
-            Height,
-            MinDepth,
-            MaxDepth
-        );
-        #endregion
+        public override int GetHashCode() => HashCode.Combine(TopLeftX, TopLeftY, Width, Height, MinDepth, MaxDepth);
     }
 }

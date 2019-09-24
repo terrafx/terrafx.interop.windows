@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>The DWRITE_LINE_METRICS public structure contains information about a formatted line of text.</summary>
     public struct DWRITE_LINE_METRICS
     {
-        #region Fields
         /// <summary>The number of total text positions in the line. This includes any trailing whitespace and newline characters.</summary>
         [NativeTypeName("UINT32")]
         public uint length;
@@ -32,6 +31,5 @@ namespace TerraFX.Interop
         /// <summary>The line is trimmed.</summary>
         [NativeTypeName("BOOL")]
         public int isTrimmed;
-        #endregion
     }
 }

@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>Describes the pixel format and dpi of a bitmap.</summary>
     public struct D2D1_BITMAP_PROPERTIES
     {
-        #region Fields
         public D2D1_PIXEL_FORMAT pixelFormat;
 
         [NativeTypeName("FLOAT")]
@@ -16,6 +15,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("FLOAT")]
         public float dpiY;
-        #endregion
     }
 }

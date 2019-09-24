@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct D3D12_ROOT_DESCRIPTOR1
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint ShaderRegister;
 
@@ -15,6 +14,5 @@ namespace TerraFX.Interop
         public uint RegisterSpace;
 
         public D3D12_ROOT_DESCRIPTOR_FLAGS Flags;
-        #endregion
     }
 }

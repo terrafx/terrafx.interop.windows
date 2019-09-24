@@ -18,6 +18,5 @@ namespace TerraFX.Interop
         DWRITE_READING_DIRECTION_TOP_TO_BOTTOM = 2,
 
         /// <summary>Reading progresses from bottom to top.</summary>
-        DWRITE_READING_DIRECTION_BOTTOM_TO_TOP = 3,
-    }
+        DWRITE_READING_DIRECTION_BOTTOM_TO_TOP = 3, }
 }

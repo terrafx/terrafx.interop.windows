@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -13,76 +12,36 @@ namespace TerraFX.Interop
     [Guid("FD0ECB6B-91E6-411E-8655-395E760F91B4")]
     public unsafe struct ID2D1GdiMetafileSink1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] ID2D1GdiMetafileSink1* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1GdiMetafileSink1* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] ID2D1GdiMetafileSink1* This
-        );
+        public delegate uint _AddRef(ID2D1GdiMetafileSink1* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] ID2D1GdiMetafileSink1* This
-        );
-        #endregion
+        public delegate uint _Release(ID2D1GdiMetafileSink1* This);
 
-        #region ID2D1GdiMetafileSink Delegates
         /// <summary>Callback for examining a metafile record.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _ProcessRecord(
-            [In] ID2D1GdiMetafileSink1* This,
-            [In, NativeTypeName("DWORD")] uint recordType,
-            [In, Optional] void* recordData,
-            [In, NativeTypeName("DWORD")] uint recordDataSize
-        );
-        #endregion
+        public delegate int _ProcessRecord(ID2D1GdiMetafileSink1* This, [NativeTypeName("DWORD")] uint recordType, [Optional] void* recordData, [NativeTypeName("DWORD")] uint recordDataSize);
 
-        #region Delegates
         /// <summary>Callback for examining a metafile record.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _ProcessRecord1(
-            [In] ID2D1GdiMetafileSink1* This,
-            [In, NativeTypeName("DWORD")] uint recordType,
-            [In, Optional] void* recordData,
-            [In, NativeTypeName("DWORD")] uint recordDataSize,
-            [In, NativeTypeName("UINT32")] uint flags
-        );
-        #endregion
+        public delegate int _ProcessRecord1(ID2D1GdiMetafileSink1* This, [NativeTypeName("DWORD")] uint recordType, [Optional] void* recordData, [NativeTypeName("DWORD")] uint recordDataSize, [NativeTypeName("UINT32")] uint flags);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1GdiMetafileSink1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -91,9 +50,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1GdiMetafileSink1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -102,74 +59,39 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1GdiMetafileSink1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
-        #endregion
 
-        #region ID2D1GdiMetafileSink Methods
         [return: NativeTypeName("HRESULT")]
-        public int ProcessRecord(
-            [In, NativeTypeName("DWORD")] uint recordType,
-            [In, Optional] void* recordData,
-            [In, NativeTypeName("DWORD")] uint recordDataSize
-        )
+        public int ProcessRecord([NativeTypeName("DWORD")] uint recordType, [Optional] void* recordData, [NativeTypeName("DWORD")] uint recordDataSize)
         {
             fixed (ID2D1GdiMetafileSink1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_ProcessRecord>(lpVtbl->ProcessRecord)(
-                    This,
-                    recordType,
-                    recordData,
-                    recordDataSize
-                );
+                return Marshal.GetDelegateForFunctionPointer<_ProcessRecord>(lpVtbl->ProcessRecord)(This, recordType, recordData, recordDataSize);
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
-        public int ProcessRecord1(
-            [In, NativeTypeName("DWORD")] uint recordType,
-            [In, Optional] void* recordData,
-            [In, NativeTypeName("DWORD")] uint recordDataSize,
-            [In, NativeTypeName("UINT32")] uint flags
-        )
+        public int ProcessRecord1([NativeTypeName("DWORD")] uint recordType, [Optional] void* recordData, [NativeTypeName("DWORD")] uint recordDataSize, [NativeTypeName("UINT32")] uint flags)
         {
             fixed (ID2D1GdiMetafileSink1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_ProcessRecord1>(lpVtbl->ProcessRecord1)(
-                    This,
-                    recordType,
-                    recordData,
-                    recordDataSize,
-                    flags
-                );
+                return Marshal.GetDelegateForFunctionPointer<_ProcessRecord1>(lpVtbl->ProcessRecord1)(This, recordType, recordData, recordDataSize, flags);
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1GdiMetafileSink Fields
             public IntPtr ProcessRecord;
-            #endregion
 
-            #region Fields
             public IntPtr ProcessRecord1;
-            #endregion
         }
-        #endregion
     }
 }

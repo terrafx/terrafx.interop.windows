@@ -5,68 +5,36 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     [Guid("64C1024E-C3CF-4462-8078-88C2B11C46D9")]
     public unsafe struct IWICBitmapCodecProgressNotification
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IWICBitmapCodecProgressNotification* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICBitmapCodecProgressNotification* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IWICBitmapCodecProgressNotification* This
-        );
+        public delegate uint _AddRef(IWICBitmapCodecProgressNotification* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IWICBitmapCodecProgressNotification* This
-        );
-        #endregion
+        public delegate uint _Release(IWICBitmapCodecProgressNotification* This);
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RegisterProgressNotification(
-            [In] IWICBitmapCodecProgressNotification* This,
-            [In, Optional] PFNProgressNotification pfnProgressNotification,
-            [In, Optional, NativeTypeName("LPVOID")] void* pvData,
-            [In, NativeTypeName("DWORD")] uint dwProgressFlags
-        );
-        #endregion
+        public delegate int _RegisterProgressNotification(IWICBitmapCodecProgressNotification* This, [Optional] PFNProgressNotification pfnProgressNotification, [Optional, NativeTypeName("LPVOID")] void* pvData, [NativeTypeName("DWORD")] uint dwProgressFlags);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICBitmapCodecProgressNotification* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -75,9 +43,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapCodecProgressNotification* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -86,48 +52,28 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapCodecProgressNotification* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
-        public int RegisterProgressNotification(
-            [In, Optional] PFNProgressNotification pfnProgressNotification,
-            [In, Optional, NativeTypeName("LPVOID")] void* pvData,
-            [In, NativeTypeName("DWORD")] uint dwProgressFlags
-        )
+        public int RegisterProgressNotification([Optional] PFNProgressNotification pfnProgressNotification, [Optional, NativeTypeName("LPVOID")] void* pvData, [NativeTypeName("DWORD")] uint dwProgressFlags)
         {
             fixed (IWICBitmapCodecProgressNotification* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_RegisterProgressNotification>(lpVtbl->RegisterProgressNotification)(
-                    This,
-                    pfnProgressNotification,
-                    pvData,
-                    dwProgressFlags
-                );
+                return Marshal.GetDelegateForFunctionPointer<_RegisterProgressNotification>(lpVtbl->RegisterProgressNotification)(This, pfnProgressNotification, pvData, dwProgressFlags);
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr RegisterProgressNotification;
-            #endregion
         }
-        #endregion
     }
 }

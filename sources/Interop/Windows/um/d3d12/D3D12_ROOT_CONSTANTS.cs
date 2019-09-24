@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_ROOT_CONSTANTS
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint ShaderRegister;
 
@@ -16,9 +15,7 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint Num32BitValues;
-        #endregion
 
-        #region Constructors
         public D3D12_ROOT_CONSTANTS(uint num32BitValues, uint shaderRegister, uint registerSpace = 0)
         {
             fixed (D3D12_ROOT_CONSTANTS* pThis = &this)
@@ -26,9 +23,7 @@ namespace TerraFX.Interop
                 Init(pThis, num32BitValues, shaderRegister, registerSpace);
             }
         }
-        #endregion
 
-        #region Methods
         public static void Init(D3D12_ROOT_CONSTANTS* rootConstants, uint num32BitValues, uint shaderRegister, uint registerSpace = 0)
         {
             rootConstants->Num32BitValues = num32BitValues;
@@ -43,6 +38,5 @@ namespace TerraFX.Interop
                 Init(pThis, num32BitValues, shaderRegister, registerSpace);
             }
         }
-        #endregion
     }
 }

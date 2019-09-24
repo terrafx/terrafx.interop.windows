@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -13,294 +12,128 @@ namespace TerraFX.Interop
     [Guid("577AD2A0-9FC7-4DDA-8B18-DAB810140052")]
     public unsafe struct ID2D1EffectContext2
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] ID2D1EffectContext2* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1EffectContext2* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] ID2D1EffectContext2* This
-        );
+        public delegate uint _AddRef(ID2D1EffectContext2* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] ID2D1EffectContext2* This
-        );
-        #endregion
+        public delegate uint _Release(ID2D1EffectContext2* This);
 
-        #region ID2D1EffectContext Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _GetDpi(
-            [In] ID2D1EffectContext2* This,
-            [Out, NativeTypeName("FLOAT")] float* dpiX,
-            [Out, NativeTypeName("FLOAT")] float* dpiY
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _GetDpi(ID2D1EffectContext2* This, [NativeTypeName("FLOAT")] float* dpiX, [NativeTypeName("FLOAT")] float* dpiY);
 
         /// <summary>Create a new effect, the effect must either be built in or previously registered through ID2D1Factory1::RegisterEffect.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateEffect(
-            [In] ID2D1EffectContext2* This,
-            [In, NativeTypeName("REFCLSID")] Guid* effectId,
-            [Out] ID2D1Effect** effect
-        );
+        public delegate int _CreateEffect(ID2D1EffectContext2* This, [NativeTypeName("REFCLSID")] Guid* effectId, ID2D1Effect** effect);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetMaximumSupportedFeatureLevel(
-            [In] ID2D1EffectContext2* This,
-            [In, NativeTypeName("D3D_FEATURE_LEVEL[]")] D3D_FEATURE_LEVEL* featureLevels,
-            [In, NativeTypeName("UINT32")] uint featureLevelsCount,
-            [Out] D3D_FEATURE_LEVEL* maximumSupportedFeatureLevel
-        );
+        public delegate int _GetMaximumSupportedFeatureLevel(ID2D1EffectContext2* This, [NativeTypeName("D3D_FEATURE_LEVEL[]")] D3D_FEATURE_LEVEL* featureLevels, [NativeTypeName("UINT32")] uint featureLevelsCount, D3D_FEATURE_LEVEL* maximumSupportedFeatureLevel);
 
         /// <summary>Create a transform node from the passed in effect.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateTransformNodeFromEffect(
-            [In] ID2D1EffectContext2* This,
-            [In] ID2D1Effect* effect,
-            [Out] ID2D1TransformNode** transformNode
-        );
+        public delegate int _CreateTransformNodeFromEffect(ID2D1EffectContext2* This, ID2D1Effect* effect, ID2D1TransformNode** transformNode);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateBlendTransform(
-            [In] ID2D1EffectContext2* This,
-            [In, NativeTypeName("UINT32")] uint numInputs,
-            [In] D2D1_BLEND_DESCRIPTION* blendDescription,
-            [Out] ID2D1BlendTransform** transform
-        );
+        public delegate int _CreateBlendTransform(ID2D1EffectContext2* This, [NativeTypeName("UINT32")] uint numInputs, D2D1_BLEND_DESCRIPTION* blendDescription, ID2D1BlendTransform** transform);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateBorderTransform(
-            [In] ID2D1EffectContext2* This,
-            [In] D2D1_EXTEND_MODE extendModeX,
-            [In] D2D1_EXTEND_MODE extendModeY,
-            [Out] ID2D1BorderTransform** transform
-        );
+        public delegate int _CreateBorderTransform(ID2D1EffectContext2* This, D2D1_EXTEND_MODE extendModeX, D2D1_EXTEND_MODE extendModeY, ID2D1BorderTransform** transform);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateOffsetTransform(
-            [In] ID2D1EffectContext2* This,
-            [In, NativeTypeName("D2D1_POINT_2L")] POINT offset,
-            [Out] ID2D1OffsetTransform** transform
-        );
+        public delegate int _CreateOffsetTransform(ID2D1EffectContext2* This, [NativeTypeName("D2D1_POINT_2L")] POINT offset, ID2D1OffsetTransform** transform);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateBoundsAdjustmentTransform(
-            [In] ID2D1EffectContext2* This,
-            [In, NativeTypeName("D2D1_RECT_L")] RECT* outputRectangle,
-            [Out] ID2D1BoundsAdjustmentTransform** transform
-        );
+        public delegate int _CreateBoundsAdjustmentTransform(ID2D1EffectContext2* This, [NativeTypeName("D2D1_RECT_L")] RECT* outputRectangle, ID2D1BoundsAdjustmentTransform** transform);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _LoadPixelShader(
-            [In] ID2D1EffectContext2* This,
-            [In, NativeTypeName("REFGUID")] Guid* shaderId,
-            [In, NativeTypeName("BYTE[]")] byte* shaderBuffer,
-            [In, NativeTypeName("UINT32")] uint shaderBufferCount
-        );
+        public delegate int _LoadPixelShader(ID2D1EffectContext2* This, [NativeTypeName("REFGUID")] Guid* shaderId, [NativeTypeName("BYTE[]")] byte* shaderBuffer, [NativeTypeName("UINT32")] uint shaderBufferCount);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _LoadVertexShader(
-            [In] ID2D1EffectContext2* This,
-            [In, NativeTypeName("REFGUID")] Guid* resourceId,
-            [In, NativeTypeName("BYTE[]")] byte* shaderBuffer,
-            [In, NativeTypeName("UINT32")] uint shaderBufferCount
-        );
+        public delegate int _LoadVertexShader(ID2D1EffectContext2* This, [NativeTypeName("REFGUID")] Guid* resourceId, [NativeTypeName("BYTE[]")] byte* shaderBuffer, [NativeTypeName("UINT32")] uint shaderBufferCount);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _LoadComputeShader(
-            [In] ID2D1EffectContext2* This,
-            [In, NativeTypeName("REFGUID")] Guid* resourceId,
-            [In, NativeTypeName("BYTE[]")]  byte* shaderBuffer,
-            [In, NativeTypeName("UINT32")] uint shaderBufferCount
-        );
+        public delegate int _LoadComputeShader(ID2D1EffectContext2* This, [NativeTypeName("REFGUID")] Guid* resourceId, [NativeTypeName("BYTE[]")]  byte* shaderBuffer, [NativeTypeName("UINT32")] uint shaderBufferCount);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _IsShaderLoaded(
-            [In] ID2D1EffectContext2* This,
-            [In, NativeTypeName("REFGUID")] Guid* shaderId
-        );
+        public delegate int _IsShaderLoaded(ID2D1EffectContext2* This, [NativeTypeName("REFGUID")] Guid* shaderId);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateResourceTexture(
-            [In] ID2D1EffectContext2* This,
-            [In, Optional, NativeTypeName("GUID")] Guid* resourceId,
-            [In] D2D1_RESOURCE_TEXTURE_PROPERTIES* resourceTextureProperties,
-            [In, Optional, NativeTypeName("BYTE[]")] byte* data,
-            [In, Optional, NativeTypeName("UINT32[]")] uint* strides,
-            [In, NativeTypeName("UINT32")] uint dataSize,
-            [Out] ID2D1ResourceTexture** resourceTexture
-        );
+        public delegate int _CreateResourceTexture(ID2D1EffectContext2* This, [Optional, NativeTypeName("GUID")] Guid* resourceId, D2D1_RESOURCE_TEXTURE_PROPERTIES* resourceTextureProperties, [Optional, NativeTypeName("BYTE[]")] byte* data, [Optional, NativeTypeName("UINT32[]")] uint* strides, [NativeTypeName("UINT32")] uint dataSize, ID2D1ResourceTexture** resourceTexture);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _FindResourceTexture(
-            [In] ID2D1EffectContext2* This,
-            [In, NativeTypeName("GUID")] Guid* resourceId,
-            [Out] ID2D1ResourceTexture** resourceTexture
-        );
+        public delegate int _FindResourceTexture(ID2D1EffectContext2* This, [NativeTypeName("GUID")] Guid* resourceId, ID2D1ResourceTexture** resourceTexture);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateVertexBuffer(
-            [In] ID2D1EffectContext2* This,
-            [In] D2D1_VERTEX_BUFFER_PROPERTIES* vertexBufferProperties,
-            [In, Optional, NativeTypeName("GUID")] Guid* resourceId,
-            [In, Optional] D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES* customVertexBufferProperties,
-            [Out] ID2D1VertexBuffer** buffer
-        );
+        public delegate int _CreateVertexBuffer(ID2D1EffectContext2* This, D2D1_VERTEX_BUFFER_PROPERTIES* vertexBufferProperties, [Optional, NativeTypeName("GUID")] Guid* resourceId, [Optional] D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES* customVertexBufferProperties, ID2D1VertexBuffer** buffer);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _FindVertexBuffer(
-            [In] ID2D1EffectContext2* This,
-            [In, NativeTypeName("GUID")] Guid* resourceId,
-            [Out] ID2D1VertexBuffer** buffer
-        );
+        public delegate int _FindVertexBuffer(ID2D1EffectContext2* This, [NativeTypeName("GUID")] Guid* resourceId, ID2D1VertexBuffer** buffer);
 
         /// <summary>Creates a color context from a color space.  If the space is Custom, the context is initialized from the profile/profileSize arguments.  Otherwise the context is initialized with the profile bytes associated with the space and profile/profileSize are ignored.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateColorContext(
-            [In] ID2D1EffectContext2* This,
-            [In] D2D1_COLOR_SPACE space,
-            [In, Optional, NativeTypeName("BYTE[]")] byte* profile,
-            [In, NativeTypeName("UINT32")] uint profileSize,
-            [Out] ID2D1ColorContext** colorContext
-        );
+        public delegate int _CreateColorContext(ID2D1EffectContext2* This, D2D1_COLOR_SPACE space, [Optional, NativeTypeName("BYTE[]")] byte* profile, [NativeTypeName("UINT32")] uint profileSize, ID2D1ColorContext** colorContext);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateColorContextFromFilename(
-            [In] ID2D1EffectContext2* This,
-            [In, NativeTypeName("PCWSTR")] char* filename,
-            [Out] ID2D1ColorContext** colorContext
-        );
+        public delegate int _CreateColorContextFromFilename(ID2D1EffectContext2* This, [NativeTypeName("PCWSTR")] char* filename, ID2D1ColorContext** colorContext);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateColorContextFromWicColorContext(
-            [In] ID2D1EffectContext2* This,
-            [In] IWICColorContext* wicColorContext,
-            [Out] ID2D1ColorContext** colorContext
-        );
+        public delegate int _CreateColorContextFromWicColorContext(ID2D1EffectContext2* This, IWICColorContext* wicColorContext, ID2D1ColorContext** colorContext);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CheckFeatureSupport(
-            [In] ID2D1EffectContext2* This,
-            [In] D2D1_FEATURE feature,
-            [Out] void* featureSupportData,
-            [In, NativeTypeName("UINT32")] uint featureSupportDataSize
-        );
+        public delegate int _CheckFeatureSupport(ID2D1EffectContext2* This, D2D1_FEATURE feature, void* featureSupportData, [NativeTypeName("UINT32")] uint featureSupportDataSize);
 
         /// <summary>Indicates whether the buffer precision is supported by D2D.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _IsBufferPrecisionSupported(
-            [In] ID2D1EffectContext2* This,
-            [In] D2D1_BUFFER_PRECISION bufferPrecision
-        );
-        #endregion
+        public delegate int _IsBufferPrecisionSupported(ID2D1EffectContext2* This, D2D1_BUFFER_PRECISION bufferPrecision);
 
-        #region ID2D1EffectContext1 Delegates
         /// <summary>Creates a 3D lookup table for mapping a 3-channel input to a 3-channel output. The table data must be provided in 4-channel format.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateLookupTable3D(
-            [In] ID2D1EffectContext2* This,
-            [In] D2D1_BUFFER_PRECISION precision,
-            [In, NativeTypeName("UINT32[]")] uint* extents,
-            [In, NativeTypeName("BYTE[]")] byte* data,
-            [In, NativeTypeName("UINT32")] uint dataCount,
-            [In, NativeTypeName("UINT32[]")] uint* strides,
-            [Out] ID2D1LookupTable3D** lookupTable
-        );
-        #endregion
+        public delegate int _CreateLookupTable3D(ID2D1EffectContext2* This, D2D1_BUFFER_PRECISION precision, [NativeTypeName("UINT32[]")] uint* extents, [NativeTypeName("BYTE[]")] byte* data, [NativeTypeName("UINT32")] uint dataCount, [NativeTypeName("UINT32[]")] uint* strides, ID2D1LookupTable3D** lookupTable);
 
-        #region Delegates
         /// <summary>Creates a color context from a DXGI color space type. It is only valid to use this with the Color Management Effect in 'Best' mode.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateColorContextFromDxgiColorSpace(
-            [In] ID2D1EffectContext2* This,
-            [In] DXGI_COLOR_SPACE_TYPE colorSpace,
-            [Out] ID2D1ColorContext1** colorContext
-        );
+        public delegate int _CreateColorContextFromDxgiColorSpace(ID2D1EffectContext2* This, DXGI_COLOR_SPACE_TYPE colorSpace, ID2D1ColorContext1** colorContext);
 
         /// <summary>Creates a color context from a simple color profile. It is only valid to use this with the Color Management Effect in 'Best' mode.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateColorContextFromSimpleColorProfile(
-            [In] ID2D1EffectContext2* This,
-            [In] D2D1_SIMPLE_COLOR_PROFILE* simpleProfile,
-            [Out] ID2D1ColorContext1** colorContext
-        );
-        #endregion
+        public delegate int _CreateColorContextFromSimpleColorProfile(ID2D1EffectContext2* This, D2D1_SIMPLE_COLOR_PROFILE* simpleProfile, ID2D1ColorContext1** colorContext);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1EffectContext2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -309,9 +142,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectContext2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -320,448 +151,233 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectContext2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
-        #endregion
 
-        #region ID2D1EffectContext Methods
-        public void GetDpi(
-            [Out, NativeTypeName("FLOAT")] float* dpiX,
-            [Out, NativeTypeName("FLOAT")] float* dpiY
-        )
+        public void GetDpi([NativeTypeName("FLOAT")] float* dpiX, [NativeTypeName("FLOAT")] float* dpiY)
         {
             fixed (ID2D1EffectContext2* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetDpi>(lpVtbl->GetDpi)(
-                    This,
-                    dpiX,
-                    dpiY
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetDpi>(lpVtbl->GetDpi)(This, dpiX, dpiY);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateEffect(
-            [In, NativeTypeName("REFCLSID")] Guid* effectId,
-            [Out] ID2D1Effect** effect
-        )
+        public int CreateEffect([NativeTypeName("REFCLSID")] Guid* effectId, ID2D1Effect** effect)
         {
             fixed (ID2D1EffectContext2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateEffect>(lpVtbl->CreateEffect)(
-                    This,
-                    effectId,
-                    effect
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateEffect>(lpVtbl->CreateEffect)(This, effectId, effect);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetMaximumSupportedFeatureLevel(
-            [In, NativeTypeName("D3D_FEATURE_LEVEL[]")] D3D_FEATURE_LEVEL* featureLevels,
-            [In, NativeTypeName("UINT32")] uint featureLevelsCount,
-            [Out] D3D_FEATURE_LEVEL* maximumSupportedFeatureLevel
-        )
+        public int GetMaximumSupportedFeatureLevel([NativeTypeName("D3D_FEATURE_LEVEL[]")] D3D_FEATURE_LEVEL* featureLevels, [NativeTypeName("UINT32")] uint featureLevelsCount, D3D_FEATURE_LEVEL* maximumSupportedFeatureLevel)
         {
             fixed (ID2D1EffectContext2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetMaximumSupportedFeatureLevel>(lpVtbl->GetMaximumSupportedFeatureLevel)(
-                    This,
-                    featureLevels,
-                    featureLevelsCount,
-                    maximumSupportedFeatureLevel
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetMaximumSupportedFeatureLevel>(lpVtbl->GetMaximumSupportedFeatureLevel)(This, featureLevels, featureLevelsCount, maximumSupportedFeatureLevel);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateTransformNodeFromEffect(
-            [In] ID2D1Effect* effect,
-            [Out] ID2D1TransformNode** transformNode
-        )
+        public int CreateTransformNodeFromEffect(ID2D1Effect* effect, ID2D1TransformNode** transformNode)
         {
             fixed (ID2D1EffectContext2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateTransformNodeFromEffect>(lpVtbl->CreateTransformNodeFromEffect)(
-                    This,
-                    effect,
-                    transformNode
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateTransformNodeFromEffect>(lpVtbl->CreateTransformNodeFromEffect)(This, effect, transformNode);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateBlendTransform(
-            [In, NativeTypeName("UINT32")] uint numInputs,
-            [In] D2D1_BLEND_DESCRIPTION* blendDescription,
-            [Out] ID2D1BlendTransform** transform
-        )
+        public int CreateBlendTransform([NativeTypeName("UINT32")] uint numInputs, D2D1_BLEND_DESCRIPTION* blendDescription, ID2D1BlendTransform** transform)
         {
             fixed (ID2D1EffectContext2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateBlendTransform>(lpVtbl->CreateBlendTransform)(
-                    This,
-                    numInputs,
-                    blendDescription,
-                    transform
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateBlendTransform>(lpVtbl->CreateBlendTransform)(This, numInputs, blendDescription, transform);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateBorderTransform(
-            [In] D2D1_EXTEND_MODE extendModeX,
-            [In] D2D1_EXTEND_MODE extendModeY,
-            [Out] ID2D1BorderTransform** transform
-        )
+        public int CreateBorderTransform(D2D1_EXTEND_MODE extendModeX, D2D1_EXTEND_MODE extendModeY, ID2D1BorderTransform** transform)
         {
             fixed (ID2D1EffectContext2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateBorderTransform>(lpVtbl->CreateBorderTransform)(
-                    This,
-                    extendModeX,
-                    extendModeY,
-                    transform
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateBorderTransform>(lpVtbl->CreateBorderTransform)(This, extendModeX, extendModeY, transform);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateOffsetTransform(
-            [In, NativeTypeName("D2D1_POINT_2L")] POINT offset,
-            [Out] ID2D1OffsetTransform** transform
-        )
+        public int CreateOffsetTransform([NativeTypeName("D2D1_POINT_2L")] POINT offset, ID2D1OffsetTransform** transform)
         {
             fixed (ID2D1EffectContext2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateOffsetTransform>(lpVtbl->CreateOffsetTransform)(
-                    This,
-                    offset,
-                    transform
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateOffsetTransform>(lpVtbl->CreateOffsetTransform)(This, offset, transform);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateBoundsAdjustmentTransform(
-            [In, NativeTypeName("D2D1_RECT_L")] RECT* outputRectangle,
-            [Out] ID2D1BoundsAdjustmentTransform** transform
-        )
+        public int CreateBoundsAdjustmentTransform([NativeTypeName("D2D1_RECT_L")] RECT* outputRectangle, ID2D1BoundsAdjustmentTransform** transform)
         {
             fixed (ID2D1EffectContext2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateBoundsAdjustmentTransform>(lpVtbl->CreateBoundsAdjustmentTransform)(
-                    This,
-                    outputRectangle,
-                    transform
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateBoundsAdjustmentTransform>(lpVtbl->CreateBoundsAdjustmentTransform)(This, outputRectangle, transform);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int LoadPixelShader(
-            [In, NativeTypeName("REFGUID")] Guid* shaderId,
-            [In, NativeTypeName("BYTE[]")] byte* shaderBuffer,
-            [In, NativeTypeName("UINT32")] uint shaderBufferCount
-        )
+        public int LoadPixelShader([NativeTypeName("REFGUID")] Guid* shaderId, [NativeTypeName("BYTE[]")] byte* shaderBuffer, [NativeTypeName("UINT32")] uint shaderBufferCount)
         {
             fixed (ID2D1EffectContext2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_LoadPixelShader>(lpVtbl->LoadPixelShader)(
-                    This,
-                    shaderId,
-                    shaderBuffer,
-                    shaderBufferCount
-                );
+                return Marshal.GetDelegateForFunctionPointer<_LoadPixelShader>(lpVtbl->LoadPixelShader)(This, shaderId, shaderBuffer, shaderBufferCount);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int LoadVertexShader(
-            [In, NativeTypeName("REFGUID")] Guid* resourceId,
-            [In, NativeTypeName("BYTE[]")] byte* shaderBuffer,
-            [In, NativeTypeName("UINT32")] uint shaderBufferCount
-        )
+        public int LoadVertexShader([NativeTypeName("REFGUID")] Guid* resourceId, [NativeTypeName("BYTE[]")] byte* shaderBuffer, [NativeTypeName("UINT32")] uint shaderBufferCount)
         {
             fixed (ID2D1EffectContext2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_LoadVertexShader>(lpVtbl->LoadVertexShader)(
-                    This,
-                    resourceId,
-                    shaderBuffer,
-                    shaderBufferCount
-                );
+                return Marshal.GetDelegateForFunctionPointer<_LoadVertexShader>(lpVtbl->LoadVertexShader)(This, resourceId, shaderBuffer, shaderBufferCount);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int LoadComputeShader(
-            [In, NativeTypeName("REFGUID")] Guid* resourceId,
-            [In, NativeTypeName("BYTE[]")]  byte* shaderBuffer,
-            [In, NativeTypeName("UINT32")] uint shaderBufferCount
-        )
+        public int LoadComputeShader([NativeTypeName("REFGUID")] Guid* resourceId, [NativeTypeName("BYTE[]")]  byte* shaderBuffer, [NativeTypeName("UINT32")] uint shaderBufferCount)
         {
             fixed (ID2D1EffectContext2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_LoadComputeShader>(lpVtbl->LoadComputeShader)(
-                    This,
-                    resourceId,
-                    shaderBuffer,
-                    shaderBufferCount
-                );
+                return Marshal.GetDelegateForFunctionPointer<_LoadComputeShader>(lpVtbl->LoadComputeShader)(This, resourceId, shaderBuffer, shaderBufferCount);
             }
         }
 
         [return: NativeTypeName("BOOL")]
-        public int IsShaderLoaded(
-            [In, NativeTypeName("REFGUID")] Guid* shaderId
-        )
+        public int IsShaderLoaded([NativeTypeName("REFGUID")] Guid* shaderId)
         {
             fixed (ID2D1EffectContext2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_IsShaderLoaded>(lpVtbl->IsShaderLoaded)(
-                    This,
-                    shaderId
-                );
+                return Marshal.GetDelegateForFunctionPointer<_IsShaderLoaded>(lpVtbl->IsShaderLoaded)(This, shaderId);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateResourceTexture(
-            [In, Optional, NativeTypeName("GUID")] Guid* resourceId,
-            [In] D2D1_RESOURCE_TEXTURE_PROPERTIES* resourceTextureProperties,
-            [In, Optional, NativeTypeName("BYTE[]")] byte* data,
-            [In, Optional, NativeTypeName("UINT32[]")] uint* strides,
-            [In, NativeTypeName("UINT32")] uint dataSize,
-            [Out] ID2D1ResourceTexture** resourceTexture
-        )
+        public int CreateResourceTexture([Optional, NativeTypeName("GUID")] Guid* resourceId, D2D1_RESOURCE_TEXTURE_PROPERTIES* resourceTextureProperties, [Optional, NativeTypeName("BYTE[]")] byte* data, [Optional, NativeTypeName("UINT32[]")] uint* strides, [NativeTypeName("UINT32")] uint dataSize, ID2D1ResourceTexture** resourceTexture)
         {
             fixed (ID2D1EffectContext2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateResourceTexture>(lpVtbl->CreateResourceTexture)(
-                    This,
-                    resourceId,
-                    resourceTextureProperties,
-                    data,
-                    strides,
-                    dataSize,
-                    resourceTexture
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateResourceTexture>(lpVtbl->CreateResourceTexture)(This, resourceId, resourceTextureProperties, data, strides, dataSize, resourceTexture);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int FindResourceTexture(
-            [In, NativeTypeName("GUID")] Guid* resourceId,
-            [Out] ID2D1ResourceTexture** resourceTexture
-        )
+        public int FindResourceTexture([NativeTypeName("GUID")] Guid* resourceId, ID2D1ResourceTexture** resourceTexture)
         {
             fixed (ID2D1EffectContext2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_FindResourceTexture>(lpVtbl->FindResourceTexture)(
-                    This,
-                    resourceId,
-                    resourceTexture
-                );
+                return Marshal.GetDelegateForFunctionPointer<_FindResourceTexture>(lpVtbl->FindResourceTexture)(This, resourceId, resourceTexture);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateVertexBuffer(
-            [In] D2D1_VERTEX_BUFFER_PROPERTIES* vertexBufferProperties,
-            [In, Optional, NativeTypeName("GUID")] Guid* resourceId,
-            [In, Optional] D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES* customVertexBufferProperties,
-            [Out] ID2D1VertexBuffer** buffer
-        )
+        public int CreateVertexBuffer(D2D1_VERTEX_BUFFER_PROPERTIES* vertexBufferProperties, [Optional, NativeTypeName("GUID")] Guid* resourceId, [Optional] D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES* customVertexBufferProperties, ID2D1VertexBuffer** buffer)
         {
             fixed (ID2D1EffectContext2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateVertexBuffer>(lpVtbl->CreateVertexBuffer)(
-                    This,
-                    vertexBufferProperties,
-                    resourceId,
-                    customVertexBufferProperties,
-                    buffer
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateVertexBuffer>(lpVtbl->CreateVertexBuffer)(This, vertexBufferProperties, resourceId, customVertexBufferProperties, buffer);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int FindVertexBuffer(
-            [In, NativeTypeName("GUID")] Guid* resourceId,
-            [Out] ID2D1VertexBuffer** buffer
-        )
+        public int FindVertexBuffer([NativeTypeName("GUID")] Guid* resourceId, ID2D1VertexBuffer** buffer)
         {
             fixed (ID2D1EffectContext2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_FindVertexBuffer>(lpVtbl->FindVertexBuffer)(
-                    This,
-                    resourceId,
-                    buffer
-                );
+                return Marshal.GetDelegateForFunctionPointer<_FindVertexBuffer>(lpVtbl->FindVertexBuffer)(This, resourceId, buffer);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateColorContext(
-            [In] D2D1_COLOR_SPACE space,
-            [In, Optional, NativeTypeName("BYTE[]")] byte* profile,
-            [In, NativeTypeName("UINT32")] uint profileSize,
-            [Out] ID2D1ColorContext** colorContext
-        )
+        public int CreateColorContext(D2D1_COLOR_SPACE space, [Optional, NativeTypeName("BYTE[]")] byte* profile, [NativeTypeName("UINT32")] uint profileSize, ID2D1ColorContext** colorContext)
         {
             fixed (ID2D1EffectContext2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateColorContext>(lpVtbl->CreateColorContext)(
-                    This,
-                    space,
-                    profile,
-                    profileSize,
-                    colorContext
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateColorContext>(lpVtbl->CreateColorContext)(This, space, profile, profileSize, colorContext);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateColorContextFromFilename(
-            [In, NativeTypeName("PCWSTR")] char* filename,
-            [Out] ID2D1ColorContext** colorContext
-        )
+        public int CreateColorContextFromFilename([NativeTypeName("PCWSTR")] char* filename, ID2D1ColorContext** colorContext)
         {
             fixed (ID2D1EffectContext2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateColorContextFromFilename>(lpVtbl->CreateColorContextFromFilename)(
-                    This,
-                    filename,
-                    colorContext
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateColorContextFromFilename>(lpVtbl->CreateColorContextFromFilename)(This, filename, colorContext);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateColorContextFromWicColorContext(
-            [In] IWICColorContext* wicColorContext,
-            [Out] ID2D1ColorContext** colorContext
-        )
+        public int CreateColorContextFromWicColorContext(IWICColorContext* wicColorContext, ID2D1ColorContext** colorContext)
         {
             fixed (ID2D1EffectContext2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateColorContextFromWicColorContext>(lpVtbl->CreateColorContextFromWicColorContext)(
-                    This,
-                    wicColorContext,
-                    colorContext
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateColorContextFromWicColorContext>(lpVtbl->CreateColorContextFromWicColorContext)(This, wicColorContext, colorContext);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CheckFeatureSupport(
-            [In] D2D1_FEATURE feature,
-            [Out] void* featureSupportData,
-            [In, NativeTypeName("UINT32")] uint featureSupportDataSize
-        )
+        public int CheckFeatureSupport(D2D1_FEATURE feature, void* featureSupportData, [NativeTypeName("UINT32")] uint featureSupportDataSize)
         {
             fixed (ID2D1EffectContext2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CheckFeatureSupport>(lpVtbl->CheckFeatureSupport)(
-                    This,
-                    feature,
-                    featureSupportData,
-                    featureSupportDataSize
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CheckFeatureSupport>(lpVtbl->CheckFeatureSupport)(This, feature, featureSupportData, featureSupportDataSize);
             }
         }
 
         [return: NativeTypeName("BOOL")]
-        public int IsBufferPrecisionSupported(
-            [In] D2D1_BUFFER_PRECISION bufferPrecision
-        )
+        public int IsBufferPrecisionSupported(D2D1_BUFFER_PRECISION bufferPrecision)
         {
             fixed (ID2D1EffectContext2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_IsBufferPrecisionSupported>(lpVtbl->IsBufferPrecisionSupported)(
-                    This,
-                    bufferPrecision
-                );
-            }
-        }
-        #endregion
-
-        #region ID2D1EffectContext1 Methods
-        [return: NativeTypeName("HRESULT")]
-        public int CreateLookupTable3D(
-            [In] D2D1_BUFFER_PRECISION precision,
-            [In, NativeTypeName("UINT32[]")] uint* extents,
-            [In, NativeTypeName("BYTE[]")] byte* data,
-            [In, NativeTypeName("UINT32")] uint dataCount,
-            [In, NativeTypeName("UINT32[]")] uint* strides,
-            [Out] ID2D1LookupTable3D** lookupTable
-        )
-        {
-            fixed (ID2D1EffectContext2* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_CreateLookupTable3D>(lpVtbl->CreateLookupTable3D)(
-                    This,
-                    precision,
-                    extents,
-                    data,
-                    dataCount,
-                    strides,
-                    lookupTable
-                );
-            }
-        }
-        #endregion
-
-        #region Methods
-        [return: NativeTypeName("HRESULT")]
-        public int CreateColorContextFromDxgiColorSpace(
-            [In] DXGI_COLOR_SPACE_TYPE colorSpace,
-            [Out] ID2D1ColorContext1** colorContext
-        )
-        {
-            fixed (ID2D1EffectContext2* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_CreateColorContextFromDxgiColorSpace>(lpVtbl->CreateColorContextFromDxgiColorSpace)(
-                    This,
-                    colorSpace,
-                    colorContext
-                );
+                return Marshal.GetDelegateForFunctionPointer<_IsBufferPrecisionSupported>(lpVtbl->IsBufferPrecisionSupported)(This, bufferPrecision);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateColorContextFromSimpleColorProfile(
-            [In] D2D1_SIMPLE_COLOR_PROFILE* simpleProfile,
-            [Out] ID2D1ColorContext1** colorContext
-        )
+        public int CreateLookupTable3D(D2D1_BUFFER_PRECISION precision, [NativeTypeName("UINT32[]")] uint* extents, [NativeTypeName("BYTE[]")] byte* data, [NativeTypeName("UINT32")] uint dataCount, [NativeTypeName("UINT32[]")] uint* strides, ID2D1LookupTable3D** lookupTable)
         {
             fixed (ID2D1EffectContext2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateColorContextFromSimpleColorProfile>(lpVtbl->CreateColorContextFromSimpleColorProfile)(
-                    This,
-                    simpleProfile,
-                    colorContext
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateLookupTable3D>(lpVtbl->CreateLookupTable3D)(This, precision, extents, data, dataCount, strides, lookupTable);
             }
         }
-        #endregion
 
-        #region Structs
+        [return: NativeTypeName("HRESULT")]
+        public int CreateColorContextFromDxgiColorSpace(DXGI_COLOR_SPACE_TYPE colorSpace, ID2D1ColorContext1** colorContext)
+        {
+            fixed (ID2D1EffectContext2* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_CreateColorContextFromDxgiColorSpace>(lpVtbl->CreateColorContextFromDxgiColorSpace)(This, colorSpace, colorContext);
+            }
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int CreateColorContextFromSimpleColorProfile(D2D1_SIMPLE_COLOR_PROFILE* simpleProfile, ID2D1ColorContext1** colorContext)
+        {
+            fixed (ID2D1EffectContext2* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_CreateColorContextFromSimpleColorProfile>(lpVtbl->CreateColorContextFromSimpleColorProfile)(This, simpleProfile, colorContext);
+            }
+        }
+
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1EffectContext Fields
             public IntPtr GetDpi;
 
             public IntPtr CreateEffect;
@@ -803,18 +419,12 @@ namespace TerraFX.Interop
             public IntPtr CheckFeatureSupport;
 
             public IntPtr IsBufferPrecisionSupported;
-            #endregion
 
-            #region ID2D1EffectContext1 Fields
             public IntPtr CreateLookupTable3D;
-            #endregion
 
-            #region Fields
             public IntPtr CreateColorContextFromDxgiColorSpace;
 
             public IntPtr CreateColorContextFromSimpleColorProfile;
-            #endregion
         }
-        #endregion
     }
 }

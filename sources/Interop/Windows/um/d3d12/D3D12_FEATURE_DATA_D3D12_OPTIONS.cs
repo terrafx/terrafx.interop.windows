@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct D3D12_FEATURE_DATA_D3D12_OPTIONS
     {
-        #region Fields
         [NativeTypeName("BOOL")]
         public int DoublePrecisionFloatShaderOps;
 
@@ -46,6 +45,5 @@ namespace TerraFX.Interop
         public int VPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation;
 
         public D3D12_RESOURCE_HEAP_TIER ResourceHeapTier;
-        #endregion
     }
 }

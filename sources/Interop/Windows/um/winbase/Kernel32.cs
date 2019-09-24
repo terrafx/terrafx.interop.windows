@@ -4,24 +4,15 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     public static unsafe partial class Kernel32
     {
-        #region External Methods
-        [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "lstrlenA", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
-        public static extern int lstrlenA(
-            [In, NativeTypeName("LPCSTR")] byte* lpString
-        );
+        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "lstrlenA", ExactSpelling = true)]
+        public static extern int lstrlenA([NativeTypeName("LPCSTR")] byte* lpString);
 
-        [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "lstrlenW", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
-        public static extern int lstrlenW(
-            [In, NativeTypeName("LPCWSTR")] char* lpString
-        );
-        #endregion
+        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "lstrlenW", ExactSpelling = true)]
+        public static extern int lstrlenW([NativeTypeName("LPCWSTR")] char* lpString);
     }
 }

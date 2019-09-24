@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>Properties, aside from the width, that allow geometric penning to be specified.</summary>
     public struct D2D1_STROKE_STYLE_PROPERTIES
     {
-        #region Fields
         public D2D1_CAP_STYLE startCap;
 
         public D2D1_CAP_STYLE endCap;
@@ -24,6 +23,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("FLOAT")]
         public float dashOffset;
-        #endregion
     }
 }

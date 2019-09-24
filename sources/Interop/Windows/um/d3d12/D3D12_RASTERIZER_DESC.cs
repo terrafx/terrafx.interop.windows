@@ -13,23 +13,8 @@ namespace TerraFX.Interop
 {
     public struct D3D12_RASTERIZER_DESC
     {
-        #region Default Instances
-        public static readonly D3D12_RASTERIZER_DESC DEFAULT = new D3D12_RASTERIZER_DESC(
-            fillMode: D3D12_FILL_MODE_SOLID,
-            cullMode: D3D12_CULL_MODE_BACK,
-            frontCounterClockwise:  FALSE,
-            depthBias: D3D12_DEFAULT_DEPTH_BIAS,
-            depthBiasClamp: D3D12_DEFAULT_DEPTH_BIAS_CLAMP,
-            slopeScaledDepthBias: D3D12_DEFAULT_SLOPE_SCALED_DEPTH_BIAS,
-            depthClipEnable: TRUE,
-            multisampleEnable: FALSE,
-            antialiasedLineEnable: FALSE,
-            forcedSampleCount: 0,
-            conservativeRaster: D3D12_CONSERVATIVE_RASTERIZATION_MODE_OFF
-        );
-        #endregion
+        public static readonly D3D12_RASTERIZER_DESC DEFAULT = new D3D12_RASTERIZER_DESC(fillMode: D3D12_FILL_MODE_SOLID, cullMode: D3D12_CULL_MODE_BACK, frontCounterClockwise:  FALSE, depthBias: D3D12_DEFAULT_DEPTH_BIAS, depthBiasClamp: D3D12_DEFAULT_DEPTH_BIAS_CLAMP, slopeScaledDepthBias: D3D12_DEFAULT_SLOPE_SCALED_DEPTH_BIAS, depthClipEnable: TRUE, multisampleEnable: FALSE, antialiasedLineEnable: FALSE, forcedSampleCount: 0, conservativeRaster: D3D12_CONSERVATIVE_RASTERIZATION_MODE_OFF);
 
-        #region Fields
         public D3D12_FILL_MODE FillMode;
 
         public D3D12_CULL_MODE CullMode;
@@ -59,9 +44,7 @@ namespace TerraFX.Interop
         public uint ForcedSampleCount;
 
         public D3D12_CONSERVATIVE_RASTERIZATION_MODE ConservativeRaster;
-        #endregion
 
-        #region Constructors
         public D3D12_RASTERIZER_DESC(D3D12_FILL_MODE fillMode, D3D12_CULL_MODE cullMode, int frontCounterClockwise, int depthBias, float depthBiasClamp, float slopeScaledDepthBias, int depthClipEnable, int multisampleEnable, int antialiasedLineEnable, uint forcedSampleCount, D3D12_CONSERVATIVE_RASTERIZATION_MODE conservativeRaster)
         {
             FillMode = fillMode;
@@ -76,6 +59,5 @@ namespace TerraFX.Interop
             ForcedSampleCount = forcedSampleCount;
             ConservativeRaster = conservativeRaster;
         }
-        #endregion
     }
 }

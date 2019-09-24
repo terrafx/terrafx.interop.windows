@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_SHADER_DESC
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint Version;
 
@@ -116,6 +115,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint cTextureStoreInstructions;
-        #endregion
     }
 }

@@ -8,12 +8,10 @@ namespace TerraFX.Interop
     /// <summary>Contains the starting point and endpoint of the gradient axis for an ID2D1LinearGradientBrush.</summary>
     public struct D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES
     {
-        #region Fields
         [NativeTypeName("D2D1_POINT_2F")]
         public D2D_POINT_2F startPoint;
 
         [NativeTypeName("D2D1_POINT_2F")]
         public D2D_POINT_2F endPoint;
-        #endregion
     }
 }

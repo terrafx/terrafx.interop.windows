@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>This defines a single element of the vertex layout.</summary>
     public unsafe struct D2D1_INPUT_ELEMENT_DESC
     {
-        #region Fields
         [NativeTypeName("PCSTR")]
         public sbyte* semanticName;
 
@@ -22,6 +21,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT32")]
         public uint alignedByteOffset;
-        #endregion
     }
 }

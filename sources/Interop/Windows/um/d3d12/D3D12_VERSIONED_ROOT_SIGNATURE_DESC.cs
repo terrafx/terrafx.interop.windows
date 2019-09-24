@@ -9,24 +9,18 @@ namespace TerraFX.Interop
 {
     public struct D3D12_VERSIONED_ROOT_SIGNATURE_DESC
     {
-        #region Fields
         public D3D_ROOT_SIGNATURE_VERSION Version;
 
         public _Anonymous_e__Union Anonymous;
-        #endregion
 
-        #region Structs
         [StructLayout(LayoutKind.Explicit)]
         public struct _Anonymous_e__Union
         {
-            #region Fields
             [FieldOffset(0)]
             public D3D12_ROOT_SIGNATURE_DESC Desc_1_0;
 
             [FieldOffset(0)]
             public D3D12_ROOT_SIGNATURE_DESC1 Desc_1_1;
-            #endregion
         }
-        #endregion
     }
 }

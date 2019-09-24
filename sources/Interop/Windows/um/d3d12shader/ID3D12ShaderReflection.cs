@@ -5,205 +5,104 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     [Guid("5A58797D-A72C-478D-8BA2-EFC6B0EFE88E")]
     public unsafe struct ID3D12ShaderReflection
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] ID3D12ShaderReflection* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID3D12ShaderReflection* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] ID3D12ShaderReflection* This
-        );
+        public delegate uint _AddRef(ID3D12ShaderReflection* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] ID3D12ShaderReflection* This
-        );
-        #endregion
+        public delegate uint _Release(ID3D12ShaderReflection* This);
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDesc(
-            [In] ID3D12ShaderReflection* This,
-            [Out] D3D12_SHADER_DESC* pDesc
-        );
+        public delegate int _GetDesc(ID3D12ShaderReflection* This, D3D12_SHADER_DESC* pDesc);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate ID3D12ShaderReflectionConstantBuffer* _GetConstantBufferByIndex(
-            [In] ID3D12ShaderReflection* This,
-            [In, NativeTypeName("UINT")] uint Index
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate ID3D12ShaderReflectionConstantBuffer* _GetConstantBufferByIndex(ID3D12ShaderReflection* This, [NativeTypeName("UINT")] uint Index);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate ID3D12ShaderReflectionConstantBuffer* _GetConstantBufferByName(
-            [In] ID3D12ShaderReflection* This,
-            [In, NativeTypeName("LPCSTR")] sbyte* Name
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate ID3D12ShaderReflectionConstantBuffer* _GetConstantBufferByName(ID3D12ShaderReflection* This, [NativeTypeName("LPCSTR")] sbyte* Name);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetResourceBindingDesc(
-            [In] ID3D12ShaderReflection* This,
-            [In, NativeTypeName("UINT")] uint ResourceIndex,
-            [Out] D3D12_SHADER_INPUT_BIND_DESC* pDesc
-        );
+        public delegate int _GetResourceBindingDesc(ID3D12ShaderReflection* This, [NativeTypeName("UINT")] uint ResourceIndex, D3D12_SHADER_INPUT_BIND_DESC* pDesc);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetInputParameterDesc(
-            [In] ID3D12ShaderReflection* This,
-            [In, NativeTypeName("UINT")] uint ParameterIndex,
-            [Out] D3D12_SIGNATURE_PARAMETER_DESC* pDesc
-        );
+        public delegate int _GetInputParameterDesc(ID3D12ShaderReflection* This, [NativeTypeName("UINT")] uint ParameterIndex, D3D12_SIGNATURE_PARAMETER_DESC* pDesc);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetOutputParameterDesc(
-            [In] ID3D12ShaderReflection* This,
-            [In, NativeTypeName("UINT")] uint ParameterIndex,
-            [Out] D3D12_SIGNATURE_PARAMETER_DESC* pDesc
-        );
+        public delegate int _GetOutputParameterDesc(ID3D12ShaderReflection* This, [NativeTypeName("UINT")] uint ParameterIndex, D3D12_SIGNATURE_PARAMETER_DESC* pDesc);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPatchConstantParameterDesc(
-            [In] ID3D12ShaderReflection* This,
-            [In, NativeTypeName("UINT")] uint ParameterIndex,
-            [Out] D3D12_SIGNATURE_PARAMETER_DESC* pDesc
-        );
+        public delegate int _GetPatchConstantParameterDesc(ID3D12ShaderReflection* This, [NativeTypeName("UINT")] uint ParameterIndex, D3D12_SIGNATURE_PARAMETER_DESC* pDesc);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate ID3D12ShaderReflectionVariable* _GetVariableByName(
-            [In] ID3D12ShaderReflection* This,
-            [In, NativeTypeName("LPCSTR")] sbyte* Name
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate ID3D12ShaderReflectionVariable* _GetVariableByName(ID3D12ShaderReflection* This, [NativeTypeName("LPCSTR")] sbyte* Name);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetResourceBindingDescByName(
-            [In] ID3D12ShaderReflection* This,
-            [In, NativeTypeName("LPCSTR")] sbyte* Name,
-            [Out] D3D12_SHADER_INPUT_BIND_DESC* pDesc
-        );
+        public delegate int _GetResourceBindingDescByName(ID3D12ShaderReflection* This, [NativeTypeName("LPCSTR")] sbyte* Name, D3D12_SHADER_INPUT_BIND_DESC* pDesc);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT")]
-        public /* static */ delegate uint _GetMovInstructionCount(
-            [In] ID3D12ShaderReflection* This
-        );
+        public delegate uint _GetMovInstructionCount(ID3D12ShaderReflection* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT")]
-        public /* static */ delegate uint _GetMovcInstructionCount(
-            [In] ID3D12ShaderReflection* This
-        );
+        public delegate uint _GetMovcInstructionCount(ID3D12ShaderReflection* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT")]
-        public /* static */ delegate uint _GetConversionInstructionCount(
-            [In] ID3D12ShaderReflection* This
-        );
+        public delegate uint _GetConversionInstructionCount(ID3D12ShaderReflection* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT")]
-        public /* static */ delegate uint _GetBitwiseInstructionCount(
-            [In] ID3D12ShaderReflection* This
-        );
+        public delegate uint _GetBitwiseInstructionCount(ID3D12ShaderReflection* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate D3D_PRIMITIVE _GetGSInputPrimitive(
-            [In] ID3D12ShaderReflection* This
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate D3D_PRIMITIVE _GetGSInputPrimitive(ID3D12ShaderReflection* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public /* static */ delegate int _IsSampleFrequencyShader(
-            [In] ID3D12ShaderReflection* This
-        );
+        public delegate int _IsSampleFrequencyShader(ID3D12ShaderReflection* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT")]
-        public /* static */ delegate uint _GetNumInterfaceSlots(
-            [In] ID3D12ShaderReflection* This
-        );
+        public delegate uint _GetNumInterfaceSlots(ID3D12ShaderReflection* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetMinFeatureLevel(
-            [In] ID3D12ShaderReflection* This,
-            [Out] D3D_FEATURE_LEVEL* pLevel
-        );
+        public delegate int _GetMinFeatureLevel(ID3D12ShaderReflection* This, D3D_FEATURE_LEVEL* pLevel);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT")]
-        public /* static */ delegate uint _GetThreadGroupSize(
-            [In] ID3D12ShaderReflection* This,
-            [Out, NativeTypeName("UINT")] uint* pSizeX = null,
-            [Out, NativeTypeName("UINT")] uint* pSizeY = null,
-            [Out, NativeTypeName("UINT")] uint* pSizeZ = null
-        );
+        public delegate uint _GetThreadGroupSize(ID3D12ShaderReflection* This, [NativeTypeName("UINT")] uint* pSizeX = null, [NativeTypeName("UINT")] uint* pSizeY = null, [NativeTypeName("UINT")] uint* pSizeZ = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
-        public /* static */ delegate ulong _GetRequiresFlags(
-            [In] ID3D12ShaderReflection* This
-        );
-        #endregion
+        public delegate ulong _GetRequiresFlags(ID3D12ShaderReflection* This);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -212,9 +111,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -223,144 +120,85 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region Methods
-        [return: NativeTypeName("HRESULT")]
-        public int GetDesc(
-            [Out] D3D12_SHADER_DESC* pDesc
-        )
-        {
-            fixed (ID3D12ShaderReflection* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)(
-                    This,
-                    pDesc
-                );
-            }
-        }
-
-        public ID3D12ShaderReflectionConstantBuffer* GetConstantBufferByIndex(
-            [In, NativeTypeName("UINT")] uint Index
-        )
-        {
-            fixed (ID3D12ShaderReflection* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetConstantBufferByIndex>(lpVtbl->GetConstantBufferByIndex)(
-                    This,
-                    Index
-                );
-            }
-        }
-
-        public ID3D12ShaderReflectionConstantBuffer* GetConstantBufferByName(
-            [In, NativeTypeName("LPCSTR")] sbyte* Name
-        )
-        {
-            fixed (ID3D12ShaderReflection* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetConstantBufferByName>(lpVtbl->GetConstantBufferByName)(
-                    This,
-                    Name
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetResourceBindingDesc(
-            [In, NativeTypeName("UINT")] uint ResourceIndex,
-            [Out] D3D12_SHADER_INPUT_BIND_DESC* pDesc
-        )
+        public int GetDesc(D3D12_SHADER_DESC* pDesc)
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetResourceBindingDesc>(lpVtbl->GetResourceBindingDesc)(
-                    This,
-                    ResourceIndex,
-                    pDesc
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)(This, pDesc);
+            }
+        }
+
+        public ID3D12ShaderReflectionConstantBuffer* GetConstantBufferByIndex([NativeTypeName("UINT")] uint Index)
+        {
+            fixed (ID3D12ShaderReflection* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetConstantBufferByIndex>(lpVtbl->GetConstantBufferByIndex)(This, Index);
+            }
+        }
+
+        public ID3D12ShaderReflectionConstantBuffer* GetConstantBufferByName([NativeTypeName("LPCSTR")] sbyte* Name)
+        {
+            fixed (ID3D12ShaderReflection* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetConstantBufferByName>(lpVtbl->GetConstantBufferByName)(This, Name);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetInputParameterDesc(
-            [In, NativeTypeName("UINT")] uint ParameterIndex,
-            [Out] D3D12_SIGNATURE_PARAMETER_DESC* pDesc
-        )
+        public int GetResourceBindingDesc([NativeTypeName("UINT")] uint ResourceIndex, D3D12_SHADER_INPUT_BIND_DESC* pDesc)
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetInputParameterDesc>(lpVtbl->GetInputParameterDesc)(
-                    This,
-                    ParameterIndex,
-                    pDesc
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetResourceBindingDesc>(lpVtbl->GetResourceBindingDesc)(This, ResourceIndex, pDesc);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetOutputParameterDesc(
-            [In, NativeTypeName("UINT")] uint ParameterIndex,
-            [Out] D3D12_SIGNATURE_PARAMETER_DESC* pDesc
-        )
+        public int GetInputParameterDesc([NativeTypeName("UINT")] uint ParameterIndex, D3D12_SIGNATURE_PARAMETER_DESC* pDesc)
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetOutputParameterDesc>(lpVtbl->GetOutputParameterDesc)(
-                    This,
-                    ParameterIndex,
-                    pDesc
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetInputParameterDesc>(lpVtbl->GetInputParameterDesc)(This, ParameterIndex, pDesc);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetPatchConstantParameterDesc(
-            [In, NativeTypeName("UINT")] uint ParameterIndex,
-            [Out] D3D12_SIGNATURE_PARAMETER_DESC* pDesc
-        )
+        public int GetOutputParameterDesc([NativeTypeName("UINT")] uint ParameterIndex, D3D12_SIGNATURE_PARAMETER_DESC* pDesc)
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetPatchConstantParameterDesc>(lpVtbl->GetPatchConstantParameterDesc)(
-                    This,
-                    ParameterIndex,
-                    pDesc
-                );
-            }
-        }
-
-        public ID3D12ShaderReflectionVariable* GetVariableByName(
-            [In, NativeTypeName("LPCSTR")] sbyte* Name
-        )
-        {
-            fixed (ID3D12ShaderReflection* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetVariableByName>(lpVtbl->GetVariableByName)(
-                    This,
-                    Name
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetOutputParameterDesc>(lpVtbl->GetOutputParameterDesc)(This, ParameterIndex, pDesc);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetResourceBindingDescByName(
-            [In, NativeTypeName("LPCSTR")] sbyte* Name,
-            [Out] D3D12_SHADER_INPUT_BIND_DESC* pDesc
-        )
+        public int GetPatchConstantParameterDesc([NativeTypeName("UINT")] uint ParameterIndex, D3D12_SIGNATURE_PARAMETER_DESC* pDesc)
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetResourceBindingDescByName>(lpVtbl->GetResourceBindingDescByName)(
-                    This,
-                    Name,
-                    pDesc
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetPatchConstantParameterDesc>(lpVtbl->GetPatchConstantParameterDesc)(This, ParameterIndex, pDesc);
+            }
+        }
+
+        public ID3D12ShaderReflectionVariable* GetVariableByName([NativeTypeName("LPCSTR")] sbyte* Name)
+        {
+            fixed (ID3D12ShaderReflection* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetVariableByName>(lpVtbl->GetVariableByName)(This, Name);
+            }
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetResourceBindingDescByName([NativeTypeName("LPCSTR")] sbyte* Name, D3D12_SHADER_INPUT_BIND_DESC* pDesc)
+        {
+            fixed (ID3D12ShaderReflection* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetResourceBindingDescByName>(lpVtbl->GetResourceBindingDescByName)(This, Name, pDesc);
             }
         }
 
@@ -369,9 +207,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetMovInstructionCount>(lpVtbl->GetMovInstructionCount)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetMovInstructionCount>(lpVtbl->GetMovInstructionCount)(This);
             }
         }
 
@@ -380,9 +216,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetMovcInstructionCount>(lpVtbl->GetMovcInstructionCount)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetMovcInstructionCount>(lpVtbl->GetMovcInstructionCount)(This);
             }
         }
 
@@ -391,9 +225,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetConversionInstructionCount>(lpVtbl->GetConversionInstructionCount)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetConversionInstructionCount>(lpVtbl->GetConversionInstructionCount)(This);
             }
         }
 
@@ -402,9 +234,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetBitwiseInstructionCount>(lpVtbl->GetBitwiseInstructionCount)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetBitwiseInstructionCount>(lpVtbl->GetBitwiseInstructionCount)(This);
             }
         }
 
@@ -412,9 +242,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetGSInputPrimitive>(lpVtbl->GetGSInputPrimitive)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetGSInputPrimitive>(lpVtbl->GetGSInputPrimitive)(This);
             }
         }
 
@@ -423,9 +251,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_IsSampleFrequencyShader>(lpVtbl->IsSampleFrequencyShader)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_IsSampleFrequencyShader>(lpVtbl->IsSampleFrequencyShader)(This);
             }
         }
 
@@ -434,41 +260,25 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetNumInterfaceSlots>(lpVtbl->GetNumInterfaceSlots)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetNumInterfaceSlots>(lpVtbl->GetNumInterfaceSlots)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetMinFeatureLevel(
-            [Out] D3D_FEATURE_LEVEL* pLevel
-        )
+        public int GetMinFeatureLevel(D3D_FEATURE_LEVEL* pLevel)
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetMinFeatureLevel>(lpVtbl->GetMinFeatureLevel)(
-                    This,
-                    pLevel
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetMinFeatureLevel>(lpVtbl->GetMinFeatureLevel)(This, pLevel);
             }
         }
 
         [return: NativeTypeName("UINT")]
-        public uint GetThreadGroupSize(
-            [Out, NativeTypeName("UINT")] uint* pSizeX = null,
-            [Out, NativeTypeName("UINT")] uint* pSizeY = null,
-            [Out, NativeTypeName("UINT")] uint* pSizeZ = null
-        )
+        public uint GetThreadGroupSize([NativeTypeName("UINT")] uint* pSizeX = null, [NativeTypeName("UINT")] uint* pSizeY = null, [NativeTypeName("UINT")] uint* pSizeZ = null)
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetThreadGroupSize>(lpVtbl->GetThreadGroupSize)(
-                    This,
-                    pSizeX,
-                    pSizeY,
-                    pSizeZ
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetThreadGroupSize>(lpVtbl->GetThreadGroupSize)(This, pSizeX, pSizeY, pSizeZ);
             }
         }
 
@@ -477,25 +287,18 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12ShaderReflection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetRequiresFlags>(lpVtbl->GetRequiresFlags)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetRequiresFlags>(lpVtbl->GetRequiresFlags)(This);
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetDesc;
 
             public IntPtr GetConstantBufferByIndex;
@@ -533,8 +336,6 @@ namespace TerraFX.Interop
             public IntPtr GetThreadGroupSize;
 
             public IntPtr GetRequiresFlags;
-            #endregion
         }
-        #endregion
     }
 }

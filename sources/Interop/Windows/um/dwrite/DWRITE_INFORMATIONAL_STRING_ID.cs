@@ -72,6 +72,5 @@ namespace TerraFX.Interop
         DWRITE_INFORMATIONAL_STRING_DESIGN_SCRIPT_LANGUAGE_TAG,
 
         /// <summary>Script/language tag to identify the scripts or languages that the font declares it is able to support.</summary>
-        DWRITE_INFORMATIONAL_STRING_SUPPORTED_SCRIPT_LANGUAGE_TAG,
-    }
+        DWRITE_INFORMATIONAL_STRING_SUPPORTED_SCRIPT_LANGUAGE_TAG, }
 }

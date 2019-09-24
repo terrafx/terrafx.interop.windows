@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct D3D12_TILE_REGION_SIZE
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint NumTiles;
 
@@ -22,9 +21,7 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT16")]
         public ushort Depth;
-        #endregion
 
-        #region Constructors
         public D3D12_TILE_REGION_SIZE(uint numTiles, int useBox, uint width, ushort height, ushort depth)
         {
             NumTiles = numTiles;
@@ -33,6 +30,5 @@ namespace TerraFX.Interop
             Height = height;
             Depth = depth;
         }
-        #endregion
     }
 }

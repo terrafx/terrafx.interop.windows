@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public struct POINT
     {
-        #region Fields
         [NativeTypeName("LONG")]
         public int x;
 
         [NativeTypeName("LONG")]
         public int y;
-        #endregion
     }
 }

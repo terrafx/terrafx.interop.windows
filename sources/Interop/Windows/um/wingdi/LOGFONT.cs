@@ -3,14 +3,10 @@
 // Ported from um\wingdi.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System.Runtime.InteropServices;
-
 namespace TerraFX.Interop
 {
-    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     public unsafe struct LOGFONT
     {
-        #region Fields
         [NativeTypeName("LONG")]
         public int lfHeight;
 
@@ -52,6 +48,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("WCHAR[32]")]
         public fixed char lfFaceName[32];
-        #endregion
     }
 }

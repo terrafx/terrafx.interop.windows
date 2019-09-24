@@ -3,15 +3,11 @@
 // Ported from um\dwrite_3.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System.Runtime.InteropServices;
-
 namespace TerraFX.Interop
 {
     /// <summary>Font property used for filtering font sets and building a font set with explicit properties.</summary>
-    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     public unsafe struct DWRITE_FONT_PROPERTY
     {
-        #region Fields
         /// <summary>Specifies the requested font property, such as DWRITE_FONT_PROPERTY_ID_FAMILY_NAME.</summary>
         public DWRITE_FONT_PROPERTY_ID propertyId;
 
@@ -24,6 +20,5 @@ namespace TerraFX.Interop
         /// When used for font set filtering, leave this empty: a match will be found regardless of language associated with property values.</remarks>
         [NativeTypeName("WCHAR[]")]
         public char* localeName;
-        #endregion
     }
 }

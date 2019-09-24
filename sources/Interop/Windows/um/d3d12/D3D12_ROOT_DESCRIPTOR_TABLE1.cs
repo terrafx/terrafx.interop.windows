@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_ROOT_DESCRIPTOR_TABLE1
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint NumDescriptorRanges;
 
         [NativeTypeName("D3D12_DESCRIPTOR_RANGE1[]")]
         public D3D12_DESCRIPTOR_RANGE1* pDescriptorRanges;
-        #endregion
     }
 }

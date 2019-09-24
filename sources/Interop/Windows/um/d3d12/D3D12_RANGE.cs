@@ -9,20 +9,16 @@ namespace TerraFX.Interop
 {
     public struct D3D12_RANGE
     {
-        #region Fields
         [NativeTypeName("SIZE_T")]
         public UIntPtr Begin;
 
         [NativeTypeName("SIZE_T")]
         public UIntPtr End;
-        #endregion
 
-        #region Constructors
         public D3D12_RANGE(UIntPtr begin, UIntPtr end)
         {
             Begin = begin;
             End = end;
         }
-        #endregion
     }
 }

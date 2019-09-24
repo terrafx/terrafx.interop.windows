@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -13,87 +12,44 @@ namespace TerraFX.Interop
     [Guid("519AE1BD-D19A-420D-B849-364F594776B7")]
     public unsafe struct ID2D1RenderInfo
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] ID2D1RenderInfo* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1RenderInfo* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] ID2D1RenderInfo* This
-        );
+        public delegate uint _AddRef(ID2D1RenderInfo* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] ID2D1RenderInfo* This
-        );
-        #endregion
+        public delegate uint _Release(ID2D1RenderInfo* This);
 
-        #region Delegates
         /// <summary>Sets options for sampling the specified image input</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetInputDescription(
-            [In] ID2D1RenderInfo* This,
-            [In, NativeTypeName("UINT32")] uint inputIndex,
-            [In] D2D1_INPUT_DESCRIPTION inputDescription
-        );
+        public delegate int _SetInputDescription(ID2D1RenderInfo* This, [NativeTypeName("UINT32")] uint inputIndex, D2D1_INPUT_DESCRIPTION inputDescription);
 
         /// <summary>Controls the output precision and channel-depth for the associated transform.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetOutputBuffer(
-            [In] ID2D1RenderInfo* This,
-            [In] D2D1_BUFFER_PRECISION bufferPrecision,
-            [In] D2D1_CHANNEL_DEPTH channelDepth
-        );
+        public delegate int _SetOutputBuffer(ID2D1RenderInfo* This, D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth);
 
         /// <summary>Controls whether the output of the associated transform is cached.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _SetCached(
-            [In] ID2D1RenderInfo* This,
-            [In, NativeTypeName("BOOL")] int isCached
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _SetCached(ID2D1RenderInfo* This, [NativeTypeName("BOOL")] int isCached);
 
         /// <summary>Provides a hint of the approximate shader instruction count per pixel.  If provided, it may improve performance when processing large images.  Instructions should be counted multiple times if occurring within loops.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _SetInstructionCountHint(
-            [In] ID2D1RenderInfo* This,
-            [In, NativeTypeName("UINT32")] uint instructionCount
-        );
-        #endregion
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _SetInstructionCountHint(ID2D1RenderInfo* This, [NativeTypeName("UINT32")] uint instructionCount);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1RenderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -102,9 +58,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1RenderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -113,85 +67,52 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1RenderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region Methods
-        [return: NativeTypeName("HRESULT")]
-        public int SetInputDescription(
-            [In, NativeTypeName("UINT32")] uint inputIndex,
-            [In] D2D1_INPUT_DESCRIPTION inputDescription
-        )
-        {
-            fixed (ID2D1RenderInfo* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetInputDescription>(lpVtbl->SetInputDescription)(
-                    This,
-                    inputIndex,
-                    inputDescription
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetOutputBuffer(
-            [In] D2D1_BUFFER_PRECISION bufferPrecision,
-            [In] D2D1_CHANNEL_DEPTH channelDepth
-        )
+        public int SetInputDescription([NativeTypeName("UINT32")] uint inputIndex, D2D1_INPUT_DESCRIPTION inputDescription)
         {
             fixed (ID2D1RenderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetOutputBuffer>(lpVtbl->SetOutputBuffer)(
-                    This,
-                    bufferPrecision,
-                    channelDepth
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetInputDescription>(lpVtbl->SetInputDescription)(This, inputIndex, inputDescription);
             }
         }
 
-        public void SetCached(
-            [In, NativeTypeName("BOOL")] int isCached
-        )
+        [return: NativeTypeName("HRESULT")]
+        public int SetOutputBuffer(D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth)
         {
             fixed (ID2D1RenderInfo* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetCached>(lpVtbl->SetCached)(
-                    This,
-                    isCached
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetOutputBuffer>(lpVtbl->SetOutputBuffer)(This, bufferPrecision, channelDepth);
             }
         }
 
-        public void SetInstructionCountHint(
-            [In, NativeTypeName("UINT32")] uint instructionCount
-        )
+        public void SetCached([NativeTypeName("BOOL")] int isCached)
         {
             fixed (ID2D1RenderInfo* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetInstructionCountHint>(lpVtbl->SetInstructionCountHint)(
-                    This,
-                    instructionCount
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetCached>(lpVtbl->SetCached)(This, isCached);
             }
         }
-        #endregion
 
-        #region Structs
+        public void SetInstructionCountHint([NativeTypeName("UINT32")] uint instructionCount)
+        {
+            fixed (ID2D1RenderInfo* This = &this)
+            {
+                Marshal.GetDelegateForFunctionPointer<_SetInstructionCountHint>(lpVtbl->SetInstructionCountHint)(This, instructionCount);
+            }
+        }
+
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr SetInputDescription;
 
             public IntPtr SetOutputBuffer;
@@ -199,8 +120,6 @@ namespace TerraFX.Interop
             public IntPtr SetCached;
 
             public IntPtr SetInstructionCountHint;
-            #endregion
         }
-        #endregion
     }
 }

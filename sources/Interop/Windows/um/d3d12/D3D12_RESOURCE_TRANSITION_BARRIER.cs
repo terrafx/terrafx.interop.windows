@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_RESOURCE_TRANSITION_BARRIER
     {
-        #region Fields
         public ID3D12Resource* pResource;
 
         [NativeTypeName("UINT")]
@@ -16,6 +15,5 @@ namespace TerraFX.Interop
         public D3D12_RESOURCE_STATES StateBefore;
 
         public D3D12_RESOURCE_STATES StateAfter;
-        #endregion
     }
 }

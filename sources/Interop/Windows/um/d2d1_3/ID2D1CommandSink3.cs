@@ -5,344 +5,153 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     [Guid("18079135-4CF3-4868-BC8E-06067E6D242D")]
     public unsafe struct ID2D1CommandSink3
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] ID2D1CommandSink3* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1CommandSink3* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] ID2D1CommandSink3* This
-        );
+        public delegate uint _AddRef(ID2D1CommandSink3* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] ID2D1CommandSink3* This
-        );
-        #endregion
+        public delegate uint _Release(ID2D1CommandSink3* This);
 
-        #region ID2D1CommandSink Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _BeginDraw(
-            [In] ID2D1CommandSink3* This
-        );
+        public delegate int _BeginDraw(ID2D1CommandSink3* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _EndDraw(
-            [In] ID2D1CommandSink3* This
-        );
+        public delegate int _EndDraw(ID2D1CommandSink3* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetAntialiasMode(
-            [In] ID2D1CommandSink3* This,
-            [In] D2D1_ANTIALIAS_MODE antialiasMode
-        );
+        public delegate int _SetAntialiasMode(ID2D1CommandSink3* This, D2D1_ANTIALIAS_MODE antialiasMode);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetTags(
-            [In] ID2D1CommandSink3* This,
-            [In, NativeTypeName("D2D1_TAG")] ulong tag1,
-            [In, NativeTypeName("D2D1_TAG")] ulong tag2
-        );
+        public delegate int _SetTags(ID2D1CommandSink3* This, [NativeTypeName("D2D1_TAG")] ulong tag1, [NativeTypeName("D2D1_TAG")] ulong tag2);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetTextAntialiasMode(
-            [In] ID2D1CommandSink3* This,
-            [In] D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode
-        );
+        public delegate int _SetTextAntialiasMode(ID2D1CommandSink3* This, D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetTextRenderingParams(
-            [In] ID2D1CommandSink3* This,
-            [In] IDWriteRenderingParams* textRenderingParams = null
-        );
+        public delegate int _SetTextRenderingParams(ID2D1CommandSink3* This, IDWriteRenderingParams* textRenderingParams = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetTransform(
-            [In] ID2D1CommandSink3* This,
-            [In, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform
-        );
+        public delegate int _SetTransform(ID2D1CommandSink3* This, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrimitiveBlend(
-            [In] ID2D1CommandSink3* This,
-            [In] D2D1_PRIMITIVE_BLEND primitiveBlend
-        );
+        public delegate int _SetPrimitiveBlend(ID2D1CommandSink3* This, D2D1_PRIMITIVE_BLEND primitiveBlend);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetUnitMode(
-            [In] ID2D1CommandSink3* This,
-            [In] D2D1_UNIT_MODE unitMode
-        );
+        public delegate int _SetUnitMode(ID2D1CommandSink3* This, D2D1_UNIT_MODE unitMode);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Clear(
-            [In] ID2D1CommandSink3* This,
-            [In, NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA* color = null
-        );
+        public delegate int _Clear(ID2D1CommandSink3* This, [NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA* color = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DrawGlyphRun(
-            [In] ID2D1CommandSink3* This,
-            [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F baselineOrigin,
-            [In] DWRITE_GLYPH_RUN* glyphRun,
-            [In, Optional] DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription,
-            [In] ID2D1Brush* foregroundBrush,
-            [In] DWRITE_MEASURING_MODE measuringMode
-        );
+        public delegate int _DrawGlyphRun(ID2D1CommandSink3* This, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F baselineOrigin, DWRITE_GLYPH_RUN* glyphRun, [Optional] DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, ID2D1Brush* foregroundBrush, DWRITE_MEASURING_MODE measuringMode);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DrawLine(
-            [In] ID2D1CommandSink3* This,
-            [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point0,
-            [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point1,
-            [In] ID2D1Brush* brush,
-            [In, NativeTypeName("FLOAT")] float strokeWidth,
-            [In] ID2D1StrokeStyle* strokeStyle = null
-        );
+        public delegate int _DrawLine(ID2D1CommandSink3* This, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point0, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point1, ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth, ID2D1StrokeStyle* strokeStyle = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DrawGeometry(
-            [In] ID2D1CommandSink3* This,
-            [In] ID2D1Geometry* geometry,
-            [In] ID2D1Brush* brush,
-            [In, NativeTypeName("FLOAT")] float strokeWidth,
-            [In] ID2D1StrokeStyle* strokeStyle = null
-        );
+        public delegate int _DrawGeometry(ID2D1CommandSink3* This, ID2D1Geometry* geometry, ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth, ID2D1StrokeStyle* strokeStyle = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DrawRectangle(
-            [In] ID2D1CommandSink3* This,
-            [In, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* rect,
-            [In] ID2D1Brush* brush,
-            [In, NativeTypeName("FLOAT")] float strokeWidth,
-            [In] ID2D1StrokeStyle* strokeStyle = null
-        );
+        public delegate int _DrawRectangle(ID2D1CommandSink3* This, [NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* rect, ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth, ID2D1StrokeStyle* strokeStyle = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DrawBitmap(
-            [In] ID2D1CommandSink3* This,
-            [In] ID2D1Bitmap* bitmap,
-            [In, Optional, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* destinationRectangle,
-            [In, NativeTypeName("FLOAT")] float opacity,
-            [In] D2D1_INTERPOLATION_MODE interpolationMode,
-            [In, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* sourceRectangle = null,
-            [In, NativeTypeName("D2D1_MATRIX_4X4_F")] D2D_MATRIX_4X4_F* perspectiveTransform = null
-        );
+        public delegate int _DrawBitmap(ID2D1CommandSink3* This, ID2D1Bitmap* bitmap, [Optional, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* destinationRectangle, [NativeTypeName("FLOAT")] float opacity, D2D1_INTERPOLATION_MODE interpolationMode, [NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* sourceRectangle = null, [NativeTypeName("D2D1_MATRIX_4X4_F")] D2D_MATRIX_4X4_F* perspectiveTransform = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DrawImage(
-            [In] ID2D1CommandSink3* This,
-            [In] ID2D1Image* image,
-            [In, Optional, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F* targetOffset,
-            [In, Optional, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* imageRectangle,
-            [In] D2D1_INTERPOLATION_MODE interpolationMode,
-            [In] D2D1_COMPOSITE_MODE compositeMode
-        );
+        public delegate int _DrawImage(ID2D1CommandSink3* This, ID2D1Image* image, [Optional, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F* targetOffset, [Optional, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode, D2D1_COMPOSITE_MODE compositeMode);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DrawGdiMetafile(
-            [In] ID2D1CommandSink3* This,
-            [In] ID2D1GdiMetafile* gdiMetafile,
-            [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F* targetOffset = null
-        );
+        public delegate int _DrawGdiMetafile(ID2D1CommandSink3* This, ID2D1GdiMetafile* gdiMetafile, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F* targetOffset = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _FillMesh(
-            [In] ID2D1CommandSink3* This,
-            [In] ID2D1Mesh* mesh,
-            [In] ID2D1Brush* brush
-        );
+        public delegate int _FillMesh(ID2D1CommandSink3* This, ID2D1Mesh* mesh, ID2D1Brush* brush);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _FillOpacityMask(
-            [In] ID2D1CommandSink3* This,
-            [In] ID2D1Bitmap* opacityMask,
-            [In] ID2D1Brush* brush,
-            [In, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* destinationRectangle = null,
-            [In, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* sourceRectangle = null
-        );
+        public delegate int _FillOpacityMask(ID2D1CommandSink3* This, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, [NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* destinationRectangle = null, [NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* sourceRectangle = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _FillGeometry(
-            [In] ID2D1CommandSink3* This,
-            [In] ID2D1Geometry* geometry,
-            [In] ID2D1Brush* brush,
-            [In] ID2D1Brush* opacityBrush = null
-        );
+        public delegate int _FillGeometry(ID2D1CommandSink3* This, ID2D1Geometry* geometry, ID2D1Brush* brush, ID2D1Brush* opacityBrush = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _FillRectangle(
-            [In] ID2D1CommandSink3* This,
-            [In, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* rect,
-            [In] ID2D1Brush* brush
-        );
+        public delegate int _FillRectangle(ID2D1CommandSink3* This, [NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* rect, ID2D1Brush* brush);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _PushAxisAlignedClip(
-            [In] ID2D1CommandSink3* This,
-            [In, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* clipRect,
-            [In] D2D1_ANTIALIAS_MODE antialiasMode
-        );
+        public delegate int _PushAxisAlignedClip(ID2D1CommandSink3* This, [NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* clipRect, D2D1_ANTIALIAS_MODE antialiasMode);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _PushLayer(
-            [In] ID2D1CommandSink3* This,
-            [In] D2D1_LAYER_PARAMETERS1* layerParameters1,
-            [In] ID2D1Layer* layer = null
-        );
+        public delegate int _PushLayer(ID2D1CommandSink3* This, D2D1_LAYER_PARAMETERS1* layerParameters1, ID2D1Layer* layer = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _PopAxisAlignedClip(
-            [In] ID2D1CommandSink3* This
-        );
+        public delegate int _PopAxisAlignedClip(ID2D1CommandSink3* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _PopLayer(
-            [In] ID2D1CommandSink3* This
-        );
-        #endregion
+        public delegate int _PopLayer(ID2D1CommandSink3* This);
 
-        #region ID2D1CommandSink1 Delegates
         /// <summary>This method is called if primitiveBlend value was added after Windows 8. SetPrimitiveBlend method is used for Win8 values (_SOURCE_OVER and _COPY).</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrimitiveBlend1(
-            [In] ID2D1CommandSink3* This,
-            [In] D2D1_PRIMITIVE_BLEND primitiveBlend
-        );
-        #endregion
+        public delegate int _SetPrimitiveBlend1(ID2D1CommandSink3* This, D2D1_PRIMITIVE_BLEND primitiveBlend);
 
-        #region ID2D1CommandSink2 Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DrawInk(
-            [In] ID2D1CommandSink3* This,
-            [In] ID2D1Ink* ink,
-            [In] ID2D1Brush* brush,
-            [In] ID2D1InkStyle* inkStyle = null
-        );
+        public delegate int _DrawInk(ID2D1CommandSink3* This, ID2D1Ink* ink, ID2D1Brush* brush, ID2D1InkStyle* inkStyle = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DrawGradientMesh(
-            [In] ID2D1CommandSink3* This,
-            [In] ID2D1GradientMesh* gradientMesh
-        );
+        public delegate int _DrawGradientMesh(ID2D1CommandSink3* This, ID2D1GradientMesh* gradientMesh);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DrawGdiMetafile1(
-            [In] ID2D1CommandSink3* This,
-            [In] ID2D1GdiMetafile* gdiMetafile,
-            [In, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* destinationRectangle = null,
-            [In, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* sourceRectangle = null
-        );
-        #endregion
+        public delegate int _DrawGdiMetafile1(ID2D1CommandSink3* This, ID2D1GdiMetafile* gdiMetafile, [NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* destinationRectangle = null, [NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* sourceRectangle = null);
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _DrawSpriteBatch(
-            [In] ID2D1CommandSink3* This,
-            [In] ID2D1SpriteBatch* spriteBatch,
-            [In, NativeTypeName("UINT32")] uint startIndex,
-            [In, NativeTypeName("UINT32")] uint spriteCount,
-            [In] ID2D1Bitmap* bitmap,
-            [In] D2D1_BITMAP_INTERPOLATION_MODE interpolationMode,
-            [In] D2D1_SPRITE_OPTIONS spriteOptions
-        );
-        #endregion
+        public delegate int _DrawSpriteBatch(ID2D1CommandSink3* This, ID2D1SpriteBatch* spriteBatch, [NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint spriteCount, ID2D1Bitmap* bitmap, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode, D2D1_SPRITE_OPTIONS spriteOptions);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -351,9 +160,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -362,22 +169,16 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
-        #endregion
 
-        #region ID2D1CommandSink Methods
         [return: NativeTypeName("HRESULT")]
         public int BeginDraw()
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_BeginDraw>(lpVtbl->BeginDraw)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_BeginDraw>(lpVtbl->BeginDraw)(This);
             }
         }
 
@@ -386,371 +187,196 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_EndDraw>(lpVtbl->EndDraw)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_EndDraw>(lpVtbl->EndDraw)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetAntialiasMode(
-            [In] D2D1_ANTIALIAS_MODE antialiasMode
-        )
+        public int SetAntialiasMode(D2D1_ANTIALIAS_MODE antialiasMode)
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetAntialiasMode>(lpVtbl->SetAntialiasMode)(
-                    This,
-                    antialiasMode
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetAntialiasMode>(lpVtbl->SetAntialiasMode)(This, antialiasMode);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetTags(
-            [In, NativeTypeName("D2D1_TAG")] ulong tag1,
-            [In, NativeTypeName("D2D1_TAG")] ulong tag2
-        )
+        public int SetTags([NativeTypeName("D2D1_TAG")] ulong tag1, [NativeTypeName("D2D1_TAG")] ulong tag2)
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetTags>(lpVtbl->SetTags)(
-                    This,
-                    tag1,
-                    tag2
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetTags>(lpVtbl->SetTags)(This, tag1, tag2);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetTextAntialiasMode(
-            [In] D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode
-        )
+        public int SetTextAntialiasMode(D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode)
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetTextAntialiasMode>(lpVtbl->SetTextAntialiasMode)(
-                    This,
-                    textAntialiasMode
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetTextAntialiasMode>(lpVtbl->SetTextAntialiasMode)(This, textAntialiasMode);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetTextRenderingParams(
-            [In] IDWriteRenderingParams* textRenderingParams = null
-        )
+        public int SetTextRenderingParams(IDWriteRenderingParams* textRenderingParams = null)
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetTextRenderingParams>(lpVtbl->SetTextRenderingParams)(
-                    This,
-                    textRenderingParams
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetTextRenderingParams>(lpVtbl->SetTextRenderingParams)(This, textRenderingParams);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetTransform(
-            [In, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform
-        )
+        public int SetTransform([NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform)
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetTransform>(lpVtbl->SetTransform)(
-                    This,
-                    transform
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetTransform>(lpVtbl->SetTransform)(This, transform);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetPrimitiveBlend(
-            [In] D2D1_PRIMITIVE_BLEND primitiveBlend
-        )
+        public int SetPrimitiveBlend(D2D1_PRIMITIVE_BLEND primitiveBlend)
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetPrimitiveBlend>(lpVtbl->SetPrimitiveBlend)(
-                    This,
-                    primitiveBlend
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetPrimitiveBlend>(lpVtbl->SetPrimitiveBlend)(This, primitiveBlend);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetUnitMode(
-            [In] D2D1_UNIT_MODE unitMode
-        )
+        public int SetUnitMode(D2D1_UNIT_MODE unitMode)
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetUnitMode>(lpVtbl->SetUnitMode)(
-                    This,
-                    unitMode
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetUnitMode>(lpVtbl->SetUnitMode)(This, unitMode);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Clear(
-            [In, NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA* color = null
-        )
+        public int Clear([NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA* color = null)
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Clear>(lpVtbl->Clear)(
-                    This,
-                    color
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Clear>(lpVtbl->Clear)(This, color);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int DrawGlyphRun(
-            [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F baselineOrigin,
-            [In] DWRITE_GLYPH_RUN* glyphRun,
-            [In, Optional] DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription,
-            [In] ID2D1Brush* foregroundBrush,
-            [In] DWRITE_MEASURING_MODE measuringMode
-        )
+        public int DrawGlyphRun([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F baselineOrigin, DWRITE_GLYPH_RUN* glyphRun, [Optional] DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, ID2D1Brush* foregroundBrush, DWRITE_MEASURING_MODE measuringMode)
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_DrawGlyphRun>(lpVtbl->DrawGlyphRun)(
-                    This,
-                    baselineOrigin,
-                    glyphRun,
-                    glyphRunDescription,
-                    foregroundBrush,
-                    measuringMode
-                );
+                return Marshal.GetDelegateForFunctionPointer<_DrawGlyphRun>(lpVtbl->DrawGlyphRun)(This, baselineOrigin, glyphRun, glyphRunDescription, foregroundBrush, measuringMode);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int DrawLine(
-            [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point0,
-            [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point1,
-            [In] ID2D1Brush* brush,
-            [In, NativeTypeName("FLOAT")] float strokeWidth,
-            [In] ID2D1StrokeStyle* strokeStyle = null
-        )
+        public int DrawLine([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point0, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point1, ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth, ID2D1StrokeStyle* strokeStyle = null)
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_DrawLine>(lpVtbl->DrawLine)(
-                    This,
-                    point0,
-                    point1,
-                    brush,
-                    strokeWidth,
-                    strokeStyle
-                );
+                return Marshal.GetDelegateForFunctionPointer<_DrawLine>(lpVtbl->DrawLine)(This, point0, point1, brush, strokeWidth, strokeStyle);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int DrawGeometry(
-            [In] ID2D1Geometry* geometry,
-            [In] ID2D1Brush* brush,
-            [In, NativeTypeName("FLOAT")] float strokeWidth,
-            [In] ID2D1StrokeStyle* strokeStyle = null
-        )
+        public int DrawGeometry(ID2D1Geometry* geometry, ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth, ID2D1StrokeStyle* strokeStyle = null)
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_DrawGeometry>(lpVtbl->DrawGeometry)(
-                    This,
-                    geometry,
-                    brush,
-                    strokeWidth,
-                    strokeStyle
-                );
+                return Marshal.GetDelegateForFunctionPointer<_DrawGeometry>(lpVtbl->DrawGeometry)(This, geometry, brush, strokeWidth, strokeStyle);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int DrawRectangle(
-            [In, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* rect,
-            [In] ID2D1Brush* brush,
-            [In, NativeTypeName("FLOAT")] float strokeWidth,
-            [In] ID2D1StrokeStyle* strokeStyle = null
-        )
+        public int DrawRectangle([NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* rect, ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth, ID2D1StrokeStyle* strokeStyle = null)
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_DrawRectangle>(lpVtbl->DrawRectangle)(
-                    This,
-                    rect,
-                    brush,
-                    strokeWidth,
-                    strokeStyle
-                );
+                return Marshal.GetDelegateForFunctionPointer<_DrawRectangle>(lpVtbl->DrawRectangle)(This, rect, brush, strokeWidth, strokeStyle);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int DrawBitmap(
-            [In] ID2D1Bitmap* bitmap,
-            [In, Optional, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* destinationRectangle,
-            [In, NativeTypeName("FLOAT")] float opacity,
-            [In] D2D1_INTERPOLATION_MODE interpolationMode,
-            [In, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* sourceRectangle = null,
-            [In, NativeTypeName("D2D1_MATRIX_4X4_F")] D2D_MATRIX_4X4_F* perspectiveTransform = null
-        )
+        public int DrawBitmap(ID2D1Bitmap* bitmap, [Optional, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* destinationRectangle, [NativeTypeName("FLOAT")] float opacity, D2D1_INTERPOLATION_MODE interpolationMode, [NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* sourceRectangle = null, [NativeTypeName("D2D1_MATRIX_4X4_F")] D2D_MATRIX_4X4_F* perspectiveTransform = null)
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_DrawBitmap>(lpVtbl->DrawBitmap)(
-                    This,
-                    bitmap,
-                    destinationRectangle,
-                    opacity,
-                    interpolationMode,
-                    sourceRectangle,
-                    perspectiveTransform
-                );
+                return Marshal.GetDelegateForFunctionPointer<_DrawBitmap>(lpVtbl->DrawBitmap)(This, bitmap, destinationRectangle, opacity, interpolationMode, sourceRectangle, perspectiveTransform);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int DrawImage(
-            [In] ID2D1Image* image,
-            [In, Optional, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F* targetOffset,
-            [In, Optional, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* imageRectangle,
-            [In] D2D1_INTERPOLATION_MODE interpolationMode,
-            [In] D2D1_COMPOSITE_MODE compositeMode
-        )
+        public int DrawImage(ID2D1Image* image, [Optional, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F* targetOffset, [Optional, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode, D2D1_COMPOSITE_MODE compositeMode)
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_DrawImage>(lpVtbl->DrawImage)(
-                    This,
-                    image,
-                    targetOffset,
-                    imageRectangle,
-                    interpolationMode,
-                    compositeMode
-                );
+                return Marshal.GetDelegateForFunctionPointer<_DrawImage>(lpVtbl->DrawImage)(This, image, targetOffset, imageRectangle, interpolationMode, compositeMode);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int DrawGdiMetafile(
-            [In] ID2D1GdiMetafile* gdiMetafile,
-            [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F* targetOffset = null
-        )
+        public int DrawGdiMetafile(ID2D1GdiMetafile* gdiMetafile, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F* targetOffset = null)
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_DrawGdiMetafile>(lpVtbl->DrawGdiMetafile)(
-                    This,
-                    gdiMetafile,
-                    targetOffset
-                );
+                return Marshal.GetDelegateForFunctionPointer<_DrawGdiMetafile>(lpVtbl->DrawGdiMetafile)(This, gdiMetafile, targetOffset);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int FillMesh(
-            [In] ID2D1Mesh* mesh,
-            [In] ID2D1Brush* brush
-        )
+        public int FillMesh(ID2D1Mesh* mesh, ID2D1Brush* brush)
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_FillMesh>(lpVtbl->FillMesh)(
-                    This,
-                    mesh,
-                    brush
-                );
+                return Marshal.GetDelegateForFunctionPointer<_FillMesh>(lpVtbl->FillMesh)(This, mesh, brush);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int FillOpacityMask(
-            [In] ID2D1Bitmap* opacityMask,
-            [In] ID2D1Brush* brush,
-            [In, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* destinationRectangle = null,
-            [In, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* sourceRectangle = null
-        )
+        public int FillOpacityMask(ID2D1Bitmap* opacityMask, ID2D1Brush* brush, [NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* destinationRectangle = null, [NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* sourceRectangle = null)
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_FillOpacityMask>(lpVtbl->FillOpacityMask)(
-                    This,
-                    opacityMask,
-                    brush,
-                    destinationRectangle,
-                    sourceRectangle
-                );
+                return Marshal.GetDelegateForFunctionPointer<_FillOpacityMask>(lpVtbl->FillOpacityMask)(This, opacityMask, brush, destinationRectangle, sourceRectangle);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int FillGeometry(
-            [In] ID2D1Geometry* geometry,
-            [In] ID2D1Brush* brush,
-            [In] ID2D1Brush* opacityBrush = null
-        )
+        public int FillGeometry(ID2D1Geometry* geometry, ID2D1Brush* brush, ID2D1Brush* opacityBrush = null)
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_FillGeometry>(lpVtbl->FillGeometry)(
-                    This,
-                    geometry,
-                    brush,
-                    opacityBrush
-                );
+                return Marshal.GetDelegateForFunctionPointer<_FillGeometry>(lpVtbl->FillGeometry)(This, geometry, brush, opacityBrush);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int FillRectangle(
-            [In, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* rect,
-            [In] ID2D1Brush* brush
-        )
+        public int FillRectangle([NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* rect, ID2D1Brush* brush)
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_FillRectangle>(lpVtbl->FillRectangle)(
-                    This,
-                    rect,
-                    brush
-                );
+                return Marshal.GetDelegateForFunctionPointer<_FillRectangle>(lpVtbl->FillRectangle)(This, rect, brush);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int PushAxisAlignedClip(
-            [In, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* clipRect,
-            [In] D2D1_ANTIALIAS_MODE antialiasMode
-        )
+        public int PushAxisAlignedClip([NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* clipRect, D2D1_ANTIALIAS_MODE antialiasMode)
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_PushAxisAlignedClip>(lpVtbl->PushAxisAlignedClip)(
-                    This,
-                    clipRect,
-                    antialiasMode
-                );
+                return Marshal.GetDelegateForFunctionPointer<_PushAxisAlignedClip>(lpVtbl->PushAxisAlignedClip)(This, clipRect, antialiasMode);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int PushLayer(
-            [In] D2D1_LAYER_PARAMETERS1* layerParameters1,
-            [In] ID2D1Layer* layer = null
-        )
+        public int PushLayer(D2D1_LAYER_PARAMETERS1* layerParameters1, ID2D1Layer* layer = null)
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_PushLayer>(lpVtbl->PushLayer)(
-                    This,
-                    layerParameters1,
-                    layer
-                );
+                return Marshal.GetDelegateForFunctionPointer<_PushLayer>(lpVtbl->PushLayer)(This, layerParameters1, layer);
             }
         }
 
@@ -759,9 +385,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_PopAxisAlignedClip>(lpVtbl->PopAxisAlignedClip)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_PopAxisAlignedClip>(lpVtbl->PopAxisAlignedClip)(This);
             }
         }
 
@@ -770,119 +394,63 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_PopLayer>(lpVtbl->PopLayer)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region ID2D1CommandSink1 Methods
-        [return: NativeTypeName("HRESULT")]
-        public int SetPrimitiveBlend1(
-            [In] D2D1_PRIMITIVE_BLEND primitiveBlend
-        )
-        {
-            fixed (ID2D1CommandSink3* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetPrimitiveBlend1>(lpVtbl->SetPrimitiveBlend1)(
-                    This,
-                    primitiveBlend
-                );
-            }
-        }
-        #endregion
-
-        #region ID2D1CommandSink2 Methods
-        [return: NativeTypeName("HRESULT")]
-        public int DrawInk(
-            [In] ID2D1Ink* ink,
-            [In] ID2D1Brush* brush,
-            [In] ID2D1InkStyle* inkStyle = null
-        )
-        {
-            fixed (ID2D1CommandSink3* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_DrawInk>(lpVtbl->DrawInk)(
-                    This,
-                    ink,
-                    brush,
-                    inkStyle
-                );
+                return Marshal.GetDelegateForFunctionPointer<_PopLayer>(lpVtbl->PopLayer)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int DrawGradientMesh(
-            [In] ID2D1GradientMesh* gradientMesh
-        )
+        public int SetPrimitiveBlend1(D2D1_PRIMITIVE_BLEND primitiveBlend)
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_DrawGradientMesh>(lpVtbl->DrawGradientMesh)(
-                    This,
-                    gradientMesh
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetPrimitiveBlend1>(lpVtbl->SetPrimitiveBlend1)(This, primitiveBlend);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int DrawGdiMetafile1(
-            [In] ID2D1GdiMetafile* gdiMetafile,
-            [In, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* destinationRectangle = null,
-            [In, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* sourceRectangle = null
-        )
+        public int DrawInk(ID2D1Ink* ink, ID2D1Brush* brush, ID2D1InkStyle* inkStyle = null)
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_DrawGdiMetafile1>(lpVtbl->DrawGdiMetafile1)(
-                    This,
-                    gdiMetafile,
-                    destinationRectangle,
-                    sourceRectangle
-                );
+                return Marshal.GetDelegateForFunctionPointer<_DrawInk>(lpVtbl->DrawInk)(This, ink, brush, inkStyle);
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
-        public int DrawSpriteBatch(
-            [In] ID2D1SpriteBatch* spriteBatch,
-            [In, NativeTypeName("UINT32")] uint startIndex,
-            [In, NativeTypeName("UINT32")] uint spriteCount,
-            [In] ID2D1Bitmap* bitmap,
-            [In] D2D1_BITMAP_INTERPOLATION_MODE interpolationMode,
-            [In] D2D1_SPRITE_OPTIONS spriteOptions
-        )
+        public int DrawGradientMesh(ID2D1GradientMesh* gradientMesh)
         {
             fixed (ID2D1CommandSink3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_DrawSpriteBatch>(lpVtbl->DrawSpriteBatch)(
-                    This,
-                    spriteBatch,
-                    startIndex,
-                    spriteCount,
-                    bitmap,
-                    interpolationMode,
-                    spriteOptions
-                );
+                return Marshal.GetDelegateForFunctionPointer<_DrawGradientMesh>(lpVtbl->DrawGradientMesh)(This, gradientMesh);
             }
         }
-        #endregion
 
-        #region Structs
+        [return: NativeTypeName("HRESULT")]
+        public int DrawGdiMetafile1(ID2D1GdiMetafile* gdiMetafile, [NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* destinationRectangle = null, [NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* sourceRectangle = null)
+        {
+            fixed (ID2D1CommandSink3* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_DrawGdiMetafile1>(lpVtbl->DrawGdiMetafile1)(This, gdiMetafile, destinationRectangle, sourceRectangle);
+            }
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int DrawSpriteBatch(ID2D1SpriteBatch* spriteBatch, [NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint spriteCount, ID2D1Bitmap* bitmap, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode, D2D1_SPRITE_OPTIONS spriteOptions)
+        {
+            fixed (ID2D1CommandSink3* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_DrawSpriteBatch>(lpVtbl->DrawSpriteBatch)(This, spriteBatch, startIndex, spriteCount, bitmap, interpolationMode, spriteOptions);
+            }
+        }
+
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1CommandSink Fields
             public IntPtr BeginDraw;
 
             public IntPtr EndDraw;
@@ -932,24 +500,16 @@ namespace TerraFX.Interop
             public IntPtr PopAxisAlignedClip;
 
             public IntPtr PopLayer;
-            #endregion
 
-            #region ID2D1CommandSink1 Fields
             public IntPtr SetPrimitiveBlend1;
-            #endregion
 
-            #region ID2D1CommandSink2 Fields
             public IntPtr DrawInk;
 
             public IntPtr DrawGradientMesh;
 
             public IntPtr DrawGdiMetafile1;
-            #endregion
 
-            #region Fields
             public IntPtr DrawSpriteBatch;
-            #endregion
         }
-        #endregion
     }
 }

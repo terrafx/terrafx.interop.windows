@@ -5,17 +5,13 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     public static unsafe partial class DXGI
     {
-        #region DXGI_CREATE_FACTORY_* Constants
         public const uint DXGI_CREATE_FACTORY_DEBUG = 0x00000001;
-        #endregion
 
-        #region IID_* Constants
         public static readonly Guid IID_IDXGIDevice3 = new Guid(0x6007896C, 0x3244, 0x4AFD, 0xBF, 0x18, 0xA6, 0xD3, 0xBE, 0xDA, 0x50, 0x23);
 
         public static readonly Guid IID_IDXGISwapChain2 = new Guid(0xA8BE2AC4, 0x199F, 0x4946, 0xB3, 0x31, 0x79, 0x59, 0x9F, 0xB9, 0x8D, 0xE7);
@@ -31,26 +27,13 @@ namespace TerraFX.Interop
         public static readonly Guid IID_IDXGISwapChainMedia = new Guid(0xDD95B90B, 0xF05F, 0x4F6A, 0xBD, 0x65, 0x25, 0xBF, 0xB2, 0x64, 0xBD, 0x84);
 
         public static readonly Guid IID_IDXGIOutput3 = new Guid(0x8A6BB301, 0x7E7E, 0x41F4, 0xA8, 0xE0, 0x5B, 0x32, 0xF7, 0xF9, 0x9B, 0x18);
-        #endregion
 
-        #region External Methods
-        [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "CreateDXGIFactory2", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
+        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateDXGIFactory2", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateDXGIFactory2(
-            [In, NativeTypeName("UINT")] uint Flags,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppFactory
-        );
+        public static extern int CreateDXGIFactory2([NativeTypeName("UINT")] uint Flags, [NativeTypeName("REFIID")] Guid* riid, void** ppFactory);
 
-        [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "DXGIGetDebugInterface1", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
+        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "DXGIGetDebugInterface1", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DXGIGetDebugInterface1(
-            [In, NativeTypeName("UINT")] uint Flags,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** pDebug
-        );
-        #endregion
+        public static extern int DXGIGetDebugInterface1([NativeTypeName("UINT")] uint Flags, [NativeTypeName("REFIID")] Guid* riid, void** pDebug);
     }
 }

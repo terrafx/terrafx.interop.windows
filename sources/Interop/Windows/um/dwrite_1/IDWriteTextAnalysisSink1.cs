@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -13,65 +12,37 @@ namespace TerraFX.Interop
     [Guid("B0D941A0-85E7-4D8B-9FD3-5CED9934482A")]
     public unsafe struct IDWriteTextAnalysisSink1
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IDWriteTextAnalysisSink1* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDWriteTextAnalysisSink1* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IDWriteTextAnalysisSink1* This
-        );
+        public delegate uint _AddRef(IDWriteTextAnalysisSink1* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IDWriteTextAnalysisSink1* This
-        );
-        #endregion
+        public delegate uint _Release(IDWriteTextAnalysisSink1* This);
 
-        #region IDWriteTextAnalysisSink Delegates
         /// <summary>Report script analysis for the text range.</summary>
         /// <param name="textPosition">Starting position to report from.</param>
         /// <param name="textLength">Number of UTF16 units of the reported range.</param>
         /// <param name="scriptAnalysis">Script analysis of characters in range.</param>
         /// <returns>A successful code or error code to abort analysis.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetScriptAnalysis(
-            [In] IDWriteTextAnalysisSink1* This,
-            [In, NativeTypeName("UINT32")] uint textPosition,
-            [In, NativeTypeName("UINT32")] uint textLength,
-            [In] DWRITE_SCRIPT_ANALYSIS* scriptAnalysis
-        );
+        public delegate int _SetScriptAnalysis(IDWriteTextAnalysisSink1* This, [NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint textLength, DWRITE_SCRIPT_ANALYSIS* scriptAnalysis);
 
         /// <summary>Report line-break opportunities for each character, starting from the specified position.</summary>
         /// <param name="textPosition">Starting position to report from.</param>
         /// <param name="textLength">Number of UTF16 units of the reported range.</param>
         /// <param name="lineBreakpoints">Breaking conditions for each character.</param>
         /// <returns>A successful code or error code to abort analysis.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetLineBreakpoints(
-            [In] IDWriteTextAnalysisSink1* This,
-            [In, NativeTypeName("UINT32")] uint textPosition,
-            [In, NativeTypeName("UINT32")] uint textLength,
-            [In] DWRITE_LINE_BREAKPOINT* lineBreakpoints
-        );
+        public delegate int _SetLineBreakpoints(IDWriteTextAnalysisSink1* This, [NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint textLength, DWRITE_LINE_BREAKPOINT* lineBreakpoints);
 
         /// <summary>Set bidirectional level on the range, called once per each level run change (either explicit or resolved implicit).</summary>
         /// <param name="textPosition">Starting position to report from.</param>
@@ -79,16 +50,9 @@ namespace TerraFX.Interop
         /// <param name="explicitLevel">Explicit level from embedded control codes RLE/RLO/LRE/LRO/PDF, determined before any additional rules.</param>
         /// <param name="resolvedLevel">Final implicit level considering the explicit level and characters' natural directionality, after all Bidi rules have been applied.</param>
         /// <returns>A successful code or error code to abort analysis.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetBidiLevel(
-            [In] IDWriteTextAnalysisSink1* This,
-            [In, NativeTypeName("UINT32")] uint textPosition,
-            [In, NativeTypeName("UINT32")] uint textLength,
-            [In, NativeTypeName("UINT8")] byte explicitLevel,
-            [In, NativeTypeName("UINT8")] byte resolvedLevel
-        );
+        public delegate int _SetBidiLevel(IDWriteTextAnalysisSink1* This, [NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint textLength, [NativeTypeName("UINT8")] byte explicitLevel, [NativeTypeName("UINT8")] byte resolvedLevel);
 
         /// <summary>Set number substitution on the range.</summary>
         /// <param name="textPosition">Starting position to report from.</param>
@@ -96,18 +60,10 @@ namespace TerraFX.Interop
         /// <param name="numberSubstitution">The number substitution applicable to the returned range of text. The sink callback may hold onto it by incrementing its ref count.</param>
         /// <returns>A successful code or error code to abort analysis.</returns>
         /// <remark> Unlike script and bidi analysis, where every character passed to the analyzer has a result, this will only be called for those ranges where substitution is applicable. For any other range, you will simply not be called.</remark>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetNumberSubstitution(
-            [In] IDWriteTextAnalysisSink1* This,
-            [In, NativeTypeName("UINT32")] uint textPosition,
-            [In, NativeTypeName("UINT32")] uint textLength,
-            [In] IDWriteNumberSubstitution* numberSubstitution
-        );
-        #endregion
+        public delegate int _SetNumberSubstitution(IDWriteTextAnalysisSink1* This, [NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint textLength, IDWriteNumberSubstitution* numberSubstitution);
 
-        #region Delegates
         /// <summary>The text analyzer calls back to this to report the actual orientation of each character for shaping and drawing.</summary>
         /// <param name="textPosition">Starting position to report from.</param>
         /// <param name="textLength">Number of UTF-16 units of the reported range.</param>
@@ -116,34 +72,16 @@ namespace TerraFX.Interop
         /// <param name="isSideways">Whether the glyphs are rotated on their side, which is the default case for CJK and the case stacked Latin</param>
         /// <param name="isRightToLeft">Whether the script should be shaped as right-to-left. For Arabic stacked top-to-bottom, even when the adjusted bidi level is coerced to an even level, this will still be true.</param>
         /// <returns> A successful code or error code to abort analysis.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetGlyphOrientation(
-            [In] IDWriteTextAnalysisSink1* This,
-            [In, NativeTypeName("UINT32")] uint textPosition,
-            [In, NativeTypeName("UINT32")] uint textLength,
-            [In] DWRITE_GLYPH_ORIENTATION_ANGLE glyphOrientationAngle,
-            [In, NativeTypeName("UINT8")] byte adjustedBidiLevel,
-            [In, NativeTypeName("BOOL")] int isSideways,
-            [In, NativeTypeName("BOOL")] int isRightToLeft
-        );
-        #endregion
+        public delegate int _SetGlyphOrientation(IDWriteTextAnalysisSink1* This, [NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint textLength, DWRITE_GLYPH_ORIENTATION_ANGLE glyphOrientationAngle, [NativeTypeName("UINT8")] byte adjustedBidiLevel, [NativeTypeName("BOOL")] int isSideways, [NativeTypeName("BOOL")] int isRightToLeft);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDWriteTextAnalysisSink1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -152,9 +90,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalysisSink1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -163,127 +99,63 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalysisSink1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region IDWriteTextAnalysisSink Methods
-        [return: NativeTypeName("HRESULT")]
-        public int SetScriptAnalysis(
-            [In, NativeTypeName("UINT32")] uint textPosition,
-            [In, NativeTypeName("UINT32")] uint textLength,
-            [In] DWRITE_SCRIPT_ANALYSIS* scriptAnalysis
-        )
-        {
-            fixed (IDWriteTextAnalysisSink1* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetScriptAnalysis>(lpVtbl->SetScriptAnalysis)(
-                    This,
-                    textPosition,
-                    textLength,
-                    scriptAnalysis
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetLineBreakpoints(
-            [In, NativeTypeName("UINT32")] uint textPosition,
-            [In, NativeTypeName("UINT32")] uint textLength,
-            [In] DWRITE_LINE_BREAKPOINT* lineBreakpoints
-        )
+        public int SetScriptAnalysis([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint textLength, DWRITE_SCRIPT_ANALYSIS* scriptAnalysis)
         {
             fixed (IDWriteTextAnalysisSink1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetLineBreakpoints>(lpVtbl->SetLineBreakpoints)(
-                    This,
-                    textPosition,
-                    textLength,
-                    lineBreakpoints
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetScriptAnalysis>(lpVtbl->SetScriptAnalysis)(This, textPosition, textLength, scriptAnalysis);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetBidiLevel(
-            [In, NativeTypeName("UINT32")] uint textPosition,
-            [In, NativeTypeName("UINT32")] uint textLength,
-            [In, NativeTypeName("UINT8")] byte explicitLevel,
-            [In, NativeTypeName("UINT8")] byte resolvedLevel
-        )
+        public int SetLineBreakpoints([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint textLength, DWRITE_LINE_BREAKPOINT* lineBreakpoints)
         {
             fixed (IDWriteTextAnalysisSink1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetBidiLevel>(lpVtbl->SetBidiLevel)(
-                    This,
-                    textPosition,
-                    textLength,
-                    explicitLevel,
-                    resolvedLevel
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetLineBreakpoints>(lpVtbl->SetLineBreakpoints)(This, textPosition, textLength, lineBreakpoints);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetNumberSubstitution(
-            [In, NativeTypeName("UINT32")] uint textPosition,
-            [In, NativeTypeName("UINT32")] uint textLength,
-            [In] IDWriteNumberSubstitution* numberSubstitution
-        )
+        public int SetBidiLevel([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint textLength, [NativeTypeName("UINT8")] byte explicitLevel, [NativeTypeName("UINT8")] byte resolvedLevel)
         {
             fixed (IDWriteTextAnalysisSink1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetNumberSubstitution>(lpVtbl->SetNumberSubstitution)(
-                    This,
-                    textPosition,
-                    textLength,
-                    numberSubstitution
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetBidiLevel>(lpVtbl->SetBidiLevel)(This, textPosition, textLength, explicitLevel, resolvedLevel);
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
-        public int SetGlyphOrientation(
-            [In, NativeTypeName("UINT32")] uint textPosition,
-            [In, NativeTypeName("UINT32")] uint textLength,
-            [In] DWRITE_GLYPH_ORIENTATION_ANGLE glyphOrientationAngle,
-            [In, NativeTypeName("UINT8")] byte adjustedBidiLevel,
-            [In, NativeTypeName("BOOL")] int isSideways,
-            [In, NativeTypeName("BOOL")] int isRightToLeft
-        )
+        public int SetNumberSubstitution([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint textLength, IDWriteNumberSubstitution* numberSubstitution)
         {
             fixed (IDWriteTextAnalysisSink1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetGlyphOrientation>(lpVtbl->SetGlyphOrientation)(
-                    This,
-                    textPosition,
-                    textLength,
-                    glyphOrientationAngle,
-                    adjustedBidiLevel,
-                    isSideways,
-                    isRightToLeft
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetNumberSubstitution>(lpVtbl->SetNumberSubstitution)(This, textPosition, textLength, numberSubstitution);
             }
         }
-        #endregion
 
-        #region Structs
+        [return: NativeTypeName("HRESULT")]
+        public int SetGlyphOrientation([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint textLength, DWRITE_GLYPH_ORIENTATION_ANGLE glyphOrientationAngle, [NativeTypeName("UINT8")] byte adjustedBidiLevel, [NativeTypeName("BOOL")] int isSideways, [NativeTypeName("BOOL")] int isRightToLeft)
+        {
+            fixed (IDWriteTextAnalysisSink1* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_SetGlyphOrientation>(lpVtbl->SetGlyphOrientation)(This, textPosition, textLength, glyphOrientationAngle, adjustedBidiLevel, isSideways, isRightToLeft);
+            }
+        }
+
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IDWriteTextAnalysisSink Fields
             public IntPtr SetScriptAnalysis;
 
             public IntPtr SetLineBreakpoints;
@@ -291,12 +163,8 @@ namespace TerraFX.Interop
             public IntPtr SetBidiLevel;
 
             public IntPtr SetNumberSubstitution;
-            #endregion
 
-            #region Fields
             public IntPtr SetGlyphOrientation;
-            #endregion
         }
-        #endregion
     }
 }

@@ -5,521 +5,200 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     [Guid("30BAA41E-B15B-475C-A0BB-1AF5C5B64328")]
     public unsafe struct ID3D12Device2
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] ID3D12Device2* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID3D12Device2* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] ID3D12Device2* This
-        );
+        public delegate uint _AddRef(ID3D12Device2* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] ID3D12Device2* This
-        );
-        #endregion
+        public delegate uint _Release(ID3D12Device2* This);
 
-        #region ID3D12Object Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPrivateData(
-            [In] ID3D12Device2* This,
-            [In, NativeTypeName("REFGUID")] Guid* guid,
-            [In, Out, NativeTypeName("UINT")] uint* pDataSize,
-            [Out] void* pData = null
-        );
+        public delegate int _GetPrivateData(ID3D12Device2* This, [NativeTypeName("REFGUID")] Guid* guid, [NativeTypeName("UINT")] uint* pDataSize, void* pData = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrivateData(
-            [In] ID3D12Device2* This,
-            [In, NativeTypeName("REFGUID")] Guid* guid,
-            [In, NativeTypeName("UINT")] uint DataSize,
-            [In] void* pData = null
-        );
+        public delegate int _SetPrivateData(ID3D12Device2* This, [NativeTypeName("REFGUID")] Guid* guid, [NativeTypeName("UINT")] uint DataSize, void* pData = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPrivateDataInterface(
-            [In] ID3D12Device2* This,
-            [In, NativeTypeName("REFGUID")] Guid* guid,
-            [In] IUnknown* pData = null
-        );
+        public delegate int _SetPrivateDataInterface(ID3D12Device2* This, [NativeTypeName("REFGUID")] Guid* guid, IUnknown* pData = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetName(
-            [In] ID3D12Device2* This,
-            [In, NativeTypeName("LPCWSTR")] char* Name
-        );
-        #endregion
+        public delegate int _SetName(ID3D12Device2* This, [NativeTypeName("LPCWSTR")] char* Name);
 
-        #region ID3D12Device Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT")]
-        public /* static */ delegate uint _GetNodeCount(
-            [In] ID3D12Device2* This
-        );
+        public delegate uint _GetNodeCount(ID3D12Device2* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateCommandQueue(
-            [In] ID3D12Device2* This,
-            [In] D3D12_COMMAND_QUEUE_DESC* pDesc,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppCommandQueue
-        );
+        public delegate int _CreateCommandQueue(ID3D12Device2* This, D3D12_COMMAND_QUEUE_DESC* pDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppCommandQueue);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateCommandAllocator(
-            [In] ID3D12Device2* This,
-            [In] D3D12_COMMAND_LIST_TYPE Type,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppCommandAllocator
-        );
+        public delegate int _CreateCommandAllocator(ID3D12Device2* This, D3D12_COMMAND_LIST_TYPE Type, [NativeTypeName("REFIID")] Guid* riid, void** ppCommandAllocator);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateGraphicsPipelineState(
-            [In] ID3D12Device2* This,
-            [In] D3D12_GRAPHICS_PIPELINE_STATE_DESC* pDesc,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppPipelineState
-        );
+        public delegate int _CreateGraphicsPipelineState(ID3D12Device2* This, D3D12_GRAPHICS_PIPELINE_STATE_DESC* pDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppPipelineState);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateComputePipelineState(
-            [In] ID3D12Device2* This,
-            [In] D3D12_COMPUTE_PIPELINE_STATE_DESC* pDesc,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppPipelineState
-        );
+        public delegate int _CreateComputePipelineState(ID3D12Device2* This, D3D12_COMPUTE_PIPELINE_STATE_DESC* pDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppPipelineState);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateCommandList(
-            [In] ID3D12Device2* This,
-            [In, NativeTypeName("UINT")] uint NodeMask,
-            [In] D3D12_COMMAND_LIST_TYPE Type,
-            [In] ID3D12CommandAllocator* pCommandAllocator,
-            [In, Optional] ID3D12PipelineState* pInitialState,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppCommandList
-        );
+        public delegate int _CreateCommandList(ID3D12Device2* This, [NativeTypeName("UINT")] uint NodeMask, D3D12_COMMAND_LIST_TYPE Type, ID3D12CommandAllocator* pCommandAllocator, [Optional] ID3D12PipelineState* pInitialState, [NativeTypeName("REFIID")] Guid* riid, void** ppCommandList);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CheckFeatureSupport(
-            [In] ID3D12Device2* This,
-            [In] D3D12_FEATURE Feature,
-            [In, Out] void* pFeatureSupportData,
-            [In, NativeTypeName("UINT")] uint FeatureSupportDataSize
-        );
+        public delegate int _CheckFeatureSupport(ID3D12Device2* This, D3D12_FEATURE Feature, void* pFeatureSupportData, [NativeTypeName("UINT")] uint FeatureSupportDataSize);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateDescriptorHeap(
-            [In] ID3D12Device2* This,
-            [In] D3D12_DESCRIPTOR_HEAP_DESC* pDescriptorHeapDesc,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvHeap
-        );
+        public delegate int _CreateDescriptorHeap(ID3D12Device2* This, D3D12_DESCRIPTOR_HEAP_DESC* pDescriptorHeapDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppvHeap);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT")]
-        public /* static */ delegate uint _GetDescriptorHandleIncrementSize(
-            [In] ID3D12Device2* This,
-            [In] D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapType
-        );
+        public delegate uint _GetDescriptorHandleIncrementSize(ID3D12Device2* This, D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapType);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateRootSignature(
-            [In] ID3D12Device2* This,
-            [In, NativeTypeName("UINT")] uint NodeMask,
-            [In] void* pBlobWithRootSignature,
-            [In, NativeTypeName("SIZE_T")] UIntPtr blobLengthInBytes,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvRootSignature
-        );
+        public delegate int _CreateRootSignature(ID3D12Device2* This, [NativeTypeName("UINT")] uint NodeMask, void* pBlobWithRootSignature, [NativeTypeName("SIZE_T")] UIntPtr blobLengthInBytes, [NativeTypeName("REFIID")] Guid* riid, void** ppvRootSignature);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _CreateConstantBufferView(
-            [In] ID3D12Device2* This,
-            [In, Optional] D3D12_CONSTANT_BUFFER_VIEW_DESC* pDesc,
-            [In] D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _CreateConstantBufferView(ID3D12Device2* This, [Optional] D3D12_CONSTANT_BUFFER_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _CreateShaderResourceView(
-            [In] ID3D12Device2* This,
-            [In, Optional] ID3D12Resource* pResource,
-            [In, Optional] D3D12_SHADER_RESOURCE_VIEW_DESC* pDesc,
-            [In] D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _CreateShaderResourceView(ID3D12Device2* This, [Optional] ID3D12Resource* pResource, [Optional] D3D12_SHADER_RESOURCE_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _CreateUnorderedAccessView(
-            [In] ID3D12Device2* This,
-            [In, Optional] ID3D12Resource* pResource,
-            [In, Optional] ID3D12Resource* pCounterResource,
-            [In, Optional] D3D12_UNORDERED_ACCESS_VIEW_DESC* pDesc,
-            [In] D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _CreateUnorderedAccessView(ID3D12Device2* This, [Optional] ID3D12Resource* pResource, [Optional] ID3D12Resource* pCounterResource, [Optional] D3D12_UNORDERED_ACCESS_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _CreateRenderTargetView(
-            [In] ID3D12Device2* This,
-            [In, Optional] ID3D12Resource* pResource,
-            [In, Optional] D3D12_RENDER_TARGET_VIEW_DESC* pDesc,
-            [In] D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _CreateRenderTargetView(ID3D12Device2* This, [Optional] ID3D12Resource* pResource, [Optional] D3D12_RENDER_TARGET_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _CreateDepthStencilView(
-            [In] ID3D12Device2* This,
-            [In, Optional] ID3D12Resource* pResource,
-            [In, Optional] D3D12_DEPTH_STENCIL_VIEW_DESC* pDesc,
-            [In] D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _CreateDepthStencilView(ID3D12Device2* This, [Optional] ID3D12Resource* pResource, [Optional] D3D12_DEPTH_STENCIL_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _CreateSampler(
-            [In] ID3D12Device2* This,
-            [In] D3D12_SAMPLER_DESC* pDesc,
-            [In] D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _CreateSampler(ID3D12Device2* This, D3D12_SAMPLER_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _CopyDescriptors(
-            [In] ID3D12Device2* This,
-            [In, NativeTypeName("UINT")] uint NumDestDescriptorRanges,
-            [In, NativeTypeName("D3D12_CPU_DESCRIPTOR_HANDLE[]")] D3D12_CPU_DESCRIPTOR_HANDLE* pDestDescriptorRangeStarts,
-            [In, Optional, NativeTypeName("UINT[]")] uint* pDestDescriptorRangeSizes,
-            [In, NativeTypeName("UINT")] uint NumSrcDescriptorRanges,
-            [In, NativeTypeName("D3D12_CPU_DESCRIPTOR_HANDLE[]")] D3D12_CPU_DESCRIPTOR_HANDLE* pSrcDescriptorRangeStarts,
-            [In, Optional, NativeTypeName("UINT[]")] uint* pSrcDescriptorRangeSizes,
-            [In] D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapsType
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _CopyDescriptors(ID3D12Device2* This, [NativeTypeName("UINT")] uint NumDestDescriptorRanges, [NativeTypeName("D3D12_CPU_DESCRIPTOR_HANDLE[]")] D3D12_CPU_DESCRIPTOR_HANDLE* pDestDescriptorRangeStarts, [Optional, NativeTypeName("UINT[]")] uint* pDestDescriptorRangeSizes, [NativeTypeName("UINT")] uint NumSrcDescriptorRanges, [NativeTypeName("D3D12_CPU_DESCRIPTOR_HANDLE[]")] D3D12_CPU_DESCRIPTOR_HANDLE* pSrcDescriptorRangeStarts, [Optional, NativeTypeName("UINT[]")] uint* pSrcDescriptorRangeSizes, D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapsType);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _CopyDescriptorsSimple(
-            [In] ID3D12Device2* This,
-            [In, NativeTypeName("UINT")] uint NumDescriptors,
-            [In] D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptorRangeStart,
-            [In] D3D12_CPU_DESCRIPTOR_HANDLE SrcDescriptorRangeStart,
-            [In] D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapsType
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _CopyDescriptorsSimple(ID3D12Device2* This, [NativeTypeName("UINT")] uint NumDescriptors, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptorRangeStart, D3D12_CPU_DESCRIPTOR_HANDLE SrcDescriptorRangeStart, D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapsType);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate D3D12_RESOURCE_ALLOCATION_INFO* _GetResourceAllocationInfo(
-            [In] ID3D12Device2* This,
-            [Out] D3D12_RESOURCE_ALLOCATION_INFO* _result,
-            [In, NativeTypeName("UINT")] uint visibleMask,
-            [In, NativeTypeName("UINT")] uint numResourceDescs,
-            [In] D3D12_RESOURCE_DESC* pResourceDescs
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate D3D12_RESOURCE_ALLOCATION_INFO* _GetResourceAllocationInfo(ID3D12Device2* This, D3D12_RESOURCE_ALLOCATION_INFO* _result, [NativeTypeName("UINT")] uint visibleMask, [NativeTypeName("UINT")] uint numResourceDescs, D3D12_RESOURCE_DESC* pResourceDescs);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate D3D12_HEAP_PROPERTIES* _GetCustomHeapProperties(
-            [In] ID3D12Device2* This,
-            [Out] D3D12_HEAP_PROPERTIES* _result,
-            [In, NativeTypeName("UINT")] uint NodeMask,
-            [In] D3D12_HEAP_TYPE heapType
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate D3D12_HEAP_PROPERTIES* _GetCustomHeapProperties(ID3D12Device2* This, D3D12_HEAP_PROPERTIES* _result, [NativeTypeName("UINT")] uint NodeMask, D3D12_HEAP_TYPE heapType);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateCommittedResource(
-            [In] ID3D12Device2* This,
-            [In] D3D12_HEAP_PROPERTIES* pHeapProperties,
-            [In] D3D12_HEAP_FLAGS HeapFlags,
-            [In] D3D12_RESOURCE_DESC* pDesc,
-            [In] D3D12_RESOURCE_STATES InitialResourceState,
-            [In, Optional] D3D12_CLEAR_VALUE* pOptimizedClearValue,
-            [In, NativeTypeName("REFIID")] Guid* riidResource,
-            [Out] void** ppvResource = null
-        );
+        public delegate int _CreateCommittedResource(ID3D12Device2* This, D3D12_HEAP_PROPERTIES* pHeapProperties, D3D12_HEAP_FLAGS HeapFlags, D3D12_RESOURCE_DESC* pDesc, D3D12_RESOURCE_STATES InitialResourceState, [Optional] D3D12_CLEAR_VALUE* pOptimizedClearValue, [NativeTypeName("REFIID")] Guid* riidResource, void** ppvResource = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateHeap(
-            [In] ID3D12Device2* This,
-            [In] D3D12_HEAP_DESC* pDesc,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvHeap = null
-        );
+        public delegate int _CreateHeap(ID3D12Device2* This, D3D12_HEAP_DESC* pDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppvHeap = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreatePlacedResource(
-            [In] ID3D12Device2* This,
-            [In] ID3D12Heap* pHeap,
-            [In, NativeTypeName("UINT64")] ulong HeapOffset,
-            [In] D3D12_RESOURCE_DESC* pDesc,
-            [In] D3D12_RESOURCE_STATES InitialState,
-            [In, Optional] D3D12_CLEAR_VALUE* pOptimizedClearValue,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvResource = null
-        );
+        public delegate int _CreatePlacedResource(ID3D12Device2* This, ID3D12Heap* pHeap, [NativeTypeName("UINT64")] ulong HeapOffset, D3D12_RESOURCE_DESC* pDesc, D3D12_RESOURCE_STATES InitialState, [Optional] D3D12_CLEAR_VALUE* pOptimizedClearValue, [NativeTypeName("REFIID")] Guid* riid, void** ppvResource = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateReservedResource(
-            [In] ID3D12Device2* This,
-            [In] D3D12_RESOURCE_DESC* pDesc,
-            [In] D3D12_RESOURCE_STATES InitialState,
-            [In, Optional] D3D12_CLEAR_VALUE* pOptimizedClearValue,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvResource = null
-        );
+        public delegate int _CreateReservedResource(ID3D12Device2* This, D3D12_RESOURCE_DESC* pDesc, D3D12_RESOURCE_STATES InitialState, [Optional] D3D12_CLEAR_VALUE* pOptimizedClearValue, [NativeTypeName("REFIID")] Guid* riid, void** ppvResource = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateSharedHandle(
-            [In] ID3D12Device2* This,
-            [In] ID3D12DeviceChild* pObject,
-            [In, Optional] SECURITY_ATTRIBUTES* pAttributes,
-            [In, NativeTypeName("DWORD")] uint Access,
-            [In, Optional, NativeTypeName("LPCWSTR")] char* Name,
-            [Out, NativeTypeName("HANDLE")] IntPtr* pHandle
-        );
+        public delegate int _CreateSharedHandle(ID3D12Device2* This, ID3D12DeviceChild* pObject, [Optional] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint Access, [Optional, NativeTypeName("LPCWSTR")] char* Name, [NativeTypeName("HANDLE")] IntPtr* pHandle);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _OpenSharedHandle(
-            [In] ID3D12Device2* This,
-            [In, NativeTypeName("HANDLE")] IntPtr NTHandle,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObj = null
-        );
+        public delegate int _OpenSharedHandle(ID3D12Device2* This, [NativeTypeName("HANDLE")] IntPtr NTHandle, [NativeTypeName("REFIID")] Guid* riid, void** ppvObj = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _OpenSharedHandleByName(
-            [In] ID3D12Device2* This,
-            [In, NativeTypeName("LPCWSTR")] char* Name,
-            [In, NativeTypeName("DWORD")] uint Access,
-            [Out, NativeTypeName("HANDLE")] IntPtr* pNTHandle
-        );
+        public delegate int _OpenSharedHandleByName(ID3D12Device2* This, [NativeTypeName("LPCWSTR")] char* Name, [NativeTypeName("DWORD")] uint Access, [NativeTypeName("HANDLE")] IntPtr* pNTHandle);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _MakeResident(
-            [In] ID3D12Device2* This,
-            [In, NativeTypeName("UINT")] uint NumObjects,
-            [In, NativeTypeName("ID3D12Pageable*[]")] ID3D12Pageable** ppObjects
-        );
+        public delegate int _MakeResident(ID3D12Device2* This, [NativeTypeName("UINT")] uint NumObjects, [NativeTypeName("ID3D12Pageable*[]")] ID3D12Pageable** ppObjects);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Evict(
-            [In] ID3D12Device2* This,
-            [In, NativeTypeName("UINT")] uint NumObjects,
-            [In, NativeTypeName("ID3D12Pageable*[]")] ID3D12Pageable** ppObjects
-        );
+        public delegate int _Evict(ID3D12Device2* This, [NativeTypeName("UINT")] uint NumObjects, [NativeTypeName("ID3D12Pageable*[]")] ID3D12Pageable** ppObjects);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateFence(
-            [In] ID3D12Device2* This,
-            [In, NativeTypeName("UINT64")] ulong InitialValue,
-            [In] D3D12_FENCE_FLAGS Flags,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppFence
-        );
+        public delegate int _CreateFence(ID3D12Device2* This, [NativeTypeName("UINT64")] ulong InitialValue, D3D12_FENCE_FLAGS Flags, [NativeTypeName("REFIID")] Guid* riid, void** ppFence);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDeviceRemovedReason(
-            [In] ID3D12Device2* This
+        public delegate int _GetDeviceRemovedReason(ID3D12Device2* This
+);
 
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _GetCopyableFootprints(ID3D12Device2* This, D3D12_RESOURCE_DESC* pResourceDesc, [NativeTypeName("UINT")] uint FirstSubresource, [NativeTypeName("UINT")] uint NumSubresources, [NativeTypeName("UINT64")] ulong BaseOffset, [NativeTypeName("D3D12_PLACED_SUBRESOURCE_FOOTPRINT[]")] D3D12_PLACED_SUBRESOURCE_FOOTPRINT* pLayouts = null, [NativeTypeName("UINT[]")] uint* pNumRows = null, [NativeTypeName("UINT64[]")] ulong* pRowSizeInBytes = null, [NativeTypeName("UINT64")] ulong* pTotalBytes = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _GetCopyableFootprints(
-            [In] ID3D12Device2* This,
-            [In] D3D12_RESOURCE_DESC* pResourceDesc,
-            [In, NativeTypeName("UINT")] uint FirstSubresource,
-            [In, NativeTypeName("UINT")] uint NumSubresources,
-            [In, NativeTypeName("UINT64")] ulong BaseOffset,
-            [Out, NativeTypeName("D3D12_PLACED_SUBRESOURCE_FOOTPRINT[]")] D3D12_PLACED_SUBRESOURCE_FOOTPRINT* pLayouts = null,
-            [Out, NativeTypeName("UINT[]")] uint* pNumRows = null,
-            [Out, NativeTypeName("UINT64[]")] ulong* pRowSizeInBytes = null,
-            [Out, NativeTypeName("UINT64")] ulong* pTotalBytes = null
-        );
-
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateQueryHeap(
-            [In] ID3D12Device2* This,
-            [In] D3D12_QUERY_HEAP_DESC* pDesc,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvHeap = null
-        );
+        public delegate int _CreateQueryHeap(ID3D12Device2* This, D3D12_QUERY_HEAP_DESC* pDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppvHeap = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetStablePowerState(
-            [In] ID3D12Device2* This,
-            [In, NativeTypeName("BOOL")] int Enable
-        );
+        public delegate int _SetStablePowerState(ID3D12Device2* This, [NativeTypeName("BOOL")] int Enable);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateCommandSignature(
-            [In] ID3D12Device2* This,
-            [In] D3D12_COMMAND_SIGNATURE_DESC* pDesc,
-            [In, Optional] ID3D12RootSignature* pRootSignature,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvCommandSignature = null
-        );
+        public delegate int _CreateCommandSignature(ID3D12Device2* This, D3D12_COMMAND_SIGNATURE_DESC* pDesc, [Optional] ID3D12RootSignature* pRootSignature, [NativeTypeName("REFIID")] Guid* riid, void** ppvCommandSignature = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _GetResourceTiling(
-            [In] ID3D12Device2* This,
-            [In] ID3D12Resource* pTiledResource,
-            [Out, Optional, NativeTypeName("UINT")] uint* pNumTilesForEntireResource,
-            [Out, Optional] D3D12_PACKED_MIP_INFO* pPackedMipDesc,
-            [Out, Optional] D3D12_TILE_SHAPE* pStandardTileShapeForNonPackedMips,
-            [In, Out, Optional, NativeTypeName("UINT")] uint* pNumSubresourceTilings,
-            [In, NativeTypeName("UINT")] uint FirstSubresourceTilingToGet,
-            [Out] D3D12_SUBRESOURCE_TILING* pSubresourceTilingsForNonPackedMips
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _GetResourceTiling(ID3D12Device2* This, ID3D12Resource* pTiledResource, [Optional, NativeTypeName("UINT")] uint* pNumTilesForEntireResource, [Optional] D3D12_PACKED_MIP_INFO* pPackedMipDesc, [Optional] D3D12_TILE_SHAPE* pStandardTileShapeForNonPackedMips, [Optional, NativeTypeName("UINT")] uint* pNumSubresourceTilings, [NativeTypeName("UINT")] uint FirstSubresourceTilingToGet, D3D12_SUBRESOURCE_TILING* pSubresourceTilingsForNonPackedMips);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate LUID* _GetAdapterLuid(
-            [In] ID3D12Device2* This,
-            [Out] LUID* _result
-        );
-        #endregion
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate LUID* _GetAdapterLuid(ID3D12Device2* This, LUID* _result);
 
-        #region ID3D12Device1 Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreatePipelineLibrary(
-            [In] ID3D12Device2* This,
-            [In] void* pLibraryBlob,
-            [In, NativeTypeName("SIZE_T")] UIntPtr BlobLength,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppPipelineLibrary
-        );
+        public delegate int _CreatePipelineLibrary(ID3D12Device2* This, void* pLibraryBlob, [NativeTypeName("SIZE_T")] UIntPtr BlobLength, [NativeTypeName("REFIID")] Guid* riid, void** ppPipelineLibrary);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetEventOnMultipleFenceCompletion(
-            [In] ID3D12Device2* This,
-            [In, NativeTypeName("ID3D12Fence*[]")] ID3D12Fence** ppFences,
-            [In, NativeTypeName("UINT64[]")] ulong* pFenceValues,
-            [In, NativeTypeName("UINT")] uint NumFences,
-            [In] D3D12_MULTIPLE_FENCE_WAIT_FLAGS Flags,
-            [In, NativeTypeName("HANDLE")] IntPtr hEvent
-        );
+        public delegate int _SetEventOnMultipleFenceCompletion(ID3D12Device2* This, [NativeTypeName("ID3D12Fence*[]")] ID3D12Fence** ppFences, [NativeTypeName("UINT64[]")] ulong* pFenceValues, [NativeTypeName("UINT")] uint NumFences, D3D12_MULTIPLE_FENCE_WAIT_FLAGS Flags, [NativeTypeName("HANDLE")] IntPtr hEvent);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetResidencyPriority(
-            [In] ID3D12Device2* This,
-            [In, NativeTypeName("UINT")] uint NumObjects,
-            [In, NativeTypeName("ID3D12Pageable*[]")] ID3D12Pageable** ppObjects,
-            [In, NativeTypeName("D3D12_RESIDENCY_PRIORITY[]")] D3D12_RESIDENCY_PRIORITY* pPriorities
-        );
-        #endregion
+        public delegate int _SetResidencyPriority(ID3D12Device2* This, [NativeTypeName("UINT")] uint NumObjects, [NativeTypeName("ID3D12Pageable*[]")] ID3D12Pageable** ppObjects, [NativeTypeName("D3D12_RESIDENCY_PRIORITY[]")] D3D12_RESIDENCY_PRIORITY* pPriorities);
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreatePipelineState(
-            [In] ID3D12Device2* This,
-            [In] D3D12_PIPELINE_STATE_STREAM_DESC* pDesc,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppPipelineState
-        );
-        #endregion
+        public delegate int _CreatePipelineState(ID3D12Device2* This, D3D12_PIPELINE_STATE_STREAM_DESC* pDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppPipelineState);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -528,9 +207,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -539,640 +216,305 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region ID3D12Object Methods
-        [return: NativeTypeName("HRESULT")]
-        public int GetPrivateData(
-            [In, NativeTypeName("REFGUID")] Guid* guid,
-            [In, Out, NativeTypeName("UINT")] uint* pDataSize,
-            [Out] void* pData = null
-        )
-        {
-            fixed (ID3D12Device2* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)(
-                    This,
-                    guid,
-                    pDataSize,
-                    pData
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetPrivateData(
-            [In, NativeTypeName("REFGUID")] Guid* guid,
-            [In, NativeTypeName("UINT")] uint DataSize,
-            [In] void* pData = null
-        )
+        public int GetPrivateData([NativeTypeName("REFGUID")] Guid* guid, [NativeTypeName("UINT")] uint* pDataSize, void* pData = null)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)(
-                    This,
-                    guid,
-                    DataSize,
-                    pData
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)(This, guid, pDataSize, pData);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetPrivateDataInterface(
-            [In, NativeTypeName("REFGUID")] Guid* guid,
-            [In] IUnknown* pData = null
-        )
+        public int SetPrivateData([NativeTypeName("REFGUID")] Guid* guid, [NativeTypeName("UINT")] uint DataSize, void* pData = null)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(
-                    This,
-                    guid,
-                    pData
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)(This, guid, DataSize, pData);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetName(
-            [In, NativeTypeName("LPCWSTR")] char* Name
-        )
+        public int SetPrivateDataInterface([NativeTypeName("REFGUID")] Guid* guid, IUnknown* pData = null)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetName>(lpVtbl->SetName)(
-                    This,
-                    Name
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(This, guid, pData);
             }
         }
-        #endregion
 
-        #region ID3D12Device Methods
+        [return: NativeTypeName("HRESULT")]
+        public int SetName([NativeTypeName("LPCWSTR")] char* Name)
+        {
+            fixed (ID3D12Device2* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_SetName>(lpVtbl->SetName)(This, Name);
+            }
+        }
+
         [return: NativeTypeName("UINT")]
         public uint GetNodeCount()
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetNodeCount>(lpVtbl->GetNodeCount)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetNodeCount>(lpVtbl->GetNodeCount)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateCommandQueue(
-            [In] D3D12_COMMAND_QUEUE_DESC* pDesc,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppCommandQueue
-        )
+        public int CreateCommandQueue(D3D12_COMMAND_QUEUE_DESC* pDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppCommandQueue)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateCommandQueue>(lpVtbl->CreateCommandQueue)(
-                    This,
-                    pDesc,
-                    riid,
-                    ppCommandQueue
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateCommandQueue>(lpVtbl->CreateCommandQueue)(This, pDesc, riid, ppCommandQueue);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateCommandAllocator(
-            [In] D3D12_COMMAND_LIST_TYPE Type,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppCommandAllocator
-        )
+        public int CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE Type, [NativeTypeName("REFIID")] Guid* riid, void** ppCommandAllocator)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateCommandAllocator>(lpVtbl->CreateCommandAllocator)(
-                    This,
-                    Type,
-                    riid,
-                    ppCommandAllocator
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateCommandAllocator>(lpVtbl->CreateCommandAllocator)(This, Type, riid, ppCommandAllocator);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateGraphicsPipelineState(
-            [In] D3D12_GRAPHICS_PIPELINE_STATE_DESC* pDesc,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppPipelineState
-        )
+        public int CreateGraphicsPipelineState(D3D12_GRAPHICS_PIPELINE_STATE_DESC* pDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppPipelineState)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateGraphicsPipelineState>(lpVtbl->CreateGraphicsPipelineState)(
-                    This,
-                    pDesc,
-                    riid,
-                    ppPipelineState
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateGraphicsPipelineState>(lpVtbl->CreateGraphicsPipelineState)(This, pDesc, riid, ppPipelineState);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateComputePipelineState(
-            [In] D3D12_COMPUTE_PIPELINE_STATE_DESC* pDesc,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppPipelineState
-        )
+        public int CreateComputePipelineState(D3D12_COMPUTE_PIPELINE_STATE_DESC* pDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppPipelineState)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateComputePipelineState>(lpVtbl->CreateComputePipelineState)(
-                    This,
-                    pDesc,
-                    riid,
-                    ppPipelineState
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateComputePipelineState>(lpVtbl->CreateComputePipelineState)(This, pDesc, riid, ppPipelineState);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateCommandList(
-            [In, NativeTypeName("UINT")] uint NodeMask,
-            [In] D3D12_COMMAND_LIST_TYPE Type,
-            [In] ID3D12CommandAllocator* pCommandAllocator,
-            [In, Optional] ID3D12PipelineState* pInitialState,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppCommandList
-        )
+        public int CreateCommandList([NativeTypeName("UINT")] uint NodeMask, D3D12_COMMAND_LIST_TYPE Type, ID3D12CommandAllocator* pCommandAllocator, [Optional] ID3D12PipelineState* pInitialState, [NativeTypeName("REFIID")] Guid* riid, void** ppCommandList)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateCommandList>(lpVtbl->CreateCommandList)(
-                    This,
-                    NodeMask,
-                    Type,
-                    pCommandAllocator,
-                    pInitialState,
-                    riid,
-                    ppCommandList
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateCommandList>(lpVtbl->CreateCommandList)(This, NodeMask, Type, pCommandAllocator, pInitialState, riid, ppCommandList);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CheckFeatureSupport(
-            [In] D3D12_FEATURE Feature,
-            [In, Out] void* pFeatureSupportData,
-            [In, NativeTypeName("UINT")] uint FeatureSupportDataSize
-        )
+        public int CheckFeatureSupport(D3D12_FEATURE Feature, void* pFeatureSupportData, [NativeTypeName("UINT")] uint FeatureSupportDataSize)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CheckFeatureSupport>(lpVtbl->CheckFeatureSupport)(
-                    This,
-                    Feature,
-                    pFeatureSupportData,
-                    FeatureSupportDataSize
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CheckFeatureSupport>(lpVtbl->CheckFeatureSupport)(This, Feature, pFeatureSupportData, FeatureSupportDataSize);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateDescriptorHeap(
-            [In] D3D12_DESCRIPTOR_HEAP_DESC* pDescriptorHeapDesc,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvHeap
-        )
+        public int CreateDescriptorHeap(D3D12_DESCRIPTOR_HEAP_DESC* pDescriptorHeapDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppvHeap)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateDescriptorHeap>(lpVtbl->CreateDescriptorHeap)(
-                    This,
-                    pDescriptorHeapDesc,
-                    riid,
-                    ppvHeap
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateDescriptorHeap>(lpVtbl->CreateDescriptorHeap)(This, pDescriptorHeapDesc, riid, ppvHeap);
             }
         }
 
         [return: NativeTypeName("UINT")]
-        public uint GetDescriptorHandleIncrementSize(
-            [In] D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapType
-        )
+        public uint GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapType)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDescriptorHandleIncrementSize>(lpVtbl->GetDescriptorHandleIncrementSize)(
-                    This,
-                    DescriptorHeapType
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDescriptorHandleIncrementSize>(lpVtbl->GetDescriptorHandleIncrementSize)(This, DescriptorHeapType);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateRootSignature(
-            [In, NativeTypeName("UINT")] uint NodeMask,
-            [In] void* pBlobWithRootSignature,
-            [In, NativeTypeName("SIZE_T")] UIntPtr blobLengthInBytes,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvRootSignature
-        )
+        public int CreateRootSignature([NativeTypeName("UINT")] uint NodeMask, void* pBlobWithRootSignature, [NativeTypeName("SIZE_T")] UIntPtr blobLengthInBytes, [NativeTypeName("REFIID")] Guid* riid, void** ppvRootSignature)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateRootSignature>(lpVtbl->CreateRootSignature)(
-                    This,
-                    NodeMask,
-                    pBlobWithRootSignature,
-                    blobLengthInBytes,
-                    riid,
-                    ppvRootSignature
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateRootSignature>(lpVtbl->CreateRootSignature)(This, NodeMask, pBlobWithRootSignature, blobLengthInBytes, riid, ppvRootSignature);
             }
         }
 
-        public void CreateConstantBufferView(
-            [In, Optional] D3D12_CONSTANT_BUFFER_VIEW_DESC* pDesc,
-            [In] D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor
-        )
+        public void CreateConstantBufferView([Optional] D3D12_CONSTANT_BUFFER_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_CreateConstantBufferView>(lpVtbl->CreateConstantBufferView)(
-                    This,
-                    pDesc,
-                    DestDescriptor
-                );
+                Marshal.GetDelegateForFunctionPointer<_CreateConstantBufferView>(lpVtbl->CreateConstantBufferView)(This, pDesc, DestDescriptor);
             }
         }
 
-        public void CreateShaderResourceView(
-            [In, Optional] ID3D12Resource* pResource,
-            [In, Optional] D3D12_SHADER_RESOURCE_VIEW_DESC* pDesc,
-            [In] D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor
-        )
+        public void CreateShaderResourceView([Optional] ID3D12Resource* pResource, [Optional] D3D12_SHADER_RESOURCE_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_CreateShaderResourceView>(lpVtbl->CreateShaderResourceView)(
-                    This,
-                    pResource,
-                    pDesc,
-                    DestDescriptor
-                );
+                Marshal.GetDelegateForFunctionPointer<_CreateShaderResourceView>(lpVtbl->CreateShaderResourceView)(This, pResource, pDesc, DestDescriptor);
             }
         }
 
-        public void CreateUnorderedAccessView(
-            [In, Optional] ID3D12Resource* pResource,
-            [In, Optional] ID3D12Resource* pCounterResource,
-            [In, Optional] D3D12_UNORDERED_ACCESS_VIEW_DESC* pDesc,
-            [In] D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor
-        )
+        public void CreateUnorderedAccessView([Optional] ID3D12Resource* pResource, [Optional] ID3D12Resource* pCounterResource, [Optional] D3D12_UNORDERED_ACCESS_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_CreateUnorderedAccessView>(lpVtbl->CreateUnorderedAccessView)(
-                    This,
-                    pResource,
-                    pCounterResource,
-                    pDesc,
-                    DestDescriptor
-                );
+                Marshal.GetDelegateForFunctionPointer<_CreateUnorderedAccessView>(lpVtbl->CreateUnorderedAccessView)(This, pResource, pCounterResource, pDesc, DestDescriptor);
             }
         }
 
-        public void CreateRenderTargetView(
-            [In, Optional] ID3D12Resource* pResource,
-            [In, Optional] D3D12_RENDER_TARGET_VIEW_DESC* pDesc,
-            [In] D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor
-        )
+        public void CreateRenderTargetView([Optional] ID3D12Resource* pResource, [Optional] D3D12_RENDER_TARGET_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_CreateRenderTargetView>(lpVtbl->CreateRenderTargetView)(
-                    This,
-                    pResource,
-                    pDesc,
-                    DestDescriptor
-                );
+                Marshal.GetDelegateForFunctionPointer<_CreateRenderTargetView>(lpVtbl->CreateRenderTargetView)(This, pResource, pDesc, DestDescriptor);
             }
         }
 
-        public void CreateDepthStencilView(
-            [In, Optional] ID3D12Resource* pResource,
-            [In, Optional] D3D12_DEPTH_STENCIL_VIEW_DESC* pDesc,
-            [In] D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor
-        )
+        public void CreateDepthStencilView([Optional] ID3D12Resource* pResource, [Optional] D3D12_DEPTH_STENCIL_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_CreateDepthStencilView>(lpVtbl->CreateDepthStencilView)(
-                    This,
-                    pResource,
-                    pDesc,
-                    DestDescriptor
-                );
+                Marshal.GetDelegateForFunctionPointer<_CreateDepthStencilView>(lpVtbl->CreateDepthStencilView)(This, pResource, pDesc, DestDescriptor);
             }
         }
 
-        public void CreateSampler(
-            [In] D3D12_SAMPLER_DESC* pDesc,
-            [In] D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor
-        )
+        public void CreateSampler(D3D12_SAMPLER_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_CreateSampler>(lpVtbl->CreateSampler)(
-                    This,
-                    pDesc,
-                    DestDescriptor
-                );
+                Marshal.GetDelegateForFunctionPointer<_CreateSampler>(lpVtbl->CreateSampler)(This, pDesc, DestDescriptor);
             }
         }
 
-        public void CopyDescriptors(
-            [In, NativeTypeName("UINT")] uint NumDestDescriptorRanges,
-            [In, NativeTypeName("D3D12_CPU_DESCRIPTOR_HANDLE[]")] D3D12_CPU_DESCRIPTOR_HANDLE* pDestDescriptorRangeStarts,
-            [In, Optional, NativeTypeName("UINT[]")] uint* pDestDescriptorRangeSizes,
-            [In, NativeTypeName("UINT")] uint NumSrcDescriptorRanges,
-            [In, NativeTypeName("D3D12_CPU_DESCRIPTOR_HANDLE[]")] D3D12_CPU_DESCRIPTOR_HANDLE* pSrcDescriptorRangeStarts,
-            [In, Optional, NativeTypeName("UINT[]")] uint* pSrcDescriptorRangeSizes,
-            [In] D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapsType
-        )
+        public void CopyDescriptors([NativeTypeName("UINT")] uint NumDestDescriptorRanges, [NativeTypeName("D3D12_CPU_DESCRIPTOR_HANDLE[]")] D3D12_CPU_DESCRIPTOR_HANDLE* pDestDescriptorRangeStarts, [Optional, NativeTypeName("UINT[]")] uint* pDestDescriptorRangeSizes, [NativeTypeName("UINT")] uint NumSrcDescriptorRanges, [NativeTypeName("D3D12_CPU_DESCRIPTOR_HANDLE[]")] D3D12_CPU_DESCRIPTOR_HANDLE* pSrcDescriptorRangeStarts, [Optional, NativeTypeName("UINT[]")] uint* pSrcDescriptorRangeSizes, D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapsType)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_CopyDescriptors>(lpVtbl->CopyDescriptors)(
-                    This,
-                    NumDestDescriptorRanges,
-                    pDestDescriptorRangeStarts,
-                    pDestDescriptorRangeSizes,
-                    NumSrcDescriptorRanges,
-                    pSrcDescriptorRangeStarts,
-                    pSrcDescriptorRangeSizes,
-                    DescriptorHeapsType
-                );
+                Marshal.GetDelegateForFunctionPointer<_CopyDescriptors>(lpVtbl->CopyDescriptors)(This, NumDestDescriptorRanges, pDestDescriptorRangeStarts, pDestDescriptorRangeSizes, NumSrcDescriptorRanges, pSrcDescriptorRangeStarts, pSrcDescriptorRangeSizes, DescriptorHeapsType);
             }
         }
 
-        public void CopyDescriptorsSimple(
-            [In, NativeTypeName("UINT")] uint NumDescriptors,
-            [In] D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptorRangeStart,
-            [In] D3D12_CPU_DESCRIPTOR_HANDLE SrcDescriptorRangeStart,
-            [In] D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapsType
-        )
+        public void CopyDescriptorsSimple([NativeTypeName("UINT")] uint NumDescriptors, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptorRangeStart, D3D12_CPU_DESCRIPTOR_HANDLE SrcDescriptorRangeStart, D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapsType)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_CopyDescriptorsSimple>(lpVtbl->CopyDescriptorsSimple)(
-                    This,
-                    NumDescriptors,
-                    DestDescriptorRangeStart,
-                    SrcDescriptorRangeStart,
-                    DescriptorHeapsType
-                );
+                Marshal.GetDelegateForFunctionPointer<_CopyDescriptorsSimple>(lpVtbl->CopyDescriptorsSimple)(This, NumDescriptors, DestDescriptorRangeStart, SrcDescriptorRangeStart, DescriptorHeapsType);
             }
         }
 
-        public D3D12_RESOURCE_ALLOCATION_INFO GetResourceAllocationInfo(
-            [In, NativeTypeName("UINT")] uint visibleMask,
-            [In, NativeTypeName("UINT")] uint numResourceDescs,
-            [In] D3D12_RESOURCE_DESC* pResourceDescs
-        )
+        public D3D12_RESOURCE_ALLOCATION_INFO GetResourceAllocationInfo([NativeTypeName("UINT")] uint visibleMask, [NativeTypeName("UINT")] uint numResourceDescs, D3D12_RESOURCE_DESC* pResourceDescs)
         {
             fixed (ID3D12Device2* This = &this)
             {
                 D3D12_RESOURCE_ALLOCATION_INFO result;
-                return *Marshal.GetDelegateForFunctionPointer<_GetResourceAllocationInfo>(lpVtbl->GetResourceAllocationInfo)(
-                    This,
-                    &result,
-                    visibleMask,
-                    numResourceDescs,
-                    pResourceDescs
-                );
+                return *Marshal.GetDelegateForFunctionPointer<_GetResourceAllocationInfo>(lpVtbl->GetResourceAllocationInfo)(This, &result, visibleMask, numResourceDescs, pResourceDescs);
             }
         }
 
-        public D3D12_HEAP_PROPERTIES GetCustomHeapProperties(
-            [In, NativeTypeName("UINT")] uint NodeMask,
-            [In] D3D12_HEAP_TYPE heapType
-        )
+        public D3D12_HEAP_PROPERTIES GetCustomHeapProperties([NativeTypeName("UINT")] uint NodeMask, D3D12_HEAP_TYPE heapType)
         {
             fixed (ID3D12Device2* This = &this)
             {
                 D3D12_HEAP_PROPERTIES result;
-                return *Marshal.GetDelegateForFunctionPointer<_GetCustomHeapProperties>(lpVtbl->GetCustomHeapProperties)(
-                    This,
-                    &result,
-                    NodeMask,
-                    heapType
-                );
+                return *Marshal.GetDelegateForFunctionPointer<_GetCustomHeapProperties>(lpVtbl->GetCustomHeapProperties)(This, &result, NodeMask, heapType);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateCommittedResource(
-            [In] D3D12_HEAP_PROPERTIES* pHeapProperties,
-            [In] D3D12_HEAP_FLAGS HeapFlags,
-            [In] D3D12_RESOURCE_DESC* pDesc,
-            [In] D3D12_RESOURCE_STATES InitialResourceState,
-            [In, Optional] D3D12_CLEAR_VALUE* pOptimizedClearValue,
-            [In, NativeTypeName("REFIID")] Guid* riidResource,
-            [Out] void** ppvResource = null
-        )
+        public int CreateCommittedResource(D3D12_HEAP_PROPERTIES* pHeapProperties, D3D12_HEAP_FLAGS HeapFlags, D3D12_RESOURCE_DESC* pDesc, D3D12_RESOURCE_STATES InitialResourceState, [Optional] D3D12_CLEAR_VALUE* pOptimizedClearValue, [NativeTypeName("REFIID")] Guid* riidResource, void** ppvResource = null)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateCommittedResource>(lpVtbl->CreateCommittedResource)(
-                    This,
-                    pHeapProperties,
-                    HeapFlags,
-                    pDesc,
-                    InitialResourceState,
-                    pOptimizedClearValue,
-                    riidResource,
-                    ppvResource
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateCommittedResource>(lpVtbl->CreateCommittedResource)(This, pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, riidResource, ppvResource);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateHeap(
-            [In] D3D12_HEAP_DESC* pDesc,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvHeap = null
-        )
+        public int CreateHeap(D3D12_HEAP_DESC* pDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppvHeap = null)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateHeap>(lpVtbl->CreateHeap)(
-                    This,
-                    pDesc,
-                    riid,
-                    ppvHeap
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateHeap>(lpVtbl->CreateHeap)(This, pDesc, riid, ppvHeap);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreatePlacedResource(
-            [In] ID3D12Heap* pHeap,
-            [In, NativeTypeName("UINT64")] ulong HeapOffset,
-            [In] D3D12_RESOURCE_DESC* pDesc,
-            [In] D3D12_RESOURCE_STATES InitialState,
-            [In, Optional] D3D12_CLEAR_VALUE* pOptimizedClearValue,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvResource = null
-        )
+        public int CreatePlacedResource(ID3D12Heap* pHeap, [NativeTypeName("UINT64")] ulong HeapOffset, D3D12_RESOURCE_DESC* pDesc, D3D12_RESOURCE_STATES InitialState, [Optional] D3D12_CLEAR_VALUE* pOptimizedClearValue, [NativeTypeName("REFIID")] Guid* riid, void** ppvResource = null)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreatePlacedResource>(lpVtbl->CreatePlacedResource)(
-                    This,
-                    pHeap,
-                    HeapOffset,
-                    pDesc,
-                    InitialState,
-                    pOptimizedClearValue,
-                    riid,
-                    ppvResource
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreatePlacedResource>(lpVtbl->CreatePlacedResource)(This, pHeap, HeapOffset, pDesc, InitialState, pOptimizedClearValue, riid, ppvResource);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateReservedResource(
-            [In] D3D12_RESOURCE_DESC* pDesc,
-            [In] D3D12_RESOURCE_STATES InitialState,
-            [In, Optional] D3D12_CLEAR_VALUE* pOptimizedClearValue,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvResource = null
-        )
+        public int CreateReservedResource(D3D12_RESOURCE_DESC* pDesc, D3D12_RESOURCE_STATES InitialState, [Optional] D3D12_CLEAR_VALUE* pOptimizedClearValue, [NativeTypeName("REFIID")] Guid* riid, void** ppvResource = null)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateReservedResource>(lpVtbl->CreateReservedResource)(
-                    This,
-                    pDesc,
-                    InitialState,
-                    pOptimizedClearValue,
-                    riid,
-                    ppvResource
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateReservedResource>(lpVtbl->CreateReservedResource)(This, pDesc, InitialState, pOptimizedClearValue, riid, ppvResource);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateSharedHandle(
-            [In] ID3D12DeviceChild* pObject,
-            [In, Optional] SECURITY_ATTRIBUTES* pAttributes,
-            [In, NativeTypeName("DWORD")] uint Access,
-            [In, Optional, NativeTypeName("LPCWSTR")] char* Name,
-            [Out, NativeTypeName("HANDLE")] IntPtr* pHandle
-        )
+        public int CreateSharedHandle(ID3D12DeviceChild* pObject, [Optional] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint Access, [Optional, NativeTypeName("LPCWSTR")] char* Name, [NativeTypeName("HANDLE")] IntPtr* pHandle)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateSharedHandle>(lpVtbl->CreateSharedHandle)(
-                    This,
-                    pObject,
-                    pAttributes,
-                    Access,
-                    Name,
-                    pHandle
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateSharedHandle>(lpVtbl->CreateSharedHandle)(This, pObject, pAttributes, Access, Name, pHandle);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int OpenSharedHandle(
-            [In, NativeTypeName("HANDLE")] IntPtr NTHandle,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObj = null
-        )
+        public int OpenSharedHandle([NativeTypeName("HANDLE")] IntPtr NTHandle, [NativeTypeName("REFIID")] Guid* riid, void** ppvObj = null)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_OpenSharedHandle>(lpVtbl->OpenSharedHandle)(
-                    This,
-                    NTHandle,
-                    riid,
-                    ppvObj
-                );
+                return Marshal.GetDelegateForFunctionPointer<_OpenSharedHandle>(lpVtbl->OpenSharedHandle)(This, NTHandle, riid, ppvObj);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int OpenSharedHandleByName(
-            [In, NativeTypeName("LPCWSTR")] char* Name,
-            [In, NativeTypeName("DWORD")] uint Access,
-            [Out, NativeTypeName("HANDLE")] IntPtr* pNTHandle
-        )
+        public int OpenSharedHandleByName([NativeTypeName("LPCWSTR")] char* Name, [NativeTypeName("DWORD")] uint Access, [NativeTypeName("HANDLE")] IntPtr* pNTHandle)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_OpenSharedHandleByName>(lpVtbl->OpenSharedHandleByName)(
-                    This,
-                    Name,
-                    Access,
-                    pNTHandle
-                );
+                return Marshal.GetDelegateForFunctionPointer<_OpenSharedHandleByName>(lpVtbl->OpenSharedHandleByName)(This, Name, Access, pNTHandle);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int MakeResident(
-            [In, NativeTypeName("UINT")] uint NumObjects,
-            [In, NativeTypeName("ID3D12Pageable*[]")] ID3D12Pageable** ppObjects
-        )
+        public int MakeResident([NativeTypeName("UINT")] uint NumObjects, [NativeTypeName("ID3D12Pageable*[]")] ID3D12Pageable** ppObjects)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_MakeResident>(lpVtbl->MakeResident)(
-                    This,
-                    NumObjects,
-                    ppObjects
-                );
+                return Marshal.GetDelegateForFunctionPointer<_MakeResident>(lpVtbl->MakeResident)(This, NumObjects, ppObjects);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Evict(
-            [In, NativeTypeName("UINT")] uint NumObjects,
-            [In, NativeTypeName("ID3D12Pageable*[]")] ID3D12Pageable** ppObjects
-        )
+        public int Evict([NativeTypeName("UINT")] uint NumObjects, [NativeTypeName("ID3D12Pageable*[]")] ID3D12Pageable** ppObjects)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Evict>(lpVtbl->Evict)(
-                    This,
-                    NumObjects,
-                    ppObjects
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Evict>(lpVtbl->Evict)(This, NumObjects, ppObjects);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateFence(
-            [In, NativeTypeName("UINT64")] ulong InitialValue,
-            [In] D3D12_FENCE_FLAGS Flags,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppFence
-        )
+        public int CreateFence([NativeTypeName("UINT64")] ulong InitialValue, D3D12_FENCE_FLAGS Flags, [NativeTypeName("REFIID")] Guid* riid, void** ppFence)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateFence>(lpVtbl->CreateFence)(
-                    This,
-                    InitialValue,
-                    Flags,
-                    riid,
-                    ppFence
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateFence>(lpVtbl->CreateFence)(This, InitialValue, Flags, riid, ppFence);
             }
         }
 
@@ -1181,113 +523,50 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDeviceRemovedReason>(lpVtbl->GetDeviceRemovedReason)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDeviceRemovedReason>(lpVtbl->GetDeviceRemovedReason)(This);
             }
         }
 
-        public void GetCopyableFootprints(
-            [In] D3D12_RESOURCE_DESC* pResourceDesc,
-            [In, NativeTypeName("UINT")] uint FirstSubresource,
-            [In, NativeTypeName("UINT")] uint NumSubresources,
-            [In, NativeTypeName("UINT64")] ulong BaseOffset,
-            [Out, NativeTypeName("D3D12_PLACED_SUBRESOURCE_FOOTPRINT[]")] D3D12_PLACED_SUBRESOURCE_FOOTPRINT* pLayouts = null,
-            [Out, NativeTypeName("UINT[]")] uint* pNumRows = null,
-            [Out, NativeTypeName("UINT64[]")] ulong* pRowSizeInBytes = null,
-            [Out, NativeTypeName("UINT64")] ulong* pTotalBytes = null
-        )
+        public void GetCopyableFootprints(D3D12_RESOURCE_DESC* pResourceDesc, [NativeTypeName("UINT")] uint FirstSubresource, [NativeTypeName("UINT")] uint NumSubresources, [NativeTypeName("UINT64")] ulong BaseOffset, [NativeTypeName("D3D12_PLACED_SUBRESOURCE_FOOTPRINT[]")] D3D12_PLACED_SUBRESOURCE_FOOTPRINT* pLayouts = null, [NativeTypeName("UINT[]")] uint* pNumRows = null, [NativeTypeName("UINT64[]")] ulong* pRowSizeInBytes = null, [NativeTypeName("UINT64")] ulong* pTotalBytes = null)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetCopyableFootprints>(lpVtbl->GetCopyableFootprints)(
-                    This,
-                    pResourceDesc,
-                    FirstSubresource,
-                    NumSubresources,
-                    BaseOffset,
-                    pLayouts,
-                    pNumRows,
-                    pRowSizeInBytes,
-                    pTotalBytes
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetCopyableFootprints>(lpVtbl->GetCopyableFootprints)(This, pResourceDesc, FirstSubresource, NumSubresources, BaseOffset, pLayouts, pNumRows, pRowSizeInBytes, pTotalBytes);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateQueryHeap(
-            [In] D3D12_QUERY_HEAP_DESC* pDesc,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvHeap = null
-        )
+        public int CreateQueryHeap(D3D12_QUERY_HEAP_DESC* pDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppvHeap = null)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateQueryHeap>(lpVtbl->CreateQueryHeap)(
-                    This,
-                    pDesc,
-                    riid,
-                    ppvHeap
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateQueryHeap>(lpVtbl->CreateQueryHeap)(This, pDesc, riid, ppvHeap);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetStablePowerState(
-            [In, NativeTypeName("BOOL")] int Enable
-        )
+        public int SetStablePowerState([NativeTypeName("BOOL")] int Enable)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetStablePowerState>(lpVtbl->SetStablePowerState)(
-                    This,
-                    Enable
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetStablePowerState>(lpVtbl->SetStablePowerState)(This, Enable);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateCommandSignature(
-            [In] D3D12_COMMAND_SIGNATURE_DESC* pDesc,
-            [In, Optional] ID3D12RootSignature* pRootSignature,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvCommandSignature = null
-        )
+        public int CreateCommandSignature(D3D12_COMMAND_SIGNATURE_DESC* pDesc, [Optional] ID3D12RootSignature* pRootSignature, [NativeTypeName("REFIID")] Guid* riid, void** ppvCommandSignature = null)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateCommandSignature>(lpVtbl->CreateCommandSignature)(
-                    This,
-                    pDesc,
-                    pRootSignature,
-                    riid,
-                    ppvCommandSignature
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateCommandSignature>(lpVtbl->CreateCommandSignature)(This, pDesc, pRootSignature, riid, ppvCommandSignature);
             }
         }
 
-        public void GetResourceTiling(
-            [In] ID3D12Resource* pTiledResource,
-            [Out, Optional, NativeTypeName("UINT")] uint* pNumTilesForEntireResource,
-            [Out, Optional] D3D12_PACKED_MIP_INFO* pPackedMipDesc,
-            [Out, Optional] D3D12_TILE_SHAPE* pStandardTileShapeForNonPackedMips,
-            [In, Out, Optional, NativeTypeName("UINT")] uint* pNumSubresourceTilings,
-            [In, NativeTypeName("UINT")] uint FirstSubresourceTilingToGet,
-            [Out] D3D12_SUBRESOURCE_TILING* pSubresourceTilingsForNonPackedMips
-        )
+        public void GetResourceTiling(ID3D12Resource* pTiledResource, [Optional, NativeTypeName("UINT")] uint* pNumTilesForEntireResource, [Optional] D3D12_PACKED_MIP_INFO* pPackedMipDesc, [Optional] D3D12_TILE_SHAPE* pStandardTileShapeForNonPackedMips, [Optional, NativeTypeName("UINT")] uint* pNumSubresourceTilings, [NativeTypeName("UINT")] uint FirstSubresourceTilingToGet, D3D12_SUBRESOURCE_TILING* pSubresourceTilingsForNonPackedMips)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetResourceTiling>(lpVtbl->GetResourceTiling)(
-                    This,
-                    pTiledResource,
-                    pNumTilesForEntireResource,
-                    pPackedMipDesc,
-                    pStandardTileShapeForNonPackedMips,
-                    pNumSubresourceTilings,
-                    FirstSubresourceTilingToGet,
-                    pSubresourceTilingsForNonPackedMips
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetResourceTiling>(lpVtbl->GetResourceTiling)(This, pTiledResource, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
             }
         }
 
@@ -1296,108 +575,54 @@ namespace TerraFX.Interop
             fixed (ID3D12Device2* This = &this)
             {
                 LUID result;
-                return *Marshal.GetDelegateForFunctionPointer<_GetAdapterLuid>(lpVtbl->GetAdapterLuid)(
-                    This,
-                    &result
-                );
-            }
-        }
-        #endregion
-
-        #region ID3D12Device1 Methods
-        [return: NativeTypeName("HRESULT")]
-        public int CreatePipelineLibrary(
-            [In] void* pLibraryBlob,
-            [In, NativeTypeName("SIZE_T")] UIntPtr BlobLength,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppPipelineLibrary
-        )
-        {
-            fixed (ID3D12Device2* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_CreatePipelineLibrary>(lpVtbl->CreatePipelineLibrary)(
-                    This,
-                    pLibraryBlob,
-                    BlobLength,
-                    riid,
-                    ppPipelineLibrary
-                );
+                return *Marshal.GetDelegateForFunctionPointer<_GetAdapterLuid>(lpVtbl->GetAdapterLuid)(This, &result);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetEventOnMultipleFenceCompletion(
-            [In, NativeTypeName("ID3D12Fence*[]")] ID3D12Fence** ppFences,
-            [In, NativeTypeName("UINT64[]")] ulong* pFenceValues,
-            [In, NativeTypeName("UINT")] uint NumFences,
-            [In] D3D12_MULTIPLE_FENCE_WAIT_FLAGS Flags,
-            [In, NativeTypeName("HANDLE")] IntPtr hEvent
-        )
+        public int CreatePipelineLibrary(void* pLibraryBlob, [NativeTypeName("SIZE_T")] UIntPtr BlobLength, [NativeTypeName("REFIID")] Guid* riid, void** ppPipelineLibrary)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetEventOnMultipleFenceCompletion>(lpVtbl->SetEventOnMultipleFenceCompletion)(
-                    This,
-                    ppFences,
-                    pFenceValues,
-                    NumFences,
-                    Flags,
-                    hEvent
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreatePipelineLibrary>(lpVtbl->CreatePipelineLibrary)(This, pLibraryBlob, BlobLength, riid, ppPipelineLibrary);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetResidencyPriority(
-            [In, NativeTypeName("UINT")] uint NumObjects,
-            [In, NativeTypeName("ID3D12Pageable*[]")] ID3D12Pageable** ppObjects,
-            [In, NativeTypeName("D3D12_RESIDENCY_PRIORITY[]")] D3D12_RESIDENCY_PRIORITY* pPriorities
-        )
+        public int SetEventOnMultipleFenceCompletion([NativeTypeName("ID3D12Fence*[]")] ID3D12Fence** ppFences, [NativeTypeName("UINT64[]")] ulong* pFenceValues, [NativeTypeName("UINT")] uint NumFences, D3D12_MULTIPLE_FENCE_WAIT_FLAGS Flags, [NativeTypeName("HANDLE")] IntPtr hEvent)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetResidencyPriority>(lpVtbl->SetResidencyPriority)(
-                    This,
-                    NumObjects,
-                    ppObjects,
-                    pPriorities
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetEventOnMultipleFenceCompletion>(lpVtbl->SetEventOnMultipleFenceCompletion)(This, ppFences, pFenceValues, NumFences, Flags, hEvent);
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
-        public int CreatePipelineState(
-            [In] D3D12_PIPELINE_STATE_STREAM_DESC* pDesc,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppPipelineState
-        )
+        public int SetResidencyPriority([NativeTypeName("UINT")] uint NumObjects, [NativeTypeName("ID3D12Pageable*[]")] ID3D12Pageable** ppObjects, [NativeTypeName("D3D12_RESIDENCY_PRIORITY[]")] D3D12_RESIDENCY_PRIORITY* pPriorities)
         {
             fixed (ID3D12Device2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreatePipelineState>(lpVtbl->CreatePipelineState)(
-                    This,
-                    pDesc,
-                    riid,
-                    ppPipelineState
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetResidencyPriority>(lpVtbl->SetResidencyPriority)(This, NumObjects, ppObjects, pPriorities);
             }
         }
-        #endregion
 
-        #region Structs
+        [return: NativeTypeName("HRESULT")]
+        public int CreatePipelineState(D3D12_PIPELINE_STATE_STREAM_DESC* pDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppPipelineState)
+        {
+            fixed (ID3D12Device2* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_CreatePipelineState>(lpVtbl->CreatePipelineState)(This, pDesc, riid, ppPipelineState);
+            }
+        }
+
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID3D12Object Fields
             public IntPtr GetPrivateData;
 
             public IntPtr SetPrivateData;
@@ -1405,9 +630,7 @@ namespace TerraFX.Interop
             public IntPtr SetPrivateDataInterface;
 
             public IntPtr SetName;
-            #endregion
 
-            #region ID3D12Device Fields
             public IntPtr GetNodeCount;
 
             public IntPtr CreateCommandQueue;
@@ -1481,20 +704,14 @@ namespace TerraFX.Interop
             public IntPtr GetResourceTiling;
 
             public IntPtr GetAdapterLuid;
-            #endregion
 
-            #region ID3D12Device1 Fields
             public IntPtr CreatePipelineLibrary;
 
             public IntPtr SetEventOnMultipleFenceCompletion;
 
             public IntPtr SetResidencyPriority;
-            #endregion
 
-            #region Fields
             public IntPtr CreatePipelineState;
-            #endregion
         }
-        #endregion
     }
 }

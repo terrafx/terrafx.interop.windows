@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public unsafe struct CAFILETIME
     {
-        #region Fields
         [NativeTypeName("ULONG")]
         public uint cElems;
 
         [NativeTypeName("FILETIME[]")]
         public FILETIME* pElems;
-        #endregion
     }
 }

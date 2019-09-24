@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public unsafe struct DXGI_DISPLAY_COLOR_SPACE
     {
-        #region Fields
         [NativeTypeName("FLOAT[8][2]")]
         public fixed float PrimaryCoordinates[8 * 2];
 
         [NativeTypeName("FLOAT[16][2]")]
         public fixed float WhitePoints[16 * 2];
-        #endregion
     }
 }

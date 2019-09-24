@@ -10,15 +10,12 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_TEXTURE_COPY_LOCATION
     {
-        #region Fields
         public ID3D12Resource* pResource;
 
         public D3D12_TEXTURE_COPY_TYPE Type;
 
         public _Anonymous_e__Union Anonymous;
-        #endregion
 
-        #region Constructors
         public D3D12_TEXTURE_COPY_LOCATION(ID3D12Resource* pRes)
         {
             this = default;
@@ -39,21 +36,16 @@ namespace TerraFX.Interop
             Type = D3D12_TEXTURE_COPY_TYPE_SUBRESOURCE_INDEX;
             Anonymous.SubresourceIndex = Sub;
         }
-        #endregion
 
-        #region Structs
         [StructLayout(LayoutKind.Explicit)]
         public struct _Anonymous_e__Union
         {
-            #region Fields
             [FieldOffset(0)]
             public D3D12_PLACED_SUBRESOURCE_FOOTPRINT PlacedFootprint;
 
             [FieldOffset(0)]
             [NativeTypeName("UINT")]
             public uint SubresourceIndex;
-            #endregion
         }
-        #endregion
     }
 }

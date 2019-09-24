@@ -5,82 +5,44 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     [Guid("DAAC296F-7AA5-4DBF-8D15-225C5976F891")]
     public unsafe struct IWICProgressiveLevelControl
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IWICProgressiveLevelControl* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICProgressiveLevelControl* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IWICProgressiveLevelControl* This
-        );
+        public delegate uint _AddRef(IWICProgressiveLevelControl* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IWICProgressiveLevelControl* This
-        );
-        #endregion
+        public delegate uint _Release(IWICProgressiveLevelControl* This);
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetLevelCount(
-            [In] IWICProgressiveLevelControl* This,
-            [Out, NativeTypeName("UINT")] uint* pcLevels
-        );
+        public delegate int _GetLevelCount(IWICProgressiveLevelControl* This, [NativeTypeName("UINT")] uint* pcLevels);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetCurrentLevel(
-            [In] IWICProgressiveLevelControl* This,
-            [Out, NativeTypeName("UINT")] uint* pnLevel
-        );
+        public delegate int _GetCurrentLevel(IWICProgressiveLevelControl* This, [NativeTypeName("UINT")] uint* pnLevel);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetCurrentLevel(
-            [In] IWICProgressiveLevelControl* This,
-            [In, NativeTypeName("UINT")] uint nLevel
-        );
-        #endregion
+        public delegate int _SetCurrentLevel(IWICProgressiveLevelControl* This, [NativeTypeName("UINT")] uint nLevel);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICProgressiveLevelControl* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -89,9 +51,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICProgressiveLevelControl* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -100,76 +60,50 @@ namespace TerraFX.Interop
         {
             fixed (IWICProgressiveLevelControl* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region Methods
-        [return: NativeTypeName("HRESULT")]
-        public int GetLevelCount(
-            [Out, NativeTypeName("UINT")] uint* pcLevels
-        )
-        {
-            fixed (IWICProgressiveLevelControl* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetLevelCount>(lpVtbl->GetLevelCount)(
-                    This,
-                    pcLevels
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetCurrentLevel(
-            [Out, NativeTypeName("UINT")] uint* pnLevel
-        )
+        public int GetLevelCount([NativeTypeName("UINT")] uint* pcLevels)
         {
             fixed (IWICProgressiveLevelControl* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetCurrentLevel>(lpVtbl->GetCurrentLevel)(
-                    This,
-                    pnLevel
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetLevelCount>(lpVtbl->GetLevelCount)(This, pcLevels);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetCurrentLevel(
-            [In, NativeTypeName("UINT")] uint nLevel
-        )
+        public int GetCurrentLevel([NativeTypeName("UINT")] uint* pnLevel)
         {
             fixed (IWICProgressiveLevelControl* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetCurrentLevel>(lpVtbl->SetCurrentLevel)(
-                    This,
-                    nLevel
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetCurrentLevel>(lpVtbl->GetCurrentLevel)(This, pnLevel);
             }
         }
-        #endregion
 
-        #region Structs
+        [return: NativeTypeName("HRESULT")]
+        public int SetCurrentLevel([NativeTypeName("UINT")] uint nLevel)
+        {
+            fixed (IWICProgressiveLevelControl* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_SetCurrentLevel>(lpVtbl->SetCurrentLevel)(This, nLevel);
+            }
+        }
+
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetLevelCount;
 
             public IntPtr GetCurrentLevel;
 
             public IntPtr SetCurrentLevel;
-            #endregion
         }
-        #endregion
     }
 }

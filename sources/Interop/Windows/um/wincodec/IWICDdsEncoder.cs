@@ -5,85 +5,44 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     [Guid("5CACDB4C-407E-41B3-B936-D0F010CD6732")]
     public unsafe struct IWICDdsEncoder
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IWICDdsEncoder* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICDdsEncoder* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IWICDdsEncoder* This
-        );
+        public delegate uint _AddRef(IWICDdsEncoder* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IWICDdsEncoder* This
-        );
-        #endregion
+        public delegate uint _Release(IWICDdsEncoder* This);
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetParameters(
-            [In] IWICDdsEncoder* This,
-            [In] WICDdsParameters* pParameters
-        );
+        public delegate int _SetParameters(IWICDdsEncoder* This, WICDdsParameters* pParameters);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetParameters(
-            [In] IWICDdsEncoder* This,
-            [Out] WICDdsParameters* pParameters
-        );
+        public delegate int _GetParameters(IWICDdsEncoder* This, WICDdsParameters* pParameters);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateNewFrame(
-            [In] IWICDdsEncoder* This,
-            [Out] IWICBitmapFrameEncode** ppIFrameEncode = null,
-            [Out, NativeTypeName("UINT")] uint* pArrayIndex = null,
-            [Out, NativeTypeName("UINT")] uint* pMipLevel = null,
-            [Out, NativeTypeName("UINT")] uint* pSliceIndex = null
-        );
-        #endregion
+        public delegate int _CreateNewFrame(IWICDdsEncoder* This, IWICBitmapFrameEncode** ppIFrameEncode = null, [NativeTypeName("UINT")] uint* pArrayIndex = null, [NativeTypeName("UINT")] uint* pMipLevel = null, [NativeTypeName("UINT")] uint* pSliceIndex = null);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICDdsEncoder* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -92,9 +51,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDdsEncoder* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -103,82 +60,50 @@ namespace TerraFX.Interop
         {
             fixed (IWICDdsEncoder* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region Methods
-        [return: NativeTypeName("HRESULT")]
-        public int SetParameters(
-            [In] WICDdsParameters* pParameters
-        )
-        {
-            fixed (IWICDdsEncoder* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetParameters>(lpVtbl->SetParameters)(
-                    This,
-                    pParameters
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetParameters(
-            [Out] WICDdsParameters* pParameters
-        )
+        public int SetParameters(WICDdsParameters* pParameters)
         {
             fixed (IWICDdsEncoder* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetParameters>(lpVtbl->GetParameters)(
-                    This,
-                    pParameters
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetParameters>(lpVtbl->SetParameters)(This, pParameters);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateNewFrame(
-            [Out] IWICBitmapFrameEncode** ppIFrameEncode = null,
-            [Out, NativeTypeName("UINT")] uint* pArrayIndex = null,
-            [Out, NativeTypeName("UINT")] uint* pMipLevel = null,
-            [Out, NativeTypeName("UINT")] uint* pSliceIndex = null
-        )
+        public int GetParameters(WICDdsParameters* pParameters)
         {
             fixed (IWICDdsEncoder* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateNewFrame>(lpVtbl->CreateNewFrame)(
-                    This,
-                    ppIFrameEncode,
-                    pArrayIndex,
-                    pMipLevel,
-                    pSliceIndex
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetParameters>(lpVtbl->GetParameters)(This, pParameters);
             }
         }
-        #endregion
 
-        #region Structs
+        [return: NativeTypeName("HRESULT")]
+        public int CreateNewFrame(IWICBitmapFrameEncode** ppIFrameEncode = null, [NativeTypeName("UINT")] uint* pArrayIndex = null, [NativeTypeName("UINT")] uint* pMipLevel = null, [NativeTypeName("UINT")] uint* pSliceIndex = null)
+        {
+            fixed (IWICDdsEncoder* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_CreateNewFrame>(lpVtbl->CreateNewFrame)(This, ppIFrameEncode, pArrayIndex, pMipLevel, pSliceIndex);
+            }
+        }
+
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr SetParameters;
 
             public IntPtr GetParameters;
 
             public IntPtr CreateNewFrame;
-            #endregion
         }
-        #endregion
     }
 }

@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public unsafe struct BSTRBLOB
     {
-        #region Fields
         [NativeTypeName("ULONG")]
         public uint cbSize;
 
         [NativeTypeName("BYTE[]")]
         public byte* pBlobData;
-        #endregion
     }
 }

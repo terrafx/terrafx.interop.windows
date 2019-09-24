@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct DXGI_SWAP_CHAIN_DESC1
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint Width;
 
@@ -35,6 +34,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint Flags;
-        #endregion
     }
 }

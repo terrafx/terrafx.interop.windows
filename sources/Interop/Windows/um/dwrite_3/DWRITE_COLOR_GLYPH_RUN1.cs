@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     /// <summary>For runs without any specific color, such as PNG data, the runColor field will be zero.</summary>
     public struct DWRITE_COLOR_GLYPH_RUN1
     {
-        #region Fields
         public DWRITE_COLOR_GLYPH_RUN BaseValue;
 
         /// <summary>Type of glyph image format for this color run. Exactly one type will be set since TranslateColorGlyphRun has already broken down the run into separate parts.</summary>
@@ -17,6 +16,5 @@ namespace TerraFX.Interop
 
         /// <summary>Measuring mode to use for this glyph run.</summary>
         public DWRITE_MEASURING_MODE measuringMode;
-        #endregion
     }
 }

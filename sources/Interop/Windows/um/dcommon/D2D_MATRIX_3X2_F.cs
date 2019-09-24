@@ -10,15 +10,11 @@ namespace TerraFX.Interop
     /// <summary>Represents a 3-by-2 matrix.</summary>
     public unsafe struct D2D_MATRIX_3X2_F
     {
-        #region Fields
         public _Anonymous_e__Union Anonymous;
-        #endregion
 
-        #region Structs
         [StructLayout(LayoutKind.Explicit)]
         public struct _Anonymous_e__Union
         {
-            #region Fields
             [FieldOffset(0)]
             public _Anonymous1_e__Struct Anonymous1;
 
@@ -28,12 +24,9 @@ namespace TerraFX.Interop
             [FieldOffset(0)]
             [NativeTypeName("FLOAT[3][2]")]
             public fixed float m[3 * 2];
-            #endregion
 
-            #region Structs
             public struct _Anonymous1_e__Struct
             {
-                #region Fields
                 /// <summary>Horizontal scaling / cosine of rotation</summary>
                 public float m11;
 
@@ -51,12 +44,10 @@ namespace TerraFX.Interop
 
                 /// <summary>Vertical shift (always orthogonal regardless of rotation)</summary>
                 public float dy;
-                #endregion
             }
 
             public struct _Anonymous2_e__Struct
             {
-                #region Fields
                 [NativeTypeName("FLOAT")]
                 public float _11;
 
@@ -74,10 +65,7 @@ namespace TerraFX.Interop
 
                 [NativeTypeName("FLOAT")]
                 public float _32;
-                #endregion
             }
-            #endregion
         }
-        #endregion
     }
 }

@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>The creation properties for a ID2D1PrintControl object.</summary>
     public struct D2D1_PRINT_CONTROL_PROPERTIES
     {
-        #region Fields
         public D2D1_PRINT_FONT_SUBSET_MODE fontSubset;
 
         /// <summary>DPI for rasterization of all unsupported D2D commands or options, defaults to 150.0</summary>
@@ -17,6 +16,5 @@ namespace TerraFX.Interop
 
         /// <summary>Color space for vector graphics in XPS package</summary>
         public D2D1_COLOR_SPACE colorSpace;
-        #endregion
     }
 }

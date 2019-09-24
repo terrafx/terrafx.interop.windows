@@ -9,12 +9,10 @@ namespace TerraFX.Interop
 {
     public struct IDLDESC
     {
-        #region Fields
         [NativeTypeName("ULONG_PTR")]
         public UIntPtr dwReserved;
 
         [NativeTypeName("USHORT")]
         public ushort wIDLFlags;
-        #endregion
     }
 }

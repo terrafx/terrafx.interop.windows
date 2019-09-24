@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -13,64 +12,33 @@ namespace TerraFX.Interop
     [Guid("B06FE5B9-43EC-4393-881B-DBE4DC72FDA7")]
     public unsafe struct IDWriteFontDownloadListener
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IDWriteFontDownloadListener* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDWriteFontDownloadListener* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IDWriteFontDownloadListener* This
-        );
+        public delegate uint _AddRef(IDWriteFontDownloadListener* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IDWriteFontDownloadListener* This
-        );
-        #endregion
+        public delegate uint _Release(IDWriteFontDownloadListener* This);
 
-        #region Delegates
         /// <summary>The DownloadCompleted method is called back on an arbitrary thread when a download operation ends.</summary>
         /// <param name="downloadQueue">Pointer to the download queue interface on which the BeginDownload method was called.</param>
         /// <param name="context">Optional context object that was passed to BeginDownload. AddRef is called on the context object by BeginDownload and Release is called after the DownloadCompleted method returns.</param>
         /// <param name="downloadResult">Result of the download operation.</param>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _DownloadCompleted(
-            [In] IDWriteFontDownloadListener* This,
-            [In] IDWriteFontDownloadQueue* downloadQueue,
-            [In, Optional] IUnknown* context,
-            [In, NativeTypeName("HRESULT")] int downloadResult
-        );
-        #endregion
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _DownloadCompleted(IDWriteFontDownloadListener* This, IDWriteFontDownloadQueue* downloadQueue, [Optional] IUnknown* context, [NativeTypeName("HRESULT")] int downloadResult);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDWriteFontDownloadListener* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -79,9 +47,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontDownloadListener* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -90,47 +56,27 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontDownloadListener* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
-        #endregion
 
-        #region Methods
-        public void DownloadCompleted(
-            [In] IDWriteFontDownloadQueue* downloadQueue,
-            [In, Optional] IUnknown* context,
-            [In, NativeTypeName("HRESULT")] int downloadResult
-        )
+        public void DownloadCompleted(IDWriteFontDownloadQueue* downloadQueue, [Optional] IUnknown* context, [NativeTypeName("HRESULT")] int downloadResult)
         {
             fixed (IDWriteFontDownloadListener* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_DownloadCompleted>(lpVtbl->DownloadCompleted)(
-                    This,
-                    downloadQueue,
-                    context,
-                    downloadResult
-                );
+                Marshal.GetDelegateForFunctionPointer<_DownloadCompleted>(lpVtbl->DownloadCompleted)(This, downloadQueue, context, downloadResult);
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr DownloadCompleted;
-            #endregion
         }
-        #endregion
     }
 }

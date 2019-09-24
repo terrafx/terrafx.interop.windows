@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_SHADER_INPUT_BIND_DESC
     {
-        #region Fields
         [NativeTypeName("LPCSTR")]
         public sbyte* Name;
 
@@ -34,6 +33,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint uID;
-        #endregion
     }
 }

@@ -11,24 +11,12 @@ namespace TerraFX.Interop
 {
     public struct D3D12_BLEND_DESC
     {
-        #region Default Instances
         public static readonly D3D12_BLEND_DESC DEFAULT = new D3D12_BLEND_DESC() {
-            AlphaToCoverageEnable = FALSE,
-            IndependentBlendEnable = FALSE,
-            RenderTarget = new _RenderTarget_e__FixedBuffer() {
-                e0 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT,
-                e1 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT,
-                e2 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT,
-                e3 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT,
-                e4 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT,
-                e5 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT,
-                e6 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT,
-                e7 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT
+            AlphaToCoverageEnable = FALSE, IndependentBlendEnable = FALSE, RenderTarget = new _RenderTarget_e__FixedBuffer() {
+                e0 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT, e1 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT, e2 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT, e3 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT, e4 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT, e5 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT, e6 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT, e7 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT
             }
         };
-        #endregion
 
-        #region Fields
         [NativeTypeName("BOOL")]
         public int AlphaToCoverageEnable;
 
@@ -37,12 +25,9 @@ namespace TerraFX.Interop
 
         [NativeTypeName("D3D12_RENDER_TARGET_BLEND_DESC[8]")]
         public _RenderTarget_e__FixedBuffer RenderTarget;
-        #endregion
 
-        #region Structs
         public unsafe struct _RenderTarget_e__FixedBuffer
         {
-            #region Fields
             public D3D12_RENDER_TARGET_BLEND_DESC e0;
 
             public D3D12_RENDER_TARGET_BLEND_DESC e1;
@@ -58,14 +43,10 @@ namespace TerraFX.Interop
             public D3D12_RENDER_TARGET_BLEND_DESC e6;
 
             public D3D12_RENDER_TARGET_BLEND_DESC e7;
-            #endregion
 
-            #region Properties
             public ref D3D12_RENDER_TARGET_BLEND_DESC this[int index] => ref AsSpan(int.MaxValue)[index];
-            #endregion
 
             public Span<D3D12_RENDER_TARGET_BLEND_DESC> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
-        #endregion
     }
 }

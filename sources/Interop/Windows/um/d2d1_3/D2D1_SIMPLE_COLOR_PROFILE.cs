@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>Simple description of a color space.</summary>
     public struct D2D1_SIMPLE_COLOR_PROFILE
     {
-        #region Fields
         /// <summary>The XY coordinates of the red primary in CIEXYZ space.</summary>
         [NativeTypeName("D2D1_POINT_2F")]
         public D2D_POINT_2F redPrimary;
@@ -27,6 +26,5 @@ namespace TerraFX.Interop
 
         /// <summary>The gamma encoding to use for this color space.</summary>
         public D2D1_GAMMA1 gamma;
-        #endregion
     }
 }

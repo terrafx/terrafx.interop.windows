@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>Script-specific properties for caret navigation and justification.</summary>
     public struct DWRITE_SCRIPT_PROPERTIES
     {
-        #region Fields
         /// <summary>The standardized four character code for the given script. Note these only include the general Unicode scripts, not any additional ISO 15924 scripts for bibliographic distinction (for example, Fraktur Latin vs Gaelic Latin). http://unicode.org/iso15924/iso15924-codes.html</summary>
         [NativeTypeName("UINT32")]
         public uint isoScriptCode;
@@ -27,9 +26,7 @@ namespace TerraFX.Interop
         public uint justificationCharacter;
 
         private uint _bitField;
-        #endregion
 
-        #region Properties
         /// <summary>Restrict the caret to whole clusters, like Thai and Devanagari. Scripts such as Arabic by default allow navigation between clusters. Others like Thai always navigate across whole clusters.</summary>
         [NativeTypeName("UINT32:1")]
         public uint restrictCaretToClusters
@@ -154,6 +151,5 @@ namespace TerraFX.Interop
                 _bitField = (_bitField & 0b0000_0000_0000_0000_0000_0000_0111_1111) | ((value << 7) & 0b1111_1111_1111_1111_1111_1111_1000_0000);
             }
         }
-        #endregion
     }
 }

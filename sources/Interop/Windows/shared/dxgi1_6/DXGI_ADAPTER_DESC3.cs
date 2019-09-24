@@ -4,14 +4,11 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
-using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     public unsafe struct DXGI_ADAPTER_DESC3
     {
-        #region Fields
         [NativeTypeName("WCHAR[128]")]
         public fixed char Description[128];
 
@@ -43,6 +40,5 @@ namespace TerraFX.Interop
         public DXGI_GRAPHICS_PREEMPTION_GRANULARITY GraphicsPreemptionGranularity;
 
         public DXGI_COMPUTE_PREEMPTION_GRANULARITY ComputePreemptionGranularity;
-        #endregion
     }
 }

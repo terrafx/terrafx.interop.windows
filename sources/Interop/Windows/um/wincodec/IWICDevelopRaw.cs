@@ -5,398 +5,192 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     [Guid("FBEC5E44-F7BE-4B65-B7F8-C0C81FEF026D")]
     public unsafe struct IWICDevelopRaw
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IWICDevelopRaw* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICDevelopRaw* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IWICDevelopRaw* This
-        );
+        public delegate uint _AddRef(IWICDevelopRaw* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IWICDevelopRaw* This
-        );
-        #endregion
+        public delegate uint _Release(IWICDevelopRaw* This);
 
-        #region IWICBitmapSource Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSize(
-            [In] IWICDevelopRaw* This,
-            [Out, NativeTypeName("UINT")] uint* puiWidth,
-            [Out, NativeTypeName("UINT")] uint* puiHeight
-        );
+        public delegate int _GetSize(IWICDevelopRaw* This, [NativeTypeName("UINT")] uint* puiWidth, [NativeTypeName("UINT")] uint* puiHeight);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPixelFormat(
-            [In] IWICDevelopRaw* This,
-            [Out, NativeTypeName("WICPixelFormatGUID")] Guid* pPixelFormat
-        );
+        public delegate int _GetPixelFormat(IWICDevelopRaw* This, [NativeTypeName("WICPixelFormatGUID")] Guid* pPixelFormat);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetResolution(
-            [In] IWICDevelopRaw* This,
-            [Out] double* pDpiX,
-            [Out] double* pDpiY
-        );
+        public delegate int _GetResolution(IWICDevelopRaw* This, double* pDpiX, double* pDpiY);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CopyPalette(
-            [In] IWICDevelopRaw* This,
-            [In] IWICPalette* pIPalette = null
-        );
+        public delegate int _CopyPalette(IWICDevelopRaw* This, IWICPalette* pIPalette = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CopyPixels(
-            [In] IWICDevelopRaw* This,
-            [In, Optional] WICRect* prc,
-            [In, NativeTypeName("UINT")] uint cbStride,
-            [In, NativeTypeName("UINT")] uint cbBufferSize,
-            [Out, NativeTypeName("BYTE[]")] byte* pbBuffer
-        );
-        #endregion
+        public delegate int _CopyPixels(IWICDevelopRaw* This, [Optional] WICRect* prc, [NativeTypeName("UINT")] uint cbStride, [NativeTypeName("UINT")] uint cbBufferSize, [NativeTypeName("BYTE[]")] byte* pbBuffer);
 
-        #region IWICBitmapFrameDecode Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetMetadataQueryReader(
-            [In] IWICDevelopRaw* This,
-            [Out] IWICMetadataQueryReader** ppIMetadataQueryReader = null
-        );
+        public delegate int _GetMetadataQueryReader(IWICDevelopRaw* This, IWICMetadataQueryReader** ppIMetadataQueryReader = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetColorContexts(
-            [In] IWICDevelopRaw* This,
-            [In, NativeTypeName("UINT")] uint cCount,
-            [In, Out, Optional, NativeTypeName("IWICColorContext*[]")] IWICColorContext** ppIColorContexts,
-            [Out, NativeTypeName("UINT")] uint* pcActualCount
-        );
+        public delegate int _GetColorContexts(IWICDevelopRaw* This, [NativeTypeName("UINT")] uint cCount, [Optional, NativeTypeName("IWICColorContext*[]")] IWICColorContext** ppIColorContexts, [NativeTypeName("UINT")] uint* pcActualCount);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetThumbnail(
-            [In] IWICDevelopRaw* This,
-            [Out] IWICBitmapSource** ppIThumbnail = null
-        );
-        #endregion
+        public delegate int _GetThumbnail(IWICDevelopRaw* This, IWICBitmapSource** ppIThumbnail = null);
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryRawCapabilitiesInfo(
-            [In] IWICDevelopRaw* This,
-            [In, Out] WICRawCapabilitiesInfo* pInfo
-        );
+        public delegate int _QueryRawCapabilitiesInfo(IWICDevelopRaw* This, WICRawCapabilitiesInfo* pInfo);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _LoadParameterSet(
-            [In] IWICDevelopRaw* This,
-            [In] WICRawParameterSet ParameterSet
-        );
+        public delegate int _LoadParameterSet(IWICDevelopRaw* This, WICRawParameterSet ParameterSet);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetCurrentParameterSet(
-            [In] IWICDevelopRaw* This,
-            [Out] IPropertyBag2** ppCurrentParameterSet = null
-        );
+        public delegate int _GetCurrentParameterSet(IWICDevelopRaw* This, IPropertyBag2** ppCurrentParameterSet = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetExposureCompensation(
-            [In] IWICDevelopRaw* This,
-            [In] double ev
-        );
+        public delegate int _SetExposureCompensation(IWICDevelopRaw* This, double ev);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetExposureCompensation(
-            [In] IWICDevelopRaw* This,
-            [Out] double* pEV
-        );
+        public delegate int _GetExposureCompensation(IWICDevelopRaw* This, double* pEV);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetWhitePointRGB(
-            [In] IWICDevelopRaw* This,
-            [In, NativeTypeName("UINT")] uint Red,
-            [In, NativeTypeName("UINT")] uint Green,
-            [In, NativeTypeName("UINT")] uint Blue
-        );
+        public delegate int _SetWhitePointRGB(IWICDevelopRaw* This, [NativeTypeName("UINT")] uint Red, [NativeTypeName("UINT")] uint Green, [NativeTypeName("UINT")] uint Blue);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetWhitePointRGB(
-            [In] IWICDevelopRaw* This,
-            [Out, NativeTypeName("UINT")] uint* pRed,
-            [Out, NativeTypeName("UINT")] uint* pGreen,
-            [Out, NativeTypeName("UINT")] uint* pBlue
-        );
+        public delegate int _GetWhitePointRGB(IWICDevelopRaw* This, [NativeTypeName("UINT")] uint* pRed, [NativeTypeName("UINT")] uint* pGreen, [NativeTypeName("UINT")] uint* pBlue);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetNamedWhitePoint(
-            [In] IWICDevelopRaw* This,
-            [In] WICNamedWhitePoint WhitePoint
-        );
+        public delegate int _SetNamedWhitePoint(IWICDevelopRaw* This, WICNamedWhitePoint WhitePoint);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetNamedWhitePoint(
-            [In] IWICDevelopRaw* This,
-            [Out] WICNamedWhitePoint* pWhitePoint
-        );
+        public delegate int _GetNamedWhitePoint(IWICDevelopRaw* This, WICNamedWhitePoint* pWhitePoint);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetWhitePointKelvin(
-            [In] IWICDevelopRaw* This,
-            [In, NativeTypeName("UINT")] uint WhitePointKelvin
-        );
+        public delegate int _SetWhitePointKelvin(IWICDevelopRaw* This, [NativeTypeName("UINT")] uint WhitePointKelvin);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetWhitePointKelvin(
-            [In] IWICDevelopRaw* This,
-            [Out, NativeTypeName("UINT")] uint* pWhitePointKelvin
-        );
+        public delegate int _GetWhitePointKelvin(IWICDevelopRaw* This, [NativeTypeName("UINT")] uint* pWhitePointKelvin);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetKelvinRangeInfo(
-            [In] IWICDevelopRaw* This,
-            [Out, NativeTypeName("UINT")] uint* pMinKelvinTemp,
-            [Out, NativeTypeName("UINT")] uint* pMaxKelvinTemp,
-            [Out, NativeTypeName("UINT")] uint* pKelvinTempStepValue
-        );
+        public delegate int _GetKelvinRangeInfo(IWICDevelopRaw* This, [NativeTypeName("UINT")] uint* pMinKelvinTemp, [NativeTypeName("UINT")] uint* pMaxKelvinTemp, [NativeTypeName("UINT")] uint* pKelvinTempStepValue);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetContrast(
-            [In] IWICDevelopRaw* This,
-            [In] double Contrast
-        );
+        public delegate int _SetContrast(IWICDevelopRaw* This, double Contrast);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetContrast(
-            [In] IWICDevelopRaw* This,
-            [Out] double* pContrast
-        );
+        public delegate int _GetContrast(IWICDevelopRaw* This, double* pContrast);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetGamma(
-            [In] IWICDevelopRaw* This,
-            [In] double Gamma
-        );
+        public delegate int _SetGamma(IWICDevelopRaw* This, double Gamma);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetGamma(
-            [In] IWICDevelopRaw* This,
-            [Out] double* pGamma
-        );
+        public delegate int _GetGamma(IWICDevelopRaw* This, double* pGamma);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetSharpness(
-            [In] IWICDevelopRaw* This,
-            [In] double Sharpness
-        );
+        public delegate int _SetSharpness(IWICDevelopRaw* This, double Sharpness);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSharpness(
-            [In] IWICDevelopRaw* This,
-            [Out] double* pSharpness
-        );
+        public delegate int _GetSharpness(IWICDevelopRaw* This, double* pSharpness);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetSaturation(
-            [In] IWICDevelopRaw* This,
-            [In] double Saturation
-        );
+        public delegate int _SetSaturation(IWICDevelopRaw* This, double Saturation);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSaturation(
-            [In] IWICDevelopRaw* This,
-            [Out] double* pSaturation
-        );
+        public delegate int _GetSaturation(IWICDevelopRaw* This, double* pSaturation);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetTint(
-            [In] IWICDevelopRaw* This,
-            [In] double Tint
-        );
+        public delegate int _SetTint(IWICDevelopRaw* This, double Tint);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetTint(
-            [In] IWICDevelopRaw* This,
-            [Out] double* pTint
-        );
+        public delegate int _GetTint(IWICDevelopRaw* This, double* pTint);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetNoiseReduction(
-            [In] IWICDevelopRaw* This,
-            [In] double NoiseReduction
-        );
+        public delegate int _SetNoiseReduction(IWICDevelopRaw* This, double NoiseReduction);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetNoiseReduction(
-            [In] IWICDevelopRaw* This,
-            [Out] double* pNoiseReduction
-        );
+        public delegate int _GetNoiseReduction(IWICDevelopRaw* This, double* pNoiseReduction);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetDestinationColorContext(
-            [In] IWICDevelopRaw* This,
-            [In] IWICColorContext* pColorContext = null
-        );
+        public delegate int _SetDestinationColorContext(IWICDevelopRaw* This, IWICColorContext* pColorContext = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetToneCurve(
-            [In] IWICDevelopRaw* This,
-            [In, NativeTypeName("UINT")] uint cbToneCurveSize,
-            [In, NativeTypeName("WICRawToneCurve[]")] WICRawToneCurve* pToneCurve
-        );
+        public delegate int _SetToneCurve(IWICDevelopRaw* This, [NativeTypeName("UINT")] uint cbToneCurveSize, [NativeTypeName("WICRawToneCurve[]")] WICRawToneCurve* pToneCurve);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetToneCurve(
-            [In] IWICDevelopRaw* This,
-            [In, NativeTypeName("UINT")] uint cbToneCurveBufferSize,
-            [Out, NativeTypeName("WICRawToneCurve[]")] WICRawToneCurve* pToneCurve = null,
-            [In, Out, NativeTypeName("UINT")] uint* pcbActualToneCurveBufferSize = null
-        );
+        public delegate int _GetToneCurve(IWICDevelopRaw* This, [NativeTypeName("UINT")] uint cbToneCurveBufferSize, [NativeTypeName("WICRawToneCurve[]")] WICRawToneCurve* pToneCurve = null, [NativeTypeName("UINT")] uint* pcbActualToneCurveBufferSize = null);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetRotation(
-            [In] IWICDevelopRaw* This,
-            [In] double Rotation
-        );
+        public delegate int _SetRotation(IWICDevelopRaw* This, double Rotation);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetRotation(
-            [In] IWICDevelopRaw* This,
-            [Out] double* pRotation
-        );
+        public delegate int _GetRotation(IWICDevelopRaw* This, double* pRotation);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetRenderMode(
-            [In] IWICDevelopRaw* This,
-            [In] WICRawRenderMode RenderMode
-        );
+        public delegate int _SetRenderMode(IWICDevelopRaw* This, WICRawRenderMode RenderMode);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetRenderMode(
-            [In] IWICDevelopRaw* This,
-            [Out] WICRawRenderMode* pRenderMode
-        );
+        public delegate int _GetRenderMode(IWICDevelopRaw* This, WICRawRenderMode* pRenderMode);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetNotificationCallback(
-            [In] IWICDevelopRaw* This,
-            [In] IWICDevelopRawNotificationCallback* pCallback = null
-        );
-        #endregion
+        public delegate int _SetNotificationCallback(IWICDevelopRaw* This, IWICDevelopRawNotificationCallback* pCallback = null);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -405,9 +199,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -416,623 +208,378 @@ namespace TerraFX.Interop
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region IWICBitmapSource Methods
-        [return: NativeTypeName("HRESULT")]
-        public int GetSize(
-            [Out, NativeTypeName("UINT")] uint* puiWidth,
-            [Out, NativeTypeName("UINT")] uint* puiHeight
-        )
-        {
-            fixed (IWICDevelopRaw* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetSize>(lpVtbl->GetSize)(
-                    This,
-                    puiWidth,
-                    puiHeight
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetPixelFormat(
-            [Out, NativeTypeName("WICPixelFormatGUID")] Guid* pPixelFormat
-        )
+        public int GetSize([NativeTypeName("UINT")] uint* puiWidth, [NativeTypeName("UINT")] uint* puiHeight)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetPixelFormat>(lpVtbl->GetPixelFormat)(
-                    This,
-                    pPixelFormat
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetSize>(lpVtbl->GetSize)(This, puiWidth, puiHeight);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetResolution(
-            [Out] double* pDpiX,
-            [Out] double* pDpiY
-        )
+        public int GetPixelFormat([NativeTypeName("WICPixelFormatGUID")] Guid* pPixelFormat)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetResolution>(lpVtbl->GetResolution)(
-                    This,
-                    pDpiX,
-                    pDpiY
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetPixelFormat>(lpVtbl->GetPixelFormat)(This, pPixelFormat);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CopyPalette(
-            [In] IWICPalette* pIPalette = null
-        )
+        public int GetResolution(double* pDpiX, double* pDpiY)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CopyPalette>(lpVtbl->CopyPalette)(
-                    This,
-                    pIPalette
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetResolution>(lpVtbl->GetResolution)(This, pDpiX, pDpiY);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CopyPixels(
-            [In, Optional] WICRect* prc,
-            [In, NativeTypeName("UINT")] uint cbStride,
-            [In, NativeTypeName("UINT")] uint cbBufferSize,
-            [Out, NativeTypeName("BYTE[]")] byte* pbBuffer
-        )
+        public int CopyPalette(IWICPalette* pIPalette = null)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CopyPixels>(lpVtbl->CopyPixels)(
-                    This,
-                    prc,
-                    cbStride,
-                    cbBufferSize,
-                    pbBuffer
-                );
-            }
-        }
-        #endregion
-
-        #region IWICBitmapFrameDecode Methods
-        [return: NativeTypeName("HRESULT")]
-        public int GetMetadataQueryReader(
-            [Out] IWICMetadataQueryReader** ppIMetadataQueryReader = null
-        )
-        {
-            fixed (IWICDevelopRaw* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetMetadataQueryReader>(lpVtbl->GetMetadataQueryReader)(
-                    This,
-                    ppIMetadataQueryReader
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CopyPalette>(lpVtbl->CopyPalette)(This, pIPalette);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetColorContexts(
-            [In, NativeTypeName("UINT")] uint cCount,
-            [In, Out, Optional, NativeTypeName("IWICColorContext*[]")] IWICColorContext** ppIColorContexts,
-            [Out, NativeTypeName("UINT")] uint* pcActualCount
-        )
+        public int CopyPixels([Optional] WICRect* prc, [NativeTypeName("UINT")] uint cbStride, [NativeTypeName("UINT")] uint cbBufferSize, [NativeTypeName("BYTE[]")] byte* pbBuffer)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetColorContexts>(lpVtbl->GetColorContexts)(
-                    This,
-                    cCount,
-                    ppIColorContexts,
-                    pcActualCount
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CopyPixels>(lpVtbl->CopyPixels)(This, prc, cbStride, cbBufferSize, pbBuffer);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetThumbnail(
-            [Out] IWICBitmapSource** ppIThumbnail = null
-        )
+        public int GetMetadataQueryReader(IWICMetadataQueryReader** ppIMetadataQueryReader = null)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetThumbnail>(lpVtbl->GetThumbnail)(
-                    This,
-                    ppIThumbnail
-                );
-            }
-        }
-        #endregion
-
-        #region Methods
-        [return: NativeTypeName("HRESULT")]
-        public int QueryRawCapabilitiesInfo(
-            [In, Out] WICRawCapabilitiesInfo* pInfo
-        )
-        {
-            fixed (IWICDevelopRaw* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_QueryRawCapabilitiesInfo>(lpVtbl->QueryRawCapabilitiesInfo)(
-                    This,
-                    pInfo
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetMetadataQueryReader>(lpVtbl->GetMetadataQueryReader)(This, ppIMetadataQueryReader);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int LoadParameterSet(
-            [In] WICRawParameterSet ParameterSet
-        )
+        public int GetColorContexts([NativeTypeName("UINT")] uint cCount, [Optional, NativeTypeName("IWICColorContext*[]")] IWICColorContext** ppIColorContexts, [NativeTypeName("UINT")] uint* pcActualCount)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_LoadParameterSet>(lpVtbl->LoadParameterSet)(
-                    This,
-                    ParameterSet
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetColorContexts>(lpVtbl->GetColorContexts)(This, cCount, ppIColorContexts, pcActualCount);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetCurrentParameterSet(
-            [Out] IPropertyBag2** ppCurrentParameterSet = null
-        )
+        public int GetThumbnail(IWICBitmapSource** ppIThumbnail = null)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetCurrentParameterSet>(lpVtbl->GetCurrentParameterSet)(
-                    This,
-                    ppCurrentParameterSet
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetThumbnail>(lpVtbl->GetThumbnail)(This, ppIThumbnail);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetExposureCompensation(
-            [In] double ev
-        )
+        public int QueryRawCapabilitiesInfo(WICRawCapabilitiesInfo* pInfo)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetExposureCompensation>(lpVtbl->SetExposureCompensation)(
-                    This,
-                    ev
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryRawCapabilitiesInfo>(lpVtbl->QueryRawCapabilitiesInfo)(This, pInfo);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetExposureCompensation(
-            [Out] double* pEV
-        )
+        public int LoadParameterSet(WICRawParameterSet ParameterSet)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetExposureCompensation>(lpVtbl->GetExposureCompensation)(
-                    This,
-                    pEV
-                );
+                return Marshal.GetDelegateForFunctionPointer<_LoadParameterSet>(lpVtbl->LoadParameterSet)(This, ParameterSet);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetWhitePointRGB(
-            [In, NativeTypeName("UINT")] uint Red,
-            [In, NativeTypeName("UINT")] uint Green,
-            [In, NativeTypeName("UINT")] uint Blue
-        )
+        public int GetCurrentParameterSet(IPropertyBag2** ppCurrentParameterSet = null)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetWhitePointRGB>(lpVtbl->SetWhitePointRGB)(
-                    This,
-                    Red,
-                    Green,
-                    Blue
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetCurrentParameterSet>(lpVtbl->GetCurrentParameterSet)(This, ppCurrentParameterSet);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetWhitePointRGB(
-            [Out, NativeTypeName("UINT")] uint* pRed,
-            [Out, NativeTypeName("UINT")] uint* pGreen,
-            [Out, NativeTypeName("UINT")] uint* pBlue
-        )
+        public int SetExposureCompensation(double ev)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetWhitePointRGB>(lpVtbl->GetWhitePointRGB)(
-                    This,
-                    pRed,
-                    pGreen,
-                    pBlue
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetExposureCompensation>(lpVtbl->SetExposureCompensation)(This, ev);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetNamedWhitePoint(
-            [In] WICNamedWhitePoint WhitePoint
-        )
+        public int GetExposureCompensation(double* pEV)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetNamedWhitePoint>(lpVtbl->SetNamedWhitePoint)(
-                    This,
-                    WhitePoint
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetExposureCompensation>(lpVtbl->GetExposureCompensation)(This, pEV);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetNamedWhitePoint(
-            [Out] WICNamedWhitePoint* pWhitePoint
-        )
+        public int SetWhitePointRGB([NativeTypeName("UINT")] uint Red, [NativeTypeName("UINT")] uint Green, [NativeTypeName("UINT")] uint Blue)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetNamedWhitePoint>(lpVtbl->GetNamedWhitePoint)(
-                    This,
-                    pWhitePoint
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetWhitePointRGB>(lpVtbl->SetWhitePointRGB)(This, Red, Green, Blue);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetWhitePointKelvin(
-            [In, NativeTypeName("UINT")] uint WhitePointKelvin
-        )
+        public int GetWhitePointRGB([NativeTypeName("UINT")] uint* pRed, [NativeTypeName("UINT")] uint* pGreen, [NativeTypeName("UINT")] uint* pBlue)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetWhitePointKelvin>(lpVtbl->SetWhitePointKelvin)(
-                    This,
-                    WhitePointKelvin
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetWhitePointRGB>(lpVtbl->GetWhitePointRGB)(This, pRed, pGreen, pBlue);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetWhitePointKelvin(
-            [Out, NativeTypeName("UINT")] uint* pWhitePointKelvin
-        )
+        public int SetNamedWhitePoint(WICNamedWhitePoint WhitePoint)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetWhitePointKelvin>(lpVtbl->GetWhitePointKelvin)(
-                    This,
-                    pWhitePointKelvin
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetNamedWhitePoint>(lpVtbl->SetNamedWhitePoint)(This, WhitePoint);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetKelvinRangeInfo(
-            [Out, NativeTypeName("UINT")] uint* pMinKelvinTemp,
-            [Out, NativeTypeName("UINT")] uint* pMaxKelvinTemp,
-            [Out, NativeTypeName("UINT")] uint* pKelvinTempStepValue
-        )
+        public int GetNamedWhitePoint(WICNamedWhitePoint* pWhitePoint)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetKelvinRangeInfo>(lpVtbl->GetKelvinRangeInfo)(
-                    This,
-                    pMinKelvinTemp,
-                    pMaxKelvinTemp,
-                    pKelvinTempStepValue
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetNamedWhitePoint>(lpVtbl->GetNamedWhitePoint)(This, pWhitePoint);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetContrast(
-            [In] double Contrast
-        )
+        public int SetWhitePointKelvin([NativeTypeName("UINT")] uint WhitePointKelvin)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetContrast>(lpVtbl->SetContrast)(
-                    This,
-                    Contrast
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetWhitePointKelvin>(lpVtbl->SetWhitePointKelvin)(This, WhitePointKelvin);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetContrast(
-            [Out] double* pContrast
-        )
+        public int GetWhitePointKelvin([NativeTypeName("UINT")] uint* pWhitePointKelvin)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetContrast>(lpVtbl->GetContrast)(
-                    This,
-                    pContrast
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetWhitePointKelvin>(lpVtbl->GetWhitePointKelvin)(This, pWhitePointKelvin);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetGamma(
-            [In] double Gamma
-        )
+        public int GetKelvinRangeInfo([NativeTypeName("UINT")] uint* pMinKelvinTemp, [NativeTypeName("UINT")] uint* pMaxKelvinTemp, [NativeTypeName("UINT")] uint* pKelvinTempStepValue)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetGamma>(lpVtbl->SetGamma)(
-                    This,
-                    Gamma
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetKelvinRangeInfo>(lpVtbl->GetKelvinRangeInfo)(This, pMinKelvinTemp, pMaxKelvinTemp, pKelvinTempStepValue);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetGamma(
-            [Out] double* pGamma
-        )
+        public int SetContrast(double Contrast)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetGamma>(lpVtbl->GetGamma)(
-                    This,
-                    pGamma
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetContrast>(lpVtbl->SetContrast)(This, Contrast);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetSharpness(
-            [In] double Sharpness
-        )
+        public int GetContrast(double* pContrast)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetSharpness>(lpVtbl->SetSharpness)(
-                    This,
-                    Sharpness
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetContrast>(lpVtbl->GetContrast)(This, pContrast);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetSharpness(
-            [Out] double* pSharpness
-        )
+        public int SetGamma(double Gamma)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetSharpness>(lpVtbl->GetSharpness)(
-                    This,
-                    pSharpness
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetGamma>(lpVtbl->SetGamma)(This, Gamma);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetSaturation(
-            [In] double Saturation
-        )
+        public int GetGamma(double* pGamma)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetSaturation>(lpVtbl->SetSaturation)(
-                    This,
-                    Saturation
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetGamma>(lpVtbl->GetGamma)(This, pGamma);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetSaturation(
-            [Out] double* pSaturation
-        )
+        public int SetSharpness(double Sharpness)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetSaturation>(lpVtbl->GetSaturation)(
-                    This,
-                    pSaturation
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetSharpness>(lpVtbl->SetSharpness)(This, Sharpness);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetTint(
-            [In] double Tint
-        )
+        public int GetSharpness(double* pSharpness)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetTint>(lpVtbl->SetTint)(
-                    This,
-                    Tint
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetSharpness>(lpVtbl->GetSharpness)(This, pSharpness);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetTint(
-            [Out] double* pTint
-        )
+        public int SetSaturation(double Saturation)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetTint>(lpVtbl->GetTint)(
-                    This,
-                    pTint
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetSaturation>(lpVtbl->SetSaturation)(This, Saturation);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetNoiseReduction(
-            [In] double NoiseReduction
-        )
+        public int GetSaturation(double* pSaturation)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetNoiseReduction>(lpVtbl->SetNoiseReduction)(
-                    This,
-                    NoiseReduction
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetSaturation>(lpVtbl->GetSaturation)(This, pSaturation);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetNoiseReduction(
-            [Out] double* pNoiseReduction
-        )
+        public int SetTint(double Tint)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetNoiseReduction>(lpVtbl->GetNoiseReduction)(
-                    This,
-                    pNoiseReduction
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetTint>(lpVtbl->SetTint)(This, Tint);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetDestinationColorContext(
-            [In] IWICColorContext* pColorContext = null
-        )
+        public int GetTint(double* pTint)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetDestinationColorContext>(lpVtbl->SetDestinationColorContext)(
-                    This,
-                    pColorContext
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetTint>(lpVtbl->GetTint)(This, pTint);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetToneCurve(
-            [In, NativeTypeName("UINT")] uint cbToneCurveSize,
-            [In, NativeTypeName("WICRawToneCurve[]")] WICRawToneCurve* pToneCurve
-        )
+        public int SetNoiseReduction(double NoiseReduction)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetToneCurve>(lpVtbl->SetToneCurve)(
-                    This,
-                    cbToneCurveSize,
-                    pToneCurve
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetNoiseReduction>(lpVtbl->SetNoiseReduction)(This, NoiseReduction);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetToneCurve(
-            [In, NativeTypeName("UINT")] uint cbToneCurveBufferSize,
-            [Out, NativeTypeName("WICRawToneCurve[]")] WICRawToneCurve* pToneCurve = null,
-            [In, Out, NativeTypeName("UINT")] uint* pcbActualToneCurveBufferSize = null
-        )
+        public int GetNoiseReduction(double* pNoiseReduction)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetToneCurve>(lpVtbl->GetToneCurve)(
-                    This,
-                    cbToneCurveBufferSize,
-                    pToneCurve,
-                    pcbActualToneCurveBufferSize
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetNoiseReduction>(lpVtbl->GetNoiseReduction)(This, pNoiseReduction);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetRotation(
-            [In] double Rotation
-        )
+        public int SetDestinationColorContext(IWICColorContext* pColorContext = null)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetRotation>(lpVtbl->SetRotation)(
-                    This,
-                    Rotation
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetDestinationColorContext>(lpVtbl->SetDestinationColorContext)(This, pColorContext);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetRotation(
-            [Out] double* pRotation
-        )
+        public int SetToneCurve([NativeTypeName("UINT")] uint cbToneCurveSize, [NativeTypeName("WICRawToneCurve[]")] WICRawToneCurve* pToneCurve)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetRotation>(lpVtbl->GetRotation)(
-                    This,
-                    pRotation
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetToneCurve>(lpVtbl->SetToneCurve)(This, cbToneCurveSize, pToneCurve);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetRenderMode(
-            [In] WICRawRenderMode RenderMode
-        )
+        public int GetToneCurve([NativeTypeName("UINT")] uint cbToneCurveBufferSize, [NativeTypeName("WICRawToneCurve[]")] WICRawToneCurve* pToneCurve = null, [NativeTypeName("UINT")] uint* pcbActualToneCurveBufferSize = null)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetRenderMode>(lpVtbl->SetRenderMode)(
-                    This,
-                    RenderMode
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetToneCurve>(lpVtbl->GetToneCurve)(This, cbToneCurveBufferSize, pToneCurve, pcbActualToneCurveBufferSize);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetRenderMode(
-            [Out] WICRawRenderMode* pRenderMode
-        )
+        public int SetRotation(double Rotation)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetRenderMode>(lpVtbl->GetRenderMode)(
-                    This,
-                    pRenderMode
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetRotation>(lpVtbl->SetRotation)(This, Rotation);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetNotificationCallback(
-            [In] IWICDevelopRawNotificationCallback* pCallback = null
-        )
+        public int GetRotation(double* pRotation)
         {
             fixed (IWICDevelopRaw* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetNotificationCallback>(lpVtbl->SetNotificationCallback)(
-                    This,
-                    pCallback
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetRotation>(lpVtbl->GetRotation)(This, pRotation);
             }
         }
-        #endregion
 
-        #region Structs
+        [return: NativeTypeName("HRESULT")]
+        public int SetRenderMode(WICRawRenderMode RenderMode)
+        {
+            fixed (IWICDevelopRaw* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_SetRenderMode>(lpVtbl->SetRenderMode)(This, RenderMode);
+            }
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetRenderMode(WICRawRenderMode* pRenderMode)
+        {
+            fixed (IWICDevelopRaw* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetRenderMode>(lpVtbl->GetRenderMode)(This, pRenderMode);
+            }
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int SetNotificationCallback(IWICDevelopRawNotificationCallback* pCallback = null)
+        {
+            fixed (IWICDevelopRaw* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_SetNotificationCallback>(lpVtbl->SetNotificationCallback)(This, pCallback);
+            }
+        }
+
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region IWICBitmapSource Fields
             public IntPtr GetSize;
 
             public IntPtr GetPixelFormat;
@@ -1042,17 +589,13 @@ namespace TerraFX.Interop
             public IntPtr CopyPalette;
 
             public IntPtr CopyPixels;
-            #endregion
 
-            #region IWICBitmapFrameDecode Fields
             public IntPtr GetMetadataQueryReader;
 
             public IntPtr GetColorContexts;
 
             public IntPtr GetThumbnail;
-            #endregion
 
-            #region Fields
             public IntPtr QueryRawCapabilitiesInfo;
 
             public IntPtr LoadParameterSet;
@@ -1116,8 +659,6 @@ namespace TerraFX.Interop
             public IntPtr GetRenderMode;
 
             public IntPtr SetNotificationCallback;
-            #endregion
         }
-        #endregion
     }
 }

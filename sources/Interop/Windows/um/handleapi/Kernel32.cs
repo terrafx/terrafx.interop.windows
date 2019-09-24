@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -13,13 +12,8 @@ namespace TerraFX.Interop
     {
         private const string DllName = nameof(Kernel32);
 
-        #region Extern Methods
-        [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "CloseHandle", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
+        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "CloseHandle", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int CloseHandle(
-            [In, NativeTypeName("HANDLE")] IntPtr hObject
-        );
-        #endregion
+        public static extern int CloseHandle([NativeTypeName("HANDLE")] IntPtr hObject);
     }
 }

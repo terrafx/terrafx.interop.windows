@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct D3D12_TEX2D_ARRAY_UAV
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint MipSlice;
 
@@ -19,6 +18,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint PlaneSlice;
-        #endregion
     }
 }

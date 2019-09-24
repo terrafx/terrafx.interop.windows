@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -13,83 +12,46 @@ namespace TerraFX.Interop
     [Guid("1A0D8438-1D97-4EC1-AEF9-A2FB86ED6ACB")]
     public unsafe struct IDWriteFontList
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IDWriteFontList* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDWriteFontList* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IDWriteFontList* This
-        );
+        public delegate uint _AddRef(IDWriteFontList* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IDWriteFontList* This
-        );
-        #endregion
+        public delegate uint _Release(IDWriteFontList* This);
 
-        #region Delegates
         /// <summary>Gets the font collection that contains the fonts.</summary>
         /// <param name="fontCollection">Receives a pointer to the font collection object.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFontCollection(
-            [In] IDWriteFontList* This,
-            [Out] IDWriteFontCollection** fontCollection
-        );
+        public delegate int _GetFontCollection(IDWriteFontList* This, IDWriteFontCollection** fontCollection);
 
         /// <summary>Gets the number of fonts in the font list.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetFontCount(
-            [In] IDWriteFontList* This
-        );
+        public delegate uint _GetFontCount(IDWriteFontList* This);
 
         /// <summary>Gets a font given its zero-based index.</summary>
         /// <param name="index">Zero-based index of the font in the font list.</param>
         /// <param name="font">Receives a pointer to the newly created font object.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFont(
-            [In] IDWriteFontList* This,
-            [In, NativeTypeName("UINT32")] uint index,
-            [Out] IDWriteFont** font
-        );
-        #endregion
+        public delegate int _GetFont(IDWriteFontList* This, [NativeTypeName("UINT32")] uint index, IDWriteFont** font);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDWriteFontList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -98,9 +60,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -109,25 +69,16 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
-        public int GetFontCollection(
-            [Out] IDWriteFontCollection** fontCollection
-        )
+        public int GetFontCollection(IDWriteFontCollection** fontCollection)
         {
             fixed (IDWriteFontList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontCollection>(lpVtbl->GetFontCollection)(
-                    This,
-                    fontCollection
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetFontCollection>(lpVtbl->GetFontCollection)(This, fontCollection);
             }
         }
 
@@ -136,48 +87,32 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontCount>(lpVtbl->GetFontCount)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetFontCount>(lpVtbl->GetFontCount)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFont(
-            [In, NativeTypeName("UINT32")] uint index,
-            [Out] IDWriteFont** font
-        )
+        public int GetFont([NativeTypeName("UINT32")] uint index, IDWriteFont** font)
         {
             fixed (IDWriteFontList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetFont>(lpVtbl->GetFont)(
-                    This,
-                    index,
-                    font
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetFont>(lpVtbl->GetFont)(This, index, font);
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetFontCollection;
 
             public IntPtr GetFontCount;
 
             public IntPtr GetFont;
-            #endregion
         }
-        #endregion
     }
 }

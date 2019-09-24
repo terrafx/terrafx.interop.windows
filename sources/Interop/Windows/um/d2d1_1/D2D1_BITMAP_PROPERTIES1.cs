@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>Extended bitmap properties.</summary>
     public unsafe struct D2D1_BITMAP_PROPERTIES1
     {
-        #region Fields
         public D2D1_PIXEL_FORMAT pixelFormat;
 
         [NativeTypeName("FLOAT")]
@@ -21,6 +20,5 @@ namespace TerraFX.Interop
         public D2D1_BITMAP_OPTIONS bitmapOptions;
 
         public ID2D1ColorContext* colorContext;
-        #endregion
     }
 }

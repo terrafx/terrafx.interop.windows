@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct WICDdsParameters
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint Width;
 
@@ -28,6 +27,5 @@ namespace TerraFX.Interop
         public WICDdsDimension Dimension;
 
         public WICDdsAlphaMode AlphaMode;
-        #endregion
     }
 }

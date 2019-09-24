@@ -5,132 +5,67 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     [Guid("2633066B-4514-4C7A-8FD8-12EA98059D18")]
     public unsafe struct IDXGIDecodeSwapChain
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IDXGIDecodeSwapChain* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDXGIDecodeSwapChain* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IDXGIDecodeSwapChain* This
-        );
+        public delegate uint _AddRef(IDXGIDecodeSwapChain* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IDXGIDecodeSwapChain* This
-        );
-        #endregion
+        public delegate uint _Release(IDXGIDecodeSwapChain* This);
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _PresentBuffer(
-            [In] IDXGIDecodeSwapChain* This,
-            [In, NativeTypeName("UINT")] uint BufferToPresent,
-            [In, NativeTypeName("UINT")] uint SyncInterval,
-            [In, NativeTypeName("UINT")] uint Flags
-        );
+        public delegate int _PresentBuffer(IDXGIDecodeSwapChain* This, [NativeTypeName("UINT")] uint BufferToPresent, [NativeTypeName("UINT")] uint SyncInterval, [NativeTypeName("UINT")] uint Flags);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetSourceRect(
-            [In] IDXGIDecodeSwapChain* This,
-            [In] RECT* pRect
-        );
+        public delegate int _SetSourceRect(IDXGIDecodeSwapChain* This, RECT* pRect);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetTargetRect(
-            [In] IDXGIDecodeSwapChain* This,
-            [In] RECT* pRect
-        );
+        public delegate int _SetTargetRect(IDXGIDecodeSwapChain* This, RECT* pRect);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetDestSize(
-            [In] IDXGIDecodeSwapChain* This,
-            [In, NativeTypeName("UINT")] uint Width,
-            [In, NativeTypeName("UINT")] uint Height
-        );
+        public delegate int _SetDestSize(IDXGIDecodeSwapChain* This, [NativeTypeName("UINT")] uint Width, [NativeTypeName("UINT")] uint Height);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSourceRect(
-            [In] IDXGIDecodeSwapChain* This,
-            [Out] RECT* pRect
-        );
+        public delegate int _GetSourceRect(IDXGIDecodeSwapChain* This, RECT* pRect);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetTargetRect(
-            [In] IDXGIDecodeSwapChain* This,
-            [Out] RECT* pRect
-        );
+        public delegate int _GetTargetRect(IDXGIDecodeSwapChain* This, RECT* pRect);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetDestSize(
-            [In] IDXGIDecodeSwapChain* This,
-            [Out, NativeTypeName("UINT")] uint* pWidth,
-            [Out, NativeTypeName("UINT")] uint* pHeight
-        );
+        public delegate int _GetDestSize(IDXGIDecodeSwapChain* This, [NativeTypeName("UINT")] uint* pWidth, [NativeTypeName("UINT")] uint* pHeight);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetColorSpace(
-            [In] IDXGIDecodeSwapChain* This,
-            [In] DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS ColorSpace
-        );
+        public delegate int _SetColorSpace(IDXGIDecodeSwapChain* This, DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS ColorSpace);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS _GetColorSpace(
-            [In] IDXGIDecodeSwapChain* This
-        );
-        #endregion
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS _GetColorSpace(IDXGIDecodeSwapChain* This);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDXGIDecodeSwapChain* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -139,9 +74,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDecodeSwapChain* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -150,131 +83,79 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDecodeSwapChain* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region Methods
-        [return: NativeTypeName("HRESULT")]
-        public int PresentBuffer(
-            [In, NativeTypeName("UINT")] uint BufferToPresent,
-            [In, NativeTypeName("UINT")] uint SyncInterval,
-            [In, NativeTypeName("UINT")] uint Flags
-        )
-        {
-            fixed (IDXGIDecodeSwapChain* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_PresentBuffer>(lpVtbl->PresentBuffer)(
-                    This,
-                    BufferToPresent,
-                    SyncInterval,
-                    Flags
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetSourceRect(
-            [In] RECT* pRect
-        )
+        public int PresentBuffer([NativeTypeName("UINT")] uint BufferToPresent, [NativeTypeName("UINT")] uint SyncInterval, [NativeTypeName("UINT")] uint Flags)
         {
             fixed (IDXGIDecodeSwapChain* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetSourceRect>(lpVtbl->SetSourceRect)(
-                    This,
-                    pRect
-                );
+                return Marshal.GetDelegateForFunctionPointer<_PresentBuffer>(lpVtbl->PresentBuffer)(This, BufferToPresent, SyncInterval, Flags);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetTargetRect(
-            [In] RECT* pRect
-        )
+        public int SetSourceRect(RECT* pRect)
         {
             fixed (IDXGIDecodeSwapChain* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetTargetRect>(lpVtbl->SetTargetRect)(
-                    This,
-                    pRect
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetSourceRect>(lpVtbl->SetSourceRect)(This, pRect);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetDestSize(
-            [In, NativeTypeName("UINT")] uint Width,
-            [In, NativeTypeName("UINT")] uint Height
-        )
+        public int SetTargetRect(RECT* pRect)
         {
             fixed (IDXGIDecodeSwapChain* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetDestSize>(lpVtbl->SetDestSize)(
-                    This,
-                    Width,
-                    Height
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetTargetRect>(lpVtbl->SetTargetRect)(This, pRect);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetSourceRect(
-            [Out] RECT* pRect
-        )
+        public int SetDestSize([NativeTypeName("UINT")] uint Width, [NativeTypeName("UINT")] uint Height)
         {
             fixed (IDXGIDecodeSwapChain* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetSourceRect>(lpVtbl->GetSourceRect)(
-                    This,
-                    pRect
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetDestSize>(lpVtbl->SetDestSize)(This, Width, Height);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetTargetRect(
-            [Out] RECT* pRect
-        )
+        public int GetSourceRect(RECT* pRect)
         {
             fixed (IDXGIDecodeSwapChain* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetTargetRect>(lpVtbl->GetTargetRect)(
-                    This,
-                    pRect
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetSourceRect>(lpVtbl->GetSourceRect)(This, pRect);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetDestSize(
-            [Out, NativeTypeName("UINT")] uint* pWidth,
-            [Out, NativeTypeName("UINT")] uint* pHeight
-        )
+        public int GetTargetRect(RECT* pRect)
         {
             fixed (IDXGIDecodeSwapChain* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDestSize>(lpVtbl->GetDestSize)(
-                    This,
-                    pWidth,
-                    pHeight
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetTargetRect>(lpVtbl->GetTargetRect)(This, pRect);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetColorSpace(
-            [In] DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS ColorSpace
-        )
+        public int GetDestSize([NativeTypeName("UINT")] uint* pWidth, [NativeTypeName("UINT")] uint* pHeight)
         {
             fixed (IDXGIDecodeSwapChain* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetColorSpace>(lpVtbl->SetColorSpace)(
-                    This,
-                    ColorSpace
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDestSize>(lpVtbl->GetDestSize)(This, pWidth, pHeight);
+            }
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int SetColorSpace(DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS ColorSpace)
+        {
+            fixed (IDXGIDecodeSwapChain* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_SetColorSpace>(lpVtbl->SetColorSpace)(This, ColorSpace);
             }
         }
 
@@ -282,25 +163,18 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDecodeSwapChain* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetColorSpace>(lpVtbl->GetColorSpace)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetColorSpace>(lpVtbl->GetColorSpace)(This);
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr PresentBuffer;
 
             public IntPtr SetSourceRect;
@@ -318,8 +192,6 @@ namespace TerraFX.Interop
             public IntPtr SetColorSpace;
 
             public IntPtr GetColorSpace;
-            #endregion
         }
-        #endregion
     }
 }

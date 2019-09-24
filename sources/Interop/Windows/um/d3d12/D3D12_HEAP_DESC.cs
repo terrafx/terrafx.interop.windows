@@ -10,7 +10,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_HEAP_DESC
     {
-        #region Fields
         [NativeTypeName("UINT64")]
         public ulong SizeInBytes;
 
@@ -20,9 +19,7 @@ namespace TerraFX.Interop
         public ulong Alignment;
 
         public D3D12_HEAP_FLAGS Flags;
-        #endregion
 
-        #region Constructors
         public D3D12_HEAP_DESC(ulong size, D3D12_HEAP_PROPERTIES properties, ulong alignment = 0, D3D12_HEAP_FLAGS flags = D3D12_HEAP_FLAG_NONE)
         {
             SizeInBytes = size;
@@ -70,9 +67,7 @@ namespace TerraFX.Interop
             Alignment = resAllocInfo->Alignment;
             Flags = flags;
         }
-        #endregion
 
-        #region Properties
         public bool IsCPUAccessible
         {
             get
@@ -80,9 +75,7 @@ namespace TerraFX.Interop
                 return Properties.IsCPUAccessible;
             }
         }
-        #endregion
 
-        #region Operators
         public static bool operator ==(D3D12_HEAP_DESC l, D3D12_HEAP_DESC r)
         {
             return (l.SizeInBytes == r.SizeInBytes)
@@ -95,20 +88,12 @@ namespace TerraFX.Interop
         {
             return !(l == r);
         }
-        #endregion
 
-        #region System.Object
         public override bool Equals(object? obj)
         {
             return (obj is D3D12_HEAP_DESC other) && (this == other);
         }
 
-        public override int GetHashCode() => HashCode.Combine(
-            SizeInBytes,
-            Properties,
-            Alignment,
-            Flags
-        );
-        #endregion
+        public override int GetHashCode() => HashCode.Combine(SizeInBytes, Properties, Alignment, Flags);
     }
 }

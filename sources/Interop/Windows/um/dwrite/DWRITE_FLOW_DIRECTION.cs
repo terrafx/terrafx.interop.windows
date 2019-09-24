@@ -18,6 +18,5 @@ namespace TerraFX.Interop
         DWRITE_FLOW_DIRECTION_LEFT_TO_RIGHT = 2,
 
         /// <summary>Text lines are placed from right to left.</summary>
-        DWRITE_FLOW_DIRECTION_RIGHT_TO_LEFT = 3,
-    }
+        DWRITE_FLOW_DIRECTION_RIGHT_TO_LEFT = 3, }
 }

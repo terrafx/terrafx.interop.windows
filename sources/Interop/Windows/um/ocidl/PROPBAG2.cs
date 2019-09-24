@@ -4,14 +4,11 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
-using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     public unsafe struct PROPBAG2
     {
-        #region Fields
         [NativeTypeName("DWORD")]
         public uint dwType;
 
@@ -29,6 +26,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("CLSID")]
         public Guid clsid;
-        #endregion
     }
 }

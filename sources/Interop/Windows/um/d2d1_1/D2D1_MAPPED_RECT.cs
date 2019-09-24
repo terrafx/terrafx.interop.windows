@@ -8,12 +8,10 @@ namespace TerraFX.Interop
     /// <summary>Describes mapped memory from the ID2D1Bitmap1::Map API.</summary>
     public unsafe struct D2D1_MAPPED_RECT
     {
-        #region Fields
         [NativeTypeName("UINT32")]
         public uint pitch;
 
         [NativeTypeName("BYTE[]")]
         public byte* bits;
-        #endregion
     }
 }

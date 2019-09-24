@@ -5,84 +5,44 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     [Guid("DD95B90B-F05F-4F6A-BD65-25BFB264BD84")]
     public unsafe struct IDXGISwapChainMedia
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IDXGISwapChainMedia* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDXGISwapChainMedia* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IDXGISwapChainMedia* This
-        );
+        public delegate uint _AddRef(IDXGISwapChainMedia* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IDXGISwapChainMedia* This
-        );
-        #endregion
+        public delegate uint _Release(IDXGISwapChainMedia* This);
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetFrameStatisticsMedia(
-            [In] IDXGISwapChainMedia* This,
-            [Out] DXGI_FRAME_STATISTICS_MEDIA* pStats
-        );
+        public delegate int _GetFrameStatisticsMedia(IDXGISwapChainMedia* This, DXGI_FRAME_STATISTICS_MEDIA* pStats);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _SetPresentDuration(
-            [In] IDXGISwapChainMedia* This,
-            [In, NativeTypeName("UINT")] uint Duration
-        );
+        public delegate int _SetPresentDuration(IDXGISwapChainMedia* This, [NativeTypeName("UINT")] uint Duration);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CheckPresentDurationSupport(
-            [In] IDXGISwapChainMedia* This,
-            [In, NativeTypeName("UINT")] uint DesiredPresentDuration,
-            [Out, NativeTypeName("UINT")] uint* pClosestSmallerPresentDuration,
-            [Out, NativeTypeName("UINT")] uint* pClosestLargerPresentDuration
-        );
-        #endregion
+        public delegate int _CheckPresentDurationSupport(IDXGISwapChainMedia* This, [NativeTypeName("UINT")] uint DesiredPresentDuration, [NativeTypeName("UINT")] uint* pClosestSmallerPresentDuration, [NativeTypeName("UINT")] uint* pClosestLargerPresentDuration);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDXGISwapChainMedia* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -91,9 +51,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChainMedia* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -102,80 +60,50 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChainMedia* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region Methods
-        [return: NativeTypeName("HRESULT")]
-        public int GetFrameStatisticsMedia(
-            [Out] DXGI_FRAME_STATISTICS_MEDIA* pStats
-        )
-        {
-            fixed (IDXGISwapChainMedia* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFrameStatisticsMedia>(lpVtbl->GetFrameStatisticsMedia)(
-                    This,
-                    pStats
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetPresentDuration(
-            [In, NativeTypeName("UINT")] uint Duration
-        )
+        public int GetFrameStatisticsMedia(DXGI_FRAME_STATISTICS_MEDIA* pStats)
         {
             fixed (IDXGISwapChainMedia* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetPresentDuration>(lpVtbl->SetPresentDuration)(
-                    This,
-                    Duration
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetFrameStatisticsMedia>(lpVtbl->GetFrameStatisticsMedia)(This, pStats);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CheckPresentDurationSupport(
-            [In, NativeTypeName("UINT")] uint DesiredPresentDuration,
-            [Out, NativeTypeName("UINT")] uint* pClosestSmallerPresentDuration,
-            [Out, NativeTypeName("UINT")] uint* pClosestLargerPresentDuration
-        )
+        public int SetPresentDuration([NativeTypeName("UINT")] uint Duration)
         {
             fixed (IDXGISwapChainMedia* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CheckPresentDurationSupport>(lpVtbl->CheckPresentDurationSupport)(
-                    This,
-                    DesiredPresentDuration,
-                    pClosestSmallerPresentDuration,
-                    pClosestLargerPresentDuration
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetPresentDuration>(lpVtbl->SetPresentDuration)(This, Duration);
             }
         }
-        #endregion
 
-        #region Structs
+        [return: NativeTypeName("HRESULT")]
+        public int CheckPresentDurationSupport([NativeTypeName("UINT")] uint DesiredPresentDuration, [NativeTypeName("UINT")] uint* pClosestSmallerPresentDuration, [NativeTypeName("UINT")] uint* pClosestLargerPresentDuration)
+        {
+            fixed (IDXGISwapChainMedia* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_CheckPresentDurationSupport>(lpVtbl->CheckPresentDurationSupport)(This, DesiredPresentDuration, pClosestSmallerPresentDuration, pClosestLargerPresentDuration);
+            }
+        }
+
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetFrameStatisticsMedia;
 
             public IntPtr SetPresentDuration;
 
             public IntPtr CheckPresentDurationSupport;
-            #endregion
         }
-        #endregion
     }
 }

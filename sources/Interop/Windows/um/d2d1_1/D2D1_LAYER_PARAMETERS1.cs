@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>All parameters related to pushing a layer.</summary>
     public unsafe struct D2D1_LAYER_PARAMETERS1
     {
-        #region Fields
         [NativeTypeName("D2D1_RECT_F")]
         public D2D_RECT_F contentBounds;
 
@@ -25,6 +24,5 @@ namespace TerraFX.Interop
         public ID2D1Brush* opacityBrush;
 
         public D2D1_LAYER_OPTIONS1 layerOptions;
-        #endregion
     }
 }

@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct DXGI_INFO_QUEUE_MESSAGE
     {
-        #region Fields
         [NativeTypeName("DXGI_DEBUG_ID")]
         public Guid Producer;
 
@@ -25,6 +24,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("SIZE_T")]
         public UIntPtr DescriptionByteLength;
-        #endregion
     }
 }

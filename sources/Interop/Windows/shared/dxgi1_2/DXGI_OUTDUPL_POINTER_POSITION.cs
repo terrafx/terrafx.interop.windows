@@ -7,11 +7,9 @@ namespace TerraFX.Interop
 {
     public struct DXGI_OUTDUPL_POINTER_POSITION
     {
-        #region Fields
         public POINT Position;
 
         [NativeTypeName("BOOL")]
         public int Visible;
-        #endregion
     }
 }

@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>Creation properties for an image brush.</summary>
     public struct D2D1_IMAGE_BRUSH_PROPERTIES
     {
-        #region Fields
         [NativeTypeName("D2D1_RECT_F")]
         public D2D_RECT_F sourceRectangle;
 
@@ -17,6 +16,5 @@ namespace TerraFX.Interop
         public D2D1_EXTEND_MODE extendModeY;
 
         public D2D1_INTERPOLATION_MODE interpolationMode;
-        #endregion
     }
 }

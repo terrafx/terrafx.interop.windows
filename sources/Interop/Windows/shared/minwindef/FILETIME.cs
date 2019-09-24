@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public struct FILETIME
     {
-        #region Fields
         [NativeTypeName("DWORD")]
         public uint dwLowDateTime;
 
         [NativeTypeName("DWORD")]
         public uint dwHighDateTime;
-        #endregion
     }
 }

@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>The DWRITE_TEXT_RANGE public structure specifies a range of text positions where format is applied.</summary>
     public struct DWRITE_TEXT_RANGE
     {
-        #region Fields
         /// <summary>The start text position of the range.</summary>
         [NativeTypeName("UINT32")]
         public uint startPosition;
@@ -16,6 +15,5 @@ namespace TerraFX.Interop
         /// <summary>The number of text positions in the range.</summary>
         [NativeTypeName("UINT32")]
         public uint length;
-        #endregion
     }
 }

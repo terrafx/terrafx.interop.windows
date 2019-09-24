@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct D3D12_SUBRESOURCE_TILING
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint WidthInTiles;
 
@@ -19,9 +18,7 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint StartTileIndexInOverallResource;
-        #endregion
 
-        #region Constructors
         public D3D12_SUBRESOURCE_TILING(uint widthInTiles, ushort heightInTiles, ushort depthInTiles, uint startTileIndexInOverallResource)
         {
             WidthInTiles = widthInTiles;
@@ -29,6 +26,5 @@ namespace TerraFX.Interop
             DepthInTiles = depthInTiles;
             StartTileIndexInOverallResource = startTileIndexInOverallResource;
         }
-        #endregion
     }
 }

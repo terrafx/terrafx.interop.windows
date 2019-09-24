@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -13,90 +12,50 @@ namespace TerraFX.Interop
     [Guid("EAF3A2DA-ECF4-4D24-B644-B34F6842024B")]
     public unsafe struct IDWritePixelSnapping
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IDWritePixelSnapping* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDWritePixelSnapping* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IDWritePixelSnapping* This
-        );
+        public delegate uint _AddRef(IDWritePixelSnapping* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IDWritePixelSnapping* This
-        );
-        #endregion
+        public delegate uint _Release(IDWritePixelSnapping* This);
 
-        #region Delegates
         /// <summary>Determines whether pixel snapping is disabled. The recommended default is FALSE, unless doing animation that requires subpixel vertical placement.</summary>
         /// <param name="clientDrawingContext">The context passed to IDWriteTextLayout::Draw.</param>
         /// <param name="isDisabled">Receives TRUE if pixel snapping is disabled or FALSE if it not.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _IsPixelSnappingDisabled(
-            [In] IDWritePixelSnapping* This,
-            [In, Optional] void* clientDrawingContext,
-            [Out, NativeTypeName("BOOL")] int* isDisabled
-        );
+        public delegate int _IsPixelSnappingDisabled(IDWritePixelSnapping* This, [Optional] void* clientDrawingContext, [NativeTypeName("BOOL")] int* isDisabled);
 
         /// <summary>Gets the current transform that maps abstract coordinates to DIPs, which may disable pixel snapping upon any rotation or shear.</summary>
         /// <param name="clientDrawingContext">The context passed to IDWriteTextLayout::Draw.</param>
         /// <param name="transform">Receives the transform.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetCurrentTransform(
-            [In] IDWritePixelSnapping* This,
-            [In, Optional] void* clientDrawingContext,
-            [Out] DWRITE_MATRIX* transform
-        );
+        public delegate int _GetCurrentTransform(IDWritePixelSnapping* This, [Optional] void* clientDrawingContext, DWRITE_MATRIX* transform);
 
         /// <summary>Gets the number of physical pixels per DIP. A DIP (device-independent pixel) is 1/96 inch, so the pixelsPerDip value is the number of logical pixels per inch divided by 96 (yielding a value of 1 for 96 DPI and 1.25 for 120).</summary>
         /// <param name="clientDrawingContext">The context passed to IDWriteTextLayout::Draw.</param>
         /// <param name="pixelsPerDip">Receives the number of physical pixels per DIP.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetPixelsPerDip(
-            [In] IDWritePixelSnapping* This,
-            [In, Optional] void* clientDrawingContext,
-            [Out, NativeTypeName("FLOAT")] float* pixelsPerDip
-        );
-        #endregion
+        public delegate int _GetPixelsPerDip(IDWritePixelSnapping* This, [Optional] void* clientDrawingContext, [NativeTypeName("FLOAT")] float* pixelsPerDip);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDWritePixelSnapping* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -105,9 +64,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWritePixelSnapping* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -116,82 +73,50 @@ namespace TerraFX.Interop
         {
             fixed (IDWritePixelSnapping* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region Methods
-        [return: NativeTypeName("HRESULT")]
-        public int IsPixelSnappingDisabled(
-            [In, Optional] void* clientDrawingContext,
-            [Out, NativeTypeName("BOOL")] int* isDisabled
-        )
-        {
-            fixed (IDWritePixelSnapping* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_IsPixelSnappingDisabled>(lpVtbl->IsPixelSnappingDisabled)(
-                    This,
-                    clientDrawingContext,
-                    isDisabled
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetCurrentTransform(
-            [In, Optional] void* clientDrawingContext,
-            [Out] DWRITE_MATRIX* transform
-        )
+        public int IsPixelSnappingDisabled([Optional] void* clientDrawingContext, [NativeTypeName("BOOL")] int* isDisabled)
         {
             fixed (IDWritePixelSnapping* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetCurrentTransform>(lpVtbl->GetCurrentTransform)(
-                    This,
-                    clientDrawingContext,
-                    transform
-                );
+                return Marshal.GetDelegateForFunctionPointer<_IsPixelSnappingDisabled>(lpVtbl->IsPixelSnappingDisabled)(This, clientDrawingContext, isDisabled);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetPixelsPerDip(
-            [In, Optional] void* clientDrawingContext,
-            [Out, NativeTypeName("FLOAT")] float* pixelsPerDip
-        )
+        public int GetCurrentTransform([Optional] void* clientDrawingContext, DWRITE_MATRIX* transform)
         {
             fixed (IDWritePixelSnapping* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetPixelsPerDip>(lpVtbl->GetPixelsPerDip)(
-                    This,
-                    clientDrawingContext,
-                    pixelsPerDip
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetCurrentTransform>(lpVtbl->GetCurrentTransform)(This, clientDrawingContext, transform);
             }
         }
-        #endregion
 
-        #region Structs
+        [return: NativeTypeName("HRESULT")]
+        public int GetPixelsPerDip([Optional] void* clientDrawingContext, [NativeTypeName("FLOAT")] float* pixelsPerDip)
+        {
+            fixed (IDWritePixelSnapping* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetPixelsPerDip>(lpVtbl->GetPixelsPerDip)(This, clientDrawingContext, pixelsPerDip);
+            }
+        }
+
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr IsPixelSnappingDisabled;
 
             public IntPtr GetCurrentTransform;
 
             public IntPtr GetPixelsPerDip;
-            #endregion
         }
-        #endregion
     }
 }

@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>This describes the drawing state.</summary>
     public struct D2D1_DRAWING_STATE_DESCRIPTION1
     {
-        #region Fields
         public D2D1_ANTIALIAS_MODE antialiasMode;
 
         public D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode;
@@ -25,6 +24,5 @@ namespace TerraFX.Interop
         public D2D1_PRIMITIVE_BLEND primitiveBlend;
 
         public D2D1_UNIT_MODE unitMode;
-        #endregion
     }
 }

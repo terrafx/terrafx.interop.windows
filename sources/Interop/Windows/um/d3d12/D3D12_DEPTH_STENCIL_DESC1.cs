@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct D3D12_DEPTH_STENCIL_DESC1
     {
-        #region Fields
         [NativeTypeName("BOOL")]
         public int DepthEnable;
 
@@ -30,6 +29,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("BOOL")]
         public int DepthBoundsTestEnable;
-        #endregion
     }
 }

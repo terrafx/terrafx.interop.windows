@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -13,182 +12,98 @@ namespace TerraFX.Interop
     [Guid("C095E4F4-BB98-43D6-9745-4D1B84EC9888")]
     public unsafe struct ID2D1SvgPathData
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] ID2D1SvgPathData* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1SvgPathData* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] ID2D1SvgPathData* This
-        );
+        public delegate uint _AddRef(ID2D1SvgPathData* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] ID2D1SvgPathData* This
-        );
-        #endregion
+        public delegate uint _Release(ID2D1SvgPathData* This);
 
-        #region ID2D1Resource Delegates
         /// <summary>Retrieve the factory associated with this resource.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _GetFactory(
-            [In] ID2D1SvgPathData* This,
-            [Out] ID2D1Factory** factory
-        );
-        #endregion
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _GetFactory(ID2D1SvgPathData* This, ID2D1Factory** factory);
 
-        #region ID2D1SvgAttribute Delegates
         /// <summary>Returns the element on which this attribute is set. Returns null if the attribute is not set on any element.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _GetElement(
-            [In] ID2D1SvgPathData* This,
-            [Out] ID2D1SvgElement** element
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _GetElement(ID2D1SvgPathData* This, ID2D1SvgElement** element);
 
         /// <summary>Creates a clone of this attribute value. On creation, the cloned attribute is not set on any element.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Clone(
-            [In] ID2D1SvgPathData* This,
-            [Out] ID2D1SvgAttribute** attribute
-        );
-        #endregion
+        public delegate int _Clone(ID2D1SvgPathData* This, ID2D1SvgAttribute** attribute);
 
-        #region Delegates
         /// <summary>Removes data from the end of the segment data array.</summary>
         /// <param name="dataCount">Specifies how much data to remove.</param>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RemoveSegmentDataAtEnd(
-            [In] ID2D1SvgPathData* This,
-            [In, NativeTypeName("UINT32")] uint dataCount
-        );
+        public delegate int _RemoveSegmentDataAtEnd(ID2D1SvgPathData* This, [NativeTypeName("UINT32")] uint dataCount);
 
         /// <summary>Updates the segment data array. Existing segment data not updated by this method are preserved. The array is resized larger if necessary to accomodate the new segment data.</summary>
         /// <param name="data">The data array.</param>
         /// <param name="dataCount">The number of data to update.</param>
         /// <param name="startIndex">The index at which to begin updating segment data. Must be less than or equal to the size of the segment data array.</param>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _UpdateSegmentData(
-            [In] ID2D1SvgPathData* This,
-            [In, NativeTypeName("FLOAT[]")] float* data,
-            [In, NativeTypeName("UINT32")] uint dataCount,
-            [In, NativeTypeName("UINT32")] uint startIndex = 0
-        );
+        public delegate int _UpdateSegmentData(ID2D1SvgPathData* This, [NativeTypeName("FLOAT[]")] float* data, [NativeTypeName("UINT32")] uint dataCount, [NativeTypeName("UINT32")] uint startIndex = 0);
 
         /// <summary>Gets data from the segment data array.</summary>
         /// <param name="data">Buffer to contain the segment data array.</param>
         /// <param name="dataCount">The element count of the buffer.</param>
         /// <param name="startIndex">The index of the first segment data to retrieve.</param>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetSegmentData(
-            [In] ID2D1SvgPathData* This,
-            [Out, NativeTypeName("FLOAT[]")] float* data,
-            [In, NativeTypeName("UINT32")] uint dataCount,
-            [In, NativeTypeName("UINT32")] uint startIndex = 0
-        );
+        public delegate int _GetSegmentData(ID2D1SvgPathData* This, [NativeTypeName("FLOAT[]")] float* data, [NativeTypeName("UINT32")] uint dataCount, [NativeTypeName("UINT32")] uint startIndex = 0);
 
         /// <summary>Gets the size of the segment data array.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetSegmentDataCount(
-            [In] ID2D1SvgPathData* This
-        );
+        public delegate uint _GetSegmentDataCount(ID2D1SvgPathData* This);
 
         /// <summary>Removes commands from the end of the commands array.</summary>
         /// <param name="commandsCount">Specifies how many commands to remove.</param>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _RemoveCommandsAtEnd(
-            [In] ID2D1SvgPathData* This,
-            [In, NativeTypeName("UINT32")] uint commandsCount
-        );
+        public delegate int _RemoveCommandsAtEnd(ID2D1SvgPathData* This, [NativeTypeName("UINT32")] uint commandsCount);
 
         /// <summary>Updates the commands array. Existing commands not updated by this method are preserved. The array is resized larger if necessary to accomodate the new commands.</summary>
         /// <param name="commands">The commands array.</param>
         /// <param name="commandsCount">The number of commands to update.</param>
         /// <param name="startIndex">The index at which to begin updating commands. Must be less than or equal to the size of the commands array.</param>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _UpdateCommands(
-            [In] ID2D1SvgPathData* This,
-            [In, NativeTypeName("D2D1_SVG_PATH_COMMAND")] D2D1_SVG_PATH_COMMAND* commands,
-            [In, NativeTypeName("UINT32")] uint commandsCount,
-            [In, NativeTypeName("UINT32")] uint startIndex = 0
-        );
+        public delegate int _UpdateCommands(ID2D1SvgPathData* This, [NativeTypeName("D2D1_SVG_PATH_COMMAND")] D2D1_SVG_PATH_COMMAND* commands, [NativeTypeName("UINT32")] uint commandsCount, [NativeTypeName("UINT32")] uint startIndex = 0);
 
         /// <summary>Gets commands from the commands array.</summary>
         /// <param name="commands">Buffer to contain the commands</param>
         /// <param name="commandsCount">The element count of the buffer.</param>
         /// <param name="startIndex">The index of the first commands to retrieve.</param>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetCommands(
-            [In] ID2D1SvgPathData* This,
-            [Out, NativeTypeName("D2D1_SVG_PATH_COMMAND[]")] D2D1_SVG_PATH_COMMAND* commands,
-            [In, NativeTypeName("UINT32")] uint commandsCount,
-            [In, NativeTypeName("UINT32")] uint startIndex = 0
-        );
+        public delegate int _GetCommands(ID2D1SvgPathData* This, [NativeTypeName("D2D1_SVG_PATH_COMMAND[]")] D2D1_SVG_PATH_COMMAND* commands, [NativeTypeName("UINT32")] uint commandsCount, [NativeTypeName("UINT32")] uint startIndex = 0);
 
         /// <summary>Gets the size of the commands array.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public /* static */ delegate uint _GetCommandsCount(
-            [In] ID2D1SvgPathData* This
-        );
+        public delegate uint _GetCommandsCount(ID2D1SvgPathData* This);
 
         /// <summary>Creates a path geometry object representing the path data.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreatePathGeometry(
-            [In] ID2D1SvgPathData* This,
-            [In] D2D1_FILL_MODE fillMode,
-            [Out] ID2D1PathGeometry1** pathGeometry
-        );
-        #endregion
+        public delegate int _CreatePathGeometry(ID2D1SvgPathData* This, D2D1_FILL_MODE fillMode, ID2D1PathGeometry1** pathGeometry);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1SvgPathData* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -197,9 +112,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPathData* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -208,105 +121,59 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPathData* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
-        #endregion
 
-        #region ID2D1Resource Methods
-        public void GetFactory(
-            [Out] ID2D1Factory** factory
-        )
+        public void GetFactory(ID2D1Factory** factory)
         {
             fixed (ID2D1SvgPathData* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
-                    This,
-                    factory
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(This, factory);
             }
         }
-        #endregion
 
-        #region ID2D1SvgAttribute Methods
-        public void GetElement(
-            [Out] ID2D1SvgElement** element
-        )
+        public void GetElement(ID2D1SvgElement** element)
         {
             fixed (ID2D1SvgPathData* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetElement>(lpVtbl->GetElement)(
-                    This,
-                    element
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetElement>(lpVtbl->GetElement)(This, element);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Clone(
-            [Out] ID2D1SvgAttribute** attribute
-        )
+        public int Clone(ID2D1SvgAttribute** attribute)
         {
             fixed (ID2D1SvgPathData* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Clone>(lpVtbl->Clone)(
-                    This,
-                    attribute
-                );
-            }
-        }
-        #endregion
-
-        #region Methods
-        [return: NativeTypeName("HRESULT")]
-        public int RemoveSegmentDataAtEnd(
-            [In, NativeTypeName("UINT32")] uint dataCount
-        )
-        {
-            fixed (ID2D1SvgPathData* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_RemoveSegmentDataAtEnd>(lpVtbl->RemoveSegmentDataAtEnd)(
-                    This,
-                    dataCount
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Clone>(lpVtbl->Clone)(This, attribute);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int UpdateSegmentData(
-            [In, NativeTypeName("FLOAT[]")] float* data,
-            [In, NativeTypeName("UINT32")] uint dataCount,
-            [In, NativeTypeName("UINT32")] uint startIndex = 0
-        )
+        public int RemoveSegmentDataAtEnd([NativeTypeName("UINT32")] uint dataCount)
         {
             fixed (ID2D1SvgPathData* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_UpdateSegmentData>(lpVtbl->UpdateSegmentData)(
-                    This,
-                    data,
-                    dataCount,
-                    startIndex
-                );
+                return Marshal.GetDelegateForFunctionPointer<_RemoveSegmentDataAtEnd>(lpVtbl->RemoveSegmentDataAtEnd)(This, dataCount);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetSegmentData(
-            [Out, NativeTypeName("FLOAT[]")] float* data,
-            [In, NativeTypeName("UINT32")] uint dataCount,
-            [In, NativeTypeName("UINT32")] uint startIndex = 0
-        )
+        public int UpdateSegmentData([NativeTypeName("FLOAT[]")] float* data, [NativeTypeName("UINT32")] uint dataCount, [NativeTypeName("UINT32")] uint startIndex = 0)
         {
             fixed (ID2D1SvgPathData* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetSegmentData>(lpVtbl->GetSegmentData)(
-                    This,
-                    data,
-                    dataCount,
-                    startIndex
-                );
+                return Marshal.GetDelegateForFunctionPointer<_UpdateSegmentData>(lpVtbl->UpdateSegmentData)(This, data, dataCount, startIndex);
+            }
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetSegmentData([NativeTypeName("FLOAT[]")] float* data, [NativeTypeName("UINT32")] uint dataCount, [NativeTypeName("UINT32")] uint startIndex = 0)
+        {
+            fixed (ID2D1SvgPathData* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetSegmentData>(lpVtbl->GetSegmentData)(This, data, dataCount, startIndex);
             }
         }
 
@@ -315,59 +182,34 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPathData* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetSegmentDataCount>(lpVtbl->GetSegmentDataCount)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetSegmentDataCount>(lpVtbl->GetSegmentDataCount)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int RemoveCommandsAtEnd(
-            [In, NativeTypeName("UINT32")] uint commandsCount
-        )
+        public int RemoveCommandsAtEnd([NativeTypeName("UINT32")] uint commandsCount)
         {
             fixed (ID2D1SvgPathData* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_RemoveCommandsAtEnd>(lpVtbl->RemoveCommandsAtEnd)(
-                    This,
-                    commandsCount
-                );
+                return Marshal.GetDelegateForFunctionPointer<_RemoveCommandsAtEnd>(lpVtbl->RemoveCommandsAtEnd)(This, commandsCount);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int UpdateCommands(
-            [In, NativeTypeName("D2D1_SVG_PATH_COMMAND")] D2D1_SVG_PATH_COMMAND* commands,
-            [In, NativeTypeName("UINT32")] uint commandsCount,
-            [In, NativeTypeName("UINT32")] uint startIndex = 0
-        )
+        public int UpdateCommands([NativeTypeName("D2D1_SVG_PATH_COMMAND")] D2D1_SVG_PATH_COMMAND* commands, [NativeTypeName("UINT32")] uint commandsCount, [NativeTypeName("UINT32")] uint startIndex = 0)
         {
             fixed (ID2D1SvgPathData* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_UpdateCommands>(lpVtbl->UpdateCommands)(
-                    This,
-                    commands,
-                    commandsCount,
-                    startIndex
-                );
+                return Marshal.GetDelegateForFunctionPointer<_UpdateCommands>(lpVtbl->UpdateCommands)(This, commands, commandsCount, startIndex);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetCommands(
-            [Out, NativeTypeName("D2D1_SVG_PATH_COMMAND[]")] D2D1_SVG_PATH_COMMAND* commands,
-            [In, NativeTypeName("UINT32")] uint commandsCount,
-            [In, NativeTypeName("UINT32")] uint startIndex = 0
-        )
+        public int GetCommands([NativeTypeName("D2D1_SVG_PATH_COMMAND[]")] D2D1_SVG_PATH_COMMAND* commands, [NativeTypeName("UINT32")] uint commandsCount, [NativeTypeName("UINT32")] uint startIndex = 0)
         {
             fixed (ID2D1SvgPathData* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetCommands>(lpVtbl->GetCommands)(
-                    This,
-                    commands,
-                    commandsCount,
-                    startIndex
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetCommands>(lpVtbl->GetCommands)(This, commands, commandsCount, startIndex);
             }
         }
 
@@ -376,51 +218,33 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPathData* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetCommandsCount>(lpVtbl->GetCommandsCount)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetCommandsCount>(lpVtbl->GetCommandsCount)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreatePathGeometry(
-            [In] D2D1_FILL_MODE fillMode,
-            [Out] ID2D1PathGeometry1** pathGeometry
-        )
+        public int CreatePathGeometry(D2D1_FILL_MODE fillMode, ID2D1PathGeometry1** pathGeometry)
         {
             fixed (ID2D1SvgPathData* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreatePathGeometry>(lpVtbl->CreatePathGeometry)(
-                    This,
-                    fillMode,
-                    pathGeometry
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreatePathGeometry>(lpVtbl->CreatePathGeometry)(This, fillMode, pathGeometry);
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1Resource Fields
             public IntPtr GetFactory;
-            #endregion
 
-            #region ID2D1SvgAttribute Fields
             public IntPtr GetElement;
 
             public IntPtr Clone;
-            #endregion
 
-            #region Fields
             public IntPtr RemoveSegmentDataAtEnd;
 
             public IntPtr UpdateSegmentData;
@@ -438,8 +262,6 @@ namespace TerraFX.Interop
             public IntPtr GetCommandsCount;
 
             public IntPtr CreatePathGeometry;
-            #endregion
         }
-        #endregion
     }
 }

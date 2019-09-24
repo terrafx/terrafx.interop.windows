@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public struct DXGI_RGB
     {
-        #region Fields
         public float Red;
 
         public float Green;
 
         public float Blue;
-        #endregion
     }
 }

@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -13,48 +12,27 @@ namespace TerraFX.Interop
     [Guid("7D97DBF7-E085-42D4-81E3-6A883BDED118")]
     public unsafe struct IDWriteGlyphRunAnalysis
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IDWriteGlyphRunAnalysis* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDWriteGlyphRunAnalysis* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IDWriteGlyphRunAnalysis* This
-        );
+        public delegate uint _AddRef(IDWriteGlyphRunAnalysis* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IDWriteGlyphRunAnalysis* This
-        );
-        #endregion
+        public delegate uint _Release(IDWriteGlyphRunAnalysis* This);
 
-        #region Delegates
         /// <summary>Gets the bounding rectangle of the physical pixels affected by the glyph run.</summary>
         /// <param name="textureType">Specifies the type of texture requested. If a bi-level texture is requested, the bounding rectangle includes only bi-level glyphs. Otherwise, the bounding rectangle includes only anti-aliased glyphs.</param>
         /// <param name="textureBounds">Receives the bounding rectangle, or an empty rectangle if there are no glyphs if the specified type.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetAlphaTextureBounds(
-            [In] IDWriteGlyphRunAnalysis* This,
-            [In] DWRITE_TEXTURE_TYPE textureType,
-            [Out] RECT* textureBounds
-        );
+        public delegate int _GetAlphaTextureBounds(IDWriteGlyphRunAnalysis* This, DWRITE_TEXTURE_TYPE textureType, RECT* textureBounds);
 
         /// <summary>Creates an alpha texture of the specified type.</summary>
         /// <param name="textureType">Specifies the type of texture requested. If a bi-level texture is requested, the texture contains only bi-level glyphs. Otherwise, the texture contains only anti-aliased glyphs.</param>
@@ -62,48 +40,25 @@ namespace TerraFX.Interop
         /// <param name="alphaValues">Receives the array of alpha values.</param>
         /// <param name="bufferSize">Size of the alphaValues array. The minimum size depends on the dimensions of the rectangle and the type of texture requested.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateAlphaTexture(
-            [In] IDWriteGlyphRunAnalysis* This,
-            [In] DWRITE_TEXTURE_TYPE textureType,
-            [In] RECT* textureBounds,
-            [Out, NativeTypeName("BYTE[]")] byte* alphaValues,
-            [In, NativeTypeName("UINT32")] uint bufferSize
-        );
+        public delegate int _CreateAlphaTexture(IDWriteGlyphRunAnalysis* This, DWRITE_TEXTURE_TYPE textureType, RECT* textureBounds, [NativeTypeName("BYTE[]")] byte* alphaValues, [NativeTypeName("UINT32")] uint bufferSize);
 
         /// <summary>Gets properties required for ClearType blending.</summary>
         /// <param name="renderingParams">Rendering parameters object. In most cases, the values returned in the output parameters are based on the properties of this object. The exception is if a GDI-compatible rendering mode is specified.</param>
         /// <param name="blendGamma">Receives the gamma value to use for gamma correction.</param>
         /// <param name="blendEnhancedContrast">Receives the enhanced contrast value.</param>
         /// <param name="blendClearTypeLevel">Receives the ClearType level.</param>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetAlphaBlendParams(
-            [In] IDWriteGlyphRunAnalysis* This,
-            [In] IDWriteRenderingParams* renderingParams,
-            [Out, NativeTypeName("FLOAT")] float* blendGamma,
-            [Out, NativeTypeName("FLOAT")] float* blendEnhancedContrast,
-            [Out, NativeTypeName("FLOAT")] float* blendClearTypeLevel
-        );
-        #endregion
+        public delegate int _GetAlphaBlendParams(IDWriteGlyphRunAnalysis* This, IDWriteRenderingParams* renderingParams, [NativeTypeName("FLOAT")] float* blendGamma, [NativeTypeName("FLOAT")] float* blendEnhancedContrast, [NativeTypeName("FLOAT")] float* blendClearTypeLevel);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDWriteGlyphRunAnalysis* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -112,9 +67,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteGlyphRunAnalysis* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -123,90 +76,50 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteGlyphRunAnalysis* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region Methods
-        [return: NativeTypeName("HRESULT")]
-        public int GetAlphaTextureBounds(
-            [In] DWRITE_TEXTURE_TYPE textureType,
-            [Out] RECT* textureBounds
-        )
-        {
-            fixed (IDWriteGlyphRunAnalysis* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetAlphaTextureBounds>(lpVtbl->GetAlphaTextureBounds)(
-                    This,
-                    textureType,
-                    textureBounds
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateAlphaTexture(
-            [In] DWRITE_TEXTURE_TYPE textureType,
-            [In] RECT* textureBounds,
-            [Out, NativeTypeName("BYTE[]")] byte* alphaValues,
-            [In, NativeTypeName("UINT32")] uint bufferSize
-        )
+        public int GetAlphaTextureBounds(DWRITE_TEXTURE_TYPE textureType, RECT* textureBounds)
         {
             fixed (IDWriteGlyphRunAnalysis* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateAlphaTexture>(lpVtbl->CreateAlphaTexture)(
-                    This,
-                    textureType,
-                    textureBounds,
-                    alphaValues,
-                    bufferSize
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetAlphaTextureBounds>(lpVtbl->GetAlphaTextureBounds)(This, textureType, textureBounds);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetAlphaBlendParams(
-            [In] IDWriteRenderingParams* renderingParams,
-            [Out, NativeTypeName("FLOAT")] float* blendGamma,
-            [Out, NativeTypeName("FLOAT")] float* blendEnhancedContrast,
-            [Out, NativeTypeName("FLOAT")] float* blendClearTypeLevel
-        )
+        public int CreateAlphaTexture(DWRITE_TEXTURE_TYPE textureType, RECT* textureBounds, [NativeTypeName("BYTE[]")] byte* alphaValues, [NativeTypeName("UINT32")] uint bufferSize)
         {
             fixed (IDWriteGlyphRunAnalysis* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetAlphaBlendParams>(lpVtbl->GetAlphaBlendParams)(
-                    This,
-                    renderingParams,
-                    blendGamma,
-                    blendEnhancedContrast,
-                    blendClearTypeLevel
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateAlphaTexture>(lpVtbl->CreateAlphaTexture)(This, textureType, textureBounds, alphaValues, bufferSize);
             }
         }
-        #endregion
 
-        #region Structs
+        [return: NativeTypeName("HRESULT")]
+        public int GetAlphaBlendParams(IDWriteRenderingParams* renderingParams, [NativeTypeName("FLOAT")] float* blendGamma, [NativeTypeName("FLOAT")] float* blendEnhancedContrast, [NativeTypeName("FLOAT")] float* blendClearTypeLevel)
+        {
+            fixed (IDWriteGlyphRunAnalysis* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetAlphaBlendParams>(lpVtbl->GetAlphaBlendParams)(This, renderingParams, blendGamma, blendEnhancedContrast, blendClearTypeLevel);
+            }
+        }
+
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetAlphaTextureBounds;
 
             public IntPtr CreateAlphaTexture;
 
             public IntPtr GetAlphaBlendParams;
-            #endregion
         }
-        #endregion
     }
 }

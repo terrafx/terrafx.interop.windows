@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct D3D12_TILED_RESOURCE_COORDINATE
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint X;
 
@@ -19,9 +18,7 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint Subresource;
-        #endregion
 
-        #region Constructors
         public D3D12_TILED_RESOURCE_COORDINATE(uint x, uint y, uint z, uint subresource)
         {
             X = x;
@@ -29,6 +26,5 @@ namespace TerraFX.Interop
             Z = z;
             Subresource = subresource;
         }
-        #endregion
     }
 }

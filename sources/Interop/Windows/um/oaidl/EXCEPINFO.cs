@@ -4,14 +4,11 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
-using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     public unsafe struct EXCEPINFO
     {
-        #region Fields
         [NativeTypeName("WORD")]
         public ushort wCode;
 
@@ -38,6 +35,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("SCODE")]
         public int scode;
-        #endregion
     }
 }

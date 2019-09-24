@@ -7,12 +7,10 @@ namespace TerraFX.Interop
 {
     public unsafe struct CAPROPVARIANT
     {
-        #region Fields
         [NativeTypeName("ULONG")]
         public uint cElems;
 
         [NativeTypeName("PROPVARIANT[]")]
         public PROPVARIANT* pElems;
-        #endregion
     }
 }

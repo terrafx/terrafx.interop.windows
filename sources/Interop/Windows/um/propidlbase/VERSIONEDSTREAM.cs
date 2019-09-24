@@ -9,11 +9,9 @@ namespace TerraFX.Interop
 {
     public unsafe struct VERSIONEDSTREAM
     {
-        #region Fields
         [NativeTypeName("GUID")]
         public Guid guidVersion;
 
         public IStream* pStream;
-        #endregion
     }
 }

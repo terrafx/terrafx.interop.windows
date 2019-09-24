@@ -7,20 +7,16 @@ namespace TerraFX.Interop
 {
     public struct D3D12_RESOURCE_ALLOCATION_INFO
     {
-        #region Fields
         [NativeTypeName("UINT64")]
         public ulong SizeInBytes;
 
         [NativeTypeName("UINT64")]
         public ulong Alignment;
-        #endregion
 
-        #region Constructors
         public D3D12_RESOURCE_ALLOCATION_INFO(ulong size, ulong alignment)
         {
             SizeInBytes = size;
             Alignment = alignment;
         }
-        #endregion
     }
 }

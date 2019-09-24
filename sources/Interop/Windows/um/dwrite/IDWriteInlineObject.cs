@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -13,36 +12,20 @@ namespace TerraFX.Interop
     [Guid("8339FDE3-106F-47AB-8373-1C6295EB10B3")]
     public unsafe struct IDWriteInlineObject
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] IDWriteInlineObject* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDWriteInlineObject* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] IDWriteInlineObject* This
-        );
+        public delegate uint _AddRef(IDWriteInlineObject* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] IDWriteInlineObject* This
-        );
-        #endregion
+        public delegate uint _Release(IDWriteInlineObject* This);
 
-        #region Delegates
         /// <summary>The application implemented rendering callback (IDWriteTextRenderer::DrawInlineObject) can use this to draw the inline object without needing to cast or query the object type. The text layout does not call this method directly.</summary>
         /// <param name="clientDrawingContext">The context passed to IDWriteTextLayout::Draw.</param>
         /// <param name="renderer">The renderer passed to IDWriteTextLayout::Draw as the object's containing parent.</param>
@@ -52,71 +35,39 @@ namespace TerraFX.Interop
         /// <param name="isRightToLeft">The object is in an right-to-left context and should be drawn flipped.</param>
         /// <param name="clientDrawingEffect">The drawing effect set in IDWriteTextLayout::SetDrawingEffect.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _Draw(
-            [In] IDWriteInlineObject* This,
-            [In, Optional] void* clientDrawingContext,
-            [In] IDWriteTextRenderer* renderer,
-            [In, NativeTypeName("FLOAT")] float originX,
-            [In, NativeTypeName("FLOAT")] float originY,
-            [In, NativeTypeName("BOOL")] int isSideways,
-            [In, NativeTypeName("BOOL")] int isRightToLeft,
-            [In] IUnknown* clientDrawingEffect = null
-        );
+        public delegate int _Draw(IDWriteInlineObject* This, [Optional] void* clientDrawingContext, IDWriteTextRenderer* renderer, [NativeTypeName("FLOAT")] float originX, [NativeTypeName("FLOAT")] float originY, [NativeTypeName("BOOL")] int isSideways, [NativeTypeName("BOOL")] int isRightToLeft, IUnknown* clientDrawingEffect = null);
 
         /// <summary>TextLayout calls this callback function to get the measurement of the inline object.</summary>
         /// <param name="metrics">Returned metrics</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetMetrics(
-            [In] IDWriteInlineObject* This,
-            [Out] DWRITE_INLINE_OBJECT_METRICS* metrics
-        );
+        public delegate int _GetMetrics(IDWriteInlineObject* This, DWRITE_INLINE_OBJECT_METRICS* metrics);
 
         /// <summary>TextLayout calls this callback function to get the visible extents (in DIPs) of the inline object. In the case of a simple bitmap, with no padding and no overhang, all the overhangs will simply be zeroes.</summary>
         /// <param name="overhangs">Overshoot of visible extents (in DIPs) outside the object.</param>
         /// <returns>Standard HRESULT error code.</returns>
         /// <remarks> The overhangs should be returned relative to the reported size of the object (DWRITE_INLINE_OBJECT_METRICS::width/height), and should not be baseline adjusted. If you have an image that is actually 100x100 DIPs, but you want it slightly inset (perhaps it has a glow) by 20 DIPs on each side, you would return a width/height of 60x60 and four overhangs of 20 DIPs.</remarks>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetOverhangMetrics(
-            [In] IDWriteInlineObject* This,
-            [Out] DWRITE_OVERHANG_METRICS* overhangs
-        );
+        public delegate int _GetOverhangMetrics(IDWriteInlineObject* This, DWRITE_OVERHANG_METRICS* overhangs);
 
         /// <summary>Layout uses this to determine the line breaking behavior of the inline object amidst the text.</summary>
         /// <param name="breakConditionBefore">Line-breaking condition between the object and the content immediately preceding it.</param>
         /// <param name="breakConditionAfter" >Line-breaking condition between the object and the content immediately following it.</param>
         /// <returns>Standard HRESULT error code.</returns>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetBreakConditions(
-            [In] IDWriteInlineObject* This,
-            [Out] DWRITE_BREAK_CONDITION* breakConditionBefore,
-            [Out] DWRITE_BREAK_CONDITION* breakConditionAfter
-        );
-        #endregion
+        public delegate int _GetBreakConditions(IDWriteInlineObject* This, DWRITE_BREAK_CONDITION* breakConditionBefore, DWRITE_BREAK_CONDITION* breakConditionAfter);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDWriteInlineObject* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -125,9 +76,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteInlineObject* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -136,97 +85,54 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteInlineObject* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region Methods
-        [return: NativeTypeName("HRESULT")]
-        public int Draw(
-            [In, Optional] void* clientDrawingContext,
-            [In] IDWriteTextRenderer* renderer,
-            [In, NativeTypeName("FLOAT")] float originX,
-            [In, NativeTypeName("FLOAT")] float originY,
-            [In, NativeTypeName("BOOL")] int isSideways,
-            [In, NativeTypeName("BOOL")] int isRightToLeft,
-            [In] IUnknown* clientDrawingEffect = null
-        )
-        {
-            fixed (IDWriteInlineObject* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Draw>(lpVtbl->Draw)(
-                    This,
-                    clientDrawingContext,
-                    renderer,
-                    originX,
-                    originY,
-                    isSideways,
-                    isRightToLeft,
-                    clientDrawingEffect
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetMetrics(
-            [Out] DWRITE_INLINE_OBJECT_METRICS* metrics
-        )
+        public int Draw([Optional] void* clientDrawingContext, IDWriteTextRenderer* renderer, [NativeTypeName("FLOAT")] float originX, [NativeTypeName("FLOAT")] float originY, [NativeTypeName("BOOL")] int isSideways, [NativeTypeName("BOOL")] int isRightToLeft, IUnknown* clientDrawingEffect = null)
         {
             fixed (IDWriteInlineObject* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetMetrics>(lpVtbl->GetMetrics)(
-                    This,
-                    metrics
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Draw>(lpVtbl->Draw)(This, clientDrawingContext, renderer, originX, originY, isSideways, isRightToLeft, clientDrawingEffect);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetOverhangMetrics(
-            [Out] DWRITE_OVERHANG_METRICS* overhangs
-        )
+        public int GetMetrics(DWRITE_INLINE_OBJECT_METRICS* metrics)
         {
             fixed (IDWriteInlineObject* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetOverhangMetrics>(lpVtbl->GetOverhangMetrics)(
-                    This,
-                    overhangs
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetMetrics>(lpVtbl->GetMetrics)(This, metrics);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetBreakConditions(
-            [Out] DWRITE_BREAK_CONDITION* breakConditionBefore,
-            [Out] DWRITE_BREAK_CONDITION* breakConditionAfter
-        )
+        public int GetOverhangMetrics(DWRITE_OVERHANG_METRICS* overhangs)
         {
             fixed (IDWriteInlineObject* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetBreakConditions>(lpVtbl->GetBreakConditions)(
-                    This,
-                    breakConditionBefore,
-                    breakConditionAfter
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetOverhangMetrics>(lpVtbl->GetOverhangMetrics)(This, overhangs);
             }
         }
-        #endregion
 
-        #region Structs
+        [return: NativeTypeName("HRESULT")]
+        public int GetBreakConditions(DWRITE_BREAK_CONDITION* breakConditionBefore, DWRITE_BREAK_CONDITION* breakConditionAfter)
+        {
+            fixed (IDWriteInlineObject* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_GetBreakConditions>(lpVtbl->GetBreakConditions)(This, breakConditionBefore, breakConditionAfter);
+            }
+        }
+
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr Draw;
 
             public IntPtr GetMetrics;
@@ -234,8 +140,6 @@ namespace TerraFX.Interop
             public IntPtr GetOverhangMetrics;
 
             public IntPtr GetBreakConditions;
-            #endregion
         }
-        #endregion
     }
 }

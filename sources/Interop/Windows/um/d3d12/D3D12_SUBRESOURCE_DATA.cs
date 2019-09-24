@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_SUBRESOURCE_DATA
     {
-        #region Fields
         public void* pData;
 
         [NativeTypeName("LONG_PTR")]
@@ -17,6 +16,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("LONG_PTR")]
         public IntPtr SlicePitch;
-        #endregion
     }
 }

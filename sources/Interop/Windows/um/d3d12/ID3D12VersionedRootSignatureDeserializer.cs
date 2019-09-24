@@ -5,73 +5,39 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
     [Guid("7F91CE67-090C-4BB7-B78E-ED8FF2E31DA0")]
     public unsafe struct ID3D12VersionedRootSignatureDeserializer
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] ID3D12VersionedRootSignatureDeserializer* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID3D12VersionedRootSignatureDeserializer* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] ID3D12VersionedRootSignatureDeserializer* This
-        );
+        public delegate uint _AddRef(ID3D12VersionedRootSignatureDeserializer* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] ID3D12VersionedRootSignatureDeserializer* This
-        );
-        #endregion
+        public delegate uint _Release(ID3D12VersionedRootSignatureDeserializer* This);
 
-        #region Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _GetRootSignatureDescAtVersion(
-            [In] ID3D12VersionedRootSignatureDeserializer* This,
-            [In] D3D_ROOT_SIGNATURE_VERSION convertToVersion,
-            [Out] D3D12_VERSIONED_ROOT_SIGNATURE_DESC** ppDesc
-        );
+        public delegate int _GetRootSignatureDescAtVersion(ID3D12VersionedRootSignatureDeserializer* This, D3D_ROOT_SIGNATURE_VERSION convertToVersion, D3D12_VERSIONED_ROOT_SIGNATURE_DESC** ppDesc);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate D3D12_VERSIONED_ROOT_SIGNATURE_DESC* _GetUnconvertedRootSignatureDesc(
-            [In] ID3D12VersionedRootSignatureDeserializer* This
-        );
-        #endregion
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate D3D12_VERSIONED_ROOT_SIGNATURE_DESC* _GetUnconvertedRootSignatureDesc(ID3D12VersionedRootSignatureDeserializer* This);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID3D12VersionedRootSignatureDeserializer* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -80,9 +46,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12VersionedRootSignatureDeserializer* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -91,27 +55,16 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12VersionedRootSignatureDeserializer* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
-        #endregion
 
-        #region Methods
         [return: NativeTypeName("HRESULT")]
-        public int GetRootSignatureDescAtVersion(
-            [In] D3D_ROOT_SIGNATURE_VERSION convertToVersion,
-            [Out] D3D12_VERSIONED_ROOT_SIGNATURE_DESC** ppDesc
-        )
+        public int GetRootSignatureDescAtVersion(D3D_ROOT_SIGNATURE_VERSION convertToVersion, D3D12_VERSIONED_ROOT_SIGNATURE_DESC** ppDesc)
         {
             fixed (ID3D12VersionedRootSignatureDeserializer* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetRootSignatureDescAtVersion>(lpVtbl->GetRootSignatureDescAtVersion)(
-                    This,
-                    convertToVersion,
-                    ppDesc
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetRootSignatureDescAtVersion>(lpVtbl->GetRootSignatureDescAtVersion)(This, convertToVersion, ppDesc);
             }
         }
 
@@ -119,30 +72,21 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12VersionedRootSignatureDeserializer* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetUnconvertedRootSignatureDesc>(lpVtbl->GetUnconvertedRootSignatureDesc)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetUnconvertedRootSignatureDesc>(lpVtbl->GetUnconvertedRootSignatureDesc)(This);
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region Fields
             public IntPtr GetRootSignatureDescAtVersion;
 
             public IntPtr GetUnconvertedRootSignatureDesc;
-            #endregion
         }
-        #endregion
     }
 }

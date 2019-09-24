@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -13,11 +12,8 @@ namespace TerraFX.Interop
     {
         private const string DllName = nameof(DXGI);
 
-        #region Constants
         public const uint DXGI_MAX_SWAP_CHAIN_BUFFERS = 16;
-        #endregion
 
-        #region DXGI_USAGE_* Constants
         public const uint DXGI_USAGE_SHADER_INPUT = 0x00000010;
 
         public const uint DXGI_USAGE_RENDER_TARGET_OUTPUT = 0x00000020;
@@ -31,9 +27,7 @@ namespace TerraFX.Interop
         public const uint DXGI_USAGE_DISCARD_ON_PRESENT = 0x00000200;
 
         public const uint DXGI_USAGE_UNORDERED_ACCESS = 0x00000400;
-        #endregion
 
-        #region DXGI_RESOURCE_PRIORITY_* Constants
         public const uint DXGI_RESOURCE_PRIORITY_MINIMUM = 0x28000000;
 
         public const uint DXGI_RESOURCE_PRIORITY_LOW = 0x50000000;
@@ -43,23 +37,17 @@ namespace TerraFX.Interop
         public const uint DXGI_RESOURCE_PRIORITY_HIGH = 0xA0000000;
 
         public const uint DXGI_RESOURCE_PRIORITY_MAXIMUM = 0xC8000000;
-        #endregion
 
-        #region DXGI_MAP_* Constants
         public const uint DXGI_MAP_READ = 1;
 
         public const uint DXGI_MAP_WRITE = 2;
 
         public const uint DXGI_MAP_DISCARD = 4;
-        #endregion
 
-        #region DXGI_ENUM_MODES_* Constants
         public const uint DXGI_ENUM_MODES_INTERLACED = 1;
 
         public const uint DXGI_ENUM_MODES_SCALING = 2;
-        #endregion
 
-        #region DXGI_PRESENT_* Constants
         public const uint DXGI_PRESENT_TEST = 0x00000001;
 
         public const uint DXGI_PRESENT_DO_NOT_SEQUENCE = 0x00000002;
@@ -77,9 +65,7 @@ namespace TerraFX.Interop
         public const uint DXGI_PRESENT_USE_DURATION = 0x00000100;
 
         public const uint DXGI_PRESENT_ALLOW_TEARING = 0x00000200;
-        #endregion
 
-        #region DXGI_MWA_* Constants
         public const uint DXGI_MWA_NO_WINDOW_CHANGES = 1 << 0;
 
         public const uint DXGI_MWA_NO_ALT_ENTER = 1 << 1;
@@ -87,9 +73,7 @@ namespace TerraFX.Interop
         public const uint DXGI_MWA_NO_PRINT_SCREEN = 1 << 2;
 
         public const uint DXGI_MWA_VALID = 0x7;
-        #endregion
 
-        #region IID_* Constants
         public static readonly Guid IID_IDXGIObject = new Guid(0xAEC22FB8, 0x76F3, 0x4639, 0x9B, 0xE0, 0x28, 0xEB, 0x43, 0xA6, 0x7A, 0x2E);
 
         public static readonly Guid IID_IDXGIDeviceSubObject = new Guid(0x3D3E0379, 0xF9DE, 0x4D58, 0xBB, 0x6C, 0x18, 0xD6, 0x29, 0x92, 0xF1, 0xA6);
@@ -117,24 +101,13 @@ namespace TerraFX.Interop
         public static readonly Guid IID_IDXGIAdapter1 = new Guid(0x29038F61, 0x3839, 0x4626, 0x91, 0xFD, 0x08, 0x68, 0x79, 0x01, 0x1A, 0x05);
 
         public static readonly Guid IID_IDXGIDevice1 = new Guid(0x77DB970F, 0x6276, 0x48BA, 0xBA, 0x28, 0x07, 0x01, 0x43, 0xB4, 0x39, 0x2C);
-        #endregion
 
-        #region External Methods
-        [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "CreateDXGIFactory", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
+        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateDXGIFactory", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateDXGIFactory(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppFactory
-        );
+        public static extern int CreateDXGIFactory([NativeTypeName("REFIID")] Guid* riid, void** ppFactory);
 
-        [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "CreateDXGIFactory1", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
-        [SuppressUnmanagedCodeSecurity]
+        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateDXGIFactory1", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateDXGIFactory1(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppFactory
-        );
-        #endregion
+        public static extern int CreateDXGIFactory1([NativeTypeName("REFIID")] Guid* riid, void** ppFactory);
     }
 }

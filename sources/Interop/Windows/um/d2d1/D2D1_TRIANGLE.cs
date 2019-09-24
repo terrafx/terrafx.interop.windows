@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>Describes a triangle.</summary>
     public struct D2D1_TRIANGLE
     {
-        #region Fields
         [NativeTypeName("D2D1_POINT_2F")]
         public D2D_POINT_2F point1;
 
@@ -17,6 +16,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("D2D1_POINT_2F")]
         public D2D_POINT_2F point3;
-        #endregion
     }
 }

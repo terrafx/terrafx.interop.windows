@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct DXGI_FRAME_STATISTICS_MEDIA
     {
-        #region Fields
         [NativeTypeName("UINT")]
         public uint PresentCount;
 
@@ -25,6 +24,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint ApprovedPresentDuration;
-        #endregion
     }
 }

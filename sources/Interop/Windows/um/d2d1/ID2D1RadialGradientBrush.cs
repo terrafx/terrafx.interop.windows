@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -13,160 +12,78 @@ namespace TerraFX.Interop
     [Guid("2CD906AC-12E2-11DC-9FED-001143A055F9")]
     public unsafe struct ID2D1RadialGradientBrush
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] ID2D1RadialGradientBrush* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1RadialGradientBrush* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] ID2D1RadialGradientBrush* This
-        );
+        public delegate uint _AddRef(ID2D1RadialGradientBrush* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] ID2D1RadialGradientBrush* This
-        );
-        #endregion
+        public delegate uint _Release(ID2D1RadialGradientBrush* This);
 
-        #region ID2D1Resource Delegates
         /// <summary>Retrieve the factory associated with this resource.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _GetFactory(
-            [In] ID2D1RadialGradientBrush* This,
-            [Out] ID2D1Factory** factory
-        );
-        #endregion
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _GetFactory(ID2D1RadialGradientBrush* This, ID2D1Factory** factory);
 
-        #region ID2D1Brush Delegates
         /// <summary>Sets the opacity for when the brush is drawn over the entire fill of the brush.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _SetOpacity(
-            [In] ID2D1RadialGradientBrush* This,
-            [In, NativeTypeName("FLOAT")] float opacity
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _SetOpacity(ID2D1RadialGradientBrush* This, [NativeTypeName("FLOAT")] float opacity);
 
         /// <summary>Sets the transform that applies to everything drawn by the brush.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _SetTransform(
-            [In] ID2D1RadialGradientBrush* This,
-            [In, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _SetTransform(ID2D1RadialGradientBrush* This, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public /* static */ delegate float _GetOpacity(
-            [In] ID2D1RadialGradientBrush* This
-        );
+        public delegate float _GetOpacity(ID2D1RadialGradientBrush* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _GetTransform(
-            [In] ID2D1RadialGradientBrush* This,
-            [Out, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform
-        );
-        #endregion
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _GetTransform(ID2D1RadialGradientBrush* This, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform);
 
-        #region Delegates
         /// <summary>Sets the center of the radial gradient. This will be in local coordinates and will not depend on the geometry being filled.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _SetCenter(
-            [In] ID2D1RadialGradientBrush* This,
-            [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F center
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _SetCenter(ID2D1RadialGradientBrush* This, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F center);
 
         /// <summary>Sets offset of the origin relative to the radial gradient center.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _SetGradientOriginOffset(
-            [In] ID2D1RadialGradientBrush* This,
-            [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F gradientOriginOffset
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _SetGradientOriginOffset(ID2D1RadialGradientBrush* This, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F gradientOriginOffset);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _SetRadiusX(
-            [In] ID2D1RadialGradientBrush* This,
-            [In, NativeTypeName("FLOAT")] float radiusX
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _SetRadiusX(ID2D1RadialGradientBrush* This, [NativeTypeName("FLOAT")] float radiusX);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _SetRadiusY(
-            [In] ID2D1RadialGradientBrush* This,
-            [In, NativeTypeName("FLOAT")] float radiusY
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _SetRadiusY(ID2D1RadialGradientBrush* This, [NativeTypeName("FLOAT")] float radiusY);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("D2D1_POINT_2F")]
-        public /* static */ delegate D2D_POINT_2F* _GetCenter(
-            [In] ID2D1RadialGradientBrush* This,
-            [Out] D2D_POINT_2F* _result
-        );
+        public delegate D2D_POINT_2F* _GetCenter(ID2D1RadialGradientBrush* This, D2D_POINT_2F* _result);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("D2D1_POINT_2F")]
-        public /* static */ delegate D2D_POINT_2F* _GetGradientOriginOffset(
-            [In] ID2D1RadialGradientBrush* This,
-            [Out] D2D_POINT_2F* _result
-        );
+        public delegate D2D_POINT_2F* _GetGradientOriginOffset(ID2D1RadialGradientBrush* This, D2D_POINT_2F* _result);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public /* static */ delegate float _GetRadiusX(
-            [In] ID2D1RadialGradientBrush* This
-        );
+        public delegate float _GetRadiusX(ID2D1RadialGradientBrush* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public /* static */ delegate float _GetRadiusY(
-            [In] ID2D1RadialGradientBrush* This
-        );
+        public delegate float _GetRadiusY(ID2D1RadialGradientBrush* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _GetGradientStopCollection(
-            [In] ID2D1RadialGradientBrush* This,
-            [Out] ID2D1GradientStopCollection** gradientStopCollection
-        );
-        #endregion
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _GetGradientStopCollection(ID2D1RadialGradientBrush* This, ID2D1GradientStopCollection** gradientStopCollection);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -175,9 +92,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -186,52 +101,31 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
-            }
-        }
-        #endregion
-
-        #region ID2D1Resource Methods
-        public void GetFactory(
-            [Out] ID2D1Factory** factory
-        )
-        {
-            fixed (ID2D1RadialGradientBrush* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
-                    This,
-                    factory
-                );
-            }
-        }
-        #endregion
-
-        #region ID2D1Brush Methods
-        public void SetOpacity(
-            [In, NativeTypeName("FLOAT")] float opacity
-        )
-        {
-            fixed (ID2D1RadialGradientBrush* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_SetOpacity>(lpVtbl->SetOpacity)(
-                    This,
-                    opacity
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
-        public void SetTransform(
-            [In, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform
-        )
+        public void GetFactory(ID2D1Factory** factory)
         {
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetTransform>(lpVtbl->SetTransform)(
-                    This,
-                    transform
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(This, factory);
+            }
+        }
+
+        public void SetOpacity([NativeTypeName("FLOAT")] float opacity)
+        {
+            fixed (ID2D1RadialGradientBrush* This = &this)
+            {
+                Marshal.GetDelegateForFunctionPointer<_SetOpacity>(lpVtbl->SetOpacity)(This, opacity);
+            }
+        }
+
+        public void SetTransform([NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform)
+        {
+            fixed (ID2D1RadialGradientBrush* This = &this)
+            {
+                Marshal.GetDelegateForFunctionPointer<_SetTransform>(lpVtbl->SetTransform)(This, transform);
             }
         }
 
@@ -240,76 +134,47 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetOpacity>(lpVtbl->GetOpacity)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetOpacity>(lpVtbl->GetOpacity)(This);
             }
         }
 
-        public void GetTransform(
-            [Out, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform
-        )
+        public void GetTransform([NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform)
         {
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetTransform>(lpVtbl->GetTransform)(
-                    This,
-                    transform
-                );
-            }
-        }
-        #endregion
-
-        #region Methods
-        public void SetCenter(
-            [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F center
-        )
-        {
-            fixed (ID2D1RadialGradientBrush* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_SetCenter>(lpVtbl->SetCenter)(
-                    This,
-                    center
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetTransform>(lpVtbl->GetTransform)(This, transform);
             }
         }
 
-        public void SetGradientOriginOffset(
-            [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F gradientOriginOffset
-        )
+        public void SetCenter([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F center)
         {
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetGradientOriginOffset>(lpVtbl->SetGradientOriginOffset)(
-                    This,
-                    gradientOriginOffset
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetCenter>(lpVtbl->SetCenter)(This, center);
             }
         }
 
-        public void SetRadiusX(
-            [In, NativeTypeName("FLOAT")] float radiusX
-        )
+        public void SetGradientOriginOffset([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F gradientOriginOffset)
         {
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetRadiusX>(lpVtbl->SetRadiusX)(
-                    This,
-                    radiusX
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetGradientOriginOffset>(lpVtbl->SetGradientOriginOffset)(This, gradientOriginOffset);
             }
         }
 
-        public void SetRadiusY(
-            [In, NativeTypeName("FLOAT")] float radiusY
-        )
+        public void SetRadiusX([NativeTypeName("FLOAT")] float radiusX)
         {
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetRadiusY>(lpVtbl->SetRadiusY)(
-                    This,
-                    radiusY
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetRadiusX>(lpVtbl->SetRadiusX)(This, radiusX);
+            }
+        }
+
+        public void SetRadiusY([NativeTypeName("FLOAT")] float radiusY)
+        {
+            fixed (ID2D1RadialGradientBrush* This = &this)
+            {
+                Marshal.GetDelegateForFunctionPointer<_SetRadiusY>(lpVtbl->SetRadiusY)(This, radiusY);
             }
         }
 
@@ -319,10 +184,7 @@ namespace TerraFX.Interop
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
                 D2D_POINT_2F result;
-                return *Marshal.GetDelegateForFunctionPointer<_GetCenter>(lpVtbl->GetCenter)(
-                    This,
-                    &result
-                );
+                return *Marshal.GetDelegateForFunctionPointer<_GetCenter>(lpVtbl->GetCenter)(This, &result);
             }
         }
 
@@ -332,10 +194,7 @@ namespace TerraFX.Interop
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
                 D2D_POINT_2F result;
-                return *Marshal.GetDelegateForFunctionPointer<_GetGradientOriginOffset>(lpVtbl->GetGradientOriginOffset)(
-                    This,
-                    &result
-                );
+                return *Marshal.GetDelegateForFunctionPointer<_GetGradientOriginOffset>(lpVtbl->GetGradientOriginOffset)(This, &result);
             }
         }
 
@@ -344,9 +203,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetRadiusX>(lpVtbl->GetRadiusX)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetRadiusX>(lpVtbl->GetRadiusX)(This);
             }
         }
 
@@ -355,42 +212,28 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetRadiusY>(lpVtbl->GetRadiusY)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetRadiusY>(lpVtbl->GetRadiusY)(This);
             }
         }
 
-        public void GetGradientStopCollection(
-            [Out] ID2D1GradientStopCollection** gradientStopCollection
-        )
+        public void GetGradientStopCollection(ID2D1GradientStopCollection** gradientStopCollection)
         {
             fixed (ID2D1RadialGradientBrush* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetGradientStopCollection>(lpVtbl->GetGradientStopCollection)(
-                    This,
-                    gradientStopCollection
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetGradientStopCollection>(lpVtbl->GetGradientStopCollection)(This, gradientStopCollection);
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1Resource Fields
             public IntPtr GetFactory;
-            #endregion
 
-            #region ID2D1Brush Fields
             public IntPtr SetOpacity;
 
             public IntPtr SetTransform;
@@ -398,9 +241,7 @@ namespace TerraFX.Interop
             public IntPtr GetOpacity;
 
             public IntPtr GetTransform;
-            #endregion
 
-            #region Fields
             public IntPtr SetCenter;
 
             public IntPtr SetGradientOriginOffset;
@@ -418,8 +259,6 @@ namespace TerraFX.Interop
             public IntPtr GetRadiusY;
 
             public IntPtr GetGradientStopCollection;
-            #endregion
         }
-        #endregion
     }
 }

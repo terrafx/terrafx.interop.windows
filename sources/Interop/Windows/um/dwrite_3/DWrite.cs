@@ -9,7 +9,6 @@ namespace TerraFX.Interop
 {
     public static partial class DWrite
     {
-        #region DWRITE_E_* Constants
         /// <summary>A font resource could not be accessed because it was remote. This can happen when calling CreateFontFace on a non-local font or trying to measure/draw glyphs that are not downloaded yet.</summary>
         public const int DWRITE_E_REMOTEFONT = unchecked((int)0x8898500D);
 
@@ -21,9 +20,7 @@ namespace TerraFX.Interop
 
         /// <summary>A download request was not added or a download failed because there are too many active downloads.</summary>
         public const int DWRITE_E_TOOMANYDOWNLOADS = unchecked((int)0x88985010);
-        #endregion
 
-        #region IID_* Constants
         public static readonly Guid IID_IDWriteRenderingParams3 = new Guid(0xB7924BAA, 0x391B, 0x412A, 0x8C, 0x5C, 0xE4, 0x4C, 0xC2, 0xD8, 0x67, 0xDC);
 
         public static readonly Guid IID_IDWriteFactory3 = new Guid(0x9A1B41C3, 0xD3BB, 0x466A, 0x87, 0xFC, 0xFE, 0x67, 0x55, 0x6A, 0x3B, 0x65);
@@ -73,6 +70,5 @@ namespace TerraFX.Interop
         public static readonly Guid IID_IDWriteInMemoryFontFileLoader = new Guid(0xDC102F47, 0xA12D, 0x4B1C, 0x82, 0x2D, 0x9E, 0x11, 0x7E, 0x33, 0x04, 0x3F);
 
         public static readonly Guid IID_IDWriteFactory5 = new Guid(0x958DB99A, 0xBE2A, 0x4F09, 0xAF, 0x7D, 0x65, 0x18, 0x98, 0x03, 0xD1, 0xD3);
-        #endregion
     }
 }

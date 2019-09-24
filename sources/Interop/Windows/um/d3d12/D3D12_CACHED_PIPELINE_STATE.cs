@@ -9,11 +9,9 @@ namespace TerraFX.Interop
 {
     public unsafe struct D3D12_CACHED_PIPELINE_STATE
     {
-        #region Fields
         public void* pCachedBlob;
 
         [NativeTypeName("SIZE_T")]
         public UIntPtr CachedBlobSizeInBytes;
-        #endregion
     }
 }

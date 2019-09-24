@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct D3D12_FEATURE_DATA_COMMAND_QUEUE_PRIORITY
     {
-        #region Fields
         public D3D12_COMMAND_LIST_TYPE CommandListType;
 
         [NativeTypeName("UINT")]
@@ -15,6 +14,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("BOOL")]
         public int PriorityForTypeIsSupported;
-        #endregion
     }
 }

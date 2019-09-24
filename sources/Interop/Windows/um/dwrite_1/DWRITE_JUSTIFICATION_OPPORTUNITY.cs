@@ -8,7 +8,6 @@ namespace TerraFX.Interop
     /// <summary>Justification information per glyph.</summary>
     public struct DWRITE_JUSTIFICATION_OPPORTUNITY
     {
-        #region Fields
         /// <summary>Minimum amount of expansion to apply to the side of the glyph. This may vary from 0 to infinity, typically being zero except for kashida.</summary>
         [NativeTypeName("FLOAT")]
         public float expansionMinimum;
@@ -22,9 +21,7 @@ namespace TerraFX.Interop
         public float compressionMaximum;
 
         private uint _bitField;
-        #endregion
 
-        #region Properties
         /// <summary>Priority of this expansion point. Larger priorities are applied later, while priority zero does nothing.</summary>
         [NativeTypeName("UINT32:8")]
         public uint expansionPriority
@@ -128,6 +125,5 @@ namespace TerraFX.Interop
                 _bitField = (_bitField & 0b0000_0000_0000_1111_1111_1111_1111_1111) | ((value << 20) & 0b1111_1111_1111_0000_0000_0000_0000_0000);
             }
         }
-        #endregion
     }
 }

@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public struct D3D12_FEATURE_DATA_MULTISAMPLE_QUALITY_LEVELS
     {
-        #region Fields
         public DXGI_FORMAT Format;
 
         [NativeTypeName("UINT")]
@@ -17,6 +16,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("UINT")]
         public uint NumQualityLevels;
-        #endregion
     }
 }

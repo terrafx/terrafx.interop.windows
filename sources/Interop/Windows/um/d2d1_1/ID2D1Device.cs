@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Security;
 
 namespace TerraFX.Interop
 {
@@ -13,107 +12,53 @@ namespace TerraFX.Interop
     [Guid("47DD575D-AC05-4CDD-8049-9B02CD16F44C")]
     public unsafe struct ID2D1Device
     {
-        #region Fields
         public readonly Vtbl* lpVtbl;
-        #endregion
 
-        #region IUnknown Delegates
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _QueryInterface(
-            [In] ID2D1Device* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1Device* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _AddRef(
-            [In] ID2D1Device* This
-        );
+        public delegate uint _AddRef(ID2D1Device* This);
 
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public /* static */ delegate uint _Release(
-            [In] ID2D1Device* This
-        );
-        #endregion
+        public delegate uint _Release(ID2D1Device* This);
 
-        #region ID2D1Resource Delegates
         /// <summary>Retrieve the factory associated with this resource.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _GetFactory(
-            [In] ID2D1Device* This,
-            [Out] ID2D1Factory** factory
-        );
-        #endregion
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _GetFactory(ID2D1Device* This, ID2D1Factory** factory);
 
-        #region Delegates
         /// <summary>Creates a new device context with no initially assigned target.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreateDeviceContext(
-            [In] ID2D1Device* This,
-            [In] D2D1_DEVICE_CONTEXT_OPTIONS options,
-            [Out] ID2D1DeviceContext** deviceContext
-        );
+        public delegate int _CreateDeviceContext(ID2D1Device* This, D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext** deviceContext);
 
         /// <summary>Creates a D2D print control.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public /* static */ delegate int _CreatePrintControl(
-            [In] ID2D1Device* This,
-            [In] IWICImagingFactory* wicFactory,
-            [In] IPrintDocumentPackageTarget* documentTarget,
-            [In, Optional] D2D1_PRINT_CONTROL_PROPERTIES* printControlProperties,
-            [Out] ID2D1PrintControl** printControl
-        );
+        public delegate int _CreatePrintControl(ID2D1Device* This, IWICImagingFactory* wicFactory, IPrintDocumentPackageTarget* documentTarget, [Optional] D2D1_PRINT_CONTROL_PROPERTIES* printControlProperties, ID2D1PrintControl** printControl);
 
         /// <summary>Sets the maximum amount of texture memory to maintain before evicting caches.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _SetMaximumTextureMemory(
-            [In] ID2D1Device* This,
-            [In, NativeTypeName("UINT64")] ulong maximumInBytes
-        );
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _SetMaximumTextureMemory(ID2D1Device* This, [NativeTypeName("UINT64")] ulong maximumInBytes);
 
         /// <summary>Gets the maximum amount of texture memory to maintain before evicting caches.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
-        public /* static */ delegate ulong _GetMaximumTextureMemory(
-            [In] ID2D1Device* This
-        );
+        public delegate ulong _GetMaximumTextureMemory(ID2D1Device* This);
 
         /// <summary>Clears all resources that are cached but not held in use by the application through an interface reference.</summary>
-        [SuppressUnmanagedCodeSecurity]
-        [UnmanagedFunctionPointer(CallingConvention.StdCall, BestFitMapping = false, CharSet = CharSet.Unicode, SetLastError = false, ThrowOnUnmappableChar = false)]
-        public /* static */ delegate void _ClearResources(
-            [In] ID2D1Device* This,
-            [In, NativeTypeName("UINT32")] uint millisecondsSinceUse = 0
-        );
-        #endregion
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate void _ClearResources(ID2D1Device* This, [NativeTypeName("UINT32")] uint millisecondsSinceUse = 0);
 
-        #region IUnknown Methods
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1Device* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -122,9 +67,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Device* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -133,75 +76,41 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Device* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
-        #endregion
 
-        #region ID2D1Resource Methods
-        public void GetFactory(
-            [Out] ID2D1Factory** factory
-        )
+        public void GetFactory(ID2D1Factory** factory)
         {
             fixed (ID2D1Device* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
-                    This,
-                    factory
-                );
-            }
-        }
-        #endregion
-
-        #region Methods
-        [return: NativeTypeName("HRESULT")]
-        public int CreateDeviceContext(
-            [In] D2D1_DEVICE_CONTEXT_OPTIONS options,
-            [Out] ID2D1DeviceContext** deviceContext
-        )
-        {
-            fixed (ID2D1Device* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_CreateDeviceContext>(lpVtbl->CreateDeviceContext)(
-                    This,
-                    options,
-                    deviceContext
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(This, factory);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreatePrintControl(
-            [In] IWICImagingFactory* wicFactory,
-            [In] IPrintDocumentPackageTarget* documentTarget,
-            [In, Optional] D2D1_PRINT_CONTROL_PROPERTIES* printControlProperties,
-            [Out] ID2D1PrintControl** printControl
-        )
+        public int CreateDeviceContext(D2D1_DEVICE_CONTEXT_OPTIONS options, ID2D1DeviceContext** deviceContext)
         {
             fixed (ID2D1Device* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreatePrintControl>(lpVtbl->CreatePrintControl)(
-                    This,
-                    wicFactory,
-                    documentTarget,
-                    printControlProperties,
-                    printControl
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateDeviceContext>(lpVtbl->CreateDeviceContext)(This, options, deviceContext);
             }
         }
 
-        public void SetMaximumTextureMemory(
-            [In, NativeTypeName("UINT64")] ulong maximumInBytes
-        )
+        [return: NativeTypeName("HRESULT")]
+        public int CreatePrintControl(IWICImagingFactory* wicFactory, IPrintDocumentPackageTarget* documentTarget, [Optional] D2D1_PRINT_CONTROL_PROPERTIES* printControlProperties, ID2D1PrintControl** printControl)
         {
             fixed (ID2D1Device* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetMaximumTextureMemory>(lpVtbl->SetMaximumTextureMemory)(
-                    This,
-                    maximumInBytes
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreatePrintControl>(lpVtbl->CreatePrintControl)(This, wicFactory, documentTarget, printControlProperties, printControl);
+            }
+        }
+
+        public void SetMaximumTextureMemory([NativeTypeName("UINT64")] ulong maximumInBytes)
+        {
+            fixed (ID2D1Device* This = &this)
+            {
+                Marshal.GetDelegateForFunctionPointer<_SetMaximumTextureMemory>(lpVtbl->SetMaximumTextureMemory)(This, maximumInBytes);
             }
         }
 
@@ -210,42 +119,28 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Device* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetMaximumTextureMemory>(lpVtbl->GetMaximumTextureMemory)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetMaximumTextureMemory>(lpVtbl->GetMaximumTextureMemory)(This);
             }
         }
 
-        public void ClearResources(
-            [In, NativeTypeName("UINT32")] uint millisecondsSinceUse = 0
-        )
+        public void ClearResources([NativeTypeName("UINT32")] uint millisecondsSinceUse = 0)
         {
             fixed (ID2D1Device* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_ClearResources>(lpVtbl->ClearResources)(
-                    This,
-                    millisecondsSinceUse
-                );
+                Marshal.GetDelegateForFunctionPointer<_ClearResources>(lpVtbl->ClearResources)(This, millisecondsSinceUse);
             }
         }
-        #endregion
 
-        #region Structs
         public struct Vtbl
         {
-            #region IUnknown Fields
             public IntPtr QueryInterface;
 
             public IntPtr AddRef;
 
             public IntPtr Release;
-            #endregion
 
-            #region ID2D1Resource Fields
             public IntPtr GetFactory;
-            #endregion
 
-            #region Fields
             public IntPtr CreateDeviceContext;
 
             public IntPtr CreatePrintControl;
@@ -255,8 +150,6 @@ namespace TerraFX.Interop
             public IntPtr GetMaximumTextureMemory;
 
             public IntPtr ClearResources;
-            #endregion
         }
-        #endregion
     }
 }
