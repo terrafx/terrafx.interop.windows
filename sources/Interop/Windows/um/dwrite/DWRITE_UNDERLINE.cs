@@ -3,12 +3,9 @@
 // Ported from um\dwrite.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System.Runtime.InteropServices;
-
 namespace TerraFX.Interop
 {
     /// <summary>The DWRITE_UNDERLINE public structure contains information about the size and placement of underlines. All coordinates are in device independent pixels (DIPs).</summary>
-    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     public unsafe struct DWRITE_UNDERLINE
     {
         #region Fields

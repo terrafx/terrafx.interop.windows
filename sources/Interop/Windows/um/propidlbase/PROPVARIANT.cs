@@ -46,7 +46,7 @@ namespace TerraFX.Interop
                 #endregion
 
                 #region Structs
-                [StructLayout(LayoutKind.Explicit, CharSet = CharSet.Unicode)]
+                [StructLayout(LayoutKind.Explicit)]
                 public struct _Anonymous_e__Union
                 {
                     #region Fields

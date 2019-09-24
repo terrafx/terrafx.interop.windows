@@ -3,12 +3,9 @@
 // Ported from um\dwrite.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System.Runtime.InteropServices;
-
 namespace TerraFX.Interop
 {
     /// <summary>The DWRITE_GLYPH_RUN_DESCRIPTION public structure contains additional properties related to those in DWRITE_GLYPH_RUN.</summary>
-    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     public unsafe struct DWRITE_GLYPH_RUN_DESCRIPTION
     {
         #region Fields

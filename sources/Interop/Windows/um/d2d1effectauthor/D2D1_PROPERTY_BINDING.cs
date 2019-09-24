@@ -4,12 +4,10 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
-using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     /// <summary>Defines a property binding to a function. The name must match the property defined in the registration schema.</summary>
-    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     public unsafe struct D2D1_PROPERTY_BINDING
     {
         #region Fields
