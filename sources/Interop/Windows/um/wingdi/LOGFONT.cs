@@ -47,6 +47,6 @@ namespace TerraFX.Interop
         public byte lfPitchAndFamily;
 
         [NativeTypeName("WCHAR[32]")]
-        public fixed char lfFaceName[32];
+        public fixed ushort lfFaceName[32];
     }
 }

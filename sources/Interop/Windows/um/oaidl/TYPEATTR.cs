@@ -25,7 +25,7 @@ namespace TerraFX.Interop
         public int memidDestructor;
 
         [NativeTypeName("LPOLESTR")]
-        public char* lpstrSchema;
+        public ushort* lpstrSchema;
 
         [NativeTypeName("ULONG")]
         public uint cbSizeInstance;

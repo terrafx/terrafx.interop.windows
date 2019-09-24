@@ -40,7 +40,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _MapCharacters(IDWriteFontFallback* This, IDWriteTextAnalysisSource* analysisSource, [NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint textLength, [Optional] IDWriteFontCollection* baseFontCollection, [Optional, NativeTypeName("WCHAR[]")] char* baseFamilyName, DWRITE_FONT_WEIGHT baseWeight, DWRITE_FONT_STYLE baseStyle, DWRITE_FONT_STRETCH baseStretch, [NativeTypeName("UINT32")] uint* mappedLength, IDWriteFont** mappedFont, [NativeTypeName("FLOAT")] float* scale);
+        public delegate int _MapCharacters(IDWriteFontFallback* This, IDWriteTextAnalysisSource* analysisSource, [NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint textLength, [Optional] IDWriteFontCollection* baseFontCollection, [Optional, NativeTypeName("WCHAR[]")] ushort* baseFamilyName, DWRITE_FONT_WEIGHT baseWeight, DWRITE_FONT_STYLE baseStyle, DWRITE_FONT_STRETCH baseStretch, [NativeTypeName("UINT32")] uint* mappedLength, IDWriteFont** mappedFont, [NativeTypeName("FLOAT")] float* scale);
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
@@ -70,7 +70,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int MapCharacters(IDWriteTextAnalysisSource* analysisSource, [NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint textLength, [Optional] IDWriteFontCollection* baseFontCollection, [Optional, NativeTypeName("WCHAR[]")] char* baseFamilyName, DWRITE_FONT_WEIGHT baseWeight, DWRITE_FONT_STYLE baseStyle, DWRITE_FONT_STRETCH baseStretch, [NativeTypeName("UINT32")] uint* mappedLength, IDWriteFont** mappedFont, [NativeTypeName("FLOAT")] float* scale)
+        public int MapCharacters(IDWriteTextAnalysisSource* analysisSource, [NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint textLength, [Optional] IDWriteFontCollection* baseFontCollection, [Optional, NativeTypeName("WCHAR[]")] ushort* baseFamilyName, DWRITE_FONT_WEIGHT baseWeight, DWRITE_FONT_STYLE baseStyle, DWRITE_FONT_STRETCH baseStretch, [NativeTypeName("UINT32")] uint* mappedLength, IDWriteFont** mappedFont, [NativeTypeName("FLOAT")] float* scale)
         {
             fixed (IDWriteFontFallback* This = &this)
             {

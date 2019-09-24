@@ -98,7 +98,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateColorContextFromFilename(ID2D1EffectContext* This, [NativeTypeName("PCWSTR")] char* filename, ID2D1ColorContext** colorContext);
+        public delegate int _CreateColorContextFromFilename(ID2D1EffectContext* This, [NativeTypeName("PCWSTR")] ushort* filename, ID2D1ColorContext** colorContext);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
@@ -293,7 +293,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateColorContextFromFilename([NativeTypeName("PCWSTR")] char* filename, ID2D1ColorContext** colorContext)
+        public int CreateColorContextFromFilename([NativeTypeName("PCWSTR")] ushort* filename, ID2D1ColorContext** colorContext)
         {
             fixed (ID2D1EffectContext* This = &this)
             {

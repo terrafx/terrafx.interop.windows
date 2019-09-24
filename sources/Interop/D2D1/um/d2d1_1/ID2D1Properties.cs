@@ -34,7 +34,7 @@ namespace TerraFX.Interop
         /// <summary>Retrieves the property name from the given property index.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPropertyName(ID2D1Properties* This, [NativeTypeName("UINT32")] uint index, [NativeTypeName("PWSTR")] char* name, [NativeTypeName("UINT32")] uint nameCount);
+        public delegate int _GetPropertyName(ID2D1Properties* This, [NativeTypeName("UINT32")] uint index, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount);
 
         /// <summary>Returns the length of the property name from the given index.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
@@ -48,12 +48,12 @@ namespace TerraFX.Interop
         /// <summary>Retrieves the property index for the given property name.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public delegate uint _GetPropertyIndex(ID2D1Properties* This, [NativeTypeName("PCWSTR")] char* name);
+        public delegate uint _GetPropertyIndex(ID2D1Properties* This, [NativeTypeName("PCWSTR")] ushort* name);
 
         /// <summary>Sets the value of the given property using its name.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetValueByName(ID2D1Properties* This, [NativeTypeName("PCWSTR")] char* name, D2D1_PROPERTY_TYPE type, [NativeTypeName("BYTE[]")] byte* data, [NativeTypeName("UINT32")] uint dataSize);
+        public delegate int _SetValueByName(ID2D1Properties* This, [NativeTypeName("PCWSTR")] ushort* name, D2D1_PROPERTY_TYPE type, [NativeTypeName("BYTE[]")] byte* data, [NativeTypeName("UINT32")] uint dataSize);
 
         /// <summary>Sets the given value using the property index.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
@@ -63,7 +63,7 @@ namespace TerraFX.Interop
         /// <summary>Retrieves the given property or sub-property by name. '.' is the delimiter for sub-properties.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetValueByName(ID2D1Properties* This, [NativeTypeName("PCWSTR")] char* name, D2D1_PROPERTY_TYPE type, [NativeTypeName("BYTE[]")] byte* data, [NativeTypeName("UINT32")] uint dataSize);
+        public delegate int _GetValueByName(ID2D1Properties* This, [NativeTypeName("PCWSTR")] ushort* name, D2D1_PROPERTY_TYPE type, [NativeTypeName("BYTE[]")] byte* data, [NativeTypeName("UINT32")] uint dataSize);
 
         /// <summary>Retrieves the given value by index.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
@@ -117,7 +117,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetPropertyName([NativeTypeName("UINT32")] uint index, [NativeTypeName("PWSTR")] char* name, [NativeTypeName("UINT32")] uint nameCount)
+        public int GetPropertyName([NativeTypeName("UINT32")] uint index, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount)
         {
             fixed (ID2D1Properties* This = &this)
             {
@@ -143,7 +143,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("UINT32")]
-        public uint GetPropertyIndex([NativeTypeName("PCWSTR")] char* name)
+        public uint GetPropertyIndex([NativeTypeName("PCWSTR")] ushort* name)
         {
             fixed (ID2D1Properties* This = &this)
             {
@@ -152,7 +152,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetValueByName([NativeTypeName("PCWSTR")] char* name, D2D1_PROPERTY_TYPE type, [NativeTypeName("BYTE[]")] byte* data, [NativeTypeName("UINT32")] uint dataSize)
+        public int SetValueByName([NativeTypeName("PCWSTR")] ushort* name, D2D1_PROPERTY_TYPE type, [NativeTypeName("BYTE[]")] byte* data, [NativeTypeName("UINT32")] uint dataSize)
         {
             fixed (ID2D1Properties* This = &this)
             {
@@ -170,7 +170,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetValueByName([NativeTypeName("PCWSTR")] char* name, D2D1_PROPERTY_TYPE type, [NativeTypeName("BYTE[]")] byte* data, [NativeTypeName("UINT32")] uint dataSize)
+        public int GetValueByName([NativeTypeName("PCWSTR")] ushort* name, D2D1_PROPERTY_TYPE type, [NativeTypeName("BYTE[]")] byte* data, [NativeTypeName("UINT32")] uint dataSize)
         {
             fixed (ID2D1Properties* This = &this)
             {

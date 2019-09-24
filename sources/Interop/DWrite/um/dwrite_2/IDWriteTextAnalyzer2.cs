@@ -94,7 +94,7 @@ namespace TerraFX.Interop
         /// <remarks> Note that the mapping from characters to glyphs is, in general, many- to-many.  The recommended estimate for the per-glyph output buffers is (3 * textLength / 2 + 16).  This is not guaranteed to be sufficient. The value of the actualGlyphCount parameter is only valid if the call succeeds.  In the event that maxGlyphCount is not big enough E_NOT_SUFFICIENT_BUFFER, which is equivalent to HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER), will be returned.  The application should allocate a larger buffer and try again.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetGlyphs(IDWriteTextAnalyzer2* This, [NativeTypeName("WCHAR[]")] char* textString, [NativeTypeName("UINT32")] uint textLength, IDWriteFontFace* fontFace, [NativeTypeName("BOOL")] int isSideways, [NativeTypeName("BOOL")] int isRightToLeft, DWRITE_SCRIPT_ANALYSIS* scriptAnalysis, [Optional, NativeTypeName("WCHAR[]")] char* localeName, [Optional] IDWriteNumberSubstitution* numberSubstitution, [Optional, NativeTypeName("DWRITE_TYPOGRAPHIC_FEATURES*[]")] DWRITE_TYPOGRAPHIC_FEATURES** features, [Optional, NativeTypeName("UINT32[]")] uint* featureRangeLengths, [NativeTypeName("UINT32")] uint featureRanges, [NativeTypeName("UINT32")] uint maxGlyphCount, [NativeTypeName("UINT16[]")] ushort* clusterMap, [NativeTypeName("DWRITE_SHAPING_TEXT_PROPERTIES[]")] DWRITE_SHAPING_TEXT_PROPERTIES* textProps, [NativeTypeName("UINT16[]")] ushort* glyphIndices, [NativeTypeName("DWRITE_SHAPING_GLYPH_PROPERTIES[]")] DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProps, [NativeTypeName("UINT32")] uint* actualGlyphCount);
+        public delegate int _GetGlyphs(IDWriteTextAnalyzer2* This, [NativeTypeName("WCHAR[]")] ushort* textString, [NativeTypeName("UINT32")] uint textLength, IDWriteFontFace* fontFace, [NativeTypeName("BOOL")] int isSideways, [NativeTypeName("BOOL")] int isRightToLeft, DWRITE_SCRIPT_ANALYSIS* scriptAnalysis, [Optional, NativeTypeName("WCHAR[]")] ushort* localeName, [Optional] IDWriteNumberSubstitution* numberSubstitution, [Optional, NativeTypeName("DWRITE_TYPOGRAPHIC_FEATURES*[]")] DWRITE_TYPOGRAPHIC_FEATURES** features, [Optional, NativeTypeName("UINT32[]")] uint* featureRangeLengths, [NativeTypeName("UINT32")] uint featureRanges, [NativeTypeName("UINT32")] uint maxGlyphCount, [NativeTypeName("UINT16[]")] ushort* clusterMap, [NativeTypeName("DWRITE_SHAPING_TEXT_PROPERTIES[]")] DWRITE_SHAPING_TEXT_PROPERTIES* textProps, [NativeTypeName("UINT16[]")] ushort* glyphIndices, [NativeTypeName("DWRITE_SHAPING_GLYPH_PROPERTIES[]")] DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProps, [NativeTypeName("UINT32")] uint* actualGlyphCount);
 
         /// <summary>Place glyphs output from the GetGlyphs method according to the font and the writing system's rendering rules.</summary>
         /// <param name="textString">The original string the glyphs came from.</param>
@@ -118,7 +118,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetGlyphPlacements(IDWriteTextAnalyzer2* This, [NativeTypeName("WCHAR[]")] char* textString, [NativeTypeName("UINT16[]")] ushort* clusterMap, DWRITE_SHAPING_TEXT_PROPERTIES* textProps, [NativeTypeName("UINT32")] uint textLength, [NativeTypeName("UINT16[]")] ushort* glyphIndices, [NativeTypeName("DWRITE_SHAPING_GLYPH_PROPERTIES[]")] DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProps, [NativeTypeName("UINT32")] uint glyphCount, IDWriteFontFace* fontFace, [NativeTypeName("FLOAT")] float fontEmSize, [NativeTypeName("BOOL")] int isSideways, [NativeTypeName("BOOL")] int isRightToLeft, DWRITE_SCRIPT_ANALYSIS* scriptAnalysis, [Optional, NativeTypeName("WCHAR[]")] char* localeName, [Optional, NativeTypeName("DWRITE_TYPOGRAPHIC_FEATURES*[]")] DWRITE_TYPOGRAPHIC_FEATURES** features, [Optional, NativeTypeName("UINT32[]")] uint* featureRangeLengths, [NativeTypeName("UINT32")] uint featureRanges, [NativeTypeName("FLOAT[]")] float* glyphAdvances, [NativeTypeName("DWRITE_GLYPH_OFFSET[]")] DWRITE_GLYPH_OFFSET* glyphOffsets);
+        public delegate int _GetGlyphPlacements(IDWriteTextAnalyzer2* This, [NativeTypeName("WCHAR[]")] ushort* textString, [NativeTypeName("UINT16[]")] ushort* clusterMap, DWRITE_SHAPING_TEXT_PROPERTIES* textProps, [NativeTypeName("UINT32")] uint textLength, [NativeTypeName("UINT16[]")] ushort* glyphIndices, [NativeTypeName("DWRITE_SHAPING_GLYPH_PROPERTIES[]")] DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProps, [NativeTypeName("UINT32")] uint glyphCount, IDWriteFontFace* fontFace, [NativeTypeName("FLOAT")] float fontEmSize, [NativeTypeName("BOOL")] int isSideways, [NativeTypeName("BOOL")] int isRightToLeft, DWRITE_SCRIPT_ANALYSIS* scriptAnalysis, [Optional, NativeTypeName("WCHAR[]")] ushort* localeName, [Optional, NativeTypeName("DWRITE_TYPOGRAPHIC_FEATURES*[]")] DWRITE_TYPOGRAPHIC_FEATURES** features, [Optional, NativeTypeName("UINT32[]")] uint* featureRangeLengths, [NativeTypeName("UINT32")] uint featureRanges, [NativeTypeName("FLOAT[]")] float* glyphAdvances, [NativeTypeName("DWRITE_GLYPH_OFFSET[]")] DWRITE_GLYPH_OFFSET* glyphOffsets);
 
         /// <summary>Place glyphs output from the GetGlyphs method according to the font and the writing system's rendering rules.</summary>
         /// <param name="textString">The original string the glyphs came from.</param>
@@ -145,7 +145,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetGdiCompatibleGlyphPlacements(IDWriteTextAnalyzer2* This, [NativeTypeName("WCHAR[]")] char* textString, [NativeTypeName("UINT16[]")] ushort* clusterMap, DWRITE_SHAPING_TEXT_PROPERTIES* textProps, [NativeTypeName("UINT32")] uint textLength, [NativeTypeName("UINT16[]")] ushort* glyphIndices, DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProps, [NativeTypeName("UINT32")] uint glyphCount, IDWriteFontFace* fontFace, [NativeTypeName("FLOAT")] float fontEmSize, [NativeTypeName("FLOAT")] float pixelsPerDip, [Optional] DWRITE_MATRIX* transform, [NativeTypeName("BOOL")] int useGdiNatural, [NativeTypeName("BOOL")] int isSideways, [NativeTypeName("BOOL")] int isRightToLeft, DWRITE_SCRIPT_ANALYSIS* scriptAnalysis, [Optional, NativeTypeName("WCHAR[]")] char* localeName, [Optional, NativeTypeName("DWRITE_TYPOGRAPHIC_FEATURES*[]")] DWRITE_TYPOGRAPHIC_FEATURES** features, [Optional, NativeTypeName("UINT32[]")] uint* featureRangeLengths, [NativeTypeName("UINT32")] uint featureRanges, [NativeTypeName("FLOAT[]")] float* glyphAdvances, [NativeTypeName("DWRITE_GLYPH_OFFSET[]")] DWRITE_GLYPH_OFFSET* glyphOffsets);
+        public delegate int _GetGdiCompatibleGlyphPlacements(IDWriteTextAnalyzer2* This, [NativeTypeName("WCHAR[]")] ushort* textString, [NativeTypeName("UINT16[]")] ushort* clusterMap, DWRITE_SHAPING_TEXT_PROPERTIES* textProps, [NativeTypeName("UINT32")] uint textLength, [NativeTypeName("UINT16[]")] ushort* glyphIndices, DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProps, [NativeTypeName("UINT32")] uint glyphCount, IDWriteFontFace* fontFace, [NativeTypeName("FLOAT")] float fontEmSize, [NativeTypeName("FLOAT")] float pixelsPerDip, [Optional] DWRITE_MATRIX* transform, [NativeTypeName("BOOL")] int useGdiNatural, [NativeTypeName("BOOL")] int isSideways, [NativeTypeName("BOOL")] int isRightToLeft, DWRITE_SCRIPT_ANALYSIS* scriptAnalysis, [Optional, NativeTypeName("WCHAR[]")] ushort* localeName, [Optional, NativeTypeName("DWRITE_TYPOGRAPHIC_FEATURES*[]")] DWRITE_TYPOGRAPHIC_FEATURES** features, [Optional, NativeTypeName("UINT32[]")] uint* featureRangeLengths, [NativeTypeName("UINT32")] uint featureRanges, [NativeTypeName("FLOAT[]")] float* glyphAdvances, [NativeTypeName("DWRITE_GLYPH_OFFSET[]")] DWRITE_GLYPH_OFFSET* glyphOffsets);
 
         /// <summary>Applies spacing between characters, properly adjusting glyph clusters and diacritics.</summary>
         /// <param name="leadingSpacing">The spacing before each character, in reading order.</param>
@@ -178,7 +178,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetBaseline(IDWriteTextAnalyzer2* This, IDWriteFontFace* fontFace, DWRITE_BASELINE baseline, [NativeTypeName("BOOL")] int isVertical, [NativeTypeName("BOOL")] int isSimulationAllowed, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, [Optional, NativeTypeName("WCHAR[]")] char* localeName, [NativeTypeName("INT32")] int* baselineCoordinate, [NativeTypeName("BOOL")] int* exists);
+        public delegate int _GetBaseline(IDWriteTextAnalyzer2* This, IDWriteFontFace* fontFace, DWRITE_BASELINE baseline, [NativeTypeName("BOOL")] int isVertical, [NativeTypeName("BOOL")] int isSimulationAllowed, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, [Optional, NativeTypeName("WCHAR[]")] ushort* localeName, [NativeTypeName("INT32")] int* baselineCoordinate, [NativeTypeName("BOOL")] int* exists);
 
         /// <summary>Analyzes a text range for script orientation, reading text and attributes from the source and reporting results to the sink.</summary>
         /// <param name="analysisSource">Source object to analyze.</param>
@@ -220,7 +220,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetTextComplexity(IDWriteTextAnalyzer2* This, [NativeTypeName("WCHAR[]")] char* textString, [NativeTypeName("UINT32")] uint textLength, IDWriteFontFace* fontFace, [NativeTypeName("BOOL")] int* isTextSimple, [NativeTypeName("UINT32")] uint* textLengthRead, [NativeTypeName("UINT16")] ushort* glyphIndices = null);
+        public delegate int _GetTextComplexity(IDWriteTextAnalyzer2* This, [NativeTypeName("WCHAR[]")] ushort* textString, [NativeTypeName("UINT32")] uint textLength, IDWriteFontFace* fontFace, [NativeTypeName("BOOL")] int* isTextSimple, [NativeTypeName("UINT32")] uint* textLengthRead, [NativeTypeName("UINT16")] ushort* glyphIndices = null);
 
         /// <summary>Retrieves justification opportunity information for each of the glyphs given the text and shaping glyph properties.</summary>
         /// <param name="fontFace">Font face that was used for shaping. This is mainly important for returning correct results of the kashida width.</param>
@@ -236,7 +236,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetJustificationOpportunities(IDWriteTextAnalyzer2* This, [Optional] IDWriteFontFace* fontFace, [NativeTypeName("FLOAT")] float fontEmSize, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, [NativeTypeName("UINT32")] uint textLength, [NativeTypeName("UINT32")] uint glyphCount, [NativeTypeName("WCHAR[]")] char* textString, [NativeTypeName("UINT16[]")] ushort* clusterMap, [NativeTypeName("DWRITE_SHAPING_GLYPH_PROPERTIES[]")] DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProperties, [NativeTypeName("DWRITE_JUSTIFICATION_OPPORTUNITY[]")] DWRITE_JUSTIFICATION_OPPORTUNITY* justificationOpportunities);
+        public delegate int _GetJustificationOpportunities(IDWriteTextAnalyzer2* This, [Optional] IDWriteFontFace* fontFace, [NativeTypeName("FLOAT")] float fontEmSize, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, [NativeTypeName("UINT32")] uint textLength, [NativeTypeName("UINT32")] uint glyphCount, [NativeTypeName("WCHAR[]")] ushort* textString, [NativeTypeName("UINT16[]")] ushort* clusterMap, [NativeTypeName("DWRITE_SHAPING_GLYPH_PROPERTIES[]")] DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProperties, [NativeTypeName("DWRITE_JUSTIFICATION_OPPORTUNITY[]")] DWRITE_JUSTIFICATION_OPPORTUNITY* justificationOpportunities);
 
         /// <summary>Justifies an array of glyph advances to fit the line width.</summary>
         /// <param name="lineWidth">Width of the line.</param>
@@ -298,7 +298,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetTypographicFeatures(IDWriteTextAnalyzer2* This, IDWriteFontFace* fontFace, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, [Optional, NativeTypeName("WCHAR[]")] char* localeName, [NativeTypeName("UINT32")] uint maxTagCount, [NativeTypeName("UINT32")] uint* actualTagCount, [NativeTypeName("DWRITE_FONT_FEATURE_TAG[]")] DWRITE_FONT_FEATURE_TAG* tags);
+        public delegate int _GetTypographicFeatures(IDWriteTextAnalyzer2* This, IDWriteFontFace* fontFace, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, [Optional, NativeTypeName("WCHAR[]")] ushort* localeName, [NativeTypeName("UINT32")] uint maxTagCount, [NativeTypeName("UINT32")] uint* actualTagCount, [NativeTypeName("DWRITE_FONT_FEATURE_TAG[]")] DWRITE_FONT_FEATURE_TAG* tags);
 
         /// <summary>Returns an array of which glyphs are affected by a given feature.</summary>
         /// <param name="fontFace">The font face to read glyph information from.</param>
@@ -311,7 +311,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CheckTypographicFeature(IDWriteTextAnalyzer2* This, IDWriteFontFace* fontFace, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, [Optional, NativeTypeName("WCHAR[]")] char* localeName, DWRITE_FONT_FEATURE_TAG featureTag, [NativeTypeName("UINT32")] uint glyphCount, [NativeTypeName("UINT16[]")] ushort* glyphIndices, [NativeTypeName("UINT8[]")] byte* featureApplies);
+        public delegate int _CheckTypographicFeature(IDWriteTextAnalyzer2* This, IDWriteFontFace* fontFace, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, [Optional, NativeTypeName("WCHAR[]")] ushort* localeName, DWRITE_FONT_FEATURE_TAG featureTag, [NativeTypeName("UINT32")] uint glyphCount, [NativeTypeName("UINT16[]")] ushort* glyphIndices, [NativeTypeName("UINT8[]")] byte* featureApplies);
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
@@ -377,7 +377,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetGlyphs([NativeTypeName("WCHAR[]")] char* textString, [NativeTypeName("UINT32")] uint textLength, IDWriteFontFace* fontFace, [NativeTypeName("BOOL")] int isSideways, [NativeTypeName("BOOL")] int isRightToLeft, DWRITE_SCRIPT_ANALYSIS* scriptAnalysis, [Optional, NativeTypeName("WCHAR[]")] char* localeName, [Optional] IDWriteNumberSubstitution* numberSubstitution, [Optional, NativeTypeName("DWRITE_TYPOGRAPHIC_FEATURES*[]")] DWRITE_TYPOGRAPHIC_FEATURES** features, [Optional, NativeTypeName("UINT32[]")] uint* featureRangeLengths, [NativeTypeName("UINT32")] uint featureRanges, [NativeTypeName("UINT32")] uint maxGlyphCount, [NativeTypeName("UINT16[]")] ushort* clusterMap, [NativeTypeName("DWRITE_SHAPING_TEXT_PROPERTIES[]")] DWRITE_SHAPING_TEXT_PROPERTIES* textProps, [NativeTypeName("UINT16[]")] ushort* glyphIndices, [NativeTypeName("DWRITE_SHAPING_GLYPH_PROPERTIES[]")] DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProps, [NativeTypeName("UINT32")] uint* actualGlyphCount)
+        public int GetGlyphs([NativeTypeName("WCHAR[]")] ushort* textString, [NativeTypeName("UINT32")] uint textLength, IDWriteFontFace* fontFace, [NativeTypeName("BOOL")] int isSideways, [NativeTypeName("BOOL")] int isRightToLeft, DWRITE_SCRIPT_ANALYSIS* scriptAnalysis, [Optional, NativeTypeName("WCHAR[]")] ushort* localeName, [Optional] IDWriteNumberSubstitution* numberSubstitution, [Optional, NativeTypeName("DWRITE_TYPOGRAPHIC_FEATURES*[]")] DWRITE_TYPOGRAPHIC_FEATURES** features, [Optional, NativeTypeName("UINT32[]")] uint* featureRangeLengths, [NativeTypeName("UINT32")] uint featureRanges, [NativeTypeName("UINT32")] uint maxGlyphCount, [NativeTypeName("UINT16[]")] ushort* clusterMap, [NativeTypeName("DWRITE_SHAPING_TEXT_PROPERTIES[]")] DWRITE_SHAPING_TEXT_PROPERTIES* textProps, [NativeTypeName("UINT16[]")] ushort* glyphIndices, [NativeTypeName("DWRITE_SHAPING_GLYPH_PROPERTIES[]")] DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProps, [NativeTypeName("UINT32")] uint* actualGlyphCount)
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
@@ -386,7 +386,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetGlyphPlacements([NativeTypeName("WCHAR[]")] char* textString, [NativeTypeName("UINT16[]")] ushort* clusterMap, DWRITE_SHAPING_TEXT_PROPERTIES* textProps, [NativeTypeName("UINT32")] uint textLength, [NativeTypeName("UINT16[]")] ushort* glyphIndices, [NativeTypeName("DWRITE_SHAPING_GLYPH_PROPERTIES[]")] DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProps, [NativeTypeName("UINT32")] uint glyphCount, IDWriteFontFace* fontFace, [NativeTypeName("FLOAT")] float fontEmSize, [NativeTypeName("BOOL")] int isSideways, [NativeTypeName("BOOL")] int isRightToLeft, DWRITE_SCRIPT_ANALYSIS* scriptAnalysis, [Optional, NativeTypeName("WCHAR[]")] char* localeName, [Optional, NativeTypeName("DWRITE_TYPOGRAPHIC_FEATURES*[]")] DWRITE_TYPOGRAPHIC_FEATURES** features, [Optional, NativeTypeName("UINT32[]")] uint* featureRangeLengths, [NativeTypeName("UINT32")] uint featureRanges, [NativeTypeName("FLOAT[]")] float* glyphAdvances, [NativeTypeName("DWRITE_GLYPH_OFFSET[]")] DWRITE_GLYPH_OFFSET* glyphOffsets)
+        public int GetGlyphPlacements([NativeTypeName("WCHAR[]")] ushort* textString, [NativeTypeName("UINT16[]")] ushort* clusterMap, DWRITE_SHAPING_TEXT_PROPERTIES* textProps, [NativeTypeName("UINT32")] uint textLength, [NativeTypeName("UINT16[]")] ushort* glyphIndices, [NativeTypeName("DWRITE_SHAPING_GLYPH_PROPERTIES[]")] DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProps, [NativeTypeName("UINT32")] uint glyphCount, IDWriteFontFace* fontFace, [NativeTypeName("FLOAT")] float fontEmSize, [NativeTypeName("BOOL")] int isSideways, [NativeTypeName("BOOL")] int isRightToLeft, DWRITE_SCRIPT_ANALYSIS* scriptAnalysis, [Optional, NativeTypeName("WCHAR[]")] ushort* localeName, [Optional, NativeTypeName("DWRITE_TYPOGRAPHIC_FEATURES*[]")] DWRITE_TYPOGRAPHIC_FEATURES** features, [Optional, NativeTypeName("UINT32[]")] uint* featureRangeLengths, [NativeTypeName("UINT32")] uint featureRanges, [NativeTypeName("FLOAT[]")] float* glyphAdvances, [NativeTypeName("DWRITE_GLYPH_OFFSET[]")] DWRITE_GLYPH_OFFSET* glyphOffsets)
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
@@ -395,7 +395,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetGdiCompatibleGlyphPlacements([NativeTypeName("WCHAR[]")] char* textString, [NativeTypeName("UINT16[]")] ushort* clusterMap, DWRITE_SHAPING_TEXT_PROPERTIES* textProps, [NativeTypeName("UINT32")] uint textLength, [NativeTypeName("UINT16[]")] ushort* glyphIndices, DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProps, [NativeTypeName("UINT32")] uint glyphCount, IDWriteFontFace* fontFace, [NativeTypeName("FLOAT")] float fontEmSize, [NativeTypeName("FLOAT")] float pixelsPerDip, [Optional] DWRITE_MATRIX* transform, [NativeTypeName("BOOL")] int useGdiNatural, [NativeTypeName("BOOL")] int isSideways, [NativeTypeName("BOOL")] int isRightToLeft, DWRITE_SCRIPT_ANALYSIS* scriptAnalysis, [Optional, NativeTypeName("WCHAR[]")] char* localeName, [Optional, NativeTypeName("DWRITE_TYPOGRAPHIC_FEATURES*[]")] DWRITE_TYPOGRAPHIC_FEATURES** features, [Optional, NativeTypeName("UINT32[]")] uint* featureRangeLengths, [NativeTypeName("UINT32")] uint featureRanges, [NativeTypeName("FLOAT[]")] float* glyphAdvances, [NativeTypeName("DWRITE_GLYPH_OFFSET[]")] DWRITE_GLYPH_OFFSET* glyphOffsets)
+        public int GetGdiCompatibleGlyphPlacements([NativeTypeName("WCHAR[]")] ushort* textString, [NativeTypeName("UINT16[]")] ushort* clusterMap, DWRITE_SHAPING_TEXT_PROPERTIES* textProps, [NativeTypeName("UINT32")] uint textLength, [NativeTypeName("UINT16[]")] ushort* glyphIndices, DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProps, [NativeTypeName("UINT32")] uint glyphCount, IDWriteFontFace* fontFace, [NativeTypeName("FLOAT")] float fontEmSize, [NativeTypeName("FLOAT")] float pixelsPerDip, [Optional] DWRITE_MATRIX* transform, [NativeTypeName("BOOL")] int useGdiNatural, [NativeTypeName("BOOL")] int isSideways, [NativeTypeName("BOOL")] int isRightToLeft, DWRITE_SCRIPT_ANALYSIS* scriptAnalysis, [Optional, NativeTypeName("WCHAR[]")] ushort* localeName, [Optional, NativeTypeName("DWRITE_TYPOGRAPHIC_FEATURES*[]")] DWRITE_TYPOGRAPHIC_FEATURES** features, [Optional, NativeTypeName("UINT32[]")] uint* featureRangeLengths, [NativeTypeName("UINT32")] uint featureRanges, [NativeTypeName("FLOAT[]")] float* glyphAdvances, [NativeTypeName("DWRITE_GLYPH_OFFSET[]")] DWRITE_GLYPH_OFFSET* glyphOffsets)
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
@@ -413,7 +413,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetBaseline(IDWriteFontFace* fontFace, DWRITE_BASELINE baseline, [NativeTypeName("BOOL")] int isVertical, [NativeTypeName("BOOL")] int isSimulationAllowed, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, [Optional, NativeTypeName("WCHAR[]")] char* localeName, [NativeTypeName("INT32")] int* baselineCoordinate, [NativeTypeName("BOOL")] int* exists)
+        public int GetBaseline(IDWriteFontFace* fontFace, DWRITE_BASELINE baseline, [NativeTypeName("BOOL")] int isVertical, [NativeTypeName("BOOL")] int isSimulationAllowed, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, [Optional, NativeTypeName("WCHAR[]")] ushort* localeName, [NativeTypeName("INT32")] int* baselineCoordinate, [NativeTypeName("BOOL")] int* exists)
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
@@ -449,7 +449,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetTextComplexity([NativeTypeName("WCHAR[]")] char* textString, [NativeTypeName("UINT32")] uint textLength, IDWriteFontFace* fontFace, [NativeTypeName("BOOL")] int* isTextSimple, [NativeTypeName("UINT32")] uint* textLengthRead, [NativeTypeName("UINT16")] ushort* glyphIndices = null)
+        public int GetTextComplexity([NativeTypeName("WCHAR[]")] ushort* textString, [NativeTypeName("UINT32")] uint textLength, IDWriteFontFace* fontFace, [NativeTypeName("BOOL")] int* isTextSimple, [NativeTypeName("UINT32")] uint* textLengthRead, [NativeTypeName("UINT16")] ushort* glyphIndices = null)
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
@@ -458,7 +458,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetJustificationOpportunities([Optional] IDWriteFontFace* fontFace, [NativeTypeName("FLOAT")] float fontEmSize, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, [NativeTypeName("UINT32")] uint textLength, [NativeTypeName("UINT32")] uint glyphCount, [NativeTypeName("WCHAR[]")] char* textString, [NativeTypeName("UINT16[]")] ushort* clusterMap, [NativeTypeName("DWRITE_SHAPING_GLYPH_PROPERTIES[]")] DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProperties, [NativeTypeName("DWRITE_JUSTIFICATION_OPPORTUNITY[]")] DWRITE_JUSTIFICATION_OPPORTUNITY* justificationOpportunities)
+        public int GetJustificationOpportunities([Optional] IDWriteFontFace* fontFace, [NativeTypeName("FLOAT")] float fontEmSize, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, [NativeTypeName("UINT32")] uint textLength, [NativeTypeName("UINT32")] uint glyphCount, [NativeTypeName("WCHAR[]")] ushort* textString, [NativeTypeName("UINT16[]")] ushort* clusterMap, [NativeTypeName("DWRITE_SHAPING_GLYPH_PROPERTIES[]")] DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProperties, [NativeTypeName("DWRITE_JUSTIFICATION_OPPORTUNITY[]")] DWRITE_JUSTIFICATION_OPPORTUNITY* justificationOpportunities)
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
@@ -494,7 +494,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetTypographicFeatures(IDWriteFontFace* fontFace, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, [Optional, NativeTypeName("WCHAR[]")] char* localeName, [NativeTypeName("UINT32")] uint maxTagCount, [NativeTypeName("UINT32")] uint* actualTagCount, [NativeTypeName("DWRITE_FONT_FEATURE_TAG[]")] DWRITE_FONT_FEATURE_TAG* tags)
+        public int GetTypographicFeatures(IDWriteFontFace* fontFace, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, [Optional, NativeTypeName("WCHAR[]")] ushort* localeName, [NativeTypeName("UINT32")] uint maxTagCount, [NativeTypeName("UINT32")] uint* actualTagCount, [NativeTypeName("DWRITE_FONT_FEATURE_TAG[]")] DWRITE_FONT_FEATURE_TAG* tags)
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {
@@ -503,7 +503,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CheckTypographicFeature(IDWriteFontFace* fontFace, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, [Optional, NativeTypeName("WCHAR[]")] char* localeName, DWRITE_FONT_FEATURE_TAG featureTag, [NativeTypeName("UINT32")] uint glyphCount, [NativeTypeName("UINT16[]")] ushort* glyphIndices, [NativeTypeName("UINT8[]")] byte* featureApplies)
+        public int CheckTypographicFeature(IDWriteFontFace* fontFace, DWRITE_SCRIPT_ANALYSIS scriptAnalysis, [Optional, NativeTypeName("WCHAR[]")] ushort* localeName, DWRITE_FONT_FEATURE_TAG featureTag, [NativeTypeName("UINT32")] uint glyphCount, [NativeTypeName("UINT16[]")] ushort* glyphIndices, [NativeTypeName("UINT8[]")] byte* featureApplies)
         {
             fixed (IDWriteTextAnalyzer2* This = &this)
             {

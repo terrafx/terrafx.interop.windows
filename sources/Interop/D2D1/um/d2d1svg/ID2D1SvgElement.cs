@@ -37,7 +37,7 @@ namespace TerraFX.Interop
         /// <summary>Gets the tag name.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetTagName(ID2D1SvgElement* This, [NativeTypeName("PWSTR")] char* name, [NativeTypeName("UINT32")] uint nameCount);
+        public delegate int _GetTagName(ID2D1SvgElement* This, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount);
 
         /// <summary>Gets the string length of the tag name. The returned string length does not include room for the null terminator.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
@@ -111,14 +111,14 @@ namespace TerraFX.Interop
         /// <param name="newChild">The new child element.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateChild(ID2D1SvgElement* This, [Optional, NativeTypeName("PCWSTR")] char* tagName, ID2D1SvgElement** newChild);
+        public delegate int _CreateChild(ID2D1SvgElement* This, [Optional, NativeTypeName("PCWSTR")] ushort* tagName, ID2D1SvgElement** newChild);
 
         /// <summary>Returns true if the attribute is explicitly set on the element or if it is present within an inline style. Returns FALSE if the attribute is not a valid attribute on this element.</summary>
         /// <param name="name">The name of the attribute.</param>
         /// <param name="inherited">Outputs whether the attribute is set to the 'inherit' value.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public delegate int _IsAttributeSpecified(ID2D1SvgElement* This, [NativeTypeName("PCWSTR")] char* name, [NativeTypeName("BOOL")] int* inherited = null);
+        public delegate int _IsAttributeSpecified(ID2D1SvgElement* This, [NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("BOOL")] int* inherited = null);
 
         /// <summary>Returns the number of specified attributes on this element. Attributes are only considered specified if they are explicitly set on the element or present within an inline style. Properties that receive their value through CSS inheritance are not considered specified. An attribute can become specified if it is set through a method call. It can become unspecified if it is removed via RemoveAttribute.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
@@ -131,7 +131,7 @@ namespace TerraFX.Interop
         /// <param name="inherited">Outputs whether the attribute is set to the 'inherit' value.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetSpecifiedAttributeName(ID2D1SvgElement* This, [NativeTypeName("UINT32")] uint index, [NativeTypeName("PWSTR")] char* name, [NativeTypeName("UINT32")] uint nameCount, [NativeTypeName("BOOL")] int* inherited = null);
+        public delegate int _GetSpecifiedAttributeName(ID2D1SvgElement* This, [NativeTypeName("UINT32")] uint index, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount, [NativeTypeName("BOOL")] int* inherited = null);
 
         /// <summary>Gets the string length of the name of the specified attribute at the given index. The output string length does not include room for the null terminator.</summary>
         /// <param name="index">The specified index of the attribute.</param>
@@ -144,17 +144,17 @@ namespace TerraFX.Interop
         /// <summary>Removes the attribute from this element. Also removes this attribute from within an inline style if present. Returns an error if the attribute name is not valid on this element.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _RemoveAttribute(ID2D1SvgElement* This, [NativeTypeName("PCWSTR")] char* name);
+        public delegate int _RemoveAttribute(ID2D1SvgElement* This, [NativeTypeName("PCWSTR")] ushort* name);
 
         /// <summary>Sets the value of a text content element.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetTextValue(ID2D1SvgElement* This, [NativeTypeName("WCHAR[]")] char* name, [NativeTypeName("UINT32")] uint nameCount);
+        public delegate int _SetTextValue(ID2D1SvgElement* This, [NativeTypeName("WCHAR[]")] ushort* name, [NativeTypeName("UINT32")] uint nameCount);
 
         /// <summary>Gets the value of a text content element.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetTextValue(ID2D1SvgElement* This, [NativeTypeName("PWSTR")] char* name, [NativeTypeName("UINT32")] uint nameCount);
+        public delegate int _GetTextValue(ID2D1SvgElement* This, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount);
 
         /// <summary>Gets the length of the text content value. The returned string length does not include room for the null terminator.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
@@ -164,38 +164,38 @@ namespace TerraFX.Interop
         /// <summary>Sets an attribute of this element using a string. Returns an error if the attribute name is not valid on this element. Returns an error if the attribute cannot be expressed as the specified type.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetAttributeValue(ID2D1SvgElement* This, [NativeTypeName("PCWSTR")] char* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("PCWSTR")] char* value);
+        public delegate int _SetAttributeValue(ID2D1SvgElement* This, [NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("PCWSTR")] ushort* value);
 
         /// <summary>Gets an attribute of this element as a string. Returns an error if the attribute is not specified. Returns an error if the attribute name is not valid on this element. Returns an error if the attribute cannot be expressed as the specified string type.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetAttributeValue(ID2D1SvgElement* This, [NativeTypeName("PCWSTR")] char* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("PWSTR")] char* value, [NativeTypeName("UINT32")] uint valueCount);
+        public delegate int _GetAttributeValue(ID2D1SvgElement* This, [NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("PWSTR")] ushort* value, [NativeTypeName("UINT32")] uint valueCount);
 
         /// <summary>Gets the string length of an attribute of this element. The returned string length does not include room for the null terminator. Returns an error if the attribute is not specified. Returns an error if the attribute name is not valid on this element. Returns an error if the attribute cannot be expressed as the specified string type.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetAttributeValueLength(ID2D1SvgElement* This, [NativeTypeName("PCWSTR")] char* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("UINT32")] uint* valueLength);
+        public delegate int _GetAttributeValueLength(ID2D1SvgElement* This, [NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("UINT32")] uint* valueLength);
 
         /// <summary>Sets an attribute of this element using a POD type. Returns an error if the attribute name is not valid on this element. Returns an error if the attribute cannot be expressed as the specified type.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetAttributeValue1(ID2D1SvgElement* This, [NativeTypeName("PCWSTR")] char* name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, [NativeTypeName("UINT32")] uint valueSizeInBytes);
+        public delegate int _SetAttributeValue1(ID2D1SvgElement* This, [NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, [NativeTypeName("UINT32")] uint valueSizeInBytes);
 
         /// <summary>Gets an attribute of this element as a POD type. Returns an error if the attribute is not specified. Returns an error if the attribute name is not valid on this element. Returns an error if the attribute cannot be expressed as the specified POD type.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetAttributeValue1(ID2D1SvgElement* This, [NativeTypeName("PCWSTR")] char* name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, [NativeTypeName("UINT32")] uint valueSizeInBytes);
+        public delegate int _GetAttributeValue1(ID2D1SvgElement* This, [NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, [NativeTypeName("UINT32")] uint valueSizeInBytes);
 
         /// <summary>Sets an attribute of this element using an interface. Returns an error if the attribute name is not valid on this element. Returns an error if the attribute cannot be expressed as the specified interface type. Returns an error if the attribute object is already set on an element. A given attribute object may only be set on one element in one attribute location at a time.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetAttributeValue2(ID2D1SvgElement* This, [NativeTypeName("PCWSTR")] char* name, ID2D1SvgAttribute* value);
+        public delegate int _SetAttributeValue2(ID2D1SvgElement* This, [NativeTypeName("PCWSTR")] ushort* name, ID2D1SvgAttribute* value);
 
         /// <summary>Gets an attribute of this element as an interface type. Returns an error if the attribute is not specified. Returns an error if the attribute name is not valid on this element. Returns an error if the attribute cannot be expressed as the specified interface type.</summary>
         /// <param name="riid">The interface ID of the attribute value.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetAttributeValue2(ID2D1SvgElement* This, [NativeTypeName("PCWSTR")] char* name, [NativeTypeName("REFIID")] Guid* riid, void** value);
+        public delegate int _GetAttributeValue2(ID2D1SvgElement* This, [NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("REFIID")] Guid* riid, void** value);
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
@@ -241,7 +241,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetTagName([NativeTypeName("PWSTR")] char* name, [NativeTypeName("UINT32")] uint nameCount)
+        public int GetTagName([NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount)
         {
             fixed (ID2D1SvgElement* This = &this)
             {
@@ -355,7 +355,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateChild([Optional, NativeTypeName("PCWSTR")] char* tagName, ID2D1SvgElement** newChild)
+        public int CreateChild([Optional, NativeTypeName("PCWSTR")] ushort* tagName, ID2D1SvgElement** newChild)
         {
             fixed (ID2D1SvgElement* This = &this)
             {
@@ -364,7 +364,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("BOOL")]
-        public int IsAttributeSpecified([NativeTypeName("PCWSTR")] char* name, [NativeTypeName("BOOL")] int* inherited = null)
+        public int IsAttributeSpecified([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("BOOL")] int* inherited = null)
         {
             fixed (ID2D1SvgElement* This = &this)
             {
@@ -382,7 +382,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetSpecifiedAttributeName([NativeTypeName("UINT32")] uint index, [NativeTypeName("PWSTR")] char* name, [NativeTypeName("UINT32")] uint nameCount, [NativeTypeName("BOOL")] int* inherited = null)
+        public int GetSpecifiedAttributeName([NativeTypeName("UINT32")] uint index, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount, [NativeTypeName("BOOL")] int* inherited = null)
         {
             fixed (ID2D1SvgElement* This = &this)
             {
@@ -400,7 +400,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int RemoveAttribute([NativeTypeName("PCWSTR")] char* name)
+        public int RemoveAttribute([NativeTypeName("PCWSTR")] ushort* name)
         {
             fixed (ID2D1SvgElement* This = &this)
             {
@@ -409,7 +409,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetTextValue([NativeTypeName("WCHAR[]")] char* name, [NativeTypeName("UINT32")] uint nameCount)
+        public int SetTextValue([NativeTypeName("WCHAR[]")] ushort* name, [NativeTypeName("UINT32")] uint nameCount)
         {
             fixed (ID2D1SvgElement* This = &this)
             {
@@ -418,7 +418,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetTextValue([NativeTypeName("PWSTR")] char* name, [NativeTypeName("UINT32")] uint nameCount)
+        public int GetTextValue([NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount)
         {
             fixed (ID2D1SvgElement* This = &this)
             {
@@ -436,7 +436,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetAttributeValue([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("PCWSTR")] char* value)
+        public int SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("PCWSTR")] ushort* value)
         {
             fixed (ID2D1SvgElement* This = &this)
             {
@@ -445,7 +445,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetAttributeValue([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("PWSTR")] char* value, [NativeTypeName("UINT32")] uint valueCount)
+        public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("PWSTR")] ushort* value, [NativeTypeName("UINT32")] uint valueCount)
         {
             fixed (ID2D1SvgElement* This = &this)
             {
@@ -454,7 +454,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetAttributeValueLength([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("UINT32")] uint* valueLength)
+        public int GetAttributeValueLength([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("UINT32")] uint* valueLength)
         {
             fixed (ID2D1SvgElement* This = &this)
             {
@@ -463,7 +463,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetAttributeValue1([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, [NativeTypeName("UINT32")] uint valueSizeInBytes)
+        public int SetAttributeValue1([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, [NativeTypeName("UINT32")] uint valueSizeInBytes)
         {
             fixed (ID2D1SvgElement* This = &this)
             {
@@ -472,7 +472,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetAttributeValue1([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, [NativeTypeName("UINT32")] uint valueSizeInBytes)
+        public int GetAttributeValue1([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, [NativeTypeName("UINT32")] uint valueSizeInBytes)
         {
             fixed (ID2D1SvgElement* This = &this)
             {
@@ -481,7 +481,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetAttributeValue2([NativeTypeName("PCWSTR")] char* name, ID2D1SvgAttribute* value)
+        public int SetAttributeValue2([NativeTypeName("PCWSTR")] ushort* name, ID2D1SvgAttribute* value)
         {
             fixed (ID2D1SvgElement* This = &this)
             {
@@ -490,7 +490,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetAttributeValue2([NativeTypeName("PCWSTR")] char* name, [NativeTypeName("REFIID")] Guid* riid, void** value)
+        public int GetAttributeValue2([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("REFIID")] Guid* riid, void** value)
         {
             fixed (ID2D1SvgElement* This = &this)
             {

@@ -39,7 +39,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _AddMapping(IDWriteFontFallbackBuilder* This, [NativeTypeName("DWRITE_UNICODE_RANGE[]")] DWRITE_UNICODE_RANGE* ranges, [NativeTypeName("UINT32")] uint rangesCount, [NativeTypeName("WCHAR[]")] char** targetFamilyNames, [NativeTypeName("UINT32")] uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection = null, [NativeTypeName("WCHAR[]")] char* localeName = null, [NativeTypeName("WCHAR[]")] char* baseFamilyName = null, [NativeTypeName("FLOAT")] float scale = 1.0f);
+        public delegate int _AddMapping(IDWriteFontFallbackBuilder* This, [NativeTypeName("DWRITE_UNICODE_RANGE[]")] DWRITE_UNICODE_RANGE* ranges, [NativeTypeName("UINT32")] uint rangesCount, [NativeTypeName("WCHAR[]")] ushort** targetFamilyNames, [NativeTypeName("UINT32")] uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection = null, [NativeTypeName("WCHAR[]")] ushort* localeName = null, [NativeTypeName("WCHAR[]")] ushort* baseFamilyName = null, [NativeTypeName("FLOAT")] float scale = 1.0f);
 
         /// <summary>Appends all the mappings from an existing font fallback object.</summary>
         /// <param name="fontFallback">Font fallback to read mappings from.</param>
@@ -83,7 +83,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int AddMapping([NativeTypeName("DWRITE_UNICODE_RANGE[]")] DWRITE_UNICODE_RANGE* ranges, [NativeTypeName("UINT32")] uint rangesCount, [NativeTypeName("WCHAR[]")] char** targetFamilyNames, [NativeTypeName("UINT32")] uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection = null, [NativeTypeName("WCHAR[]")] char* localeName = null, [NativeTypeName("WCHAR[]")] char* baseFamilyName = null, [NativeTypeName("FLOAT")] float scale = 1.0f)
+        public int AddMapping([NativeTypeName("DWRITE_UNICODE_RANGE[]")] DWRITE_UNICODE_RANGE* ranges, [NativeTypeName("UINT32")] uint rangesCount, [NativeTypeName("WCHAR[]")] ushort** targetFamilyNames, [NativeTypeName("UINT32")] uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection = null, [NativeTypeName("WCHAR[]")] ushort* localeName = null, [NativeTypeName("WCHAR[]")] ushort* baseFamilyName = null, [NativeTypeName("FLOAT")] float scale = 1.0f)
         {
             fixed (IDWriteFontFallbackBuilder* This = &this)
             {

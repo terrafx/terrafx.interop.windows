@@ -27,27 +27,27 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateStream(IStorage* This, [NativeTypeName("OLECHAR")] char* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint reserved1, [NativeTypeName("DWORD")] uint reserved2, IStream** ppstm = null);
+        public delegate int _CreateStream(IStorage* This, [NativeTypeName("OLECHAR")] ushort* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint reserved1, [NativeTypeName("DWORD")] uint reserved2, IStream** ppstm = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _OpenStream(IStorage* This, [NativeTypeName("OLECHAR")] char* pwcsName, void* reserved1, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint reserved2, IStream** ppstm);
+        public delegate int _OpenStream(IStorage* This, [NativeTypeName("OLECHAR")] ushort* pwcsName, void* reserved1, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint reserved2, IStream** ppstm);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateStorage(IStorage* This, [NativeTypeName("OLECHAR")] char* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint reserved1, [NativeTypeName("DWORD")] uint reserved2, IStorage** ppstg = null);
+        public delegate int _CreateStorage(IStorage* This, [NativeTypeName("OLECHAR")] ushort* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint reserved1, [NativeTypeName("DWORD")] uint reserved2, IStorage** ppstg = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _OpenStorage(IStorage* This, [Optional, NativeTypeName("OLECHAR")] char* pwcsName, [Optional] IStorage* pstgPriority, [NativeTypeName("DWORD")] uint grfMode, [Optional, NativeTypeName("SNB")] char** snbExclude, [NativeTypeName("DWORD")] uint reserved, IStorage** ppstg = null);
+        public delegate int _OpenStorage(IStorage* This, [Optional, NativeTypeName("OLECHAR")] ushort* pwcsName, [Optional] IStorage* pstgPriority, [NativeTypeName("DWORD")] uint grfMode, [Optional, NativeTypeName("SNB")] ushort** snbExclude, [NativeTypeName("DWORD")] uint reserved, IStorage** ppstg = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CopyTo(IStorage* This, [NativeTypeName("IID")] Guid* ciidExclude, [Optional] Guid* rgiidExclude, [Optional, NativeTypeName("SNB")] char** snbExclude, IStorage* pstgDest);
+        public delegate int _CopyTo(IStorage* This, [NativeTypeName("IID")] Guid* ciidExclude, [Optional] Guid* rgiidExclude, [Optional, NativeTypeName("SNB")] ushort** snbExclude, IStorage* pstgDest);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _MoveElementTo(IStorage* This, [NativeTypeName("OLECHAR")] char* pwcsName, [Optional] IStorage* pstgDest, [NativeTypeName("OLECHAR")] char* pwcsNewName, [NativeTypeName("DWORD")] uint grfFlags);
+        public delegate int _MoveElementTo(IStorage* This, [NativeTypeName("OLECHAR")] ushort* pwcsName, [Optional] IStorage* pstgDest, [NativeTypeName("OLECHAR")] ushort* pwcsNewName, [NativeTypeName("DWORD")] uint grfFlags);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
@@ -63,15 +63,15 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _DestroyElement(IStorage* This, [NativeTypeName("OLECHAR")] char* pwcsName);
+        public delegate int _DestroyElement(IStorage* This, [NativeTypeName("OLECHAR")] ushort* pwcsName);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _RenameElement(IStorage* This, [NativeTypeName("OLECHAR")] char* pwcsOldName, [NativeTypeName("OLECHAR")] char* pwcsNewName);
+        public delegate int _RenameElement(IStorage* This, [NativeTypeName("OLECHAR")] ushort* pwcsOldName, [NativeTypeName("OLECHAR")] ushort* pwcsNewName);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetElementTimes(IStorage* This, [NativeTypeName("OLECHAR")] char* pwcsName = null, FILETIME* pctime = null, FILETIME* patime = null, FILETIME* pmtime = null);
+        public delegate int _SetElementTimes(IStorage* This, [NativeTypeName("OLECHAR")] ushort* pwcsName = null, FILETIME* pctime = null, FILETIME* patime = null, FILETIME* pmtime = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
@@ -113,7 +113,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateStream([NativeTypeName("OLECHAR")] char* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint reserved1, [NativeTypeName("DWORD")] uint reserved2, IStream** ppstm = null)
+        public int CreateStream([NativeTypeName("OLECHAR")] ushort* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint reserved1, [NativeTypeName("DWORD")] uint reserved2, IStream** ppstm = null)
         {
             fixed (IStorage* This = &this)
             {
@@ -122,7 +122,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int OpenStream([NativeTypeName("OLECHAR")] char* pwcsName, void* reserved1, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint reserved2, IStream** ppstm)
+        public int OpenStream([NativeTypeName("OLECHAR")] ushort* pwcsName, void* reserved1, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint reserved2, IStream** ppstm)
         {
             fixed (IStorage* This = &this)
             {
@@ -131,7 +131,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateStorage([NativeTypeName("OLECHAR")] char* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint reserved1, [NativeTypeName("DWORD")] uint reserved2, IStorage** ppstg = null)
+        public int CreateStorage([NativeTypeName("OLECHAR")] ushort* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint reserved1, [NativeTypeName("DWORD")] uint reserved2, IStorage** ppstg = null)
         {
             fixed (IStorage* This = &this)
             {
@@ -140,7 +140,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int OpenStorage([Optional, NativeTypeName("OLECHAR")] char* pwcsName, [Optional] IStorage* pstgPriority, [NativeTypeName("DWORD")] uint grfMode, [Optional, NativeTypeName("SNB")] char** snbExclude, [NativeTypeName("DWORD")] uint reserved, IStorage** ppstg = null)
+        public int OpenStorage([Optional, NativeTypeName("OLECHAR")] ushort* pwcsName, [Optional] IStorage* pstgPriority, [NativeTypeName("DWORD")] uint grfMode, [Optional, NativeTypeName("SNB")] ushort** snbExclude, [NativeTypeName("DWORD")] uint reserved, IStorage** ppstg = null)
         {
             fixed (IStorage* This = &this)
             {
@@ -149,7 +149,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CopyTo([NativeTypeName("IID")] Guid* ciidExclude, [Optional] Guid* rgiidExclude, [Optional, NativeTypeName("SNB")] char** snbExclude, IStorage* pstgDest)
+        public int CopyTo([NativeTypeName("IID")] Guid* ciidExclude, [Optional] Guid* rgiidExclude, [Optional, NativeTypeName("SNB")] ushort** snbExclude, IStorage* pstgDest)
         {
             fixed (IStorage* This = &this)
             {
@@ -158,7 +158,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int MoveElementTo([NativeTypeName("OLECHAR")] char* pwcsName, [Optional] IStorage* pstgDest, [NativeTypeName("OLECHAR")] char* pwcsNewName, [NativeTypeName("DWORD")] uint grfFlags)
+        public int MoveElementTo([NativeTypeName("OLECHAR")] ushort* pwcsName, [Optional] IStorage* pstgDest, [NativeTypeName("OLECHAR")] ushort* pwcsNewName, [NativeTypeName("DWORD")] uint grfFlags)
         {
             fixed (IStorage* This = &this)
             {
@@ -194,7 +194,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int DestroyElement([NativeTypeName("OLECHAR")] char* pwcsName)
+        public int DestroyElement([NativeTypeName("OLECHAR")] ushort* pwcsName)
         {
             fixed (IStorage* This = &this)
             {
@@ -203,7 +203,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int RenameElement([NativeTypeName("OLECHAR")] char* pwcsOldName, [NativeTypeName("OLECHAR")] char* pwcsNewName)
+        public int RenameElement([NativeTypeName("OLECHAR")] ushort* pwcsOldName, [NativeTypeName("OLECHAR")] ushort* pwcsNewName)
         {
             fixed (IStorage* This = &this)
             {
@@ -212,7 +212,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetElementTimes([NativeTypeName("OLECHAR")] char* pwcsName = null, FILETIME* pctime = null, FILETIME* patime = null, FILETIME* pmtime = null)
+        public int SetElementTimes([NativeTypeName("OLECHAR")] ushort* pwcsName = null, FILETIME* pctime = null, FILETIME* patime = null, FILETIME* pmtime = null)
         {
             fixed (IStorage* This = &this)
             {

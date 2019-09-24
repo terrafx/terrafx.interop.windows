@@ -117,7 +117,7 @@ namespace TerraFX.Interop
 
                     [FieldOffset(0)]
                     [NativeTypeName("BSTR")]
-                    public char* bstrVal;
+                    public ushort* bstrVal;
 
                     [FieldOffset(0)]
                     public BSTRBLOB bstrblobVal;
@@ -131,7 +131,7 @@ namespace TerraFX.Interop
 
                     [FieldOffset(0)]
                     [NativeTypeName("LPWSTR")]
-                    public char* pwszVal;
+                    public ushort* pwszVal;
 
                     [FieldOffset(0)]
                     public IUnknown* punkVal;
@@ -279,7 +279,7 @@ namespace TerraFX.Interop
 
                     [FieldOffset(0)]
                     [NativeTypeName("BSTR")]
-                    public char** pbstrVal;
+                    public ushort** pbstrVal;
 
                     [FieldOffset(0)]
                     public IUnknown** ppunkVal;

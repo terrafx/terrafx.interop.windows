@@ -102,11 +102,11 @@ namespace TerraFX.Interop
 
         [DllImport(D3DCOMPILER_DLL, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3DReadFileToBlob", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3DReadFileToBlob([NativeTypeName("LPCWSTR")] char* pFileName, ID3DBlob** ppContents);
+        public static extern int D3DReadFileToBlob([NativeTypeName("LPCWSTR")] ushort* pFileName, ID3DBlob** ppContents);
 
         [DllImport(D3DCOMPILER_DLL, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3DWriteBlobToFile", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3DWriteBlobToFile(ID3DBlob* pBlob, [NativeTypeName("LPCWSTR")] char* pFileName, [NativeTypeName("BOOL")] int bOverwrite);
+        public static extern int D3DWriteBlobToFile(ID3DBlob* pBlob, [NativeTypeName("LPCWSTR")] ushort* pFileName, [NativeTypeName("BOOL")] int bOverwrite);
 
         [DllImport(D3DCOMPILER_DLL, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Ansi, EntryPoint = "D3DCompile", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -118,7 +118,7 @@ namespace TerraFX.Interop
 
         [DllImport(D3DCOMPILER_DLL, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3DCompileFromFile", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3DCompileFromFile([NativeTypeName("LPCWSTR")] char* pFileName, [Optional] D3D_SHADER_MACRO* pDefines, [Optional] ID3DInclude* pInclude, [NativeTypeName("LPCSTR")] sbyte* pEntrypoint, [NativeTypeName("LPCSTR")] sbyte* pTarget, [NativeTypeName("UINT")] uint Flags1, [NativeTypeName("UINT")] uint Flags2, ID3DBlob** ppCode, [Optional] ID3DBlob** ppErrorMsgs);
+        public static extern int D3DCompileFromFile([NativeTypeName("LPCWSTR")] ushort* pFileName, [Optional] D3D_SHADER_MACRO* pDefines, [Optional] ID3DInclude* pInclude, [NativeTypeName("LPCSTR")] sbyte* pEntrypoint, [NativeTypeName("LPCSTR")] sbyte* pTarget, [NativeTypeName("UINT")] uint Flags1, [NativeTypeName("UINT")] uint Flags2, ID3DBlob** ppCode, [Optional] ID3DBlob** ppErrorMsgs);
 
         [DllImport(D3DCOMPILER_DLL, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3DPreprocess", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

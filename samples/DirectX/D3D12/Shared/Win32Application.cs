@@ -40,8 +40,8 @@ namespace TerraFX.Samples.DirectX.D3D12
                     style = CS_HREDRAW | CS_VREDRAW,
                     lpfnWndProc = s_wndProcHandle,
                     hInstance = hInstance,
-                    hCursor = LoadCursor(IntPtr.Zero, (char*)IDC_ARROW),
-                    lpszClassName = lpszClassName
+                    hCursor = LoadCursor(IntPtr.Zero, (ushort*)IDC_ARROW),
+                    lpszClassName = (ushort*)lpszClassName
                 };
                 RegisterClassEx(&windowClass);
 
@@ -55,7 +55,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 s_hwnd = CreateWindowEx(
                     0,
                     windowClass.lpszClassName,
-                    lpWindowName,
+                    (ushort*)lpWindowName,
                     WS_OVERLAPPEDWINDOW,
                     CW_USEDEFAULT,
                     CW_USEDEFAULT,

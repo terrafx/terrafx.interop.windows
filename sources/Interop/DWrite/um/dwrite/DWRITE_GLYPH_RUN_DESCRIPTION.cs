@@ -10,11 +10,11 @@ namespace TerraFX.Interop
     {
         /// <summary>The locale name associated with this run.</summary>
         [NativeTypeName("WCHAR[]")]
-        public char* localeName;
+        public ushort* localeName;
 
         /// <summary>The text associated with the glyphs.</summary>
         [NativeTypeName("WCHAR[]")]
-        public char* @string;
+        public ushort* @string;
 
         /// <summary>The number of characters (UTF16 code-units). Note that this may be different than the number of glyphs.</summary>
         [NativeTypeName("UINT32")]

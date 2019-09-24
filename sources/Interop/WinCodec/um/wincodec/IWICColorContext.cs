@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _InitializeFromFilename(IWICColorContext* This, [NativeTypeName("LPCWSTR")] char* wzFilename);
+        public delegate int _InitializeFromFilename(IWICColorContext* This, [NativeTypeName("LPCWSTR")] ushort* wzFilename);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
@@ -77,7 +77,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int InitializeFromFilename([NativeTypeName("LPCWSTR")] char* wzFilename)
+        public int InitializeFromFilename([NativeTypeName("LPCWSTR")] ushort* wzFilename)
         {
             fixed (IWICColorContext* This = &this)
             {

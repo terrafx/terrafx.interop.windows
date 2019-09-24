@@ -66,7 +66,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateFontFileReference(IDWriteFactory3* This, [NativeTypeName("WCHAR[]")] char* filePath, [Optional] FILETIME* lastWriteTime, IDWriteFontFile** fontFile);
+        public delegate int _CreateFontFileReference(IDWriteFactory3* This, [NativeTypeName("WCHAR[]")] ushort* filePath, [Optional] FILETIME* lastWriteTime, IDWriteFontFile** fontFile);
 
         /// <summary>CreateCustomFontFileReference creates a reference to an application specific font file resource. This function enables an application or a document to use a font without having to install it on the system. The fontFileReferenceKey has to be unique only in the scope of the fontFileLoader used in this call.</summary>
         /// <param name="fontFileReferenceKey">Font file reference key that uniquely identifies the font file resource during the lifetime of fontFileLoader.</param>
@@ -146,7 +146,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateTextFormat(IDWriteFactory3* This, [NativeTypeName("WCHAR[]")] char* fontFamilyName, [Optional] IDWriteFontCollection* fontCollection, DWRITE_FONT_WEIGHT fontWeight, DWRITE_FONT_STYLE fontStyle, DWRITE_FONT_STRETCH fontStretch, [NativeTypeName("FLOAT")] float fontSize, [NativeTypeName("WCHAR[]")] char* localeName, IDWriteTextFormat** textFormat);
+        public delegate int _CreateTextFormat(IDWriteFactory3* This, [NativeTypeName("WCHAR[]")] ushort* fontFamilyName, [Optional] IDWriteFontCollection* fontCollection, DWRITE_FONT_WEIGHT fontWeight, DWRITE_FONT_STYLE fontStyle, DWRITE_FONT_STRETCH fontStretch, [NativeTypeName("FLOAT")] float fontSize, [NativeTypeName("WCHAR[]")] ushort* localeName, IDWriteTextFormat** textFormat);
 
         /// <summary>Create a typography object used in conjunction with text format for text layout.</summary>
         /// <param name="typography">Contains newly created typography object, or NULL in case of failure.</param>
@@ -172,7 +172,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateTextLayout(IDWriteFactory3* This, [NativeTypeName("WCHAR[]")] char* @string, [NativeTypeName("UINT32")] uint stringLength, IDWriteTextFormat* textFormat, [NativeTypeName("FLOAT")] float maxWidth, [NativeTypeName("FLOAT")] float maxHeight, IDWriteTextLayout** textLayout);
+        public delegate int _CreateTextLayout(IDWriteFactory3* This, [NativeTypeName("WCHAR[]")] ushort* @string, [NativeTypeName("UINT32")] uint stringLength, IDWriteTextFormat* textFormat, [NativeTypeName("FLOAT")] float maxWidth, [NativeTypeName("FLOAT")] float maxHeight, IDWriteTextLayout** textLayout);
 
         /// <summary>CreateGdiCompatibleTextLayout takes a string, format, and associated constraints and produces and object representing the result formatted for a particular display resolution and measuring mode. The resulting text layout should only be used for the intended resolution, and for cases where text scalability is desired, CreateTextLayout should be used instead.</summary>
         /// <param name="string">The string to layout.</param>
@@ -187,7 +187,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateGdiCompatibleTextLayout(IDWriteFactory3* This, [NativeTypeName("WCHAR[]")] char* @string, [NativeTypeName("UINT32")] uint stringLength, IDWriteTextFormat* textFormat, [NativeTypeName("FLOAT")] float layoutWidth, [NativeTypeName("FLOAT")] float layoutHeight, [NativeTypeName("FLOAT")] float pixelsPerDip, [Optional] DWRITE_MATRIX* transform, [NativeTypeName("BOOL")] int useGdiNatural, IDWriteTextLayout** textLayout);
+        public delegate int _CreateGdiCompatibleTextLayout(IDWriteFactory3* This, [NativeTypeName("WCHAR[]")] ushort* @string, [NativeTypeName("UINT32")] uint stringLength, IDWriteTextFormat* textFormat, [NativeTypeName("FLOAT")] float layoutWidth, [NativeTypeName("FLOAT")] float layoutHeight, [NativeTypeName("FLOAT")] float pixelsPerDip, [Optional] DWRITE_MATRIX* transform, [NativeTypeName("BOOL")] int useGdiNatural, IDWriteTextLayout** textLayout);
 
         /// <summary>The application may call this function to create an inline object for trimming, using an ellipsis as the omission sign. The ellipsis will be created using the current settings of the format, including base font, style, and any effects. Alternate omission signs can be created by the application by implementing IDWriteInlineObject.</summary>
         /// <param name="textFormat">Text format used as a template for the omission sign.</param>
@@ -211,7 +211,7 @@ namespace TerraFX.Interop
         /// <param name="numberSubstitution">Receives a pointer to the newly created object.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateNumberSubstitution(IDWriteFactory3* This, DWRITE_NUMBER_SUBSTITUTION_METHOD substitutionMethod, [NativeTypeName("WCHAR[]")] char* localeName, [NativeTypeName("BOOL")] int ignoreUserOverride, IDWriteNumberSubstitution** numberSubstitution);
+        public delegate int _CreateNumberSubstitution(IDWriteFactory3* This, DWRITE_NUMBER_SUBSTITUTION_METHOD substitutionMethod, [NativeTypeName("WCHAR[]")] ushort* localeName, [NativeTypeName("BOOL")] int ignoreUserOverride, IDWriteNumberSubstitution** numberSubstitution);
 
         /// <summary>Creates a glyph run analysis object, which encapsulates information used to render a glyph run.</summary>
         /// <param name="glyphRun">Structure specifying the properties of the glyph run.</param>
@@ -342,7 +342,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateFontFaceReference(IDWriteFactory3* This, [NativeTypeName("WCHAR[]")] char* filePath, [Optional] FILETIME* lastWriteTime, [NativeTypeName("UINT32")] uint faceIndex, DWRITE_FONT_SIMULATIONS fontSimulations, IDWriteFontFaceReference** fontFaceReference);
+        public delegate int _CreateFontFaceReference(IDWriteFactory3* This, [NativeTypeName("WCHAR[]")] ushort* filePath, [Optional] FILETIME* lastWriteTime, [NativeTypeName("UINT32")] uint faceIndex, DWRITE_FONT_SIMULATIONS fontSimulations, IDWriteFontFaceReference** fontFaceReference);
 
         /// <summary>Creates a reference to a font given a file.</summary>
         /// <param name="fontFile">User provided font file representing the font face.</param>
@@ -456,7 +456,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateFontFileReference([NativeTypeName("WCHAR[]")] char* filePath, [Optional] FILETIME* lastWriteTime, IDWriteFontFile** fontFile)
+        public int CreateFontFileReference([NativeTypeName("WCHAR[]")] ushort* filePath, [Optional] FILETIME* lastWriteTime, IDWriteFontFile** fontFile)
         {
             fixed (IDWriteFactory3* This = &this)
             {
@@ -528,7 +528,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateTextFormat([NativeTypeName("WCHAR[]")] char* fontFamilyName, [Optional] IDWriteFontCollection* fontCollection, DWRITE_FONT_WEIGHT fontWeight, DWRITE_FONT_STYLE fontStyle, DWRITE_FONT_STRETCH fontStretch, [NativeTypeName("FLOAT")] float fontSize, [NativeTypeName("WCHAR[]")] char* localeName, IDWriteTextFormat** textFormat)
+        public int CreateTextFormat([NativeTypeName("WCHAR[]")] ushort* fontFamilyName, [Optional] IDWriteFontCollection* fontCollection, DWRITE_FONT_WEIGHT fontWeight, DWRITE_FONT_STYLE fontStyle, DWRITE_FONT_STRETCH fontStretch, [NativeTypeName("FLOAT")] float fontSize, [NativeTypeName("WCHAR[]")] ushort* localeName, IDWriteTextFormat** textFormat)
         {
             fixed (IDWriteFactory3* This = &this)
             {
@@ -555,7 +555,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateTextLayout([NativeTypeName("WCHAR[]")] char* @string, [NativeTypeName("UINT32")] uint stringLength, IDWriteTextFormat* textFormat, [NativeTypeName("FLOAT")] float maxWidth, [NativeTypeName("FLOAT")] float maxHeight, IDWriteTextLayout** textLayout)
+        public int CreateTextLayout([NativeTypeName("WCHAR[]")] ushort* @string, [NativeTypeName("UINT32")] uint stringLength, IDWriteTextFormat* textFormat, [NativeTypeName("FLOAT")] float maxWidth, [NativeTypeName("FLOAT")] float maxHeight, IDWriteTextLayout** textLayout)
         {
             fixed (IDWriteFactory3* This = &this)
             {
@@ -564,7 +564,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateGdiCompatibleTextLayout([NativeTypeName("WCHAR[]")] char* @string, [NativeTypeName("UINT32")] uint stringLength, IDWriteTextFormat* textFormat, [NativeTypeName("FLOAT")] float layoutWidth, [NativeTypeName("FLOAT")] float layoutHeight, [NativeTypeName("FLOAT")] float pixelsPerDip, [Optional] DWRITE_MATRIX* transform, [NativeTypeName("BOOL")] int useGdiNatural, IDWriteTextLayout** textLayout)
+        public int CreateGdiCompatibleTextLayout([NativeTypeName("WCHAR[]")] ushort* @string, [NativeTypeName("UINT32")] uint stringLength, IDWriteTextFormat* textFormat, [NativeTypeName("FLOAT")] float layoutWidth, [NativeTypeName("FLOAT")] float layoutHeight, [NativeTypeName("FLOAT")] float pixelsPerDip, [Optional] DWRITE_MATRIX* transform, [NativeTypeName("BOOL")] int useGdiNatural, IDWriteTextLayout** textLayout)
         {
             fixed (IDWriteFactory3* This = &this)
             {
@@ -591,7 +591,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateNumberSubstitution(DWRITE_NUMBER_SUBSTITUTION_METHOD substitutionMethod, [NativeTypeName("WCHAR[]")] char* localeName, [NativeTypeName("BOOL")] int ignoreUserOverride, IDWriteNumberSubstitution** numberSubstitution)
+        public int CreateNumberSubstitution(DWRITE_NUMBER_SUBSTITUTION_METHOD substitutionMethod, [NativeTypeName("WCHAR[]")] ushort* localeName, [NativeTypeName("BOOL")] int ignoreUserOverride, IDWriteNumberSubstitution** numberSubstitution)
         {
             fixed (IDWriteFactory3* This = &this)
             {
@@ -690,7 +690,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateFontFaceReference([NativeTypeName("WCHAR[]")] char* filePath, [Optional] FILETIME* lastWriteTime, [NativeTypeName("UINT32")] uint faceIndex, DWRITE_FONT_SIMULATIONS fontSimulations, IDWriteFontFaceReference** fontFaceReference)
+        public int CreateFontFaceReference([NativeTypeName("WCHAR[]")] ushort* filePath, [Optional] FILETIME* lastWriteTime, [NativeTypeName("UINT32")] uint faceIndex, DWRITE_FONT_SIMULATIONS fontSimulations, IDWriteFontFaceReference** fontFaceReference)
         {
             fixed (IDWriteFactory3* This = &this)
             {

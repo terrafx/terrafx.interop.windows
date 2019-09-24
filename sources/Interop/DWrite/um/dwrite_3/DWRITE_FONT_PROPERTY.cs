@@ -13,12 +13,12 @@ namespace TerraFX.Interop
 
         /// <summary>Specifies the property value, such as "Segoe UI".</summary>
         [NativeTypeName("WCHAR[]")]
-        public char* propertyValue;
+        public ushort* propertyValue;
 
         /// <summary>Specifies the language / locale to use, such as "en-US". </summary>
         /// <remarks> When passing property information to AddFontFaceReference, localeName indicates the language of the property value. BCP 47 language tags should be used. If a property value is inherently non-linguistic, this can be left empty.
         /// When used for font set filtering, leave this empty: a match will be found regardless of language associated with property values.</remarks>
         [NativeTypeName("WCHAR[]")]
-        public char* localeName;
+        public ushort* localeName;
     }
 }

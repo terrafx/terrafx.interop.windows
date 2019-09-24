@@ -38,7 +38,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code. If the specified locale name does not exist, the return value is S_OK, but *index is UINT_MAX and *exists is FALSE.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _FindLocaleName(IDWriteLocalizedStrings* This, [NativeTypeName("WCHAR[]")] char* localeName, [NativeTypeName("UINT32")] uint* index, [NativeTypeName("BOOL")] int* exists);
+        public delegate int _FindLocaleName(IDWriteLocalizedStrings* This, [NativeTypeName("WCHAR[]")] ushort* localeName, [NativeTypeName("UINT32")] uint* index, [NativeTypeName("BOOL")] int* exists);
 
         /// <summary>Gets the length in characters (not including the null terminator) of the locale name with the specified index.</summary>
         /// <param name="index">Zero-based index of the locale name.</param>
@@ -55,7 +55,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLocaleName(IDWriteLocalizedStrings* This, [NativeTypeName("UINT32")] uint index, [NativeTypeName("WCHAR[]")] char* localeName, [NativeTypeName("UINT32")] uint size);
+        public delegate int _GetLocaleName(IDWriteLocalizedStrings* This, [NativeTypeName("UINT32")] uint index, [NativeTypeName("WCHAR[]")] ushort* localeName, [NativeTypeName("UINT32")] uint size);
 
         /// <summary>Gets the length in characters (not including the null terminator) of the string with the specified index.</summary>
         /// <param name="index">Zero-based index of the string.</param>
@@ -72,7 +72,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetString(IDWriteLocalizedStrings* This, [NativeTypeName("UINT32")] uint index, [NativeTypeName("WCHAR[]")] char* stringBuffer, [NativeTypeName("UINT32")] uint size);
+        public delegate int _GetString(IDWriteLocalizedStrings* This, [NativeTypeName("UINT32")] uint index, [NativeTypeName("WCHAR[]")] ushort* stringBuffer, [NativeTypeName("UINT32")] uint size);
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
@@ -111,7 +111,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int FindLocaleName([NativeTypeName("WCHAR[]")] char* localeName, [NativeTypeName("UINT32")] uint* index, [NativeTypeName("BOOL")] int* exists)
+        public int FindLocaleName([NativeTypeName("WCHAR[]")] ushort* localeName, [NativeTypeName("UINT32")] uint* index, [NativeTypeName("BOOL")] int* exists)
         {
             fixed (IDWriteLocalizedStrings* This = &this)
             {
@@ -129,7 +129,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetLocaleName([NativeTypeName("UINT32")] uint index, [NativeTypeName("WCHAR[]")] char* localeName, [NativeTypeName("UINT32")] uint size)
+        public int GetLocaleName([NativeTypeName("UINT32")] uint index, [NativeTypeName("WCHAR[]")] ushort* localeName, [NativeTypeName("UINT32")] uint size)
         {
             fixed (IDWriteLocalizedStrings* This = &this)
             {
@@ -147,7 +147,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetString([NativeTypeName("UINT32")] uint index, [NativeTypeName("WCHAR[]")] char* stringBuffer, [NativeTypeName("UINT32")] uint size)
+        public int GetString([NativeTypeName("UINT32")] uint index, [NativeTypeName("WCHAR[]")] ushort* stringBuffer, [NativeTypeName("UINT32")] uint size)
         {
             fixed (IDWriteLocalizedStrings* This = &this)
             {

@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateDecoderFromFilename(IWICComponentFactory* This, [NativeTypeName("LPCWSTR")] char* wzFilename, [Optional, NativeTypeName("GUID")] Guid* pguidVendor, [NativeTypeName("DWORD")] uint dwDesiredAccess, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder = null);
+        public delegate int _CreateDecoderFromFilename(IWICComponentFactory* This, [NativeTypeName("LPCWSTR")] ushort* wzFilename, [Optional, NativeTypeName("GUID")] Guid* pguidVendor, [NativeTypeName("DWORD")] uint dwDesiredAccess, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
@@ -181,7 +181,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateDecoderFromFilename([NativeTypeName("LPCWSTR")] char* wzFilename, [Optional, NativeTypeName("GUID")] Guid* pguidVendor, [NativeTypeName("DWORD")] uint dwDesiredAccess, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder = null)
+        public int CreateDecoderFromFilename([NativeTypeName("LPCWSTR")] ushort* wzFilename, [Optional, NativeTypeName("GUID")] Guid* pguidVendor, [NativeTypeName("DWORD")] uint dwDesiredAccess, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder = null)
         {
             fixed (IWICComponentFactory* This = &this)
             {

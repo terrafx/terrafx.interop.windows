@@ -97,7 +97,7 @@ namespace TerraFX.Interop
         /// <remarks> Downloading a character involves downloading every glyph it depends on directly or indirectly, via font tables (cmap, GSUB, COLR, glyf).</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _EnqueueCharacterDownloadRequest(IDWriteFontFaceReference* This, [NativeTypeName("WCHAR[]")] char* characters, [NativeTypeName("UINT32")] uint characterCount);
+        public delegate int _EnqueueCharacterDownloadRequest(IDWriteFontFaceReference* This, [NativeTypeName("WCHAR[]")] ushort* characters, [NativeTypeName("UINT32")] uint characterCount);
 
         /// <summary>Adds a request to the font download queue (IDWriteFontDownloadQueue).</summary>
         /// <param name="glyphIndices">Array of glyph indices to download.</param>
@@ -241,7 +241,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int EnqueueCharacterDownloadRequest([NativeTypeName("WCHAR[]")] char* characters, [NativeTypeName("UINT32")] uint characterCount)
+        public int EnqueueCharacterDownloadRequest([NativeTypeName("WCHAR[]")] ushort* characters, [NativeTypeName("UINT32")] uint characterCount)
         {
             fixed (IDWriteFontFaceReference* This = &this)
             {

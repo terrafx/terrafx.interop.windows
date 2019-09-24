@@ -10,7 +10,7 @@ namespace TerraFX.Interop
     public unsafe struct DXGI_ADAPTER_DESC2
     {
         [NativeTypeName("WCHAR[128]")]
-        public fixed char Description[128];
+        public fixed ushort Description[128];
 
         [NativeTypeName("UINT")]
         public uint VendorId;

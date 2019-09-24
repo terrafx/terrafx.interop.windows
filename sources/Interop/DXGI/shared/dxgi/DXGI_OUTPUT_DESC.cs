@@ -10,7 +10,7 @@ namespace TerraFX.Interop
     public unsafe struct DXGI_OUTPUT_DESC
     {
         [NativeTypeName("WCHAR[32]")]
-        public fixed char DeviceName[32];
+        public fixed ushort DeviceName[32];
 
         public RECT DesktopCoordinates;
 

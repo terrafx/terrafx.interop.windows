@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     {
         /// <summary>The name of the property.</summary>
         [NativeTypeName("PCWSTR")]
-        public char* propertyName;
+        public ushort* propertyName;
 
         /// <summary>The function that will receive the data to set.</summary>
         [NativeTypeName("PD2D1_PROPERTY_SET_FUNCTION")]

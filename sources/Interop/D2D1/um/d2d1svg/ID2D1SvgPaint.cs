@@ -60,12 +60,12 @@ namespace TerraFX.Interop
         /// <summary>Sets the element id which acts as the paint server. This id is used if the paint type is D2D1_SVG_PAINT_TYPE_URI.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetId(ID2D1SvgPaint* This, [NativeTypeName("PCWSTR")] char* id);
+        public delegate int _SetId(ID2D1SvgPaint* This, [NativeTypeName("PCWSTR")] ushort* id);
 
         /// <summary>Gets the element id which acts as the paint server. This id is used if the paint type is D2D1_SVG_PAINT_TYPE_URI.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetId(ID2D1SvgPaint* This, [NativeTypeName("PWSTR")] char* id, [NativeTypeName("UINT32")] uint idCount);
+        public delegate int _GetId(ID2D1SvgPaint* This, [NativeTypeName("PWSTR")] ushort* id, [NativeTypeName("UINT32")] uint idCount);
 
         /// <summary>Gets the string length of the element id which acts as the paint server. This id is used if the paint type is D2D1_SVG_PAINT_TYPE_URI. The returned string length does not include room for the null terminator.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
@@ -159,7 +159,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetId([NativeTypeName("PCWSTR")] char* id)
+        public int SetId([NativeTypeName("PCWSTR")] ushort* id)
         {
             fixed (ID2D1SvgPaint* This = &this)
             {
@@ -168,7 +168,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetId([NativeTypeName("PWSTR")] char* id, [NativeTypeName("UINT32")] uint idCount)
+        public int GetId([NativeTypeName("PWSTR")] ushort* id, [NativeTypeName("UINT32")] uint idCount)
         {
             fixed (ID2D1SvgPaint* This = &this)
             {

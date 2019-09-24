@@ -75,7 +75,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _InitializeFromFilename(IWICStream* This, [NativeTypeName("LPCWSTR")] char* wzFileName, [NativeTypeName("DWORD")] uint dwDesiredAccess);
+        public delegate int _InitializeFromFilename(IWICStream* This, [NativeTypeName("LPCWSTR")] ushort* wzFileName, [NativeTypeName("DWORD")] uint dwDesiredAccess);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
@@ -221,7 +221,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int InitializeFromFilename([NativeTypeName("LPCWSTR")] char* wzFileName, [NativeTypeName("DWORD")] uint dwDesiredAccess)
+        public int InitializeFromFilename([NativeTypeName("LPCWSTR")] ushort* wzFileName, [NativeTypeName("DWORD")] uint dwDesiredAccess)
         {
             fixed (IWICStream* This = &this)
             {

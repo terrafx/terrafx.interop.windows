@@ -31,11 +31,11 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLocation(IWICMetadataQueryWriter* This, [NativeTypeName("UINT")] uint cchMaxLength, [Optional, NativeTypeName("WCHAR[]")] char* wzNamespace, [NativeTypeName("UINT")] uint* pcchActualLength);
+        public delegate int _GetLocation(IWICMetadataQueryWriter* This, [NativeTypeName("UINT")] uint cchMaxLength, [Optional, NativeTypeName("WCHAR[]")] ushort* wzNamespace, [NativeTypeName("UINT")] uint* pcchActualLength);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetMetadataByName(IWICMetadataQueryWriter* This, [NativeTypeName("LPCWSTR")] char* wzName, PROPVARIANT* pvarValue = null);
+        public delegate int _GetMetadataByName(IWICMetadataQueryWriter* This, [NativeTypeName("LPCWSTR")] ushort* wzName, PROPVARIANT* pvarValue = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
@@ -43,11 +43,11 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetMetadataByName(IWICMetadataQueryWriter* This, [NativeTypeName("LPCWSTR")] char* wzName, PROPVARIANT* pvarValue);
+        public delegate int _SetMetadataByName(IWICMetadataQueryWriter* This, [NativeTypeName("LPCWSTR")] ushort* wzName, PROPVARIANT* pvarValue);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _RemoveMetadataByName(IWICMetadataQueryWriter* This, [NativeTypeName("LPCWSTR")] char* wzName);
+        public delegate int _RemoveMetadataByName(IWICMetadataQueryWriter* This, [NativeTypeName("LPCWSTR")] ushort* wzName);
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
@@ -86,7 +86,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetLocation([NativeTypeName("UINT")] uint cchMaxLength, [Optional, NativeTypeName("WCHAR[]")] char* wzNamespace, [NativeTypeName("UINT")] uint* pcchActualLength)
+        public int GetLocation([NativeTypeName("UINT")] uint cchMaxLength, [Optional, NativeTypeName("WCHAR[]")] ushort* wzNamespace, [NativeTypeName("UINT")] uint* pcchActualLength)
         {
             fixed (IWICMetadataQueryWriter* This = &this)
             {
@@ -95,7 +95,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetMetadataByName([NativeTypeName("LPCWSTR")] char* wzName, PROPVARIANT* pvarValue = null)
+        public int GetMetadataByName([NativeTypeName("LPCWSTR")] ushort* wzName, PROPVARIANT* pvarValue = null)
         {
             fixed (IWICMetadataQueryWriter* This = &this)
             {
@@ -113,7 +113,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetMetadataByName([NativeTypeName("LPCWSTR")] char* wzName, PROPVARIANT* pvarValue)
+        public int SetMetadataByName([NativeTypeName("LPCWSTR")] ushort* wzName, PROPVARIANT* pvarValue)
         {
             fixed (IWICMetadataQueryWriter* This = &this)
             {
@@ -122,7 +122,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int RemoveMetadataByName([NativeTypeName("LPCWSTR")] char* wzName)
+        public int RemoveMetadataByName([NativeTypeName("LPCWSTR")] ushort* wzName)
         {
             fixed (IWICMetadataQueryWriter* This = &this)
             {

@@ -39,7 +39,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetName(ID3D12DescriptorHeap* This, [NativeTypeName("LPCWSTR")] char* Name);
+        public delegate int _SetName(ID3D12DescriptorHeap* This, [NativeTypeName("LPCWSTR")] ushort* Name);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
@@ -109,7 +109,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetName([NativeTypeName("LPCWSTR")] char* Name)
+        public int SetName([NativeTypeName("LPCWSTR")] ushort* Name)
         {
             fixed (ID3D12DescriptorHeap* This = &this)
             {

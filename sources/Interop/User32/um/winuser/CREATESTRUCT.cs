@@ -33,10 +33,10 @@ namespace TerraFX.Interop
         public int style;
 
         [NativeTypeName("LPCWSTR")]
-        public char* lpszName;
+        public ushort* lpszName;
 
         [NativeTypeName("LPCWSTR")]
-        public char* lpszClass;
+        public ushort* lpszClass;
 
         [NativeTypeName("DWORD")]
         public uint dwExStyle;

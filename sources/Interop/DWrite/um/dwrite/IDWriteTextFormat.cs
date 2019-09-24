@@ -150,7 +150,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFontFamilyName(IDWriteTextFormat* This, [NativeTypeName("WCHAR[]")] char* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize);
+        public delegate int _GetFontFamilyName(IDWriteTextFormat* This, [NativeTypeName("WCHAR[]")] ushort* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize);
 
         /// <summary>Get the font weight.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
@@ -180,7 +180,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLocaleName(IDWriteTextFormat* This, [NativeTypeName("WCHAR[]")] char* localeName, [NativeTypeName("UINT32")] uint nameSize);
+        public delegate int _GetLocaleName(IDWriteTextFormat* This, [NativeTypeName("WCHAR[]")] ushort* localeName, [NativeTypeName("UINT32")] uint nameSize);
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
@@ -367,7 +367,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFontFamilyName([NativeTypeName("WCHAR[]")] char* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize)
+        public int GetFontFamilyName([NativeTypeName("WCHAR[]")] ushort* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize)
         {
             fixed (IDWriteTextFormat* This = &this)
             {
@@ -418,7 +418,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetLocaleName([NativeTypeName("WCHAR[]")] char* localeName, [NativeTypeName("UINT32")] uint nameSize)
+        public int GetLocaleName([NativeTypeName("WCHAR[]")] ushort* localeName, [NativeTypeName("UINT32")] uint nameSize)
         {
             fixed (IDWriteTextFormat* This = &this)
             {

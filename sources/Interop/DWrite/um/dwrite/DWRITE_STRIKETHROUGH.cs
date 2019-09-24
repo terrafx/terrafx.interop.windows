@@ -28,7 +28,7 @@ namespace TerraFX.Interop
 
         /// <summary>Locale of the range. Can be pertinent where the locale affects the style.</summary>
         [NativeTypeName("WCHAR[]")]
-        public char* localeName;
+        public ushort* localeName;
 
         /// <summary>The measuring mode can be useful to the renderer to determine how
         /// underlines are rendered, e.g. rounding the thickness to a whole pixel

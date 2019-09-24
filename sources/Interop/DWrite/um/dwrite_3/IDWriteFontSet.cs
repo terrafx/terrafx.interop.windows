@@ -75,7 +75,7 @@ namespace TerraFX.Interop
         /// <remarks> For example, suppose the font set includes the Meiryo family, which has both Japanese and English family names. The returned list of distinct family names would include either the Japanese name (if "ja-jp" was specified as a preferred locale) or the English name (in all other cases).</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPropertyValues1(IDWriteFontSet* This, DWRITE_FONT_PROPERTY_ID propertyID, [NativeTypeName("WCHAR[]")] char* preferredLocaleNames, IDWriteStringList** values);
+        public delegate int _GetPropertyValues1(IDWriteFontSet* This, DWRITE_FONT_PROPERTY_ID propertyID, [NativeTypeName("WCHAR[]")] ushort* preferredLocaleNames, IDWriteStringList** values);
 
         /// <summary>Returns all unique property values in the set, which can be used for purposes such as displaying a family list or tag cloud. All values are returned regardless of language, including all localized names.</summary>
         /// <param name="propertyID">Font property of interest.</param>
@@ -115,7 +115,7 @@ namespace TerraFX.Interop
         /// <remarks> The returned list can include simulated bold and oblique variants, which would be useful for font fallback selection.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetMatchingFonts1(IDWriteFontSet* This, [NativeTypeName("WCHAR[]")] char* familyName, DWRITE_FONT_WEIGHT fontWeight, DWRITE_FONT_STRETCH fontStretch, DWRITE_FONT_STYLE fontStyle, IDWriteFontSet** filteredSet);
+        public delegate int _GetMatchingFonts1(IDWriteFontSet* This, [NativeTypeName("WCHAR[]")] ushort* familyName, DWRITE_FONT_WEIGHT fontWeight, DWRITE_FONT_STRETCH fontStretch, DWRITE_FONT_STYLE fontStyle, IDWriteFontSet** filteredSet);
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
@@ -190,7 +190,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetPropertyValues1(DWRITE_FONT_PROPERTY_ID propertyID, [NativeTypeName("WCHAR[]")] char* preferredLocaleNames, IDWriteStringList** values)
+        public int GetPropertyValues1(DWRITE_FONT_PROPERTY_ID propertyID, [NativeTypeName("WCHAR[]")] ushort* preferredLocaleNames, IDWriteStringList** values)
         {
             fixed (IDWriteFontSet* This = &this)
             {
@@ -226,7 +226,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetMatchingFonts1([NativeTypeName("WCHAR[]")] char* familyName, DWRITE_FONT_WEIGHT fontWeight, DWRITE_FONT_STRETCH fontStretch, DWRITE_FONT_STYLE fontStyle, IDWriteFontSet** filteredSet)
+        public int GetMatchingFonts1([NativeTypeName("WCHAR[]")] ushort* familyName, DWRITE_FONT_WEIGHT fontWeight, DWRITE_FONT_STRETCH fontStretch, DWRITE_FONT_STYLE fontStyle, IDWriteFontSet** filteredSet)
         {
             fixed (IDWriteFontSet* This = &this)
             {

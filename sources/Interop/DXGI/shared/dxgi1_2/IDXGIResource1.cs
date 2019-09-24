@@ -67,7 +67,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateSharedHandle(IDXGIResource1* This, [Optional] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint dwAccess, [Optional, NativeTypeName("LPCWSTR")] char* lpName, [NativeTypeName("HANDLE")] IntPtr* pHandle);
+        public delegate int _CreateSharedHandle(IDXGIResource1* This, [Optional] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint dwAccess, [Optional, NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("HANDLE")] IntPtr* pHandle);
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
@@ -187,7 +187,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateSharedHandle([Optional] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint dwAccess, [Optional, NativeTypeName("LPCWSTR")] char* lpName, [NativeTypeName("HANDLE")] IntPtr* pHandle)
+        public int CreateSharedHandle([Optional] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint dwAccess, [Optional, NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("HANDLE")] IntPtr* pHandle)
         {
             fixed (IDXGIResource1* This = &this)
             {

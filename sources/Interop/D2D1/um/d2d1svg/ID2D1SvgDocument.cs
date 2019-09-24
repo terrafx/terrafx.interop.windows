@@ -51,7 +51,7 @@ namespace TerraFX.Interop
         /// <summary>Gets the SVG element with the specified ID. If the element cannot be found, the returned element will be null.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _FindElementById(ID2D1SvgDocument* This, [NativeTypeName("PCWSTR")] char* id, ID2D1SvgElement** svgElement);
+        public delegate int _FindElementById(ID2D1SvgDocument* This, [NativeTypeName("PCWSTR")] ushort* id, ID2D1SvgElement** svgElement);
 
         /// <summary>Serializes an element and its subtree to XML. The output XML is encoded as UTF-8.</summary>
         /// <param name="outputXmlStream">An output stream to contain the SVG XML subtree.</param>
@@ -72,7 +72,7 @@ namespace TerraFX.Interop
         /// <param name="id">The element id which acts as the paint server. This id is used if the paint type is D2D1_SVG_PAINT_TYPE_URI.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreatePaint(ID2D1SvgDocument* This, D2D1_SVG_PAINT_TYPE paintType, [Optional, NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA* color, [Optional, NativeTypeName("PCWSTR")] char* id, ID2D1SvgPaint** paint);
+        public delegate int _CreatePaint(ID2D1SvgDocument* This, D2D1_SVG_PAINT_TYPE paintType, [Optional, NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA* color, [Optional, NativeTypeName("PCWSTR")] ushort* id, ID2D1SvgPaint** paint);
 
         /// <summary>Creates a dash array object which can be used to set the 'stroke-dasharray' property.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
@@ -161,7 +161,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int FindElementById([NativeTypeName("PCWSTR")] char* id, ID2D1SvgElement** svgElement)
+        public int FindElementById([NativeTypeName("PCWSTR")] ushort* id, ID2D1SvgElement** svgElement)
         {
             fixed (ID2D1SvgDocument* This = &this)
             {
@@ -188,7 +188,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreatePaint(D2D1_SVG_PAINT_TYPE paintType, [Optional, NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA* color, [Optional, NativeTypeName("PCWSTR")] char* id, ID2D1SvgPaint** paint)
+        public int CreatePaint(D2D1_SVG_PAINT_TYPE paintType, [Optional, NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA* color, [Optional, NativeTypeName("PCWSTR")] ushort* id, ID2D1SvgPaint** paint)
         {
             fixed (ID2D1SvgDocument* This = &this)
             {

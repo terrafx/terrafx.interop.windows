@@ -13,6 +13,6 @@ namespace TerraFX.Interop
         public static extern int lstrlenA([NativeTypeName("LPCSTR")] byte* lpString);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "lstrlenW", ExactSpelling = true)]
-        public static extern int lstrlenW([NativeTypeName("LPCWSTR")] char* lpString);
+        public static extern int lstrlenW([NativeTypeName("LPCWSTR")] ushort* lpString);
     }
 }

@@ -449,14 +449,14 @@ namespace TerraFX.Interop
 
         [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "WICMapGuidToShortName", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WICMapGuidToShortName([NativeTypeName("REFGUID")] Guid* guid, [NativeTypeName("UINT")] uint cchName, [Optional, NativeTypeName("WCHAR[]")] char* wzName, [NativeTypeName("UINT")] uint* pcchActual);
+        public static extern int WICMapGuidToShortName([NativeTypeName("REFGUID")] Guid* guid, [NativeTypeName("UINT")] uint cchName, [Optional, NativeTypeName("WCHAR[]")] ushort* wzName, [NativeTypeName("UINT")] uint* pcchActual);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "WICMapShortNameToGuid", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WICMapShortNameToGuid([NativeTypeName("PCWSTR")] char* wzName, [NativeTypeName("GUID")] Guid* pguid);
+        public static extern int WICMapShortNameToGuid([NativeTypeName("PCWSTR")] ushort* wzName, [NativeTypeName("GUID")] Guid* pguid);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "WICMapSchemaToName", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WICMapSchemaToName([NativeTypeName("REFGUID")] Guid* guidMetadataFormat, [NativeTypeName("LPWSTR")] char* pwzSchema, [NativeTypeName("UINT")] uint cchName, [Optional, NativeTypeName("WCHAR[]")] char* wzName, [NativeTypeName("UINT")] uint* pcchActual);
+        public static extern int WICMapSchemaToName([NativeTypeName("REFGUID")] Guid* guidMetadataFormat, [NativeTypeName("LPWSTR")] ushort* pwzSchema, [NativeTypeName("UINT")] uint cchName, [Optional, NativeTypeName("WCHAR[]")] ushort* wzName, [NativeTypeName("UINT")] uint* pcchActual);
     }
 }

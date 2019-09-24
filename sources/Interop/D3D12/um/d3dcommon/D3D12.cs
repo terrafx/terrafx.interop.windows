@@ -22,13 +22,13 @@ namespace TerraFX.Interop
             return D3D_SET_OBJECT_NAME_N_A(pObject, (uint)lstrlenA(pName), pName);
         }
 
-        public static int D3D_SET_OBJECT_NAME_N_W(ID3D12Object* pObject, uint Chars, char* pName)
+        public static int D3D_SET_OBJECT_NAME_N_W(ID3D12Object* pObject, uint Chars, ushort* pName)
         {
             var guid = WKPDID_D3DDebugObjectNameW;
             return pObject->SetPrivateData(&guid, Chars * 2, pName);
         }
 
-        public static int D3D_SET_OBJECT_NAME_W(ID3D12Object* pObject, char* pName)
+        public static int D3D_SET_OBJECT_NAME_W(ID3D12Object* pObject, ushort* pName)
         {
             return D3D_SET_OBJECT_NAME_N_W(pObject, (uint)lstrlenW(pName), pName);
         }

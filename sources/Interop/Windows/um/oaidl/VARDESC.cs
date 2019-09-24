@@ -13,7 +13,7 @@ namespace TerraFX.Interop
         public int memid;
 
         [NativeTypeName("LPOLESTR")]
-        public char* lpstrSchema;
+        public ushort* lpstrSchema;
 
         private _Anonymous_e__Union Anonymous;
 

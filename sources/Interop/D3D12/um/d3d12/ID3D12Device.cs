@@ -39,7 +39,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetName(ID3D12Device* This, [NativeTypeName("LPCWSTR")] char* Name);
+        public delegate int _SetName(ID3D12Device* This, [NativeTypeName("LPCWSTR")] ushort* Name);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT")]
@@ -129,7 +129,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateSharedHandle(ID3D12Device* This, ID3D12DeviceChild* pObject, [Optional] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint Access, [Optional, NativeTypeName("LPCWSTR")] char* Name, [NativeTypeName("HANDLE")] IntPtr* pHandle);
+        public delegate int _CreateSharedHandle(ID3D12Device* This, ID3D12DeviceChild* pObject, [Optional] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint Access, [Optional, NativeTypeName("LPCWSTR")] ushort* Name, [NativeTypeName("HANDLE")] IntPtr* pHandle);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
@@ -137,7 +137,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _OpenSharedHandleByName(ID3D12Device* This, [NativeTypeName("LPCWSTR")] char* Name, [NativeTypeName("DWORD")] uint Access, [NativeTypeName("HANDLE")] IntPtr* pNTHandle);
+        public delegate int _OpenSharedHandleByName(ID3D12Device* This, [NativeTypeName("LPCWSTR")] ushort* Name, [NativeTypeName("DWORD")] uint Access, [NativeTypeName("HANDLE")] IntPtr* pNTHandle);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
@@ -232,7 +232,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetName([NativeTypeName("LPCWSTR")] char* Name)
+        public int SetName([NativeTypeName("LPCWSTR")] ushort* Name)
         {
             fixed (ID3D12Device* This = &this)
             {
@@ -449,7 +449,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateSharedHandle(ID3D12DeviceChild* pObject, [Optional] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint Access, [Optional, NativeTypeName("LPCWSTR")] char* Name, [NativeTypeName("HANDLE")] IntPtr* pHandle)
+        public int CreateSharedHandle(ID3D12DeviceChild* pObject, [Optional] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint Access, [Optional, NativeTypeName("LPCWSTR")] ushort* Name, [NativeTypeName("HANDLE")] IntPtr* pHandle)
         {
             fixed (ID3D12Device* This = &this)
             {
@@ -467,7 +467,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int OpenSharedHandleByName([NativeTypeName("LPCWSTR")] char* Name, [NativeTypeName("DWORD")] uint Access, [NativeTypeName("HANDLE")] IntPtr* pNTHandle)
+        public int OpenSharedHandleByName([NativeTypeName("LPCWSTR")] ushort* Name, [NativeTypeName("DWORD")] uint Access, [NativeTypeName("HANDLE")] IntPtr* pNTHandle)
         {
             fixed (ID3D12Device* This = &this)
             {

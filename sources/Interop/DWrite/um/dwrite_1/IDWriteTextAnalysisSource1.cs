@@ -34,7 +34,7 @@ namespace TerraFX.Interop
         /// <remarks> Although apps can implement sparse textual content that only maps part of the backing store, the app must map any text that is in the range passed to any analysis functions.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetTextAtPosition(IDWriteTextAnalysisSource1* This, [NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("WCHAR[]")] char** textString, [NativeTypeName("UINT32")] uint* textLength);
+        public delegate int _GetTextAtPosition(IDWriteTextAnalysisSource1* This, [NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("WCHAR[]")] ushort** textString, [NativeTypeName("UINT32")] uint* textLength);
 
         /// <summary>Get a block of text immediately preceding the specified position.</summary>
         /// <param name="textPosition">Position immediately after the last position of the chunk to obtain.</param>
@@ -44,7 +44,7 @@ namespace TerraFX.Interop
         /// <remarks> Although apps can implement sparse textual content that only maps part of the backing store, the app must map any text that is in the range passed to any analysis functions.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetTextBeforePosition(IDWriteTextAnalysisSource1* This, [NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("WCHAR[]")] char** textString, [NativeTypeName("UINT32")] uint* textLength);
+        public delegate int _GetTextBeforePosition(IDWriteTextAnalysisSource1* This, [NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("WCHAR[]")] ushort** textString, [NativeTypeName("UINT32")] uint* textLength);
 
         /// <summary>Get paragraph reading direction.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
@@ -57,7 +57,7 @@ namespace TerraFX.Interop
         /// <remarks> The localeName pointer must remain valid until the next call or until the analysis returns.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLocaleName(IDWriteTextAnalysisSource1* This, [NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint* textLength, [NativeTypeName("WCHAR[]")] char** localeName);
+        public delegate int _GetLocaleName(IDWriteTextAnalysisSource1* This, [NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint* textLength, [NativeTypeName("WCHAR[]")] ushort** localeName);
 
         /// <summary>Get number substitution on the range affected by it.</summary>
         /// <param name="textPosition">Position to get the number substitution of.</param>
@@ -106,7 +106,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetTextAtPosition([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("WCHAR[]")] char** textString, [NativeTypeName("UINT32")] uint* textLength)
+        public int GetTextAtPosition([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("WCHAR[]")] ushort** textString, [NativeTypeName("UINT32")] uint* textLength)
         {
             fixed (IDWriteTextAnalysisSource1* This = &this)
             {
@@ -115,7 +115,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetTextBeforePosition([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("WCHAR[]")] char** textString, [NativeTypeName("UINT32")] uint* textLength)
+        public int GetTextBeforePosition([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("WCHAR[]")] ushort** textString, [NativeTypeName("UINT32")] uint* textLength)
         {
             fixed (IDWriteTextAnalysisSource1* This = &this)
             {
@@ -132,7 +132,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetLocaleName([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint* textLength, [NativeTypeName("WCHAR[]")] char** localeName)
+        public int GetLocaleName([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint* textLength, [NativeTypeName("WCHAR[]")] ushort** localeName)
         {
             fixed (IDWriteTextAnalysisSource1* This = &this)
             {

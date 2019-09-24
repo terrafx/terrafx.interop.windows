@@ -63,7 +63,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code, or E_NOTIMPL if the loader does not implement this method.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateFontFileReferenceFromUrl(IDWriteRemoteFontFileLoader* This, IDWriteFactory* factory, [Optional, NativeTypeName("WCHAR[]")] char* baseUrl, [NativeTypeName("WCHAR[]")] char* fontFileUrl, IDWriteFontFile** fontFile);
+        public delegate int _CreateFontFileReferenceFromUrl(IDWriteRemoteFontFileLoader* This, IDWriteFactory* factory, [Optional, NativeTypeName("WCHAR[]")] ushort* baseUrl, [NativeTypeName("WCHAR[]")] ushort* fontFileUrl, IDWriteFontFile** fontFile);
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
@@ -120,7 +120,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateFontFileReferenceFromUrl(IDWriteFactory* factory, [Optional, NativeTypeName("WCHAR[]")] char* baseUrl, [NativeTypeName("WCHAR[]")] char* fontFileUrl, IDWriteFontFile** fontFile)
+        public int CreateFontFileReferenceFromUrl(IDWriteFactory* factory, [Optional, NativeTypeName("WCHAR[]")] ushort* baseUrl, [NativeTypeName("WCHAR[]")] ushort* fontFileUrl, IDWriteFontFile** fontFile)
         {
             fixed (IDWriteRemoteFontFileLoader* This = &this)
             {

@@ -10,7 +10,7 @@ namespace TerraFX.Interop
     public unsafe struct STATSTG
     {
         [NativeTypeName("LPOLESTR")]
-        public char* pwcsName;
+        public ushort* pwcsName;
 
         [NativeTypeName("DWORD")]
         public uint type;

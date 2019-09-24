@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Next(IEnumString* This, [NativeTypeName("ULONG")] uint celt, [NativeTypeName("LPOLESTR")] char** rgelt, [NativeTypeName("ULONG")] uint* pceltFetched = null);
+        public delegate int _Next(IEnumString* This, [NativeTypeName("ULONG")] uint celt, [NativeTypeName("LPOLESTR")] ushort** rgelt, [NativeTypeName("ULONG")] uint* pceltFetched = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
@@ -69,7 +69,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("LPOLESTR")] char** rgelt, [NativeTypeName("ULONG")] uint* pceltFetched = null)
+        public int Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("LPOLESTR")] ushort** rgelt, [NativeTypeName("ULONG")] uint* pceltFetched = null)
         {
             fixed (IEnumString* This = &this)
             {

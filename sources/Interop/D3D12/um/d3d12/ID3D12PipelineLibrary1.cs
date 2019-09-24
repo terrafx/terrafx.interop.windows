@@ -39,7 +39,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetName(ID3D12PipelineLibrary1* This, [NativeTypeName("LPCWSTR")] char* Name);
+        public delegate int _SetName(ID3D12PipelineLibrary1* This, [NativeTypeName("LPCWSTR")] ushort* Name);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
@@ -47,15 +47,15 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _StorePipeline(ID3D12PipelineLibrary1* This, [Optional, NativeTypeName("LPCWSTR")] char* pName, ID3D12PipelineState* pPipeline);
+        public delegate int _StorePipeline(ID3D12PipelineLibrary1* This, [Optional, NativeTypeName("LPCWSTR")] ushort* pName, ID3D12PipelineState* pPipeline);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _LoadGraphicsPipeline(ID3D12PipelineLibrary1* This, [NativeTypeName("LPCWSTR")] char* pName, D3D12_GRAPHICS_PIPELINE_STATE_DESC* pDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppPipelineState);
+        public delegate int _LoadGraphicsPipeline(ID3D12PipelineLibrary1* This, [NativeTypeName("LPCWSTR")] ushort* pName, D3D12_GRAPHICS_PIPELINE_STATE_DESC* pDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppPipelineState);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _LoadComputePipeline(ID3D12PipelineLibrary1* This, [NativeTypeName("LPCWSTR")] char* pName, D3D12_COMPUTE_PIPELINE_STATE_DESC* pDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppPipelineState);
+        public delegate int _LoadComputePipeline(ID3D12PipelineLibrary1* This, [NativeTypeName("LPCWSTR")] ushort* pName, D3D12_COMPUTE_PIPELINE_STATE_DESC* pDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppPipelineState);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("SIZE_T")]
@@ -67,7 +67,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _LoadPipeline(ID3D12PipelineLibrary1* This, [NativeTypeName("LPCWSTR")] char* pName, D3D12_PIPELINE_STATE_STREAM_DESC* pDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppPipelineState);
+        public delegate int _LoadPipeline(ID3D12PipelineLibrary1* This, [NativeTypeName("LPCWSTR")] ushort* pName, D3D12_PIPELINE_STATE_STREAM_DESC* pDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppPipelineState);
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
@@ -124,7 +124,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetName([NativeTypeName("LPCWSTR")] char* Name)
+        public int SetName([NativeTypeName("LPCWSTR")] ushort* Name)
         {
             fixed (ID3D12PipelineLibrary1* This = &this)
             {
@@ -142,7 +142,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int StorePipeline([Optional, NativeTypeName("LPCWSTR")] char* pName, ID3D12PipelineState* pPipeline)
+        public int StorePipeline([Optional, NativeTypeName("LPCWSTR")] ushort* pName, ID3D12PipelineState* pPipeline)
         {
             fixed (ID3D12PipelineLibrary1* This = &this)
             {
@@ -151,7 +151,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int LoadGraphicsPipeline([NativeTypeName("LPCWSTR")] char* pName, D3D12_GRAPHICS_PIPELINE_STATE_DESC* pDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppPipelineState)
+        public int LoadGraphicsPipeline([NativeTypeName("LPCWSTR")] ushort* pName, D3D12_GRAPHICS_PIPELINE_STATE_DESC* pDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppPipelineState)
         {
             fixed (ID3D12PipelineLibrary1* This = &this)
             {
@@ -160,7 +160,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int LoadComputePipeline([NativeTypeName("LPCWSTR")] char* pName, D3D12_COMPUTE_PIPELINE_STATE_DESC* pDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppPipelineState)
+        public int LoadComputePipeline([NativeTypeName("LPCWSTR")] ushort* pName, D3D12_COMPUTE_PIPELINE_STATE_DESC* pDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppPipelineState)
         {
             fixed (ID3D12PipelineLibrary1* This = &this)
             {
@@ -187,7 +187,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int LoadPipeline([NativeTypeName("LPCWSTR")] char* pName, D3D12_PIPELINE_STATE_STREAM_DESC* pDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppPipelineState)
+        public int LoadPipeline([NativeTypeName("LPCWSTR")] ushort* pName, D3D12_PIPELINE_STATE_STREAM_DESC* pDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppPipelineState)
         {
             fixed (ID3D12PipelineLibrary1* This = &this)
             {

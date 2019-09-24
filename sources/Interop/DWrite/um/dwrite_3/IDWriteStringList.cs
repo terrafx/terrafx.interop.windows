@@ -46,7 +46,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLocaleName(IDWriteStringList* This, [NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR[]")] char* localeName, [NativeTypeName("UINT32")] uint size);
+        public delegate int _GetLocaleName(IDWriteStringList* This, [NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR[]")] ushort* localeName, [NativeTypeName("UINT32")] uint size);
 
         /// <summary>Gets the length in characters (not including the null terminator) of the string with the specified index.</summary>
         /// <param name="listIndex">Zero-based index of the string.</param>
@@ -63,7 +63,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetString(IDWriteStringList* This, [NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR[]")] char* stringBuffer, [NativeTypeName("UINT32")] uint stringBufferSize);
+        public delegate int _GetString(IDWriteStringList* This, [NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR[]")] ushort* stringBuffer, [NativeTypeName("UINT32")] uint stringBufferSize);
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
@@ -111,7 +111,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetLocaleName([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR[]")] char* localeName, [NativeTypeName("UINT32")] uint size)
+        public int GetLocaleName([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR[]")] ushort* localeName, [NativeTypeName("UINT32")] uint size)
         {
             fixed (IDWriteStringList* This = &this)
             {
@@ -129,7 +129,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetString([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR[]")] char* stringBuffer, [NativeTypeName("UINT32")] uint stringBufferSize)
+        public int GetString([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR[]")] ushort* stringBuffer, [NativeTypeName("UINT32")] uint stringBufferSize)
         {
             fixed (IDWriteStringList* This = &this)
             {

@@ -150,7 +150,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFontFamilyName(IDWriteTextLayout2* This, [NativeTypeName("WCHAR[]")] char* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize);
+        public delegate int _GetFontFamilyName(IDWriteTextLayout2* This, [NativeTypeName("WCHAR[]")] ushort* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize);
 
         /// <summary>Get the font weight.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
@@ -180,7 +180,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLocaleName(IDWriteTextLayout2* This, [NativeTypeName("WCHAR[]")] char* localeName, [NativeTypeName("UINT32")] uint nameSize);
+        public delegate int _GetLocaleName(IDWriteTextLayout2* This, [NativeTypeName("WCHAR[]")] ushort* localeName, [NativeTypeName("UINT32")] uint nameSize);
 
         /// <summary>Set layout maximum width</summary>
         /// <param name="maxWidth">Layout maximum width</param>
@@ -210,7 +210,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetFontFamilyName(IDWriteTextLayout2* This, [NativeTypeName("WCHAR[]")] char* fontFamilyName, DWRITE_TEXT_RANGE textRange);
+        public delegate int _SetFontFamilyName(IDWriteTextLayout2* This, [NativeTypeName("WCHAR[]")] ushort* fontFamilyName, DWRITE_TEXT_RANGE textRange);
 
         /// <summary>Set font weight.</summary>
         /// <param name="fontWeight">Font weight</param>
@@ -292,7 +292,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetLocaleName(IDWriteTextLayout2* This, [NativeTypeName("WCHAR[]")] char* localeName, DWRITE_TEXT_RANGE textRange);
+        public delegate int _SetLocaleName(IDWriteTextLayout2* This, [NativeTypeName("WCHAR[]")] ushort* localeName, DWRITE_TEXT_RANGE textRange);
 
         /// <summary>Get layout maximum width</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
@@ -330,7 +330,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFontFamilyName1(IDWriteTextLayout2* This, [NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("WCHAR[]")] char* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize, DWRITE_TEXT_RANGE* textRange = null);
+        public delegate int _GetFontFamilyName1(IDWriteTextLayout2* This, [NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("WCHAR[]")] ushort* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize, DWRITE_TEXT_RANGE* textRange = null);
 
         /// <summary>Get the font weight where the current position is at.</summary>
         /// <param name="currentPosition">The current text position.</param>
@@ -430,7 +430,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLocaleName1(IDWriteTextLayout2* This, [NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("WCHAR[]")] char* localeName, [NativeTypeName("UINT32")] uint nameSize, DWRITE_TEXT_RANGE* textRange = null);
+        public delegate int _GetLocaleName1(IDWriteTextLayout2* This, [NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("WCHAR[]")] ushort* localeName, [NativeTypeName("UINT32")] uint nameSize, DWRITE_TEXT_RANGE* textRange = null);
 
         /// <summary>Initiate drawing of the text.</summary>
         /// <param name="clientDrawingContext">An application defined value included in rendering callbacks.</param>
@@ -799,7 +799,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFontFamilyName([NativeTypeName("WCHAR[]")] char* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize)
+        public int GetFontFamilyName([NativeTypeName("WCHAR[]")] ushort* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize)
         {
             fixed (IDWriteTextLayout2* This = &this)
             {
@@ -850,7 +850,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetLocaleName([NativeTypeName("WCHAR[]")] char* localeName, [NativeTypeName("UINT32")] uint nameSize)
+        public int GetLocaleName([NativeTypeName("WCHAR[]")] ushort* localeName, [NativeTypeName("UINT32")] uint nameSize)
         {
             fixed (IDWriteTextLayout2* This = &this)
             {
@@ -886,7 +886,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetFontFamilyName([NativeTypeName("WCHAR[]")] char* fontFamilyName, DWRITE_TEXT_RANGE textRange)
+        public int SetFontFamilyName([NativeTypeName("WCHAR[]")] ushort* fontFamilyName, DWRITE_TEXT_RANGE textRange)
         {
             fixed (IDWriteTextLayout2* This = &this)
             {
@@ -976,7 +976,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetLocaleName([NativeTypeName("WCHAR[]")] char* localeName, DWRITE_TEXT_RANGE textRange)
+        public int SetLocaleName([NativeTypeName("WCHAR[]")] ushort* localeName, DWRITE_TEXT_RANGE textRange)
         {
             fixed (IDWriteTextLayout2* This = &this)
             {
@@ -1021,7 +1021,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFontFamilyName1([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("WCHAR[]")] char* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize, DWRITE_TEXT_RANGE* textRange = null)
+        public int GetFontFamilyName1([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("WCHAR[]")] ushort* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize, DWRITE_TEXT_RANGE* textRange = null)
         {
             fixed (IDWriteTextLayout2* This = &this)
             {
@@ -1120,7 +1120,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetLocaleName1([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("WCHAR[]")] char* localeName, [NativeTypeName("UINT32")] uint nameSize, DWRITE_TEXT_RANGE* textRange = null)
+        public int GetLocaleName1([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("WCHAR[]")] ushort* localeName, [NativeTypeName("UINT32")] uint nameSize, DWRITE_TEXT_RANGE* textRange = null)
         {
             fixed (IDWriteTextLayout2* This = &this)
             {

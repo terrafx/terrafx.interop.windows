@@ -124,7 +124,7 @@ namespace TerraFX.Interop
         /// <summary>This globally registers the given effect. The effect can later be instantiated by using the registered class id. The effect registration is reference counted.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _RegisterEffectFromString(ID2D1Factory2* This, [NativeTypeName("REFCLSID")] Guid* classId, [NativeTypeName("PCWSTR")] char* propertyXml, [Optional, NativeTypeName("D2D1_PROPERTY_BINDING[]")] D2D1_PROPERTY_BINDING* bindings, [NativeTypeName("UINT32")] uint bindingsCount, PD2D1_EFFECT_FACTORY effectFactory);
+        public delegate int _RegisterEffectFromString(ID2D1Factory2* This, [NativeTypeName("REFCLSID")] Guid* classId, [NativeTypeName("PCWSTR")] ushort* propertyXml, [Optional, NativeTypeName("D2D1_PROPERTY_BINDING[]")] D2D1_PROPERTY_BINDING* bindings, [NativeTypeName("UINT32")] uint bindingsCount, PD2D1_EFFECT_FACTORY effectFactory);
 
         /// <summary>This unregisters the given effect by its class id, you need to call UnregisterEffect for every call to ID2D1Factory1::RegisterEffectFromStream and ID2D1Factory1::RegisterEffectFromString to completely unregister it.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
@@ -355,7 +355,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int RegisterEffectFromString([NativeTypeName("REFCLSID")] Guid* classId, [NativeTypeName("PCWSTR")] char* propertyXml, [Optional, NativeTypeName("D2D1_PROPERTY_BINDING[]")] D2D1_PROPERTY_BINDING* bindings, [NativeTypeName("UINT32")] uint bindingsCount, PD2D1_EFFECT_FACTORY effectFactory)
+        public int RegisterEffectFromString([NativeTypeName("REFCLSID")] Guid* classId, [NativeTypeName("PCWSTR")] ushort* propertyXml, [Optional, NativeTypeName("D2D1_PROPERTY_BINDING[]")] D2D1_PROPERTY_BINDING* bindings, [NativeTypeName("UINT32")] uint bindingsCount, PD2D1_EFFECT_FACTORY effectFactory)
         {
             fixed (ID2D1Factory2* This = &this)
             {

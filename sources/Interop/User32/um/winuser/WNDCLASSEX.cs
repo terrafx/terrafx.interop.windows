@@ -35,10 +35,10 @@ namespace TerraFX.Interop
         public IntPtr hbrBackground;
 
         [NativeTypeName("LPCWSTR")]
-        public char* lpszMenuName;
+        public ushort* lpszMenuName;
 
         [NativeTypeName("LPCWSTR")]
-        public char* lpszClassName;
+        public ushort* lpszClassName;
 
         [NativeTypeName("HICON")]
         public IntPtr hIconSm;

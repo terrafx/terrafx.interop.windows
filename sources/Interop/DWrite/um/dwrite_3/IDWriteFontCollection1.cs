@@ -45,7 +45,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code. If the specified family name does not exist, the return value is S_OK, but *index is UINT_MAX and *exists is FALSE.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _FindFamilyName(IDWriteFontCollection1* This, [NativeTypeName("WCHAR[]")] char* familyName, [NativeTypeName("UINT32")] uint* index, [NativeTypeName("BOOL")] int* exists);
+        public delegate int _FindFamilyName(IDWriteFontCollection1* This, [NativeTypeName("WCHAR[]")] ushort* familyName, [NativeTypeName("UINT32")] uint* index, [NativeTypeName("BOOL")] int* exists);
 
         /// <summary>Gets the font object that corresponds to the same physical font as the specified font face object. The specified physical font must belong to the font collection.</summary>
         /// <param name="fontFace">Font face object that specifies the physical font.</param>
@@ -116,7 +116,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int FindFamilyName([NativeTypeName("WCHAR[]")] char* familyName, [NativeTypeName("UINT32")] uint* index, [NativeTypeName("BOOL")] int* exists)
+        public int FindFamilyName([NativeTypeName("WCHAR[]")] ushort* familyName, [NativeTypeName("UINT32")] uint* index, [NativeTypeName("BOOL")] int* exists)
         {
             fixed (IDWriteFontCollection1* This = &this)
             {

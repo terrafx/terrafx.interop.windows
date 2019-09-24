@@ -146,7 +146,7 @@ namespace TerraFX.Samples.DirectX.D3D12
         {
             fixed (char* windowText = $"{_title}: {text}")
             {
-                SetWindowText(Win32Application.Hwnd, windowText);
+                SetWindowText(Win32Application.Hwnd, (ushort*)windowText);
             }
         }
 

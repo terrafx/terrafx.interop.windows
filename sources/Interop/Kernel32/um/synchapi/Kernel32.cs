@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     {
         [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateEventW", ExactSpelling = true)]
         [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr CreateEvent([Optional, NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpEventAttributes, [NativeTypeName("BOOL")] int bManualReset, [NativeTypeName("BOOL")] int bInitialState, [NativeTypeName("LPCWSTR")] char* lpName = null);
+        public static extern IntPtr CreateEvent([Optional, NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpEventAttributes, [NativeTypeName("BOOL")] int bManualReset, [NativeTypeName("BOOL")] int bInitialState, [NativeTypeName("LPCWSTR")] ushort* lpName = null);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "WaitForSingleObject", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]

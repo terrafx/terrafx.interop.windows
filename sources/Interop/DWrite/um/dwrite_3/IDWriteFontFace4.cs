@@ -391,7 +391,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _AreCharactersLocal(IDWriteFontFace4* This, [NativeTypeName("WCHAR[]")] char* characters, [NativeTypeName("UINT32")] uint characterCount, [NativeTypeName("BOOL")] int enqueueIfNotLocal, [NativeTypeName("BOOL")] int* isLocal);
+        public delegate int _AreCharactersLocal(IDWriteFontFace4* This, [NativeTypeName("WCHAR[]")] ushort* characters, [NativeTypeName("UINT32")] uint characterCount, [NativeTypeName("BOOL")] int enqueueIfNotLocal, [NativeTypeName("BOOL")] int* isLocal);
 
         /// <summary>Determines whether the specified glyphs are local.</summary>
         /// <param name="glyphIndices">Array of glyph indices.</param>
@@ -840,7 +840,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int AreCharactersLocal([NativeTypeName("WCHAR[]")] char* characters, [NativeTypeName("UINT32")] uint characterCount, [NativeTypeName("BOOL")] int enqueueIfNotLocal, [NativeTypeName("BOOL")] int* isLocal)
+        public int AreCharactersLocal([NativeTypeName("WCHAR[]")] ushort* characters, [NativeTypeName("UINT32")] uint characterCount, [NativeTypeName("BOOL")] int enqueueIfNotLocal, [NativeTypeName("BOOL")] int* isLocal)
         {
             fixed (IDWriteFontFace4* This = &this)
             {

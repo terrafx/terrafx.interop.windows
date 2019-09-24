@@ -52,7 +52,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFilePathFromKey(IDWriteLocalFontFileLoader* This, void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("WCHAR[]")] char* filePath, [NativeTypeName("UINT32")] uint filePathSize);
+        public delegate int _GetFilePathFromKey(IDWriteLocalFontFileLoader* This, void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("WCHAR[]")] ushort* filePath, [NativeTypeName("UINT32")] uint filePathSize);
 
         /// <summary>Obtains the last write time of the file from the font file reference key.</summary>
         /// <param name="fontFileReferenceKey">Font file reference key that uniquely identifies the local font file within the scope of the font loader being used.</param>
@@ -109,7 +109,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFilePathFromKey(void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("WCHAR[]")] char* filePath, [NativeTypeName("UINT32")] uint filePathSize)
+        public int GetFilePathFromKey(void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("WCHAR[]")] ushort* filePath, [NativeTypeName("UINT32")] uint filePathSize)
         {
             fixed (IDWriteLocalFontFileLoader* This = &this)
             {

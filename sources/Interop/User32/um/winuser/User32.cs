@@ -895,7 +895,7 @@ namespace TerraFX.Interop
 
         [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateWindowExW", ExactSpelling = true)]
         [return: NativeTypeName("HWND")]
-        public static extern IntPtr CreateWindowEx([NativeTypeName("DWORD")] uint dwExStyle, [Optional, NativeTypeName("LPCWSTR")] char* lpClassName, [Optional, NativeTypeName("LPCWSTR")] char* lpWindowName, [NativeTypeName("DWORD")] uint dwStyle, int X, int Y, int nWidth, int nHeight, [Optional, NativeTypeName("HWND")] IntPtr hWndParent, [Optional, NativeTypeName("HMENU")] IntPtr hMenu, [Optional, NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPVOID")] void* lpParam);
+        public static extern IntPtr CreateWindowEx([NativeTypeName("DWORD")] uint dwExStyle, [Optional, NativeTypeName("LPCWSTR")] ushort* lpClassName, [Optional, NativeTypeName("LPCWSTR")] ushort* lpWindowName, [NativeTypeName("DWORD")] uint dwStyle, int X, int Y, int nWidth, int nHeight, [Optional, NativeTypeName("HWND")] IntPtr hWndParent, [Optional, NativeTypeName("HMENU")] IntPtr hMenu, [Optional, NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPVOID")] void* lpParam);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "DefWindowProcW", ExactSpelling = true)]
         [return: NativeTypeName("LRESULT")]
@@ -919,10 +919,10 @@ namespace TerraFX.Interop
 
         [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetClassInfoExW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int GetClassInfoEx([Optional, NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCWSTR")] char* lpszClass, [NativeTypeName("LPWNDCLASSEX")] WNDCLASSEX* lpwcx);
+        public static extern int GetClassInfoEx([Optional, NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCWSTR")] ushort* lpszClass, [NativeTypeName("LPWNDCLASSEX")] WNDCLASSEX* lpwcx);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetClassNameW", ExactSpelling = true)]
-        public static extern int GetClassName([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("LPWSTR")] char* lpClassName, int nMaxCount);
+        public static extern int GetClassName([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("LPWSTR")] ushort* lpClassName, int nMaxCount);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetDesktopWindow", ExactSpelling = true)]
         [return: NativeTypeName("HWND")]
@@ -946,7 +946,7 @@ namespace TerraFX.Interop
 
         [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "LoadCursorW", ExactSpelling = true)]
         [return: NativeTypeName("HCURSOR")]
-        public static extern IntPtr LoadCursor([Optional, NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCWSTR")] char* lpCursorName);
+        public static extern IntPtr LoadCursor([Optional, NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCWSTR")] ushort* lpCursorName);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "PeekMessageW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -981,7 +981,7 @@ namespace TerraFX.Interop
 
         [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetWindowTextW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetWindowText([NativeTypeName("HWND")] IntPtr hWnd, [Optional, NativeTypeName("LPCWSTR")] char* lpString);
+        public static extern int SetWindowText([NativeTypeName("HWND")] IntPtr hWnd, [Optional, NativeTypeName("LPCWSTR")] ushort* lpString);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "ShowWindow", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -993,7 +993,7 @@ namespace TerraFX.Interop
 
         [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "UnregisterClassW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int UnregisterClass([NativeTypeName("LPCWSTR")] char* lpClassName, [NativeTypeName("HINSTANCE")] IntPtr hInstance = default);
+        public static extern int UnregisterClass([NativeTypeName("LPCWSTR")] ushort* lpClassName, [NativeTypeName("HINSTANCE")] IntPtr hInstance = default);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IntPtr GetWindowLongPtr(IntPtr hWnd, int nIndex)
