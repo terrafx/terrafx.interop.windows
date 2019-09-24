@@ -15,256 +15,122 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IWICImagingFactory* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICImagingFactory* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IWICImagingFactory* This
-        );
+        public delegate uint _AddRef(IWICImagingFactory* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IWICImagingFactory* This
-        );
+        public delegate uint _Release(IWICImagingFactory* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateDecoderFromFilename(
-            [In] IWICImagingFactory* This,
-            [In, NativeTypeName("LPCWSTR")] char* wzFilename,
-            [In, Optional, NativeTypeName("GUID")] Guid* pguidVendor,
-            [In, NativeTypeName("DWORD")] uint dwDesiredAccess,
-            [In] WICDecodeOptions metadataOptions,
-            [Out] IWICBitmapDecoder** ppIDecoder = null
-        );
+        public delegate int _CreateDecoderFromFilename(IWICImagingFactory* This, [NativeTypeName("LPCWSTR")] char* wzFilename, [Optional, NativeTypeName("GUID")] Guid* pguidVendor, [NativeTypeName("DWORD")] uint dwDesiredAccess, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateDecoderFromStream(
-            [In] IWICImagingFactory* This,
-            [In, Optional] IStream* pIStream,
-            [In, Optional, NativeTypeName("GUID")] Guid* pguidVendor,
-            [In] WICDecodeOptions metadataOptions,
-            [Out] IWICBitmapDecoder** ppIDecoder = null
-        );
+        public delegate int _CreateDecoderFromStream(IWICImagingFactory* This, [Optional] IStream* pIStream, [Optional, NativeTypeName("GUID")] Guid* pguidVendor, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateDecoderFromFileHandle(
-            [In] IWICImagingFactory* This,
-            [In, NativeTypeName("ULONG_PTR")] UIntPtr hFile,
-            [In, Optional, NativeTypeName("GUID")] Guid* pguidVendor,
-            [In] WICDecodeOptions metadataOptions,
-            [Out] IWICBitmapDecoder** ppIDecoder = null
-        );
+        public delegate int _CreateDecoderFromFileHandle(IWICImagingFactory* This, [NativeTypeName("ULONG_PTR")] UIntPtr hFile, [Optional, NativeTypeName("GUID")] Guid* pguidVendor, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateComponentInfo(
-            [In] IWICImagingFactory* This,
-            [In, NativeTypeName("REFCLSID")] Guid* clsidComponent,
-            [Out] IWICComponentInfo** ppIInfo = null
-        );
+        public delegate int _CreateComponentInfo(IWICImagingFactory* This, [NativeTypeName("REFCLSID")] Guid* clsidComponent, IWICComponentInfo** ppIInfo = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateDecoder(
-            [In] IWICImagingFactory* This,
-            [In, NativeTypeName("REFGUID")] Guid* guidContainerFormat,
-            [In, NativeTypeName("GUID")] Guid* pguidVendor = null,
-            [Out] IWICBitmapDecoder** ppIDecoder = null
-        );
+        public delegate int _CreateDecoder(IWICImagingFactory* This, [NativeTypeName("REFGUID")] Guid* guidContainerFormat, [NativeTypeName("GUID")] Guid* pguidVendor = null, IWICBitmapDecoder** ppIDecoder = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateEncoder(
-            [In] IWICImagingFactory* This,
-            [In, NativeTypeName("REFGUID")] Guid* guidContainerFormat,
-            [In, NativeTypeName("GUID")] Guid* pguidVendor = null,
-            [Out] IWICBitmapEncoder** ppIEncoder = null
-        );
+        public delegate int _CreateEncoder(IWICImagingFactory* This, [NativeTypeName("REFGUID")] Guid* guidContainerFormat, [NativeTypeName("GUID")] Guid* pguidVendor = null, IWICBitmapEncoder** ppIEncoder = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreatePalette(
-            [In] IWICImagingFactory* This,
-            [Out] IWICPalette** ppIPalette = null
-        );
+        public delegate int _CreatePalette(IWICImagingFactory* This, IWICPalette** ppIPalette = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateFormatConverter(
-            [In] IWICImagingFactory* This,
-            [Out] IWICFormatConverter** ppIFormatConverter = null
-        );
+        public delegate int _CreateFormatConverter(IWICImagingFactory* This, IWICFormatConverter** ppIFormatConverter = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateBitmapScaler(
-            [In] IWICImagingFactory* This,
-            [Out] IWICBitmapScaler** ppIBitmapScaler = null
-        );
+        public delegate int _CreateBitmapScaler(IWICImagingFactory* This, IWICBitmapScaler** ppIBitmapScaler = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateBitmapClipper(
-            [In] IWICImagingFactory* This,
-            [Out] IWICBitmapClipper** ppIBitmapClipper = null
-        );
+        public delegate int _CreateBitmapClipper(IWICImagingFactory* This, IWICBitmapClipper** ppIBitmapClipper = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateBitmapFlipRotator(
-            [In] IWICImagingFactory* This,
-            [Out] IWICBitmapFlipRotator** ppIBitmapFlipRotator = null
-        );
+        public delegate int _CreateBitmapFlipRotator(IWICImagingFactory* This, IWICBitmapFlipRotator** ppIBitmapFlipRotator = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateStream(
-            [In] IWICImagingFactory* This,
-            [Out] IWICStream** ppIWICStream = null
-        );
+        public delegate int _CreateStream(IWICImagingFactory* This, IWICStream** ppIWICStream = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateColorContext(
-            [In] IWICImagingFactory* This,
-            [Out] IWICColorContext** ppIWICColorContext = null
-        );
+        public delegate int _CreateColorContext(IWICImagingFactory* This, IWICColorContext** ppIWICColorContext = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateColorTransformer(
-            [In] IWICImagingFactory* This,
-            [Out] IWICColorTransform** ppIWICColorTransform = null
-        );
+        public delegate int _CreateColorTransformer(IWICImagingFactory* This, IWICColorTransform** ppIWICColorTransform = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateBitmap(
-            [In] IWICImagingFactory* This,
-            [In, NativeTypeName("UINT")] uint uiWidth,
-            [In, NativeTypeName("UINT")] uint uiHeight,
-            [In, NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat,
-            [In] WICBitmapCreateCacheOption option,
-            [Out] IWICBitmap** ppIBitmap = null
-        );
+        public delegate int _CreateBitmap(IWICImagingFactory* This, [NativeTypeName("UINT")] uint uiWidth, [NativeTypeName("UINT")] uint uiHeight, [NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat, WICBitmapCreateCacheOption option, IWICBitmap** ppIBitmap = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateBitmapFromSource(
-            [In] IWICImagingFactory* This,
-            [In, Optional] IWICBitmapSource* pIBitmapSource,
-            [In] WICBitmapCreateCacheOption option,
-            [Out] IWICBitmap** ppIBitmap = null
-        );
+        public delegate int _CreateBitmapFromSource(IWICImagingFactory* This, [Optional] IWICBitmapSource* pIBitmapSource, WICBitmapCreateCacheOption option, IWICBitmap** ppIBitmap = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateBitmapFromSourceRect(
-            [In] IWICImagingFactory* This,
-            [In, Optional] IWICBitmapSource* pIBitmapSource,
-            [In, NativeTypeName("UINT")] uint x,
-            [In, NativeTypeName("UINT")] uint y,
-            [In, NativeTypeName("UINT")] uint width,
-            [In, NativeTypeName("UINT")] uint height,
-            [Out] IWICBitmap** ppIBitmap = null
-        );
+        public delegate int _CreateBitmapFromSourceRect(IWICImagingFactory* This, [Optional] IWICBitmapSource* pIBitmapSource, [NativeTypeName("UINT")] uint x, [NativeTypeName("UINT")] uint y, [NativeTypeName("UINT")] uint width, [NativeTypeName("UINT")] uint height, IWICBitmap** ppIBitmap = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateBitmapFromMemory(
-            [In] IWICImagingFactory* This,
-            [In, NativeTypeName("UINT")] uint uiWidth,
-            [In, NativeTypeName("UINT")] uint uiHeight,
-            [In, NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat,
-            [In, NativeTypeName("UINT")] uint cbStride,
-            [In, NativeTypeName("UINT")] uint cbBufferSize,
-            [In, NativeTypeName("BYTE[]")] byte* pbBuffer,
-            [Out] IWICBitmap** ppIBitmap = null
-        );
+        public delegate int _CreateBitmapFromMemory(IWICImagingFactory* This, [NativeTypeName("UINT")] uint uiWidth, [NativeTypeName("UINT")] uint uiHeight, [NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat, [NativeTypeName("UINT")] uint cbStride, [NativeTypeName("UINT")] uint cbBufferSize, [NativeTypeName("BYTE[]")] byte* pbBuffer, IWICBitmap** ppIBitmap = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateBitmapFromHBITMAP(
-            [In] IWICImagingFactory* This,
-            [In, NativeTypeName("HBITMAP")] IntPtr hBitmap,
-            [In, Optional, NativeTypeName("HPALETTE")] IntPtr hPalette,
-            [In] WICBitmapAlphaChannelOption options,
-            [Out] IWICBitmap** ppIBitmap = null
-        );
+        public delegate int _CreateBitmapFromHBITMAP(IWICImagingFactory* This, [NativeTypeName("HBITMAP")] IntPtr hBitmap, [Optional, NativeTypeName("HPALETTE")] IntPtr hPalette, WICBitmapAlphaChannelOption options, IWICBitmap** ppIBitmap = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateBitmapFromHICON(
-            [In] IWICImagingFactory* This,
-            [In, NativeTypeName("HICON")] IntPtr hIcon,
-            [Out] IWICBitmap** ppIBitmap = null
-        );
+        public delegate int _CreateBitmapFromHICON(IWICImagingFactory* This, [NativeTypeName("HICON")] IntPtr hIcon, IWICBitmap** ppIBitmap = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateComponentEnumerator(
-            [In] IWICImagingFactory* This,
-            [In, NativeTypeName("DWORD")] uint componentTypes,
-            [In, NativeTypeName("DWORD")] uint options,
-            [Out] IEnumUnknown** ppIEnumUnknown = null
-        );
+        public delegate int _CreateComponentEnumerator(IWICImagingFactory* This, [NativeTypeName("DWORD")] uint componentTypes, [NativeTypeName("DWORD")] uint options, IEnumUnknown** ppIEnumUnknown = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateFastMetadataEncoderFromDecoder(
-            [In] IWICImagingFactory* This,
-            [In] IWICBitmapDecoder* pIDecoder = null,
-            [Out] IWICFastMetadataEncoder** ppIFastEncoder = null
-        );
+        public delegate int _CreateFastMetadataEncoderFromDecoder(IWICImagingFactory* This, IWICBitmapDecoder* pIDecoder = null, IWICFastMetadataEncoder** ppIFastEncoder = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateFastMetadataEncoderFromFrameDecode(
-            [In] IWICImagingFactory* This,
-            [In] IWICBitmapFrameDecode* pIFrameDecoder = null,
-            [Out] IWICFastMetadataEncoder** ppIFastEncoder = null
-        );
+        public delegate int _CreateFastMetadataEncoderFromFrameDecode(IWICImagingFactory* This, IWICBitmapFrameDecode* pIFrameDecoder = null, IWICFastMetadataEncoder** ppIFastEncoder = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateQueryWriter(
-            [In] IWICImagingFactory* This,
-            [In, NativeTypeName("REFGUID")] Guid* guidMetadataFormat,
-            [In, NativeTypeName("GUID")] Guid* pguidVendor = null,
-            [Out] IWICMetadataQueryWriter** ppIQueryWriter = null
-        );
+        public delegate int _CreateQueryWriter(IWICImagingFactory* This, [NativeTypeName("REFGUID")] Guid* guidMetadataFormat, [NativeTypeName("GUID")] Guid* pguidVendor = null, IWICMetadataQueryWriter** ppIQueryWriter = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateQueryWriterFromReader(
-            [In] IWICImagingFactory* This,
-            [In] IWICMetadataQueryReader* pIQueryReader = null,
-            [In, NativeTypeName("GUID")] Guid* pguidVendor = null,
-            [Out] IWICMetadataQueryWriter** ppIQueryWriter = null
-        );
+        public delegate int _CreateQueryWriterFromReader(IWICImagingFactory* This, IWICMetadataQueryReader* pIQueryReader = null, [NativeTypeName("GUID")] Guid* pguidVendor = null, IWICMetadataQueryWriter** ppIQueryWriter = null);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICImagingFactory* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -273,9 +139,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICImagingFactory* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -284,447 +148,232 @@ namespace TerraFX.Interop
         {
             fixed (IWICImagingFactory* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateDecoderFromFilename(
-            [In, NativeTypeName("LPCWSTR")] char* wzFilename,
-            [In, Optional, NativeTypeName("GUID")] Guid* pguidVendor,
-            [In, NativeTypeName("DWORD")] uint dwDesiredAccess,
-            [In] WICDecodeOptions metadataOptions,
-            [Out] IWICBitmapDecoder** ppIDecoder = null
-        )
+        public int CreateDecoderFromFilename([NativeTypeName("LPCWSTR")] char* wzFilename, [Optional, NativeTypeName("GUID")] Guid* pguidVendor, [NativeTypeName("DWORD")] uint dwDesiredAccess, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder = null)
         {
             fixed (IWICImagingFactory* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateDecoderFromFilename>(lpVtbl->CreateDecoderFromFilename)(
-                    This,
-                    wzFilename,
-                    pguidVendor,
-                    dwDesiredAccess,
-                    metadataOptions,
-                    ppIDecoder
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateDecoderFromFilename>(lpVtbl->CreateDecoderFromFilename)(This, wzFilename, pguidVendor, dwDesiredAccess, metadataOptions, ppIDecoder);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateDecoderFromStream(
-            [In, Optional] IStream* pIStream,
-            [In, Optional, NativeTypeName("GUID")] Guid* pguidVendor,
-            [In] WICDecodeOptions metadataOptions,
-            [Out] IWICBitmapDecoder** ppIDecoder = null
-        )
+        public int CreateDecoderFromStream([Optional] IStream* pIStream, [Optional, NativeTypeName("GUID")] Guid* pguidVendor, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder = null)
         {
             fixed (IWICImagingFactory* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateDecoderFromStream>(lpVtbl->CreateDecoderFromStream)(
-                    This,
-                    pIStream,
-                    pguidVendor,
-                    metadataOptions,
-                    ppIDecoder
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateDecoderFromStream>(lpVtbl->CreateDecoderFromStream)(This, pIStream, pguidVendor, metadataOptions, ppIDecoder);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateDecoderFromFileHandle(
-            [In, NativeTypeName("ULONG_PTR")] UIntPtr hFile,
-            [In, Optional, NativeTypeName("GUID")] Guid* pguidVendor,
-            [In] WICDecodeOptions metadataOptions,
-            [Out] IWICBitmapDecoder** ppIDecoder = null
-        )
+        public int CreateDecoderFromFileHandle([NativeTypeName("ULONG_PTR")] UIntPtr hFile, [Optional, NativeTypeName("GUID")] Guid* pguidVendor, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder = null)
         {
             fixed (IWICImagingFactory* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateDecoderFromFileHandle>(lpVtbl->CreateDecoderFromFileHandle)(
-                    This,
-                    hFile,
-                    pguidVendor,
-                    metadataOptions,
-                    ppIDecoder
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateDecoderFromFileHandle>(lpVtbl->CreateDecoderFromFileHandle)(This, hFile, pguidVendor, metadataOptions, ppIDecoder);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateComponentInfo(
-            [In, NativeTypeName("REFCLSID")] Guid* clsidComponent,
-            [Out] IWICComponentInfo** ppIInfo = null
-        )
+        public int CreateComponentInfo([NativeTypeName("REFCLSID")] Guid* clsidComponent, IWICComponentInfo** ppIInfo = null)
         {
             fixed (IWICImagingFactory* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateComponentInfo>(lpVtbl->CreateComponentInfo)(
-                    This,
-                    clsidComponent,
-                    ppIInfo
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateComponentInfo>(lpVtbl->CreateComponentInfo)(This, clsidComponent, ppIInfo);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateDecoder(
-            [In, NativeTypeName("REFGUID")] Guid* guidContainerFormat,
-            [In, NativeTypeName("GUID")] Guid* pguidVendor = null,
-            [Out] IWICBitmapDecoder** ppIDecoder = null
-        )
+        public int CreateDecoder([NativeTypeName("REFGUID")] Guid* guidContainerFormat, [NativeTypeName("GUID")] Guid* pguidVendor = null, IWICBitmapDecoder** ppIDecoder = null)
         {
             fixed (IWICImagingFactory* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateDecoder>(lpVtbl->CreateDecoder)(
-                    This,
-                    guidContainerFormat,
-                    pguidVendor,
-                    ppIDecoder
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateDecoder>(lpVtbl->CreateDecoder)(This, guidContainerFormat, pguidVendor, ppIDecoder);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateEncoder(
-            [In, NativeTypeName("REFGUID")] Guid* guidContainerFormat,
-            [In, NativeTypeName("GUID")] Guid* pguidVendor = null,
-            [Out] IWICBitmapEncoder** ppIEncoder = null
-        )
+        public int CreateEncoder([NativeTypeName("REFGUID")] Guid* guidContainerFormat, [NativeTypeName("GUID")] Guid* pguidVendor = null, IWICBitmapEncoder** ppIEncoder = null)
         {
             fixed (IWICImagingFactory* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateEncoder>(lpVtbl->CreateEncoder)(
-                    This,
-                    guidContainerFormat,
-                    pguidVendor,
-                    ppIEncoder
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateEncoder>(lpVtbl->CreateEncoder)(This, guidContainerFormat, pguidVendor, ppIEncoder);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreatePalette(
-            [Out] IWICPalette** ppIPalette = null
-        )
+        public int CreatePalette(IWICPalette** ppIPalette = null)
         {
             fixed (IWICImagingFactory* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreatePalette>(lpVtbl->CreatePalette)(
-                    This,
-                    ppIPalette
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreatePalette>(lpVtbl->CreatePalette)(This, ppIPalette);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateFormatConverter(
-            [Out] IWICFormatConverter** ppIFormatConverter = null
-        )
+        public int CreateFormatConverter(IWICFormatConverter** ppIFormatConverter = null)
         {
             fixed (IWICImagingFactory* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateFormatConverter>(lpVtbl->CreateFormatConverter)(
-                    This,
-                    ppIFormatConverter
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateFormatConverter>(lpVtbl->CreateFormatConverter)(This, ppIFormatConverter);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateBitmapScaler(
-            [Out] IWICBitmapScaler** ppIBitmapScaler = null
-        )
+        public int CreateBitmapScaler(IWICBitmapScaler** ppIBitmapScaler = null)
         {
             fixed (IWICImagingFactory* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapScaler>(lpVtbl->CreateBitmapScaler)(
-                    This,
-                    ppIBitmapScaler
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapScaler>(lpVtbl->CreateBitmapScaler)(This, ppIBitmapScaler);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateBitmapClipper(
-            [Out] IWICBitmapClipper** ppIBitmapClipper = null
-        )
+        public int CreateBitmapClipper(IWICBitmapClipper** ppIBitmapClipper = null)
         {
             fixed (IWICImagingFactory* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapClipper>(lpVtbl->CreateBitmapClipper)(
-                    This,
-                    ppIBitmapClipper
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapClipper>(lpVtbl->CreateBitmapClipper)(This, ppIBitmapClipper);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateBitmapFlipRotator(
-            [Out] IWICBitmapFlipRotator** ppIBitmapFlipRotator = null
-        )
+        public int CreateBitmapFlipRotator(IWICBitmapFlipRotator** ppIBitmapFlipRotator = null)
         {
             fixed (IWICImagingFactory* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapFlipRotator>(lpVtbl->CreateBitmapFlipRotator)(
-                    This,
-                    ppIBitmapFlipRotator
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapFlipRotator>(lpVtbl->CreateBitmapFlipRotator)(This, ppIBitmapFlipRotator);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateStream(
-            [Out] IWICStream** ppIWICStream = null
-        )
+        public int CreateStream(IWICStream** ppIWICStream = null)
         {
             fixed (IWICImagingFactory* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateStream>(lpVtbl->CreateStream)(
-                    This,
-                    ppIWICStream
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateStream>(lpVtbl->CreateStream)(This, ppIWICStream);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateColorContext(
-            [Out] IWICColorContext** ppIWICColorContext = null
-        )
+        public int CreateColorContext(IWICColorContext** ppIWICColorContext = null)
         {
             fixed (IWICImagingFactory* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateColorContext>(lpVtbl->CreateColorContext)(
-                    This,
-                    ppIWICColorContext
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateColorContext>(lpVtbl->CreateColorContext)(This, ppIWICColorContext);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateColorTransformer(
-            [Out] IWICColorTransform** ppIWICColorTransform = null
-        )
+        public int CreateColorTransformer(IWICColorTransform** ppIWICColorTransform = null)
         {
             fixed (IWICImagingFactory* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateColorTransformer>(lpVtbl->CreateColorTransformer)(
-                    This,
-                    ppIWICColorTransform
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateColorTransformer>(lpVtbl->CreateColorTransformer)(This, ppIWICColorTransform);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateBitmap(
-            [In, NativeTypeName("UINT")] uint uiWidth,
-            [In, NativeTypeName("UINT")] uint uiHeight,
-            [In, NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat,
-            [In] WICBitmapCreateCacheOption option,
-            [Out] IWICBitmap** ppIBitmap = null
-        )
+        public int CreateBitmap([NativeTypeName("UINT")] uint uiWidth, [NativeTypeName("UINT")] uint uiHeight, [NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat, WICBitmapCreateCacheOption option, IWICBitmap** ppIBitmap = null)
         {
             fixed (IWICImagingFactory* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateBitmap>(lpVtbl->CreateBitmap)(
-                    This,
-                    uiWidth,
-                    uiHeight,
-                    pixelFormat,
-                    option,
-                    ppIBitmap
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateBitmap>(lpVtbl->CreateBitmap)(This, uiWidth, uiHeight, pixelFormat, option, ppIBitmap);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateBitmapFromSource(
-            [In, Optional] IWICBitmapSource* pIBitmapSource,
-            [In] WICBitmapCreateCacheOption option,
-            [Out] IWICBitmap** ppIBitmap = null
-        )
+        public int CreateBitmapFromSource([Optional] IWICBitmapSource* pIBitmapSource, WICBitmapCreateCacheOption option, IWICBitmap** ppIBitmap = null)
         {
             fixed (IWICImagingFactory* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapFromSource>(lpVtbl->CreateBitmapFromSource)(
-                    This,
-                    pIBitmapSource,
-                    option,
-                    ppIBitmap
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapFromSource>(lpVtbl->CreateBitmapFromSource)(This, pIBitmapSource, option, ppIBitmap);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateBitmapFromSourceRect(
-            [In, Optional] IWICBitmapSource* pIBitmapSource,
-            [In, NativeTypeName("UINT")] uint x,
-            [In, NativeTypeName("UINT")] uint y,
-            [In, NativeTypeName("UINT")] uint width,
-            [In, NativeTypeName("UINT")] uint height,
-            [Out] IWICBitmap** ppIBitmap = null
-        )
+        public int CreateBitmapFromSourceRect([Optional] IWICBitmapSource* pIBitmapSource, [NativeTypeName("UINT")] uint x, [NativeTypeName("UINT")] uint y, [NativeTypeName("UINT")] uint width, [NativeTypeName("UINT")] uint height, IWICBitmap** ppIBitmap = null)
         {
             fixed (IWICImagingFactory* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapFromSourceRect>(lpVtbl->CreateBitmapFromSourceRect)(
-                    This,
-                    pIBitmapSource,
-                    x,
-                    y,
-                    width,
-                    height,
-                    ppIBitmap
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapFromSourceRect>(lpVtbl->CreateBitmapFromSourceRect)(This, pIBitmapSource, x, y, width, height, ppIBitmap);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateBitmapFromMemory(
-            [In, NativeTypeName("UINT")] uint uiWidth,
-            [In, NativeTypeName("UINT")] uint uiHeight,
-            [In, NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat,
-            [In, NativeTypeName("UINT")] uint cbStride,
-            [In, NativeTypeName("UINT")] uint cbBufferSize,
-            [In, NativeTypeName("BYTE[]")] byte* pbBuffer,
-            [Out] IWICBitmap** ppIBitmap = null
-        )
+        public int CreateBitmapFromMemory([NativeTypeName("UINT")] uint uiWidth, [NativeTypeName("UINT")] uint uiHeight, [NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat, [NativeTypeName("UINT")] uint cbStride, [NativeTypeName("UINT")] uint cbBufferSize, [NativeTypeName("BYTE[]")] byte* pbBuffer, IWICBitmap** ppIBitmap = null)
         {
             fixed (IWICImagingFactory* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapFromMemory>(lpVtbl->CreateBitmapFromMemory)(
-                    This,
-                    uiWidth,
-                    uiHeight,
-                    pixelFormat,
-                    cbStride,
-                    cbBufferSize,
-                    pbBuffer,
-                    ppIBitmap
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapFromMemory>(lpVtbl->CreateBitmapFromMemory)(This, uiWidth, uiHeight, pixelFormat, cbStride, cbBufferSize, pbBuffer, ppIBitmap);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateBitmapFromHBITMAP(
-            [In, NativeTypeName("HBITMAP")] IntPtr hBitmap,
-            [In, Optional, NativeTypeName("HPALETTE")] IntPtr hPalette,
-            [In] WICBitmapAlphaChannelOption options,
-            [Out] IWICBitmap** ppIBitmap = null
-        )
+        public int CreateBitmapFromHBITMAP([NativeTypeName("HBITMAP")] IntPtr hBitmap, [Optional, NativeTypeName("HPALETTE")] IntPtr hPalette, WICBitmapAlphaChannelOption options, IWICBitmap** ppIBitmap = null)
         {
             fixed (IWICImagingFactory* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapFromHBITMAP>(lpVtbl->CreateBitmapFromHBITMAP)(
-                    This,
-                    hBitmap,
-                    hPalette,
-                    options,
-                    ppIBitmap
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapFromHBITMAP>(lpVtbl->CreateBitmapFromHBITMAP)(This, hBitmap, hPalette, options, ppIBitmap);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateBitmapFromHICON(
-            [In, NativeTypeName("HICON")] IntPtr hIcon,
-            [Out] IWICBitmap** ppIBitmap = null
-        )
+        public int CreateBitmapFromHICON([NativeTypeName("HICON")] IntPtr hIcon, IWICBitmap** ppIBitmap = null)
         {
             fixed (IWICImagingFactory* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapFromHICON>(lpVtbl->CreateBitmapFromHICON)(
-                    This,
-                    hIcon,
-                    ppIBitmap
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateBitmapFromHICON>(lpVtbl->CreateBitmapFromHICON)(This, hIcon, ppIBitmap);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateComponentEnumerator(
-            [In, NativeTypeName("DWORD")] uint componentTypes,
-            [In, NativeTypeName("DWORD")] uint options,
-            [Out] IEnumUnknown** ppIEnumUnknown = null
-        )
+        public int CreateComponentEnumerator([NativeTypeName("DWORD")] uint componentTypes, [NativeTypeName("DWORD")] uint options, IEnumUnknown** ppIEnumUnknown = null)
         {
             fixed (IWICImagingFactory* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateComponentEnumerator>(lpVtbl->CreateComponentEnumerator)(
-                    This,
-                    componentTypes,
-                    options,
-                    ppIEnumUnknown
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateComponentEnumerator>(lpVtbl->CreateComponentEnumerator)(This, componentTypes, options, ppIEnumUnknown);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateFastMetadataEncoderFromDecoder(
-            [In] IWICBitmapDecoder* pIDecoder = null,
-            [Out] IWICFastMetadataEncoder** ppIFastEncoder = null
-        )
+        public int CreateFastMetadataEncoderFromDecoder(IWICBitmapDecoder* pIDecoder = null, IWICFastMetadataEncoder** ppIFastEncoder = null)
         {
             fixed (IWICImagingFactory* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateFastMetadataEncoderFromDecoder>(lpVtbl->CreateFastMetadataEncoderFromDecoder)(
-                    This,
-                    pIDecoder,
-                    ppIFastEncoder
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateFastMetadataEncoderFromDecoder>(lpVtbl->CreateFastMetadataEncoderFromDecoder)(This, pIDecoder, ppIFastEncoder);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateFastMetadataEncoderFromFrameDecode(
-            [In] IWICBitmapFrameDecode* pIFrameDecoder = null,
-            [Out] IWICFastMetadataEncoder** ppIFastEncoder = null
-        )
+        public int CreateFastMetadataEncoderFromFrameDecode(IWICBitmapFrameDecode* pIFrameDecoder = null, IWICFastMetadataEncoder** ppIFastEncoder = null)
         {
             fixed (IWICImagingFactory* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateFastMetadataEncoderFromFrameDecode>(lpVtbl->CreateFastMetadataEncoderFromFrameDecode)(
-                    This,
-                    pIFrameDecoder,
-                    ppIFastEncoder
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateFastMetadataEncoderFromFrameDecode>(lpVtbl->CreateFastMetadataEncoderFromFrameDecode)(This, pIFrameDecoder, ppIFastEncoder);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateQueryWriter(
-            [In, NativeTypeName("REFGUID")] Guid* guidMetadataFormat,
-            [In, NativeTypeName("GUID")] Guid* pguidVendor = null,
-            [Out] IWICMetadataQueryWriter** ppIQueryWriter = null
-        )
+        public int CreateQueryWriter([NativeTypeName("REFGUID")] Guid* guidMetadataFormat, [NativeTypeName("GUID")] Guid* pguidVendor = null, IWICMetadataQueryWriter** ppIQueryWriter = null)
         {
             fixed (IWICImagingFactory* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateQueryWriter>(lpVtbl->CreateQueryWriter)(
-                    This,
-                    guidMetadataFormat,
-                    pguidVendor,
-                    ppIQueryWriter
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateQueryWriter>(lpVtbl->CreateQueryWriter)(This, guidMetadataFormat, pguidVendor, ppIQueryWriter);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateQueryWriterFromReader(
-            [In] IWICMetadataQueryReader* pIQueryReader = null,
-            [In, NativeTypeName("GUID")] Guid* pguidVendor = null,
-            [Out] IWICMetadataQueryWriter** ppIQueryWriter = null
-        )
+        public int CreateQueryWriterFromReader(IWICMetadataQueryReader* pIQueryReader = null, [NativeTypeName("GUID")] Guid* pguidVendor = null, IWICMetadataQueryWriter** ppIQueryWriter = null)
         {
             fixed (IWICImagingFactory* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateQueryWriterFromReader>(lpVtbl->CreateQueryWriterFromReader)(
-                    This,
-                    pIQueryReader,
-                    pguidVendor,
-                    ppIQueryWriter
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateQueryWriterFromReader>(lpVtbl->CreateQueryWriterFromReader)(This, pIQueryReader, pguidVendor, ppIQueryWriter);
             }
         }
 

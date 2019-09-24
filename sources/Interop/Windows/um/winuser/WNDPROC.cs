@@ -10,10 +10,5 @@ namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.Winapi)]
     [return: NativeTypeName("LRESULT")]
-    public unsafe delegate IntPtr WNDPROC(
-        [In, NativeTypeName("HWND")] IntPtr hWnd,
-        [In, NativeTypeName("UINT")] uint Msg,
-        [In, NativeTypeName("WPARAM")] UIntPtr wParam,
-        [In, NativeTypeName("LPARAM")] IntPtr lParam
-    );
+    public unsafe delegate IntPtr WNDPROC([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] UIntPtr wParam, [NativeTypeName("LPARAM")] IntPtr lParam);
 }

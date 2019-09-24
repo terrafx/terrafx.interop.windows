@@ -16,23 +16,15 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IDWriteBitmapRenderTarget* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDWriteBitmapRenderTarget* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IDWriteBitmapRenderTarget* This
-        );
+        public delegate uint _AddRef(IDWriteBitmapRenderTarget* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IDWriteBitmapRenderTarget* This
-        );
+        public delegate uint _Release(IDWriteBitmapRenderTarget* This);
 
         /// <summary>Draws a run of glyphs to the bitmap.</summary>
         /// <param name="baselineOriginX">Horizontal position of the baseline origin, in DIPs, relative to the upper-left corner of the DIB.</param>
@@ -45,73 +37,48 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _DrawGlyphRun(
-            [In] IDWriteBitmapRenderTarget* This,
-            [In, NativeTypeName("FLOAT")] float baselineOriginX,
-            [In, NativeTypeName("FLOAT")] float baselineOriginY,
-            [In] DWRITE_MEASURING_MODE measuringMode,
-            [In] DWRITE_GLYPH_RUN* glyphRun,
-            [In] IDWriteRenderingParams* renderingParams,
-            [In, NativeTypeName("COLORREF")] uint textColor,
-            [Out] RECT* blackBoxRect = null
-        );
+        public delegate int _DrawGlyphRun(IDWriteBitmapRenderTarget* This, [NativeTypeName("FLOAT")] float baselineOriginX, [NativeTypeName("FLOAT")] float baselineOriginY, DWRITE_MEASURING_MODE measuringMode, DWRITE_GLYPH_RUN* glyphRun, IDWriteRenderingParams* renderingParams, [NativeTypeName("COLORREF")] uint textColor, RECT* blackBoxRect = null);
 
         /// <summary>Gets a handle to the memory device context.</summary>
         /// <returns>Returns the device context handle.</returns>
         /// <remarks> An application can use the device context to draw using GDI functions. An application can obtain the bitmap handle (HBITMAP) by calling GetCurrentObject. An application that wants information about the underlying bitmap, including a pointer to the pixel data, can call GetObject to fill in a DIBSECTION public structure. The bitmap is always a 32-bit top-down DIB.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HDC")]
-        public delegate IntPtr _GetMemoryDC(
-            [In] IDWriteBitmapRenderTarget* This
-        );
+        public delegate IntPtr _GetMemoryDC(IDWriteBitmapRenderTarget* This);
 
         /// <summary>Gets the number of bitmap pixels per DIP. A DIP (device-independent pixel) is 1/96 inch so this value is the number if pixels per inch divided by 96.</summary>
         /// <returns>Returns the number of bitmap pixels per DIP.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public delegate float _GetPixelsPerDip(
-            [In] IDWriteBitmapRenderTarget* This
-        );
+        public delegate float _GetPixelsPerDip(IDWriteBitmapRenderTarget* This);
 
         /// <summary>Sets the number of bitmap pixels per DIP. A DIP (device-independent pixel) is 1/96 inch so this value is the number if pixels per inch divided by 96.</summary>
         /// <param name="pixelsPerDip">Specifies the number of pixels per DIP.</param>
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPixelsPerDip(
-            [In] IDWriteBitmapRenderTarget* This,
-            [In, NativeTypeName("FLOAT")] float pixelsPerDip
-        );
+        public delegate int _SetPixelsPerDip(IDWriteBitmapRenderTarget* This, [NativeTypeName("FLOAT")] float pixelsPerDip);
 
         /// <summary>Gets the transform that maps abstract coordinate to DIPs. By default this is the identity transform. Note that this is unrelated to the world transform of the underlying device context.</summary>
         /// <param name="transform">Receives the transform.</param>
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetCurrentTransform(
-            [In] IDWriteBitmapRenderTarget* This,
-            [Out] DWRITE_MATRIX* transform
-        );
+        public delegate int _GetCurrentTransform(IDWriteBitmapRenderTarget* This, DWRITE_MATRIX* transform);
 
         /// <summary>Sets the transform that maps abstract coordinate to DIPs. This does not affect the world transform of the underlying device context.</summary>
         /// <param name="transform">Specifies the new transform. This parameter can be NULL, in which case the identity transform is implied.</param>
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetCurrentTransform(
-            [In] IDWriteBitmapRenderTarget* This,
-            [In] DWRITE_MATRIX* transform = null
-        );
+        public delegate int _SetCurrentTransform(IDWriteBitmapRenderTarget* This, DWRITE_MATRIX* transform = null);
 
         /// <summary>Gets the dimensions of the bitmap.</summary>
         /// <param name="size">Receives the size of the bitmap in pixels.</param>
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetSize(
-            [In] IDWriteBitmapRenderTarget* This,
-            [Out] SIZE* size
-        );
+        public delegate int _GetSize(IDWriteBitmapRenderTarget* This, SIZE* size);
 
         /// <summary>Resizes the bitmap.</summary>
         /// <param name="width">New bitmap width, in pixels.</param>
@@ -119,25 +86,14 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Resize(
-            [In] IDWriteBitmapRenderTarget* This,
-            [In, NativeTypeName("UINT32")] uint width,
-            [In, NativeTypeName("UINT32")] uint height
-        );
+        public delegate int _Resize(IDWriteBitmapRenderTarget* This, [NativeTypeName("UINT32")] uint width, [NativeTypeName("UINT32")] uint height);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDWriteBitmapRenderTarget* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -146,9 +102,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteBitmapRenderTarget* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -157,35 +111,16 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteBitmapRenderTarget* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int DrawGlyphRun(
-            [In, NativeTypeName("FLOAT")] float baselineOriginX,
-            [In, NativeTypeName("FLOAT")] float baselineOriginY,
-            [In] DWRITE_MEASURING_MODE measuringMode,
-            [In] DWRITE_GLYPH_RUN* glyphRun,
-            [In] IDWriteRenderingParams* renderingParams,
-            [In, NativeTypeName("COLORREF")] uint textColor,
-            [Out] RECT* blackBoxRect = null
-        )
+        public int DrawGlyphRun([NativeTypeName("FLOAT")] float baselineOriginX, [NativeTypeName("FLOAT")] float baselineOriginY, DWRITE_MEASURING_MODE measuringMode, DWRITE_GLYPH_RUN* glyphRun, IDWriteRenderingParams* renderingParams, [NativeTypeName("COLORREF")] uint textColor, RECT* blackBoxRect = null)
         {
             fixed (IDWriteBitmapRenderTarget* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_DrawGlyphRun>(lpVtbl->DrawGlyphRun)(
-                    This,
-                    baselineOriginX,
-                    baselineOriginY,
-                    measuringMode,
-                    glyphRun,
-                    renderingParams,
-                    textColor,
-                    blackBoxRect
-                );
+                return Marshal.GetDelegateForFunctionPointer<_DrawGlyphRun>(lpVtbl->DrawGlyphRun)(This, baselineOriginX, baselineOriginY, measuringMode, glyphRun, renderingParams, textColor, blackBoxRect);
             }
         }
 
@@ -194,9 +129,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteBitmapRenderTarget* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetMemoryDC>(lpVtbl->GetMemoryDC)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetMemoryDC>(lpVtbl->GetMemoryDC)(This);
             }
         }
 
@@ -205,81 +138,52 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteBitmapRenderTarget* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetPixelsPerDip>(lpVtbl->GetPixelsPerDip)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetPixelsPerDip>(lpVtbl->GetPixelsPerDip)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetPixelsPerDip(
-            [In, NativeTypeName("FLOAT")] float pixelsPerDip
-        )
+        public int SetPixelsPerDip([NativeTypeName("FLOAT")] float pixelsPerDip)
         {
             fixed (IDWriteBitmapRenderTarget* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetPixelsPerDip>(lpVtbl->SetPixelsPerDip)(
-                    This,
-                    pixelsPerDip
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetPixelsPerDip>(lpVtbl->SetPixelsPerDip)(This, pixelsPerDip);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetCurrentTransform(
-            [Out] DWRITE_MATRIX* transform
-        )
+        public int GetCurrentTransform(DWRITE_MATRIX* transform)
         {
             fixed (IDWriteBitmapRenderTarget* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetCurrentTransform>(lpVtbl->GetCurrentTransform)(
-                    This,
-                    transform
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetCurrentTransform>(lpVtbl->GetCurrentTransform)(This, transform);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetCurrentTransform(
-            [In] DWRITE_MATRIX* transform = null
-        )
+        public int SetCurrentTransform(DWRITE_MATRIX* transform = null)
         {
             fixed (IDWriteBitmapRenderTarget* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetCurrentTransform>(lpVtbl->SetCurrentTransform)(
-                    This,
-                    transform
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetCurrentTransform>(lpVtbl->SetCurrentTransform)(This, transform);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetSize(
-            [Out] SIZE* size
-        )
+        public int GetSize(SIZE* size)
         {
             fixed (IDWriteBitmapRenderTarget* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetSize>(lpVtbl->GetSize)(
-                    This,
-                    size
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetSize>(lpVtbl->GetSize)(This, size);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Resize(
-            [In, NativeTypeName("UINT32")] uint width,
-            [In, NativeTypeName("UINT32")] uint height
-        )
+        public int Resize([NativeTypeName("UINT32")] uint width, [NativeTypeName("UINT32")] uint height)
         {
             fixed (IDWriteBitmapRenderTarget* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Resize>(lpVtbl->Resize)(
-                    This,
-                    width,
-                    height
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Resize>(lpVtbl->Resize)(This, width, height);
             }
         }
 

@@ -77,13 +77,6 @@ namespace TerraFX.Interop
             return (obj is D3D12_BOX other) && (this == other);
         }
 
-        public override int GetHashCode() => HashCode.Combine(
-            left,
-            top,
-            front,
-            right,
-            bottom,
-            back
-        );
+        public override int GetHashCode() => HashCode.Combine(left, top, front, right, bottom, back);
     }
 }

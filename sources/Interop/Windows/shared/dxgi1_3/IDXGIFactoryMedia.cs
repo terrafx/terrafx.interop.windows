@@ -15,60 +15,30 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IDXGIFactoryMedia* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDXGIFactoryMedia* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IDXGIFactoryMedia* This
-        );
+        public delegate uint _AddRef(IDXGIFactoryMedia* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IDXGIFactoryMedia* This
-        );
+        public delegate uint _Release(IDXGIFactoryMedia* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateSwapChainForCompositionSurfaceHandle(
-            [In] IDXGIFactoryMedia* This,
-            [In] IUnknown* pDevice,
-            [In, Optional, NativeTypeName("HANDLE")] IntPtr hSurface,
-            [In] DXGI_SWAP_CHAIN_DESC1* pDesc,
-            [In, Optional] IDXGIOutput* pRestrictToOutput,
-            [Out] IDXGISwapChain1** ppSwapChain
-        );
+        public delegate int _CreateSwapChainForCompositionSurfaceHandle(IDXGIFactoryMedia* This, IUnknown* pDevice, [Optional, NativeTypeName("HANDLE")] IntPtr hSurface, DXGI_SWAP_CHAIN_DESC1* pDesc, [Optional] IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateDecodeSwapChainForCompositionSurfaceHandle(
-            [In] IDXGIFactoryMedia* This,
-            [In] IUnknown* pDevice,
-            [In, Optional, NativeTypeName("HANDLE")] IntPtr hSurface,
-            [In] DXGI_DECODE_SWAP_CHAIN_DESC* pDesc,
-            [In] IDXGIResource* pYuvDecodeBuffers,
-            [In, Optional] IDXGIOutput* pRestrictToOutput,
-            [Out] IDXGIDecodeSwapChain** ppSwapChain
-        );
+        public delegate int _CreateDecodeSwapChainForCompositionSurfaceHandle(IDXGIFactoryMedia* This, IUnknown* pDevice, [Optional, NativeTypeName("HANDLE")] IntPtr hSurface, DXGI_DECODE_SWAP_CHAIN_DESC* pDesc, IDXGIResource* pYuvDecodeBuffers, [Optional] IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDXGIFactoryMedia* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -77,9 +47,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactoryMedia* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -88,55 +56,25 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactoryMedia* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateSwapChainForCompositionSurfaceHandle(
-            [In] IUnknown* pDevice,
-            [In, Optional, NativeTypeName("HANDLE")] IntPtr hSurface,
-            [In] DXGI_SWAP_CHAIN_DESC1* pDesc,
-            [In, Optional] IDXGIOutput* pRestrictToOutput,
-            [Out] IDXGISwapChain1** ppSwapChain
-        )
+        public int CreateSwapChainForCompositionSurfaceHandle(IUnknown* pDevice, [Optional, NativeTypeName("HANDLE")] IntPtr hSurface, DXGI_SWAP_CHAIN_DESC1* pDesc, [Optional] IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateSwapChainForCompositionSurfaceHandle>(lpVtbl->CreateSwapChainForCompositionSurfaceHandle)(
-                    This,
-                    pDevice,
-                    hSurface,
-                    pDesc,
-                    pRestrictToOutput,
-                    ppSwapChain
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateSwapChainForCompositionSurfaceHandle>(lpVtbl->CreateSwapChainForCompositionSurfaceHandle)(This, pDevice, hSurface, pDesc, pRestrictToOutput, ppSwapChain);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateDecodeSwapChainForCompositionSurfaceHandle(
-            [In] IUnknown* pDevice,
-            [In, Optional, NativeTypeName("HANDLE")] IntPtr hSurface,
-            [In] DXGI_DECODE_SWAP_CHAIN_DESC* pDesc,
-            [In] IDXGIResource* pYuvDecodeBuffers,
-            [In, Optional] IDXGIOutput* pRestrictToOutput,
-            [Out] IDXGIDecodeSwapChain** ppSwapChain
-        )
+        public int CreateDecodeSwapChainForCompositionSurfaceHandle(IUnknown* pDevice, [Optional, NativeTypeName("HANDLE")] IntPtr hSurface, DXGI_DECODE_SWAP_CHAIN_DESC* pDesc, IDXGIResource* pYuvDecodeBuffers, [Optional] IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateDecodeSwapChainForCompositionSurfaceHandle>(lpVtbl->CreateDecodeSwapChainForCompositionSurfaceHandle)(
-                    This,
-                    pDevice,
-                    hSurface,
-                    pDesc,
-                    pYuvDecodeBuffers,
-                    pRestrictToOutput,
-                    ppSwapChain
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateDecodeSwapChainForCompositionSurfaceHandle>(lpVtbl->CreateDecodeSwapChainForCompositionSurfaceHandle)(This, pDevice, hSurface, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
             }
         }
 

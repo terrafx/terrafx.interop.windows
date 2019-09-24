@@ -15,49 +15,30 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID3DBlob* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID3DBlob* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID3DBlob* This
-        );
+        public delegate uint _AddRef(ID3DBlob* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID3DBlob* This
-        );
+        public delegate uint _Release(ID3DBlob* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("LPVOID")]
-        public delegate void* _GetBufferPointer(
-            [In] ID3DBlob* This
-        );
+        public delegate void* _GetBufferPointer(ID3DBlob* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("SIZE_T")]
-        public delegate UIntPtr _GetBufferSize(
-            [In] ID3DBlob* This
-        );
+        public delegate UIntPtr _GetBufferSize(ID3DBlob* This);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID3DBlob* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -66,9 +47,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3DBlob* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -77,9 +56,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3DBlob* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
@@ -88,9 +65,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3DBlob* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetBufferPointer>(lpVtbl->GetBufferPointer)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetBufferPointer>(lpVtbl->GetBufferPointer)(This);
             }
         }
 
@@ -99,9 +74,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3DBlob* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetBufferSize>(lpVtbl->GetBufferSize)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetBufferSize>(lpVtbl->GetBufferSize)(This);
             }
         }
 

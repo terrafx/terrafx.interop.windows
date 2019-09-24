@@ -15,66 +15,38 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IEnumString* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IEnumString* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IEnumString* This
-        );
+        public delegate uint _AddRef(IEnumString* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IEnumString* This
-        );
+        public delegate uint _Release(IEnumString* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Next(
-            [In] IEnumString* This,
-            [In, NativeTypeName("ULONG")] uint celt,
-            [Out, NativeTypeName("LPOLESTR")] char** rgelt,
-            [Out, NativeTypeName("ULONG")] uint* pceltFetched = null
-        );
+        public delegate int _Next(IEnumString* This, [NativeTypeName("ULONG")] uint celt, [NativeTypeName("LPOLESTR")] char** rgelt, [NativeTypeName("ULONG")] uint* pceltFetched = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Skip(
-            [In] IEnumString* This,
-            [In, NativeTypeName("ULONG")] uint celt
-        );
+        public delegate int _Skip(IEnumString* This, [NativeTypeName("ULONG")] uint celt);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Reset(
-            [In] IEnumString* This
-        );
+        public delegate int _Reset(IEnumString* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Clone(
-            [In] IEnumString* This,
-            [Out] IEnumString** ppenum = null
-        );
+        public delegate int _Clone(IEnumString* This, IEnumString** ppenum = null);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IEnumString* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -83,9 +55,7 @@ namespace TerraFX.Interop
         {
             fixed (IEnumString* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -94,41 +64,25 @@ namespace TerraFX.Interop
         {
             fixed (IEnumString* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Next(
-            [In, NativeTypeName("ULONG")] uint celt,
-            [Out, NativeTypeName("LPOLESTR")] char** rgelt,
-            [Out, NativeTypeName("ULONG")] uint* pceltFetched = null
-        )
+        public int Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("LPOLESTR")] char** rgelt, [NativeTypeName("ULONG")] uint* pceltFetched = null)
         {
             fixed (IEnumString* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Next>(lpVtbl->Next)(
-                    This,
-                    celt,
-                    rgelt,
-                    pceltFetched
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Next>(lpVtbl->Next)(This, celt, rgelt, pceltFetched);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Skip(
-            [In, NativeTypeName("ULONG")] uint celt
-        )
+        public int Skip([NativeTypeName("ULONG")] uint celt)
         {
             fixed (IEnumString* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Skip>(lpVtbl->Skip)(
-                    This,
-                    celt
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Skip>(lpVtbl->Skip)(This, celt);
             }
         }
 
@@ -137,23 +91,16 @@ namespace TerraFX.Interop
         {
             fixed (IEnumString* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Reset>(lpVtbl->Reset)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Reset>(lpVtbl->Reset)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Clone(
-            [Out] IEnumString** ppenum = null
-        )
+        public int Clone(IEnumString** ppenum = null)
         {
             fixed (IEnumString* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Clone>(lpVtbl->Clone)(
-                    This,
-                    ppenum
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Clone>(lpVtbl->Clone)(This, ppenum);
             }
         }
 

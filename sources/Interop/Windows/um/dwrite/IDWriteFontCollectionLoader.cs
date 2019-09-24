@@ -16,23 +16,15 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IDWriteFontCollectionLoader* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDWriteFontCollectionLoader* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IDWriteFontCollectionLoader* This
-        );
+        public delegate uint _AddRef(IDWriteFontCollectionLoader* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IDWriteFontCollectionLoader* This
-        );
+        public delegate uint _Release(IDWriteFontCollectionLoader* This);
 
         /// <summary>Creates a font file enumerator object that encapsulates a collection of font files. The font system calls back to this interface to create a font collection.</summary>
         /// <param name="factory">Factory associated with the loader.</param>
@@ -42,27 +34,14 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateEnumeratorFromKey(
-            [In] IDWriteFontCollectionLoader* This,
-            [In] IDWriteFactory* factory,
-            [In] void* collectionKey,
-            [In, NativeTypeName("UINT32")] uint collectionKeySize,
-            [Out] IDWriteFontFileEnumerator** fontFileEnumerator
-        );
+        public delegate int _CreateEnumeratorFromKey(IDWriteFontCollectionLoader* This, IDWriteFactory* factory, void* collectionKey, [NativeTypeName("UINT32")] uint collectionKeySize, IDWriteFontFileEnumerator** fontFileEnumerator);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDWriteFontCollectionLoader* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -71,9 +50,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontCollectionLoader* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -82,29 +59,16 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontCollectionLoader* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateEnumeratorFromKey(
-            [In] IDWriteFactory* factory,
-            [In] void* collectionKey,
-            [In, NativeTypeName("UINT32")] uint collectionKeySize,
-            [Out] IDWriteFontFileEnumerator** fontFileEnumerator
-        )
+        public int CreateEnumeratorFromKey(IDWriteFactory* factory, void* collectionKey, [NativeTypeName("UINT32")] uint collectionKeySize, IDWriteFontFileEnumerator** fontFileEnumerator)
         {
             fixed (IDWriteFontCollectionLoader* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateEnumeratorFromKey>(lpVtbl->CreateEnumeratorFromKey)(
-                    This,
-                    factory,
-                    collectionKey,
-                    collectionKeySize,
-                    fontFileEnumerator
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateEnumeratorFromKey>(lpVtbl->CreateEnumeratorFromKey)(This, factory, collectionKey, collectionKeySize, fontFileEnumerator);
             }
         }
 

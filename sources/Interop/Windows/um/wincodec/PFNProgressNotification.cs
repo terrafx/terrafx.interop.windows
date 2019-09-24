@@ -9,10 +9,5 @@ namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.StdCall)]
     [return: NativeTypeName("HRESULT")]
-    public unsafe delegate int PFNProgressNotification(
-        [In, NativeTypeName("LPVOID")] void* pvData,
-        [In, NativeTypeName("ULONG")] uint uFrameNum,
-        [In] WICProgressOperation operation,
-        [In] double dblProgress
-    );
+    public unsafe delegate int PFNProgressNotification([NativeTypeName("LPVOID")] void* pvData, [NativeTypeName("ULONG")] uint uFrameNum, WICProgressOperation operation, double dblProgress);
 }

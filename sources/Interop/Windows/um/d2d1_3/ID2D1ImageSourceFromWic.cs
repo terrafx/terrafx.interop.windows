@@ -16,77 +16,45 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID2D1ImageSourceFromWic* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1ImageSourceFromWic* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID2D1ImageSourceFromWic* This
-        );
+        public delegate uint _AddRef(ID2D1ImageSourceFromWic* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID2D1ImageSourceFromWic* This
-        );
+        public delegate uint _Release(ID2D1ImageSourceFromWic* This);
 
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetFactory(
-            [In] ID2D1ImageSourceFromWic* This,
-            [Out] ID2D1Factory** factory
-        );
+        public delegate void _GetFactory(ID2D1ImageSourceFromWic* This, ID2D1Factory** factory);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _OfferResources(
-            [In] ID2D1ImageSourceFromWic* This
-        );
+        public delegate int _OfferResources(ID2D1ImageSourceFromWic* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _TryReclaimResources(
-            [In] ID2D1ImageSourceFromWic* This,
-            [Out, NativeTypeName("BOOL")] int* resourcesDiscarded
-        );
+        public delegate int _TryReclaimResources(ID2D1ImageSourceFromWic* This, [NativeTypeName("BOOL")] int* resourcesDiscarded);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _EnsureCached(
-            [In] ID2D1ImageSourceFromWic* This,
-            [In, NativeTypeName("D2D1_RECT_U")] D2D_RECT_U* rectangleToFill = null
-        );
+        public delegate int _EnsureCached(ID2D1ImageSourceFromWic* This, [NativeTypeName("D2D1_RECT_U")] D2D_RECT_U* rectangleToFill = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _TrimCache(
-            [In] ID2D1ImageSourceFromWic* This,
-            [In, NativeTypeName("D2D1_RECT_U")] D2D_RECT_U* rectangleToPreserve = null
-        );
+        public delegate int _TrimCache(ID2D1ImageSourceFromWic* This, [NativeTypeName("D2D1_RECT_U")] D2D_RECT_U* rectangleToPreserve = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetSource(
-            [In] ID2D1ImageSourceFromWic* This,
-            [Out] IWICBitmapSource** wicBitmapSource
-        );
+        public delegate void _GetSource(ID2D1ImageSourceFromWic* This, IWICBitmapSource** wicBitmapSource);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1ImageSourceFromWic* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -95,9 +63,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ImageSourceFromWic* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -106,22 +72,15 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ImageSourceFromWic* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
-        public void GetFactory(
-            [Out] ID2D1Factory** factory
-        )
+        public void GetFactory(ID2D1Factory** factory)
         {
             fixed (ID2D1ImageSourceFromWic* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
-                    This,
-                    factory
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(This, factory);
             }
         }
 
@@ -130,64 +89,42 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ImageSourceFromWic* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_OfferResources>(lpVtbl->OfferResources)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_OfferResources>(lpVtbl->OfferResources)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int TryReclaimResources(
-            [Out, NativeTypeName("BOOL")] int* resourcesDiscarded
-        )
+        public int TryReclaimResources([NativeTypeName("BOOL")] int* resourcesDiscarded)
         {
             fixed (ID2D1ImageSourceFromWic* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_TryReclaimResources>(lpVtbl->TryReclaimResources)(
-                    This,
-                    resourcesDiscarded
-                );
+                return Marshal.GetDelegateForFunctionPointer<_TryReclaimResources>(lpVtbl->TryReclaimResources)(This, resourcesDiscarded);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int EnsureCached(
-            [In, NativeTypeName("D2D1_RECT_U")] D2D_RECT_U* rectangleToFill = null
-        )
+        public int EnsureCached([NativeTypeName("D2D1_RECT_U")] D2D_RECT_U* rectangleToFill = null)
         {
             fixed (ID2D1ImageSourceFromWic* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_EnsureCached>(lpVtbl->EnsureCached)(
-                    This,
-                    rectangleToFill
-                );
+                return Marshal.GetDelegateForFunctionPointer<_EnsureCached>(lpVtbl->EnsureCached)(This, rectangleToFill);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int TrimCache(
-            [In, NativeTypeName("D2D1_RECT_U")] D2D_RECT_U* rectangleToPreserve = null
-        )
+        public int TrimCache([NativeTypeName("D2D1_RECT_U")] D2D_RECT_U* rectangleToPreserve = null)
         {
             fixed (ID2D1ImageSourceFromWic* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_TrimCache>(lpVtbl->TrimCache)(
-                    This,
-                    rectangleToPreserve
-                );
+                return Marshal.GetDelegateForFunctionPointer<_TrimCache>(lpVtbl->TrimCache)(This, rectangleToPreserve);
             }
         }
 
-        public void GetSource(
-            [Out] IWICBitmapSource** wicBitmapSource
-        )
+        public void GetSource(IWICBitmapSource** wicBitmapSource)
         {
             fixed (ID2D1ImageSourceFromWic* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetSource>(lpVtbl->GetSource)(
-                    This,
-                    wicBitmapSource
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetSource>(lpVtbl->GetSource)(This, wicBitmapSource);
             }
         }
 

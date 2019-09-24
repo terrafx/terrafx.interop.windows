@@ -437,61 +437,26 @@ namespace TerraFX.Interop
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "WICConvertBitmapSource", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WICConvertBitmapSource(
-            [In, NativeTypeName("REFWICPixelFormatGUID")] Guid* dstFormat,
-            [In] IWICBitmapSource* pISrc,
-            [Out] IWICBitmapSource** ppIDst
-        );
+        public static extern int WICConvertBitmapSource([NativeTypeName("REFWICPixelFormatGUID")] Guid* dstFormat, IWICBitmapSource* pISrc, IWICBitmapSource** ppIDst);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "WICCreateBitmapFromSection", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WICCreateBitmapFromSection(
-             [In, NativeTypeName("UINT")] uint width,
-             [In, NativeTypeName("UINT")] uint height,
-             [In, NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat,
-             [In, NativeTypeName("HANDLE")] IntPtr hSection,
-             [In, NativeTypeName("UINT")] uint stride,
-             [In, NativeTypeName("UINT")] uint offset,
-             [Out] IWICBitmap** ppIBitmap
-        );
+        public static extern int WICCreateBitmapFromSection([NativeTypeName("UINT")] uint width, [NativeTypeName("UINT")] uint height, [NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat, [NativeTypeName("HANDLE")] IntPtr hSection, [NativeTypeName("UINT")] uint stride, [NativeTypeName("UINT")] uint offset, IWICBitmap** ppIBitmap);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "WICCreateBitmapFromSectionEx", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WICCreateBitmapFromSectionEx(
-             [In, NativeTypeName("UINT")] uint width,
-             [In, NativeTypeName("UINT")] uint height,
-             [In, NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat,
-             [In, NativeTypeName("HANDLE")] IntPtr hSection,
-             [In, NativeTypeName("UINT")] uint stride,
-             [In, NativeTypeName("UINT")] uint offset,
-             [In] WICSectionAccessLevel desiredAccessLevel,
-             [Out] IWICBitmap** ppIBitmap
-        );
+        public static extern int WICCreateBitmapFromSectionEx([NativeTypeName("UINT")] uint width, [NativeTypeName("UINT")] uint height, [NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat, [NativeTypeName("HANDLE")] IntPtr hSection, [NativeTypeName("UINT")] uint stride, [NativeTypeName("UINT")] uint offset, WICSectionAccessLevel desiredAccessLevel, IWICBitmap** ppIBitmap);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "WICMapGuidToShortName", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WICMapGuidToShortName(
-            [In, NativeTypeName("REFGUID")] Guid* guid,
-            [In, NativeTypeName("UINT")] uint cchName,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzName,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        );
+        public static extern int WICMapGuidToShortName([NativeTypeName("REFGUID")] Guid* guid, [NativeTypeName("UINT")] uint cchName, [Optional, NativeTypeName("WCHAR[]")] char* wzName, [NativeTypeName("UINT")] uint* pcchActual);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "WICMapShortNameToGuid", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WICMapShortNameToGuid(
-            [In, NativeTypeName("PCWSTR")] char* wzName,
-            [Out, NativeTypeName("GUID")] Guid* pguid
-        );
+        public static extern int WICMapShortNameToGuid([NativeTypeName("PCWSTR")] char* wzName, [NativeTypeName("GUID")] Guid* pguid);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "WICMapSchemaToName", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WICMapSchemaToName(
-            [In, NativeTypeName("REFGUID")] Guid* guidMetadataFormat,
-            [In, NativeTypeName("LPWSTR")] char* pwzSchema,
-            [In, NativeTypeName("UINT")] uint cchName,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzName,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        );
+        public static extern int WICMapSchemaToName([NativeTypeName("REFGUID")] Guid* guidMetadataFormat, [NativeTypeName("LPWSTR")] char* pwzSchema, [NativeTypeName("UINT")] uint cchName, [Optional, NativeTypeName("WCHAR[]")] char* wzName, [NativeTypeName("UINT")] uint* pcchActual);
     }
 }

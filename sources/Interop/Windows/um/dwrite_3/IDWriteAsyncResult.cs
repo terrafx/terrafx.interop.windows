@@ -16,51 +16,32 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IDWriteAsyncResult* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDWriteAsyncResult* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IDWriteAsyncResult* This
-        );
+        public delegate uint _AddRef(IDWriteAsyncResult* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IDWriteAsyncResult* This
-        );
+        public delegate uint _Release(IDWriteAsyncResult* This);
 
         /// <summary>The GetWaitHandleMethod method returns a handle that can be used to wait for the asynchronous operation to complete. The handle remains valid until the interface is released.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HANDLE")]
-        public delegate IntPtr _GetWaitHandle(
-            [In] IDWriteAsyncResult* This
-        );
+        public delegate IntPtr _GetWaitHandle(IDWriteAsyncResult* This);
 
         /// <summary>The GetResult method returns the result of the asynchronous operation. The return value is E_PENDING if the operation has not yet completed.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetResult(
-            [In] IDWriteAsyncResult* This
-        );
+        public delegate int _GetResult(IDWriteAsyncResult* This);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDWriteAsyncResult* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -69,9 +50,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteAsyncResult* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -80,9 +59,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteAsyncResult* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
@@ -91,9 +68,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteAsyncResult* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetWaitHandle>(lpVtbl->GetWaitHandle)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetWaitHandle>(lpVtbl->GetWaitHandle)(This);
             }
         }
 
@@ -102,9 +77,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteAsyncResult* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetResult>(lpVtbl->GetResult)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetResult>(lpVtbl->GetResult)(This);
             }
         }
 

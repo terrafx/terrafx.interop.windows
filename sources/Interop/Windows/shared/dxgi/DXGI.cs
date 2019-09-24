@@ -104,16 +104,10 @@ namespace TerraFX.Interop
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "CreateDXGIFactory", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateDXGIFactory(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppFactory
-        );
+        public static extern int CreateDXGIFactory([NativeTypeName("REFIID")] Guid* riid, void** ppFactory);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "CreateDXGIFactory1", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateDXGIFactory1(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppFactory
-        );
+        public static extern int CreateDXGIFactory1([NativeTypeName("REFIID")] Guid* riid, void** ppFactory);
     }
 }

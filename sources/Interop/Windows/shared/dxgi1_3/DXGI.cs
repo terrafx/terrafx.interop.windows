@@ -30,18 +30,10 @@ namespace TerraFX.Interop
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "CreateDXGIFactory2", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CreateDXGIFactory2(
-            [In, NativeTypeName("UINT")] uint Flags,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppFactory
-        );
+        public static extern int CreateDXGIFactory2([NativeTypeName("UINT")] uint Flags, [NativeTypeName("REFIID")] Guid* riid, void** ppFactory);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "DXGIGetDebugInterface1", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DXGIGetDebugInterface1(
-            [In, NativeTypeName("UINT")] uint Flags,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** pDebug
-        );
+        public static extern int DXGIGetDebugInterface1([NativeTypeName("UINT")] uint Flags, [NativeTypeName("REFIID")] Guid* riid, void** pDebug);
     }
 }

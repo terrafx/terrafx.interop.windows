@@ -15,49 +15,29 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IDXGIDisplayControl* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDXGIDisplayControl* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IDXGIDisplayControl* This
-        );
+        public delegate uint _AddRef(IDXGIDisplayControl* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IDXGIDisplayControl* This
-        );
+        public delegate uint _Release(IDXGIDisplayControl* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public delegate int _IsStereoEnabled(
-            [In] IDXGIDisplayControl* This
-        );
+        public delegate int _IsStereoEnabled(IDXGIDisplayControl* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetStereoEnabled(
-            [In] IDXGIDisplayControl* This,
-            [In, NativeTypeName("BOOL")] int enabled
-        );
+        public delegate void _SetStereoEnabled(IDXGIDisplayControl* This, [NativeTypeName("BOOL")] int enabled);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDXGIDisplayControl* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -66,9 +46,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDisplayControl* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -77,9 +55,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDisplayControl* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
@@ -88,22 +64,15 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDisplayControl* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_IsStereoEnabled>(lpVtbl->IsStereoEnabled)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_IsStereoEnabled>(lpVtbl->IsStereoEnabled)(This);
             }
         }
 
-        public void SetStereoEnabled(
-            [In, NativeTypeName("BOOL")] int enabled
-        )
+        public void SetStereoEnabled([NativeTypeName("BOOL")] int enabled)
         {
             fixed (IDXGIDisplayControl* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetStereoEnabled>(lpVtbl->SetStereoEnabled)(
-                    This,
-                    enabled
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetStereoEnabled>(lpVtbl->SetStereoEnabled)(This, enabled);
             }
         }
 

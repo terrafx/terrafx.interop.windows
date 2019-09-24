@@ -12,8 +12,6 @@ namespace TerraFX.Interop
     {
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "GetModuleHandleW", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HMODULE")]
-        public static extern IntPtr GetModuleHandle(
-            [In, NativeTypeName("LPCWSTR")] char* lpModuleName = null
-        );
+        public static extern IntPtr GetModuleHandle([NativeTypeName("LPCWSTR")] char* lpModuleName = null);
     }
 }

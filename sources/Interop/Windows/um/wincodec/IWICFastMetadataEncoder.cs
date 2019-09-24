@@ -15,50 +15,30 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IWICFastMetadataEncoder* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICFastMetadataEncoder* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IWICFastMetadataEncoder* This
-        );
+        public delegate uint _AddRef(IWICFastMetadataEncoder* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IWICFastMetadataEncoder* This
-        );
+        public delegate uint _Release(IWICFastMetadataEncoder* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Commit(
-            [In] IWICFastMetadataEncoder* This
-        );
+        public delegate int _Commit(IWICFastMetadataEncoder* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetMetadataQueryWriter(
-            [In] IWICFastMetadataEncoder* This,
-            [Out] IWICMetadataQueryWriter** ppIMetadataQueryWriter = null
-        );
+        public delegate int _GetMetadataQueryWriter(IWICFastMetadataEncoder* This, IWICMetadataQueryWriter** ppIMetadataQueryWriter = null);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICFastMetadataEncoder* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -67,9 +47,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICFastMetadataEncoder* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -78,9 +56,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICFastMetadataEncoder* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
@@ -89,23 +65,16 @@ namespace TerraFX.Interop
         {
             fixed (IWICFastMetadataEncoder* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Commit>(lpVtbl->Commit)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Commit>(lpVtbl->Commit)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetMetadataQueryWriter(
-            [Out] IWICMetadataQueryWriter** ppIMetadataQueryWriter = null
-        )
+        public int GetMetadataQueryWriter(IWICMetadataQueryWriter** ppIMetadataQueryWriter = null)
         {
             fixed (IWICFastMetadataEncoder* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetMetadataQueryWriter>(lpVtbl->GetMetadataQueryWriter)(
-                    This,
-                    ppIMetadataQueryWriter
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetMetadataQueryWriter>(lpVtbl->GetMetadataQueryWriter)(This, ppIMetadataQueryWriter);
             }
         }
 

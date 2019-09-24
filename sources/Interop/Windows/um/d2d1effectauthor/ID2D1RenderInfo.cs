@@ -16,69 +16,40 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID2D1RenderInfo* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1RenderInfo* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID2D1RenderInfo* This
-        );
+        public delegate uint _AddRef(ID2D1RenderInfo* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID2D1RenderInfo* This
-        );
+        public delegate uint _Release(ID2D1RenderInfo* This);
 
         /// <summary>Sets options for sampling the specified image input</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetInputDescription(
-            [In] ID2D1RenderInfo* This,
-            [In, NativeTypeName("UINT32")] uint inputIndex,
-            [In] D2D1_INPUT_DESCRIPTION inputDescription
-        );
+        public delegate int _SetInputDescription(ID2D1RenderInfo* This, [NativeTypeName("UINT32")] uint inputIndex, D2D1_INPUT_DESCRIPTION inputDescription);
 
         /// <summary>Controls the output precision and channel-depth for the associated transform.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetOutputBuffer(
-            [In] ID2D1RenderInfo* This,
-            [In] D2D1_BUFFER_PRECISION bufferPrecision,
-            [In] D2D1_CHANNEL_DEPTH channelDepth
-        );
+        public delegate int _SetOutputBuffer(ID2D1RenderInfo* This, D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth);
 
         /// <summary>Controls whether the output of the associated transform is cached.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetCached(
-            [In] ID2D1RenderInfo* This,
-            [In, NativeTypeName("BOOL")] int isCached
-        );
+        public delegate void _SetCached(ID2D1RenderInfo* This, [NativeTypeName("BOOL")] int isCached);
 
         /// <summary>Provides a hint of the approximate shader instruction count per pixel.  If provided, it may improve performance when processing large images.  Instructions should be counted multiple times if occurring within loops.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetInstructionCountHint(
-            [In] ID2D1RenderInfo* This,
-            [In, NativeTypeName("UINT32")] uint instructionCount
-        );
+        public delegate void _SetInstructionCountHint(ID2D1RenderInfo* This, [NativeTypeName("UINT32")] uint instructionCount);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1RenderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -87,9 +58,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1RenderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -98,67 +67,41 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1RenderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetInputDescription(
-            [In, NativeTypeName("UINT32")] uint inputIndex,
-            [In] D2D1_INPUT_DESCRIPTION inputDescription
-        )
+        public int SetInputDescription([NativeTypeName("UINT32")] uint inputIndex, D2D1_INPUT_DESCRIPTION inputDescription)
         {
             fixed (ID2D1RenderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetInputDescription>(lpVtbl->SetInputDescription)(
-                    This,
-                    inputIndex,
-                    inputDescription
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetInputDescription>(lpVtbl->SetInputDescription)(This, inputIndex, inputDescription);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetOutputBuffer(
-            [In] D2D1_BUFFER_PRECISION bufferPrecision,
-            [In] D2D1_CHANNEL_DEPTH channelDepth
-        )
+        public int SetOutputBuffer(D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth)
         {
             fixed (ID2D1RenderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetOutputBuffer>(lpVtbl->SetOutputBuffer)(
-                    This,
-                    bufferPrecision,
-                    channelDepth
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetOutputBuffer>(lpVtbl->SetOutputBuffer)(This, bufferPrecision, channelDepth);
             }
         }
 
-        public void SetCached(
-            [In, NativeTypeName("BOOL")] int isCached
-        )
+        public void SetCached([NativeTypeName("BOOL")] int isCached)
         {
             fixed (ID2D1RenderInfo* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetCached>(lpVtbl->SetCached)(
-                    This,
-                    isCached
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetCached>(lpVtbl->SetCached)(This, isCached);
             }
         }
 
-        public void SetInstructionCountHint(
-            [In, NativeTypeName("UINT32")] uint instructionCount
-        )
+        public void SetInstructionCountHint([NativeTypeName("UINT32")] uint instructionCount)
         {
             fixed (ID2D1RenderInfo* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetInstructionCountHint>(lpVtbl->SetInstructionCountHint)(
-                    This,
-                    instructionCount
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetInstructionCountHint>(lpVtbl->SetInstructionCountHint)(This, instructionCount);
             }
         }
 

@@ -15,98 +15,50 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IWICFormatConverter* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICFormatConverter* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IWICFormatConverter* This
-        );
+        public delegate uint _AddRef(IWICFormatConverter* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IWICFormatConverter* This
-        );
+        public delegate uint _Release(IWICFormatConverter* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetSize(
-            [In] IWICFormatConverter* This,
-            [Out, NativeTypeName("UINT")] uint* puiWidth,
-            [Out, NativeTypeName("UINT")] uint* puiHeight
-        );
+        public delegate int _GetSize(IWICFormatConverter* This, [NativeTypeName("UINT")] uint* puiWidth, [NativeTypeName("UINT")] uint* puiHeight);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPixelFormat(
-            [In] IWICFormatConverter* This,
-            [Out, NativeTypeName("WICPixelFormatGUID")] Guid* pPixelFormat
-        );
+        public delegate int _GetPixelFormat(IWICFormatConverter* This, [NativeTypeName("WICPixelFormatGUID")] Guid* pPixelFormat);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetResolution(
-            [In] IWICFormatConverter* This,
-            [Out] double* pDpiX,
-            [Out] double* pDpiY
-        );
+        public delegate int _GetResolution(IWICFormatConverter* This, double* pDpiX, double* pDpiY);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CopyPalette(
-            [In] IWICFormatConverter* This,
-            [In] IWICPalette* pIPalette = null
-        );
+        public delegate int _CopyPalette(IWICFormatConverter* This, IWICPalette* pIPalette = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CopyPixels(
-            [In] IWICFormatConverter* This,
-            [In, Optional] WICRect* prc,
-            [In, NativeTypeName("UINT")] uint cbStride,
-            [In, NativeTypeName("UINT")] uint cbBufferSize,
-            [Out, NativeTypeName("BYTE[]")] byte* pbBuffer
-        );
+        public delegate int _CopyPixels(IWICFormatConverter* This, [Optional] WICRect* prc, [NativeTypeName("UINT")] uint cbStride, [NativeTypeName("UINT")] uint cbBufferSize, [NativeTypeName("BYTE[]")] byte* pbBuffer);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Initialize(
-            [In] IWICFormatConverter* This,
-            [In, Optional] IWICBitmapSource* pISource,
-            [In, NativeTypeName("REFWICPixelFormatGUID")] Guid* dstFormat,
-            [In] WICBitmapDitherType dither,
-            [In, Optional] IWICPalette* pIPalette,
-            [In] double alphaThresholdPercent,
-            [In] WICBitmapPaletteType paletteTranslate
-        );
+        public delegate int _Initialize(IWICFormatConverter* This, [Optional] IWICBitmapSource* pISource, [NativeTypeName("REFWICPixelFormatGUID")] Guid* dstFormat, WICBitmapDitherType dither, [Optional] IWICPalette* pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CanConvert(
-            [In] IWICFormatConverter* This,
-            [In, NativeTypeName("REFWICPixelFormatGUID")] Guid* srcPixelFormat,
-            [In, NativeTypeName("REFWICPixelFormatGUID")] Guid* dstPixelFormat,
-            [Out, NativeTypeName("BOOL")] int* pfCanConvert
-        );
+        public delegate int _CanConvert(IWICFormatConverter* This, [NativeTypeName("REFWICPixelFormatGUID")] Guid* srcPixelFormat, [NativeTypeName("REFWICPixelFormatGUID")] Guid* dstPixelFormat, [NativeTypeName("BOOL")] int* pfCanConvert);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICFormatConverter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -115,9 +67,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICFormatConverter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -126,131 +76,70 @@ namespace TerraFX.Interop
         {
             fixed (IWICFormatConverter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetSize(
-            [Out, NativeTypeName("UINT")] uint* puiWidth,
-            [Out, NativeTypeName("UINT")] uint* puiHeight
-        )
+        public int GetSize([NativeTypeName("UINT")] uint* puiWidth, [NativeTypeName("UINT")] uint* puiHeight)
         {
             fixed (IWICFormatConverter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetSize>(lpVtbl->GetSize)(
-                    This,
-                    puiWidth,
-                    puiHeight
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetSize>(lpVtbl->GetSize)(This, puiWidth, puiHeight);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetPixelFormat(
-            [Out, NativeTypeName("WICPixelFormatGUID")] Guid* pPixelFormat
-        )
+        public int GetPixelFormat([NativeTypeName("WICPixelFormatGUID")] Guid* pPixelFormat)
         {
             fixed (IWICFormatConverter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetPixelFormat>(lpVtbl->GetPixelFormat)(
-                    This,
-                    pPixelFormat
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetPixelFormat>(lpVtbl->GetPixelFormat)(This, pPixelFormat);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetResolution(
-            [Out] double* pDpiX,
-            [Out] double* pDpiY
-        )
+        public int GetResolution(double* pDpiX, double* pDpiY)
         {
             fixed (IWICFormatConverter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetResolution>(lpVtbl->GetResolution)(
-                    This,
-                    pDpiX,
-                    pDpiY
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetResolution>(lpVtbl->GetResolution)(This, pDpiX, pDpiY);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CopyPalette(
-            [In] IWICPalette* pIPalette = null
-        )
+        public int CopyPalette(IWICPalette* pIPalette = null)
         {
             fixed (IWICFormatConverter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CopyPalette>(lpVtbl->CopyPalette)(
-                    This,
-                    pIPalette
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CopyPalette>(lpVtbl->CopyPalette)(This, pIPalette);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CopyPixels(
-            [In, Optional] WICRect* prc,
-            [In, NativeTypeName("UINT")] uint cbStride,
-            [In, NativeTypeName("UINT")] uint cbBufferSize,
-            [Out, NativeTypeName("BYTE[]")] byte* pbBuffer
-        )
+        public int CopyPixels([Optional] WICRect* prc, [NativeTypeName("UINT")] uint cbStride, [NativeTypeName("UINT")] uint cbBufferSize, [NativeTypeName("BYTE[]")] byte* pbBuffer)
         {
             fixed (IWICFormatConverter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CopyPixels>(lpVtbl->CopyPixels)(
-                    This,
-                    prc,
-                    cbStride,
-                    cbBufferSize,
-                    pbBuffer
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CopyPixels>(lpVtbl->CopyPixels)(This, prc, cbStride, cbBufferSize, pbBuffer);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Initialize(
-            [In, Optional] IWICBitmapSource* pISource,
-            [In, NativeTypeName("REFWICPixelFormatGUID")] Guid* dstFormat,
-            [In] WICBitmapDitherType dither,
-            [In, Optional] IWICPalette* pIPalette,
-            [In] double alphaThresholdPercent,
-            [In] WICBitmapPaletteType paletteTranslate
-        )
+        public int Initialize([Optional] IWICBitmapSource* pISource, [NativeTypeName("REFWICPixelFormatGUID")] Guid* dstFormat, WICBitmapDitherType dither, [Optional] IWICPalette* pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate)
         {
             fixed (IWICFormatConverter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Initialize>(lpVtbl->Initialize)(
-                    This,
-                    pISource,
-                    dstFormat,
-                    dither,
-                    pIPalette,
-                    alphaThresholdPercent,
-                    paletteTranslate
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Initialize>(lpVtbl->Initialize)(This, pISource, dstFormat, dither, pIPalette, alphaThresholdPercent, paletteTranslate);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CanConvert(
-            [In, NativeTypeName("REFWICPixelFormatGUID")] Guid* srcPixelFormat,
-            [In, NativeTypeName("REFWICPixelFormatGUID")] Guid* dstPixelFormat,
-            [Out, NativeTypeName("BOOL")] int* pfCanConvert
-        )
+        public int CanConvert([NativeTypeName("REFWICPixelFormatGUID")] Guid* srcPixelFormat, [NativeTypeName("REFWICPixelFormatGUID")] Guid* dstPixelFormat, [NativeTypeName("BOOL")] int* pfCanConvert)
         {
             fixed (IWICFormatConverter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CanConvert>(lpVtbl->CanConvert)(
-                    This,
-                    srcPixelFormat,
-                    dstPixelFormat,
-                    pfCanConvert
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CanConvert>(lpVtbl->CanConvert)(This, srcPixelFormat, dstPixelFormat, pfCanConvert);
             }
         }
 

@@ -15,237 +15,126 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IDXGISwapChain1* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDXGISwapChain1* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IDXGISwapChain1* This
-        );
+        public delegate uint _AddRef(IDXGISwapChain1* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IDXGISwapChain1* This
-        );
+        public delegate uint _Release(IDXGISwapChain1* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateData(
-            [In] IDXGISwapChain1* This,
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In, NativeTypeName("UINT")] uint DataSize,
-            [In] void* pData
-        );
+        public delegate int _SetPrivateData(IDXGISwapChain1* This, [NativeTypeName("REFGUID")] Guid* Name, [NativeTypeName("UINT")] uint DataSize, void* pData);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateDataInterface(
-            [In] IDXGISwapChain1* This,
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In] IUnknown* pUnknown = null
-        );
+        public delegate int _SetPrivateDataInterface(IDXGISwapChain1* This, [NativeTypeName("REFGUID")] Guid* Name, IUnknown* pUnknown = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPrivateData(
-            [In] IDXGISwapChain1* This,
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In, Out, NativeTypeName("UINT")] uint* pDataSize,
-            [Out] void* pData
-        );
+        public delegate int _GetPrivateData(IDXGISwapChain1* This, [NativeTypeName("REFGUID")] Guid* Name, [NativeTypeName("UINT")] uint* pDataSize, void* pData);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetParent(
-            [In] IDXGISwapChain1* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppParent
-        );
+        public delegate int _GetParent(IDXGISwapChain1* This, [NativeTypeName("REFIID")] Guid* riid, void** ppParent);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDevice(
-            [In] IDXGISwapChain1* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppDevice
-        );
+        public delegate int _GetDevice(IDXGISwapChain1* This, [NativeTypeName("REFIID")] Guid* riid, void** ppDevice);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Present(
-            [In] IDXGISwapChain1* This,
-            [In, NativeTypeName("UINT")] uint SyncInterval,
-            [In, NativeTypeName("UINT")] uint Flags
-        );
+        public delegate int _Present(IDXGISwapChain1* This, [NativeTypeName("UINT")] uint SyncInterval, [NativeTypeName("UINT")] uint Flags);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetBuffer(
-            [In] IDXGISwapChain1* This,
-            [In, NativeTypeName("UINT")] uint Buffer,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [In, Out] void** ppSurface
-        );
+        public delegate int _GetBuffer(IDXGISwapChain1* This, [NativeTypeName("UINT")] uint Buffer, [NativeTypeName("REFIID")] Guid* riid, void** ppSurface);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetFullscreenState(
-            [In] IDXGISwapChain1* This,
-            [In, NativeTypeName("BOOL")] int Fullscreen,
-            [In] IDXGIOutput* pTarget = null
-        );
+        public delegate int _SetFullscreenState(IDXGISwapChain1* This, [NativeTypeName("BOOL")] int Fullscreen, IDXGIOutput* pTarget = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFullscreenState(
-            [In] IDXGISwapChain1* This,
-            [Out, NativeTypeName("BOOL")] int* pFullscreen = null,
-            [Out] IDXGIOutput** ppTarget = null
-        );
+        public delegate int _GetFullscreenState(IDXGISwapChain1* This, [NativeTypeName("BOOL")] int* pFullscreen = null, IDXGIOutput** ppTarget = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDesc(
-            [In] IDXGISwapChain1* This,
-            [Out] DXGI_SWAP_CHAIN_DESC* pDesc
-        );
+        public delegate int _GetDesc(IDXGISwapChain1* This, DXGI_SWAP_CHAIN_DESC* pDesc);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _ResizeBuffers(
-            [In] IDXGISwapChain1* This,
-            [In, NativeTypeName("UINT")] uint BufferCount,
-            [In, NativeTypeName("UINT")] uint Width,
-            [In, NativeTypeName("UINT")] uint Height,
-            [In] DXGI_FORMAT NewFormat,
-            [In, NativeTypeName("UINT")] uint SwapChainFlags
-        );
+        public delegate int _ResizeBuffers(IDXGISwapChain1* This, [NativeTypeName("UINT")] uint BufferCount, [NativeTypeName("UINT")] uint Width, [NativeTypeName("UINT")] uint Height, DXGI_FORMAT NewFormat, [NativeTypeName("UINT")] uint SwapChainFlags);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _ResizeTarget(
-            [In] IDXGISwapChain1* This,
-            [In] DXGI_MODE_DESC* pNewTargetParameters
-        );
+        public delegate int _ResizeTarget(IDXGISwapChain1* This, DXGI_MODE_DESC* pNewTargetParameters);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetContainingOutput(
-            [In] IDXGISwapChain1* This,
-            [Out] IDXGIOutput** ppOutput
-        );
+        public delegate int _GetContainingOutput(IDXGISwapChain1* This, IDXGIOutput** ppOutput);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFrameStatistics(
-            [In] IDXGISwapChain1* This,
-            [Out] DXGI_FRAME_STATISTICS* pStats
-        );
+        public delegate int _GetFrameStatistics(IDXGISwapChain1* This, DXGI_FRAME_STATISTICS* pStats);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLastPresentCount(
-            [In] IDXGISwapChain1* This,
-            [Out, NativeTypeName("UINT")] uint* pLastPresentCount
-        );
+        public delegate int _GetLastPresentCount(IDXGISwapChain1* This, [NativeTypeName("UINT")] uint* pLastPresentCount);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDesc1(
-            [In] IDXGISwapChain1* This,
-            [Out] DXGI_SWAP_CHAIN_DESC1* pDesc
-        );
+        public delegate int _GetDesc1(IDXGISwapChain1* This, DXGI_SWAP_CHAIN_DESC1* pDesc);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFullscreenDesc(
-            [In] IDXGISwapChain1* This,
-            [Out] DXGI_SWAP_CHAIN_FULLSCREEN_DESC* pDesc
-        );
+        public delegate int _GetFullscreenDesc(IDXGISwapChain1* This, DXGI_SWAP_CHAIN_FULLSCREEN_DESC* pDesc);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetHwnd(
-            [In] IDXGISwapChain1* This,
-            [Out, NativeTypeName("HWND")] IntPtr* pHwnd
-        );
+        public delegate int _GetHwnd(IDXGISwapChain1* This, [NativeTypeName("HWND")] IntPtr* pHwnd);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetCoreWindow(
-            [In] IDXGISwapChain1* This,
-            [In, NativeTypeName("REFIID")] Guid* refiid,
-            [Out] void** ppUnk
-        );
+        public delegate int _GetCoreWindow(IDXGISwapChain1* This, [NativeTypeName("REFIID")] Guid* refiid, void** ppUnk);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Present1(
-            [In] IDXGISwapChain1* This,
-            [In, NativeTypeName("UINT")] uint SyncInterval,
-            [In, NativeTypeName("UINT")] uint PresentFlags,
-            [In] DXGI_PRESENT_PARAMETERS* pPresentParameters
-        );
+        public delegate int _Present1(IDXGISwapChain1* This, [NativeTypeName("UINT")] uint SyncInterval, [NativeTypeName("UINT")] uint PresentFlags, DXGI_PRESENT_PARAMETERS* pPresentParameters);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public delegate int _IsTemporaryMonoSupported(
-            [In] IDXGISwapChain1* This
-        );
+        public delegate int _IsTemporaryMonoSupported(IDXGISwapChain1* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetRestrictToOutput(
-            [In] IDXGISwapChain1* This,
-            [Out] IDXGIOutput** ppRestrictToOutput
-        );
+        public delegate int _GetRestrictToOutput(IDXGISwapChain1* This, IDXGIOutput** ppRestrictToOutput);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetBackgroundColor(
-            [In] IDXGISwapChain1* This,
-            [In] DXGI_RGBA* pColor
-        );
+        public delegate int _SetBackgroundColor(IDXGISwapChain1* This, DXGI_RGBA* pColor);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetBackgroundColor(
-            [In] IDXGISwapChain1* This,
-            [Out] DXGI_RGBA* pColor
-        );
+        public delegate int _GetBackgroundColor(IDXGISwapChain1* This, DXGI_RGBA* pColor);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetRotation(
-            [In] IDXGISwapChain1* This,
-            [In] DXGI_MODE_ROTATION Rotation
-        );
+        public delegate int _SetRotation(IDXGISwapChain1* This, DXGI_MODE_ROTATION Rotation);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetRotation(
-            [In] IDXGISwapChain1* This,
-            [Out] DXGI_MODE_ROTATION* pRotation
-        );
+        public delegate int _GetRotation(IDXGISwapChain1* This, DXGI_MODE_ROTATION* pRotation);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -254,9 +143,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -265,327 +152,187 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetPrivateData(
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In, NativeTypeName("UINT")] uint DataSize,
-            [In] void* pData
-        )
+        public int SetPrivateData([NativeTypeName("REFGUID")] Guid* Name, [NativeTypeName("UINT")] uint DataSize, void* pData)
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)(
-                    This,
-                    Name,
-                    DataSize,
-                    pData
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)(This, Name, DataSize, pData);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetPrivateDataInterface(
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In] IUnknown* pUnknown = null
-        )
+        public int SetPrivateDataInterface([NativeTypeName("REFGUID")] Guid* Name, IUnknown* pUnknown = null)
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(
-                    This,
-                    Name,
-                    pUnknown
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(This, Name, pUnknown);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetPrivateData(
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In, Out, NativeTypeName("UINT")] uint* pDataSize,
-            [Out] void* pData
-        )
+        public int GetPrivateData([NativeTypeName("REFGUID")] Guid* Name, [NativeTypeName("UINT")] uint* pDataSize, void* pData)
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)(
-                    This,
-                    Name,
-                    pDataSize,
-                    pData
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)(This, Name, pDataSize, pData);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetParent(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppParent
-        )
+        public int GetParent([NativeTypeName("REFIID")] Guid* riid, void** ppParent)
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetParent>(lpVtbl->GetParent)(
-                    This,
-                    riid,
-                    ppParent
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetParent>(lpVtbl->GetParent)(This, riid, ppParent);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetDevice(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppDevice
-        )
+        public int GetDevice([NativeTypeName("REFIID")] Guid* riid, void** ppDevice)
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDevice>(lpVtbl->GetDevice)(
-                    This,
-                    riid,
-                    ppDevice
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDevice>(lpVtbl->GetDevice)(This, riid, ppDevice);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Present(
-            [In, NativeTypeName("UINT")] uint SyncInterval,
-            [In, NativeTypeName("UINT")] uint Flags
-        )
+        public int Present([NativeTypeName("UINT")] uint SyncInterval, [NativeTypeName("UINT")] uint Flags)
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Present>(lpVtbl->Present)(
-                    This,
-                    SyncInterval,
-                    Flags
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Present>(lpVtbl->Present)(This, SyncInterval, Flags);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetBuffer(
-            [In, NativeTypeName("UINT")] uint Buffer,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [In, Out] void** ppSurface
-        )
+        public int GetBuffer([NativeTypeName("UINT")] uint Buffer, [NativeTypeName("REFIID")] Guid* riid, void** ppSurface)
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetBuffer>(lpVtbl->GetBuffer)(
-                    This,
-                    Buffer,
-                    riid,
-                    ppSurface
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetBuffer>(lpVtbl->GetBuffer)(This, Buffer, riid, ppSurface);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetFullscreenState(
-            [In, NativeTypeName("BOOL")] int Fullscreen,
-            [In] IDXGIOutput* pTarget = null
-        )
+        public int SetFullscreenState([NativeTypeName("BOOL")] int Fullscreen, IDXGIOutput* pTarget = null)
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetFullscreenState>(lpVtbl->SetFullscreenState)(
-                    This,
-                    Fullscreen,
-                    pTarget
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetFullscreenState>(lpVtbl->SetFullscreenState)(This, Fullscreen, pTarget);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFullscreenState(
-            [Out, NativeTypeName("BOOL")] int* pFullscreen = null,
-            [Out] IDXGIOutput** ppTarget = null
-        )
+        public int GetFullscreenState([NativeTypeName("BOOL")] int* pFullscreen = null, IDXGIOutput** ppTarget = null)
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetFullscreenState>(lpVtbl->GetFullscreenState)(
-                    This,
-                    pFullscreen,
-                    ppTarget
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetFullscreenState>(lpVtbl->GetFullscreenState)(This, pFullscreen, ppTarget);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetDesc(
-            [Out] DXGI_SWAP_CHAIN_DESC* pDesc
-        )
+        public int GetDesc(DXGI_SWAP_CHAIN_DESC* pDesc)
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)(
-                    This,
-                    pDesc
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)(This, pDesc);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int ResizeBuffers(
-            [In, NativeTypeName("UINT")] uint BufferCount,
-            [In, NativeTypeName("UINT")] uint Width,
-            [In, NativeTypeName("UINT")] uint Height,
-            [In] DXGI_FORMAT NewFormat,
-            [In, NativeTypeName("UINT")] uint SwapChainFlags
-        )
+        public int ResizeBuffers([NativeTypeName("UINT")] uint BufferCount, [NativeTypeName("UINT")] uint Width, [NativeTypeName("UINT")] uint Height, DXGI_FORMAT NewFormat, [NativeTypeName("UINT")] uint SwapChainFlags)
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_ResizeBuffers>(lpVtbl->ResizeBuffers)(
-                    This,
-                    BufferCount,
-                    Width,
-                    Height,
-                    NewFormat,
-                    SwapChainFlags
-                );
+                return Marshal.GetDelegateForFunctionPointer<_ResizeBuffers>(lpVtbl->ResizeBuffers)(This, BufferCount, Width, Height, NewFormat, SwapChainFlags);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int ResizeTarget(
-            [In] DXGI_MODE_DESC* pNewTargetParameters
-        )
+        public int ResizeTarget(DXGI_MODE_DESC* pNewTargetParameters)
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_ResizeTarget>(lpVtbl->ResizeTarget)(
-                    This,
-                    pNewTargetParameters
-                );
+                return Marshal.GetDelegateForFunctionPointer<_ResizeTarget>(lpVtbl->ResizeTarget)(This, pNewTargetParameters);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetContainingOutput(
-            [Out] IDXGIOutput** ppOutput
-        )
+        public int GetContainingOutput(IDXGIOutput** ppOutput)
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetContainingOutput>(lpVtbl->GetContainingOutput)(
-                    This,
-                    ppOutput
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetContainingOutput>(lpVtbl->GetContainingOutput)(This, ppOutput);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFrameStatistics(
-            [Out] DXGI_FRAME_STATISTICS* pStats
-        )
+        public int GetFrameStatistics(DXGI_FRAME_STATISTICS* pStats)
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetFrameStatistics>(lpVtbl->GetFrameStatistics)(
-                    This,
-                    pStats
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetFrameStatistics>(lpVtbl->GetFrameStatistics)(This, pStats);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetLastPresentCount(
-            [Out, NativeTypeName("UINT")] uint* pLastPresentCount
-        )
+        public int GetLastPresentCount([NativeTypeName("UINT")] uint* pLastPresentCount)
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetLastPresentCount>(lpVtbl->GetLastPresentCount)(
-                    This,
-                    pLastPresentCount
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetLastPresentCount>(lpVtbl->GetLastPresentCount)(This, pLastPresentCount);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetDesc1(
-            [Out] DXGI_SWAP_CHAIN_DESC1* pDesc
-        )
+        public int GetDesc1(DXGI_SWAP_CHAIN_DESC1* pDesc)
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDesc1>(lpVtbl->GetDesc1)(
-                    This,
-                    pDesc
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDesc1>(lpVtbl->GetDesc1)(This, pDesc);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFullscreenDesc(
-            [Out] DXGI_SWAP_CHAIN_FULLSCREEN_DESC* pDesc
-        )
+        public int GetFullscreenDesc(DXGI_SWAP_CHAIN_FULLSCREEN_DESC* pDesc)
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetFullscreenDesc>(lpVtbl->GetFullscreenDesc)(
-                    This,
-                    pDesc
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetFullscreenDesc>(lpVtbl->GetFullscreenDesc)(This, pDesc);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetHwnd(
-            [Out, NativeTypeName("HWND")] IntPtr* pHwnd
-        )
+        public int GetHwnd([NativeTypeName("HWND")] IntPtr* pHwnd)
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetHwnd>(lpVtbl->GetHwnd)(
-                    This,
-                    pHwnd
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetHwnd>(lpVtbl->GetHwnd)(This, pHwnd);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetCoreWindow(
-            [In, NativeTypeName("REFIID")] Guid* refiid,
-            [Out] void** ppUnk
-        )
+        public int GetCoreWindow([NativeTypeName("REFIID")] Guid* refiid, void** ppUnk)
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetCoreWindow>(lpVtbl->GetCoreWindow)(
-                    This,
-                    refiid,
-                    ppUnk
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetCoreWindow>(lpVtbl->GetCoreWindow)(This, refiid, ppUnk);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Present1(
-            [In, NativeTypeName("UINT")] uint SyncInterval,
-            [In, NativeTypeName("UINT")] uint PresentFlags,
-            [In] DXGI_PRESENT_PARAMETERS* pPresentParameters
-        )
+        public int Present1([NativeTypeName("UINT")] uint SyncInterval, [NativeTypeName("UINT")] uint PresentFlags, DXGI_PRESENT_PARAMETERS* pPresentParameters)
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Present1>(lpVtbl->Present1)(
-                    This,
-                    SyncInterval,
-                    PresentFlags,
-                    pPresentParameters
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Present1>(lpVtbl->Present1)(This, SyncInterval, PresentFlags, pPresentParameters);
             }
         }
 
@@ -594,79 +341,52 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_IsTemporaryMonoSupported>(lpVtbl->IsTemporaryMonoSupported)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_IsTemporaryMonoSupported>(lpVtbl->IsTemporaryMonoSupported)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetRestrictToOutput(
-            [Out] IDXGIOutput** ppRestrictToOutput
-        )
+        public int GetRestrictToOutput(IDXGIOutput** ppRestrictToOutput)
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetRestrictToOutput>(lpVtbl->GetRestrictToOutput)(
-                    This,
-                    ppRestrictToOutput
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetRestrictToOutput>(lpVtbl->GetRestrictToOutput)(This, ppRestrictToOutput);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetBackgroundColor(
-            [In] DXGI_RGBA* pColor
-        )
+        public int SetBackgroundColor(DXGI_RGBA* pColor)
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetBackgroundColor>(lpVtbl->SetBackgroundColor)(
-                    This,
-                    pColor
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetBackgroundColor>(lpVtbl->SetBackgroundColor)(This, pColor);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetBackgroundColor(
-            [Out] DXGI_RGBA* pColor
-        )
+        public int GetBackgroundColor(DXGI_RGBA* pColor)
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetBackgroundColor>(lpVtbl->GetBackgroundColor)(
-                    This,
-                    pColor
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetBackgroundColor>(lpVtbl->GetBackgroundColor)(This, pColor);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetRotation(
-            [In] DXGI_MODE_ROTATION Rotation
-        )
+        public int SetRotation(DXGI_MODE_ROTATION Rotation)
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetRotation>(lpVtbl->SetRotation)(
-                    This,
-                    Rotation
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetRotation>(lpVtbl->SetRotation)(This, Rotation);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetRotation(
-            [Out] DXGI_MODE_ROTATION* pRotation
-        )
+        public int GetRotation(DXGI_MODE_ROTATION* pRotation)
         {
             fixed (IDXGISwapChain1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetRotation>(lpVtbl->GetRotation)(
-                    This,
-                    pRotation
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetRotation>(lpVtbl->GetRotation)(This, pRotation);
             }
         }
 

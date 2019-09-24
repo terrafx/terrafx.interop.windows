@@ -32,9 +32,6 @@ namespace TerraFX.Interop
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "DXGIGetDebugInterface", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DXGIGetDebugInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** pDebug
-        );
+        public static extern int DXGIGetDebugInterface([NativeTypeName("REFIID")] Guid* riid, void** pDebug);
     }
 }

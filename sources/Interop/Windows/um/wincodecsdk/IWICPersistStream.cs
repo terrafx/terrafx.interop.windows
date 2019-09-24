@@ -15,90 +15,50 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IWICPersistStream* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICPersistStream* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IWICPersistStream* This
-        );
+        public delegate uint _AddRef(IWICPersistStream* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IWICPersistStream* This
-        );
+        public delegate uint _Release(IWICPersistStream* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetClassID(
-            [In] IWICPersistStream* This,
-            [Out, NativeTypeName("CLSID")] Guid* pClassID
-        );
+        public delegate int _GetClassID(IWICPersistStream* This, [NativeTypeName("CLSID")] Guid* pClassID);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _IsDirty(
-            [In] IWICPersistStream* This
-        );
+        public delegate int _IsDirty(IWICPersistStream* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Load(
-            [In] IWICPersistStream* This,
-            [In] IStream* pStm = null
-        );
+        public delegate int _Load(IWICPersistStream* This, IStream* pStm = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Save(
-            [In] IWICPersistStream* This,
-            [In, Optional] IStream* pStm,
-            [In, NativeTypeName("BOOL")] int fClearDirty
-        );
+        public delegate int _Save(IWICPersistStream* This, [Optional] IStream* pStm, [NativeTypeName("BOOL")] int fClearDirty);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetSizeMax(
-            [In] IWICPersistStream* This,
-            [Out] ULARGE_INTEGER* pcbSize
-        );
+        public delegate int _GetSizeMax(IWICPersistStream* This, ULARGE_INTEGER* pcbSize);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _LoadEx(
-            [In] IWICPersistStream* This,
-            [In, Optional] IStream* pIStream,
-            [In, Optional, NativeTypeName("GUID")] Guid* pguidPreferredVendor,
-            [In, NativeTypeName("DWORD")] uint dwPersistOptions
-        );
+        public delegate int _LoadEx(IWICPersistStream* This, [Optional] IStream* pIStream, [Optional, NativeTypeName("GUID")] Guid* pguidPreferredVendor, [NativeTypeName("DWORD")] uint dwPersistOptions);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SaveEx(
-            [In] IWICPersistStream* This,
-            [In, Optional] IStream* pIStream,
-            [In, NativeTypeName("DWORD")] uint dwPersistOptions,
-            [In, NativeTypeName("BOOL")] int fClearDirty
-        );
+        public delegate int _SaveEx(IWICPersistStream* This, [Optional] IStream* pIStream, [NativeTypeName("DWORD")] uint dwPersistOptions, [NativeTypeName("BOOL")] int fClearDirty);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICPersistStream* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -107,9 +67,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPersistStream* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -118,23 +76,16 @@ namespace TerraFX.Interop
         {
             fixed (IWICPersistStream* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetClassID(
-            [Out, NativeTypeName("CLSID")] Guid* pClassID
-        )
+        public int GetClassID([NativeTypeName("CLSID")] Guid* pClassID)
         {
             fixed (IWICPersistStream* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetClassID>(lpVtbl->GetClassID)(
-                    This,
-                    pClassID
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetClassID>(lpVtbl->GetClassID)(This, pClassID);
             }
         }
 
@@ -143,89 +94,52 @@ namespace TerraFX.Interop
         {
             fixed (IWICPersistStream* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_IsDirty>(lpVtbl->IsDirty)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_IsDirty>(lpVtbl->IsDirty)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Load(
-            [In] IStream* pStm = null
-        )
+        public int Load(IStream* pStm = null)
         {
             fixed (IWICPersistStream* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Load>(lpVtbl->Load)(
-                    This,
-                    pStm
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Load>(lpVtbl->Load)(This, pStm);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Save(
-            [In, Optional] IStream* pStm,
-            [In, NativeTypeName("BOOL")] int fClearDirty
-        )
+        public int Save([Optional] IStream* pStm, [NativeTypeName("BOOL")] int fClearDirty)
         {
             fixed (IWICPersistStream* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Save>(lpVtbl->Save)(
-                    This,
-                    pStm,
-                    fClearDirty
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Save>(lpVtbl->Save)(This, pStm, fClearDirty);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetSizeMax(
-            [Out] ULARGE_INTEGER* pcbSize
-        )
+        public int GetSizeMax(ULARGE_INTEGER* pcbSize)
         {
             fixed (IWICPersistStream* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetSizeMax>(lpVtbl->GetSizeMax)(
-                    This,
-                    pcbSize
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetSizeMax>(lpVtbl->GetSizeMax)(This, pcbSize);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int LoadEx(
-            [In, Optional] IStream* pIStream,
-            [In, Optional, NativeTypeName("GUID")] Guid* pguidPreferredVendor,
-            [In, NativeTypeName("DWORD")] uint dwPersistOptions
-        )
+        public int LoadEx([Optional] IStream* pIStream, [Optional, NativeTypeName("GUID")] Guid* pguidPreferredVendor, [NativeTypeName("DWORD")] uint dwPersistOptions)
         {
             fixed (IWICPersistStream* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_LoadEx>(lpVtbl->LoadEx)(
-                    This,
-                    pIStream,
-                    pguidPreferredVendor,
-                    dwPersistOptions
-                );
+                return Marshal.GetDelegateForFunctionPointer<_LoadEx>(lpVtbl->LoadEx)(This, pIStream, pguidPreferredVendor, dwPersistOptions);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SaveEx(
-            [In, Optional] IStream* pIStream,
-            [In, NativeTypeName("DWORD")] uint dwPersistOptions,
-            [In, NativeTypeName("BOOL")] int fClearDirty
-        )
+        public int SaveEx([Optional] IStream* pIStream, [NativeTypeName("DWORD")] uint dwPersistOptions, [NativeTypeName("BOOL")] int fClearDirty)
         {
             fixed (IWICPersistStream* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SaveEx>(lpVtbl->SaveEx)(
-                    This,
-                    pIStream,
-                    dwPersistOptions,
-                    fClearDirty
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SaveEx>(lpVtbl->SaveEx)(This, pIStream, dwPersistOptions, fClearDirty);
             }
         }
 

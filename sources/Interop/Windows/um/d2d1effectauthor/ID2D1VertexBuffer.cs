@@ -16,51 +16,30 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID2D1VertexBuffer* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1VertexBuffer* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID2D1VertexBuffer* This
-        );
+        public delegate uint _AddRef(ID2D1VertexBuffer* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID2D1VertexBuffer* This
-        );
+        public delegate uint _Release(ID2D1VertexBuffer* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Map(
-            [In] ID2D1VertexBuffer* This,
-            [Out, NativeTypeName("BYTE[]")] byte** data,
-            [In, NativeTypeName("UINT32")] uint bufferSize
-        );
+        public delegate int _Map(ID2D1VertexBuffer* This, [NativeTypeName("BYTE[]")] byte** data, [NativeTypeName("UINT32")] uint bufferSize);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Unmap(
-            [In] ID2D1VertexBuffer* This
-        );
+        public delegate int _Unmap(ID2D1VertexBuffer* This);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1VertexBuffer* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -69,9 +48,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1VertexBuffer* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -80,25 +57,16 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1VertexBuffer* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Map(
-            [Out, NativeTypeName("BYTE[]")] byte** data,
-            [In, NativeTypeName("UINT32")] uint bufferSize
-        )
+        public int Map([NativeTypeName("BYTE[]")] byte** data, [NativeTypeName("UINT32")] uint bufferSize)
         {
             fixed (ID2D1VertexBuffer* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Map>(lpVtbl->Map)(
-                    This,
-                    data,
-                    bufferSize
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Map>(lpVtbl->Map)(This, data, bufferSize);
             }
         }
 
@@ -107,9 +75,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1VertexBuffer* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Unmap>(lpVtbl->Unmap)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Unmap>(lpVtbl->Unmap)(This);
             }
         }
 

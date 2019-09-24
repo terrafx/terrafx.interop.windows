@@ -16,60 +16,36 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID2D1ConcreteTransform* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1ConcreteTransform* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID2D1ConcreteTransform* This
-        );
+        public delegate uint _AddRef(ID2D1ConcreteTransform* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID2D1ConcreteTransform* This
-        );
+        public delegate uint _Release(ID2D1ConcreteTransform* This);
 
         /// <summary>Return the number of input this node has.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public delegate uint _GetInputCount(
-            [In] ID2D1ConcreteTransform* This
-        );
+        public delegate uint _GetInputCount(ID2D1ConcreteTransform* This);
 
         /// <summary>Controls the output precision and channel-depth for this transform.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetOutputBuffer(
-            [In] ID2D1ConcreteTransform* This,
-            [In] D2D1_BUFFER_PRECISION bufferPrecision,
-            [In] D2D1_CHANNEL_DEPTH channelDepth
-        );
+        public delegate int _SetOutputBuffer(ID2D1ConcreteTransform* This, D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth);
 
         /// <summary>Controls whether the output of this transform is cached.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetCached(
-            [In] ID2D1ConcreteTransform* This,
-            [In, NativeTypeName("BOOL")] int isCached
-        );
+        public delegate void _SetCached(ID2D1ConcreteTransform* This, [NativeTypeName("BOOL")] int isCached);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1ConcreteTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -78,9 +54,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ConcreteTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -89,9 +63,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ConcreteTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
@@ -100,38 +72,24 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ConcreteTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetInputCount>(lpVtbl->GetInputCount)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetInputCount>(lpVtbl->GetInputCount)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetOutputBuffer(
-            [In] D2D1_BUFFER_PRECISION bufferPrecision,
-            [In] D2D1_CHANNEL_DEPTH channelDepth
-        )
+        public int SetOutputBuffer(D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth)
         {
             fixed (ID2D1ConcreteTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetOutputBuffer>(lpVtbl->SetOutputBuffer)(
-                    This,
-                    bufferPrecision,
-                    channelDepth
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetOutputBuffer>(lpVtbl->SetOutputBuffer)(This, bufferPrecision, channelDepth);
             }
         }
 
-        public void SetCached(
-            [In, NativeTypeName("BOOL")] int isCached
-        )
+        public void SetCached([NativeTypeName("BOOL")] int isCached)
         {
             fixed (ID2D1ConcreteTransform* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetCached>(lpVtbl->SetCached)(
-                    This,
-                    isCached
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetCached>(lpVtbl->SetCached)(This, isCached);
             }
         }
 

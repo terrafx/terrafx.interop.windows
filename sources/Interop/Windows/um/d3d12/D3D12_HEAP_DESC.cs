@@ -94,11 +94,6 @@ namespace TerraFX.Interop
             return (obj is D3D12_HEAP_DESC other) && (this == other);
         }
 
-        public override int GetHashCode() => HashCode.Combine(
-            SizeInBytes,
-            Properties,
-            Alignment,
-            Flags
-        );
+        public override int GetHashCode() => HashCode.Combine(SizeInBytes, Properties, Alignment, Flags);
     }
 }

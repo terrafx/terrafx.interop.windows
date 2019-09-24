@@ -15,46 +15,26 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IWICBitmapCodecProgressNotification* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICBitmapCodecProgressNotification* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IWICBitmapCodecProgressNotification* This
-        );
+        public delegate uint _AddRef(IWICBitmapCodecProgressNotification* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IWICBitmapCodecProgressNotification* This
-        );
+        public delegate uint _Release(IWICBitmapCodecProgressNotification* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _RegisterProgressNotification(
-            [In] IWICBitmapCodecProgressNotification* This,
-            [In, Optional] PFNProgressNotification pfnProgressNotification,
-            [In, Optional, NativeTypeName("LPVOID")] void* pvData,
-            [In, NativeTypeName("DWORD")] uint dwProgressFlags
-        );
+        public delegate int _RegisterProgressNotification(IWICBitmapCodecProgressNotification* This, [Optional] PFNProgressNotification pfnProgressNotification, [Optional, NativeTypeName("LPVOID")] void* pvData, [NativeTypeName("DWORD")] uint dwProgressFlags);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICBitmapCodecProgressNotification* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -63,9 +43,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapCodecProgressNotification* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -74,27 +52,16 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapCodecProgressNotification* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int RegisterProgressNotification(
-            [In, Optional] PFNProgressNotification pfnProgressNotification,
-            [In, Optional, NativeTypeName("LPVOID")] void* pvData,
-            [In, NativeTypeName("DWORD")] uint dwProgressFlags
-        )
+        public int RegisterProgressNotification([Optional] PFNProgressNotification pfnProgressNotification, [Optional, NativeTypeName("LPVOID")] void* pvData, [NativeTypeName("DWORD")] uint dwProgressFlags)
         {
             fixed (IWICBitmapCodecProgressNotification* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_RegisterProgressNotification>(lpVtbl->RegisterProgressNotification)(
-                    This,
-                    pfnProgressNotification,
-                    pvData,
-                    dwProgressFlags
-                );
+                return Marshal.GetDelegateForFunctionPointer<_RegisterProgressNotification>(lpVtbl->RegisterProgressNotification)(This, pfnProgressNotification, pvData, dwProgressFlags);
             }
         }
 

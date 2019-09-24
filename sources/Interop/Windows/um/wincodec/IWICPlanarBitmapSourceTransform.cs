@@ -15,64 +15,30 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IWICPlanarBitmapSourceTransform* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICPlanarBitmapSourceTransform* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IWICPlanarBitmapSourceTransform* This
-        );
+        public delegate uint _AddRef(IWICPlanarBitmapSourceTransform* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IWICPlanarBitmapSourceTransform* This
-        );
+        public delegate uint _Release(IWICPlanarBitmapSourceTransform* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _DoesSupportTransform(
-            [In] IWICPlanarBitmapSourceTransform* This,
-            [In, Out, NativeTypeName("UINT")] uint* puiWidth,
-            [In, Out, NativeTypeName("UINT")] uint* puiHeight,
-            [In] WICBitmapTransformOptions dstTransform,
-            [In] WICPlanarOptions dstPlanarOptions,
-            [In, NativeTypeName("WICPixelFormatGUID[]")] Guid* pguidDstFormats,
-            [Out, NativeTypeName("WICBitmapPlaneDescription[]")] WICBitmapPlaneDescription* pPlaneDescriptions,
-            [In, NativeTypeName("UINT")] uint cPlanes,
-            [Out, NativeTypeName("BOOL")] int* pfIsSupported
-        );
+        public delegate int _DoesSupportTransform(IWICPlanarBitmapSourceTransform* This, [NativeTypeName("UINT")] uint* puiWidth, [NativeTypeName("UINT")] uint* puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [NativeTypeName("WICPixelFormatGUID[]")] Guid* pguidDstFormats, [NativeTypeName("WICBitmapPlaneDescription[]")] WICBitmapPlaneDescription* pPlaneDescriptions, [NativeTypeName("UINT")] uint cPlanes, [NativeTypeName("BOOL")] int* pfIsSupported);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CopyPixels(
-            [In] IWICPlanarBitmapSourceTransform* This,
-            [In, Optional] WICRect* prcSource,
-            [In, NativeTypeName("UINT")] uint uiWidth,
-            [In, NativeTypeName("UINT")] uint uiHeight,
-            [In] WICBitmapTransformOptions dstTransform,
-            [In] WICPlanarOptions dstPlanarOptions,
-            [In, NativeTypeName("WICBitmapPlane[]")] WICBitmapPlane* pDstPlanes,
-            [In, NativeTypeName("UINT")] uint cPlanes
-        );
+        public delegate int _CopyPixels(IWICPlanarBitmapSourceTransform* This, [Optional] WICRect* prcSource, [NativeTypeName("UINT")] uint uiWidth, [NativeTypeName("UINT")] uint uiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [NativeTypeName("WICBitmapPlane[]")] WICBitmapPlane* pDstPlanes, [NativeTypeName("UINT")] uint cPlanes);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICPlanarBitmapSourceTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -81,9 +47,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPlanarBitmapSourceTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -92,63 +56,25 @@ namespace TerraFX.Interop
         {
             fixed (IWICPlanarBitmapSourceTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int DoesSupportTransform(
-            [In, Out, NativeTypeName("UINT")] uint* puiWidth,
-            [In, Out, NativeTypeName("UINT")] uint* puiHeight,
-            [In] WICBitmapTransformOptions dstTransform,
-            [In] WICPlanarOptions dstPlanarOptions,
-            [In, NativeTypeName("WICPixelFormatGUID[]")] Guid* pguidDstFormats,
-            [Out, NativeTypeName("WICBitmapPlaneDescription[]")] WICBitmapPlaneDescription* pPlaneDescriptions,
-            [In, NativeTypeName("UINT")] uint cPlanes,
-            [Out, NativeTypeName("BOOL")] int* pfIsSupported
-        )
+        public int DoesSupportTransform([NativeTypeName("UINT")] uint* puiWidth, [NativeTypeName("UINT")] uint* puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [NativeTypeName("WICPixelFormatGUID[]")] Guid* pguidDstFormats, [NativeTypeName("WICBitmapPlaneDescription[]")] WICBitmapPlaneDescription* pPlaneDescriptions, [NativeTypeName("UINT")] uint cPlanes, [NativeTypeName("BOOL")] int* pfIsSupported)
         {
             fixed (IWICPlanarBitmapSourceTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_DoesSupportTransform>(lpVtbl->DoesSupportTransform)(
-                    This,
-                    puiWidth,
-                    puiHeight,
-                    dstTransform,
-                    dstPlanarOptions,
-                    pguidDstFormats,
-                    pPlaneDescriptions,
-                    cPlanes,
-                    pfIsSupported
-                );
+                return Marshal.GetDelegateForFunctionPointer<_DoesSupportTransform>(lpVtbl->DoesSupportTransform)(This, puiWidth, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptions, cPlanes, pfIsSupported);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CopyPixels(
-            [In, Optional] WICRect* prcSource,
-            [In, NativeTypeName("UINT")] uint uiWidth,
-            [In, NativeTypeName("UINT")] uint uiHeight,
-            [In] WICBitmapTransformOptions dstTransform,
-            [In] WICPlanarOptions dstPlanarOptions,
-            [In, NativeTypeName("WICBitmapPlane[]")] WICBitmapPlane* pDstPlanes,
-            [In, NativeTypeName("UINT")] uint cPlanes
-        )
+        public int CopyPixels([Optional] WICRect* prcSource, [NativeTypeName("UINT")] uint uiWidth, [NativeTypeName("UINT")] uint uiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, [NativeTypeName("WICBitmapPlane[]")] WICBitmapPlane* pDstPlanes, [NativeTypeName("UINT")] uint cPlanes)
         {
             fixed (IWICPlanarBitmapSourceTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CopyPixels>(lpVtbl->CopyPixels)(
-                    This,
-                    prcSource,
-                    uiWidth,
-                    uiHeight,
-                    dstTransform,
-                    dstPlanarOptions,
-                    pDstPlanes,
-                    cPlanes
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CopyPixels>(lpVtbl->CopyPixels)(This, prcSource, uiWidth, uiHeight, dstTransform, dstPlanarOptions, pDstPlanes, cPlanes);
             }
         }
 

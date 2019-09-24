@@ -15,120 +15,62 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID3D12PipelineLibrary* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID3D12PipelineLibrary* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID3D12PipelineLibrary* This
-        );
+        public delegate uint _AddRef(ID3D12PipelineLibrary* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID3D12PipelineLibrary* This
-        );
+        public delegate uint _Release(ID3D12PipelineLibrary* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPrivateData(
-            [In] ID3D12PipelineLibrary* This,
-            [In, NativeTypeName("REFGUID")] Guid* guid,
-            [In, Out, NativeTypeName("UINT")] uint* pDataSize,
-            [Out] void* pData = null
-        );
+        public delegate int _GetPrivateData(ID3D12PipelineLibrary* This, [NativeTypeName("REFGUID")] Guid* guid, [NativeTypeName("UINT")] uint* pDataSize, void* pData = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateData(
-            [In] ID3D12PipelineLibrary* This,
-            [In, NativeTypeName("REFGUID")] Guid* guid,
-            [In, NativeTypeName("UINT")] uint DataSize,
-            [In] void* pData = null
-        );
+        public delegate int _SetPrivateData(ID3D12PipelineLibrary* This, [NativeTypeName("REFGUID")] Guid* guid, [NativeTypeName("UINT")] uint DataSize, void* pData = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateDataInterface(
-            [In] ID3D12PipelineLibrary* This,
-            [In, NativeTypeName("REFGUID")] Guid* guid,
-            [In] IUnknown* pData = null
-        );
+        public delegate int _SetPrivateDataInterface(ID3D12PipelineLibrary* This, [NativeTypeName("REFGUID")] Guid* guid, IUnknown* pData = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetName(
-            [In] ID3D12PipelineLibrary* This,
-            [In, NativeTypeName("LPCWSTR")] char* Name
-        );
+        public delegate int _SetName(ID3D12PipelineLibrary* This, [NativeTypeName("LPCWSTR")] char* Name);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDevice(
-            [In] ID3D12PipelineLibrary* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvDevice = null
-        );
+        public delegate int _GetDevice(ID3D12PipelineLibrary* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvDevice = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _StorePipeline(
-            [In] ID3D12PipelineLibrary* This,
-            [In, Optional, NativeTypeName("LPCWSTR")] char* pName,
-            [In] ID3D12PipelineState* pPipeline
-        );
+        public delegate int _StorePipeline(ID3D12PipelineLibrary* This, [Optional, NativeTypeName("LPCWSTR")] char* pName, ID3D12PipelineState* pPipeline);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _LoadGraphicsPipeline(
-            [In] ID3D12PipelineLibrary* This,
-            [In, NativeTypeName("LPCWSTR")] char* pName,
-            [In] D3D12_GRAPHICS_PIPELINE_STATE_DESC* pDesc,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppPipelineState
-        );
+        public delegate int _LoadGraphicsPipeline(ID3D12PipelineLibrary* This, [NativeTypeName("LPCWSTR")] char* pName, D3D12_GRAPHICS_PIPELINE_STATE_DESC* pDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppPipelineState);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _LoadComputePipeline(
-            [In] ID3D12PipelineLibrary* This,
-            [In, NativeTypeName("LPCWSTR")] char* pName,
-            [In] D3D12_COMPUTE_PIPELINE_STATE_DESC* pDesc,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppPipelineState
-        );
+        public delegate int _LoadComputePipeline(ID3D12PipelineLibrary* This, [NativeTypeName("LPCWSTR")] char* pName, D3D12_COMPUTE_PIPELINE_STATE_DESC* pDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppPipelineState);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("SIZE_T")]
-        public delegate UIntPtr _GetSerializedSize(
-            [In] ID3D12PipelineLibrary* This
-        );
+        public delegate UIntPtr _GetSerializedSize(ID3D12PipelineLibrary* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Serialize(
-            [In] ID3D12PipelineLibrary* This,
-            [Out] void* pData,
-            [In, NativeTypeName("SIZE_T")] UIntPtr DataSizeInBytes
-        );
+        public delegate int _Serialize(ID3D12PipelineLibrary* This, void* pData, [NativeTypeName("SIZE_T")] UIntPtr DataSizeInBytes);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID3D12PipelineLibrary* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -137,9 +79,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12PipelineLibrary* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -148,147 +88,79 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12PipelineLibrary* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetPrivateData(
-            [In, NativeTypeName("REFGUID")] Guid* guid,
-            [In, Out, NativeTypeName("UINT")] uint* pDataSize,
-            [Out] void* pData = null
-        )
+        public int GetPrivateData([NativeTypeName("REFGUID")] Guid* guid, [NativeTypeName("UINT")] uint* pDataSize, void* pData = null)
         {
             fixed (ID3D12PipelineLibrary* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)(
-                    This,
-                    guid,
-                    pDataSize,
-                    pData
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)(This, guid, pDataSize, pData);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetPrivateData(
-            [In, NativeTypeName("REFGUID")] Guid* guid,
-            [In, NativeTypeName("UINT")] uint DataSize,
-            [In] void* pData = null
-        )
+        public int SetPrivateData([NativeTypeName("REFGUID")] Guid* guid, [NativeTypeName("UINT")] uint DataSize, void* pData = null)
         {
             fixed (ID3D12PipelineLibrary* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)(
-                    This,
-                    guid,
-                    DataSize,
-                    pData
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)(This, guid, DataSize, pData);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetPrivateDataInterface(
-            [In, NativeTypeName("REFGUID")] Guid* guid,
-            [In] IUnknown* pData = null
-        )
+        public int SetPrivateDataInterface([NativeTypeName("REFGUID")] Guid* guid, IUnknown* pData = null)
         {
             fixed (ID3D12PipelineLibrary* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(
-                    This,
-                    guid,
-                    pData
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(This, guid, pData);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetName(
-            [In, NativeTypeName("LPCWSTR")] char* Name
-        )
+        public int SetName([NativeTypeName("LPCWSTR")] char* Name)
         {
             fixed (ID3D12PipelineLibrary* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetName>(lpVtbl->SetName)(
-                    This,
-                    Name
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetName>(lpVtbl->SetName)(This, Name);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetDevice(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvDevice = null
-        )
+        public int GetDevice([NativeTypeName("REFIID")] Guid* riid, void** ppvDevice = null)
         {
             fixed (ID3D12PipelineLibrary* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDevice>(lpVtbl->GetDevice)(
-                    This,
-                    riid,
-                    ppvDevice
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDevice>(lpVtbl->GetDevice)(This, riid, ppvDevice);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int StorePipeline(
-            [In, Optional, NativeTypeName("LPCWSTR")] char* pName,
-            [In] ID3D12PipelineState* pPipeline
-        )
+        public int StorePipeline([Optional, NativeTypeName("LPCWSTR")] char* pName, ID3D12PipelineState* pPipeline)
         {
             fixed (ID3D12PipelineLibrary* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_StorePipeline>(lpVtbl->StorePipeline)(
-                    This,
-                    pName,
-                    pPipeline
-                );
+                return Marshal.GetDelegateForFunctionPointer<_StorePipeline>(lpVtbl->StorePipeline)(This, pName, pPipeline);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int LoadGraphicsPipeline(
-            [In, NativeTypeName("LPCWSTR")] char* pName,
-            [In] D3D12_GRAPHICS_PIPELINE_STATE_DESC* pDesc,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppPipelineState
-        )
+        public int LoadGraphicsPipeline([NativeTypeName("LPCWSTR")] char* pName, D3D12_GRAPHICS_PIPELINE_STATE_DESC* pDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppPipelineState)
         {
             fixed (ID3D12PipelineLibrary* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_LoadGraphicsPipeline>(lpVtbl->LoadGraphicsPipeline)(
-                    This,
-                    pName,
-                    pDesc,
-                    riid,
-                    ppPipelineState
-                );
+                return Marshal.GetDelegateForFunctionPointer<_LoadGraphicsPipeline>(lpVtbl->LoadGraphicsPipeline)(This, pName, pDesc, riid, ppPipelineState);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int LoadComputePipeline(
-            [In, NativeTypeName("LPCWSTR")] char* pName,
-            [In] D3D12_COMPUTE_PIPELINE_STATE_DESC* pDesc,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppPipelineState
-        )
+        public int LoadComputePipeline([NativeTypeName("LPCWSTR")] char* pName, D3D12_COMPUTE_PIPELINE_STATE_DESC* pDesc, [NativeTypeName("REFIID")] Guid* riid, void** ppPipelineState)
         {
             fixed (ID3D12PipelineLibrary* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_LoadComputePipeline>(lpVtbl->LoadComputePipeline)(
-                    This,
-                    pName,
-                    pDesc,
-                    riid,
-                    ppPipelineState
-                );
+                return Marshal.GetDelegateForFunctionPointer<_LoadComputePipeline>(lpVtbl->LoadComputePipeline)(This, pName, pDesc, riid, ppPipelineState);
             }
         }
 
@@ -297,25 +169,16 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12PipelineLibrary* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetSerializedSize>(lpVtbl->GetSerializedSize)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetSerializedSize>(lpVtbl->GetSerializedSize)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Serialize(
-            [Out] void* pData,
-            [In, NativeTypeName("SIZE_T")] UIntPtr DataSizeInBytes
-        )
+        public int Serialize(void* pData, [NativeTypeName("SIZE_T")] UIntPtr DataSizeInBytes)
         {
             fixed (ID3D12PipelineLibrary* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Serialize>(lpVtbl->Serialize)(
-                    This,
-                    pData,
-                    DataSizeInBytes
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Serialize>(lpVtbl->Serialize)(This, pData, DataSizeInBytes);
             }
         }
 

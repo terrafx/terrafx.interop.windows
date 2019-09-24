@@ -16,86 +16,50 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID2D1DrawingStateBlock1* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1DrawingStateBlock1* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID2D1DrawingStateBlock1* This
-        );
+        public delegate uint _AddRef(ID2D1DrawingStateBlock1* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID2D1DrawingStateBlock1* This
-        );
+        public delegate uint _Release(ID2D1DrawingStateBlock1* This);
 
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetFactory(
-            [In] ID2D1DrawingStateBlock1* This,
-            [Out] ID2D1Factory** factory
-        );
+        public delegate void _GetFactory(ID2D1DrawingStateBlock1* This, ID2D1Factory** factory);
 
         /// <summary>Retrieves the state currently contained within this state block resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetDescription(
-            [In] ID2D1DrawingStateBlock1* This,
-            [Out] D2D1_DRAWING_STATE_DESCRIPTION* stateDescription
-        );
+        public delegate void _GetDescription(ID2D1DrawingStateBlock1* This, D2D1_DRAWING_STATE_DESCRIPTION* stateDescription);
 
         /// <summary>Sets the state description of this state block resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetDescription(
-            [In] ID2D1DrawingStateBlock1* This,
-            [In] D2D1_DRAWING_STATE_DESCRIPTION* stateDescription
-        );
+        public delegate void _SetDescription(ID2D1DrawingStateBlock1* This, D2D1_DRAWING_STATE_DESCRIPTION* stateDescription);
 
         /// <summary>Sets the text rendering parameters of this state block resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetTextRenderingParams(
-            [In] ID2D1DrawingStateBlock1* This,
-            [In] IDWriteRenderingParams* textRenderingParams = null
-        );
+        public delegate void _SetTextRenderingParams(ID2D1DrawingStateBlock1* This, IDWriteRenderingParams* textRenderingParams = null);
 
         /// <summary>Retrieves the text rendering parameters contained within this state block resource. If a NULL text rendering parameter was specified, NULL will be returned.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetTextRenderingParams(
-            [In] ID2D1DrawingStateBlock1* This,
-            [Out] IDWriteRenderingParams** textRenderingParams
-        );
+        public delegate void _GetTextRenderingParams(ID2D1DrawingStateBlock1* This, IDWriteRenderingParams** textRenderingParams);
 
         /// <summary>Retrieves the state currently contained within this state block resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetDescription1(
-            [In] ID2D1DrawingStateBlock1* This,
-            [Out] D2D1_DRAWING_STATE_DESCRIPTION1* stateDescription
-        );
+        public delegate void _GetDescription1(ID2D1DrawingStateBlock1* This, D2D1_DRAWING_STATE_DESCRIPTION1* stateDescription);
 
         /// <summary>Sets the state description of this state block resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetDescription1(
-            [In] ID2D1DrawingStateBlock1* This,
-            [In] D2D1_DRAWING_STATE_DESCRIPTION1* stateDescription
-        );
+        public delegate void _SetDescription1(ID2D1DrawingStateBlock1* This, D2D1_DRAWING_STATE_DESCRIPTION1* stateDescription);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1DrawingStateBlock1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -104,9 +68,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DrawingStateBlock1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -115,100 +77,63 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1DrawingStateBlock1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
-        public void GetFactory(
-            [Out] ID2D1Factory** factory
-        )
+        public void GetFactory(ID2D1Factory** factory)
         {
             fixed (ID2D1DrawingStateBlock1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
-                    This,
-                    factory
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(This, factory);
             }
         }
 
-        public void GetDescription(
-            [Out] D2D1_DRAWING_STATE_DESCRIPTION* stateDescription
-        )
+        public void GetDescription(D2D1_DRAWING_STATE_DESCRIPTION* stateDescription)
         {
             fixed (ID2D1DrawingStateBlock1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetDescription>(lpVtbl->GetDescription)(
-                    This,
-                    stateDescription
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetDescription>(lpVtbl->GetDescription)(This, stateDescription);
             }
         }
 
-        public void SetDescription(
-            [In] D2D1_DRAWING_STATE_DESCRIPTION* stateDescription
-        )
+        public void SetDescription(D2D1_DRAWING_STATE_DESCRIPTION* stateDescription)
         {
             fixed (ID2D1DrawingStateBlock1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetDescription>(lpVtbl->SetDescription)(
-                    This,
-                    stateDescription
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetDescription>(lpVtbl->SetDescription)(This, stateDescription);
             }
         }
 
-        public void SetTextRenderingParams(
-            [In] IDWriteRenderingParams* textRenderingParams = null
-        )
+        public void SetTextRenderingParams(IDWriteRenderingParams* textRenderingParams = null)
         {
             fixed (ID2D1DrawingStateBlock1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetTextRenderingParams>(lpVtbl->SetTextRenderingParams)(
-                    This,
-                    textRenderingParams
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetTextRenderingParams>(lpVtbl->SetTextRenderingParams)(This, textRenderingParams);
             }
         }
 
-        public void GetTextRenderingParams(
-            [Out] IDWriteRenderingParams** textRenderingParams
-        )
+        public void GetTextRenderingParams(IDWriteRenderingParams** textRenderingParams)
         {
             fixed (ID2D1DrawingStateBlock1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetTextRenderingParams>(lpVtbl->GetTextRenderingParams)(
-                    This,
-                    textRenderingParams
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetTextRenderingParams>(lpVtbl->GetTextRenderingParams)(This, textRenderingParams);
             }
         }
 
-        public void GetDescription1(
-            [Out] D2D1_DRAWING_STATE_DESCRIPTION1* stateDescription
-        )
+        public void GetDescription1(D2D1_DRAWING_STATE_DESCRIPTION1* stateDescription)
         {
             fixed (ID2D1DrawingStateBlock1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetDescription1>(lpVtbl->GetDescription1)(
-                    This,
-                    stateDescription
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetDescription1>(lpVtbl->GetDescription1)(This, stateDescription);
             }
         }
 
-        public void SetDescription1(
-            [In] D2D1_DRAWING_STATE_DESCRIPTION1* stateDescription
-        )
+        public void SetDescription1(D2D1_DRAWING_STATE_DESCRIPTION1* stateDescription)
         {
             fixed (ID2D1DrawingStateBlock1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetDescription1>(lpVtbl->SetDescription1)(
-                    This,
-                    stateDescription
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetDescription1>(lpVtbl->SetDescription1)(This, stateDescription);
             }
         }
 

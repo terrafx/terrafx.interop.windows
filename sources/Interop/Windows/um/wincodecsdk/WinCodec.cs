@@ -260,28 +260,14 @@ namespace TerraFX.Interop
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "WICMatchMetadataContent", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WICMatchMetadataContent(
-            [In, NativeTypeName("REFGUID")] Guid* guidContainerFormat,
-            [In, Optional, NativeTypeName("GUID")] Guid* pguidVendor,
-            [In] IStream* pIStream,
-            [Out, NativeTypeName("GUID")] Guid* pguidMetadataFormat
-        );
+        public static extern int WICMatchMetadataContent([NativeTypeName("REFGUID")] Guid* guidContainerFormat, [Optional, NativeTypeName("GUID")] Guid* pguidVendor, IStream* pIStream, [NativeTypeName("GUID")] Guid* pguidMetadataFormat);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "WICSerializeMetadataContent", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WICSerializeMetadataContent(
-            [In, NativeTypeName("REFGUID")] Guid* guidContainerFormat,
-            [In] IWICMetadataWriter* pIWriter,
-            [In, NativeTypeName("DWORD")] uint dwPersistOptions,
-            [In] IStream* pIStream
-        );
+        public static extern int WICSerializeMetadataContent([NativeTypeName("REFGUID")] Guid* guidContainerFormat, IWICMetadataWriter* pIWriter, [NativeTypeName("DWORD")] uint dwPersistOptions, IStream* pIStream);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "WICGetMetadataContentSize", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WICGetMetadataContentSize(
-            [In, NativeTypeName("REFGUID")] Guid* guidContainerFormat,
-            [In] IWICMetadataWriter* pIWriter,
-            [Out] ULARGE_INTEGER* pcbSize
-        );
+        public static extern int WICGetMetadataContentSize([NativeTypeName("REFGUID")] Guid* guidContainerFormat, IWICMetadataWriter* pIWriter, ULARGE_INTEGER* pcbSize);
     }
 }

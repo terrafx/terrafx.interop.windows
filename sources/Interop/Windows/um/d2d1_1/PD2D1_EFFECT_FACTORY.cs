@@ -10,7 +10,5 @@ namespace TerraFX.Interop
     /// <summary>Function pointer to construct a new effect once registered.</summary>
     [UnmanagedFunctionPointer(CallingConvention.StdCall)]
     [return: NativeTypeName("HRESULT")]
-    public unsafe delegate int PD2D1_EFFECT_FACTORY(
-        [Out] IUnknown** effectImpl
-    );
+    public unsafe delegate int PD2D1_EFFECT_FACTORY(IUnknown** effectImpl);
 }

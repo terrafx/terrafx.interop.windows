@@ -15,58 +15,34 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IWICProgressiveLevelControl* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICProgressiveLevelControl* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IWICProgressiveLevelControl* This
-        );
+        public delegate uint _AddRef(IWICProgressiveLevelControl* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IWICProgressiveLevelControl* This
-        );
+        public delegate uint _Release(IWICProgressiveLevelControl* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLevelCount(
-            [In] IWICProgressiveLevelControl* This,
-            [Out, NativeTypeName("UINT")] uint* pcLevels
-        );
+        public delegate int _GetLevelCount(IWICProgressiveLevelControl* This, [NativeTypeName("UINT")] uint* pcLevels);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetCurrentLevel(
-            [In] IWICProgressiveLevelControl* This,
-            [Out, NativeTypeName("UINT")] uint* pnLevel
-        );
+        public delegate int _GetCurrentLevel(IWICProgressiveLevelControl* This, [NativeTypeName("UINT")] uint* pnLevel);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetCurrentLevel(
-            [In] IWICProgressiveLevelControl* This,
-            [In, NativeTypeName("UINT")] uint nLevel
-        );
+        public delegate int _SetCurrentLevel(IWICProgressiveLevelControl* This, [NativeTypeName("UINT")] uint nLevel);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICProgressiveLevelControl* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -75,9 +51,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICProgressiveLevelControl* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -86,51 +60,34 @@ namespace TerraFX.Interop
         {
             fixed (IWICProgressiveLevelControl* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetLevelCount(
-            [Out, NativeTypeName("UINT")] uint* pcLevels
-        )
+        public int GetLevelCount([NativeTypeName("UINT")] uint* pcLevels)
         {
             fixed (IWICProgressiveLevelControl* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetLevelCount>(lpVtbl->GetLevelCount)(
-                    This,
-                    pcLevels
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetLevelCount>(lpVtbl->GetLevelCount)(This, pcLevels);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetCurrentLevel(
-            [Out, NativeTypeName("UINT")] uint* pnLevel
-        )
+        public int GetCurrentLevel([NativeTypeName("UINT")] uint* pnLevel)
         {
             fixed (IWICProgressiveLevelControl* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetCurrentLevel>(lpVtbl->GetCurrentLevel)(
-                    This,
-                    pnLevel
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetCurrentLevel>(lpVtbl->GetCurrentLevel)(This, pnLevel);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetCurrentLevel(
-            [In, NativeTypeName("UINT")] uint nLevel
-        )
+        public int SetCurrentLevel([NativeTypeName("UINT")] uint nLevel)
         {
             fixed (IWICProgressiveLevelControl* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetCurrentLevel>(lpVtbl->SetCurrentLevel)(
-                    This,
-                    nLevel
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetCurrentLevel>(lpVtbl->SetCurrentLevel)(This, nLevel);
             }
         }
 

@@ -15,74 +15,38 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IWICBitmapSourceTransform* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICBitmapSourceTransform* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IWICBitmapSourceTransform* This
-        );
+        public delegate uint _AddRef(IWICBitmapSourceTransform* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IWICBitmapSourceTransform* This
-        );
+        public delegate uint _Release(IWICBitmapSourceTransform* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CopyPixels(
-            [In] IWICBitmapSourceTransform* This,
-            [In, Optional] WICRect* prc,
-            [In, NativeTypeName("UINT")] uint uiWidth,
-            [In, NativeTypeName("UINT")] uint uiHeight,
-            [In, Optional, NativeTypeName("WICPixelFormatGUID")] Guid* pguidDstFormat,
-            [In] WICBitmapTransformOptions dstTransform,
-            [In, NativeTypeName("UINT")] uint nStride,
-            [In, NativeTypeName("UINT")] uint cbBufferSize,
-            [Out, NativeTypeName("BYTE[]")] byte* pbBuffer
-        );
+        public delegate int _CopyPixels(IWICBitmapSourceTransform* This, [Optional] WICRect* prc, [NativeTypeName("UINT")] uint uiWidth, [NativeTypeName("UINT")] uint uiHeight, [Optional, NativeTypeName("WICPixelFormatGUID")] Guid* pguidDstFormat, WICBitmapTransformOptions dstTransform, [NativeTypeName("UINT")] uint nStride, [NativeTypeName("UINT")] uint cbBufferSize, [NativeTypeName("BYTE[]")] byte* pbBuffer);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetClosestSize(
-            [In] IWICBitmapSourceTransform* This,
-            [In, Out, NativeTypeName("UINT")] uint* puiWidth,
-            [In, Out, NativeTypeName("UINT")] uint* puiHeight
-        );
+        public delegate int _GetClosestSize(IWICBitmapSourceTransform* This, [NativeTypeName("UINT")] uint* puiWidth, [NativeTypeName("UINT")] uint* puiHeight);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetClosestPixelFormat(
-            [In] IWICBitmapSourceTransform* This,
-            [In, Out, NativeTypeName("WICPixelFormatGUID")] Guid* pguidDstFormat
-        );
+        public delegate int _GetClosestPixelFormat(IWICBitmapSourceTransform* This, [NativeTypeName("WICPixelFormatGUID")] Guid* pguidDstFormat);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _DoesSupportTransform(
-            [In] IWICBitmapSourceTransform* This,
-            [In] WICBitmapTransformOptions dstTransform,
-            [Out, NativeTypeName("BOOL")] int* pfIsSupported
-        );
+        public delegate int _DoesSupportTransform(IWICBitmapSourceTransform* This, WICBitmapTransformOptions dstTransform, [NativeTypeName("BOOL")] int* pfIsSupported);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICBitmapSourceTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -91,9 +55,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapSourceTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -102,83 +64,43 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapSourceTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CopyPixels(
-            [In, Optional] WICRect* prc,
-            [In, NativeTypeName("UINT")] uint uiWidth,
-            [In, NativeTypeName("UINT")] uint uiHeight,
-            [In, Optional, NativeTypeName("WICPixelFormatGUID")] Guid* pguidDstFormat,
-            [In] WICBitmapTransformOptions dstTransform,
-            [In, NativeTypeName("UINT")] uint nStride,
-            [In, NativeTypeName("UINT")] uint cbBufferSize,
-            [Out, NativeTypeName("BYTE[]")] byte* pbBuffer
-        )
+        public int CopyPixels([Optional] WICRect* prc, [NativeTypeName("UINT")] uint uiWidth, [NativeTypeName("UINT")] uint uiHeight, [Optional, NativeTypeName("WICPixelFormatGUID")] Guid* pguidDstFormat, WICBitmapTransformOptions dstTransform, [NativeTypeName("UINT")] uint nStride, [NativeTypeName("UINT")] uint cbBufferSize, [NativeTypeName("BYTE[]")] byte* pbBuffer)
         {
             fixed (IWICBitmapSourceTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CopyPixels>(lpVtbl->CopyPixels)(
-                    This,
-                    prc,
-                    uiWidth,
-                    uiHeight,
-                    pguidDstFormat,
-                    dstTransform,
-                    nStride,
-                    cbBufferSize,
-                    pbBuffer
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CopyPixels>(lpVtbl->CopyPixels)(This, prc, uiWidth, uiHeight, pguidDstFormat, dstTransform, nStride, cbBufferSize, pbBuffer);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetClosestSize(
-            [In, Out, NativeTypeName("UINT")] uint* puiWidth,
-            [In, Out, NativeTypeName("UINT")] uint* puiHeight
-        )
+        public int GetClosestSize([NativeTypeName("UINT")] uint* puiWidth, [NativeTypeName("UINT")] uint* puiHeight)
         {
             fixed (IWICBitmapSourceTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetClosestSize>(lpVtbl->GetClosestSize)(
-                    This,
-                    puiWidth,
-                    puiHeight
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetClosestSize>(lpVtbl->GetClosestSize)(This, puiWidth, puiHeight);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetClosestPixelFormat(
-            [In, Out, NativeTypeName("WICPixelFormatGUID")] Guid* pguidDstFormat
-        )
+        public int GetClosestPixelFormat([NativeTypeName("WICPixelFormatGUID")] Guid* pguidDstFormat)
         {
             fixed (IWICBitmapSourceTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetClosestPixelFormat>(lpVtbl->GetClosestPixelFormat)(
-                    This,
-                    pguidDstFormat
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetClosestPixelFormat>(lpVtbl->GetClosestPixelFormat)(This, pguidDstFormat);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int DoesSupportTransform(
-            [In] WICBitmapTransformOptions dstTransform,
-            [Out, NativeTypeName("BOOL")] int* pfIsSupported
-        )
+        public int DoesSupportTransform(WICBitmapTransformOptions dstTransform, [NativeTypeName("BOOL")] int* pfIsSupported)
         {
             fixed (IWICBitmapSourceTransform* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_DoesSupportTransform>(lpVtbl->DoesSupportTransform)(
-                    This,
-                    dstTransform,
-                    pfIsSupported
-                );
+                return Marshal.GetDelegateForFunctionPointer<_DoesSupportTransform>(lpVtbl->DoesSupportTransform)(This, dstTransform, pfIsSupported);
             }
         }
 

@@ -16,23 +16,15 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IDWriteFontDownloadQueue* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDWriteFontDownloadQueue* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IDWriteFontDownloadQueue* This
-        );
+        public delegate uint _AddRef(IDWriteFontDownloadQueue* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IDWriteFontDownloadQueue* This
-        );
+        public delegate uint _Release(IDWriteFontDownloadQueue* This);
 
         /// <summary>Registers a client-defined listener object that receives download notifications. All registered listener's DownloadCompleted will be called after BeginDownload completes.</summary>
         /// <param name="listener">Listener object to add.</param>
@@ -41,29 +33,20 @@ namespace TerraFX.Interop
         /// <remarks> An IDWriteFontDownloadListener can also be passed to BeginDownload via the context parameter, rather than globally registered to the queue.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _AddListener(
-            [In] IDWriteFontDownloadQueue* This,
-            [In] IDWriteFontDownloadListener* listener,
-            [Out, NativeTypeName("UINT32")] uint* token
-        );
+        public delegate int _AddListener(IDWriteFontDownloadQueue* This, IDWriteFontDownloadListener* listener, [NativeTypeName("UINT32")] uint* token);
 
         /// <summary>Unregisters a notification handler that was previously registered using AddListener.</summary>
         /// <param name="token">Token value previously returned by AddListener.</param>
         /// <returns> Returns S_OK if successful or E_INVALIDARG if the specified token does not correspond to a registered listener.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _RemoveListener(
-            [In] IDWriteFontDownloadQueue* This,
-            [In, NativeTypeName("UINT32")] uint token
-        );
+        public delegate int _RemoveListener(IDWriteFontDownloadQueue* This, [NativeTypeName("UINT32")] uint token);
 
         /// <summary>Determines whether the download queue is empty. Note that the queue does not include requests that are already being downloaded. In other words, BeginDownload clears the queue.</summary>
         /// <returns> TRUE if the queue is empty, FALSE if there are requests pending for BeginDownload.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public delegate int _IsEmpty(
-            [In] IDWriteFontDownloadQueue* This
-        );
+        public delegate int _IsEmpty(IDWriteFontDownloadQueue* This);
 
         /// <summary>Begins an asynchronous download operation. The download operation executes in the background until it completes or is cancelled by a CancelDownload call.</summary>
         /// <param name="context">Optional context object that is passed back to the download notification handler's DownloadCompleted method. If the context object implements IDWriteFontDownloadListener, its DownloadCompleted will be called when done.</param>
@@ -71,40 +54,26 @@ namespace TerraFX.Interop
         /// <remarks> BeginDownload removes all download requests from the queue, transferring them to a background download operation. If any previous downloads are still ongoing when BeginDownload is called again, the new download does not complete until the previous downloads have finished. If the queue is empty and no active downloads are pending, the DownloadCompleted callback is called immediately with DWRITE_DOWNLOAD_RESULT_NONE.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _BeginDownload(
-            [In] IDWriteFontDownloadQueue* This,
-            [In] IUnknown* context = null
-        );
+        public delegate int _BeginDownload(IDWriteFontDownloadQueue* This, IUnknown* context = null);
 
         /// <summary>Removes all download requests from the queue and cancels any active download operations. This calls DownloadCompleted with DWRITE_E_DOWNLOADCANCELLED. Applications should call this when shutting down if they started any downloads that have not finished yet with a call to DownloadCompleted.</summary>
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CancelDownload(
-            [In] IDWriteFontDownloadQueue* This
-        );
+        public delegate int _CancelDownload(IDWriteFontDownloadQueue* This);
 
         /// <summary>Get the current generation number of the download queue, which is incremented every time after a download completes, whether failed or successful. This cookie comparison value may be used to compared against cached data to know when it is stale.</summary>
         /// <returns> The number of download queue generations.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
-        public delegate ulong _GetGenerationCount(
-            [In] IDWriteFontDownloadQueue* This
-        );
+        public delegate ulong _GetGenerationCount(IDWriteFontDownloadQueue* This);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDWriteFontDownloadQueue* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -113,9 +82,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontDownloadQueue* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -124,39 +91,25 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontDownloadQueue* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int AddListener(
-            [In] IDWriteFontDownloadListener* listener,
-            [Out, NativeTypeName("UINT32")] uint* token
-        )
+        public int AddListener(IDWriteFontDownloadListener* listener, [NativeTypeName("UINT32")] uint* token)
         {
             fixed (IDWriteFontDownloadQueue* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddListener>(lpVtbl->AddListener)(
-                    This,
-                    listener,
-                    token
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddListener>(lpVtbl->AddListener)(This, listener, token);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int RemoveListener(
-            [In, NativeTypeName("UINT32")] uint token
-        )
+        public int RemoveListener([NativeTypeName("UINT32")] uint token)
         {
             fixed (IDWriteFontDownloadQueue* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_RemoveListener>(lpVtbl->RemoveListener)(
-                    This,
-                    token
-                );
+                return Marshal.GetDelegateForFunctionPointer<_RemoveListener>(lpVtbl->RemoveListener)(This, token);
             }
         }
 
@@ -165,23 +118,16 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontDownloadQueue* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_IsEmpty>(lpVtbl->IsEmpty)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_IsEmpty>(lpVtbl->IsEmpty)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int BeginDownload(
-            [In] IUnknown* context = null
-        )
+        public int BeginDownload(IUnknown* context = null)
         {
             fixed (IDWriteFontDownloadQueue* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_BeginDownload>(lpVtbl->BeginDownload)(
-                    This,
-                    context
-                );
+                return Marshal.GetDelegateForFunctionPointer<_BeginDownload>(lpVtbl->BeginDownload)(This, context);
             }
         }
 
@@ -190,9 +136,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontDownloadQueue* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CancelDownload>(lpVtbl->CancelDownload)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CancelDownload>(lpVtbl->CancelDownload)(This);
             }
         }
 
@@ -201,9 +145,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontDownloadQueue* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetGenerationCount>(lpVtbl->GetGenerationCount)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetGenerationCount>(lpVtbl->GetGenerationCount)(This);
             }
         }
 

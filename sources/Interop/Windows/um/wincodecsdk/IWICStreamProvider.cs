@@ -15,64 +15,38 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IWICStreamProvider* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICStreamProvider* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IWICStreamProvider* This
-        );
+        public delegate uint _AddRef(IWICStreamProvider* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IWICStreamProvider* This
-        );
+        public delegate uint _Release(IWICStreamProvider* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetStream(
-            [In] IWICStreamProvider* This,
-            [Out] IStream** ppIStream = null
-        );
+        public delegate int _GetStream(IWICStreamProvider* This, IStream** ppIStream = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPersistOptions(
-            [In] IWICStreamProvider* This,
-            [Out, NativeTypeName("DWORD")] uint* pdwPersistOptions
-        );
+        public delegate int _GetPersistOptions(IWICStreamProvider* This, [NativeTypeName("DWORD")] uint* pdwPersistOptions);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPreferredVendorGUID(
-            [In] IWICStreamProvider* This,
-            [Out, NativeTypeName("GUID")] Guid* pguidPreferredVendor
-        );
+        public delegate int _GetPreferredVendorGUID(IWICStreamProvider* This, [NativeTypeName("GUID")] Guid* pguidPreferredVendor);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _RefreshStream(
-            [In] IWICStreamProvider* This
-        );
+        public delegate int _RefreshStream(IWICStreamProvider* This);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICStreamProvider* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -81,9 +55,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICStreamProvider* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -92,51 +64,34 @@ namespace TerraFX.Interop
         {
             fixed (IWICStreamProvider* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetStream(
-            [Out] IStream** ppIStream = null
-        )
+        public int GetStream(IStream** ppIStream = null)
         {
             fixed (IWICStreamProvider* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetStream>(lpVtbl->GetStream)(
-                    This,
-                    ppIStream
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetStream>(lpVtbl->GetStream)(This, ppIStream);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetPersistOptions(
-            [Out, NativeTypeName("DWORD")] uint* pdwPersistOptions
-        )
+        public int GetPersistOptions([NativeTypeName("DWORD")] uint* pdwPersistOptions)
         {
             fixed (IWICStreamProvider* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetPersistOptions>(lpVtbl->GetPersistOptions)(
-                    This,
-                    pdwPersistOptions
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetPersistOptions>(lpVtbl->GetPersistOptions)(This, pdwPersistOptions);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetPreferredVendorGUID(
-            [Out, NativeTypeName("GUID")] Guid* pguidPreferredVendor
-        )
+        public int GetPreferredVendorGUID([NativeTypeName("GUID")] Guid* pguidPreferredVendor)
         {
             fixed (IWICStreamProvider* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetPreferredVendorGUID>(lpVtbl->GetPreferredVendorGUID)(
-                    This,
-                    pguidPreferredVendor
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetPreferredVendorGUID>(lpVtbl->GetPreferredVendorGUID)(This, pguidPreferredVendor);
             }
         }
 
@@ -145,9 +100,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICStreamProvider* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_RefreshStream>(lpVtbl->RefreshStream)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_RefreshStream>(lpVtbl->RefreshStream)(This);
             }
         }
 

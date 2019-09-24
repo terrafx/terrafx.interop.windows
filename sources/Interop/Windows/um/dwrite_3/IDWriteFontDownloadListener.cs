@@ -16,49 +16,29 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IDWriteFontDownloadListener* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDWriteFontDownloadListener* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IDWriteFontDownloadListener* This
-        );
+        public delegate uint _AddRef(IDWriteFontDownloadListener* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IDWriteFontDownloadListener* This
-        );
+        public delegate uint _Release(IDWriteFontDownloadListener* This);
 
         /// <summary>The DownloadCompleted method is called back on an arbitrary thread when a download operation ends.</summary>
         /// <param name="downloadQueue">Pointer to the download queue interface on which the BeginDownload method was called.</param>
         /// <param name="context">Optional context object that was passed to BeginDownload. AddRef is called on the context object by BeginDownload and Release is called after the DownloadCompleted method returns.</param>
         /// <param name="downloadResult">Result of the download operation.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _DownloadCompleted(
-            [In] IDWriteFontDownloadListener* This,
-            [In] IDWriteFontDownloadQueue* downloadQueue,
-            [In, Optional] IUnknown* context,
-            [In, NativeTypeName("HRESULT")] int downloadResult
-        );
+        public delegate void _DownloadCompleted(IDWriteFontDownloadListener* This, IDWriteFontDownloadQueue* downloadQueue, [Optional] IUnknown* context, [NativeTypeName("HRESULT")] int downloadResult);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDWriteFontDownloadListener* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -67,9 +47,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontDownloadListener* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -78,26 +56,15 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontDownloadListener* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
-        public void DownloadCompleted(
-            [In] IDWriteFontDownloadQueue* downloadQueue,
-            [In, Optional] IUnknown* context,
-            [In, NativeTypeName("HRESULT")] int downloadResult
-        )
+        public void DownloadCompleted(IDWriteFontDownloadQueue* downloadQueue, [Optional] IUnknown* context, [NativeTypeName("HRESULT")] int downloadResult)
         {
             fixed (IDWriteFontDownloadListener* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_DownloadCompleted>(lpVtbl->DownloadCompleted)(
-                    This,
-                    downloadQueue,
-                    context,
-                    downloadResult
-                );
+                Marshal.GetDelegateForFunctionPointer<_DownloadCompleted>(lpVtbl->DownloadCompleted)(This, downloadQueue, context, downloadResult);
             }
         }
 

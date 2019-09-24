@@ -16,54 +16,34 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID2D1SvgStrokeDashArray* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1SvgStrokeDashArray* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID2D1SvgStrokeDashArray* This
-        );
+        public delegate uint _AddRef(ID2D1SvgStrokeDashArray* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID2D1SvgStrokeDashArray* This
-        );
+        public delegate uint _Release(ID2D1SvgStrokeDashArray* This);
 
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetFactory(
-            [In] ID2D1SvgStrokeDashArray* This,
-            [Out] ID2D1Factory** factory
-        );
+        public delegate void _GetFactory(ID2D1SvgStrokeDashArray* This, ID2D1Factory** factory);
 
         /// <summary>Returns the element on which this attribute is set. Returns null if the attribute is not set on any element.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetElement(
-            [In] ID2D1SvgStrokeDashArray* This,
-            [Out] ID2D1SvgElement** element
-        );
+        public delegate void _GetElement(ID2D1SvgStrokeDashArray* This, ID2D1SvgElement** element);
 
         /// <summary>Creates a clone of this attribute value. On creation, the cloned attribute is not set on any element.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Clone(
-            [In] ID2D1SvgStrokeDashArray* This,
-            [Out] ID2D1SvgAttribute** attribute
-        );
+        public delegate int _Clone(ID2D1SvgStrokeDashArray* This, ID2D1SvgAttribute** attribute);
 
         /// <summary>Removes dashes from the end of the array.</summary>
         /// <param name="dashesCount">Specifies how many dashes to remove.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _RemoveDashesAtEnd(
-            [In] ID2D1SvgStrokeDashArray* This,
-            [In, NativeTypeName("UINT32")] uint dashesCount
-        );
+        public delegate int _RemoveDashesAtEnd(ID2D1SvgStrokeDashArray* This, [NativeTypeName("UINT32")] uint dashesCount);
 
         /// <summary>Updates the array. Existing dashes not updated by this method are preserved. The array is resized larger if necessary to accomodate the new dashes.</summary>
         /// <param name="dashes">The dashes array.</param>
@@ -71,12 +51,7 @@ namespace TerraFX.Interop
         /// <param name="startIndex">The index at which to begin updating dashes. Must be less than or equal to the size of the array.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _UpdateDashes(
-            [In] ID2D1SvgStrokeDashArray* This,
-            [In, NativeTypeName("FLOAT[]")] float* dashes,
-            [In, NativeTypeName("UINT32")] uint dashesCount,
-            [In, NativeTypeName("UINT32")] uint startIndex = 0
-        );
+        public delegate int _UpdateDashes(ID2D1SvgStrokeDashArray* This, [NativeTypeName("FLOAT[]")] float* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("UINT32")] uint startIndex = 0);
 
         /// <summary>Updates the array. Existing dashes not updated by this method are preserved. The array is resized larger if necessary to accomodate the new dashes.</summary>
         /// <param name="dashes">The dashes array.</param>
@@ -84,12 +59,7 @@ namespace TerraFX.Interop
         /// <param name="startIndex">The index at which to begin updating dashes. Must be less than or equal to the size of the array.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _UpdateDashes1(
-            [In] ID2D1SvgStrokeDashArray* This,
-            [In, NativeTypeName("D2D1_SVG_LENGTH[]")] D2D1_SVG_LENGTH* dashes,
-            [In, NativeTypeName("UINT32")] uint dashesCount,
-            [In, NativeTypeName("UINT32")] uint startIndex = 0
-        );
+        public delegate int _UpdateDashes1(ID2D1SvgStrokeDashArray* This, [NativeTypeName("D2D1_SVG_LENGTH[]")] D2D1_SVG_LENGTH* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("UINT32")] uint startIndex = 0);
 
         /// <summary>Gets dashes from the array.</summary>
         /// <param name="dashes">Buffer to contain the dashes.</param>
@@ -97,12 +67,7 @@ namespace TerraFX.Interop
         /// <param name="startIndex">The index of the first dash to retrieve.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDashes(
-            [In] ID2D1SvgStrokeDashArray* This,
-            [Out, NativeTypeName("FLOAT[]")] float* dashes,
-            [In, NativeTypeName("UINT32")] uint dashesCount,
-            [In, NativeTypeName("UINT32")] uint startIndex = 0
-        );
+        public delegate int _GetDashes(ID2D1SvgStrokeDashArray* This, [NativeTypeName("FLOAT[]")] float* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("UINT32")] uint startIndex = 0);
 
         /// <summary>Gets dashes from the array.</summary>
         /// <param name="dashes">Buffer to contain the dashes.</param>
@@ -110,33 +75,19 @@ namespace TerraFX.Interop
         /// <param name="startIndex">The index of the first dash to retrieve.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDashes1(
-            [In] ID2D1SvgStrokeDashArray* This,
-            [Out, NativeTypeName("D2D1_SVG_LENGTH[]")] D2D1_SVG_LENGTH* dashes,
-            [In, NativeTypeName("UINT32")] uint dashesCount,
-            [In, NativeTypeName("UINT32")] uint startIndex = 0
-        );
+        public delegate int _GetDashes1(ID2D1SvgStrokeDashArray* This, [NativeTypeName("D2D1_SVG_LENGTH[]")] D2D1_SVG_LENGTH* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("UINT32")] uint startIndex = 0);
 
         /// <summary>Gets the number of the dashes in the array.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public delegate uint _GetDashesCount(
-            [In] ID2D1SvgStrokeDashArray* This
-        );
+        public delegate uint _GetDashesCount(ID2D1SvgStrokeDashArray* This);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1SvgStrokeDashArray* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -145,9 +96,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgStrokeDashArray* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -156,135 +105,77 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgStrokeDashArray* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
-        public void GetFactory(
-            [Out] ID2D1Factory** factory
-        )
+        public void GetFactory(ID2D1Factory** factory)
         {
             fixed (ID2D1SvgStrokeDashArray* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
-                    This,
-                    factory
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(This, factory);
             }
         }
 
-        public void GetElement(
-            [Out] ID2D1SvgElement** element
-        )
+        public void GetElement(ID2D1SvgElement** element)
         {
             fixed (ID2D1SvgStrokeDashArray* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetElement>(lpVtbl->GetElement)(
-                    This,
-                    element
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetElement>(lpVtbl->GetElement)(This, element);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Clone(
-            [Out] ID2D1SvgAttribute** attribute
-        )
+        public int Clone(ID2D1SvgAttribute** attribute)
         {
             fixed (ID2D1SvgStrokeDashArray* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Clone>(lpVtbl->Clone)(
-                    This,
-                    attribute
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Clone>(lpVtbl->Clone)(This, attribute);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int RemoveDashesAtEnd(
-            [In, NativeTypeName("UINT32")] uint dashesCount
-        )
+        public int RemoveDashesAtEnd([NativeTypeName("UINT32")] uint dashesCount)
         {
             fixed (ID2D1SvgStrokeDashArray* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_RemoveDashesAtEnd>(lpVtbl->RemoveDashesAtEnd)(
-                    This,
-                    dashesCount
-                );
+                return Marshal.GetDelegateForFunctionPointer<_RemoveDashesAtEnd>(lpVtbl->RemoveDashesAtEnd)(This, dashesCount);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int UpdateDashes(
-            [In, NativeTypeName("FLOAT[]")] float* dashes,
-            [In, NativeTypeName("UINT32")] uint dashesCount,
-            [In, NativeTypeName("UINT32")] uint startIndex = 0
-        )
+        public int UpdateDashes([NativeTypeName("FLOAT[]")] float* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("UINT32")] uint startIndex = 0)
         {
             fixed (ID2D1SvgStrokeDashArray* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_UpdateDashes>(lpVtbl->UpdateDashes)(
-                    This,
-                    dashes,
-                    dashesCount,
-                    startIndex
-                );
+                return Marshal.GetDelegateForFunctionPointer<_UpdateDashes>(lpVtbl->UpdateDashes)(This, dashes, dashesCount, startIndex);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int UpdateDashes1(
-            [In, NativeTypeName("D2D1_SVG_LENGTH[]")] D2D1_SVG_LENGTH* dashes,
-            [In, NativeTypeName("UINT32")] uint dashesCount,
-            [In, NativeTypeName("UINT32")] uint startIndex = 0
-        )
+        public int UpdateDashes1([NativeTypeName("D2D1_SVG_LENGTH[]")] D2D1_SVG_LENGTH* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("UINT32")] uint startIndex = 0)
         {
             fixed (ID2D1SvgStrokeDashArray* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_UpdateDashes1>(lpVtbl->UpdateDashes1)(
-                    This,
-                    dashes,
-                    dashesCount,
-                    startIndex
-                );
+                return Marshal.GetDelegateForFunctionPointer<_UpdateDashes1>(lpVtbl->UpdateDashes1)(This, dashes, dashesCount, startIndex);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetDashes(
-            [Out, NativeTypeName("FLOAT[]")] float* dashes,
-            [In, NativeTypeName("UINT32")] uint dashesCount,
-            [In, NativeTypeName("UINT32")] uint startIndex = 0
-        )
+        public int GetDashes([NativeTypeName("FLOAT[]")] float* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("UINT32")] uint startIndex = 0)
         {
             fixed (ID2D1SvgStrokeDashArray* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDashes>(lpVtbl->GetDashes)(
-                    This,
-                    dashes,
-                    dashesCount,
-                    startIndex
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDashes>(lpVtbl->GetDashes)(This, dashes, dashesCount, startIndex);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetDashes1(
-            [Out, NativeTypeName("D2D1_SVG_LENGTH[]")] D2D1_SVG_LENGTH* dashes,
-            [In, NativeTypeName("UINT32")] uint dashesCount,
-            [In, NativeTypeName("UINT32")] uint startIndex = 0
-        )
+        public int GetDashes1([NativeTypeName("D2D1_SVG_LENGTH[]")] D2D1_SVG_LENGTH* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("UINT32")] uint startIndex = 0)
         {
             fixed (ID2D1SvgStrokeDashArray* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDashes1>(lpVtbl->GetDashes1)(
-                    This,
-                    dashes,
-                    dashesCount,
-                    startIndex
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDashes1>(lpVtbl->GetDashes1)(This, dashes, dashesCount, startIndex);
             }
         }
 
@@ -293,9 +184,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgStrokeDashArray* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDashesCount>(lpVtbl->GetDashesCount)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDashesCount>(lpVtbl->GetDashesCount)(This);
             }
         }
 

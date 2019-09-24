@@ -15,62 +15,34 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IWICDdsFrameDecode* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICDdsFrameDecode* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IWICDdsFrameDecode* This
-        );
+        public delegate uint _AddRef(IWICDdsFrameDecode* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IWICDdsFrameDecode* This
-        );
+        public delegate uint _Release(IWICDdsFrameDecode* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetSizeInBlocks(
-            [In] IWICDdsFrameDecode* This,
-            [Out, NativeTypeName("UINT")] uint* pWidthInBlocks,
-            [Out, NativeTypeName("UINT")] uint* pHeightInBlocks
-        );
+        public delegate int _GetSizeInBlocks(IWICDdsFrameDecode* This, [NativeTypeName("UINT")] uint* pWidthInBlocks, [NativeTypeName("UINT")] uint* pHeightInBlocks);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFormatInfo(
-            [In] IWICDdsFrameDecode* This,
-            [Out] WICDdsFormatInfo* pFormatInfo
-        );
+        public delegate int _GetFormatInfo(IWICDdsFrameDecode* This, WICDdsFormatInfo* pFormatInfo);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CopyBlocks(
-            [In] IWICDdsFrameDecode* This,
-            [In] WICRect* prcBoundsInBlocks,
-            [In, NativeTypeName("UINT")] uint cbStride,
-            [In, NativeTypeName("UINT")] uint cbBufferSize,
-            [Out, NativeTypeName("BYTE[]")] byte* pbBuffer
-        );
+        public delegate int _CopyBlocks(IWICDdsFrameDecode* This, WICRect* prcBoundsInBlocks, [NativeTypeName("UINT")] uint cbStride, [NativeTypeName("UINT")] uint cbBufferSize, [NativeTypeName("BYTE[]")] byte* pbBuffer);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICDdsFrameDecode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -79,9 +51,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICDdsFrameDecode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -90,59 +60,34 @@ namespace TerraFX.Interop
         {
             fixed (IWICDdsFrameDecode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetSizeInBlocks(
-            [Out, NativeTypeName("UINT")] uint* pWidthInBlocks,
-            [Out, NativeTypeName("UINT")] uint* pHeightInBlocks
-        )
+        public int GetSizeInBlocks([NativeTypeName("UINT")] uint* pWidthInBlocks, [NativeTypeName("UINT")] uint* pHeightInBlocks)
         {
             fixed (IWICDdsFrameDecode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetSizeInBlocks>(lpVtbl->GetSizeInBlocks)(
-                    This,
-                    pWidthInBlocks,
-                    pHeightInBlocks
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetSizeInBlocks>(lpVtbl->GetSizeInBlocks)(This, pWidthInBlocks, pHeightInBlocks);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFormatInfo(
-            [Out] WICDdsFormatInfo* pFormatInfo
-        )
+        public int GetFormatInfo(WICDdsFormatInfo* pFormatInfo)
         {
             fixed (IWICDdsFrameDecode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetFormatInfo>(lpVtbl->GetFormatInfo)(
-                    This,
-                    pFormatInfo
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetFormatInfo>(lpVtbl->GetFormatInfo)(This, pFormatInfo);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CopyBlocks(
-            [In] WICRect* prcBoundsInBlocks,
-            [In, NativeTypeName("UINT")] uint cbStride,
-            [In, NativeTypeName("UINT")] uint cbBufferSize,
-            [Out, NativeTypeName("BYTE[]")] byte* pbBuffer
-        )
+        public int CopyBlocks(WICRect* prcBoundsInBlocks, [NativeTypeName("UINT")] uint cbStride, [NativeTypeName("UINT")] uint cbBufferSize, [NativeTypeName("BYTE[]")] byte* pbBuffer)
         {
             fixed (IWICDdsFrameDecode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CopyBlocks>(lpVtbl->CopyBlocks)(
-                    This,
-                    prcBoundsInBlocks,
-                    cbStride,
-                    cbBufferSize,
-                    pbBuffer
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CopyBlocks>(lpVtbl->CopyBlocks)(This, prcBoundsInBlocks, cbStride, cbBufferSize, pbBuffer);
             }
         }
 

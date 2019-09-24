@@ -15,173 +15,82 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IStorage* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IStorage* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IStorage* This
-        );
+        public delegate uint _AddRef(IStorage* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IStorage* This
-        );
+        public delegate uint _Release(IStorage* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateStream(
-            [In] IStorage* This,
-            [In, NativeTypeName("OLECHAR")] char* pwcsName,
-            [In, NativeTypeName("DWORD")] uint grfMode,
-            [In, NativeTypeName("DWORD")] uint reserved1,
-            [In, NativeTypeName("DWORD")] uint reserved2,
-            [Out] IStream** ppstm = null
-        );
+        public delegate int _CreateStream(IStorage* This, [NativeTypeName("OLECHAR")] char* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint reserved1, [NativeTypeName("DWORD")] uint reserved2, IStream** ppstm = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _OpenStream(
-            [In] IStorage* This,
-            [In, NativeTypeName("OLECHAR")] char* pwcsName,
-            [In] void* reserved1,
-            [In, NativeTypeName("DWORD")] uint grfMode,
-            [In, NativeTypeName("DWORD")] uint reserved2,
-            [Out] IStream** ppstm
-        );
+        public delegate int _OpenStream(IStorage* This, [NativeTypeName("OLECHAR")] char* pwcsName, void* reserved1, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint reserved2, IStream** ppstm);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateStorage(
-            [In] IStorage* This,
-            [In, NativeTypeName("OLECHAR")] char* pwcsName,
-            [In, NativeTypeName("DWORD")] uint grfMode,
-            [In, NativeTypeName("DWORD")] uint reserved1,
-            [In, NativeTypeName("DWORD")] uint reserved2,
-            [Out] IStorage** ppstg = null
-        );
+        public delegate int _CreateStorage(IStorage* This, [NativeTypeName("OLECHAR")] char* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint reserved1, [NativeTypeName("DWORD")] uint reserved2, IStorage** ppstg = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _OpenStorage(
-            [In] IStorage* This,
-            [In, Optional, NativeTypeName("OLECHAR")] char* pwcsName,
-            [In, Optional] IStorage* pstgPriority,
-            [In, NativeTypeName("DWORD")] uint grfMode,
-            [In, Optional, NativeTypeName("SNB")] char** snbExclude,
-            [In, NativeTypeName("DWORD")] uint reserved,
-            [Out] IStorage** ppstg = null
-        );
+        public delegate int _OpenStorage(IStorage* This, [Optional, NativeTypeName("OLECHAR")] char* pwcsName, [Optional] IStorage* pstgPriority, [NativeTypeName("DWORD")] uint grfMode, [Optional, NativeTypeName("SNB")] char** snbExclude, [NativeTypeName("DWORD")] uint reserved, IStorage** ppstg = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CopyTo(
-            [In] IStorage* This,
-            [In, NativeTypeName("IID")] Guid* ciidExclude,
-            [In, Optional] Guid* rgiidExclude,
-            [In, Optional, NativeTypeName("SNB")] char** snbExclude,
-            [In] IStorage* pstgDest
-        );
+        public delegate int _CopyTo(IStorage* This, [NativeTypeName("IID")] Guid* ciidExclude, [Optional] Guid* rgiidExclude, [Optional, NativeTypeName("SNB")] char** snbExclude, IStorage* pstgDest);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _MoveElementTo(
-            [In] IStorage* This,
-            [In, NativeTypeName("OLECHAR")] char* pwcsName,
-            [In, Optional] IStorage* pstgDest,
-            [In, NativeTypeName("OLECHAR")] char* pwcsNewName,
-            [In, NativeTypeName("DWORD")] uint grfFlags
-        );
+        public delegate int _MoveElementTo(IStorage* This, [NativeTypeName("OLECHAR")] char* pwcsName, [Optional] IStorage* pstgDest, [NativeTypeName("OLECHAR")] char* pwcsNewName, [NativeTypeName("DWORD")] uint grfFlags);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Commit(
-            [In] IStorage* This,
-            [In, NativeTypeName("DWORD")] uint grfCommitFlags
-        );
+        public delegate int _Commit(IStorage* This, [NativeTypeName("DWORD")] uint grfCommitFlags);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Revert(
-            [In] IStorage* This
-        );
+        public delegate int _Revert(IStorage* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _EnumElements(
-            [In] IStorage* This,
-            [In, NativeTypeName("DWORD")] uint reserved1,
-            [In] void* reserved2,
-            [In, NativeTypeName("DWORD")] uint reserved3,
-            [Out] IEnumSTATSTG** ppenum
-        );
+        public delegate int _EnumElements(IStorage* This, [NativeTypeName("DWORD")] uint reserved1, void* reserved2, [NativeTypeName("DWORD")] uint reserved3, IEnumSTATSTG** ppenum);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _DestroyElement(
-            [In] IStorage* This,
-            [In, NativeTypeName("OLECHAR")] char* pwcsName
-        );
+        public delegate int _DestroyElement(IStorage* This, [NativeTypeName("OLECHAR")] char* pwcsName);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _RenameElement(
-            [In] IStorage* This,
-            [In, NativeTypeName("OLECHAR")] char* pwcsOldName,
-            [In, NativeTypeName("OLECHAR")] char* pwcsNewName
-        );
+        public delegate int _RenameElement(IStorage* This, [NativeTypeName("OLECHAR")] char* pwcsOldName, [NativeTypeName("OLECHAR")] char* pwcsNewName);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetElementTimes(
-            [In] IStorage* This,
-            [In, NativeTypeName("OLECHAR")] char* pwcsName = null,
-            [In] FILETIME* pctime = null,
-            [In] FILETIME* patime = null,
-            [In] FILETIME* pmtime = null
-        );
+        public delegate int _SetElementTimes(IStorage* This, [NativeTypeName("OLECHAR")] char* pwcsName = null, FILETIME* pctime = null, FILETIME* patime = null, FILETIME* pmtime = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetClass(
-            [In] IStorage* This,
-            [In, NativeTypeName("REFCLSID")] Guid* clsid
-        );
+        public delegate int _SetClass(IStorage* This, [NativeTypeName("REFCLSID")] Guid* clsid);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetStateBits(
-            [In] IStorage* This,
-            [In, NativeTypeName("DWORD")] uint grfStateBits,
-            [In, NativeTypeName("DWORD")] uint grfMask
-        );
+        public delegate int _SetStateBits(IStorage* This, [NativeTypeName("DWORD")] uint grfStateBits, [NativeTypeName("DWORD")] uint grfMask);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Stat(
-            [In] IStorage* This,
-            [Out] STATSTG* pstatstg,
-            [In, NativeTypeName("DWORD")] uint grfStatFlag
-        );
+        public delegate int _Stat(IStorage* This, STATSTG* pstatstg, [NativeTypeName("DWORD")] uint grfStatFlag);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IStorage* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -190,9 +99,7 @@ namespace TerraFX.Interop
         {
             fixed (IStorage* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -201,153 +108,70 @@ namespace TerraFX.Interop
         {
             fixed (IStorage* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateStream(
-            [In, NativeTypeName("OLECHAR")] char* pwcsName,
-            [In, NativeTypeName("DWORD")] uint grfMode,
-            [In, NativeTypeName("DWORD")] uint reserved1,
-            [In, NativeTypeName("DWORD")] uint reserved2,
-            [Out] IStream** ppstm = null
-        )
+        public int CreateStream([NativeTypeName("OLECHAR")] char* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint reserved1, [NativeTypeName("DWORD")] uint reserved2, IStream** ppstm = null)
         {
             fixed (IStorage* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateStream>(lpVtbl->CreateStream)(
-                    This,
-                    pwcsName,
-                    grfMode,
-                    reserved1,
-                    reserved2,
-                    ppstm
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateStream>(lpVtbl->CreateStream)(This, pwcsName, grfMode, reserved1, reserved2, ppstm);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int OpenStream(
-            [In, NativeTypeName("OLECHAR")] char* pwcsName,
-            [In] void* reserved1,
-            [In, NativeTypeName("DWORD")] uint grfMode,
-            [In, NativeTypeName("DWORD")] uint reserved2,
-            [Out] IStream** ppstm
-        )
+        public int OpenStream([NativeTypeName("OLECHAR")] char* pwcsName, void* reserved1, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint reserved2, IStream** ppstm)
         {
             fixed (IStorage* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_OpenStream>(lpVtbl->OpenStream)(
-                    This,
-                    pwcsName,
-                    reserved1,
-                    grfMode,
-                    reserved2,
-                    ppstm
-                );
+                return Marshal.GetDelegateForFunctionPointer<_OpenStream>(lpVtbl->OpenStream)(This, pwcsName, reserved1, grfMode, reserved2, ppstm);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateStorage(
-            [In, NativeTypeName("OLECHAR")] char* pwcsName,
-            [In, NativeTypeName("DWORD")] uint grfMode,
-            [In, NativeTypeName("DWORD")] uint reserved1,
-            [In, NativeTypeName("DWORD")] uint reserved2,
-            [Out] IStorage** ppstg = null
-        )
+        public int CreateStorage([NativeTypeName("OLECHAR")] char* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint reserved1, [NativeTypeName("DWORD")] uint reserved2, IStorage** ppstg = null)
         {
             fixed (IStorage* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateStorage>(lpVtbl->CreateStorage)(
-                    This,
-                    pwcsName,
-                    grfMode,
-                    reserved1,
-                    reserved2,
-                    ppstg
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateStorage>(lpVtbl->CreateStorage)(This, pwcsName, grfMode, reserved1, reserved2, ppstg);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int OpenStorage(
-            [In, Optional, NativeTypeName("OLECHAR")] char* pwcsName,
-            [In, Optional] IStorage* pstgPriority,
-            [In, NativeTypeName("DWORD")] uint grfMode,
-            [In, Optional, NativeTypeName("SNB")] char** snbExclude,
-            [In, NativeTypeName("DWORD")] uint reserved,
-            [Out] IStorage** ppstg = null
-        )
+        public int OpenStorage([Optional, NativeTypeName("OLECHAR")] char* pwcsName, [Optional] IStorage* pstgPriority, [NativeTypeName("DWORD")] uint grfMode, [Optional, NativeTypeName("SNB")] char** snbExclude, [NativeTypeName("DWORD")] uint reserved, IStorage** ppstg = null)
         {
             fixed (IStorage* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_OpenStorage>(lpVtbl->OpenStorage)(
-                    This,
-                    pwcsName,
-                    pstgPriority,
-                    grfMode,
-                    snbExclude,
-                    reserved,
-                    ppstg
-                );
+                return Marshal.GetDelegateForFunctionPointer<_OpenStorage>(lpVtbl->OpenStorage)(This, pwcsName, pstgPriority, grfMode, snbExclude, reserved, ppstg);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CopyTo(
-            [In, NativeTypeName("IID")] Guid* ciidExclude,
-            [In, Optional] Guid* rgiidExclude,
-            [In, Optional, NativeTypeName("SNB")] char** snbExclude,
-            [In] IStorage* pstgDest
-        )
+        public int CopyTo([NativeTypeName("IID")] Guid* ciidExclude, [Optional] Guid* rgiidExclude, [Optional, NativeTypeName("SNB")] char** snbExclude, IStorage* pstgDest)
         {
             fixed (IStorage* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CopyTo>(lpVtbl->CopyTo)(
-                    This,
-                    ciidExclude,
-                    rgiidExclude,
-                    snbExclude,
-                    pstgDest
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CopyTo>(lpVtbl->CopyTo)(This, ciidExclude, rgiidExclude, snbExclude, pstgDest);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int MoveElementTo(
-            [In, NativeTypeName("OLECHAR")] char* pwcsName,
-            [In, Optional] IStorage* pstgDest,
-            [In, NativeTypeName("OLECHAR")] char* pwcsNewName,
-            [In, NativeTypeName("DWORD")] uint grfFlags
-        )
+        public int MoveElementTo([NativeTypeName("OLECHAR")] char* pwcsName, [Optional] IStorage* pstgDest, [NativeTypeName("OLECHAR")] char* pwcsNewName, [NativeTypeName("DWORD")] uint grfFlags)
         {
             fixed (IStorage* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_MoveElementTo>(lpVtbl->MoveElementTo)(
-                    This,
-                    pwcsName,
-                    pstgDest,
-                    pwcsNewName,
-                    grfFlags
-                );
+                return Marshal.GetDelegateForFunctionPointer<_MoveElementTo>(lpVtbl->MoveElementTo)(This, pwcsName, pstgDest, pwcsNewName, grfFlags);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Commit(
-            [In, NativeTypeName("DWORD")] uint grfCommitFlags
-        )
+        public int Commit([NativeTypeName("DWORD")] uint grfCommitFlags)
         {
             fixed (IStorage* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Commit>(lpVtbl->Commit)(
-                    This,
-                    grfCommitFlags
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Commit>(lpVtbl->Commit)(This, grfCommitFlags);
             }
         }
 
@@ -356,125 +180,70 @@ namespace TerraFX.Interop
         {
             fixed (IStorage* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Revert>(lpVtbl->Revert)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Revert>(lpVtbl->Revert)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int EnumElements(
-            [In, NativeTypeName("DWORD")] uint reserved1,
-            [In] void* reserved2,
-            [In, NativeTypeName("DWORD")] uint reserved3,
-            [Out] IEnumSTATSTG** ppenum
-        )
+        public int EnumElements([NativeTypeName("DWORD")] uint reserved1, void* reserved2, [NativeTypeName("DWORD")] uint reserved3, IEnumSTATSTG** ppenum)
         {
             fixed (IStorage* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_EnumElements>(lpVtbl->EnumElements)(
-                    This,
-                    reserved1,
-                    reserved2,
-                    reserved3,
-                    ppenum
-                );
+                return Marshal.GetDelegateForFunctionPointer<_EnumElements>(lpVtbl->EnumElements)(This, reserved1, reserved2, reserved3, ppenum);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int DestroyElement(
-            [In, NativeTypeName("OLECHAR")] char* pwcsName
-        )
+        public int DestroyElement([NativeTypeName("OLECHAR")] char* pwcsName)
         {
             fixed (IStorage* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_DestroyElement>(lpVtbl->DestroyElement)(
-                    This,
-                    pwcsName
-                );
+                return Marshal.GetDelegateForFunctionPointer<_DestroyElement>(lpVtbl->DestroyElement)(This, pwcsName);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int RenameElement(
-            [In, NativeTypeName("OLECHAR")] char* pwcsOldName,
-            [In, NativeTypeName("OLECHAR")] char* pwcsNewName
-        )
+        public int RenameElement([NativeTypeName("OLECHAR")] char* pwcsOldName, [NativeTypeName("OLECHAR")] char* pwcsNewName)
         {
             fixed (IStorage* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_RenameElement>(lpVtbl->RenameElement)(
-                    This,
-                    pwcsOldName,
-                    pwcsNewName
-                );
+                return Marshal.GetDelegateForFunctionPointer<_RenameElement>(lpVtbl->RenameElement)(This, pwcsOldName, pwcsNewName);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetElementTimes(
-            [In, NativeTypeName("OLECHAR")] char* pwcsName = null,
-            [In] FILETIME* pctime = null,
-            [In] FILETIME* patime = null,
-            [In] FILETIME* pmtime = null
-        )
+        public int SetElementTimes([NativeTypeName("OLECHAR")] char* pwcsName = null, FILETIME* pctime = null, FILETIME* patime = null, FILETIME* pmtime = null)
         {
             fixed (IStorage* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetElementTimes>(lpVtbl->SetElementTimes)(
-                    This,
-                    pwcsName,
-                    pctime,
-                    patime,
-                    pmtime
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetElementTimes>(lpVtbl->SetElementTimes)(This, pwcsName, pctime, patime, pmtime);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetClass(
-            [In, NativeTypeName("REFCLSID")] Guid* clsid
-        )
+        public int SetClass([NativeTypeName("REFCLSID")] Guid* clsid)
         {
             fixed (IStorage* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetClass>(lpVtbl->SetClass)(
-                    This,
-                    clsid
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetClass>(lpVtbl->SetClass)(This, clsid);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetStateBits(
-            [In, NativeTypeName("DWORD")] uint grfStateBits,
-            [In, NativeTypeName("DWORD")] uint grfMask
-        )
+        public int SetStateBits([NativeTypeName("DWORD")] uint grfStateBits, [NativeTypeName("DWORD")] uint grfMask)
         {
             fixed (IStorage* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetStateBits>(lpVtbl->SetStateBits)(
-                    This,
-                    grfStateBits,
-                    grfMask
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetStateBits>(lpVtbl->SetStateBits)(This, grfStateBits, grfMask);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Stat(
-            [Out] STATSTG* pstatstg,
-            [In, NativeTypeName("DWORD")] uint grfStatFlag
-        )
+        public int Stat(STATSTG* pstatstg, [NativeTypeName("DWORD")] uint grfStatFlag)
         {
             fixed (IStorage* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Stat>(lpVtbl->Stat)(
-                    This,
-                    pstatstg,
-                    grfStatFlag
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Stat>(lpVtbl->Stat)(This, pstatstg, grfStatFlag);
             }
         }
 

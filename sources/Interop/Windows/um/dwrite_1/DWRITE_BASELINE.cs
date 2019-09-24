@@ -33,6 +33,5 @@ namespace TerraFX.Interop
         DWRITE_BASELINE_MINIMUM,
 
         /// <summary>The top-most extent in horizontal, right-most in vertical.</summary>
-        DWRITE_BASELINE_MAXIMUM,
-    }
+        DWRITE_BASELINE_MAXIMUM, }
 }

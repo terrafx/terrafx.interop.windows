@@ -15,78 +15,38 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IDispatch* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDispatch* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IDispatch* This
-        );
+        public delegate uint _AddRef(IDispatch* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IDispatch* This
-        );
+        public delegate uint _Release(IDispatch* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetTypeInfoCount(
-            [In] IDispatch* This,
-            [Out, NativeTypeName("UINT")] uint* pctinfo
-        );
+        public delegate int _GetTypeInfoCount(IDispatch* This, [NativeTypeName("UINT")] uint* pctinfo);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetTypeInfo(
-            [In] IDispatch* This,
-            [In, NativeTypeName("UINT")] uint iTInfo,
-            [In, NativeTypeName("LCID")] uint lcid,
-            [Out] ITypeInfo** ppTInfo = null
-        );
+        public delegate int _GetTypeInfo(IDispatch* This, [NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetIDsOfNames(
-            [In] IDispatch* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [In, NativeTypeName("LPOLESTR[]")] char** rgszNames,
-            [In, NativeTypeName("UINT")] uint cNames,
-            [In, NativeTypeName("LCID")] uint lcid,
-            [Out, NativeTypeName("DISPID[]")] int* rgDispId
-        );
+        public delegate int _GetIDsOfNames(IDispatch* This, [NativeTypeName("REFIID")] Guid* riid, [NativeTypeName("LPOLESTR[]")] char** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID[]")] int* rgDispId);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Invoke(
-            [In] IDispatch* This,
-            [In, NativeTypeName("DISPID")] int dispIdMember,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [In, NativeTypeName("LCID")] uint lcid,
-            [In, NativeTypeName("WORD")] ushort wFlags,
-            [In, NativeTypeName("DISPPARAMS[]")] DISPPARAMS* pDispParams,
-            [Out] VARIANT* pVarResult = null,
-            [Out] EXCEPINFO* pExcepInfo = null,
-            [Out, NativeTypeName("UINT")] uint* puArgErr = null
-        );
+        public delegate int _Invoke(IDispatch* This, [NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("REFIID")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, [NativeTypeName("DISPPARAMS[]")] DISPPARAMS* pDispParams, VARIANT* pVarResult = null, EXCEPINFO* pExcepInfo = null, [NativeTypeName("UINT")] uint* puArgErr = null);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDispatch* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -95,9 +55,7 @@ namespace TerraFX.Interop
         {
             fixed (IDispatch* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -106,91 +64,43 @@ namespace TerraFX.Interop
         {
             fixed (IDispatch* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfoCount(
-            [Out, NativeTypeName("UINT")] uint* pctinfo
-        )
+        public int GetTypeInfoCount([NativeTypeName("UINT")] uint* pctinfo)
         {
             fixed (IDispatch* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetTypeInfoCount>(lpVtbl->GetTypeInfoCount)(
-                    This,
-                    pctinfo
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetTypeInfoCount>(lpVtbl->GetTypeInfoCount)(This, pctinfo);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfo(
-            [In, NativeTypeName("UINT")] uint iTInfo,
-            [In, NativeTypeName("LCID")] uint lcid,
-            [Out] ITypeInfo** ppTInfo = null
-        )
+        public int GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo = null)
         {
             fixed (IDispatch* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetTypeInfo>(lpVtbl->GetTypeInfo)(
-                    This,
-                    iTInfo,
-                    lcid,
-                    ppTInfo
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetTypeInfo>(lpVtbl->GetTypeInfo)(This, iTInfo, lcid, ppTInfo);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetIDsOfNames(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [In, NativeTypeName("LPOLESTR[]")] char** rgszNames,
-            [In, NativeTypeName("UINT")] uint cNames,
-            [In, NativeTypeName("LCID")] uint lcid,
-            [Out, NativeTypeName("DISPID[]")] int* rgDispId
-        )
+        public int GetIDsOfNames([NativeTypeName("REFIID")] Guid* riid, [NativeTypeName("LPOLESTR[]")] char** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID[]")] int* rgDispId)
         {
             fixed (IDispatch* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetIDsOfNames>(lpVtbl->GetIDsOfNames)(
-                    This,
-                    riid,
-                    rgszNames,
-                    cNames,
-                    lcid,
-                    rgDispId
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetIDsOfNames>(lpVtbl->GetIDsOfNames)(This, riid, rgszNames, cNames, lcid, rgDispId);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Invoke(
-            [In, NativeTypeName("DISPID")] int dispIdMember,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [In, NativeTypeName("LCID")] uint lcid,
-            [In, NativeTypeName("WORD")] ushort wFlags,
-            [In, NativeTypeName("DISPPARAMS[]")] DISPPARAMS* pDispParams,
-            [Out] VARIANT* pVarResult = null,
-            [Out] EXCEPINFO* pExcepInfo = null,
-            [Out, NativeTypeName("UINT")] uint* puArgErr = null
-        )
+        public int Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("REFIID")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, [NativeTypeName("DISPPARAMS[]")] DISPPARAMS* pDispParams, VARIANT* pVarResult = null, EXCEPINFO* pExcepInfo = null, [NativeTypeName("UINT")] uint* puArgErr = null)
         {
             fixed (IDispatch* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Invoke>(lpVtbl->Invoke)(
-                    This,
-                    dispIdMember,
-                    riid,
-                    lcid,
-                    wFlags,
-                    pDispParams,
-                    pVarResult,
-                    pExcepInfo,
-                    puArgErr
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Invoke>(lpVtbl->Invoke)(This, dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
             }
         }
 

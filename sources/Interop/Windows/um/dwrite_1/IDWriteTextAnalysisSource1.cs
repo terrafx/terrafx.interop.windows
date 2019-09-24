@@ -16,23 +16,15 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IDWriteTextAnalysisSource1* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDWriteTextAnalysisSource1* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IDWriteTextAnalysisSource1* This
-        );
+        public delegate uint _AddRef(IDWriteTextAnalysisSource1* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IDWriteTextAnalysisSource1* This
-        );
+        public delegate uint _Release(IDWriteTextAnalysisSource1* This);
 
         /// <summary>Get a block of text starting at the specified text position. Returning NULL indicates the end of text - the position is after the last character. This function is called iteratively for each consecutive block, tying together several fragmented blocks in the backing store into a virtual contiguous string.</summary>
         /// <param name="textPosition">First position of the piece to obtain. All positions are in UTF16 code-units, not whole characters, which matters when supplementary characters are used.</param>
@@ -42,12 +34,7 @@ namespace TerraFX.Interop
         /// <remarks> Although apps can implement sparse textual content that only maps part of the backing store, the app must map any text that is in the range passed to any analysis functions.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetTextAtPosition(
-            [In] IDWriteTextAnalysisSource1* This,
-            [In, NativeTypeName("UINT32")] uint textPosition,
-            [Out, NativeTypeName("WCHAR[]")] char** textString,
-            [Out, NativeTypeName("UINT32")] uint* textLength
-        );
+        public delegate int _GetTextAtPosition(IDWriteTextAnalysisSource1* This, [NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("WCHAR[]")] char** textString, [NativeTypeName("UINT32")] uint* textLength);
 
         /// <summary>Get a block of text immediately preceding the specified position.</summary>
         /// <param name="textPosition">Position immediately after the last position of the chunk to obtain.</param>
@@ -57,18 +44,11 @@ namespace TerraFX.Interop
         /// <remarks> Although apps can implement sparse textual content that only maps part of the backing store, the app must map any text that is in the range passed to any analysis functions.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetTextBeforePosition(
-            [In] IDWriteTextAnalysisSource1* This,
-            [In, NativeTypeName("UINT32")] uint textPosition,
-            [Out, NativeTypeName("WCHAR[]")] char** textString,
-            [Out, NativeTypeName("UINT32")] uint* textLength
-        );
+        public delegate int _GetTextBeforePosition(IDWriteTextAnalysisSource1* This, [NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("WCHAR[]")] char** textString, [NativeTypeName("UINT32")] uint* textLength);
 
         /// <summary>Get paragraph reading direction.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate DWRITE_READING_DIRECTION _GetParagraphReadingDirection(
-            [In] IDWriteTextAnalysisSource1* This
-        );
+        public delegate DWRITE_READING_DIRECTION _GetParagraphReadingDirection(IDWriteTextAnalysisSource1* This);
 
         /// <summary>Get locale name on the range affected by it.</summary>
         /// <param name="textPosition">Position to get the locale name of.</param>
@@ -77,12 +57,7 @@ namespace TerraFX.Interop
         /// <remarks> The localeName pointer must remain valid until the next call or until the analysis returns.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLocaleName(
-            [In] IDWriteTextAnalysisSource1* This,
-            [In, NativeTypeName("UINT32")] uint textPosition,
-            [Out, NativeTypeName("UINT32")] uint* textLength,
-            [Out, NativeTypeName("WCHAR[]")] char** localeName
-        );
+        public delegate int _GetLocaleName(IDWriteTextAnalysisSource1* This, [NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint* textLength, [NativeTypeName("WCHAR[]")] char** localeName);
 
         /// <summary>Get number substitution on the range affected by it.</summary>
         /// <param name="textPosition">Position to get the number substitution of.</param>
@@ -91,12 +66,7 @@ namespace TerraFX.Interop
         /// <remarks> Any implementation should return the number substitution with an incremented ref count, and the analysis will release when finished with it (either before the next call or before it returns). However, the sink callback may hold onto it after that.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetNumberSubstitution(
-            [In] IDWriteTextAnalysisSource1* This,
-            [In, NativeTypeName("UINT32")] uint textPosition,
-            [Out, NativeTypeName("UINT32")] uint* textLength,
-            [Out] IDWriteNumberSubstitution** numberSubstitution
-        );
+        public delegate int _GetNumberSubstitution(IDWriteTextAnalysisSource1* This, [NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint* textLength, IDWriteNumberSubstitution** numberSubstitution);
 
         /// <summary>The text analyzer calls back to this to get the desired glyph orientation and resolved bidi level, which it uses along with the script properties of the text to determine the actual orientation of each character, which it reports back to the client via the sink SetGlyphOrientation method.</summary>
         /// <param name="textPosition">First position of the piece to obtain. All positions are in UTF-16 code-units, not whole characters, which matters when supplementary characters are used.</param>
@@ -106,27 +76,14 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code. Returning an error will abort the analysis.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetVerticalGlyphOrientation(
-            [In] IDWriteTextAnalysisSource1* This,
-            [In, NativeTypeName("UINT32")] uint textPosition,
-            [Out, NativeTypeName("UINT32")] uint* textLength,
-            [Out] DWRITE_VERTICAL_GLYPH_ORIENTATION* glyphOrientation,
-            [Out, NativeTypeName("UINT8")] byte* bidiLevel
-        );
+        public delegate int _GetVerticalGlyphOrientation(IDWriteTextAnalysisSource1* This, [NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint* textLength, DWRITE_VERTICAL_GLYPH_ORIENTATION* glyphOrientation, [NativeTypeName("UINT8")] byte* bidiLevel);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDWriteTextAnalysisSource1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -135,9 +92,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalysisSource1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -146,45 +101,25 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalysisSource1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetTextAtPosition(
-            [In, NativeTypeName("UINT32")] uint textPosition,
-            [Out, NativeTypeName("WCHAR[]")] char** textString,
-            [Out, NativeTypeName("UINT32")] uint* textLength
-        )
+        public int GetTextAtPosition([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("WCHAR[]")] char** textString, [NativeTypeName("UINT32")] uint* textLength)
         {
             fixed (IDWriteTextAnalysisSource1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetTextAtPosition>(lpVtbl->GetTextAtPosition)(
-                    This,
-                    textPosition,
-                    textString,
-                    textLength
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetTextAtPosition>(lpVtbl->GetTextAtPosition)(This, textPosition, textString, textLength);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetTextBeforePosition(
-            [In, NativeTypeName("UINT32")] uint textPosition,
-            [Out, NativeTypeName("WCHAR[]")] char** textString,
-            [Out, NativeTypeName("UINT32")] uint* textLength
-        )
+        public int GetTextBeforePosition([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("WCHAR[]")] char** textString, [NativeTypeName("UINT32")] uint* textLength)
         {
             fixed (IDWriteTextAnalysisSource1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetTextBeforePosition>(lpVtbl->GetTextBeforePosition)(
-                    This,
-                    textPosition,
-                    textString,
-                    textLength
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetTextBeforePosition>(lpVtbl->GetTextBeforePosition)(This, textPosition, textString, textLength);
             }
         }
 
@@ -192,65 +127,34 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTextAnalysisSource1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetParagraphReadingDirection>(lpVtbl->GetParagraphReadingDirection)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetParagraphReadingDirection>(lpVtbl->GetParagraphReadingDirection)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetLocaleName(
-            [In, NativeTypeName("UINT32")] uint textPosition,
-            [Out, NativeTypeName("UINT32")] uint* textLength,
-            [Out, NativeTypeName("WCHAR[]")] char** localeName
-        )
+        public int GetLocaleName([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint* textLength, [NativeTypeName("WCHAR[]")] char** localeName)
         {
             fixed (IDWriteTextAnalysisSource1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetLocaleName>(lpVtbl->GetLocaleName)(
-                    This,
-                    textPosition,
-                    textLength,
-                    localeName
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetLocaleName>(lpVtbl->GetLocaleName)(This, textPosition, textLength, localeName);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetNumberSubstitution(
-            [In, NativeTypeName("UINT32")] uint textPosition,
-            [Out, NativeTypeName("UINT32")] uint* textLength,
-            [Out] IDWriteNumberSubstitution** numberSubstitution
-        )
+        public int GetNumberSubstitution([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint* textLength, IDWriteNumberSubstitution** numberSubstitution)
         {
             fixed (IDWriteTextAnalysisSource1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetNumberSubstitution>(lpVtbl->GetNumberSubstitution)(
-                    This,
-                    textPosition,
-                    textLength,
-                    numberSubstitution
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetNumberSubstitution>(lpVtbl->GetNumberSubstitution)(This, textPosition, textLength, numberSubstitution);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetVerticalGlyphOrientation(
-            [In, NativeTypeName("UINT32")] uint textPosition,
-            [Out, NativeTypeName("UINT32")] uint* textLength,
-            [Out] DWRITE_VERTICAL_GLYPH_ORIENTATION* glyphOrientation,
-            [Out, NativeTypeName("UINT8")] byte* bidiLevel
-        )
+        public int GetVerticalGlyphOrientation([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint* textLength, DWRITE_VERTICAL_GLYPH_ORIENTATION* glyphOrientation, [NativeTypeName("UINT8")] byte* bidiLevel)
         {
             fixed (IDWriteTextAnalysisSource1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetVerticalGlyphOrientation>(lpVtbl->GetVerticalGlyphOrientation)(
-                    This,
-                    textPosition,
-                    textLength,
-                    glyphOrientation,
-                    bidiLevel
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetVerticalGlyphOrientation>(lpVtbl->GetVerticalGlyphOrientation)(This, textPosition, textLength, glyphOrientation, bidiLevel);
             }
         }
 

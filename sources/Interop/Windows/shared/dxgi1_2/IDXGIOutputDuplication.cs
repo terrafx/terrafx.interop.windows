@@ -15,133 +15,69 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IDXGIOutputDuplication* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDXGIOutputDuplication* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IDXGIOutputDuplication* This
-        );
+        public delegate uint _AddRef(IDXGIOutputDuplication* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IDXGIOutputDuplication* This
-        );
+        public delegate uint _Release(IDXGIOutputDuplication* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateData(
-            [In] IDXGIOutputDuplication* This,
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In, NativeTypeName("UINT")] uint DataSize,
-            [In] void* pData
-        );
+        public delegate int _SetPrivateData(IDXGIOutputDuplication* This, [NativeTypeName("REFGUID")] Guid* Name, [NativeTypeName("UINT")] uint DataSize, void* pData);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateDataInterface(
-            [In] IDXGIOutputDuplication* This,
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In] IUnknown* pUnknown = null
-        );
+        public delegate int _SetPrivateDataInterface(IDXGIOutputDuplication* This, [NativeTypeName("REFGUID")] Guid* Name, IUnknown* pUnknown = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPrivateData(
-            [In] IDXGIOutputDuplication* This,
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In, Out, NativeTypeName("UINT")] uint* pDataSize,
-            [Out] void* pData
-        );
+        public delegate int _GetPrivateData(IDXGIOutputDuplication* This, [NativeTypeName("REFGUID")] Guid* Name, [NativeTypeName("UINT")] uint* pDataSize, void* pData);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetParent(
-            [In] IDXGIOutputDuplication* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppParent
-        );
+        public delegate int _GetParent(IDXGIOutputDuplication* This, [NativeTypeName("REFIID")] Guid* riid, void** ppParent);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetDesc(
-            [In] IDXGIOutputDuplication* This,
-            [Out] DXGI_OUTDUPL_DESC* pDesc
-        );
+        public delegate void _GetDesc(IDXGIOutputDuplication* This, DXGI_OUTDUPL_DESC* pDesc);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _AcquireNextFrame(
-            [In] IDXGIOutputDuplication* This,
-            [In, NativeTypeName("UINT")] uint TimeoutInMilliseconds,
-            [Out] DXGI_OUTDUPL_FRAME_INFO* pFrameInfo,
-            [Out] IDXGIResource** ppDesktopResource
-        );
+        public delegate int _AcquireNextFrame(IDXGIOutputDuplication* This, [NativeTypeName("UINT")] uint TimeoutInMilliseconds, DXGI_OUTDUPL_FRAME_INFO* pFrameInfo, IDXGIResource** ppDesktopResource);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFrameDirtyRects(
-            [In] IDXGIOutputDuplication* This,
-            [In, NativeTypeName("UINT")] uint DirtyRectsBufferSize,
-            [Out, NativeTypeName("RECT[]")] RECT* pDirtyRectsBuffer,
-            [Out, NativeTypeName("UINT")] uint* pDirtyRectsBufferSizeRequired
-        );
+        public delegate int _GetFrameDirtyRects(IDXGIOutputDuplication* This, [NativeTypeName("UINT")] uint DirtyRectsBufferSize, [NativeTypeName("RECT[]")] RECT* pDirtyRectsBuffer, [NativeTypeName("UINT")] uint* pDirtyRectsBufferSizeRequired);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFrameMoveRects(
-            [In] IDXGIOutputDuplication* This,
-            [In, NativeTypeName("UINT")] uint MoveRectsBufferSize,
-            [Out, NativeTypeName("DXGI_OUTDUPL_MOVE_RECT[]")] DXGI_OUTDUPL_MOVE_RECT* pMoveRectBuffer,
-            [Out, NativeTypeName("UINT")] uint* pMoveRectsBufferSizeRequired
-        );
+        public delegate int _GetFrameMoveRects(IDXGIOutputDuplication* This, [NativeTypeName("UINT")] uint MoveRectsBufferSize, [NativeTypeName("DXGI_OUTDUPL_MOVE_RECT[]")] DXGI_OUTDUPL_MOVE_RECT* pMoveRectBuffer, [NativeTypeName("UINT")] uint* pMoveRectsBufferSizeRequired);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFramePointerShape(
-            [In] IDXGIOutputDuplication* This,
-            [In, NativeTypeName("UINT")] uint PointerShapeBufferSize,
-            [Out] void* pPointerShapeBuffer,
-            [Out, NativeTypeName("UINT")] uint* pPointerShapeBufferSizeRequired,
-            [Out] DXGI_OUTDUPL_POINTER_SHAPE_INFO* pPointerShapeInfo
-        );
+        public delegate int _GetFramePointerShape(IDXGIOutputDuplication* This, [NativeTypeName("UINT")] uint PointerShapeBufferSize, void* pPointerShapeBuffer, [NativeTypeName("UINT")] uint* pPointerShapeBufferSizeRequired, DXGI_OUTDUPL_POINTER_SHAPE_INFO* pPointerShapeInfo);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _MapDesktopSurface(
-            [In] IDXGIOutputDuplication* This,
-            [Out] DXGI_MAPPED_RECT* pLockedRect
-        );
+        public delegate int _MapDesktopSurface(IDXGIOutputDuplication* This, DXGI_MAPPED_RECT* pLockedRect);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _UnMapDesktopSurface(
-            [In] IDXGIOutputDuplication* This
-        );
+        public delegate int _UnMapDesktopSurface(IDXGIOutputDuplication* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _ReleaseFrame(
-            [In] IDXGIOutputDuplication* This
-        );
+        public delegate int _ReleaseFrame(IDXGIOutputDuplication* This);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -150,9 +86,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -161,178 +95,96 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetPrivateData(
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In, NativeTypeName("UINT")] uint DataSize,
-            [In] void* pData
-        )
+        public int SetPrivateData([NativeTypeName("REFGUID")] Guid* Name, [NativeTypeName("UINT")] uint DataSize, void* pData)
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)(
-                    This,
-                    Name,
-                    DataSize,
-                    pData
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)(This, Name, DataSize, pData);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetPrivateDataInterface(
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In] IUnknown* pUnknown = null
-        )
+        public int SetPrivateDataInterface([NativeTypeName("REFGUID")] Guid* Name, IUnknown* pUnknown = null)
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(
-                    This,
-                    Name,
-                    pUnknown
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(This, Name, pUnknown);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetPrivateData(
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In, Out, NativeTypeName("UINT")] uint* pDataSize,
-            [Out] void* pData
-        )
+        public int GetPrivateData([NativeTypeName("REFGUID")] Guid* Name, [NativeTypeName("UINT")] uint* pDataSize, void* pData)
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)(
-                    This,
-                    Name,
-                    pDataSize,
-                    pData
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)(This, Name, pDataSize, pData);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetParent(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppParent
-        )
+        public int GetParent([NativeTypeName("REFIID")] Guid* riid, void** ppParent)
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetParent>(lpVtbl->GetParent)(
-                    This,
-                    riid,
-                    ppParent
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetParent>(lpVtbl->GetParent)(This, riid, ppParent);
             }
         }
 
-        public void GetDesc(
-            [Out] DXGI_OUTDUPL_DESC* pDesc
-        )
+        public void GetDesc(DXGI_OUTDUPL_DESC* pDesc)
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)(
-                    This,
-                    pDesc
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)(This, pDesc);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int AcquireNextFrame(
-            [In, NativeTypeName("UINT")] uint TimeoutInMilliseconds,
-            [Out] DXGI_OUTDUPL_FRAME_INFO* pFrameInfo,
-            [Out] IDXGIResource** ppDesktopResource
-        )
+        public int AcquireNextFrame([NativeTypeName("UINT")] uint TimeoutInMilliseconds, DXGI_OUTDUPL_FRAME_INFO* pFrameInfo, IDXGIResource** ppDesktopResource)
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AcquireNextFrame>(lpVtbl->AcquireNextFrame)(
-                    This,
-                    TimeoutInMilliseconds,
-                    pFrameInfo,
-                    ppDesktopResource
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AcquireNextFrame>(lpVtbl->AcquireNextFrame)(This, TimeoutInMilliseconds, pFrameInfo, ppDesktopResource);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFrameDirtyRects(
-            [In, NativeTypeName("UINT")] uint DirtyRectsBufferSize,
-            [Out, NativeTypeName("RECT[]")] RECT* pDirtyRectsBuffer,
-            [Out, NativeTypeName("UINT")] uint* pDirtyRectsBufferSizeRequired
-        )
+        public int GetFrameDirtyRects([NativeTypeName("UINT")] uint DirtyRectsBufferSize, [NativeTypeName("RECT[]")] RECT* pDirtyRectsBuffer, [NativeTypeName("UINT")] uint* pDirtyRectsBufferSizeRequired)
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetFrameDirtyRects>(lpVtbl->GetFrameDirtyRects)(
-                    This,
-                    DirtyRectsBufferSize,
-                    pDirtyRectsBuffer,
-                    pDirtyRectsBufferSizeRequired
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetFrameDirtyRects>(lpVtbl->GetFrameDirtyRects)(This, DirtyRectsBufferSize, pDirtyRectsBuffer, pDirtyRectsBufferSizeRequired);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFrameMoveRects(
-            [In, NativeTypeName("UINT")] uint MoveRectsBufferSize,
-            [Out, NativeTypeName("DXGI_OUTDUPL_MOVE_RECT[]")] DXGI_OUTDUPL_MOVE_RECT* pMoveRectBuffer,
-            [Out, NativeTypeName("UINT")] uint* pMoveRectsBufferSizeRequired
-        )
+        public int GetFrameMoveRects([NativeTypeName("UINT")] uint MoveRectsBufferSize, [NativeTypeName("DXGI_OUTDUPL_MOVE_RECT[]")] DXGI_OUTDUPL_MOVE_RECT* pMoveRectBuffer, [NativeTypeName("UINT")] uint* pMoveRectsBufferSizeRequired)
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetFrameMoveRects>(lpVtbl->GetFrameMoveRects)(
-                    This,
-                    MoveRectsBufferSize,
-                    pMoveRectBuffer,
-                    pMoveRectsBufferSizeRequired
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetFrameMoveRects>(lpVtbl->GetFrameMoveRects)(This, MoveRectsBufferSize, pMoveRectBuffer, pMoveRectsBufferSizeRequired);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFramePointerShape(
-            [In, NativeTypeName("UINT")] uint PointerShapeBufferSize,
-            [Out] void* pPointerShapeBuffer,
-            [Out, NativeTypeName("UINT")] uint* pPointerShapeBufferSizeRequired,
-            [Out] DXGI_OUTDUPL_POINTER_SHAPE_INFO* pPointerShapeInfo
-        )
+        public int GetFramePointerShape([NativeTypeName("UINT")] uint PointerShapeBufferSize, void* pPointerShapeBuffer, [NativeTypeName("UINT")] uint* pPointerShapeBufferSizeRequired, DXGI_OUTDUPL_POINTER_SHAPE_INFO* pPointerShapeInfo)
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetFramePointerShape>(lpVtbl->GetFramePointerShape)(
-                    This,
-                    PointerShapeBufferSize,
-                    pPointerShapeBuffer,
-                    pPointerShapeBufferSizeRequired,
-                    pPointerShapeInfo
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetFramePointerShape>(lpVtbl->GetFramePointerShape)(This, PointerShapeBufferSize, pPointerShapeBuffer, pPointerShapeBufferSizeRequired, pPointerShapeInfo);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int MapDesktopSurface(
-            [Out] DXGI_MAPPED_RECT* pLockedRect
-        )
+        public int MapDesktopSurface(DXGI_MAPPED_RECT* pLockedRect)
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_MapDesktopSurface>(lpVtbl->MapDesktopSurface)(
-                    This,
-                    pLockedRect
-                );
+                return Marshal.GetDelegateForFunctionPointer<_MapDesktopSurface>(lpVtbl->MapDesktopSurface)(This, pLockedRect);
             }
         }
 
@@ -341,9 +193,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_UnMapDesktopSurface>(lpVtbl->UnMapDesktopSurface)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_UnMapDesktopSurface>(lpVtbl->UnMapDesktopSurface)(This);
             }
         }
 
@@ -352,9 +202,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIOutputDuplication* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_ReleaseFrame>(lpVtbl->ReleaseFrame)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_ReleaseFrame>(lpVtbl->ReleaseFrame)(This);
             }
         }
 

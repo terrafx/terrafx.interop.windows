@@ -15,82 +15,46 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IWICColorContext* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICColorContext* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IWICColorContext* This
-        );
+        public delegate uint _AddRef(IWICColorContext* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IWICColorContext* This
-        );
+        public delegate uint _Release(IWICColorContext* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _InitializeFromFilename(
-            [In] IWICColorContext* This,
-            [In, NativeTypeName("LPCWSTR")] char* wzFilename
-        );
+        public delegate int _InitializeFromFilename(IWICColorContext* This, [NativeTypeName("LPCWSTR")] char* wzFilename);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _InitializeFromMemory(
-            [In] IWICColorContext* This,
-            [In, NativeTypeName("BYTE[]")] byte* pbBuffer,
-            [In, NativeTypeName("UINT")] uint cbBufferSize
-        );
+        public delegate int _InitializeFromMemory(IWICColorContext* This, [NativeTypeName("BYTE[]")] byte* pbBuffer, [NativeTypeName("UINT")] uint cbBufferSize);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _InitializeFromExifColorSpace(
-            [In] IWICColorContext* This,
-            [In, NativeTypeName("UINT")] uint value
-        );
+        public delegate int _InitializeFromExifColorSpace(IWICColorContext* This, [NativeTypeName("UINT")] uint value);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int __GetType(
-            [In] IWICColorContext* This,
-            [Out] WICColorContextType* pType
-        );
+        public delegate int __GetType(IWICColorContext* This, WICColorContextType* pType);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetProfileBytes(
-            [In] IWICColorContext* This,
-            [In, NativeTypeName("UINT")] uint cbBuffer,
-            [In, Out, Optional, NativeTypeName("BYTE[]")] byte* pbBuffer,
-            [Out, NativeTypeName("UINT")] uint* pcbActual
-        );
+        public delegate int _GetProfileBytes(IWICColorContext* This, [NativeTypeName("UINT")] uint cbBuffer, [Optional, NativeTypeName("BYTE[]")] byte* pbBuffer, [NativeTypeName("UINT")] uint* pcbActual);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetExifColorSpace(
-            [In] IWICColorContext* This,
-            [Out, NativeTypeName("UINT")] uint* pValue
-        );
+        public delegate int _GetExifColorSpace(IWICColorContext* This, [NativeTypeName("UINT")] uint* pValue);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICColorContext* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -99,9 +63,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICColorContext* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -110,99 +72,61 @@ namespace TerraFX.Interop
         {
             fixed (IWICColorContext* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int InitializeFromFilename(
-            [In, NativeTypeName("LPCWSTR")] char* wzFilename
-        )
+        public int InitializeFromFilename([NativeTypeName("LPCWSTR")] char* wzFilename)
         {
             fixed (IWICColorContext* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_InitializeFromFilename>(lpVtbl->InitializeFromFilename)(
-                    This,
-                    wzFilename
-                );
+                return Marshal.GetDelegateForFunctionPointer<_InitializeFromFilename>(lpVtbl->InitializeFromFilename)(This, wzFilename);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int InitializeFromMemory(
-            [In, NativeTypeName("BYTE[]")] byte* pbBuffer,
-            [In, NativeTypeName("UINT")] uint cbBufferSize
-        )
+        public int InitializeFromMemory([NativeTypeName("BYTE[]")] byte* pbBuffer, [NativeTypeName("UINT")] uint cbBufferSize)
         {
             fixed (IWICColorContext* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_InitializeFromMemory>(lpVtbl->InitializeFromMemory)(
-                    This,
-                    pbBuffer,
-                    cbBufferSize
-                );
+                return Marshal.GetDelegateForFunctionPointer<_InitializeFromMemory>(lpVtbl->InitializeFromMemory)(This, pbBuffer, cbBufferSize);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int InitializeFromExifColorSpace(
-            [In, NativeTypeName("UINT")] uint value
-        )
+        public int InitializeFromExifColorSpace([NativeTypeName("UINT")] uint value)
         {
             fixed (IWICColorContext* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_InitializeFromExifColorSpace>(lpVtbl->InitializeFromExifColorSpace)(
-                    This,
-                    value
-                );
+                return Marshal.GetDelegateForFunctionPointer<_InitializeFromExifColorSpace>(lpVtbl->InitializeFromExifColorSpace)(This, value);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int _GetType(
-            [Out] WICColorContextType* pType
-        )
+        public int _GetType(WICColorContextType* pType)
         {
             fixed (IWICColorContext* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<__GetType>(lpVtbl->_GetType)(
-                    This,
-                    pType
-                );
+                return Marshal.GetDelegateForFunctionPointer<__GetType>(lpVtbl->_GetType)(This, pType);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetProfileBytes(
-            [In, NativeTypeName("UINT")] uint cbBuffer,
-            [In, Out, Optional, NativeTypeName("BYTE[]")] byte* pbBuffer,
-            [Out, NativeTypeName("UINT")] uint* pcbActual
-        )
+        public int GetProfileBytes([NativeTypeName("UINT")] uint cbBuffer, [Optional, NativeTypeName("BYTE[]")] byte* pbBuffer, [NativeTypeName("UINT")] uint* pcbActual)
         {
             fixed (IWICColorContext* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetProfileBytes>(lpVtbl->GetProfileBytes)(
-                    This,
-                    cbBuffer,
-                    pbBuffer,
-                    pcbActual
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetProfileBytes>(lpVtbl->GetProfileBytes)(This, cbBuffer, pbBuffer, pcbActual);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetExifColorSpace(
-            [Out, NativeTypeName("UINT")] uint* pValue
-        )
+        public int GetExifColorSpace([NativeTypeName("UINT")] uint* pValue)
         {
             fixed (IWICColorContext* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetExifColorSpace>(lpVtbl->GetExifColorSpace)(
-                    This,
-                    pValue
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetExifColorSpace>(lpVtbl->GetExifColorSpace)(This, pValue);
             }
         }
 

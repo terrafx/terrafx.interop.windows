@@ -8,7 +8,5 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public unsafe delegate void PFN_DESTRUCTION_CALLBACK(
-        [In] void* pData
-    );
+    public unsafe delegate void PFN_DESTRUCTION_CALLBACK(void* pData);
 }

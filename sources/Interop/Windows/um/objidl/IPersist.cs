@@ -15,44 +15,26 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IPersist* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IPersist* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IPersist* This
-        );
+        public delegate uint _AddRef(IPersist* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IPersist* This
-        );
+        public delegate uint _Release(IPersist* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetClassID(
-            [In] IPersist* This,
-            [Out, NativeTypeName("CLSID")] Guid* pClassID
-        );
+        public delegate int _GetClassID(IPersist* This, [NativeTypeName("CLSID")] Guid* pClassID);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IPersist* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -61,9 +43,7 @@ namespace TerraFX.Interop
         {
             fixed (IPersist* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -72,23 +52,16 @@ namespace TerraFX.Interop
         {
             fixed (IPersist* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetClassID(
-            [Out, NativeTypeName("CLSID")] Guid* pClassID
-        )
+        public int GetClassID([NativeTypeName("CLSID")] Guid* pClassID)
         {
             fixed (IPersist* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetClassID>(lpVtbl->GetClassID)(
-                    This,
-                    pClassID
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetClassID>(lpVtbl->GetClassID)(This, pClassID);
             }
         }
 

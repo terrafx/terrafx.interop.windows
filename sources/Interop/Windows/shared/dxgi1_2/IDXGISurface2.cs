@@ -15,124 +15,66 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IDXGISurface2* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDXGISurface2* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IDXGISurface2* This
-        );
+        public delegate uint _AddRef(IDXGISurface2* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IDXGISurface2* This
-        );
+        public delegate uint _Release(IDXGISurface2* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateData(
-            [In] IDXGISurface2* This,
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In, NativeTypeName("UINT")] uint DataSize,
-            [In] void* pData
-        );
+        public delegate int _SetPrivateData(IDXGISurface2* This, [NativeTypeName("REFGUID")] Guid* Name, [NativeTypeName("UINT")] uint DataSize, void* pData);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateDataInterface(
-            [In] IDXGISurface2* This,
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In] IUnknown* pUnknown = null
-        );
+        public delegate int _SetPrivateDataInterface(IDXGISurface2* This, [NativeTypeName("REFGUID")] Guid* Name, IUnknown* pUnknown = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPrivateData(
-            [In] IDXGISurface2* This,
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In, Out, NativeTypeName("UINT")] uint* pDataSize,
-            [Out] void* pData
-        );
+        public delegate int _GetPrivateData(IDXGISurface2* This, [NativeTypeName("REFGUID")] Guid* Name, [NativeTypeName("UINT")] uint* pDataSize, void* pData);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetParent(
-            [In] IDXGISurface2* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppParent
-        );
+        public delegate int _GetParent(IDXGISurface2* This, [NativeTypeName("REFIID")] Guid* riid, void** ppParent);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDevice(
-            [In] IDXGISurface2* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppDevice
-        );
+        public delegate int _GetDevice(IDXGISurface2* This, [NativeTypeName("REFIID")] Guid* riid, void** ppDevice);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDesc(
-            [In] IDXGISurface2* This,
-            [Out] DXGI_SURFACE_DESC* pDesc
-        );
+        public delegate int _GetDesc(IDXGISurface2* This, DXGI_SURFACE_DESC* pDesc);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Map(
-            [In] IDXGISurface2* This,
-            [Out] DXGI_MAPPED_RECT* pLockedRect,
-            [In, NativeTypeName("UINT")] uint MapFlags
-        );
+        public delegate int _Map(IDXGISurface2* This, DXGI_MAPPED_RECT* pLockedRect, [NativeTypeName("UINT")] uint MapFlags);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Unmap(
-            [In] IDXGISurface2* This
-        );
+        public delegate int _Unmap(IDXGISurface2* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDC(
-            [In] IDXGISurface2* This,
-            [In, NativeTypeName("BOOL")] int Discard,
-            [Out, NativeTypeName("HDC")] IntPtr* phdc
-        );
+        public delegate int _GetDC(IDXGISurface2* This, [NativeTypeName("BOOL")] int Discard, [NativeTypeName("HDC")] IntPtr* phdc);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _ReleaseDC(
-            [In] IDXGISurface2* This,
-            [In] RECT* pDirtyRect = null
-        );
+        public delegate int _ReleaseDC(IDXGISurface2* This, RECT* pDirtyRect = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetResource(
-            [In] IDXGISurface2* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppParentResource,
-            [Out, NativeTypeName("UINT")] uint* pSubresourceIndex
-        );
+        public delegate int _GetResource(IDXGISurface2* This, [NativeTypeName("REFIID")] Guid* riid, void** ppParentResource, [NativeTypeName("UINT")] uint* pSubresourceIndex);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDXGISurface2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -141,9 +83,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISurface2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -152,123 +92,70 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISurface2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetPrivateData(
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In, NativeTypeName("UINT")] uint DataSize,
-            [In] void* pData
-        )
+        public int SetPrivateData([NativeTypeName("REFGUID")] Guid* Name, [NativeTypeName("UINT")] uint DataSize, void* pData)
         {
             fixed (IDXGISurface2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)(
-                    This,
-                    Name,
-                    DataSize,
-                    pData
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)(This, Name, DataSize, pData);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetPrivateDataInterface(
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In] IUnknown* pUnknown = null
-        )
+        public int SetPrivateDataInterface([NativeTypeName("REFGUID")] Guid* Name, IUnknown* pUnknown = null)
         {
             fixed (IDXGISurface2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(
-                    This,
-                    Name,
-                    pUnknown
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(This, Name, pUnknown);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetPrivateData(
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In, Out, NativeTypeName("UINT")] uint* pDataSize,
-            [Out] void* pData
-        )
+        public int GetPrivateData([NativeTypeName("REFGUID")] Guid* Name, [NativeTypeName("UINT")] uint* pDataSize, void* pData)
         {
             fixed (IDXGISurface2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)(
-                    This,
-                    Name,
-                    pDataSize,
-                    pData
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)(This, Name, pDataSize, pData);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetParent(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppParent
-        )
+        public int GetParent([NativeTypeName("REFIID")] Guid* riid, void** ppParent)
         {
             fixed (IDXGISurface2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetParent>(lpVtbl->GetParent)(
-                    This,
-                    riid,
-                    ppParent
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetParent>(lpVtbl->GetParent)(This, riid, ppParent);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetDevice(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppDevice
-        )
+        public int GetDevice([NativeTypeName("REFIID")] Guid* riid, void** ppDevice)
         {
             fixed (IDXGISurface2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDevice>(lpVtbl->GetDevice)(
-                    This,
-                    riid,
-                    ppDevice
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDevice>(lpVtbl->GetDevice)(This, riid, ppDevice);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetDesc(
-            [Out] DXGI_SURFACE_DESC* pDesc
-        )
+        public int GetDesc(DXGI_SURFACE_DESC* pDesc)
         {
             fixed (IDXGISurface2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)(
-                    This,
-                    pDesc
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)(This, pDesc);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Map(
-            [Out] DXGI_MAPPED_RECT* pLockedRect,
-            [In, NativeTypeName("UINT")] uint MapFlags
-        )
+        public int Map(DXGI_MAPPED_RECT* pLockedRect, [NativeTypeName("UINT")] uint MapFlags)
         {
             fixed (IDXGISurface2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Map>(lpVtbl->Map)(
-                    This,
-                    pLockedRect,
-                    MapFlags
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Map>(lpVtbl->Map)(This, pLockedRect, MapFlags);
             }
         }
 
@@ -277,57 +164,34 @@ namespace TerraFX.Interop
         {
             fixed (IDXGISurface2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Unmap>(lpVtbl->Unmap)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Unmap>(lpVtbl->Unmap)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetDC(
-            [In, NativeTypeName("BOOL")] int Discard,
-            [Out, NativeTypeName("HDC")] IntPtr* phdc
-        )
+        public int GetDC([NativeTypeName("BOOL")] int Discard, [NativeTypeName("HDC")] IntPtr* phdc)
         {
             fixed (IDXGISurface2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDC>(lpVtbl->GetDC)(
-                    This,
-                    Discard,
-                    phdc
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDC>(lpVtbl->GetDC)(This, Discard, phdc);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int ReleaseDC(
-            [In] RECT* pDirtyRect = null
-        )
+        public int ReleaseDC(RECT* pDirtyRect = null)
         {
             fixed (IDXGISurface2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_ReleaseDC>(lpVtbl->ReleaseDC)(
-                    This,
-                    pDirtyRect
-                );
+                return Marshal.GetDelegateForFunctionPointer<_ReleaseDC>(lpVtbl->ReleaseDC)(This, pDirtyRect);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetResource(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppParentResource,
-            [Out, NativeTypeName("UINT")] uint* pSubresourceIndex
-        )
+        public int GetResource([NativeTypeName("REFIID")] Guid* riid, void** ppParentResource, [NativeTypeName("UINT")] uint* pSubresourceIndex)
         {
             fixed (IDXGISurface2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetResource>(lpVtbl->GetResource)(
-                    This,
-                    riid,
-                    ppParentResource,
-                    pSubresourceIndex
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetResource>(lpVtbl->GetResource)(This, riid, ppParentResource, pSubresourceIndex);
             }
         }
 

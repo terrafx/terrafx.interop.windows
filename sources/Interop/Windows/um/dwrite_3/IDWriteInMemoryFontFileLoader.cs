@@ -16,23 +16,15 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IDWriteInMemoryFontFileLoader* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDWriteInMemoryFontFileLoader* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IDWriteInMemoryFontFileLoader* This
-        );
+        public delegate uint _AddRef(IDWriteInMemoryFontFileLoader* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IDWriteInMemoryFontFileLoader* This
-        );
+        public delegate uint _Release(IDWriteInMemoryFontFileLoader* This);
 
         /// <summary>Creates a font file stream object that encapsulates an open file resource. The resource is closed when the last reference to fontFileStream is released.</summary>
         /// <param name="fontFileReferenceKey">Font file reference key that uniquely identifies the font file resource within the scope of the font loader being used.</param>
@@ -41,12 +33,7 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateStreamFromKey(
-            [In] IDWriteInMemoryFontFileLoader* This,
-            [In] void* fontFileReferenceKey,
-            [In, NativeTypeName("UINT32")] uint fontFileReferenceKeySize,
-            [Out] IDWriteFontFileStream** fontFileStream
-        );
+        public delegate int _CreateStreamFromKey(IDWriteInMemoryFontFileLoader* This, void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, IDWriteFontFileStream** fontFileStream);
 
         /// <summary>The CreateInMemoryFontFileReference method creates a font file reference (IDWriteFontFile object) from an array of bytes. The font file reference is bound to the IDWRiteInMemoryFontFileLoader instance with which it was created and remains valid for as long as that loader is registered with the factory.</summary>
         /// <param name="factory">Factory object used to create the font file reference.</param>
@@ -57,35 +44,19 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateInMemoryFontFileReference(
-            [In] IDWriteInMemoryFontFileLoader* This,
-            [In] IDWriteFactory* factory,
-            [In] void* fontData,
-            [In, NativeTypeName("UINT32")] uint fontDataSize,
-            [In, Optional] IUnknown* ownerObject,
-            [Out] IDWriteFontFile** fontFile
-        );
+        public delegate int _CreateInMemoryFontFileReference(IDWriteInMemoryFontFileLoader* This, IDWriteFactory* factory, void* fontData, [NativeTypeName("UINT32")] uint fontDataSize, [Optional] IUnknown* ownerObject, IDWriteFontFile** fontFile);
 
         /// <summary>The GetFileCount method returns the number of font file references that have been created using this loader instance.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public delegate uint _GetFileCount(
-            [In] IDWriteInMemoryFontFileLoader* This
-        );
+        public delegate uint _GetFileCount(IDWriteInMemoryFontFileLoader* This);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDWriteInMemoryFontFileLoader* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -94,9 +65,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteInMemoryFontFileLoader* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -105,49 +74,25 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteInMemoryFontFileLoader* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateStreamFromKey(
-            [In] void* fontFileReferenceKey,
-            [In, NativeTypeName("UINT32")] uint fontFileReferenceKeySize,
-            [Out] IDWriteFontFileStream** fontFileStream
-        )
+        public int CreateStreamFromKey(void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, IDWriteFontFileStream** fontFileStream)
         {
             fixed (IDWriteInMemoryFontFileLoader* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateStreamFromKey>(lpVtbl->CreateStreamFromKey)(
-                    This,
-                    fontFileReferenceKey,
-                    fontFileReferenceKeySize,
-                    fontFileStream
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateStreamFromKey>(lpVtbl->CreateStreamFromKey)(This, fontFileReferenceKey, fontFileReferenceKeySize, fontFileStream);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateInMemoryFontFileReference(
-            [In] IDWriteFactory* factory,
-            [In] void* fontData,
-            [In, NativeTypeName("UINT32")] uint fontDataSize,
-            [In, Optional] IUnknown* ownerObject,
-            [Out] IDWriteFontFile** fontFile
-        )
+        public int CreateInMemoryFontFileReference(IDWriteFactory* factory, void* fontData, [NativeTypeName("UINT32")] uint fontDataSize, [Optional] IUnknown* ownerObject, IDWriteFontFile** fontFile)
         {
             fixed (IDWriteInMemoryFontFileLoader* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateInMemoryFontFileReference>(lpVtbl->CreateInMemoryFontFileReference)(
-                    This,
-                    factory,
-                    fontData,
-                    fontDataSize,
-                    ownerObject,
-                    fontFile
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateInMemoryFontFileReference>(lpVtbl->CreateInMemoryFontFileReference)(This, factory, fontData, fontDataSize, ownerObject, fontFile);
             }
         }
 
@@ -156,9 +101,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteInMemoryFontFileLoader* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetFileCount>(lpVtbl->GetFileCount)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetFileCount>(lpVtbl->GetFileCount)(This);
             }
         }
 

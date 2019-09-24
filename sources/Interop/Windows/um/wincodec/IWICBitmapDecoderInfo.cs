@@ -15,223 +15,114 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IWICBitmapDecoderInfo* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICBitmapDecoderInfo* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IWICBitmapDecoderInfo* This
-        );
+        public delegate uint _AddRef(IWICBitmapDecoderInfo* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IWICBitmapDecoderInfo* This
-        );
+        public delegate uint _Release(IWICBitmapDecoderInfo* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetComponentType(
-            [In] IWICBitmapDecoderInfo* This,
-            [Out] WICComponentType* pType
-        );
+        public delegate int _GetComponentType(IWICBitmapDecoderInfo* This, WICComponentType* pType);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetCLSID(
-            [In] IWICBitmapDecoderInfo* This,
-            [Out, NativeTypeName("CLSID")] Guid* pclsid
-        );
+        public delegate int _GetCLSID(IWICBitmapDecoderInfo* This, [NativeTypeName("CLSID")] Guid* pclsid);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetSigningStatus(
-            [In] IWICBitmapDecoderInfo* This,
-            [Out, NativeTypeName("DWORD")] uint* pStatus
-        );
+        public delegate int _GetSigningStatus(IWICBitmapDecoderInfo* This, [NativeTypeName("DWORD")] uint* pStatus);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetAuthor(
-            [In] IWICBitmapDecoderInfo* This,
-            [In, NativeTypeName("UINT")] uint cchAuthor,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzAuthor,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        );
+        public delegate int _GetAuthor(IWICBitmapDecoderInfo* This, [NativeTypeName("UINT")] uint cchAuthor, [Optional, NativeTypeName("WCHAR[]")] char* wzAuthor, [NativeTypeName("UINT")] uint* pcchActual);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetVendorGUID(
-            [In] IWICBitmapDecoderInfo* This,
-            [Out, NativeTypeName("GUID")] Guid* pguidVendor
-        );
+        public delegate int _GetVendorGUID(IWICBitmapDecoderInfo* This, [NativeTypeName("GUID")] Guid* pguidVendor);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetVersion(
-            [In] IWICBitmapDecoderInfo* This,
-            [In, NativeTypeName("UINT")] uint cchVersion,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzVersion,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        );
+        public delegate int _GetVersion(IWICBitmapDecoderInfo* This, [NativeTypeName("UINT")] uint cchVersion, [Optional, NativeTypeName("WCHAR[]")] char* wzVersion, [NativeTypeName("UINT")] uint* pcchActual);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetSpecVersion(
-            [In] IWICBitmapDecoderInfo* This,
-            [In, NativeTypeName("UINT")] uint cchSpecVersion,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzSpecVersion,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        );
+        public delegate int _GetSpecVersion(IWICBitmapDecoderInfo* This, [NativeTypeName("UINT")] uint cchSpecVersion, [Optional, NativeTypeName("WCHAR[]")] char* wzSpecVersion, [NativeTypeName("UINT")] uint* pcchActual);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFriendlyName(
-            [In] IWICBitmapDecoderInfo* This,
-            [In, NativeTypeName("UINT")] uint cchFriendlyName,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzFriendlyName,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        );
+        public delegate int _GetFriendlyName(IWICBitmapDecoderInfo* This, [NativeTypeName("UINT")] uint cchFriendlyName, [Optional, NativeTypeName("WCHAR[]")] char* wzFriendlyName, [NativeTypeName("UINT")] uint* pcchActual);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetContainerFormat(
-            [In] IWICBitmapDecoderInfo* This,
-            [Out, NativeTypeName("GUID")] Guid* pguidContainerFormat
-        );
+        public delegate int _GetContainerFormat(IWICBitmapDecoderInfo* This, [NativeTypeName("GUID")] Guid* pguidContainerFormat);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPixelFormats(
-            [In] IWICBitmapDecoderInfo* This,
-            [In, NativeTypeName("UINT")] uint cFormats,
-            [In, Out, Optional, NativeTypeName("GUID[]")] Guid* pguidPixelFormats,
-            [Out, NativeTypeName("UINT")] uint* pcActual
-        );
+        public delegate int _GetPixelFormats(IWICBitmapDecoderInfo* This, [NativeTypeName("UINT")] uint cFormats, [Optional, NativeTypeName("GUID[]")] Guid* pguidPixelFormats, [NativeTypeName("UINT")] uint* pcActual);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetColorManagementVersion(
-            [In] IWICBitmapDecoderInfo* This,
-            [In, NativeTypeName("UINT")] uint cchColorManagementVersion,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzColorManagementVersion,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        );
+        public delegate int _GetColorManagementVersion(IWICBitmapDecoderInfo* This, [NativeTypeName("UINT")] uint cchColorManagementVersion, [Optional, NativeTypeName("WCHAR[]")] char* wzColorManagementVersion, [NativeTypeName("UINT")] uint* pcchActual);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDeviceManufacturer(
-            [In] IWICBitmapDecoderInfo* This,
-            [In, NativeTypeName("UINT")] uint cchDeviceManufacturer,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzDeviceManufacturer,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        );
+        public delegate int _GetDeviceManufacturer(IWICBitmapDecoderInfo* This, [NativeTypeName("UINT")] uint cchDeviceManufacturer, [Optional, NativeTypeName("WCHAR[]")] char* wzDeviceManufacturer, [NativeTypeName("UINT")] uint* pcchActual);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDeviceModels(
-            [In] IWICBitmapDecoderInfo* This,
-            [In, NativeTypeName("UINT")] uint cchDeviceModels,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzDeviceModels,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        );
+        public delegate int _GetDeviceModels(IWICBitmapDecoderInfo* This, [NativeTypeName("UINT")] uint cchDeviceModels, [Optional, NativeTypeName("WCHAR[]")] char* wzDeviceModels, [NativeTypeName("UINT")] uint* pcchActual);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetMimeTypes(
-            [In] IWICBitmapDecoderInfo* This,
-            [In, NativeTypeName("UINT")] uint cchMimeTypes,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzMimeTypes,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        );
+        public delegate int _GetMimeTypes(IWICBitmapDecoderInfo* This, [NativeTypeName("UINT")] uint cchMimeTypes, [Optional, NativeTypeName("WCHAR[]")] char* wzMimeTypes, [NativeTypeName("UINT")] uint* pcchActual);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFileExtensions(
-            [In] IWICBitmapDecoderInfo* This,
-            [In, NativeTypeName("UINT")] uint cchFileExtensions,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzFileExtensions,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        );
+        public delegate int _GetFileExtensions(IWICBitmapDecoderInfo* This, [NativeTypeName("UINT")] uint cchFileExtensions, [Optional, NativeTypeName("WCHAR[]")] char* wzFileExtensions, [NativeTypeName("UINT")] uint* pcchActual);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _DoesSupportAnimation(
-            [In] IWICBitmapDecoderInfo* This,
-            [Out, NativeTypeName("BOOL")] int* pfSupportAnimation
-        );
+        public delegate int _DoesSupportAnimation(IWICBitmapDecoderInfo* This, [NativeTypeName("BOOL")] int* pfSupportAnimation);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _DoesSupportChromakey(
-            [In] IWICBitmapDecoderInfo* This,
-            [Out, NativeTypeName("BOOL")] int* pfSupportChromakey
-        );
+        public delegate int _DoesSupportChromakey(IWICBitmapDecoderInfo* This, [NativeTypeName("BOOL")] int* pfSupportChromakey);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _DoesSupportLossless(
-            [In] IWICBitmapDecoderInfo* This,
-            [Out, NativeTypeName("BOOL")] int* pfSupportLossless
-        );
+        public delegate int _DoesSupportLossless(IWICBitmapDecoderInfo* This, [NativeTypeName("BOOL")] int* pfSupportLossless);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _DoesSupportMultiframe(
-            [In] IWICBitmapDecoderInfo* This,
-            [Out, NativeTypeName("BOOL")] int* pfSupportMultiframe
-        );
+        public delegate int _DoesSupportMultiframe(IWICBitmapDecoderInfo* This, [NativeTypeName("BOOL")] int* pfSupportMultiframe);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _MatchesMimeType(
-            [In] IWICBitmapDecoderInfo* This,
-            [In, NativeTypeName("LPCWSTR")] char* wzMimeType,
-            [Out, NativeTypeName("BOOL")] int* pfMatches
-        );
+        public delegate int _MatchesMimeType(IWICBitmapDecoderInfo* This, [NativeTypeName("LPCWSTR")] char* wzMimeType, [NativeTypeName("BOOL")] int* pfMatches);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPatterns(
-            [In] IWICBitmapDecoderInfo* This,
-            [In, NativeTypeName("UINT")] uint cbSizePatterns,
-            [Out, Optional, NativeTypeName("WICBitmapPattern[]")] WICBitmapPattern* pPatterns,
-            [Out, Optional, NativeTypeName("UINT")] uint* pcPatterns,
-            [Out, NativeTypeName("UINT")] uint* pcbPatternsActual
-        );
+        public delegate int _GetPatterns(IWICBitmapDecoderInfo* This, [NativeTypeName("UINT")] uint cbSizePatterns, [Optional, NativeTypeName("WICBitmapPattern[]")] WICBitmapPattern* pPatterns, [Optional, NativeTypeName("UINT")] uint* pcPatterns, [NativeTypeName("UINT")] uint* pcbPatternsActual);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _MatchesPattern(
-            [In] IWICBitmapDecoderInfo* This,
-            [In, Optional] IStream* pIStream,
-            [Out, NativeTypeName("BOOL")] int* pfMatches
-        );
+        public delegate int _MatchesPattern(IWICBitmapDecoderInfo* This, [Optional] IStream* pIStream, [NativeTypeName("BOOL")] int* pfMatches);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateInstance(
-            [In] IWICBitmapDecoderInfo* This,
-            [Out] IWICBitmapDecoder** ppIBitmapDecoder = null
-        );
+        public delegate int _CreateInstance(IWICBitmapDecoderInfo* This, IWICBitmapDecoder** ppIBitmapDecoder = null);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICBitmapDecoderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -240,9 +131,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapDecoderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -251,381 +140,214 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapDecoderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetComponentType(
-            [Out] WICComponentType* pType
-        )
+        public int GetComponentType(WICComponentType* pType)
         {
             fixed (IWICBitmapDecoderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetComponentType>(lpVtbl->GetComponentType)(
-                    This,
-                    pType
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetComponentType>(lpVtbl->GetComponentType)(This, pType);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetCLSID(
-            [Out, NativeTypeName("CLSID")] Guid* pclsid
-        )
+        public int GetCLSID([NativeTypeName("CLSID")] Guid* pclsid)
         {
             fixed (IWICBitmapDecoderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetCLSID>(lpVtbl->GetCLSID)(
-                    This,
-                    pclsid
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetCLSID>(lpVtbl->GetCLSID)(This, pclsid);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetSigningStatus(
-            [Out, NativeTypeName("DWORD")] uint* pStatus
-        )
+        public int GetSigningStatus([NativeTypeName("DWORD")] uint* pStatus)
         {
             fixed (IWICBitmapDecoderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetSigningStatus>(lpVtbl->GetSigningStatus)(
-                    This,
-                    pStatus
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetSigningStatus>(lpVtbl->GetSigningStatus)(This, pStatus);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetAuthor(
-            [In, NativeTypeName("UINT")] uint cchAuthor,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzAuthor,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        )
+        public int GetAuthor([NativeTypeName("UINT")] uint cchAuthor, [Optional, NativeTypeName("WCHAR[]")] char* wzAuthor, [NativeTypeName("UINT")] uint* pcchActual)
         {
             fixed (IWICBitmapDecoderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetAuthor>(lpVtbl->GetAuthor)(
-                    This,
-                    cchAuthor,
-                    wzAuthor,
-                    pcchActual
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetAuthor>(lpVtbl->GetAuthor)(This, cchAuthor, wzAuthor, pcchActual);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetVendorGUID(
-            [Out, NativeTypeName("GUID")] Guid* pguidVendor
-        )
+        public int GetVendorGUID([NativeTypeName("GUID")] Guid* pguidVendor)
         {
             fixed (IWICBitmapDecoderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetVendorGUID>(lpVtbl->GetVendorGUID)(
-                    This,
-                    pguidVendor
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetVendorGUID>(lpVtbl->GetVendorGUID)(This, pguidVendor);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetVersion(
-            [In, NativeTypeName("UINT")] uint cchVersion,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzVersion,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        )
+        public int GetVersion([NativeTypeName("UINT")] uint cchVersion, [Optional, NativeTypeName("WCHAR[]")] char* wzVersion, [NativeTypeName("UINT")] uint* pcchActual)
         {
             fixed (IWICBitmapDecoderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetVersion>(lpVtbl->GetVersion)(
-                    This,
-                    cchVersion,
-                    wzVersion,
-                    pcchActual
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetVersion>(lpVtbl->GetVersion)(This, cchVersion, wzVersion, pcchActual);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetSpecVersion(
-            [In, NativeTypeName("UINT")] uint cchSpecVersion,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzSpecVersion,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        )
+        public int GetSpecVersion([NativeTypeName("UINT")] uint cchSpecVersion, [Optional, NativeTypeName("WCHAR[]")] char* wzSpecVersion, [NativeTypeName("UINT")] uint* pcchActual)
         {
             fixed (IWICBitmapDecoderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetSpecVersion>(lpVtbl->GetSpecVersion)(
-                    This,
-                    cchSpecVersion,
-                    wzSpecVersion,
-                    pcchActual
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetSpecVersion>(lpVtbl->GetSpecVersion)(This, cchSpecVersion, wzSpecVersion, pcchActual);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFriendlyName(
-            [In, NativeTypeName("UINT")] uint cchFriendlyName,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzFriendlyName,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        )
+        public int GetFriendlyName([NativeTypeName("UINT")] uint cchFriendlyName, [Optional, NativeTypeName("WCHAR[]")] char* wzFriendlyName, [NativeTypeName("UINT")] uint* pcchActual)
         {
             fixed (IWICBitmapDecoderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetFriendlyName>(lpVtbl->GetFriendlyName)(
-                    This,
-                    cchFriendlyName,
-                    wzFriendlyName,
-                    pcchActual
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetFriendlyName>(lpVtbl->GetFriendlyName)(This, cchFriendlyName, wzFriendlyName, pcchActual);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetContainerFormat(
-            [Out, NativeTypeName("GUID")] Guid* pguidContainerFormat
-        )
+        public int GetContainerFormat([NativeTypeName("GUID")] Guid* pguidContainerFormat)
         {
             fixed (IWICBitmapDecoderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetContainerFormat>(lpVtbl->GetContainerFormat)(
-                    This,
-                    pguidContainerFormat
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetContainerFormat>(lpVtbl->GetContainerFormat)(This, pguidContainerFormat);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetPixelFormats(
-            [In, NativeTypeName("UINT")] uint cFormats,
-            [In, Out, Optional, NativeTypeName("GUID[]")] Guid* pguidPixelFormats,
-            [Out, NativeTypeName("UINT")] uint* pcActual
-        )
+        public int GetPixelFormats([NativeTypeName("UINT")] uint cFormats, [Optional, NativeTypeName("GUID[]")] Guid* pguidPixelFormats, [NativeTypeName("UINT")] uint* pcActual)
         {
             fixed (IWICBitmapDecoderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetPixelFormats>(lpVtbl->GetPixelFormats)(
-                    This,
-                    cFormats,
-                    pguidPixelFormats,
-                    pcActual
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetPixelFormats>(lpVtbl->GetPixelFormats)(This, cFormats, pguidPixelFormats, pcActual);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetColorManagementVersion(
-            [In, NativeTypeName("UINT")] uint cchColorManagementVersion,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzColorManagementVersion,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        )
+        public int GetColorManagementVersion([NativeTypeName("UINT")] uint cchColorManagementVersion, [Optional, NativeTypeName("WCHAR[]")] char* wzColorManagementVersion, [NativeTypeName("UINT")] uint* pcchActual)
         {
             fixed (IWICBitmapDecoderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetColorManagementVersion>(lpVtbl->GetColorManagementVersion)(
-                    This,
-                    cchColorManagementVersion,
-                    wzColorManagementVersion,
-                    pcchActual
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetColorManagementVersion>(lpVtbl->GetColorManagementVersion)(This, cchColorManagementVersion, wzColorManagementVersion, pcchActual);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetDeviceManufacturer(
-            [In, NativeTypeName("UINT")] uint cchDeviceManufacturer,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzDeviceManufacturer,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        )
+        public int GetDeviceManufacturer([NativeTypeName("UINT")] uint cchDeviceManufacturer, [Optional, NativeTypeName("WCHAR[]")] char* wzDeviceManufacturer, [NativeTypeName("UINT")] uint* pcchActual)
         {
             fixed (IWICBitmapDecoderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDeviceManufacturer>(lpVtbl->GetDeviceManufacturer)(
-                    This,
-                    cchDeviceManufacturer,
-                    wzDeviceManufacturer,
-                    pcchActual
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDeviceManufacturer>(lpVtbl->GetDeviceManufacturer)(This, cchDeviceManufacturer, wzDeviceManufacturer, pcchActual);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetDeviceModels(
-            [In, NativeTypeName("UINT")] uint cchDeviceModels,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzDeviceModels,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        )
+        public int GetDeviceModels([NativeTypeName("UINT")] uint cchDeviceModels, [Optional, NativeTypeName("WCHAR[]")] char* wzDeviceModels, [NativeTypeName("UINT")] uint* pcchActual)
         {
             fixed (IWICBitmapDecoderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDeviceModels>(lpVtbl->GetDeviceModels)(
-                    This,
-                    cchDeviceModels,
-                    wzDeviceModels,
-                    pcchActual
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDeviceModels>(lpVtbl->GetDeviceModels)(This, cchDeviceModels, wzDeviceModels, pcchActual);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetMimeTypes(
-            [In, NativeTypeName("UINT")] uint cchMimeTypes,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzMimeTypes,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        )
+        public int GetMimeTypes([NativeTypeName("UINT")] uint cchMimeTypes, [Optional, NativeTypeName("WCHAR[]")] char* wzMimeTypes, [NativeTypeName("UINT")] uint* pcchActual)
         {
             fixed (IWICBitmapDecoderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetMimeTypes>(lpVtbl->GetMimeTypes)(
-                    This,
-                    cchMimeTypes,
-                    wzMimeTypes,
-                    pcchActual
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetMimeTypes>(lpVtbl->GetMimeTypes)(This, cchMimeTypes, wzMimeTypes, pcchActual);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFileExtensions(
-            [In, NativeTypeName("UINT")] uint cchFileExtensions,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzFileExtensions,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        )
+        public int GetFileExtensions([NativeTypeName("UINT")] uint cchFileExtensions, [Optional, NativeTypeName("WCHAR[]")] char* wzFileExtensions, [NativeTypeName("UINT")] uint* pcchActual)
         {
             fixed (IWICBitmapDecoderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetFileExtensions>(lpVtbl->GetFileExtensions)(
-                    This,
-                    cchFileExtensions,
-                    wzFileExtensions,
-                    pcchActual
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetFileExtensions>(lpVtbl->GetFileExtensions)(This, cchFileExtensions, wzFileExtensions, pcchActual);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int DoesSupportAnimation(
-            [Out, NativeTypeName("BOOL")] int* pfSupportAnimation
-        )
+        public int DoesSupportAnimation([NativeTypeName("BOOL")] int* pfSupportAnimation)
         {
             fixed (IWICBitmapDecoderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_DoesSupportAnimation>(lpVtbl->DoesSupportAnimation)(
-                    This,
-                    pfSupportAnimation
-                );
+                return Marshal.GetDelegateForFunctionPointer<_DoesSupportAnimation>(lpVtbl->DoesSupportAnimation)(This, pfSupportAnimation);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int DoesSupportChromakey(
-            [Out, NativeTypeName("BOOL")] int* pfSupportChromakey
-        )
+        public int DoesSupportChromakey([NativeTypeName("BOOL")] int* pfSupportChromakey)
         {
             fixed (IWICBitmapDecoderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_DoesSupportChromakey>(lpVtbl->DoesSupportChromakey)(
-                    This,
-                    pfSupportChromakey
-                );
+                return Marshal.GetDelegateForFunctionPointer<_DoesSupportChromakey>(lpVtbl->DoesSupportChromakey)(This, pfSupportChromakey);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int DoesSupportLossless(
-            [Out, NativeTypeName("BOOL")] int* pfSupportLossless
-        )
+        public int DoesSupportLossless([NativeTypeName("BOOL")] int* pfSupportLossless)
         {
             fixed (IWICBitmapDecoderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_DoesSupportLossless>(lpVtbl->DoesSupportLossless)(
-                    This,
-                    pfSupportLossless
-                );
+                return Marshal.GetDelegateForFunctionPointer<_DoesSupportLossless>(lpVtbl->DoesSupportLossless)(This, pfSupportLossless);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int DoesSupportMultiframe(
-            [Out, NativeTypeName("BOOL")] int* pfSupportMultiframe
-        )
+        public int DoesSupportMultiframe([NativeTypeName("BOOL")] int* pfSupportMultiframe)
         {
             fixed (IWICBitmapDecoderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_DoesSupportMultiframe>(lpVtbl->DoesSupportMultiframe)(
-                    This,
-                    pfSupportMultiframe
-                );
+                return Marshal.GetDelegateForFunctionPointer<_DoesSupportMultiframe>(lpVtbl->DoesSupportMultiframe)(This, pfSupportMultiframe);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int MatchesMimeType(
-            [In, NativeTypeName("LPCWSTR")] char* wzMimeType,
-            [Out, NativeTypeName("BOOL")] int* pfMatches
-        )
+        public int MatchesMimeType([NativeTypeName("LPCWSTR")] char* wzMimeType, [NativeTypeName("BOOL")] int* pfMatches)
         {
             fixed (IWICBitmapDecoderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_MatchesMimeType>(lpVtbl->MatchesMimeType)(
-                    This,
-                    wzMimeType,
-                    pfMatches
-                );
+                return Marshal.GetDelegateForFunctionPointer<_MatchesMimeType>(lpVtbl->MatchesMimeType)(This, wzMimeType, pfMatches);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetPatterns(
-            [In, NativeTypeName("UINT")] uint cbSizePatterns,
-            [Out, Optional, NativeTypeName("WICBitmapPattern[]")] WICBitmapPattern* pPatterns,
-            [Out, Optional, NativeTypeName("UINT")] uint* pcPatterns,
-            [Out, NativeTypeName("UINT")] uint* pcbPatternsActual
-        )
+        public int GetPatterns([NativeTypeName("UINT")] uint cbSizePatterns, [Optional, NativeTypeName("WICBitmapPattern[]")] WICBitmapPattern* pPatterns, [Optional, NativeTypeName("UINT")] uint* pcPatterns, [NativeTypeName("UINT")] uint* pcbPatternsActual)
         {
             fixed (IWICBitmapDecoderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetPatterns>(lpVtbl->GetPatterns)(
-                    This,
-                    cbSizePatterns,
-                    pPatterns,
-                    pcPatterns,
-                    pcbPatternsActual
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetPatterns>(lpVtbl->GetPatterns)(This, cbSizePatterns, pPatterns, pcPatterns, pcbPatternsActual);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int MatchesPattern(
-            [In, Optional] IStream* pIStream,
-            [Out, NativeTypeName("BOOL")] int* pfMatches
-        )
+        public int MatchesPattern([Optional] IStream* pIStream, [NativeTypeName("BOOL")] int* pfMatches)
         {
             fixed (IWICBitmapDecoderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_MatchesPattern>(lpVtbl->MatchesPattern)(
-                    This,
-                    pIStream,
-                    pfMatches
-                );
+                return Marshal.GetDelegateForFunctionPointer<_MatchesPattern>(lpVtbl->MatchesPattern)(This, pIStream, pfMatches);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateInstance(
-            [Out] IWICBitmapDecoder** ppIBitmapDecoder = null
-        )
+        public int CreateInstance(IWICBitmapDecoder** ppIBitmapDecoder = null)
         {
             fixed (IWICBitmapDecoderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateInstance>(lpVtbl->CreateInstance)(
-                    This,
-                    ppIBitmapDecoder
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateInstance>(lpVtbl->CreateInstance)(This, ppIBitmapDecoder);
             }
         }
 

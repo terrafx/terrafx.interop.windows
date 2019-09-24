@@ -15,85 +15,46 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IWICBitmapFlipRotator* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICBitmapFlipRotator* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IWICBitmapFlipRotator* This
-        );
+        public delegate uint _AddRef(IWICBitmapFlipRotator* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IWICBitmapFlipRotator* This
-        );
+        public delegate uint _Release(IWICBitmapFlipRotator* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetSize(
-            [In] IWICBitmapFlipRotator* This,
-            [Out, NativeTypeName("UINT")] uint* puiWidth,
-            [Out, NativeTypeName("UINT")] uint* puiHeight
-        );
+        public delegate int _GetSize(IWICBitmapFlipRotator* This, [NativeTypeName("UINT")] uint* puiWidth, [NativeTypeName("UINT")] uint* puiHeight);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPixelFormat(
-            [In] IWICBitmapFlipRotator* This,
-            [Out, NativeTypeName("WICPixelFormatGUID")] Guid* pPixelFormat
-        );
+        public delegate int _GetPixelFormat(IWICBitmapFlipRotator* This, [NativeTypeName("WICPixelFormatGUID")] Guid* pPixelFormat);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetResolution(
-            [In] IWICBitmapFlipRotator* This,
-            [Out] double* pDpiX,
-            [Out] double* pDpiY
-        );
+        public delegate int _GetResolution(IWICBitmapFlipRotator* This, double* pDpiX, double* pDpiY);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CopyPalette(
-            [In] IWICBitmapFlipRotator* This,
-            [In] IWICPalette* pIPalette = null
-        );
+        public delegate int _CopyPalette(IWICBitmapFlipRotator* This, IWICPalette* pIPalette = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CopyPixels(
-            [In] IWICBitmapFlipRotator* This,
-            [In, Optional] WICRect* prc,
-            [In, NativeTypeName("UINT")] uint cbStride,
-            [In, NativeTypeName("UINT")] uint cbBufferSize,
-            [Out, NativeTypeName("BYTE[]")] byte* pbBuffer
-        );
+        public delegate int _CopyPixels(IWICBitmapFlipRotator* This, [Optional] WICRect* prc, [NativeTypeName("UINT")] uint cbStride, [NativeTypeName("UINT")] uint cbBufferSize, [NativeTypeName("BYTE[]")] byte* pbBuffer);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Initialize(
-            [In] IWICBitmapFlipRotator* This,
-            [In, Optional] IWICBitmapSource* pISource,
-            [In] WICBitmapTransformOptions options
-        );
+        public delegate int _Initialize(IWICBitmapFlipRotator* This, [Optional] IWICBitmapSource* pISource, WICBitmapTransformOptions options);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICBitmapFlipRotator* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -102,9 +63,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapFlipRotator* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -113,105 +72,61 @@ namespace TerraFX.Interop
         {
             fixed (IWICBitmapFlipRotator* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetSize(
-            [Out, NativeTypeName("UINT")] uint* puiWidth,
-            [Out, NativeTypeName("UINT")] uint* puiHeight
-        )
+        public int GetSize([NativeTypeName("UINT")] uint* puiWidth, [NativeTypeName("UINT")] uint* puiHeight)
         {
             fixed (IWICBitmapFlipRotator* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetSize>(lpVtbl->GetSize)(
-                    This,
-                    puiWidth,
-                    puiHeight
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetSize>(lpVtbl->GetSize)(This, puiWidth, puiHeight);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetPixelFormat(
-            [Out, NativeTypeName("WICPixelFormatGUID")] Guid* pPixelFormat
-        )
+        public int GetPixelFormat([NativeTypeName("WICPixelFormatGUID")] Guid* pPixelFormat)
         {
             fixed (IWICBitmapFlipRotator* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetPixelFormat>(lpVtbl->GetPixelFormat)(
-                    This,
-                    pPixelFormat
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetPixelFormat>(lpVtbl->GetPixelFormat)(This, pPixelFormat);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetResolution(
-            [Out] double* pDpiX,
-            [Out] double* pDpiY
-        )
+        public int GetResolution(double* pDpiX, double* pDpiY)
         {
             fixed (IWICBitmapFlipRotator* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetResolution>(lpVtbl->GetResolution)(
-                    This,
-                    pDpiX,
-                    pDpiY
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetResolution>(lpVtbl->GetResolution)(This, pDpiX, pDpiY);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CopyPalette(
-            [In] IWICPalette* pIPalette = null
-        )
+        public int CopyPalette(IWICPalette* pIPalette = null)
         {
             fixed (IWICBitmapFlipRotator* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CopyPalette>(lpVtbl->CopyPalette)(
-                    This,
-                    pIPalette
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CopyPalette>(lpVtbl->CopyPalette)(This, pIPalette);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CopyPixels(
-            [In, Optional] WICRect* prc,
-            [In, NativeTypeName("UINT")] uint cbStride,
-            [In, NativeTypeName("UINT")] uint cbBufferSize,
-            [Out, NativeTypeName("BYTE[]")] byte* pbBuffer
-        )
+        public int CopyPixels([Optional] WICRect* prc, [NativeTypeName("UINT")] uint cbStride, [NativeTypeName("UINT")] uint cbBufferSize, [NativeTypeName("BYTE[]")] byte* pbBuffer)
         {
             fixed (IWICBitmapFlipRotator* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CopyPixels>(lpVtbl->CopyPixels)(
-                    This,
-                    prc,
-                    cbStride,
-                    cbBufferSize,
-                    pbBuffer
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CopyPixels>(lpVtbl->CopyPixels)(This, prc, cbStride, cbBufferSize, pbBuffer);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Initialize(
-            [In, Optional] IWICBitmapSource* pISource,
-            [In] WICBitmapTransformOptions options
-        )
+        public int Initialize([Optional] IWICBitmapSource* pISource, WICBitmapTransformOptions options)
         {
             fixed (IWICBitmapFlipRotator* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Initialize>(lpVtbl->Initialize)(
-                    This,
-                    pISource,
-                    options
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Initialize>(lpVtbl->Initialize)(This, pISource, options);
             }
         }
 

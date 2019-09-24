@@ -16,67 +16,38 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID2D1InkStyle* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1InkStyle* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID2D1InkStyle* This
-        );
+        public delegate uint _AddRef(ID2D1InkStyle* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID2D1InkStyle* This
-        );
+        public delegate uint _Release(ID2D1InkStyle* This);
 
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetFactory(
-            [In] ID2D1InkStyle* This,
-            [Out] ID2D1Factory** factory
-        );
+        public delegate void _GetFactory(ID2D1InkStyle* This, ID2D1Factory** factory);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetNibTransform(
-            [In] ID2D1InkStyle* This,
-            [In, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform
-        );
+        public delegate void _SetNibTransform(ID2D1InkStyle* This, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetNibTransform(
-            [In] ID2D1InkStyle* This,
-            [Out, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform
-        );
+        public delegate void _GetNibTransform(ID2D1InkStyle* This, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetNibShape(
-            [In] ID2D1InkStyle* This,
-            [In] D2D1_INK_NIB_SHAPE nibShape
-        );
+        public delegate void _SetNibShape(ID2D1InkStyle* This, D2D1_INK_NIB_SHAPE nibShape);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate D2D1_INK_NIB_SHAPE _GetNibShape(
-            [In] ID2D1InkStyle* This
-        );
+        public delegate D2D1_INK_NIB_SHAPE _GetNibShape(ID2D1InkStyle* This);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1InkStyle* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -85,9 +56,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1InkStyle* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -96,61 +65,39 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1InkStyle* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
-        public void GetFactory(
-            [Out] ID2D1Factory** factory
-        )
+        public void GetFactory(ID2D1Factory** factory)
         {
             fixed (ID2D1InkStyle* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
-                    This,
-                    factory
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(This, factory);
             }
         }
 
-        public void SetNibTransform(
-            [In, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform
-        )
+        public void SetNibTransform([NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform)
         {
             fixed (ID2D1InkStyle* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetNibTransform>(lpVtbl->SetNibTransform)(
-                    This,
-                    transform
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetNibTransform>(lpVtbl->SetNibTransform)(This, transform);
             }
         }
 
-        public void GetNibTransform(
-            [Out, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform
-        )
+        public void GetNibTransform([NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform)
         {
             fixed (ID2D1InkStyle* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetNibTransform>(lpVtbl->GetNibTransform)(
-                    This,
-                    transform
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetNibTransform>(lpVtbl->GetNibTransform)(This, transform);
             }
         }
 
-        public void SetNibShape(
-            [In] D2D1_INK_NIB_SHAPE nibShape
-        )
+        public void SetNibShape(D2D1_INK_NIB_SHAPE nibShape)
         {
             fixed (ID2D1InkStyle* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetNibShape>(lpVtbl->SetNibShape)(
-                    This,
-                    nibShape
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetNibShape>(lpVtbl->SetNibShape)(This, nibShape);
             }
         }
 
@@ -158,9 +105,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1InkStyle* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetNibShape>(lpVtbl->GetNibShape)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetNibShape>(lpVtbl->GetNibShape)(This);
             }
         }
 

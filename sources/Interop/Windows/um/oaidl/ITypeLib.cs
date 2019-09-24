@@ -15,117 +15,60 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ITypeLib* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ITypeLib* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ITypeLib* This
-        );
+        public delegate uint _AddRef(ITypeLib* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ITypeLib* This
-        );
+        public delegate uint _Release(ITypeLib* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate uint _GetTypeInfoCount(
-            [In] ITypeLib* This
-        );
+        public delegate uint _GetTypeInfoCount(ITypeLib* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetTypeInfo(
-            [In] ITypeLib* This,
-            [In, NativeTypeName("UINT")] uint index,
-            [Out] ITypeInfo** ppTInfo = null
-        );
+        public delegate int _GetTypeInfo(ITypeLib* This, [NativeTypeName("UINT")] uint index, ITypeInfo** ppTInfo = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetTypeInfoType(
-            [In] ITypeLib* This,
-            [In, NativeTypeName("UINT")] uint index,
-            [Out] TYPEKIND* pTKind
-        );
+        public delegate int _GetTypeInfoType(ITypeLib* This, [NativeTypeName("UINT")] uint index, TYPEKIND* pTKind);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetTypeInfoOfGuid(
-            [In] ITypeLib* This,
-            [In, NativeTypeName("REFGUID")] Guid* guid,
-            [Out] ITypeInfo** ppTinfo = null
-        );
+        public delegate int _GetTypeInfoOfGuid(ITypeLib* This, [NativeTypeName("REFGUID")] Guid* guid, ITypeInfo** ppTinfo = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLibAttr(
-            [In] ITypeLib* This,
-            [Out] TLIBATTR** ppTLibAttr
-        );
+        public delegate int _GetLibAttr(ITypeLib* This, TLIBATTR** ppTLibAttr);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetTypeComp(
-            [In] ITypeLib* This,
-            [Out] ITypeComp** ppTComp = null
-        );
+        public delegate int _GetTypeComp(ITypeLib* This, ITypeComp** ppTComp = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDocumentation(
-            [In] ITypeLib* This,
-            [In, NativeTypeName("INT")] int index,
-            [Out, Optional, NativeTypeName("BSTR")] char** pBstrName,
-            [Out, Optional, NativeTypeName("BSTR")] char** pBstrDocString,
-            [Out, NativeTypeName("DWORD")] uint* pdwHelpContext,
-            [Out, NativeTypeName("BSTR")] char** pBstrHelpFile = null
-        );
+        public delegate int _GetDocumentation(ITypeLib* This, [NativeTypeName("INT")] int index, [Optional, NativeTypeName("BSTR")] char** pBstrName, [Optional, NativeTypeName("BSTR")] char** pBstrDocString, [NativeTypeName("DWORD")] uint* pdwHelpContext, [NativeTypeName("BSTR")] char** pBstrHelpFile = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _IsName(
-            [In] ITypeLib* This,
-            [In, Out, NativeTypeName("LPOLESTR")] char* szNameBuf,
-            [In, NativeTypeName("ULONG")] uint lHashVal,
-            [Out, NativeTypeName("BOOL")] int* pfName
-        );
+        public delegate int _IsName(ITypeLib* This, [NativeTypeName("LPOLESTR")] char* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, [NativeTypeName("BOOL")] int* pfName);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _FindName(
-            [In] ITypeLib* This,
-            [In, Out, NativeTypeName("LPOLESTR")] char* szNameBuf,
-            [In, NativeTypeName("ULONG")] uint lHashVal,
-            [Out] ITypeInfo** ppTInfo,
-            [Out, NativeTypeName("MEMBERID")] int* rgMemId,
-            [In, Out, NativeTypeName("USHORT")] ushort* pcFound
-        );
+        public delegate int _FindName(ITypeLib* This, [NativeTypeName("LPOLESTR")] char* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, ITypeInfo** ppTInfo, [NativeTypeName("MEMBERID")] int* rgMemId, [NativeTypeName("USHORT")] ushort* pcFound);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _ReleaseTLibAttr(
-            [In] ITypeLib* This,
-            [In] TLIBATTR* pTLibAttr
-        );
+        public delegate void _ReleaseTLibAttr(ITypeLib* This, TLIBATTR* pTLibAttr);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ITypeLib* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -134,9 +77,7 @@ namespace TerraFX.Interop
         {
             fixed (ITypeLib* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -145,9 +86,7 @@ namespace TerraFX.Interop
         {
             fixed (ITypeLib* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
@@ -155,160 +94,87 @@ namespace TerraFX.Interop
         {
             fixed (ITypeLib* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetTypeInfoCount>(lpVtbl->GetTypeInfoCount)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetTypeInfoCount>(lpVtbl->GetTypeInfoCount)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfo(
-            [In, NativeTypeName("UINT")] uint index,
-            [Out] ITypeInfo** ppTInfo = null
-        )
+        public int GetTypeInfo([NativeTypeName("UINT")] uint index, ITypeInfo** ppTInfo = null)
         {
             fixed (ITypeLib* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetTypeInfo>(lpVtbl->GetTypeInfo)(
-                    This,
-                    index,
-                    ppTInfo
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetTypeInfo>(lpVtbl->GetTypeInfo)(This, index, ppTInfo);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfoType(
-            [In, NativeTypeName("UINT")] uint index,
-            [Out] TYPEKIND* pTKind
-        )
+        public int GetTypeInfoType([NativeTypeName("UINT")] uint index, TYPEKIND* pTKind)
         {
             fixed (ITypeLib* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetTypeInfoType>(lpVtbl->GetTypeInfoType)(
-                    This,
-                    index,
-                    pTKind
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetTypeInfoType>(lpVtbl->GetTypeInfoType)(This, index, pTKind);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetTypeInfoOfGuid(
-            [In, NativeTypeName("REFGUID")] Guid* guid,
-            [Out] ITypeInfo** ppTinfo = null
-        )
+        public int GetTypeInfoOfGuid([NativeTypeName("REFGUID")] Guid* guid, ITypeInfo** ppTinfo = null)
         {
             fixed (ITypeLib* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetTypeInfoOfGuid>(lpVtbl->GetTypeInfoOfGuid)(
-                    This,
-                    guid,
-                    ppTinfo
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetTypeInfoOfGuid>(lpVtbl->GetTypeInfoOfGuid)(This, guid, ppTinfo);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetLibAttr(
-            [Out] TLIBATTR** ppTLibAttr
-        )
+        public int GetLibAttr(TLIBATTR** ppTLibAttr)
         {
             fixed (ITypeLib* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetLibAttr>(lpVtbl->GetLibAttr)(
-                    This,
-                    ppTLibAttr
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetLibAttr>(lpVtbl->GetLibAttr)(This, ppTLibAttr);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetTypeComp(
-            [Out] ITypeComp** ppTComp = null
-        )
+        public int GetTypeComp(ITypeComp** ppTComp = null)
         {
             fixed (ITypeLib* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetTypeComp>(lpVtbl->GetTypeComp)(
-                    This,
-                    ppTComp
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetTypeComp>(lpVtbl->GetTypeComp)(This, ppTComp);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetDocumentation(
-            [In, NativeTypeName("INT")] int index,
-            [Out, Optional, NativeTypeName("BSTR")] char** pBstrName,
-            [Out, Optional, NativeTypeName("BSTR")] char** pBstrDocString,
-            [Out, NativeTypeName("DWORD")] uint* pdwHelpContext,
-            [Out, NativeTypeName("BSTR")] char** pBstrHelpFile = null
-        )
+        public int GetDocumentation([NativeTypeName("INT")] int index, [Optional, NativeTypeName("BSTR")] char** pBstrName, [Optional, NativeTypeName("BSTR")] char** pBstrDocString, [NativeTypeName("DWORD")] uint* pdwHelpContext, [NativeTypeName("BSTR")] char** pBstrHelpFile = null)
         {
             fixed (ITypeLib* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDocumentation>(lpVtbl->GetDocumentation)(
-                    This,
-                    index,
-                    pBstrName,
-                    pBstrDocString,
-                    pdwHelpContext,
-                    pBstrHelpFile
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDocumentation>(lpVtbl->GetDocumentation)(This, index, pBstrName, pBstrDocString, pdwHelpContext, pBstrHelpFile);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int IsName(
-            [In, Out, NativeTypeName("LPOLESTR")] char* szNameBuf,
-            [In, NativeTypeName("ULONG")] uint lHashVal,
-            [Out, NativeTypeName("BOOL")] int* pfName
-        )
+        public int IsName([NativeTypeName("LPOLESTR")] char* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, [NativeTypeName("BOOL")] int* pfName)
         {
             fixed (ITypeLib* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_IsName>(lpVtbl->IsName)(
-                    This,
-                    szNameBuf,
-                    lHashVal,
-                    pfName
-                );
+                return Marshal.GetDelegateForFunctionPointer<_IsName>(lpVtbl->IsName)(This, szNameBuf, lHashVal, pfName);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int FindName(
-            [In, Out, NativeTypeName("LPOLESTR")] char* szNameBuf,
-            [In, NativeTypeName("ULONG")] uint lHashVal,
-            [Out] ITypeInfo** ppTInfo,
-            [Out, NativeTypeName("MEMBERID")] int* rgMemId,
-            [In, Out, NativeTypeName("USHORT")] ushort* pcFound
-        )
+        public int FindName([NativeTypeName("LPOLESTR")] char* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, ITypeInfo** ppTInfo, [NativeTypeName("MEMBERID")] int* rgMemId, [NativeTypeName("USHORT")] ushort* pcFound)
         {
             fixed (ITypeLib* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_FindName>(lpVtbl->FindName)(
-                    This,
-                    szNameBuf,
-                    lHashVal,
-                    ppTInfo,
-                    rgMemId,
-                    pcFound
-                );
+                return Marshal.GetDelegateForFunctionPointer<_FindName>(lpVtbl->FindName)(This, szNameBuf, lHashVal, ppTInfo, rgMemId, pcFound);
             }
         }
 
-        public void ReleaseTLibAttr(
-            [In] TLIBATTR* pTLibAttr
-        )
+        public void ReleaseTLibAttr(TLIBATTR* pTLibAttr)
         {
             fixed (ITypeLib* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_ReleaseTLibAttr>(lpVtbl->ReleaseTLibAttr)(
-                    This,
-                    pTLibAttr
-                );
+                Marshal.GetDelegateForFunctionPointer<_ReleaseTLibAttr>(lpVtbl->ReleaseTLibAttr)(This, pTLibAttr);
             }
         }
 

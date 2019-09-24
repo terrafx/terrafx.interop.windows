@@ -16,30 +16,20 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IDWriteStringList* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDWriteStringList* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IDWriteStringList* This
-        );
+        public delegate uint _AddRef(IDWriteStringList* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IDWriteStringList* This
-        );
+        public delegate uint _Release(IDWriteStringList* This);
 
         /// <summary>Gets the number of strings.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public delegate uint _GetCount(
-            [In] IDWriteStringList* This
-        );
+        public delegate uint _GetCount(IDWriteStringList* This);
 
         /// <summary>Gets the length in characters (not including the null terminator) of the locale name with the specified index.</summary>
         /// <param name="listIndex">Zero-based index of the locale name.</param>
@@ -47,11 +37,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLocaleNameLength(
-            [In] IDWriteStringList* This,
-            [In, NativeTypeName("UINT32")] uint listIndex,
-            [Out, NativeTypeName("UINT32")] uint* length
-        );
+        public delegate int _GetLocaleNameLength(IDWriteStringList* This, [NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("UINT32")] uint* length);
 
         /// <summary>Copies the locale name with the specified index to the specified array.</summary>
         /// <param name="listIndex">Zero-based index of the locale name.</param>
@@ -60,12 +46,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLocaleName(
-            [In] IDWriteStringList* This,
-            [In, NativeTypeName("UINT32")] uint listIndex,
-            [Out, NativeTypeName("WCHAR[]")] char* localeName,
-            [In, NativeTypeName("UINT32")] uint size
-        );
+        public delegate int _GetLocaleName(IDWriteStringList* This, [NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR[]")] char* localeName, [NativeTypeName("UINT32")] uint size);
 
         /// <summary>Gets the length in characters (not including the null terminator) of the string with the specified index.</summary>
         /// <param name="listIndex">Zero-based index of the string.</param>
@@ -73,11 +54,7 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetStringLength(
-            [In] IDWriteStringList* This,
-            [In, NativeTypeName("UINT32")] uint listIndex,
-            [Out, NativeTypeName("UINT32")] uint* length
-        );
+        public delegate int _GetStringLength(IDWriteStringList* This, [NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("UINT32")] uint* length);
 
         /// <summary>Copies the string with the specified index to the specified array.</summary>
         /// <param name="listIndex">Zero-based index of the string.</param>
@@ -86,26 +63,14 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetString(
-            [In] IDWriteStringList* This,
-            [In, NativeTypeName("UINT32")] uint listIndex,
-            [Out, NativeTypeName("WCHAR[]")] char* stringBuffer,
-            [In, NativeTypeName("UINT32")] uint stringBufferSize
-        );
+        public delegate int _GetString(IDWriteStringList* This, [NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR[]")] char* stringBuffer, [NativeTypeName("UINT32")] uint stringBufferSize);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDWriteStringList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -114,9 +79,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteStringList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -125,9 +88,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteStringList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
@@ -136,77 +97,43 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteStringList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetCount>(lpVtbl->GetCount)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetCount>(lpVtbl->GetCount)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetLocaleNameLength(
-            [In, NativeTypeName("UINT32")] uint listIndex,
-            [Out, NativeTypeName("UINT32")] uint* length
-        )
+        public int GetLocaleNameLength([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("UINT32")] uint* length)
         {
             fixed (IDWriteStringList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetLocaleNameLength>(lpVtbl->GetLocaleNameLength)(
-                    This,
-                    listIndex,
-                    length
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetLocaleNameLength>(lpVtbl->GetLocaleNameLength)(This, listIndex, length);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetLocaleName(
-            [In, NativeTypeName("UINT32")] uint listIndex,
-            [Out, NativeTypeName("WCHAR[]")] char* localeName,
-            [In, NativeTypeName("UINT32")] uint size
-        )
+        public int GetLocaleName([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR[]")] char* localeName, [NativeTypeName("UINT32")] uint size)
         {
             fixed (IDWriteStringList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetLocaleName>(lpVtbl->GetLocaleName)(
-                    This,
-                    listIndex,
-                    localeName,
-                    size
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetLocaleName>(lpVtbl->GetLocaleName)(This, listIndex, localeName, size);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetStringLength(
-            [In, NativeTypeName("UINT32")] uint listIndex,
-            [Out, NativeTypeName("UINT32")] uint* length
-        )
+        public int GetStringLength([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("UINT32")] uint* length)
         {
             fixed (IDWriteStringList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetStringLength>(lpVtbl->GetStringLength)(
-                    This,
-                    listIndex,
-                    length
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetStringLength>(lpVtbl->GetStringLength)(This, listIndex, length);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetString(
-            [In, NativeTypeName("UINT32")] uint listIndex,
-            [Out, NativeTypeName("WCHAR[]")] char* stringBuffer,
-            [In, NativeTypeName("UINT32")] uint stringBufferSize
-        )
+        public int GetString([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR[]")] char* stringBuffer, [NativeTypeName("UINT32")] uint stringBufferSize)
         {
             fixed (IDWriteStringList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetString>(lpVtbl->GetString)(
-                    This,
-                    listIndex,
-                    stringBuffer,
-                    stringBufferSize
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetString>(lpVtbl->GetString)(This, listIndex, stringBuffer, stringBufferSize);
             }
         }
 

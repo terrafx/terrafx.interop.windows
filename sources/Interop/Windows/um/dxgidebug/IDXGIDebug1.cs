@@ -15,61 +15,36 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IDXGIDebug1* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDXGIDebug1* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IDXGIDebug1* This
-        );
+        public delegate uint _AddRef(IDXGIDebug1* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IDXGIDebug1* This
-        );
+        public delegate uint _Release(IDXGIDebug1* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _ReportLiveObjects(
-            [In] IDXGIDebug1* This,
-            [In, NativeTypeName("GUID")] Guid apiid,
-            [In] DXGI_DEBUG_RLO_FLAGS flags
-        );
+        public delegate int _ReportLiveObjects(IDXGIDebug1* This, [NativeTypeName("GUID")] Guid apiid, DXGI_DEBUG_RLO_FLAGS flags);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _EnableLeakTrackingForThread(
-            [In] IDXGIDebug1* This
-        );
+        public delegate void _EnableLeakTrackingForThread(IDXGIDebug1* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _DisableLeakTrackingForThread(
-            [In] IDXGIDebug1* This
-        );
+        public delegate void _DisableLeakTrackingForThread(IDXGIDebug1* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public delegate int _IsLeakTrackingEnabledForThread(
-            [In] IDXGIDebug1* This
-        );
+        public delegate int _IsLeakTrackingEnabledForThread(IDXGIDebug1* This);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDXGIDebug1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -78,9 +53,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDebug1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -89,25 +62,16 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDebug1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int ReportLiveObjects(
-            [In, NativeTypeName("GUID")] Guid apiid,
-            [In] DXGI_DEBUG_RLO_FLAGS flags
-        )
+        public int ReportLiveObjects([NativeTypeName("GUID")] Guid apiid, DXGI_DEBUG_RLO_FLAGS flags)
         {
             fixed (IDXGIDebug1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_ReportLiveObjects>(lpVtbl->ReportLiveObjects)(
-                    This,
-                    apiid,
-                    flags
-                );
+                return Marshal.GetDelegateForFunctionPointer<_ReportLiveObjects>(lpVtbl->ReportLiveObjects)(This, apiid, flags);
             }
         }
 
@@ -115,9 +79,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDebug1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_EnableLeakTrackingForThread>(lpVtbl->EnableLeakTrackingForThread)(
-                    This
-                );
+                Marshal.GetDelegateForFunctionPointer<_EnableLeakTrackingForThread>(lpVtbl->EnableLeakTrackingForThread)(This);
             }
         }
 
@@ -125,9 +87,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDebug1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_DisableLeakTrackingForThread>(lpVtbl->DisableLeakTrackingForThread)(
-                    This
-                );
+                Marshal.GetDelegateForFunctionPointer<_DisableLeakTrackingForThread>(lpVtbl->DisableLeakTrackingForThread)(This);
             }
         }
 
@@ -136,9 +96,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIDebug1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_IsLeakTrackingEnabledForThread>(lpVtbl->IsLeakTrackingEnabledForThread)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_IsLeakTrackingEnabledForThread>(lpVtbl->IsLeakTrackingEnabledForThread)(This);
             }
         }
 

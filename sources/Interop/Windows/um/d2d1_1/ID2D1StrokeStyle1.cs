@@ -16,100 +16,60 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID2D1StrokeStyle1* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1StrokeStyle1* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID2D1StrokeStyle1* This
-        );
+        public delegate uint _AddRef(ID2D1StrokeStyle1* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID2D1StrokeStyle1* This
-        );
+        public delegate uint _Release(ID2D1StrokeStyle1* This);
 
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetFactory(
-            [In] ID2D1StrokeStyle1* This,
-            [Out] ID2D1Factory** factory
-        );
+        public delegate void _GetFactory(ID2D1StrokeStyle1* This, ID2D1Factory** factory);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate D2D1_CAP_STYLE _GetStartCap(
-            [In] ID2D1StrokeStyle1* This
-        );
+        public delegate D2D1_CAP_STYLE _GetStartCap(ID2D1StrokeStyle1* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate D2D1_CAP_STYLE _GetEndCap(
-            [In] ID2D1StrokeStyle1* This
-        );
+        public delegate D2D1_CAP_STYLE _GetEndCap(ID2D1StrokeStyle1* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate D2D1_CAP_STYLE _GetDashCap(
-            [In] ID2D1StrokeStyle1* This
-        );
+        public delegate D2D1_CAP_STYLE _GetDashCap(ID2D1StrokeStyle1* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public delegate float _GetMiterLimit(
-            [In] ID2D1StrokeStyle1* This
-        );
+        public delegate float _GetMiterLimit(ID2D1StrokeStyle1* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate D2D1_LINE_JOIN _GetLineJoin(
-            [In] ID2D1StrokeStyle1* This
-        );
+        public delegate D2D1_LINE_JOIN _GetLineJoin(ID2D1StrokeStyle1* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public delegate float _GetDashOffset(
-            [In] ID2D1StrokeStyle1* This
-        );
+        public delegate float _GetDashOffset(ID2D1StrokeStyle1* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate D2D1_DASH_STYLE _GetDashStyle(
-            [In] ID2D1StrokeStyle1* This
-        );
+        public delegate D2D1_DASH_STYLE _GetDashStyle(ID2D1StrokeStyle1* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public delegate uint _GetDashesCount(
-            [In] ID2D1StrokeStyle1* This
-        );
+        public delegate uint _GetDashesCount(ID2D1StrokeStyle1* This);
 
         /// <summary>Returns the dashes from the object into a user allocated array. The user must call GetDashesCount to retrieve the required size.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetDashes(
-            [In] ID2D1StrokeStyle1* This,
-            [Out, NativeTypeName("FLOAT[]")] float* dashes,
-            [In, NativeTypeName("UINT32")] uint dashesCount
-        );
+        public delegate void _GetDashes(ID2D1StrokeStyle1* This, [NativeTypeName("FLOAT[]")] float* dashes, [NativeTypeName("UINT32")] uint dashesCount);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate D2D1_STROKE_TRANSFORM_TYPE _GetStrokeTransformType(
-            [In] ID2D1StrokeStyle1* This
-        );
+        public delegate D2D1_STROKE_TRANSFORM_TYPE _GetStrokeTransformType(ID2D1StrokeStyle1* This);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1StrokeStyle1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -118,9 +78,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1StrokeStyle1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -129,22 +87,15 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1StrokeStyle1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
-        public void GetFactory(
-            [Out] ID2D1Factory** factory
-        )
+        public void GetFactory(ID2D1Factory** factory)
         {
             fixed (ID2D1StrokeStyle1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
-                    This,
-                    factory
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(This, factory);
             }
         }
 
@@ -152,9 +103,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1StrokeStyle1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetStartCap>(lpVtbl->GetStartCap)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetStartCap>(lpVtbl->GetStartCap)(This);
             }
         }
 
@@ -162,9 +111,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1StrokeStyle1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetEndCap>(lpVtbl->GetEndCap)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetEndCap>(lpVtbl->GetEndCap)(This);
             }
         }
 
@@ -172,9 +119,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1StrokeStyle1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDashCap>(lpVtbl->GetDashCap)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDashCap>(lpVtbl->GetDashCap)(This);
             }
         }
 
@@ -183,9 +128,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1StrokeStyle1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetMiterLimit>(lpVtbl->GetMiterLimit)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetMiterLimit>(lpVtbl->GetMiterLimit)(This);
             }
         }
 
@@ -193,9 +136,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1StrokeStyle1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetLineJoin>(lpVtbl->GetLineJoin)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetLineJoin>(lpVtbl->GetLineJoin)(This);
             }
         }
 
@@ -204,9 +145,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1StrokeStyle1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDashOffset>(lpVtbl->GetDashOffset)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDashOffset>(lpVtbl->GetDashOffset)(This);
             }
         }
 
@@ -214,9 +153,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1StrokeStyle1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDashStyle>(lpVtbl->GetDashStyle)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDashStyle>(lpVtbl->GetDashStyle)(This);
             }
         }
 
@@ -225,24 +162,15 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1StrokeStyle1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDashesCount>(lpVtbl->GetDashesCount)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDashesCount>(lpVtbl->GetDashesCount)(This);
             }
         }
 
-        public void GetDashes(
-            [Out, NativeTypeName("FLOAT[]")] float* dashes,
-            [In, NativeTypeName("UINT32")] uint dashesCount
-        )
+        public void GetDashes([NativeTypeName("FLOAT[]")] float* dashes, [NativeTypeName("UINT32")] uint dashesCount)
         {
             fixed (ID2D1StrokeStyle1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetDashes>(lpVtbl->GetDashes)(
-                    This,
-                    dashes,
-                    dashesCount
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetDashes>(lpVtbl->GetDashes)(This, dashes, dashesCount);
             }
         }
 
@@ -250,9 +178,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1StrokeStyle1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetStrokeTransformType>(lpVtbl->GetStrokeTransformType)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetStrokeTransformType>(lpVtbl->GetStrokeTransformType)(This);
             }
         }
 

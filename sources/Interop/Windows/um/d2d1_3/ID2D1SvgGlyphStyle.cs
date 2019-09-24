@@ -16,46 +16,29 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID2D1SvgGlyphStyle* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1SvgGlyphStyle* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID2D1SvgGlyphStyle* This
-        );
+        public delegate uint _AddRef(ID2D1SvgGlyphStyle* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID2D1SvgGlyphStyle* This
-        );
+        public delegate uint _Release(ID2D1SvgGlyphStyle* This);
 
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetFactory(
-            [In] ID2D1SvgGlyphStyle* This,
-            [Out] ID2D1Factory** factory
-        );
+        public delegate void _GetFactory(ID2D1SvgGlyphStyle* This, ID2D1Factory** factory);
 
         /// <summary>Provides values to an SVG glyph for fill. The brush with opacity set to 1 is used as the 'context-fill'. The opacity of the brush is used as the 'context-fill-opacity' value.</summary>
         /// <param name="brush">A null brush will cause the context-fill value to come from the defaultFillBrush. If the defaultFillBrush is also null, the context-fill value will be 'none'.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetFill(
-            [In] ID2D1SvgGlyphStyle* This,
-            [In] ID2D1Brush* brush = null
-        );
+        public delegate int _SetFill(ID2D1SvgGlyphStyle* This, ID2D1Brush* brush = null);
 
         /// <summary>Returns the requested fill parameters.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetFill(
-            [In] ID2D1SvgGlyphStyle* This,
-            [Out] ID2D1Brush** brush
-        );
+        public delegate void _GetFill(ID2D1SvgGlyphStyle* This, ID2D1Brush** brush);
 
         /// <summary>Provides values to an SVG glyph for stroke properties. The brush with opacity set to 1 is used as the 'context-stroke'. The opacity of the brush is used as the 'context-stroke-opacity' value.</summary>
         /// <param name="brush">A null brush will cause the context-stroke value to be 'none'.</param>
@@ -64,46 +47,23 @@ namespace TerraFX.Interop
         /// <param name="dashOffset">Specifies the 'context-value' for the 'stroke-dashoffset' property.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetStroke(
-            [In] ID2D1SvgGlyphStyle* This,
-            [In] ID2D1Brush* brush = null,
-            [In, NativeTypeName("FLOAT")] float strokeWidth = 1.0f,
-            [In, NativeTypeName("FLOAT[]")] float* dashes = null,
-            [In, NativeTypeName("UINT32")] uint dashesCount = 0,
-            [In, NativeTypeName("FLOAT")] float dashOffset = 1.0f
-        );
+        public delegate int _SetStroke(ID2D1SvgGlyphStyle* This, ID2D1Brush* brush = null, [NativeTypeName("FLOAT")] float strokeWidth = 1.0f, [NativeTypeName("FLOAT[]")] float* dashes = null, [NativeTypeName("UINT32")] uint dashesCount = 0, [NativeTypeName("FLOAT")] float dashOffset = 1.0f);
 
         /// <summary>Returns the number of dashes in the dash array.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public delegate uint _GetStrokeDashesCount(
-            [In] ID2D1SvgGlyphStyle* This
-        );
+        public delegate uint _GetStrokeDashesCount(ID2D1SvgGlyphStyle* This);
 
         /// <summary>Returns the requested stroke parameters.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetStroke(
-            [In] ID2D1SvgGlyphStyle* This,
-            [Out] ID2D1Brush** brush = null,
-            [Out, NativeTypeName("FLOAT")] float* strokeWidth = null,
-            [Out, NativeTypeName("FLOAT[]")] float* dashes = null,
-            [In, NativeTypeName("UINT32")] uint dashesCount = 0,
-            [Out, NativeTypeName("FLOAT")] float* dashOffset = null
-        );
+        public delegate void _GetStroke(ID2D1SvgGlyphStyle* This, ID2D1Brush** brush = null, [NativeTypeName("FLOAT")] float* strokeWidth = null, [NativeTypeName("FLOAT[]")] float* dashes = null, [NativeTypeName("UINT32")] uint dashesCount = 0, [NativeTypeName("FLOAT")] float* dashOffset = null);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1SvgGlyphStyle* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -112,9 +72,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgGlyphStyle* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -123,71 +81,41 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgGlyphStyle* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
-        public void GetFactory(
-            [Out] ID2D1Factory** factory
-        )
+        public void GetFactory(ID2D1Factory** factory)
         {
             fixed (ID2D1SvgGlyphStyle* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
-                    This,
-                    factory
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(This, factory);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetFill(
-            [In] ID2D1Brush* brush = null
-        )
+        public int SetFill(ID2D1Brush* brush = null)
         {
             fixed (ID2D1SvgGlyphStyle* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetFill>(lpVtbl->SetFill)(
-                    This,
-                    brush
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetFill>(lpVtbl->SetFill)(This, brush);
             }
         }
 
-        public void GetFill(
-            [Out] ID2D1Brush** brush
-        )
+        public void GetFill(ID2D1Brush** brush)
         {
             fixed (ID2D1SvgGlyphStyle* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetFill>(lpVtbl->GetFill)(
-                    This,
-                    brush
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetFill>(lpVtbl->GetFill)(This, brush);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetStroke(
-            [In] ID2D1Brush* brush = null,
-            [In, NativeTypeName("FLOAT")] float strokeWidth = 1.0f,
-            [In, NativeTypeName("FLOAT[]")] float* dashes = null,
-            [In, NativeTypeName("UINT32")] uint dashesCount = 0,
-            [In, NativeTypeName("FLOAT")] float dashOffset = 1.0f
-        )
+        public int SetStroke(ID2D1Brush* brush = null, [NativeTypeName("FLOAT")] float strokeWidth = 1.0f, [NativeTypeName("FLOAT[]")] float* dashes = null, [NativeTypeName("UINT32")] uint dashesCount = 0, [NativeTypeName("FLOAT")] float dashOffset = 1.0f)
         {
             fixed (ID2D1SvgGlyphStyle* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetStroke>(lpVtbl->SetStroke)(
-                    This,
-                    brush,
-                    strokeWidth,
-                    dashes,
-                    dashesCount,
-                    dashOffset
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetStroke>(lpVtbl->SetStroke)(This, brush, strokeWidth, dashes, dashesCount, dashOffset);
             }
         }
 
@@ -196,30 +124,15 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgGlyphStyle* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetStrokeDashesCount>(lpVtbl->GetStrokeDashesCount)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetStrokeDashesCount>(lpVtbl->GetStrokeDashesCount)(This);
             }
         }
 
-        public void GetStroke(
-            [Out] ID2D1Brush** brush = null,
-            [Out, NativeTypeName("FLOAT")] float* strokeWidth = null,
-            [Out, NativeTypeName("FLOAT[]")] float* dashes = null,
-            [In, NativeTypeName("UINT32")] uint dashesCount = 0,
-            [Out, NativeTypeName("FLOAT")] float* dashOffset = null
-        )
+        public void GetStroke(ID2D1Brush** brush = null, [NativeTypeName("FLOAT")] float* strokeWidth = null, [NativeTypeName("FLOAT[]")] float* dashes = null, [NativeTypeName("UINT32")] uint dashesCount = 0, [NativeTypeName("FLOAT")] float* dashOffset = null)
         {
             fixed (ID2D1SvgGlyphStyle* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetStroke>(lpVtbl->GetStroke)(
-                    This,
-                    brush,
-                    strokeWidth,
-                    dashes,
-                    dashesCount,
-                    dashOffset
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetStroke>(lpVtbl->GetStroke)(This, brush, strokeWidth, dashes, dashesCount, dashOffset);
             }
         }
 

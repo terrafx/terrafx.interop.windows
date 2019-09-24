@@ -15,183 +15,94 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IWICMetadataReaderInfo* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICMetadataReaderInfo* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IWICMetadataReaderInfo* This
-        );
+        public delegate uint _AddRef(IWICMetadataReaderInfo* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IWICMetadataReaderInfo* This
-        );
+        public delegate uint _Release(IWICMetadataReaderInfo* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetComponentType(
-            [In] IWICMetadataReaderInfo* This,
-            [Out] WICComponentType* pType
-        );
+        public delegate int _GetComponentType(IWICMetadataReaderInfo* This, WICComponentType* pType);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetCLSID(
-            [In] IWICMetadataReaderInfo* This,
-            [Out, NativeTypeName("CLSID")] Guid* pclsid
-        );
+        public delegate int _GetCLSID(IWICMetadataReaderInfo* This, [NativeTypeName("CLSID")] Guid* pclsid);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetSigningStatus(
-            [In] IWICMetadataReaderInfo* This,
-            [Out, NativeTypeName("DWORD")] uint* pStatus
-        );
+        public delegate int _GetSigningStatus(IWICMetadataReaderInfo* This, [NativeTypeName("DWORD")] uint* pStatus);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetAuthor(
-            [In] IWICMetadataReaderInfo* This,
-            [In, NativeTypeName("UINT")] uint cchAuthor,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzAuthor,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        );
+        public delegate int _GetAuthor(IWICMetadataReaderInfo* This, [NativeTypeName("UINT")] uint cchAuthor, [Optional, NativeTypeName("WCHAR[]")] char* wzAuthor, [NativeTypeName("UINT")] uint* pcchActual);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetVendorGUID(
-            [In] IWICMetadataReaderInfo* This,
-            [Out, NativeTypeName("GUID")] Guid* pguidVendor
-        );
+        public delegate int _GetVendorGUID(IWICMetadataReaderInfo* This, [NativeTypeName("GUID")] Guid* pguidVendor);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetVersion(
-            [In] IWICMetadataReaderInfo* This,
-            [In, NativeTypeName("UINT")] uint cchVersion,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzVersion,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        );
+        public delegate int _GetVersion(IWICMetadataReaderInfo* This, [NativeTypeName("UINT")] uint cchVersion, [Optional, NativeTypeName("WCHAR[]")] char* wzVersion, [NativeTypeName("UINT")] uint* pcchActual);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetSpecVersion(
-            [In] IWICMetadataReaderInfo* This,
-            [In, NativeTypeName("UINT")] uint cchSpecVersion,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzSpecVersion,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        );
+        public delegate int _GetSpecVersion(IWICMetadataReaderInfo* This, [NativeTypeName("UINT")] uint cchSpecVersion, [Optional, NativeTypeName("WCHAR[]")] char* wzSpecVersion, [NativeTypeName("UINT")] uint* pcchActual);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFriendlyName(
-            [In] IWICMetadataReaderInfo* This,
-            [In, NativeTypeName("UINT")] uint cchFriendlyName,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzFriendlyName,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        );
+        public delegate int _GetFriendlyName(IWICMetadataReaderInfo* This, [NativeTypeName("UINT")] uint cchFriendlyName, [Optional, NativeTypeName("WCHAR[]")] char* wzFriendlyName, [NativeTypeName("UINT")] uint* pcchActual);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetMetadataFormat(
-            [In] IWICMetadataReaderInfo* This,
-            [Out, NativeTypeName("GUID")] Guid* pguidMetadataFormat
-        );
+        public delegate int _GetMetadataFormat(IWICMetadataReaderInfo* This, [NativeTypeName("GUID")] Guid* pguidMetadataFormat);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetContainerFormats(
-            [In] IWICMetadataReaderInfo* This,
-            [In, NativeTypeName("UINT")] uint cContainerFormats,
-            [In, Out, Optional, NativeTypeName("GUID[]")] Guid* pguidContainerFormats,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        );
+        public delegate int _GetContainerFormats(IWICMetadataReaderInfo* This, [NativeTypeName("UINT")] uint cContainerFormats, [Optional, NativeTypeName("GUID[]")] Guid* pguidContainerFormats, [NativeTypeName("UINT")] uint* pcchActual);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDeviceManufacturer(
-            [In] IWICMetadataReaderInfo* This,
-            [In, NativeTypeName("UINT")] uint cchDeviceManufacturer,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzDeviceManufacturer,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        );
+        public delegate int _GetDeviceManufacturer(IWICMetadataReaderInfo* This, [NativeTypeName("UINT")] uint cchDeviceManufacturer, [Optional, NativeTypeName("WCHAR[]")] char* wzDeviceManufacturer, [NativeTypeName("UINT")] uint* pcchActual);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDeviceModels(
-            [In] IWICMetadataReaderInfo* This,
-            [In, NativeTypeName("UINT")] uint cchDeviceModels,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzDeviceModels,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        );
+        public delegate int _GetDeviceModels(IWICMetadataReaderInfo* This, [NativeTypeName("UINT")] uint cchDeviceModels, [Optional, NativeTypeName("WCHAR[]")] char* wzDeviceModels, [NativeTypeName("UINT")] uint* pcchActual);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _DoesRequireFullStream(
-            [In] IWICMetadataReaderInfo* This,
-            [Out, NativeTypeName("BOOL")] int* pfRequiresFullStream
-        );
+        public delegate int _DoesRequireFullStream(IWICMetadataReaderInfo* This, [NativeTypeName("BOOL")] int* pfRequiresFullStream);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _DoesSupportPadding(
-            [In] IWICMetadataReaderInfo* This,
-            [Out, NativeTypeName("BOOL")] int* pfSupportsPadding
-        );
+        public delegate int _DoesSupportPadding(IWICMetadataReaderInfo* This, [NativeTypeName("BOOL")] int* pfSupportsPadding);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _DoesRequireFixedSize(
-            [In] IWICMetadataReaderInfo* This,
-            [Out, NativeTypeName("BOOL")] int* pfFixedSize
-        );
+        public delegate int _DoesRequireFixedSize(IWICMetadataReaderInfo* This, [NativeTypeName("BOOL")] int* pfFixedSize);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPatterns(
-            [In] IWICMetadataReaderInfo* This,
-            [In, NativeTypeName("REFGUID")] Guid* guidContainerFormat,
-            [In, NativeTypeName("UINT")] uint cbSize,
-            [Out] WICMetadataPattern* pPattern = null,
-            [Out, NativeTypeName("UINT")] uint* pcCount = null,
-            [Out, NativeTypeName("UINT")] uint* pcbActual = null
-        );
+        public delegate int _GetPatterns(IWICMetadataReaderInfo* This, [NativeTypeName("REFGUID")] Guid* guidContainerFormat, [NativeTypeName("UINT")] uint cbSize, WICMetadataPattern* pPattern = null, [NativeTypeName("UINT")] uint* pcCount = null, [NativeTypeName("UINT")] uint* pcbActual = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _MatchesPattern(
-            [In] IWICMetadataReaderInfo* This,
-            [In, NativeTypeName("REFGUID")] Guid* guidContainerFormat,
-            [In, Optional] IStream* pIStream,
-            [Out, NativeTypeName("BOOL")] int* pfMatches
-        );
+        public delegate int _MatchesPattern(IWICMetadataReaderInfo* This, [NativeTypeName("REFGUID")] Guid* guidContainerFormat, [Optional] IStream* pIStream, [NativeTypeName("BOOL")] int* pfMatches);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateInstance(
-            [In] IWICMetadataReaderInfo* This,
-            [Out] IWICMetadataReader** ppIReader = null
-        );
+        public delegate int _CreateInstance(IWICMetadataReaderInfo* This, IWICMetadataReader** ppIReader = null);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICMetadataReaderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -200,9 +111,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataReaderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -211,301 +120,169 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataReaderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetComponentType(
-            [Out] WICComponentType* pType
-        )
+        public int GetComponentType(WICComponentType* pType)
         {
             fixed (IWICMetadataReaderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetComponentType>(lpVtbl->GetComponentType)(
-                    This,
-                    pType
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetComponentType>(lpVtbl->GetComponentType)(This, pType);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetCLSID(
-            [Out, NativeTypeName("CLSID")] Guid* pclsid
-        )
+        public int GetCLSID([NativeTypeName("CLSID")] Guid* pclsid)
         {
             fixed (IWICMetadataReaderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetCLSID>(lpVtbl->GetCLSID)(
-                    This,
-                    pclsid
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetCLSID>(lpVtbl->GetCLSID)(This, pclsid);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetSigningStatus(
-            [Out, NativeTypeName("DWORD")] uint* pStatus
-        )
+        public int GetSigningStatus([NativeTypeName("DWORD")] uint* pStatus)
         {
             fixed (IWICMetadataReaderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetSigningStatus>(lpVtbl->GetSigningStatus)(
-                    This,
-                    pStatus
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetSigningStatus>(lpVtbl->GetSigningStatus)(This, pStatus);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetAuthor(
-            [In, NativeTypeName("UINT")] uint cchAuthor,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzAuthor,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        )
+        public int GetAuthor([NativeTypeName("UINT")] uint cchAuthor, [Optional, NativeTypeName("WCHAR[]")] char* wzAuthor, [NativeTypeName("UINT")] uint* pcchActual)
         {
             fixed (IWICMetadataReaderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetAuthor>(lpVtbl->GetAuthor)(
-                    This,
-                    cchAuthor,
-                    wzAuthor,
-                    pcchActual
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetAuthor>(lpVtbl->GetAuthor)(This, cchAuthor, wzAuthor, pcchActual);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetVendorGUID(
-            [Out, NativeTypeName("GUID")] Guid* pguidVendor
-        )
+        public int GetVendorGUID([NativeTypeName("GUID")] Guid* pguidVendor)
         {
             fixed (IWICMetadataReaderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetVendorGUID>(lpVtbl->GetVendorGUID)(
-                    This,
-                    pguidVendor
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetVendorGUID>(lpVtbl->GetVendorGUID)(This, pguidVendor);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetVersion(
-            [In, NativeTypeName("UINT")] uint cchVersion,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzVersion,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        )
+        public int GetVersion([NativeTypeName("UINT")] uint cchVersion, [Optional, NativeTypeName("WCHAR[]")] char* wzVersion, [NativeTypeName("UINT")] uint* pcchActual)
         {
             fixed (IWICMetadataReaderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetVersion>(lpVtbl->GetVersion)(
-                    This,
-                    cchVersion,
-                    wzVersion,
-                    pcchActual
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetVersion>(lpVtbl->GetVersion)(This, cchVersion, wzVersion, pcchActual);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetSpecVersion(
-            [In, NativeTypeName("UINT")] uint cchSpecVersion,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzSpecVersion,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        )
+        public int GetSpecVersion([NativeTypeName("UINT")] uint cchSpecVersion, [Optional, NativeTypeName("WCHAR[]")] char* wzSpecVersion, [NativeTypeName("UINT")] uint* pcchActual)
         {
             fixed (IWICMetadataReaderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetSpecVersion>(lpVtbl->GetSpecVersion)(
-                    This,
-                    cchSpecVersion,
-                    wzSpecVersion,
-                    pcchActual
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetSpecVersion>(lpVtbl->GetSpecVersion)(This, cchSpecVersion, wzSpecVersion, pcchActual);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFriendlyName(
-            [In, NativeTypeName("UINT")] uint cchFriendlyName,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzFriendlyName,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        )
+        public int GetFriendlyName([NativeTypeName("UINT")] uint cchFriendlyName, [Optional, NativeTypeName("WCHAR[]")] char* wzFriendlyName, [NativeTypeName("UINT")] uint* pcchActual)
         {
             fixed (IWICMetadataReaderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetFriendlyName>(lpVtbl->GetFriendlyName)(
-                    This,
-                    cchFriendlyName,
-                    wzFriendlyName,
-                    pcchActual
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetFriendlyName>(lpVtbl->GetFriendlyName)(This, cchFriendlyName, wzFriendlyName, pcchActual);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetMetadataFormat(
-            [Out, NativeTypeName("GUID")] Guid* pguidMetadataFormat
-        )
+        public int GetMetadataFormat([NativeTypeName("GUID")] Guid* pguidMetadataFormat)
         {
             fixed (IWICMetadataReaderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetMetadataFormat>(lpVtbl->GetMetadataFormat)(
-                    This,
-                    pguidMetadataFormat
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetMetadataFormat>(lpVtbl->GetMetadataFormat)(This, pguidMetadataFormat);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetContainerFormats(
-            [In, NativeTypeName("UINT")] uint cContainerFormats,
-            [In, Out, Optional, NativeTypeName("GUID[]")] Guid* pguidContainerFormats,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        )
+        public int GetContainerFormats([NativeTypeName("UINT")] uint cContainerFormats, [Optional, NativeTypeName("GUID[]")] Guid* pguidContainerFormats, [NativeTypeName("UINT")] uint* pcchActual)
         {
             fixed (IWICMetadataReaderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetContainerFormats>(lpVtbl->GetContainerFormats)(
-                    This,
-                    cContainerFormats,
-                    pguidContainerFormats,
-                    pcchActual
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetContainerFormats>(lpVtbl->GetContainerFormats)(This, cContainerFormats, pguidContainerFormats, pcchActual);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetDeviceManufacturer(
-            [In, NativeTypeName("UINT")] uint cchDeviceManufacturer,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzDeviceManufacturer,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        )
+        public int GetDeviceManufacturer([NativeTypeName("UINT")] uint cchDeviceManufacturer, [Optional, NativeTypeName("WCHAR[]")] char* wzDeviceManufacturer, [NativeTypeName("UINT")] uint* pcchActual)
         {
             fixed (IWICMetadataReaderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDeviceManufacturer>(lpVtbl->GetDeviceManufacturer)(
-                    This,
-                    cchDeviceManufacturer,
-                    wzDeviceManufacturer,
-                    pcchActual
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDeviceManufacturer>(lpVtbl->GetDeviceManufacturer)(This, cchDeviceManufacturer, wzDeviceManufacturer, pcchActual);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetDeviceModels(
-            [In, NativeTypeName("UINT")] uint cchDeviceModels,
-            [In, Out, Optional, NativeTypeName("WCHAR[]")] char* wzDeviceModels,
-            [Out, NativeTypeName("UINT")] uint* pcchActual
-        )
+        public int GetDeviceModels([NativeTypeName("UINT")] uint cchDeviceModels, [Optional, NativeTypeName("WCHAR[]")] char* wzDeviceModels, [NativeTypeName("UINT")] uint* pcchActual)
         {
             fixed (IWICMetadataReaderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDeviceModels>(lpVtbl->GetDeviceModels)(
-                    This,
-                    cchDeviceModels,
-                    wzDeviceModels,
-                    pcchActual
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDeviceModels>(lpVtbl->GetDeviceModels)(This, cchDeviceModels, wzDeviceModels, pcchActual);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int DoesRequireFullStream(
-            [Out, NativeTypeName("BOOL")] int* pfRequiresFullStream
-        )
+        public int DoesRequireFullStream([NativeTypeName("BOOL")] int* pfRequiresFullStream)
         {
             fixed (IWICMetadataReaderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_DoesRequireFullStream>(lpVtbl->DoesRequireFullStream)(
-                    This,
-                    pfRequiresFullStream
-                );
+                return Marshal.GetDelegateForFunctionPointer<_DoesRequireFullStream>(lpVtbl->DoesRequireFullStream)(This, pfRequiresFullStream);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int DoesSupportPadding(
-            [Out, NativeTypeName("BOOL")] int* pfSupportsPadding
-        )
+        public int DoesSupportPadding([NativeTypeName("BOOL")] int* pfSupportsPadding)
         {
             fixed (IWICMetadataReaderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_DoesSupportPadding>(lpVtbl->DoesSupportPadding)(
-                    This,
-                    pfSupportsPadding
-                );
+                return Marshal.GetDelegateForFunctionPointer<_DoesSupportPadding>(lpVtbl->DoesSupportPadding)(This, pfSupportsPadding);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int DoesRequireFixedSize(
-            [Out, NativeTypeName("BOOL")] int* pfFixedSize
-        )
+        public int DoesRequireFixedSize([NativeTypeName("BOOL")] int* pfFixedSize)
         {
             fixed (IWICMetadataReaderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_DoesRequireFixedSize>(lpVtbl->DoesRequireFixedSize)(
-                    This,
-                    pfFixedSize
-                );
+                return Marshal.GetDelegateForFunctionPointer<_DoesRequireFixedSize>(lpVtbl->DoesRequireFixedSize)(This, pfFixedSize);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetPatterns(
-            [In, NativeTypeName("REFGUID")] Guid* guidContainerFormat,
-            [In, NativeTypeName("UINT")] uint cbSize,
-            [Out] WICMetadataPattern* pPattern = null,
-            [Out, NativeTypeName("UINT")] uint* pcCount = null,
-            [Out, NativeTypeName("UINT")] uint* pcbActual = null
-        )
+        public int GetPatterns([NativeTypeName("REFGUID")] Guid* guidContainerFormat, [NativeTypeName("UINT")] uint cbSize, WICMetadataPattern* pPattern = null, [NativeTypeName("UINT")] uint* pcCount = null, [NativeTypeName("UINT")] uint* pcbActual = null)
         {
             fixed (IWICMetadataReaderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetPatterns>(lpVtbl->GetPatterns)(
-                    This,
-                    guidContainerFormat,
-                    cbSize,
-                    pPattern,
-                    pcCount,
-                    pcbActual
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetPatterns>(lpVtbl->GetPatterns)(This, guidContainerFormat, cbSize, pPattern, pcCount, pcbActual);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int MatchesPattern(
-            [In, NativeTypeName("REFGUID")] Guid* guidContainerFormat,
-            [In, Optional] IStream* pIStream,
-            [Out, NativeTypeName("BOOL")] int* pfMatches
-        )
+        public int MatchesPattern([NativeTypeName("REFGUID")] Guid* guidContainerFormat, [Optional] IStream* pIStream, [NativeTypeName("BOOL")] int* pfMatches)
         {
             fixed (IWICMetadataReaderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_MatchesPattern>(lpVtbl->MatchesPattern)(
-                    This,
-                    guidContainerFormat,
-                    pIStream,
-                    pfMatches
-                );
+                return Marshal.GetDelegateForFunctionPointer<_MatchesPattern>(lpVtbl->MatchesPattern)(This, guidContainerFormat, pIStream, pfMatches);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateInstance(
-            [Out] IWICMetadataReader** ppIReader = null
-        )
+        public int CreateInstance(IWICMetadataReader** ppIReader = null)
         {
             fixed (IWICMetadataReaderInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateInstance>(lpVtbl->CreateInstance)(
-                    This,
-                    ppIReader
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateInstance>(lpVtbl->CreateInstance)(This, ppIReader);
             }
         }
 

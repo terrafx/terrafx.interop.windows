@@ -16,83 +16,48 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID2D1SolidColorBrush* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1SolidColorBrush* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID2D1SolidColorBrush* This
-        );
+        public delegate uint _AddRef(ID2D1SolidColorBrush* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID2D1SolidColorBrush* This
-        );
+        public delegate uint _Release(ID2D1SolidColorBrush* This);
 
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetFactory(
-            [In] ID2D1SolidColorBrush* This,
-            [Out] ID2D1Factory** factory
-        );
+        public delegate void _GetFactory(ID2D1SolidColorBrush* This, ID2D1Factory** factory);
 
         /// <summary>Sets the opacity for when the brush is drawn over the entire fill of the brush.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetOpacity(
-            [In] ID2D1SolidColorBrush* This,
-            [In, NativeTypeName("FLOAT")] float opacity
-        );
+        public delegate void _SetOpacity(ID2D1SolidColorBrush* This, [NativeTypeName("FLOAT")] float opacity);
 
         /// <summary>Sets the transform that applies to everything drawn by the brush.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetTransform(
-            [In] ID2D1SolidColorBrush* This,
-            [In, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform
-        );
+        public delegate void _SetTransform(ID2D1SolidColorBrush* This, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public delegate float _GetOpacity(
-            [In] ID2D1SolidColorBrush* This
-        );
+        public delegate float _GetOpacity(ID2D1SolidColorBrush* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetTransform(
-            [In] ID2D1SolidColorBrush* This,
-            [Out, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform
-        );
+        public delegate void _GetTransform(ID2D1SolidColorBrush* This, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetColor(
-            [In] ID2D1SolidColorBrush* This,
-            [In, NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA* color
-        );
+        public delegate void _SetColor(ID2D1SolidColorBrush* This, [NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA* color);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("D2D1_COLOR_F")]
-        public delegate DXGI_RGBA* _GetColor(
-            [In] ID2D1SolidColorBrush* This,
-            [Out] DXGI_RGBA* _result
-        );
+        public delegate DXGI_RGBA* _GetColor(ID2D1SolidColorBrush* This, DXGI_RGBA* _result);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1SolidColorBrush* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -101,9 +66,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SolidColorBrush* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -112,48 +75,31 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SolidColorBrush* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
-        public void GetFactory(
-            [Out] ID2D1Factory** factory
-        )
+        public void GetFactory(ID2D1Factory** factory)
         {
             fixed (ID2D1SolidColorBrush* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
-                    This,
-                    factory
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(This, factory);
             }
         }
 
-        public void SetOpacity(
-            [In, NativeTypeName("FLOAT")] float opacity
-        )
+        public void SetOpacity([NativeTypeName("FLOAT")] float opacity)
         {
             fixed (ID2D1SolidColorBrush* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetOpacity>(lpVtbl->SetOpacity)(
-                    This,
-                    opacity
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetOpacity>(lpVtbl->SetOpacity)(This, opacity);
             }
         }
 
-        public void SetTransform(
-            [In, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform
-        )
+        public void SetTransform([NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform)
         {
             fixed (ID2D1SolidColorBrush* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetTransform>(lpVtbl->SetTransform)(
-                    This,
-                    transform
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetTransform>(lpVtbl->SetTransform)(This, transform);
             }
         }
 
@@ -162,35 +108,23 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SolidColorBrush* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetOpacity>(lpVtbl->GetOpacity)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetOpacity>(lpVtbl->GetOpacity)(This);
             }
         }
 
-        public void GetTransform(
-            [Out, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform
-        )
+        public void GetTransform([NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform)
         {
             fixed (ID2D1SolidColorBrush* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetTransform>(lpVtbl->GetTransform)(
-                    This,
-                    transform
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetTransform>(lpVtbl->GetTransform)(This, transform);
             }
         }
 
-        public void SetColor(
-            [In, NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA* color
-        )
+        public void SetColor([NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA* color)
         {
             fixed (ID2D1SolidColorBrush* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetColor>(lpVtbl->SetColor)(
-                    This,
-                    color
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetColor>(lpVtbl->SetColor)(This, color);
             }
         }
 
@@ -200,10 +134,7 @@ namespace TerraFX.Interop
             fixed (ID2D1SolidColorBrush* This = &this)
             {
                 DXGI_RGBA result;
-                return *Marshal.GetDelegateForFunctionPointer<_GetColor>(lpVtbl->GetColor)(
-                    This,
-                    &result
-                );
+                return *Marshal.GetDelegateForFunctionPointer<_GetColor>(lpVtbl->GetColor)(This, &result);
             }
         }
 

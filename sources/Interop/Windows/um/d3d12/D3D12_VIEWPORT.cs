@@ -47,13 +47,6 @@ namespace TerraFX.Interop
             return (obj is D3D12_VIEWPORT other) && (this == other);
         }
 
-        public override int GetHashCode() => HashCode.Combine(
-            TopLeftX,
-            TopLeftY,
-            Width,
-            Height,
-            MinDepth,
-            MaxDepth
-        );
+        public override int GetHashCode() => HashCode.Combine(TopLeftX, TopLeftY, Width, Height, MinDepth, MaxDepth);
     }
 }

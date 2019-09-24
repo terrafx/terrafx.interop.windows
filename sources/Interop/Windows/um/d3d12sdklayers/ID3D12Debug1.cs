@@ -15,54 +15,31 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID3D12Debug1* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID3D12Debug1* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID3D12Debug1* This
-        );
+        public delegate uint _AddRef(ID3D12Debug1* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID3D12Debug1* This
-        );
+        public delegate uint _Release(ID3D12Debug1* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _EnableDebugLayer(
-            [In] ID3D12Debug1* This
-        );
+        public delegate void _EnableDebugLayer(ID3D12Debug1* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetEnableGPUBasedValidation(
-            [In] ID3D12Debug1* This,
-            [In, NativeTypeName("BOOL")] int Enable
-        );
+        public delegate void _SetEnableGPUBasedValidation(ID3D12Debug1* This, [NativeTypeName("BOOL")] int Enable);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetEnableSynchronizedCommandQueueValidation(
-            [In] ID3D12Debug1* This,
-            [In, NativeTypeName("BOOL")] int Enable
-        );
+        public delegate void _SetEnableSynchronizedCommandQueueValidation(ID3D12Debug1* This, [NativeTypeName("BOOL")] int Enable);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID3D12Debug1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -71,9 +48,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12Debug1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -82,9 +57,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12Debug1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
@@ -92,35 +65,23 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12Debug1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_EnableDebugLayer>(lpVtbl->EnableDebugLayer)(
-                    This
-                );
+                Marshal.GetDelegateForFunctionPointer<_EnableDebugLayer>(lpVtbl->EnableDebugLayer)(This);
             }
         }
 
-        public void SetEnableGPUBasedValidation(
-            [In, NativeTypeName("BOOL")] int Enable
-        )
+        public void SetEnableGPUBasedValidation([NativeTypeName("BOOL")] int Enable)
         {
             fixed (ID3D12Debug1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetEnableGPUBasedValidation>(lpVtbl->SetEnableGPUBasedValidation)(
-                    This,
-                    Enable
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetEnableGPUBasedValidation>(lpVtbl->SetEnableGPUBasedValidation)(This, Enable);
             }
         }
 
-        public void SetEnableSynchronizedCommandQueueValidation(
-            [In, NativeTypeName("BOOL")] int Enable
-        )
+        public void SetEnableSynchronizedCommandQueueValidation([NativeTypeName("BOOL")] int Enable)
         {
             fixed (ID3D12Debug1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetEnableSynchronizedCommandQueueValidation>(lpVtbl->SetEnableSynchronizedCommandQueueValidation)(
-                    This,
-                    Enable
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetEnableSynchronizedCommandQueueValidation>(lpVtbl->SetEnableSynchronizedCommandQueueValidation)(This, Enable);
             }
         }
 

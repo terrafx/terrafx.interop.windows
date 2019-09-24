@@ -16,265 +16,139 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID2D1Factory1* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1Factory1* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID2D1Factory1* This
-        );
+        public delegate uint _AddRef(ID2D1Factory1* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID2D1Factory1* This
-        );
+        public delegate uint _Release(ID2D1Factory1* This);
 
         /// <summary>Cause the factory to refresh any system metrics that it might have been snapped on factory creation.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _ReloadSystemMetrics(
-            [In] ID2D1Factory1* This
-        );
+        public delegate int _ReloadSystemMetrics(ID2D1Factory1* This);
 
         /// <summary>Retrieves the current desktop DPI. To refresh this, call ReloadSystemMetrics.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetDesktopDpi(
-            [In] ID2D1Factory1* This,
-            [Out, NativeTypeName("FLOAT")] float* dpiX,
-            [Out, NativeTypeName("FLOAT")] float* dpiY
-        );
+        public delegate void _GetDesktopDpi(ID2D1Factory1* This, [NativeTypeName("FLOAT")] float* dpiX, [NativeTypeName("FLOAT")] float* dpiY);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateRectangleGeometry(
-            [In] ID2D1Factory1* This,
-            [In, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* rectangle,
-            [Out] ID2D1RectangleGeometry** rectangleGeometry
-        );
+        public delegate int _CreateRectangleGeometry(ID2D1Factory1* This, [NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* rectangle, ID2D1RectangleGeometry** rectangleGeometry);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateRoundedRectangleGeometry(
-            [In] ID2D1Factory1* This,
-            [In] D2D1_ROUNDED_RECT* roundedRectangle,
-            [Out] ID2D1RoundedRectangleGeometry** roundedRectangleGeometry
-        );
+        public delegate int _CreateRoundedRectangleGeometry(ID2D1Factory1* This, D2D1_ROUNDED_RECT* roundedRectangle, ID2D1RoundedRectangleGeometry** roundedRectangleGeometry);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateEllipseGeometry(
-            [In] ID2D1Factory1* This,
-            [In] D2D1_ELLIPSE* ellipse,
-            [Out] ID2D1EllipseGeometry** ellipseGeometry
-        );
+        public delegate int _CreateEllipseGeometry(ID2D1Factory1* This, D2D1_ELLIPSE* ellipse, ID2D1EllipseGeometry** ellipseGeometry);
 
         /// <summary>Create a geometry which holds other geometries.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateGeometryGroup(
-            [In] ID2D1Factory1* This,
-            [In] D2D1_FILL_MODE fillMode,
-            [In, NativeTypeName("ID2D1Geometry*[]")] ID2D1Geometry** geometries,
-            [In, NativeTypeName("UINT32")] uint geometriesCount,
-            [Out] ID2D1GeometryGroup** geometryGroup
-        );
+        public delegate int _CreateGeometryGroup(ID2D1Factory1* This, D2D1_FILL_MODE fillMode, [NativeTypeName("ID2D1Geometry*[]")] ID2D1Geometry** geometries, [NativeTypeName("UINT32")] uint geometriesCount, ID2D1GeometryGroup** geometryGroup);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateTransformedGeometry(
-            [In] ID2D1Factory1* This,
-            [In] ID2D1Geometry* sourceGeometry,
-            [In, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform,
-            [Out] ID2D1TransformedGeometry** transformedGeometry
-        );
+        public delegate int _CreateTransformedGeometry(ID2D1Factory1* This, ID2D1Geometry* sourceGeometry, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform, ID2D1TransformedGeometry** transformedGeometry);
 
         /// <summary>Returns an initially empty path geometry interface. A geometry sink is created off the interface to populate it.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreatePathGeometry(
-            [In] ID2D1Factory1* This,
-            [Out] ID2D1PathGeometry** pathGeometry
-        );
+        public delegate int _CreatePathGeometry(ID2D1Factory1* This, ID2D1PathGeometry** pathGeometry);
 
         /// <summary>Allows a non-default stroke style to be specified for a given geometry at draw time.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateStrokeStyle(
-            [In] ID2D1Factory1* This,
-            [In] D2D1_STROKE_STYLE_PROPERTIES* strokeStyleProperties,
-            [In, Optional, NativeTypeName("FLOAT[]")] float* dashes,
-            [In, NativeTypeName("UINT32")] uint dashesCount,
-            [Out] ID2D1StrokeStyle** strokeStyle
-        );
+        public delegate int _CreateStrokeStyle(ID2D1Factory1* This, D2D1_STROKE_STYLE_PROPERTIES* strokeStyleProperties, [Optional, NativeTypeName("FLOAT[]")] float* dashes, [NativeTypeName("UINT32")] uint dashesCount, ID2D1StrokeStyle** strokeStyle);
 
         /// <summary>Creates a new drawing state block, this can be used in subsequent SaveDrawingState and RestoreDrawingState operations on the render target.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateDrawingStateBlock(
-            [In] ID2D1Factory1* This,
-            [In, Optional] D2D1_DRAWING_STATE_DESCRIPTION* drawingStateDescription,
-            [In, Optional] IDWriteRenderingParams* textRenderingParams,
-            [Out] ID2D1DrawingStateBlock** drawingStateBlock
-        );
+        public delegate int _CreateDrawingStateBlock(ID2D1Factory1* This, [Optional] D2D1_DRAWING_STATE_DESCRIPTION* drawingStateDescription, [Optional] IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock);
 
         /// <summary>Creates a render target which is a source of bitmaps.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateWicBitmapRenderTarget(
-            [In] ID2D1Factory1* This,
-            [In] IWICBitmap* target,
-            [In] D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties,
-            [Out] ID2D1RenderTarget** renderTarget
-        );
+        public delegate int _CreateWicBitmapRenderTarget(ID2D1Factory1* This, IWICBitmap* target, D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties, ID2D1RenderTarget** renderTarget);
 
         /// <summary>Creates a render target that appears on the display.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateHwndRenderTarget(
-            [In] ID2D1Factory1* This,
-            [In] D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties,
-            [In] D2D1_HWND_RENDER_TARGET_PROPERTIES* hwndRenderTargetProperties,
-            [Out] ID2D1HwndRenderTarget** hwndRenderTarget
-        );
+        public delegate int _CreateHwndRenderTarget(ID2D1Factory1* This, D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties, D2D1_HWND_RENDER_TARGET_PROPERTIES* hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget);
 
         /// <summary>Creates a render target that draws to a DXGI Surface. The device that owns the surface is used for rendering.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateDxgiSurfaceRenderTarget(
-            [In] ID2D1Factory1* This,
-            [In] IDXGISurface* dxgiSurface,
-            [In] D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties,
-            [Out] ID2D1RenderTarget** renderTarget
-        );
+        public delegate int _CreateDxgiSurfaceRenderTarget(ID2D1Factory1* This, IDXGISurface* dxgiSurface, D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties, ID2D1RenderTarget** renderTarget);
 
         /// <summary>Creates a render target that draws to a GDI device context.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateDCRenderTarget(
-            [In] ID2D1Factory1* This,
-            [In] D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties,
-            [Out] ID2D1DCRenderTarget** dcRenderTarget
-        );
+        public delegate int _CreateDCRenderTarget(ID2D1Factory1* This, D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties, ID2D1DCRenderTarget** dcRenderTarget);
 
         /// <summary>This creates a new Direct2D device from the given IDXGIDevice.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateDevice(
-            [In] ID2D1Factory1* This,
-            [In] IDXGIDevice* dxgiDevice,
-            [Out] ID2D1Device** d2dDevice
-        );
+        public delegate int _CreateDevice(ID2D1Factory1* This, IDXGIDevice* dxgiDevice, ID2D1Device** d2dDevice);
 
         /// <summary>This creates a stroke style with the ability to preserve stroke width in various ways.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateStrokeStyle1(
-            [In] ID2D1Factory1* This,
-            [In] D2D1_STROKE_STYLE_PROPERTIES1* strokeStyleProperties,
-            [In, Optional, NativeTypeName("FLOAT[]")] float* dashes,
-            [In, NativeTypeName("UINT32")] uint dashesCount,
-            [Out] ID2D1StrokeStyle1** strokeStyle
-        );
+        public delegate int _CreateStrokeStyle1(ID2D1Factory1* This, D2D1_STROKE_STYLE_PROPERTIES1* strokeStyleProperties, [Optional, NativeTypeName("FLOAT[]")] float* dashes, [NativeTypeName("UINT32")] uint dashesCount, ID2D1StrokeStyle1** strokeStyle);
 
         /// <summary>Creates a path geometry with new operational methods.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreatePathGeometry1(
-            [In] ID2D1Factory1* This,
-            [Out] ID2D1PathGeometry1** pathGeometry
-        );
+        public delegate int _CreatePathGeometry1(ID2D1Factory1* This, ID2D1PathGeometry1** pathGeometry);
 
         /// <summary>Creates a new drawing state block, this can be used in subsequent SaveDrawingState and RestoreDrawingState operations on the render target.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateDrawingStateBlock1(
-            [In] ID2D1Factory1* This,
-            [In, Optional] D2D1_DRAWING_STATE_DESCRIPTION1* drawingStateDescription,
-            [In, Optional] IDWriteRenderingParams* textRenderingParams,
-            [Out] ID2D1DrawingStateBlock1** drawingStateBlock
-        );
+        public delegate int _CreateDrawingStateBlock1(ID2D1Factory1* This, [Optional] D2D1_DRAWING_STATE_DESCRIPTION1* drawingStateDescription, [Optional] IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock1** drawingStateBlock);
 
         /// <summary>Creates a new GDI metafile.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateGdiMetafile(
-            [In] ID2D1Factory1* This,
-            [In] IStream* metafileStream,
-            [Out] ID2D1GdiMetafile** metafile
-        );
+        public delegate int _CreateGdiMetafile(ID2D1Factory1* This, IStream* metafileStream, ID2D1GdiMetafile** metafile);
 
         /// <summary>This globally registers the given effect. The effect can later be instantiated by using the registered class id. The effect registration is reference counted.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _RegisterEffectFromStream(
-            [In] ID2D1Factory1* This,
-            [In, NativeTypeName("REFCLSID")] Guid* classId,
-            [In] IStream* propertyXml,
-            [In, Optional] D2D1_PROPERTY_BINDING* bindings,
-            [In, NativeTypeName("UINT32")] uint bindingsCount,
-            [In] PD2D1_EFFECT_FACTORY effectFactory
-        );
+        public delegate int _RegisterEffectFromStream(ID2D1Factory1* This, [NativeTypeName("REFCLSID")] Guid* classId, IStream* propertyXml, [Optional] D2D1_PROPERTY_BINDING* bindings, [NativeTypeName("UINT32")] uint bindingsCount, PD2D1_EFFECT_FACTORY effectFactory);
 
         /// <summary>This globally registers the given effect. The effect can later be instantiated by using the registered class id. The effect registration is reference counted.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _RegisterEffectFromString(
-            [In] ID2D1Factory1* This,
-            [In, NativeTypeName("REFCLSID")] Guid* classId,
-            [In, NativeTypeName("PCWSTR")] char* propertyXml,
-            [In, Optional, NativeTypeName("D2D1_PROPERTY_BINDING[]")] D2D1_PROPERTY_BINDING* bindings,
-            [In, NativeTypeName("UINT32")] uint bindingsCount,
-            [In] PD2D1_EFFECT_FACTORY effectFactory
-        );
+        public delegate int _RegisterEffectFromString(ID2D1Factory1* This, [NativeTypeName("REFCLSID")] Guid* classId, [NativeTypeName("PCWSTR")] char* propertyXml, [Optional, NativeTypeName("D2D1_PROPERTY_BINDING[]")] D2D1_PROPERTY_BINDING* bindings, [NativeTypeName("UINT32")] uint bindingsCount, PD2D1_EFFECT_FACTORY effectFactory);
 
         /// <summary>This unregisters the given effect by its class id, you need to call UnregisterEffect for every call to ID2D1Factory1::RegisterEffectFromStream and ID2D1Factory1::RegisterEffectFromString to completely unregister it.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _UnregisterEffect(
-            [In] ID2D1Factory1* This,
-            [In, NativeTypeName("REFCLSID")] Guid* classId
-        );
+        public delegate int _UnregisterEffect(ID2D1Factory1* This, [NativeTypeName("REFCLSID")] Guid* classId);
 
         /// <summary>This returns all of the registered effects in the process, including any built-in effects.</summary>
         /// <param name="effectsReturned">The number of effects returned into the passed in effects array.</param>
         /// <param name="effectsRegistered">The number of effects currently registered in the system.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetRegisteredEffects(
-            [In] ID2D1Factory1* This,
-            [Out, Optional, NativeTypeName("CLSID[]")] Guid* effects,
-            [In, NativeTypeName("UINT32")] uint effectsCount,
-            [Out, NativeTypeName("UINT32")] uint* effectsReturned = null,
-            [Out, NativeTypeName("UINT32")] uint* effectsRegistered = null
-        );
+        public delegate int _GetRegisteredEffects(ID2D1Factory1* This, [Optional, NativeTypeName("CLSID[]")] Guid* effects, [NativeTypeName("UINT32")] uint effectsCount, [NativeTypeName("UINT32")] uint* effectsReturned = null, [NativeTypeName("UINT32")] uint* effectsRegistered = null);
 
         /// <summary>This retrieves the effect properties for the given effect, all of the effect properties will be set to a default value since an effect is not instantiated to implement the returned property interface.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetEffectProperties(
-            [In] ID2D1Factory1* This,
-            [In, NativeTypeName("REFCLSID")] Guid* effectId,
-            [Out] ID2D1Properties** properties
-        );
+        public delegate int _GetEffectProperties(ID2D1Factory1* This, [NativeTypeName("REFCLSID")] Guid* effectId, ID2D1Properties** properties);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1Factory1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -283,9 +157,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Factory1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -294,9 +166,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Factory1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
@@ -305,410 +175,213 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Factory1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_ReloadSystemMetrics>(lpVtbl->ReloadSystemMetrics)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_ReloadSystemMetrics>(lpVtbl->ReloadSystemMetrics)(This);
             }
         }
 
-        public void GetDesktopDpi(
-            [Out, NativeTypeName("FLOAT")] float* dpiX,
-            [Out, NativeTypeName("FLOAT")] float* dpiY
-        )
+        public void GetDesktopDpi([NativeTypeName("FLOAT")] float* dpiX, [NativeTypeName("FLOAT")] float* dpiY)
         {
             fixed (ID2D1Factory1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetDesktopDpi>(lpVtbl->GetDesktopDpi)(
-                    This,
-                    dpiX,
-                    dpiY
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetDesktopDpi>(lpVtbl->GetDesktopDpi)(This, dpiX, dpiY);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateRectangleGeometry(
-            [In, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* rectangle,
-            [Out] ID2D1RectangleGeometry** rectangleGeometry
-        )
+        public int CreateRectangleGeometry([NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* rectangle, ID2D1RectangleGeometry** rectangleGeometry)
         {
             fixed (ID2D1Factory1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateRectangleGeometry>(lpVtbl->CreateRectangleGeometry)(
-                    This,
-                    rectangle,
-                    rectangleGeometry
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateRectangleGeometry>(lpVtbl->CreateRectangleGeometry)(This, rectangle, rectangleGeometry);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateRoundedRectangleGeometry(
-            [In] D2D1_ROUNDED_RECT* roundedRectangle,
-            [Out] ID2D1RoundedRectangleGeometry** roundedRectangleGeometry
-        )
+        public int CreateRoundedRectangleGeometry(D2D1_ROUNDED_RECT* roundedRectangle, ID2D1RoundedRectangleGeometry** roundedRectangleGeometry)
         {
             fixed (ID2D1Factory1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateRoundedRectangleGeometry>(lpVtbl->CreateRoundedRectangleGeometry)(
-                    This,
-                    roundedRectangle,
-                    roundedRectangleGeometry
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateRoundedRectangleGeometry>(lpVtbl->CreateRoundedRectangleGeometry)(This, roundedRectangle, roundedRectangleGeometry);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateEllipseGeometry(
-            [In] D2D1_ELLIPSE* ellipse,
-            [Out] ID2D1EllipseGeometry** ellipseGeometry
-        )
+        public int CreateEllipseGeometry(D2D1_ELLIPSE* ellipse, ID2D1EllipseGeometry** ellipseGeometry)
         {
             fixed (ID2D1Factory1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateEllipseGeometry>(lpVtbl->CreateEllipseGeometry)(
-                    This,
-                    ellipse,
-                    ellipseGeometry
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateEllipseGeometry>(lpVtbl->CreateEllipseGeometry)(This, ellipse, ellipseGeometry);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateGeometryGroup(
-            [In] D2D1_FILL_MODE fillMode,
-            [In, NativeTypeName("ID2D1Geometry*[]")] ID2D1Geometry** geometries,
-            [In, NativeTypeName("UINT32")] uint geometriesCount,
-            [Out] ID2D1GeometryGroup** geometryGroup
-        )
+        public int CreateGeometryGroup(D2D1_FILL_MODE fillMode, [NativeTypeName("ID2D1Geometry*[]")] ID2D1Geometry** geometries, [NativeTypeName("UINT32")] uint geometriesCount, ID2D1GeometryGroup** geometryGroup)
         {
             fixed (ID2D1Factory1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateGeometryGroup>(lpVtbl->CreateGeometryGroup)(
-                    This,
-                    fillMode,
-                    geometries,
-                    geometriesCount,
-                    geometryGroup
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateGeometryGroup>(lpVtbl->CreateGeometryGroup)(This, fillMode, geometries, geometriesCount, geometryGroup);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateTransformedGeometry(
-            [In] ID2D1Geometry* sourceGeometry,
-            [In, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform,
-            [Out] ID2D1TransformedGeometry** transformedGeometry
-        )
+        public int CreateTransformedGeometry(ID2D1Geometry* sourceGeometry, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform, ID2D1TransformedGeometry** transformedGeometry)
         {
             fixed (ID2D1Factory1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateTransformedGeometry>(lpVtbl->CreateTransformedGeometry)(
-                    This,
-                    sourceGeometry,
-                    transform,
-                    transformedGeometry
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateTransformedGeometry>(lpVtbl->CreateTransformedGeometry)(This, sourceGeometry, transform, transformedGeometry);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreatePathGeometry(
-            [Out] ID2D1PathGeometry** pathGeometry
-        )
+        public int CreatePathGeometry(ID2D1PathGeometry** pathGeometry)
         {
             fixed (ID2D1Factory1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreatePathGeometry>(lpVtbl->CreatePathGeometry)(
-                    This,
-                    pathGeometry
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreatePathGeometry>(lpVtbl->CreatePathGeometry)(This, pathGeometry);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateStrokeStyle(
-            [In] D2D1_STROKE_STYLE_PROPERTIES* strokeStyleProperties,
-            [In, Optional, NativeTypeName("FLOAT[]")] float* dashes,
-            [In, NativeTypeName("UINT32")] uint dashesCount,
-            [Out] ID2D1StrokeStyle** strokeStyle
-        )
+        public int CreateStrokeStyle(D2D1_STROKE_STYLE_PROPERTIES* strokeStyleProperties, [Optional, NativeTypeName("FLOAT[]")] float* dashes, [NativeTypeName("UINT32")] uint dashesCount, ID2D1StrokeStyle** strokeStyle)
         {
             fixed (ID2D1Factory1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateStrokeStyle>(lpVtbl->CreateStrokeStyle)(
-                    This,
-                    strokeStyleProperties,
-                    dashes,
-                    dashesCount,
-                    strokeStyle
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateStrokeStyle>(lpVtbl->CreateStrokeStyle)(This, strokeStyleProperties, dashes, dashesCount, strokeStyle);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateDrawingStateBlock(
-            [In, Optional] D2D1_DRAWING_STATE_DESCRIPTION* drawingStateDescription,
-            [In, Optional] IDWriteRenderingParams* textRenderingParams,
-            [Out] ID2D1DrawingStateBlock** drawingStateBlock
-        )
+        public int CreateDrawingStateBlock([Optional] D2D1_DRAWING_STATE_DESCRIPTION* drawingStateDescription, [Optional] IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
         {
             fixed (ID2D1Factory1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateDrawingStateBlock>(lpVtbl->CreateDrawingStateBlock)(
-                    This,
-                    drawingStateDescription,
-                    textRenderingParams,
-                    drawingStateBlock
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateDrawingStateBlock>(lpVtbl->CreateDrawingStateBlock)(This, drawingStateDescription, textRenderingParams, drawingStateBlock);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateWicBitmapRenderTarget(
-            [In] IWICBitmap* target,
-            [In] D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties,
-            [Out] ID2D1RenderTarget** renderTarget
-        )
+        public int CreateWicBitmapRenderTarget(IWICBitmap* target, D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties, ID2D1RenderTarget** renderTarget)
         {
             fixed (ID2D1Factory1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateWicBitmapRenderTarget>(lpVtbl->CreateWicBitmapRenderTarget)(
-                    This,
-                    target,
-                    renderTargetProperties,
-                    renderTarget
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateWicBitmapRenderTarget>(lpVtbl->CreateWicBitmapRenderTarget)(This, target, renderTargetProperties, renderTarget);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateHwndRenderTarget(
-            [In] D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties,
-            [In] D2D1_HWND_RENDER_TARGET_PROPERTIES* hwndRenderTargetProperties,
-            [Out] ID2D1HwndRenderTarget** hwndRenderTarget
-        )
+        public int CreateHwndRenderTarget(D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties, D2D1_HWND_RENDER_TARGET_PROPERTIES* hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
         {
             fixed (ID2D1Factory1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateHwndRenderTarget>(lpVtbl->CreateHwndRenderTarget)(
-                    This,
-                    renderTargetProperties,
-                    hwndRenderTargetProperties,
-                    hwndRenderTarget
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateHwndRenderTarget>(lpVtbl->CreateHwndRenderTarget)(This, renderTargetProperties, hwndRenderTargetProperties, hwndRenderTarget);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateDxgiSurfaceRenderTarget(
-            [In] IDXGISurface* dxgiSurface,
-            [In] D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties,
-            [Out] ID2D1RenderTarget** renderTarget
-        )
+        public int CreateDxgiSurfaceRenderTarget(IDXGISurface* dxgiSurface, D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties, ID2D1RenderTarget** renderTarget)
         {
             fixed (ID2D1Factory1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateDxgiSurfaceRenderTarget>(lpVtbl->CreateDxgiSurfaceRenderTarget)(
-                    This,
-                    dxgiSurface,
-                    renderTargetProperties,
-                    renderTarget
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateDxgiSurfaceRenderTarget>(lpVtbl->CreateDxgiSurfaceRenderTarget)(This, dxgiSurface, renderTargetProperties, renderTarget);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateDCRenderTarget(
-            [In] D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties,
-            [Out] ID2D1DCRenderTarget** dcRenderTarget
-        )
+        public int CreateDCRenderTarget(D2D1_RENDER_TARGET_PROPERTIES* renderTargetProperties, ID2D1DCRenderTarget** dcRenderTarget)
         {
             fixed (ID2D1Factory1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateDCRenderTarget>(lpVtbl->CreateDCRenderTarget)(
-                    This,
-                    renderTargetProperties,
-                    dcRenderTarget
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateDCRenderTarget>(lpVtbl->CreateDCRenderTarget)(This, renderTargetProperties, dcRenderTarget);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateDevice(
-            [In] IDXGIDevice* dxgiDevice,
-            [Out] ID2D1Device** d2dDevice
-        )
+        public int CreateDevice(IDXGIDevice* dxgiDevice, ID2D1Device** d2dDevice)
         {
             fixed (ID2D1Factory1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateDevice>(lpVtbl->CreateDevice)(
-                    This,
-                    dxgiDevice,
-                    d2dDevice
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateDevice>(lpVtbl->CreateDevice)(This, dxgiDevice, d2dDevice);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateStrokeStyle1(
-            [In] D2D1_STROKE_STYLE_PROPERTIES1* strokeStyleProperties,
-            [In, Optional, NativeTypeName("FLOAT[]")] float* dashes,
-            [In, NativeTypeName("UINT32")] uint dashesCount,
-            [Out] ID2D1StrokeStyle1** strokeStyle
-        )
+        public int CreateStrokeStyle1(D2D1_STROKE_STYLE_PROPERTIES1* strokeStyleProperties, [Optional, NativeTypeName("FLOAT[]")] float* dashes, [NativeTypeName("UINT32")] uint dashesCount, ID2D1StrokeStyle1** strokeStyle)
         {
             fixed (ID2D1Factory1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateStrokeStyle1>(lpVtbl->CreateStrokeStyle1)(
-                    This,
-                    strokeStyleProperties,
-                    dashes,
-                    dashesCount,
-                    strokeStyle
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateStrokeStyle1>(lpVtbl->CreateStrokeStyle1)(This, strokeStyleProperties, dashes, dashesCount, strokeStyle);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreatePathGeometry1(
-            [Out] ID2D1PathGeometry1** pathGeometry
-        )
+        public int CreatePathGeometry1(ID2D1PathGeometry1** pathGeometry)
         {
             fixed (ID2D1Factory1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreatePathGeometry1>(lpVtbl->CreatePathGeometry1)(
-                    This,
-                    pathGeometry
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreatePathGeometry1>(lpVtbl->CreatePathGeometry1)(This, pathGeometry);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateDrawingStateBlock1(
-            [In, Optional] D2D1_DRAWING_STATE_DESCRIPTION1* drawingStateDescription,
-            [In, Optional] IDWriteRenderingParams* textRenderingParams,
-            [Out] ID2D1DrawingStateBlock1** drawingStateBlock
-        )
+        public int CreateDrawingStateBlock1([Optional] D2D1_DRAWING_STATE_DESCRIPTION1* drawingStateDescription, [Optional] IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock1** drawingStateBlock)
         {
             fixed (ID2D1Factory1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateDrawingStateBlock1>(lpVtbl->CreateDrawingStateBlock1)(
-                    This,
-                    drawingStateDescription,
-                    textRenderingParams,
-                    drawingStateBlock
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateDrawingStateBlock1>(lpVtbl->CreateDrawingStateBlock1)(This, drawingStateDescription, textRenderingParams, drawingStateBlock);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateGdiMetafile(
-            [In] IStream* metafileStream,
-            [Out] ID2D1GdiMetafile** metafile
-        )
+        public int CreateGdiMetafile(IStream* metafileStream, ID2D1GdiMetafile** metafile)
         {
             fixed (ID2D1Factory1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateGdiMetafile>(lpVtbl->CreateGdiMetafile)(
-                    This,
-                    metafileStream,
-                    metafile
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateGdiMetafile>(lpVtbl->CreateGdiMetafile)(This, metafileStream, metafile);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int RegisterEffectFromStream(
-            [In, NativeTypeName("REFCLSID")] Guid* classId,
-            [In] IStream* propertyXml,
-            [In, Optional] D2D1_PROPERTY_BINDING* bindings,
-            [In, NativeTypeName("UINT32")] uint bindingsCount,
-            [In] PD2D1_EFFECT_FACTORY effectFactory
-        )
+        public int RegisterEffectFromStream([NativeTypeName("REFCLSID")] Guid* classId, IStream* propertyXml, [Optional] D2D1_PROPERTY_BINDING* bindings, [NativeTypeName("UINT32")] uint bindingsCount, PD2D1_EFFECT_FACTORY effectFactory)
         {
             fixed (ID2D1Factory1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_RegisterEffectFromStream>(lpVtbl->RegisterEffectFromStream)(
-                    This,
-                    classId,
-                    propertyXml,
-                    bindings,
-                    bindingsCount,
-                    effectFactory
-                );
+                return Marshal.GetDelegateForFunctionPointer<_RegisterEffectFromStream>(lpVtbl->RegisterEffectFromStream)(This, classId, propertyXml, bindings, bindingsCount, effectFactory);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int RegisterEffectFromString(
-            [In, NativeTypeName("REFCLSID")] Guid* classId,
-            [In, NativeTypeName("PCWSTR")] char* propertyXml,
-            [In, Optional, NativeTypeName("D2D1_PROPERTY_BINDING[]")] D2D1_PROPERTY_BINDING* bindings,
-            [In, NativeTypeName("UINT32")] uint bindingsCount,
-            [In] PD2D1_EFFECT_FACTORY effectFactory
-        )
+        public int RegisterEffectFromString([NativeTypeName("REFCLSID")] Guid* classId, [NativeTypeName("PCWSTR")] char* propertyXml, [Optional, NativeTypeName("D2D1_PROPERTY_BINDING[]")] D2D1_PROPERTY_BINDING* bindings, [NativeTypeName("UINT32")] uint bindingsCount, PD2D1_EFFECT_FACTORY effectFactory)
         {
             fixed (ID2D1Factory1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_RegisterEffectFromString>(lpVtbl->RegisterEffectFromString)(
-                    This,
-                    classId,
-                    propertyXml,
-                    bindings,
-                    bindingsCount,
-                    effectFactory
-                );
+                return Marshal.GetDelegateForFunctionPointer<_RegisterEffectFromString>(lpVtbl->RegisterEffectFromString)(This, classId, propertyXml, bindings, bindingsCount, effectFactory);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int UnregisterEffect(
-            [In, NativeTypeName("REFCLSID")] Guid* classId
-        )
+        public int UnregisterEffect([NativeTypeName("REFCLSID")] Guid* classId)
         {
             fixed (ID2D1Factory1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_UnregisterEffect>(lpVtbl->UnregisterEffect)(
-                    This,
-                    classId
-                );
+                return Marshal.GetDelegateForFunctionPointer<_UnregisterEffect>(lpVtbl->UnregisterEffect)(This, classId);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetRegisteredEffects(
-            [Out, Optional, NativeTypeName("CLSID[]")] Guid* effects,
-            [In, NativeTypeName("UINT32")] uint effectsCount,
-            [Out, NativeTypeName("UINT32")] uint* effectsReturned = null,
-            [Out, NativeTypeName("UINT32")] uint* effectsRegistered = null
-        )
+        public int GetRegisteredEffects([Optional, NativeTypeName("CLSID[]")] Guid* effects, [NativeTypeName("UINT32")] uint effectsCount, [NativeTypeName("UINT32")] uint* effectsReturned = null, [NativeTypeName("UINT32")] uint* effectsRegistered = null)
         {
             fixed (ID2D1Factory1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetRegisteredEffects>(lpVtbl->GetRegisteredEffects)(
-                    This,
-                    effects,
-                    effectsCount,
-                    effectsReturned,
-                    effectsRegistered
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetRegisteredEffects>(lpVtbl->GetRegisteredEffects)(This, effects, effectsCount, effectsReturned, effectsRegistered);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetEffectProperties(
-            [In, NativeTypeName("REFCLSID")] Guid* effectId,
-            [Out] ID2D1Properties** properties
-        )
+        public int GetEffectProperties([NativeTypeName("REFCLSID")] Guid* effectId, ID2D1Properties** properties)
         {
             fixed (ID2D1Factory1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetEffectProperties>(lpVtbl->GetEffectProperties)(
-                    This,
-                    effectId,
-                    properties
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetEffectProperties>(lpVtbl->GetEffectProperties)(This, effectId, properties);
             }
         }
 

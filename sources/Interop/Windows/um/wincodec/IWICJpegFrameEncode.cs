@@ -15,72 +15,38 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IWICJpegFrameEncode* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICJpegFrameEncode* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IWICJpegFrameEncode* This
-        );
+        public delegate uint _AddRef(IWICJpegFrameEncode* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IWICJpegFrameEncode* This
-        );
+        public delegate uint _Release(IWICJpegFrameEncode* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetAcHuffmanTable(
-            [In] IWICJpegFrameEncode* This,
-            [In, NativeTypeName("UINT")] uint scanIndex,
-            [In, NativeTypeName("UINT")] uint tableIndex,
-            [Out] DXGI_JPEG_AC_HUFFMAN_TABLE* pAcHuffmanTable
-        );
+        public delegate int _GetAcHuffmanTable(IWICJpegFrameEncode* This, [NativeTypeName("UINT")] uint scanIndex, [NativeTypeName("UINT")] uint tableIndex, DXGI_JPEG_AC_HUFFMAN_TABLE* pAcHuffmanTable);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDcHuffmanTable(
-            [In] IWICJpegFrameEncode* This,
-            [In, NativeTypeName("UINT")] uint scanIndex,
-            [In, NativeTypeName("UINT")] uint tableIndex,
-            [Out] DXGI_JPEG_DC_HUFFMAN_TABLE* pDcHuffmanTable
-        );
+        public delegate int _GetDcHuffmanTable(IWICJpegFrameEncode* This, [NativeTypeName("UINT")] uint scanIndex, [NativeTypeName("UINT")] uint tableIndex, DXGI_JPEG_DC_HUFFMAN_TABLE* pDcHuffmanTable);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetQuantizationTable(
-            [In] IWICJpegFrameEncode* This,
-            [In, NativeTypeName("UINT")] uint scanIndex,
-            [In, NativeTypeName("UINT")] uint tableIndex,
-            [Out] DXGI_JPEG_QUANTIZATION_TABLE* pQuantizationTable
-        );
+        public delegate int _GetQuantizationTable(IWICJpegFrameEncode* This, [NativeTypeName("UINT")] uint scanIndex, [NativeTypeName("UINT")] uint tableIndex, DXGI_JPEG_QUANTIZATION_TABLE* pQuantizationTable);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _WriteScan(
-            [In] IWICJpegFrameEncode* This,
-            [In, NativeTypeName("UINT")] uint cbScanData,
-            [In, NativeTypeName("BYTE[]")] byte* pbScanData
-        );
+        public delegate int _WriteScan(IWICJpegFrameEncode* This, [NativeTypeName("UINT")] uint cbScanData, [NativeTypeName("BYTE[]")] byte* pbScanData);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICJpegFrameEncode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -89,9 +55,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICJpegFrameEncode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -100,79 +64,43 @@ namespace TerraFX.Interop
         {
             fixed (IWICJpegFrameEncode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetAcHuffmanTable(
-            [In, NativeTypeName("UINT")] uint scanIndex,
-            [In, NativeTypeName("UINT")] uint tableIndex,
-            [Out] DXGI_JPEG_AC_HUFFMAN_TABLE* pAcHuffmanTable
-        )
+        public int GetAcHuffmanTable([NativeTypeName("UINT")] uint scanIndex, [NativeTypeName("UINT")] uint tableIndex, DXGI_JPEG_AC_HUFFMAN_TABLE* pAcHuffmanTable)
         {
             fixed (IWICJpegFrameEncode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetAcHuffmanTable>(lpVtbl->GetAcHuffmanTable)(
-                    This,
-                    scanIndex,
-                    tableIndex,
-                    pAcHuffmanTable
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetAcHuffmanTable>(lpVtbl->GetAcHuffmanTable)(This, scanIndex, tableIndex, pAcHuffmanTable);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetDcHuffmanTable(
-            [In, NativeTypeName("UINT")] uint scanIndex,
-            [In, NativeTypeName("UINT")] uint tableIndex,
-            [Out] DXGI_JPEG_DC_HUFFMAN_TABLE* pDcHuffmanTable
-        )
+        public int GetDcHuffmanTable([NativeTypeName("UINT")] uint scanIndex, [NativeTypeName("UINT")] uint tableIndex, DXGI_JPEG_DC_HUFFMAN_TABLE* pDcHuffmanTable)
         {
             fixed (IWICJpegFrameEncode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDcHuffmanTable>(lpVtbl->GetDcHuffmanTable)(
-                    This,
-                    scanIndex,
-                    tableIndex,
-                    pDcHuffmanTable
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDcHuffmanTable>(lpVtbl->GetDcHuffmanTable)(This, scanIndex, tableIndex, pDcHuffmanTable);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetQuantizationTable(
-            [In, NativeTypeName("UINT")] uint scanIndex,
-            [In, NativeTypeName("UINT")] uint tableIndex,
-            [Out] DXGI_JPEG_QUANTIZATION_TABLE* pQuantizationTable
-        )
+        public int GetQuantizationTable([NativeTypeName("UINT")] uint scanIndex, [NativeTypeName("UINT")] uint tableIndex, DXGI_JPEG_QUANTIZATION_TABLE* pQuantizationTable)
         {
             fixed (IWICJpegFrameEncode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetQuantizationTable>(lpVtbl->GetQuantizationTable)(
-                    This,
-                    scanIndex,
-                    tableIndex,
-                    pQuantizationTable
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetQuantizationTable>(lpVtbl->GetQuantizationTable)(This, scanIndex, tableIndex, pQuantizationTable);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int WriteScan(
-            [In, NativeTypeName("UINT")] uint cbScanData,
-            [In, NativeTypeName("BYTE[]")] byte* pbScanData
-        )
+        public int WriteScan([NativeTypeName("UINT")] uint cbScanData, [NativeTypeName("BYTE[]")] byte* pbScanData)
         {
             fixed (IWICJpegFrameEncode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_WriteScan>(lpVtbl->WriteScan)(
-                    This,
-                    cbScanData,
-                    pbScanData
-                );
+                return Marshal.GetDelegateForFunctionPointer<_WriteScan>(lpVtbl->WriteScan)(This, cbScanData, pbScanData);
             }
         }
 

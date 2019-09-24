@@ -15,50 +15,29 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID3D12LibraryReflection* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID3D12LibraryReflection* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID3D12LibraryReflection* This
-        );
+        public delegate uint _AddRef(ID3D12LibraryReflection* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID3D12LibraryReflection* This
-        );
+        public delegate uint _Release(ID3D12LibraryReflection* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDesc(
-            [In] ID3D12LibraryReflection* This,
-            [Out] D3D12_LIBRARY_DESC* pDesc
-        );
+        public delegate int _GetDesc(ID3D12LibraryReflection* This, D3D12_LIBRARY_DESC* pDesc);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate ID3D12FunctionReflection* _GetFunctionByIndex(
-            [In] ID3D12LibraryReflection* This,
-            [In, NativeTypeName("INT")] int FunctionIndex
-        );
+        public delegate ID3D12FunctionReflection* _GetFunctionByIndex(ID3D12LibraryReflection* This, [NativeTypeName("INT")] int FunctionIndex);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID3D12LibraryReflection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -67,9 +46,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12LibraryReflection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -78,36 +55,24 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12LibraryReflection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetDesc(
-            [Out] D3D12_LIBRARY_DESC* pDesc
-        )
+        public int GetDesc(D3D12_LIBRARY_DESC* pDesc)
         {
             fixed (ID3D12LibraryReflection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)(
-                    This,
-                    pDesc
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)(This, pDesc);
             }
         }
 
-        public ID3D12FunctionReflection* GetFunctionByIndex(
-            [In, NativeTypeName("INT")] int FunctionIndex
-        )
+        public ID3D12FunctionReflection* GetFunctionByIndex([NativeTypeName("INT")] int FunctionIndex)
         {
             fixed (ID3D12LibraryReflection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetFunctionByIndex>(lpVtbl->GetFunctionByIndex)(
-                    This,
-                    FunctionIndex
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetFunctionByIndex>(lpVtbl->GetFunctionByIndex)(This, FunctionIndex);
             }
         }
 

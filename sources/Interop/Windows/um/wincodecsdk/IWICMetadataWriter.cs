@@ -15,118 +15,62 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IWICMetadataWriter* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICMetadataWriter* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IWICMetadataWriter* This
-        );
+        public delegate uint _AddRef(IWICMetadataWriter* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IWICMetadataWriter* This
-        );
+        public delegate uint _Release(IWICMetadataWriter* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetMetadataFormat(
-            [In] IWICMetadataWriter* This,
-            [Out, NativeTypeName("GUID")] Guid* pguidMetadataFormat
-        );
+        public delegate int _GetMetadataFormat(IWICMetadataWriter* This, [NativeTypeName("GUID")] Guid* pguidMetadataFormat);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetMetadataHandlerInfo(
-            [In] IWICMetadataWriter* This,
-            [Out] IWICMetadataHandlerInfo** ppIHandler = null
-        );
+        public delegate int _GetMetadataHandlerInfo(IWICMetadataWriter* This, IWICMetadataHandlerInfo** ppIHandler = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetCount(
-            [In] IWICMetadataWriter* This,
-            [Out, NativeTypeName("UINT")] uint* pcCount
-        );
+        public delegate int _GetCount(IWICMetadataWriter* This, [NativeTypeName("UINT")] uint* pcCount);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetValueByIndex(
-            [In] IWICMetadataWriter* This,
-            [In, NativeTypeName("UINT")] uint nIndex,
-            [In, Out] PROPVARIANT* pvarSchema = null,
-            [In, Out] PROPVARIANT* pvarId = null,
-            [In, Out] PROPVARIANT* pvarValue = null
-        );
+        public delegate int _GetValueByIndex(IWICMetadataWriter* This, [NativeTypeName("UINT")] uint nIndex, PROPVARIANT* pvarSchema = null, PROPVARIANT* pvarId = null, PROPVARIANT* pvarValue = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetValue(
-            [In] IWICMetadataWriter* This,
-            [In, Optional] PROPVARIANT* pvarSchema,
-            [In] PROPVARIANT* pvarId,
-            [In, Out] PROPVARIANT* pvarValue = null
-        );
+        public delegate int _GetValue(IWICMetadataWriter* This, [Optional] PROPVARIANT* pvarSchema, PROPVARIANT* pvarId, PROPVARIANT* pvarValue = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetEnumerator(
-            [In] IWICMetadataWriter* This,
-            [Out] IWICEnumMetadataItem** ppIEnumMetadata = null
-        );
+        public delegate int _GetEnumerator(IWICMetadataWriter* This, IWICEnumMetadataItem** ppIEnumMetadata = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetValue(
-            [In] IWICMetadataWriter* This,
-            [In, Optional] PROPVARIANT* pvarSchema,
-            [In] PROPVARIANT* pvarId,
-            [In] PROPVARIANT* pvarValue
-        );
+        public delegate int _SetValue(IWICMetadataWriter* This, [Optional] PROPVARIANT* pvarSchema, PROPVARIANT* pvarId, PROPVARIANT* pvarValue);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetValueByIndex(
-            [In] IWICMetadataWriter* This,
-            [In, NativeTypeName("UINT")] uint nIndex,
-            [In, Optional] PROPVARIANT* pvarSchema,
-            [In] PROPVARIANT* pvarId,
-            [In] PROPVARIANT* pvarValue
-        );
+        public delegate int _SetValueByIndex(IWICMetadataWriter* This, [NativeTypeName("UINT")] uint nIndex, [Optional] PROPVARIANT* pvarSchema, PROPVARIANT* pvarId, PROPVARIANT* pvarValue);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _RemoveValue(
-            [In] IWICMetadataWriter* This,
-            [In, Optional] PROPVARIANT* pvarSchema,
-            [In] PROPVARIANT* pvarId
-        );
+        public delegate int _RemoveValue(IWICMetadataWriter* This, [Optional] PROPVARIANT* pvarSchema, PROPVARIANT* pvarId);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _RemoveValueByIndex(
-            [In] IWICMetadataWriter* This,
-            [In, NativeTypeName("UINT")] uint nIndex
-        );
+        public delegate int _RemoveValueByIndex(IWICMetadataWriter* This, [NativeTypeName("UINT")] uint nIndex);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICMetadataWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -135,9 +79,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -146,171 +88,97 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetMetadataFormat(
-            [Out, NativeTypeName("GUID")] Guid* pguidMetadataFormat
-        )
+        public int GetMetadataFormat([NativeTypeName("GUID")] Guid* pguidMetadataFormat)
         {
             fixed (IWICMetadataWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetMetadataFormat>(lpVtbl->GetMetadataFormat)(
-                    This,
-                    pguidMetadataFormat
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetMetadataFormat>(lpVtbl->GetMetadataFormat)(This, pguidMetadataFormat);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetMetadataHandlerInfo(
-            [Out] IWICMetadataHandlerInfo** ppIHandler = null
-        )
+        public int GetMetadataHandlerInfo(IWICMetadataHandlerInfo** ppIHandler = null)
         {
             fixed (IWICMetadataWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetMetadataHandlerInfo>(lpVtbl->GetMetadataHandlerInfo)(
-                    This,
-                    ppIHandler
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetMetadataHandlerInfo>(lpVtbl->GetMetadataHandlerInfo)(This, ppIHandler);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetCount(
-            [Out, NativeTypeName("UINT")] uint* pcCount
-        )
+        public int GetCount([NativeTypeName("UINT")] uint* pcCount)
         {
             fixed (IWICMetadataWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetCount>(lpVtbl->GetCount)(
-                    This,
-                    pcCount
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetCount>(lpVtbl->GetCount)(This, pcCount);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetValueByIndex(
-            [In, NativeTypeName("UINT")] uint nIndex,
-            [In, Out] PROPVARIANT* pvarSchema = null,
-            [In, Out] PROPVARIANT* pvarId = null,
-            [In, Out] PROPVARIANT* pvarValue = null
-        )
+        public int GetValueByIndex([NativeTypeName("UINT")] uint nIndex, PROPVARIANT* pvarSchema = null, PROPVARIANT* pvarId = null, PROPVARIANT* pvarValue = null)
         {
             fixed (IWICMetadataWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetValueByIndex>(lpVtbl->GetValueByIndex)(
-                    This,
-                    nIndex,
-                    pvarSchema,
-                    pvarId,
-                    pvarValue
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetValueByIndex>(lpVtbl->GetValueByIndex)(This, nIndex, pvarSchema, pvarId, pvarValue);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetValue(
-            [In, Optional] PROPVARIANT* pvarSchema,
-            [In] PROPVARIANT* pvarId,
-            [In, Out] PROPVARIANT* pvarValue = null
-        )
+        public int GetValue([Optional] PROPVARIANT* pvarSchema, PROPVARIANT* pvarId, PROPVARIANT* pvarValue = null)
         {
             fixed (IWICMetadataWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetValue>(lpVtbl->GetValue)(
-                    This,
-                    pvarSchema,
-                    pvarId,
-                    pvarValue
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetValue>(lpVtbl->GetValue)(This, pvarSchema, pvarId, pvarValue);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetEnumerator(
-            [Out] IWICEnumMetadataItem** ppIEnumMetadata = null
-        )
+        public int GetEnumerator(IWICEnumMetadataItem** ppIEnumMetadata = null)
         {
             fixed (IWICMetadataWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetEnumerator>(lpVtbl->GetEnumerator)(
-                    This,
-                    ppIEnumMetadata
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetEnumerator>(lpVtbl->GetEnumerator)(This, ppIEnumMetadata);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetValue(
-            [In, Optional] PROPVARIANT* pvarSchema,
-            [In] PROPVARIANT* pvarId,
-            [In] PROPVARIANT* pvarValue
-        )
+        public int SetValue([Optional] PROPVARIANT* pvarSchema, PROPVARIANT* pvarId, PROPVARIANT* pvarValue)
         {
             fixed (IWICMetadataWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetValue>(lpVtbl->SetValue)(
-                    This,
-                    pvarSchema,
-                    pvarId,
-                    pvarValue
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetValue>(lpVtbl->SetValue)(This, pvarSchema, pvarId, pvarValue);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetValueByIndex(
-            [In, NativeTypeName("UINT")] uint nIndex,
-            [In, Optional] PROPVARIANT* pvarSchema,
-            [In] PROPVARIANT* pvarId,
-            [In] PROPVARIANT* pvarValue
-        )
+        public int SetValueByIndex([NativeTypeName("UINT")] uint nIndex, [Optional] PROPVARIANT* pvarSchema, PROPVARIANT* pvarId, PROPVARIANT* pvarValue)
         {
             fixed (IWICMetadataWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetValueByIndex>(lpVtbl->SetValueByIndex)(
-                    This,
-                    nIndex,
-                    pvarSchema,
-                    pvarId,
-                    pvarValue
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetValueByIndex>(lpVtbl->SetValueByIndex)(This, nIndex, pvarSchema, pvarId, pvarValue);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int RemoveValue(
-            [In, Optional] PROPVARIANT* pvarSchema,
-            [In] PROPVARIANT* pvarId
-        )
+        public int RemoveValue([Optional] PROPVARIANT* pvarSchema, PROPVARIANT* pvarId)
         {
             fixed (IWICMetadataWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_RemoveValue>(lpVtbl->RemoveValue)(
-                    This,
-                    pvarSchema,
-                    pvarId
-                );
+                return Marshal.GetDelegateForFunctionPointer<_RemoveValue>(lpVtbl->RemoveValue)(This, pvarSchema, pvarId);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int RemoveValueByIndex(
-            [In, NativeTypeName("UINT")] uint nIndex
-        )
+        public int RemoveValueByIndex([NativeTypeName("UINT")] uint nIndex)
         {
             fixed (IWICMetadataWriter* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_RemoveValueByIndex>(lpVtbl->RemoveValueByIndex)(
-                    This,
-                    nIndex
-                );
+                return Marshal.GetDelegateForFunctionPointer<_RemoveValueByIndex>(lpVtbl->RemoveValueByIndex)(This, nIndex);
             }
         }
 

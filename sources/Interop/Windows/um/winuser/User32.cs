@@ -887,206 +887,113 @@ namespace TerraFX.Interop
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "AdjustWindowRect", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("BOOL")]
-        public static extern int AdjustWindowRect(
-            [In, Out, NativeTypeName("LPRECT")] RECT* lpRect,
-            [In, NativeTypeName("DWORD")] uint dwStyle,
-            [In, NativeTypeName("BOOL")] int bMenu
-        );
+        public static extern int AdjustWindowRect([NativeTypeName("LPRECT")] RECT* lpRect, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("BOOL")] int bMenu);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "CloseWindow", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("BOOL")]
-        public static extern int CloseWindow(
-            [In, NativeTypeName("HWND")] IntPtr hWnd
-        );
+        public static extern int CloseWindow([NativeTypeName("HWND")] IntPtr hWnd);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "CreateWindowExW", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HWND")]
-        public static extern IntPtr CreateWindowEx(
-            [In, NativeTypeName("DWORD")] uint dwExStyle,
-            [In, Optional, NativeTypeName("LPCWSTR")] char* lpClassName,
-            [In, Optional, NativeTypeName("LPCWSTR")] char* lpWindowName,
-            [In, NativeTypeName("DWORD")] uint dwStyle,
-            [In] int X,
-            [In] int Y,
-            [In] int nWidth,
-            [In] int nHeight,
-            [In, Optional, NativeTypeName("HWND")] IntPtr hWndParent,
-            [In, Optional, NativeTypeName("HMENU")] IntPtr hMenu,
-            [In, Optional, NativeTypeName("HINSTANCE")] IntPtr hInstance,
-            [In, NativeTypeName("LPVOID")] void* lpParam
-        );
+        public static extern IntPtr CreateWindowEx([NativeTypeName("DWORD")] uint dwExStyle, [Optional, NativeTypeName("LPCWSTR")] char* lpClassName, [Optional, NativeTypeName("LPCWSTR")] char* lpWindowName, [NativeTypeName("DWORD")] uint dwStyle, int X, int Y, int nWidth, int nHeight, [Optional, NativeTypeName("HWND")] IntPtr hWndParent, [Optional, NativeTypeName("HMENU")] IntPtr hMenu, [Optional, NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPVOID")] void* lpParam);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "DefWindowProcW", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("LRESULT")]
-        public static extern IntPtr DefWindowProc(
-            [In, NativeTypeName("HWND")] IntPtr hWnd,
-            [In, NativeTypeName("UINT")] uint Msg,
-            [In, NativeTypeName("WPARAM")] UIntPtr wParam,
-            [In, NativeTypeName("LPARAM")] IntPtr lParam
-        );
+        public static extern IntPtr DefWindowProc([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] UIntPtr wParam, [NativeTypeName("LPARAM")] IntPtr lParam);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "DestroyWindow", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("BOOL")]
-        public static extern int DestroyWindow(
-            [In, NativeTypeName("HWND")] IntPtr hWnd
-        );
+        public static extern int DestroyWindow([NativeTypeName("HWND")] IntPtr hWnd);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "DispatchMessageW", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("LRESULT")]
-        public static extern IntPtr DispatchMessage(
-            [In] MSG* lpMsg
-        );
+        public static extern IntPtr DispatchMessage(MSG* lpMsg);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "EnableWindow", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnableWindow(
-            [In, NativeTypeName("HWND")] IntPtr hWnd,
-            [In, NativeTypeName("BOOL")] int bEnable
-        );
+        public static extern int EnableWindow([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("BOOL")] int bEnable);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "GetActiveWindow", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HWND")]
-        public static extern IntPtr GetActiveWindow(
-        );
+        public static extern IntPtr GetActiveWindow();
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "GetClassInfoExW", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("BOOL")]
-        public static extern int GetClassInfoEx(
-            [In, Optional, NativeTypeName("HINSTANCE")] IntPtr hInstance,
-            [In, NativeTypeName("LPCWSTR")] char* lpszClass,
-            [Out, NativeTypeName("LPWNDCLASSEX")] WNDCLASSEX* lpwcx
-        );
+        public static extern int GetClassInfoEx([Optional, NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCWSTR")] char* lpszClass, [NativeTypeName("LPWNDCLASSEX")] WNDCLASSEX* lpwcx);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "GetClassNameW", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
-        public static extern int GetClassName(
-            [In, NativeTypeName("HWND")] IntPtr hWnd,
-            [Out, NativeTypeName("LPWSTR")] char* lpClassName,
-            [In] int nMaxCount
-        );
+        public static extern int GetClassName([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("LPWSTR")] char* lpClassName, int nMaxCount);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "GetDesktopWindow", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HWND")]
-        public static extern IntPtr GetDesktopWindow(
-        );
+        public static extern IntPtr GetDesktopWindow();
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "GetWindowLongW", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("LONG")]
-        public static extern int GetWindowLong(
-            [In, NativeTypeName("HWND")] IntPtr hWnd,
-            [In] int nIndex
-        );
+        public static extern int GetWindowLong([NativeTypeName("HWND")] IntPtr hWnd, int nIndex);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "GetWindowLongPtrW", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("LONG_PTR")]
-        public static extern IntPtr _GetWindowLongPtr(
-            [In, NativeTypeName("HWND")] IntPtr hWnd,
-            [In] int nIndex
-        );
+        public static extern IntPtr _GetWindowLongPtr([NativeTypeName("HWND")] IntPtr hWnd, int nIndex);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "GetWindowRect", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("BOOL")]
-        public static extern int GetWindowRect(
-            [In, NativeTypeName("HWND")] IntPtr hWnd,
-            [Out, NativeTypeName("LPRECT")] RECT* lpRect
-        );
+        public static extern int GetWindowRect([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("LPRECT")] RECT* lpRect);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "IsWindowVisible", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("BOOL")]
-        public static extern int IsWindowVisible(
-            [In, NativeTypeName("HWND")] IntPtr hWnd
-        );
+        public static extern int IsWindowVisible([NativeTypeName("HWND")] IntPtr hWnd);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "LoadCursorW", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HCURSOR")]
-        public static extern IntPtr LoadCursor(
-            [In, Optional, NativeTypeName("HINSTANCE")] IntPtr hInstance,
-            [In, NativeTypeName("LPCWSTR")] char* lpCursorName
-        );
+        public static extern IntPtr LoadCursor([Optional, NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCWSTR")] char* lpCursorName);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "PeekMessageW", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("BOOL")]
-        public static extern int PeekMessage(
-            [Out, NativeTypeName("LPMSG")] MSG* lpMsg,
-            [In, Optional, NativeTypeName("HWND")] IntPtr hWnd,
-            [In, NativeTypeName("UINT")] uint wMsgFilterMin,
-            [In, NativeTypeName("UINT")] uint wMsgFilterMax,
-            [In, NativeTypeName("UINT")] uint wRemoveMsg
-        );
+        public static extern int PeekMessage([NativeTypeName("LPMSG")] MSG* lpMsg, [Optional, NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint wMsgFilterMin, [NativeTypeName("UINT")] uint wMsgFilterMax, [NativeTypeName("UINT")] uint wRemoveMsg);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "PostQuitMessage", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
-        public static extern void PostQuitMessage(
-            [In] int nExitCode
-        );
+        public static extern void PostQuitMessage(int nExitCode);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "RegisterClassExW", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("ATOM")]
-        public static extern ushort RegisterClassEx(
-            [In] WNDCLASSEX* lpWndClassEx
-        );
+        public static extern ushort RegisterClassEx(WNDCLASSEX* lpWndClassEx);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "SendMessageW", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("LRESULT")]
-        public static extern IntPtr SendMessage(
-            [In, NativeTypeName("HWND")] IntPtr hWnd,
-            [In, NativeTypeName("UINT")] uint Msg,
-            [In, NativeTypeName("WPARAM")] UIntPtr wParam,
-            [In, NativeTypeName("LPARAM")] IntPtr lParam
-        );
+        public static extern IntPtr SendMessage([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] UIntPtr wParam, [NativeTypeName("LPARAM")] IntPtr lParam);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "SetActiveWindow", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HWND")]
-        public static extern IntPtr SetActiveWindow(
-            [In, NativeTypeName("HWND")] IntPtr hWnd
-        );
+        public static extern IntPtr SetActiveWindow([NativeTypeName("HWND")] IntPtr hWnd);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "SetForegroundWindow", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetForegroundWindow(
-            [In, NativeTypeName("HWND")] IntPtr hWnd
-        );
+        public static extern int SetForegroundWindow([NativeTypeName("HWND")] IntPtr hWnd);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "SetWindowLongW", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("LONG")]
-        public static extern int SetWindowLong(
-            [In, NativeTypeName("HWND")] IntPtr hWnd,
-            [In] int nIndex,
-            [In, NativeTypeName("LONG")] int dwNewLong
-        );
+        public static extern int SetWindowLong([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG")] int dwNewLong);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "SetWindowLongPtrW", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("LONG_PTR")]
-        public static extern IntPtr _SetWindowLongPtr(
-            [In, NativeTypeName("HWND")] IntPtr hWnd,
-            [In] int nIndex,
-            [In, NativeTypeName("LONG_PTR")] IntPtr dwNewLong
-        );
+        public static extern IntPtr _SetWindowLongPtr([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "SetWindowTextW", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetWindowText(
-            [In, NativeTypeName("HWND")] IntPtr hWnd,
-            [In, Optional, NativeTypeName("LPCWSTR")] char* lpString
-        );
+        public static extern int SetWindowText([NativeTypeName("HWND")] IntPtr hWnd, [Optional, NativeTypeName("LPCWSTR")] char* lpString);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "ShowWindow", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("BOOL")]
-        public static extern int ShowWindow(
-            [In, NativeTypeName("HWND")] IntPtr hWnd,
-            [In] int nCmdShow
-        );
+        public static extern int ShowWindow([NativeTypeName("HWND")] IntPtr hWnd, int nCmdShow);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "TranslateMessage", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("BOOL")]
-        public static extern int TranslateMessage(
-            [In] MSG* lpMsg
-        );
+        public static extern int TranslateMessage(MSG* lpMsg);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "UnregisterClassW", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("BOOL")]
-        public static extern int UnregisterClass(
-            [In, NativeTypeName("LPCWSTR")] char* lpClassName,
-            [In, NativeTypeName("HINSTANCE")] IntPtr hInstance = default
-        );
+        public static extern int UnregisterClass([NativeTypeName("LPCWSTR")] char* lpClassName, [NativeTypeName("HINSTANCE")] IntPtr hInstance = default);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IntPtr GetWindowLongPtr(IntPtr hWnd, int nIndex)

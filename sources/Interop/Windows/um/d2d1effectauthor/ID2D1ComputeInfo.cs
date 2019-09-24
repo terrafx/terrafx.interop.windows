@@ -16,95 +16,55 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID2D1ComputeInfo* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1ComputeInfo* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID2D1ComputeInfo* This
-        );
+        public delegate uint _AddRef(ID2D1ComputeInfo* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID2D1ComputeInfo* This
-        );
+        public delegate uint _Release(ID2D1ComputeInfo* This);
 
         /// <summary>Sets options for sampling the specified image input</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetInputDescription(
-            [In] ID2D1ComputeInfo* This,
-            [In, NativeTypeName("UINT32")] uint inputIndex,
-            [In] D2D1_INPUT_DESCRIPTION inputDescription
-        );
+        public delegate int _SetInputDescription(ID2D1ComputeInfo* This, [NativeTypeName("UINT32")] uint inputIndex, D2D1_INPUT_DESCRIPTION inputDescription);
 
         /// <summary>Controls the output precision and channel-depth for the associated transform.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetOutputBuffer(
-            [In] ID2D1ComputeInfo* This,
-            [In] D2D1_BUFFER_PRECISION bufferPrecision,
-            [In] D2D1_CHANNEL_DEPTH channelDepth
-        );
+        public delegate int _SetOutputBuffer(ID2D1ComputeInfo* This, D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth);
 
         /// <summary>Controls whether the output of the associated transform is cached.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetCached(
-            [In] ID2D1ComputeInfo* This,
-            [In, NativeTypeName("BOOL")] int isCached
-        );
+        public delegate void _SetCached(ID2D1ComputeInfo* This, [NativeTypeName("BOOL")] int isCached);
 
         /// <summary>Provides a hint of the approximate shader instruction count per pixel.  If provided, it may improve performance when processing large images.  Instructions should be counted multiple times if occurring within loops.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetInstructionCountHint(
-            [In] ID2D1ComputeInfo* This,
-            [In, NativeTypeName("UINT32")] uint instructionCount
-        );
+        public delegate void _SetInstructionCountHint(ID2D1ComputeInfo* This, [NativeTypeName("UINT32")] uint instructionCount);
 
         /// <summary>Set the constant buffer for this transform.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetComputeShaderConstantBuffer(
-            [In] ID2D1ComputeInfo* This,
-            [In, NativeTypeName("BYTE[]")] byte* buffer,
-            [In, NativeTypeName("UINT32")] uint bufferCount
-        );
+        public delegate int _SetComputeShaderConstantBuffer(ID2D1ComputeInfo* This, [NativeTypeName("BYTE[]")] byte* buffer, [NativeTypeName("UINT32")] uint bufferCount);
 
         /// <summary>Set the shader instructions for this transform.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetComputeShader(
-            [In] ID2D1ComputeInfo* This,
-            [In, NativeTypeName("REFGUID")] Guid* shaderId
-        );
+        public delegate int _SetComputeShader(ID2D1ComputeInfo* This, [NativeTypeName("REFGUID")] Guid* shaderId);
 
         /// <summary>Sets the resource texture corresponding to the given shader texture index.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetResourceTexture(
-            [In] ID2D1ComputeInfo* This,
-            [In, NativeTypeName("UINT32")] uint textureIndex,
-            [In] ID2D1ResourceTexture* resourceTexture
-        );
+        public delegate int _SetResourceTexture(ID2D1ComputeInfo* This, [NativeTypeName("UINT32")] uint textureIndex, ID2D1ResourceTexture* resourceTexture);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1ComputeInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -113,9 +73,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ComputeInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -124,113 +82,68 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1ComputeInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetInputDescription(
-            [In, NativeTypeName("UINT32")] uint inputIndex,
-            [In] D2D1_INPUT_DESCRIPTION inputDescription
-        )
+        public int SetInputDescription([NativeTypeName("UINT32")] uint inputIndex, D2D1_INPUT_DESCRIPTION inputDescription)
         {
             fixed (ID2D1ComputeInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetInputDescription>(lpVtbl->SetInputDescription)(
-                    This,
-                    inputIndex,
-                    inputDescription
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetInputDescription>(lpVtbl->SetInputDescription)(This, inputIndex, inputDescription);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetOutputBuffer(
-            [In] D2D1_BUFFER_PRECISION bufferPrecision,
-            [In] D2D1_CHANNEL_DEPTH channelDepth
-        )
+        public int SetOutputBuffer(D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth)
         {
             fixed (ID2D1ComputeInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetOutputBuffer>(lpVtbl->SetOutputBuffer)(
-                    This,
-                    bufferPrecision,
-                    channelDepth
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetOutputBuffer>(lpVtbl->SetOutputBuffer)(This, bufferPrecision, channelDepth);
             }
         }
 
-        public void SetCached(
-            [In, NativeTypeName("BOOL")] int isCached
-        )
+        public void SetCached([NativeTypeName("BOOL")] int isCached)
         {
             fixed (ID2D1ComputeInfo* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetCached>(lpVtbl->SetCached)(
-                    This,
-                    isCached
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetCached>(lpVtbl->SetCached)(This, isCached);
             }
         }
 
-        public void SetInstructionCountHint(
-            [In, NativeTypeName("UINT32")] uint instructionCount
-        )
+        public void SetInstructionCountHint([NativeTypeName("UINT32")] uint instructionCount)
         {
             fixed (ID2D1ComputeInfo* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetInstructionCountHint>(lpVtbl->SetInstructionCountHint)(
-                    This,
-                    instructionCount
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetInstructionCountHint>(lpVtbl->SetInstructionCountHint)(This, instructionCount);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetComputeShaderConstantBuffer(
-            [In, NativeTypeName("BYTE[]")] byte* buffer,
-            [In, NativeTypeName("UINT32")] uint bufferCount
-        )
+        public int SetComputeShaderConstantBuffer([NativeTypeName("BYTE[]")] byte* buffer, [NativeTypeName("UINT32")] uint bufferCount)
         {
             fixed (ID2D1ComputeInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetComputeShaderConstantBuffer>(lpVtbl->SetComputeShaderConstantBuffer)(
-                    This,
-                    buffer,
-                    bufferCount
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetComputeShaderConstantBuffer>(lpVtbl->SetComputeShaderConstantBuffer)(This, buffer, bufferCount);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetComputeShader(
-            [In, NativeTypeName("REFGUID")] Guid* shaderId
-        )
+        public int SetComputeShader([NativeTypeName("REFGUID")] Guid* shaderId)
         {
             fixed (ID2D1ComputeInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetComputeShader>(lpVtbl->SetComputeShader)(
-                    This,
-                    shaderId
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetComputeShader>(lpVtbl->SetComputeShader)(This, shaderId);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetResourceTexture(
-            [In, NativeTypeName("UINT32")] uint textureIndex,
-            [In] ID2D1ResourceTexture* resourceTexture
-        )
+        public int SetResourceTexture([NativeTypeName("UINT32")] uint textureIndex, ID2D1ResourceTexture* resourceTexture)
         {
             fixed (ID2D1ComputeInfo* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetResourceTexture>(lpVtbl->SetResourceTexture)(
-                    This,
-                    textureIndex,
-                    resourceTexture
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetResourceTexture>(lpVtbl->SetResourceTexture)(This, textureIndex, resourceTexture);
             }
         }
 

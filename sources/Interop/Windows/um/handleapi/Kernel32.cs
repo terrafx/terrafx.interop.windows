@@ -14,8 +14,6 @@ namespace TerraFX.Interop
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "CloseHandle", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("BOOL")]
-        public static extern int CloseHandle(
-            [In, NativeTypeName("HANDLE")] IntPtr hObject
-        );
+        public static extern int CloseHandle([NativeTypeName("HANDLE")] IntPtr hObject);
     }
 }

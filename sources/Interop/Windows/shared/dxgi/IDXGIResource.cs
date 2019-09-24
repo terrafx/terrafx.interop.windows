@@ -15,107 +15,58 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IDXGIResource* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDXGIResource* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IDXGIResource* This
-        );
+        public delegate uint _AddRef(IDXGIResource* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IDXGIResource* This
-        );
+        public delegate uint _Release(IDXGIResource* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateData(
-            [In] IDXGIResource* This,
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In, NativeTypeName("UINT")] uint DataSize,
-            [In] void* pData
-        );
+        public delegate int _SetPrivateData(IDXGIResource* This, [NativeTypeName("REFGUID")] Guid* Name, [NativeTypeName("UINT")] uint DataSize, void* pData);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateDataInterface(
-            [In] IDXGIResource* This,
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In] IUnknown* pUnknown = null
-        );
+        public delegate int _SetPrivateDataInterface(IDXGIResource* This, [NativeTypeName("REFGUID")] Guid* Name, IUnknown* pUnknown = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPrivateData(
-            [In] IDXGIResource* This,
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In, Out, NativeTypeName("UINT")] uint* pDataSize,
-            [Out] void* pData
-        );
+        public delegate int _GetPrivateData(IDXGIResource* This, [NativeTypeName("REFGUID")] Guid* Name, [NativeTypeName("UINT")] uint* pDataSize, void* pData);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetParent(
-            [In] IDXGIResource* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppParent
-        );
+        public delegate int _GetParent(IDXGIResource* This, [NativeTypeName("REFIID")] Guid* riid, void** ppParent);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDevice(
-            [In] IDXGIResource* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppDevice
-        );
+        public delegate int _GetDevice(IDXGIResource* This, [NativeTypeName("REFIID")] Guid* riid, void** ppDevice);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetSharedHandle(
-            [In] IDXGIResource* This,
-            [Out, NativeTypeName("HANDLE")] IntPtr* pSharedHandle
-        );
+        public delegate int _GetSharedHandle(IDXGIResource* This, [NativeTypeName("HANDLE")] IntPtr* pSharedHandle);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetUsage(
-            [In] IDXGIResource* This,
-            [Out, NativeTypeName("DXGI_USAGE")] uint* pUsage
-        );
+        public delegate int _GetUsage(IDXGIResource* This, [NativeTypeName("DXGI_USAGE")] uint* pUsage);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetEvictionPriority(
-            [In] IDXGIResource* This,
-            [In, NativeTypeName("UINT")] uint EvictionPriority
-        );
+        public delegate int _SetEvictionPriority(IDXGIResource* This, [NativeTypeName("UINT")] uint EvictionPriority);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetEvictionPriority(
-            [In] IDXGIResource* This,
-            [Out, NativeTypeName("UINT")] uint* pEvictionPriority
-        );
+        public delegate int _GetEvictionPriority(IDXGIResource* This, [NativeTypeName("UINT")] uint* pEvictionPriority);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDXGIResource* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -124,9 +75,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIResource* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -135,149 +84,88 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIResource* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetPrivateData(
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In, NativeTypeName("UINT")] uint DataSize,
-            [In] void* pData
-        )
+        public int SetPrivateData([NativeTypeName("REFGUID")] Guid* Name, [NativeTypeName("UINT")] uint DataSize, void* pData)
         {
             fixed (IDXGIResource* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)(
-                    This,
-                    Name,
-                    DataSize,
-                    pData
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)(This, Name, DataSize, pData);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetPrivateDataInterface(
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In] IUnknown* pUnknown = null
-        )
+        public int SetPrivateDataInterface([NativeTypeName("REFGUID")] Guid* Name, IUnknown* pUnknown = null)
         {
             fixed (IDXGIResource* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(
-                    This,
-                    Name,
-                    pUnknown
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(This, Name, pUnknown);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetPrivateData(
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In, Out, NativeTypeName("UINT")] uint* pDataSize,
-            [Out] void* pData
-        )
+        public int GetPrivateData([NativeTypeName("REFGUID")] Guid* Name, [NativeTypeName("UINT")] uint* pDataSize, void* pData)
         {
             fixed (IDXGIResource* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)(
-                    This,
-                    Name,
-                    pDataSize,
-                    pData
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)(This, Name, pDataSize, pData);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetParent(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppParent
-        )
+        public int GetParent([NativeTypeName("REFIID")] Guid* riid, void** ppParent)
         {
             fixed (IDXGIResource* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetParent>(lpVtbl->GetParent)(
-                    This,
-                    riid,
-                    ppParent
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetParent>(lpVtbl->GetParent)(This, riid, ppParent);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetDevice(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppDevice
-        )
+        public int GetDevice([NativeTypeName("REFIID")] Guid* riid, void** ppDevice)
         {
             fixed (IDXGIResource* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDevice>(lpVtbl->GetDevice)(
-                    This,
-                    riid,
-                    ppDevice
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDevice>(lpVtbl->GetDevice)(This, riid, ppDevice);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetSharedHandle(
-            [Out, NativeTypeName("HANDLE")] IntPtr* pSharedHandle
-        )
+        public int GetSharedHandle([NativeTypeName("HANDLE")] IntPtr* pSharedHandle)
         {
             fixed (IDXGIResource* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetSharedHandle>(lpVtbl->GetSharedHandle)(
-                    This,
-                    pSharedHandle
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetSharedHandle>(lpVtbl->GetSharedHandle)(This, pSharedHandle);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetUsage(
-            [Out, NativeTypeName("DXGI_USAGE")] uint* pUsage
-        )
+        public int GetUsage([NativeTypeName("DXGI_USAGE")] uint* pUsage)
         {
             fixed (IDXGIResource* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetUsage>(lpVtbl->GetUsage)(
-                    This,
-                    pUsage
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetUsage>(lpVtbl->GetUsage)(This, pUsage);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetEvictionPriority(
-            [In, NativeTypeName("UINT")] uint EvictionPriority
-        )
+        public int SetEvictionPriority([NativeTypeName("UINT")] uint EvictionPriority)
         {
             fixed (IDXGIResource* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetEvictionPriority>(lpVtbl->SetEvictionPriority)(
-                    This,
-                    EvictionPriority
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetEvictionPriority>(lpVtbl->SetEvictionPriority)(This, EvictionPriority);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetEvictionPriority(
-            [Out, NativeTypeName("UINT")] uint* pEvictionPriority
-        )
+        public int GetEvictionPriority([NativeTypeName("UINT")] uint* pEvictionPriority)
         {
             fixed (IDXGIResource* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetEvictionPriority>(lpVtbl->GetEvictionPriority)(
-                    This,
-                    pEvictionPriority
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetEvictionPriority>(lpVtbl->GetEvictionPriority)(This, pEvictionPriority);
             }
         }
 

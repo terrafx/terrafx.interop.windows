@@ -15,224 +15,112 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IDXGIFactory3* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDXGIFactory3* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IDXGIFactory3* This
-        );
+        public delegate uint _AddRef(IDXGIFactory3* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IDXGIFactory3* This
-        );
+        public delegate uint _Release(IDXGIFactory3* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateData(
-            [In] IDXGIFactory3* This,
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In, NativeTypeName("UINT")] uint DataSize,
-            [In] void* pData
-        );
+        public delegate int _SetPrivateData(IDXGIFactory3* This, [NativeTypeName("REFGUID")] Guid* Name, [NativeTypeName("UINT")] uint DataSize, void* pData);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateDataInterface(
-            [In] IDXGIFactory3* This,
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In] IUnknown* pUnknown = null
-        );
+        public delegate int _SetPrivateDataInterface(IDXGIFactory3* This, [NativeTypeName("REFGUID")] Guid* Name, IUnknown* pUnknown = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPrivateData(
-            [In] IDXGIFactory3* This,
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In, Out, NativeTypeName("UINT")] uint* pDataSize,
-            [Out] void* pData
-        );
+        public delegate int _GetPrivateData(IDXGIFactory3* This, [NativeTypeName("REFGUID")] Guid* Name, [NativeTypeName("UINT")] uint* pDataSize, void* pData);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetParent(
-            [In] IDXGIFactory3* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppParent
-        );
+        public delegate int _GetParent(IDXGIFactory3* This, [NativeTypeName("REFIID")] Guid* riid, void** ppParent);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _EnumAdapters(
-            [In] IDXGIFactory3* This,
-            [In, NativeTypeName("UINT")] uint Adapter,
-            [Out] IDXGIAdapter** ppAdapter
-        );
+        public delegate int _EnumAdapters(IDXGIFactory3* This, [NativeTypeName("UINT")] uint Adapter, IDXGIAdapter** ppAdapter);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _MakeWindowAssociation(
-            [In] IDXGIFactory3* This,
-            [In, NativeTypeName("HWND")] IntPtr WindowHandle,
-            [In, NativeTypeName("UINT")] uint Flags
-        );
+        public delegate int _MakeWindowAssociation(IDXGIFactory3* This, [NativeTypeName("HWND")] IntPtr WindowHandle, [NativeTypeName("UINT")] uint Flags);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetWindowAssociation(
-            [In] IDXGIFactory3* This,
-            [Out, NativeTypeName("HWND")] IntPtr* pWindowHandle
-        );
+        public delegate int _GetWindowAssociation(IDXGIFactory3* This, [NativeTypeName("HWND")] IntPtr* pWindowHandle);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateSwapChain(
-            [In] IDXGIFactory3* This,
-            [In] IUnknown* pDevice,
-            [In] DXGI_SWAP_CHAIN_DESC* pDesc,
-            [Out] IDXGISwapChain** ppSwapChain
-        );
+        public delegate int _CreateSwapChain(IDXGIFactory3* This, IUnknown* pDevice, DXGI_SWAP_CHAIN_DESC* pDesc, IDXGISwapChain** ppSwapChain);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateSoftwareAdapter(
-            [In] IDXGIFactory3* This,
-            [In, NativeTypeName("HMODULE")] IntPtr Module,
-            [Out] IDXGIAdapter** ppAdapter
-        );
+        public delegate int _CreateSoftwareAdapter(IDXGIFactory3* This, [NativeTypeName("HMODULE")] IntPtr Module, IDXGIAdapter** ppAdapter);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _EnumAdapters1(
-            [In] IDXGIFactory3* This,
-            [In, NativeTypeName("UINT")] uint Adapter,
-            [Out] IDXGIAdapter1** ppAdapter
-        );
+        public delegate int _EnumAdapters1(IDXGIFactory3* This, [NativeTypeName("UINT")] uint Adapter, IDXGIAdapter1** ppAdapter);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public delegate int _IsCurrent(
-            [In] IDXGIFactory3* This
-        );
+        public delegate int _IsCurrent(IDXGIFactory3* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public delegate int _IsWindowedStereoEnabled(
-            [In] IDXGIFactory3* This
-        );
+        public delegate int _IsWindowedStereoEnabled(IDXGIFactory3* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateSwapChainForHwnd(
-            [In] IDXGIFactory3* This,
-            [In] IUnknown* pDevice,
-            [In, NativeTypeName("HWND")] IntPtr hWnd,
-            [In] DXGI_SWAP_CHAIN_DESC1* pDesc,
-            [In, Optional] DXGI_SWAP_CHAIN_FULLSCREEN_DESC* pFullscreenDesc,
-            [In, Optional] IDXGIOutput* pRestrictToOutput,
-            [Out] IDXGISwapChain1** ppSwapChain
-        );
+        public delegate int _CreateSwapChainForHwnd(IDXGIFactory3* This, IUnknown* pDevice, [NativeTypeName("HWND")] IntPtr hWnd, DXGI_SWAP_CHAIN_DESC1* pDesc, [Optional] DXGI_SWAP_CHAIN_FULLSCREEN_DESC* pFullscreenDesc, [Optional] IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateSwapChainForCoreWindow(
-            [In] IDXGIFactory3* This,
-            [In] IUnknown* pDevice,
-            [In] IUnknown* pWindow,
-            [In] DXGI_SWAP_CHAIN_DESC1* pDesc,
-            [In, Optional] IDXGIOutput* pRestrictToOutput,
-            [Out] IDXGISwapChain1** ppSwapChain
-        );
+        public delegate int _CreateSwapChainForCoreWindow(IDXGIFactory3* This, IUnknown* pDevice, IUnknown* pWindow, DXGI_SWAP_CHAIN_DESC1* pDesc, [Optional] IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetSharedResourceAdapterLuid(
-            [In] IDXGIFactory3* This,
-            [In, NativeTypeName("HANDLE")] IntPtr hResource,
-            [Out] LUID* pLuid
-        );
+        public delegate int _GetSharedResourceAdapterLuid(IDXGIFactory3* This, [NativeTypeName("HANDLE")] IntPtr hResource, LUID* pLuid);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _RegisterStereoStatusWindow(
-            [In] IDXGIFactory3* This,
-            [In, NativeTypeName("HWND")] IntPtr WindowHandle,
-            [In, NativeTypeName("UINT")] uint wMsg,
-            [Out, NativeTypeName("DWORD")] uint* pdwCookie
-        );
+        public delegate int _RegisterStereoStatusWindow(IDXGIFactory3* This, [NativeTypeName("HWND")] IntPtr WindowHandle, [NativeTypeName("UINT")] uint wMsg, [NativeTypeName("DWORD")] uint* pdwCookie);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _RegisterStereoStatusEvent(
-            [In] IDXGIFactory3* This,
-            [In, NativeTypeName("HANDLE")] IntPtr hEvent,
-            [Out, NativeTypeName("DWORD")] uint* pdwCookie
-        );
+        public delegate int _RegisterStereoStatusEvent(IDXGIFactory3* This, [NativeTypeName("HANDLE")] IntPtr hEvent, [NativeTypeName("DWORD")] uint* pdwCookie);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _UnregisterStereoStatus(
-            [In] IDXGIFactory3* This,
-            [In, NativeTypeName("DWORD")] uint dwCookie
-        );
+        public delegate void _UnregisterStereoStatus(IDXGIFactory3* This, [NativeTypeName("DWORD")] uint dwCookie);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _RegisterOcclusionStatusWindow(
-            [In] IDXGIFactory3* This,
-            [In, NativeTypeName("HWND")] IntPtr WindowHandle,
-            [In, NativeTypeName("UINT")] uint wMsg,
-            [Out, NativeTypeName("DWORD")] uint* pdwCookie
-        );
+        public delegate int _RegisterOcclusionStatusWindow(IDXGIFactory3* This, [NativeTypeName("HWND")] IntPtr WindowHandle, [NativeTypeName("UINT")] uint wMsg, [NativeTypeName("DWORD")] uint* pdwCookie);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _RegisterOcclusionStatusEvent(
-            [In] IDXGIFactory3* This,
-            [In, NativeTypeName("HANDLE")] IntPtr hEvent,
-            [Out, NativeTypeName("DWORD")] uint* pdwCookie
-        );
+        public delegate int _RegisterOcclusionStatusEvent(IDXGIFactory3* This, [NativeTypeName("HANDLE")] IntPtr hEvent, [NativeTypeName("DWORD")] uint* pdwCookie);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _UnregisterOcclusionStatus(
-            [In] IDXGIFactory3* This,
-            [In, NativeTypeName("UINT")] uint dwCookie
-        );
+        public delegate void _UnregisterOcclusionStatus(IDXGIFactory3* This, [NativeTypeName("UINT")] uint dwCookie);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateSwapChainForComposition(
-            [In] IDXGIFactory3* This,
-            [In] IUnknown* pDevice,
-            [In] DXGI_SWAP_CHAIN_DESC1* pDesc,
-            [In, Optional] IDXGIOutput* pRestrictToOutput,
-            [Out] IDXGISwapChain1** ppSwapChain
-        );
+        public delegate int _CreateSwapChainForComposition(IDXGIFactory3* This, IUnknown* pDevice, DXGI_SWAP_CHAIN_DESC1* pDesc, [Optional] IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT")]
-        public delegate uint _GetCreationFlags(
-            [In] IDXGIFactory3* This
-        );
+        public delegate uint _GetCreationFlags(IDXGIFactory3* This);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDXGIFactory3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -241,9 +129,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -252,173 +138,97 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetPrivateData(
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In, NativeTypeName("UINT")] uint DataSize,
-            [In] void* pData
-        )
+        public int SetPrivateData([NativeTypeName("REFGUID")] Guid* Name, [NativeTypeName("UINT")] uint DataSize, void* pData)
         {
             fixed (IDXGIFactory3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)(
-                    This,
-                    Name,
-                    DataSize,
-                    pData
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)(This, Name, DataSize, pData);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetPrivateDataInterface(
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In] IUnknown* pUnknown = null
-        )
+        public int SetPrivateDataInterface([NativeTypeName("REFGUID")] Guid* Name, IUnknown* pUnknown = null)
         {
             fixed (IDXGIFactory3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(
-                    This,
-                    Name,
-                    pUnknown
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(This, Name, pUnknown);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetPrivateData(
-            [In, NativeTypeName("REFGUID")] Guid* Name,
-            [In, Out, NativeTypeName("UINT")] uint* pDataSize,
-            [Out] void* pData
-        )
+        public int GetPrivateData([NativeTypeName("REFGUID")] Guid* Name, [NativeTypeName("UINT")] uint* pDataSize, void* pData)
         {
             fixed (IDXGIFactory3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)(
-                    This,
-                    Name,
-                    pDataSize,
-                    pData
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)(This, Name, pDataSize, pData);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetParent(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppParent
-        )
+        public int GetParent([NativeTypeName("REFIID")] Guid* riid, void** ppParent)
         {
             fixed (IDXGIFactory3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetParent>(lpVtbl->GetParent)(
-                    This,
-                    riid,
-                    ppParent
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetParent>(lpVtbl->GetParent)(This, riid, ppParent);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int EnumAdapters(
-            [In, NativeTypeName("UINT")] uint Adapter,
-            [Out] IDXGIAdapter** ppAdapter
-        )
+        public int EnumAdapters([NativeTypeName("UINT")] uint Adapter, IDXGIAdapter** ppAdapter)
         {
             fixed (IDXGIFactory3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_EnumAdapters>(lpVtbl->EnumAdapters)(
-                    This,
-                    Adapter,
-                    ppAdapter
-                );
+                return Marshal.GetDelegateForFunctionPointer<_EnumAdapters>(lpVtbl->EnumAdapters)(This, Adapter, ppAdapter);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int MakeWindowAssociation(
-            [In, NativeTypeName("HWND")] IntPtr WindowHandle,
-            [In, NativeTypeName("UINT")] uint Flags
-        )
+        public int MakeWindowAssociation([NativeTypeName("HWND")] IntPtr WindowHandle, [NativeTypeName("UINT")] uint Flags)
         {
             fixed (IDXGIFactory3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_MakeWindowAssociation>(lpVtbl->MakeWindowAssociation)(
-                    This,
-                    WindowHandle,
-                    Flags
-                );
+                return Marshal.GetDelegateForFunctionPointer<_MakeWindowAssociation>(lpVtbl->MakeWindowAssociation)(This, WindowHandle, Flags);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetWindowAssociation(
-            [Out, NativeTypeName("HWND")] IntPtr* pWindowHandle
-        )
+        public int GetWindowAssociation([NativeTypeName("HWND")] IntPtr* pWindowHandle)
         {
             fixed (IDXGIFactory3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetWindowAssociation>(lpVtbl->GetWindowAssociation)(
-                    This,
-                    pWindowHandle
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetWindowAssociation>(lpVtbl->GetWindowAssociation)(This, pWindowHandle);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateSwapChain(
-            [In] IUnknown* pDevice,
-            [In] DXGI_SWAP_CHAIN_DESC* pDesc,
-            [Out] IDXGISwapChain** ppSwapChain
-        )
+        public int CreateSwapChain(IUnknown* pDevice, DXGI_SWAP_CHAIN_DESC* pDesc, IDXGISwapChain** ppSwapChain)
         {
             fixed (IDXGIFactory3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateSwapChain>(lpVtbl->CreateSwapChain)(
-                    This,
-                    pDevice,
-                    pDesc,
-                    ppSwapChain
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateSwapChain>(lpVtbl->CreateSwapChain)(This, pDevice, pDesc, ppSwapChain);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateSoftwareAdapter(
-            [In, NativeTypeName("HMODULE")] IntPtr Module,
-            [Out] IDXGIAdapter** ppAdapter
-        )
+        public int CreateSoftwareAdapter([NativeTypeName("HMODULE")] IntPtr Module, IDXGIAdapter** ppAdapter)
         {
             fixed (IDXGIFactory3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateSoftwareAdapter>(lpVtbl->CreateSoftwareAdapter)(
-                    This,
-                    Module,
-                    ppAdapter
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateSoftwareAdapter>(lpVtbl->CreateSoftwareAdapter)(This, Module, ppAdapter);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int EnumAdapters1(
-            [In, NativeTypeName("UINT")] uint Adapter,
-            [Out] IDXGIAdapter1** ppAdapter
-        )
+        public int EnumAdapters1([NativeTypeName("UINT")] uint Adapter, IDXGIAdapter1** ppAdapter)
         {
             fixed (IDXGIFactory3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_EnumAdapters1>(lpVtbl->EnumAdapters1)(
-                    This,
-                    Adapter,
-                    ppAdapter
-                );
+                return Marshal.GetDelegateForFunctionPointer<_EnumAdapters1>(lpVtbl->EnumAdapters1)(This, Adapter, ppAdapter);
             }
         }
 
@@ -427,9 +237,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_IsCurrent>(lpVtbl->IsCurrent)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_IsCurrent>(lpVtbl->IsCurrent)(This);
             }
         }
 
@@ -438,185 +246,95 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_IsWindowedStereoEnabled>(lpVtbl->IsWindowedStereoEnabled)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_IsWindowedStereoEnabled>(lpVtbl->IsWindowedStereoEnabled)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateSwapChainForHwnd(
-            [In] IUnknown* pDevice,
-            [In, NativeTypeName("HWND")] IntPtr hWnd,
-            [In] DXGI_SWAP_CHAIN_DESC1* pDesc,
-            [In, Optional] DXGI_SWAP_CHAIN_FULLSCREEN_DESC* pFullscreenDesc,
-            [In, Optional] IDXGIOutput* pRestrictToOutput,
-            [Out] IDXGISwapChain1** ppSwapChain
-        )
+        public int CreateSwapChainForHwnd(IUnknown* pDevice, [NativeTypeName("HWND")] IntPtr hWnd, DXGI_SWAP_CHAIN_DESC1* pDesc, [Optional] DXGI_SWAP_CHAIN_FULLSCREEN_DESC* pFullscreenDesc, [Optional] IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
             fixed (IDXGIFactory3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateSwapChainForHwnd>(lpVtbl->CreateSwapChainForHwnd)(
-                    This,
-                    pDevice,
-                    hWnd,
-                    pDesc,
-                    pFullscreenDesc,
-                    pRestrictToOutput,
-                    ppSwapChain
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateSwapChainForHwnd>(lpVtbl->CreateSwapChainForHwnd)(This, pDevice, hWnd, pDesc, pFullscreenDesc, pRestrictToOutput, ppSwapChain);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateSwapChainForCoreWindow(
-            [In] IUnknown* pDevice,
-            [In] IUnknown* pWindow,
-            [In] DXGI_SWAP_CHAIN_DESC1* pDesc,
-            [In, Optional] IDXGIOutput* pRestrictToOutput,
-            [Out] IDXGISwapChain1** ppSwapChain
-        )
+        public int CreateSwapChainForCoreWindow(IUnknown* pDevice, IUnknown* pWindow, DXGI_SWAP_CHAIN_DESC1* pDesc, [Optional] IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
             fixed (IDXGIFactory3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateSwapChainForCoreWindow>(lpVtbl->CreateSwapChainForCoreWindow)(
-                    This,
-                    pDevice,
-                    pWindow,
-                    pDesc,
-                    pRestrictToOutput,
-                    ppSwapChain
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateSwapChainForCoreWindow>(lpVtbl->CreateSwapChainForCoreWindow)(This, pDevice, pWindow, pDesc, pRestrictToOutput, ppSwapChain);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetSharedResourceAdapterLuid(
-            [In, NativeTypeName("HANDLE")] IntPtr hResource,
-            [Out] LUID* pLuid
-        )
+        public int GetSharedResourceAdapterLuid([NativeTypeName("HANDLE")] IntPtr hResource, LUID* pLuid)
         {
             fixed (IDXGIFactory3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetSharedResourceAdapterLuid>(lpVtbl->GetSharedResourceAdapterLuid)(
-                    This,
-                    hResource,
-                    pLuid
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetSharedResourceAdapterLuid>(lpVtbl->GetSharedResourceAdapterLuid)(This, hResource, pLuid);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int RegisterStereoStatusWindow(
-            [In, NativeTypeName("HWND")] IntPtr WindowHandle,
-            [In, NativeTypeName("UINT")] uint wMsg,
-            [Out, NativeTypeName("DWORD")] uint* pdwCookie
-        )
+        public int RegisterStereoStatusWindow([NativeTypeName("HWND")] IntPtr WindowHandle, [NativeTypeName("UINT")] uint wMsg, [NativeTypeName("DWORD")] uint* pdwCookie)
         {
             fixed (IDXGIFactory3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_RegisterStereoStatusWindow>(lpVtbl->RegisterStereoStatusWindow)(
-                    This,
-                    WindowHandle,
-                    wMsg,
-                    pdwCookie
-                );
+                return Marshal.GetDelegateForFunctionPointer<_RegisterStereoStatusWindow>(lpVtbl->RegisterStereoStatusWindow)(This, WindowHandle, wMsg, pdwCookie);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int RegisterStereoStatusEvent(
-            [In, NativeTypeName("HANDLE")] IntPtr hEvent,
-            [Out, NativeTypeName("DWORD")] uint* pdwCookie
-        )
+        public int RegisterStereoStatusEvent([NativeTypeName("HANDLE")] IntPtr hEvent, [NativeTypeName("DWORD")] uint* pdwCookie)
         {
             fixed (IDXGIFactory3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_RegisterStereoStatusEvent>(lpVtbl->RegisterStereoStatusEvent)(
-                    This,
-                    hEvent,
-                    pdwCookie
-                );
+                return Marshal.GetDelegateForFunctionPointer<_RegisterStereoStatusEvent>(lpVtbl->RegisterStereoStatusEvent)(This, hEvent, pdwCookie);
             }
         }
 
-        public void UnregisterStereoStatus(
-            [In, NativeTypeName("DWORD")] uint dwCookie
-        )
+        public void UnregisterStereoStatus([NativeTypeName("DWORD")] uint dwCookie)
         {
             fixed (IDXGIFactory3* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_UnregisterStereoStatus>(lpVtbl->UnregisterStereoStatus)(
-                    This,
-                    dwCookie
-                );
+                Marshal.GetDelegateForFunctionPointer<_UnregisterStereoStatus>(lpVtbl->UnregisterStereoStatus)(This, dwCookie);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int RegisterOcclusionStatusWindow(
-            [In, NativeTypeName("HWND")] IntPtr WindowHandle,
-            [In, NativeTypeName("UINT")] uint wMsg,
-            [Out, NativeTypeName("DWORD")] uint* pdwCookie
-        )
+        public int RegisterOcclusionStatusWindow([NativeTypeName("HWND")] IntPtr WindowHandle, [NativeTypeName("UINT")] uint wMsg, [NativeTypeName("DWORD")] uint* pdwCookie)
         {
             fixed (IDXGIFactory3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_RegisterOcclusionStatusWindow>(lpVtbl->RegisterOcclusionStatusWindow)(
-                    This,
-                    WindowHandle,
-                    wMsg,
-                    pdwCookie
-                );
+                return Marshal.GetDelegateForFunctionPointer<_RegisterOcclusionStatusWindow>(lpVtbl->RegisterOcclusionStatusWindow)(This, WindowHandle, wMsg, pdwCookie);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int RegisterOcclusionStatusEvent(
-            [In, NativeTypeName("HANDLE")] IntPtr hEvent,
-            [Out, NativeTypeName("DWORD")] uint* pdwCookie
-        )
+        public int RegisterOcclusionStatusEvent([NativeTypeName("HANDLE")] IntPtr hEvent, [NativeTypeName("DWORD")] uint* pdwCookie)
         {
             fixed (IDXGIFactory3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_RegisterOcclusionStatusEvent>(lpVtbl->RegisterOcclusionStatusEvent)(
-                    This,
-                    hEvent,
-                    pdwCookie
-                );
+                return Marshal.GetDelegateForFunctionPointer<_RegisterOcclusionStatusEvent>(lpVtbl->RegisterOcclusionStatusEvent)(This, hEvent, pdwCookie);
             }
         }
 
-        public void UnregisterOcclusionStatus(
-            [In, NativeTypeName("UINT")] uint dwCookie
-        )
+        public void UnregisterOcclusionStatus([NativeTypeName("UINT")] uint dwCookie)
         {
             fixed (IDXGIFactory3* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_UnregisterOcclusionStatus>(lpVtbl->UnregisterOcclusionStatus)(
-                    This,
-                    dwCookie
-                );
+                Marshal.GetDelegateForFunctionPointer<_UnregisterOcclusionStatus>(lpVtbl->UnregisterOcclusionStatus)(This, dwCookie);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateSwapChainForComposition(
-            [In] IUnknown* pDevice,
-            [In] DXGI_SWAP_CHAIN_DESC1* pDesc,
-            [In, Optional] IDXGIOutput* pRestrictToOutput,
-            [Out] IDXGISwapChain1** ppSwapChain
-        )
+        public int CreateSwapChainForComposition(IUnknown* pDevice, DXGI_SWAP_CHAIN_DESC1* pDesc, [Optional] IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
             fixed (IDXGIFactory3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateSwapChainForComposition>(lpVtbl->CreateSwapChainForComposition)(
-                    This,
-                    pDevice,
-                    pDesc,
-                    pRestrictToOutput,
-                    ppSwapChain
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateSwapChainForComposition>(lpVtbl->CreateSwapChainForComposition)(This, pDevice, pDesc, pRestrictToOutput, ppSwapChain);
             }
         }
 
@@ -625,9 +343,7 @@ namespace TerraFX.Interop
         {
             fixed (IDXGIFactory3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetCreationFlags>(lpVtbl->GetCreationFlags)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetCreationFlags>(lpVtbl->GetCreationFlags)(This);
             }
         }
 

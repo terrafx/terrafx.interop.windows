@@ -10,10 +10,5 @@ namespace TerraFX.Interop
     /// <summary>Function pointer that gets a property from an effect.</summary>
     [UnmanagedFunctionPointer(CallingConvention.StdCall)]
     [return: NativeTypeName("HRESULT")]
-    public unsafe delegate int PD2D1_PROPERTY_GET_FUNCTION(
-        [In] IUnknown* effect,
-        [Out, Optional, NativeTypeName("BYTE[]")] byte* data,
-        [In, NativeTypeName("UINT32")] uint dataSize,
-        [Out, NativeTypeName("UINT32")] uint* actualSize = null
-    );
+    public unsafe delegate int PD2D1_PROPERTY_GET_FUNCTION(IUnknown* effect, [Optional, NativeTypeName("BYTE[]")] byte* data, [NativeTypeName("UINT32")] uint dataSize, [NativeTypeName("UINT32")] uint* actualSize = null);
 }

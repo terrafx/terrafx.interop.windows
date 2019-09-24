@@ -15,59 +15,30 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ITypeComp* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ITypeComp* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ITypeComp* This
-        );
+        public delegate uint _AddRef(ITypeComp* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ITypeComp* This
-        );
+        public delegate uint _Release(ITypeComp* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Bind(
-            [In] ITypeComp* This,
-            [In, NativeTypeName("LPOLESTR")] char* szName,
-            [In, NativeTypeName("ULONG")] uint lHashVal,
-            [In, NativeTypeName("WORD")] ushort wFlags,
-            [Out] ITypeInfo** ppTInfo,
-            [Out] DESCKIND* pDescKind,
-            [Out] BINDPTR* pBindPtr
-        );
+        public delegate int _Bind(ITypeComp* This, [NativeTypeName("LPOLESTR")] char* szName, [NativeTypeName("ULONG")] uint lHashVal, [NativeTypeName("WORD")] ushort wFlags, ITypeInfo** ppTInfo, DESCKIND* pDescKind, BINDPTR* pBindPtr);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _BindType(
-            [In] ITypeComp* This,
-            [In, NativeTypeName("LPOLESTR")] char* szName,
-            [In, NativeTypeName("ULONG")] uint lHashVal,
-            [Out] ITypeInfo** ppTInfo,
-            [Out] ITypeComp** ppTComp
-        );
+        public delegate int _BindType(ITypeComp* This, [NativeTypeName("LPOLESTR")] char* szName, [NativeTypeName("ULONG")] uint lHashVal, ITypeInfo** ppTInfo, ITypeComp** ppTComp);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ITypeComp* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -76,9 +47,7 @@ namespace TerraFX.Interop
         {
             fixed (ITypeComp* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -87,55 +56,28 @@ namespace TerraFX.Interop
         {
             fixed (ITypeComp* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
-        // [return: NativeTypeName("HRESULT")]
-        // public int Bind(
-        //     [In, NativeTypeName("LPOLESTR")] char* szName,
-        //     [In, NativeTypeName("ULONG")] uint lHashVal,
-        //     [In, NativeTypeName("WORD")] ushort wFlags,
-        //     [Out] ITypeInfo** ppTInfo,
-        //     [Out] DESCKIND* pDescKind,
-        //     [Out] BINDPTR* pBindPtr
-        // )
-        // {
-        //     fixed (ITypeComp* This = &this)
-        //     {
-        //         return Marshal.GetDelegateForFunctionPointer<_Bind>(lpVtbl->Bind)(
-        //             This,
-        //             szName,
-        //             lHashVal,
-        //             wFlags,
-        //             ppTInfo,
-        //             pDescKind,
-        //             pBindPtr
-        //         );
-        //     }
-        // }
+        [return: NativeTypeName("HRESULT")]
+        public int Bind([NativeTypeName("LPOLESTR")] char* szName, [NativeTypeName("ULONG")] uint lHashVal, [NativeTypeName("WORD")] ushort wFlags, ITypeInfo** ppTInfo, DESCKIND* pDescKind, BINDPTR* pBindPtr)
+        {
+            fixed (ITypeComp* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_Bind>(lpVtbl->Bind)(This, szName, lHashVal, wFlags, ppTInfo, pDescKind, pBindPtr);
+            }
+        }
 
-        // [return: NativeTypeName("HRESULT")]
-        // public int BindType(
-        //     [In, NativeTypeName("LPOLESTR")] char* szName,
-        //     [In, NativeTypeName("ULONG")] uint lHashVal,
-        //     [Out] ITypeInfo** ppTInfo,
-        //     [Out] ITypeComp** ppTComp
-        // )
-        // {
-        //     fixed (ITypeComp* This = &this)
-        //     {
-        //         return Marshal.GetDelegateForFunctionPointer<_BindType>(lpVtbl->BindType)(
-        //             This,
-        //             szName,
-        //             lHashVal,
-        //             ppTInfo,
-        //             ppTComp
-        //         );
-        //     }
-        // }
+        [return: NativeTypeName("HRESULT")]
+        public int BindType([NativeTypeName("LPOLESTR")] char* szName, [NativeTypeName("ULONG")] uint lHashVal, ITypeInfo** ppTInfo, ITypeComp** ppTComp
+        )
+        {
+            fixed (ITypeComp* This = &this)
+            {
+                return Marshal.GetDelegateForFunctionPointer<_BindType>(lpVtbl->BindType)(This, szName, lHashVal, ppTInfo, ppTComp);
+            }
+        }
 
         public struct Vtbl
         {

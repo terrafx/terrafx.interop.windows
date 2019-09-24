@@ -15,43 +15,25 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID3D12Debug2* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID3D12Debug2* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID3D12Debug2* This
-        );
+        public delegate uint _AddRef(ID3D12Debug2* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID3D12Debug2* This
-        );
+        public delegate uint _Release(ID3D12Debug2* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetGPUBasedValidationFlags(
-            [In] ID3D12Debug2* This,
-            [In] D3D12_GPU_BASED_VALIDATION_FLAGS Flags
-        );
+        public delegate void _SetGPUBasedValidationFlags(ID3D12Debug2* This, D3D12_GPU_BASED_VALIDATION_FLAGS Flags);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID3D12Debug2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -60,9 +42,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12Debug2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -71,22 +51,15 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12Debug2* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
-        public void SetGPUBasedValidationFlags(
-            [In] D3D12_GPU_BASED_VALIDATION_FLAGS Flags
-        )
+        public void SetGPUBasedValidationFlags(D3D12_GPU_BASED_VALIDATION_FLAGS Flags)
         {
             fixed (ID3D12Debug2* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetGPUBasedValidationFlags>(lpVtbl->SetGPUBasedValidationFlags)(
-                    This,
-                    Flags
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetGPUBasedValidationFlags>(lpVtbl->SetGPUBasedValidationFlags)(This, Flags);
             }
         }
 

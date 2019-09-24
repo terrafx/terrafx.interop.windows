@@ -17,23 +17,15 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IDWriteFontFallbackBuilder* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDWriteFontFallbackBuilder* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IDWriteFontFallbackBuilder* This
-        );
+        public delegate uint _AddRef(IDWriteFontFallbackBuilder* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IDWriteFontFallbackBuilder* This
-        );
+        public delegate uint _Release(IDWriteFontFallbackBuilder* This);
 
         /// <summary>Appends a single mapping to the list. Call this once for each additional mapping.</summary>
         /// <param name="ranges">Unicode ranges that apply to this mapping.</param>
@@ -47,51 +39,28 @@ namespace TerraFX.Interop
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _AddMapping(
-            [In] IDWriteFontFallbackBuilder* This,
-            [In, NativeTypeName("DWRITE_UNICODE_RANGE[]")] DWRITE_UNICODE_RANGE* ranges,
-            [In, NativeTypeName("UINT32")] uint rangesCount,
-            [In, NativeTypeName("WCHAR[]")] char** targetFamilyNames,
-            [In, NativeTypeName("UINT32")] uint targetFamilyNamesCount,
-            [In] IDWriteFontCollection* fontCollection = null,
-            [In, NativeTypeName("WCHAR[]")] char* localeName = null,
-            [In, NativeTypeName("WCHAR[]")] char* baseFamilyName = null,
-            [In, NativeTypeName("FLOAT")] float scale = 1.0f
-        );
+        public delegate int _AddMapping(IDWriteFontFallbackBuilder* This, [NativeTypeName("DWRITE_UNICODE_RANGE[]")] DWRITE_UNICODE_RANGE* ranges, [NativeTypeName("UINT32")] uint rangesCount, [NativeTypeName("WCHAR[]")] char** targetFamilyNames, [NativeTypeName("UINT32")] uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection = null, [NativeTypeName("WCHAR[]")] char* localeName = null, [NativeTypeName("WCHAR[]")] char* baseFamilyName = null, [NativeTypeName("FLOAT")] float scale = 1.0f);
 
         /// <summary>Appends all the mappings from an existing font fallback object.</summary>
         /// <param name="fontFallback">Font fallback to read mappings from.</param>
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _AddMappings(
-            [In] IDWriteFontFallbackBuilder* This,
-            [In] IDWriteFontFallback* fontFallback
-        );
+        public delegate int _AddMappings(IDWriteFontFallbackBuilder* This, IDWriteFontFallback* fontFallback);
 
         /// <summary>Creates the finalized fallback object from the mappings added.</summary>
         /// <param name="fontFallback">Created fallback list.</param>
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateFontFallback(
-            [In] IDWriteFontFallbackBuilder* This,
-            [Out] IDWriteFontFallback** fontFallback
-        );
+        public delegate int _CreateFontFallback(IDWriteFontFallbackBuilder* This, IDWriteFontFallback** fontFallback);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDWriteFontFallbackBuilder* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -100,9 +69,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFallbackBuilder* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -111,65 +78,34 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontFallbackBuilder* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int AddMapping(
-            [In, NativeTypeName("DWRITE_UNICODE_RANGE[]")] DWRITE_UNICODE_RANGE* ranges,
-            [In, NativeTypeName("UINT32")] uint rangesCount,
-            [In, NativeTypeName("WCHAR[]")] char** targetFamilyNames,
-            [In, NativeTypeName("UINT32")] uint targetFamilyNamesCount,
-            [In] IDWriteFontCollection* fontCollection = null,
-            [In, NativeTypeName("WCHAR[]")] char* localeName = null,
-            [In, NativeTypeName("WCHAR[]")] char* baseFamilyName = null,
-            [In, NativeTypeName("FLOAT")] float scale = 1.0f
-        )
+        public int AddMapping([NativeTypeName("DWRITE_UNICODE_RANGE[]")] DWRITE_UNICODE_RANGE* ranges, [NativeTypeName("UINT32")] uint rangesCount, [NativeTypeName("WCHAR[]")] char** targetFamilyNames, [NativeTypeName("UINT32")] uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection = null, [NativeTypeName("WCHAR[]")] char* localeName = null, [NativeTypeName("WCHAR[]")] char* baseFamilyName = null, [NativeTypeName("FLOAT")] float scale = 1.0f)
         {
             fixed (IDWriteFontFallbackBuilder* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddMapping>(lpVtbl->AddMapping)(
-                    This,
-                    ranges,
-                    rangesCount,
-                    targetFamilyNames,
-                    targetFamilyNamesCount,
-                    fontCollection,
-                    localeName,
-                    baseFamilyName,
-                    scale
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddMapping>(lpVtbl->AddMapping)(This, ranges, rangesCount, targetFamilyNames, targetFamilyNamesCount, fontCollection, localeName, baseFamilyName, scale);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int AddMappings(
-            [In] IDWriteFontFallback* fontFallback
-        )
+        public int AddMappings(IDWriteFontFallback* fontFallback)
         {
             fixed (IDWriteFontFallbackBuilder* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddMappings>(lpVtbl->AddMappings)(
-                    This,
-                    fontFallback
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddMappings>(lpVtbl->AddMappings)(This, fontFallback);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateFontFallback(
-            [Out] IDWriteFontFallback** fontFallback
-        )
+        public int CreateFontFallback(IDWriteFontFallback** fontFallback)
         {
             fixed (IDWriteFontFallbackBuilder* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CreateFontFallback>(lpVtbl->CreateFontFallback)(
-                    This,
-                    fontFallback
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CreateFontFallback>(lpVtbl->CreateFontFallback)(This, fontFallback);
             }
         }
 

@@ -15,66 +15,38 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IWICMetadataBlockReader* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICMetadataBlockReader* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IWICMetadataBlockReader* This
-        );
+        public delegate uint _AddRef(IWICMetadataBlockReader* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IWICMetadataBlockReader* This
-        );
+        public delegate uint _Release(IWICMetadataBlockReader* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetContainerFormat(
-            [In] IWICMetadataBlockReader* This,
-            [Out, NativeTypeName("GUID")] Guid* pguidContainerFormat
-        );
+        public delegate int _GetContainerFormat(IWICMetadataBlockReader* This, [NativeTypeName("GUID")] Guid* pguidContainerFormat);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetCount(
-            [In] IWICMetadataBlockReader* This,
-            [Out, NativeTypeName("UINT")] uint* pcCount
-        );
+        public delegate int _GetCount(IWICMetadataBlockReader* This, [NativeTypeName("UINT")] uint* pcCount);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetReaderByIndex(
-            [In] IWICMetadataBlockReader* This,
-            [In, NativeTypeName("UINT")] uint nIndex,
-            [Out] IWICMetadataReader** ppIMetadataReader = null
-        );
+        public delegate int _GetReaderByIndex(IWICMetadataBlockReader* This, [NativeTypeName("UINT")] uint nIndex, IWICMetadataReader** ppIMetadataReader = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetEnumerator(
-            [In] IWICMetadataBlockReader* This,
-            [Out] IEnumUnknown** ppIEnumMetadata = null
-        );
+        public delegate int _GetEnumerator(IWICMetadataBlockReader* This, IEnumUnknown** ppIEnumMetadata = null);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICMetadataBlockReader* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -83,9 +55,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataBlockReader* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -94,67 +64,43 @@ namespace TerraFX.Interop
         {
             fixed (IWICMetadataBlockReader* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetContainerFormat(
-            [Out, NativeTypeName("GUID")] Guid* pguidContainerFormat
-        )
+        public int GetContainerFormat([NativeTypeName("GUID")] Guid* pguidContainerFormat)
         {
             fixed (IWICMetadataBlockReader* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetContainerFormat>(lpVtbl->GetContainerFormat)(
-                    This,
-                    pguidContainerFormat
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetContainerFormat>(lpVtbl->GetContainerFormat)(This, pguidContainerFormat);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetCount(
-            [Out, NativeTypeName("UINT")] uint* pcCount
-        )
+        public int GetCount([NativeTypeName("UINT")] uint* pcCount)
         {
             fixed (IWICMetadataBlockReader* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetCount>(lpVtbl->GetCount)(
-                    This,
-                    pcCount
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetCount>(lpVtbl->GetCount)(This, pcCount);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetReaderByIndex(
-            [In, NativeTypeName("UINT")] uint nIndex,
-            [Out] IWICMetadataReader** ppIMetadataReader = null
-        )
+        public int GetReaderByIndex([NativeTypeName("UINT")] uint nIndex, IWICMetadataReader** ppIMetadataReader = null)
         {
             fixed (IWICMetadataBlockReader* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetReaderByIndex>(lpVtbl->GetReaderByIndex)(
-                    This,
-                    nIndex,
-                    ppIMetadataReader
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetReaderByIndex>(lpVtbl->GetReaderByIndex)(This, nIndex, ppIMetadataReader);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetEnumerator(
-            [Out] IEnumUnknown** ppIEnumMetadata = null
-        )
+        public int GetEnumerator(IEnumUnknown** ppIEnumMetadata = null)
         {
             fixed (IWICMetadataBlockReader* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetEnumerator>(lpVtbl->GetEnumerator)(
-                    This,
-                    ppIEnumMetadata
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetEnumerator>(lpVtbl->GetEnumerator)(This, ppIEnumMetadata);
             }
         }
 

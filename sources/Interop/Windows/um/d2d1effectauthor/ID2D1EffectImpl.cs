@@ -16,62 +16,37 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID2D1EffectImpl* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1EffectImpl* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID2D1EffectImpl* This
-        );
+        public delegate uint _AddRef(ID2D1EffectImpl* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID2D1EffectImpl* This
-        );
+        public delegate uint _Release(ID2D1EffectImpl* This);
 
         /// <summary>Initialize the effect with a context and a transform graph. The effect must populate the transform graph with a topology and can update it later.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Initialize(
-            [In] ID2D1EffectImpl* This,
-            [In] ID2D1EffectContext* effectContext,
-            [In] ID2D1TransformGraph* transformGraph
-        );
+        public delegate int _Initialize(ID2D1EffectImpl* This, ID2D1EffectContext* effectContext, ID2D1TransformGraph* transformGraph);
 
         /// <summary>Initialize the effect with a context and a transform graph. The effect must populate the transform graph with a topology and can update it later.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _PrepareForRender(
-            [In] ID2D1EffectImpl* This,
-            [In] D2D1_CHANGE_TYPE changeType
-        );
+        public delegate int _PrepareForRender(ID2D1EffectImpl* This, D2D1_CHANGE_TYPE changeType);
 
         /// <summary>Sets a new transform graph to the effect.  This happens when the number of inputs to the effect changes, if the effect support a variable number of inputs.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetGraph(
-            [In] ID2D1EffectImpl* This,
-            [In] ID2D1TransformGraph* transformGraph
-        );
+        public delegate int _SetGraph(ID2D1EffectImpl* This, ID2D1TransformGraph* transformGraph);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1EffectImpl* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -80,9 +55,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectImpl* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -91,53 +64,34 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1EffectImpl* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Initialize(
-            [In] ID2D1EffectContext* effectContext,
-            [In] ID2D1TransformGraph* transformGraph
-        )
+        public int Initialize(ID2D1EffectContext* effectContext, ID2D1TransformGraph* transformGraph)
         {
             fixed (ID2D1EffectImpl* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Initialize>(lpVtbl->Initialize)(
-                    This,
-                    effectContext,
-                    transformGraph
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Initialize>(lpVtbl->Initialize)(This, effectContext, transformGraph);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int PrepareForRender(
-            [In] D2D1_CHANGE_TYPE changeType
-        )
+        public int PrepareForRender(D2D1_CHANGE_TYPE changeType)
         {
             fixed (ID2D1EffectImpl* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_PrepareForRender>(lpVtbl->PrepareForRender)(
-                    This,
-                    changeType
-                );
+                return Marshal.GetDelegateForFunctionPointer<_PrepareForRender>(lpVtbl->PrepareForRender)(This, changeType);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetGraph(
-            [In] ID2D1TransformGraph* transformGraph
-        )
+        public int SetGraph(ID2D1TransformGraph* transformGraph)
         {
             fixed (ID2D1EffectImpl* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetGraph>(lpVtbl->SetGraph)(
-                    This,
-                    transformGraph
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetGraph>(lpVtbl->SetGraph)(This, transformGraph);
             }
         }
 

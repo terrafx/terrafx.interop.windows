@@ -16,59 +16,36 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID2D1CommandList* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1CommandList* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID2D1CommandList* This
-        );
+        public delegate uint _AddRef(ID2D1CommandList* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID2D1CommandList* This
-        );
+        public delegate uint _Release(ID2D1CommandList* This);
 
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetFactory(
-            [In] ID2D1CommandList* This,
-            [Out] ID2D1Factory** factory
-        );
+        public delegate void _GetFactory(ID2D1CommandList* This, ID2D1Factory** factory);
 
         /// <summary>Play the command list into a caller-supplied sink interface.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Stream(
-            [In] ID2D1CommandList* This,
-            [In] ID2D1CommandSink* sink
-        );
+        public delegate int _Stream(ID2D1CommandList* This, ID2D1CommandSink* sink);
 
         /// <summary>Marks the command list as ready for use.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Close(
-            [In] ID2D1CommandList* This
-        );
+        public delegate int _Close(ID2D1CommandList* This);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1CommandList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -77,9 +54,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1CommandList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -88,36 +63,24 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1CommandList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
-        public void GetFactory(
-            [Out] ID2D1Factory** factory
-        )
+        public void GetFactory(ID2D1Factory** factory)
         {
             fixed (ID2D1CommandList* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
-                    This,
-                    factory
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(This, factory);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Stream(
-            [In] ID2D1CommandSink* sink
-        )
+        public int Stream(ID2D1CommandSink* sink)
         {
             fixed (ID2D1CommandList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Stream>(lpVtbl->Stream)(
-                    This,
-                    sink
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Stream>(lpVtbl->Stream)(This, sink);
             }
         }
 
@@ -126,9 +89,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1CommandList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Close>(lpVtbl->Close)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Close>(lpVtbl->Close)(This);
             }
         }
 

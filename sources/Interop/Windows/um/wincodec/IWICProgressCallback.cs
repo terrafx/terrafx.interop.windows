@@ -15,46 +15,26 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IWICProgressCallback* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICProgressCallback* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IWICProgressCallback* This
-        );
+        public delegate uint _AddRef(IWICProgressCallback* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IWICProgressCallback* This
-        );
+        public delegate uint _Release(IWICProgressCallback* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Notify(
-            [In] IWICProgressCallback* This,
-            [In, NativeTypeName("ULONG")] uint uFrameNum,
-            [In] WICProgressOperation operation,
-            [In] double dblProgress
-        );
+        public delegate int _Notify(IWICProgressCallback* This, [NativeTypeName("ULONG")] uint uFrameNum, WICProgressOperation operation, double dblProgress);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICProgressCallback* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -63,9 +43,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICProgressCallback* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -74,27 +52,16 @@ namespace TerraFX.Interop
         {
             fixed (IWICProgressCallback* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Notify(
-            [In, NativeTypeName("ULONG")] uint uFrameNum,
-            [In] WICProgressOperation operation,
-            [In] double dblProgress
-        )
+        public int Notify([NativeTypeName("ULONG")] uint uFrameNum, WICProgressOperation operation, double dblProgress)
         {
             fixed (IWICProgressCallback* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Notify>(lpVtbl->Notify)(
-                    This,
-                    uFrameNum,
-                    operation,
-                    dblProgress
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Notify>(lpVtbl->Notify)(This, uFrameNum, operation, dblProgress);
             }
         }
 

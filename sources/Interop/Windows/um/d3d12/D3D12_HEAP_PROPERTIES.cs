@@ -69,12 +69,6 @@ namespace TerraFX.Interop
             return (obj is D3D12_HEAP_PROPERTIES other) && (this == other);
         }
 
-        public override int GetHashCode() => HashCode.Combine(
-            Type,
-            CPUPageProperty,
-            MemoryPoolPreference,
-            CreationNodeMask,
-            VisibleNodeMask
-        );
+        public override int GetHashCode() => HashCode.Combine(Type, CPUPageProperty, MemoryPoolPreference, CreationNodeMask, VisibleNodeMask);
     }
 }

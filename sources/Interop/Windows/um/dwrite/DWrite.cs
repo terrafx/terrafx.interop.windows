@@ -82,11 +82,7 @@ namespace TerraFX.Interop
         /// <remarks>Obtains DirectWrite factory object that is used for subsequent creation of individual DirectWrite classes. DirectWrite factory contains internal state such as font loader registration and cached font data. In most cases it is recommended to use the shared factory object, because it allows multiple components that use DirectWrite to share internal DirectWrite state and reduce memory usage. However, there are cases when it is desirable to reduce the impact of a component, such as a plug-in from an untrusted source, on the rest of the process by sandboxing and isolating it from the rest of the process components. In such cases, it is recommended to use an isolated factory for the sandboxed component.</remarks>
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "DWriteCreateFactory", ExactSpelling = true, PreserveSig = true, SetLastError = false, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int DWriteCreateFactory(
-            [In] DWRITE_FACTORY_TYPE factoryType,
-            [In, NativeTypeName("REFIID")] Guid* iid,
-            [Out] IUnknown** factory
-        );
+        public static extern int DWriteCreateFactory(DWRITE_FACTORY_TYPE factoryType, [NativeTypeName("REFIID")] Guid* iid, IUnknown** factory);
 
         public static uint DWRITE_MAKE_OPENTYPE_TAG(byte a, byte b, byte c, byte d)
         {

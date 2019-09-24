@@ -15,113 +15,62 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IWICPalette* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICPalette* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IWICPalette* This
-        );
+        public delegate uint _AddRef(IWICPalette* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IWICPalette* This
-        );
+        public delegate uint _Release(IWICPalette* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _InitializePredefined(
-            [In] IWICPalette* This,
-            [In] WICBitmapPaletteType ePaletteType,
-            [In, NativeTypeName("BOOL")] int fAddTransparentColor
-        );
+        public delegate int _InitializePredefined(IWICPalette* This, WICBitmapPaletteType ePaletteType, [NativeTypeName("BOOL")] int fAddTransparentColor);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _InitializeCustom(
-            [In] IWICPalette* This,
-            [In, NativeTypeName("WICColor[]")] uint* pColors,
-            [In, NativeTypeName("UINT")] uint cCount
-        );
+        public delegate int _InitializeCustom(IWICPalette* This, [NativeTypeName("WICColor[]")] uint* pColors, [NativeTypeName("UINT")] uint cCount);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _InitializeFromBitmap(
-            [In] IWICPalette* This,
-            [In, Optional] IWICBitmapSource* pISurface,
-            [In, NativeTypeName("UINT")] uint cCount,
-            [In, NativeTypeName("BOOL")] int fAddTransparentColor
-        );
+        public delegate int _InitializeFromBitmap(IWICPalette* This, [Optional] IWICBitmapSource* pISurface, [NativeTypeName("UINT")] uint cCount, [NativeTypeName("BOOL")] int fAddTransparentColor);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _InitializeFromPalette(
-            [In] IWICPalette* This,
-            [In] IWICPalette* pIPalette = null
-        );
+        public delegate int _InitializeFromPalette(IWICPalette* This, IWICPalette* pIPalette = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int __GetType(
-            [In] IWICPalette* This,
-            [Out] WICBitmapPaletteType* pePaletteType
-        );
+        public delegate int __GetType(IWICPalette* This, WICBitmapPaletteType* pePaletteType);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetColorCount(
-            [In] IWICPalette* This,
-            [Out, NativeTypeName("UINT")] uint* pcCount
-        );
+        public delegate int _GetColorCount(IWICPalette* This, [NativeTypeName("UINT")] uint* pcCount);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetColors(
-            [In] IWICPalette* This,
-            [In, NativeTypeName("UINT")] uint cCount,
-            [Out, NativeTypeName("WICColor[]")] uint* pColors,
-            [Out, NativeTypeName("UINT")] uint* pcActualColors
-        );
+        public delegate int _GetColors(IWICPalette* This, [NativeTypeName("UINT")] uint cCount, [NativeTypeName("WICColor[]")] uint* pColors, [NativeTypeName("UINT")] uint* pcActualColors);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _IsBlackWhite(
-            [In] IWICPalette* This,
-            [Out, NativeTypeName("BOOL")] int* pfIsBlackWhite
-        );
+        public delegate int _IsBlackWhite(IWICPalette* This, [NativeTypeName("BOOL")] int* pfIsBlackWhite);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _IsGrayscale(
-            [In] IWICPalette* This,
-            [Out, NativeTypeName("BOOL")] int* pfIsGrayscale
-        );
+        public delegate int _IsGrayscale(IWICPalette* This, [NativeTypeName("BOOL")] int* pfIsGrayscale);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _HasAlpha(
-            [In] IWICPalette* This,
-            [Out, NativeTypeName("BOOL")] int* pfHasAlpha
-        );
+        public delegate int _HasAlpha(IWICPalette* This, [NativeTypeName("BOOL")] int* pfHasAlpha);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICPalette* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -130,9 +79,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPalette* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -141,161 +88,97 @@ namespace TerraFX.Interop
         {
             fixed (IWICPalette* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int InitializePredefined(
-            [In] WICBitmapPaletteType ePaletteType,
-            [In, NativeTypeName("BOOL")] int fAddTransparentColor
-        )
+        public int InitializePredefined(WICBitmapPaletteType ePaletteType, [NativeTypeName("BOOL")] int fAddTransparentColor)
         {
             fixed (IWICPalette* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_InitializePredefined>(lpVtbl->InitializePredefined)(
-                    This,
-                    ePaletteType,
-                    fAddTransparentColor
-                );
+                return Marshal.GetDelegateForFunctionPointer<_InitializePredefined>(lpVtbl->InitializePredefined)(This, ePaletteType, fAddTransparentColor);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int InitializeCustom(
-            [In, NativeTypeName("WICColor[]")] uint* pColors,
-            [In, NativeTypeName("UINT")] uint cCount
-        )
+        public int InitializeCustom([NativeTypeName("WICColor[]")] uint* pColors, [NativeTypeName("UINT")] uint cCount)
         {
             fixed (IWICPalette* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_InitializeCustom>(lpVtbl->InitializeCustom)(
-                    This,
-                    pColors,
-                    cCount
-                );
+                return Marshal.GetDelegateForFunctionPointer<_InitializeCustom>(lpVtbl->InitializeCustom)(This, pColors, cCount);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int InitializeFromBitmap(
-            [In, Optional] IWICBitmapSource* pISurface,
-            [In, NativeTypeName("UINT")] uint cCount,
-            [In, NativeTypeName("BOOL")] int fAddTransparentColor
-        )
+        public int InitializeFromBitmap([Optional] IWICBitmapSource* pISurface, [NativeTypeName("UINT")] uint cCount, [NativeTypeName("BOOL")] int fAddTransparentColor)
         {
             fixed (IWICPalette* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_InitializeFromBitmap>(lpVtbl->InitializeFromBitmap)(
-                    This,
-                    pISurface,
-                    cCount,
-                    fAddTransparentColor
-                );
+                return Marshal.GetDelegateForFunctionPointer<_InitializeFromBitmap>(lpVtbl->InitializeFromBitmap)(This, pISurface, cCount, fAddTransparentColor);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int InitializeFromPalette(
-            [In] IWICPalette* pIPalette = null
-        )
+        public int InitializeFromPalette(IWICPalette* pIPalette = null)
         {
             fixed (IWICPalette* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_InitializeFromPalette>(lpVtbl->InitializeFromPalette)(
-                    This,
-                    pIPalette
-                );
+                return Marshal.GetDelegateForFunctionPointer<_InitializeFromPalette>(lpVtbl->InitializeFromPalette)(This, pIPalette);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int _GetType(
-            [Out] WICBitmapPaletteType* pePaletteType
-        )
+        public int _GetType(WICBitmapPaletteType* pePaletteType)
         {
             fixed (IWICPalette* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<__GetType>(lpVtbl->_GetType)(
-                    This,
-                    pePaletteType
-                );
+                return Marshal.GetDelegateForFunctionPointer<__GetType>(lpVtbl->_GetType)(This, pePaletteType);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetColorCount(
-            [Out, NativeTypeName("UINT")] uint* pcCount
-        )
+        public int GetColorCount([NativeTypeName("UINT")] uint* pcCount)
         {
             fixed (IWICPalette* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetColorCount>(lpVtbl->GetColorCount)(
-                    This,
-                    pcCount
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetColorCount>(lpVtbl->GetColorCount)(This, pcCount);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetColors(
-            [In, NativeTypeName("UINT")] uint cCount,
-            [Out, NativeTypeName("WICColor[]")] uint* pColors,
-            [Out, NativeTypeName("UINT")] uint* pcActualColors
-        )
+        public int GetColors([NativeTypeName("UINT")] uint cCount, [NativeTypeName("WICColor[]")] uint* pColors, [NativeTypeName("UINT")] uint* pcActualColors)
         {
             fixed (IWICPalette* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetColors>(lpVtbl->GetColors)(
-                    This,
-                    cCount,
-                    pColors,
-                    pcActualColors
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetColors>(lpVtbl->GetColors)(This, cCount, pColors, pcActualColors);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int IsBlackWhite(
-            [Out, NativeTypeName("BOOL")] int* pfIsBlackWhite
-        )
+        public int IsBlackWhite([NativeTypeName("BOOL")] int* pfIsBlackWhite)
         {
             fixed (IWICPalette* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_IsBlackWhite>(lpVtbl->IsBlackWhite)(
-                    This,
-                    pfIsBlackWhite
-                );
+                return Marshal.GetDelegateForFunctionPointer<_IsBlackWhite>(lpVtbl->IsBlackWhite)(This, pfIsBlackWhite);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int IsGrayscale(
-            [Out, NativeTypeName("BOOL")] int* pfIsGrayscale
-        )
+        public int IsGrayscale([NativeTypeName("BOOL")] int* pfIsGrayscale)
         {
             fixed (IWICPalette* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_IsGrayscale>(lpVtbl->IsGrayscale)(
-                    This,
-                    pfIsGrayscale
-                );
+                return Marshal.GetDelegateForFunctionPointer<_IsGrayscale>(lpVtbl->IsGrayscale)(This, pfIsGrayscale);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int HasAlpha(
-            [Out, NativeTypeName("BOOL")] int* pfHasAlpha
-        )
+        public int HasAlpha([NativeTypeName("BOOL")] int* pfHasAlpha)
         {
             fixed (IWICPalette* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_HasAlpha>(lpVtbl->HasAlpha)(
-                    This,
-                    pfHasAlpha
-                );
+                return Marshal.GetDelegateForFunctionPointer<_HasAlpha>(lpVtbl->HasAlpha)(This, pfHasAlpha);
             }
         }
 

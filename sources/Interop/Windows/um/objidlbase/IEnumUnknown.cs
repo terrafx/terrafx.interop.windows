@@ -15,66 +15,38 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IEnumUnknown* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IEnumUnknown* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IEnumUnknown* This
-        );
+        public delegate uint _AddRef(IEnumUnknown* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IEnumUnknown* This
-        );
+        public delegate uint _Release(IEnumUnknown* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Next(
-            [In] IEnumUnknown* This,
-            [In, NativeTypeName("ULONG")] uint celt,
-            [Out] IUnknown** rgelt,
-            [Out, NativeTypeName("ULONG")] uint* pceltFetched = null
-        );
+        public delegate int _Next(IEnumUnknown* This, [NativeTypeName("ULONG")] uint celt, IUnknown** rgelt, [NativeTypeName("ULONG")] uint* pceltFetched = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Skip(
-            [In] IEnumUnknown* This,
-            [In, NativeTypeName("ULONG")] uint celt
-        );
+        public delegate int _Skip(IEnumUnknown* This, [NativeTypeName("ULONG")] uint celt);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Reset(
-            [In] IEnumUnknown* This
-        );
+        public delegate int _Reset(IEnumUnknown* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Clone(
-            [In] IEnumUnknown* This,
-            [Out] IEnumUnknown** ppenum = null
-        );
+        public delegate int _Clone(IEnumUnknown* This, IEnumUnknown** ppenum = null);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IEnumUnknown* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -83,9 +55,7 @@ namespace TerraFX.Interop
         {
             fixed (IEnumUnknown* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -94,41 +64,25 @@ namespace TerraFX.Interop
         {
             fixed (IEnumUnknown* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Next(
-            [In, NativeTypeName("ULONG")] uint celt,
-            [Out] IUnknown** rgelt,
-            [Out, NativeTypeName("ULONG")] uint* pceltFetched = null
-        )
+        public int Next([NativeTypeName("ULONG")] uint celt, IUnknown** rgelt, [NativeTypeName("ULONG")] uint* pceltFetched = null)
         {
             fixed (IEnumUnknown* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Next>(lpVtbl->Next)(
-                    This,
-                    celt,
-                    rgelt,
-                    pceltFetched
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Next>(lpVtbl->Next)(This, celt, rgelt, pceltFetched);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Skip(
-            [In, NativeTypeName("ULONG")] uint celt
-        )
+        public int Skip([NativeTypeName("ULONG")] uint celt)
         {
             fixed (IEnumUnknown* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Skip>(lpVtbl->Skip)(
-                    This,
-                    celt
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Skip>(lpVtbl->Skip)(This, celt);
             }
         }
 
@@ -137,23 +91,16 @@ namespace TerraFX.Interop
         {
             fixed (IEnumUnknown* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Reset>(lpVtbl->Reset)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Reset>(lpVtbl->Reset)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Clone(
-            [Out] IEnumUnknown** ppenum = null
-        )
+        public int Clone(IEnumUnknown** ppenum = null)
         {
             fixed (IEnumUnknown* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Clone>(lpVtbl->Clone)(
-                    This,
-                    ppenum
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Clone>(lpVtbl->Clone)(This, ppenum);
             }
         }
 

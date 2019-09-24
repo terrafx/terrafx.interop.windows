@@ -16,104 +16,60 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID2D1LinearGradientBrush* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1LinearGradientBrush* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID2D1LinearGradientBrush* This
-        );
+        public delegate uint _AddRef(ID2D1LinearGradientBrush* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID2D1LinearGradientBrush* This
-        );
+        public delegate uint _Release(ID2D1LinearGradientBrush* This);
 
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetFactory(
-            [In] ID2D1LinearGradientBrush* This,
-            [Out] ID2D1Factory** factory
-        );
+        public delegate void _GetFactory(ID2D1LinearGradientBrush* This, ID2D1Factory** factory);
 
         /// <summary>Sets the opacity for when the brush is drawn over the entire fill of the brush.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetOpacity(
-            [In] ID2D1LinearGradientBrush* This,
-            [In, NativeTypeName("FLOAT")] float opacity
-        );
+        public delegate void _SetOpacity(ID2D1LinearGradientBrush* This, [NativeTypeName("FLOAT")] float opacity);
 
         /// <summary>Sets the transform that applies to everything drawn by the brush.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetTransform(
-            [In] ID2D1LinearGradientBrush* This,
-            [In, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform
-        );
+        public delegate void _SetTransform(ID2D1LinearGradientBrush* This, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public delegate float _GetOpacity(
-            [In] ID2D1LinearGradientBrush* This
-        );
+        public delegate float _GetOpacity(ID2D1LinearGradientBrush* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetTransform(
-            [In] ID2D1LinearGradientBrush* This,
-            [Out, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform
-        );
+        public delegate void _GetTransform(ID2D1LinearGradientBrush* This, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetStartPoint(
-            [In] ID2D1LinearGradientBrush* This,
-            [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F startPoint
-        );
+        public delegate void _SetStartPoint(ID2D1LinearGradientBrush* This, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F startPoint);
 
         /// <summary>Sets the end point of the gradient in local coordinate space. This is not
         /// influenced by the geometry being filled.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetEndPoint(
-            [In] ID2D1LinearGradientBrush* This,
-            [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F endPoint
-        );
+        public delegate void _SetEndPoint(ID2D1LinearGradientBrush* This, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F endPoint);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("D2D1_POINT_2F")]
-        public delegate D2D_POINT_2F* _GetStartPoint(
-            [In] ID2D1LinearGradientBrush* This,
-            [Out] D2D_POINT_2F* _result
-        );
+        public delegate D2D_POINT_2F* _GetStartPoint(ID2D1LinearGradientBrush* This, D2D_POINT_2F* _result);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("D2D1_POINT_2F")]
-        public delegate D2D_POINT_2F* _GetEndPoint(
-            [In] ID2D1LinearGradientBrush* This,
-            [Out] D2D_POINT_2F* _result
-        );
+        public delegate D2D_POINT_2F* _GetEndPoint(ID2D1LinearGradientBrush* This, D2D_POINT_2F* _result);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetGradientStopCollection(
-            [In] ID2D1LinearGradientBrush* This,
-            [Out] ID2D1GradientStopCollection** gradientStopCollection
-        );
+        public delegate void _GetGradientStopCollection(ID2D1LinearGradientBrush* This, ID2D1GradientStopCollection** gradientStopCollection);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1LinearGradientBrush* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -122,9 +78,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1LinearGradientBrush* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -133,48 +87,31 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1LinearGradientBrush* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
-        public void GetFactory(
-            [Out] ID2D1Factory** factory
-        )
+        public void GetFactory(ID2D1Factory** factory)
         {
             fixed (ID2D1LinearGradientBrush* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
-                    This,
-                    factory
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(This, factory);
             }
         }
 
-        public void SetOpacity(
-            [In, NativeTypeName("FLOAT")] float opacity
-        )
+        public void SetOpacity([NativeTypeName("FLOAT")] float opacity)
         {
             fixed (ID2D1LinearGradientBrush* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetOpacity>(lpVtbl->SetOpacity)(
-                    This,
-                    opacity
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetOpacity>(lpVtbl->SetOpacity)(This, opacity);
             }
         }
 
-        public void SetTransform(
-            [In, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform
-        )
+        public void SetTransform([NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform)
         {
             fixed (ID2D1LinearGradientBrush* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetTransform>(lpVtbl->SetTransform)(
-                    This,
-                    transform
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetTransform>(lpVtbl->SetTransform)(This, transform);
             }
         }
 
@@ -183,48 +120,31 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1LinearGradientBrush* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetOpacity>(lpVtbl->GetOpacity)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetOpacity>(lpVtbl->GetOpacity)(This);
             }
         }
 
-        public void GetTransform(
-            [Out, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform
-        )
+        public void GetTransform([NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform)
         {
             fixed (ID2D1LinearGradientBrush* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetTransform>(lpVtbl->GetTransform)(
-                    This,
-                    transform
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetTransform>(lpVtbl->GetTransform)(This, transform);
             }
         }
 
-        public void SetStartPoint(
-            [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F startPoint
-        )
+        public void SetStartPoint([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F startPoint)
         {
             fixed (ID2D1LinearGradientBrush* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetStartPoint>(lpVtbl->SetStartPoint)(
-                    This,
-                    startPoint
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetStartPoint>(lpVtbl->SetStartPoint)(This, startPoint);
             }
         }
 
-        public void SetEndPoint(
-            [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F endPoint
-        )
+        public void SetEndPoint([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F endPoint)
         {
             fixed (ID2D1LinearGradientBrush* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetEndPoint>(lpVtbl->SetEndPoint)(
-                    This,
-                    endPoint
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetEndPoint>(lpVtbl->SetEndPoint)(This, endPoint);
             }
         }
 
@@ -234,10 +154,7 @@ namespace TerraFX.Interop
             fixed (ID2D1LinearGradientBrush* This = &this)
             {
                 D2D_POINT_2F result;
-                return *Marshal.GetDelegateForFunctionPointer<_GetStartPoint>(lpVtbl->GetStartPoint)(
-                    This,
-                    &result
-                );
+                return *Marshal.GetDelegateForFunctionPointer<_GetStartPoint>(lpVtbl->GetStartPoint)(This, &result);
             }
         }
 
@@ -247,23 +164,15 @@ namespace TerraFX.Interop
             fixed (ID2D1LinearGradientBrush* This = &this)
             {
                 D2D_POINT_2F result;
-                return *Marshal.GetDelegateForFunctionPointer<_GetEndPoint>(lpVtbl->GetEndPoint)(
-                    This,
-                    &result
-                );
+                return *Marshal.GetDelegateForFunctionPointer<_GetEndPoint>(lpVtbl->GetEndPoint)(This, &result);
             }
         }
 
-        public void GetGradientStopCollection(
-            [Out] ID2D1GradientStopCollection** gradientStopCollection
-        )
+        public void GetGradientStopCollection(ID2D1GradientStopCollection** gradientStopCollection)
         {
             fixed (ID2D1LinearGradientBrush* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetGradientStopCollection>(lpVtbl->GetGradientStopCollection)(
-                    This,
-                    gradientStopCollection
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetGradientStopCollection>(lpVtbl->GetGradientStopCollection)(This, gradientStopCollection);
             }
         }
 

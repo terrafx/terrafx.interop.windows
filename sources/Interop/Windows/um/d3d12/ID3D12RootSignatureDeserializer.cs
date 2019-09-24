@@ -15,42 +15,25 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID3D12RootSignatureDeserializer* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID3D12RootSignatureDeserializer* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID3D12RootSignatureDeserializer* This
-        );
+        public delegate uint _AddRef(ID3D12RootSignatureDeserializer* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID3D12RootSignatureDeserializer* This
-        );
+        public delegate uint _Release(ID3D12RootSignatureDeserializer* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate D3D12_ROOT_SIGNATURE_DESC* _GetRootSignatureDesc(
-            [In] ID3D12RootSignatureDeserializer* This
-        );
+        public delegate D3D12_ROOT_SIGNATURE_DESC* _GetRootSignatureDesc(ID3D12RootSignatureDeserializer* This);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID3D12RootSignatureDeserializer* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -59,9 +42,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12RootSignatureDeserializer* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -70,9 +51,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12RootSignatureDeserializer* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
@@ -80,9 +59,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12RootSignatureDeserializer* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetRootSignatureDesc>(lpVtbl->GetRootSignatureDesc)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetRootSignatureDesc>(lpVtbl->GetRootSignatureDesc)(This);
             }
         }
 

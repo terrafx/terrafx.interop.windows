@@ -16,40 +16,27 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IDWriteFontList* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDWriteFontList* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IDWriteFontList* This
-        );
+        public delegate uint _AddRef(IDWriteFontList* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IDWriteFontList* This
-        );
+        public delegate uint _Release(IDWriteFontList* This);
 
         /// <summary>Gets the font collection that contains the fonts.</summary>
         /// <param name="fontCollection">Receives a pointer to the font collection object.</param>
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFontCollection(
-            [In] IDWriteFontList* This,
-            [Out] IDWriteFontCollection** fontCollection
-        );
+        public delegate int _GetFontCollection(IDWriteFontList* This, IDWriteFontCollection** fontCollection);
 
         /// <summary>Gets the number of fonts in the font list.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public delegate uint _GetFontCount(
-            [In] IDWriteFontList* This
-        );
+        public delegate uint _GetFontCount(IDWriteFontList* This);
 
         /// <summary>Gets a font given its zero-based index.</summary>
         /// <param name="index">Zero-based index of the font in the font list.</param>
@@ -57,25 +44,14 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFont(
-            [In] IDWriteFontList* This,
-            [In, NativeTypeName("UINT32")] uint index,
-            [Out] IDWriteFont** font
-        );
+        public delegate int _GetFont(IDWriteFontList* This, [NativeTypeName("UINT32")] uint index, IDWriteFont** font);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDWriteFontList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -84,9 +60,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -95,23 +69,16 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFontCollection(
-            [Out] IDWriteFontCollection** fontCollection
-        )
+        public int GetFontCollection(IDWriteFontCollection** fontCollection)
         {
             fixed (IDWriteFontList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontCollection>(lpVtbl->GetFontCollection)(
-                    This,
-                    fontCollection
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetFontCollection>(lpVtbl->GetFontCollection)(This, fontCollection);
             }
         }
 
@@ -120,25 +87,16 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteFontList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontCount>(lpVtbl->GetFontCount)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetFontCount>(lpVtbl->GetFontCount)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFont(
-            [In, NativeTypeName("UINT32")] uint index,
-            [Out] IDWriteFont** font
-        )
+        public int GetFont([NativeTypeName("UINT32")] uint index, IDWriteFont** font)
         {
             fixed (IDWriteFontList* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetFont>(lpVtbl->GetFont)(
-                    This,
-                    index,
-                    font
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetFont>(lpVtbl->GetFont)(This, index, font);
             }
         }
 

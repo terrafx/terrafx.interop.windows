@@ -16,40 +16,27 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IDWriteTypography* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDWriteTypography* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IDWriteTypography* This
-        );
+        public delegate uint _AddRef(IDWriteTypography* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IDWriteTypography* This
-        );
+        public delegate uint _Release(IDWriteTypography* This);
 
         /// <summary>Add font feature.</summary>
         /// <param name="fontFeature">The font feature to add.</param>
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _AddFontFeature(
-            [In] IDWriteTypography* This,
-            [In] DWRITE_FONT_FEATURE fontFeature
-        );
+        public delegate int _AddFontFeature(IDWriteTypography* This, DWRITE_FONT_FEATURE fontFeature);
 
         /// <summary>Get the number of font features.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public delegate uint _GetFontFeatureCount(
-            [In] IDWriteTypography* This
-        );
+        public delegate uint _GetFontFeatureCount(IDWriteTypography* This);
 
         /// <summary>Get the font feature at the specified index.</summary>
         /// <param name="fontFeatureIndex">The zero-based index of the font feature to get.</param>
@@ -57,25 +44,14 @@ namespace TerraFX.Interop
         /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFontFeature(
-            [In] IDWriteTypography* This,
-            [In, NativeTypeName("UINT32")] uint fontFeatureIndex,
-            [Out] DWRITE_FONT_FEATURE* fontFeature
-        );
+        public delegate int _GetFontFeature(IDWriteTypography* This, [NativeTypeName("UINT32")] uint fontFeatureIndex, DWRITE_FONT_FEATURE* fontFeature);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDWriteTypography* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -84,9 +60,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTypography* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -95,23 +69,16 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTypography* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int AddFontFeature(
-            [In] DWRITE_FONT_FEATURE fontFeature
-        )
+        public int AddFontFeature(DWRITE_FONT_FEATURE fontFeature)
         {
             fixed (IDWriteTypography* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddFontFeature>(lpVtbl->AddFontFeature)(
-                    This,
-                    fontFeature
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddFontFeature>(lpVtbl->AddFontFeature)(This, fontFeature);
             }
         }
 
@@ -120,25 +87,16 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteTypography* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontFeatureCount>(lpVtbl->GetFontFeatureCount)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetFontFeatureCount>(lpVtbl->GetFontFeatureCount)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFontFeature(
-            [In, NativeTypeName("UINT32")] uint fontFeatureIndex,
-            [Out] DWRITE_FONT_FEATURE* fontFeature
-        )
+        public int GetFontFeature([NativeTypeName("UINT32")] uint fontFeatureIndex, DWRITE_FONT_FEATURE* fontFeature)
         {
             fixed (IDWriteTypography* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontFeature>(lpVtbl->GetFontFeature)(
-                    This,
-                    fontFeatureIndex,
-                    fontFeature
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetFontFeature>(lpVtbl->GetFontFeature)(This, fontFeatureIndex, fontFeature);
             }
         }
 

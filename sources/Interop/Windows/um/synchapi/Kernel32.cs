@@ -12,18 +12,10 @@ namespace TerraFX.Interop
     {
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "CreateEventW", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr CreateEvent(
-            [In, Optional, NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpEventAttributes,
-            [In, NativeTypeName("BOOL")] int bManualReset,
-            [In, NativeTypeName("BOOL")] int bInitialState,
-            [In, NativeTypeName("LPCWSTR")] char* lpName = null
-        );
+        public static extern IntPtr CreateEvent([Optional, NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpEventAttributes, [NativeTypeName("BOOL")] int bManualReset, [NativeTypeName("BOOL")] int bInitialState, [NativeTypeName("LPCWSTR")] char* lpName = null);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "WaitForSingleObject", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WaitForSingleObject(
-            [In, NativeTypeName("HANDLE")] IntPtr hHandle,
-            [In, NativeTypeName("DWORD")] uint dwMilliseconds
-        );
+        public static extern uint WaitForSingleObject([NativeTypeName("HANDLE")] IntPtr hHandle, [NativeTypeName("DWORD")] uint dwMilliseconds);
     }
 }

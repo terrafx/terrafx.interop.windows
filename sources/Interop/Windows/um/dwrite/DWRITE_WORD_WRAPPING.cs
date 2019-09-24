@@ -21,6 +21,5 @@ namespace TerraFX.Interop
         DWRITE_WORD_WRAPPING_WHOLE_WORD = 3,
 
         /// <summary>Wrap between any valid characters clusters.</summary>
-        DWRITE_WORD_WRAPPING_CHARACTER = 4,
-    }
+        DWRITE_WORD_WRAPPING_CHARACTER = 4, }
 }

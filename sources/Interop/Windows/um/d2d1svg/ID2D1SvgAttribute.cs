@@ -16,59 +16,35 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID2D1SvgAttribute* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1SvgAttribute* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID2D1SvgAttribute* This
-        );
+        public delegate uint _AddRef(ID2D1SvgAttribute* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID2D1SvgAttribute* This
-        );
+        public delegate uint _Release(ID2D1SvgAttribute* This);
 
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetFactory(
-            [In] ID2D1SvgAttribute* This,
-            [Out] ID2D1Factory** factory
-        );
+        public delegate void _GetFactory(ID2D1SvgAttribute* This, ID2D1Factory** factory);
 
         /// <summary>Returns the element on which this attribute is set. Returns null if the attribute is not set on any element.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetElement(
-            [In] ID2D1SvgAttribute* This,
-            [Out] ID2D1SvgElement** element
-        );
+        public delegate void _GetElement(ID2D1SvgAttribute* This, ID2D1SvgElement** element);
 
         /// <summary>Creates a clone of this attribute value. On creation, the cloned attribute is not set on any element.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Clone(
-            [In] ID2D1SvgAttribute* This,
-            [Out] ID2D1SvgAttribute** attribute
-        );
+        public delegate int _Clone(ID2D1SvgAttribute* This, ID2D1SvgAttribute** attribute);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1SvgAttribute* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -77,9 +53,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgAttribute* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -88,49 +62,32 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgAttribute* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
-        public void GetFactory(
-            [Out] ID2D1Factory** factory
-        )
+        public void GetFactory(ID2D1Factory** factory)
         {
             fixed (ID2D1SvgAttribute* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
-                    This,
-                    factory
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(This, factory);
             }
         }
 
-        public void GetElement(
-            [Out] ID2D1SvgElement** element
-        )
+        public void GetElement(ID2D1SvgElement** element)
         {
             fixed (ID2D1SvgAttribute* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetElement>(lpVtbl->GetElement)(
-                    This,
-                    element
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetElement>(lpVtbl->GetElement)(This, element);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Clone(
-            [Out] ID2D1SvgAttribute** attribute
-        )
+        public int Clone(ID2D1SvgAttribute** attribute)
         {
             fixed (ID2D1SvgAttribute* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Clone>(lpVtbl->Clone)(
-                    This,
-                    attribute
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Clone>(lpVtbl->Clone)(This, attribute);
             }
         }
 

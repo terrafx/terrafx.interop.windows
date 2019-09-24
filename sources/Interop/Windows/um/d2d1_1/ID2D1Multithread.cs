@@ -16,56 +16,35 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID2D1Multithread* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1Multithread* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID2D1Multithread* This
-        );
+        public delegate uint _AddRef(ID2D1Multithread* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID2D1Multithread* This
-        );
+        public delegate uint _Release(ID2D1Multithread* This);
 
         /// <summary>Returns whether the D2D factory was created with D2D1_FACTORY_TYPE_MULTI_THREADED.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public delegate int _GetMultithreadProtected(
-            [In] ID2D1Multithread* This
-        );
+        public delegate int _GetMultithreadProtected(ID2D1Multithread* This);
 
         /// <summary>Enters the D2D API critical section, if it exists.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _Enter(
-            [In] ID2D1Multithread* This
-        );
+        public delegate void _Enter(ID2D1Multithread* This);
 
         /// <summary>Leaves the D2D API critical section, if it exists.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _Leave(
-            [In] ID2D1Multithread* This
-        );
+        public delegate void _Leave(ID2D1Multithread* This);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1Multithread* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -74,9 +53,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Multithread* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -85,9 +62,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Multithread* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
@@ -96,9 +71,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Multithread* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetMultithreadProtected>(lpVtbl->GetMultithreadProtected)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetMultithreadProtected>(lpVtbl->GetMultithreadProtected)(This);
             }
         }
 
@@ -106,9 +79,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Multithread* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_Enter>(lpVtbl->Enter)(
-                    This
-                );
+                Marshal.GetDelegateForFunctionPointer<_Enter>(lpVtbl->Enter)(This);
             }
         }
 
@@ -116,9 +87,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Multithread* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_Leave>(lpVtbl->Leave)(
-                    This
-                );
+                Marshal.GetDelegateForFunctionPointer<_Leave>(lpVtbl->Leave)(This);
             }
         }
 

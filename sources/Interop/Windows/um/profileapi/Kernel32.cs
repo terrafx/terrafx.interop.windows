@@ -11,14 +11,10 @@ namespace TerraFX.Interop
     {
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "QueryPerformanceCounter", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("BOOL")]
-        public static extern int QueryPerformanceCounter(
-            [Out] LARGE_INTEGER* lpPerformanceCount
-        );
+        public static extern int QueryPerformanceCounter(LARGE_INTEGER* lpPerformanceCount);
 
         [DllImport(DllName, BestFitMapping = false, CallingConvention = CallingConvention.Winapi, CharSet = CharSet.Unicode, EntryPoint = "QueryPerformanceFrequency", ExactSpelling = true, PreserveSig = true, SetLastError = true, ThrowOnUnmappableChar = false)]
         [return: NativeTypeName("BOOL")]
-        public static extern int QueryPerformanceFrequency(
-            [Out] LARGE_INTEGER* lpFrequency
-        );
+        public static extern int QueryPerformanceFrequency(LARGE_INTEGER* lpFrequency);
     }
 }

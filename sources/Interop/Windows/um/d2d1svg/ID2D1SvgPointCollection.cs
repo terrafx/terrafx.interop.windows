@@ -16,54 +16,34 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID2D1SvgPointCollection* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1SvgPointCollection* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID2D1SvgPointCollection* This
-        );
+        public delegate uint _AddRef(ID2D1SvgPointCollection* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID2D1SvgPointCollection* This
-        );
+        public delegate uint _Release(ID2D1SvgPointCollection* This);
 
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetFactory(
-            [In] ID2D1SvgPointCollection* This,
-            [Out] ID2D1Factory** factory
-        );
+        public delegate void _GetFactory(ID2D1SvgPointCollection* This, ID2D1Factory** factory);
 
         /// <summary>Returns the element on which this attribute is set. Returns null if the attribute is not set on any element.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetElement(
-            [In] ID2D1SvgPointCollection* This,
-            [Out] ID2D1SvgElement** element
-        );
+        public delegate void _GetElement(ID2D1SvgPointCollection* This, ID2D1SvgElement** element);
 
         /// <summary>Creates a clone of this attribute value. On creation, the cloned attribute is not set on any element.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Clone(
-            [In] ID2D1SvgPointCollection* This,
-            [Out] ID2D1SvgAttribute** attribute
-        );
+        public delegate int _Clone(ID2D1SvgPointCollection* This, ID2D1SvgAttribute** attribute);
 
         /// <summary>Removes points from the end of the array.</summary>
         /// <param name="pointsCount">Specifies how many points to remove.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _RemovePointsAtEnd(
-            [In] ID2D1SvgPointCollection* This,
-            [In, NativeTypeName("UINT32")] uint pointsCount
-        );
+        public delegate int _RemovePointsAtEnd(ID2D1SvgPointCollection* This, [NativeTypeName("UINT32")] uint pointsCount);
 
         /// <summary>Updates the points array. Existing points not updated by this method are preserved. The array is resized larger if necessary to accomodate the new points.</summary>
         /// <param name="points">The points array.</param>
@@ -71,12 +51,7 @@ namespace TerraFX.Interop
         /// <param name="startIndex">The index at which to begin updating points. Must be less than or equal to the size of the array.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _UpdatePoints(
-            [In] ID2D1SvgPointCollection* This,
-            [In, NativeTypeName("D2D1_POINT_2F[]")] D2D_POINT_2F* points,
-            [In, NativeTypeName("UINT32")] uint pointsCount,
-            [In, NativeTypeName("UINT32")] uint startIndex = 0
-        );
+        public delegate int _UpdatePoints(ID2D1SvgPointCollection* This, [NativeTypeName("D2D1_POINT_2F[]")] D2D_POINT_2F* points, [NativeTypeName("UINT32")] uint pointsCount, [NativeTypeName("UINT32")] uint startIndex = 0);
 
         /// <summary>Gets points from the points array.</summary>
         /// <param name="points">Buffer to contain the points.</param>
@@ -84,33 +59,19 @@ namespace TerraFX.Interop
         /// <param name="startIndex">The index of the first point to retrieve.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPoints(
-            [In] ID2D1SvgPointCollection* This,
-            [Out, NativeTypeName("D2D1_POINT_2F[]")] D2D_POINT_2F* points,
-            [In, NativeTypeName("UINT32")] uint pointsCount,
-            [In, NativeTypeName("UINT32")] uint startIndex = 0
-        );
+        public delegate int _GetPoints(ID2D1SvgPointCollection* This, [NativeTypeName("D2D1_POINT_2F[]")] D2D_POINT_2F* points, [NativeTypeName("UINT32")] uint pointsCount, [NativeTypeName("UINT32")] uint startIndex = 0);
 
         /// <summary>Gets the number of points in the array.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public delegate uint _GetPointsCount(
-            [In] ID2D1SvgPointCollection* This
-        );
+        public delegate uint _GetPointsCount(ID2D1SvgPointCollection* This);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1SvgPointCollection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -119,9 +80,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPointCollection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -130,99 +89,59 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPointCollection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
-        public void GetFactory(
-            [Out] ID2D1Factory** factory
-        )
+        public void GetFactory(ID2D1Factory** factory)
         {
             fixed (ID2D1SvgPointCollection* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
-                    This,
-                    factory
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(This, factory);
             }
         }
 
-        public void GetElement(
-            [Out] ID2D1SvgElement** element
-        )
+        public void GetElement(ID2D1SvgElement** element)
         {
             fixed (ID2D1SvgPointCollection* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetElement>(lpVtbl->GetElement)(
-                    This,
-                    element
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetElement>(lpVtbl->GetElement)(This, element);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Clone(
-            [Out] ID2D1SvgAttribute** attribute
-        )
+        public int Clone(ID2D1SvgAttribute** attribute)
         {
             fixed (ID2D1SvgPointCollection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Clone>(lpVtbl->Clone)(
-                    This,
-                    attribute
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Clone>(lpVtbl->Clone)(This, attribute);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int RemovePointsAtEnd(
-            [In, NativeTypeName("UINT32")] uint pointsCount
-        )
+        public int RemovePointsAtEnd([NativeTypeName("UINT32")] uint pointsCount)
         {
             fixed (ID2D1SvgPointCollection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_RemovePointsAtEnd>(lpVtbl->RemovePointsAtEnd)(
-                    This,
-                    pointsCount
-                );
+                return Marshal.GetDelegateForFunctionPointer<_RemovePointsAtEnd>(lpVtbl->RemovePointsAtEnd)(This, pointsCount);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int UpdatePoints(
-            [In, NativeTypeName("D2D1_POINT_2F[]")] D2D_POINT_2F* points,
-            [In, NativeTypeName("UINT32")] uint pointsCount,
-            [In, NativeTypeName("UINT32")] uint startIndex = 0
-        )
+        public int UpdatePoints([NativeTypeName("D2D1_POINT_2F[]")] D2D_POINT_2F* points, [NativeTypeName("UINT32")] uint pointsCount, [NativeTypeName("UINT32")] uint startIndex = 0)
         {
             fixed (ID2D1SvgPointCollection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_UpdatePoints>(lpVtbl->UpdatePoints)(
-                    This,
-                    points,
-                    pointsCount,
-                    startIndex
-                );
+                return Marshal.GetDelegateForFunctionPointer<_UpdatePoints>(lpVtbl->UpdatePoints)(This, points, pointsCount, startIndex);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetPoints(
-            [Out, NativeTypeName("D2D1_POINT_2F[]")] D2D_POINT_2F* points,
-            [In, NativeTypeName("UINT32")] uint pointsCount,
-            [In, NativeTypeName("UINT32")] uint startIndex = 0
-        )
+        public int GetPoints([NativeTypeName("D2D1_POINT_2F[]")] D2D_POINT_2F* points, [NativeTypeName("UINT32")] uint pointsCount, [NativeTypeName("UINT32")] uint startIndex = 0)
         {
             fixed (ID2D1SvgPointCollection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetPoints>(lpVtbl->GetPoints)(
-                    This,
-                    points,
-                    pointsCount,
-                    startIndex
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetPoints>(lpVtbl->GetPoints)(This, points, pointsCount, startIndex);
             }
         }
 
@@ -231,9 +150,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1SvgPointCollection* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetPointsCount>(lpVtbl->GetPointsCount)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetPointsCount>(lpVtbl->GetPointsCount)(This);
             }
         }
 

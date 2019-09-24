@@ -16,205 +16,101 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID2D1GeometryGroup* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1GeometryGroup* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID2D1GeometryGroup* This
-        );
+        public delegate uint _AddRef(ID2D1GeometryGroup* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID2D1GeometryGroup* This
-        );
+        public delegate uint _Release(ID2D1GeometryGroup* This);
 
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetFactory(
-            [In] ID2D1GeometryGroup* This,
-            [Out] ID2D1Factory** factory
-        );
+        public delegate void _GetFactory(ID2D1GeometryGroup* This, ID2D1Factory** factory);
 
         /// <summary>Retrieve the bounds of the geometry, with an optional applied transform.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetBounds(
-            [In] ID2D1GeometryGroup* This,
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
-            [Out, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* bounds
-        );
+        public delegate int _GetBounds(ID2D1GeometryGroup* This, [Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* bounds);
 
         /// <summary>Get the bounds of the corresponding geometry after it has been widened or have an optional pen style applied.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetWidenedBounds(
-            [In] ID2D1GeometryGroup* This,
-            [In, NativeTypeName("FLOAT")] float strokeWidth,
-            [In, Optional] ID2D1StrokeStyle* strokeStyle,
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
-            [In, NativeTypeName("FLOAT")] float flatteningTolerance,
-            [Out, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* bounds
-        );
+        public delegate int _GetWidenedBounds(ID2D1GeometryGroup* This, [NativeTypeName("FLOAT")] float strokeWidth, [Optional] ID2D1StrokeStyle* strokeStyle, [Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("FLOAT")] float flatteningTolerance, [NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* bounds);
 
         /// <summary>Checks to see whether the corresponding penned and widened geometry contains the given point.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _StrokeContainsPoint(
-            [In] ID2D1GeometryGroup* This,
-            [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point,
-            [In, NativeTypeName("FLOAT")] float strokeWidth,
-            [In, Optional] ID2D1StrokeStyle* strokeStyle,
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
-            [In, NativeTypeName("FLOAT")] float flatteningTolerance,
-            [Out, NativeTypeName("BOOL")] int* contains
-        );
+        public delegate int _StrokeContainsPoint(ID2D1GeometryGroup* This, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point, [NativeTypeName("FLOAT")] float strokeWidth, [Optional] ID2D1StrokeStyle* strokeStyle, [Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("FLOAT")] float flatteningTolerance, [NativeTypeName("BOOL")] int* contains);
 
         /// <summary>Test whether the given fill of this geometry would contain this point.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _FillContainsPoint(
-            [In] ID2D1GeometryGroup* This,
-            [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point,
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
-            [In, NativeTypeName("FLOAT")] float flatteningTolerance,
-            [Out, NativeTypeName("BOOL")] int* contains
-        );
+        public delegate int _FillContainsPoint(ID2D1GeometryGroup* This, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point, [Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("FLOAT")] float flatteningTolerance, [NativeTypeName("BOOL")] int* contains);
 
         /// <summary>Compare how one geometry intersects or contains another geometry.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CompareWithGeometry(
-            [In] ID2D1GeometryGroup* This,
-            [In] ID2D1Geometry* inputGeometry,
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* inputGeometryTransform,
-            [In, NativeTypeName("FLOAT")] float flatteningTolerance,
-            [Out] D2D1_GEOMETRY_RELATION* relation
-        );
+        public delegate int _CompareWithGeometry(ID2D1GeometryGroup* This, ID2D1Geometry* inputGeometry, [Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* inputGeometryTransform, [NativeTypeName("FLOAT")] float flatteningTolerance, D2D1_GEOMETRY_RELATION* relation);
 
         /// <summary>Converts a geometry to a simplified geometry that has arcs and quadratic beziers removed.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Simplify(
-            [In] ID2D1GeometryGroup* This,
-            [In] D2D1_GEOMETRY_SIMPLIFICATION_OPTION simplificationOption,
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
-            [In, NativeTypeName("FLOAT")] float flatteningTolerance,
-            [In] ID2D1SimplifiedGeometrySink* geometrySink
-        );
+        public delegate int _Simplify(ID2D1GeometryGroup* This, D2D1_GEOMETRY_SIMPLIFICATION_OPTION simplificationOption, [Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("FLOAT")] float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink);
 
         /// <summary>Tessellates a geometry into triangles.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Tessellate(
-            [In] ID2D1GeometryGroup* This,
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
-            [In, NativeTypeName("FLOAT")] float flatteningTolerance,
-            [In] ID2D1TessellationSink* tessellationSink
-        );
+        public delegate int _Tessellate(ID2D1GeometryGroup* This, [Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("FLOAT")] float flatteningTolerance, ID2D1TessellationSink* tessellationSink);
 
         /// <summary>Performs a combine operation between the two geometries to produce a resulting geometry.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CombineWithGeometry(
-            [In] ID2D1GeometryGroup* This,
-            [In] ID2D1Geometry* inputGeometry,
-            [In] D2D1_COMBINE_MODE combineMode,
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* inputGeometryTransform,
-            [In, NativeTypeName("FLOAT")] float flatteningTolerance,
-            [In] ID2D1SimplifiedGeometrySink* geometrySink
-        );
+        public delegate int _CombineWithGeometry(ID2D1GeometryGroup* This, ID2D1Geometry* inputGeometry, D2D1_COMBINE_MODE combineMode, [Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* inputGeometryTransform, [NativeTypeName("FLOAT")] float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink);
 
         /// <summary>Computes the outline of the geometry. The result is written back into a simplified geometry sink.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Outline(
-            [In] ID2D1GeometryGroup* This,
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
-            [In, NativeTypeName("FLOAT")] float flatteningTolerance,
-            [In] ID2D1SimplifiedGeometrySink* geometrySink
-        );
+        public delegate int _Outline(ID2D1GeometryGroup* This, [Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("FLOAT")] float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink);
 
         /// <summary>Computes the area of the geometry.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _ComputeArea(
-            [In] ID2D1GeometryGroup* This,
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
-            [In, NativeTypeName("FLOAT")] float flatteningTolerance,
-            [Out, NativeTypeName("FLOAT")] float* area
-        );
+        public delegate int _ComputeArea(ID2D1GeometryGroup* This, [Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("FLOAT")] float flatteningTolerance, [NativeTypeName("FLOAT")] float* area);
 
         /// <summary>Computes the length of the geometry.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _ComputeLength(
-            [In] ID2D1GeometryGroup* This,
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
-            [In, NativeTypeName("FLOAT")] float flatteningTolerance,
-            [Out, NativeTypeName("FLOAT")] float* length
-        );
+        public delegate int _ComputeLength(ID2D1GeometryGroup* This, [Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("FLOAT")] float flatteningTolerance, [NativeTypeName("FLOAT")] float* length);
 
         /// <summary>Computes the point and tangent a given distance along the path.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _ComputePointAtLength(
-            [In] ID2D1GeometryGroup* This,
-            [In, NativeTypeName("FLOAT")] float length,
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
-            [In, NativeTypeName("FLOAT")] float flatteningTolerance,
-            [Out, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F* point = null,
-            [Out, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F* unitTangentVector = null
-        );
+        public delegate int _ComputePointAtLength(ID2D1GeometryGroup* This, [NativeTypeName("FLOAT")] float length, [Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("FLOAT")] float flatteningTolerance, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F* point = null, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F* unitTangentVector = null);
 
         /// <summary>Get the geometry and widen it as well as apply an optional pen style.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Widen(
-            [In] ID2D1GeometryGroup* This,
-            [In, NativeTypeName("FLOAT")] float strokeWidth,
-            [In, Optional] ID2D1StrokeStyle* strokeStyle,
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
-            [In, NativeTypeName("FLOAT")] float flatteningTolerance,
-            [In] ID2D1SimplifiedGeometrySink* geometrySink
-        );
+        public delegate int _Widen(ID2D1GeometryGroup* This, [NativeTypeName("FLOAT")] float strokeWidth, [Optional] ID2D1StrokeStyle* strokeStyle, [Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("FLOAT")] float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate D2D1_FILL_MODE _GetFillMode(
-            [In] ID2D1GeometryGroup* This
-        );
+        public delegate D2D1_FILL_MODE _GetFillMode(ID2D1GeometryGroup* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public delegate uint _GetSourceGeometryCount(
-            [In] ID2D1GeometryGroup* This
-        );
+        public delegate uint _GetSourceGeometryCount(ID2D1GeometryGroup* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetSourceGeometries(
-            [In] ID2D1GeometryGroup* This,
-            [Out, NativeTypeName("ID2D1Geometry*[]")] ID2D1Geometry** geometries,
-            [In, NativeTypeName("UINT32")] uint geometriesCount
-        );
+        public delegate void _GetSourceGeometries(ID2D1GeometryGroup* This, [NativeTypeName("ID2D1Geometry*[]")] ID2D1Geometry** geometries, [NativeTypeName("UINT32")] uint geometriesCount);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1GeometryGroup* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -223,9 +119,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1GeometryGroup* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -234,282 +128,132 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1GeometryGroup* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
-        public void GetFactory(
-            [Out] ID2D1Factory** factory
-        )
+        public void GetFactory(ID2D1Factory** factory)
         {
             fixed (ID2D1GeometryGroup* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
-                    This,
-                    factory
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(This, factory);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetBounds(
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
-            [Out, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* bounds
-        )
+        public int GetBounds([Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* bounds)
         {
             fixed (ID2D1GeometryGroup* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetBounds>(lpVtbl->GetBounds)(
-                    This,
-                    worldTransform,
-                    bounds
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetBounds>(lpVtbl->GetBounds)(This, worldTransform, bounds);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetWidenedBounds(
-            [In, NativeTypeName("FLOAT")] float strokeWidth,
-            [In, Optional] ID2D1StrokeStyle* strokeStyle,
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
-            [In, NativeTypeName("FLOAT")] float flatteningTolerance,
-            [Out, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* bounds
-        )
+        public int GetWidenedBounds([NativeTypeName("FLOAT")] float strokeWidth, [Optional] ID2D1StrokeStyle* strokeStyle, [Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("FLOAT")] float flatteningTolerance, [NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* bounds)
         {
             fixed (ID2D1GeometryGroup* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetWidenedBounds>(lpVtbl->GetWidenedBounds)(
-                    This,
-                    strokeWidth,
-                    strokeStyle,
-                    worldTransform,
-                    flatteningTolerance,
-                    bounds
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetWidenedBounds>(lpVtbl->GetWidenedBounds)(This, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, bounds);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int StrokeContainsPoint(
-            [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point,
-            [In, NativeTypeName("FLOAT")] float strokeWidth,
-            [In, Optional] ID2D1StrokeStyle* strokeStyle,
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
-            [In, NativeTypeName("FLOAT")] float flatteningTolerance,
-            [Out, NativeTypeName("BOOL")] int* contains
-        )
+        public int StrokeContainsPoint([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point, [NativeTypeName("FLOAT")] float strokeWidth, [Optional] ID2D1StrokeStyle* strokeStyle, [Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("FLOAT")] float flatteningTolerance, [NativeTypeName("BOOL")] int* contains)
         {
             fixed (ID2D1GeometryGroup* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_StrokeContainsPoint>(lpVtbl->StrokeContainsPoint)(
-                    This,
-                    point,
-                    strokeWidth,
-                    strokeStyle,
-                    worldTransform,
-                    flatteningTolerance,
-                    contains
-                );
+                return Marshal.GetDelegateForFunctionPointer<_StrokeContainsPoint>(lpVtbl->StrokeContainsPoint)(This, point, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, contains);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int FillContainsPoint(
-            [In, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point,
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
-            [In, NativeTypeName("FLOAT")] float flatteningTolerance,
-            [Out, NativeTypeName("BOOL")] int* contains
-        )
+        public int FillContainsPoint([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point, [Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("FLOAT")] float flatteningTolerance, [NativeTypeName("BOOL")] int* contains)
         {
             fixed (ID2D1GeometryGroup* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_FillContainsPoint>(lpVtbl->FillContainsPoint)(
-                    This,
-                    point,
-                    worldTransform,
-                    flatteningTolerance,
-                    contains
-                );
+                return Marshal.GetDelegateForFunctionPointer<_FillContainsPoint>(lpVtbl->FillContainsPoint)(This, point, worldTransform, flatteningTolerance, contains);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CompareWithGeometry(
-            [In] ID2D1Geometry* inputGeometry,
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* inputGeometryTransform,
-            [In, NativeTypeName("FLOAT")] float flatteningTolerance,
-            [Out] D2D1_GEOMETRY_RELATION* relation
-        )
+        public int CompareWithGeometry(ID2D1Geometry* inputGeometry, [Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* inputGeometryTransform, [NativeTypeName("FLOAT")] float flatteningTolerance, D2D1_GEOMETRY_RELATION* relation)
         {
             fixed (ID2D1GeometryGroup* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CompareWithGeometry>(lpVtbl->CompareWithGeometry)(
-                    This,
-                    inputGeometry,
-                    inputGeometryTransform,
-                    flatteningTolerance,
-                    relation
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CompareWithGeometry>(lpVtbl->CompareWithGeometry)(This, inputGeometry, inputGeometryTransform, flatteningTolerance, relation);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Simplify(
-            [In] D2D1_GEOMETRY_SIMPLIFICATION_OPTION simplificationOption,
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
-            [In, NativeTypeName("FLOAT")] float flatteningTolerance,
-            [In] ID2D1SimplifiedGeometrySink* geometrySink
-        )
+        public int Simplify(D2D1_GEOMETRY_SIMPLIFICATION_OPTION simplificationOption, [Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("FLOAT")] float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
         {
             fixed (ID2D1GeometryGroup* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Simplify>(lpVtbl->Simplify)(
-                    This,
-                    simplificationOption,
-                    worldTransform,
-                    flatteningTolerance,
-                    geometrySink
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Simplify>(lpVtbl->Simplify)(This, simplificationOption, worldTransform, flatteningTolerance, geometrySink);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Tessellate(
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
-            [In, NativeTypeName("FLOAT")] float flatteningTolerance,
-            [In] ID2D1TessellationSink* tessellationSink
-        )
+        public int Tessellate([Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("FLOAT")] float flatteningTolerance, ID2D1TessellationSink* tessellationSink)
         {
             fixed (ID2D1GeometryGroup* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Tessellate>(lpVtbl->Tessellate)(
-                    This,
-                    worldTransform,
-                    flatteningTolerance,
-                    tessellationSink
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Tessellate>(lpVtbl->Tessellate)(This, worldTransform, flatteningTolerance, tessellationSink);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CombineWithGeometry(
-            [In] ID2D1Geometry* inputGeometry,
-            [In] D2D1_COMBINE_MODE combineMode,
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* inputGeometryTransform,
-            [In, NativeTypeName("FLOAT")] float flatteningTolerance,
-            [In] ID2D1SimplifiedGeometrySink* geometrySink
-        )
+        public int CombineWithGeometry(ID2D1Geometry* inputGeometry, D2D1_COMBINE_MODE combineMode, [Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* inputGeometryTransform, [NativeTypeName("FLOAT")] float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
         {
             fixed (ID2D1GeometryGroup* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_CombineWithGeometry>(lpVtbl->CombineWithGeometry)(
-                    This,
-                    inputGeometry,
-                    combineMode,
-                    inputGeometryTransform,
-                    flatteningTolerance,
-                    geometrySink
-                );
+                return Marshal.GetDelegateForFunctionPointer<_CombineWithGeometry>(lpVtbl->CombineWithGeometry)(This, inputGeometry, combineMode, inputGeometryTransform, flatteningTolerance, geometrySink);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Outline(
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
-            [In, NativeTypeName("FLOAT")] float flatteningTolerance,
-            [In] ID2D1SimplifiedGeometrySink* geometrySink
-        )
+        public int Outline([Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("FLOAT")] float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
         {
             fixed (ID2D1GeometryGroup* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Outline>(lpVtbl->Outline)(
-                    This,
-                    worldTransform,
-                    flatteningTolerance,
-                    geometrySink
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Outline>(lpVtbl->Outline)(This, worldTransform, flatteningTolerance, geometrySink);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int ComputeArea(
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
-            [In, NativeTypeName("FLOAT")] float flatteningTolerance,
-            [Out, NativeTypeName("FLOAT")] float* area
-        )
+        public int ComputeArea([Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("FLOAT")] float flatteningTolerance, [NativeTypeName("FLOAT")] float* area)
         {
             fixed (ID2D1GeometryGroup* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_ComputeArea>(lpVtbl->ComputeArea)(
-                    This,
-                    worldTransform,
-                    flatteningTolerance,
-                    area
-                );
+                return Marshal.GetDelegateForFunctionPointer<_ComputeArea>(lpVtbl->ComputeArea)(This, worldTransform, flatteningTolerance, area);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int ComputeLength(
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
-            [In, NativeTypeName("FLOAT")] float flatteningTolerance,
-            [Out, NativeTypeName("FLOAT")] float* length
-        )
+        public int ComputeLength([Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("FLOAT")] float flatteningTolerance, [NativeTypeName("FLOAT")] float* length)
         {
             fixed (ID2D1GeometryGroup* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_ComputeLength>(lpVtbl->ComputeLength)(
-                    This,
-                    worldTransform,
-                    flatteningTolerance,
-                    length
-                );
+                return Marshal.GetDelegateForFunctionPointer<_ComputeLength>(lpVtbl->ComputeLength)(This, worldTransform, flatteningTolerance, length);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int ComputePointAtLength(
-            [In, NativeTypeName("FLOAT")] float length,
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
-            [In, NativeTypeName("FLOAT")] float flatteningTolerance,
-            [Out, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F* point = null,
-            [Out, NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F* unitTangentVector = null
-        )
+        public int ComputePointAtLength([NativeTypeName("FLOAT")] float length, [Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("FLOAT")] float flatteningTolerance, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F* point = null, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F* unitTangentVector = null)
         {
             fixed (ID2D1GeometryGroup* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_ComputePointAtLength>(lpVtbl->ComputePointAtLength)(
-                    This,
-                    length,
-                    worldTransform,
-                    flatteningTolerance,
-                    point,
-                    unitTangentVector
-                );
+                return Marshal.GetDelegateForFunctionPointer<_ComputePointAtLength>(lpVtbl->ComputePointAtLength)(This, length, worldTransform, flatteningTolerance, point, unitTangentVector);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Widen(
-            [In, NativeTypeName("FLOAT")] float strokeWidth,
-            [In, Optional] ID2D1StrokeStyle* strokeStyle,
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
-            [In, NativeTypeName("FLOAT")] float flatteningTolerance,
-            [In] ID2D1SimplifiedGeometrySink* geometrySink
-        )
+        public int Widen([NativeTypeName("FLOAT")] float strokeWidth, [Optional] ID2D1StrokeStyle* strokeStyle, [Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("FLOAT")] float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
         {
             fixed (ID2D1GeometryGroup* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Widen>(lpVtbl->Widen)(
-                    This,
-                    strokeWidth,
-                    strokeStyle,
-                    worldTransform,
-                    flatteningTolerance,
-                    geometrySink
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Widen>(lpVtbl->Widen)(This, strokeWidth, strokeStyle, worldTransform, flatteningTolerance, geometrySink);
             }
         }
 
@@ -517,9 +261,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1GeometryGroup* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetFillMode>(lpVtbl->GetFillMode)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetFillMode>(lpVtbl->GetFillMode)(This);
             }
         }
 
@@ -528,24 +270,15 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1GeometryGroup* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetSourceGeometryCount>(lpVtbl->GetSourceGeometryCount)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetSourceGeometryCount>(lpVtbl->GetSourceGeometryCount)(This);
             }
         }
 
-        public void GetSourceGeometries(
-            [Out, NativeTypeName("ID2D1Geometry*[]")] ID2D1Geometry** geometries,
-            [In, NativeTypeName("UINT32")] uint geometriesCount
-        )
+        public void GetSourceGeometries([NativeTypeName("ID2D1Geometry*[]")] ID2D1Geometry** geometries, [NativeTypeName("UINT32")] uint geometriesCount)
         {
             fixed (ID2D1GeometryGroup* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetSourceGeometries>(lpVtbl->GetSourceGeometries)(
-                    This,
-                    geometries,
-                    geometriesCount
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetSourceGeometries>(lpVtbl->GetSourceGeometries)(This, geometries, geometriesCount);
             }
         }
 

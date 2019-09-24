@@ -15,55 +15,30 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IWICPlanarBitmapFrameEncode* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IWICPlanarBitmapFrameEncode* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IWICPlanarBitmapFrameEncode* This
-        );
+        public delegate uint _AddRef(IWICPlanarBitmapFrameEncode* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IWICPlanarBitmapFrameEncode* This
-        );
+        public delegate uint _Release(IWICPlanarBitmapFrameEncode* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _WritePixels(
-            [In] IWICPlanarBitmapFrameEncode* This,
-            [In, NativeTypeName("UINT")] uint lineCount,
-            [In, NativeTypeName("WICBitmapPlane[]")] WICBitmapPlane* pPlanes,
-            [In, NativeTypeName("UINT")] uint cPlanes
-        );
+        public delegate int _WritePixels(IWICPlanarBitmapFrameEncode* This, [NativeTypeName("UINT")] uint lineCount, [NativeTypeName("WICBitmapPlane[]")] WICBitmapPlane* pPlanes, [NativeTypeName("UINT")] uint cPlanes);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _WriteSource(
-            [In] IWICPlanarBitmapFrameEncode* This,
-            [In, NativeTypeName("IWICBitmapSource*[]")] IWICBitmapSource** ppPlanes,
-            [In, NativeTypeName("UINT")] uint cPlanes,
-            [In] WICRect* prcSource = null
-        );
+        public delegate int _WriteSource(IWICPlanarBitmapFrameEncode* This, [NativeTypeName("IWICBitmapSource*[]")] IWICBitmapSource** ppPlanes, [NativeTypeName("UINT")] uint cPlanes, WICRect* prcSource = null);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IWICPlanarBitmapFrameEncode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -72,9 +47,7 @@ namespace TerraFX.Interop
         {
             fixed (IWICPlanarBitmapFrameEncode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -83,45 +56,25 @@ namespace TerraFX.Interop
         {
             fixed (IWICPlanarBitmapFrameEncode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int WritePixels(
-            [In, NativeTypeName("UINT")] uint lineCount,
-            [In, NativeTypeName("WICBitmapPlane[]")] WICBitmapPlane* pPlanes,
-            [In, NativeTypeName("UINT")] uint cPlanes
-        )
+        public int WritePixels([NativeTypeName("UINT")] uint lineCount, [NativeTypeName("WICBitmapPlane[]")] WICBitmapPlane* pPlanes, [NativeTypeName("UINT")] uint cPlanes)
         {
             fixed (IWICPlanarBitmapFrameEncode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_WritePixels>(lpVtbl->WritePixels)(
-                    This,
-                    lineCount,
-                    pPlanes,
-                    cPlanes
-                );
+                return Marshal.GetDelegateForFunctionPointer<_WritePixels>(lpVtbl->WritePixels)(This, lineCount, pPlanes, cPlanes);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int WriteSource(
-            [In, NativeTypeName("IWICBitmapSource*[]")] IWICBitmapSource** ppPlanes,
-            [In, NativeTypeName("UINT")] uint cPlanes,
-            [In] WICRect* prcSource = null
-        )
+        public int WriteSource([NativeTypeName("IWICBitmapSource*[]")] IWICBitmapSource** ppPlanes, [NativeTypeName("UINT")] uint cPlanes, WICRect* prcSource = null)
         {
             fixed (IWICPlanarBitmapFrameEncode* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_WriteSource>(lpVtbl->WriteSource)(
-                    This,
-                    ppPlanes,
-                    cPlanes,
-                    prcSource
-                );
+                return Marshal.GetDelegateForFunctionPointer<_WriteSource>(lpVtbl->WriteSource)(This, ppPlanes, cPlanes, prcSource);
             }
         }
 

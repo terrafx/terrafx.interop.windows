@@ -33,6 +33,5 @@ namespace TerraFX.Interop
         DWRITE_FONT_FILE_TYPE_BITMAP,
 
         // The following name is obsolete, but kept as an alias to avoid breaking existing code.
-        DWRITE_FONT_FILE_TYPE_TRUETYPE_COLLECTION = DWRITE_FONT_FILE_TYPE_OPENTYPE_COLLECTION,
-    }
+        DWRITE_FONT_FILE_TYPE_TRUETYPE_COLLECTION = DWRITE_FONT_FILE_TYPE_OPENTYPE_COLLECTION, }
 }

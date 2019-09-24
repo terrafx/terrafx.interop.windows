@@ -12,17 +12,8 @@ namespace TerraFX.Interop
     public struct D3D12_BLEND_DESC
     {
         public static readonly D3D12_BLEND_DESC DEFAULT = new D3D12_BLEND_DESC() {
-            AlphaToCoverageEnable = FALSE,
-            IndependentBlendEnable = FALSE,
-            RenderTarget = new _RenderTarget_e__FixedBuffer() {
-                e0 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT,
-                e1 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT,
-                e2 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT,
-                e3 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT,
-                e4 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT,
-                e5 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT,
-                e6 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT,
-                e7 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT
+            AlphaToCoverageEnable = FALSE, IndependentBlendEnable = FALSE, RenderTarget = new _RenderTarget_e__FixedBuffer() {
+                e0 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT, e1 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT, e2 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT, e3 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT, e4 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT, e5 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT, e6 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT, e7 = D3D12_RENDER_TARGET_BLEND_DESC.DEFAULT
             }
         };
 

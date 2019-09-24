@@ -15,62 +15,34 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID3D12DebugDevice1* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID3D12DebugDevice1* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID3D12DebugDevice1* This
-        );
+        public delegate uint _AddRef(ID3D12DebugDevice1* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID3D12DebugDevice1* This
-        );
+        public delegate uint _Release(ID3D12DebugDevice1* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetDebugParameter(
-            [In] ID3D12DebugDevice1* This,
-            [In] D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type,
-            [In] void* pData,
-            [In, NativeTypeName("UINT")] uint DataSize
-        );
+        public delegate int _SetDebugParameter(ID3D12DebugDevice1* This, D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, void* pData, [NativeTypeName("UINT")] uint DataSize);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDebugParameter(
-            [In] ID3D12DebugDevice1* This,
-            [In] D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type,
-            [Out] void* pData,
-            [In, NativeTypeName("UINT")] uint DataSize
-        );
+        public delegate int _GetDebugParameter(ID3D12DebugDevice1* This, D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, void* pData, [NativeTypeName("UINT")] uint DataSize);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _ReportLiveDeviceObjects(
-            [In] ID3D12DebugDevice1* This,
-            [In] D3D12_RLDO_FLAGS Flags
-        );
+        public delegate int _ReportLiveDeviceObjects(ID3D12DebugDevice1* This, D3D12_RLDO_FLAGS Flags);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID3D12DebugDevice1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -79,9 +51,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12DebugDevice1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -90,59 +60,34 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12DebugDevice1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetDebugParameter(
-            [In] D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type,
-            [In] void* pData,
-            [In, NativeTypeName("UINT")] uint DataSize
-        )
+        public int SetDebugParameter(D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, void* pData, [NativeTypeName("UINT")] uint DataSize)
         {
             fixed (ID3D12DebugDevice1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetDebugParameter>(lpVtbl->SetDebugParameter)(
-                    This,
-                    Type,
-                    pData,
-                    DataSize
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetDebugParameter>(lpVtbl->SetDebugParameter)(This, Type, pData, DataSize);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetDebugParameter(
-            [In] D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type,
-            [Out] void* pData,
-            [In, NativeTypeName("UINT")] uint DataSize
-        )
+        public int GetDebugParameter(D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, void* pData, [NativeTypeName("UINT")] uint DataSize)
         {
             fixed (ID3D12DebugDevice1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDebugParameter>(lpVtbl->GetDebugParameter)(
-                    This,
-                    Type,
-                    pData,
-                    DataSize
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDebugParameter>(lpVtbl->GetDebugParameter)(This, Type, pData, DataSize);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int ReportLiveDeviceObjects(
-            [In] D3D12_RLDO_FLAGS Flags
-        )
+        public int ReportLiveDeviceObjects(D3D12_RLDO_FLAGS Flags)
         {
             fixed (ID3D12DebugDevice1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_ReportLiveDeviceObjects>(lpVtbl->ReportLiveDeviceObjects)(
-                    This,
-                    Flags
-                );
+                return Marshal.GetDelegateForFunctionPointer<_ReportLiveDeviceObjects>(lpVtbl->ReportLiveDeviceObjects)(This, Flags);
             }
         }
 

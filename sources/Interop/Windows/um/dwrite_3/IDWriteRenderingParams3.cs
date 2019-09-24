@@ -16,88 +16,57 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IDWriteRenderingParams3* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IDWriteRenderingParams3* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IDWriteRenderingParams3* This
-        );
+        public delegate uint _AddRef(IDWriteRenderingParams3* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IDWriteRenderingParams3* This
-        );
+        public delegate uint _Release(IDWriteRenderingParams3* This);
 
         /// <summary>Gets the gamma value used for gamma correction. Valid values must be greater than zero and cannot exceed 256.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public delegate float _GetGamma(
-            [In] IDWriteRenderingParams3* This
-        );
+        public delegate float _GetGamma(IDWriteRenderingParams3* This);
 
         /// <summary>Gets the amount of contrast enhancement. Valid values are greater than or equal to zero.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public delegate float _GetEnhancedContrast(
-            [In] IDWriteRenderingParams3* This
-        );
+        public delegate float _GetEnhancedContrast(IDWriteRenderingParams3* This);
 
         /// <summary>Gets the ClearType level. Valid values range from 0.0f (no ClearType) to 1.0f (full ClearType).</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate float _GetClearTypeLevel(
-            [In] IDWriteRenderingParams3* This
-        );
+        public delegate float _GetClearTypeLevel(IDWriteRenderingParams3* This);
 
         /// <summary>Gets the pixel geometry.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate DWRITE_PIXEL_GEOMETRY _GetPixelGeometry(
-            [In] IDWriteRenderingParams3* This
-        );
+        public delegate DWRITE_PIXEL_GEOMETRY _GetPixelGeometry(IDWriteRenderingParams3* This);
 
         /// <summary>Gets the rendering mode.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate DWRITE_RENDERING_MODE _GetRenderingMode(
-            [In] IDWriteRenderingParams3* This
-        );
+        public delegate DWRITE_RENDERING_MODE _GetRenderingMode(IDWriteRenderingParams3* This);
 
         /// <summary>Gets the amount of contrast enhancement to use for grayscale antialiasing. Valid values are greater than or equal to zero.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public delegate float _GetGrayscaleEnhancedContrast(
-            [In] IDWriteRenderingParams3* This
-        );
+        public delegate float _GetGrayscaleEnhancedContrast(IDWriteRenderingParams3* This);
 
         /// <summary>Gets the grid fitting mode.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate DWRITE_GRID_FIT_MODE _GetGridFitMode(
-            [In] IDWriteRenderingParams3* This
-        );
+        public delegate DWRITE_GRID_FIT_MODE _GetGridFitMode(IDWriteRenderingParams3* This);
 
         /// <summary>Gets the rendering mode.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate DWRITE_RENDERING_MODE1 _GetRenderingMode1(
-            [In] IDWriteRenderingParams3* This
-        );
+        public delegate DWRITE_RENDERING_MODE1 _GetRenderingMode1(IDWriteRenderingParams3* This);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IDWriteRenderingParams3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -106,9 +75,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteRenderingParams3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -117,9 +84,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteRenderingParams3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
@@ -128,9 +93,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteRenderingParams3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetGamma>(lpVtbl->GetGamma)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetGamma>(lpVtbl->GetGamma)(This);
             }
         }
 
@@ -139,9 +102,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteRenderingParams3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetEnhancedContrast>(lpVtbl->GetEnhancedContrast)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetEnhancedContrast>(lpVtbl->GetEnhancedContrast)(This);
             }
         }
 
@@ -149,9 +110,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteRenderingParams3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetClearTypeLevel>(lpVtbl->GetClearTypeLevel)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetClearTypeLevel>(lpVtbl->GetClearTypeLevel)(This);
             }
         }
 
@@ -159,9 +118,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteRenderingParams3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetPixelGeometry>(lpVtbl->GetPixelGeometry)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetPixelGeometry>(lpVtbl->GetPixelGeometry)(This);
             }
         }
 
@@ -169,9 +126,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteRenderingParams3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetRenderingMode>(lpVtbl->GetRenderingMode)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetRenderingMode>(lpVtbl->GetRenderingMode)(This);
             }
         }
 
@@ -180,9 +135,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteRenderingParams3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetGrayscaleEnhancedContrast>(lpVtbl->GetGrayscaleEnhancedContrast)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetGrayscaleEnhancedContrast>(lpVtbl->GetGrayscaleEnhancedContrast)(This);
             }
         }
 
@@ -190,9 +143,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteRenderingParams3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetGridFitMode>(lpVtbl->GetGridFitMode)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetGridFitMode>(lpVtbl->GetGridFitMode)(This);
             }
         }
 
@@ -200,9 +151,7 @@ namespace TerraFX.Interop
         {
             fixed (IDWriteRenderingParams3* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetRenderingMode1>(lpVtbl->GetRenderingMode1)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetRenderingMode1>(lpVtbl->GetRenderingMode1)(This);
             }
         }
 

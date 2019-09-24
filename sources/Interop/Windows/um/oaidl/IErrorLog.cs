@@ -15,45 +15,26 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] IErrorLog* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(IErrorLog* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] IErrorLog* This
-        );
+        public delegate uint _AddRef(IErrorLog* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] IErrorLog* This
-        );
+        public delegate uint _Release(IErrorLog* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _AddError(
-            [In] IErrorLog* This,
-            [In, NativeTypeName("LPCOLESTR")] char* pszPropName,
-            [In] EXCEPINFO* pExcepInfo
-        );
+        public delegate int _AddError(IErrorLog* This, [NativeTypeName("LPCOLESTR")] char* pszPropName, EXCEPINFO* pExcepInfo);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (IErrorLog* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -62,9 +43,7 @@ namespace TerraFX.Interop
         {
             fixed (IErrorLog* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -73,25 +52,16 @@ namespace TerraFX.Interop
         {
             fixed (IErrorLog* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int AddError(
-            [In, NativeTypeName("LPCOLESTR")] char* pszPropName,
-            [In] EXCEPINFO* pExcepInfo
-        )
+        public int AddError([NativeTypeName("LPCOLESTR")] char* pszPropName, EXCEPINFO* pExcepInfo)
         {
             fixed (IErrorLog* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddError>(lpVtbl->AddError)(
-                    This,
-                    pszPropName,
-                    pExcepInfo
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddError>(lpVtbl->AddError)(This, pszPropName, pExcepInfo);
             }
         }
 

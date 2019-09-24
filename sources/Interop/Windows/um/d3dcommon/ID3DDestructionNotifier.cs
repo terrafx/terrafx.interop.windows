@@ -15,53 +15,30 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID3DDestructionNotifier* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID3DDestructionNotifier* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID3DDestructionNotifier* This
-        );
+        public delegate uint _AddRef(ID3DDestructionNotifier* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID3DDestructionNotifier* This
-        );
+        public delegate uint _Release(ID3DDestructionNotifier* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _RegisterDestructionCallback(
-            [In] ID3DDestructionNotifier* This,
-            [In, NativeTypeName("PFN_DESTRUCTION_CALLBACK")] IntPtr callbackFn,
-            [In] void* pData,
-            [Out, NativeTypeName("UINT")] uint* pCallbackID
-        );
+        public delegate int _RegisterDestructionCallback(ID3DDestructionNotifier* This, [NativeTypeName("PFN_DESTRUCTION_CALLBACK")] IntPtr callbackFn, void* pData, [NativeTypeName("UINT")] uint* pCallbackID);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _UnregisterDestructionCallback(
-            [In] ID3DDestructionNotifier* This,
-            [In, NativeTypeName("UINT")] uint callbackID
-        );
+        public delegate int _UnregisterDestructionCallback(ID3DDestructionNotifier* This, [NativeTypeName("UINT")] uint callbackID);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID3DDestructionNotifier* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -70,9 +47,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3DDestructionNotifier* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -81,41 +56,25 @@ namespace TerraFX.Interop
         {
             fixed (ID3DDestructionNotifier* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int RegisterDestructionCallback(
-            [In, NativeTypeName("PFN_DESTRUCTION_CALLBACK")] IntPtr callbackFn,
-            [In] void* pData,
-            [Out, NativeTypeName("UINT")] uint* pCallbackID
-        )
+        public int RegisterDestructionCallback([NativeTypeName("PFN_DESTRUCTION_CALLBACK")] IntPtr callbackFn, void* pData, [NativeTypeName("UINT")] uint* pCallbackID)
         {
             fixed (ID3DDestructionNotifier* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_RegisterDestructionCallback>(lpVtbl->RegisterDestructionCallback)(
-                    This,
-                    callbackFn,
-                    pData,
-                    pCallbackID
-                );
+                return Marshal.GetDelegateForFunctionPointer<_RegisterDestructionCallback>(lpVtbl->RegisterDestructionCallback)(This, callbackFn, pData, pCallbackID);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int UnregisterDestructionCallback(
-            [In, NativeTypeName("UINT")] uint callbackID
-        )
+        public int UnregisterDestructionCallback([NativeTypeName("UINT")] uint callbackID)
         {
             fixed (ID3DDestructionNotifier* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_UnregisterDestructionCallback>(lpVtbl->UnregisterDestructionCallback)(
-                    This,
-                    callbackID
-                );
+                return Marshal.GetDelegateForFunctionPointer<_UnregisterDestructionCallback>(lpVtbl->UnregisterDestructionCallback)(This, callbackID);
             }
         }
 

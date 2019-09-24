@@ -16,131 +16,74 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID2D1Ink* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID2D1Ink* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID2D1Ink* This
-        );
+        public delegate uint _AddRef(ID2D1Ink* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID2D1Ink* This
-        );
+        public delegate uint _Release(ID2D1Ink* This);
 
         /// <summary>Retrieve the factory associated with this resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetFactory(
-            [In] ID2D1Ink* This,
-            [Out] ID2D1Factory** factory
-        );
+        public delegate void _GetFactory(ID2D1Ink* This, ID2D1Factory** factory);
 
         /// <summary>Resets the ink start point.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetStartPoint(
-            [In] ID2D1Ink* This,
-            [In] D2D1_INK_POINT* startPoint
-        );
+        public delegate void _SetStartPoint(ID2D1Ink* This, D2D1_INK_POINT* startPoint);
 
         /// <summary>Retrieve the start point with which the ink was initialized.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate D2D1_INK_POINT* _GetStartPoint(
-            [In] ID2D1Ink* This,
-            [Out] D2D1_INK_POINT* _result
-        );
+        public delegate D2D1_INK_POINT* _GetStartPoint(ID2D1Ink* This, D2D1_INK_POINT* _result);
 
         /// <summary>Add one or more segments to the end of the ink.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _AddSegments(
-            [In] ID2D1Ink* This,
-            [In, NativeTypeName("D2D1_INK_BEZIER_SEGMENT[]")] D2D1_INK_BEZIER_SEGMENT* segments,
-            [In, NativeTypeName("UINT32")] uint segmentsCount
-        );
+        public delegate int _AddSegments(ID2D1Ink* This, [NativeTypeName("D2D1_INK_BEZIER_SEGMENT[]")] D2D1_INK_BEZIER_SEGMENT* segments, [NativeTypeName("UINT32")] uint segmentsCount);
 
         /// <summary>Remove one or more segments from the end of the ink.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _RemoveSegmentsAtEnd(
-            [In] ID2D1Ink* This,
-            [In, NativeTypeName("UINT32")] uint segmentsCount
-        );
+        public delegate int _RemoveSegmentsAtEnd(ID2D1Ink* This, [NativeTypeName("UINT32")] uint segmentsCount);
 
         /// <summary>Updates the specified segments with new control points.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetSegments(
-            [In] ID2D1Ink* This,
-            [In, NativeTypeName("UINT32")] uint startSegment,
-            [In, NativeTypeName("D2D1_INK_BEZIER_SEGMENT[]")] D2D1_INK_BEZIER_SEGMENT* segments,
-            [In, NativeTypeName("UINT32")] uint segmentsCount
-        );
+        public delegate int _SetSegments(ID2D1Ink* This, [NativeTypeName("UINT32")] uint startSegment, [NativeTypeName("D2D1_INK_BEZIER_SEGMENT[]")] D2D1_INK_BEZIER_SEGMENT* segments, [NativeTypeName("UINT32")] uint segmentsCount);
 
         /// <summary>Update the last segment with new control points.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetSegmentAtEnd(
-            [In] ID2D1Ink* This,
-            [In] D2D1_INK_BEZIER_SEGMENT* segment
-        );
+        public delegate int _SetSegmentAtEnd(ID2D1Ink* This, D2D1_INK_BEZIER_SEGMENT* segment);
 
         /// <summary>Returns the number of segments the ink is composed of.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public delegate uint _GetSegmentCount(
-            [In] ID2D1Ink* This
-        );
+        public delegate uint _GetSegmentCount(ID2D1Ink* This);
 
         /// <summary>Retrieve the segments stored in the ink.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetSegments(
-            [In] ID2D1Ink* This,
-            [In, NativeTypeName("UINT32")] uint startSegment,
-            [Out, NativeTypeName("D2D1_INK_BEZIER_SEGMENT[]")] D2D1_INK_BEZIER_SEGMENT* segments,
-            [In, NativeTypeName("UINT32")] uint segmentsCount
-        );
+        public delegate int _GetSegments(ID2D1Ink* This, [NativeTypeName("UINT32")] uint startSegment, [NativeTypeName("D2D1_INK_BEZIER_SEGMENT[]")] D2D1_INK_BEZIER_SEGMENT* segments, [NativeTypeName("UINT32")] uint segmentsCount);
 
         /// <summary>Construct a geometric representation of the ink.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _StreamAsGeometry(
-            [In] ID2D1Ink* This,
-            [In, Optional] ID2D1InkStyle* inkStyle,
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
-            [In, NativeTypeName("FLOAT")] float flatteningTolerance,
-            [In] ID2D1SimplifiedGeometrySink* geometrySink
-        );
+        public delegate int _StreamAsGeometry(ID2D1Ink* This, [Optional] ID2D1InkStyle* inkStyle, [Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("FLOAT")] float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink);
 
         /// <summary>Retrieve the bounds of the ink, with an optional applied transform.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetBounds(
-            [In] ID2D1Ink* This,
-            [In, Optional] ID2D1InkStyle* inkStyle,
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
-            [Out, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* bounds
-        );
+        public delegate int _GetBounds(ID2D1Ink* This, [Optional] ID2D1InkStyle* inkStyle, [Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* bounds);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID2D1Ink* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -149,9 +92,7 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Ink* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -160,35 +101,23 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Ink* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
-        public void GetFactory(
-            [Out] ID2D1Factory** factory
-        )
+        public void GetFactory(ID2D1Factory** factory)
         {
             fixed (ID2D1Ink* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(
-                    This,
-                    factory
-                );
+                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(This, factory);
             }
         }
 
-        public void SetStartPoint(
-            [In] D2D1_INK_POINT* startPoint
-        )
+        public void SetStartPoint(D2D1_INK_POINT* startPoint)
         {
             fixed (ID2D1Ink* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetStartPoint>(lpVtbl->SetStartPoint)(
-                    This,
-                    startPoint
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetStartPoint>(lpVtbl->SetStartPoint)(This, startPoint);
             }
         }
 
@@ -197,72 +126,43 @@ namespace TerraFX.Interop
             fixed (ID2D1Ink* This = &this)
             {
                 D2D1_INK_POINT result;
-                return *Marshal.GetDelegateForFunctionPointer<_GetStartPoint>(lpVtbl->GetStartPoint)(
-                    This,
-                    &result
-                );
+                return *Marshal.GetDelegateForFunctionPointer<_GetStartPoint>(lpVtbl->GetStartPoint)(This, &result);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int AddSegments(
-            [In, NativeTypeName("D2D1_INK_BEZIER_SEGMENT[]")] D2D1_INK_BEZIER_SEGMENT* segments,
-            [In, NativeTypeName("UINT32")] uint segmentsCount
-        )
+        public int AddSegments([NativeTypeName("D2D1_INK_BEZIER_SEGMENT[]")] D2D1_INK_BEZIER_SEGMENT* segments, [NativeTypeName("UINT32")] uint segmentsCount)
         {
             fixed (ID2D1Ink* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddSegments>(lpVtbl->AddSegments)(
-                    This,
-                    segments,
-                    segmentsCount
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddSegments>(lpVtbl->AddSegments)(This, segments, segmentsCount);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int RemoveSegmentsAtEnd(
-            [In, NativeTypeName("UINT32")] uint segmentsCount
-        )
+        public int RemoveSegmentsAtEnd([NativeTypeName("UINT32")] uint segmentsCount)
         {
             fixed (ID2D1Ink* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_RemoveSegmentsAtEnd>(lpVtbl->RemoveSegmentsAtEnd)(
-                    This,
-                    segmentsCount
-                );
+                return Marshal.GetDelegateForFunctionPointer<_RemoveSegmentsAtEnd>(lpVtbl->RemoveSegmentsAtEnd)(This, segmentsCount);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetSegments(
-            [In, NativeTypeName("UINT32")] uint startSegment,
-            [In, NativeTypeName("D2D1_INK_BEZIER_SEGMENT[]")] D2D1_INK_BEZIER_SEGMENT* segments,
-            [In, NativeTypeName("UINT32")] uint segmentsCount
-        )
+        public int SetSegments([NativeTypeName("UINT32")] uint startSegment, [NativeTypeName("D2D1_INK_BEZIER_SEGMENT[]")] D2D1_INK_BEZIER_SEGMENT* segments, [NativeTypeName("UINT32")] uint segmentsCount)
         {
             fixed (ID2D1Ink* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetSegments>(lpVtbl->SetSegments)(
-                    This,
-                    startSegment,
-                    segments,
-                    segmentsCount
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetSegments>(lpVtbl->SetSegments)(This, startSegment, segments, segmentsCount);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetSegmentAtEnd(
-            [In] D2D1_INK_BEZIER_SEGMENT* segment
-        )
+        public int SetSegmentAtEnd(D2D1_INK_BEZIER_SEGMENT* segment)
         {
             fixed (ID2D1Ink* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetSegmentAtEnd>(lpVtbl->SetSegmentAtEnd)(
-                    This,
-                    segment
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetSegmentAtEnd>(lpVtbl->SetSegmentAtEnd)(This, segment);
             }
         }
 
@@ -271,65 +171,34 @@ namespace TerraFX.Interop
         {
             fixed (ID2D1Ink* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetSegmentCount>(lpVtbl->GetSegmentCount)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetSegmentCount>(lpVtbl->GetSegmentCount)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetSegments(
-            [In, NativeTypeName("UINT32")] uint startSegment,
-            [Out, NativeTypeName("D2D1_INK_BEZIER_SEGMENT[]")] D2D1_INK_BEZIER_SEGMENT* segments,
-            [In, NativeTypeName("UINT32")] uint segmentsCount
-        )
+        public int GetSegments([NativeTypeName("UINT32")] uint startSegment, [NativeTypeName("D2D1_INK_BEZIER_SEGMENT[]")] D2D1_INK_BEZIER_SEGMENT* segments, [NativeTypeName("UINT32")] uint segmentsCount)
         {
             fixed (ID2D1Ink* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetSegments>(lpVtbl->GetSegments)(
-                    This,
-                    startSegment,
-                    segments,
-                    segmentsCount
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetSegments>(lpVtbl->GetSegments)(This, startSegment, segments, segmentsCount);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int StreamAsGeometry(
-            [In, Optional] ID2D1InkStyle* inkStyle,
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
-            [In, NativeTypeName("FLOAT")] float flatteningTolerance,
-            [In] ID2D1SimplifiedGeometrySink* geometrySink
-        )
+        public int StreamAsGeometry([Optional] ID2D1InkStyle* inkStyle, [Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("FLOAT")] float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
         {
             fixed (ID2D1Ink* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_StreamAsGeometry>(lpVtbl->StreamAsGeometry)(
-                    This,
-                    inkStyle,
-                    worldTransform,
-                    flatteningTolerance,
-                    geometrySink
-                );
+                return Marshal.GetDelegateForFunctionPointer<_StreamAsGeometry>(lpVtbl->StreamAsGeometry)(This, inkStyle, worldTransform, flatteningTolerance, geometrySink);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetBounds(
-            [In, Optional] ID2D1InkStyle* inkStyle,
-            [In, Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform,
-            [Out, NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* bounds
-        )
+        public int GetBounds([Optional] ID2D1InkStyle* inkStyle, [Optional, NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* bounds)
         {
             fixed (ID2D1Ink* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetBounds>(lpVtbl->GetBounds)(
-                    This,
-                    inkStyle,
-                    worldTransform,
-                    bounds
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetBounds>(lpVtbl->GetBounds)(This, inkStyle, worldTransform, bounds);
             }
         }
 

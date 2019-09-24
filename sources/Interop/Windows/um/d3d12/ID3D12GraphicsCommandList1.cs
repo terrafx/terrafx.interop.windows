@@ -15,539 +15,215 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        );
+        public delegate int _QueryInterface(ID3D12GraphicsCommandList1* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(
-            [In] ID3D12GraphicsCommandList1* This
-        );
+        public delegate uint _AddRef(ID3D12GraphicsCommandList1* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(
-            [In] ID3D12GraphicsCommandList1* This
-        );
+        public delegate uint _Release(ID3D12GraphicsCommandList1* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPrivateData(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("REFGUID")] Guid* guid,
-            [In, Out, NativeTypeName("UINT")] uint* pDataSize,
-            [Out] void* pData = null
-        );
+        public delegate int _GetPrivateData(ID3D12GraphicsCommandList1* This, [NativeTypeName("REFGUID")] Guid* guid, [NativeTypeName("UINT")] uint* pDataSize, void* pData = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateData(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("REFGUID")] Guid* guid,
-            [In, NativeTypeName("UINT")] uint DataSize,
-            [In] void* pData = null
-        );
+        public delegate int _SetPrivateData(ID3D12GraphicsCommandList1* This, [NativeTypeName("REFGUID")] Guid* guid, [NativeTypeName("UINT")] uint DataSize, void* pData = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateDataInterface(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("REFGUID")] Guid* guid,
-            [In] IUnknown* pData = null
-        );
+        public delegate int _SetPrivateDataInterface(ID3D12GraphicsCommandList1* This, [NativeTypeName("REFGUID")] Guid* guid, IUnknown* pData = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetName(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("LPCWSTR")] char* Name
-        );
+        public delegate int _SetName(ID3D12GraphicsCommandList1* This, [NativeTypeName("LPCWSTR")] char* Name);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDevice(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvDevice = null
-        );
+        public delegate int _GetDevice(ID3D12GraphicsCommandList1* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvDevice = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate D3D12_COMMAND_LIST_TYPE __GetType(
-            [In] ID3D12GraphicsCommandList1* This
-        );
+        public delegate D3D12_COMMAND_LIST_TYPE __GetType(ID3D12GraphicsCommandList1* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Close(
-            [In] ID3D12GraphicsCommandList1* This
-        );
+        public delegate int _Close(ID3D12GraphicsCommandList1* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Reset(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In] ID3D12CommandAllocator* pAllocator,
-            [In] ID3D12PipelineState* pInitialState = null
-        );
+        public delegate int _Reset(ID3D12GraphicsCommandList1* This, ID3D12CommandAllocator* pAllocator, ID3D12PipelineState* pInitialState = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _ClearState(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In] ID3D12PipelineState* pPipelineState = null
-        );
+        public delegate void _ClearState(ID3D12GraphicsCommandList1* This, ID3D12PipelineState* pPipelineState = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _DrawInstanced(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("UINT")] uint VertexCountPerInstance,
-            [In, NativeTypeName("UINT")] uint InstanceCount,
-            [In, NativeTypeName("UINT")] uint StartVertexLocation,
-            [In, NativeTypeName("UINT")] uint StartInstanceLocation
-        );
+        public delegate void _DrawInstanced(ID3D12GraphicsCommandList1* This, [NativeTypeName("UINT")] uint VertexCountPerInstance, [NativeTypeName("UINT")] uint InstanceCount, [NativeTypeName("UINT")] uint StartVertexLocation, [NativeTypeName("UINT")] uint StartInstanceLocation);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _DrawIndexedInstanced(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("UINT")] uint IndexCountPerInstance,
-            [In, NativeTypeName("UINT")] uint InstanceCount,
-            [In, NativeTypeName("UINT")] uint StartIndexLocation,
-            [In, NativeTypeName("INT")] int BaseVertexLocation,
-            [In, NativeTypeName("UINT")] uint StartInstanceLocation
-        );
+        public delegate void _DrawIndexedInstanced(ID3D12GraphicsCommandList1* This, [NativeTypeName("UINT")] uint IndexCountPerInstance, [NativeTypeName("UINT")] uint InstanceCount, [NativeTypeName("UINT")] uint StartIndexLocation, [NativeTypeName("INT")] int BaseVertexLocation, [NativeTypeName("UINT")] uint StartInstanceLocation);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _Dispatch(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("UINT")] uint ThreadGroupCountX,
-            [In, NativeTypeName("UINT")] uint ThreadGroupCountY,
-            [In, NativeTypeName("UINT")] uint ThreadGroupCountZ
-        );
+        public delegate void _Dispatch(ID3D12GraphicsCommandList1* This, [NativeTypeName("UINT")] uint ThreadGroupCountX, [NativeTypeName("UINT")] uint ThreadGroupCountY, [NativeTypeName("UINT")] uint ThreadGroupCountZ);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _CopyBufferRegion(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In] ID3D12Resource* pDstBuffer,
-            [In, NativeTypeName("UINT64")] ulong DstOffset,
-            [In] ID3D12Resource* pSrcBuffer,
-            [In, NativeTypeName("UINT64")] ulong SrcOffset,
-            [In, NativeTypeName("UINT64")] ulong NumBytes
-        );
+        public delegate void _CopyBufferRegion(ID3D12GraphicsCommandList1* This, ID3D12Resource* pDstBuffer, [NativeTypeName("UINT64")] ulong DstOffset, ID3D12Resource* pSrcBuffer, [NativeTypeName("UINT64")] ulong SrcOffset, [NativeTypeName("UINT64")] ulong NumBytes);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _CopyTextureRegion(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In] D3D12_TEXTURE_COPY_LOCATION* pDst,
-            [In, NativeTypeName("UINT")] uint DstX,
-            [In, NativeTypeName("UINT")] uint DstY,
-            [In, NativeTypeName("UINT")] uint DstZ,
-            [In] D3D12_TEXTURE_COPY_LOCATION* pSrc,
-            [In] D3D12_BOX* pSrcBox = null
-        );
+        public delegate void _CopyTextureRegion(ID3D12GraphicsCommandList1* This, D3D12_TEXTURE_COPY_LOCATION* pDst, [NativeTypeName("UINT")] uint DstX, [NativeTypeName("UINT")] uint DstY, [NativeTypeName("UINT")] uint DstZ, D3D12_TEXTURE_COPY_LOCATION* pSrc, D3D12_BOX* pSrcBox = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _CopyResource(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In] ID3D12Resource* pDstResource,
-            [In] ID3D12Resource* pSrcResource
-        );
+        public delegate void _CopyResource(ID3D12GraphicsCommandList1* This, ID3D12Resource* pDstResource, ID3D12Resource* pSrcResource);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _CopyTiles(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In] ID3D12Resource* pTiledResource,
-            [In] D3D12_TILED_RESOURCE_COORDINATE* pTileRegionStartCoordinate,
-            [In] D3D12_TILE_REGION_SIZE* pTileRegionSize,
-            [In] ID3D12Resource* pBuffer,
-            [In, NativeTypeName("UINT64")] ulong BufferStartOffsetInBytes,
-            [In] D3D12_TILE_COPY_FLAGS Flags
-        );
+        public delegate void _CopyTiles(ID3D12GraphicsCommandList1* This, ID3D12Resource* pTiledResource, D3D12_TILED_RESOURCE_COORDINATE* pTileRegionStartCoordinate, D3D12_TILE_REGION_SIZE* pTileRegionSize, ID3D12Resource* pBuffer, [NativeTypeName("UINT64")] ulong BufferStartOffsetInBytes, D3D12_TILE_COPY_FLAGS Flags);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _ResolveSubresource(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In] ID3D12Resource* pDstResource,
-            [In, NativeTypeName("UINT")] uint DstSubresource,
-            [In] ID3D12Resource* pSrcResource,
-            [In, NativeTypeName("UINT")] uint SrcSubresource,
-            [In] DXGI_FORMAT Format
-        );
+        public delegate void _ResolveSubresource(ID3D12GraphicsCommandList1* This, ID3D12Resource* pDstResource, [NativeTypeName("UINT")] uint DstSubresource, ID3D12Resource* pSrcResource, [NativeTypeName("UINT")] uint SrcSubresource, DXGI_FORMAT Format);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _IASetPrimitiveTopology(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In] D3D_PRIMITIVE_TOPOLOGY PrimitiveTopology
-        );
+        public delegate void _IASetPrimitiveTopology(ID3D12GraphicsCommandList1* This, D3D_PRIMITIVE_TOPOLOGY PrimitiveTopology);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _RSSetViewports(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("UINT")] uint NumViewports,
-            [In] D3D12_VIEWPORT* pViewports
-        );
+        public delegate void _RSSetViewports(ID3D12GraphicsCommandList1* This, [NativeTypeName("UINT")] uint NumViewports, D3D12_VIEWPORT* pViewports);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _RSSetScissorRects(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("UINT")] uint NumRects,
-            [In, NativeTypeName("D3D12_RECT")] RECT* pRects
-        );
+        public delegate void _RSSetScissorRects(ID3D12GraphicsCommandList1* This, [NativeTypeName("UINT")] uint NumRects, [NativeTypeName("D3D12_RECT")] RECT* pRects);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _OMSetBlendFactor(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("FLOAT")] float* BlendFactor = null
-        );
+        public delegate void _OMSetBlendFactor(ID3D12GraphicsCommandList1* This, [NativeTypeName("FLOAT")] float* BlendFactor = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _OMSetStencilRef(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("UINT")] uint StencilRef
-        );
+        public delegate void _OMSetStencilRef(ID3D12GraphicsCommandList1* This, [NativeTypeName("UINT")] uint StencilRef);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetPipelineState(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In] ID3D12PipelineState* pPipelineState
-        );
+        public delegate void _SetPipelineState(ID3D12GraphicsCommandList1* This, ID3D12PipelineState* pPipelineState);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _ResourceBarrier(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("UINT")] uint NumBarriers,
-            [In, NativeTypeName("D3D12_RESOURCE_BARRIER[]")] D3D12_RESOURCE_BARRIER* pBarriers
-        );
+        public delegate void _ResourceBarrier(ID3D12GraphicsCommandList1* This, [NativeTypeName("UINT")] uint NumBarriers, [NativeTypeName("D3D12_RESOURCE_BARRIER[]")] D3D12_RESOURCE_BARRIER* pBarriers);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _ExecuteBundle(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In] ID3D12GraphicsCommandList* pCommandList
-        );
+        public delegate void _ExecuteBundle(ID3D12GraphicsCommandList1* This, ID3D12GraphicsCommandList* pCommandList);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetDescriptorHeaps(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("UINT")] uint NumDescriptorHeaps,
-            [In, NativeTypeName("ID3D12DescriptorHeap*[]")] ID3D12DescriptorHeap** ppDescriptorHeaps
-        );
+        public delegate void _SetDescriptorHeaps(ID3D12GraphicsCommandList1* This, [NativeTypeName("UINT")] uint NumDescriptorHeaps, [NativeTypeName("ID3D12DescriptorHeap*[]")] ID3D12DescriptorHeap** ppDescriptorHeaps);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetComputeRootSignature(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In] ID3D12RootSignature* pRootSignature = null
-        );
+        public delegate void _SetComputeRootSignature(ID3D12GraphicsCommandList1* This, ID3D12RootSignature* pRootSignature = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetGraphicsRootSignature(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In] ID3D12RootSignature* pRootSignature = null
-        );
+        public delegate void _SetGraphicsRootSignature(ID3D12GraphicsCommandList1* This, ID3D12RootSignature* pRootSignature = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetComputeRootDescriptorTable(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("UINT")] uint RootParameterIndex,
-            [In] D3D12_GPU_DESCRIPTOR_HANDLE BaseDescriptor
-        );
+        public delegate void _SetComputeRootDescriptorTable(ID3D12GraphicsCommandList1* This, [NativeTypeName("UINT")] uint RootParameterIndex, D3D12_GPU_DESCRIPTOR_HANDLE BaseDescriptor);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetGraphicsRootDescriptorTable(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("UINT")] uint RootParameterIndex,
-            [In] D3D12_GPU_DESCRIPTOR_HANDLE BaseDescriptor
-        );
+        public delegate void _SetGraphicsRootDescriptorTable(ID3D12GraphicsCommandList1* This, [NativeTypeName("UINT")] uint RootParameterIndex, D3D12_GPU_DESCRIPTOR_HANDLE BaseDescriptor);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetComputeRoot32BitConstant(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("UINT")] uint RootParameterIndex,
-            [In, NativeTypeName("UINT")] uint SrcData,
-            [In, NativeTypeName("UINT")] uint DestOffsetIn32BitValues
-        );
+        public delegate void _SetComputeRoot32BitConstant(ID3D12GraphicsCommandList1* This, [NativeTypeName("UINT")] uint RootParameterIndex, [NativeTypeName("UINT")] uint SrcData, [NativeTypeName("UINT")] uint DestOffsetIn32BitValues);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetGraphicsRoot32BitConstant(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("UINT")] uint RootParameterIndex,
-            [In, NativeTypeName("UINT")] uint SrcData,
-            [In, NativeTypeName("UINT")] uint DestOffsetIn32BitValues
-        );
+        public delegate void _SetGraphicsRoot32BitConstant(ID3D12GraphicsCommandList1* This, [NativeTypeName("UINT")] uint RootParameterIndex, [NativeTypeName("UINT")] uint SrcData, [NativeTypeName("UINT")] uint DestOffsetIn32BitValues);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetComputeRoot32BitConstants(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("UINT")] uint RootParameterIndex,
-            [In, NativeTypeName("UINT")] uint Num32BitValuesToSet,
-            [In] void* pSrcData,
-            [In, NativeTypeName("UINT")] uint DestOffsetIn32BitValues
-        );
+        public delegate void _SetComputeRoot32BitConstants(ID3D12GraphicsCommandList1* This, [NativeTypeName("UINT")] uint RootParameterIndex, [NativeTypeName("UINT")] uint Num32BitValuesToSet, void* pSrcData, [NativeTypeName("UINT")] uint DestOffsetIn32BitValues);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetGraphicsRoot32BitConstants(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("UINT")] uint RootParameterIndex,
-            [In, NativeTypeName("UINT")] uint Num32BitValuesToSet,
-            [In] void* pSrcData,
-            [In, NativeTypeName("UINT")] uint DestOffsetIn32BitValues
-        );
+        public delegate void _SetGraphicsRoot32BitConstants(ID3D12GraphicsCommandList1* This, [NativeTypeName("UINT")] uint RootParameterIndex, [NativeTypeName("UINT")] uint Num32BitValuesToSet, void* pSrcData, [NativeTypeName("UINT")] uint DestOffsetIn32BitValues);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetComputeRootConstantBufferView(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("UINT")] uint RootParameterIndex,
-            [In, NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation
-        );
+        public delegate void _SetComputeRootConstantBufferView(ID3D12GraphicsCommandList1* This, [NativeTypeName("UINT")] uint RootParameterIndex, [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetGraphicsRootConstantBufferView(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("UINT")] uint RootParameterIndex,
-            [In, NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation
-        );
+        public delegate void _SetGraphicsRootConstantBufferView(ID3D12GraphicsCommandList1* This, [NativeTypeName("UINT")] uint RootParameterIndex, [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetComputeRootShaderResourceView(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("UINT")] uint RootParameterIndex,
-            [In, NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation
-        );
+        public delegate void _SetComputeRootShaderResourceView(ID3D12GraphicsCommandList1* This, [NativeTypeName("UINT")] uint RootParameterIndex, [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetGraphicsRootShaderResourceView(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("UINT")] uint RootParameterIndex,
-            [In, NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation
-        );
+        public delegate void _SetGraphicsRootShaderResourceView(ID3D12GraphicsCommandList1* This, [NativeTypeName("UINT")] uint RootParameterIndex, [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetComputeRootUnorderedAccessView(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("UINT")] uint RootParameterIndex,
-            [In, NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation
-        );
+        public delegate void _SetComputeRootUnorderedAccessView(ID3D12GraphicsCommandList1* This, [NativeTypeName("UINT")] uint RootParameterIndex, [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetGraphicsRootUnorderedAccessView(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("UINT")] uint RootParameterIndex,
-            [In, NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation
-        );
+        public delegate void _SetGraphicsRootUnorderedAccessView(ID3D12GraphicsCommandList1* This, [NativeTypeName("UINT")] uint RootParameterIndex, [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _IASetIndexBuffer(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In] D3D12_INDEX_BUFFER_VIEW* pView = null
-        );
+        public delegate void _IASetIndexBuffer(ID3D12GraphicsCommandList1* This, D3D12_INDEX_BUFFER_VIEW* pView = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _IASetVertexBuffers(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("UINT")] uint StartSlot,
-            [In, NativeTypeName("UINT")] uint NumViews,
-            [In, NativeTypeName("D3D12_VERTEX_BUFFER_VIEW[]")] D3D12_VERTEX_BUFFER_VIEW* pViews = null
-        );
+        public delegate void _IASetVertexBuffers(ID3D12GraphicsCommandList1* This, [NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumViews, [NativeTypeName("D3D12_VERTEX_BUFFER_VIEW[]")] D3D12_VERTEX_BUFFER_VIEW* pViews = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SOSetTargets(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("UINT")] uint StartSlot,
-            [In, NativeTypeName("UINT")] uint NumViews,
-            [In, NativeTypeName("D3D12_STREAM_OUTPUT_BUFFER_VIEW[]")] D3D12_STREAM_OUTPUT_BUFFER_VIEW* pViews = null
-        );
+        public delegate void _SOSetTargets(ID3D12GraphicsCommandList1* This, [NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumViews, [NativeTypeName("D3D12_STREAM_OUTPUT_BUFFER_VIEW[]")] D3D12_STREAM_OUTPUT_BUFFER_VIEW* pViews = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _OMSetRenderTargets(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("UINT")] uint NumRenderTargetDescriptors,
-            [In, Optional, NativeTypeName("D3D12_CPU_DESCRIPTOR_HANDLE[]")] D3D12_CPU_DESCRIPTOR_HANDLE* pRenderTargetDescriptors,
-            [In, NativeTypeName("INT")] int RTsSingleHandleToDescriptorRange,
-            [In] D3D12_CPU_DESCRIPTOR_HANDLE* pDepthStencilDescriptor = null
-        );
+        public delegate void _OMSetRenderTargets(ID3D12GraphicsCommandList1* This, [NativeTypeName("UINT")] uint NumRenderTargetDescriptors, [Optional, NativeTypeName("D3D12_CPU_DESCRIPTOR_HANDLE[]")] D3D12_CPU_DESCRIPTOR_HANDLE* pRenderTargetDescriptors, [NativeTypeName("INT")] int RTsSingleHandleToDescriptorRange, D3D12_CPU_DESCRIPTOR_HANDLE* pDepthStencilDescriptor = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _ClearDepthStencilView(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In] D3D12_CPU_DESCRIPTOR_HANDLE DepthStencilView,
-            [In] D3D12_CLEAR_FLAGS ClearFlags,
-            [In, NativeTypeName("FLOAT")] float Depth,
-            [In, NativeTypeName("UINT8")] byte Stencil,
-            [In, NativeTypeName("UINT")] uint NumRects,
-            [In, NativeTypeName("D3D12_RECT[]")] RECT* pRects
-        );
+        public delegate void _ClearDepthStencilView(ID3D12GraphicsCommandList1* This, D3D12_CPU_DESCRIPTOR_HANDLE DepthStencilView, D3D12_CLEAR_FLAGS ClearFlags, [NativeTypeName("FLOAT")] float Depth, [NativeTypeName("UINT8")] byte Stencil, [NativeTypeName("UINT")] uint NumRects, [NativeTypeName("D3D12_RECT[]")] RECT* pRects);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _ClearRenderTargetView(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In] D3D12_CPU_DESCRIPTOR_HANDLE RenderTargetView,
-            [In, NativeTypeName("FLOAT")] float* ColorRGBA,
-            [In, NativeTypeName("UINT")] uint NumRects,
-            [In, NativeTypeName("D3D12_RECT[]")] RECT* pRects
-        );
+        public delegate void _ClearRenderTargetView(ID3D12GraphicsCommandList1* This, D3D12_CPU_DESCRIPTOR_HANDLE RenderTargetView, [NativeTypeName("FLOAT")] float* ColorRGBA, [NativeTypeName("UINT")] uint NumRects, [NativeTypeName("D3D12_RECT[]")] RECT* pRects);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _ClearUnorderedAccessViewUint(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In] D3D12_GPU_DESCRIPTOR_HANDLE ViewGPUHandleInCurrentHeap,
-            [In] D3D12_CPU_DESCRIPTOR_HANDLE ViewCPUHandle,
-            [In] ID3D12Resource* pResource,
-            [In, NativeTypeName("UINT")] uint* Values,
-            [In, NativeTypeName("UINT")] uint NumRects,
-            [In, NativeTypeName("D3D12_RECT[]")] RECT* pRects
-        );
+        public delegate void _ClearUnorderedAccessViewUint(ID3D12GraphicsCommandList1* This, D3D12_GPU_DESCRIPTOR_HANDLE ViewGPUHandleInCurrentHeap, D3D12_CPU_DESCRIPTOR_HANDLE ViewCPUHandle, ID3D12Resource* pResource, [NativeTypeName("UINT")] uint* Values, [NativeTypeName("UINT")] uint NumRects, [NativeTypeName("D3D12_RECT[]")] RECT* pRects);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _ClearUnorderedAccessViewFloat(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In] D3D12_GPU_DESCRIPTOR_HANDLE ViewGPUHandleInCurrentHeap,
-            [In] D3D12_CPU_DESCRIPTOR_HANDLE ViewCPUHandle,
-            [In] ID3D12Resource* pResource,
-            [In, NativeTypeName("FLOAT")] float* Values,
-            [In, NativeTypeName("UINT")] uint NumRects,
-            [In, NativeTypeName("D3D12_RECT[]")] RECT* pRects
-        );
+        public delegate void _ClearUnorderedAccessViewFloat(ID3D12GraphicsCommandList1* This, D3D12_GPU_DESCRIPTOR_HANDLE ViewGPUHandleInCurrentHeap, D3D12_CPU_DESCRIPTOR_HANDLE ViewCPUHandle, ID3D12Resource* pResource, [NativeTypeName("FLOAT")] float* Values, [NativeTypeName("UINT")] uint NumRects, [NativeTypeName("D3D12_RECT[]")] RECT* pRects);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _DiscardResource(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In] ID3D12Resource* pResource,
-            [In] D3D12_DISCARD_REGION* pRegion = null
-        );
+        public delegate void _DiscardResource(ID3D12GraphicsCommandList1* This, ID3D12Resource* pResource, D3D12_DISCARD_REGION* pRegion = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _BeginQuery(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In] ID3D12QueryHeap* pQueryHeap,
-            [In] D3D12_QUERY_TYPE Type,
-            [In, NativeTypeName("UINT")] uint Index
-        );
+        public delegate void _BeginQuery(ID3D12GraphicsCommandList1* This, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, [NativeTypeName("UINT")] uint Index);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _EndQuery(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In] ID3D12QueryHeap* pQueryHeap,
-            [In] D3D12_QUERY_TYPE Type,
-            [In, NativeTypeName("UINT")] uint Index
-        );
+        public delegate void _EndQuery(ID3D12GraphicsCommandList1* This, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, [NativeTypeName("UINT")] uint Index);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _ResolveQueryData(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In] ID3D12QueryHeap* pQueryHeap,
-            [In] D3D12_QUERY_TYPE Type,
-            [In, NativeTypeName("UINT")] uint StartIndex,
-            [In, NativeTypeName("UINT")] uint NumQueries,
-            [In] ID3D12Resource* pDestinationBuffer,
-            [In, NativeTypeName("UINT64")] ulong AlignedDestinationBufferOffset
-        );
+        public delegate void _ResolveQueryData(ID3D12GraphicsCommandList1* This, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, [NativeTypeName("UINT")] uint StartIndex, [NativeTypeName("UINT")] uint NumQueries, ID3D12Resource* pDestinationBuffer, [NativeTypeName("UINT64")] ulong AlignedDestinationBufferOffset);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetPredication(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, Optional] ID3D12Resource* pBuffer,
-            [In, NativeTypeName("UINT64")] ulong AlignedBufferOffset,
-            [In] D3D12_PREDICATION_OP Operation
-        );
+        public delegate void _SetPredication(ID3D12GraphicsCommandList1* This, [Optional] ID3D12Resource* pBuffer, [NativeTypeName("UINT64")] ulong AlignedBufferOffset, D3D12_PREDICATION_OP Operation);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetMarker(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("UINT")] uint Metadata,
-            [In, Optional] void* pData,
-            [In, NativeTypeName("UINT")] uint Size
-        );
+        public delegate void _SetMarker(ID3D12GraphicsCommandList1* This, [NativeTypeName("UINT")] uint Metadata, [Optional] void* pData, [NativeTypeName("UINT")] uint Size);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _BeginEvent(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("UINT")] uint Metadata,
-            [In, Optional] void* pData,
-            [In, NativeTypeName("UINT")] uint Size
-        );
+        public delegate void _BeginEvent(ID3D12GraphicsCommandList1* This, [NativeTypeName("UINT")] uint Metadata, [Optional] void* pData, [NativeTypeName("UINT")] uint Size);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _EndEvent(
-            [In] ID3D12GraphicsCommandList1* This
-        );
+        public delegate void _EndEvent(ID3D12GraphicsCommandList1* This);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _ExecuteIndirect(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In] ID3D12CommandSignature* pCommandSignature,
-            [In, NativeTypeName("UINT")] uint MaxCommandCount,
-            [In] ID3D12Resource* pArgumentBuffer,
-            [In, NativeTypeName("UINT64")] ulong ArgumentBufferOffset,
-            [In, Optional] ID3D12Resource* pCountBuffer,
-            [In, NativeTypeName("UINT64")] ulong CountBufferOffset
-        );
+        public delegate void _ExecuteIndirect(ID3D12GraphicsCommandList1* This, ID3D12CommandSignature* pCommandSignature, [NativeTypeName("UINT")] uint MaxCommandCount, ID3D12Resource* pArgumentBuffer, [NativeTypeName("UINT64")] ulong ArgumentBufferOffset, [Optional] ID3D12Resource* pCountBuffer, [NativeTypeName("UINT64")] ulong CountBufferOffset);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _AtomicCopyBufferUINT(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In] ID3D12Resource* pDstBuffer,
-            [In, NativeTypeName("UINT64")] ulong DstOffset,
-            [In] ID3D12Resource* pSrcBuffer,
-            [In, NativeTypeName("UINT64")] ulong SrcOffset,
-            [In, NativeTypeName("UINT")] uint Dependencies,
-            [In, NativeTypeName("ID3D12Resource*[]")] ID3D12Resource** ppDependentResources,
-            [In, NativeTypeName("D3D12_SUBRESOURCE_RANGE_UINT64[]")] D3D12_SUBRESOURCE_RANGE_UINT64* pDependentSubresourceRanges
-        );
+        public delegate void _AtomicCopyBufferUINT(ID3D12GraphicsCommandList1* This, ID3D12Resource* pDstBuffer, [NativeTypeName("UINT64")] ulong DstOffset, ID3D12Resource* pSrcBuffer, [NativeTypeName("UINT64")] ulong SrcOffset, [NativeTypeName("UINT")] uint Dependencies, [NativeTypeName("ID3D12Resource*[]")] ID3D12Resource** ppDependentResources, [NativeTypeName("D3D12_SUBRESOURCE_RANGE_UINT64[]")] D3D12_SUBRESOURCE_RANGE_UINT64* pDependentSubresourceRanges);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _AtomicCopyBufferUINT64(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In] ID3D12Resource* pDstBuffer,
-            [In, NativeTypeName("UINT64")] ulong DstOffset,
-            [In] ID3D12Resource* pSrcBuffer,
-            [In, NativeTypeName("UINT64")] ulong SrcOffset,
-            [In, NativeTypeName("UINT")] uint Dependencies,
-            [In, NativeTypeName("ID3D12Resource*[]")] ID3D12Resource** ppDependentResources,
-            [In, NativeTypeName("D3D12_SUBRESOURCE_RANGE_UINT64[]")] D3D12_SUBRESOURCE_RANGE_UINT64* pDependentSubresourceRanges
-        );
+        public delegate void _AtomicCopyBufferUINT64(ID3D12GraphicsCommandList1* This, ID3D12Resource* pDstBuffer, [NativeTypeName("UINT64")] ulong DstOffset, ID3D12Resource* pSrcBuffer, [NativeTypeName("UINT64")] ulong SrcOffset, [NativeTypeName("UINT")] uint Dependencies, [NativeTypeName("ID3D12Resource*[]")] ID3D12Resource** ppDependentResources, [NativeTypeName("D3D12_SUBRESOURCE_RANGE_UINT64[]")] D3D12_SUBRESOURCE_RANGE_UINT64* pDependentSubresourceRanges);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _OMSetDepthBounds(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("FLOAT")] float Min,
-            [In, NativeTypeName("FLOAT")] float Max
-        );
+        public delegate void _OMSetDepthBounds(ID3D12GraphicsCommandList1* This, [NativeTypeName("FLOAT")] float Min, [NativeTypeName("FLOAT")] float Max);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetSamplePositions(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In, NativeTypeName("UINT")] uint NumSamplesPerPixel,
-            [In, NativeTypeName("UINT")] uint NumPixels,
-            [In, NativeTypeName("D3D12_SAMPLE_POSITION[]")] D3D12_SAMPLE_POSITION* pSamplePositions
-        );
+        public delegate void _SetSamplePositions(ID3D12GraphicsCommandList1* This, [NativeTypeName("UINT")] uint NumSamplesPerPixel, [NativeTypeName("UINT")] uint NumPixels, [NativeTypeName("D3D12_SAMPLE_POSITION[]")] D3D12_SAMPLE_POSITION* pSamplePositions);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _ResolveSubresourceRegion(
-            [In] ID3D12GraphicsCommandList1* This,
-            [In] ID3D12Resource* pDstResource,
-            [In, NativeTypeName("UINT")] uint DstSubresource,
-            [In, NativeTypeName("UINT")] uint DstX,
-            [In, NativeTypeName("UINT")] uint DstY,
-            [In] ID3D12Resource* pSrcResource,
-            [In, NativeTypeName("UINT")] uint SrcSubresource,
-            [In, Optional, NativeTypeName("D3D12_RECT")] RECT* pSrcRect,
-            [In] DXGI_FORMAT Format,
-            [In] D3D12_RESOLVE_MODE ResolveMode
-        );
+        public delegate void _ResolveSubresourceRegion(ID3D12GraphicsCommandList1* This, ID3D12Resource* pDstResource, [NativeTypeName("UINT")] uint DstSubresource, [NativeTypeName("UINT")] uint DstX, [NativeTypeName("UINT")] uint DstY, ID3D12Resource* pSrcResource, [NativeTypeName("UINT")] uint SrcSubresource, [Optional, NativeTypeName("D3D12_RECT")] RECT* pSrcRect, DXGI_FORMAT Format, D3D12_RESOLVE_MODE ResolveMode);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvObject
-        )
+        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(
-                    This,
-                    riid,
-                    ppvObject
-                );
+                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
             }
         }
 
@@ -556,9 +232,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
             }
         }
 
@@ -567,91 +241,52 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetPrivateData(
-            [In, NativeTypeName("REFGUID")] Guid* guid,
-            [In, Out, NativeTypeName("UINT")] uint* pDataSize,
-            [Out] void* pData = null
-        )
+        public int GetPrivateData([NativeTypeName("REFGUID")] Guid* guid, [NativeTypeName("UINT")] uint* pDataSize, void* pData = null)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)(
-                    This,
-                    guid,
-                    pDataSize,
-                    pData
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)(This, guid, pDataSize, pData);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetPrivateData(
-            [In, NativeTypeName("REFGUID")] Guid* guid,
-            [In, NativeTypeName("UINT")] uint DataSize,
-            [In] void* pData = null
-        )
+        public int SetPrivateData([NativeTypeName("REFGUID")] Guid* guid, [NativeTypeName("UINT")] uint DataSize, void* pData = null)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)(
-                    This,
-                    guid,
-                    DataSize,
-                    pData
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)(This, guid, DataSize, pData);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetPrivateDataInterface(
-            [In, NativeTypeName("REFGUID")] Guid* guid,
-            [In] IUnknown* pData = null
-        )
+        public int SetPrivateDataInterface([NativeTypeName("REFGUID")] Guid* guid, IUnknown* pData = null)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(
-                    This,
-                    guid,
-                    pData
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)(This, guid, pData);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetName(
-            [In, NativeTypeName("LPCWSTR")] char* Name
-        )
+        public int SetName([NativeTypeName("LPCWSTR")] char* Name)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_SetName>(lpVtbl->SetName)(
-                    This,
-                    Name
-                );
+                return Marshal.GetDelegateForFunctionPointer<_SetName>(lpVtbl->SetName)(This, Name);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetDevice(
-            [In, NativeTypeName("REFIID")] Guid* riid,
-            [Out] void** ppvDevice = null
-        )
+        public int GetDevice([NativeTypeName("REFIID")] Guid* riid, void** ppvDevice = null)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_GetDevice>(lpVtbl->GetDevice)(
-                    This,
-                    riid,
-                    ppvDevice
-                );
+                return Marshal.GetDelegateForFunctionPointer<_GetDevice>(lpVtbl->GetDevice)(This, riid, ppvDevice);
             }
         }
 
@@ -659,9 +294,7 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<__GetType>(lpVtbl->_GetType)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<__GetType>(lpVtbl->_GetType)(This);
             }
         }
 
@@ -670,818 +303,392 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Close>(lpVtbl->Close)(
-                    This
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Close>(lpVtbl->Close)(This);
             }
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Reset(
-            [In] ID3D12CommandAllocator* pAllocator,
-            [In] ID3D12PipelineState* pInitialState = null
-        )
+        public int Reset(ID3D12CommandAllocator* pAllocator, ID3D12PipelineState* pInitialState = null)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                return Marshal.GetDelegateForFunctionPointer<_Reset>(lpVtbl->Reset)(
-                    This,
-                    pAllocator,
-                    pInitialState
-                );
+                return Marshal.GetDelegateForFunctionPointer<_Reset>(lpVtbl->Reset)(This, pAllocator, pInitialState);
             }
         }
 
-        public void ClearState(
-            [In] ID3D12PipelineState* pPipelineState = null
-        )
+        public void ClearState(ID3D12PipelineState* pPipelineState = null)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_ClearState>(lpVtbl->ClearState)(
-                    This,
-                    pPipelineState
-                );
+                Marshal.GetDelegateForFunctionPointer<_ClearState>(lpVtbl->ClearState)(This, pPipelineState);
             }
         }
 
-        public void DrawInstanced(
-            [In, NativeTypeName("UINT")] uint VertexCountPerInstance,
-            [In, NativeTypeName("UINT")] uint InstanceCount,
-            [In, NativeTypeName("UINT")] uint StartVertexLocation,
-            [In, NativeTypeName("UINT")] uint StartInstanceLocation
-        )
+        public void DrawInstanced([NativeTypeName("UINT")] uint VertexCountPerInstance, [NativeTypeName("UINT")] uint InstanceCount, [NativeTypeName("UINT")] uint StartVertexLocation, [NativeTypeName("UINT")] uint StartInstanceLocation)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_DrawInstanced>(lpVtbl->DrawInstanced)(
-                    This,
-                    VertexCountPerInstance,
-                    InstanceCount,
-                    StartVertexLocation,
-                    StartInstanceLocation
-                );
+                Marshal.GetDelegateForFunctionPointer<_DrawInstanced>(lpVtbl->DrawInstanced)(This, VertexCountPerInstance, InstanceCount, StartVertexLocation, StartInstanceLocation);
             }
         }
 
-        public void DrawIndexedInstanced(
-            [In, NativeTypeName("UINT")] uint IndexCountPerInstance,
-            [In, NativeTypeName("UINT")] uint InstanceCount,
-            [In, NativeTypeName("UINT")] uint StartIndexLocation,
-            [In, NativeTypeName("INT")] int BaseVertexLocation,
-            [In, NativeTypeName("UINT")] uint StartInstanceLocation
-        )
+        public void DrawIndexedInstanced([NativeTypeName("UINT")] uint IndexCountPerInstance, [NativeTypeName("UINT")] uint InstanceCount, [NativeTypeName("UINT")] uint StartIndexLocation, [NativeTypeName("INT")] int BaseVertexLocation, [NativeTypeName("UINT")] uint StartInstanceLocation)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_DrawIndexedInstanced>(lpVtbl->DrawIndexedInstanced)(
-                    This,
-                    IndexCountPerInstance,
-                    InstanceCount,
-                    StartIndexLocation,
-                    BaseVertexLocation,
-                    StartInstanceLocation
-                );
+                Marshal.GetDelegateForFunctionPointer<_DrawIndexedInstanced>(lpVtbl->DrawIndexedInstanced)(This, IndexCountPerInstance, InstanceCount, StartIndexLocation, BaseVertexLocation, StartInstanceLocation);
             }
         }
 
-        public void Dispatch(
-            [In, NativeTypeName("UINT")] uint ThreadGroupCountX,
-            [In, NativeTypeName("UINT")] uint ThreadGroupCountY,
-            [In, NativeTypeName("UINT")] uint ThreadGroupCountZ
-        )
+        public void Dispatch([NativeTypeName("UINT")] uint ThreadGroupCountX, [NativeTypeName("UINT")] uint ThreadGroupCountY, [NativeTypeName("UINT")] uint ThreadGroupCountZ)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_Dispatch>(lpVtbl->Dispatch)(
-                    This,
-                    ThreadGroupCountX,
-                    ThreadGroupCountY,
-                    ThreadGroupCountZ
-                );
+                Marshal.GetDelegateForFunctionPointer<_Dispatch>(lpVtbl->Dispatch)(This, ThreadGroupCountX, ThreadGroupCountY, ThreadGroupCountZ);
             }
         }
 
-        public void CopyBufferRegion(
-            [In] ID3D12Resource* pDstBuffer,
-            [In, NativeTypeName("UINT64")] ulong DstOffset,
-            [In] ID3D12Resource* pSrcBuffer,
-            [In, NativeTypeName("UINT64")] ulong SrcOffset,
-            [In, NativeTypeName("UINT64")] ulong NumBytes
-        )
+        public void CopyBufferRegion(ID3D12Resource* pDstBuffer, [NativeTypeName("UINT64")] ulong DstOffset, ID3D12Resource* pSrcBuffer, [NativeTypeName("UINT64")] ulong SrcOffset, [NativeTypeName("UINT64")] ulong NumBytes)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_CopyBufferRegion>(lpVtbl->CopyBufferRegion)(
-                    This,
-                    pDstBuffer,
-                    DstOffset,
-                    pSrcBuffer,
-                    SrcOffset,
-                    NumBytes
-                );
+                Marshal.GetDelegateForFunctionPointer<_CopyBufferRegion>(lpVtbl->CopyBufferRegion)(This, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, NumBytes);
             }
         }
 
-        public void CopyTextureRegion(
-            [In] D3D12_TEXTURE_COPY_LOCATION* pDst,
-            [In, NativeTypeName("UINT")] uint DstX,
-            [In, NativeTypeName("UINT")] uint DstY,
-            [In, NativeTypeName("UINT")] uint DstZ,
-            [In] D3D12_TEXTURE_COPY_LOCATION* pSrc,
-            [In] D3D12_BOX* pSrcBox = null
-        )
+        public void CopyTextureRegion(D3D12_TEXTURE_COPY_LOCATION* pDst, [NativeTypeName("UINT")] uint DstX, [NativeTypeName("UINT")] uint DstY, [NativeTypeName("UINT")] uint DstZ, D3D12_TEXTURE_COPY_LOCATION* pSrc, D3D12_BOX* pSrcBox = null)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_CopyTextureRegion>(lpVtbl->CopyTextureRegion)(
-                    This,
-                    pDst,
-                    DstX,
-                    DstY,
-                    DstZ,
-                    pSrc,
-                    pSrcBox
-                );
+                Marshal.GetDelegateForFunctionPointer<_CopyTextureRegion>(lpVtbl->CopyTextureRegion)(This, pDst, DstX, DstY, DstZ, pSrc, pSrcBox);
             }
         }
 
-        public void CopyResource(
-            [In] ID3D12Resource* pDstResource,
-            [In] ID3D12Resource* pSrcResource
-        )
+        public void CopyResource(ID3D12Resource* pDstResource, ID3D12Resource* pSrcResource)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_CopyResource>(lpVtbl->CopyResource)(
-                    This,
-                    pDstResource,
-                    pSrcResource
-                );
+                Marshal.GetDelegateForFunctionPointer<_CopyResource>(lpVtbl->CopyResource)(This, pDstResource, pSrcResource);
             }
         }
 
-        public void CopyTiles(
-            [In] ID3D12Resource* pTiledResource,
-            [In] D3D12_TILED_RESOURCE_COORDINATE* pTileRegionStartCoordinate,
-            [In] D3D12_TILE_REGION_SIZE* pTileRegionSize,
-            [In] ID3D12Resource* pBuffer,
-            [In, NativeTypeName("UINT64")] ulong BufferStartOffsetInBytes,
-            [In] D3D12_TILE_COPY_FLAGS Flags
-        )
+        public void CopyTiles(ID3D12Resource* pTiledResource, D3D12_TILED_RESOURCE_COORDINATE* pTileRegionStartCoordinate, D3D12_TILE_REGION_SIZE* pTileRegionSize, ID3D12Resource* pBuffer, [NativeTypeName("UINT64")] ulong BufferStartOffsetInBytes, D3D12_TILE_COPY_FLAGS Flags)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_CopyTiles>(lpVtbl->CopyTiles)(
-                    This,
-                    pTiledResource,
-                    pTileRegionStartCoordinate,
-                    pTileRegionSize,
-                    pBuffer,
-                    BufferStartOffsetInBytes,
-                    Flags
-                );
+                Marshal.GetDelegateForFunctionPointer<_CopyTiles>(lpVtbl->CopyTiles)(This, pTiledResource, pTileRegionStartCoordinate, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
             }
         }
 
-        public void ResolveSubresource(
-            [In] ID3D12Resource* pDstResource,
-            [In, NativeTypeName("UINT")] uint DstSubresource,
-            [In] ID3D12Resource* pSrcResource,
-            [In, NativeTypeName("UINT")] uint SrcSubresource,
-            [In] DXGI_FORMAT Format
-        )
+        public void ResolveSubresource(ID3D12Resource* pDstResource, [NativeTypeName("UINT")] uint DstSubresource, ID3D12Resource* pSrcResource, [NativeTypeName("UINT")] uint SrcSubresource, DXGI_FORMAT Format)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_ResolveSubresource>(lpVtbl->ResolveSubresource)(
-                    This,
-                    pDstResource,
-                    DstSubresource,
-                    pSrcResource,
-                    SrcSubresource,
-                    Format
-                );
+                Marshal.GetDelegateForFunctionPointer<_ResolveSubresource>(lpVtbl->ResolveSubresource)(This, pDstResource, DstSubresource, pSrcResource, SrcSubresource, Format);
             }
         }
 
-        public void IASetPrimitiveTopology(
-            [In] D3D_PRIMITIVE_TOPOLOGY PrimitiveTopology
-        )
+        public void IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY PrimitiveTopology)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_IASetPrimitiveTopology>(lpVtbl->IASetPrimitiveTopology)(
-                    This,
-                    PrimitiveTopology
-                );
+                Marshal.GetDelegateForFunctionPointer<_IASetPrimitiveTopology>(lpVtbl->IASetPrimitiveTopology)(This, PrimitiveTopology);
             }
         }
 
-        public void RSSetViewports(
-            [In, NativeTypeName("UINT")] uint NumViewports,
-            [In] D3D12_VIEWPORT* pViewports
-        )
+        public void RSSetViewports([NativeTypeName("UINT")] uint NumViewports, D3D12_VIEWPORT* pViewports)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_RSSetViewports>(lpVtbl->RSSetViewports)(
-                    This,
-                    NumViewports,
-                    pViewports
-                );
+                Marshal.GetDelegateForFunctionPointer<_RSSetViewports>(lpVtbl->RSSetViewports)(This, NumViewports, pViewports);
             }
         }
 
-        public void RSSetScissorRects(
-            [In, NativeTypeName("UINT")] uint NumRects,
-            [In, NativeTypeName("D3D12_RECT")] RECT* pRects
-        )
+        public void RSSetScissorRects([NativeTypeName("UINT")] uint NumRects, [NativeTypeName("D3D12_RECT")] RECT* pRects)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_RSSetScissorRects>(lpVtbl->RSSetScissorRects)(
-                    This,
-                    NumRects,
-                    pRects
-                );
+                Marshal.GetDelegateForFunctionPointer<_RSSetScissorRects>(lpVtbl->RSSetScissorRects)(This, NumRects, pRects);
             }
         }
 
-        public void OMSetBlendFactor(
-            [In, NativeTypeName("FLOAT")] float* BlendFactor = null
-        )
+        public void OMSetBlendFactor([NativeTypeName("FLOAT")] float* BlendFactor = null)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_OMSetBlendFactor>(lpVtbl->OMSetBlendFactor)(
-                    This,
-                    BlendFactor
-                );
+                Marshal.GetDelegateForFunctionPointer<_OMSetBlendFactor>(lpVtbl->OMSetBlendFactor)(This, BlendFactor);
             }
         }
 
-        public void OMSetStencilRef(
-            [In, NativeTypeName("UINT")] uint StencilRef
-        )
+        public void OMSetStencilRef([NativeTypeName("UINT")] uint StencilRef)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_OMSetStencilRef>(lpVtbl->OMSetStencilRef)(
-                    This,
-                    StencilRef
-                );
+                Marshal.GetDelegateForFunctionPointer<_OMSetStencilRef>(lpVtbl->OMSetStencilRef)(This, StencilRef);
             }
         }
 
-        public void SetPipelineState(
-            [In] ID3D12PipelineState* pPipelineState
-        )
+        public void SetPipelineState(ID3D12PipelineState* pPipelineState)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetPipelineState>(lpVtbl->SetPipelineState)(
-                    This,
-                    pPipelineState
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetPipelineState>(lpVtbl->SetPipelineState)(This, pPipelineState);
             }
         }
 
-        public void ResourceBarrier(
-            [In, NativeTypeName("UINT")] uint NumBarriers,
-            [In, NativeTypeName("D3D12_RESOURCE_BARRIER[]")] D3D12_RESOURCE_BARRIER* pBarriers
-        )
+        public void ResourceBarrier([NativeTypeName("UINT")] uint NumBarriers, [NativeTypeName("D3D12_RESOURCE_BARRIER[]")] D3D12_RESOURCE_BARRIER* pBarriers)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_ResourceBarrier>(lpVtbl->ResourceBarrier)(
-                    This,
-                    NumBarriers,
-                    pBarriers
-                );
+                Marshal.GetDelegateForFunctionPointer<_ResourceBarrier>(lpVtbl->ResourceBarrier)(This, NumBarriers, pBarriers);
             }
         }
 
-        public void ExecuteBundle(
-            [In] ID3D12GraphicsCommandList* pCommandList
-        )
+        public void ExecuteBundle(ID3D12GraphicsCommandList* pCommandList)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_ExecuteBundle>(lpVtbl->ExecuteBundle)(
-                    This,
-                    pCommandList
-                );
+                Marshal.GetDelegateForFunctionPointer<_ExecuteBundle>(lpVtbl->ExecuteBundle)(This, pCommandList);
             }
         }
 
-        public void SetDescriptorHeaps(
-            [In, NativeTypeName("UINT")] uint NumDescriptorHeaps,
-            [In, NativeTypeName("ID3D12DescriptorHeap*[]")] ID3D12DescriptorHeap** ppDescriptorHeaps
-        )
+        public void SetDescriptorHeaps([NativeTypeName("UINT")] uint NumDescriptorHeaps, [NativeTypeName("ID3D12DescriptorHeap*[]")] ID3D12DescriptorHeap** ppDescriptorHeaps)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetDescriptorHeaps>(lpVtbl->SetDescriptorHeaps)(
-                    This,
-                    NumDescriptorHeaps,
-                    ppDescriptorHeaps
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetDescriptorHeaps>(lpVtbl->SetDescriptorHeaps)(This, NumDescriptorHeaps, ppDescriptorHeaps);
             }
         }
 
-        public void SetComputeRootSignature(
-            [In] ID3D12RootSignature* pRootSignature = null
-        )
+        public void SetComputeRootSignature(ID3D12RootSignature* pRootSignature = null)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetComputeRootSignature>(lpVtbl->SetComputeRootSignature)(
-                    This,
-                    pRootSignature
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetComputeRootSignature>(lpVtbl->SetComputeRootSignature)(This, pRootSignature);
             }
         }
 
-        public void SetGraphicsRootSignature(
-            [In] ID3D12RootSignature* pRootSignature = null
-        )
+        public void SetGraphicsRootSignature(ID3D12RootSignature* pRootSignature = null)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetGraphicsRootSignature>(lpVtbl->SetGraphicsRootSignature)(
-                    This,
-                    pRootSignature
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetGraphicsRootSignature>(lpVtbl->SetGraphicsRootSignature)(This, pRootSignature);
             }
         }
 
-        public void SetComputeRootDescriptorTable(
-            [In, NativeTypeName("UINT")] uint RootParameterIndex,
-            [In] D3D12_GPU_DESCRIPTOR_HANDLE BaseDescriptor
-        )
+        public void SetComputeRootDescriptorTable([NativeTypeName("UINT")] uint RootParameterIndex, D3D12_GPU_DESCRIPTOR_HANDLE BaseDescriptor)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetComputeRootDescriptorTable>(lpVtbl->SetComputeRootDescriptorTable)(
-                    This,
-                    RootParameterIndex,
-                    BaseDescriptor
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetComputeRootDescriptorTable>(lpVtbl->SetComputeRootDescriptorTable)(This, RootParameterIndex, BaseDescriptor);
             }
         }
 
-        public void SetGraphicsRootDescriptorTable(
-            [In, NativeTypeName("UINT")] uint RootParameterIndex,
-            [In] D3D12_GPU_DESCRIPTOR_HANDLE BaseDescriptor
-        )
+        public void SetGraphicsRootDescriptorTable([NativeTypeName("UINT")] uint RootParameterIndex, D3D12_GPU_DESCRIPTOR_HANDLE BaseDescriptor)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetGraphicsRootDescriptorTable>(lpVtbl->SetGraphicsRootDescriptorTable)(
-                    This,
-                    RootParameterIndex,
-                    BaseDescriptor
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetGraphicsRootDescriptorTable>(lpVtbl->SetGraphicsRootDescriptorTable)(This, RootParameterIndex, BaseDescriptor);
             }
         }
 
-        public void SetComputeRoot32BitConstant(
-            [In, NativeTypeName("UINT")] uint RootParameterIndex,
-            [In, NativeTypeName("UINT")] uint SrcData,
-            [In, NativeTypeName("UINT")] uint DestOffsetIn32BitValues
-        )
+        public void SetComputeRoot32BitConstant([NativeTypeName("UINT")] uint RootParameterIndex, [NativeTypeName("UINT")] uint SrcData, [NativeTypeName("UINT")] uint DestOffsetIn32BitValues)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetComputeRoot32BitConstant>(lpVtbl->SetComputeRoot32BitConstant)(
-                    This,
-                    RootParameterIndex,
-                    SrcData,
-                    DestOffsetIn32BitValues
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetComputeRoot32BitConstant>(lpVtbl->SetComputeRoot32BitConstant)(This, RootParameterIndex, SrcData, DestOffsetIn32BitValues);
             }
         }
 
-        public void SetGraphicsRoot32BitConstant(
-            [In, NativeTypeName("UINT")] uint RootParameterIndex,
-            [In, NativeTypeName("UINT")] uint SrcData,
-            [In, NativeTypeName("UINT")] uint DestOffsetIn32BitValues
-        )
+        public void SetGraphicsRoot32BitConstant([NativeTypeName("UINT")] uint RootParameterIndex, [NativeTypeName("UINT")] uint SrcData, [NativeTypeName("UINT")] uint DestOffsetIn32BitValues)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetGraphicsRoot32BitConstant>(lpVtbl->SetGraphicsRoot32BitConstant)(
-                    This,
-                    RootParameterIndex,
-                    SrcData,
-                    DestOffsetIn32BitValues
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetGraphicsRoot32BitConstant>(lpVtbl->SetGraphicsRoot32BitConstant)(This, RootParameterIndex, SrcData, DestOffsetIn32BitValues);
             }
         }
 
-        public void SetComputeRoot32BitConstants(
-            [In, NativeTypeName("UINT")] uint RootParameterIndex,
-            [In, NativeTypeName("UINT")] uint Num32BitValuesToSet,
-            [In] void* pSrcData,
-            [In, NativeTypeName("UINT")] uint DestOffsetIn32BitValues
-        )
+        public void SetComputeRoot32BitConstants([NativeTypeName("UINT")] uint RootParameterIndex, [NativeTypeName("UINT")] uint Num32BitValuesToSet, void* pSrcData, [NativeTypeName("UINT")] uint DestOffsetIn32BitValues)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetComputeRoot32BitConstants>(lpVtbl->SetComputeRoot32BitConstants)(
-                    This,
-                    RootParameterIndex,
-                    Num32BitValuesToSet,
-                    pSrcData,
-                    DestOffsetIn32BitValues
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetComputeRoot32BitConstants>(lpVtbl->SetComputeRoot32BitConstants)(This, RootParameterIndex, Num32BitValuesToSet, pSrcData, DestOffsetIn32BitValues);
             }
         }
 
-        public void SetGraphicsRoot32BitConstants(
-            [In, NativeTypeName("UINT")] uint RootParameterIndex,
-            [In, NativeTypeName("UINT")] uint Num32BitValuesToSet,
-            [In] void* pSrcData,
-            [In, NativeTypeName("UINT")] uint DestOffsetIn32BitValues
-        )
+        public void SetGraphicsRoot32BitConstants([NativeTypeName("UINT")] uint RootParameterIndex, [NativeTypeName("UINT")] uint Num32BitValuesToSet, void* pSrcData, [NativeTypeName("UINT")] uint DestOffsetIn32BitValues)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetGraphicsRoot32BitConstants>(lpVtbl->SetGraphicsRoot32BitConstants)(
-                    This,
-                    RootParameterIndex,
-                    Num32BitValuesToSet,
-                    pSrcData,
-                    DestOffsetIn32BitValues
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetGraphicsRoot32BitConstants>(lpVtbl->SetGraphicsRoot32BitConstants)(This, RootParameterIndex, Num32BitValuesToSet, pSrcData, DestOffsetIn32BitValues);
             }
         }
 
-        public void SetComputeRootConstantBufferView(
-            [In, NativeTypeName("UINT")] uint RootParameterIndex,
-            [In, NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation
-        )
+        public void SetComputeRootConstantBufferView([NativeTypeName("UINT")] uint RootParameterIndex, [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetComputeRootConstantBufferView>(lpVtbl->SetComputeRootConstantBufferView)(
-                    This,
-                    RootParameterIndex,
-                    BufferLocation
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetComputeRootConstantBufferView>(lpVtbl->SetComputeRootConstantBufferView)(This, RootParameterIndex, BufferLocation);
             }
         }
 
-        public void SetGraphicsRootConstantBufferView(
-            [In, NativeTypeName("UINT")] uint RootParameterIndex,
-            [In, NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation
-        )
+        public void SetGraphicsRootConstantBufferView([NativeTypeName("UINT")] uint RootParameterIndex, [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetGraphicsRootConstantBufferView>(lpVtbl->SetGraphicsRootConstantBufferView)(
-                    This,
-                    RootParameterIndex,
-                    BufferLocation
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetGraphicsRootConstantBufferView>(lpVtbl->SetGraphicsRootConstantBufferView)(This, RootParameterIndex, BufferLocation);
             }
         }
 
-        public void SetComputeRootShaderResourceView(
-            [In, NativeTypeName("UINT")] uint RootParameterIndex,
-            [In, NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation
-        )
+        public void SetComputeRootShaderResourceView([NativeTypeName("UINT")] uint RootParameterIndex, [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetComputeRootShaderResourceView>(lpVtbl->SetComputeRootShaderResourceView)(
-                    This,
-                    RootParameterIndex,
-                    BufferLocation
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetComputeRootShaderResourceView>(lpVtbl->SetComputeRootShaderResourceView)(This, RootParameterIndex, BufferLocation);
             }
         }
 
-        public void SetGraphicsRootShaderResourceView(
-            [In, NativeTypeName("UINT")] uint RootParameterIndex,
-            [In, NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation
-        )
+        public void SetGraphicsRootShaderResourceView([NativeTypeName("UINT")] uint RootParameterIndex, [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetGraphicsRootShaderResourceView>(lpVtbl->SetGraphicsRootShaderResourceView)(
-                    This,
-                    RootParameterIndex,
-                    BufferLocation
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetGraphicsRootShaderResourceView>(lpVtbl->SetGraphicsRootShaderResourceView)(This, RootParameterIndex, BufferLocation);
             }
         }
 
-        public void SetComputeRootUnorderedAccessView(
-            [In, NativeTypeName("UINT")] uint RootParameterIndex,
-            [In, NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation
-        )
+        public void SetComputeRootUnorderedAccessView([NativeTypeName("UINT")] uint RootParameterIndex, [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetComputeRootUnorderedAccessView>(lpVtbl->SetComputeRootUnorderedAccessView)(
-                    This,
-                    RootParameterIndex,
-                    BufferLocation
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetComputeRootUnorderedAccessView>(lpVtbl->SetComputeRootUnorderedAccessView)(This, RootParameterIndex, BufferLocation);
             }
         }
 
-        public void SetGraphicsRootUnorderedAccessView(
-            [In, NativeTypeName("UINT")] uint RootParameterIndex,
-            [In, NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation
-        )
+        public void SetGraphicsRootUnorderedAccessView([NativeTypeName("UINT")] uint RootParameterIndex, [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")] ulong BufferLocation)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetGraphicsRootUnorderedAccessView>(lpVtbl->SetGraphicsRootUnorderedAccessView)(
-                    This,
-                    RootParameterIndex,
-                    BufferLocation
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetGraphicsRootUnorderedAccessView>(lpVtbl->SetGraphicsRootUnorderedAccessView)(This, RootParameterIndex, BufferLocation);
             }
         }
 
-        public void IASetIndexBuffer(
-            [In] D3D12_INDEX_BUFFER_VIEW* pView = null
-        )
+        public void IASetIndexBuffer(D3D12_INDEX_BUFFER_VIEW* pView = null)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_IASetIndexBuffer>(lpVtbl->IASetIndexBuffer)(
-                    This,
-                    pView
-                );
+                Marshal.GetDelegateForFunctionPointer<_IASetIndexBuffer>(lpVtbl->IASetIndexBuffer)(This, pView);
             }
         }
 
-        public void IASetVertexBuffers(
-            [In, NativeTypeName("UINT")] uint StartSlot,
-            [In, NativeTypeName("UINT")] uint NumViews,
-            [In, NativeTypeName("D3D12_VERTEX_BUFFER_VIEW[]")] D3D12_VERTEX_BUFFER_VIEW* pViews = null
-        )
+        public void IASetVertexBuffers([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumViews, [NativeTypeName("D3D12_VERTEX_BUFFER_VIEW[]")] D3D12_VERTEX_BUFFER_VIEW* pViews = null)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_IASetVertexBuffers>(lpVtbl->IASetVertexBuffers)(
-                    This,
-                    StartSlot,
-                    NumViews,
-                    pViews
-                );
+                Marshal.GetDelegateForFunctionPointer<_IASetVertexBuffers>(lpVtbl->IASetVertexBuffers)(This, StartSlot, NumViews, pViews);
             }
         }
 
-        public void SOSetTargets(
-            [In, NativeTypeName("UINT")] uint StartSlot,
-            [In, NativeTypeName("UINT")] uint NumViews,
-            [In, NativeTypeName("D3D12_STREAM_OUTPUT_BUFFER_VIEW[]")] D3D12_STREAM_OUTPUT_BUFFER_VIEW* pViews = null
-        )
+        public void SOSetTargets([NativeTypeName("UINT")] uint StartSlot, [NativeTypeName("UINT")] uint NumViews, [NativeTypeName("D3D12_STREAM_OUTPUT_BUFFER_VIEW[]")] D3D12_STREAM_OUTPUT_BUFFER_VIEW* pViews = null)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SOSetTargets>(lpVtbl->SOSetTargets)(
-                    This,
-                    StartSlot,
-                    NumViews,
-                    pViews
-                );
+                Marshal.GetDelegateForFunctionPointer<_SOSetTargets>(lpVtbl->SOSetTargets)(This, StartSlot, NumViews, pViews);
             }
         }
 
-        public void OMSetRenderTargets(
-            [In, NativeTypeName("UINT")] uint NumRenderTargetDescriptors,
-            [In, Optional, NativeTypeName("D3D12_CPU_DESCRIPTOR_HANDLE[]")] D3D12_CPU_DESCRIPTOR_HANDLE* pRenderTargetDescriptors,
-            [In, NativeTypeName("INT")] int RTsSingleHandleToDescriptorRange,
-            [In] D3D12_CPU_DESCRIPTOR_HANDLE* pDepthStencilDescriptor = null
-        )
+        public void OMSetRenderTargets([NativeTypeName("UINT")] uint NumRenderTargetDescriptors, [Optional, NativeTypeName("D3D12_CPU_DESCRIPTOR_HANDLE[]")] D3D12_CPU_DESCRIPTOR_HANDLE* pRenderTargetDescriptors, [NativeTypeName("INT")] int RTsSingleHandleToDescriptorRange, D3D12_CPU_DESCRIPTOR_HANDLE* pDepthStencilDescriptor = null)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_OMSetRenderTargets>(lpVtbl->OMSetRenderTargets)(
-                    This,
-                    NumRenderTargetDescriptors,
-                    pRenderTargetDescriptors,
-                    RTsSingleHandleToDescriptorRange,
-                    pDepthStencilDescriptor
-                );
+                Marshal.GetDelegateForFunctionPointer<_OMSetRenderTargets>(lpVtbl->OMSetRenderTargets)(This, NumRenderTargetDescriptors, pRenderTargetDescriptors, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptor);
             }
         }
 
-        public void ClearDepthStencilView(
-            [In] D3D12_CPU_DESCRIPTOR_HANDLE DepthStencilView,
-            [In] D3D12_CLEAR_FLAGS ClearFlags,
-            [In, NativeTypeName("FLOAT")] float Depth,
-            [In, NativeTypeName("UINT8")] byte Stencil,
-            [In, NativeTypeName("UINT")] uint NumRects,
-            [In, NativeTypeName("D3D12_RECT[]")] RECT* pRects
-        )
+        public void ClearDepthStencilView(D3D12_CPU_DESCRIPTOR_HANDLE DepthStencilView, D3D12_CLEAR_FLAGS ClearFlags, [NativeTypeName("FLOAT")] float Depth, [NativeTypeName("UINT8")] byte Stencil, [NativeTypeName("UINT")] uint NumRects, [NativeTypeName("D3D12_RECT[]")] RECT* pRects)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_ClearDepthStencilView>(lpVtbl->ClearDepthStencilView)(
-                    This,
-                    DepthStencilView,
-                    ClearFlags,
-                    Depth,
-                    Stencil,
-                    NumRects,
-                    pRects
-                );
+                Marshal.GetDelegateForFunctionPointer<_ClearDepthStencilView>(lpVtbl->ClearDepthStencilView)(This, DepthStencilView, ClearFlags, Depth, Stencil, NumRects, pRects);
             }
         }
 
-        public void ClearRenderTargetView(
-            [In] D3D12_CPU_DESCRIPTOR_HANDLE RenderTargetView,
-            [In, NativeTypeName("FLOAT")] float* ColorRGBA,
-            [In, NativeTypeName("UINT")] uint NumRects,
-            [In, NativeTypeName("D3D12_RECT[]")] RECT* pRects
-        )
+        public void ClearRenderTargetView(D3D12_CPU_DESCRIPTOR_HANDLE RenderTargetView, [NativeTypeName("FLOAT")] float* ColorRGBA, [NativeTypeName("UINT")] uint NumRects, [NativeTypeName("D3D12_RECT[]")] RECT* pRects)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_ClearRenderTargetView>(lpVtbl->ClearRenderTargetView)(
-                    This,
-                    RenderTargetView,
-                    ColorRGBA,
-                    NumRects,
-                    pRects
-                );
+                Marshal.GetDelegateForFunctionPointer<_ClearRenderTargetView>(lpVtbl->ClearRenderTargetView)(This, RenderTargetView, ColorRGBA, NumRects, pRects);
             }
         }
 
-        public void ClearUnorderedAccessViewUint(
-            [In] D3D12_GPU_DESCRIPTOR_HANDLE ViewGPUHandleInCurrentHeap,
-            [In] D3D12_CPU_DESCRIPTOR_HANDLE ViewCPUHandle,
-            [In] ID3D12Resource* pResource,
-            [In, NativeTypeName("UINT")] uint* Values,
-            [In, NativeTypeName("UINT")] uint NumRects,
-            [In, NativeTypeName("D3D12_RECT[]")] RECT* pRects
-        )
+        public void ClearUnorderedAccessViewUint(D3D12_GPU_DESCRIPTOR_HANDLE ViewGPUHandleInCurrentHeap, D3D12_CPU_DESCRIPTOR_HANDLE ViewCPUHandle, ID3D12Resource* pResource, [NativeTypeName("UINT")] uint* Values, [NativeTypeName("UINT")] uint NumRects, [NativeTypeName("D3D12_RECT[]")] RECT* pRects)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_ClearUnorderedAccessViewUint>(lpVtbl->ClearUnorderedAccessViewUint)(
-                    This,
-                    ViewGPUHandleInCurrentHeap,
-                    ViewCPUHandle,
-                    pResource,
-                    Values,
-                    NumRects,
-                    pRects
-                );
+                Marshal.GetDelegateForFunctionPointer<_ClearUnorderedAccessViewUint>(lpVtbl->ClearUnorderedAccessViewUint)(This, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRects);
             }
         }
 
-        public void ClearUnorderedAccessViewFloat(
-            [In] D3D12_GPU_DESCRIPTOR_HANDLE ViewGPUHandleInCurrentHeap,
-            [In] D3D12_CPU_DESCRIPTOR_HANDLE ViewCPUHandle,
-            [In] ID3D12Resource* pResource,
-            [In, NativeTypeName("FLOAT")] float* Values,
-            [In, NativeTypeName("UINT")] uint NumRects,
-            [In, NativeTypeName("D3D12_RECT[]")] RECT* pRects
-        )
+        public void ClearUnorderedAccessViewFloat(D3D12_GPU_DESCRIPTOR_HANDLE ViewGPUHandleInCurrentHeap, D3D12_CPU_DESCRIPTOR_HANDLE ViewCPUHandle, ID3D12Resource* pResource, [NativeTypeName("FLOAT")] float* Values, [NativeTypeName("UINT")] uint NumRects, [NativeTypeName("D3D12_RECT[]")] RECT* pRects)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_ClearUnorderedAccessViewFloat>(lpVtbl->ClearUnorderedAccessViewFloat)(
-                    This,
-                    ViewGPUHandleInCurrentHeap,
-                    ViewCPUHandle,
-                    pResource,
-                    Values,
-                    NumRects,
-                    pRects
-                );
+                Marshal.GetDelegateForFunctionPointer<_ClearUnorderedAccessViewFloat>(lpVtbl->ClearUnorderedAccessViewFloat)(This, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRects);
             }
         }
 
-        public void DiscardResource(
-            [In] ID3D12Resource* pResource,
-            [In] D3D12_DISCARD_REGION* pRegion = null
-        )
+        public void DiscardResource(ID3D12Resource* pResource, D3D12_DISCARD_REGION* pRegion = null)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_DiscardResource>(lpVtbl->DiscardResource)(
-                    This,
-                    pResource,
-                    pRegion
-                );
+                Marshal.GetDelegateForFunctionPointer<_DiscardResource>(lpVtbl->DiscardResource)(This, pResource, pRegion);
             }
         }
 
-        public void BeginQuery(
-            [In] ID3D12QueryHeap* pQueryHeap,
-            [In] D3D12_QUERY_TYPE Type,
-            [In, NativeTypeName("UINT")] uint Index
-        )
+        public void BeginQuery(ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, [NativeTypeName("UINT")] uint Index)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_BeginQuery>(lpVtbl->BeginQuery)(
-                    This,
-                    pQueryHeap,
-                    Type,
-                    Index
-                );
+                Marshal.GetDelegateForFunctionPointer<_BeginQuery>(lpVtbl->BeginQuery)(This, pQueryHeap, Type, Index);
             }
         }
 
-        public void EndQuery(
-            [In] ID3D12QueryHeap* pQueryHeap,
-            [In] D3D12_QUERY_TYPE Type,
-            [In, NativeTypeName("UINT")] uint Index
-        )
+        public void EndQuery(ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, [NativeTypeName("UINT")] uint Index)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_EndQuery>(lpVtbl->EndQuery)(
-                    This,
-                    pQueryHeap,
-                    Type,
-                    Index
-                );
+                Marshal.GetDelegateForFunctionPointer<_EndQuery>(lpVtbl->EndQuery)(This, pQueryHeap, Type, Index);
             }
         }
 
-        public void ResolveQueryData(
-            [In] ID3D12QueryHeap* pQueryHeap,
-            [In] D3D12_QUERY_TYPE Type,
-            [In, NativeTypeName("UINT")] uint StartIndex,
-            [In, NativeTypeName("UINT")] uint NumQueries,
-            [In] ID3D12Resource* pDestinationBuffer,
-            [In, NativeTypeName("UINT64")] ulong AlignedDestinationBufferOffset
-        )
+        public void ResolveQueryData(ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, [NativeTypeName("UINT")] uint StartIndex, [NativeTypeName("UINT")] uint NumQueries, ID3D12Resource* pDestinationBuffer, [NativeTypeName("UINT64")] ulong AlignedDestinationBufferOffset)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_ResolveQueryData>(lpVtbl->ResolveQueryData)(
-                    This,
-                    pQueryHeap,
-                    Type,
-                    StartIndex,
-                    NumQueries,
-                    pDestinationBuffer,
-                    AlignedDestinationBufferOffset
-                );
+                Marshal.GetDelegateForFunctionPointer<_ResolveQueryData>(lpVtbl->ResolveQueryData)(This, pQueryHeap, Type, StartIndex, NumQueries, pDestinationBuffer, AlignedDestinationBufferOffset);
             }
         }
 
-        public void SetPredication(
-            [In, Optional] ID3D12Resource* pBuffer,
-            [In, NativeTypeName("UINT64")] ulong AlignedBufferOffset,
-            [In] D3D12_PREDICATION_OP Operation
-        )
+        public void SetPredication([Optional] ID3D12Resource* pBuffer, [NativeTypeName("UINT64")] ulong AlignedBufferOffset, D3D12_PREDICATION_OP Operation)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetPredication>(lpVtbl->SetPredication)(
-                    This,
-                    pBuffer,
-                    AlignedBufferOffset,
-                    Operation
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetPredication>(lpVtbl->SetPredication)(This, pBuffer, AlignedBufferOffset, Operation);
             }
         }
 
-        public void SetMarker(
-            [In, NativeTypeName("UINT")] uint Metadata,
-            [In, Optional] void* pData,
-            [In, NativeTypeName("UINT")] uint Size
-        )
+        public void SetMarker([NativeTypeName("UINT")] uint Metadata, [Optional] void* pData, [NativeTypeName("UINT")] uint Size)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetMarker>(lpVtbl->SetMarker)(
-                    This,
-                    Metadata,
-                    pData,
-                    Size
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetMarker>(lpVtbl->SetMarker)(This, Metadata, pData, Size);
             }
         }
 
-        public void BeginEvent(
-            [In, NativeTypeName("UINT")] uint Metadata,
-            [In, Optional] void* pData,
-            [In, NativeTypeName("UINT")] uint Size
-        )
+        public void BeginEvent([NativeTypeName("UINT")] uint Metadata, [Optional] void* pData, [NativeTypeName("UINT")] uint Size)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_BeginEvent>(lpVtbl->BeginEvent)(
-                    This,
-                    Metadata,
-                    pData,
-                    Size
-                );
+                Marshal.GetDelegateForFunctionPointer<_BeginEvent>(lpVtbl->BeginEvent)(This, Metadata, pData, Size);
             }
         }
 
@@ -1489,143 +696,55 @@ namespace TerraFX.Interop
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_EndEvent>(lpVtbl->EndEvent)(
-                    This
-                );
+                Marshal.GetDelegateForFunctionPointer<_EndEvent>(lpVtbl->EndEvent)(This);
             }
         }
 
-        public void ExecuteIndirect(
-            [In] ID3D12CommandSignature* pCommandSignature,
-            [In, NativeTypeName("UINT")] uint MaxCommandCount,
-            [In] ID3D12Resource* pArgumentBuffer,
-            [In, NativeTypeName("UINT64")] ulong ArgumentBufferOffset,
-            [In, Optional] ID3D12Resource* pCountBuffer,
-            [In, NativeTypeName("UINT64")] ulong CountBufferOffset
-        )
+        public void ExecuteIndirect(ID3D12CommandSignature* pCommandSignature, [NativeTypeName("UINT")] uint MaxCommandCount, ID3D12Resource* pArgumentBuffer, [NativeTypeName("UINT64")] ulong ArgumentBufferOffset, [Optional] ID3D12Resource* pCountBuffer, [NativeTypeName("UINT64")] ulong CountBufferOffset)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_ExecuteIndirect>(lpVtbl->ExecuteIndirect)(
-                    This,
-                    pCommandSignature,
-                    MaxCommandCount,
-                    pArgumentBuffer,
-                    ArgumentBufferOffset,
-                    pCountBuffer,
-                    CountBufferOffset
-                );
+                Marshal.GetDelegateForFunctionPointer<_ExecuteIndirect>(lpVtbl->ExecuteIndirect)(This, pCommandSignature, MaxCommandCount, pArgumentBuffer, ArgumentBufferOffset, pCountBuffer, CountBufferOffset);
             }
         }
 
-        public void AtomicCopyBufferUINT(
-            [In] ID3D12Resource* pDstBuffer,
-            [In, NativeTypeName("UINT64")] ulong DstOffset,
-            [In] ID3D12Resource* pSrcBuffer,
-            [In, NativeTypeName("UINT64")] ulong SrcOffset,
-            [In, NativeTypeName("UINT")] uint Dependencies,
-            [In, NativeTypeName("ID3D12Resource*[]")] ID3D12Resource** ppDependentResources,
-            [In, NativeTypeName("D3D12_SUBRESOURCE_RANGE_UINT64[]")] D3D12_SUBRESOURCE_RANGE_UINT64* pDependentSubresourceRanges
-        )
+        public void AtomicCopyBufferUINT(ID3D12Resource* pDstBuffer, [NativeTypeName("UINT64")] ulong DstOffset, ID3D12Resource* pSrcBuffer, [NativeTypeName("UINT64")] ulong SrcOffset, [NativeTypeName("UINT")] uint Dependencies, [NativeTypeName("ID3D12Resource*[]")] ID3D12Resource** ppDependentResources, [NativeTypeName("D3D12_SUBRESOURCE_RANGE_UINT64[]")] D3D12_SUBRESOURCE_RANGE_UINT64* pDependentSubresourceRanges)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_AtomicCopyBufferUINT>(lpVtbl->AtomicCopyBufferUINT)(
-                    This,
-                    pDstBuffer,
-                    DstOffset,
-                    pSrcBuffer,
-                    SrcOffset,
-                    Dependencies,
-                    ppDependentResources,
-                    pDependentSubresourceRanges
-                );
+                Marshal.GetDelegateForFunctionPointer<_AtomicCopyBufferUINT>(lpVtbl->AtomicCopyBufferUINT)(This, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
             }
         }
 
-        public void AtomicCopyBufferUINT64(
-            [In] ID3D12Resource* pDstBuffer,
-            [In, NativeTypeName("UINT64")] ulong DstOffset,
-            [In] ID3D12Resource* pSrcBuffer,
-            [In, NativeTypeName("UINT64")] ulong SrcOffset,
-            [In, NativeTypeName("UINT")] uint Dependencies,
-            [In, NativeTypeName("ID3D12Resource*[]")] ID3D12Resource** ppDependentResources,
-            [In, NativeTypeName("D3D12_SUBRESOURCE_RANGE_UINT64[]")] D3D12_SUBRESOURCE_RANGE_UINT64* pDependentSubresourceRanges
-        )
+        public void AtomicCopyBufferUINT64(ID3D12Resource* pDstBuffer, [NativeTypeName("UINT64")] ulong DstOffset, ID3D12Resource* pSrcBuffer, [NativeTypeName("UINT64")] ulong SrcOffset, [NativeTypeName("UINT")] uint Dependencies, [NativeTypeName("ID3D12Resource*[]")] ID3D12Resource** ppDependentResources, [NativeTypeName("D3D12_SUBRESOURCE_RANGE_UINT64[]")] D3D12_SUBRESOURCE_RANGE_UINT64* pDependentSubresourceRanges)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_AtomicCopyBufferUINT64>(lpVtbl->AtomicCopyBufferUINT64)(
-                    This,
-                    pDstBuffer,
-                    DstOffset,
-                    pSrcBuffer,
-                    SrcOffset,
-                    Dependencies,
-                    ppDependentResources,
-                    pDependentSubresourceRanges
-                );
+                Marshal.GetDelegateForFunctionPointer<_AtomicCopyBufferUINT64>(lpVtbl->AtomicCopyBufferUINT64)(This, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
             }
         }
 
-        public void OMSetDepthBounds(
-            [In, NativeTypeName("FLOAT")] float Min,
-            [In, NativeTypeName("FLOAT")] float Max
-        )
+        public void OMSetDepthBounds([NativeTypeName("FLOAT")] float Min, [NativeTypeName("FLOAT")] float Max)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_OMSetDepthBounds>(lpVtbl->OMSetDepthBounds)(
-                    This,
-                    Min,
-                    Max
-                );
+                Marshal.GetDelegateForFunctionPointer<_OMSetDepthBounds>(lpVtbl->OMSetDepthBounds)(This, Min, Max);
             }
         }
 
-        public void SetSamplePositions(
-            [In, NativeTypeName("UINT")] uint NumSamplesPerPixel,
-            [In, NativeTypeName("UINT")] uint NumPixels,
-            [In, NativeTypeName("D3D12_SAMPLE_POSITION[]")] D3D12_SAMPLE_POSITION* pSamplePositions
-        )
+        public void SetSamplePositions([NativeTypeName("UINT")] uint NumSamplesPerPixel, [NativeTypeName("UINT")] uint NumPixels, [NativeTypeName("D3D12_SAMPLE_POSITION[]")] D3D12_SAMPLE_POSITION* pSamplePositions)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_SetSamplePositions>(lpVtbl->SetSamplePositions)(
-                    This,
-                    NumSamplesPerPixel,
-                    NumPixels,
-                    pSamplePositions
-                );
+                Marshal.GetDelegateForFunctionPointer<_SetSamplePositions>(lpVtbl->SetSamplePositions)(This, NumSamplesPerPixel, NumPixels, pSamplePositions);
             }
         }
 
-        public void ResolveSubresourceRegion(
-            [In] ID3D12Resource* pDstResource,
-            [In, NativeTypeName("UINT")] uint DstSubresource,
-            [In, NativeTypeName("UINT")] uint DstX,
-            [In, NativeTypeName("UINT")] uint DstY,
-            [In] ID3D12Resource* pSrcResource,
-            [In, NativeTypeName("UINT")] uint SrcSubresource,
-            [In, Optional, NativeTypeName("D3D12_RECT")] RECT* pSrcRect,
-            [In] DXGI_FORMAT Format,
-            [In] D3D12_RESOLVE_MODE ResolveMode
-        )
+        public void ResolveSubresourceRegion(ID3D12Resource* pDstResource, [NativeTypeName("UINT")] uint DstSubresource, [NativeTypeName("UINT")] uint DstX, [NativeTypeName("UINT")] uint DstY, ID3D12Resource* pSrcResource, [NativeTypeName("UINT")] uint SrcSubresource, [Optional, NativeTypeName("D3D12_RECT")] RECT* pSrcRect, DXGI_FORMAT Format, D3D12_RESOLVE_MODE ResolveMode)
         {
             fixed (ID3D12GraphicsCommandList1* This = &this)
             {
-                Marshal.GetDelegateForFunctionPointer<_ResolveSubresourceRegion>(lpVtbl->ResolveSubresourceRegion)(
-                    This,
-                    pDstResource,
-                    DstSubresource,
-                    DstX,
-                    DstY,
-                    pSrcResource,
-                    SrcSubresource,
-                    pSrcRect,
-                    Format,
-                    ResolveMode
-                );
+                Marshal.GetDelegateForFunctionPointer<_ResolveSubresourceRegion>(lpVtbl->ResolveSubresourceRegion)(This, pDstResource, DstSubresource, DstX, DstY, pSrcResource, SrcSubresource, pSrcRect, Format, ResolveMode);
             }
         }
 
