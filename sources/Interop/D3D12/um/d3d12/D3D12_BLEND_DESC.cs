@@ -44,9 +44,9 @@ namespace TerraFX.Interop
 
             public D3D12_RENDER_TARGET_BLEND_DESC e7;
 
-            public ref D3D12_RENDER_TARGET_BLEND_DESC this[int index] => ref AsSpan(int.MaxValue)[index];
+            public ref D3D12_RENDER_TARGET_BLEND_DESC this[int index] => ref AsSpan()[index];
 
-            public Span<D3D12_RENDER_TARGET_BLEND_DESC> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public Span<D3D12_RENDER_TARGET_BLEND_DESC> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
         }
     }
 }

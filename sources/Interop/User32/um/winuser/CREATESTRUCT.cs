@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct CREATESTRUCT
+    public unsafe partial struct CREATESTRUCT
     {
         [NativeTypeName("LPVOID")]
         public void* lpCreateParams;

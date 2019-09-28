@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct RECT
+    public partial struct RECT
     {
         [NativeTypeName("LONG")]
         public int left;
@@ -18,13 +18,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("LONG")]
         public int bottom;
-
-        public RECT(int Left, int Top, int Right, int Bottom)
-        {
-            left = Left;
-            top = Top;
-            right = Right;
-            bottom = Bottom;
-        }
     }
 }

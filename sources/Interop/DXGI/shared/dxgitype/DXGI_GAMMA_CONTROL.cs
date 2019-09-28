@@ -2069,9 +2069,9 @@ namespace TerraFX.Interop
 
             public DXGI_RGB e1024;
 
-            public ref DXGI_RGB this[int index] => ref AsSpan(int.MaxValue)[index];
+            public ref DXGI_RGB this[int index] => ref AsSpan()[index];
 
-            public Span<DXGI_RGB> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public Span<DXGI_RGB> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 1025);
         }
     }
 }

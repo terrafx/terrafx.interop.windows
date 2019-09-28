@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Windows\TerraFX.Interop.Windows.csproj" />
+    <ProjectReference Include="..\Gdi32\TerraFX.Interop.Gdi32.csproj" />
   </ItemGroup>
 
 </Project>

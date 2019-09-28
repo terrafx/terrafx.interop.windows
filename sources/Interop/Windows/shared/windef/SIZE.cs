@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct SIZE
+    public partial struct SIZE
     {
         [NativeTypeName("LONG")]
         public int cx;

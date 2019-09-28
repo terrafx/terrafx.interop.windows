@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct WNDCLASSEX
+    public unsafe partial struct WNDCLASSEX
     {
         [NativeTypeName("UINT")]
         public uint cbSize;
