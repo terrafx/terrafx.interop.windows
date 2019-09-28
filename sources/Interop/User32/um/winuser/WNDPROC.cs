@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    [UnmanagedFunctionPointer(CallingConvention.Winapi)]
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
     [return: NativeTypeName("LRESULT")]
-    public unsafe delegate IntPtr WNDPROC([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] UIntPtr wParam, [NativeTypeName("LPARAM")] IntPtr lParam);
+    public unsafe delegate IntPtr WNDPROC([NativeTypeName("HWND")] IntPtr param0, [NativeTypeName("UINT")] uint param1, [NativeTypeName("WPARAM")] UIntPtr param2, [NativeTypeName("LPARAM")] IntPtr param3);
 }

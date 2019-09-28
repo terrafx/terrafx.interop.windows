@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct POINT
+    public partial struct POINT
     {
         [NativeTypeName("LONG")]
         public int x;

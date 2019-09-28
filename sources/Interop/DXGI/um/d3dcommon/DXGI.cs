@@ -11,26 +11,15 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class DXGI
     {
-        public static int D3D_SET_OBJECT_NAME_N_A(IDXGIObject* pObject, uint Chars, byte* pName)
-        {
-            var guid = WKPDID_D3DDebugObjectNameW;
-            return pObject->SetPrivateData(&guid, Chars, pName);
-        }
-
-        public static int D3D_SET_OBJECT_NAME_A(IDXGIObject* pObject, byte* pName)
-        {
-            return D3D_SET_OBJECT_NAME_N_A(pObject, (uint)lstrlenA(pName), pName);
-        }
-
-        public static int D3D_SET_OBJECT_NAME_N_W(IDXGIObject* pObject, uint Chars, ushort* pName)
+        public static int D3D_SET_OBJECT_NAME_N(IDXGIObject* pObject, uint Chars, ushort* pName)
         {
             var guid = WKPDID_D3DDebugObjectNameW;
             return pObject->SetPrivateData(&guid, Chars * 2, pName);
         }
 
-        public static int D3D_SET_OBJECT_NAME_W(IDXGIObject* pObject, ushort* pName)
+        public static int D3D_SET_OBJECT_NAME(IDXGIObject* pObject, ushort* pName)
         {
-            return D3D_SET_OBJECT_NAME_N_W(pObject, (uint)lstrlenW(pName), pName);
+            return D3D_SET_OBJECT_NAME_N(pObject, (uint)lstrlen(pName), pName);
         }
     }
 }

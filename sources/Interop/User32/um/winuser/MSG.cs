@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct MSG
+    public unsafe partial struct MSG
     {
         [NativeTypeName("HWND")]
         public IntPtr hwnd;

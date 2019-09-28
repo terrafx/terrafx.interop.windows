@@ -9,10 +9,7 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Kernel32
     {
-        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "lstrlenA", ExactSpelling = true)]
-        public static extern int lstrlenA([NativeTypeName("LPCSTR")] byte* lpString);
-
         [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "lstrlenW", ExactSpelling = true)]
-        public static extern int lstrlenW([NativeTypeName("LPCWSTR")] ushort* lpString);
+        public static extern int lstrlen([NativeTypeName("LPCWSTR")] ushort* lpString);
     }
 }
