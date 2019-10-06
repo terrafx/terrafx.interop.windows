@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Describes a cubic bezier in a path.</summary>
-    public struct D2D1_BEZIER_SEGMENT
+    public partial struct D2D1_BEZIER_SEGMENT
     {
         [NativeTypeName("D2D1_POINT_2F")]
         public D2D_POINT_2F point1;

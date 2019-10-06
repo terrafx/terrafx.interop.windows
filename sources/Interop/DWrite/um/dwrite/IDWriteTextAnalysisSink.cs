@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>The interface implemented by the text analyzer's client to receive the output of a given text analysis. The Text analyzer disregards any current state of the analysis sink, therefore a Set method call on a range overwrites the previously set analysis result of the same range. </summary>
     [Guid("5810CD44-0CA0-4701-B3FA-BEC5182AE4F6")]
-    public unsafe struct IDWriteTextAnalysisSink
+    public unsafe partial struct IDWriteTextAnalysisSink
     {
         public readonly Vtbl* lpVtbl;
 
@@ -127,7 +127,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

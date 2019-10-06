@@ -11,7 +11,7 @@ namespace TerraFX.Interop
     /// <summary>IDWriteRemoteFontFileStream represents a font file stream parts of which may be non-local. Non-local data must be downloaded before it can be accessed using ReadFragment. The interface exposes methods to download font data and query the locality of font data.</summary>
     /// <remarks> For more information, see the description of IDWriteRemoteFontFileLoader.</remarks>
     [Guid("4DB3757A-2C72-4ED9-B2B6-1ABABE1AFF9C")]
-    public unsafe struct IDWriteRemoteFontFileStream
+    public unsafe partial struct IDWriteRemoteFontFileStream
     {
         public readonly Vtbl* lpVtbl;
 
@@ -81,7 +81,7 @@ namespace TerraFX.Interop
         public delegate DWRITE_LOCALITY _GetLocality(IDWriteRemoteFontFileStream* This);
 
         /// <summary>BeginDownload begins downloading all or part of the font file.</summary>
-        /// <param name="fileFragments">Array of public structures, each specifying a byte range to download.</param>
+        /// <param name="fileFragments">Array of public partial structures, each specifying a byte range to download.</param>
         /// <param name="fragmentCount">Number of elements in the fileFragments array. This can be zero to just download file information, such as the size.</param>
         /// <param name="asyncResult">Receives an object that can be used to wait for the asynchronous download to complete and to get the download result upon completion. The result may be NULL if the download completes synchronously. For example, this can happen if method determines that the requested data is already local.</param>
         /// <returns> Standard HRESULT error code.</returns>
@@ -186,7 +186,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

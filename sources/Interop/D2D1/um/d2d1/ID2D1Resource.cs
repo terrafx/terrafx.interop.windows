@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>The root interface for all resources in D2D.</summary>
     [Guid("2CD90691-12E2-11DC-9FED-001143A055F9")]
-    public unsafe struct ID2D1Resource
+    public unsafe partial struct ID2D1Resource
     {
         public readonly Vtbl* lpVtbl;
 
@@ -65,7 +65,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

@@ -17,13 +17,13 @@ namespace TerraFX.Interop
         {
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at um/winuser.h:6614:9)")]
-            public _Anonymous_e__Record Anonymous;
+            public _Anonymous_e__Struct Anonymous;
 
             [FieldOffset(0)]
             [NativeTypeName("float [4][4]")]
             public fixed float m[4 * 4];
 
-            public partial struct _Anonymous_e__Record
+            public partial struct _Anonymous_e__Struct
             {
                 public float _11;
 

@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_BOX
+    public partial struct D3D12_BOX
     {
         [NativeTypeName("UINT")]
         public uint left;

@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_SHADER_BYTECODE
+    public unsafe partial struct D3D12_SHADER_BYTECODE
     {
         public void* pShaderBytecode;
 

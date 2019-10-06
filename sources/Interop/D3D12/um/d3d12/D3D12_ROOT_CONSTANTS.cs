@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_ROOT_CONSTANTS
+    public unsafe partial struct D3D12_ROOT_CONSTANTS
     {
         [NativeTypeName("UINT")]
         public uint ShaderRegister;

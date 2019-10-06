@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct DXGI_OUTDUPL_DESC
+    public partial struct DXGI_OUTDUPL_DESC
     {
         public DXGI_MODE_DESC ModeDesc;
 

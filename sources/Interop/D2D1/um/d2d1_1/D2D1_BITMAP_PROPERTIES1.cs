@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Extended bitmap properties.</summary>
-    public unsafe struct D2D1_BITMAP_PROPERTIES1
+    public unsafe partial struct D2D1_BITMAP_PROPERTIES1
     {
         public D2D1_PIXEL_FORMAT pixelFormat;
 

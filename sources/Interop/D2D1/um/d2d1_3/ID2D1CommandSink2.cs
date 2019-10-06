@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>This interface performs all the same functions as the existing ID2D1CommandSink1 interface. It also enables access to ink rendering and gradient mesh rendering.</summary>
     [Guid("3BAB440E-417E-47DF-A2E2-BC0BE6A00916")]
-    public unsafe struct ID2D1CommandSink2
+    public unsafe partial struct ID2D1CommandSink2
     {
         public readonly Vtbl* lpVtbl;
 
@@ -431,7 +431,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

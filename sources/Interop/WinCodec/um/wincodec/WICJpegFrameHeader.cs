@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct WICJpegFrameHeader
+    public partial struct WICJpegFrameHeader
     {
         [NativeTypeName("UINT")]
         public uint Width;

@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Produces 2D pixel data that has been sourced from WIC.</summary>
     [Guid("77395441-1C8F-4555-8683-F50DAB0FE792")]
-    public unsafe struct ID2D1ImageSourceFromWic
+    public unsafe partial struct ID2D1ImageSourceFromWic
     {
         public readonly Vtbl* lpVtbl;
 
@@ -128,7 +128,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

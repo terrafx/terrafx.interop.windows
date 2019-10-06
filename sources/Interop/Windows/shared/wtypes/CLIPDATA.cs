@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct CLIPDATA
+    public unsafe partial struct CLIPDATA
     {
         [NativeTypeName("ULONG")]
         public uint cbSize;
@@ -13,7 +13,7 @@ namespace TerraFX.Interop
         [NativeTypeName("LONG")]
         public int ulClipFmt;
 
-        [NativeTypeName("BYTE[]")]
+        [NativeTypeName("BYTE []")]
         public byte* pClipDAta;
     }
 }

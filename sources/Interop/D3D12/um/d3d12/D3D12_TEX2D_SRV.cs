@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_TEX2D_SRV
+    public partial struct D3D12_TEX2D_SRV
     {
         [NativeTypeName("UINT")]
         public uint MostDetailedMip;

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("BEBEE9CB-83B0-4DCC-8132-B0AAA55EAC96")]
-    public unsafe struct IWICPlanarFormatConverter
+    public unsafe partial struct IWICPlanarFormatConverter
     {
         public readonly Vtbl* lpVtbl;
 
@@ -143,7 +143,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

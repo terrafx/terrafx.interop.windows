@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_SAMPLE_POSITION
+    public partial struct D3D12_SAMPLE_POSITION
     {
         [NativeTypeName("INT8")]
         public sbyte X;

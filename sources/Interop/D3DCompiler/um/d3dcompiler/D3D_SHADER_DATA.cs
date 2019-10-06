@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D_SHADER_DATA
+    public unsafe partial struct D3D_SHADER_DATA
     {
         [NativeTypeName("LPCVOID")]
         public void* pBytecode;

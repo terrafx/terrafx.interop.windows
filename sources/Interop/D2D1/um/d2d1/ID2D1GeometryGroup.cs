@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Represents a composite geometry, composed of other ID2D1Geometry objects.</summary>
     [Guid("2CD906A6-12E2-11DC-9FED-001143A055F9")]
-    public unsafe struct ID2D1GeometryGroup
+    public unsafe partial struct ID2D1GeometryGroup
     {
         public readonly Vtbl* lpVtbl;
 
@@ -282,7 +282,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

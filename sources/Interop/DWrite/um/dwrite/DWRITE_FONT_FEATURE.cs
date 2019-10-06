@@ -5,8 +5,8 @@
 
 namespace TerraFX.Interop
 {
-    /// <summary>The DWRITE_FONT_FEATURE public structure specifies properties used to identify and execute typographic feature in the font.</summary>
-    public struct DWRITE_FONT_FEATURE
+    /// <summary>The DWRITE_FONT_FEATURE public partial structure specifies properties used to identify and execute typographic feature in the font.</summary>
+    public partial struct DWRITE_FONT_FEATURE
     {
         /// <summary>The feature OpenType name identifier.</summary>
         public DWRITE_FONT_FEATURE_TAG nameTag;

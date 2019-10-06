@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct DXGI_MODE_DESC1
+    public partial struct DXGI_MODE_DESC1
     {
         [NativeTypeName("UINT")]
         public uint Width;

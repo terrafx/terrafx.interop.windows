@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct CAI
+    public unsafe partial struct CAI
     {
         [NativeTypeName("ULONG")]
         public uint cElems;

@@ -11,7 +11,7 @@ namespace TerraFX.Interop
 {
     /// <summary>A transform uses this interface to specify how to render a particular pass using pixel and vertex shaders.</summary>
     [Guid("693CE632-7F2F-45DE-93FE-18D88B37AA21")]
-    public unsafe struct ID2D1DrawInfo
+    public unsafe partial struct ID2D1DrawInfo
     {
         public readonly Vtbl* lpVtbl;
 
@@ -176,7 +176,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

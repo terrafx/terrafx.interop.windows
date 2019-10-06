@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Indicates support for features which are optional on D3D10 feature levels.  This may be populated using CheckFeatureSupport.</summary>
-    public struct D2D1_FEATURE_DATA_D3D10_X_HARDWARE_OPTIONS
+    public partial struct D2D1_FEATURE_DATA_D3D10_X_HARDWARE_OPTIONS
     {
         [NativeTypeName("BOOL")]
         public int computeShaders_Plus_RawAndStructuredBuffers_Via_Shader_4_x;

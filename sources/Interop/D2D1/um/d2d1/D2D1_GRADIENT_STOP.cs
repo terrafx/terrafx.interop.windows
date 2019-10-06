@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Contains the position and color of a gradient stop.</summary>
-    public struct D2D1_GRADIENT_STOP
+    public partial struct D2D1_GRADIENT_STOP
     {
         [NativeTypeName("FLOAT")]
         public float position;

@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>The root factory interface for all of D2D's objects.</summary>
     [Guid("06152247-6F50-465A-9245-118BFD3B6007")]
-    public unsafe struct ID2D1Factory
+    public unsafe partial struct ID2D1Factory
     {
         public readonly Vtbl* lpVtbl;
 
@@ -243,7 +243,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

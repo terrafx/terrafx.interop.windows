@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_FEATURE_DATA_COMMAND_QUEUE_PRIORITY
+    public partial struct D3D12_FEATURE_DATA_COMMAND_QUEUE_PRIORITY
     {
         public D3D12_COMMAND_LIST_TYPE CommandListType;
 

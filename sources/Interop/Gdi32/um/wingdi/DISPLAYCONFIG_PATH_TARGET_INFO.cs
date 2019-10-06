@@ -42,9 +42,9 @@ namespace TerraFX.Interop
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at um/wingdi.h:2953:9)")]
-            public _Anonymous_e__Record Anonymous;
+            public _Anonymous_e__Struct Anonymous;
 
-            public partial struct _Anonymous_e__Record
+            public partial struct _Anonymous_e__Struct
             {
                 internal uint _bitfield;
 

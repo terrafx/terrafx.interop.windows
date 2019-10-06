@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Font typography setting.</summary>
     [Guid("55F1112B-1DC2-4B3C-9541-F46894ED85B6")]
-    public unsafe struct IDWriteTypography
+    public unsafe partial struct IDWriteTypography
     {
         public readonly Vtbl* lpVtbl;
 
@@ -100,7 +100,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

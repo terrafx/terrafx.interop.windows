@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Contains the dimensions and corner radii of a rounded rectangle.</summary>
-    public struct D2D1_ROUNDED_RECT
+    public partial struct D2D1_ROUNDED_RECT
     {
         [NativeTypeName("D2D1_RECT_F")]
         public D2D_RECT_F rect;

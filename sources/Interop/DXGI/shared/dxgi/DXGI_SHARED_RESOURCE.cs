@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct DXGI_SHARED_RESOURCE
+    public unsafe partial struct DXGI_SHARED_RESOURCE
     {
         [NativeTypeName("HANDLE")]
         public IntPtr Handle;

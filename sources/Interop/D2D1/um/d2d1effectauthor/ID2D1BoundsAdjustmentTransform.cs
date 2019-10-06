@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>An effect uses this interface to alter the image rectangle of its input.</summary>
     [Guid("90F732E2-5092-4606-A819-8651970BACCD")]
-    public unsafe struct ID2D1BoundsAdjustmentTransform
+    public unsafe partial struct ID2D1BoundsAdjustmentTransform
     {
         public readonly Vtbl* lpVtbl;
 
@@ -89,7 +89,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

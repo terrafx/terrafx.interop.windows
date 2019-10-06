@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Populates an ID2D1Mesh object with triangles.</summary>
     [Guid("2CD906C1-12E2-11DC-9FED-001143A055F9")]
-    public unsafe struct ID2D1TessellationSink
+    public unsafe partial struct ID2D1TessellationSink
     {
         public readonly Vtbl* lpVtbl;
 
@@ -77,7 +77,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

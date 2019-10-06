@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>This defines how geometries should be drawn and widened.</summary>
-    public struct D2D1_STROKE_STYLE_PROPERTIES1
+    public partial struct D2D1_STROKE_STYLE_PROPERTIES1
     {
         public D2D1_CAP_STYLE startCap;
 

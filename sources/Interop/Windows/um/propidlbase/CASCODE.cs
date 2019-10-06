@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct CASCODE
+    public unsafe partial struct CASCODE
     {
         [NativeTypeName("ULONG")]
         public uint cElems;

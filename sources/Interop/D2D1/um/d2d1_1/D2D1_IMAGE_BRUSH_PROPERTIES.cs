@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Creation properties for an image brush.</summary>
-    public struct D2D1_IMAGE_BRUSH_PROPERTIES
+    public partial struct D2D1_IMAGE_BRUSH_PROPERTIES
     {
         [NativeTypeName("D2D1_RECT_F")]
         public D2D_RECT_F sourceRectangle;

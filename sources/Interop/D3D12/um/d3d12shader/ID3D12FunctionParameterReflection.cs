@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("EC25F42D-7006-4F2B-B33E-02CC3375733F")]
-    public unsafe struct ID3D12FunctionParameterReflection
+    public unsafe partial struct ID3D12FunctionParameterReflection
     {
         public readonly Vtbl* lpVtbl;
 
@@ -26,7 +26,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr GetDesc;
         }

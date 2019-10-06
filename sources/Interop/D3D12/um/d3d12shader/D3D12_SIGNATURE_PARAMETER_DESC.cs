@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_SIGNATURE_PARAMETER_DESC
+    public unsafe partial struct D3D12_SIGNATURE_PARAMETER_DESC
     {
         [NativeTypeName("LPCSTR")]
         public sbyte* SemanticName;

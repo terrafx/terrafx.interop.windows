@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_FEATURE_DATA_FEATURE_LEVELS
+    public unsafe partial struct D3D12_FEATURE_DATA_FEATURE_LEVELS
     {
         [NativeTypeName("UINT")]
         public uint NumFeatureLevels;

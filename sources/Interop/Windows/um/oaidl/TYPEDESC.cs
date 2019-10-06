@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct TYPEDESC
+    public unsafe partial struct TYPEDESC
     {
         private _Anonymous_e__Union Anonymous;
 
@@ -54,7 +54,7 @@ namespace TerraFX.Interop
         }
 
         [StructLayout(LayoutKind.Explicit)]
-        public struct _Anonymous_e__Union
+        public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
             public TYPEDESC* lptdesc;

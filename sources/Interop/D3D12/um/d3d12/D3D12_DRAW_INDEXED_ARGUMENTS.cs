@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_DRAW_INDEXED_ARGUMENTS
+    public partial struct D3D12_DRAW_INDEXED_ARGUMENTS
     {
         [NativeTypeName("UINT")]
         public uint IndexCountPerInstance;

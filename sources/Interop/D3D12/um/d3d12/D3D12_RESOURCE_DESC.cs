@@ -12,7 +12,7 @@ using static TerraFX.Interop.DXGI_FORMAT;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_RESOURCE_DESC
+    public unsafe partial struct D3D12_RESOURCE_DESC
     {
         public D3D12_RESOURCE_DIMENSION Dimension;
 

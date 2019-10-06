@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct TYPEATTR
+    public unsafe partial struct TYPEATTR
     {
         [NativeTypeName("GUID")]
         public Guid guid;

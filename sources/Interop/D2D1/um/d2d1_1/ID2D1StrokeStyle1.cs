@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Extends a stroke style to allow nominal width strokes.</summary>
     [Guid("10A72A66-E91C-43F4-993F-DDF4B82B0B4A")]
-    public unsafe struct ID2D1StrokeStyle1
+    public unsafe partial struct ID2D1StrokeStyle1
     {
         public readonly Vtbl* lpVtbl;
 
@@ -182,7 +182,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

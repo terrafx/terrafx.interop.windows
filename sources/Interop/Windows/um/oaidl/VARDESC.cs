@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct VARDESC
+    public unsafe partial struct VARDESC
     {
         [NativeTypeName("MEMBERID")]
         public int memid;
@@ -51,7 +51,7 @@ namespace TerraFX.Interop
         }
 
         [StructLayout(LayoutKind.Explicit)]
-        public struct _Anonymous_e__Union
+        public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
             [NativeTypeName("ULONG")]

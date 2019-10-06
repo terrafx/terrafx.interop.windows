@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct WICImageParameters
+    public partial struct WICImageParameters
     {
         public D2D1_PIXEL_FORMAT pixelFormat;
 

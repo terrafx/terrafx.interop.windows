@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct FONTSIGNATURE
+    public unsafe partial struct FONTSIGNATURE
     {
         [NativeTypeName("DWORD [4]")]
         public fixed uint fsUsb[4];

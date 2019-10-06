@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Represents a rectangle defined by the coordinates of the upper-left corner (left, top) and the coordinates of the lower-right corner (right, bottom).</summary>
-    public struct D2D_RECT_F
+    public partial struct D2D_RECT_F
     {
         [NativeTypeName("FLOAT")]
         public float left;

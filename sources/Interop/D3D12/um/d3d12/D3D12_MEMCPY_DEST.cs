@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_MEMCPY_DEST
+    public unsafe partial struct D3D12_MEMCPY_DEST
     {
         public void* pData;
 

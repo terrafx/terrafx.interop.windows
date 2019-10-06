@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_FEATURE_DATA_ROOT_SIGNATURE
+    public partial struct D3D12_FEATURE_DATA_ROOT_SIGNATURE
     {
         public D3D_ROOT_SIGNATURE_VERSION HighestVersion;
     }

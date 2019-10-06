@@ -5,8 +5,8 @@
 
 namespace TerraFX.Interop
 {
-    /// <summary>The DWRITE_TRIMMING public structure specifies the trimming option for text overflowing the layout box.</summary>
-    public struct DWRITE_TRIMMING
+    /// <summary>The DWRITE_TRIMMING public partial structure specifies the trimming option for text overflowing the layout box.</summary>
+    public partial struct DWRITE_TRIMMING
     {
         /// <summary>Text granularity of which trimming applies.</summary>
         public DWRITE_TRIMMING_GRANULARITY granularity;

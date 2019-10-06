@@ -13,7 +13,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Renders to an intermediate texture created by the CreateCompatibleRenderTarget method.</summary>
     [Guid("2CD90695-12E2-11DC-9FED-001143A055F9")]
-    public unsafe struct ID2D1BitmapRenderTarget
+    public unsafe partial struct ID2D1BitmapRenderTarget
     {
         public readonly Vtbl* lpVtbl;
 
@@ -739,7 +739,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

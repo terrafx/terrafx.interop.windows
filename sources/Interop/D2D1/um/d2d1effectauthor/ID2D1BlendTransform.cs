@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>An effect uses this interface to configure a blending operation.</summary>
     [Guid("63AC0B32-BA44-450F-8806-7F4CA1FF2F1B")]
-    public unsafe struct ID2D1BlendTransform
+    public unsafe partial struct ID2D1BlendTransform
     {
         public readonly Vtbl* lpVtbl;
 
@@ -115,7 +115,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

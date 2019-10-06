@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct DXGI_PRESENT_PARAMETERS
+    public unsafe partial struct DXGI_PRESENT_PARAMETERS
     {
         [NativeTypeName("UINT")]
         public uint DirtyRectsCount;

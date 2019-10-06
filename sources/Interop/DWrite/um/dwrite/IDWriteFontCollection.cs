@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>The IDWriteFontCollection encapsulates a collection of fonts.</summary>
     [Guid("A84CEE02-3EEA-4EEE-A827-87C1A02A0FCC")]
-    public unsafe struct IDWriteFontCollection
+    public unsafe partial struct IDWriteFontCollection
     {
         public readonly Vtbl* lpVtbl;
 
@@ -119,7 +119,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

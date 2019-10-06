@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_FEATURE_DATA_MULTISAMPLE_QUALITY_LEVELS
+    public partial struct D3D12_FEATURE_DATA_MULTISAMPLE_QUALITY_LEVELS
     {
         public DXGI_FORMAT Format;
 

@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Represents the drawing state of a render target: the antialiasing mode, transform, tags, and text-rendering options.</summary>
     [Guid("28506E39-EBF6-46A1-BB47-FD85565AB957")]
-    public unsafe struct ID2D1DrawingStateBlock
+    public unsafe partial struct ID2D1DrawingStateBlock
     {
         public readonly Vtbl* lpVtbl;
 
@@ -113,7 +113,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

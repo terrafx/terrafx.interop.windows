@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct DXGI_OUTDUPL_FRAME_INFO
+    public partial struct DXGI_OUTDUPL_FRAME_INFO
     {
         public LARGE_INTEGER LastPresentTime;
 

@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct DXGI_FRAME_STATISTICS
+    public partial struct DXGI_FRAME_STATISTICS
     {
         [NativeTypeName("UINT")]
         public uint PresentCount;

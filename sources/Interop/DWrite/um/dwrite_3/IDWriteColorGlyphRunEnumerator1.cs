@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Enumerator for an ordered collection of color glyph runs.</summary>
     [Guid("7C5F86DA-C7A1-4F05-B8E1-55A179FE5A35")]
-    public unsafe struct IDWriteColorGlyphRunEnumerator1
+    public unsafe partial struct IDWriteColorGlyphRunEnumerator1
     {
         public readonly Vtbl* lpVtbl;
 
@@ -101,7 +101,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

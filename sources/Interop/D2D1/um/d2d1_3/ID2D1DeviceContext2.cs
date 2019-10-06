@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 {
     /// <summary>This interface performs all the same functions as the ID2D1DeviceContext1 interface, plus it enables functionality such as ink rendering, gradient mesh rendering, and improved image loading.</summary>
     [Guid("394EA6A3-0C34-4321-950B-6CA20F0BE6C7")]
-    public unsafe struct ID2D1DeviceContext2
+    public unsafe partial struct ID2D1DeviceContext2
     {
         public readonly Vtbl* lpVtbl;
 
@@ -1368,7 +1368,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

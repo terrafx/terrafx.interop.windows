@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Creates Direct2D resources. This interface also enables the creation of ID2D1Device5 objects.</summary>
     [Guid("F9976F46-F642-44C1-97CA-DA32EA2A2635")]
-    public unsafe struct ID2D1Factory6
+    public unsafe partial struct ID2D1Factory6
     {
         public readonly Vtbl* lpVtbl;
 
@@ -455,7 +455,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

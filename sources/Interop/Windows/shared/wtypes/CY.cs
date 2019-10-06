@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [StructLayout(LayoutKind.Explicit)]
-    public struct CY
+    public partial struct CY
     {
         [FieldOffset(0)]
         public _Anonymous_e__Struct Anonymous;
@@ -17,7 +17,7 @@ namespace TerraFX.Interop
         [NativeTypeName("LONGLONG")]
         public long int64;
 
-        public struct _Anonymous_e__Struct
+        public partial struct _Anonymous_e__Struct
         {
             [NativeTypeName("ULONG")]
             public uint Lo;

@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct WICDdsFormatInfo
+    public partial struct WICDdsFormatInfo
     {
         public DXGI_FORMAT DxgiFormat;
 

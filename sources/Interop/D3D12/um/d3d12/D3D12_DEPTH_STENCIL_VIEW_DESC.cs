@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_DEPTH_STENCIL_VIEW_DESC
+    public partial struct D3D12_DEPTH_STENCIL_VIEW_DESC
     {
         public DXGI_FORMAT Format;
 
@@ -18,7 +18,7 @@ namespace TerraFX.Interop
         public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
-        public struct _Anonymous_e__Union
+        public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
             public D3D12_TEX1D_DSV Texture1D;

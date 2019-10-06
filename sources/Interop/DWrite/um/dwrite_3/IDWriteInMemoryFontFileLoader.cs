@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>The IDWriteInMemoryFontFileLoader interface enables clients to reference in-memory fonts without having to implement a custom loader. The IDWriteFactory5::CreateInMemoryFontFileLoader method returns an instance of this interface, which the client is responsible for registering and unregistering using IDWriteFactory::RegisterFontFileLoader and IDWriteFactory::UnregisterFontFileLoader.</summary>
     [Guid("DC102F47-A12D-4B1C-822D-9E117E33043F")]
-    public unsafe struct IDWriteInMemoryFontFileLoader
+    public unsafe partial struct IDWriteInMemoryFontFileLoader
     {
         public readonly Vtbl* lpVtbl;
 
@@ -105,7 +105,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

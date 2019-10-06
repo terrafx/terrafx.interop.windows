@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Overall metrics associated with text after layout. All coordinates are in device independent pixels (DIPs).</summary>
-    public struct DWRITE_TEXT_METRICS1
+    public partial struct DWRITE_TEXT_METRICS1
     {
         public DWRITE_TEXT_METRICS BaseValue;
 

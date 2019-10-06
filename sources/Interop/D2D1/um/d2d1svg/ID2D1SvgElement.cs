@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Interface for all SVG elements.</summary>
     [Guid("AC7B67A6-183E-49C1-A823-0EBE40B0DB29")]
-    public unsafe struct ID2D1SvgElement
+    public unsafe partial struct ID2D1SvgElement
     {
         public readonly Vtbl* lpVtbl;
 
@@ -498,7 +498,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

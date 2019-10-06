@@ -7,7 +7,7 @@ using static TerraFX.Interop.D3D12_ROOT_SIGNATURE_FLAGS;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_ROOT_SIGNATURE_DESC
+    public unsafe partial struct D3D12_ROOT_SIGNATURE_DESC
     {
         public static readonly D3D12_ROOT_SIGNATURE_DESC DEFAULT = new D3D12_ROOT_SIGNATURE_DESC(0, null, 0, null, D3D12_ROOT_SIGNATURE_FLAG_NONE);
 

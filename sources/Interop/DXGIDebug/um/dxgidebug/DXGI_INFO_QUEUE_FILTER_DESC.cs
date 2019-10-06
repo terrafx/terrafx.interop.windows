@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct DXGI_INFO_QUEUE_FILTER_DESC
+    public unsafe partial struct DXGI_INFO_QUEUE_FILTER_DESC
     {
         [NativeTypeName("UINT")]
         public uint NumCategories;

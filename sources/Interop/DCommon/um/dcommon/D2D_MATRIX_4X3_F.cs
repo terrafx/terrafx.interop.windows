@@ -8,12 +8,12 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     /// <summary>Represents a 4-by-3 matrix.</summary>
-    public unsafe struct D2D_MATRIX_4X3_F
+    public unsafe partial struct D2D_MATRIX_4X3_F
     {
         public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
-        public struct _Anonymous_e__Union
+        public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
             public _Anonymous_e__Struct Anonymous;
@@ -22,7 +22,7 @@ namespace TerraFX.Interop
             [NativeTypeName("FLOAT[4][3]")]
             public fixed float m[4 * 3];
 
-            public struct _Anonymous_e__Struct
+            public partial struct _Anonymous_e__Struct
             {
                 [NativeTypeName("FLOAT")]
                 public float _11;

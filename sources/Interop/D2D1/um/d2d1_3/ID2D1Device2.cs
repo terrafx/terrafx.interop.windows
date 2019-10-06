@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Represents a resource domain whose objects and device contexts can be used together. This interface performs all the same functions as the existing ID2D1Device1 interface. It also enables the creation of ID2D1DeviceContext2 objects.</summary>
     [Guid("A44472E1-8DFB-4E60-8492-6E2861C9CA8B")]
-    public unsafe struct ID2D1Device2
+    public unsafe partial struct ID2D1Device2
     {
         public readonly Vtbl* lpVtbl;
 
@@ -209,7 +209,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

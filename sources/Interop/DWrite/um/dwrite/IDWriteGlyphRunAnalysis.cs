@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Interface that encapsulates information used to render a glyph run.</summary>
     [Guid("7D97DBF7-E085-42D4-81E3-6A883BDED118")]
-    public unsafe struct IDWriteGlyphRunAnalysis
+    public unsafe partial struct IDWriteGlyphRunAnalysis
     {
         public readonly Vtbl* lpVtbl;
 
@@ -107,7 +107,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

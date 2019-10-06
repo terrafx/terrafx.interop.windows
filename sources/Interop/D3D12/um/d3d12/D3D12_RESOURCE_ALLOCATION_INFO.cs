@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_RESOURCE_ALLOCATION_INFO
+    public partial struct D3D12_RESOURCE_ALLOCATION_INFO
     {
         [NativeTypeName("UINT64")]
         public ulong SizeInBytes;

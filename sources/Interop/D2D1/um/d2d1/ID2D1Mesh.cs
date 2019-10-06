@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Represents a set of vertices that form a list of triangles.</summary>
     [Guid("2CD906C2-12E2-11DC-9FED-001143A055F9")]
-    public unsafe struct ID2D1Mesh
+    public unsafe partial struct ID2D1Mesh
     {
         public readonly Vtbl* lpVtbl;
 
@@ -79,7 +79,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

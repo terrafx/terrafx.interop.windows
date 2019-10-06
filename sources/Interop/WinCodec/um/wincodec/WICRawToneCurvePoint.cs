@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct WICRawToneCurvePoint
+    public partial struct WICRawToneCurvePoint
     {
         public double Input;
 

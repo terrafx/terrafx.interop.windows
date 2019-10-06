@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>The GDI interop interface provides interoperability with GDI.</summary>
     [Guid("4556BE70-3ABD-4F70-90BE-421780A6F515")]
-    public unsafe struct IDWriteGdiInterop1
+    public unsafe partial struct IDWriteGdiInterop1
     {
         public readonly Vtbl* lpVtbl;
 
@@ -26,7 +26,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("ULONG")]
         public delegate uint _Release(IDWriteGdiInterop1* This);
 
-        /// <summary>Creates a font object that matches the properties specified by the LOGFONT public structure in the system font collection (GetSystemFontCollection).</summary>
+        /// <summary>Creates a font object that matches the properties specified by the LOGFONT public partial structure in the system font collection (GetSystemFontCollection).</summary>
         /// <param name="logFont">Structure containing a GDI-compatible font description.</param>
         /// <param name="font">Receives a newly created font object if successful, or NULL in case of error.</param>
         /// <returns>Standard HRESULT error code.</returns>
@@ -34,7 +34,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public delegate int _CreateFontFromLOGFONT(IDWriteGdiInterop1* This, LOGFONT* logFont, IDWriteFont** font);
 
-        /// <summary>Initializes a LOGFONT public structure based on the GDI-compatible properties of the specified font.</summary>
+        /// <summary>Initializes a LOGFONT public partial structure based on the GDI-compatible properties of the specified font.</summary>
         /// <param name="font">Specifies a font.</param>
         /// <param name="logFont">Structure that receives a GDI-compatible font description.</param>
         /// <param name="isSystemFont">Contains TRUE if the specified font object is part of the system font collection or FALSE otherwise.</param>
@@ -43,7 +43,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public delegate int _ConvertFontToLOGFONT(IDWriteGdiInterop1* This, IDWriteFont* font, LOGFONT* logFont, [NativeTypeName("BOOL")] int* isSystemFont);
 
-        /// <summary>Initializes a LOGFONT public structure based on the GDI-compatible properties of the specified font.</summary>
+        /// <summary>Initializes a LOGFONT public partial structure based on the GDI-compatible properties of the specified font.</summary>
         /// <param name="font">Specifies a font face.</param>
         /// <param name="logFont">Structure that receives a GDI-compatible font description.</param>
         /// <returns>Standard HRESULT error code.</returns>
@@ -68,7 +68,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public delegate int _CreateBitmapRenderTarget(IDWriteGdiInterop1* This, [Optional, NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT32")] uint width, [NativeTypeName("UINT32")] uint height, IDWriteBitmapRenderTarget** renderTarget);
 
-        /// <summary>Creates a font object that matches the properties specified by the LOGFONT public structure.</summary>
+        /// <summary>Creates a font object that matches the properties specified by the LOGFONT public partial structure.</summary>
         /// <param name="logFont">Structure containing a GDI-compatible font description.</param>
         /// <param name="fontCollection">The font collection to search. If NULL, the local system font collection is used.</param>
         /// <param name="font">Receives a newly created font object if successful, or NULL in case of error.</param>
@@ -208,7 +208,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

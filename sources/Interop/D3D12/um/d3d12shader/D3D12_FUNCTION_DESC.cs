@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_FUNCTION_DESC
+    public unsafe partial struct D3D12_FUNCTION_DESC
     {
         [NativeTypeName("UINT")]
         public uint Version;

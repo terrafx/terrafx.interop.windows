@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_QUERY_DATA_SO_STATISTICS
+    public partial struct D3D12_QUERY_DATA_SO_STATISTICS
     {
         [NativeTypeName("UINT64")]
         public ulong NumPrimitivesWritten;

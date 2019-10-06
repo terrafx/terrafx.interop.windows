@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>The interface implemented by the client to receive the output of the text analyzers.</summary>
     [Guid("B0D941A0-85E7-4D8B-9FD3-5CED9934482A")]
-    public unsafe struct IDWriteTextAnalysisSink1
+    public unsafe partial struct IDWriteTextAnalysisSink1
     {
         public readonly Vtbl* lpVtbl;
 
@@ -148,7 +148,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

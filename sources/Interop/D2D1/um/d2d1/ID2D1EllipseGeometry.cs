@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Represents an ellipse.</summary>
     [Guid("2CD906A4-12E2-11DC-9FED-001143A055F9")]
-    public unsafe struct ID2D1EllipseGeometry
+    public unsafe partial struct ID2D1EllipseGeometry
     {
         public readonly Vtbl* lpVtbl;
 
@@ -258,7 +258,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct DXGI_SAMPLE_DESC
+    public partial struct DXGI_SAMPLE_DESC
     {
         [NativeTypeName("UINT")]
         public uint Count;

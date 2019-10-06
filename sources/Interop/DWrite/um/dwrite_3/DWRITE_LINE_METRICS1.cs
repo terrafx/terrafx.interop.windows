@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Information about a formatted line of text.</summary>
-    public struct DWRITE_LINE_METRICS1
+    public partial struct DWRITE_LINE_METRICS1
     {
         public DWRITE_LINE_METRICS BaseValue;
 

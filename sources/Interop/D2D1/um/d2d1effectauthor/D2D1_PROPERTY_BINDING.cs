@@ -8,7 +8,7 @@ using System;
 namespace TerraFX.Interop
 {
     /// <summary>Defines a property binding to a function. The name must match the property defined in the registration schema.</summary>
-    public unsafe struct D2D1_PROPERTY_BINDING
+    public unsafe partial struct D2D1_PROPERTY_BINDING
     {
         /// <summary>The name of the property.</summary>
         [NativeTypeName("PCWSTR")]

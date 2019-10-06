@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Contains the content bounds, mask information, opacity settings, and other options for a layer resource.</summary>
-    public unsafe struct D2D1_LAYER_PARAMETERS
+    public unsafe partial struct D2D1_LAYER_PARAMETERS
     {
         /// <summary>The rectangular clip that will be applied to the layer. The clip is affected by the world transform. Content outside of the content bounds will not render.</summary>
         [NativeTypeName("D2D1_RECT_F")]

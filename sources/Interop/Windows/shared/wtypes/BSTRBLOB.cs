@@ -5,12 +5,12 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct BSTRBLOB
+    public unsafe partial struct BSTRBLOB
     {
         [NativeTypeName("ULONG")]
         public uint cbSize;
 
-        [NativeTypeName("BYTE[]")]
+        [NativeTypeName("BYTE []")]
         public byte* pBlobData;
     }
 }

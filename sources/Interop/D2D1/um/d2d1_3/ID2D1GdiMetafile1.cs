@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Interface encapsulating a GDI/GDI+ metafile.</summary>
     [Guid("2E69F9E8-DD3F-4BF9-95BA-C04F49D788DF")]
-    public unsafe struct ID2D1GdiMetafile1
+    public unsafe partial struct ID2D1GdiMetafile1
     {
         public readonly Vtbl* lpVtbl;
 
@@ -121,7 +121,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

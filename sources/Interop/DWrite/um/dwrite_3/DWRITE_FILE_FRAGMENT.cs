@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>DWRITE_FILE_FRAGMENT represents a range of bytes in a font file.</summary>
-    public struct DWRITE_FILE_FRAGMENT
+    public partial struct DWRITE_FILE_FRAGMENT
     {
         /// <summary>Starting offset of the fragment from the beginning of the file.</summary>
         [NativeTypeName("UINT64")]

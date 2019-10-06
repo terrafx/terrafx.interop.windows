@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>This is the interface implemented by an effect author, along with the constructor and registration information.</summary>
     [Guid("A248FD3F-3E6C-4E63-9F03-7F68ECC91DB9")]
-    public unsafe struct ID2D1EffectImpl
+    public unsafe partial struct ID2D1EffectImpl
     {
         public readonly Vtbl* lpVtbl;
 
@@ -95,7 +95,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct DXGI_GAMMA_CONTROL_CAPABILITIES
+    public unsafe partial struct DXGI_GAMMA_CONTROL_CAPABILITIES
     {
         [NativeTypeName("BOOL")]
         public int ScaleAndOffsetSupported;

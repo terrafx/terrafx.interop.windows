@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct WICJpegScanHeader
+    public partial struct WICJpegScanHeader
     {
         [NativeTypeName("UINT")]
         public uint cComponents;

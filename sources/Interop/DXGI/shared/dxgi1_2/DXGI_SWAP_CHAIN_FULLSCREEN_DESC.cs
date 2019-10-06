@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct DXGI_SWAP_CHAIN_FULLSCREEN_DESC
+    public partial struct DXGI_SWAP_CHAIN_FULLSCREEN_DESC
     {
         public DXGI_RATIONAL RefreshRate;
 

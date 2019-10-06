@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_DISPATCH_ARGUMENTS
+    public partial struct D3D12_DISPATCH_ARGUMENTS
     {
         [NativeTypeName("UINT")]
         public uint ThreadGroupCountX;

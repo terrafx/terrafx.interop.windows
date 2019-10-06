@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>All parameters related to pushing a layer.</summary>
-    public unsafe struct D2D1_LAYER_PARAMETERS1
+    public unsafe partial struct D2D1_LAYER_PARAMETERS1
     {
         [NativeTypeName("D2D1_RECT_F")]
         public D2D_RECT_F contentBounds;

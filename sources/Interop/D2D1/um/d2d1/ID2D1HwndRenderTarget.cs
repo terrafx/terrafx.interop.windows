@@ -13,7 +13,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Renders drawing instructions to a window.</summary>
     [Guid("2CD90698-12E2-11DC-9FED-001143A055F9")]
-    public unsafe struct ID2D1HwndRenderTarget
+    public unsafe partial struct ID2D1HwndRenderTarget
     {
         public readonly Vtbl* lpVtbl;
 
@@ -764,7 +764,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

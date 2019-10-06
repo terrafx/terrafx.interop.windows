@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct LOGFONT
+    public unsafe partial struct LOGFONT
     {
         [NativeTypeName("LONG")]
         public int lfHeight;

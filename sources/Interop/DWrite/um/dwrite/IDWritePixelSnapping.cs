@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>The IDWritePixelSnapping interface defines the pixel snapping properties of a text renderer.</summary>
     [Guid("EAF3A2DA-ECF4-4D24-B644-B34F6842024B")]
-    public unsafe struct IDWritePixelSnapping
+    public unsafe partial struct IDWritePixelSnapping
     {
         public readonly Vtbl* lpVtbl;
 
@@ -104,7 +104,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

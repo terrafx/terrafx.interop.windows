@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct DXGI_JPEG_AC_HUFFMAN_TABLE
+    public unsafe partial struct DXGI_JPEG_AC_HUFFMAN_TABLE
     {
         [NativeTypeName("BYTE[16]")]
         public fixed byte CodeCounts[16];

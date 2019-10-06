@@ -5,8 +5,8 @@
 
 namespace TerraFX.Interop
 {
-    /// <summary>The DWRITE_GLYPH_RUN_DESCRIPTION public structure contains additional properties related to those in DWRITE_GLYPH_RUN.</summary>
-    public unsafe struct DWRITE_GLYPH_RUN_DESCRIPTION
+    /// <summary>The DWRITE_GLYPH_RUN_DESCRIPTION public partial structure contains additional properties related to those in DWRITE_GLYPH_RUN.</summary>
+    public unsafe partial struct DWRITE_GLYPH_RUN_DESCRIPTION
     {
         /// <summary>The locale name associated with this run.</summary>
         [NativeTypeName("WCHAR[]")]

@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>A transform uses this interface to specify how to render a particular pass in D2D.</summary>
     [Guid("519AE1BD-D19A-420D-B849-364F594776B7")]
-    public unsafe struct ID2D1RenderInfo
+    public unsafe partial struct ID2D1RenderInfo
     {
         public readonly Vtbl* lpVtbl;
 
@@ -105,7 +105,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

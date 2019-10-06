@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_GRAPHICS_PIPELINE_STATE_DESC
+    public unsafe partial struct D3D12_GRAPHICS_PIPELINE_STATE_DESC
     {
         public ID3D12RootSignature* pRootSignature;
 
@@ -53,7 +53,7 @@ namespace TerraFX.Interop
 
         public D3D12_PIPELINE_STATE_FLAGS Flags;
 
-        public struct _RTVFormats_e__FixedBuffer
+        public partial struct _RTVFormats_e__FixedBuffer
         {
             public DXGI_FORMAT e0;
 

@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Represents an image source which shares resources with an original image source.</summary>
     [Guid("7F1F79E5-2796-416C-8F55-700F911445E5")]
-    public unsafe struct ID2D1TransformedImageSource
+    public unsafe partial struct ID2D1TransformedImageSource
     {
         public readonly Vtbl* lpVtbl;
 
@@ -87,7 +87,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

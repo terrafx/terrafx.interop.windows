@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_SUBRESOURCE_INFO
+    public partial struct D3D12_SUBRESOURCE_INFO
     {
         [NativeTypeName("UINT64")]
         public ulong Offset;

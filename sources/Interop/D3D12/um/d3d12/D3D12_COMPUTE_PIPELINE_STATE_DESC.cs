@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_COMPUTE_PIPELINE_STATE_DESC
+    public unsafe partial struct D3D12_COMPUTE_PIPELINE_STATE_DESC
     {
         public ID3D12RootSignature* pRootSignature;
 

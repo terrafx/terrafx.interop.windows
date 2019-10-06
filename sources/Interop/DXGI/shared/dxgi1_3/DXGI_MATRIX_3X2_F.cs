@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct DXGI_MATRIX_3X2_F
+    public partial struct DXGI_MATRIX_3X2_F
     {
         [NativeTypeName("FLOAT")]
         public float _11;

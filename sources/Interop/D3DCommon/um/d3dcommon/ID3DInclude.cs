@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct ID3DInclude
+    public unsafe partial struct ID3DInclude
     {
         public readonly Vtbl* lpVtbl;
 
@@ -38,7 +38,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr Open;
 

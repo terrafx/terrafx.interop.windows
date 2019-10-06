@@ -11,7 +11,7 @@ namespace TerraFX.Interop
 {
     /// <summary>The effect interface. Properties control how the effect is rendered. The effect is Drawn with the DrawImage call.</summary>
     [Guid("28211A43-7D89-476F-8181-2D6159B220AD")]
-    public unsafe struct ID2D1Effect
+    public unsafe partial struct ID2D1Effect
     {
         public readonly Vtbl* lpVtbl;
 
@@ -270,7 +270,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

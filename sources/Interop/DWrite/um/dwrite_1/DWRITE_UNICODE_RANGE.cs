@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Range of Unicode codepoints.</summary>
-    public struct DWRITE_UNICODE_RANGE
+    public partial struct DWRITE_UNICODE_RANGE
     {
         /// <summary>The first codepoint in the Unicode range.</summary>
         [NativeTypeName("UINT32")]

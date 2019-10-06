@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Encapsulates a 32-bit device independent bitmap and device context, which can be used for rendering glyphs.</summary>
     [Guid("5E5A32A3-8DFF-4773-9FF6-0696EAB77267")]
-    public unsafe struct IDWriteBitmapRenderTarget
+    public unsafe partial struct IDWriteBitmapRenderTarget
     {
         public readonly Vtbl* lpVtbl;
 
@@ -41,7 +41,7 @@ namespace TerraFX.Interop
 
         /// <summary>Gets a handle to the memory device context.</summary>
         /// <returns>Returns the device context handle.</returns>
-        /// <remarks> An application can use the device context to draw using GDI functions. An application can obtain the bitmap handle (HBITMAP) by calling GetCurrentObject. An application that wants information about the underlying bitmap, including a pointer to the pixel data, can call GetObject to fill in a DIBSECTION public structure. The bitmap is always a 32-bit top-down DIB.</remarks>
+        /// <remarks> An application can use the device context to draw using GDI functions. An application can obtain the bitmap handle (HBITMAP) by calling GetCurrentObject. An application that wants information about the underlying bitmap, including a pointer to the pixel data, can call GetObject to fill in a DIBSECTION public partial structure. The bitmap is always a 32-bit top-down DIB.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HDC")]
         public delegate IntPtr _GetMemoryDC(IDWriteBitmapRenderTarget* This);
@@ -187,7 +187,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

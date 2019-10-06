@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Describes the opacity and transformation of a brush.</summary>
-    public struct D2D1_BRUSH_PROPERTIES
+    public partial struct D2D1_BRUSH_PROPERTIES
     {
         [NativeTypeName("FLOAT")]
         public float opacity;

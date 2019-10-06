@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>A base object which can be inserted into a transform graph.</summary>
     [Guid("B2EFE1E7-729F-4102-949F-505FA21BF666")]
-    public unsafe struct ID2D1TransformNode
+    public unsafe partial struct ID2D1TransformNode
     {
         public readonly Vtbl* lpVtbl;
 
@@ -67,7 +67,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

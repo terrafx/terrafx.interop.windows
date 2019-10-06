@@ -5,8 +5,8 @@
 
 namespace TerraFX.Interop
 {
-    /// <summary>The DWRITE_LINE_METRICS public structure contains information about a formatted line of text.</summary>
-    public struct DWRITE_LINE_METRICS
+    /// <summary>The DWRITE_LINE_METRICS public partial structure contains information about a formatted line of text.</summary>
+    public partial struct DWRITE_LINE_METRICS
     {
         /// <summary>The number of total text positions in the line. This includes any trailing whitespace and newline characters.</summary>
         [NativeTypeName("UINT32")]

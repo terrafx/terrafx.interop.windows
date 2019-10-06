@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Line breakpoint characteristics of a character.</summary>
-    public struct DWRITE_LINE_BREAKPOINT
+    public partial struct DWRITE_LINE_BREAKPOINT
     {
         private byte _bitField;
 

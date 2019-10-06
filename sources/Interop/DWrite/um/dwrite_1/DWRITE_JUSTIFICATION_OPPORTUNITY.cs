@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Justification information per glyph.</summary>
-    public struct DWRITE_JUSTIFICATION_OPPORTUNITY
+    public partial struct DWRITE_JUSTIFICATION_OPPORTUNITY
     {
         /// <summary>Minimum amount of expansion to apply to the side of the glyph. This may vary from 0 to infinity, typically being zero except for kashida.</summary>
         [NativeTypeName("FLOAT")]

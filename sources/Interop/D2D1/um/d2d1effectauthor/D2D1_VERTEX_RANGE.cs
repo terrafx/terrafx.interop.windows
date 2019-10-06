@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>This defines the range of vertices from a vertex buffer to draw.</summary>
-    public struct D2D1_VERTEX_RANGE
+    public partial struct D2D1_VERTEX_RANGE
     {
         [NativeTypeName("UINT32")]
         public uint startVertex;

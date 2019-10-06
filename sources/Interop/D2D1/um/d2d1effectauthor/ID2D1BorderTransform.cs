@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>An effect uses this interface to configure border generation.</summary>
     [Guid("4998735C-3A19-473C-9781-656847E3A347")]
-    public unsafe struct ID2D1BorderTransform
+    public unsafe partial struct ID2D1BorderTransform
     {
         public readonly Vtbl* lpVtbl;
 
@@ -137,7 +137,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

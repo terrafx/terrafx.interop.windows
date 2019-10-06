@@ -7,7 +7,7 @@ using static TerraFX.Interop.D3D12_RESOURCE_DIMENSION;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_SUBRESOURCE_FOOTPRINT
+    public unsafe partial struct D3D12_SUBRESOURCE_FOOTPRINT
     {
         public DXGI_FORMAT Format;
 

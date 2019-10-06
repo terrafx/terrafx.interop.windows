@@ -11,7 +11,7 @@ namespace TerraFX.Interop
 {
     /// <summary>The interface that represents an absolute reference to a font face. It contains font face type, appropriate file references and face identification data. Various font data such as metrics, names and glyph outlines is obtained from IDWriteFontFace.</summary>
     [Guid("27F2A904-4EB8-441D-9678-0563F53E3E2F")]
-    public unsafe struct IDWriteFontFace4
+    public unsafe partial struct IDWriteFontFace4
     {
         public readonly Vtbl* lpVtbl;
 
@@ -54,7 +54,7 @@ namespace TerraFX.Interop
         public delegate int _IsSymbolFont(IDWriteFontFace4* This);
 
         /// <summary>Obtains design units and common metrics for the font face. These metrics are applicable to all the glyphs within a fontface and are used by applications for layout calculations.</summary>
-        /// <param name="fontFaceMetrics">Points to a DWRITE_FONT_METRICS public structure to fill in. The metrics returned by this function are in font design units.</param>
+        /// <param name="fontFaceMetrics">Points to a DWRITE_FONT_METRICS public partial structure to fill in. The metrics returned by this function are in font design units.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public delegate void _GetMetrics(IDWriteFontFace4* This, DWRITE_FONT_METRICS* fontFaceMetrics);
 
@@ -66,7 +66,7 @@ namespace TerraFX.Interop
         /// <summary>Obtains ideal glyph metrics in font design units. Design glyphs metrics are used for glyph positioning.</summary>
         /// <param name="glyphIndices">An array of glyph indices to compute the metrics for.</param>
         /// <param name="glyphCount">The number of elements in the glyphIndices array.</param>
-        /// <param name="glyphMetrics">Array of DWRITE_GLYPH_METRICS public structures filled by this function. The metrics returned by this function are in font design units.</param>
+        /// <param name="glyphMetrics">Array of DWRITE_GLYPH_METRICS public partial structures filled by this function. The metrics returned by this function are in font design units.</param>
         /// <param name="isSideways">Indicates whether the font is being used in a sideways run. This can affect the glyph metrics if the font has oblique simulation because sideways oblique simulation differs from non-sideways oblique simulation.</param>
         /// <returns>Standard HRESULT error code. If any of the input glyph indices are outside of the valid glyph index range for the current font face, E_INVALIDARG will be returned.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
@@ -128,7 +128,7 @@ namespace TerraFX.Interop
         /// <param name="emSize">Logical size of the font in DIP units. A DIP ("device-independent pixel") equals 1/96 inch.</param>
         /// <param name="pixelsPerDip">Number of physical pixels per DIP. For example, if the DPI of the rendering surface is 96 this value is 1.0f. If the DPI is 120, this value is 120.0f/96.</param>
         /// <param name="transform">Optional transform applied to the glyphs and their positions. This transform is applied after the scaling specified by the font size and pixelsPerDip.</param>
-        /// <param name="fontFaceMetrics">Points to a DWRITE_FONT_METRICS public structure to fill in. The metrics returned by this function are in font design units.</param>
+        /// <param name="fontFaceMetrics">Points to a DWRITE_FONT_METRICS public partial structure to fill in. The metrics returned by this function are in font design units.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _GetGdiCompatibleMetrics(IDWriteFontFace4* This, [NativeTypeName("FLOAT")] float emSize, [NativeTypeName("FLOAT")] float pixelsPerDip, [Optional] DWRITE_MATRIX* transform, DWRITE_FONT_METRICS* fontFaceMetrics);
@@ -140,7 +140,7 @@ namespace TerraFX.Interop
         /// <param name="useGdiNatural"> When set to FALSE, the metrics are the same as the metrics of GDI aliased text. When set to TRUE, the metrics are the same as the metrics of text measured by GDI using a font created with CLEARTYPE_NATURAL_QUALITY.</param>
         /// <param name="glyphIndices">An array of glyph indices to compute the metrics for.</param>
         /// <param name="glyphCount">The number of elements in the glyphIndices array.</param>
-        /// <param name="glyphMetrics">Array of DWRITE_GLYPH_METRICS public structures filled by this function. The metrics returned by this function are in font design units.</param>
+        /// <param name="glyphMetrics">Array of DWRITE_GLYPH_METRICS public partial structures filled by this function. The metrics returned by this function are in font design units.</param>
         /// <param name="isSideways">Indicates whether the font is being used in a sideways run. This can affect the glyph metrics if the font has oblique simulation because sideways oblique simulation differs from non-sideways oblique simulation.</param>
         /// <returns>Standard HRESULT error code. If any of the input glyph indices are outside of the valid glyph index range for the current font face, E_INVALIDARG will be returned.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
@@ -148,7 +148,7 @@ namespace TerraFX.Interop
         public delegate int _GetGdiCompatibleGlyphMetrics(IDWriteFontFace4* This, [NativeTypeName("FLOAT")] float emSize, [NativeTypeName("FLOAT")] float pixelsPerDip, [Optional] DWRITE_MATRIX* transform, [NativeTypeName("BOOL")] int useGdiNatural, [NativeTypeName("UINT16[]")] ushort* glyphIndices, [NativeTypeName("UINT32")] uint glyphCount, [NativeTypeName("DWRITE_GLYPH_METRICS[]")] DWRITE_GLYPH_METRICS* glyphMetrics, [NativeTypeName("BOOL")] int isSideways = FALSE);
 
         /// <summary>Gets common metrics for the font in design units. These metrics are applicable to all the glyphs within a font, and are used by applications for layout calculations.</summary>
-        /// <param name="fontMetrics">Metrics public structure to fill in.</param>
+        /// <param name="fontMetrics">Metrics public partial structure to fill in.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public delegate void _GetMetrics1(IDWriteFontFace4* This, DWRITE_FONT_METRICS1* fontMetrics);
 
@@ -156,14 +156,14 @@ namespace TerraFX.Interop
         /// <param name="emSize">Logical size of the font in DIP units. A DIP ("device-independent pixel") equals 1/96 inch.</param>
         /// <param name="pixelsPerDip">Number of physical pixels per DIP. For example, if the DPI of the rendering surface is 96 this value is 1.0f. If the DPI is 120, this value is 120.0f/96.</param>
         /// <param name="transform">Optional transform applied to the glyphs and their positions. This transform is applied after the scaling specified by the font size and pixelsPerDip.</param>
-        /// <param name="fontMetrics">Font metrics public structure to fill in.</param>
+        /// <param name="fontMetrics">Font metrics public partial structure to fill in.</param>
         /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _GetGdiCompatibleMetrics1(IDWriteFontFace4* This, [NativeTypeName("FLOAT")] float emSize, [NativeTypeName("FLOAT")] float pixelsPerDip, [Optional] DWRITE_MATRIX* transform, DWRITE_FONT_METRICS1* fontMetrics);
 
         /// <summary>Gets caret metrics for the font in design units. These are used by text editors for drawing the correct caret placement/slant.</summary>
-        /// <param name="caretMetrics">Metrics public structure to fill in.</param>
+        /// <param name="caretMetrics">Metrics public partial structure to fill in.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public delegate void _GetCaretMetrics(IDWriteFontFace4* This, DWRITE_CARET_METRICS* caretMetrics);
 
@@ -306,7 +306,7 @@ namespace TerraFX.Interop
         public delegate int _GetFontFaceReference(IDWriteFontFace4* This, IDWriteFontFaceReference** fontFaceReference);
 
         /// <summary>Gets the PANOSE values from the font, used for font selection and matching.</summary>
-        /// <param name="panose">PANOSE public structure to fill in.</param>
+        /// <param name="panose">PANOSE public partial structure to fill in.</param>
         /// <remarks> The function does not simulate these, such as substituting a weight or proportion inferred on other values. If the font does not specify them, they are all set to 'any' (0).</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public delegate void _GetPanose(IDWriteFontFace4* This, DWRITE_PANOSE* panose);
@@ -891,7 +891,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

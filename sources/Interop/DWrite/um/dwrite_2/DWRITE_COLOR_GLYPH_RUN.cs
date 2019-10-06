@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Represents a color glyph run. The IDWriteFactory2::TranslateColorGlyphRun method returns an ordered collection of color glyph runs, which can be layered on top of each other to produce a color representation of the given base glyph run.</summary>
-    public unsafe struct DWRITE_COLOR_GLYPH_RUN
+    public unsafe partial struct DWRITE_COLOR_GLYPH_RUN
     {
         /// <summary>Glyph run to render.</summary>
         public DWRITE_GLYPH_RUN glyphRun;

@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct FUNCDESC
+    public unsafe partial struct FUNCDESC
     {
         [NativeTypeName("MEMBERID")]
         public int memid;

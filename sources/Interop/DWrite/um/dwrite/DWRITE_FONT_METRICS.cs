@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>The DWRITE_FONT_METRICS structure specifies the metrics of a font face that are applicable to all glyphs within the font face.</summary>
-    public struct DWRITE_FONT_METRICS
+    public partial struct DWRITE_FONT_METRICS
     {
         /// <summary>The number of font design units per em unit. Font files use their own coordinate system of font design units. A font design unit is the smallest measurable unit in the em square, an imaginary square that is used to size and align glyphs. The concept of em square is used as a reference scale factor when defining font size and device transformation semantics. The size of one em square is also commonly used to compute the paragraph indentation value.</summary>
         [NativeTypeName("UINT16")]

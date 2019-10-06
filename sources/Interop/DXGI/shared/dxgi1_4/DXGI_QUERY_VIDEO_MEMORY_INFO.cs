@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct DXGI_QUERY_VIDEO_MEMORY_INFO
+    public partial struct DXGI_QUERY_VIDEO_MEMORY_INFO
     {
         [NativeTypeName("UINT64")]
         public ulong Budget;

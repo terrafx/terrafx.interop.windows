@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>The IDWriteInlineObject interface wraps an application defined inline graphic, allowing DWrite to query metrics as if it was a glyph inline with the text.</summary>
     [Guid("8339FDE3-106F-47AB-8373-1C6295EB10B3")]
-    public unsafe struct IDWriteInlineObject
+    public unsafe partial struct IDWriteInlineObject
     {
         public readonly Vtbl* lpVtbl;
 
@@ -125,7 +125,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

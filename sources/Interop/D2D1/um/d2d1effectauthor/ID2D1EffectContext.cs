@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>The internal context handed to effect authors to create transforms from effects and any other operation tied to context which is not useful to the application facing API.</summary>
     [Guid("3D9F916B-27DC-4AD7-B4F1-64945340F563")]
-    public unsafe struct ID2D1EffectContext
+    public unsafe partial struct ID2D1EffectContext
     {
         public readonly Vtbl* lpVtbl;
 
@@ -328,7 +328,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

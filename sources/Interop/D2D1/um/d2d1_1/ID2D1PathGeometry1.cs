@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>The ID2D1PathGeometry1 interface adds functionality to ID2D1PathGeometry. In particular, it provides the path geometry-specific ComputePointAndSegmentAtLength method.</summary>
     [Guid("62BAA2D2-AB54-41B7-B872-787E0106A421")]
-    public unsafe struct ID2D1PathGeometry1
+    public unsafe partial struct ID2D1PathGeometry1
     {
         public readonly Vtbl* lpVtbl;
 
@@ -315,7 +315,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

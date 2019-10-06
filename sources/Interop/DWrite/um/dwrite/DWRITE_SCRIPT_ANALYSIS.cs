@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Association of text and its writing system script as well as some display attributes.</summary>
-    public struct DWRITE_SCRIPT_ANALYSIS
+    public partial struct DWRITE_SCRIPT_ANALYSIS
     {
         /// <summary>Zero-based index representation of writing system script.</summary>
         [NativeTypeName("UINT16")]

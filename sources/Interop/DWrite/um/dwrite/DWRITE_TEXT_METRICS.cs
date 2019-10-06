@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Overall metrics associated with text after layout. All coordinates are in device independent pixels (DIPs).</summary>
-    public struct DWRITE_TEXT_METRICS
+    public partial struct DWRITE_TEXT_METRICS
     {
         /// <summary>Left-most point of formatted text relative to layout box (excluding any glyph overhang).</summary>
         [NativeTypeName("FLOAT")]

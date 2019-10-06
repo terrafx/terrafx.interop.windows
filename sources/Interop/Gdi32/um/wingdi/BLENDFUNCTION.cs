@@ -10,7 +10,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct BLENDFUNCTION
+    public partial struct BLENDFUNCTION
     {
         [NativeTypeName("BYTE")]
         public byte BlendOp;

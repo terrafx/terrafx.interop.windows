@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Simple description of a color space.</summary>
-    public struct D2D1_SIMPLE_COLOR_PROFILE
+    public partial struct D2D1_SIMPLE_COLOR_PROFILE
     {
         /// <summary>The XY coordinates of the red primary in CIEXYZ space.</summary>
         [NativeTypeName("D2D1_POINT_2F")]

@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public struct TLIBATTR
+    public partial struct TLIBATTR
     {
         [NativeTypeName("GUID")]
         public Guid guid;

@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct DXGI_SWAP_CHAIN_DESC
+    public unsafe partial struct DXGI_SWAP_CHAIN_DESC
     {
         public DXGI_MODE_DESC BufferDesc;
 

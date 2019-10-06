@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct DXGI_INFO_QUEUE_FILTER
+    public partial struct DXGI_INFO_QUEUE_FILTER
     {
         public DXGI_INFO_QUEUE_FILTER_DESC AllowList;
 

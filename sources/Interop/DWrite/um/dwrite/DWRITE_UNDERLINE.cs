@@ -5,8 +5,8 @@
 
 namespace TerraFX.Interop
 {
-    /// <summary>The DWRITE_UNDERLINE public structure contains information about the size and placement of underlines. All coordinates are in device independent pixels (DIPs).</summary>
-    public unsafe struct DWRITE_UNDERLINE
+    /// <summary>The DWRITE_UNDERLINE public partial structure contains information about the size and placement of underlines. All coordinates are in device independent pixels (DIPs).</summary>
+    public unsafe partial struct DWRITE_UNDERLINE
     {
         /// <summary>Width of the underline, measured parallel to the baseline.</summary>
         [NativeTypeName("FLOAT")]

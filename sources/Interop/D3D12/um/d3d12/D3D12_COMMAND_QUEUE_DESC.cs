@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_COMMAND_QUEUE_DESC
+    public partial struct D3D12_COMMAND_QUEUE_DESC
     {
         public D3D12_COMMAND_LIST_TYPE Type;
 

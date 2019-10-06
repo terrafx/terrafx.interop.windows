@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Describes the pixel format and dpi of a bitmap.</summary>
-    public struct D2D1_BITMAP_PROPERTIES
+    public partial struct D2D1_BITMAP_PROPERTIES
     {
         public D2D1_PIXEL_FORMAT pixelFormat;
 

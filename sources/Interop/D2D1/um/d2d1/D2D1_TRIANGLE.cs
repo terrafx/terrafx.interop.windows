@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Describes a triangle.</summary>
-    public struct D2D1_TRIANGLE
+    public partial struct D2D1_TRIANGLE
     {
         [NativeTypeName("D2D1_POINT_2F")]
         public D2D_POINT_2F point1;

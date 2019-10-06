@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_BUFFER_UAV
+    public partial struct D3D12_BUFFER_UAV
     {
         [NativeTypeName("UINT64")]
         public ulong FirstElement;

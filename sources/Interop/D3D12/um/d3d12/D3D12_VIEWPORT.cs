@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_VIEWPORT
+    public partial struct D3D12_VIEWPORT
     {
         [NativeTypeName("FLOAT")]
         public float TopLeftX;
