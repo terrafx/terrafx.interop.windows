@@ -2,6 +2,7 @@
 
 using System;
 using System.Linq;
+using TerraFX.Samples.DirectX.D3D11;
 using TerraFX.Samples.DirectX.D3D12;
 using static TerraFX.Interop.Kernel32;
 using static TerraFX.Interop.User32;
@@ -11,8 +12,10 @@ namespace TerraFX.Samples.DirectX
     public static unsafe class Program
     {
         private static readonly DXSample[] s_samples = {
-            new HelloWindow(1280, 720, "D3D12.HelloWindow"),
-            new HelloTriangle(1280, 720, "D3D12.HelloTriangle")
+            new HelloWindow11(1280, 720, "D3D11.HelloWindow"),
+            new HelloTriangle11(1280, 720, "D3D11.HelloTriangle"),
+            new HelloWindow12(1280, 720, "D3D12.HelloWindow"),
+            new HelloTriangle12(1280, 720, "D3D12.HelloTriangle")
         };
 
         public static void Main(string[] args)

@@ -6,14 +6,12 @@
 using System;
 using System.IO;
 using TerraFX.Interop;
-using static TerraFX.Interop.D3D_FEATURE_LEVEL;
-using static TerraFX.Interop.D3D12;
 using static TerraFX.Interop.DXGI_ADAPTER_FLAG;
 using static TerraFX.Interop.User32;
 using static TerraFX.Interop.Windows;
-using static TerraFX.Samples.DirectX.D3D12.DXSampleHelper;
+using static TerraFX.Samples.DirectX.DXSampleHelper;
 
-namespace TerraFX.Samples.DirectX.D3D12
+namespace TerraFX.Samples.DirectX
 {
     public abstract unsafe class DXSample : IDisposable
     {
@@ -111,9 +109,9 @@ namespace TerraFX.Samples.DirectX.D3D12
             return Path.Combine(_assetsPath, assetName);
         }
 
-        // Helper function for acquiring the first available hardware adapter that supports Direct3D 12.
+        // Helper function for acquiring the first available hardware adapter that supports the required Direct3D version.
         // If no such adapter can be found, returns null.
-        protected IDXGIAdapter* GetHardwareAdapter(IDXGIFactory4* pFactory)
+        protected IDXGIAdapter* GetHardwareAdapter(IDXGIFactory1* pFactory)
         {
             IDXGIAdapter1* adapter;
 
@@ -129,10 +127,9 @@ namespace TerraFX.Samples.DirectX.D3D12
                     continue;
                 }
 
-                // Check to see if the adapter supports Direct3D 12, but don't create the
+                // Check to see if the adapter supports the required Direct3D version, but don't create the
                 // actual device yet.
-                var iid = IID_ID3D12Device;
-                if (SUCCEEDED(D3D12CreateDevice((IUnknown*)adapter, D3D_FEATURE_LEVEL_11_0, &iid, null)))
+                if (SupportsRequiredDirect3DVersion(adapter))
                 {
                     break;
                 }
@@ -140,6 +137,8 @@ namespace TerraFX.Samples.DirectX.D3D12
 
             return (IDXGIAdapter*)adapter;
         }
+
+        protected abstract bool SupportsRequiredDirect3DVersion(IDXGIAdapter1* adapter);
 
         // Helper function for setting the window's title text.
         protected void SetCustomWindowText(string text)

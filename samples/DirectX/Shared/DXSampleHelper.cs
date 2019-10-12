@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 using TerraFX.Interop;
 using static TerraFX.Interop.Windows;
 
-namespace TerraFX.Samples.DirectX.D3D12
+namespace TerraFX.Samples.DirectX
 {
     public static unsafe class DXSampleHelper
     {

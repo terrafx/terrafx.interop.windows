@@ -43,11 +43,11 @@ using static TerraFX.Interop.DXGI_FORMAT;
 using static TerraFX.Interop.DXGI_SWAP_EFFECT;
 using static TerraFX.Interop.Kernel32;
 using static TerraFX.Interop.Windows;
-using static TerraFX.Samples.DirectX.D3D12.DXSampleHelper;
+using static TerraFX.Samples.DirectX.DXSampleHelper;
 
 namespace TerraFX.Samples.DirectX.D3D12
 {
-    public unsafe class HelloTriangle : DXSample
+    public unsafe class HelloTriangle12 : DX12Sample
     {
         private const uint FrameCount = 2;
 
@@ -75,7 +75,7 @@ namespace TerraFX.Samples.DirectX.D3D12
         private ID3D12Fence* _fence;
         private ulong _fenceValue;
 
-        public HelloTriangle(uint width, uint height, string name)
+        public HelloTriangle12(uint width, uint height, string name)
             : base(width, height, name)
         {
             _viewport = new D3D12_VIEWPORT {
@@ -172,7 +172,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 }
                 else
                 {
-                    adapter = GetHardwareAdapter(factory);
+                    adapter = GetHardwareAdapter((IDXGIFactory1*)factory);
                 }
 
                 fixed (ID3D12Device** device = &_device)
