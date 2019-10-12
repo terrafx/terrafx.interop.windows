@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct SECURITY_ATTRIBUTES
+    public unsafe partial struct SECURITY_ATTRIBUTES
     {
         [NativeTypeName("DWORD")]
         public uint nLength;

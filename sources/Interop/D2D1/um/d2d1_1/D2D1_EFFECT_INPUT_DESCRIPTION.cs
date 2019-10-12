@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>This identifies a certain input connection of a certain effect.</summary>
-    public unsafe struct D2D1_EFFECT_INPUT_DESCRIPTION
+    public unsafe partial struct D2D1_EFFECT_INPUT_DESCRIPTION
     {
         /// <summary>The effect whose input connection is being specified.</summary>
         public ID2D1Effect* effect;

@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>A container for 3D lookup table data that can be passed to the LookupTable3D effect.</summary>
     [Guid("53DD9855-A3B0-4D5B-82E1-26E25C5E5797")]
-    public unsafe struct ID2D1LookupTable3D
+    public unsafe partial struct ID2D1LookupTable3D
     {
         public readonly Vtbl* lpVtbl;
 
@@ -67,7 +67,7 @@ namespace TerraFX.Interop
 
         // ID2D1LookupTable3D declares no new members
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

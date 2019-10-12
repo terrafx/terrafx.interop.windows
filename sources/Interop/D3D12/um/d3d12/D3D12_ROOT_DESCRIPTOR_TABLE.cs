@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_ROOT_DESCRIPTOR_TABLE
+    public unsafe partial struct D3D12_ROOT_DESCRIPTOR_TABLE
     {
         [NativeTypeName("UINT")]
         public uint NumDescriptorRanges;

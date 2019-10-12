@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_RT_FORMAT_ARRAY
+    public partial struct D3D12_RT_FORMAT_ARRAY
     {
         [NativeTypeName("DXGI_FORMAT[8]")]
         public _RTFormats_e__FixedBuffer RTFormats;
@@ -13,7 +13,7 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint NumRenderTargets;
 
-        public unsafe struct _RTFormats_e__FixedBuffer
+        public unsafe partial struct _RTFormats_e__FixedBuffer
         {
             public DXGI_FORMAT e0;
 

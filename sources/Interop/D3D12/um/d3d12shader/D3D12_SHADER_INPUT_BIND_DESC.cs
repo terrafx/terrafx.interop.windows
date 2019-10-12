@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_SHADER_INPUT_BIND_DESC
+    public unsafe partial struct D3D12_SHADER_INPUT_BIND_DESC
     {
         [NativeTypeName("LPCSTR")]
         public sbyte* Name;

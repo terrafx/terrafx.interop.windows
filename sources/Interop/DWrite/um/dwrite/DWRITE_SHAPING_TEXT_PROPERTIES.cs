@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Shaping output properties per input character.</summary>
-    public struct DWRITE_SHAPING_TEXT_PROPERTIES
+    public partial struct DWRITE_SHAPING_TEXT_PROPERTIES
     {
         private ushort _bitField;
 

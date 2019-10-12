@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_MESSAGE
+    public unsafe partial struct D3D12_MESSAGE
     {
         public D3D12_MESSAGE_CATEGORY Category;
 

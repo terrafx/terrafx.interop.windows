@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_CPU_DESCRIPTOR_HANDLE
+    public unsafe partial struct D3D12_CPU_DESCRIPTOR_HANDLE
     {
         public static readonly D3D12_CPU_DESCRIPTOR_HANDLE DEFAULT = new D3D12_CPU_DESCRIPTOR_HANDLE() { ptr = UIntPtr.Zero };
 

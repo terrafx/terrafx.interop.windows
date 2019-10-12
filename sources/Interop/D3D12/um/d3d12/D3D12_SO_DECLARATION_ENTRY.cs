@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_SO_DECLARATION_ENTRY
+    public unsafe partial struct D3D12_SO_DECLARATION_ENTRY
     {
         [NativeTypeName("UINT")]
         public uint Stream;

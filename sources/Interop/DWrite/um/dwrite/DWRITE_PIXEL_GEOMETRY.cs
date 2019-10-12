@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    /// <summary>Represents the internal public structure of a device pixel (i.e., the physical arrangement of red, green, and blue color components) that is assumed for purposes of rendering text.</summary>
+    /// <summary>Represents the internal public partial structure of a device pixel (i.e., the physical arrangement of red, green, and blue color components) that is assumed for purposes of rendering text.</summary>
     public enum DWRITE_PIXEL_GEOMETRY
     {
         /// <summary>The red, green, and blue color components of each pixel are assumed to occupy the same point.</summary>

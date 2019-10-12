@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct DXGI_OUTDUPL_POINTER_SHAPE_INFO
+    public partial struct DXGI_OUTDUPL_POINTER_SHAPE_INFO
     {
         [NativeTypeName("UINT")]
         public uint Type;

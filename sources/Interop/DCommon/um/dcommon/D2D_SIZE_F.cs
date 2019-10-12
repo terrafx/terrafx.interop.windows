@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Stores an ordered pair of floats, typically the width and height of a rectangle.</summary>
-    public struct D2D_SIZE_F
+    public partial struct D2D_SIZE_F
     {
         [NativeTypeName("FLOAT")]
         public float width;

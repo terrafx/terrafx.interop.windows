@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_RANGE
+    public partial struct D3D12_RANGE
     {
         [NativeTypeName("SIZE_T")]
         public UIntPtr Begin;

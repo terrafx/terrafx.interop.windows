@@ -16,7 +16,7 @@ using static TerraFX.Interop.DWRITE_MEASURING_MODE;
 namespace TerraFX.Interop
 {
     [Guid("8C427831-3D90-4476-B647-C4FAE349E4DB")]
-    public unsafe struct ID2D1DeviceContext4
+    public unsafe partial struct ID2D1DeviceContext4
     {
         public readonly Vtbl* lpVtbl;
 
@@ -1498,7 +1498,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

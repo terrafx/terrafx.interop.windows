@@ -5,8 +5,8 @@
 
 namespace TerraFX.Interop
 {
-    /// <summary>The DWRITE_GLYPH_RUN public structure contains the information needed by renderers to draw glyph runs. All coordinates are in device independent pixels (DIPs).</summary>
-    public unsafe struct DWRITE_GLYPH_RUN
+    /// <summary>The DWRITE_GLYPH_RUN public partial structure contains the information needed by renderers to draw glyph runs. All coordinates are in device independent pixels (DIPs).</summary>
+    public unsafe partial struct DWRITE_GLYPH_RUN
     {
         /// <summary>The physical font face to draw with.</summary>
         public IDWriteFontFace* fontFace;

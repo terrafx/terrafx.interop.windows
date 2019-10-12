@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct DXGI_OUTPUT_DESC
+    public unsafe partial struct DXGI_OUTPUT_DESC
     {
         [NativeTypeName("WCHAR[32]")]
         public fixed ushort DeviceName[32];

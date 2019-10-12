@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public struct ARRAYDESC
+    public partial struct ARRAYDESC
     {
         public TYPEDESC tdescElem;
 
@@ -18,7 +18,7 @@ namespace TerraFX.Interop
         [NativeTypeName("SAFEARRAYBOUND[1]")]
         public _rgbounds_e__FixedBuffer rgbounds;
 
-        public unsafe struct _rgbounds_e__FixedBuffer
+        public unsafe partial struct _rgbounds_e__FixedBuffer
         {
             public SAFEARRAYBOUND e0;
 

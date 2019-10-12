@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct PARAMDESC
+    public unsafe partial struct PARAMDESC
     {
         [NativeTypeName("LPPARAMDESCEX")]
         public PARAMDESCEX* pparamdescex;

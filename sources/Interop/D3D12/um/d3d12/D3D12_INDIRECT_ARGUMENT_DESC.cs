@@ -7,14 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_INDIRECT_ARGUMENT_DESC
+    public partial struct D3D12_INDIRECT_ARGUMENT_DESC
     {
         public D3D12_INDIRECT_ARGUMENT_TYPE Type;
 
         public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
-        public struct _Anonymous_e__Union
+        public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
             public _VertexBuffer_e__Struct VertexBuffer;
@@ -31,29 +31,29 @@ namespace TerraFX.Interop
             [FieldOffset(0)]
             public _UnorderedAccessView_e__Struct UnorderedAccessView;
 
-            public struct _VertexBuffer_e__Struct
+            public partial struct _VertexBuffer_e__Struct
             {
                 public uint Slot;
             }
 
-            public struct _Constant_e__Struct
+            public partial struct _Constant_e__Struct
             {
                 public uint RootParameterIndex;
                 public uint DestOffsetIn32BitValues;
                 public uint Num32BitValuesToSet;
             }
 
-            public struct _ConstantBufferView_e__Struct
+            public partial struct _ConstantBufferView_e__Struct
             {
                 public uint RootParameterIndex;
             }
 
-            public struct _ShaderResourceView_e__Struct
+            public partial struct _ShaderResourceView_e__Struct
             {
                 public uint RootParameterIndex;
             }
 
-            public struct _UnorderedAccessView_e__Struct
+            public partial struct _UnorderedAccessView_e__Struct
             {
                 public uint RootParameterIndex;
             }

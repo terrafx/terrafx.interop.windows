@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [StructLayout(LayoutKind.Explicit)]
-    public struct LARGE_INTEGER
+    public partial struct LARGE_INTEGER
     {
         [FieldOffset(0)]
         public _Anonymous_e__Struct Anonymous;
@@ -20,7 +20,7 @@ namespace TerraFX.Interop
         [NativeTypeName("LONGLONG")]
         public long QuadPart;
 
-        public struct _Anonymous_e__Struct
+        public partial struct _Anonymous_e__Struct
         {
             [NativeTypeName("DWORD")]
             public uint LowPart;
@@ -29,7 +29,7 @@ namespace TerraFX.Interop
             public int HighPart;
         }
 
-        public struct _u_e__Struct
+        public partial struct _u_e__Struct
         {
             [NativeTypeName("DWORD")]
             public uint LowPart;

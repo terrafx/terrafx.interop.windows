@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_INPUT_LAYOUT_DESC
+    public unsafe partial struct D3D12_INPUT_LAYOUT_DESC
     {
         [NativeTypeName("D3D12_INPUT_ELEMENT_DESC[]")]
         public D3D12_INPUT_ELEMENT_DESC* pInputElementDescs;

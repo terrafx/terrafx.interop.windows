@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Describes an arc that is defined as part of a path.</summary>
-    public struct D2D1_ARC_SEGMENT
+    public partial struct D2D1_ARC_SEGMENT
     {
         [NativeTypeName("D2D1_POINT_2F")]
         public D2D_POINT_2F point;

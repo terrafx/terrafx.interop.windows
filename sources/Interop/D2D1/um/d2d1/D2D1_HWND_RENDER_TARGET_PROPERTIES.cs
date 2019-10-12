@@ -8,7 +8,7 @@ using System;
 namespace TerraFX.Interop
 {
     /// <summary>Contains the HWND, pixel size, and presentation options for an ID2D1HwndRenderTarget.</summary>
-    public unsafe struct D2D1_HWND_RENDER_TARGET_PROPERTIES
+    public unsafe partial struct D2D1_HWND_RENDER_TARGET_PROPERTIES
     {
         [NativeTypeName("HWND")]
         public IntPtr hwnd;

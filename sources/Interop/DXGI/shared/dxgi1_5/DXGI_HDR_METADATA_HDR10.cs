@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct DXGI_HDR_METADATA_HDR10
+    public unsafe partial struct DXGI_HDR_METADATA_HDR10
     {
         [NativeTypeName("UINT16[2]")]
         public fixed ushort RedPrimary[2];

@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Contains the control point and end point for a quadratic Bezier segment.</summary>
-    public struct D2D1_QUADRATIC_BEZIER_SEGMENT
+    public partial struct D2D1_QUADRATIC_BEZIER_SEGMENT
     {
         [NativeTypeName("D2D1_POINT_2F")]
         public D2D_POINT_2F point1;

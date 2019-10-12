@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_RASTERIZER_DESC
+    public partial struct D3D12_RASTERIZER_DESC
     {
         public static readonly D3D12_RASTERIZER_DESC DEFAULT = new D3D12_RASTERIZER_DESC(fillMode: D3D12_FILL_MODE_SOLID, cullMode: D3D12_CULL_MODE_BACK, frontCounterClockwise:  FALSE, depthBias: D3D12_DEFAULT_DEPTH_BIAS, depthBiasClamp: D3D12_DEFAULT_DEPTH_BIAS_CLAMP, slopeScaledDepthBias: D3D12_DEFAULT_SLOPE_SCALED_DEPTH_BIAS, depthClipEnable: TRUE, multisampleEnable: FALSE, antialiasedLineEnable: FALSE, forcedSampleCount: 0, conservativeRaster: D3D12_CONSERVATIVE_RASTERIZATION_MODE_OFF);
 

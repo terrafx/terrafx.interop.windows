@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public struct DECIMAL
+    public partial struct DECIMAL
     {
         public ushort wReserved;
 
@@ -19,7 +19,7 @@ namespace TerraFX.Interop
         public _Anonymous2_e__Union Anonymous2;
 
         [StructLayout(LayoutKind.Explicit)]
-        public struct _Anonymous1_e__Union
+        public partial struct _Anonymous1_e__Union
         {
             [FieldOffset(0)]
             _Anonymous_e__Struct Anonymous;
@@ -28,7 +28,7 @@ namespace TerraFX.Interop
             [NativeTypeName("USHORT")]
             public ushort signscale;
 
-            public struct _Anonymous_e__Struct
+            public partial struct _Anonymous_e__Struct
             {
                 [NativeTypeName("BYTE")]
                 public byte scale;
@@ -39,7 +39,7 @@ namespace TerraFX.Interop
         }
 
         [StructLayout(LayoutKind.Explicit)]
-        public struct _Anonymous2_e__Union
+        public partial struct _Anonymous2_e__Union
         {
             [FieldOffset(0)]
             public _Anonymous_e__Struct Anonymous;
@@ -48,7 +48,7 @@ namespace TerraFX.Interop
             [NativeTypeName("ULONGLONG")]
             public ulong Lo64;
 
-            public struct _Anonymous_e__Struct
+            public partial struct _Anonymous_e__Struct
             {
                 [NativeTypeName("ULONG")]
                 public uint Lo32;

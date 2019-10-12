@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_TEX2DMS_ARRAY_RTV
+    public partial struct D3D12_TEX2DMS_ARRAY_RTV
     {
         [NativeTypeName("UINT")]
         public uint FirstArraySlice;

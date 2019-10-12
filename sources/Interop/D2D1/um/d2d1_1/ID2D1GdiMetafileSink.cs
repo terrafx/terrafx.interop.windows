@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>User-implementable interface for introspecting on a metafile.</summary>
     [Guid("82237326-8111-4F7C-BCF4-B5C1175564FE")]
-    public unsafe struct ID2D1GdiMetafileSink
+    public unsafe partial struct ID2D1GdiMetafileSink
     {
         public readonly Vtbl* lpVtbl;
 
@@ -67,7 +67,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

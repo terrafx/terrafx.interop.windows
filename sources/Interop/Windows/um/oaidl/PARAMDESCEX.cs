@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct PARAMDESCEX
+    public partial struct PARAMDESCEX
     {
         [NativeTypeName("ULONG")]
         public uint cBytes;

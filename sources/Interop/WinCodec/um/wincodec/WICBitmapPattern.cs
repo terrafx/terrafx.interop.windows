@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct WICBitmapPattern
+    public unsafe partial struct WICBitmapPattern
     {
         public ULARGE_INTEGER Position;
 

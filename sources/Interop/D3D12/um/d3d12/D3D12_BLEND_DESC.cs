@@ -9,7 +9,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_BLEND_DESC
+    public partial struct D3D12_BLEND_DESC
     {
         public static readonly D3D12_BLEND_DESC DEFAULT = new D3D12_BLEND_DESC() {
             AlphaToCoverageEnable = FALSE, IndependentBlendEnable = FALSE, RenderTarget = new _RenderTarget_e__FixedBuffer() {
@@ -26,7 +26,7 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D12_RENDER_TARGET_BLEND_DESC[8]")]
         public _RenderTarget_e__FixedBuffer RenderTarget;
 
-        public unsafe struct _RenderTarget_e__FixedBuffer
+        public unsafe partial struct _RenderTarget_e__FixedBuffer
         {
             public D3D12_RENDER_TARGET_BLEND_DESC e0;
 

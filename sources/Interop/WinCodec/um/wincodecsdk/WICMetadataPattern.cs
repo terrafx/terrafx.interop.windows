@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct WICMetadataPattern
+    public unsafe partial struct WICMetadataPattern
     {
         public ULARGE_INTEGER Position;
 

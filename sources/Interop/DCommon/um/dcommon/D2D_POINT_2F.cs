@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Represents an x-coordinate and y-coordinate pair in two-dimensional space.</summary>
-    public struct D2D_POINT_2F
+    public partial struct D2D_POINT_2F
     {
         [NativeTypeName("FLOAT")]
         public float x;

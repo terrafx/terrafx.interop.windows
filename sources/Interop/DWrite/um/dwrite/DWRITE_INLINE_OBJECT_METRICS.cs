@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Properties describing the geometric measurement of an application-defined inline object.</summary>
-    public struct DWRITE_INLINE_OBJECT_METRICS
+    public partial struct DWRITE_INLINE_OBJECT_METRICS
     {
         /// <summary>Width of the inline object.</summary>
         [NativeTypeName("FLOAT")]

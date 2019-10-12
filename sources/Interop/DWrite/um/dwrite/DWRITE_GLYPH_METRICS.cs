@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>The DWRITE_GLYPH_METRICS structure specifies the metrics of an individual glyph. The units depend on how the metrics are obtained.</summary>
-    public struct DWRITE_GLYPH_METRICS
+    public partial struct DWRITE_GLYPH_METRICS
     {
         /// <summary>Specifies the X offset from the glyph origin to the left edge of the black box. The glyph origin is the current horizontal writing position. A negative value means the black box extends to the left of the origin (often true for lowercase italic 'f').</summary>
         [NativeTypeName("INT32")]

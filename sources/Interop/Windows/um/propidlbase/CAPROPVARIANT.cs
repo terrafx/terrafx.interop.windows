@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct CAPROPVARIANT
+    public unsafe partial struct CAPROPVARIANT
     {
         [NativeTypeName("ULONG")]
         public uint cElems;

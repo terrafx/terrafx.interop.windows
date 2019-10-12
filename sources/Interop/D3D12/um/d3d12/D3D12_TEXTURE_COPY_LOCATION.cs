@@ -8,7 +8,7 @@ using static TerraFX.Interop.D3D12_TEXTURE_COPY_TYPE;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_TEXTURE_COPY_LOCATION
+    public unsafe partial struct D3D12_TEXTURE_COPY_LOCATION
     {
         public ID3D12Resource* pResource;
 
@@ -38,7 +38,7 @@ namespace TerraFX.Interop
         }
 
         [StructLayout(LayoutKind.Explicit)]
-        public struct _Anonymous_e__Union
+        public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
             public D3D12_PLACED_SUBRESOURCE_FOOTPRINT PlacedFootprint;

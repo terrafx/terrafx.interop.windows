@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Properties, aside from the width, that allow geometric penning to be specified.</summary>
-    public struct D2D1_STROKE_STYLE_PROPERTIES
+    public partial struct D2D1_STROKE_STYLE_PROPERTIES
     {
         public D2D1_CAP_STYLE startCap;
 

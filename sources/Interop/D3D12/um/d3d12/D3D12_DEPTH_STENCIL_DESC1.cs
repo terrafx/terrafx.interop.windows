@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_DEPTH_STENCIL_DESC1
+    public partial struct D3D12_DEPTH_STENCIL_DESC1
     {
         [NativeTypeName("BOOL")]
         public int DepthEnable;

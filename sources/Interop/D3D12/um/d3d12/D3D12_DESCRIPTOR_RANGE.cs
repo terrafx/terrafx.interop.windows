@@ -7,7 +7,7 @@ using static TerraFX.Interop.D3D12;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_DESCRIPTOR_RANGE
+    public unsafe partial struct D3D12_DESCRIPTOR_RANGE
     {
         public D3D12_DESCRIPTOR_RANGE_TYPE RangeType;
 

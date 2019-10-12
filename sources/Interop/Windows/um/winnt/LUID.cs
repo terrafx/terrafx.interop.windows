@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct LUID
+    public partial struct LUID
     {
         [NativeTypeName("DWORD")]
         public uint LowPart;

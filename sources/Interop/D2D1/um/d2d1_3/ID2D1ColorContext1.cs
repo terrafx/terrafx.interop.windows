@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Represents a color context to be used with the Color Management Effect.</summary>
     [Guid("1AB42875-C57F-4BE9-BD85-9CD78D6F55EE")]
-    public unsafe struct ID2D1ColorContext1
+    public unsafe partial struct ID2D1ColorContext1
     {
         public readonly Vtbl* lpVtbl;
 
@@ -143,7 +143,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_RESOURCE_ALIASING_BARRIER
+    public unsafe partial struct D3D12_RESOURCE_ALIASING_BARRIER
     {
         public ID3D12Resource* pResourceBefore;
 

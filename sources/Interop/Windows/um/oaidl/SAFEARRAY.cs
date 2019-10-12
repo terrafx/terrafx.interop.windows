@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct SAFEARRAY
+    public unsafe partial struct SAFEARRAY
     {
         [NativeTypeName("USHORT")]
         public ushort cDims;
@@ -28,7 +28,7 @@ namespace TerraFX.Interop
         [NativeTypeName("SAFEARRAYBOUND[1]")]
         public _rgsabound_e__FixedBuffer rgsabound;
 
-        public unsafe struct _rgsabound_e__FixedBuffer
+        public unsafe partial struct _rgsabound_e__FixedBuffer
         {
             public SAFEARRAYBOUND e0;
 

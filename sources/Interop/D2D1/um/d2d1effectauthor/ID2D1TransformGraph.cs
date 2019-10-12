@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>The implementation of the actual graph.</summary>
     [Guid("13D29038-C3E6-4034-9081-13B53A417992")]
-    public unsafe struct ID2D1TransformGraph
+    public unsafe partial struct ID2D1TransformGraph
     {
         public readonly Vtbl* lpVtbl;
 
@@ -177,7 +177,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_SUBRESOURCE_TILING
+    public partial struct D3D12_SUBRESOURCE_TILING
     {
         [NativeTypeName("UINT")]
         public uint WidthInTiles;

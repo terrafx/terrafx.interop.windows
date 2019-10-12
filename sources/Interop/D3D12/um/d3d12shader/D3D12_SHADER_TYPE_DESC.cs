@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_SHADER_TYPE_DESC
+    public unsafe partial struct D3D12_SHADER_TYPE_DESC
     {
         public D3D_SHADER_VARIABLE_CLASS Class;
 

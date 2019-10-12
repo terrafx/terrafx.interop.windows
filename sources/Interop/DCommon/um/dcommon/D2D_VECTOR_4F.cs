@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>A vector of 4 float values (x, y, z, w).</summary>
-    public struct D2D_VECTOR_4F
+    public partial struct D2D_VECTOR_4F
     {
         [NativeTypeName("FLOAT")]
         public float x;

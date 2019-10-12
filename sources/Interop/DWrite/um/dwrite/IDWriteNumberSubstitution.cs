@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Holds the appropriate digits and numeric punctuation for a given locale.</summary>
     [Guid("14885CC9-BAB0-4F90-B6ED-5C366A2CD03D")]
-    public unsafe struct IDWriteNumberSubstitution
+    public unsafe partial struct IDWriteNumberSubstitution
     {
         public readonly Vtbl* lpVtbl;
 
@@ -55,7 +55,7 @@ namespace TerraFX.Interop
 
         // IDWriteNumberSubstitution declares no new members
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

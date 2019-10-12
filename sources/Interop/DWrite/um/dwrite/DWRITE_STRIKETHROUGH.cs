@@ -5,8 +5,8 @@
 
 namespace TerraFX.Interop
 {
-    /// <summary>The DWRITE_STRIKETHROUGH public structure contains information about the size and placement of strikethroughs. All coordinates are in device independent pixels (DIPs).</summary>
-    public unsafe struct DWRITE_STRIKETHROUGH
+    /// <summary>The DWRITE_STRIKETHROUGH public partial structure contains information about the size and placement of strikethroughs. All coordinates are in device independent pixels (DIPs).</summary>
+    public unsafe partial struct DWRITE_STRIKETHROUGH
     {
         /// <summary>Width of the strikethrough, measured parallel to the baseline.</summary>
         [NativeTypeName("FLOAT")]

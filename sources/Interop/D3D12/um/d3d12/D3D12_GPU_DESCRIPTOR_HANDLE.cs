@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_GPU_DESCRIPTOR_HANDLE
+    public unsafe partial struct D3D12_GPU_DESCRIPTOR_HANDLE
     {
         public static readonly D3D12_GPU_DESCRIPTOR_HANDLE DEFAULT = new D3D12_GPU_DESCRIPTOR_HANDLE() { ptr = 0 };
 

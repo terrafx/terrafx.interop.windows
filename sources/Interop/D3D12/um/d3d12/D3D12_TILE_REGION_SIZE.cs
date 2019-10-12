@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_TILE_REGION_SIZE
+    public partial struct D3D12_TILE_REGION_SIZE
     {
         [NativeTypeName("UINT")]
         public uint NumTiles;

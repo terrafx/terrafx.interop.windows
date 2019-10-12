@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Represents a complex shape that may be composed of arcs, curves, and lines.</summary>
     [Guid("2CD906A5-12E2-11DC-9FED-001143A055F9")]
-    public unsafe struct ID2D1PathGeometry
+    public unsafe partial struct ID2D1PathGeometry
     {
         public readonly Vtbl* lpVtbl;
 
@@ -302,7 +302,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

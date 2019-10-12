@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>The interface implemented by a transform author to indicate that it should receive an analysis result callback.</summary>
     [Guid("0359DC30-95E6-4568-9055-27720D130E93")]
-    public unsafe struct ID2D1AnalysisTransform
+    public unsafe partial struct ID2D1AnalysisTransform
     {
         public readonly Vtbl* lpVtbl;
 
@@ -66,7 +66,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct DXGI_RGBA
+    public partial struct DXGI_RGBA
     {
         public float r;
 

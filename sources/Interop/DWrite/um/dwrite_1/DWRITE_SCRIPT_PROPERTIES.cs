@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Script-specific properties for caret navigation and justification.</summary>
-    public struct DWRITE_SCRIPT_PROPERTIES
+    public partial struct DWRITE_SCRIPT_PROPERTIES
     {
         /// <summary>The standardized four character code for the given script. Note these only include the general Unicode scripts, not any additional ISO 15924 scripts for bibliographic distinction (for example, Fraktur Latin vs Gaelic Latin). http://unicode.org/iso15924/iso15924-codes.html</summary>
         [NativeTypeName("UINT32")]

@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>The IDWriteAsyncResult interface represents the result of an asynchronous operation. A client can use the interface to wait for the operation to complete and to get the result.</summary>
     [Guid("CE25F8FD-863B-4D13-9651-C1F88DC73FE2")]
-    public unsafe struct IDWriteAsyncResult
+    public unsafe partial struct IDWriteAsyncResult
     {
         public readonly Vtbl* lpVtbl;
 
@@ -81,7 +81,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

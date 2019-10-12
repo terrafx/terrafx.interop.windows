@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct EXCEPINFO
+    public unsafe partial struct EXCEPINFO
     {
         [NativeTypeName("WORD")]
         public ushort wCode;

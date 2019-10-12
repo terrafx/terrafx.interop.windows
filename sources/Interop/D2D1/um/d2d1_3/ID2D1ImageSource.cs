@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Represents a producer of pixels that can fill an arbitrary 2D plane.</summary>
     [Guid("C9B664E5-74A1-4378-9AC2-EEFC37A3F4D8")]
-    public unsafe struct ID2D1ImageSource
+    public unsafe partial struct ID2D1ImageSource
     {
         public readonly Vtbl* lpVtbl;
 
@@ -91,7 +91,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

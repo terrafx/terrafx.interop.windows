@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_CACHED_PIPELINE_STATE
+    public unsafe partial struct D3D12_CACHED_PIPELINE_STATE
     {
         public void* pCachedBlob;
 

@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Encapsulates a device- and transform-dependent representation of a filled or stroked geometry.</summary>
     [Guid("A16907D7-BC02-4801-99E8-8CF7F485F774")]
-    public unsafe struct ID2D1GeometryRealization
+    public unsafe partial struct ID2D1GeometryRealization
     {
         public readonly Vtbl* lpVtbl;
 
@@ -67,7 +67,7 @@ namespace TerraFX.Interop
 
         // ID2D1GeometryRealization declares no new members
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

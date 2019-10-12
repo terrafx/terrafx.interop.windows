@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>The IDWriteFont interface represents a physical font in a font collection.</summary>
     [Guid("29748ED6-8C9C-4A6A-BE0B-D912E8538944")]
-    public unsafe struct IDWriteFont2
+    public unsafe partial struct IDWriteFont2
     {
         public readonly Vtbl* lpVtbl;
 
@@ -91,12 +91,12 @@ namespace TerraFX.Interop
         public delegate int _CreateFontFace(IDWriteFont2* This, IDWriteFontFace** fontFace);
 
         /// <summary>Gets common metrics for the font in design units. These metrics are applicable to all the glyphs within a font, and are used by applications for layout calculations.</summary>
-        /// <param name="fontMetrics">Metrics public structure to fill in.</param>
+        /// <param name="fontMetrics">Metrics public partial structure to fill in.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public delegate void _GetMetrics1(IDWriteFont2* This, DWRITE_FONT_METRICS1* fontMetrics);
 
         /// <summary>Gets the PANOSE values from the font, used for font selection and matching.</summary>
-        /// <param name="panose">PANOSE public structure to fill in.</param>
+        /// <param name="panose">PANOSE public partial structure to fill in.</param>
         /// <remarks> The function does not simulate these, such as substituting a weight or proportion inferred on other values. If the font does not specify them, they are all set to 'any' (0).</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public delegate void _GetPanose(IDWriteFont2* This, DWRITE_PANOSE* panose);
@@ -285,7 +285,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

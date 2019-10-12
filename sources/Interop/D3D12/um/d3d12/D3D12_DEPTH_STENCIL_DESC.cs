@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_DEPTH_STENCIL_DESC
+    public partial struct D3D12_DEPTH_STENCIL_DESC
     {
         public static readonly D3D12_DEPTH_STENCIL_DESC DEFAULT = new D3D12_DEPTH_STENCIL_DESC() {
             DepthEnable = TRUE, DepthWriteMask = D3D12_DEPTH_WRITE_MASK_ALL, DepthFunc = D3D12_COMPARISON_FUNC_LESS, StencilEnable = FALSE, StencilReadMask = (byte)D3D12_DEFAULT_STENCIL_READ_MASK, StencilWriteMask = (byte)D3D12_DEFAULT_STENCIL_WRITE_MASK, FrontFace = D3D12_DEPTH_STENCILOP_DESC.DEFAULT, BackFace = D3D12_DEPTH_STENCILOP_DESC.DEFAULT

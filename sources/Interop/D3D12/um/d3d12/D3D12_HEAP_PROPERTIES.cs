@@ -10,7 +10,7 @@ using static TerraFX.Interop.D3D12_MEMORY_POOL;
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_HEAP_PROPERTIES
+    public partial struct D3D12_HEAP_PROPERTIES
     {
         public D3D12_HEAP_TYPE Type;
 

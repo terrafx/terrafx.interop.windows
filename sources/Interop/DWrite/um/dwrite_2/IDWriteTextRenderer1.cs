@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>The text renderer interface represents a set of application-defined callbacks that perform rendering of text, inline objects, and decorations such as underlines.</summary>
     [Guid("D3E0E934-22A0-427E-AAE4-7D9574B59DB1")]
-    public unsafe struct IDWriteTextRenderer1
+    public unsafe partial struct IDWriteTextRenderer1
     {
         public readonly Vtbl* lpVtbl;
 
@@ -284,7 +284,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

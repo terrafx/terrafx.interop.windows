@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Interface describing an SVG 'points' value in a 'polyline' or 'polygon' element.</summary>
     [Guid("9DBE4C0D-3572-4DD9-9825-5530813BB712")]
-    public unsafe struct ID2D1SvgPointCollection
+    public unsafe partial struct ID2D1SvgPointCollection
     {
         public readonly Vtbl* lpVtbl;
 
@@ -154,7 +154,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

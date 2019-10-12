@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_PIPELINE_STATE_STREAM_DESC
+    public unsafe partial struct D3D12_PIPELINE_STATE_STREAM_DESC
     {
         [NativeTypeName("SIZE_T")]
         public UIntPtr SizeInBytes;

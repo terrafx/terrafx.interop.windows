@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_CLEAR_VALUE
+    public unsafe partial struct D3D12_CLEAR_VALUE
     {
         public DXGI_FORMAT Format;
 
@@ -35,7 +35,7 @@ namespace TerraFX.Interop
         }
 
         [StructLayout(LayoutKind.Explicit)]
-        public struct _Anonymous_e__Union
+        public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
             [NativeTypeName("FLOAT[4]")]

@@ -5,8 +5,8 @@
 
 namespace TerraFX.Interop
 {
-    /// <summary>The DWRITE_MATRIX public structure specifies the graphics transform to be applied to rendered glyphs.</summary>
-    public struct DWRITE_MATRIX
+    /// <summary>The DWRITE_MATRIX public partial structure specifies the graphics transform to be applied to rendered glyphs.</summary>
+    public partial struct DWRITE_MATRIX
     {
         /// <summary>Horizontal scaling / cosine of rotation</summary>
         [NativeTypeName("FLOAT")]

@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_TEX2DMS_SRV
+    public partial struct D3D12_TEX2DMS_SRV
     {
         [NativeTypeName("UINT")]
         public uint UnusedField_NothingToDefine;

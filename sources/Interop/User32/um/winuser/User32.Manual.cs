@@ -5960,10 +5960,10 @@ namespace TerraFX.Interop
         public static IntPtr MAKELRESULT(ushort l, ushort h) => (IntPtr)(uint)MAKELONG(l, h);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static short GET_APPCOMMAND_LPARAM([NativeTypeName("LPARAM")] IntPtr lParam) => ((short)(HIWORD((uint)lParam) & ~FAPPCOMMAND_MASK));
+        public static short GET_APPCOMMAND_LPARAM([NativeTypeName("LPARAM")] IntPtr lParam) => (short)(HIWORD((uint)lParam) & ~FAPPCOMMAND_MASK);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ushort GET_DEVICE_LPARAM([NativeTypeName("LPARAM")] IntPtr lParam) => ((ushort)(HIWORD((uint)lParam) & FAPPCOMMAND_MASK));
+        public static ushort GET_DEVICE_LPARAM([NativeTypeName("LPARAM")] IntPtr lParam) => (ushort)(HIWORD((uint)lParam) & FAPPCOMMAND_MASK);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ushort GET_MOUSEORKEY_LPARAM([NativeTypeName("LPARAM")] IntPtr lParam) => GET_DEVICE_LPARAM(lParam);

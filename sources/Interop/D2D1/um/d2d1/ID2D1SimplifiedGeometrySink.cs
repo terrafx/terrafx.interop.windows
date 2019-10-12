@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Describes a geometric path that does not contain quadratic bezier curves or arcs.</summary>
     [Guid("2CD9069E-12E2-11DC-9FED-001143A055F9")]
-    public unsafe struct ID2D1SimplifiedGeometrySink
+    public unsafe partial struct ID2D1SimplifiedGeometrySink
     {
         public readonly Vtbl* lpVtbl;
 
@@ -132,7 +132,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

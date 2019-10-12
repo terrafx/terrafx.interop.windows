@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct DXGI_INFO_QUEUE_MESSAGE
+    public unsafe partial struct DXGI_INFO_QUEUE_MESSAGE
     {
         [NativeTypeName("DXGI_DEBUG_ID")]
         public Guid Producer;

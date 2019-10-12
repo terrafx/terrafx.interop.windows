@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 {
     /// <summary>The device context represents a set of state and a command buffer that is used to render to a target bitmap.</summary>
     [Guid("E8F7FE7A-191C-466D-AD95-975678BDA998")]
-    public unsafe struct ID2D1DeviceContext
+    public unsafe partial struct ID2D1DeviceContext
     {
         public readonly Vtbl* lpVtbl;
 
@@ -1189,7 +1189,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

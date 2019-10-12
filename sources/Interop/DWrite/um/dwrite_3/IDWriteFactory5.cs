@@ -11,7 +11,7 @@ namespace TerraFX.Interop
 {
     /// <summary>The root factory interface for all DWrite objects.</summary>
     [Guid("958DB99A-BE2A-4F09-AF7D-65189803D1D3")]
-    public unsafe struct IDWriteFactory5
+    public unsafe partial struct IDWriteFactory5
     {
         public readonly Vtbl* lpVtbl;
 
@@ -888,7 +888,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

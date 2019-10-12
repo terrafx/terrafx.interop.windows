@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public struct IDLDESC
+    public partial struct IDLDESC
     {
         [NativeTypeName("ULONG_PTR")]
         public UIntPtr dwReserved;

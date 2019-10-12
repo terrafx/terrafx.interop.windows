@@ -12,7 +12,7 @@ using static TerraFX.Interop.D3D12_TEXTURE_ADDRESS_MODE;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_STATIC_SAMPLER_DESC
+    public unsafe partial struct D3D12_STATIC_SAMPLER_DESC
     {
         public D3D12_FILTER Filter;
 

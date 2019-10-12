@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_DEBUG_DEVICE_GPU_BASED_VALIDATION_SETTINGS
+    public partial struct D3D12_DEBUG_DEVICE_GPU_BASED_VALIDATION_SETTINGS
     {
         [NativeTypeName("UINT")]
         public uint MaxMessagesPerCommandList;

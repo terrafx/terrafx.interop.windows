@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [StructLayout(LayoutKind.Explicit)]
-    public unsafe struct BINDPTR
+    public unsafe partial struct BINDPTR
     {
         [FieldOffset(0)]
         public FUNCDESC* lpfuncdesc;

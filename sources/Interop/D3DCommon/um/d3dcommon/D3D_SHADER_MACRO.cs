@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D_SHADER_MACRO
+    public unsafe partial struct D3D_SHADER_MACRO
     {
         [NativeTypeName("LPCSTR")]
         public sbyte* Name;

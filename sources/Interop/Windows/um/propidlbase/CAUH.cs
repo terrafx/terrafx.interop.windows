@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct CAUH
+    public unsafe partial struct CAUH
     {
         [NativeTypeName("ULONG")]
         public uint cElems;

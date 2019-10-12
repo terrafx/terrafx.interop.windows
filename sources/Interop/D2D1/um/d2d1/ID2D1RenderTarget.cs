@@ -13,7 +13,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Represents an object that can receive drawing commands. Interfaces that inherit from ID2D1RenderTarget render the drawing commands they receive in different ways.</summary>
     [Guid("2CD90694-12E2-11DC-9FED-001143A055F9")]
-    public unsafe struct ID2D1RenderTarget
+    public unsafe partial struct ID2D1RenderTarget
     {
         public readonly Vtbl* lpVtbl;
 
@@ -726,7 +726,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

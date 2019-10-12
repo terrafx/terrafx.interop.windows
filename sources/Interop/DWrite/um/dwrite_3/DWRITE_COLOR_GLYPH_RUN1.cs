@@ -7,7 +7,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Represents a color glyph run. The IDWriteFactory4::TranslateColorGlyphRun method returns an ordered collection of color glyph runs of varying types depending on what the font supports.</summary>
     /// <summary>For runs without any specific color, such as PNG data, the runColor field will be zero.</summary>
-    public struct DWRITE_COLOR_GLYPH_RUN1
+    public partial struct DWRITE_COLOR_GLYPH_RUN1
     {
         public DWRITE_COLOR_GLYPH_RUN BaseValue;
 

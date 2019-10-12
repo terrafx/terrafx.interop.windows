@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Caller-supplied implementation of an interface to receive the recorded command list.</summary>
     [Guid("54D7898A-A061-40A7-BEC7-E465BCBA2C4F")]
-    public unsafe struct ID2D1CommandSink
+    public unsafe partial struct ID2D1CommandSink
     {
         public readonly Vtbl* lpVtbl;
 
@@ -378,7 +378,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

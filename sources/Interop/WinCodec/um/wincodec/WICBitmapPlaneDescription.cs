@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public struct WICBitmapPlaneDescription
+    public partial struct WICBitmapPlaneDescription
     {
         [NativeTypeName("WICPixelFormatGUID")]
         public Guid Format;

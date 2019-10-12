@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Blend description which configures a blend transform object.</summary>
-    public unsafe struct D2D1_BLEND_DESCRIPTION
+    public unsafe partial struct D2D1_BLEND_DESCRIPTION
     {
         public D2D1_BLEND sourceBlend;
 

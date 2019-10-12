@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_FEATURE_DATA_D3D12_OPTIONS1
+    public partial struct D3D12_FEATURE_DATA_D3D12_OPTIONS1
     {
         [NativeTypeName("BOOL")]
         public int WaveOps;

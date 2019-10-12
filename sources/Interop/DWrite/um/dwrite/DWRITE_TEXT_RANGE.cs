@@ -5,8 +5,8 @@
 
 namespace TerraFX.Interop
 {
-    /// <summary>The DWRITE_TEXT_RANGE public structure specifies a range of text positions where format is applied.</summary>
-    public struct DWRITE_TEXT_RANGE
+    /// <summary>The DWRITE_TEXT_RANGE public partial structure specifies a range of text positions where format is applied.</summary>
+    public partial struct DWRITE_TEXT_RANGE
     {
         /// <summary>The start text position of the range.</summary>
         [NativeTypeName("UINT32")]

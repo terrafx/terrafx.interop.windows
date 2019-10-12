@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Represents the backing store required to render a layer.</summary>
     [Guid("2CD9069B-12E2-11DC-9FED-001143A055F9")]
-    public unsafe struct ID2D1Layer
+    public unsafe partial struct ID2D1Layer
     {
         public readonly Vtbl* lpVtbl;
 
@@ -79,7 +79,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

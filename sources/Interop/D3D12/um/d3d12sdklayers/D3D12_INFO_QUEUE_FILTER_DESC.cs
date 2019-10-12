@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_INFO_QUEUE_FILTER_DESC
+    public unsafe partial struct D3D12_INFO_QUEUE_FILTER_DESC
     {
         [NativeTypeName("UINT")]
         public uint NumCategories;

@@ -9,7 +9,7 @@ using static TerraFX.Interop.D3D12_SHADER_VISIBILITY;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_ROOT_PARAMETER
+    public unsafe partial struct D3D12_ROOT_PARAMETER
     {
         public D3D12_ROOT_PARAMETER_TYPE ParameterType;
 
@@ -93,7 +93,7 @@ namespace TerraFX.Interop
         }
 
         [StructLayout(LayoutKind.Explicit)]
-        public struct _Anonymous_e__Union
+        public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
             public D3D12_ROOT_DESCRIPTOR_TABLE DescriptorTable;

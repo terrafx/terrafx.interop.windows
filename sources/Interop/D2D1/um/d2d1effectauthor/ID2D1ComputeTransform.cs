@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>The interface implemented by a transform author to provide a Compute Shader based effect.</summary>
     [Guid("0D85573C-01E3-4F7D-BFD9-0D60608BF3C3")]
-    public unsafe struct ID2D1ComputeTransform
+    public unsafe partial struct ID2D1ComputeTransform
     {
         public readonly Vtbl* lpVtbl;
 
@@ -132,7 +132,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

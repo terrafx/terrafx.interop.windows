@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("94C9B4EE-A09F-4F92-8A1E-4A9BCE7E76FB")]
-    public unsafe struct IWICBitmapEncoderInfo
+    public unsafe partial struct IWICBitmapEncoderInfo
     {
         public readonly Vtbl* lpVtbl;
 
@@ -325,7 +325,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

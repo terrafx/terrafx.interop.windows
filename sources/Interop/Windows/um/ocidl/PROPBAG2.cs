@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct PROPBAG2
+    public unsafe partial struct PROPBAG2
     {
         [NativeTypeName("DWORD")]
         public uint dwType;

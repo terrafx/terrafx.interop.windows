@@ -36,9 +36,9 @@ namespace TerraFX.Interop
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at um/winuser.h:14530:9)")]
-            public _Anonymous_e__Record Anonymous;
+            public _Anonymous_e__Struct Anonymous;
 
-            public partial struct _Anonymous_e__Record
+            public partial struct _Anonymous_e__Struct
             {
                 [NativeTypeName("USHORT")]
                 public ushort usButtonFlags;

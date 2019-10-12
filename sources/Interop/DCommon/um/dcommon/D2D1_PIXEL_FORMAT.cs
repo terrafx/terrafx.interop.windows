@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Description of a pixel format.</summary>
-    public struct D2D1_PIXEL_FORMAT
+    public partial struct D2D1_PIXEL_FORMAT
     {
         public DXGI_FORMAT format;
 

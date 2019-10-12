@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Font property used for filtering font sets and building a font set with explicit properties.</summary>
-    public unsafe struct DWRITE_FONT_PROPERTY
+    public unsafe partial struct DWRITE_FONT_PROPERTY
     {
         /// <summary>Specifies the requested font property, such as DWRITE_FONT_PROPERTY_ID_FAMILY_NAME.</summary>
         public DWRITE_FONT_PROPERTY_ID propertyId;

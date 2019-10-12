@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Data for a single glyph from GetGlyphImageData.</summary>
-    public unsafe struct DWRITE_GLYPH_IMAGE_DATA
+    public unsafe partial struct DWRITE_GLYPH_IMAGE_DATA
     {
         /// <summary>Pointer to the glyph data, be it SVG, PNG, JPEG, TIFF.</summary>
         public void* imageData;

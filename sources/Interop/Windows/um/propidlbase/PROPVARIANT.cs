@@ -8,12 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct PROPVARIANT
+    public unsafe partial struct PROPVARIANT
     {
         public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
-        public struct _Anonymous_e__Union
+        public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
             public _Anonymous_e__Struct Anonymous;
@@ -21,7 +21,7 @@ namespace TerraFX.Interop
             [FieldOffset(0)]
             public DECIMAL decVal;
 
-            public struct _Anonymous_e__Struct
+            public partial struct _Anonymous_e__Struct
             {
                 [NativeTypeName("VARTYPE")]
                 public ushort vt;
@@ -38,7 +38,7 @@ namespace TerraFX.Interop
                 public _Anonymous_e__Union Anonymous;
 
                 [StructLayout(LayoutKind.Explicit)]
-                public struct _Anonymous_e__Union
+                public partial struct _Anonymous_e__Union
                 {
                     [FieldOffset(0)]
                     [NativeTypeName("CHAR")]

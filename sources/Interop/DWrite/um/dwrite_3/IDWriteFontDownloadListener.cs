@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Application-defined callback interface that receives notifications from the font download queue (IDWriteFontDownloadQueue interface). Callbacks will occur on the downloading thread, and objects must be prepared to handle calls on their methods from other threads at any time.</summary>
     [Guid("B06FE5B9-43EC-4393-881B-DBE4DC72FDA7")]
-    public unsafe struct IDWriteFontDownloadListener
+    public unsafe partial struct IDWriteFontDownloadListener
     {
         public readonly Vtbl* lpVtbl;
 
@@ -68,7 +68,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

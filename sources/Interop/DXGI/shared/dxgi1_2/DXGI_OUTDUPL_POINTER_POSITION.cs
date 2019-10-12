@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct DXGI_OUTDUPL_POINTER_POSITION
+    public partial struct DXGI_OUTDUPL_POINTER_POSITION
     {
         public POINT Position;
 

@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct WICDdsParameters
+    public partial struct WICDdsParameters
     {
         [NativeTypeName("UINT")]
         public uint Width;

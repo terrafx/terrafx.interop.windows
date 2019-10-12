@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>This describes the drawing state.</summary>
-    public struct D2D1_DRAWING_STATE_DESCRIPTION1
+    public partial struct D2D1_DRAWING_STATE_DESCRIPTION1
     {
         public D2D1_ANTIALIAS_MODE antialiasMode;
 

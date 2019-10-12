@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Contains the center point, x-radius, and y-radius of an ellipse.</summary>
-    public struct D2D1_ELLIPSE
+    public partial struct D2D1_ELLIPSE
     {
         [NativeTypeName("D2D1_POINT_2F")]
         public D2D_POINT_2F point;

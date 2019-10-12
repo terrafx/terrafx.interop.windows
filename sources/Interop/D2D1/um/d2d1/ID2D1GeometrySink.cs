@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Describes a geometric path that can contain lines, arcs, cubic Bezier curves, and quadratic Bezier curves.</summary>
     [Guid("2CD9069F-12E2-11DC-9FED-001143A055F9")]
-    public unsafe struct ID2D1GeometrySink
+    public unsafe partial struct ID2D1GeometrySink
     {
         public readonly Vtbl* lpVtbl;
 
@@ -187,7 +187,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

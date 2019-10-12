@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public struct DXGI_GAMMA_CONTROL
+    public partial struct DXGI_GAMMA_CONTROL
     {
         public DXGI_RGB Scale;
 
@@ -17,7 +17,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DXGI_RGB[1025]")]
         public _GammaCurve_e__FixedBuffer GammaCurve;
 
-        public unsafe struct _GammaCurve_e__FixedBuffer
+        public unsafe partial struct _GammaCurve_e__FixedBuffer
         {
             public DXGI_RGB e0;
 

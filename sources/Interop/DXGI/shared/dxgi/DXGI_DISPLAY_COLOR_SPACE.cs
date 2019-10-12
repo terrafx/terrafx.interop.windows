@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct DXGI_DISPLAY_COLOR_SPACE
+    public unsafe partial struct DXGI_DISPLAY_COLOR_SPACE
     {
         [NativeTypeName("FLOAT[8][2]")]
         public fixed float PrimaryCoordinates[8 * 2];

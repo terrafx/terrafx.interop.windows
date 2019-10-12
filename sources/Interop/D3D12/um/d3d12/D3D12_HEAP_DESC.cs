@@ -8,7 +8,7 @@ using static TerraFX.Interop.D3D12_HEAP_FLAGS;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_HEAP_DESC
+    public unsafe partial struct D3D12_HEAP_DESC
     {
         [NativeTypeName("UINT64")]
         public ulong SizeInBytes;

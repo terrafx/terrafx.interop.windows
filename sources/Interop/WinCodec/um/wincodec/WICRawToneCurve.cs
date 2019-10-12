@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public struct WICRawToneCurve
+    public partial struct WICRawToneCurve
     {
         [NativeTypeName("UINT")]
         public uint cPoints;
@@ -16,7 +16,7 @@ namespace TerraFX.Interop
         [NativeTypeName("WICRawToneCurvePoint[1]")]
         public _aPoints_e__FixedBuffer aPoints;
 
-        public unsafe struct _aPoints_e__FixedBuffer
+        public unsafe partial struct _aPoints_e__FixedBuffer
         {
             public WICRawToneCurvePoint e0;
 

@@ -11,7 +11,7 @@ namespace TerraFX.Interop
     /// <summary>The IDWriteRemoteFontFileLoader interface represents a font file loader that can access remote (i.e., downloadable) fonts. The IDWriteFactory5::CreateHttpFontFileLoader method returns an instance of this interface, or a client can create its own implementation.</summary>
     /// <remarks> Calls to a remote file loader or stream should never block waiting for network operations. Any call that cannot succeeded immediately using local (e.g., cached) must should return DWRITE_E_REMOTEFONT. This error signifies to DWrite that it should add requests to the font download queue.</remarks>
     [Guid("68648C83-6EDE-46C0-AB46-20083A887FDE")]
-    public unsafe struct IDWriteRemoteFontFileLoader
+    public unsafe partial struct IDWriteRemoteFontFileLoader
     {
         public readonly Vtbl* lpVtbl;
 
@@ -128,7 +128,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

@@ -7,14 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public struct ELEMDESC
+    public partial struct ELEMDESC
     {
         public TYPEDESC tdesc;
 
         public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
-        public struct _Anonymous_e__Union
+        public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
             public IDLDESC idldesc;

@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Describes a rounded rectangle.</summary>
     [Guid("2CD906A3-12E2-11DC-9FED-001143A055F9")]
-    public unsafe struct ID2D1RoundedRectangleGeometry
+    public unsafe partial struct ID2D1RoundedRectangleGeometry
     {
         public readonly Vtbl* lpVtbl;
 
@@ -258,7 +258,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Represents a geometry resource and defines a set of helper methods for manipulating and measuring geometric shapes. Interfaces that inherit from ID2D1Geometry define specific shapes.</summary>
     [Guid("2CD906A1-12E2-11DC-9FED-001143A055F9")]
-    public unsafe struct ID2D1Geometry
+    public unsafe partial struct ID2D1Geometry
     {
         public readonly Vtbl* lpVtbl;
 
@@ -247,7 +247,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

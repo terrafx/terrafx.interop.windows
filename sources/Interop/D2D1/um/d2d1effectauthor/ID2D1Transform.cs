@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>The interface implemented by a transform author.</summary>
     [Guid("EF1A287D-342A-4F76-8FDB-DA0D6EA9F92B")]
-    public unsafe struct ID2D1Transform
+    public unsafe partial struct ID2D1Transform
     {
         public readonly Vtbl* lpVtbl;
 
@@ -106,7 +106,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

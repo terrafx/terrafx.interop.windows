@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct D3D12_SUBRESOURCE_RANGE_UINT64
+    public partial struct D3D12_SUBRESOURCE_RANGE_UINT64
     {
         [NativeTypeName("UINT")]
         public uint Subresource;

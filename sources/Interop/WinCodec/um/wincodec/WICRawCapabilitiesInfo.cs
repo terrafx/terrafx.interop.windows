@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct WICRawCapabilitiesInfo
+    public partial struct WICRawCapabilitiesInfo
     {
         [NativeTypeName("UINT")]
         public uint cbSize;

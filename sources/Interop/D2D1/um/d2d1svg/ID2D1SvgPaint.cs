@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Interface describing an SVG 'fill' or 'stroke' value.</summary>
     [Guid("D59BAB0A-68A2-455B-A5DC-9EB2854E2490")]
-    public unsafe struct ID2D1SvgPaint
+    public unsafe partial struct ID2D1SvgPaint
     {
         public readonly Vtbl* lpVtbl;
 
@@ -185,7 +185,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public struct DXGI_OUTDUPL_MOVE_RECT
+    public partial struct DXGI_OUTDUPL_MOVE_RECT
     {
         public POINT SourcePoint;
 

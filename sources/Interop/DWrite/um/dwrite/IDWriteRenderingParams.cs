@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>The interface that represents text rendering settings for glyph rasterization and filtering.</summary>
     [Guid("2F0DA53A-2ADD-47CD-82EE-D9EC34688E75")]
-    public unsafe struct IDWriteRenderingParams
+    public unsafe partial struct IDWriteRenderingParams
     {
         public readonly Vtbl* lpVtbl;
 
@@ -117,7 +117,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

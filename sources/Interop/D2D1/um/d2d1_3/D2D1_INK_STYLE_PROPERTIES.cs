@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Defines the general pen tip shape and the transform used in an ID2D1InkStyle object.</summary>
-    public struct D2D1_INK_STYLE_PROPERTIES
+    public partial struct D2D1_INK_STYLE_PROPERTIES
     {
         /// <summary>The general shape of the nib used to draw a given ink object.</summary>
         public D2D1_INK_NIB_SHAPE nibShape;

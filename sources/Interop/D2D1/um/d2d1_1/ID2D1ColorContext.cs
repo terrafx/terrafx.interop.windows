@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Represents a color context that can be used with an ID2D1Bitmap1 object.</summary>
     [Guid("1C4820BB-5771-4518-A581-2FE4DD0EC657")]
-    public unsafe struct ID2D1ColorContext
+    public unsafe partial struct ID2D1ColorContext
     {
         public readonly Vtbl* lpVtbl;
 
@@ -105,7 +105,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("0742A90B-C387-483F-B946-30A7E4E61458")]
-    public unsafe struct ID3D12InfoQueue
+    public unsafe partial struct ID3D12InfoQueue
     {
         public readonly Vtbl* lpVtbl;
 
@@ -495,7 +495,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 

@@ -10,7 +10,7 @@ namespace TerraFX.Interop
     /// <summary>Typeface classification values, used for font selection and matching.</summary>
     /// <remarks> Note the family type (index 0) is the only stable entry in the 10-byte array, as all the following entries can change dynamically depending on context of the first field.</remarks>
     [StructLayout(LayoutKind.Explicit)]
-    public unsafe struct DWRITE_PANOSE
+    public unsafe partial struct DWRITE_PANOSE
     {
         [FieldOffset(0)]
         [NativeTypeName("UINT8[10]")]
@@ -32,7 +32,7 @@ namespace TerraFX.Interop
         [FieldOffset(0)]
         public _symbol_e__Struct symbol;
 
-        public struct _text_e__Struct
+        public partial struct _text_e__Struct
         {
             [NativeTypeName("UINT8")]
             public byte familyKind;
@@ -65,7 +65,7 @@ namespace TerraFX.Interop
             public byte xHeight;
         };
 
-        public struct _script_e__Struct
+        public partial struct _script_e__Struct
         {
             [NativeTypeName("UINT8")]
             public byte familyKind;
@@ -98,7 +98,7 @@ namespace TerraFX.Interop
             public byte xAscent;
         }
 
-        public struct _decorative_e__Struct
+        public partial struct _decorative_e__Struct
         {
             [NativeTypeName("UINT8")]
             public byte familyKind;
@@ -131,7 +131,7 @@ namespace TerraFX.Interop
             public byte characterRange;
         }
 
-        public struct _symbol_e__Struct
+        public partial struct _symbol_e__Struct
         {
             [NativeTypeName("UINT8")]
             public byte familyKind;

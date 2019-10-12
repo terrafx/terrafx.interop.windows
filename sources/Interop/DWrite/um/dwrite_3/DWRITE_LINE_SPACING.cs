@@ -5,8 +5,8 @@
 
 namespace TerraFX.Interop
 {
-    /// <summary>The DWRITE_LINE_SPACING public structure specifies the parameters used to specify how to manage space between lines.</summary>
-    public struct DWRITE_LINE_SPACING
+    /// <summary>The DWRITE_LINE_SPACING public partial structure specifies the parameters used to specify how to manage space between lines.</summary>
+    public partial struct DWRITE_LINE_SPACING
     {
         /// <summary>Method used to determine line spacing.</summary>
         public DWRITE_LINE_SPACING_METHOD method;

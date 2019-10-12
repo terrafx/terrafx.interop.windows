@@ -6,7 +6,7 @@
 namespace TerraFX.Interop
 {
     /// <summary>Geometry enclosing of text positions.</summary>
-    public struct DWRITE_HIT_TEST_METRICS
+    public partial struct DWRITE_HIT_TEST_METRICS
     {
         /// <summary>First text position within the geometry.</summary>
         [NativeTypeName("UINT32")]

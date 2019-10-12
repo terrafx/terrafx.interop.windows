@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe struct D3D12_SAMPLER_DESC
+    public unsafe partial struct D3D12_SAMPLER_DESC
     {
         public D3D12_FILTER Filter;
 

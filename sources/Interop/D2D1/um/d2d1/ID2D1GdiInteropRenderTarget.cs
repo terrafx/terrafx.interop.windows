@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     /// <summary>Provides access to an device context that can accept GDI drawing commands.</summary>
     [Guid("E0DB51C3-6F77-4BAE-B3D5-E47509B35838")]
-    public unsafe struct ID2D1GdiInteropRenderTarget
+    public unsafe partial struct ID2D1GdiInteropRenderTarget
     {
         public readonly Vtbl* lpVtbl;
 
@@ -79,7 +79,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public struct Vtbl
+        public partial struct Vtbl
         {
             public IntPtr QueryInterface;
 
