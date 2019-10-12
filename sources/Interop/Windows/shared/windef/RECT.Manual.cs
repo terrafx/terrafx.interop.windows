@@ -3,9 +3,11 @@
 // Ported from shared\windef.h in the Windows SDK for Windows 10.0.15063.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop
 {
-    public partial struct RECT
+    public partial struct RECT : IEquatable<RECT>
     {
         public RECT(int Left, int Top, int Right, int Bottom)
         {
@@ -14,5 +16,19 @@ namespace TerraFX.Interop
             right = Right;
             bottom = Bottom;
         }
+
+        public static bool operator ==(in RECT l, in RECT r) =>
+            (l.left == r.left) &&
+            (l.top == r.top) &&
+            (l.right == r.right) &&
+            (l.bottom == r.bottom);
+
+        public static bool operator !=(in RECT l, in RECT r) => !(l == r);
+
+        public override bool Equals(object? obj) => (obj is RECT other) && Equals(other);
+
+        public bool Equals(RECT other) => this == other;
+
+        public override int GetHashCode() => HashCode.Combine(left, top, right, bottom);
     }
 }
