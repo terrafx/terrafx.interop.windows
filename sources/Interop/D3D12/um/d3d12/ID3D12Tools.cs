@@ -1,9 +1,10 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\d3d12.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/d3d12.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -15,77 +16,67 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ID3D12Tools* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
+        public delegate int _QueryInterface(ID3D12Tools* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ID3D12Tools* This);
+        public delegate uint _AddRef(ID3D12Tools* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ID3D12Tools* This);
+        public delegate uint _Release(ID3D12Tools* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _EnableShaderInstrumentation(ID3D12Tools* This, [NativeTypeName("BOOL")] int bEnable);
+        public delegate void _EnableShaderInstrumentation(ID3D12Tools* pThis, [NativeTypeName("BOOL")] int bEnable);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public delegate int _ShaderInstrumentationEnabled(ID3D12Tools* This);
+        public delegate int _ShaderInstrumentationEnabled(ID3D12Tools* pThis);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            fixed (ID3D12Tools* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ID3D12Tools*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            fixed (ID3D12Tools* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ID3D12Tools*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            fixed (ID3D12Tools* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ID3D12Tools*)Unsafe.AsPointer(ref this));
         }
 
         public void EnableShaderInstrumentation([NativeTypeName("BOOL")] int bEnable)
         {
-            fixed (ID3D12Tools* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_EnableShaderInstrumentation>(lpVtbl->EnableShaderInstrumentation)(This, bEnable);
-            }
+            Marshal.GetDelegateForFunctionPointer<_EnableShaderInstrumentation>(lpVtbl->EnableShaderInstrumentation)((ID3D12Tools*)Unsafe.AsPointer(ref this), bEnable);
         }
 
         [return: NativeTypeName("BOOL")]
         public int ShaderInstrumentationEnabled()
         {
-            fixed (ID3D12Tools* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_ShaderInstrumentationEnabled>(lpVtbl->ShaderInstrumentationEnabled)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_ShaderInstrumentationEnabled>(lpVtbl->ShaderInstrumentationEnabled)((ID3D12Tools*)Unsafe.AsPointer(ref this));
         }
 
         public partial struct Vtbl
         {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
             public IntPtr QueryInterface;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr AddRef;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr Release;
 
+            [NativeTypeName("void (BOOL) __attribute__((stdcall))")]
             public IntPtr EnableShaderInstrumentation;
 
+            [NativeTypeName("BOOL () __attribute__((stdcall))")]
             public IntPtr ShaderInstrumentationEnabled;
         }
     }
