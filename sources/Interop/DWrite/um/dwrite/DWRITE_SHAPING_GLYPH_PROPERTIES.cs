@@ -1,87 +1,81 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\dwrite.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/dwrite.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop
 {
-    /// <summary>Shaping output properties per output glyph.</summary>
     public partial struct DWRITE_SHAPING_GLYPH_PROPERTIES
     {
-        private ushort _bitField;
+        internal ushort _bitfield;
 
-        /// <summary>Justification class, whether to use spacing, kashidas, or another method. This exists for backwards compatibility with Uniscribe's SCRIPT_JUSTIFY enum.</summary>
-        [NativeTypeName("UINT16:4")]
+        [NativeTypeName("UINT16 : 4")]
         public ushort justification
         {
             get
             {
-                return (ushort)(_bitField & 0b0000_0000_0000_1111);
+                return (ushort)((uint)_bitfield & 0xF);
             }
 
             set
             {
-                _bitField = (ushort)((_bitField & 0b1111_1111_1111_0000) | (value & 0b0000_0000_0000_1111));
+                _bitfield = (ushort)((_bitfield & ~0xFu) | ((uint)value & 0xF));
             }
         }
 
-        /// <summary>Indicates glyph is the first of a cluster.</summary>
-        [NativeTypeName("UINT16:1")]
+        [NativeTypeName("UINT16 : 1")]
         public ushort isClusterStart
         {
             get
             {
-                return (ushort)((_bitField & 0b0000_0000_0001_0000) >> 4);
+                return (ushort)(((uint)_bitfield >> 4) & 0x1);
             }
 
             set
             {
-                _bitField = (ushort)((_bitField & 0b1111_1111_1110_1111) | ((value << 4) & 0b0000_0000_0001_0000));
+                _bitfield = (ushort)((_bitfield & ~(0x1u << 4)) | (((uint)value & 0x1) << 4));
             }
         }
 
-        /// <summary>Glyph is a diacritic.</summary>
-        [NativeTypeName("UINT16:1")]
+        [NativeTypeName("UINT16 : 1")]
         public ushort isDiacritic
         {
             get
             {
-                return (ushort)((_bitField & 0b0000_0000_0010_0000) >> 5);
+                return (ushort)(((uint)_bitfield >> 5) & 0x1);
             }
 
             set
             {
-                _bitField = (ushort)((_bitField & 0b1111_1111_1101_1111) | ((value << 5) & 0b0000_0000_0010_0000));
+                _bitfield = (ushort)((_bitfield & ~(0x1u << 5)) | (((uint)value & 0x1) << 5));
             }
         }
 
-        /// <summary>Glyph has no width, blank, ZWJ, ZWNJ etc.</summary>
-        [NativeTypeName("UINT16:1")]
+        [NativeTypeName("UINT16 : 1")]
         public ushort isZeroWidthSpace
         {
             get
             {
-                return (ushort)((_bitField & 0b0000_0000_0100_0000) >> 6);
+                return (ushort)(((uint)_bitfield >> 6) & 0x1);
             }
 
             set
             {
-                _bitField = (ushort)((_bitField & 0b1111_1111_1011_1111) | ((value << 6) & 0b0000_0000_0100_0000));
+                _bitfield = (ushort)((_bitfield & ~(0x1u << 6)) | (((uint)value & 0x1) << 6));
             }
         }
 
-        /// <summary>Reserved for use by shaping engine.</summary>
-        [NativeTypeName("UINT16:9")]
+        [NativeTypeName("UINT16 : 9")]
         public ushort reserved
         {
             get
             {
-                return (ushort)((_bitField & 0b1111_1111_1000_0000) >> 7);
+                return (ushort)(((uint)_bitfield >> 7) & 0x1FF);
             }
 
             set
             {
-                _bitField = (ushort)((_bitField & 0b0000_0000_0111_1111) | ((value << 7) & 0b1111_1111_1000_0000));
+                _bitfield = (ushort)((_bitfield & ~(0x1FFu << 7)) | (((uint)value & 0x1FF) << 7));
             }
         }
     }

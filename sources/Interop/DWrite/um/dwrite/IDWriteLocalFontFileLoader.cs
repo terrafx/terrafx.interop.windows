@@ -1,14 +1,14 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\dwrite.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/dwrite.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    /// <summary>A built-in implementation of IDWriteFontFileLoader interface that operates on local font files and exposes local font file information from the font file reference key. Font file references created using CreateFontFileReference use this font file loader.</summary>
     [Guid("B2D9F3EC-C9FE-4A11-A2EC-D86208F7C0A2")]
     public unsafe partial struct IDWriteLocalFontFileLoader
     {
@@ -16,130 +16,95 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDWriteLocalFontFileLoader* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
+        public delegate int _QueryInterface(IDWriteLocalFontFileLoader* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDWriteLocalFontFileLoader* This);
+        public delegate uint _AddRef(IDWriteLocalFontFileLoader* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDWriteLocalFontFileLoader* This);
+        public delegate uint _Release(IDWriteLocalFontFileLoader* pThis);
 
-        /// <summary>Creates a font file stream object that encapsulates an open file resource. The resource is closed when the last reference to fontFileStream is released.</summary>
-        /// <param name="fontFileReferenceKey">Font file reference key that uniquely identifies the font file resource within the scope of the font loader being used.</param>
-        /// <param name="fontFileReferenceKeySize">Size of font file reference key in bytes.</param>
-        /// <param name="fontFileStream">Pointer to the newly created font file stream.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateStreamFromKey(IDWriteLocalFontFileLoader* This, void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, IDWriteFontFileStream** fontFileStream);
+        public delegate int _CreateStreamFromKey(IDWriteLocalFontFileLoader* pThis, [NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("IDWriteFontFileStream **")] IDWriteFontFileStream** fontFileStream);
 
-        /// <summary>Obtains the length of the absolute file path from the font file reference key.</summary>
-        /// <param name="fontFileReferenceKey">Font file reference key that uniquely identifies the local font file within the scope of the font loader being used.</param>
-        /// <param name="fontFileReferenceKeySize">Size of font file reference key in bytes.</param>
-        /// <param name="filePathLength">Length of the file path string not including the terminated NULL character.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFilePathLengthFromKey(IDWriteLocalFontFileLoader* This, void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("UINT32")] uint* filePathLength);
+        public delegate int _GetFilePathLengthFromKey(IDWriteLocalFontFileLoader* pThis, [NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("UINT32 *")] uint* filePathLength);
 
-        /// <summary>Obtains the absolute font file path from the font file reference key.</summary>
-        /// <param name="fontFileReferenceKey">Font file reference key that uniquely identifies the local font file within the scope of the font loader being used.</param>
-        /// <param name="fontFileReferenceKeySize">Size of font file reference key in bytes.</param>
-        /// <param name="filePath">Character array that receives the local file path.</param>
-        /// <param name="filePathSize">Size of the filePath array in character count including the terminated NULL character.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFilePathFromKey(IDWriteLocalFontFileLoader* This, void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("WCHAR[]")] ushort* filePath, [NativeTypeName("UINT32")] uint filePathSize);
+        public delegate int _GetFilePathFromKey(IDWriteLocalFontFileLoader* pThis, [NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("WCHAR *")] ushort* filePath, [NativeTypeName("UINT32")] uint filePathSize);
 
-        /// <summary>Obtains the last write time of the file from the font file reference key.</summary>
-        /// <param name="fontFileReferenceKey">Font file reference key that uniquely identifies the local font file within the scope of the font loader being used.</param>
-        /// <param name="fontFileReferenceKeySize">Size of font file reference key in bytes.</param>
-        /// <param name="lastWriteTime">Last modified time of the font file.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLastWriteTimeFromKey(IDWriteLocalFontFileLoader* This, void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, FILETIME* lastWriteTime);
+        public delegate int _GetLastWriteTimeFromKey(IDWriteLocalFontFileLoader* pThis, [NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("FILETIME *")] FILETIME* lastWriteTime);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            fixed (IDWriteLocalFontFileLoader* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDWriteLocalFontFileLoader*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            fixed (IDWriteLocalFontFileLoader* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDWriteLocalFontFileLoader*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            fixed (IDWriteLocalFontFileLoader* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDWriteLocalFontFileLoader*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateStreamFromKey(void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, IDWriteFontFileStream** fontFileStream)
+        public int CreateStreamFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("IDWriteFontFileStream **")] IDWriteFontFileStream** fontFileStream)
         {
-            fixed (IDWriteLocalFontFileLoader* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_CreateStreamFromKey>(lpVtbl->CreateStreamFromKey)(This, fontFileReferenceKey, fontFileReferenceKeySize, fontFileStream);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_CreateStreamFromKey>(lpVtbl->CreateStreamFromKey)((IDWriteLocalFontFileLoader*)Unsafe.AsPointer(ref this), fontFileReferenceKey, fontFileReferenceKeySize, fontFileStream);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFilePathLengthFromKey(void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("UINT32")] uint* filePathLength)
+        public int GetFilePathLengthFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("UINT32 *")] uint* filePathLength)
         {
-            fixed (IDWriteLocalFontFileLoader* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFilePathLengthFromKey>(lpVtbl->GetFilePathLengthFromKey)(This, fontFileReferenceKey, fontFileReferenceKeySize, filePathLength);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFilePathLengthFromKey>(lpVtbl->GetFilePathLengthFromKey)((IDWriteLocalFontFileLoader*)Unsafe.AsPointer(ref this), fontFileReferenceKey, fontFileReferenceKeySize, filePathLength);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFilePathFromKey(void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("WCHAR[]")] ushort* filePath, [NativeTypeName("UINT32")] uint filePathSize)
+        public int GetFilePathFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("WCHAR *")] ushort* filePath, [NativeTypeName("UINT32")] uint filePathSize)
         {
-            fixed (IDWriteLocalFontFileLoader* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFilePathFromKey>(lpVtbl->GetFilePathFromKey)(This, fontFileReferenceKey, fontFileReferenceKeySize, filePath, filePathSize);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFilePathFromKey>(lpVtbl->GetFilePathFromKey)((IDWriteLocalFontFileLoader*)Unsafe.AsPointer(ref this), fontFileReferenceKey, fontFileReferenceKeySize, filePath, filePathSize);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetLastWriteTimeFromKey(void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, FILETIME* lastWriteTime)
+        public int GetLastWriteTimeFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("FILETIME *")] FILETIME* lastWriteTime)
         {
-            fixed (IDWriteLocalFontFileLoader* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetLastWriteTimeFromKey>(lpVtbl->GetLastWriteTimeFromKey)(This, fontFileReferenceKey, fontFileReferenceKeySize, lastWriteTime);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetLastWriteTimeFromKey>(lpVtbl->GetLastWriteTimeFromKey)((IDWriteLocalFontFileLoader*)Unsafe.AsPointer(ref this), fontFileReferenceKey, fontFileReferenceKeySize, lastWriteTime);
         }
 
         public partial struct Vtbl
         {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
             public IntPtr QueryInterface;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr AddRef;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr Release;
 
+            [NativeTypeName("HRESULT (const void *, UINT32, IDWriteFontFileStream **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr CreateStreamFromKey;
 
+            [NativeTypeName("HRESULT (const void *, UINT32, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFilePathLengthFromKey;
 
+            [NativeTypeName("HRESULT (const void *, UINT32, WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFilePathFromKey;
 
+            [NativeTypeName("HRESULT (const void *, UINT32, FILETIME *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetLastWriteTimeFromKey;
         }
     }

@@ -1,42 +1,67 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\dwrite.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/dwrite.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop
 {
-    /// <summary>Shaping output properties per input character.</summary>
     public partial struct DWRITE_SHAPING_TEXT_PROPERTIES
     {
-        private ushort _bitField;
+        internal ushort _bitfield;
 
-        /// <summary>This character can be shaped independently from the others (usually set for the space character).</summary>
-        [NativeTypeName("UINT16:1")]
+        [NativeTypeName("UINT16 : 1")]
         public ushort isShapedAlone
         {
             get
             {
-                return (ushort)(_bitField & 0b0000_0000_0000_0001);
+                return (ushort)((uint)_bitfield & 0x1);
             }
 
             set
             {
-                _bitField = (ushort)((_bitField & 0b1111_1111_1111_1110) | (value & 0b0000_0000_0000_0001));
+                _bitfield = (ushort)((_bitfield & ~0x1u) | ((uint)value & 0x1));
             }
         }
 
-        /// <summary>Reserved for use by shaping engine.</summary>
-        [NativeTypeName("UINT16:15")]
+        [NativeTypeName("UINT16 : 1")]
+        public ushort reserved1
+        {
+            get
+            {
+                return (ushort)(((uint)_bitfield >> 1) & 0x1);
+            }
+
+            set
+            {
+                _bitfield = (ushort)((_bitfield & ~(0x1u << 1)) | (((uint)value & 0x1) << 1));
+            }
+        }
+
+        [NativeTypeName("UINT16 : 1")]
+        public ushort canBreakShapingAfter
+        {
+            get
+            {
+                return (ushort)(((uint)_bitfield >> 2) & 0x1);
+            }
+
+            set
+            {
+                _bitfield = (ushort)((_bitfield & ~(0x1u << 2)) | (((uint)value & 0x1) << 2));
+            }
+        }
+
+        [NativeTypeName("UINT16 : 13")]
         public ushort reserved
         {
             get
             {
-                return (ushort)((_bitField & 0b1111_1111_1111_1110) >> 1);
+                return (ushort)(((uint)_bitfield >> 3) & 0x1FFF);
             }
 
             set
             {
-                _bitField = (ushort)((_bitField & 0b0000_0000_0000_0001) | ((value << 1) & 0b1111_1111_1111_1110));
+                _bitfield = (ushort)((_bitfield & ~(0x1FFFu << 3)) | (((uint)value & 0x1FFF) << 3));
             }
         }
     }

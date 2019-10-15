@@ -1,14 +1,14 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\dwrite_3.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/dwrite_3.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    /// <summary>The IDWriteAsyncResult interface represents the result of an asynchronous operation. A client can use the interface to wait for the operation to complete and to get the result.</summary>
     [Guid("CE25F8FD-863B-4D13-9651-C1F88DC73FE2")]
     public unsafe partial struct IDWriteAsyncResult
     {
@@ -16,81 +16,69 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDWriteAsyncResult* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
+        public delegate int _QueryInterface(IDWriteAsyncResult* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDWriteAsyncResult* This);
+        public delegate uint _AddRef(IDWriteAsyncResult* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDWriteAsyncResult* This);
+        public delegate uint _Release(IDWriteAsyncResult* pThis);
 
-        /// <summary>The GetWaitHandleMethod method returns a handle that can be used to wait for the asynchronous operation to complete. The handle remains valid until the interface is released.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HANDLE")]
-        public delegate IntPtr _GetWaitHandle(IDWriteAsyncResult* This);
+        public delegate IntPtr _GetWaitHandle(IDWriteAsyncResult* pThis);
 
-        /// <summary>The GetResult method returns the result of the asynchronous operation. The return value is E_PENDING if the operation has not yet completed.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetResult(IDWriteAsyncResult* This);
+        public delegate int _GetResult(IDWriteAsyncResult* pThis);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            fixed (IDWriteAsyncResult* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDWriteAsyncResult*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            fixed (IDWriteAsyncResult* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDWriteAsyncResult*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            fixed (IDWriteAsyncResult* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDWriteAsyncResult*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HANDLE")]
         public IntPtr GetWaitHandle()
         {
-            fixed (IDWriteAsyncResult* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetWaitHandle>(lpVtbl->GetWaitHandle)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetWaitHandle>(lpVtbl->GetWaitHandle)((IDWriteAsyncResult*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetResult()
         {
-            fixed (IDWriteAsyncResult* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetResult>(lpVtbl->GetResult)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetResult>(lpVtbl->GetResult)((IDWriteAsyncResult*)Unsafe.AsPointer(ref this));
         }
 
         public partial struct Vtbl
         {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
             public IntPtr QueryInterface;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr AddRef;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr Release;
 
+            [NativeTypeName("HANDLE () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetWaitHandle;
 
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetResult;
         }
     }

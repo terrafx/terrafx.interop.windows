@@ -1,14 +1,14 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\dwrite.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/dwrite.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    /// <summary>The IDWriteFontFamily interface represents a set of fonts that share the same design but are differentiated by weight, stretch, and style.</summary>
     [Guid("DA20D8EF-812A-4C43-9802-62EC4ABD7ADD")]
     public unsafe partial struct IDWriteFontFamily
     {
@@ -16,162 +16,121 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDWriteFontFamily* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
+        public delegate int _QueryInterface(IDWriteFontFamily* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDWriteFontFamily* This);
+        public delegate uint _AddRef(IDWriteFontFamily* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDWriteFontFamily* This);
+        public delegate uint _Release(IDWriteFontFamily* pThis);
 
-        /// <summary>Gets the font collection that contains the fonts.</summary>
-        /// <param name="fontCollection">Receives a pointer to the font collection object.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFontCollection(IDWriteFontFamily* This, IDWriteFontCollection** fontCollection);
+        public delegate int _GetFontCollection(IDWriteFontFamily* pThis, [NativeTypeName("IDWriteFontCollection **")] IDWriteFontCollection** fontCollection);
 
-        /// <summary>Gets the number of fonts in the font list.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public delegate uint _GetFontCount(IDWriteFontFamily* This);
+        public delegate uint _GetFontCount(IDWriteFontFamily* pThis);
 
-        /// <summary>Gets a font given its zero-based index.</summary>
-        /// <param name="index">Zero-based index of the font in the font list.</param>
-        /// <param name="font">Receives a pointer to the newly created font object.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFont(IDWriteFontFamily* This, [NativeTypeName("UINT32")] uint index, IDWriteFont** font);
+        public delegate int _GetFont(IDWriteFontFamily* pThis, [NativeTypeName("UINT32")] uint index, [NativeTypeName("IDWriteFont **")] IDWriteFont** font);
 
-        /// <summary>Creates a localized strings object that contains the family names for the font family, indexed by locale name.</summary>
-        /// <param name="names">Receives a pointer to the newly created localized strings object.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFamilyNames(IDWriteFontFamily* This, IDWriteLocalizedStrings** names);
+        public delegate int _GetFamilyNames(IDWriteFontFamily* pThis, [NativeTypeName("IDWriteLocalizedStrings **")] IDWriteLocalizedStrings** names);
 
-        /// <summary>Gets the font that best matches the specified properties.</summary>
-        /// <param name="weight">Requested font weight.</param>
-        /// <param name="stretch">Requested font stretch.</param>
-        /// <param name="style">Requested font style.</param>
-        /// <param name="matchingFont">Receives a pointer to the newly created font object.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFirstMatchingFont(IDWriteFontFamily* This, DWRITE_FONT_WEIGHT weight, DWRITE_FONT_STRETCH stretch, DWRITE_FONT_STYLE style, IDWriteFont** matchingFont);
+        public delegate int _GetFirstMatchingFont(IDWriteFontFamily* pThis, DWRITE_FONT_WEIGHT weight, DWRITE_FONT_STRETCH stretch, DWRITE_FONT_STYLE style, [NativeTypeName("IDWriteFont **")] IDWriteFont** matchingFont);
 
-        /// <summary>Gets a list of fonts in the font family ranked in order of how well they match the specified properties.</summary>
-        /// <param name="weight">Requested font weight.</param>
-        /// <param name="stretch">Requested font stretch.</param>
-        /// <param name="style">Requested font style.</param>
-        /// <param name="matchingFonts">Receives a pointer to the newly created font list object.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetMatchingFonts(IDWriteFontFamily* This, DWRITE_FONT_WEIGHT weight, DWRITE_FONT_STRETCH stretch, DWRITE_FONT_STYLE style, IDWriteFontList** matchingFonts);
+        public delegate int _GetMatchingFonts(IDWriteFontFamily* pThis, DWRITE_FONT_WEIGHT weight, DWRITE_FONT_STRETCH stretch, DWRITE_FONT_STYLE style, [NativeTypeName("IDWriteFontList **")] IDWriteFontList** matchingFonts);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            fixed (IDWriteFontFamily* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDWriteFontFamily*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            fixed (IDWriteFontFamily* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDWriteFontFamily*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            fixed (IDWriteFontFamily* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDWriteFontFamily*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFontCollection(IDWriteFontCollection** fontCollection)
+        public int GetFontCollection([NativeTypeName("IDWriteFontCollection **")] IDWriteFontCollection** fontCollection)
         {
-            fixed (IDWriteFontFamily* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontCollection>(lpVtbl->GetFontCollection)(This, fontCollection);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFontCollection>(lpVtbl->GetFontCollection)((IDWriteFontFamily*)Unsafe.AsPointer(ref this), fontCollection);
         }
 
         [return: NativeTypeName("UINT32")]
         public uint GetFontCount()
         {
-            fixed (IDWriteFontFamily* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontCount>(lpVtbl->GetFontCount)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFontCount>(lpVtbl->GetFontCount)((IDWriteFontFamily*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFont([NativeTypeName("UINT32")] uint index, IDWriteFont** font)
+        public int GetFont([NativeTypeName("UINT32")] uint index, [NativeTypeName("IDWriteFont **")] IDWriteFont** font)
         {
-            fixed (IDWriteFontFamily* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFont>(lpVtbl->GetFont)(This, index, font);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFont>(lpVtbl->GetFont)((IDWriteFontFamily*)Unsafe.AsPointer(ref this), index, font);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFamilyNames(IDWriteLocalizedStrings** names)
+        public int GetFamilyNames([NativeTypeName("IDWriteLocalizedStrings **")] IDWriteLocalizedStrings** names)
         {
-            fixed (IDWriteFontFamily* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFamilyNames>(lpVtbl->GetFamilyNames)(This, names);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFamilyNames>(lpVtbl->GetFamilyNames)((IDWriteFontFamily*)Unsafe.AsPointer(ref this), names);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFirstMatchingFont(DWRITE_FONT_WEIGHT weight, DWRITE_FONT_STRETCH stretch, DWRITE_FONT_STYLE style, IDWriteFont** matchingFont)
+        public int GetFirstMatchingFont(DWRITE_FONT_WEIGHT weight, DWRITE_FONT_STRETCH stretch, DWRITE_FONT_STYLE style, [NativeTypeName("IDWriteFont **")] IDWriteFont** matchingFont)
         {
-            fixed (IDWriteFontFamily* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFirstMatchingFont>(lpVtbl->GetFirstMatchingFont)(This, weight, stretch, style, matchingFont);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFirstMatchingFont>(lpVtbl->GetFirstMatchingFont)((IDWriteFontFamily*)Unsafe.AsPointer(ref this), weight, stretch, style, matchingFont);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetMatchingFonts(DWRITE_FONT_WEIGHT weight, DWRITE_FONT_STRETCH stretch, DWRITE_FONT_STYLE style, IDWriteFontList** matchingFonts)
+        public int GetMatchingFonts(DWRITE_FONT_WEIGHT weight, DWRITE_FONT_STRETCH stretch, DWRITE_FONT_STYLE style, [NativeTypeName("IDWriteFontList **")] IDWriteFontList** matchingFonts)
         {
-            fixed (IDWriteFontFamily* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetMatchingFonts>(lpVtbl->GetMatchingFonts)(This, weight, stretch, style, matchingFonts);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetMatchingFonts>(lpVtbl->GetMatchingFonts)((IDWriteFontFamily*)Unsafe.AsPointer(ref this), weight, stretch, style, matchingFonts);
         }
 
         public partial struct Vtbl
         {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
             public IntPtr QueryInterface;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr AddRef;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr Release;
 
+            [NativeTypeName("HRESULT (IDWriteFontCollection **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFontCollection;
 
+            [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFontCount;
 
+            [NativeTypeName("HRESULT (UINT32, IDWriteFont **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFont;
 
+            [NativeTypeName("HRESULT (IDWriteLocalizedStrings **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFamilyNames;
 
+            [NativeTypeName("HRESULT (DWRITE_FONT_WEIGHT, DWRITE_FONT_STRETCH, DWRITE_FONT_STYLE, IDWriteFont **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFirstMatchingFont;
 
+            [NativeTypeName("HRESULT (DWRITE_FONT_WEIGHT, DWRITE_FONT_STRETCH, DWRITE_FONT_STYLE, IDWriteFontList **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetMatchingFonts;
         }
     }

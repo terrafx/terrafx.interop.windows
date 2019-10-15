@@ -1,14 +1,14 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\dwrite.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/dwrite.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    /// <summary>The interface for loading font file data.</summary>
     [Guid("6D4865FE-0AB8-4D91-8F62-5DD6BE34A3E0")]
     public unsafe partial struct IDWriteFontFileStream
     {
@@ -16,123 +16,93 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDWriteFontFileStream* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
+        public delegate int _QueryInterface(IDWriteFontFileStream* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDWriteFontFileStream* This);
+        public delegate uint _AddRef(IDWriteFontFileStream* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDWriteFontFileStream* This);
+        public delegate uint _Release(IDWriteFontFileStream* pThis);
 
-        /// <summary>Reads a fragment from a file.</summary>
-        /// <param name="fragmentStart">Receives the pointer to the start of the font file fragment.</param>
-        /// <param name="fileOffset">Offset of the fragment from the beginning of the font file.</param>
-        /// <param name="fragmentSize">Size of the fragment in bytes.</param>
-        /// <param name="fragmentContext">The client defined context to be passed to the ReleaseFileFragment.</param>
-        /// <returns>Standard HRESULT error code.</returns>
-        /// <remarks>IMPORTANT: ReadFileFragment() implementations must check whether the requested file fragment is within the file bounds. Otherwise, an error should be returned from ReadFileFragment.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _ReadFileFragment(IDWriteFontFileStream* This, void** fragmentStart, [NativeTypeName("UINT64")] ulong fileOffset, [NativeTypeName("UINT64")] ulong fragmentSize, void** fragmentContext);
+        public delegate int _ReadFileFragment(IDWriteFontFileStream* pThis, [NativeTypeName("const void **")] void** fragmentStart, [NativeTypeName("UINT64")] ulong fileOffset, [NativeTypeName("UINT64")] ulong fragmentSize, [NativeTypeName("void **")] void** fragmentContext);
 
-        /// <summary>Releases a fragment from a file.</summary>
-        /// <param name="fragmentContext">The client defined context of a font fragment returned from ReadFileFragment.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _ReleaseFileFragment(IDWriteFontFileStream* This, void* fragmentContext);
+        public delegate void _ReleaseFileFragment(IDWriteFontFileStream* pThis, [NativeTypeName("void *")] void* fragmentContext);
 
-        /// <summary>Obtains the total size of a file.</summary>
-        /// <param name="fileSize">Receives the total size of the file.</param>
-        /// <returns>Standard HRESULT error code.</returns>
-        /// <remarks>Implementing GetFileSize() for asynchronously loaded font files may require downloading the complete file contents, therefore this method should only be used for operations that either require complete font file to be loaded (e.g., copying a font file) or need to make decisions based on the value of the file size (e.g., validation against a persisted file size).</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFileSize(IDWriteFontFileStream* This, [NativeTypeName("UINT64")] ulong* fileSize);
+        public delegate int _GetFileSize(IDWriteFontFileStream* pThis, [NativeTypeName("UINT64 *")] ulong* fileSize);
 
-        /// <summary>Obtains the last modified time of the file. The last modified time is used by DirectWrite font selection algorithms to determine whether one font resource is more up to date than another one.</summary>
-        /// <param name="lastWriteTime">Receives the last modified time of the file in the format that represents the number of 100-nanosecond intervals since January 1, 1601 (UTC).</param>
-        /// <returns>Standard HRESULT error code. For resources that don't have a concept of the last modified time, the implementation of GetLastWriteTime should return E_NOTIMPL.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLastWriteTime(IDWriteFontFileStream* This, [NativeTypeName("UINT64")] ulong* lastWriteTime);
+        public delegate int _GetLastWriteTime(IDWriteFontFileStream* pThis, [NativeTypeName("UINT64 *")] ulong* lastWriteTime);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            fixed (IDWriteFontFileStream* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDWriteFontFileStream*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            fixed (IDWriteFontFileStream* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDWriteFontFileStream*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            fixed (IDWriteFontFileStream* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDWriteFontFileStream*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int ReadFileFragment(void** fragmentStart, [NativeTypeName("UINT64")] ulong fileOffset, [NativeTypeName("UINT64")] ulong fragmentSize, void** fragmentContext)
+        public int ReadFileFragment([NativeTypeName("const void **")] void** fragmentStart, [NativeTypeName("UINT64")] ulong fileOffset, [NativeTypeName("UINT64")] ulong fragmentSize, [NativeTypeName("void **")] void** fragmentContext)
         {
-            fixed (IDWriteFontFileStream* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_ReadFileFragment>(lpVtbl->ReadFileFragment)(This, fragmentStart, fileOffset, fragmentSize, fragmentContext);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_ReadFileFragment>(lpVtbl->ReadFileFragment)((IDWriteFontFileStream*)Unsafe.AsPointer(ref this), fragmentStart, fileOffset, fragmentSize, fragmentContext);
         }
 
-        public void ReleaseFileFragment(void* fragmentContext)
+        public void ReleaseFileFragment([NativeTypeName("void *")] void* fragmentContext)
         {
-            fixed (IDWriteFontFileStream* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_ReleaseFileFragment>(lpVtbl->ReleaseFileFragment)(This, fragmentContext);
-            }
+            Marshal.GetDelegateForFunctionPointer<_ReleaseFileFragment>(lpVtbl->ReleaseFileFragment)((IDWriteFontFileStream*)Unsafe.AsPointer(ref this), fragmentContext);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFileSize([NativeTypeName("UINT64")] ulong* fileSize)
+        public int GetFileSize([NativeTypeName("UINT64 *")] ulong* fileSize)
         {
-            fixed (IDWriteFontFileStream* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFileSize>(lpVtbl->GetFileSize)(This, fileSize);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFileSize>(lpVtbl->GetFileSize)((IDWriteFontFileStream*)Unsafe.AsPointer(ref this), fileSize);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetLastWriteTime([NativeTypeName("UINT64")] ulong* lastWriteTime)
+        public int GetLastWriteTime([NativeTypeName("UINT64 *")] ulong* lastWriteTime)
         {
-            fixed (IDWriteFontFileStream* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetLastWriteTime>(lpVtbl->GetLastWriteTime)(This, lastWriteTime);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetLastWriteTime>(lpVtbl->GetLastWriteTime)((IDWriteFontFileStream*)Unsafe.AsPointer(ref this), lastWriteTime);
         }
 
         public partial struct Vtbl
         {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
             public IntPtr QueryInterface;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr AddRef;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr Release;
 
+            [NativeTypeName("HRESULT (const void **, UINT64, UINT64, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr ReadFileFragment;
 
+            [NativeTypeName("void (void *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr ReleaseFileFragment;
 
+            [NativeTypeName("HRESULT (UINT64 *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFileSize;
 
+            [NativeTypeName("HRESULT (UINT64 *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetLastWriteTime;
         }
     }

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\dwrite_3.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/dwrite_3.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -9,16 +9,12 @@ namespace TerraFX.Interop
 {
     public static partial class DWrite
     {
-        /// <summary>A font resource could not be accessed because it was remote. This can happen when calling CreateFontFace on a non-local font or trying to measure/draw glyphs that are not downloaded yet.</summary>
         public const int DWRITE_E_REMOTEFONT = unchecked((int)0x8898500D);
 
-        /// <summary>The download was canceled, which happens if the application calls IDWriteFontDownloadQueue::CancelDownload before they finish.</summary>
         public const int DWRITE_E_DOWNLOADCANCELLED = unchecked((int)0x8898500E);
 
-        /// <summary>The download failed to complete because the remote resource is missing or the network is down.</summary>
         public const int DWRITE_E_DOWNLOADFAILED = unchecked((int)0x8898500F);
 
-        /// <summary>A download request was not added or a download failed because there are too many active downloads.</summary>
         public const int DWRITE_E_TOOMANYDOWNLOADS = unchecked((int)0x88985010);
 
         public static readonly Guid IID_IDWriteRenderingParams3 = new Guid(0xB7924BAA, 0x391B, 0x412A, 0x8C, 0x5C, 0xE4, 0x4C, 0xC2, 0xD8, 0x67, 0xDC);
@@ -70,5 +66,39 @@ namespace TerraFX.Interop
         public static readonly Guid IID_IDWriteInMemoryFontFileLoader = new Guid(0xDC102F47, 0xA12D, 0x4B1C, 0x82, 0x2D, 0x9E, 0x11, 0x7E, 0x33, 0x04, 0x3F);
 
         public static readonly Guid IID_IDWriteFactory5 = new Guid(0x958DB99A, 0xBE2A, 0x4F09, 0xAF, 0x7D, 0x65, 0x18, 0x98, 0x03, 0xD1, 0xD3);
+
+        public static readonly Guid IID_IDWriteFactory6 = new Guid(0xF3744D80, 0x21F7, 0x42EB, 0xB3, 0x5D, 0x99, 0x5B, 0xC7, 0x2F, 0xC2, 0x23);
+
+        public static readonly Guid IID_IDWriteFontFace5 = new Guid(0x98EFF3A5, 0xB667, 0x479A, 0xB1, 0x45, 0xE2, 0xFA, 0x5B, 0x9F, 0xDC, 0x29);
+
+        public static readonly Guid IID_IDWriteFontResource = new Guid(0x1F803A76, 0x6871, 0x48E8, 0x98, 0x7F, 0xB9, 0x75, 0x55, 0x1C, 0x50, 0xF2);
+
+        public static readonly Guid IID_IDWriteFontFaceReference1 = new Guid(0xC081FE77, 0x2FD1, 0x41AC, 0xA5, 0xA3, 0x34, 0x98, 0x3C, 0x4B, 0xA6, 0x1A);
+
+        public static readonly Guid IID_IDWriteFontSetBuilder2 = new Guid(0xEE5BA612, 0xB131, 0x463C, 0x8F, 0x4F, 0x31, 0x89, 0xB9, 0x40, 0x1E, 0x45);
+
+        public static readonly Guid IID_IDWriteFontSet1 = new Guid(0x7E9FDA85, 0x6C92, 0x4053, 0xBC, 0x47, 0x7A, 0xE3, 0x53, 0x0D, 0xB4, 0xD3);
+
+        public static readonly Guid IID_IDWriteFontList2 = new Guid(0xC0763A34, 0x77AF, 0x445A, 0xB7, 0x35, 0x08, 0xC3, 0x7B, 0x0A, 0x5B, 0xF5);
+
+        public static readonly Guid IID_IDWriteFontFamily2 = new Guid(0x3ED49E77, 0xA398, 0x4261, 0xB9, 0xCF, 0xC1, 0x26, 0xC2, 0x13, 0x1E, 0xF3);
+
+        public static readonly Guid IID_IDWriteFontCollection2 = new Guid(0x514039C6, 0x4617, 0x4064, 0xBF, 0x8B, 0x92, 0xEA, 0x83, 0xE5, 0x06, 0xE0);
+
+        public static readonly Guid IID_IDWriteTextLayout4 = new Guid(0x05A9BF42, 0x223F, 0x4441, 0xB5, 0xFB, 0x82, 0x63, 0x68, 0x5F, 0x55, 0xE9);
+
+        public static readonly Guid IID_IDWriteTextFormat3 = new Guid(0x6D3B5641, 0xE550, 0x430D, 0xA8, 0x5B, 0xB7, 0xBF, 0x48, 0xA9, 0x34, 0x27);
+
+        public static readonly Guid IID_IDWriteFontFallback1 = new Guid(0x2397599D, 0xDD0D, 0x4681, 0xBD, 0x6A, 0xF4, 0xF3, 0x1E, 0xAA, 0xDE, 0x77);
+
+        public static readonly Guid IID_IDWriteFontSet2 = new Guid(0xDC7EAD19, 0xE54C, 0x43AF, 0xB2, 0xDA, 0x4E, 0x2B, 0x79, 0xBA, 0x3F, 0x7F);
+
+        public static readonly Guid IID_IDWriteFontCollection3 = new Guid(0xA4D055A6, 0xF9E3, 0x4E25, 0x93, 0xB7, 0x9E, 0x30, 0x9F, 0x3A, 0xF8, 0xE9);
+
+        public static readonly Guid IID_IDWriteFactory7 = new Guid(0x35D0E0B3, 0x9076, 0x4D2E, 0xA0, 0x16, 0xA9, 0x1B, 0x56, 0x8A, 0x06, 0xB4);
+
+        public static readonly Guid IID_IDWriteFontSet3 = new Guid(0x7C073EF2, 0xA7F4, 0x4045, 0x8C, 0x32, 0x8A, 0xB8, 0xAE, 0x64, 0x0F, 0x90);
+
+        public static DWRITE_FONT_AXIS_TAG DWRITE_MAKE_FONT_AXIS_TAG(byte a, byte b, byte c, byte d) => (DWRITE_FONT_AXIS_TAG)DWRITE_MAKE_OPENTYPE_TAG(a, b, c, d);
     }
 }

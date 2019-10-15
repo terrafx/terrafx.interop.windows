@@ -1,14 +1,14 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\dwrite_1.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/dwrite_1.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    /// <summary>The IDWriteFont interface represents a physical font in a font collection.</summary>
     [Guid("ACD16696-8C14-4F5D-877E-FE3FC1D32738")]
     public unsafe partial struct IDWriteFont1
     {
@@ -16,297 +16,224 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDWriteFont1* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
+        public delegate int _QueryInterface(IDWriteFont1* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDWriteFont1* This);
+        public delegate uint _AddRef(IDWriteFont1* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDWriteFont1* This);
+        public delegate uint _Release(IDWriteFont1* pThis);
 
-        /// <summary>Gets the font family to which the specified font belongs.</summary>
-        /// <param name="fontFamily">Receives a pointer to the font family object.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFontFamily(IDWriteFont1* This, IDWriteFontFamily** fontFamily);
+        public delegate int _GetFontFamily(IDWriteFont1* pThis, [NativeTypeName("IDWriteFontFamily **")] IDWriteFontFamily** fontFamily);
 
-        /// <summary>Gets the weight of the specified font.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate DWRITE_FONT_WEIGHT _GetWeight(IDWriteFont1* This);
+        public delegate DWRITE_FONT_WEIGHT _GetWeight(IDWriteFont1* pThis);
 
-        /// <summary>Gets the stretch (aka. width) of the specified font.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate DWRITE_FONT_STRETCH _GetStretch(IDWriteFont1* This);
+        public delegate DWRITE_FONT_STRETCH _GetStretch(IDWriteFont1* pThis);
 
-        /// <summary>Gets the style (aka. slope) of the specified font.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate DWRITE_FONT_STYLE _GetStyle(IDWriteFont1* This);
+        public delegate DWRITE_FONT_STYLE _GetStyle(IDWriteFont1* pThis);
 
-        /// <summary>Returns TRUE if the font is a symbol font or FALSE if not.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public delegate int _IsSymbolFont(IDWriteFont1* This);
+        public delegate int _IsSymbolFont(IDWriteFont1* pThis);
 
-        /// <summary>Gets a localized strings collection containing the face names for the font (e.g., Regular or Bold), indexed by locale name.</summary>
-        /// <param name="names">Receives a pointer to the newly created localized strings object.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFaceNames(IDWriteFont1* This, IDWriteLocalizedStrings** names);
+        public delegate int _GetFaceNames(IDWriteFont1* pThis, [NativeTypeName("IDWriteLocalizedStrings **")] IDWriteLocalizedStrings** names);
 
-        /// <summary>Gets a localized strings collection containing the specified informational strings, indexed by locale name.</summary>
-        /// <param name="informationalStringID">Identifies the string to get.</param>
-        /// <param name="informationalStrings">Receives a pointer to the newly created localized strings object.</param>
-        /// <param name="exists">Receives the value TRUE if the font contains the specified string ID or FALSE if not.</param>
-        /// <returns>Standard HRESULT error code. If the font does not contain the specified string, the return value is S_OK but informationalStrings receives a NULL pointer and exists receives the value FALSE.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetInformationalStrings(IDWriteFont1* This, DWRITE_INFORMATIONAL_STRING_ID informationalStringID, IDWriteLocalizedStrings** informationalStrings, [NativeTypeName("BOOL")] int* exists);
+        public delegate int _GetInformationalStrings(IDWriteFont1* pThis, DWRITE_INFORMATIONAL_STRING_ID informationalStringID, [NativeTypeName("IDWriteLocalizedStrings **")] IDWriteLocalizedStrings** informationalStrings, [NativeTypeName("BOOL *")] int* exists);
 
-        /// <summary>Gets a value that indicates what simulation are applied to the specified font.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate DWRITE_FONT_SIMULATIONS _GetSimulations(IDWriteFont1* This);
+        public delegate DWRITE_FONT_SIMULATIONS _GetSimulations(IDWriteFont1* pThis);
 
-        /// <summary>Gets the metrics for the font.</summary>
-        /// <param name="fontMetrics">Receives the font metrics.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetMetrics(IDWriteFont1* This, DWRITE_FONT_METRICS* fontMetrics);
+        public delegate void _GetMetrics(IDWriteFont1* pThis, [NativeTypeName("DWRITE_FONT_METRICS *")] DWRITE_FONT_METRICS* fontMetrics);
 
-        /// <summary>Determines whether the font supports the specified character.</summary>
-        /// <param name="unicodeValue">Unicode (UCS-4) character value.</param>
-        /// <param name="exists">Receives the value TRUE if the font supports the specified character or FALSE if not.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _HasCharacter(IDWriteFont1* This, [NativeTypeName("UINT32")] uint unicodeValue, [NativeTypeName("BOOL")] int* exists);
+        public delegate int _HasCharacter(IDWriteFont1* pThis, [NativeTypeName("UINT32")] uint unicodeValue, [NativeTypeName("BOOL *")] int* exists);
 
-        /// <summary>Creates a font face object for the font.</summary>
-        /// <param name="fontFace">Receives a pointer to the newly created font face object.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateFontFace(IDWriteFont1* This, IDWriteFontFace** fontFace);
+        public delegate int _CreateFontFace(IDWriteFont1* pThis, [NativeTypeName("IDWriteFontFace **")] IDWriteFontFace** fontFace);
 
-        /// <summary>Gets common metrics for the font in design units. These metrics are applicable to all the glyphs within a font, and are used by applications for layout calculations.</summary>
-        /// <param name="fontMetrics">Metrics public partial structure to fill in.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetMetrics1(IDWriteFont1* This, DWRITE_FONT_METRICS1* fontMetrics);
+        public delegate void _GetMetrics1(IDWriteFont1* pThis, [NativeTypeName("DWRITE_FONT_METRICS1 *")] DWRITE_FONT_METRICS1* fontMetrics);
 
-        /// <summary>Gets the PANOSE values from the font, used for font selection and matching.</summary>
-        /// <param name="panose">PANOSE public partial structure to fill in.</param>
-        /// <remarks> The function does not simulate these, such as substituting a weight or proportion inferred on other values. If the font does not specify them, they are all set to 'any' (0).</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetPanose(IDWriteFont1* This, DWRITE_PANOSE* panose);
+        public delegate void _GetPanose(IDWriteFont1* pThis, [NativeTypeName("DWRITE_PANOSE *")] DWRITE_PANOSE* panose);
 
-        /// <summary>Returns the list of character ranges supported by the font, which is useful for scenarios like character picking, glyph display, and efficient font selection lookup. This is similar to GDI's GetFontUnicodeRanges, except that it returns the full Unicode range, not just 16-bit UCS-2.</summary>
-        /// <param name="maxRangeCount">Maximum number of character ranges passed in from the client.</param>
-        /// <param name="unicodeRanges">Array of character ranges.</param>
-        /// <param name="actualRangeCount">Actual number of character ranges, regardless of the maximum count.</param>
-        /// <remarks> These ranges are from the cmap, not the OS/2::ulCodePageRange1.</remarks>
-        /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetUnicodeRanges(IDWriteFont1* This, [NativeTypeName("UINT32")] uint maxRangeCount, [Optional, NativeTypeName("DWRITE_UNICODE_RANGE[]")] DWRITE_UNICODE_RANGE* unicodeRanges, [NativeTypeName("UINT32")] uint* actualRangeCount);
+        public delegate int _GetUnicodeRanges(IDWriteFont1* pThis, [NativeTypeName("UINT32")] uint maxRangeCount, [NativeTypeName("DWRITE_UNICODE_RANGE *")] DWRITE_UNICODE_RANGE* unicodeRanges, [NativeTypeName("UINT32 *")] uint* actualRangeCount);
 
-        /// <summary>Returns true if the font is monospaced, meaning its characters are the same fixed-pitch width (non-proportional).</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public delegate int _IsMonospacedFont(IDWriteFont1* This);
+        public delegate int _IsMonospacedFont(IDWriteFont1* pThis);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            fixed (IDWriteFont1* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDWriteFont1*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            fixed (IDWriteFont1* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDWriteFont1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            fixed (IDWriteFont1* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDWriteFont1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFontFamily(IDWriteFontFamily** fontFamily)
+        public int GetFontFamily([NativeTypeName("IDWriteFontFamily **")] IDWriteFontFamily** fontFamily)
         {
-            fixed (IDWriteFont1* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontFamily>(lpVtbl->GetFontFamily)(This, fontFamily);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFontFamily>(lpVtbl->GetFontFamily)((IDWriteFont1*)Unsafe.AsPointer(ref this), fontFamily);
         }
 
         public DWRITE_FONT_WEIGHT GetWeight()
         {
-            fixed (IDWriteFont1* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetWeight>(lpVtbl->GetWeight)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetWeight>(lpVtbl->GetWeight)((IDWriteFont1*)Unsafe.AsPointer(ref this));
         }
 
         public DWRITE_FONT_STRETCH GetStretch()
         {
-            fixed (IDWriteFont1* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetStretch>(lpVtbl->GetStretch)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetStretch>(lpVtbl->GetStretch)((IDWriteFont1*)Unsafe.AsPointer(ref this));
         }
 
         public DWRITE_FONT_STYLE GetStyle()
         {
-            fixed (IDWriteFont1* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetStyle>(lpVtbl->GetStyle)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetStyle>(lpVtbl->GetStyle)((IDWriteFont1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("BOOL")]
         public int IsSymbolFont()
         {
-            fixed (IDWriteFont1* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_IsSymbolFont>(lpVtbl->IsSymbolFont)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_IsSymbolFont>(lpVtbl->IsSymbolFont)((IDWriteFont1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFaceNames(IDWriteLocalizedStrings** names)
+        public int GetFaceNames([NativeTypeName("IDWriteLocalizedStrings **")] IDWriteLocalizedStrings** names)
         {
-            fixed (IDWriteFont1* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFaceNames>(lpVtbl->GetFaceNames)(This, names);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFaceNames>(lpVtbl->GetFaceNames)((IDWriteFont1*)Unsafe.AsPointer(ref this), names);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetInformationalStrings(DWRITE_INFORMATIONAL_STRING_ID informationalStringID, IDWriteLocalizedStrings** informationalStrings, [NativeTypeName("BOOL")] int* exists)
+        public int GetInformationalStrings(DWRITE_INFORMATIONAL_STRING_ID informationalStringID, [NativeTypeName("IDWriteLocalizedStrings **")] IDWriteLocalizedStrings** informationalStrings, [NativeTypeName("BOOL *")] int* exists)
         {
-            fixed (IDWriteFont1* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetInformationalStrings>(lpVtbl->GetInformationalStrings)(This, informationalStringID, informationalStrings, exists);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetInformationalStrings>(lpVtbl->GetInformationalStrings)((IDWriteFont1*)Unsafe.AsPointer(ref this), informationalStringID, informationalStrings, exists);
         }
 
         public DWRITE_FONT_SIMULATIONS GetSimulations()
         {
-            fixed (IDWriteFont1* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetSimulations>(lpVtbl->GetSimulations)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetSimulations>(lpVtbl->GetSimulations)((IDWriteFont1*)Unsafe.AsPointer(ref this));
         }
 
-        public void GetMetrics(DWRITE_FONT_METRICS* fontMetrics)
+        public void GetMetrics([NativeTypeName("DWRITE_FONT_METRICS *")] DWRITE_FONT_METRICS* fontMetrics)
         {
-            fixed (IDWriteFont1* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_GetMetrics>(lpVtbl->GetMetrics)(This, fontMetrics);
-            }
+            Marshal.GetDelegateForFunctionPointer<_GetMetrics>(lpVtbl->GetMetrics)((IDWriteFont1*)Unsafe.AsPointer(ref this), fontMetrics);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int HasCharacter([NativeTypeName("UINT32")] uint unicodeValue, [NativeTypeName("BOOL")] int* exists)
+        public int HasCharacter([NativeTypeName("UINT32")] uint unicodeValue, [NativeTypeName("BOOL *")] int* exists)
         {
-            fixed (IDWriteFont1* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_HasCharacter>(lpVtbl->HasCharacter)(This, unicodeValue, exists);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_HasCharacter>(lpVtbl->HasCharacter)((IDWriteFont1*)Unsafe.AsPointer(ref this), unicodeValue, exists);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateFontFace(IDWriteFontFace** fontFace)
+        public int CreateFontFace([NativeTypeName("IDWriteFontFace **")] IDWriteFontFace** fontFace)
         {
-            fixed (IDWriteFont1* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_CreateFontFace>(lpVtbl->CreateFontFace)(This, fontFace);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_CreateFontFace>(lpVtbl->CreateFontFace)((IDWriteFont1*)Unsafe.AsPointer(ref this), fontFace);
         }
 
-        public void GetMetrics1(DWRITE_FONT_METRICS1* fontMetrics)
+        public void GetMetrics([NativeTypeName("DWRITE_FONT_METRICS1 *")] DWRITE_FONT_METRICS1* fontMetrics)
         {
-            fixed (IDWriteFont1* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_GetMetrics1>(lpVtbl->GetMetrics1)(This, fontMetrics);
-            }
+            Marshal.GetDelegateForFunctionPointer<_GetMetrics1>(lpVtbl->GetMetrics1)((IDWriteFont1*)Unsafe.AsPointer(ref this), fontMetrics);
         }
 
-        public void GetPanose(DWRITE_PANOSE* panose)
+        public void GetPanose([NativeTypeName("DWRITE_PANOSE *")] DWRITE_PANOSE* panose)
         {
-            fixed (IDWriteFont1* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_GetPanose>(lpVtbl->GetPanose)(This, panose);
-            }
+            Marshal.GetDelegateForFunctionPointer<_GetPanose>(lpVtbl->GetPanose)((IDWriteFont1*)Unsafe.AsPointer(ref this), panose);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetUnicodeRanges([NativeTypeName("UINT32")] uint maxRangeCount, [Optional, NativeTypeName("DWRITE_UNICODE_RANGE[]")] DWRITE_UNICODE_RANGE* unicodeRanges, [NativeTypeName("UINT32")] uint* actualRangeCount)
+        public int GetUnicodeRanges([NativeTypeName("UINT32")] uint maxRangeCount, [NativeTypeName("DWRITE_UNICODE_RANGE *")] DWRITE_UNICODE_RANGE* unicodeRanges, [NativeTypeName("UINT32 *")] uint* actualRangeCount)
         {
-            fixed (IDWriteFont1* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetUnicodeRanges>(lpVtbl->GetUnicodeRanges)(This, maxRangeCount, unicodeRanges, actualRangeCount);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetUnicodeRanges>(lpVtbl->GetUnicodeRanges)((IDWriteFont1*)Unsafe.AsPointer(ref this), maxRangeCount, unicodeRanges, actualRangeCount);
         }
 
         [return: NativeTypeName("BOOL")]
         public int IsMonospacedFont()
         {
-            fixed (IDWriteFont1* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_IsMonospacedFont>(lpVtbl->IsMonospacedFont)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_IsMonospacedFont>(lpVtbl->IsMonospacedFont)((IDWriteFont1*)Unsafe.AsPointer(ref this));
         }
 
         public partial struct Vtbl
         {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
             public IntPtr QueryInterface;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr AddRef;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr Release;
 
+            [NativeTypeName("HRESULT (IDWriteFontFamily **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFontFamily;
 
+            [NativeTypeName("DWRITE_FONT_WEIGHT () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetWeight;
 
+            [NativeTypeName("DWRITE_FONT_STRETCH () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetStretch;
 
+            [NativeTypeName("DWRITE_FONT_STYLE () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetStyle;
 
+            [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr IsSymbolFont;
 
+            [NativeTypeName("HRESULT (IDWriteLocalizedStrings **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFaceNames;
 
+            [NativeTypeName("HRESULT (DWRITE_INFORMATIONAL_STRING_ID, IDWriteLocalizedStrings **, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetInformationalStrings;
 
+            [NativeTypeName("DWRITE_FONT_SIMULATIONS () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetSimulations;
 
+            [NativeTypeName("void (DWRITE_FONT_METRICS *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetMetrics;
 
+            [NativeTypeName("HRESULT (UINT32, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr HasCharacter;
 
+            [NativeTypeName("HRESULT (IDWriteFontFace **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr CreateFontFace;
 
+            [NativeTypeName("void (DWRITE_FONT_METRICS1 *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetMetrics1;
 
+            [NativeTypeName("void (DWRITE_PANOSE *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetPanose;
 
+            [NativeTypeName("HRESULT (UINT32, DWRITE_UNICODE_RANGE *, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetUnicodeRanges;
 
+            [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr IsMonospacedFont;
         }
     }

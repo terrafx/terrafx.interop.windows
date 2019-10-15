@@ -1,14 +1,14 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\dwrite.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/dwrite.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    /// <summary>The font file enumerator interface encapsulates a collection of font files. The font system uses this interface to enumerate font files when building a font collection.</summary>
     [Guid("72755049-5FF7-435D-8348-4BE97CFA6C7C")]
     public unsafe partial struct IDWriteFontFileEnumerator
     {
@@ -16,85 +16,69 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDWriteFontFileEnumerator* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
+        public delegate int _QueryInterface(IDWriteFontFileEnumerator* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDWriteFontFileEnumerator* This);
+        public delegate uint _AddRef(IDWriteFontFileEnumerator* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDWriteFontFileEnumerator* This);
+        public delegate uint _Release(IDWriteFontFileEnumerator* pThis);
 
-        /// <summary>Advances to the next font file in the collection. When it is first created, the enumerator is positioned before the first element of the collection and the first call to MoveNext advances to the first file.</summary>
-        /// <param name="hasCurrentFile">Receives the value TRUE if the enumerator advances to a file, or FALSE if the enumerator advanced past the last file in the collection.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _MoveNext(IDWriteFontFileEnumerator* This, [NativeTypeName("BOOL")] int* hasCurrentFile);
+        public delegate int _MoveNext(IDWriteFontFileEnumerator* pThis, [NativeTypeName("BOOL *")] int* hasCurrentFile);
 
-        /// <summary>Gets a reference to the current font file.</summary>
-        /// <param name="fontFile">Pointer to the newly created font file object.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetCurrentFontFile(IDWriteFontFileEnumerator* This, IDWriteFontFile** fontFile);
+        public delegate int _GetCurrentFontFile(IDWriteFontFileEnumerator* pThis, [NativeTypeName("IDWriteFontFile **")] IDWriteFontFile** fontFile);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            fixed (IDWriteFontFileEnumerator* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDWriteFontFileEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            fixed (IDWriteFontFileEnumerator* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDWriteFontFileEnumerator*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            fixed (IDWriteFontFileEnumerator* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDWriteFontFileEnumerator*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int MoveNext([NativeTypeName("BOOL")] int* hasCurrentFile)
+        public int MoveNext([NativeTypeName("BOOL *")] int* hasCurrentFile)
         {
-            fixed (IDWriteFontFileEnumerator* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_MoveNext>(lpVtbl->MoveNext)(This, hasCurrentFile);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_MoveNext>(lpVtbl->MoveNext)((IDWriteFontFileEnumerator*)Unsafe.AsPointer(ref this), hasCurrentFile);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetCurrentFontFile(IDWriteFontFile** fontFile)
+        public int GetCurrentFontFile([NativeTypeName("IDWriteFontFile **")] IDWriteFontFile** fontFile)
         {
-            fixed (IDWriteFontFileEnumerator* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetCurrentFontFile>(lpVtbl->GetCurrentFontFile)(This, fontFile);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetCurrentFontFile>(lpVtbl->GetCurrentFontFile)((IDWriteFontFileEnumerator*)Unsafe.AsPointer(ref this), fontFile);
         }
 
         public partial struct Vtbl
         {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
             public IntPtr QueryInterface;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr AddRef;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr Release;
 
+            [NativeTypeName("HRESULT (BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr MoveNext;
 
+            [NativeTypeName("HRESULT (IDWriteFontFile **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetCurrentFontFile;
         }
     }

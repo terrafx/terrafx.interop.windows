@@ -1,14 +1,14 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\dwrite.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/dwrite.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    /// <summary>The interface that represents a reference to a font file.</summary>
     [Guid("739D886A-CEF5-47DC-8769-1A8B41BEBBB0")]
     public unsafe partial struct IDWriteFontFile
     {
@@ -16,108 +16,82 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDWriteFontFile* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
+        public delegate int _QueryInterface(IDWriteFontFile* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDWriteFontFile* This);
+        public delegate uint _AddRef(IDWriteFontFile* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDWriteFontFile* This);
+        public delegate uint _Release(IDWriteFontFile* pThis);
 
-        /// <summary>This method obtains the pointer to the reference key of a font file. The pointer is only valid until the object that refers to it is released.</summary>
-        /// <param name="fontFileReferenceKey">Pointer to the font file reference key. IMPORTANT: The pointer value is valid until the font file reference object it is obtained from is released.</param>
-        /// <param name="fontFileReferenceKeySize">Size of font file reference key in bytes.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetReferenceKey(IDWriteFontFile* This, void** fontFileReferenceKey, [NativeTypeName("UINT32")] uint* fontFileReferenceKeySize);
+        public delegate int _GetReferenceKey(IDWriteFontFile* pThis, [NativeTypeName("const void **")] void** fontFileReferenceKey, [NativeTypeName("UINT32 *")] uint* fontFileReferenceKeySize);
 
-        /// <summary>Obtains the file loader associated with a font file object.</summary>
-        /// <param name="fontFileLoader">The font file loader associated with the font file object.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLoader(IDWriteFontFile* This, IDWriteFontFileLoader** fontFileLoader);
+        public delegate int _GetLoader(IDWriteFontFile* pThis, [NativeTypeName("IDWriteFontFileLoader **")] IDWriteFontFileLoader** fontFileLoader);
 
-        /// <summary>Analyzes a file and returns whether it represents a font, and whether the font type is supported by the font system.</summary>
-        /// <param name="isSupportedFontType">TRUE if the font type is supported by the font system, FALSE otherwise.</param>
-        /// <param name="fontFileType">The type of the font file. Note that even if isSupportedFontType is FALSE, the fontFileType value may be different from DWRITE_FONT_FILE_TYPE_UNKNOWN.</param>
-        /// <param name="fontFaceType">The type of the font face that can be constructed from the font file. Note that even if isSupportedFontType is FALSE, the fontFaceType value may be different from DWRITE_FONT_FACE_TYPE_UNKNOWN.</param>
-        /// <param name="numberOfFaces">Number of font faces contained in the font file.</param>
-        /// <returns>Standard HRESULT error code if there was a processing error during analysis.</returns>
-        /// <remarks>IMPORTANT: certain font file types are recognized, but not supported by the font system. For example, the font system will recognize a file as a Type 1 font file, but will not be able to construct a font face object from it. In such situations, Analyze will set isSupportedFontType output parameter to FALSE.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Analyze(IDWriteFontFile* This, [NativeTypeName("BOOL")] int* isSupportedFontType, DWRITE_FONT_FILE_TYPE* fontFileType, [Optional] DWRITE_FONT_FACE_TYPE* fontFaceType, [NativeTypeName("UINT32")] uint* numberOfFaces);
+        public delegate int _Analyze(IDWriteFontFile* pThis, [NativeTypeName("BOOL *")] int* isSupportedFontType, [NativeTypeName("DWRITE_FONT_FILE_TYPE *")] DWRITE_FONT_FILE_TYPE* fontFileType, [NativeTypeName("DWRITE_FONT_FACE_TYPE *")] DWRITE_FONT_FACE_TYPE* fontFaceType, [NativeTypeName("UINT32 *")] uint* numberOfFaces);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            fixed (IDWriteFontFile* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDWriteFontFile*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            fixed (IDWriteFontFile* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDWriteFontFile*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            fixed (IDWriteFontFile* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDWriteFontFile*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetReferenceKey(void** fontFileReferenceKey, [NativeTypeName("UINT32")] uint* fontFileReferenceKeySize)
+        public int GetReferenceKey([NativeTypeName("const void **")] void** fontFileReferenceKey, [NativeTypeName("UINT32 *")] uint* fontFileReferenceKeySize)
         {
-            fixed (IDWriteFontFile* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetReferenceKey>(lpVtbl->GetReferenceKey)(This, fontFileReferenceKey, fontFileReferenceKeySize);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetReferenceKey>(lpVtbl->GetReferenceKey)((IDWriteFontFile*)Unsafe.AsPointer(ref this), fontFileReferenceKey, fontFileReferenceKeySize);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetLoader(IDWriteFontFileLoader** fontFileLoader)
+        public int GetLoader([NativeTypeName("IDWriteFontFileLoader **")] IDWriteFontFileLoader** fontFileLoader)
         {
-            fixed (IDWriteFontFile* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetLoader>(lpVtbl->GetLoader)(This, fontFileLoader);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetLoader>(lpVtbl->GetLoader)((IDWriteFontFile*)Unsafe.AsPointer(ref this), fontFileLoader);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Analyze([NativeTypeName("BOOL")] int* isSupportedFontType, DWRITE_FONT_FILE_TYPE* fontFileType, [Optional] DWRITE_FONT_FACE_TYPE* fontFaceType, [NativeTypeName("UINT32")] uint* numberOfFaces)
+        public int Analyze([NativeTypeName("BOOL *")] int* isSupportedFontType, [NativeTypeName("DWRITE_FONT_FILE_TYPE *")] DWRITE_FONT_FILE_TYPE* fontFileType, [NativeTypeName("DWRITE_FONT_FACE_TYPE *")] DWRITE_FONT_FACE_TYPE* fontFaceType, [NativeTypeName("UINT32 *")] uint* numberOfFaces)
         {
-            fixed (IDWriteFontFile* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Analyze>(lpVtbl->Analyze)(This, isSupportedFontType, fontFileType, fontFaceType, numberOfFaces);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_Analyze>(lpVtbl->Analyze)((IDWriteFontFile*)Unsafe.AsPointer(ref this), isSupportedFontType, fontFileType, fontFaceType, numberOfFaces);
         }
 
         public partial struct Vtbl
         {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
             public IntPtr QueryInterface;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr AddRef;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr Release;
 
+            [NativeTypeName("HRESULT (const void **, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetReferenceKey;
 
+            [NativeTypeName("HRESULT (IDWriteFontFileLoader **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetLoader;
 
+            [NativeTypeName("HRESULT (BOOL *, DWRITE_FONT_FILE_TYPE *, DWRITE_FONT_FACE_TYPE *, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr Analyze;
         }
     }
