@@ -1,14 +1,16 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\d2d1svg.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/d2d1svg.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.D2D1;
+using static TerraFX.Interop.D2D1_SVG_ATTRIBUTE_POD_TYPE;
 
 namespace TerraFX.Interop
 {
-    /// <summary>Interface for all SVG elements.</summary>
     [Guid("AC7B67A6-183E-49C1-A823-0EBE40B0DB29")]
     public unsafe partial struct ID2D1SvgElement
     {
@@ -16,557 +18,672 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ID2D1SvgElement* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
+        public delegate int _QueryInterface(ID2D1SvgElement* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ID2D1SvgElement* This);
+        public delegate uint _AddRef(ID2D1SvgElement* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ID2D1SvgElement* This);
+        public delegate uint _Release(ID2D1SvgElement* pThis);
 
-        /// <summary>Retrieve the factory associated with this resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetFactory(ID2D1SvgElement* This, ID2D1Factory** factory);
+        public delegate void _GetFactory(ID2D1SvgElement* pThis, [NativeTypeName("ID2D1Factory **")] ID2D1Factory** factory);
 
-        /// <summary>Gets the document that contains this element. Returns null if the element has been removed from the tree.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetDocument(ID2D1SvgElement* This, ID2D1SvgDocument** document);
+        public delegate void _GetDocument(ID2D1SvgElement* pThis, [NativeTypeName("ID2D1SvgDocument **")] ID2D1SvgDocument** document);
 
-        /// <summary>Gets the tag name.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetTagName(ID2D1SvgElement* This, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount);
+        public delegate int _GetTagName(ID2D1SvgElement* pThis, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount);
 
-        /// <summary>Gets the string length of the tag name. The returned string length does not include room for the null terminator.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public delegate uint _GetTagNameLength(ID2D1SvgElement* This);
+        public delegate uint _GetTagNameLength(ID2D1SvgElement* pThis);
 
-        /// <summary>Returns TRUE if this element represents text content, e.g. the content of a 'title' or 'desc' element. Text content does not have a tag name.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public delegate int _IsTextContent(ID2D1SvgElement* This);
+        public delegate int _IsTextContent(ID2D1SvgElement* pThis);
 
-        /// <summary>Gets the parent element.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetParent(ID2D1SvgElement* This, ID2D1SvgElement** parent);
+        public delegate void _GetParent(ID2D1SvgElement* pThis, [NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** parent);
 
-        /// <summary>Returns whether this element has children.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public delegate int _HasChildren(ID2D1SvgElement* This);
+        public delegate int _HasChildren(ID2D1SvgElement* pThis);
 
-        /// <summary>Gets the first child of this element.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetFirstChild(ID2D1SvgElement* This, ID2D1SvgElement** child);
+        public delegate void _GetFirstChild(ID2D1SvgElement* pThis, [NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** child);
 
-        /// <summary>Gets the last child of this element.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetLastChild(ID2D1SvgElement* This, ID2D1SvgElement** child);
+        public delegate void _GetLastChild(ID2D1SvgElement* pThis, [NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** child);
 
-        /// <summary>Gets the previous sibling of the referenceChild element.</summary>
-        /// <param name="referenceChild">The referenceChild must be an immediate child of this element.</param>
-        /// <param name="previousChild">The output previousChild element will be non-null if the referenceChild has a previous sibling. If the referenceChild is the first child, the output is null.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPreviousChild(ID2D1SvgElement* This, ID2D1SvgElement* referenceChild, ID2D1SvgElement** previousChild);
+        public delegate int _GetPreviousChild(ID2D1SvgElement* pThis, [NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* referenceChild, [NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** previousChild);
 
-        /// <summary>Gets the next sibling of the referenceChild element.</summary>
-        /// <param name="referenceChild">The referenceChild must be an immediate child of this element.</param>
-        /// <param name="nextChild">The output nextChild element will be non-null if the referenceChild has a next sibling. If the referenceChild is the last child, the output is null.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetNextChild(ID2D1SvgElement* This, ID2D1SvgElement* referenceChild, ID2D1SvgElement** nextChild);
+        public delegate int _GetNextChild(ID2D1SvgElement* pThis, [NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* referenceChild, [NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** nextChild);
 
-        /// <summary>Inserts newChild as a child of this element, before the referenceChild element. If the newChild element already has a parent, it is removed from this parent as part of the insertion. Returns an error if this element cannot accept children of the type of newChild. Returns an error if the newChild is an ancestor of this element.</summary>
-        /// <param name="newChild">The element to be inserted.</param>
-        /// <param name="referenceChild">The element that the child should be inserted before. If referenceChild is null, the newChild is placed as the last child. If referenceChild is non-null, it must be an immediate child of this element.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _InsertChildBefore(ID2D1SvgElement* This, ID2D1SvgElement* newChild, ID2D1SvgElement* referenceChild = null);
+        public delegate int _InsertChildBefore(ID2D1SvgElement* pThis, [NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* newChild, [NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* referenceChild);
 
-        /// <summary>Appends newChild to the list of children. If the newChild element already has a parent, it is removed from this parent as part of the append operation. Returns an error if this element cannot accept children of the type of newChild. Returns an error if the newChild is an ancestor of this element.</summary>
-        /// <param name="newChild">The element to be appended.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _AppendChild(ID2D1SvgElement* This, ID2D1SvgElement* newChild);
+        public delegate int _AppendChild(ID2D1SvgElement* pThis, [NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* newChild);
 
-        /// <summary>Replaces the oldChild element with the newChild. This operation removes the oldChild from the tree. If the newChild element already has a parent, it is removed from this parent as part of the replace operation. Returns an error if this element cannot accept children of the type of newChild. Returns an error if the newChild is an ancestor of this element.</summary>
-        /// <param name="newChild">The element to be inserted.</param>
-        /// <param name="oldChild">The child element to be replaced. The oldChild element must be an immediate child of this element.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _ReplaceChild(ID2D1SvgElement* This, ID2D1SvgElement* newChild, ID2D1SvgElement* oldChild);
+        public delegate int _ReplaceChild(ID2D1SvgElement* pThis, [NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* newChild, [NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* oldChild);
 
-        /// <summary>Removes the oldChild from the tree. Children of oldChild remain children of oldChild.</summary>
-        /// <param name="oldChild">The child element to be removed. The oldChild element must be an immediate child of this element.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _RemoveChild(ID2D1SvgElement* This, ID2D1SvgElement* oldChild);
+        public delegate int _RemoveChild(ID2D1SvgElement* pThis, [NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* oldChild);
 
-        /// <summary>Creates an element from a tag name. The element is appended to the list of children. Returns an error if this element cannot accept children of the specified type.</summary>
-        /// <param name="tagName">The tag name of the new child. A NULL tagName or an empty string is interpreted to be a text content element.</param>
-        /// <param name="newChild">The new child element.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateChild(ID2D1SvgElement* This, [Optional, NativeTypeName("PCWSTR")] ushort* tagName, ID2D1SvgElement** newChild);
+        public delegate int _CreateChild(ID2D1SvgElement* pThis, [NativeTypeName("PCWSTR")] ushort* tagName, [NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** newChild);
 
-        /// <summary>Returns true if the attribute is explicitly set on the element or if it is present within an inline style. Returns FALSE if the attribute is not a valid attribute on this element.</summary>
-        /// <param name="name">The name of the attribute.</param>
-        /// <param name="inherited">Outputs whether the attribute is set to the 'inherit' value.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public delegate int _IsAttributeSpecified(ID2D1SvgElement* This, [NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("BOOL")] int* inherited = null);
+        public delegate int _IsAttributeSpecified(ID2D1SvgElement* pThis, [NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("BOOL *")] int* inherited);
 
-        /// <summary>Returns the number of specified attributes on this element. Attributes are only considered specified if they are explicitly set on the element or present within an inline style. Properties that receive their value through CSS inheritance are not considered specified. An attribute can become specified if it is set through a method call. It can become unspecified if it is removed via RemoveAttribute.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public delegate uint _GetSpecifiedAttributeCount(ID2D1SvgElement* This);
+        public delegate uint _GetSpecifiedAttributeCount(ID2D1SvgElement* pThis);
 
-        /// <summary>Gets the name of the specified attribute at the given index.</summary>
-        /// <param name="index">The specified index of the attribute.</param>
-        /// <param name="name">Outputs the name of the attribute.</param>
-        /// <param name="inherited">Outputs whether the attribute is set to the 'inherit' value.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetSpecifiedAttributeName(ID2D1SvgElement* This, [NativeTypeName("UINT32")] uint index, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount, [NativeTypeName("BOOL")] int* inherited = null);
+        public delegate int _GetSpecifiedAttributeName(ID2D1SvgElement* pThis, [NativeTypeName("UINT32")] uint index, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount, [NativeTypeName("BOOL *")] int* inherited);
 
-        /// <summary>Gets the string length of the name of the specified attribute at the given index. The output string length does not include room for the null terminator.</summary>
-        /// <param name="index">The specified index of the attribute.</param>
-        /// <param name="nameLength">Outputs the string length of the name of the specified attribute.</param>
-        /// <param name="inherited">Outputs whether the attribute is set to the 'inherit' value.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetSpecifiedAttributeNameLength(ID2D1SvgElement* This, [NativeTypeName("UINT32")] uint index, [NativeTypeName("UINT32")] uint* nameLength, [NativeTypeName("BOOL")] int* inherited = null);
+        public delegate int _GetSpecifiedAttributeNameLength(ID2D1SvgElement* pThis, [NativeTypeName("UINT32")] uint index, [NativeTypeName("UINT32 *")] uint* nameLength, [NativeTypeName("BOOL *")] int* inherited);
 
-        /// <summary>Removes the attribute from this element. Also removes this attribute from within an inline style if present. Returns an error if the attribute name is not valid on this element.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _RemoveAttribute(ID2D1SvgElement* This, [NativeTypeName("PCWSTR")] ushort* name);
+        public delegate int _RemoveAttribute(ID2D1SvgElement* pThis, [NativeTypeName("PCWSTR")] ushort* name);
 
-        /// <summary>Sets the value of a text content element.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetTextValue(ID2D1SvgElement* This, [NativeTypeName("WCHAR[]")] ushort* name, [NativeTypeName("UINT32")] uint nameCount);
+        public delegate int _SetTextValue(ID2D1SvgElement* pThis, [NativeTypeName("const WCHAR *")] ushort* name, [NativeTypeName("UINT32")] uint nameCount);
 
-        /// <summary>Gets the value of a text content element.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetTextValue(ID2D1SvgElement* This, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount);
+        public delegate int _GetTextValue(ID2D1SvgElement* pThis, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount);
 
-        /// <summary>Gets the length of the text content value. The returned string length does not include room for the null terminator.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public delegate uint _GetTextValueLength(ID2D1SvgElement* This);
+        public delegate uint _GetTextValueLength(ID2D1SvgElement* pThis);
 
-        /// <summary>Sets an attribute of this element using a string. Returns an error if the attribute name is not valid on this element. Returns an error if the attribute cannot be expressed as the specified type.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetAttributeValue(ID2D1SvgElement* This, [NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("PCWSTR")] ushort* value);
+        public delegate int _SetAttributeValue(ID2D1SvgElement* pThis, [NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("PCWSTR")] ushort* value);
 
-        /// <summary>Gets an attribute of this element as a string. Returns an error if the attribute is not specified. Returns an error if the attribute name is not valid on this element. Returns an error if the attribute cannot be expressed as the specified string type.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetAttributeValue(ID2D1SvgElement* This, [NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("PWSTR")] ushort* value, [NativeTypeName("UINT32")] uint valueCount);
+        public delegate int _GetAttributeValue(ID2D1SvgElement* pThis, [NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("PWSTR")] ushort* value, [NativeTypeName("UINT32")] uint valueCount);
 
-        /// <summary>Gets the string length of an attribute of this element. The returned string length does not include room for the null terminator. Returns an error if the attribute is not specified. Returns an error if the attribute name is not valid on this element. Returns an error if the attribute cannot be expressed as the specified string type.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetAttributeValueLength(ID2D1SvgElement* This, [NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("UINT32")] uint* valueLength);
+        public delegate int _GetAttributeValueLength(ID2D1SvgElement* pThis, [NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("UINT32 *")] uint* valueLength);
 
-        /// <summary>Sets an attribute of this element using a POD type. Returns an error if the attribute name is not valid on this element. Returns an error if the attribute cannot be expressed as the specified type.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetAttributeValue1(ID2D1SvgElement* This, [NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, [NativeTypeName("UINT32")] uint valueSizeInBytes);
+        public delegate int _SetAttributeValue1(ID2D1SvgElement* pThis, [NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, [NativeTypeName("const void *")] void* value, [NativeTypeName("UINT32")] uint valueSizeInBytes);
 
-        /// <summary>Gets an attribute of this element as a POD type. Returns an error if the attribute is not specified. Returns an error if the attribute name is not valid on this element. Returns an error if the attribute cannot be expressed as the specified POD type.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetAttributeValue1(ID2D1SvgElement* This, [NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, [NativeTypeName("UINT32")] uint valueSizeInBytes);
+        public delegate int _GetAttributeValue1(ID2D1SvgElement* pThis, [NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, [NativeTypeName("void *")] void* value, [NativeTypeName("UINT32")] uint valueSizeInBytes);
 
-        /// <summary>Sets an attribute of this element using an interface. Returns an error if the attribute name is not valid on this element. Returns an error if the attribute cannot be expressed as the specified interface type. Returns an error if the attribute object is already set on an element. A given attribute object may only be set on one element in one attribute location at a time.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetAttributeValue2(ID2D1SvgElement* This, [NativeTypeName("PCWSTR")] ushort* name, ID2D1SvgAttribute* value);
+        public delegate int _SetAttributeValue2(ID2D1SvgElement* pThis, [NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("ID2D1SvgAttribute *")] ID2D1SvgAttribute* value);
 
-        /// <summary>Gets an attribute of this element as an interface type. Returns an error if the attribute is not specified. Returns an error if the attribute name is not valid on this element. Returns an error if the attribute cannot be expressed as the specified interface type.</summary>
-        /// <param name="riid">The interface ID of the attribute value.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetAttributeValue2(ID2D1SvgElement* This, [NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("REFIID")] Guid* riid, void** value);
+        public delegate int _GetAttributeValue2(ID2D1SvgElement* pThis, [NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** value);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
+        public int SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("FLOAT")] float value)
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
-            }
+            return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_FLOAT, &value, sizeof(float));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("FLOAT *")] float* value)
+        {
+            return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_FLOAT, value, unchecked((uint)sizeof(float)));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("const D2D1_COLOR_F &")] DXGI_RGBA* value)
+        {
+            return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_COLOR, &value, unchecked((uint)sizeof(DXGI_RGBA)));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("D2D1_COLOR_F *")] DXGI_RGBA* value)
+        {
+            return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_COLOR, value, unchecked((uint)sizeof(DXGI_RGBA)));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_FILL_MODE value)
+        {
+            return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_FILL_MODE, &value, sizeof(D2D1_FILL_MODE));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("D2D1_FILL_MODE *")] D2D1_FILL_MODE* value)
+        {
+            return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_FILL_MODE, value, sizeof(D2D1_FILL_MODE));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_DISPLAY value)
+        {
+            return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_DISPLAY, &value, sizeof(D2D1_SVG_DISPLAY));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("D2D1_SVG_DISPLAY *")] D2D1_SVG_DISPLAY* value)
+        {
+            return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_DISPLAY, value, sizeof(D2D1_SVG_DISPLAY));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_OVERFLOW value)
+        {
+            return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_OVERFLOW, &value, sizeof(D2D1_SVG_OVERFLOW));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("D2D1_SVG_OVERFLOW *")] D2D1_SVG_OVERFLOW* value)
+        {
+            return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_OVERFLOW, value, sizeof(D2D1_SVG_OVERFLOW));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_LINE_JOIN value)
+        {
+            return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_LINE_JOIN, &value, sizeof(D2D1_SVG_LINE_JOIN));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("D2D1_SVG_LINE_JOIN *")] D2D1_SVG_LINE_JOIN* value)
+        {
+            return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_LINE_JOIN, value, sizeof(D2D1_SVG_LINE_JOIN));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_LINE_CAP value)
+        {
+            return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_LINE_CAP, &value, sizeof(D2D1_SVG_LINE_CAP));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("D2D1_SVG_LINE_CAP *")] D2D1_SVG_LINE_CAP* value)
+        {
+            return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_LINE_CAP, value, sizeof(D2D1_SVG_LINE_CAP));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_VISIBILITY value)
+        {
+            return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_VISIBILITY, &value, sizeof(D2D1_SVG_VISIBILITY));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("D2D1_SVG_VISIBILITY *")] D2D1_SVG_VISIBILITY* value)
+        {
+            return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_VISIBILITY, value, sizeof(D2D1_SVG_VISIBILITY));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* value)
+        {
+            return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_MATRIX, value, unchecked((uint)sizeof(D2D_MATRIX_3X2_F)));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_UNIT_TYPE value)
+        {
+            return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_UNIT_TYPE, &value, sizeof(D2D1_SVG_UNIT_TYPE));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("D2D1_SVG_UNIT_TYPE *")] D2D1_SVG_UNIT_TYPE* value)
+        {
+            return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_UNIT_TYPE, value, sizeof(D2D1_SVG_UNIT_TYPE));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_EXTEND_MODE value)
+        {
+            return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_EXTEND_MODE, &value, sizeof(D2D1_EXTEND_MODE));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("D2D1_EXTEND_MODE *")] D2D1_EXTEND_MODE* value)
+        {
+            return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_EXTEND_MODE, value, sizeof(D2D1_EXTEND_MODE));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("D2D1_SVG_PRESERVE_ASPECT_RATIO *")] D2D1_SVG_PRESERVE_ASPECT_RATIO* value)
+        {
+            return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_PRESERVE_ASPECT_RATIO, value, unchecked((uint)sizeof(D2D1_SVG_PRESERVE_ASPECT_RATIO)));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("D2D1_SVG_LENGTH *")] D2D1_SVG_LENGTH* value)
+        {
+            return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_LENGTH, value, unchecked((uint)sizeof(D2D1_SVG_LENGTH)));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("ID2D1SvgAttribute **")] ID2D1SvgAttribute** value)
+        {
+            var iid = IID_ID2D1SvgAttribute;
+            return GetAttributeValue(name, &iid, (void**)value);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("ID2D1SvgPaint **")] ID2D1SvgPaint** value)
+        {
+            var iid = IID_ID2D1SvgPaint;
+            return GetAttributeValue(name, &iid, (void**)value);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("ID2D1SvgStrokeDashArray **")] ID2D1SvgStrokeDashArray** value)
+        {
+            var iid = IID_ID2D1SvgStrokeDashArray;
+            return GetAttributeValue(name, &iid, (void**)value);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("ID2D1SvgPointCollection **")] ID2D1SvgPointCollection** value)
+        {
+            var iid = IID_ID2D1SvgPointCollection;
+            return GetAttributeValue(name, &iid, (void**)value);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("ID2D1SvgPathData **")] ID2D1SvgPathData** value)
+        {
+            var iid = IID_ID2D1SvgPathData;
+            return GetAttributeValue(name, &iid, (void**)value);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ID2D1SvgElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ID2D1SvgElement*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ID2D1SvgElement*)Unsafe.AsPointer(ref this));
         }
 
-        public void GetFactory(ID2D1Factory** factory)
+        public void GetFactory([NativeTypeName("ID2D1Factory **")] ID2D1Factory** factory)
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(This, factory);
-            }
+            Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)((ID2D1SvgElement*)Unsafe.AsPointer(ref this), factory);
         }
 
-        public void GetDocument(ID2D1SvgDocument** document)
+        public void GetDocument([NativeTypeName("ID2D1SvgDocument **")] ID2D1SvgDocument** document)
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_GetDocument>(lpVtbl->GetDocument)(This, document);
-            }
+            Marshal.GetDelegateForFunctionPointer<_GetDocument>(lpVtbl->GetDocument)((ID2D1SvgElement*)Unsafe.AsPointer(ref this), document);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetTagName([NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount)
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetTagName>(lpVtbl->GetTagName)(This, name, nameCount);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetTagName>(lpVtbl->GetTagName)((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, nameCount);
         }
 
         [return: NativeTypeName("UINT32")]
         public uint GetTagNameLength()
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetTagNameLength>(lpVtbl->GetTagNameLength)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetTagNameLength>(lpVtbl->GetTagNameLength)((ID2D1SvgElement*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("BOOL")]
         public int IsTextContent()
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_IsTextContent>(lpVtbl->IsTextContent)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_IsTextContent>(lpVtbl->IsTextContent)((ID2D1SvgElement*)Unsafe.AsPointer(ref this));
         }
 
-        public void GetParent(ID2D1SvgElement** parent)
+        public void GetParent([NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** parent)
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_GetParent>(lpVtbl->GetParent)(This, parent);
-            }
+            Marshal.GetDelegateForFunctionPointer<_GetParent>(lpVtbl->GetParent)((ID2D1SvgElement*)Unsafe.AsPointer(ref this), parent);
         }
 
         [return: NativeTypeName("BOOL")]
         public int HasChildren()
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_HasChildren>(lpVtbl->HasChildren)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_HasChildren>(lpVtbl->HasChildren)((ID2D1SvgElement*)Unsafe.AsPointer(ref this));
         }
 
-        public void GetFirstChild(ID2D1SvgElement** child)
+        public void GetFirstChild([NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** child)
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_GetFirstChild>(lpVtbl->GetFirstChild)(This, child);
-            }
+            Marshal.GetDelegateForFunctionPointer<_GetFirstChild>(lpVtbl->GetFirstChild)((ID2D1SvgElement*)Unsafe.AsPointer(ref this), child);
         }
 
-        public void GetLastChild(ID2D1SvgElement** child)
+        public void GetLastChild([NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** child)
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_GetLastChild>(lpVtbl->GetLastChild)(This, child);
-            }
+            Marshal.GetDelegateForFunctionPointer<_GetLastChild>(lpVtbl->GetLastChild)((ID2D1SvgElement*)Unsafe.AsPointer(ref this), child);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetPreviousChild(ID2D1SvgElement* referenceChild, ID2D1SvgElement** previousChild)
+        public int GetPreviousChild([NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* referenceChild, [NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** previousChild)
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetPreviousChild>(lpVtbl->GetPreviousChild)(This, referenceChild, previousChild);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetPreviousChild>(lpVtbl->GetPreviousChild)((ID2D1SvgElement*)Unsafe.AsPointer(ref this), referenceChild, previousChild);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetNextChild(ID2D1SvgElement* referenceChild, ID2D1SvgElement** nextChild)
+        public int GetNextChild([NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* referenceChild, [NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** nextChild)
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetNextChild>(lpVtbl->GetNextChild)(This, referenceChild, nextChild);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetNextChild>(lpVtbl->GetNextChild)((ID2D1SvgElement*)Unsafe.AsPointer(ref this), referenceChild, nextChild);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int InsertChildBefore(ID2D1SvgElement* newChild, ID2D1SvgElement* referenceChild = null)
+        public int InsertChildBefore([NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* newChild, [NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* referenceChild)
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_InsertChildBefore>(lpVtbl->InsertChildBefore)(This, newChild, referenceChild);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_InsertChildBefore>(lpVtbl->InsertChildBefore)((ID2D1SvgElement*)Unsafe.AsPointer(ref this), newChild, referenceChild);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int AppendChild(ID2D1SvgElement* newChild)
+        public int AppendChild([NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* newChild)
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_AppendChild>(lpVtbl->AppendChild)(This, newChild);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_AppendChild>(lpVtbl->AppendChild)((ID2D1SvgElement*)Unsafe.AsPointer(ref this), newChild);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int ReplaceChild(ID2D1SvgElement* newChild, ID2D1SvgElement* oldChild)
+        public int ReplaceChild([NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* newChild, [NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* oldChild)
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_ReplaceChild>(lpVtbl->ReplaceChild)(This, newChild, oldChild);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_ReplaceChild>(lpVtbl->ReplaceChild)((ID2D1SvgElement*)Unsafe.AsPointer(ref this), newChild, oldChild);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int RemoveChild(ID2D1SvgElement* oldChild)
+        public int RemoveChild([NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* oldChild)
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_RemoveChild>(lpVtbl->RemoveChild)(This, oldChild);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_RemoveChild>(lpVtbl->RemoveChild)((ID2D1SvgElement*)Unsafe.AsPointer(ref this), oldChild);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateChild([Optional, NativeTypeName("PCWSTR")] ushort* tagName, ID2D1SvgElement** newChild)
+        public int CreateChild([NativeTypeName("PCWSTR")] ushort* tagName, [NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** newChild)
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_CreateChild>(lpVtbl->CreateChild)(This, tagName, newChild);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_CreateChild>(lpVtbl->CreateChild)((ID2D1SvgElement*)Unsafe.AsPointer(ref this), tagName, newChild);
         }
 
         [return: NativeTypeName("BOOL")]
-        public int IsAttributeSpecified([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("BOOL")] int* inherited = null)
+        public int IsAttributeSpecified([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("BOOL *")] int* inherited)
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_IsAttributeSpecified>(lpVtbl->IsAttributeSpecified)(This, name, inherited);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_IsAttributeSpecified>(lpVtbl->IsAttributeSpecified)((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, inherited);
         }
 
         [return: NativeTypeName("UINT32")]
         public uint GetSpecifiedAttributeCount()
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetSpecifiedAttributeCount>(lpVtbl->GetSpecifiedAttributeCount)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetSpecifiedAttributeCount>(lpVtbl->GetSpecifiedAttributeCount)((ID2D1SvgElement*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetSpecifiedAttributeName([NativeTypeName("UINT32")] uint index, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount, [NativeTypeName("BOOL")] int* inherited = null)
+        public int GetSpecifiedAttributeName([NativeTypeName("UINT32")] uint index, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount, [NativeTypeName("BOOL *")] int* inherited)
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetSpecifiedAttributeName>(lpVtbl->GetSpecifiedAttributeName)(This, index, name, nameCount, inherited);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetSpecifiedAttributeName>(lpVtbl->GetSpecifiedAttributeName)((ID2D1SvgElement*)Unsafe.AsPointer(ref this), index, name, nameCount, inherited);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetSpecifiedAttributeNameLength([NativeTypeName("UINT32")] uint index, [NativeTypeName("UINT32")] uint* nameLength, [NativeTypeName("BOOL")] int* inherited = null)
+        public int GetSpecifiedAttributeNameLength([NativeTypeName("UINT32")] uint index, [NativeTypeName("UINT32 *")] uint* nameLength, [NativeTypeName("BOOL *")] int* inherited)
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetSpecifiedAttributeNameLength>(lpVtbl->GetSpecifiedAttributeNameLength)(This, index, nameLength, inherited);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetSpecifiedAttributeNameLength>(lpVtbl->GetSpecifiedAttributeNameLength)((ID2D1SvgElement*)Unsafe.AsPointer(ref this), index, nameLength, inherited);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int RemoveAttribute([NativeTypeName("PCWSTR")] ushort* name)
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_RemoveAttribute>(lpVtbl->RemoveAttribute)(This, name);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_RemoveAttribute>(lpVtbl->RemoveAttribute)((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetTextValue([NativeTypeName("WCHAR[]")] ushort* name, [NativeTypeName("UINT32")] uint nameCount)
+        public int SetTextValue([NativeTypeName("const WCHAR *")] ushort* name, [NativeTypeName("UINT32")] uint nameCount)
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetTextValue>(lpVtbl->SetTextValue)(This, name, nameCount);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetTextValue>(lpVtbl->SetTextValue)((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, nameCount);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetTextValue([NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount)
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetTextValue>(lpVtbl->GetTextValue)(This, name, nameCount);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetTextValue>(lpVtbl->GetTextValue)((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, nameCount);
         }
 
         [return: NativeTypeName("UINT32")]
         public uint GetTextValueLength()
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetTextValueLength>(lpVtbl->GetTextValueLength)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetTextValueLength>(lpVtbl->GetTextValueLength)((ID2D1SvgElement*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("PCWSTR")] ushort* value)
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetAttributeValue>(lpVtbl->SetAttributeValue)(This, name, type, value);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetAttributeValue>(lpVtbl->SetAttributeValue)((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, type, value);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("PWSTR")] ushort* value, [NativeTypeName("UINT32")] uint valueCount)
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetAttributeValue>(lpVtbl->GetAttributeValue)(This, name, type, value, valueCount);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetAttributeValue>(lpVtbl->GetAttributeValue)((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, type, value, valueCount);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetAttributeValueLength([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("UINT32")] uint* valueLength)
+        public int GetAttributeValueLength([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("UINT32 *")] uint* valueLength)
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetAttributeValueLength>(lpVtbl->GetAttributeValueLength)(This, name, type, valueLength);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetAttributeValueLength>(lpVtbl->GetAttributeValueLength)((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, type, valueLength);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetAttributeValue1([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, [NativeTypeName("UINT32")] uint valueSizeInBytes)
+        public int SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, [NativeTypeName("const void *")] void* value, [NativeTypeName("UINT32")] uint valueSizeInBytes)
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetAttributeValue1>(lpVtbl->SetAttributeValue1)(This, name, type, value, valueSizeInBytes);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetAttributeValue1>(lpVtbl->SetAttributeValue1)((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, type, value, valueSizeInBytes);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetAttributeValue1([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, [NativeTypeName("UINT32")] uint valueSizeInBytes)
+        public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, [NativeTypeName("void *")] void* value, [NativeTypeName("UINT32")] uint valueSizeInBytes)
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetAttributeValue1>(lpVtbl->GetAttributeValue1)(This, name, type, value, valueSizeInBytes);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetAttributeValue1>(lpVtbl->GetAttributeValue1)((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, type, value, valueSizeInBytes);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetAttributeValue2([NativeTypeName("PCWSTR")] ushort* name, ID2D1SvgAttribute* value)
+        public int SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("ID2D1SvgAttribute *")] ID2D1SvgAttribute* value)
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetAttributeValue2>(lpVtbl->SetAttributeValue2)(This, name, value);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetAttributeValue2>(lpVtbl->SetAttributeValue2)((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, value);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetAttributeValue2([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("REFIID")] Guid* riid, void** value)
+        public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** value)
         {
-            fixed (ID2D1SvgElement* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetAttributeValue2>(lpVtbl->GetAttributeValue2)(This, name, riid, value);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetAttributeValue2>(lpVtbl->GetAttributeValue2)((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, riid, value);
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         public partial struct Vtbl
         {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
             public IntPtr QueryInterface;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr AddRef;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr Release;
 
+            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFactory;
 
+            [NativeTypeName("void (ID2D1SvgDocument **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetDocument;
 
+            [NativeTypeName("HRESULT (PWSTR, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetTagName;
 
+            [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetTagNameLength;
 
+            [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr IsTextContent;
 
+            [NativeTypeName("void (ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetParent;
 
+            [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr HasChildren;
 
+            [NativeTypeName("void (ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFirstChild;
 
+            [NativeTypeName("void (ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetLastChild;
 
+            [NativeTypeName("HRESULT (ID2D1SvgElement *, ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetPreviousChild;
 
+            [NativeTypeName("HRESULT (ID2D1SvgElement *, ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetNextChild;
 
+            [NativeTypeName("HRESULT (ID2D1SvgElement *, ID2D1SvgElement *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr InsertChildBefore;
 
+            [NativeTypeName("HRESULT (ID2D1SvgElement *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr AppendChild;
 
+            [NativeTypeName("HRESULT (ID2D1SvgElement *, ID2D1SvgElement *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr ReplaceChild;
 
+            [NativeTypeName("HRESULT (ID2D1SvgElement *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr RemoveChild;
 
+            [NativeTypeName("HRESULT (PCWSTR, ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr CreateChild;
 
+            [NativeTypeName("BOOL (PCWSTR, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr IsAttributeSpecified;
 
+            [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetSpecifiedAttributeCount;
 
+            [NativeTypeName("HRESULT (UINT32, PWSTR, UINT32, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetSpecifiedAttributeName;
 
+            [NativeTypeName("HRESULT (UINT32, UINT32 *, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetSpecifiedAttributeNameLength;
 
+            [NativeTypeName("HRESULT (PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr RemoveAttribute;
 
+            [NativeTypeName("HRESULT (const WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetTextValue;
 
+            [NativeTypeName("HRESULT (PWSTR, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetTextValue;
 
+            [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetTextValueLength;
 
+            [NativeTypeName("HRESULT (PCWSTR, D2D1_SVG_ATTRIBUTE_STRING_TYPE, PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetAttributeValue;
 
+            [NativeTypeName("HRESULT (PCWSTR, D2D1_SVG_ATTRIBUTE_STRING_TYPE, PWSTR, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetAttributeValue;
 
+            [NativeTypeName("HRESULT (PCWSTR, D2D1_SVG_ATTRIBUTE_STRING_TYPE, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetAttributeValueLength;
 
+            [NativeTypeName("HRESULT (PCWSTR, D2D1_SVG_ATTRIBUTE_POD_TYPE, const void *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetAttributeValue1;
 
+            [NativeTypeName("HRESULT (PCWSTR, D2D1_SVG_ATTRIBUTE_POD_TYPE, void *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetAttributeValue1;
 
+            [NativeTypeName("HRESULT (PCWSTR, ID2D1SvgAttribute *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetAttributeValue2;
 
+            [NativeTypeName("HRESULT (PCWSTR, const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetAttributeValue2;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
     }
 }

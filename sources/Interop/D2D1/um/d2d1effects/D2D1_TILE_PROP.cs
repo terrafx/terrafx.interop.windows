@@ -3,9 +3,9 @@
 // Ported from um/d2d1effects.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop : uint
+namespace TerraFX.Interop
 {
-    public enum D2D1_TILE_PROP
+    public enum D2D1_TILE_PROP : uint
     {
         D2D1_TILE_PROP_RECT = 0,
         D2D1_TILE_PROP_FORCE_DWORD = 0xFFFFFFFF,
