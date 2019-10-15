@@ -272,7 +272,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 }
 
                 // Create an event handle to use for frame synchronization.
-                _fenceEvent = CreateEvent(null, FALSE, FALSE, null);
+                _fenceEvent = CreateEventW(null, FALSE, FALSE, null);
                 if (_fenceEvent == IntPtr.Zero)
                 {
                     var hr = Marshal.GetHRForLastWin32Error();
