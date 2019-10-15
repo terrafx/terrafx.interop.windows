@@ -3,15 +3,12 @@
 // Ported from shared/dxgi1_6.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
-    [Flags]
-    public enum DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS
+    public enum DXGI_GPU_PREFERENCE
     {
-        DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAG_FULLSCREEN = 1,
-        DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAG_WINDOWED = 2,
-        DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAG_CURSOR_STRETCHED = 4,
+        DXGI_GPU_PREFERENCE_UNSPECIFIED = 0,
+        DXGI_GPU_PREFERENCE_MINIMUM_POWER = (DXGI_GPU_PREFERENCE_UNSPECIFIED + 1),
+        DXGI_GPU_PREFERENCE_HIGH_PERFORMANCE = (DXGI_GPU_PREFERENCE_MINIMUM_POWER + 1),
     }
 }

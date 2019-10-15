@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared\dxgi1_2.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from shared\dxgi1_2.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -13,9 +13,9 @@ namespace TerraFX.Interop
 
         public const uint DXGI_ENUM_MODES_DISABLED_STEREO = 8;
 
-        public const int DXGI_SHARED_RESOURCE_READ = unchecked((int)0x80000000);
+        public const uint DXGI_SHARED_RESOURCE_READ = 0x80000000;
 
-        public const int DXGI_SHARED_RESOURCE_WRITE = 1;
+        public const uint DXGI_SHARED_RESOURCE_WRITE = 1;
 
         public static readonly Guid IID_IDXGIDisplayControl = new Guid(0xEA9DBF1A, 0xC88E, 0x4486, 0x85, 0x4A, 0x98, 0xAA, 0x01, 0x38, 0xF3, 0x0C);
 
