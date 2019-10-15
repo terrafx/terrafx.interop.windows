@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\d2d1effects_2.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/d2d1effects_2.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -50,5 +50,9 @@ namespace TerraFX.Interop
         public static readonly Guid CLSID_D2D1CrossFade = new Guid(0x12F575E8, 0x4DB1, 0x485F, 0x9A, 0x84, 0x03, 0xA0, 0x7D, 0xD3, 0x82, 0x9F);
 
         public static readonly Guid CLSID_D2D1Tint = new Guid(0x36312B17, 0xF7DD, 0x4014, 0x91, 0x5D, 0xFF, 0xCA, 0x76, 0x8C, 0xF2, 0x11);
+
+        public static readonly Guid CLSID_D2D1WhiteLevelAdjustment = new Guid(0x44A1CADB, 0x6CDD, 0x4818, 0x8F, 0xF4, 0x26, 0xC1, 0xCF, 0xE9, 0x5B, 0xDB);
+
+        public static readonly Guid CLSID_D2D1HdrToneMap = new Guid(0x7B0B748D, 0x4610, 0x4486, 0xA9, 0x0C, 0x99, 0x9D, 0x9A, 0x2E, 0x2B, 0x11);
     }
 }
