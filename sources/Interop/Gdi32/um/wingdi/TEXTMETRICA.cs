@@ -1,11 +1,11 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\wingdi.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop
 {
-    public partial struct NEWTEXTMETRIC
+    public partial struct TEXTMETRICA
     {
         [NativeTypeName("LONG")]
         public int tmHeight;
@@ -40,17 +40,17 @@ namespace TerraFX.Interop
         [NativeTypeName("LONG")]
         public int tmDigitizedAspectY;
 
-        [NativeTypeName("WCHAR")]
-        public ushort tmFirstChar;
+        [NativeTypeName("BYTE")]
+        public byte tmFirstChar;
 
-        [NativeTypeName("WCHAR")]
-        public ushort tmLastChar;
+        [NativeTypeName("BYTE")]
+        public byte tmLastChar;
 
-        [NativeTypeName("WCHAR")]
-        public ushort tmDefaultChar;
+        [NativeTypeName("BYTE")]
+        public byte tmDefaultChar;
 
-        [NativeTypeName("WCHAR")]
-        public ushort tmBreakChar;
+        [NativeTypeName("BYTE")]
+        public byte tmBreakChar;
 
         [NativeTypeName("BYTE")]
         public byte tmItalic;
@@ -66,17 +66,5 @@ namespace TerraFX.Interop
 
         [NativeTypeName("BYTE")]
         public byte tmCharSet;
-
-        [NativeTypeName("DWORD")]
-        public uint ntmFlags;
-
-        [NativeTypeName("UINT")]
-        public uint ntmSizeEM;
-
-        [NativeTypeName("UINT")]
-        public uint ntmCellHeight;
-
-        [NativeTypeName("UINT")]
-        public uint ntmAvgWidth;
     }
 }

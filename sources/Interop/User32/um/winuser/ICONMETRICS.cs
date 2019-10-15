@@ -16,7 +16,6 @@ namespace TerraFX.Interop
 
         public int iTitleWrap;
 
-        [NativeTypeName("LOGFONTW")]
-        public LOGFONT lfFont;
+        public LOGFONTW lfFont;
     }
 }

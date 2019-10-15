@@ -49,11 +49,11 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateDesktopW", ExactSpelling = true)]
         [return: NativeTypeName("HDESK")]
-        public static extern IntPtr CreateDesktop([NativeTypeName("LPCWSTR")] ushort* lpszDesktop, [NativeTypeName("LPCWSTR")] ushort* lpszDevice, [NativeTypeName("DEVMODEW *")] DEVMODE* pDevmode, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ACCESS_MASK")] uint dwDesiredAccess, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpsa);
+        public static extern IntPtr CreateDesktop([NativeTypeName("LPCWSTR")] ushort* lpszDesktop, [NativeTypeName("LPCWSTR")] ushort* lpszDevice, [NativeTypeName("DEVMODEW *")] DEVMODEW* pDevmode, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ACCESS_MASK")] uint dwDesiredAccess, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpsa);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateDesktopExW", ExactSpelling = true)]
         [return: NativeTypeName("HDESK")]
-        public static extern IntPtr CreateDesktopEx([NativeTypeName("LPCWSTR")] ushort* lpszDesktop, [NativeTypeName("LPCWSTR")] ushort* lpszDevice, [NativeTypeName("DEVMODEW *")] DEVMODE* pDevmode, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ACCESS_MASK")] uint dwDesiredAccess, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpsa, [NativeTypeName("ULONG")] uint ulHeapSize, [NativeTypeName("PVOID")] void* pvoid);
+        public static extern IntPtr CreateDesktopEx([NativeTypeName("LPCWSTR")] ushort* lpszDesktop, [NativeTypeName("LPCWSTR")] ushort* lpszDevice, [NativeTypeName("DEVMODEW *")] DEVMODEW* pDevmode, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ACCESS_MASK")] uint dwDesiredAccess, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpsa, [NativeTypeName("ULONG")] uint ulHeapSize, [NativeTypeName("PVOID")] void* pvoid);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "OpenDesktopW", ExactSpelling = true)]
         [return: NativeTypeName("HDESK")]
@@ -1858,23 +1858,23 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "ChangeDisplaySettingsW", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int ChangeDisplaySettings([NativeTypeName("DEVMODEW *")] DEVMODE* lpDevMode, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern int ChangeDisplaySettings([NativeTypeName("DEVMODEW *")] DEVMODEW* lpDevMode, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "ChangeDisplaySettingsExW", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int ChangeDisplaySettingsEx([NativeTypeName("LPCWSTR")] ushort* lpszDeviceName, [NativeTypeName("DEVMODEW *")] DEVMODE* lpDevMode, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWORD")] uint dwflags, [NativeTypeName("LPVOID")] void* lParam);
+        public static extern int ChangeDisplaySettingsEx([NativeTypeName("LPCWSTR")] ushort* lpszDeviceName, [NativeTypeName("DEVMODEW *")] DEVMODEW* lpDevMode, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("DWORD")] uint dwflags, [NativeTypeName("LPVOID")] void* lParam);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "EnumDisplaySettingsW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumDisplaySettings([NativeTypeName("LPCWSTR")] ushort* lpszDeviceName, [NativeTypeName("DWORD")] uint iModeNum, [NativeTypeName("DEVMODEW *")] DEVMODE* lpDevMode);
+        public static extern int EnumDisplaySettings([NativeTypeName("LPCWSTR")] ushort* lpszDeviceName, [NativeTypeName("DWORD")] uint iModeNum, [NativeTypeName("DEVMODEW *")] DEVMODEW* lpDevMode);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "EnumDisplaySettingsExW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumDisplaySettingsEx([NativeTypeName("LPCWSTR")] ushort* lpszDeviceName, [NativeTypeName("DWORD")] uint iModeNum, [NativeTypeName("DEVMODEW *")] DEVMODE* lpDevMode, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern int EnumDisplaySettingsEx([NativeTypeName("LPCWSTR")] ushort* lpszDeviceName, [NativeTypeName("DWORD")] uint iModeNum, [NativeTypeName("DEVMODEW *")] DEVMODEW* lpDevMode, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "EnumDisplayDevicesW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumDisplayDevices([NativeTypeName("LPCWSTR")] ushort* lpDevice, [NativeTypeName("DWORD")] uint iDevNum, [NativeTypeName("PDISPLAY_DEVICEW")] DISPLAY_DEVICE* lpDisplayDevice, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern int EnumDisplayDevices([NativeTypeName("LPCWSTR")] ushort* lpDevice, [NativeTypeName("DWORD")] uint iDevNum, [NativeTypeName("PDISPLAY_DEVICEW")] DISPLAY_DEVICEW* lpDisplayDevice, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetDisplayConfigBufferSizes", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]

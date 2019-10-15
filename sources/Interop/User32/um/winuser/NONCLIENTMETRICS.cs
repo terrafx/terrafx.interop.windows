@@ -20,28 +20,23 @@ namespace TerraFX.Interop
 
         public int iCaptionHeight;
 
-        [NativeTypeName("LOGFONTW")]
-        public LOGFONT lfCaptionFont;
+        public LOGFONTW lfCaptionFont;
 
         public int iSmCaptionWidth;
 
         public int iSmCaptionHeight;
 
-        [NativeTypeName("LOGFONTW")]
-        public LOGFONT lfSmCaptionFont;
+        public LOGFONTW lfSmCaptionFont;
 
         public int iMenuWidth;
 
         public int iMenuHeight;
 
-        [NativeTypeName("LOGFONTW")]
-        public LOGFONT lfMenuFont;
+        public LOGFONTW lfMenuFont;
 
-        [NativeTypeName("LOGFONTW")]
-        public LOGFONT lfStatusFont;
+        public LOGFONTW lfStatusFont;
 
-        [NativeTypeName("LOGFONTW")]
-        public LOGFONT lfMessageFont;
+        public LOGFONTW lfMessageFont;
 
         public int iPaddedBorderWidth;
     }

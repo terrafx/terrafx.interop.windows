@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\wingdi.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -14,7 +14,7 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT32")]
         public uint id;
 
-        [NativeTypeName("struct (anonymous struct at um/wingdi.h:2973:9)")]
+        [NativeTypeName("DISPLAYCONFIG_PATH_TARGET_INFO::(anonymous union at um/wingdi.h:2973:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY outputTechnology;
@@ -41,14 +41,14 @@ namespace TerraFX.Interop
             public uint modeInfoIdx;
 
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at um/wingdi.h:2953:9)")]
+            [NativeTypeName("DISPLAYCONFIG_PATH_TARGET_INFO::(anonymous struct at um/wingdi.h:2976:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             public partial struct _Anonymous_e__Struct
             {
                 internal uint _bitfield;
 
-                [NativeTypeName("UINT32")]
+                [NativeTypeName("UINT32 : 16")]
                 public uint desktopModeInfoIdx
                 {
                     get
@@ -62,7 +62,7 @@ namespace TerraFX.Interop
                     }
                 }
 
-                [NativeTypeName("UINT32")]
+                [NativeTypeName("UINT32 : 16")]
                 public uint targetModeInfoIdx
                 {
                     get

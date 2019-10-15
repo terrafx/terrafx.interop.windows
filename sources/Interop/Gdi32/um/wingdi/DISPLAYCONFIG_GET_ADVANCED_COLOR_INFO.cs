@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\wingdi.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -11,7 +11,7 @@ namespace TerraFX.Interop
     {
         public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 
-        [NativeTypeName("struct (anonymous struct at um/wingdi.h:3156:5)")]
+        [NativeTypeName("DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO::(anonymous union at um/wingdi.h:3159:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public DISPLAYCONFIG_COLOR_ENCODING colorEncoding;
@@ -23,7 +23,7 @@ namespace TerraFX.Interop
         public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at um/wingdi.h:3158:9)")]
+            [NativeTypeName("DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO::(anonymous struct at um/wingdi.h:3161:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             [FieldOffset(0)]
@@ -34,7 +34,7 @@ namespace TerraFX.Interop
             {
                 internal uint _bitfield;
 
-                [NativeTypeName("UINT32")]
+                [NativeTypeName("UINT32 : 1")]
                 public uint advancedColorSupported
                 {
                     get
@@ -48,7 +48,7 @@ namespace TerraFX.Interop
                     }
                 }
 
-                [NativeTypeName("UINT32")]
+                [NativeTypeName("UINT32 : 1")]
                 public uint advancedColorEnabled
                 {
                     get
@@ -62,17 +62,45 @@ namespace TerraFX.Interop
                     }
                 }
 
-                [NativeTypeName("UINT32")]
-                public uint reserved
+                [NativeTypeName("UINT32 : 1")]
+                public uint wideColorEnforced
                 {
                     get
                     {
-                        return (_bitfield >> 2) & 0x3FFFFFFF;
+                        return (_bitfield >> 2) & 0x1;
                     }
 
                     set
                     {
-                        _bitfield = (_bitfield & ~(0x3FFFFFFFu << 2)) | ((value & 0x3FFFFFFF) << 2);
+                        _bitfield = (_bitfield & ~(0x1u << 2)) | ((value & 0x1) << 2);
+                    }
+                }
+
+                [NativeTypeName("UINT32 : 1")]
+                public uint advancedColorForceDisabled
+                {
+                    get
+                    {
+                        return (_bitfield >> 3) & 0x1;
+                    }
+
+                    set
+                    {
+                        _bitfield = (_bitfield & ~(0x1u << 3)) | ((value & 0x1) << 3);
+                    }
+                }
+
+                [NativeTypeName("UINT32 : 28")]
+                public uint reserved
+                {
+                    get
+                    {
+                        return (_bitfield >> 4) & 0xFFFFFFF;
+                    }
+
+                    set
+                    {
+                        _bitfield = (_bitfield & ~(0xFFFFFFFu << 4)) | ((value & 0xFFFFFFF) << 4);
                     }
                 }
             }

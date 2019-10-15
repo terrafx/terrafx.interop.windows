@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\wingdi.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -11,14 +11,14 @@ namespace TerraFX.Interop
     {
         public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 
-        [NativeTypeName("struct (anonymous struct at um/wingdi.h:3175:5)")]
+        [NativeTypeName("DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE::(anonymous union at um/wingdi.h:3180:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at um/wingdi.h:3177:9)")]
+            [NativeTypeName("DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE::(anonymous struct at um/wingdi.h:3182:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             [FieldOffset(0)]
@@ -27,9 +27,9 @@ namespace TerraFX.Interop
 
             public partial struct _Anonymous_e__Struct
             {
-                private uint _bitfield;
+                internal uint _bitfield;
 
-                [NativeTypeName("UINT32")]
+                [NativeTypeName("UINT32 : 1")]
                 public uint enableAdvancedColor
                 {
                     get
@@ -43,7 +43,7 @@ namespace TerraFX.Interop
                     }
                 }
 
-                [NativeTypeName("UINT32")]
+                [NativeTypeName("UINT32 : 31")]
                 public uint reserved
                 {
                     get

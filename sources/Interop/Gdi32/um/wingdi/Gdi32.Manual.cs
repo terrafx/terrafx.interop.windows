@@ -1,9 +1,8 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\wingdi.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 using static TerraFX.Interop.Windows;
 
@@ -679,13 +678,10 @@ namespace TerraFX.Interop
 
         public const int CS_DELETE_TRANSFORM = 0x00000003;
 
-        // 'PSOC'
         public const int LCS_SIGNATURE = 0x50534F43;
 
-        // 'sRGB'
         public const int LCS_sRGB = 0x73524742;
 
-        // 'Win '
         public const int LCS_WINDOWS_COLOR_SPACE = 0x57696E20;
 
         public const int LCS_CALIBRATED_RGB = 0x00000000;
@@ -716,10 +712,8 @@ namespace TerraFX.Interop
 
         public const int ICM_QUERYMATCH = 7;
 
-        // 'LINK'
         public const int PROFILE_LINKED = 0x4C494E4B;
 
-        // 'MBED'
         public const int PROFILE_EMBEDDED = 0x4D424544;
 
         public const int BI_RGB = 0;
@@ -2440,10 +2434,15 @@ namespace TerraFX.Interop
 
         public const int GGI_MARK_NONEXISTING_GLYPHS = 0X0001;
 
-        // STAMP_DESIGNVECTOR  (0x8000000 + 'd' + ('v' << 8))
-        // STAMP_AXESLIST      (0x8000000 + 'a' + ('l' << 8))
-        // STAMP_TRUETYPE_VARIATION (0x8000000 + 't' + ('v' << 8))
-        // MM_MAX_NUMAXES      16
+        public const int STAMP_DESIGNVECTOR = 0x8000000 + 'd' + ('v' << 8);
+
+        public const int STAMP_AXESLIST = 0x8000000 + 'a' + ('l' << 8);
+
+        public const int STAMP_TRUETYPE_VARIATION = 0x8000000 + 't' + ('v' << 8);
+
+        public const int STAMP_CFF2 = 0x8000000 + 'c' + ('v' << 8);
+
+        public const int MM_MAX_NUMAXES = 16;
 
         public const int FR_PRIVATE = 0x10;
 

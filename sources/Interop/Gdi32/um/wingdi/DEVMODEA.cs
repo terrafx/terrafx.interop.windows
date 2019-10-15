@@ -1,21 +1,16 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\wingdi.h in the Windows SDK for Windows 10.0.15063.0
-// Original source is Copyright © Microsoft. All rights reserved.
-
-// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
-
-// Ported from um\wingdi.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct DEVMODE
+    public unsafe partial struct DEVMODEA
     {
-        [NativeTypeName("WCHAR [32]")]
-        public fixed ushort dmDeviceName[32];
+        [NativeTypeName("BYTE [32]")]
+        public fixed byte dmDeviceName[32];
 
         [NativeTypeName("WORD")]
         public ushort dmSpecVersion;
@@ -32,6 +27,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dmFields;
 
+        [NativeTypeName("DEVMODEA::(anonymous union at um/wingdi.h:2202:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
         public short dmColor;
@@ -44,8 +40,8 @@ namespace TerraFX.Interop
 
         public short dmCollate;
 
-        [NativeTypeName("WCHAR [32]")]
-        public fixed ushort dmFormName[32];
+        [NativeTypeName("BYTE [32]")]
+        public fixed byte dmFormName[32];
 
         [NativeTypeName("WORD")]
         public ushort dmLogPixels;
@@ -59,7 +55,8 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dmPelsHeight;
 
-        public _Anonymous4_e__Union Anonymous4;
+        [NativeTypeName("DEVMODEA::(anonymous union at um/wingdi.h:2231:5)")]
+        public _Anonymous2_e__Union Anonymous2;
 
         [NativeTypeName("DWORD")]
         public uint dmDisplayFrequency;
@@ -92,12 +89,14 @@ namespace TerraFX.Interop
         public partial struct _Anonymous1_e__Union
         {
             [FieldOffset(0)]
-            public _Anonymous2_e__Union Anonymous2;
+            [NativeTypeName("DEVMODEA::(anonymous struct at um/wingdi.h:2204:7)")]
+            public _Anonymous1_e__Struct Anonymous1;
 
             [FieldOffset(0)]
-            public _Anonymous3_e__Union Anonymous3;
+            [NativeTypeName("DEVMODEA::(anonymous struct at um/wingdi.h:2215:7)")]
+            public _Anonymous2_e__Struct Anonymous2;
 
-            public partial struct _Anonymous2_e__Union
+            public partial struct _Anonymous1_e__Struct
             {
                 public short dmOrientation;
 
@@ -116,7 +115,7 @@ namespace TerraFX.Interop
                 public short dmPrintQuality;
             }
 
-            public partial struct _Anonymous3_e__Union
+            public partial struct _Anonymous2_e__Struct
             {
                 public POINTL dmPosition;
 
@@ -129,7 +128,7 @@ namespace TerraFX.Interop
         }
 
         [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous4_e__Union
+        public partial struct _Anonymous2_e__Union
         {
             [FieldOffset(0)]
             [NativeTypeName("DWORD")]

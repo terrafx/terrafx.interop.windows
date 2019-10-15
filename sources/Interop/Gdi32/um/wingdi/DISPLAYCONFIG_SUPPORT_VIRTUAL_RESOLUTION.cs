@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\wingdi.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -11,14 +11,14 @@ namespace TerraFX.Interop
     {
         public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 
-        [NativeTypeName("struct (anonymous struct at um/wingdi.h:3132:5)")]
+        [NativeTypeName("DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION::(anonymous union at um/wingdi.h:3135:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at um/wingdi.h:3134:9)")]
+            [NativeTypeName("DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION::(anonymous struct at um/wingdi.h:3137:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             [FieldOffset(0)]
@@ -29,7 +29,7 @@ namespace TerraFX.Interop
             {
                 internal uint _bitfield;
 
-                [NativeTypeName("UINT32")]
+                [NativeTypeName("UINT32 : 1")]
                 public uint disableMonitorVirtualResolution
                 {
                     get
@@ -43,7 +43,7 @@ namespace TerraFX.Interop
                     }
                 }
 
-                [NativeTypeName("UINT32")]
+                [NativeTypeName("UINT32 : 31")]
                 public uint reserved
                 {
                     get
