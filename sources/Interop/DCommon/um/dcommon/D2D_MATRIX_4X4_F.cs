@@ -1,25 +1,26 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\dcommon.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/dcommon.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    /// <summary>Represents a 4-by-4 matrix.</summary>
-    public unsafe partial struct D2D_MATRIX_4X4_F
+    public partial struct D2D_MATRIX_4X4_F
     {
+        [NativeTypeName("D2D_MATRIX_4X4_F::(anonymous union at um/dcommon.h:352:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
+        public unsafe partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
+            [NativeTypeName("D2D_MATRIX_4X4_F::(anonymous struct at um/dcommon.h:354:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             [FieldOffset(0)]
-            [NativeTypeName("FLOAT[4][4]")]
+            [NativeTypeName("FLOAT [4][4]")]
             public fixed float m[4 * 4];
 
             public partial struct _Anonymous_e__Struct
