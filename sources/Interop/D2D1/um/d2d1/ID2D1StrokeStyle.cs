@@ -1,14 +1,14 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\d2d1.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/d2d1.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    /// <summary>Resource interface that holds pen style properties.</summary>
     [Guid("2CD9069D-12E2-11DC-9FED-001143A055F9")]
     public unsafe partial struct ID2D1StrokeStyle
     {
@@ -16,187 +16,159 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ID2D1StrokeStyle* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
+        public delegate int _QueryInterface(ID2D1StrokeStyle* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ID2D1StrokeStyle* This);
+        public delegate uint _AddRef(ID2D1StrokeStyle* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ID2D1StrokeStyle* This);
-
-        /// <summary>Retrieve the factory associated with this resource.</summary>
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetFactory(ID2D1StrokeStyle* This, ID2D1Factory** factory);
+        public delegate uint _Release(ID2D1StrokeStyle* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate D2D1_CAP_STYLE _GetStartCap(ID2D1StrokeStyle* This);
+        public delegate void _GetFactory(ID2D1StrokeStyle* pThis, [NativeTypeName("ID2D1Factory **")] ID2D1Factory** factory);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate D2D1_CAP_STYLE _GetEndCap(ID2D1StrokeStyle* This);
+        public delegate D2D1_CAP_STYLE _GetStartCap(ID2D1StrokeStyle* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate D2D1_CAP_STYLE _GetDashCap(ID2D1StrokeStyle* This);
+        public delegate D2D1_CAP_STYLE _GetEndCap(ID2D1StrokeStyle* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        [return: NativeTypeName("FLOAT")]
-        public delegate float _GetMiterLimit(ID2D1StrokeStyle* This);
-
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate D2D1_LINE_JOIN _GetLineJoin(ID2D1StrokeStyle* This);
+        public delegate D2D1_CAP_STYLE _GetDashCap(ID2D1StrokeStyle* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public delegate float _GetDashOffset(ID2D1StrokeStyle* This);
+        public delegate float _GetMiterLimit(ID2D1StrokeStyle* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate D2D1_DASH_STYLE _GetDashStyle(ID2D1StrokeStyle* This);
+        public delegate D2D1_LINE_JOIN _GetLineJoin(ID2D1StrokeStyle* pThis);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [return: NativeTypeName("FLOAT")]
+        public delegate float _GetDashOffset(ID2D1StrokeStyle* pThis);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        public delegate D2D1_DASH_STYLE _GetDashStyle(ID2D1StrokeStyle* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public delegate uint _GetDashesCount(ID2D1StrokeStyle* This);
+        public delegate uint _GetDashesCount(ID2D1StrokeStyle* pThis);
 
-        /// <summary>Returns the dashes from the object into a user allocated array. The user must call GetDashesCount to retrieve the required size.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetDashes(ID2D1StrokeStyle* This, [NativeTypeName("FLOAT[]")] float* dashes, [NativeTypeName("UINT32")] uint dashesCount);
+        public delegate void _GetDashes(ID2D1StrokeStyle* pThis, [NativeTypeName("FLOAT *")] float* dashes, [NativeTypeName("UINT32")] uint dashesCount);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            fixed (ID2D1StrokeStyle* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            fixed (ID2D1StrokeStyle* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            fixed (ID2D1StrokeStyle* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
         }
 
-        public void GetFactory(ID2D1Factory** factory)
+        public void GetFactory([NativeTypeName("ID2D1Factory **")] ID2D1Factory** factory)
         {
-            fixed (ID2D1StrokeStyle* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(This, factory);
-            }
+            Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this), factory);
         }
 
         public D2D1_CAP_STYLE GetStartCap()
         {
-            fixed (ID2D1StrokeStyle* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetStartCap>(lpVtbl->GetStartCap)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetStartCap>(lpVtbl->GetStartCap)((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
         }
 
         public D2D1_CAP_STYLE GetEndCap()
         {
-            fixed (ID2D1StrokeStyle* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetEndCap>(lpVtbl->GetEndCap)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetEndCap>(lpVtbl->GetEndCap)((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
         }
 
         public D2D1_CAP_STYLE GetDashCap()
         {
-            fixed (ID2D1StrokeStyle* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetDashCap>(lpVtbl->GetDashCap)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetDashCap>(lpVtbl->GetDashCap)((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("FLOAT")]
         public float GetMiterLimit()
         {
-            fixed (ID2D1StrokeStyle* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetMiterLimit>(lpVtbl->GetMiterLimit)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetMiterLimit>(lpVtbl->GetMiterLimit)((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
         }
 
         public D2D1_LINE_JOIN GetLineJoin()
         {
-            fixed (ID2D1StrokeStyle* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetLineJoin>(lpVtbl->GetLineJoin)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetLineJoin>(lpVtbl->GetLineJoin)((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("FLOAT")]
         public float GetDashOffset()
         {
-            fixed (ID2D1StrokeStyle* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetDashOffset>(lpVtbl->GetDashOffset)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetDashOffset>(lpVtbl->GetDashOffset)((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
         }
 
         public D2D1_DASH_STYLE GetDashStyle()
         {
-            fixed (ID2D1StrokeStyle* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetDashStyle>(lpVtbl->GetDashStyle)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetDashStyle>(lpVtbl->GetDashStyle)((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("UINT32")]
         public uint GetDashesCount()
         {
-            fixed (ID2D1StrokeStyle* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetDashesCount>(lpVtbl->GetDashesCount)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetDashesCount>(lpVtbl->GetDashesCount)((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
         }
 
-        public void GetDashes([NativeTypeName("FLOAT[]")] float* dashes, [NativeTypeName("UINT32")] uint dashesCount)
+        public void GetDashes([NativeTypeName("FLOAT *")] float* dashes, [NativeTypeName("UINT32")] uint dashesCount)
         {
-            fixed (ID2D1StrokeStyle* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_GetDashes>(lpVtbl->GetDashes)(This, dashes, dashesCount);
-            }
+            Marshal.GetDelegateForFunctionPointer<_GetDashes>(lpVtbl->GetDashes)((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this), dashes, dashesCount);
         }
 
         public partial struct Vtbl
         {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
             public IntPtr QueryInterface;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr AddRef;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr Release;
 
+            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFactory;
 
+            [NativeTypeName("D2D1_CAP_STYLE () const __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetStartCap;
 
+            [NativeTypeName("D2D1_CAP_STYLE () const __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetEndCap;
 
+            [NativeTypeName("D2D1_CAP_STYLE () const __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetDashCap;
 
+            [NativeTypeName("FLOAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetMiterLimit;
 
+            [NativeTypeName("D2D1_LINE_JOIN () const __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetLineJoin;
 
+            [NativeTypeName("FLOAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetDashOffset;
 
+            [NativeTypeName("D2D1_DASH_STYLE () const __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetDashStyle;
 
+            [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetDashesCount;
 
+            [NativeTypeName("void (FLOAT *, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetDashes;
         }
     }

@@ -1,14 +1,14 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\d2d1_1.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/d2d1_1.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    /// <summary>Provides a brush that can take any effect, command list or bitmap and use it to fill a 2D shape.</summary>
     [Guid("FE9E984D-3F95-407C-B5DB-CB94D4E8F87C")]
     public unsafe partial struct ID2D1ImageBrush
     {
@@ -16,249 +16,210 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ID2D1ImageBrush* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
+        public delegate int _QueryInterface(ID2D1ImageBrush* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ID2D1ImageBrush* This);
+        public delegate uint _AddRef(ID2D1ImageBrush* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ID2D1ImageBrush* This);
+        public delegate uint _Release(ID2D1ImageBrush* pThis);
 
-        /// <summary>Retrieve the factory associated with this resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetFactory(ID2D1ImageBrush* This, ID2D1Factory** factory);
+        public delegate void _GetFactory(ID2D1ImageBrush* pThis, [NativeTypeName("ID2D1Factory **")] ID2D1Factory** factory);
 
-        /// <summary>Sets the opacity for when the brush is drawn over the entire fill of the brush.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetOpacity(ID2D1ImageBrush* This, [NativeTypeName("FLOAT")] float opacity);
+        public delegate void _SetOpacity(ID2D1ImageBrush* pThis, [NativeTypeName("FLOAT")] float opacity);
 
-        /// <summary>Sets the transform that applies to everything drawn by the brush.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetTransform(ID2D1ImageBrush* This, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform);
+        public delegate void _SetTransform(ID2D1ImageBrush* pThis, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public delegate float _GetOpacity(ID2D1ImageBrush* This);
+        public delegate float _GetOpacity(ID2D1ImageBrush* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetTransform(ID2D1ImageBrush* This, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform);
+        public delegate void _GetTransform(ID2D1ImageBrush* pThis, [NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetImage(ID2D1ImageBrush* This, ID2D1Image* image = null);
+        public delegate void _SetImage(ID2D1ImageBrush* pThis, [NativeTypeName("ID2D1Image *")] ID2D1Image* image);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetExtendModeX(ID2D1ImageBrush* This, D2D1_EXTEND_MODE extendModeX);
+        public delegate void _SetExtendModeX(ID2D1ImageBrush* pThis, D2D1_EXTEND_MODE extendModeX);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetExtendModeY(ID2D1ImageBrush* This, D2D1_EXTEND_MODE extendModeY);
+        public delegate void _SetExtendModeY(ID2D1ImageBrush* pThis, D2D1_EXTEND_MODE extendModeY);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetInterpolationMode(ID2D1ImageBrush* This, D2D1_INTERPOLATION_MODE interpolationMode);
+        public delegate void _SetInterpolationMode(ID2D1ImageBrush* pThis, D2D1_INTERPOLATION_MODE interpolationMode);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetSourceRectangle(ID2D1ImageBrush* This, [NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* sourceRectangle);
+        public delegate void _SetSourceRectangle(ID2D1ImageBrush* pThis, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetImage(ID2D1ImageBrush* This, ID2D1Image** image);
+        public delegate void _GetImage(ID2D1ImageBrush* pThis, [NativeTypeName("ID2D1Image **")] ID2D1Image** image);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate D2D1_EXTEND_MODE _GetExtendModeX(ID2D1ImageBrush* This);
+        public delegate D2D1_EXTEND_MODE _GetExtendModeX(ID2D1ImageBrush* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate D2D1_EXTEND_MODE _GetExtendModeY(ID2D1ImageBrush* This);
+        public delegate D2D1_EXTEND_MODE _GetExtendModeY(ID2D1ImageBrush* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate D2D1_INTERPOLATION_MODE _GetInterpolationMode(ID2D1ImageBrush* This);
+        public delegate D2D1_INTERPOLATION_MODE _GetInterpolationMode(ID2D1ImageBrush* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetSourceRectangle(ID2D1ImageBrush* This, [NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* sourceRectangle);
+        public delegate void _GetSourceRectangle(ID2D1ImageBrush* pThis, [NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            fixed (ID2D1ImageBrush* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ID2D1ImageBrush*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            fixed (ID2D1ImageBrush* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ID2D1ImageBrush*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            fixed (ID2D1ImageBrush* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ID2D1ImageBrush*)Unsafe.AsPointer(ref this));
         }
 
-        public void GetFactory(ID2D1Factory** factory)
+        public void GetFactory([NativeTypeName("ID2D1Factory **")] ID2D1Factory** factory)
         {
-            fixed (ID2D1ImageBrush* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(This, factory);
-            }
+            Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)((ID2D1ImageBrush*)Unsafe.AsPointer(ref this), factory);
         }
 
         public void SetOpacity([NativeTypeName("FLOAT")] float opacity)
         {
-            fixed (ID2D1ImageBrush* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_SetOpacity>(lpVtbl->SetOpacity)(This, opacity);
-            }
+            Marshal.GetDelegateForFunctionPointer<_SetOpacity>(lpVtbl->SetOpacity)((ID2D1ImageBrush*)Unsafe.AsPointer(ref this), opacity);
         }
 
-        public void SetTransform([NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform)
+        public void SetTransform([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
         {
-            fixed (ID2D1ImageBrush* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_SetTransform>(lpVtbl->SetTransform)(This, transform);
-            }
+            Marshal.GetDelegateForFunctionPointer<_SetTransform>(lpVtbl->SetTransform)((ID2D1ImageBrush*)Unsafe.AsPointer(ref this), transform);
         }
 
         [return: NativeTypeName("FLOAT")]
         public float GetOpacity()
         {
-            fixed (ID2D1ImageBrush* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetOpacity>(lpVtbl->GetOpacity)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetOpacity>(lpVtbl->GetOpacity)((ID2D1ImageBrush*)Unsafe.AsPointer(ref this));
         }
 
-        public void GetTransform([NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F* transform)
+        public void GetTransform([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
         {
-            fixed (ID2D1ImageBrush* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_GetTransform>(lpVtbl->GetTransform)(This, transform);
-            }
+            Marshal.GetDelegateForFunctionPointer<_GetTransform>(lpVtbl->GetTransform)((ID2D1ImageBrush*)Unsafe.AsPointer(ref this), transform);
         }
 
-        public void SetImage(ID2D1Image* image = null)
+        public void SetImage([NativeTypeName("ID2D1Image *")] ID2D1Image* image)
         {
-            fixed (ID2D1ImageBrush* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_SetImage>(lpVtbl->SetImage)(This, image);
-            }
+            Marshal.GetDelegateForFunctionPointer<_SetImage>(lpVtbl->SetImage)((ID2D1ImageBrush*)Unsafe.AsPointer(ref this), image);
         }
 
         public void SetExtendModeX(D2D1_EXTEND_MODE extendModeX)
         {
-            fixed (ID2D1ImageBrush* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_SetExtendModeX>(lpVtbl->SetExtendModeX)(This, extendModeX);
-            }
+            Marshal.GetDelegateForFunctionPointer<_SetExtendModeX>(lpVtbl->SetExtendModeX)((ID2D1ImageBrush*)Unsafe.AsPointer(ref this), extendModeX);
         }
 
         public void SetExtendModeY(D2D1_EXTEND_MODE extendModeY)
         {
-            fixed (ID2D1ImageBrush* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_SetExtendModeY>(lpVtbl->SetExtendModeY)(This, extendModeY);
-            }
+            Marshal.GetDelegateForFunctionPointer<_SetExtendModeY>(lpVtbl->SetExtendModeY)((ID2D1ImageBrush*)Unsafe.AsPointer(ref this), extendModeY);
         }
 
         public void SetInterpolationMode(D2D1_INTERPOLATION_MODE interpolationMode)
         {
-            fixed (ID2D1ImageBrush* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_SetInterpolationMode>(lpVtbl->SetInterpolationMode)(This, interpolationMode);
-            }
+            Marshal.GetDelegateForFunctionPointer<_SetInterpolationMode>(lpVtbl->SetInterpolationMode)((ID2D1ImageBrush*)Unsafe.AsPointer(ref this), interpolationMode);
         }
 
-        public void SetSourceRectangle([NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* sourceRectangle)
+        public void SetSourceRectangle([NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle)
         {
-            fixed (ID2D1ImageBrush* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_SetSourceRectangle>(lpVtbl->SetSourceRectangle)(This, sourceRectangle);
-            }
+            Marshal.GetDelegateForFunctionPointer<_SetSourceRectangle>(lpVtbl->SetSourceRectangle)((ID2D1ImageBrush*)Unsafe.AsPointer(ref this), sourceRectangle);
         }
 
-        public void GetImage(ID2D1Image** image)
+        public void GetImage([NativeTypeName("ID2D1Image **")] ID2D1Image** image)
         {
-            fixed (ID2D1ImageBrush* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_GetImage>(lpVtbl->GetImage)(This, image);
-            }
+            Marshal.GetDelegateForFunctionPointer<_GetImage>(lpVtbl->GetImage)((ID2D1ImageBrush*)Unsafe.AsPointer(ref this), image);
         }
 
         public D2D1_EXTEND_MODE GetExtendModeX()
         {
-            fixed (ID2D1ImageBrush* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetExtendModeX>(lpVtbl->GetExtendModeX)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetExtendModeX>(lpVtbl->GetExtendModeX)((ID2D1ImageBrush*)Unsafe.AsPointer(ref this));
         }
 
         public D2D1_EXTEND_MODE GetExtendModeY()
         {
-            fixed (ID2D1ImageBrush* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetExtendModeY>(lpVtbl->GetExtendModeY)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetExtendModeY>(lpVtbl->GetExtendModeY)((ID2D1ImageBrush*)Unsafe.AsPointer(ref this));
         }
 
         public D2D1_INTERPOLATION_MODE GetInterpolationMode()
         {
-            fixed (ID2D1ImageBrush* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetInterpolationMode>(lpVtbl->GetInterpolationMode)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetInterpolationMode>(lpVtbl->GetInterpolationMode)((ID2D1ImageBrush*)Unsafe.AsPointer(ref this));
         }
 
-        public void GetSourceRectangle([NativeTypeName("D2D1_RECT_F")] D2D_RECT_F* sourceRectangle)
+        public void GetSourceRectangle([NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle)
         {
-            fixed (ID2D1ImageBrush* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_GetSourceRectangle>(lpVtbl->GetSourceRectangle)(This, sourceRectangle);
-            }
+            Marshal.GetDelegateForFunctionPointer<_GetSourceRectangle>(lpVtbl->GetSourceRectangle)((ID2D1ImageBrush*)Unsafe.AsPointer(ref this), sourceRectangle);
         }
 
         public partial struct Vtbl
         {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
             public IntPtr QueryInterface;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr AddRef;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr Release;
 
+            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFactory;
 
+            [NativeTypeName("void (FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetOpacity;
 
+            [NativeTypeName("void (const D2D1_MATRIX_3X2_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetTransform;
 
+            [NativeTypeName("FLOAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetOpacity;
 
+            [NativeTypeName("void (D2D1_MATRIX_3X2_F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetTransform;
 
+            [NativeTypeName("void (ID2D1Image *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetImage;
 
+            [NativeTypeName("void (D2D1_EXTEND_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetExtendModeX;
 
+            [NativeTypeName("void (D2D1_EXTEND_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetExtendModeY;
 
+            [NativeTypeName("void (D2D1_INTERPOLATION_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetInterpolationMode;
 
+            [NativeTypeName("void (const D2D1_RECT_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetSourceRectangle;
 
+            [NativeTypeName("void (ID2D1Image **) const __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetImage;
 
+            [NativeTypeName("D2D1_EXTEND_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetExtendModeX;
 
+            [NativeTypeName("D2D1_EXTEND_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetExtendModeY;
 
+            [NativeTypeName("D2D1_INTERPOLATION_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetInterpolationMode;
 
+            [NativeTypeName("void (D2D1_RECT_F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetSourceRectangle;
         }
     }
