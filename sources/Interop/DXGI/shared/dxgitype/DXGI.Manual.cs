@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared\dxgitype.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from shared\dxgitype.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using static TerraFX.Interop.Windows;
@@ -21,14 +21,8 @@ namespace TerraFX.Interop
 
         public const int DXGI_CPU_ACCESS_FIELD = 15;
 
-        public static int MAKE_DXGI_HRESULT(int code)
-        {
-            return MAKE_HRESULT(1, _FACDXGI, code);
-        }
+        public static int MAKE_DXGI_HRESULT(int code) => MAKE_HRESULT(1, _FACDXGI, code);
 
-        public static int MAKE_DXGI_STATUS(int code)
-        {
-            return MAKE_HRESULT(0, _FACDXGI, code);
-        }
+        public static int MAKE_DXGI_STATUS(int code) => MAKE_HRESULT(0, _FACDXGI, code);
     }
 }
