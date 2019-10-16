@@ -1,19 +1,19 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\wincodec.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/wincodec.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop
 {
     public partial struct WICImageParameters
     {
-        public D2D1_PIXEL_FORMAT pixelFormat;
+        public D2D1_PIXEL_FORMAT PixelFormat;
 
         [NativeTypeName("FLOAT")]
-        public float dpiX;
+        public float DpiX;
 
         [NativeTypeName("FLOAT")]
-        public float dpiY;
+        public float DpiY;
 
         [NativeTypeName("FLOAT")]
         public float Top;

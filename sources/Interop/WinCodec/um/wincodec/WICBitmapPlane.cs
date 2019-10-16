@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\wincodec.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/wincodec.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -12,7 +12,7 @@ namespace TerraFX.Interop
         [NativeTypeName("WICPixelFormatGUID")]
         public Guid Format;
 
-        [NativeTypeName("BYTE[]")]
+        [NativeTypeName("BYTE *")]
         public byte* pbBuffer;
 
         [NativeTypeName("UINT")]

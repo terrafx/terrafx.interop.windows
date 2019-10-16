@@ -5,10 +5,9 @@
 
 namespace TerraFX.Interop
 {
-    public enum WICBitmapLockFlags
+    public enum WICWebpAnimProperties
     {
-        WICBitmapLockRead = 0x1,
-        WICBitmapLockWrite = 0x2,
-        WICBITMAPLOCKFLAGS_FORCE_DWORD = 0x7FFFFFFF,
+        WICWebpAnimLoopCount = 0x1,
+        WICWebpAnimProperties_FORCE_DWORD = 0x7FFFFFFF,
     }
 }

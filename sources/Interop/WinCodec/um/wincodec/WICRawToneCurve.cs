@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\wincodec.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/wincodec.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -13,12 +13,12 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint cPoints;
 
-        [NativeTypeName("WICRawToneCurvePoint[1]")]
+        [NativeTypeName("WICRawToneCurvePoint [1]")]
         public _aPoints_e__FixedBuffer aPoints;
 
-        public unsafe partial struct _aPoints_e__FixedBuffer
+        public partial struct _aPoints_e__FixedBuffer
         {
-            public WICRawToneCurvePoint e0;
+            internal WICRawToneCurvePoint e0;
 
             public ref WICRawToneCurvePoint this[int index] => ref AsSpan(int.MaxValue)[index];
 

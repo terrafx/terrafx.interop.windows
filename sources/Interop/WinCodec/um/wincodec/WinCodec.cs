@@ -1,462 +1,127 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\wincodec.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/wincodec.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop
 {
     public static unsafe partial class WinCodec
     {
-        private const string DllName = nameof(WinCodec);
-
-        public static readonly Guid CLSID_WICImagingFactory = CLSID_WICImagingFactory2; // Prior to Win8 = new Guid(0xCACAF262, 0x9370, 0x4615, 0xA1, 0x3B, 0x9F, 0x55, 0x39, 0xDA, 0x4C, 0x0A)
-
-        public static readonly Guid CLSID_WICImagingFactory1 = new Guid(0xCACAF262, 0x9370, 0x4615, 0xA1, 0x3B, 0x9F, 0x55, 0x39, 0xDA, 0x4C, 0x0A);
-
-        public static readonly Guid CLSID_WICImagingFactory2 = new Guid(0x317D06E8, 0x5F24, 0x433D, 0xBD, 0xF7, 0x79, 0xCE, 0x68, 0xD8, 0xAB, 0xC2);
-
-        public static readonly Guid CLSID_WICPngDecoder = new Guid(0x389EA17B, 0x5078, 0x4CDE, 0xB6, 0xEF, 0x25, 0xC1, 0x51, 0x75, 0xC7, 0x51);
-
-        public static readonly Guid CLSID_WICPngDecoder1 = new Guid(0x389EA17B, 0x5078, 0x4CDE, 0xB6, 0xEF, 0x25, 0xC1, 0x51, 0x75, 0xC7, 0x51);
-
-        public static readonly Guid CLSID_WICPngDecoder2 = new Guid(0xE018945B, 0xAA86, 0x4008, 0x9B, 0xD4, 0x67, 0x77, 0xA1, 0xE4, 0x0C, 0x11);
-
-        public static readonly Guid CLSID_WICBmpDecoder = new Guid(0x6B462062, 0x7CBF, 0x400D, 0x9F, 0xDB, 0x81, 0x3D, 0xD1, 0x0F, 0x27, 0x78);
-
-        public static readonly Guid CLSID_WICIcoDecoder = new Guid(0xC61BFCDF, 0x2E0F, 0x4AAD, 0xA8, 0xD7, 0xE0, 0x6B, 0xAF, 0xEB, 0xCD, 0xFE);
-
-        public static readonly Guid CLSID_WICJpegDecoder = new Guid(0x9456A480, 0xE88B, 0x43EA, 0x9E, 0x73, 0x0B, 0x2D, 0x9B, 0x71, 0xB1, 0xCA);
-
-        public static readonly Guid CLSID_WICGifDecoder = new Guid(0x381DDA3C, 0x9CE9, 0x4834, 0xA2, 0x3E, 0x1F, 0x98, 0xF8, 0xFC, 0x52, 0xBE);
-
-        public static readonly Guid CLSID_WICTiffDecoder = new Guid(0xB54E85D9, 0xFE23, 0x499F, 0x8B, 0x88, 0x6A, 0xCE, 0xA7, 0x13, 0x75, 0x2B);
-
-        public static readonly Guid CLSID_WICWmpDecoder = new Guid(0xA26CEC36, 0x234C, 0x4950, 0xAE, 0x16, 0xE3, 0x4A, 0xAC, 0xE7, 0x1D, 0x0D);
-
-        public static readonly Guid CLSID_WICDdsDecoder = new Guid(0x9053699F, 0xA341, 0x429D, 0x9E, 0x90, 0xEE, 0x43, 0x7C, 0xF8, 0x0C, 0x73);
-
-        public static readonly Guid CLSID_WICBmpEncoder = new Guid(0x69BE8BB4, 0xD66D, 0x47C8, 0x86, 0x5A, 0xED, 0x15, 0x89, 0x43, 0x37, 0x82);
-
-        public static readonly Guid CLSID_WICPngEncoder = CLSID_WICPngDecoder2; // Prior to Win8 = new Guid(0x27949969, 0x876A, 0x41D7, 0x94, 0x47, 0x56, 0x8F, 0x6A, 0x35, 0xA4, 0xDC)
-
-        public static readonly Guid CLSID_WICJpegEncoder = new Guid(0x1A34F5C1, 0x4A5A, 0x46DC, 0xB6, 0x44, 0x1F, 0x45, 0x67, 0xE7, 0xA6, 0x76);
-
-        public static readonly Guid CLSID_WICGifEncoder = new Guid(0x114F5598, 0x0B22, 0x40A0, 0x86, 0xA1, 0xC8, 0x3E, 0xA4, 0x95, 0xAD, 0xBD);
-
-        public static readonly Guid CLSID_WICTiffEncoder = new Guid(0x0131BE10, 0x2001, 0x4C5F, 0xA9, 0xB0, 0xCC, 0x88, 0xFA, 0xB6, 0x4C, 0xE8);
-
-        public static readonly Guid CLSID_WICWmpEncoder = new Guid(0xAC4CE3CB, 0xE1C1, 0x44CD, 0x82, 0x15, 0x5A, 0x16, 0x65, 0x50, 0x9E, 0xC2);
-
-        public static readonly Guid CLSID_WICDdsEncoder = new Guid(0xA61DDE94, 0x66CE, 0x4AC1, 0x88, 0x1B, 0x71, 0x68, 0x05, 0x88, 0x89, 0x5E);
-
-        public static readonly Guid CLSID_WICAdngDecoder = new Guid(0x981D9411, 0x909E, 0x42A7, 0x8F, 0x5D, 0xA7, 0x47, 0xFF, 0x05, 0x2E, 0xDB);
-
-        public static readonly Guid CLSID_WICJpegQualcommPhoneEncoder = new Guid(0x68ED5C62, 0xF534, 0x4979, 0xB2, 0xB3, 0x68, 0x6A, 0x12, 0xB2, 0xB3, 0x4C);
-
-        public static readonly Guid CLSID_WICImagingCategories = new Guid(0xFAE3D380, 0xFEA4, 0x4623, 0x8C, 0x75, 0xC6, 0xB6, 0x11, 0x10, 0xB6, 0x81);
-
-        public static readonly Guid CLSID_WICDefaultFormatConverter = new Guid(0x1A3F11DC, 0xB514, 0x4B17, 0x8C, 0x5F, 0x21, 0x54, 0x51, 0x38, 0x52, 0xF1);
-
-        public static readonly Guid CLSID_WICFormatConverterHighColor = new Guid(0xAC75D454, 0x9F37, 0x48F8, 0xB9, 0x72, 0x4E, 0x19, 0xBC, 0x85, 0x60, 0x11);
-
-        public static readonly Guid CLSID_WICFormatConverterNChannel = new Guid(0xC17CABB2, 0xD4A3, 0x47D7, 0xA5, 0x57, 0x33, 0x9B, 0x2E, 0xFB, 0xD4, 0xF1);
-
-        public static readonly Guid CLSID_WICFormatConverterWMPhoto = new Guid(0x9CB5172B, 0xD600, 0x46BA, 0xAB, 0x77, 0x77, 0xBB, 0x7E, 0x3A, 0x00, 0xD9);
-
-        public static readonly Guid CLSID_WICPlanarFormatConverter = new Guid(0x184132B8, 0x32F8, 0x4784, 0x91, 0x31, 0xDD, 0x72, 0x24, 0xB2, 0x34, 0x38);
-
-        public static readonly Guid GUID_VendorMicrosoft = new Guid(0xF0E749CA, 0xEDEF, 0x4589, 0xA7, 0x3A, 0xEE, 0x0E, 0x62, 0x6A, 0x2A, 0x2B);
-
-        public static readonly Guid GUID_VendorMicrosoftBuiltIn = new Guid(0x257A30FD, 0x06B6, 0x462B, 0xAE, 0xA4, 0x63, 0xF7, 0x0B, 0x86, 0xE5, 0x33);
-
-        public static readonly Guid GUID_ContainerFormatBmp = new Guid(0x0AF1D87E, 0xFCFE, 0x4188, 0xBD, 0xEB, 0xA7, 0x90, 0x64, 0x71, 0xCB, 0xE3);
-
-        public static readonly Guid GUID_ContainerFormatPng = new Guid(0x1B7CFAF4, 0x713F, 0x473C, 0xBB, 0xCD, 0x61, 0x37, 0x42, 0x5F, 0xAE, 0xAF);
-
-        public static readonly Guid GUID_ContainerFormatIco = new Guid(0xA3A860C4, 0x338F, 0x4C17, 0x91, 0x9A, 0xFB, 0xA4, 0xB5, 0x62, 0x8F, 0x21);
-
-        public static readonly Guid GUID_ContainerFormatJpeg = new Guid(0x19E4A5AA, 0x5662, 0x4FC5, 0xA0, 0xC0, 0x17, 0x58, 0x02, 0x8E, 0x10, 0x57);
-
-        public static readonly Guid GUID_ContainerFormatTiff = new Guid(0x163BCC30, 0xE2E9, 0x4F0B, 0x96, 0x1D, 0xA3, 0xE9, 0xFD, 0xB7, 0x88, 0xA3);
-
-        public static readonly Guid GUID_ContainerFormatGif = new Guid(0x1F8A5601, 0x7D4D, 0x4CBD, 0x9C, 0x82, 0x1B, 0xC8, 0xD4, 0xEE, 0xB9, 0xA5);
-
-        public static readonly Guid GUID_ContainerFormatWmp = new Guid(0x57A37CAA, 0x367A, 0x4540, 0x91, 0x6B, 0xF1, 0x83, 0xC5, 0x09, 0x3A, 0x4B);
-
-        public static readonly Guid GUID_ContainerFormatDds = new Guid(0x9967CB95, 0x2E85, 0x4AC8, 0x8C, 0xA2, 0x83, 0xD7, 0xCC, 0xD4, 0x25, 0xC9);
-
-        public static readonly Guid GUID_ContainerFormatAdng = new Guid(0xF3FF6D0D, 0x38C0, 0x41C4, 0xB1, 0xFE, 0x1F, 0x38, 0x24, 0xF1, 0x7B, 0x84);
-
-        public static readonly Guid GUID_WICPixelFormatUndefined = GUID_WICPixelFormatDontCare;
-
-        public static readonly Guid GUID_WICPixelFormatDontCare = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x00);
-
-        public static readonly Guid GUID_WICPixelFormat1bppIndexed = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x01);
-
-        public static readonly Guid GUID_WICPixelFormat2bppIndexed = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x02);
-
-        public static readonly Guid GUID_WICPixelFormat4bppIndexed = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x03);
-
-        public static readonly Guid GUID_WICPixelFormat8bppIndexed = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x04);
-
-        public static readonly Guid GUID_WICPixelFormatBlackWhite = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x05);
-
-        public static readonly Guid GUID_WICPixelFormat2bppGray = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x06);
-
-        public static readonly Guid GUID_WICPixelFormat4bppGray = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x07);
-
-        public static readonly Guid GUID_WICPixelFormat8bppGray = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x08);
-
-        public static readonly Guid GUID_WICPixelFormat8bppAlpha = new Guid(0xE6CD0116, 0xEEBA, 0x4161, 0xAA, 0x85, 0x27, 0xDD, 0x9F, 0xB3, 0xA8, 0x95);
-
-        public static readonly Guid GUID_WICPixelFormat16bppBGR555 = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x09);
-
-        public static readonly Guid GUID_WICPixelFormat16bppBGR565 = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x0A);
-
-        public static readonly Guid GUID_WICPixelFormat16bppBGRA5551 = new Guid(0x05EC7C2B, 0xF1E6, 0x4961, 0xAD, 0x46, 0xE1, 0xCC, 0x81, 0x0A, 0x87, 0xD2);
-
-        public static readonly Guid GUID_WICPixelFormat16bppGray = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x0B);
-
-        public static readonly Guid GUID_WICPixelFormat24bppBGR = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x0C);
-
-        public static readonly Guid GUID_WICPixelFormat24bppRGB = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x0D);
-
-        public static readonly Guid GUID_WICPixelFormat32bppBGR = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x0E);
-
-        public static readonly Guid GUID_WICPixelFormat32bppBGRA = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x0F);
-
-        public static readonly Guid GUID_WICPixelFormat32bppPBGRA = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x10);
-
-        public static readonly Guid GUID_WICPixelFormat32bppGrayFloat = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x11);
-
-        public static readonly Guid GUID_WICPixelFormat32bppRGB = new Guid(0xD98C6B95, 0x3EFE, 0x47D6, 0xBB, 0x25, 0xEB, 0x17, 0x48, 0xAB, 0x0C, 0xF1);
-
-        public static readonly Guid GUID_WICPixelFormat32bppRGBA = new Guid(0xF5C7AD2D, 0x6A8D, 0x43DD, 0xA7, 0xA8, 0xA2, 0x99, 0x35, 0x26, 0x1A, 0xE9);
-
-        public static readonly Guid GUID_WICPixelFormat32bppPRGBA = new Guid(0x3CC4A650, 0xA527, 0x4D37, 0xA9, 0x16, 0x31, 0x42, 0xC7, 0xEB, 0xED, 0xBA);
-
-        public static readonly Guid GUID_WICPixelFormat48bppRGB = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x15);
-
-        public static readonly Guid GUID_WICPixelFormat48bppBGR = new Guid(0xE605A384, 0xB468, 0x46CE, 0xBB, 0x2E, 0x36, 0xF1, 0x80, 0xE6, 0x43, 0x13);
-
-        public static readonly Guid GUID_WICPixelFormat64bppRGB = new Guid(0xA1182111, 0x186D, 0x4D42, 0xBC, 0x6A, 0x9C, 0x83, 0x03, 0xA8, 0xDF, 0xF9);
-
-        public static readonly Guid GUID_WICPixelFormat64bppRGBA = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x16);
-
-        public static readonly Guid GUID_WICPixelFormat64bppBGRA = new Guid(0x1562FF7C, 0xD352, 0x46F9, 0x97, 0x9E, 0x42, 0x97, 0x6B, 0x79, 0x22, 0x46);
-
-        public static readonly Guid GUID_WICPixelFormat64bppPRGBA = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x17);
-
-        public static readonly Guid GUID_WICPixelFormat64bppPBGRA = new Guid(0x8C518E8E, 0xA4EC, 0x468B, 0xAE, 0x70, 0xC9, 0xA3, 0x5A, 0x9C, 0x55, 0x30);
-
-        public static readonly Guid GUID_WICPixelFormat16bppGrayFixedPoint = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x13);
-
-        public static readonly Guid GUID_WICPixelFormat32bppBGR101010 = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x14);
-
-        public static readonly Guid GUID_WICPixelFormat48bppRGBFixedPoint = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x12);
-
-        public static readonly Guid GUID_WICPixelFormat48bppBGRFixedPoint = new Guid(0x49CA140E, 0xCAB6, 0x493B, 0x9D, 0xDF, 0x60, 0x18, 0x7C, 0x37, 0x53, 0x2A);
-
-        public static readonly Guid GUID_WICPixelFormat96bppRGBFixedPoint = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x18);
-
-        public static readonly Guid GUID_WICPixelFormat96bppRGBFloat = new Guid(0xE3FED78F, 0xE8DB, 0x4ACF, 0x84, 0xC1, 0xE9, 0x7F, 0x61, 0x36, 0xB3, 0x27);
-
-        public static readonly Guid GUID_WICPixelFormat128bppRGBAFloat = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x19);
-
-        public static readonly Guid GUID_WICPixelFormat128bppPRGBAFloat = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x1A);
-
-        public static readonly Guid GUID_WICPixelFormat128bppRGBFloat = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x1B);
-
-        public static readonly Guid GUID_WICPixelFormat32bppCMYK = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x1C);
-
-        public static readonly Guid GUID_WICPixelFormat64bppRGBAFixedPoint = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x1D);
-
-        public static readonly Guid GUID_WICPixelFormat64bppBGRAFixedPoint = new Guid(0x356DE33C, 0x54D2, 0x4A23, 0xBB, 0x04, 0x9B, 0x7B, 0xF9, 0xB1, 0xD4, 0x2D);
-
-        public static readonly Guid GUID_WICPixelFormat64bppRGBFixedPoint = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x40);
-
-        public static readonly Guid GUID_WICPixelFormat128bppRGBAFixedPoint = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x1E);
-
-        public static readonly Guid GUID_WICPixelFormat128bppRGBFixedPoint = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x41);
-
-        public static readonly Guid GUID_WICPixelFormat64bppRGBAHalf = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x3A);
-
-        public static readonly Guid GUID_WICPixelFormat64bppPRGBAHalf = new Guid(0x58AD26C2, 0xC623, 0x4D9D, 0xB3, 0x20, 0x38, 0x7E, 0x49, 0xF8, 0xC4, 0x42);
-
-        public static readonly Guid GUID_WICPixelFormat64bppRGBHalf = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x42);
-
-        public static readonly Guid GUID_WICPixelFormat48bppRGBHalf = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x3B);
-
-        public static readonly Guid GUID_WICPixelFormat32bppRGBE = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x3D);
-
-        public static readonly Guid GUID_WICPixelFormat16bppGrayHalf = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x3E);
-
-        public static readonly Guid GUID_WICPixelFormat32bppGrayFixedPoint = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x3F);
-
-        public static readonly Guid GUID_WICPixelFormat32bppRGBA1010102 = new Guid(0x25238D72, 0xFCF9, 0x4522, 0xB5, 0x14, 0x55, 0x78, 0xE5, 0xAD, 0x55, 0xE0);
-
-        public static readonly Guid GUID_WICPixelFormat32bppRGBA1010102XR = new Guid(0x00DE6B9A, 0xC101, 0x434B, 0xB5, 0x02, 0xD0, 0x16, 0x5E, 0xE1, 0x12, 0x2C);
-
-        public static readonly Guid GUID_WICPixelFormat64bppCMYK = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x1F);
-
-        public static readonly Guid GUID_WICPixelFormat24bpp3Channels = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x20);
-
-        public static readonly Guid GUID_WICPixelFormat32bpp4Channels = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x21);
-
-        public static readonly Guid GUID_WICPixelFormat40bpp5Channels = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x22);
-
-        public static readonly Guid GUID_WICPixelFormat48bpp6Channels = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x23);
-
-        public static readonly Guid GUID_WICPixelFormat56bpp7Channels = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x24);
-
-        public static readonly Guid GUID_WICPixelFormat64bpp8Channels = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x25);
-
-        public static readonly Guid GUID_WICPixelFormat48bpp3Channels = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x26);
-
-        public static readonly Guid GUID_WICPixelFormat64bpp4Channels = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x27);
-
-        public static readonly Guid GUID_WICPixelFormat80bpp5Channels = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x28);
-
-        public static readonly Guid GUID_WICPixelFormat96bpp6Channels = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x29);
-
-        public static readonly Guid GUID_WICPixelFormat112bpp7Channels = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x2A);
-
-        public static readonly Guid GUID_WICPixelFormat128bpp8Channels = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x2B);
-
-        public static readonly Guid GUID_WICPixelFormat40bppCMYKAlpha = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x2C);
-
-        public static readonly Guid GUID_WICPixelFormat80bppCMYKAlpha = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x2D);
-
-        public static readonly Guid GUID_WICPixelFormat32bpp3ChannelsAlpha = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x2E);
-
-        public static readonly Guid GUID_WICPixelFormat40bpp4ChannelsAlpha = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x2F);
-
-        public static readonly Guid GUID_WICPixelFormat48bpp5ChannelsAlpha = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x30);
-
-        public static readonly Guid GUID_WICPixelFormat56bpp6ChannelsAlpha = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x31);
-
-        public static readonly Guid GUID_WICPixelFormat64bpp7ChannelsAlpha = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x32);
-
-        public static readonly Guid GUID_WICPixelFormat72bpp8ChannelsAlpha = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x33);
-
-        public static readonly Guid GUID_WICPixelFormat64bpp3ChannelsAlpha = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x34);
-
-        public static readonly Guid GUID_WICPixelFormat80bpp4ChannelsAlpha = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x35);
-
-        public static readonly Guid GUID_WICPixelFormat96bpp5ChannelsAlpha = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x36);
-
-        public static readonly Guid GUID_WICPixelFormat112bpp6ChannelsAlpha = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x37);
-
-        public static readonly Guid GUID_WICPixelFormat128bpp7ChannelsAlpha = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x38);
-
-        public static readonly Guid GUID_WICPixelFormat144bpp8ChannelsAlpha = new Guid(0x6FDDC324, 0x4E03, 0x4BFE, 0xB1, 0x85, 0x3D, 0x77, 0x76, 0x8D, 0xC9, 0x39);
-
-        public static readonly Guid GUID_WICPixelFormat8bppY = new Guid(0x91B4DB54, 0x2DF9, 0x42F0, 0xB4, 0x49, 0x29, 0x09, 0xBB, 0x3D, 0xF8, 0x8E);
-
-        public static readonly Guid GUID_WICPixelFormat8bppCb = new Guid(0x1339F224, 0x6BFE, 0x4C3E, 0x93, 0x02, 0xE4, 0xF3, 0xA6, 0xD0, 0xCA, 0x2A);
-
-        public static readonly Guid GUID_WICPixelFormat8bppCr = new Guid(0xB8145053, 0x2116, 0x49F0, 0x88, 0x35, 0xED, 0x84, 0x4B, 0x20, 0x5C, 0x51);
-
-        public static readonly Guid GUID_WICPixelFormat16bppCbCr = new Guid(0xFF95BA6E, 0x11E0, 0x4263, 0xBB, 0x45, 0x01, 0x72, 0x1F, 0x34, 0x60, 0xA4);
-
-        public static readonly Guid GUID_WICPixelFormat16bppYQuantizedDctCoefficients = new Guid(0xA355F433, 0x48E8, 0x4A42, 0x84, 0xD8, 0xE2, 0xAA, 0x26, 0xCA, 0x80, 0xA4);
-
-        public static readonly Guid GUID_WICPixelFormat16bppCbQuantizedDctCoefficients = new Guid(0xD2C4FF61, 0x56A5, 0x49C2, 0x8B, 0x5C, 0x4C, 0x19, 0x25, 0x96, 0x48, 0x37);
-
-        public static readonly Guid GUID_WICPixelFormat16bppCrQuantizedDctCoefficients = new Guid(0x2FE354F0, 0x1680, 0x42D8, 0x92, 0x31, 0xE7, 0x3C, 0x05, 0x65, 0xBF, 0xC1);
-
-        public static readonly Guid CATID_WICBitmapDecoders = new Guid(0x7ED96837, 0x96F0, 0x4812, 0xB2, 0x11, 0xF1, 0x3C, 0x24, 0x11, 0x7E, 0xD3);
-
-        public static readonly Guid CATID_WICBitmapEncoders = new Guid(0xAC757296, 0x3522, 0x4E11, 0x98, 0x62, 0xC1, 0x7B, 0xE5, 0xA1, 0x76, 0x7E);
-
-        public static readonly Guid CATID_WICPixelFormats = new Guid(0x2B46E70F, 0xCDA7, 0x473E, 0x89, 0xF6, 0xDC, 0x96, 0x30, 0xA2, 0x39, 0x0B);
-
-        public static readonly Guid CATID_WICFormatConverters = new Guid(0x7835EAE8, 0xBF14, 0x49D1, 0x93, 0xCE, 0x53, 0x3A, 0x40, 0x7B, 0x22, 0x48);
-
-        public static readonly Guid CATID_WICMetadataReader = new Guid(0x05AF94D8, 0x7174, 0x4CD2, 0xBE, 0x4A, 0x41, 0x24, 0xB8, 0x0E, 0xE4, 0xB8);
-
-        public static readonly Guid CATID_WICMetadataWriter = new Guid(0xABE3B9A4, 0x257D, 0x4B97, 0xBD, 0x1A, 0x29, 0x4A, 0xF4, 0x96, 0x22, 0x2E);
-
-        public const int WIC_JPEG_MAX_COMPONENT_COUNT = 4;
-
-        public const int WIC_JPEG_MAX_TABLE_INDEX = 3;
-
-        public const int WIC_JPEG_SAMPLE_FACTORS_ONE = 0x11;
-
-        public const int WIC_JPEG_SAMPLE_FACTORS_THREE_420 = 0x111122;
-
-        public const int WIC_JPEG_SAMPLE_FACTORS_THREE_422 = 0x111121;
-
-        public const int WIC_JPEG_SAMPLE_FACTORS_THREE_440 = 0x111112;
-
-        public const int WIC_JPEG_SAMPLE_FACTORS_THREE_444 = 0x111111;
-
-        public const int WIC_JPEG_QUANTIZATION_BASELINE_ONE = 0;
-
-        public const int WIC_JPEG_QUANTIZATION_BASELINE_THREE = 0x10100;
-
-        public const int WIC_JPEG_HUFFMAN_BASELINE_ONE = 0;
-
-        public const int WIC_JPEG_HUFFMAN_BASELINE_THREE = 0x111100;
-
-        public const int FACILITY_WINCODEC_ERR = 0x898;
-
-        public const int WINCODEC_ERR_BASE = 0x2000;
-
-        public const int WINCODEC_ERR_GENERIC_ERROR = E_FAIL;
-
-        public const int WINCODEC_ERR_INVALIDPARAMETER = E_INVALIDARG;
-
-        public const int WINCODEC_ERR_OUTOFMEMORY = E_OUTOFMEMORY;
-
-        public const int WINCODEC_ERR_NOTIMPLEMENTED = E_NOTIMPL;
-
-        public const int WINCODEC_ERR_ABORTED = E_ABORT;
-
-        public const int WINCODEC_ERR_ACCESSDENIED = E_ACCESSDENIED;
-
-        public const int WINCODEC_ERR_VALUEOVERFLOW = INTSAFE_E_ARITHMETIC_OVERFLOW;
-
-        public const int WICRawChangeNotification_ExposureCompensation = 0x00000001;
-
-        public const int WICRawChangeNotification_NamedWhitePoint = 0x00000002;
-
-        public const int WICRawChangeNotification_KelvinWhitePoint = 0x00000004;
-
-        public const int WICRawChangeNotification_RGBWhitePoint = 0x00000008;
-
-        public const int WICRawChangeNotification_Contrast = 0x00000010;
-
-        public const int WICRawChangeNotification_Gamma = 0x00000020;
-
-        public const int WICRawChangeNotification_Sharpness = 0x00000040;
-
-        public const int WICRawChangeNotification_Saturation = 0x00000080;
-
-        public const int WICRawChangeNotification_Tint = 0x00000100;
-
-        public const int WICRawChangeNotification_NoiseReduction = 0x00000200;
-
-        public const int WICRawChangeNotification_DestinationColorContext = 0x00000400;
-
-        public const int WICRawChangeNotification_ToneCurve = 0x00000800;
-
-        public const int WICRawChangeNotification_Rotation = 0x00001000;
-
-        public const int WICRawChangeNotification_RenderMode = 0x00002000;
-
-        public static readonly Guid IID_IWICPalette = new Guid(0x00000040, 0xA8F2, 0x4877, 0xBA, 0x0A, 0xFD, 0x2B, 0x66, 0x45, 0xFB, 0x94);
-
-        public static readonly Guid IID_IWICBitmapSource = new Guid(0x00000120, 0xA8F2, 0x4877, 0xBA, 0x0A, 0xFD, 0x2B, 0x66, 0x45, 0xFB, 0x94);
-
-        public static readonly Guid IID_IWICFormatConverter = new Guid(0x00000301, 0xA8F2, 0x4877, 0xBA, 0x0A, 0xFD, 0x2B, 0x66, 0x45, 0xFB, 0x94);
-
-        public static readonly Guid IID_IWICPlanarFormatConverter = new Guid(0xBEBEE9CB, 0x83B0, 0x4DCC, 0x81, 0x32, 0xB0, 0xAA, 0xA5, 0x5E, 0xAC, 0x96);
-
-        public static readonly Guid IID_IWICBitmapScaler = new Guid(0x00000302, 0xA8F2, 0x4877, 0xBA, 0x0A, 0xFD, 0x2B, 0x66, 0x45, 0xFB, 0x94);
-
-        public static readonly Guid IID_IWICBitmapClipper = new Guid(0xE4FBCF03, 0x223D, 0x4E81, 0x93, 0x33, 0xD6, 0x35, 0x55, 0x6D, 0xD1, 0xB5);
-
-        public static readonly Guid IID_IWICBitmapFlipRotator = new Guid(0x5009834F, 0x2D6A, 0x41CE, 0x9E, 0x1B, 0x17, 0xC5, 0xAF, 0xF7, 0xA7, 0x82);
-
-        public static readonly Guid IID_IWICBitmapLock = new Guid(0x00000123, 0xA8F2, 0x4877, 0xBA, 0x0A, 0xFD, 0x2B, 0x66, 0x45, 0xFB, 0x94);
-
-        public static readonly Guid IID_IWICBitmap = new Guid(0x00000121, 0xA8F2, 0x4877, 0xBA, 0x0A, 0xFD, 0x2B, 0x66, 0x45, 0xFB, 0x94);
-
-        public static readonly Guid IID_IWICColorContext = new Guid(0x3C613A02, 0x34B2, 0x44EA, 0x9A, 0x7C, 0x45, 0xAE, 0xA9, 0xC6, 0xFD, 0x6D);
-
-        public static readonly Guid IID_IWICColorTransform = new Guid(0xB66F034F, 0xD0E2, 0x40AB, 0xB4, 0x36, 0x6D, 0xE3, 0x9E, 0x32, 0x1A, 0x94);
-
-        public static readonly Guid IID_IWICFastMetadataEncoder = new Guid(0xB84E2C09, 0x78C9, 0x4AC4, 0x8B, 0xD3, 0x52, 0x4A, 0xE1, 0x66, 0x3A, 0x2F);
-
-        public static readonly Guid IID_IWICStream = new Guid(0x135FF860, 0x22B7, 0x4DDF, 0xB0, 0xF6, 0x21, 0x8F, 0x4F, 0x29, 0x9A, 0x43);
-
-        public static readonly Guid IID_IWICEnumMetadataItem = new Guid(0xDC2BB46D, 0x3F07, 0x481E, 0x86, 0x25, 0x22, 0x0C, 0x4A, 0xED, 0xBB, 0x33);
-
-        public static readonly Guid IID_IWICMetadataQueryReader = new Guid(0x30989668, 0xE1C9, 0x4597, 0xB3, 0x95, 0x45, 0x8E, 0xED, 0xB8, 0x08, 0xDF);
-
-        public static readonly Guid IID_IWICMetadataQueryWriter = new Guid(0xA721791A, 0x0DEF, 0x4D06, 0xBD, 0x91, 0x21, 0x18, 0xBF, 0x1D, 0xB1, 0x0B);
-
-        public static readonly Guid IID_IWICBitmapEncoder = new Guid(0x00000103, 0xA8F2, 0x4877, 0xBA, 0x0A, 0xFD, 0x2B, 0x66, 0x45, 0xFB, 0x94);
-
-        public static readonly Guid IID_IWICBitmapFrameEncode = new Guid(0x00000105, 0xA8F2, 0x4877, 0xBA, 0x0A, 0xFD, 0x2B, 0x66, 0x45, 0xFB, 0x94);
-
-        public static readonly Guid IID_IWICPlanarBitmapFrameEncode = new Guid(0xF928B7B8, 0x2221, 0x40C1, 0xB7, 0x2E, 0x7E, 0x82, 0xF1, 0x97, 0x4D, 0x1A);
-
-        public static readonly Guid IID_IWICImageEncoder = new Guid(0x04C75BF8, 0x3CE1, 0x473B, 0xAC, 0xC5, 0x3C, 0xC4, 0xF5, 0xE9, 0x49, 0x99);
-
-        public static readonly Guid IID_IWICBitmapDecoder = new Guid(0x9EDDE9E7, 0x8DEE, 0x47EA, 0x99, 0xDF, 0xE6, 0xFA, 0xF2, 0xED, 0x44, 0xBF);
-
-        public static readonly Guid IID_IWICBitmapSourceTransform = new Guid(0x3B16811B, 0x6A43, 0x4EC9, 0xB7, 0x13, 0x3D, 0x5A, 0x0C, 0x13, 0xB9, 0x40);
-
-        public static readonly Guid IID_IWICPlanarBitmapSourceTransform = new Guid(0x3AFF9CCE, 0xBE95, 0x4303, 0xB9, 0x27, 0xE7, 0xD1, 0x6F, 0xF4, 0xA6, 0x13);
-
-        public static readonly Guid IID_IWICBitmapFrameDecode = new Guid(0x3B16811B, 0x6A43, 0x4EC9, 0xA8, 0x13, 0x3D, 0x93, 0x0C, 0x13, 0xB9, 0x40);
-
-        public static readonly Guid IID_IWICProgressiveLevelControl = new Guid(0xDAAC296F, 0x7AA5, 0x4DBF, 0x8D, 0x15, 0x22, 0x5C, 0x59, 0x76, 0xF8, 0x91);
-
-        public static readonly Guid IID_IWICProgressCallback = new Guid(0x4776F9CD, 0x9517, 0x45FA, 0xBF, 0x24, 0xE8, 0x9C, 0x5E, 0xC5, 0xC6, 0x0C);
-
-        public static readonly Guid IID_IWICBitmapCodecProgressNotification = new Guid(0x64C1024E, 0xC3CF, 0x4462, 0x80, 0x78, 0x88, 0xC2, 0xB1, 0x1C, 0x46, 0xD9);
-
-        public static readonly Guid IID_IWICComponentInfo = new Guid(0x23BC3F0A, 0x698B, 0x4357, 0x88, 0x6B, 0xF2, 0x4D, 0x50, 0x67, 0x13, 0x34);
-
-        public static readonly Guid IID_IWICFormatConverterInfo = new Guid(0x9F34FB65, 0x13F4, 0x4F15, 0xBC, 0x57, 0x37, 0x26, 0xB5, 0xE5, 0x3D, 0x9F);
-
-        public static readonly Guid IID_IWICBitmapCodecInfo = new Guid(0xE87A44C4, 0xB76E, 0x4C47, 0x8B, 0x09, 0x29, 0x8E, 0xB1, 0x2A, 0x27, 0x14);
-
-        public static readonly Guid IID_IWICBitmapEncoderInfo = new Guid(0x94C9B4EE, 0xA09F, 0x4F92, 0x8A, 0x1E, 0x4A, 0x9B, 0xCE, 0x7E, 0x76, 0xFB);
-
-        public static readonly Guid IID_IWICBitmapDecoderInfo = new Guid(0xD8CD007F, 0xD08F, 0x4191, 0x9B, 0xFC, 0x23, 0x6E, 0xA7, 0xF0, 0xE4, 0xB5);
-
-        public static readonly Guid IID_IWICPixelFormatInfo = new Guid(0xE8EDA601, 0x3D48, 0x431A, 0xAB, 0x44, 0x69, 0x05, 0x9B, 0xE8, 0x8B, 0xBE);
-
-        public static readonly Guid IID_IWICPixelFormatInfo2 = new Guid(0xA9DB33A2, 0xAF5F, 0x43C7, 0xB6, 0x79, 0x74, 0xF5, 0x98, 0x4B, 0x5A, 0xA4);
-
-        public static readonly Guid IID_IWICImagingFactory = new Guid(0xEC5EC8A9, 0xC395, 0x4314, 0x9C, 0x77, 0x54, 0xD7, 0xA9, 0x35, 0xFF, 0x70);
-
-        public static readonly Guid IID_IWICImagingFactory2 = new Guid(0x7B816B45, 0x1996, 0x4476, 0xB1, 0x32, 0xDE, 0x9E, 0x24, 0x7C, 0x8A, 0xF0);
-
-        public static readonly Guid IID_IWICDevelopRawNotificationCallback = new Guid(0x95C75A6E, 0x3E8C, 0x4EC2, 0x85, 0xA8, 0xAE, 0xBC, 0xC5, 0x51, 0xE5, 0x9B);
-
-        public static readonly Guid IID_IWICDevelopRaw = new Guid(0xFBEC5E44, 0xF7BE, 0x4B65, 0xB7, 0xF8, 0xC0, 0xC8, 0x1F, 0xEF, 0x02, 0x6D);
-
-        public static readonly Guid IID_IWICDdsDecoder = new Guid(0x409CD537, 0x8532, 0x40CB, 0x97, 0x74, 0xE2, 0xFE, 0xB2, 0xDF, 0x4E, 0x9C);
-
-        public static readonly Guid IID_IWICDdsEncoder = new Guid(0x5CACDB4C, 0x407E, 0x41B3, 0xB9, 0x36, 0xD0, 0xF0, 0x10, 0xCD, 0x67, 0x32);
-
-        public static readonly Guid IID_IWICDdsFrameDecode = new Guid(0x3D4C0C61, 0x18A4, 0x41E4, 0xBD, 0x80, 0x48, 0x1A, 0x4F, 0xC9, 0xF4, 0x64);
-
-        public static readonly Guid IID_IWICJpegFrameDecode = new Guid(0x8939F66E, 0xC46A, 0x4C21, 0xA9, 0xD1, 0x98, 0xB3, 0x27, 0xCE, 0x16, 0x79);
-
-        public static readonly Guid IID_IWICJpegFrameEncode = new Guid(0x2F0C601F, 0xD2C6, 0x468C, 0xAB, 0xFA, 0x49, 0x49, 0x5D, 0x98, 0x3E, 0xD1);
-
-        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "WICConvertBitmapSource", ExactSpelling = true)]
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "WICConvertBitmapSource", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WICConvertBitmapSource([NativeTypeName("REFWICPixelFormatGUID")] Guid* dstFormat, IWICBitmapSource* pISrc, IWICBitmapSource** ppIDst);
+        public static extern int WICConvertBitmapSource([NativeTypeName("REFWICPixelFormatGUID")] Guid* dstFormat, [NativeTypeName("IWICBitmapSource *")] IWICBitmapSource* pISrc, [NativeTypeName("IWICBitmapSource **")] IWICBitmapSource** ppIDst);
 
-        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "WICCreateBitmapFromSection", ExactSpelling = true)]
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "WICCreateBitmapFromSection", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WICCreateBitmapFromSection([NativeTypeName("UINT")] uint width, [NativeTypeName("UINT")] uint height, [NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat, [NativeTypeName("HANDLE")] IntPtr hSection, [NativeTypeName("UINT")] uint stride, [NativeTypeName("UINT")] uint offset, IWICBitmap** ppIBitmap);
+        public static extern int WICCreateBitmapFromSection([NativeTypeName("UINT")] uint width, [NativeTypeName("UINT")] uint height, [NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat, [NativeTypeName("HANDLE")] IntPtr hSection, [NativeTypeName("UINT")] uint stride, [NativeTypeName("UINT")] uint offset, [NativeTypeName("IWICBitmap **")] IWICBitmap** ppIBitmap);
 
-        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "WICCreateBitmapFromSectionEx", ExactSpelling = true)]
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "WICCreateBitmapFromSectionEx", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WICCreateBitmapFromSectionEx([NativeTypeName("UINT")] uint width, [NativeTypeName("UINT")] uint height, [NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat, [NativeTypeName("HANDLE")] IntPtr hSection, [NativeTypeName("UINT")] uint stride, [NativeTypeName("UINT")] uint offset, WICSectionAccessLevel desiredAccessLevel, IWICBitmap** ppIBitmap);
+        public static extern int WICCreateBitmapFromSectionEx([NativeTypeName("UINT")] uint width, [NativeTypeName("UINT")] uint height, [NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat, [NativeTypeName("HANDLE")] IntPtr hSection, [NativeTypeName("UINT")] uint stride, [NativeTypeName("UINT")] uint offset, WICSectionAccessLevel desiredAccessLevel, [NativeTypeName("IWICBitmap **")] IWICBitmap** ppIBitmap);
 
-        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "WICMapGuidToShortName", ExactSpelling = true)]
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "WICMapGuidToShortName", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WICMapGuidToShortName([NativeTypeName("REFGUID")] Guid* guid, [NativeTypeName("UINT")] uint cchName, [Optional, NativeTypeName("WCHAR[]")] ushort* wzName, [NativeTypeName("UINT")] uint* pcchActual);
+        public static extern int WICMapGuidToShortName([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT")] uint cchName, [NativeTypeName("WCHAR *")] ushort* wzName, [NativeTypeName("UINT *")] uint* pcchActual);
 
-        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "WICMapShortNameToGuid", ExactSpelling = true)]
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "WICMapShortNameToGuid", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WICMapShortNameToGuid([NativeTypeName("PCWSTR")] ushort* wzName, [NativeTypeName("GUID")] Guid* pguid);
+        public static extern int WICMapShortNameToGuid([NativeTypeName("PCWSTR")] ushort* wzName, [NativeTypeName("GUID *")] Guid* pguid);
 
-        [DllImport(DllName, CallingConvention = CallingConvention.Winapi, EntryPoint = "WICMapSchemaToName", ExactSpelling = true)]
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "WICMapSchemaToName", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WICMapSchemaToName([NativeTypeName("REFGUID")] Guid* guidMetadataFormat, [NativeTypeName("LPWSTR")] ushort* pwzSchema, [NativeTypeName("UINT")] uint cchName, [Optional, NativeTypeName("WCHAR[]")] ushort* wzName, [NativeTypeName("UINT")] uint* pcchActual);
+        public static extern int WICMapSchemaToName([NativeTypeName("const GUID &")] Guid* guidMetadataFormat, [NativeTypeName("LPWSTR")] ushort* pwzSchema, [NativeTypeName("UINT")] uint cchName, [NativeTypeName("WCHAR *")] ushort* wzName, [NativeTypeName("UINT *")] uint* pcchActual);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "BSTR_UserSize", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned long")]
+        public static extern uint BSTR_UserSize([NativeTypeName("unsigned long *")] uint* param0, [NativeTypeName("unsigned long")] uint param1, [NativeTypeName("BSTR *")] ushort** param2);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "BSTR_UserMarshal", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned char *")]
+        public static extern byte* BSTR_UserMarshal([NativeTypeName("unsigned long *")] uint* param0, [NativeTypeName("unsigned char *")] byte* param1, [NativeTypeName("BSTR *")] ushort** param2);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "BSTR_UserUnmarshal", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned char *")]
+        public static extern byte* BSTR_UserUnmarshal([NativeTypeName("unsigned long *")] uint* param0, [NativeTypeName("unsigned char *")] byte* param1, [NativeTypeName("BSTR *")] ushort** param2);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "BSTR_UserFree", ExactSpelling = true)]
+        public static extern void BSTR_UserFree([NativeTypeName("unsigned long *")] uint* param0, [NativeTypeName("BSTR *")] ushort** param1);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "HBITMAP_UserSize", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned long")]
+        public static extern uint HBITMAP_UserSize([NativeTypeName("unsigned long *")] uint* param0, [NativeTypeName("unsigned long")] uint param1, [NativeTypeName("HBITMAP *")] IntPtr* param2);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "HBITMAP_UserMarshal", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned char *")]
+        public static extern byte* HBITMAP_UserMarshal([NativeTypeName("unsigned long *")] uint* param0, [NativeTypeName("unsigned char *")] byte* param1, [NativeTypeName("HBITMAP *")] IntPtr* param2);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "HBITMAP_UserUnmarshal", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned char *")]
+        public static extern byte* HBITMAP_UserUnmarshal([NativeTypeName("unsigned long *")] uint* param0, [NativeTypeName("unsigned char *")] byte* param1, [NativeTypeName("HBITMAP *")] IntPtr* param2);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "HBITMAP_UserFree", ExactSpelling = true)]
+        public static extern void HBITMAP_UserFree([NativeTypeName("unsigned long *")] uint* param0, [NativeTypeName("HBITMAP *")] IntPtr* param1);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "HICON_UserSize", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned long")]
+        public static extern uint HICON_UserSize([NativeTypeName("unsigned long *")] uint* param0, [NativeTypeName("unsigned long")] uint param1, [NativeTypeName("HICON *")] IntPtr* param2);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "HICON_UserMarshal", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned char *")]
+        public static extern byte* HICON_UserMarshal([NativeTypeName("unsigned long *")] uint* param0, [NativeTypeName("unsigned char *")] byte* param1, [NativeTypeName("HICON *")] IntPtr* param2);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "HICON_UserUnmarshal", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned char *")]
+        public static extern byte* HICON_UserUnmarshal([NativeTypeName("unsigned long *")] uint* param0, [NativeTypeName("unsigned char *")] byte* param1, [NativeTypeName("HICON *")] IntPtr* param2);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "HICON_UserFree", ExactSpelling = true)]
+        public static extern void HICON_UserFree([NativeTypeName("unsigned long *")] uint* param0, [NativeTypeName("HICON *")] IntPtr* param1);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "HPALETTE_UserSize", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned long")]
+        public static extern uint HPALETTE_UserSize([NativeTypeName("unsigned long *")] uint* param0, [NativeTypeName("unsigned long")] uint param1, [NativeTypeName("HPALETTE *")] IntPtr* param2);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "HPALETTE_UserMarshal", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned char *")]
+        public static extern byte* HPALETTE_UserMarshal([NativeTypeName("unsigned long *")] uint* param0, [NativeTypeName("unsigned char *")] byte* param1, [NativeTypeName("HPALETTE *")] IntPtr* param2);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "HPALETTE_UserUnmarshal", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned char *")]
+        public static extern byte* HPALETTE_UserUnmarshal([NativeTypeName("unsigned long *")] uint* param0, [NativeTypeName("unsigned char *")] byte* param1, [NativeTypeName("HPALETTE *")] IntPtr* param2);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "HPALETTE_UserFree", ExactSpelling = true)]
+        public static extern void HPALETTE_UserFree([NativeTypeName("unsigned long *")] uint* param0, [NativeTypeName("HPALETTE *")] IntPtr* param1);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "LPSAFEARRAY_UserSize", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned long")]
+        public static extern uint LPSAFEARRAY_UserSize([NativeTypeName("unsigned long *")] uint* param0, [NativeTypeName("unsigned long")] uint param1, [NativeTypeName("LPSAFEARRAY *")] SAFEARRAY** param2);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "LPSAFEARRAY_UserMarshal", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned char *")]
+        public static extern byte* LPSAFEARRAY_UserMarshal([NativeTypeName("unsigned long *")] uint* param0, [NativeTypeName("unsigned char *")] byte* param1, [NativeTypeName("LPSAFEARRAY *")] SAFEARRAY** param2);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "LPSAFEARRAY_UserUnmarshal", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned char *")]
+        public static extern byte* LPSAFEARRAY_UserUnmarshal([NativeTypeName("unsigned long *")] uint* param0, [NativeTypeName("unsigned char *")] byte* param1, [NativeTypeName("LPSAFEARRAY *")] SAFEARRAY** param2);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "LPSAFEARRAY_UserFree", ExactSpelling = true)]
+        public static extern void LPSAFEARRAY_UserFree([NativeTypeName("unsigned long *")] uint* param0, [NativeTypeName("LPSAFEARRAY *")] SAFEARRAY** param1);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "WICInProcPointer_UserSize", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned long")]
+        public static extern uint WICInProcPointer_UserSize([NativeTypeName("unsigned long *")] uint* param0, [NativeTypeName("unsigned long")] uint param1, [NativeTypeName("WICInProcPointer *")] byte** param2);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "WICInProcPointer_UserMarshal", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned char *")]
+        public static extern byte* WICInProcPointer_UserMarshal([NativeTypeName("unsigned long *")] uint* param0, [NativeTypeName("unsigned char *")] byte* param1, [NativeTypeName("WICInProcPointer *")] byte** param2);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "WICInProcPointer_UserUnmarshal", ExactSpelling = true)]
+        [return: NativeTypeName("unsigned char *")]
+        public static extern byte* WICInProcPointer_UserUnmarshal([NativeTypeName("unsigned long *")] uint* param0, [NativeTypeName("unsigned char *")] byte* param1, [NativeTypeName("WICInProcPointer *")] byte** param2);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "WICInProcPointer_UserFree", ExactSpelling = true)]
+        public static extern void WICInProcPointer_UserFree([NativeTypeName("unsigned long *")] uint* param0, [NativeTypeName("WICInProcPointer *")] byte** param1);
     }
 }
