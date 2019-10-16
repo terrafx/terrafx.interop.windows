@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
+    [Guid("EC5EC8A9-C395-4314-9C77-54D7A935FF70")]
     public unsafe partial struct IWICImagingFactory
     {
         public readonly Vtbl* lpVtbl;

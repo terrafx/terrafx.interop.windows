@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
+    [Guid("449494BC-B468-4927-96D7-BA90D31AB505")]
     public unsafe partial struct IWICStreamProvider
     {
         public readonly Vtbl* lpVtbl;
