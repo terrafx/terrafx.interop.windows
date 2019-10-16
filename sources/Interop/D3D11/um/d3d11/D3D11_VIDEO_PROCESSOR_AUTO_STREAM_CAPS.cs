@@ -3,8 +3,11 @@
 // Ported from um/d3d11.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop
 {
+    [Flags]
     public enum D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS
     {
         D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS_DENOISE = 0x1,
