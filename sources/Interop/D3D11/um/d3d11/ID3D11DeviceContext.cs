@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
+    [Guid("C0BFA96C-E089-44FB-8EAF-26F8796190DA")]
     public unsafe partial struct ID3D11DeviceContext
     {
         public readonly Vtbl* lpVtbl;

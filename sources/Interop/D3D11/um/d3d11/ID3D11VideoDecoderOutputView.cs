@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
+    [Guid("C2931AEA-2A85-4F20-860F-FBA1FD256E18")]
     public unsafe partial struct ID3D11VideoDecoderOutputView
     {
         public readonly Vtbl* lpVtbl;
