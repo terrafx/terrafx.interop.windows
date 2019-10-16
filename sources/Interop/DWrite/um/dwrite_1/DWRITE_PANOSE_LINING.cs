@@ -1,29 +1,20 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\dwrite_1.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/dwrite_1.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop
 {
-    /// <summary>Outline handling. Present for families: 4-decorative</summary>
     public enum DWRITE_PANOSE_LINING
     {
         DWRITE_PANOSE_LINING_ANY = 0,
-
         DWRITE_PANOSE_LINING_NO_FIT = 1,
-
         DWRITE_PANOSE_LINING_NONE = 2,
-
         DWRITE_PANOSE_LINING_INLINE = 3,
-
         DWRITE_PANOSE_LINING_OUTLINE = 4,
-
         DWRITE_PANOSE_LINING_ENGRAVED = 5,
-
         DWRITE_PANOSE_LINING_SHADOW = 6,
-
         DWRITE_PANOSE_LINING_RELIEF = 7,
-
-        DWRITE_PANOSE_LINING_BACKDROP = 8
+        DWRITE_PANOSE_LINING_BACKDROP = 8,
     }
 }

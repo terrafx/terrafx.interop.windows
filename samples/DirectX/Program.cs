@@ -53,7 +53,7 @@ namespace TerraFX.Samples.DirectX
 
         private static int Run(DXSample sample)
         {
-            var hInstance = GetModuleHandle();
+            var hInstance = GetModuleHandleW(null);
             return Win32Application.Run(sample, hInstance, SW_SHOWDEFAULT);
         }
 

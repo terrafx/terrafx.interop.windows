@@ -1,9 +1,10 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\wincodec.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/wincodec.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -15,79 +16,69 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IWICDdsDecoder* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
+        public delegate int _QueryInterface(IWICDdsDecoder* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IWICDdsDecoder* This);
+        public delegate uint _AddRef(IWICDdsDecoder* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IWICDdsDecoder* This);
+        public delegate uint _Release(IWICDdsDecoder* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetParameters(IWICDdsDecoder* This, WICDdsParameters* pParameters);
+        public delegate int _GetParameters(IWICDdsDecoder* pThis, [NativeTypeName("WICDdsParameters *")] WICDdsParameters* pParameters);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFrame(IWICDdsDecoder* This, [NativeTypeName("UINT")] uint arrayIndex, [NativeTypeName("UINT")] uint mipLevel, [NativeTypeName("UINT")] uint sliceIndex, IWICBitmapFrameDecode** ppIBitmapFrame = null);
+        public delegate int _GetFrame(IWICDdsDecoder* pThis, [NativeTypeName("UINT")] uint arrayIndex, [NativeTypeName("UINT")] uint mipLevel, [NativeTypeName("UINT")] uint sliceIndex, [NativeTypeName("IWICBitmapFrameDecode **")] IWICBitmapFrameDecode** ppIBitmapFrame);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            fixed (IWICDdsDecoder* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IWICDdsDecoder*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            fixed (IWICDdsDecoder* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IWICDdsDecoder*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            fixed (IWICDdsDecoder* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IWICDdsDecoder*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetParameters(WICDdsParameters* pParameters)
+        public int GetParameters([NativeTypeName("WICDdsParameters *")] WICDdsParameters* pParameters)
         {
-            fixed (IWICDdsDecoder* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetParameters>(lpVtbl->GetParameters)(This, pParameters);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetParameters>(lpVtbl->GetParameters)((IWICDdsDecoder*)Unsafe.AsPointer(ref this), pParameters);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFrame([NativeTypeName("UINT")] uint arrayIndex, [NativeTypeName("UINT")] uint mipLevel, [NativeTypeName("UINT")] uint sliceIndex, IWICBitmapFrameDecode** ppIBitmapFrame = null)
+        public int GetFrame([NativeTypeName("UINT")] uint arrayIndex, [NativeTypeName("UINT")] uint mipLevel, [NativeTypeName("UINT")] uint sliceIndex, [NativeTypeName("IWICBitmapFrameDecode **")] IWICBitmapFrameDecode** ppIBitmapFrame)
         {
-            fixed (IWICDdsDecoder* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFrame>(lpVtbl->GetFrame)(This, arrayIndex, mipLevel, sliceIndex, ppIBitmapFrame);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFrame>(lpVtbl->GetFrame)((IWICDdsDecoder*)Unsafe.AsPointer(ref this), arrayIndex, mipLevel, sliceIndex, ppIBitmapFrame);
         }
 
         public partial struct Vtbl
         {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
             public IntPtr QueryInterface;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr AddRef;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr Release;
 
+            [NativeTypeName("HRESULT (WICDdsParameters *) __attribute__((stdcall))")]
             public IntPtr GetParameters;
 
+            [NativeTypeName("HRESULT (UINT, UINT, UINT, IWICBitmapFrameDecode **) __attribute__((stdcall))")]
             public IntPtr GetFrame;
         }
     }

@@ -986,8 +986,6 @@ namespace TerraFX.Interop
 
         public static int MAKE_D3D11_STATUS(int code) => MAKE_HRESULT(0, unchecked((int)_FACD3D11), code);
 
-        public static uint D3D11CalcSubresource(uint MipSlice, uint ArraySlice, uint MipLevels) => MipSlice + (ArraySlice * MipLevels);
-
         public static D3D11_FILTER D3D11_ENCODE_BASIC_FILTER(D3D11_FILTER_TYPE min, D3D11_FILTER_TYPE mag, D3D11_FILTER_TYPE mip, D3D11_FILTER_REDUCTION_TYPE reduction)
         {
             return (D3D11_FILTER)((((int)min & D3D11_FILTER_TYPE_MASK) << D3D11_MIN_FILTER_SHIFT)

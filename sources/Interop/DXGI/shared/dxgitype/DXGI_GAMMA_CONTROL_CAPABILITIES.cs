@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared\dxgitype.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from shared/dxgitype.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop
@@ -17,7 +17,7 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint NumGammaControlPoints;
 
-        [NativeTypeName("FLOAT[1025]")]
+        [NativeTypeName("float [1025]")]
         public fixed float ControlPointPositions[1025];
     }
 }

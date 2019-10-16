@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\d3d11.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/d3d11.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -128,7 +128,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _OpenSharedResource(ID3D11Device* pThis, [NativeTypeName("HANDLE")] void* hResource, [NativeTypeName("const IID &")] Guid* ReturnedInterface, [NativeTypeName("void **")] void** ppResource);
+        public delegate int _OpenSharedResource(ID3D11Device* pThis, [NativeTypeName("HANDLE")] IntPtr hResource, [NativeTypeName("const IID &")] Guid* ReturnedInterface, [NativeTypeName("void **")] void** ppResource);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
@@ -352,7 +352,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int OpenSharedResource([NativeTypeName("HANDLE")] void* hResource, [NativeTypeName("const IID &")] Guid* ReturnedInterface, [NativeTypeName("void **")] void** ppResource)
+        public int OpenSharedResource([NativeTypeName("HANDLE")] IntPtr hResource, [NativeTypeName("const IID &")] Guid* ReturnedInterface, [NativeTypeName("void **")] void** ppResource)
         {
             return Marshal.GetDelegateForFunctionPointer<_OpenSharedResource>(lpVtbl->OpenSharedResource)((ID3D11Device*)Unsafe.AsPointer(ref this), hResource, ReturnedInterface, ppResource);
         }
@@ -440,133 +440,133 @@ namespace TerraFX.Interop
 
         public partial struct Vtbl
         {
-            [NativeTypeName("HRESULT (const IID &, void **)")]
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
             public IntPtr QueryInterface;
 
-            [NativeTypeName("ULONG ()")]
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr AddRef;
 
-            [NativeTypeName("ULONG ()")]
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr Release;
 
-            [NativeTypeName("HRESULT (const D3D11_BUFFER_DESC *, const D3D11_SUBRESOURCE_DATA *, ID3D11Buffer **)")]
+            [NativeTypeName("HRESULT (const D3D11_BUFFER_DESC *, const D3D11_SUBRESOURCE_DATA *, ID3D11Buffer **) __attribute__((stdcall))")]
             public IntPtr CreateBuffer;
 
-            [NativeTypeName("HRESULT (const D3D11_TEXTURE1D_DESC *, const D3D11_SUBRESOURCE_DATA *, ID3D11Texture1D **)")]
+            [NativeTypeName("HRESULT (const D3D11_TEXTURE1D_DESC *, const D3D11_SUBRESOURCE_DATA *, ID3D11Texture1D **) __attribute__((stdcall))")]
             public IntPtr CreateTexture1D;
 
-            [NativeTypeName("HRESULT (const D3D11_TEXTURE2D_DESC *, const D3D11_SUBRESOURCE_DATA *, ID3D11Texture2D **)")]
+            [NativeTypeName("HRESULT (const D3D11_TEXTURE2D_DESC *, const D3D11_SUBRESOURCE_DATA *, ID3D11Texture2D **) __attribute__((stdcall))")]
             public IntPtr CreateTexture2D;
 
-            [NativeTypeName("HRESULT (const D3D11_TEXTURE3D_DESC *, const D3D11_SUBRESOURCE_DATA *, ID3D11Texture3D **)")]
+            [NativeTypeName("HRESULT (const D3D11_TEXTURE3D_DESC *, const D3D11_SUBRESOURCE_DATA *, ID3D11Texture3D **) __attribute__((stdcall))")]
             public IntPtr CreateTexture3D;
 
-            [NativeTypeName("HRESULT (ID3D11Resource *, const D3D11_SHADER_RESOURCE_VIEW_DESC *, ID3D11ShaderResourceView **)")]
+            [NativeTypeName("HRESULT (ID3D11Resource *, const D3D11_SHADER_RESOURCE_VIEW_DESC *, ID3D11ShaderResourceView **) __attribute__((stdcall))")]
             public IntPtr CreateShaderResourceView;
 
-            [NativeTypeName("HRESULT (ID3D11Resource *, const D3D11_UNORDERED_ACCESS_VIEW_DESC *, ID3D11UnorderedAccessView **)")]
+            [NativeTypeName("HRESULT (ID3D11Resource *, const D3D11_UNORDERED_ACCESS_VIEW_DESC *, ID3D11UnorderedAccessView **) __attribute__((stdcall))")]
             public IntPtr CreateUnorderedAccessView;
 
-            [NativeTypeName("HRESULT (ID3D11Resource *, const D3D11_RENDER_TARGET_VIEW_DESC *, ID3D11RenderTargetView **)")]
+            [NativeTypeName("HRESULT (ID3D11Resource *, const D3D11_RENDER_TARGET_VIEW_DESC *, ID3D11RenderTargetView **) __attribute__((stdcall))")]
             public IntPtr CreateRenderTargetView;
 
-            [NativeTypeName("HRESULT (ID3D11Resource *, const D3D11_DEPTH_STENCIL_VIEW_DESC *, ID3D11DepthStencilView **)")]
+            [NativeTypeName("HRESULT (ID3D11Resource *, const D3D11_DEPTH_STENCIL_VIEW_DESC *, ID3D11DepthStencilView **) __attribute__((stdcall))")]
             public IntPtr CreateDepthStencilView;
 
-            [NativeTypeName("HRESULT (const D3D11_INPUT_ELEMENT_DESC *, UINT, const void *, SIZE_T, ID3D11InputLayout **)")]
+            [NativeTypeName("HRESULT (const D3D11_INPUT_ELEMENT_DESC *, UINT, const void *, SIZE_T, ID3D11InputLayout **) __attribute__((stdcall))")]
             public IntPtr CreateInputLayout;
 
-            [NativeTypeName("HRESULT (const void *, SIZE_T, ID3D11ClassLinkage *, ID3D11VertexShader **)")]
+            [NativeTypeName("HRESULT (const void *, SIZE_T, ID3D11ClassLinkage *, ID3D11VertexShader **) __attribute__((stdcall))")]
             public IntPtr CreateVertexShader;
 
-            [NativeTypeName("HRESULT (const void *, SIZE_T, ID3D11ClassLinkage *, ID3D11GeometryShader **)")]
+            [NativeTypeName("HRESULT (const void *, SIZE_T, ID3D11ClassLinkage *, ID3D11GeometryShader **) __attribute__((stdcall))")]
             public IntPtr CreateGeometryShader;
 
-            [NativeTypeName("HRESULT (const void *, SIZE_T, const D3D11_SO_DECLARATION_ENTRY *, UINT, const UINT *, UINT, UINT, ID3D11ClassLinkage *, ID3D11GeometryShader **)")]
+            [NativeTypeName("HRESULT (const void *, SIZE_T, const D3D11_SO_DECLARATION_ENTRY *, UINT, const UINT *, UINT, UINT, ID3D11ClassLinkage *, ID3D11GeometryShader **) __attribute__((stdcall))")]
             public IntPtr CreateGeometryShaderWithStreamOutput;
 
-            [NativeTypeName("HRESULT (const void *, SIZE_T, ID3D11ClassLinkage *, ID3D11PixelShader **)")]
+            [NativeTypeName("HRESULT (const void *, SIZE_T, ID3D11ClassLinkage *, ID3D11PixelShader **) __attribute__((stdcall))")]
             public IntPtr CreatePixelShader;
 
-            [NativeTypeName("HRESULT (const void *, SIZE_T, ID3D11ClassLinkage *, ID3D11HullShader **)")]
+            [NativeTypeName("HRESULT (const void *, SIZE_T, ID3D11ClassLinkage *, ID3D11HullShader **) __attribute__((stdcall))")]
             public IntPtr CreateHullShader;
 
-            [NativeTypeName("HRESULT (const void *, SIZE_T, ID3D11ClassLinkage *, ID3D11DomainShader **)")]
+            [NativeTypeName("HRESULT (const void *, SIZE_T, ID3D11ClassLinkage *, ID3D11DomainShader **) __attribute__((stdcall))")]
             public IntPtr CreateDomainShader;
 
-            [NativeTypeName("HRESULT (const void *, SIZE_T, ID3D11ClassLinkage *, ID3D11ComputeShader **)")]
+            [NativeTypeName("HRESULT (const void *, SIZE_T, ID3D11ClassLinkage *, ID3D11ComputeShader **) __attribute__((stdcall))")]
             public IntPtr CreateComputeShader;
 
-            [NativeTypeName("HRESULT (ID3D11ClassLinkage **)")]
+            [NativeTypeName("HRESULT (ID3D11ClassLinkage **) __attribute__((stdcall))")]
             public IntPtr CreateClassLinkage;
 
-            [NativeTypeName("HRESULT (const D3D11_BLEND_DESC *, ID3D11BlendState **)")]
+            [NativeTypeName("HRESULT (const D3D11_BLEND_DESC *, ID3D11BlendState **) __attribute__((stdcall))")]
             public IntPtr CreateBlendState;
 
-            [NativeTypeName("HRESULT (const D3D11_DEPTH_STENCIL_DESC *, ID3D11DepthStencilState **)")]
+            [NativeTypeName("HRESULT (const D3D11_DEPTH_STENCIL_DESC *, ID3D11DepthStencilState **) __attribute__((stdcall))")]
             public IntPtr CreateDepthStencilState;
 
-            [NativeTypeName("HRESULT (const D3D11_RASTERIZER_DESC *, ID3D11RasterizerState **)")]
+            [NativeTypeName("HRESULT (const D3D11_RASTERIZER_DESC *, ID3D11RasterizerState **) __attribute__((stdcall))")]
             public IntPtr CreateRasterizerState;
 
-            [NativeTypeName("HRESULT (const D3D11_SAMPLER_DESC *, ID3D11SamplerState **)")]
+            [NativeTypeName("HRESULT (const D3D11_SAMPLER_DESC *, ID3D11SamplerState **) __attribute__((stdcall))")]
             public IntPtr CreateSamplerState;
 
-            [NativeTypeName("HRESULT (const D3D11_QUERY_DESC *, ID3D11Query **)")]
+            [NativeTypeName("HRESULT (const D3D11_QUERY_DESC *, ID3D11Query **) __attribute__((stdcall))")]
             public IntPtr CreateQuery;
 
-            [NativeTypeName("HRESULT (const D3D11_QUERY_DESC *, ID3D11Predicate **)")]
+            [NativeTypeName("HRESULT (const D3D11_QUERY_DESC *, ID3D11Predicate **) __attribute__((stdcall))")]
             public IntPtr CreatePredicate;
 
-            [NativeTypeName("HRESULT (const D3D11_COUNTER_DESC *, ID3D11Counter **)")]
+            [NativeTypeName("HRESULT (const D3D11_COUNTER_DESC *, ID3D11Counter **) __attribute__((stdcall))")]
             public IntPtr CreateCounter;
 
-            [NativeTypeName("HRESULT (UINT, ID3D11DeviceContext **)")]
+            [NativeTypeName("HRESULT (UINT, ID3D11DeviceContext **) __attribute__((stdcall))")]
             public IntPtr CreateDeferredContext;
 
-            [NativeTypeName("HRESULT (HANDLE, const IID &, void **)")]
+            [NativeTypeName("HRESULT (HANDLE, const IID &, void **) __attribute__((stdcall))")]
             public IntPtr OpenSharedResource;
 
-            [NativeTypeName("HRESULT (DXGI_FORMAT, UINT *)")]
+            [NativeTypeName("HRESULT (DXGI_FORMAT, UINT *) __attribute__((stdcall))")]
             public IntPtr CheckFormatSupport;
 
-            [NativeTypeName("HRESULT (DXGI_FORMAT, UINT, UINT *)")]
+            [NativeTypeName("HRESULT (DXGI_FORMAT, UINT, UINT *) __attribute__((stdcall))")]
             public IntPtr CheckMultisampleQualityLevels;
 
-            [NativeTypeName("void (D3D11_COUNTER_INFO *)")]
+            [NativeTypeName("void (D3D11_COUNTER_INFO *) __attribute__((stdcall))")]
             public IntPtr CheckCounterInfo;
 
-            [NativeTypeName("HRESULT (const D3D11_COUNTER_DESC *, D3D11_COUNTER_TYPE *, UINT *, LPSTR, UINT *, LPSTR, UINT *, LPSTR, UINT *)")]
+            [NativeTypeName("HRESULT (const D3D11_COUNTER_DESC *, D3D11_COUNTER_TYPE *, UINT *, LPSTR, UINT *, LPSTR, UINT *, LPSTR, UINT *) __attribute__((stdcall))")]
             public IntPtr CheckCounter;
 
-            [NativeTypeName("HRESULT (D3D11_FEATURE, void *, UINT)")]
+            [NativeTypeName("HRESULT (D3D11_FEATURE, void *, UINT) __attribute__((stdcall))")]
             public IntPtr CheckFeatureSupport;
 
-            [NativeTypeName("HRESULT (const GUID &, UINT *, void *)")]
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
             public IntPtr GetPrivateData;
 
-            [NativeTypeName("HRESULT (const GUID &, UINT, const void *)")]
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
             public IntPtr SetPrivateData;
 
-            [NativeTypeName("HRESULT (const GUID &, const IUnknown *)")]
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
             public IntPtr SetPrivateDataInterface;
 
-            [NativeTypeName("D3D_FEATURE_LEVEL ()")]
+            [NativeTypeName("D3D_FEATURE_LEVEL () __attribute__((stdcall))")]
             public IntPtr GetFeatureLevel;
 
-            [NativeTypeName("UINT ()")]
+            [NativeTypeName("UINT () __attribute__((stdcall))")]
             public IntPtr GetCreationFlags;
 
-            [NativeTypeName("HRESULT ()")]
+            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
             public IntPtr GetDeviceRemovedReason;
 
-            [NativeTypeName("void (ID3D11DeviceContext **)")]
+            [NativeTypeName("void (ID3D11DeviceContext **) __attribute__((stdcall))")]
             public IntPtr GetImmediateContext;
 
-            [NativeTypeName("HRESULT (UINT)")]
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
             public IntPtr SetExceptionMode;
 
-            [NativeTypeName("UINT ()")]
+            [NativeTypeName("UINT () __attribute__((stdcall))")]
             public IntPtr GetExceptionMode;
         }
     }

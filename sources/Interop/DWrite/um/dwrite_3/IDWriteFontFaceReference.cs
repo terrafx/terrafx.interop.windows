@@ -1,14 +1,14 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\dwrite_3.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/dwrite_3.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    /// <summary>A uniquely identifying reference to a font, from which you can create a font face to query font metrics and use for rendering. A font face reference consists of a font file, font face index, and font face simulation. The file data may or may not be physically present on the local machine yet.</summary>
     [Guid("5E7FA7CA-DDE3-424C-89F0-9FCD6FED58CD")]
     public unsafe partial struct IDWriteFontFaceReference
     {
@@ -16,291 +16,221 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDWriteFontFaceReference* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
+        public delegate int _QueryInterface(IDWriteFontFaceReference* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDWriteFontFaceReference* This);
+        public delegate uint _AddRef(IDWriteFontFaceReference* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDWriteFontFaceReference* This);
+        public delegate uint _Release(IDWriteFontFaceReference* pThis);
 
-        /// <summary>Creates a font face from the reference for use with layout, shaping, or rendering.</summary>
-        /// <param name="fontFace">Newly created font face object, or nullptr in the case of failure.</param>
-        /// <returns> Standard HRESULT error code.</returns>
-        /// <remarks> This function can fail with DWRITE_E_REMOTEFONT if the font is not local.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateFontFace(IDWriteFontFaceReference* This, IDWriteFontFace3** fontFace);
+        public delegate int _CreateFontFace(IDWriteFontFaceReference* pThis, [NativeTypeName("IDWriteFontFace3 **")] IDWriteFontFace3** fontFace);
 
-        /// <summary>Creates a font face with alternate font simulations, for example, to explicitly simulate a bold font face out of a regular variant.</summary>
-        /// <param name="fontFaceSimulationFlags">Font face simulation flags for algorithmic emboldening and italicization.</param>
-        /// <param name="fontFace">Newly created font face object, or nullptr in the case of failure.</param>
-        /// <returns> Standard HRESULT error code.</returns>
-        /// <remarks> This function can fail with DWRITE_E_REMOTEFONT if the font is not local.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateFontFaceWithSimulations(IDWriteFontFaceReference* This, DWRITE_FONT_SIMULATIONS fontFaceSimulationFlags, IDWriteFontFace3** fontFace);
+        public delegate int _CreateFontFaceWithSimulations(IDWriteFontFaceReference* pThis, DWRITE_FONT_SIMULATIONS fontFaceSimulationFlags, [NativeTypeName("IDWriteFontFace3 **")] IDWriteFontFace3** fontFace);
 
-        /// <summary>Compares two instances of a font face references for equality.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("BOOL")]
-        public delegate int __Equals(IDWriteFontFaceReference* This, IDWriteFontFaceReference* fontFaceReference);
+        public delegate int _Equals(IDWriteFontFaceReference* pThis, [NativeTypeName("IDWriteFontFaceReference *")] IDWriteFontFaceReference* fontFaceReference);
 
-        /// <summary>Obtains the zero-based index of the font face in its font file or files. If the font files contain a single face, the return value is zero.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public delegate uint _GetFontFaceIndex(IDWriteFontFaceReference* This);
+        public delegate uint _GetFontFaceIndex(IDWriteFontFaceReference* pThis);
 
-        /// <summary>Obtains the algorithmic style simulation flags of a font face.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate DWRITE_FONT_SIMULATIONS _GetSimulations(IDWriteFontFaceReference* This);
+        public delegate DWRITE_FONT_SIMULATIONS _GetSimulations(IDWriteFontFaceReference* pThis);
 
-        /// <summary>Obtains the font file representing a font face.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFontFile(IDWriteFontFaceReference* This, IDWriteFontFile** fontFile);
+        public delegate int _GetFontFile(IDWriteFontFaceReference* pThis, [NativeTypeName("IDWriteFontFile **")] IDWriteFontFile** fontFile);
 
-        /// <summary>Get the local size of the font face in bytes.</summary>
-        /// <remarks> The value returned by GetLocalFileSize will always be less than or equal to the value returned by GetFullSize. If the locality is remote, the GetLocalFileSize value is zero. If the locality is local, this value will equal the value returned by GetFileSize. If the locality is partial, this value will equal the size of the portions of the font data that have been downloaded, which will be greater than zero and less than or equal to the GetFileSize value.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
-        public delegate ulong _GetLocalFileSize(IDWriteFontFaceReference* This);
+        public delegate ulong _GetLocalFileSize(IDWriteFontFaceReference* pThis);
 
-        /// <summary>Get the total size of the font face in bytes.</summary>
-        /// <remarks> If the locality is remote, this value is unknown and will be zero. If the locality is partial or local, the value is the full size of the font face.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
-        public delegate ulong _GetFileSize(IDWriteFontFaceReference* This);
+        public delegate ulong _GetFileSize(IDWriteFontFaceReference* pThis);
 
-        /// <summary>Get the last modified date.</summary>
-        /// <remarks> The time may be zero if the font file loader does not expose file time.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFileTime(IDWriteFontFaceReference* This, FILETIME* lastWriteTime);
+        public delegate int _GetFileTime(IDWriteFontFaceReference* pThis, [NativeTypeName("FILETIME *")] FILETIME* lastWriteTime);
 
-        /// <summary>Get the locality of this font face reference. You can always successfully create a font face from a fully local font. Attempting to create a font face on a remote or partially local font may fail with DWRITE_E_REMOTEFONT. This function may change between calls depending on background downloads and whether cached data expires.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate DWRITE_LOCALITY _GetLocality(IDWriteFontFaceReference* This);
+        public delegate DWRITE_LOCALITY _GetLocality(IDWriteFontFaceReference* pThis);
 
-        /// <summary>Adds a request to the font download queue (IDWriteFontDownloadQueue).</summary>
-        /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _EnqueueFontDownloadRequest(IDWriteFontFaceReference* This);
+        public delegate int _EnqueueFontDownloadRequest(IDWriteFontFaceReference* pThis);
 
-        /// <summary>Adds a request to the font download queue (IDWriteFontDownloadQueue).</summary>
-        /// <param name="characters">Array of characters to download.</param>
-        /// <param name="characterCount">The number of elements in the character array.</param>
-        /// <returns> Standard HRESULT error code.</returns>
-        /// <remarks> Downloading a character involves downloading every glyph it depends on directly or indirectly, via font tables (cmap, GSUB, COLR, glyf).</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _EnqueueCharacterDownloadRequest(IDWriteFontFaceReference* This, [NativeTypeName("WCHAR[]")] ushort* characters, [NativeTypeName("UINT32")] uint characterCount);
+        public delegate int _EnqueueCharacterDownloadRequest(IDWriteFontFaceReference* pThis, [NativeTypeName("const WCHAR *")] ushort* characters, [NativeTypeName("UINT32")] uint characterCount);
 
-        /// <summary>Adds a request to the font download queue (IDWriteFontDownloadQueue).</summary>
-        /// <param name="glyphIndices">Array of glyph indices to download.</param>
-        /// <param name="glyphCount">The number of elements in the glyph index array.</param>
-        /// <returns> Standard HRESULT error code.</returns>
-        /// <remarks> Downloading a glyph involves downloading any other glyphs it depends on from the font tables (GSUB, COLR, glyf).</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _EnqueueGlyphDownloadRequest(IDWriteFontFaceReference* This, [NativeTypeName("UINT16[]")] ushort* glyphIndices, [NativeTypeName("UINT32")] uint glyphCount);
+        public delegate int _EnqueueGlyphDownloadRequest(IDWriteFontFaceReference* pThis, [NativeTypeName("const UINT16 *")] ushort* glyphIndices, [NativeTypeName("UINT32")] uint glyphCount);
 
-        /// <summary>Adds a request to the font download queue (IDWriteFontDownloadQueue).</summary>
-        /// <param name="fileOffset">Offset of the fragment from the beginning of the font file.</param>
-        /// <param name="fragmentSize">Size of the fragment in bytes.</param>
-        /// <returns> Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _EnqueueFileFragmentDownloadRequest(IDWriteFontFaceReference* This, [NativeTypeName("UINT64")] ulong fileOffset, [NativeTypeName("UINT64")] ulong fragmentSize);
+        public delegate int _EnqueueFileFragmentDownloadRequest(IDWriteFontFaceReference* pThis, [NativeTypeName("UINT64")] ulong fileOffset, [NativeTypeName("UINT64")] ulong fragmentSize);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            fixed (IDWriteFontFaceReference* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDWriteFontFaceReference*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            fixed (IDWriteFontFaceReference* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDWriteFontFaceReference*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            fixed (IDWriteFontFaceReference* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDWriteFontFaceReference*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateFontFace(IDWriteFontFace3** fontFace)
+        public int CreateFontFace([NativeTypeName("IDWriteFontFace3 **")] IDWriteFontFace3** fontFace)
         {
-            fixed (IDWriteFontFaceReference* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_CreateFontFace>(lpVtbl->CreateFontFace)(This, fontFace);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_CreateFontFace>(lpVtbl->CreateFontFace)((IDWriteFontFaceReference*)Unsafe.AsPointer(ref this), fontFace);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateFontFaceWithSimulations(DWRITE_FONT_SIMULATIONS fontFaceSimulationFlags, IDWriteFontFace3** fontFace)
+        public int CreateFontFaceWithSimulations(DWRITE_FONT_SIMULATIONS fontFaceSimulationFlags, [NativeTypeName("IDWriteFontFace3 **")] IDWriteFontFace3** fontFace)
         {
-            fixed (IDWriteFontFaceReference* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_CreateFontFaceWithSimulations>(lpVtbl->CreateFontFaceWithSimulations)(This, fontFaceSimulationFlags, fontFace);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_CreateFontFaceWithSimulations>(lpVtbl->CreateFontFaceWithSimulations)((IDWriteFontFaceReference*)Unsafe.AsPointer(ref this), fontFaceSimulationFlags, fontFace);
         }
 
         [return: NativeTypeName("BOOL")]
-        public int _Equals(IDWriteFontFaceReference* fontFaceReference)
+        public int Equals([NativeTypeName("IDWriteFontFaceReference *")] IDWriteFontFaceReference* fontFaceReference)
         {
-            fixed (IDWriteFontFaceReference* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<__Equals>(lpVtbl->_Equals)(This, fontFaceReference);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_Equals>(lpVtbl->Equals)((IDWriteFontFaceReference*)Unsafe.AsPointer(ref this), fontFaceReference);
         }
 
         [return: NativeTypeName("UINT32")]
         public uint GetFontFaceIndex()
         {
-            fixed (IDWriteFontFaceReference* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontFaceIndex>(lpVtbl->GetFontFaceIndex)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFontFaceIndex>(lpVtbl->GetFontFaceIndex)((IDWriteFontFaceReference*)Unsafe.AsPointer(ref this));
         }
 
         public DWRITE_FONT_SIMULATIONS GetSimulations()
         {
-            fixed (IDWriteFontFaceReference* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetSimulations>(lpVtbl->GetSimulations)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetSimulations>(lpVtbl->GetSimulations)((IDWriteFontFaceReference*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFontFile(IDWriteFontFile** fontFile)
+        public int GetFontFile([NativeTypeName("IDWriteFontFile **")] IDWriteFontFile** fontFile)
         {
-            fixed (IDWriteFontFaceReference* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontFile>(lpVtbl->GetFontFile)(This, fontFile);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFontFile>(lpVtbl->GetFontFile)((IDWriteFontFaceReference*)Unsafe.AsPointer(ref this), fontFile);
         }
 
         [return: NativeTypeName("UINT64")]
         public ulong GetLocalFileSize()
         {
-            fixed (IDWriteFontFaceReference* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetLocalFileSize>(lpVtbl->GetLocalFileSize)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetLocalFileSize>(lpVtbl->GetLocalFileSize)((IDWriteFontFaceReference*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("UINT64")]
         public ulong GetFileSize()
         {
-            fixed (IDWriteFontFaceReference* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFileSize>(lpVtbl->GetFileSize)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFileSize>(lpVtbl->GetFileSize)((IDWriteFontFaceReference*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFileTime(FILETIME* lastWriteTime)
+        public int GetFileTime([NativeTypeName("FILETIME *")] FILETIME* lastWriteTime)
         {
-            fixed (IDWriteFontFaceReference* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFileTime>(lpVtbl->GetFileTime)(This, lastWriteTime);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFileTime>(lpVtbl->GetFileTime)((IDWriteFontFaceReference*)Unsafe.AsPointer(ref this), lastWriteTime);
         }
 
         public DWRITE_LOCALITY GetLocality()
         {
-            fixed (IDWriteFontFaceReference* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetLocality>(lpVtbl->GetLocality)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetLocality>(lpVtbl->GetLocality)((IDWriteFontFaceReference*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int EnqueueFontDownloadRequest()
         {
-            fixed (IDWriteFontFaceReference* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_EnqueueFontDownloadRequest>(lpVtbl->EnqueueFontDownloadRequest)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_EnqueueFontDownloadRequest>(lpVtbl->EnqueueFontDownloadRequest)((IDWriteFontFaceReference*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int EnqueueCharacterDownloadRequest([NativeTypeName("WCHAR[]")] ushort* characters, [NativeTypeName("UINT32")] uint characterCount)
+        public int EnqueueCharacterDownloadRequest([NativeTypeName("const WCHAR *")] ushort* characters, [NativeTypeName("UINT32")] uint characterCount)
         {
-            fixed (IDWriteFontFaceReference* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_EnqueueCharacterDownloadRequest>(lpVtbl->EnqueueCharacterDownloadRequest)(This, characters, characterCount);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_EnqueueCharacterDownloadRequest>(lpVtbl->EnqueueCharacterDownloadRequest)((IDWriteFontFaceReference*)Unsafe.AsPointer(ref this), characters, characterCount);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int EnqueueGlyphDownloadRequest([NativeTypeName("UINT16[]")] ushort* glyphIndices, [NativeTypeName("UINT32")] uint glyphCount)
+        public int EnqueueGlyphDownloadRequest([NativeTypeName("const UINT16 *")] ushort* glyphIndices, [NativeTypeName("UINT32")] uint glyphCount)
         {
-            fixed (IDWriteFontFaceReference* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_EnqueueGlyphDownloadRequest>(lpVtbl->EnqueueGlyphDownloadRequest)(This, glyphIndices, glyphCount);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_EnqueueGlyphDownloadRequest>(lpVtbl->EnqueueGlyphDownloadRequest)((IDWriteFontFaceReference*)Unsafe.AsPointer(ref this), glyphIndices, glyphCount);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int EnqueueFileFragmentDownloadRequest([NativeTypeName("UINT64")] ulong fileOffset, [NativeTypeName("UINT64")] ulong fragmentSize)
         {
-            fixed (IDWriteFontFaceReference* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_EnqueueFileFragmentDownloadRequest>(lpVtbl->EnqueueFileFragmentDownloadRequest)(This, fileOffset, fragmentSize);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_EnqueueFileFragmentDownloadRequest>(lpVtbl->EnqueueFileFragmentDownloadRequest)((IDWriteFontFaceReference*)Unsafe.AsPointer(ref this), fileOffset, fragmentSize);
         }
 
         public partial struct Vtbl
         {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
             public IntPtr QueryInterface;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr AddRef;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr Release;
 
+            [NativeTypeName("HRESULT (IDWriteFontFace3 **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr CreateFontFace;
 
+            [NativeTypeName("HRESULT (DWRITE_FONT_SIMULATIONS, IDWriteFontFace3 **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr CreateFontFaceWithSimulations;
 
-            public IntPtr _Equals;
+            [NativeTypeName("BOOL (IDWriteFontFaceReference *) __attribute__((nothrow)) __attribute__((stdcall))")]
+            public new IntPtr Equals;
 
+            [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFontFaceIndex;
 
+            [NativeTypeName("DWRITE_FONT_SIMULATIONS () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetSimulations;
 
+            [NativeTypeName("HRESULT (IDWriteFontFile **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFontFile;
 
+            [NativeTypeName("UINT64 () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetLocalFileSize;
 
+            [NativeTypeName("UINT64 () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFileSize;
 
+            [NativeTypeName("HRESULT (FILETIME *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFileTime;
 
+            [NativeTypeName("DWRITE_LOCALITY () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetLocality;
 
+            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr EnqueueFontDownloadRequest;
 
+            [NativeTypeName("HRESULT (const WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr EnqueueCharacterDownloadRequest;
 
+            [NativeTypeName("HRESULT (const UINT16 *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr EnqueueGlyphDownloadRequest;
 
+            [NativeTypeName("HRESULT (UINT64, UINT64) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr EnqueueFileFragmentDownloadRequest;
         }
     }

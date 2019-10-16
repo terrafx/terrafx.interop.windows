@@ -1,19 +1,17 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\dwrite_1.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/dwrite_1.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    /// <summary>Typeface classification values, used for font selection and matching.</summary>
-    /// <remarks> Note the family type (index 0) is the only stable entry in the 10-byte array, as all the following entries can change dynamically depending on context of the first field.</remarks>
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct DWRITE_PANOSE
     {
         [FieldOffset(0)]
-        [NativeTypeName("UINT8[10]")]
+        [NativeTypeName("UINT8 [10]")]
         public fixed byte values[10];
 
         [FieldOffset(0)]
@@ -21,15 +19,19 @@ namespace TerraFX.Interop
         public byte familyKind;
 
         [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at um/dwrite_1.h:758:5)")]
         public _text_e__Struct text;
 
         [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at um/dwrite_1.h:772:5)")]
         public _script_e__Struct script;
 
         [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at um/dwrite_1.h:786:5)")]
         public _decorative_e__Struct decorative;
 
         [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at um/dwrite_1.h:800:5)")]
         public _symbol_e__Struct symbol;
 
         public partial struct _text_e__Struct
@@ -63,7 +65,7 @@ namespace TerraFX.Interop
 
             [NativeTypeName("UINT8")]
             public byte xHeight;
-        };
+        }
 
         public partial struct _script_e__Struct
         {

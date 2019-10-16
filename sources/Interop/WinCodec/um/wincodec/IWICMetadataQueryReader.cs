@@ -1,9 +1,10 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\wincodec.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/wincodec.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -15,109 +16,95 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IWICMetadataQueryReader* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
+        public delegate int _QueryInterface(IWICMetadataQueryReader* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IWICMetadataQueryReader* This);
+        public delegate uint _AddRef(IWICMetadataQueryReader* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IWICMetadataQueryReader* This);
+        public delegate uint _Release(IWICMetadataQueryReader* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetContainerFormat(IWICMetadataQueryReader* This, [NativeTypeName("GUID")] Guid* pguidContainerFormat);
+        public delegate int _GetContainerFormat(IWICMetadataQueryReader* pThis, [NativeTypeName("GUID *")] Guid* pguidContainerFormat);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLocation(IWICMetadataQueryReader* This, [NativeTypeName("UINT")] uint cchMaxLength, [Optional, NativeTypeName("WCHAR[]")] ushort* wzNamespace, [NativeTypeName("UINT")] uint* pcchActualLength);
+        public delegate int _GetLocation(IWICMetadataQueryReader* pThis, [NativeTypeName("UINT")] uint cchMaxLength, [NativeTypeName("WCHAR *")] ushort* wzNamespace, [NativeTypeName("UINT *")] uint* pcchActualLength);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetMetadataByName(IWICMetadataQueryReader* This, [NativeTypeName("LPCWSTR")] ushort* wzName, PROPVARIANT* pvarValue = null);
+        public delegate int _GetMetadataByName(IWICMetadataQueryReader* pThis, [NativeTypeName("LPCWSTR")] ushort* wzName, [NativeTypeName("PROPVARIANT *")] PROPVARIANT* pvarValue);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetEnumerator(IWICMetadataQueryReader* This, IEnumString** ppIEnumString = null);
+        public delegate int _GetEnumerator(IWICMetadataQueryReader* pThis, [NativeTypeName("IEnumString **")] IEnumString** ppIEnumString);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            fixed (IWICMetadataQueryReader* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IWICMetadataQueryReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            fixed (IWICMetadataQueryReader* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IWICMetadataQueryReader*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            fixed (IWICMetadataQueryReader* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IWICMetadataQueryReader*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetContainerFormat([NativeTypeName("GUID")] Guid* pguidContainerFormat)
+        public int GetContainerFormat([NativeTypeName("GUID *")] Guid* pguidContainerFormat)
         {
-            fixed (IWICMetadataQueryReader* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetContainerFormat>(lpVtbl->GetContainerFormat)(This, pguidContainerFormat);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetContainerFormat>(lpVtbl->GetContainerFormat)((IWICMetadataQueryReader*)Unsafe.AsPointer(ref this), pguidContainerFormat);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetLocation([NativeTypeName("UINT")] uint cchMaxLength, [Optional, NativeTypeName("WCHAR[]")] ushort* wzNamespace, [NativeTypeName("UINT")] uint* pcchActualLength)
+        public int GetLocation([NativeTypeName("UINT")] uint cchMaxLength, [NativeTypeName("WCHAR *")] ushort* wzNamespace, [NativeTypeName("UINT *")] uint* pcchActualLength)
         {
-            fixed (IWICMetadataQueryReader* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetLocation>(lpVtbl->GetLocation)(This, cchMaxLength, wzNamespace, pcchActualLength);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetLocation>(lpVtbl->GetLocation)((IWICMetadataQueryReader*)Unsafe.AsPointer(ref this), cchMaxLength, wzNamespace, pcchActualLength);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetMetadataByName([NativeTypeName("LPCWSTR")] ushort* wzName, PROPVARIANT* pvarValue = null)
+        public int GetMetadataByName([NativeTypeName("LPCWSTR")] ushort* wzName, [NativeTypeName("PROPVARIANT *")] PROPVARIANT* pvarValue)
         {
-            fixed (IWICMetadataQueryReader* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetMetadataByName>(lpVtbl->GetMetadataByName)(This, wzName, pvarValue);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetMetadataByName>(lpVtbl->GetMetadataByName)((IWICMetadataQueryReader*)Unsafe.AsPointer(ref this), wzName, pvarValue);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetEnumerator(IEnumString** ppIEnumString = null)
+        public int GetEnumerator([NativeTypeName("IEnumString **")] IEnumString** ppIEnumString)
         {
-            fixed (IWICMetadataQueryReader* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetEnumerator>(lpVtbl->GetEnumerator)(This, ppIEnumString);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetEnumerator>(lpVtbl->GetEnumerator)((IWICMetadataQueryReader*)Unsafe.AsPointer(ref this), ppIEnumString);
         }
 
         public partial struct Vtbl
         {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
             public IntPtr QueryInterface;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr AddRef;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr Release;
 
+            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
             public IntPtr GetContainerFormat;
 
+            [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
             public IntPtr GetLocation;
 
+            [NativeTypeName("HRESULT (LPCWSTR, PROPVARIANT *) __attribute__((stdcall))")]
             public IntPtr GetMetadataByName;
 
+            [NativeTypeName("HRESULT (IEnumString **) __attribute__((stdcall))")]
             public IntPtr GetEnumerator;
         }
     }

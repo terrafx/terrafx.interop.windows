@@ -41,7 +41,7 @@
     <Company>TerraFX</Company>
     <PackageOutputPath>$(BaseArtifactsPath)pkg/$(Configuration)/</PackageOutputPath>
     <Product>TerraFX.Interop.Windows</Product>
-    <VersionPrefix>10.0.15063</VersionPrefix>
+    <VersionPrefix>10.0.18362</VersionPrefix>
     <VersionSuffix>alpha</VersionSuffix>
     <VersionSuffix Condition="'$(SYSTEM_PULLREQUEST_PULLREQUESTNUMBER)' != ''">pr$(SYSTEM_PULLREQUEST_PULLREQUESTNUMBER)</VersionSuffix>
   </PropertyGroup>

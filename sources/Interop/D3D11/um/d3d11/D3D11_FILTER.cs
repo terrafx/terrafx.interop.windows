@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\d3d11.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/d3d11.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop
@@ -24,7 +24,7 @@ namespace TerraFX.Interop
         D3D11_FILTER_COMPARISON_MIN_LINEAR_MAG_POINT_MIP_LINEAR = 0x91,
         D3D11_FILTER_COMPARISON_MIN_MAG_LINEAR_MIP_POINT = 0x94,
         D3D11_FILTER_COMPARISON_MIN_MAG_MIP_LINEAR = 0x95,
-        D3D11_FILTER_COMPARISON_ANISOTROPIC = 0xD5,
+        D3D11_FILTER_COMPARISON_ANISOTROPIC = 0xd5,
         D3D11_FILTER_MINIMUM_MIN_MAG_MIP_POINT = 0x100,
         D3D11_FILTER_MINIMUM_MIN_MAG_POINT_MIP_LINEAR = 0x101,
         D3D11_FILTER_MINIMUM_MIN_POINT_MAG_LINEAR_MIP_POINT = 0x104,
@@ -42,6 +42,6 @@ namespace TerraFX.Interop
         D3D11_FILTER_MAXIMUM_MIN_LINEAR_MAG_POINT_MIP_LINEAR = 0x191,
         D3D11_FILTER_MAXIMUM_MIN_MAG_LINEAR_MIP_POINT = 0x194,
         D3D11_FILTER_MAXIMUM_MIN_MAG_MIP_LINEAR = 0x195,
-        D3D11_FILTER_MAXIMUM_ANISOTROPIC = 0x1D5,
+        D3D11_FILTER_MAXIMUM_ANISOTROPIC = 0x1d5,
     }
 }

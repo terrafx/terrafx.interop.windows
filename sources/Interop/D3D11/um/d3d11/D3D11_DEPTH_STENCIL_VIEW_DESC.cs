@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\d3d11.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/d3d11.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -16,11 +16,11 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint Flags;
 
-        [NativeTypeName("struct (anonymous struct at um/d3d11.h:4322:5)")]
-        public _Anonymous_e__Struct Anonymous;
+        [NativeTypeName("D3D11_DEPTH_STENCIL_VIEW_DESC::(anonymous union at um/d3d11.h:4320:5)")]
+        public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Struct
+        public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
             public D3D11_TEX1D_DSV Texture1D;

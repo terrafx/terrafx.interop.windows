@@ -1,9 +1,10 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\d2d1svg.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/d2d1svg.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -15,245 +16,199 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ID2D1SvgDocument* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
+        public delegate int _QueryInterface(ID2D1SvgDocument* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ID2D1SvgDocument* This);
+        public delegate uint _AddRef(ID2D1SvgDocument* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ID2D1SvgDocument* This);
+        public delegate uint _Release(ID2D1SvgDocument* pThis);
 
-        /// <summary>Retrieve the factory associated with this resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetFactory(ID2D1SvgDocument* This, ID2D1Factory** factory);
+        public delegate void _GetFactory(ID2D1SvgDocument* pThis, [NativeTypeName("ID2D1Factory **")] ID2D1Factory** factory);
 
-        /// <summary>Sets the size of the initial viewport.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetViewportSize(ID2D1SvgDocument* This, [NativeTypeName("D2D1_SIZE_F")] D2D_SIZE_F viewportSize);
+        public delegate int _SetViewportSize(ID2D1SvgDocument* pThis, [NativeTypeName("D2D1_SIZE_F")] D2D_SIZE_F viewportSize);
 
-        /// <summary>Returns the size of the initial viewport.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("D2D1_SIZE_F")]
-        public delegate D2D_SIZE_F* _GetViewportSize(ID2D1SvgDocument* This, D2D_SIZE_F* _result);
+        public delegate D2D_SIZE_F* _GetViewportSize(ID2D1SvgDocument* pThis, D2D_SIZE_F* _result);
 
-        /// <summary>Sets the root element of the document. The root element must be an 'svg' element. If the element already exists within an svg tree, it is first removed.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetRoot(ID2D1SvgDocument* This, ID2D1SvgElement* root = null);
+        public delegate int _SetRoot(ID2D1SvgDocument* pThis, [NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* root);
 
-        /// <summary>Gets the root element of the document.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetRoot(ID2D1SvgDocument* This, ID2D1SvgElement** root);
+        public delegate void _GetRoot(ID2D1SvgDocument* pThis, [NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** root);
 
-        /// <summary>Gets the SVG element with the specified ID. If the element cannot be found, the returned element will be null.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _FindElementById(ID2D1SvgDocument* This, [NativeTypeName("PCWSTR")] ushort* id, ID2D1SvgElement** svgElement);
+        public delegate int _FindElementById(ID2D1SvgDocument* pThis, [NativeTypeName("PCWSTR")] ushort* id, [NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** svgElement);
 
-        /// <summary>Serializes an element and its subtree to XML. The output XML is encoded as UTF-8.</summary>
-        /// <param name="outputXmlStream">An output stream to contain the SVG XML subtree.</param>
-        /// <param name="subtree">The root of the subtree. If null, the entire document is serialized.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Serialize(ID2D1SvgDocument* This, IStream* outputXmlStream, ID2D1SvgElement* subtree = null);
+        public delegate int _Serialize(ID2D1SvgDocument* pThis, [NativeTypeName("IStream *")] IStream* outputXmlStream, [NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* subtree);
 
-        /// <summary>Deserializes a subtree from the stream. The stream must have only one root element, but that root element need not be an 'svg' element. The output element is not inserted into this document tree.</summary>
-        /// <param name="inputXmlStream">An input stream containing the SVG XML subtree.</param>
-        /// <param name="subtree">The root of the subtree.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Deserialize(ID2D1SvgDocument* This, IStream* inputXmlStream, ID2D1SvgElement** subtree);
+        public delegate int _Deserialize(ID2D1SvgDocument* pThis, [NativeTypeName("IStream *")] IStream* inputXmlStream, [NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** subtree);
 
-        /// <summary>Creates a paint object which can be used to set the 'fill' or 'stroke' properties.</summary>
-        /// <param name="color">The color used if the paintType is D2D1_SVG_PAINT_TYPE_COLOR.</param>
-        /// <param name="id">The element id which acts as the paint server. This id is used if the paint type is D2D1_SVG_PAINT_TYPE_URI.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreatePaint(ID2D1SvgDocument* This, D2D1_SVG_PAINT_TYPE paintType, [Optional, NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA* color, [Optional, NativeTypeName("PCWSTR")] ushort* id, ID2D1SvgPaint** paint);
+        public delegate int _CreatePaint(ID2D1SvgDocument* pThis, D2D1_SVG_PAINT_TYPE paintType, [NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* color, [NativeTypeName("PCWSTR")] ushort* id, [NativeTypeName("ID2D1SvgPaint **")] ID2D1SvgPaint** paint);
 
-        /// <summary>Creates a dash array object which can be used to set the 'stroke-dasharray' property.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateStrokeDashArray(ID2D1SvgDocument* This, [Optional, NativeTypeName("D2D1_SVG_LENGTH[]")] D2D1_SVG_LENGTH* dashes, [NativeTypeName("UINT32")] uint dashesCount, ID2D1SvgStrokeDashArray** strokeDashArray);
+        public delegate int _CreateStrokeDashArray(ID2D1SvgDocument* pThis, [NativeTypeName("const D2D1_SVG_LENGTH *")] D2D1_SVG_LENGTH* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("ID2D1SvgStrokeDashArray **")] ID2D1SvgStrokeDashArray** strokeDashArray);
 
-        /// <summary>Creates a points object which can be used to set a 'points' attribute on a 'polygon' or 'polyline' element.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreatePointCollection(ID2D1SvgDocument* This, [Optional, NativeTypeName("D2D1_POINT_2F[]")] D2D_POINT_2F* points, [NativeTypeName("UINT32")] uint pointsCount, ID2D1SvgPointCollection** pointCollection);
+        public delegate int _CreatePointCollection(ID2D1SvgDocument* pThis, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* points, [NativeTypeName("UINT32")] uint pointsCount, [NativeTypeName("ID2D1SvgPointCollection **")] ID2D1SvgPointCollection** pointCollection);
 
-        /// <summary>Creates a path data object which can be used to set a 'd' attribute on a 'path' element.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreatePathData(ID2D1SvgDocument* This, [Optional, NativeTypeName("FLOAT[]")] float* segmentData, [NativeTypeName("UINT32")] uint segmentDataCount, [Optional, NativeTypeName("D2D1_SVG_PATH_COMMAND[]")] D2D1_SVG_PATH_COMMAND* commands, [NativeTypeName("UINT32")] uint commandsCount, ID2D1SvgPathData** pathData);
+        public delegate int _CreatePathData(ID2D1SvgDocument* pThis, [NativeTypeName("const FLOAT *")] float* segmentData, [NativeTypeName("UINT32")] uint segmentDataCount, [NativeTypeName("const D2D1_SVG_PATH_COMMAND *")] D2D1_SVG_PATH_COMMAND* commands, [NativeTypeName("UINT32")] uint commandsCount, [NativeTypeName("ID2D1SvgPathData **")] ID2D1SvgPathData** pathData);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            fixed (ID2D1SvgDocument* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            fixed (ID2D1SvgDocument* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ID2D1SvgDocument*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            fixed (ID2D1SvgDocument* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ID2D1SvgDocument*)Unsafe.AsPointer(ref this));
         }
 
-        public void GetFactory(ID2D1Factory** factory)
+        public void GetFactory([NativeTypeName("ID2D1Factory **")] ID2D1Factory** factory)
         {
-            fixed (ID2D1SvgDocument* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(This, factory);
-            }
+            Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), factory);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetViewportSize([NativeTypeName("D2D1_SIZE_F")] D2D_SIZE_F viewportSize)
         {
-            fixed (ID2D1SvgDocument* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetViewportSize>(lpVtbl->SetViewportSize)(This, viewportSize);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetViewportSize>(lpVtbl->SetViewportSize)((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), viewportSize);
         }
 
         [return: NativeTypeName("D2D1_SIZE_F")]
         public D2D_SIZE_F GetViewportSize()
         {
-            fixed (ID2D1SvgDocument* This = &this)
-            {
-                D2D_SIZE_F result;
-                return *Marshal.GetDelegateForFunctionPointer<_GetViewportSize>(lpVtbl->GetViewportSize)(This, &result);
-            }
+            D2D_SIZE_F result;
+            return *Marshal.GetDelegateForFunctionPointer<_GetViewportSize>(lpVtbl->GetViewportSize)((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), &result);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetRoot(ID2D1SvgElement* root = null)
+        public int SetRoot([NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* root)
         {
-            fixed (ID2D1SvgDocument* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetRoot>(lpVtbl->SetRoot)(This, root);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetRoot>(lpVtbl->SetRoot)((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), root);
         }
 
-        public void GetRoot(ID2D1SvgElement** root)
+        public void GetRoot([NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** root)
         {
-            fixed (ID2D1SvgDocument* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_GetRoot>(lpVtbl->GetRoot)(This, root);
-            }
+            Marshal.GetDelegateForFunctionPointer<_GetRoot>(lpVtbl->GetRoot)((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), root);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int FindElementById([NativeTypeName("PCWSTR")] ushort* id, ID2D1SvgElement** svgElement)
+        public int FindElementById([NativeTypeName("PCWSTR")] ushort* id, [NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** svgElement)
         {
-            fixed (ID2D1SvgDocument* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_FindElementById>(lpVtbl->FindElementById)(This, id, svgElement);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_FindElementById>(lpVtbl->FindElementById)((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), id, svgElement);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Serialize(IStream* outputXmlStream, ID2D1SvgElement* subtree = null)
+        public int Serialize([NativeTypeName("IStream *")] IStream* outputXmlStream, [NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* subtree)
         {
-            fixed (ID2D1SvgDocument* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Serialize>(lpVtbl->Serialize)(This, outputXmlStream, subtree);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_Serialize>(lpVtbl->Serialize)((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), outputXmlStream, subtree);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Deserialize(IStream* inputXmlStream, ID2D1SvgElement** subtree)
+        public int Deserialize([NativeTypeName("IStream *")] IStream* inputXmlStream, [NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** subtree)
         {
-            fixed (ID2D1SvgDocument* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Deserialize>(lpVtbl->Deserialize)(This, inputXmlStream, subtree);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_Deserialize>(lpVtbl->Deserialize)((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), inputXmlStream, subtree);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreatePaint(D2D1_SVG_PAINT_TYPE paintType, [Optional, NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA* color, [Optional, NativeTypeName("PCWSTR")] ushort* id, ID2D1SvgPaint** paint)
+        public int CreatePaint(D2D1_SVG_PAINT_TYPE paintType, [NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* color, [NativeTypeName("PCWSTR")] ushort* id, [NativeTypeName("ID2D1SvgPaint **")] ID2D1SvgPaint** paint)
         {
-            fixed (ID2D1SvgDocument* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_CreatePaint>(lpVtbl->CreatePaint)(This, paintType, color, id, paint);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_CreatePaint>(lpVtbl->CreatePaint)((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), paintType, color, id, paint);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateStrokeDashArray([Optional, NativeTypeName("D2D1_SVG_LENGTH[]")] D2D1_SVG_LENGTH* dashes, [NativeTypeName("UINT32")] uint dashesCount, ID2D1SvgStrokeDashArray** strokeDashArray)
+        public int CreateStrokeDashArray([NativeTypeName("const D2D1_SVG_LENGTH *")] D2D1_SVG_LENGTH* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("ID2D1SvgStrokeDashArray **")] ID2D1SvgStrokeDashArray** strokeDashArray)
         {
-            fixed (ID2D1SvgDocument* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_CreateStrokeDashArray>(lpVtbl->CreateStrokeDashArray)(This, dashes, dashesCount, strokeDashArray);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_CreateStrokeDashArray>(lpVtbl->CreateStrokeDashArray)((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), dashes, dashesCount, strokeDashArray);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreatePointCollection([Optional, NativeTypeName("D2D1_POINT_2F[]")] D2D_POINT_2F* points, [NativeTypeName("UINT32")] uint pointsCount, ID2D1SvgPointCollection** pointCollection)
+        public int CreatePointCollection([NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* points, [NativeTypeName("UINT32")] uint pointsCount, [NativeTypeName("ID2D1SvgPointCollection **")] ID2D1SvgPointCollection** pointCollection)
         {
-            fixed (ID2D1SvgDocument* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_CreatePointCollection>(lpVtbl->CreatePointCollection)(This, points, pointsCount, pointCollection);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_CreatePointCollection>(lpVtbl->CreatePointCollection)((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), points, pointsCount, pointCollection);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreatePathData([Optional, NativeTypeName("FLOAT[]")] float* segmentData, [NativeTypeName("UINT32")] uint segmentDataCount, [Optional, NativeTypeName("D2D1_SVG_PATH_COMMAND[]")] D2D1_SVG_PATH_COMMAND* commands, [NativeTypeName("UINT32")] uint commandsCount, ID2D1SvgPathData** pathData)
+        public int CreatePathData([NativeTypeName("const FLOAT *")] float* segmentData, [NativeTypeName("UINT32")] uint segmentDataCount, [NativeTypeName("const D2D1_SVG_PATH_COMMAND *")] D2D1_SVG_PATH_COMMAND* commands, [NativeTypeName("UINT32")] uint commandsCount, [NativeTypeName("ID2D1SvgPathData **")] ID2D1SvgPathData** pathData)
         {
-            fixed (ID2D1SvgDocument* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_CreatePathData>(lpVtbl->CreatePathData)(This, segmentData, segmentDataCount, commands, commandsCount, pathData);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_CreatePathData>(lpVtbl->CreatePathData)((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), segmentData, segmentDataCount, commands, commandsCount, pathData);
         }
+
 
         public partial struct Vtbl
         {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
             public IntPtr QueryInterface;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr AddRef;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr Release;
 
+            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFactory;
 
+            [NativeTypeName("HRESULT (D2D1_SIZE_F) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetViewportSize;
 
+            [NativeTypeName("D2D1_SIZE_F () const __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetViewportSize;
 
+            [NativeTypeName("HRESULT (ID2D1SvgElement *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetRoot;
 
+            [NativeTypeName("void (ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetRoot;
 
+            [NativeTypeName("HRESULT (PCWSTR, ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr FindElementById;
 
+            [NativeTypeName("HRESULT (IStream *, ID2D1SvgElement *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr Serialize;
 
+            [NativeTypeName("HRESULT (IStream *, ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr Deserialize;
 
+            [NativeTypeName("HRESULT (D2D1_SVG_PAINT_TYPE, const D2D1_COLOR_F *, PCWSTR, ID2D1SvgPaint **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr CreatePaint;
 
+            [NativeTypeName("HRESULT (const D2D1_SVG_LENGTH *, UINT32, ID2D1SvgStrokeDashArray **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr CreateStrokeDashArray;
 
+            [NativeTypeName("HRESULT (const D2D1_POINT_2F *, UINT32, ID2D1SvgPointCollection **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr CreatePointCollection;
 
+            [NativeTypeName("HRESULT (const FLOAT *, UINT32, const D2D1_SVG_PATH_COMMAND *, UINT32, ID2D1SvgPathData **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr CreatePathData;
+
         }
     }
 }

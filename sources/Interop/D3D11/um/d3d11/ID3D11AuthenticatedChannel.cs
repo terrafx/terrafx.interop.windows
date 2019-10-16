@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\d3d11.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/d3d11.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -50,7 +50,7 @@ namespace TerraFX.Interop
         public delegate int _GetCertificate(ID3D11AuthenticatedChannel* pThis, [NativeTypeName("UINT")] uint CertificateSize, [NativeTypeName("BYTE *")] byte* pCertificate);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetChannelHandle(ID3D11AuthenticatedChannel* pThis, [NativeTypeName("HANDLE *")] void** pChannelHandle);
+        public delegate void _GetChannelHandle(ID3D11AuthenticatedChannel* pThis, [NativeTypeName("HANDLE *")] IntPtr* pChannelHandle);
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
@@ -105,41 +105,41 @@ namespace TerraFX.Interop
             return Marshal.GetDelegateForFunctionPointer<_GetCertificate>(lpVtbl->GetCertificate)((ID3D11AuthenticatedChannel*)Unsafe.AsPointer(ref this), CertificateSize, pCertificate);
         }
 
-        public void GetChannelHandle([NativeTypeName("HANDLE *")] void** pChannelHandle)
+        public void GetChannelHandle([NativeTypeName("HANDLE *")] IntPtr* pChannelHandle)
         {
             Marshal.GetDelegateForFunctionPointer<_GetChannelHandle>(lpVtbl->GetChannelHandle)((ID3D11AuthenticatedChannel*)Unsafe.AsPointer(ref this), pChannelHandle);
         }
 
         public partial struct Vtbl
         {
-            [NativeTypeName("HRESULT (const IID &, void **)")]
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
             public IntPtr QueryInterface;
 
-            [NativeTypeName("ULONG ()")]
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr AddRef;
 
-            [NativeTypeName("ULONG ()")]
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr Release;
 
-            [NativeTypeName("void (ID3D11Device **)")]
+            [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
             public IntPtr GetDevice;
 
-            [NativeTypeName("HRESULT (const GUID &, UINT *, void *)")]
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
             public IntPtr GetPrivateData;
 
-            [NativeTypeName("HRESULT (const GUID &, UINT, const void *)")]
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
             public IntPtr SetPrivateData;
 
-            [NativeTypeName("HRESULT (const GUID &, const IUnknown *)")]
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
             public IntPtr SetPrivateDataInterface;
 
-            [NativeTypeName("HRESULT (UINT *)")]
+            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
             public IntPtr GetCertificateSize;
 
-            [NativeTypeName("HRESULT (UINT, BYTE *)")]
+            [NativeTypeName("HRESULT (UINT, BYTE *) __attribute__((stdcall))")]
             public IntPtr GetCertificate;
 
-            [NativeTypeName("void (HANDLE *)")]
+            [NativeTypeName("void (HANDLE *) __attribute__((stdcall))")]
             public IntPtr GetChannelHandle;
         }
     }

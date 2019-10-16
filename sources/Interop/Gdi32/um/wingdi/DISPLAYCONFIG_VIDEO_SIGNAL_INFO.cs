@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\wingdi.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -20,7 +20,7 @@ namespace TerraFX.Interop
 
         public DISPLAYCONFIG_2DREGION totalSize;
 
-        [NativeTypeName("struct (anonymous struct at um/wingdi.h:2850:5)")]
+        [NativeTypeName("DISPLAYCONFIG_VIDEO_SIGNAL_INFO::(anonymous union at um/wingdi.h:2850:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public DISPLAYCONFIG_SCANLINE_ORDERING scanLineOrdering;
@@ -30,17 +30,17 @@ namespace TerraFX.Interop
         {
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at um/wingdi.h:2852:9)")]
-            public _AdditionalSignalInfo_e__Union AdditionalSignalInfo;
+            public _AdditionalSignalInfo_e__Struct AdditionalSignalInfo;
 
             [FieldOffset(0)]
             [NativeTypeName("UINT32")]
             public uint videoStandard;
 
-            public partial struct _AdditionalSignalInfo_e__Union
+            public partial struct _AdditionalSignalInfo_e__Struct
             {
                 internal uint _bitfield;
 
-                [NativeTypeName("UINT32")]
+                [NativeTypeName("UINT32 : 16")]
                 public uint videoStandard
                 {
                     get
@@ -54,7 +54,7 @@ namespace TerraFX.Interop
                     }
                 }
 
-                [NativeTypeName("UINT32")]
+                [NativeTypeName("UINT32 : 6")]
                 public uint vSyncFreqDivider
                 {
                     get
@@ -68,7 +68,7 @@ namespace TerraFX.Interop
                     }
                 }
 
-                [NativeTypeName("UINT32")]
+                [NativeTypeName("UINT32 : 10")]
                 public uint reserved
                 {
                     get

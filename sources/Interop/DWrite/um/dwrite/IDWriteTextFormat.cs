@@ -1,15 +1,14 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\dwrite.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/dwrite.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    /// <summary>The format of text used for text layout.</summary>
-    /// <remarks> This object may not be thread-safe and it may carry the state of text format change.</remarks>
     [Guid("9C906818-31D7-4FD3-A151-7C5E225DB55A")]
     public unsafe partial struct IDWriteTextFormat
     {
@@ -17,471 +16,352 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDWriteTextFormat* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
+        public delegate int _QueryInterface(IDWriteTextFormat* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDWriteTextFormat* This);
+        public delegate uint _AddRef(IDWriteTextFormat* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDWriteTextFormat* This);
+        public delegate uint _Release(IDWriteTextFormat* pThis);
 
-        /// <summary>Set alignment option of text relative to layout box's leading and trailing edge.</summary>
-        /// <param name="textAlignment">Text alignment option</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetTextAlignment(IDWriteTextFormat* This, DWRITE_TEXT_ALIGNMENT textAlignment);
+        public delegate int _SetTextAlignment(IDWriteTextFormat* pThis, DWRITE_TEXT_ALIGNMENT textAlignment);
 
-        /// <summary>Set alignment option of paragraph relative to layout box's top and bottom edge.</summary>
-        /// <param name="paragraphAlignment">Paragraph alignment option</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetParagraphAlignment(IDWriteTextFormat* This, DWRITE_PARAGRAPH_ALIGNMENT paragraphAlignment);
+        public delegate int _SetParagraphAlignment(IDWriteTextFormat* pThis, DWRITE_PARAGRAPH_ALIGNMENT paragraphAlignment);
 
-        /// <summary>Set word wrapping option.</summary>
-        /// <param name="wordWrapping">Word wrapping option</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetWordWrapping(IDWriteTextFormat* This, DWRITE_WORD_WRAPPING wordWrapping);
+        public delegate int _SetWordWrapping(IDWriteTextFormat* pThis, DWRITE_WORD_WRAPPING wordWrapping);
 
-        /// <summary>Set paragraph reading direction.</summary>
-        /// <param name="readingDirection">Text reading direction</param>
-        /// <returns>Standard HRESULT error code.</returns>
-        /// <remarks> The flow direction must be perpendicular to the reading direction. Setting both to a vertical direction or both to horizontal yields DWRITE_E_FLOWDIRECTIONCONFLICTS when calling GetMetrics or Draw.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetReadingDirection(IDWriteTextFormat* This, DWRITE_READING_DIRECTION readingDirection);
+        public delegate int _SetReadingDirection(IDWriteTextFormat* pThis, DWRITE_READING_DIRECTION readingDirection);
 
-        /// <summary>Set paragraph flow direction.</summary>
-        /// <param name="flowDirection">Paragraph flow direction</param>
-        /// <returns>Standard HRESULT error code.</returns>
-        /// <remarks> The flow direction must be perpendicular to the reading direction. Setting both to a vertical direction or both to horizontal yields DWRITE_E_FLOWDIRECTIONCONFLICTS when calling GetMetrics or Draw.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetFlowDirection(IDWriteTextFormat* This, DWRITE_FLOW_DIRECTION flowDirection);
+        public delegate int _SetFlowDirection(IDWriteTextFormat* pThis, DWRITE_FLOW_DIRECTION flowDirection);
 
-        /// <summary>Set incremental tab stop position.</summary>
-        /// <param name="incrementalTabStop">The incremental tab stop value</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetIncrementalTabStop(IDWriteTextFormat* This, [NativeTypeName("FLOAT")] float incrementalTabStop);
+        public delegate int _SetIncrementalTabStop(IDWriteTextFormat* pThis, [NativeTypeName("FLOAT")] float incrementalTabStop);
 
-        /// <summary>Set trimming options for any trailing text exceeding the layout width or for any far text exceeding the layout height.</summary>
-        /// <param name="trimmingOptions">Text trimming options.</param>
-        /// <param name="trimmingSign">Application-defined omission sign. This parameter may be NULL if no trimming sign is desired.</param>
-        /// <remarks> Any inline object can be used for the trimming sign, but CreateEllipsisTrimmingSign provides a typical ellipsis symbol. Trimming is also useful vertically for hiding partial lines.</remarks>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetTrimming(IDWriteTextFormat* This, DWRITE_TRIMMING* trimmingOptions, IDWriteInlineObject* trimmingSign = null);
+        public delegate int _SetTrimming(IDWriteTextFormat* pThis, [NativeTypeName("const DWRITE_TRIMMING *")] DWRITE_TRIMMING* trimmingOptions, [NativeTypeName("IDWriteInlineObject *")] IDWriteInlineObject* trimmingSign);
 
-        /// <summary>Set line spacing.</summary>
-        /// <param name="lineSpacingMethod">How to determine line height.</param>
-        /// <param name="lineSpacing">The line height, or rather distance between one baseline to another.</param>
-        /// <param name="baseline">Distance from top of line to baseline. A reasonable ratio to lineSpacing is 80%.</param>
-        /// <remarks> For the default method, spacing depends solely on the content. For uniform spacing, the given line height will override the content.</remarks>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetLineSpacing(IDWriteTextFormat* This, DWRITE_LINE_SPACING_METHOD lineSpacingMethod, [NativeTypeName("FLOAT")] float lineSpacing, [NativeTypeName("FLOAT")] float baseline);
+        public delegate int _SetLineSpacing(IDWriteTextFormat* pThis, DWRITE_LINE_SPACING_METHOD lineSpacingMethod, [NativeTypeName("FLOAT")] float lineSpacing, [NativeTypeName("FLOAT")] float baseline);
 
-        /// <summary>Get alignment option of text relative to layout box's leading and trailing edge.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate DWRITE_TEXT_ALIGNMENT _GetTextAlignment(IDWriteTextFormat* This);
+        public delegate DWRITE_TEXT_ALIGNMENT _GetTextAlignment(IDWriteTextFormat* pThis);
 
-        /// <summary>Get alignment option of paragraph relative to layout box's top and bottom edge.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate DWRITE_PARAGRAPH_ALIGNMENT _GetParagraphAlignment(IDWriteTextFormat* This);
+        public delegate DWRITE_PARAGRAPH_ALIGNMENT _GetParagraphAlignment(IDWriteTextFormat* pThis);
 
-        /// <summary>Get word wrapping option.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate DWRITE_WORD_WRAPPING _GetWordWrapping(IDWriteTextFormat* This);
+        public delegate DWRITE_WORD_WRAPPING _GetWordWrapping(IDWriteTextFormat* pThis);
 
-        /// <summary>Get paragraph reading direction.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate DWRITE_READING_DIRECTION _GetReadingDirection(IDWriteTextFormat* This);
+        public delegate DWRITE_READING_DIRECTION _GetReadingDirection(IDWriteTextFormat* pThis);
 
-        /// <summary>Get paragraph flow direction.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate DWRITE_FLOW_DIRECTION _GetFlowDirection(IDWriteTextFormat* This);
+        public delegate DWRITE_FLOW_DIRECTION _GetFlowDirection(IDWriteTextFormat* pThis);
 
-        /// <summary>Get incremental tab stop position.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public delegate float _GetIncrementalTabStop(IDWriteTextFormat* This);
+        public delegate float _GetIncrementalTabStop(IDWriteTextFormat* pThis);
 
-        /// <summary>Get trimming options for text overflowing the layout width.</summary>
-        /// <param name="trimmingOptions">Text trimming options.</param>
-        /// <param name="trimmingSign">Trimming omission sign. This parameter may be NULL.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetTrimming(IDWriteTextFormat* This, DWRITE_TRIMMING* trimmingOptions, IDWriteInlineObject** trimmingSign);
+        public delegate int _GetTrimming(IDWriteTextFormat* pThis, [NativeTypeName("DWRITE_TRIMMING *")] DWRITE_TRIMMING* trimmingOptions, [NativeTypeName("IDWriteInlineObject **")] IDWriteInlineObject** trimmingSign);
 
-        /// <summary>Get line spacing.</summary>
-        /// <param name="lineSpacingMethod">How line height is determined.</param>
-        /// <param name="lineSpacing">The line height, or rather distance between one baseline to another.</param>
-        /// <param name="baseline">Distance from top of line to baseline.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLineSpacing(IDWriteTextFormat* This, DWRITE_LINE_SPACING_METHOD* lineSpacingMethod, [NativeTypeName("FLOAT")] float* lineSpacing, [NativeTypeName("FLOAT")] float* baseline);
+        public delegate int _GetLineSpacing(IDWriteTextFormat* pThis, [NativeTypeName("DWRITE_LINE_SPACING_METHOD *")] DWRITE_LINE_SPACING_METHOD* lineSpacingMethod, [NativeTypeName("FLOAT *")] float* lineSpacing, [NativeTypeName("FLOAT *")] float* baseline);
 
-        /// <summary>Get the font collection.</summary>
-        /// <param name="fontCollection">The current font collection.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFontCollection(IDWriteTextFormat* This, IDWriteFontCollection** fontCollection);
+        public delegate int _GetFontCollection(IDWriteTextFormat* pThis, [NativeTypeName("IDWriteFontCollection **")] IDWriteFontCollection** fontCollection);
 
-        /// <summary>Get the length of the font family name, in characters, not including the terminating NULL character.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public delegate uint _GetFontFamilyNameLength(IDWriteTextFormat* This);
+        public delegate uint _GetFontFamilyNameLength(IDWriteTextFormat* pThis);
 
-        /// <summary>Get a copy of the font family name.</summary>
-        /// <param name="fontFamilyName">Character array that receives the current font family name</param>
-        /// <param name="nameSize">Size of the character array in character count including the terminated NULL character.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFontFamilyName(IDWriteTextFormat* This, [NativeTypeName("WCHAR[]")] ushort* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize);
+        public delegate int _GetFontFamilyName(IDWriteTextFormat* pThis, [NativeTypeName("WCHAR *")] ushort* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize);
 
-        /// <summary>Get the font weight.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate DWRITE_FONT_WEIGHT _GetFontWeight(IDWriteTextFormat* This);
+        public delegate DWRITE_FONT_WEIGHT _GetFontWeight(IDWriteTextFormat* pThis);
 
-        /// <summary>Get the font style.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate DWRITE_FONT_STYLE _GetFontStyle(IDWriteTextFormat* This);
+        public delegate DWRITE_FONT_STYLE _GetFontStyle(IDWriteTextFormat* pThis);
 
-        /// <summary>Get the font stretch.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate DWRITE_FONT_STRETCH _GetFontStretch(IDWriteTextFormat* This);
+        public delegate DWRITE_FONT_STRETCH _GetFontStretch(IDWriteTextFormat* pThis);
 
-        /// <summary>Get the font em height.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public delegate float _GetFontSize(IDWriteTextFormat* This);
+        public delegate float _GetFontSize(IDWriteTextFormat* pThis);
 
-        /// <summary>Get the length of the locale name, in characters, not including the terminating NULL character.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public delegate uint _GetLocaleNameLength(IDWriteTextFormat* This);
+        public delegate uint _GetLocaleNameLength(IDWriteTextFormat* pThis);
 
-        /// <summary>Get a copy of the locale name.</summary>
-        /// <param name="localeName">Character array that receives the current locale name</param>
-        /// <param name="nameSize">Size of the character array in character count including the terminated NULL character.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLocaleName(IDWriteTextFormat* This, [NativeTypeName("WCHAR[]")] ushort* localeName, [NativeTypeName("UINT32")] uint nameSize);
+        public delegate int _GetLocaleName(IDWriteTextFormat* pThis, [NativeTypeName("WCHAR *")] ushort* localeName, [NativeTypeName("UINT32")] uint nameSize);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            fixed (IDWriteTextFormat* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDWriteTextFormat*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            fixed (IDWriteTextFormat* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            fixed (IDWriteTextFormat* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetTextAlignment(DWRITE_TEXT_ALIGNMENT textAlignment)
         {
-            fixed (IDWriteTextFormat* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetTextAlignment>(lpVtbl->SetTextAlignment)(This, textAlignment);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetTextAlignment>(lpVtbl->SetTextAlignment)((IDWriteTextFormat*)Unsafe.AsPointer(ref this), textAlignment);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT paragraphAlignment)
         {
-            fixed (IDWriteTextFormat* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetParagraphAlignment>(lpVtbl->SetParagraphAlignment)(This, paragraphAlignment);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetParagraphAlignment>(lpVtbl->SetParagraphAlignment)((IDWriteTextFormat*)Unsafe.AsPointer(ref this), paragraphAlignment);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetWordWrapping(DWRITE_WORD_WRAPPING wordWrapping)
         {
-            fixed (IDWriteTextFormat* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetWordWrapping>(lpVtbl->SetWordWrapping)(This, wordWrapping);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetWordWrapping>(lpVtbl->SetWordWrapping)((IDWriteTextFormat*)Unsafe.AsPointer(ref this), wordWrapping);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetReadingDirection(DWRITE_READING_DIRECTION readingDirection)
         {
-            fixed (IDWriteTextFormat* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetReadingDirection>(lpVtbl->SetReadingDirection)(This, readingDirection);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetReadingDirection>(lpVtbl->SetReadingDirection)((IDWriteTextFormat*)Unsafe.AsPointer(ref this), readingDirection);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetFlowDirection(DWRITE_FLOW_DIRECTION flowDirection)
         {
-            fixed (IDWriteTextFormat* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetFlowDirection>(lpVtbl->SetFlowDirection)(This, flowDirection);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetFlowDirection>(lpVtbl->SetFlowDirection)((IDWriteTextFormat*)Unsafe.AsPointer(ref this), flowDirection);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetIncrementalTabStop([NativeTypeName("FLOAT")] float incrementalTabStop)
         {
-            fixed (IDWriteTextFormat* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetIncrementalTabStop>(lpVtbl->SetIncrementalTabStop)(This, incrementalTabStop);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetIncrementalTabStop>(lpVtbl->SetIncrementalTabStop)((IDWriteTextFormat*)Unsafe.AsPointer(ref this), incrementalTabStop);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetTrimming(DWRITE_TRIMMING* trimmingOptions, IDWriteInlineObject* trimmingSign = null)
+        public int SetTrimming([NativeTypeName("const DWRITE_TRIMMING *")] DWRITE_TRIMMING* trimmingOptions, [NativeTypeName("IDWriteInlineObject *")] IDWriteInlineObject* trimmingSign)
         {
-            fixed (IDWriteTextFormat* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetTrimming>(lpVtbl->SetTrimming)(This, trimmingOptions, trimmingSign);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetTrimming>(lpVtbl->SetTrimming)((IDWriteTextFormat*)Unsafe.AsPointer(ref this), trimmingOptions, trimmingSign);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetLineSpacing(DWRITE_LINE_SPACING_METHOD lineSpacingMethod, [NativeTypeName("FLOAT")] float lineSpacing, [NativeTypeName("FLOAT")] float baseline)
         {
-            fixed (IDWriteTextFormat* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetLineSpacing>(lpVtbl->SetLineSpacing)(This, lineSpacingMethod, lineSpacing, baseline);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetLineSpacing>(lpVtbl->SetLineSpacing)((IDWriteTextFormat*)Unsafe.AsPointer(ref this), lineSpacingMethod, lineSpacing, baseline);
         }
 
         public DWRITE_TEXT_ALIGNMENT GetTextAlignment()
         {
-            fixed (IDWriteTextFormat* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetTextAlignment>(lpVtbl->GetTextAlignment)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetTextAlignment>(lpVtbl->GetTextAlignment)((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
         }
 
         public DWRITE_PARAGRAPH_ALIGNMENT GetParagraphAlignment()
         {
-            fixed (IDWriteTextFormat* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetParagraphAlignment>(lpVtbl->GetParagraphAlignment)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetParagraphAlignment>(lpVtbl->GetParagraphAlignment)((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
         }
 
         public DWRITE_WORD_WRAPPING GetWordWrapping()
         {
-            fixed (IDWriteTextFormat* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetWordWrapping>(lpVtbl->GetWordWrapping)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetWordWrapping>(lpVtbl->GetWordWrapping)((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
         }
 
         public DWRITE_READING_DIRECTION GetReadingDirection()
         {
-            fixed (IDWriteTextFormat* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetReadingDirection>(lpVtbl->GetReadingDirection)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetReadingDirection>(lpVtbl->GetReadingDirection)((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
         }
 
         public DWRITE_FLOW_DIRECTION GetFlowDirection()
         {
-            fixed (IDWriteTextFormat* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFlowDirection>(lpVtbl->GetFlowDirection)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFlowDirection>(lpVtbl->GetFlowDirection)((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("FLOAT")]
         public float GetIncrementalTabStop()
         {
-            fixed (IDWriteTextFormat* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetIncrementalTabStop>(lpVtbl->GetIncrementalTabStop)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetIncrementalTabStop>(lpVtbl->GetIncrementalTabStop)((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetTrimming(DWRITE_TRIMMING* trimmingOptions, IDWriteInlineObject** trimmingSign)
+        public int GetTrimming([NativeTypeName("DWRITE_TRIMMING *")] DWRITE_TRIMMING* trimmingOptions, [NativeTypeName("IDWriteInlineObject **")] IDWriteInlineObject** trimmingSign)
         {
-            fixed (IDWriteTextFormat* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetTrimming>(lpVtbl->GetTrimming)(This, trimmingOptions, trimmingSign);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetTrimming>(lpVtbl->GetTrimming)((IDWriteTextFormat*)Unsafe.AsPointer(ref this), trimmingOptions, trimmingSign);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetLineSpacing(DWRITE_LINE_SPACING_METHOD* lineSpacingMethod, [NativeTypeName("FLOAT")] float* lineSpacing, [NativeTypeName("FLOAT")] float* baseline)
+        public int GetLineSpacing([NativeTypeName("DWRITE_LINE_SPACING_METHOD *")] DWRITE_LINE_SPACING_METHOD* lineSpacingMethod, [NativeTypeName("FLOAT *")] float* lineSpacing, [NativeTypeName("FLOAT *")] float* baseline)
         {
-            fixed (IDWriteTextFormat* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetLineSpacing>(lpVtbl->GetLineSpacing)(This, lineSpacingMethod, lineSpacing, baseline);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetLineSpacing>(lpVtbl->GetLineSpacing)((IDWriteTextFormat*)Unsafe.AsPointer(ref this), lineSpacingMethod, lineSpacing, baseline);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFontCollection(IDWriteFontCollection** fontCollection)
+        public int GetFontCollection([NativeTypeName("IDWriteFontCollection **")] IDWriteFontCollection** fontCollection)
         {
-            fixed (IDWriteTextFormat* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontCollection>(lpVtbl->GetFontCollection)(This, fontCollection);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFontCollection>(lpVtbl->GetFontCollection)((IDWriteTextFormat*)Unsafe.AsPointer(ref this), fontCollection);
         }
 
         [return: NativeTypeName("UINT32")]
         public uint GetFontFamilyNameLength()
         {
-            fixed (IDWriteTextFormat* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontFamilyNameLength>(lpVtbl->GetFontFamilyNameLength)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFontFamilyNameLength>(lpVtbl->GetFontFamilyNameLength)((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFontFamilyName([NativeTypeName("WCHAR[]")] ushort* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize)
+        public int GetFontFamilyName([NativeTypeName("WCHAR *")] ushort* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize)
         {
-            fixed (IDWriteTextFormat* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontFamilyName>(lpVtbl->GetFontFamilyName)(This, fontFamilyName, nameSize);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFontFamilyName>(lpVtbl->GetFontFamilyName)((IDWriteTextFormat*)Unsafe.AsPointer(ref this), fontFamilyName, nameSize);
         }
 
         public DWRITE_FONT_WEIGHT GetFontWeight()
         {
-            fixed (IDWriteTextFormat* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontWeight>(lpVtbl->GetFontWeight)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFontWeight>(lpVtbl->GetFontWeight)((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
         }
 
         public DWRITE_FONT_STYLE GetFontStyle()
         {
-            fixed (IDWriteTextFormat* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontStyle>(lpVtbl->GetFontStyle)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFontStyle>(lpVtbl->GetFontStyle)((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
         }
 
         public DWRITE_FONT_STRETCH GetFontStretch()
         {
-            fixed (IDWriteTextFormat* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontStretch>(lpVtbl->GetFontStretch)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFontStretch>(lpVtbl->GetFontStretch)((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("FLOAT")]
         public float GetFontSize()
         {
-            fixed (IDWriteTextFormat* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontSize>(lpVtbl->GetFontSize)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFontSize>(lpVtbl->GetFontSize)((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("UINT32")]
         public uint GetLocaleNameLength()
         {
-            fixed (IDWriteTextFormat* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetLocaleNameLength>(lpVtbl->GetLocaleNameLength)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetLocaleNameLength>(lpVtbl->GetLocaleNameLength)((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetLocaleName([NativeTypeName("WCHAR[]")] ushort* localeName, [NativeTypeName("UINT32")] uint nameSize)
+        public int GetLocaleName([NativeTypeName("WCHAR *")] ushort* localeName, [NativeTypeName("UINT32")] uint nameSize)
         {
-            fixed (IDWriteTextFormat* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetLocaleName>(lpVtbl->GetLocaleName)(This, localeName, nameSize);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetLocaleName>(lpVtbl->GetLocaleName)((IDWriteTextFormat*)Unsafe.AsPointer(ref this), localeName, nameSize);
         }
 
         public partial struct Vtbl
         {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
             public IntPtr QueryInterface;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr AddRef;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr Release;
 
+            [NativeTypeName("HRESULT (DWRITE_TEXT_ALIGNMENT) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetTextAlignment;
 
+            [NativeTypeName("HRESULT (DWRITE_PARAGRAPH_ALIGNMENT) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetParagraphAlignment;
 
+            [NativeTypeName("HRESULT (DWRITE_WORD_WRAPPING) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetWordWrapping;
 
+            [NativeTypeName("HRESULT (DWRITE_READING_DIRECTION) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetReadingDirection;
 
+            [NativeTypeName("HRESULT (DWRITE_FLOW_DIRECTION) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetFlowDirection;
 
+            [NativeTypeName("HRESULT (FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetIncrementalTabStop;
 
+            [NativeTypeName("HRESULT (const DWRITE_TRIMMING *, IDWriteInlineObject *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetTrimming;
 
+            [NativeTypeName("HRESULT (DWRITE_LINE_SPACING_METHOD, FLOAT, FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetLineSpacing;
 
+            [NativeTypeName("DWRITE_TEXT_ALIGNMENT () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetTextAlignment;
 
+            [NativeTypeName("DWRITE_PARAGRAPH_ALIGNMENT () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetParagraphAlignment;
 
+            [NativeTypeName("DWRITE_WORD_WRAPPING () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetWordWrapping;
 
+            [NativeTypeName("DWRITE_READING_DIRECTION () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetReadingDirection;
 
+            [NativeTypeName("DWRITE_FLOW_DIRECTION () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFlowDirection;
 
+            [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetIncrementalTabStop;
 
+            [NativeTypeName("HRESULT (DWRITE_TRIMMING *, IDWriteInlineObject **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetTrimming;
 
+            [NativeTypeName("HRESULT (DWRITE_LINE_SPACING_METHOD *, FLOAT *, FLOAT *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetLineSpacing;
 
+            [NativeTypeName("HRESULT (IDWriteFontCollection **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFontCollection;
 
+            [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFontFamilyNameLength;
 
+            [NativeTypeName("HRESULT (WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFontFamilyName;
 
+            [NativeTypeName("DWRITE_FONT_WEIGHT () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFontWeight;
 
+            [NativeTypeName("DWRITE_FONT_STYLE () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFontStyle;
 
+            [NativeTypeName("DWRITE_FONT_STRETCH () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFontStretch;
 
+            [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFontSize;
 
+            [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetLocaleNameLength;
 
+            [NativeTypeName("HRESULT (WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetLocaleName;
         }
     }

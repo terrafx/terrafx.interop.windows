@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\wingdi.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -12,8 +12,11 @@ namespace TerraFX.Interop
     {
         private const string LibraryPath = "Gdi32";
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "AddFontResourceA", ExactSpelling = true)]
+        public static extern int AddFontResourceA([NativeTypeName("LPCSTR")] sbyte* param0);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "AddFontResourceW", ExactSpelling = true)]
-        public static extern int AddFontResource([NativeTypeName("LPCWSTR")] ushort* param0);
+        public static extern int AddFontResourceW([NativeTypeName("LPCWSTR")] ushort* param0);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "AnimatePalette", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -45,9 +48,13 @@ namespace TerraFX.Interop
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CombineRgn", ExactSpelling = true)]
         public static extern int CombineRgn([NativeTypeName("HRGN")] IntPtr hrgnDst, [NativeTypeName("HRGN")] IntPtr hrgnSrc1, [NativeTypeName("HRGN")] IntPtr hrgnSrc2, int iMode);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CopyMetaFileA", ExactSpelling = true)]
+        [return: NativeTypeName("HMETAFILE")]
+        public static extern IntPtr CopyMetaFileA([NativeTypeName("HMETAFILE")] IntPtr param0, [NativeTypeName("LPCSTR")] sbyte* param1);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CopyMetaFileW", ExactSpelling = true)]
         [return: NativeTypeName("HMETAFILE")]
-        public static extern IntPtr CopyMetaFile([NativeTypeName("HMETAFILE")] IntPtr param0, [NativeTypeName("LPCWSTR")] ushort* param1);
+        public static extern IntPtr CopyMetaFileW([NativeTypeName("HMETAFILE")] IntPtr param0, [NativeTypeName("LPCWSTR")] ushort* param1);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateBitmap", ExactSpelling = true)]
         [return: NativeTypeName("HBITMAP")]
@@ -73,9 +80,13 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HDC")]
         public static extern IntPtr CreateCompatibleDC([NativeTypeName("HDC")] IntPtr hdc);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateDCA", ExactSpelling = true)]
+        [return: NativeTypeName("HDC")]
+        public static extern IntPtr CreateDCA([NativeTypeName("LPCSTR")] sbyte* pwszDriver, [NativeTypeName("LPCSTR")] sbyte* pwszDevice, [NativeTypeName("LPCSTR")] sbyte* pszPort, [NativeTypeName("const DEVMODEA *")] DEVMODEA* pdm);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateDCW", ExactSpelling = true)]
         [return: NativeTypeName("HDC")]
-        public static extern IntPtr CreateDC([NativeTypeName("LPCWSTR")] ushort* pwszDriver, [NativeTypeName("LPCWSTR")] ushort* pwszDevice, [NativeTypeName("LPCWSTR")] ushort* pszPort, [NativeTypeName("const DEVMODEW *")] DEVMODE* pdm);
+        public static extern IntPtr CreateDCW([NativeTypeName("LPCWSTR")] ushort* pwszDriver, [NativeTypeName("LPCWSTR")] ushort* pwszDevice, [NativeTypeName("LPCWSTR")] ushort* pszPort, [NativeTypeName("const DEVMODEW *")] DEVMODEW* pdm);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateDIBitmap", ExactSpelling = true)]
         [return: NativeTypeName("HBITMAP")]
@@ -83,7 +94,7 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateDIBPatternBrush", ExactSpelling = true)]
         [return: NativeTypeName("HBRUSH")]
-        public static extern IntPtr CreateDIBPatternBrush([NativeTypeName("HGLOBAL")] void* h, [NativeTypeName("UINT")] uint iUsage);
+        public static extern IntPtr CreateDIBPatternBrush([NativeTypeName("HGLOBAL")] IntPtr h, [NativeTypeName("UINT")] uint iUsage);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateDIBPatternBrushPt", ExactSpelling = true)]
         [return: NativeTypeName("HBRUSH")]
@@ -97,25 +108,41 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRGN")]
         public static extern IntPtr CreateEllipticRgnIndirect([NativeTypeName("const RECT *")] RECT* lprect);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateFontIndirectA", ExactSpelling = true)]
+        [return: NativeTypeName("HFONT")]
+        public static extern IntPtr CreateFontIndirectA([NativeTypeName("const LOGFONTA *")] LOGFONTA* lplf);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateFontIndirectW", ExactSpelling = true)]
         [return: NativeTypeName("HFONT")]
-        public static extern IntPtr CreateFontIndirect([NativeTypeName("const LOGFONTW *")] LOGFONT* lplf);
+        public static extern IntPtr CreateFontIndirectW([NativeTypeName("const LOGFONTW *")] LOGFONTW* lplf);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateFontA", ExactSpelling = true)]
+        [return: NativeTypeName("HFONT")]
+        public static extern IntPtr CreateFontA(int cHeight, int cWidth, int cEscapement, int cOrientation, int cWeight, [NativeTypeName("DWORD")] uint bItalic, [NativeTypeName("DWORD")] uint bUnderline, [NativeTypeName("DWORD")] uint bStrikeOut, [NativeTypeName("DWORD")] uint iCharSet, [NativeTypeName("DWORD")] uint iOutPrecision, [NativeTypeName("DWORD")] uint iClipPrecision, [NativeTypeName("DWORD")] uint iQuality, [NativeTypeName("DWORD")] uint iPitchAndFamily, [NativeTypeName("LPCSTR")] sbyte* pszFaceName);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateFontW", ExactSpelling = true)]
         [return: NativeTypeName("HFONT")]
-        public static extern IntPtr CreateFont(int cHeight, int cWidth, int cEscapement, int cOrientation, int cWeight, [NativeTypeName("DWORD")] uint bItalic, [NativeTypeName("DWORD")] uint bUnderline, [NativeTypeName("DWORD")] uint bStrikeOut, [NativeTypeName("DWORD")] uint iCharSet, [NativeTypeName("DWORD")] uint iOutPrecision, [NativeTypeName("DWORD")] uint iClipPrecision, [NativeTypeName("DWORD")] uint iQuality, [NativeTypeName("DWORD")] uint iPitchAndFamily, [NativeTypeName("LPCWSTR")] ushort* pszFaceName);
+        public static extern IntPtr CreateFontW(int cHeight, int cWidth, int cEscapement, int cOrientation, int cWeight, [NativeTypeName("DWORD")] uint bItalic, [NativeTypeName("DWORD")] uint bUnderline, [NativeTypeName("DWORD")] uint bStrikeOut, [NativeTypeName("DWORD")] uint iCharSet, [NativeTypeName("DWORD")] uint iOutPrecision, [NativeTypeName("DWORD")] uint iClipPrecision, [NativeTypeName("DWORD")] uint iQuality, [NativeTypeName("DWORD")] uint iPitchAndFamily, [NativeTypeName("LPCWSTR")] ushort* pszFaceName);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateHatchBrush", ExactSpelling = true)]
         [return: NativeTypeName("HBRUSH")]
         public static extern IntPtr CreateHatchBrush(int iHatch, [NativeTypeName("COLORREF")] uint color);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateICA", ExactSpelling = true)]
+        [return: NativeTypeName("HDC")]
+        public static extern IntPtr CreateICA([NativeTypeName("LPCSTR")] sbyte* pszDriver, [NativeTypeName("LPCSTR")] sbyte* pszDevice, [NativeTypeName("LPCSTR")] sbyte* pszPort, [NativeTypeName("const DEVMODEA *")] DEVMODEA* pdm);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateICW", ExactSpelling = true)]
         [return: NativeTypeName("HDC")]
-        public static extern IntPtr CreateIC([NativeTypeName("LPCWSTR")] ushort* pszDriver, [NativeTypeName("LPCWSTR")] ushort* pszDevice, [NativeTypeName("LPCWSTR")] ushort* pszPort, [NativeTypeName("const DEVMODEW *")] DEVMODE* pdm);
+        public static extern IntPtr CreateICW([NativeTypeName("LPCWSTR")] ushort* pszDriver, [NativeTypeName("LPCWSTR")] ushort* pszDevice, [NativeTypeName("LPCWSTR")] ushort* pszPort, [NativeTypeName("const DEVMODEW *")] DEVMODEW* pdm);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateMetaFileA", ExactSpelling = true)]
+        [return: NativeTypeName("HDC")]
+        public static extern IntPtr CreateMetaFileA([NativeTypeName("LPCSTR")] sbyte* pszFile);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateMetaFileW", ExactSpelling = true)]
         [return: NativeTypeName("HDC")]
-        public static extern IntPtr CreateMetaFile([NativeTypeName("LPCWSTR")] ushort* pszFile);
+        public static extern IntPtr CreateMetaFileW([NativeTypeName("LPCWSTR")] ushort* pszFile);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreatePalette", ExactSpelling = true)]
         [return: NativeTypeName("HPALETTE")]
@@ -149,9 +176,13 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRGN")]
         public static extern IntPtr CreateRoundRectRgn(int x1, int y1, int x2, int y2, int w, int h);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateScalableFontResourceA", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int CreateScalableFontResourceA([NativeTypeName("DWORD")] uint fdwHidden, [NativeTypeName("LPCSTR")] sbyte* lpszFont, [NativeTypeName("LPCSTR")] sbyte* lpszFile, [NativeTypeName("LPCSTR")] sbyte* lpszPath);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateScalableFontResourceW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int CreateScalableFontResource([NativeTypeName("DWORD")] uint fdwHidden, [NativeTypeName("LPCWSTR")] ushort* lpszFont, [NativeTypeName("LPCWSTR")] ushort* lpszFile, [NativeTypeName("LPCWSTR")] ushort* lpszPath);
+        public static extern int CreateScalableFontResourceW([NativeTypeName("DWORD")] uint fdwHidden, [NativeTypeName("LPCWSTR")] ushort* lpszFont, [NativeTypeName("LPCWSTR")] ushort* lpszFile, [NativeTypeName("LPCWSTR")] ushort* lpszPath);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateSolidBrush", ExactSpelling = true)]
         [return: NativeTypeName("HBRUSH")]
@@ -172,8 +203,11 @@ namespace TerraFX.Interop
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "DescribePixelFormat", ExactSpelling = true)]
         public static extern int DescribePixelFormat([NativeTypeName("HDC")] IntPtr hdc, int iPixelFormat, [NativeTypeName("UINT")] uint nBytes, [NativeTypeName("LPPIXELFORMATDESCRIPTOR")] PIXELFORMATDESCRIPTOR* ppfd);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "DeviceCapabilitiesA", ExactSpelling = true)]
+        public static extern int DeviceCapabilitiesA([NativeTypeName("LPCSTR")] sbyte* pDevice, [NativeTypeName("LPCSTR")] sbyte* pPort, [NativeTypeName("WORD")] ushort fwCapability, [NativeTypeName("LPSTR")] sbyte* pOutput, [NativeTypeName("const DEVMODEA *")] DEVMODEA* pDevMode);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "DeviceCapabilitiesW", ExactSpelling = true)]
-        public static extern int DeviceCapabilities([NativeTypeName("LPCWSTR")] ushort* pDevice, [NativeTypeName("LPCWSTR")] ushort* pPort, [NativeTypeName("WORD")] ushort fwCapability, [NativeTypeName("LPWSTR")] ushort* pOutput, [NativeTypeName("const DEVMODEW *")] DEVMODE* pDevMode);
+        public static extern int DeviceCapabilitiesW([NativeTypeName("LPCWSTR")] ushort* pDevice, [NativeTypeName("LPCWSTR")] ushort* pPort, [NativeTypeName("WORD")] ushort fwCapability, [NativeTypeName("LPWSTR")] ushort* pOutput, [NativeTypeName("const DEVMODEW *")] DEVMODEW* pDevMode);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "DrawEscape", ExactSpelling = true)]
         public static extern int DrawEscape([NativeTypeName("HDC")] IntPtr hdc, int iEscape, int cjIn, [NativeTypeName("LPCSTR")] sbyte* lpIn);
@@ -182,14 +216,23 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int Ellipse([NativeTypeName("HDC")] IntPtr hdc, int left, int top, int right, int bottom);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "EnumFontFamiliesExA", ExactSpelling = true)]
+        public static extern int EnumFontFamiliesExA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPLOGFONTA")] LOGFONTA* lpLogfont, [NativeTypeName("FONTENUMPROCA")] IntPtr lpProc, [NativeTypeName("LPARAM")] IntPtr lParam, [NativeTypeName("DWORD")] uint dwFlags);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "EnumFontFamiliesExW", ExactSpelling = true)]
-        public static extern int EnumFontFamiliesEx([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPLOGFONTW")] LOGFONT* lpLogfont, [NativeTypeName("FONTENUMPROCW")] IntPtr lpProc, [NativeTypeName("LPARAM")] IntPtr lParam, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern int EnumFontFamiliesExW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPLOGFONTW")] LOGFONTW* lpLogfont, [NativeTypeName("FONTENUMPROCW")] IntPtr lpProc, [NativeTypeName("LPARAM")] IntPtr lParam, [NativeTypeName("DWORD")] uint dwFlags);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "EnumFontFamiliesA", ExactSpelling = true)]
+        public static extern int EnumFontFamiliesA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCSTR")] sbyte* lpLogfont, [NativeTypeName("FONTENUMPROCA")] IntPtr lpProc, [NativeTypeName("LPARAM")] IntPtr lParam);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "EnumFontFamiliesW", ExactSpelling = true)]
-        public static extern int EnumFontFamilies([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpLogfont, [NativeTypeName("FONTENUMPROCW")] IntPtr lpProc, [NativeTypeName("LPARAM")] IntPtr lParam);
+        public static extern int EnumFontFamiliesW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpLogfont, [NativeTypeName("FONTENUMPROCW")] IntPtr lpProc, [NativeTypeName("LPARAM")] IntPtr lParam);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "EnumFontsA", ExactSpelling = true)]
+        public static extern int EnumFontsA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCSTR")] sbyte* lpLogfont, [NativeTypeName("FONTENUMPROCA")] IntPtr lpProc, [NativeTypeName("LPARAM")] IntPtr lParam);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "EnumFontsW", ExactSpelling = true)]
-        public static extern int EnumFonts([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpLogfont, [NativeTypeName("FONTENUMPROCW")] IntPtr lpProc, [NativeTypeName("LPARAM")] IntPtr lParam);
+        public static extern int EnumFontsW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpLogfont, [NativeTypeName("FONTENUMPROCW")] IntPtr lpProc, [NativeTypeName("LPARAM")] IntPtr lParam);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "EnumObjects", ExactSpelling = true)]
         public static extern int EnumObjects([NativeTypeName("HDC")] IntPtr hdc, int nType, [NativeTypeName("GOBJENUMPROC")] IntPtr lpFunc, [NativeTypeName("LPARAM")] IntPtr lParam);
@@ -265,25 +308,45 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int GetBrushOrgEx([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPPOINT")] POINT* lppt);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetCharWidthA", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int GetCharWidthA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint iFirst, [NativeTypeName("UINT")] uint iLast, [NativeTypeName("LPINT")] int* lpBuffer);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetCharWidthW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int GetCharWidth([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint iFirst, [NativeTypeName("UINT")] uint iLast, [NativeTypeName("LPINT")] int* lpBuffer);
+        public static extern int GetCharWidthW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint iFirst, [NativeTypeName("UINT")] uint iLast, [NativeTypeName("LPINT")] int* lpBuffer);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetCharWidth32A", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int GetCharWidth32A([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint iFirst, [NativeTypeName("UINT")] uint iLast, [NativeTypeName("LPINT")] int* lpBuffer);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetCharWidth32W", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int GetCharWidth32([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint iFirst, [NativeTypeName("UINT")] uint iLast, [NativeTypeName("LPINT")] int* lpBuffer);
+        public static extern int GetCharWidth32W([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint iFirst, [NativeTypeName("UINT")] uint iLast, [NativeTypeName("LPINT")] int* lpBuffer);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetCharWidthFloatA", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int GetCharWidthFloatA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint iFirst, [NativeTypeName("UINT")] uint iLast, [NativeTypeName("PFLOAT")] float* lpBuffer);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetCharWidthFloatW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int GetCharWidthFloat([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint iFirst, [NativeTypeName("UINT")] uint iLast, [NativeTypeName("PFLOAT")] float* lpBuffer);
+        public static extern int GetCharWidthFloatW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint iFirst, [NativeTypeName("UINT")] uint iLast, [NativeTypeName("PFLOAT")] float* lpBuffer);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetCharABCWidthsA", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int GetCharABCWidthsA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint wFirst, [NativeTypeName("UINT")] uint wLast, [NativeTypeName("LPABC")] ABC* lpABC);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetCharABCWidthsW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int GetCharABCWidths([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint wFirst, [NativeTypeName("UINT")] uint wLast, [NativeTypeName("LPABC")] ABC* lpABC);
+        public static extern int GetCharABCWidthsW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint wFirst, [NativeTypeName("UINT")] uint wLast, [NativeTypeName("LPABC")] ABC* lpABC);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetCharABCWidthsFloatA", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int GetCharABCWidthsFloatA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint iFirst, [NativeTypeName("UINT")] uint iLast, [NativeTypeName("LPABCFLOAT")] ABCFLOAT* lpABC);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetCharABCWidthsFloatW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int GetCharABCWidthsFloat([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint iFirst, [NativeTypeName("UINT")] uint iLast, [NativeTypeName("LPABCFLOAT")] ABCFLOAT* lpABC);
+        public static extern int GetCharABCWidthsFloatW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint iFirst, [NativeTypeName("UINT")] uint iLast, [NativeTypeName("LPABCFLOAT")] ABCFLOAT* lpABC);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetClipBox", ExactSpelling = true)]
         public static extern int GetClipBox([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPRECT")] RECT* lprect);
@@ -312,9 +375,13 @@ namespace TerraFX.Interop
         [return: NativeTypeName("DWORD")]
         public static extern uint GetFontData([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("DWORD")] uint dwTable, [NativeTypeName("DWORD")] uint dwOffset, [NativeTypeName("PVOID")] void* pvBuffer, [NativeTypeName("DWORD")] uint cjBuffer);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetGlyphOutlineA", ExactSpelling = true)]
+        [return: NativeTypeName("DWORD")]
+        public static extern uint GetGlyphOutlineA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint uChar, [NativeTypeName("UINT")] uint fuFormat, [NativeTypeName("LPGLYPHMETRICS")] GLYPHMETRICS* lpgm, [NativeTypeName("DWORD")] uint cjBuffer, [NativeTypeName("LPVOID")] void* pvBuffer, [NativeTypeName("const MAT2 *")] MAT2* lpmat2);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetGlyphOutlineW", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetGlyphOutline([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint uChar, [NativeTypeName("UINT")] uint fuFormat, [NativeTypeName("LPGLYPHMETRICS")] GLYPHMETRICS* lpgm, [NativeTypeName("DWORD")] uint cjBuffer, [NativeTypeName("LPVOID")] void* pvBuffer, [NativeTypeName("const MAT2 *")] MAT2* lpmat2);
+        public static extern uint GetGlyphOutlineW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint uChar, [NativeTypeName("UINT")] uint fuFormat, [NativeTypeName("LPGLYPHMETRICS")] GLYPHMETRICS* lpgm, [NativeTypeName("DWORD")] uint cjBuffer, [NativeTypeName("LPVOID")] void* pvBuffer, [NativeTypeName("const MAT2 *")] MAT2* lpmat2);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetGraphicsMode", ExactSpelling = true)]
         public static extern int GetGraphicsMode([NativeTypeName("HDC")] IntPtr hdc);
@@ -326,9 +393,13 @@ namespace TerraFX.Interop
         [return: NativeTypeName("UINT")]
         public static extern uint GetMetaFileBitsEx([NativeTypeName("HMETAFILE")] IntPtr hMF, [NativeTypeName("UINT")] uint cbBuffer, [NativeTypeName("LPVOID")] void* lpData);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetMetaFileA", ExactSpelling = true)]
+        [return: NativeTypeName("HMETAFILE")]
+        public static extern IntPtr GetMetaFileA([NativeTypeName("LPCSTR")] sbyte* lpName);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetMetaFileW", ExactSpelling = true)]
         [return: NativeTypeName("HMETAFILE")]
-        public static extern IntPtr GetMetaFile([NativeTypeName("LPCWSTR")] ushort* lpName);
+        public static extern IntPtr GetMetaFileW([NativeTypeName("LPCWSTR")] ushort* lpName);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetNearestColor", ExactSpelling = true)]
         [return: NativeTypeName("COLORREF")]
@@ -342,9 +413,13 @@ namespace TerraFX.Interop
         [return: NativeTypeName("DWORD")]
         public static extern uint GetObjectType([NativeTypeName("HGDIOBJ")] void* h);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetOutlineTextMetricsA", ExactSpelling = true)]
+        [return: NativeTypeName("UINT")]
+        public static extern uint GetOutlineTextMetricsA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint cjCopy, [NativeTypeName("LPOUTLINETEXTMETRICA")] OUTLINETEXTMETRICA* potm);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetOutlineTextMetricsW", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint GetOutlineTextMetrics([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint cjCopy, [NativeTypeName("LPOUTLINETEXTMETRICW")] OUTLINETEXTMETRIC* potm);
+        public static extern uint GetOutlineTextMetricsW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint cjCopy, [NativeTypeName("LPOUTLINETEXTMETRICW")] OUTLINETEXTMETRICW* potm);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetPaletteEntries", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
@@ -400,17 +475,29 @@ namespace TerraFX.Interop
         [return: NativeTypeName("COLORREF")]
         public static extern uint GetTextColor([NativeTypeName("HDC")] IntPtr hdc);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetTextExtentPointA", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int GetTextExtentPointA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCSTR")] sbyte* lpString, int c, [NativeTypeName("LPSIZE")] SIZE* lpsz);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetTextExtentPointW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int GetTextExtentPoint([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpString, int c, [NativeTypeName("LPSIZE")] SIZE* lpsz);
+        public static extern int GetTextExtentPointW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpString, int c, [NativeTypeName("LPSIZE")] SIZE* lpsz);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetTextExtentPoint32A", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int GetTextExtentPoint32A([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCSTR")] sbyte* lpString, int c, [NativeTypeName("LPSIZE")] SIZE* psizl);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetTextExtentPoint32W", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int GetTextExtentPoint32([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpString, int c, [NativeTypeName("LPSIZE")] SIZE* psizl);
+        public static extern int GetTextExtentPoint32W([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpString, int c, [NativeTypeName("LPSIZE")] SIZE* psizl);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetTextExtentExPointA", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int GetTextExtentExPointA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCSTR")] sbyte* lpszString, int cchString, int nMaxExtent, [NativeTypeName("LPINT")] int* lpnFit, [NativeTypeName("LPINT")] int* lpnDx, [NativeTypeName("LPSIZE")] SIZE* lpSize);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetTextExtentExPointW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int GetTextExtentExPoint([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpszString, int cchString, int nMaxExtent, [NativeTypeName("LPINT")] int* lpnFit, [NativeTypeName("LPINT")] int* lpnDx, [NativeTypeName("LPSIZE")] SIZE* lpSize);
+        public static extern int GetTextExtentExPointW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpszString, int cchString, int nMaxExtent, [NativeTypeName("LPINT")] int* lpnFit, [NativeTypeName("LPINT")] int* lpnDx, [NativeTypeName("LPSIZE")] SIZE* lpSize);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetTextCharset", ExactSpelling = true)]
         public static extern int GetTextCharset([NativeTypeName("HDC")] IntPtr hdc);
@@ -426,17 +513,25 @@ namespace TerraFX.Interop
         [return: NativeTypeName("DWORD")]
         public static extern uint GetFontLanguageInfo([NativeTypeName("HDC")] IntPtr hdc);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetCharacterPlacementA", ExactSpelling = true)]
+        [return: NativeTypeName("DWORD")]
+        public static extern uint GetCharacterPlacementA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCSTR")] sbyte* lpString, int nCount, int nMexExtent, [NativeTypeName("LPGCP_RESULTSA")] GCP_RESULTSA* lpResults, [NativeTypeName("DWORD")] uint dwFlags);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetCharacterPlacementW", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetCharacterPlacement([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpString, int nCount, int nMexExtent, [NativeTypeName("LPGCP_RESULTSW")] GCP_RESULTS* lpResults, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern uint GetCharacterPlacementW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpString, int nCount, int nMexExtent, [NativeTypeName("LPGCP_RESULTSW")] GCP_RESULTSW* lpResults, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetFontUnicodeRanges", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint GetFontUnicodeRanges([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPGLYPHSET")] GLYPHSET* lpgs);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetGlyphIndicesA", ExactSpelling = true)]
+        [return: NativeTypeName("DWORD")]
+        public static extern uint GetGlyphIndicesA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCSTR")] sbyte* lpstr, int c, [NativeTypeName("LPWORD")] ushort* pgi, [NativeTypeName("DWORD")] uint fl);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetGlyphIndicesW", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetGlyphIndices([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpstr, int c, [NativeTypeName("LPWORD")] ushort* pgi, [NativeTypeName("DWORD")] uint fl);
+        public static extern uint GetGlyphIndicesW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpstr, int c, [NativeTypeName("LPWORD")] ushort* pgi, [NativeTypeName("DWORD")] uint fl);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetTextExtentPointI", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -454,24 +549,35 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int GetCharABCWidthsI([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint giFirst, [NativeTypeName("UINT")] uint cgi, [NativeTypeName("LPWORD")] ushort* pgi, [NativeTypeName("LPABC")] ABC* pabc);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "AddFontResourceExA", ExactSpelling = true)]
+        public static extern int AddFontResourceExA([NativeTypeName("LPCSTR")] sbyte* name, [NativeTypeName("DWORD")] uint fl, [NativeTypeName("PVOID")] void* res);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "AddFontResourceExW", ExactSpelling = true)]
-        public static extern int AddFontResourceEx([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("DWORD")] uint fl, [NativeTypeName("PVOID")] void* res);
+        public static extern int AddFontResourceExW([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("DWORD")] uint fl, [NativeTypeName("PVOID")] void* res);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "RemoveFontResourceExA", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int RemoveFontResourceExA([NativeTypeName("LPCSTR")] sbyte* name, [NativeTypeName("DWORD")] uint fl, [NativeTypeName("PVOID")] void* pdv);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "RemoveFontResourceExW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int RemoveFontResourceEx([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("DWORD")] uint fl, [NativeTypeName("PVOID")] void* pdv);
+        public static extern int RemoveFontResourceExW([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("DWORD")] uint fl, [NativeTypeName("PVOID")] void* pdv);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "AddFontMemResourceEx", ExactSpelling = true)]
         [return: NativeTypeName("HANDLE")]
-        public static extern void* AddFontMemResourceEx([NativeTypeName("PVOID")] void* pFileView, [NativeTypeName("DWORD")] uint cjSize, [NativeTypeName("PVOID")] void* pvResrved, [NativeTypeName("DWORD *")] uint* pNumFonts);
+        public static extern IntPtr AddFontMemResourceEx([NativeTypeName("PVOID")] void* pFileView, [NativeTypeName("DWORD")] uint cjSize, [NativeTypeName("PVOID")] void* pvResrved, [NativeTypeName("DWORD *")] uint* pNumFonts);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "RemoveFontMemResourceEx", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int RemoveFontMemResourceEx([NativeTypeName("HANDLE")] void* h);
+        public static extern int RemoveFontMemResourceEx([NativeTypeName("HANDLE")] IntPtr h);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateFontIndirectExA", ExactSpelling = true)]
+        [return: NativeTypeName("HFONT")]
+        public static extern IntPtr CreateFontIndirectExA([NativeTypeName("const ENUMLOGFONTEXDVA *")] ENUMLOGFONTEXDVA* param0);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateFontIndirectExW", ExactSpelling = true)]
         [return: NativeTypeName("HFONT")]
-        public static extern IntPtr CreateFontIndirectEx([NativeTypeName("const ENUMLOGFONTEXDVW *")] ENUMLOGFONTEXDV* param0);
+        public static extern IntPtr CreateFontIndirectExW([NativeTypeName("const ENUMLOGFONTEXDVW *")] ENUMLOGFONTEXDVW* param0);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetViewportExtEx", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -562,17 +668,25 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int RestoreDC([NativeTypeName("HDC")] IntPtr hdc, int nSavedDC);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "ResetDCA", ExactSpelling = true)]
+        [return: NativeTypeName("HDC")]
+        public static extern IntPtr ResetDCA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const DEVMODEA *")] DEVMODEA* lpdm);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "ResetDCW", ExactSpelling = true)]
         [return: NativeTypeName("HDC")]
-        public static extern IntPtr ResetDC([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const DEVMODEW *")] DEVMODE* lpdm);
+        public static extern IntPtr ResetDCW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const DEVMODEW *")] DEVMODEW* lpdm);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "RealizePalette", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
         public static extern uint RealizePalette([NativeTypeName("HDC")] IntPtr hdc);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "RemoveFontResourceA", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int RemoveFontResourceA([NativeTypeName("LPCSTR")] sbyte* lpFileName);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "RemoveFontResourceW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int RemoveFontResource([NativeTypeName("LPCWSTR")] ushort* lpFileName);
+        public static extern int RemoveFontResourceW([NativeTypeName("LPCWSTR")] ushort* lpFileName);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "RoundRect", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -714,14 +828,13 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GdiRegisterDdraw", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int GdiRegisterDdraw([NativeTypeName("PGDIREGISTERDDRAWPACKET")] GDIREGISTERDDRAWPACKET* pPacket, [NativeTypeName("GDIMARSHALLOC")] IntPtr ppfnGdiAlloc);
+        public static extern int GdiRegisterDdraw([NativeTypeName("PGDIREGISTERDDRAWPACKET")] GDIREGISTERDDRAWPACKET* pPacket, [NativeTypeName("GDIMARSHALLOC *")] IntPtr* ppfnGdiAlloc);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GdiMarshalSize", ExactSpelling = true)]
         [return: NativeTypeName("ULONG")]
         public static extern uint GdiMarshalSize();
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GdiMarshal", ExactSpelling = true)]
-        [return: NativeTypeName("BOOL")]
         public static extern void GdiMarshal([NativeTypeName("DWORD")] uint dwProcessIdTo, [NativeTypeName("HGDIOBJ")] void* hGdiObj, [NativeTypeName("PVOID")] void* pData, [NativeTypeName("ULONG")] uint ulFlags);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GdiUnmarshal", ExactSpelling = true)]
@@ -730,7 +843,7 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "AlphaBlend", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int AlphaBlend([NativeTypeName("HDC")] IntPtr hdcDest, int xoriginDest, int yoriginDest, int wDest, int hDest, [NativeTypeName("HDC")] IntPtr hdcSrc, int xoriginSrc, int yoriginSrc, int wSrc, int hSrc, [NativeTypeName("BLENDFUNCTION")] BLENDFUNCTION ftn);
+        public static extern int AlphaBlend([NativeTypeName("HDC")] IntPtr hdcDest, int xoriginDest, int yoriginDest, int wDest, int hDest, [NativeTypeName("HDC")] IntPtr hdcSrc, int xoriginSrc, int yoriginSrc, int wSrc, int hSrc, BLENDFUNCTION ftn);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "TransparentBlt", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -742,7 +855,7 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GdiAlphaBlend", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int GdiAlphaBlend([NativeTypeName("HDC")] IntPtr hdcDest, int xoriginDest, int yoriginDest, int wDest, int hDest, [NativeTypeName("HDC")] IntPtr hdcSrc, int xoriginSrc, int yoriginSrc, int wSrc, int hSrc, [NativeTypeName("BLENDFUNCTION")] BLENDFUNCTION ftn);
+        public static extern int GdiAlphaBlend([NativeTypeName("HDC")] IntPtr hdcDest, int xoriginDest, int yoriginDest, int wDest, int hDest, [NativeTypeName("HDC")] IntPtr hdcSrc, int xoriginSrc, int yoriginSrc, int wSrc, int hSrc, BLENDFUNCTION ftn);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GdiTransparentBlt", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -764,13 +877,21 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HENHMETAFILE")]
         public static extern IntPtr CloseEnhMetaFile([NativeTypeName("HDC")] IntPtr hdc);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CopyEnhMetaFileA", ExactSpelling = true)]
+        [return: NativeTypeName("HENHMETAFILE")]
+        public static extern IntPtr CopyEnhMetaFileA([NativeTypeName("HENHMETAFILE")] IntPtr hEnh, [NativeTypeName("LPCSTR")] sbyte* lpFileName);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CopyEnhMetaFileW", ExactSpelling = true)]
         [return: NativeTypeName("HENHMETAFILE")]
-        public static extern IntPtr CopyEnhMetaFile([NativeTypeName("HENHMETAFILE")] IntPtr hEnh, [NativeTypeName("LPCWSTR")] ushort* lpFileName);
+        public static extern IntPtr CopyEnhMetaFileW([NativeTypeName("HENHMETAFILE")] IntPtr hEnh, [NativeTypeName("LPCWSTR")] ushort* lpFileName);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateEnhMetaFileA", ExactSpelling = true)]
+        [return: NativeTypeName("HDC")]
+        public static extern IntPtr CreateEnhMetaFileA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCSTR")] sbyte* lpFilename, [NativeTypeName("const RECT *")] RECT* lprc, [NativeTypeName("LPCSTR")] sbyte* lpDesc);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateEnhMetaFileW", ExactSpelling = true)]
         [return: NativeTypeName("HDC")]
-        public static extern IntPtr CreateEnhMetaFile([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpFilename, [NativeTypeName("const RECT *")] RECT* lprc, [NativeTypeName("LPCWSTR")] ushort* lpDesc);
+        public static extern IntPtr CreateEnhMetaFileW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpFilename, [NativeTypeName("const RECT *")] RECT* lprc, [NativeTypeName("LPCWSTR")] ushort* lpDesc);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "DeleteEnhMetaFile", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -780,17 +901,25 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int EnumEnhMetaFile([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HENHMETAFILE")] IntPtr hmf, [NativeTypeName("ENHMFENUMPROC")] IntPtr proc, [NativeTypeName("LPVOID")] void* param3, [NativeTypeName("const RECT *")] RECT* lpRect);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetEnhMetaFileA", ExactSpelling = true)]
+        [return: NativeTypeName("HENHMETAFILE")]
+        public static extern IntPtr GetEnhMetaFileA([NativeTypeName("LPCSTR")] sbyte* lpName);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetEnhMetaFileW", ExactSpelling = true)]
         [return: NativeTypeName("HENHMETAFILE")]
-        public static extern IntPtr GetEnhMetaFile([NativeTypeName("LPCWSTR")] ushort* lpName);
+        public static extern IntPtr GetEnhMetaFileW([NativeTypeName("LPCWSTR")] ushort* lpName);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetEnhMetaFileBits", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
         public static extern uint GetEnhMetaFileBits([NativeTypeName("HENHMETAFILE")] IntPtr hEMF, [NativeTypeName("UINT")] uint nSize, [NativeTypeName("LPBYTE")] byte* lpData);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetEnhMetaFileDescriptionA", ExactSpelling = true)]
+        [return: NativeTypeName("UINT")]
+        public static extern uint GetEnhMetaFileDescriptionA([NativeTypeName("HENHMETAFILE")] IntPtr hemf, [NativeTypeName("UINT")] uint cchBuffer, [NativeTypeName("LPSTR")] sbyte* lpDescription);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetEnhMetaFileDescriptionW", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
-        public static extern uint GetEnhMetaFileDescription([NativeTypeName("HENHMETAFILE")] IntPtr hemf, [NativeTypeName("UINT")] uint cchBuffer, [NativeTypeName("LPWSTR")] ushort* lpDescription);
+        public static extern uint GetEnhMetaFileDescriptionW([NativeTypeName("HENHMETAFILE")] IntPtr hemf, [NativeTypeName("UINT")] uint cchBuffer, [NativeTypeName("LPWSTR")] ushort* lpDescription);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetEnhMetaFileHeader", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
@@ -828,9 +957,13 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int GdiComment([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint nSize, [NativeTypeName("const BYTE *")] byte* lpData);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetTextMetricsA", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int GetTextMetricsA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPTEXTMETRICA")] TEXTMETRICA* lptm);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetTextMetricsW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int GetTextMetrics([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPTEXTMETRICW")] TEXTMETRIC* lptm);
+        public static extern int GetTextMetricsW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPTEXTMETRICW")] TEXTMETRICW* lptm);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "AngleArc", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -858,7 +991,7 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateDIBSection", ExactSpelling = true)]
         [return: NativeTypeName("HBITMAP")]
-        public static extern IntPtr CreateDIBSection([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const BITMAPINFO *")] BITMAPINFO* pbmi, [NativeTypeName("UINT")] uint usage, [NativeTypeName("void **")] void** ppvBits, [NativeTypeName("HANDLE")] void* hSection, [NativeTypeName("DWORD")] uint offset);
+        public static extern IntPtr CreateDIBSection([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const BITMAPINFO *")] BITMAPINFO* pbmi, [NativeTypeName("UINT")] uint usage, [NativeTypeName("void **")] void** ppvBits, [NativeTypeName("HANDLE")] IntPtr hSection, [NativeTypeName("DWORD")] uint offset);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetDIBColorTable", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
@@ -880,8 +1013,11 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HPALETTE")]
         public static extern IntPtr CreateHalftonePalette([NativeTypeName("HDC")] IntPtr hdc);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "StartDocA", ExactSpelling = true)]
+        public static extern int StartDocA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const DOCINFOA *")] DOCINFOA* lpdi);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "StartDocW", ExactSpelling = true)]
-        public static extern int StartDoc([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const DOCINFOW *")] DOCINFO* lpdi);
+        public static extern int StartDocW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const DOCINFOW *")] DOCINFOW* lpdi);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "EndDoc", ExactSpelling = true)]
         public static extern int EndDoc([NativeTypeName("HDC")] IntPtr hdc);
@@ -971,24 +1107,39 @@ namespace TerraFX.Interop
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetArcDirection", ExactSpelling = true)]
         public static extern int GetArcDirection([NativeTypeName("HDC")] IntPtr hdc);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetObjectA", ExactSpelling = true)]
+        public static extern int GetObjectA([NativeTypeName("HANDLE")] IntPtr h, int c, [NativeTypeName("LPVOID")] void* pv);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetObjectW", ExactSpelling = true)]
-        public static extern int GetObject([NativeTypeName("HANDLE")] void* h, int c, [NativeTypeName("LPVOID")] void* pv);
+        public static extern int GetObjectW([NativeTypeName("HANDLE")] IntPtr h, int c, [NativeTypeName("LPVOID")] void* pv);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "MoveToEx", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int MoveToEx([NativeTypeName("HDC")] IntPtr hdc, int x, int y, [NativeTypeName("LPPOINT")] POINT* lppt);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "TextOutA", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int TextOutA([NativeTypeName("HDC")] IntPtr hdc, int x, int y, [NativeTypeName("LPCSTR")] sbyte* lpString, int c);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "TextOutW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int TextOut([NativeTypeName("HDC")] IntPtr hdc, int x, int y, [NativeTypeName("LPCWSTR")] ushort* lpString, int c);
+        public static extern int TextOutW([NativeTypeName("HDC")] IntPtr hdc, int x, int y, [NativeTypeName("LPCWSTR")] ushort* lpString, int c);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "ExtTextOutA", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int ExtTextOutA([NativeTypeName("HDC")] IntPtr hdc, int x, int y, [NativeTypeName("UINT")] uint options, [NativeTypeName("const RECT *")] RECT* lprect, [NativeTypeName("LPCSTR")] sbyte* lpString, [NativeTypeName("UINT")] uint c, [NativeTypeName("const INT *")] int* lpDx);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "ExtTextOutW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int ExtTextOut([NativeTypeName("HDC")] IntPtr hdc, int x, int y, [NativeTypeName("UINT")] uint options, [NativeTypeName("const RECT *")] RECT* lprect, [NativeTypeName("LPCWSTR")] ushort* lpString, [NativeTypeName("UINT")] uint c, [NativeTypeName("const INT *")] int* lpDx);
+        public static extern int ExtTextOutW([NativeTypeName("HDC")] IntPtr hdc, int x, int y, [NativeTypeName("UINT")] uint options, [NativeTypeName("const RECT *")] RECT* lprect, [NativeTypeName("LPCWSTR")] ushort* lpString, [NativeTypeName("UINT")] uint c, [NativeTypeName("const INT *")] int* lpDx);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "PolyTextOutA", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int PolyTextOutA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const POLYTEXTA *")] POLYTEXTA* ppt, int nstrings);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "PolyTextOutW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int PolyTextOut([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const POLYTEXTW *")] POLYTEXT* ppt, int nstrings);
+        public static extern int PolyTextOutW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("const POLYTEXTW *")] POLYTEXTW* ppt, int nstrings);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreatePolygonRgn", ExactSpelling = true)]
         [return: NativeTypeName("HRGN")]
@@ -1062,12 +1213,19 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int SetBrushOrgEx([NativeTypeName("HDC")] IntPtr hdc, int x, int y, [NativeTypeName("LPPOINT")] POINT* lppt);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetTextFaceA", ExactSpelling = true)]
+        public static extern int GetTextFaceA([NativeTypeName("HDC")] IntPtr hdc, int c, [NativeTypeName("LPSTR")] sbyte* lpName);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetTextFaceW", ExactSpelling = true)]
-        public static extern int GetTextFace([NativeTypeName("HDC")] IntPtr hdc, int c, [NativeTypeName("LPWSTR")] ushort* lpName);
+        public static extern int GetTextFaceW([NativeTypeName("HDC")] IntPtr hdc, int c, [NativeTypeName("LPWSTR")] ushort* lpName);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetKerningPairsA", ExactSpelling = true)]
+        [return: NativeTypeName("DWORD")]
+        public static extern uint GetKerningPairsA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("DWORD")] uint nPairs, [NativeTypeName("LPKERNINGPAIR")] KERNINGPAIR* lpKernPair);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetKerningPairsW", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetKerningPairs([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("DWORD")] uint nPairs, [NativeTypeName("LPKERNINGPAIR")] KERNINGPAIR* lpKernPair);
+        public static extern uint GetKerningPairsW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("DWORD")] uint nPairs, [NativeTypeName("LPKERNINGPAIR")] KERNINGPAIR* lpKernPair);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetDCOrgEx", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -1104,13 +1262,21 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HCOLORSPACE")]
         public static extern IntPtr GetColorSpace([NativeTypeName("HDC")] IntPtr hdc);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetLogColorSpaceA", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int GetLogColorSpaceA([NativeTypeName("HCOLORSPACE")] IntPtr hColorSpace, [NativeTypeName("LPLOGCOLORSPACEA")] LOGCOLORSPACEA* lpBuffer, [NativeTypeName("DWORD")] uint nSize);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetLogColorSpaceW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int GetLogColorSpace([NativeTypeName("HCOLORSPACE")] IntPtr hColorSpace, [NativeTypeName("LPLOGCOLORSPACEW")] LOGCOLORSPACE* lpBuffer, [NativeTypeName("DWORD")] uint nSize);
+        public static extern int GetLogColorSpaceW([NativeTypeName("HCOLORSPACE")] IntPtr hColorSpace, [NativeTypeName("LPLOGCOLORSPACEW")] LOGCOLORSPACEW* lpBuffer, [NativeTypeName("DWORD")] uint nSize);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateColorSpaceA", ExactSpelling = true)]
+        [return: NativeTypeName("HCOLORSPACE")]
+        public static extern IntPtr CreateColorSpaceA([NativeTypeName("LPLOGCOLORSPACEA")] LOGCOLORSPACEA* lplcs);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreateColorSpaceW", ExactSpelling = true)]
         [return: NativeTypeName("HCOLORSPACE")]
-        public static extern IntPtr CreateColorSpace([NativeTypeName("LPLOGCOLORSPACEW")] LOGCOLORSPACE* lplcs);
+        public static extern IntPtr CreateColorSpaceW([NativeTypeName("LPLOGCOLORSPACEW")] LOGCOLORSPACEW* lplcs);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetColorSpace", ExactSpelling = true)]
         [return: NativeTypeName("HCOLORSPACE")]
@@ -1120,13 +1286,21 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int DeleteColorSpace([NativeTypeName("HCOLORSPACE")] IntPtr hcs);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetICMProfileA", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int GetICMProfileA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPDWORD")] uint* pBufSize, [NativeTypeName("LPSTR")] sbyte* pszFilename);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetICMProfileW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int GetICMProfile([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPDWORD")] uint* pBufSize, [NativeTypeName("LPWSTR")] ushort* pszFilename);
+        public static extern int GetICMProfileW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPDWORD")] uint* pBufSize, [NativeTypeName("LPWSTR")] ushort* pszFilename);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetICMProfileA", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int SetICMProfileA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPSTR")] sbyte* lpFileName);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetICMProfileW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetICMProfile([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPWSTR")] ushort* lpFileName);
+        public static extern int SetICMProfileW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPWSTR")] ushort* lpFileName);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetDeviceGammaRamp", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -1140,12 +1314,19 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int ColorMatchToTarget([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HDC")] IntPtr hdcTarget, [NativeTypeName("DWORD")] uint action);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "EnumICMProfilesA", ExactSpelling = true)]
+        public static extern int EnumICMProfilesA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("ICMENUMPROCA")] IntPtr proc, [NativeTypeName("LPARAM")] IntPtr param2);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "EnumICMProfilesW", ExactSpelling = true)]
-        public static extern int EnumICMProfiles([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("ICMENUMPROCW")] IntPtr proc, [NativeTypeName("LPARAM")] IntPtr param2);
+        public static extern int EnumICMProfilesW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("ICMENUMPROCW")] IntPtr proc, [NativeTypeName("LPARAM")] IntPtr param2);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "UpdateICMRegKeyA", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int UpdateICMRegKeyA([NativeTypeName("DWORD")] uint reserved, [NativeTypeName("LPSTR")] sbyte* lpszCMID, [NativeTypeName("LPSTR")] sbyte* lpszFileName, [NativeTypeName("UINT")] uint command);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "UpdateICMRegKeyW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int UpdateICMRegKey([NativeTypeName("DWORD")] uint reserved, [NativeTypeName("LPWSTR")] ushort* lpszCMID, [NativeTypeName("LPWSTR")] ushort* lpszFileName, [NativeTypeName("UINT")] uint command);
+        public static extern int UpdateICMRegKeyW([NativeTypeName("DWORD")] uint reserved, [NativeTypeName("LPWSTR")] ushort* lpszCMID, [NativeTypeName("LPWSTR")] ushort* lpszFileName, [NativeTypeName("UINT")] uint command);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "ColorCorrectPalette", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -1187,17 +1368,25 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int wglShareLists([NativeTypeName("HGLRC")] IntPtr param0, [NativeTypeName("HGLRC")] IntPtr param1);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "wglUseFontBitmapsA", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int wglUseFontBitmapsA([NativeTypeName("HDC")] IntPtr param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "wglUseFontBitmapsW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int wglUseFontBitmaps([NativeTypeName("HDC")] IntPtr param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3);
+        public static extern int wglUseFontBitmapsW([NativeTypeName("HDC")] IntPtr param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SwapBuffers", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SwapBuffers([NativeTypeName("HDC")] IntPtr param0);
 
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "wglUseFontOutlinesA", ExactSpelling = true)]
+        [return: NativeTypeName("BOOL")]
+        public static extern int wglUseFontOutlinesA([NativeTypeName("HDC")] IntPtr param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("FLOAT")] float param4, [NativeTypeName("FLOAT")] float param5, int param6, [NativeTypeName("LPGLYPHMETRICSFLOAT")] GLYPHMETRICSFLOAT* param7);
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "wglUseFontOutlinesW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int wglUseFontOutlines([NativeTypeName("HDC")] IntPtr param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("FLOAT")] float param4, [NativeTypeName("FLOAT")] float param5, int param6, [NativeTypeName("LPGLYPHMETRICSFLOAT")] GLYPHMETRICSFLOAT* param7);
+        public static extern int wglUseFontOutlinesW([NativeTypeName("HDC")] IntPtr param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("FLOAT")] float param4, [NativeTypeName("FLOAT")] float param5, int param6, [NativeTypeName("LPGLYPHMETRICSFLOAT")] GLYPHMETRICSFLOAT* param7);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "wglDescribeLayerPlane", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]

@@ -1,9 +1,10 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared\dxgi1_3.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from shared/dxgi1_3.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -15,94 +16,82 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDXGISwapChainMedia* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
+        public delegate int _QueryInterface(IDXGISwapChainMedia* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDXGISwapChainMedia* This);
+        public delegate uint _AddRef(IDXGISwapChainMedia* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDXGISwapChainMedia* This);
+        public delegate uint _Release(IDXGISwapChainMedia* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFrameStatisticsMedia(IDXGISwapChainMedia* This, DXGI_FRAME_STATISTICS_MEDIA* pStats);
+        public delegate int _GetFrameStatisticsMedia(IDXGISwapChainMedia* pThis, [NativeTypeName("DXGI_FRAME_STATISTICS_MEDIA *")] DXGI_FRAME_STATISTICS_MEDIA* pStats);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPresentDuration(IDXGISwapChainMedia* This, [NativeTypeName("UINT")] uint Duration);
+        public delegate int _SetPresentDuration(IDXGISwapChainMedia* pThis, [NativeTypeName("UINT")] uint Duration);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CheckPresentDurationSupport(IDXGISwapChainMedia* This, [NativeTypeName("UINT")] uint DesiredPresentDuration, [NativeTypeName("UINT")] uint* pClosestSmallerPresentDuration, [NativeTypeName("UINT")] uint* pClosestLargerPresentDuration);
+        public delegate int _CheckPresentDurationSupport(IDXGISwapChainMedia* pThis, [NativeTypeName("UINT")] uint DesiredPresentDuration, [NativeTypeName("UINT *")] uint* pClosestSmallerPresentDuration, [NativeTypeName("UINT *")] uint* pClosestLargerPresentDuration);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            fixed (IDXGISwapChainMedia* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDXGISwapChainMedia*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            fixed (IDXGISwapChainMedia* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDXGISwapChainMedia*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            fixed (IDXGISwapChainMedia* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDXGISwapChainMedia*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFrameStatisticsMedia(DXGI_FRAME_STATISTICS_MEDIA* pStats)
+        public int GetFrameStatisticsMedia([NativeTypeName("DXGI_FRAME_STATISTICS_MEDIA *")] DXGI_FRAME_STATISTICS_MEDIA* pStats)
         {
-            fixed (IDXGISwapChainMedia* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFrameStatisticsMedia>(lpVtbl->GetFrameStatisticsMedia)(This, pStats);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFrameStatisticsMedia>(lpVtbl->GetFrameStatisticsMedia)((IDXGISwapChainMedia*)Unsafe.AsPointer(ref this), pStats);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPresentDuration([NativeTypeName("UINT")] uint Duration)
         {
-            fixed (IDXGISwapChainMedia* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetPresentDuration>(lpVtbl->SetPresentDuration)(This, Duration);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetPresentDuration>(lpVtbl->SetPresentDuration)((IDXGISwapChainMedia*)Unsafe.AsPointer(ref this), Duration);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CheckPresentDurationSupport([NativeTypeName("UINT")] uint DesiredPresentDuration, [NativeTypeName("UINT")] uint* pClosestSmallerPresentDuration, [NativeTypeName("UINT")] uint* pClosestLargerPresentDuration)
+        public int CheckPresentDurationSupport([NativeTypeName("UINT")] uint DesiredPresentDuration, [NativeTypeName("UINT *")] uint* pClosestSmallerPresentDuration, [NativeTypeName("UINT *")] uint* pClosestLargerPresentDuration)
         {
-            fixed (IDXGISwapChainMedia* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_CheckPresentDurationSupport>(lpVtbl->CheckPresentDurationSupport)(This, DesiredPresentDuration, pClosestSmallerPresentDuration, pClosestLargerPresentDuration);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_CheckPresentDurationSupport>(lpVtbl->CheckPresentDurationSupport)((IDXGISwapChainMedia*)Unsafe.AsPointer(ref this), DesiredPresentDuration, pClosestSmallerPresentDuration, pClosestLargerPresentDuration);
         }
 
         public partial struct Vtbl
         {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
             public IntPtr QueryInterface;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr AddRef;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr Release;
 
+            [NativeTypeName("HRESULT (DXGI_FRAME_STATISTICS_MEDIA *) __attribute__((stdcall))")]
             public IntPtr GetFrameStatisticsMedia;
 
+            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
             public IntPtr SetPresentDuration;
 
+            [NativeTypeName("HRESULT (UINT, UINT *, UINT *) __attribute__((stdcall))")]
             public IntPtr CheckPresentDurationSupport;
         }
     }

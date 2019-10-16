@@ -11,84 +11,62 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class User32
     {
-        // MAKEINTRESOURCE(1)
         public const ushort RT_CURSOR = 1;
 
-        // MAKEINTRESOURCE(2)
         public const ushort RT_BITMAP = 2;
 
-        // MAKEINTRESOURCE(3)
         public const ushort RT_ICON = 3;
 
-        // MAKEINTRESOURCE(4)
         public const ushort RT_MENU = 4;
 
-        // MAKEINTRESOURCE(5)
         public const ushort RT_DIALOG = 5;
 
-        // MAKEINTRESOURCE(6)
         public const ushort RT_STRING = 6;
 
-        // MAKEINTRESOURCE(7)
         public const ushort RT_FONTDIR = 7;
 
-        // MAKEINTRESOURCE(8)
         public const ushort RT_FONT = 8;
 
-        // MAKEINTRESOURCE(9)
         public const ushort RT_ACCELERATOR = 9;
 
-        // MAKEINTRESOURCE(10)
         public const ushort RT_RCDATA = 10;
 
-        // MAKEINTRESOURCE(11)
         public const ushort RT_MESSAGETABLE = 11;
 
         public const int DIFFERENCE = 11;
 
-        // MAKEINTRESOURCE(RT_CURSOR + DIFFERENCE)
         public const ushort RT_GROUP_CURSOR = RT_CURSOR + DIFFERENCE;
 
-        // MAKEINTRESOURCE(RT_ICON + DIFFERENCE)
         public const ushort RT_GROUP_ICON = RT_ICON + DIFFERENCE;
 
-        // MAKEINTRESOURCE(16)
         public const ushort RT_VERSION = 16;
 
-        // MAKEINTRESOURCE(17)
         public const ushort RT_DLGINCLUDE = 17;
 
-        // MAKEINTRESOURCE(19)
         public const ushort RT_PLUGPLAY = 19;
 
-        // MAKEINTRESOURCE(20)
         public const ushort RT_VXD = 20;
 
-        // MAKEINTRESOURCE(21)
         public const ushort RT_ANICURSOR = 21;
 
-        // MAKEINTRESOURCE(22)
         public const ushort RT_ANIICON = 22;
 
-        // MAKEINTRESOURCE(23)
         public const ushort RT_HTML = 23;
 
-        // MAKEINTRESOURCE(24)
         public const ushort RT_MANIFEST = 24;
 
-        // MAKEINTRESOURCE(1)
         public const ushort CREATEPROCESS_MANIFEST_RESOURCE_ID = 1;
 
-        // MAKEINTRESOURCE(2)
         public const ushort ISOLATIONAWARE_MANIFEST_RESOURCE_ID = 2;
 
-        // MAKEINTRESOURCE(3)
         public const ushort ISOLATIONAWARE_NOSTATICIMPORT_MANIFEST_RESOURCE_ID = 3;
 
-        // MAKEINTRESOURCE(1)
+        public const ushort ISOLATIONPOLICY_MANIFEST_RESOURCE_ID = 4;
+
+        public const ushort ISOLATIONPOLICY_BROWSER_MANIFEST_RESOURCE_ID = 5;
+
         public const ushort MINIMUM_RESERVED_MANIFEST_RESOURCE_ID = 1;
 
-        // MAKEINTRESOURCE(16)
         public const ushort MAXIMUM_RESERVED_MANIFEST_RESOURCE_ID = 16;
 
         public const int SETWALLPAPER_DEFAULT = -1;
@@ -2227,6 +2205,8 @@ namespace TerraFX.Interop
 
         public const int EWX_BOOTOPTIONS = 0x01000000;
 
+        public const int EWX_ARSO = 0x04000000;
+
         public const int BSM_ALLCOMPONENTS = 0x00000000;
 
         public const int BSM_VXDS = 0x00000001;
@@ -3441,55 +3421,43 @@ namespace TerraFX.Interop
 
         public const int SC_ZOOM = SC_MAXIMIZE;
 
-        // MAKEINTRESOURCE(32512)
         public const ushort IDC_ARROW = 32512;
 
-        // MAKEINTRESOURCE(32513)
         public const ushort IDC_IBEAM = 32513;
 
-        // MAKEINTRESOURCE(32514)
         public const ushort IDC_WAIT = 32514;
 
-        // MAKEINTRESOURCE(32515)
         public const ushort IDC_CROSS = 32515;
 
-        // MAKEINTRESOURCE(32516)
         public const ushort IDC_UPARROW = 32516;
 
-        // MAKEINTRESOURCE(32640)
         [Obsolete("use IDC_SIZEALL")]
         public const ushort IDC_SIZE = 32640;
 
-        // MAKEINTRESOURCE(32641)
         [Obsolete("use IDC_ARROW")]
         public const ushort IDC_ICON = 32641;
 
-        // MAKEINTRESOURCE(32642)
         public const ushort IDC_SIZENWSE = 32642;
 
-        // MAKEINTRESOURCE(32643)
         public const ushort IDC_SIZENESW = 32643;
 
-        // MAKEINTRESOURCE(32644)
         public const ushort IDC_SIZEWE = 32644;
 
-        // MAKEINTRESOURCE(32645)
         public const ushort IDC_SIZENS = 32645;
 
-        // MAKEINTRESOURCE(32646)
         public const ushort IDC_SIZEALL = 32646;
 
-        // MAKEINTRESOURCE(32648)
         public const ushort IDC_NO = 32648;
 
-        // MAKEINTRESOURCE(32649)
         public const ushort IDC_HAND = 32649;
 
-        // MAKEINTRESOURCE(32650)
         public const int IDC_APPSTARTING = 32650;
 
-        // MAKEINTRESOURCE(32651)
         public const int IDC_HELP = 32651;
+
+        public const int IDC_PIN = 32671;
+
+        public const int IDC_PERSON = 32672;
 
         public const int IMAGE_BITMAP = 0;
 
@@ -3666,25 +3634,18 @@ namespace TerraFX.Interop
 
         public const int ORD_LANGDRIVER = 1;
 
-        // MAKEINTRESOURCE(32512)
         public const ushort IDI_APPLICATION = 32512;
 
-        // MAKEINTRESOURCE(32513)
         public const ushort IDI_HAND = 32513;
 
-        // MAKEINTRESOURCE(32514)
         public const ushort IDI_QUESTION = 32514;
 
-        // MAKEINTRESOURCE(32515)
         public const ushort IDI_EXCLAMATION = 32515;
 
-        // MAKEINTRESOURCE(32516)
         public const ushort IDI_ASTERISK = 32516;
 
-        // MAKEINTRESOURCE(32517)
         public const ushort IDI_WINLOGO = 32517;
 
-        // MAKEINTRESOURCE(32518)
         public const ushort IDI_SHIELD = 32518;
 
         public const ushort IDI_WARNING = IDI_EXCLAMATION;
@@ -5090,6 +5051,14 @@ namespace TerraFX.Interop
 
         public const int PENARBITRATIONTYPE_MAX = 0x0004;
 
+        public const int SPI_GETCARETTIMEOUT = 0x2022;
+
+        public const int SPI_SETCARETTIMEOUT = 0x2023;
+
+        public const int SPI_GETHANDEDNESS = 0x2024;
+
+        public const int SPI_SETHANDEDNESS = 0x2025;
+
         public const int SPIF_UPDATEINIFILE = 0x0001;
 
         public const int SPIF_SENDWININICHANGE = 0x0002;
@@ -5992,27 +5961,51 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("BOOL")]
-        public static int PostAppMessage([NativeTypeName("DWORD")] uint idThread, [NativeTypeName("UINT")] uint wMsg, [NativeTypeName("WPARAM")] UIntPtr wParam, [NativeTypeName("LPARAM")] IntPtr lParam) => PostThreadMessage(idThread, wMsg, wParam, lParam);
+        public static int PostAppMessageA([NativeTypeName("DWORD")] uint idThread, [NativeTypeName("UINT")] uint wMsg, [NativeTypeName("WPARAM")] UIntPtr wParam, [NativeTypeName("LPARAM")] IntPtr lParam) => PostThreadMessageA(idThread, wMsg, wParam, lParam);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("BOOL")]
+        public static int PostAppMessageW([NativeTypeName("DWORD")] uint idThread, [NativeTypeName("UINT")] uint wMsg, [NativeTypeName("WPARAM")] UIntPtr wParam, [NativeTypeName("LPARAM")] IntPtr lParam) => PostThreadMessageW(idThread, wMsg, wParam, lParam);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HWND")]
-        public static IntPtr CreateWindow([NativeTypeName("LPCWSTR")] ushort* lpClassName, [NativeTypeName("LPCWSTR")] ushort* lpWindowName, [NativeTypeName("DWORD")] uint dwStyle, int x, int y, int nWidth, int nHeight, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("HMENU")] IntPtr hMenu, [NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPVOID")] void* lpParam) => CreateWindowEx(0, lpClassName, lpWindowName, dwStyle, x, y,nWidth, nHeight, hWndParent, hMenu, hInstance, lpParam);
+        public static IntPtr CreateWindowA([NativeTypeName("LPCSTR")] sbyte* lpClassName, [NativeTypeName("LPCSTR")] sbyte* lpWindowName, [NativeTypeName("DWORD")] uint dwStyle, int x, int y, int nWidth, int nHeight, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("HMENU")] IntPtr hMenu, [NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPVOID")] void* lpParam) => CreateWindowExA(0, lpClassName, lpWindowName, dwStyle, x, y,nWidth, nHeight, hWndParent, hMenu, hInstance, lpParam);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HWND")]
-        public static IntPtr CreateDialog([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] IntPtr lpDialogFunc) => CreateDialogParam(hInstance, lpName, hWndParent, lpDialogFunc, IntPtr.Zero);
+        public static IntPtr CreateWindowW([NativeTypeName("LPCWSTR")] ushort* lpClassName, [NativeTypeName("LPCWSTR")] ushort* lpWindowName, [NativeTypeName("DWORD")] uint dwStyle, int x, int y, int nWidth, int nHeight, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("HMENU")] IntPtr hMenu, [NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPVOID")] void* lpParam) => CreateWindowExW(0, lpClassName, lpWindowName, dwStyle, x, y, nWidth, nHeight, hWndParent, hMenu, hInstance, lpParam);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HWND")]
-        public static IntPtr CreateDialogIndirect([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* lpTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] IntPtr lpDialogFunc) => CreateDialogIndirectParam(hInstance, lpTemplate, hWndParent, lpDialogFunc, (IntPtr)0);
+        public static IntPtr CreateDialogA([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] IntPtr lpDialogFunc) => CreateDialogParamA(hInstance, lpName, hWndParent, lpDialogFunc, IntPtr.Zero);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("HWND")]
+        public static IntPtr CreateDialogW([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] IntPtr lpDialogFunc) => CreateDialogParamW(hInstance, lpName, hWndParent, lpDialogFunc, IntPtr.Zero);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("HWND")]
+        public static IntPtr CreateDialogIndirectA([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* lpTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] IntPtr lpDialogFunc) => CreateDialogIndirectParamA(hInstance, lpTemplate, hWndParent, lpDialogFunc, (IntPtr)0);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("HWND")]
+        public static IntPtr CreateDialogIndirectW([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* lpTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] IntPtr lpDialogFunc) => CreateDialogIndirectParamW(hInstance, lpTemplate, hWndParent, lpDialogFunc, (IntPtr)0);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("INT_PTR")]
-        public static IntPtr DialogBox([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCWSTR")] ushort* lpTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] IntPtr lpDialogFunc) => DialogBoxParam(hInstance, lpTemplate, hWndParent, lpDialogFunc, (IntPtr)0);
+        public static IntPtr DialogBoxA([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCSTR")] sbyte* lpTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] IntPtr lpDialogFunc) => DialogBoxParamA(hInstance, lpTemplate, hWndParent, lpDialogFunc, (IntPtr)0);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("INT_PTR")]
-        public static IntPtr DialogBoxIndirect([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* lpTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] IntPtr lpDialogFunc) => DialogBoxIndirectParam(hInstance, lpTemplate, hWndParent, lpDialogFunc, (IntPtr)0);
+        public static IntPtr DialogBoxW([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCWSTR")] ushort* lpTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] IntPtr lpDialogFunc) => DialogBoxParamW(hInstance, lpTemplate, hWndParent, lpDialogFunc, (IntPtr)0);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("INT_PTR")]
+        public static IntPtr DialogBoxIndirectA([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCDLGTEMPLATEA")] DLGTEMPLATE* lpTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] IntPtr lpDialogFunc) => DialogBoxIndirectParamA(hInstance, lpTemplate, hWndParent, lpDialogFunc, (IntPtr)0);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("INT_PTR")]
+        public static IntPtr DialogBoxIndirectW([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* lpTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] IntPtr lpDialogFunc) => DialogBoxIndirectParamW(hInstance, lpTemplate, hWndParent, lpDialogFunc, (IntPtr)0);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int TOUCH_COORD_TO_PIXEL(int l) => l / 100;

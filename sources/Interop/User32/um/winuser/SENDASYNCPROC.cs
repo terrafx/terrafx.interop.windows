@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\winuser.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/winuser.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -8,6 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public unsafe delegate void SENDASYNCPROC([NativeTypeName("HWND")] IntPtr param0, [NativeTypeName("UINT")] uint param1, [NativeTypeName("ULONG_PTR")] UIntPtr param2, [NativeTypeName("LRESULT")] IntPtr param3);
+    [UnmanagedFunctionPointer(CallingConvention.Winapi)]
+    public delegate void SENDASYNCPROC([NativeTypeName("HWND")] IntPtr param0, [NativeTypeName("UINT")] uint param1, [NativeTypeName("ULONG_PTR")] UIntPtr param2, [NativeTypeName("LRESULT")] IntPtr param3);
 }

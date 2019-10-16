@@ -54,11 +54,11 @@ namespace TerraFX.Interop.UnitTests
             {
                 if (Environment.Is64BitProcess)
                 {
-                    Assert.That(Marshal.SizeOf<ID3D12GraphicsCommandList1.Vtbl>(), Is.EqualTo(520));
+                    Assert.That(Marshal.SizeOf<ID3D12GraphicsCommandList1.Vtbl>(), Is.EqualTo(528));
                 }
                 else
                 {
-                    Assert.That(Marshal.SizeOf<ID3D12GraphicsCommandList1.Vtbl>(), Is.EqualTo(260));
+                    Assert.That(Marshal.SizeOf<ID3D12GraphicsCommandList1.Vtbl>(), Is.EqualTo(264));
                 }
             }
         }

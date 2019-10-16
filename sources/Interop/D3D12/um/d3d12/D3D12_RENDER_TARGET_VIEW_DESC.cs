@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\d3d12.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/d3d12.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -13,6 +13,7 @@ namespace TerraFX.Interop
 
         public D3D12_RTV_DIMENSION ViewDimension;
 
+        [NativeTypeName("D3D12_RENDER_TARGET_VIEW_DESC::(anonymous union at um/d3d12.h:3154:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]

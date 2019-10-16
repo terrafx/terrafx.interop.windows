@@ -35,15 +35,15 @@ namespace TerraFX.Samples.DirectX
             fixed (char* lpWindowName = pSample.Title)
             {
                 // Initialize the window class.
-                var windowClass = new WNDCLASSEX {
-                    cbSize = (uint)sizeof(WNDCLASSEX),
+                var windowClass = new WNDCLASSEXW {
+                    cbSize = (uint)sizeof(WNDCLASSEXW),
                     style = CS_HREDRAW | CS_VREDRAW,
                     lpfnWndProc = s_wndProcHandle,
                     hInstance = hInstance,
-                    hCursor = LoadCursor(IntPtr.Zero, (ushort*)IDC_ARROW),
+                    hCursor = LoadCursorW(IntPtr.Zero, (ushort*)IDC_ARROW),
                     lpszClassName = (ushort*)lpszClassName
                 };
-                RegisterClassEx(&windowClass);
+                RegisterClassExW(&windowClass);
 
                 var windowRect = new RECT {
                     right = unchecked((int)pSample.Width),
@@ -52,7 +52,7 @@ namespace TerraFX.Samples.DirectX
                 AdjustWindowRect(&windowRect, WS_OVERLAPPEDWINDOW, FALSE);
 
                 // Create the window and store a handle to it.
-                s_hwnd = CreateWindowEx(
+                s_hwnd = CreateWindowExW(
                     0,
                     windowClass.lpszClassName,
                     (ushort*)lpWindowName,
@@ -79,10 +79,10 @@ namespace TerraFX.Samples.DirectX
             do
             {
                 // Process any messages in the queue.
-                if (PeekMessage(&msg, IntPtr.Zero, 0, 0, PM_REMOVE) != 0)
+                if (PeekMessageW(&msg, IntPtr.Zero, 0, 0, PM_REMOVE) != 0)
                 {
                     TranslateMessage(&msg);
-                    DispatchMessage(&msg);
+                    DispatchMessageW(&msg);
                 }
             }
             while (msg.message != WM_QUIT);
@@ -96,7 +96,7 @@ namespace TerraFX.Samples.DirectX
         // Main message handler for the sample
         private static IntPtr WindowProc(IntPtr hWnd, uint message, UIntPtr wParam, IntPtr lParam)
         {
-            var handle = GetWindowLongPtr(hWnd, GWLP_USERDATA);
+            var handle = GetWindowLongPtrW(hWnd, GWLP_USERDATA);
             var pSample = (handle != IntPtr.Zero) ? (DXSample?)GCHandle.FromIntPtr(handle).Target : null;
 
             switch (message)
@@ -104,8 +104,8 @@ namespace TerraFX.Samples.DirectX
                 case WM_CREATE:
                 {
                     // Save the DXSample* passed in to CreateWindow.
-                    var pCreateStruct = (CREATESTRUCT*)lParam;
-                    SetWindowLongPtr(hWnd, GWLP_USERDATA, (IntPtr)pCreateStruct->lpCreateParams);
+                    var pCreateStruct = (CREATESTRUCTW*)lParam;
+                    SetWindowLongPtrW(hWnd, GWLP_USERDATA, (IntPtr)pCreateStruct->lpCreateParams);
                 }
                 return IntPtr.Zero;
 
@@ -139,7 +139,7 @@ namespace TerraFX.Samples.DirectX
             }
 
             // Handle any messages the switch statement didn't.
-            return DefWindowProc(hWnd, message, wParam, lParam);
+            return DefWindowProcW(hWnd, message, wParam, lParam);
         }
     }
 }

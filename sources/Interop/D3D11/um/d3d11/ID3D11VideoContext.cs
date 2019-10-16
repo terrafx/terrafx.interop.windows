@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\d3d11.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/d3d11.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -580,199 +580,199 @@ namespace TerraFX.Interop
 
         public partial struct Vtbl
         {
-            [NativeTypeName("HRESULT (const IID &, void **)")]
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
             public IntPtr QueryInterface;
 
-            [NativeTypeName("ULONG ()")]
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr AddRef;
 
-            [NativeTypeName("ULONG ()")]
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr Release;
 
-            [NativeTypeName("void (ID3D11Device **)")]
+            [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
             public IntPtr GetDevice;
 
-            [NativeTypeName("HRESULT (const GUID &, UINT *, void *)")]
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
             public IntPtr GetPrivateData;
 
-            [NativeTypeName("HRESULT (const GUID &, UINT, const void *)")]
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
             public IntPtr SetPrivateData;
 
-            [NativeTypeName("HRESULT (const GUID &, const IUnknown *)")]
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
             public IntPtr SetPrivateDataInterface;
 
-            [NativeTypeName("HRESULT (ID3D11VideoDecoder *, D3D11_VIDEO_DECODER_BUFFER_TYPE, UINT *, void **)")]
+            [NativeTypeName("HRESULT (ID3D11VideoDecoder *, D3D11_VIDEO_DECODER_BUFFER_TYPE, UINT *, void **) __attribute__((stdcall))")]
             public IntPtr GetDecoderBuffer;
 
-            [NativeTypeName("HRESULT (ID3D11VideoDecoder *, D3D11_VIDEO_DECODER_BUFFER_TYPE)")]
+            [NativeTypeName("HRESULT (ID3D11VideoDecoder *, D3D11_VIDEO_DECODER_BUFFER_TYPE) __attribute__((stdcall))")]
             public IntPtr ReleaseDecoderBuffer;
 
-            [NativeTypeName("HRESULT (ID3D11VideoDecoder *, ID3D11VideoDecoderOutputView *, UINT, const void *)")]
+            [NativeTypeName("HRESULT (ID3D11VideoDecoder *, ID3D11VideoDecoderOutputView *, UINT, const void *) __attribute__((stdcall))")]
             public IntPtr DecoderBeginFrame;
 
-            [NativeTypeName("HRESULT (ID3D11VideoDecoder *)")]
+            [NativeTypeName("HRESULT (ID3D11VideoDecoder *) __attribute__((stdcall))")]
             public IntPtr DecoderEndFrame;
 
-            [NativeTypeName("HRESULT (ID3D11VideoDecoder *, UINT, const D3D11_VIDEO_DECODER_BUFFER_DESC *)")]
+            [NativeTypeName("HRESULT (ID3D11VideoDecoder *, UINT, const D3D11_VIDEO_DECODER_BUFFER_DESC *) __attribute__((stdcall))")]
             public IntPtr SubmitDecoderBuffers;
 
-            [NativeTypeName("APP_DEPRECATED_HRESULT (ID3D11VideoDecoder *, const D3D11_VIDEO_DECODER_EXTENSION *)")]
+            [NativeTypeName("APP_DEPRECATED_HRESULT (ID3D11VideoDecoder *, const D3D11_VIDEO_DECODER_EXTENSION *) __attribute__((stdcall))")]
             public IntPtr DecoderExtension;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, BOOL, const RECT *)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, BOOL, const RECT *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorSetOutputTargetRect;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, BOOL, const D3D11_VIDEO_COLOR *)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, BOOL, const D3D11_VIDEO_COLOR *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorSetOutputBackgroundColor;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, const D3D11_VIDEO_PROCESSOR_COLOR_SPACE *)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, const D3D11_VIDEO_PROCESSOR_COLOR_SPACE *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorSetOutputColorSpace;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE, UINT)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE, UINT) __attribute__((stdcall))")]
             public IntPtr VideoProcessorSetOutputAlphaFillMode;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, BOOL, SIZE)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, BOOL, SIZE) __attribute__((stdcall))")]
             public IntPtr VideoProcessorSetOutputConstriction;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, BOOL)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, BOOL) __attribute__((stdcall))")]
             public IntPtr VideoProcessorSetOutputStereoMode;
 
-            [NativeTypeName("APP_DEPRECATED_HRESULT (ID3D11VideoProcessor *, const GUID *, UINT, void *)")]
+            [NativeTypeName("APP_DEPRECATED_HRESULT (ID3D11VideoProcessor *, const GUID *, UINT, void *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorSetOutputExtension;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, BOOL *, RECT *)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, BOOL *, RECT *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorGetOutputTargetRect;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, BOOL *, D3D11_VIDEO_COLOR *)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, BOOL *, D3D11_VIDEO_COLOR *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorGetOutputBackgroundColor;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, D3D11_VIDEO_PROCESSOR_COLOR_SPACE *)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, D3D11_VIDEO_PROCESSOR_COLOR_SPACE *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorGetOutputColorSpace;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE *, UINT *)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE *, UINT *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorGetOutputAlphaFillMode;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, BOOL *, SIZE *)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, BOOL *, SIZE *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorGetOutputConstriction;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, BOOL *)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, BOOL *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorGetOutputStereoMode;
 
-            [NativeTypeName("APP_DEPRECATED_HRESULT (ID3D11VideoProcessor *, const GUID *, UINT, void *)")]
+            [NativeTypeName("APP_DEPRECATED_HRESULT (ID3D11VideoProcessor *, const GUID *, UINT, void *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorGetOutputExtension;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, D3D11_VIDEO_FRAME_FORMAT)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, D3D11_VIDEO_FRAME_FORMAT) __attribute__((stdcall))")]
             public IntPtr VideoProcessorSetStreamFrameFormat;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, const D3D11_VIDEO_PROCESSOR_COLOR_SPACE *)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, const D3D11_VIDEO_PROCESSOR_COLOR_SPACE *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorSetStreamColorSpace;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, D3D11_VIDEO_PROCESSOR_OUTPUT_RATE, BOOL, const DXGI_RATIONAL *)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, D3D11_VIDEO_PROCESSOR_OUTPUT_RATE, BOOL, const DXGI_RATIONAL *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorSetStreamOutputRate;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL, const RECT *)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL, const RECT *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorSetStreamSourceRect;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL, const RECT *)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL, const RECT *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorSetStreamDestRect;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL, FLOAT)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL, FLOAT) __attribute__((stdcall))")]
             public IntPtr VideoProcessorSetStreamAlpha;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, UINT, const UINT *)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, UINT, const UINT *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorSetStreamPalette;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL, const DXGI_RATIONAL *, const DXGI_RATIONAL *)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL, const DXGI_RATIONAL *, const DXGI_RATIONAL *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorSetStreamPixelAspectRatio;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL, FLOAT, FLOAT)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL, FLOAT, FLOAT) __attribute__((stdcall))")]
             public IntPtr VideoProcessorSetStreamLumaKey;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL, D3D11_VIDEO_PROCESSOR_STEREO_FORMAT, BOOL, BOOL, D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE, int)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL, D3D11_VIDEO_PROCESSOR_STEREO_FORMAT, BOOL, BOOL, D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE, int) __attribute__((stdcall))")]
             public IntPtr VideoProcessorSetStreamStereoFormat;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL) __attribute__((stdcall))")]
             public IntPtr VideoProcessorSetStreamAutoProcessingMode;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, D3D11_VIDEO_PROCESSOR_FILTER, BOOL, int)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, D3D11_VIDEO_PROCESSOR_FILTER, BOOL, int) __attribute__((stdcall))")]
             public IntPtr VideoProcessorSetStreamFilter;
 
-            [NativeTypeName("APP_DEPRECATED_HRESULT (ID3D11VideoProcessor *, UINT, const GUID *, UINT, void *)")]
+            [NativeTypeName("APP_DEPRECATED_HRESULT (ID3D11VideoProcessor *, UINT, const GUID *, UINT, void *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorSetStreamExtension;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, D3D11_VIDEO_FRAME_FORMAT *)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, D3D11_VIDEO_FRAME_FORMAT *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorGetStreamFrameFormat;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, D3D11_VIDEO_PROCESSOR_COLOR_SPACE *)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, D3D11_VIDEO_PROCESSOR_COLOR_SPACE *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorGetStreamColorSpace;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, D3D11_VIDEO_PROCESSOR_OUTPUT_RATE *, BOOL *, DXGI_RATIONAL *)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, D3D11_VIDEO_PROCESSOR_OUTPUT_RATE *, BOOL *, DXGI_RATIONAL *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorGetStreamOutputRate;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL *, RECT *)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL *, RECT *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorGetStreamSourceRect;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL *, RECT *)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL *, RECT *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorGetStreamDestRect;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL *, FLOAT *)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL *, FLOAT *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorGetStreamAlpha;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, UINT, UINT *)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, UINT, UINT *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorGetStreamPalette;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL *, DXGI_RATIONAL *, DXGI_RATIONAL *)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL *, DXGI_RATIONAL *, DXGI_RATIONAL *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorGetStreamPixelAspectRatio;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL *, FLOAT *, FLOAT *)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL *, FLOAT *, FLOAT *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorGetStreamLumaKey;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL *, D3D11_VIDEO_PROCESSOR_STEREO_FORMAT *, BOOL *, BOOL *, D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE *, int *)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL *, D3D11_VIDEO_PROCESSOR_STEREO_FORMAT *, BOOL *, BOOL *, D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE *, int *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorGetStreamStereoFormat;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL *)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorGetStreamAutoProcessingMode;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, D3D11_VIDEO_PROCESSOR_FILTER, BOOL *, int *)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, D3D11_VIDEO_PROCESSOR_FILTER, BOOL *, int *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorGetStreamFilter;
 
-            [NativeTypeName("APP_DEPRECATED_HRESULT (ID3D11VideoProcessor *, UINT, const GUID *, UINT, void *)")]
+            [NativeTypeName("APP_DEPRECATED_HRESULT (ID3D11VideoProcessor *, UINT, const GUID *, UINT, void *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorGetStreamExtension;
 
-            [NativeTypeName("HRESULT (ID3D11VideoProcessor *, ID3D11VideoProcessorOutputView *, UINT, UINT, const D3D11_VIDEO_PROCESSOR_STREAM *)")]
+            [NativeTypeName("HRESULT (ID3D11VideoProcessor *, ID3D11VideoProcessorOutputView *, UINT, UINT, const D3D11_VIDEO_PROCESSOR_STREAM *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorBlt;
 
-            [NativeTypeName("HRESULT (ID3D11CryptoSession *, UINT, void *)")]
+            [NativeTypeName("HRESULT (ID3D11CryptoSession *, UINT, void *) __attribute__((stdcall))")]
             public IntPtr NegotiateCryptoSessionKeyExchange;
 
-            [NativeTypeName("void (ID3D11CryptoSession *, ID3D11Texture2D *, ID3D11Texture2D *, UINT, void *)")]
+            [NativeTypeName("void (ID3D11CryptoSession *, ID3D11Texture2D *, ID3D11Texture2D *, UINT, void *) __attribute__((stdcall))")]
             public IntPtr EncryptionBlt;
 
-            [NativeTypeName("void (ID3D11CryptoSession *, ID3D11Texture2D *, ID3D11Texture2D *, D3D11_ENCRYPTED_BLOCK_INFO *, UINT, const void *, UINT, void *)")]
+            [NativeTypeName("void (ID3D11CryptoSession *, ID3D11Texture2D *, ID3D11Texture2D *, D3D11_ENCRYPTED_BLOCK_INFO *, UINT, const void *, UINT, void *) __attribute__((stdcall))")]
             public IntPtr DecryptionBlt;
 
-            [NativeTypeName("void (ID3D11CryptoSession *, UINT, void *)")]
+            [NativeTypeName("void (ID3D11CryptoSession *, UINT, void *) __attribute__((stdcall))")]
             public IntPtr StartSessionKeyRefresh;
 
-            [NativeTypeName("void (ID3D11CryptoSession *)")]
+            [NativeTypeName("void (ID3D11CryptoSession *) __attribute__((stdcall))")]
             public IntPtr FinishSessionKeyRefresh;
 
-            [NativeTypeName("HRESULT (ID3D11CryptoSession *, UINT, void *)")]
+            [NativeTypeName("HRESULT (ID3D11CryptoSession *, UINT, void *) __attribute__((stdcall))")]
             public IntPtr GetEncryptionBltKey;
 
-            [NativeTypeName("HRESULT (ID3D11AuthenticatedChannel *, UINT, void *)")]
+            [NativeTypeName("HRESULT (ID3D11AuthenticatedChannel *, UINT, void *) __attribute__((stdcall))")]
             public IntPtr NegotiateAuthenticatedChannelKeyExchange;
 
-            [NativeTypeName("HRESULT (ID3D11AuthenticatedChannel *, UINT, const void *, UINT, void *)")]
+            [NativeTypeName("HRESULT (ID3D11AuthenticatedChannel *, UINT, const void *, UINT, void *) __attribute__((stdcall))")]
             public IntPtr QueryAuthenticatedChannel;
 
-            [NativeTypeName("HRESULT (ID3D11AuthenticatedChannel *, UINT, const void *, D3D11_AUTHENTICATED_CONFIGURE_OUTPUT *)")]
+            [NativeTypeName("HRESULT (ID3D11AuthenticatedChannel *, UINT, const void *, D3D11_AUTHENTICATED_CONFIGURE_OUTPUT *) __attribute__((stdcall))")]
             public IntPtr ConfigureAuthenticatedChannel;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL, D3D11_VIDEO_PROCESSOR_ROTATION)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL, D3D11_VIDEO_PROCESSOR_ROTATION) __attribute__((stdcall))")]
             public IntPtr VideoProcessorSetStreamRotation;
 
-            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL *, D3D11_VIDEO_PROCESSOR_ROTATION *)")]
+            [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL *, D3D11_VIDEO_PROCESSOR_ROTATION *) __attribute__((stdcall))")]
             public IntPtr VideoProcessorGetStreamRotation;
         }
     }

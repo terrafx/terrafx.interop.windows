@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\d3d11.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/d3d11.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -958,349 +958,349 @@ namespace TerraFX.Interop
 
         public partial struct Vtbl
         {
-            [NativeTypeName("HRESULT (const IID &, void **)")]
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
             public IntPtr QueryInterface;
 
-            [NativeTypeName("ULONG ()")]
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr AddRef;
 
-            [NativeTypeName("ULONG ()")]
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr Release;
 
-            [NativeTypeName("void (ID3D11Device **)")]
+            [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
             public IntPtr GetDevice;
 
-            [NativeTypeName("HRESULT (const GUID &, UINT *, void *)")]
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
             public IntPtr GetPrivateData;
 
-            [NativeTypeName("HRESULT (const GUID &, UINT, const void *)")]
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
             public IntPtr SetPrivateData;
 
-            [NativeTypeName("HRESULT (const GUID &, const IUnknown *)")]
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
             public IntPtr SetPrivateDataInterface;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11Buffer *const *)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11Buffer *const *) __attribute__((stdcall))")]
             public IntPtr VSSetConstantBuffers;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11ShaderResourceView *const *)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11ShaderResourceView *const *) __attribute__((stdcall))")]
             public IntPtr PSSetShaderResources;
 
-            [NativeTypeName("void (ID3D11PixelShader *, ID3D11ClassInstance *const *, UINT)")]
+            [NativeTypeName("void (ID3D11PixelShader *, ID3D11ClassInstance *const *, UINT) __attribute__((stdcall))")]
             public IntPtr PSSetShader;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11SamplerState *const *)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11SamplerState *const *) __attribute__((stdcall))")]
             public IntPtr PSSetSamplers;
 
-            [NativeTypeName("void (ID3D11VertexShader *, ID3D11ClassInstance *const *, UINT)")]
+            [NativeTypeName("void (ID3D11VertexShader *, ID3D11ClassInstance *const *, UINT) __attribute__((stdcall))")]
             public IntPtr VSSetShader;
 
-            [NativeTypeName("void (UINT, UINT, INT)")]
+            [NativeTypeName("void (UINT, UINT, INT) __attribute__((stdcall))")]
             public IntPtr DrawIndexed;
 
-            [NativeTypeName("void (UINT, UINT)")]
+            [NativeTypeName("void (UINT, UINT) __attribute__((stdcall))")]
             public IntPtr Draw;
 
-            [NativeTypeName("HRESULT (ID3D11Resource *, UINT, D3D11_MAP, UINT, D3D11_MAPPED_SUBRESOURCE *)")]
+            [NativeTypeName("HRESULT (ID3D11Resource *, UINT, D3D11_MAP, UINT, D3D11_MAPPED_SUBRESOURCE *) __attribute__((stdcall))")]
             public IntPtr Map;
 
-            [NativeTypeName("void (ID3D11Resource *, UINT)")]
+            [NativeTypeName("void (ID3D11Resource *, UINT) __attribute__((stdcall))")]
             public IntPtr Unmap;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11Buffer *const *)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11Buffer *const *) __attribute__((stdcall))")]
             public IntPtr PSSetConstantBuffers;
 
-            [NativeTypeName("void (ID3D11InputLayout *)")]
+            [NativeTypeName("void (ID3D11InputLayout *) __attribute__((stdcall))")]
             public IntPtr IASetInputLayout;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11Buffer *const *, const UINT *, const UINT *)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11Buffer *const *, const UINT *, const UINT *) __attribute__((stdcall))")]
             public IntPtr IASetVertexBuffers;
 
-            [NativeTypeName("void (ID3D11Buffer *, DXGI_FORMAT, UINT)")]
+            [NativeTypeName("void (ID3D11Buffer *, DXGI_FORMAT, UINT) __attribute__((stdcall))")]
             public IntPtr IASetIndexBuffer;
 
-            [NativeTypeName("void (UINT, UINT, UINT, INT, UINT)")]
+            [NativeTypeName("void (UINT, UINT, UINT, INT, UINT) __attribute__((stdcall))")]
             public IntPtr DrawIndexedInstanced;
 
-            [NativeTypeName("void (UINT, UINT, UINT, UINT)")]
+            [NativeTypeName("void (UINT, UINT, UINT, UINT) __attribute__((stdcall))")]
             public IntPtr DrawInstanced;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11Buffer *const *)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11Buffer *const *) __attribute__((stdcall))")]
             public IntPtr GSSetConstantBuffers;
 
-            [NativeTypeName("void (ID3D11GeometryShader *, ID3D11ClassInstance *const *, UINT)")]
+            [NativeTypeName("void (ID3D11GeometryShader *, ID3D11ClassInstance *const *, UINT) __attribute__((stdcall))")]
             public IntPtr GSSetShader;
 
-            [NativeTypeName("void (D3D11_PRIMITIVE_TOPOLOGY)")]
+            [NativeTypeName("void (D3D11_PRIMITIVE_TOPOLOGY) __attribute__((stdcall))")]
             public IntPtr IASetPrimitiveTopology;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11ShaderResourceView *const *)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11ShaderResourceView *const *) __attribute__((stdcall))")]
             public IntPtr VSSetShaderResources;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11SamplerState *const *)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11SamplerState *const *) __attribute__((stdcall))")]
             public IntPtr VSSetSamplers;
 
-            [NativeTypeName("void (ID3D11Asynchronous *)")]
+            [NativeTypeName("void (ID3D11Asynchronous *) __attribute__((stdcall))")]
             public IntPtr Begin;
 
-            [NativeTypeName("void (ID3D11Asynchronous *)")]
+            [NativeTypeName("void (ID3D11Asynchronous *) __attribute__((stdcall))")]
             public IntPtr End;
 
-            [NativeTypeName("HRESULT (ID3D11Asynchronous *, void *, UINT, UINT)")]
+            [NativeTypeName("HRESULT (ID3D11Asynchronous *, void *, UINT, UINT) __attribute__((stdcall))")]
             public IntPtr GetData;
 
-            [NativeTypeName("void (ID3D11Predicate *, BOOL)")]
+            [NativeTypeName("void (ID3D11Predicate *, BOOL) __attribute__((stdcall))")]
             public IntPtr SetPredication;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11ShaderResourceView *const *)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11ShaderResourceView *const *) __attribute__((stdcall))")]
             public IntPtr GSSetShaderResources;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11SamplerState *const *)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11SamplerState *const *) __attribute__((stdcall))")]
             public IntPtr GSSetSamplers;
 
-            [NativeTypeName("void (UINT, ID3D11RenderTargetView *const *, ID3D11DepthStencilView *)")]
+            [NativeTypeName("void (UINT, ID3D11RenderTargetView *const *, ID3D11DepthStencilView *) __attribute__((stdcall))")]
             public IntPtr OMSetRenderTargets;
 
-            [NativeTypeName("void (UINT, ID3D11RenderTargetView *const *, ID3D11DepthStencilView *, UINT, UINT, ID3D11UnorderedAccessView *const *, const UINT *)")]
+            [NativeTypeName("void (UINT, ID3D11RenderTargetView *const *, ID3D11DepthStencilView *, UINT, UINT, ID3D11UnorderedAccessView *const *, const UINT *) __attribute__((stdcall))")]
             public IntPtr OMSetRenderTargetsAndUnorderedAccessViews;
 
-            [NativeTypeName("void (ID3D11BlendState *, const FLOAT *, UINT)")]
+            [NativeTypeName("void (ID3D11BlendState *, const FLOAT *, UINT) __attribute__((stdcall))")]
             public IntPtr OMSetBlendState;
 
-            [NativeTypeName("void (ID3D11DepthStencilState *, UINT)")]
+            [NativeTypeName("void (ID3D11DepthStencilState *, UINT) __attribute__((stdcall))")]
             public IntPtr OMSetDepthStencilState;
 
-            [NativeTypeName("void (UINT, ID3D11Buffer *const *, const UINT *)")]
+            [NativeTypeName("void (UINT, ID3D11Buffer *const *, const UINT *) __attribute__((stdcall))")]
             public IntPtr SOSetTargets;
 
-            [NativeTypeName("void ()")]
+            [NativeTypeName("void () __attribute__((stdcall))")]
             public IntPtr DrawAuto;
 
-            [NativeTypeName("void (ID3D11Buffer *, UINT)")]
+            [NativeTypeName("void (ID3D11Buffer *, UINT) __attribute__((stdcall))")]
             public IntPtr DrawIndexedInstancedIndirect;
 
-            [NativeTypeName("void (ID3D11Buffer *, UINT)")]
+            [NativeTypeName("void (ID3D11Buffer *, UINT) __attribute__((stdcall))")]
             public IntPtr DrawInstancedIndirect;
 
-            [NativeTypeName("void (UINT, UINT, UINT)")]
+            [NativeTypeName("void (UINT, UINT, UINT) __attribute__((stdcall))")]
             public IntPtr Dispatch;
 
-            [NativeTypeName("void (ID3D11Buffer *, UINT)")]
+            [NativeTypeName("void (ID3D11Buffer *, UINT) __attribute__((stdcall))")]
             public IntPtr DispatchIndirect;
 
-            [NativeTypeName("void (ID3D11RasterizerState *)")]
+            [NativeTypeName("void (ID3D11RasterizerState *) __attribute__((stdcall))")]
             public IntPtr RSSetState;
 
-            [NativeTypeName("void (UINT, const D3D11_VIEWPORT *)")]
+            [NativeTypeName("void (UINT, const D3D11_VIEWPORT *) __attribute__((stdcall))")]
             public IntPtr RSSetViewports;
 
-            [NativeTypeName("void (UINT, const D3D11_RECT *)")]
+            [NativeTypeName("void (UINT, const D3D11_RECT *) __attribute__((stdcall))")]
             public IntPtr RSSetScissorRects;
 
-            [NativeTypeName("void (ID3D11Resource *, UINT, UINT, UINT, UINT, ID3D11Resource *, UINT, const D3D11_BOX *)")]
+            [NativeTypeName("void (ID3D11Resource *, UINT, UINT, UINT, UINT, ID3D11Resource *, UINT, const D3D11_BOX *) __attribute__((stdcall))")]
             public IntPtr CopySubresourceRegion;
 
-            [NativeTypeName("void (ID3D11Resource *, ID3D11Resource *)")]
+            [NativeTypeName("void (ID3D11Resource *, ID3D11Resource *) __attribute__((stdcall))")]
             public IntPtr CopyResource;
 
-            [NativeTypeName("void (ID3D11Resource *, UINT, const D3D11_BOX *, const void *, UINT, UINT)")]
+            [NativeTypeName("void (ID3D11Resource *, UINT, const D3D11_BOX *, const void *, UINT, UINT) __attribute__((stdcall))")]
             public IntPtr UpdateSubresource;
 
-            [NativeTypeName("void (ID3D11Buffer *, UINT, ID3D11UnorderedAccessView *)")]
+            [NativeTypeName("void (ID3D11Buffer *, UINT, ID3D11UnorderedAccessView *) __attribute__((stdcall))")]
             public IntPtr CopyStructureCount;
 
-            [NativeTypeName("void (ID3D11RenderTargetView *, const FLOAT *)")]
+            [NativeTypeName("void (ID3D11RenderTargetView *, const FLOAT *) __attribute__((stdcall))")]
             public IntPtr ClearRenderTargetView;
 
-            [NativeTypeName("void (ID3D11UnorderedAccessView *, const UINT *)")]
+            [NativeTypeName("void (ID3D11UnorderedAccessView *, const UINT *) __attribute__((stdcall))")]
             public IntPtr ClearUnorderedAccessViewUint;
 
-            [NativeTypeName("void (ID3D11UnorderedAccessView *, const FLOAT *)")]
+            [NativeTypeName("void (ID3D11UnorderedAccessView *, const FLOAT *) __attribute__((stdcall))")]
             public IntPtr ClearUnorderedAccessViewFloat;
 
-            [NativeTypeName("void (ID3D11DepthStencilView *, UINT, FLOAT, UINT8)")]
+            [NativeTypeName("void (ID3D11DepthStencilView *, UINT, FLOAT, UINT8) __attribute__((stdcall))")]
             public IntPtr ClearDepthStencilView;
 
-            [NativeTypeName("void (ID3D11ShaderResourceView *)")]
+            [NativeTypeName("void (ID3D11ShaderResourceView *) __attribute__((stdcall))")]
             public IntPtr GenerateMips;
 
-            [NativeTypeName("void (ID3D11Resource *, FLOAT)")]
+            [NativeTypeName("void (ID3D11Resource *, FLOAT) __attribute__((stdcall))")]
             public IntPtr SetResourceMinLOD;
 
-            [NativeTypeName("FLOAT (ID3D11Resource *)")]
+            [NativeTypeName("FLOAT (ID3D11Resource *) __attribute__((stdcall))")]
             public IntPtr GetResourceMinLOD;
 
-            [NativeTypeName("void (ID3D11Resource *, UINT, ID3D11Resource *, UINT, DXGI_FORMAT)")]
+            [NativeTypeName("void (ID3D11Resource *, UINT, ID3D11Resource *, UINT, DXGI_FORMAT) __attribute__((stdcall))")]
             public IntPtr ResolveSubresource;
 
-            [NativeTypeName("void (ID3D11CommandList *, BOOL)")]
+            [NativeTypeName("void (ID3D11CommandList *, BOOL) __attribute__((stdcall))")]
             public IntPtr ExecuteCommandList;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11ShaderResourceView *const *)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11ShaderResourceView *const *) __attribute__((stdcall))")]
             public IntPtr HSSetShaderResources;
 
-            [NativeTypeName("void (ID3D11HullShader *, ID3D11ClassInstance *const *, UINT)")]
+            [NativeTypeName("void (ID3D11HullShader *, ID3D11ClassInstance *const *, UINT) __attribute__((stdcall))")]
             public IntPtr HSSetShader;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11SamplerState *const *)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11SamplerState *const *) __attribute__((stdcall))")]
             public IntPtr HSSetSamplers;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11Buffer *const *)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11Buffer *const *) __attribute__((stdcall))")]
             public IntPtr HSSetConstantBuffers;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11ShaderResourceView *const *)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11ShaderResourceView *const *) __attribute__((stdcall))")]
             public IntPtr DSSetShaderResources;
 
-            [NativeTypeName("void (ID3D11DomainShader *, ID3D11ClassInstance *const *, UINT)")]
+            [NativeTypeName("void (ID3D11DomainShader *, ID3D11ClassInstance *const *, UINT) __attribute__((stdcall))")]
             public IntPtr DSSetShader;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11SamplerState *const *)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11SamplerState *const *) __attribute__((stdcall))")]
             public IntPtr DSSetSamplers;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11Buffer *const *)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11Buffer *const *) __attribute__((stdcall))")]
             public IntPtr DSSetConstantBuffers;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11ShaderResourceView *const *)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11ShaderResourceView *const *) __attribute__((stdcall))")]
             public IntPtr CSSetShaderResources;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11UnorderedAccessView *const *, const UINT *)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11UnorderedAccessView *const *, const UINT *) __attribute__((stdcall))")]
             public IntPtr CSSetUnorderedAccessViews;
 
-            [NativeTypeName("void (ID3D11ComputeShader *, ID3D11ClassInstance *const *, UINT)")]
+            [NativeTypeName("void (ID3D11ComputeShader *, ID3D11ClassInstance *const *, UINT) __attribute__((stdcall))")]
             public IntPtr CSSetShader;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11SamplerState *const *)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11SamplerState *const *) __attribute__((stdcall))")]
             public IntPtr CSSetSamplers;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11Buffer *const *)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11Buffer *const *) __attribute__((stdcall))")]
             public IntPtr CSSetConstantBuffers;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11Buffer **)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11Buffer **) __attribute__((stdcall))")]
             public IntPtr VSGetConstantBuffers;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11ShaderResourceView **)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11ShaderResourceView **) __attribute__((stdcall))")]
             public IntPtr PSGetShaderResources;
 
-            [NativeTypeName("void (ID3D11PixelShader **, ID3D11ClassInstance **, UINT *)")]
+            [NativeTypeName("void (ID3D11PixelShader **, ID3D11ClassInstance **, UINT *) __attribute__((stdcall))")]
             public IntPtr PSGetShader;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11SamplerState **)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11SamplerState **) __attribute__((stdcall))")]
             public IntPtr PSGetSamplers;
 
-            [NativeTypeName("void (ID3D11VertexShader **, ID3D11ClassInstance **, UINT *)")]
+            [NativeTypeName("void (ID3D11VertexShader **, ID3D11ClassInstance **, UINT *) __attribute__((stdcall))")]
             public IntPtr VSGetShader;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11Buffer **)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11Buffer **) __attribute__((stdcall))")]
             public IntPtr PSGetConstantBuffers;
 
-            [NativeTypeName("void (ID3D11InputLayout **)")]
+            [NativeTypeName("void (ID3D11InputLayout **) __attribute__((stdcall))")]
             public IntPtr IAGetInputLayout;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11Buffer **, UINT *, UINT *)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11Buffer **, UINT *, UINT *) __attribute__((stdcall))")]
             public IntPtr IAGetVertexBuffers;
 
-            [NativeTypeName("void (ID3D11Buffer **, DXGI_FORMAT *, UINT *)")]
+            [NativeTypeName("void (ID3D11Buffer **, DXGI_FORMAT *, UINT *) __attribute__((stdcall))")]
             public IntPtr IAGetIndexBuffer;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11Buffer **)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11Buffer **) __attribute__((stdcall))")]
             public IntPtr GSGetConstantBuffers;
 
-            [NativeTypeName("void (ID3D11GeometryShader **, ID3D11ClassInstance **, UINT *)")]
+            [NativeTypeName("void (ID3D11GeometryShader **, ID3D11ClassInstance **, UINT *) __attribute__((stdcall))")]
             public IntPtr GSGetShader;
 
-            [NativeTypeName("void (D3D11_PRIMITIVE_TOPOLOGY *)")]
+            [NativeTypeName("void (D3D11_PRIMITIVE_TOPOLOGY *) __attribute__((stdcall))")]
             public IntPtr IAGetPrimitiveTopology;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11ShaderResourceView **)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11ShaderResourceView **) __attribute__((stdcall))")]
             public IntPtr VSGetShaderResources;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11SamplerState **)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11SamplerState **) __attribute__((stdcall))")]
             public IntPtr VSGetSamplers;
 
-            [NativeTypeName("void (ID3D11Predicate **, BOOL *)")]
+            [NativeTypeName("void (ID3D11Predicate **, BOOL *) __attribute__((stdcall))")]
             public IntPtr GetPredication;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11ShaderResourceView **)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11ShaderResourceView **) __attribute__((stdcall))")]
             public IntPtr GSGetShaderResources;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11SamplerState **)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11SamplerState **) __attribute__((stdcall))")]
             public IntPtr GSGetSamplers;
 
-            [NativeTypeName("void (UINT, ID3D11RenderTargetView **, ID3D11DepthStencilView **)")]
+            [NativeTypeName("void (UINT, ID3D11RenderTargetView **, ID3D11DepthStencilView **) __attribute__((stdcall))")]
             public IntPtr OMGetRenderTargets;
 
-            [NativeTypeName("void (UINT, ID3D11RenderTargetView **, ID3D11DepthStencilView **, UINT, UINT, ID3D11UnorderedAccessView **)")]
+            [NativeTypeName("void (UINT, ID3D11RenderTargetView **, ID3D11DepthStencilView **, UINT, UINT, ID3D11UnorderedAccessView **) __attribute__((stdcall))")]
             public IntPtr OMGetRenderTargetsAndUnorderedAccessViews;
 
-            [NativeTypeName("void (ID3D11BlendState **, FLOAT *, UINT *)")]
+            [NativeTypeName("void (ID3D11BlendState **, FLOAT *, UINT *) __attribute__((stdcall))")]
             public IntPtr OMGetBlendState;
 
-            [NativeTypeName("void (ID3D11DepthStencilState **, UINT *)")]
+            [NativeTypeName("void (ID3D11DepthStencilState **, UINT *) __attribute__((stdcall))")]
             public IntPtr OMGetDepthStencilState;
 
-            [NativeTypeName("void (UINT, ID3D11Buffer **)")]
+            [NativeTypeName("void (UINT, ID3D11Buffer **) __attribute__((stdcall))")]
             public IntPtr SOGetTargets;
 
-            [NativeTypeName("void (ID3D11RasterizerState **)")]
+            [NativeTypeName("void (ID3D11RasterizerState **) __attribute__((stdcall))")]
             public IntPtr RSGetState;
 
-            [NativeTypeName("void (UINT *, D3D11_VIEWPORT *)")]
+            [NativeTypeName("void (UINT *, D3D11_VIEWPORT *) __attribute__((stdcall))")]
             public IntPtr RSGetViewports;
 
-            [NativeTypeName("void (UINT *, D3D11_RECT *)")]
+            [NativeTypeName("void (UINT *, D3D11_RECT *) __attribute__((stdcall))")]
             public IntPtr RSGetScissorRects;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11ShaderResourceView **)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11ShaderResourceView **) __attribute__((stdcall))")]
             public IntPtr HSGetShaderResources;
 
-            [NativeTypeName("void (ID3D11HullShader **, ID3D11ClassInstance **, UINT *)")]
+            [NativeTypeName("void (ID3D11HullShader **, ID3D11ClassInstance **, UINT *) __attribute__((stdcall))")]
             public IntPtr HSGetShader;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11SamplerState **)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11SamplerState **) __attribute__((stdcall))")]
             public IntPtr HSGetSamplers;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11Buffer **)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11Buffer **) __attribute__((stdcall))")]
             public IntPtr HSGetConstantBuffers;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11ShaderResourceView **)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11ShaderResourceView **) __attribute__((stdcall))")]
             public IntPtr DSGetShaderResources;
 
-            [NativeTypeName("void (ID3D11DomainShader **, ID3D11ClassInstance **, UINT *)")]
+            [NativeTypeName("void (ID3D11DomainShader **, ID3D11ClassInstance **, UINT *) __attribute__((stdcall))")]
             public IntPtr DSGetShader;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11SamplerState **)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11SamplerState **) __attribute__((stdcall))")]
             public IntPtr DSGetSamplers;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11Buffer **)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11Buffer **) __attribute__((stdcall))")]
             public IntPtr DSGetConstantBuffers;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11ShaderResourceView **)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11ShaderResourceView **) __attribute__((stdcall))")]
             public IntPtr CSGetShaderResources;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11UnorderedAccessView **)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11UnorderedAccessView **) __attribute__((stdcall))")]
             public IntPtr CSGetUnorderedAccessViews;
 
-            [NativeTypeName("void (ID3D11ComputeShader **, ID3D11ClassInstance **, UINT *)")]
+            [NativeTypeName("void (ID3D11ComputeShader **, ID3D11ClassInstance **, UINT *) __attribute__((stdcall))")]
             public IntPtr CSGetShader;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11SamplerState **)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11SamplerState **) __attribute__((stdcall))")]
             public IntPtr CSGetSamplers;
 
-            [NativeTypeName("void (UINT, UINT, ID3D11Buffer **)")]
+            [NativeTypeName("void (UINT, UINT, ID3D11Buffer **) __attribute__((stdcall))")]
             public IntPtr CSGetConstantBuffers;
 
-            [NativeTypeName("void ()")]
+            [NativeTypeName("void () __attribute__((stdcall))")]
             public IntPtr ClearState;
 
-            [NativeTypeName("void ()")]
+            [NativeTypeName("void () __attribute__((stdcall))")]
             public IntPtr Flush;
 
-            [NativeTypeName("D3D11_DEVICE_CONTEXT_TYPE ()")]
+            [NativeTypeName("D3D11_DEVICE_CONTEXT_TYPE () __attribute__((stdcall))")]
             public new IntPtr GetType;
 
-            [NativeTypeName("UINT ()")]
+            [NativeTypeName("UINT () __attribute__((stdcall))")]
             public IntPtr GetContextFlags;
 
-            [NativeTypeName("HRESULT (BOOL, ID3D11CommandList **)")]
+            [NativeTypeName("HRESULT (BOOL, ID3D11CommandList **) __attribute__((stdcall))")]
             public IntPtr FinishCommandList;
         }
     }

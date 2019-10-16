@@ -1,14 +1,14 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\dwrite.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/dwrite.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    /// <summary>The IDWriteTextLayout interface represents a block of text after it has been fully analyzed and formatted. All coordinates are in device independent pixels (DIPs).</summary>
     [Guid("53737037-6D14-410B-9BFE-0B182BB70961")]
     public unsafe partial struct IDWriteTextLayout
     {
@@ -16,1240 +16,859 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDWriteTextLayout* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
+        public delegate int _QueryInterface(IDWriteTextLayout* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDWriteTextLayout* This);
+        public delegate uint _AddRef(IDWriteTextLayout* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDWriteTextLayout* This);
+        public delegate uint _Release(IDWriteTextLayout* pThis);
 
-        /// <summary>Set alignment option of text relative to layout box's leading and trailing edge.</summary>
-        /// <param name="textAlignment">Text alignment option</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetTextAlignment(IDWriteTextLayout* This, DWRITE_TEXT_ALIGNMENT textAlignment);
+        public delegate int _SetTextAlignment(IDWriteTextLayout* pThis, DWRITE_TEXT_ALIGNMENT textAlignment);
 
-        /// <summary>Set alignment option of paragraph relative to layout box's top and bottom edge.</summary>
-        /// <param name="paragraphAlignment">Paragraph alignment option</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetParagraphAlignment(IDWriteTextLayout* This, DWRITE_PARAGRAPH_ALIGNMENT paragraphAlignment);
+        public delegate int _SetParagraphAlignment(IDWriteTextLayout* pThis, DWRITE_PARAGRAPH_ALIGNMENT paragraphAlignment);
 
-        /// <summary>Set word wrapping option.</summary>
-        /// <param name="wordWrapping">Word wrapping option</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetWordWrapping(IDWriteTextLayout* This, DWRITE_WORD_WRAPPING wordWrapping);
+        public delegate int _SetWordWrapping(IDWriteTextLayout* pThis, DWRITE_WORD_WRAPPING wordWrapping);
 
-        /// <summary>Set paragraph reading direction.</summary>
-        /// <param name="readingDirection">Text reading direction</param>
-        /// <returns>Standard HRESULT error code.</returns>
-        /// <remarks> The flow direction must be perpendicular to the reading direction. Setting both to a vertical direction or both to horizontal yields DWRITE_E_FLOWDIRECTIONCONFLICTS when calling GetMetrics or Draw.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetReadingDirection(IDWriteTextLayout* This, DWRITE_READING_DIRECTION readingDirection);
+        public delegate int _SetReadingDirection(IDWriteTextLayout* pThis, DWRITE_READING_DIRECTION readingDirection);
 
-        /// <summary>Set paragraph flow direction.</summary>
-        /// <param name="flowDirection">Paragraph flow direction</param>
-        /// <returns>Standard HRESULT error code.</returns>
-        /// <remarks> The flow direction must be perpendicular to the reading direction. Setting both to a vertical direction or both to horizontal yields DWRITE_E_FLOWDIRECTIONCONFLICTS when calling GetMetrics or Draw.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetFlowDirection(IDWriteTextLayout* This, DWRITE_FLOW_DIRECTION flowDirection);
+        public delegate int _SetFlowDirection(IDWriteTextLayout* pThis, DWRITE_FLOW_DIRECTION flowDirection);
 
-        /// <summary>Set incremental tab stop position.</summary>
-        /// <param name="incrementalTabStop">The incremental tab stop value</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetIncrementalTabStop(IDWriteTextLayout* This, [NativeTypeName("FLOAT")] float incrementalTabStop);
+        public delegate int _SetIncrementalTabStop(IDWriteTextLayout* pThis, [NativeTypeName("FLOAT")] float incrementalTabStop);
 
-        /// <summary>Set trimming options for any trailing text exceeding the layout width or for any far text exceeding the layout height.</summary>
-        /// <param name="trimmingOptions">Text trimming options.</param>
-        /// <param name="trimmingSign">Application-defined omission sign. This parameter may be NULL if no trimming sign is desired.</param>
-        /// <remarks> Any inline object can be used for the trimming sign, but CreateEllipsisTrimmingSign provides a typical ellipsis symbol. Trimming is also useful vertically for hiding partial lines.</remarks>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetTrimming(IDWriteTextLayout* This, DWRITE_TRIMMING* trimmingOptions, IDWriteInlineObject* trimmingSign = null);
+        public delegate int _SetTrimming(IDWriteTextLayout* pThis, [NativeTypeName("const DWRITE_TRIMMING *")] DWRITE_TRIMMING* trimmingOptions, [NativeTypeName("IDWriteInlineObject *")] IDWriteInlineObject* trimmingSign);
 
-        /// <summary>Set line spacing.</summary>
-        /// <param name="lineSpacingMethod">How to determine line height.</param>
-        /// <param name="lineSpacing">The line height, or rather distance between one baseline to another.</param>
-        /// <param name="baseline">Distance from top of line to baseline. A reasonable ratio to lineSpacing is 80%.</param>
-        /// <remarks> For the default method, spacing depends solely on the content. For uniform spacing, the given line height will override the content.</remarks>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetLineSpacing(IDWriteTextLayout* This, DWRITE_LINE_SPACING_METHOD lineSpacingMethod, [NativeTypeName("FLOAT")] float lineSpacing, [NativeTypeName("FLOAT")] float baseline);
+        public delegate int _SetLineSpacing(IDWriteTextLayout* pThis, DWRITE_LINE_SPACING_METHOD lineSpacingMethod, [NativeTypeName("FLOAT")] float lineSpacing, [NativeTypeName("FLOAT")] float baseline);
 
-        /// <summary>Get alignment option of text relative to layout box's leading and trailing edge.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate DWRITE_TEXT_ALIGNMENT _GetTextAlignment(IDWriteTextLayout* This);
+        public delegate DWRITE_TEXT_ALIGNMENT _GetTextAlignment(IDWriteTextLayout* pThis);
 
-        /// <summary>Get alignment option of paragraph relative to layout box's top and bottom edge.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate DWRITE_PARAGRAPH_ALIGNMENT _GetParagraphAlignment(IDWriteTextLayout* This);
+        public delegate DWRITE_PARAGRAPH_ALIGNMENT _GetParagraphAlignment(IDWriteTextLayout* pThis);
 
-        /// <summary>Get word wrapping option.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate DWRITE_WORD_WRAPPING _GetWordWrapping(IDWriteTextLayout* This);
+        public delegate DWRITE_WORD_WRAPPING _GetWordWrapping(IDWriteTextLayout* pThis);
 
-        /// <summary>Get paragraph reading direction.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate DWRITE_READING_DIRECTION _GetReadingDirection(IDWriteTextLayout* This);
+        public delegate DWRITE_READING_DIRECTION _GetReadingDirection(IDWriteTextLayout* pThis);
 
-        /// <summary>Get paragraph flow direction.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate DWRITE_FLOW_DIRECTION _GetFlowDirection(IDWriteTextLayout* This);
+        public delegate DWRITE_FLOW_DIRECTION _GetFlowDirection(IDWriteTextLayout* pThis);
 
-        /// <summary>Get incremental tab stop position.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public delegate float _GetIncrementalTabStop(IDWriteTextLayout* This);
+        public delegate float _GetIncrementalTabStop(IDWriteTextLayout* pThis);
 
-        /// <summary>Get trimming options for text overflowing the layout width.</summary>
-        /// <param name="trimmingOptions">Text trimming options.</param>
-        /// <param name="trimmingSign">Trimming omission sign. This parameter may be NULL.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetTrimming(IDWriteTextLayout* This, DWRITE_TRIMMING* trimmingOptions, IDWriteInlineObject** trimmingSign);
+        public delegate int _GetTrimming(IDWriteTextLayout* pThis, [NativeTypeName("DWRITE_TRIMMING *")] DWRITE_TRIMMING* trimmingOptions, [NativeTypeName("IDWriteInlineObject **")] IDWriteInlineObject** trimmingSign);
 
-        /// <summary>Get line spacing.</summary>
-        /// <param name="lineSpacingMethod">How line height is determined.</param>
-        /// <param name="lineSpacing">The line height, or rather distance between one baseline to another.</param>
-        /// <param name="baseline">Distance from top of line to baseline.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLineSpacing(IDWriteTextLayout* This, DWRITE_LINE_SPACING_METHOD* lineSpacingMethod, [NativeTypeName("FLOAT")] float* lineSpacing, [NativeTypeName("FLOAT")] float* baseline);
+        public delegate int _GetLineSpacing(IDWriteTextLayout* pThis, [NativeTypeName("DWRITE_LINE_SPACING_METHOD *")] DWRITE_LINE_SPACING_METHOD* lineSpacingMethod, [NativeTypeName("FLOAT *")] float* lineSpacing, [NativeTypeName("FLOAT *")] float* baseline);
 
-        /// <summary>Get the font collection.</summary>
-        /// <param name="fontCollection">The current font collection.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFontCollection(IDWriteTextLayout* This, IDWriteFontCollection** fontCollection);
+        public delegate int _GetFontCollection(IDWriteTextLayout* pThis, [NativeTypeName("IDWriteFontCollection **")] IDWriteFontCollection** fontCollection);
 
-        /// <summary>Get the length of the font family name, in characters, not including the terminating NULL character.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public delegate uint _GetFontFamilyNameLength(IDWriteTextLayout* This);
+        public delegate uint _GetFontFamilyNameLength(IDWriteTextLayout* pThis);
 
-        /// <summary>Get a copy of the font family name.</summary>
-        /// <param name="fontFamilyName">Character array that receives the current font family name</param>
-        /// <param name="nameSize">Size of the character array in character count including the terminated NULL character.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFontFamilyName(IDWriteTextLayout* This, [NativeTypeName("WCHAR[]")] ushort* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize);
+        public delegate int _GetFontFamilyName(IDWriteTextLayout* pThis, [NativeTypeName("WCHAR *")] ushort* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize);
 
-        /// <summary>Get the font weight.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate DWRITE_FONT_WEIGHT _GetFontWeight(IDWriteTextLayout* This);
+        public delegate DWRITE_FONT_WEIGHT _GetFontWeight(IDWriteTextLayout* pThis);
 
-        /// <summary>Get the font style.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate DWRITE_FONT_STYLE _GetFontStyle(IDWriteTextLayout* This);
+        public delegate DWRITE_FONT_STYLE _GetFontStyle(IDWriteTextLayout* pThis);
 
-        /// <summary>Get the font stretch.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate DWRITE_FONT_STRETCH _GetFontStretch(IDWriteTextLayout* This);
+        public delegate DWRITE_FONT_STRETCH _GetFontStretch(IDWriteTextLayout* pThis);
 
-        /// <summary>Get the font em height.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public delegate float _GetFontSize(IDWriteTextLayout* This);
+        public delegate float _GetFontSize(IDWriteTextLayout* pThis);
 
-        /// <summary>Get the length of the locale name, in characters, not including the terminating NULL character.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public delegate uint _GetLocaleNameLength(IDWriteTextLayout* This);
+        public delegate uint _GetLocaleNameLength(IDWriteTextLayout* pThis);
 
-        /// <summary>Get a copy of the locale name.</summary>
-        /// <param name="localeName">Character array that receives the current locale name</param>
-        /// <param name="nameSize">Size of the character array in character count including the terminated NULL character.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLocaleName(IDWriteTextLayout* This, [NativeTypeName("WCHAR[]")] ushort* localeName, [NativeTypeName("UINT32")] uint nameSize);
+        public delegate int _GetLocaleName(IDWriteTextLayout* pThis, [NativeTypeName("WCHAR *")] ushort* localeName, [NativeTypeName("UINT32")] uint nameSize);
 
-        /// <summary>Set layout maximum width</summary>
-        /// <param name="maxWidth">Layout maximum width</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetMaxWidth(IDWriteTextLayout* This, [NativeTypeName("FLOAT")] float maxWidth);
+        public delegate int _SetMaxWidth(IDWriteTextLayout* pThis, [NativeTypeName("FLOAT")] float maxWidth);
 
-        /// <summary>Set layout maximum height</summary>
-        /// <param name="maxHeight">Layout maximum height</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetMaxHeight(IDWriteTextLayout* This, [NativeTypeName("FLOAT")] float maxHeight);
+        public delegate int _SetMaxHeight(IDWriteTextLayout* pThis, [NativeTypeName("FLOAT")] float maxHeight);
 
-        /// <summary>Set the font collection.</summary>
-        /// <param name="fontCollection">The font collection to set</param>
-        /// <param name="textRange">Text range to which this change applies.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetFontCollection(IDWriteTextLayout* This, IDWriteFontCollection* fontCollection, DWRITE_TEXT_RANGE textRange);
+        public delegate int _SetFontCollection(IDWriteTextLayout* pThis, [NativeTypeName("IDWriteFontCollection *")] IDWriteFontCollection* fontCollection, DWRITE_TEXT_RANGE textRange);
 
-        /// <summary>Set null-terminated font family name.</summary>
-        /// <param name="fontFamilyName">Font family name</param>
-        /// <param name="textRange">Text range to which this change applies.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetFontFamilyName(IDWriteTextLayout* This, [NativeTypeName("WCHAR[]")] ushort* fontFamilyName, DWRITE_TEXT_RANGE textRange);
+        public delegate int _SetFontFamilyName(IDWriteTextLayout* pThis, [NativeTypeName("const WCHAR *")] ushort* fontFamilyName, DWRITE_TEXT_RANGE textRange);
 
-        /// <summary>Set font weight.</summary>
-        /// <param name="fontWeight">Font weight</param>
-        /// <param name="textRange">Text range to which this change applies.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetFontWeight(IDWriteTextLayout* This, DWRITE_FONT_WEIGHT fontWeight, DWRITE_TEXT_RANGE textRange);
+        public delegate int _SetFontWeight(IDWriteTextLayout* pThis, DWRITE_FONT_WEIGHT fontWeight, DWRITE_TEXT_RANGE textRange);
 
-        /// <summary>Set font style.</summary>
-        /// <param name="fontStyle">Font style</param>
-        /// <param name="textRange">Text range to which this change applies.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetFontStyle(IDWriteTextLayout* This, DWRITE_FONT_STYLE fontStyle, DWRITE_TEXT_RANGE textRange);
+        public delegate int _SetFontStyle(IDWriteTextLayout* pThis, DWRITE_FONT_STYLE fontStyle, DWRITE_TEXT_RANGE textRange);
 
-        /// <summary>Set font stretch.</summary>
-        /// <param name="fontStretch">font stretch</param>
-        /// <param name="textRange">Text range to which this change applies.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetFontStretch(IDWriteTextLayout* This, DWRITE_FONT_STRETCH fontStretch, DWRITE_TEXT_RANGE textRange);
+        public delegate int _SetFontStretch(IDWriteTextLayout* pThis, DWRITE_FONT_STRETCH fontStretch, DWRITE_TEXT_RANGE textRange);
 
-        /// <summary>Set font em height.</summary>
-        /// <param name="fontSize">Font em height</param>
-        /// <param name="textRange">Text range to which this change applies.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetFontSize(IDWriteTextLayout* This, [NativeTypeName("FLOAT")] float fontSize, DWRITE_TEXT_RANGE textRange);
+        public delegate int _SetFontSize(IDWriteTextLayout* pThis, [NativeTypeName("FLOAT")] float fontSize, DWRITE_TEXT_RANGE textRange);
 
-        /// <summary>Set underline.</summary>
-        /// <param name="hasUnderline">The Boolean flag indicates whether underline takes place</param>
-        /// <param name="textRange">Text range to which this change applies.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetUnderline(IDWriteTextLayout* This, [NativeTypeName("BOOL")] int hasUnderline, DWRITE_TEXT_RANGE textRange);
+        public delegate int _SetUnderline(IDWriteTextLayout* pThis, [NativeTypeName("BOOL")] int hasUnderline, DWRITE_TEXT_RANGE textRange);
 
-        /// <summary>Set strikethrough.</summary>
-        /// <param name="hasStrikethrough">The Boolean flag indicates whether strikethrough takes place</param>
-        /// <param name="textRange">Text range to which this change applies.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetStrikethrough(IDWriteTextLayout* This, [NativeTypeName("BOOL")] int hasStrikethrough, DWRITE_TEXT_RANGE textRange);
+        public delegate int _SetStrikethrough(IDWriteTextLayout* pThis, [NativeTypeName("BOOL")] int hasStrikethrough, DWRITE_TEXT_RANGE textRange);
 
-        /// <summary>Set application-defined drawing effect.</summary>
-        /// <param name="drawingEffect">Pointer to an application-defined drawing effect.</param>
-        /// <param name="textRange">Text range to which this change applies.</param>
-        /// <returns>Standard HRESULT error code.</returns>
-        /// <remarks> This drawing effect is associated with the specified range and will be passed back to the application via the callback when the range is drawn at drawing time.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetDrawingEffect(IDWriteTextLayout* This, IUnknown* drawingEffect, DWRITE_TEXT_RANGE textRange);
+        public delegate int _SetDrawingEffect(IDWriteTextLayout* pThis, [NativeTypeName("IUnknown *")] IUnknown* drawingEffect, DWRITE_TEXT_RANGE textRange);
 
-        /// <summary>Set inline object.</summary>
-        /// <param name="inlineObject">Pointer to an application-implemented inline object.</param>
-        /// <param name="textRange">Text range to which this change applies.</param>
-        /// <returns>Standard HRESULT error code.</returns>
-        /// <remarks> This inline object applies to the specified range and will be passed back to the application via the DrawInlineObject callback when the range is drawn. Any text in that range will be suppressed.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetInlineObject(IDWriteTextLayout* This, IDWriteInlineObject* inlineObject, DWRITE_TEXT_RANGE textRange);
+        public delegate int _SetInlineObject(IDWriteTextLayout* pThis, [NativeTypeName("IDWriteInlineObject *")] IDWriteInlineObject* inlineObject, DWRITE_TEXT_RANGE textRange);
 
-        /// <summary>Set font typography features.</summary>
-        /// <param name="typography">Pointer to font typography setting.</param>
-        /// <param name="textRange">Text range to which this change applies.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetTypography(IDWriteTextLayout* This, IDWriteTypography* typography, DWRITE_TEXT_RANGE textRange);
+        public delegate int _SetTypography(IDWriteTextLayout* pThis, [NativeTypeName("IDWriteTypography *")] IDWriteTypography* typography, DWRITE_TEXT_RANGE textRange);
 
-        /// <summary>Set locale name.</summary>
-        /// <param name="localeName">Locale name</param>
-        /// <param name="textRange">Text range to which this change applies.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetLocaleName(IDWriteTextLayout* This, [NativeTypeName("WCHAR[]")] ushort* localeName, DWRITE_TEXT_RANGE textRange);
+        public delegate int _SetLocaleName(IDWriteTextLayout* pThis, [NativeTypeName("const WCHAR *")] ushort* localeName, DWRITE_TEXT_RANGE textRange);
 
-        /// <summary>Get layout maximum width</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public delegate float _GetMaxWidth(IDWriteTextLayout* This);
+        public delegate float _GetMaxWidth(IDWriteTextLayout* pThis);
 
-        /// <summary>Get layout maximum height</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("FLOAT")]
-        public delegate float _GetMaxHeight(IDWriteTextLayout* This);
+        public delegate float _GetMaxHeight(IDWriteTextLayout* pThis);
 
-        /// <summary>Get the font collection where the current position is at.</summary>
-        /// <param name="currentPosition">The current text position.</param>
-        /// <param name="fontCollection">The current font collection</param>
-        /// <param name="textRange">Text range to which this change applies.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFontCollection1(IDWriteTextLayout* This, [NativeTypeName("UINT32")] uint currentPosition, IDWriteFontCollection** fontCollection, DWRITE_TEXT_RANGE* textRange = null);
+        public delegate int _GetFontCollection1(IDWriteTextLayout* pThis, [NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("IDWriteFontCollection **")] IDWriteFontCollection** fontCollection, [NativeTypeName("DWRITE_TEXT_RANGE *")] DWRITE_TEXT_RANGE* textRange);
 
-        /// <summary>Get the length of the font family name where the current position is at.</summary>
-        /// <param name="currentPosition">The current text position.</param>
-        /// <param name="nameLength">Size of the character array in character count not including the terminated NULL character.</param>
-        /// <param name="textRange">The position range of the current format.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFontFamilyNameLength1(IDWriteTextLayout* This, [NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("UINT32")] uint* nameLength, DWRITE_TEXT_RANGE* textRange = null);
+        public delegate int _GetFontFamilyNameLength1(IDWriteTextLayout* pThis, [NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("UINT32 *")] uint* nameLength, [NativeTypeName("DWRITE_TEXT_RANGE *")] DWRITE_TEXT_RANGE* textRange);
 
-        /// <summary>Copy the font family name where the current position is at.</summary>
-        /// <param name="currentPosition">The current text position.</param>
-        /// <param name="fontFamilyName">Character array that receives the current font family name</param>
-        /// <param name="nameSize">Size of the character array in character count including the terminated NULL character.</param>
-        /// <param name="textRange">The position range of the current format.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFontFamilyName1(IDWriteTextLayout* This, [NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("WCHAR[]")] ushort* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize, DWRITE_TEXT_RANGE* textRange = null);
+        public delegate int _GetFontFamilyName1(IDWriteTextLayout* pThis, [NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("WCHAR *")] ushort* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize, [NativeTypeName("DWRITE_TEXT_RANGE *")] DWRITE_TEXT_RANGE* textRange);
 
-        /// <summary>Get the font weight where the current position is at.</summary>
-        /// <param name="currentPosition">The current text position.</param>
-        /// <param name="fontWeight">The current font weight</param>
-        /// <param name="textRange">The position range of the current format.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFontWeight1(IDWriteTextLayout* This, [NativeTypeName("UINT32")] uint currentPosition, DWRITE_FONT_WEIGHT* fontWeight, DWRITE_TEXT_RANGE* textRange = null);
+        public delegate int _GetFontWeight1(IDWriteTextLayout* pThis, [NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("DWRITE_FONT_WEIGHT *")] DWRITE_FONT_WEIGHT* fontWeight, [NativeTypeName("DWRITE_TEXT_RANGE *")] DWRITE_TEXT_RANGE* textRange);
 
-        /// <summary>Get the font style where the current position is at.</summary>
-        /// <param name="currentPosition">The current text position.</param>
-        /// <param name="fontStyle">The current font style</param>
-        /// <param name="textRange">The position range of the current format.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFontStyle1(IDWriteTextLayout* This, [NativeTypeName("UINT32")] uint currentPosition, DWRITE_FONT_STYLE* fontStyle, DWRITE_TEXT_RANGE* textRange = null);
+        public delegate int _GetFontStyle1(IDWriteTextLayout* pThis, [NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("DWRITE_FONT_STYLE *")] DWRITE_FONT_STYLE* fontStyle, [NativeTypeName("DWRITE_TEXT_RANGE *")] DWRITE_TEXT_RANGE* textRange);
 
-        /// <summary>Get the font stretch where the current position is at.</summary>
-        /// <param name="currentPosition">The current text position.</param>
-        /// <param name="fontStretch">The current font stretch</param>
-        /// <param name="textRange">The position range of the current format.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFontStretch1(IDWriteTextLayout* This, [NativeTypeName("UINT32")] uint currentPosition, DWRITE_FONT_STRETCH* fontStretch, DWRITE_TEXT_RANGE* textRange = null);
+        public delegate int _GetFontStretch1(IDWriteTextLayout* pThis, [NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("DWRITE_FONT_STRETCH *")] DWRITE_FONT_STRETCH* fontStretch, [NativeTypeName("DWRITE_TEXT_RANGE *")] DWRITE_TEXT_RANGE* textRange);
 
-        /// <summary>Get the font em height where the current position is at.</summary>
-        /// <param name="currentPosition">The current text position.</param>
-        /// <param name="fontSize">The current font em height</param>
-        /// <param name="textRange">The position range of the current format.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFontSize1(IDWriteTextLayout* This, [NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("FLOAT")] float* fontSize, DWRITE_TEXT_RANGE* textRange = null);
+        public delegate int _GetFontSize1(IDWriteTextLayout* pThis, [NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("FLOAT *")] float* fontSize, [NativeTypeName("DWRITE_TEXT_RANGE *")] DWRITE_TEXT_RANGE* textRange);
 
-        /// <summary>Get the underline presence where the current position is at.</summary>
-        /// <param name="currentPosition">The current text position.</param>
-        /// <param name="hasUnderline">The Boolean flag indicates whether text is underlined.</param>
-        /// <param name="textRange">The position range of the current format.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetUnderline(IDWriteTextLayout* This, [NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("BOOL")] int* hasUnderline, DWRITE_TEXT_RANGE* textRange = null);
+        public delegate int _GetUnderline(IDWriteTextLayout* pThis, [NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("BOOL *")] int* hasUnderline, [NativeTypeName("DWRITE_TEXT_RANGE *")] DWRITE_TEXT_RANGE* textRange);
 
-        /// <summary>Get the strikethrough presence where the current position is at.</summary>
-        /// <param name="currentPosition">The current text position.</param>
-        /// <param name="hasStrikethrough">The Boolean flag indicates whether text has strikethrough.</param>
-        /// <param name="textRange">The position range of the current format.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetStrikethrough(IDWriteTextLayout* This, [NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("BOOL")] int* hasStrikethrough, DWRITE_TEXT_RANGE* textRange = null);
+        public delegate int _GetStrikethrough(IDWriteTextLayout* pThis, [NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("BOOL *")] int* hasStrikethrough, [NativeTypeName("DWRITE_TEXT_RANGE *")] DWRITE_TEXT_RANGE* textRange);
 
-        /// <summary>Get the application-defined drawing effect where the current position is at.</summary>
-        /// <param name="currentPosition">The current text position.</param>
-        /// <param name="drawingEffect">The current application-defined drawing effect.</param>
-        /// <param name="textRange">The position range of the current format.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDrawingEffect(IDWriteTextLayout* This, [NativeTypeName("UINT32")] uint currentPosition, IUnknown** drawingEffect, DWRITE_TEXT_RANGE* textRange = null);
+        public delegate int _GetDrawingEffect(IDWriteTextLayout* pThis, [NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("IUnknown **")] IUnknown** drawingEffect, [NativeTypeName("DWRITE_TEXT_RANGE *")] DWRITE_TEXT_RANGE* textRange);
 
-        /// <summary>Get the inline object at the given position.</summary>
-        /// <param name="currentPosition">The given text position.</param>
-        /// <param name="inlineObject">The inline object.</param>
-        /// <param name="textRange">The position range of the current format.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetInlineObject(IDWriteTextLayout* This, [NativeTypeName("UINT32")] uint currentPosition, IDWriteInlineObject** inlineObject, DWRITE_TEXT_RANGE* textRange = null);
+        public delegate int _GetInlineObject(IDWriteTextLayout* pThis, [NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("IDWriteInlineObject **")] IDWriteInlineObject** inlineObject, [NativeTypeName("DWRITE_TEXT_RANGE *")] DWRITE_TEXT_RANGE* textRange);
 
-        /// <summary>Get the typography setting where the current position is at.</summary>
-        /// <param name="currentPosition">The current text position.</param>
-        /// <param name="typography">The current typography setting.</param>
-        /// <param name="textRange">The position range of the current format.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetTypography(IDWriteTextLayout* This, [NativeTypeName("UINT32")] uint currentPosition, IDWriteTypography** typography, DWRITE_TEXT_RANGE* textRange = null);
+        public delegate int _GetTypography(IDWriteTextLayout* pThis, [NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("IDWriteTypography **")] IDWriteTypography** typography, [NativeTypeName("DWRITE_TEXT_RANGE *")] DWRITE_TEXT_RANGE* textRange);
 
-        /// <summary>Get the length of the locale name where the current position is at.</summary>
-        /// <param name="currentPosition">The current text position.</param>
-        /// <param name="nameLength">Size of the character array in character count not including the terminated NULL character.</param>
-        /// <param name="textRange">The position range of the current format.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLocaleNameLength1(IDWriteTextLayout* This, [NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("UINT32")] uint* nameLength, DWRITE_TEXT_RANGE* textRange = null);
+        public delegate int _GetLocaleNameLength1(IDWriteTextLayout* pThis, [NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("UINT32 *")] uint* nameLength, [NativeTypeName("DWRITE_TEXT_RANGE *")] DWRITE_TEXT_RANGE* textRange);
 
-        /// <summary>Get the locale name where the current position is at.</summary>
-        /// <param name="currentPosition">The current text position.</param>
-        /// <param name="localeName">Character array that receives the current locale name</param>
-        /// <param name="nameSize">Size of the character array in character count including the terminated NULL character.</param>
-        /// <param name="textRange">The position range of the current format.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLocaleName1(IDWriteTextLayout* This, [NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("WCHAR[]")] ushort* localeName, [NativeTypeName("UINT32")] uint nameSize, DWRITE_TEXT_RANGE* textRange = null);
+        public delegate int _GetLocaleName1(IDWriteTextLayout* pThis, [NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("WCHAR *")] ushort* localeName, [NativeTypeName("UINT32")] uint nameSize, [NativeTypeName("DWRITE_TEXT_RANGE *")] DWRITE_TEXT_RANGE* textRange);
 
-        /// <summary>Initiate drawing of the text.</summary>
-        /// <param name="clientDrawingContext">An application defined value included in rendering callbacks.</param>
-        /// <param name="renderer">The set of application-defined callbacks that do the actual rendering.</param>
-        /// <param name="originX">X-coordinate of the layout's left side.</param>
-        /// <param name="originY">Y-coordinate of the layout's top side.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Draw(IDWriteTextLayout* This, [Optional] void* clientDrawingContext, IDWriteTextRenderer* renderer, [NativeTypeName("FLOAT")] float originX, [NativeTypeName("FLOAT")] float originY);
+        public delegate int _Draw(IDWriteTextLayout* pThis, [NativeTypeName("void *")] void* clientDrawingContext, [NativeTypeName("IDWriteTextRenderer *")] IDWriteTextRenderer* renderer, [NativeTypeName("FLOAT")] float originX, [NativeTypeName("FLOAT")] float originY);
 
-        /// <summary>GetLineMetrics returns properties of each line.</summary>
-        /// <param name="lineMetrics">The array to fill with line information.</param>
-        /// <param name="maxLineCount">The maximum size of the lineMetrics array.</param>
-        /// <param name="actualLineCount">The actual size of the lineMetrics array that is needed.</param>
-        /// <returns>Standard HRESULT error code.</returns>
-        /// <remarks> If maxLineCount is not large enough E_NOT_SUFFICIENT_BUFFER, which is equivalent to HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER), is returned and *actualLineCount is set to the number of lines needed.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLineMetrics(IDWriteTextLayout* This, [Optional, NativeTypeName("DWRITE_LINE_METRICS[]")] DWRITE_LINE_METRICS* lineMetrics, [NativeTypeName("UINT32")] uint maxLineCount, [NativeTypeName("UINT32")] uint* actualLineCount);
+        public delegate int _GetLineMetrics(IDWriteTextLayout* pThis, [NativeTypeName("DWRITE_LINE_METRICS *")] DWRITE_LINE_METRICS* lineMetrics, [NativeTypeName("UINT32")] uint maxLineCount, [NativeTypeName("UINT32 *")] uint* actualLineCount);
 
-        /// <summary>GetMetrics retrieves overall metrics for the formatted string.</summary>
-        /// <param name="textMetrics">The returned metrics.</param>
-        /// <returns>Standard HRESULT error code.</returns>
-        /// <remarks> Drawing effects like underline and strikethrough do not contribute to the text size, which is essentially the sum of advance widths and line heights. Additionally, visible swashes and other graphic adornments may extend outside the returned width and height.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetMetrics(IDWriteTextLayout* This, DWRITE_TEXT_METRICS* textMetrics);
+        public delegate int _GetMetrics(IDWriteTextLayout* pThis, [NativeTypeName("DWRITE_TEXT_METRICS *")] DWRITE_TEXT_METRICS* textMetrics);
 
-        /// <summary>GetOverhangMetrics returns the overhangs (in DIPs) of the layout and all objects contained in it, including text glyphs and inline objects.</summary>
-        /// <param name="overhangs">Overshoots of visible extents (in DIPs) outside the layout.</param>
-        /// <returns>Standard HRESULT error code.</returns>
-        /// <remarks> Any underline and strikethrough do not contribute to the black box determination, since these are actually drawn by the renderer, which is allowed to draw them in any variety of styles.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetOverhangMetrics(IDWriteTextLayout* This, DWRITE_OVERHANG_METRICS* overhangs);
+        public delegate int _GetOverhangMetrics(IDWriteTextLayout* pThis, [NativeTypeName("DWRITE_OVERHANG_METRICS *")] DWRITE_OVERHANG_METRICS* overhangs);
 
-        /// <summary>Retrieve logical properties and measurement of each cluster.</summary>
-        /// <param name="clusterMetrics">The array to fill with cluster information.</param>
-        /// <param name="maxClusterCount">The maximum size of the clusterMetrics array.</param>
-        /// <param name="actualClusterCount">The actual size of the clusterMetrics array that is needed.</param>
-        /// <returns>Standard HRESULT error code.</returns>
-        /// <remarks> If maxClusterCount is not large enough E_NOT_SUFFICIENT_BUFFER, which is equivalent to HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER), is returned and *actualClusterCount is set to the number of clusters needed.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetClusterMetrics(IDWriteTextLayout* This, [Optional, NativeTypeName("DWRITE_CLUSTER_METRICS[]")] DWRITE_CLUSTER_METRICS* clusterMetrics, [NativeTypeName("UINT32")] uint maxClusterCount, [NativeTypeName("UINT32")] uint* actualClusterCount);
+        public delegate int _GetClusterMetrics(IDWriteTextLayout* pThis, [NativeTypeName("DWRITE_CLUSTER_METRICS *")] DWRITE_CLUSTER_METRICS* clusterMetrics, [NativeTypeName("UINT32")] uint maxClusterCount, [NativeTypeName("UINT32 *")] uint* actualClusterCount);
 
-        /// <summary>Determines the minimum possible width the layout can be set to without emergency breaking between the characters of whole words.</summary>
-        /// <param name="minWidth">Minimum width.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _DetermineMinWidth(IDWriteTextLayout* This, [NativeTypeName("FLOAT")] float* minWidth);
+        public delegate int _DetermineMinWidth(IDWriteTextLayout* pThis, [NativeTypeName("FLOAT *")] float* minWidth);
 
-        /// <summary>Given a coordinate (in DIPs) relative to the top-left of the layout box, this returns the corresponding hit-test metrics of the text string where the hit-test has occurred. This is useful for mapping mouse clicks to caret positions. When the given coordinate is outside the text string, the function sets the output value *isInside to false but returns the nearest character position.</summary>
-        /// <param name="pointX">X coordinate to hit-test, relative to the top-left location of the layout box.</param>
-        /// <param name="pointY">Y coordinate to hit-test, relative to the top-left location of the layout box.</param>
-        /// <param name="isTrailingHit">Output flag indicating whether the hit-test location is at the leading or the trailing side of the character. When the output *isInside value is set to false, this value is set according to the output *position value to represent the edge closest to the hit-test location. </param>
-        /// <param name="isInside">Output flag indicating whether the hit-test location is inside the text string. When false, the position nearest the text's edge is returned.</param>
-        /// <param name="hitTestMetrics">Output geometry fully enclosing the hit-test location. When the output *isInside value is set to false, this public partial structure represents the geometry enclosing the edge closest to the hit-test location.</param>
-        /// <returns>Standard HRESULT error code.</returns>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _HitTestPoint(IDWriteTextLayout* This, [NativeTypeName("FLOAT")] float pointX, [NativeTypeName("FLOAT")] float pointY, [NativeTypeName("BOOL")] int* isTrailingHit, [NativeTypeName("BOOL")] int* isInside, DWRITE_HIT_TEST_METRICS* hitTestMetrics);
+        public delegate int _HitTestPoint(IDWriteTextLayout* pThis, [NativeTypeName("FLOAT")] float pointX, [NativeTypeName("FLOAT")] float pointY, [NativeTypeName("BOOL *")] int* isTrailingHit, [NativeTypeName("BOOL *")] int* isInside, [NativeTypeName("DWRITE_HIT_TEST_METRICS *")] DWRITE_HIT_TEST_METRICS* hitTestMetrics);
 
-        /// <summary>Given a text position and whether the caret is on the leading or trailing edge of that position, this returns the corresponding coordinate (in DIPs) relative to the top-left of the layout box. This is most useful for drawing the caret's current position, but it could also be used to anchor an IME to the typed text or attach a floating menu near the point of interest. It may also be used to programmatically obtain the geometry of a particular text position for UI automation.</summary>
-        /// <param name="textPosition">Text position to get the coordinate of.</param>
-        /// <param name="isTrailingHit">Flag indicating whether the location is of the leading or the trailing side of the specified text position. </param>
-        /// <param name="pointX">Output caret X, relative to the top-left of the layout box.</param>
-        /// <param name="pointY">Output caret Y, relative to the top-left of the layout box.</param>
-        /// <param name="hitTestMetrics">Output geometry fully enclosing the specified text position.</param>
-        /// <returns>Standard HRESULT error code.</returns>
-        /// <remarks> When drawing a caret at the returned X,Y, it should be centered on X and drawn from the Y coordinate down. The height will be the size of the hit-tested text (which can vary in size within a line). Reading direction also affects which side of the character the caret is drawn. However, the returned X coordinate will be correct for either case. You can get a text length back that is larger than a single character. This happens for complex scripts when multiple characters form a single cluster, when diacritics join their base character, or when you test a surrogate pair.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _HitTestTextPosition(IDWriteTextLayout* This, [NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("BOOL")] int isTrailingHit, [NativeTypeName("FLOAT")] float* pointX, [NativeTypeName("FLOAT")] float* pointY, DWRITE_HIT_TEST_METRICS* hitTestMetrics);
+        public delegate int _HitTestTextPosition(IDWriteTextLayout* pThis, [NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("BOOL")] int isTrailingHit, [NativeTypeName("FLOAT *")] float* pointX, [NativeTypeName("FLOAT *")] float* pointY, [NativeTypeName("DWRITE_HIT_TEST_METRICS *")] DWRITE_HIT_TEST_METRICS* hitTestMetrics);
 
-        /// <summary>The application calls this function to get a set of hit-test metrics corresponding to a range of text positions. The main usage for this is to draw highlighted selection of the text string. The function returns E_NOT_SUFFICIENT_BUFFER, which is equivalent to HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER), when the buffer size of hitTestMetrics is too small to hold all the regions calculated by the function. In such situation, the function sets the output value *actualHitTestMetricsCount to the number of geometries calculated. The application is responsible to allocate a new buffer of greater size and call the function again. A good value to use as an initial value for maxHitTestMetricsCount may be calculated from the following equation: maxHitTestMetricsCount = lineCount * maxBidiReorderingDepth where lineCount is obtained from the value of the output argument *actualLineCount from the function IDWriteTextLayout::GetLineMetrics, and the maxBidiReorderingDepth value from the DWRITE_TEXT_METRICS public partial structure of the output argument *textMetrics from the function IDWriteFactory::CreateTextLayout.</summary>
-        /// <param name="textPosition">First text position of the specified range.</param>
-        /// <param name="textLength">Number of positions of the specified range.</param>
-        /// <param name="originX">Offset of the X origin (left of the layout box) which is added to each of the hit-test metrics returned.</param>
-        /// <param name="originY">Offset of the Y origin (top of the layout box) which is added to each of the hit-test metrics returned.</param>
-        /// <param name="hitTestMetrics">Pointer to a buffer of the output geometry fully enclosing the specified position range.</param>
-        /// <param name="maxHitTestMetricsCount">Maximum number of distinct metrics it could hold in its buffer memory.</param>
-        /// <param name="actualHitTestMetricsCount">Actual number of metrics returned or needed.</param>
-        /// <returns>Standard HRESULT error code.</returns>
-        /// <remarks> There are no gaps in the returned metrics. While there could be visual gaps, depending on bidi ordering, each range is contiguous and reports all the text, including any hidden characters and trimmed text. The height of each returned range will be the same within each line, regardless of how the font sizes vary.</remarks>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _HitTestTextRange(IDWriteTextLayout* This, [NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint textLength, [NativeTypeName("FLOAT")] float originX, [NativeTypeName("FLOAT")] float originY, [Optional, NativeTypeName("DWRITE_HIT_TEST_METRICS[]")] DWRITE_HIT_TEST_METRICS* hitTestMetrics, [NativeTypeName("UINT32")] uint maxHitTestMetricsCount, [NativeTypeName("UINT32")] uint* actualHitTestMetricsCount);
+        public delegate int _HitTestTextRange(IDWriteTextLayout* pThis, [NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint textLength, [NativeTypeName("FLOAT")] float originX, [NativeTypeName("FLOAT")] float originY, [NativeTypeName("DWRITE_HIT_TEST_METRICS *")] DWRITE_HIT_TEST_METRICS* hitTestMetrics, [NativeTypeName("UINT32")] uint maxHitTestMetricsCount, [NativeTypeName("UINT32 *")] uint* actualHitTestMetricsCount);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDWriteTextLayout*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDWriteTextLayout*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetTextAlignment(DWRITE_TEXT_ALIGNMENT textAlignment)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetTextAlignment>(lpVtbl->SetTextAlignment)(This, textAlignment);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetTextAlignment>(lpVtbl->SetTextAlignment)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), textAlignment);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT paragraphAlignment)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetParagraphAlignment>(lpVtbl->SetParagraphAlignment)(This, paragraphAlignment);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetParagraphAlignment>(lpVtbl->SetParagraphAlignment)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), paragraphAlignment);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetWordWrapping(DWRITE_WORD_WRAPPING wordWrapping)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetWordWrapping>(lpVtbl->SetWordWrapping)(This, wordWrapping);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetWordWrapping>(lpVtbl->SetWordWrapping)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), wordWrapping);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetReadingDirection(DWRITE_READING_DIRECTION readingDirection)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetReadingDirection>(lpVtbl->SetReadingDirection)(This, readingDirection);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetReadingDirection>(lpVtbl->SetReadingDirection)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), readingDirection);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetFlowDirection(DWRITE_FLOW_DIRECTION flowDirection)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetFlowDirection>(lpVtbl->SetFlowDirection)(This, flowDirection);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetFlowDirection>(lpVtbl->SetFlowDirection)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), flowDirection);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetIncrementalTabStop([NativeTypeName("FLOAT")] float incrementalTabStop)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetIncrementalTabStop>(lpVtbl->SetIncrementalTabStop)(This, incrementalTabStop);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetIncrementalTabStop>(lpVtbl->SetIncrementalTabStop)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), incrementalTabStop);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetTrimming(DWRITE_TRIMMING* trimmingOptions, IDWriteInlineObject* trimmingSign = null)
+        public int SetTrimming([NativeTypeName("const DWRITE_TRIMMING *")] DWRITE_TRIMMING* trimmingOptions, [NativeTypeName("IDWriteInlineObject *")] IDWriteInlineObject* trimmingSign)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetTrimming>(lpVtbl->SetTrimming)(This, trimmingOptions, trimmingSign);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetTrimming>(lpVtbl->SetTrimming)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), trimmingOptions, trimmingSign);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetLineSpacing(DWRITE_LINE_SPACING_METHOD lineSpacingMethod, [NativeTypeName("FLOAT")] float lineSpacing, [NativeTypeName("FLOAT")] float baseline)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetLineSpacing>(lpVtbl->SetLineSpacing)(This, lineSpacingMethod, lineSpacing, baseline);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetLineSpacing>(lpVtbl->SetLineSpacing)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), lineSpacingMethod, lineSpacing, baseline);
         }
 
         public DWRITE_TEXT_ALIGNMENT GetTextAlignment()
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetTextAlignment>(lpVtbl->GetTextAlignment)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetTextAlignment>(lpVtbl->GetTextAlignment)((IDWriteTextLayout*)Unsafe.AsPointer(ref this));
         }
 
         public DWRITE_PARAGRAPH_ALIGNMENT GetParagraphAlignment()
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetParagraphAlignment>(lpVtbl->GetParagraphAlignment)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetParagraphAlignment>(lpVtbl->GetParagraphAlignment)((IDWriteTextLayout*)Unsafe.AsPointer(ref this));
         }
 
         public DWRITE_WORD_WRAPPING GetWordWrapping()
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetWordWrapping>(lpVtbl->GetWordWrapping)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetWordWrapping>(lpVtbl->GetWordWrapping)((IDWriteTextLayout*)Unsafe.AsPointer(ref this));
         }
 
         public DWRITE_READING_DIRECTION GetReadingDirection()
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetReadingDirection>(lpVtbl->GetReadingDirection)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetReadingDirection>(lpVtbl->GetReadingDirection)((IDWriteTextLayout*)Unsafe.AsPointer(ref this));
         }
 
         public DWRITE_FLOW_DIRECTION GetFlowDirection()
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFlowDirection>(lpVtbl->GetFlowDirection)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFlowDirection>(lpVtbl->GetFlowDirection)((IDWriteTextLayout*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("FLOAT")]
         public float GetIncrementalTabStop()
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetIncrementalTabStop>(lpVtbl->GetIncrementalTabStop)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetIncrementalTabStop>(lpVtbl->GetIncrementalTabStop)((IDWriteTextLayout*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetTrimming(DWRITE_TRIMMING* trimmingOptions, IDWriteInlineObject** trimmingSign)
+        public int GetTrimming([NativeTypeName("DWRITE_TRIMMING *")] DWRITE_TRIMMING* trimmingOptions, [NativeTypeName("IDWriteInlineObject **")] IDWriteInlineObject** trimmingSign)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetTrimming>(lpVtbl->GetTrimming)(This, trimmingOptions, trimmingSign);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetTrimming>(lpVtbl->GetTrimming)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), trimmingOptions, trimmingSign);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetLineSpacing(DWRITE_LINE_SPACING_METHOD* lineSpacingMethod, [NativeTypeName("FLOAT")] float* lineSpacing, [NativeTypeName("FLOAT")] float* baseline)
+        public int GetLineSpacing([NativeTypeName("DWRITE_LINE_SPACING_METHOD *")] DWRITE_LINE_SPACING_METHOD* lineSpacingMethod, [NativeTypeName("FLOAT *")] float* lineSpacing, [NativeTypeName("FLOAT *")] float* baseline)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetLineSpacing>(lpVtbl->GetLineSpacing)(This, lineSpacingMethod, lineSpacing, baseline);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetLineSpacing>(lpVtbl->GetLineSpacing)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), lineSpacingMethod, lineSpacing, baseline);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFontCollection(IDWriteFontCollection** fontCollection)
+        public int GetFontCollection([NativeTypeName("IDWriteFontCollection **")] IDWriteFontCollection** fontCollection)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontCollection>(lpVtbl->GetFontCollection)(This, fontCollection);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFontCollection>(lpVtbl->GetFontCollection)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), fontCollection);
         }
 
         [return: NativeTypeName("UINT32")]
         public uint GetFontFamilyNameLength()
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontFamilyNameLength>(lpVtbl->GetFontFamilyNameLength)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFontFamilyNameLength>(lpVtbl->GetFontFamilyNameLength)((IDWriteTextLayout*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFontFamilyName([NativeTypeName("WCHAR[]")] ushort* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize)
+        public int GetFontFamilyName([NativeTypeName("WCHAR *")] ushort* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontFamilyName>(lpVtbl->GetFontFamilyName)(This, fontFamilyName, nameSize);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFontFamilyName>(lpVtbl->GetFontFamilyName)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), fontFamilyName, nameSize);
         }
 
         public DWRITE_FONT_WEIGHT GetFontWeight()
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontWeight>(lpVtbl->GetFontWeight)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFontWeight>(lpVtbl->GetFontWeight)((IDWriteTextLayout*)Unsafe.AsPointer(ref this));
         }
 
         public DWRITE_FONT_STYLE GetFontStyle()
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontStyle>(lpVtbl->GetFontStyle)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFontStyle>(lpVtbl->GetFontStyle)((IDWriteTextLayout*)Unsafe.AsPointer(ref this));
         }
 
         public DWRITE_FONT_STRETCH GetFontStretch()
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontStretch>(lpVtbl->GetFontStretch)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFontStretch>(lpVtbl->GetFontStretch)((IDWriteTextLayout*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("FLOAT")]
         public float GetFontSize()
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontSize>(lpVtbl->GetFontSize)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFontSize>(lpVtbl->GetFontSize)((IDWriteTextLayout*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("UINT32")]
         public uint GetLocaleNameLength()
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetLocaleNameLength>(lpVtbl->GetLocaleNameLength)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetLocaleNameLength>(lpVtbl->GetLocaleNameLength)((IDWriteTextLayout*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetLocaleName([NativeTypeName("WCHAR[]")] ushort* localeName, [NativeTypeName("UINT32")] uint nameSize)
+        public int GetLocaleName([NativeTypeName("WCHAR *")] ushort* localeName, [NativeTypeName("UINT32")] uint nameSize)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetLocaleName>(lpVtbl->GetLocaleName)(This, localeName, nameSize);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetLocaleName>(lpVtbl->GetLocaleName)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), localeName, nameSize);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetMaxWidth([NativeTypeName("FLOAT")] float maxWidth)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetMaxWidth>(lpVtbl->SetMaxWidth)(This, maxWidth);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetMaxWidth>(lpVtbl->SetMaxWidth)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), maxWidth);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetMaxHeight([NativeTypeName("FLOAT")] float maxHeight)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetMaxHeight>(lpVtbl->SetMaxHeight)(This, maxHeight);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetMaxHeight>(lpVtbl->SetMaxHeight)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), maxHeight);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetFontCollection(IDWriteFontCollection* fontCollection, DWRITE_TEXT_RANGE textRange)
+        public int SetFontCollection([NativeTypeName("IDWriteFontCollection *")] IDWriteFontCollection* fontCollection, DWRITE_TEXT_RANGE textRange)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetFontCollection>(lpVtbl->SetFontCollection)(This, fontCollection, textRange);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetFontCollection>(lpVtbl->SetFontCollection)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), fontCollection, textRange);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetFontFamilyName([NativeTypeName("WCHAR[]")] ushort* fontFamilyName, DWRITE_TEXT_RANGE textRange)
+        public int SetFontFamilyName([NativeTypeName("const WCHAR *")] ushort* fontFamilyName, DWRITE_TEXT_RANGE textRange)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetFontFamilyName>(lpVtbl->SetFontFamilyName)(This, fontFamilyName, textRange);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetFontFamilyName>(lpVtbl->SetFontFamilyName)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), fontFamilyName, textRange);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetFontWeight(DWRITE_FONT_WEIGHT fontWeight, DWRITE_TEXT_RANGE textRange)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetFontWeight>(lpVtbl->SetFontWeight)(This, fontWeight, textRange);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetFontWeight>(lpVtbl->SetFontWeight)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), fontWeight, textRange);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetFontStyle(DWRITE_FONT_STYLE fontStyle, DWRITE_TEXT_RANGE textRange)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetFontStyle>(lpVtbl->SetFontStyle)(This, fontStyle, textRange);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetFontStyle>(lpVtbl->SetFontStyle)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), fontStyle, textRange);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetFontStretch(DWRITE_FONT_STRETCH fontStretch, DWRITE_TEXT_RANGE textRange)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetFontStretch>(lpVtbl->SetFontStretch)(This, fontStretch, textRange);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetFontStretch>(lpVtbl->SetFontStretch)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), fontStretch, textRange);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetFontSize([NativeTypeName("FLOAT")] float fontSize, DWRITE_TEXT_RANGE textRange)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetFontSize>(lpVtbl->SetFontSize)(This, fontSize, textRange);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetFontSize>(lpVtbl->SetFontSize)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), fontSize, textRange);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetUnderline([NativeTypeName("BOOL")] int hasUnderline, DWRITE_TEXT_RANGE textRange)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetUnderline>(lpVtbl->SetUnderline)(This, hasUnderline, textRange);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetUnderline>(lpVtbl->SetUnderline)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), hasUnderline, textRange);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetStrikethrough([NativeTypeName("BOOL")] int hasStrikethrough, DWRITE_TEXT_RANGE textRange)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetStrikethrough>(lpVtbl->SetStrikethrough)(This, hasStrikethrough, textRange);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetStrikethrough>(lpVtbl->SetStrikethrough)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), hasStrikethrough, textRange);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetDrawingEffect(IUnknown* drawingEffect, DWRITE_TEXT_RANGE textRange)
+        public int SetDrawingEffect([NativeTypeName("IUnknown *")] IUnknown* drawingEffect, DWRITE_TEXT_RANGE textRange)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetDrawingEffect>(lpVtbl->SetDrawingEffect)(This, drawingEffect, textRange);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetDrawingEffect>(lpVtbl->SetDrawingEffect)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), drawingEffect, textRange);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetInlineObject(IDWriteInlineObject* inlineObject, DWRITE_TEXT_RANGE textRange)
+        public int SetInlineObject([NativeTypeName("IDWriteInlineObject *")] IDWriteInlineObject* inlineObject, DWRITE_TEXT_RANGE textRange)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetInlineObject>(lpVtbl->SetInlineObject)(This, inlineObject, textRange);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetInlineObject>(lpVtbl->SetInlineObject)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), inlineObject, textRange);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetTypography(IDWriteTypography* typography, DWRITE_TEXT_RANGE textRange)
+        public int SetTypography([NativeTypeName("IDWriteTypography *")] IDWriteTypography* typography, DWRITE_TEXT_RANGE textRange)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetTypography>(lpVtbl->SetTypography)(This, typography, textRange);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetTypography>(lpVtbl->SetTypography)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), typography, textRange);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetLocaleName([NativeTypeName("WCHAR[]")] ushort* localeName, DWRITE_TEXT_RANGE textRange)
+        public int SetLocaleName([NativeTypeName("const WCHAR *")] ushort* localeName, DWRITE_TEXT_RANGE textRange)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_SetLocaleName>(lpVtbl->SetLocaleName)(This, localeName, textRange);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_SetLocaleName>(lpVtbl->SetLocaleName)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), localeName, textRange);
         }
 
         [return: NativeTypeName("FLOAT")]
         public float GetMaxWidth()
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetMaxWidth>(lpVtbl->GetMaxWidth)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetMaxWidth>(lpVtbl->GetMaxWidth)((IDWriteTextLayout*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("FLOAT")]
         public float GetMaxHeight()
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetMaxHeight>(lpVtbl->GetMaxHeight)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetMaxHeight>(lpVtbl->GetMaxHeight)((IDWriteTextLayout*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFontCollection1([NativeTypeName("UINT32")] uint currentPosition, IDWriteFontCollection** fontCollection, DWRITE_TEXT_RANGE* textRange = null)
+        public int GetFontCollection([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("IDWriteFontCollection **")] IDWriteFontCollection** fontCollection, [NativeTypeName("DWRITE_TEXT_RANGE *")] DWRITE_TEXT_RANGE* textRange)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontCollection1>(lpVtbl->GetFontCollection1)(This, currentPosition, fontCollection, textRange);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFontCollection1>(lpVtbl->GetFontCollection1)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), currentPosition, fontCollection, textRange);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFontFamilyNameLength1([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("UINT32")] uint* nameLength, DWRITE_TEXT_RANGE* textRange = null)
+        public int GetFontFamilyNameLength([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("UINT32 *")] uint* nameLength, [NativeTypeName("DWRITE_TEXT_RANGE *")] DWRITE_TEXT_RANGE* textRange)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontFamilyNameLength1>(lpVtbl->GetFontFamilyNameLength1)(This, currentPosition, nameLength, textRange);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFontFamilyNameLength1>(lpVtbl->GetFontFamilyNameLength1)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), currentPosition, nameLength, textRange);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFontFamilyName1([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("WCHAR[]")] ushort* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize, DWRITE_TEXT_RANGE* textRange = null)
+        public int GetFontFamilyName([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("WCHAR *")] ushort* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize, [NativeTypeName("DWRITE_TEXT_RANGE *")] DWRITE_TEXT_RANGE* textRange)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontFamilyName1>(lpVtbl->GetFontFamilyName1)(This, currentPosition, fontFamilyName, nameSize, textRange);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFontFamilyName1>(lpVtbl->GetFontFamilyName1)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), currentPosition, fontFamilyName, nameSize, textRange);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFontWeight1([NativeTypeName("UINT32")] uint currentPosition, DWRITE_FONT_WEIGHT* fontWeight, DWRITE_TEXT_RANGE* textRange = null)
+        public int GetFontWeight([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("DWRITE_FONT_WEIGHT *")] DWRITE_FONT_WEIGHT* fontWeight, [NativeTypeName("DWRITE_TEXT_RANGE *")] DWRITE_TEXT_RANGE* textRange)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontWeight1>(lpVtbl->GetFontWeight1)(This, currentPosition, fontWeight, textRange);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFontWeight1>(lpVtbl->GetFontWeight1)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), currentPosition, fontWeight, textRange);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFontStyle1([NativeTypeName("UINT32")] uint currentPosition, DWRITE_FONT_STYLE* fontStyle, DWRITE_TEXT_RANGE* textRange = null)
+        public int GetFontStyle([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("DWRITE_FONT_STYLE *")] DWRITE_FONT_STYLE* fontStyle, [NativeTypeName("DWRITE_TEXT_RANGE *")] DWRITE_TEXT_RANGE* textRange)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontStyle1>(lpVtbl->GetFontStyle1)(This, currentPosition, fontStyle, textRange);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFontStyle1>(lpVtbl->GetFontStyle1)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), currentPosition, fontStyle, textRange);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFontStretch1([NativeTypeName("UINT32")] uint currentPosition, DWRITE_FONT_STRETCH* fontStretch, DWRITE_TEXT_RANGE* textRange = null)
+        public int GetFontStretch([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("DWRITE_FONT_STRETCH *")] DWRITE_FONT_STRETCH* fontStretch, [NativeTypeName("DWRITE_TEXT_RANGE *")] DWRITE_TEXT_RANGE* textRange)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontStretch1>(lpVtbl->GetFontStretch1)(This, currentPosition, fontStretch, textRange);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFontStretch1>(lpVtbl->GetFontStretch1)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), currentPosition, fontStretch, textRange);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetFontSize1([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("FLOAT")] float* fontSize, DWRITE_TEXT_RANGE* textRange = null)
+        public int GetFontSize([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("FLOAT *")] float* fontSize, [NativeTypeName("DWRITE_TEXT_RANGE *")] DWRITE_TEXT_RANGE* textRange)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetFontSize1>(lpVtbl->GetFontSize1)(This, currentPosition, fontSize, textRange);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetFontSize1>(lpVtbl->GetFontSize1)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), currentPosition, fontSize, textRange);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetUnderline([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("BOOL")] int* hasUnderline, DWRITE_TEXT_RANGE* textRange = null)
+        public int GetUnderline([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("BOOL *")] int* hasUnderline, [NativeTypeName("DWRITE_TEXT_RANGE *")] DWRITE_TEXT_RANGE* textRange)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetUnderline>(lpVtbl->GetUnderline)(This, currentPosition, hasUnderline, textRange);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetUnderline>(lpVtbl->GetUnderline)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), currentPosition, hasUnderline, textRange);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetStrikethrough([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("BOOL")] int* hasStrikethrough, DWRITE_TEXT_RANGE* textRange = null)
+        public int GetStrikethrough([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("BOOL *")] int* hasStrikethrough, [NativeTypeName("DWRITE_TEXT_RANGE *")] DWRITE_TEXT_RANGE* textRange)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetStrikethrough>(lpVtbl->GetStrikethrough)(This, currentPosition, hasStrikethrough, textRange);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetStrikethrough>(lpVtbl->GetStrikethrough)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), currentPosition, hasStrikethrough, textRange);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetDrawingEffect([NativeTypeName("UINT32")] uint currentPosition, IUnknown** drawingEffect, DWRITE_TEXT_RANGE* textRange = null)
+        public int GetDrawingEffect([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("IUnknown **")] IUnknown** drawingEffect, [NativeTypeName("DWRITE_TEXT_RANGE *")] DWRITE_TEXT_RANGE* textRange)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetDrawingEffect>(lpVtbl->GetDrawingEffect)(This, currentPosition, drawingEffect, textRange);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetDrawingEffect>(lpVtbl->GetDrawingEffect)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), currentPosition, drawingEffect, textRange);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetInlineObject([NativeTypeName("UINT32")] uint currentPosition, IDWriteInlineObject** inlineObject, DWRITE_TEXT_RANGE* textRange = null)
+        public int GetInlineObject([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("IDWriteInlineObject **")] IDWriteInlineObject** inlineObject, [NativeTypeName("DWRITE_TEXT_RANGE *")] DWRITE_TEXT_RANGE* textRange)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetInlineObject>(lpVtbl->GetInlineObject)(This, currentPosition, inlineObject, textRange);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetInlineObject>(lpVtbl->GetInlineObject)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), currentPosition, inlineObject, textRange);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetTypography([NativeTypeName("UINT32")] uint currentPosition, IDWriteTypography** typography, DWRITE_TEXT_RANGE* textRange = null)
+        public int GetTypography([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("IDWriteTypography **")] IDWriteTypography** typography, [NativeTypeName("DWRITE_TEXT_RANGE *")] DWRITE_TEXT_RANGE* textRange)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetTypography>(lpVtbl->GetTypography)(This, currentPosition, typography, textRange);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetTypography>(lpVtbl->GetTypography)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), currentPosition, typography, textRange);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetLocaleNameLength1([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("UINT32")] uint* nameLength, DWRITE_TEXT_RANGE* textRange = null)
+        public int GetLocaleNameLength([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("UINT32 *")] uint* nameLength, [NativeTypeName("DWRITE_TEXT_RANGE *")] DWRITE_TEXT_RANGE* textRange)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetLocaleNameLength1>(lpVtbl->GetLocaleNameLength1)(This, currentPosition, nameLength, textRange);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetLocaleNameLength1>(lpVtbl->GetLocaleNameLength1)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), currentPosition, nameLength, textRange);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetLocaleName1([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("WCHAR[]")] ushort* localeName, [NativeTypeName("UINT32")] uint nameSize, DWRITE_TEXT_RANGE* textRange = null)
+        public int GetLocaleName([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("WCHAR *")] ushort* localeName, [NativeTypeName("UINT32")] uint nameSize, [NativeTypeName("DWRITE_TEXT_RANGE *")] DWRITE_TEXT_RANGE* textRange)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetLocaleName1>(lpVtbl->GetLocaleName1)(This, currentPosition, localeName, nameSize, textRange);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetLocaleName1>(lpVtbl->GetLocaleName1)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), currentPosition, localeName, nameSize, textRange);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Draw([Optional] void* clientDrawingContext, IDWriteTextRenderer* renderer, [NativeTypeName("FLOAT")] float originX, [NativeTypeName("FLOAT")] float originY)
+        public int Draw([NativeTypeName("void *")] void* clientDrawingContext, [NativeTypeName("IDWriteTextRenderer *")] IDWriteTextRenderer* renderer, [NativeTypeName("FLOAT")] float originX, [NativeTypeName("FLOAT")] float originY)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Draw>(lpVtbl->Draw)(This, clientDrawingContext, renderer, originX, originY);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_Draw>(lpVtbl->Draw)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), clientDrawingContext, renderer, originX, originY);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetLineMetrics([Optional, NativeTypeName("DWRITE_LINE_METRICS[]")] DWRITE_LINE_METRICS* lineMetrics, [NativeTypeName("UINT32")] uint maxLineCount, [NativeTypeName("UINT32")] uint* actualLineCount)
+        public int GetLineMetrics([NativeTypeName("DWRITE_LINE_METRICS *")] DWRITE_LINE_METRICS* lineMetrics, [NativeTypeName("UINT32")] uint maxLineCount, [NativeTypeName("UINT32 *")] uint* actualLineCount)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetLineMetrics>(lpVtbl->GetLineMetrics)(This, lineMetrics, maxLineCount, actualLineCount);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetLineMetrics>(lpVtbl->GetLineMetrics)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), lineMetrics, maxLineCount, actualLineCount);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetMetrics(DWRITE_TEXT_METRICS* textMetrics)
+        public int GetMetrics([NativeTypeName("DWRITE_TEXT_METRICS *")] DWRITE_TEXT_METRICS* textMetrics)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetMetrics>(lpVtbl->GetMetrics)(This, textMetrics);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetMetrics>(lpVtbl->GetMetrics)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), textMetrics);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetOverhangMetrics(DWRITE_OVERHANG_METRICS* overhangs)
+        public int GetOverhangMetrics([NativeTypeName("DWRITE_OVERHANG_METRICS *")] DWRITE_OVERHANG_METRICS* overhangs)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetOverhangMetrics>(lpVtbl->GetOverhangMetrics)(This, overhangs);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetOverhangMetrics>(lpVtbl->GetOverhangMetrics)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), overhangs);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetClusterMetrics([Optional, NativeTypeName("DWRITE_CLUSTER_METRICS[]")] DWRITE_CLUSTER_METRICS* clusterMetrics, [NativeTypeName("UINT32")] uint maxClusterCount, [NativeTypeName("UINT32")] uint* actualClusterCount)
+        public int GetClusterMetrics([NativeTypeName("DWRITE_CLUSTER_METRICS *")] DWRITE_CLUSTER_METRICS* clusterMetrics, [NativeTypeName("UINT32")] uint maxClusterCount, [NativeTypeName("UINT32 *")] uint* actualClusterCount)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetClusterMetrics>(lpVtbl->GetClusterMetrics)(This, clusterMetrics, maxClusterCount, actualClusterCount);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetClusterMetrics>(lpVtbl->GetClusterMetrics)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), clusterMetrics, maxClusterCount, actualClusterCount);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int DetermineMinWidth([NativeTypeName("FLOAT")] float* minWidth)
+        public int DetermineMinWidth([NativeTypeName("FLOAT *")] float* minWidth)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_DetermineMinWidth>(lpVtbl->DetermineMinWidth)(This, minWidth);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_DetermineMinWidth>(lpVtbl->DetermineMinWidth)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), minWidth);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int HitTestPoint([NativeTypeName("FLOAT")] float pointX, [NativeTypeName("FLOAT")] float pointY, [NativeTypeName("BOOL")] int* isTrailingHit, [NativeTypeName("BOOL")] int* isInside, DWRITE_HIT_TEST_METRICS* hitTestMetrics)
+        public int HitTestPoint([NativeTypeName("FLOAT")] float pointX, [NativeTypeName("FLOAT")] float pointY, [NativeTypeName("BOOL *")] int* isTrailingHit, [NativeTypeName("BOOL *")] int* isInside, [NativeTypeName("DWRITE_HIT_TEST_METRICS *")] DWRITE_HIT_TEST_METRICS* hitTestMetrics)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_HitTestPoint>(lpVtbl->HitTestPoint)(This, pointX, pointY, isTrailingHit, isInside, hitTestMetrics);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_HitTestPoint>(lpVtbl->HitTestPoint)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), pointX, pointY, isTrailingHit, isInside, hitTestMetrics);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int HitTestTextPosition([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("BOOL")] int isTrailingHit, [NativeTypeName("FLOAT")] float* pointX, [NativeTypeName("FLOAT")] float* pointY, DWRITE_HIT_TEST_METRICS* hitTestMetrics)
+        public int HitTestTextPosition([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("BOOL")] int isTrailingHit, [NativeTypeName("FLOAT *")] float* pointX, [NativeTypeName("FLOAT *")] float* pointY, [NativeTypeName("DWRITE_HIT_TEST_METRICS *")] DWRITE_HIT_TEST_METRICS* hitTestMetrics)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_HitTestTextPosition>(lpVtbl->HitTestTextPosition)(This, textPosition, isTrailingHit, pointX, pointY, hitTestMetrics);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_HitTestTextPosition>(lpVtbl->HitTestTextPosition)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), textPosition, isTrailingHit, pointX, pointY, hitTestMetrics);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int HitTestTextRange([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint textLength, [NativeTypeName("FLOAT")] float originX, [NativeTypeName("FLOAT")] float originY, [Optional, NativeTypeName("DWRITE_HIT_TEST_METRICS[]")] DWRITE_HIT_TEST_METRICS* hitTestMetrics, [NativeTypeName("UINT32")] uint maxHitTestMetricsCount, [NativeTypeName("UINT32")] uint* actualHitTestMetricsCount)
+        public int HitTestTextRange([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint textLength, [NativeTypeName("FLOAT")] float originX, [NativeTypeName("FLOAT")] float originY, [NativeTypeName("DWRITE_HIT_TEST_METRICS *")] DWRITE_HIT_TEST_METRICS* hitTestMetrics, [NativeTypeName("UINT32")] uint maxHitTestMetricsCount, [NativeTypeName("UINT32 *")] uint* actualHitTestMetricsCount)
         {
-            fixed (IDWriteTextLayout* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_HitTestTextRange>(lpVtbl->HitTestTextRange)(This, textPosition, textLength, originX, originY, hitTestMetrics, maxHitTestMetricsCount, actualHitTestMetricsCount);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_HitTestTextRange>(lpVtbl->HitTestTextRange)((IDWriteTextLayout*)Unsafe.AsPointer(ref this), textPosition, textLength, originX, originY, hitTestMetrics, maxHitTestMetricsCount, actualHitTestMetricsCount);
         }
 
         public partial struct Vtbl
         {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
             public IntPtr QueryInterface;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr AddRef;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr Release;
 
+            [NativeTypeName("HRESULT (DWRITE_TEXT_ALIGNMENT) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetTextAlignment;
 
+            [NativeTypeName("HRESULT (DWRITE_PARAGRAPH_ALIGNMENT) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetParagraphAlignment;
 
+            [NativeTypeName("HRESULT (DWRITE_WORD_WRAPPING) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetWordWrapping;
 
+            [NativeTypeName("HRESULT (DWRITE_READING_DIRECTION) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetReadingDirection;
 
+            [NativeTypeName("HRESULT (DWRITE_FLOW_DIRECTION) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetFlowDirection;
 
+            [NativeTypeName("HRESULT (FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetIncrementalTabStop;
 
+            [NativeTypeName("HRESULT (const DWRITE_TRIMMING *, IDWriteInlineObject *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetTrimming;
 
+            [NativeTypeName("HRESULT (DWRITE_LINE_SPACING_METHOD, FLOAT, FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetLineSpacing;
 
+            [NativeTypeName("DWRITE_TEXT_ALIGNMENT () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetTextAlignment;
 
+            [NativeTypeName("DWRITE_PARAGRAPH_ALIGNMENT () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetParagraphAlignment;
 
+            [NativeTypeName("DWRITE_WORD_WRAPPING () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetWordWrapping;
 
+            [NativeTypeName("DWRITE_READING_DIRECTION () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetReadingDirection;
 
+            [NativeTypeName("DWRITE_FLOW_DIRECTION () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFlowDirection;
 
+            [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetIncrementalTabStop;
 
+            [NativeTypeName("HRESULT (DWRITE_TRIMMING *, IDWriteInlineObject **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetTrimming;
 
+            [NativeTypeName("HRESULT (DWRITE_LINE_SPACING_METHOD *, FLOAT *, FLOAT *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetLineSpacing;
 
+            [NativeTypeName("HRESULT (IDWriteFontCollection **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFontCollection;
 
+            [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFontFamilyNameLength;
 
+            [NativeTypeName("HRESULT (WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFontFamilyName;
 
+            [NativeTypeName("DWRITE_FONT_WEIGHT () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFontWeight;
 
+            [NativeTypeName("DWRITE_FONT_STYLE () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFontStyle;
 
+            [NativeTypeName("DWRITE_FONT_STRETCH () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFontStretch;
 
+            [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFontSize;
 
+            [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetLocaleNameLength;
 
+            [NativeTypeName("HRESULT (WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetLocaleName;
 
+            [NativeTypeName("HRESULT (FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetMaxWidth;
 
+            [NativeTypeName("HRESULT (FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetMaxHeight;
 
+            [NativeTypeName("HRESULT (IDWriteFontCollection *, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetFontCollection;
 
+            [NativeTypeName("HRESULT (const WCHAR *, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetFontFamilyName;
 
+            [NativeTypeName("HRESULT (DWRITE_FONT_WEIGHT, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetFontWeight;
 
+            [NativeTypeName("HRESULT (DWRITE_FONT_STYLE, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetFontStyle;
 
+            [NativeTypeName("HRESULT (DWRITE_FONT_STRETCH, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetFontStretch;
 
+            [NativeTypeName("HRESULT (FLOAT, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetFontSize;
 
+            [NativeTypeName("HRESULT (BOOL, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetUnderline;
 
+            [NativeTypeName("HRESULT (BOOL, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetStrikethrough;
 
+            [NativeTypeName("HRESULT (IUnknown *, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetDrawingEffect;
 
+            [NativeTypeName("HRESULT (IDWriteInlineObject *, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetInlineObject;
 
+            [NativeTypeName("HRESULT (IDWriteTypography *, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetTypography;
 
+            [NativeTypeName("HRESULT (const WCHAR *, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr SetLocaleName;
 
+            [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetMaxWidth;
 
+            [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetMaxHeight;
 
+            [NativeTypeName("HRESULT (UINT32, IDWriteFontCollection **, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFontCollection1;
 
+            [NativeTypeName("HRESULT (UINT32, UINT32 *, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFontFamilyNameLength1;
 
+            [NativeTypeName("HRESULT (UINT32, WCHAR *, UINT32, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFontFamilyName1;
 
+            [NativeTypeName("HRESULT (UINT32, DWRITE_FONT_WEIGHT *, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFontWeight1;
 
+            [NativeTypeName("HRESULT (UINT32, DWRITE_FONT_STYLE *, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFontStyle1;
 
+            [NativeTypeName("HRESULT (UINT32, DWRITE_FONT_STRETCH *, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFontStretch1;
 
+            [NativeTypeName("HRESULT (UINT32, FLOAT *, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFontSize1;
 
+            [NativeTypeName("HRESULT (UINT32, BOOL *, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetUnderline;
 
+            [NativeTypeName("HRESULT (UINT32, BOOL *, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetStrikethrough;
 
+            [NativeTypeName("HRESULT (UINT32, IUnknown **, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetDrawingEffect;
 
+            [NativeTypeName("HRESULT (UINT32, IDWriteInlineObject **, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetInlineObject;
 
+            [NativeTypeName("HRESULT (UINT32, IDWriteTypography **, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetTypography;
 
+            [NativeTypeName("HRESULT (UINT32, UINT32 *, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetLocaleNameLength1;
 
+            [NativeTypeName("HRESULT (UINT32, WCHAR *, UINT32, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetLocaleName1;
 
+            [NativeTypeName("HRESULT (void *, IDWriteTextRenderer *, FLOAT, FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr Draw;
 
+            [NativeTypeName("HRESULT (DWRITE_LINE_METRICS *, UINT32, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetLineMetrics;
 
+            [NativeTypeName("HRESULT (DWRITE_TEXT_METRICS *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetMetrics;
 
+            [NativeTypeName("HRESULT (DWRITE_OVERHANG_METRICS *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetOverhangMetrics;
 
+            [NativeTypeName("HRESULT (DWRITE_CLUSTER_METRICS *, UINT32, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetClusterMetrics;
 
+            [NativeTypeName("HRESULT (FLOAT *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr DetermineMinWidth;
 
+            [NativeTypeName("HRESULT (FLOAT, FLOAT, BOOL *, BOOL *, DWRITE_HIT_TEST_METRICS *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr HitTestPoint;
 
+            [NativeTypeName("HRESULT (UINT32, BOOL, FLOAT *, FLOAT *, DWRITE_HIT_TEST_METRICS *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr HitTestTextPosition;
 
+            [NativeTypeName("HRESULT (UINT32, UINT32, FLOAT, FLOAT, DWRITE_HIT_TEST_METRICS *, UINT32, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr HitTestTextRange;
         }
     }

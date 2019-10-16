@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\d3d11.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/d3d11.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -47,7 +47,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDriverHandle(ID3D11VideoDecoder* pThis, [NativeTypeName("HANDLE *")] void** pDriverHandle);
+        public delegate int _GetDriverHandle(ID3D11VideoDecoder* pThis, [NativeTypeName("HANDLE *")] IntPtr* pDriverHandle);
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
@@ -97,38 +97,38 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetDriverHandle([NativeTypeName("HANDLE *")] void** pDriverHandle)
+        public int GetDriverHandle([NativeTypeName("HANDLE *")] IntPtr* pDriverHandle)
         {
             return Marshal.GetDelegateForFunctionPointer<_GetDriverHandle>(lpVtbl->GetDriverHandle)((ID3D11VideoDecoder*)Unsafe.AsPointer(ref this), pDriverHandle);
         }
 
         public partial struct Vtbl
         {
-            [NativeTypeName("HRESULT (const IID &, void **)")]
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
             public IntPtr QueryInterface;
 
-            [NativeTypeName("ULONG ()")]
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr AddRef;
 
-            [NativeTypeName("ULONG ()")]
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr Release;
 
-            [NativeTypeName("void (ID3D11Device **)")]
+            [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
             public IntPtr GetDevice;
 
-            [NativeTypeName("HRESULT (const GUID &, UINT *, void *)")]
+            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
             public IntPtr GetPrivateData;
 
-            [NativeTypeName("HRESULT (const GUID &, UINT, const void *)")]
+            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
             public IntPtr SetPrivateData;
 
-            [NativeTypeName("HRESULT (const GUID &, const IUnknown *)")]
+            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
             public IntPtr SetPrivateDataInterface;
 
-            [NativeTypeName("HRESULT (D3D11_VIDEO_DECODER_DESC *, D3D11_VIDEO_DECODER_CONFIG *)")]
+            [NativeTypeName("HRESULT (D3D11_VIDEO_DECODER_DESC *, D3D11_VIDEO_DECODER_CONFIG *) __attribute__((stdcall))")]
             public IntPtr GetCreationParameters;
 
-            [NativeTypeName("HRESULT (HANDLE *)")]
+            [NativeTypeName("HRESULT (HANDLE *) __attribute__((stdcall))")]
             public IntPtr GetDriverHandle;
         }
     }

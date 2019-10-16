@@ -1,11 +1,10 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\d2d1_1.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/d2d1_1.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop
 {
-    /// <summary>This defines how geometries should be drawn and widened.</summary>
     public partial struct D2D1_STROKE_STYLE_PROPERTIES1
     {
         public D2D1_CAP_STYLE startCap;
@@ -24,7 +23,6 @@ namespace TerraFX.Interop
         [NativeTypeName("FLOAT")]
         public float dashOffset;
 
-        /// <summary>How the nib of the stroke is influenced by the context properties.</summary>
         public D2D1_STROKE_TRANSFORM_TYPE transformType;
     }
 }

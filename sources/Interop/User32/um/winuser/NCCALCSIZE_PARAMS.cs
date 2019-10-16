@@ -1,7 +1,10 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\winuser.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/winuser.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
+
+using System;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
@@ -19,16 +22,9 @@ namespace TerraFX.Interop
             internal RECT e1;
             internal RECT e2;
 
-            public unsafe ref RECT this[int index]
-            {
-                get
-                {
-                    fixed (RECT* pThis = &e0)
-                    {
-                        return ref pThis[index];
-                    }
-                }
-            }
+            public ref RECT this[int index] => ref AsSpan()[index];
+
+            public Span<RECT> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 3);
         }
     }
 }

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\wingdi.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop
@@ -24,6 +24,7 @@ namespace TerraFX.Interop
         DISPLAYCONFIG_OUTPUT_TECHNOLOGY_SDTVDONGLE = 14,
         DISPLAYCONFIG_OUTPUT_TECHNOLOGY_MIRACAST = 15,
         DISPLAYCONFIG_OUTPUT_TECHNOLOGY_INDIRECT_WIRED = 16,
+        DISPLAYCONFIG_OUTPUT_TECHNOLOGY_INDIRECT_VIRTUAL = 17,
         DISPLAYCONFIG_OUTPUT_TECHNOLOGY_INTERNAL = 0x80000000,
         DISPLAYCONFIG_OUTPUT_TECHNOLOGY_FORCE_UINT32 = 0xFFFFFFFF,
     }

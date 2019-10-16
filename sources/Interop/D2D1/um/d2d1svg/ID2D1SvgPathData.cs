@@ -1,14 +1,14 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\d2d1svg.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/d2d1svg.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    /// <summary>Interface describing SVG path data. Path data can be set as the 'd' attribute on a 'path' element. The path data set is factored into two arrays. The segment data array stores all numbers and the commands array stores the set of commands. Unlike the string data set in the d attribute, each command in this representation uses a fixed number of elements in the segment data array. Therefore, the path 'M 0,0 100,0 0,100 Z' is represented as: 'M0,0 L100,0 L0,100 Z'. This is split into two arrays, with the segment data containing '0,0 100,0 0,100', and the commands containing 'M L L Z'.</summary>
     [Guid("C095E4F4-BB98-43D6-9745-4D1B84EC9888")]
     public unsafe partial struct ID2D1SvgPathData
     {
@@ -16,251 +16,195 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ID2D1SvgPathData* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
+        public delegate int _QueryInterface(ID2D1SvgPathData* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ID2D1SvgPathData* This);
+        public delegate uint _AddRef(ID2D1SvgPathData* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ID2D1SvgPathData* This);
+        public delegate uint _Release(ID2D1SvgPathData* pThis);
 
-        /// <summary>Retrieve the factory associated with this resource.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetFactory(ID2D1SvgPathData* This, ID2D1Factory** factory);
+        public delegate void _GetFactory(ID2D1SvgPathData* pThis, [NativeTypeName("ID2D1Factory **")] ID2D1Factory** factory);
 
-        /// <summary>Returns the element on which this attribute is set. Returns null if the attribute is not set on any element.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetElement(ID2D1SvgPathData* This, ID2D1SvgElement** element);
+        public delegate void _GetElement(ID2D1SvgPathData* pThis, [NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** element);
 
-        /// <summary>Creates a clone of this attribute value. On creation, the cloned attribute is not set on any element.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Clone(ID2D1SvgPathData* This, ID2D1SvgAttribute** attribute);
+        public delegate int _Clone(ID2D1SvgPathData* pThis, [NativeTypeName("ID2D1SvgAttribute **")] ID2D1SvgAttribute** attribute);
 
-        /// <summary>Removes data from the end of the segment data array.</summary>
-        /// <param name="dataCount">Specifies how much data to remove.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _RemoveSegmentDataAtEnd(ID2D1SvgPathData* This, [NativeTypeName("UINT32")] uint dataCount);
+        public delegate int _RemoveSegmentDataAtEnd(ID2D1SvgPathData* pThis, [NativeTypeName("UINT32")] uint dataCount);
 
-        /// <summary>Updates the segment data array. Existing segment data not updated by this method are preserved. The array is resized larger if necessary to accomodate the new segment data.</summary>
-        /// <param name="data">The data array.</param>
-        /// <param name="dataCount">The number of data to update.</param>
-        /// <param name="startIndex">The index at which to begin updating segment data. Must be less than or equal to the size of the segment data array.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _UpdateSegmentData(ID2D1SvgPathData* This, [NativeTypeName("FLOAT[]")] float* data, [NativeTypeName("UINT32")] uint dataCount, [NativeTypeName("UINT32")] uint startIndex = 0);
+        public delegate int _UpdateSegmentData(ID2D1SvgPathData* pThis, [NativeTypeName("const FLOAT *")] float* data, [NativeTypeName("UINT32")] uint dataCount, [NativeTypeName("UINT32")] uint startIndex);
 
-        /// <summary>Gets data from the segment data array.</summary>
-        /// <param name="data">Buffer to contain the segment data array.</param>
-        /// <param name="dataCount">The element count of the buffer.</param>
-        /// <param name="startIndex">The index of the first segment data to retrieve.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetSegmentData(ID2D1SvgPathData* This, [NativeTypeName("FLOAT[]")] float* data, [NativeTypeName("UINT32")] uint dataCount, [NativeTypeName("UINT32")] uint startIndex = 0);
+        public delegate int _GetSegmentData(ID2D1SvgPathData* pThis, [NativeTypeName("FLOAT *")] float* data, [NativeTypeName("UINT32")] uint dataCount, [NativeTypeName("UINT32")] uint startIndex);
 
-        /// <summary>Gets the size of the segment data array.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public delegate uint _GetSegmentDataCount(ID2D1SvgPathData* This);
+        public delegate uint _GetSegmentDataCount(ID2D1SvgPathData* pThis);
 
-        /// <summary>Removes commands from the end of the commands array.</summary>
-        /// <param name="commandsCount">Specifies how many commands to remove.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _RemoveCommandsAtEnd(ID2D1SvgPathData* This, [NativeTypeName("UINT32")] uint commandsCount);
+        public delegate int _RemoveCommandsAtEnd(ID2D1SvgPathData* pThis, [NativeTypeName("UINT32")] uint commandsCount);
 
-        /// <summary>Updates the commands array. Existing commands not updated by this method are preserved. The array is resized larger if necessary to accomodate the new commands.</summary>
-        /// <param name="commands">The commands array.</param>
-        /// <param name="commandsCount">The number of commands to update.</param>
-        /// <param name="startIndex">The index at which to begin updating commands. Must be less than or equal to the size of the commands array.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _UpdateCommands(ID2D1SvgPathData* This, [NativeTypeName("D2D1_SVG_PATH_COMMAND")] D2D1_SVG_PATH_COMMAND* commands, [NativeTypeName("UINT32")] uint commandsCount, [NativeTypeName("UINT32")] uint startIndex = 0);
+        public delegate int _UpdateCommands(ID2D1SvgPathData* pThis, [NativeTypeName("const D2D1_SVG_PATH_COMMAND *")] D2D1_SVG_PATH_COMMAND* commands, [NativeTypeName("UINT32")] uint commandsCount, [NativeTypeName("UINT32")] uint startIndex);
 
-        /// <summary>Gets commands from the commands array.</summary>
-        /// <param name="commands">Buffer to contain the commands</param>
-        /// <param name="commandsCount">The element count of the buffer.</param>
-        /// <param name="startIndex">The index of the first commands to retrieve.</param>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetCommands(ID2D1SvgPathData* This, [NativeTypeName("D2D1_SVG_PATH_COMMAND[]")] D2D1_SVG_PATH_COMMAND* commands, [NativeTypeName("UINT32")] uint commandsCount, [NativeTypeName("UINT32")] uint startIndex = 0);
+        public delegate int _GetCommands(ID2D1SvgPathData* pThis, [NativeTypeName("D2D1_SVG_PATH_COMMAND *")] D2D1_SVG_PATH_COMMAND* commands, [NativeTypeName("UINT32")] uint commandsCount, [NativeTypeName("UINT32")] uint startIndex);
 
-        /// <summary>Gets the size of the commands array.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
-        public delegate uint _GetCommandsCount(ID2D1SvgPathData* This);
+        public delegate uint _GetCommandsCount(ID2D1SvgPathData* pThis);
 
-        /// <summary>Creates a path geometry object representing the path data.</summary>
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreatePathGeometry(ID2D1SvgPathData* This, D2D1_FILL_MODE fillMode, ID2D1PathGeometry1** pathGeometry);
+        public delegate int _CreatePathGeometry(ID2D1SvgPathData* pThis, D2D1_FILL_MODE fillMode, [NativeTypeName("ID2D1PathGeometry1 **")] ID2D1PathGeometry1** pathGeometry);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            fixed (ID2D1SvgPathData* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            fixed (ID2D1SvgPathData* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ID2D1SvgPathData*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            fixed (ID2D1SvgPathData* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ID2D1SvgPathData*)Unsafe.AsPointer(ref this));
         }
 
-        public void GetFactory(ID2D1Factory** factory)
+        public void GetFactory([NativeTypeName("ID2D1Factory **")] ID2D1Factory** factory)
         {
-            fixed (ID2D1SvgPathData* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)(This, factory);
-            }
+            Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), factory);
         }
 
-        public void GetElement(ID2D1SvgElement** element)
+        public void GetElement([NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** element)
         {
-            fixed (ID2D1SvgPathData* This = &this)
-            {
-                Marshal.GetDelegateForFunctionPointer<_GetElement>(lpVtbl->GetElement)(This, element);
-            }
+            Marshal.GetDelegateForFunctionPointer<_GetElement>(lpVtbl->GetElement)((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), element);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Clone(ID2D1SvgAttribute** attribute)
+        public int Clone([NativeTypeName("ID2D1SvgAttribute **")] ID2D1SvgAttribute** attribute)
         {
-            fixed (ID2D1SvgPathData* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Clone>(lpVtbl->Clone)(This, attribute);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_Clone>(lpVtbl->Clone)((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), attribute);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int RemoveSegmentDataAtEnd([NativeTypeName("UINT32")] uint dataCount)
         {
-            fixed (ID2D1SvgPathData* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_RemoveSegmentDataAtEnd>(lpVtbl->RemoveSegmentDataAtEnd)(This, dataCount);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_RemoveSegmentDataAtEnd>(lpVtbl->RemoveSegmentDataAtEnd)((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), dataCount);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int UpdateSegmentData([NativeTypeName("FLOAT[]")] float* data, [NativeTypeName("UINT32")] uint dataCount, [NativeTypeName("UINT32")] uint startIndex = 0)
+        public int UpdateSegmentData([NativeTypeName("const FLOAT *")] float* data, [NativeTypeName("UINT32")] uint dataCount, [NativeTypeName("UINT32")] uint startIndex)
         {
-            fixed (ID2D1SvgPathData* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_UpdateSegmentData>(lpVtbl->UpdateSegmentData)(This, data, dataCount, startIndex);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_UpdateSegmentData>(lpVtbl->UpdateSegmentData)((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), data, dataCount, startIndex);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetSegmentData([NativeTypeName("FLOAT[]")] float* data, [NativeTypeName("UINT32")] uint dataCount, [NativeTypeName("UINT32")] uint startIndex = 0)
+        public int GetSegmentData([NativeTypeName("FLOAT *")] float* data, [NativeTypeName("UINT32")] uint dataCount, [NativeTypeName("UINT32")] uint startIndex)
         {
-            fixed (ID2D1SvgPathData* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetSegmentData>(lpVtbl->GetSegmentData)(This, data, dataCount, startIndex);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetSegmentData>(lpVtbl->GetSegmentData)((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), data, dataCount, startIndex);
         }
 
         [return: NativeTypeName("UINT32")]
         public uint GetSegmentDataCount()
         {
-            fixed (ID2D1SvgPathData* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetSegmentDataCount>(lpVtbl->GetSegmentDataCount)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetSegmentDataCount>(lpVtbl->GetSegmentDataCount)((ID2D1SvgPathData*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int RemoveCommandsAtEnd([NativeTypeName("UINT32")] uint commandsCount)
         {
-            fixed (ID2D1SvgPathData* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_RemoveCommandsAtEnd>(lpVtbl->RemoveCommandsAtEnd)(This, commandsCount);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_RemoveCommandsAtEnd>(lpVtbl->RemoveCommandsAtEnd)((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), commandsCount);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int UpdateCommands([NativeTypeName("D2D1_SVG_PATH_COMMAND")] D2D1_SVG_PATH_COMMAND* commands, [NativeTypeName("UINT32")] uint commandsCount, [NativeTypeName("UINT32")] uint startIndex = 0)
+        public int UpdateCommands([NativeTypeName("const D2D1_SVG_PATH_COMMAND *")] D2D1_SVG_PATH_COMMAND* commands, [NativeTypeName("UINT32")] uint commandsCount, [NativeTypeName("UINT32")] uint startIndex)
         {
-            fixed (ID2D1SvgPathData* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_UpdateCommands>(lpVtbl->UpdateCommands)(This, commands, commandsCount, startIndex);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_UpdateCommands>(lpVtbl->UpdateCommands)((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), commands, commandsCount, startIndex);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetCommands([NativeTypeName("D2D1_SVG_PATH_COMMAND[]")] D2D1_SVG_PATH_COMMAND* commands, [NativeTypeName("UINT32")] uint commandsCount, [NativeTypeName("UINT32")] uint startIndex = 0)
+        public int GetCommands([NativeTypeName("D2D1_SVG_PATH_COMMAND *")] D2D1_SVG_PATH_COMMAND* commands, [NativeTypeName("UINT32")] uint commandsCount, [NativeTypeName("UINT32")] uint startIndex)
         {
-            fixed (ID2D1SvgPathData* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetCommands>(lpVtbl->GetCommands)(This, commands, commandsCount, startIndex);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetCommands>(lpVtbl->GetCommands)((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), commands, commandsCount, startIndex);
         }
 
         [return: NativeTypeName("UINT32")]
         public uint GetCommandsCount()
         {
-            fixed (ID2D1SvgPathData* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_GetCommandsCount>(lpVtbl->GetCommandsCount)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_GetCommandsCount>(lpVtbl->GetCommandsCount)((ID2D1SvgPathData*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreatePathGeometry(D2D1_FILL_MODE fillMode, ID2D1PathGeometry1** pathGeometry)
+        public int CreatePathGeometry(D2D1_FILL_MODE fillMode, [NativeTypeName("ID2D1PathGeometry1 **")] ID2D1PathGeometry1** pathGeometry)
         {
-            fixed (ID2D1SvgPathData* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_CreatePathGeometry>(lpVtbl->CreatePathGeometry)(This, fillMode, pathGeometry);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_CreatePathGeometry>(lpVtbl->CreatePathGeometry)((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), fillMode, pathGeometry);
         }
 
         public partial struct Vtbl
         {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
             public IntPtr QueryInterface;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr AddRef;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr Release;
 
+            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetFactory;
 
+            [NativeTypeName("void (ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetElement;
 
+            [NativeTypeName("HRESULT (ID2D1SvgAttribute **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr Clone;
 
+            [NativeTypeName("HRESULT (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr RemoveSegmentDataAtEnd;
 
+            [NativeTypeName("HRESULT (const FLOAT *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr UpdateSegmentData;
 
+            [NativeTypeName("HRESULT (FLOAT *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetSegmentData;
 
+            [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetSegmentDataCount;
 
+            [NativeTypeName("HRESULT (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr RemoveCommandsAtEnd;
 
+            [NativeTypeName("HRESULT (const D2D1_SVG_PATH_COMMAND *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr UpdateCommands;
 
+            [NativeTypeName("HRESULT (D2D1_SVG_PATH_COMMAND *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetCommands;
 
+            [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetCommandsCount;
 
+            [NativeTypeName("HRESULT (D2D1_FILL_MODE, ID2D1PathGeometry1 **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr CreatePathGeometry;
         }
     }
