@@ -10,8 +10,6 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class D3D11
     {
-        private const string LibraryPath = "D3D11";
-
         [return: NativeTypeName("UINT")]
         public static uint D3D11CalcSubresource([NativeTypeName("UINT")] uint MipSlice, [NativeTypeName("UINT")] uint ArraySlice, [NativeTypeName("UINT")] uint MipLevels)
         {
