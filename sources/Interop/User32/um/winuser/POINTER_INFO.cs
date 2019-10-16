@@ -1,13 +1,13 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\winuser.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/winuser.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct POINTER_INFO
+    public partial struct POINTER_INFO
     {
         [NativeTypeName("POINTER_INPUT_TYPE")]
         public uint pointerType;
@@ -22,7 +22,7 @@ namespace TerraFX.Interop
         public uint pointerFlags;
 
         [NativeTypeName("HANDLE")]
-        public void* sourceDevice;
+        public IntPtr sourceDevice;
 
         [NativeTypeName("HWND")]
         public IntPtr hwndTarget;

@@ -1,13 +1,13 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um\winuser.h in the Windows SDK for Windows 10.0.15063.0
+// Ported from um/winuser.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct ICONINFOEX
+    public unsafe partial struct ICONINFOEXA
     {
         [NativeTypeName("DWORD")]
         public uint cbSize;
@@ -30,10 +30,10 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort wResID;
 
-        [NativeTypeName("WCHAR [260]")]
-        public fixed ushort szModName[260];
+        [NativeTypeName("CHAR [260]")]
+        public fixed sbyte szModName[260];
 
-        [NativeTypeName("WCHAR [260]")]
-        public fixed ushort szResName[260];
+        [NativeTypeName("CHAR [260]")]
+        public fixed sbyte szResName[260];
     }
 }
