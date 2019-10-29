@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct D2D_MATRIX_3X2_F
     {
-        public static readonly D2D_MATRIX_3X2_F Identity = new D2D_MATRIX_3X2_F(1f, 0f, 0f, 1f, 0f, 0f);
+        public static readonly D2D_MATRIX_3X2_F Identity = new D2D_MATRIX_3X2_F(1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f);
 
         public D2D_MATRIX_3X2_F(float m11, float m12, float m21, float m22, float m31, float m32) : this()
         {
@@ -34,7 +34,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public readonly bool IsIdentity => Anonymous.Anonymous2._11 == 1f && Anonymous.Anonymous2._12 == 0f && Anonymous.Anonymous2._21 == 0f && Anonymous.Anonymous2._22 == 1f && Anonymous.Anonymous2._31 == 0f && Anonymous.Anonymous2._32 == 0f;
+        public readonly bool IsIdentity => Anonymous.Anonymous2._11 == 1.0f && Anonymous.Anonymous2._12 == 0.0f && Anonymous.Anonymous2._21 == 0.0f && Anonymous.Anonymous2._22 == 1.0f && Anonymous.Anonymous2._31 == 0.0f && Anonymous.Anonymous2._32 == 0.0f;
 
         public bool Invert()
         {
@@ -64,15 +64,15 @@ namespace TerraFX.Interop
             Anonymous.Anonymous2._32 = (a->Anonymous.Anonymous2._31 * b->Anonymous.Anonymous2._12) + (a->Anonymous.Anonymous2._32 * b->Anonymous.Anonymous2._22) + b->Anonymous.Anonymous2._32;
         }
 
-        public readonly D2D_POINT_2F TransformPoint(D2D_POINT_2F point) => new D2D_POINT_2F((point.x * Anonymous.Anonymous2._11) + (point.y * Anonymous.Anonymous2._21) + Anonymous.Anonymous2._31, (point.x * Anonymous.Anonymous2._12) + (point.y * Anonymous.Anonymous2._22) + Anonymous.Anonymous2._32);
+        public readonly D2D_POINT_2F TransformPoint(in D2D_POINT_2F point) => new D2D_POINT_2F((point.x * Anonymous.Anonymous2._11) + (point.y * Anonymous.Anonymous2._21) + Anonymous.Anonymous2._31, (point.x * Anonymous.Anonymous2._12) + (point.y * Anonymous.Anonymous2._22) + Anonymous.Anonymous2._32);
 
-        public static D2D_MATRIX_3X2_F Translation(D2D_SIZE_F size) => new D2D_MATRIX_3X2_F(1f, 0f, 0f, 1f, size.width, size.height);
+        public static D2D_MATRIX_3X2_F Translation(in D2D_SIZE_F size) => new D2D_MATRIX_3X2_F(1.0f, 0.0f, 0.0f, 1.0f, size.width, size.height);
 
         public static D2D_MATRIX_3X2_F Translation(float x, float y) => Translation(new D2D_SIZE_F(x, y));
 
-        public static D2D_MATRIX_3X2_F Scale(D2D_SIZE_F size, D2D_POINT_2F center = default) => new D2D_MATRIX_3X2_F(size.width, 0f, 0f, size.height, center.x - (size.width * center.x), center.y - (size.height * center.y));
+        public static D2D_MATRIX_3X2_F Scale(in D2D_SIZE_F size, in D2D_POINT_2F center = default) => new D2D_MATRIX_3X2_F(size.width, 0.0f, 0.0f, size.height, center.x - (size.width * center.x), center.y - (size.height * center.y));
 
-        public static D2D_MATRIX_3X2_F Scale(float x, float y, D2D_POINT_2F center = default) => Scale(new D2D_SIZE_F(x, y), center);
+        public static D2D_MATRIX_3X2_F Scale(float x, float y, in D2D_POINT_2F center) => Scale(new D2D_SIZE_F(x, y), center);
 
         public static D2D_MATRIX_3X2_F IdentityMatrix() => Identity;
 
