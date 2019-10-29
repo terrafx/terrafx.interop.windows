@@ -7,12 +7,31 @@ namespace TerraFX.Interop
 {
     public partial struct DXGI_RGBA
     {
-        public DXGI_RGBA(float r, float g, float b, float a = 1.0f)
+        private const uint RedShift = 16u;
+        private const uint GreenShift = 8u;
+        private const uint BlueShift = 0u;
+        private const uint RedMask = 0xff << (int)RedShift;
+        private const uint GreenMask = 0xff << (int)GreenShift;
+        private const uint BlueMask = 0xff << (int)BlueShift;
+
+        public DXGI_RGBA(uint rgb, float a = 1.0f)
         {
-            this.r = r;
-            this.g = g;
-            this.b = b;
+            r = ((rgb & RedMask) >> (int)RedShift) / 255.0f;
+            g = ((rgb & GreenMask) >> (int)GreenShift) / 255.0f;
+            b = ((rgb & BlueMask) >> (int)BlueShift) / 255.0f;
             this.a = a;
+        }
+
+        public DXGI_RGBA(ColorF knownColor, float a = 1.0f) : this((uint)knownColor, a)
+        {
+        }
+
+        public DXGI_RGBA(float red, float green, float blue, float alpha = 1.0f)
+        {
+            r = red;
+            g = green;
+            b = blue;
+            a = alpha;
         }
     }
 }
