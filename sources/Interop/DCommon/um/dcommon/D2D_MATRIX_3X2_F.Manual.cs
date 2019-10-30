@@ -3,20 +3,24 @@
 // Ported from um/d2d1helper.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using Microsoft.VisualBasic.CompilerServices;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct D2D_MATRIX_3X2_F
     {
-        public static readonly D2D_MATRIX_3X2_F Identity = new D2D_MATRIX_3X2_F(1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f);
+        public static readonly D2D_MATRIX_3X2_F Identity = new D2D_MATRIX_3X2_F(
+            1.0f, 0.0f, 0.0f,
+            1.0f, 0.0f, 0.0f);
 
-        public D2D_MATRIX_3X2_F(float m11, float m12, float m21, float m22, float m31, float m32) : this()
+        public D2D_MATRIX_3X2_F(
+            float m11, float m12, float m21,
+            float m22, float m31, float m32) : this()
         {
             Anonymous.Anonymous2._11 = m11;
             Anonymous.Anonymous2._12 = m12;
+
             Anonymous.Anonymous2._21 = m21;
             Anonymous.Anonymous2._22 = m22;
+
             Anonymous.Anonymous2._31 = m31;
             Anonymous.Anonymous2._32 = m32;
         }
@@ -34,7 +38,10 @@ namespace TerraFX.Interop
             }
         }
 
-        public readonly bool IsIdentity => Anonymous.Anonymous2._11 == 1.0f && Anonymous.Anonymous2._12 == 0.0f && Anonymous.Anonymous2._21 == 0.0f && Anonymous.Anonymous2._22 == 1.0f && Anonymous.Anonymous2._31 == 0.0f && Anonymous.Anonymous2._32 == 0.0f;
+        public readonly bool IsIdentity =>
+            Anonymous.Anonymous2._11 == 1.0f && Anonymous.Anonymous2._12 == 0.0f &&
+            Anonymous.Anonymous2._21 == 0.0f && Anonymous.Anonymous2._22 == 1.0f &&
+            Anonymous.Anonymous2._31 == 0.0f && Anonymous.Anonymous2._32 == 0.0f;
 
         public bool Invert()
         {
