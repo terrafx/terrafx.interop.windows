@@ -1,4 +1,4 @@
-﻿// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
 using System.Runtime.InteropServices;
 
@@ -19,5 +19,16 @@ namespace TerraFX.Interop
         [DllImport(D2D1LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "D2D1InvertMatrix", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int D2D1InvertMatrix([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* matrix);
+
+        [DllImport(D2D1LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "D2D1SinCos", ExactSpelling = true)]
+        public static extern void D2D1SinCos([NativeTypeName("FLOAT")] float angle, [NativeTypeName("FLOAT *")] float* s, [NativeTypeName("FLOAT *")] float* c);
+
+        [DllImport(D2D1LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "D2D1Tan", ExactSpelling = true)]
+        [return: NativeTypeName("FLOAT")]
+        public static extern float D2D1Tan([NativeTypeName("FLOAT")] float angle);
+
+        [DllImport(D2D1LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "D2D1Vec3Length", ExactSpelling = true)]
+        [return: NativeTypeName("FLOAT")]
+        public static extern float D2D1Vec3Length([NativeTypeName("FLOAT")] float x, [NativeTypeName("FLOAT")] float y, [NativeTypeName("FLOAT")] float z);
     }
 }
