@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct D2D_MATRIX_4X4_F
+    public unsafe partial struct D2D_MATRIX_4X4_F : IEquatable<D2D_MATRIX_4X4_F>
     {
         public static readonly D2D_MATRIX_4X4_F DEFAULT = new D2D_MATRIX_4X4_F(
             1.0f, 0.0f, 0.0f, 0.0f,
@@ -105,6 +105,37 @@ namespace TerraFX.Interop
             Anonymous.Anonymous._42 = (a->Anonymous.Anonymous._41 * b->Anonymous.Anonymous._12) + (a->Anonymous.Anonymous._42 * b->Anonymous.Anonymous._22) + (a->Anonymous.Anonymous._43 * b->Anonymous.Anonymous._32) + (a->Anonymous.Anonymous._44 * b->Anonymous.Anonymous._42);
             Anonymous.Anonymous._43 = (a->Anonymous.Anonymous._41 * b->Anonymous.Anonymous._13) + (a->Anonymous.Anonymous._42 * b->Anonymous.Anonymous._23) + (a->Anonymous.Anonymous._43 * b->Anonymous.Anonymous._33) + (a->Anonymous.Anonymous._44 * b->Anonymous.Anonymous._43);
             Anonymous.Anonymous._44 = (a->Anonymous.Anonymous._41 * b->Anonymous.Anonymous._14) + (a->Anonymous.Anonymous._42 * b->Anonymous.Anonymous._24) + (a->Anonymous.Anonymous._43 * b->Anonymous.Anonymous._34) + (a->Anonymous.Anonymous._44 * b->Anonymous.Anonymous._44);
+        }
+
+        public bool Equals(D2D_MATRIX_4X4_F other) => this == other;
+
+        public override bool Equals(object? obj) => (obj is D2D_MATRIX_4X4_F other) && this == other;
+
+        public override int GetHashCode()
+        {
+            var hashCode = new HashCode();
+
+            hashCode.Add(Anonymous.Anonymous._11);
+            hashCode.Add(Anonymous.Anonymous._12);
+            hashCode.Add(Anonymous.Anonymous._13);
+            hashCode.Add(Anonymous.Anonymous._14);
+
+            hashCode.Add(Anonymous.Anonymous._21);
+            hashCode.Add(Anonymous.Anonymous._22);
+            hashCode.Add(Anonymous.Anonymous._23);
+            hashCode.Add(Anonymous.Anonymous._24);
+
+            hashCode.Add(Anonymous.Anonymous._31);
+            hashCode.Add(Anonymous.Anonymous._32);
+            hashCode.Add(Anonymous.Anonymous._33);
+            hashCode.Add(Anonymous.Anonymous._34);
+
+            hashCode.Add(Anonymous.Anonymous._41);
+            hashCode.Add(Anonymous.Anonymous._42);
+            hashCode.Add(Anonymous.Anonymous._43);
+            hashCode.Add(Anonymous.Anonymous._44);
+
+            return hashCode.ToHashCode();
         }
 
         public static D2D_MATRIX_4X4_F Translation(float x, float y, float z) => new D2D_MATRIX_4X4_F(
@@ -222,6 +253,48 @@ namespace TerraFX.Interop
                 0.0f, 0.0f, 0.0f, 1.0f);
         }
 
+        public static bool operator ==(D2D_MATRIX_4X4_F left, D2D_MATRIX_4X4_F right) =>
+            left.Anonymous.Anonymous._11 == right.Anonymous.Anonymous._11 &&
+            left.Anonymous.Anonymous._12 == right.Anonymous.Anonymous._12 &&
+            left.Anonymous.Anonymous._13 == right.Anonymous.Anonymous._13 &&
+            left.Anonymous.Anonymous._14 == right.Anonymous.Anonymous._14 &&
+
+            left.Anonymous.Anonymous._21 == right.Anonymous.Anonymous._21 &&
+            left.Anonymous.Anonymous._22 == right.Anonymous.Anonymous._22 &&
+            left.Anonymous.Anonymous._23 == right.Anonymous.Anonymous._23 &&
+            left.Anonymous.Anonymous._24 == right.Anonymous.Anonymous._24 &&
+
+            left.Anonymous.Anonymous._31 == right.Anonymous.Anonymous._31 &&
+            left.Anonymous.Anonymous._32 == right.Anonymous.Anonymous._32 &&
+            left.Anonymous.Anonymous._33 == right.Anonymous.Anonymous._33 &&
+            left.Anonymous.Anonymous._34 == right.Anonymous.Anonymous._34 &&
+
+            left.Anonymous.Anonymous._41 == right.Anonymous.Anonymous._41 &&
+            left.Anonymous.Anonymous._42 == right.Anonymous.Anonymous._42 &&
+            left.Anonymous.Anonymous._43 == right.Anonymous.Anonymous._43 &&
+            left.Anonymous.Anonymous._44 == right.Anonymous.Anonymous._44;
+
+        public static bool operator !=(D2D_MATRIX_4X4_F left, D2D_MATRIX_4X4_F right) =>
+            left.Anonymous.Anonymous._11 != right.Anonymous.Anonymous._11 ||
+            left.Anonymous.Anonymous._12 != right.Anonymous.Anonymous._12 ||
+            left.Anonymous.Anonymous._13 != right.Anonymous.Anonymous._13 ||
+            left.Anonymous.Anonymous._14 != right.Anonymous.Anonymous._14 ||
+
+            left.Anonymous.Anonymous._21 != right.Anonymous.Anonymous._21 ||
+            left.Anonymous.Anonymous._22 != right.Anonymous.Anonymous._22 ||
+            left.Anonymous.Anonymous._23 != right.Anonymous.Anonymous._23 ||
+            left.Anonymous.Anonymous._24 != right.Anonymous.Anonymous._24 ||
+
+            left.Anonymous.Anonymous._31 != right.Anonymous.Anonymous._31 ||
+            left.Anonymous.Anonymous._32 != right.Anonymous.Anonymous._32 ||
+            left.Anonymous.Anonymous._33 != right.Anonymous.Anonymous._33 ||
+            left.Anonymous.Anonymous._34 != right.Anonymous.Anonymous._34 ||
+
+            left.Anonymous.Anonymous._41 != right.Anonymous.Anonymous._41 ||
+            left.Anonymous.Anonymous._42 != right.Anonymous.Anonymous._42 ||
+            left.Anonymous.Anonymous._43 != right.Anonymous.Anonymous._43 ||
+            left.Anonymous.Anonymous._44 != right.Anonymous.Anonymous._44;
+
         public static D2D_MATRIX_4X4_F operator *(in D2D_MATRIX_4X4_F a, in D2D_MATRIX_4X4_F b)
         {
             D2D_MATRIX_4X4_F result = default;
@@ -230,6 +303,5 @@ namespace TerraFX.Interop
 
             return result;
         }
-
     }
 }

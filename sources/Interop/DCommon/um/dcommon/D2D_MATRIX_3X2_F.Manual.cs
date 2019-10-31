@@ -3,9 +3,11 @@
 // Ported from um/d2d1helper.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop
 {
-    public unsafe partial struct D2D_MATRIX_3X2_F
+    public unsafe partial struct D2D_MATRIX_3X2_F : IEquatable<D2D_MATRIX_3X2_F>
     {
         public static readonly D2D_MATRIX_3X2_F Identity = new D2D_MATRIX_3X2_F(
             1.0f, 0.0f, 0.0f,
@@ -55,8 +57,10 @@ namespace TerraFX.Interop
         {
             Anonymous.Anonymous2._11 = (a.Anonymous.Anonymous2._11 * b.Anonymous.Anonymous2._11) + (a.Anonymous.Anonymous2._12 * b.Anonymous.Anonymous2._21);
             Anonymous.Anonymous2._12 = (a.Anonymous.Anonymous2._11 * b.Anonymous.Anonymous2._12) + (a.Anonymous.Anonymous2._12 * b.Anonymous.Anonymous2._22);
+
             Anonymous.Anonymous2._21 = (a.Anonymous.Anonymous2._21 * b.Anonymous.Anonymous2._11) + (a.Anonymous.Anonymous2._22 * b.Anonymous.Anonymous2._21);
             Anonymous.Anonymous2._22 = (a.Anonymous.Anonymous2._21 * b.Anonymous.Anonymous2._12) + (a.Anonymous.Anonymous2._22 * b.Anonymous.Anonymous2._22);
+
             Anonymous.Anonymous2._31 = (a.Anonymous.Anonymous2._31 * b.Anonymous.Anonymous2._11) + (a.Anonymous.Anonymous2._32 * b.Anonymous.Anonymous2._21) + b.Anonymous.Anonymous2._31;
             Anonymous.Anonymous2._32 = (a.Anonymous.Anonymous2._31 * b.Anonymous.Anonymous2._12) + (a.Anonymous.Anonymous2._32 * b.Anonymous.Anonymous2._22) + b.Anonymous.Anonymous2._32;
         }
@@ -65,13 +69,29 @@ namespace TerraFX.Interop
         {
             Anonymous.Anonymous2._11 = (a->Anonymous.Anonymous2._11 * b->Anonymous.Anonymous2._11) + (a->Anonymous.Anonymous2._12 * b->Anonymous.Anonymous2._21);
             Anonymous.Anonymous2._12 = (a->Anonymous.Anonymous2._11 * b->Anonymous.Anonymous2._12) + (a->Anonymous.Anonymous2._12 * b->Anonymous.Anonymous2._22);
+
             Anonymous.Anonymous2._21 = (a->Anonymous.Anonymous2._21 * b->Anonymous.Anonymous2._11) + (a->Anonymous.Anonymous2._22 * b->Anonymous.Anonymous2._21);
             Anonymous.Anonymous2._22 = (a->Anonymous.Anonymous2._21 * b->Anonymous.Anonymous2._12) + (a->Anonymous.Anonymous2._22 * b->Anonymous.Anonymous2._22);
+
             Anonymous.Anonymous2._31 = (a->Anonymous.Anonymous2._31 * b->Anonymous.Anonymous2._11) + (a->Anonymous.Anonymous2._32 * b->Anonymous.Anonymous2._21) + b->Anonymous.Anonymous2._31;
             Anonymous.Anonymous2._32 = (a->Anonymous.Anonymous2._31 * b->Anonymous.Anonymous2._12) + (a->Anonymous.Anonymous2._32 * b->Anonymous.Anonymous2._22) + b->Anonymous.Anonymous2._32;
         }
 
         public readonly D2D_POINT_2F TransformPoint(in D2D_POINT_2F point) => new D2D_POINT_2F((point.x * Anonymous.Anonymous2._11) + (point.y * Anonymous.Anonymous2._21) + Anonymous.Anonymous2._31, (point.x * Anonymous.Anonymous2._12) + (point.y * Anonymous.Anonymous2._22) + Anonymous.Anonymous2._32);
+
+        public bool Equals(D2D_MATRIX_3X2_F other) => this == other;
+
+        public override bool Equals(object? obj) => (obj is D2D_MATRIX_3X2_F other) && this == other;
+
+        public override int GetHashCode() => HashCode.Combine(
+            Anonymous.Anonymous2._11,
+            Anonymous.Anonymous2._12,
+
+            Anonymous.Anonymous2._21,
+            Anonymous.Anonymous2._22,
+
+            Anonymous.Anonymous2._31,
+            Anonymous.Anonymous2._32);
 
         public static D2D_MATRIX_3X2_F Translation(in D2D_SIZE_F size) => new D2D_MATRIX_3X2_F(1.0f, 0.0f, 0.0f, 1.0f, size.width, size.height);
 
@@ -100,6 +120,26 @@ namespace TerraFX.Interop
 
             return skew;
         }
+
+        public static bool operator ==(D2D_MATRIX_3X2_F left, D2D_MATRIX_3X2_F right) =>
+            left.Anonymous.Anonymous2._11 == right.Anonymous.Anonymous2._11 &&
+            left.Anonymous.Anonymous2._12 == right.Anonymous.Anonymous2._12 &&
+
+            left.Anonymous.Anonymous2._21 == right.Anonymous.Anonymous2._21 &&
+            left.Anonymous.Anonymous2._22 == right.Anonymous.Anonymous2._22 &&
+
+            left.Anonymous.Anonymous2._31 == right.Anonymous.Anonymous2._31 &&
+            left.Anonymous.Anonymous2._32 == right.Anonymous.Anonymous2._32;
+
+        public static bool operator !=(D2D_MATRIX_3X2_F left, D2D_MATRIX_3X2_F right) =>
+            left.Anonymous.Anonymous2._11 != right.Anonymous.Anonymous2._11 ||
+            left.Anonymous.Anonymous2._12 != right.Anonymous.Anonymous2._12 ||
+
+            left.Anonymous.Anonymous2._21 != right.Anonymous.Anonymous2._21 ||
+            left.Anonymous.Anonymous2._22 != right.Anonymous.Anonymous2._22 ||
+
+            left.Anonymous.Anonymous2._31 != right.Anonymous.Anonymous2._31 ||
+            left.Anonymous.Anonymous2._32 != right.Anonymous.Anonymous2._32;
 
         public static D2D_MATRIX_3X2_F operator *(in D2D_MATRIX_3X2_F a, in D2D_MATRIX_3X2_F b)
         {
