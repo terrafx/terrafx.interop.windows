@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class DXGI
+    public static partial class DXGI
     {
         [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "DXGIDeclareAdapterRemovalSupport", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum DXGI_COLOR_SPACE_TYPE : uint
     {
         DXGI_COLOR_SPACE_RGB_FULL_G22_NONE_P709 = 0,
