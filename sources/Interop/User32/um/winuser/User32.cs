@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winuser.h in the Windows SDK for Windows 10.0.18362.0
+// Ported from um/WinUser.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -1257,19 +1257,19 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "DestroyAcceleratorTable", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int DestroyAcceleratorTable([NativeTypeName("HACCEL")] IntPtr  hAccel);
+        public static extern int DestroyAcceleratorTable([NativeTypeName("HACCEL")] IntPtr hAccel);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CopyAcceleratorTableA", ExactSpelling = true)]
-        public static extern int CopyAcceleratorTableA([NativeTypeName("HACCEL")] IntPtr  hAccelSrc, [NativeTypeName("LPACCEL")] ACCEL* lpAccelDst, int cAccelEntries);
+        public static extern int CopyAcceleratorTableA([NativeTypeName("HACCEL")] IntPtr hAccelSrc, [NativeTypeName("LPACCEL")] ACCEL* lpAccelDst, int cAccelEntries);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CopyAcceleratorTableW", ExactSpelling = true)]
-        public static extern int CopyAcceleratorTableW([NativeTypeName("HACCEL")] IntPtr  hAccelSrc, [NativeTypeName("LPACCEL")] ACCEL* lpAccelDst, int cAccelEntries);
+        public static extern int CopyAcceleratorTableW([NativeTypeName("HACCEL")] IntPtr hAccelSrc, [NativeTypeName("LPACCEL")] ACCEL* lpAccelDst, int cAccelEntries);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "TranslateAcceleratorA", ExactSpelling = true)]
-        public static extern int TranslateAcceleratorA([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("HACCEL")] IntPtr  hAccTable, [NativeTypeName("LPMSG")] MSG* lpMsg);
+        public static extern int TranslateAcceleratorA([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("HACCEL")] IntPtr hAccTable, [NativeTypeName("LPMSG")] MSG* lpMsg);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "TranslateAcceleratorW", ExactSpelling = true)]
-        public static extern int TranslateAcceleratorW([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("HACCEL")] IntPtr  hAccTable, [NativeTypeName("LPMSG")] MSG* lpMsg);
+        public static extern int TranslateAcceleratorW([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("HACCEL")] IntPtr hAccTable, [NativeTypeName("LPMSG")] MSG* lpMsg);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetSystemMetrics", ExactSpelling = true)]
         public static extern int GetSystemMetrics(int nIndex);
@@ -1973,22 +1973,6 @@ namespace TerraFX.Interop
         [return: NativeTypeName("LONG")]
         public static extern int SetWindowLongW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG")] int dwNewLong);
 
-        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetWindowLongPtrA", ExactSpelling = true)]
-        [return: NativeTypeName("LONG_PTR")]
-        public static extern IntPtr GetWindowLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex);
-
-        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetWindowLongPtrW", ExactSpelling = true)]
-        [return: NativeTypeName("LONG_PTR")]
-        public static extern IntPtr GetWindowLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex);
-
-        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetWindowLongPtrA", ExactSpelling = true)]
-        [return: NativeTypeName("LONG_PTR")]
-        public static extern IntPtr SetWindowLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong);
-
-        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetWindowLongPtrW", ExactSpelling = true)]
-        [return: NativeTypeName("LONG_PTR")]
-        public static extern IntPtr SetWindowLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong);
-
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetClassWord", ExactSpelling = true)]
         [return: NativeTypeName("WORD")]
         public static extern ushort GetClassWord([NativeTypeName("HWND")] IntPtr hWnd, int nIndex);
@@ -2012,22 +1996,6 @@ namespace TerraFX.Interop
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetClassLongW", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint SetClassLongW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG")] int dwNewLong);
-
-        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetClassLongPtrA", ExactSpelling = true)]
-        [return: NativeTypeName("ULONG_PTR")]
-        public static extern UIntPtr GetClassLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex);
-
-        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetClassLongPtrW", ExactSpelling = true)]
-        [return: NativeTypeName("ULONG_PTR")]
-        public static extern UIntPtr GetClassLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex);
-
-        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetClassLongPtrA", ExactSpelling = true)]
-        [return: NativeTypeName("ULONG_PTR")]
-        public static extern UIntPtr SetClassLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong);
-
-        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetClassLongPtrW", ExactSpelling = true)]
-        [return: NativeTypeName("ULONG_PTR")]
-        public static extern UIntPtr SetClassLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetProcessDefaultLayout", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]

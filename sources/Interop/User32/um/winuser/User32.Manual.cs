@@ -5,6 +5,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop
@@ -6048,6 +6049,142 @@ namespace TerraFX.Interop
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IS_POINTER_CANCELED_WPARAM(UIntPtr wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG_CANCELED);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetWindowLongPtrA", ExactSpelling = true)]
+        [return: NativeTypeName("LONG_PTR")]
+        internal static extern IntPtr _GetWindowLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex);
+
+        [return: NativeTypeName("LONG_PTR")]
+        public static IntPtr GetWindowLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex)
+        {
+            if (IntPtr.Size == 4)
+            {
+                return (IntPtr)GetWindowLongA(hWnd, nIndex);
+            }
+            else
+            {
+                return _GetWindowLongPtrA(hWnd, nIndex);
+            }
+        }
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetWindowLongPtrW", ExactSpelling = true)]
+        [return: NativeTypeName("LONG_PTR")]
+        internal static extern IntPtr _GetWindowLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex);
+
+        [return: NativeTypeName("LONG_PTR")]
+        public static IntPtr GetWindowLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex)
+        {
+            if (IntPtr.Size == 4)
+            {
+                return (IntPtr)GetWindowLongW(hWnd, nIndex);
+            }
+            else
+            {
+                return _GetWindowLongPtrW(hWnd, nIndex);
+            }
+        }
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetWindowLongPtrA", ExactSpelling = true)]
+        [return: NativeTypeName("LONG_PTR")]
+        internal static extern IntPtr _SetWindowLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong);
+
+        [return: NativeTypeName("LONG_PTR")]
+        public static IntPtr SetWindowLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong)
+        {
+            if (IntPtr.Size == 4)
+            {
+                return (IntPtr)SetWindowLongA(hWnd, nIndex, (int)dwNewLong);
+            }
+            else
+            {
+                return _SetWindowLongPtrA(hWnd, nIndex, dwNewLong);
+            }
+        }
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetWindowLongPtrW", ExactSpelling = true)]
+        [return: NativeTypeName("LONG_PTR")]
+        internal static extern IntPtr _SetWindowLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong);
+
+        [return: NativeTypeName("LONG_PTR")]
+        public static IntPtr SetWindowLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong)
+        {
+            if (IntPtr.Size == 4)
+            {
+                return (IntPtr)SetWindowLongW(hWnd, nIndex, (int)dwNewLong);
+            }
+            else
+            {
+                return _SetWindowLongPtrW(hWnd, nIndex, dwNewLong);
+            }
+        }
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetClassLongPtrA", ExactSpelling = true)]
+        [return: NativeTypeName("ULONG_PTR")]
+        internal static extern UIntPtr _GetClassLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex);
+
+        [return: NativeTypeName("ULONG_PTR")]
+        public static UIntPtr GetClassLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex)
+        {
+            if (IntPtr.Size == 4)
+            {
+                return (UIntPtr)GetClassLongA(hWnd, nIndex);
+            }
+            else
+            {
+                return _GetClassLongPtrA(hWnd, nIndex);
+            }
+        }
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetClassLongPtrW", ExactSpelling = true)]
+        [return: NativeTypeName("ULONG_PTR")]
+        internal static extern UIntPtr _GetClassLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex);
+
+        [return: NativeTypeName("ULONG_PTR")]
+        public static UIntPtr GetClassLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex)
+        {
+            if (IntPtr.Size == 4)
+            {
+                return (UIntPtr)GetClassLongW(hWnd, nIndex);
+            }
+            else
+            {
+                return _GetClassLongPtrW(hWnd, nIndex);
+            }
+        }
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetClassLongPtrA", ExactSpelling = true)]
+        [return: NativeTypeName("ULONG_PTR")]
+        internal static extern UIntPtr _SetClassLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong);
+
+        [return: NativeTypeName("ULONG_PTR")]
+        public static UIntPtr SetClassLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong)
+        {
+            if (IntPtr.Size == 4)
+            {
+                return (UIntPtr)SetClassLongA(hWnd, nIndex, (int)dwNewLong);
+            }
+            else
+            {
+                return _SetClassLongPtrA(hWnd, nIndex, dwNewLong);
+            }
+        }
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetClassLongPtrW", ExactSpelling = true)]
+        [return: NativeTypeName("ULONG_PTR")]
+        internal static extern UIntPtr _SetClassLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong);
+
+        [return: NativeTypeName("ULONG_PTR")]
+        public static UIntPtr SetClassLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong)
+        {
+            if (IntPtr.Size == 4)
+            {
+                return (UIntPtr)SetClassLongW(hWnd, nIndex, (int)dwNewLong);
+            }
+            else
+            {
+                return _SetClassLongPtrW(hWnd, nIndex, dwNewLong);
+            }
+        }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("BOOL")]
