@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum DISPLAYCONFIG_PIXELFORMAT : uint
     {
         DISPLAYCONFIG_PIXELFORMAT_8BPP = 1,

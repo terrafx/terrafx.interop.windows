@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum DISPLAYCONFIG_SCALING : uint
     {
         DISPLAYCONFIG_SCALING_IDENTITY = 1,

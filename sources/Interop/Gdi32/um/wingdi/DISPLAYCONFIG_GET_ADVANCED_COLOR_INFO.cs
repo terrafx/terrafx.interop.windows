@@ -11,7 +11,7 @@ namespace TerraFX.Interop
     {
         public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 
-        [NativeTypeName("DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO::(anonymous union at um/wingdi.h:3159:5)")]
+        [NativeTypeName("_DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO::(anonymous union at um/wingdi.h:3159:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public DISPLAYCONFIG_COLOR_ENCODING colorEncoding;
@@ -23,7 +23,7 @@ namespace TerraFX.Interop
         public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO::(anonymous struct at um/wingdi.h:3161:9)")]
+            [NativeTypeName("_DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO::(anonymous struct at um/wingdi.h:3161:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             [FieldOffset(0)]
@@ -39,12 +39,12 @@ namespace TerraFX.Interop
                 {
                     get
                     {
-                        return _bitfield & 0x1;
+                        return _bitfield & 0x1u;
                     }
 
                     set
                     {
-                        _bitfield = (_bitfield & ~0x1u) | (value & 0x1);
+                        _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
                     }
                 }
 
@@ -53,12 +53,12 @@ namespace TerraFX.Interop
                 {
                     get
                     {
-                        return (_bitfield >> 1) & 0x1;
+                        return (_bitfield >> 1) & 0x1u;
                     }
 
                     set
                     {
-                        _bitfield = (_bitfield & ~(0x1u << 1)) | ((value & 0x1) << 1);
+                        _bitfield = (_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1);
                     }
                 }
 
@@ -67,12 +67,12 @@ namespace TerraFX.Interop
                 {
                     get
                     {
-                        return (_bitfield >> 2) & 0x1;
+                        return (_bitfield >> 2) & 0x1u;
                     }
 
                     set
                     {
-                        _bitfield = (_bitfield & ~(0x1u << 2)) | ((value & 0x1) << 2);
+                        _bitfield = (_bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2);
                     }
                 }
 
@@ -81,12 +81,12 @@ namespace TerraFX.Interop
                 {
                     get
                     {
-                        return (_bitfield >> 3) & 0x1;
+                        return (_bitfield >> 3) & 0x1u;
                     }
 
                     set
                     {
-                        _bitfield = (_bitfield & ~(0x1u << 3)) | ((value & 0x1) << 3);
+                        _bitfield = (_bitfield & ~(0x1u << 3)) | ((value & 0x1u) << 3);
                     }
                 }
 
@@ -95,12 +95,12 @@ namespace TerraFX.Interop
                 {
                     get
                     {
-                        return (_bitfield >> 4) & 0xFFFFFFF;
+                        return (_bitfield >> 4) & 0xFFFFFFFu;
                     }
 
                     set
                     {
-                        _bitfield = (_bitfield & ~(0xFFFFFFFu << 4)) | ((value & 0xFFFFFFF) << 4);
+                        _bitfield = (_bitfield & ~(0xFFFFFFFu << 4)) | ((value & 0xFFFFFFFu) << 4);
                     }
                 }
             }

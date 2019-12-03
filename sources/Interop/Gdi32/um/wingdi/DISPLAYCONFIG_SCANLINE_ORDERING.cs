@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum DISPLAYCONFIG_SCANLINE_ORDERING : uint
     {
         DISPLAYCONFIG_SCANLINE_ORDERING_UNSPECIFIED = 0,

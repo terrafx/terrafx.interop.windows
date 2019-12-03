@@ -11,14 +11,14 @@ namespace TerraFX.Interop
     {
         public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 
-        [NativeTypeName("DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE::(anonymous union at um/wingdi.h:3180:5)")]
+        [NativeTypeName("_DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE::(anonymous union at um/wingdi.h:3180:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE::(anonymous struct at um/wingdi.h:3182:9)")]
+            [NativeTypeName("_DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE::(anonymous struct at um/wingdi.h:3182:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             [FieldOffset(0)]
@@ -34,12 +34,12 @@ namespace TerraFX.Interop
                 {
                     get
                     {
-                        return _bitfield & 0x1;
+                        return _bitfield & 0x1u;
                     }
 
                     set
                     {
-                        _bitfield = (_bitfield & ~0x1u) | (value & 0x1);
+                        _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
                     }
                 }
 
@@ -48,12 +48,12 @@ namespace TerraFX.Interop
                 {
                     get
                     {
-                        return (_bitfield >> 1) & 0x7FFFFFFF;
+                        return (_bitfield >> 1) & 0x7FFFFFFFu;
                     }
 
                     set
                     {
-                        _bitfield = (_bitfield & ~(0x7FFFFFFFu << 1)) | ((value & 0x7FFFFFFF) << 1);
+                        _bitfield = (_bitfield & ~(0x7FFFFFFFu << 1)) | ((value & 0x7FFFFFFFu) << 1);
                     }
                 }
             }

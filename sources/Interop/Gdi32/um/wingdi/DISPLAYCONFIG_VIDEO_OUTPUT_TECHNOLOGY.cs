@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY : uint
     {
         DISPLAYCONFIG_OUTPUT_TECHNOLOGY_OTHER = unchecked((uint)-1),

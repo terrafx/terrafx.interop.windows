@@ -198,7 +198,7 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "DeleteObject", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int DeleteObject([NativeTypeName("HGDIOBJ")] void* ho);
+        public static extern int DeleteObject([NativeTypeName("HGDIOBJ")] IntPtr ho);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "DescribePixelFormat", ExactSpelling = true)]
         public static extern int DescribePixelFormat([NativeTypeName("HDC")] IntPtr hdc, int iPixelFormat, [NativeTypeName("UINT")] uint nBytes, [NativeTypeName("LPPIXELFORMATDESCRIPTOR")] PIXELFORMATDESCRIPTOR* ppfd);
@@ -359,7 +359,7 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetCurrentObject", ExactSpelling = true)]
         [return: NativeTypeName("HGDIOBJ")]
-        public static extern void* GetCurrentObject([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint type);
+        public static extern IntPtr GetCurrentObject([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("UINT")] uint type);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetCurrentPositionEx", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -411,7 +411,7 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetObjectType", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetObjectType([NativeTypeName("HGDIOBJ")] void* h);
+        public static extern uint GetObjectType([NativeTypeName("HGDIOBJ")] IntPtr h);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetOutlineTextMetricsA", ExactSpelling = true)]
         [return: NativeTypeName("UINT")]
@@ -451,7 +451,7 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetStockObject", ExactSpelling = true)]
         [return: NativeTypeName("HGDIOBJ")]
-        public static extern void* GetStockObject(int i);
+        public static extern IntPtr GetStockObject(int i);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetStretchBltMode", ExactSpelling = true)]
         public static extern int GetStretchBltMode([NativeTypeName("HDC")] IntPtr hdc);
@@ -710,7 +710,7 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SelectObject", ExactSpelling = true)]
         [return: NativeTypeName("HGDIOBJ")]
-        public static extern void* SelectObject([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HGDIOBJ")] void* h);
+        public static extern IntPtr SelectObject([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HGDIOBJ")] IntPtr h);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SelectPalette", ExactSpelling = true)]
         [return: NativeTypeName("HPALETTE")]
@@ -835,11 +835,11 @@ namespace TerraFX.Interop
         public static extern uint GdiMarshalSize();
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GdiMarshal", ExactSpelling = true)]
-        public static extern void GdiMarshal([NativeTypeName("DWORD")] uint dwProcessIdTo, [NativeTypeName("HGDIOBJ")] void* hGdiObj, [NativeTypeName("PVOID")] void* pData, [NativeTypeName("ULONG")] uint ulFlags);
+        public static extern void GdiMarshal([NativeTypeName("DWORD")] uint dwProcessIdTo, [NativeTypeName("HGDIOBJ")] IntPtr hGdiObj, [NativeTypeName("PVOID")] void* pData, [NativeTypeName("ULONG")] uint ulFlags);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GdiUnmarshal", ExactSpelling = true)]
         [return: NativeTypeName("HGDIOBJ")]
-        public static extern void* GdiUnmarshal([NativeTypeName("PVOID")] void* pData, [NativeTypeName("ULONG")] uint ulFlags);
+        public static extern IntPtr GdiUnmarshal([NativeTypeName("PVOID")] void* pData, [NativeTypeName("ULONG")] uint ulFlags);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "AlphaBlend", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -1237,7 +1237,7 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "UnrealizeObject", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int UnrealizeObject([NativeTypeName("HGDIOBJ")] void* h);
+        public static extern int UnrealizeObject([NativeTypeName("HGDIOBJ")] IntPtr h);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GdiFlush", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
