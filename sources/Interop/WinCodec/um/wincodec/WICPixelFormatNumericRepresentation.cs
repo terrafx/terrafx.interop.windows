@@ -13,6 +13,6 @@ namespace TerraFX.Interop
         WICPixelFormatNumericRepresentationSignedInteger = 0x3,
         WICPixelFormatNumericRepresentationFixed = 0x4,
         WICPixelFormatNumericRepresentationFloat = 0x5,
-        WICPixelFormatNumericRepresentation_FORCE_DWORD = 0x7FFFFFFF,
+        WICPixelFormatNumericRepresentation_FORCE_DWORD = 0x7fffffff,
     }
 }

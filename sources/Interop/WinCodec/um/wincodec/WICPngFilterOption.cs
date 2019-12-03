@@ -14,6 +14,6 @@ namespace TerraFX.Interop
         WICPngFilterAverage = 0x4,
         WICPngFilterPaeth = 0x5,
         WICPngFilterAdaptive = 0x6,
-        WICPNGFILTEROPTION_FORCE_DWORD = 0x7FFFFFFF,
+        WICPNGFILTEROPTION_FORCE_DWORD = 0x7fffffff,
     }
 }

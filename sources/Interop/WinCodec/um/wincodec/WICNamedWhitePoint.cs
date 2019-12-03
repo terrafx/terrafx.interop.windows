@@ -18,6 +18,6 @@ namespace TerraFX.Interop
         WICWhitePointCustom = 0x100,
         WICWhitePointAutoWhiteBalance = 0x200,
         WICWhitePointAsShot = WICWhitePointDefault,
-        WICNAMEDWHITEPOINT_FORCE_DWORD = 0x7FFFFFFF,
+        WICNAMEDWHITEPOINT_FORCE_DWORD = 0x7fffffff,
     }
 }

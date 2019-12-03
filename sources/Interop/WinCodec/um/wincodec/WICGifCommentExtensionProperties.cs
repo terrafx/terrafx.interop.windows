@@ -8,6 +8,6 @@ namespace TerraFX.Interop
     public enum WICGifCommentExtensionProperties
     {
         WICGifCommentExtensionText = 0x1,
-        WICGifCommentExtensionProperties_FORCE_DWORD = 0x7FFFFFFF,
+        WICGifCommentExtensionProperties_FORCE_DWORD = 0x7fffffff,
     }
 }

@@ -8,6 +8,6 @@ namespace TerraFX.Interop
     public enum WICJpegChrominanceProperties
     {
         WICJpegChrominanceTable = 0x1,
-        WICJpegChrominanceProperties_FORCE_DWORD = 0x7FFFFFFF,
+        WICJpegChrominanceProperties_FORCE_DWORD = 0x7fffffff,
     }
 }

@@ -12,6 +12,6 @@ namespace TerraFX.Interop
         WICBitmapInterpolationModeCubic = 0x2,
         WICBitmapInterpolationModeFant = 0x3,
         WICBitmapInterpolationModeHighQualityCubic = 0x4,
-        WICBITMAPINTERPOLATIONMODE_FORCE_DWORD = 0x7FFFFFFF,
+        WICBITMAPINTERPOLATIONMODE_FORCE_DWORD = 0x7fffffff,
     }
 }

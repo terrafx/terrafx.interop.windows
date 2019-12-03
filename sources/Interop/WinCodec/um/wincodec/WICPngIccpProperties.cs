@@ -9,6 +9,6 @@ namespace TerraFX.Interop
     {
         WICPngIccpProfileName = 0x1,
         WICPngIccpProfileData = 0x2,
-        WICPngIccpProperties_FORCE_DWORD = 0x7FFFFFFF,
+        WICPngIccpProperties_FORCE_DWORD = 0x7fffffff,
     }
 }

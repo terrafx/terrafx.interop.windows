@@ -17,6 +17,6 @@ namespace TerraFX.Interop
         WICBitmapDitherTypeDualSpiral4x4 = 0x6,
         WICBitmapDitherTypeDualSpiral8x8 = 0x7,
         WICBitmapDitherTypeErrorDiffusion = 0x8,
-        WICBITMAPDITHERTYPE_FORCE_DWORD = 0x7FFFFFFF,
+        WICBITMAPDITHERTYPE_FORCE_DWORD = 0x7fffffff,
     }
 }

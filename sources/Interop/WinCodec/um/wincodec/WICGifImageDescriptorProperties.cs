@@ -15,6 +15,6 @@ namespace TerraFX.Interop
         WICGifImageDescriptorInterlaceFlag = 0x6,
         WICGifImageDescriptorSortFlag = 0x7,
         WICGifImageDescriptorLocalColorTableSize = 0x8,
-        WICGifImageDescriptorProperties_FORCE_DWORD = 0x7FFFFFFF,
+        WICGifImageDescriptorProperties_FORCE_DWORD = 0x7fffffff,
     }
 }

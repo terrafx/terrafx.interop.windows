@@ -8,6 +8,6 @@ namespace TerraFX.Interop
     public enum WICWebpAnimProperties
     {
         WICWebpAnimLoopCount = 0x1,
-        WICWebpAnimProperties_FORCE_DWORD = 0x7FFFFFFF,
+        WICWebpAnimProperties_FORCE_DWORD = 0x7fffffff,
     }
 }

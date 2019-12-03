@@ -12,6 +12,6 @@ namespace TerraFX.Interop
         WICPngItxtLanguageTag = 0x3,
         WICPngItxtTranslatedKeyword = 0x4,
         WICPngItxtText = 0x5,
-        WICPngItxtProperties_FORCE_DWORD = 0x7FFFFFFF,
+        WICPngItxtProperties_FORCE_DWORD = 0x7fffffff,
     }
 }

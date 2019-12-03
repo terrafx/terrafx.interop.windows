@@ -14,6 +14,6 @@ namespace TerraFX.Interop
         WIC8BIMResolutionInfoVResolution = 0x5,
         WIC8BIMResolutionInfoVResolutionUnit = 0x6,
         WIC8BIMResolutionInfoHeightUnit = 0x7,
-        WIC8BIMResolutionInfoProperties_FORCE_DWORD = 0x7FFFFFFF,
+        WIC8BIMResolutionInfoProperties_FORCE_DWORD = 0x7fffffff,
     }
 }

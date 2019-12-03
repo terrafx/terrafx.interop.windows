@@ -12,6 +12,6 @@ namespace TerraFX.Interop
         WICDdsAlphaModePremultiplied = 0x2,
         WICDdsAlphaModeOpaque = 0x3,
         WICDdsAlphaModeCustom = 0x4,
-        WICDDSALPHAMODE_FORCE_DWORD = 0x7FFFFFFF,
+        WICDDSALPHAMODE_FORCE_DWORD = 0x7fffffff,
     }
 }

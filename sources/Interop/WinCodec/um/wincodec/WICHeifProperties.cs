@@ -8,6 +8,6 @@ namespace TerraFX.Interop
     public enum WICHeifProperties
     {
         WICHeifOrientation = 0x1,
-        WICHeifProperties_FORCE_DWORD = 0x7FFFFFFF,
+        WICHeifProperties_FORCE_DWORD = 0x7fffffff,
     }
 }

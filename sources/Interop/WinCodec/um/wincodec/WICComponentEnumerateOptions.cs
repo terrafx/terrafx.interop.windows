@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum WICComponentEnumerateOptions : uint
     {
         WICComponentEnumerateDefault = 0,
@@ -12,6 +13,6 @@ namespace TerraFX.Interop
         WICComponentEnumerateDisabled = 0x80000000,
         WICComponentEnumerateUnsigned = 0x40000000,
         WICComponentEnumerateBuiltInOnly = 0x20000000,
-        WICCOMPONENTENUMERATEOPTIONS_FORCE_DWORD = 0x7FFFFFFF,
+        WICCOMPONENTENUMERATEOPTIONS_FORCE_DWORD = 0x7fffffff,
     }
 }

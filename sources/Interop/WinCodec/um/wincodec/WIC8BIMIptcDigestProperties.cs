@@ -9,6 +9,6 @@ namespace TerraFX.Interop
     {
         WIC8BIMIptcDigestPString = 0x1,
         WIC8BIMIptcDigestIptcDigest = 0x2,
-        WIC8BIMIptcDigestProperties_FORCE_DWORD = 0x7FFFFFFF,
+        WIC8BIMIptcDigestProperties_FORCE_DWORD = 0x7fffffff,
     }
 }
