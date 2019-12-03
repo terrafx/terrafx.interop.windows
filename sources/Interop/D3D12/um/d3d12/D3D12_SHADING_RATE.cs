@@ -13,6 +13,6 @@ namespace TerraFX.Interop
         D3D12_SHADING_RATE_2X2 = 0x5,
         D3D12_SHADING_RATE_2X4 = 0x6,
         D3D12_SHADING_RATE_4X2 = 0x9,
-        D3D12_SHADING_RATE_4X4 = 0xA,
+        D3D12_SHADING_RATE_4X4 = 0xa,
     }
 }

@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.D3D12;
 
 namespace TerraFX.Interop
 {
@@ -14,7 +13,7 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint NumFrameArguments;
 
-        [NativeTypeName("D3D12_VIDEO_DECODE_FRAME_ARGUMENT [D3D12_VIDEO_DECODE_MAX_ARGUMENTS]")]
+        [NativeTypeName("D3D12_VIDEO_DECODE_FRAME_ARGUMENT [10]")]
         public _FrameArguments_e__FixedBuffer FrameArguments;
 
         public D3D12_VIDEO_DECODE_REFERENCE_FRAMES ReferenceFrames;
@@ -39,7 +38,7 @@ namespace TerraFX.Interop
 
             public ref D3D12_VIDEO_DECODE_FRAME_ARGUMENT this[int index] => ref AsSpan()[index];
 
-            public Span<D3D12_VIDEO_DECODE_FRAME_ARGUMENT> AsSpan() => MemoryMarshal.CreateSpan(ref e0, unchecked((int)D3D12_VIDEO_DECODE_MAX_ARGUMENTS));
+            public Span<D3D12_VIDEO_DECODE_FRAME_ARGUMENT> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 10);
         }
     }
 }

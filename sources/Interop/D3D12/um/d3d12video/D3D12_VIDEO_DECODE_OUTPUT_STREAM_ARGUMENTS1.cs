@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.D3D12;
 
 namespace TerraFX.Interop
 {
@@ -19,7 +18,7 @@ namespace TerraFX.Interop
 
         public D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS1 ConversionArguments;
 
-        [NativeTypeName("D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM [D3D12_VIDEO_DECODE_MAX_HISTOGRAM_COMPONENTS]")]
+        [NativeTypeName("D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM [4]")]
         public _Histograms_e__FixedBuffer Histograms;
 
         public partial struct _Histograms_e__FixedBuffer
@@ -31,7 +30,7 @@ namespace TerraFX.Interop
 
             public ref D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM this[int index] => ref AsSpan()[index];
 
-            public Span<D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM> AsSpan() => MemoryMarshal.CreateSpan(ref e0, unchecked((int)D3D12_VIDEO_DECODE_MAX_HISTOGRAM_COMPONENTS));
+            public Span<D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 4);
         }
     }
 }
