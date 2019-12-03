@@ -1,0 +1,1 @@
+#include <wincodec.h>
