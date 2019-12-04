@@ -23,12 +23,12 @@ namespace TerraFX.Interop
         {
             get
             {
-                return _bitfield & 0xFF;
+                return _bitfield & 0xFFu;
             }
 
             set
             {
-                _bitfield = (_bitfield & ~0xFFu) | (value & 0xFF);
+                _bitfield = (_bitfield & ~0xFFu) | (value & 0xFFu);
             }
         }
 
@@ -37,12 +37,12 @@ namespace TerraFX.Interop
         {
             get
             {
-                return (_bitfield >> 8) & 0xFF;
+                return (_bitfield >> 8) & 0xFFu;
             }
 
             set
             {
-                _bitfield = (_bitfield & ~(0xFFu << 8)) | ((value & 0xFF) << 8);
+                _bitfield = (_bitfield & ~(0xFFu << 8)) | ((value & 0xFFu) << 8);
             }
         }
 
@@ -51,12 +51,12 @@ namespace TerraFX.Interop
         {
             get
             {
-                return (_bitfield >> 16) & 0x1;
+                return (_bitfield >> 16) & 0x1u;
             }
 
             set
             {
-                _bitfield = (_bitfield & ~(0x1u << 16)) | ((value & 0x1) << 16);
+                _bitfield = (_bitfield & ~(0x1u << 16)) | ((value & 0x1u) << 16);
             }
         }
 
@@ -65,12 +65,12 @@ namespace TerraFX.Interop
         {
             get
             {
-                return (_bitfield >> 17) & 0x1;
+                return (_bitfield >> 17) & 0x1u;
             }
 
             set
             {
-                _bitfield = (_bitfield & ~(0x1u << 17)) | ((value & 0x1) << 17);
+                _bitfield = (_bitfield & ~(0x1u << 17)) | ((value & 0x1u) << 17);
             }
         }
 
@@ -79,12 +79,12 @@ namespace TerraFX.Interop
         {
             get
             {
-                return (_bitfield >> 18) & 0x1;
+                return (_bitfield >> 18) & 0x1u;
             }
 
             set
             {
-                _bitfield = (_bitfield & ~(0x1u << 18)) | ((value & 0x1) << 18);
+                _bitfield = (_bitfield & ~(0x1u << 18)) | ((value & 0x1u) << 18);
             }
         }
 
@@ -93,12 +93,12 @@ namespace TerraFX.Interop
         {
             get
             {
-                return (_bitfield >> 19) & 0x1;
+                return (_bitfield >> 19) & 0x1u;
             }
 
             set
             {
-                _bitfield = (_bitfield & ~(0x1u << 19)) | ((value & 0x1) << 19);
+                _bitfield = (_bitfield & ~(0x1u << 19)) | ((value & 0x1u) << 19);
             }
         }
 
@@ -107,12 +107,12 @@ namespace TerraFX.Interop
         {
             get
             {
-                return (_bitfield >> 20) & 0xFFF;
+                return (_bitfield >> 20) & 0xFFFu;
             }
 
             set
             {
-                _bitfield = (_bitfield & ~(0xFFFu << 20)) | ((value & 0xFFF) << 20);
+                _bitfield = (_bitfield & ~(0xFFFu << 20)) | ((value & 0xFFFu) << 20);
             }
         }
     }

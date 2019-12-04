@@ -40,7 +40,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _BeginDownload(IDWriteFontDownloadQueue* pThis, [NativeTypeName("IUnknown *")] IUnknown* context);
+        public delegate int _BeginDownload(IDWriteFontDownloadQueue* pThis, [NativeTypeName("IUnknown *")] IUnknown* context = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
@@ -87,7 +87,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int BeginDownload([NativeTypeName("IUnknown *")] IUnknown* context)
+        public int BeginDownload([NativeTypeName("IUnknown *")] IUnknown* context = null)
         {
             return Marshal.GetDelegateForFunctionPointer<_BeginDownload>(lpVtbl->BeginDownload)((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this), context);
         }

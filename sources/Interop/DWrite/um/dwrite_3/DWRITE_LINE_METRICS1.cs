@@ -7,7 +7,7 @@ namespace TerraFX.Interop
 {
     public partial struct DWRITE_LINE_METRICS1
     {
-        public DWRITE_LINE_METRICS _base;
+        public DWRITE_LINE_METRICS Base;
 
         [NativeTypeName("FLOAT")]
         public float leadingBefore;

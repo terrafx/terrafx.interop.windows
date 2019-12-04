@@ -7,7 +7,7 @@ namespace TerraFX.Interop
 {
     public partial struct DWRITE_COLOR_GLYPH_RUN1
     {
-        public DWRITE_COLOR_GLYPH_RUN _base;
+        public DWRITE_COLOR_GLYPH_RUN Base;
 
         public DWRITE_GLYPH_IMAGE_FORMATS glyphImageFormat;
 

@@ -7,7 +7,7 @@ namespace TerraFX.Interop
 {
     public partial struct DWRITE_FONT_METRICS1
     {
-        public DWRITE_FONT_METRICS _base;
+        public DWRITE_FONT_METRICS Base;
 
         [NativeTypeName("INT16")]
         public short glyphBoxLeft;

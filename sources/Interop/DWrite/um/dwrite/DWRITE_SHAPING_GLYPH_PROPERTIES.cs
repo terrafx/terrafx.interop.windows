@@ -14,12 +14,12 @@ namespace TerraFX.Interop
         {
             get
             {
-                return (ushort)((uint)_bitfield & 0xF);
+                return (ushort)(_bitfield & 0xFu);
             }
 
             set
             {
-                _bitfield = (ushort)((_bitfield & ~0xFu) | ((uint)value & 0xF));
+                _bitfield = (ushort)((_bitfield & ~0xFu) | (value & 0xFu));
             }
         }
 
@@ -28,12 +28,12 @@ namespace TerraFX.Interop
         {
             get
             {
-                return (ushort)(((uint)_bitfield >> 4) & 0x1);
+                return (ushort)((_bitfield >> 4) & 0x1u);
             }
 
             set
             {
-                _bitfield = (ushort)((_bitfield & ~(0x1u << 4)) | (((uint)value & 0x1) << 4));
+                _bitfield = (ushort)((_bitfield & ~(0x1u << 4)) | ((value & 0x1u) << 4));
             }
         }
 
@@ -42,12 +42,12 @@ namespace TerraFX.Interop
         {
             get
             {
-                return (ushort)(((uint)_bitfield >> 5) & 0x1);
+                return (ushort)((_bitfield >> 5) & 0x1u);
             }
 
             set
             {
-                _bitfield = (ushort)((_bitfield & ~(0x1u << 5)) | (((uint)value & 0x1) << 5));
+                _bitfield = (ushort)((_bitfield & ~(0x1u << 5)) | ((value & 0x1u) << 5));
             }
         }
 
@@ -56,12 +56,12 @@ namespace TerraFX.Interop
         {
             get
             {
-                return (ushort)(((uint)_bitfield >> 6) & 0x1);
+                return (ushort)((_bitfield >> 6) & 0x1u);
             }
 
             set
             {
-                _bitfield = (ushort)((_bitfield & ~(0x1u << 6)) | (((uint)value & 0x1) << 6));
+                _bitfield = (ushort)((_bitfield & ~(0x1u << 6)) | ((value & 0x1u) << 6));
             }
         }
 
@@ -70,12 +70,12 @@ namespace TerraFX.Interop
         {
             get
             {
-                return (ushort)(((uint)_bitfield >> 7) & 0x1FF);
+                return (ushort)((_bitfield >> 7) & 0x1FFu);
             }
 
             set
             {
-                _bitfield = (ushort)((_bitfield & ~(0x1FFu << 7)) | (((uint)value & 0x1FF) << 7));
+                _bitfield = (ushort)((_bitfield & ~(0x1FFu << 7)) | ((value & 0x1FFu) << 7));
             }
         }
     }

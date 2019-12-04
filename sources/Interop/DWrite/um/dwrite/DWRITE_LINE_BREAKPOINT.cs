@@ -14,12 +14,12 @@ namespace TerraFX.Interop
         {
             get
             {
-                return (byte)((uint)_bitfield & 0x3);
+                return (byte)(_bitfield & 0x3u);
             }
 
             set
             {
-                _bitfield = (byte)((_bitfield & ~0x3u) | ((uint)value & 0x3));
+                _bitfield = (byte)((_bitfield & ~0x3u) | (value & 0x3u));
             }
         }
 
@@ -28,12 +28,12 @@ namespace TerraFX.Interop
         {
             get
             {
-                return (byte)(((uint)_bitfield >> 2) & 0x3);
+                return (byte)((_bitfield >> 2) & 0x3u);
             }
 
             set
             {
-                _bitfield = (byte)((_bitfield & ~(0x3u << 2)) | (((uint)value & 0x3) << 2));
+                _bitfield = (byte)((_bitfield & ~(0x3u << 2)) | ((value & 0x3u) << 2));
             }
         }
 
@@ -42,12 +42,12 @@ namespace TerraFX.Interop
         {
             get
             {
-                return (byte)(((uint)_bitfield >> 4) & 0x1);
+                return (byte)((_bitfield >> 4) & 0x1u);
             }
 
             set
             {
-                _bitfield = (byte)((_bitfield & ~(0x1u << 4)) | (((uint)value & 0x1) << 4));
+                _bitfield = (byte)((_bitfield & ~(0x1u << 4)) | ((value & 0x1u) << 4));
             }
         }
 
@@ -56,12 +56,12 @@ namespace TerraFX.Interop
         {
             get
             {
-                return (byte)(((uint)_bitfield >> 5) & 0x1);
+                return (byte)((_bitfield >> 5) & 0x1u);
             }
 
             set
             {
-                _bitfield = (byte)((_bitfield & ~(0x1u << 5)) | (((uint)value & 0x1) << 5));
+                _bitfield = (byte)((_bitfield & ~(0x1u << 5)) | ((value & 0x1u) << 5));
             }
         }
 
@@ -70,12 +70,12 @@ namespace TerraFX.Interop
         {
             get
             {
-                return (byte)(((uint)_bitfield >> 6) & 0x3);
+                return (byte)((_bitfield >> 6) & 0x3u);
             }
 
             set
             {
-                _bitfield = (byte)((_bitfield & ~(0x3u << 6)) | (((uint)value & 0x3) << 6));
+                _bitfield = (byte)((_bitfield & ~(0x3u << 6)) | ((value & 0x3u) << 6));
             }
         }
     }

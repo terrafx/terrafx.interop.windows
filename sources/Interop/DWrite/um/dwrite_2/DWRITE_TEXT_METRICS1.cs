@@ -7,7 +7,7 @@ namespace TerraFX.Interop
 {
     public partial struct DWRITE_TEXT_METRICS1
     {
-        public DWRITE_TEXT_METRICS _base;
+        public DWRITE_TEXT_METRICS Base;
 
         [NativeTypeName("FLOAT")]
         public float heightIncludingTrailingWhitespace;
