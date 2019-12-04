@@ -1,0 +1,46 @@
+--additional
+-m32
+--config
+multi-file
+--file
+um-dwrite_1.h
+--headerFile
+header.txt
+--include-directory
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+--include-directory
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+--libraryPath
+DWrite
+--methodClassName
+DWrite
+--namespace
+TerraFX.Interop
+--output
+../../../sources/Interop/DWrite/um/dwrite_1
+--remap
+__AnonymousBase_dwrite_1_L627_C38=Base
+__AnonymousRecord_dwrite_1_L758_C5=_text_e__Struct
+__AnonymousRecord_dwrite_1_L772_C5=_script_e__Struct
+__AnonymousRecord_dwrite_1_L786_C5=_decorative_e__Struct
+__AnonymousRecord_dwrite_1_L800_C5=_symbol_e__Struct
+_FILETIME=FILETIME
+_GUID=Guid
+GetGlyphIndicesA=GetGlyphIndices
+HDC__*=IntPtr
+HMONITOR__*=IntPtr
+ID2D1SimplifiedGeometrySink=IUnknown
+tagRECT=RECT
+tagSIZE=SIZE
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\dwrite_1.h
+--with-attribute
+IDWriteBitmapRenderTarget1=Guid("791E8298-3EF3-4230-9880-C9BDECC42064")
+IDWriteFactory1=Guid("30572F99-DAC6-41DB-A16E-0486307E606A")
+IDWriteFont1=Guid("ACD16696-8C14-4F5D-877E-FE3FC1D32738")
+IDWriteFontFace1=Guid("A71EFDB4-9FDB-4838-AD90-CFC3BE8C3DAF")
+IDWriteRenderingParams1=Guid("94413CF4-A6FC-4248-8B50-6674348FCAD3")
+IDWriteTextAnalysisSink1=Guid("B0D941A0-85E7-4D8B-9FD3-5CED9934482A")
+IDWriteTextAnalysisSource1=Guid("639CFAD8-0FB4-4B21-A58A-067920120009")
+IDWriteTextAnalyzer1=Guid("80DAD800-E21F-4E83-96CE-BFCCE500DB7C")
+IDWriteTextLayout1=Guid("9064D822-80A7-465C-A986-DF65F78B8FEB")
