@@ -5,10 +5,11 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_VERTEX_USAGE : uint
     {
         D2D1_VERTEX_USAGE_STATIC = 0,
         D2D1_VERTEX_USAGE_DYNAMIC = 1,
-        D2D1_VERTEX_USAGE_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_VERTEX_USAGE_FORCE_DWORD = 0xffffffff,
     }
 }

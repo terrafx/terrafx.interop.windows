@@ -5,11 +5,12 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_CHANNEL_DEPTH : uint
     {
         D2D1_CHANNEL_DEPTH_DEFAULT = 0,
         D2D1_CHANNEL_DEPTH_1 = 1,
         D2D1_CHANNEL_DEPTH_4 = 4,
-        D2D1_CHANNEL_DEPTH_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_CHANNEL_DEPTH_FORCE_DWORD = 0xffffffff,
     }
 }
