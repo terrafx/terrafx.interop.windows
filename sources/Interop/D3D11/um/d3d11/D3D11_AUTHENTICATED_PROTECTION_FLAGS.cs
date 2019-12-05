@@ -11,7 +11,7 @@ namespace TerraFX.Interop
     public partial struct D3D11_AUTHENTICATED_PROTECTION_FLAGS
     {
         [FieldOffset(0)]
-        [NativeTypeName("D3D11_AUTHENTICATED_PROTECTION_FLAGS::(anonymous struct at um/d3d11.h:10816:5)")]
+        [NativeTypeName("struct __MIDL___MIDL_itf_d3d11_0000_0034_0001")]
         public _Flags_e__Struct Flags;
 
         [FieldOffset(0)]
@@ -20,14 +20,49 @@ namespace TerraFX.Interop
 
         public partial struct _Flags_e__Struct
         {
-            [NativeTypeName("UINT")]
-            public uint ProtectionEnabled;
+            internal uint _bitfield;
 
-            [NativeTypeName("UINT")]
-            public uint OverlayOrFullscreenRequired;
+            [NativeTypeName("UINT : 1")]
+            public uint ProtectionEnabled
+            {
+                get
+                {
+                    return _bitfield & 0x1u;
+                }
 
-            [NativeTypeName("UINT")]
-            public uint Reserved;
+                set
+                {
+                    _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
+                }
+            }
+
+            [NativeTypeName("UINT : 1")]
+            public uint OverlayOrFullscreenRequired
+            {
+                get
+                {
+                    return (_bitfield >> 1) & 0x1u;
+                }
+
+                set
+                {
+                    _bitfield = (_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1);
+                }
+            }
+
+            [NativeTypeName("UINT : 30")]
+            public uint Reserved
+            {
+                get
+                {
+                    return (_bitfield >> 2) & 0x3FFFFFFFu;
+                }
+
+                set
+                {
+                    _bitfield = (_bitfield & ~(0x3FFFFFFFu << 2)) | ((value & 0x3FFFFFFFu) << 2);
+                }
+            }
         }
     }
 }

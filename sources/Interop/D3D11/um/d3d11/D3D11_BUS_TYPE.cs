@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D3D11_BUS_TYPE : uint
     {
         D3D11_BUS_TYPE_OTHER = 0,
