@@ -146,6 +146,6 @@ namespace TerraFX.Interop
         White = 0xFFFFFF,
         WhiteSmoke = 0xF5F5F5,
         Yellow = 0xFFFF00,
-        YellowGreen = 0x9ACD32u
+        YellowGreen = 0x9ACD32,
     }
 }

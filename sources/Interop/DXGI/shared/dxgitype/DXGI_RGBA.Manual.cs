@@ -7,18 +7,11 @@ namespace TerraFX.Interop
 {
     public partial struct DXGI_RGBA
     {
-        private const uint RedShift = 16u;
-        private const uint GreenShift = 8u;
-        private const uint BlueShift = 0u;
-        private const uint RedMask = 0xff << (int)RedShift;
-        private const uint GreenMask = 0xff << (int)GreenShift;
-        private const uint BlueMask = 0xff << (int)BlueShift;
-
-        public DXGI_RGBA(uint rgb, float a = 1.0f)
+        public DXGI_RGBA([NativeTypeName("UINT32")] uint rgb, [NativeTypeName("FLOAT")] float a = 1.0f)
         {
-            r = ((rgb & RedMask) >> (int)RedShift) / 255.0f;
-            g = ((rgb & GreenMask) >> (int)GreenShift) / 255.0f;
-            b = ((rgb & BlueMask) >> (int)BlueShift) / 255.0f;
+            this.r = (float)((rgb & sc_redMask) >> (int)sc_redShift) / 255.0f;
+            this.g = (float)((rgb & sc_greenMask) >> (int)sc_greenShift) / 255.0f;
+            this.b = (float)((rgb & sc_blueMask) >> (int)sc_blueShift) / 255.0f;
             this.a = a;
         }
 
@@ -33,5 +26,13 @@ namespace TerraFX.Interop
             b = blue;
             a = alpha;
         }
+
+        private const uint sc_redShift = 16;
+        private const uint sc_greenShift = 8;
+        private const uint sc_blueShift = 0;
+
+        private const uint sc_redMask = 0xff << (int)sc_redShift;
+        private const uint sc_greenMask = 0xff << (int)sc_greenShift;
+        private const uint sc_blueMask = 0xff << (int)sc_blueShift;
     }
 }

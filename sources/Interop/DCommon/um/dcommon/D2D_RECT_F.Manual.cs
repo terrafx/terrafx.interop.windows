@@ -9,10 +9,9 @@ namespace TerraFX.Interop
 {
     public partial struct D2D_RECT_F : IEquatable<D2D_RECT_F>
     {
-        public static readonly D2D_RECT_F DEFAULT = new D2D_RECT_F(0, 0, 0, 0);
         public static readonly D2D_RECT_F Infinite = new D2D_RECT_F(-float.MaxValue, -float.MaxValue, float.MaxValue, float.MaxValue);
 
-        public D2D_RECT_F(float left, float top, float right, float bottom)
+        public D2D_RECT_F([NativeTypeName("FLOAT")] float left = 0.0f, [NativeTypeName("FLOAT")] float top = 0.0f, [NativeTypeName("FLOAT")] float right = 0.0f, [NativeTypeName("FLOAT")] float bottom = 0.0f)
         {
             this.left = left;
             this.top = top;
@@ -20,22 +19,20 @@ namespace TerraFX.Interop
             this.bottom = bottom;
         }
 
+        public static bool operator ==([NativeTypeName("const D2D1_RECT_F &")] in D2D_RECT_F l, [NativeTypeName("const D2D1_RECT_F &")] in D2D_RECT_F r)
+        {
+            return l.left == r.left && l.top == r.top && l.right == r.right && l.bottom == r.bottom;
+        }
+
+        public static bool operator !=([NativeTypeName("const D2D1_RECT_F &")] in D2D_RECT_F l, [NativeTypeName("const D2D1_RECT_F &")] in D2D_RECT_F r)
+        {
+            return !(l == r);
+        }
+
         public bool Equals(D2D_RECT_F other) => this == other;
 
         public override bool Equals(object? obj) => (obj is D2D_RECT_F other) && this == other;
 
         public override int GetHashCode() => HashCode.Combine(left, top, right, bottom);
-
-        public static bool operator ==(D2D_RECT_F left, D2D_RECT_F right) =>
-            left.left == right.left &&
-            left.top == right.top &&
-            left.right == right.right &&
-            left.bottom == right.bottom;
-
-        public static bool operator !=(D2D_RECT_F left, D2D_RECT_F right) =>
-            left.left != right.left ||
-            left.top != right.top ||
-            left.right != right.right ||
-            left.bottom != right.bottom;
     }
 }

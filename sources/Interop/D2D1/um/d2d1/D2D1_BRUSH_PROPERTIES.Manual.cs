@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.D2D1;
 
 namespace TerraFX.Interop
 {
@@ -11,10 +12,13 @@ namespace TerraFX.Interop
     {
         public static readonly D2D1_BRUSH_PROPERTIES DEFAULT = new D2D1_BRUSH_PROPERTIES(1.0f, D2D_MATRIX_3X2_F.Identity);
 
-        public D2D1_BRUSH_PROPERTIES(float opacity, in D2D_MATRIX_3X2_F transform)
+        public D2D1_BRUSH_PROPERTIES([NativeTypeName("FLOAT")] float opacity = 1.0f) : this(opacity, IdentityMatrix)
         {
-            this.opacity = opacity;
-            this.transform = transform;
+        }
+
+        public D2D1_BRUSH_PROPERTIES([NativeTypeName("FLOAT"), Optional, DefaultParameterValue(1.0f)] float opacity, [NativeTypeName("const D2D1_MATRIX_3X2_F &")] in D2D_MATRIX_3X2_F transform)
+        {
+            this = BrushProperties(opacity, transform);
         }
     }
 }

@@ -9,9 +9,7 @@ namespace TerraFX.Interop
 {
     public partial struct D2D_RECT_U : IEquatable<D2D_RECT_U>
     {
-        public static readonly D2D_RECT_U DEFAULT = new D2D_RECT_U(0, 0, 0, 0);
-
-        public D2D_RECT_U(uint left, uint top, uint right, uint bottom)
+        public D2D_RECT_U([NativeTypeName("UINT32")] uint left = 0, [NativeTypeName("UINT32")] uint top = 0, [NativeTypeName("UINT32")] uint right = 0, [NativeTypeName("UINT32")] uint bottom = 0)
         {
             this.left = left;
             this.top = top;
@@ -19,22 +17,20 @@ namespace TerraFX.Interop
             this.bottom = bottom;
         }
 
+        public static bool operator ==([NativeTypeName("const D2D1_RECT_U &")] in D2D_RECT_U l, [NativeTypeName("const D2D1_RECT_U &")] in D2D_RECT_U r)
+        {
+            return l.left == r.left && l.top == r.top && l.right == r.right && l.bottom == r.bottom;
+        }
+
+        public static bool operator !=([NativeTypeName("const D2D1_RECT_U &")] in D2D_RECT_U l, [NativeTypeName("const D2D1_RECT_U &")] in D2D_RECT_U r)
+        {
+            return !(l == r);
+        }
+
         public bool Equals(D2D_RECT_U other) => this == other;
 
         public override bool Equals(object? obj) => (obj is D2D_RECT_U other) && this == other;
 
         public override int GetHashCode() => HashCode.Combine(left, top, right, bottom);
-
-        public static bool operator ==(D2D_RECT_U l, D2D_RECT_U r) =>
-            l.left == r.left &&
-            l.top == r.top &&
-            l.right == r.right &&
-            l.bottom == r.bottom;
-
-        public static bool operator !=(D2D_RECT_U l, D2D_RECT_U r) =>
-            l.left != r.left ||
-            l.top != r.top ||
-            l.right != r.right ||
-            l.bottom != r.bottom;
     }
 }

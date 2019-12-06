@@ -3,17 +3,15 @@
 // Ported from um/d2d1helper.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using static TerraFX.Interop.D2D1;
+
 namespace TerraFX.Interop
 {
     public partial struct D2D1_ARC_SEGMENT
     {
-        public D2D1_ARC_SEGMENT(in D2D_POINT_2F point, in D2D_SIZE_F size, float rotationAngle, D2D1_SWEEP_DIRECTION sweepDirection, D2D1_ARC_SIZE arcSize)
+        public D2D1_ARC_SEGMENT([NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F point, [NativeTypeName("const D2D1_SIZE_F &")] in D2D_SIZE_F size, [NativeTypeName("FLOAT")] float rotationAngle, D2D1_SWEEP_DIRECTION sweepDirection, D2D1_ARC_SIZE arcSize)
         {
-            this.point = point;
-            this.size = size;
-            this.rotationAngle = rotationAngle;
-            this.sweepDirection = sweepDirection;
-            this.arcSize = arcSize;
+            this = ArcSegment(point, size, rotationAngle, sweepDirection, arcSize);
         }
     }
 }
