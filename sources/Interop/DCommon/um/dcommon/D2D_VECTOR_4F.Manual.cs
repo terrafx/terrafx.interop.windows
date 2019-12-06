@@ -10,8 +10,6 @@ namespace TerraFX.Interop
 {
     public partial struct D2D_VECTOR_4F : IEquatable<D2D_VECTOR_4F>
     {
-        public static readonly D2D_VECTOR_4F DEFAULT = new D2D_VECTOR_4F(0.0f, 0.0f, 0.0f, 0.0f);
-
         public D2D_VECTOR_4F(float x, float y, float z, float w)
         {
             this.x = x;
@@ -20,22 +18,20 @@ namespace TerraFX.Interop
             this.w = w;
         }
 
+        public static bool operator ==([NativeTypeName("const D2D_VECTOR_2F &")] in D2D_VECTOR_4F l, [NativeTypeName("const D2D_VECTOR_2F &")] in D2D_VECTOR_4F r)
+        {
+            return l.x == r.x && l.y == r.y && l.z == r.z && l.w == r.w;
+        }
+
+        public static bool operator !=([NativeTypeName("const D2D_VECTOR_2F &")] in D2D_VECTOR_4F l, [NativeTypeName("const D2D_VECTOR_2F &")] in D2D_VECTOR_4F r)
+        {
+            return !(l == r);
+        }
+
         public bool Equals(D2D_VECTOR_4F other) => this == other;
 
         public override bool Equals(object? obj) => (obj is D2D_VECTOR_4F other) && this == other;
 
         public override int GetHashCode() => HashCode.Combine(x, y, z, w);
-
-        public static bool operator ==(D2D_VECTOR_4F left, D2D_VECTOR_4F right) =>
-            left.x == right.x &&
-            left.y == right.y &&
-            left.z == right.z &&
-            left.w == right.w;
-
-        public static bool operator !=(D2D_VECTOR_4F left, D2D_VECTOR_4F right) =>
-            left.x != right.x ||
-            left.y != right.y ||
-            left.z != right.z ||
-            left.w != right.w;
     }
 }

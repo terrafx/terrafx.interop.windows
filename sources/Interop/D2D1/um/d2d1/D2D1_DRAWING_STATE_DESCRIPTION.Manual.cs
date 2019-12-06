@@ -3,6 +3,7 @@
 // Ported from um/d2d1helper.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.InteropServices;
 using static TerraFX.Interop.D2D1;
 using static TerraFX.Interop.D2D1_ANTIALIAS_MODE;
 using static TerraFX.Interop.D2D1_TEXT_ANTIALIAS_MODE;
@@ -20,7 +21,7 @@ namespace TerraFX.Interop
 
         public D2D1_DRAWING_STATE_DESCRIPTION([Optional] D2D1_ANTIALIAS_MODE antialiasMode, [Optional] D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode, [NativeTypeName("D2D1_TAG"), Optional] ulong tag1, [NativeTypeName("D2D1_TAG"), Optional] ulong tag2, [NativeTypeName("const D2D1_MATRIX_3X2_F &")] D2D_MATRIX_3X2_F transform)
         {
-            this = DrawingStateDescription(antialiasMode, textAntialiasMode, tag1, tag2, IdentityMatrix, transform);
+            this = DrawingStateDescription(antialiasMode, textAntialiasMode, tag1, tag2, transform);
         }
     }
 }
