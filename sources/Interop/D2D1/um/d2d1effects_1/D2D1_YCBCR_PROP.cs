@@ -5,11 +5,12 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_YCBCR_PROP : uint
     {
         D2D1_YCBCR_PROP_CHROMA_SUBSAMPLING = 0,
         D2D1_YCBCR_PROP_TRANSFORM_MATRIX = 1,
         D2D1_YCBCR_PROP_INTERPOLATION_MODE = 2,
-        D2D1_YCBCR_PROP_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_YCBCR_PROP_FORCE_DWORD = 0xffffffff,
     }
 }

@@ -5,12 +5,13 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_COMBINE_MODE : uint
     {
         D2D1_COMBINE_MODE_UNION = 0,
         D2D1_COMBINE_MODE_INTERSECT = 1,
         D2D1_COMBINE_MODE_XOR = 2,
         D2D1_COMBINE_MODE_EXCLUDE = 3,
-        D2D1_COMBINE_MODE_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_COMBINE_MODE_FORCE_DWORD = 0xffffffff,
     }
 }

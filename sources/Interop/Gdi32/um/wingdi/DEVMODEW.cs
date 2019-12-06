@@ -27,7 +27,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dmFields;
 
-        [NativeTypeName("DEVMODEW::(anonymous union at um/wingdi.h:2256:5)")]
+        [NativeTypeName("_devicemodeW::(anonymous union at um/wingdi.h:2256:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
         public short dmColor;
@@ -55,7 +55,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dmPelsHeight;
 
-        [NativeTypeName("DEVMODEW::(anonymous union at um/wingdi.h:2285:5)")]
+        [NativeTypeName("_devicemodeW::(anonymous union at um/wingdi.h:2285:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
         [NativeTypeName("DWORD")]
@@ -89,11 +89,11 @@ namespace TerraFX.Interop
         public partial struct _Anonymous1_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("DEVMODEW::(anonymous struct at um/wingdi.h:2258:7)")]
+            [NativeTypeName("_devicemodeW::(anonymous struct at um/wingdi.h:2258:7)")]
             public _Anonymous1_e__Struct Anonymous1;
 
             [FieldOffset(0)]
-            [NativeTypeName("DEVMODEW::(anonymous struct at um/wingdi.h:2269:7)")]
+            [NativeTypeName("_devicemodeW::(anonymous struct at um/wingdi.h:2269:7)")]
             public _Anonymous2_e__Struct Anonymous2;
 
             public partial struct _Anonymous1_e__Struct

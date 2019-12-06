@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_BLEND : uint
     {
         D2D1_BLEND_ZERO = 1,
@@ -20,6 +21,6 @@ namespace TerraFX.Interop
         D2D1_BLEND_SRC_ALPHA_SAT = 11,
         D2D1_BLEND_BLEND_FACTOR = 14,
         D2D1_BLEND_INV_BLEND_FACTOR = 15,
-        D2D1_BLEND_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_BLEND_FORCE_DWORD = 0xffffffff,
     }
 }

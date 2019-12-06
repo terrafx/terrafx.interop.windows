@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.D2D1;
 
 namespace TerraFX.Interop
 {
@@ -95,73 +94,73 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int GetWidenedBounds([NativeTypeName("FLOAT")] float strokeWidth, [NativeTypeName("ID2D1StrokeStyle *")] ID2D1StrokeStyle* strokeStyle, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* bounds)
         {
-            return GetWidenedBounds(strokeWidth, strokeStyle, worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, bounds);
+            return GetWidenedBounds(strokeWidth, strokeStyle, worldTransform, (0.25f), bounds);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int StrokeContainsPoint([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point, [NativeTypeName("FLOAT")] float strokeWidth, [NativeTypeName("ID2D1StrokeStyle *")] ID2D1StrokeStyle* strokeStyle, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("BOOL *")] int* contains)
         {
-            return StrokeContainsPoint(point, strokeWidth, strokeStyle, worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, contains);
+            return StrokeContainsPoint(point, strokeWidth, strokeStyle, worldTransform, (0.25f), contains);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int FillContainsPoint([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("BOOL *")] int* contains)
         {
-            return FillContainsPoint(point, worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, contains);
+            return FillContainsPoint(point, worldTransform, (0.25f), contains);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CompareWithGeometry([NativeTypeName("ID2D1Geometry *")] ID2D1Geometry* inputGeometry, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* inputGeometryTransform, [NativeTypeName("D2D1_GEOMETRY_RELATION *")] D2D1_GEOMETRY_RELATION* relation)
         {
-            return CompareWithGeometry(inputGeometry, inputGeometryTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, relation);
+            return CompareWithGeometry(inputGeometry, inputGeometryTransform, (0.25f), relation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Simplify(D2D1_GEOMETRY_SIMPLIFICATION_OPTION simplificationOption, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("ID2D1SimplifiedGeometrySink *")] ID2D1SimplifiedGeometrySink* geometrySink)
         {
-            return Simplify(simplificationOption, worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, geometrySink);
+            return Simplify(simplificationOption, worldTransform, (0.25f), geometrySink);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Tessellate([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("ID2D1TessellationSink *")] ID2D1TessellationSink* tessellationSink)
         {
-            return Tessellate(worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, tessellationSink);
+            return Tessellate(worldTransform, (0.25f), tessellationSink);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CombineWithGeometry([NativeTypeName("ID2D1Geometry *")] ID2D1Geometry* inputGeometry, D2D1_COMBINE_MODE combineMode, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* inputGeometryTransform, [NativeTypeName("ID2D1SimplifiedGeometrySink *")] ID2D1SimplifiedGeometrySink* geometrySink)
         {
-            return CombineWithGeometry(inputGeometry, combineMode, inputGeometryTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, geometrySink);
+            return CombineWithGeometry(inputGeometry, combineMode, inputGeometryTransform, (0.25f), geometrySink);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Outline([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("ID2D1SimplifiedGeometrySink *")] ID2D1SimplifiedGeometrySink* geometrySink)
         {
-            return Outline(worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, geometrySink);
+            return Outline(worldTransform, (0.25f), geometrySink);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ComputeArea([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("FLOAT *")] float* area)
         {
-            return ComputeArea(worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, area);
+            return ComputeArea(worldTransform, (0.25f), area);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ComputeLength([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("FLOAT *")] float* length)
         {
-            return ComputeLength(worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, length);
+            return ComputeLength(worldTransform, (0.25f), length);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ComputePointAtLength([NativeTypeName("FLOAT")] float length, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("D2D1_POINT_2F *")] D2D_POINT_2F* point, [NativeTypeName("D2D1_POINT_2F *")] D2D_POINT_2F* unitTangentVector)
         {
-            return ComputePointAtLength(length, worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, point, unitTangentVector);
+            return ComputePointAtLength(length, worldTransform, (0.25f), point, unitTangentVector);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Widen([NativeTypeName("FLOAT")] float strokeWidth, [NativeTypeName("ID2D1StrokeStyle *")] ID2D1StrokeStyle* strokeStyle, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("ID2D1SimplifiedGeometrySink *")] ID2D1SimplifiedGeometrySink* geometrySink)
         {
-            return Widen(strokeWidth, strokeStyle, worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, geometrySink);
+            return Widen(strokeWidth, strokeStyle, worldTransform, (0.25f), geometrySink);
         }
 
         [return: NativeTypeName("HRESULT")]

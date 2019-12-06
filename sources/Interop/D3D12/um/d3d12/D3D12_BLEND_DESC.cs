@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.D3D12;
 
 namespace TerraFX.Interop
 {
@@ -17,7 +16,7 @@ namespace TerraFX.Interop
         [NativeTypeName("BOOL")]
         public int IndependentBlendEnable;
 
-        [NativeTypeName("D3D12_RENDER_TARGET_BLEND_DESC [D3D12_SIMULTANEOUS_RENDER_TARGET_COUNT]")]
+        [NativeTypeName("D3D12_RENDER_TARGET_BLEND_DESC [8]")]
         public _RenderTarget_e__FixedBuffer RenderTarget;
 
         public partial struct _RenderTarget_e__FixedBuffer
@@ -33,7 +32,7 @@ namespace TerraFX.Interop
 
             public ref D3D12_RENDER_TARGET_BLEND_DESC this[int index] => ref AsSpan()[index];
 
-            public Span<D3D12_RENDER_TARGET_BLEND_DESC> AsSpan() => MemoryMarshal.CreateSpan(ref e0, unchecked((int)D3D12_SIMULTANEOUS_RENDER_TARGET_COUNT));
+            public Span<D3D12_RENDER_TARGET_BLEND_DESC> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
         }
     }
 }

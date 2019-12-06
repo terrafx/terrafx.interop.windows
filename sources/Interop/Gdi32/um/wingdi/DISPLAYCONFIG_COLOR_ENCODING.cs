@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum DISPLAYCONFIG_COLOR_ENCODING : uint
     {
         DISPLAYCONFIG_COLOR_ENCODING_RGB = 0,

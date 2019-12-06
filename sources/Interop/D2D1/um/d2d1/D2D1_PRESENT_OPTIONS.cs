@@ -8,11 +8,12 @@ using System;
 namespace TerraFX.Interop
 {
     [Flags]
+    [NativeTypeName("int")]
     public enum D2D1_PRESENT_OPTIONS : uint
     {
         D2D1_PRESENT_OPTIONS_NONE = 0x00000000,
         D2D1_PRESENT_OPTIONS_RETAIN_CONTENTS = 0x00000001,
         D2D1_PRESENT_OPTIONS_IMMEDIATELY = 0x00000002,
-        D2D1_PRESENT_OPTIONS_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_PRESENT_OPTIONS_FORCE_DWORD = 0xffffffff,
     }
 }

@@ -5,12 +5,13 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("UINT32")]
     public enum DWRITE_FONT_AXIS_TAG : uint
     {
-        DWRITE_FONT_AXIS_TAG_WEIGHT = 0x74686777,
-        DWRITE_FONT_AXIS_TAG_WIDTH = 0x68746477,
-        DWRITE_FONT_AXIS_TAG_SLANT = 0x746E6C73,
-        DWRITE_FONT_AXIS_TAG_OPTICAL_SIZE = 0x7A73706F,
-        DWRITE_FONT_AXIS_TAG_ITALIC = 0x6C617469,
+        DWRITE_FONT_AXIS_TAG_WEIGHT = ((uint)(((uint)(byte)'t' << 24) | ((uint)(byte)'h' << 16) | ((uint)(byte)'g' << 8) | (uint)(byte)'w')),
+        DWRITE_FONT_AXIS_TAG_WIDTH = ((uint)(((uint)(byte)'h' << 24) | ((uint)(byte)'t' << 16) | ((uint)(byte)'d' << 8) | (uint)(byte)'w')),
+        DWRITE_FONT_AXIS_TAG_SLANT = ((uint)(((uint)(byte)'t' << 24) | ((uint)(byte)'n' << 16) | ((uint)(byte)'l' << 8) | (uint)(byte)'s')),
+        DWRITE_FONT_AXIS_TAG_OPTICAL_SIZE = ((uint)(((uint)(byte)'z' << 24) | ((uint)(byte)'s' << 16) | ((uint)(byte)'p' << 8) | (uint)(byte)'o')),
+        DWRITE_FONT_AXIS_TAG_ITALIC = ((uint)(((uint)(byte)'l' << 24) | ((uint)(byte)'a' << 16) | ((uint)(byte)'t' << 8) | (uint)(byte)'i')),
     }
 }

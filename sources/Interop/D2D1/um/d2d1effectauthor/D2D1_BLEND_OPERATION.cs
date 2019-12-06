@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_BLEND_OPERATION : uint
     {
         D2D1_BLEND_OPERATION_ADD = 1,
@@ -12,6 +13,6 @@ namespace TerraFX.Interop
         D2D1_BLEND_OPERATION_REV_SUBTRACT = 3,
         D2D1_BLEND_OPERATION_MIN = 4,
         D2D1_BLEND_OPERATION_MAX = 5,
-        D2D1_BLEND_OPERATION_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_BLEND_OPERATION_FORCE_DWORD = 0xffffffff,
     }
 }

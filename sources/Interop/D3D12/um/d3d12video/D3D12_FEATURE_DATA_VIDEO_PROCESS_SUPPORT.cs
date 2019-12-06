@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.D3D12;
 
 namespace TerraFX.Interop
 {
@@ -40,7 +39,7 @@ namespace TerraFX.Interop
 
         public D3D12_VIDEO_PROCESS_FILTER_FLAGS FilterSupport;
 
-        [NativeTypeName("D3D12_VIDEO_PROCESS_FILTER_RANGE [D3D12_VIDEO_PROCESS_MAX_FILTERS]")]
+        [NativeTypeName("D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
         public _FilterRangeSupport_e__FixedBuffer FilterRangeSupport;
 
         public partial struct _FilterRangeSupport_e__FixedBuffer
@@ -80,7 +79,7 @@ namespace TerraFX.Interop
 
             public ref D3D12_VIDEO_PROCESS_FILTER_RANGE this[int index] => ref AsSpan()[index];
 
-            public Span<D3D12_VIDEO_PROCESS_FILTER_RANGE> AsSpan() => MemoryMarshal.CreateSpan(ref e0, unchecked((int)D3D12_VIDEO_PROCESS_MAX_FILTERS));
+            public Span<D3D12_VIDEO_PROCESS_FILTER_RANGE> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 32);
         }
     }
 }

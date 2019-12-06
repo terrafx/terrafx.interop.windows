@@ -1,0 +1,187 @@
+--additional
+-m32
+--config
+multi-file
+--exclude
+D2D1_PROPERTY_BINDING
+DWRITE_GLYPH_RUN_DESCRIPTION
+IDWriteFactory
+IID_ID2D1Bitmap1
+IID_ID2D1BitmapBrush1
+IID_ID2D1ColorContext
+IID_ID2D1CommandList
+IID_ID2D1CommandSink
+IID_ID2D1Device
+IID_ID2D1DeviceContext
+IID_ID2D1DrawingStateBlock1
+IID_ID2D1Effect
+IID_ID2D1Factory1
+IID_ID2D1GdiMetafile
+IID_ID2D1GdiMetafileSink
+IID_ID2D1GradientStopCollection1
+IID_ID2D1ImageBrush
+IID_ID2D1Multithread
+IID_ID2D1PathGeometry1
+IID_ID2D1PrintControl
+IID_ID2D1Properties
+IID_ID2D1StrokeStyle1
+IPrintDocumentPackageTarget
+IWICColorContext
+IWICImagingFactory
+operator|
+operator|=
+operator&
+operator&=
+operator~
+operator^
+operator^=
+void Clear(const D2D1_COLOR_F &)
+HRESULT CombineWithGeometry(ID2D1Geometry *, D2D1_COMBINE_MODE, const D2D1_MATRIX_3X2_F &, ID2D1SimplifiedGeometrySink *)
+HRESULT CombineWithGeometry(ID2D1Geometry *, D2D1_COMBINE_MODE, const D2D1_MATRIX_3X2_F &, FLOAT, ID2D1SimplifiedGeometrySink *)
+HRESULT CompareWithGeometry(ID2D1Geometry *, const D2D1_MATRIX_3X2_F &, D2D1_GEOMETRY_RELATION *)
+HRESULT CompareWithGeometry(ID2D1Geometry *, const D2D1_MATRIX_3X2_F &, FLOAT, D2D1_GEOMETRY_RELATION *)
+HRESULT ComputeArea(const D2D1_MATRIX_3X2_F &, FLOAT *)
+HRESULT ComputeArea(const D2D1_MATRIX_3X2_F &, FLOAT, FLOAT *)
+HRESULT ComputeLength(const D2D1_MATRIX_3X2_F &, FLOAT *)
+HRESULT ComputeLength(const D2D1_MATRIX_3X2_F &, FLOAT, FLOAT *)
+HRESULT ComputePointAndSegmentAtLength(FLOAT, UINT32, const D2D1_MATRIX_3X2_F &, D2D1_POINT_DESCRIPTION *)
+HRESULT ComputePointAndSegmentAtLength(FLOAT, UINT32, const D2D1_MATRIX_3X2_F &, FLOAT, D2D1_POINT_DESCRIPTION *)
+HRESULT ComputePointAtLength(FLOAT, const D2D1_MATRIX_3X2_F &, D2D1_POINT_2F *, D2D1_POINT_2F *)
+HRESULT ComputePointAtLength(FLOAT, const D2D1_MATRIX_3X2_F &, FLOAT, D2D1_POINT_2F *, D2D1_POINT_2F *)
+HRESULT CreateBitmap(D2D1_SIZE_U, const void *, UINT32, const D2D1_BITMAP_PROPERTIES &, ID2D1Bitmap **)
+HRESULT CreateBitmap(D2D1_SIZE_U, const void *, UINT32, const D2D1_BITMAP_PROPERTIES1 &, ID2D1Bitmap1 **)
+HRESULT CreateBitmapBrush(ID2D1Bitmap *, const D2D1_BITMAP_BRUSH_PROPERTIES &, const D2D1_BRUSH_PROPERTIES &, ID2D1BitmapBrush **)
+HRESULT CreateBitmapBrush(ID2D1Bitmap *, const D2D1_BITMAP_BRUSH_PROPERTIES1 &, const D2D1_BRUSH_PROPERTIES &, ID2D1BitmapBrush1 **)
+HRESULT CreateBitmapFromDxgiSurface(IDXGISurface *, const D2D1_BITMAP_PROPERTIES1 &, ID2D1Bitmap1 **)
+HRESULT CreateBitmapFromWicBitmap(IWICBitmapSource *, const D2D1_BITMAP_PROPERTIES &, ID2D1Bitmap **)
+HRESULT CreateBitmapFromWicBitmap(IWICBitmapSource *, const D2D1_BITMAP_PROPERTIES1 &, ID2D1Bitmap1 **)
+HRESULT CreateDxgiSurfaceRenderTarget(IDXGISurface *, const D2D1_RENDER_TARGET_PROPERTIES &, ID2D1RenderTarget **)
+HRESULT CreateEllipseGeometry(const D2D1_ELLIPSE &, ID2D1EllipseGeometry **)
+HRESULT CreateHwndRenderTarget(const D2D1_RENDER_TARGET_PROPERTIES &, const D2D1_HWND_RENDER_TARGET_PROPERTIES &, ID2D1HwndRenderTarget **)
+HRESULT CreateImageBrush(ID2D1Image *, const D2D1_IMAGE_BRUSH_PROPERTIES &, const D2D1_BRUSH_PROPERTIES &, ID2D1ImageBrush **)
+HRESULT CreateLinearGradientBrush(const D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES &, const D2D1_BRUSH_PROPERTIES &, ID2D1GradientStopCollection *, ID2D1LinearGradientBrush **)
+HRESULT CreatePrintControl(IWICImagingFactory *, IPrintDocumentPackageTarget *, const D2D1_PRINT_CONTROL_PROPERTIES &, ID2D1PrintControl **)
+HRESULT CreateRadialGradientBrush(const D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES &, const D2D1_BRUSH_PROPERTIES &, ID2D1GradientStopCollection *, ID2D1RadialGradientBrush **)
+HRESULT CreateRectangleGeometry(const D2D1_RECT_F &, ID2D1RectangleGeometry **)
+HRESULT CreateRoundedRectangleGeometry(const D2D1_ROUNDED_RECT &, ID2D1RoundedRectangleGeometry **)
+HRESULT CreateSolidColorBrush(const D2D1_COLOR_F &, const D2D1_BRUSH_PROPERTIES &, ID2D1SolidColorBrush **)
+HRESULT CreateStrokeStyle(const D2D1_STROKE_STYLE_PROPERTIES &, const FLOAT *, UINT32, ID2D1StrokeStyle **)
+HRESULT CreateStrokeStyle(const D2D1_STROKE_STYLE_PROPERTIES1 &, const FLOAT *, UINT32, ID2D1StrokeStyle1 **)
+HRESULT CreateTransformedGeometry(ID2D1Geometry *, const D2D1_MATRIX_3X2_F &, ID2D1TransformedGeometry **)
+HRESULT CreateWicBitmapRenderTarget(IWICBitmap *, const D2D1_RENDER_TARGET_PROPERTIES &, ID2D1RenderTarget **)
+HRESULT D2D1CreateDevice(IDXGIDevice *, const D2D1_CREATION_PROPERTIES &, ID2D1Device **)
+HRESULT D2D1CreateDeviceContext(IDXGISurface *, const D2D1_CREATION_PROPERTIES &, ID2D1DeviceContext **)
+void DrawBitmap(ID2D1Bitmap *, const D2D1_RECT_F &, FLOAT, D2D1_BITMAP_INTERPOLATION_MODE, const D2D1_RECT_F *)
+void DrawBitmap(ID2D1Bitmap *, const D2D1_RECT_F &, FLOAT, D2D1_BITMAP_INTERPOLATION_MODE, const D2D1_RECT_F &)
+void DrawBitmap(ID2D1Bitmap *, const D2D1_RECT_F &, FLOAT, D2D1_INTERPOLATION_MODE, const D2D1_RECT_F *, const D2D1_MATRIX_4X4_F *)
+void DrawBitmap(ID2D1Bitmap *, const D2D1_RECT_F &, FLOAT, D2D1_INTERPOLATION_MODE, const D2D1_RECT_F &, const D2D1_MATRIX_4X4_F *)
+void DrawBitmap(ID2D1Bitmap *, const D2D1_RECT_F &, FLOAT, D2D1_INTERPOLATION_MODE, const D2D1_RECT_F &, const D2D1_MATRIX_4X4_F &)
+void DrawEllipse(const D2D1_ELLIPSE &, ID2D1Brush *, FLOAT, ID2D1StrokeStyle *)
+void DrawRectangle(const D2D1_RECT_F &, ID2D1Brush *, FLOAT, ID2D1StrokeStyle *)
+void DrawRoundedRectangle(const D2D1_ROUNDED_RECT &, ID2D1Brush *, FLOAT, ID2D1StrokeStyle *)
+void DrawTextA(const WCHAR *, UINT32, IDWriteTextFormat *, const D2D1_RECT_F &, ID2D1Brush *, D2D1_DRAW_TEXT_OPTIONS, DWRITE_MEASURING_MODE)
+HRESULT FillContainsPoint(D2D1_POINT_2F, const D2D1_MATRIX_3X2_F &, BOOL *)
+HRESULT FillContainsPoint(D2D1_POINT_2F, const D2D1_MATRIX_3X2_F &, FLOAT, BOOL *)
+void FillEllipse(const D2D1_ELLIPSE &, ID2D1Brush *)
+void FillOpacityMask(ID2D1Bitmap *, ID2D1Brush *, const D2D1_RECT_F &, const D2D1_RECT_F *)
+void FillOpacityMask(ID2D1Bitmap *, ID2D1Brush *, const D2D1_RECT_F &, const D2D1_RECT_F &)
+void FillOpacityMask(ID2D1Bitmap *, ID2D1Brush *, D2D1_OPACITY_MASK_CONTENT, const D2D1_RECT_F &, const D2D1_RECT_F &)
+void FillRectangle(const D2D1_RECT_F &, ID2D1Brush *)
+void FillRoundedRectangle(const D2D1_ROUNDED_RECT &, ID2D1Brush *)
+HRESULT GetBounds(const D2D1_MATRIX_3X2_F &, D2D1_RECT_F *)
+HRESULT GetWidenedBounds(FLOAT, ID2D1StrokeStyle *, const D2D1_MATRIX_3X2_F &, D2D1_RECT_F *)
+HRESULT GetWidenedBounds(FLOAT, ID2D1StrokeStyle *, const D2D1_MATRIX_3X2_F &, FLOAT, D2D1_RECT_F *)
+BOOL IsSupported(const D2D1_RENDER_TARGET_PROPERTIES &)
+HRESULT Outline(const D2D1_MATRIX_3X2_F &, FLOAT, ID2D1SimplifiedGeometrySink *)
+HRESULT Outline(const D2D1_MATRIX_3X2_F &, ID2D1SimplifiedGeometrySink *)
+void PushAxisAlignedClip(const D2D1_RECT_F &, D2D1_ANTIALIAS_MODE)
+void PushLayer(const D2D1_LAYER_PARAMETERS &, ID2D1Layer *)
+void PushLayer(const D2D1_LAYER_PARAMETERS1 &, ID2D1Layer *)
+void SetDescription(const D2D1_DRAWING_STATE_DESCRIPTION &)
+void SetRenderingControls(const D2D1_RENDERING_CONTROLS &)
+void SetTransform(const D2D1_MATRIX_3X2_F &)
+HRESULT Simplify(D2D1_GEOMETRY_SIMPLIFICATION_OPTION, const D2D1_MATRIX_3X2_F &, ID2D1SimplifiedGeometrySink *)
+HRESULT Simplify(D2D1_GEOMETRY_SIMPLIFICATION_OPTION, const D2D1_MATRIX_3X2_F &, FLOAT, ID2D1SimplifiedGeometrySink *)
+HRESULT StrokeContainsPoint(D2D1_POINT_2F, FLOAT, ID2D1StrokeStyle *, const D2D1_MATRIX_3X2_F &, BOOL *)
+HRESULT StrokeContainsPoint(D2D1_POINT_2F, FLOAT, ID2D1StrokeStyle *, const D2D1_MATRIX_3X2_F &, FLOAT, BOOL *)
+HRESULT Tessellate(const D2D1_MATRIX_3X2_F &, ID2D1TessellationSink *)
+HRESULT Tessellate(const D2D1_MATRIX_3X2_F &, FLOAT, ID2D1TessellationSink *)
+HRESULT Widen(FLOAT, ID2D1StrokeStyle *, const D2D1_MATRIX_3X2_F &, ID2D1SimplifiedGeometrySink *)
+HRESULT Widen(FLOAT, ID2D1StrokeStyle *, const D2D1_MATRIX_3X2_F &, FLOAT, ID2D1SimplifiedGeometrySink *)
+--file
+um-d2d1_1.h
+--headerFile
+header.txt
+--include-directory
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+--include-directory
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+--libraryPath
+D2D1
+--methodClassName
+D2D1
+--namespace
+TerraFX.Interop
+--output
+../../../sources/Interop/D2D1/um/d2d1_1
+--remap
+_D3DCOLORVALUE=DXGI_RGBA
+_GUID=Guid
+DrawTextA=DrawText
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\d2d1_1.h
+--with-attribute
+D2D1_BITMAP_OPTIONS=Flags
+D2D1_DEVICE_CONTEXT_OPTIONS=Flags
+D2D1_LAYER_OPTIONS1=Flags
+D2D1_MAP_OPTIONS=Flags
+ID2D1Bitmap1=Guid("A898A84C-3873-4588-B08B-EBBF978DF041")
+ID2D1BitmapBrush1=Guid("41343A53-E41A-49A2-91CD-21793BBB62E5")
+ID2D1ColorContext=Guid("1C4820BB-5771-4518-A581-2FE4DD0EC657")
+ID2D1CommandList=Guid("B4F34A19-2383-4D76-94F6-EC343657C3DC")
+ID2D1CommandSink=Guid("54D7898A-A061-40A7-BEC7-E465BCBA2C4F")
+ID2D1Device=Guid("47DD575D-AC05-4CDD-8049-9B02CD16F44C")
+ID2D1DeviceContext=Guid("E8F7FE7A-191C-466D-AD95-975678BDA998")
+ID2D1DrawingStateBlock1=Guid("689F1F85-C72E-4E33-8F19-85754EFD5ACE")
+ID2D1Effect=Guid("28211A43-7D89-476F-8181-2D6159B220AD")
+ID2D1Factory1=Guid("BB12D362-DAEE-4B9A-AA1D-14BA401CFA1F")
+ID2D1GdiMetafile=Guid("2F543DC3-CFC1-4211-864F-CFD91C6F3395")
+ID2D1GdiMetafileSink=Guid("82237326-8111-4F7C-BCF4-B5C1175564FE")
+ID2D1GradientStopCollection1=Guid("AE1572F4-5DD0-4777-998B-9279472AE63B")
+ID2D1ImageBrush=Guid("FE9E984D-3F95-407C-B5DB-CB94D4E8F87C")
+ID2D1Multithread=Guid("31E6E7BC-E0FF-4D46-8C64-A0A8C41C15D3")
+ID2D1PathGeometry1=Guid("62BAA2D2-AB54-41B7-B872-787E0106A421")
+ID2D1PrintControl=Guid("2C1D867D-C290-41C8-AE7E-34A98702E9A5")
+ID2D1Properties=Guid("483473D7-CD46-4F9D-9D3A-3112AA80159D")
+ID2D1StrokeStyle1=Guid("10A72A66-E91C-43F4-993F-DDF4B82B0B4A")
+--with-namespace
+D2D1_INTERPOLATION_MODE=static TerraFX.Interop.D2D1_INTERPOLATION_MODE_DEFINITION
+D2D1_THREADING_MODE=static TerraFX.Interop.D2D1_FACTORY_TYPE
+ID2D1DeviceContext=static TerraFX.Interop.D2D1_BITMAP_INTERPOLATION_MODE
+ID2D1DeviceContext=static TerraFX.Interop.D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS
+ID2D1DeviceContext=static TerraFX.Interop.D2D1_COMPOSITE_MODE
+ID2D1DeviceContext=static TerraFX.Interop.D2D1_DRAW_TEXT_OPTIONS
+ID2D1DeviceContext=static TerraFX.Interop.D2D1_EXTEND_MODE
+ID2D1DeviceContext=static TerraFX.Interop.D2D1_GAMMA
+ID2D1DeviceContext=static TerraFX.Interop.D2D1_INTERPOLATION_MODE
+ID2D1DeviceContext=static TerraFX.Interop.DWRITE_MEASURING_MODE
+ID2D1Effect=static TerraFX.Interop.D2D1_PROPERTY_TYPE
+ID2D1Properties=static TerraFX.Interop.D2D1_PROPERTY_TYPE
+--with-type
+D2D1_BITMAP_OPTIONS=uint
+D2D1_BUFFER_PRECISION=uint
+D2D1_COLOR_INTERPOLATION_MODE=uint
+D2D1_COLOR_SPACE=uint
+D2D1_COMPOSITE_MODE=uint
+D2D1_DEVICE_CONTEXT_OPTIONS=uint
+D2D1_INTERPOLATION_MODE=uint
+D2D1_LAYER_OPTIONS1=uint
+D2D1_MAP_OPTIONS=uint
+D2D1_PRIMITIVE_BLEND=uint
+D2D1_PRINT_FONT_SUBSET_MODE=uint
+D2D1_PROPERTY=uint
+D2D1_PROPERTY_TYPE=uint
+D2D1_STROKE_TRANSFORM_TYPE=uint
+D2D1_SUBPROPERTY=uint
+D2D1_THREADING_MODE=uint
+D2D1_UNIT_MODE=uint

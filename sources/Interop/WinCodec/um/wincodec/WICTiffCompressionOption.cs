@@ -15,6 +15,6 @@ namespace TerraFX.Interop
         WICTiffCompressionRLE = 0x5,
         WICTiffCompressionZIP = 0x6,
         WICTiffCompressionLZWHDifferencing = 0x7,
-        WICTIFFCOMPRESSIONOPTION_FORCE_DWORD = 0x7FFFFFFF,
+        WICTIFFCOMPRESSIONOPTION_FORCE_DWORD = 0x7fffffff,
     }
 }

@@ -36,7 +36,7 @@ namespace TerraFX.Interop
         public delegate void _SetDescription(ID2D1DrawingStateBlock1* pThis, [NativeTypeName("const D2D1_DRAWING_STATE_DESCRIPTION *")] D2D1_DRAWING_STATE_DESCRIPTION* stateDescription);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetTextRenderingParams(ID2D1DrawingStateBlock1* pThis, [NativeTypeName("IDWriteRenderingParams *")] IDWriteRenderingParams* textRenderingParams);
+        public delegate void _SetTextRenderingParams(ID2D1DrawingStateBlock1* pThis, [NativeTypeName("IDWriteRenderingParams *")] IDWriteRenderingParams* textRenderingParams = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public delegate void _GetTextRenderingParams(ID2D1DrawingStateBlock1* pThis, [NativeTypeName("IDWriteRenderingParams **")] IDWriteRenderingParams** textRenderingParams);
@@ -80,7 +80,7 @@ namespace TerraFX.Interop
             Marshal.GetDelegateForFunctionPointer<_SetDescription>(lpVtbl->SetDescription)((ID2D1DrawingStateBlock1*)Unsafe.AsPointer(ref this), stateDescription);
         }
 
-        public void SetTextRenderingParams([NativeTypeName("IDWriteRenderingParams *")] IDWriteRenderingParams* textRenderingParams)
+        public void SetTextRenderingParams([NativeTypeName("IDWriteRenderingParams *")] IDWriteRenderingParams* textRenderingParams = null)
         {
             Marshal.GetDelegateForFunctionPointer<_SetTextRenderingParams>(lpVtbl->SetTextRenderingParams)((ID2D1DrawingStateBlock1*)Unsafe.AsPointer(ref this), textRenderingParams);
         }

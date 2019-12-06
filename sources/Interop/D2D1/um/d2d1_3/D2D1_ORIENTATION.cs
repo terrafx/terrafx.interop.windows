@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_ORIENTATION : uint
     {
         D2D1_ORIENTATION_DEFAULT = 1,
@@ -15,6 +16,6 @@ namespace TerraFX.Interop
         D2D1_ORIENTATION_ROTATE_CLOCKWISE270 = 6,
         D2D1_ORIENTATION_ROTATE_CLOCKWISE270_FLIP_HORIZONTAL = 7,
         D2D1_ORIENTATION_ROTATE_CLOCKWISE90 = 8,
-        D2D1_ORIENTATION_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_ORIENTATION_FORCE_DWORD = 0xffffffff,
     }
 }

@@ -3,11 +3,12 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.Winapi)]
     [return: NativeTypeName("HRESULT")]
-    public unsafe delegate int DDRAWMARSHCALLBACKMARSHAL([NativeTypeName("HGDIOBJ")] void* hGdiObj, [NativeTypeName("LPVOID")] void* pGdiRef, [NativeTypeName("LPVOID *")] void** ppDDrawRef);
+    public unsafe delegate int DDRAWMARSHCALLBACKMARSHAL([NativeTypeName("HGDIOBJ")] IntPtr hGdiObj, [NativeTypeName("LPVOID")] void* pGdiRef, [NativeTypeName("LPVOID *")] void** ppDDrawRef);
 }

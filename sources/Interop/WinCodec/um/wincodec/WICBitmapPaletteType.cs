@@ -21,6 +21,6 @@ namespace TerraFX.Interop
         WICBitmapPaletteTypeFixedGray4 = 0xa,
         WICBitmapPaletteTypeFixedGray16 = 0xb,
         WICBitmapPaletteTypeFixedGray256 = 0xc,
-        WICBITMAPPALETTETYPE_FORCE_DWORD = 0x7FFFFFFF,
+        WICBITMAPPALETTETYPE_FORCE_DWORD = 0x7fffffff,
     }
 }

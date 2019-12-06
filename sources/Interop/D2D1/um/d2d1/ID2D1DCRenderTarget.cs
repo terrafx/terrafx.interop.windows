@@ -6,9 +6,12 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.D2D1_BITMAP_INTERPOLATION_MODE;
 using static TerraFX.Interop.D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS;
+using static TerraFX.Interop.D2D1_DRAW_TEXT_OPTIONS;
 using static TerraFX.Interop.D2D1_EXTEND_MODE;
 using static TerraFX.Interop.D2D1_GAMMA;
+using static TerraFX.Interop.DWRITE_MEASURING_MODE;
 
 namespace TerraFX.Interop
 {
@@ -77,49 +80,49 @@ namespace TerraFX.Interop
         public delegate int _CreateMesh(ID2D1DCRenderTarget* pThis, [NativeTypeName("ID2D1Mesh **")] ID2D1Mesh** mesh);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _DrawLine(ID2D1DCRenderTarget* pThis, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point0, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point1, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth, [NativeTypeName("ID2D1StrokeStyle *")] ID2D1StrokeStyle* strokeStyle);
+        public delegate void _DrawLine(ID2D1DCRenderTarget* pThis, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point0, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point1, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth = 1.0f, [NativeTypeName("ID2D1StrokeStyle *")] ID2D1StrokeStyle* strokeStyle = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _DrawRectangle(ID2D1DCRenderTarget* pThis, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* rect, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth, [NativeTypeName("ID2D1StrokeStyle *")] ID2D1StrokeStyle* strokeStyle);
+        public delegate void _DrawRectangle(ID2D1DCRenderTarget* pThis, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* rect, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth = 1.0f, [NativeTypeName("ID2D1StrokeStyle *")] ID2D1StrokeStyle* strokeStyle = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public delegate void _FillRectangle(ID2D1DCRenderTarget* pThis, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* rect, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _DrawRoundedRectangle(ID2D1DCRenderTarget* pThis, [NativeTypeName("const D2D1_ROUNDED_RECT *")] D2D1_ROUNDED_RECT* roundedRect, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth, [NativeTypeName("ID2D1StrokeStyle *")] ID2D1StrokeStyle* strokeStyle);
+        public delegate void _DrawRoundedRectangle(ID2D1DCRenderTarget* pThis, [NativeTypeName("const D2D1_ROUNDED_RECT *")] D2D1_ROUNDED_RECT* roundedRect, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth = 1.0f, [NativeTypeName("ID2D1StrokeStyle *")] ID2D1StrokeStyle* strokeStyle = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public delegate void _FillRoundedRectangle(ID2D1DCRenderTarget* pThis, [NativeTypeName("const D2D1_ROUNDED_RECT *")] D2D1_ROUNDED_RECT* roundedRect, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _DrawEllipse(ID2D1DCRenderTarget* pThis, [NativeTypeName("const D2D1_ELLIPSE *")] D2D1_ELLIPSE* ellipse, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth, [NativeTypeName("ID2D1StrokeStyle *")] ID2D1StrokeStyle* strokeStyle);
+        public delegate void _DrawEllipse(ID2D1DCRenderTarget* pThis, [NativeTypeName("const D2D1_ELLIPSE *")] D2D1_ELLIPSE* ellipse, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth = 1.0f, [NativeTypeName("ID2D1StrokeStyle *")] ID2D1StrokeStyle* strokeStyle = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public delegate void _FillEllipse(ID2D1DCRenderTarget* pThis, [NativeTypeName("const D2D1_ELLIPSE *")] D2D1_ELLIPSE* ellipse, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _DrawGeometry(ID2D1DCRenderTarget* pThis, [NativeTypeName("ID2D1Geometry *")] ID2D1Geometry* geometry, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth, [NativeTypeName("ID2D1StrokeStyle *")] ID2D1StrokeStyle* strokeStyle);
+        public delegate void _DrawGeometry(ID2D1DCRenderTarget* pThis, [NativeTypeName("ID2D1Geometry *")] ID2D1Geometry* geometry, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth = 1.0f, [NativeTypeName("ID2D1StrokeStyle *")] ID2D1StrokeStyle* strokeStyle = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _FillGeometry(ID2D1DCRenderTarget* pThis, [NativeTypeName("ID2D1Geometry *")] ID2D1Geometry* geometry, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* opacityBrush);
+        public delegate void _FillGeometry(ID2D1DCRenderTarget* pThis, [NativeTypeName("ID2D1Geometry *")] ID2D1Geometry* geometry, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* opacityBrush = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public delegate void _FillMesh(ID2D1DCRenderTarget* pThis, [NativeTypeName("ID2D1Mesh *")] ID2D1Mesh* mesh, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _FillOpacityMask(ID2D1DCRenderTarget* pThis, [NativeTypeName("ID2D1Bitmap *")] ID2D1Bitmap* opacityMask, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, D2D1_OPACITY_MASK_CONTENT content, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangle, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle);
+        public delegate void _FillOpacityMask(ID2D1DCRenderTarget* pThis, [NativeTypeName("ID2D1Bitmap *")] ID2D1Bitmap* opacityMask, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, D2D1_OPACITY_MASK_CONTENT content, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangle = null, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _DrawBitmap(ID2D1DCRenderTarget* pThis, [NativeTypeName("ID2D1Bitmap *")] ID2D1Bitmap* bitmap, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangle, [NativeTypeName("FLOAT")] float opacity, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle);
+        public delegate void _DrawBitmap(ID2D1DCRenderTarget* pThis, [NativeTypeName("ID2D1Bitmap *")] ID2D1Bitmap* bitmap, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangle = null, [NativeTypeName("FLOAT")] float opacity = 1.0f, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode = D2D1_BITMAP_INTERPOLATION_MODE_LINEAR, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _DrawText(ID2D1DCRenderTarget* pThis, [NativeTypeName("const WCHAR *")] ushort* @string, [NativeTypeName("UINT32")] uint stringLength, [NativeTypeName("IDWriteTextFormat *")] IDWriteTextFormat* textFormat, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* layoutRect, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options, DWRITE_MEASURING_MODE measuringMode);
+        public delegate void _DrawText(ID2D1DCRenderTarget* pThis, [NativeTypeName("const WCHAR *")] ushort* @string, [NativeTypeName("UINT32")] uint stringLength, [NativeTypeName("IDWriteTextFormat *")] IDWriteTextFormat* textFormat, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* layoutRect, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options = D2D1_DRAW_TEXT_OPTIONS_NONE, DWRITE_MEASURING_MODE measuringMode = DWRITE_MEASURING_MODE_NATURAL);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _DrawTextLayout(ID2D1DCRenderTarget* pThis, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F origin, [NativeTypeName("IDWriteTextLayout *")] IDWriteTextLayout* textLayout, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options);
+        public delegate void _DrawTextLayout(ID2D1DCRenderTarget* pThis, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F origin, [NativeTypeName("IDWriteTextLayout *")] IDWriteTextLayout* textLayout, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options = D2D1_DRAW_TEXT_OPTIONS_NONE);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _DrawGlyphRun(ID2D1DCRenderTarget* pThis, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F baselineOrigin, [NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* foregroundBrush, DWRITE_MEASURING_MODE measuringMode);
+        public delegate void _DrawGlyphRun(ID2D1DCRenderTarget* pThis, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F baselineOrigin, [NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* foregroundBrush, DWRITE_MEASURING_MODE measuringMode = DWRITE_MEASURING_MODE_NATURAL);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public delegate void _SetTransform(ID2D1DCRenderTarget* pThis, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform);
@@ -140,7 +143,7 @@ namespace TerraFX.Interop
         public delegate D2D1_TEXT_ANTIALIAS_MODE _GetTextAntialiasMode(ID2D1DCRenderTarget* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetTextRenderingParams(ID2D1DCRenderTarget* pThis, [NativeTypeName("IDWriteRenderingParams *")] IDWriteRenderingParams* textRenderingParams);
+        public delegate void _SetTextRenderingParams(ID2D1DCRenderTarget* pThis, [NativeTypeName("IDWriteRenderingParams *")] IDWriteRenderingParams* textRenderingParams = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public delegate void _GetTextRenderingParams(ID2D1DCRenderTarget* pThis, [NativeTypeName("IDWriteRenderingParams **")] IDWriteRenderingParams** textRenderingParams);
@@ -149,7 +152,7 @@ namespace TerraFX.Interop
         public delegate void _SetTags(ID2D1DCRenderTarget* pThis, [NativeTypeName("D2D1_TAG")] ulong tag1, [NativeTypeName("D2D1_TAG")] ulong tag2);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetTags(ID2D1DCRenderTarget* pThis, [NativeTypeName("D2D1_TAG *")] ulong* tag1, [NativeTypeName("D2D1_TAG *")] ulong* tag2);
+        public delegate void _GetTags(ID2D1DCRenderTarget* pThis, [NativeTypeName("D2D1_TAG *")] ulong* tag1 = null, [NativeTypeName("D2D1_TAG *")] ulong* tag2 = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public delegate void _PushLayer(ID2D1DCRenderTarget* pThis, [NativeTypeName("const D2D1_LAYER_PARAMETERS *")] D2D1_LAYER_PARAMETERS* layerParameters, [NativeTypeName("ID2D1Layer *")] ID2D1Layer* layer);
@@ -159,7 +162,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Flush(ID2D1DCRenderTarget* pThis, [NativeTypeName("D2D1_TAG *")] ulong* tag1, [NativeTypeName("D2D1_TAG *")] ulong* tag2);
+        public delegate int _Flush(ID2D1DCRenderTarget* pThis, [NativeTypeName("D2D1_TAG *")] ulong* tag1 = null, [NativeTypeName("D2D1_TAG *")] ulong* tag2 = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public delegate void _SaveDrawingState(ID2D1DCRenderTarget* pThis, [NativeTypeName("ID2D1DrawingStateBlock *")] ID2D1DrawingStateBlock* drawingStateBlock);
@@ -174,14 +177,14 @@ namespace TerraFX.Interop
         public delegate void _PopAxisAlignedClip(ID2D1DCRenderTarget* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _Clear(ID2D1DCRenderTarget* pThis, [NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* clearColor);
+        public delegate void _Clear(ID2D1DCRenderTarget* pThis, [NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* clearColor = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public delegate void _BeginDraw(ID2D1DCRenderTarget* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _EndDraw(ID2D1DCRenderTarget* pThis, [NativeTypeName("D2D1_TAG *")] ulong* tag1, [NativeTypeName("D2D1_TAG *")] ulong* tag2);
+        public delegate int _EndDraw(ID2D1DCRenderTarget* pThis, [NativeTypeName("D2D1_TAG *")] ulong* tag1 = null, [NativeTypeName("D2D1_TAG *")] ulong* tag2 = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public delegate D2D1_PIXEL_FORMAT* _GetPixelFormat(ID2D1DCRenderTarget* pThis, D2D1_PIXEL_FORMAT* _result);
@@ -228,6 +231,12 @@ namespace TerraFX.Interop
         public int CreateBitmapBrush([NativeTypeName("ID2D1Bitmap *")] ID2D1Bitmap* bitmap, [NativeTypeName("ID2D1BitmapBrush **")] ID2D1BitmapBrush** bitmapBrush)
         {
             return CreateBitmapBrush(bitmap, null, null, bitmapBrush);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int CreateBitmapBrush([NativeTypeName("ID2D1Bitmap *")] ID2D1Bitmap* bitmap, [NativeTypeName("const D2D1_BITMAP_BRUSH_PROPERTIES &")] D2D1_BITMAP_BRUSH_PROPERTIES* bitmapBrushProperties, [NativeTypeName("ID2D1BitmapBrush **")] ID2D1BitmapBrush** bitmapBrush)
+        {
+            return CreateBitmapBrush(bitmap, bitmapBrushProperties, null, bitmapBrush);
         }
 
         [return: NativeTypeName("HRESULT")]
@@ -385,12 +394,12 @@ namespace TerraFX.Interop
             return Marshal.GetDelegateForFunctionPointer<_CreateMesh>(lpVtbl->CreateMesh)((ID2D1DCRenderTarget*)Unsafe.AsPointer(ref this), mesh);
         }
 
-        public void DrawLine([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point0, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point1, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth, [NativeTypeName("ID2D1StrokeStyle *")] ID2D1StrokeStyle* strokeStyle)
+        public void DrawLine([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point0, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point1, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth = 1.0f, [NativeTypeName("ID2D1StrokeStyle *")] ID2D1StrokeStyle* strokeStyle = null)
         {
             Marshal.GetDelegateForFunctionPointer<_DrawLine>(lpVtbl->DrawLine)((ID2D1DCRenderTarget*)Unsafe.AsPointer(ref this), point0, point1, brush, strokeWidth, strokeStyle);
         }
 
-        public void DrawRectangle([NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* rect, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth, [NativeTypeName("ID2D1StrokeStyle *")] ID2D1StrokeStyle* strokeStyle)
+        public void DrawRectangle([NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* rect, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth = 1.0f, [NativeTypeName("ID2D1StrokeStyle *")] ID2D1StrokeStyle* strokeStyle = null)
         {
             Marshal.GetDelegateForFunctionPointer<_DrawRectangle>(lpVtbl->DrawRectangle)((ID2D1DCRenderTarget*)Unsafe.AsPointer(ref this), rect, brush, strokeWidth, strokeStyle);
         }
@@ -400,7 +409,7 @@ namespace TerraFX.Interop
             Marshal.GetDelegateForFunctionPointer<_FillRectangle>(lpVtbl->FillRectangle)((ID2D1DCRenderTarget*)Unsafe.AsPointer(ref this), rect, brush);
         }
 
-        public void DrawRoundedRectangle([NativeTypeName("const D2D1_ROUNDED_RECT *")] D2D1_ROUNDED_RECT* roundedRect, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth, [NativeTypeName("ID2D1StrokeStyle *")] ID2D1StrokeStyle* strokeStyle)
+        public void DrawRoundedRectangle([NativeTypeName("const D2D1_ROUNDED_RECT *")] D2D1_ROUNDED_RECT* roundedRect, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth = 1.0f, [NativeTypeName("ID2D1StrokeStyle *")] ID2D1StrokeStyle* strokeStyle = null)
         {
             Marshal.GetDelegateForFunctionPointer<_DrawRoundedRectangle>(lpVtbl->DrawRoundedRectangle)((ID2D1DCRenderTarget*)Unsafe.AsPointer(ref this), roundedRect, brush, strokeWidth, strokeStyle);
         }
@@ -410,7 +419,7 @@ namespace TerraFX.Interop
             Marshal.GetDelegateForFunctionPointer<_FillRoundedRectangle>(lpVtbl->FillRoundedRectangle)((ID2D1DCRenderTarget*)Unsafe.AsPointer(ref this), roundedRect, brush);
         }
 
-        public void DrawEllipse([NativeTypeName("const D2D1_ELLIPSE *")] D2D1_ELLIPSE* ellipse, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth, [NativeTypeName("ID2D1StrokeStyle *")] ID2D1StrokeStyle* strokeStyle)
+        public void DrawEllipse([NativeTypeName("const D2D1_ELLIPSE *")] D2D1_ELLIPSE* ellipse, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth = 1.0f, [NativeTypeName("ID2D1StrokeStyle *")] ID2D1StrokeStyle* strokeStyle = null)
         {
             Marshal.GetDelegateForFunctionPointer<_DrawEllipse>(lpVtbl->DrawEllipse)((ID2D1DCRenderTarget*)Unsafe.AsPointer(ref this), ellipse, brush, strokeWidth, strokeStyle);
         }
@@ -420,12 +429,12 @@ namespace TerraFX.Interop
             Marshal.GetDelegateForFunctionPointer<_FillEllipse>(lpVtbl->FillEllipse)((ID2D1DCRenderTarget*)Unsafe.AsPointer(ref this), ellipse, brush);
         }
 
-        public void DrawGeometry([NativeTypeName("ID2D1Geometry *")] ID2D1Geometry* geometry, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth, [NativeTypeName("ID2D1StrokeStyle *")] ID2D1StrokeStyle* strokeStyle)
+        public void DrawGeometry([NativeTypeName("ID2D1Geometry *")] ID2D1Geometry* geometry, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth = 1.0f, [NativeTypeName("ID2D1StrokeStyle *")] ID2D1StrokeStyle* strokeStyle = null)
         {
             Marshal.GetDelegateForFunctionPointer<_DrawGeometry>(lpVtbl->DrawGeometry)((ID2D1DCRenderTarget*)Unsafe.AsPointer(ref this), geometry, brush, strokeWidth, strokeStyle);
         }
 
-        public void FillGeometry([NativeTypeName("ID2D1Geometry *")] ID2D1Geometry* geometry, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* opacityBrush)
+        public void FillGeometry([NativeTypeName("ID2D1Geometry *")] ID2D1Geometry* geometry, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* opacityBrush = null)
         {
             Marshal.GetDelegateForFunctionPointer<_FillGeometry>(lpVtbl->FillGeometry)((ID2D1DCRenderTarget*)Unsafe.AsPointer(ref this), geometry, brush, opacityBrush);
         }
@@ -435,27 +444,27 @@ namespace TerraFX.Interop
             Marshal.GetDelegateForFunctionPointer<_FillMesh>(lpVtbl->FillMesh)((ID2D1DCRenderTarget*)Unsafe.AsPointer(ref this), mesh, brush);
         }
 
-        public void FillOpacityMask([NativeTypeName("ID2D1Bitmap *")] ID2D1Bitmap* opacityMask, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, D2D1_OPACITY_MASK_CONTENT content, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangle, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle)
+        public void FillOpacityMask([NativeTypeName("ID2D1Bitmap *")] ID2D1Bitmap* opacityMask, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, D2D1_OPACITY_MASK_CONTENT content, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangle = null, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle = null)
         {
             Marshal.GetDelegateForFunctionPointer<_FillOpacityMask>(lpVtbl->FillOpacityMask)((ID2D1DCRenderTarget*)Unsafe.AsPointer(ref this), opacityMask, brush, content, destinationRectangle, sourceRectangle);
         }
 
-        public void DrawBitmap([NativeTypeName("ID2D1Bitmap *")] ID2D1Bitmap* bitmap, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangle, [NativeTypeName("FLOAT")] float opacity, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle)
+        public void DrawBitmap([NativeTypeName("ID2D1Bitmap *")] ID2D1Bitmap* bitmap, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangle = null, [NativeTypeName("FLOAT")] float opacity = 1.0f, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode = D2D1_BITMAP_INTERPOLATION_MODE_LINEAR, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle = null)
         {
             Marshal.GetDelegateForFunctionPointer<_DrawBitmap>(lpVtbl->DrawBitmap)((ID2D1DCRenderTarget*)Unsafe.AsPointer(ref this), bitmap, destinationRectangle, opacity, interpolationMode, sourceRectangle);
         }
 
-        public void DrawText([NativeTypeName("const WCHAR *")] ushort* @string, [NativeTypeName("UINT32")] uint stringLength, [NativeTypeName("IDWriteTextFormat *")] IDWriteTextFormat* textFormat, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* layoutRect, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options, DWRITE_MEASURING_MODE measuringMode)
+        public void DrawText([NativeTypeName("const WCHAR *")] ushort* @string, [NativeTypeName("UINT32")] uint stringLength, [NativeTypeName("IDWriteTextFormat *")] IDWriteTextFormat* textFormat, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* layoutRect, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options = D2D1_DRAW_TEXT_OPTIONS_NONE, DWRITE_MEASURING_MODE measuringMode = DWRITE_MEASURING_MODE_NATURAL)
         {
             Marshal.GetDelegateForFunctionPointer<_DrawText>(lpVtbl->DrawText)((ID2D1DCRenderTarget*)Unsafe.AsPointer(ref this), @string, stringLength, textFormat, layoutRect, defaultFillBrush, options, measuringMode);
         }
 
-        public void DrawTextLayout([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F origin, [NativeTypeName("IDWriteTextLayout *")] IDWriteTextLayout* textLayout, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options)
+        public void DrawTextLayout([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F origin, [NativeTypeName("IDWriteTextLayout *")] IDWriteTextLayout* textLayout, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options = D2D1_DRAW_TEXT_OPTIONS_NONE)
         {
             Marshal.GetDelegateForFunctionPointer<_DrawTextLayout>(lpVtbl->DrawTextLayout)((ID2D1DCRenderTarget*)Unsafe.AsPointer(ref this), origin, textLayout, defaultFillBrush, options);
         }
 
-        public void DrawGlyphRun([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F baselineOrigin, [NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* foregroundBrush, DWRITE_MEASURING_MODE measuringMode)
+        public void DrawGlyphRun([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F baselineOrigin, [NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* foregroundBrush, DWRITE_MEASURING_MODE measuringMode = DWRITE_MEASURING_MODE_NATURAL)
         {
             Marshal.GetDelegateForFunctionPointer<_DrawGlyphRun>(lpVtbl->DrawGlyphRun)((ID2D1DCRenderTarget*)Unsafe.AsPointer(ref this), baselineOrigin, glyphRun, foregroundBrush, measuringMode);
         }
@@ -490,7 +499,7 @@ namespace TerraFX.Interop
             return Marshal.GetDelegateForFunctionPointer<_GetTextAntialiasMode>(lpVtbl->GetTextAntialiasMode)((ID2D1DCRenderTarget*)Unsafe.AsPointer(ref this));
         }
 
-        public void SetTextRenderingParams([NativeTypeName("IDWriteRenderingParams *")] IDWriteRenderingParams* textRenderingParams)
+        public void SetTextRenderingParams([NativeTypeName("IDWriteRenderingParams *")] IDWriteRenderingParams* textRenderingParams = null)
         {
             Marshal.GetDelegateForFunctionPointer<_SetTextRenderingParams>(lpVtbl->SetTextRenderingParams)((ID2D1DCRenderTarget*)Unsafe.AsPointer(ref this), textRenderingParams);
         }
@@ -505,7 +514,7 @@ namespace TerraFX.Interop
             Marshal.GetDelegateForFunctionPointer<_SetTags>(lpVtbl->SetTags)((ID2D1DCRenderTarget*)Unsafe.AsPointer(ref this), tag1, tag2);
         }
 
-        public void GetTags([NativeTypeName("D2D1_TAG *")] ulong* tag1, [NativeTypeName("D2D1_TAG *")] ulong* tag2)
+        public void GetTags([NativeTypeName("D2D1_TAG *")] ulong* tag1 = null, [NativeTypeName("D2D1_TAG *")] ulong* tag2 = null)
         {
             Marshal.GetDelegateForFunctionPointer<_GetTags>(lpVtbl->GetTags)((ID2D1DCRenderTarget*)Unsafe.AsPointer(ref this), tag1, tag2);
         }
@@ -521,7 +530,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Flush([NativeTypeName("D2D1_TAG *")] ulong* tag1, [NativeTypeName("D2D1_TAG *")] ulong* tag2)
+        public int Flush([NativeTypeName("D2D1_TAG *")] ulong* tag1 = null, [NativeTypeName("D2D1_TAG *")] ulong* tag2 = null)
         {
             return Marshal.GetDelegateForFunctionPointer<_Flush>(lpVtbl->Flush)((ID2D1DCRenderTarget*)Unsafe.AsPointer(ref this), tag1, tag2);
         }
@@ -546,7 +555,7 @@ namespace TerraFX.Interop
             Marshal.GetDelegateForFunctionPointer<_PopAxisAlignedClip>(lpVtbl->PopAxisAlignedClip)((ID2D1DCRenderTarget*)Unsafe.AsPointer(ref this));
         }
 
-        public void Clear([NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* clearColor)
+        public void Clear([NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* clearColor = null)
         {
             Marshal.GetDelegateForFunctionPointer<_Clear>(lpVtbl->Clear)((ID2D1DCRenderTarget*)Unsafe.AsPointer(ref this), clearColor);
         }
@@ -557,7 +566,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int EndDraw([NativeTypeName("D2D1_TAG *")] ulong* tag1, [NativeTypeName("D2D1_TAG *")] ulong* tag2)
+        public int EndDraw([NativeTypeName("D2D1_TAG *")] ulong* tag1 = null, [NativeTypeName("D2D1_TAG *")] ulong* tag2 = null)
         {
             return Marshal.GetDelegateForFunctionPointer<_EndDraw>(lpVtbl->EndDraw)((ID2D1DCRenderTarget*)Unsafe.AsPointer(ref this), tag1, tag2);
         }

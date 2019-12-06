@@ -8,10 +8,11 @@ using System;
 namespace TerraFX.Interop
 {
     [Flags]
+    [NativeTypeName("int")]
     public enum D2D1_DEVICE_CONTEXT_OPTIONS : uint
     {
         D2D1_DEVICE_CONTEXT_OPTIONS_NONE = 0,
         D2D1_DEVICE_CONTEXT_OPTIONS_ENABLE_MULTITHREADED_OPTIMIZATIONS = 1,
-        D2D1_DEVICE_CONTEXT_OPTIONS_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_DEVICE_CONTEXT_OPTIONS_FORCE_DWORD = 0xffffffff,
     }
 }

@@ -13,7 +13,7 @@ namespace TerraFX.Interop
         [NativeTypeName("HGDIOBJ [1]")]
         public _objectHandle_e__FixedBuffer objectHandle;
 
-        public unsafe partial struct _objectHandle_e__FixedBuffer
+        public partial struct _objectHandle_e__FixedBuffer
         {
             internal IntPtr e0;
 

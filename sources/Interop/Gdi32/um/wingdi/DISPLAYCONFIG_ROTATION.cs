@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum DISPLAYCONFIG_ROTATION : uint
     {
         DISPLAYCONFIG_ROTATION_IDENTITY = 1,

@@ -5,10 +5,11 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_SVG_ASPECT_SCALING : uint
     {
         D2D1_SVG_ASPECT_SCALING_MEET = 0,
         D2D1_SVG_ASPECT_SCALING_SLICE = 1,
-        D2D1_SVG_ASPECT_SCALING_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_SVG_ASPECT_SCALING_FORCE_DWORD = 0xffffffff,
     }
 }

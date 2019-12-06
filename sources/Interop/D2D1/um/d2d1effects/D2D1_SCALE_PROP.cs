@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_SCALE_PROP : uint
     {
         D2D1_SCALE_PROP_SCALE = 0,
@@ -12,6 +13,6 @@ namespace TerraFX.Interop
         D2D1_SCALE_PROP_INTERPOLATION_MODE = 2,
         D2D1_SCALE_PROP_BORDER_MODE = 3,
         D2D1_SCALE_PROP_SHARPNESS = 4,
-        D2D1_SCALE_PROP_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_SCALE_PROP_FORCE_DWORD = 0xffffffff,
     }
 }

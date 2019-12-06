@@ -5,10 +5,11 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_EMBOSS_PROP : uint
     {
         D2D1_EMBOSS_PROP_HEIGHT = 0,
         D2D1_EMBOSS_PROP_DIRECTION = 1,
-        D2D1_EMBOSS_PROP_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_EMBOSS_PROP_FORCE_DWORD = 0xffffffff,
     }
 }

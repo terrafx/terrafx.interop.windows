@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.D3D12;
 
 namespace TerraFX.Interop
 {
@@ -44,7 +43,7 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint NumRenderTargets;
 
-        [NativeTypeName("DXGI_FORMAT [D3D12_SIMULTANEOUS_RENDER_TARGET_COUNT]")]
+        [NativeTypeName("DXGI_FORMAT [8]")]
         public _RTVFormats_e__FixedBuffer RTVFormats;
 
         public DXGI_FORMAT DSVFormat;
@@ -71,7 +70,7 @@ namespace TerraFX.Interop
 
             public ref DXGI_FORMAT this[int index] => ref AsSpan()[index];
 
-            public Span<DXGI_FORMAT> AsSpan() => MemoryMarshal.CreateSpan(ref e0, unchecked((int)D3D12_SIMULTANEOUS_RENDER_TARGET_COUNT));
+            public Span<DXGI_FORMAT> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
         }
     }
 }

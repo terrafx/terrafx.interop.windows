@@ -11,6 +11,6 @@ namespace TerraFX.Interop
         WICRawRotationCapabilityGetSupported = 0x1,
         WICRawRotationCapabilityNinetyDegreesSupported = 0x2,
         WICRawRotationCapabilityFullySupported = 0x3,
-        WICRAWROTATIONCAPABILITIES_FORCE_DWORD = 0x7FFFFFFF,
+        WICRAWROTATIONCAPABILITIES_FORCE_DWORD = 0x7fffffff,
     }
 }

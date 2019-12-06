@@ -8,6 +8,7 @@ using System;
 namespace TerraFX.Interop
 {
     [Flags]
+    [NativeTypeName("int")]
     public enum DXGI_ADAPTER_FLAG3 : uint
     {
         DXGI_ADAPTER_FLAG3_NONE = 0,
@@ -17,6 +18,6 @@ namespace TerraFX.Interop
         DXGI_ADAPTER_FLAG3_SUPPORT_MONITORED_FENCES = 8,
         DXGI_ADAPTER_FLAG3_SUPPORT_NON_MONITORED_FENCES = 0x10,
         DXGI_ADAPTER_FLAG3_KEYED_MUTEX_CONFORMANCE = 0x20,
-        DXGI_ADAPTER_FLAG3_FORCE_DWORD = 0xFFFFFFFF,
+        DXGI_ADAPTER_FLAG3_FORCE_DWORD = 0xffffffff,
     }
 }

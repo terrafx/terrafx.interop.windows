@@ -16,6 +16,6 @@ namespace TerraFX.Interop
         WICGifLogicalScreenDescriptorGlobalColorTableSize = 0x7,
         WICGifLogicalScreenDescriptorBackgroundColorIndex = 0x8,
         WICGifLogicalScreenDescriptorPixelAspectRatio = 0x9,
-        WICGifLogicalScreenDescriptorProperties_FORCE_DWORD = 0x7FFFFFFF,
+        WICGifLogicalScreenDescriptorProperties_FORCE_DWORD = 0x7fffffff,
     }
 }

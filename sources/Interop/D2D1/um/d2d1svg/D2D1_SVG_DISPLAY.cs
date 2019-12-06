@@ -5,10 +5,11 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_SVG_DISPLAY : uint
     {
         D2D1_SVG_DISPLAY_INLINE = 0,
         D2D1_SVG_DISPLAY_NONE = 1,
-        D2D1_SVG_DISPLAY_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_SVG_DISPLAY_FORCE_DWORD = 0xffffffff,
     }
 }

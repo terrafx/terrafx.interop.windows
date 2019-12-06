@@ -33,21 +33,5 @@ namespace TerraFX.Interop
         {
             return D2D1CreateFactory(factoryType, riid, null, factory);
         }
-
-        [return: NativeTypeName("HRESULT")]
-        public static int D2D1CreateFactory<Factory>(D2D1_FACTORY_TYPE factoryType, [NativeTypeName("void **")] void** factory)
-            where Factory : unmanaged
-        {
-            var iid = typeof(Factory).GUID;
-            return D2D1CreateFactory(factoryType, &iid, null, factory);
-        }
-
-        [return: NativeTypeName("HRESULT")]
-        public static int D2D1CreateFactory<Factory>(D2D1_FACTORY_TYPE factoryType, [NativeTypeName("const D2D1_FACTORY_OPTIONS *")] D2D1_FACTORY_OPTIONS* pFactoryOptions, [NativeTypeName("void **")] void** factory)
-            where Factory : unmanaged
-        {
-            var iid = typeof(Factory).GUID;
-            return D2D1CreateFactory(factoryType, &iid, pFactoryOptions, factory);
-        }
     }
 }

@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class D3DCompiler
     {
-        private const string LibraryPath = "D3DCompiler_47.dll";
+        private const string LibraryPath = "D3DCompiler_47";
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "D3DReadFileToBlob", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

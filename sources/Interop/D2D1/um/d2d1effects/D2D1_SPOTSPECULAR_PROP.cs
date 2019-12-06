@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_SPOTSPECULAR_PROP : uint
     {
         D2D1_SPOTSPECULAR_PROP_LIGHT_POSITION = 0,
@@ -17,6 +18,6 @@ namespace TerraFX.Interop
         D2D1_SPOTSPECULAR_PROP_COLOR = 7,
         D2D1_SPOTSPECULAR_PROP_KERNEL_UNIT_LENGTH = 8,
         D2D1_SPOTSPECULAR_PROP_SCALE_MODE = 9,
-        D2D1_SPOTSPECULAR_PROP_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_SPOTSPECULAR_PROP_FORCE_DWORD = 0xffffffff,
     }
 }

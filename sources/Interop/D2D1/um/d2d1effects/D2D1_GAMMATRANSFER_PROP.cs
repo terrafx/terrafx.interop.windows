@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_GAMMATRANSFER_PROP : uint
     {
         D2D1_GAMMATRANSFER_PROP_RED_AMPLITUDE = 0,
@@ -24,6 +25,6 @@ namespace TerraFX.Interop
         D2D1_GAMMATRANSFER_PROP_ALPHA_OFFSET = 14,
         D2D1_GAMMATRANSFER_PROP_ALPHA_DISABLE = 15,
         D2D1_GAMMATRANSFER_PROP_CLAMP_OUTPUT = 16,
-        D2D1_GAMMATRANSFER_PROP_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_GAMMATRANSFER_PROP_FORCE_DWORD = 0xffffffff,
     }
 }

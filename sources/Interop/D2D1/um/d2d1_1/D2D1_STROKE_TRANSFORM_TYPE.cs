@@ -5,11 +5,12 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_STROKE_TRANSFORM_TYPE : uint
     {
         D2D1_STROKE_TRANSFORM_TYPE_NORMAL = 0,
         D2D1_STROKE_TRANSFORM_TYPE_FIXED = 1,
         D2D1_STROKE_TRANSFORM_TYPE_HAIRLINE = 2,
-        D2D1_STROKE_TRANSFORM_TYPE_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_STROKE_TRANSFORM_TYPE_FORCE_DWORD = 0xffffffff,
     }
 }

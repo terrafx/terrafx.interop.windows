@@ -5,9 +5,10 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_TILE_PROP : uint
     {
         D2D1_TILE_PROP_RECT = 0,
-        D2D1_TILE_PROP_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_TILE_PROP_FORCE_DWORD = 0xffffffff,
     }
 }

@@ -12,6 +12,6 @@ namespace TerraFX.Interop
     {
         D3D_CBF_USERPACKED = 1,
         D3D10_CBF_USERPACKED = D3D_CBF_USERPACKED,
-        D3D_CBF_FORCE_DWORD = 0x7FFFFFFF,
+        D3D_CBF_FORCE_DWORD = 0x7fffffff,
     }
 }

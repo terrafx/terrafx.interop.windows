@@ -7,7 +7,7 @@ namespace TerraFX.Interop
 {
     public enum D3D12_HIT_KIND
     {
-        D3D12_HIT_KIND_TRIANGLE_FRONT_FACE = 0xFE,
-        D3D12_HIT_KIND_TRIANGLE_BACK_FACE = 0xFF,
+        D3D12_HIT_KIND_TRIANGLE_FRONT_FACE = 0xfe,
+        D3D12_HIT_KIND_TRIANGLE_BACK_FACE = 0xff,
     }
 }

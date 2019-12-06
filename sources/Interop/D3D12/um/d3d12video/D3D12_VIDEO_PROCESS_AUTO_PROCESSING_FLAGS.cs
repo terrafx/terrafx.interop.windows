@@ -8,6 +8,7 @@ using System;
 namespace TerraFX.Interop
 {
     [Flags]
+    [NativeTypeName("int")]
     public enum D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAGS : uint
     {
         D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAG_NONE = 0,

@@ -9,6 +9,6 @@ namespace TerraFX.Interop
     {
         WICDecodeMetadataCacheOnDemand = 0,
         WICDecodeMetadataCacheOnLoad = 0x1,
-        WICMETADATACACHEOPTION_FORCE_DWORD = 0x7FFFFFFF,
+        WICMETADATACACHEOPTION_FORCE_DWORD = 0x7fffffff,
     }
 }

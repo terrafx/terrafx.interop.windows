@@ -15,14 +15,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Open(ID3DInclude* pThis, [NativeTypeName("D3D_INCLUDE_TYPE")] D3D_INCLUDE_TYPE IncludeType, [NativeTypeName("LPCSTR")] sbyte* pFileName, [NativeTypeName("LPCVOID")] void* pParentData, [NativeTypeName("LPCVOID *")] void** ppData, [NativeTypeName("UINT *")] uint* pBytes);
+        public delegate int _Open(ID3DInclude* pThis, D3D_INCLUDE_TYPE IncludeType, [NativeTypeName("LPCSTR")] sbyte* pFileName, [NativeTypeName("LPCVOID")] void* pParentData, [NativeTypeName("LPCVOID *")] void** ppData, [NativeTypeName("UINT *")] uint* pBytes);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _Close(ID3DInclude* pThis, [NativeTypeName("LPCVOID")] void* pData);
 
         [return: NativeTypeName("HRESULT")]
-        public int Open([NativeTypeName("D3D_INCLUDE_TYPE")] D3D_INCLUDE_TYPE IncludeType, [NativeTypeName("LPCSTR")] sbyte* pFileName, [NativeTypeName("LPCVOID")] void* pParentData, [NativeTypeName("LPCVOID *")] void** ppData, [NativeTypeName("UINT *")] uint* pBytes)
+        public int Open(D3D_INCLUDE_TYPE IncludeType, [NativeTypeName("LPCSTR")] sbyte* pFileName, [NativeTypeName("LPCVOID")] void* pParentData, [NativeTypeName("LPCVOID *")] void** ppData, [NativeTypeName("UINT *")] uint* pBytes)
         {
             return Marshal.GetDelegateForFunctionPointer<_Open>(lpVtbl->Open)((ID3DInclude*)Unsafe.AsPointer(ref this), IncludeType, pFileName, pParentData, ppData, pBytes);
         }

@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum DISPLAYCONFIG_TOPOLOGY_ID : uint
     {
         DISPLAYCONFIG_TOPOLOGY_INTERNAL = 0x00000001,

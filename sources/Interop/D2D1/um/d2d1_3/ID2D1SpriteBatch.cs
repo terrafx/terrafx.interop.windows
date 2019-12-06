@@ -31,15 +31,15 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _AddSprites(ID2D1SpriteBatch* pThis, [NativeTypeName("UINT32")] uint spriteCount, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangles, [NativeTypeName("const D2D1_RECT_U *")] D2D_RECT_U* sourceRectangles, [NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* colors, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transforms, [NativeTypeName("UINT32")] uint destinationRectanglesStride, [NativeTypeName("UINT32")] uint sourceRectanglesStride, [NativeTypeName("UINT32")] uint colorsStride, [NativeTypeName("UINT32")] uint transformsStride);
+        public delegate int _AddSprites(ID2D1SpriteBatch* pThis, [NativeTypeName("UINT32")] uint spriteCount, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangles, [NativeTypeName("const D2D1_RECT_U *")] D2D_RECT_U* sourceRectangles = null, [NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* colors = null, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transforms = null, [NativeTypeName("UINT32")] uint destinationRectanglesStride = 16, [NativeTypeName("UINT32")] uint sourceRectanglesStride = 16, [NativeTypeName("UINT32")] uint colorsStride = 16, [NativeTypeName("UINT32")] uint transformsStride = 24);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetSprites(ID2D1SpriteBatch* pThis, [NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint spriteCount, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangles, [NativeTypeName("const D2D1_RECT_U *")] D2D_RECT_U* sourceRectangles, [NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* colors, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transforms, [NativeTypeName("UINT32")] uint destinationRectanglesStride, [NativeTypeName("UINT32")] uint sourceRectanglesStride, [NativeTypeName("UINT32")] uint colorsStride, [NativeTypeName("UINT32")] uint transformsStride);
+        public delegate int _SetSprites(ID2D1SpriteBatch* pThis, [NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint spriteCount, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangles = null, [NativeTypeName("const D2D1_RECT_U *")] D2D_RECT_U* sourceRectangles = null, [NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* colors = null, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transforms = null, [NativeTypeName("UINT32")] uint destinationRectanglesStride = 16, [NativeTypeName("UINT32")] uint sourceRectanglesStride = 16, [NativeTypeName("UINT32")] uint colorsStride = 16, [NativeTypeName("UINT32")] uint transformsStride = 24);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetSprites(ID2D1SpriteBatch* pThis, [NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint spriteCount, [NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* destinationRectangles, [NativeTypeName("D2D1_RECT_U *")] D2D_RECT_U* sourceRectangles, [NativeTypeName("D2D1_COLOR_F *")] DXGI_RGBA* colors, [NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transforms);
+        public delegate int _GetSprites(ID2D1SpriteBatch* pThis, [NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint spriteCount, [NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* destinationRectangles = null, [NativeTypeName("D2D1_RECT_U *")] D2D_RECT_U* sourceRectangles = null, [NativeTypeName("D2D1_COLOR_F *")] DXGI_RGBA* colors = null, [NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transforms = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
@@ -72,19 +72,19 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int AddSprites([NativeTypeName("UINT32")] uint spriteCount, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangles, [NativeTypeName("const D2D1_RECT_U *")] D2D_RECT_U* sourceRectangles, [NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* colors, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transforms, [NativeTypeName("UINT32")] uint destinationRectanglesStride, [NativeTypeName("UINT32")] uint sourceRectanglesStride, [NativeTypeName("UINT32")] uint colorsStride, [NativeTypeName("UINT32")] uint transformsStride)
+        public int AddSprites([NativeTypeName("UINT32")] uint spriteCount, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangles, [NativeTypeName("const D2D1_RECT_U *")] D2D_RECT_U* sourceRectangles = null, [NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* colors = null, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transforms = null, [NativeTypeName("UINT32")] uint destinationRectanglesStride = 16, [NativeTypeName("UINT32")] uint sourceRectanglesStride = 16, [NativeTypeName("UINT32")] uint colorsStride = 16, [NativeTypeName("UINT32")] uint transformsStride = 24)
         {
             return Marshal.GetDelegateForFunctionPointer<_AddSprites>(lpVtbl->AddSprites)((ID2D1SpriteBatch*)Unsafe.AsPointer(ref this), spriteCount, destinationRectangles, sourceRectangles, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetSprites([NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint spriteCount, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangles, [NativeTypeName("const D2D1_RECT_U *")] D2D_RECT_U* sourceRectangles, [NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* colors, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transforms, [NativeTypeName("UINT32")] uint destinationRectanglesStride, [NativeTypeName("UINT32")] uint sourceRectanglesStride, [NativeTypeName("UINT32")] uint colorsStride, [NativeTypeName("UINT32")] uint transformsStride)
+        public int SetSprites([NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint spriteCount, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangles = null, [NativeTypeName("const D2D1_RECT_U *")] D2D_RECT_U* sourceRectangles = null, [NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* colors = null, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transforms = null, [NativeTypeName("UINT32")] uint destinationRectanglesStride = 16, [NativeTypeName("UINT32")] uint sourceRectanglesStride = 16, [NativeTypeName("UINT32")] uint colorsStride = 16, [NativeTypeName("UINT32")] uint transformsStride = 24)
         {
             return Marshal.GetDelegateForFunctionPointer<_SetSprites>(lpVtbl->SetSprites)((ID2D1SpriteBatch*)Unsafe.AsPointer(ref this), startIndex, spriteCount, destinationRectangles, sourceRectangles, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetSprites([NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint spriteCount, [NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* destinationRectangles, [NativeTypeName("D2D1_RECT_U *")] D2D_RECT_U* sourceRectangles, [NativeTypeName("D2D1_COLOR_F *")] DXGI_RGBA* colors, [NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transforms)
+        public int GetSprites([NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint spriteCount, [NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* destinationRectangles = null, [NativeTypeName("D2D1_RECT_U *")] D2D_RECT_U* sourceRectangles = null, [NativeTypeName("D2D1_COLOR_F *")] DXGI_RGBA* colors = null, [NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transforms = null)
         {
             return Marshal.GetDelegateForFunctionPointer<_GetSprites>(lpVtbl->GetSprites)((ID2D1SpriteBatch*)Unsafe.AsPointer(ref this), startIndex, spriteCount, destinationRectangles, sourceRectangles, colors, transforms);
         }

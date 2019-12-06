@@ -5,9 +5,10 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D3D11_STANDARD_MULTISAMPLE_QUALITY_LEVELS : uint
     {
-        D3D11_STANDARD_MULTISAMPLE_PATTERN = 0xFFFFFFFF,
-        D3D11_CENTER_MULTISAMPLE_PATTERN = 0xFFFFFFFE,
+        D3D11_STANDARD_MULTISAMPLE_PATTERN = 0xffffffff,
+        D3D11_CENTER_MULTISAMPLE_PATTERN = 0xfffffffe,
     }
 }

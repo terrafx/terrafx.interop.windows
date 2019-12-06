@@ -32,12 +32,12 @@ namespace TerraFX.Interop
                 {
                     get
                     {
-                        return _bitfield & 0x1;
+                        return _bitfield & 0x1u;
                     }
 
                     set
                     {
-                        _bitfield = (_bitfield & ~0x1u) | (value & 0x1);
+                        _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
                     }
                 }
 
@@ -46,12 +46,12 @@ namespace TerraFX.Interop
                 {
                     get
                     {
-                        return (_bitfield >> 1) & 0x1;
+                        return (_bitfield >> 1) & 0x1u;
                     }
 
                     set
                     {
-                        _bitfield = (_bitfield & ~(0x1u << 1)) | ((value & 0x1) << 1);
+                        _bitfield = (_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1);
                     }
                 }
 
@@ -60,12 +60,12 @@ namespace TerraFX.Interop
                 {
                     get
                     {
-                        return (_bitfield >> 2) & 0x1;
+                        return (_bitfield >> 2) & 0x1u;
                     }
 
                     set
                     {
-                        _bitfield = (_bitfield & ~(0x1u << 2)) | ((value & 0x1) << 2);
+                        _bitfield = (_bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2);
                     }
                 }
 
@@ -74,12 +74,12 @@ namespace TerraFX.Interop
                 {
                     get
                     {
-                        return (_bitfield >> 3) & 0x1FFFFFFF;
+                        return (_bitfield >> 3) & 0x1FFFFFFFu;
                     }
 
                     set
                     {
-                        _bitfield = (_bitfield & ~(0x1FFFFFFFu << 3)) | ((value & 0x1FFFFFFF) << 3);
+                        _bitfield = (_bitfield & ~(0x1FFFFFFFu << 3)) | ((value & 0x1FFFFFFFu) << 3);
                     }
                 }
             }

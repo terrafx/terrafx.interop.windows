@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_EDGEDETECTION_PROP : uint
     {
         D2D1_EDGEDETECTION_PROP_STRENGTH = 0,
@@ -12,6 +13,6 @@ namespace TerraFX.Interop
         D2D1_EDGEDETECTION_PROP_MODE = 2,
         D2D1_EDGEDETECTION_PROP_OVERLAY_EDGES = 3,
         D2D1_EDGEDETECTION_PROP_ALPHA_MODE = 4,
-        D2D1_EDGEDETECTION_PROP_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_EDGEDETECTION_PROP_FORCE_DWORD = 0xffffffff,
     }
 }

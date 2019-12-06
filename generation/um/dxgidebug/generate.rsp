@@ -1,0 +1,43 @@
+--additional
+-m32
+--config
+multi-file
+--exclude
+__MIDL_itf_dxgidebug_0000_0000_v0_0_c_ifspec
+__MIDL_itf_dxgidebug_0000_0000_v0_0_s_ifspec
+__MIDL_itf_dxgidebug_0000_0003_v0_0_c_ifspec
+__MIDL_itf_dxgidebug_0000_0003_v0_0_s_ifspec
+DXGI_DEBUG_ALL
+DXGI_DEBUG_APP
+DXGI_DEBUG_DX
+DXGI_DEBUG_DXGI
+IID_IDXGIDebug
+IID_IDXGIDebug1
+IID_IDXGIInfoQueue
+--file
+um-dxgidebug.h
+--headerFile
+header.txt
+--include-directory
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+--include-directory
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+--libraryPath
+DXGIDebug
+--methodClassName
+DXGIDebug
+--namespace
+TerraFX.Interop
+--output
+../../../sources/Interop/DXGIDebug/um/dxgidebug
+--remap
+_GUID=Guid
+GetMessageA=GetMessage
+SIZE_T=UIntPtr
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\dxgidebug.h
+--with-attribute
+DXGI_DEBUG_RLO_FLAGS=Flags
+IDXGIDebug=Guid("119E7452-DE9E-40FE-8806-88F90C12B441")
+IDXGIDebug1=Guid("C5A05F0C-16F2-4ADF-9F4D-A8C4D58AC550")
+IDXGIInfoQueue=Guid("D67441C7-672A-476F-9E82-CD55B44949CE")

@@ -1,0 +1,27 @@
+--additional
+-m32
+--config
+multi-file
+--define-macro
+NOSYSPARAMSINFO
+--file
+shared-tvout.h
+--headerFile
+header.txt
+--include-directory
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+--include-directory
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+--libraryPath
+User32
+--methodClassName
+User32
+--namespace
+TerraFX.Interop
+--output
+../../../sources/Interop/User32/shared/tvout
+--remap
+_GUID=Guid
+_VIDEOPARAMETERS=VIDEOPARAMETERS
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared\tvout.h

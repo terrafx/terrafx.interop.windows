@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_PROPERTY : uint
     {
         D2D1_PROPERTY_CLSID = 0x80000000,
@@ -17,6 +18,6 @@ namespace TerraFX.Interop
         D2D1_PROPERTY_PRECISION = 0x80000007,
         D2D1_PROPERTY_MIN_INPUTS = 0x80000008,
         D2D1_PROPERTY_MAX_INPUTS = 0x80000009,
-        D2D1_PROPERTY_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_PROPERTY_FORCE_DWORD = 0xffffffff,
     }
 }

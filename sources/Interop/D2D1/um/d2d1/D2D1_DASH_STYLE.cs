@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_DASH_STYLE : uint
     {
         D2D1_DASH_STYLE_SOLID = 0,
@@ -13,6 +14,6 @@ namespace TerraFX.Interop
         D2D1_DASH_STYLE_DASH_DOT = 3,
         D2D1_DASH_STYLE_DASH_DOT_DOT = 4,
         D2D1_DASH_STYLE_CUSTOM = 5,
-        D2D1_DASH_STYLE_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_DASH_STYLE_FORCE_DWORD = 0xffffffff,
     }
 }

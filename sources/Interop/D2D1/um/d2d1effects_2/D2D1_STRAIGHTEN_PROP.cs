@@ -5,11 +5,12 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_STRAIGHTEN_PROP : uint
     {
         D2D1_STRAIGHTEN_PROP_ANGLE = 0,
         D2D1_STRAIGHTEN_PROP_MAINTAIN_SIZE = 1,
         D2D1_STRAIGHTEN_PROP_SCALE_MODE = 2,
-        D2D1_STRAIGHTEN_PROP_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_STRAIGHTEN_PROP_FORCE_DWORD = 0xffffffff,
     }
 }

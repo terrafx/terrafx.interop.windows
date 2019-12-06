@@ -10,6 +10,6 @@ namespace TerraFX.Interop
         WICJpegScanTypeInterleaved = 0,
         WICJpegScanTypePlanarComponents = 0x1,
         WICJpegScanTypeProgressive = 0x2,
-        WICJpegScanType_FORCE_DWORD = 0x7FFFFFFF,
+        WICJpegScanType_FORCE_DWORD = 0x7fffffff,
     }
 }

@@ -5,13 +5,12 @@
 
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.D3D12;
 
 namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS1
     {
-        [NativeTypeName("D3D12_VIDEO_PROCESS_INPUT_STREAM [D3D12_VIDEO_PROCESS_STEREO_VIEWS]")]
+        [NativeTypeName("D3D12_VIDEO_PROCESS_INPUT_STREAM [2]")]
         public _InputStream_e__FixedBuffer InputStream;
 
         public D3D12_VIDEO_PROCESS_TRANSFORM Transform;
@@ -20,8 +19,8 @@ namespace TerraFX.Interop
 
         public D3D12_VIDEO_PROCESS_INPUT_STREAM_RATE RateInfo;
 
-        [NativeTypeName("INT [D3D12_VIDEO_PROCESS_MAX_FILTERS]")]
-        public fixed int FilterLevels[unchecked((int)D3D12_VIDEO_PROCESS_MAX_FILTERS)];
+        [NativeTypeName("INT [32]")]
+        public fixed int FilterLevels[32];
 
         public D3D12_VIDEO_PROCESS_ALPHA_BLENDING AlphaBlending;
 
@@ -34,7 +33,7 @@ namespace TerraFX.Interop
 
             public ref D3D12_VIDEO_PROCESS_INPUT_STREAM this[int index] => ref AsSpan()[index];
 
-            public Span<D3D12_VIDEO_PROCESS_INPUT_STREAM> AsSpan() => MemoryMarshal.CreateSpan(ref e0, unchecked((int)D3D12_VIDEO_PROCESS_STEREO_VIEWS));
+            public Span<D3D12_VIDEO_PROCESS_INPUT_STREAM> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
         }
     }
 }

@@ -37,7 +37,7 @@ namespace TerraFX.Interop
         public ushort ImmediateConstantBufferSize;
 
         [NativeTypeName("UINT [4][2]")]
-        public fixed uint PixelPosition[4];
+        public fixed uint PixelPosition[4 * 2];
 
         [NativeTypeName("UINT64 [4]")]
         public fixed ulong PixelCoverageMask[4];

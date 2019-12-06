@@ -8,6 +8,6 @@ namespace TerraFX.Interop
     public enum WICJpegLuminanceProperties
     {
         WICJpegLuminanceTable = 0x1,
-        WICJpegLuminanceProperties_FORCE_DWORD = 0x7FFFFFFF,
+        WICJpegLuminanceProperties_FORCE_DWORD = 0x7fffffff,
     }
 }

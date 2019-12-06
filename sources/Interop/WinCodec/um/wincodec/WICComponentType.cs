@@ -14,6 +14,6 @@ namespace TerraFX.Interop
         WICMetadataWriter = 0x10,
         WICPixelFormat = 0x20,
         WICAllComponents = 0x3f,
-        WICCOMPONENTTYPE_FORCE_DWORD = 0x7FFFFFFF,
+        WICCOMPONENTTYPE_FORCE_DWORD = 0x7fffffff,
     }
 }

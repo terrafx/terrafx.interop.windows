@@ -8,6 +8,7 @@ using System;
 namespace TerraFX.Interop
 {
     [Flags]
+    [NativeTypeName("int")]
     public enum D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS : uint
     {
         D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS_32 = 0x1,

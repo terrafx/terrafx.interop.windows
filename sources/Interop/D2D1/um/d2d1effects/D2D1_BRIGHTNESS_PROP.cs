@@ -5,10 +5,11 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_BRIGHTNESS_PROP : uint
     {
         D2D1_BRIGHTNESS_PROP_WHITE_POINT = 0,
         D2D1_BRIGHTNESS_PROP_BLACK_POINT = 1,
-        D2D1_BRIGHTNESS_PROP_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_BRIGHTNESS_PROP_FORCE_DWORD = 0xffffffff,
     }
 }

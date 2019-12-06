@@ -5,13 +5,12 @@
 
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.D3D12;
 
 namespace TerraFX.Interop
 {
     public partial struct D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS
     {
-        [NativeTypeName("D3D12_VIDEO_PROCESS_OUTPUT_STREAM [D3D12_VIDEO_PROCESS_STEREO_VIEWS]")]
+        [NativeTypeName("D3D12_VIDEO_PROCESS_OUTPUT_STREAM [2]")]
         public _OutputStream_e__FixedBuffer OutputStream;
 
         [NativeTypeName("D3D12_RECT")]
@@ -24,7 +23,7 @@ namespace TerraFX.Interop
 
             public ref D3D12_VIDEO_PROCESS_OUTPUT_STREAM this[int index] => ref AsSpan()[index];
 
-            public Span<D3D12_VIDEO_PROCESS_OUTPUT_STREAM> AsSpan() => MemoryMarshal.CreateSpan(ref e0, unchecked((int)D3D12_VIDEO_PROCESS_STEREO_VIEWS));
+            public Span<D3D12_VIDEO_PROCESS_OUTPUT_STREAM> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
         }
     }
 }

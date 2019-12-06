@@ -8,10 +8,11 @@ using System;
 namespace TerraFX.Interop
 {
     [Flags]
+    [NativeTypeName("int")]
     public enum D2D1_SPRITE_OPTIONS : uint
     {
         D2D1_SPRITE_OPTIONS_NONE = 0,
         D2D1_SPRITE_OPTIONS_CLAMP_TO_SOURCE_RECTANGLE = 1,
-        D2D1_SPRITE_OPTIONS_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_SPRITE_OPTIONS_FORCE_DWORD = 0xffffffff,
     }
 }

@@ -8,6 +8,6 @@ namespace TerraFX.Interop
     public enum WICWebpAnmfProperties
     {
         WICWebpAnmfFrameDuration = 0x1,
-        WICWebpAnmfProperties_FORCE_DWORD = 0x7FFFFFFF,
+        WICWebpAnmfProperties_FORCE_DWORD = 0x7fffffff,
     }
 }

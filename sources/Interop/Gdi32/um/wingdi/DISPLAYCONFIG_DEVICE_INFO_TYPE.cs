@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum DISPLAYCONFIG_DEVICE_INFO_TYPE : uint
     {
         DISPLAYCONFIG_DEVICE_INFO_GET_SOURCE_NAME = 1,

@@ -5,11 +5,12 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_COLORMATRIX_PROP : uint
     {
         D2D1_COLORMATRIX_PROP_COLOR_MATRIX = 0,
         D2D1_COLORMATRIX_PROP_ALPHA_MODE = 1,
         D2D1_COLORMATRIX_PROP_CLAMP_OUTPUT = 2,
-        D2D1_COLORMATRIX_PROP_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_COLORMATRIX_PROP_FORCE_DWORD = 0xffffffff,
     }
 }

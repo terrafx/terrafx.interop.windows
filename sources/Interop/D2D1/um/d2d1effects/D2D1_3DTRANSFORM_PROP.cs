@@ -5,11 +5,12 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_3DTRANSFORM_PROP : uint
     {
         D2D1_3DTRANSFORM_PROP_INTERPOLATION_MODE = 0,
         D2D1_3DTRANSFORM_PROP_BORDER_MODE = 1,
         D2D1_3DTRANSFORM_PROP_TRANSFORM_MATRIX = 2,
-        D2D1_3DTRANSFORM_PROP_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_3DTRANSFORM_PROP_FORCE_DWORD = 0xffffffff,
     }
 }

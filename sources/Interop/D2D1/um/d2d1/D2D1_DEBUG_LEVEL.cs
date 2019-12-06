@@ -5,12 +5,13 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_DEBUG_LEVEL : uint
     {
         D2D1_DEBUG_LEVEL_NONE = 0,
         D2D1_DEBUG_LEVEL_ERROR = 1,
         D2D1_DEBUG_LEVEL_WARNING = 2,
         D2D1_DEBUG_LEVEL_INFORMATION = 3,
-        D2D1_DEBUG_LEVEL_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_DEBUG_LEVEL_FORCE_DWORD = 0xffffffff,
     }
 }

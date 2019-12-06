@@ -38,14 +38,14 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetStroke(ID2D1SvgGlyphStyle* pThis, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth, [NativeTypeName("const FLOAT *")] float* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("FLOAT")] float dashOffset);
+        public delegate int _SetStroke(ID2D1SvgGlyphStyle* pThis, [NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth = 1.0f, [NativeTypeName("const FLOAT *")] float* dashes = null, [NativeTypeName("UINT32")] uint dashesCount = 0, [NativeTypeName("FLOAT")] float dashOffset = 1.0f);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT32")]
         public delegate uint _GetStrokeDashesCount(ID2D1SvgGlyphStyle* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetStroke(ID2D1SvgGlyphStyle* pThis, [NativeTypeName("ID2D1Brush **")] ID2D1Brush** brush, [NativeTypeName("FLOAT *")] float* strokeWidth, [NativeTypeName("FLOAT *")] float* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("FLOAT *")] float* dashOffset);
+        public delegate void _GetStroke(ID2D1SvgGlyphStyle* pThis, [NativeTypeName("ID2D1Brush **")] ID2D1Brush** brush, [NativeTypeName("FLOAT *")] float* strokeWidth = null, [NativeTypeName("FLOAT *")] float* dashes = null, [NativeTypeName("UINT32")] uint dashesCount = 0, [NativeTypeName("FLOAT *")] float* dashOffset = null);
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
@@ -82,7 +82,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetStroke([NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth, [NativeTypeName("const FLOAT *")] float* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("FLOAT")] float dashOffset)
+        public int SetStroke([NativeTypeName("ID2D1Brush *")] ID2D1Brush* brush, [NativeTypeName("FLOAT")] float strokeWidth = 1.0f, [NativeTypeName("const FLOAT *")] float* dashes = null, [NativeTypeName("UINT32")] uint dashesCount = 0, [NativeTypeName("FLOAT")] float dashOffset = 1.0f)
         {
             return Marshal.GetDelegateForFunctionPointer<_SetStroke>(lpVtbl->SetStroke)((ID2D1SvgGlyphStyle*)Unsafe.AsPointer(ref this), brush, strokeWidth, dashes, dashesCount, dashOffset);
         }
@@ -93,7 +93,7 @@ namespace TerraFX.Interop
             return Marshal.GetDelegateForFunctionPointer<_GetStrokeDashesCount>(lpVtbl->GetStrokeDashesCount)((ID2D1SvgGlyphStyle*)Unsafe.AsPointer(ref this));
         }
 
-        public void GetStroke([NativeTypeName("ID2D1Brush **")] ID2D1Brush** brush, [NativeTypeName("FLOAT *")] float* strokeWidth, [NativeTypeName("FLOAT *")] float* dashes, [NativeTypeName("UINT32")] uint dashesCount, [NativeTypeName("FLOAT *")] float* dashOffset)
+        public void GetStroke([NativeTypeName("ID2D1Brush **")] ID2D1Brush** brush, [NativeTypeName("FLOAT *")] float* strokeWidth = null, [NativeTypeName("FLOAT *")] float* dashes = null, [NativeTypeName("UINT32")] uint dashesCount = 0, [NativeTypeName("FLOAT *")] float* dashOffset = null)
         {
             Marshal.GetDelegateForFunctionPointer<_GetStroke>(lpVtbl->GetStroke)((ID2D1SvgGlyphStyle*)Unsafe.AsPointer(ref this), brush, strokeWidth, dashes, dashesCount, dashOffset);
         }

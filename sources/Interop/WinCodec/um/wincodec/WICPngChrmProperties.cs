@@ -15,6 +15,6 @@ namespace TerraFX.Interop
         WICPngChrmGreenY = 0x6,
         WICPngChrmBlueX = 0x7,
         WICPngChrmBlueY = 0x8,
-        WICPngChrmProperties_FORCE_DWORD = 0x7FFFFFFF,
+        WICPngChrmProperties_FORCE_DWORD = 0x7fffffff,
     }
 }
