@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using static TerraFX.Interop.D2D1;
 
 namespace TerraFX.Interop
 {
@@ -156,7 +157,7 @@ namespace TerraFX.Interop
             var sinAngle = 0.0f;
             var cosAngle = 0.0f;
 
-            DCommon.D2D1SinCos(angleInRadian, &sinAngle, &cosAngle);
+            D2D1.D2D1SinCos(angleInRadian, &sinAngle, &cosAngle);
 
             return new D2D_MATRIX_4X4_F(
                 1.0f, 0.0f, 0.0f, 0.0f,
@@ -171,7 +172,7 @@ namespace TerraFX.Interop
             var sinAngle = 0.0f;
             var cosAngle = 0.0f;
 
-            DCommon.D2D1SinCos(angleInRadian, &sinAngle, &cosAngle);
+            D2D1.D2D1SinCos(angleInRadian, &sinAngle, &cosAngle);
 
             return new D2D_MATRIX_4X4_F(
                 cosAngle, 0.0f, -sinAngle, 0.0f,
@@ -186,7 +187,7 @@ namespace TerraFX.Interop
             var sinAngle = 0.0f;
             var cosAngle = 0.0f;
 
-            DCommon.D2D1SinCos(angleInRadian, &sinAngle, &cosAngle);
+            D2D1.D2D1SinCos(angleInRadian, &sinAngle, &cosAngle);
 
             return new D2D_MATRIX_4X4_F(
                 cosAngle, sinAngle, 0.0f, 0.0f,
@@ -197,7 +198,7 @@ namespace TerraFX.Interop
 
         public static D2D_MATRIX_4X4_F RotationArbitraryAxis(float x, float y, float z, float degree)
         {
-            var magnitude = DCommon.D2D1Vec3Length(x, y, z);
+            var magnitude = D2D1.D2D1Vec3Length(x, y, z);
 
             x /= magnitude;
             y /= magnitude;
@@ -207,7 +208,7 @@ namespace TerraFX.Interop
             var sinAngle = 0.0f;
             var cosAngle = 0.0f;
 
-            DCommon.D2D1SinCos(angleInRadian, &sinAngle, &cosAngle);
+            D2D1.D2D1SinCos(angleInRadian, &sinAngle, &cosAngle);
 
             var oneMinusCosAngle = 1 - cosAngle;
 
@@ -221,7 +222,7 @@ namespace TerraFX.Interop
         public static D2D_MATRIX_4X4_F SkewX(float degreeX)
         {
             var angleInRadian = degreeX * (MathF.PI / 180.0f);
-            var tanAngle = DCommon.D2D1Tan(angleInRadian);
+            var tanAngle = D2D1.D2D1Tan(angleInRadian);
 
             return new D2D_MATRIX_4X4_F(
                 1.0f, 0.0f, 0.0f, 0.0f,
@@ -233,7 +234,7 @@ namespace TerraFX.Interop
         public static D2D_MATRIX_4X4_F SkewY(float degreeY)
         {
             var angleInRadian = degreeY * (MathF.PI / 180.0f);
-            var tanAngle = DCommon.D2D1Tan(angleInRadian);
+            var tanAngle = D2D1.D2D1Tan(angleInRadian);
 
             return new D2D_MATRIX_4X4_F(
                 1.0f, tanAngle, 0.0f, 0.0f,

@@ -23,9 +23,6 @@ namespace TerraFX.Interop
 
         public bool Equals(D3D12_RENDER_PASS_BEGINNING_ACCESS_CLEAR_PARAMETERS other) => this == other;
 
-        public override int GetHashCode()
-        {
-            return ClearValue.GetHashCode();
-        }
+        public override int GetHashCode() => ClearValue.GetHashCode();
     }
 }

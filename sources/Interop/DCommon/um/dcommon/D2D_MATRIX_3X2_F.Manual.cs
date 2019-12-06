@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using static TerraFX.Interop.D2D1;
 
 namespace TerraFX.Interop
 {
@@ -35,7 +36,7 @@ namespace TerraFX.Interop
             {
                 fixed (D2D_MATRIX_3X2_F* matrix = &this)
                 {
-                    return DCommon.D2D1IsMatrixInvertible(matrix) != 0;
+                    return D2D1IsMatrixInvertible(matrix) != 0;
                 }
             }
         }
@@ -49,7 +50,7 @@ namespace TerraFX.Interop
         {
             fixed (D2D_MATRIX_3X2_F* matrix = &this)
             {
-                return DCommon.D2D1InvertMatrix(matrix) != 0;
+                return D2D1InvertMatrix(matrix) != 0;
             }
         }
 
@@ -107,7 +108,7 @@ namespace TerraFX.Interop
         {
             D2D_MATRIX_3X2_F rotation;
 
-            DCommon.D2D1MakeRotateMatrix(angle, center, &rotation);
+            D2D1MakeRotateMatrix(angle, center, &rotation);
 
             return rotation;
         }
@@ -116,7 +117,7 @@ namespace TerraFX.Interop
         {
             D2D_MATRIX_3X2_F skew;
 
-            DCommon.D2D1MakeSkewMatrix(angleX, angleY, center, &skew);
+            D2D1MakeSkewMatrix(angleX, angleY, center, &skew);
 
             return skew;
         }
