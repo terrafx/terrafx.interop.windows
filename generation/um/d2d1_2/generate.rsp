@@ -79,7 +79,9 @@ ID2D1Device1=Guid("D21768E1-23A4-4823-A14B-7C3EBA85D658")
 ID2D1DeviceContext1=Guid("D37F57E4-6908-459F-A199-E72F24F79987")
 ID2D1Factory2=Guid("94F81A73-9212-4376-9C58-B16A3A0D3992")
 ID2D1GeometryRealization=Guid("A16907D7-BC02-4801-99E8-8CF7F485F774")
---with-namespace
+--with-type
+D2D1_RENDERING_PRIORITY=uint
+--with-using
 ID2D1DeviceContext1=static TerraFX.Interop.D2D1_BITMAP_INTERPOLATION_MODE
 ID2D1DeviceContext1=static TerraFX.Interop.D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS
 ID2D1DeviceContext1=static TerraFX.Interop.D2D1_COMPOSITE_MODE
@@ -88,5 +90,3 @@ ID2D1DeviceContext1=static TerraFX.Interop.D2D1_EXTEND_MODE
 ID2D1DeviceContext1=static TerraFX.Interop.D2D1_GAMMA
 ID2D1DeviceContext1=static TerraFX.Interop.D2D1_INTERPOLATION_MODE
 ID2D1DeviceContext1=static TerraFX.Interop.DWRITE_MEASURING_MODE
---with-type
-D2D1_RENDERING_PRIORITY=uint

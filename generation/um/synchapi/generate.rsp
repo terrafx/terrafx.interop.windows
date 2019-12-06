@@ -1,0 +1,35 @@
+--additional
+-m32
+--config
+multi-file
+--file
+um-synchapi.h
+--headerFile
+header.txt
+--include-directory
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+--include-directory
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+--libraryPath
+Kernel32
+--methodClassName
+Kernel32
+--namespace
+TerraFX.Interop
+--output
+../../../sources/Interop/Kernel32/um/synchapi
+--remap
+_LARGE_INTEGER=LARGE_INTEGER
+_REASON_CONTEXT=REASON_CONTEXT
+_RTL_BARRIER=RTL_BARRIER
+_RTL_CONDITION_VARIABLE=RTL_CONDITION_VARIABLE
+_RTL_CRITICAL_SECTION=RTL_CRITICAL_SECTION
+_RTL_RUN_ONCE=RTL_RUN_ONCE
+_RTL_SRWLOCK=RTL_SRWLOCK
+_SECURITY_ATTRIBUTES=SECURITY_ATTRIBUTES
+HANDLE=IntPtr
+SIZE_T=UIntPtr
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\synchapi.h
+--with-callconv
+*=Winapi
