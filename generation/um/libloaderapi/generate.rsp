@@ -1,0 +1,33 @@
+--additional
+-m32
+--config
+multi-file
+--file
+um-libloaderapi.h
+--headerFile
+header.txt
+--include-directory
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+--include-directory
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+--libraryPath
+Kernel32
+--methodClassName
+Kernel32
+--namespace
+TerraFX.Interop
+--output
+../../../sources/Interop/Kernel32/um/libloaderapi
+--remap
+_REDIRECTION_DESCRIPTOR=REDIRECTION_DESCRIPTOR
+_REDIRECTION_FUNCTION_DESCRIPTOR=REDIRECTION_FUNCTION_DESCRIPTOR
+HANDLE=IntPtr
+HGLOBAL=IntPtr
+HINSTANCE__*=IntPtr
+HRSRC__*=IntPtr
+LONG_PTR=IntPtr
+tagENUMUILANG=ENUMUILANG
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\libloaderapi.h
+--with-callconv
+*=Winapi
