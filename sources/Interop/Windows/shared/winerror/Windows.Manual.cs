@@ -59,6 +59,10 @@ namespace TerraFX.Interop
 
         public const int E_ACCESSDENIED = unchecked((int)0x80070005);
 
+        public const int S_OK = 0;
+
+        public const int S_FALSE = 1;
+
         public const int DXGI_STATUS_OCCLUDED = 0x087A0001;
 
         public const int DXGI_STATUS_CLIPPED = 0x087A0002;

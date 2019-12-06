@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public partial struct RECT : IEquatable<RECT>
     {
-        public RECT(int Left, int Top, int Right, int Bottom)
+        public RECT([NativeTypeName("LONG")] int Left, [NativeTypeName("LONG")] int Top, [NativeTypeName("LONG")] int Right, [NativeTypeName("LONG")] int Bottom)
         {
             left = Left;
             top = Top;
@@ -17,13 +17,13 @@ namespace TerraFX.Interop
             bottom = Bottom;
         }
 
-        public static bool operator ==(in RECT l, in RECT r) =>
+        public static bool operator ==([NativeTypeName("const RECT &")] in RECT l, [NativeTypeName("const RECT &")] in RECT r) =>
             (l.left == r.left) &&
             (l.top == r.top) &&
             (l.right == r.right) &&
             (l.bottom == r.bottom);
 
-        public static bool operator !=(in RECT l, in RECT r) => !(l == r);
+        public static bool operator !=([NativeTypeName("const RECT &")] in RECT l, [NativeTypeName("const RECT &")] in RECT r) => !(l == r);
 
         public override bool Equals(object? obj) => (obj is RECT other) && Equals(other);
 
