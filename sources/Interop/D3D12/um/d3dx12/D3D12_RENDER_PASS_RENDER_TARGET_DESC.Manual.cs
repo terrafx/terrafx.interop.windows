@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct D3D12_RENDER_PASS_RENDER_TARGET_DESC
+    public partial struct D3D12_RENDER_PASS_RENDER_TARGET_DESC : IEquatable<D3D12_RENDER_PASS_RENDER_TARGET_DESC>
     {
         public static bool operator ==([NativeTypeName("const D3D12_RENDER_PASS_RENDER_TARGET_DESC &")] in D3D12_RENDER_PASS_RENDER_TARGET_DESC a, [NativeTypeName("const D3D12_RENDER_PASS_RENDER_TARGET_DESC &")] in D3D12_RENDER_PASS_RENDER_TARGET_DESC b)
         {
@@ -32,9 +32,6 @@ namespace TerraFX.Interop
 
         public bool Equals(D3D12_RENDER_PASS_RENDER_TARGET_DESC other) => this == other;
 
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(cpuDescriptor, BeginningAccess, EndingAccess);
-        }
+        public override int GetHashCode() => HashCode.Combine(cpuDescriptor, BeginningAccess, EndingAccess);
     }
 }

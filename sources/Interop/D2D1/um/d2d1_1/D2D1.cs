@@ -20,5 +20,16 @@ namespace TerraFX.Interop
         [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "D2D1ConvertColorSpace", ExactSpelling = true)]
         [return: NativeTypeName("D2D1_COLOR_F")]
         public static extern DXGI_RGBA D2D1ConvertColorSpace(D2D1_COLOR_SPACE sourceColorSpace, D2D1_COLOR_SPACE destinationColorSpace, [NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* color);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "D2D1SinCos", ExactSpelling = true)]
+        public static extern void D2D1SinCos([NativeTypeName("FLOAT")] float angle, [NativeTypeName("FLOAT *")] float* s, [NativeTypeName("FLOAT *")] float* c);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "D2D1Tan", ExactSpelling = true)]
+        [return: NativeTypeName("FLOAT")]
+        public static extern float D2D1Tan([NativeTypeName("FLOAT")] float angle);
+
+        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "D2D1Vec3Length", ExactSpelling = true)]
+        [return: NativeTypeName("FLOAT")]
+        public static extern float D2D1Vec3Length([NativeTypeName("FLOAT")] float x, [NativeTypeName("FLOAT")] float y, [NativeTypeName("FLOAT")] float z);
     }
 }

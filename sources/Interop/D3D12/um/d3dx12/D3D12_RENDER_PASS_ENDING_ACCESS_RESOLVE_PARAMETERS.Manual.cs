@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS
+    public unsafe partial struct D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS : IEquatable<D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS>
     {
         public static bool operator ==([NativeTypeName("const D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS &")] in D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS a, [NativeTypeName("const D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS &")] in D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS b)
         {
@@ -41,9 +41,6 @@ namespace TerraFX.Interop
 
         public bool Equals(D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS other) => this == other;
 
-        public override int GetHashCode()
-        {
-            return HashCode.Combine((UIntPtr)pSrcResource, (UIntPtr)pDstResource, SubresourceCount, (UIntPtr)pSubresourceParameters, Format, ResolveMode, PreserveResolveSource);
-        }
+        public override int GetHashCode() => HashCode.Combine((UIntPtr)pSrcResource, (UIntPtr)pDstResource, SubresourceCount, (UIntPtr)pSubresourceParameters, Format, ResolveMode, PreserveResolveSource);
     }
 }

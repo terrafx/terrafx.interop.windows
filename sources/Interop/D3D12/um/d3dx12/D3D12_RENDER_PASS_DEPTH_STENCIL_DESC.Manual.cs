@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct D3D12_RENDER_PASS_DEPTH_STENCIL_DESC
+    public partial struct D3D12_RENDER_PASS_DEPTH_STENCIL_DESC : IEquatable<D3D12_RENDER_PASS_DEPTH_STENCIL_DESC>
     {
         public static bool operator ==([NativeTypeName("const D3D12_RENDER_PASS_DEPTH_STENCIL_DESC &")] in D3D12_RENDER_PASS_DEPTH_STENCIL_DESC a, [NativeTypeName("const D3D12_RENDER_PASS_DEPTH_STENCIL_DESC &")] in D3D12_RENDER_PASS_DEPTH_STENCIL_DESC b)
         {
@@ -38,9 +38,6 @@ namespace TerraFX.Interop
 
         public bool Equals(D3D12_RENDER_PASS_DEPTH_STENCIL_DESC other) => this == other;
 
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(cpuDescriptor, DepthBeginningAccess, StencilBeginningAccess, DepthEndingAccess, StencilEndingAccess);
-        }
+        public override int GetHashCode() => HashCode.Combine(cpuDescriptor, DepthBeginningAccess, StencilBeginningAccess, DepthEndingAccess, StencilEndingAccess);
     }
 }

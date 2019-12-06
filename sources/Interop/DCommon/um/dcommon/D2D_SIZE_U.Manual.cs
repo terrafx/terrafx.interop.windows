@@ -9,12 +9,20 @@ namespace TerraFX.Interop
 {
     public partial struct D2D_SIZE_U : IEquatable<D2D_SIZE_U>
     {
-        public static readonly D2D_SIZE_U DEFAULT = new D2D_SIZE_U(0, 0);
-
-        public D2D_SIZE_U(uint width, uint height)
+        public D2D_SIZE_U([NativeTypeName("UINT32")] uint width = 0, [NativeTypeName("UINT32")] uint height = 0)
         {
             this.width = width;
             this.height = height;
+        }
+
+        public static bool operator ==([NativeTypeName("const D2D1_SIZE_U &")] in D2D_SIZE_U l, [NativeTypeName("const D2D1_SIZE_U &")] in D2D_SIZE_U r)
+        {
+            return l.width == r.width && l.height == r.height;
+        }
+
+        public static bool operator !=([NativeTypeName("const D2D1_SIZE_U &")] in D2D_SIZE_U l, [NativeTypeName("const D2D1_SIZE_U &")] in D2D_SIZE_U r)
+        {
+            return !(l == r);
         }
 
         public bool Equals(D2D_SIZE_U other) => this == other;
@@ -22,9 +30,5 @@ namespace TerraFX.Interop
         public override bool Equals(object? obj) => (obj is D2D_SIZE_U other) && this == other;
 
         public override int GetHashCode() => HashCode.Combine(width, height);
-
-        public static bool operator ==(D2D_SIZE_U l, D2D_SIZE_U r) => l.width == r.width && l.height == r.height;
-
-        public static bool operator !=(D2D_SIZE_U l, D2D_SIZE_U r) => l.width != r.width || l.height != r.height;
     }
 }

@@ -3,16 +3,15 @@
 // Ported from um/d2d1helper.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using static TerraFX.Interop.D2D1;
+
 namespace TerraFX.Interop
 {
     public partial struct D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES
     {
-        public D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES(in D2D_POINT_2F center, in D2D_POINT_2F gradientOriginOffset, float radiusX, float radiusY)
+        public D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES([NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F center, [NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F gradientOriginOffset, [NativeTypeName("FLOAT")] float radiusX, [NativeTypeName("FLOAT")] float radiusY)
         {
-            this.center = center;
-            this.gradientOriginOffset = gradientOriginOffset;
-            this.radiusX = radiusX;
-            this.radiusY = radiusY;
+            this = RadialGradientBrushProperties(center, gradientOriginOffset, radiusX, radiusY);
         }
     }
 }

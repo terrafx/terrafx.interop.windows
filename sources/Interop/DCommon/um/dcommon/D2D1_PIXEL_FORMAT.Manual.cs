@@ -3,15 +3,16 @@
 // Ported from um/d2d1helper.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using static TerraFX.Interop.D2D1_ALPHA_MODE;
+using static TerraFX.Interop.DXGI_FORMAT;
+
 namespace TerraFX.Interop
 {
     public partial struct D2D1_PIXEL_FORMAT
     {
-        public static readonly D2D1_PIXEL_FORMAT DEFAULT = new D2D1_PIXEL_FORMAT(DXGI_FORMAT.DXGI_FORMAT_UNKNOWN, D2D1_ALPHA_MODE.D2D1_ALPHA_MODE_UNKNOWN);
-
-        public D2D1_PIXEL_FORMAT(in DXGI_FORMAT dxgiFormat, in D2D1_ALPHA_MODE alphaMode)
+        public D2D1_PIXEL_FORMAT(DXGI_FORMAT dxgiFormat = DXGI_FORMAT_UNKNOWN, D2D1_ALPHA_MODE alphaMode = D2D1_ALPHA_MODE_UNKNOWN)
         {
-            format = dxgiFormat;
+            this.format = dxgiFormat;
             this.alphaMode = alphaMode;
         }
     }

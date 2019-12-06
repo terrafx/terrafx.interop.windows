@@ -4,20 +4,16 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using static TerraFX.Interop.D2D1;
+using static TerraFX.Interop.D2D1_PRESENT_OPTIONS;
 
 namespace TerraFX.Interop
 {
     public partial struct D2D1_HWND_RENDER_TARGET_PROPERTIES
     {
-        public D2D1_HWND_RENDER_TARGET_PROPERTIES(IntPtr hwnd, D2D_SIZE_U pixelSize, D2D1_PRESENT_OPTIONS presentOptions = D2D1_PRESENT_OPTIONS.D2D1_PRESENT_OPTIONS_NONE)
+        public D2D1_HWND_RENDER_TARGET_PROPERTIES([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("D2D1_SIZE_U")] D2D_SIZE_U pixelSize = default, D2D1_PRESENT_OPTIONS presentOptions = D2D1_PRESENT_OPTIONS_NONE)
         {
-            this.hwnd = hwnd;
-            this.pixelSize = pixelSize;
-            this.presentOptions = presentOptions;
-        }
-
-        public D2D1_HWND_RENDER_TARGET_PROPERTIES(IntPtr hwnd, D2D1_PRESENT_OPTIONS presentOptions = D2D1_PRESENT_OPTIONS.D2D1_PRESENT_OPTIONS_NONE) : this(hwnd, new D2D_SIZE_U(0, 0), presentOptions)
-        {
+            this = HwndRenderTargetProperties(hwnd, pixelSize, presentOptions);
         }
     }
 }

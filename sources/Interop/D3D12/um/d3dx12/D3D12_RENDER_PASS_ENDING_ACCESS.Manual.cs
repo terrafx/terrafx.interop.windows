@@ -8,7 +8,7 @@ using static TerraFX.Interop.D3D12_RENDER_PASS_ENDING_ACCESS_TYPE;
 
 namespace TerraFX.Interop
 {
-    public partial struct D3D12_RENDER_PASS_ENDING_ACCESS
+    public partial struct D3D12_RENDER_PASS_ENDING_ACCESS : IEquatable<D3D12_RENDER_PASS_ENDING_ACCESS>
     {
         public static bool operator ==([NativeTypeName("const D3D12_RENDER_PASS_ENDING_ACCESS &")] in D3D12_RENDER_PASS_ENDING_ACCESS a, [NativeTypeName("const D3D12_RENDER_PASS_ENDING_ACCESS &")] in D3D12_RENDER_PASS_ENDING_ACCESS b)
         {
