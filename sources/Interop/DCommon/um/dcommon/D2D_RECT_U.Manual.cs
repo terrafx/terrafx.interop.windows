@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d2d1helper.h in the Windows SDK for Windows 10.0.18362.0
+// Ported from um/d2d1helper.h and um/d2d1_3helper.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -25,6 +25,21 @@ namespace TerraFX.Interop
         public static bool operator !=([NativeTypeName("const D2D1_RECT_U &")] in D2D_RECT_U l, [NativeTypeName("const D2D1_RECT_U &")] in D2D_RECT_U r)
         {
             return !(l == r);
+        }
+
+        public static D2D_RECT_U Infinite
+        {
+            [return: NativeTypeName("D2D1_RECT_U")]
+            get
+            {
+                D2D_RECT_U rect = new D2D_RECT_U {
+                    left = 0u,
+                    top = 0u,
+                    right = uint.MaxValue,
+                    bottom = uint.MaxValue
+                };
+                return rect;
+            }
         }
 
         public bool Equals(D2D_RECT_U other) => this == other;
