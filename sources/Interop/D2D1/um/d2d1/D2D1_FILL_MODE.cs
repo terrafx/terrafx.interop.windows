@@ -5,10 +5,11 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_FILL_MODE : uint
     {
         D2D1_FILL_MODE_ALTERNATE = 0,
         D2D1_FILL_MODE_WINDING = 1,
-        D2D1_FILL_MODE_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_FILL_MODE_FORCE_DWORD = 0xffffffff,
     }
 }

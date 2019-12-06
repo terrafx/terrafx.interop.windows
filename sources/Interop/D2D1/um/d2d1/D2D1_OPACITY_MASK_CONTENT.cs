@@ -5,11 +5,12 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_OPACITY_MASK_CONTENT : uint
     {
         D2D1_OPACITY_MASK_CONTENT_GRAPHICS = 0,
         D2D1_OPACITY_MASK_CONTENT_TEXT_NATURAL = 1,
         D2D1_OPACITY_MASK_CONTENT_TEXT_GDI_COMPATIBLE = 2,
-        D2D1_OPACITY_MASK_CONTENT_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_OPACITY_MASK_CONTENT_FORCE_DWORD = 0xffffffff,
     }
 }

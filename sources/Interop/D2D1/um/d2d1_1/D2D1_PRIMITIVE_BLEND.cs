@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_PRIMITIVE_BLEND : uint
     {
         D2D1_PRIMITIVE_BLEND_SOURCE_OVER = 0,
@@ -12,6 +13,6 @@ namespace TerraFX.Interop
         D2D1_PRIMITIVE_BLEND_MIN = 2,
         D2D1_PRIMITIVE_BLEND_ADD = 3,
         D2D1_PRIMITIVE_BLEND_MAX = 4,
-        D2D1_PRIMITIVE_BLEND_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_PRIMITIVE_BLEND_FORCE_DWORD = 0xffffffff,
     }
 }

@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_BLEND_MODE : uint
     {
         D2D1_BLEND_MODE_MULTIPLY = 0,
@@ -33,6 +34,6 @@ namespace TerraFX.Interop
         D2D1_BLEND_MODE_LUMINOSITY = 23,
         D2D1_BLEND_MODE_SUBTRACT = 24,
         D2D1_BLEND_MODE_DIVISION = 25,
-        D2D1_BLEND_MODE_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_BLEND_MODE_FORCE_DWORD = 0xffffffff,
     }
 }

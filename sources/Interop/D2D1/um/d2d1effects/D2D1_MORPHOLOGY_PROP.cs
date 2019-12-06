@@ -5,11 +5,12 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_MORPHOLOGY_PROP : uint
     {
         D2D1_MORPHOLOGY_PROP_MODE = 0,
         D2D1_MORPHOLOGY_PROP_WIDTH = 1,
         D2D1_MORPHOLOGY_PROP_HEIGHT = 2,
-        D2D1_MORPHOLOGY_PROP_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_MORPHOLOGY_PROP_FORCE_DWORD = 0xffffffff,
     }
 }

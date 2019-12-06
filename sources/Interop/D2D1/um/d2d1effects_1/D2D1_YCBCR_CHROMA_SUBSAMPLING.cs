@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_YCBCR_CHROMA_SUBSAMPLING : uint
     {
         D2D1_YCBCR_CHROMA_SUBSAMPLING_AUTO = 0,
@@ -12,6 +13,6 @@ namespace TerraFX.Interop
         D2D1_YCBCR_CHROMA_SUBSAMPLING_422 = 2,
         D2D1_YCBCR_CHROMA_SUBSAMPLING_444 = 3,
         D2D1_YCBCR_CHROMA_SUBSAMPLING_440 = 4,
-        D2D1_YCBCR_CHROMA_SUBSAMPLING_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_YCBCR_CHROMA_SUBSAMPLING_FORCE_DWORD = 0xffffffff,
     }
 }

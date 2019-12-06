@@ -5,10 +5,11 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_MORPHOLOGY_MODE : uint
     {
         D2D1_MORPHOLOGY_MODE_ERODE = 0,
         D2D1_MORPHOLOGY_MODE_DILATE = 1,
-        D2D1_MORPHOLOGY_MODE_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_MORPHOLOGY_MODE_FORCE_DWORD = 0xffffffff,
     }
 }

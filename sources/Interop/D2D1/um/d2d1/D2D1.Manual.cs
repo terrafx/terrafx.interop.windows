@@ -87,5 +87,21 @@ namespace TerraFX.Interop
         public static readonly Guid IID_ID2D1DCRenderTarget = new Guid(0x1C51BC64, 0xDE61, 0x46FD, 0x98, 0x99, 0x63, 0xA5, 0xD8, 0xF0, 0x39, 0x50);
 
         public static readonly Guid IID_ID2D1Factory = new Guid(0x06152247, 0x6F50, 0x465A, 0x92, 0x45, 0x11, 0x8B, 0xFD, 0x3B, 0x60, 0x07);
+
+        [return: NativeTypeName("HRESULT")]
+        public static int D2D1CreateFactory<Factory>(D2D1_FACTORY_TYPE factoryType, [NativeTypeName("void **")] void** factory)
+            where Factory : unmanaged
+        {
+            var iid = typeof(Factory).GUID;
+            return D2D1CreateFactory(factoryType, &iid, null, factory);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public static int D2D1CreateFactory<Factory>(D2D1_FACTORY_TYPE factoryType, [NativeTypeName("const D2D1_FACTORY_OPTIONS *")] D2D1_FACTORY_OPTIONS* pFactoryOptions, [NativeTypeName("void **")] void** factory)
+            where Factory : unmanaged
+        {
+            var iid = typeof(Factory).GUID;
+            return D2D1CreateFactory(factoryType, &iid, pFactoryOptions, factory);
+        }
     }
 }

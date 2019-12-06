@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.D2D1_PIXEL_OPTIONS;
 
 namespace TerraFX.Interop
 {

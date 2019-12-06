@@ -8,10 +8,11 @@ using System;
 namespace TerraFX.Interop
 {
     [Flags]
+    [NativeTypeName("int")]
     public enum D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS : uint
     {
         D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS_NONE = 0,
         D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS_LOW_QUALITY_PRIMARY_CONVERSION = 1,
-        D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS_FORCE_DWORD = 0xffffffff,
     }
 }

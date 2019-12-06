@@ -5,11 +5,12 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_VIGNETTE_PROP : uint
     {
         D2D1_VIGNETTE_PROP_COLOR = 0,
         D2D1_VIGNETTE_PROP_TRANSITION_SIZE = 1,
         D2D1_VIGNETTE_PROP_STRENGTH = 2,
-        D2D1_VIGNETTE_PROP_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_VIGNETTE_PROP_FORCE_DWORD = 0xffffffff,
     }
 }

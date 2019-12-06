@@ -5,10 +5,11 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_SVG_ATTRIBUTE_STRING_TYPE : uint
     {
         D2D1_SVG_ATTRIBUTE_STRING_TYPE_SVG = 0,
         D2D1_SVG_ATTRIBUTE_STRING_TYPE_ID = 1,
-        D2D1_SVG_ATTRIBUTE_STRING_TYPE_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_SVG_ATTRIBUTE_STRING_TYPE_FORCE_DWORD = 0xffffffff,
     }
 }

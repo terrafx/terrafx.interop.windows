@@ -5,10 +5,11 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_EDGEDETECTION_MODE : uint
     {
         D2D1_EDGEDETECTION_MODE_SOBEL = 0,
         D2D1_EDGEDETECTION_MODE_PREWITT = 1,
-        D2D1_EDGEDETECTION_MODE_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_EDGEDETECTION_MODE_FORCE_DWORD = 0xffffffff,
     }
 }

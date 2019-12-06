@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_SVG_PATH_COMMAND : uint
     {
         D2D1_SVG_PATH_COMMAND_CLOSE_PATH = 0,
@@ -26,6 +27,6 @@ namespace TerraFX.Interop
         D2D1_SVG_PATH_COMMAND_CUBIC_SMOOTH_RELATIVE = 16,
         D2D1_SVG_PATH_COMMAND_QUADRADIC_SMOOTH_ABSOLUTE = 17,
         D2D1_SVG_PATH_COMMAND_QUADRADIC_SMOOTH_RELATIVE = 18,
-        D2D1_SVG_PATH_COMMAND_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_SVG_PATH_COMMAND_FORCE_DWORD = 0xffffffff,
     }
 }

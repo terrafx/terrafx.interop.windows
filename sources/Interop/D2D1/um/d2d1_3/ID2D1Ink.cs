@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.D2D1;
 
 namespace TerraFX.Interop
 {
@@ -71,7 +70,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int StreamAsGeometry([NativeTypeName("ID2D1InkStyle *")] ID2D1InkStyle* inkStyle, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("ID2D1SimplifiedGeometrySink *")] ID2D1SimplifiedGeometrySink* geometrySink)
         {
-            return StreamAsGeometry(inkStyle, worldTransform, D2D1_DEFAULT_FLATTENING_TOLERANCE, geometrySink);
+            return StreamAsGeometry(inkStyle, worldTransform, (0.25f), geometrySink);
         }
 
         [return: NativeTypeName("HRESULT")]

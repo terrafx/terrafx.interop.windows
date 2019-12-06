@@ -5,11 +5,12 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_HDRTONEMAP_PROP : uint
     {
         D2D1_HDRTONEMAP_PROP_INPUT_MAX_LUMINANCE = 0,
         D2D1_HDRTONEMAP_PROP_OUTPUT_MAX_LUMINANCE = 1,
         D2D1_HDRTONEMAP_PROP_DISPLAY_MODE = 2,
-        D2D1_HDRTONEMAP_PROP_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_HDRTONEMAP_PROP_FORCE_DWORD = 0xffffffff,
     }
 }

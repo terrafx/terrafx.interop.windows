@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_STRAIGHTEN_SCALE_MODE : uint
     {
         D2D1_STRAIGHTEN_SCALE_MODE_NEAREST_NEIGHBOR = 0,
@@ -12,6 +13,6 @@ namespace TerraFX.Interop
         D2D1_STRAIGHTEN_SCALE_MODE_CUBIC = 2,
         D2D1_STRAIGHTEN_SCALE_MODE_MULTI_SAMPLE_LINEAR = 3,
         D2D1_STRAIGHTEN_SCALE_MODE_ANISOTROPIC = 4,
-        D2D1_STRAIGHTEN_SCALE_MODE_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_STRAIGHTEN_SCALE_MODE_FORCE_DWORD = 0xffffffff,
     }
 }

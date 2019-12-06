@@ -8,10 +8,11 @@ using System;
 namespace TerraFX.Interop
 {
     [Flags]
+    [NativeTypeName("int")]
     public enum D2D1_LAYER_OPTIONS : uint
     {
         D2D1_LAYER_OPTIONS_NONE = 0x00000000,
         D2D1_LAYER_OPTIONS_INITIALIZE_FOR_CLEARTYPE = 0x00000001,
-        D2D1_LAYER_OPTIONS_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_LAYER_OPTIONS_FORCE_DWORD = 0xffffffff,
     }
 }

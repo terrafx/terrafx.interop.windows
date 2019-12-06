@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_PROPERTY_TYPE : uint
     {
         D2D1_PROPERTY_TYPE_UNKNOWN = 0,
@@ -26,6 +27,6 @@ namespace TerraFX.Interop
         D2D1_PROPERTY_TYPE_MATRIX_4X4 = 16,
         D2D1_PROPERTY_TYPE_MATRIX_5X4 = 17,
         D2D1_PROPERTY_TYPE_COLOR_CONTEXT = 18,
-        D2D1_PROPERTY_TYPE_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_PROPERTY_TYPE_FORCE_DWORD = 0xffffffff,
     }
 }

@@ -5,9 +5,10 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_OPACITYMETADATA_PROP : uint
     {
         D2D1_OPACITYMETADATA_PROP_INPUT_OPAQUE_RECT = 0,
-        D2D1_OPACITYMETADATA_PROP_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_OPACITYMETADATA_PROP_FORCE_DWORD = 0xffffffff,
     }
 }

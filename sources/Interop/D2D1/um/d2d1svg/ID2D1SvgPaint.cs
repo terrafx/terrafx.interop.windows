@@ -136,7 +136,6 @@ namespace TerraFX.Interop
             return Marshal.GetDelegateForFunctionPointer<_GetIdLength>(lpVtbl->GetIdLength)((ID2D1SvgPaint*)Unsafe.AsPointer(ref this));
         }
 
-
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
@@ -177,7 +176,6 @@ namespace TerraFX.Interop
 
             [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr GetIdLength;
-
         }
     }
 }

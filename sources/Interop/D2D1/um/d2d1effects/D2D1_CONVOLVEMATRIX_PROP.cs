@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_CONVOLVEMATRIX_PROP : uint
     {
         D2D1_CONVOLVEMATRIX_PROP_KERNEL_UNIT_LENGTH = 0,
@@ -18,6 +19,6 @@ namespace TerraFX.Interop
         D2D1_CONVOLVEMATRIX_PROP_PRESERVE_ALPHA = 8,
         D2D1_CONVOLVEMATRIX_PROP_BORDER_MODE = 9,
         D2D1_CONVOLVEMATRIX_PROP_CLAMP_OUTPUT = 10,
-        D2D1_CONVOLVEMATRIX_PROP_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_CONVOLVEMATRIX_PROP_FORCE_DWORD = 0xffffffff,
     }
 }

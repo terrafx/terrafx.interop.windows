@@ -45,7 +45,7 @@ namespace TerraFX.Interop
         public delegate ulong _GetMaximumTextureMemory(ID2D1Device4* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _ClearResources(ID2D1Device4* pThis, [NativeTypeName("UINT32")] uint millisecondsSinceUse);
+        public delegate void _ClearResources(ID2D1Device4* pThis, [NativeTypeName("UINT32")] uint millisecondsSinceUse = 0);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public delegate D2D1_RENDERING_PRIORITY _GetRenderingPriority(ID2D1Device4* pThis);
@@ -129,7 +129,7 @@ namespace TerraFX.Interop
             return Marshal.GetDelegateForFunctionPointer<_GetMaximumTextureMemory>(lpVtbl->GetMaximumTextureMemory)((ID2D1Device4*)Unsafe.AsPointer(ref this));
         }
 
-        public void ClearResources([NativeTypeName("UINT32")] uint millisecondsSinceUse)
+        public void ClearResources([NativeTypeName("UINT32")] uint millisecondsSinceUse = 0)
         {
             Marshal.GetDelegateForFunctionPointer<_ClearResources>(lpVtbl->ClearResources)((ID2D1Device4*)Unsafe.AsPointer(ref this), millisecondsSinceUse);
         }

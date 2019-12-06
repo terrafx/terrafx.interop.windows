@@ -8,6 +8,7 @@ using System;
 namespace TerraFX.Interop
 {
     [Flags]
+    [NativeTypeName("int")]
     public enum D2D1_BITMAP_OPTIONS : uint
     {
         D2D1_BITMAP_OPTIONS_NONE = 0x00000000,
@@ -15,6 +16,6 @@ namespace TerraFX.Interop
         D2D1_BITMAP_OPTIONS_CANNOT_DRAW = 0x00000002,
         D2D1_BITMAP_OPTIONS_CPU_READ = 0x00000004,
         D2D1_BITMAP_OPTIONS_GDI_COMPATIBLE = 0x00000008,
-        D2D1_BITMAP_OPTIONS_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_BITMAP_OPTIONS_FORCE_DWORD = 0xffffffff,
     }
 }

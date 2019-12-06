@@ -5,10 +5,11 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_TINT_PROP : uint
     {
         D2D1_TINT_PROP_COLOR = 0,
         D2D1_TINT_PROP_CLAMP_OUTPUT = 1,
-        D2D1_TINT_PROP_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_TINT_PROP_FORCE_DWORD = 0xffffffff,
     }
 }

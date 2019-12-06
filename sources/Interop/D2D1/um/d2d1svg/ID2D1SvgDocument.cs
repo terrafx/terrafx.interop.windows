@@ -50,7 +50,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Serialize(ID2D1SvgDocument* pThis, [NativeTypeName("IStream *")] IStream* outputXmlStream, [NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* subtree);
+        public delegate int _Serialize(ID2D1SvgDocument* pThis, [NativeTypeName("IStream *")] IStream* outputXmlStream, [NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* subtree = null);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
@@ -126,7 +126,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Serialize([NativeTypeName("IStream *")] IStream* outputXmlStream, [NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* subtree)
+        public int Serialize([NativeTypeName("IStream *")] IStream* outputXmlStream, [NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* subtree = null)
         {
             return Marshal.GetDelegateForFunctionPointer<_Serialize>(lpVtbl->Serialize)((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), outputXmlStream, subtree);
         }
@@ -160,7 +160,6 @@ namespace TerraFX.Interop
         {
             return Marshal.GetDelegateForFunctionPointer<_CreatePathData>(lpVtbl->CreatePathData)((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), segmentData, segmentDataCount, commands, commandsCount, pathData);
         }
-
 
         public partial struct Vtbl
         {
@@ -208,7 +207,6 @@ namespace TerraFX.Interop
 
             [NativeTypeName("HRESULT (const FLOAT *, UINT32, const D2D1_SVG_PATH_COMMAND *, UINT32, ID2D1SvgPathData **) __attribute__((nothrow)) __attribute__((stdcall))")]
             public IntPtr CreatePathData;
-
         }
     }
 }

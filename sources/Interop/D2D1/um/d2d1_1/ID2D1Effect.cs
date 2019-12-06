@@ -71,7 +71,7 @@ namespace TerraFX.Interop
         public delegate int _GetSubProperties(ID2D1Effect* pThis, [NativeTypeName("UINT32")] uint index, [NativeTypeName("ID2D1Properties **")] ID2D1Properties** subProperties);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetInput(ID2D1Effect* pThis, [NativeTypeName("UINT32")] uint index, [NativeTypeName("ID2D1Image *")] ID2D1Image* input, [NativeTypeName("BOOL")] int invalidate);
+        public delegate void _SetInput(ID2D1Effect* pThis, [NativeTypeName("UINT32")] uint index, [NativeTypeName("ID2D1Image *")] ID2D1Image* input, [NativeTypeName("BOOL")] int invalidate = 1);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
@@ -111,109 +111,15 @@ namespace TerraFX.Interop
             return GetValue(index, D2D1_PROPERTY_TYPE_UNKNOWN, data, dataSize);
         }
 
-        [return: NativeTypeName("HRESULT")]
-        public int GetValueByName<T>([NativeTypeName("PCWSTR")] ushort* propertyName, T* value)
-            where T : unmanaged
-        {
-            return GetValueByName(propertyName, D2D1_PROPERTY_TYPE_UNKNOWN, (byte*)value, unchecked((uint)sizeof(T)));
-        }
-
-        public T GetValueByName<T>([NativeTypeName("PCWSTR")] ushort* propertyName)
-            where T : unmanaged
-        {
-            T value;
-            _ = GetValueByName(propertyName, D2D1_PROPERTY_TYPE_UNKNOWN, (byte*)&value, unchecked((uint)sizeof(T)));
-            return value;
-        }
-
-        [return: NativeTypeName("HRESULT")]
-        public int SetValueByName<T>([NativeTypeName("PCWSTR")] ushort* propertyName, [NativeTypeName("const T &")] T* value)
-            where T : unmanaged
-        {
-            return SetValueByName(propertyName, (byte*)value, unchecked((uint)sizeof(T)));
-        }
-
-        [return: NativeTypeName("HRESULT")]
-        public int GetValue<U>(U index, [NativeTypeName("BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataSize)
-            where U : unmanaged
-        {
-            return GetValue((uint)(object)index, data, dataSize);
-        }
-
-        [return: NativeTypeName("HRESULT")]
-        public int GetValue<T, U>(U index, T* value)
-            where T : unmanaged
-            where U : unmanaged
-        {
-            return GetValue((uint)(object)index, (byte*)value, unchecked((uint)sizeof(T)));
-        }
-
-        public T GetValue<T, U>(U index)
-            where T : unmanaged
-            where U : unmanaged
-        {
-            T value;
-            _ = GetValue((uint)(object)index, (byte*)&value, unchecked((uint)sizeof(T)));
-            return value;
-        }
-
-        [return: NativeTypeName("HRESULT")]
-        public int SetValue<U>(U index, [NativeTypeName("const BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataSize)
-            where U : unmanaged
-        {
-            return SetValue((uint)(object)index, data, dataSize);
-        }
-
-        [return: NativeTypeName("HRESULT")]
-        public int SetValue<T, U>(U index, [NativeTypeName("const T &")] T* value)
-            where T : unmanaged
-            where U : unmanaged
-        {
-            return SetValue((uint)(object)index, (byte*)value, unchecked((uint)sizeof(T)));
-        }
-
-        [return: NativeTypeName("HRESULT")]
-        public int GetPropertyName<U>(U index, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount)
-            where U : unmanaged
-        {
-            return GetPropertyName((uint)(object)index, name, nameCount);
-        }
-
-        [return: NativeTypeName("UINT32")]
-        public uint GetPropertyNameLength<U>(U index)
-            where U : unmanaged
-        {
-            return GetPropertyNameLength((uint)(object)index);
-        }
-
-        public D2D1_PROPERTY_TYPE GetType<U>(U index)
-            where U : unmanaged
-        {
-            return GetType((uint)(object)index);
-        }
-
-
-        [return: NativeTypeName("UINT32")]
-        public uint GetValueSize<U>(U index)
-            where U : unmanaged
-        {
-            return GetValueSize((uint)(object)index);
-        }
-
-        [return: NativeTypeName("HRESULT")]
-        public int GetSubProperties<U>(U index, ID2D1Properties** subProperties)
-            where U : unmanaged
-        {
-            return GetSubProperties((uint)(object)index, subProperties);
-        }
-
-        public void SetInputEffect([NativeTypeName("UINT32")] uint index, [NativeTypeName("ID2D1Effect *")] ID2D1Effect* inputEffect, [NativeTypeName("BOOL")] int invalidate)
+        public void SetInputEffect([NativeTypeName("UINT32")] uint index, [NativeTypeName("ID2D1Effect *")] ID2D1Effect* inputEffect, [NativeTypeName("BOOL")] int invalidate = 1)
         {
             ID2D1Image* output = null;
+
             if (inputEffect != null)
             {
                 inputEffect->GetOutput(&output);
             }
+
             SetInput(index, output, invalidate);
             if (output != null)
             {
@@ -304,7 +210,7 @@ namespace TerraFX.Interop
             return Marshal.GetDelegateForFunctionPointer<_GetSubProperties>(lpVtbl->GetSubProperties)((ID2D1Effect*)Unsafe.AsPointer(ref this), index, subProperties);
         }
 
-        public void SetInput([NativeTypeName("UINT32")] uint index, [NativeTypeName("ID2D1Image *")] ID2D1Image* input, [NativeTypeName("BOOL")] int invalidate)
+        public void SetInput([NativeTypeName("UINT32")] uint index, [NativeTypeName("ID2D1Image *")] ID2D1Image* input, [NativeTypeName("BOOL")] int invalidate = 1)
         {
             Marshal.GetDelegateForFunctionPointer<_SetInput>(lpVtbl->SetInput)((ID2D1Effect*)Unsafe.AsPointer(ref this), index, input, invalidate);
         }

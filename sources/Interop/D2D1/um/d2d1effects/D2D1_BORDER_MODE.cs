@@ -5,10 +5,11 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_BORDER_MODE : uint
     {
         D2D1_BORDER_MODE_SOFT = 0,
         D2D1_BORDER_MODE_HARD = 1,
-        D2D1_BORDER_MODE_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_BORDER_MODE_FORCE_DWORD = 0xffffffff,
     }
 }

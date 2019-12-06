@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("int")]
     public enum D2D1_SPOTDIFFUSE_PROP : uint
     {
         D2D1_SPOTDIFFUSE_PROP_LIGHT_POSITION = 0,
@@ -16,6 +17,6 @@ namespace TerraFX.Interop
         D2D1_SPOTDIFFUSE_PROP_COLOR = 6,
         D2D1_SPOTDIFFUSE_PROP_KERNEL_UNIT_LENGTH = 7,
         D2D1_SPOTDIFFUSE_PROP_SCALE_MODE = 8,
-        D2D1_SPOTDIFFUSE_PROP_FORCE_DWORD = 0xFFFFFFFF,
+        D2D1_SPOTDIFFUSE_PROP_FORCE_DWORD = 0xffffffff,
     }
 }
