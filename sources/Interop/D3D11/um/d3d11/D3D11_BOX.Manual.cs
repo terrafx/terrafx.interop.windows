@@ -19,15 +19,15 @@ namespace TerraFX.Interop
             back = (uint)Back;
         }
 
-        public static bool operator ==(D3D11_BOX l, D3D11_BOX r) =>
-            (l.left == r.left) &&
-            (l.top == r.top) &&
-            (l.front == r.front) &&
-            (l.right == r.right) &&
-            (l.bottom == r.bottom) &&
-            (l.back == r.back);
+        public static bool operator ==(D3D11_BOX l, D3D11_BOX r)
+        {
+            return l.left == r.left && l.top == r.top && l.front == r.front && l.right == r.right && l.bottom == r.bottom && l.back == r.back;
+        }
 
-        public static bool operator !=(D3D11_BOX l, D3D11_BOX r) => !(l == r);
+        public static bool operator !=(D3D11_BOX l, D3D11_BOX r)
+        {
+            return !(l == r);
+        }
 
         public override bool Equals(object? obj) => (obj is D3D11_BOX other) && Equals(other);
 

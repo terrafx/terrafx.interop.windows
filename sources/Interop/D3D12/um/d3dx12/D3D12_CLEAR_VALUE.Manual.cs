@@ -8,7 +8,7 @@ using static TerraFX.Interop.DXGI_FORMAT;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct D3D12_CLEAR_VALUE
+    public unsafe partial struct D3D12_CLEAR_VALUE : IEquatable<D3D12_CLEAR_VALUE>
     {
         public D3D12_CLEAR_VALUE(DXGI_FORMAT format, [NativeTypeName("const FLOAT [4]")] float* color)
         {
