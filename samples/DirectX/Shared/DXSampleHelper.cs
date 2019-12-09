@@ -14,7 +14,7 @@ namespace TerraFX.Samples.DirectX
 {
     public static unsafe class DXSampleHelper
     {
-        public static void ThrowIfFailed(string methodName, int hr)
+        public static void ThrowIfFailed(string methodName, HRESULT hr)
         {
             if (FAILED(hr))
             {
@@ -44,7 +44,7 @@ namespace TerraFX.Samples.DirectX
                 var size = (int)endOfFile;
                 data = new byte[size];
 
-                fileReader.Read(data, 0, size);
+                _ = fileReader.Read(data, 0, size);
             }
 
             return data;
@@ -55,7 +55,7 @@ namespace TerraFX.Samples.DirectX
         {
             fixed (char* pName = name)
             {
-                pObject->SetName((ushort*)pName);
+                _ = pObject->SetName((ushort*)pName);
             }
         }
 
