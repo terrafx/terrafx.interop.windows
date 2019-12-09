@@ -214,27 +214,27 @@ namespace TerraFX.Samples.DirectX.D3D11
             {
                 if (pixelShaderBlob != null)
                 {
-                    pixelShaderBlob->Release();
+                    _ = pixelShaderBlob->Release();
                 }
 
                 if (vertexShaderBlob != null)
                 {
-                    vertexShaderBlob->Release();
+                    _ = vertexShaderBlob->Release();
                 }
 
                 if (backBuffer != null)
                 {
-                    backBuffer->Release();
+                    _ = backBuffer->Release();
                 }
 
                 if (adapter != null)
                 {
-                    adapter->Release();
+                    _ = adapter->Release();
                 }
 
                 if (factory != null)
                 {
-                    factory->Release();
+                    _ = factory->Release();
                 }
             }
         }
@@ -278,7 +278,7 @@ namespace TerraFX.Samples.DirectX.D3D11
             if (vertexBuffer != null)
             {
                 _vertexBuffer = null;
-                vertexBuffer->Release();
+                _ = vertexBuffer->Release();
             }
 
             var inputLayout = _inputLayout;
@@ -286,7 +286,7 @@ namespace TerraFX.Samples.DirectX.D3D11
             if (inputLayout != null)
             {
                 _inputLayout = null;
-                inputLayout->Release();
+                _ = inputLayout->Release();
             }
 
             var pixelShader = _pixelShader;
@@ -294,7 +294,7 @@ namespace TerraFX.Samples.DirectX.D3D11
             if (pixelShader != null)
             {
                 _pixelShader = null;
-                pixelShader->Release();
+                _ = pixelShader->Release();
             }
 
             var vertexShader = _vertexShader;
@@ -302,7 +302,7 @@ namespace TerraFX.Samples.DirectX.D3D11
             if (vertexShader != null)
             {
                 _vertexShader = null;
-                vertexShader->Release();
+                _ = vertexShader->Release();
             }
 
             var swapChain = _swapChain;
@@ -310,7 +310,7 @@ namespace TerraFX.Samples.DirectX.D3D11
             if (swapChain != null)
             {
                 _swapChain = null;
-                swapChain->Release();
+                _ = swapChain->Release();
             }
 
             var immediateContext = _immediateContext;
@@ -318,7 +318,7 @@ namespace TerraFX.Samples.DirectX.D3D11
             if (immediateContext != null)
             {
                 _immediateContext = null;
-                immediateContext->Release();
+                _ = immediateContext->Release();
             }
 
             var device = _device;
@@ -326,7 +326,7 @@ namespace TerraFX.Samples.DirectX.D3D11
             if (device != null)
             {
                 _device = null;
-                device->Release();
+                _ = device->Release();
             }
 
             var renderTarget = _renderTarget;
@@ -334,7 +334,7 @@ namespace TerraFX.Samples.DirectX.D3D11
             if (renderTarget != null)
             {
                 _renderTarget = null;
-                renderTarget->Release();
+                _ = renderTarget->Release();
             }
 
             base.Dispose(isDisposing);

@@ -16,11 +16,9 @@ using static TerraFX.Interop.D3D12_BLEND;
 using static TerraFX.Interop.D3D12_BLEND_OP;
 using static TerraFX.Interop.D3D12_COLOR_WRITE_ENABLE;
 using static TerraFX.Interop.D3D12_COMMAND_LIST_TYPE;
-using static TerraFX.Interop.D3D12_COMMAND_QUEUE_FLAGS;
 using static TerraFX.Interop.D3D12_CONSERVATIVE_RASTERIZATION_MODE;
 using static TerraFX.Interop.D3D12_CPU_PAGE_PROPERTY;
 using static TerraFX.Interop.D3D12_CULL_MODE;
-using static TerraFX.Interop.D3D12_DESCRIPTOR_HEAP_FLAGS;
 using static TerraFX.Interop.D3D12_DESCRIPTOR_HEAP_TYPE;
 using static TerraFX.Interop.D3D12_FENCE_FLAGS;
 using static TerraFX.Interop.D3D12_FILL_MODE;
@@ -30,8 +28,6 @@ using static TerraFX.Interop.D3D12_INPUT_CLASSIFICATION;
 using static TerraFX.Interop.D3D12_LOGIC_OP;
 using static TerraFX.Interop.D3D12_MEMORY_POOL;
 using static TerraFX.Interop.D3D12_PRIMITIVE_TOPOLOGY_TYPE;
-using static TerraFX.Interop.D3D12_RESOURCE_BARRIER_FLAGS;
-using static TerraFX.Interop.D3D12_RESOURCE_BARRIER_TYPE;
 using static TerraFX.Interop.D3D12_RESOURCE_DIMENSION;
 using static TerraFX.Interop.D3D12_RESOURCE_FLAGS;
 using static TerraFX.Interop.D3D12_RESOURCE_STATES;
@@ -56,7 +52,7 @@ namespace TerraFX.Samples.DirectX.D3D12
         private RECT _scissorRect;
         private IDXGISwapChain3* _swapChain;
         private ID3D12Device* _device;
-        private RenderTargets_e__FixedBuffer _renderTargets;
+        private ID3D12Resource*[] _renderTargets;
         private ID3D12CommandAllocator* _commandAllocator;
         private ID3D12CommandQueue* _commandQueue;
         private ID3D12RootSignature* _rootSignature;
@@ -71,13 +67,15 @@ namespace TerraFX.Samples.DirectX.D3D12
 
         // Synchronization objects.
         private uint _frameIndex;
-        private IntPtr _fenceEvent;
+        private HANDLE _fenceEvent;
         private ID3D12Fence* _fence;
         private ulong _fenceValue;
 
         public HelloTriangle12(uint width, uint height, string name)
             : base(width, height, name)
         {
+            _renderTargets = new ID3D12Resource*[FrameCount];
+
             _viewport = new D3D12_VIEWPORT {
                 TopLeftX = 0,
                 TopLeftY = 0,
@@ -113,14 +111,14 @@ namespace TerraFX.Samples.DirectX.D3D12
             PopulateCommandList();
 
             // Execute the command list.
-            var ppCommandLists = stackalloc ID3D12CommandList*[1];
-            {
-                ppCommandLists[0] = (ID3D12CommandList*)_commandList;
-            }
-            _commandQueue->ExecuteCommandLists(1, ppCommandLists);
+            const int ppCommandListsCount = 1;
+            var ppCommandLists = stackalloc ID3D12CommandList*[ppCommandListsCount] {
+                (ID3D12CommandList*)_commandList,
+            };
+            _commandQueue->ExecuteCommandLists(ppCommandListsCount, ppCommandLists);
 
             // Present the frame.
-            ThrowIfFailed(nameof(IDXGISwapChain3.Present), _swapChain->Present(1, 0));
+            ThrowIfFailed(nameof(IDXGISwapChain3.Present), _swapChain->Present(SyncInterval: 1, Flags: 0));
 
             WaitForPreviousFrame();
         }
@@ -131,7 +129,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             // cleaned up by the destructor.
             WaitForPreviousFrame();
 
-            CloseHandle(_fenceEvent);
+            _ = CloseHandle(_fenceEvent);
         }
 
         // Load the rendering pipeline dependencies.
@@ -182,10 +180,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 }
 
                 // Describe and create the command queue.
-                var queueDesc = new D3D12_COMMAND_QUEUE_DESC {
-                    Flags = D3D12_COMMAND_QUEUE_FLAG_NONE,
-                    Type = D3D12_COMMAND_LIST_TYPE_DIRECT
-                };
+                var queueDesc = new D3D12_COMMAND_QUEUE_DESC();
 
                 fixed (ID3D12CommandQueue** commandQueue = &_commandQueue)
                 {
@@ -201,17 +196,15 @@ namespace TerraFX.Samples.DirectX.D3D12
                     Format = DXGI_FORMAT_R8G8B8A8_UNORM,
                     BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT,
                     SwapEffect = DXGI_SWAP_EFFECT_FLIP_DISCARD,
-                    SampleDesc = new DXGI_SAMPLE_DESC {
-                        Count = 1
-                    }
+                    SampleDesc = new DXGI_SAMPLE_DESC(count: 1, quality: 0),
                 };
 
                 ThrowIfFailed(nameof(IDXGIFactory4.CreateSwapChainForHwnd), factory->CreateSwapChainForHwnd(
                     (IUnknown*)_commandQueue,         // Swap chain needs the queue so that it can force a flush on it.
                     Win32Application.Hwnd,
                     &swapChainDesc,
-                    null,
-                    null,
+                    pFullscreenDesc: null,
+                    pRestrictToOutput: null,
                     &swapChain
                 ));
 
@@ -231,7 +224,6 @@ namespace TerraFX.Samples.DirectX.D3D12
                     var rtvHeapDesc = new D3D12_DESCRIPTOR_HEAP_DESC {
                         NumDescriptors = FrameCount,
                         Type = D3D12_DESCRIPTOR_HEAP_TYPE_RTV,
-                        Flags = D3D12_DESCRIPTOR_HEAP_FLAG_NONE
                     };
 
                     fixed (ID3D12DescriptorHeap** rtvHeap = &_rtvHeap)
@@ -255,8 +247,8 @@ namespace TerraFX.Samples.DirectX.D3D12
                         ID3D12Resource* renderTarget;
                         {
                             ThrowIfFailed(nameof(IDXGISwapChain3.GetBuffer), _swapChain->GetBuffer(n, &iid, (void**)&renderTarget));
-                            _device->CreateRenderTargetView(renderTarget, null, rtvHandle);
-                            rtvHandle.ptr = (UIntPtr)((byte*)rtvHandle.ptr + _rtvDescriptorSize);
+                            _device->CreateRenderTargetView(renderTarget, pDesc: null, rtvHandle);
+                            rtvHandle.Offset(1, _rtvDescriptorSize);
                         }
                         _renderTargets[unchecked((int)n)] = renderTarget;
                     }
@@ -314,122 +306,75 @@ namespace TerraFX.Samples.DirectX.D3D12
                     fixed (ID3D12RootSignature** rootSignature = &_rootSignature)
                     {
                         iid = IID_ID3D12RootSignature;
-                        ThrowIfFailed(nameof(ID3D12Device._CreateRootSignature), _device->CreateRootSignature(0, signature->GetBufferPointer(), signature->GetBufferSize(), &iid, (void**)rootSignature));
+                        ThrowIfFailed(nameof(ID3D12Device._CreateRootSignature), _device->CreateRootSignature(nodeMask: 0, signature->GetBufferPointer(), signature->GetBufferSize(), &iid, (void**)rootSignature));
                     }
                 }
 
                 // Create the pipeline state, which includes compiling and loading shaders.
                 {
+                    var compileFlags = 0u;
+
 #if DEBUG
                     // Enable better shader debugging with the graphics debugging tools.
-                    var compileFlags = D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION;
-#else
-                    var compileFlags = 0u;
+                    compileFlags |= D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION;
 #endif
                     fixed (char* fileName = GetAssetFullPath(@"D3D12\Assets\Shaders\HelloTriangle.hlsl"))
                     {
                         var entryPoint = 0x00006E69614D5356;    // VSMain
                         var target = 0x0000305F355F7376;        // vs_5_0
-                        ThrowIfFailed(nameof(D3DCompileFromFile), D3DCompileFromFile((ushort*)fileName, null, null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, 0, &vertexShader, null));
+                        ThrowIfFailed(nameof(D3DCompileFromFile), D3DCompileFromFile((ushort*)fileName, pDefines: null, pInclude: null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, Flags2: 0, &vertexShader, ppErrorMsgs: null));
 
                         entryPoint = 0x00006E69614D5350;        // PSMain
                         target = 0x0000305F355F7370;            // ps_5_0
-                        ThrowIfFailed(nameof(D3DCompileFromFile), D3DCompileFromFile((ushort*)fileName, null, null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, 0, &pixelShader, null));
+                        ThrowIfFailed(nameof(D3DCompileFromFile), D3DCompileFromFile((ushort*)fileName, pDefines: null, pInclude: null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, Flags2: 0, &pixelShader, ppErrorMsgs: null));
                     }
 
                     // Define the vertex input layout.
-                    var inputElementDescs = stackalloc D3D12_INPUT_ELEMENT_DESC[2];
-                    {
-                        var semanticName0 = stackalloc sbyte[9];
-                        {
-                            ((ulong*)semanticName0)[0] = 0x4E4F495449534F50;      // POSITION
-                        }
-                        inputElementDescs[0] = new D3D12_INPUT_ELEMENT_DESC {
-                            SemanticName = semanticName0,
-                            SemanticIndex = 0,
-                            Format = DXGI_FORMAT_R32G32B32_FLOAT,
-                            InputSlot = 0,
-                            AlignedByteOffset = 0,
-                            InputSlotClass = D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA,
-                            InstanceDataStepRate = 0
-                        };
+                    const int inputElementDescsCount = 2;
 
-                        var semanticName1 = 0x000000524F4C4F43;                     // COLOR
-                        inputElementDescs[1] = new D3D12_INPUT_ELEMENT_DESC {
-                            SemanticName = (sbyte*)&semanticName1,
-                            SemanticIndex = 0,
+                    var semanticName0 = stackalloc ulong[2] {
+                        0x4E4F495449534F50,     // POSITION
+                        0x0000000000000000,
+                    };
+
+                    var semanticName1 = stackalloc ulong[1] {
+                        0x000000524F4C4F43,     // COLOR
+                    };
+
+                    var inputElementDescs = stackalloc D3D12_INPUT_ELEMENT_DESC[inputElementDescsCount] {
+                        new D3D12_INPUT_ELEMENT_DESC {
+                            SemanticName = (sbyte*)semanticName0,
+                            Format = DXGI_FORMAT_R32G32B32_FLOAT,
+                            InputSlotClass = D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA,
+                        },
+                        new D3D12_INPUT_ELEMENT_DESC {
+                            SemanticName = (sbyte*)semanticName1,
                             Format = DXGI_FORMAT_R32G32B32A32_FLOAT,
-                            InputSlot = 0,
                             AlignedByteOffset = 12,
                             InputSlotClass = D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA,
-                            InstanceDataStepRate = 0
-                        };
-                    }
-
+                        },
+                    };
+                        
                     // Describe and create the graphics pipeline state object (PSO).
                     var psoDesc = new D3D12_GRAPHICS_PIPELINE_STATE_DESC {
                         InputLayout = new D3D12_INPUT_LAYOUT_DESC {
                             pInputElementDescs = inputElementDescs,
-                            NumElements = 2
+                            NumElements = inputElementDescsCount,
                         },
                         pRootSignature = _rootSignature,
-                        VS = new D3D12_SHADER_BYTECODE {
-                            pShaderBytecode = vertexShader->GetBufferPointer(),
-                            BytecodeLength = vertexShader->GetBufferSize()
-                        },
-                        PS = new D3D12_SHADER_BYTECODE {
-                            pShaderBytecode = pixelShader->GetBufferPointer(),
-                            BytecodeLength = pixelShader->GetBufferSize()
-                        },
-                        RasterizerState = new D3D12_RASTERIZER_DESC {
-                            FillMode = D3D12_FILL_MODE_SOLID,
-                            CullMode = D3D12_CULL_MODE_BACK,
-                            FrontCounterClockwise = FALSE,
-                            DepthBias = D3D12_DEFAULT_DEPTH_BIAS,
-                            DepthBiasClamp = D3D12_DEFAULT_DEPTH_BIAS_CLAMP,
-                            SlopeScaledDepthBias = D3D12_DEFAULT_SLOPE_SCALED_DEPTH_BIAS,
-                            DepthClipEnable = TRUE,
-                            MultisampleEnable = FALSE,
-                            AntialiasedLineEnable = FALSE,
-                            ForcedSampleCount = 0,
-                            ConservativeRaster = D3D12_CONSERVATIVE_RASTERIZATION_MODE_OFF
-                        },
-                        BlendState = new D3D12_BLEND_DESC {
-                            AlphaToCoverageEnable = FALSE,
-                            IndependentBlendEnable = FALSE
-                        },
-                        DepthStencilState = new D3D12_DEPTH_STENCIL_DESC {
-                            DepthEnable = FALSE,
-                            StencilEnable = FALSE
-                        },
+                        VS = new D3D12_SHADER_BYTECODE(vertexShader),
+                        PS = new D3D12_SHADER_BYTECODE(pixelShader),
+                        RasterizerState = D3D12_RASTERIZER_DESC.DEFAULT,
+                        BlendState = D3D12_BLEND_DESC.DEFAULT,
+                        DepthStencilState = D3D12_DEPTH_STENCIL_DESC.DEFAULT,
                         SampleMask = uint.MaxValue,
                         PrimitiveTopologyType = D3D12_PRIMITIVE_TOPOLOGY_TYPE_TRIANGLE,
                         NumRenderTargets = 1,
-                        SampleDesc = new DXGI_SAMPLE_DESC {
-                            Count = 1
-                        }
+                        SampleDesc = new DXGI_SAMPLE_DESC(count: 1, quality: 0),
                     };
-                    {
-                        var defaultRenderTargetBlendDesc = new D3D12_RENDER_TARGET_BLEND_DESC {
-                            BlendEnable = FALSE,
-                            LogicOpEnable = FALSE,
-                            SrcBlend = D3D12_BLEND_ONE,
-                            DestBlend = D3D12_BLEND_ZERO,
-                            BlendOp = D3D12_BLEND_OP_ADD,
-                            SrcBlendAlpha = D3D12_BLEND_ONE,
-                            DestBlendAlpha = D3D12_BLEND_ZERO,
-                            BlendOpAlpha = D3D12_BLEND_OP_ADD,
-                            LogicOp = D3D12_LOGIC_OP_NOOP,
-                            RenderTargetWriteMask = (byte)D3D12_COLOR_WRITE_ENABLE_ALL
-                        };
+                    psoDesc.DepthStencilState.DepthEnable = FALSE;
+                    psoDesc.RTVFormats[0] = DXGI_FORMAT_R8G8B8A8_UNORM;
 
-                        for (var i = 0; i < D3D12_SIMULTANEOUS_RENDER_TARGET_COUNT; ++i)
-                        {
-                            psoDesc.BlendState.RenderTarget[i] = defaultRenderTargetBlendDesc;
-                        }
-
-                        psoDesc.RTVFormats[0] = DXGI_FORMAT_R8G8B8A8_UNORM;
-                    }
                     fixed (ID3D12PipelineState** pipelineState = &_pipelineState)
                     {
                         iid = IID_ID3D12PipelineState;
@@ -441,7 +386,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 fixed (ID3D12GraphicsCommandList** commandList = &_commandList)
                 {
                     iid = IID_ID3D12GraphicsCommandList;
-                    ThrowIfFailed(nameof(ID3D12Device.CreateCommandList), _device->CreateCommandList(0, D3D12_COMMAND_LIST_TYPE_DIRECT, _commandAllocator, _pipelineState, &iid, (void**)commandList));
+                    ThrowIfFailed(nameof(ID3D12Device.CreateCommandList), _device->CreateCommandList(nodeMask: 0, D3D12_COMMAND_LIST_TYPE_DIRECT, _commandAllocator, _pipelineState, &iid, (void**)commandList));
                 }
 
                 // Command lists are created in the recording state, but there is nothing
@@ -451,23 +396,23 @@ namespace TerraFX.Samples.DirectX.D3D12
                 // Create the vertex buffer.
                 {
                     // Define the geometry for a triangle.
-                    var triangleVertices = stackalloc Vertex[3];
-                    {
-                        triangleVertices[0] = new Vertex {
+                    const int triangleVerticesCount = 3;
+                    var triangleVertices = stackalloc Vertex[triangleVerticesCount] {
+                        new Vertex {
                             Position = new Vector3(0.0f, 0.25f * _aspectRatio, 0.0f),
                             Color = new Vector4(1.0f, 0.0f, 0.0f, 1.0f)
-                        };
-                        triangleVertices[1] = new Vertex {
+                        },
+                        new Vertex {
                             Position = new Vector3(0.25f, -0.25f * _aspectRatio, 0.0f),
                             Color = new Vector4(0.0f, 1.0f, 0.0f, 1.0f)
-                        };
-                        triangleVertices[2] = new Vertex {
+                        },
+                        new Vertex {
                             Position = new Vector3(-0.25f, -0.25f * _aspectRatio, 0.0f),
                             Color = new Vector4(0.0f, 0.0f, 1.0f, 1.0f)
-                        };
-                    }
+                        },
+                    };
 
-                    var vertexBufferSize = (uint)sizeof(Vertex) * 3;
+                    var vertexBufferSize = (uint)sizeof(Vertex) * triangleVerticesCount;
 
                     // Note: using upload heaps to transfer static data like vert buffers is not
                     // recommended. Every time the GPU needs it, the upload heap will be marshalled
@@ -475,29 +420,8 @@ namespace TerraFX.Samples.DirectX.D3D12
                     // code simplicity and because there are very few verts to actually transfer.
                     fixed (ID3D12Resource** vertexBuffer = &_vertexBuffer)
                     {
-                        var heapProperties = new D3D12_HEAP_PROPERTIES {
-                            Type = D3D12_HEAP_TYPE_UPLOAD,
-                            CPUPageProperty = D3D12_CPU_PAGE_PROPERTY_UNKNOWN,
-                            MemoryPoolPreference = D3D12_MEMORY_POOL_UNKNOWN,
-                            CreationNodeMask = 1,
-                            VisibleNodeMask = 1
-                        };
-
-                        var bufferDesc = new D3D12_RESOURCE_DESC {
-                            Dimension = D3D12_RESOURCE_DIMENSION_BUFFER,
-                            Alignment = 0,
-                            Width = vertexBufferSize,
-                            Height = 1,
-                            DepthOrArraySize = 1,
-                            MipLevels = 1,
-                            Format = DXGI_FORMAT_UNKNOWN,
-                            SampleDesc = new DXGI_SAMPLE_DESC {
-                                Count = 1,
-                                Quality = 0,
-                            },
-                            Layout = D3D12_TEXTURE_LAYOUT_ROW_MAJOR,
-                            Flags = D3D12_RESOURCE_FLAG_NONE
-                        };
+                        var heapProperties = new D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD);
+                        var bufferDesc = D3D12_RESOURCE_DESC.Buffer(vertexBufferSize);
 
                         iid = IID_ID3D12Resource;
                         ThrowIfFailed(nameof(ID3D12Device._CreateCommittedResource), _device->CreateCommittedResource(
@@ -505,19 +429,17 @@ namespace TerraFX.Samples.DirectX.D3D12
                             D3D12_HEAP_FLAG_NONE,
                             &bufferDesc,
                             D3D12_RESOURCE_STATE_GENERIC_READ,
-                            null,
+                            pOptimizedClearValue: null,
                             &iid,
                             (void**)vertexBuffer
                         ));
                     }
 
                     // Copy the triangle data to the vertex buffer.
+                    var readRange = new D3D12_RANGE();
+
                     byte* pVertexDataBegin;
-                    var readRange = new D3D12_RANGE {       // We do not intend to read from this resource on the CPU.
-                        Begin = UIntPtr.Zero,
-                        End = UIntPtr.Zero
-                    };
-                    ThrowIfFailed(nameof(ID3D12Resource._Map), _vertexBuffer->Map(0, &readRange, (void**)&pVertexDataBegin));
+                    ThrowIfFailed(nameof(ID3D12Resource._Map), _vertexBuffer->Map(Subresource: 0, &readRange, (void**)&pVertexDataBegin));
                     Unsafe.CopyBlock(pVertexDataBegin, triangleVertices, vertexBufferSize);
                     _vertexBuffer->Unmap(0, null);
 
@@ -537,8 +459,8 @@ namespace TerraFX.Samples.DirectX.D3D12
                     }
 
                     // Create an event handle to use for frame synchronization.
-                    _fenceEvent = CreateEventW(null, FALSE, FALSE, null);
-                    if (_fenceEvent == IntPtr.Zero)
+                    _fenceEvent = CreateEventW(lpEventAttributes: null, bManualReset: FALSE, bInitialState: FALSE, lpName: null);
+                    if (_fenceEvent == null)
                     {
                         var hr = Marshal.GetHRForLastWin32Error();
                         Marshal.ThrowExceptionForHR(hr);
@@ -600,18 +522,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             }
 
             // Indicate that the back buffer will be used as a render target.
-            var barrier = new D3D12_RESOURCE_BARRIER {
-                Type = D3D12_RESOURCE_BARRIER_TYPE_TRANSITION,
-                Flags = D3D12_RESOURCE_BARRIER_FLAG_NONE,
-                Anonymous = new D3D12_RESOURCE_BARRIER._Anonymous_e__Union {
-                    Transition = new D3D12_RESOURCE_TRANSITION_BARRIER {
-                        pResource = _renderTargets[unchecked((int)_frameIndex)],
-                        StateBefore = D3D12_RESOURCE_STATE_PRESENT,
-                        StateAfter = D3D12_RESOURCE_STATE_RENDER_TARGET,
-                        Subresource = D3D12_RESOURCE_BARRIER_ALL_SUBRESOURCES
-                    }
-                }
-            };
+            var barrier = D3D12_RESOURCE_BARRIER.InitTransition(_renderTargets[unchecked((int)_frameIndex)], D3D12_RESOURCE_STATE_PRESENT, D3D12_RESOURCE_STATE_RENDER_TARGET);
             _commandList->ResourceBarrier(1, &barrier);
 
             var rtvHandle = _rtvHeap->GetCPUDescriptorHandleForHeapStart();
@@ -619,28 +530,19 @@ namespace TerraFX.Samples.DirectX.D3D12
             _commandList->OMSetRenderTargets(1, &rtvHandle, FALSE, null);
 
             // Record commands.
-            var clearColor = stackalloc float[4];
-            {
-                clearColor[0] = 0.0f;
-                clearColor[1] = 0.2f;
-                clearColor[2] = 0.4f;
-                clearColor[3] = 1.0f;
-            }
-            _commandList->ClearRenderTargetView(rtvHandle, clearColor, 0, null);
+            var clearColor = stackalloc float[4] { 0.0f, 0.2f, 0.4f, 1.0f };
+            _commandList->ClearRenderTargetView(rtvHandle, clearColor, NumRects: 0, null);
             _commandList->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
             fixed (D3D12_VERTEX_BUFFER_VIEW* vertexBufferView = &_vertexBufferView)
             {
-                _commandList->IASetVertexBuffers(0, 1, vertexBufferView);
+                _commandList->IASetVertexBuffers(StartSlot: 0, 1, vertexBufferView);
             }
 
-            _commandList->DrawInstanced(3, 1, 0, 0);
+            _commandList->DrawInstanced(VertexCountPerInstance: 3, InstanceCount: 1, StartVertexLocation: 0, StartInstanceLocation: 0);
 
             // Indicate that the back buffer will now be used to present.
-            {
-                barrier.Anonymous.Transition.StateBefore = D3D12_RESOURCE_STATE_RENDER_TARGET;
-                barrier.Anonymous.Transition.StateAfter = D3D12_RESOURCE_STATE_PRESENT;
-            }
+            barrier = D3D12_RESOURCE_BARRIER.InitTransition(_renderTargets[unchecked((int)_frameIndex)], D3D12_RESOURCE_STATE_RENDER_TARGET, D3D12_RESOURCE_STATE_PRESENT);
             _commandList->ResourceBarrier(1, &barrier);
 
             ThrowIfFailed(nameof(ID3D12GraphicsCommandList.Close), _commandList->Close());
@@ -662,7 +564,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             if (_fence->GetCompletedValue() < fence)
             {
                 ThrowIfFailed(nameof(ID3D12Fence.SetEventOnCompletion), _fence->SetEventOnCompletion(fence, _fenceEvent));
-                WaitForSingleObject(_fenceEvent, INFINITE);
+                _ = WaitForSingleObject(_fenceEvent, INFINITE);
             }
 
             _frameIndex = _swapChain->GetCurrentBackBufferIndex();
@@ -675,7 +577,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             if (swapChain != null)
             {
                 _swapChain = null;
-                swapChain->Release();
+                _ = swapChain->Release();
             }
 
             var device = _device;
@@ -683,7 +585,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             if (device != null)
             {
                 _device = null;
-                device->Release();
+                _ = device->Release();
             }
 
             for (var index = 0; index < FrameCount; index++)
@@ -693,7 +595,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 if (renderTarget != null)
                 {
                     _renderTargets[index] = null;
-                    renderTarget->Release();
+                    _ = renderTarget->Release();
                 }
             }
 
@@ -702,7 +604,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             if (commandAllocator != null)
             {
                 _commandAllocator = null;
-                commandAllocator->Release();
+                _ = commandAllocator->Release();
             }
 
             var commandQueue = _commandQueue;
@@ -710,7 +612,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             if (commandQueue != null)
             {
                 _commandQueue = null;
-                commandQueue->Release();
+                _ = commandQueue->Release();
             }
 
             var rootSignature = _rootSignature;
@@ -718,7 +620,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             if (rootSignature != null)
             {
                 _rootSignature = null;
-                rootSignature->Release();
+                _ = rootSignature->Release();
             }
 
             var rtvHeap = _rtvHeap;
@@ -726,7 +628,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             if (rtvHeap != null)
             {
                 _rtvHeap = null;
-                rtvHeap->Release();
+                _ = rtvHeap->Release();
             }
 
             var pipelineState = _pipelineState;
@@ -734,7 +636,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             if (pipelineState != null)
             {
                 _pipelineState = null;
-                pipelineState->Release();
+                _ = pipelineState->Release();
             }
 
             var commandList = _commandList;
@@ -742,7 +644,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             if (commandList != null)
             {
                 _commandList = null;
-                commandList->Release();
+                _ = commandList->Release();
             }
 
             var vertexBuffer = _vertexBuffer;
@@ -750,7 +652,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             if (vertexBuffer != null)
             {
                 _vertexBuffer = null;
-                vertexBuffer->Release();
+                _ = vertexBuffer->Release();
             }
 
             var fence = _fence;
@@ -758,38 +660,10 @@ namespace TerraFX.Samples.DirectX.D3D12
             if (fence != null)
             {
                 _fence = null;
-                fence->Release();
+                _ = fence->Release();
             }
 
             base.Dispose(isDisposing);
-        }
-
-        private unsafe struct RenderTargets_e__FixedBuffer
-        {
-#pragma warning disable CS0649
-            public ID3D12Resource* E0;
-
-            public ID3D12Resource* E1;
-#pragma warning restore CS0649
-
-            public ID3D12Resource* this[int index]
-            {
-                get
-                {
-                    fixed (ID3D12Resource** e = &E0)
-                    {
-                        return e[index];
-                    }
-                }
-
-                set
-                {
-                    fixed (ID3D12Resource** e = &E0)
-                    {
-                        e[index] = value;
-                    }
-                }
-            }
         }
 
         private struct Vertex

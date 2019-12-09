@@ -108,17 +108,17 @@ namespace TerraFX.Samples.DirectX.D3D11
             {
                 if (backBuffer != null)
                 {
-                    backBuffer->Release();
+                    _ = backBuffer->Release();
                 }
 
                 if (adapter != null)
                 {
-                    adapter->Release();
+                    _ = adapter->Release();
                 }
 
                 if (factory != null)
                 {
-                    factory->Release();
+                    _ = factory->Release();
                 }
             }
         }
@@ -155,7 +155,7 @@ namespace TerraFX.Samples.DirectX.D3D11
             if (swapChain != null)
             {
                 _swapChain = null;
-                swapChain->Release();
+                _ = swapChain->Release();
             }
 
             var immediateContext = _immediateContext;
@@ -163,7 +163,7 @@ namespace TerraFX.Samples.DirectX.D3D11
             if (immediateContext != null)
             {
                 _immediateContext = null;
-                immediateContext->Release();
+                _ = immediateContext->Release();
             }
 
             var device = _device;
@@ -171,7 +171,7 @@ namespace TerraFX.Samples.DirectX.D3D11
             if (device != null)
             {
                 _device = null;
-                device->Release();
+                _ = device->Release();
             }
 
             var renderTarget = _renderTarget;
@@ -179,7 +179,7 @@ namespace TerraFX.Samples.DirectX.D3D11
             if (renderTarget != null)
             {
                 _renderTarget = null;
-                renderTarget->Release();
+                _ = renderTarget->Release();
             }
 
             base.Dispose(isDisposing);

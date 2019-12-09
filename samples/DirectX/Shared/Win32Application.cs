@@ -13,20 +13,14 @@ namespace TerraFX.Samples.DirectX
 {
     public static unsafe class Win32Application
     {
-        private static readonly WNDPROC s_wndProc = WindowProc;
+        private static readonly WNDPROC s_wndProc = (hwnd, message, wParam, lParam) => WindowProc(hwnd, message, wParam, lParam);
         private static readonly IntPtr s_wndProcHandle = Marshal.GetFunctionPointerForDelegate(s_wndProc);
 
-        private static IntPtr s_hwnd;
+        private static HWND s_hwnd;
 
-        public static IntPtr Hwnd
-        {
-            get
-            {
-                return s_hwnd;
-            }
-        }
+        public static HWND Hwnd => s_hwnd;
 
-        public static int Run(DXSample pSample, IntPtr hInstance, int nCmdShow)
+        public static int Run(DXSample pSample, HINSTANCE hInstance, int nCmdShow)
         {
             // Parse the command line parameters
             pSample.ParseCommandLineArgs(Environment.GetCommandLineArgs());
@@ -43,13 +37,13 @@ namespace TerraFX.Samples.DirectX
                     hCursor = LoadCursorW(IntPtr.Zero, (ushort*)IDC_ARROW),
                     lpszClassName = (ushort*)lpszClassName
                 };
-                RegisterClassExW(&windowClass);
+                _ = RegisterClassExW(&windowClass);
 
                 var windowRect = new RECT {
                     right = unchecked((int)pSample.Width),
                     bottom = unchecked((int)pSample.Height)
                 };
-                AdjustWindowRect(&windowRect, WS_OVERLAPPEDWINDOW, FALSE);
+                _ = AdjustWindowRect(&windowRect, WS_OVERLAPPEDWINDOW, FALSE);
 
                 // Create the window and store a handle to it.
                 s_hwnd = CreateWindowExW(
@@ -61,8 +55,8 @@ namespace TerraFX.Samples.DirectX
                     CW_USEDEFAULT,
                     windowRect.right - windowRect.left,
                     windowRect.bottom - windowRect.top,
-                    IntPtr.Zero,                            // We have no parent window.
-                    IntPtr.Zero,                            // We aren't using menus.
+                    HWND.NULL,                              // We have no parent window.
+                    HMENU.NULL,                             // We aren't using menus.
                     hInstance,
                     ((IntPtr)GCHandle.Alloc(pSample)).ToPointer()
                 );
@@ -71,7 +65,7 @@ namespace TerraFX.Samples.DirectX
             // Initialize the sample. OnInit is defined in each child-implementation of DXSample.
             pSample.OnInit();
 
-            ShowWindow(s_hwnd, nCmdShow);
+            _ = ShowWindow(s_hwnd, nCmdShow);
 
             // Main sample loop.
             MSG msg;
@@ -81,8 +75,8 @@ namespace TerraFX.Samples.DirectX
                 // Process any messages in the queue.
                 if (PeekMessageW(&msg, IntPtr.Zero, 0, 0, PM_REMOVE) != 0)
                 {
-                    TranslateMessage(&msg);
-                    DispatchMessageW(&msg);
+                    _ = TranslateMessage(&msg);
+                    _ = DispatchMessageW(&msg);
                 }
             }
             while (msg.message != WM_QUIT);
@@ -94,7 +88,7 @@ namespace TerraFX.Samples.DirectX
         }
 
         // Main message handler for the sample
-        private static IntPtr WindowProc(IntPtr hWnd, uint message, UIntPtr wParam, IntPtr lParam)
+        private static IntPtr WindowProc(HWND hWnd, uint message, UIntPtr wParam, IntPtr lParam)
         {
             var handle = GetWindowLongPtrW(hWnd, GWLP_USERDATA);
             var pSample = (handle != IntPtr.Zero) ? (DXSample?)GCHandle.FromIntPtr(handle).Target : null;
@@ -105,7 +99,7 @@ namespace TerraFX.Samples.DirectX
                 {
                     // Save the DXSample* passed in to CreateWindow.
                     var pCreateStruct = (CREATESTRUCTW*)lParam;
-                    SetWindowLongPtrW(hWnd, GWLP_USERDATA, (IntPtr)pCreateStruct->lpCreateParams);
+                    _ = SetWindowLongPtrW(hWnd, GWLP_USERDATA, (IntPtr)pCreateStruct->lpCreateParams);
                 }
                 return IntPtr.Zero;
 

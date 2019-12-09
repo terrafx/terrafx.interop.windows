@@ -45,28 +45,16 @@ namespace TerraFX.Samples.DirectX
             Dispose(isDisposing: false);
         }
 
-        public uint Width
-        {
-            get
-            {
-                return _width;
-            }
-        }
+        public uint Width => _width;
 
-        public uint Height
-        {
-            get
-            {
-                return _height;
-            }
-        }
+        public uint Height => _height;
 
-        public string Title
+        public string Title => _title;
+
+        public void Dispose()
         {
-            get
-            {
-                return _title;
-            }
+            Dispose(isDisposing: true);
+            GC.SuppressFinalize(this);
         }
 
         public abstract void OnInit();
@@ -104,10 +92,7 @@ namespace TerraFX.Samples.DirectX
         }
 
         // Helper function for resolving the full path of assets
-        protected string GetAssetFullPath(string assetName)
-        {
-            return Path.Combine(_assetsPath, assetName);
-        }
+        protected string GetAssetFullPath(string assetName) => Path.Combine(_assetsPath, assetName);
 
         // Helper function for acquiring the first available hardware adapter that supports the required Direct3D version.
         // If no such adapter can be found, returns null.
@@ -118,7 +103,7 @@ namespace TerraFX.Samples.DirectX
             for (var adapterIndex = 0u; DXGI_ERROR_NOT_FOUND != pFactory->EnumAdapters1(adapterIndex, &adapter); ++adapterIndex)
             {
                 DXGI_ADAPTER_DESC1 desc;
-                adapter->GetDesc1(&desc);
+                _ = adapter->GetDesc1(&desc);
 
                 if ((desc.Flags & (uint)DXGI_ADAPTER_FLAG_SOFTWARE) != 0)
                 {
@@ -145,14 +130,8 @@ namespace TerraFX.Samples.DirectX
         {
             fixed (char* windowText = $"{_title}: {text}")
             {
-                SetWindowTextW(Win32Application.Hwnd, (ushort*)windowText);
+                _ = SetWindowTextW(Win32Application.Hwnd, (ushort*)windowText);
             }
-        }
-
-        public void Dispose()
-        {
-            Dispose(isDisposing: true);
-            GC.SuppressFinalize(this);
         }
     }
 }
