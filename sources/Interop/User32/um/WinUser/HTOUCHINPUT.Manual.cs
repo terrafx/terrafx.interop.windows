@@ -34,7 +34,7 @@ namespace TerraFX.Interop
 
         public static implicit operator void*(HTOUCHINPUT value) => value._value;
 
-        public override bool Equals(object? obj) => (obj is POINT other) && Equals(other);
+        public override bool Equals(object? obj) => (obj is HTOUCHINPUT other) && Equals(other);
 
         public bool Equals(HTOUCHINPUT other) => this == other;
 

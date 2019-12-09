@@ -34,7 +34,7 @@ namespace TerraFX.Interop
 
         public static implicit operator void*(HBRUSH value) => value._value;
 
-        public override bool Equals(object? obj) => (obj is POINT other) && Equals(other);
+        public override bool Equals(object? obj) => (obj is HBRUSH other) && Equals(other);
 
         public bool Equals(HBRUSH other) => this == other;
 

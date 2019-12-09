@@ -34,7 +34,7 @@ namespace TerraFX.Interop
 
         public static implicit operator void*(HMETAFILE value) => value._value;
 
-        public override bool Equals(object? obj) => (obj is POINT other) && Equals(other);
+        public override bool Equals(object? obj) => (obj is HMETAFILE other) && Equals(other);
 
         public bool Equals(HMETAFILE other) => this == other;
 

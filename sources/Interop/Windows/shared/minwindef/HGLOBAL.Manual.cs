@@ -34,7 +34,7 @@ namespace TerraFX.Interop
 
         public static implicit operator void*(HGLOBAL value) => value._value;
 
-        public override bool Equals(object? obj) => (obj is POINT other) && Equals(other);
+        public override bool Equals(object? obj) => (obj is HGLOBAL other) && Equals(other);
 
         public bool Equals(HGLOBAL other) => this == other;
 

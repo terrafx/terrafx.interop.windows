@@ -8,7 +8,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop
 {
-    public unsafe struct HRESULT : IEquatable<HRESULT>
+    public struct HRESULT : IEquatable<HRESULT>
     {
         private int _value;
 
@@ -29,7 +29,7 @@ namespace TerraFX.Interop
 
         public static implicit operator int(HRESULT value) => value._value;
 
-        public override bool Equals(object? obj) => (obj is POINT other) && Equals(other);
+        public override bool Equals(object? obj) => (obj is HRESULT other) && Equals(other);
 
         public bool Equals(HRESULT other) => this == other;
 
