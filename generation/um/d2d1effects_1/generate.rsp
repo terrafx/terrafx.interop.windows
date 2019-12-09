@@ -12,8 +12,6 @@ header.txt
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
 --include-directory
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---libraryPath
-D2D1
 --methodClassName
 D2D1
 --namespace
