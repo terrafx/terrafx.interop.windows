@@ -34,7 +34,7 @@ namespace TerraFX.Interop
 
         public static implicit operator void*(DPI_AWARENESS_CONTEXT value) => value._value;
 
-        public override bool Equals(object? obj) => (obj is POINT other) && Equals(other);
+        public override bool Equals(object? obj) => (obj is DPI_AWARENESS_CONTEXT other) && Equals(other);
 
         public bool Equals(DPI_AWARENESS_CONTEXT other) => this == other;
 

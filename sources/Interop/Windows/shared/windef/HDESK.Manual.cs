@@ -34,7 +34,7 @@ namespace TerraFX.Interop
 
         public static implicit operator void*(HDESK value) => value._value;
 
-        public override bool Equals(object? obj) => (obj is POINT other) && Equals(other);
+        public override bool Equals(object? obj) => (obj is HDESK other) && Equals(other);
 
         public bool Equals(HDESK other) => this == other;
 

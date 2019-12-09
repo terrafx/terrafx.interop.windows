@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Winapi)]
     [return: NativeTypeName("BOOL")]
     public unsafe delegate int PINIT_ONCE_FN([NativeTypeName("PINIT_ONCE")] RTL_RUN_ONCE* InitOnce, [NativeTypeName("PVOID")] void* Parameter, [NativeTypeName("PVOID *")] void** Context);
 }

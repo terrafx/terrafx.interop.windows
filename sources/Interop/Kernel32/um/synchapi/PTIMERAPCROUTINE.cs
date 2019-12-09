@@ -7,6 +7,6 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Winapi)]
     public unsafe delegate void PTIMERAPCROUTINE([NativeTypeName("LPVOID")] void* lpArgToCompletionRoutine, [NativeTypeName("DWORD")] uint dwTimerLowValue, [NativeTypeName("DWORD")] uint dwTimerHighValue);
 }

@@ -616,6 +616,7 @@ namespace TerraFX.Interop
         public void DrawSpriteBatch([NativeTypeName("ID2D1SpriteBatch *")] ID2D1SpriteBatch* spriteBatch, [NativeTypeName("ID2D1Bitmap *")] ID2D1Bitmap* bitmap, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode = D2D1_BITMAP_INTERPOLATION_MODE_LINEAR, D2D1_SPRITE_OPTIONS spriteOptions = D2D1_SPRITE_OPTIONS_NONE)
         {
             DrawSpriteBatch(spriteBatch, 0, spriteBatch->GetSpriteCount(), bitmap, interpolationMode, spriteOptions);
+            return;
         }
 
         [return: NativeTypeName("HRESULT")]
