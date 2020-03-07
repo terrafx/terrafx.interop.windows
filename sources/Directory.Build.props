@@ -19,7 +19,7 @@
   <Import Project="$(MSBuildThisFileDirectory)..\Directory.Build.props" />
 
   <ItemGroup>
-    <InternalsVisibleTo Include="$(MSBuildProjectName).UnitTests" PublicKey="$(AssemblyOriginatorPublicKey)" />
+    <InternalsVisibleTo Include="$(MSBuildProjectName).UnitTests" Key="$(AssemblyOriginatorPublicKey)" />
   </ItemGroup>
 
   <ItemGroup>
