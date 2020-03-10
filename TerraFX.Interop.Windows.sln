@@ -536,6 +536,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "D3D11", "D3D11", "{E2E77B05
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraFX.Interop.D3D11", "sources\Interop\D3D11\TerraFX.Interop.D3D11.csproj", "{9DC15E80-23E5-4010-8E48-EE440CC87AC8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "XInput", "XInput", "{1CBFE848-29C5-4030-8975-4558096783C8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraFX.Interop.XInput", "sources\Interop\XInput\TerraFX.Interop.XInput.csproj", "{DEF05B64-811C-4B86-BD00-427DA7CBF9F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "XInput", "XInput", "{83F8ABB6-1E31-44C4-9A27-DF9784DC7D3B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraFX.Interop.XInput.UnitTests", "tests\Interop\XInput\TerraFX.Interop.XInput.UnitTests.csproj", "{2F19CBEE-9D2B-4E98-97C3-0D52C8CB6906}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xinput", "Xinput", "{F54C5855-9C8D-4EDF-BFC8-41F2E46DBE3C}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\Xinput\generate.rsp = generation\um\Xinput\generate.rsp
+		generation\um\Xinput\header.txt = generation\um\Xinput\header.txt
+		generation\um\Xinput\um-Xinput.h = generation\um\Xinput\um-Xinput.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -646,6 +661,14 @@ Global
 		{9DC15E80-23E5-4010-8E48-EE440CC87AC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DC15E80-23E5-4010-8E48-EE440CC87AC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DC15E80-23E5-4010-8E48-EE440CC87AC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEF05B64-811C-4B86-BD00-427DA7CBF9F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEF05B64-811C-4B86-BD00-427DA7CBF9F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEF05B64-811C-4B86-BD00-427DA7CBF9F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEF05B64-811C-4B86-BD00-427DA7CBF9F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F19CBEE-9D2B-4E98-97C3-0D52C8CB6906}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F19CBEE-9D2B-4E98-97C3-0D52C8CB6906}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F19CBEE-9D2B-4E98-97C3-0D52C8CB6906}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F19CBEE-9D2B-4E98-97C3-0D52C8CB6906}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -758,6 +781,11 @@ Global
 		{794109BA-BF3E-4932-A723-7469C7BF6347} = {F7740CF9-604C-4701-BE19-3669E79CA39D}
 		{E2E77B05-1796-447A-9A5F-763E83942D8C} = {70FBCFD9-B96E-4E72-B35C-681D9B2DA3D6}
 		{9DC15E80-23E5-4010-8E48-EE440CC87AC8} = {E2E77B05-1796-447A-9A5F-763E83942D8C}
+		{1CBFE848-29C5-4030-8975-4558096783C8} = {70FBCFD9-B96E-4E72-B35C-681D9B2DA3D6}
+		{DEF05B64-811C-4B86-BD00-427DA7CBF9F6} = {1CBFE848-29C5-4030-8975-4558096783C8}
+		{83F8ABB6-1E31-44C4-9A27-DF9784DC7D3B} = {7E31C739-2787-44ED-8304-7EFCEE1A2B2C}
+		{2F19CBEE-9D2B-4E98-97C3-0D52C8CB6906} = {83F8ABB6-1E31-44C4-9A27-DF9784DC7D3B}
+		{F54C5855-9C8D-4EDF-BFC8-41F2E46DBE3C} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
