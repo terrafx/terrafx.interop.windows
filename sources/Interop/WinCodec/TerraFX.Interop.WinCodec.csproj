@@ -5,7 +5,7 @@
   <PropertyGroup>
     <NoWarn>1573;1591;$(NoWarn)</NoWarn>
     <RootNamespace>TerraFX.Interop</RootNamespace>
-    <TargetFramework>netcoreapp5.0</TargetFramework>
+    <TargetFrameworks>netcoreapp3.1;netcoreapp5.0</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
