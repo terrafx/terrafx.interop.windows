@@ -1,0 +1,31 @@
+--additional
+-m32
+--config
+multi-file
+--file
+um-Xinput.h
+--headerFile
+header.txt
+--include-directory
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+--include-directory
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+--libraryPath
+xinput1_4
+--methodClassName
+XInput
+--namespace
+TerraFX.Interop
+--output
+../../../sources/Interop/XInput/um/Xinput
+--remap
+_XINPUT_BATTERY_INFORMATION=XINPUT_BATTERY_INFORMATION
+_XINPUT_CAPABILITIES=XINPUT_CAPABILITIES
+_XINPUT_GAMEPAD=XINPUT_GAMEPAD
+_XINPUT_KEYSTROKE=XINPUT_KEYSTROKE
+_XINPUT_STATE=XINPUT_STATE
+_XINPUT_VIBRATION=XINPUT_VIBRATION
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\Xinput.h
+--with-callconv
+*=Winapi
