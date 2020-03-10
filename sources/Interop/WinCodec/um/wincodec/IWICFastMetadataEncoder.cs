@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B84E2C09-78C9-4AC4-8BD3-524AE1663A2F")]
     public unsafe partial struct IWICFastMetadataEncoder
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

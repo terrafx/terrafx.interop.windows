@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5009834F-2D6A-41CE-9E1B-17C5AFF7A782")]
     public unsafe partial struct IWICBitmapFlipRotator
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

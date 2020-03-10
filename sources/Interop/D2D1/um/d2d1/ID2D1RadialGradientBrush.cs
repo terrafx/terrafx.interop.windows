@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2CD906AC-12E2-11DC-9FED-001143A055F9")]
     public unsafe partial struct ID2D1RadialGradientBrush
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F928B7B8-2221-40C1-B72E-7E82F1974D1A")]
     public unsafe partial struct IWICPlanarBitmapFrameEncode
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

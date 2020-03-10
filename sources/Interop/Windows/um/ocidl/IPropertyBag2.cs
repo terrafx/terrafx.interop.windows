@@ -11,7 +11,7 @@ namespace TerraFX.Interop
     [Guid("22F55882-280B-11d0-A8A9-00A0C90C2004")]
     public unsafe partial struct IPropertyBag2
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("90F732E2-5092-4606-A819-8651970BACCD")]
     public unsafe partial struct ID2D1BoundsAdjustmentTransform
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

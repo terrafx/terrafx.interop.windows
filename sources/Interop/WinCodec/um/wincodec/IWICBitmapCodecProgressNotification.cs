@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("64C1024E-C3CF-4462-8078-88C2B11C46D9")]
     public unsafe partial struct IWICBitmapCodecProgressNotification
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

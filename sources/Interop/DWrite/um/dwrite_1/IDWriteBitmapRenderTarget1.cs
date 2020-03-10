@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("791E8298-3EF3-4230-9880-C9BDECC42064")]
     public unsafe partial struct IDWriteBitmapRenderTarget1
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

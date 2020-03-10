@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2411E7E1-12AC-4CCF-BD14-9798E8534DC0")]
     public unsafe partial struct IDXGIAdapter
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

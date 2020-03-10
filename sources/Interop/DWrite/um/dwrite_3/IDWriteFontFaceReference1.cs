@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C081FE77-2FD1-41AC-A5A3-34983C4BA61A")]
     public unsafe partial struct IDWriteFontFaceReference1
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

@@ -1,9 +1,10 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/objidlbase.h in the Windows SDK for Windows 10.0.18362.0
+// Ported from um/ObjIdlbase.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -11,83 +12,73 @@ namespace TerraFX.Interop
     [Guid("0C733A30-2A1C-11CE-ADE5-00AA0044773D")]
     public unsafe partial struct ISequentialStream
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ISequentialStream* This, [NativeTypeName("REFIID")] Guid* riid, void** ppvObject);
+        public delegate int _QueryInterface(ISequentialStream* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ISequentialStream* This);
+        public delegate uint _AddRef(ISequentialStream* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ISequentialStream* This);
+        public delegate uint _Release(ISequentialStream* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Read(ISequentialStream* This, void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG")] uint* pcbRead = null);
+        public delegate int _Read(ISequentialStream* pThis, [NativeTypeName("void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Write(ISequentialStream* This, void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG")] uint* pcbWritten = null);
+        public delegate int _Write(ISequentialStream* pThis, [NativeTypeName("const void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbWritten);
 
         [return: NativeTypeName("HRESULT")]
-        public int QueryInterface([NativeTypeName("REFIID")] Guid* riid, void** ppvObject)
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            fixed (ISequentialStream* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)(This, riid, ppvObject);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ISequentialStream*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            fixed (ISequentialStream* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ISequentialStream*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            fixed (ISequentialStream* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)(This);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ISequentialStream*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Read(void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG")] uint* pcbRead = null)
+        public int Read([NativeTypeName("void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead)
         {
-            fixed (ISequentialStream* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Read>(lpVtbl->Read)(This, pv, cb, pcbRead);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_Read>(lpVtbl->Read)((ISequentialStream*)Unsafe.AsPointer(ref this), pv, cb, pcbRead);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Write(void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG")] uint* pcbWritten = null)
+        public int Write([NativeTypeName("const void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbWritten)
         {
-            fixed (ISequentialStream* This = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_Write>(lpVtbl->Write)(This, pv, cb, pcbWritten);
-            }
+            return Marshal.GetDelegateForFunctionPointer<_Write>(lpVtbl->Write)((ISequentialStream*)Unsafe.AsPointer(ref this), pv, cb, pcbWritten);
         }
 
         public partial struct Vtbl
         {
+            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
             public IntPtr QueryInterface;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr AddRef;
 
+            [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public IntPtr Release;
 
+            [NativeTypeName("HRESULT (void *, ULONG, ULONG *) __attribute__((stdcall))")]
             public IntPtr Read;
 
+            [NativeTypeName("HRESULT (const void *, ULONG, ULONG *) __attribute__((stdcall))")]
             public IntPtr Write;
         }
     }

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("2F543DC3-CFC1-4211-864F-CFD91C6F3395")]
     public unsafe partial struct ID2D1GdiMetafile
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

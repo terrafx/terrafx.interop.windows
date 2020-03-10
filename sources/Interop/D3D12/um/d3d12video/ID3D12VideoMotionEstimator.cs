@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("33FDAE0E-098B-428F-87BB-34B695DE08F8")]
     public unsafe partial struct ID3D12VideoMotionEstimator
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

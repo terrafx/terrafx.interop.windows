@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("E4FBCF03-223D-4E81-9333-D635556DD1B5")]
     public unsafe partial struct IWICBitmapClipper
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

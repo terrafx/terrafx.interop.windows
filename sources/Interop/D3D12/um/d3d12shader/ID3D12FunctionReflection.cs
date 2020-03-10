@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("1108795C-2772-4BA9-B2A8-D464DC7E2799")]
     public unsafe partial struct ID3D12FunctionReflection
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

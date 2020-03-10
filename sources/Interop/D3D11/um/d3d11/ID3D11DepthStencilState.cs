@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("03823EFB-8D8F-4E1C-9AA2-F64BB2CBFDF1")]
     public unsafe partial struct ID3D11DepthStencilState
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

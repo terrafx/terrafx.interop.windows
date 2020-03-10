@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("A9DB33A2-AF5F-43C7-B679-74F5984B5AA4")]
     public unsafe partial struct IWICPixelFormatInfo2
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

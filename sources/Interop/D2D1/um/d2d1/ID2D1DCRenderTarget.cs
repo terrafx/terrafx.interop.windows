@@ -18,7 +18,7 @@ namespace TerraFX.Interop
     [Guid("1C51BC64-DE61-46FD-9899-63A5D8F03950")]
     public unsafe partial struct ID2D1DCRenderTarget
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

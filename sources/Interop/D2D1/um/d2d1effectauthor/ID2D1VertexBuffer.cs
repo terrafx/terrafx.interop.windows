@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("9B8B1336-00A5-4668-92B7-CED5D8BF9B7B")]
     public unsafe partial struct ID2D1VertexBuffer
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

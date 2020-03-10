@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("FBEC5E44-F7BE-4B65-B7F8-C0C81FEF026D")]
     public unsafe partial struct IWICDevelopRaw
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

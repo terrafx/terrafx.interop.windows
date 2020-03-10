@@ -11,7 +11,7 @@ namespace TerraFX.Interop
     [Guid("0000000B-0000-0000-C000-000000000046")]
     public unsafe partial struct IStorage
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

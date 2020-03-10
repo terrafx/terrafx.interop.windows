@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("B66F034F-D0E2-40AB-B436-6DE39E321A94")]
     public unsafe partial struct IWICColorTransform
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

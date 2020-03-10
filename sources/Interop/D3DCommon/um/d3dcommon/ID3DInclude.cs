@@ -11,7 +11,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct ID3DInclude
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

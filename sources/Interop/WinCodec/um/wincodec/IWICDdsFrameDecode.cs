@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3D4C0C61-18A4-41E4-BD80-481A4FC9F464")]
     public unsafe partial struct IWICDdsFrameDecode
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
