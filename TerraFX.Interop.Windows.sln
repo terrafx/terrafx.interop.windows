@@ -551,6 +551,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xinput", "Xinput", "{F54C58
 		generation\um\Xinput\um-Xinput.h = generation\um\Xinput\um-Xinput.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "combaseapi", "combaseapi", "{1A62D4BF-8828-434B-98EA-23B1F1AEDDDD}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\combaseapi\generate.rsp = generation\um\combaseapi\generate.rsp
+		generation\um\combaseapi\header.txt = generation\um\combaseapi\header.txt
+		generation\um\combaseapi\um-combaseapi.h = generation\um\combaseapi\um-combaseapi.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ole32", "Ole32", "{1DB3338E-B68C-4160-B055-4A1DF528382A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraFX.Interop.Ole32", "sources\Interop\Ole32\TerraFX.Interop.Ole32.csproj", "{59523383-A860-48C1-8F3B-39C0D7D41E50}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ObjIdlbase", "ObjIdlbase", "{325F3936-6CD2-4395-BD7C-972A2B75A0DD}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\ObjIdlbase\generate.rsp = generation\um\ObjIdlbase\generate.rsp
+		generation\um\ObjIdlbase\header.txt = generation\um\ObjIdlbase\header.txt
+		generation\um\ObjIdlbase\um-ObjIdlbase.h = generation\um\ObjIdlbase\um-ObjIdlbase.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -669,6 +687,10 @@ Global
 		{2F19CBEE-9D2B-4E98-97C3-0D52C8CB6906}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F19CBEE-9D2B-4E98-97C3-0D52C8CB6906}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F19CBEE-9D2B-4E98-97C3-0D52C8CB6906}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59523383-A860-48C1-8F3B-39C0D7D41E50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59523383-A860-48C1-8F3B-39C0D7D41E50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59523383-A860-48C1-8F3B-39C0D7D41E50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59523383-A860-48C1-8F3B-39C0D7D41E50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -786,6 +808,10 @@ Global
 		{83F8ABB6-1E31-44C4-9A27-DF9784DC7D3B} = {7E31C739-2787-44ED-8304-7EFCEE1A2B2C}
 		{2F19CBEE-9D2B-4E98-97C3-0D52C8CB6906} = {83F8ABB6-1E31-44C4-9A27-DF9784DC7D3B}
 		{F54C5855-9C8D-4EDF-BFC8-41F2E46DBE3C} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{1A62D4BF-8828-434B-98EA-23B1F1AEDDDD} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{1DB3338E-B68C-4160-B055-4A1DF528382A} = {70FBCFD9-B96E-4E72-B35C-681D9B2DA3D6}
+		{59523383-A860-48C1-8F3B-39C0D7D41E50} = {1DB3338E-B68C-4160-B055-4A1DF528382A}
+		{325F3936-6CD2-4395-BD7C-972A2B75A0DD} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}

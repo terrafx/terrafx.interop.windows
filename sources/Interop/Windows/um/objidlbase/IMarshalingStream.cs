@@ -9,149 +9,159 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    [Guid("0000000C-0000-0000-C000-000000000046")]
-    public unsafe partial struct IStream
+    [Guid("D8F2F5E6-6102-4863-9F26-389A4676EFDE")]
+    public unsafe partial struct IMarshalingStream
     {
         public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IStream* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
+        public delegate int _QueryInterface(IMarshalingStream* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
         [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IStream* pThis);
+        public delegate uint _AddRef(IMarshalingStream* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IStream* pThis);
+        public delegate uint _Release(IMarshalingStream* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Read(IStream* pThis, [NativeTypeName("void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead);
+        public delegate int _Read(IMarshalingStream* pThis, [NativeTypeName("void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead);
 
         [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Write(IStream* pThis, [NativeTypeName("const void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbWritten);
+        public delegate int _Write(IMarshalingStream* pThis, [NativeTypeName("const void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbWritten);
 
         [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Seek(IStream* pThis, LARGE_INTEGER dlibMove, [NativeTypeName("DWORD")] uint dwOrigin, [NativeTypeName("ULARGE_INTEGER *")] ULARGE_INTEGER* plibNewPosition);
+        public delegate int _Seek(IMarshalingStream* pThis, LARGE_INTEGER dlibMove, [NativeTypeName("DWORD")] uint dwOrigin, [NativeTypeName("ULARGE_INTEGER *")] ULARGE_INTEGER* plibNewPosition);
 
         [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _SetSize(IStream* pThis, ULARGE_INTEGER libNewSize);
+        public delegate int _SetSize(IMarshalingStream* pThis, ULARGE_INTEGER libNewSize);
 
         [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CopyTo(IStream* pThis, [NativeTypeName("IStream *")] IStream* pstm, ULARGE_INTEGER cb, [NativeTypeName("ULARGE_INTEGER *")] ULARGE_INTEGER* pcbRead, [NativeTypeName("ULARGE_INTEGER *")] ULARGE_INTEGER* pcbWritten);
+        public delegate int _CopyTo(IMarshalingStream* pThis, [NativeTypeName("IStream *")] IStream* pstm, ULARGE_INTEGER cb, [NativeTypeName("ULARGE_INTEGER *")] ULARGE_INTEGER* pcbRead, [NativeTypeName("ULARGE_INTEGER *")] ULARGE_INTEGER* pcbWritten);
 
         [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Commit(IStream* pThis, [NativeTypeName("DWORD")] uint grfCommitFlags);
+        public delegate int _Commit(IMarshalingStream* pThis, [NativeTypeName("DWORD")] uint grfCommitFlags);
 
         [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Revert(IStream* pThis);
+        public delegate int _Revert(IMarshalingStream* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _LockRegion(IStream* pThis, ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType);
+        public delegate int _LockRegion(IMarshalingStream* pThis, ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType);
 
         [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _UnlockRegion(IStream* pThis, ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType);
+        public delegate int _UnlockRegion(IMarshalingStream* pThis, ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType);
 
         [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Stat(IStream* pThis, [NativeTypeName("STATSTG *")] STATSTG* pstatstg, [NativeTypeName("DWORD")] uint grfStatFlag);
+        public delegate int _Stat(IMarshalingStream* pThis, [NativeTypeName("STATSTG *")] STATSTG* pstatstg, [NativeTypeName("DWORD")] uint grfStatFlag);
 
         [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Clone(IStream* pThis, [NativeTypeName("IStream **")] IStream** ppstm);
+        public delegate int _Clone(IMarshalingStream* pThis, [NativeTypeName("IStream **")] IStream** ppstm);
+
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
+        [return: NativeTypeName("HRESULT")]
+        public delegate int _GetMarshalingContextAttribute(IMarshalingStream* pThis, CO_MARSHALING_CONTEXT_ATTRIBUTES attribute, [NativeTypeName("ULONG_PTR *")] uint* pAttributeValue);
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IStream*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IMarshalingStream*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IStream*)Unsafe.AsPointer(ref this));
+            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IMarshalingStream*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IStream*)Unsafe.AsPointer(ref this));
+            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IMarshalingStream*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Read([NativeTypeName("void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Read>(lpVtbl->Read)((IStream*)Unsafe.AsPointer(ref this), pv, cb, pcbRead);
+            return Marshal.GetDelegateForFunctionPointer<_Read>(lpVtbl->Read)((IMarshalingStream*)Unsafe.AsPointer(ref this), pv, cb, pcbRead);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Write([NativeTypeName("const void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbWritten)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Write>(lpVtbl->Write)((IStream*)Unsafe.AsPointer(ref this), pv, cb, pcbWritten);
+            return Marshal.GetDelegateForFunctionPointer<_Write>(lpVtbl->Write)((IMarshalingStream*)Unsafe.AsPointer(ref this), pv, cb, pcbWritten);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Seek(LARGE_INTEGER dlibMove, [NativeTypeName("DWORD")] uint dwOrigin, [NativeTypeName("ULARGE_INTEGER *")] ULARGE_INTEGER* plibNewPosition)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Seek>(lpVtbl->Seek)((IStream*)Unsafe.AsPointer(ref this), dlibMove, dwOrigin, plibNewPosition);
+            return Marshal.GetDelegateForFunctionPointer<_Seek>(lpVtbl->Seek)((IMarshalingStream*)Unsafe.AsPointer(ref this), dlibMove, dwOrigin, plibNewPosition);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetSize(ULARGE_INTEGER libNewSize)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetSize>(lpVtbl->SetSize)((IStream*)Unsafe.AsPointer(ref this), libNewSize);
+            return Marshal.GetDelegateForFunctionPointer<_SetSize>(lpVtbl->SetSize)((IMarshalingStream*)Unsafe.AsPointer(ref this), libNewSize);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CopyTo([NativeTypeName("IStream *")] IStream* pstm, ULARGE_INTEGER cb, [NativeTypeName("ULARGE_INTEGER *")] ULARGE_INTEGER* pcbRead, [NativeTypeName("ULARGE_INTEGER *")] ULARGE_INTEGER* pcbWritten)
         {
-            return Marshal.GetDelegateForFunctionPointer<_CopyTo>(lpVtbl->CopyTo)((IStream*)Unsafe.AsPointer(ref this), pstm, cb, pcbRead, pcbWritten);
+            return Marshal.GetDelegateForFunctionPointer<_CopyTo>(lpVtbl->CopyTo)((IMarshalingStream*)Unsafe.AsPointer(ref this), pstm, cb, pcbRead, pcbWritten);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Commit([NativeTypeName("DWORD")] uint grfCommitFlags)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Commit>(lpVtbl->Commit)((IStream*)Unsafe.AsPointer(ref this), grfCommitFlags);
+            return Marshal.GetDelegateForFunctionPointer<_Commit>(lpVtbl->Commit)((IMarshalingStream*)Unsafe.AsPointer(ref this), grfCommitFlags);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Revert()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Revert>(lpVtbl->Revert)((IStream*)Unsafe.AsPointer(ref this));
+            return Marshal.GetDelegateForFunctionPointer<_Revert>(lpVtbl->Revert)((IMarshalingStream*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int LockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType)
         {
-            return Marshal.GetDelegateForFunctionPointer<_LockRegion>(lpVtbl->LockRegion)((IStream*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
+            return Marshal.GetDelegateForFunctionPointer<_LockRegion>(lpVtbl->LockRegion)((IMarshalingStream*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int UnlockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType)
         {
-            return Marshal.GetDelegateForFunctionPointer<_UnlockRegion>(lpVtbl->UnlockRegion)((IStream*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
+            return Marshal.GetDelegateForFunctionPointer<_UnlockRegion>(lpVtbl->UnlockRegion)((IMarshalingStream*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Stat([NativeTypeName("STATSTG *")] STATSTG* pstatstg, [NativeTypeName("DWORD")] uint grfStatFlag)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Stat>(lpVtbl->Stat)((IStream*)Unsafe.AsPointer(ref this), pstatstg, grfStatFlag);
+            return Marshal.GetDelegateForFunctionPointer<_Stat>(lpVtbl->Stat)((IMarshalingStream*)Unsafe.AsPointer(ref this), pstatstg, grfStatFlag);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Clone([NativeTypeName("IStream **")] IStream** ppstm)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Clone>(lpVtbl->Clone)((IStream*)Unsafe.AsPointer(ref this), ppstm);
+            return Marshal.GetDelegateForFunctionPointer<_Clone>(lpVtbl->Clone)((IMarshalingStream*)Unsafe.AsPointer(ref this), ppstm);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetMarshalingContextAttribute(CO_MARSHALING_CONTEXT_ATTRIBUTES attribute, [NativeTypeName("ULONG_PTR *")] uint* pAttributeValue)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetMarshalingContextAttribute>(lpVtbl->GetMarshalingContextAttribute)((IMarshalingStream*)Unsafe.AsPointer(ref this), attribute, pAttributeValue);
         }
 
         public partial struct Vtbl
@@ -197,6 +207,9 @@ namespace TerraFX.Interop
 
             [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
             public IntPtr Clone;
+
+            [NativeTypeName("HRESULT (CO_MARSHALING_CONTEXT_ATTRIBUTES, ULONG_PTR *) __attribute__((stdcall))")]
+            public IntPtr GetMarshalingContextAttribute;
         }
     }
 }
