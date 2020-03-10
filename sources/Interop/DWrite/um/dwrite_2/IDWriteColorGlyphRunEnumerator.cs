@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D31FBE17-F157-41A2-8D24-CB779E0560E8")]
     public unsafe partial struct IDWriteColorGlyphRunEnumerator
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

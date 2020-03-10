@@ -11,7 +11,7 @@ namespace TerraFX.Interop
     [Guid("0000000D-0000-0000-C000-000000000046")]
     public unsafe partial struct IEnumSTATSTG
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

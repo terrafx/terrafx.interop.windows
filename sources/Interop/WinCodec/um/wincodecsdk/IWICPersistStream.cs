@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00675040-6908-45F8-86A3-49C7DFD6D9AD")]
     public unsafe partial struct IWICPersistStream
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

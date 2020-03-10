@@ -13,7 +13,7 @@ namespace TerraFX.Interop
     [Guid("693CE632-7F2F-45DE-93FE-18D88B37AA21")]
     public unsafe partial struct ID2D1DrawInfo
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

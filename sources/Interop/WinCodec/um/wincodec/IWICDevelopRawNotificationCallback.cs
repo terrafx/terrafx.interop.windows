@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("95C75A6E-3E8C-4EC2-85A8-AEBCC551E59B")]
     public unsafe partial struct IWICDevelopRawNotificationCallback
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

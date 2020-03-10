@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("D8CD007F-D08F-4191-9BFC-236EA7F0E4B5")]
     public unsafe partial struct IWICBitmapDecoderInfo
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

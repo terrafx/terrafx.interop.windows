@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("63EE58FB-1268-4835-86DA-F008CE62F0D6")]
     public unsafe partial struct ID3D12Pageable
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("BEBEE9CB-83B0-4DCC-8132-B0AAA55EAC96")]
     public unsafe partial struct IWICPlanarFormatConverter
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

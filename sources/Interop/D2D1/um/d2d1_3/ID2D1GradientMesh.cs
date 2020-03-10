@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F292E401-C050-4CDE-83D7-04962D3B23C2")]
     public unsafe partial struct ID2D1GradientMesh
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

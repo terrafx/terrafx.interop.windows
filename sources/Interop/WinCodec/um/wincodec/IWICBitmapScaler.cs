@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("00000302-A8F2-4877-BA0A-FD2B6645FB94")]
     public unsafe partial struct IWICBitmapScaler
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("4DC583BF-3A10-438A-8722-E9765224F1F1")]
     public unsafe partial struct ID2D1SpriteBatch
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

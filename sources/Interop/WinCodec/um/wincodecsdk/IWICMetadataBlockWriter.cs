@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("08FB9676-B444-41E8-8DBE-6A53A542BFF1")]
     public unsafe partial struct IWICMetadataBlockWriter
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

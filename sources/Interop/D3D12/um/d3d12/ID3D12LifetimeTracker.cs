@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3FD03D36-4EB1-424A-A582-494ECB8BA813")]
     public unsafe partial struct ID3D12LifetimeTracker
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

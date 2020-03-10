@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("F1DF64B6-57FD-49CD-8807-C0EB88B45C8F")]
     public unsafe partial struct ID3D12SwapChainAssistant
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

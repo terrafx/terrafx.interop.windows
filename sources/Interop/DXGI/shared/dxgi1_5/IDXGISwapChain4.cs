@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("3D585D5A-BD4A-489E-B1F4-3DBCB6452FFB")]
     public unsafe partial struct IDXGISwapChain4
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

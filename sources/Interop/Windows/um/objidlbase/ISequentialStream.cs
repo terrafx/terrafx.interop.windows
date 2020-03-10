@@ -11,7 +11,7 @@ namespace TerraFX.Interop
     [Guid("0C733A30-2A1C-11CE-ADE5-00AA0044773D")]
     public unsafe partial struct ISequentialStream
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

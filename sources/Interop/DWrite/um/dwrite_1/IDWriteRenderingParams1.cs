@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("94413CF4-A6FC-4248-8B50-6674348FCAD3")]
     public unsafe partial struct IDWriteRenderingParams1
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

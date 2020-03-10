@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("AE1572F4-5DD0-4777-998B-9279472AE63B")]
     public unsafe partial struct ID2D1GradientStopCollection1
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

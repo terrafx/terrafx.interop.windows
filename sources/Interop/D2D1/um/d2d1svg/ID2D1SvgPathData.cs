@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("C095E4F4-BB98-43D6-9745-4D1B84EC9888")]
     public unsafe partial struct ID2D1SvgPathData
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

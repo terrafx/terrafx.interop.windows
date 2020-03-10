@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("EAF3A2DA-ECF4-4D24-B644-B34F6842024B")]
     public unsafe partial struct IDWritePixelSnapping
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("DB1800DD-0C34-4CF9-BE90-31CC0A5653E1")]
     public unsafe partial struct ID2D1SourceTransform
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]

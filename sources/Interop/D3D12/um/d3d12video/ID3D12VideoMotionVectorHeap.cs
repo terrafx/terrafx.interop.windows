@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     [Guid("5BE17987-743A-4061-834B-23D22DAEA505")]
     public unsafe partial struct ID3D12VideoMotionVectorHeap
     {
-        public readonly Vtbl* lpVtbl;
+        public Vtbl* lpVtbl;
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
