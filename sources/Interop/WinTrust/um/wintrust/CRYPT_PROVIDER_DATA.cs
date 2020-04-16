@@ -3,6 +3,7 @@
 // Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -19,10 +20,10 @@ namespace TerraFX.Interop
         public int fOpenedFile;
 
         [NativeTypeName("HWND")]
-        public HWND__* hWndParent;
+        public IntPtr hWndParent;
 
         [NativeTypeName("GUID *")]
-        public _GUID* pgActionID;
+        public Guid* pgActionID;
 
         [NativeTypeName("HCRYPTPROV")]
         public uint hProv;

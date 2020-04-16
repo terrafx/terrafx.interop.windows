@@ -3,6 +3,8 @@
 // Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop
 {
     public unsafe partial struct PROVDATA_SIP
@@ -11,7 +13,7 @@ namespace TerraFX.Interop
         public uint cbStruct;
 
         [NativeTypeName("GUID")]
-        public _GUID gSubject;
+        public Guid gSubject;
 
         [NativeTypeName("struct SIP_DISPATCH_INFO_ *")]
         public SIP_DISPATCH_INFO_* pSip;

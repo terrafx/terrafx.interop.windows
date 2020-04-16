@@ -3,6 +3,8 @@
 // Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop
 {
     public partial struct SPC_SIGINFO
@@ -11,7 +13,7 @@ namespace TerraFX.Interop
         public uint dwSipVersion;
 
         [NativeTypeName("GUID")]
-        public _GUID gSIPGuid;
+        public Guid gSIPGuid;
 
         [NativeTypeName("DWORD")]
         public uint dwReserved1;

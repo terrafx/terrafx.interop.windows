@@ -3,21 +3,22 @@
 // Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static unsafe partial class WinTrust
     {
-        private const string LibraryPath = "Wintrust";
+        private const string LibraryPath = "wintrust";
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "WinVerifyTrust", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
-        public static extern int WinVerifyTrust([NativeTypeName("HWND")] HWND__* hwnd, [NativeTypeName("GUID *")] _GUID* pgActionID, [NativeTypeName("LPVOID")] void* pWVTData);
+        public static extern int WinVerifyTrust([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("GUID *")] Guid* pgActionID, [NativeTypeName("LPVOID")] void* pWVTData);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "WinVerifyTrustEx", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WinVerifyTrustEx([NativeTypeName("HWND")] HWND__* hwnd, [NativeTypeName("GUID *")] _GUID* pgActionID, [NativeTypeName("WINTRUST_DATA *")] WINTRUST_DATA* pWinTrustData);
+        public static extern int WinVerifyTrustEx([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("GUID *")] Guid* pgActionID, [NativeTypeName("WINTRUST_DATA *")] WINTRUST_DATA* pWinTrustData);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "WintrustGetRegPolicyFlags", ExactSpelling = true)]
         public static extern void WintrustGetRegPolicyFlags([NativeTypeName("DWORD *")] uint* pdwPolicyFlags);
@@ -28,15 +29,15 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "WintrustAddActionID", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int WintrustAddActionID([NativeTypeName("GUID *")] _GUID* pgActionID, [NativeTypeName("DWORD")] uint fdwFlags, [NativeTypeName("CRYPT_REGISTER_ACTIONID *")] CRYPT_REGISTER_ACTIONID* psProvInfo);
+        public static extern int WintrustAddActionID([NativeTypeName("GUID *")] Guid* pgActionID, [NativeTypeName("DWORD")] uint fdwFlags, [NativeTypeName("CRYPT_REGISTER_ACTIONID *")] CRYPT_REGISTER_ACTIONID* psProvInfo);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "WintrustRemoveActionID", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int WintrustRemoveActionID([NativeTypeName("GUID *")] _GUID* pgActionID);
+        public static extern int WintrustRemoveActionID([NativeTypeName("GUID *")] Guid* pgActionID);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "WintrustLoadFunctionPointers", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int WintrustLoadFunctionPointers([NativeTypeName("GUID *")] _GUID* pgActionID, [NativeTypeName("CRYPT_PROVIDER_FUNCTIONS *")] CRYPT_PROVIDER_FUNCTIONS* pPfns);
+        public static extern int WintrustLoadFunctionPointers([NativeTypeName("GUID *")] Guid* pgActionID, [NativeTypeName("CRYPT_PROVIDER_FUNCTIONS *")] CRYPT_PROVIDER_FUNCTIONS* pPfns);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "WintrustAddDefaultForUsage", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -60,7 +61,7 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "WTHelperGetProvPrivateDataFromChain", ExactSpelling = true)]
         [return: NativeTypeName("CRYPT_PROVIDER_PRIVDATA *")]
-        public static extern CRYPT_PROVIDER_PRIVDATA* WTHelperGetProvPrivateDataFromChain([NativeTypeName("CRYPT_PROVIDER_DATA *")] CRYPT_PROVIDER_DATA* pProvData, [NativeTypeName("GUID *")] _GUID* pgProviderID);
+        public static extern CRYPT_PROVIDER_PRIVDATA* WTHelperGetProvPrivateDataFromChain([NativeTypeName("CRYPT_PROVIDER_DATA *")] CRYPT_PROVIDER_DATA* pProvData, [NativeTypeName("GUID *")] Guid* pgProviderID);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "WTHelperCertIsSelfSigned", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -72,11 +73,11 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "OpenPersonalTrustDBDialogEx", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int OpenPersonalTrustDBDialogEx([NativeTypeName("HWND")] HWND__* hwndParent, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PVOID *")] void** pvReserved);
+        public static extern int OpenPersonalTrustDBDialogEx([NativeTypeName("HWND")] IntPtr hwndParent, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PVOID *")] void** pvReserved);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "OpenPersonalTrustDBDialog", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int OpenPersonalTrustDBDialog([NativeTypeName("HWND")] HWND__* hwndParent);
+        public static extern int OpenPersonalTrustDBDialog([NativeTypeName("HWND")] IntPtr hwndParent);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "WintrustSetDefaultIncludePEPageHashes", ExactSpelling = true)]
         public static extern void WintrustSetDefaultIncludePEPageHashes([NativeTypeName("BOOL")] int fIncludePEPageHashes);
