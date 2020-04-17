@@ -32,7 +32,7 @@ namespace TerraFX.Interop
         public uint cbCalculatedFileHash;
 
         [NativeTypeName("PCCTL_CONTEXT")]
-        public _CTL_CONTEXT* pcCatalogContext;
+        public CTL_CONTEXT* pcCatalogContext;
 
         [NativeTypeName("HCATADMIN")]
         public void* hCatAdmin;

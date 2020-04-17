@@ -14,6 +14,6 @@ namespace TerraFX.Interop
         public uint fdwFlags;
 
         [NativeTypeName("CRYPT_DATA_BLOB")]
-        public _CRYPTOAPI_BLOB Value;
+        public CRYPTOAPI_BLOB Value;
     }
 }

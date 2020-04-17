@@ -13,10 +13,9 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint signerIndex;
 
-        [NativeTypeName("CRYPT_ALGORITHM_IDENTIFIER")]
-        public _CRYPT_ALGORITHM_IDENTIFIER signatureAlgorithm;
+        public CRYPT_ALGORITHM_IDENTIFIER signatureAlgorithm;
 
         [NativeTypeName("CRYPT_DIGEST_BLOB")]
-        public _CRYPTOAPI_BLOB encryptedDigest;
+        public CRYPTOAPI_BLOB encryptedDigest;
     }
 }

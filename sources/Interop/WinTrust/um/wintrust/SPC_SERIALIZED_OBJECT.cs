@@ -11,6 +11,6 @@ namespace TerraFX.Interop
         public byte ClassId;
 
         [NativeTypeName("CRYPT_DATA_BLOB")]
-        public _CRYPTOAPI_BLOB SerializedData;
+        public CRYPTOAPI_BLOB SerializedData;
     }
 }

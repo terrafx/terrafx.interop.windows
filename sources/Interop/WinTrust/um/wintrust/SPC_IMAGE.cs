@@ -11,15 +11,15 @@ namespace TerraFX.Interop
         public SPC_LINK* pImageLink;
 
         [NativeTypeName("CRYPT_DATA_BLOB")]
-        public _CRYPTOAPI_BLOB Bitmap;
+        public CRYPTOAPI_BLOB Bitmap;
 
         [NativeTypeName("CRYPT_DATA_BLOB")]
-        public _CRYPTOAPI_BLOB Metafile;
+        public CRYPTOAPI_BLOB Metafile;
 
         [NativeTypeName("CRYPT_DATA_BLOB")]
-        public _CRYPTOAPI_BLOB EnhancedMetafile;
+        public CRYPTOAPI_BLOB EnhancedMetafile;
 
         [NativeTypeName("CRYPT_DATA_BLOB")]
-        public _CRYPTOAPI_BLOB GifFile;
+        public CRYPTOAPI_BLOB GifFile;
     }
 }

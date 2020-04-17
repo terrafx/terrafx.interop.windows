@@ -73,7 +73,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwSubjectChoice;
 
-        [NativeTypeName("_CRYPT_PROVIDER_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\WinTrust.h:688:5)")]
+        [NativeTypeName("_CRYPT_PROVIDER_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/WinTrust.h:688:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [NativeTypeName("char *")]
@@ -82,8 +82,7 @@ namespace TerraFX.Interop
         [NativeTypeName("BOOL")]
         public int fRecallWithState;
 
-        [NativeTypeName("FILETIME")]
-        public _FILETIME sftSystemTime;
+        public FILETIME sftSystemTime;
 
         [NativeTypeName("char *")]
         public sbyte* pszCTLSignerUsageOID;
@@ -95,7 +94,7 @@ namespace TerraFX.Interop
         public uint dwFinalError;
 
         [NativeTypeName("PCERT_USAGE_MATCH")]
-        public _CERT_USAGE_MATCH* pRequestUsage;
+        public CERT_USAGE_MATCH* pRequestUsage;
 
         [NativeTypeName("DWORD")]
         public uint dwTrustPubSettings;

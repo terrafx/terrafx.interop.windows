@@ -9,5 +9,5 @@ namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.Winapi)]
     [return: NativeTypeName("BOOL")]
-    public unsafe delegate int PFN_CPD_ADD_CERT([NativeTypeName("struct _CRYPT_PROVIDER_DATA *")] CRYPT_PROVIDER_DATA* pProvData, [NativeTypeName("DWORD")] uint idxSigner, [NativeTypeName("BOOL")] int fCounterSigner, [NativeTypeName("DWORD")] uint idxCounterSigner, [NativeTypeName("PCCERT_CONTEXT")] _CERT_CONTEXT* pCert2Add);
+    public unsafe delegate int PFN_CPD_ADD_CERT([NativeTypeName("struct _CRYPT_PROVIDER_DATA *")] CRYPT_PROVIDER_DATA* pProvData, [NativeTypeName("DWORD")] uint idxSigner, [NativeTypeName("BOOL")] int fCounterSigner, [NativeTypeName("DWORD")] uint idxCounterSigner, [NativeTypeName("PCCERT_CONTEXT")] CERT_CONTEXT* pCert2Add);
 }

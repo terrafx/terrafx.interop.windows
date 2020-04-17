@@ -7,8 +7,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct SPC_PE_IMAGE_DATA
     {
-        [NativeTypeName("CRYPT_BIT_BLOB")]
-        public _CRYPT_BIT_BLOB Flags;
+        public CRYPT_BIT_BLOB Flags;
 
         [NativeTypeName("PSPC_LINK")]
         public SPC_LINK* pFile;

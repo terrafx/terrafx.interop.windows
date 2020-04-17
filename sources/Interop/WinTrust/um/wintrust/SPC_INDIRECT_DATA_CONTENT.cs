@@ -7,13 +7,11 @@ namespace TerraFX.Interop
 {
     public partial struct SPC_INDIRECT_DATA_CONTENT
     {
-        [NativeTypeName("CRYPT_ATTRIBUTE_TYPE_VALUE")]
-        public _CRYPT_ATTRIBUTE_TYPE_VALUE Data;
+        public CRYPT_ATTRIBUTE_TYPE_VALUE Data;
 
-        [NativeTypeName("CRYPT_ALGORITHM_IDENTIFIER")]
-        public _CRYPT_ALGORITHM_IDENTIFIER DigestAlgorithm;
+        public CRYPT_ALGORITHM_IDENTIFIER DigestAlgorithm;
 
         [NativeTypeName("CRYPT_HASH_BLOB")]
-        public _CRYPTOAPI_BLOB Digest;
+        public CRYPTOAPI_BLOB Digest;
     }
 }

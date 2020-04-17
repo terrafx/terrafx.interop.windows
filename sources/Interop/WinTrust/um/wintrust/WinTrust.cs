@@ -65,7 +65,7 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "WTHelperCertIsSelfSigned", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int WTHelperCertIsSelfSigned([NativeTypeName("DWORD")] uint dwEncoding, [NativeTypeName("CERT_INFO *")] _CERT_INFO* pCert);
+        public static extern int WTHelperCertIsSelfSigned([NativeTypeName("DWORD")] uint dwEncoding, [NativeTypeName("CERT_INFO *")] CERT_INFO* pCert);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "WTHelperCertCheckValidSignature", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

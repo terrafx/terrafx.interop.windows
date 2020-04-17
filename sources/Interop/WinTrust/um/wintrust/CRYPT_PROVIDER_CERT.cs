@@ -11,7 +11,7 @@ namespace TerraFX.Interop
         public uint cbStruct;
 
         [NativeTypeName("PCCERT_CONTEXT")]
-        public _CERT_CONTEXT* pCert;
+        public CERT_CONTEXT* pCert;
 
         [NativeTypeName("BOOL")]
         public int fCommercial;
@@ -35,13 +35,13 @@ namespace TerraFX.Interop
         public uint dwError;
 
         [NativeTypeName("CTL_CONTEXT *")]
-        public _CTL_CONTEXT* pTrustListContext;
+        public CTL_CONTEXT* pTrustListContext;
 
         [NativeTypeName("BOOL")]
         public int fTrustListSignerCert;
 
         [NativeTypeName("PCCTL_CONTEXT")]
-        public _CTL_CONTEXT* pCtlContext;
+        public CTL_CONTEXT* pCtlContext;
 
         [NativeTypeName("DWORD")]
         public uint dwCtlError;
@@ -50,6 +50,6 @@ namespace TerraFX.Interop
         public int fIsCyclic;
 
         [NativeTypeName("PCERT_CHAIN_ELEMENT")]
-        public _CERT_CHAIN_ELEMENT* pChainElement;
+        public CERT_CHAIN_ELEMENT* pChainElement;
     }
 }

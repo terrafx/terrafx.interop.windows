@@ -12,7 +12,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwLinkChoice;
 
-        [NativeTypeName("SPC_LINK_::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\WinTrust.h:1280:5)")]
+        [NativeTypeName("SPC_LINK_::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/WinTrust.h:1280:5)")]
         public Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]

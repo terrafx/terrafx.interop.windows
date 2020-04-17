@@ -10,8 +10,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint cbStruct;
 
-        [NativeTypeName("FILETIME")]
-        public _FILETIME sftVerifyAsOf;
+        public FILETIME sftVerifyAsOf;
 
         [NativeTypeName("DWORD")]
         public uint csCertChain;
@@ -23,7 +22,7 @@ namespace TerraFX.Interop
         public uint dwSignerType;
 
         [NativeTypeName("CMSG_SIGNER_INFO *")]
-        public _CMSG_SIGNER_INFO* psSigner;
+        public CMSG_SIGNER_INFO* psSigner;
 
         [NativeTypeName("DWORD")]
         public uint dwError;
@@ -35,6 +34,6 @@ namespace TerraFX.Interop
         public CRYPT_PROVIDER_SGNR* pasCounterSigners;
 
         [NativeTypeName("PCCERT_CHAIN_CONTEXT")]
-        public _CERT_CHAIN_CONTEXT* pChainContext;
+        public CERT_CHAIN_CONTEXT* pChainContext;
     }
 }

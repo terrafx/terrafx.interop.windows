@@ -23,6 +23,6 @@ namespace TerraFX.Interop
         public uint dwVerifiedSigIndex;
 
         [NativeTypeName("PCERT_STRONG_SIGN_PARA")]
-        public _CERT_STRONG_SIGN_PARA* pCryptoPolicy;
+        public CERT_STRONG_SIGN_PARA* pCryptoPolicy;
     }
 }
