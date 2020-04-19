@@ -16,30 +16,18 @@ namespace TerraFX.Interop
         public Guid gSubject;
 
         [NativeTypeName("struct SIP_DISPATCH_INFO_ *")]
-        public SIP_DISPATCH_INFO_* pSip;
+        public SIP_DISPATCH_INFO* pSip;
 
         [NativeTypeName("struct SIP_DISPATCH_INFO_ *")]
-        public SIP_DISPATCH_INFO_* pCATSip;
+        public SIP_DISPATCH_INFO* pCATSip;
 
         [NativeTypeName("struct SIP_SUBJECTINFO_ *")]
-        public SIP_SUBJECTINFO_* psSipSubjectInfo;
+        public SIP_SUBJECTINFO* psSipSubjectInfo;
 
         [NativeTypeName("struct SIP_SUBJECTINFO_ *")]
-        public SIP_SUBJECTINFO_* psSipCATSubjectInfo;
+        public SIP_SUBJECTINFO* psSipCATSubjectInfo;
 
         [NativeTypeName("struct SIP_INDIRECT_DATA_ *")]
-        public SIP_INDIRECT_DATA_* psIndirectData;
-
-        public partial struct SIP_DISPATCH_INFO_
-        {
-        }
-
-        public partial struct SIP_SUBJECTINFO_
-        {
-        }
-
-        public partial struct SIP_INDIRECT_DATA_
-        {
-        }
+        public SIP_INDIRECT_DATA* psIndirectData;
     }
 }

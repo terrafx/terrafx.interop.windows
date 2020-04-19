@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Crypt32\TerraFX.Interop.Crypt32.csproj" />
+    <ProjectReference Include="..\Advapi32\TerraFX.Interop.Advapi32.csproj" />
   </ItemGroup>
 
 </Project>
