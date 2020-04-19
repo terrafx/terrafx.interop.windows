@@ -24,12 +24,12 @@ namespace TerraFX.Interop
 
         public unsafe partial struct _rgpszHpkpValue_e__FixedBuffer
         {
-            internal IntPtr e0;
-            internal IntPtr e1;
+            internal sbyte* e0;
+            internal sbyte* e1;
 
-            public ref IntPtr this[int index] => ref AsSpan()[index];
+            public ref sbyte* this[int index] => ref AsSpan()[index];
 
-            public Span<IntPtr> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
+            public Span<sbyte*> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
         }
     }
 }

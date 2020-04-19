@@ -353,6 +353,7 @@ _SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS=SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_
 _SYSTEMTIME=SYSTEMTIME
 HINSTANCE__*=IntPtr
 HKEY__*=IntPtr
+ULONG_PTR=UIntPtr
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\wincrypt.h
 --with-callconv

@@ -3,6 +3,8 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop
 {
     public unsafe partial struct CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO
@@ -16,7 +18,7 @@ namespace TerraFX.Interop
         public void* pvKeyEncryptionAuxInfo;
 
         [NativeTypeName("HCRYPTPROV_LEGACY")]
-        public uint hCryptProv;
+        public UIntPtr hCryptProv;
 
         public CRYPT_BIT_BLOB RecipientPublicKey;
 

@@ -10,5 +10,5 @@ namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.Winapi)]
     [return: NativeTypeName("BOOL")]
-    public unsafe delegate int PFN_CMSG_GEN_ENCRYPT_KEY([NativeTypeName("HCRYPTPROV *")] uint* phCryptProv, [NativeTypeName("PCRYPT_ALGORITHM_IDENTIFIER")] CRYPT_ALGORITHM_IDENTIFIER* paiEncrypt, [NativeTypeName("PVOID")] void* pvEncryptAuxInfo, [NativeTypeName("PCERT_PUBLIC_KEY_INFO")] CERT_PUBLIC_KEY_INFO* pPublicKeyInfo, [NativeTypeName("PFN_CMSG_ALLOC")] IntPtr* pfnAlloc, [NativeTypeName("HCRYPTKEY *")] uint* phEncryptKey, [NativeTypeName("PBYTE *")] byte** ppbEncryptParameters, [NativeTypeName("PDWORD")] uint* pcbEncryptParameters);
+    public unsafe delegate int PFN_CMSG_GEN_ENCRYPT_KEY([NativeTypeName("HCRYPTPROV *")] UIntPtr* phCryptProv, [NativeTypeName("PCRYPT_ALGORITHM_IDENTIFIER")] CRYPT_ALGORITHM_IDENTIFIER* paiEncrypt, [NativeTypeName("PVOID")] void* pvEncryptAuxInfo, [NativeTypeName("PCERT_PUBLIC_KEY_INFO")] CERT_PUBLIC_KEY_INFO* pPublicKeyInfo, [NativeTypeName("PFN_CMSG_ALLOC")] IntPtr* pfnAlloc, [NativeTypeName("HCRYPTKEY *")] UIntPtr* phEncryptKey, [NativeTypeName("PBYTE *")] byte** ppbEncryptParameters, [NativeTypeName("PDWORD")] uint* pcbEncryptParameters);
 }

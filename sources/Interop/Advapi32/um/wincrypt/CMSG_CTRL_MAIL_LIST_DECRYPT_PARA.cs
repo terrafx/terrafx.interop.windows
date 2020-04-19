@@ -3,6 +3,7 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -13,7 +14,7 @@ namespace TerraFX.Interop
         public uint cbSize;
 
         [NativeTypeName("HCRYPTPROV")]
-        public uint hCryptProv;
+        public UIntPtr hCryptProv;
 
         [NativeTypeName("PCMSG_MAIL_LIST_RECIPIENT_INFO")]
         public CMSG_MAIL_LIST_RECIPIENT_INFO* pMailList;
@@ -32,7 +33,7 @@ namespace TerraFX.Interop
         {
             [FieldOffset(0)]
             [NativeTypeName("HCRYPTKEY")]
-            public uint hKeyEncryptionKey;
+            public UIntPtr hKeyEncryptionKey;
 
             [FieldOffset(0)]
             [NativeTypeName("void *")]

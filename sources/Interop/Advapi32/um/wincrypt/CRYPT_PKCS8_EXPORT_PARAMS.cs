@@ -10,7 +10,7 @@ namespace TerraFX.Interop
     public unsafe partial struct CRYPT_PKCS8_EXPORT_PARAMS
     {
         [NativeTypeName("HCRYPTPROV")]
-        public uint hCryptProv;
+        public UIntPtr hCryptProv;
 
         [NativeTypeName("DWORD")]
         public uint dwKeySpec;

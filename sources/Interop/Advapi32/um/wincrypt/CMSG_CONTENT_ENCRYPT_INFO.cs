@@ -14,7 +14,7 @@ namespace TerraFX.Interop
         public uint cbSize;
 
         [NativeTypeName("HCRYPTPROV_LEGACY")]
-        public uint hCryptProv;
+        public UIntPtr hCryptProv;
 
         public CRYPT_ALGORITHM_IDENTIFIER ContentEncryptionAlgorithm;
 
@@ -59,7 +59,7 @@ namespace TerraFX.Interop
         {
             [FieldOffset(0)]
             [NativeTypeName("HCRYPTKEY")]
-            public uint hContentEncryptKey;
+            public UIntPtr hContentEncryptKey;
 
             [FieldOffset(0)]
             [NativeTypeName("BCRYPT_KEY_HANDLE")]

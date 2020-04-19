@@ -21,7 +21,7 @@ namespace TerraFX.Interop
         public IntPtr* pfnFree;
 
         [NativeTypeName("NCRYPT_KEY_HANDLE")]
-        public uint hNCryptKey;
+        public UIntPtr hNCryptKey;
 
         [NativeTypeName("BYTE *")]
         public byte* pbContentEncryptKey;
