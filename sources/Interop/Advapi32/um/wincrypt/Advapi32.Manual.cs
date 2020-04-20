@@ -4352,6 +4352,10 @@ namespace TerraFX.Interop
 
         public const int CERT_CHAIN_POLICY_IGNORE_WEAK_SIGNATURE_FLAG = 0x08000000;
 
+        public const int AUTHTYPE_CLIENT = 1;
+
+        public const int AUTHTYPE_SERVER = 2;
+
         public const uint BASIC_CONSTRAINTS_CERT_CHAIN_POLICY_CA_FLAG = 0x80000000U;
 
         public const int BASIC_CONSTRAINTS_CERT_CHAIN_POLICY_END_ENTITY_FLAG = 0x40000000;

@@ -14,6 +14,74 @@ namespace TerraFX.Interop.um.wintrust
 
         public const int WINTRUST_MAX_HASH_BYTES_TO_MAP_DEFAULT = 0x00100000;
 
+        public const int WTD_UI_ALL = 1;
+
+        public const int WTD_UI_NONE = 2;
+
+        public const int WTD_UI_NOBAD = 3;
+
+        public const int WTD_UI_NOGOOD = 4;
+
+        public const int WTD_REVOKE_NONE = 0x00000000;
+
+        public const int WTD_REVOKE_WHOLECHAIN = 0x00000001;
+
+        public const int WTD_CHOICE_FILE = 1;
+
+        public const int WTD_CHOICE_CATALOG = 2;
+
+        public const int WTD_CHOICE_BLOB = 3;
+
+        public const int WTD_CHOICE_SIGNER = 4;
+
+        public const int WTD_CHOICE_CERT = 5;
+
+        public const int WTD_STATEACTION_IGNORE = 0x00000000;
+
+        public const int WTD_STATEACTION_VERIFY = 0x00000001;
+
+        public const int WTD_STATEACTION_CLOSE = 0x00000002;
+
+        public const int WTD_STATEACTION_AUTO_CACHE = 0x00000003;
+
+        public const int WTD_STATEACTION_AUTO_CACHE_FLUSH = 0x00000004;
+
+        public const int WTD_PROV_FLAGS_MASK = 0x0000FFFF;
+
+        public const int WTD_USE_IE4_TRUST_FLAG = 0x00000001;
+
+        public const int WTD_NO_IE4_CHAIN_FLAG = 0x00000002;
+
+        public const int WTD_NO_POLICY_USAGE_FLAG = 0x00000004;
+
+        public const int WTD_REVOCATION_CHECK_NONE = 0x00000010;
+
+        public const int WTD_REVOCATION_CHECK_END_CERT = 0x00000020;
+
+        public const int WTD_REVOCATION_CHECK_CHAIN = 0x00000040;
+
+        public const int WTD_REVOCATION_CHECK_CHAIN_EXCLUDE_ROOT = 0x00000080;
+
+        public const int WTD_SAFER_FLAG = 0x00000100;
+
+        public const int WTD_HASH_ONLY_FLAG = 0x00000200;
+
+        public const int WTD_USE_DEFAULT_OSVER_CHECK = 0x00000400;
+
+        public const int WTD_LIFETIME_SIGNING_FLAG = 0x00000800;
+
+        public const int WTD_CACHE_ONLY_URL_RETRIEVAL = 0x00001000;
+
+        public const int WTD_DISABLE_MD2_MD4 = 0x00002000;
+
+        public const int WTD_MOTW = 0x00004000;
+
+        public const int WTD_CODE_INTEGRITY_DRIVER_MODE = 0x00008000;
+
+        public const int WTD_UICONTEXT_EXECUTE = 0;
+
+        public const int WTD_UICONTEXT_INSTALL = 1;
+
         public const int WSS_VERIFY_SPECIFIC = 0x00000001;
 
         public const int WSS_GET_SECONDARY_SIG_COUNT = 0x00000002;
@@ -29,6 +97,12 @@ namespace TerraFX.Interop.um.wintrust
         public const int WSS_OUT_FILE_SUPPORTS_SEAL = 0x20000000;
 
         public const uint WSS_OUTPUT_FLAG_MASK = 0xE0000000U;
+
+        public const int WTCI_DONT_OPEN_STORES = 0x00000001;
+
+        public const int WTCI_OPEN_ONLY_ROOT = 0x00000002;
+
+        public const int WTCI_USE_LOCAL_MACHINE = 0x00000004;
 
         public const int WTPF_TRUSTTEST = 0x00000020;
 
@@ -106,11 +180,47 @@ namespace TerraFX.Interop.um.wintrust
 
         public const int TRUSTERROR_MAX_STEPS = 38;
 
+        public const int CPD_CHOICE_SIP = 1;
+
+        public const uint CPD_USE_NT5_CHAIN_FLAG = 0x80000000U;
+
+        public const int CPD_REVOCATION_CHECK_NONE = 0x00010000;
+
+        public const int CPD_REVOCATION_CHECK_END_CERT = 0x00020000;
+
+        public const int CPD_REVOCATION_CHECK_CHAIN = 0x00040000;
+
+        public const int CPD_REVOCATION_CHECK_CHAIN_EXCLUDE_ROOT = 0x00080000;
+
+        public const int CPD_RETURN_LOWER_QUALITY_CHAINS = 0x00100000;
+
+        public const int CPD_UISTATE_MODE_PROMPT = 0x00000000;
+
+        public const int CPD_UISTATE_MODE_BLOCK = 0x00000001;
+
+        public const int CPD_UISTATE_MODE_ALLOW = 0x00000002;
+
+        public const int CPD_UISTATE_MODE_MASK = 0x00000003;
+
         public const int WSS_OBJTRUST_SUPPORT = 0x00000001;
 
         public const int WSS_SIGTRUST_SUPPORT = 0x00000002;
 
         public const int WSS_CERTTRUST_SUPPORT = 0x00000004;
+
+        public const int SGNR_TYPE_TIMESTAMP = 0x00000010;
+
+        public const int CERT_CONFIDENCE_SIG = 0x10000000;
+
+        public const int CERT_CONFIDENCE_TIME = 0x01000000;
+
+        public const int CERT_CONFIDENCE_TIMENEST = 0x00100000;
+
+        public const int CERT_CONFIDENCE_AUTHIDEXT = 0x00010000;
+
+        public const int CERT_CONFIDENCE_HYGIENE = 0x00001000;
+
+        public const int CERT_CONFIDENCE_HIGHEST = 0x11111000;
 
         public const int WT_CURRENT_VERSION = 0x00000200;
 
@@ -233,6 +343,12 @@ namespace TerraFX.Interop.um.wintrust
         public static ReadOnlySpan<sbyte> SPC_NATURAL_AUTH_PLUGIN_OBJID => new sbyte[] { 0x31, 0x2E, 0x33, 0x2E, 0x36, 0x2E, 0x31, 0x2E, 0x34, 0x2E, 0x31, 0x2E, 0x33, 0x31, 0x31, 0x2E, 0x39, 0x36, 0x2E, 0x31, 0x2E, 0x31, 0x00 };
 
         public const int SPC_UUID_LENGTH = 16;
+
+        public const int SPC_URL_LINK_CHOICE = 1;
+
+        public const int SPC_MONIKER_LINK_CHOICE = 2;
+
+        public const int SPC_FILE_LINK_CHOICE = 3;
 
         public const int WT_TRUSTDBDIALOG_NO_UI_FLAG = 0x00000001;
 

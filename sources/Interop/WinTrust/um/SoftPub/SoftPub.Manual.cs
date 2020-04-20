@@ -42,6 +42,12 @@ namespace TerraFX.Interop.um.SoftPub
 
         public const string DRIVER_CLEANUPPOLICY_FUNCTION = "DriverCleanupPolicy";
 
+        public const int CCPI_RESULT_ALLOW = 1;
+
+        public const int CCPI_RESULT_DENY = 2;
+
+        public const int CCPI_RESULT_AUDIT = 3;
+
         public static readonly Guid WINTRUST_ACTION_GENERIC_VERIFY_V2 = new Guid(0xAAC56B, 0xCD44, 0x11D0, 0x8C, 0xC2, 0x0, 0xC0, 0x4F, 0xC2, 0x95, 0xEE);
 
         public static readonly Guid WINTRUST_ACTION_TRUSTPROVIDER_TEST = new Guid(0x573E31F8, 0xDDBA, 0x11D0, 0x8C, 0xCB, 0x0, 0xC0, 0x4F, 0xC2, 0x95, 0xEE);
