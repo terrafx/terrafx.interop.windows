@@ -1,0 +1,46 @@
+--additional
+-m32
+--config
+multi-file
+--file
+um-SoftPub.h
+--headerFile
+header.txt
+--include-directory
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+--include-directory
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+--libraryPath
+wintrust
+--methodClassName
+WinTrust
+--namespace
+TerraFX.Interop
+--output
+../../../sources/Interop/WinTrust/um/SoftPub
+--remap
+__AnonymousField_SoftPub_L130_C5=Anonymous
+__AnonymousField_SoftPub_L157_C5=Anonymous
+__AnonymousField_SoftPub_L169_C5=Anonymous
+__AnonymousRecord_SoftPub_L130_C5=_Anonymous_e__Union
+__AnonymousRecord_SoftPub_L157_C5=_Anonymous_e__Union
+__AnonymousRecord_SoftPub_L169_C5=_Anonymous_e__Union
+_CERT_CHAIN_CONTEXT=CERT_CHAIN_CONTEXT
+_CERT_CHAIN_PARA=CERT_CHAIN_PARA
+_CERT_CONTEXT=CERT_CONTEXT
+_CMSG_SIGNER_INFO=CMSG_SIGNER_INFO
+_CRYPT_PROVIDER_DATA=CRYPT_PROVIDER_DATA
+_CRYPTOAPI_BLOB=CRYPTOAPI_BLOB
+_WTD_GENERIC_CHAIN_POLICY_CREATE_INFO=WTD_GENERIC_CHAIN_POLICY_CREATE_INFO
+_WTD_GENERIC_CHAIN_POLICY_DATA=WTD_GENERIC_CHAIN_POLICY_DATA
+_WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO=WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO
+CONFIG_CI_PROV_INFO_=CONFIG_CI_PROV_INFO
+CONFIG_CI_PROV_INFO_RESULT_=CONFIG_CI_PROV_INFO_RESULT
+DRIVER_VER_INFO_=DRIVER_VER_INFO
+DRIVER_VER_MAJORMINOR_=DRIVER_VER_MAJORMINOR
+HANDLE=IntPtr
+ULONG_PTR=UIntPtr
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\SoftPub.h
+--with-callconv
+*=Winapi

@@ -581,6 +581,34 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Crypt32", "Crypt32", "{CB94
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraFX.Interop.Crypt32", "sources\Interop\Crypt32\TerraFX.Interop.Crypt32.csproj", "{E8E70EEC-1DC8-42C8-9C69-2DC02AC7A76B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SoftPub", "SoftPub", "{3D9A2652-972F-48E3-BFC3-25D3DAB2730D}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\SoftPub\generate.rsp = generation\um\SoftPub\generate.rsp
+		generation\um\SoftPub\header.txt = generation\um\SoftPub\header.txt
+		generation\um\SoftPub\um-SoftPub.h = generation\um\SoftPub\um-SoftPub.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinTrust", "WinTrust", "{806E005D-A8C4-41A7-AE4E-292CB96C1C59}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\WinTrust\generate.rsp = generation\um\WinTrust\generate.rsp
+		generation\um\WinTrust\header.txt = generation\um\WinTrust\header.txt
+		generation\um\WinTrust\um-WinTrust.h = generation\um\WinTrust\um-WinTrust.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wincrypt", "wincrypt", "{3E9056CE-8852-4DE8-AC76-182401F7EBD1}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\wincrypt\generate.rsp = generation\um\wincrypt\generate.rsp
+		generation\um\wincrypt\header.txt = generation\um\wincrypt\header.txt
+		generation\um\wincrypt\um-wincrypt.h = generation\um\wincrypt\um-wincrypt.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mssip", "mssip", "{CB299971-15C7-4F00-9329-D8B3AAE2227E}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\mssip\generate.rsp = generation\um\mssip\generate.rsp
+		generation\um\mssip\header.txt = generation\um\mssip\header.txt
+		generation\um\mssip\um-mssip.h = generation\um\mssip\um-mssip.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -842,6 +870,10 @@ Global
 		{0AC2D7D3-6D40-4894-87DC-F9DB871D28FF} = {496B3D51-00C7-46F3-BA16-9B94B1A72333}
 		{CB94EF31-03A9-41F5-AEAC-CD5288A0F32B} = {70FBCFD9-B96E-4E72-B35C-681D9B2DA3D6}
 		{E8E70EEC-1DC8-42C8-9C69-2DC02AC7A76B} = {CB94EF31-03A9-41F5-AEAC-CD5288A0F32B}
+		{3D9A2652-972F-48E3-BFC3-25D3DAB2730D} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{806E005D-A8C4-41A7-AE4E-292CB96C1C59} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{3E9056CE-8852-4DE8-AC76-182401F7EBD1} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{CB299971-15C7-4F00-9329-D8B3AAE2227E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
