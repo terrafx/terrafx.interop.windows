@@ -13,10 +13,10 @@ namespace TerraFX.Interop
         public uint cbStruct;
 
         [NativeTypeName("ULONG_PTR")]
-        public IntPtr dwReserved1;
+        public UIntPtr dwReserved1;
 
         [NativeTypeName("ULONG_PTR")]
-        public IntPtr dwReserved2;
+        public UIntPtr dwReserved2;
 
         [NativeTypeName("DWORD")]
         public uint dwPlatform;
