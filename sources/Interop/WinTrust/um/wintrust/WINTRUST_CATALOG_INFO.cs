@@ -3,6 +3,8 @@
 // Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop
 {
     public unsafe partial struct WINTRUST_CATALOG_INFO
@@ -23,7 +25,7 @@ namespace TerraFX.Interop
         public ushort* pcwszMemberFilePath;
 
         [NativeTypeName("HANDLE")]
-        public void* hMemberFile;
+        public IntPtr hMemberFile;
 
         [NativeTypeName("BYTE *")]
         public byte* pbCalculatedFileHash;
@@ -35,6 +37,6 @@ namespace TerraFX.Interop
         public CTL_CONTEXT* pcCatalogContext;
 
         [NativeTypeName("HCATADMIN")]
-        public void* hCatAdmin;
+        public IntPtr hCatAdmin;
     }
 }

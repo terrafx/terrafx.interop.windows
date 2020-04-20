@@ -904,27 +904,27 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CryptCreateAsyncHandle", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int CryptCreateAsyncHandle([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PHCRYPTASYNC")] void** phAsync);
+        public static extern int CryptCreateAsyncHandle([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PHCRYPTASYNC")] IntPtr* phAsync);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CryptSetAsyncParam", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int CryptSetAsyncParam([NativeTypeName("HCRYPTASYNC")] void* hAsync, [NativeTypeName("LPSTR")] sbyte* pszParamOid, [NativeTypeName("LPVOID")] void* pvParam, [NativeTypeName("PFN_CRYPT_ASYNC_PARAM_FREE_FUNC")] IntPtr* pfnFree);
+        public static extern int CryptSetAsyncParam([NativeTypeName("HCRYPTASYNC")] IntPtr hAsync, [NativeTypeName("LPSTR")] sbyte* pszParamOid, [NativeTypeName("LPVOID")] void* pvParam, [NativeTypeName("PFN_CRYPT_ASYNC_PARAM_FREE_FUNC")] IntPtr* pfnFree);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CryptGetAsyncParam", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int CryptGetAsyncParam([NativeTypeName("HCRYPTASYNC")] void* hAsync, [NativeTypeName("LPSTR")] sbyte* pszParamOid, [NativeTypeName("LPVOID *")] void** ppvParam, [NativeTypeName("PFN_CRYPT_ASYNC_PARAM_FREE_FUNC *")] IntPtr** ppfnFree);
+        public static extern int CryptGetAsyncParam([NativeTypeName("HCRYPTASYNC")] IntPtr hAsync, [NativeTypeName("LPSTR")] sbyte* pszParamOid, [NativeTypeName("LPVOID *")] void** ppvParam, [NativeTypeName("PFN_CRYPT_ASYNC_PARAM_FREE_FUNC *")] IntPtr** ppfnFree);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CryptCloseAsyncHandle", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int CryptCloseAsyncHandle([NativeTypeName("HCRYPTASYNC")] void* hAsync);
+        public static extern int CryptCloseAsyncHandle([NativeTypeName("HCRYPTASYNC")] IntPtr hAsync);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CryptRetrieveObjectByUrlA", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int CryptRetrieveObjectByUrlA([NativeTypeName("LPCSTR")] sbyte* pszUrl, [NativeTypeName("LPCSTR")] sbyte* pszObjectOid, [NativeTypeName("DWORD")] uint dwRetrievalFlags, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("LPVOID *")] void** ppvObject, [NativeTypeName("HCRYPTASYNC")] void* hAsyncRetrieve, [NativeTypeName("PCRYPT_CREDENTIALS")] CRYPT_CREDENTIALS* pCredentials, [NativeTypeName("LPVOID")] void* pvVerify, [NativeTypeName("PCRYPT_RETRIEVE_AUX_INFO")] CRYPT_RETRIEVE_AUX_INFO* pAuxInfo);
+        public static extern int CryptRetrieveObjectByUrlA([NativeTypeName("LPCSTR")] sbyte* pszUrl, [NativeTypeName("LPCSTR")] sbyte* pszObjectOid, [NativeTypeName("DWORD")] uint dwRetrievalFlags, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("LPVOID *")] void** ppvObject, [NativeTypeName("HCRYPTASYNC")] IntPtr hAsyncRetrieve, [NativeTypeName("PCRYPT_CREDENTIALS")] CRYPT_CREDENTIALS* pCredentials, [NativeTypeName("LPVOID")] void* pvVerify, [NativeTypeName("PCRYPT_RETRIEVE_AUX_INFO")] CRYPT_RETRIEVE_AUX_INFO* pAuxInfo);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CryptRetrieveObjectByUrlW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int CryptRetrieveObjectByUrlW([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("LPCSTR")] sbyte* pszObjectOid, [NativeTypeName("DWORD")] uint dwRetrievalFlags, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("LPVOID *")] void** ppvObject, [NativeTypeName("HCRYPTASYNC")] void* hAsyncRetrieve, [NativeTypeName("PCRYPT_CREDENTIALS")] CRYPT_CREDENTIALS* pCredentials, [NativeTypeName("LPVOID")] void* pvVerify, [NativeTypeName("PCRYPT_RETRIEVE_AUX_INFO")] CRYPT_RETRIEVE_AUX_INFO* pAuxInfo);
+        public static extern int CryptRetrieveObjectByUrlW([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("LPCSTR")] sbyte* pszObjectOid, [NativeTypeName("DWORD")] uint dwRetrievalFlags, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("LPVOID *")] void** ppvObject, [NativeTypeName("HCRYPTASYNC")] IntPtr hAsyncRetrieve, [NativeTypeName("PCRYPT_CREDENTIALS")] CRYPT_CREDENTIALS* pCredentials, [NativeTypeName("LPVOID")] void* pvVerify, [NativeTypeName("PCRYPT_RETRIEVE_AUX_INFO")] CRYPT_RETRIEVE_AUX_INFO* pAuxInfo);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CryptInstallCancelRetrieval", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -936,7 +936,7 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CryptCancelAsyncRetrieval", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int CryptCancelAsyncRetrieval([NativeTypeName("HCRYPTASYNC")] void* hAsyncRetrieval);
+        public static extern int CryptCancelAsyncRetrieval([NativeTypeName("HCRYPTASYNC")] IntPtr hAsyncRetrieval);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CryptGetObjectUrl", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -972,18 +972,18 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CertCreateCertificateChainEngine", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int CertCreateCertificateChainEngine([NativeTypeName("PCERT_CHAIN_ENGINE_CONFIG")] CERT_CHAIN_ENGINE_CONFIG* pConfig, [NativeTypeName("HCERTCHAINENGINE *")] void** phChainEngine);
+        public static extern int CertCreateCertificateChainEngine([NativeTypeName("PCERT_CHAIN_ENGINE_CONFIG")] CERT_CHAIN_ENGINE_CONFIG* pConfig, [NativeTypeName("HCERTCHAINENGINE *")] IntPtr* phChainEngine);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CertFreeCertificateChainEngine", ExactSpelling = true)]
-        public static extern void CertFreeCertificateChainEngine([NativeTypeName("HCERTCHAINENGINE")] void* hChainEngine);
+        public static extern void CertFreeCertificateChainEngine([NativeTypeName("HCERTCHAINENGINE")] IntPtr hChainEngine);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CertResyncCertificateChainEngine", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int CertResyncCertificateChainEngine([NativeTypeName("HCERTCHAINENGINE")] void* hChainEngine);
+        public static extern int CertResyncCertificateChainEngine([NativeTypeName("HCERTCHAINENGINE")] IntPtr hChainEngine);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CertGetCertificateChain", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int CertGetCertificateChain([NativeTypeName("HCERTCHAINENGINE")] void* hChainEngine, [NativeTypeName("PCCERT_CONTEXT")] CERT_CONTEXT* pCertContext, [NativeTypeName("LPFILETIME")] FILETIME* pTime, [NativeTypeName("HCERTSTORE")] void* hAdditionalStore, [NativeTypeName("PCERT_CHAIN_PARA")] CERT_CHAIN_PARA* pChainPara, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPVOID")] void* pvReserved, [NativeTypeName("PCCERT_CHAIN_CONTEXT *")] CERT_CHAIN_CONTEXT** ppChainContext);
+        public static extern int CertGetCertificateChain([NativeTypeName("HCERTCHAINENGINE")] IntPtr hChainEngine, [NativeTypeName("PCCERT_CONTEXT")] CERT_CONTEXT* pCertContext, [NativeTypeName("LPFILETIME")] FILETIME* pTime, [NativeTypeName("HCERTSTORE")] void* hAdditionalStore, [NativeTypeName("PCERT_CHAIN_PARA")] CERT_CHAIN_PARA* pChainPara, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPVOID")] void* pvReserved, [NativeTypeName("PCCERT_CHAIN_CONTEXT *")] CERT_CHAIN_CONTEXT** ppChainContext);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CertFreeCertificateChain", ExactSpelling = true)]
         public static extern void CertFreeCertificateChain([NativeTypeName("PCCERT_CHAIN_CONTEXT")] CERT_CHAIN_CONTEXT* pChainContext);

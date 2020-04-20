@@ -13,7 +13,7 @@ namespace TerraFX.Interop
         public uint cbSize;
 
         [NativeTypeName("HANDLE")]
-        public void* hSIP;
+        public IntPtr hSIP;
 
         [NativeTypeName("pCryptSIPGetSignedDataMsg")]
         public IntPtr* pfGet;
