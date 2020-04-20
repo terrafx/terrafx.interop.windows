@@ -10,5 +10,5 @@ namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.Winapi)]
     [return: NativeTypeName("BOOL")]
-    public unsafe delegate int pfnIsFileSupported([NativeTypeName("HANDLE")] void* hFile, [NativeTypeName("GUID *")] Guid* pgSubject);
+    public unsafe delegate int pfnIsFileSupported([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("GUID *")] Guid* pgSubject);
 }

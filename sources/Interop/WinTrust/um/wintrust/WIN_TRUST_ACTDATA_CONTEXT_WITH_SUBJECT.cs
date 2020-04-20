@@ -10,7 +10,7 @@ namespace TerraFX.Interop
     public unsafe partial struct WIN_TRUST_ACTDATA_CONTEXT_WITH_SUBJECT
     {
         [NativeTypeName("HANDLE")]
-        public void* hClientToken;
+        public IntPtr hClientToken;
 
         [NativeTypeName("GUID *")]
         public Guid* SubjectType;

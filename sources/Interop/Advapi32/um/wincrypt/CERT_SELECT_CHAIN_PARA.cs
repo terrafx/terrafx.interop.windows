@@ -3,12 +3,14 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop
 {
     public unsafe partial struct CERT_SELECT_CHAIN_PARA
     {
         [NativeTypeName("HCERTCHAINENGINE")]
-        public void* hChainEngine;
+        public IntPtr hChainEngine;
 
         [NativeTypeName("PFILETIME")]
         public FILETIME* pTime;

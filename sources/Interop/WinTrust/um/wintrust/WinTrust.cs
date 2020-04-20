@@ -57,7 +57,7 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "WTHelperProvDataFromStateData", ExactSpelling = true)]
         [return: NativeTypeName("CRYPT_PROVIDER_DATA *")]
-        public static extern CRYPT_PROVIDER_DATA* WTHelperProvDataFromStateData([NativeTypeName("HANDLE")] void* hStateData);
+        public static extern CRYPT_PROVIDER_DATA* WTHelperProvDataFromStateData([NativeTypeName("HANDLE")] IntPtr hStateData);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "WTHelperGetProvPrivateDataFromChain", ExactSpelling = true)]
         [return: NativeTypeName("CRYPT_PROVIDER_PRIVDATA *")]

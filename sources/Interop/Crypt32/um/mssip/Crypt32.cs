@@ -38,11 +38,11 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CryptSIPRetrieveSubjectGuid", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int CryptSIPRetrieveSubjectGuid([NativeTypeName("LPCWSTR")] ushort* FileName, [NativeTypeName("HANDLE")] void* hFileIn, [NativeTypeName("GUID *")] Guid* pgSubject);
+        public static extern int CryptSIPRetrieveSubjectGuid([NativeTypeName("LPCWSTR")] ushort* FileName, [NativeTypeName("HANDLE")] IntPtr hFileIn, [NativeTypeName("GUID *")] Guid* pgSubject);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CryptSIPRetrieveSubjectGuidForCatalogFile", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int CryptSIPRetrieveSubjectGuidForCatalogFile([NativeTypeName("LPCWSTR")] ushort* FileName, [NativeTypeName("HANDLE")] void* hFileIn, [NativeTypeName("GUID *")] Guid* pgSubject);
+        public static extern int CryptSIPRetrieveSubjectGuidForCatalogFile([NativeTypeName("LPCWSTR")] ushort* FileName, [NativeTypeName("HANDLE")] IntPtr hFileIn, [NativeTypeName("GUID *")] Guid* pgSubject);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CryptSIPAddProvider", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
