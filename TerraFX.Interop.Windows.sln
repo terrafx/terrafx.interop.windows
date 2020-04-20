@@ -581,6 +581,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Crypt32", "Crypt32", "{CB94
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraFX.Interop.Crypt32", "sources\Interop\Crypt32\TerraFX.Interop.Crypt32.csproj", "{E8E70EEC-1DC8-42C8-9C69-2DC02AC7A76B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinTrust", "WinTrust", "{806E005D-A8C4-41A7-AE4E-292CB96C1C59}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\WinTrust\generate.rsp = generation\um\WinTrust\generate.rsp
+		generation\um\WinTrust\header.txt = generation\um\WinTrust\header.txt
+		generation\um\WinTrust\um-WinTrust.h = generation\um\WinTrust\um-WinTrust.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wincrypt", "wincrypt", "{3E9056CE-8852-4DE8-AC76-182401F7EBD1}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\wincrypt\generate.rsp = generation\um\wincrypt\generate.rsp
+		generation\um\wincrypt\header.txt = generation\um\wincrypt\header.txt
+		generation\um\wincrypt\um-wincrypt.h = generation\um\wincrypt\um-wincrypt.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mssip", "mssip", "{CB299971-15C7-4F00-9329-D8B3AAE2227E}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\mssip\generate.rsp = generation\um\mssip\generate.rsp
+		generation\um\mssip\header.txt = generation\um\mssip\header.txt
+		generation\um\mssip\um-mssip.h = generation\um\mssip\um-mssip.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
