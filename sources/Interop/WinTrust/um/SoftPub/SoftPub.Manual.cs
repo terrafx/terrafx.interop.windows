@@ -1,8 +1,8 @@
 using System;
 
-namespace TerraFX.Interop.um.SoftPub
+namespace TerraFX.Interop
 {
-    public static class SoftPub
+    public static partial class SoftPub
     {
         public const string SP_POLICY_PROVIDER_DLL_NAME = "WINTRUST.DLL";
 
