@@ -2,7 +2,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public static partial class SoftPub
+    public static partial class WinTrust
     {
         public const string SP_POLICY_PROVIDER_DLL_NAME = "WINTRUST.DLL";
 
