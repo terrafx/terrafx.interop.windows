@@ -1,8 +1,8 @@
 using System;
 
-namespace TerraFX.Interop.um.wintrust
+namespace TerraFX.Interop
 {
-    public partial class WinTrust
+    public static partial class WinTrust
     {
         public const string WINTRUST_CONFIG_REGPATH = "Software\\Microsoft\\Cryptography\\Wintrust\\Config";
 
