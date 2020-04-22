@@ -90,13 +90,13 @@ namespace TerraFX.Interop
 
         public const int WSS_INPUT_FLAG_MASK = 0x00000007;
 
-        public const uint WSS_OUT_SEALING_STATUS_VERIFIED = 0x80000000U;
+        public const uint WSS_OUT_SEALING_STATUS_VERIFIED = 0x80000000;
 
         public const int WSS_OUT_HAS_SEALING_INTENT = 0x40000000;
 
         public const int WSS_OUT_FILE_SUPPORTS_SEAL = 0x20000000;
 
-        public const uint WSS_OUTPUT_FLAG_MASK = 0xE0000000U;
+        public const uint WSS_OUTPUT_FLAG_MASK = 0xE0000000;
 
         public const int WTCI_DONT_OPEN_STORES = 0x00000001;
 
@@ -182,7 +182,7 @@ namespace TerraFX.Interop
 
         public const int CPD_CHOICE_SIP = 1;
 
-        public const uint CPD_USE_NT5_CHAIN_FLAG = 0x80000000U;
+        public const uint CPD_USE_NT5_CHAIN_FLAG = 0x80000000;
 
         public const int CPD_REVOCATION_CHECK_NONE = 0x00010000;
 

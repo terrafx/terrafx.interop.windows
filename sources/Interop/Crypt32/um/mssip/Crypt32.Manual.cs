@@ -26,6 +26,16 @@ namespace TerraFX.Interop
 
         public const int SPC_MARKER_CHECK_SKIP_SIP_INDIRECT_DATA_FLAG = 0x00000001;
 
+        public const int MSSIP_ADDINFO_NONE = 0;
+
+        public const int MSSIP_ADDINFO_FLAT = 1;
+
+        public const int MSSIP_ADDINFO_CATMEMBER = 2;
+
+        public const int MSSIP_ADDINFO_BLOB = 3;
+
+        public const int MSSIP_ADDINFO_NONMSSIP = 500;
+
         public const int SIP_CAP_SET_VERSION_2 = 2;
 
         public const int SIP_CAP_SET_VERSION_3 = 3;
@@ -37,15 +47,5 @@ namespace TerraFX.Interop
         public const int SIP_MAX_MAGIC_NUMBER = 4;
 
         public const int SPC_MARKER_CHECK_CURRENTLY_SUPPORTED_FLAGS = SPC_MARKER_CHECK_SKIP_SIP_INDIRECT_DATA_FLAG;
-
-        public const int MSSIP_ADDINFO_NONE = 0;
-
-        public const int MSSIP_ADDINFO_FLAT = 1;
-
-        public const int MSSIP_ADDINFO_CATMEMBER = 2;
-
-        public const int MSSIP_ADDINFO_BLOB = 3;
-
-        public const int MSSIP_ADDINFO_NONMSSIP = 500;
     }
 }
