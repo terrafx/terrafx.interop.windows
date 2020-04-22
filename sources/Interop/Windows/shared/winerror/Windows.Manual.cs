@@ -6457,24 +6457,6 @@ namespace TerraFX.Interop
 
         public const int E_ACCESSDENIED = unchecked((int)0x80070005);
 
-        public const int E_NOTIMPL = unchecked((int)0x80000001);
-
-        public const int E_OUTOFMEMORY = unchecked((int)0x80000002);
-
-        public const int E_INVALIDARG = unchecked((int)0x80000003);
-
-        public const int E_NOINTERFACE = unchecked((int)0x80000004);
-
-        public const int E_POINTER = unchecked((int)0x80000005);
-
-        public const int E_HANDLE = unchecked((int)0x80000006);
-
-        public const int E_ABORT = unchecked((int)0x80000007);
-
-        public const int E_FAIL = unchecked((int)0x80000008);
-
-        public const int E_ACCESSDENIED = unchecked((int)0x80000009);
-
         public const int E_PENDING = unchecked((int)0x8000000A);
 
         public const int E_BOUNDS = unchecked((int)0x8000000B);
