@@ -297,7 +297,7 @@ namespace TerraFX.Interop
 
         public const int NO_ERROR = 0;
 
-        public const int SEC_E_OK = unchecked((int)0x00000000);
+        public const int SEC_E_OK = 0x00000000;
 
         public const int ERROR_INVALID_FUNCTION = 1;
 
@@ -6593,17 +6593,17 @@ namespace TerraFX.Interop
 
         public const int CO_E_PREMATURE_STUB_RUNDOWN = unchecked((int)0x80004035);
 
-        public const int S_OK = unchecked((int)0);
+        public const int S_OK = 0;
 
-        public const int S_FALSE = unchecked((int)1);
+        public const int S_FALSE = 1;
 
         public const int OLE_E_FIRST = unchecked((int)0x80040000);
 
         public const int OLE_E_LAST = unchecked((int)0x800400FF);
 
-        public const int OLE_S_FIRST = unchecked((int)0x00040000);
+        public const int OLE_S_FIRST = 0x00040000;
 
-        public const int OLE_S_LAST = unchecked((int)0x000400FF);
+        public const int OLE_S_LAST = 0x000400FF;
 
         public const int OLE_E_OLEVERB = unchecked((int)0x80040000);
 
@@ -6663,9 +6663,9 @@ namespace TerraFX.Interop
 
         public const int DV_E_NOIVIEWOBJECT = unchecked((int)0x8004006D);
 
-        public const long DRAGDROP_E_FIRST = 0x80040100L;
+        public const int DRAGDROP_E_FIRST = unchecked((int)0x80040100);
 
-        public const long DRAGDROP_E_LAST = 0x8004010FL;
+        public const int DRAGDROP_E_LAST = unchecked((int)0x8004010F);
 
         public const int DRAGDROP_S_FIRST = 0x00040100;
 
@@ -6679,9 +6679,9 @@ namespace TerraFX.Interop
 
         public const int DRAGDROP_E_CONCURRENT_DRAG_ATTEMPTED = unchecked((int)0x80040103);
 
-        public const long CLASSFACTORY_E_FIRST = 0x80040110L;
+        public const int CLASSFACTORY_E_FIRST = unchecked((int)0x80040110);
 
-        public const long CLASSFACTORY_E_LAST = 0x8004011FL;
+        public const int CLASSFACTORY_E_LAST = unchecked((int)0x8004011F);
 
         public const int CLASSFACTORY_S_FIRST = 0x00040110;
 
@@ -6693,25 +6693,25 @@ namespace TerraFX.Interop
 
         public const int CLASS_E_NOTLICENSED = unchecked((int)0x80040112);
 
-        public const long MARSHAL_E_FIRST = 0x80040120L;
+        public const int MARSHAL_E_FIRST = unchecked((int)0x80040120);
 
-        public const long MARSHAL_E_LAST = 0x8004012FL;
+        public const int MARSHAL_E_LAST = unchecked((int)0x8004012F);
 
         public const int MARSHAL_S_FIRST = 0x00040120;
 
         public const int MARSHAL_S_LAST = 0x0004012F;
 
-        public const long DATA_E_FIRST = 0x80040130L;
+        public const int DATA_E_FIRST = unchecked((int)0x80040130);
 
-        public const long DATA_E_LAST = 0x8004013FL;
+        public const int DATA_E_LAST = unchecked((int)0x8004013F);
 
         public const int DATA_S_FIRST = 0x00040130;
 
         public const int DATA_S_LAST = 0x0004013F;
 
-        public const long VIEW_E_FIRST = 0x80040140L;
+        public const int VIEW_E_FIRST = unchecked((int)0x80040140);
 
-        public const long VIEW_E_LAST = 0x8004014FL;
+        public const int VIEW_E_LAST = unchecked((int)0x8004014F);
 
         public const int VIEW_S_FIRST = 0x00040140;
 
@@ -6719,9 +6719,9 @@ namespace TerraFX.Interop
 
         public const int VIEW_E_DRAW = unchecked((int)0x80040140);
 
-        public const long REGDB_E_FIRST = 0x80040150L;
+        public const int REGDB_E_FIRST = unchecked((int)0x80040150);
 
-        public const long REGDB_E_LAST = 0x8004015FL;
+        public const int REGDB_E_LAST = unchecked((int)0x8004015F);
 
         public const int REGDB_S_FIRST = 0x00040150;
 
@@ -6743,17 +6743,17 @@ namespace TerraFX.Interop
 
         public const int REGDB_E_PACKAGEPOLICYVIOLATION = unchecked((int)0x80040157);
 
-        public const long CAT_E_FIRST = 0x80040160L;
+        public const int CAT_E_FIRST = unchecked((int)0x80040160);
 
-        public const long CAT_E_LAST = 0x80040161L;
+        public const int CAT_E_LAST = unchecked((int)0x80040161);
 
         public const int CAT_E_CATIDNOEXIST = unchecked((int)0x80040160);
 
         public const int CAT_E_NODESCRIPTION = unchecked((int)0x80040161);
 
-        public const long CS_E_FIRST = 0x80040164L;
+        public const int CS_E_FIRST = unchecked((int)0x80040164);
 
-        public const long CS_E_LAST = 0x8004016FL;
+        public const int CS_E_LAST = unchecked((int)0x8004016F);
 
         public const int CS_E_PACKAGE_NOTFOUND = unchecked((int)0x80040164);
 
@@ -6779,9 +6779,9 @@ namespace TerraFX.Interop
 
         public const int CS_E_INTERNAL_ERROR = unchecked((int)0x8004016F);
 
-        public const long CACHE_E_FIRST = 0x80040170L;
+        public const int CACHE_E_FIRST = unchecked((int)0x80040170);
 
-        public const long CACHE_E_LAST = 0x8004017FL;
+        public const int CACHE_E_LAST = unchecked((int)0x8004017F);
 
         public const int CACHE_S_FIRST = 0x00040170;
 
@@ -6789,9 +6789,9 @@ namespace TerraFX.Interop
 
         public const int CACHE_E_NOCACHE_UPDATED = unchecked((int)0x80040170);
 
-        public const long OLEOBJ_E_FIRST = 0x80040180L;
+        public const int OLEOBJ_E_FIRST = unchecked((int)0x80040180);
 
-        public const long OLEOBJ_E_LAST = 0x8004018FL;
+        public const int OLEOBJ_E_LAST = unchecked((int)0x8004018F);
 
         public const int OLEOBJ_S_FIRST = 0x00040180;
 
@@ -6801,9 +6801,9 @@ namespace TerraFX.Interop
 
         public const int OLEOBJ_E_INVALIDVERB = unchecked((int)0x80040181);
 
-        public const long CLIENTSITE_E_FIRST = 0x80040190L;
+        public const int CLIENTSITE_E_FIRST = unchecked((int)0x80040190);
 
-        public const long CLIENTSITE_E_LAST = 0x8004019FL;
+        public const int CLIENTSITE_E_LAST = unchecked((int)0x8004019F);
 
         public const int CLIENTSITE_S_FIRST = 0x00040190;
 
@@ -6813,25 +6813,25 @@ namespace TerraFX.Interop
 
         public const int INPLACE_E_NOTOOLSPACE = unchecked((int)0x800401A1);
 
-        public const long INPLACE_E_FIRST = 0x800401A0L;
+        public const int INPLACE_E_FIRST = unchecked((int)0x800401A0);
 
-        public const long INPLACE_E_LAST = 0x800401AFL;
+        public const int INPLACE_E_LAST = unchecked((int)0x800401AF);
 
         public const int INPLACE_S_FIRST = 0x000401A0;
 
         public const int INPLACE_S_LAST = 0x000401AF;
 
-        public const long ENUM_E_FIRST = 0x800401B0L;
+        public const int ENUM_E_FIRST = unchecked((int)0x800401B0);
 
-        public const long ENUM_E_LAST = 0x800401BFL;
+        public const int ENUM_E_LAST = unchecked((int)0x800401BF);
 
         public const int ENUM_S_FIRST = 0x000401B0;
 
         public const int ENUM_S_LAST = 0x000401BF;
 
-        public const long CONVERT10_E_FIRST = 0x800401C0L;
+        public const int CONVERT10_E_FIRST = unchecked((int)0x800401C0);
 
-        public const long CONVERT10_E_LAST = 0x800401CFL;
+        public const int CONVERT10_E_LAST = unchecked((int)0x800401CF);
 
         public const int CONVERT10_S_FIRST = 0x000401C0;
 
@@ -6851,9 +6851,9 @@ namespace TerraFX.Interop
 
         public const int CONVERT10_E_STG_DIB_TO_BITMAP = unchecked((int)0x800401C6);
 
-        public const long CLIPBRD_E_FIRST = 0x800401D0L;
+        public const int CLIPBRD_E_FIRST = unchecked((int)0x800401D0);
 
-        public const long CLIPBRD_E_LAST = 0x800401DFL;
+        public const int CLIPBRD_E_LAST = unchecked((int)0x800401DF);
 
         public const int CLIPBRD_S_FIRST = 0x000401D0;
 
@@ -6869,9 +6869,9 @@ namespace TerraFX.Interop
 
         public const int CLIPBRD_E_CANT_CLOSE = unchecked((int)0x800401D4);
 
-        public const long MK_E_FIRST = 0x800401E0L;
+        public const int MK_E_FIRST = unchecked((int)0x800401E0);
 
-        public const long MK_E_LAST = 0x800401EFL;
+        public const int MK_E_LAST = unchecked((int)0x800401EF);
 
         public const int MK_S_FIRST = 0x000401E0;
 
@@ -6909,9 +6909,9 @@ namespace TerraFX.Interop
 
         public const int MK_E_ENUMERATION_FAILED = unchecked((int)0x800401EF);
 
-        public const long CO_E_FIRST = 0x800401F0L;
+        public const int CO_E_FIRST = unchecked((int)0x800401F0);
 
-        public const long CO_E_LAST = 0x800401FFL;
+        public const int CO_E_LAST = unchecked((int)0x800401FF);
 
         public const int CO_S_FIRST = 0x000401F0;
 
@@ -6949,19 +6949,19 @@ namespace TerraFX.Interop
 
         public const int CO_E_RELEASED = unchecked((int)0x800401FF);
 
-        public const long EVENT_E_FIRST = 0x80040200L;
+        public const int EVENT_E_FIRST = unchecked((int)0x80040200);
 
-        public const long EVENT_E_LAST = 0x8004021FL;
+        public const int EVENT_E_LAST = unchecked((int)0x8004021F);
 
         public const int EVENT_S_FIRST = 0x00040200;
 
         public const int EVENT_S_LAST = 0x0004021F;
 
-        public const int EVENT_S_SOME_SUBSCRIBERS_FAILED = unchecked((int)0x00040200);
+        public const int EVENT_S_SOME_SUBSCRIBERS_FAILED = 0x00040200;
 
         public const int EVENT_E_ALL_SUBSCRIBERS_FAILED = unchecked((int)0x80040201);
 
-        public const int EVENT_S_NOSUBSCRIBERS = unchecked((int)0x00040202);
+        public const int EVENT_S_NOSUBSCRIBERS = 0x00040202;
 
         public const int EVENT_E_QUERYSYNTAX = unchecked((int)0x80040203);
 
@@ -7019,15 +7019,15 @@ namespace TerraFX.Interop
 
         public const int TPC_E_INVALID_DATA_FROM_RECOGNIZER = unchecked((int)0x8004023A);
 
-        public const int TPC_S_TRUNCATED = unchecked((int)0x00040252);
+        public const int TPC_S_TRUNCATED = 0x00040252;
 
-        public const int TPC_S_INTERRUPTED = unchecked((int)0x00040253);
+        public const int TPC_S_INTERRUPTED = 0x00040253;
 
-        public const int TPC_S_NO_DATA_TO_PROCESS = unchecked((int)0x00040254);
+        public const int TPC_S_NO_DATA_TO_PROCESS = 0x00040254;
 
-        public const uint XACT_E_FIRST = 0x8004D000U;
+        public const uint XACT_E_FIRST = 0x8004D000;
 
-        public const uint XACT_E_LAST = 0x8004D02BU;
+        public const uint XACT_E_LAST = 0x8004D02B;
 
         public const int XACT_S_FIRST = 0x0004D000;
 
@@ -7135,33 +7135,33 @@ namespace TerraFX.Interop
 
         public const int XACT_E_REPLAYREQUEST = unchecked((int)0x8004D085);
 
-        public const int XACT_S_ASYNC = unchecked((int)0x0004D000);
+        public const int XACT_S_ASYNC = 0x0004D000;
 
-        public const int XACT_S_DEFECT = unchecked((int)0x0004D001);
+        public const int XACT_S_DEFECT = 0x0004D001;
 
-        public const int XACT_S_READONLY = unchecked((int)0x0004D002);
+        public const int XACT_S_READONLY = 0x0004D002;
 
-        public const int XACT_S_SOMENORETAIN = unchecked((int)0x0004D003);
+        public const int XACT_S_SOMENORETAIN = 0x0004D003;
 
-        public const int XACT_S_OKINFORM = unchecked((int)0x0004D004);
+        public const int XACT_S_OKINFORM = 0x0004D004;
 
-        public const int XACT_S_MADECHANGESCONTENT = unchecked((int)0x0004D005);
+        public const int XACT_S_MADECHANGESCONTENT = 0x0004D005;
 
-        public const int XACT_S_MADECHANGESINFORM = unchecked((int)0x0004D006);
+        public const int XACT_S_MADECHANGESINFORM = 0x0004D006;
 
-        public const int XACT_S_ALLNORETAIN = unchecked((int)0x0004D007);
+        public const int XACT_S_ALLNORETAIN = 0x0004D007;
 
-        public const int XACT_S_ABORTING = unchecked((int)0x0004D008);
+        public const int XACT_S_ABORTING = 0x0004D008;
 
-        public const int XACT_S_SINGLEPHASE = unchecked((int)0x0004D009);
+        public const int XACT_S_SINGLEPHASE = 0x0004D009;
 
-        public const int XACT_S_LOCALLY_OK = unchecked((int)0x0004D00A);
+        public const int XACT_S_LOCALLY_OK = 0x0004D00A;
 
-        public const int XACT_S_LASTRESOURCEMANAGER = unchecked((int)0x0004D010);
+        public const int XACT_S_LASTRESOURCEMANAGER = 0x0004D010;
 
-        public const long CONTEXT_E_FIRST = 0x8004E000L;
+        public const int CONTEXT_E_FIRST = unchecked((int)0x8004E000);
 
-        public const long CONTEXT_E_LAST = 0x8004E02FL;
+        public const int CONTEXT_E_LAST = unchecked((int)0x8004E02F);
 
         public const int CONTEXT_S_FIRST = 0x0004E000;
 
@@ -7217,65 +7217,65 @@ namespace TerraFX.Interop
 
         public const int CO_E_EXIT_TRANSACTION_SCOPE_NOT_CALLED = unchecked((int)0x8004E031);
 
-        public const int OLE_S_USEREG = unchecked((int)0x00040000);
+        public const int OLE_S_USEREG = 0x00040000;
 
-        public const int OLE_S_STATIC = unchecked((int)0x00040001);
+        public const int OLE_S_STATIC = 0x00040001;
 
-        public const int OLE_S_MAC_CLIPFORMAT = unchecked((int)0x00040002);
+        public const int OLE_S_MAC_CLIPFORMAT = 0x00040002;
 
-        public const int DRAGDROP_S_DROP = unchecked((int)0x00040100);
+        public const int DRAGDROP_S_DROP = 0x00040100;
 
-        public const int DRAGDROP_S_CANCEL = unchecked((int)0x00040101);
+        public const int DRAGDROP_S_CANCEL = 0x00040101;
 
-        public const int DRAGDROP_S_USEDEFAULTCURSORS = unchecked((int)0x00040102);
+        public const int DRAGDROP_S_USEDEFAULTCURSORS = 0x00040102;
 
-        public const int DATA_S_SAMEFORMATETC = unchecked((int)0x00040130);
+        public const int DATA_S_SAMEFORMATETC = 0x00040130;
 
-        public const int VIEW_S_ALREADY_FROZEN = unchecked((int)0x00040140);
+        public const int VIEW_S_ALREADY_FROZEN = 0x00040140;
 
-        public const int CACHE_S_FORMATETC_NOTSUPPORTED = unchecked((int)0x00040170);
+        public const int CACHE_S_FORMATETC_NOTSUPPORTED = 0x00040170;
 
-        public const int CACHE_S_SAMECACHE = unchecked((int)0x00040171);
+        public const int CACHE_S_SAMECACHE = 0x00040171;
 
-        public const int CACHE_S_SOMECACHES_NOTUPDATED = unchecked((int)0x00040172);
+        public const int CACHE_S_SOMECACHES_NOTUPDATED = 0x00040172;
 
-        public const int OLEOBJ_S_INVALIDVERB = unchecked((int)0x00040180);
+        public const int OLEOBJ_S_INVALIDVERB = 0x00040180;
 
-        public const int OLEOBJ_S_CANNOT_DOVERB_NOW = unchecked((int)0x00040181);
+        public const int OLEOBJ_S_CANNOT_DOVERB_NOW = 0x00040181;
 
-        public const int OLEOBJ_S_INVALIDHWND = unchecked((int)0x00040182);
+        public const int OLEOBJ_S_INVALIDHWND = 0x00040182;
 
-        public const int INPLACE_S_TRUNCATED = unchecked((int)0x000401A0);
+        public const int INPLACE_S_TRUNCATED = 0x000401A0;
 
-        public const int CONVERT10_S_NO_PRESENTATION = unchecked((int)0x000401C0);
+        public const int CONVERT10_S_NO_PRESENTATION = 0x000401C0;
 
-        public const int MK_S_REDUCED_TO_SELF = unchecked((int)0x000401E2);
+        public const int MK_S_REDUCED_TO_SELF = 0x000401E2;
 
-        public const int MK_S_ME = unchecked((int)0x000401E4);
+        public const int MK_S_ME = 0x000401E4;
 
-        public const int MK_S_HIM = unchecked((int)0x000401E5);
+        public const int MK_S_HIM = 0x000401E5;
 
-        public const int MK_S_US = unchecked((int)0x000401E6);
+        public const int MK_S_US = 0x000401E6;
 
-        public const int MK_S_MONIKERALREADYREGISTERED = unchecked((int)0x000401E7);
+        public const int MK_S_MONIKERALREADYREGISTERED = 0x000401E7;
 
-        public const int SCHED_S_TASK_READY = unchecked((int)0x00041300);
+        public const int SCHED_S_TASK_READY = 0x00041300;
 
-        public const int SCHED_S_TASK_RUNNING = unchecked((int)0x00041301);
+        public const int SCHED_S_TASK_RUNNING = 0x00041301;
 
-        public const int SCHED_S_TASK_DISABLED = unchecked((int)0x00041302);
+        public const int SCHED_S_TASK_DISABLED = 0x00041302;
 
-        public const int SCHED_S_TASK_HAS_NOT_RUN = unchecked((int)0x00041303);
+        public const int SCHED_S_TASK_HAS_NOT_RUN = 0x00041303;
 
-        public const int SCHED_S_TASK_NO_MORE_RUNS = unchecked((int)0x00041304);
+        public const int SCHED_S_TASK_NO_MORE_RUNS = 0x00041304;
 
-        public const int SCHED_S_TASK_NOT_SCHEDULED = unchecked((int)0x00041305);
+        public const int SCHED_S_TASK_NOT_SCHEDULED = 0x00041305;
 
-        public const int SCHED_S_TASK_TERMINATED = unchecked((int)0x00041306);
+        public const int SCHED_S_TASK_TERMINATED = 0x00041306;
 
-        public const int SCHED_S_TASK_NO_VALID_TRIGGERS = unchecked((int)0x00041307);
+        public const int SCHED_S_TASK_NO_VALID_TRIGGERS = 0x00041307;
 
-        public const int SCHED_S_EVENT_TRIGGER = unchecked((int)0x00041308);
+        public const int SCHED_S_EVENT_TRIGGER = 0x00041308;
 
         public const int SCHED_E_TRIGGER_NOT_FOUND = unchecked((int)0x80041309);
 
@@ -7313,9 +7313,9 @@ namespace TerraFX.Interop
 
         public const int SCHED_E_MALFORMEDXML = unchecked((int)0x8004131A);
 
-        public const int SCHED_S_SOME_TRIGGERS_FAILED = unchecked((int)0x0004131B);
+        public const int SCHED_S_SOME_TRIGGERS_FAILED = 0x0004131B;
 
-        public const int SCHED_S_BATCH_LOGON_PROBLEM = unchecked((int)0x0004131C);
+        public const int SCHED_S_BATCH_LOGON_PROBLEM = 0x0004131C;
 
         public const int SCHED_E_TOO_MANY_NODES = unchecked((int)0x8004131D);
 
@@ -7333,7 +7333,7 @@ namespace TerraFX.Interop
 
         public const int SCHED_E_TASK_ATTEMPTED = unchecked((int)0x80041324);
 
-        public const int SCHED_S_TASK_QUEUED = unchecked((int)0x00041325);
+        public const int SCHED_S_TASK_QUEUED = 0x00041325;
 
         public const int SCHED_E_TASK_DISABLED = unchecked((int)0x80041326);
 
@@ -7367,9 +7367,9 @@ namespace TerraFX.Interop
 
         public const int MEM_E_INVALID_SIZE = unchecked((int)0x80080011);
 
-        public const int CO_S_NOTALLINTERFACES = unchecked((int)0x00080012);
+        public const int CO_S_NOTALLINTERFACES = 0x00080012;
 
-        public const int CO_S_MACHINENAMENOTFOUND = unchecked((int)0x00080013);
+        public const int CO_S_MACHINENAMENOTFOUND = 0x00080013;
 
         public const int CO_E_MISSING_DISPLAYNAME = unchecked((int)0x80080015);
 
@@ -7593,21 +7593,21 @@ namespace TerraFX.Interop
 
         public const int STG_E_TERMINATED = unchecked((int)0x80030202);
 
-        public const int STG_S_CONVERTED = unchecked((int)0x00030200);
+        public const int STG_S_CONVERTED = 0x00030200;
 
-        public const int STG_S_BLOCK = unchecked((int)0x00030201);
+        public const int STG_S_BLOCK = 0x00030201;
 
-        public const int STG_S_RETRYNOW = unchecked((int)0x00030202);
+        public const int STG_S_RETRYNOW = 0x00030202;
 
-        public const int STG_S_MONITORING = unchecked((int)0x00030203);
+        public const int STG_S_MONITORING = 0x00030203;
 
-        public const int STG_S_MULTIPLEOPENS = unchecked((int)0x00030204);
+        public const int STG_S_MULTIPLEOPENS = 0x00030204;
 
-        public const int STG_S_CONSOLIDATIONFAILED = unchecked((int)0x00030205);
+        public const int STG_S_CONSOLIDATIONFAILED = 0x00030205;
 
-        public const int STG_S_CANNOTCONSOLIDATE = unchecked((int)0x00030206);
+        public const int STG_S_CANNOTCONSOLIDATE = 0x00030206;
 
-        public const int STG_S_POWER_CYCLE_REQUIRED = unchecked((int)0x00030207);
+        public const int STG_S_POWER_CYCLE_REQUIRED = 0x00030207;
 
         public const int STG_E_FIRMWARE_SLOT_INVALID = unchecked((int)0x80030208);
 
@@ -7949,21 +7949,21 @@ namespace TerraFX.Interop
 
         public const int SEC_E_NO_AUTHENTICATING_AUTHORITY = unchecked((int)0x80090311);
 
-        public const int SEC_I_CONTINUE_NEEDED = unchecked((int)0x00090312);
+        public const int SEC_I_CONTINUE_NEEDED = 0x00090312;
 
-        public const int SEC_I_COMPLETE_NEEDED = unchecked((int)0x00090313);
+        public const int SEC_I_COMPLETE_NEEDED = 0x00090313;
 
-        public const int SEC_I_COMPLETE_AND_CONTINUE = unchecked((int)0x00090314);
+        public const int SEC_I_COMPLETE_AND_CONTINUE = 0x00090314;
 
-        public const int SEC_I_LOCAL_LOGON = unchecked((int)0x00090315);
+        public const int SEC_I_LOCAL_LOGON = 0x00090315;
 
-        public const int SEC_I_GENERIC_EXTENSION_RECEIVED = unchecked((int)0x00090316);
+        public const int SEC_I_GENERIC_EXTENSION_RECEIVED = 0x00090316;
 
         public const int SEC_E_BAD_PKGID = unchecked((int)0x80090316);
 
         public const int SEC_E_CONTEXT_EXPIRED = unchecked((int)0x80090317);
 
-        public const int SEC_I_CONTEXT_EXPIRED = unchecked((int)0x00090317);
+        public const int SEC_I_CONTEXT_EXPIRED = 0x00090317;
 
         public const int SEC_E_INCOMPLETE_MESSAGE = unchecked((int)0x80090318);
 
@@ -7971,13 +7971,13 @@ namespace TerraFX.Interop
 
         public const int SEC_E_BUFFER_TOO_SMALL = unchecked((int)0x80090321);
 
-        public const int SEC_I_INCOMPLETE_CREDENTIALS = unchecked((int)0x00090320);
+        public const int SEC_I_INCOMPLETE_CREDENTIALS = 0x00090320;
 
-        public const int SEC_I_RENEGOTIATE = unchecked((int)0x00090321);
+        public const int SEC_I_RENEGOTIATE = 0x00090321;
 
         public const int SEC_E_WRONG_PRINCIPAL = unchecked((int)0x80090322);
 
-        public const int SEC_I_NO_LSA_CONTEXT = unchecked((int)0x00090323);
+        public const int SEC_I_NO_LSA_CONTEXT = 0x00090323;
 
         public const int SEC_E_TIME_SKEW = unchecked((int)0x80090324);
 
@@ -8065,7 +8065,7 @@ namespace TerraFX.Interop
 
         public const int SEC_E_KDC_CERT_REVOKED = unchecked((int)0x8009035B);
 
-        public const int SEC_I_SIGNATURE_NEEDED = unchecked((int)0x0009035C);
+        public const int SEC_I_SIGNATURE_NEEDED = 0x0009035C;
 
         public const int SEC_E_INVALID_PARAMETER = unchecked((int)0x8009035D);
 
@@ -8073,7 +8073,7 @@ namespace TerraFX.Interop
 
         public const int SEC_E_POLICY_NLTM_ONLY = unchecked((int)0x8009035F);
 
-        public const int SEC_I_NO_RENEGOTIATION = unchecked((int)0x00090360);
+        public const int SEC_I_NO_RENEGOTIATION = 0x00090360;
 
         public const int SEC_E_NO_CONTEXT = unchecked((int)0x80090361);
 
@@ -8081,15 +8081,15 @@ namespace TerraFX.Interop
 
         public const int SEC_E_MUTUAL_AUTH_FAILED = unchecked((int)0x80090363);
 
-        public const int SEC_I_MESSAGE_FRAGMENT = unchecked((int)0x00090364);
+        public const int SEC_I_MESSAGE_FRAGMENT = 0x00090364;
 
         public const int SEC_E_ONLY_HTTPS_ALLOWED = unchecked((int)0x80090365);
 
-        public const int SEC_I_CONTINUE_NEEDED_MESSAGE_OK = unchecked((int)0x00090366);
+        public const int SEC_I_CONTINUE_NEEDED_MESSAGE_OK = 0x00090366;
 
         public const int SEC_E_APPLICATION_PROTOCOL_MISMATCH = unchecked((int)0x80090367);
 
-        public const int SEC_I_ASYNC_CALL_PENDING = unchecked((int)0x00090368);
+        public const int SEC_I_ASYNC_CALL_PENDING = 0x00090368;
 
         public const int SEC_E_INVALID_UPN_NAME = unchecked((int)0x80090369);
 
@@ -8131,7 +8131,7 @@ namespace TerraFX.Interop
 
         public const int CRYPT_E_STREAM_INSUFFICIENT_DATA = unchecked((int)0x80091011);
 
-        public const int CRYPT_I_NEW_PROTECTION_REQUIRED = unchecked((int)0x00091012);
+        public const int CRYPT_I_NEW_PROTECTION_REQUIRED = 0x00091012;
 
         public const int CRYPT_E_BAD_LEN = unchecked((int)0x80092001);
 
@@ -9121,31 +9121,31 @@ namespace TerraFX.Interop
 
         public const int COMADMIN_E_PARTITIONS_DISABLED = unchecked((int)0x80110824);
 
-        public const int WER_S_REPORT_DEBUG = unchecked((int)0x001B0000);
+        public const int WER_S_REPORT_DEBUG = 0x001B0000;
 
-        public const int WER_S_REPORT_UPLOADED = unchecked((int)0x001B0001);
+        public const int WER_S_REPORT_UPLOADED = 0x001B0001;
 
-        public const int WER_S_REPORT_QUEUED = unchecked((int)0x001B0002);
+        public const int WER_S_REPORT_QUEUED = 0x001B0002;
 
-        public const int WER_S_DISABLED = unchecked((int)0x001B0003);
+        public const int WER_S_DISABLED = 0x001B0003;
 
-        public const int WER_S_SUSPENDED_UPLOAD = unchecked((int)0x001B0004);
+        public const int WER_S_SUSPENDED_UPLOAD = 0x001B0004;
 
-        public const int WER_S_DISABLED_QUEUE = unchecked((int)0x001B0005);
+        public const int WER_S_DISABLED_QUEUE = 0x001B0005;
 
-        public const int WER_S_DISABLED_ARCHIVE = unchecked((int)0x001B0006);
+        public const int WER_S_DISABLED_ARCHIVE = 0x001B0006;
 
-        public const int WER_S_REPORT_ASYNC = unchecked((int)0x001B0007);
+        public const int WER_S_REPORT_ASYNC = 0x001B0007;
 
-        public const int WER_S_IGNORE_ASSERT_INSTANCE = unchecked((int)0x001B0008);
+        public const int WER_S_IGNORE_ASSERT_INSTANCE = 0x001B0008;
 
-        public const int WER_S_IGNORE_ALL_ASSERTS = unchecked((int)0x001B0009);
+        public const int WER_S_IGNORE_ALL_ASSERTS = 0x001B0009;
 
-        public const int WER_S_ASSERT_CONTINUE = unchecked((int)0x001B000A);
+        public const int WER_S_ASSERT_CONTINUE = 0x001B000A;
 
-        public const int WER_S_THROTTLED = unchecked((int)0x001B000B);
+        public const int WER_S_THROTTLED = 0x001B000B;
 
-        public const int WER_S_REPORT_UPLOADED_CAB = unchecked((int)0x001B000C);
+        public const int WER_S_REPORT_UPLOADED_CAB = 0x001B000C;
 
         public const int WER_E_CRASH_FAILURE = unchecked((int)0x801B8000);
 
@@ -9163,7 +9163,7 @@ namespace TerraFX.Interop
 
         public const int WER_E_TOO_HEAVY = unchecked((int)0x801B8007);
 
-        public const int ERROR_FLT_IO_COMPLETE = unchecked((int)0x001F0001);
+        public const int ERROR_FLT_IO_COMPLETE = 0x001F0001;
 
         public const int ERROR_FLT_NO_HANDLER_DEFINED = unchecked((int)0x801F0001);
 
@@ -9237,15 +9237,15 @@ namespace TerraFX.Interop
 
         public const int DWM_E_ADAPTER_NOT_FOUND = unchecked((int)0x80263005);
 
-        public const int DWM_S_GDI_REDIRECTION_SURFACE = unchecked((int)0x00263005);
+        public const int DWM_S_GDI_REDIRECTION_SURFACE = 0x00263005;
 
         public const int DWM_E_TEXTURE_TOO_LARGE = unchecked((int)0x80263007);
 
-        public const int DWM_S_GDI_REDIRECTION_SURFACE_BLT_VIA_GDI = unchecked((int)0x00263008);
+        public const int DWM_S_GDI_REDIRECTION_SURFACE_BLT_VIA_GDI = 0x00263008;
 
-        public const int ERROR_MONITOR_NO_DESCRIPTOR = unchecked((int)0x00261001);
+        public const int ERROR_MONITOR_NO_DESCRIPTOR = 0x00261001;
 
-        public const int ERROR_MONITOR_UNKNOWN_DESCRIPTOR_FORMAT = unchecked((int)0x00261002);
+        public const int ERROR_MONITOR_UNKNOWN_DESCRIPTOR_FORMAT = 0x00261002;
 
         public const int ERROR_MONITOR_INVALID_DESCRIPTOR_CHECKSUM = unchecked((int)0xC0261003);
 
@@ -9283,7 +9283,7 @@ namespace TerraFX.Interop
 
         public const int ERROR_GRAPHICS_DRIVER_MISMATCH = unchecked((int)0xC0262009);
 
-        public const int ERROR_GRAPHICS_PARTIAL_DATA_POPULATED = unchecked((int)0x4026200A);
+        public const int ERROR_GRAPHICS_PARTIAL_DATA_POPULATED = 0x4026200A;
 
         public const int ERROR_GRAPHICS_PRESENT_REDIRECTION_DISABLED = unchecked((int)0xC026200B);
 
@@ -9339,7 +9339,7 @@ namespace TerraFX.Interop
 
         public const int ERROR_GRAPHICS_GPU_EXCEPTION_ON_DEVICE = unchecked((int)0xC0262200);
 
-        public const int ERROR_GRAPHICS_SKIP_ALLOCATION_PREPARATION = unchecked((int)0x40262201);
+        public const int ERROR_GRAPHICS_SKIP_ALLOCATION_PREPARATION = 0x40262201;
 
         public const int ERROR_GRAPHICS_INVALID_VIDPN_TOPOLOGY = unchecked((int)0xC0262300);
 
@@ -9355,7 +9355,7 @@ namespace TerraFX.Interop
 
         public const int ERROR_GRAPHICS_VIDPN_MODALITY_NOT_SUPPORTED = unchecked((int)0xC0262306);
 
-        public const int ERROR_GRAPHICS_MODE_NOT_PINNED = unchecked((int)0x00262307);
+        public const int ERROR_GRAPHICS_MODE_NOT_PINNED = 0x00262307;
 
         public const int ERROR_GRAPHICS_INVALID_VIDPN_SOURCEMODESET = unchecked((int)0xC0262308);
 
@@ -9395,7 +9395,7 @@ namespace TerraFX.Interop
 
         public const int ERROR_GRAPHICS_FREQUENCYRANGE_NOT_IN_SET = unchecked((int)0xC026231D);
 
-        public const int ERROR_GRAPHICS_NO_PREFERRED_MODE = unchecked((int)0x0026231E);
+        public const int ERROR_GRAPHICS_NO_PREFERRED_MODE = 0x0026231E;
 
         public const int ERROR_GRAPHICS_FREQUENCYRANGE_ALREADY_IN_SET = unchecked((int)0xC026231F);
 
@@ -9485,9 +9485,9 @@ namespace TerraFX.Interop
 
         public const int ERROR_GRAPHICS_MODE_NOT_IN_MODESET = unchecked((int)0xC026234A);
 
-        public const int ERROR_GRAPHICS_DATASET_IS_EMPTY = unchecked((int)0x0026234B);
+        public const int ERROR_GRAPHICS_DATASET_IS_EMPTY = 0x0026234B;
 
-        public const int ERROR_GRAPHICS_NO_MORE_ELEMENTS_IN_DATASET = unchecked((int)0x0026234C);
+        public const int ERROR_GRAPHICS_NO_MORE_ELEMENTS_IN_DATASET = 0x0026234C;
 
         public const int ERROR_GRAPHICS_INVALID_VIDPN_TOPOLOGY_RECOMMENDATION_REASON = unchecked((int)0xC026234D);
 
@@ -9497,7 +9497,7 @@ namespace TerraFX.Interop
 
         public const int ERROR_GRAPHICS_UNASSIGNED_MODESET_ALREADY_EXISTS = unchecked((int)0xC0262350);
 
-        public const int ERROR_GRAPHICS_PATH_CONTENT_GEOMETRY_TRANSFORMATION_NOT_PINNED = unchecked((int)0x00262351);
+        public const int ERROR_GRAPHICS_PATH_CONTENT_GEOMETRY_TRANSFORMATION_NOT_PINNED = 0x00262351;
 
         public const int ERROR_GRAPHICS_INVALID_SCANLINE_ORDERING = unchecked((int)0xC0262352);
 
@@ -9525,7 +9525,7 @@ namespace TerraFX.Interop
 
         public const int ERROR_GRAPHICS_CHILD_DESCRIPTOR_NOT_SUPPORTED = unchecked((int)0xC0262401);
 
-        public const int ERROR_GRAPHICS_UNKNOWN_CHILD_STATUS = unchecked((int)0x4026242F);
+        public const int ERROR_GRAPHICS_UNKNOWN_CHILD_STATUS = 0x4026242F;
 
         public const int ERROR_GRAPHICS_NOT_A_LINKED_ADAPTER = unchecked((int)0xC0262430);
 
@@ -9541,17 +9541,17 @@ namespace TerraFX.Interop
 
         public const int ERROR_GRAPHICS_INCONSISTENT_DEVICE_LINK_STATE = unchecked((int)0xC0262436);
 
-        public const int ERROR_GRAPHICS_LEADLINK_START_DEFERRED = unchecked((int)0x40262437);
+        public const int ERROR_GRAPHICS_LEADLINK_START_DEFERRED = 0x40262437;
 
         public const int ERROR_GRAPHICS_NOT_POST_DEVICE_DRIVER = unchecked((int)0xC0262438);
 
-        public const int ERROR_GRAPHICS_POLLING_TOO_FREQUENTLY = unchecked((int)0x40262439);
+        public const int ERROR_GRAPHICS_POLLING_TOO_FREQUENTLY = 0x40262439;
 
-        public const int ERROR_GRAPHICS_START_DEFERRED = unchecked((int)0x4026243A);
+        public const int ERROR_GRAPHICS_START_DEFERRED = 0x4026243A;
 
         public const int ERROR_GRAPHICS_ADAPTER_ACCESS_NOT_EXCLUDED = unchecked((int)0xC026243B);
 
-        public const int ERROR_GRAPHICS_DEPENDABLE_CHILD_STATUS = unchecked((int)0x4026243C);
+        public const int ERROR_GRAPHICS_DEPENDABLE_CHILD_STATUS = 0x4026243C;
 
         public const int ERROR_GRAPHICS_OPM_NOT_SUPPORTED = unchecked((int)0xC0262500);
 
@@ -9689,7 +9689,7 @@ namespace TerraFX.Interop
 
         public const int NAP_E_SERVICE_NOT_RUNNING = unchecked((int)0x8027000C);
 
-        public const int NAP_S_CERT_ALREADY_PRESENT = unchecked((int)0x0027000D);
+        public const int NAP_S_CERT_ALREADY_PRESENT = 0x0027000D;
 
         public const int NAP_E_ENTITY_DISABLED = unchecked((int)0x8027000E);
 
@@ -10351,7 +10351,7 @@ namespace TerraFX.Interop
 
         public const int TPM_E_PCP_KEY_HANDLE_INVALIDATED = unchecked((int)0x80290422);
 
-        public const int TPM_E_PCP_UNSUPPORTED_PSS_SALT = unchecked((int)0x40290423);
+        public const int TPM_E_PCP_UNSUPPORTED_PSS_SALT = 0x40290423;
 
         public const int TPM_E_ZERO_EXHAUST_ENABLED = unchecked((int)0x80290500);
 
@@ -10365,7 +10365,7 @@ namespace TerraFX.Interop
 
         public const int PLA_E_DCS_ALREADY_EXISTS = unchecked((int)0x803000B7);
 
-        public const int PLA_S_PROPERTY_IGNORED = unchecked((int)0x00300100);
+        public const int PLA_S_PROPERTY_IGNORED = 0x00300100;
 
         public const int PLA_E_PROPERTY_CONFLICT = unchecked((int)0x80300101);
 
@@ -10967,9 +10967,9 @@ namespace TerraFX.Interop
 
         public const int FWP_E_DROP_NOICMP = unchecked((int)0x80320104);
 
-        public const int WS_S_ASYNC = unchecked((int)0x003D0000);
+        public const int WS_S_ASYNC = 0x003D0000;
 
-        public const int WS_S_END = unchecked((int)0x003D0001);
+        public const int WS_S_END = 0x003D0001;
 
         public const int WS_E_INVALID_FORMAT = unchecked((int)0x803D0000);
 
@@ -12105,17 +12105,17 @@ namespace TerraFX.Interop
 
         public const int PEER_E_CONTACT_NOT_FOUND = unchecked((int)0x80636001);
 
-        public const int PEER_S_GRAPH_DATA_CREATED = unchecked((int)0x00630001);
+        public const int PEER_S_GRAPH_DATA_CREATED = 0x00630001;
 
-        public const int PEER_S_NO_EVENT_DATA = unchecked((int)0x00630002);
+        public const int PEER_S_NO_EVENT_DATA = 0x00630002;
 
-        public const int PEER_S_ALREADY_CONNECTED = unchecked((int)0x00632000);
+        public const int PEER_S_ALREADY_CONNECTED = 0x00632000;
 
-        public const int PEER_S_SUBSCRIPTION_EXISTS = unchecked((int)0x00636000);
+        public const int PEER_S_SUBSCRIPTION_EXISTS = 0x00636000;
 
-        public const int PEER_S_NO_CONNECTIVITY = unchecked((int)0x00630005);
+        public const int PEER_S_NO_CONNECTIVITY = 0x00630005;
 
-        public const int PEER_S_ALREADY_A_MEMBER = unchecked((int)0x00630006);
+        public const int PEER_S_ALREADY_A_MEMBER = 0x00630006;
 
         public const int PEER_E_CANNOT_CONVERT_PEER_NAME = unchecked((int)0x80634001);
 
@@ -12277,11 +12277,11 @@ namespace TerraFX.Interop
 
         public const int STATEREPOSITORY_ERROR_CACHE_CORRUPTED = unchecked((int)0x80670012);
 
-        public const int STATEREPOSITORY_TRANSACTION_CALLER_ID_CHANGED = unchecked((int)0x00670013);
+        public const int STATEREPOSITORY_TRANSACTION_CALLER_ID_CHANGED = 0x00670013;
 
-        public const int STATEREPOSITORY_TRANSACTION_IN_PROGRESS = unchecked((int)0x00670014);
+        public const int STATEREPOSITORY_TRANSACTION_IN_PROGRESS = 0x00670014;
 
-        public const int ERROR_SPACES_POOL_WAS_DELETED = unchecked((int)0x00E70001);
+        public const int ERROR_SPACES_POOL_WAS_DELETED = 0x00E70001;
 
         public const int ERROR_SPACES_FAULT_DOMAIN_TYPE_INVALID = unchecked((int)0x80E70001);
 
@@ -12367,19 +12367,19 @@ namespace TerraFX.Interop
 
         public const int ERROR_CLIP_LICENSE_DEVICE_ID_MISMATCH = unchecked((int)0xC0EA000A);
 
-        public const int DXGI_STATUS_OCCLUDED = unchecked((int)0x087A0001);
+        public const int DXGI_STATUS_OCCLUDED = 0x087A0001;
 
-        public const int DXGI_STATUS_CLIPPED = unchecked((int)0x087A0002);
+        public const int DXGI_STATUS_CLIPPED = 0x087A0002;
 
-        public const int DXGI_STATUS_NO_REDIRECTION = unchecked((int)0x087A0004);
+        public const int DXGI_STATUS_NO_REDIRECTION = 0x087A0004;
 
-        public const int DXGI_STATUS_NO_DESKTOP_ACCESS = unchecked((int)0x087A0005);
+        public const int DXGI_STATUS_NO_DESKTOP_ACCESS = 0x087A0005;
 
-        public const int DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE = unchecked((int)0x087A0006);
+        public const int DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE = 0x087A0006;
 
-        public const int DXGI_STATUS_MODE_CHANGED = unchecked((int)0x087A0007);
+        public const int DXGI_STATUS_MODE_CHANGED = 0x087A0007;
 
-        public const int DXGI_STATUS_MODE_CHANGE_IN_PROGRESS = unchecked((int)0x087A0008);
+        public const int DXGI_STATUS_MODE_CHANGE_IN_PROGRESS = 0x087A0008;
 
         public const int DXGI_ERROR_INVALID_CALL = unchecked((int)0x887A0001);
 
@@ -12435,13 +12435,13 @@ namespace TerraFX.Interop
 
         public const int DXGI_ERROR_NON_COMPOSITED_UI = unchecked((int)0x887A0032);
 
-        public const int DXGI_STATUS_UNOCCLUDED = unchecked((int)0x087A0009);
+        public const int DXGI_STATUS_UNOCCLUDED = 0x087A0009;
 
-        public const int DXGI_STATUS_DDA_WAS_STILL_DRAWING = unchecked((int)0x087A000A);
+        public const int DXGI_STATUS_DDA_WAS_STILL_DRAWING = 0x087A000A;
 
         public const int DXGI_ERROR_MODE_CHANGE_IN_PROGRESS = unchecked((int)0x887A0025);
 
-        public const int DXGI_STATUS_PRESENT_REQUIRED = unchecked((int)0x087A002F);
+        public const int DXGI_STATUS_PRESENT_REQUIRED = 0x087A002F;
 
         public const int DXGI_ERROR_CACHE_CORRUPT = unchecked((int)0x887A0033);
 
@@ -12943,9 +12943,9 @@ namespace TerraFX.Interop
 
         public const int E_APPLICATION_MANAGER_NOT_RUNNING = unchecked((int)0x80270257);
 
-        public const int S_STORE_LAUNCHED_FOR_REMEDIATION = unchecked((int)0x00270258);
+        public const int S_STORE_LAUNCHED_FOR_REMEDIATION = 0x00270258;
 
-        public const int S_APPLICATION_ACTIVATION_ERROR_HANDLED_BY_DIALOG = unchecked((int)0x00270259);
+        public const int S_APPLICATION_ACTIVATION_ERROR_HANDLED_BY_DIALOG = 0x00270259;
 
         public const int E_APPLICATION_ACTIVATION_TIMED_OUT = unchecked((int)0x8027025A);
 

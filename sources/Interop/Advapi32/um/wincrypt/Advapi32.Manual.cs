@@ -132,7 +132,7 @@ namespace TerraFX.Interop
 
         public const int SIGNATURE_RESOURCE_NUMBER = 0x29A;
 
-        public const uint CRYPT_VERIFYCONTEXT = 0xF0000000U;
+        public const uint CRYPT_VERIFYCONTEXT = 0xF0000000;
 
         public const int CRYPT_NEWKEYSET = 0x00000008;
 
@@ -184,7 +184,7 @@ namespace TerraFX.Interop
 
         public const int CRYPT_SERVER = 0x00000400;
 
-        public const uint KEY_LENGTH_MASK = 0xFFFF0000U;
+        public const uint KEY_LENGTH_MASK = 0xFFFF0000;
 
         public const int CRYPT_Y_ONLY = 0x00000001;
 
@@ -1381,9 +1381,9 @@ namespace TerraFX.Interop
 
         public const int CERT_RDN_TYPE_MASK = 0x000000FF;
 
-        public const uint CERT_RDN_FLAGS_MASK = 0xFF000000U;
+        public const uint CERT_RDN_FLAGS_MASK = 0xFF000000;
 
-        public const uint CERT_RDN_ENABLE_T61_UNICODE_FLAG = 0x80000000U;
+        public const uint CERT_RDN_ENABLE_T61_UNICODE_FLAG = 0x80000000;
 
         public const int CERT_RDN_ENABLE_UTF8_UNICODE_FLAG = 0x20000000;
 
@@ -1441,7 +1441,7 @@ namespace TerraFX.Interop
 
         public const int CERT_ENCODING_TYPE_MASK = 0x0000FFFF;
 
-        public const uint CMSG_ENCODING_TYPE_MASK = 0xFFFF0000U;
+        public const uint CMSG_ENCODING_TYPE_MASK = 0xFFFF0000;
 
         public const int CRYPT_ASN_ENCODING = 0x00000001;
 
@@ -2205,13 +2205,13 @@ namespace TerraFX.Interop
 
         public const int CRL_DIST_POINT_ERR_INDEX_SHIFT = 24;
 
-        public const long CRL_DIST_POINT_ERR_CRL_ISSUER_BIT = 0x80000000L;
+        public const int CRL_DIST_POINT_ERR_CRL_ISSUER_BIT = unchecked((int)0x80000000);
 
         public const int CROSS_CERT_DIST_POINT_ERR_INDEX_MASK = 0xFF;
 
         public const int CROSS_CERT_DIST_POINT_ERR_INDEX_SHIFT = 24;
 
-        public const long CERT_EXCLUDED_SUBTREE_BIT = 0x80000000L;
+        public const int CERT_EXCLUDED_SUBTREE_BIT = unchecked((int)0x80000000);
 
         public const int SORTED_CTL_EXT_HASHED_SUBJECT_IDENTIFIER_FLAG = 0x1;
 
@@ -2551,13 +2551,13 @@ namespace TerraFX.Interop
 
         public const int CRYPT_REGISTER_FIRST_INDEX = 0;
 
-        public const uint CRYPT_REGISTER_LAST_INDEX = 0xFFFFFFFFU;
+        public const uint CRYPT_REGISTER_LAST_INDEX = 0xFFFFFFFF;
 
-        public const uint CRYPT_MATCH_ANY_ENCODING_TYPE = 0xFFFFFFFFU;
+        public const uint CRYPT_MATCH_ANY_ENCODING_TYPE = 0xFFFFFFFF;
 
-        public const uint CALG_OID_INFO_CNG_ONLY = 0xFFFFFFFFU;
+        public const uint CALG_OID_INFO_CNG_ONLY = 0xFFFFFFFF;
 
-        public const uint CALG_OID_INFO_PARAMETERS = 0xFFFFFFFEU;
+        public const uint CALG_OID_INFO_PARAMETERS = 0xFFFFFFFE;
 
         public const string CRYPT_OID_INFO_HASH_PARAMETERS_ALGORITHM = "CryptOIDInfoHashParameters";
 
@@ -2601,7 +2601,7 @@ namespace TerraFX.Interop
 
         public const int CRYPT_OID_NO_NULL_ALGORITHM_PARA_FLAG = 0x00000004;
 
-        public const uint CRYPT_OID_PUBKEY_SIGN_ONLY_FLAG = 0x80000000U;
+        public const uint CRYPT_OID_PUBKEY_SIGN_ONLY_FLAG = 0x80000000;
 
         public const int CRYPT_OID_PUBKEY_ENCRYPT_ONLY_FLAG = 0x40000000;
 
@@ -2621,13 +2621,13 @@ namespace TerraFX.Interop
 
         public const int CRYPT_OID_INFO_CNG_SIGN_KEY = 6;
 
-        public const uint CRYPT_OID_INFO_OID_KEY_FLAGS_MASK = 0xFFFF0000U;
+        public const uint CRYPT_OID_INFO_OID_KEY_FLAGS_MASK = 0xFFFF0000;
 
-        public const uint CRYPT_OID_INFO_PUBKEY_SIGN_KEY_FLAG = 0x80000000U;
+        public const uint CRYPT_OID_INFO_PUBKEY_SIGN_KEY_FLAG = 0x80000000;
 
         public const int CRYPT_OID_INFO_PUBKEY_ENCRYPT_KEY_FLAG = 0x40000000;
 
-        public const uint CRYPT_OID_DISABLE_SEARCH_DS_FLAG = 0x80000000U;
+        public const uint CRYPT_OID_DISABLE_SEARCH_DS_FLAG = 0x80000000;
 
         public const int CRYPT_OID_PREFER_CNG_ALGID_FLAG = 0x40000000;
 
@@ -2718,7 +2718,7 @@ namespace TerraFX.Interop
 
         public const int CMSG_MAIL_LIST_RECIPIENT = 3;
 
-        public const uint CMSG_SP3_COMPATIBLE_ENCRYPT_FLAG = 0x80000000U;
+        public const uint CMSG_SP3_COMPATIBLE_ENCRYPT_FLAG = 0x80000000;
 
         public const int CMSG_RC4_NO_SALT_FLAG = 0x40000000;
 
@@ -3191,7 +3191,7 @@ namespace TerraFX.Interop
 
         public const int CERT_SET_KEY_CONTEXT_PROP_ID = 0x00000001;
 
-        public const uint CERT_NCRYPT_KEY_SPEC = 0xFFFFFFFFU;
+        public const uint CERT_NCRYPT_KEY_SPEC = 0xFFFFFFFF;
 
         // Memory
         public static ReadOnlySpan<sbyte> sz_CERT_STORE_PROV_MEMORY => new sbyte[] { 0x4D, 0x65, 0x6D, 0x6F, 0x72, 0x79, 0x00 };
@@ -3270,9 +3270,9 @@ namespace TerraFX.Interop
 
         public const int CERT_STORE_MAXIMUM_ALLOWED_FLAG = 0x00001000;
 
-        public const uint CERT_SYSTEM_STORE_MASK = 0xFFFF0000U;
+        public const uint CERT_SYSTEM_STORE_MASK = 0xFFFF0000;
 
-        public const uint CERT_SYSTEM_STORE_RELOCATE_FLAG = 0x80000000U;
+        public const uint CERT_SYSTEM_STORE_RELOCATE_FLAG = 0x80000000;
 
         public const int CERT_SYSTEM_STORE_UNPROTECTED_FLAG = 0x40000000;
 
@@ -3394,7 +3394,7 @@ namespace TerraFX.Interop
 
         public const int CERT_REGISTRY_STORE_SERIALIZED_FLAG = 0x20000;
 
-        public const uint CERT_REGISTRY_STORE_CLIENT_GPT_FLAG = 0x80000000U;
+        public const uint CERT_REGISTRY_STORE_CLIENT_GPT_FLAG = 0x80000000;
 
         public const int CERT_REGISTRY_STORE_LM_GPT_FLAG = 0x01000000;
 
@@ -3557,7 +3557,7 @@ namespace TerraFX.Interop
 
         public const int CERT_FIND_VALID_ENHKEY_USAGE_FLAG = 0x20;
 
-        public const uint CERT_SET_PROPERTY_IGNORE_PERSIST_ERROR_FLAG = 0x80000000U;
+        public const uint CERT_SET_PROPERTY_IGNORE_PERSIST_ERROR_FLAG = 0x80000000;
 
         public const int CERT_SET_PROPERTY_INHIBIT_PERSIST_FLAG = 0x40000000;
 
@@ -3617,7 +3617,7 @@ namespace TerraFX.Interop
 
         public const int CTL_FIND_EXISTING = 5;
 
-        public const uint CTL_FIND_NO_LIST_ID_CBDATA = 0xFFFFFFFFU;
+        public const uint CTL_FIND_NO_LIST_ID_CBDATA = 0xFFFFFFFF;
 
         public const int CTL_FIND_SAME_USAGE_FLAG = 0x1;
 
@@ -3991,7 +3991,7 @@ namespace TerraFX.Interop
 
         public const int CRYPTNET_URL_CACHE_DEFAULT_FLUSH = 0;
 
-        public const uint CRYPTNET_URL_CACHE_DISABLE_FLUSH = 0xFFFFFFFFU;
+        public const uint CRYPTNET_URL_CACHE_DISABLE_FLUSH = 0xFFFFFFFF;
 
         public const int CRYPTNET_URL_CACHE_RESPONSE_NONE = 0;
 
@@ -4040,7 +4040,7 @@ namespace TerraFX.Interop
 
         public const int CERT_CHAIN_MAX_SSL_TIME_UPDATED_EVENT_COUNT_DEFAULT = 5;
 
-        public const uint CERT_CHAIN_MAX_SSL_TIME_UPDATED_EVENT_COUNT_DISABLE = 0xFFFFFFFFU;
+        public const uint CERT_CHAIN_MAX_SSL_TIME_UPDATED_EVENT_COUNT_DISABLE = 0xFFFFFFFF;
 
         public const int CERT_CHAIN_ENABLE_MD2_MD4_FLAG = 0x00000001;
 
@@ -4074,7 +4074,7 @@ namespace TerraFX.Interop
 
         public const string CERT_CHAIN_WEAK_SHA256_ALLOW_NAME = "Sha256Allow";
 
-        public const uint CERT_CHAIN_ENABLE_WEAK_SETTINGS_FLAG = 0x80000000U;
+        public const uint CERT_CHAIN_ENABLE_WEAK_SETTINGS_FLAG = 0x80000000;
 
         public const int CERT_CHAIN_DISABLE_ALL_EKU_WEAK_FLAG = 0x00010000;
 
@@ -4276,7 +4276,7 @@ namespace TerraFX.Interop
 
         public const int CERT_CHAIN_REVOCATION_CHECK_CHAIN_EXCLUDE_ROOT = 0x40000000;
 
-        public const uint CERT_CHAIN_REVOCATION_CHECK_CACHE_ONLY = 0x80000000U;
+        public const uint CERT_CHAIN_REVOCATION_CHECK_CACHE_ONLY = 0x80000000;
 
         public const int CERT_CHAIN_REVOCATION_ACCUMULATIVE_TIMEOUT = 0x08000000;
 
@@ -4356,7 +4356,7 @@ namespace TerraFX.Interop
 
         public const int AUTHTYPE_SERVER = 2;
 
-        public const uint BASIC_CONSTRAINTS_CERT_CHAIN_POLICY_CA_FLAG = 0x80000000U;
+        public const uint BASIC_CONSTRAINTS_CERT_CHAIN_POLICY_CA_FLAG = 0x80000000;
 
         public const int BASIC_CONSTRAINTS_CERT_CHAIN_POLICY_END_ENTITY_FLAG = 0x40000000;
 
@@ -4440,7 +4440,7 @@ namespace TerraFX.Interop
 
         public const int CRYPT_STRING_NOCRLF = 0x40000000;
 
-        public const uint CRYPT_STRING_NOCR = 0x80000000U;
+        public const uint CRYPT_STRING_NOCR = 0x80000000;
 
         // 1.2.840.113549.1.12.1
         public static ReadOnlySpan<sbyte> szOID_PKCS_12_PbeIds => new sbyte[] { 0x31, 0x2E, 0x32, 0x2E, 0x38, 0x34, 0x30, 0x2E, 0x31, 0x31, 0x33, 0x35, 0x34, 0x39, 0x2E, 0x31, 0x2E, 0x31, 0x32, 0x2E, 0x31, 0x00 };
@@ -4487,7 +4487,7 @@ namespace TerraFX.Interop
 
         public const int PKCS12_VIRTUAL_ISOLATION_KEY = 0x00010000;
 
-        public const uint PKCS12_IMPORT_RESERVED_MASK = 0xFFFF0000U;
+        public const uint PKCS12_IMPORT_RESERVED_MASK = 0xFFFF0000;
 
         public const int PKCS12_ONLY_CERTIFICATES_PROVIDER_TYPE = 0;
 
@@ -4517,7 +4517,7 @@ namespace TerraFX.Interop
 
         public const int PKCS12_EXPORT_ECC_CURVE_OID = 0x2000;
 
-        public const uint PKCS12_EXPORT_RESERVED_MASK = 0xFFFF0000U;
+        public const uint PKCS12_EXPORT_RESERVED_MASK = 0xFFFF0000;
 
         // 1.2.840.113549.2.7
         public static ReadOnlySpan<sbyte> PKCS12_PBKDF2_ID_HMAC_SHA1 => new sbyte[] { 0x31, 0x2E, 0x32, 0x2E, 0x38, 0x34, 0x30, 0x2E, 0x31, 0x31, 0x33, 0x35, 0x34, 0x39, 0x2E, 0x32, 0x2E, 0x37, 0x00 };
@@ -5162,7 +5162,7 @@ namespace TerraFX.Interop
 
         public const int CMSG_ENCRYPTED_FLAG = 1 << CMSG_ENCRYPTED;
 
-        public const uint CMSG_INDEFINITE_LENGTH = 0xFFFFFFFFU;
+        public const uint CMSG_INDEFINITE_LENGTH = 0xFFFFFFFF;
 
         public const int CMSG_SIGNED_DATA_PKCS_1_5_VERSION = CMSG_SIGNED_DATA_V1;
 
@@ -5651,7 +5651,7 @@ namespace TerraFX.Interop
 
         public const string CERT_CHAIN_WEAK_RSA_PUB_KEY_TIME_VALUE_NAME = "WeakRsaPubKeyTime";
 
-        public const ulong CERT_CHAIN_WEAK_RSA_PUB_KEY_TIME_DEFAULT = 0x01CA8A755C6E0000UL;
+        public const ulong CERT_CHAIN_WEAK_RSA_PUB_KEY_TIME_DEFAULT = 0x01CA8A755C6E0000;
 
         public const string CERT_CHAIN_WEAK_SIGNATURE_LOG_DIR_VALUE_NAME = "WeakSignatureLogDir";
 
