@@ -1,0 +1,42 @@
+--additional
+-m32
+--config
+multi-file
+--file
+um-sysinfoapi.h
+--headerFile
+header.txt
+--include-directory
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+--include-directory
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+--libraryPath
+kernel32
+--methodClassName
+Kernel32
+--namespace
+TerraFX.Interop
+--output
+../../../sources/Interop/Kernel32/um/sysinfoapi
+--remap
+__AnonymousField_sysinfoapi_L48_C5=Anonymous
+__AnonymousField_sysinfoapi_L50_C9=Anonymous
+__AnonymousRecord_sysinfoapi_L48_C5=_Anonymous_e__Union1
+__AnonymousRecord_sysinfoapi_L50_C9=_Anonymous_e__Union2
+_COMPUTER_NAME_FORMAT=COMPUTER_NAME_FORMAT
+_FILETIME=FILETIME
+_LOGICAL_PROCESSOR_RELATIONSHIP=LOGICAL_PROCESSOR_RELATIONSHIP
+_MEMORYSTATUSEX=MEMORYSTATUSEX
+_OSVERSIONINFOA=OSVERSIONINFOA
+_OSVERSIONINFOW=OSVERSIONINFOW
+_SYSTEM_INFO=SYSTEM_INFO
+_SYSTEM_LOGICAL_PROCESSOR_INFORMATION=SYSTEM_LOGICAL_PROCESSOR_INFORMATION
+_SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX=SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX
+_SYSTEM_PROCESSOR_CYCLE_TIME_INFORMATION=SYSTEM_PROCESSOR_CYCLE_TIME_INFORMATION
+_SYSTEMTIME=SYSTEMTIME
+DWORD_PTR=uint*
+HANDLE=IntPtr
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\sysinfoapi.h
+--with-callconv
+*=Winapi
