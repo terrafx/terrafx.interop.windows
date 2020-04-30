@@ -13,7 +13,7 @@ namespace TerraFX.Interop
         public uint dwDistPointNameChoice;
 
         [NativeTypeName("_CRL_DIST_POINT_NAME::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/wincrypt.h:4429:5)")]
-        public _Anonymous_e__Union _Anonymous;
+        public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

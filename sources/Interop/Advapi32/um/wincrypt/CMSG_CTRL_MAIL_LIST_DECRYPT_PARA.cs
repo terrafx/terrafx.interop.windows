@@ -26,7 +26,7 @@ namespace TerraFX.Interop
         public uint dwKeyChoice;
 
         [NativeTypeName("_CMSG_CTRL_MAIL_LIST_DECRYPT_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/wincrypt.h:8135:5)")]
-        public _Anonymous_e__Union _Anonymous;
+        public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union

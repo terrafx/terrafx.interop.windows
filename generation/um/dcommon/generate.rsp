@@ -47,7 +47,7 @@ __AnonymousRecord_dcommon_L354_C9=_Anonymous_e__Struct
 __AnonymousRecord_dcommon_L373_C5=_Anonymous_e__Union
 __AnonymousRecord_dcommon_L375_C9=_Anonymous_e__Struct
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\dcommon.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/dcommon.h
 --with-attribute
 DWRITE_GLYPH_IMAGE_FORMATS=Flags
 --with-type

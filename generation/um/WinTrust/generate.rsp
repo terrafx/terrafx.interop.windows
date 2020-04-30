@@ -28,7 +28,7 @@ __AnonymousField_WinTrust_L688_C5=Anonymous
 __AnonymousField_WinTrust_L1280_C5=Anonymous
 __AnonymousRecord_WinTrust_L116_C5=_Anonymous_e__Union
 __AnonymousRecord_WinTrust_L688_C5=_Anonymous_e__Union
-__AnonymousRecord_WinTrust_L1280_C5=Anonymous_e__Union
+__AnonymousRecord_WinTrust_L1280_C5=_Anonymous_e__Union
 _CAT_MEMBERINFO=CAT_MEMBERINFO
 _CAT_MEMBERINFO2=CAT_MEMBERINFO2
 _CAT_NAMEVALUE=CAT_NAMEVALUE
@@ -91,6 +91,6 @@ WINTRUST_FILE_INFO_=WINTRUST_FILE_INFO
 WINTRUST_SGNR_INFO_=WINTRUST_SGNR_INFO
 WINTRUST_SIGNATURE_SETTINGS_=WINTRUST_SIGNATURE_SETTINGS
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\WinTrust.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/WinTrust.h
 --with-callconv
 *=Winapi

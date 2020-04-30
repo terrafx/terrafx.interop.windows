@@ -33,7 +33,7 @@ _GUID=Guid
 ID3D10Blob=ID3DBlob
 SIZE_T=UIntPtr
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\d3d11shadertracing.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d3d11shadertracing.h
 --with-attribute
 ID3D11ShaderTrace=Guid("36B013E6-2811-4845-BAA7-D623FE0DF104")
 ID3D11ShaderTraceFactory=Guid("1FBAD429-66AB-41CC-9617-667AC10E4459")

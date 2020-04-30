@@ -16,7 +16,7 @@ namespace TerraFX.Interop
         public uint dwResponderIdChoice;
 
         [NativeTypeName("_OCSP_BASIC_RESPONSE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/wincrypt.h:5706:5)")]
-        public _Anonymous_e__Union _Anonymous;
+        public _Anonymous_e__Union Anonymous;
 
         public FILETIME ProducedAt;
 

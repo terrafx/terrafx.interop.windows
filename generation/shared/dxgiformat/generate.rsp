@@ -17,6 +17,6 @@ TerraFX.Interop
 --output
 ../../../sources/Interop/DXGI/shared/dxgiformat
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared\dxgiformat.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared/dxgiformat.h
 --with-type
 DXGI_FORMAT=uint

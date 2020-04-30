@@ -19,4 +19,4 @@ TerraFX.Interop
 --remap
 _D3DCOLORVALUE=DXGI_RGBA
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared\dxgitype.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared/dxgitype.h

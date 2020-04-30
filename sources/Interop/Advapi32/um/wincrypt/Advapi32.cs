@@ -10,8 +10,6 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Advapi32
     {
-        private const string LibraryPath = "advapi32";
-
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CryptAcquireContextA", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptAcquireContextA([NativeTypeName("HCRYPTPROV *")] UIntPtr* phProv, [NativeTypeName("LPCSTR")] sbyte* szContainer, [NativeTypeName("LPCSTR")] sbyte* szProvider, [NativeTypeName("DWORD")] uint dwProvType, [NativeTypeName("DWORD")] uint dwFlags);

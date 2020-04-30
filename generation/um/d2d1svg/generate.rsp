@@ -61,7 +61,7 @@ TerraFX.Interop
 _D3DCOLORVALUE=DXGI_RGBA
 _GUID=Guid
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\d2d1svg.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d2d1svg.h
 --with-attribute
 ID2D1SvgAttribute=Guid("C9CDB0DD-F8C9-4E70-B7C2-301C80292C5E")
 ID2D1SvgDocument=Guid("86B88E4D-AFA4-4D7B-88E4-68A51C4A0AEC")

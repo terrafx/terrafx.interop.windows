@@ -17,7 +17,7 @@ namespace TerraFX.Interop
         public CERT_INFO* pCertInfo;
 
         [NativeTypeName("_CMSG_SIGNER_ENCODE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/wincrypt.h:6732:5)")]
-        public _Anonymous_e__Union _Anonymous;
+        public _Anonymous_e__Union Anonymous;
 
         [NativeTypeName("DWORD")]
         public uint dwKeySpec;

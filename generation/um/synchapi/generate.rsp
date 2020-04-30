@@ -28,6 +28,6 @@ _SECURITY_ATTRIBUTES=SECURITY_ATTRIBUTES
 HANDLE=IntPtr
 SIZE_T=UIntPtr
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\synchapi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/synchapi.h
 --with-callconv
 *=Winapi

@@ -19,8 +19,8 @@ TerraFX.Interop
 --output
 ../../../sources/Interop/Crypt32/um/mssip
 --remap
-__AnonymousField_mssip_L112_C5=_Anonymous
-__AnonymousField_mssip_L191_C5=_Anonymous
+__AnonymousField_mssip_L112_C5=Anonymous
+__AnonymousField_mssip_L191_C5=Anonymous
 __AnonymousRecord_mssip_L112_C5=_Anonymous_e__Union
 __AnonymousRecord_mssip_L191_C5=_Anonymous_e__Union
 _CRYPT_ALGORITHM_IDENTIFIER=CRYPT_ALGORITHM_IDENTIFIER
@@ -38,6 +38,6 @@ SIP_DISPATCH_INFO_=SIP_DISPATCH_INFO
 SIP_INDIRECT_DATA_=SIP_INDIRECT_DATA
 SIP_SUBJECTINFO_=SIP_SUBJECTINFO
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\mssip.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/mssip.h
 --with-callconv
 *=Winapi

@@ -35,7 +35,7 @@ _GUID=Guid
 GetMessageA=GetMessage
 SIZE_T=UIntPtr
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\dxgidebug.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/dxgidebug.h
 --with-attribute
 DXGI_DEBUG_RLO_FLAGS=Flags
 IDXGIDebug=Guid("119E7452-DE9E-40FE-8806-88F90C12B441")

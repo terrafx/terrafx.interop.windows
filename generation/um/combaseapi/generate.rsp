@@ -42,6 +42,6 @@ CWMO_FLAGS=Flags
 REGCLS=Flags
 STDMSHLFLAGS=Flags
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\combaseapi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/combaseapi.h
 --with-callconv
 *=Winapi
