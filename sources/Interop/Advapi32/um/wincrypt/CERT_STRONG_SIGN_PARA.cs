@@ -16,7 +16,7 @@ namespace TerraFX.Interop
         public uint dwInfoChoice;
 
         [NativeTypeName("_CERT_STRONG_SIGN_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/wincrypt.h:6533:5)")]
-        public _Anonymous_e__Union Anonymous
+        public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union

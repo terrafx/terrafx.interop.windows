@@ -58,7 +58,7 @@ namespace TerraFX.Interop
         public uint dwUnionChoice;
 
         [NativeTypeName("SIP_SUBJECTINFO_::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/mssip.h:112:5)")]
-        public _Anonymous_e__Union Anonymous
+        public _Anonymous_e__Union Anonymous;
 
         [NativeTypeName("LPVOID")]
         public void* pClientData;

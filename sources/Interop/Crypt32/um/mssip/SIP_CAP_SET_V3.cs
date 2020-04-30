@@ -19,7 +19,7 @@ namespace TerraFX.Interop
         public int isMultiSign;
 
         [NativeTypeName("_SIP_CAP_SET_V3::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/mssip.h:191:5)")]
-        public _Anonymous_e__Union Anonymous
+        public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
