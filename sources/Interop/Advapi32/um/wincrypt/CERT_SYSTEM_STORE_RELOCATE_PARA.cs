@@ -11,10 +11,10 @@ namespace TerraFX.Interop
     public partial struct CERT_SYSTEM_STORE_RELOCATE_PARA
     {
         [NativeTypeName("_CERT_SYSTEM_STORE_RELOCATE_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/wincrypt.h:9483:5)")]
-        public _Anonymous1_e__Union _Anonymous1;
+        public _Anonymous1_e__Union Anonymous1
 
         [NativeTypeName("_CERT_SYSTEM_STORE_RELOCATE_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/wincrypt.h:9487:5)")]
-        public _Anonymous2_e__Union _Anonymous2;
+        public _Anonymous2_e__Union Anonymous2
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous1_e__Union

@@ -33,7 +33,7 @@ namespace TerraFX.Interop
         public uint dwKeyChoice;
 
         [NativeTypeName("_CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/wincrypt.h:6946:5)")]
-        public _Anonymous_e__Union _Anonymous;
+        public _Anonymous_e__Union Anonymous
 
         [NativeTypeName("CRYPT_DATA_BLOB")]
         public CRYPTOAPI_BLOB UserKeyingMaterial;

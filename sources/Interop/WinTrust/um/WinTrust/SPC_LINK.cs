@@ -13,10 +13,10 @@ namespace TerraFX.Interop
         public uint dwLinkChoice;
 
         [NativeTypeName("SPC_LINK_::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/WinTrust.h:1280:5)")]
-        public Anonymous_e__Union Anonymous;
+        public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct Anonymous_e__Union
+        public unsafe partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
             [NativeTypeName("LPWSTR")]

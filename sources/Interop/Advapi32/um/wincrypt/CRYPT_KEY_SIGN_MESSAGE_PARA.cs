@@ -17,7 +17,7 @@ namespace TerraFX.Interop
         public uint dwMsgAndCertEncodingType;
 
         [NativeTypeName("_CRYPT_KEY_SIGN_MESSAGE_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/wincrypt.h:16157:5)")]
-        public _Anonymous_e__Union _Anonymous;
+        public _Anonymous_e__Union Anonymous
 
         [NativeTypeName("DWORD")]
         public uint dwKeySpec;

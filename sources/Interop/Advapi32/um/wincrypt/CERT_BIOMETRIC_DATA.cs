@@ -13,7 +13,7 @@ namespace TerraFX.Interop
         public uint dwTypeOfBiometricDataChoice;
 
         [NativeTypeName("_CERT_BIOMETRIC_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/wincrypt.h:5553:5)")]
-        public _Anonymous_e__Union _Anonymous;
+        public _Anonymous_e__Union Anonymous
 
         public CERT_HASHED_URL HashedUrl;
 

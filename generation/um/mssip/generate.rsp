@@ -19,8 +19,8 @@ TerraFX.Interop
 --output
 ../../../sources/Interop/Crypt32/um/mssip
 --remap
-__AnonymousField_mssip_L112_C5=_Anonymous
-__AnonymousField_mssip_L191_C5=_Anonymous
+__AnonymousField_mssip_L112_C5=Anonymous
+__AnonymousField_mssip_L191_C5=Anonymous
 __AnonymousRecord_mssip_L112_C5=_Anonymous_e__Union
 __AnonymousRecord_mssip_L191_C5=_Anonymous_e__Union
 _CRYPT_ALGORITHM_IDENTIFIER=CRYPT_ALGORITHM_IDENTIFIER

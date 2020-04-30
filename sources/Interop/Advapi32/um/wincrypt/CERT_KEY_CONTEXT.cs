@@ -14,7 +14,7 @@ namespace TerraFX.Interop
         public uint cbSize;
 
         [NativeTypeName("_CERT_KEY_CONTEXT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/wincrypt.h:9358:5)")]
-        public _Anonymous_e__Union _Anonymous;
+        public _Anonymous_e__Union Anonymous
 
         [NativeTypeName("DWORD")]
         public uint dwKeySpec;

@@ -14,7 +14,7 @@ namespace TerraFX.Interop
         public uint cbSize;
 
         [NativeTypeName("_CMSG_CTRL_KEY_AGREE_DECRYPT_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/wincrypt.h:8089:5)")]
-        public _Anonymous_e__Union _Anonymous;
+        public _Anonymous_e__Union Anonymous
 
         [NativeTypeName("DWORD")]
         public uint dwKeySpec;

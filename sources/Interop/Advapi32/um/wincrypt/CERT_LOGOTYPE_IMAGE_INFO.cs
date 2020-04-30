@@ -25,7 +25,7 @@ namespace TerraFX.Interop
         public uint dwLogotypeImageResolutionChoice;
 
         [NativeTypeName("_CERT_LOGOTYPE_IMAGE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/wincrypt.h:5456:5)")]
-        public _Anonymous_e__Union _Anonymous;
+        public _Anonymous_e__Union Anonymous
 
         [NativeTypeName("LPWSTR")]
         public ushort* pwszLanguage;

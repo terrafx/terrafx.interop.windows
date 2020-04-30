@@ -15,7 +15,7 @@ namespace TerraFX.Interop
         public uint dwCertStatus;
 
         [NativeTypeName("_OCSP_BASIC_RESPONSE_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/wincrypt.h:5682:5)")]
-        public _Anonymous_e__Union _Anonymous;
+        public _Anonymous_e__Union Anonymous
 
         public FILETIME ThisUpdate;
 
