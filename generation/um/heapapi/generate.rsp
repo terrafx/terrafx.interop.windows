@@ -24,6 +24,6 @@ HANDLE=IntPtr
 PSIZE_T=UIntPtr*
 SIZE_T=UIntPtr
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\heapapi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/heapapi.h
 --with-callconv
 *=Winapi

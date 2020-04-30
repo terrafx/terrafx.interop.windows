@@ -91,6 +91,6 @@ WINTRUST_FILE_INFO_=WINTRUST_FILE_INFO
 WINTRUST_SGNR_INFO_=WINTRUST_SGNR_INFO
 WINTRUST_SIGNATURE_SETTINGS_=WINTRUST_SIGNATURE_SETTINGS
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\WinTrust.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/WinTrust.h
 --with-callconv
 *=Winapi

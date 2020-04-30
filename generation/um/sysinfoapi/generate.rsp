@@ -37,6 +37,6 @@ _SYSTEMTIME=SYSTEMTIME
 DWORD_PTR=uint*
 HANDLE=IntPtr
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\sysinfoapi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/sysinfoapi.h
 --with-callconv
 *=Winapi

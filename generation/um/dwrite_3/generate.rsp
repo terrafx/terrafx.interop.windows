@@ -42,7 +42,7 @@ tagLOGFONTA=LOGFONTA
 tagLOGFONTW=LOGFONTW
 tagPOINT=POINT
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\dwrite_3.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/dwrite_3.h
 --with-attribute
 DWRITE_AUTOMATIC_FONT_AXES=Flags
 DWRITE_FONT_AXIS_ATTRIBUTES=Flags

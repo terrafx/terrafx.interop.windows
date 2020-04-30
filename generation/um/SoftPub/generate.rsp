@@ -41,6 +41,6 @@ DRIVER_VER_MAJORMINOR_=DRIVER_VER_MAJORMINOR
 HANDLE=IntPtr
 ULONG_PTR=UIntPtr
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\SoftPub.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/SoftPub.h
 --with-callconv
 *=Winapi

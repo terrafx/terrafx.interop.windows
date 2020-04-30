@@ -188,7 +188,7 @@ tagPROPBAG2=PROPBAG2
 tagPROPVARIANT=PROPVARIANT
 ULONG_PTR=UIntPtr
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\wincodecsdk.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/wincodecsdk.h
 --with-attribute
 IWICComponentFactory=Guid("412D0C3A-9650-44FA-AF5B-DD2A06C8E8FB")
 IWICMetadataBlockReader=Guid("FEAA2A8D-B3F3-43E4-B25C-D1DE990A1AE1")

@@ -239,7 +239,7 @@ UINT_PTR=UIntPtr
 ULONG_PTR=UIntPtr
 WPARAM=UIntPtr
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\WinUser.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/WinUser.h
 --with-callconv
 *=Winapi
 --with-type

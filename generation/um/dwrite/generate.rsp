@@ -38,7 +38,7 @@ tagLOGFONTW=LOGFONTW
 tagRECT=RECT
 tagSIZE=SIZE
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\dwrite.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/dwrite.h
 --with-attribute
 DWRITE_FONT_SIMULATIONS=Flags
 DWRITE_SCRIPT_SHAPES=Flags

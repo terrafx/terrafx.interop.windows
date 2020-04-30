@@ -24,4 +24,4 @@ TerraFX.Interop
 _GUID=Guid
 _VIDEOPARAMETERS=VIDEOPARAMETERS
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared\tvout.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared/tvout.h

@@ -26,6 +26,6 @@ _XINPUT_KEYSTROKE=XINPUT_KEYSTROKE
 _XINPUT_STATE=XINPUT_STATE
 _XINPUT_VIBRATION=XINPUT_VIBRATION
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\Xinput.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/Xinput.h
 --with-callconv
 *=Winapi

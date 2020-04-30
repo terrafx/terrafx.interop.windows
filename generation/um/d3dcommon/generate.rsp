@@ -47,7 +47,7 @@ _GUID=Guid
 ID3D10Blob=ID3DBlob
 SIZE_T=UIntPtr
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um\d3dcommon.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d3dcommon.h
 --with-attribute
 D3D_PARAMETER_FLAGS=Flags
 D3D_SHADER_CBUFFER_FLAGS=Flags
