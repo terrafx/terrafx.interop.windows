@@ -10,8 +10,6 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class WinTrust
     {
-        private const string LibraryPath = "wintrust";
-
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "WinVerifyTrust", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
         public static extern int WinVerifyTrust([NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("GUID *")] Guid* pgActionID, [NativeTypeName("LPVOID")] void* pWVTData);
