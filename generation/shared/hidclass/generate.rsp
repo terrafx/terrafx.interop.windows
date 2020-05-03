@@ -1,0 +1,26 @@
+--additional
+-m32
+--config
+multi-file
+--file
+shared-hidclass.h
+--headerFile
+header.txt
+--include-directory
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+--include-directory
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+--libraryPath
+hid
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
+--output
+../../../sources/Interop/Windows/shared/hidclass
+--remap
+_HID_COLLECTION_INFORMATION=HID_COLLECTION_INFORMATION
+_HID_DRIVER_CONFIG=HID_DRIVER_CONFIG
+_HID_XFER_PACKET=HID_XFER_PACKET
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared/hidclass.h

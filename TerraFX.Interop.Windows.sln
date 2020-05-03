@@ -609,6 +609,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mssip", "mssip", "{CB299971
 		generation\um\mssip\um-mssip.h = generation\um\mssip\um-mssip.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hid", "Hid", "{7B16D394-6BA3-4E14-B7D7-74406CB7091D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraFX.Interop.Hid", "sources\Interop\Hid\TerraFX.Interop.Hid.csproj", "{76F08927-F5CF-43B1-8FD2-B4983904FDF4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -743,6 +747,10 @@ Global
 		{E8E70EEC-1DC8-42C8-9C69-2DC02AC7A76B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8E70EEC-1DC8-42C8-9C69-2DC02AC7A76B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8E70EEC-1DC8-42C8-9C69-2DC02AC7A76B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76F08927-F5CF-43B1-8FD2-B4983904FDF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76F08927-F5CF-43B1-8FD2-B4983904FDF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76F08927-F5CF-43B1-8FD2-B4983904FDF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76F08927-F5CF-43B1-8FD2-B4983904FDF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -874,6 +882,8 @@ Global
 		{806E005D-A8C4-41A7-AE4E-292CB96C1C59} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{3E9056CE-8852-4DE8-AC76-182401F7EBD1} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{CB299971-15C7-4F00-9329-D8B3AAE2227E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{7B16D394-6BA3-4E14-B7D7-74406CB7091D} = {70FBCFD9-B96E-4E72-B35C-681D9B2DA3D6}
+		{76F08927-F5CF-43B1-8FD2-B4983904FDF4} = {7B16D394-6BA3-4E14-B7D7-74406CB7091D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
