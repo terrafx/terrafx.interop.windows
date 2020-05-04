@@ -1,0 +1,29 @@
+--additional
+-m32
+--config
+multi-file
+--file
+um-ioapiset.h
+--headerFile
+header.txt
+--include-directory
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+--include-directory
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+--libraryPath
+kernel32
+--methodClassName
+Kernel32
+--namespace
+TerraFX.Interop
+--output
+../../../sources/Interop/Kernel32/um/ioapiset
+--remap
+_OVERLAPPED=OVERLAPPED
+_OVERLAPPED_ENTRY=OVERLAPPED_ENTRY
+HANDLE=IntPtr
+LPOVERLAPPED *=IntPtr
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/ioapiset.h
+--with-callconv
+*=Winapi
