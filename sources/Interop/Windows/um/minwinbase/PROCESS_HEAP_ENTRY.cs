@@ -24,21 +24,22 @@ namespace TerraFX.Interop
 
         [NativeTypeName("WORD")]
         public ushort wFlags;
-        [NativeTypeName("PROCESS_HEAP_ENTRY::(anonymous union at um/minwinbase.h:242:5)")]
-        public _Anonymous_e__Union Anonymous;
+
+        [NativeTypeName("_PROCESS_HEAP_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/minwinbase.h:242:5)")]
+        public _Anonymous_e__Union1 Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
+        public partial struct _Anonymous_e__Union1
         {
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at um/minwinbase.h:243:9)")]
-            public _Block_e__Struct Block;
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/minwinbase.h:243:9)")]
+            public _Anonymous_e__Union2 Block;
 
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at um/minwinbase.h:247:9)")]
-            public _Region_e__Struct Region;
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/minwinbase.h:247:9)")]
+            public _Anonymous_e__Union3 Region;
 
-            public unsafe partial struct _Block_e__Struct
+            public unsafe partial struct _Anonymous_e__Union2
             {
                 [NativeTypeName("HANDLE")]
                 public IntPtr hMem;
@@ -47,7 +48,7 @@ namespace TerraFX.Interop
                 public fixed uint dwReserved[3];
             }
 
-            public unsafe partial struct _Region_e__Struct
+            public unsafe partial struct _Anonymous_e__Union3
             {
                 [NativeTypeName("DWORD")]
                 public uint dwCommittedSize;
