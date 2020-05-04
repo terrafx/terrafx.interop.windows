@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public static partial class Kernel32
+    public static partial class Windows
     {
         public const uint STATUS_WAIT_0 = 0x00000000;
 
