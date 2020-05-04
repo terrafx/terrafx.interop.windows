@@ -3,6 +3,7 @@
 // Ported from shared/hidpi.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
@@ -18,58 +19,58 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool HidP_IsSameUsageAndPage(USAGE_AND_PAGE* u1, USAGE_AND_PAGE* u2) => *(uint*)u1 == *(uint*)u2;
 
-        public static int HidP_SetButtons(HIDP_REPORT_TYPE ReportType, ushort UsagePage, ushort LinkCollection, ushort* UsageList, uint* UsageLength, HIDP_PREPARSED_DATA* PreparsedData, sbyte* Report, uint ReportLength) =>
+        public static int HidP_SetButtons(HIDP_REPORT_TYPE ReportType, ushort UsagePage, ushort LinkCollection, ushort* UsageList, uint* UsageLength, IntPtr PreparsedData, sbyte* Report, uint ReportLength) =>
             HidP_SetUsages(ReportType, UsagePage, LinkCollection, UsageList, UsageLength, PreparsedData, Report, ReportLength);
 
-        public static int HidP_UnsetButtons(HIDP_REPORT_TYPE ReportType, ushort UsagePage, ushort LinkCollection, ushort* UsageList, uint* UsageLength, HIDP_PREPARSED_DATA* PreparsedData, sbyte* Report, uint ReportLength) =>
+        public static int HidP_UnsetButtons(HIDP_REPORT_TYPE ReportType, ushort UsagePage, ushort LinkCollection, ushort* UsageList, uint* UsageLength, IntPtr PreparsedData, sbyte* Report, uint ReportLength) =>
             HidP_UnsetUsages(ReportType, UsagePage, LinkCollection, UsageList, UsageLength, PreparsedData, Report, ReportLength);
 
-        public static int HidP_GetButtons(HIDP_REPORT_TYPE ReportType, ushort UsagePage, ushort LinkCollection, ushort* UsageList, uint* UsageLength, HIDP_PREPARSED_DATA* PreparsedData, sbyte* Report, uint ReportLength) =>
+        public static int HidP_GetButtons(HIDP_REPORT_TYPE ReportType, ushort UsagePage, ushort LinkCollection, ushort* UsageList, uint* UsageLength, IntPtr PreparsedData, sbyte* Report, uint ReportLength) =>
             HidP_GetUsages(ReportType, UsagePage, LinkCollection, UsageList, UsageLength, PreparsedData, Report, ReportLength);
 
-        public static int HidP_GetButtonsEx(HIDP_REPORT_TYPE ReportType, ushort LinkCollection, USAGE_AND_PAGE* ButtonList, uint* UsageLength, HIDP_PREPARSED_DATA* PreparsedData, sbyte* Report, uint ReportLength) =>
+        public static int HidP_GetButtonsEx(HIDP_REPORT_TYPE ReportType, ushort LinkCollection, USAGE_AND_PAGE* ButtonList, uint* UsageLength, IntPtr PreparsedData, sbyte* Report, uint ReportLength) =>
             HidP_GetUsagesEx(ReportType, LinkCollection, ButtonList, UsageLength, PreparsedData, Report, ReportLength);
 
-        public static int HIDP_ERROR_CODES(int sev, int code) => ((sev) << 28) | (FACILITY_HID_ERROR_CODE << 16) | code;
+        public static int HIDP_ERROR_CODES(int sev, int code) => (sev << 28) | (FACILITY_HID_ERROR_CODE << 16) | code;
 
-        public static readonly int HIDP_STATUS_SUCCESS = HIDP_ERROR_CODES(0x0, 0);
+        public const int HIDP_STATUS_SUCCESS = 0x00110000;
 
-        public static readonly int HIDP_STATUS_NULL = HIDP_ERROR_CODES(0x8, 1);
+        public const int HIDP_STATUS_NULL = unchecked((int)0x80110001);
 
-        public static readonly int HIDP_STATUS_INVALID_PREPARSED_DATA = HIDP_ERROR_CODES(0xC, 1);
+        public const int HIDP_STATUS_INVALID_PREPARSED_DATA = unchecked((int)0xC0110001);
 
-        public static readonly int HIDP_STATUS_INVALID_REPORT_TYPE = HIDP_ERROR_CODES(0xC, 2);
+        public const int HIDP_STATUS_INVALID_REPORT_TYPE = unchecked((int)0xC0110002);
 
-        public static readonly int HIDP_STATUS_INVALID_REPORT_LENGTH = HIDP_ERROR_CODES(0xC, 3);
+        public const int HIDP_STATUS_INVALID_REPORT_LENGTH = unchecked((int)0xC0110003);
 
-        public static readonly int HIDP_STATUS_USAGE_NOT_FOUND = HIDP_ERROR_CODES(0xC, 4);
+        public const int HIDP_STATUS_USAGE_NOT_FOUND = unchecked((int)0xC0110004);
 
-        public static readonly int HIDP_STATUS_VALUE_OUT_OF_RANGE = HIDP_ERROR_CODES(0xC, 5);
+        public const int HIDP_STATUS_VALUE_OUT_OF_RANGE = unchecked((int)0xC0110005);
 
-        public static readonly int HIDP_STATUS_BAD_LOG_PHY_VALUES = HIDP_ERROR_CODES(0xC, 6);
+        public const int HIDP_STATUS_BAD_LOG_PHY_VALUES = unchecked((int)0xC0110006);
 
-        public static readonly int HIDP_STATUS_BUFFER_TOO_SMALL = HIDP_ERROR_CODES(0xC, 7);
+        public const int HIDP_STATUS_BUFFER_TOO_SMALL = unchecked((int)0xC0110007);
 
-        public static readonly int HIDP_STATUS_INTERNAL_ERROR = HIDP_ERROR_CODES(0xC, 8);
+        public const int HIDP_STATUS_INTERNAL_ERROR = unchecked((int)0xC0110008);
 
-        public static readonly int HIDP_STATUS_I8042_TRANS_UNKNOWN = HIDP_ERROR_CODES(0xC, 9);
+        public const int HIDP_STATUS_I8042_TRANS_UNKNOWN = unchecked((int)0xC0110009);
 
-        public static readonly int HIDP_STATUS_INCOMPATIBLE_REPORT_ID = HIDP_ERROR_CODES(0xC, 0xA);
+        public const int HIDP_STATUS_INCOMPATIBLE_REPORT_ID = unchecked((int)0xC011000A);
 
-        public static readonly int HIDP_STATUS_NOT_VALUE_ARRAY = HIDP_ERROR_CODES(0xC, 0xB);
+        public const int HIDP_STATUS_NOT_VALUE_ARRAY = unchecked((int)0xC011000B);
 
-        public static readonly int HIDP_STATUS_IS_VALUE_ARRAY = HIDP_ERROR_CODES(0xC, 0xC);
+        public const int HIDP_STATUS_IS_VALUE_ARRAY = unchecked((int)0xC011000C);
 
-        public static readonly int HIDP_STATUS_DATA_INDEX_NOT_FOUND = HIDP_ERROR_CODES(0xC, 0xD);
+        public const int HIDP_STATUS_DATA_INDEX_NOT_FOUND = unchecked((int)0xC011000D);
 
-        public static readonly int HIDP_STATUS_DATA_INDEX_OUT_OF_RANGE = HIDP_ERROR_CODES(0xC, 0xE);
+        public const int HIDP_STATUS_DATA_INDEX_OUT_OF_RANGE = unchecked((int)0xC011000E);
 
-        public static readonly int HIDP_STATUS_BUTTON_NOT_PRESSED = HIDP_ERROR_CODES(0xC, 0xF);
+        public const int HIDP_STATUS_BUTTON_NOT_PRESSED = unchecked((int)0xC011000F);
 
-        public static readonly int HIDP_STATUS_REPORT_DOES_NOT_EXIST = HIDP_ERROR_CODES(0xC, 0x10);
+        public const int HIDP_STATUS_REPORT_DOES_NOT_EXIST = unchecked((int)0xC0110010);
 
-        public static readonly int HIDP_STATUS_NOT_IMPLEMENTED = HIDP_ERROR_CODES(0xC, 0x20);
+        public const int HIDP_STATUS_NOT_IMPLEMENTED = unchecked((int)0xC0110020);
 
-        public static readonly int HIDP_STATUS_I8242_TRANS_UNKNOWN = HIDP_STATUS_I8042_TRANS_UNKNOWN;
+        public const int HIDP_STATUS_I8242_TRANS_UNKNOWN = unchecked((int)0xC0110009);
     }
 }

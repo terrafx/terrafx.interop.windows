@@ -27,56 +27,56 @@ namespace TerraFX.Interop
 
         public static int HID_OUT_CTL_CODE(int id) => CTL_CODE(FILE_DEVICE_KEYBOARD, id, METHOD_OUT_DIRECT, FILE_ANY_ACCESS);
 
-        public static readonly int IOCTL_HID_GET_DRIVER_CONFIG = HID_BUFFER_CTL_CODE(100);
+        public const int IOCTL_HID_GET_DRIVER_CONFIG = 0x000B0190;
 
-        public static readonly int IOCTL_HID_SET_DRIVER_CONFIG = HID_BUFFER_CTL_CODE(101);
+        public const int IOCTL_HID_SET_DRIVER_CONFIG = 0x000B0194;
 
-        public static readonly int IOCTL_HID_GET_POLL_FREQUENCY_MSEC = HID_BUFFER_CTL_CODE(102);
+        public const int IOCTL_HID_GET_POLL_FREQUENCY_MSEC = 0x000B0198;
 
-        public static readonly int IOCTL_HID_SET_POLL_FREQUENCY_MSEC = HID_BUFFER_CTL_CODE(103);
+        public const int IOCTL_HID_SET_POLL_FREQUENCY_MSEC = 0x000B019C;
 
-        public static readonly int IOCTL_GET_NUM_DEVICE_INPUT_BUFFERS = HID_BUFFER_CTL_CODE(104);
+        public const int IOCTL_GET_NUM_DEVICE_INPUT_BUFFERS = 0x000B01A0;
 
-        public static readonly int IOCTL_SET_NUM_DEVICE_INPUT_BUFFERS = HID_BUFFER_CTL_CODE(105);
+        public const int IOCTL_SET_NUM_DEVICE_INPUT_BUFFERS = 0x000B01A4;
 
-        public static readonly int IOCTL_HID_GET_COLLECTION_INFORMATION = HID_BUFFER_CTL_CODE(106);
+        public const int IOCTL_HID_GET_COLLECTION_INFORMATION = 0x000B01A8;
 
-        public static readonly int IOCTL_HID_ENABLE_WAKE_ON_SX = HID_BUFFER_CTL_CODE(107);
+        public const int IOCTL_HID_ENABLE_WAKE_ON_SX = 0x000B01AC;
 
-        public static readonly int IOCTL_HID_SET_S0_IDLE_TIMEOUT = HID_BUFFER_CTL_CODE(108);
+        public const int IOCTL_HID_SET_S0_IDLE_TIMEOUT = 0x000B01B0;
 
-        public static readonly int IOCTL_HID_GET_COLLECTION_DESCRIPTOR = HID_CTL_CODE(100);
+        public const int IOCTL_HID_GET_COLLECTION_DESCRIPTOR = 0x000B0193;
 
-        public static readonly int IOCTL_HID_FLUSH_QUEUE = HID_CTL_CODE(101);
+        public const int IOCTL_HID_FLUSH_QUEUE = 0x000B0197;
 
-        public static readonly int IOCTL_HID_SET_FEATURE = HID_IN_CTL_CODE(100);
+        public const int IOCTL_HID_SET_FEATURE = 0x000B0191;
 
-        public static readonly int IOCTL_HID_SET_OUTPUT_REPORT = HID_IN_CTL_CODE(101);
+        public const int IOCTL_HID_SET_OUTPUT_REPORT = 0x000B0195;
 
-        public static readonly int IOCTL_HID_GET_FEATURE = HID_OUT_CTL_CODE(100);
+        public const int IOCTL_HID_GET_FEATURE = 0x000B0192;
 
-        public static readonly int IOCTL_GET_PHYSICAL_DESCRIPTOR = HID_OUT_CTL_CODE(102);
+        public const int IOCTL_GET_PHYSICAL_DESCRIPTOR = 0x000B019A;
 
-        public static readonly int IOCTL_HID_GET_HARDWARE_ID = HID_OUT_CTL_CODE(103);
+        public const int IOCTL_HID_GET_HARDWARE_ID = 0x000B019E;
 
-        public static readonly int IOCTL_HID_GET_INPUT_REPORT = HID_OUT_CTL_CODE(104);
+        public const int IOCTL_HID_GET_INPUT_REPORT = 0x000B01A2;
 
-        public static readonly int IOCTL_HID_GET_OUTPUT_REPORT = HID_OUT_CTL_CODE(105);
+        public const int IOCTL_HID_GET_OUTPUT_REPORT = 0x000B01A6;
 
-        public static readonly int IOCTL_HID_GET_MANUFACTURER_STRING = HID_OUT_CTL_CODE(110);
+        public const int IOCTL_HID_GET_MANUFACTURER_STRING = 0x000B01BA;
 
-        public static readonly int IOCTL_HID_GET_PRODUCT_STRING = HID_OUT_CTL_CODE(111);
+        public const int IOCTL_HID_GET_PRODUCT_STRING = 0x000B01BE;
 
-        public static readonly int IOCTL_HID_GET_SERIALNUMBER_STRING = HID_OUT_CTL_CODE(112);
+        public const int IOCTL_HID_GET_SERIALNUMBER_STRING = 0x000B01C2;
 
-        public static readonly int IOCTL_HID_GET_INDEXED_STRING = HID_OUT_CTL_CODE(120);
+        public const int IOCTL_HID_GET_INDEXED_STRING = 0x000B01E2;
 
-        public static readonly int IOCTL_HID_GET_MS_GENRE_DESCRIPTOR = HID_OUT_CTL_CODE(121);
+        public const int IOCTL_HID_GET_MS_GENRE_DESCRIPTOR = 0x000B01E6;
 
-        public static readonly int IOCTL_HID_ENABLE_SECURE_READ = HID_CTL_CODE(130);
+        public const int IOCTL_HID_ENABLE_SECURE_READ = 0x000B020B;
 
-        public static readonly int IOCTL_HID_DISABLE_SECURE_READ = HID_CTL_CODE(131);
+        public const int IOCTL_HID_DISABLE_SECURE_READ = 0x000B020F;
 
-        public static readonly int IOCTL_HID_DEVICERESET_NOTIFICATION = HID_CTL_CODE(140);
+        public const int IOCTL_HID_DEVICERESET_NOTIFICATION = 0x000B0233;
     }
 }
