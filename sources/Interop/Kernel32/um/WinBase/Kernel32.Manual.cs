@@ -17,12 +17,12 @@ namespace TerraFX.Interop
 
         public const uint WAIT_FAILED = 0xFFFFFFFF;
 
-        public const uint WAIT_OBJECT_0 = STATUS_WAIT_0 + 0;
+        public const uint WAIT_OBJECT_0 = Windows.STATUS_WAIT_0 + 0;
 
-        public const uint WAIT_ABANDONED = STATUS_ABANDONED_WAIT_0 + 0;
+        public const uint WAIT_ABANDONED = Windows.STATUS_ABANDONED_WAIT_0 + 0;
 
-        public const uint WAIT_ABANDONED_0 = STATUS_ABANDONED_WAIT_0 + 0;
+        public const uint WAIT_ABANDONED_0 = Windows.STATUS_ABANDONED_WAIT_0 + 0;
 
-        public const uint WAIT_IO_COMPLETION = STATUS_USER_APC;
+        public const uint WAIT_IO_COMPLETION = Windows.STATUS_USER_APC;
     }
 }
