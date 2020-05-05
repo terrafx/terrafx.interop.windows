@@ -4,6 +4,6 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Advapi32
     {
-        private const string LibraryPath = "Kernel32";
+        private const string LibraryPath = "kernel32";
     }
 }
