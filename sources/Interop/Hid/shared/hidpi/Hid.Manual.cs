@@ -31,6 +31,7 @@ namespace TerraFX.Interop
         public static int HidP_GetButtonsEx(HIDP_REPORT_TYPE ReportType, ushort LinkCollection, USAGE_AND_PAGE* ButtonList, uint* UsageLength, IntPtr PreparsedData, sbyte* Report, uint ReportLength) =>
             HidP_GetUsagesEx(ReportType, LinkCollection, ButtonList, UsageLength, PreparsedData, Report, ReportLength);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int HIDP_ERROR_CODES(int sev, int code) => (sev << 28) | (FACILITY_HID_ERROR_CODE << 16) | code;
 
         public const int HIDP_STATUS_SUCCESS = 0x00110000;
