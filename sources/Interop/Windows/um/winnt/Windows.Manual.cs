@@ -186,5 +186,15 @@ namespace TerraFX.Interop
         public const uint RTL_CONDITION_VARIABLE_INIT = 0;
 
         public const uint RTL_CONDITION_VARIABLE_LOCKMODE_SHARED = 0x1;
+
+        public const uint APPLICATION_ERROR_MASK = 0x20000000;
+
+        public const uint ERROR_SEVERITY_SUCCESS = 0x00000000;
+
+        public const uint ERROR_SEVERITY_INFORMATIONAL = 0x40000000;
+
+        public const uint ERROR_SEVERITY_WARNING = 0x80000000;
+
+        public const uint ERROR_SEVERITY_ERROR = 0xC0000000;
     }
 }
