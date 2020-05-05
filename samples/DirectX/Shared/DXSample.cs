@@ -57,6 +57,13 @@ namespace TerraFX.Samples.DirectX
             GC.SuppressFinalize(this);
         }
 
+        public virtual void OnResize(uint width, uint height)
+        {
+            _width = width;
+            _height = height;
+            _aspectRatio = width / ((float)height);
+        }
+
         public abstract void OnInit();
 
         public abstract void OnUpdate();

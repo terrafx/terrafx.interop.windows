@@ -613,6 +613,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hid", "Hid", "{7B16D394-6BA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraFX.Interop.Hid", "sources\Interop\Hid\TerraFX.Interop.Hid.csproj", "{76F08927-F5CF-43B1-8FD2-B4983904FDF4}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsDx12", "samples\WinFormsDx12\WinFormsDx12.csproj", "{D9BB5958-069D-47F4-93EB-C13C3BBDF641}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -751,6 +753,10 @@ Global
 		{76F08927-F5CF-43B1-8FD2-B4983904FDF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76F08927-F5CF-43B1-8FD2-B4983904FDF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76F08927-F5CF-43B1-8FD2-B4983904FDF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9BB5958-069D-47F4-93EB-C13C3BBDF641}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9BB5958-069D-47F4-93EB-C13C3BBDF641}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9BB5958-069D-47F4-93EB-C13C3BBDF641}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9BB5958-069D-47F4-93EB-C13C3BBDF641}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -884,6 +890,7 @@ Global
 		{CB299971-15C7-4F00-9329-D8B3AAE2227E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{7B16D394-6BA3-4E14-B7D7-74406CB7091D} = {70FBCFD9-B96E-4E72-B35C-681D9B2DA3D6}
 		{76F08927-F5CF-43B1-8FD2-B4983904FDF4} = {7B16D394-6BA3-4E14-B7D7-74406CB7091D}
+		{D9BB5958-069D-47F4-93EB-C13C3BBDF641} = {1054E499-981F-4EFA-855B-EC6FA604C6FB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
