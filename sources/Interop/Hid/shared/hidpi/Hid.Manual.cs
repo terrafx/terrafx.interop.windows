@@ -72,6 +72,6 @@ namespace TerraFX.Interop
 
         public const int HIDP_STATUS_NOT_IMPLEMENTED = unchecked((int)0xC0110020);
 
-        public const int HIDP_STATUS_I8242_TRANS_UNKNOWN = unchecked((int)0xC0110009);
+        public const int HIDP_STATUS_I8242_TRANS_UNKNOWN = HIDP_STATUS_I8042_TRANS_UNKNOWN;
     }
 }
