@@ -19,10 +19,10 @@ namespace TerraFX.Interop
         public uint dwThreadId;
 
         [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/minwinbase.h:363:5)")]
-        public _Anonymous_e__Union u;
+        public _u_e__Union u;
 
         [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
+        public partial struct _u_e__Union
         {
             [FieldOffset(0)]
             public EXCEPTION_DEBUG_INFO Exception;

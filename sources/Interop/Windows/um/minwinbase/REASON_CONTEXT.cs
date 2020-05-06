@@ -17,20 +17,20 @@ namespace TerraFX.Interop
         public uint Flags;
 
         [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/minwinbase.h:266:5)")]
-        public _Anonymous_e__Union1 Reason;
+        public _Reason_e__Union Reason;
 
         [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous_e__Union1
+        public unsafe partial struct _Reason_e__Union
         {
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/minwinbase.h:267:9)")]
-            public _Anonymous_e__Union2 Detailed;
+            public _Detailed_e__Union Detailed;
 
             [FieldOffset(0)]
             [NativeTypeName("LPWSTR")]
             public ushort* SimpleReasonString;
 
-            public unsafe partial struct _Anonymous_e__Union2
+            public unsafe partial struct _Detailed_e__Union
             {
                 [NativeTypeName("HMODULE")]
                 public IntPtr LocalizedReasonModule;
