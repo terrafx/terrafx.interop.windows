@@ -116,11 +116,11 @@ namespace TerraFX.Samples.DirectX.D3D12
             PopulateCommandList();
 
             // Execute the command list.
-            const int PPCommandListsCount = 1;
-            var ppCommandLists = stackalloc ID3D12CommandList*[PPCommandListsCount] {
+            const int CommandListsCount = 1;
+            var ppCommandLists = stackalloc ID3D12CommandList*[CommandListsCount] {
                 (ID3D12CommandList*)_commandList,
             };
-            _commandQueue->ExecuteCommandLists(PPCommandListsCount, ppCommandLists);
+            _commandQueue->ExecuteCommandLists(CommandListsCount, ppCommandLists);
 
             // Present the frame.
             ThrowIfFailed(nameof(IDXGISwapChain3.Present), _swapChain->Present(SyncInterval: 1, Flags: 0));
