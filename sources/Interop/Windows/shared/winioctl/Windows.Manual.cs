@@ -3,6 +3,8 @@
 // Ported from um/wtypesbase.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop
 {
     public static partial class Windows
@@ -193,6 +195,7 @@ namespace TerraFX.Interop
 
         public const int FILE_WRITE_ACCESS = 0x0002;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int CTL_CODE(int DeviceType, int Function, int Method, int Access) => (DeviceType << 16) | (Access << 14) | (Function << 2) | Method;
     }
 }

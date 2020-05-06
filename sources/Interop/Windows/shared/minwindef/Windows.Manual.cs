@@ -13,6 +13,8 @@ namespace TerraFX.Interop
 
         public const int TRUE = 1;
 
+        public const int MAX_PATH = 260;
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ushort MAKEWORD(byte a, byte b) => (ushort)(a | (b << 8));
 

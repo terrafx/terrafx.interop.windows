@@ -1,0 +1,30 @@
+--additional
+-m32
+--config
+multi-file
+--file
+shared-devpropdef.h
+--headerFile
+header.txt
+--include-directory
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+--include-directory
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+--libraryPath
+unused
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop
+--output
+../../../sources/Interop/Windows/shared/devpropdef
+--remap
+_DEVPROPCOMPKEY=DEVPROPCOMPKEY
+_DEVPROPERTY=DEVPROPERTY
+_DEVPROPKEY=DEVPROPKEY
+_DEVPROPSTORE=DEVPROPSTORE
+DEVPROPGUID=Guid
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared/devpropdef.h
+--with-callconv
+*=Winapi
