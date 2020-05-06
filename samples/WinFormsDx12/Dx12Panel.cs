@@ -3,7 +3,7 @@
 using System;
 using System.Windows.Forms;
 using TerraFX.Samples.DirectX.D3D12;
-namespace WinFormsDx12
+namespace TerraFX.Samples.WinForms
 {
     public class Dx12Panel : Panel
     {
