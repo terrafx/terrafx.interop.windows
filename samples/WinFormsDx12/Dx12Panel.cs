@@ -16,7 +16,7 @@ namespace TerraFX.Samples.WinForms
             Resize += Dx12Panel_Resize;
         }
 
-        private Dx12Viewport InitDxVp(int width, int height)
+        private DX12Viewport InitializeViewport(int width, int height)
         {
             var dxVp = new Dx12Viewport((uint)width, (uint)height, "Dx12Vp", Handle);
             dxVp.OnInit();
