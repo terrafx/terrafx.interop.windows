@@ -4,21 +4,21 @@ using System;
 using System.Windows.Forms;
 using TerraFX.Samples.DirectX.D3D12;
 
-namespace WinFormsDx12
+namespace TerraFX.Samples.WinForms
 {
-    public partial class MainFormWinFormsDx12 : Form
+    public partial class MainFormWinFormsDX12 : Form
     {
-        private readonly Dx12Viewport _dxVp;
+        private readonly DX12Viewport _dxVp;
 
-        public MainFormWinFormsDx12()
+        public MainFormWinFormsDX12()
         {
             InitializeComponent();
             _dxVp = InitDx12();
         }
 
-        private Dx12Viewport InitDx12()
+        private DX12Viewport InitDx12()
         {
-            var dxPanel = new Dx12Panel(MainSplitter.Panel2.Width, MainSplitter.Panel2.Height);
+            var dxPanel = new DX12Panel(MainSplitter.Panel2.Width, MainSplitter.Panel2.Height);
             MainSplitter.Panel2.Controls.Add(dxPanel);
             dxPanel.Dock = DockStyle.Fill;
             return dxPanel.DxVp;

@@ -7,18 +7,18 @@ namespace TerraFX.Samples.WinForms
 {
     public class DX12Panel : Panel
     {
-        private readonly Dx12Viewport _dxVp;
-        public Dx12Viewport DxVp => _dxVp;
+        private readonly DX12Viewport _dxVp;
+        public DX12Viewport DxVp => _dxVp;
 
-        public Dx12Panel(int width, int height) : base()
+        public DX12Panel(int width, int height) : base()
         {
-            _dxVp = InitDxVp(width, height);
-            Resize += Dx12Panel_Resize;
+            _dxVp = InitializeViewport(width, height);
+            Resize += OnResize;
         }
 
         private DX12Viewport InitializeViewport(int width, int height)
         {
-            var dxVp = new Dx12Viewport((uint)width, (uint)height, "Dx12Vp", Handle);
+            var dxVp = new DX12Viewport((uint)width, (uint)height, Handle);
             dxVp.OnInit();
             return dxVp;
         }

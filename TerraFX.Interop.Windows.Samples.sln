@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30028.174
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsDx12", "Samples\WinFormsDx12\WinFormsDx12.csproj", "{B65F682F-1AE9-4B34-AA7B-B2E03665C8BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsDX12", "Samples\WinFormsDx12\WinFormsDX12.csproj", "{B65F682F-1AE9-4B34-AA7B-B2E03665C8BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

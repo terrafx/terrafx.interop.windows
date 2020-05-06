@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
 using System;
+using System.IO;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -12,29 +13,18 @@ using static TerraFX.Interop.D3D_FEATURE_LEVEL;
 using static TerraFX.Interop.D3D_PRIMITIVE_TOPOLOGY;
 using static TerraFX.Interop.D3D_ROOT_SIGNATURE_VERSION;
 using static TerraFX.Interop.D3D12;
-using static TerraFX.Interop.D3D12_BLEND;
-using static TerraFX.Interop.D3D12_BLEND_OP;
-using static TerraFX.Interop.D3D12_COLOR_WRITE_ENABLE;
 using static TerraFX.Interop.D3D12_COMMAND_LIST_TYPE;
-using static TerraFX.Interop.D3D12_CONSERVATIVE_RASTERIZATION_MODE;
-using static TerraFX.Interop.D3D12_CPU_PAGE_PROPERTY;
-using static TerraFX.Interop.D3D12_CULL_MODE;
 using static TerraFX.Interop.D3D12_DESCRIPTOR_HEAP_TYPE;
 using static TerraFX.Interop.D3D12_FENCE_FLAGS;
-using static TerraFX.Interop.D3D12_FILL_MODE;
 using static TerraFX.Interop.D3D12_HEAP_FLAGS;
 using static TerraFX.Interop.D3D12_HEAP_TYPE;
 using static TerraFX.Interop.D3D12_INPUT_CLASSIFICATION;
-using static TerraFX.Interop.D3D12_LOGIC_OP;
-using static TerraFX.Interop.D3D12_MEMORY_POOL;
 using static TerraFX.Interop.D3D12_PRIMITIVE_TOPOLOGY_TYPE;
-using static TerraFX.Interop.D3D12_RESOURCE_DIMENSION;
-using static TerraFX.Interop.D3D12_RESOURCE_FLAGS;
 using static TerraFX.Interop.D3D12_RESOURCE_STATES;
 using static TerraFX.Interop.D3D12_ROOT_SIGNATURE_FLAGS;
-using static TerraFX.Interop.D3D12_TEXTURE_LAYOUT;
 using static TerraFX.Interop.D3DCompiler;
 using static TerraFX.Interop.DXGI;
+using static TerraFX.Interop.DXGI_ADAPTER_FLAG;
 using static TerraFX.Interop.DXGI_FORMAT;
 using static TerraFX.Interop.DXGI_SWAP_EFFECT;
 using static TerraFX.Interop.Kernel32;
@@ -43,8 +33,22 @@ using static TerraFX.Samples.DirectX.DXSampleHelper;
 
 namespace TerraFX.Samples.DirectX.D3D12
 {
-    public unsafe class DX12Viewport
+    public unsafe class DX12Viewport : IDisposable
     {
+
+        // Viewport dimensions
+        private uint _width;
+
+        private uint _height;
+
+        private float _aspectRatio;
+
+        // Adapter info
+        private readonly bool _useWarpDevice;
+
+        // Root assets path
+        private readonly string _assetsPath;
+
         private const uint FrameCount = 2;
 
         // Pipeline objects
@@ -61,7 +65,7 @@ namespace TerraFX.Samples.DirectX.D3D12
         private ID3D12GraphicsCommandList* _commandList;
         private uint _rtvDescriptorSize;
         private readonly IntPtr _hWnd;
-        private readonly Random _random;
+        private bool _isOnColorToggle;
 
         // App resources.
         private ID3D12Resource* _vertexBuffer;
@@ -73,9 +77,22 @@ namespace TerraFX.Samples.DirectX.D3D12
         private ID3D12Fence* _fence;
         private ulong _fenceValue;
 
-        public Dx12Viewport(uint width, uint height, string name, IntPtr hWnd)
-            : base(width, height, name)
+
+        public uint Width => _width;
+
+        public uint Height => _height;
+
+        public float AspectRatio => _aspectRatio;
+
+        public bool UseWarpDevice => _useWarpDevice;
+
+        public DX12Viewport(uint width, uint height, IntPtr hWnd, bool useWarpDevice = false)
         {
+            _width = width;
+            _height = height;
+            _assetsPath = GetAssetsPath();
+            _aspectRatio = width / ((float)height);
+
             _renderTargets = new ID3D12Resource*[FrameCount];
 
             _viewport = new D3D12_VIEWPORT {
@@ -95,22 +112,79 @@ namespace TerraFX.Samples.DirectX.D3D12
             };
 
             _hWnd = hWnd;
-            _random = new Random(123);
+            _useWarpDevice = useWarpDevice;
+            _isOnColorToggle = false;
         }
 
-        public override void OnInit()
+
+        public virtual void OnResize(uint width, uint height)
+        {
+            _width = width;
+            _height = height;
+            _aspectRatio = width / ((float)height);
+        }
+
+        // Samples override the event handlers to handle specific messages
+        public virtual void OnKeyDown(byte key)
+        {
+        }
+
+        public virtual void OnKeyUp(byte key)
+        {
+        }
+
+
+        // Helper function for resolving the full path of assets
+        protected string GetAssetFullPath(string assetName) => Path.Combine(_assetsPath, assetName);
+
+        // Helper function for acquiring the first available hardware adapter that supports the required Direct3D version.
+        // If no such adapter can be found, returns null.
+        protected IDXGIAdapter* GetHardwareAdapter(IDXGIFactory1* pFactory)
+        {
+            IDXGIAdapter1* adapter;
+
+            for (var adapterIndex = 0u; DXGI_ERROR_NOT_FOUND != pFactory->EnumAdapters1(adapterIndex, &adapter); ++adapterIndex)
+            {
+                DXGI_ADAPTER_DESC1 desc;
+                _ = adapter->GetDesc1(&desc);
+
+                if ((desc.Flags & (uint)DXGI_ADAPTER_FLAG_SOFTWARE) != 0)
+                {
+                    // Don't select the Basic Render Driver adapter.
+                    // If you want a software adapter, pass in "/warp" on the command line.
+                    continue;
+                }
+
+                // Check to see if the adapter supports the required Direct3D version, but don't create the
+                // actual device yet.
+                if (SupportsRequiredDirect3DVersion(adapter))
+                {
+                    break;
+                }
+            }
+
+            return (IDXGIAdapter*)adapter;
+        }
+
+        protected virtual unsafe bool SupportsRequiredDirect3DVersion(IDXGIAdapter1* adapter)
+        {
+            var iid = IID_ID3D12Device;
+            return SUCCEEDED(D3D12CreateDevice((IUnknown*)adapter, D3D_FEATURE_LEVEL_11_0, &iid, null));
+        }
+
+        public virtual void OnInit()
         {
             LoadPipeline();
             LoadAssets();
         }
 
         // Update frame-based values.
-        public override void OnUpdate()
+        public virtual void OnUpdate()
         {
         }
 
         // Render the scene.
-        public override void OnRender()
+        public virtual void OnRender()
         {
             // Record all the commands we need to render the scene into the command list.
             PopulateCommandList();
@@ -128,7 +202,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             WaitForPreviousFrame();
         }
 
-        public override void OnDestroy()
+        public virtual void OnDestroy()
         {
             // Ensure that the GPU is no longer referencing resources that are about to be
             // cleaned up by the destructor.
@@ -535,10 +609,11 @@ namespace TerraFX.Samples.DirectX.D3D12
             _commandList->OMSetRenderTargets(1, &rtvHandle, FALSE, null);
 
             // Record commands.
-            var r = _random.Next(0, 50) / 100.0f;
-            var g = _random.Next(0, 50) / 100.0f;
-            var b = _random.Next(0, 50) / 100.0f;
-            var clearColor = stackalloc float[4] { 0.0f, r, g, b };
+            _isOnColorToggle = !_isOnColorToggle;
+            var r = 0f;
+            var g = _isOnColorToggle ? 25 / 255f : 54 / 255f;
+            var b = _isOnColorToggle ? 70 / 255f : 52 / 255f;
+            var clearColor = stackalloc float[4] { r, g, b, 1f };
             _commandList->ClearRenderTargetView(rtvHandle, clearColor, NumRects: 0, null);
             _commandList->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
@@ -578,7 +653,19 @@ namespace TerraFX.Samples.DirectX.D3D12
             _frameIndex = _swapChain->GetCurrentBackBufferIndex();
         }
 
-        protected override void Dispose(bool isDisposing)
+
+        ~DX12Viewport()
+        {
+            Dispose(isDisposing: false);
+        }
+
+        public void Dispose()
+        {
+            Dispose(isDisposing: true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool isDisposing)
         {
             var swapChain = _swapChain;
 
@@ -670,8 +757,6 @@ namespace TerraFX.Samples.DirectX.D3D12
                 _fence = null;
                 _ = fence->Release();
             }
-
-            base.Dispose(isDisposing);
         }
 
         private struct Vertex

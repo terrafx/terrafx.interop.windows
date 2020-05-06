@@ -2,6 +2,7 @@
 
 using System;
 using System.Windows.Forms;
+using TerraFX.Samples.WinForms;
 
 namespace WinFormsDx12
 {
@@ -13,10 +14,10 @@ namespace WinFormsDx12
         [STAThread]
         public static void Main()
         {
-            Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            _ = Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainFormWinFormsDx12());
+            Application.Run(new MainFormWinFormsDX12());
         }
     }
 }
