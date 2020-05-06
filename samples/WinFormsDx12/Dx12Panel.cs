@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using TerraFX.Samples.DirectX.D3D12;
 namespace TerraFX.Samples.WinForms
 {
-    public class Dx12Panel : Panel
+    public class DX12Panel : Panel
     {
         private readonly Dx12Viewport _dxVp;
         public Dx12Viewport DxVp => _dxVp;
