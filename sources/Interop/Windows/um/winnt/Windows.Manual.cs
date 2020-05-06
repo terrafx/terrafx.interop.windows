@@ -197,6 +197,14 @@ namespace TerraFX.Interop
 
         public const uint ERROR_SEVERITY_ERROR = 0xC0000000;
 
+        public const uint IO_REPARSE_TAG_RESERVED_ZERO = 0;
+
+        public const uint IO_REPARSE_TAG_RESERVED_ONE = 1;
+
+        public const uint IO_REPARSE_TAG_RESERVED_TWO = 2;
+
+        public const uint IO_REPARSE_TAG_RESERVED_RANGE = IO_REPARSE_TAG_RESERVED_TWO;
+
         public const uint IO_REPARSE_TAG_MOUNT_POINT = 0xA0000003;
 
         public const uint IO_REPARSE_TAG_HSM = 0xC0000004;
