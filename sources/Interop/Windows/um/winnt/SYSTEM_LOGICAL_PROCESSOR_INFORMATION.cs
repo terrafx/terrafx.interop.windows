@@ -15,18 +15,18 @@ namespace TerraFX.Interop
         public LOGICAL_PROCESSOR_RELATIONSHIP Relationship;
 
         [NativeTypeName("_SYSTEM_LOGICAL_PROCESSOR_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h:12420:5)")]
-        public _Anonymous_e__Union1 Anonymous;
+        public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous_e__Union1
+        public unsafe partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h:12421:9)")]
-            public _Anonymous_e__Union2 ProcessorCore;
+            public _ProcessorCore_e__Union ProcessorCore;
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h:12424:9)")]
-            public _Anonymous_e__Union3 NumaNode;
+            public _NumaNode_e__Union NumaNode;
 
             [FieldOffset(0)]
             public CACHE_DESCRIPTOR Cache;
@@ -35,13 +35,13 @@ namespace TerraFX.Interop
             [NativeTypeName("ULONGLONG [2]")]
             public fixed ulong Reserved[2];
 
-            public partial struct _Anonymous_e__Union2
+            public partial struct _ProcessorCore_e__Union
             {
                 [NativeTypeName("BYTE")]
                 public byte Flags;
             }
 
-            public partial struct _Anonymous_e__Union3
+            public partial struct _NumaNode_e__Union
             {
                 [NativeTypeName("DWORD")]
                 public uint NodeNumber;

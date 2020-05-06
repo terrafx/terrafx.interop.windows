@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
@@ -19,12 +20,16 @@ namespace TerraFX.Interop
 
         public static readonly Guid GUID_CLASS_INPUT = GUID_DEVINTERFACE_HID;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int HID_CTL_CODE(int id) => CTL_CODE(FILE_DEVICE_KEYBOARD, id, METHOD_NEITHER, FILE_ANY_ACCESS);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int HID_BUFFER_CTL_CODE(int id) => CTL_CODE(FILE_DEVICE_KEYBOARD, id, METHOD_BUFFERED, FILE_ANY_ACCESS);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int HID_IN_CTL_CODE(int id) => CTL_CODE(FILE_DEVICE_KEYBOARD, id, METHOD_IN_DIRECT, FILE_ANY_ACCESS);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int HID_OUT_CTL_CODE(int id) => CTL_CODE(FILE_DEVICE_KEYBOARD, id, METHOD_OUT_DIRECT, FILE_ANY_ACCESS);
 
         public const int IOCTL_HID_GET_DRIVER_CONFIG = 0x000B0190;

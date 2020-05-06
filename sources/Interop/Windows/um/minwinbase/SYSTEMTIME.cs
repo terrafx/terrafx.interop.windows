@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct SYSTEMTIME
+    public partial struct SYSTEMTIME
     {
         [NativeTypeName("WORD")]
         public ushort wYear;

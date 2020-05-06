@@ -3,6 +3,8 @@
 // Ported from um/synchapi.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using static TerraFX.Interop.Windows;
+
 namespace TerraFX.Interop
 {
     public static unsafe partial class Kernel32
