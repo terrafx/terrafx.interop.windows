@@ -43,7 +43,7 @@ using static TerraFX.Samples.DirectX.DXSampleHelper;
 
 namespace TerraFX.Samples.DirectX.D3D12
 {
-    public unsafe class Dx12Viewport : DX12Sample
+    public unsafe class DX12Viewport
     {
         private const uint FrameCount = 2;
 
