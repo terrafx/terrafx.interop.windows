@@ -23,7 +23,7 @@ namespace TerraFX.Samples.WinForms
             return dxVp;
         }
 
-        private void Dx12Panel_Resize(object? sender, EventArgs e)
+        private void OnResize(object? sender, EventArgs eventArgs)
         {
             _dxVp.OnResize((uint)Width, (uint)Height);
             // _dxVp.OnInit(); // IB: crashes on resoure reinitialization, needs instead a _dxVp.OnResize that updates existing resources
