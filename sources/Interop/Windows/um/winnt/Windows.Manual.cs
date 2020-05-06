@@ -278,6 +278,5 @@ namespace TerraFX.Interop
         public const uint IO_REPARSE_TAG_PROJFS_TOMBSTONE = 0xA0000022;
 
         public const uint IO_REPARSE_TAG_AF_UNIX = 0x80000023;
-
     }
 }
