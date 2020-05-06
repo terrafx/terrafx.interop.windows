@@ -1,34 +1,25 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.Design;
-using System.Linq;
-using System.Drawing;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.Design;
 using TerraFX.Samples.DirectX.D3D12;
 
 
 namespace WinFormsDx12
 {
-    class Dx12Panel : Panel
+    public class Dx12Panel : Panel
     {
-        private Dx12Viewport _dxVp;
-        public Dx12Viewport DxVp { get => _dxVp; }
+        private readonly Dx12Viewport _dxVp;
+        public Dx12Viewport DxVp => _dxVp;
 
         public Dx12Panel(int width, int height) : base()
         {
             _dxVp = InitDxVp(width, height);
-            this.Resize += Dx12Panel_Resize;
+            Resize += Dx12Panel_Resize;
         }
 
         private Dx12Viewport InitDxVp(int width, int height)
         {
-            IntPtr hWnd = this.Handle;
-            var dxVp = new Dx12Viewport((uint)width, (uint)height, "Dx12Vp", hWnd);
+            var dxVp = new Dx12Viewport((uint)width, (uint)height, "Dx12Vp", Handle);
             dxVp.OnInit();
             return dxVp;
         }
