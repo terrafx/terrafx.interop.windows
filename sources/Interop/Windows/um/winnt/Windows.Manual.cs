@@ -196,5 +196,95 @@ namespace TerraFX.Interop
         public const uint ERROR_SEVERITY_WARNING = 0x80000000;
 
         public const uint ERROR_SEVERITY_ERROR = 0xC0000000;
+
+        public const uint IO_REPARSE_TAG_RESERVED_ZERO = 0;
+
+        public const uint IO_REPARSE_TAG_RESERVED_ONE = 1;
+
+        public const uint IO_REPARSE_TAG_RESERVED_TWO = 2;
+
+        public const uint IO_REPARSE_TAG_RESERVED_RANGE = IO_REPARSE_TAG_RESERVED_TWO;
+
+        public const uint IO_REPARSE_TAG_MOUNT_POINT = 0xA0000003;
+
+        public const uint IO_REPARSE_TAG_HSM = 0xC0000004;
+
+        public const uint IO_REPARSE_TAG_HSM2 = 0x80000006;
+
+        public const uint IO_REPARSE_TAG_SIS = 0x80000007;
+
+        public const uint IO_REPARSE_TAG_WIM = 0x80000008;
+
+        public const uint IO_REPARSE_TAG_CSV = 0x80000009;
+
+        public const uint IO_REPARSE_TAG_DFS = 0x8000000A;
+
+        public const uint IO_REPARSE_TAG_SYMLINK = 0xA000000C;
+
+        public const uint IO_REPARSE_TAG_DFSR = 0x80000012;
+
+        public const uint IO_REPARSE_TAG_DEDUP = 0x80000013;
+
+        public const uint IO_REPARSE_TAG_NFS = 0x80000014;
+
+        public const uint IO_REPARSE_TAG_FILE_PLACEHOLDER = 0x80000015;
+
+        public const uint IO_REPARSE_TAG_WOF = 0x80000017;
+
+        public const uint IO_REPARSE_TAG_WCI = 0x80000018;
+
+        public const uint IO_REPARSE_TAG_WCI_1 = 0x90001018;
+
+        public const uint IO_REPARSE_TAG_GLOBAL_REPARSE = 0xA0000019;
+
+        public const uint IO_REPARSE_TAG_CLOUD = 0x9000001A;
+
+        public const uint IO_REPARSE_TAG_CLOUD_1 = 0x9000101A;
+
+        public const uint IO_REPARSE_TAG_CLOUD_2 = 0x9000201A;
+
+        public const uint IO_REPARSE_TAG_CLOUD_3 = 0x9000301A;
+
+        public const uint IO_REPARSE_TAG_CLOUD_4 = 0x9000401A;
+
+        public const uint IO_REPARSE_TAG_CLOUD_5 = 0x9000501A;
+
+        public const uint IO_REPARSE_TAG_CLOUD_6 = 0x9000601A;
+
+        public const uint IO_REPARSE_TAG_CLOUD_7 = 0x9000701A;
+
+        public const uint IO_REPARSE_TAG_CLOUD_8 = 0x9000801A;
+
+        public const uint IO_REPARSE_TAG_CLOUD_9 = 0x9000901A;
+
+        public const uint IO_REPARSE_TAG_CLOUD_A = 0x9000A01A;
+
+        public const uint IO_REPARSE_TAG_CLOUD_B = 0x9000B01A;
+
+        public const uint IO_REPARSE_TAG_CLOUD_C = 0x9000C01A;
+
+        public const uint IO_REPARSE_TAG_CLOUD_D = 0x9000D01A;
+
+        public const uint IO_REPARSE_TAG_CLOUD_E = 0x9000E01A;
+
+        public const uint IO_REPARSE_TAG_CLOUD_F = 0x9000F01A;
+
+        public const uint IO_REPARSE_TAG_CLOUD_MASK = 0x0000F000;
+
+        public const uint IO_REPARSE_TAG_APPEXECLINK = 0x8000001B;
+
+        public const uint IO_REPARSE_TAG_PROJFS = 0x9000001C;
+
+        public const uint IO_REPARSE_TAG_STORAGE_SYNC = 0x8000001E;
+
+        public const uint IO_REPARSE_TAG_WCI_TOMBSTONE = 0xA000001F;
+
+        public const uint IO_REPARSE_TAG_UNHANDLED = 0x80000020;
+
+        public const uint IO_REPARSE_TAG_ONEDRIVE = 0x80000021;
+
+        public const uint IO_REPARSE_TAG_PROJFS_TOMBSTONE = 0xA0000022;
+
+        public const uint IO_REPARSE_TAG_AF_UNIX = 0x80000023;
     }
 }
