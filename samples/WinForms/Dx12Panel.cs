@@ -37,6 +37,19 @@ namespace TerraFX.Samples.WinForms
 {
     public unsafe class DX12Panel : Panel
     {
+        #region local structs
+
+        private struct Vertex
+        {
+            public Vector3 Position;
+
+            public Vector4 Color;
+        }
+
+        #endregion local structs
+
+        #region data members
+
         private float _aspectRatio;
 
         // Adapter info
@@ -76,6 +89,10 @@ namespace TerraFX.Samples.WinForms
 
         public bool UseWarpDevice => _useWarpDevice;
 
+        #endregion data members
+
+        #region constructor
+
         public DX12Panel(int width, int height, bool useWarpDevice = false) : base()
         {
             if (width <= 0 || height <= 0)
@@ -110,21 +127,60 @@ namespace TerraFX.Samples.WinForms
             _isOnColorToggle = false;
 
             Resize += OnResize;
+            MouseEnter += OnMouseEnter;
+            MouseLeave += OnMouseLeave;
+            MouseClick += OnMouseClick;
+            MouseDoubleClick += OnMouseDoubleClick;
+            MouseDown += OnMouseDown;
+            MouseUp += OnMouseUp;
+            MouseHover += OnMouseHover;
+            MouseMove += OnMouseMove;
+            MouseWheel += OnMouseWheel;
             OnInit();
         }
 
-        protected override void OnPaint(PaintEventArgs e)
+        #endregion constructor
+
+        #region mouse event handling
+
+        private void OnMouseEnter(object? sender, EventArgs e)
         {
-            base.OnPaint(e);
-            OnRender();
         }
 
-        private void OnResize(object? sender, EventArgs e)
+        private void OnMouseLeave(object? sender, EventArgs e)
         {
-            _aspectRatio = Width / ((float)Height);
-            OnRender();
         }
 
+        private void OnMouseClick(object sender, MouseEventArgs e)
+        {
+        }
+
+        private void OnMouseDoubleClick(object sender, MouseEventArgs e)
+        {
+        }
+
+        private void OnMouseDown(object sender, MouseEventArgs e)
+        {
+        }
+
+        private void OnMouseUp(object sender, MouseEventArgs e)
+        {
+        }
+
+        private void OnMouseHover(object? sender, EventArgs e)
+        {
+        }
+
+        private void OnMouseMove(object sender, MouseEventArgs e)
+        {
+        }
+        private void OnMouseWheel(object sender, MouseEventArgs e)
+        {
+        }
+
+        #endregion mouse event handling
+
+        #region key event handling
         // Samples override the event handlers to handle specific messages
         public virtual void OnKeyDown(byte key)
         {
@@ -133,6 +189,10 @@ namespace TerraFX.Samples.WinForms
         public virtual void OnKeyUp(byte key)
         {
         }
+
+        #endregion key event handling
+
+        #region helper methods
 
         // Helper function for resolving the full path of assets
         protected string GetAssetFullPath(string assetName) => Path.Combine(_assetsPath, assetName);
@@ -166,6 +226,10 @@ namespace TerraFX.Samples.WinForms
             return (IDXGIAdapter*)adapter;
         }
 
+        #endregion helper methods
+
+        #region render setup
+
         protected virtual unsafe bool SupportsRequiredDirect3DVersion(IDXGIAdapter1* adapter)
         {
             var iid = IID_ID3D12Device;
@@ -181,34 +245,6 @@ namespace TerraFX.Samples.WinForms
         // Update frame-based values.
         public virtual void OnUpdate()
         {
-        }
-
-        // Render the scene.
-        public virtual void OnRender()
-        {
-            // Record all the commands we need to render the scene into the command list.
-            PopulateCommandList();
-
-            // Execute the command list.
-            const int CommandListsCount = 1;
-            var ppCommandLists = stackalloc ID3D12CommandList*[CommandListsCount] {
-                (ID3D12CommandList*)_commandList,
-            };
-            _commandQueue->ExecuteCommandLists(CommandListsCount, ppCommandLists);
-
-            // Present the frame.
-            ThrowIfFailed(nameof(IDXGISwapChain3.Present), _swapChain->Present(SyncInterval: 1, Flags: 0));
-
-            WaitForPreviousFrame();
-        }
-
-        public virtual void OnDestroy()
-        {
-            // Ensure that the GPU is no longer referencing resources that are about to be
-            // cleaned up by the destructor.
-            WaitForPreviousFrame();
-
-            _ = CloseHandle(_fenceEvent);
         }
 
         // Load the rendering pipeline dependencies.
@@ -575,6 +611,42 @@ namespace TerraFX.Samples.WinForms
             }
         }
 
+        #endregion render setup
+
+        #region render execution
+
+        private void OnResize(object? sender, EventArgs e)
+        {
+            _aspectRatio = Width / ((float)Height);
+            OnRender();
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            OnRender();
+        }
+
+
+        // Render the scene.
+        public virtual void OnRender()
+        {
+            // Record all the commands we need to render the scene into the command list.
+            PopulateCommandList();
+
+            // Execute the command list.
+            const int CommandListsCount = 1;
+            var ppCommandLists = stackalloc ID3D12CommandList*[CommandListsCount] {
+                (ID3D12CommandList*)_commandList,
+            };
+            _commandQueue->ExecuteCommandLists(CommandListsCount, ppCommandLists);
+
+            // Present the frame.
+            ThrowIfFailed(nameof(IDXGISwapChain3.Present), _swapChain->Present(SyncInterval: 1, Flags: 0));
+
+            WaitForPreviousFrame();
+        }
+
         private void PopulateCommandList()
         {
             // Command list allocators can only be reset when the associated
@@ -653,6 +725,18 @@ namespace TerraFX.Samples.WinForms
             _frameIndex = _swapChain->GetCurrentBackBufferIndex();
         }
 
+        #endregion render execution
+
+        #region cleanup & dispose
+
+        public virtual void OnDestroy()
+        {
+            // Ensure that the GPU is no longer referencing resources that are about to be
+            // cleaned up by the destructor.
+            WaitForPreviousFrame();
+
+            _ = CloseHandle(_fenceEvent);
+        }
 
         ~DX12Panel()
         {
@@ -760,12 +844,6 @@ namespace TerraFX.Samples.WinForms
                 _ = fence->Release();
             }
         }
-
-        private struct Vertex
-        {
-            public Vector3 Position;
-
-            public Vector4 Color;
-        }
+        #endregion cleanup
     }
 }
