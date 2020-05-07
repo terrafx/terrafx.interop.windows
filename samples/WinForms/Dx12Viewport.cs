@@ -397,7 +397,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     // Enable better shader debugging with the graphics debugging tools.
                     compileFlags |= D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION;
 #endif
-                    fixed (char* fileName = GetAssetFullPath(@"D3D12\Assets\Shaders\HelloTriangle.hlsl"))
+                    fixed (char* fileName = GetAssetFullPath(@"Assets\Shaders\HelloTriangle.hlsl"))
                     {
                         var entryPoint = 0x00006E69614D5356;    // VSMain
                         var target = 0x0000305F355F7376;        // vs_5_0

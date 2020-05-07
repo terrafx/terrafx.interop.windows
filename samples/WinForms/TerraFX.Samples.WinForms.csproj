@@ -9,9 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DirectX\TerraFX.Samples.DirectX.csproj" />
     <ProjectReference Include="..\..\sources\Interop\D3D12\TerraFX.Interop.D3D12.csproj" />
     <ProjectReference Include="..\..\sources\Interop\User32\TerraFX.Interop.User32.csproj" />
   </ItemGroup>
+
 
 </Project>
