@@ -2,29 +2,28 @@
 
 using System;
 using System.Windows.Forms;
-using TerraFX.Samples.DirectX.D3D12;
 
 namespace TerraFX.Samples.WinForms
 {
     public partial class MainFormWinFormsDX12 : Form
     {
-        private readonly DX12Viewport _dxVp;
+        private readonly DX12Panel _panel;
 
         public MainFormWinFormsDX12()
         {
             InitializeComponent();
-            _dxVp = InitDx12();
+            _panel = InitDX12Panel();
         }
 
-        private DX12Viewport InitDx12()
+        private DX12Panel InitDX12Panel()
         {
             var dxPanel = new DX12Panel(MainSplitter.Panel2.Width, MainSplitter.Panel2.Height);
             MainSplitter.Panel2.Controls.Add(dxPanel);
             dxPanel.Dock = DockStyle.Fill;
-            return dxPanel.Viewport;
+            return dxPanel;
         }
 
-        private void ColorBtn_Click(object sender, EventArgs e) => _dxVp.OnRender();
+        private void ColorBtn_Click(object sender, EventArgs e) => _panel.OnRender();
 
         private void TextureBtn_Click(object sender, EventArgs e)
         {
