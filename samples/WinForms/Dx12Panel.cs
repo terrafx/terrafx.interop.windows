@@ -89,6 +89,8 @@ namespace TerraFX.Samples.WinForms
 
         public bool UseWarpDevice => _useWarpDevice;
 
+        private Vector2 _mousePriorPt;
+
         #endregion data members
 
         #region constructor
@@ -161,6 +163,8 @@ namespace TerraFX.Samples.WinForms
 
         private void OnMouseDown(object sender, MouseEventArgs e)
         {
+            _mousePriorPt.X = e.X;
+            _mousePriorPt.Y = e.Y;
         }
 
         private void OnMouseUp(object sender, MouseEventArgs e)
@@ -173,7 +177,22 @@ namespace TerraFX.Samples.WinForms
 
         private void OnMouseMove(object sender, MouseEventArgs e)
         {
+            if (e.Button == MouseButtons.Left)
+            {
+                var mouseNowPt = new Vector2(e.X, e.Y);
+                var mouseDelta = mouseNowPt - _mousePriorPt;
+                RotateTriangle(ref mouseDelta);
+                _mousePriorPt = mouseNowPt;
+            }
         }
+
+        private void RotateTriangle(ref Vector2 mouseDelta)
+        {
+            var angleRadians = (mouseDelta.X + mouseDelta.Y) / (4 * 360) * (2 * Math.PI);
+            // IB: how do I now set the rotation transform of the triangle to rotate by this angle?
+            OnRender();
+        }
+
         private void OnMouseWheel(object sender, MouseEventArgs e)
         {
         }
