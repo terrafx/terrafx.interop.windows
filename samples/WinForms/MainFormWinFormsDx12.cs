@@ -28,8 +28,6 @@ namespace TerraFX.Samples.WinForms
 
         private void TextureBtn_Click(object sender, EventArgs e)
         {
-
         }
-
     }
 }
