@@ -35,7 +35,6 @@ namespace TerraFX.Samples.DirectX.D3D12
 {
     public unsafe class DX12Viewport : IDisposable
     {
-
         // Viewport dimensions
         private uint _width;
 
@@ -76,7 +75,6 @@ namespace TerraFX.Samples.DirectX.D3D12
         private HANDLE _fenceEvent;
         private ID3D12Fence* _fence;
         private ulong _fenceValue;
-
 
         public uint Width => _width;
 
@@ -132,7 +130,6 @@ namespace TerraFX.Samples.DirectX.D3D12
         public virtual void OnKeyUp(byte key)
         {
         }
-
 
         // Helper function for resolving the full path of assets
         protected string GetAssetFullPath(string assetName) => Path.Combine(_assetsPath, assetName);

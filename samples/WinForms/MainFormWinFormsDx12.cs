@@ -21,7 +21,7 @@ namespace TerraFX.Samples.WinForms
             var dxPanel = new DX12Panel(MainSplitter.Panel2.Width, MainSplitter.Panel2.Height);
             MainSplitter.Panel2.Controls.Add(dxPanel);
             dxPanel.Dock = DockStyle.Fill;
-            return dxPanel.DxVp;
+            return dxPanel.Viewport;
         }
 
         private void ColorBtn_Click(object sender, EventArgs e) => _dxVp.OnRender();
