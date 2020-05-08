@@ -25,7 +25,7 @@ namespace TerraFX.Interop
         };
         
         [return: NativeTypeName("HRESULT")]
-        public static int CreateRootSignature([NativeTypeName("ID3D12Device*")] ID3D12Device* device, [NativeTypeName("const D3D12_ROOT_SIGNATURE_DESC*")] D3D12_ROOT_SIGNATURE_DESC* rootSignatureDesc, [NativeTypeName("ID3D12RootSignature**")] ID3D12RootSignature** rootSignature)
+        public static int CreateRootSignature([NativeTypeName("ID3D12Device *")] ID3D12Device* device, [NativeTypeName("const D3D12_ROOT_SIGNATURE_DESC *")] D3D12_ROOT_SIGNATURE_DESC* rootSignatureDesc, [NativeTypeName("ID3D12RootSignature **")] ID3D12RootSignature** rootSignature)
         {
             ID3DBlob* pSignature = default;
             ID3DBlob* pError = default;
