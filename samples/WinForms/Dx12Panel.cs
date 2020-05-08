@@ -46,6 +46,11 @@ namespace TerraFX.Samples.WinForms
             public Vector4 Color;
         }
 
+        private struct SceneConstantBuffer
+        {
+            public Vector4 offset;
+        }
+
         #endregion local structs
 
         #region data members
@@ -70,6 +75,7 @@ namespace TerraFX.Samples.WinForms
         private ID3D12CommandQueue* _commandQueue;
         private ID3D12RootSignature* _rootSignature;
         private ID3D12DescriptorHeap* _rtvHeap;
+        private ID3D12DescriptorHeap* _cbvHeap;
         private ID3D12PipelineState* _pipelineState;
         private ID3D12GraphicsCommandList* _commandList;
         private uint _rtvDescriptorSize;
@@ -78,6 +84,9 @@ namespace TerraFX.Samples.WinForms
         // App resources.
         private ID3D12Resource* _vertexBuffer;
         private D3D12_VERTEX_BUFFER_VIEW _vertexBufferView;
+        private ID3D12Resource* _constantBuffer;
+        private SceneConstantBuffer _constantBufferData;
+        //private IntPtr _pConstantBufferDataBegin;
 
         // Synchronization objects.
         private uint _frameIndex;
@@ -181,15 +190,29 @@ namespace TerraFX.Samples.WinForms
             {
                 var mouseNowPt = new Vector2(e.X, e.Y);
                 var mouseDelta = mouseNowPt - _mousePriorPt;
-                RotateTriangle(ref mouseDelta);
+                MoveTriangle(ref mouseDelta);
                 _mousePriorPt = mouseNowPt;
             }
         }
 
-        private void RotateTriangle(ref Vector2 mouseDelta)
+        private void MoveTriangle(ref Vector2 mouseDelta)
         {
-            var angleRadians = (mouseDelta.X + mouseDelta.Y) / (4 * 360) * (2 * Math.PI);
-            // IB: how do I now set the rotation transform of the triangle to rotate by this angle?
+            var translationSpeed = 0.005f;
+            var offsetBounds = 1.25f;
+            _constantBufferData.offset.X += translationSpeed;
+            if (_constantBufferData.offset.X > offsetBounds)
+            {
+                _constantBufferData.offset.X -= offsetBounds;
+            }
+            var constantBufferSize = (uint)sizeof(SceneConstantBuffer);
+            var readRange = new D3D12_RANGE(); // We do not intend to read from this resource on the CPU.
+            byte* pConstantBufferBegin;
+            ThrowIfFailed(nameof(ID3D12Resource._Map), _constantBuffer->Map(Subresource: 0, &readRange, (void**)&pConstantBufferBegin));
+            fixed (void* pConstantBufferData = &_constantBufferData)
+            {
+                Unsafe.CopyBlock(pConstantBufferBegin, pConstantBufferData, constantBufferSize);
+            }
+
             OnRender();
         }
 
@@ -367,6 +390,20 @@ namespace TerraFX.Samples.WinForms
                     }
 
                     _rtvDescriptorSize = _device->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_RTV);
+
+                    // Describe and create a constant buffer view (CBV) descriptor heap.
+                    // Flags indicate that this descriptor heap can be bound to the pipeline 
+                    // and that descriptors contained in it can be referenced by a root table.
+                    D3D12_DESCRIPTOR_HEAP_DESC cbvHeapDesc = new D3D12_DESCRIPTOR_HEAP_DESC {
+                        NumDescriptors = 1,
+                        Flags = D3D12_DESCRIPTOR_HEAP_FLAGS.D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE,
+                        Type = D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV
+                    };
+                    fixed (ID3D12DescriptorHeap** cbvHeap = &_cbvHeap)
+                    {
+                        iid = IID_ID3D12DescriptorHeap;
+                        ThrowIfFailed(nameof(ID3D12Device.CreateDescriptorHeap), _device->CreateDescriptorHeap(&cbvHeapDesc, &iid, (void**)cbvHeap));
+                    }
                 }
 
                 // Create frame resources.
@@ -571,7 +608,6 @@ namespace TerraFX.Samples.WinForms
 
                     // Copy the triangle data to the vertex buffer.
                     var readRange = new D3D12_RANGE();
-
                     byte* pVertexDataBegin;
                     ThrowIfFailed(nameof(ID3D12Resource._Map), _vertexBuffer->Map(Subresource: 0, &readRange, (void**)&pVertexDataBegin));
                     Unsafe.CopyBlock(pVertexDataBegin, triangleVertices, vertexBufferSize);
@@ -581,6 +617,44 @@ namespace TerraFX.Samples.WinForms
                     _vertexBufferView.BufferLocation = _vertexBuffer->GetGPUVirtualAddress();
                     _vertexBufferView.StrideInBytes = (uint)sizeof(Vertex);
                     _vertexBufferView.SizeInBytes = vertexBufferSize;
+                }
+
+                // Create the constant buffer.
+                {
+                    var constantBufferSize = (uint)sizeof(SceneConstantBuffer);
+                    fixed (ID3D12Resource** constantBuffer = &_constantBuffer)
+                    {
+                        var heapProperties = new D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD);
+                        var bufferDesc = D3D12_RESOURCE_DESC.Buffer(1024 * 64);
+
+                        iid = IID_ID3D12Resource;
+                        ThrowIfFailed(nameof(ID3D12Device._CreateCommittedResource), _device->CreateCommittedResource(
+                            &heapProperties,
+                            D3D12_HEAP_FLAG_NONE,
+                            &bufferDesc,
+                            D3D12_RESOURCE_STATE_GENERIC_READ,
+                            pOptimizedClearValue: null,
+                            &iid,
+                            (void**)constantBuffer
+                        ));
+                    }
+
+                    // Describe and create a constant buffer view.
+                    D3D12_CONSTANT_BUFFER_VIEW_DESC cbvDesc = new D3D12_CONSTANT_BUFFER_VIEW_DESC() {
+                        BufferLocation = _constantBuffer->GetGPUVirtualAddress(),
+                        SizeInBytes = (uint)((sizeof(SceneConstantBuffer) + 255) & ~255)    // CB size is required to be 256-byte aligned.
+                    };
+                    _device->CreateConstantBufferView(&cbvDesc, _cbvHeap->GetCPUDescriptorHandleForHeapStart());
+
+                    // Map and initialize the constant buffer. We don't unmap this until the
+                    // app closes. Keeping things mapped for the lifetime of the resource is okay.
+                    var readRange = new D3D12_RANGE(); // We do not intend to read from this resource on the CPU.
+                    byte* pConstantBufferBegin;
+                    ThrowIfFailed(nameof(ID3D12Resource._Map), _constantBuffer->Map(Subresource: 0, &readRange, (void**)&pConstantBufferBegin));
+                    fixed (void* pConstantBufferData = &_constantBufferData)
+                    {
+                        Unsafe.CopyBlock(pConstantBufferBegin, pConstantBufferData, constantBufferSize);
+                    }
                 }
 
                 // Create synchronization objects and wait until assets have been uploaded to the GPU.
@@ -680,6 +754,11 @@ namespace TerraFX.Samples.WinForms
 
             // Set necessary state.
             _commandList->SetGraphicsRootSignature(_rootSignature);
+
+            var pHeap = _cbvHeap;
+            _commandList->SetDescriptorHeaps(1, &pHeap);
+            var handle = _cbvHeap->GetGPUDescriptorHandleForHeapStart();
+            _commandList->SetGraphicsRootDescriptorTable(0, handle);
 
             fixed (D3D12_VIEWPORT* viewport = &_viewport)
             {
