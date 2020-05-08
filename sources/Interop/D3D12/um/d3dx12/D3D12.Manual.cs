@@ -27,23 +27,37 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public static int CreateRootSignature([NativeTypeName("ID3D12Device*")] ID3D12Device* device, [NativeTypeName("const D3D12_ROOT_SIGNATURE_DESC*")] D3D12_ROOT_SIGNATURE_DESC* rootSignatureDesc, [NativeTypeName("ID3D12RootSignature**")] ID3D12RootSignature** rootSignature)
         {
-            ID3DBlob* pSignature = default;
-            ID3DBlob* pError = default;
-            HRESULT hr = D3D12SerializeRootSignature(
-                rootSignatureDesc, 
-                D3D_ROOT_SIGNATURE_VERSION.D3D_ROOT_SIGNATURE_VERSION_1, 
-                &pSignature, 
-                &pError);
-            
-            if (SUCCEEDED(hr))
+            try
             {
-                Guid iid = IID_ID3D12RootSignature;
-                hr = device->CreateRootSignature(0, pSignature->GetBufferPointer(), pSignature->GetBufferSize(),
-                    &iid,
-                    (void**)rootSignature
-                );
+                ID3DBlob* pSignature = default;
+                ID3DBlob* pError = default;
+                HRESULT hr = D3D12SerializeRootSignature(
+                    rootSignatureDesc, 
+                    D3D_ROOT_SIGNATURE_VERSION.D3D_ROOT_SIGNATURE_VERSION_1, 
+                    &pSignature, 
+                    &pError);
+            
+                if (SUCCEEDED(hr))
+                {
+                    Guid iid = IID_ID3D12RootSignature;
+                    hr = device->CreateRootSignature(0, pSignature->GetBufferPointer(), pSignature->GetBufferSize(),
+                        &iid,
+                        (void**)rootSignature
+                    );
+                }
+                return hr;
             }
-            return hr;
+            finally
+            {
+                if (pSignature != null)
+                {
+                    pSignature->Release();
+                }
+                if (pError != null)
+                {
+                    pError->Release();
+                }
+            }
         }
 
         [return: NativeTypeName("UINT")]
