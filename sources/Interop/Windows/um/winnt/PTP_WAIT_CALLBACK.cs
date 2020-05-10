@@ -9,5 +9,5 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-    public unsafe delegate void PTP_WAIT_CALLBACK([NativeTypeName("PTP_CALLBACK_INSTANCE")] _TP_CALLBACK_INSTANCE* Instance, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("PTP_WAIT")] IntPtr Wait, [NativeTypeName("TP_WAIT_RESULT")] uint WaitResult);
+    public unsafe delegate void PTP_WAIT_CALLBACK([NativeTypeName("PTP_CALLBACK_INSTANCE")] IntPtr Instance, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("PTP_WAIT")] IntPtr Wait, [NativeTypeName("TP_WAIT_RESULT")] uint WaitResult);
 }

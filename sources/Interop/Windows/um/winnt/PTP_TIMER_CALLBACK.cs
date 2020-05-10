@@ -9,5 +9,5 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-    public unsafe delegate void PTP_TIMER_CALLBACK([NativeTypeName("PTP_CALLBACK_INSTANCE")] _TP_CALLBACK_INSTANCE* Instance, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("PTP_TIMER")] IntPtr Timer);
+    public unsafe delegate void PTP_TIMER_CALLBACK([NativeTypeName("PTP_CALLBACK_INSTANCE")] IntPtr Instance, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("PTP_TIMER")] IntPtr Timer);
 }
