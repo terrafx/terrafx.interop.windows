@@ -67,7 +67,6 @@ namespace TerraFX.Samples.DirectX.D3D12
 
         // Synchronization objects.
         private uint _frameIndex;
-        private HANDLE _fenceEvent;
         private ID3D12Fence* _fence;
         private ulong _fenceValue;
 
@@ -128,8 +127,6 @@ namespace TerraFX.Samples.DirectX.D3D12
             // Ensure that the GPU is no longer referencing resources that are about to be
             // cleaned up by the destructor.
             WaitForPreviousFrame();
-
-            _ = CloseHandle(_fenceEvent);
         }
 
         // Load the rendering pipeline dependencies.
@@ -458,14 +455,6 @@ namespace TerraFX.Samples.DirectX.D3D12
                         _fenceValue = 1;
                     }
 
-                    // Create an event handle to use for frame synchronization.
-                    _fenceEvent = CreateEventW(lpEventAttributes: null, bManualReset: FALSE, bInitialState: FALSE, lpName: null);
-                    if (_fenceEvent == null)
-                    {
-                        var hr = Marshal.GetHRForLastWin32Error();
-                        Marshal.ThrowExceptionForHR(hr);
-                    }
-
                     // Wait for the command list to execute; we are reusing the same command
                     // list in our main loop but for now, we just want to wait for setup to
                     // complete before continuing.
@@ -563,8 +552,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             // Wait until the previous frame is finished.
             if (_fence->GetCompletedValue() < fence)
             {
-                ThrowIfFailed(nameof(ID3D12Fence.SetEventOnCompletion), _fence->SetEventOnCompletion(fence, _fenceEvent));
-                _ = WaitForSingleObject(_fenceEvent, INFINITE);
+                ThrowIfFailed(nameof(ID3D12Fence.SetEventOnCompletion), _fence->SetEventOnCompletion(fence, default));
             }
 
             _frameIndex = _swapChain->GetCurrentBackBufferIndex();
