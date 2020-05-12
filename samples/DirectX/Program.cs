@@ -11,7 +11,7 @@ namespace TerraFX.Samples.DirectX
 {
     public static unsafe class Program
     {
-        private static readonly DXSample[] s_samples = {
+        private static readonly DXSample[] Samples = {
             new HelloWindow11(1280, 720, "D3D11.HelloWindow"),
             new HelloTriangle11(1280, 720, "D3D11.HelloTriangle"),
             new HelloWindow12(1280, 720, "D3D12.HelloWindow"),
@@ -45,7 +45,7 @@ namespace TerraFX.Samples.DirectX
 
             Console.WriteLine("Available Samples - Can specify multiple");
 
-            foreach (var sample in s_samples)
+            foreach (var sample in Samples)
             {
                 Console.WriteLine($"    {sample.Title}");
             }
@@ -63,7 +63,7 @@ namespace TerraFX.Samples.DirectX
 
             if (args.Any((arg) => Matches(arg, "all")))
             {
-                foreach (var sample in s_samples)
+                foreach (var sample in Samples)
                 {
                     RunSample(sample);
                     ranAnySamples = true;
@@ -72,7 +72,7 @@ namespace TerraFX.Samples.DirectX
 
             foreach (var arg in args)
             {
-                foreach (var sample in s_samples.Where((sample) => arg.Equals(sample.Title, StringComparison.OrdinalIgnoreCase)))
+                foreach (var sample in Samples.Where((sample) => arg.Equals(sample.Title, StringComparison.OrdinalIgnoreCase)))
                 {
                     RunSample(sample);
                     ranAnySamples = true;
