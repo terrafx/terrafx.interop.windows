@@ -705,6 +705,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "processthreadsapi", "proces
 		generation\um\processthreadsapi\um-processthreadsapi.h = generation\um\processthreadsapi\um-processthreadsapi.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinBase", "WinBase", "{D6EFD0AD-6DC8-463E-A5AF-9DFBB825ACDF}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\WinBase\generate.rsp = generation\um\WinBase\generate.rsp
+		generation\um\WinBase\header.txt = generation\um\WinBase\header.txt
+		generation\um\WinBase\um-WinBase.h = generation\um\WinBase\um-WinBase.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "securitybaseapi", "securitybaseapi", "{8D3A1E72-CEB3-4856-A9E6-2169627BA05E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1000,6 +1009,8 @@ Global
 		{125B08C4-44AF-4C52-BB37-E1166FD29F9E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{D1289E55-9845-48F4-A7A0-7D6CAC08023F} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{448C0916-2B9C-4008-B1C8-FE82B7FE4684} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{D6EFD0AD-6DC8-463E-A5AF-9DFBB825ACDF} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{8D3A1E72-CEB3-4856-A9E6-2169627BA05E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
