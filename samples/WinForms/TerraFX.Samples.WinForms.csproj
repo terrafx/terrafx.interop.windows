@@ -17,5 +17,15 @@
     <ProjectReference Include="..\..\sources\Interop\User32\TerraFX.Interop.User32.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Assets\Shaders\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\DirectX\D3D12\Assets\Shaders\HelloTriangle.hlsl" Link="Assets\Shaders\HelloTriangle.hlsl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 
 </Project>
