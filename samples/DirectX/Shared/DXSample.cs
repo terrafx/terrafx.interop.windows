@@ -16,14 +16,14 @@ namespace TerraFX.Samples.DirectX
     public abstract unsafe class DXSample : IDisposable
     {
         // Viewport dimensions
-        protected uint _width;
+        private uint _width;
 
-        protected uint _height;
+        private uint _height;
 
-        protected float _aspectRatio;
+        private float _aspectRatio;
 
         // Adapter info
-        protected bool _useWarpDevice;
+        private bool _useWarpDevice;
 
         // Root assets path
         private readonly string _assetsPath;
@@ -48,6 +48,12 @@ namespace TerraFX.Samples.DirectX
         public uint Width => _width;
 
         public uint Height => _height;
+
+        public float AspectRatio => _aspectRatio;
+
+        public bool UseWarpDevice => _useWarpDevice;
+
+        public string AssetsPath => _assetsPath;
 
         public string Title => _title;
 
@@ -99,7 +105,7 @@ namespace TerraFX.Samples.DirectX
         }
 
         // Helper function for resolving the full path of assets
-        protected string GetAssetFullPath(string assetName) => Path.Combine(_assetsPath, assetName);
+        protected string GetAssetFullPath(string assetName) => Path.Combine(AssetsPath, assetName);
 
         // Helper function for acquiring the first available hardware adapter that supports the required Direct3D version.
         // If no such adapter can be found, returns null.

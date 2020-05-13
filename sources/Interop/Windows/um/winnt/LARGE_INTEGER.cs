@@ -11,16 +11,18 @@ namespace TerraFX.Interop
     public partial struct LARGE_INTEGER
     {
         [FieldOffset(0)]
-        public _Anonymous_e__Struct Anonymous;
+        [NativeTypeName("_LARGE_INTEGER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h:843:5)")]
+        public _Anonymous_e__Union Anonymous;
 
         [FieldOffset(0)]
-        public _u_e__Struct u;
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h:847:5)")]
+        public _u_e__Union u;
 
         [FieldOffset(0)]
         [NativeTypeName("LONGLONG")]
         public long QuadPart;
 
-        public partial struct _Anonymous_e__Struct
+        public partial struct _Anonymous_e__Union
         {
             [NativeTypeName("DWORD")]
             public uint LowPart;
@@ -29,7 +31,7 @@ namespace TerraFX.Interop
             public int HighPart;
         }
 
-        public partial struct _u_e__Struct
+        public partial struct _u_e__Union
         {
             [NativeTypeName("DWORD")]
             public uint LowPart;

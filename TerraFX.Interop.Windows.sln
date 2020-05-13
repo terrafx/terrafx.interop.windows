@@ -621,6 +621,99 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ComCtl32", "ComCtl32", "{C4
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraFX.Interop.ComCtl32", "sources\Interop\ComCtl32\TerraFX.Interop.ComCtl32.csproj", "{4F61BEA9-A77D-44FC-8379-EAB295CAF5A6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "devpropdef", "devpropdef", "{CC18071D-937E-4926-A408-E42AA688ED1D}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\devpropdef\generate.rsp = generation\shared\devpropdef\generate.rsp
+		generation\shared\devpropdef\header.txt = generation\shared\devpropdef\header.txt
+		generation\shared\devpropdef\shared-devpropdef.h = generation\shared\devpropdef\shared-devpropdef.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "hidclass", "hidclass", "{C1771110-6F35-43EA-96C3-83534A629A9D}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\hidclass\generate.rsp = generation\shared\hidclass\generate.rsp
+		generation\shared\hidclass\header.txt = generation\shared\hidclass\header.txt
+		generation\shared\hidclass\shared-hidclass.h = generation\shared\hidclass\shared-hidclass.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "hidpi", "hidpi", "{08F0E7CA-01E5-4737-940B-DD6DAE133740}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\hidpi\generate.rsp = generation\shared\hidpi\generate.rsp
+		generation\shared\hidpi\header.txt = generation\shared\hidpi\header.txt
+		generation\shared\hidpi\shared-hidpi.h = generation\shared\hidpi\shared-hidpi.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "hidsdi", "hidsdi", "{05EC2C2B-8E6F-44E0-BDF0-024DAB73287C}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\hidsdi\generate.rsp = generation\shared\hidsdi\generate.rsp
+		generation\shared\hidsdi\header.txt = generation\shared\hidsdi\header.txt
+		generation\shared\hidsdi\shared-hidsdi.h = generation\shared\hidsdi\shared-hidsdi.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "fileapi", "fileapi", "{E3401D8D-4F48-4E6C-9000-F0014E307F31}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\fileapi\generate.rsp = generation\um\fileapi\generate.rsp
+		generation\um\fileapi\header.txt = generation\um\fileapi\header.txt
+		generation\um\fileapi\um-fileapi.h = generation\um\fileapi\um-fileapi.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ioapiset", "ioapiset", "{CA05BC3B-5880-4AD8-A608-EF21B012B71C}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\ioapiset\generate.rsp = generation\um\ioapiset\generate.rsp
+		generation\um\ioapiset\header.txt = generation\um\ioapiset\header.txt
+		generation\um\ioapiset\um-ioapiset.h = generation\um\ioapiset\um-ioapiset.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "minwinbase", "minwinbase", "{C41B4612-C153-4463-943A-8E1287444BA2}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\minwinbase\generate.rsp = generation\um\minwinbase\generate.rsp
+		generation\um\minwinbase\header.txt = generation\um\minwinbase\header.txt
+		generation\um\minwinbase\um-minwinbase.h = generation\um\minwinbase\um-minwinbase.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "prsht", "prsht", "{E9E933E4-E296-41A5-BE9A-9F7776323EBF}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\prsht\generate.rsp = generation\um\prsht\generate.rsp
+		generation\um\prsht\header.txt = generation\um\prsht\header.txt
+		generation\um\prsht\um-prsht.h = generation\um\prsht\um-prsht.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SetupAPI", "SetupAPI", "{B5F08105-B865-458D-ADED-C36B83269EB1}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\SetupAPI\generate.rsp = generation\um\SetupAPI\generate.rsp
+		generation\um\SetupAPI\header.txt = generation\um\SetupAPI\header.txt
+		generation\um\SetupAPI\um-SetupAPI.h = generation\um\SetupAPI\um-SetupAPI.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sysinfoapi", "sysinfoapi", "{125B08C4-44AF-4C52-BB37-E1166FD29F9E}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\sysinfoapi\generate.rsp = generation\um\sysinfoapi\generate.rsp
+		generation\um\sysinfoapi\header.txt = generation\um\sysinfoapi\header.txt
+		generation\um\sysinfoapi\um-sysinfoapi.h = generation\um\sysinfoapi\um-sysinfoapi.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "winnt", "winnt", "{D1289E55-9845-48F4-A7A0-7D6CAC08023F}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\winnt\generate.rsp = generation\um\winnt\generate.rsp
+		generation\um\winnt\header.txt = generation\um\winnt\header.txt
+		generation\um\winnt\um-winnt.h = generation\um\winnt\um-winnt.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "processthreadsapi", "processthreadsapi", "{448C0916-2B9C-4008-B1C8-FE82B7FE4684}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\processthreadsapi\generate.rsp = generation\um\processthreadsapi\generate.rsp
+		generation\um\processthreadsapi\header.txt = generation\um\processthreadsapi\header.txt
+		generation\um\processthreadsapi\um-processthreadsapi.h = generation\um\processthreadsapi\um-processthreadsapi.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinBase", "WinBase", "{D6EFD0AD-6DC8-463E-A5AF-9DFBB825ACDF}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\WinBase\generate.rsp = generation\um\WinBase\generate.rsp
+		generation\um\WinBase\header.txt = generation\um\WinBase\header.txt
+		generation\um\WinBase\um-WinBase.h = generation\um\WinBase\um-WinBase.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "securitybaseapi", "securitybaseapi", "{8D3A1E72-CEB3-4856-A9E6-2169627BA05E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -904,6 +997,20 @@ Global
 		{368C769A-D1BD-40A1-8EE0-F17DBCF89C90} = {21675FD1-071C-41E9-9244-F230833BA6B0}
 		{C43DBDE3-A45F-4A79-BDE5-EDF18FB91D09} = {70FBCFD9-B96E-4E72-B35C-681D9B2DA3D6}
 		{4F61BEA9-A77D-44FC-8379-EAB295CAF5A6} = {C43DBDE3-A45F-4A79-BDE5-EDF18FB91D09}
+		{CC18071D-937E-4926-A408-E42AA688ED1D} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{C1771110-6F35-43EA-96C3-83534A629A9D} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{08F0E7CA-01E5-4737-940B-DD6DAE133740} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{05EC2C2B-8E6F-44E0-BDF0-024DAB73287C} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{E3401D8D-4F48-4E6C-9000-F0014E307F31} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{CA05BC3B-5880-4AD8-A608-EF21B012B71C} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{C41B4612-C153-4463-943A-8E1287444BA2} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{E9E933E4-E296-41A5-BE9A-9F7776323EBF} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{B5F08105-B865-458D-ADED-C36B83269EB1} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{125B08C4-44AF-4C52-BB37-E1166FD29F9E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{D1289E55-9845-48F4-A7A0-7D6CAC08023F} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{448C0916-2B9C-4008-B1C8-FE82B7FE4684} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{D6EFD0AD-6DC8-463E-A5AF-9DFBB825ACDF} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{8D3A1E72-CEB3-4856-A9E6-2169627BA05E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
