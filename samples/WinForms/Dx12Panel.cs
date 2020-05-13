@@ -76,8 +76,6 @@ namespace TerraFX.Samples.WinForms
 
         public bool UseWarpDevice => _useWarpDevice;
 
-        private Vector2 _mousePriorPt;
-
         public DX12Panel(int width, int height, bool useWarpDevice = false) : base()
         {
             if (width <= 0 || height <= 0)
@@ -112,77 +110,7 @@ namespace TerraFX.Samples.WinForms
             _isOnColorToggle = false;
 
             Resize += OnResize;
-            MouseEnter += OnMouseEnter;
-            MouseLeave += OnMouseLeave;
-            MouseClick += OnMouseClick;
-            MouseDoubleClick += OnMouseDoubleClick;
-            MouseDown += OnMouseDown;
-            MouseUp += OnMouseUp;
-            MouseHover += OnMouseHover;
-            MouseMove += OnMouseMove;
-            MouseWheel += OnMouseWheel;
             OnInit();
-        }
-
-        private void OnMouseEnter(object? sender, EventArgs e)
-        {
-        }
-
-        private void OnMouseLeave(object? sender, EventArgs e)
-        {
-        }
-
-        private void OnMouseClick(object sender, MouseEventArgs e)
-        {
-        }
-
-        private void OnMouseDoubleClick(object sender, MouseEventArgs e)
-        {
-        }
-
-        private void OnMouseDown(object sender, MouseEventArgs e)
-        {
-            _mousePriorPt.X = e.X;
-            _mousePriorPt.Y = e.Y;
-        }
-
-        private void OnMouseUp(object sender, MouseEventArgs e)
-        {
-        }
-
-        private void OnMouseHover(object? sender, EventArgs e)
-        {
-        }
-
-        private void OnMouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                var mouseNowPt = new Vector2(e.X, e.Y);
-                var mouseDelta = mouseNowPt - _mousePriorPt;
-                RotateTriangle(ref mouseDelta);
-                _mousePriorPt = mouseNowPt;
-            }
-        }
-
-        private void RotateTriangle(ref Vector2 mouseDelta)
-        {
-            var angleRadians = (mouseDelta.X + mouseDelta.Y) / (4 * 360) * (2 * Math.PI);
-            // IB: how do I now set the rotation transform of the triangle to rotate by this angle?
-            OnRender();
-        }
-
-        private void OnMouseWheel(object sender, MouseEventArgs e)
-        {
-        }
-
-        // Samples override the event handlers to handle specific messages
-        public virtual void OnKeyDown(byte key)
-        {
-        }
-
-        public virtual void OnKeyUp(byte key)
-        {
         }
 
         // Helper function for resolving the full path of assets
