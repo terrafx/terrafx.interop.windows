@@ -3,8 +3,11 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop
 {
+    [Flags]
     public enum JOB_OBJECT_IO_RATE_CONTROL_FLAGS
     {
         JOB_OBJECT_IO_RATE_CONTROL_ENABLE = 0x1,
