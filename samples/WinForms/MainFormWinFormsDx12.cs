@@ -5,6 +5,13 @@ using System.Windows.Forms;
 
 namespace TerraFX.Samples.WinForms
 {
+    /// <summary>
+    /// Main form of the project TerraFX.Samples.WinForms.
+    /// It is a WinForms GUI with a Panel that contains DirectX content.
+    /// The DirectX content is taken from the Hello Triangle example.
+    /// The main point is to demonstrate how to connect a WinForms GUI to DirectX rendering.
+    /// This connection is encapsulated in the DX12Panel class.
+    /// </summary>
     public partial class MainFormWinFormsDX12 : Form
     {
         private readonly DX12Panel _panel;
