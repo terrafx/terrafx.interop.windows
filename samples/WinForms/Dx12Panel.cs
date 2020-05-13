@@ -37,19 +37,6 @@ namespace TerraFX.Samples.WinForms
 {
     public unsafe class DX12Panel : Panel
     {
-        #region local structs
-
-        private struct Vertex
-        {
-            public Vector3 Position;
-
-            public Vector4 Color;
-        }
-
-        #endregion local structs
-
-        #region data members
-
         private float _aspectRatio;
 
         // Adapter info
@@ -90,10 +77,6 @@ namespace TerraFX.Samples.WinForms
         public bool UseWarpDevice => _useWarpDevice;
 
         private Vector2 _mousePriorPt;
-
-        #endregion data members
-
-        #region constructor
 
         public DX12Panel(int width, int height, bool useWarpDevice = false) : base()
         {
@@ -140,10 +123,6 @@ namespace TerraFX.Samples.WinForms
             MouseWheel += OnMouseWheel;
             OnInit();
         }
-
-        #endregion constructor
-
-        #region mouse event handling
 
         private void OnMouseEnter(object? sender, EventArgs e)
         {
@@ -197,9 +176,6 @@ namespace TerraFX.Samples.WinForms
         {
         }
 
-        #endregion mouse event handling
-
-        #region key event handling
         // Samples override the event handlers to handle specific messages
         public virtual void OnKeyDown(byte key)
         {
@@ -208,10 +184,6 @@ namespace TerraFX.Samples.WinForms
         public virtual void OnKeyUp(byte key)
         {
         }
-
-        #endregion key event handling
-
-        #region helper methods
 
         // Helper function for resolving the full path of assets
         protected string GetAssetFullPath(string assetName) => Path.Combine(_assetsPath, assetName);
@@ -244,10 +216,6 @@ namespace TerraFX.Samples.WinForms
 
             return (IDXGIAdapter*)adapter;
         }
-
-        #endregion helper methods
-
-        #region render setup
 
         protected virtual unsafe bool SupportsRequiredDirect3DVersion(IDXGIAdapter1* adapter)
         {
@@ -630,10 +598,6 @@ namespace TerraFX.Samples.WinForms
             }
         }
 
-        #endregion render setup
-
-        #region render execution
-
         private void OnResize(object? sender, EventArgs e)
         {
             _aspectRatio = Width / ((float)Height);
@@ -645,7 +609,6 @@ namespace TerraFX.Samples.WinForms
             base.OnPaint(e);
             OnRender();
         }
-
 
         // Render the scene.
         public virtual void OnRender()
@@ -743,10 +706,6 @@ namespace TerraFX.Samples.WinForms
 
             _frameIndex = _swapChain->GetCurrentBackBufferIndex();
         }
-
-        #endregion render execution
-
-        #region cleanup & dispose
 
         public virtual void OnDestroy()
         {
@@ -863,6 +822,12 @@ namespace TerraFX.Samples.WinForms
                 _ = fence->Release();
             }
         }
-        #endregion cleanup
+
+        private struct Vertex
+        {
+            public Vector3 Position;
+
+            public Vector4 Color;
+        }
     }
 }
