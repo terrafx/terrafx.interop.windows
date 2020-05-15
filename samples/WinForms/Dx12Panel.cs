@@ -108,7 +108,6 @@ namespace TerraFX.Samples.WinForms
             _useWarpDevice = useWarpDevice;
             _isOnColorToggle = false;
 
-            Resize += OnResize;
             OnInit();
         }
 
@@ -525,15 +524,14 @@ namespace TerraFX.Samples.WinForms
             }
         }
 
-        private void OnResize(object? sender, EventArgs e)
+        protected override void OnClientSizeChanged(EventArgs e)
         {
             _aspectRatio = Width / ((float)Height);
-            OnRender();
+            base.OnClientSizeChanged(e);
         }
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            base.OnPaint(e);
             OnRender();
         }
 
