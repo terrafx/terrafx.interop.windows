@@ -32,7 +32,6 @@ using static TerraFX.Interop.Kernel32;
 using static TerraFX.Interop.Windows;
 using static TerraFX.Samples.DirectX.DXSampleHelper;
 
-
 namespace TerraFX.Samples.WinForms
 {
     public unsafe class DX12Panel : Panel
