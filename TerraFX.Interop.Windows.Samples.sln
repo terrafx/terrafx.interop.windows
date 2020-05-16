@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30028.174
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraFX.Samples.WinForms", "samples\WinForms\TerraFX.Samples.WinForms.csproj", "{B65F682F-1AE9-4B34-AA7B-B2E03665C8BA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8F6979A0-5072-43F5-8F86-A05C7B4E4BA4} = {8F6979A0-5072-43F5-8F86-A05C7B4E4BA4}
+		{1A1B31E6-BE3C-4EE1-B73F-CB146306D807} = {1A1B31E6-BE3C-4EE1-B73F-CB146306D807}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraFX.Interop.D3D12", "sources\Interop\D3D12\TerraFX.Interop.D3D12.csproj", "{1A1B31E6-BE3C-4EE1-B73F-CB146306D807}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraFX.Interop.User32", "sources\Interop\User32\TerraFX.Interop.User32.csproj", "{8F6979A0-5072-43F5-8F86-A05C7B4E4BA4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B65F682F-1AE9-4B34-AA7B-B2E03665C8BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B65F682F-1AE9-4B34-AA7B-B2E03665C8BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B65F682F-1AE9-4B34-AA7B-B2E03665C8BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B65F682F-1AE9-4B34-AA7B-B2E03665C8BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A1B31E6-BE3C-4EE1-B73F-CB146306D807}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A1B31E6-BE3C-4EE1-B73F-CB146306D807}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A1B31E6-BE3C-4EE1-B73F-CB146306D807}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A1B31E6-BE3C-4EE1-B73F-CB146306D807}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F6979A0-5072-43F5-8F86-A05C7B4E4BA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F6979A0-5072-43F5-8F86-A05C7B4E4BA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F6979A0-5072-43F5-8F86-A05C7B4E4BA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F6979A0-5072-43F5-8F86-A05C7B4E4BA4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EA157110-7D43-4492-BA82-B05DCCFED58C}
+	EndGlobalSection
+EndGlobal
