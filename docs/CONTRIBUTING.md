@@ -7,9 +7,9 @@ The following is a set of guidelines for contributing to TerraFX.
 * [Code of Conduct](#code-of-conduct)
 * [License](#license)
 * [What should I know?](#what-should-i-know)
-* [Pull Requests](#pull-requests)
 * [Issues](#issues)
 * [Questions](#questions)
+* [Pull Requests](#pull-requests)
 
 ### Code of Conduct
 
@@ -28,6 +28,16 @@ Copyright © Tanner Gooding and Contributors. Licensed under the MIT License
 Most of the basics of the project, such as what it is about, and its goals are
 covered in our [README](README.md).
 
+### Issues
+
+All issues should follow our [ISSUE_TEMPLATE](ISSUE_TEMPLATE.md). It is
+additionaly recommended to prefix your issue with an appriopriate "tag" such as
+`[QUESTION]`, `[BUG]`, `[REGRESSION]`, `[IDEA]`, or `[PROPOSAL]`.
+
+### Questions
+
+Feel free to open an issue prefixed with `[QUESTION]`.
+
 ### Pull Requests
 
 All pull requests should follow our
@@ -38,12 +48,3 @@ template will be requested to be updated. Any pull requests opened without a
 corresponding issue may be delayed or be required to undergo further changes
 before being accepted.
 
-### Issues
-
-All issues should follow our [ISSUE_TEMPLATE](ISSUE_TEMPLATE.md). It is
-additionaly recommended to prefix your issue with an appriopriate "tag" such as
-`[QUESTION]`, `[BUG]`, `[REGRESSION]`, `[IDEA]`, or `[PROPOSAL]`.
-
-### Questions
-
-Feel free to open an issue prefixed with `[QUESTION]`.
