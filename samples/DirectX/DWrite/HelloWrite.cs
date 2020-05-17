@@ -4,43 +4,9 @@
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
 using System;
-using System.Numerics;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using TerraFX.Interop;
 using TerraFX.Samples.DirectX.D3D12;
-using static TerraFX.Interop.D3D_FEATURE_LEVEL;
-using static TerraFX.Interop.D3D_PRIMITIVE_TOPOLOGY;
-using static TerraFX.Interop.D3D_ROOT_SIGNATURE_VERSION;
-using static TerraFX.Interop.D3D12;
-using static TerraFX.Interop.D3D12_BLEND;
-using static TerraFX.Interop.D3D12_BLEND_OP;
-using static TerraFX.Interop.D3D12_COLOR_WRITE_ENABLE;
-using static TerraFX.Interop.D3D12_COMMAND_LIST_TYPE;
-using static TerraFX.Interop.D3D12_CONSERVATIVE_RASTERIZATION_MODE;
-using static TerraFX.Interop.D3D12_CPU_PAGE_PROPERTY;
-using static TerraFX.Interop.D3D12_CULL_MODE;
-using static TerraFX.Interop.D3D12_DESCRIPTOR_HEAP_TYPE;
-using static TerraFX.Interop.D3D12_FENCE_FLAGS;
-using static TerraFX.Interop.D3D12_FILL_MODE;
-using static TerraFX.Interop.D3D12_HEAP_FLAGS;
-using static TerraFX.Interop.D3D12_HEAP_TYPE;
-using static TerraFX.Interop.D3D12_INPUT_CLASSIFICATION;
-using static TerraFX.Interop.D3D12_LOGIC_OP;
-using static TerraFX.Interop.D3D12_MEMORY_POOL;
-using static TerraFX.Interop.D3D12_PRIMITIVE_TOPOLOGY_TYPE;
-using static TerraFX.Interop.D3D12_RESOURCE_DIMENSION;
-using static TerraFX.Interop.D3D12_RESOURCE_FLAGS;
-using static TerraFX.Interop.D3D12_RESOURCE_STATES;
-using static TerraFX.Interop.D3D12_ROOT_SIGNATURE_FLAGS;
-using static TerraFX.Interop.D3D12_TEXTURE_LAYOUT;
-using static TerraFX.Interop.D3DCompiler;
-using static TerraFX.Interop.DXGI;
-using static TerraFX.Interop.DXGI_FORMAT;
-using static TerraFX.Interop.DXGI_SWAP_EFFECT;
-using static TerraFX.Interop.Kernel32;
 using static TerraFX.Interop.Windows;
-using static TerraFX.Samples.DirectX.DXSampleHelper;
 
 namespace TerraFX.Samples.DirectX.DWrite
 {
@@ -113,6 +79,7 @@ namespace TerraFX.Samples.DirectX.DWrite
             IDWriteFactory* writeFactory = null;
             IDWriteTextFormat* writeTextFormat = null;
 
+            var dxgiFactoryFlags = 0u;
 #if DEBUG
             // Enable the debug layer (requires the Graphics Tools "optional feature").
             // NOTE: Enabling the debug layer after device creation will invalidate the active device.
@@ -122,16 +89,19 @@ namespace TerraFX.Samples.DirectX.DWrite
                 if (SUCCEEDED(D3D12GetDebugInterface(&iid, (void**)&debugController)))
                 {
                     debugController->EnableDebugLayer();
+
+                    // Enable additional debug layers.
+                    dxgiFactoryFlags |= DXGI_CREATE_FACTORY_DEBUG;
                 }
             }
 #endif
             {
-                iid = D2D1.IID_ID2D1Factory;
-                hr = D2D1.D2D1CreateFactory(D2D1_FACTORY_TYPE.D2D1_FACTORY_TYPE_SINGLE_THREADED, &iid, (void**)&d2d1Factory);
-                iid = TerraFX.Interop.DWrite.IID_IDWriteFactory;
+                iid = IID_ID2D1Factory;
+                hr = D2D1CreateFactory(D2D1_FACTORY_TYPE.D2D1_FACTORY_TYPE_SINGLE_THREADED, &iid, (void**)&d2d1Factory);
+                iid = IID_IDWriteFactory;
                 if (SUCCEEDED(hr))
                 {
-                    hr = TerraFX.Interop.DWrite.DWriteCreateFactory(DWRITE_FACTORY_TYPE.DWRITE_FACTORY_TYPE_SHARED, &iid, (IUnknown**)&writeFactory);
+                    hr = DWriteCreateFactory(DWRITE_FACTORY_TYPE.DWRITE_FACTORY_TYPE_SHARED, &iid, (IUnknown**)&writeFactory);
                 }
 
                 _text = "Hello World via DirectWrite";
@@ -198,8 +168,8 @@ namespace TerraFX.Samples.DirectX.DWrite
             if (_hWndRenderTarget == null)
             {
                 // Create a Direct2D render target.
-                var renderPops = D2D1.RenderTargetProperties();
-                var hWndRenderPops = D2D1.HwndRenderTargetProperties(_hWnd, size);
+                var renderPops = RenderTargetProperties();
+                var hWndRenderPops = HwndRenderTargetProperties(_hWnd, size);
                 hr = _d2d1Factory->CreateHwndRenderTarget(
                     &renderPops,
                     &hWndRenderPops,
@@ -276,7 +246,7 @@ namespace TerraFX.Samples.DirectX.DWrite
             {
                 pRT->BeginDraw();
 
-                var identity = D2D1.IdentityMatrix;
+                var identity = IdentityMatrix;
                 pRT->SetTransform(&identity);
 
                 var darkBlue = new DXGI_RGBA(0, 25 / 255f, 70 / 255f, 1);

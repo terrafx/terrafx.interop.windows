@@ -4,6 +4,7 @@ using System;
 using System.Linq;
 using TerraFX.Samples.DirectX.D3D11;
 using TerraFX.Samples.DirectX.D3D12;
+using TerraFX.Samples.DirectX.DWrite;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Samples.DirectX
