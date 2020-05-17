@@ -79,7 +79,6 @@ namespace TerraFX.Samples.DirectX.DWrite
             IDWriteFactory* writeFactory = null;
             IDWriteTextFormat* writeTextFormat = null;
 
-            var dxgiFactoryFlags = 0u;
 #if DEBUG
             // Enable the debug layer (requires the Graphics Tools "optional feature").
             // NOTE: Enabling the debug layer after device creation will invalidate the active device.
@@ -89,9 +88,6 @@ namespace TerraFX.Samples.DirectX.DWrite
                 if (SUCCEEDED(D3D12GetDebugInterface(&iid, (void**)&debugController)))
                 {
                     debugController->EnableDebugLayer();
-
-                    // Enable additional debug layers.
-                    dxgiFactoryFlags |= DXGI_CREATE_FACTORY_DEBUG;
                 }
             }
 #endif
