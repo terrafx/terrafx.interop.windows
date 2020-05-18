@@ -61,4 +61,6 @@ Those proactices and a few desirable deviations are specified via the .editorcon
 Hence, they are and as enforced by the messages in Visual Studio 2019 
 when configured as *build + intellisense* .  
 Commits should be done such that under these settings there are no warnings.
+Due to limitations of .editorconfig syntax some required rules can not be specified. 
+Check with the project owner when in doubt about your commit.
    
