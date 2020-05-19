@@ -22,15 +22,15 @@ namespace TerraFX.Interop
         public static int MAKELONG(ushort a, ushort b) => a | (b << 16);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ushort LOWORD(uint l) => (ushort)l;
+        public static ushort LOWORD(uint l) => unchecked((ushort)l);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ushort HIWORD(uint l) => (ushort)(l >> 16);
+        public static ushort HIWORD(uint l) => unchecked((ushort)(l >> 16));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static byte LOBYTE(ushort w) => (byte)w;
+        public static byte LOBYTE(ushort w) => unchecked((byte)w);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static byte HIBYTE(ushort w) => (byte)(w >> 8);
+        public static byte HIBYTE(ushort w) => unchecked((byte)(w >> 8));
     }
 }
