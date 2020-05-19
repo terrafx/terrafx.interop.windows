@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from D3D12HelloWindow.h in https://github.com/Microsoft/DirectX-Graphics-Samples
+// Ported from D3D12HelloConstBuffor in https://github.com/Microsoft/DirectX-Graphics-Samples
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
 using System;
@@ -632,15 +632,10 @@ namespace TerraFX.Samples.DirectX.D3D12
             // Set necessary state.
             _commandList->SetGraphicsRootSignature(_rootSignature);
 
-
-            const int HeapsCount = 1;
-            var ppHeaps = new ID3D12DescriptorHeap*[HeapsCount];
-            //ppHeaps[0] = _cbvHeap->Get();
-            fixed (ID3D12DescriptorHeap** ppHeap = &ppHeaps[0])
-            {
-                _commandList->SetDescriptorHeaps(HeapsCount, ppHeap);
-            }
-            _commandList->SetGraphicsRootDescriptorTable(0, _cbvHeap->GetGPUDescriptorHandleForHeapStart());
+            var pHeap = _cbvHeap;
+            _commandList->SetDescriptorHeaps(1, &pHeap);
+            var handle = _cbvHeap->GetGPUDescriptorHandleForHeapStart();
+            _commandList->SetGraphicsRootDescriptorTable(0, handle);
 
             fixed (D3D12_VIEWPORT* viewport = &_viewport)
             {
