@@ -96,7 +96,6 @@ namespace TerraFX.Samples.DirectX.D3D12
                 right = unchecked((int)width),
                 bottom = unchecked((int)height)
             };
-            _constantBufferData = new SceneConstantBuffer();
         }
 
         public override void OnInit()
@@ -116,15 +115,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             {
                 _constantBufferData.offset.X = -offsetBounds;
             }
-            var readRange = new D3D12_RANGE(); // We do not intend to read from this resource on the CPU.
-            fixed (byte** ppCbvDataBegin = &_pCbvDataBegin)
-            {
-                fixed (SceneConstantBuffer * pConstantBufferData = &_constantBufferData) {
-                    ThrowIfFailed(nameof(ID3D12Resource._Map), _constantBuffer->Map(Subresource: 0, &readRange, (void**)ppCbvDataBegin));
-                    Unsafe.CopyBlock((void*)*ppCbvDataBegin, (void*)pConstantBufferData, (uint)sizeof(SceneConstantBuffer)); // C++: memcpy(_pCbvDataBegin, &_constantBufferData, sizeof(_constantBufferData));
-                    _constantBuffer->Unmap(0, null);
-                }
-            }
+            Unsafe.CopyBlock(ref _pCbvDataBegin[0], ref Unsafe.As<SceneConstantBuffer, byte>(ref _constantBufferData), (uint)sizeof(SceneConstantBuffer));
         }
 
         // Render the scene.
@@ -262,7 +253,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     // and that descriptors contained in it can be referenced by a root table.
                     var cbvHeapDesc = new D3D12_DESCRIPTOR_HEAP_DESC {
                         NumDescriptors = 1,
-                        Flags = D3D12_DESCRIPTOR_HEAP_FLAGS.D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE,
+                        Flags = D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE,
                         Type = D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV,
                     };
                     fixed (ID3D12DescriptorHeap** cbvHeap = &_cbvHeap)
@@ -270,7 +261,6 @@ namespace TerraFX.Samples.DirectX.D3D12
                         iid = IID_ID3D12DescriptorHeap;
                         ThrowIfFailed(nameof(ID3D12Device.CreateDescriptorHeap), _device->CreateDescriptorHeap(&cbvHeapDesc, &iid, (void**)cbvHeap));
                     }
-                    _cbvDescriptorSize = _device->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
                 }
 
                 // Create frame resources.
@@ -335,26 +325,23 @@ namespace TerraFX.Samples.DirectX.D3D12
             {
                 // Create a root signature consisting of a descriptor table with a single CBV.
                 {
-                    D3D12_FEATURE_DATA_ROOT_SIGNATURE featureData = new D3D12_FEATURE_DATA_ROOT_SIGNATURE {
-
+                    var featureData = new D3D12_FEATURE_DATA_ROOT_SIGNATURE {
                         // This is the highest version the sample supports. If CheckFeatureSupport succeeds, the HighestVersion returned will not be greater than this.
                         HighestVersion = D3D_ROOT_SIGNATURE_VERSION_1_1
                     };
 
-                    if (FAILED(_device->CheckFeatureSupport(D3D12_FEATURE.D3D12_FEATURE_ROOT_SIGNATURE, &featureData, (uint)sizeof(D3D12_FEATURE_DATA_ROOT_SIGNATURE))))
+                    if (FAILED(_device->CheckFeatureSupport(D3D12_FEATURE_ROOT_SIGNATURE, &featureData, (uint)sizeof(D3D12_FEATURE_DATA_ROOT_SIGNATURE))))
                     {
                         featureData.HighestVersion = D3D_ROOT_SIGNATURE_VERSION_1_0;
                     }
 
-                    var ranges = new D3D12_DESCRIPTOR_RANGE1[1];
+                    const int RangesCount = 1;
+                    var ranges = stackalloc D3D12_DESCRIPTOR_RANGE1[RangesCount];
                     const int RootParametersCount = 1;
-                    var rootParameters = new D3D12_ROOT_PARAMETER1[RootParametersCount];
+                    var rootParameters = stackalloc D3D12_ROOT_PARAMETER1[RootParametersCount];
 
-                    ranges[0].Init(D3D12_DESCRIPTOR_RANGE_TYPE.D3D12_DESCRIPTOR_RANGE_TYPE_CBV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAGS.D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
-                    fixed (D3D12_DESCRIPTOR_RANGE1* pRanges = &ranges[0])
-                    {
-                        rootParameters[0].InitAsDescriptorTable(1, pRanges, D3D12_SHADER_VISIBILITY.D3D12_SHADER_VISIBILITY_VERTEX);
-                    }
+                    ranges[0].Init(D3D12_DESCRIPTOR_RANGE_TYPE_CBV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
+                        rootParameters[0].InitAsDescriptorTable(RangesCount, ranges, D3D12_SHADER_VISIBILITY_VERTEX);
 
                     // Allow input layout and deny uneccessary access to certain pipeline stages.
                     D3D12_ROOT_SIGNATURE_FLAGS rootSignatureFlags =
@@ -365,30 +352,12 @@ namespace TerraFX.Samples.DirectX.D3D12
                         D3D12_ROOT_SIGNATURE_FLAG_DENY_PIXEL_SHADER_ROOT_ACCESS;
 
                     var rootSignatureDesc = new D3D12_VERSIONED_ROOT_SIGNATURE_DESC();
-                    fixed (D3D12_ROOT_PARAMETER1* pRootParameters = &rootParameters[0])
-                    {
-                        rootSignatureDesc.Init_1_1(RootParametersCount, pRootParameters, 0, null, rootSignatureFlags);
-                    }
+                        rootSignatureDesc.Init_1_1(RootParametersCount, rootParameters, 0, null, rootSignatureFlags);
 
                     ThrowIfFailed(nameof(D3D12SerializeRootSignature), D3D12SerializeVersionedRootSignature(&rootSignatureDesc, featureData.HighestVersion, &signature, &error));
                     {
                         iid = IID_ID3D12RootSignature;
                         ThrowIfFailed(nameof(ID3D12Device.CreateRootSignature), _device->CreateRootSignature(0, signature->GetBufferPointer(), signature->GetBufferSize(), &iid, (void**)&rootSignatureDesc)); 
-                    }
-                }
-
-                // Create an empty root signature.
-                {
-                    var rootSignatureDesc = new D3D12_ROOT_SIGNATURE_DESC {
-                        Flags = D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT
-                    };
-
-                    ThrowIfFailed(nameof(D3D12SerializeRootSignature), D3D12SerializeRootSignature(&rootSignatureDesc, D3D_ROOT_SIGNATURE_VERSION_1, &signature, &error));
-
-                    fixed (ID3D12RootSignature** rootSignature = &_rootSignature)
-                    {
-                        iid = IID_ID3D12RootSignature;
-                        ThrowIfFailed(nameof(ID3D12Device._CreateRootSignature), _device->CreateRootSignature(nodeMask: 0, signature->GetBufferPointer(), signature->GetBufferSize(), &iid, (void**)rootSignature));
                     }
                 }
 
@@ -521,7 +490,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     var readRange = new D3D12_RANGE();
 
                     byte* pVertexDataBegin;
-                    ThrowIfFailed(nameof(ID3D12Resource._Map), _vertexBuffer->Map(Subresource: 0, &readRange, (void**)&pVertexDataBegin));
+                    ThrowIfFailed(nameof(ID3D12Resource.Map), _vertexBuffer->Map(Subresource: 0, &readRange, (void**)&pVertexDataBegin));
                     Unsafe.CopyBlock(pVertexDataBegin, triangleVertices, vertexBufferSize);
                     _vertexBuffer->Unmap(0, null);
 
@@ -560,13 +529,8 @@ namespace TerraFX.Samples.DirectX.D3D12
                     var readRange = new D3D12_RANGE(); // We do not intend to read from this resource on the CPU.
                     fixed (byte** ppCbvDataBegin = &_pCbvDataBegin)
                     {
-                        fixed (SceneConstantBuffer* pConstantBufferData = &_constantBufferData)
-                        {
-                            ThrowIfFailed(nameof(ID3D12Resource._Map), _constantBuffer->Map(Subresource: 0, &readRange, (void**)ppCbvDataBegin));
-                            Unsafe.CopyBlock((void*)*ppCbvDataBegin, (void*)pConstantBufferData, (uint)sizeof(SceneConstantBuffer)); // C++: memcpy(_pCbvDataBegin, &_constantBufferData, sizeof(_constantBufferData));
-                            _constantBuffer->Unmap(0, null);
-                        }
-                    }
+            ThrowIfFailed(nameof(ID3D12Resource.Map), _constantBuffer->Map(Subresource: 0, &readRange, (void**)ppCbvDataBegin));
+            Unsafe.CopyBlock(ref _pCbvDataBegin[0], ref Unsafe.As<SceneConstantBuffer, byte>(ref _constantBufferData), (uint)sizeof(SceneConstantBuffer));
                 }
 
                 // Create synchronization objects and wait until assets have been uploaded to the GPU.
@@ -632,10 +596,12 @@ namespace TerraFX.Samples.DirectX.D3D12
             // Set necessary state.
             _commandList->SetGraphicsRootSignature(_rootSignature);
 
-            var pHeap = _cbvHeap;
-            _commandList->SetDescriptorHeaps(1, &pHeap);
-            var handle = _cbvHeap->GetGPUDescriptorHandleForHeapStart();
-            _commandList->SetGraphicsRootDescriptorTable(0, handle);
+            const uint HeapsCount = 1;
+            var ppHeaps = stackalloc ID3D12DescriptorHeap*[HeapsCount] {
+                _cbvHeap
+            };
+            _commandList->SetDescriptorHeaps(HeapsCount, ppHeaps);
+            _commandList->SetGraphicsRootDescriptorTable(0, _cbvHeap->GetGPUDescriptorHandleForHeapStart());
 
             fixed (D3D12_VIEWPORT* viewport = &_viewport)
             {
@@ -651,8 +617,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             var barrier = D3D12_RESOURCE_BARRIER.InitTransition(_renderTargets[unchecked((int)_frameIndex)], D3D12_RESOURCE_STATE_PRESENT, D3D12_RESOURCE_STATE_RENDER_TARGET);
             _commandList->ResourceBarrier(1, &barrier);
 
-            var rtvHandle = _rtvHeap->GetCPUDescriptorHandleForHeapStart();
-            rtvHandle.ptr = (UIntPtr)((byte*)rtvHandle.ptr + (_frameIndex * _rtvDescriptorSize));
+            var rtvHandle = new D3D12_CPU_DESCRIPTOPR_HANDLE(_rtvHeap->GetCPUDescriptorHandleForHeapStart(), _frameINdex, _rtvDescriptorSize);
             _commandList->OMSetRenderTargets(1, &rtvHandle, FALSE, null);
 
             // Record commands.
