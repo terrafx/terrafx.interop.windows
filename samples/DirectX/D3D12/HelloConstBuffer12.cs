@@ -19,7 +19,11 @@ using static TerraFX.Interop.D3D12_COMMAND_LIST_TYPE;
 using static TerraFX.Interop.D3D12_CONSERVATIVE_RASTERIZATION_MODE;
 using static TerraFX.Interop.D3D12_CPU_PAGE_PROPERTY;
 using static TerraFX.Interop.D3D12_CULL_MODE;
+using static TerraFX.Interop.D3D12_DESCRIPTOR_HEAP_FLAGS;
 using static TerraFX.Interop.D3D12_DESCRIPTOR_HEAP_TYPE;
+using static TerraFX.Interop.D3D12_DESCRIPTOR_RANGE_FLAGS;
+using static TerraFX.Interop.D3D12_DESCRIPTOR_RANGE_TYPE;
+using static TerraFX.Interop.D3D12_FEATURE;
 using static TerraFX.Interop.D3D12_FENCE_FLAGS;
 using static TerraFX.Interop.D3D12_FILL_MODE;
 using static TerraFX.Interop.D3D12_HEAP_FLAGS;
@@ -32,6 +36,7 @@ using static TerraFX.Interop.D3D12_RESOURCE_DIMENSION;
 using static TerraFX.Interop.D3D12_RESOURCE_FLAGS;
 using static TerraFX.Interop.D3D12_RESOURCE_STATES;
 using static TerraFX.Interop.D3D12_ROOT_SIGNATURE_FLAGS;
+using static TerraFX.Interop.D3D12_SHADER_VISIBILITY;
 using static TerraFX.Interop.D3D12_TEXTURE_LAYOUT;
 using static TerraFX.Interop.D3DCompiler;
 using static TerraFX.Interop.DXGI;
@@ -61,7 +66,6 @@ namespace TerraFX.Samples.DirectX.D3D12
         private ID3D12PipelineState* _pipelineState;
         private ID3D12GraphicsCommandList* _commandList;
         private uint _rtvDescriptorSize;
-        private uint _cbvDescriptorSize;
 
         // App resources.
         private ID3D12Resource* _vertexBuffer;
@@ -341,9 +345,9 @@ namespace TerraFX.Samples.DirectX.D3D12
                     var rootParameters = stackalloc D3D12_ROOT_PARAMETER1[RootParametersCount];
 
                     ranges[0].Init(D3D12_DESCRIPTOR_RANGE_TYPE_CBV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
-                        rootParameters[0].InitAsDescriptorTable(RangesCount, ranges, D3D12_SHADER_VISIBILITY_VERTEX);
+                    rootParameters[0].InitAsDescriptorTable(RangesCount, ranges, D3D12_SHADER_VISIBILITY_VERTEX);
 
-                    // Allow input layout and deny uneccessary access to certain pipeline stages.
+                    // Allow input layout and deny unnecessary access to certain pipeline stages.
                     D3D12_ROOT_SIGNATURE_FLAGS rootSignatureFlags =
                         D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT |
                         D3D12_ROOT_SIGNATURE_FLAG_DENY_HULL_SHADER_ROOT_ACCESS |
@@ -352,12 +356,12 @@ namespace TerraFX.Samples.DirectX.D3D12
                         D3D12_ROOT_SIGNATURE_FLAG_DENY_PIXEL_SHADER_ROOT_ACCESS;
 
                     var rootSignatureDesc = new D3D12_VERSIONED_ROOT_SIGNATURE_DESC();
-                        rootSignatureDesc.Init_1_1(RootParametersCount, rootParameters, 0, null, rootSignatureFlags);
+                    rootSignatureDesc.Init_1_1(RootParametersCount, rootParameters, 0, null, rootSignatureFlags);
 
                     ThrowIfFailed(nameof(D3D12SerializeRootSignature), D3D12SerializeVersionedRootSignature(&rootSignatureDesc, featureData.HighestVersion, &signature, &error));
                     {
                         iid = IID_ID3D12RootSignature;
-                        ThrowIfFailed(nameof(ID3D12Device.CreateRootSignature), _device->CreateRootSignature(0, signature->GetBufferPointer(), signature->GetBufferSize(), &iid, (void**)&rootSignatureDesc)); 
+                        ThrowIfFailed(nameof(ID3D12Device.CreateRootSignature), _device->CreateRootSignature(0, signature->GetBufferPointer(), signature->GetBufferSize(), &iid, (void**)&rootSignatureDesc));
                     }
                 }
 
@@ -405,7 +409,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                             InputSlotClass = D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA,
                         },
                     };
-                        
+
                     // Describe and create the graphics pipeline state object (PSO).
                     var psoDesc = new D3D12_GRAPHICS_PIPELINE_STATE_DESC {
                         InputLayout = new D3D12_INPUT_LAYOUT_DESC {
@@ -529,31 +533,32 @@ namespace TerraFX.Samples.DirectX.D3D12
                     var readRange = new D3D12_RANGE(); // We do not intend to read from this resource on the CPU.
                     fixed (byte** ppCbvDataBegin = &_pCbvDataBegin)
                     {
-            ThrowIfFailed(nameof(ID3D12Resource.Map), _constantBuffer->Map(Subresource: 0, &readRange, (void**)ppCbvDataBegin));
-            Unsafe.CopyBlock(ref _pCbvDataBegin[0], ref Unsafe.As<SceneConstantBuffer, byte>(ref _constantBufferData), (uint)sizeof(SceneConstantBuffer));
-                }
-
-                // Create synchronization objects and wait until assets have been uploaded to the GPU.
-                {
-                    fixed (ID3D12Fence** fence = &_fence)
-                    {
-                        iid = IID_ID3D12Fence;
-                        ThrowIfFailed(nameof(ID3D12Device.CreateFence), _device->CreateFence(0, D3D12_FENCE_FLAG_NONE, &iid, (void**)fence));
-                        _fenceValue = 1;
+                        ThrowIfFailed(nameof(ID3D12Resource.Map), _constantBuffer->Map(Subresource: 0, &readRange, (void**)ppCbvDataBegin));
+                        Unsafe.CopyBlock(ref _pCbvDataBegin[0], ref Unsafe.As<SceneConstantBuffer, byte>(ref _constantBufferData), (uint)sizeof(SceneConstantBuffer));
                     }
 
-                    // Create an event handle to use for frame synchronization.
-                    _fenceEvent = CreateEventW(lpEventAttributes: null, bManualReset: FALSE, bInitialState: FALSE, lpName: null);
-                    if (_fenceEvent == null)
+                    // Create synchronization objects and wait until assets have been uploaded to the GPU.
                     {
-                        var hr = Marshal.GetHRForLastWin32Error();
-                        Marshal.ThrowExceptionForHR(hr);
-                    }
+                        fixed (ID3D12Fence** fence = &_fence)
+                        {
+                            iid = IID_ID3D12Fence;
+                            ThrowIfFailed(nameof(ID3D12Device.CreateFence), _device->CreateFence(0, D3D12_FENCE_FLAG_NONE, &iid, (void**)fence));
+                            _fenceValue = 1;
+                        }
 
-                    // Wait for the command list to execute; we are reusing the same command
-                    // list in our main loop but for now, we just want to wait for setup to
-                    // complete before continuing.
-                    WaitForPreviousFrame();
+                        // Create an event handle to use for frame synchronization.
+                        _fenceEvent = CreateEventW(lpEventAttributes: null, bManualReset: FALSE, bInitialState: FALSE, lpName: null);
+                        if (_fenceEvent == null)
+                        {
+                            var hr = Marshal.GetHRForLastWin32Error();
+                            Marshal.ThrowExceptionForHR(hr);
+                        }
+
+                        // Wait for the command list to execute; we are reusing the same command
+                        // list in our main loop but for now, we just want to wait for setup to
+                        // complete before continuing.
+                        WaitForPreviousFrame();
+                    }
                 }
             }
             finally
@@ -597,7 +602,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             _commandList->SetGraphicsRootSignature(_rootSignature);
 
             const uint HeapsCount = 1;
-            var ppHeaps = stackalloc ID3D12DescriptorHeap*[HeapsCount] {
+            var ppHeaps = stackalloc ID3D12DescriptorHeap*[(int)HeapsCount] {
                 _cbvHeap
             };
             _commandList->SetDescriptorHeaps(HeapsCount, ppHeaps);
@@ -617,7 +622,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             var barrier = D3D12_RESOURCE_BARRIER.InitTransition(_renderTargets[unchecked((int)_frameIndex)], D3D12_RESOURCE_STATE_PRESENT, D3D12_RESOURCE_STATE_RENDER_TARGET);
             _commandList->ResourceBarrier(1, &barrier);
 
-            var rtvHandle = new D3D12_CPU_DESCRIPTOPR_HANDLE(_rtvHeap->GetCPUDescriptorHandleForHeapStart(), _frameINdex, _rtvDescriptorSize);
+            var rtvHandle = new D3D12_CPU_DESCRIPTOR_HANDLE(_rtvHeap->GetCPUDescriptorHandleForHeapStart(), (int)_frameIndex, _rtvDescriptorSize);
             _commandList->OMSetRenderTargets(1, &rtvHandle, FALSE, null);
 
             // Record commands.
@@ -720,6 +725,14 @@ namespace TerraFX.Samples.DirectX.D3D12
             {
                 _rtvHeap = null;
                 _ = rtvHeap->Release();
+            }
+
+            var cbvHeap = _cbvHeap;
+
+            if (cbvHeap != null)
+            {
+                _cbvHeap = null;
+                _ = cbvHeap->Release();
             }
 
             var pipelineState = _pipelineState;
