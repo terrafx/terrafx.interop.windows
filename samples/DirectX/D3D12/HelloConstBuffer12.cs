@@ -359,9 +359,11 @@ namespace TerraFX.Samples.DirectX.D3D12
                     rootSignatureDesc.Init_1_1(RootParametersCount, rootParameters, 0, null, rootSignatureFlags);
 
                     ThrowIfFailed(nameof(D3D12SerializeRootSignature), D3D12SerializeVersionedRootSignature(&rootSignatureDesc, featureData.HighestVersion, &signature, &error));
+
+                    fixed (ID3D12RootSignature** rootSignature = &_rootSignature)
                     {
                         iid = IID_ID3D12RootSignature;
-                        ThrowIfFailed(nameof(ID3D12Device.CreateRootSignature), _device->CreateRootSignature(0, signature->GetBufferPointer(), signature->GetBufferSize(), &iid, (void**)&rootSignatureDesc));
+                        ThrowIfFailed(nameof(ID3D12Device.CreateRootSignature), _device->CreateRootSignature(0, signature->GetBufferPointer(), signature->GetBufferSize(), &iid, (void**)rootSignature));
                     }
                 }
 
@@ -373,7 +375,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     // Enable better shader debugging with the graphics debugging tools.
                     compileFlags |= D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION;
 #endif
-                    fixed (char* fileName = GetAssetFullPath(@"D3D12\Assets\Shaders\HelloTriangle.hlsl"))
+                    fixed (char* fileName = GetAssetFullPath(@"D3D12\Assets\Shaders\HelloConstBuffer.hlsl"))
                     {
                         var entryPoint = 0x00006E69614D5356;    // VSMain
                         var target = 0x0000305F355F7376;        // vs_5_0
