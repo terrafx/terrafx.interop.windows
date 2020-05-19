@@ -70,9 +70,9 @@ namespace TerraFX.Samples.DirectX.D3D12
         // App resources.
         private ID3D12Resource* _vertexBuffer;
         private D3D12_VERTEX_BUFFER_VIEW _vertexBufferView;
-        private ID3D12Resource* _constantBuffer;
+        private readonly ID3D12Resource* _constantBuffer;
         private SceneConstantBuffer _constantBufferData;
-        private byte* _pCbvDataBegin;
+        private readonly byte* _pCbvDataBegin;
 
         // Synchronization objects.
         private uint _frameIndex;
@@ -111,13 +111,13 @@ namespace TerraFX.Samples.DirectX.D3D12
         // Update frame-based values.
         public override void OnUpdate()
         {
-            const float translationSpeed = 0.005f;
-            const float offsetBounds = 1.25f;
+            const float TranslationSpeed = 0.005f;
+            const float OffsetBounds = 1.25f;
 
-            _constantBufferData.offset.X += translationSpeed;
-            if (_constantBufferData.offset.X > offsetBounds)
+            _constantBufferData.Offset.X += TranslationSpeed;
+            if (_constantBufferData.Offset.X > OffsetBounds)
             {
-                _constantBufferData.offset.X = -offsetBounds;
+                _constantBufferData.Offset.X = -OffsetBounds;
             }
             Unsafe.CopyBlock(ref _pCbvDataBegin[0], ref Unsafe.As<SceneConstantBuffer, byte>(ref _constantBufferData), (uint)sizeof(SceneConstantBuffer));
         }
@@ -348,7 +348,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     rootParameters[0].InitAsDescriptorTable(RangesCount, ranges, D3D12_SHADER_VISIBILITY_VERTEX);
 
                     // Allow input layout and deny unnecessary access to certain pipeline stages.
-                    D3D12_ROOT_SIGNATURE_FLAGS rootSignatureFlags =
+                    var rootSignatureFlags =
                         D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT |
                         D3D12_ROOT_SIGNATURE_FLAG_DENY_HULL_SHADER_ROOT_ACCESS |
                         D3D12_ROOT_SIGNATURE_FLAG_DENY_DOMAIN_SHADER_ROOT_ACCESS |
@@ -781,7 +781,7 @@ namespace TerraFX.Samples.DirectX.D3D12
 
         private struct SceneConstantBuffer
         {
-            public Vector4 offset;
+            public Vector4 Offset;
         };
     }
 }
