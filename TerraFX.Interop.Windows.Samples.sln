@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraFX.Interop.D3D12", "so
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraFX.Interop.User32", "sources\Interop\User32\TerraFX.Interop.User32.csproj", "{8F6979A0-5072-43F5-8F86-A05C7B4E4BA4}"
 EndProject
+Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "TerraFX.Samples.WinUI (Package)", "samples\WinUI\WinUI (Package)\TerraFX.Samples.WinUI (Package).wapproj", "{DBF940C1-D8D4-4282-9E4F-DCDAE34AB6BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TerraFX.Samples.WinUI", "samples\WinUI\WinUI\TerraFX.Samples.WinUI.csproj", "{82058A2A-847F-4F7E-90F2-705A1C4B388C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
