@@ -15,7 +15,8 @@ namespace TerraFX.Samples.DirectX
             new HelloWindow11(1280, 720, "D3D11.HelloWindow"),
             new HelloTriangle11(1280, 720, "D3D11.HelloTriangle"),
             new HelloWindow12(1280, 720, "D3D12.HelloWindow"),
-            new HelloTriangle12(1280, 720, "D3D12.HelloTriangle")
+            new HelloTriangle12(1280, 720, "D3D12.HelloTriangle"),
+            new HelloTexture12(1280, 720, "D3D12.HelloTexture")
         };
 
         public static void Main(string[] args)
