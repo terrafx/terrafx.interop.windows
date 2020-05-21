@@ -13,7 +13,8 @@
     <RuntimeIdentifier>win-$(Platform)</RuntimeIdentifier>
     <SignAssembly>true</SignAssembly>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <DelaySign>false</DelaySign>
+    <DelaySign>true</DelaySign>
+    <AssemblyOriginatorKeyFile>D:\code\GpuRender\terrafx.interop.windows.IB\TerraFX.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
