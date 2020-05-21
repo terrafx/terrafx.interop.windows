@@ -166,6 +166,13 @@ namespace TerraFX.Samples.DirectX.D3D12
                     if (SUCCEEDED(D3D12GetDebugInterface(&iid, (void**)&debugController)))
                     {
                         debugController->EnableDebugLayer();
+                        iid = IID_ID3D12Debug1;
+                        ID3D12Debug1* debug1 = null;
+                        if (SUCCEEDED(debugController->QueryInterface(&iid, (void**)&debug1)))
+                        {
+                            debug1->SetEnableGPUBasedValidation(TRUE);
+                            debug1->SetEnableSynchronizedCommandQueueValidation(TRUE);
+                        }
 
                         // Enable additional debug layers.
                         dxgiFactoryFlags |= DXGI_CREATE_FACTORY_DEBUG;
@@ -190,6 +197,52 @@ namespace TerraFX.Samples.DirectX.D3D12
                 {
                     iid = IID_ID3D12Device;
                     ThrowIfFailed(nameof(D3D12CreateDevice), D3D12CreateDevice((IUnknown*)adapter, D3D_FEATURE_LEVEL_11_0, &iid, (void**)device));
+                }
+
+                // Enable debug messages in debug mode.
+                {
+#if DEBUG
+                    ID3D12InfoQueue* infoQueue;
+                    iid = IID_ID3D12InfoQueue;
+                    ThrowIfFailed(nameof(ID3D12Device2.QueryInterface), _device->QueryInterface(&iid, (void**)&infoQueue));
+
+                    infoQueue->SetBreakOnSeverity(D3D12_MESSAGE_SEVERITY.D3D12_MESSAGE_SEVERITY_CORRUPTION, TRUE);
+                    infoQueue->SetBreakOnSeverity(D3D12_MESSAGE_SEVERITY.D3D12_MESSAGE_SEVERITY_ERROR, TRUE);
+                    infoQueue->SetBreakOnSeverity(D3D12_MESSAGE_SEVERITY.D3D12_MESSAGE_SEVERITY_WARNING, TRUE);
+
+                    // Suppress whole categories of messages
+                    //D3D12_MESSAGE_CATEGORY Categories[] = {};
+
+                    // Suppress messages based on their severity level
+                    const int SeveritiesCount = 1;
+                    var Severities = stackalloc D3D12_MESSAGE_SEVERITY[SeveritiesCount]
+                    {
+                        D3D12_MESSAGE_SEVERITY.D3D12_MESSAGE_SEVERITY_INFO
+                    };
+
+                    // Suppress individual messages by their ID
+                    const int IDsCount = 3;
+                    var DenyIds = stackalloc D3D12_MESSAGE_ID[IDsCount] {
+                        D3D12_MESSAGE_ID.D3D12_MESSAGE_ID_CLEARRENDERTARGETVIEW_MISMATCHINGCLEARVALUE,   // I'm really not sure how to avoid this message.
+                        D3D12_MESSAGE_ID.D3D12_MESSAGE_ID_MAP_INVALID_NULLRANGE,                         // This warning occurs when using capture frame while graphics debugging.
+                        D3D12_MESSAGE_ID.D3D12_MESSAGE_ID_UNMAP_INVALID_NULLRANGE,                       // This warning occurs when using capture frame while graphics debugging.
+                    };
+
+                    var NewFilter = new D3D12_INFO_QUEUE_FILTER {
+                        //NewFilter.DenyList.NumCategories = _countof(Categories);
+                        //NewFilter.DenyList.pCategoryList = Categories;
+                        DenyList = new D3D12_INFO_QUEUE_FILTER_DESC {
+                            //NumCategories ...
+                            //Categories ...
+                            NumSeverities = SeveritiesCount,
+                            pSeverityList = Severities,
+                            NumIDs = IDsCount,
+                            pIDList = DenyIds,
+                        },
+                    };
+
+                    ThrowIfFailed(nameof(ID3D12InfoQueue.PushStorageFilter), infoQueue->PushStorageFilter(&NewFilter));
+#endif
                 }
 
                 // Describe and create the command queue.
@@ -324,22 +377,6 @@ namespace TerraFX.Samples.DirectX.D3D12
             {
                 // Create the root signature.
                 {
-                    bool isThisUseful = false; // transferred here from C# HelloTriangle, is not in C++ HelloTexture, but without it crashes on CreateRootSignature
-                    if (isThisUseful)
-                    {
-                        var rootSignatureDesc1 = new D3D12_ROOT_SIGNATURE_DESC {
-                            Flags = D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT
-                        };
-
-                        ThrowIfFailed(nameof(D3D12SerializeRootSignature), D3D12SerializeRootSignature(&rootSignatureDesc1, D3D_ROOT_SIGNATURE_VERSION_1, &signature, &error));
-                    }
-
-                    fixed (ID3D12RootSignature** rootSignature = &_rootSignature)
-                    {
-                        iid = IID_ID3D12RootSignature;
-                        ThrowIfFailed(nameof(ID3D12Device._CreateRootSignature), _device->CreateRootSignature(nodeMask: 0, signature->GetBufferPointer(), signature->GetBufferSize(), &iid, (void**)rootSignature));
-                    }
-
                     var featureData = new D3D12_FEATURE_DATA_ROOT_SIGNATURE {
                         // This is the highest version the sample supports. If CheckFeatureSupport succeeds, the HighestVersion returned will not be greater than this.
                         HighestVersion = D3D_ROOT_SIGNATURE_VERSION_1_1
@@ -407,8 +444,9 @@ namespace TerraFX.Samples.DirectX.D3D12
                         0x0000000000000000,
                     };
 
-                    var semanticName1 = stackalloc ulong[1] {
+                    var semanticName1 = stackalloc ulong[2] {
                         0x44524f4f43584554,     // TEXCOORD
+                        0x0000000000000000,
                     };
 
                     var inputElementDescs = stackalloc D3D12_INPUT_ELEMENT_DESC[InputElementDescsCount] {
@@ -436,13 +474,15 @@ namespace TerraFX.Samples.DirectX.D3D12
                         PS = new D3D12_SHADER_BYTECODE(pixelShader),
                         RasterizerState = D3D12_RASTERIZER_DESC.DEFAULT,
                         BlendState = D3D12_BLEND_DESC.DEFAULT,
-                        DepthStencilState = D3D12_DEPTH_STENCIL_DESC.DEFAULT,
+                        DepthStencilState = new D3D12_DEPTH_STENCIL_DESC {
+                            DepthEnable = FALSE,
+                            StencilEnable = FALSE,
+                        },
                         SampleMask = uint.MaxValue,
                         PrimitiveTopologyType = D3D12_PRIMITIVE_TOPOLOGY_TYPE_TRIANGLE,
                         NumRenderTargets = 1,
                         SampleDesc = new DXGI_SAMPLE_DESC(count: 1, quality: 0),
                     };
-                    psoDesc.DepthStencilState.DepthEnable = FALSE;
                     psoDesc.RTVFormats[0] = DXGI_FORMAT_R8G8B8A8_UNORM;
 
                     fixed (ID3D12PipelineState** pipelineState = &_pipelineState)
