@@ -18,6 +18,7 @@ namespace TerraFX.Samples.DirectX
             new HelloConstBuffer12(1280, 720, "D3D12.HelloConstBuffer"),
             new HelloTexture12(1280, 720, "D3D12.HelloTexture"),
             new HelloBundles12(1280, 720, "D3D12.HelloBundles"),
+            new HelloFrameBuffering12(1280, 720, "HelloFrameBuffering"),
         };
 
         public static void Main(string[] args)
