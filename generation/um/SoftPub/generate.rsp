@@ -1,7 +1,13 @@
 --additional
 -m32
+-Wno-expansion-to-defined
+-Wno-ignored-attributes
+-Wno-ignored-pragma-intrinsic
+-Wno-nonportable-include-path
+-Wno-pragma-pack
 --config
 multi-file
+preview-codegen-nint
 --file
 um-SoftPub.h
 --headerFile
@@ -39,7 +45,7 @@ CONFIG_CI_PROV_INFO_RESULT_=CONFIG_CI_PROV_INFO_RESULT
 DRIVER_VER_INFO_=DRIVER_VER_INFO
 DRIVER_VER_MAJORMINOR_=DRIVER_VER_MAJORMINOR
 HANDLE=IntPtr
-ULONG_PTR=UIntPtr
+ULONG_PTR=nuint
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/SoftPub.h
 --with-callconv

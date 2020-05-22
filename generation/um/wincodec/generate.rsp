@@ -1,7 +1,13 @@
 --additional
 -m32
+-Wno-expansion-to-defined
+-Wno-ignored-attributes
+-Wno-ignored-pragma-intrinsic
+-Wno-nonportable-include-path
+-Wno-pragma-pack
 --config
 multi-file
+preview-codegen-nint
 --exclude
 __MIDL_itf_wincodec_0000_0000_v0_0_c_ifspec
 __MIDL_itf_wincodec_0000_0000_v0_0_s_ifspec
@@ -251,7 +257,7 @@ ID2D1Image=IUnknown
 tagPROPVARIANT=PROPVARIANT
 tagSAFEARRAY=SAFEARRAY
 tagSTATSTG=STATSTG
-ULONG_PTR=UIntPtr
+ULONG_PTR=nuint
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/wincodec.h
 --with-attribute

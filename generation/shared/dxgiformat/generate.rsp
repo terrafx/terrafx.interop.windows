@@ -2,6 +2,7 @@
 -m32
 --config
 multi-file
+preview-codegen-nint
 --file
 shared-dxgiformat.h
 --headerFile
