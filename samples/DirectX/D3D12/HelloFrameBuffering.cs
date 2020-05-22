@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from D3D12HelloWindow.h in https://github.com/Microsoft/DirectX-Graphics-Samples
+// Ported from D3D12FrameBuffering in https://github.com/Microsoft/DirectX-Graphics-Samples
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
 using System;
@@ -53,7 +53,7 @@ namespace TerraFX.Samples.DirectX.D3D12
         private IDXGISwapChain3* _swapChain;
         private ID3D12Device* _device;
         private readonly ID3D12Resource*[] _renderTargets;
-        private ID3D12CommandAllocator* _commandAllocator;
+        private readonly ID3D12CommandAllocator*[] _commandAllocators;
         private ID3D12CommandQueue* _commandQueue;
         private ID3D12RootSignature* _rootSignature;
         private ID3D12DescriptorHeap* _rtvHeap;
@@ -69,12 +69,14 @@ namespace TerraFX.Samples.DirectX.D3D12
         private uint _frameIndex;
         private HANDLE _fenceEvent;
         private ID3D12Fence* _fence;
-        private ulong _fenceValue;
+        private readonly ulong[] _fenceValues;
 
         public HelloFrameBuffering12(uint width, uint height, string name)
             : base(width, height, name)
         {
             _renderTargets = new ID3D12Resource*[FrameCount];
+            _commandAllocators = new ID3D12CommandAllocator*[FrameCount];
+            _fenceValues = new ulong[FrameCount];
 
             _viewport = new D3D12_VIEWPORT {
                 TopLeftX = 0,
@@ -120,14 +122,14 @@ namespace TerraFX.Samples.DirectX.D3D12
             // Present the frame.
             ThrowIfFailed(nameof(IDXGISwapChain3.Present), _swapChain->Present(SyncInterval: 1, Flags: 0));
 
-            WaitForPreviousFrame();
+            MoveToNextFrame();
         }
 
         public override void OnDestroy()
         {
             // Ensure that the GPU is no longer referencing resources that are about to be
             // cleaned up by the destructor.
-            WaitForPreviousFrame();
+            WaitForGpu();
 
             _ = CloseHandle(_fenceEvent);
         }
@@ -239,25 +241,26 @@ namespace TerraFX.Samples.DirectX.D3D12
                 {
                     var rtvHandle = _rtvHeap->GetCPUDescriptorHandleForHeapStart();
 
-                    // Create a RTV for each frame.
-                    iid = IID_ID3D12Resource;
-
+                    // Create a RTV and a command allocator for each frame.
                     for (var n = 0u; n < FrameCount; n++)
                     {
                         ID3D12Resource* renderTarget;
                         {
-                            ThrowIfFailed(nameof(IDXGISwapChain3.GetBuffer), _swapChain->GetBuffer(n, &iid, (void**)&renderTarget));
+                            iid = IID_ID3D12Resource;
+                            ThrowIfFailed(nameof(IDXGISwapChain3.GetBuffer),
+                                _swapChain->GetBuffer(n, &iid, (void**)&renderTarget));
                             _device->CreateRenderTargetView(renderTarget, pDesc: null, rtvHandle);
                             rtvHandle.Offset(1, _rtvDescriptorSize);
                         }
                         _renderTargets[unchecked((int)n)] = renderTarget;
-                    }
-                }
 
-                fixed (ID3D12CommandAllocator** commandAllocator = &_commandAllocator)
-                {
-                    iid = IID_ID3D12CommandAllocator;
-                    ThrowIfFailed(nameof(ID3D12Device.CreateRenderTargetView), _device->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_DIRECT, &iid, (void**)commandAllocator));
+                        fixed (ID3D12CommandAllocator** commandAllocator = &_commandAllocators[n])
+                        {
+                            iid = IID_ID3D12CommandAllocator;
+                            ThrowIfFailed(nameof(ID3D12Device.CreateCommandAllocator),
+                                _device->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_DIRECT, &iid, (void**)commandAllocator));
+                        }
+                    }
                 }
             }
             finally
@@ -386,7 +389,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 fixed (ID3D12GraphicsCommandList** commandList = &_commandList)
                 {
                     iid = IID_ID3D12GraphicsCommandList;
-                    ThrowIfFailed(nameof(ID3D12Device.CreateCommandList), _device->CreateCommandList(nodeMask: 0, D3D12_COMMAND_LIST_TYPE_DIRECT, _commandAllocator, _pipelineState, &iid, (void**)commandList));
+                    ThrowIfFailed(nameof(ID3D12Device.CreateCommandList), _device->CreateCommandList(nodeMask: 0, D3D12_COMMAND_LIST_TYPE_DIRECT, _commandAllocators[_frameIndex], _pipelineState, &iid, (void**)commandList));
                 }
 
                 // Command lists are created in the recording state, but there is nothing
@@ -454,8 +457,8 @@ namespace TerraFX.Samples.DirectX.D3D12
                     fixed (ID3D12Fence** fence = &_fence)
                     {
                         iid = IID_ID3D12Fence;
-                        ThrowIfFailed(nameof(ID3D12Device.CreateFence), _device->CreateFence(0, D3D12_FENCE_FLAG_NONE, &iid, (void**)fence));
-                        _fenceValue = 1;
+                        ThrowIfFailed(nameof(ID3D12Device.CreateFence), _device->CreateFence(_fenceValues[_frameIndex], D3D12_FENCE_FLAG_NONE, &iid, (void**)fence));
+                        ++_fenceValues[_frameIndex];
                     }
 
                     // Create an event handle to use for frame synchronization.
@@ -469,7 +472,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     // Wait for the command list to execute; we are reusing the same command
                     // list in our main loop but for now, we just want to wait for setup to
                     // complete before continuing.
-                    WaitForPreviousFrame();
+                    WaitForGpu();
                 }
             }
             finally
@@ -501,12 +504,12 @@ namespace TerraFX.Samples.DirectX.D3D12
             // Command list allocators can only be reset when the associated
             // command lists have finished execution on the GPU; apps should use
             // fences to determine GPU execution progress.
-            ThrowIfFailed(nameof(ID3D12CommandAllocator.Reset), _commandAllocator->Reset());
+            ThrowIfFailed(nameof(ID3D12CommandAllocator.Reset), _commandAllocators[_frameIndex]->Reset());
 
             // However, when ExecuteCommandList() is called on a particular command
             // list, that command list can then be reset at any time and must be before
             // re-recording.
-            ThrowIfFailed(nameof(ID3D12GraphicsCommandList.Reset), _commandList->Reset(_commandAllocator, _pipelineState));
+            ThrowIfFailed(nameof(ID3D12GraphicsCommandList.Reset), _commandList->Reset(_commandAllocators[_frameIndex], _pipelineState));
 
             // Set necessary state.
             _commandList->SetGraphicsRootSignature(_rootSignature);
@@ -548,26 +551,39 @@ namespace TerraFX.Samples.DirectX.D3D12
             ThrowIfFailed(nameof(ID3D12GraphicsCommandList.Close), _commandList->Close());
         }
 
-        private void WaitForPreviousFrame()
+        private void WaitForGpu()
         {
-            // WAITING FOR THE FRAME TO COMPLETE BEFORE CONTINUING IS NOT BEST PRACTICE.
-            // This is code implemented as such for simplicity. The D3D12HelloFrameBuffering
-            // sample illustrates how to use fences for efficient resource usage and to
-            // maximize GPU utilization.
-
-            // Signal and increment the fence value.
-            var fence = _fenceValue;
+            // Schedule a Signal command in the queue.
+            var fence = _fenceValues[_frameIndex];
             ThrowIfFailed(nameof(ID3D12CommandQueue.Signal), _commandQueue->Signal(_fence, fence));
-            _fenceValue++;
 
-            // Wait until the previous frame is finished.
-            if (_fence->GetCompletedValue() < fence)
+            // Wait until the fence has been processed.
+            ThrowIfFailed(nameof(ID3D12Fence.SetEventOnCompletion), _fence->SetEventOnCompletion(_fenceValues[_frameIndex], _fenceEvent));
+            _ = WaitForSingleObjectEx(_fenceEvent, INFINITE, FALSE);
+
+            // Increment the fence value for the current frame.
+            ++_fenceValues[_frameIndex];
+        }
+
+        // Prepare to render the next frame.
+        private void MoveToNextFrame()
+        {
+            // Schedule a Signal command in the queue.
+            var currentFenceValue = _fenceValues[_frameIndex];
+            ThrowIfFailed(nameof(ID3D12CommandQueue.Signal), _commandQueue->Signal(_fence, currentFenceValue));
+
+            // Update the frame index.
+            _frameIndex = _swapChain->GetCurrentBackBufferIndex();
+
+            // If the next frame is not ready to be rendered yet, wait until it is ready.
+            if (_fence->GetCompletedValue() < _fenceValues[_frameIndex])
             {
-                ThrowIfFailed(nameof(ID3D12Fence.SetEventOnCompletion), _fence->SetEventOnCompletion(fence, _fenceEvent));
-                _ = WaitForSingleObject(_fenceEvent, INFINITE);
+                ThrowIfFailed(nameof(ID3D12Fence.SetEventOnCompletion), _fence->SetEventOnCompletion(_fenceValues[_frameIndex], _fenceEvent));
+                _ = WaitForSingleObjectEx(_fenceEvent, INFINITE, FALSE);
             }
 
-            _frameIndex = _swapChain->GetCurrentBackBufferIndex();
+            // Set the fence value for the next frame.
+            _fenceValues[_frameIndex] = currentFenceValue + 1;
         }
 
         protected override void Dispose(bool isDisposing)
@@ -597,14 +613,14 @@ namespace TerraFX.Samples.DirectX.D3D12
                     _renderTargets[index] = null;
                     _ = renderTarget->Release();
                 }
-            }
 
-            var commandAllocator = _commandAllocator;
+                var commandAllocator = _commandAllocators[index];
 
-            if (commandAllocator != null)
-            {
-                _commandAllocator = null;
-                _ = commandAllocator->Release();
+                if (commandAllocator != null)
+                {
+                    _commandAllocators[index] = null;
+                    _ = commandAllocator->Release();
+                }
             }
 
             var commandQueue = _commandQueue;
