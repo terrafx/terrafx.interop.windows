@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/prsht.h in the Windows SDK for Windows 10.0.18362.0
+// Ported from um/prsht.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -22,7 +22,7 @@ namespace TerraFX.Interop
         [NativeTypeName("HINSTANCE")]
         public IntPtr hInstance;
 
-        [NativeTypeName("_PROPSHEETHEADERA_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/prsht.h:479:5)")]
+        [NativeTypeName("_PROPSHEETHEADERA_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:479:5)")]
         public _Anonymous_e__Union1 Anonymous1;
 
         [NativeTypeName("LPCSTR")]
@@ -31,22 +31,22 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint nPages;
 
-        [NativeTypeName("_PROPSHEETHEADERA_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/prsht.h:479:5)")]
+        [NativeTypeName("_PROPSHEETHEADERA_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:479:5)")]
         public _Anonymous_e__Union2 Anonymous2;
 
-        [NativeTypeName("_PROPSHEETHEADERA_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/prsht.h:479:5)")]
+        [NativeTypeName("_PROPSHEETHEADERA_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:479:5)")]
         public _Anonymous_e__Union3 Anonymous3;
 
         [NativeTypeName("PFNPROPSHEETCALLBACK")]
         public IntPtr pfnCallback;
 
-        [NativeTypeName("_PROPSHEETHEADERA_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/prsht.h:480:5)")]
+        [NativeTypeName("_PROPSHEETHEADERA_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:480:5)")]
         public _Anonymous_e__Union4 Anonymous4;
 
         [NativeTypeName("HPALETTE")]
         public IntPtr hplWatermark;
 
-        [NativeTypeName("_PROPSHEETHEADERA_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/prsht.h:486:5)")]
+        [NativeTypeName("_PROPSHEETHEADERA_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:486:5)")]
         public _Anonymous_e__Union5 Anonymous5;
 
         [StructLayout(LayoutKind.Explicit)]

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/hidpi.h in the Windows SDK for Windows 10.0.18362.0
+// Ported from shared/hidpi.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -45,18 +45,18 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG [10]")]
         public fixed uint Reserved[10];
 
-        [NativeTypeName("_HIDP_BUTTON_CAPS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared/hidpi.h:86:5)")]
+        [NativeTypeName("_HIDP_BUTTON_CAPS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/hidpi.h:86:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared/hidpi.h:87:9)")]
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/hidpi.h:87:9)")]
             public _Range_e__Union Range;
 
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared/hidpi.h:93:9)")]
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/hidpi.h:93:9)")]
             public _NotRange_e__Union NotRange;
 
             public partial struct _Range_e__Union

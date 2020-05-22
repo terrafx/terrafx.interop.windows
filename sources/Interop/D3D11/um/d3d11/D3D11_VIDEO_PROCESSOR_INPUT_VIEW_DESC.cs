@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3d11.h in the Windows SDK for Windows 10.0.18362.0
+// Ported from um/d3d11.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -14,7 +14,7 @@ namespace TerraFX.Interop
 
         public D3D11_VPIV_DIMENSION ViewDimension;
 
-        [NativeTypeName("D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d3d11.h:11391:5)")]
+        [NativeTypeName("D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11.h:11391:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]

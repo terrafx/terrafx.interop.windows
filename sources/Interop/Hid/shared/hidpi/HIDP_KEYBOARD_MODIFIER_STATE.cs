@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/hidpi.h in the Windows SDK for Windows 10.0.18362.0
+// Ported from shared/hidpi.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -9,14 +9,14 @@ namespace TerraFX.Interop
 {
     public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     {
-        [NativeTypeName("_HIDP_KEYBOARD_MODIFIER_STATE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared/hidpi.h:1728:4)")]
+        [NativeTypeName("_HIDP_KEYBOARD_MODIFIER_STATE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/hidpi.h:1728:4)")]
         public _Anonymous_e__Union1 Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union1
         {
             [FieldOffset(0)]
-            [NativeTypeName("_HIDP_KEYBOARD_MODIFIER_STATE::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared/hidpi.h:1729:7)")]
+            [NativeTypeName("_HIDP_KEYBOARD_MODIFIER_STATE::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/hidpi.h:1729:7)")]
             public _Anonymous_e__Union2 Anonymous;
 
             [FieldOffset(0)]

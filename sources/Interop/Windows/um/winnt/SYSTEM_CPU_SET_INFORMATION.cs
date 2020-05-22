@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.18362.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -14,14 +14,14 @@ namespace TerraFX.Interop
 
         public CPU_SET_INFORMATION_TYPE Type;
 
-        [NativeTypeName("_SYSTEM_CPU_SET_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h:12490:5)")]
+        [NativeTypeName("_SYSTEM_CPU_SET_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12490:5)")]
         public _Anonymous_e__Union1 Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union1
         {
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h:12491:9)")]
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12491:9)")]
             public _CpuSet_e__Union2 CpuSet;
 
             public partial struct _CpuSet_e__Union2
@@ -47,10 +47,10 @@ namespace TerraFX.Interop
                 [NativeTypeName("BYTE")]
                 public byte EfficiencyClass;
 
-                [NativeTypeName("_SYSTEM_CPU_SET_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h:12499:13)")]
+                [NativeTypeName("_SYSTEM_CPU_SET_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12499:13)")]
                 public _Anonymous_e__Union2 Anonymous1;
 
-                [NativeTypeName("_SYSTEM_CPU_SET_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h:12516:13)")]
+                [NativeTypeName("_SYSTEM_CPU_SET_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12516:13)")]
                 public _Anonymous_e__Union4 Anonymous2;
 
                 [NativeTypeName("DWORD64")]
@@ -64,7 +64,7 @@ namespace TerraFX.Interop
                     public byte AllFlags;
 
                     [FieldOffset(0)]
-                    [NativeTypeName("_SYSTEM_CPU_SET_INFORMATION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h:12507:17)")]
+                    [NativeTypeName("_SYSTEM_CPU_SET_INFORMATION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12507:17)")]
                     public _Anonymous_e__Union3 Anonymous;
 
                     public partial struct _Anonymous_e__Union3

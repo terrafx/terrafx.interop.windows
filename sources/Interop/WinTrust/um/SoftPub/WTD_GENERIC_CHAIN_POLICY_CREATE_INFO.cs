@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/SoftPub.h in the Windows SDK for Windows 10.0.18362.0
+// Ported from um/SoftPub.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WTD_GENERIC_CHAIN_POLICY_CREATE_INFO
     {
-        [NativeTypeName("_WTD_GENERIC_CHAIN_POLICY_CREATE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/SoftPub.h:157:5)")]
+        [NativeTypeName("_WTD_GENERIC_CHAIN_POLICY_CREATE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/SoftPub.h:157:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [NativeTypeName("HCERTCHAINENGINE")]

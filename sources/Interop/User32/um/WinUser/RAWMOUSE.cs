@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/WinUser.h in the Windows SDK for Windows 10.0.18362.0
+// Ported from um/WinUser.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -12,7 +12,7 @@ namespace TerraFX.Interop
         [NativeTypeName("USHORT")]
         public ushort usFlags;
 
-        [NativeTypeName("tagRAWMOUSE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/WinUser.h:14899:5)")]
+        [NativeTypeName("tagRAWMOUSE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinUser.h:14899:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [NativeTypeName("ULONG")]
@@ -35,7 +35,7 @@ namespace TerraFX.Interop
             public uint ulButtons;
 
             [FieldOffset(0)]
-            [NativeTypeName("tagRAWMOUSE::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/WinUser.h:14901:9)")]
+            [NativeTypeName("tagRAWMOUSE::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinUser.h:14901:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             public partial struct _Anonymous_e__Struct

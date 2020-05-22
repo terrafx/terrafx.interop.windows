@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.18362.0
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -25,18 +25,18 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort wFlags;
 
-        [NativeTypeName("_PROCESS_HEAP_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/minwinbase.h:242:5)")]
+        [NativeTypeName("_PROCESS_HEAP_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/minwinbase.h:242:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/minwinbase.h:243:9)")]
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/minwinbase.h:243:9)")]
             public _Block_e__Union Block;
 
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/minwinbase.h:247:9)")]
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/minwinbase.h:247:9)")]
             public _Region_e__Union Region;
 
             public unsafe partial struct _Block_e__Union

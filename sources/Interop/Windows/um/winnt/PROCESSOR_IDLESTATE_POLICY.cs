@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.18362.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -13,7 +13,7 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort Revision;
 
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h:16446:5)")]
+        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:16446:5)")]
         public _Flags_e__Union Flags;
 
         [NativeTypeName("DWORD")]
@@ -30,7 +30,7 @@ namespace TerraFX.Interop
             public ushort AsWORD;
 
             [FieldOffset(0)]
-            [NativeTypeName("PROCESSOR_IDLESTATE_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h:16448:9)")]
+            [NativeTypeName("PROCESSOR_IDLESTATE_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:16448:9)")]
             public _Anonymous_e__Union Anonymous;
 
             public partial struct _Anonymous_e__Union
