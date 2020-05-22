@@ -108,10 +108,10 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "HidP_TranslateUsageAndPagesToI8042ScanCodes", ExactSpelling = true)]
         [return: NativeTypeName("NTSTATUS")]
-        public static extern int HidP_TranslateUsageAndPagesToI8042ScanCodes([NativeTypeName("PUSAGE_AND_PAGE")] USAGE_AND_PAGE* ChangedUsageList, [NativeTypeName("ULONG")] uint UsageListLength, HIDP_KEYBOARD_DIRECTION KeyAction, [NativeTypeName("PHIDP_KEYBOARD_MODIFIER_STATE")] HIDP_KEYBOARD_MODIFIER_STATE* ModifierState, [NativeTypeName("PHIDP_INSERT_SCANCODES")] IntPtr* InsertCodesProcedure, [NativeTypeName("PVOID")] void* InsertCodesContext);
+        public static extern int HidP_TranslateUsageAndPagesToI8042ScanCodes([NativeTypeName("PUSAGE_AND_PAGE")] USAGE_AND_PAGE* ChangedUsageList, [NativeTypeName("ULONG")] uint UsageListLength, HIDP_KEYBOARD_DIRECTION KeyAction, [NativeTypeName("PHIDP_KEYBOARD_MODIFIER_STATE")] HIDP_KEYBOARD_MODIFIER_STATE* ModifierState, [NativeTypeName("PHIDP_INSERT_SCANCODES")] IntPtr InsertCodesProcedure, [NativeTypeName("PVOID")] void* InsertCodesContext);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "HidP_TranslateUsagesToI8042ScanCodes", ExactSpelling = true)]
         [return: NativeTypeName("NTSTATUS")]
-        public static extern int HidP_TranslateUsagesToI8042ScanCodes([NativeTypeName("PUSAGE")] ushort* ChangedUsageList, [NativeTypeName("ULONG")] uint UsageListLength, HIDP_KEYBOARD_DIRECTION KeyAction, [NativeTypeName("PHIDP_KEYBOARD_MODIFIER_STATE")] HIDP_KEYBOARD_MODIFIER_STATE* ModifierState, [NativeTypeName("PHIDP_INSERT_SCANCODES")] IntPtr* InsertCodesProcedure, [NativeTypeName("PVOID")] void* InsertCodesContext);
+        public static extern int HidP_TranslateUsagesToI8042ScanCodes([NativeTypeName("PUSAGE")] ushort* ChangedUsageList, [NativeTypeName("ULONG")] uint UsageListLength, HIDP_KEYBOARD_DIRECTION KeyAction, [NativeTypeName("PHIDP_KEYBOARD_MODIFIER_STATE")] HIDP_KEYBOARD_MODIFIER_STATE* ModifierState, [NativeTypeName("PHIDP_INSERT_SCANCODES")] IntPtr InsertCodesProcedure, [NativeTypeName("PVOID")] void* InsertCodesContext);
     }
 }

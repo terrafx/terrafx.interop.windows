@@ -15,13 +15,13 @@ namespace TerraFX.Interop
         public CRYPT_ALGORITHM_IDENTIFIER ContentEncryptionAlgorithm;
 
         [NativeTypeName("PFN_CMSG_ALLOC")]
-        public IntPtr* pfnAlloc;
+        public IntPtr pfnAlloc;
 
         [NativeTypeName("PFN_CMSG_FREE")]
-        public IntPtr* pfnFree;
+        public IntPtr pfnFree;
 
         [NativeTypeName("NCRYPT_KEY_HANDLE")]
-        public UIntPtr hNCryptKey;
+        public nuint hNCryptKey;
 
         [NativeTypeName("BYTE *")]
         public byte* pbContentEncryptKey;

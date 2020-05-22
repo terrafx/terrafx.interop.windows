@@ -18,7 +18,7 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "D3D12CreateRootSignatureDeserializer", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3D12CreateRootSignatureDeserializer([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] UIntPtr SrcDataSizeInBytes, [NativeTypeName("const IID &")] Guid* pRootSignatureDeserializerInterface, [NativeTypeName("void **")] void** ppRootSignatureDeserializer);
+        public static extern int D3D12CreateRootSignatureDeserializer([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSizeInBytes, [NativeTypeName("const IID &")] Guid* pRootSignatureDeserializerInterface, [NativeTypeName("void **")] void** ppRootSignatureDeserializer);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "D3D12SerializeVersionedRootSignature", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -26,7 +26,7 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int D3D12CreateVersionedRootSignatureDeserializer([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] UIntPtr SrcDataSizeInBytes, [NativeTypeName("const IID &")] Guid* pRootSignatureDeserializerInterface, [NativeTypeName("void **")] void** ppRootSignatureDeserializer);
+        public static extern int D3D12CreateVersionedRootSignatureDeserializer([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSizeInBytes, [NativeTypeName("const IID &")] Guid* pRootSignatureDeserializerInterface, [NativeTypeName("void **")] void** ppRootSignatureDeserializer);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "D3D12CreateDevice", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

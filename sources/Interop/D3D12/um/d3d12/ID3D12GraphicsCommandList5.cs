@@ -235,10 +235,10 @@ namespace TerraFX.Interop
         public delegate void _EndRenderPass(ID3D12GraphicsCommandList5* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _InitializeMetaCommand(ID3D12GraphicsCommandList5* pThis, [NativeTypeName("ID3D12MetaCommand *")] ID3D12MetaCommand* pMetaCommand, [NativeTypeName("const void *")] void* pInitializationParametersData, [NativeTypeName("SIZE_T")] UIntPtr InitializationParametersDataSizeInBytes);
+        public delegate void _InitializeMetaCommand(ID3D12GraphicsCommandList5* pThis, [NativeTypeName("ID3D12MetaCommand *")] ID3D12MetaCommand* pMetaCommand, [NativeTypeName("const void *")] void* pInitializationParametersData, [NativeTypeName("SIZE_T")] nuint InitializationParametersDataSizeInBytes);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _ExecuteMetaCommand(ID3D12GraphicsCommandList5* pThis, [NativeTypeName("ID3D12MetaCommand *")] ID3D12MetaCommand* pMetaCommand, [NativeTypeName("const void *")] void* pExecutionParametersData, [NativeTypeName("SIZE_T")] UIntPtr ExecutionParametersDataSizeInBytes);
+        public delegate void _ExecuteMetaCommand(ID3D12GraphicsCommandList5* pThis, [NativeTypeName("ID3D12MetaCommand *")] ID3D12MetaCommand* pMetaCommand, [NativeTypeName("const void *")] void* pExecutionParametersData, [NativeTypeName("SIZE_T")] nuint ExecutionParametersDataSizeInBytes);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public delegate void _BuildRaytracingAccelerationStructure(ID3D12GraphicsCommandList5* pThis, [NativeTypeName("const D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_DESC *")] D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_DESC* pDesc, [NativeTypeName("UINT")] uint NumPostbuildInfoDescs, [NativeTypeName("const D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_DESC *")] D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_DESC* pPostbuildInfoDescs);
@@ -621,12 +621,12 @@ namespace TerraFX.Interop
             Marshal.GetDelegateForFunctionPointer<_EndRenderPass>(lpVtbl->EndRenderPass)((ID3D12GraphicsCommandList5*)Unsafe.AsPointer(ref this));
         }
 
-        public void InitializeMetaCommand([NativeTypeName("ID3D12MetaCommand *")] ID3D12MetaCommand* pMetaCommand, [NativeTypeName("const void *")] void* pInitializationParametersData, [NativeTypeName("SIZE_T")] UIntPtr InitializationParametersDataSizeInBytes)
+        public void InitializeMetaCommand([NativeTypeName("ID3D12MetaCommand *")] ID3D12MetaCommand* pMetaCommand, [NativeTypeName("const void *")] void* pInitializationParametersData, [NativeTypeName("SIZE_T")] nuint InitializationParametersDataSizeInBytes)
         {
             Marshal.GetDelegateForFunctionPointer<_InitializeMetaCommand>(lpVtbl->InitializeMetaCommand)((ID3D12GraphicsCommandList5*)Unsafe.AsPointer(ref this), pMetaCommand, pInitializationParametersData, InitializationParametersDataSizeInBytes);
         }
 
-        public void ExecuteMetaCommand([NativeTypeName("ID3D12MetaCommand *")] ID3D12MetaCommand* pMetaCommand, [NativeTypeName("const void *")] void* pExecutionParametersData, [NativeTypeName("SIZE_T")] UIntPtr ExecutionParametersDataSizeInBytes)
+        public void ExecuteMetaCommand([NativeTypeName("ID3D12MetaCommand *")] ID3D12MetaCommand* pMetaCommand, [NativeTypeName("const void *")] void* pExecutionParametersData, [NativeTypeName("SIZE_T")] nuint ExecutionParametersDataSizeInBytes)
         {
             Marshal.GetDelegateForFunctionPointer<_ExecuteMetaCommand>(lpVtbl->ExecuteMetaCommand)((ID3D12GraphicsCommandList5*)Unsafe.AsPointer(ref this), pMetaCommand, pExecutionParametersData, ExecutionParametersDataSizeInBytes);
         }

@@ -21,42 +21,42 @@ namespace TerraFX.Interop
 
         public partial struct _Hash_e__FixedBuffer
         {
-            internal UIntPtr e0;
-            internal UIntPtr e1;
-            internal UIntPtr e2;
-            internal UIntPtr e3;
-            internal UIntPtr e4;
-            internal UIntPtr e5;
-            internal UIntPtr e6;
-            internal UIntPtr e7;
-            internal UIntPtr e8;
-            internal UIntPtr e9;
-            internal UIntPtr e10;
-            internal UIntPtr e11;
-            internal UIntPtr e12;
-            internal UIntPtr e13;
-            internal UIntPtr e14;
-            internal UIntPtr e15;
-            internal UIntPtr e16;
-            internal UIntPtr e17;
-            internal UIntPtr e18;
-            internal UIntPtr e19;
-            internal UIntPtr e20;
-            internal UIntPtr e21;
-            internal UIntPtr e22;
-            internal UIntPtr e23;
-            internal UIntPtr e24;
-            internal UIntPtr e25;
-            internal UIntPtr e26;
-            internal UIntPtr e27;
-            internal UIntPtr e28;
-            internal UIntPtr e29;
-            internal UIntPtr e30;
-            internal UIntPtr e31;
+            internal nuint e0;
+            internal nuint e1;
+            internal nuint e2;
+            internal nuint e3;
+            internal nuint e4;
+            internal nuint e5;
+            internal nuint e6;
+            internal nuint e7;
+            internal nuint e8;
+            internal nuint e9;
+            internal nuint e10;
+            internal nuint e11;
+            internal nuint e12;
+            internal nuint e13;
+            internal nuint e14;
+            internal nuint e15;
+            internal nuint e16;
+            internal nuint e17;
+            internal nuint e18;
+            internal nuint e19;
+            internal nuint e20;
+            internal nuint e21;
+            internal nuint e22;
+            internal nuint e23;
+            internal nuint e24;
+            internal nuint e25;
+            internal nuint e26;
+            internal nuint e27;
+            internal nuint e28;
+            internal nuint e29;
+            internal nuint e30;
+            internal nuint e31;
 
-            public ref UIntPtr this[int index] => ref AsSpan()[index];
+            public ref nuint this[int index] => ref AsSpan()[index];
 
-            public Span<UIntPtr> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 32);
+            public Span<nuint> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 32);
         }
     }
 }

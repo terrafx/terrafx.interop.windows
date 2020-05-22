@@ -3,14 +3,12 @@
 // Ported from um/d3d12.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct D3D12_PIPELINE_STATE_STREAM_DESC
     {
         [NativeTypeName("SIZE_T")]
-        public UIntPtr SizeInBytes;
+        public nuint SizeInBytes;
 
         [NativeTypeName("void *")]
         public void* pPipelineStateSubobjectStream;

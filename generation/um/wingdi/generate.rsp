@@ -1,7 +1,13 @@
 --additional
 -m32
+-Wno-expansion-to-defined
+-Wno-ignored-attributes
+-Wno-ignored-pragma-intrinsic
+-Wno-nonportable-include-path
+-Wno-pragma-pack
 --config
 multi-file
+preview-codegen-nint
 --define-macro
 COMBOX_SANDBOX
 --exclude
@@ -124,7 +130,7 @@ HPALETTE__*=IntPtr
 HPEN__*=IntPtr
 HRGN__*=IntPtr
 HWND__*=IntPtr
-LPARAM=IntPtr
+LPARAM=nint
 tagABORTPATH=ABORTPATH
 tagAXESLISTA=AXESLISTA
 tagAXESLISTW=AXESLISTW
@@ -268,7 +274,7 @@ tagTTPOLYCURVE=TTPOLYCURVE
 tagTTPOLYGONHEADER=TTPOLYGONHEADER
 tagWCRANGE=WCRANGE
 tagXFORM=XFORM
-ULONG_PTR=UIntPtr
+ULONG_PTR=nuint
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/wingdi.h
 --with-callconv

@@ -3,8 +3,6 @@
 // Ported from um/d3dcompiler.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct D3D_SHADER_DATA
@@ -13,6 +11,6 @@ namespace TerraFX.Interop
         public void* pBytecode;
 
         [NativeTypeName("SIZE_T")]
-        public UIntPtr BytecodeLength;
+        public nuint BytecodeLength;
     }
 }

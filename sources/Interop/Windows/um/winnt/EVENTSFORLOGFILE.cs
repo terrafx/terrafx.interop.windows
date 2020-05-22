@@ -17,6 +17,6 @@ namespace TerraFX.Interop
         public uint ulNumRecords;
 
         [NativeTypeName("EVENTLOGRECORD []")]
-        public EVENTLOGRECORD* pEventLogRecords;
+        public EVENTLOGRECORD pEventLogRecords;
     }
 }

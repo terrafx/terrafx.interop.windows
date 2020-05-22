@@ -1,7 +1,13 @@
 --additional
 -m32
+-Wno-expansion-to-defined
+-Wno-ignored-attributes
+-Wno-ignored-pragma-intrinsic
+-Wno-nonportable-include-path
+-Wno-pragma-pack
 --config
 multi-file
+preview-codegen-nint
 --file
 um-minwinbase.h
 --headerFile
@@ -10,8 +16,6 @@ header.txt
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
 --include-directory
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---libraryPath
-unused
 --methodClassName
 Windows
 --namespace
@@ -57,7 +61,7 @@ _WIN32_FIND_DATAA=WIN32_FIND_DATAA
 _WIN32_FIND_DATAW=WIN32_FIND_DATAW
 HANDLE=IntPtr
 HINSTANCE__*=IntPtr
-ULONG_PTR=UIntPtr
+ULONG_PTR=nuint
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/minwinbase.h
 --with-callconv

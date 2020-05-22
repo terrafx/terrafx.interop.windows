@@ -20,7 +20,7 @@ namespace TerraFX.Interop
         public IntPtr hItemHandle;
 
         [NativeTypeName("DWORD_PTR")]
-        public UIntPtr dwContextId;
+        public nuint dwContextId;
 
         public POINT MousePos;
     }

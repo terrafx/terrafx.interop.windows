@@ -3,8 +3,6 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct JOBOBJECT_EXTENDED_LIMIT_INFORMATION
@@ -14,15 +12,15 @@ namespace TerraFX.Interop
         public IO_COUNTERS IoInfo;
 
         [NativeTypeName("SIZE_T")]
-        public UIntPtr ProcessMemoryLimit;
+        public nuint ProcessMemoryLimit;
 
         [NativeTypeName("SIZE_T")]
-        public UIntPtr JobMemoryLimit;
+        public nuint JobMemoryLimit;
 
         [NativeTypeName("SIZE_T")]
-        public UIntPtr PeakProcessMemoryUsed;
+        public nuint PeakProcessMemoryUsed;
 
         [NativeTypeName("SIZE_T")]
-        public UIntPtr PeakJobMemoryUsed;
+        public nuint PeakJobMemoryUsed;
     }
 }

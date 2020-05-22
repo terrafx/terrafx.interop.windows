@@ -20,7 +20,7 @@ namespace TerraFX.Interop
         public IntPtr CleanupGroup;
 
         [NativeTypeName("PTP_CLEANUP_GROUP_CANCEL_CALLBACK")]
-        public IntPtr* CleanupGroupCancelCallback;
+        public IntPtr CleanupGroupCancelCallback;
 
         [NativeTypeName("PVOID")]
         public void* RaceDll;
@@ -29,7 +29,7 @@ namespace TerraFX.Interop
         public IntPtr ActivationContext;
 
         [NativeTypeName("PTP_SIMPLE_CALLBACK")]
-        public IntPtr* FinalizationCallback;
+        public IntPtr FinalizationCallback;
 
         [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h:22408:5)")]
         public _u_e__Union u;

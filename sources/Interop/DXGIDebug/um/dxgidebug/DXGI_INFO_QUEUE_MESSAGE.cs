@@ -23,6 +23,6 @@ namespace TerraFX.Interop
         public sbyte* pDescription;
 
         [NativeTypeName("SIZE_T")]
-        public UIntPtr DescriptionByteLength;
+        public nuint DescriptionByteLength;
     }
 }

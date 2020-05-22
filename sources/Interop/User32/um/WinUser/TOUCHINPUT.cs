@@ -31,7 +31,7 @@ namespace TerraFX.Interop
         public uint dwTime;
 
         [NativeTypeName("ULONG_PTR")]
-        public UIntPtr dwExtraInfo;
+        public nuint dwExtraInfo;
 
         [NativeTypeName("DWORD")]
         public uint cxContact;

@@ -10,5 +10,5 @@ namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.Winapi)]
     [return: NativeTypeName("BOOL")]
-    public delegate int DRAWSTATEPROC([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPARAM")] IntPtr lData, [NativeTypeName("WPARAM")] UIntPtr wData, int cx, int cy);
+    public delegate int DRAWSTATEPROC([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPARAM")] nint lData, [NativeTypeName("WPARAM")] nuint wData, int cx, int cy);
 }

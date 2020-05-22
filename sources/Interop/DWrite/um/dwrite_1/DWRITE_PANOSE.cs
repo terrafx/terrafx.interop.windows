@@ -19,19 +19,19 @@ namespace TerraFX.Interop
         public byte familyKind;
 
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at um/dwrite_1.h:758:5)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/dwrite_1.h:758:5)")]
         public _text_e__Struct text;
 
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at um/dwrite_1.h:772:5)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/dwrite_1.h:772:5)")]
         public _script_e__Struct script;
 
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at um/dwrite_1.h:786:5)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/dwrite_1.h:786:5)")]
         public _decorative_e__Struct decorative;
 
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at um/dwrite_1.h:800:5)")]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/dwrite_1.h:800:5)")]
         public _symbol_e__Struct symbol;
 
         public partial struct _text_e__Struct

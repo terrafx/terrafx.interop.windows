@@ -38,7 +38,7 @@ namespace TerraFX.Interop
         public _Anonymous_e__Union3 Anonymous3;
 
         [NativeTypeName("PFNPROPSHEETCALLBACK")]
-        public IntPtr* pfnCallback;
+        public IntPtr pfnCallback;
 
         [NativeTypeName("_PROPSHEETHEADERW_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/prsht.h:527:5)")]
         public _Anonymous_e__Union4 Anonymous4;

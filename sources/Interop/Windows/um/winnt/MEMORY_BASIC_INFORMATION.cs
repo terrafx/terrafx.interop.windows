@@ -3,8 +3,6 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct MEMORY_BASIC_INFORMATION
@@ -19,7 +17,7 @@ namespace TerraFX.Interop
         public uint AllocationProtect;
 
         [NativeTypeName("SIZE_T")]
-        public UIntPtr RegionSize;
+        public nuint RegionSize;
 
         [NativeTypeName("DWORD")]
         public uint State;

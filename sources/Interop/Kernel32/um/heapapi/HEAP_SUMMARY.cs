@@ -3,8 +3,6 @@
 // Ported from um/heapapi.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct HEAP_SUMMARY
@@ -13,15 +11,15 @@ namespace TerraFX.Interop
         public uint cb;
 
         [NativeTypeName("SIZE_T")]
-        public UIntPtr cbAllocated;
+        public nuint cbAllocated;
 
         [NativeTypeName("SIZE_T")]
-        public UIntPtr cbCommitted;
+        public nuint cbCommitted;
 
         [NativeTypeName("SIZE_T")]
-        public UIntPtr cbReserved;
+        public nuint cbReserved;
 
         [NativeTypeName("SIZE_T")]
-        public UIntPtr cbMaxReserve;
+        public nuint cbMaxReserve;
     }
 }

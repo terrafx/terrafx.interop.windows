@@ -48,10 +48,10 @@ namespace TerraFX.Interop
         public delegate void _GetDesc(ID3D11ClassInstance* pThis, [NativeTypeName("D3D11_CLASS_INSTANCE_DESC *")] D3D11_CLASS_INSTANCE_DESC* pDesc);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetInstanceName(ID3D11ClassInstance* pThis, [NativeTypeName("LPSTR")] sbyte* pInstanceName, [NativeTypeName("SIZE_T *")] UIntPtr* pBufferLength);
+        public delegate void _GetInstanceName(ID3D11ClassInstance* pThis, [NativeTypeName("LPSTR")] sbyte* pInstanceName, [NativeTypeName("SIZE_T *")] nuint* pBufferLength);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _GetTypeName(ID3D11ClassInstance* pThis, [NativeTypeName("LPSTR")] sbyte* pTypeName, [NativeTypeName("SIZE_T *")] UIntPtr* pBufferLength);
+        public delegate void _GetTypeName(ID3D11ClassInstance* pThis, [NativeTypeName("LPSTR")] sbyte* pTypeName, [NativeTypeName("SIZE_T *")] nuint* pBufferLength);
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
@@ -104,12 +104,12 @@ namespace TerraFX.Interop
             Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), pDesc);
         }
 
-        public void GetInstanceName([NativeTypeName("LPSTR")] sbyte* pInstanceName, [NativeTypeName("SIZE_T *")] UIntPtr* pBufferLength)
+        public void GetInstanceName([NativeTypeName("LPSTR")] sbyte* pInstanceName, [NativeTypeName("SIZE_T *")] nuint* pBufferLength)
         {
             Marshal.GetDelegateForFunctionPointer<_GetInstanceName>(lpVtbl->GetInstanceName)((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), pInstanceName, pBufferLength);
         }
 
-        public void GetTypeName([NativeTypeName("LPSTR")] sbyte* pTypeName, [NativeTypeName("SIZE_T *")] UIntPtr* pBufferLength)
+        public void GetTypeName([NativeTypeName("LPSTR")] sbyte* pTypeName, [NativeTypeName("SIZE_T *")] nuint* pBufferLength)
         {
             Marshal.GetDelegateForFunctionPointer<_GetTypeName>(lpVtbl->GetTypeName)((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), pTypeName, pBufferLength);
         }

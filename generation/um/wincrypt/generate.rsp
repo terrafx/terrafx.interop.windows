@@ -1,7 +1,13 @@
 --additional
 -m32
+-Wno-expansion-to-defined
+-Wno-ignored-attributes
+-Wno-ignored-pragma-intrinsic
+-Wno-nonportable-include-path
+-Wno-pragma-pack
 --config
 multi-file
+preview-codegen-nint
 --file
 um-wincrypt.h
 --headerFile
@@ -10,8 +16,6 @@ header.txt
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
 --include-directory
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---libraryPath
-advapi32
 --methodClassName
 Advapi32
 --namespace
@@ -354,7 +358,7 @@ _SYSTEMTIME=SYSTEMTIME
 HANDLE=IntPtr
 HINSTANCE__*=IntPtr
 HKEY__*=IntPtr
-ULONG_PTR=UIntPtr
+ULONG_PTR=nuint
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/wincrypt.h
 --with-callconv

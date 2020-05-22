@@ -3,26 +3,24 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct QUOTA_LIMITS
     {
         [NativeTypeName("SIZE_T")]
-        public UIntPtr PagedPoolLimit;
+        public nuint PagedPoolLimit;
 
         [NativeTypeName("SIZE_T")]
-        public UIntPtr NonPagedPoolLimit;
+        public nuint NonPagedPoolLimit;
 
         [NativeTypeName("SIZE_T")]
-        public UIntPtr MinimumWorkingSetSize;
+        public nuint MinimumWorkingSetSize;
 
         [NativeTypeName("SIZE_T")]
-        public UIntPtr MaximumWorkingSetSize;
+        public nuint MaximumWorkingSetSize;
 
         [NativeTypeName("SIZE_T")]
-        public UIntPtr PagefileLimit;
+        public nuint PagefileLimit;
 
         public LARGE_INTEGER TimeLimit;
     }

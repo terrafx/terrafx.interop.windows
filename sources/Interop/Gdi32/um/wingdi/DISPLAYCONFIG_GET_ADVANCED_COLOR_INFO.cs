@@ -11,7 +11,7 @@ namespace TerraFX.Interop
     {
         public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 
-        [NativeTypeName("_DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO::(anonymous union at um/wingdi.h:3159:5)")]
+        [NativeTypeName("_DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/wingdi.h:3159:5)")]
         public _Anonymous_e__Union Anonymous;
 
         public DISPLAYCONFIG_COLOR_ENCODING colorEncoding;
@@ -23,7 +23,7 @@ namespace TerraFX.Interop
         public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("_DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO::(anonymous struct at um/wingdi.h:3161:9)")]
+            [NativeTypeName("_DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/wingdi.h:3161:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             [FieldOffset(0)]

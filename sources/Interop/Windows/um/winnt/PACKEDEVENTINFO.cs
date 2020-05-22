@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct PACKEDEVENTINFO
+    public partial struct PACKEDEVENTINFO
     {
         [NativeTypeName("DWORD")]
         public uint ulSize;
@@ -14,6 +14,6 @@ namespace TerraFX.Interop
         public uint ulNumEventsForLogFile;
 
         [NativeTypeName("DWORD []")]
-        public uint* ulOffsets;
+        public uint ulOffsets;
     }
 }

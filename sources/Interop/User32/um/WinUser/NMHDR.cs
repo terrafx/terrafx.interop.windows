@@ -13,7 +13,7 @@ namespace TerraFX.Interop
         public IntPtr hwndFrom;
 
         [NativeTypeName("UINT_PTR")]
-        public UIntPtr idFrom;
+        public nuint idFrom;
 
         [NativeTypeName("UINT")]
         public uint code;

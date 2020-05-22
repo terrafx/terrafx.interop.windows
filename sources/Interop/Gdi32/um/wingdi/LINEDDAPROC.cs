@@ -3,11 +3,10 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-    public delegate void LINEDDAPROC(int param0, int param1, [NativeTypeName("LPARAM")] IntPtr param2);
+    public delegate void LINEDDAPROC(int param0, int param1, [NativeTypeName("LPARAM")] nint param2);
 }

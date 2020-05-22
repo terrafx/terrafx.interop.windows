@@ -13,6 +13,6 @@ namespace TerraFX.Interop
         public IntPtr IoCompletionPortHandle;
 
         [NativeTypeName("ULONG_PTR")]
-        public UIntPtr CompletionKey;
+        public nuint CompletionKey;
     }
 }

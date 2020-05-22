@@ -16,10 +16,10 @@ namespace TerraFX.Interop
         public uint dwMsgAndCertEncodingType;
 
         [NativeTypeName("HCRYPTPROV_LEGACY")]
-        public UIntPtr hCryptProv;
+        public nuint hCryptProv;
 
         [NativeTypeName("PFN_CRYPT_GET_SIGNER_CERTIFICATE")]
-        public IntPtr* pfnGetSignerCertificate;
+        public IntPtr pfnGetSignerCertificate;
 
         [NativeTypeName("void *")]
         public void* pvGetArg;

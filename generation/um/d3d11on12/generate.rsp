@@ -1,7 +1,13 @@
 --additional
 -m32
+-Wno-expansion-to-defined
+-Wno-ignored-attributes
+-Wno-ignored-pragma-intrinsic
+-Wno-nonportable-include-path
+-Wno-pragma-pack
 --config
 multi-file
+preview-codegen-nint
 --exclude
 __MIDL_itf_d3d11on12_0000_0000_v0_0_c_ifspec
 __MIDL_itf_d3d11on12_0000_0000_v0_0_s_ifspec

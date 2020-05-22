@@ -10,5 +10,5 @@ namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.Winapi)]
     [return: NativeTypeName("BOOL")]
-    public delegate int GRAYSTRINGPROC([NativeTypeName("HDC")] IntPtr param0, [NativeTypeName("LPARAM")] IntPtr param1, int param2);
+    public delegate int GRAYSTRINGPROC([NativeTypeName("HDC")] IntPtr param0, [NativeTypeName("LPARAM")] nint param1, int param2);
 }

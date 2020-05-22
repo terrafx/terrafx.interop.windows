@@ -35,7 +35,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetMessageA(ID3D11InfoQueue* pThis, [NativeTypeName("UINT64")] ulong MessageIndex, [NativeTypeName("D3D11_MESSAGE *")] D3D11_MESSAGE* pMessage, [NativeTypeName("SIZE_T *")] UIntPtr* pMessageByteLength);
+        public delegate int _GetMessageA(ID3D11InfoQueue* pThis, [NativeTypeName("UINT64")] ulong MessageIndex, [NativeTypeName("D3D11_MESSAGE *")] D3D11_MESSAGE* pMessage, [NativeTypeName("SIZE_T *")] nuint* pMessageByteLength);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
@@ -67,7 +67,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetStorageFilter(ID3D11InfoQueue* pThis, [NativeTypeName("D3D11_INFO_QUEUE_FILTER *")] D3D11_INFO_QUEUE_FILTER* pFilter, [NativeTypeName("SIZE_T *")] UIntPtr* pFilterByteLength);
+        public delegate int _GetStorageFilter(ID3D11InfoQueue* pThis, [NativeTypeName("D3D11_INFO_QUEUE_FILTER *")] D3D11_INFO_QUEUE_FILTER* pFilter, [NativeTypeName("SIZE_T *")] nuint* pFilterByteLength);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public delegate void _ClearStorageFilter(ID3D11InfoQueue* pThis);
@@ -97,7 +97,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetRetrievalFilter(ID3D11InfoQueue* pThis, [NativeTypeName("D3D11_INFO_QUEUE_FILTER *")] D3D11_INFO_QUEUE_FILTER* pFilter, [NativeTypeName("SIZE_T *")] UIntPtr* pFilterByteLength);
+        public delegate int _GetRetrievalFilter(ID3D11InfoQueue* pThis, [NativeTypeName("D3D11_INFO_QUEUE_FILTER *")] D3D11_INFO_QUEUE_FILTER* pFilter, [NativeTypeName("SIZE_T *")] nuint* pFilterByteLength);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public delegate void _ClearRetrievalFilter(ID3D11InfoQueue* pThis);
@@ -190,7 +190,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetMessageA([NativeTypeName("UINT64")] ulong MessageIndex, [NativeTypeName("D3D11_MESSAGE *")] D3D11_MESSAGE* pMessage, [NativeTypeName("SIZE_T *")] UIntPtr* pMessageByteLength)
+        public int GetMessageA([NativeTypeName("UINT64")] ulong MessageIndex, [NativeTypeName("D3D11_MESSAGE *")] D3D11_MESSAGE* pMessage, [NativeTypeName("SIZE_T *")] nuint* pMessageByteLength)
         {
             return Marshal.GetDelegateForFunctionPointer<_GetMessageA>(lpVtbl->GetMessageA)((ID3D11InfoQueue*)Unsafe.AsPointer(ref this), MessageIndex, pMessage, pMessageByteLength);
         }
@@ -238,7 +238,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetStorageFilter([NativeTypeName("D3D11_INFO_QUEUE_FILTER *")] D3D11_INFO_QUEUE_FILTER* pFilter, [NativeTypeName("SIZE_T *")] UIntPtr* pFilterByteLength)
+        public int GetStorageFilter([NativeTypeName("D3D11_INFO_QUEUE_FILTER *")] D3D11_INFO_QUEUE_FILTER* pFilter, [NativeTypeName("SIZE_T *")] nuint* pFilterByteLength)
         {
             return Marshal.GetDelegateForFunctionPointer<_GetStorageFilter>(lpVtbl->GetStorageFilter)((ID3D11InfoQueue*)Unsafe.AsPointer(ref this), pFilter, pFilterByteLength);
         }
@@ -284,7 +284,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetRetrievalFilter([NativeTypeName("D3D11_INFO_QUEUE_FILTER *")] D3D11_INFO_QUEUE_FILTER* pFilter, [NativeTypeName("SIZE_T *")] UIntPtr* pFilterByteLength)
+        public int GetRetrievalFilter([NativeTypeName("D3D11_INFO_QUEUE_FILTER *")] D3D11_INFO_QUEUE_FILTER* pFilter, [NativeTypeName("SIZE_T *")] nuint* pFilterByteLength)
         {
             return Marshal.GetDelegateForFunctionPointer<_GetRetrievalFilter>(lpVtbl->GetRetrievalFilter)((ID3D11InfoQueue*)Unsafe.AsPointer(ref this), pFilter, pFilterByteLength);
         }

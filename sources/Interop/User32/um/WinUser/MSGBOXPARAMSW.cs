@@ -31,7 +31,7 @@ namespace TerraFX.Interop
         public ushort* lpszIcon;
 
         [NativeTypeName("DWORD_PTR")]
-        public UIntPtr dwContextHelpId;
+        public nuint dwContextHelpId;
 
         [NativeTypeName("MSGBOXCALLBACK")]
         public IntPtr lpfnMsgBoxCallback;

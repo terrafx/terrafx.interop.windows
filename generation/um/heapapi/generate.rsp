@@ -1,7 +1,13 @@
 --additional
 -m32
+-Wno-expansion-to-defined
+-Wno-ignored-attributes
+-Wno-ignored-pragma-intrinsic
+-Wno-nonportable-include-path
+-Wno-pragma-pack
 --config
 multi-file
+preview-codegen-nint
 --file
 um-heapapi.h
 --headerFile
@@ -21,8 +27,8 @@ _HEAP_INFORMATION_CLASS=HEAP_INFORMATION_CLASS
 _HEAP_SUMMARY=HEAP_SUMMARY
 _PROCESS_HEAP_ENTRY=PROCESS_HEAP_ENTRY
 HANDLE=IntPtr
-PSIZE_T=UIntPtr*
-SIZE_T=UIntPtr
+PSIZE_T=nuint*
+SIZE_T=nuint
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/heapapi.h
 --with-callconv

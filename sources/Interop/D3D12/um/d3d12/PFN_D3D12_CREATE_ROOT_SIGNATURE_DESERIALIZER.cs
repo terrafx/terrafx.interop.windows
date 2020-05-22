@@ -10,5 +10,5 @@ namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.StdCall)]
     [return: NativeTypeName("HRESULT")]
-    public unsafe delegate int PFN_D3D12_CREATE_ROOT_SIGNATURE_DESERIALIZER([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] UIntPtr SrcDataSizeInBytes, [NativeTypeName("const IID &")] Guid* pRootSignatureDeserializerInterface, [NativeTypeName("void **")] void** ppRootSignatureDeserializer);
+    public unsafe delegate int PFN_D3D12_CREATE_ROOT_SIGNATURE_DESERIALIZER([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSizeInBytes, [NativeTypeName("const IID &")] Guid* pRootSignatureDeserializerInterface, [NativeTypeName("void **")] void** ppRootSignatureDeserializer);
 }

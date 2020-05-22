@@ -11,7 +11,7 @@ namespace TerraFX.Interop
     {
         public D3D11_TRACE_REGISTER_TYPE RegType;
 
-        [NativeTypeName("D3D11_TRACE_REGISTER::(anonymous union at um/d3d11shadertracing.h:226:5)")]
+        [NativeTypeName("D3D11_TRACE_REGISTER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d3d11shadertracing.h:226:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [NativeTypeName("UINT8")]

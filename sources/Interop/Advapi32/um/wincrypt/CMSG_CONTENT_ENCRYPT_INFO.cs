@@ -14,7 +14,7 @@ namespace TerraFX.Interop
         public uint cbSize;
 
         [NativeTypeName("HCRYPTPROV_LEGACY")]
-        public UIntPtr hCryptProv;
+        public nuint hCryptProv;
 
         public CRYPT_ALGORITHM_IDENTIFIER ContentEncryptionAlgorithm;
 
@@ -28,10 +28,10 @@ namespace TerraFX.Interop
         public CMSG_RECIPIENT_ENCODE_INFO* rgCmsRecipients;
 
         [NativeTypeName("PFN_CMSG_ALLOC")]
-        public IntPtr* pfnAlloc;
+        public IntPtr pfnAlloc;
 
         [NativeTypeName("PFN_CMSG_FREE")]
-        public IntPtr* pfnFree;
+        public IntPtr pfnFree;
 
         [NativeTypeName("DWORD")]
         public uint dwEncryptFlags;
@@ -59,7 +59,7 @@ namespace TerraFX.Interop
         {
             [FieldOffset(0)]
             [NativeTypeName("HCRYPTKEY")]
-            public UIntPtr hContentEncryptKey;
+            public nuint hContentEncryptKey;
 
             [FieldOffset(0)]
             [NativeTypeName("BCRYPT_KEY_HANDLE")]

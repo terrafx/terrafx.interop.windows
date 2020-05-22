@@ -10,5 +10,5 @@ namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.Winapi)]
     [return: NativeTypeName("BOOL")]
-    public delegate int WNDENUMPROC([NativeTypeName("HWND")] IntPtr param0, [NativeTypeName("LPARAM")] IntPtr param1);
+    public delegate int WNDENUMPROC([NativeTypeName("HWND")] IntPtr param0, [NativeTypeName("LPARAM")] nint param1);
 }

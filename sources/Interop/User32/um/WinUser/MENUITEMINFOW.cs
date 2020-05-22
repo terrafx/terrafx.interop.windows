@@ -34,7 +34,7 @@ namespace TerraFX.Interop
         public IntPtr hbmpUnchecked;
 
         [NativeTypeName("ULONG_PTR")]
-        public UIntPtr dwItemData;
+        public nuint dwItemData;
 
         [NativeTypeName("LPWSTR")]
         public ushort* dwTypeData;

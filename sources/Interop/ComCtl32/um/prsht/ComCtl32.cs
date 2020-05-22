@@ -10,6 +10,8 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class ComCtl32
     {
+        private const string LibraryPath = "comctl32";
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreatePropertySheetPageA", ExactSpelling = true)]
         [return: NativeTypeName("HPROPSHEETPAGE")]
         public static extern IntPtr CreatePropertySheetPageA([NativeTypeName("LPCPROPSHEETPAGEA")] PROPSHEETPAGEA* constPropSheetPagePointer);
@@ -24,10 +26,10 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "PropertySheetA", ExactSpelling = true)]
         [return: NativeTypeName("INT_PTR")]
-        public static extern IntPtr PropertySheetA([NativeTypeName("LPCPROPSHEETHEADERA")] PROPSHEETHEADERA_V2* param0);
+        public static extern nint PropertySheetA([NativeTypeName("LPCPROPSHEETHEADERA")] PROPSHEETHEADERA_V2* param0);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "PropertySheetW", ExactSpelling = true)]
         [return: NativeTypeName("INT_PTR")]
-        public static extern IntPtr PropertySheetW([NativeTypeName("LPCPROPSHEETHEADERW")] PROPSHEETHEADERW_V2* param0);
+        public static extern nint PropertySheetW([NativeTypeName("LPCPROPSHEETHEADERW")] PROPSHEETHEADERW_V2* param0);
     }
 }

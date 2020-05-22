@@ -14,7 +14,7 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT32")]
         public uint id;
 
-        [NativeTypeName("DISPLAYCONFIG_PATH_SOURCE_INFO::(anonymous union at um/wingdi.h:2950:5)")]
+        [NativeTypeName("DISPLAYCONFIG_PATH_SOURCE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/wingdi.h:2950:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [NativeTypeName("UINT32")]
@@ -28,7 +28,7 @@ namespace TerraFX.Interop
             public uint modeInfoIdx;
 
             [FieldOffset(0)]
-            [NativeTypeName("DISPLAYCONFIG_PATH_SOURCE_INFO::(anonymous struct at um/wingdi.h:2953:9)")]
+            [NativeTypeName("DISPLAYCONFIG_PATH_SOURCE_INFO::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/wingdi.h:2953:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             public partial struct _Anonymous_e__Struct

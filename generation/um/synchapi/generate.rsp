@@ -1,7 +1,13 @@
 --additional
 -m32
+-Wno-expansion-to-defined
+-Wno-ignored-attributes
+-Wno-ignored-pragma-intrinsic
+-Wno-nonportable-include-path
+-Wno-pragma-pack
 --config
 multi-file
+preview-codegen-nint
 --file
 um-synchapi.h
 --headerFile
@@ -26,7 +32,7 @@ _RTL_RUN_ONCE=RTL_RUN_ONCE
 _RTL_SRWLOCK=RTL_SRWLOCK
 _SECURITY_ATTRIBUTES=SECURITY_ATTRIBUTES
 HANDLE=IntPtr
-SIZE_T=UIntPtr
+SIZE_T=nuint
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/synchapi.h
 --with-callconv

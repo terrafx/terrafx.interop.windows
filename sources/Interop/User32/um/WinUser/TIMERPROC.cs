@@ -9,5 +9,5 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-    public delegate void TIMERPROC([NativeTypeName("HWND")] IntPtr param0, [NativeTypeName("UINT")] uint param1, [NativeTypeName("UINT_PTR")] UIntPtr param2, [NativeTypeName("DWORD")] uint param3);
+    public delegate void TIMERPROC([NativeTypeName("HWND")] IntPtr param0, [NativeTypeName("UINT")] uint param1, [NativeTypeName("UINT_PTR")] nuint param2, [NativeTypeName("DWORD")] uint param3);
 }

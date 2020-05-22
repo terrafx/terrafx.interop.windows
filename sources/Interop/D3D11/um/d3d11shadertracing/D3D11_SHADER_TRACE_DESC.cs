@@ -14,7 +14,7 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint Flags;
 
-        [NativeTypeName("D3D11_SHADER_TRACE_DESC::(anonymous union at um/d3d11shadertracing.h:126:5)")]
+        [NativeTypeName("D3D11_SHADER_TRACE_DESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d3d11shadertracing.h:126:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]

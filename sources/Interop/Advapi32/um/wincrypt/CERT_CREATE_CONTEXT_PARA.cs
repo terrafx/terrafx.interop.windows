@@ -13,13 +13,13 @@ namespace TerraFX.Interop
         public uint cbSize;
 
         [NativeTypeName("PFN_CRYPT_FREE")]
-        public IntPtr* pfnFree;
+        public IntPtr pfnFree;
 
         [NativeTypeName("void *")]
         public void* pvFree;
 
         [NativeTypeName("PFN_CERT_CREATE_CONTEXT_SORT_FUNC")]
-        public IntPtr* pfnSort;
+        public IntPtr pfnSort;
 
         [NativeTypeName("void *")]
         public void* pvSort;

@@ -18,6 +18,6 @@ namespace TerraFX.Interop
         public uint wHitTestCode;
 
         [NativeTypeName("ULONG_PTR")]
-        public UIntPtr dwExtraInfo;
+        public nuint dwExtraInfo;
     }
 }

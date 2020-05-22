@@ -10,5 +10,5 @@ namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.Winapi)]
     [return: NativeTypeName("BOOL")]
-    public unsafe delegate int PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_INITIALIZE([NativeTypeName("PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FLUSH")] IntPtr* pfnFlush, [NativeTypeName("LPVOID")] void* pContext, [NativeTypeName("DWORD *")] uint* pdwExpectedObjectCount, [NativeTypeName("PCRYPT_OBJECT_LOCATOR_PROVIDER_TABLE *")] CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE** ppFuncTable, [NativeTypeName("void **")] void** ppPluginContext);
+    public unsafe delegate int PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_INITIALIZE([NativeTypeName("PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FLUSH")] IntPtr pfnFlush, [NativeTypeName("LPVOID")] void* pContext, [NativeTypeName("DWORD *")] uint* pdwExpectedObjectCount, [NativeTypeName("PCRYPT_OBJECT_LOCATOR_PROVIDER_TABLE *")] CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE** ppFuncTable, [NativeTypeName("void **")] void** ppPluginContext);
 }

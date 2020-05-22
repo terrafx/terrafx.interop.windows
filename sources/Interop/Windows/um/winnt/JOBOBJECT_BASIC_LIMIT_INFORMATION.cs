@@ -3,8 +3,6 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct JOBOBJECT_BASIC_LIMIT_INFORMATION
@@ -17,16 +15,16 @@ namespace TerraFX.Interop
         public uint LimitFlags;
 
         [NativeTypeName("SIZE_T")]
-        public UIntPtr MinimumWorkingSetSize;
+        public nuint MinimumWorkingSetSize;
 
         [NativeTypeName("SIZE_T")]
-        public UIntPtr MaximumWorkingSetSize;
+        public nuint MaximumWorkingSetSize;
 
         [NativeTypeName("DWORD")]
         public uint ActiveProcessLimit;
 
         [NativeTypeName("ULONG_PTR")]
-        public UIntPtr Affinity;
+        public nuint Affinity;
 
         [NativeTypeName("DWORD")]
         public uint PriorityClass;

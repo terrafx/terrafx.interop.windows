@@ -11,30 +11,30 @@ namespace TerraFX.Interop
     {
         public D3D12_INDIRECT_ARGUMENT_TYPE Type;
 
-        [NativeTypeName("D3D12_INDIRECT_ARGUMENT_DESC::(anonymous union at um/d3d12.h:3840:5)")]
+        [NativeTypeName("D3D12_INDIRECT_ARGUMENT_DESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d3d12.h:3840:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at um/d3d12.h:3842:9)")]
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d3d12.h:3842:9)")]
             public _VertexBuffer_e__Struct VertexBuffer;
 
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at um/d3d12.h:3846:9)")]
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d3d12.h:3846:9)")]
             public _Constant_e__Struct Constant;
 
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at um/d3d12.h:3852:9)")]
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d3d12.h:3852:9)")]
             public _ConstantBufferView_e__Struct ConstantBufferView;
 
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at um/d3d12.h:3856:9)")]
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d3d12.h:3856:9)")]
             public _ShaderResourceView_e__Struct ShaderResourceView;
 
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at um/d3d12.h:3860:9)")]
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d3d12.h:3860:9)")]
             public _UnorderedAccessView_e__Struct UnorderedAccessView;
 
             public partial struct _VertexBuffer_e__Struct

@@ -10,6 +10,8 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class SetupApi
     {
+        private const string LibraryPath = "setupapi";
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetupGetInfInformationA", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SetupGetInfInformationA([NativeTypeName("LPCVOID")] void* InfSpec, [NativeTypeName("DWORD")] uint SearchControl, [NativeTypeName("PSP_INF_INFORMATION")] SP_INF_INFORMATION* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
@@ -319,19 +321,19 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetupInstallFileA", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetupInstallFileA([NativeTypeName("HINF")] void* InfHandle, [NativeTypeName("PINFCONTEXT")] INFCONTEXT* InfContext, [NativeTypeName("PCSTR")] sbyte* SourceFile, [NativeTypeName("PCSTR")] sbyte* SourcePathRoot, [NativeTypeName("PCSTR")] sbyte* DestinationName, [NativeTypeName("DWORD")] uint CopyStyle, [NativeTypeName("PSP_FILE_CALLBACK_A")] IntPtr* CopyMsgHandler, [NativeTypeName("PVOID")] void* Context);
+        public static extern int SetupInstallFileA([NativeTypeName("HINF")] void* InfHandle, [NativeTypeName("PINFCONTEXT")] INFCONTEXT* InfContext, [NativeTypeName("PCSTR")] sbyte* SourceFile, [NativeTypeName("PCSTR")] sbyte* SourcePathRoot, [NativeTypeName("PCSTR")] sbyte* DestinationName, [NativeTypeName("DWORD")] uint CopyStyle, [NativeTypeName("PSP_FILE_CALLBACK_A")] IntPtr CopyMsgHandler, [NativeTypeName("PVOID")] void* Context);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetupInstallFileW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetupInstallFileW([NativeTypeName("HINF")] void* InfHandle, [NativeTypeName("PINFCONTEXT")] INFCONTEXT* InfContext, [NativeTypeName("PCWSTR")] ushort* SourceFile, [NativeTypeName("PCWSTR")] ushort* SourcePathRoot, [NativeTypeName("PCWSTR")] ushort* DestinationName, [NativeTypeName("DWORD")] uint CopyStyle, [NativeTypeName("PSP_FILE_CALLBACK_W")] IntPtr* CopyMsgHandler, [NativeTypeName("PVOID")] void* Context);
+        public static extern int SetupInstallFileW([NativeTypeName("HINF")] void* InfHandle, [NativeTypeName("PINFCONTEXT")] INFCONTEXT* InfContext, [NativeTypeName("PCWSTR")] ushort* SourceFile, [NativeTypeName("PCWSTR")] ushort* SourcePathRoot, [NativeTypeName("PCWSTR")] ushort* DestinationName, [NativeTypeName("DWORD")] uint CopyStyle, [NativeTypeName("PSP_FILE_CALLBACK_W")] IntPtr CopyMsgHandler, [NativeTypeName("PVOID")] void* Context);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetupInstallFileExA", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetupInstallFileExA([NativeTypeName("HINF")] void* InfHandle, [NativeTypeName("PINFCONTEXT")] INFCONTEXT* InfContext, [NativeTypeName("PCSTR")] sbyte* SourceFile, [NativeTypeName("PCSTR")] sbyte* SourcePathRoot, [NativeTypeName("PCSTR")] sbyte* DestinationName, [NativeTypeName("DWORD")] uint CopyStyle, [NativeTypeName("PSP_FILE_CALLBACK_A")] IntPtr* CopyMsgHandler, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("PBOOL")] int* FileWasInUse);
+        public static extern int SetupInstallFileExA([NativeTypeName("HINF")] void* InfHandle, [NativeTypeName("PINFCONTEXT")] INFCONTEXT* InfContext, [NativeTypeName("PCSTR")] sbyte* SourceFile, [NativeTypeName("PCSTR")] sbyte* SourcePathRoot, [NativeTypeName("PCSTR")] sbyte* DestinationName, [NativeTypeName("DWORD")] uint CopyStyle, [NativeTypeName("PSP_FILE_CALLBACK_A")] IntPtr CopyMsgHandler, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("PBOOL")] int* FileWasInUse);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetupInstallFileExW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetupInstallFileExW([NativeTypeName("HINF")] void* InfHandle, [NativeTypeName("PINFCONTEXT")] INFCONTEXT* InfContext, [NativeTypeName("PCWSTR")] ushort* SourceFile, [NativeTypeName("PCWSTR")] ushort* SourcePathRoot, [NativeTypeName("PCWSTR")] ushort* DestinationName, [NativeTypeName("DWORD")] uint CopyStyle, [NativeTypeName("PSP_FILE_CALLBACK_W")] IntPtr* CopyMsgHandler, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("PBOOL")] int* FileWasInUse);
+        public static extern int SetupInstallFileExW([NativeTypeName("HINF")] void* InfHandle, [NativeTypeName("PINFCONTEXT")] INFCONTEXT* InfContext, [NativeTypeName("PCWSTR")] ushort* SourceFile, [NativeTypeName("PCWSTR")] ushort* SourcePathRoot, [NativeTypeName("PCWSTR")] ushort* DestinationName, [NativeTypeName("DWORD")] uint CopyStyle, [NativeTypeName("PSP_FILE_CALLBACK_W")] IntPtr CopyMsgHandler, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("PBOOL")] int* FileWasInUse);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetupOpenFileQueue", ExactSpelling = true)]
         [return: NativeTypeName("HSPFILEQ")]
@@ -423,19 +425,19 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetupCommitFileQueueA", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetupCommitFileQueueA([NativeTypeName("HWND")] IntPtr Owner, [NativeTypeName("HSPFILEQ")] void* QueueHandle, [NativeTypeName("PSP_FILE_CALLBACK_A")] IntPtr* MsgHandler, [NativeTypeName("PVOID")] void* Context);
+        public static extern int SetupCommitFileQueueA([NativeTypeName("HWND")] IntPtr Owner, [NativeTypeName("HSPFILEQ")] void* QueueHandle, [NativeTypeName("PSP_FILE_CALLBACK_A")] IntPtr MsgHandler, [NativeTypeName("PVOID")] void* Context);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetupCommitFileQueueW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetupCommitFileQueueW([NativeTypeName("HWND")] IntPtr Owner, [NativeTypeName("HSPFILEQ")] void* QueueHandle, [NativeTypeName("PSP_FILE_CALLBACK_W")] IntPtr* MsgHandler, [NativeTypeName("PVOID")] void* Context);
+        public static extern int SetupCommitFileQueueW([NativeTypeName("HWND")] IntPtr Owner, [NativeTypeName("HSPFILEQ")] void* QueueHandle, [NativeTypeName("PSP_FILE_CALLBACK_W")] IntPtr MsgHandler, [NativeTypeName("PVOID")] void* Context);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetupScanFileQueueA", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetupScanFileQueueA([NativeTypeName("HSPFILEQ")] void* FileQueue, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("HWND")] IntPtr Window, [NativeTypeName("PSP_FILE_CALLBACK_A")] IntPtr* CallbackRoutine, [NativeTypeName("PVOID")] void* CallbackContext, [NativeTypeName("PDWORD")] uint* Result);
+        public static extern int SetupScanFileQueueA([NativeTypeName("HSPFILEQ")] void* FileQueue, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("HWND")] IntPtr Window, [NativeTypeName("PSP_FILE_CALLBACK_A")] IntPtr CallbackRoutine, [NativeTypeName("PVOID")] void* CallbackContext, [NativeTypeName("PDWORD")] uint* Result);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetupScanFileQueueW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetupScanFileQueueW([NativeTypeName("HSPFILEQ")] void* FileQueue, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("HWND")] IntPtr Window, [NativeTypeName("PSP_FILE_CALLBACK_W")] IntPtr* CallbackRoutine, [NativeTypeName("PVOID")] void* CallbackContext, [NativeTypeName("PDWORD")] uint* Result);
+        public static extern int SetupScanFileQueueW([NativeTypeName("HSPFILEQ")] void* FileQueue, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("HWND")] IntPtr Window, [NativeTypeName("PSP_FILE_CALLBACK_W")] IntPtr CallbackRoutine, [NativeTypeName("PVOID")] void* CallbackContext, [NativeTypeName("PDWORD")] uint* Result);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetupGetFileQueueCount", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -563,11 +565,11 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetupIterateCabinetA", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetupIterateCabinetA([NativeTypeName("PCSTR")] sbyte* CabinetFile, [NativeTypeName("DWORD")] uint Reserved, [NativeTypeName("PSP_FILE_CALLBACK_A")] IntPtr* MsgHandler, [NativeTypeName("PVOID")] void* Context);
+        public static extern int SetupIterateCabinetA([NativeTypeName("PCSTR")] sbyte* CabinetFile, [NativeTypeName("DWORD")] uint Reserved, [NativeTypeName("PSP_FILE_CALLBACK_A")] IntPtr MsgHandler, [NativeTypeName("PVOID")] void* Context);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetupIterateCabinetW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetupIterateCabinetW([NativeTypeName("PCWSTR")] ushort* CabinetFile, [NativeTypeName("DWORD")] uint Reserved, [NativeTypeName("PSP_FILE_CALLBACK_W")] IntPtr* MsgHandler, [NativeTypeName("PVOID")] void* Context);
+        public static extern int SetupIterateCabinetW([NativeTypeName("PCWSTR")] ushort* CabinetFile, [NativeTypeName("DWORD")] uint Reserved, [NativeTypeName("PSP_FILE_CALLBACK_W")] IntPtr MsgHandler, [NativeTypeName("PVOID")] void* Context);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetupPromptReboot", ExactSpelling = true)]
         [return: NativeTypeName("INT")]
@@ -594,11 +596,11 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetupInstallFromInfSectionA", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetupInstallFromInfSectionA([NativeTypeName("HWND")] IntPtr Owner, [NativeTypeName("HINF")] void* InfHandle, [NativeTypeName("PCSTR")] sbyte* SectionName, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("HKEY")] IntPtr RelativeKeyRoot, [NativeTypeName("PCSTR")] sbyte* SourceRootPath, [NativeTypeName("UINT")] uint CopyFlags, [NativeTypeName("PSP_FILE_CALLBACK_A")] IntPtr* MsgHandler, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("HDEVINFO")] void* DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData);
+        public static extern int SetupInstallFromInfSectionA([NativeTypeName("HWND")] IntPtr Owner, [NativeTypeName("HINF")] void* InfHandle, [NativeTypeName("PCSTR")] sbyte* SectionName, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("HKEY")] IntPtr RelativeKeyRoot, [NativeTypeName("PCSTR")] sbyte* SourceRootPath, [NativeTypeName("UINT")] uint CopyFlags, [NativeTypeName("PSP_FILE_CALLBACK_A")] IntPtr MsgHandler, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("HDEVINFO")] void* DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetupInstallFromInfSectionW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetupInstallFromInfSectionW([NativeTypeName("HWND")] IntPtr Owner, [NativeTypeName("HINF")] void* InfHandle, [NativeTypeName("PCWSTR")] ushort* SectionName, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("HKEY")] IntPtr RelativeKeyRoot, [NativeTypeName("PCWSTR")] ushort* SourceRootPath, [NativeTypeName("UINT")] uint CopyFlags, [NativeTypeName("PSP_FILE_CALLBACK_W")] IntPtr* MsgHandler, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("HDEVINFO")] void* DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData);
+        public static extern int SetupInstallFromInfSectionW([NativeTypeName("HWND")] IntPtr Owner, [NativeTypeName("HINF")] void* InfHandle, [NativeTypeName("PCWSTR")] ushort* SectionName, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("HKEY")] IntPtr RelativeKeyRoot, [NativeTypeName("PCWSTR")] ushort* SourceRootPath, [NativeTypeName("UINT")] uint CopyFlags, [NativeTypeName("PSP_FILE_CALLBACK_W")] IntPtr MsgHandler, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("HDEVINFO")] void* DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetupInstallFilesFromInfSectionA", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -831,7 +833,7 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetupDiRegisterDeviceInfo", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiRegisterDeviceInfo([NativeTypeName("HDEVINFO")] void* DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PSP_DETSIG_CMPPROC")] IntPtr* CompareProc, [NativeTypeName("PVOID")] void* CompareContext, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DupDeviceInfoData);
+        public static extern int SetupDiRegisterDeviceInfo([NativeTypeName("HDEVINFO")] void* DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PSP_DETSIG_CMPPROC")] IntPtr CompareProc, [NativeTypeName("PVOID")] void* CompareContext, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DupDeviceInfoData);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetupDiBuildDriverInfoList", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]

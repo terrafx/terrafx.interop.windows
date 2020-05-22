@@ -11,7 +11,7 @@ namespace TerraFX.Interop
     {
         public RAWINPUTHEADER header;
 
-        [NativeTypeName("union (anonymous union at um/WinUser.h:15057:5)")]
+        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/WinUser.h:15057:5)")]
         public _data_e__Union data;
 
         [StructLayout(LayoutKind.Explicit)]

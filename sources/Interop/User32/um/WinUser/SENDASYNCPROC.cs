@@ -9,5 +9,5 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-    public delegate void SENDASYNCPROC([NativeTypeName("HWND")] IntPtr param0, [NativeTypeName("UINT")] uint param1, [NativeTypeName("ULONG_PTR")] UIntPtr param2, [NativeTypeName("LRESULT")] IntPtr param3);
+    public delegate void SENDASYNCPROC([NativeTypeName("HWND")] IntPtr param0, [NativeTypeName("UINT")] uint param1, [NativeTypeName("ULONG_PTR")] nuint param2, [NativeTypeName("LRESULT")] nint param3);
 }

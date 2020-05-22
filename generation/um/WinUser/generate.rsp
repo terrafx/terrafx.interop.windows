@@ -1,7 +1,13 @@
 --additional
 -m32
+-Wno-expansion-to-defined
+-Wno-ignored-attributes
+-Wno-ignored-pragma-intrinsic
+-Wno-nonportable-include-path
+-Wno-pragma-pack
 --config
 multi-file
+preview-codegen-nint
 --exclude
 DESKTOPENUMPROC
 DESKTOPENUMPROCA
@@ -95,9 +101,9 @@ HTOUCHINPUT__*=IntPtr
 HWINEVENTHOOK__*=IntPtr
 HWINSTA__*=IntPtr
 HWND__*=IntPtr
-INT_PTR=IntPtr
-LRESULT=IntPtr
-LPARAM=IntPtr
+INT_PTR=nint
+LRESULT=nint
+LPARAM=nint
 tagACCEL=ACCEL
 tagACCESSTIMEOUT=ACCESSTIMEOUT
 tagALTTABINFO=ALTTABINFO
@@ -235,9 +241,9 @@ tagWNDCLASSEXA=WNDCLASSEXA
 tagWNDCLASSEXW=WNDCLASSEXW
 tagWNDCLASSW=WNDCLASSW
 tagWTSSESSION_NOTIFICATION=WTSSESSION_NOTIFICATION
-UINT_PTR=UIntPtr
-ULONG_PTR=UIntPtr
-WPARAM=UIntPtr
+UINT_PTR=nuint
+ULONG_PTR=nuint
+WPARAM=nuint
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/WinUser.h
 --with-callconv

@@ -1,7 +1,13 @@
 --additional
 -m32
+-Wno-expansion-to-defined
+-Wno-ignored-attributes
+-Wno-ignored-pragma-intrinsic
+-Wno-nonportable-include-path
+-Wno-pragma-pack
 --config
 multi-file
+preview-codegen-nint
 --exclude
 _PSP
 --file
@@ -77,8 +83,8 @@ HICON__*=IntPtr
 HINSTANCE__*=IntPtr
 HPALETTE__*=IntPtr
 HWND__*=IntPtr
-LPARAM=IntPtr
-INT_PTR=IntPtr
+LPARAM=nint
+INT_PTR=nint
 tagNMHDR=NMHDR
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/prsht.h

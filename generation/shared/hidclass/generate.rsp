@@ -1,7 +1,17 @@
 --additional
 -m32
+-Wno-expansion-to-defined
+-Wno-ignored-attributes
+-Wno-ignored-pragma-intrinsic
+-Wno-nonportable-include-path
+-Wno-pragma-pack
 --config
 multi-file
+preview-codegen-nint
+--exclude
+GUID_DEVINTERFACE_HID
+GUID_HID_INTERFACE_NOTIFY
+GUID_HID_INTERFACE_HIDPARSE
 --file
 shared-hidclass.h
 --headerFile
@@ -10,8 +20,6 @@ header.txt
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
 --include-directory
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---libraryPath
-hid
 --methodClassName
 Windows
 --namespace
@@ -19,6 +27,7 @@ TerraFX.Interop
 --output
 ../../../sources/Interop/Windows/shared/hidclass
 --remap
+_GUID=Guid
 _HID_COLLECTION_INFORMATION=HID_COLLECTION_INFORMATION
 _HID_DRIVER_CONFIG=HID_DRIVER_CONFIG
 _HID_XFER_PACKET=HID_XFER_PACKET

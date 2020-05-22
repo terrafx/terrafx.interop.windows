@@ -1,7 +1,13 @@
 --additional
 -m32
+-Wno-expansion-to-defined
+-Wno-ignored-attributes
+-Wno-ignored-pragma-intrinsic
+-Wno-nonportable-include-path
+-Wno-pragma-pack
 --config
 multi-file
+preview-codegen-nint
 --file
 um-libloaderapi.h
 --headerFile
@@ -23,7 +29,7 @@ HANDLE=IntPtr
 HGLOBAL=IntPtr
 HINSTANCE__*=IntPtr
 HRSRC__*=IntPtr
-LONG_PTR=IntPtr
+LONG_PTR=nint
 tagENUMUILANG=ENUMUILANG
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/libloaderapi.h
