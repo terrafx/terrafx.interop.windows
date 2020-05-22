@@ -13,9 +13,9 @@ um-DXGIMessages.h
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
 --libraryPath
 DXGIDebug
 --methodClassName
@@ -25,4 +25,4 @@ TerraFX.Interop
 --output
 ../../../sources/Interop/DXGIDebug/um/DXGIMessages
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/DXGIMessages.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/DXGIMessages.h

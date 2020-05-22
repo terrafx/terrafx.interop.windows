@@ -35,9 +35,9 @@ um-d3d11_4.h
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
 --methodClassName
 D3D11
 --namespace
@@ -45,7 +45,7 @@ TerraFX.Interop
 --output
 ../../../sources/Interop/D3D11/um/d3d11_4
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d3d11_4.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11_4.h
 --remap
 _GUID=Guid
 HANDLE=IntPtr

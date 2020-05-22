@@ -13,9 +13,9 @@ um-heapapi.h
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
 --methodClassName
 Kernel32
 --namespace
@@ -30,6 +30,6 @@ HANDLE=IntPtr
 PSIZE_T=nuint*
 SIZE_T=nuint
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/heapapi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/heapapi.h
 --with-callconv
 *=Winapi

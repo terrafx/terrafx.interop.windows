@@ -421,9 +421,9 @@ um-winnt.h
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
 --methodClassName
 Windows
 --namespace
@@ -635,7 +635,7 @@ __AnonymousRecord_winnt_L20778_C5=_u_e__Union
 __AnonymousRecord_winnt_L22408_C5=_u_e__Union
 __AnonymousRecord_winnt_L22410_C9=_s_e__Union
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h
 --remap
 _ACCESS_ALLOWED_ACE=ACCESS_ALLOWED_ACE
 _ACCESS_ALLOWED_CALLBACK_ACE=ACCESS_ALLOWED_CALLBACK_ACE
@@ -1038,7 +1038,7 @@ TP_WAIT*=IntPtr
 TP_WORK*=IntPtr
 ULONG_PTR=nuint
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h
 --with-attribute
 ACCESS_REASON_TYPE=Flags
 CM_SERVICE_NODE_TYPE=Flags

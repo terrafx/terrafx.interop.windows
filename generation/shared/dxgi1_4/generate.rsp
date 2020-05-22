@@ -26,9 +26,9 @@ shared-dxgi1_4.h
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
 --methodClassName
 DXGI
 --namespace
@@ -44,7 +44,7 @@ HANDLE=IntPtr
 HINSTANCE__*=IntPtr
 HWND__*=IntPtr
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared/dxgi1_4.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgi1_4.h
 --with-attribute
 DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG=Flags
 DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG=Flags

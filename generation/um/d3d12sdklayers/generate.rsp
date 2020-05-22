@@ -49,9 +49,9 @@ um-d3d12sdklayers.h
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
 --libraryPath
 D3D12
 --methodClassName
@@ -66,7 +66,7 @@ GetMessageA=GetMessage
 HWND__*=IntPtr
 SIZE_T=nuint
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d3d12sdklayers.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12sdklayers.h
 --with-attribute
 D3D12_DEBUG_FEATURE=Flags
 D3D12_GPU_BASED_VALIDATION_FLAGS=Flags

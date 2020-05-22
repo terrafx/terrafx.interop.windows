@@ -15,9 +15,9 @@ shared-hidpi.h
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
 --methodClassName
 Hid
 --namespace
@@ -53,4 +53,4 @@ _HIDP_VALUE_CAPS=HIDP_VALUE_CAPS
 _USAGE_AND_PAGE=USAGE_AND_PAGE
 PHIDP_PREPARSED_DATA=IntPtr
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared/hidpi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/hidpi.h

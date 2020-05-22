@@ -78,9 +78,9 @@ um-d3d12video.h
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
 --libraryPath
 D3D12
 --methodClassName
@@ -93,7 +93,7 @@ TerraFX.Interop
 _GUID=Guid
 tagRECT=RECT
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d3d12video.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12video.h
 --with-attribute
 D3D12_VIDEO_DECODE_CONFIGURATION_FLAGS=Flags
 D3D12_VIDEO_DECODE_CONVERSION_SUPPORT_FLAGS=Flags

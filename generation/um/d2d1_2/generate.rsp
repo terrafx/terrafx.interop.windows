@@ -62,9 +62,9 @@ um-d2d1_2.h
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
 --methodClassName
 D2D1
 --namespace
@@ -76,7 +76,7 @@ _D3DCOLORVALUE=DXGI_RGBA
 _GUID=Guid
 DrawTextA=DrawText
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d2d1_2.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1_2.h
 --with-attribute
 ID2D1CommandSink1=Guid("9EB767FD-4269-4467-B8C2-EB30CB305743")
 ID2D1Device1=Guid("D21768E1-23A4-4823-A14B-7C3EBA85D658")

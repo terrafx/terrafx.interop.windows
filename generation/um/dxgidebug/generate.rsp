@@ -25,9 +25,9 @@ um-dxgidebug.h
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
 --libraryPath
 DXGIDebug
 --methodClassName
@@ -41,7 +41,7 @@ _GUID=Guid
 GetMessageA=GetMessage
 SIZE_T=nuint
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/dxgidebug.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dxgidebug.h
 --with-attribute
 DXGI_DEBUG_RLO_FLAGS=Flags
 IDXGIDebug=Guid("119E7452-DE9E-40FE-8806-88F90C12B441")

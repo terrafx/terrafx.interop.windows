@@ -235,9 +235,9 @@ um-wincodec.h
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
 --methodClassName
 WinCodec
 --namespace
@@ -259,7 +259,7 @@ tagSAFEARRAY=SAFEARRAY
 tagSTATSTG=STATSTG
 ULONG_PTR=nuint
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/wincodec.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincodec.h
 --with-attribute
 IWICBitmap=Guid("00000121-A8F2-4877-BA0A-FD2B6645FB94")
 IWICBitmapClipper=Guid("E4FBCF03-223D-4E81-9333-D635556DD1B5")

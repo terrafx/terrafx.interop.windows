@@ -13,9 +13,9 @@ um-handleapi.h
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
 --methodClassName
 Kernel32
 --namespace
@@ -25,6 +25,6 @@ TerraFX.Interop
 --remap
 HANDLE=IntPtr
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/handleapi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/handleapi.h
 --with-callconv
 *=Winapi

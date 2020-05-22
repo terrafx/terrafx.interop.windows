@@ -13,9 +13,9 @@ um-mssip.h
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
 --libraryPath
 crypt32
 --methodClassName
@@ -44,6 +44,6 @@ SIP_DISPATCH_INFO_=SIP_DISPATCH_INFO
 SIP_INDIRECT_DATA_=SIP_INDIRECT_DATA
 SIP_SUBJECTINFO_=SIP_SUBJECTINFO
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/mssip.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mssip.h
 --with-callconv
 *=Winapi

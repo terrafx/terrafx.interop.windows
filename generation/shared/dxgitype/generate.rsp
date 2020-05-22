@@ -13,9 +13,9 @@ shared-dxgitype.h
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
 --methodClassName
 DXGI
 --namespace
@@ -25,4 +25,4 @@ TerraFX.Interop
 --remap
 _D3DCOLORVALUE=DXGI_RGBA
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared/dxgitype.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgitype.h

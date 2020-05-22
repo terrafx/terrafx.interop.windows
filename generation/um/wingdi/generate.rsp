@@ -20,9 +20,9 @@ um-wingdi.h
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
 --libraryPath
 Gdi32
 --methodClassName
@@ -276,7 +276,7 @@ tagWCRANGE=WCRANGE
 tagXFORM=XFORM
 ULONG_PTR=nuint
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/wingdi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wingdi.h
 --with-callconv
 *=Winapi
 --with-type

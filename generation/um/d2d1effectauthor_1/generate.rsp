@@ -16,9 +16,9 @@ um-d2d1effectauthor_1.h
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
 --methodClassName
 D2D1
 --namespace
@@ -30,7 +30,7 @@ _GUID=Guid
 tagPOINT=POINT
 tagRECT=RECT
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d2d1effectauthor_1.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1effectauthor_1.h
 --with-attribute
 ID2D1EffectContext1=Guid("84AB595A-FC81-4546-BACD-E8EF4D8ABE7A")
 ID2D1EffectContext2=Guid("577AD2A0-9FC7-4DDA-8B18-DAB810140052")

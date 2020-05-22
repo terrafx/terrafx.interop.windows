@@ -15,9 +15,9 @@ shared-hidsdi.h
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
 --methodClassName
 Hid
 --namespace
@@ -32,4 +32,4 @@ _HIDP_PREPARSED_DATA=HIDP_PREPARSED_DATA
 HANDLE=IntPtr
 PHIDP_PREPARSED_DATA=IntPtr
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared/hidsdi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/hidsdi.h

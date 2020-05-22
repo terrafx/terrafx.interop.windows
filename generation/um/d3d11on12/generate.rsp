@@ -20,9 +20,9 @@ um-d3d11on12.h
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
 --methodClassName
 D3D11
 --namespace
@@ -33,7 +33,7 @@ TerraFX.Interop
 _GUID=Guid
 D3D12_RESOURCE_STATES=int
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d3d11on12.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11on12.h
 --with-attribute
 ID3D11On12Device=Guid("85611E73-70A9-490E-9614-A9E302777904")
 ID3D11On12Device1=Guid("BDB64DF4-EA2F-4C70-B861-AAAB1258BB5D")

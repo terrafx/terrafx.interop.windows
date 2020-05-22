@@ -16,9 +16,9 @@ shared-devpropdef.h
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
 --methodClassName
 Windows
 --namespace
@@ -32,6 +32,6 @@ _DEVPROPKEY=DEVPROPKEY
 _DEVPROPSTORE=DEVPROPSTORE
 DEVPROPGUID=Guid
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared/devpropdef.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/devpropdef.h
 --with-callconv
 *=Winapi

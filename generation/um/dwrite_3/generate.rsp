@@ -21,9 +21,9 @@ um-dwrite_3.h
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
 --libraryPath
 DWrite
 --methodClassName
@@ -48,7 +48,7 @@ tagLOGFONTA=LOGFONTA
 tagLOGFONTW=LOGFONTW
 tagPOINT=POINT
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/dwrite_3.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dwrite_3.h
 --with-attribute
 DWRITE_AUTOMATIC_FONT_AXES=Flags
 DWRITE_FONT_AXIS_ATTRIBUTES=Flags

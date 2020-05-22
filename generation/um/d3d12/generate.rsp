@@ -106,9 +106,9 @@ um-d3d12.h
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
 --libraryPath
 D3D12
 --methodClassName
@@ -164,7 +164,7 @@ LONG_PTR=nint
 SIZE_T=nuint
 tagRECT=RECT
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d3d12.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12.h
 --with-attribute
 D3D12_BUFFER_SRV_FLAGS=Flags
 D3D12_BUFFER_UAV_FLAGS=Flags

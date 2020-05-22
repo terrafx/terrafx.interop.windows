@@ -21,9 +21,9 @@ um-d3d12shader.h
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
 --libraryPath
 D3D12
 --methodClassName
@@ -49,7 +49,7 @@ _D3D12_SHADER_VARIABLE_DESC=D3D12_SHADER_VARIABLE_DESC
 _D3D12_SIGNATURE_PARAMETER_DESC=D3D12_SIGNATURE_PARAMETER_DESC
 _GUID=Guid
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d3d12shader.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12shader.h
 --with-attribute
 ID3D12FunctionParameterReflection=Guid("EC25F42D-7006-4F2B-B33E-02CC3375733F")
 ID3D12FunctionReflection=Guid("1108795C-2772-4BA9-B2A8-D464DC7E2799")

@@ -13,9 +13,9 @@ um-SetupAPI.h
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
 --libraryPath
 setupapi
 --methodClassName
@@ -106,6 +106,6 @@ HWND__*=IntPtr
 ULONG_PTR=nuint
 tagRECT=RECT
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/SetupAPI.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/SetupAPI.h
 --with-callconv
 *=Winapi

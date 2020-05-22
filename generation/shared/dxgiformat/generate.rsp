@@ -8,9 +8,9 @@ shared-dxgiformat.h
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
 --methodClassName
 DXGI
 --namespace
@@ -18,6 +18,6 @@ TerraFX.Interop
 --output
 ../../../sources/Interop/DXGI/shared/dxgiformat
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared/dxgiformat.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgiformat.h
 --with-type
 DXGI_FORMAT=uint

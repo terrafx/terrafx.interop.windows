@@ -110,9 +110,9 @@ um-d2d1_3.h
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
 --methodClassName
 D2D1
 --namespace
@@ -124,7 +124,7 @@ _D3DCOLORVALUE=DXGI_RGBA
 _GUID=Guid
 DrawTextA=DrawText
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d2d1_3.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1_3.h
 --with-attribute
 D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS=Flags
 D2D1_IMAGE_SOURCE_LOADING_OPTIONS=Flags

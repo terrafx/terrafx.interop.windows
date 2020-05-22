@@ -57,9 +57,9 @@ um-d3d11_3.h
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
 --methodClassName
 D3D11
 --namespace
@@ -79,7 +79,7 @@ HANDLE=IntPtr
 SIZE_T=nuint
 tagRECT=RECT
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d3d11_3.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11_3.h
 --with-attribute
 D3D11_FENCE_FLAG=Flags
 ID3D11Device3=Guid("A05C8C37-D2C6-4732-B3A0-9CE0B0DC9AE6")

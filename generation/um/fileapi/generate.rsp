@@ -13,9 +13,9 @@ um-fileapi.h
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
 --methodClassName
 Kernel32
 --namespace
@@ -42,6 +42,6 @@ _WIN32_FIND_DATAW=WIN32_FIND_DATAW
 _WIN32_FIND_STREAM_DATA=WIN32_FIND_STREAM_DATA
 HANDLE=IntPtr
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/fileapi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/fileapi.h
 --with-callconv
 *=Winapi

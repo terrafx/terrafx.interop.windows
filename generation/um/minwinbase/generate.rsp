@@ -13,9 +13,9 @@ um-minwinbase.h
 --headerFile
 header.txt
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
 --include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
 --methodClassName
 Windows
 --namespace
@@ -63,6 +63,6 @@ HANDLE=IntPtr
 HINSTANCE__*=IntPtr
 ULONG_PTR=nuint
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/minwinbase.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/minwinbase.h
 --with-callconv
 *=Winapi
