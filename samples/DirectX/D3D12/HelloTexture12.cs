@@ -17,6 +17,7 @@ using static TerraFX.Interop.D3D12_BLEND;
 using static TerraFX.Interop.D3D12_BLEND_OP;
 using static TerraFX.Interop.D3D12_COLOR_WRITE_ENABLE;
 using static TerraFX.Interop.D3D12_COMMAND_LIST_TYPE;
+using static TerraFX.Interop.D3D12_COMPARISON_FUNC;
 using static TerraFX.Interop.D3D12_CONSERVATIVE_RASTERIZATION_MODE;
 using static TerraFX.Interop.D3D12_CPU_PAGE_PROPERTY;
 using static TerraFX.Interop.D3D12_CULL_MODE;
@@ -39,6 +40,7 @@ using static TerraFX.Interop.D3D12_RESOURCE_STATES;
 using static TerraFX.Interop.D3D12_ROOT_SIGNATURE_FLAGS;
 using static TerraFX.Interop.D3D12_SHADER_VISIBILITY;
 using static TerraFX.Interop.D3D12_SRV_DIMENSION;
+using static TerraFX.Interop.D3D12_STATIC_BORDER_COLOR;
 using static TerraFX.Interop.D3D12_TEXTURE_LAYOUT;
 using static TerraFX.Interop.D3DCompiler;
 using static TerraFX.Interop.DXGI;
@@ -71,7 +73,6 @@ namespace TerraFX.Samples.DirectX.D3D12
         private ID3D12PipelineState* _pipelineState;
         private ID3D12GraphicsCommandList* _commandList;
         private uint _rtvDescriptorSize;
-        private uint _srvDescriptorSize;
 
         // App resources.
         private ID3D12Resource* _vertexBuffer;
@@ -290,6 +291,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     var rtvHeapDesc = new D3D12_DESCRIPTOR_HEAP_DESC {
                         NumDescriptors = FrameCount,
                         Type = D3D12_DESCRIPTOR_HEAP_TYPE_RTV,
+                        Flags = D3D12_DESCRIPTOR_HEAP_FLAG_NONE,
                     };
 
                     fixed (ID3D12DescriptorHeap** rtvHeap = &_rtvHeap)
@@ -311,8 +313,6 @@ namespace TerraFX.Samples.DirectX.D3D12
                         iid = IID_ID3D12DescriptorHeap;
                         ThrowIfFailed(nameof(ID3D12Device.CreateDescriptorHeap), _device->CreateDescriptorHeap(&srvHeapDesc, &iid, (void**)srvHeap));
                     }
-
-                    _srvDescriptorSize = _device->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
                 }
 
                 // Create frame resources.
@@ -337,7 +337,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 fixed (ID3D12CommandAllocator** commandAllocator = &_commandAllocator)
                 {
                     iid = IID_ID3D12CommandAllocator;
-                    ThrowIfFailed(nameof(ID3D12Device.CreateRenderTargetView), _device->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_DIRECT, &iid, (void**)commandAllocator));
+                    ThrowIfFailed(nameof(ID3D12Device.CreateCommandAllocator), _device->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_DIRECT, &iid, (void**)commandAllocator));
                 }
             }
             finally
@@ -382,27 +382,28 @@ namespace TerraFX.Samples.DirectX.D3D12
                         HighestVersion = D3D_ROOT_SIGNATURE_VERSION_1_1
                     };
 
-                    if (FAILED(_device->CheckFeatureSupport(D3D12_FEATURE_ROOT_SIGNATURE, &featureData, (uint)sizeof(D3D12_FEATURE_DATA_ROOT_SIGNATURE))))
+                    if (FAILED(_device->CheckFeatureSupport(D3D12_FEATURE_ROOT_SIGNATURE, &featureData, (uint)sizeof(D3D12_FEATURE))))
                     {
                         featureData.HighestVersion = D3D_ROOT_SIGNATURE_VERSION_1_0;
                     }
 
                     const int RangesCount = 1;
                     var ranges = stackalloc D3D12_DESCRIPTOR_RANGE1[RangesCount];
+                    ranges[0].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
+
                     const int RootParametersCount = 1;
                     var rootParameters = stackalloc D3D12_ROOT_PARAMETER1[RootParametersCount];
-                    ranges[0].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
-                    rootParameters[0].InitAsDescriptorTable(1, ranges, D3D12_SHADER_VISIBILITY_VERTEX);
+                    rootParameters[0].InitAsDescriptorTable(1, ranges, D3D12_SHADER_VISIBILITY_PIXEL);
 
-                    var sampler = new D3D12_STATIC_SAMPLER_DESC {  // IB: use new or stackalloc here?
+                    var sampler = new D3D12_STATIC_SAMPLER_DESC {
                         Filter = D3D12_FILTER.D3D12_FILTER_MIN_MAG_MIP_POINT,
                         AddressU = D3D12_TEXTURE_ADDRESS_MODE.D3D12_TEXTURE_ADDRESS_MODE_BORDER,
                         AddressV = D3D12_TEXTURE_ADDRESS_MODE.D3D12_TEXTURE_ADDRESS_MODE_BORDER,
                         AddressW = D3D12_TEXTURE_ADDRESS_MODE.D3D12_TEXTURE_ADDRESS_MODE_BORDER,
                         MipLODBias = 0,
                         MaxAnisotropy = 0,
-                        ComparisonFunc = D3D12_COMPARISON_FUNC.D3D12_COMPARISON_FUNC_NEVER,
-                        BorderColor = D3D12_STATIC_BORDER_COLOR.D3D12_STATIC_BORDER_COLOR_TRANSPARENT_BLACK,
+                        ComparisonFunc = D3D12_COMPARISON_FUNC_NEVER,
+                        BorderColor = D3D12_STATIC_BORDER_COLOR_TRANSPARENT_BLACK,
                         MinLOD = 0.0f,
                         MaxLOD = D3D12_FLOAT32_MAX,
                         ShaderRegister = 0,
@@ -488,7 +489,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     fixed (ID3D12PipelineState** pipelineState = &_pipelineState)
                     {
                         iid = IID_ID3D12PipelineState;
-                        ThrowIfFailed(nameof(ID3D12Device._CreateGraphicsPipelineState), _device->CreateGraphicsPipelineState(&psoDesc, &iid, (void**)pipelineState));
+                        ThrowIfFailed(nameof(ID3D12Device.CreateGraphicsPipelineState), _device->CreateGraphicsPipelineState(&psoDesc, &iid, (void**)pipelineState));
                     }
                 }
 
@@ -543,7 +544,6 @@ namespace TerraFX.Samples.DirectX.D3D12
 
                     // Copy the triangle data to the vertex buffer.
                     var readRange = new D3D12_RANGE();
-
                     byte* pVertexDataBegin;
                     ThrowIfFailed(nameof(ID3D12Resource._Map), _vertexBuffer->Map(Subresource: 0, &readRange, (void**)&pVertexDataBegin));
                     Unsafe.CopyBlock(pVertexDataBegin, triangleVertices, vertexBufferSize);
@@ -555,7 +555,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     _vertexBufferView.SizeInBytes = vertexBufferSize;
                 }
 
-                // Note: ComPtr's are CPU objects but this resource needs to stay in scope until
+                // Note: textureUploadHeap needs to stay in scope until
                 // the command list that references it has finished executing on the GPU.
                 // We will flush the GPU at the end of this method to ensure the resource is not
                 // prematurely destroyed.
@@ -571,10 +571,12 @@ namespace TerraFX.Samples.DirectX.D3D12
                         Height = TextureHeight,
                         Flags = D3D12_RESOURCE_FLAG_NONE,
                         DepthOrArraySize = 1,
+                        SampleDesc = new DXGI_SAMPLE_DESC {
+                            Count = 1,
+                            Quality = 0,
+                        },
                         Dimension = D3D12_RESOURCE_DIMENSION_TEXTURE2D,
                     };
-                    textureDesc.SampleDesc.Count = 1;
-                    textureDesc.SampleDesc.Quality = 0;
 
                     var heapProperties = new D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_DEFAULT);
                     iid = IID_ID3D12Resource;
@@ -613,13 +615,14 @@ namespace TerraFX.Samples.DirectX.D3D12
                     {
                         textureData = new D3D12_SUBRESOURCE_DATA {
                             pData = (void*)pTexture,
-                            RowPitch = (IntPtr)(&rowPitch),
-                            SlicePitch = (IntPtr)(&slicePitch),
+                            RowPitch = (IntPtr)(rowPitch),
+                            SlicePitch = (IntPtr)(slicePitch),
                         };
                     }
                     UpdateSubresources(_commandList, _texture, textureUploadHeap, 0, 0, 1, &textureData);
                     var barrier = D3D12_RESOURCE_BARRIER.InitTransition(_texture, D3D12_RESOURCE_STATE_COPY_DEST, D3D12_RESOURCE_STATE_PIXEL_SHADER_RESOURCE);
                     _commandList->ResourceBarrier(1, &barrier);
+                    
                     // Describe and create a SRV for the texture.
                     var srvDesc = new D3D12_SHADER_RESOURCE_VIEW_DESC {
                         Shader4ComponentMapping = D3D12_DEFAULT_SHADER_4_COMPONENT_MAPPING,
@@ -633,14 +636,6 @@ namespace TerraFX.Samples.DirectX.D3D12
 
                 // Close the command list and execute it to begin the initial GPU setup.
                 ThrowIfFailed(nameof(ID3D12GraphicsCommandList.Close), _commandList->Close());
-
-
-                const uint HeapsCount = 1;
-                var ppHeaps = stackalloc ID3D12DescriptorHeap*[(int)HeapsCount] {
-                    _srvHeap
-                };
-                _commandList->SetDescriptorHeaps(HeapsCount, ppHeaps);
-
 
                 const int CommandListsCount = 1;
                 var ppCommandLists = stackalloc ID3D12CommandList*[CommandListsCount] {
