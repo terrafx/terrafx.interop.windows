@@ -3,8 +3,6 @@
 // Ported from um/prsht.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct PSHNOTIFY
@@ -12,6 +10,6 @@ namespace TerraFX.Interop
         public NMHDR hdr;
 
         [NativeTypeName("LPARAM")]
-        public IntPtr lParam;
+        public nint lParam;
     }
 }

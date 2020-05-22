@@ -13,13 +13,13 @@ namespace TerraFX.Interop
         public CRYPTOAPI_BLOB PrivateKey;
 
         [NativeTypeName("PCRYPT_RESOLVE_HCRYPTPROV_FUNC")]
-        public IntPtr* pResolvehCryptProvFunc;
+        public IntPtr pResolvehCryptProvFunc;
 
         [NativeTypeName("LPVOID")]
         public void* pVoidResolveFunc;
 
         [NativeTypeName("PCRYPT_DECRYPT_PRIVATE_KEY_FUNC")]
-        public IntPtr* pDecryptPrivateKeyFunc;
+        public IntPtr pDecryptPrivateKeyFunc;
 
         [NativeTypeName("LPVOID")]
         public void* pVoidDecryptFunc;

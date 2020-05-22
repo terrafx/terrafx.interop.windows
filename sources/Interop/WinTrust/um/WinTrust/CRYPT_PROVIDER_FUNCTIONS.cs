@@ -13,48 +13,48 @@ namespace TerraFX.Interop
         public uint cbStruct;
 
         [NativeTypeName("PFN_CPD_MEM_ALLOC")]
-        public IntPtr* pfnAlloc;
+        public IntPtr pfnAlloc;
 
         [NativeTypeName("PFN_CPD_MEM_FREE")]
-        public IntPtr* pfnFree;
+        public IntPtr pfnFree;
 
         [NativeTypeName("PFN_CPD_ADD_STORE")]
-        public IntPtr* pfnAddStore2Chain;
+        public IntPtr pfnAddStore2Chain;
 
         [NativeTypeName("PFN_CPD_ADD_SGNR")]
-        public IntPtr* pfnAddSgnr2Chain;
+        public IntPtr pfnAddSgnr2Chain;
 
         [NativeTypeName("PFN_CPD_ADD_CERT")]
-        public IntPtr* pfnAddCert2Chain;
+        public IntPtr pfnAddCert2Chain;
 
         [NativeTypeName("PFN_CPD_ADD_PRIVDATA")]
-        public IntPtr* pfnAddPrivData2Chain;
+        public IntPtr pfnAddPrivData2Chain;
 
         [NativeTypeName("PFN_PROVIDER_INIT_CALL")]
-        public IntPtr* pfnInitialize;
+        public IntPtr pfnInitialize;
 
         [NativeTypeName("PFN_PROVIDER_OBJTRUST_CALL")]
-        public IntPtr* pfnObjectTrust;
+        public IntPtr pfnObjectTrust;
 
         [NativeTypeName("PFN_PROVIDER_SIGTRUST_CALL")]
-        public IntPtr* pfnSignatureTrust;
+        public IntPtr pfnSignatureTrust;
 
         [NativeTypeName("PFN_PROVIDER_CERTTRUST_CALL")]
-        public IntPtr* pfnCertificateTrust;
+        public IntPtr pfnCertificateTrust;
 
         [NativeTypeName("PFN_PROVIDER_FINALPOLICY_CALL")]
-        public IntPtr* pfnFinalPolicy;
+        public IntPtr pfnFinalPolicy;
 
         [NativeTypeName("PFN_PROVIDER_CERTCHKPOLICY_CALL")]
-        public IntPtr* pfnCertCheckPolicy;
+        public IntPtr pfnCertCheckPolicy;
 
         [NativeTypeName("PFN_PROVIDER_TESTFINALPOLICY_CALL")]
-        public IntPtr* pfnTestFinalPolicy;
+        public IntPtr pfnTestFinalPolicy;
 
         [NativeTypeName("struct _CRYPT_PROVUI_FUNCS *")]
         public CRYPT_PROVUI_FUNCS* psUIpfns;
 
         [NativeTypeName("PFN_PROVIDER_CLEANUP_CALL")]
-        public IntPtr* pfnCleanupPolicy;
+        public IntPtr pfnCleanupPolicy;
     }
 }

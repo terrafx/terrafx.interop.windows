@@ -10,7 +10,7 @@ namespace TerraFX.Interop
     public unsafe partial struct CRYPT_ASYNC_RETRIEVAL_COMPLETION
     {
         [NativeTypeName("PFN_CRYPT_ASYNC_RETRIEVAL_COMPLETION_FUNC")]
-        public IntPtr* pfnCompletion;
+        public IntPtr pfnCompletion;
 
         [NativeTypeName("LPVOID")]
         public void* pvCompletion;

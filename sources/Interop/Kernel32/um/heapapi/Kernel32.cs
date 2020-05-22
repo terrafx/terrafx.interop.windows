@@ -12,7 +12,7 @@ namespace TerraFX.Interop
     {
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "HeapCreate", ExactSpelling = true)]
         [return: NativeTypeName("HANDLE")]
-        public static extern IntPtr HeapCreate([NativeTypeName("DWORD")] uint flOptions, [NativeTypeName("SIZE_T")] UIntPtr dwInitialSize, [NativeTypeName("SIZE_T")] UIntPtr dwMaximumSize);
+        public static extern IntPtr HeapCreate([NativeTypeName("DWORD")] uint flOptions, [NativeTypeName("SIZE_T")] nuint dwInitialSize, [NativeTypeName("SIZE_T")] nuint dwMaximumSize);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "HeapDestroy", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -20,11 +20,11 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "HeapAlloc", ExactSpelling = true)]
         [return: NativeTypeName("LPVOID")]
-        public static extern void* HeapAlloc([NativeTypeName("HANDLE")] IntPtr hHeap, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("SIZE_T")] UIntPtr dwBytes);
+        public static extern void* HeapAlloc([NativeTypeName("HANDLE")] IntPtr hHeap, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("SIZE_T")] nuint dwBytes);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "HeapReAlloc", ExactSpelling = true)]
         [return: NativeTypeName("LPVOID")]
-        public static extern void* HeapReAlloc([NativeTypeName("HANDLE")] IntPtr hHeap, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPVOID")] void* lpMem, [NativeTypeName("SIZE_T")] UIntPtr dwBytes);
+        public static extern void* HeapReAlloc([NativeTypeName("HANDLE")] IntPtr hHeap, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPVOID")] void* lpMem, [NativeTypeName("SIZE_T")] nuint dwBytes);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "HeapFree", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -32,7 +32,7 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "HeapSize", ExactSpelling = true)]
         [return: NativeTypeName("SIZE_T")]
-        public static extern UIntPtr HeapSize([NativeTypeName("HANDLE")] IntPtr hHeap, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCVOID")] void* lpMem);
+        public static extern nuint HeapSize([NativeTypeName("HANDLE")] IntPtr hHeap, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCVOID")] void* lpMem);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetProcessHeap", ExactSpelling = true)]
         [return: NativeTypeName("HANDLE")]
@@ -40,11 +40,11 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "HeapCompact", ExactSpelling = true)]
         [return: NativeTypeName("SIZE_T")]
-        public static extern UIntPtr HeapCompact([NativeTypeName("HANDLE")] IntPtr hHeap, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern nuint HeapCompact([NativeTypeName("HANDLE")] IntPtr hHeap, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "HeapSetInformation", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int HeapSetInformation([NativeTypeName("HANDLE")] IntPtr HeapHandle, HEAP_INFORMATION_CLASS HeapInformationClass, [NativeTypeName("PVOID")] void* HeapInformation, [NativeTypeName("SIZE_T")] UIntPtr HeapInformationLength);
+        public static extern int HeapSetInformation([NativeTypeName("HANDLE")] IntPtr HeapHandle, HEAP_INFORMATION_CLASS HeapInformationClass, [NativeTypeName("PVOID")] void* HeapInformation, [NativeTypeName("SIZE_T")] nuint HeapInformationLength);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "HeapValidate", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -72,6 +72,6 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "HeapQueryInformation", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int HeapQueryInformation([NativeTypeName("HANDLE")] IntPtr HeapHandle, HEAP_INFORMATION_CLASS HeapInformationClass, [NativeTypeName("PVOID")] void* HeapInformation, [NativeTypeName("SIZE_T")] UIntPtr HeapInformationLength, [NativeTypeName("PSIZE_T")] UIntPtr* ReturnLength);
+        public static extern int HeapQueryInformation([NativeTypeName("HANDLE")] IntPtr HeapHandle, HEAP_INFORMATION_CLASS HeapInformationClass, [NativeTypeName("PVOID")] void* HeapInformation, [NativeTypeName("SIZE_T")] nuint HeapInformationLength, [NativeTypeName("PSIZE_T")] nuint* ReturnLength);
     }
 }

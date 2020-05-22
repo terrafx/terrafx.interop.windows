@@ -9,5 +9,5 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-    public delegate int PFNPROPSHEETCALLBACK([NativeTypeName("HWND")] IntPtr param0, [NativeTypeName("UINT")] uint param1, [NativeTypeName("LPARAM")] IntPtr param2);
+    public delegate int PFNPROPSHEETCALLBACK([NativeTypeName("HWND")] IntPtr param0, [NativeTypeName("UINT")] uint param1, [NativeTypeName("LPARAM")] nint param2);
 }

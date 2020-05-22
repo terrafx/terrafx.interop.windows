@@ -62,7 +62,7 @@ namespace TerraFX.Interop
 
             [FieldOffset(0)]
             [NativeTypeName("SIZE_T")]
-            public UIntPtr Size;
+            public nuint Size;
 
             [FieldOffset(0)]
             [NativeTypeName("HANDLE")]

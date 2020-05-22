@@ -60,11 +60,11 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("SIZE_T")]
-        public delegate UIntPtr _GetSerializedSize(ID3D12PipelineLibrary* pThis);
+        public delegate nuint _GetSerializedSize(ID3D12PipelineLibrary* pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _Serialize(ID3D12PipelineLibrary* pThis, [NativeTypeName("void *")] void* pData, [NativeTypeName("SIZE_T")] UIntPtr DataSizeInBytes);
+        public delegate int _Serialize(ID3D12PipelineLibrary* pThis, [NativeTypeName("void *")] void* pData, [NativeTypeName("SIZE_T")] nuint DataSizeInBytes);
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
@@ -133,13 +133,13 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("SIZE_T")]
-        public UIntPtr GetSerializedSize()
+        public nuint GetSerializedSize()
         {
             return Marshal.GetDelegateForFunctionPointer<_GetSerializedSize>(lpVtbl->GetSerializedSize)((ID3D12PipelineLibrary*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int Serialize([NativeTypeName("void *")] void* pData, [NativeTypeName("SIZE_T")] UIntPtr DataSizeInBytes)
+        public int Serialize([NativeTypeName("void *")] void* pData, [NativeTypeName("SIZE_T")] nuint DataSizeInBytes)
         {
             return Marshal.GetDelegateForFunctionPointer<_Serialize>(lpVtbl->Serialize)((ID3D12PipelineLibrary*)Unsafe.AsPointer(ref this), pData, DataSizeInBytes);
         }

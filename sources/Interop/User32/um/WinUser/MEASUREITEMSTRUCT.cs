@@ -3,8 +3,6 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct MEASUREITEMSTRUCT
@@ -25,6 +23,6 @@ namespace TerraFX.Interop
         public uint itemHeight;
 
         [NativeTypeName("ULONG_PTR")]
-        public UIntPtr itemData;
+        public nuint itemData;
     }
 }

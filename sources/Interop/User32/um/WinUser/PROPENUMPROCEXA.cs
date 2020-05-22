@@ -10,5 +10,5 @@ namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.Winapi)]
     [return: NativeTypeName("BOOL")]
-    public unsafe delegate int PROPENUMPROCEXA([NativeTypeName("HWND")] IntPtr param0, [NativeTypeName("LPSTR")] sbyte* param1, [NativeTypeName("HANDLE")] IntPtr param2, [NativeTypeName("ULONG_PTR")] UIntPtr param3);
+    public unsafe delegate int PROPENUMPROCEXA([NativeTypeName("HWND")] IntPtr param0, [NativeTypeName("LPSTR")] sbyte* param1, [NativeTypeName("HANDLE")] IntPtr param2, [NativeTypeName("ULONG_PTR")] nuint param3);
 }

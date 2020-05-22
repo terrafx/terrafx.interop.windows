@@ -214,7 +214,7 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "WaitOnAddress", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int WaitOnAddress([NativeTypeName("volatile void *")] void* Address, [NativeTypeName("PVOID")] void* CompareAddress, [NativeTypeName("SIZE_T")] UIntPtr AddressSize, [NativeTypeName("DWORD")] uint dwMilliseconds);
+        public static extern int WaitOnAddress([NativeTypeName("volatile void *")] void* Address, [NativeTypeName("PVOID")] void* CompareAddress, [NativeTypeName("SIZE_T")] nuint AddressSize, [NativeTypeName("DWORD")] uint dwMilliseconds);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "WakeByAddressSingle", ExactSpelling = true)]
         public static extern void WakeByAddressSingle([NativeTypeName("PVOID")] void* Address);

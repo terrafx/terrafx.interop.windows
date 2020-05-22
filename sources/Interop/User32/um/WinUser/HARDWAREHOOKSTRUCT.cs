@@ -16,9 +16,9 @@ namespace TerraFX.Interop
         public uint message;
 
         [NativeTypeName("WPARAM")]
-        public UIntPtr wParam;
+        public nuint wParam;
 
         [NativeTypeName("LPARAM")]
-        public IntPtr lParam;
+        public nint lParam;
     }
 }

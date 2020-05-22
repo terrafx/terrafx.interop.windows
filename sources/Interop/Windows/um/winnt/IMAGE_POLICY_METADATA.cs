@@ -17,6 +17,6 @@ namespace TerraFX.Interop
         public ulong ApplicationId;
 
         [NativeTypeName("IMAGE_POLICY_ENTRY []")]
-        public IMAGE_POLICY_ENTRY* Policies;
+        public IMAGE_POLICY_ENTRY Policies;
     }
 }

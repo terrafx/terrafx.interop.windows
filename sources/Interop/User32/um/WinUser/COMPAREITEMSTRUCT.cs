@@ -22,13 +22,13 @@ namespace TerraFX.Interop
         public uint itemID1;
 
         [NativeTypeName("ULONG_PTR")]
-        public UIntPtr itemData1;
+        public nuint itemData1;
 
         [NativeTypeName("UINT")]
         public uint itemID2;
 
         [NativeTypeName("ULONG_PTR")]
-        public UIntPtr itemData2;
+        public nuint itemData2;
 
         [NativeTypeName("DWORD")]
         public uint dwLocaleId;

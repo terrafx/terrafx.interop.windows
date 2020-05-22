@@ -3,8 +3,6 @@
 // Ported from um/SetupAPI.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct SP_DRVINFO_DATA_V2_A
@@ -16,7 +14,7 @@ namespace TerraFX.Interop
         public uint DriverType;
 
         [NativeTypeName("ULONG_PTR")]
-        public UIntPtr Reserved;
+        public nuint Reserved;
 
         [NativeTypeName("CHAR [256]")]
         public fixed sbyte Description[256];

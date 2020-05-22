@@ -3,16 +3,14 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct CFG_CALL_TARGET_INFO
     {
         [NativeTypeName("ULONG_PTR")]
-        public UIntPtr Offset;
+        public nuint Offset;
 
         [NativeTypeName("ULONG_PTR")]
-        public UIntPtr Flags;
+        public nuint Flags;
     }
 }

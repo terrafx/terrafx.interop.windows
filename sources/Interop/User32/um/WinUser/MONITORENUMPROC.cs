@@ -10,5 +10,5 @@ namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.Winapi)]
     [return: NativeTypeName("BOOL")]
-    public unsafe delegate int MONITORENUMPROC([NativeTypeName("HMONITOR")] IntPtr param0, [NativeTypeName("HDC")] IntPtr param1, [NativeTypeName("LPRECT")] RECT* param2, [NativeTypeName("LPARAM")] IntPtr param3);
+    public unsafe delegate int MONITORENUMPROC([NativeTypeName("HMONITOR")] IntPtr param0, [NativeTypeName("HDC")] IntPtr param1, [NativeTypeName("LPRECT")] RECT* param2, [NativeTypeName("LPARAM")] nint param3);
 }

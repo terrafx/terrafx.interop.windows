@@ -19,7 +19,7 @@ namespace TerraFX.Interop
         public uint wFmt;
 
         [NativeTypeName("ULONG_PTR")]
-        public UIntPtr dwData;
+        public nuint dwData;
 
         public POINT ptDrop;
 

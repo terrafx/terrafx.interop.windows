@@ -7,15 +7,15 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct CRYPT_ENCODE_PARA
+    public partial struct CRYPT_ENCODE_PARA
     {
         [NativeTypeName("DWORD")]
         public uint cbSize;
 
         [NativeTypeName("PFN_CRYPT_ALLOC")]
-        public IntPtr* pfnAlloc;
+        public IntPtr pfnAlloc;
 
         [NativeTypeName("PFN_CRYPT_FREE")]
-        public IntPtr* pfnFree;
+        public IntPtr pfnFree;
     }
 }

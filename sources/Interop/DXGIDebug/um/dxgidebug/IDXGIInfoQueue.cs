@@ -35,7 +35,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetMessage(IDXGIInfoQueue* pThis, [NativeTypeName("DXGI_DEBUG_ID")] Guid Producer, [NativeTypeName("UINT64")] ulong MessageIndex, [NativeTypeName("DXGI_INFO_QUEUE_MESSAGE *")] DXGI_INFO_QUEUE_MESSAGE* pMessage, [NativeTypeName("SIZE_T *")] UIntPtr* pMessageByteLength);
+        public delegate int _GetMessage(IDXGIInfoQueue* pThis, [NativeTypeName("DXGI_DEBUG_ID")] Guid Producer, [NativeTypeName("UINT64")] ulong MessageIndex, [NativeTypeName("DXGI_INFO_QUEUE_MESSAGE *")] DXGI_INFO_QUEUE_MESSAGE* pMessage, [NativeTypeName("SIZE_T *")] nuint* pMessageByteLength);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("UINT64")]
@@ -67,7 +67,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetStorageFilter(IDXGIInfoQueue* pThis, [NativeTypeName("DXGI_DEBUG_ID")] Guid Producer, [NativeTypeName("DXGI_INFO_QUEUE_FILTER *")] DXGI_INFO_QUEUE_FILTER* pFilter, [NativeTypeName("SIZE_T *")] UIntPtr* pFilterByteLength);
+        public delegate int _GetStorageFilter(IDXGIInfoQueue* pThis, [NativeTypeName("DXGI_DEBUG_ID")] Guid Producer, [NativeTypeName("DXGI_INFO_QUEUE_FILTER *")] DXGI_INFO_QUEUE_FILTER* pFilter, [NativeTypeName("SIZE_T *")] nuint* pFilterByteLength);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public delegate void _ClearStorageFilter(IDXGIInfoQueue* pThis, [NativeTypeName("DXGI_DEBUG_ID")] Guid Producer);
@@ -101,7 +101,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetRetrievalFilter(IDXGIInfoQueue* pThis, [NativeTypeName("DXGI_DEBUG_ID")] Guid Producer, [NativeTypeName("DXGI_INFO_QUEUE_FILTER *")] DXGI_INFO_QUEUE_FILTER* pFilter, [NativeTypeName("SIZE_T *")] UIntPtr* pFilterByteLength);
+        public delegate int _GetRetrievalFilter(IDXGIInfoQueue* pThis, [NativeTypeName("DXGI_DEBUG_ID")] Guid Producer, [NativeTypeName("DXGI_INFO_QUEUE_FILTER *")] DXGI_INFO_QUEUE_FILTER* pFilter, [NativeTypeName("SIZE_T *")] nuint* pFilterByteLength);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public delegate void _ClearRetrievalFilter(IDXGIInfoQueue* pThis, [NativeTypeName("DXGI_DEBUG_ID")] Guid Producer);
@@ -198,7 +198,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetMessage([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer, [NativeTypeName("UINT64")] ulong MessageIndex, [NativeTypeName("DXGI_INFO_QUEUE_MESSAGE *")] DXGI_INFO_QUEUE_MESSAGE* pMessage, [NativeTypeName("SIZE_T *")] UIntPtr* pMessageByteLength)
+        public int GetMessage([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer, [NativeTypeName("UINT64")] ulong MessageIndex, [NativeTypeName("DXGI_INFO_QUEUE_MESSAGE *")] DXGI_INFO_QUEUE_MESSAGE* pMessage, [NativeTypeName("SIZE_T *")] nuint* pMessageByteLength)
         {
             return Marshal.GetDelegateForFunctionPointer<_GetMessage>(lpVtbl->GetMessage)((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, MessageIndex, pMessage, pMessageByteLength);
         }
@@ -246,7 +246,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetStorageFilter([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer, [NativeTypeName("DXGI_INFO_QUEUE_FILTER *")] DXGI_INFO_QUEUE_FILTER* pFilter, [NativeTypeName("SIZE_T *")] UIntPtr* pFilterByteLength)
+        public int GetStorageFilter([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer, [NativeTypeName("DXGI_INFO_QUEUE_FILTER *")] DXGI_INFO_QUEUE_FILTER* pFilter, [NativeTypeName("SIZE_T *")] nuint* pFilterByteLength)
         {
             return Marshal.GetDelegateForFunctionPointer<_GetStorageFilter>(lpVtbl->GetStorageFilter)((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, pFilter, pFilterByteLength);
         }
@@ -298,7 +298,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetRetrievalFilter([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer, [NativeTypeName("DXGI_INFO_QUEUE_FILTER *")] DXGI_INFO_QUEUE_FILTER* pFilter, [NativeTypeName("SIZE_T *")] UIntPtr* pFilterByteLength)
+        public int GetRetrievalFilter([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer, [NativeTypeName("DXGI_INFO_QUEUE_FILTER *")] DXGI_INFO_QUEUE_FILTER* pFilter, [NativeTypeName("SIZE_T *")] nuint* pFilterByteLength)
         {
             return Marshal.GetDelegateForFunctionPointer<_GetRetrievalFilter>(lpVtbl->GetRetrievalFilter)((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, pFilter, pFilterByteLength);
         }

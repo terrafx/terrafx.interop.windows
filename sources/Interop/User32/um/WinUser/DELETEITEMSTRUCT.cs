@@ -22,6 +22,6 @@ namespace TerraFX.Interop
         public IntPtr hwndItem;
 
         [NativeTypeName("ULONG_PTR")]
-        public UIntPtr itemData;
+        public nuint itemData;
     }
 }

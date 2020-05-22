@@ -16,6 +16,6 @@ namespace TerraFX.Interop
         public IntPtr ImageList;
 
         [NativeTypeName("ULONG_PTR")]
-        public UIntPtr Reserved;
+        public nuint Reserved;
     }
 }

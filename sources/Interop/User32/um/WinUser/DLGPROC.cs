@@ -10,5 +10,5 @@ namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.Winapi)]
     [return: NativeTypeName("INT_PTR")]
-    public delegate IntPtr DLGPROC([NativeTypeName("HWND")] IntPtr param0, [NativeTypeName("UINT")] uint param1, [NativeTypeName("WPARAM")] UIntPtr param2, [NativeTypeName("LPARAM")] IntPtr param3);
+    public delegate nint DLGPROC([NativeTypeName("HWND")] IntPtr param0, [NativeTypeName("UINT")] uint param1, [NativeTypeName("WPARAM")] nuint param2, [NativeTypeName("LPARAM")] nint param3);
 }

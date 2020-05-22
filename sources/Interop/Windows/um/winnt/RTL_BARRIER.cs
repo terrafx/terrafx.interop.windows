@@ -27,12 +27,12 @@ namespace TerraFX.Interop
 
         public partial struct _Reserved3_e__FixedBuffer
         {
-            internal UIntPtr e0;
-            internal UIntPtr e1;
+            internal nuint e0;
+            internal nuint e1;
 
-            public ref UIntPtr this[int index] => ref AsSpan()[index];
+            public ref nuint this[int index] => ref AsSpan()[index];
 
-            public Span<UIntPtr> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
+            public Span<nuint> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
         }
     }
 }

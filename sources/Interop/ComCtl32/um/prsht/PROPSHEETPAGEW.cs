@@ -29,13 +29,13 @@ namespace TerraFX.Interop
         public ushort* pszTitle;
 
         [NativeTypeName("DLGPROC")]
-        public IntPtr* pfnDlgProc;
+        public IntPtr pfnDlgProc;
 
         [NativeTypeName("LPARAM")]
-        public IntPtr lParam;
+        public nint lParam;
 
         [NativeTypeName("LPFNPSPCALLBACKW")]
-        public IntPtr* pfnCallback;
+        public IntPtr pfnCallback;
 
         [NativeTypeName("UINT *")]
         public uint* pcRefParent;
@@ -50,7 +50,7 @@ namespace TerraFX.Interop
         public IntPtr hActCtx;
 
         [NativeTypeName("_PROPSHEETPAGEW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/prsht.h:278:5)")]
-        public _Anonymous_e__Union3 Anonymous3;
+        public _Anonymous_e__Union Anonymous3;
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union1
@@ -77,7 +77,7 @@ namespace TerraFX.Interop
         }
 
         [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous_e__Union3
+        public unsafe partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
             [NativeTypeName("HBITMAP")]

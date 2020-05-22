@@ -28,7 +28,7 @@ namespace TerraFX.Interop
         public CRYPTOAPI_BLOB* rgIssuer;
 
         [NativeTypeName("PFN_CERT_CHAIN_FIND_BY_ISSUER_CALLBACK")]
-        public IntPtr* pfnFindCallback;
+        public IntPtr pfnFindCallback;
 
         [NativeTypeName("void *")]
         public void* pvFindArg;

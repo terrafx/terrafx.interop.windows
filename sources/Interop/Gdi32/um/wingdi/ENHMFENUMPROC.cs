@@ -9,5 +9,5 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-    public unsafe delegate int ENHMFENUMPROC([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HANDLETABLE *")] HANDLETABLE* lpht, [NativeTypeName("const ENHMETARECORD *")] ENHMETARECORD* lpmr, int nHandles, [NativeTypeName("LPARAM")] IntPtr data);
+    public unsafe delegate int ENHMFENUMPROC([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HANDLETABLE *")] HANDLETABLE* lpht, [NativeTypeName("const ENHMETARECORD *")] ENHMETARECORD* lpmr, int nHandles, [NativeTypeName("LPARAM")] nint data);
 }

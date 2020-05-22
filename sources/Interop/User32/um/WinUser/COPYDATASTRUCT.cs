@@ -3,14 +3,12 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct COPYDATASTRUCT
     {
         [NativeTypeName("ULONG_PTR")]
-        public UIntPtr dwData;
+        public nuint dwData;
 
         [NativeTypeName("DWORD")]
         public uint cbData;

@@ -21,11 +21,11 @@ namespace TerraFX.Interop
 
         public partial struct _ProcessIdList_e__FixedBuffer
         {
-            internal UIntPtr e0;
+            internal nuint e0;
 
-            public ref UIntPtr this[int index] => ref AsSpan(int.MaxValue)[index];
+            public ref nuint this[int index] => ref AsSpan(int.MaxValue)[index];
 
-            public Span<UIntPtr> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public Span<nuint> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
     }
 }

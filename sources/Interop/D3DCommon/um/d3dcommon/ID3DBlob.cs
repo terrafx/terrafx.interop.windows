@@ -32,7 +32,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("SIZE_T")]
-        public delegate UIntPtr _GetBufferSize(ID3DBlob* pThis);
+        public delegate nuint _GetBufferSize(ID3DBlob* pThis);
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
@@ -59,7 +59,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("SIZE_T")]
-        public UIntPtr GetBufferSize()
+        public nuint GetBufferSize()
         {
             return Marshal.GetDelegateForFunctionPointer<_GetBufferSize>(lpVtbl->GetBufferSize)((ID3DBlob*)Unsafe.AsPointer(ref this));
         }

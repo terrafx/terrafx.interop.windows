@@ -3,7 +3,6 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -24,11 +23,11 @@ namespace TerraFX.Interop
         {
             [FieldOffset(0)]
             [NativeTypeName("HCRYPTPROV")]
-            public UIntPtr hCryptProv;
+            public nuint hCryptProv;
 
             [FieldOffset(0)]
             [NativeTypeName("NCRYPT_KEY_HANDLE")]
-            public UIntPtr hNCryptKey;
+            public nuint hNCryptKey;
         }
     }
 }

@@ -29,13 +29,13 @@ namespace TerraFX.Interop
         public sbyte* pszTitle;
 
         [NativeTypeName("DLGPROC")]
-        public IntPtr* pfnDlgProc;
+        public IntPtr pfnDlgProc;
 
         [NativeTypeName("LPARAM")]
-        public IntPtr lParam;
+        public nint lParam;
 
         [NativeTypeName("LPFNPSPCALLBACKA")]
-        public IntPtr* pfnCallback;
+        public IntPtr pfnCallback;
 
         [NativeTypeName("UINT *")]
         public uint* pcRefParent;

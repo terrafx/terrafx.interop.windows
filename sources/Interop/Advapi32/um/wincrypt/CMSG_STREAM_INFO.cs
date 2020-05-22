@@ -13,7 +13,7 @@ namespace TerraFX.Interop
         public uint cbContent;
 
         [NativeTypeName("PFN_CMSG_STREAM_OUTPUT")]
-        public IntPtr* pfnStreamOutput;
+        public IntPtr pfnStreamOutput;
 
         [NativeTypeName("void *")]
         public void* pvArg;

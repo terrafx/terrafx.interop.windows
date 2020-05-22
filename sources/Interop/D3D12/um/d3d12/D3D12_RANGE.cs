@@ -3,16 +3,14 @@
 // Ported from um/d3d12.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public partial struct D3D12_RANGE
     {
         [NativeTypeName("SIZE_T")]
-        public UIntPtr Begin;
+        public nuint Begin;
 
         [NativeTypeName("SIZE_T")]
-        public UIntPtr End;
+        public nuint End;
     }
 }

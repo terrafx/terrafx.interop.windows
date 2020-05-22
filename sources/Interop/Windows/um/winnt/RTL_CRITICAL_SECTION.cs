@@ -25,6 +25,6 @@ namespace TerraFX.Interop
         public IntPtr LockSemaphore;
 
         [NativeTypeName("ULONG_PTR")]
-        public UIntPtr SpinCount;
+        public nuint SpinCount;
     }
 }

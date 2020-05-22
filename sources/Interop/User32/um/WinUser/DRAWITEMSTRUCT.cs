@@ -33,6 +33,6 @@ namespace TerraFX.Interop
         public RECT rcItem;
 
         [NativeTypeName("ULONG_PTR")]
-        public UIntPtr itemData;
+        public nuint itemData;
     }
 }

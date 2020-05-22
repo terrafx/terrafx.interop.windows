@@ -16,7 +16,7 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT")]
         public uint Shader4ComponentMapping;
 
-        [NativeTypeName("D3D12_SHADER_RESOURCE_VIEW_DESC::(anonymous union at um/d3d12.h:2860:5)")]
+        [NativeTypeName("D3D12_SHADER_RESOURCE_VIEW_DESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d3d12.h:2860:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]

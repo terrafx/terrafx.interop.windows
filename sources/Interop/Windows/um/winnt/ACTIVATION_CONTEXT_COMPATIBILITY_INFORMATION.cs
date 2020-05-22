@@ -5,12 +5,12 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION
+    public partial struct ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION
     {
         [NativeTypeName("DWORD")]
         public uint ElementCount;
 
         [NativeTypeName("COMPATIBILITY_CONTEXT_ELEMENT []")]
-        public COMPATIBILITY_CONTEXT_ELEMENT* Elements;
+        public COMPATIBILITY_CONTEXT_ELEMENT Elements;
     }
 }

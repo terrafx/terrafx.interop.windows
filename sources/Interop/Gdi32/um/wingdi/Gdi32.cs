@@ -217,25 +217,25 @@ namespace TerraFX.Interop
         public static extern int Ellipse([NativeTypeName("HDC")] IntPtr hdc, int left, int top, int right, int bottom);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "EnumFontFamiliesExA", ExactSpelling = true)]
-        public static extern int EnumFontFamiliesExA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPLOGFONTA")] LOGFONTA* lpLogfont, [NativeTypeName("FONTENUMPROCA")] IntPtr lpProc, [NativeTypeName("LPARAM")] IntPtr lParam, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern int EnumFontFamiliesExA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPLOGFONTA")] LOGFONTA* lpLogfont, [NativeTypeName("FONTENUMPROCA")] IntPtr lpProc, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "EnumFontFamiliesExW", ExactSpelling = true)]
-        public static extern int EnumFontFamiliesExW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPLOGFONTW")] LOGFONTW* lpLogfont, [NativeTypeName("FONTENUMPROCW")] IntPtr lpProc, [NativeTypeName("LPARAM")] IntPtr lParam, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern int EnumFontFamiliesExW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPLOGFONTW")] LOGFONTW* lpLogfont, [NativeTypeName("FONTENUMPROCW")] IntPtr lpProc, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "EnumFontFamiliesA", ExactSpelling = true)]
-        public static extern int EnumFontFamiliesA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCSTR")] sbyte* lpLogfont, [NativeTypeName("FONTENUMPROCA")] IntPtr lpProc, [NativeTypeName("LPARAM")] IntPtr lParam);
+        public static extern int EnumFontFamiliesA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCSTR")] sbyte* lpLogfont, [NativeTypeName("FONTENUMPROCA")] IntPtr lpProc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "EnumFontFamiliesW", ExactSpelling = true)]
-        public static extern int EnumFontFamiliesW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpLogfont, [NativeTypeName("FONTENUMPROCW")] IntPtr lpProc, [NativeTypeName("LPARAM")] IntPtr lParam);
+        public static extern int EnumFontFamiliesW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpLogfont, [NativeTypeName("FONTENUMPROCW")] IntPtr lpProc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "EnumFontsA", ExactSpelling = true)]
-        public static extern int EnumFontsA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCSTR")] sbyte* lpLogfont, [NativeTypeName("FONTENUMPROCA")] IntPtr lpProc, [NativeTypeName("LPARAM")] IntPtr lParam);
+        public static extern int EnumFontsA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCSTR")] sbyte* lpLogfont, [NativeTypeName("FONTENUMPROCA")] IntPtr lpProc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "EnumFontsW", ExactSpelling = true)]
-        public static extern int EnumFontsW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpLogfont, [NativeTypeName("FONTENUMPROCW")] IntPtr lpProc, [NativeTypeName("LPARAM")] IntPtr lParam);
+        public static extern int EnumFontsW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpLogfont, [NativeTypeName("FONTENUMPROCW")] IntPtr lpProc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "EnumObjects", ExactSpelling = true)]
-        public static extern int EnumObjects([NativeTypeName("HDC")] IntPtr hdc, int nType, [NativeTypeName("GOBJENUMPROC")] IntPtr lpFunc, [NativeTypeName("LPARAM")] IntPtr lParam);
+        public static extern int EnumObjects([NativeTypeName("HDC")] IntPtr hdc, int nType, [NativeTypeName("GOBJENUMPROC")] IntPtr lpFunc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "EqualRgn", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -604,7 +604,7 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "LineDDA", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int LineDDA(int xStart, int yStart, int xEnd, int yEnd, [NativeTypeName("LINEDDAPROC")] IntPtr lpProc, [NativeTypeName("LPARAM")] IntPtr data);
+        public static extern int LineDDA(int xStart, int yStart, int xEnd, int yEnd, [NativeTypeName("LINEDDAPROC")] IntPtr lpProc, [NativeTypeName("LPARAM")] nint data);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "LineTo", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -871,7 +871,7 @@ namespace TerraFX.Interop
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "EnumMetaFile", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumMetaFile([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HMETAFILE")] IntPtr hmf, [NativeTypeName("MFENUMPROC")] IntPtr proc, [NativeTypeName("LPARAM")] IntPtr param3);
+        public static extern int EnumMetaFile([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HMETAFILE")] IntPtr hmf, [NativeTypeName("MFENUMPROC")] IntPtr proc, [NativeTypeName("LPARAM")] nint param3);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CloseEnhMetaFile", ExactSpelling = true)]
         [return: NativeTypeName("HENHMETAFILE")]
@@ -1315,10 +1315,10 @@ namespace TerraFX.Interop
         public static extern int ColorMatchToTarget([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HDC")] IntPtr hdcTarget, [NativeTypeName("DWORD")] uint action);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "EnumICMProfilesA", ExactSpelling = true)]
-        public static extern int EnumICMProfilesA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("ICMENUMPROCA")] IntPtr proc, [NativeTypeName("LPARAM")] IntPtr param2);
+        public static extern int EnumICMProfilesA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("ICMENUMPROCA")] IntPtr proc, [NativeTypeName("LPARAM")] nint param2);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "EnumICMProfilesW", ExactSpelling = true)]
-        public static extern int EnumICMProfilesW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("ICMENUMPROCW")] IntPtr proc, [NativeTypeName("LPARAM")] IntPtr param2);
+        public static extern int EnumICMProfilesW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("ICMENUMPROCW")] IntPtr proc, [NativeTypeName("LPARAM")] nint param2);
 
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "UpdateICMRegKeyA", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]

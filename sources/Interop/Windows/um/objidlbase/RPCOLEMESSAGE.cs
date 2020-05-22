@@ -31,7 +31,7 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint rpcFlags;
 
-        public unsafe partial struct _reserved2_e__FixedBuffer
+        public partial struct _reserved2_e__FixedBuffer
         {
             internal IntPtr e0;
             internal IntPtr e1;

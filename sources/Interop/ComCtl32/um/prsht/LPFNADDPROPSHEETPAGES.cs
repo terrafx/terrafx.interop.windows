@@ -10,5 +10,5 @@ namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.Winapi)]
     [return: NativeTypeName("BOOL")]
-    public unsafe delegate int LPFNADDPROPSHEETPAGES([NativeTypeName("LPVOID")] void* param0, [NativeTypeName("LPFNADDPROPSHEETPAGE")] IntPtr* param1, [NativeTypeName("LPARAM")] IntPtr param2);
+    public unsafe delegate int LPFNADDPROPSHEETPAGES([NativeTypeName("LPVOID")] void* param0, [NativeTypeName("LPFNADDPROPSHEETPAGE")] IntPtr param1, [NativeTypeName("LPARAM")] nint param2);
 }

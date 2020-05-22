@@ -80,7 +80,7 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateRootSignature(ID3D12Device* pThis, [NativeTypeName("UINT")] uint nodeMask, [NativeTypeName("const void *")] void* pBlobWithRootSignature, [NativeTypeName("SIZE_T")] UIntPtr blobLengthInBytes, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvRootSignature);
+        public delegate int _CreateRootSignature(ID3D12Device* pThis, [NativeTypeName("UINT")] uint nodeMask, [NativeTypeName("const void *")] void* pBlobWithRootSignature, [NativeTypeName("SIZE_T")] nuint blobLengthInBytes, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvRootSignature);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         public delegate void _CreateConstantBufferView(ID3D12Device* pThis, [NativeTypeName("const D3D12_CONSTANT_BUFFER_VIEW_DESC *")] D3D12_CONSTANT_BUFFER_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor);
@@ -274,7 +274,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateRootSignature([NativeTypeName("UINT")] uint nodeMask, [NativeTypeName("const void *")] void* pBlobWithRootSignature, [NativeTypeName("SIZE_T")] UIntPtr blobLengthInBytes, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvRootSignature)
+        public int CreateRootSignature([NativeTypeName("UINT")] uint nodeMask, [NativeTypeName("const void *")] void* pBlobWithRootSignature, [NativeTypeName("SIZE_T")] nuint blobLengthInBytes, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvRootSignature)
         {
             return Marshal.GetDelegateForFunctionPointer<_CreateRootSignature>(lpVtbl->CreateRootSignature)((ID3D12Device*)Unsafe.AsPointer(ref this), nodeMask, pBlobWithRootSignature, blobLengthInBytes, riid, ppvRootSignature);
         }

@@ -30,6 +30,6 @@ namespace TerraFX.Interop
         public uint style;
 
         [NativeTypeName("LPARAM")]
-        public IntPtr lParam;
+        public nint lParam;
     }
 }

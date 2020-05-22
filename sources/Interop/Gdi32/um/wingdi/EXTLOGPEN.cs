@@ -3,8 +3,6 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct EXTLOGPEN
@@ -22,7 +20,7 @@ namespace TerraFX.Interop
         public uint elpColor;
 
         [NativeTypeName("ULONG_PTR")]
-        public UIntPtr elpHatch;
+        public nuint elpHatch;
 
         [NativeTypeName("DWORD")]
         public uint elpNumEntries;

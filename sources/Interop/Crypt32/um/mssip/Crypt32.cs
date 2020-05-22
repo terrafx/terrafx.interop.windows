@@ -10,6 +10,8 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Crypt32
     {
+        private const string LibraryPath = "crypt32";
+
         [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CryptSIPGetSignedDataMsg", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int CryptSIPGetSignedDataMsg([NativeTypeName("SIP_SUBJECTINFO *")] SIP_SUBJECTINFO* pSubjectInfo, [NativeTypeName("DWORD *")] uint* pdwEncodingType, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD *")] uint* pcbSignedDataMsg, [NativeTypeName("BYTE *")] byte* pbSignedDataMsg);

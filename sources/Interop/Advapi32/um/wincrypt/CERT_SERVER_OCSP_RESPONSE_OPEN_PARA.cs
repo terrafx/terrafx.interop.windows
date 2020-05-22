@@ -22,7 +22,7 @@ namespace TerraFX.Interop
         public ushort* pwszOcspDirectory;
 
         [NativeTypeName("PFN_CERT_SERVER_OCSP_RESPONSE_UPDATE_CALLBACK")]
-        public IntPtr* pfnUpdateCallback;
+        public IntPtr pfnUpdateCallback;
 
         [NativeTypeName("PVOID")]
         public void* pvUpdateCallbackArg;

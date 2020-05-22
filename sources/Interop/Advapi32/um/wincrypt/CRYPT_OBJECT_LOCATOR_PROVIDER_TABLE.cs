@@ -7,24 +7,24 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE
+    public partial struct CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE
     {
         [NativeTypeName("DWORD")]
         public uint cbSize;
 
         [NativeTypeName("PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_GET")]
-        public IntPtr* pfnGet;
+        public IntPtr pfnGet;
 
         [NativeTypeName("PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_RELEASE")]
-        public IntPtr* pfnRelease;
+        public IntPtr pfnRelease;
 
         [NativeTypeName("PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE_PASSWORD")]
-        public IntPtr* pfnFreePassword;
+        public IntPtr pfnFreePassword;
 
         [NativeTypeName("PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE")]
-        public IntPtr* pfnFree;
+        public IntPtr pfnFree;
 
         [NativeTypeName("PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE_IDENTIFIER")]
-        public IntPtr* pfnFreeIdentifier;
+        public IntPtr pfnFreeIdentifier;
     }
 }

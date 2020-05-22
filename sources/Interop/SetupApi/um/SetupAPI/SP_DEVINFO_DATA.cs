@@ -19,6 +19,6 @@ namespace TerraFX.Interop
         public uint DevInst;
 
         [NativeTypeName("ULONG_PTR")]
-        public UIntPtr Reserved;
+        public nuint Reserved;
     }
 }

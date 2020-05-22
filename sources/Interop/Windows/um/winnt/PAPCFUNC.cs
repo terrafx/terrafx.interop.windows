@@ -3,11 +3,10 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-    public delegate void PAPCFUNC([NativeTypeName("ULONG_PTR")] UIntPtr Parameter);
+    public delegate void PAPCFUNC([NativeTypeName("ULONG_PTR")] nuint Parameter);
 }

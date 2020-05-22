@@ -10,7 +10,7 @@ namespace TerraFX.Interop
     public unsafe partial struct CRYPT_PKCS8_EXPORT_PARAMS
     {
         [NativeTypeName("HCRYPTPROV")]
-        public UIntPtr hCryptProv;
+        public nuint hCryptProv;
 
         [NativeTypeName("DWORD")]
         public uint dwKeySpec;
@@ -19,7 +19,7 @@ namespace TerraFX.Interop
         public sbyte* pszPrivateKeyObjId;
 
         [NativeTypeName("PCRYPT_ENCRYPT_PRIVATE_KEY_FUNC")]
-        public IntPtr* pEncryptPrivateKeyFunc;
+        public IntPtr pEncryptPrivateKeyFunc;
 
         [NativeTypeName("LPVOID")]
         public void* pVoidEncryptFunc;

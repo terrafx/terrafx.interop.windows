@@ -9,10 +9,10 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_BUFFER_RTV
     {
-        [NativeTypeName("D3D11_BUFFER_RTV::(anonymous union at um/d3d11.h:3755:5)")]
+        [NativeTypeName("D3D11_BUFFER_RTV::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d3d11.h:3755:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
-        [NativeTypeName("D3D11_BUFFER_RTV::(anonymous union at um/d3d11.h:3760:5)")]
+        [NativeTypeName("D3D11_BUFFER_RTV::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d3d11.h:3760:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
         [StructLayout(LayoutKind.Explicit)]

@@ -28,6 +28,6 @@ namespace TerraFX.Interop
         public uint dwContextHelpID;
 
         [NativeTypeName("ULONG_PTR")]
-        public UIntPtr dwMenuData;
+        public nuint dwMenuData;
     }
 }

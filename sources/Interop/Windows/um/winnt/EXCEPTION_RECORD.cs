@@ -30,25 +30,25 @@ namespace TerraFX.Interop
 
         public partial struct _ExceptionInformation_e__FixedBuffer
         {
-            internal UIntPtr e0;
-            internal UIntPtr e1;
-            internal UIntPtr e2;
-            internal UIntPtr e3;
-            internal UIntPtr e4;
-            internal UIntPtr e5;
-            internal UIntPtr e6;
-            internal UIntPtr e7;
-            internal UIntPtr e8;
-            internal UIntPtr e9;
-            internal UIntPtr e10;
-            internal UIntPtr e11;
-            internal UIntPtr e12;
-            internal UIntPtr e13;
-            internal UIntPtr e14;
+            internal nuint e0;
+            internal nuint e1;
+            internal nuint e2;
+            internal nuint e3;
+            internal nuint e4;
+            internal nuint e5;
+            internal nuint e6;
+            internal nuint e7;
+            internal nuint e8;
+            internal nuint e9;
+            internal nuint e10;
+            internal nuint e11;
+            internal nuint e12;
+            internal nuint e13;
+            internal nuint e14;
 
-            public ref UIntPtr this[int index] => ref AsSpan()[index];
+            public ref nuint this[int index] => ref AsSpan()[index];
 
-            public Span<UIntPtr> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 15);
+            public Span<nuint> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 15);
         }
     }
 }

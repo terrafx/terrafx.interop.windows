@@ -10,13 +10,13 @@ namespace TerraFX.Interop
     public partial struct CWPRETSTRUCT
     {
         [NativeTypeName("LRESULT")]
-        public IntPtr lResult;
+        public nint lResult;
 
         [NativeTypeName("LPARAM")]
-        public IntPtr lParam;
+        public nint lParam;
 
         [NativeTypeName("WPARAM")]
-        public UIntPtr wParam;
+        public nuint wParam;
 
         [NativeTypeName("UINT")]
         public uint message;

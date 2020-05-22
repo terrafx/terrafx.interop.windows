@@ -3,8 +3,6 @@
 // Ported from um/SoftPub.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct DRIVER_VER_INFO
@@ -13,10 +11,10 @@ namespace TerraFX.Interop
         public uint cbStruct;
 
         [NativeTypeName("ULONG_PTR")]
-        public UIntPtr dwReserved1;
+        public nuint dwReserved1;
 
         [NativeTypeName("ULONG_PTR")]
-        public UIntPtr dwReserved2;
+        public nuint dwReserved2;
 
         [NativeTypeName("DWORD")]
         public uint dwPlatform;

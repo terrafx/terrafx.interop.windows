@@ -9,14 +9,14 @@ namespace TerraFX.Interop
 {
     public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
     {
-        [NativeTypeName("DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS::(anonymous union at um/wingdi.h:3073:5)")]
+        [NativeTypeName("DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/wingdi.h:3073:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS::(anonymous struct at um/wingdi.h:3075:9)")]
+            [NativeTypeName("DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/wingdi.h:3075:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             [FieldOffset(0)]

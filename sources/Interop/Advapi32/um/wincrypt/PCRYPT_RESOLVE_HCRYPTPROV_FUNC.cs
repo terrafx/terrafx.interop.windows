@@ -3,12 +3,11 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.18362.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.Winapi)]
     [return: NativeTypeName("BOOL")]
-    public unsafe delegate int PCRYPT_RESOLVE_HCRYPTPROV_FUNC([NativeTypeName("CRYPT_PRIVATE_KEY_INFO *")] CRYPT_PRIVATE_KEY_INFO* pPrivateKeyInfo, [NativeTypeName("HCRYPTPROV *")] UIntPtr* phCryptProv, [NativeTypeName("LPVOID")] void* pVoidResolveFunc);
+    public unsafe delegate int PCRYPT_RESOLVE_HCRYPTPROV_FUNC([NativeTypeName("CRYPT_PRIVATE_KEY_INFO *")] CRYPT_PRIVATE_KEY_INFO* pPrivateKeyInfo, [NativeTypeName("HCRYPTPROV *")] nuint* phCryptProv, [NativeTypeName("LPVOID")] void* pVoidResolveFunc);
 }
