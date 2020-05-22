@@ -22,10 +22,10 @@ using namespace DirectX;
 // An example of this can be found in the class method: OnDestroy().
 using Microsoft::WRL::ComPtr;
 
-class D3D12HelloTriangle : public DXSample
+class D3D12HelloTexture : public DXSample
 {
 public:
-    D3D12HelloTriangle(UINT width, UINT height, std::wstring name);
+    D3D12HelloTexture(UINT width, UINT height, std::wstring name);
 
     virtual void OnInit();
     virtual void OnUpdate();
