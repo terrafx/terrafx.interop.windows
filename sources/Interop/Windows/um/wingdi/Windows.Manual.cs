@@ -8,7 +8,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class Gdi32
+    public static unsafe partial class Windows
     {
         public const int R2_BLACK = 1;
 
