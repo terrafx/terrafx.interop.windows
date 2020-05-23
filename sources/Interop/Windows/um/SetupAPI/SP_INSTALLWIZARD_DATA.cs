@@ -28,7 +28,7 @@ namespace TerraFX.Interop
         public uint PrivateFlags;
 
         [NativeTypeName("LPARAM")]
-        public int PrivateData;
+        public nint PrivateData;
 
         [NativeTypeName("HWND")]
         public IntPtr hwndWizardDlg;

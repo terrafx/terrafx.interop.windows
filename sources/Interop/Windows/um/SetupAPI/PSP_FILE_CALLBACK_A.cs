@@ -9,5 +9,5 @@ namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.Winapi)]
     [return: NativeTypeName("UINT")]
-    public unsafe delegate uint PSP_FILE_CALLBACK_A([NativeTypeName("PVOID")] void* Context, [NativeTypeName("UINT")] uint Notification, [NativeTypeName("UINT_PTR")] uint Param1, [NativeTypeName("UINT_PTR")] uint Param2);
+    public unsafe delegate uint PSP_FILE_CALLBACK_A([NativeTypeName("PVOID")] void* Context, [NativeTypeName("UINT")] uint Notification, [NativeTypeName("UINT_PTR")] nuint Param1, [NativeTypeName("UINT_PTR")] nuint Param2);
 }

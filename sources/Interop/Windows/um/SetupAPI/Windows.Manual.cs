@@ -7,7 +7,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class SetupApi
+    public static unsafe partial class Windows
     {
         public const int LINE_LEN = 256;
 
