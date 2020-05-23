@@ -14,63 +14,63 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _QueryInterface(ID2D1RadialGradientBrush* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ULONG")]
         public delegate uint _AddRef(ID2D1RadialGradientBrush* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ULONG")]
         public delegate uint _Release(ID2D1RadialGradientBrush* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         public delegate void _GetFactory(ID2D1RadialGradientBrush* pThis, [NativeTypeName("ID2D1Factory **")] ID2D1Factory** factory);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         public delegate void _SetOpacity(ID2D1RadialGradientBrush* pThis, [NativeTypeName("FLOAT")] float opacity);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         public delegate void _SetTransform(ID2D1RadialGradientBrush* pThis, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("FLOAT")]
         public delegate float _GetOpacity(ID2D1RadialGradientBrush* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         public delegate void _GetTransform(ID2D1RadialGradientBrush* pThis, [NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         public delegate void _SetCenter(ID2D1RadialGradientBrush* pThis, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F center);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         public delegate void _SetGradientOriginOffset(ID2D1RadialGradientBrush* pThis, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F gradientOriginOffset);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         public delegate void _SetRadiusX(ID2D1RadialGradientBrush* pThis, [NativeTypeName("FLOAT")] float radiusX);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         public delegate void _SetRadiusY(ID2D1RadialGradientBrush* pThis, [NativeTypeName("FLOAT")] float radiusY);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("D2D1_POINT_2F")]
         public delegate D2D_POINT_2F* _GetCenter(ID2D1RadialGradientBrush* pThis, D2D_POINT_2F* _result);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("D2D1_POINT_2F")]
         public delegate D2D_POINT_2F* _GetGradientOriginOffset(ID2D1RadialGradientBrush* pThis, D2D_POINT_2F* _result);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("FLOAT")]
         public delegate float _GetRadiusX(ID2D1RadialGradientBrush* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("FLOAT")]
         public delegate float _GetRadiusY(ID2D1RadialGradientBrush* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         public delegate void _GetGradientStopCollection(ID2D1RadialGradientBrush* pThis, [NativeTypeName("ID2D1GradientStopCollection **")] ID2D1GradientStopCollection** gradientStopCollection);
 
         [return: NativeTypeName("HRESULT")]

@@ -4,7 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.D2D1;
+using static TerraFX.Interop.Windows;
 using static TerraFX.Interop.D2D1_ANTIALIAS_MODE;
 using static TerraFX.Interop.D2D1_LAYER_OPTIONS;
 

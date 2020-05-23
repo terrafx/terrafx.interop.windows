@@ -14,26 +14,26 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _QueryInterface(ID2D1CommandList* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ULONG")]
         public delegate uint _AddRef(ID2D1CommandList* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ULONG")]
         public delegate uint _Release(ID2D1CommandList* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         public delegate void _GetFactory(ID2D1CommandList* pThis, [NativeTypeName("ID2D1Factory **")] ID2D1Factory** factory);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _Stream(ID2D1CommandList* pThis, [NativeTypeName("ID2D1CommandSink *")] ID2D1CommandSink* sink);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _Close(ID2D1CommandList* pThis);
 

@@ -14,50 +14,50 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _QueryInterface(ID2D1TransformGraph* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ULONG")]
         public delegate uint _AddRef(ID2D1TransformGraph* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ULONG")]
         public delegate uint _Release(ID2D1TransformGraph* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("UINT32")]
         public delegate uint _GetInputCount(ID2D1TransformGraph* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _SetSingleTransformNode(ID2D1TransformGraph* pThis, [NativeTypeName("ID2D1TransformNode *")] ID2D1TransformNode* node);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _AddNode(ID2D1TransformGraph* pThis, [NativeTypeName("ID2D1TransformNode *")] ID2D1TransformNode* node);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _RemoveNode(ID2D1TransformGraph* pThis, [NativeTypeName("ID2D1TransformNode *")] ID2D1TransformNode* node);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _SetOutputNode(ID2D1TransformGraph* pThis, [NativeTypeName("ID2D1TransformNode *")] ID2D1TransformNode* node);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _ConnectNode(ID2D1TransformGraph* pThis, [NativeTypeName("ID2D1TransformNode *")] ID2D1TransformNode* fromNode, [NativeTypeName("ID2D1TransformNode *")] ID2D1TransformNode* toNode, [NativeTypeName("UINT32")] uint toNodeInputIndex);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _ConnectToEffectInput(ID2D1TransformGraph* pThis, [NativeTypeName("UINT32")] uint toEffectInputIndex, [NativeTypeName("ID2D1TransformNode *")] ID2D1TransformNode* node, [NativeTypeName("UINT32")] uint toNodeInputIndex);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         public delegate void _Clear(ID2D1TransformGraph* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _SetPassthroughGraph(ID2D1TransformGraph* pThis, [NativeTypeName("UINT32")] uint effectInputIndex);
 

@@ -14,25 +14,25 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _QueryInterface(ID2D1SvgAttribute* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ULONG")]
         public delegate uint _AddRef(ID2D1SvgAttribute* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ULONG")]
         public delegate uint _Release(ID2D1SvgAttribute* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         public delegate void _GetFactory(ID2D1SvgAttribute* pThis, [NativeTypeName("ID2D1Factory **")] ID2D1Factory** factory);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         public delegate void _GetElement(ID2D1SvgAttribute* pThis, [NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** element);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _Clone(ID2D1SvgAttribute* pThis, [NativeTypeName("ID2D1SvgAttribute **")] ID2D1SvgAttribute** attribute);
 

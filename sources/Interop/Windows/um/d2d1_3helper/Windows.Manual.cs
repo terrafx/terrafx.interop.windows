@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class D2D1
+    public static unsafe partial class Windows
     {
         public static D2D1_GRADIENT_MESH_PATCH GradientMeshPatch([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point00, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point01, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point02, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point03, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point10, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point11, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point12, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point13, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point20, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point21, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point22, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point23, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point30, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point31, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point32, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point33, [NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA color00, [NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA color03, [NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA color30, [NativeTypeName("D2D1_COLOR_F")] DXGI_RGBA color33, D2D1_PATCH_EDGE_MODE topEdgeMode, D2D1_PATCH_EDGE_MODE leftEdgeMode, D2D1_PATCH_EDGE_MODE bottomEdgeMode, D2D1_PATCH_EDGE_MODE rightEdgeMode)
         {

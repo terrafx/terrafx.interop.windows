@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class D2D1
+    public static unsafe partial class Windows
     {
         [return: NativeTypeName("FLOAT")]
         public static float ComputeFlatteningTolerance([NativeTypeName("const D2D1_MATRIX_3X2_F &")] in D2D_MATRIX_3X2_F matrix, [NativeTypeName("FLOAT")] float dpiX = 96.0f, [NativeTypeName("FLOAT")] float dpiY = 96.0f, [NativeTypeName("FLOAT")] float maxZoomFactor = 1.0f)

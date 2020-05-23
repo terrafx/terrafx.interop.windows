@@ -22,7 +22,7 @@ using static TerraFX.Interop.DXGI_FORMAT;
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class D2D1
+    public static unsafe partial class Windows
     {
         [return: NativeTypeName("FLOAT")]
         public static float FloatMax()

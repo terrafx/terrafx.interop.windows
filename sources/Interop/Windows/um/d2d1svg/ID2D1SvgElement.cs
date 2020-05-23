@@ -15,134 +15,134 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _QueryInterface(ID2D1SvgElement* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ULONG")]
         public delegate uint _AddRef(ID2D1SvgElement* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ULONG")]
         public delegate uint _Release(ID2D1SvgElement* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         public delegate void _GetFactory(ID2D1SvgElement* pThis, [NativeTypeName("ID2D1Factory **")] ID2D1Factory** factory);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         public delegate void _GetDocument(ID2D1SvgElement* pThis, [NativeTypeName("ID2D1SvgDocument **")] ID2D1SvgDocument** document);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _GetTagName(ID2D1SvgElement* pThis, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("UINT32")]
         public delegate uint _GetTagNameLength(ID2D1SvgElement* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("BOOL")]
         public delegate int _IsTextContent(ID2D1SvgElement* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         public delegate void _GetParent(ID2D1SvgElement* pThis, [NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** parent);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("BOOL")]
         public delegate int _HasChildren(ID2D1SvgElement* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         public delegate void _GetFirstChild(ID2D1SvgElement* pThis, [NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** child);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         public delegate void _GetLastChild(ID2D1SvgElement* pThis, [NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** child);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _GetPreviousChild(ID2D1SvgElement* pThis, [NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* referenceChild, [NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** previousChild);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _GetNextChild(ID2D1SvgElement* pThis, [NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* referenceChild, [NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** nextChild);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _InsertChildBefore(ID2D1SvgElement* pThis, [NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* newChild, [NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* referenceChild = null);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _AppendChild(ID2D1SvgElement* pThis, [NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* newChild);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _ReplaceChild(ID2D1SvgElement* pThis, [NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* newChild, [NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* oldChild);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _RemoveChild(ID2D1SvgElement* pThis, [NativeTypeName("ID2D1SvgElement *")] ID2D1SvgElement* oldChild);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _CreateChild(ID2D1SvgElement* pThis, [NativeTypeName("PCWSTR")] ushort* tagName, [NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** newChild);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("BOOL")]
         public delegate int _IsAttributeSpecified(ID2D1SvgElement* pThis, [NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("BOOL *")] int* inherited = null);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("UINT32")]
         public delegate uint _GetSpecifiedAttributeCount(ID2D1SvgElement* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _GetSpecifiedAttributeName(ID2D1SvgElement* pThis, [NativeTypeName("UINT32")] uint index, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount, [NativeTypeName("BOOL *")] int* inherited = null);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _GetSpecifiedAttributeNameLength(ID2D1SvgElement* pThis, [NativeTypeName("UINT32")] uint index, [NativeTypeName("UINT32 *")] uint* nameLength, [NativeTypeName("BOOL *")] int* inherited = null);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _RemoveAttribute(ID2D1SvgElement* pThis, [NativeTypeName("PCWSTR")] ushort* name);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _SetTextValue(ID2D1SvgElement* pThis, [NativeTypeName("const WCHAR *")] ushort* name, [NativeTypeName("UINT32")] uint nameCount);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _GetTextValue(ID2D1SvgElement* pThis, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("UINT32")]
         public delegate uint _GetTextValueLength(ID2D1SvgElement* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _SetAttributeValue(ID2D1SvgElement* pThis, [NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("PCWSTR")] ushort* value);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _GetAttributeValue(ID2D1SvgElement* pThis, [NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("PWSTR")] ushort* value, [NativeTypeName("UINT32")] uint valueCount);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _GetAttributeValueLength(ID2D1SvgElement* pThis, [NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("UINT32 *")] uint* valueLength);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _SetAttributeValue1(ID2D1SvgElement* pThis, [NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, [NativeTypeName("const void *")] void* value, [NativeTypeName("UINT32")] uint valueSizeInBytes);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _GetAttributeValue1(ID2D1SvgElement* pThis, [NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, [NativeTypeName("void *")] void* value, [NativeTypeName("UINT32")] uint valueSizeInBytes);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _SetAttributeValue2(ID2D1SvgElement* pThis, [NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("ID2D1SvgAttribute *")] ID2D1SvgAttribute* value);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _GetAttributeValue2(ID2D1SvgElement* pThis, [NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** value);
 

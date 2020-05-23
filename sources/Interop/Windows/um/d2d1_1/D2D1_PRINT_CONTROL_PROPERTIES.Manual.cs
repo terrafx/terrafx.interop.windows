@@ -3,7 +3,7 @@
 // Ported from um/d2d1_1helper.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using static TerraFX.Interop.D2D1;
+using static TerraFX.Interop.Windows;
 using static TerraFX.Interop.D2D1_COLOR_SPACE;
 using static TerraFX.Interop.D2D1_PRINT_FONT_SUBSET_MODE;
 

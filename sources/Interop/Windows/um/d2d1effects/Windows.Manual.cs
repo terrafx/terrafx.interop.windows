@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public static partial class D2D1
+    public static partial class Windows
     {
         public static readonly Guid CLSID_D2D12DAffineTransform = new Guid(0x6AA97485, 0x6354, 0x4CFC, 0x90, 0x8C, 0xE4, 0xA7, 0x4F, 0x62, 0xC9, 0x6C);
 

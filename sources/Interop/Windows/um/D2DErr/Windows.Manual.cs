@@ -7,7 +7,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop
 {
-    public static partial class D2D1
+    public static partial class Windows
     {
         public const int FACILITY_D2D = 0x899;
 

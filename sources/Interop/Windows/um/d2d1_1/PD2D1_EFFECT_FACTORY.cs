@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Winapi)]
     [return: NativeTypeName("HRESULT")]
     public unsafe delegate int PD2D1_EFFECT_FACTORY([NativeTypeName("IUnknown **")] IUnknown** effectImpl);
 }

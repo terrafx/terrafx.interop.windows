@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class D2D1
+    public static unsafe partial class Windows
     {
         public static readonly Guid IID_ID2D1GdiMetafileSink = new Guid(0x82237326, 0x8111, 0x4F7C, 0xBC, 0xF4, 0xB5, 0xC1, 0x17, 0x55, 0x64, 0xFE);
 

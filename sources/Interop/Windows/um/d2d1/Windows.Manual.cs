@@ -8,7 +8,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class D2D1
+    public static unsafe partial class Windows
     {
         public const ulong D2D1_INVALID_TAG = ULONGLONG_MAX;
 

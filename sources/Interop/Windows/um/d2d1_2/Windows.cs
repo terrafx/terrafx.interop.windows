@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class D2D1
+    public static unsafe partial class Windows
     {
-        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "D2D1ComputeMaximumScaleFactor", ExactSpelling = true)]
+        [DllImport("d2d1", EntryPoint = "D2D1ComputeMaximumScaleFactor", ExactSpelling = true)]
         [return: NativeTypeName("FLOAT")]
         public static extern float D2D1ComputeMaximumScaleFactor([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* matrix);
     }

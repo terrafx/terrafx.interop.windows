@@ -25,7 +25,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class D2D1
+    public static unsafe partial class Windows
     {
         [return: NativeTypeName("D2D1_COLOR_F")]
         public static DXGI_RGBA ConvertColorSpace(D2D1_COLOR_SPACE sourceColorSpace, D2D1_COLOR_SPACE destinationColorSpace, [NativeTypeName("const D2D1_COLOR_F &")] DXGI_RGBA* color)

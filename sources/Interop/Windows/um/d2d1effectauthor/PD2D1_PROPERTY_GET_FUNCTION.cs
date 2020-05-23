@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Winapi)]
     [return: NativeTypeName("HRESULT")]
     public unsafe delegate int PD2D1_PROPERTY_GET_FUNCTION([NativeTypeName("const IUnknown *")] IUnknown* effect, [NativeTypeName("BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataSize, [NativeTypeName("UINT32 *")] uint* actualSize);
 }

@@ -3,7 +3,7 @@
 // Ported from um/d2d1_3helper.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using static TerraFX.Interop.D2D1;
+using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop
 {

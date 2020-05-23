@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public static partial class D2D1
+    public static partial class Windows
     {
         public const uint D2D1_APPEND_ALIGNED_ELEMENT = 0xFFFFFFFF;
 

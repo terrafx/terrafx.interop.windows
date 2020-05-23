@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public static partial class D2D1
+    public static partial class Windows
     {
         public static readonly Guid IID_ID2D1SvgAttribute = new Guid(0xC9CDB0DD, 0xF8C9, 0x4E70, 0xB7, 0xC2, 0x30, 0x1C, 0x80, 0x29, 0x2C, 0x5E);
 
