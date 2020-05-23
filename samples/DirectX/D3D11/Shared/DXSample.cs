@@ -4,7 +4,6 @@ using System;
 using TerraFX.Interop;
 using static TerraFX.Interop.D3D_DRIVER_TYPE;
 using static TerraFX.Interop.D3D_FEATURE_LEVEL;
-using static TerraFX.Interop.D3D11;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Samples.DirectX.D3D11

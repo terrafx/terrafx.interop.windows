@@ -1,36 +1,14 @@
---additional
--m32
--Wno-expansion-to-defined
--Wno-ignored-attributes
--Wno-ignored-pragma-intrinsic
--Wno-nonportable-include-path
--Wno-pragma-pack
---config
-multi-file
-preview-codegen-nint
+@../../settings.rsp
+@../../remap.rsp
 --exclude
 IID_ID2D1EffectContext1
 IID_ID2D1EffectContext2
 --file
 um-d2d1effectauthor_1.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---methodClassName
-D2D1
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/D2D1/um/d2d1effectauthor_1
---remap
-_GUID=Guid
-tagPOINT=POINT
-tagRECT=RECT
+../../../sources/Interop/Windows/um/d2d1effectauthor_1
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d2d1effectauthor_1.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1effectauthor_1.h
 --with-attribute
 ID2D1EffectContext1=Guid("84AB595A-FC81-4546-BACD-E8EF4D8ABE7A")
 ID2D1EffectContext2=Guid("577AD2A0-9FC7-4DDA-8B18-DAB810140052")

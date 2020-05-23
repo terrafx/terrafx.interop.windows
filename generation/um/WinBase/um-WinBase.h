@@ -1,2 +1,2 @@
-#include <wincodec.h>
+#include <Windows.h>
 #include <WinBase.h>

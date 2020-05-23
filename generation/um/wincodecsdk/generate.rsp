@@ -1,13 +1,5 @@
---additional
--m32
--Wno-expansion-to-defined
--Wno-ignored-attributes
--Wno-ignored-pragma-intrinsic
--Wno-nonportable-include-path
--Wno-pragma-pack
---config
-multi-file
-preview-codegen-nint
+@../../settings.rsp
+@../../remap.rsp
 --exclude
 __MIDL_itf_wincodecsdk_0000_0000_v0_0_c_ifspec
 __MIDL_itf_wincodecsdk_0000_0000_v0_0_s_ifspec
@@ -172,29 +164,10 @@ LPSAFEARRAY_UserSize
 LPSAFEARRAY_UserUnmarshal
 --file
 um-wincodecsdk.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---methodClassName
-WinCodec
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/WinCodec/um/wincodecsdk
---remap
-_GUID=Guid
-_ULARGE_INTEGER=ULARGE_INTEGER
-HBITMAP__*=IntPtr
-HICON__*=IntPtr
-HPALETTE__*=IntPtr
-tagPROPBAG2=PROPBAG2
-tagPROPVARIANT=PROPVARIANT
-ULONG_PTR=nuint
+../../../sources/Interop/Windows/um/wincodecsdk
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/wincodecsdk.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincodecsdk.h
 --with-attribute
 IWICComponentFactory=Guid("412D0C3A-9650-44FA-AF5B-DD2A06C8E8FB")
 IWICMetadataBlockReader=Guid("FEAA2A8D-B3F3-43E4-B25C-D1DE990A1AE1")
@@ -208,3 +181,5 @@ IWICPersistStream=Guid("00675040-6908-45F8-86A3-49C7DFD6D9AD")
 IWICStreamProvider=Guid("449494BC-B468-4927-96D7-BA90D31AB505")
 --with-type
 WICMetadataCreationOptions=uint
+--with-librarypath
+*=WindowsCodecs
