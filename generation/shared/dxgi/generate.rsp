@@ -1,13 +1,5 @@
---additional
--m32
--Wno-expansion-to-defined
--Wno-ignored-attributes
--Wno-ignored-pragma-intrinsic
--Wno-nonportable-include-path
--Wno-pragma-pack
---config
-multi-file
-preview-codegen-nint
+@../../settings.rsp
+@../../remap.rsp
 --exclude
 __MIDL_itf_dxgi_0000_0000_v0_0_c_ifspec
 __MIDL_itf_dxgi_0000_0000_v0_0_s_ifspec
@@ -43,29 +35,8 @@ IID_IDXGISurface1
 IID_IDXGISwapChain
 --file
 shared-dxgi.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
---methodClassName
-DXGI
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/DXGI/shared/dxgi
---remap
-_GUID=Guid
-_LARGE_INTEGER=LARGE_INTEGER
-_LUID=LUID
-HANDLE=IntPtr
-HDC__*=IntPtr
-HINSTANCE__*=IntPtr
-HMONITOR__*=IntPtr
-HWND__*=IntPtr
-SIZE_T=nuint
-tagRECT=RECT
+../../../sources/Interop/Windows/shared/dxgi
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgi.h
 --with-attribute
@@ -87,3 +58,5 @@ IDXGISurface1=Guid("4AE63092-6327-4C1B-80AE-BFE12EA32B86")
 IDXGISwapChain=Guid("310D36A0-D2E7-4C0A-AA04-6A9D23B8886A")
 --with-type
 DXGI_ADAPTER_FLAG=uint
+--with-librarypath
+*=dxgi

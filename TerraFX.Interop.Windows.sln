@@ -32,6 +32,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{8793898A-6
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "generation", "generation", "{D9638FEE-50A4-44FF-B1F6-72E59548490B}"
+	ProjectSection(SolutionItems) = preProject
+		generation\remap.rsp = generation\remap.rsp
+		generation\settings.rsp = generation\settings.rsp
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}"
 EndProject
@@ -585,6 +589,144 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinBase", "WinBase", "{D6EF
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "securitybaseapi", "securitybaseapi", "{8D3A1E72-CEB3-4856-A9E6-2169627BA05E}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\securitybaseapi\generate.rsp = generation\um\securitybaseapi\generate.rsp
+		generation\um\securitybaseapi\header.txt = generation\um\securitybaseapi\header.txt
+		generation\um\securitybaseapi\um-securitybaseapi.h = generation\um\securitybaseapi\um-securitybaseapi.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "minwindef", "minwindef", "{8D278EB6-4EA8-4253-9C75-3FDBBC502FB8}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\minwindef\generate.rsp = generation\shared\minwindef\generate.rsp
+		generation\shared\minwindef\header.txt = generation\shared\minwindef\header.txt
+		generation\shared\minwindef\shared-minwindef.h = generation\shared\minwindef\shared-minwindef.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windef", "windef", "{9C82C4BB-1D52-485F-AE59-8CC347753A8C}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\windef\generate.rsp = generation\shared\windef\generate.rsp
+		generation\shared\windef\header.txt = generation\shared\windef\header.txt
+		generation\shared\windef\shared-windef.h = generation\shared\windef\shared-windef.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "hidusage", "hidusage", "{70E2740C-8582-4522-9DB8-F0AAF4222CB0}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\hidusage\generate.rsp = generation\shared\hidusage\generate.rsp
+		generation\shared\hidusage\header.txt = generation\shared\hidusage\header.txt
+		generation\shared\hidusage\shared-hidusage.h = generation\shared\hidusage\shared-hidusage.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "intsafe", "intsafe", "{E3052240-0386-4984-8562-DC906A171B9A}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\intsafe\generate.rsp = generation\shared\intsafe\generate.rsp
+		generation\shared\intsafe\header.txt = generation\shared\intsafe\header.txt
+		generation\shared\intsafe\shared-intsafe.h = generation\shared\intsafe\shared-intsafe.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "winerror", "winerror", "{F23F8885-BCAE-4520-99DF-F0D00D96F934}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\winerror\generate.rsp = generation\shared\winerror\generate.rsp
+		generation\shared\winerror\header.txt = generation\shared\winerror\header.txt
+		generation\shared\winerror\shared-winerror.h = generation\shared\winerror\shared-winerror.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "winioctl", "winioctl", "{EAC155AF-13A3-404C-A0D6-4BB3754DB357}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\winioctl\generate.rsp = generation\shared\winioctl\generate.rsp
+		generation\shared\winioctl\header.txt = generation\shared\winioctl\header.txt
+		generation\shared\winioctl\shared-winioctl.h = generation\shared\winioctl\shared-winioctl.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wtypes", "wtypes", "{7303F50F-3042-406D-9659-670BA4BDAFF3}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\wtypes\generate.rsp = generation\shared\wtypes\generate.rsp
+		generation\shared\wtypes\header.txt = generation\shared\wtypes\header.txt
+		generation\shared\wtypes\shared-wtypes.h = generation\shared\wtypes\shared-wtypes.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wtypesbase", "wtypesbase", "{5A59FFC1-BE87-45A2-A8A7-B6FE1BCED271}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\wtypesbase\generate.rsp = generation\shared\wtypesbase\generate.rsp
+		generation\shared\wtypesbase\header.txt = generation\shared\wtypesbase\header.txt
+		generation\shared\wtypesbase\shared-wtypesbase.h = generation\shared\wtypesbase\shared-wtypesbase.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "documenttarget", "documenttarget", "{6FE54E38-7148-410E-B705-DBD1DEADB289}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\documenttarget\generate.rsp = generation\um\documenttarget\generate.rsp
+		generation\um\documenttarget\header.txt = generation\um\documenttarget\header.txt
+		generation\um\documenttarget\um-documenttarget.h = generation\um\documenttarget\um-documenttarget.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OAIdl", "OAIdl", "{388063B8-ADB3-4247-AB55-575151D6171E}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\OAIdl\generate.rsp = generation\um\OAIdl\generate.rsp
+		generation\um\OAIdl\header.txt = generation\um\OAIdl\header.txt
+		generation\um\OAIdl\um-OAIdl.h = generation\um\OAIdl\um-OAIdl.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OCIdl", "OCIdl", "{54243AB4-DCF7-4557-B3D7-31FF74DD8367}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\OCIdl\generate.rsp = generation\um\OCIdl\generate.rsp
+		generation\um\OCIdl\header.txt = generation\um\OCIdl\header.txt
+		generation\um\OCIdl\um-OCIdl.h = generation\um\OCIdl\um-OCIdl.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ObjIdl", "ObjIdl", "{F191637A-421E-4826-A26E-DE73ACE93494}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\ObjIdl\generate.rsp = generation\um\ObjIdl\generate.rsp
+		generation\um\ObjIdl\header.txt = generation\um\ObjIdl\header.txt
+		generation\um\ObjIdl\um-ObjIdl.h = generation\um\ObjIdl\um-ObjIdl.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ntstatus", "ntstatus", "{274AC85C-C366-4770-8822-277548199E27}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\ntstatus\generate.rsp = generation\um\ntstatus\generate.rsp
+		generation\um\ntstatus\header.txt = generation\um\ntstatus\header.txt
+		generation\um\ntstatus\um-ntstatus.h = generation\um\ntstatus\um-ntstatus.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unknwnbase", "Unknwnbase", "{ACB478FC-1728-4302-ABFE-F3AEBE6C207E}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\Unknwnbase\generate.rsp = generation\um\Unknwnbase\generate.rsp
+		generation\um\Unknwnbase\header.txt = generation\um\Unknwnbase\header.txt
+		generation\um\Unknwnbase\um-Unknwnbase.h = generation\um\Unknwnbase\um-Unknwnbase.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "oleidl", "oleidl", "{E3D36D88-D550-40DF-80F7-01036FE8F684}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\oleidl\generate.rsp = generation\um\oleidl\generate.rsp
+		generation\um\oleidl\header.txt = generation\um\oleidl\header.txt
+		generation\um\oleidl\um-oleidl.h = generation\um\oleidl\um-oleidl.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PropIdlBase", "PropIdlBase", "{811E51D3-DBA8-4988-A365-9E801DD3DAD5}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\PropIdlBase\generate.rsp = generation\um\PropIdlBase\generate.rsp
+		generation\um\PropIdlBase\header.txt = generation\um\PropIdlBase\header.txt
+		generation\um\PropIdlBase\um-PropIdlBase.h = generation\um\PropIdlBase\um-PropIdlBase.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "urlmon", "urlmon", "{6F88379B-A1EC-4BEC-920C-0743822F8493}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\urlmon\generate.rsp = generation\um\urlmon\generate.rsp
+		generation\um\urlmon\header.txt = generation\um\urlmon\header.txt
+		generation\um\urlmon\um-urlmon.h = generation\um\urlmon\um-urlmon.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "servprov", "servprov", "{70A02165-57BB-48DC-A6C5-B93E253CD3BE}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\servprov\generate.rsp = generation\um\servprov\generate.rsp
+		generation\um\servprov\header.txt = generation\um\servprov\header.txt
+		generation\um\servprov\um-servprov.h = generation\um\servprov\um-servprov.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "msxml", "msxml", "{5653F94C-B8A1-4B7E-8226-34813ECA01C0}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\msxml\generate.rsp = generation\um\msxml\generate.rsp
+		generation\um\msxml\header.txt = generation\um\msxml\header.txt
+		generation\um\msxml\um-msxml.h = generation\um\msxml\um-msxml.h
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -691,6 +833,25 @@ Global
 		{448C0916-2B9C-4008-B1C8-FE82B7FE4684} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{D6EFD0AD-6DC8-463E-A5AF-9DFBB825ACDF} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{8D3A1E72-CEB3-4856-A9E6-2169627BA05E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{8D278EB6-4EA8-4253-9C75-3FDBBC502FB8} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{9C82C4BB-1D52-485F-AE59-8CC347753A8C} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{70E2740C-8582-4522-9DB8-F0AAF4222CB0} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{E3052240-0386-4984-8562-DC906A171B9A} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{F23F8885-BCAE-4520-99DF-F0D00D96F934} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{EAC155AF-13A3-404C-A0D6-4BB3754DB357} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{7303F50F-3042-406D-9659-670BA4BDAFF3} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{5A59FFC1-BE87-45A2-A8A7-B6FE1BCED271} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{6FE54E38-7148-410E-B705-DBD1DEADB289} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{388063B8-ADB3-4247-AB55-575151D6171E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{54243AB4-DCF7-4557-B3D7-31FF74DD8367} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{F191637A-421E-4826-A26E-DE73ACE93494} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{274AC85C-C366-4770-8822-277548199E27} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{ACB478FC-1728-4302-ABFE-F3AEBE6C207E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{E3D36D88-D550-40DF-80F7-01036FE8F684} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{811E51D3-DBA8-4988-A365-9E801DD3DAD5} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{6F88379B-A1EC-4BEC-920C-0743822F8493} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{70A02165-57BB-48DC-A6C5-B93E253CD3BE} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{5653F94C-B8A1-4B7E-8226-34813ECA01C0} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}

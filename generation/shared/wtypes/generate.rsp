@@ -1,0 +1,15 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+__MIDL_itf_wtypes_0000_0000_v0_0_c_ifspec
+__MIDL_itf_wtypes_0000_0000_v0_0_s_ifspec
+__MIDL_itf_wtypes_0000_0001_v0_0_c_ifspec
+__MIDL_itf_wtypes_0000_0001_v0_0_s_ifspec
+IWinTypes_v0_1_c_ifspec
+IWinTypes_v0_1_s_ifspec
+--file
+shared-wtypes.h
+--output
+../../../sources/Interop/Windows/shared/wtypes
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/wtypes.h

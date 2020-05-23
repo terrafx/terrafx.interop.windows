@@ -1,13 +1,5 @@
---additional
--m32
--Wno-expansion-to-defined
--Wno-ignored-attributes
--Wno-ignored-pragma-intrinsic
--Wno-nonportable-include-path
--Wno-pragma-pack
---config
-multi-file
-preview-codegen-nint
+@../../settings.rsp
+@../../remap.rsp
 --exclude
 __MIDL_itf_wincodec_0000_0000_v0_0_c_ifspec
 __MIDL_itf_wincodec_0000_0000_v0_0_s_ifspec
@@ -232,32 +224,8 @@ IWICDevelopRaw_GetToneCurve_Proxy
 IWICDevelopRaw_GetToneCurve_Stub
 --file
 um-wincodec.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
---methodClassName
-WinCodec
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/WinCodec/um/wincodec
---remap
-_GUID=Guid
-_LARGE_INTEGER=LARGE_INTEGER
-_ULARGE_INTEGER=ULARGE_INTEGER
-HANDLE=IntPtr
-HBITMAP__*=IntPtr
-HICON__*=IntPtr
-HPALETTE__*=IntPtr
-ID2D1Device=IUnknown
-ID2D1Image=IUnknown
-tagPROPVARIANT=PROPVARIANT
-tagSAFEARRAY=SAFEARRAY
-tagSTATSTG=STATSTG
-ULONG_PTR=nuint
+../../../sources/Interop/Windows/um/wincodec
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincodec.h
 --with-attribute
@@ -308,3 +276,5 @@ IWICStream=Guid("135FF860-22B7-4DDF-B0F6-218F4F299A43")
 WICComponentEnumerateOptions=uint
 WICComponentSigning=uint
 WICProgressNotification=uint
+--with-librarypath
+*=WindowsCodecs

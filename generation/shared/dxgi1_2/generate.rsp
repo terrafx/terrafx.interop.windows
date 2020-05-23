@@ -1,13 +1,5 @@
---additional
--m32
--Wno-expansion-to-defined
--Wno-ignored-attributes
--Wno-ignored-pragma-intrinsic
--Wno-nonportable-include-path
--Wno-pragma-pack
---config
-multi-file
-preview-codegen-nint
+@../../settings.rsp
+@../../remap.rsp
 --exclude
 __MIDL_itf_dxgi1_2_0000_0000_v0_0_c_ifspec
 __MIDL_itf_dxgi1_2_0000_0000_v0_0_s_ifspec
@@ -34,32 +26,8 @@ IID_IDXGISurface2
 IID_IDXGISwapChain1
 --file
 shared-dxgi1_2.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
---methodClassName
-DXGI
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/DXGI/shared/dxgi1_2
---remap
-_D3DCOLORVALUE=DXGI_RGBA
-_DXGI_OFFER_RESOURCE_PRIORITY=DXGI_OFFER_RESOURCE_PRIORITY
-_GUID=Guid
-_LARGE_INTEGER=LARGE_INTEGER
-_LUID=LUID
-_SECURITY_ATTRIBUTES=SECURITY_ATTRIBUTES
-HANDLE=IntPtr
-HDC__*=IntPtr
-HINSTANCE__*=IntPtr
-HWND__*=IntPtr
-SIZE_T=nuint
-tagPOINT=POINT
-tagRECT=RECT
+../../../sources/Interop/Windows/shared/dxgi1_2
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgi1_2.h
 --with-attribute

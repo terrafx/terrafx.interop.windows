@@ -1,13 +1,5 @@
---additional
--m32
--Wno-expansion-to-defined
--Wno-ignored-attributes
--Wno-ignored-pragma-intrinsic
--Wno-nonportable-include-path
--Wno-pragma-pack
---config
-multi-file
-preview-codegen-nint
+@../../settings.rsp
+@../../remap.rsp
 --exclude
 __MIDL_itf_dxgi1_3_0000_0000_v0_0_c_ifspec
 __MIDL_itf_dxgi1_3_0000_0000_v0_0_s_ifspec
@@ -31,28 +23,8 @@ IID_IDXGISwapChain2
 IID_IDXGISwapChainMedia
 --file
 shared-dxgi1_3.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
---methodClassName
-DXGI
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/DXGI/shared/dxgi1_3
---remap
-_D3DCOLORVALUE=DXGI_RGBA
-_DXGI_OFFER_RESOURCE_PRIORITY=DXGI_OFFER_RESOURCE_PRIORITY
-_GUID=Guid
-_LARGE_INTEGER=LARGE_INTEGER
-_LUID=LUID
-HANDLE=IntPtr
-HINSTANCE__*=IntPtr
-HWND__*=IntPtr
-tagRECT=RECT
+../../../sources/Interop/Windows/shared/dxgi1_3
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgi1_3.h
 --with-attribute
@@ -66,3 +38,5 @@ IDXGIOutput2=Guid("595E39D1-2724-4663-99B1-DA969DE28364")
 IDXGIOutput3=Guid("8A6BB301-7E7E-41F4-A8E0-5B32F7F99B18")
 IDXGISwapChain2=Guid("A8BE2AC4-199F-4946-B331-79599FB98DE7")
 IDXGISwapChainMedia=Guid("DD95B90B-F05F-4F6A-BD65-25BFB264BD84")
+--with-librarypath
+*=dxgi

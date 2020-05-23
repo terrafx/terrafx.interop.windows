@@ -1,35 +1,12 @@
---additional
--m32
--Wno-expansion-to-defined
--Wno-ignored-attributes
--Wno-ignored-pragma-intrinsic
--Wno-nonportable-include-path
--Wno-pragma-pack
---config
-multi-file
-preview-codegen-nint
+@../../settings.rsp
+@../../remap.rsp
 --exclude
 _HIDP_PREPARSED_DATA
 --file
 shared-hidsdi.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
---methodClassName
-Hid
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/Hid/shared/hidsdi
---remap
-_GUID=Guid
-_HIDD_ATTRIBUTES=HIDD_ATTRIBUTES
-_HIDD_CONFIGURATION=HIDD_CONFIGURATION
-_HIDP_PREPARSED_DATA=HIDP_PREPARSED_DATA
-HANDLE=IntPtr
-PHIDP_PREPARSED_DATA=IntPtr
+../../../sources/Interop/Windows/shared/hidsdi
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/hidsdi.h
+--with-librarypath
+*=hid

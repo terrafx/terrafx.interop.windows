@@ -1,13 +1,5 @@
---additional
--m32
--Wno-expansion-to-defined
--Wno-ignored-attributes
--Wno-ignored-pragma-intrinsic
--Wno-nonportable-include-path
--Wno-pragma-pack
---config
-multi-file
-preview-codegen-nint
+@../../settings.rsp
+@../../remap.rsp
 --exclude
 __MIDL_itf_d3d11_2_0000_0000_v0_0_c_ifspec
 __MIDL_itf_d3d11_2_0000_0000_v0_0_s_ifspec
@@ -17,23 +9,8 @@ IID_ID3D11Device2
 IID_ID3D11DeviceContext2
 --file
 um-d3d11_2.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
---methodClassName
-D3D11
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/D3D11/um/d3d11_2
---remap
-_GUID=Guid
-HANDLE=IntPtr
-SIZE_T=nuint
-tagRECT=RECT
+../../../sources/Interop/Windows/um/d3d11_2
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11_2.h
 --with-attribute

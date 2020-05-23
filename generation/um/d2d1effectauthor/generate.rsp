@@ -1,13 +1,5 @@
---additional
--m32
--Wno-expansion-to-defined
--Wno-ignored-attributes
--Wno-ignored-pragma-intrinsic
--Wno-nonportable-include-path
--Wno-pragma-pack
---config
-multi-file
-preview-codegen-nint
+@../../settings.rsp
+@../../remap.rsp
 --exclude
 IID_ID2D1AnalysisTransform
 IID_ID2D1BlendTransform
@@ -37,22 +29,8 @@ operator^
 operator^=
 --file
 um-d2d1effectauthor.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um
---methodClassName
-D2D1
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/D2D1/um/d2d1effectauthor
---remap
-_GUID=Guid
-tagRECT=RECT
-tagPOINT=POINT
+../../../sources/Interop/Windows/um/d2d1effectauthor
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1effectauthor.h
 --with-attribute

@@ -1,0 +1,20 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+HINSTANCE__
+HKEY__
+HKL__
+HLSURF__
+HMETAFILE__
+HRGN__
+HRSRC__
+HSPRITE__
+HSTR__
+HTASK__
+HWINSTA__
+--file
+shared-minwindef.h
+--output
+../../../sources/Interop/Windows/shared/minwindef
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/minwindef.h
