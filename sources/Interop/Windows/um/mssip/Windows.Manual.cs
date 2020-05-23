@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public static partial class Crypt32
+    public static partial class Windows
     {
         public const int MSSIP_FLAGS_PROHIBIT_RESIZE_ON_CREATE = 0x00010000;
 

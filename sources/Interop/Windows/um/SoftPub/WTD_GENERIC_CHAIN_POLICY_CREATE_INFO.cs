@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct WTD_GENERIC_CHAIN_POLICY_CREATE_INFO
     {
-        [NativeTypeName("_WTD_GENERIC_CHAIN_POLICY_CREATE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/SoftPub.h:157:5)")]
+        [NativeTypeName("_WTD_GENERIC_CHAIN_POLICY_CREATE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/SoftPub.h:160:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [NativeTypeName("HCERTCHAINENGINE")]

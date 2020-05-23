@@ -32,7 +32,7 @@ namespace TerraFX.Interop
         public uint dwIntVersion;
 
         [NativeTypeName("HCRYPTPROV")]
-        public uint hProv;
+        public nuint hProv;
 
         public CRYPT_ALGORITHM_IDENTIFIER DigestAlgorithm;
 
@@ -57,7 +57,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwUnionChoice;
 
-        [NativeTypeName("SIP_SUBJECTINFO_::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mssip.h:112:5)")]
+        [NativeTypeName("SIP_SUBJECTINFO_::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mssip.h:114:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [NativeTypeName("LPVOID")]

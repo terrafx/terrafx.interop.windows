@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public static partial class Advapi32
+    public static partial class Windows
     {
         public const int ALG_SID_RSA_ANY = 0;
 

@@ -22,7 +22,7 @@ namespace TerraFX.Interop
         [NativeTypeName("LPSTR [2]")]
         public _rgpszHpkpValue_e__FixedBuffer rgpszHpkpValue;
 
-        public unsafe partial struct _rgpszHpkpValue_e__FixedBuffer
+        public partial struct _rgpszHpkpValue_e__FixedBuffer
         {
             internal IntPtr e0;
             internal IntPtr e1;

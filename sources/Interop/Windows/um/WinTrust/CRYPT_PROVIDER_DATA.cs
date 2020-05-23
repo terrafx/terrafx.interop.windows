@@ -26,7 +26,7 @@ namespace TerraFX.Interop
         public Guid* pgActionID;
 
         [NativeTypeName("HCRYPTPROV")]
-        public uint hProv;
+        public nuint hProv;
 
         [NativeTypeName("DWORD")]
         public uint dwError;
