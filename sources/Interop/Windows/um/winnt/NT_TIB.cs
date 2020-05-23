@@ -21,7 +21,7 @@ namespace TerraFX.Interop
         [NativeTypeName("PVOID")]
         public void* SubSystemTib;
 
-        [NativeTypeName("_NT_TIB::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11444:5)")]
+        [NativeTypeName("_NT_TIB::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11490:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [NativeTypeName("PVOID")]

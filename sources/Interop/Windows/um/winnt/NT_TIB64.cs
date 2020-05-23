@@ -21,7 +21,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD64")]
         public ulong SubSystemTib;
 
-        [NativeTypeName("_NT_TIB64::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11485:5)")]
+        [NativeTypeName("_NT_TIB64::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11531:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [NativeTypeName("DWORD64")]

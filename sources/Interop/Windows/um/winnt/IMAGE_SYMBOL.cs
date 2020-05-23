@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public partial struct IMAGE_SYMBOL
     {
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17210:5)")]
+        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17350:5)")]
         public _N_e__Union N;
 
         [NativeTypeName("DWORD")]
@@ -35,14 +35,14 @@ namespace TerraFX.Interop
             public fixed byte ShortName[8];
 
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17212:9)")]
-            public _Name_e__Union Name;
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17352:9)")]
+            public _Name_e__Struct Name;
 
             [FieldOffset(0)]
             [NativeTypeName("DWORD [2]")]
             public fixed uint LongName[2];
 
-            public partial struct _Name_e__Union
+            public partial struct _Name_e__Struct
             {
                 [NativeTypeName("DWORD")]
                 public uint Short;

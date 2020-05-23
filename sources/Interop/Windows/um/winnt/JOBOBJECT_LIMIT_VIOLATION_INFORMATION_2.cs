@@ -34,14 +34,14 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD64")]
         public ulong JobMemory;
 
-        [NativeTypeName("JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11982:5)")]
-        public _Anonymous_e__Union1 Anonymous1;
+        [NativeTypeName("JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12073:5)")]
+        public _Anonymous1_e__Union Anonymous1;
 
-        [NativeTypeName("JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11987:5)")]
-        public _Anonymous_e__Union2 Anonymous2;
+        [NativeTypeName("JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12078:5)")]
+        public _Anonymous2_e__Union Anonymous2;
 
-        [NativeTypeName("JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11992:5)")]
-        public _Anonymous_e__Union3 Anonymous3;
+        [NativeTypeName("JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12083:5)")]
+        public _Anonymous3_e__Union Anonymous3;
 
         [NativeTypeName("DWORD64")]
         public ulong JobLowMemoryLimit;
@@ -55,7 +55,7 @@ namespace TerraFX.Interop
         public JOBOBJECT_RATE_CONTROL_TOLERANCE NetRateControlToleranceLimit;
 
         [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union1
+        public partial struct _Anonymous1_e__Union
         {
             [FieldOffset(0)]
             [NativeTypeName("DWORD64")]
@@ -67,7 +67,7 @@ namespace TerraFX.Interop
         }
 
         [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union2
+        public partial struct _Anonymous2_e__Union
         {
             [FieldOffset(0)]
             public JOBOBJECT_RATE_CONTROL_TOLERANCE RateControlTolerance;
@@ -77,7 +77,7 @@ namespace TerraFX.Interop
         }
 
         [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union3
+        public partial struct _Anonymous3_e__Union
         {
             [FieldOffset(0)]
             public JOBOBJECT_RATE_CONTROL_TOLERANCE RateControlToleranceLimit;

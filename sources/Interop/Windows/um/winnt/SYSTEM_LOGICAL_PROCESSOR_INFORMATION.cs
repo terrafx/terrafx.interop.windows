@@ -14,19 +14,19 @@ namespace TerraFX.Interop
 
         public LOGICAL_PROCESSOR_RELATIONSHIP Relationship;
 
-        [NativeTypeName("_SYSTEM_LOGICAL_PROCESSOR_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12420:5)")]
+        [NativeTypeName("_SYSTEM_LOGICAL_PROCESSOR_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12514:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12421:9)")]
-            public _ProcessorCore_e__Union ProcessorCore;
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12515:9)")]
+            public _ProcessorCore_e__Struct ProcessorCore;
 
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12424:9)")]
-            public _NumaNode_e__Union NumaNode;
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12518:9)")]
+            public _NumaNode_e__Struct NumaNode;
 
             [FieldOffset(0)]
             public CACHE_DESCRIPTOR Cache;
@@ -35,13 +35,13 @@ namespace TerraFX.Interop
             [NativeTypeName("ULONGLONG [2]")]
             public fixed ulong Reserved[2];
 
-            public partial struct _ProcessorCore_e__Union
+            public partial struct _ProcessorCore_e__Struct
             {
                 [NativeTypeName("BYTE")]
                 public byte Flags;
             }
 
-            public partial struct _NumaNode_e__Union
+            public partial struct _NumaNode_e__Struct
             {
                 [NativeTypeName("DWORD")]
                 public uint NodeNumber;

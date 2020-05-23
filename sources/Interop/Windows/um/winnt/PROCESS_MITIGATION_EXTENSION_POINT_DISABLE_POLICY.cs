@@ -9,21 +9,21 @@ namespace TerraFX.Interop
 {
     public partial struct PROCESS_MITIGATION_EXTENSION_POINT_DISABLE_POLICY
     {
-        [NativeTypeName("_PROCESS_MITIGATION_EXTENSION_POINT_DISABLE_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11662:5)")]
-        public _Anonymous_e__Union1 Anonymous;
+        [NativeTypeName("_PROCESS_MITIGATION_EXTENSION_POINT_DISABLE_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11743:5)")]
+        public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union1
+        public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
             [NativeTypeName("DWORD")]
             public uint Flags;
 
             [FieldOffset(0)]
-            [NativeTypeName("_PROCESS_MITIGATION_EXTENSION_POINT_DISABLE_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11664:9)")]
-            public _Anonymous_e__Union2 Anonymous;
+            [NativeTypeName("_PROCESS_MITIGATION_EXTENSION_POINT_DISABLE_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11745:9)")]
+            public _Anonymous_e__Struct Anonymous;
 
-            public partial struct _Anonymous_e__Union2
+            public partial struct _Anonymous_e__Struct
             {
                 internal uint _bitfield;
 

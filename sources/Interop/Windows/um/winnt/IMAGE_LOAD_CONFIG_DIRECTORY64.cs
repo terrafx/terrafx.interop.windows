@@ -131,5 +131,11 @@ namespace TerraFX.Interop
 
         [NativeTypeName("ULONGLONG")]
         public ulong VolatileMetadataPointer;
+
+        [NativeTypeName("ULONGLONG")]
+        public ulong GuardEHContinuationTable;
+
+        [NativeTypeName("ULONGLONG")]
+        public ulong GuardEHContinuationCount;
     }
 }

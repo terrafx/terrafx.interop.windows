@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public partial struct IMAGE_THUNK_DATA32
     {
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18021:5)")]
+        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18163:5)")]
         public _u1_e__Union u1;
 
         [StructLayout(LayoutKind.Explicit)]

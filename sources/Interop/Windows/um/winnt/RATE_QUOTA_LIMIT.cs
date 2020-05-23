@@ -15,10 +15,10 @@ namespace TerraFX.Interop
         public uint RateData;
 
         [FieldOffset(0)]
-        [NativeTypeName("_RATE_QUOTA_LIMIT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11552:5)")]
-        public _Anonymous_e__Union Anonymous;
+        [NativeTypeName("_RATE_QUOTA_LIMIT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11632:5)")]
+        public _Anonymous_e__Struct Anonymous;
 
-        public partial struct _Anonymous_e__Union
+        public partial struct _Anonymous_e__Struct
         {
             internal uint _bitfield;
 

@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public partial struct SERVERSILO_BASIC_INFORMATION
+    public unsafe partial struct SERVERSILO_BASIC_INFORMATION
     {
         [NativeTypeName("DWORD")]
         public uint ServiceSessionId;
@@ -14,5 +14,14 @@ namespace TerraFX.Interop
 
         [NativeTypeName("DWORD")]
         public uint ExitStatus;
+
+        [NativeTypeName("BOOLEAN")]
+        public byte IsDownlevelContainer;
+
+        [NativeTypeName("PVOID")]
+        public void* ApiSetSchema;
+
+        [NativeTypeName("PVOID")]
+        public void* HostApiSetSchema;
     }
 }

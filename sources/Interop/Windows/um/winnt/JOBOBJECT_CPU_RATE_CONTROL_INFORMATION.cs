@@ -12,11 +12,11 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint ControlFlags;
 
-        [NativeTypeName("_JOBOBJECT_CPU_RATE_CONTROL_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12007:5)")]
-        public _Anonymous_e__Union1 Anonymous;
+        [NativeTypeName("_JOBOBJECT_CPU_RATE_CONTROL_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12098:5)")]
+        public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union1
+        public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
             [NativeTypeName("DWORD")]
@@ -27,10 +27,10 @@ namespace TerraFX.Interop
             public uint Weight;
 
             [FieldOffset(0)]
-            [NativeTypeName("_JOBOBJECT_CPU_RATE_CONTROL_INFORMATION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12010:9)")]
-            public _Anonymous_e__Union2 Anonymous;
+            [NativeTypeName("_JOBOBJECT_CPU_RATE_CONTROL_INFORMATION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12101:9)")]
+            public _Anonymous_e__Struct Anonymous;
 
-            public partial struct _Anonymous_e__Union2
+            public partial struct _Anonymous_e__Struct
             {
                 [NativeTypeName("WORD")]
                 public ushort MinRate;

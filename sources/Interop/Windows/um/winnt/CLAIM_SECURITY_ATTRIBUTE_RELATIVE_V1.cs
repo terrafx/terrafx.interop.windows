@@ -24,7 +24,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint ValueCount;
 
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11195:5)")]
+        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11241:5)")]
         public _Values_e__Union Values;
 
         [StructLayout(LayoutKind.Explicit)]

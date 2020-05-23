@@ -131,5 +131,11 @@ namespace TerraFX.Interop
 
         [NativeTypeName("DWORD")]
         public uint VolatileMetadataPointer;
+
+        [NativeTypeName("DWORD")]
+        public uint GuardEHContinuationTable;
+
+        [NativeTypeName("DWORD")]
+        public uint GuardEHContinuationCount;
     }
 }

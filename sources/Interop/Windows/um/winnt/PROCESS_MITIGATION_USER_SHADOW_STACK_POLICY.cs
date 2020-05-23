@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public partial struct PROCESS_MITIGATION_STRICT_HANDLE_CHECK_POLICY
+    public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
     {
-        [NativeTypeName("_PROCESS_MITIGATION_STRICT_HANDLE_CHECK_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11721:5)")]
+        [NativeTypeName("_PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11912:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
@@ -20,7 +20,7 @@ namespace TerraFX.Interop
             public uint Flags;
 
             [FieldOffset(0)]
-            [NativeTypeName("_PROCESS_MITIGATION_STRICT_HANDLE_CHECK_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11723:9)")]
+            [NativeTypeName("_PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11914:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             public partial struct _Anonymous_e__Struct
@@ -28,7 +28,7 @@ namespace TerraFX.Interop
                 internal uint _bitfield;
 
                 [NativeTypeName("DWORD : 1")]
-                public uint RaiseExceptionOnInvalidHandleReference
+                public uint EnableUserShadowStack
                 {
                     get
                     {
@@ -41,31 +41,17 @@ namespace TerraFX.Interop
                     }
                 }
 
-                [NativeTypeName("DWORD : 1")]
-                public uint HandleExceptionsPermanentlyEnabled
-                {
-                    get
-                    {
-                        return (_bitfield >> 1) & 0x1u;
-                    }
-
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1);
-                    }
-                }
-
-                [NativeTypeName("DWORD : 30")]
+                [NativeTypeName("DWORD : 31")]
                 public uint ReservedFlags
                 {
                     get
                     {
-                        return (_bitfield >> 2) & 0x3FFFFFFFu;
+                        return (_bitfield >> 1) & 0x7FFFFFFFu;
                     }
 
                     set
                     {
-                        _bitfield = (_bitfield & ~(0x3FFFFFFFu << 2)) | ((value & 0x3FFFFFFFu) << 2);
+                        _bitfield = (_bitfield & ~(0x7FFFFFFFu << 1)) | ((value & 0x7FFFFFFFu) << 1);
                     }
                 }
             }

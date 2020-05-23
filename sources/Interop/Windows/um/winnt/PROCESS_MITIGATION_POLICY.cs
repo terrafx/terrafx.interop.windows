@@ -22,6 +22,7 @@ namespace TerraFX.Interop
         ProcessPayloadRestrictionPolicy,
         ProcessChildProcessPolicy,
         ProcessSideChannelIsolationPolicy,
+        ProcessUserShadowStackPolicy,
         MaxProcessMitigationPolicy,
     }
 }

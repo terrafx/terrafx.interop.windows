@@ -53,6 +53,11 @@ namespace TerraFX.Interop
         MonitorRequestReasonPdcSignalHolographicShell,
         MonitorRequestReasonPdcSignalFingerprint,
         MonitorRequestReasonDirectedDrips,
+        MonitorRequestReasonDim,
+        MonitorRequestReasonBuiltinPanel,
+        MonitorRequestReasonDisplayRequiredUnDim,
+        MonitorRequestReasonBatteryCountChangeSuppressed,
+        MonitorRequestReasonResumeModernStandby,
         MonitorRequestReasonMax,
     }
 }

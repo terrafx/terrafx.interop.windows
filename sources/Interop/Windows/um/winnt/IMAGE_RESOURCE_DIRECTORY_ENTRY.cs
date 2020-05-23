@@ -9,18 +9,18 @@ namespace TerraFX.Interop
 {
     public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
     {
-        [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18206:5)")]
-        public _Anonymous_e__Union1 Anonymous1;
+        [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18348:5)")]
+        public _Anonymous1_e__Union Anonymous1;
 
-        [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18214:5)")]
-        public _Anonymous_e__Union3 Anonymous2;
+        [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18356:5)")]
+        public _Anonymous2_e__Union Anonymous2;
 
         [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union1
+        public partial struct _Anonymous1_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18207:9)")]
-            public _Anonymous_e__Union2 Anonymous;
+            [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18349:9)")]
+            public _Anonymous_e__Struct Anonymous;
 
             [FieldOffset(0)]
             [NativeTypeName("DWORD")]
@@ -30,7 +30,7 @@ namespace TerraFX.Interop
             [NativeTypeName("WORD")]
             public ushort Id;
 
-            public partial struct _Anonymous_e__Union2
+            public partial struct _Anonymous_e__Struct
             {
                 internal uint _bitfield;
 
@@ -65,17 +65,17 @@ namespace TerraFX.Interop
         }
 
         [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union3
+        public partial struct _Anonymous2_e__Union
         {
             [FieldOffset(0)]
             [NativeTypeName("DWORD")]
             public uint OffsetToData;
 
             [FieldOffset(0)]
-            [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18216:9)")]
-            public _Anonymous_e__Union4 Anonymous;
+            [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18358:9)")]
+            public _Anonymous_e__Struct Anonymous;
 
-            public partial struct _Anonymous_e__Union4
+            public partial struct _Anonymous_e__Struct
             {
                 internal uint _bitfield;
 

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
         [NativeTypeName("BYTE [8]")]
         public fixed byte Name[8];
 
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17124:5)")]
+        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17264:5)")]
         public _Misc_e__Union Misc;
 
         [NativeTypeName("DWORD")]

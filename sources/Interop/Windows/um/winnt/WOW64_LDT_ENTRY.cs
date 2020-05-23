@@ -15,21 +15,21 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort BaseLow;
 
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:8776:5)")]
+        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:8818:5)")]
         public _HighWord_e__Union HighWord;
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _HighWord_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:8777:9)")]
-            public _Bytes_e__Union Bytes;
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:8819:9)")]
+            public _Bytes_e__Struct Bytes;
 
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:8783:9)")]
-            public _Bits_e__Union Bits;
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:8825:9)")]
+            public _Bits_e__Struct Bits;
 
-            public partial struct _Bytes_e__Union
+            public partial struct _Bytes_e__Struct
             {
                 [NativeTypeName("BYTE")]
                 public byte BaseMid;
@@ -44,7 +44,7 @@ namespace TerraFX.Interop
                 public byte BaseHi;
             }
 
-            public partial struct _Bits_e__Union
+            public partial struct _Bits_e__Struct
             {
                 internal uint _bitfield;
 

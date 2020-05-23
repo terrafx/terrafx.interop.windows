@@ -102,6 +102,7 @@ namespace TerraFX.Interop
         EnergyTrackerCreate,
         EnergyTrackerQuery,
         UpdateBlackBoxRecorder,
+        SessionAllowExternalDmaDevices,
         PowerInformationLevelMaximum,
     }
 }

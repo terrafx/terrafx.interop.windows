@@ -24,21 +24,21 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint SizeOfZeroFill;
 
-        [NativeTypeName("_IMAGE_TLS_DIRECTORY64::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18054:5)")]
-        public _Anonymous_e__Union1 Anonymous;
+        [NativeTypeName("_IMAGE_TLS_DIRECTORY64::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18196:5)")]
+        public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union1
+        public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
             [NativeTypeName("DWORD")]
             public uint Characteristics;
 
             [FieldOffset(0)]
-            [NativeTypeName("_IMAGE_TLS_DIRECTORY64::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18056:9)")]
-            public _Anonymous_e__Union2 Anonymous;
+            [NativeTypeName("_IMAGE_TLS_DIRECTORY64::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18198:9)")]
+            public _Anonymous_e__Struct Anonymous;
 
-            public partial struct _Anonymous_e__Union2
+            public partial struct _Anonymous_e__Struct
             {
                 internal uint _bitfield;
 

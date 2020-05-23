@@ -11,26 +11,26 @@ namespace TerraFX.Interop
     public partial struct IMAGE_AUX_SYMBOL_EX
     {
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17425:5)")]
-        public _Sym_e__Union Sym;
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17565:5)")]
+        public _Sym_e__Struct Sym;
 
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17430:5)")]
-        public _File_e__Union File;
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17570:5)")]
+        public _File_e__Struct File;
 
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17433:5)")]
-        public _Section_e__Union Section;
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17573:5)")]
+        public _Section_e__Struct Section;
 
         [FieldOffset(0)]
-        [NativeTypeName("_IMAGE_AUX_SYMBOL_EX::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17444:5)")]
-        public _Anonymous_e__Union Anonymous;
+        [NativeTypeName("_IMAGE_AUX_SYMBOL_EX::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17584:5)")]
+        public _Anonymous_e__Struct Anonymous;
 
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17448:5)")]
-        public _CRC_e__Union CRC;
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17588:5)")]
+        public _CRC_e__Struct CRC;
 
-        public unsafe partial struct _Sym_e__Union
+        public unsafe partial struct _Sym_e__Struct
         {
             [NativeTypeName("DWORD")]
             public uint WeakDefaultSymIndex;
@@ -42,13 +42,13 @@ namespace TerraFX.Interop
             public fixed byte rgbReserved[12];
         }
 
-        public unsafe partial struct _File_e__Union
+        public unsafe partial struct _File_e__Struct
         {
             [NativeTypeName("BYTE [20]")]
             public fixed byte Name[20];
         }
 
-        public unsafe partial struct _Section_e__Union
+        public unsafe partial struct _Section_e__Struct
         {
             [NativeTypeName("DWORD")]
             public uint Length;
@@ -78,7 +78,7 @@ namespace TerraFX.Interop
             public fixed byte rgbReserved[2];
         }
 
-        public unsafe partial struct _Anonymous_e__Union
+        public unsafe partial struct _Anonymous_e__Struct
         {
             public IMAGE_AUX_SYMBOL_TOKEN_DEF TokenDef;
 
@@ -86,7 +86,7 @@ namespace TerraFX.Interop
             public fixed byte rgbReserved[2];
         }
 
-        public unsafe partial struct _CRC_e__Union
+        public unsafe partial struct _CRC_e__Struct
         {
             [NativeTypeName("DWORD")]
             public uint crc;
