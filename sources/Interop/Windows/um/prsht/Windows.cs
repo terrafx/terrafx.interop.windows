@@ -8,27 +8,25 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class ComCtl32
+    public static unsafe partial class Windows
     {
-        private const string LibraryPath = "comctl32";
-
-        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreatePropertySheetPageA", ExactSpelling = true)]
+        [DllImport("comctl32", EntryPoint = "CreatePropertySheetPageA", ExactSpelling = true)]
         [return: NativeTypeName("HPROPSHEETPAGE")]
         public static extern IntPtr CreatePropertySheetPageA([NativeTypeName("LPCPROPSHEETPAGEA")] PROPSHEETPAGEA* constPropSheetPagePointer);
 
-        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "CreatePropertySheetPageW", ExactSpelling = true)]
+        [DllImport("comctl32", EntryPoint = "CreatePropertySheetPageW", ExactSpelling = true)]
         [return: NativeTypeName("HPROPSHEETPAGE")]
         public static extern IntPtr CreatePropertySheetPageW([NativeTypeName("LPCPROPSHEETPAGEW")] PROPSHEETPAGEW* constPropSheetPagePointer);
 
-        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "DestroyPropertySheetPage", ExactSpelling = true)]
+        [DllImport("comctl32", EntryPoint = "DestroyPropertySheetPage", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int DestroyPropertySheetPage([NativeTypeName("HPROPSHEETPAGE")] IntPtr param0);
 
-        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "PropertySheetA", ExactSpelling = true)]
+        [DllImport("comctl32", EntryPoint = "PropertySheetA", ExactSpelling = true)]
         [return: NativeTypeName("INT_PTR")]
         public static extern nint PropertySheetA([NativeTypeName("LPCPROPSHEETHEADERA")] PROPSHEETHEADERA_V2* param0);
 
-        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "PropertySheetW", ExactSpelling = true)]
+        [DllImport("comctl32", EntryPoint = "PropertySheetW", ExactSpelling = true)]
         [return: NativeTypeName("INT_PTR")]
         public static extern nint PropertySheetW([NativeTypeName("LPCPROPSHEETHEADERW")] PROPSHEETHEADERW_V2* param0);
     }

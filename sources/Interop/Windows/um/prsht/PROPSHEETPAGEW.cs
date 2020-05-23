@@ -20,10 +20,10 @@ namespace TerraFX.Interop
         public IntPtr hInstance;
 
         [NativeTypeName("_PROPSHEETPAGEW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:271:5)")]
-        public _Anonymous_e__Union1 Anonymous1;
+        public _Anonymous1_e__Union Anonymous1;
 
         [NativeTypeName("_PROPSHEETPAGEW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:271:5)")]
-        public _Anonymous_e__Union2 Anonymous2;
+        public _Anonymous2_e__Union Anonymous2;
 
         [NativeTypeName("LPCWSTR")]
         public ushort* pszTitle;
@@ -50,10 +50,10 @@ namespace TerraFX.Interop
         public IntPtr hActCtx;
 
         [NativeTypeName("_PROPSHEETPAGEW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:278:5)")]
-        public _Anonymous_e__Union Anonymous3;
+        public _Anonymous3_e__Union Anonymous3;
 
         [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous_e__Union1
+        public unsafe partial struct _Anonymous1_e__Union
         {
             [FieldOffset(0)]
             [NativeTypeName("LPCWSTR")]
@@ -65,7 +65,7 @@ namespace TerraFX.Interop
         }
 
         [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous_e__Union2
+        public unsafe partial struct _Anonymous2_e__Union
         {
             [FieldOffset(0)]
             [NativeTypeName("HICON")]
@@ -77,7 +77,7 @@ namespace TerraFX.Interop
         }
 
         [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous_e__Union
+        public unsafe partial struct _Anonymous3_e__Union
         {
             [FieldOffset(0)]
             [NativeTypeName("HBITMAP")]

@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class ComCtl32
+    public static unsafe partial class Windows
     {
         public const int MAXPROPPAGES = 100;
 
