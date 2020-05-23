@@ -14,23 +14,23 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _QueryInterface(IDXGIFactoryMedia* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ULONG")]
         public delegate uint _AddRef(IDXGIFactoryMedia* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ULONG")]
         public delegate uint _Release(IDXGIFactoryMedia* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _CreateSwapChainForCompositionSurfaceHandle(IDXGIFactoryMedia* pThis, [NativeTypeName("IUnknown *")] IUnknown* pDevice, [NativeTypeName("HANDLE")] IntPtr hSurface, [NativeTypeName("const DXGI_SWAP_CHAIN_DESC1 *")] DXGI_SWAP_CHAIN_DESC1* pDesc, [NativeTypeName("IDXGIOutput *")] IDXGIOutput* pRestrictToOutput, [NativeTypeName("IDXGISwapChain1 **")] IDXGISwapChain1** ppSwapChain);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _CreateDecodeSwapChainForCompositionSurfaceHandle(IDXGIFactoryMedia* pThis, [NativeTypeName("IUnknown *")] IUnknown* pDevice, [NativeTypeName("HANDLE")] IntPtr hSurface, [NativeTypeName("DXGI_DECODE_SWAP_CHAIN_DESC *")] DXGI_DECODE_SWAP_CHAIN_DESC* pDesc, [NativeTypeName("IDXGIResource *")] IDXGIResource* pYuvDecodeBuffers, [NativeTypeName("IDXGIOutput *")] IDXGIOutput* pRestrictToOutput, [NativeTypeName("IDXGIDecodeSwapChain **")] IDXGIDecodeSwapChain** ppSwapChain);
 

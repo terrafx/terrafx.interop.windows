@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public static partial class DXGI
+    public static partial class Windows
     {
         public const uint DXGI_ENUM_MODES_STEREO = 4;
 

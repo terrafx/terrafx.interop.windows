@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class DXGI
+    public static unsafe partial class Windows
     {
         public const uint DXGI_CREATE_FACTORY_DEBUG = 0x1;
 

@@ -8,13 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class DXGI
+    public static unsafe partial class Windows
     {
-        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "CreateDXGIFactory", ExactSpelling = true)]
+        [DllImport("dxgi", EntryPoint = "CreateDXGIFactory", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CreateDXGIFactory([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppFactory);
 
-        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "CreateDXGIFactory1", ExactSpelling = true)]
+        [DllImport("dxgi", EntryPoint = "CreateDXGIFactory1", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CreateDXGIFactory1([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppFactory);
     }

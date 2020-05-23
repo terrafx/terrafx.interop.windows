@@ -7,7 +7,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop
 {
-    public static partial class DXGI
+    public static partial class Windows
     {
         public const int _FACDXGI = 0x87A;
 

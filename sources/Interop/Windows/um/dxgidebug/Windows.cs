@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class DXGIDebug
+    public static unsafe partial class Windows
     {
-        private const string LibraryPath = "DXGIDebug";
-
-        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "DXGIGetDebugInterface", ExactSpelling = true)]
+        [DllImport("DXGIDebug", EntryPoint = "DXGIGetDebugInterface", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int DXGIGetDebugInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppDebug);
     }

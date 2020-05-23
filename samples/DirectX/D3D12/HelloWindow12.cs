@@ -12,7 +12,6 @@ using static TerraFX.Interop.D3D12_COMMAND_LIST_TYPE;
 using static TerraFX.Interop.D3D12_DESCRIPTOR_HEAP_TYPE;
 using static TerraFX.Interop.D3D12_FENCE_FLAGS;
 using static TerraFX.Interop.D3D12_RESOURCE_STATES;
-using static TerraFX.Interop.DXGI;
 using static TerraFX.Interop.DXGI_FORMAT;
 using static TerraFX.Interop.DXGI_SWAP_EFFECT;
 using static TerraFX.Interop.Kernel32;

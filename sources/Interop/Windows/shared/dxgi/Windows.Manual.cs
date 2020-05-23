@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class DXGI
+    public static unsafe partial class Windows
     {
         public const uint DXGI_USAGE_SHADER_INPUT = 0x00000010;
 

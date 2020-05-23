@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public static partial class DXGI
+    public static partial class Windows
     {
         public static readonly Guid IID_IDXGISwapChain3 = new Guid(0x94D99BDB, 0xF1F8, 0x4AB0, 0xB2, 0x36, 0x7D, 0xA0, 0x17, 0x0E, 0xDA, 0xB1);
 

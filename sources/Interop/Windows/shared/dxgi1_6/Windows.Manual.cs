@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class DXGI
+    public static unsafe partial class Windows
     {
         public static readonly Guid IID_IDXGIAdapter4 = new Guid(0x3C8D99D1, 0x4FBF, 0x4181, 0xA8, 0x2C, 0xAF, 0x66, 0xBF, 0x7B, 0xD2, 0x4E);
 

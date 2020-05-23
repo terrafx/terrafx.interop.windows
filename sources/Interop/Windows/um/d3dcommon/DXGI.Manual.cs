@@ -8,7 +8,7 @@ using static TerraFX.Interop.Kernel32;
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class DXGI
+    public static unsafe partial class Windows
     {
         public static int D3D_SET_OBJECT_NAME_N_A(IDXGIObject* pObject, uint Chars, sbyte* pName)
         {

@@ -5,7 +5,6 @@ using TerraFX.Interop;
 using static TerraFX.Interop.D3D_DRIVER_TYPE;
 using static TerraFX.Interop.D3D_FEATURE_LEVEL;
 using static TerraFX.Interop.D3D11;
-using static TerraFX.Interop.DXGI;
 using static TerraFX.Interop.DXGI_FORMAT;
 using static TerraFX.Interop.DXGI_SWAP_EFFECT;
 using static TerraFX.Interop.Windows;
