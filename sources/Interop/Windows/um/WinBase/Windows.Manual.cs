@@ -8,5 +8,21 @@ namespace TerraFX.Interop
     public static partial class Windows
     {
         public const uint INFINITE = 0xFFFFFFFF;
+
+        public const uint FILE_BEGIN = 0;
+
+        public const uint FILE_CURRENT = 1;
+
+        public const uint FILE_END = 2;
+
+        public const uint WAIT_FAILED = 0xFFFFFFFF;
+
+        public const uint WAIT_OBJECT_0 = Windows.STATUS_WAIT_0 + 0;
+
+        public const uint WAIT_ABANDONED = Windows.STATUS_ABANDONED_WAIT_0 + 0;
+
+        public const uint WAIT_ABANDONED_0 = Windows.STATUS_ABANDONED_WAIT_0 + 0;
+
+        public const uint WAIT_IO_COMPLETION = Windows.STATUS_USER_APC;
     }
 }

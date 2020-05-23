@@ -4,7 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
-using static TerraFX.Interop.Kernel32;
+using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop
 {

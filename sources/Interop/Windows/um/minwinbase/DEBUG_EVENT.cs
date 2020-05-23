@@ -18,7 +18,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint dwThreadId;
 
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/minwinbase.h:363:5)")]
+        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/minwinbase.h:365:5)")]
         public _u_e__Union u;
 
         [StructLayout(LayoutKind.Explicit)]

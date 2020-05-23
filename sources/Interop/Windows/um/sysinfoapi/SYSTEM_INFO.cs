@@ -10,7 +10,7 @@ namespace TerraFX.Interop
     public unsafe partial struct SYSTEM_INFO
     {
         [NativeTypeName("_SYSTEM_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/sysinfoapi.h:48:5)")]
-        public _Anonymous_e__Union1 Anonymous;
+        public _Anonymous_e__Union Anonymous;
 
         [NativeTypeName("DWORD")]
         public uint dwPageSize;
@@ -40,7 +40,7 @@ namespace TerraFX.Interop
         public ushort wProcessorRevision;
 
         [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union1
+        public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
             [NativeTypeName("DWORD")]
@@ -48,9 +48,9 @@ namespace TerraFX.Interop
 
             [FieldOffset(0)]
             [NativeTypeName("_SYSTEM_INFO::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/sysinfoapi.h:50:9)")]
-            public _Anonymous_e__Union2 Anonymous;
+            public _Anonymous_e__Struct Anonymous;
 
-            public partial struct _Anonymous_e__Union2
+            public partial struct _Anonymous_e__Struct
             {
                 [NativeTypeName("WORD")]
                 public ushort wProcessorArchitecture;
