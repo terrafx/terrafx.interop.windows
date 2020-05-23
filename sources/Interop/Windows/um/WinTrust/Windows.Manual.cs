@@ -363,7 +363,7 @@ namespace TerraFX.Interop
 
         public const int WT_TRUSTDBDIALOG_WRITE_IEAK_STORE_FLAG = 0x00000200;
 
-        public static ReadOnlySpan<sbyte> SPC_COMMON_NAME_OBJID => Windows.szOID_COMMON_NAME;
+        public static ReadOnlySpan<sbyte> SPC_COMMON_NAME_OBJID => szOID_COMMON_NAME;
 
         // ((LPCSTR) 2000)
         public const int SPC_SP_AGENCY_INFO_STRUCT = 2000;
