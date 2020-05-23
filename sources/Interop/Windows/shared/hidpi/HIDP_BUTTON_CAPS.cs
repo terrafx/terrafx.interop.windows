@@ -53,13 +53,13 @@ namespace TerraFX.Interop
         {
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/hidpi.h:87:9)")]
-            public _Range_e__Union Range;
+            public _Range_e__Struct Range;
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/hidpi.h:93:9)")]
-            public _NotRange_e__Union NotRange;
+            public _NotRange_e__Struct NotRange;
 
-            public partial struct _Range_e__Union
+            public partial struct _Range_e__Struct
             {
                 [NativeTypeName("USAGE")]
                 public ushort UsageMin;
@@ -86,7 +86,7 @@ namespace TerraFX.Interop
                 public ushort DataIndexMax;
             }
 
-            public partial struct _NotRange_e__Union
+            public partial struct _NotRange_e__Struct
             {
                 [NativeTypeName("USAGE")]
                 public ushort Usage;

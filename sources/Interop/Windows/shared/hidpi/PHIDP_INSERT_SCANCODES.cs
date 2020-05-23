@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Winapi)]
     [return: NativeTypeName("BOOLEAN")]
     public unsafe delegate byte PHIDP_INSERT_SCANCODES([NativeTypeName("PVOID")] void* Context, [NativeTypeName("PCHAR")] sbyte* NewScanCodes, [NativeTypeName("ULONG")] uint Length);
 }

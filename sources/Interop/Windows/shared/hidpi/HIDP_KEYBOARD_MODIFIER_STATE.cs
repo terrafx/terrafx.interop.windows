@@ -10,20 +10,20 @@ namespace TerraFX.Interop
     public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     {
         [NativeTypeName("_HIDP_KEYBOARD_MODIFIER_STATE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/hidpi.h:1728:4)")]
-        public _Anonymous_e__Union1 Anonymous;
+        public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union1
+        public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
             [NativeTypeName("_HIDP_KEYBOARD_MODIFIER_STATE::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/hidpi.h:1729:7)")]
-            public _Anonymous_e__Union2 Anonymous;
+            public _Anonymous_e__Struct Anonymous;
 
             [FieldOffset(0)]
             [NativeTypeName("ULONG")]
             public uint ul;
 
-            public partial struct _Anonymous_e__Union2
+            public partial struct _Anonymous_e__Struct
             {
                 internal uint _bitfield;
 
