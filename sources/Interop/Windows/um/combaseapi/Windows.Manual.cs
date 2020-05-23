@@ -7,7 +7,7 @@ using static TerraFX.Interop.CLSCTX;
 
 namespace TerraFX.Interop
 {
-    public static partial class Ole32
+    public static partial class Windows
     {
         public const CLSCTX CLSCTX_INPROC = CLSCTX_INPROC_SERVER | CLSCTX_INPROC_HANDLER;
         public const CLSCTX CLSCTX_ALL = CLSCTX_INPROC_SERVER | CLSCTX_INPROC_HANDLER | CLSCTX_LOCAL_SERVER | CLSCTX_REMOTE_SERVER;
