@@ -7,7 +7,6 @@ using System;
 using System.Runtime.InteropServices;
 using TerraFX.Interop;
 using static TerraFX.Interop.D3D_FEATURE_LEVEL;
-using static TerraFX.Interop.D3D12;
 using static TerraFX.Interop.D3D12_COMMAND_LIST_TYPE;
 using static TerraFX.Interop.D3D12_DESCRIPTOR_HEAP_TYPE;
 using static TerraFX.Interop.D3D12_FENCE_FLAGS;

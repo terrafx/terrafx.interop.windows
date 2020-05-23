@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using static TerraFX.Interop.Kernel32;
 
 namespace TerraFX.Interop
 {
@@ -98,5 +99,27 @@ namespace TerraFX.Interop
         public static readonly Guid IID_IDXGIAdapter1 = new Guid(0x29038F61, 0x3839, 0x4626, 0x91, 0xFD, 0x08, 0x68, 0x79, 0x01, 0x1A, 0x05);
 
         public static readonly Guid IID_IDXGIDevice1 = new Guid(0x77DB970F, 0x6276, 0x48BA, 0xBA, 0x28, 0x07, 0x01, 0x43, 0xB4, 0x39, 0x2C);
+
+        public static int D3D_SET_OBJECT_NAME_N_A(IDXGIObject* pObject, uint Chars, sbyte* pName)
+        {
+            var guid = WKPDID_D3DDebugObjectName;
+            return pObject->SetPrivateData(&guid, Chars, pName);
+        }
+
+        public static int D3D_SET_OBJECT_NAME_A(IDXGIObject* pObject, sbyte* pName)
+        {
+            return D3D_SET_OBJECT_NAME_N_A(pObject, (uint)lstrlenA(pName), pName);
+        }
+
+        public static int D3D_SET_OBJECT_NAME_N_W(IDXGIObject* pObject, uint Chars, ushort* pName)
+        {
+            var guid = WKPDID_D3DDebugObjectNameW;
+            return pObject->SetPrivateData(&guid, Chars * 2, pName);
+        }
+
+        public static int D3D_SET_OBJECT_NAME_W(IDXGIObject* pObject, ushort* pName)
+        {
+            return D3D_SET_OBJECT_NAME_N_W(pObject, (uint)lstrlenW(pName), pName);
+        }
     }
 }

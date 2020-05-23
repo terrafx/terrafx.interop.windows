@@ -14,7 +14,7 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _GetDesc(ID3D12FunctionParameterReflection* pThis, [NativeTypeName("D3D12_PARAMETER_DESC *")] D3D12_PARAMETER_DESC* pDesc);
 

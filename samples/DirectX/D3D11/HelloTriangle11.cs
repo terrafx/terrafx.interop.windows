@@ -9,7 +9,6 @@ using static TerraFX.Interop.D3D_PRIMITIVE_TOPOLOGY;
 using static TerraFX.Interop.D3D11_BIND_FLAG;
 using static TerraFX.Interop.D3D11_INPUT_CLASSIFICATION;
 using static TerraFX.Interop.D3D11_USAGE;
-using static TerraFX.Interop.D3DCompiler;
 using static TerraFX.Interop.DXGI_FORMAT;
 using static TerraFX.Interop.DXGI_SWAP_EFFECT;
 using static TerraFX.Interop.Windows;

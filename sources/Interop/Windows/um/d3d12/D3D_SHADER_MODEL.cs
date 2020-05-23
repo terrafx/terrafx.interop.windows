@@ -14,5 +14,6 @@ namespace TerraFX.Interop
         D3D_SHADER_MODEL_6_3 = 0x63,
         D3D_SHADER_MODEL_6_4 = 0x64,
         D3D_SHADER_MODEL_6_5 = 0x65,
+        D3D_SHADER_MODEL_6_6 = 0x66,
     }
 }

@@ -14,19 +14,19 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _GetDesc(ID3D12ShaderReflectionVariable* pThis, [NativeTypeName("D3D12_SHADER_VARIABLE_DESC *")] D3D12_SHADER_VARIABLE_DESC* pDesc);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ID3D12ShaderReflectionType *")]
         public delegate ID3D12ShaderReflectionType* _GetType(ID3D12ShaderReflectionVariable* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ID3D12ShaderReflectionConstantBuffer *")]
         public delegate ID3D12ShaderReflectionConstantBuffer* _GetBuffer(ID3D12ShaderReflectionVariable* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("UINT")]
         public delegate uint _GetInterfaceSlot(ID3D12ShaderReflectionVariable* pThis, [NativeTypeName("UINT")] uint uArrayIndex);
 

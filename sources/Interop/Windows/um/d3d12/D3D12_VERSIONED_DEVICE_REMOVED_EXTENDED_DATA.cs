@@ -11,7 +11,7 @@ namespace TerraFX.Interop
     {
         public D3D12_DRED_VERSION Version;
 
-        [NativeTypeName("D3D12_VERSIONED_DEVICE_REMOVED_EXTENDED_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12.h:13277:5)")]
+        [NativeTypeName("D3D12_VERSIONED_DEVICE_REMOVED_EXTENDED_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12.h:13459:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
@@ -22,6 +22,9 @@ namespace TerraFX.Interop
 
             [FieldOffset(0)]
             public D3D12_DEVICE_REMOVED_EXTENDED_DATA1 Dred_1_1;
+
+            [FieldOffset(0)]
+            public D3D12_DEVICE_REMOVED_EXTENDED_DATA2 Dred_1_2;
         }
     }
 }

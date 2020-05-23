@@ -3,7 +3,7 @@
 using System;
 using System.Runtime.InteropServices;
 using NUnit.Framework;
-using static TerraFX.Interop.D3DCommon;
+using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {

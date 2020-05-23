@@ -14,26 +14,26 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _QueryInterface(ID3D12DeviceRemovedExtendedDataSettings* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ULONG")]
         public delegate uint _AddRef(ID3D12DeviceRemovedExtendedDataSettings* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ULONG")]
         public delegate uint _Release(ID3D12DeviceRemovedExtendedDataSettings* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetAutoBreadcrumbsEnablement(ID3D12DeviceRemovedExtendedDataSettings* pThis, D3D12_DRED_ENABLEMENT __MIDL__ID3D12DeviceRemovedExtendedDataSettings0000);
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
+        public delegate void _SetAutoBreadcrumbsEnablement(ID3D12DeviceRemovedExtendedDataSettings* pThis, D3D12_DRED_ENABLEMENT Enablement);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetPageFaultEnablement(ID3D12DeviceRemovedExtendedDataSettings* pThis, D3D12_DRED_ENABLEMENT __MIDL__ID3D12DeviceRemovedExtendedDataSettings0001);
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
+        public delegate void _SetPageFaultEnablement(ID3D12DeviceRemovedExtendedDataSettings* pThis, D3D12_DRED_ENABLEMENT Enablement);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        public delegate void _SetWatsonDumpEnablement(ID3D12DeviceRemovedExtendedDataSettings* pThis, D3D12_DRED_ENABLEMENT __MIDL__ID3D12DeviceRemovedExtendedDataSettings0002);
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
+        public delegate void _SetWatsonDumpEnablement(ID3D12DeviceRemovedExtendedDataSettings* pThis, D3D12_DRED_ENABLEMENT Enablement);
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
@@ -53,19 +53,19 @@ namespace TerraFX.Interop
             return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ID3D12DeviceRemovedExtendedDataSettings*)Unsafe.AsPointer(ref this));
         }
 
-        public void SetAutoBreadcrumbsEnablement(D3D12_DRED_ENABLEMENT __MIDL__ID3D12DeviceRemovedExtendedDataSettings0000)
+        public void SetAutoBreadcrumbsEnablement(D3D12_DRED_ENABLEMENT Enablement)
         {
-            Marshal.GetDelegateForFunctionPointer<_SetAutoBreadcrumbsEnablement>(lpVtbl->SetAutoBreadcrumbsEnablement)((ID3D12DeviceRemovedExtendedDataSettings*)Unsafe.AsPointer(ref this), __MIDL__ID3D12DeviceRemovedExtendedDataSettings0000);
+            Marshal.GetDelegateForFunctionPointer<_SetAutoBreadcrumbsEnablement>(lpVtbl->SetAutoBreadcrumbsEnablement)((ID3D12DeviceRemovedExtendedDataSettings*)Unsafe.AsPointer(ref this), Enablement);
         }
 
-        public void SetPageFaultEnablement(D3D12_DRED_ENABLEMENT __MIDL__ID3D12DeviceRemovedExtendedDataSettings0001)
+        public void SetPageFaultEnablement(D3D12_DRED_ENABLEMENT Enablement)
         {
-            Marshal.GetDelegateForFunctionPointer<_SetPageFaultEnablement>(lpVtbl->SetPageFaultEnablement)((ID3D12DeviceRemovedExtendedDataSettings*)Unsafe.AsPointer(ref this), __MIDL__ID3D12DeviceRemovedExtendedDataSettings0001);
+            Marshal.GetDelegateForFunctionPointer<_SetPageFaultEnablement>(lpVtbl->SetPageFaultEnablement)((ID3D12DeviceRemovedExtendedDataSettings*)Unsafe.AsPointer(ref this), Enablement);
         }
 
-        public void SetWatsonDumpEnablement(D3D12_DRED_ENABLEMENT __MIDL__ID3D12DeviceRemovedExtendedDataSettings0002)
+        public void SetWatsonDumpEnablement(D3D12_DRED_ENABLEMENT Enablement)
         {
-            Marshal.GetDelegateForFunctionPointer<_SetWatsonDumpEnablement>(lpVtbl->SetWatsonDumpEnablement)((ID3D12DeviceRemovedExtendedDataSettings*)Unsafe.AsPointer(ref this), __MIDL__ID3D12DeviceRemovedExtendedDataSettings0002);
+            Marshal.GetDelegateForFunctionPointer<_SetWatsonDumpEnablement>(lpVtbl->SetWatsonDumpEnablement)((ID3D12DeviceRemovedExtendedDataSettings*)Unsafe.AsPointer(ref this), Enablement);
         }
 
         public partial struct Vtbl

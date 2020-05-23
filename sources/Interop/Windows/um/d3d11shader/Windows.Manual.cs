@@ -55,8 +55,8 @@ namespace TerraFX.Interop
 
         public static D3D11_SHADER_VERSION_TYPE D3D11_SHVER_GET_TYPE(int _Version) => (D3D11_SHADER_VERSION_TYPE)((_Version >> 16) & 0xFFFF);
 
-        public static int D3D12_SHVER_GET_MAJOR(int _Version) => (_Version >> 4) & 0xF;
+        public static int D3D11_SHVER_GET_MAJOR(int _Version) => (_Version >> 4) & 0xF;
 
-        public static int D3D12_SHVER_GET_MINOR(int _Version) => (_Version >> 0) & 0xF;
+        public static int D3D11_SHVER_GET_MINOR(int _Version) => (_Version >> 0) & 0xF;
     }
 }
