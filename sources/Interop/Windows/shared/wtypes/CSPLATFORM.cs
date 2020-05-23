@@ -5,12 +5,18 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct BSTRBLOB
+    public partial struct CSPLATFORM
     {
-        [NativeTypeName("ULONG")]
-        public uint cbSize;
+        [NativeTypeName("DWORD")]
+        public uint dwPlatformId;
 
-        [NativeTypeName("BYTE *")]
-        public byte* pData;
+        [NativeTypeName("DWORD")]
+        public uint dwVersionHi;
+
+        [NativeTypeName("DWORD")]
+        public uint dwVersionLo;
+
+        [NativeTypeName("DWORD")]
+        public uint dwProcessorArch;
     }
 }

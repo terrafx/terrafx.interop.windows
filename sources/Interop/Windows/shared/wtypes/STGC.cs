@@ -5,12 +5,12 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct BSTRBLOB
+    public enum STGC
     {
-        [NativeTypeName("ULONG")]
-        public uint cbSize;
-
-        [NativeTypeName("BYTE *")]
-        public byte* pData;
+        STGC_DEFAULT = 0,
+        STGC_OVERWRITE = 1,
+        STGC_ONLYIFCURRENT = 2,
+        STGC_DANGEROUSLYCOMMITMERELYTODISKCACHE = 4,
+        STGC_CONSOLIDATE = 8,
     }
 }

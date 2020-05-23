@@ -5,12 +5,10 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct BSTRBLOB
+    public enum STATFLAG
     {
-        [NativeTypeName("ULONG")]
-        public uint cbSize;
-
-        [NativeTypeName("BYTE *")]
-        public byte* pData;
+        STATFLAG_DEFAULT = 0,
+        STATFLAG_NONAME = 1,
+        STATFLAG_NOOPEN = 2,
     }
 }

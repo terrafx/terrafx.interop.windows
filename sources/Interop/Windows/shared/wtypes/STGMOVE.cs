@@ -5,12 +5,10 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct BSTRBLOB
+    public enum STGMOVE
     {
-        [NativeTypeName("ULONG")]
-        public uint cbSize;
-
-        [NativeTypeName("BYTE *")]
-        public byte* pData;
+        STGMOVE_MOVE = 0,
+        STGMOVE_COPY = 1,
+        STGMOVE_SHALLOWCOPY = 2,
     }
 }

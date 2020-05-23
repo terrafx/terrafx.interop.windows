@@ -11,7 +11,7 @@ namespace TerraFX.Interop
     public partial struct CY
     {
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at shared/wtypes.h:671:5)")]
+        [NativeTypeName("tagCY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/wtypes.h:671:5)")]
         public _Anonymous_e__Struct Anonymous;
 
         [FieldOffset(0)]

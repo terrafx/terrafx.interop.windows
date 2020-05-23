@@ -1,19 +1,19 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/wtypes.h in the Windows SDK for Windows 10.0.19041.0
+// Ported from shared/wtypesbase.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct CLIPDATA
+    public unsafe partial struct FLAGGED_BYTE_BLOB
     {
         [NativeTypeName("ULONG")]
-        public uint cbSize;
+        public uint fFlags;
 
-        [NativeTypeName("LONG")]
-        public int ulClipFmt;
+        [NativeTypeName("ULONG")]
+        public uint clSize;
 
-        [NativeTypeName("BYTE *")]
-        public byte* pClipData;
+        [NativeTypeName("byte [1]")]
+        public fixed byte abData[1];
     }
 }

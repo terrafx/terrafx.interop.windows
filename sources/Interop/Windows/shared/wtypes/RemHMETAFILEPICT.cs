@@ -5,12 +5,21 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct BSTRBLOB
+    public unsafe partial struct RemHMETAFILEPICT
     {
-        [NativeTypeName("ULONG")]
-        public uint cbSize;
+        [NativeTypeName("LONG")]
+        public int mm;
 
-        [NativeTypeName("BYTE *")]
-        public byte* pData;
+        [NativeTypeName("LONG")]
+        public int xExt;
+
+        [NativeTypeName("LONG")]
+        public int yExt;
+
+        [NativeTypeName("ULONG")]
+        public uint cbData;
+
+        [NativeTypeName("byte [1]")]
+        public fixed byte data[1];
     }
 }

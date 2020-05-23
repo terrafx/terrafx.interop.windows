@@ -3,14 +3,16 @@
 // Ported from shared/wtypes.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop
 {
-    public unsafe partial struct BSTRBLOB
+    public partial struct PROPERTYKEY
     {
-        [NativeTypeName("ULONG")]
-        public uint cbSize;
+        [NativeTypeName("GUID")]
+        public Guid fmtid;
 
-        [NativeTypeName("BYTE *")]
-        public byte* pData;
+        [NativeTypeName("DWORD")]
+        public uint pid;
     }
 }

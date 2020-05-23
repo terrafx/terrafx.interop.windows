@@ -5,12 +5,11 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct BSTRBLOB
+    public enum DVASPECT
     {
-        [NativeTypeName("ULONG")]
-        public uint cbSize;
-
-        [NativeTypeName("BYTE *")]
-        public byte* pData;
+        DVASPECT_CONTENT = 1,
+        DVASPECT_THUMBNAIL = 2,
+        DVASPECT_ICON = 4,
+        DVASPECT_DOCPRINT = 8,
     }
 }
