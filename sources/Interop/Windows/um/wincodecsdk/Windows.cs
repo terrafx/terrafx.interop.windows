@@ -8,17 +8,17 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class WinCodec
+    public static unsafe partial class Windows
     {
-        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "WICMatchMetadataContent", ExactSpelling = true)]
+        [DllImport("WindowsCodecs", EntryPoint = "WICMatchMetadataContent", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int WICMatchMetadataContent([NativeTypeName("const GUID &")] Guid* guidContainerFormat, [NativeTypeName("const GUID *")] Guid* pguidVendor, [NativeTypeName("IStream *")] IStream* pIStream, [NativeTypeName("GUID *")] Guid* pguidMetadataFormat);
 
-        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "WICSerializeMetadataContent", ExactSpelling = true)]
+        [DllImport("WindowsCodecs", EntryPoint = "WICSerializeMetadataContent", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int WICSerializeMetadataContent([NativeTypeName("const GUID &")] Guid* guidContainerFormat, [NativeTypeName("IWICMetadataWriter *")] IWICMetadataWriter* pIWriter, [NativeTypeName("DWORD")] uint dwPersistOptions, [NativeTypeName("IStream *")] IStream* pIStream);
 
-        [DllImport(LibraryPath, CallingConvention = CallingConvention.StdCall, EntryPoint = "WICGetMetadataContentSize", ExactSpelling = true)]
+        [DllImport("WindowsCodecs", EntryPoint = "WICGetMetadataContentSize", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int WICGetMetadataContentSize([NativeTypeName("const GUID &")] Guid* guidContainerFormat, [NativeTypeName("IWICMetadataWriter *")] IWICMetadataWriter* pIWriter, [NativeTypeName("ULARGE_INTEGER *")] ULARGE_INTEGER* pcbSize);
     }

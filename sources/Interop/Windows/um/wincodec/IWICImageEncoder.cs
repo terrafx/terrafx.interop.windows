@@ -14,29 +14,29 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _QueryInterface(IWICImageEncoder* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ULONG")]
         public delegate uint _AddRef(IWICImageEncoder* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ULONG")]
         public delegate uint _Release(IWICImageEncoder* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _WriteFrame(IWICImageEncoder* pThis, [NativeTypeName("ID2D1Image *")] IUnknown* pImage, [NativeTypeName("IWICBitmapFrameEncode *")] IWICBitmapFrameEncode* pFrameEncode, [NativeTypeName("const WICImageParameters *")] WICImageParameters* pImageParameters);
+        public delegate int _WriteFrame(IWICImageEncoder* pThis, [NativeTypeName("ID2D1Image *")] ID2D1Image* pImage, [NativeTypeName("IWICBitmapFrameEncode *")] IWICBitmapFrameEncode* pFrameEncode, [NativeTypeName("const WICImageParameters *")] WICImageParameters* pImageParameters);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _WriteFrameThumbnail(IWICImageEncoder* pThis, [NativeTypeName("ID2D1Image *")] IUnknown* pImage, [NativeTypeName("IWICBitmapFrameEncode *")] IWICBitmapFrameEncode* pFrameEncode, [NativeTypeName("const WICImageParameters *")] WICImageParameters* pImageParameters);
+        public delegate int _WriteFrameThumbnail(IWICImageEncoder* pThis, [NativeTypeName("ID2D1Image *")] ID2D1Image* pImage, [NativeTypeName("IWICBitmapFrameEncode *")] IWICBitmapFrameEncode* pFrameEncode, [NativeTypeName("const WICImageParameters *")] WICImageParameters* pImageParameters);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _WriteThumbnail(IWICImageEncoder* pThis, [NativeTypeName("ID2D1Image *")] IUnknown* pImage, [NativeTypeName("IWICBitmapEncoder *")] IWICBitmapEncoder* pEncoder, [NativeTypeName("const WICImageParameters *")] WICImageParameters* pImageParameters);
+        public delegate int _WriteThumbnail(IWICImageEncoder* pThis, [NativeTypeName("ID2D1Image *")] ID2D1Image* pImage, [NativeTypeName("IWICBitmapEncoder *")] IWICBitmapEncoder* pEncoder, [NativeTypeName("const WICImageParameters *")] WICImageParameters* pImageParameters);
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
@@ -57,19 +57,19 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int WriteFrame([NativeTypeName("ID2D1Image *")] IUnknown* pImage, [NativeTypeName("IWICBitmapFrameEncode *")] IWICBitmapFrameEncode* pFrameEncode, [NativeTypeName("const WICImageParameters *")] WICImageParameters* pImageParameters)
+        public int WriteFrame([NativeTypeName("ID2D1Image *")] ID2D1Image* pImage, [NativeTypeName("IWICBitmapFrameEncode *")] IWICBitmapFrameEncode* pFrameEncode, [NativeTypeName("const WICImageParameters *")] WICImageParameters* pImageParameters)
         {
             return Marshal.GetDelegateForFunctionPointer<_WriteFrame>(lpVtbl->WriteFrame)((IWICImageEncoder*)Unsafe.AsPointer(ref this), pImage, pFrameEncode, pImageParameters);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int WriteFrameThumbnail([NativeTypeName("ID2D1Image *")] IUnknown* pImage, [NativeTypeName("IWICBitmapFrameEncode *")] IWICBitmapFrameEncode* pFrameEncode, [NativeTypeName("const WICImageParameters *")] WICImageParameters* pImageParameters)
+        public int WriteFrameThumbnail([NativeTypeName("ID2D1Image *")] ID2D1Image* pImage, [NativeTypeName("IWICBitmapFrameEncode *")] IWICBitmapFrameEncode* pFrameEncode, [NativeTypeName("const WICImageParameters *")] WICImageParameters* pImageParameters)
         {
             return Marshal.GetDelegateForFunctionPointer<_WriteFrameThumbnail>(lpVtbl->WriteFrameThumbnail)((IWICImageEncoder*)Unsafe.AsPointer(ref this), pImage, pFrameEncode, pImageParameters);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int WriteThumbnail([NativeTypeName("ID2D1Image *")] IUnknown* pImage, [NativeTypeName("IWICBitmapEncoder *")] IWICBitmapEncoder* pEncoder, [NativeTypeName("const WICImageParameters *")] WICImageParameters* pImageParameters)
+        public int WriteThumbnail([NativeTypeName("ID2D1Image *")] ID2D1Image* pImage, [NativeTypeName("IWICBitmapEncoder *")] IWICBitmapEncoder* pEncoder, [NativeTypeName("const WICImageParameters *")] WICImageParameters* pImageParameters)
         {
             return Marshal.GetDelegateForFunctionPointer<_WriteThumbnail>(lpVtbl->WriteThumbnail)((IWICImageEncoder*)Unsafe.AsPointer(ref this), pImage, pEncoder, pImageParameters);
         }

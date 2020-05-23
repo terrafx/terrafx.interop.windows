@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Winapi)]
     [return: NativeTypeName("HRESULT")]
     public unsafe delegate int PFNProgressNotification([NativeTypeName("LPVOID")] void* pvData, [NativeTypeName("ULONG")] uint uFrameNum, WICProgressOperation operation, double dblProgress);
 }
