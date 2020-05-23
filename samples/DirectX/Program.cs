@@ -13,9 +13,9 @@ namespace TerraFX.Samples.DirectX
         private static readonly DXSample[] Samples = {
             new HelloWindow11(1280, 720, "D3D11.HelloWindow"),
             new HelloTriangle11(1280, 720, "D3D11.HelloTriangle"),
-            new HelloConstBuffer12(1280, 720, "D3D12.HelloConstBuffer"),
             new HelloWindow12(1280, 720, "D3D12.HelloWindow"),
-            new HelloTriangle12(1280, 720, "D3D12.HelloTriangle")
+            new HelloTriangle12(1280, 720, "D3D12.HelloTriangle"),
+            new HelloConstBuffer12(1280, 720, "D3D12.HelloConstBuffer"),
         };
 
         public static void Main(string[] args)
