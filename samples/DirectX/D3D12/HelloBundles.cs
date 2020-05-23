@@ -54,11 +54,13 @@ namespace TerraFX.Samples.DirectX.D3D12
         private ID3D12Device* _device;
         private readonly ID3D12Resource*[] _renderTargets;
         private ID3D12CommandAllocator* _commandAllocator;
+        private ID3D12CommandAllocator* _bundleAllocator;
         private ID3D12CommandQueue* _commandQueue;
         private ID3D12RootSignature* _rootSignature;
         private ID3D12DescriptorHeap* _rtvHeap;
         private ID3D12PipelineState* _pipelineState;
         private ID3D12GraphicsCommandList* _commandList;
+        private ID3D12GraphicsCommandList* _bundle;
         private uint _rtvDescriptorSize;
 
         // App resources.
@@ -259,6 +261,11 @@ namespace TerraFX.Samples.DirectX.D3D12
                     iid = IID_ID3D12CommandAllocator;
                     ThrowIfFailed(nameof(ID3D12Device.CreateRenderTargetView), _device->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_DIRECT, &iid, (void**)commandAllocator));
                 }
+                fixed (ID3D12CommandAllocator** bundleAllocator = &_bundleAllocator)
+                {
+                    iid = IID_ID3D12CommandAllocator;
+                    ThrowIfFailed(nameof(ID3D12Device.CreateRenderTargetView), _device->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_DIRECT, &iid, (void**)bundleAllocator));
+                }
             }
             finally
             {
@@ -354,7 +361,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                             InputSlotClass = D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA,
                         },
                     };
-                        
+
                     // Describe and create the graphics pipeline state object (PSO).
                     var psoDesc = new D3D12_GRAPHICS_PIPELINE_STATE_DESC {
                         InputLayout = new D3D12_INPUT_LAYOUT_DESC {
@@ -449,6 +456,23 @@ namespace TerraFX.Samples.DirectX.D3D12
                     _vertexBufferView.SizeInBytes = vertexBufferSize;
                 }
 
+                // Create and record the bundle.
+                {
+                    fixed (ID3D12GraphicsCommandList** ppBundle = &_bundle)
+                    {
+                        iid = IID_ID3D12GraphicsCommandList;
+                        ThrowIfFailed(nameof(ID3D12Device.CreateCommandList), _device->CreateCommandList(nodeMask: 0, D3D12_COMMAND_LIST_TYPE_BUNDLE, _bundleAllocator, _pipelineState, &iid, (void**)ppBundle));
+                    }
+                    _bundle->SetGraphicsRootSignature(_rootSignature);
+                    _bundle->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+                    fixed (D3D12_VERTEX_BUFFER_VIEW* vertexBufferView = &_vertexBufferView)
+                    {
+                        _bundle->IASetVertexBuffers(StartSlot: 0, 1, vertexBufferView);
+                    }
+                    _bundle->DrawInstanced(3, 1, 0, 0);
+                    ThrowIfFailed(nameof(ID3D12GraphicsCommandList.Close), _bundle->Close());
+                }
+
                 // Create synchronization objects and wait until assets have been uploaded to the GPU.
                 {
                     fixed (ID3D12Fence** fence = &_fence)
@@ -532,14 +556,10 @@ namespace TerraFX.Samples.DirectX.D3D12
             // Record commands.
             var clearColor = stackalloc float[4] { 0.0f, 0.2f, 0.4f, 1.0f };
             _commandList->ClearRenderTargetView(rtvHandle, clearColor, NumRects: 0, null);
-            _commandList->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
-            fixed (D3D12_VERTEX_BUFFER_VIEW* vertexBufferView = &_vertexBufferView)
-            {
-                _commandList->IASetVertexBuffers(StartSlot: 0, 1, vertexBufferView);
-            }
 
-            _commandList->DrawInstanced(VertexCountPerInstance: 3, InstanceCount: 1, StartVertexLocation: 0, StartInstanceLocation: 0);
+            // Execute the commands stored in the bundle.
+            _commandList->ExecuteBundle(_bundle);
 
             // Indicate that the back buffer will now be used to present.
             barrier = D3D12_RESOURCE_BARRIER.InitTransition(_renderTargets[unchecked((int)_frameIndex)], D3D12_RESOURCE_STATE_RENDER_TARGET, D3D12_RESOURCE_STATE_PRESENT);
@@ -607,6 +627,14 @@ namespace TerraFX.Samples.DirectX.D3D12
                 _ = commandAllocator->Release();
             }
 
+            var bundleAllocator = _bundleAllocator;
+
+            if (bundleAllocator != null)
+            {
+                _bundleAllocator = null;
+                _ = bundleAllocator->Release();
+            }
+
             var commandQueue = _commandQueue;
 
             if (commandQueue != null)
@@ -645,6 +673,14 @@ namespace TerraFX.Samples.DirectX.D3D12
             {
                 _commandList = null;
                 _ = commandList->Release();
+            }
+
+            var bundle = _bundle;
+
+            if (bundle != null)
+            {
+                _bundle = null;
+                _ = bundle->Release();
             }
 
             var vertexBuffer = _vertexBuffer;
