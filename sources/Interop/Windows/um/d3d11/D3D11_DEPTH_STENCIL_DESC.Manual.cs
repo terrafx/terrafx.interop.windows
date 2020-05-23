@@ -3,7 +3,6 @@
 // Ported from um/d3d11.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using static TerraFX.Interop.D3D11;
 using static TerraFX.Interop.D3D11_DEPTH_WRITE_MASK;
 using static TerraFX.Interop.D3D11_COMPARISON_FUNC;
 using static TerraFX.Interop.Windows;

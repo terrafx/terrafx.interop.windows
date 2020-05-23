@@ -14,55 +14,55 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _QueryInterface(ID3D11ModuleInstance* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ULONG")]
         public delegate uint _AddRef(ID3D11ModuleInstance* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ULONG")]
         public delegate uint _Release(ID3D11ModuleInstance* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _BindConstantBuffer(ID3D11ModuleInstance* pThis, [NativeTypeName("UINT")] uint uSrcSlot, [NativeTypeName("UINT")] uint uDstSlot, [NativeTypeName("UINT")] uint cbDstOffset);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _BindConstantBufferByName(ID3D11ModuleInstance* pThis, [NativeTypeName("LPCSTR")] sbyte* pName, [NativeTypeName("UINT")] uint uDstSlot, [NativeTypeName("UINT")] uint cbDstOffset);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _BindResource(ID3D11ModuleInstance* pThis, [NativeTypeName("UINT")] uint uSrcSlot, [NativeTypeName("UINT")] uint uDstSlot, [NativeTypeName("UINT")] uint uCount);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _BindResourceByName(ID3D11ModuleInstance* pThis, [NativeTypeName("LPCSTR")] sbyte* pName, [NativeTypeName("UINT")] uint uDstSlot, [NativeTypeName("UINT")] uint uCount);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _BindSampler(ID3D11ModuleInstance* pThis, [NativeTypeName("UINT")] uint uSrcSlot, [NativeTypeName("UINT")] uint uDstSlot, [NativeTypeName("UINT")] uint uCount);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _BindSamplerByName(ID3D11ModuleInstance* pThis, [NativeTypeName("LPCSTR")] sbyte* pName, [NativeTypeName("UINT")] uint uDstSlot, [NativeTypeName("UINT")] uint uCount);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _BindUnorderedAccessView(ID3D11ModuleInstance* pThis, [NativeTypeName("UINT")] uint uSrcSlot, [NativeTypeName("UINT")] uint uDstSlot, [NativeTypeName("UINT")] uint uCount);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _BindUnorderedAccessViewByName(ID3D11ModuleInstance* pThis, [NativeTypeName("LPCSTR")] sbyte* pName, [NativeTypeName("UINT")] uint uDstSlot, [NativeTypeName("UINT")] uint uCount);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _BindResourceAsUnorderedAccessView(ID3D11ModuleInstance* pThis, [NativeTypeName("UINT")] uint uSrcSrvSlot, [NativeTypeName("UINT")] uint uDstUavSlot, [NativeTypeName("UINT")] uint uCount);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _BindResourceAsUnorderedAccessViewByName(ID3D11ModuleInstance* pThis, [NativeTypeName("LPCSTR")] sbyte* pSrvName, [NativeTypeName("UINT")] uint uDstUavSlot, [NativeTypeName("UINT")] uint uCount);
 

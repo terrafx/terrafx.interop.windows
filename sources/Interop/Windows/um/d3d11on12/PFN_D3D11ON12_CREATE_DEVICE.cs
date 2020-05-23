@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Winapi)]
     [return: NativeTypeName("HRESULT")]
     public unsafe delegate int PFN_D3D11ON12_CREATE_DEVICE([NativeTypeName("IUnknown *")] IUnknown* param0, [NativeTypeName("UINT")] uint param1, [NativeTypeName("const D3D_FEATURE_LEVEL *")] D3D_FEATURE_LEVEL* param2, [NativeTypeName("UINT")] uint FeatureLevels, [NativeTypeName("IUnknown *const *")] IUnknown** param4, [NativeTypeName("UINT")] uint NumQueues, [NativeTypeName("UINT")] uint param6, [NativeTypeName("ID3D11Device **")] ID3D11Device** param7, [NativeTypeName("ID3D11DeviceContext **")] ID3D11DeviceContext** param8, [NativeTypeName("D3D_FEATURE_LEVEL *")] D3D_FEATURE_LEVEL* param9);
 }

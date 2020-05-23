@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class D3D11
+    public static unsafe partial class Windows
     {
         public static readonly Guid IID_ID3D11Texture2D1 = new Guid(0x51218251, 0x1E33, 0x4617, 0x9C, 0xCB, 0x4D, 0x3A, 0x43, 0x67, 0xE7, 0xBB);
 

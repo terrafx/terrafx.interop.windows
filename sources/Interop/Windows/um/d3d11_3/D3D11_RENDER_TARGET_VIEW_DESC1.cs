@@ -13,7 +13,7 @@ namespace TerraFX.Interop
 
         public D3D11_RTV_DIMENSION ViewDimension;
 
-        [NativeTypeName("D3D11_RENDER_TARGET_VIEW_DESC1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11_3.h:1276:5)")]
+        [NativeTypeName("D3D11_RENDER_TARGET_VIEW_DESC1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11_3.h:1281:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]

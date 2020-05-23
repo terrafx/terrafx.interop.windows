@@ -4,7 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
-using static TerraFX.Interop.D3D11;
+using static TerraFX.Interop.Windows;
 using static TerraFX.Interop.D3D11_RTV_DIMENSION;
 
 namespace TerraFX.Interop

@@ -14,7 +14,7 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D11_SRV_DIMENSION")]
         public D3D_SRV_DIMENSION ViewDimension;
 
-        [NativeTypeName("D3D11_SHADER_RESOURCE_VIEW_DESC1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11_3.h:880:5)")]
+        [NativeTypeName("D3D11_SHADER_RESOURCE_VIEW_DESC1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11_3.h:886:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]

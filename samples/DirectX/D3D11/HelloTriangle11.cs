@@ -6,7 +6,6 @@ using TerraFX.Interop;
 using static TerraFX.Interop.D3D_DRIVER_TYPE;
 using static TerraFX.Interop.D3D_FEATURE_LEVEL;
 using static TerraFX.Interop.D3D_PRIMITIVE_TOPOLOGY;
-using static TerraFX.Interop.D3D11;
 using static TerraFX.Interop.D3D11_BIND_FLAG;
 using static TerraFX.Interop.D3D11_INPUT_CLASSIFICATION;
 using static TerraFX.Interop.D3D11_USAGE;

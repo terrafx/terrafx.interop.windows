@@ -3,7 +3,6 @@
 // Ported from um/d3d11_3.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using static TerraFX.Interop.D3D11;
 using static TerraFX.Interop.D3D11_CONSERVATIVE_RASTERIZATION_MODE;
 using static TerraFX.Interop.D3D11_CULL_MODE;
 using static TerraFX.Interop.D3D11_FILL_MODE;

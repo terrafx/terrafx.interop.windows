@@ -12,7 +12,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class D3D11
+    public static unsafe partial class Windows
     {
         public const uint D3D11_16BIT_INDEX_STRIP_CUT_VALUE = 0xFFFF;
 

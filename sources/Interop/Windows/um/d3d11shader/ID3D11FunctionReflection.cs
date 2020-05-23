@@ -14,31 +14,31 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _GetDesc(ID3D11FunctionReflection* pThis, [NativeTypeName("D3D11_FUNCTION_DESC *")] D3D11_FUNCTION_DESC* pDesc);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ID3D11ShaderReflectionConstantBuffer *")]
         public delegate ID3D11ShaderReflectionConstantBuffer* _GetConstantBufferByIndex(ID3D11FunctionReflection* pThis, [NativeTypeName("UINT")] uint BufferIndex);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ID3D11ShaderReflectionConstantBuffer *")]
         public delegate ID3D11ShaderReflectionConstantBuffer* _GetConstantBufferByName(ID3D11FunctionReflection* pThis, [NativeTypeName("LPCSTR")] sbyte* Name);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _GetResourceBindingDesc(ID3D11FunctionReflection* pThis, [NativeTypeName("UINT")] uint ResourceIndex, [NativeTypeName("D3D11_SHADER_INPUT_BIND_DESC *")] D3D11_SHADER_INPUT_BIND_DESC* pDesc);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ID3D11ShaderReflectionVariable *")]
         public delegate ID3D11ShaderReflectionVariable* _GetVariableByName(ID3D11FunctionReflection* pThis, [NativeTypeName("LPCSTR")] sbyte* Name);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _GetResourceBindingDescByName(ID3D11FunctionReflection* pThis, [NativeTypeName("LPCSTR")] sbyte* Name, [NativeTypeName("D3D11_SHADER_INPUT_BIND_DESC *")] D3D11_SHADER_INPUT_BIND_DESC* pDesc);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ID3D11FunctionParameterReflection *")]
         public delegate ID3D11FunctionParameterReflection* _GetFunctionParameter(ID3D11FunctionReflection* pThis, [NativeTypeName("INT")] int ParameterIndex);
 

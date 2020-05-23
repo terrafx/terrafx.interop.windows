@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class D3D11
+    public static unsafe partial class Windows
     {
         public const uint D3D11_DEBUG_FEATURE_FLUSH_PER_RENDER_OP = 0x1;
 

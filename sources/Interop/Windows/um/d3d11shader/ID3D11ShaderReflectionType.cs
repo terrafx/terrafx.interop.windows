@@ -14,47 +14,47 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _GetDesc(ID3D11ShaderReflectionType* pThis, [NativeTypeName("D3D11_SHADER_TYPE_DESC *")] D3D11_SHADER_TYPE_DESC* pDesc);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ID3D11ShaderReflectionType *")]
         public delegate ID3D11ShaderReflectionType* _GetMemberTypeByIndex(ID3D11ShaderReflectionType* pThis, [NativeTypeName("UINT")] uint Index);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ID3D11ShaderReflectionType *")]
         public delegate ID3D11ShaderReflectionType* _GetMemberTypeByName(ID3D11ShaderReflectionType* pThis, [NativeTypeName("LPCSTR")] sbyte* Name);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("LPCSTR")]
         public delegate sbyte* _GetMemberTypeName(ID3D11ShaderReflectionType* pThis, [NativeTypeName("UINT")] uint Index);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _IsEqual(ID3D11ShaderReflectionType* pThis, [NativeTypeName("ID3D11ShaderReflectionType *")] ID3D11ShaderReflectionType* pType);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ID3D11ShaderReflectionType *")]
         public delegate ID3D11ShaderReflectionType* _GetSubType(ID3D11ShaderReflectionType* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ID3D11ShaderReflectionType *")]
         public delegate ID3D11ShaderReflectionType* _GetBaseClass(ID3D11ShaderReflectionType* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("UINT")]
         public delegate uint _GetNumInterfaces(ID3D11ShaderReflectionType* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ID3D11ShaderReflectionType *")]
         public delegate ID3D11ShaderReflectionType* _GetInterfaceByIndex(ID3D11ShaderReflectionType* pThis, [NativeTypeName("UINT")] uint uIndex);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _IsOfType(ID3D11ShaderReflectionType* pThis, [NativeTypeName("ID3D11ShaderReflectionType *")] ID3D11ShaderReflectionType* pType);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _ImplementsInterface(ID3D11ShaderReflectionType* pThis, [NativeTypeName("ID3D11ShaderReflectionType *")] ID3D11ShaderReflectionType* pBase);
 

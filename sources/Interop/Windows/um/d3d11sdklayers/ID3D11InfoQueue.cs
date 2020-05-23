@@ -14,149 +14,149 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _QueryInterface(ID3D11InfoQueue* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ULONG")]
         public delegate uint _AddRef(ID3D11InfoQueue* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("ULONG")]
         public delegate uint _Release(ID3D11InfoQueue* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _SetMessageCountLimit(ID3D11InfoQueue* pThis, [NativeTypeName("UINT64")] ulong MessageCountLimit);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         public delegate void _ClearStoredMessages(ID3D11InfoQueue* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetMessageA(ID3D11InfoQueue* pThis, [NativeTypeName("UINT64")] ulong MessageIndex, [NativeTypeName("D3D11_MESSAGE *")] D3D11_MESSAGE* pMessage, [NativeTypeName("SIZE_T *")] nuint* pMessageByteLength);
+        public delegate int _GetMessage(ID3D11InfoQueue* pThis, [NativeTypeName("UINT64")] ulong MessageIndex, [NativeTypeName("D3D11_MESSAGE *")] D3D11_MESSAGE* pMessage, [NativeTypeName("SIZE_T *")] nuint* pMessageByteLength);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("UINT64")]
         public delegate ulong _GetNumMessagesAllowedByStorageFilter(ID3D11InfoQueue* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("UINT64")]
         public delegate ulong _GetNumMessagesDeniedByStorageFilter(ID3D11InfoQueue* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("UINT64")]
         public delegate ulong _GetNumStoredMessages(ID3D11InfoQueue* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("UINT64")]
         public delegate ulong _GetNumStoredMessagesAllowedByRetrievalFilter(ID3D11InfoQueue* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("UINT64")]
         public delegate ulong _GetNumMessagesDiscardedByMessageCountLimit(ID3D11InfoQueue* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("UINT64")]
         public delegate ulong _GetMessageCountLimit(ID3D11InfoQueue* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _AddStorageFilterEntries(ID3D11InfoQueue* pThis, [NativeTypeName("D3D11_INFO_QUEUE_FILTER *")] D3D11_INFO_QUEUE_FILTER* pFilter);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _GetStorageFilter(ID3D11InfoQueue* pThis, [NativeTypeName("D3D11_INFO_QUEUE_FILTER *")] D3D11_INFO_QUEUE_FILTER* pFilter, [NativeTypeName("SIZE_T *")] nuint* pFilterByteLength);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         public delegate void _ClearStorageFilter(ID3D11InfoQueue* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _PushEmptyStorageFilter(ID3D11InfoQueue* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _PushCopyOfStorageFilter(ID3D11InfoQueue* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _PushStorageFilter(ID3D11InfoQueue* pThis, [NativeTypeName("D3D11_INFO_QUEUE_FILTER *")] D3D11_INFO_QUEUE_FILTER* pFilter);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         public delegate void _PopStorageFilter(ID3D11InfoQueue* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("UINT")]
         public delegate uint _GetStorageFilterStackSize(ID3D11InfoQueue* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _AddRetrievalFilterEntries(ID3D11InfoQueue* pThis, [NativeTypeName("D3D11_INFO_QUEUE_FILTER *")] D3D11_INFO_QUEUE_FILTER* pFilter);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _GetRetrievalFilter(ID3D11InfoQueue* pThis, [NativeTypeName("D3D11_INFO_QUEUE_FILTER *")] D3D11_INFO_QUEUE_FILTER* pFilter, [NativeTypeName("SIZE_T *")] nuint* pFilterByteLength);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         public delegate void _ClearRetrievalFilter(ID3D11InfoQueue* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _PushEmptyRetrievalFilter(ID3D11InfoQueue* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _PushCopyOfRetrievalFilter(ID3D11InfoQueue* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _PushRetrievalFilter(ID3D11InfoQueue* pThis, [NativeTypeName("D3D11_INFO_QUEUE_FILTER *")] D3D11_INFO_QUEUE_FILTER* pFilter);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         public delegate void _PopRetrievalFilter(ID3D11InfoQueue* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("UINT")]
         public delegate uint _GetRetrievalFilterStackSize(ID3D11InfoQueue* pThis);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _AddMessage(ID3D11InfoQueue* pThis, D3D11_MESSAGE_CATEGORY Category, D3D11_MESSAGE_SEVERITY Severity, D3D11_MESSAGE_ID ID, [NativeTypeName("LPCSTR")] sbyte* pDescription);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _AddApplicationMessage(ID3D11InfoQueue* pThis, D3D11_MESSAGE_SEVERITY Severity, [NativeTypeName("LPCSTR")] sbyte* pDescription);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _SetBreakOnCategory(ID3D11InfoQueue* pThis, D3D11_MESSAGE_CATEGORY Category, [NativeTypeName("BOOL")] int bEnable);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _SetBreakOnSeverity(ID3D11InfoQueue* pThis, D3D11_MESSAGE_SEVERITY Severity, [NativeTypeName("BOOL")] int bEnable);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
         public delegate int _SetBreakOnID(ID3D11InfoQueue* pThis, D3D11_MESSAGE_ID ID, [NativeTypeName("BOOL")] int bEnable);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("BOOL")]
         public delegate int _GetBreakOnCategory(ID3D11InfoQueue* pThis, D3D11_MESSAGE_CATEGORY Category);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("BOOL")]
         public delegate int _GetBreakOnSeverity(ID3D11InfoQueue* pThis, D3D11_MESSAGE_SEVERITY Severity);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("BOOL")]
         public delegate int _GetBreakOnID(ID3D11InfoQueue* pThis, D3D11_MESSAGE_ID ID);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         public delegate void _SetMuteDebugOutput(ID3D11InfoQueue* pThis, [NativeTypeName("BOOL")] int bMute);
 
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("BOOL")]
         public delegate int _GetMuteDebugOutput(ID3D11InfoQueue* pThis);
 
@@ -190,9 +190,9 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetMessageA([NativeTypeName("UINT64")] ulong MessageIndex, [NativeTypeName("D3D11_MESSAGE *")] D3D11_MESSAGE* pMessage, [NativeTypeName("SIZE_T *")] nuint* pMessageByteLength)
+        public int GetMessage([NativeTypeName("UINT64")] ulong MessageIndex, [NativeTypeName("D3D11_MESSAGE *")] D3D11_MESSAGE* pMessage, [NativeTypeName("SIZE_T *")] nuint* pMessageByteLength)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetMessageA>(lpVtbl->GetMessageA)((ID3D11InfoQueue*)Unsafe.AsPointer(ref this), MessageIndex, pMessage, pMessageByteLength);
+            return Marshal.GetDelegateForFunctionPointer<_GetMessage>(lpVtbl->GetMessage)((ID3D11InfoQueue*)Unsafe.AsPointer(ref this), MessageIndex, pMessage, pMessageByteLength);
         }
 
         [return: NativeTypeName("UINT64")]
@@ -400,7 +400,7 @@ namespace TerraFX.Interop
             public IntPtr ClearStoredMessages;
 
             [NativeTypeName("HRESULT (UINT64, D3D11_MESSAGE *, SIZE_T *) __attribute__((stdcall))")]
-            public IntPtr GetMessageA;
+            public IntPtr GetMessage;
 
             [NativeTypeName("UINT64 () __attribute__((stdcall))")]
             public IntPtr GetNumMessagesAllowedByStorageFilter;
