@@ -5,10 +5,9 @@
 
 namespace TerraFX.Interop
 {
-    public enum DPI_HOSTING_BEHAVIOR
+    public unsafe partial struct APP_LOCAL_DEVICE_ID
     {
-        DPI_HOSTING_BEHAVIOR_INVALID = -1,
-        DPI_HOSTING_BEHAVIOR_DEFAULT = 0,
-        DPI_HOSTING_BEHAVIOR_MIXED = 1,
+        [NativeTypeName("BYTE [32]")]
+        public fixed byte value[32];
     }
 }
