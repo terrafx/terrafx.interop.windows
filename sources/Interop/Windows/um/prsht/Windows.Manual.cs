@@ -197,79 +197,79 @@ namespace TerraFX.Interop
 
         public const int PSN_QUERYINITIALFOCUS = PSN_FIRST - 13;
 
-        public const int PSM_SETCURSEL = User32.WM_USER + 101;
+        public const int PSM_SETCURSEL = Windows.WM_USER + 101;
 
-        public const int PSM_ADDPAGE = User32.WM_USER + 103;
+        public const int PSM_ADDPAGE = Windows.WM_USER + 103;
 
-        public const int PSM_CHANGED = User32.WM_USER + 104;
+        public const int PSM_CHANGED = Windows.WM_USER + 104;
 
-        public const int PSM_RESTARTWINDOWS = User32.WM_USER + 105;
+        public const int PSM_RESTARTWINDOWS = Windows.WM_USER + 105;
 
-        public const int PSM_REBOOTSYSTEM = User32.WM_USER + 106;
+        public const int PSM_REBOOTSYSTEM = Windows.WM_USER + 106;
 
-        public const int PSM_CANCELTOCLOSE = User32.WM_USER + 107;
+        public const int PSM_CANCELTOCLOSE = Windows.WM_USER + 107;
 
-        public const int PSM_QUERYSIBLINGS = User32.WM_USER + 108;
+        public const int PSM_QUERYSIBLINGS = Windows.WM_USER + 108;
 
-        public const int PSM_UNCHANGED = User32.WM_USER + 109;
+        public const int PSM_UNCHANGED = Windows.WM_USER + 109;
 
-        public const int PSM_APPLY = User32.WM_USER + 110;
+        public const int PSM_APPLY = Windows.WM_USER + 110;
 
-        public const int PSM_SETTITLEA = User32.WM_USER + 111;
+        public const int PSM_SETTITLEA = Windows.WM_USER + 111;
 
-        public const int PSM_SETTITLEW = User32.WM_USER + 120;
+        public const int PSM_SETTITLEW = Windows.WM_USER + 120;
 
-        public const int PSM_SETWIZBUTTONS = User32.WM_USER + 112;
+        public const int PSM_SETWIZBUTTONS = Windows.WM_USER + 112;
 
-        public const int PSM_PRESSBUTTON = User32.WM_USER + 113;
+        public const int PSM_PRESSBUTTON = Windows.WM_USER + 113;
 
-        public const int PSM_SETCURSELID = User32.WM_USER + 114;
+        public const int PSM_SETCURSELID = Windows.WM_USER + 114;
 
-        public const int PSM_SETFINISHTEXTA = User32.WM_USER + 115;
+        public const int PSM_SETFINISHTEXTA = Windows.WM_USER + 115;
 
-        public const int PSM_SETFINISHTEXTW = User32.WM_USER + 121;
+        public const int PSM_SETFINISHTEXTW = Windows.WM_USER + 121;
 
-        public const int PSM_GETTABCONTROL = User32.WM_USER + 116;
+        public const int PSM_GETTABCONTROL = Windows.WM_USER + 116;
 
-        public const int PSM_ISDIALOGMESSAGE = User32.WM_USER + 117;
+        public const int PSM_ISDIALOGMESSAGE = Windows.WM_USER + 117;
 
-        public const int PSM_GETCURRENTPAGEHWND = User32.WM_USER + 118;
+        public const int PSM_GETCURRENTPAGEHWND = Windows.WM_USER + 118;
 
-        public const int PSM_INSERTPAGE = User32.WM_USER + 119;
+        public const int PSM_INSERTPAGE = Windows.WM_USER + 119;
 
         public const uint PSWIZF_SETCOLOR = unchecked((uint)-1);
 
-        public const int PSM_SETHEADERTITLEA = User32.WM_USER + 125;
+        public const int PSM_SETHEADERTITLEA = Windows.WM_USER + 125;
 
-        public const int PSM_SETHEADERTITLEW = User32.WM_USER + 126;
+        public const int PSM_SETHEADERTITLEW = Windows.WM_USER + 126;
 
-        public const int PSM_SETHEADERSUBTITLEA = User32.WM_USER + 127;
+        public const int PSM_SETHEADERSUBTITLEA = Windows.WM_USER + 127;
 
-        public const int PSM_SETHEADERSUBTITLEW = User32.WM_USER + 128;
+        public const int PSM_SETHEADERSUBTITLEW = Windows.WM_USER + 128;
 
-        public const int PSM_HWNDTOINDEX = User32.WM_USER + 129;
+        public const int PSM_HWNDTOINDEX = Windows.WM_USER + 129;
 
-        public const int PSM_INDEXTOHWND = User32.WM_USER + 130;
+        public const int PSM_INDEXTOHWND = Windows.WM_USER + 130;
 
-        public const int PSM_PAGETOINDEX = User32.WM_USER + 131;
+        public const int PSM_PAGETOINDEX = Windows.WM_USER + 131;
 
-        public const int PSM_INDEXTOPAGE = User32.WM_USER + 132;
+        public const int PSM_INDEXTOPAGE = Windows.WM_USER + 132;
 
-        public const int PSM_IDTOINDEX = User32.WM_USER + 133;
+        public const int PSM_IDTOINDEX = Windows.WM_USER + 133;
 
-        public const int PSM_INDEXTOID = User32.WM_USER + 134;
+        public const int PSM_INDEXTOID = Windows.WM_USER + 134;
 
-        public const int PSM_GETRESULT = User32.WM_USER + 135;
+        public const int PSM_GETRESULT = Windows.WM_USER + 135;
 
-        public const int PSM_RECALCPAGESIZES = User32.WM_USER + 136;
+        public const int PSM_RECALCPAGESIZES = Windows.WM_USER + 136;
 
-        public const int PSM_SETNEXTTEXTW = User32.WM_USER + 137;
+        public const int PSM_SETNEXTTEXTW = Windows.WM_USER + 137;
 
-        public const int PSM_SHOWWIZBUTTONS = User32.WM_USER + 138;
+        public const int PSM_SHOWWIZBUTTONS = Windows.WM_USER + 138;
 
-        public const int PSM_ENABLEWIZBUTTONS = User32.WM_USER + 139;
+        public const int PSM_ENABLEWIZBUTTONS = Windows.WM_USER + 139;
 
-        public const int PSM_SETBUTTONTEXTW = User32.WM_USER + 140;
+        public const int PSM_SETBUTTONTEXTW = Windows.WM_USER + 140;
 
         public const int ID_PSREBOOTSYSTEM = ID_PSRESTARTWINDOWS | 0x1;
 

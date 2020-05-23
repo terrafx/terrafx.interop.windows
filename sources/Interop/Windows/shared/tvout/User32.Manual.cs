@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public static partial class User32
+    public static partial class Windows
     {
         public const int VP_COMMAND_GET = 0x0001;
 

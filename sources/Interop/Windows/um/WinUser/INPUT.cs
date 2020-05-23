@@ -12,7 +12,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint type;
 
-        [NativeTypeName("tagINPUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinUser.h:6116:5)")]
+        [NativeTypeName("tagINPUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinUser.h:6130:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]

@@ -12,7 +12,7 @@ namespace TerraFX.Interop
         [NativeTypeName("POINTER_INPUT_TYPE")]
         public uint type;
 
-        [NativeTypeName("tagPOINTER_TYPE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinUser.h:6467:5)")]
+        [NativeTypeName("tagPOINTER_TYPE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinUser.h:6481:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]

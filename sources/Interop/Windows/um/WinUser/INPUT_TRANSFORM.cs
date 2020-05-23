@@ -9,14 +9,14 @@ namespace TerraFX.Interop
 {
     public partial struct INPUT_TRANSFORM
     {
-        [NativeTypeName("tagINPUT_TRANSFORM::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinUser.h:6787:5)")]
+        [NativeTypeName("tagINPUT_TRANSFORM::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinUser.h:6802:5)")]
         public _Anonymous_e__Union Anonymous;
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("tagINPUT_TRANSFORM::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinUser.h:6788:9)")]
+            [NativeTypeName("tagINPUT_TRANSFORM::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinUser.h:6803:9)")]
             public _Anonymous_e__Struct Anonymous;
 
             [FieldOffset(0)]

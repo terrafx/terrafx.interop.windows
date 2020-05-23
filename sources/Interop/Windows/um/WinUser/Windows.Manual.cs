@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class User32
+    public static unsafe partial class Windows
     {
         public const ushort RT_CURSOR = 1;
 
@@ -5889,16 +5889,9 @@ namespace TerraFX.Interop
         public static readonly IntPtr DWLP_USER = DWLP_DLGPROC + IntPtr.Size;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool IS_INTRESOURCE([NativeTypeName("ULONG_PTR")] UIntPtr _r)
+        public static bool IS_INTRESOURCE([NativeTypeName("ULONG_PTR")] nuint _r)
         {
-            if (IntPtr.Size == 8)
-            {
-                return (_r.ToUInt64() >> 16) == 0;
-            }
-            else
-            {
-                return (_r.ToUInt32() >> 16) == 0;
-            }
+            return (_r >> 16) == 0;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -6050,16 +6043,16 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IS_POINTER_CANCELED_WPARAM(UIntPtr wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG_CANCELED);
 
-        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetWindowLongPtrA", ExactSpelling = true)]
+        [DllImport("user32", CallingConvention = CallingConvention.Winapi, EntryPoint = "GetWindowLongPtrA", ExactSpelling = true)]
         [return: NativeTypeName("LONG_PTR")]
-        internal static extern IntPtr _GetWindowLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex);
+        internal static extern nint _GetWindowLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex);
 
         [return: NativeTypeName("LONG_PTR")]
-        public static IntPtr GetWindowLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex)
+        public static nint GetWindowLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex)
         {
-            if (IntPtr.Size == 4)
+            if (sizeof(nint) == 4)
             {
-                return (IntPtr)GetWindowLongA(hWnd, nIndex);
+                return GetWindowLongA(hWnd, nIndex);
             }
             else
             {
@@ -6067,16 +6060,16 @@ namespace TerraFX.Interop
             }
         }
 
-        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetWindowLongPtrW", ExactSpelling = true)]
+        [DllImport("user32", CallingConvention = CallingConvention.Winapi, EntryPoint = "GetWindowLongPtrW", ExactSpelling = true)]
         [return: NativeTypeName("LONG_PTR")]
-        internal static extern IntPtr _GetWindowLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex);
+        internal static extern nint _GetWindowLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex);
 
         [return: NativeTypeName("LONG_PTR")]
-        public static IntPtr GetWindowLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex)
+        public static nint GetWindowLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex)
         {
-            if (IntPtr.Size == 4)
+            if (sizeof(nint) == 4)
             {
-                return (IntPtr)GetWindowLongW(hWnd, nIndex);
+                return GetWindowLongW(hWnd, nIndex);
             }
             else
             {
@@ -6084,16 +6077,16 @@ namespace TerraFX.Interop
             }
         }
 
-        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetWindowLongPtrA", ExactSpelling = true)]
+        [DllImport("user32", CallingConvention = CallingConvention.Winapi, EntryPoint = "SetWindowLongPtrA", ExactSpelling = true)]
         [return: NativeTypeName("LONG_PTR")]
-        internal static extern IntPtr _SetWindowLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong);
+        internal static extern nint _SetWindowLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong);
 
         [return: NativeTypeName("LONG_PTR")]
-        public static IntPtr SetWindowLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong)
+        public static nint SetWindowLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong)
         {
-            if (IntPtr.Size == 4)
+            if (sizeof(nint) == 4)
             {
-                return (IntPtr)SetWindowLongA(hWnd, nIndex, (int)dwNewLong);
+                return SetWindowLongA(hWnd, nIndex, (int)dwNewLong);
             }
             else
             {
@@ -6101,16 +6094,16 @@ namespace TerraFX.Interop
             }
         }
 
-        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetWindowLongPtrW", ExactSpelling = true)]
+        [DllImport("user32", CallingConvention = CallingConvention.Winapi, EntryPoint = "SetWindowLongPtrW", ExactSpelling = true)]
         [return: NativeTypeName("LONG_PTR")]
-        internal static extern IntPtr _SetWindowLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong);
+        internal static extern nint _SetWindowLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong);
 
         [return: NativeTypeName("LONG_PTR")]
-        public static IntPtr SetWindowLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong)
+        public static nint SetWindowLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong)
         {
-            if (IntPtr.Size == 4)
+            if (sizeof(nint) == 4)
             {
-                return (IntPtr)SetWindowLongW(hWnd, nIndex, (int)dwNewLong);
+                return SetWindowLongW(hWnd, nIndex, (int)dwNewLong);
             }
             else
             {
@@ -6118,16 +6111,16 @@ namespace TerraFX.Interop
             }
         }
 
-        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetClassLongPtrA", ExactSpelling = true)]
+        [DllImport("user32", CallingConvention = CallingConvention.Winapi, EntryPoint = "GetClassLongPtrA", ExactSpelling = true)]
         [return: NativeTypeName("ULONG_PTR")]
-        internal static extern UIntPtr _GetClassLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex);
+        internal static extern nuint _GetClassLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex);
 
         [return: NativeTypeName("ULONG_PTR")]
-        public static UIntPtr GetClassLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex)
+        public static nuint GetClassLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex)
         {
-            if (IntPtr.Size == 4)
+            if (sizeof(nuint) == 4)
             {
-                return (UIntPtr)GetClassLongA(hWnd, nIndex);
+                return GetClassLongA(hWnd, nIndex);
             }
             else
             {
@@ -6135,16 +6128,16 @@ namespace TerraFX.Interop
             }
         }
 
-        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "GetClassLongPtrW", ExactSpelling = true)]
+        [DllImport("user32", CallingConvention = CallingConvention.Winapi, EntryPoint = "GetClassLongPtrW", ExactSpelling = true)]
         [return: NativeTypeName("ULONG_PTR")]
-        internal static extern UIntPtr _GetClassLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex);
+        internal static extern nuint _GetClassLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex);
 
         [return: NativeTypeName("ULONG_PTR")]
-        public static UIntPtr GetClassLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex)
+        public static nuint GetClassLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex)
         {
-            if (IntPtr.Size == 4)
+            if (sizeof(nuint) == 4)
             {
-                return (UIntPtr)GetClassLongW(hWnd, nIndex);
+                return GetClassLongW(hWnd, nIndex);
             }
             else
             {
@@ -6152,16 +6145,16 @@ namespace TerraFX.Interop
             }
         }
 
-        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetClassLongPtrA", ExactSpelling = true)]
+        [DllImport("user32", CallingConvention = CallingConvention.Winapi, EntryPoint = "SetClassLongPtrA", ExactSpelling = true)]
         [return: NativeTypeName("ULONG_PTR")]
-        internal static extern UIntPtr _SetClassLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong);
+        internal static extern nuint _SetClassLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong);
 
         [return: NativeTypeName("ULONG_PTR")]
-        public static UIntPtr SetClassLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong)
+        public static nuint SetClassLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong)
         {
-            if (IntPtr.Size == 4)
+            if (sizeof(nuint) == 4)
             {
-                return (UIntPtr)SetClassLongA(hWnd, nIndex, (int)dwNewLong);
+                return SetClassLongA(hWnd, nIndex, (int)dwNewLong);
             }
             else
             {
@@ -6169,16 +6162,16 @@ namespace TerraFX.Interop
             }
         }
 
-        [DllImport(LibraryPath, CallingConvention = CallingConvention.Winapi, EntryPoint = "SetClassLongPtrW", ExactSpelling = true)]
+        [DllImport("user32", CallingConvention = CallingConvention.Winapi, EntryPoint = "SetClassLongPtrW", ExactSpelling = true)]
         [return: NativeTypeName("ULONG_PTR")]
-        internal static extern UIntPtr _SetClassLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong);
+        internal static extern nuint _SetClassLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong);
 
         [return: NativeTypeName("ULONG_PTR")]
-        public static UIntPtr SetClassLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong)
+        public static nuint SetClassLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] IntPtr dwNewLong)
         {
-            if (IntPtr.Size == 4)
+            if (sizeof(nuint) == 4)
             {
-                return (UIntPtr)SetClassLongW(hWnd, nIndex, (int)dwNewLong);
+                return SetClassLongW(hWnd, nIndex, (int)dwNewLong);
             }
             else
             {
@@ -6214,29 +6207,15 @@ namespace TerraFX.Interop
         public static int GET_SC_WPARAM(UIntPtr wParam) => (int)wParam & 0xFFF0;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static UIntPtr GET_RAWINPUT_CODE_WPARAM(UIntPtr wParam)
+        public static nuint GET_RAWINPUT_CODE_WPARAM(nuint wParam)
         {
-            if (UIntPtr.Size == 8)
-            {
-                return (UIntPtr)(wParam.ToUInt64() & 0xFF);
-            }
-            else
-            {
-                return (UIntPtr)(wParam.ToUInt32() & 0xFF);
-            }
+            return wParam & 0xFF;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static IntPtr RAWINPUT_ALIGN(IntPtr x)
+        public static nint RAWINPUT_ALIGN(nint x)
         {
-            if (IntPtr.Size == 8)
-            {
-                return (IntPtr)((x.ToInt64() + IntPtr.Size - 1) & ~(IntPtr.Size - 1));
-            }
-            else
-            {
-                return (IntPtr)((x.ToInt32() + IntPtr.Size - 1) & ~(IntPtr.Size - 1));
-            }
+            return (x + sizeof(nint) - 1) & ~(sizeof(nint) - 1);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -1608,8 +1608,6 @@ namespace TerraFX.Interop
 
         public const int FLOODFILLSURFACE = 1;
 
-        public const int CCHDEVICENAME = 32;
-
         public const int CCHFORMNAME = 32;
 
         public const int DM_SPECVERSION = 0x0401;
