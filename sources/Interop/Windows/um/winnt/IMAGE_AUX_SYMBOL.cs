@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.18362.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -11,33 +11,33 @@ namespace TerraFX.Interop
     public partial struct IMAGE_AUX_SYMBOL
     {
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h:17383:5)")]
-        public _Sym_e__Union Sym;
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17523:5)")]
+        public _Sym_e__Struct Sym;
 
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h:17403:5)")]
-        public _File_e__Union File;
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17543:5)")]
+        public _File_e__Struct File;
 
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h:17406:5)")]
-        public _Section_e__Union Section;
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17546:5)")]
+        public _Section_e__Struct Section;
 
         [FieldOffset(0)]
         public IMAGE_AUX_SYMBOL_TOKEN_DEF TokenDef;
 
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h:17417:5)")]
-        public _CRC_e__Union CRC;
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17557:5)")]
+        public _CRC_e__Struct CRC;
 
-        public partial struct _Sym_e__Union
+        public partial struct _Sym_e__Struct
         {
             [NativeTypeName("DWORD")]
             public uint TagIndex;
 
-            [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h:17385:9)")]
+            [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17525:9)")]
             public _Misc_e__Union Misc;
 
-            [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h:17392:9)")]
+            [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17532:9)")]
             public _FcnAry_e__Union FcnAry;
 
             [NativeTypeName("WORD")]
@@ -47,14 +47,14 @@ namespace TerraFX.Interop
             public partial struct _Misc_e__Union
             {
                 [FieldOffset(0)]
-                [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h:17386:13)")]
-                public _LnSz_e__Union LnSz;
+                [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17526:13)")]
+                public _LnSz_e__Struct LnSz;
 
                 [FieldOffset(0)]
                 [NativeTypeName("DWORD")]
                 public uint TotalSize;
 
-                public partial struct _LnSz_e__Union
+                public partial struct _LnSz_e__Struct
                 {
                     [NativeTypeName("WORD")]
                     public ushort Linenumber;
@@ -68,14 +68,14 @@ namespace TerraFX.Interop
             public partial struct _FcnAry_e__Union
             {
                 [FieldOffset(0)]
-                [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h:17393:13)")]
-                public _Function_e__Union Function;
+                [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17533:13)")]
+                public _Function_e__Struct Function;
 
                 [FieldOffset(0)]
-                [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h:17397:13)")]
-                public _Array_e__Union Array;
+                [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17537:13)")]
+                public _Array_e__Struct Array;
 
-                public partial struct _Function_e__Union
+                public partial struct _Function_e__Struct
                 {
                     [NativeTypeName("DWORD")]
                     public uint PointerToLinenumber;
@@ -84,7 +84,7 @@ namespace TerraFX.Interop
                     public uint PointerToNextFunction;
                 }
 
-                public unsafe partial struct _Array_e__Union
+                public unsafe partial struct _Array_e__Struct
                 {
                     [NativeTypeName("WORD [4]")]
                     public fixed ushort Dimension[4];
@@ -92,13 +92,13 @@ namespace TerraFX.Interop
             }
         }
 
-        public unsafe partial struct _File_e__Union
+        public unsafe partial struct _File_e__Struct
         {
             [NativeTypeName("BYTE [18]")]
             public fixed byte Name[18];
         }
 
-        public partial struct _Section_e__Union
+        public partial struct _Section_e__Struct
         {
             [NativeTypeName("DWORD")]
             public uint Length;
@@ -125,7 +125,7 @@ namespace TerraFX.Interop
             public short HighNumber;
         }
 
-        public unsafe partial struct _CRC_e__Union
+        public unsafe partial struct _CRC_e__Struct
         {
             [NativeTypeName("DWORD")]
             public uint crc;

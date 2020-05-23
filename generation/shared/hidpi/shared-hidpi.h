@@ -1,3 +1,3 @@
 #include <Windows.h>
-#include <hidusage.h>
+#include <hidsdi.h>
 #include <hidpi.h>

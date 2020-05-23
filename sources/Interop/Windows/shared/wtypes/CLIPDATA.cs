@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/wtypes.h in the Windows SDK for Windows 10.0.18362.0
+// Ported from shared/wtypes.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop
@@ -14,6 +14,6 @@ namespace TerraFX.Interop
         public int ulClipFmt;
 
         [NativeTypeName("BYTE *")]
-        public byte* pClipDAta;
+        public byte* pClipData;
     }
 }

@@ -7,7 +7,6 @@ using System;
 using System.IO;
 using TerraFX.Interop;
 using static TerraFX.Interop.DXGI_ADAPTER_FLAG;
-using static TerraFX.Interop.User32;
 using static TerraFX.Interop.Windows;
 using static TerraFX.Samples.DirectX.DXSampleHelper;
 

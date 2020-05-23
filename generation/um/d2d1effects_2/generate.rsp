@@ -1,13 +1,5 @@
---additional
--m32
--Wno-expansion-to-defined
--Wno-ignored-attributes
--Wno-ignored-pragma-intrinsic
--Wno-nonportable-include-path
--Wno-pragma-pack
---config
-multi-file
-preview-codegen-nint
+@../../settings.rsp
+@../../remap.rsp
 --exclude
 CLSID_D2D1AlphaMask
 CLSID_D2D1ChromaKey
@@ -34,20 +26,10 @@ CLSID_D2D1Vignette
 CLSID_D2D1WhiteLevelAdjustment
 --file
 um-d2d1effects_2.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---methodClassName
-D2D1
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/D2D1/um/d2d1effects_2
+../../../sources/Interop/Windows/um/d2d1effects_2
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d2d1effects_2.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1effects_2.h
 --with-type
 D2D1_CHROMAKEY_PROP=uint
 D2D1_CONTRAST_PROP=uint

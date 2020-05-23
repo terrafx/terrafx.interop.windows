@@ -1,11 +1,11 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/wtypesbase.h in the Windows SDK for Windows 10.0.18362.0
+// Ported from shared/wtypesbase.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop
 {
-    public enum CLSCTX : uint
+    public enum CLSCTX
     {
         CLSCTX_INPROC_SERVER = 0x1,
         CLSCTX_INPROC_HANDLER = 0x2,
@@ -33,6 +33,6 @@ namespace TerraFX.Interop
         CLSCTX_ACTIVATE_AAA_AS_IU = 0x800000,
         CLSCTX_RESERVED6 = 0x1000000,
         CLSCTX_ACTIVATE_ARM32_SERVER = 0x2000000,
-        CLSCTX_PS_DLL = 0x80000000
+        CLSCTX_PS_DLL = unchecked((int)0x80000000),
     }
 }

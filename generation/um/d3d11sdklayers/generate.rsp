@@ -1,13 +1,5 @@
---additional
--m32
--Wno-expansion-to-defined
--Wno-ignored-attributes
--Wno-ignored-pragma-intrinsic
--Wno-nonportable-include-path
--Wno-pragma-pack
---config
-multi-file
-preview-codegen-nint
+@../../settings.rsp
+@../../remap.rsp
 --exclude
 __MIDL_itf_d3d11sdklayers_0000_0000_v0_0_c_ifspec
 __MIDL_itf_d3d11sdklayers_0000_0000_v0_0_s_ifspec
@@ -35,23 +27,10 @@ operator^
 operator^=
 --file
 um-d3d11sdklayers.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---methodClassName
-D3D11
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/D3D11/um/d3d11sdklayers
---remap
-_GUID=Guid
-SIZE_T=nuint
+../../../sources/Interop/Windows/um/d3d11sdklayers
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d3d11sdklayers.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11sdklayers.h
 --with-attribute
 D3D11_RLDO_FLAGS=Flags
 D3D11_SHADER_TRACKING_OPTION=Flags

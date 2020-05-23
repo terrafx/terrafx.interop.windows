@@ -1,13 +1,5 @@
---additional
--m32
--Wno-expansion-to-defined
--Wno-ignored-attributes
--Wno-ignored-pragma-intrinsic
--Wno-nonportable-include-path
--Wno-pragma-pack
---config
-multi-file
-preview-codegen-nint
+@../../settings.rsp
+@../../remap.rsp
 --exclude
 IID_ID2D1CommandSink1
 IID_ID2D1Device1
@@ -59,24 +51,10 @@ void SetRenderingControls(const D2D1_RENDERING_CONTROLS &)
 void SetTransform(const D2D1_MATRIX_3X2_F &)
 --file
 um-d2d1_2.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---methodClassName
-D2D1
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/D2D1/um/d2d1_2
---remap
-_D3DCOLORVALUE=DXGI_RGBA
-_GUID=Guid
-DrawTextA=DrawText
+../../../sources/Interop/Windows/um/d2d1_2
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d2d1_2.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1_2.h
 --with-attribute
 ID2D1CommandSink1=Guid("9EB767FD-4269-4467-B8C2-EB30CB305743")
 ID2D1Device1=Guid("D21768E1-23A4-4823-A14B-7C3EBA85D658")
@@ -94,3 +72,5 @@ ID2D1DeviceContext1=static TerraFX.Interop.D2D1_EXTEND_MODE
 ID2D1DeviceContext1=static TerraFX.Interop.D2D1_GAMMA
 ID2D1DeviceContext1=static TerraFX.Interop.D2D1_INTERPOLATION_MODE
 ID2D1DeviceContext1=static TerraFX.Interop.DWRITE_MEASURING_MODE
+--with-librarypath
+*=d2d1

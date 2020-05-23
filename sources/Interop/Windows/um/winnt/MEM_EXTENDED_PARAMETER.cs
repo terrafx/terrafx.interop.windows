@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.18362.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -10,13 +10,13 @@ namespace TerraFX.Interop
 {
     public partial struct MEM_EXTENDED_PARAMETER
     {
-        [NativeTypeName("MEM_EXTENDED_PARAMETER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h:12924:5)")]
-        public _Anonymous_e__Union1 Anonymous1;
+        [NativeTypeName("MEM_EXTENDED_PARAMETER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:13032:5)")]
+        public _Anonymous1_e__Struct Anonymous1;
 
-        [NativeTypeName("MEM_EXTENDED_PARAMETER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h:12929:5)")]
-        public _Anonymous_e__Union2 Anonymous2;
+        [NativeTypeName("MEM_EXTENDED_PARAMETER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:13037:5)")]
+        public _Anonymous2_e__Union Anonymous2;
 
-        public partial struct _Anonymous_e__Union1
+        public partial struct _Anonymous1_e__Struct
         {
             internal ulong _bitfield;
 
@@ -50,7 +50,7 @@ namespace TerraFX.Interop
         }
 
         [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous_e__Union2
+        public unsafe partial struct _Anonymous2_e__Union
         {
             [FieldOffset(0)]
             [NativeTypeName("DWORD64")]

@@ -1,13 +1,5 @@
---additional
--m32
--Wno-expansion-to-defined
--Wno-ignored-attributes
--Wno-ignored-pragma-intrinsic
--Wno-nonportable-include-path
--Wno-pragma-pack
---config
-multi-file
-preview-codegen-nint
+@../../settings.rsp
+@../../remap.rsp
 --exclude
 D2D1_PROPERTY_BINDING
 DWRITE_GLYPH_RUN_DESCRIPTION
@@ -116,24 +108,10 @@ HRESULT Widen(FLOAT, ID2D1StrokeStyle *, const D2D1_MATRIX_3X2_F &, ID2D1Simplif
 HRESULT Widen(FLOAT, ID2D1StrokeStyle *, const D2D1_MATRIX_3X2_F &, FLOAT, ID2D1SimplifiedGeometrySink *)
 --file
 um-d2d1_1.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---methodClassName
-D2D1
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/D2D1/um/d2d1_1
---remap
-_D3DCOLORVALUE=DXGI_RGBA
-_GUID=Guid
-DrawTextA=DrawText
+../../../sources/Interop/Windows/um/d2d1_1
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d2d1_1.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1_1.h
 --with-attribute
 D2D1_BITMAP_OPTIONS=Flags
 D2D1_DEVICE_CONTEXT_OPTIONS=Flags
@@ -189,3 +167,5 @@ ID2D1DeviceContext=static TerraFX.Interop.D2D1_INTERPOLATION_MODE
 ID2D1DeviceContext=static TerraFX.Interop.DWRITE_MEASURING_MODE
 ID2D1Effect=static TerraFX.Interop.D2D1_PROPERTY_TYPE
 ID2D1Properties=static TerraFX.Interop.D2D1_PROPERTY_TYPE
+--with-librarypath
+*=d2d1

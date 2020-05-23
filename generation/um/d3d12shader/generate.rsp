@@ -1,13 +1,5 @@
---additional
--m32
--Wno-expansion-to-defined
--Wno-ignored-attributes
--Wno-ignored-pragma-intrinsic
--Wno-nonportable-include-path
--Wno-pragma-pack
---config
-multi-file
-preview-codegen-nint
+@../../settings.rsp
+@../../remap.rsp
 --exclude
 IID_ID3D12ShaderReflectionType
 IID_ID3D12ShaderReflectionVariable
@@ -18,38 +10,10 @@ IID_ID3D12FunctionReflection
 IID_ID3D12FunctionParameterReflection
 --file
 um-d3d12shader.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---libraryPath
-D3D12
---methodClassName
-D3D12
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/D3D12/um/d3d12shader
---remap
-_D3D_CBUFFER_TYPE=D3D_CBUFFER_TYPE
-_D3D_PARAMETER_FLAGS=D3D_PARAMETER_FLAGS
-_D3D_SHADER_INPUT_TYPE=D3D_SHADER_INPUT_TYPE
-_D3D_SHADER_VARIABLE_CLASS=D3D_SHADER_VARIABLE_CLASS
-_D3D_SHADER_VARIABLE_TYPE=D3D_SHADER_VARIABLE_TYPE
-_D3D12_FUNCTION_DESC=D3D12_FUNCTION_DESC
-_D3D12_LIBRARY_DESC=D3D12_LIBRARY_DESC
-_D3D12_PARAMETER_DESC=D3D12_PARAMETER_DESC
-_D3D12_SHADER_BUFFER_DESC=D3D12_SHADER_BUFFER_DESC
-_D3D12_SHADER_DESC=D3D12_SHADER_DESC
-_D3D12_SHADER_INPUT_BIND_DESC=D3D12_SHADER_INPUT_BIND_DESC
-_D3D12_SHADER_TYPE_DESC=D3D12_SHADER_TYPE_DESC
-_D3D12_SHADER_VARIABLE_DESC=D3D12_SHADER_VARIABLE_DESC
-_D3D12_SIGNATURE_PARAMETER_DESC=D3D12_SIGNATURE_PARAMETER_DESC
-_GUID=Guid
+../../../sources/Interop/Windows/um/d3d12shader
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d3d12shader.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12shader.h
 --with-attribute
 ID3D12FunctionParameterReflection=Guid("EC25F42D-7006-4F2B-B33E-02CC3375733F")
 ID3D12FunctionReflection=Guid("1108795C-2772-4BA9-B2A8-D464DC7E2799")

@@ -1,13 +1,5 @@
---additional
--m32
--Wno-expansion-to-defined
--Wno-ignored-attributes
--Wno-ignored-pragma-intrinsic
--Wno-nonportable-include-path
--Wno-pragma-pack
---config
-multi-file
-preview-codegen-nint
+@../../settings.rsp
+@../../remap.rsp
 --exclude
 __MIDL_itf_d3dcommon_0000_0000_v0_0_c_ifspec
 __MIDL_itf_d3dcommon_0000_0000_v0_0_s_ifspec
@@ -24,36 +16,10 @@ WKPDID_D3DDebugObjectNameW
 WKPDID_CommentStringW
 --file
 um-d3dcommon.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---libraryPath
-D3DCommon
---methodClassName
-D3DCommon
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/D3DCommon/um/d3dcommon
---remap
-_D3D_CBUFFER_TYPE=D3D_CBUFFER_TYPE
-_D3D_INCLUDE_TYPE=D3D_INCLUDE_TYPE
-_D3D_PARAMETER_FLAGS=D3D_PARAMETER_FLAGS
-_D3D_SHADER_CBUFFER_FLAGS=D3D_SHADER_CBUFFER_FLAGS
-_D3D_SHADER_INPUT_FLAGS=D3D_SHADER_INPUT_FLAGS
-_D3D_SHADER_INPUT_TYPE=D3D_SHADER_INPUT_TYPE
-_D3D_SHADER_MACRO=D3D_SHADER_MACRO
-_D3D_SHADER_VARIABLE_CLASS=D3D_SHADER_VARIABLE_CLASS
-_D3D_SHADER_VARIABLE_FLAGS=D3D_SHADER_VARIABLE_FLAGS
-_D3D_SHADER_VARIABLE_TYPE=D3D_SHADER_VARIABLE_TYPE
-_GUID=Guid
-ID3D10Blob=ID3DBlob
-SIZE_T=nuint
+../../../sources/Interop/Windows/um/d3dcommon
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d3dcommon.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3dcommon.h
 --with-attribute
 D3D_PARAMETER_FLAGS=Flags
 D3D_SHADER_CBUFFER_FLAGS=Flags

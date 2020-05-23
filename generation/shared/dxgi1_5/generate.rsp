@@ -1,13 +1,5 @@
---additional
--m32
--Wno-expansion-to-defined
--Wno-ignored-attributes
--Wno-ignored-pragma-intrinsic
--Wno-nonportable-include-path
--Wno-pragma-pack
---config
-multi-file
-preview-codegen-nint
+@../../settings.rsp
+@../../remap.rsp
 --exclude
 __MIDL_itf_dxgi1_5_0000_0000_v0_0_c_ifspec
 __MIDL_itf_dxgi1_5_0000_0000_v0_0_s_ifspec
@@ -25,30 +17,10 @@ IID_IDXGIOutput5
 IID_IDXGISwapChain4
 --file
 shared-dxgi1_5.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---methodClassName
-DXGI
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/DXGI/shared/dxgi1_5
---remap
-_D3DCOLORVALUE=DXGI_RGBA
-_DXGI_OFFER_RESOURCE_FLAGS=DXGI_OFFER_RESOURCE_FLAGS
-_DXGI_OFFER_RESOURCE_PRIORITY=DXGI_OFFER_RESOURCE_PRIORITY
-_DXGI_RECLAIM_RESOURCE_RESULTS=DXGI_RECLAIM_RESOURCE_RESULTS
-_GUID=Guid
-_LUID=LUID
-HANDLE=IntPtr
-HWND__*=IntPtr
-HINSTANCE__*=IntPtr
+../../../sources/Interop/Windows/shared/dxgi1_5
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared/dxgi1_5.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgi1_5.h
 --with-attribute
 DXGI_OFFER_RESOURCE_FLAGS=Flags
 DXGI_OUTDUPL_FLAG=Flags
