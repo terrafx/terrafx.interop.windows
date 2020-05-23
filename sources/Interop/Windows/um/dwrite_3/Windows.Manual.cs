@@ -7,16 +7,8 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public static partial class DWrite
+    public static partial class Windows
     {
-        public const int DWRITE_E_REMOTEFONT = unchecked((int)0x8898500D);
-
-        public const int DWRITE_E_DOWNLOADCANCELLED = unchecked((int)0x8898500E);
-
-        public const int DWRITE_E_DOWNLOADFAILED = unchecked((int)0x8898500F);
-
-        public const int DWRITE_E_TOOMANYDOWNLOADS = unchecked((int)0x88985010);
-
         public static readonly Guid IID_IDWriteRenderingParams3 = new Guid(0xB7924BAA, 0x391B, 0x412A, 0x8C, 0x5C, 0xE4, 0x4C, 0xC2, 0xD8, 0x67, 0xDC);
 
         public static readonly Guid IID_IDWriteFactory3 = new Guid(0x9A1B41C3, 0xD3BB, 0x466A, 0x87, 0xFC, 0xFE, 0x67, 0x55, 0x6A, 0x3B, 0x65);

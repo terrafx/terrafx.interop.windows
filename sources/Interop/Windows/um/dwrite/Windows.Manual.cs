@@ -8,7 +8,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class DWrite
+    public static unsafe partial class Windows
     {
         public const uint DWRITE_ALPHA_MAX = 255;
 

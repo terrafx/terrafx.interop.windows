@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public static partial class DWrite
+    public static partial class Windows
     {
         public static readonly Guid IID_IDWriteFactory1 = new Guid(0x30572F99, 0xDAC6, 0x41DB, 0xA1, 0x6E, 0x04, 0x86, 0x30, 0x7E, 0x60, 0x6A);
 
