@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class XInput
+    public static unsafe partial class Windows
     {
         public const string XINPUT_DLL_W = "xinput1_4.dll";
 
