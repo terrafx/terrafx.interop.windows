@@ -6,7 +6,6 @@
 using System;
 using static TerraFX.Interop.D3D12_FILTER_REDUCTION_TYPE;
 using static TerraFX.Interop.D3D12_FILTER_TYPE;
-using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop
 {

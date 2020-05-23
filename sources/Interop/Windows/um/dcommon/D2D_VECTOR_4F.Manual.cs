@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
-using System.Diagnostics.Tracing;
 
 namespace TerraFX.Interop
 {

@@ -3,8 +3,6 @@
 // Ported from um/d2d1_1.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using static TerraFX.Interop.D2D1_PROPERTY_TYPE;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct ID2D1Effect

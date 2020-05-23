@@ -4,11 +4,8 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
-using static TerraFX.Interop.D3D11_FEATURE;
 using static TerraFX.Interop.D3D11_FILTER_TYPE;
 using static TerraFX.Interop.D3D11_FILTER_REDUCTION_TYPE;
-using static TerraFX.Interop.D3D11_RESOURCE_DIMENSION;
-using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop
 {

@@ -10,7 +10,6 @@ using static TerraFX.Interop.D3D12_FEATURE;
 using static TerraFX.Interop.D3D12_RESOURCE_DIMENSION;
 using static TerraFX.Interop.D3D12_ROOT_PARAMETER_TYPE;
 using static TerraFX.Interop.D3D12_TEXTURE_LAYOUT;
-using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop
 {
