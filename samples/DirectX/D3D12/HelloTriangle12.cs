@@ -338,7 +338,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                             InputSlotClass = D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA,
                         },
                     };
-                        
+
                     // Describe and create the graphics pipeline state object (PSO).
                     var psoDesc = new D3D12_GRAPHICS_PIPELINE_STATE_DESC {
                         InputLayout = new D3D12_INPUT_LAYOUT_DESC {
