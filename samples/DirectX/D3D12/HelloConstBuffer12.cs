@@ -68,9 +68,7 @@ namespace TerraFX.Samples.DirectX.D3D12
         private D3D12_VERTEX_BUFFER_VIEW _vertexBufferView;
         private ID3D12Resource* _constantBuffer;
         private SceneConstantBuffer _constantBufferData;
-#pragma warning disable IDE0044 // Add readonly modifier should not be complained about since it is being modified via Unsafe.CopyBlock
         private byte* _pCbvDataBegin;
-#pragma warning restore IDE0044 // Add readonly modifier
 
         // Synchronization objects.
         private uint _frameIndex;
@@ -774,6 +772,8 @@ namespace TerraFX.Samples.DirectX.D3D12
                 _fence = null;
                 _ = fence->Release();
             }
+
+            _pCbvDataBegin = null;
 
             base.Dispose(isDisposing);
         }
