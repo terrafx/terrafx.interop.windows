@@ -1,23 +1,10 @@
---additional
--m32
---config
-multi-file
---traverse
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dxcapi.h
+@../../settings.rsp
+@../../remap.rsp
 --file
-dxc-dxcapi.h
---headerFile
-header.txt
---include-directory
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um
---libraryPath
-DXC
---methodClassName
-DXC
---namespace
-TerraFX.Interop
+um-dxcapi.h
 --output
 ../../../sources/Interop/Windows/um/dxcapi
---remap
-_FILETIME=FILETIME
-_GUID=Guid
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dxcapi.h
+--with-librarypath
+*=dxcompiler
