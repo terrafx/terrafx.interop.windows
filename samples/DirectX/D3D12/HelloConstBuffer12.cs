@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from D3D12HelloWindow.h in https://github.com/Microsoft/DirectX-Graphics-Samples
+// Ported from D3D12HelloConstBuffor in https://github.com/Microsoft/DirectX-Graphics-Samples
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
 using System;
@@ -11,15 +11,32 @@ using TerraFX.Interop;
 using static TerraFX.Interop.D3D_FEATURE_LEVEL;
 using static TerraFX.Interop.D3D_PRIMITIVE_TOPOLOGY;
 using static TerraFX.Interop.D3D_ROOT_SIGNATURE_VERSION;
+using static TerraFX.Interop.D3D12_BLEND;
+using static TerraFX.Interop.D3D12_BLEND_OP;
+using static TerraFX.Interop.D3D12_COLOR_WRITE_ENABLE;
 using static TerraFX.Interop.D3D12_COMMAND_LIST_TYPE;
+using static TerraFX.Interop.D3D12_CONSERVATIVE_RASTERIZATION_MODE;
+using static TerraFX.Interop.D3D12_CPU_PAGE_PROPERTY;
+using static TerraFX.Interop.D3D12_CULL_MODE;
+using static TerraFX.Interop.D3D12_DESCRIPTOR_HEAP_FLAGS;
 using static TerraFX.Interop.D3D12_DESCRIPTOR_HEAP_TYPE;
+using static TerraFX.Interop.D3D12_DESCRIPTOR_RANGE_FLAGS;
+using static TerraFX.Interop.D3D12_DESCRIPTOR_RANGE_TYPE;
+using static TerraFX.Interop.D3D12_FEATURE;
 using static TerraFX.Interop.D3D12_FENCE_FLAGS;
+using static TerraFX.Interop.D3D12_FILL_MODE;
 using static TerraFX.Interop.D3D12_HEAP_FLAGS;
 using static TerraFX.Interop.D3D12_HEAP_TYPE;
 using static TerraFX.Interop.D3D12_INPUT_CLASSIFICATION;
+using static TerraFX.Interop.D3D12_LOGIC_OP;
+using static TerraFX.Interop.D3D12_MEMORY_POOL;
 using static TerraFX.Interop.D3D12_PRIMITIVE_TOPOLOGY_TYPE;
+using static TerraFX.Interop.D3D12_RESOURCE_DIMENSION;
+using static TerraFX.Interop.D3D12_RESOURCE_FLAGS;
 using static TerraFX.Interop.D3D12_RESOURCE_STATES;
 using static TerraFX.Interop.D3D12_ROOT_SIGNATURE_FLAGS;
+using static TerraFX.Interop.D3D12_SHADER_VISIBILITY;
+using static TerraFX.Interop.D3D12_TEXTURE_LAYOUT;
 using static TerraFX.Interop.DXGI_FORMAT;
 using static TerraFX.Interop.DXGI_SWAP_EFFECT;
 using static TerraFX.Interop.Windows;
@@ -27,7 +44,7 @@ using static TerraFX.Samples.DirectX.DXSampleHelper;
 
 namespace TerraFX.Samples.DirectX.D3D12
 {
-    public unsafe class HelloTriangle12 : DX12Sample
+    public unsafe class HelloConstBuffer12 : DX12Sample
     {
         private const uint FrameCount = 2;
 
@@ -41,6 +58,7 @@ namespace TerraFX.Samples.DirectX.D3D12
         private ID3D12CommandQueue* _commandQueue;
         private ID3D12RootSignature* _rootSignature;
         private ID3D12DescriptorHeap* _rtvHeap;
+        private ID3D12DescriptorHeap* _cbvHeap;
         private ID3D12PipelineState* _pipelineState;
         private ID3D12GraphicsCommandList* _commandList;
         private uint _rtvDescriptorSize;
@@ -48,6 +66,9 @@ namespace TerraFX.Samples.DirectX.D3D12
         // App resources.
         private ID3D12Resource* _vertexBuffer;
         private D3D12_VERTEX_BUFFER_VIEW _vertexBufferView;
+        private ID3D12Resource* _constantBuffer;
+        private SceneConstantBuffer _constantBufferData;
+        private byte* _pCbvDataBegin;
 
         // Synchronization objects.
         private uint _frameIndex;
@@ -55,7 +76,7 @@ namespace TerraFX.Samples.DirectX.D3D12
         private ID3D12Fence* _fence;
         private ulong _fenceValue;
 
-        public HelloTriangle12(uint width, uint height, string name)
+        public HelloConstBuffer12(uint width, uint height, string name)
             : base(width, height, name)
         {
             _renderTargets = new ID3D12Resource*[FrameCount];
@@ -86,6 +107,15 @@ namespace TerraFX.Samples.DirectX.D3D12
         // Update frame-based values.
         public override void OnUpdate()
         {
+            const float TranslationSpeed = 0.005f;
+            const float OffsetBounds = 1.25f;
+
+            _constantBufferData.Offset.X += TranslationSpeed;
+            if (_constantBufferData.Offset.X > OffsetBounds)
+            {
+                _constantBufferData.Offset.X = -OffsetBounds;
+            }
+            Unsafe.CopyBlock(ref _pCbvDataBegin[0], ref Unsafe.As<SceneConstantBuffer, byte>(ref _constantBufferData), (uint)sizeof(SceneConstantBuffer));
         }
 
         // Render the scene.
@@ -217,6 +247,20 @@ namespace TerraFX.Samples.DirectX.D3D12
                     }
 
                     _rtvDescriptorSize = _device->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_RTV);
+
+                    // Describe and create a constant buffer view (CBV) descriptor heap.
+                    // Flags indicate that this descriptor heap can be bound to the pipeline 
+                    // and that descriptors contained in it can be referenced by a root table.
+                    var cbvHeapDesc = new D3D12_DESCRIPTOR_HEAP_DESC {
+                        NumDescriptors = 1,
+                        Flags = D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE,
+                        Type = D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV,
+                    };
+                    fixed (ID3D12DescriptorHeap** cbvHeap = &_cbvHeap)
+                    {
+                        iid = IID_ID3D12DescriptorHeap;
+                        ThrowIfFailed(nameof(ID3D12Device.CreateDescriptorHeap), _device->CreateDescriptorHeap(&cbvHeapDesc, &iid, (void**)cbvHeap));
+                    }
                 }
 
                 // Create frame resources.
@@ -279,18 +323,43 @@ namespace TerraFX.Samples.DirectX.D3D12
 
             try
             {
-                // Create an empty root signature.
+                // Create a root signature consisting of a descriptor table with a single CBV.
                 {
-                    var rootSignatureDesc = new D3D12_ROOT_SIGNATURE_DESC {
-                        Flags = D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT
+                    var featureData = new D3D12_FEATURE_DATA_ROOT_SIGNATURE {
+                        // This is the highest version the sample supports. If CheckFeatureSupport succeeds, the HighestVersion returned will not be greater than this.
+                        HighestVersion = D3D_ROOT_SIGNATURE_VERSION_1_1
                     };
 
-                    ThrowIfFailed(nameof(D3D12SerializeRootSignature), D3D12SerializeRootSignature(&rootSignatureDesc, D3D_ROOT_SIGNATURE_VERSION_1, &signature, &error));
+                    if (FAILED(_device->CheckFeatureSupport(D3D12_FEATURE_ROOT_SIGNATURE, &featureData, (uint)sizeof(D3D12_FEATURE_DATA_ROOT_SIGNATURE))))
+                    {
+                        featureData.HighestVersion = D3D_ROOT_SIGNATURE_VERSION_1_0;
+                    }
+
+                    const int RangesCount = 1;
+                    var ranges = stackalloc D3D12_DESCRIPTOR_RANGE1[RangesCount];
+                    const int RootParametersCount = 1;
+                    var rootParameters = stackalloc D3D12_ROOT_PARAMETER1[RootParametersCount];
+
+                    ranges[0].Init(D3D12_DESCRIPTOR_RANGE_TYPE_CBV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
+                    rootParameters[0].InitAsDescriptorTable(RangesCount, ranges, D3D12_SHADER_VISIBILITY_VERTEX);
+
+                    // Allow input layout and deny unnecessary access to certain pipeline stages.
+                    var rootSignatureFlags =
+                        D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT |
+                        D3D12_ROOT_SIGNATURE_FLAG_DENY_HULL_SHADER_ROOT_ACCESS |
+                        D3D12_ROOT_SIGNATURE_FLAG_DENY_DOMAIN_SHADER_ROOT_ACCESS |
+                        D3D12_ROOT_SIGNATURE_FLAG_DENY_GEOMETRY_SHADER_ROOT_ACCESS |
+                        D3D12_ROOT_SIGNATURE_FLAG_DENY_PIXEL_SHADER_ROOT_ACCESS;
+
+                    var rootSignatureDesc = new D3D12_VERSIONED_ROOT_SIGNATURE_DESC();
+                    rootSignatureDesc.Init_1_1(RootParametersCount, rootParameters, 0, null, rootSignatureFlags);
+
+                    ThrowIfFailed(nameof(D3D12SerializeRootSignature), D3D12SerializeVersionedRootSignature(&rootSignatureDesc, featureData.HighestVersion, &signature, &error));
 
                     fixed (ID3D12RootSignature** rootSignature = &_rootSignature)
                     {
                         iid = IID_ID3D12RootSignature;
-                        ThrowIfFailed(nameof(ID3D12Device._CreateRootSignature), _device->CreateRootSignature(nodeMask: 0, signature->GetBufferPointer(), signature->GetBufferSize(), &iid, (void**)rootSignature));
+                        ThrowIfFailed(nameof(ID3D12Device.CreateRootSignature), _device->CreateRootSignature(0, signature->GetBufferPointer(), signature->GetBufferSize(), &iid, (void**)rootSignature));
                     }
                 }
 
@@ -302,7 +371,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     // Enable better shader debugging with the graphics debugging tools.
                     compileFlags |= D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION;
 #endif
-                    fixed (char* fileName = GetAssetFullPath(@"D3D12\Assets\Shaders\HelloTriangle.hlsl"))
+                    fixed (char* fileName = GetAssetFullPath(@"D3D12\Assets\Shaders\HelloConstBuffer.hlsl"))
                     {
                         var entryPoint = 0x00006E69614D5356;    // VSMain
                         var target = 0x0000305F355F7376;        // vs_5_0
@@ -433,27 +502,61 @@ namespace TerraFX.Samples.DirectX.D3D12
                     _vertexBufferView.SizeInBytes = vertexBufferSize;
                 }
 
-                // Create synchronization objects and wait until assets have been uploaded to the GPU.
+                // Create the constant buffer.
                 {
-                    fixed (ID3D12Fence** fence = &_fence)
+                    fixed (ID3D12Resource** pConstantBuffer = &_constantBuffer)
                     {
-                        iid = IID_ID3D12Fence;
-                        ThrowIfFailed(nameof(ID3D12Device.CreateFence), _device->CreateFence(0, D3D12_FENCE_FLAG_NONE, &iid, (void**)fence));
-                        _fenceValue = 1;
+                        var heapProperties = new D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD);
+                        var bufferDesc = D3D12_RESOURCE_DESC.Buffer(1024 * 64);
+                        iid = IID_ID3D12Resource;
+                        ThrowIfFailed(nameof(ID3D12Device.CreateCommittedResource), _device->CreateCommittedResource(
+                            &heapProperties,
+                            D3D12_HEAP_FLAG_NONE,
+                            &bufferDesc,
+                            D3D12_RESOURCE_STATE_GENERIC_READ,
+                            pOptimizedClearValue: null,
+                            &iid,
+                            (void**)pConstantBuffer));
                     }
 
-                    // Create an event handle to use for frame synchronization.
-                    _fenceEvent = CreateEventW(lpEventAttributes: null, bManualReset: FALSE, bInitialState: FALSE, lpName: null);
-                    if (_fenceEvent == null)
+                    // Describe and create a constant buffer view.
+                    var cbvDesc = new D3D12_CONSTANT_BUFFER_VIEW_DESC {
+                        BufferLocation = _constantBuffer->GetGPUVirtualAddress(),
+                        SizeInBytes = (uint)((sizeof(SceneConstantBuffer) + 255) & ~255)    // CB size is required to be 256-byte aligned.
+                    };
+                    _device->CreateConstantBufferView(&cbvDesc, _cbvHeap->GetCPUDescriptorHandleForHeapStart());
+
+                    // Map and initialize the constant buffer. We don't unmap this until the
+                    // app closes. Keeping things mapped for the lifetime of the resource is okay.
+                    var readRange = new D3D12_RANGE(); // We do not intend to read from this resource on the CPU.
+                    fixed (byte** ppCbvDataBegin = &_pCbvDataBegin)
                     {
-                        var hr = Marshal.GetHRForLastWin32Error();
-                        Marshal.ThrowExceptionForHR(hr);
+                        ThrowIfFailed(nameof(ID3D12Resource.Map), _constantBuffer->Map(Subresource: 0, &readRange, (void**)ppCbvDataBegin));
+                        Unsafe.CopyBlock(ref _pCbvDataBegin[0], ref Unsafe.As<SceneConstantBuffer, byte>(ref _constantBufferData), (uint)sizeof(SceneConstantBuffer));
                     }
 
-                    // Wait for the command list to execute; we are reusing the same command
-                    // list in our main loop but for now, we just want to wait for setup to
-                    // complete before continuing.
-                    WaitForPreviousFrame();
+                    // Create synchronization objects and wait until assets have been uploaded to the GPU.
+                    {
+                        fixed (ID3D12Fence** fence = &_fence)
+                        {
+                            iid = IID_ID3D12Fence;
+                            ThrowIfFailed(nameof(ID3D12Device.CreateFence), _device->CreateFence(0, D3D12_FENCE_FLAG_NONE, &iid, (void**)fence));
+                            _fenceValue = 1;
+                        }
+
+                        // Create an event handle to use for frame synchronization.
+                        _fenceEvent = CreateEventW(lpEventAttributes: null, bManualReset: FALSE, bInitialState: FALSE, lpName: null);
+                        if (_fenceEvent == null)
+                        {
+                            var hr = Marshal.GetHRForLastWin32Error();
+                            Marshal.ThrowExceptionForHR(hr);
+                        }
+
+                        // Wait for the command list to execute; we are reusing the same command
+                        // list in our main loop but for now, we just want to wait for setup to
+                        // complete before continuing.
+                        WaitForPreviousFrame();
+                    }
                 }
             }
             finally
@@ -480,6 +583,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             }
         }
 
+        /// <summary> Fill the command list with all the render commands and dependent state. </summary>
         private void PopulateCommandList()
         {
             // Command list allocators can only be reset when the associated
@@ -495,6 +599,13 @@ namespace TerraFX.Samples.DirectX.D3D12
             // Set necessary state.
             _commandList->SetGraphicsRootSignature(_rootSignature);
 
+            const uint HeapsCount = 1;
+            var ppHeaps = stackalloc ID3D12DescriptorHeap*[(int)HeapsCount] {
+                _cbvHeap
+            };
+            _commandList->SetDescriptorHeaps(HeapsCount, ppHeaps);
+            _commandList->SetGraphicsRootDescriptorTable(0, _cbvHeap->GetGPUDescriptorHandleForHeapStart());
+
             fixed (D3D12_VIEWPORT* viewport = &_viewport)
             {
                 _commandList->RSSetViewports(1, viewport);
@@ -509,8 +620,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             var barrier = D3D12_RESOURCE_BARRIER.InitTransition(_renderTargets[unchecked((int)_frameIndex)], D3D12_RESOURCE_STATE_PRESENT, D3D12_RESOURCE_STATE_RENDER_TARGET);
             _commandList->ResourceBarrier(1, &barrier);
 
-            var rtvHandle = _rtvHeap->GetCPUDescriptorHandleForHeapStart();
-            rtvHandle.ptr = (UIntPtr)((byte*)rtvHandle.ptr + (_frameIndex * _rtvDescriptorSize));
+            var rtvHandle = new D3D12_CPU_DESCRIPTOR_HANDLE(_rtvHeap->GetCPUDescriptorHandleForHeapStart(), (int)_frameIndex, _rtvDescriptorSize);
             _commandList->OMSetRenderTargets(1, &rtvHandle, FALSE, null);
 
             // Record commands.
@@ -615,6 +725,14 @@ namespace TerraFX.Samples.DirectX.D3D12
                 _ = rtvHeap->Release();
             }
 
+            var cbvHeap = _cbvHeap;
+
+            if (cbvHeap != null)
+            {
+                _cbvHeap = null;
+                _ = cbvHeap->Release();
+            }
+
             var pipelineState = _pipelineState;
 
             if (pipelineState != null)
@@ -639,6 +757,14 @@ namespace TerraFX.Samples.DirectX.D3D12
                 _ = vertexBuffer->Release();
             }
 
+            var constantBuffer = _constantBuffer;
+
+            if (constantBuffer != null)
+            {
+                _constantBuffer = null;
+                _ = constantBuffer->Release();
+            }
+
             var fence = _fence;
 
             if (fence != null)
@@ -646,6 +772,8 @@ namespace TerraFX.Samples.DirectX.D3D12
                 _fence = null;
                 _ = fence->Release();
             }
+
+            _pCbvDataBegin = null;
 
             base.Dispose(isDisposing);
         }
@@ -656,5 +784,10 @@ namespace TerraFX.Samples.DirectX.D3D12
 
             public Vector4 Color;
         }
+
+        private struct SceneConstantBuffer
+        {
+            public Vector4 Offset;
+        };
     }
 }
