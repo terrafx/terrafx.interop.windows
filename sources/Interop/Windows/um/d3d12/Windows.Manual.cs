@@ -1034,7 +1034,7 @@ namespace TerraFX.Interop
 
         public static uint D3D12_GET_COARSE_SHADING_RATE_Y_AXIS(uint y) => y & D3D12_SHADING_RATE_VALID_MASK;
 
-        public static int D3D12ReflectLibrary(void* pSrcData, UIntPtr SrcDataSize, ID3D12LibraryReflection** ppReflector)
+        public static int D3D12ReflectLibrary(void* pSrcData, nuint SrcDataSize, ID3D12LibraryReflection** ppReflector)
         {
             var iid = IID_ID3D12LibraryReflection;
             return D3DReflectLibrary(pSrcData, SrcDataSize, &iid, (void**)ppReflector);

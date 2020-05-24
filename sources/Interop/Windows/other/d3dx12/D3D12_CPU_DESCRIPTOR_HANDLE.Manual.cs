@@ -10,7 +10,7 @@ namespace TerraFX.Interop
     public unsafe partial struct D3D12_CPU_DESCRIPTOR_HANDLE : IEquatable<D3D12_CPU_DESCRIPTOR_HANDLE>
     {
         public static readonly D3D12_CPU_DESCRIPTOR_HANDLE DEFAULT = new D3D12_CPU_DESCRIPTOR_HANDLE {
-            ptr = UIntPtr.Zero
+            ptr = 0
         };
 
         public D3D12_CPU_DESCRIPTOR_HANDLE([NativeTypeName("const D3D12_CPU_DESCRIPTOR_HANDLE &")] in D3D12_CPU_DESCRIPTOR_HANDLE other, [NativeTypeName("INT")] int offsetScaledByIncrementSize)
@@ -25,13 +25,13 @@ namespace TerraFX.Interop
 
         public D3D12_CPU_DESCRIPTOR_HANDLE Offset([NativeTypeName("INT")] int offsetInDescriptors, [NativeTypeName("UINT")] uint descriptorIncrementSize)
         {
-            ptr = (UIntPtr)((long)ptr + ((long)offsetInDescriptors * (long)descriptorIncrementSize));
+            ptr = unchecked((nuint)((long)ptr + ((long)offsetInDescriptors * (long)descriptorIncrementSize)));
             return this;
         }
 
         public D3D12_CPU_DESCRIPTOR_HANDLE Offset([NativeTypeName("INT")] int offsetScaledByIncrementSize)
         {
-            ptr = (UIntPtr)((long)ptr + (long)offsetScaledByIncrementSize);
+            ptr = unchecked((nuint)((long)ptr + (long)offsetScaledByIncrementSize));
             return this;
         }
 
@@ -57,12 +57,12 @@ namespace TerraFX.Interop
 
         public static void InitOffsetted([NativeTypeName("D3D12_CPU_DESCRIPTOR_HANDLE &")] out D3D12_CPU_DESCRIPTOR_HANDLE handle, [NativeTypeName("const D3D12_CPU_DESCRIPTOR_HANDLE &")] in D3D12_CPU_DESCRIPTOR_HANDLE @base, [NativeTypeName("INT")] int offsetScaledByIncrementSize)
         {
-            handle.ptr = (UIntPtr)((long)@base.ptr + (long)offsetScaledByIncrementSize);
+            handle.ptr = (nuint)((long)@base.ptr + (long)offsetScaledByIncrementSize);
         }
 
         public static void InitOffsetted([NativeTypeName("D3D12_CPU_DESCRIPTOR_HANDLE &")] out D3D12_CPU_DESCRIPTOR_HANDLE handle, [NativeTypeName("const D3D12_CPU_DESCRIPTOR_HANDLE &")] in D3D12_CPU_DESCRIPTOR_HANDLE @base, [NativeTypeName("INT")] int offsetInDescriptors, [NativeTypeName("UINT")] uint descriptorIncrementSize)
         {
-            handle.ptr = (UIntPtr)((long)@base.ptr + ((long)offsetInDescriptors * (long)descriptorIncrementSize));
+            handle.ptr = (nuint)((long)@base.ptr + ((long)offsetInDescriptors * (long)descriptorIncrementSize));
         }
 
         public override bool Equals(object? obj) => (obj is D3D12_CPU_DESCRIPTOR_HANDLE other) && Equals(other);

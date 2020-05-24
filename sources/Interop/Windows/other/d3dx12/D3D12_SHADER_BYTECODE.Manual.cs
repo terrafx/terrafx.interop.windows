@@ -15,7 +15,7 @@ namespace TerraFX.Interop
             BytecodeLength = pShaderBlob->GetBufferSize();
         }
 
-        public D3D12_SHADER_BYTECODE([NativeTypeName("const void *")] void* _pShaderBytecode, [NativeTypeName("SIZE_T")] UIntPtr bytecodeLength)
+        public D3D12_SHADER_BYTECODE([NativeTypeName("const void *")] void* _pShaderBytecode, [NativeTypeName("SIZE_T")] nuint bytecodeLength)
         {
             pShaderBytecode = _pShaderBytecode;
             BytecodeLength = bytecodeLength;

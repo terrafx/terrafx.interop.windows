@@ -52,41 +52,21 @@ namespace TerraFX.Interop
             return formatInfo.PlaneCount;
         }
 
-        public static void MemcpySubresource([NativeTypeName("const D3D12_MEMCPY_DEST *")] D3D12_MEMCPY_DEST* pDest, [NativeTypeName("const D3D12_SUBRESOURCE_DATA *")] D3D12_SUBRESOURCE_DATA* pSrc, [NativeTypeName("SIZE_T")] UIntPtr RowSizeInBytes, [NativeTypeName("UINT")] uint NumRows, [NativeTypeName("UINT")] uint NumSlices)
+        public static void MemcpySubresource([NativeTypeName("const D3D12_MEMCPY_DEST *")] D3D12_MEMCPY_DEST* pDest, [NativeTypeName("const D3D12_SUBRESOURCE_DATA *")] D3D12_SUBRESOURCE_DATA* pSrc, [NativeTypeName("SIZE_T")] nuint RowSizeInBytes, [NativeTypeName("UINT")] uint NumRows, [NativeTypeName("UINT")] uint NumSlices)
         {
             for (var z = 0u; z < NumSlices; ++z)
             {
-                var pDestSlice = (byte*)pDest->pData;
-                var pSrcSlice = (byte*)pSrc->pData;
-
-                if (IntPtr.Size == 4)
-                {
-                    pDestSlice += (uint)pDest->SlicePitch * z;
-                    pSrcSlice += (uint)pSrc->SlicePitch * z;
-                }
-                else
-                {
-                    pDestSlice += (ulong)pDest->SlicePitch * z;
-                    pSrcSlice += (ulong)pSrc->SlicePitch * z;
-                }
+                var pDestSlice = (byte*)pDest->pData + pDest->SlicePitch * z;
+                var pSrcSlice = (byte*)pSrc->pData + pSrc->SlicePitch * (nint)z;
 
                 for (var y = 0u; y < NumRows; ++y)
                 {
-                    var pTempDest = pDestSlice;
-                    var pTempSrc = pSrcSlice;
-
-                    if (IntPtr.Size == 4)
-                    {
-                        pTempDest += (uint)pDest->RowPitch * y;
-                        pTempSrc += (uint)pSrc->RowPitch * y;
-                    }
-                    else
-                    {
-                        pTempDest += (ulong)pDest->RowPitch * y;
-                        pTempSrc += (ulong)pSrc->RowPitch * y;
-                    }
-
-                    Buffer.MemoryCopy(pTempSrc, pTempDest, (long)RowSizeInBytes, (long)RowSizeInBytes);
+                    Buffer.MemoryCopy(
+                        pSrcSlice + pSrc->RowPitch * (nint)y,
+                        pDestSlice + pDest->RowPitch * y,
+                        (ulong)RowSizeInBytes,
+                        (ulong)RowSizeInBytes
+                    );
                 }
             }
         }
@@ -111,7 +91,7 @@ namespace TerraFX.Interop
             var IntermediateDesc = pIntermediate->GetDesc();
             var DestinationDesc = pDestinationResource->GetDesc();
 
-            if (IntermediateDesc.Dimension != D3D12_RESOURCE_DIMENSION_BUFFER || IntermediateDesc.Width < RequiredSize + pLayouts[0].Offset || RequiredSize > (ulong)(UIntPtr)(-1) || (DestinationDesc.Dimension == D3D12_RESOURCE_DIMENSION_BUFFER && (FirstSubresource != 0 || NumSubresources != 1)))
+            if (IntermediateDesc.Dimension != D3D12_RESOURCE_DIMENSION_BUFFER || IntermediateDesc.Width < RequiredSize + pLayouts[0].Offset || RequiredSize > unchecked((nuint)(-1)) || (DestinationDesc.Dimension == D3D12_RESOURCE_DIMENSION_BUFFER && (FirstSubresource != 0 || NumSubresources != 1)))
             {
                 return 0;
             }
@@ -126,17 +106,17 @@ namespace TerraFX.Interop
 
             for (var i = 0u; i < NumSubresources; ++i)
             {
-                if (pRowSizesInBytes[i] > (ulong)(UIntPtr)(-1))
+                if (pRowSizesInBytes[i] > unchecked((nuint)(-1)))
                     return 0;
 
                 D3D12_MEMCPY_DEST DestData = new D3D12_MEMCPY_DEST
                 {
                     pData = pData + pLayouts[i].Offset,
-                    RowPitch = (UIntPtr)pLayouts[i].Footprint.RowPitch,
-                    SlicePitch = (UIntPtr)(pLayouts[i].Footprint.RowPitch * pNumRows[i])
+                    RowPitch = (nuint)pLayouts[i].Footprint.RowPitch,
+                    SlicePitch = (nuint)(pLayouts[i].Footprint.RowPitch * pNumRows[i])
                 };
 
-                MemcpySubresource(&DestData, &pSrcData[i], (UIntPtr)pRowSizesInBytes[i], pNumRows[i], pLayouts[i].Footprint.Depth);
+                MemcpySubresource(&DestData, &pSrcData[i], (nuint)pRowSizesInBytes[i], pNumRows[i], pLayouts[i].Footprint.Depth);
             }
             pIntermediate->Unmap(0, null);
 
@@ -161,12 +141,12 @@ namespace TerraFX.Interop
             ulong RequiredSize = 0;
             ulong MemToAlloc = (ulong)(sizeof(D3D12_PLACED_SUBRESOURCE_FOOTPRINT) + sizeof(uint) + sizeof(ulong)) * NumSubresources;
 
-            if (MemToAlloc > (ulong)(UIntPtr)(-1))
+            if (MemToAlloc > unchecked((nuint)(-1)))
             {
                 return 0;
             }
 
-            var pMem = HeapAlloc(GetProcessHeap(), 0, (UIntPtr)MemToAlloc);
+            var pMem = HeapAlloc(GetProcessHeap(), 0, (nuint)MemToAlloc);
 
             if (pMem == null)
             {
@@ -242,7 +222,7 @@ namespace TerraFX.Interop
                             int hr = S_OK;
                             ref readonly D3D12_ROOT_SIGNATURE_DESC1 desc_1_1 = ref pRootSignatureDesc->Anonymous.Desc_1_1;
 
-                            UIntPtr ParametersSize = (UIntPtr)(sizeof(D3D12_ROOT_PARAMETER) * desc_1_1.NumParameters);
+                            nuint ParametersSize = (uint)sizeof(D3D12_ROOT_PARAMETER) * desc_1_1.NumParameters;
                             void* pParameters = ((ulong)ParametersSize > 0) ? HeapAlloc(GetProcessHeap(), 0, ParametersSize) : null;
 
                             if ((ulong)ParametersSize > 0 && pParameters == null)
@@ -279,7 +259,7 @@ namespace TerraFX.Interop
                                         case D3D12_ROOT_PARAMETER_TYPE_DESCRIPTOR_TABLE:
                                             ref readonly D3D12_ROOT_DESCRIPTOR_TABLE1 table_1_1 = ref desc_1_1.pParameters[n].Anonymous.DescriptorTable;
 
-                                            UIntPtr DescriptorRangesSize = (UIntPtr)(sizeof(D3D12_DESCRIPTOR_RANGE) * table_1_1.NumDescriptorRanges);
+                                            nuint DescriptorRangesSize = (uint)sizeof(D3D12_DESCRIPTOR_RANGE) * table_1_1.NumDescriptorRanges;
                                             void* pDescriptorRanges = ((ulong)DescriptorRangesSize > 0 && SUCCEEDED(hr)) ? HeapAlloc(GetProcessHeap(), 0, DescriptorRangesSize) : null;
 
                                             if ((ulong)DescriptorRangesSize > 0 && pDescriptorRanges == null)
