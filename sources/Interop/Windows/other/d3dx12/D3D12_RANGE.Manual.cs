@@ -9,7 +9,7 @@ namespace TerraFX.Interop
 {
     public partial struct D3D12_RANGE
     {
-        public D3D12_RANGE([NativeTypeName("SIZE_T")] UIntPtr begin, [NativeTypeName("SIZE_T")] UIntPtr end)
+        public D3D12_RANGE([NativeTypeName("SIZE_T")] nuint begin, [NativeTypeName("SIZE_T")] nuint end)
         {
             Begin = begin;
             End = end;

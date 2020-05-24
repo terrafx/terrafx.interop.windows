@@ -41,6 +41,6 @@ namespace TerraFX.Interop
 
         public bool Equals(D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS other) => this == other;
 
-        public override int GetHashCode() => HashCode.Combine((UIntPtr)pSrcResource, (UIntPtr)pDstResource, SubresourceCount, (UIntPtr)pSubresourceParameters, Format, ResolveMode, PreserveResolveSource);
+        public override int GetHashCode() => HashCode.Combine((nuint)pSrcResource, (nuint)pDstResource, SubresourceCount, (nuint)pSubresourceParameters, Format, ResolveMode, PreserveResolveSource);
     }
 }
