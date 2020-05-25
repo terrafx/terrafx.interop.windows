@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
 using System;
-using System.Collections.Generic;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -12,26 +11,17 @@ using TerraFX.Interop;
 using static TerraFX.Interop.D3D_FEATURE_LEVEL;
 using static TerraFX.Interop.D3D_PRIMITIVE_TOPOLOGY;
 using static TerraFX.Interop.D3D_ROOT_SIGNATURE_VERSION;
-using static TerraFX.Interop.D3D12_BLEND;
-using static TerraFX.Interop.D3D12_BLEND_OP;
-using static TerraFX.Interop.D3D12_COLOR_WRITE_ENABLE;
 using static TerraFX.Interop.D3D12_COMMAND_LIST_TYPE;
 using static TerraFX.Interop.D3D12_COMPARISON_FUNC;
-using static TerraFX.Interop.D3D12_CONSERVATIVE_RASTERIZATION_MODE;
-using static TerraFX.Interop.D3D12_CPU_PAGE_PROPERTY;
-using static TerraFX.Interop.D3D12_CULL_MODE;
 using static TerraFX.Interop.D3D12_DESCRIPTOR_HEAP_FLAGS;
 using static TerraFX.Interop.D3D12_DESCRIPTOR_HEAP_TYPE;
 using static TerraFX.Interop.D3D12_DESCRIPTOR_RANGE_FLAGS;
 using static TerraFX.Interop.D3D12_DESCRIPTOR_RANGE_TYPE;
 using static TerraFX.Interop.D3D12_FEATURE;
 using static TerraFX.Interop.D3D12_FENCE_FLAGS;
-using static TerraFX.Interop.D3D12_FILL_MODE;
 using static TerraFX.Interop.D3D12_HEAP_FLAGS;
 using static TerraFX.Interop.D3D12_HEAP_TYPE;
 using static TerraFX.Interop.D3D12_INPUT_CLASSIFICATION;
-using static TerraFX.Interop.D3D12_LOGIC_OP;
-using static TerraFX.Interop.D3D12_MEMORY_POOL;
 using static TerraFX.Interop.D3D12_PRIMITIVE_TOPOLOGY_TYPE;
 using static TerraFX.Interop.D3D12_RESOURCE_DIMENSION;
 using static TerraFX.Interop.D3D12_RESOURCE_FLAGS;
@@ -40,7 +30,7 @@ using static TerraFX.Interop.D3D12_ROOT_SIGNATURE_FLAGS;
 using static TerraFX.Interop.D3D12_SHADER_VISIBILITY;
 using static TerraFX.Interop.D3D12_SRV_DIMENSION;
 using static TerraFX.Interop.D3D12_STATIC_BORDER_COLOR;
-using static TerraFX.Interop.D3D12_TEXTURE_LAYOUT;
+using static TerraFX.Interop.D3D12_TEXTURE_ADDRESS_MODE;
 using static TerraFX.Interop.DXGI_FORMAT;
 using static TerraFX.Interop.DXGI_SWAP_EFFECT;
 using static TerraFX.Interop.Windows;
@@ -163,13 +153,6 @@ namespace TerraFX.Samples.DirectX.D3D12
                     if (SUCCEEDED(D3D12GetDebugInterface(&iid, (void**)&debugController)))
                     {
                         debugController->EnableDebugLayer();
-                        iid = IID_ID3D12Debug1;
-                        ID3D12Debug1* debug1 = null;
-                        if (SUCCEEDED(debugController->QueryInterface(&iid, (void**)&debug1)))
-                        {
-                            debug1->SetEnableGPUBasedValidation(TRUE);
-                            debug1->SetEnableSynchronizedCommandQueueValidation(TRUE);
-                        }
 
                         // Enable additional debug layers.
                         dxgiFactoryFlags |= DXGI_CREATE_FACTORY_DEBUG;
@@ -194,52 +177,6 @@ namespace TerraFX.Samples.DirectX.D3D12
                 {
                     iid = IID_ID3D12Device;
                     ThrowIfFailed(nameof(D3D12CreateDevice), D3D12CreateDevice((IUnknown*)adapter, D3D_FEATURE_LEVEL_11_0, &iid, (void**)device));
-                }
-
-                // Enable debug messages in debug mode.
-                {
-#if DEBUG
-                    ID3D12InfoQueue* infoQueue;
-                    iid = IID_ID3D12InfoQueue;
-                    ThrowIfFailed(nameof(ID3D12Device2.QueryInterface), _device->QueryInterface(&iid, (void**)&infoQueue));
-
-                    infoQueue->SetBreakOnSeverity(D3D12_MESSAGE_SEVERITY.D3D12_MESSAGE_SEVERITY_CORRUPTION, TRUE);
-                    infoQueue->SetBreakOnSeverity(D3D12_MESSAGE_SEVERITY.D3D12_MESSAGE_SEVERITY_ERROR, TRUE);
-                    infoQueue->SetBreakOnSeverity(D3D12_MESSAGE_SEVERITY.D3D12_MESSAGE_SEVERITY_WARNING, TRUE);
-
-                    // Suppress whole categories of messages
-                    //D3D12_MESSAGE_CATEGORY Categories[] = {};
-
-                    // Suppress messages based on their severity level
-                    const int SeveritiesCount = 1;
-                    var Severities = stackalloc D3D12_MESSAGE_SEVERITY[SeveritiesCount]
-                    {
-                        D3D12_MESSAGE_SEVERITY.D3D12_MESSAGE_SEVERITY_INFO
-                    };
-
-                    // Suppress individual messages by their ID
-                    const int IDsCount = 3;
-                    var DenyIds = stackalloc D3D12_MESSAGE_ID[IDsCount] {
-                        D3D12_MESSAGE_ID.D3D12_MESSAGE_ID_CLEARRENDERTARGETVIEW_MISMATCHINGCLEARVALUE,   // I'm really not sure how to avoid this message.
-                        D3D12_MESSAGE_ID.D3D12_MESSAGE_ID_MAP_INVALID_NULLRANGE,                         // This warning occurs when using capture frame while graphics debugging.
-                        D3D12_MESSAGE_ID.D3D12_MESSAGE_ID_UNMAP_INVALID_NULLRANGE,                       // This warning occurs when using capture frame while graphics debugging.
-                    };
-
-                    var NewFilter = new D3D12_INFO_QUEUE_FILTER {
-                        //NewFilter.DenyList.NumCategories = _countof(Categories);
-                        //NewFilter.DenyList.pCategoryList = Categories;
-                        DenyList = new D3D12_INFO_QUEUE_FILTER_DESC {
-                            //NumCategories ...
-                            //Categories ...
-                            NumSeverities = SeveritiesCount,
-                            pSeverityList = Severities,
-                            NumIDs = IDsCount,
-                            pIDList = DenyIds,
-                        },
-                    };
-
-                    ThrowIfFailed(nameof(ID3D12InfoQueue.PushStorageFilter), infoQueue->PushStorageFilter(&NewFilter));
-#endif
                 }
 
                 // Describe and create the command queue.
@@ -393,9 +330,9 @@ namespace TerraFX.Samples.DirectX.D3D12
 
                     var sampler = new D3D12_STATIC_SAMPLER_DESC {
                         Filter = D3D12_FILTER.D3D12_FILTER_MIN_MAG_MIP_POINT,
-                        AddressU = D3D12_TEXTURE_ADDRESS_MODE.D3D12_TEXTURE_ADDRESS_MODE_BORDER,
-                        AddressV = D3D12_TEXTURE_ADDRESS_MODE.D3D12_TEXTURE_ADDRESS_MODE_BORDER,
-                        AddressW = D3D12_TEXTURE_ADDRESS_MODE.D3D12_TEXTURE_ADDRESS_MODE_BORDER,
+                        AddressU = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
+                        AddressV = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
+                        AddressW = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
                         MipLODBias = 0,
                         MaxAnisotropy = 0,
                         ComparisonFunc = D3D12_COMPARISON_FUNC_NEVER,
@@ -404,7 +341,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                         MaxLOD = D3D12_FLOAT32_MAX,
                         ShaderRegister = 0,
                         RegisterSpace = 0,
-                        ShaderVisibility = D3D12_SHADER_VISIBILITY.D3D12_SHADER_VISIBILITY_PIXEL,
+                        ShaderVisibility = D3D12_SHADER_VISIBILITY_PIXEL,
                     };
 
                     var rootSignatureDesc = new D3D12_VERSIONED_ROOT_SIGNATURE_DESC();
@@ -412,6 +349,12 @@ namespace TerraFX.Samples.DirectX.D3D12
 
                     ThrowIfFailed(nameof(D3D12SerializeVersionedRootSignature), D3D12SerializeVersionedRootSignature(
                         &rootSignatureDesc, featureData.HighestVersion, &signature, &error));
+
+                    fixed (ID3D12RootSignature** rootSignature = &_rootSignature)
+                    {
+                        iid = IID_ID3D12RootSignature;
+                        ThrowIfFailed(nameof(ID3D12Device.CreateRootSignature), _device->CreateRootSignature(0, signature->GetBufferPointer(), signature->GetBufferSize(), &iid, (void**)rootSignature));
+                    }
                 }
 
                 // Create the pipeline state, which includes compiling and loading shaders.
@@ -442,7 +385,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     };
 
                     var semanticName1 = stackalloc ulong[2] {
-                        0x44524f4f43584554,     // TEXCOORD
+                        0x44524F4F43584554,     // TEXCOORD
                         0x0000000000000000,
                     };
 
@@ -574,32 +517,35 @@ namespace TerraFX.Samples.DirectX.D3D12
                         Dimension = D3D12_RESOURCE_DIMENSION_TEXTURE2D,
                     };
 
-                    var heapProperties = new D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_DEFAULT);
-                    iid = IID_ID3D12Resource;
-                    ThrowIfFailed(nameof(ID3D12Device._CreateCommittedResource), _device->CreateCommittedResource(
-                        &heapProperties,
-                        D3D12_HEAP_FLAG_NONE,
-                        &textureDesc,
-                        D3D12_RESOURCE_STATE_COPY_DEST,
-                        pOptimizedClearValue: null,
-                        &iid,
-                        (void**)_texture
-                    ));
+                    fixed (ID3D12Resource** pTexture = &_texture)
+                    {
+                        var heapProperties = new D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_DEFAULT);
+                        iid = IID_ID3D12Resource;
+                        ThrowIfFailed(nameof(ID3D12Device._CreateCommittedResource), _device->CreateCommittedResource(
+                            &heapProperties,
+                            D3D12_HEAP_FLAG_NONE,
+                            &textureDesc,
+                            D3D12_RESOURCE_STATE_COPY_DEST,
+                            pOptimizedClearValue: null,
+                            &iid,
+                            (void**)pTexture
+                        ));
 
-                    var uploadBufferSize = GetRequiredIntermediateSize(_texture, 0, 1);
+                        var uploadBufferSize = GetRequiredIntermediateSize(_texture, 0, 1);
 
-                    // Create the GPU upload buffer.
-                    heapProperties = new D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD);
-                    var bufferDesc = D3D12_RESOURCE_DESC.Buffer(uploadBufferSize);
-                    ThrowIfFailed(nameof(ID3D12Device._CreateCommittedResource), _device->CreateCommittedResource(
-                    &heapProperties,
-                        D3D12_HEAP_FLAG_NONE,
-                        &bufferDesc,
-                        D3D12_RESOURCE_STATE_GENERIC_READ,
-                        pOptimizedClearValue: null,
-                        &iid,
-                        (void**)&textureUploadHeap
-                    ));
+                        // Create the GPU upload buffer.
+                        heapProperties = new D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD);
+                        var bufferDesc = D3D12_RESOURCE_DESC.Buffer(uploadBufferSize);
+                        ThrowIfFailed(nameof(ID3D12Device._CreateCommittedResource), _device->CreateCommittedResource(
+                            &heapProperties,
+                            D3D12_HEAP_FLAG_NONE,
+                            &bufferDesc,
+                            D3D12_RESOURCE_STATE_GENERIC_READ,
+                            pOptimizedClearValue: null,
+                            &iid,
+                            (void**)&textureUploadHeap
+                        ));
+                    }
 
                     // Copy data to the intermediate upload heap and then schedule a copy 
                     // from the upload heap to the Texture2D.
