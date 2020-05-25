@@ -12,7 +12,6 @@ using TerraFX.Interop;
 using static TerraFX.Interop.D3D_FEATURE_LEVEL;
 using static TerraFX.Interop.D3D_PRIMITIVE_TOPOLOGY;
 using static TerraFX.Interop.D3D_ROOT_SIGNATURE_VERSION;
-using static TerraFX.Interop.D3D12;
 using static TerraFX.Interop.D3D12_BLEND;
 using static TerraFX.Interop.D3D12_BLEND_OP;
 using static TerraFX.Interop.D3D12_COLOR_WRITE_ENABLE;
@@ -42,11 +41,8 @@ using static TerraFX.Interop.D3D12_SHADER_VISIBILITY;
 using static TerraFX.Interop.D3D12_SRV_DIMENSION;
 using static TerraFX.Interop.D3D12_STATIC_BORDER_COLOR;
 using static TerraFX.Interop.D3D12_TEXTURE_LAYOUT;
-using static TerraFX.Interop.D3DCompiler;
-using static TerraFX.Interop.DXGI;
 using static TerraFX.Interop.DXGI_FORMAT;
 using static TerraFX.Interop.DXGI_SWAP_EFFECT;
-using static TerraFX.Interop.Kernel32;
 using static TerraFX.Interop.Windows;
 using static TerraFX.Samples.DirectX.DXSampleHelper;
 
@@ -590,7 +586,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                         (void**)_texture
                     ));
 
-                    ulong uploadBufferSize = GetRequiredIntermediateSize(_texture, 0, 1);
+                    var uploadBufferSize = GetRequiredIntermediateSize(_texture, 0, 1);
 
                     // Create the GPU upload buffer.
                     heapProperties = new D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD);
@@ -607,16 +603,16 @@ namespace TerraFX.Samples.DirectX.D3D12
 
                     // Copy data to the intermediate upload heap and then schedule a copy 
                     // from the upload heap to the Texture2D.
-                    byte[] texture = GenerateTextureData();
-                    uint rowPitch = TextureWidth * TexturePixelSize;
-                    uint slicePitch = rowPitch * TextureHeight;
+                    var texture = GenerateTextureData();
+                    var rowPitch = TextureWidth * TexturePixelSize;
+                    var slicePitch = rowPitch * TextureHeight;
                     D3D12_SUBRESOURCE_DATA textureData;
                     fixed (byte* pTexture = &texture[0])
                     {
                         textureData = new D3D12_SUBRESOURCE_DATA {
                             pData = (void*)pTexture,
-                            RowPitch = (IntPtr)(rowPitch),
-                            SlicePitch = (IntPtr)(slicePitch),
+                            RowPitch = (nint)rowPitch,
+                            SlicePitch = (nint)slicePitch,
                         };
                     }
                     UpdateSubresources(_commandList, _texture, textureUploadHeap, 0, 0, 1, &textureData);
@@ -691,7 +687,7 @@ namespace TerraFX.Samples.DirectX.D3D12
         }
 
         // Generate a simple black and white checkerboard texture.
-        byte[] GenerateTextureData()
+        private byte[] GenerateTextureData()
         {
             const uint RowPitch = TextureWidth * TexturePixelSize;
             const uint CellPitch = RowPitch >> 3;        // The width of a cell in the checkboard texture.
@@ -703,10 +699,10 @@ namespace TerraFX.Samples.DirectX.D3D12
             {
                 for (uint n = 0; n < TextureSize; n += TexturePixelSize)
                 {
-                    uint x = n % RowPitch;
-                    uint y = n / RowPitch;
-                    uint i = x / CellPitch;
-                    uint j = y / CellHeight;
+                    var x = n % RowPitch;
+                    var y = n / RowPitch;
+                    var i = x / CellPitch;
+                    var j = y / CellHeight;
 
                     if (i % 2 == j % 2)
                     {
@@ -870,6 +866,14 @@ namespace TerraFX.Samples.DirectX.D3D12
             {
                 _rtvHeap = null;
                 _ = rtvHeap->Release();
+            }
+
+            var srvHeap = _srvHeap;
+
+            if (rtvHeap != null)
+            {
+                _srvHeap = null;
+                _ = srvHeap->Release();
             }
 
             var pipelineState = _pipelineState;
