@@ -137,6 +137,13 @@ namespace TerraFX.Samples.WinForms
                 if (SUCCEEDED(D3D12GetDebugInterface(&iid, (void**)&debugController)))
                 {
                     debugController->EnableDebugLayer();
+                    iid = IID_ID3D12Debug1;
+                    ID3D12Debug1* debug1 = null;
+                    if (SUCCEEDED(debugController->QueryInterface(&iid, (void**)&debug1)))
+                    {
+                        debug1->SetEnableGPUBasedValidation(TRUE);
+                        debug1->SetEnableSynchronizedCommandQueueValidation(TRUE);
+                    }
 
                     // Enable additional debug layers.
                     dxgiFactoryFlags |= DXGI_CREATE_FACTORY_DEBUG;
@@ -175,6 +182,53 @@ namespace TerraFX.Samples.WinForms
                 iid = IID_ID3D12Device;
                 ThrowIfFailed(nameof(D3D12CreateDevice), D3D12CreateDevice((IUnknown*)adapter, D3D_FEATURE_LEVEL_11_0, &iid, (void**)device));
             }
+
+            // Enable debug messages in debug mode.
+            {
+#if DEBUG
+                ID3D12InfoQueue* infoQueue;
+                iid = IID_ID3D12InfoQueue;
+                ThrowIfFailed(nameof(ID3D12Device2.QueryInterface), _device->QueryInterface(&iid, (void**)&infoQueue));
+
+                infoQueue->SetBreakOnSeverity(D3D12_MESSAGE_SEVERITY.D3D12_MESSAGE_SEVERITY_CORRUPTION, TRUE);
+                infoQueue->SetBreakOnSeverity(D3D12_MESSAGE_SEVERITY.D3D12_MESSAGE_SEVERITY_ERROR, TRUE);
+                infoQueue->SetBreakOnSeverity(D3D12_MESSAGE_SEVERITY.D3D12_MESSAGE_SEVERITY_WARNING, TRUE);
+
+                // Suppress whole categories of messages
+                //D3D12_MESSAGE_CATEGORY Categories[] = {};
+
+                // Suppress messages based on their severity level
+                const int SeveritiesCount = 1;
+                var Severities = stackalloc D3D12_MESSAGE_SEVERITY[SeveritiesCount]
+                {
+                    D3D12_MESSAGE_SEVERITY.D3D12_MESSAGE_SEVERITY_INFO
+                };
+
+                // Suppress individual messages by their ID
+                const int IDsCount = 3;
+                var DenyIds = stackalloc D3D12_MESSAGE_ID[IDsCount] {
+                    D3D12_MESSAGE_ID.D3D12_MESSAGE_ID_CLEARRENDERTARGETVIEW_MISMATCHINGCLEARVALUE,   // I'm really not sure how to avoid this message.
+                    D3D12_MESSAGE_ID.D3D12_MESSAGE_ID_MAP_INVALID_NULLRANGE,                         // This warning occurs when using capture frame while graphics debugging.
+                    D3D12_MESSAGE_ID.D3D12_MESSAGE_ID_UNMAP_INVALID_NULLRANGE,                       // This warning occurs when using capture frame while graphics debugging.
+                };
+
+                var NewFilter = new D3D12_INFO_QUEUE_FILTER {
+                    //NewFilter.DenyList.NumCategories = _countof(Categories);
+                    //NewFilter.DenyList.pCategoryList = Categories;
+                    DenyList = new D3D12_INFO_QUEUE_FILTER_DESC {
+                        //NumCategories ...
+                        //Categories ...
+                        NumSeverities = SeveritiesCount,
+                        pSeverityList = Severities,
+                        NumIDs = IDsCount,
+                        pIDList = DenyIds,
+                    },
+                };
+
+                ThrowIfFailed(nameof(ID3D12InfoQueue.PushStorageFilter), infoQueue->PushStorageFilter(&NewFilter));
+#endif
+            }
+
             return adapter;
         }
 
