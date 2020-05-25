@@ -5,20 +5,30 @@ using System.IO;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Windows.Forms;
 using TerraFX.Interop;
 using static TerraFX.Interop.D3D_FEATURE_LEVEL;
 using static TerraFX.Interop.D3D_PRIMITIVE_TOPOLOGY;
 using static TerraFX.Interop.D3D_ROOT_SIGNATURE_VERSION;
 using static TerraFX.Interop.D3D12_COMMAND_LIST_TYPE;
+using static TerraFX.Interop.D3D12_COMPARISON_FUNC;
+using static TerraFX.Interop.D3D12_DESCRIPTOR_HEAP_FLAGS;
 using static TerraFX.Interop.D3D12_DESCRIPTOR_HEAP_TYPE;
+using static TerraFX.Interop.D3D12_DESCRIPTOR_RANGE_FLAGS;
+using static TerraFX.Interop.D3D12_DESCRIPTOR_RANGE_TYPE;
+using static TerraFX.Interop.D3D12_FEATURE;
 using static TerraFX.Interop.D3D12_FENCE_FLAGS;
 using static TerraFX.Interop.D3D12_HEAP_FLAGS;
 using static TerraFX.Interop.D3D12_HEAP_TYPE;
 using static TerraFX.Interop.D3D12_INPUT_CLASSIFICATION;
 using static TerraFX.Interop.D3D12_PRIMITIVE_TOPOLOGY_TYPE;
+using static TerraFX.Interop.D3D12_RESOURCE_DIMENSION;
+using static TerraFX.Interop.D3D12_RESOURCE_FLAGS;
 using static TerraFX.Interop.D3D12_RESOURCE_STATES;
 using static TerraFX.Interop.D3D12_ROOT_SIGNATURE_FLAGS;
+using static TerraFX.Interop.D3D12_SHADER_VISIBILITY;
+using static TerraFX.Interop.D3D12_SRV_DIMENSION;
+using static TerraFX.Interop.D3D12_STATIC_BORDER_COLOR;
+using static TerraFX.Interop.D3D12_TEXTURE_ADDRESS_MODE;
 using static TerraFX.Interop.DXGI_ADAPTER_FLAG;
 using static TerraFX.Interop.DXGI_FORMAT;
 using static TerraFX.Interop.DXGI_SWAP_EFFECT;
@@ -39,6 +49,9 @@ namespace TerraFX.Samples.WinForms
         private readonly string _assetsPath;
 
         private const uint FrameCount = 2;
+        private const uint TextureWidth = 256;
+        private const uint TextureHeight = 256;
+        private const uint TexturePixelSize = 4;    // The number of bytes used to represent a pixel in the texture.
 
         // Pipeline objects
         private D3D12_VIEWPORT _viewport;
@@ -50,6 +63,7 @@ namespace TerraFX.Samples.WinForms
         private ID3D12CommandQueue* _commandQueue;
         private ID3D12RootSignature* _rootSignature;
         private ID3D12DescriptorHeap* _rtvHeap;
+        private ID3D12DescriptorHeap* _srvHeap;
         private ID3D12PipelineState* _pipelineState;
         private ID3D12GraphicsCommandList* _commandList;
         private uint _rtvDescriptorSize;
@@ -58,6 +72,7 @@ namespace TerraFX.Samples.WinForms
         // App resources.
         private ID3D12Resource* _vertexBuffer;
         private D3D12_VERTEX_BUFFER_VIEW _vertexBufferView;
+        private ID3D12Resource* _texture;
 
         // Synchronization objects.
         private uint _frameIndex; // the current back buffer index
@@ -67,6 +82,14 @@ namespace TerraFX.Samples.WinForms
 
         private ID3D12Debug* _debugController;
         private readonly uint _dxgiFactoryFlags;
+
+        private bool _isTriangleWithTexture;
+
+        public bool IsTriangleWithTexture
+        {
+            get { return _isTriangleWithTexture; }
+            set { if (_isTriangleWithTexture != value) { _isTriangleWithTexture = value; OnInit(); Render(); } }
+        }
 
 
         public Vector2 SizeXy
@@ -137,6 +160,7 @@ namespace TerraFX.Samples.WinForms
 
             _dxgiFactoryFlags = DebugLayerEnable(_debugController);
 
+            _isTriangleWithTexture = false;
             OnInit();
         }
 
@@ -368,6 +392,7 @@ namespace TerraFX.Samples.WinForms
                 var rtvHeapDesc = new D3D12_DESCRIPTOR_HEAP_DESC {
                     NumDescriptors = FrameCount,
                     Type = D3D12_DESCRIPTOR_HEAP_TYPE_RTV,
+                    Flags = D3D12_DESCRIPTOR_HEAP_FLAG_NONE,
                 };
 
                 fixed (ID3D12DescriptorHeap** rtvHeap = &_rtvHeap)
@@ -377,6 +402,21 @@ namespace TerraFX.Samples.WinForms
                 }
 
                 _rtvDescriptorSize = _device->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_RTV);
+            }
+
+            if (IsTriangleWithTexture)
+            {
+                // Describe and create a shader resource view (SRV) heap for the texture.
+                var srvHeapDesc = new D3D12_DESCRIPTOR_HEAP_DESC {
+                    NumDescriptors = 1,
+                    Type = D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV,
+                    Flags = D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE,
+                };
+                fixed (ID3D12DescriptorHeap** srvHeap = &_srvHeap)
+                {
+                    var iid = IID_ID3D12DescriptorHeap;
+                    ThrowIfFailed(nameof(ID3D12Device.CreateDescriptorHeap), _device->CreateDescriptorHeap(&srvHeapDesc, &iid, (void**)srvHeap));
+                }
             }
         }
 
@@ -452,16 +492,64 @@ namespace TerraFX.Samples.WinForms
 
         private void RootSignatureCreate(ID3DBlob* signature, ID3DBlob* error)
         {
-            var rootSignatureDesc = new D3D12_ROOT_SIGNATURE_DESC {
-                Flags = D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT
-            };
+            if (!IsTriangleWithTexture)
+            {
+                // Create an empty root signature.
+                var rootSignatureDesc = new D3D12_ROOT_SIGNATURE_DESC {
+                    Flags = D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT
+                };
 
-            ThrowIfFailed(nameof(D3D12SerializeRootSignature), D3D12SerializeRootSignature(&rootSignatureDesc, D3D_ROOT_SIGNATURE_VERSION_1, &signature, &error));
+                ThrowIfFailed(nameof(D3D12SerializeRootSignature), D3D12SerializeRootSignature(&rootSignatureDesc, D3D_ROOT_SIGNATURE_VERSION_1, &signature, &error));
+            }
+            else
+            {
+                // Create the root signature.
+                var featureData = new D3D12_FEATURE_DATA_ROOT_SIGNATURE {
+                    // This is the highest version the sample supports. If CheckFeatureSupport succeeds, the HighestVersion returned will not be greater than this.
+                    HighestVersion = D3D_ROOT_SIGNATURE_VERSION_1_1
+                };
+
+                if (FAILED(_device->CheckFeatureSupport(D3D12_FEATURE_ROOT_SIGNATURE, &featureData, (uint)sizeof(D3D12_FEATURE))))
+                {
+                    featureData.HighestVersion = D3D_ROOT_SIGNATURE_VERSION_1_0;
+                }
+
+                const int RangesCount = 1;
+                var ranges = stackalloc D3D12_DESCRIPTOR_RANGE1[RangesCount];
+                ranges[0].Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0, 0, D3D12_DESCRIPTOR_RANGE_FLAG_DATA_STATIC);
+
+                const int RootParametersCount = 1;
+                var rootParameters = stackalloc D3D12_ROOT_PARAMETER1[RootParametersCount];
+                rootParameters[0].InitAsDescriptorTable(1, ranges, D3D12_SHADER_VISIBILITY_PIXEL);
+
+                var sampler = new D3D12_STATIC_SAMPLER_DESC {
+                    Filter = D3D12_FILTER.D3D12_FILTER_MIN_MAG_MIP_POINT,
+                    AddressU = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
+                    AddressV = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
+                    AddressW = D3D12_TEXTURE_ADDRESS_MODE_BORDER,
+                    MipLODBias = 0,
+                    MaxAnisotropy = 0,
+                    ComparisonFunc = D3D12_COMPARISON_FUNC_NEVER,
+                    BorderColor = D3D12_STATIC_BORDER_COLOR_TRANSPARENT_BLACK,
+                    MinLOD = 0.0f,
+                    MaxLOD = D3D12_FLOAT32_MAX,
+                    ShaderRegister = 0,
+                    RegisterSpace = 0,
+                    ShaderVisibility = D3D12_SHADER_VISIBILITY_PIXEL,
+                };
+
+                var rootSignatureDesc = new D3D12_VERSIONED_ROOT_SIGNATURE_DESC();
+                rootSignatureDesc.Init_1_1(RootParametersCount, rootParameters, 1, &sampler, D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT);
+
+                ThrowIfFailed(nameof(D3D12SerializeVersionedRootSignature), D3D12SerializeVersionedRootSignature(
+                    &rootSignatureDesc, featureData.HighestVersion, &signature, &error));
+            }
 
             fixed (ID3D12RootSignature** rootSignature = &_rootSignature)
             {
                 var iid = IID_ID3D12RootSignature;
-                ThrowIfFailed(nameof(ID3D12Device._CreateRootSignature), _device->CreateRootSignature(nodeMask: 0, signature->GetBufferPointer(), signature->GetBufferSize(), &iid, (void**)rootSignature));
+                ThrowIfFailed(nameof(ID3D12Device.CreateRootSignature),
+                    _device->CreateRootSignature(nodeMask: 0, signature->GetBufferPointer(), signature->GetBufferSize(), &iid, (void**)rootSignature));
             }
         }
 
@@ -476,7 +564,10 @@ namespace TerraFX.Samples.WinForms
             // Enable better shader debugging with the graphics debugging tools.
             compileFlags |= D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION;
 #endif
-            fixed (char* fileName = GetAssetFullPath(@"Assets\Shaders\HelloTriangle.hlsl"))
+            var shaderFile = IsTriangleWithTexture
+                ? @"Assets\Shaders\HelloTexture.hlsl"
+                : @"Assets\Shaders\HelloTriangle.hlsl";
+            fixed (char* fileName = GetAssetFullPath(shaderFile))
             {
                 var entryPoint = 0x00006E69614D5356;    // VSMain
                 var target = 0x0000305F355F7376;        // vs_5_0
@@ -490,27 +581,48 @@ namespace TerraFX.Samples.WinForms
             // Define the vertex input layout.
             const int InputElementDescsCount = 2;
 
-            var semanticName0 = stackalloc ulong[2] {
+            var semanticNamePosition = stackalloc ulong[2] {
                 0x4E4F495449534F50,     // POSITION
                 0x0000000000000000,
             };
 
-            var semanticName1 = stackalloc ulong[1] {
+            var semanticNameColor = stackalloc ulong[1] {
                 0x000000524F4C4F43,     // COLOR
             };
 
+            var semanticNameTexCoord = stackalloc ulong[2] {
+                0x44524F4F43584554,     // TEXCOORD
+                0x0000000000000000,
+            };
+
+            var positionElement = new D3D12_INPUT_ELEMENT_DESC {
+                SemanticName = (sbyte*)semanticNamePosition,
+                Format = DXGI_FORMAT_R32G32B32_FLOAT,
+                InputSlotClass = D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA,
+            };
+
+            var colorElement = new D3D12_INPUT_ELEMENT_DESC {
+                SemanticName = (sbyte*)semanticNameColor,
+                Format = DXGI_FORMAT_R32G32B32A32_FLOAT,
+                AlignedByteOffset = 12,
+                InputSlotClass = D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA,
+            };
+
+            var texCoordElement = new D3D12_INPUT_ELEMENT_DESC {
+                SemanticName = (sbyte*)semanticNameTexCoord,
+                Format = DXGI_FORMAT_R32G32_FLOAT,
+                AlignedByteOffset = 12,
+                InputSlotClass = D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA,
+            };
+
             var inputElementDescs = stackalloc D3D12_INPUT_ELEMENT_DESC[InputElementDescsCount] {
-                new D3D12_INPUT_ELEMENT_DESC {
-                    SemanticName = (sbyte*)semanticName0,
-                    Format = DXGI_FORMAT_R32G32B32_FLOAT,
-                    InputSlotClass = D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA,
-                },
-                new D3D12_INPUT_ELEMENT_DESC {
-                    SemanticName = (sbyte*)semanticName1,
-                    Format = DXGI_FORMAT_R32G32B32A32_FLOAT,
-                    AlignedByteOffset = 12,
-                    InputSlotClass = D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA,
-                },
+                positionElement,
+                IsTriangleWithTexture ? texCoordElement : colorElement,
+            };
+
+            var disabledDepthStencil = new D3D12_DEPTH_STENCIL_DESC {
+                DepthEnable = FALSE,
+                StencilEnable = FALSE,
             };
 
             // Describe and create the graphics pipeline state object (PSO).
@@ -524,7 +636,9 @@ namespace TerraFX.Samples.WinForms
                 PS = new D3D12_SHADER_BYTECODE(pixelShader),
                 RasterizerState = D3D12_RASTERIZER_DESC.DEFAULT,
                 BlendState = D3D12_BLEND_DESC.DEFAULT,
-                DepthStencilState = D3D12_DEPTH_STENCIL_DESC.DEFAULT,
+                DepthStencilState = IsTriangleWithTexture
+                    ? disabledDepthStencil
+                    : D3D12_DEPTH_STENCIL_DESC.DEFAULT,
                 SampleMask = uint.MaxValue,
                 PrimitiveTopologyType = D3D12_PRIMITIVE_TOPOLOGY_TYPE_TRIANGLE,
                 NumRenderTargets = 1,
@@ -536,7 +650,8 @@ namespace TerraFX.Samples.WinForms
             fixed (ID3D12PipelineState** pipelineState = &_pipelineState)
             {
                 var iid = IID_ID3D12PipelineState;
-                ThrowIfFailed(nameof(ID3D12Device._CreateGraphicsPipelineState), _device->CreateGraphicsPipelineState(&psoDesc, &iid, (void**)pipelineState));
+                ThrowIfFailed(nameof(ID3D12Device.CreateGraphicsPipelineState),
+                    _device->CreateGraphicsPipelineState(&psoDesc, &iid, (void**)pipelineState));
             }
         }
 
@@ -546,7 +661,8 @@ namespace TerraFX.Samples.WinForms
             fixed (ID3D12GraphicsCommandList** commandList = &_commandList)
             {
                 var iid = IID_ID3D12GraphicsCommandList;
-                ThrowIfFailed(nameof(ID3D12Device.CreateCommandList), _device->CreateCommandList(nodeMask: 0, D3D12_COMMAND_LIST_TYPE_DIRECT, _commandAllocators[_frameIndex], _pipelineState, &iid, (void**)commandList));
+                ThrowIfFailed(nameof(ID3D12Device.CreateCommandList),
+                    _device->CreateCommandList(nodeMask: 0, D3D12_COMMAND_LIST_TYPE_DIRECT, _commandAllocators[_frameIndex], _pipelineState, &iid, (void**)commandList));
             }
         }
 
@@ -557,27 +673,26 @@ namespace TerraFX.Samples.WinForms
             ThrowIfFailed(nameof(ID3D12GraphicsCommandList.Close), hr);
         }
 
-
-        private void TriangleVertexBufferCreate()
+        private void ColorTriangleVertexBufferCreate()
         {
             // Define the geometry for a triangle.
             const int TriangleVerticesCount = 3;
-            var triangleVertices = stackalloc Vertex[TriangleVerticesCount] {
-                new Vertex {
+            var triangleVertices = stackalloc ColorVertex[TriangleVerticesCount] {
+                new ColorVertex {
                     Position = new Vector3(0.0f, 0.25f * AspectRatio, 0.0f),
                     Color = new Vector4(1.0f, 0.0f, 0.0f, 1.0f)
                 },
-                new Vertex {
+                new ColorVertex {
                     Position = new Vector3(0.25f, -0.25f * AspectRatio, 0.0f),
                     Color = new Vector4(0.0f, 1.0f, 0.0f, 1.0f)
                 },
-                new Vertex {
+                new ColorVertex {
                     Position = new Vector3(-0.25f, -0.25f * AspectRatio, 0.0f),
                     Color = new Vector4(0.0f, 0.0f, 1.0f, 1.0f)
                 },
             };
 
-            var vertexBufferSize = (uint)sizeof(Vertex) * TriangleVerticesCount;
+            var vertexBufferSize = (uint)sizeof(ColorVertex) * TriangleVerticesCount;
 
             // Note: using upload heaps to transfer static data like vert buffers is not
             // recommended. Every time the GPU needs it, the upload heap will be marshalled
@@ -604,14 +719,201 @@ namespace TerraFX.Samples.WinForms
             var readRange = new D3D12_RANGE();
 
             byte* pVertexDataBegin;
-            ThrowIfFailed(nameof(ID3D12Resource._Map), _vertexBuffer->Map(Subresource: 0, &readRange, (void**)&pVertexDataBegin));
+            ThrowIfFailed(nameof(ID3D12Resource.Map), _vertexBuffer->Map(Subresource: 0, &readRange, (void**)&pVertexDataBegin));
             Unsafe.CopyBlock(pVertexDataBegin, triangleVertices, vertexBufferSize);
             _vertexBuffer->Unmap(0, null);
 
             // Initialize the vertex buffer view.
             _vertexBufferView.BufferLocation = _vertexBuffer->GetGPUVirtualAddress();
-            _vertexBufferView.StrideInBytes = (uint)sizeof(Vertex);
+            _vertexBufferView.StrideInBytes = (uint)sizeof(ColorVertex);
             _vertexBufferView.SizeInBytes = vertexBufferSize;
+        }
+
+        private void TextureTriangleVertexBufferCreate()
+        {
+            // Define the geometry for a triangle.
+            const int TriangleVerticesCount = 3;
+            var triangleVertices = stackalloc TextureVertex[TriangleVerticesCount] {
+                new TextureVertex {
+                    Position = new Vector3(0.0f, 0.25f * AspectRatio, 0.0f),
+                    UV = new Vector2(0.5f, 0.0f)
+                },
+                new TextureVertex {
+                    Position = new Vector3(0.25f, -0.25f * AspectRatio, 0.0f),
+                    UV = new Vector2(1.0f, 1.0f)
+                },
+                new TextureVertex {
+                    Position = new Vector3(-0.25f, -0.25f * AspectRatio, 0.0f),
+                    UV = new Vector2(0.0f, 1.0f)
+                },
+            };
+
+            var vertexBufferSize = (uint)sizeof(TextureVertex) * TriangleVerticesCount;
+
+            // Note: using upload heaps to transfer static data like vert buffers is not
+            // recommended. Every time the GPU needs it, the upload heap will be marshalled
+            // over. Please read up on Default Heap usage. An upload heap is used here for
+            // code simplicity and because there are very few verts to actually transfer.
+            fixed (ID3D12Resource** vertexBuffer = &_vertexBuffer)
+            {
+                var heapProperties = new D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD);
+                var bufferDesc = D3D12_RESOURCE_DESC.Buffer(vertexBufferSize);
+
+                var iid = IID_ID3D12Resource;
+                ThrowIfFailed(nameof(ID3D12Device._CreateCommittedResource), _device->CreateCommittedResource(
+                    &heapProperties,
+                    D3D12_HEAP_FLAG_NONE,
+                    &bufferDesc,
+                    D3D12_RESOURCE_STATE_GENERIC_READ,
+                    pOptimizedClearValue: null,
+                    &iid,
+                    (void**)vertexBuffer
+                ));
+            }
+
+            // Copy the triangle data to the vertex buffer.
+            var readRange = new D3D12_RANGE();
+            byte* pVertexDataBegin;
+            ThrowIfFailed(nameof(ID3D12Resource.Map), _vertexBuffer->Map(Subresource: 0, &readRange, (void**)&pVertexDataBegin));
+            Unsafe.CopyBlock(pVertexDataBegin, triangleVertices, vertexBufferSize);
+            _vertexBuffer->Unmap(0, null);
+
+            // Initialize the vertex buffer view.
+            _vertexBufferView.BufferLocation = _vertexBuffer->GetGPUVirtualAddress();
+            _vertexBufferView.StrideInBytes = (uint)sizeof(TextureVertex);
+            _vertexBufferView.SizeInBytes = vertexBufferSize;
+        }
+
+        private void TextureHeapCreate()
+        {
+            // Note: textureUploadHeap needs to stay in scope until
+            // the command list that references it has finished executing on the GPU.
+            // We will flush the GPU at the end of this method to ensure the resource is not
+            // prematurely destroyed.
+            ID3D12Resource* textureUploadHeap;
+
+            // Create the texture.
+            {
+                // Describe and create a Texture2D.
+                var textureDesc = new D3D12_RESOURCE_DESC {
+                    MipLevels = 1,
+                    Format = DXGI_FORMAT_R8G8B8A8_UNORM,
+                    Width = TextureWidth,
+                    Height = TextureHeight,
+                    Flags = D3D12_RESOURCE_FLAG_NONE,
+                    DepthOrArraySize = 1,
+                    SampleDesc = new DXGI_SAMPLE_DESC {
+                        Count = 1,
+                        Quality = 0,
+                    },
+                    Dimension = D3D12_RESOURCE_DIMENSION_TEXTURE2D,
+                };
+
+                fixed (ID3D12Resource** pTexture = &_texture)
+                {
+                    var heapProperties = new D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_DEFAULT);
+                    var iid = IID_ID3D12Resource;
+                    ThrowIfFailed(nameof(ID3D12Device._CreateCommittedResource), _device->CreateCommittedResource(
+                        &heapProperties,
+                        D3D12_HEAP_FLAG_NONE,
+                        &textureDesc,
+                        D3D12_RESOURCE_STATE_COPY_DEST,
+                        pOptimizedClearValue: null,
+                        &iid,
+                        (void**)pTexture
+                    ));
+
+                    var uploadBufferSize = GetRequiredIntermediateSize(_texture, 0, 1);
+
+                    // Create the GPU upload buffer.
+                    heapProperties = new D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD);
+                    var bufferDesc = D3D12_RESOURCE_DESC.Buffer(uploadBufferSize);
+                    ThrowIfFailed(nameof(ID3D12Device._CreateCommittedResource), _device->CreateCommittedResource(
+                        &heapProperties,
+                        D3D12_HEAP_FLAG_NONE,
+                        &bufferDesc,
+                        D3D12_RESOURCE_STATE_GENERIC_READ,
+                        pOptimizedClearValue: null,
+                        &iid,
+                        (void**)&textureUploadHeap
+                    ));
+                }
+
+                // Copy data to the intermediate upload heap and then schedule a copy 
+                // from the upload heap to the Texture2D.
+                var texture = GenerateTextureData();
+                var rowPitch = TextureWidth * TexturePixelSize;
+                var slicePitch = rowPitch * TextureHeight;
+                D3D12_SUBRESOURCE_DATA textureData;
+                fixed (byte* pTexture = &texture[0])
+                {
+                    textureData = new D3D12_SUBRESOURCE_DATA {
+                        pData = (void*)pTexture,
+                        RowPitch = (nint)rowPitch,
+                        SlicePitch = (nint)slicePitch,
+                    };
+                }
+                _ = UpdateSubresources(_commandList, _texture, textureUploadHeap, 0, 0, 1, &textureData);
+                var barrier = D3D12_RESOURCE_BARRIER.InitTransition(_texture, D3D12_RESOURCE_STATE_COPY_DEST, D3D12_RESOURCE_STATE_PIXEL_SHADER_RESOURCE);
+                _commandList->ResourceBarrier(1, &barrier);
+
+                // Describe and create a SRV for the texture.
+                var srvDesc = new D3D12_SHADER_RESOURCE_VIEW_DESC {
+                    Shader4ComponentMapping = D3D12_DEFAULT_SHADER_4_COMPONENT_MAPPING,
+                    Format = textureDesc.Format,
+                    ViewDimension = D3D12_SRV_DIMENSION_TEXTURE2D,
+                };
+                srvDesc.Anonymous.Texture2D.MipLevels = 1;
+
+                _device->CreateShaderResourceView(_texture, &srvDesc, _srvHeap->GetCPUDescriptorHandleForHeapStart());
+            }
+
+            // Close the command list and execute it to begin the initial GPU setup.
+            ThrowIfFailed(nameof(ID3D12GraphicsCommandList.Close), _commandList->Close());
+
+            const int CommandListsCount = 1;
+            var ppCommandLists = stackalloc ID3D12CommandList*[CommandListsCount] {
+                (ID3D12CommandList*)_commandList,
+            };
+            _commandQueue->ExecuteCommandLists(CommandListsCount, ppCommandLists);
+        }
+
+        // Generate a simple black and white checkerboard texture.
+        private byte[] GenerateTextureData()
+        {
+            const uint RowPitch = TextureWidth * TexturePixelSize;
+            const uint CellPitch = RowPitch >> 3;        // The width of a cell in the checkboard texture.
+            const uint CellHeight = TextureWidth >> 3;    // The height of a cell in the checkerboard texture.
+            const uint TextureSize = RowPitch * TextureHeight;
+
+            var data = new byte[TextureSize];
+            fixed (byte* pData = &data[0])
+            {
+                for (uint n = 0; n < TextureSize; n += TexturePixelSize)
+                {
+                    var x = n % RowPitch;
+                    var y = n / RowPitch;
+                    var i = x / CellPitch;
+                    var j = y / CellHeight;
+
+                    if (i % 2 == j % 2)
+                    {
+                        pData[n] = 0x00;        // R
+                        pData[n + 1] = 0x00;    // G
+                        pData[n + 2] = 0x00;    // B
+                        pData[n + 3] = 0xff;    // A
+                    }
+                    else
+                    {
+                        pData[n] = 0xff;        // R
+                        pData[n + 1] = 0xff;    // G
+                        pData[n + 2] = 0xff;    // B
+                        pData[n + 3] = 0xff;    // A
+                    }
+                }
+            }
+
+            return data;
         }
 
 
@@ -657,7 +959,15 @@ namespace TerraFX.Samples.WinForms
                 CommandListClose();
 
                 // Create the vertex buffer.
-                TriangleVertexBufferCreate();
+                if (IsTriangleWithTexture)
+                {
+                    TextureTriangleVertexBufferCreate();
+                    TextureHeapCreate();
+                }
+                else
+                {
+                    ColorTriangleVertexBufferCreate();
+                }
 
                 // Create synchronization objects and wait until assets have been uploaded to the GPU.
                 {
@@ -711,6 +1021,11 @@ namespace TerraFX.Samples.WinForms
             // Set necessary state.
             _commandList->SetGraphicsRootSignature(_rootSignature);
 
+            if (IsTriangleWithTexture)
+            {
+                TextureHeapSet();
+            }
+
             fixed (D3D12_VIEWPORT* viewport = &_viewport)
             {
                 _commandList->RSSetViewports(1, viewport);
@@ -752,6 +1067,16 @@ namespace TerraFX.Samples.WinForms
             ThrowIfFailed(nameof(ID3D12GraphicsCommandList.Close), _commandList->Close());
         }
 
+        private void TextureHeapSet()
+        {
+            const uint HeapsCount = 1;
+            var ppHeaps = stackalloc ID3D12DescriptorHeap*[(int)HeapsCount] {
+                _srvHeap
+            };
+            _commandList->SetDescriptorHeaps(HeapsCount, ppHeaps);
+
+            _commandList->SetGraphicsRootDescriptorTable(0, _srvHeap->GetGPUDescriptorHandleForHeapStart());
+        }
 
         private void CommandListExecute()
         {
@@ -894,6 +1219,14 @@ namespace TerraFX.Samples.WinForms
                 _ = rtvHeap->Release();
             }
 
+            var srvHeap = _srvHeap;
+            if (rtvHeap != null)
+            {
+                _srvHeap = null;
+                _ = srvHeap->Release();
+            }
+
+
             var pipelineState = _pipelineState;
             if (pipelineState != null)
             {
@@ -915,6 +1248,13 @@ namespace TerraFX.Samples.WinForms
                 _ = vertexBuffer->Release();
             }
 
+            var texture = _texture;
+            if (texture != null)
+            {
+                _texture = null;
+                _ = texture->Release();
+            }
+
             var fence = _fence;
             if (fence != null)
             {
@@ -923,10 +1263,15 @@ namespace TerraFX.Samples.WinForms
             }
         }
 
-        private struct Vertex
+        private struct ColorVertex
         {
             public Vector3 Position;
             public Vector4 Color;
+        }
+        private struct TextureVertex
+        {
+            public Vector3 Position;
+            public Vector2 UV;
         }
     }
 }
