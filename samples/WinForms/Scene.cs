@@ -70,7 +70,7 @@ namespace TerraFX.Samples.WinForms
             get { return _sizeXy; }
             set
             {
-                Vector2 newSize = Vector2.Max(value, new Vector2(1, 1));
+                var newSize = Vector2.Max(value, new Vector2(1, 1));
                 if (SizeXy != newSize)
                 {
                     _sizeXy = newSize;
