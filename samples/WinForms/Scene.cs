@@ -160,7 +160,7 @@ namespace TerraFX.Samples.WinForms
 
             _dxgiFactoryFlags = DebugLayerEnable(_debugController);
 
-            _isTriangleWithTexture = true;
+            _isTriangleWithTexture = false;
             OnInit();
         }
 
@@ -627,7 +627,9 @@ namespace TerraFX.Samples.WinForms
                     DepthEnable = FALSE,
                     StencilEnable = FALSE,
                 }
-                : D3D12_DEPTH_STENCIL_DESC.DEFAULT;
+                : new D3D12_DEPTH_STENCIL_DESC {
+                    DepthEnable = FALSE,
+                };
 
             // Describe and create the graphics pipeline state object (PSO).
             var psoDesc = new D3D12_GRAPHICS_PIPELINE_STATE_DESC {
