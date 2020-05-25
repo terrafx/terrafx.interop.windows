@@ -245,6 +245,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     iid = IID_ID3D12CommandAllocator;
                     ThrowIfFailed(nameof(ID3D12Device.CreateRenderTargetView), _device->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_DIRECT, &iid, (void**)commandAllocator));
                 }
+
                 fixed (ID3D12CommandAllocator** bundleAllocator = &_bundleAllocator)
                 {
                     iid = IID_ID3D12CommandAllocator;
@@ -447,12 +448,15 @@ namespace TerraFX.Samples.DirectX.D3D12
                         iid = IID_ID3D12GraphicsCommandList;
                         ThrowIfFailed(nameof(ID3D12Device.CreateCommandList), _device->CreateCommandList(nodeMask: 0, D3D12_COMMAND_LIST_TYPE_BUNDLE, _bundleAllocator, _pipelineState, &iid, (void**)ppBundle));
                     }
+
                     _bundle->SetGraphicsRootSignature(_rootSignature);
                     _bundle->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+
                     fixed (D3D12_VERTEX_BUFFER_VIEW* vertexBufferView = &_vertexBufferView)
                     {
                         _bundle->IASetVertexBuffers(StartSlot: 0, 1, vertexBufferView);
                     }
+
                     _bundle->DrawInstanced(3, 1, 0, 0);
                     ThrowIfFailed(nameof(ID3D12GraphicsCommandList.Close), _bundle->Close());
                 }
@@ -540,7 +544,6 @@ namespace TerraFX.Samples.DirectX.D3D12
             // Record commands.
             var clearColor = stackalloc float[4] { 0.0f, 0.2f, 0.4f, 1.0f };
             _commandList->ClearRenderTargetView(rtvHandle, clearColor, NumRects: 0, null);
-
 
             // Execute the commands stored in the bundle.
             _commandList->ExecuteBundle(_bundle);
