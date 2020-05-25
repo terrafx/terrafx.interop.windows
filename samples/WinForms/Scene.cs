@@ -80,16 +80,15 @@ namespace TerraFX.Samples.WinForms
                         var iid = IID_IDXGISwapChain3;
                         ThrowIfFailed(nameof(IDXGISwapChain1.QueryInterface), _swapChain->QueryInterface(&iid, (void**)swapChain3));
                     }
-                    fixed (IDXGISwapChain3** pSwapChain = &_swapChain)
-                    {
-                        var swapChainDesc = new DXGI_SWAP_CHAIN_DESC();
-                        ThrowIfFailed(nameof(IDXGISwapChain3.GetDesc), (*pSwapChain)->GetDesc(&swapChainDesc));
-                        ThrowIfFailed(nameof(IDXGISwapChain3.ResizeBuffers), (*pSwapChain)->ResizeBuffers(
-                            FrameCount, (uint)newSize.X, (uint)newSize.Y,
-                            swapChainDesc.BufferDesc.Format, swapChainDesc.Flags));
 
-                        _frameIndex = _swapChain->GetCurrentBackBufferIndex();
-                    }
+                    var swapChainDesc = new DXGI_SWAP_CHAIN_DESC();
+                    ThrowIfFailed(nameof(IDXGISwapChain3.GetDesc), _swapChain->GetDesc(&swapChainDesc));
+
+                    ThrowIfFailed(nameof(IDXGISwapChain3.ResizeBuffers), _swapChain->ResizeBuffers(
+                        FrameCount, (uint)newSize.X, (uint)newSize.Y,
+                        swapChainDesc.BufferDesc.Format, swapChainDesc.Flags));
+
+                    _frameIndex = _swapChain->GetCurrentBackBufferIndex();
                 }
             }
         }
