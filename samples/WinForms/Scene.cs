@@ -160,7 +160,7 @@ namespace TerraFX.Samples.WinForms
 
             _dxgiFactoryFlags = DebugLayerEnable(_debugController);
 
-            _isTriangleWithTexture = false;
+            _isTriangleWithTexture = true;
             OnInit();
         }
 
@@ -398,7 +398,8 @@ namespace TerraFX.Samples.WinForms
                 fixed (ID3D12DescriptorHeap** rtvHeap = &_rtvHeap)
                 {
                     var iid = IID_ID3D12DescriptorHeap;
-                    ThrowIfFailed(nameof(ID3D12Device.CreateDescriptorHeap), _device->CreateDescriptorHeap(&rtvHeapDesc, &iid, (void**)rtvHeap));
+                    ThrowIfFailed(nameof(ID3D12Device.CreateDescriptorHeap),
+                        _device->CreateDescriptorHeap(&rtvHeapDesc, &iid, (void**)rtvHeap));
                 }
 
                 _rtvDescriptorSize = _device->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_RTV);
@@ -415,7 +416,8 @@ namespace TerraFX.Samples.WinForms
                 fixed (ID3D12DescriptorHeap** srvHeap = &_srvHeap)
                 {
                     var iid = IID_ID3D12DescriptorHeap;
-                    ThrowIfFailed(nameof(ID3D12Device.CreateDescriptorHeap), _device->CreateDescriptorHeap(&srvHeapDesc, &iid, (void**)srvHeap));
+                    ThrowIfFailed(nameof(ID3D12Device.CreateDescriptorHeap),
+                        _device->CreateDescriptorHeap(&srvHeapDesc, &iid, (void**)srvHeap));
                 }
             }
         }
@@ -620,10 +622,12 @@ namespace TerraFX.Samples.WinForms
                 IsTriangleWithTexture ? texCoordElement : colorElement,
             };
 
-            var disabledDepthStencil = new D3D12_DEPTH_STENCIL_DESC {
-                DepthEnable = FALSE,
-                StencilEnable = FALSE,
-            };
+            var depthStencilState = IsTriangleWithTexture
+                ? new D3D12_DEPTH_STENCIL_DESC {
+                    DepthEnable = FALSE,
+                    StencilEnable = FALSE,
+                }
+                : D3D12_DEPTH_STENCIL_DESC.DEFAULT;
 
             // Describe and create the graphics pipeline state object (PSO).
             var psoDesc = new D3D12_GRAPHICS_PIPELINE_STATE_DESC {
@@ -636,15 +640,12 @@ namespace TerraFX.Samples.WinForms
                 PS = new D3D12_SHADER_BYTECODE(pixelShader),
                 RasterizerState = D3D12_RASTERIZER_DESC.DEFAULT,
                 BlendState = D3D12_BLEND_DESC.DEFAULT,
-                DepthStencilState = IsTriangleWithTexture
-                    ? disabledDepthStencil
-                    : D3D12_DEPTH_STENCIL_DESC.DEFAULT,
+                DepthStencilState = depthStencilState,
                 SampleMask = uint.MaxValue,
                 PrimitiveTopologyType = D3D12_PRIMITIVE_TOPOLOGY_TYPE_TRIANGLE,
                 NumRenderTargets = 1,
                 SampleDesc = new DXGI_SAMPLE_DESC(count: 1, quality: 0),
             };
-            psoDesc.DepthStencilState.DepthEnable = FALSE;
             psoDesc.RTVFormats[0] = DXGI_FORMAT_R8G8B8A8_UNORM;
 
             fixed (ID3D12PipelineState** pipelineState = &_pipelineState)
@@ -882,7 +883,7 @@ namespace TerraFX.Samples.WinForms
         private byte[] GenerateTextureData()
         {
             const uint RowPitch = TextureWidth * TexturePixelSize;
-            const uint CellPitch = RowPitch >> 3;        // The width of a cell in the checkboard texture.
+            const uint CellPitch = RowPitch >> 3;        // The width of a cell in the checkerboard texture.
             const uint CellHeight = TextureWidth >> 3;    // The height of a cell in the checkerboard texture.
             const uint TextureSize = RowPitch * TextureHeight;
 
@@ -954,9 +955,6 @@ namespace TerraFX.Samples.WinForms
 
                 CommandListCreate();
 
-                // Command lists are created in the recording state, but there is nothing
-                // to record yet. The main loop expects it to be closed, so close it now.
-                CommandListClose();
 
                 // Create the vertex buffer.
                 if (IsTriangleWithTexture)
@@ -966,6 +964,10 @@ namespace TerraFX.Samples.WinForms
                 }
                 else
                 {
+                    // Command lists are created in the recording state, but there is nothing
+                    // to record yet. The main loop expects it to be closed, so close it now.
+                    CommandListClose();
+
                     ColorTriangleVertexBufferCreate();
                 }
 
