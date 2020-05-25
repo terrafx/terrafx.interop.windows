@@ -10,12 +10,23 @@ namespace TerraFX.Samples.DirectX
 {
     public static unsafe class Program
     {
+        /// <summary>
+        /// This collection of samples act as an introduction to Direct3D 12. Each sample introduces an elementary concept and lays a foundation for all of the Direct3D 12 samples.
+        /// </summary>
         private static readonly DXSample[] Samples = {
             new HelloWindow11(1280, 720, "D3D11.HelloWindow"),
             new HelloTriangle11(1280, 720, "D3D11.HelloTriangle"),
+            // This sample shows you how to create a window, Direct3D device (with debug layers enabled), and present to the window. These are the basic elements that every sample uses.
             new HelloWindow12(1280, 720, "D3D12.HelloWindow"),
+            // This sample shows you how to draw a static triangle using a vertex buffer.
             new HelloTriangle12(1280, 720, "D3D12.HelloTriangle"),
+            // This sample shows you how to apply a Texture2D to triangle.
+            new HelloTexture12(1280, 720, "D3D12.HelloTexture"),
+            // This sample shows you how to use Bundles to draw a static triangle more efficiently.
+            // HelloBundles
+            // This sample shows you how to animate a triangle using a constant buffer.
             new HelloConstBuffer12(1280, 720, "D3D12.HelloConstBuffer"),
+            // This sample shows you how to use fences and multiple allocators to queue up multiple frames to the GPU.
             new HelloTexture12(1280, 720, "D3D12.HelloTexture"),
             new HelloBundles12(1280, 720, "D3D12.HelloBundles"),
             new HelloFrameBuffering12(1280, 720, "HelloFrameBuffering"),
