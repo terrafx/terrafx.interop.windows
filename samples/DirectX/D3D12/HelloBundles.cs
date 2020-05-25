@@ -248,7 +248,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 fixed (ID3D12CommandAllocator** bundleAllocator = &_bundleAllocator)
                 {
                     iid = IID_ID3D12CommandAllocator;
-                    ThrowIfFailed(nameof(ID3D12Device.CreateRenderTargetView), _device->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_DIRECT, &iid, (void**)bundleAllocator));
+                    ThrowIfFailed(nameof(ID3D12Device.CreateRenderTargetView), _device->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_BUNDLE, &iid, (void**)bundleAllocator));
                 }
             }
             finally
