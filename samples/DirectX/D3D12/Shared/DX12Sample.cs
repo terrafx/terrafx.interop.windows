@@ -2,7 +2,6 @@
 
 using TerraFX.Interop;
 using static TerraFX.Interop.D3D_FEATURE_LEVEL;
-using static TerraFX.Interop.D3D12;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Samples.DirectX.D3D12

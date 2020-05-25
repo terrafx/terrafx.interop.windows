@@ -4,8 +4,7 @@ using System;
 using System.Linq;
 using TerraFX.Samples.DirectX.D3D11;
 using TerraFX.Samples.DirectX.D3D12;
-using static TerraFX.Interop.Kernel32;
-using static TerraFX.Interop.User32;
+using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Samples.DirectX
 {
@@ -16,6 +15,7 @@ namespace TerraFX.Samples.DirectX
             new HelloTriangle11(1280, 720, "D3D11.HelloTriangle"),
             new HelloWindow12(1280, 720, "D3D12.HelloWindow"),
             new HelloTriangle12(1280, 720, "D3D12.HelloTriangle"),
+            new HelloConstBuffer12(1280, 720, "D3D12.HelloConstBuffer"),
             new HelloTexture12(1280, 720, "D3D12.HelloTexture")
         };
 

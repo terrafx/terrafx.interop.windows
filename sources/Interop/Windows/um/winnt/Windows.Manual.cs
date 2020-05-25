@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.18362.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -5601,7 +5601,7 @@ namespace TerraFX.Interop
 
         public const uint FLUSH_NV_MEMORY_IN_FLAG_NO_DRAIN = 0x00000001;
 
-        public static readonly UIntPtr FLUSH_NV_MEMORY_DEFAULT_TOKEN = new UIntPtr(unchecked((uint)-1));
+        public const nuint FLUSH_NV_MEMORY_DEFAULT_TOKEN = unchecked((uint)-1);
 
         public const uint WRITE_NV_MEMORY_FLAG_FLUSH = 0x00000001;
 

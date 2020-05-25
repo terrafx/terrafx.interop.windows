@@ -11,33 +11,17 @@ using TerraFX.Interop;
 using static TerraFX.Interop.D3D_FEATURE_LEVEL;
 using static TerraFX.Interop.D3D_PRIMITIVE_TOPOLOGY;
 using static TerraFX.Interop.D3D_ROOT_SIGNATURE_VERSION;
-using static TerraFX.Interop.D3D12;
-using static TerraFX.Interop.D3D12_BLEND;
-using static TerraFX.Interop.D3D12_BLEND_OP;
-using static TerraFX.Interop.D3D12_COLOR_WRITE_ENABLE;
 using static TerraFX.Interop.D3D12_COMMAND_LIST_TYPE;
-using static TerraFX.Interop.D3D12_CONSERVATIVE_RASTERIZATION_MODE;
-using static TerraFX.Interop.D3D12_CPU_PAGE_PROPERTY;
-using static TerraFX.Interop.D3D12_CULL_MODE;
 using static TerraFX.Interop.D3D12_DESCRIPTOR_HEAP_TYPE;
 using static TerraFX.Interop.D3D12_FENCE_FLAGS;
-using static TerraFX.Interop.D3D12_FILL_MODE;
 using static TerraFX.Interop.D3D12_HEAP_FLAGS;
 using static TerraFX.Interop.D3D12_HEAP_TYPE;
 using static TerraFX.Interop.D3D12_INPUT_CLASSIFICATION;
-using static TerraFX.Interop.D3D12_LOGIC_OP;
-using static TerraFX.Interop.D3D12_MEMORY_POOL;
 using static TerraFX.Interop.D3D12_PRIMITIVE_TOPOLOGY_TYPE;
-using static TerraFX.Interop.D3D12_RESOURCE_DIMENSION;
-using static TerraFX.Interop.D3D12_RESOURCE_FLAGS;
 using static TerraFX.Interop.D3D12_RESOURCE_STATES;
 using static TerraFX.Interop.D3D12_ROOT_SIGNATURE_FLAGS;
-using static TerraFX.Interop.D3D12_TEXTURE_LAYOUT;
-using static TerraFX.Interop.D3DCompiler;
-using static TerraFX.Interop.DXGI;
 using static TerraFX.Interop.DXGI_FORMAT;
 using static TerraFX.Interop.DXGI_SWAP_EFFECT;
-using static TerraFX.Interop.Kernel32;
 using static TerraFX.Interop.Windows;
 using static TerraFX.Samples.DirectX.DXSampleHelper;
 
@@ -354,7 +338,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                             InputSlotClass = D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA,
                         },
                     };
-                        
+
                     // Describe and create the graphics pipeline state object (PSO).
                     var psoDesc = new D3D12_GRAPHICS_PIPELINE_STATE_DESC {
                         InputLayout = new D3D12_INPUT_LAYOUT_DESC {
@@ -439,7 +423,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     var readRange = new D3D12_RANGE();
 
                     byte* pVertexDataBegin;
-                    ThrowIfFailed(nameof(ID3D12Resource._Map), _vertexBuffer->Map(Subresource: 0, &readRange, (void**)&pVertexDataBegin));
+                    ThrowIfFailed(nameof(ID3D12Resource.Map), _vertexBuffer->Map(Subresource: 0, &readRange, (void**)&pVertexDataBegin));
                     Unsafe.CopyBlock(pVertexDataBegin, triangleVertices, vertexBufferSize);
                     _vertexBuffer->Unmap(0, null);
 

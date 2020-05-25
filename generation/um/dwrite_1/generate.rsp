@@ -1,45 +1,11 @@
---additional
--m32
--Wno-expansion-to-defined
--Wno-ignored-attributes
--Wno-ignored-pragma-intrinsic
--Wno-nonportable-include-path
--Wno-pragma-pack
---config
-multi-file
-preview-codegen-nint
+@../../settings.rsp
+@../../remap.rsp
 --file
 um-dwrite_1.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---libraryPath
-DWrite
---methodClassName
-DWrite
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/DWrite/um/dwrite_1
---remap
-__AnonymousBase_dwrite_1_L627_C38=Base
-__AnonymousRecord_dwrite_1_L758_C5=_text_e__Struct
-__AnonymousRecord_dwrite_1_L772_C5=_script_e__Struct
-__AnonymousRecord_dwrite_1_L786_C5=_decorative_e__Struct
-__AnonymousRecord_dwrite_1_L800_C5=_symbol_e__Struct
-_FILETIME=FILETIME
-_GUID=Guid
-GetGlyphIndicesA=GetGlyphIndices
-HDC__*=IntPtr
-HMONITOR__*=IntPtr
-ID2D1SimplifiedGeometrySink=IUnknown
-tagRECT=RECT
-tagSIZE=SIZE
+../../../sources/Interop/Windows/um/dwrite_1
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/dwrite_1.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dwrite_1.h
 --with-attribute
 IDWriteBitmapRenderTarget1=Guid("791E8298-3EF3-4230-9880-C9BDECC42064")
 IDWriteFactory1=Guid("30572F99-DAC6-41DB-A16E-0486307E606A")

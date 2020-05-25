@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.18362.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -19,8 +19,8 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint Size;
 
-        [NativeTypeName("_XSTATE_CONFIGURATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h:12717:5)")]
-        public _Anonymous_e__Union1 Anonymous;
+        [NativeTypeName("_XSTATE_CONFIGURATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12817:5)")]
+        public _Anonymous_e__Union Anonymous;
 
         [NativeTypeName("XSTATE_FEATURE [64]")]
         public _Features_e__FixedBuffer Features;
@@ -41,17 +41,17 @@ namespace TerraFX.Interop
         public ulong EnabledUserVisibleSupervisorFeatures;
 
         [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union1
+        public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
             [NativeTypeName("DWORD")]
             public uint ControlFlags;
 
             [FieldOffset(0)]
-            [NativeTypeName("_XSTATE_CONFIGURATION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h:12719:9)")]
-            public _Anonymous_e__Union2 Anonymous;
+            [NativeTypeName("_XSTATE_CONFIGURATION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12819:9)")]
+            public _Anonymous_e__Struct Anonymous;
 
-            public partial struct _Anonymous_e__Union2
+            public partial struct _Anonymous_e__Struct
             {
                 internal uint _bitfield;
 
