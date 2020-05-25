@@ -65,6 +65,10 @@ namespace TerraFX.Samples.WinForms
         private ID3D12Fence* _fence;
         private ulong _fenceValue;
 
+        private ID3D12Debug* _debugController;
+        private readonly uint _dxgiFactoryFlags;
+
+
         public Vector2 SizeXy
         {
             get { return _sizeXy; }
@@ -129,23 +133,10 @@ namespace TerraFX.Samples.WinForms
             _useWarpDevice = useWarpDevice;
             _isOnColorToggle = false;
 
+            _dxgiFactoryFlags = DebugLayerEnable(_debugController);
+
             OnInit();
         }
-
-        // Helper function for resolving the full path of assets
-        protected string GetAssetFullPath(string assetName) => Path.Combine(_assetsPath, assetName);
-
-        public virtual void OnInit()
-        {
-            LoadPipeline();
-            LoadAssets();
-        }
-
-        // Update frame-based values.
-        public virtual void Update()
-        {
-        }
-
 
         private uint DebugLayerEnable(ID3D12Debug* debugController)
         {
@@ -174,6 +165,21 @@ namespace TerraFX.Samples.WinForms
 #endif
             return dxgiFactoryFlags;
         }
+
+
+        public virtual void OnInit()
+        {
+            LoadPipeline();
+            LoadAssets();
+        }
+
+        // Update frame-based values.
+        public virtual void Update()
+        {
+        }
+
+
+
 
         private IDXGIFactory4* FactoryCreate(uint dxgiFactoryFlags)
         {
@@ -404,17 +410,14 @@ namespace TerraFX.Samples.WinForms
         // Load the rendering pipeline dependencies.
         private void LoadPipeline()
         {
-            ID3D12Debug* debugController = null;
             IDXGIFactory4* factory = null;
             IDXGIAdapter* adapter = null;
             IDXGISwapChain1* swapChain = null;
 
             try
             {
-                var dxgiFactoryFlags = DebugLayerEnable(debugController);
-
-                factory = FactoryCreate(dxgiFactoryFlags);
-                adapter = AdapterCreate(factory, dxgiFactoryFlags);
+                factory = FactoryCreate(_dxgiFactoryFlags);
+                adapter = AdapterCreate(factory, _dxgiFactoryFlags);
                 CommandQueueCreate();
                 WindowAssociate(factory);
                 swapChain = SwapChainCreate(factory);
@@ -424,11 +427,6 @@ namespace TerraFX.Samples.WinForms
             }
             finally
             {
-                if (debugController != null)
-                {
-                    _ = debugController->Release();
-                }
-
                 if (factory != null)
                 {
                     _ = factory->Release();
@@ -462,6 +460,8 @@ namespace TerraFX.Samples.WinForms
             }
         }
 
+        // Helper function for resolving the full path of assets
+        protected string GetAssetFullPath(string assetName) => Path.Combine(_assetsPath, assetName);
 
         // Create the pipeline state, which includes compiling and loading shaders.
         private void PipelineStateWithShadersCreate(ID3DBlob* vertexShader, ID3DBlob* pixelShader)
@@ -817,8 +817,14 @@ namespace TerraFX.Samples.WinForms
 
         protected void Dispose(bool isDisposing)
         {
-            var swapChain = _swapChain;
+            var debugController = _debugController;
+            if (debugController != null)
+            {
+                _debugController = null;
+                _ = debugController->Release();
+            }
 
+            var swapChain = _swapChain;
             if (swapChain != null)
             {
                 _swapChain = null;
@@ -826,7 +832,6 @@ namespace TerraFX.Samples.WinForms
             }
 
             var device = _device;
-
             if (device != null)
             {
                 _device = null;
@@ -836,7 +841,6 @@ namespace TerraFX.Samples.WinForms
             for (var index = 0; index < FrameCount; index++)
             {
                 var renderTarget = _renderTargets[index];
-
                 if (renderTarget != null)
                 {
                     _renderTargets[index] = null;
@@ -845,7 +849,6 @@ namespace TerraFX.Samples.WinForms
             }
 
             var commandAllocator = _commandAllocator;
-
             if (commandAllocator != null)
             {
                 _commandAllocator = null;
@@ -853,7 +856,6 @@ namespace TerraFX.Samples.WinForms
             }
 
             var commandQueue = _commandQueue;
-
             if (commandQueue != null)
             {
                 _commandQueue = null;
@@ -861,7 +863,6 @@ namespace TerraFX.Samples.WinForms
             }
 
             var rootSignature = _rootSignature;
-
             if (rootSignature != null)
             {
                 _rootSignature = null;
@@ -869,7 +870,6 @@ namespace TerraFX.Samples.WinForms
             }
 
             var rtvHeap = _rtvHeap;
-
             if (rtvHeap != null)
             {
                 _rtvHeap = null;
@@ -877,7 +877,6 @@ namespace TerraFX.Samples.WinForms
             }
 
             var pipelineState = _pipelineState;
-
             if (pipelineState != null)
             {
                 _pipelineState = null;
@@ -885,7 +884,6 @@ namespace TerraFX.Samples.WinForms
             }
 
             var commandList = _commandList;
-
             if (commandList != null)
             {
                 _commandList = null;
@@ -893,7 +891,6 @@ namespace TerraFX.Samples.WinForms
             }
 
             var vertexBuffer = _vertexBuffer;
-
             if (vertexBuffer != null)
             {
                 _vertexBuffer = null;
@@ -901,7 +898,6 @@ namespace TerraFX.Samples.WinForms
             }
 
             var fence = _fence;
-
             if (fence != null)
             {
                 _fence = null;
@@ -912,7 +908,6 @@ namespace TerraFX.Samples.WinForms
         private struct Vertex
         {
             public Vector3 Position;
-
             public Vector4 Color;
         }
     }
