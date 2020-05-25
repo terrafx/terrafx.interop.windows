@@ -68,7 +68,30 @@ namespace TerraFX.Samples.WinForms
         public Vector2 SizeXy
         {
             get { return _sizeXy; }
-            set { _sizeXy = value; }
+            set
+            {
+                Vector2 newSize = Vector2.Max(value, new Vector2(1, 1));
+                if (SizeXy != newSize)
+                {
+                    _sizeXy = newSize;
+
+                    fixed (IDXGISwapChain3** swapChain3 = &_swapChain)
+                    {
+                        var iid = IID_IDXGISwapChain3;
+                        ThrowIfFailed(nameof(IDXGISwapChain1.QueryInterface), _swapChain->QueryInterface(&iid, (void**)swapChain3));
+                    }
+                    fixed (IDXGISwapChain3** pSwapChain = &_swapChain)
+                    {
+                        var swapChainDesc = new DXGI_SWAP_CHAIN_DESC();
+                        ThrowIfFailed(nameof(IDXGISwapChain3.GetDesc), (*pSwapChain)->GetDesc(&swapChainDesc));
+                        ThrowIfFailed(nameof(IDXGISwapChain3.ResizeBuffers), (*pSwapChain)->ResizeBuffers(
+                            FrameCount, (uint)newSize.X, (uint)newSize.Y,
+                            swapChainDesc.BufferDesc.Format, swapChainDesc.Flags));
+
+                        _frameIndex = _swapChain->GetCurrentBackBufferIndex();
+                    }
+                }
+            }
         }
 
         public float AspectRatio => _sizeXy.X / _sizeXy.Y;
