@@ -23,12 +23,10 @@ namespace TerraFX.Samples.DirectX
             // This sample shows you how to apply a Texture2D to triangle.
             new HelloTexture12(1280, 720, "D3D12.HelloTexture"),
             // This sample shows you how to use Bundles to draw a static triangle more efficiently.
-            // HelloBundles
+            new HelloBundles12(1280, 720, "D3D12.HelloBundles"),
             // This sample shows you how to animate a triangle using a constant buffer.
             new HelloConstBuffer12(1280, 720, "D3D12.HelloConstBuffer"),
             // This sample shows you how to use fences and multiple allocators to queue up multiple frames to the GPU.
-            new HelloTexture12(1280, 720, "D3D12.HelloTexture"),
-            new HelloBundles12(1280, 720, "D3D12.HelloBundles"),
             new HelloFrameBuffering12(1280, 720, "HelloFrameBuffering"),
         };
 
