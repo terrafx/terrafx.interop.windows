@@ -199,6 +199,8 @@ namespace TerraFX.Samples.WinForms
 
         public virtual void ReInit()
         {
+            WaitForGpu();
+
             { // Load pipeline after adapter, window and swapchain creation
                 DestriptorHeapCreate();
                 RenderTargetViewsCreate();
