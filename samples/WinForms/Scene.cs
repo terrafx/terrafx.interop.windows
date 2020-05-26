@@ -88,9 +88,8 @@ namespace TerraFX.Samples.WinForms
         public bool IsTriangleWithTexture
         {
             get { return _isTriangleWithTexture; }
-            set { if (_isTriangleWithTexture != value) { _isTriangleWithTexture = value; OnInit(); Render(); } }
+            set { if (_isTriangleWithTexture != value) { _isTriangleWithTexture = value; ReInit(); Render(); } }
         }
-
 
         public Vector2 SizeXy
         {
@@ -192,10 +191,19 @@ namespace TerraFX.Samples.WinForms
             return dxgiFactoryFlags;
         }
 
-
         public virtual void OnInit()
         {
             LoadPipeline();
+            LoadAssets();
+        }
+
+        public virtual void ReInit()
+        {
+            { // Load pipeline after adapter, window and swapchain creation
+                DestriptorHeapCreate();
+                RenderTargetViewsCreate();
+                CommandAllocatorCreate();
+            }
             LoadAssets();
         }
 
@@ -203,9 +211,6 @@ namespace TerraFX.Samples.WinForms
         public virtual void Update()
         {
         }
-
-
-
 
         private IDXGIFactory4* FactoryCreate(uint dxgiFactoryFlags)
         {
@@ -320,7 +325,6 @@ namespace TerraFX.Samples.WinForms
                     break;
                 }
             }
-
             return (IDXGIAdapter*)adapterMaxMemory;
         }
 
@@ -329,7 +333,6 @@ namespace TerraFX.Samples.WinForms
             var iid = IID_ID3D12Device;
             return SUCCEEDED(D3D12CreateDevice((IUnknown*)adapter, D3D_FEATURE_LEVEL_11_0, &iid, null));
         }
-
 
         private void CommandQueueCreate()
         {
@@ -341,7 +344,6 @@ namespace TerraFX.Samples.WinForms
                 ThrowIfFailed(nameof(ID3D12Device.CreateCommandQueue), _device->CreateCommandQueue(&queueDesc, &iid, (void**)commandQueue));
             }
         }
-
 
         private IDXGISwapChain1* SwapChainCreate(IDXGIFactory4* factory)
         {
@@ -376,14 +378,12 @@ namespace TerraFX.Samples.WinForms
             return swapChain;
         }
 
-
         private void WindowAssociate(IDXGIFactory4* factory)
         {
             // This sample does not support fullscreen transitions.
             var hr = factory->MakeWindowAssociation(_windowHandle, DXGI_MWA_NO_ALT_ENTER);
             ThrowIfFailed(nameof(IDXGIFactory4.MakeWindowAssociation), hr);
         }
-
 
         private void DestriptorHeapCreate()
         {
@@ -421,7 +421,6 @@ namespace TerraFX.Samples.WinForms
                 }
             }
         }
-
 
         private void RenderTargetViewsCreate()
         {
@@ -490,7 +489,6 @@ namespace TerraFX.Samples.WinForms
                 }
             }
         }
-
 
         private void RootSignatureCreate(ID3DBlob* signature, ID3DBlob* error)
         {
@@ -658,7 +656,6 @@ namespace TerraFX.Samples.WinForms
             }
         }
 
-
         private void CommandListCreate()
         {
             fixed (ID3D12GraphicsCommandList** commandList = &_commandList)
@@ -668,7 +665,6 @@ namespace TerraFX.Samples.WinForms
                     _device->CreateCommandList(nodeMask: 0, D3D12_COMMAND_LIST_TYPE_DIRECT, _commandAllocators[_frameIndex], _pipelineState, &iid, (void**)commandList));
             }
         }
-
 
         private void CommandListClose()
         {
@@ -919,7 +915,6 @@ namespace TerraFX.Samples.WinForms
             return data;
         }
 
-
         private void FenceCreate()
         {
             fixed (ID3D12Fence** fence = &_fence)
@@ -956,7 +951,6 @@ namespace TerraFX.Samples.WinForms
                 PipelineStateWithShadersCreate(vertexShader, pixelShader);
 
                 CommandListCreate();
-
 
                 // Create the vertex buffer.
                 if (IsTriangleWithTexture)
@@ -1201,7 +1195,6 @@ namespace TerraFX.Samples.WinForms
                 }
             }
 
-
             var commandQueue = _commandQueue;
             if (commandQueue != null)
             {
@@ -1229,7 +1222,6 @@ namespace TerraFX.Samples.WinForms
                 _srvHeap = null;
                 _ = srvHeap->Release();
             }
-
 
             var pipelineState = _pipelineState;
             if (pipelineState != null)
