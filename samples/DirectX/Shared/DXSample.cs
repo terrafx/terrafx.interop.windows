@@ -7,7 +7,6 @@ using System;
 using System.IO;
 using TerraFX.Interop;
 using static TerraFX.Interop.DXGI_ADAPTER_FLAG;
-using static TerraFX.Interop.User32;
 using static TerraFX.Interop.Windows;
 using static TerraFX.Samples.DirectX.DXSampleHelper;
 
@@ -16,14 +15,14 @@ namespace TerraFX.Samples.DirectX
     public abstract unsafe class DXSample : IDisposable
     {
         // Viewport dimensions
-        protected uint _width;
+        private uint _width;
 
-        protected uint _height;
+        private uint _height;
 
-        protected float _aspectRatio;
+        private float _aspectRatio;
 
         // Adapter info
-        protected bool _useWarpDevice;
+        private bool _useWarpDevice;
 
         // Root assets path
         private readonly string _assetsPath;
@@ -49,12 +48,25 @@ namespace TerraFX.Samples.DirectX
 
         public uint Height => _height;
 
+        public float AspectRatio => _aspectRatio;
+
+        public bool UseWarpDevice => _useWarpDevice;
+
+        public string AssetsPath => _assetsPath;
+
         public string Title => _title;
 
         public void Dispose()
         {
             Dispose(isDisposing: true);
             GC.SuppressFinalize(this);
+        }
+
+        public virtual void OnResize(uint width, uint height)
+        {
+            _width = width;
+            _height = height;
+            _aspectRatio = width / ((float)height);
         }
 
         public abstract void OnInit();
@@ -92,7 +104,7 @@ namespace TerraFX.Samples.DirectX
         }
 
         // Helper function for resolving the full path of assets
-        protected string GetAssetFullPath(string assetName) => Path.Combine(_assetsPath, assetName);
+        protected string GetAssetFullPath(string assetName) => Path.Combine(AssetsPath, assetName);
 
         // Helper function for acquiring the first available hardware adapter that supports the required Direct3D version.
         // If no such adapter can be found, returns null.

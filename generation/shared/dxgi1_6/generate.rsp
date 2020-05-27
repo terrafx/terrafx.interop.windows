@@ -1,7 +1,5 @@
---additional
--m32
---config
-multi-file
+@../../settings.rsp
+@../../remap.rsp
 --exclude
 __MIDL_itf_dxgi1_6_0000_0000_v0_0_c_ifspec
 __MIDL_itf_dxgi1_6_0000_0000_v0_0_s_ifspec
@@ -24,30 +22,10 @@ operator^
 operator^=
 --file
 shared-dxgi1_6.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---methodClassName
-DXGI
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/DXGI/shared/dxgi1_6
---remap
-_GUID=Guid
-_LARGE_INTEGER=LARGE_INTEGER
-_LUID=LUID
-HANDLE=IntPtr
-HINSTANCE__*=IntPtr
-HMONITOR__*=IntPtr
-HWND__*=IntPtr
-SIZE_T=UIntPtr
-tagRECT=RECT
+../../../sources/Interop/Windows/shared/dxgi1_6
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared/dxgi1_6.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgi1_6.h
 --with-attribute
 DXGI_ADAPTER_FLAG3=Flags
 DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS=Flags
@@ -57,3 +35,5 @@ IDXGIFactory7=Guid("A4966EED-76DB-44DA-84C1-EE9A7AFB20A8")
 IDXGIOutput6=Guid("068346E8-AAEC-4B84-ADD7-137F513F77A1")
 --with-type
 DXGI_ADAPTER_FLAG3=uint
+--with-librarypath
+*=dxgi

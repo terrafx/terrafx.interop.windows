@@ -4,18 +4,20 @@ using System;
 using System.Linq;
 using TerraFX.Samples.DirectX.D3D11;
 using TerraFX.Samples.DirectX.D3D12;
-using static TerraFX.Interop.Kernel32;
-using static TerraFX.Interop.User32;
+using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Samples.DirectX
 {
     public static unsafe class Program
     {
-        private static readonly DXSample[] s_samples = {
+        private static readonly DXSample[] Samples = {
             new HelloWindow11(1280, 720, "D3D11.HelloWindow"),
             new HelloTriangle11(1280, 720, "D3D11.HelloTriangle"),
             new HelloWindow12(1280, 720, "D3D12.HelloWindow"),
-            new HelloTriangle12(1280, 720, "D3D12.HelloTriangle")
+            new HelloTriangle12(1280, 720, "D3D12.HelloTriangle"),
+            new HelloConstBuffer12(1280, 720, "D3D12.HelloConstBuffer"),
+            new HelloTexture12(1280, 720, "D3D12.HelloTexture"),
+            new HelloBundles12(1280, 720, "D3D12.HelloBundles"),
         };
 
         public static void Main(string[] args)
@@ -45,7 +47,7 @@ namespace TerraFX.Samples.DirectX
 
             Console.WriteLine("Available Samples - Can specify multiple");
 
-            foreach (var sample in s_samples)
+            foreach (var sample in Samples)
             {
                 Console.WriteLine($"    {sample.Title}");
             }
@@ -63,7 +65,7 @@ namespace TerraFX.Samples.DirectX
 
             if (args.Any((arg) => Matches(arg, "all")))
             {
-                foreach (var sample in s_samples)
+                foreach (var sample in Samples)
                 {
                     RunSample(sample);
                     ranAnySamples = true;
@@ -72,7 +74,7 @@ namespace TerraFX.Samples.DirectX
 
             foreach (var arg in args)
             {
-                foreach (var sample in s_samples.Where((sample) => arg.Equals(sample.Title, StringComparison.OrdinalIgnoreCase)))
+                foreach (var sample in Samples.Where((sample) => arg.Equals(sample.Title, StringComparison.OrdinalIgnoreCase)))
                 {
                     RunSample(sample);
                     ranAnySamples = true;

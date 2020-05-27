@@ -1,7 +1,5 @@
---additional
--m32
---config
-multi-file
+@../../settings.rsp
+@../../remap.rsp
 --exclude
 IDXGISurface
 operator|
@@ -13,41 +11,10 @@ operator^
 operator^=
 --file
 um-dcommon.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---libraryPath
-DCommon
---methodClassName
-DCommon
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/DCommon/um/dcommon
---remap
-__AnonymousField_dcommon_L277_C5=Anonymous
-__AnonymousField_dcommon_L279_C9=Anonymous1
-__AnonymousField_dcommon_L312_C9=Anonymous2
-__AnonymousField_dcommon_L331_C5=Anonymous
-__AnonymousField_dcommon_L333_C9=Anonymous
-__AnonymousField_dcommon_L352_C5=Anonymous
-__AnonymousField_dcommon_L354_C9=Anonymous
-__AnonymousField_dcommon_L373_C5=Anonymous
-__AnonymousField_dcommon_L375_C9=Anonymous
-__AnonymousRecord_dcommon_L277_C5=_Anonymous_e__Union
-__AnonymousRecord_dcommon_L279_C9=_Anonymous1_e__Struct
-__AnonymousRecord_dcommon_L312_C9=_Anonymous2_e__Struct
-__AnonymousRecord_dcommon_L331_C5=_Anonymous_e__Union
-__AnonymousRecord_dcommon_L333_C9=_Anonymous_e__Struct
-__AnonymousRecord_dcommon_L352_C5=_Anonymous_e__Union
-__AnonymousRecord_dcommon_L354_C9=_Anonymous_e__Struct
-__AnonymousRecord_dcommon_L373_C5=_Anonymous_e__Union
-__AnonymousRecord_dcommon_L375_C9=_Anonymous_e__Struct
+../../../sources/Interop/Windows/um/dcommon
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/dcommon.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dcommon.h
 --with-attribute
 DWRITE_GLYPH_IMAGE_FORMATS=Flags
 --with-type

@@ -1,33 +1,24 @@
---additional
--m32
---config
-multi-file
+@../../settings.rsp
+@../../remap.rsp
 --exclude
 __MIDL_itf_d3d11on12_0000_0000_v0_0_c_ifspec
 __MIDL_itf_d3d11on12_0000_0000_v0_0_s_ifspec
 __MIDL_itf_d3d11on12_0000_0002_v0_0_c_ifspec
 __MIDL_itf_d3d11on12_0000_0002_v0_0_s_ifspec
+__MIDL_itf_d3d11on12_0000_0003_v0_0_c_ifspec
+__MIDL_itf_d3d11on12_0000_0003_v0_0_s_ifspec
 IID_ID3D11On12Device
 IID_ID3D11On12Device1
+IID_ID3D11On12Device2
 --file
 um-d3d11on12.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---methodClassName
-D3D11
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/D3D11/um/d3d11on12
---remap
-_GUID=Guid
-D3D12_RESOURCE_STATES=int
+../../../sources/Interop/Windows/um/d3d11on12
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d3d11on12.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11on12.h
 --with-attribute
 ID3D11On12Device=Guid("85611E73-70A9-490E-9614-A9E302777904")
 ID3D11On12Device1=Guid("BDB64DF4-EA2F-4C70-B861-AAAB1258BB5D")
+ID3D11On12Device2=Guid("DC90F331-4740-43FA-866E-67F12CB58223")
+--with-librarypath
+*=d3d11

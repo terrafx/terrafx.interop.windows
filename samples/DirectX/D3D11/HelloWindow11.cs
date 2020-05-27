@@ -4,8 +4,6 @@ using System;
 using TerraFX.Interop;
 using static TerraFX.Interop.D3D_DRIVER_TYPE;
 using static TerraFX.Interop.D3D_FEATURE_LEVEL;
-using static TerraFX.Interop.D3D11;
-using static TerraFX.Interop.DXGI;
 using static TerraFX.Interop.DXGI_FORMAT;
 using static TerraFX.Interop.DXGI_SWAP_EFFECT;
 using static TerraFX.Interop.Windows;
@@ -39,7 +37,7 @@ namespace TerraFX.Samples.DirectX.D3D11
                 iid = IID_IDXGIFactory1;
                 ThrowIfFailed(nameof(CreateDXGIFactory1), CreateDXGIFactory1(&iid, (void**)&factory));
 
-                if (_useWarpDevice)
+                if (UseWarpDevice)
                 {
                     throw new NotImplementedException("WARP Device not supported for D3D11.");
                 }
@@ -58,8 +56,8 @@ namespace TerraFX.Samples.DirectX.D3D11
                 // Describe and create the swap chain.
                 var swapChainDesc = new DXGI_SWAP_CHAIN_DESC {
                     BufferDesc = new DXGI_MODE_DESC {
-                        Width = _width,
-                        Height = _height,
+                        Width = Width,
+                        Height = Height,
                         Format = DXGI_FORMAT_R8G8B8A8_UNORM,
                     },
                     SampleDesc = new DXGI_SAMPLE_DESC {
@@ -95,8 +93,8 @@ namespace TerraFX.Samples.DirectX.D3D11
                 }
 
                 var vp = new D3D11_VIEWPORT {
-                    Width = _width,
-                    Height = _height,
+                    Width = Width,
+                    Height = Height,
                     MinDepth = 0.0f,
                     MaxDepth = 1.0f,
                     TopLeftX = 0,
@@ -143,10 +141,7 @@ namespace TerraFX.Samples.DirectX.D3D11
             ThrowIfFailed(nameof(IDXGISwapChain.Present), _swapChain->Present(0, 0));
         }
 
-        public override void OnDestroy()
-        {
-            _immediateContext->ClearState();
-        }
+        public override void OnDestroy() => _immediateContext->ClearState();
 
         protected override void Dispose(bool isDisposing)
         {

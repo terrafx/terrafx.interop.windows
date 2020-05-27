@@ -1,7 +1,5 @@
---additional
--m32
---config
-multi-file
+@../../settings.rsp
+@../../remap.rsp
 --exclude
 __MIDL_itf_d3d11_2_0000_0000_v0_0_c_ifspec
 __MIDL_itf_d3d11_2_0000_0000_v0_0_s_ifspec
@@ -11,25 +9,10 @@ IID_ID3D11Device2
 IID_ID3D11DeviceContext2
 --file
 um-d3d11_2.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---methodClassName
-D3D11
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/D3D11/um/d3d11_2
---remap
-_GUID=Guid
-HANDLE=IntPtr
-SIZE_T=UIntPtr
-tagRECT=RECT
+../../../sources/Interop/Windows/um/d3d11_2
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d3d11_2.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11_2.h
 --with-attribute
 D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_FLAG=Flags
 D3D11_TILE_COPY_FLAG=Flags

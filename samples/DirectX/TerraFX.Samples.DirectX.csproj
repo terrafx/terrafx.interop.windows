@@ -3,13 +3,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1;netcoreapp5.0</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1;net5.0</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\sources\Interop\D3D11\TerraFX.Interop.D3D11.csproj" />
-    <ProjectReference Include="..\..\sources\Interop\D3D12\TerraFX.Interop.D3D12.csproj" />
-    <ProjectReference Include="..\..\sources\Interop\User32\TerraFX.Interop.User32.csproj" />
+    <ProjectReference Include="..\..\sources\Interop\Windows\TerraFX.Interop.Windows.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,25 +1,13 @@
---additional
--m32
---config
-multi-file
+@../../settings.rsp
+@../../remap.rsp
 --exclude
 CLSID_D2D1YCbCr
 --file
 um-d2d1effects_1.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---methodClassName
-D2D1
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/D2D1/um/d2d1effects_1
+../../../sources/Interop/Windows/um/d2d1effects_1
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d2d1effects_1.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1effects_1.h
 --with-type
 D2D1_YCBCR_CHROMA_SUBSAMPLING=uint
 D2D1_YCBCR_INTERPOLATION_MODE=uint

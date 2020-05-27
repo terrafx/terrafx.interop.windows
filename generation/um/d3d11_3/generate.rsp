@@ -1,7 +1,5 @@
---additional
--m32
---config
-multi-file
+@../../settings.rsp
+@../../remap.rsp
 --exclude
 __MIDL_itf_d3d11_3_0000_0000_v0_0_c_ifspec
 __MIDL_itf_d3d11_3_0000_0000_v0_0_s_ifspec
@@ -48,32 +46,10 @@ operator^
 operator^=
 --file
 um-d3d11_3.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---methodClassName
-D3D11
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/D3D11/um/d3d11_3
---remap
-__AnonymousField_d3d11_3_L880_C5=Anonymous
-__AnonymousField_d3d11_3_L1276_C5=Anonymous
-__AnonymousField_d3d11_3_L1623_C5=Anonymous
-__AnonymousRecord_d3d11_3_L880_C5=_Anonymous_e__Union
-__AnonymousRecord_d3d11_3_L1276_C5=_Anonymous_e__Union
-__AnonymousRecord_d3d11_3_L1623_C5=_Anonymous_e__Union
-_GUID=Guid
-_SECURITY_ATTRIBUTES=SECURITY_ATTRIBUTES
-HANDLE=IntPtr
-SIZE_T=UIntPtr
-tagRECT=RECT
+../../../sources/Interop/Windows/um/d3d11_3
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/d3d11_3.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11_3.h
 --with-attribute
 D3D11_FENCE_FLAG=Flags
 ID3D11Device3=Guid("A05C8C37-D2C6-4732-B3A0-9CE0B0DC9AE6")

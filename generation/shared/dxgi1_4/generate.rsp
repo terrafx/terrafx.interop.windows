@@ -1,7 +1,5 @@
---additional
--m32
---config
-multi-file
+@../../settings.rsp
+@../../remap.rsp
 --exclude
 __MIDL_itf_dxgi1_4_0000_0000_v0_0_c_ifspec
 __MIDL_itf_dxgi1_4_0000_0000_v0_0_s_ifspec
@@ -17,28 +15,10 @@ IID_IDXGIOutput4
 IID_IDXGISwapChain3
 --file
 shared-dxgi1_4.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---methodClassName
-DXGI
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/DXGI/shared/dxgi1_4
---remap
-_D3DCOLORVALUE=DXGI_RGBA
-_GUID=Guid
-_LARGE_INTEGER=LARGE_INTEGER
-_LUID=LUID
-HANDLE=IntPtr
-HINSTANCE__*=IntPtr
-HWND__*=IntPtr
+../../../sources/Interop/Windows/shared/dxgi1_4
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared/dxgi1_4.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgi1_4.h
 --with-attribute
 DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG=Flags
 DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG=Flags

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/minwindef.h in the Windows SDK for Windows 10.0.18632.0
+// Ported from shared/minwindef.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -22,15 +22,15 @@ namespace TerraFX.Interop
         public static int MAKELONG(ushort a, ushort b) => a | (b << 16);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ushort LOWORD(uint l) => (ushort)l;
+        public static ushort LOWORD(uint l) => unchecked((ushort)l);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ushort HIWORD(uint l) => (ushort)(l >> 16);
+        public static ushort HIWORD(uint l) => unchecked((ushort)(l >> 16));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static byte LOBYTE(ushort w) => (byte)w;
+        public static byte LOBYTE(ushort w) => unchecked((byte)w);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static byte HIBYTE(ushort w) => (byte)(w >> 8);
+        public static byte HIBYTE(ushort w) => unchecked((byte)(w >> 8));
     }
 }

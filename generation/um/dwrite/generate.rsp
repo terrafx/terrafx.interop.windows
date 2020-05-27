@@ -1,7 +1,5 @@
---additional
--m32
---config
-multi-file
+@../../settings.rsp
+@../../remap.rsp
 --exclude
 ID2D1SimplifiedGeometrySink
 operator|
@@ -13,32 +11,10 @@ operator^
 operator^=
 --file
 um-dwrite.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---libraryPath
-DWrite
---methodClassName
-DWrite
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/DWrite/um/dwrite
---remap
-_FILETIME=FILETIME
-_GUID=Guid
-GetGlyphIndicesA=GetGlyphIndices
-HDC__*=IntPtr
-HMONITOR__*=IntPtr
-IDWriteGeometrySink=IUnknown
-tagLOGFONTW=LOGFONTW
-tagRECT=RECT
-tagSIZE=SIZE
+../../../sources/Interop/Windows/um/dwrite
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/dwrite.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dwrite.h
 --with-attribute
 DWRITE_FONT_SIMULATIONS=Flags
 DWRITE_SCRIPT_SHAPES=Flags
@@ -71,3 +47,5 @@ IDWriteTextRenderer=Guid("EF8A8135-5CC6-45FE-8825-C5A0724EB819")
 IDWriteTypography=Guid("55F1112B-1DC2-4B3C-9541-F46894ED85B6")
 --with-type
 DWRITE_FONT_FEATURE_TAG=uint
+--with-librarypath
+*=DWrite

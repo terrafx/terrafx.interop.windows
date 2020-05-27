@@ -7,15 +7,12 @@ using System;
 using System.Runtime.InteropServices;
 using TerraFX.Interop;
 using static TerraFX.Interop.D3D_FEATURE_LEVEL;
-using static TerraFX.Interop.D3D12;
 using static TerraFX.Interop.D3D12_COMMAND_LIST_TYPE;
 using static TerraFX.Interop.D3D12_DESCRIPTOR_HEAP_TYPE;
 using static TerraFX.Interop.D3D12_FENCE_FLAGS;
 using static TerraFX.Interop.D3D12_RESOURCE_STATES;
-using static TerraFX.Interop.DXGI;
 using static TerraFX.Interop.DXGI_FORMAT;
 using static TerraFX.Interop.DXGI_SWAP_EFFECT;
-using static TerraFX.Interop.Kernel32;
 using static TerraFX.Interop.Windows;
 using static TerraFX.Samples.DirectX.DXSampleHelper;
 
@@ -28,7 +25,7 @@ namespace TerraFX.Samples.DirectX.D3D12
         // Pipeline objects
         private IDXGISwapChain3* _swapChain;
         private ID3D12Device* _device;
-        private ID3D12Resource*[] _renderTargets;
+        private readonly ID3D12Resource*[] _renderTargets;
         private ID3D12CommandAllocator* _commandAllocator;
         private ID3D12CommandQueue* _commandQueue;
         private ID3D12DescriptorHeap* _rtvHeap;
@@ -66,11 +63,11 @@ namespace TerraFX.Samples.DirectX.D3D12
             PopulateCommandList();
 
             // Execute the command list.
-            const int ppCommandListsCount = 1;
-            var ppCommandLists = stackalloc ID3D12CommandList*[ppCommandListsCount] {
+            const int CommandListsCount = 1;
+            var ppCommandLists = stackalloc ID3D12CommandList*[CommandListsCount] {
                 (ID3D12CommandList*)_commandList,
             };
-            _commandQueue->ExecuteCommandLists(ppCommandListsCount, ppCommandLists);
+            _commandQueue->ExecuteCommandLists(CommandListsCount, ppCommandLists);
 
             // Present the frame.
             ThrowIfFailed(nameof(IDXGISwapChain3.Present), _swapChain->Present(SyncInterval: 1, Flags: 0));
@@ -118,7 +115,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                 iid = IID_IDXGIFactory4;
                 ThrowIfFailed(nameof(CreateDXGIFactory2), CreateDXGIFactory2(dxgiFactoryFlags, &iid, (void**)&factory));
 
-                if (_useWarpDevice)
+                if (UseWarpDevice)
                 {
                     iid = IID_IDXGIAdapter;
                     ThrowIfFailed(nameof(IDXGIFactory4.EnumWarpAdapter), factory->EnumWarpAdapter(&iid, (void**)&adapter));
@@ -146,8 +143,8 @@ namespace TerraFX.Samples.DirectX.D3D12
                 // Describe and create the swap chain.
                 var swapChainDesc = new DXGI_SWAP_CHAIN_DESC1 {
                     BufferCount = FrameCount,
-                    Width = _width,
-                    Height = _height,
+                    Width = Width,
+                    Height = Height,
                     Format = DXGI_FORMAT_R8G8B8A8_UNORM,
                     BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT,
                     SwapEffect = DXGI_SWAP_EFFECT_FLIP_DISCARD,
@@ -289,7 +286,7 @@ namespace TerraFX.Samples.DirectX.D3D12
             _commandList->ResourceBarrier(1, &barrier);
 
             var rtvHandle = _rtvHeap->GetCPUDescriptorHandleForHeapStart();
-            rtvHandle.ptr = (UIntPtr)((byte*)rtvHandle.ptr + _frameIndex * _rtvDescriptorSize);
+            rtvHandle.ptr = (UIntPtr)((byte*)rtvHandle.ptr + (_frameIndex * _rtvDescriptorSize));
 
             // Record commands.
             var clearColor = stackalloc float[4];

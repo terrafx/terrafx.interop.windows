@@ -1,7 +1,5 @@
---additional
--m32
---config
-multi-file
+@../../settings.rsp
+@../../remap.rsp
 --exclude
 operator|
 operator|=
@@ -12,37 +10,10 @@ operator^
 operator^=
 --file
 um-dwrite_3.h
---headerFile
-header.txt
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/shared
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um
---libraryPath
-DWrite
---methodClassName
-DWrite
---namespace
-TerraFX.Interop
 --output
-../../../sources/Interop/DWrite/um/dwrite_3
---remap
-__AnonymousBase_dwrite_3_L1623_C31=Base
-__AnonymousBase_dwrite_3_L1802_C34=Base
-_D3DCOLORVALUE=DXGI_RGBA
-_FILETIME=FILETIME
-_GUID=Guid
-GetGlyphIndicesA=GetGlyphIndices
-HANDLE=IntPtr
-HDC__*=IntPtr
-HMONITOR__*=IntPtr
-ID2D1SimplifiedGeometrySink=IUnknown
-tagFONTSIGNATURE=FONTSIGNATURE
-tagLOGFONTA=LOGFONTA
-tagLOGFONTW=LOGFONTW
-tagPOINT=POINT
+../../../sources/Interop/Windows/um/dwrite_3
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/dwrite_3.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dwrite_3.h
 --with-attribute
 DWRITE_AUTOMATIC_FONT_AXES=Flags
 DWRITE_FONT_AXIS_ATTRIBUTES=Flags
