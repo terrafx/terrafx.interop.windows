@@ -5717,6 +5717,8 @@ namespace TerraFX.Interop
 
         public const int RI_MOUSE_BUTTON_5_UP = 0x0200;
 
+        public const int RI_MOUSE_WHEEL = 0x0400;
+
         public const int RI_MOUSE_HWHEEL = 0x0800;
 
         public const int MOUSE_MOVE_RELATIVE = 0;
