@@ -17,6 +17,6 @@ namespace TerraFX.Interop
         DXC_OUT_TEXT = 7,
         DXC_OUT_REFLECTION = 8,
         DXC_OUT_ROOT_SIGNATURE = 9,
-        DXC_OUT_FORCE_DWORD = 0xFFFFFFFF,
+        DXC_OUT_FORCE_DWORD = unchecked((int)0xFFFFFFFF),
     }
 }
