@@ -32,11 +32,11 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetResult(IDxcOperationResult* pThis, [NativeTypeName("IDxcBlob **")] IDxcBlob** pResult);
+        public delegate int _GetResult(IDxcOperationResult* pThis, [NativeTypeName("IDxcBlob **")] IDxcBlob** ppResult);
 
         [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetErrorBuffer(IDxcOperationResult* pThis, [NativeTypeName("IDxcBlobEncoding **")] IDxcBlobEncoding** pErrors);
+        public delegate int _GetErrorBuffer(IDxcOperationResult* pThis, [NativeTypeName("IDxcBlobEncoding **")] IDxcBlobEncoding** ppErrors);
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
@@ -63,15 +63,15 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetResult([NativeTypeName("IDxcBlob **")] IDxcBlob** pResult)
+        public int GetResult([NativeTypeName("IDxcBlob **")] IDxcBlob** ppResult)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetResult>(lpVtbl->GetResult)((IDxcOperationResult*)Unsafe.AsPointer(ref this), pResult);
+            return Marshal.GetDelegateForFunctionPointer<_GetResult>(lpVtbl->GetResult)((IDxcOperationResult*)Unsafe.AsPointer(ref this), ppResult);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetErrorBuffer([NativeTypeName("IDxcBlobEncoding **")] IDxcBlobEncoding** pErrors)
+        public int GetErrorBuffer([NativeTypeName("IDxcBlobEncoding **")] IDxcBlobEncoding** ppErrors)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetErrorBuffer>(lpVtbl->GetErrorBuffer)((IDxcOperationResult*)Unsafe.AsPointer(ref this), pErrors);
+            return Marshal.GetDelegateForFunctionPointer<_GetErrorBuffer>(lpVtbl->GetErrorBuffer)((IDxcOperationResult*)Unsafe.AsPointer(ref this), ppErrors);
         }
 
         public partial struct Vtbl
