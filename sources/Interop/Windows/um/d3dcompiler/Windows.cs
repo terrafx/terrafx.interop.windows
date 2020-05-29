@@ -54,6 +54,18 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DDisassembleRegion([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSize, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("LPCSTR")] sbyte* szComments, [NativeTypeName("SIZE_T")] nuint StartByteOffset, [NativeTypeName("SIZE_T")] nuint NumInsts, [NativeTypeName("SIZE_T *")] nuint* pFinishByteOffset, [NativeTypeName("ID3DBlob **")] ID3DBlob** ppDisassembly);
 
+        [DllImport("D3DCompiler_47", EntryPoint = "D3DCreateLinker", ExactSpelling = true)]
+        [return: NativeTypeName("HRESULT")]
+        public static extern int D3DCreateLinker([NativeTypeName("struct ID3D11Linker **")] ID3D11Linker** ppLinker);
+
+        [DllImport("D3DCompiler_47", EntryPoint = "D3DLoadModule", ExactSpelling = true)]
+        [return: NativeTypeName("HRESULT")]
+        public static extern int D3DLoadModule([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] nuint cbSrcDataSize, [NativeTypeName("struct ID3D11Module **")] ID3D11Module** ppModule);
+
+        [DllImport("D3DCompiler_47", EntryPoint = "D3DCreateFunctionLinkingGraph", ExactSpelling = true)]
+        [return: NativeTypeName("HRESULT")]
+        public static extern int D3DCreateFunctionLinkingGraph([NativeTypeName("UINT")] uint uFlags, [NativeTypeName("struct ID3D11FunctionLinkingGraph **")] ID3D11FunctionLinkingGraph** ppFunctionLinkingGraph);
+
         [DllImport("D3DCompiler_47", EntryPoint = "D3DGetTraceInstructionOffsets", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3DGetTraceInstructionOffsets([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSize, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("SIZE_T")] nuint StartInstIndex, [NativeTypeName("SIZE_T")] nuint NumInsts, [NativeTypeName("SIZE_T *")] nuint* pOffsets, [NativeTypeName("SIZE_T *")] nuint* pTotalInsts);
