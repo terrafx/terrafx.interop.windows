@@ -1,68 +1,58 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-__MIDL_itf_oleidl_0000_0000_v0_0_c_ifspec
-__MIDL_itf_oleidl_0000_0000_v0_0_s_ifspec
-__MIDL_itf_oleidl_0000_0001_v0_0_c_ifspec
-__MIDL_itf_oleidl_0000_0001_v0_0_s_ifspec
-__MIDL_itf_oleidl_0000_0003_v0_0_c_ifspec
-__MIDL_itf_oleidl_0000_0003_v0_0_s_ifspec
-__MIDL_itf_oleidl_0000_0024_v0_0_c_ifspec
-__MIDL_itf_oleidl_0000_0024_v0_0_s_ifspec
-__MIDL_itf_oleidl_0000_0025_v0_0_c_ifspec
-__MIDL_itf_oleidl_0000_0025_v0_0_s_ifspec
-CLIPFORMAT_UserFree
-CLIPFORMAT_UserFree64
-CLIPFORMAT_UserMarshal
-CLIPFORMAT_UserMarshal64
-CLIPFORMAT_UserSize
-CLIPFORMAT_UserSize64
-CLIPFORMAT_UserUnmarshal
-CLIPFORMAT_UserUnmarshal64
-HACCEL_UserFree
-HACCEL_UserFree64
-HACCEL_UserMarshal
-HACCEL_UserMarshal64
-HACCEL_UserSize
-HACCEL_UserSize64
-HACCEL_UserUnmarshal
-HACCEL_UserUnmarshal64
-HDC_UserFree
-HDC_UserFree64
-HDC_UserMarshal
-HDC_UserMarshal64
-HDC_UserSize
-HDC_UserSize64
-HDC_UserUnmarshal
-HDC_UserUnmarshal64
-HGLOBAL_UserFree
-HGLOBAL_UserFree64
-HGLOBAL_UserMarshal
-HGLOBAL_UserMarshal64
-HGLOBAL_UserSize
-HGLOBAL_UserSize64
-HGLOBAL_UserUnmarshal
-HGLOBAL_UserUnmarshal64
-HMENU_UserFree
-HMENU_UserFree64
-HMENU_UserMarshal
-HMENU_UserMarshal64
-HMENU_UserSize
-HMENU_UserSize64
-HMENU_UserUnmarshal
-HMENU_UserUnmarshal64
-HWND_UserFree
-HWND_UserFree64
-HWND_UserMarshal
-HWND_UserMarshal64
-HWND_UserSize
-HWND_UserSize64
-HWND_UserUnmarshal
-HWND_UserUnmarshal64
-IEnumOLEVERB_Next_Proxy
-IEnumOLEVERB_Next_Stub
-IEnumOLEVERB_RemoteNext_Proxy
-IEnumOLEVERB_RemoteNext_Stub
+CLIPFORMAT_UserFree(unsigned long *, CLIPFORMAT *):void
+CLIPFORMAT_UserFree64(unsigned long *, CLIPFORMAT *):void
+CLIPFORMAT_UserMarshal(unsigned long *, unsigned char *, CLIPFORMAT *):unsigned char *
+CLIPFORMAT_UserMarshal64(unsigned long *, unsigned char *, CLIPFORMAT *):unsigned char *
+CLIPFORMAT_UserSize(unsigned long *, unsigned long, CLIPFORMAT *):unsigned long
+CLIPFORMAT_UserSize64(unsigned long *, unsigned long, CLIPFORMAT *):unsigned long
+CLIPFORMAT_UserUnmarshal(unsigned long *, unsigned char *, CLIPFORMAT *):unsigned char *
+CLIPFORMAT_UserUnmarshal64(unsigned long *, unsigned char *, CLIPFORMAT *):unsigned char *
+HACCEL_UserFree(unsigned long *, HACCEL *):void
+HACCEL_UserFree64(unsigned long *, HACCEL *):void
+HACCEL_UserMarshal(unsigned long *, unsigned char *, HACCEL *):unsigned char *
+HACCEL_UserMarshal64(unsigned long *, unsigned char *, HACCEL *):unsigned char *
+HACCEL_UserSize(unsigned long *, unsigned long, HACCEL *):unsigned long
+HACCEL_UserSize64(unsigned long *, unsigned long, HACCEL *):unsigned long
+HACCEL_UserUnmarshal(unsigned long *, unsigned char *, HACCEL *):unsigned char *
+HACCEL_UserUnmarshal64(unsigned long *, unsigned char *, HACCEL *):unsigned char *
+HDC_UserFree(unsigned long *, HDC *):void
+HDC_UserFree64(unsigned long *, HDC *):void
+HDC_UserMarshal(unsigned long *, unsigned char *, HDC *):unsigned char *
+HDC_UserMarshal64(unsigned long *, unsigned char *, HDC *):unsigned char *
+HDC_UserSize(unsigned long *, unsigned long, HDC *):unsigned long
+HDC_UserSize64(unsigned long *, unsigned long, HDC *):unsigned long
+HDC_UserUnmarshal(unsigned long *, unsigned char *, HDC *):unsigned char *
+HDC_UserUnmarshal64(unsigned long *, unsigned char *, HDC *):unsigned char *
+HGLOBAL_UserFree(unsigned long *, HGLOBAL *):void
+HGLOBAL_UserFree64(unsigned long *, HGLOBAL *):void
+HGLOBAL_UserMarshal(unsigned long *, unsigned char *, HGLOBAL *):unsigned char *
+HGLOBAL_UserMarshal64(unsigned long *, unsigned char *, HGLOBAL *):unsigned char *
+HGLOBAL_UserSize(unsigned long *, unsigned long, HGLOBAL *):unsigned long
+HGLOBAL_UserSize64(unsigned long *, unsigned long, HGLOBAL *):unsigned long
+HGLOBAL_UserUnmarshal(unsigned long *, unsigned char *, HGLOBAL *):unsigned char *
+HGLOBAL_UserUnmarshal64(unsigned long *, unsigned char *, HGLOBAL *):unsigned char *
+HMENU_UserFree(unsigned long *, HMENU *):void
+HMENU_UserFree64(unsigned long *, HMENU *):void
+HMENU_UserMarshal(unsigned long *, unsigned char *, HMENU *):unsigned char *
+HMENU_UserMarshal64(unsigned long *, unsigned char *, HMENU *):unsigned char *
+HMENU_UserSize(unsigned long *, unsigned long, HMENU *):unsigned long
+HMENU_UserSize64(unsigned long *, unsigned long, HMENU *):unsigned long
+HMENU_UserUnmarshal(unsigned long *, unsigned char *, HMENU *):unsigned char *
+HMENU_UserUnmarshal64(unsigned long *, unsigned char *, HMENU *):unsigned char *
+HWND_UserFree(unsigned long *, HWND *):void
+HWND_UserFree64(unsigned long *, HWND *):void
+HWND_UserMarshal(unsigned long *, unsigned char *, HWND *):unsigned char *
+HWND_UserMarshal64(unsigned long *, unsigned char *, HWND *):unsigned char *
+HWND_UserSize(unsigned long *, unsigned long, HWND *):unsigned long
+HWND_UserSize64(unsigned long *, unsigned long, HWND *):unsigned long
+HWND_UserUnmarshal(unsigned long *, unsigned char *, HWND *):unsigned char *
+HWND_UserUnmarshal64(unsigned long *, unsigned char *, HWND *):unsigned char *
+IEnumOLEVERB_Next_Proxy(IEnumOLEVERB *, ULONG, LPOLEVERB, ULONG *):HRESULT
+IEnumOLEVERB_Next_Stub(IEnumOLEVERB *, ULONG, LPOLEVERB, ULONG *):HRESULT
+IEnumOLEVERB_RemoteNext_Proxy(IEnumOLEVERB *, ULONG, LPOLEVERB, ULONG *):HRESULT
+IEnumOLEVERB_RemoteNext_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
 IID_IContinue
 IID_IDropSource
 IID_IDropSourceNotify
@@ -87,44 +77,54 @@ IID_IOleWindow
 IID_IParseDisplayName
 IID_IViewObject
 IID_IViewObject2
-IOleCache2_RemoteUpdateCache_Proxy
-IOleCache2_RemoteUpdateCache_Stub
-IOleCache2_UpdateCache_Proxy
-IOleCache2_UpdateCache_Stub
-IOleInPlaceActiveObject_RemoteResizeBorder_Proxy
-IOleInPlaceActiveObject_RemoteResizeBorder_Stub
-IOleInPlaceActiveObject_RemoteTranslateAccelerator_Proxy
-IOleInPlaceActiveObject_RemoteTranslateAccelerator_Stub
-IOleInPlaceActiveObject_ResizeBorder_Proxy
-IOleInPlaceActiveObject_ResizeBorder_Stub
-IOleInPlaceActiveObject_TranslateAccelerator_Proxy
-IOleInPlaceActiveObject_TranslateAccelerator_Stub
+IOleCache2_RemoteUpdateCache_Proxy(IOleCache2 *, LPDATAOBJECT, DWORD, LONG_PTR):HRESULT
+IOleCache2_RemoteUpdateCache_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
+IOleCache2_UpdateCache_Proxy(IOleCache2 *, LPDATAOBJECT, DWORD, LPVOID):HRESULT
+IOleCache2_UpdateCache_Stub(IOleCache2 *, LPDATAOBJECT, DWORD, LONG_PTR):HRESULT
+IOleInPlaceActiveObject_RemoteResizeBorder_Proxy(IOleInPlaceActiveObject *, LPCRECT, const IID &, IOleInPlaceUIWindow *, BOOL):HRESULT
+IOleInPlaceActiveObject_RemoteResizeBorder_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
+IOleInPlaceActiveObject_RemoteTranslateAccelerator_Proxy(IOleInPlaceActiveObject *):HRESULT
+IOleInPlaceActiveObject_RemoteTranslateAccelerator_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
+IOleInPlaceActiveObject_ResizeBorder_Proxy(IOleInPlaceActiveObject *, LPCRECT, IOleInPlaceUIWindow *, BOOL):HRESULT
+IOleInPlaceActiveObject_ResizeBorder_Stub(IOleInPlaceActiveObject *, LPCRECT, const IID &, IOleInPlaceUIWindow *, BOOL):HRESULT
+IOleInPlaceActiveObject_TranslateAccelerator_Proxy(IOleInPlaceActiveObject *, LPMSG):HRESULT
+IOleInPlaceActiveObject_TranslateAccelerator_Stub(IOleInPlaceActiveObject *):HRESULT
 IOLETypes_v0_0_c_ifspec
 IOLETypes_v0_0_s_ifspec
-IViewObject_Draw_Proxy
-IViewObject_Draw_Stub
-IViewObject_Freeze_Proxy
-IViewObject_Freeze_Stub
-IViewObject_GetAdvise_Proxy
-IViewObject_GetAdvise_Stub
-IViewObject_GetColorSet_Proxy
-IViewObject_GetColorSet_Stub
-IViewObject_RemoteDraw_Proxy
-IViewObject_RemoteDraw_Stub
-IViewObject_RemoteFreeze_Proxy
-IViewObject_RemoteFreeze_Stub
-IViewObject_RemoteGetAdvise_Proxy
-IViewObject_RemoteGetAdvise_Stub
-IViewObject_RemoteGetColorSet_Proxy
-IViewObject_RemoteGetColorSet_Stub
-STGMEDIUM_UserFree
-STGMEDIUM_UserFree64
-STGMEDIUM_UserMarshal
-STGMEDIUM_UserMarshal64
-STGMEDIUM_UserSize
-STGMEDIUM_UserSize64
-STGMEDIUM_UserUnmarshal
-STGMEDIUM_UserUnmarshal64
+IViewObject_Draw_Proxy(IViewObject *, DWORD, LONG, void *, DVTARGETDEVICE *, HDC, HDC, LPCRECTL, LPCRECTL, BOOL (*)(ULONG_PTR) __attribute__((stdcall)), ULONG_PTR):HRESULT
+IViewObject_Draw_Stub(IViewObject *, DWORD, LONG, ULONG_PTR, DVTARGETDEVICE *, HDC, HDC, LPCRECTL, LPCRECTL, IContinue *):HRESULT
+IViewObject_Freeze_Proxy(IViewObject *, DWORD, LONG, void *, DWORD *):HRESULT
+IViewObject_Freeze_Stub(IViewObject *, DWORD, LONG, ULONG_PTR, DWORD *):HRESULT
+IViewObject_GetAdvise_Proxy(IViewObject *, DWORD *, DWORD *, IAdviseSink **):HRESULT
+IViewObject_GetAdvise_Stub(IViewObject *, DWORD *, DWORD *, IAdviseSink **):HRESULT
+IViewObject_GetColorSet_Proxy(IViewObject *, DWORD, LONG, void *, DVTARGETDEVICE *, HDC, LOGPALETTE **):HRESULT
+IViewObject_GetColorSet_Stub(IViewObject *, DWORD, LONG, ULONG_PTR, DVTARGETDEVICE *, ULONG_PTR, LOGPALETTE **):HRESULT
+IViewObject_RemoteDraw_Proxy(IViewObject *, DWORD, LONG, ULONG_PTR, DVTARGETDEVICE *, HDC, HDC, LPCRECTL, LPCRECTL, IContinue *):HRESULT
+IViewObject_RemoteDraw_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
+IViewObject_RemoteFreeze_Proxy(IViewObject *, DWORD, LONG, ULONG_PTR, DWORD *):HRESULT
+IViewObject_RemoteFreeze_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
+IViewObject_RemoteGetAdvise_Proxy(IViewObject *, DWORD *, DWORD *, IAdviseSink **):HRESULT
+IViewObject_RemoteGetAdvise_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
+IViewObject_RemoteGetColorSet_Proxy(IViewObject *, DWORD, LONG, ULONG_PTR, DVTARGETDEVICE *, ULONG_PTR, LOGPALETTE **):HRESULT
+IViewObject_RemoteGetColorSet_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
+STGMEDIUM_UserFree(unsigned long *, STGMEDIUM *):void
+STGMEDIUM_UserFree64(unsigned long *, STGMEDIUM *):void
+STGMEDIUM_UserMarshal(unsigned long *, unsigned char *, STGMEDIUM *):unsigned char *
+STGMEDIUM_UserMarshal64(unsigned long *, unsigned char *, STGMEDIUM *):unsigned char *
+STGMEDIUM_UserSize(unsigned long *, unsigned long, STGMEDIUM *):unsigned long
+STGMEDIUM_UserSize64(unsigned long *, unsigned long, STGMEDIUM *):unsigned long
+STGMEDIUM_UserUnmarshal(unsigned long *, unsigned char *, STGMEDIUM *):unsigned char *
+STGMEDIUM_UserUnmarshal64(unsigned long *, unsigned char *, STGMEDIUM *):unsigned char *
+__MIDL_itf_oleidl_0000_0000_v0_0_c_ifspec
+__MIDL_itf_oleidl_0000_0000_v0_0_s_ifspec
+__MIDL_itf_oleidl_0000_0001_v0_0_c_ifspec
+__MIDL_itf_oleidl_0000_0001_v0_0_s_ifspec
+__MIDL_itf_oleidl_0000_0003_v0_0_c_ifspec
+__MIDL_itf_oleidl_0000_0003_v0_0_s_ifspec
+__MIDL_itf_oleidl_0000_0024_v0_0_c_ifspec
+__MIDL_itf_oleidl_0000_0024_v0_0_s_ifspec
+__MIDL_itf_oleidl_0000_0025_v0_0_c_ifspec
+__MIDL_itf_oleidl_0000_0025_v0_0_s_ifspec
 --file
 um-oleidl.h
 --output
