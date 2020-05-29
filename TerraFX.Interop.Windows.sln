@@ -728,34 +728,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "msxml", "msxml", "{5653F94C
 		generation\um\msxml\um-msxml.h = generation\um\msxml\um-msxml.h
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d2d1helper", "d2d1helper", "{44AE719B-BDD1-4700-9F6A-B1262967C28D}"
-	ProjectSection(SolutionItems) = preProject
-		generation\um\d2d1helper\generate.rsp = generation\um\d2d1helper\generate.rsp
-		generation\um\d2d1helper\header.txt = generation\um\d2d1helper\header.txt
-		generation\um\d2d1helper\um-d2d1helper.h = generation\um\d2d1helper\um-d2d1helper.h
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d2d1_1helper", "d2d1_1helper", "{93FABD1B-94C7-42AC-A861-02160B4D6A23}"
-	ProjectSection(SolutionItems) = preProject
-		generation\um\d2d1_1helper\generate.rsp = generation\um\d2d1_1helper\generate.rsp
-		generation\um\d2d1_1helper\header.txt = generation\um\d2d1_1helper\header.txt
-		generation\um\d2d1_1helper\um-d2d1_1helper.h = generation\um\d2d1_1helper\um-d2d1_1helper.h
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d2d1_2helper", "d2d1_2helper", "{0AD41FB6-5542-48C3-AC48-02A91C6088AA}"
-	ProjectSection(SolutionItems) = preProject
-		generation\um\d2d1_2helper\generate.rsp = generation\um\d2d1_2helper\generate.rsp
-		generation\um\d2d1_2helper\header.txt = generation\um\d2d1_2helper\header.txt
-		generation\um\d2d1_2helper\um-d2d1_2helper.h = generation\um\d2d1_2helper\um-d2d1_2helper.h
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d2d1_3helper", "d2d1_3helper", "{9D984457-06E2-4E99-82D8-0CDD4E06A9A0}"
-	ProjectSection(SolutionItems) = preProject
-		generation\um\d2d1_3helper\generate.rsp = generation\um\d2d1_3helper\generate.rsp
-		generation\um\d2d1_3helper\header.txt = generation\um\d2d1_3helper\header.txt
-		generation\um\d2d1_3helper\um-d2d1_3helper.h = generation\um\d2d1_3helper\um-d2d1_3helper.h
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "D2DErr", "D2DErr", "{C51AED35-0089-4BDE-842F-5390F69BE055}"
 	ProjectSection(SolutionItems) = preProject
 		generation\um\D2DErr\generate.rsp = generation\um\D2DErr\generate.rsp
@@ -894,10 +866,6 @@ Global
 		{6F88379B-A1EC-4BEC-920C-0743822F8493} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{70A02165-57BB-48DC-A6C5-B93E253CD3BE} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{5653F94C-B8A1-4B7E-8226-34813ECA01C0} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{44AE719B-BDD1-4700-9F6A-B1262967C28D} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{93FABD1B-94C7-42AC-A861-02160B4D6A23} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{0AD41FB6-5542-48C3-AC48-02A91C6088AA} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{9D984457-06E2-4E99-82D8-0CDD4E06A9A0} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{C51AED35-0089-4BDE-842F-5390F69BE055} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{CB8001DB-06E1-4391-B9DC-4C163DD343B6} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
