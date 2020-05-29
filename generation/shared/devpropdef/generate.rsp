@@ -1,8 +1,10 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-operator==
-operator!=
+operator==(const DEVPROPKEY &, const DEVPROPKEY &):bool
+operator==(const DEVPROPCOMPKEY &, const DEVPROPCOMPKEY &):bool
+operator!=(const DEVPROPKEY &, const DEVPROPKEY &):bool
+operator!=(const DEVPROPCOMPKEY &, const DEVPROPCOMPKEY &):bool
 --file
 shared-devpropdef.h
 --output

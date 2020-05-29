@@ -1,85 +1,11 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-__addfsbyte
-__addfsdword
-__addfsword
-__cpuidex
-__fastfail
-__incfsbyte
-__incfsdword
-__incfsword
-__int2c
-__rdtsc
-__readfsbyte
-__readfsword
-__readfsdword
-__readpmc
-__writefsbyte
-__writefsword
-__writefsdword
-_ACTIVATION_CONTEXT
-_BitScanForward
-_BitScanReverse
-_bittest
-_bittestandcomplement
-_bittestandreset
-_bittestandset
-_ImageArchitectureHeader
-_InlineBitScanForward64
-_InlineBitScanReverse64
-_InlineInterlockedAnd64
-_InlineInterlockedAdd
-_InlineInterlockedAdd64
-_InlineInterlockedCompareExchangePointer
-_InlineInterlockedDecrement64
-_InlineInterlockedExchange64
-_InlineInterlockedExchangeAdd64
-_InlineInterlockedExchangePointer
-_InlineInterlockedIncrement64
-_InlineInterlockedOr64
-_InlineInterlockedXor64
-_InterlockedAnd
-_InterlockedAnd8
-_InterlockedAnd16
-_interlockedbittestandreset
-_interlockedbittestandset
-_InterlockedCompareExchange
-_InterlockedCompareExchange16
-_InterlockedCompareExchange64
-_InterlockedDecrement
-_InterlockedDecrement16
-_InterlockedExchange
-_InterlockedExchange8
-_InterlockedExchange16
-_InterlockedExchangeAdd
-_InterlockedExchangeAdd8
-_InterlockedIncrement
-_InterlockedIncrement16
-_InterlockedOr
-_InterlockedOr8
-_InterlockedOr16
-_InterlockedXor
-_InterlockedXor8
-_InterlockedXor16
-_mm_pause
-_mm_prefetch
-_rotl
-_rotl64
-_rotr
-_rotr64
-_TEB
-_TP_CALLBACK_INSTANCE
-_TP_CLEANUP_GROUP
-_TP_IO
-_TP_POOL
-_TP_TIMER
-_TP_WAIT
-_TP_WORK
 ALL_POWERSCHEMES_GUID
-CUSTOM_SYSTEM_EVENT_TRIGGER_INIT
-GetCurrentFiber
-GetFiberData
+CUSTOM_SYSTEM_EVENT_TRIGGER_INIT(PCUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG, PCWSTR):void
+EXCEPTION_ROUTINE
+GetCurrentFiber():PVOID
+GetFiberData():PVOID
 GUID_ACDC_POWER_SOURCE
 GUID_ACTIVE_POWERSCHEME
 GUID_ADAPTIVE_INPUT_CONTROLLER_STATE
@@ -278,19 +204,26 @@ GUID_VIDEO_CURRENT_MONITOR_BRIGHTNESS
 GUID_VIDEO_DIM_TIMEOUT
 GUID_VIDEO_POWERDOWN_TIMEOUT
 GUID_VIDEO_SUBGROUP
-Int64ShllMod32
-Int64ShraMod32
-Int64ShrlMod32
-MemoryBarrier
+Int64ShllMod32(ULONGLONG, DWORD):ULONGLONG
+Int64ShraMod32(LONGLONG, DWORD):LONGLONG
+Int64ShrlMod32(ULONGLONG, DWORD):ULONGLONG
+MemoryBarrier():void
 NO_SUBGROUP_GUID
-NtCurrentTeb
-operator~
-operator|
-operator|=
-operator&
-operator&=
-operator^
-operator^=
+NtCurrentTeb():struct _TEB *
+operator&(JOB_OBJECT_IO_RATE_CONTROL_FLAGS, JOB_OBJECT_IO_RATE_CONTROL_FLAGS):JOB_OBJECT_IO_RATE_CONTROL_FLAGS
+operator&(JOB_OBJECT_NET_RATE_CONTROL_FLAGS, JOB_OBJECT_NET_RATE_CONTROL_FLAGS):JOB_OBJECT_NET_RATE_CONTROL_FLAGS
+operator&=(JOB_OBJECT_IO_RATE_CONTROL_FLAGS &, JOB_OBJECT_IO_RATE_CONTROL_FLAGS):JOB_OBJECT_IO_RATE_CONTROL_FLAGS &
+operator&=(JOB_OBJECT_NET_RATE_CONTROL_FLAGS &, JOB_OBJECT_NET_RATE_CONTROL_FLAGS):JOB_OBJECT_NET_RATE_CONTROL_FLAGS &
+operator^(JOB_OBJECT_IO_RATE_CONTROL_FLAGS, JOB_OBJECT_IO_RATE_CONTROL_FLAGS):JOB_OBJECT_IO_RATE_CONTROL_FLAGS
+operator^(JOB_OBJECT_NET_RATE_CONTROL_FLAGS, JOB_OBJECT_NET_RATE_CONTROL_FLAGS):JOB_OBJECT_NET_RATE_CONTROL_FLAGS
+operator^=(JOB_OBJECT_IO_RATE_CONTROL_FLAGS &, JOB_OBJECT_IO_RATE_CONTROL_FLAGS):JOB_OBJECT_IO_RATE_CONTROL_FLAGS &
+operator^=(JOB_OBJECT_NET_RATE_CONTROL_FLAGS &, JOB_OBJECT_NET_RATE_CONTROL_FLAGS):JOB_OBJECT_NET_RATE_CONTROL_FLAGS &
+operator|(JOB_OBJECT_IO_RATE_CONTROL_FLAGS, JOB_OBJECT_IO_RATE_CONTROL_FLAGS):JOB_OBJECT_IO_RATE_CONTROL_FLAGS
+operator|(JOB_OBJECT_NET_RATE_CONTROL_FLAGS, JOB_OBJECT_NET_RATE_CONTROL_FLAGS):JOB_OBJECT_NET_RATE_CONTROL_FLAGS
+operator|=(JOB_OBJECT_IO_RATE_CONTROL_FLAGS &, JOB_OBJECT_IO_RATE_CONTROL_FLAGS):JOB_OBJECT_IO_RATE_CONTROL_FLAGS &
+operator|=(JOB_OBJECT_NET_RATE_CONTROL_FLAGS &, JOB_OBJECT_NET_RATE_CONTROL_FLAGS):JOB_OBJECT_NET_RATE_CONTROL_FLAGS &
+operator~(JOB_OBJECT_IO_RATE_CONTROL_FLAGS):JOB_OBJECT_IO_RATE_CONTROL_FLAGS
+operator~(JOB_OBJECT_NET_RATE_CONTROL_FLAGS):JOB_OBJECT_NET_RATE_CONTROL_FLAGS
 PEXCEPTION_ROUTINE
 PPM_IDLESTATES_DATA_GUID
 PPM_IDLESTATE_CHANGE_GUID
@@ -302,117 +235,184 @@ PPM_PERFSTATE_CHANGE_GUID
 PPM_PERFSTATE_DOMAIN_CHANGE_GUID
 PPM_THERMALCONSTRAINT_GUID
 PPM_THERMAL_POLICY_CHANGE_GUID
-ReadAcquire
-ReadAcquire8
-ReadAcquire16
-ReadAcquire64
-ReadBooleanAcquire
-ReadBooleanNoFence
-ReadBooleanRaw
-ReadNoFence
-ReadNoFence8
-ReadNoFence16
-ReadNoFence64
-ReadPointerAcquire
-ReadPointerNoFence
-ReadPointerRaw
-ReadRaw
-ReadRaw8
-ReadRaw16
-ReadRaw64
-ReadUCharAcquire
-ReadUCharNoFence
-ReadUCharRaw
-ReadULongAcquire
-ReadULongNoFence
-ReadULongRaw
-ReadULong64Acquire
-ReadULong64NoFence
-ReadULong64Raw
-ReadUShortAcquire
-ReadUShortNoFence
-ReadUShortRaw
-RtlCaptureContext
-RtlCaptureStackBackTrace
-RtlCompareMemory
-RtlConvertDeviceFamilyInfoToString
-RtlCrc32
-RtlCrc64
-RtlExtendCorrelationVector
-RtlFirstEntrySList
-RtlGetDeviceFamilyInfoEnum
-RtlGetProductInfo
-RtlGetReturnAddressHijackTarget
-RtlIncrementCorrelationVector
-RtlInitializeCorrelationVector
-RtlInitializeSListHead
-RtlInterlockedFlushSList
-RtlInterlockedPopEntrySList
-RtlInterlockedPushEntrySList
-RtlInterlockedPushListSListEx
-RtlIsZeroMemory
-RtlNormalizeSecurityDescriptor
-RtlOsDeploymentState
-RtlPcToFileHeader
-RtlQueryDepthSList
-RtlRaiseCustomSystemEventTrigger
-RtlRaiseException
-RtlSecureZeroMemory
-RtlSwitchedVVI
-RtlUnwind
-RtlValidateCorrelationVector
-TpDestroyCallbackEnviron
-TpInitializeCallbackEnviron
-TpSetCallbackActivationContext
-TpSetCallbackCleanupGroup
-TpSetCallbackFinalizationCallback
-TpSetCallbackLongFunction
-TpSetCallbackNoActivationContext
-TpSetCallbackPersistent
-TpSetCallbackPriority
-TpSetCallbackRaceWithDll
-TpSetCallbackThreadpool
-VerSetConditionMask
-WriteAcquire
-WriteAcquire8
-WriteAcquire16
-WriteAcquire64
-WriteBooleanAcquire
-WriteBooleanNoFence
-WriteBooleanRaw
-WriteBooleanRelease
-WriteNoFence
-WriteNoFence8
-WriteNoFence16
-WriteNoFence64
-WritePointerAcquire
-WritePointerNoFence
-WritePointerRaw
-WritePointerRelease
-WriteRaw
-WriteRaw8
-WriteRaw16
-WriteRaw64
-WriteRelease
-WriteRelease8
-WriteRelease16
-WriteRelease64
-WriteUCharAcquire
-WriteUCharNoFence
-WriteUCharRaw
-WriteUCharRelease
-WriteULongAcquire
-WriteULongNoFence
-WriteULongRaw
-WriteULongRelease
-WriteULong64Acquire
-WriteULong64NoFence
-WriteULong64Raw
-WriteULong64Release
-WriteUShortAcquire
-WriteUShortNoFence
-WriteUShortRaw
-WriteUShortRelease
+ReadAcquire(const volatile LONG *):LONG
+ReadAcquire8(const volatile CHAR *):CHAR
+ReadAcquire16(const volatile SHORT *):SHORT
+ReadAcquire64(const volatile LONG64 *):LONG64
+ReadBooleanAcquire(const volatile BOOLEAN *):BYTE
+ReadBooleanNoFence(const volatile BOOLEAN *):BYTE
+ReadNoFence(const volatile LONG *):LONG
+ReadNoFence8(const volatile CHAR *):CHAR
+ReadNoFence16(const volatile SHORT *):SHORT
+ReadNoFence64(const volatile LONG64 *):LONG64
+ReadPointerAcquire(const volatile PVOID *):PVOID
+ReadPointerNoFence(const volatile PVOID *):PVOID
+ReadPointerRaw(const volatile PVOID *):PVOID
+ReadRaw(const volatile LONG *):LONG
+ReadRaw8(const volatile CHAR *):CHAR
+ReadRaw16(const volatile SHORT *):SHORT
+ReadRaw64(const volatile LONG64 *):LONG64
+ReadUCharAcquire(const volatile BYTE *):BYTE
+ReadUCharNoFence(const volatile BYTE *):BYTE
+ReadUCharRaw(const volatile BYTE *):BYTE
+ReadULong64Acquire(const volatile DWORD64 *):DWORD64
+ReadULong64NoFence(const volatile DWORD64 *):DWORD64
+ReadULong64Raw(const volatile DWORD64 *):DWORD64
+ReadULongAcquire(const volatile DWORD *):DWORD
+ReadULongNoFence(const volatile DWORD *):DWORD
+ReadULongRaw(const volatile DWORD *):DWORD
+ReadUShortAcquire(const volatile WORD *):WORD
+ReadUShortNoFence(const volatile WORD *):WORD
+ReadUShortRaw(const volatile WORD *):WORD
+RtlCaptureContext(PCONTEXT):void
+RtlCaptureStackBackTrace(DWORD, DWORD, PVOID *, PDWORD):WORD
+RtlCompareMemory(const void *, const void *, SIZE_T):SIZE_T
+RtlConvertDeviceFamilyInfoToString(PDWORD, PDWORD, PWSTR, PWSTR):DWORD
+RtlCrc32(const void *, size_t, DWORD):DWORD
+RtlCrc64(const void *, size_t, ULONGLONG):ULONGLONG
+RtlExtendCorrelationVector(PCORRELATION_VECTOR):DWORD
+RtlFirstEntrySList(const SLIST_HEADER *):PSLIST_ENTRY
+RtlGetDeviceFamilyInfoEnum(ULONGLONG *, DWORD *, DWORD *):void
+RtlGetProductInfo(DWORD, DWORD, DWORD, DWORD, PDWORD):BOOLEAN
+RtlGetReturnAddressHijackTarget():ULONG_PTR
+RtlIncrementCorrelationVector(PCORRELATION_VECTOR):DWORD
+RtlInitializeCorrelationVector(PCORRELATION_VECTOR, int, const GUID *):DWORD
+RtlInitializeSListHead(PSLIST_HEADER):void
+RtlInterlockedFlushSList(PSLIST_HEADER):PSLIST_ENTRY
+RtlInterlockedPopEntrySList(PSLIST_HEADER):PSLIST_ENTRY
+RtlInterlockedPushEntrySList(PSLIST_HEADER, PSLIST_ENTRY):PSLIST_ENTRY
+RtlInterlockedPushListSListEx(PSLIST_HEADER, PSLIST_ENTRY, PSLIST_ENTRY, DWORD):PSLIST_ENTRY
+RtlIsZeroMemory(PVOID, SIZE_T):BOOLEAN
+RtlNormalizeSecurityDescriptor(PSECURITY_DESCRIPTOR *, DWORD, PSECURITY_DESCRIPTOR *, PDWORD, BOOLEAN):BOOLEAN
+RtlOsDeploymentState(DWORD):OS_DEPLOYEMENT_STATE_VALUES
+RtlPcToFileHeader(PVOID, PVOID *):PVOID
+RtlpNumberOf<T, N>(T (&)[N]):char (*)[N]
+RtlQueryDepthSList(PSLIST_HEADER):WORD
+RtlRaiseCustomSystemEventTrigger(PCUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG):DWORD
+RtlRaiseException(PEXCEPTION_RECORD):void
+RtlSecureZeroMemory(PVOID, SIZE_T):PVOID
+RtlSwitchedVVI(PRTL_OSVERSIONINFOEXW, DWORD, ULONGLONG):DWORD
+RtlUnwind(PVOID, PVOID, PEXCEPTION_RECORD, PVOID):void
+RtlValidateCorrelationVector(PCORRELATION_VECTOR):DWORD
+TpDestroyCallbackEnviron(PTP_CALLBACK_ENVIRON):void
+TpInitializeCallbackEnviron(PTP_CALLBACK_ENVIRON):void
+TpSetCallbackActivationContext(PTP_CALLBACK_ENVIRON, struct _ACTIVATION_CONTEXT *):void
+TpSetCallbackCleanupGroup(PTP_CALLBACK_ENVIRON, PTP_CLEANUP_GROUP, PTP_CLEANUP_GROUP_CANCEL_CALLBACK):void
+TpSetCallbackFinalizationCallback(PTP_CALLBACK_ENVIRON, PTP_SIMPLE_CALLBACK):void
+TpSetCallbackLongFunction(PTP_CALLBACK_ENVIRON):void
+TpSetCallbackNoActivationContext(PTP_CALLBACK_ENVIRON):void
+TpSetCallbackPersistent(PTP_CALLBACK_ENVIRON):void
+TpSetCallbackPriority(PTP_CALLBACK_ENVIRON, TP_CALLBACK_PRIORITY):void
+TpSetCallbackRaceWithDll(PTP_CALLBACK_ENVIRON, PVOID):void
+TpSetCallbackThreadpool(PTP_CALLBACK_ENVIRON, PTP_POOL):void
+VerSetConditionMask(ULONGLONG, DWORD, BYTE):ULONGLONG
+WriteBooleanNoFence(volatile BOOLEAN *, BOOLEAN):void
+WriteBooleanRelease(volatile BOOLEAN *, BOOLEAN):void
+WriteNoFence(volatile LONG *, LONG):void
+WriteNoFence8(volatile CHAR *, CHAR):void
+WriteNoFence16(volatile SHORT *, SHORT):void
+WriteNoFence64(volatile LONG64 *, LONG64):void
+WritePointerNoFence(volatile PVOID *, PVOID):void
+WritePointerRaw(volatile PVOID *, PVOID):void
+WritePointerRelease(volatile PVOID *, PVOID):void
+WriteRaw(volatile LONG *, LONG):void
+WriteRaw8(volatile CHAR *, CHAR):void
+WriteRaw16(volatile SHORT *, SHORT):void
+WriteRaw64(volatile LONG64 *, LONG64):void
+WriteRelease(volatile LONG *, LONG):void
+WriteRelease8(volatile CHAR *, CHAR):void
+WriteRelease16(volatile SHORT *, SHORT):void
+WriteRelease64(volatile LONG64 *, LONG64):void
+WriteUCharNoFence(volatile BYTE *, BYTE):void
+WriteUCharRaw(volatile BYTE *, BYTE):void
+WriteUCharRelease(volatile BYTE *, BYTE):void
+WriteULong64NoFence(volatile DWORD64 *, DWORD64):void
+WriteULong64Raw(volatile DWORD64 *, DWORD64):void
+WriteULong64Release(volatile DWORD64 *, DWORD64):void
+WriteULongNoFence(volatile DWORD *, DWORD):void
+WriteULongRaw(volatile DWORD *, DWORD):void
+WriteULongRelease(volatile DWORD *, DWORD):void
+WriteUShortNoFence(volatile WORD *, WORD):void
+WriteUShortRaw(volatile WORD *, WORD):void
+WriteUShortRelease(volatile WORD *, WORD):void
+_ACTIVATION_CONTEXT
+_BitScanForward(DWORD *, DWORD):BOOLEAN
+_BitScanReverse(DWORD *, DWORD):BOOLEAN
+_bittest(const LONG *, LONG):BOOLEAN
+_bittestandcomplement(LONG *, LONG):BOOLEAN
+_bittestandreset(LONG *, LONG):BOOLEAN
+_bittestandset(LONG *, LONG):BOOLEAN
+_ENUM_FLAG_INTEGER_FOR_SIZE<S>
+_ENUM_FLAG_INTEGER_FOR_SIZE<?>
+_ENUM_FLAG_SIZED_INTEGER<T>
+_ImageArchitectureHeader
+_InlineBitScanForward64(DWORD *, DWORD64):BOOLEAN
+_InlineBitScanReverse64(DWORD *, DWORD64):BOOLEAN
+_InlineInterlockedAdd(volatile LONG *, LONG):LONG
+_InlineInterlockedAdd64(volatile LONG64 *, LONG64):LONG64
+_InlineInterlockedAnd64(volatile LONG64 *, LONG64):LONG64
+_InlineInterlockedCompareExchangePointer(volatile PVOID *, PVOID, PVOID):PVOID
+_InlineInterlockedDecrement64(volatile LONGLONG *):LONGLONG
+_InlineInterlockedExchange64(volatile LONGLONG *, LONGLONG):LONGLONG
+_InlineInterlockedExchangeAdd64(volatile LONGLONG *, LONGLONG):LONGLONG
+_InlineInterlockedExchangePointer(volatile PVOID *, PVOID):PVOID
+_InlineInterlockedIncrement64(volatile LONGLONG *):LONGLONG
+_InlineInterlockedOr64(volatile LONGLONG *, LONGLONG):LONGLONG
+_InlineInterlockedXor64(volatile LONG64 *, LONG64):LONG64
+_InterlockedAnd(volatile LONG *, LONG):LONG
+_InterlockedAnd8(volatile char *, char):char
+_InterlockedAnd16(volatile SHORT *, SHORT):SHORT
+_interlockedbittestandreset(volatile LONG *, LONG):BOOLEAN
+_interlockedbittestandset(volatile LONG *, LONG):BOOLEAN
+_InterlockedCompareExchange(volatile LONG *, LONG, LONG):LONG
+_InterlockedCompareExchange16(volatile SHORT *, SHORT, SHORT):SHORT
+_InterlockedCompareExchange64(volatile LONG64 *, LONG64, LONG64):LONG64
+_InterlockedDecrement(volatile LONG *):LONG
+_InterlockedDecrement16(volatile SHORT *):SHORT
+_InterlockedExchange(volatile LONG *, LONG):LONG
+_InterlockedExchange8(volatile CHAR *, CHAR):CHAR
+_InterlockedExchange16(volatile SHORT *, SHORT):SHORT
+_InterlockedExchangeAdd(volatile LONG *, LONG):LONG
+_InterlockedExchangeAdd8(volatile char *, char):char
+_InterlockedIncrement(volatile LONG *):LONG
+_InterlockedIncrement16(volatile SHORT *):SHORT
+_InterlockedOr(volatile LONG *, LONG):LONG
+_InterlockedOr8(volatile char *, char):char
+_InterlockedOr16(volatile SHORT *, SHORT):SHORT
+_InterlockedXor(volatile LONG *, LONG):LONG
+_InterlockedXor8(volatile char *, char):char
+_InterlockedXor16(volatile SHORT *, SHORT):SHORT
+_mm_pause():void
+_mm_prefetch(const CHAR *, int):void
+_rotl(unsigned int, int):unsigned int
+_rotl64(unsigned long long, int):unsigned long long
+_rotr(unsigned int, int):unsigned int
+_rotr64(unsigned long long, int):unsigned long long
+_TEB
+_TP_CALLBACK_INSTANCE
+_TP_CLEANUP_GROUP
+_TP_IO
+_TP_POOL
+_TP_TIMER
+_TP_WAIT
+_TP_WORK
+__addfsbyte(DWORD, BYTE):void
+__addfsdword(DWORD, DWORD):void
+__addfsword(DWORD, WORD):void
+__cpuidex(int [4], int, int):void
+__fastfail(unsigned int):void
+__incfsbyte(DWORD):void
+__incfsdword(DWORD):void
+__incfsword(DWORD):void
+__int2c():void
+__rdtsc():DWORD64
+__readfsbyte(DWORD):BYTE
+__readfsdword(DWORD):DWORD
+__readfsword(DWORD):WORD
+__readpmc(DWORD):DWORD64
+__writefsbyte(DWORD, BYTE):void
+__writefsdword(DWORD, DWORD):void
+__writefsword(DWORD, WORD):void
 --file
 um-winnt.h
 --output

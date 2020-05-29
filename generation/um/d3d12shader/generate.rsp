@@ -1,6 +1,12 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
+ID3D12LibraryReflection.QueryInterface(const IID &, LPVOID *):HRESULT nothrow
+ID3D12LibraryReflection.AddRef():ULONG nothrow
+ID3D12LibraryReflection.Release():ULONG nothrow
+ID3D12ShaderReflection.QueryInterface(const IID &, LPVOID *):HRESULT nothrow
+ID3D12ShaderReflection.AddRef():ULONG nothrow
+ID3D12ShaderReflection.Release():ULONG nothrow
 IID_ID3D12ShaderReflectionType
 IID_ID3D12ShaderReflectionVariable
 IID_ID3D12ShaderReflectionConstantBuffer

@@ -1,13 +1,13 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
+ID3D10Blob
+IID_ID3D11ShaderTrace
+IID_ID3D11ShaderTraceFactory
 __MIDL_itf_d3d11ShaderTracing_0000_0000_v0_0_c_ifspec
 __MIDL_itf_d3d11ShaderTracing_0000_0000_v0_0_s_ifspec
 __MIDL_itf_d3d11ShaderTracing_0000_0002_v0_0_c_ifspec
 __MIDL_itf_d3d11ShaderTracing_0000_0002_v0_0_s_ifspec
-ID3D10Blob
-IID_ID3D11ShaderTrace
-IID_ID3D11ShaderTraceFactory
 --file
 um-d3d11shadertracing.h
 --output

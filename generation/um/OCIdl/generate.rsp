@@ -1,108 +1,90 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-__MIDL_itf_ocidl_0000_0000_v0_0_c_ifspec
-__MIDL_itf_ocidl_0000_0000_v0_0_s_ifspec
-__MIDL_itf_ocidl_0000_0001_v0_0_c_ifspec
-__MIDL_itf_ocidl_0000_0001_v0_0_s_ifspec
-__MIDL_itf_ocidl_0000_0005_v0_0_c_ifspec
-__MIDL_itf_ocidl_0000_0005_v0_0_s_ifspec
-__MIDL_itf_ocidl_0000_0036_v0_0_c_ifspec
-__MIDL_itf_ocidl_0000_0036_v0_0_s_ifspec
-__MIDL_itf_ocidl_0000_0037_v0_0_c_ifspec
-__MIDL_itf_ocidl_0000_0037_v0_0_s_ifspec
-__MIDL_itf_ocidl_0000_0038_v0_0_c_ifspec
-__MIDL_itf_ocidl_0000_0038_v0_0_s_ifspec
-__MIDL_itf_ocidl_0000_0039_v0_0_c_ifspec
-__MIDL_itf_ocidl_0000_0039_v0_0_s_ifspec
-__MIDL_itf_ocidl_0000_0040_v0_0_c_ifspec
-__MIDL_itf_ocidl_0000_0040_v0_0_s_ifspec
-__MIDL_itf_ocidl_0000_0041_v0_0_c_ifspec
-__MIDL_itf_ocidl_0000_0041_v0_0_s_ifspec
-BSTR_UserFree
-BSTR_UserFree64
-BSTR_UserMarshal
-BSTR_UserMarshal64
-BSTR_UserSize
-BSTR_UserSize64
-BSTR_UserUnmarshal
-BSTR_UserUnmarshal64
-CLIPFORMAT_UserFree
-CLIPFORMAT_UserFree64
-CLIPFORMAT_UserMarshal
-CLIPFORMAT_UserMarshal64
-CLIPFORMAT_UserSize
-CLIPFORMAT_UserSize64
-CLIPFORMAT_UserUnmarshal
-CLIPFORMAT_UserUnmarshal64
-HACCEL_UserFree
-HACCEL_UserFree64
-HACCEL_UserMarshal
-HACCEL_UserMarshal64
-HACCEL_UserSize
-HACCEL_UserSize64
-HACCEL_UserUnmarshal
-HACCEL_UserUnmarshal64
-HDC_UserFree
-HDC_UserFree64
-HDC_UserMarshal
-HDC_UserMarshal64
-HDC_UserSize
-HDC_UserSize64
-HDC_UserUnmarshal
-HDC_UserUnmarshal64
-HFONT_UserFree
-HFONT_UserFree64
-HFONT_UserMarshal
-HFONT_UserMarshal64
-HFONT_UserSize
-HFONT_UserSize64
-HFONT_UserUnmarshal
-HFONT_UserUnmarshal64
-HPALETTE_UserFree
-HPALETTE_UserFree64
-HPALETTE_UserMarshal
-HPALETTE_UserMarshal64
-HPALETTE_UserSize
-HPALETTE_UserSize64
-HPALETTE_UserUnmarshal
-HPALETTE_UserUnmarshal64
-HRGN_UserFree
-HRGN_UserFree64
-HRGN_UserMarshal
-HRGN_UserMarshal64
-HRGN_UserSize
-HRGN_UserSize64
-HRGN_UserUnmarshal
-HRGN_UserUnmarshal64
-HWND_UserFree
-HWND_UserFree64
-HWND_UserMarshal
-HWND_UserMarshal64
-HWND_UserSize
-HWND_UserSize64
-HWND_UserUnmarshal
-HWND_UserUnmarshal64
-IAdviseSinkEx_OnViewStatusChange_Proxy
-IAdviseSinkEx_OnViewStatusChange_Stub
-IAdviseSinkEx_RemoteOnViewStatusChange_Proxy
-IAdviseSinkEx_RemoteOnViewStatusChange_Stub
-IClassFactory2_CreateInstanceLic_Proxy
-IClassFactory2_CreateInstanceLic_Stub
-IClassFactory2_RemoteCreateInstanceLic_Proxy
-IClassFactory2_RemoteCreateInstanceLic_Stub
-IEnumConnectionPoints_Next_Proxy
-IEnumConnectionPoints_Next_Stub
-IEnumConnectionPoints_RemoteNext_Proxy
-IEnumConnectionPoints_RemoteNext_Stub
-IEnumConnections_Next_Proxy
-IEnumConnections_Next_Stub
-IEnumConnections_RemoteNext_Proxy
-IEnumConnections_RemoteNext_Stub
-IEnumOleUndoUnits_Next_Proxy
-IEnumOleUndoUnits_Next_Stub
-IEnumOleUndoUnits_RemoteNext_Proxy
-IEnumOleUndoUnits_RemoteNext_Stub
+BSTR_UserFree(unsigned long *, BSTR *):void
+BSTR_UserFree64(unsigned long *, BSTR *):void
+BSTR_UserMarshal(unsigned long *, unsigned char *, BSTR *):unsigned char *
+BSTR_UserMarshal64(unsigned long *, unsigned char *, BSTR *):unsigned char *
+BSTR_UserSize(unsigned long *, unsigned long, BSTR *):unsigned long
+BSTR_UserSize64(unsigned long *, unsigned long, BSTR *):unsigned long
+BSTR_UserUnmarshal(unsigned long *, unsigned char *, BSTR *):unsigned char *
+BSTR_UserUnmarshal64(unsigned long *, unsigned char *, BSTR *):unsigned char *
+CLIPFORMAT_UserFree(unsigned long *, CLIPFORMAT *):void
+CLIPFORMAT_UserFree64(unsigned long *, CLIPFORMAT *):void
+CLIPFORMAT_UserMarshal(unsigned long *, unsigned char *, CLIPFORMAT *):unsigned char *
+CLIPFORMAT_UserMarshal64(unsigned long *, unsigned char *, CLIPFORMAT *):unsigned char *
+CLIPFORMAT_UserSize(unsigned long *, unsigned long, CLIPFORMAT *):unsigned long
+CLIPFORMAT_UserSize64(unsigned long *, unsigned long, CLIPFORMAT *):unsigned long
+CLIPFORMAT_UserUnmarshal(unsigned long *, unsigned char *, CLIPFORMAT *):unsigned char *
+CLIPFORMAT_UserUnmarshal64(unsigned long *, unsigned char *, CLIPFORMAT *):unsigned char *
+HACCEL_UserFree(unsigned long *, HACCEL *):void
+HACCEL_UserFree64(unsigned long *, HACCEL *):void
+HACCEL_UserMarshal(unsigned long *, unsigned char *, HACCEL *):unsigned char *
+HACCEL_UserMarshal64(unsigned long *, unsigned char *, HACCEL *):unsigned char *
+HACCEL_UserSize(unsigned long *, unsigned long, HACCEL *):unsigned long
+HACCEL_UserSize64(unsigned long *, unsigned long, HACCEL *):unsigned long
+HACCEL_UserUnmarshal(unsigned long *, unsigned char *, HACCEL *):unsigned char *
+HACCEL_UserUnmarshal64(unsigned long *, unsigned char *, HACCEL *):unsigned char *
+HDC_UserFree(unsigned long *, HDC *):void
+HDC_UserFree64(unsigned long *, HDC *):void
+HDC_UserMarshal(unsigned long *, unsigned char *, HDC *):unsigned char *
+HDC_UserMarshal64(unsigned long *, unsigned char *, HDC *):unsigned char *
+HDC_UserSize(unsigned long *, unsigned long, HDC *):unsigned long
+HDC_UserSize64(unsigned long *, unsigned long, HDC *):unsigned long
+HDC_UserUnmarshal(unsigned long *, unsigned char *, HDC *):unsigned char *
+HDC_UserUnmarshal64(unsigned long *, unsigned char *, HDC *):unsigned char *
+HFONT_UserFree(unsigned long *, HFONT *):void
+HFONT_UserFree64(unsigned long *, HFONT *):void
+HFONT_UserMarshal(unsigned long *, unsigned char *, HFONT *):unsigned char *
+HFONT_UserMarshal64(unsigned long *, unsigned char *, HFONT *):unsigned char *
+HFONT_UserSize(unsigned long *, unsigned long, HFONT *):unsigned long
+HFONT_UserSize64(unsigned long *, unsigned long, HFONT *):unsigned long
+HFONT_UserUnmarshal(unsigned long *, unsigned char *, HFONT *):unsigned char *
+HFONT_UserUnmarshal64(unsigned long *, unsigned char *, HFONT *):unsigned char *
+HPALETTE_UserFree(unsigned long *, HPALETTE *):void
+HPALETTE_UserFree64(unsigned long *, HPALETTE *):void
+HPALETTE_UserMarshal(unsigned long *, unsigned char *, HPALETTE *):unsigned char *
+HPALETTE_UserMarshal64(unsigned long *, unsigned char *, HPALETTE *):unsigned char *
+HPALETTE_UserSize(unsigned long *, unsigned long, HPALETTE *):unsigned long
+HPALETTE_UserSize64(unsigned long *, unsigned long, HPALETTE *):unsigned long
+HPALETTE_UserUnmarshal(unsigned long *, unsigned char *, HPALETTE *):unsigned char *
+HPALETTE_UserUnmarshal64(unsigned long *, unsigned char *, HPALETTE *):unsigned char *
+HRGN_UserFree(unsigned long *, HRGN *):void
+HRGN_UserFree64(unsigned long *, HRGN *):void
+HRGN_UserMarshal(unsigned long *, unsigned char *, HRGN *):unsigned char *
+HRGN_UserMarshal64(unsigned long *, unsigned char *, HRGN *):unsigned char *
+HRGN_UserSize(unsigned long *, unsigned long, HRGN *):unsigned long
+HRGN_UserSize64(unsigned long *, unsigned long, HRGN *):unsigned long
+HRGN_UserUnmarshal(unsigned long *, unsigned char *, HRGN *):unsigned char *
+HRGN_UserUnmarshal64(unsigned long *, unsigned char *, HRGN *):unsigned char *
+HWND_UserFree(unsigned long *, HWND *):void
+HWND_UserFree64(unsigned long *, HWND *):void
+HWND_UserMarshal(unsigned long *, unsigned char *, HWND *):unsigned char *
+HWND_UserMarshal64(unsigned long *, unsigned char *, HWND *):unsigned char *
+HWND_UserSize(unsigned long *, unsigned long, HWND *):unsigned long
+HWND_UserSize64(unsigned long *, unsigned long, HWND *):unsigned long
+HWND_UserUnmarshal(unsigned long *, unsigned char *, HWND *):unsigned char *
+HWND_UserUnmarshal64(unsigned long *, unsigned char *, HWND *):unsigned char *
+IAdviseSinkEx_OnViewStatusChange_Proxy(IAdviseSinkEx *, DWORD):void
+IAdviseSinkEx_OnViewStatusChange_Stub(IAdviseSinkEx *, DWORD):HRESULT
+IAdviseSinkEx_RemoteOnViewStatusChange_Proxy(IAdviseSinkEx *, DWORD):HRESULT
+IAdviseSinkEx_RemoteOnViewStatusChange_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
+IClassFactory2_CreateInstanceLic_Proxy(IClassFactory2 *, IUnknown *, IUnknown *, const IID &, BSTR, PVOID *):HRESULT
+IClassFactory2_CreateInstanceLic_Stub(IClassFactory2 *, const IID &, BSTR, IUnknown **):HRESULT
+IClassFactory2_RemoteCreateInstanceLic_Proxy(IClassFactory2 *, const IID &, BSTR, IUnknown **):HRESULT
+IClassFactory2_RemoteCreateInstanceLic_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
+IEnumConnectionPoints_Next_Proxy(IEnumConnectionPoints *, ULONG, LPCONNECTIONPOINT *, ULONG *):HRESULT
+IEnumConnectionPoints_Next_Stub(IEnumConnectionPoints *, ULONG, LPCONNECTIONPOINT *, ULONG *):HRESULT
+IEnumConnectionPoints_RemoteNext_Proxy(IEnumConnectionPoints *, ULONG, LPCONNECTIONPOINT *, ULONG *):HRESULT
+IEnumConnectionPoints_RemoteNext_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
+IEnumConnections_Next_Proxy(IEnumConnections *, ULONG, LPCONNECTDATA, ULONG *):HRESULT
+IEnumConnections_Next_Stub(IEnumConnections *, ULONG, LPCONNECTDATA, ULONG *):HRESULT
+IEnumConnections_RemoteNext_Proxy(IEnumConnections *, ULONG, LPCONNECTDATA, ULONG *):HRESULT
+IEnumConnections_RemoteNext_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
+IEnumOleUndoUnits_Next_Proxy(IEnumOleUndoUnits *, ULONG, IOleUndoUnit **, ULONG *):HRESULT
+IEnumOleUndoUnits_Next_Stub(IEnumOleUndoUnits *, ULONG, IOleUndoUnit **, ULONG *):HRESULT
+IEnumOleUndoUnits_RemoteNext_Proxy(IEnumOleUndoUnits *, ULONG, IOleUndoUnit **, ULONG *):HRESULT
+IEnumOleUndoUnits_RemoteNext_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
 IID_IAdviseSinkEx
 IID_IClassFactory2
 IID_IConnectionPoint
@@ -145,26 +127,44 @@ IID_ISpecifyPropertyPages
 IID_IViewObjectEx
 IOleControlTypes_v1_0_c_ifspec
 IOleControlTypes_v1_0_s_ifspec
-IPersistMemory_Load_Proxy
-IPersistMemory_Load_Stub
-IPersistMemory_RemoteLoad_Proxy
-IPersistMemory_RemoteLoad_Stub
-IPersistMemory_RemoteSave_Proxy
-IPersistMemory_RemoteSave_Stub
-IPersistMemory_Save_Proxy
-IPersistMemory_Save_Stub
-IQuickActivate_QuickActivate_Proxy
-IQuickActivate_QuickActivate_Stub
-IQuickActivate_RemoteQuickActivate_Proxy
-IQuickActivate_RemoteQuickActivate_Stub
-VARIANT_UserFree
-VARIANT_UserFree64
-VARIANT_UserMarshal
-VARIANT_UserMarshal64
-VARIANT_UserSize
-VARIANT_UserSize64
-VARIANT_UserUnmarshal
-VARIANT_UserUnmarshal64
+IPersistMemory_Load_Proxy(IPersistMemory *, LPVOID, ULONG):HRESULT
+IPersistMemory_Load_Stub(IPersistMemory *, BYTE *, ULONG):HRESULT
+IPersistMemory_RemoteLoad_Proxy(IPersistMemory *, BYTE *, ULONG):HRESULT
+IPersistMemory_RemoteLoad_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
+IPersistMemory_RemoteSave_Proxy(IPersistMemory *, BYTE *, BOOL, ULONG):HRESULT
+IPersistMemory_RemoteSave_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
+IPersistMemory_Save_Proxy(IPersistMemory *, LPVOID, BOOL, ULONG):HRESULT
+IPersistMemory_Save_Stub(IPersistMemory *, BYTE *, BOOL, ULONG):HRESULT
+IQuickActivate_QuickActivate_Proxy(IQuickActivate *, QACONTAINER *, QACONTROL *):HRESULT
+IQuickActivate_QuickActivate_Stub(IQuickActivate *, QACONTAINER *, QACONTROL *):HRESULT
+IQuickActivate_RemoteQuickActivate_Proxy(IQuickActivate *, QACONTAINER *, QACONTROL *):HRESULT
+IQuickActivate_RemoteQuickActivate_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
+VARIANT_UserFree(unsigned long *, VARIANT *):void
+VARIANT_UserFree64(unsigned long *, VARIANT *):void
+VARIANT_UserMarshal(unsigned long *, unsigned char *, VARIANT *):unsigned char *
+VARIANT_UserMarshal64(unsigned long *, unsigned char *, VARIANT *):unsigned char *
+VARIANT_UserSize(unsigned long *, unsigned long, VARIANT *):unsigned long
+VARIANT_UserSize64(unsigned long *, unsigned long, VARIANT *):unsigned long
+VARIANT_UserUnmarshal(unsigned long *, unsigned char *, VARIANT *):unsigned char *
+VARIANT_UserUnmarshal64(unsigned long *, unsigned char *, VARIANT *):unsigned char *
+__MIDL_itf_ocidl_0000_0000_v0_0_c_ifspec
+__MIDL_itf_ocidl_0000_0000_v0_0_s_ifspec
+__MIDL_itf_ocidl_0000_0001_v0_0_c_ifspec
+__MIDL_itf_ocidl_0000_0001_v0_0_s_ifspec
+__MIDL_itf_ocidl_0000_0005_v0_0_c_ifspec
+__MIDL_itf_ocidl_0000_0005_v0_0_s_ifspec
+__MIDL_itf_ocidl_0000_0036_v0_0_c_ifspec
+__MIDL_itf_ocidl_0000_0036_v0_0_s_ifspec
+__MIDL_itf_ocidl_0000_0037_v0_0_c_ifspec
+__MIDL_itf_ocidl_0000_0037_v0_0_s_ifspec
+__MIDL_itf_ocidl_0000_0038_v0_0_c_ifspec
+__MIDL_itf_ocidl_0000_0038_v0_0_s_ifspec
+__MIDL_itf_ocidl_0000_0039_v0_0_c_ifspec
+__MIDL_itf_ocidl_0000_0039_v0_0_s_ifspec
+__MIDL_itf_ocidl_0000_0040_v0_0_c_ifspec
+__MIDL_itf_ocidl_0000_0040_v0_0_s_ifspec
+__MIDL_itf_ocidl_0000_0041_v0_0_c_ifspec
+__MIDL_itf_ocidl_0000_0041_v0_0_s_ifspec
 --file
 um-OCIdl.h
 --output

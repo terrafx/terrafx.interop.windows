@@ -1,38 +1,38 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-__MIDL_itf_propidlbase_0000_0000_v0_0_c_ifspec
-__MIDL_itf_propidlbase_0000_0000_v0_0_s_ifspec
-__MIDL_itf_propidlbase_0000_0004_v0_0_c_ifspec
-__MIDL_itf_propidlbase_0000_0004_v0_0_s_ifspec
-BSTR_UserFree
-BSTR_UserFree64
-BSTR_UserMarshal
-BSTR_UserMarshal64
-BSTR_UserSize
-BSTR_UserSize64
-BSTR_UserUnmarshal
-BSTR_UserUnmarshal64
-IEnumSTATPROPSETSTG_Next_Proxy
-IEnumSTATPROPSETSTG_Next_Stub
-IEnumSTATPROPSETSTG_RemoteNext_Proxy
-IEnumSTATPROPSETSTG_RemoteNext_Stub
-IEnumSTATPROPSTG_Next_Proxy
-IEnumSTATPROPSTG_Next_Stub
-IEnumSTATPROPSTG_RemoteNext_Proxy
-IEnumSTATPROPSTG_RemoteNext_Stub
+BSTR_UserFree(unsigned long *, BSTR *):void
+BSTR_UserFree64(unsigned long *, BSTR *):void
+BSTR_UserMarshal(unsigned long *, unsigned char *, BSTR *):unsigned char *
+BSTR_UserMarshal64(unsigned long *, unsigned char *, BSTR *):unsigned char *
+BSTR_UserSize(unsigned long *, unsigned long, BSTR *):unsigned long
+BSTR_UserSize64(unsigned long *, unsigned long, BSTR *):unsigned long
+BSTR_UserUnmarshal(unsigned long *, unsigned char *, BSTR *):unsigned char *
+BSTR_UserUnmarshal64(unsigned long *, unsigned char *, BSTR *):unsigned char *
+IEnumSTATPROPSETSTG_Next_Proxy(IEnumSTATPROPSETSTG *, ULONG, STATPROPSETSTG *, ULONG *):HRESULT
+IEnumSTATPROPSETSTG_Next_Stub(IEnumSTATPROPSETSTG *, ULONG, STATPROPSETSTG *, ULONG *):HRESULT
+IEnumSTATPROPSETSTG_RemoteNext_Proxy(IEnumSTATPROPSETSTG *, ULONG, STATPROPSETSTG *, ULONG *):HRESULT
+IEnumSTATPROPSETSTG_RemoteNext_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
+IEnumSTATPROPSTG_Next_Proxy(IEnumSTATPROPSTG *, ULONG, STATPROPSTG *, ULONG *):HRESULT
+IEnumSTATPROPSTG_Next_Stub(IEnumSTATPROPSTG *, ULONG, STATPROPSTG *, ULONG *):HRESULT
+IEnumSTATPROPSTG_RemoteNext_Proxy(IEnumSTATPROPSTG *, ULONG, STATPROPSTG *, ULONG *):HRESULT
+IEnumSTATPROPSTG_RemoteNext_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
 IID_IEnumSTATPROPSETSTG
 IID_IEnumSTATPROPSTG
 IID_IPropertySetStorage
 IID_IPropertyStorage
-LPSAFEARRAY_UserFree
-LPSAFEARRAY_UserFree64
-LPSAFEARRAY_UserMarshal
-LPSAFEARRAY_UserMarshal64
-LPSAFEARRAY_UserSize
-LPSAFEARRAY_UserSize64
-LPSAFEARRAY_UserUnmarshal
-LPSAFEARRAY_UserUnmarshal64
+LPSAFEARRAY_UserFree(unsigned long *, LPSAFEARRAY *):void
+LPSAFEARRAY_UserFree64(unsigned long *, LPSAFEARRAY *):void
+LPSAFEARRAY_UserMarshal(unsigned long *, unsigned char *, LPSAFEARRAY *):unsigned char *
+LPSAFEARRAY_UserMarshal64(unsigned long *, unsigned char *, LPSAFEARRAY *):unsigned char *
+LPSAFEARRAY_UserSize(unsigned long *, unsigned long, LPSAFEARRAY *):unsigned long
+LPSAFEARRAY_UserSize64(unsigned long *, unsigned long, LPSAFEARRAY *):unsigned long
+LPSAFEARRAY_UserUnmarshal(unsigned long *, unsigned char *, LPSAFEARRAY *):unsigned char *
+LPSAFEARRAY_UserUnmarshal64(unsigned long *, unsigned char *, LPSAFEARRAY *):unsigned char *
+__MIDL_itf_propidlbase_0000_0000_v0_0_c_ifspec
+__MIDL_itf_propidlbase_0000_0000_v0_0_s_ifspec
+__MIDL_itf_propidlbase_0000_0004_v0_0_c_ifspec
+__MIDL_itf_propidlbase_0000_0004_v0_0_s_ifspec
 --file
 um-PropIdlBase.h
 --output

@@ -1,6 +1,20 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
+DXGI_DEBUG_D3D11
+IID_ID3D11Debug
+IID_ID3D11InfoQueue
+IID_ID3D11RefDefaultTrackingOptions
+IID_ID3D11RefTrackingOptions
+IID_ID3D11SwitchToRef
+IID_ID3D11TracingDevice
+operator&(D3D11_RLDO_FLAGS, D3D11_RLDO_FLAGS):D3D11_RLDO_FLAGS
+operator&=(D3D11_RLDO_FLAGS &, D3D11_RLDO_FLAGS):D3D11_RLDO_FLAGS &
+operator^(D3D11_RLDO_FLAGS, D3D11_RLDO_FLAGS):D3D11_RLDO_FLAGS
+operator^=(D3D11_RLDO_FLAGS &, D3D11_RLDO_FLAGS):D3D11_RLDO_FLAGS &
+operator|(D3D11_RLDO_FLAGS, D3D11_RLDO_FLAGS):D3D11_RLDO_FLAGS
+operator|=(D3D11_RLDO_FLAGS &, D3D11_RLDO_FLAGS):D3D11_RLDO_FLAGS &
+operator~(D3D11_RLDO_FLAGS):D3D11_RLDO_FLAGS
 __MIDL_itf_d3d11sdklayers_0000_0000_v0_0_c_ifspec
 __MIDL_itf_d3d11sdklayers_0000_0000_v0_0_s_ifspec
 __MIDL_itf_d3d11sdklayers_0000_0001_v0_0_c_ifspec
@@ -11,20 +25,6 @@ __MIDL_itf_d3d11sdklayers_0000_0005_v0_0_c_ifspec
 __MIDL_itf_d3d11sdklayers_0000_0005_v0_0_s_ifspec
 __MIDL_itf_d3d11sdklayers_0000_0006_v0_0_c_ifspec
 __MIDL_itf_d3d11sdklayers_0000_0006_v0_0_s_ifspec
-DXGI_DEBUG_D3D11
-IID_ID3D11Debug
-IID_ID3D11InfoQueue
-IID_ID3D11RefDefaultTrackingOptions
-IID_ID3D11RefTrackingOptions
-IID_ID3D11SwitchToRef
-IID_ID3D11TracingDevice
-operator|
-operator|=
-operator&
-operator&=
-operator~
-operator^
-operator^=
 --file
 um-d3d11sdklayers.h
 --output

@@ -1,12 +1,12 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
+IWinTypes_v0_1_c_ifspec
+IWinTypes_v0_1_s_ifspec
 __MIDL_itf_wtypes_0000_0000_v0_0_c_ifspec
 __MIDL_itf_wtypes_0000_0000_v0_0_s_ifspec
 __MIDL_itf_wtypes_0000_0001_v0_0_c_ifspec
 __MIDL_itf_wtypes_0000_0001_v0_0_s_ifspec
-IWinTypes_v0_1_c_ifspec
-IWinTypes_v0_1_s_ifspec
 --file
 shared-wtypes.h
 --output

@@ -1,12 +1,12 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
+IWinTypesBase_v0_1_c_ifspec
+IWinTypesBase_v0_1_s_ifspec
 __MIDL_itf_wtypesbase_0000_0000_v0_0_c_ifspec
 __MIDL_itf_wtypesbase_0000_0000_v0_0_s_ifspec
 __MIDL_itf_wtypesbase_0000_0001_v0_0_c_ifspec
 __MIDL_itf_wtypesbase_0000_0001_v0_0_s_ifspec
-IWinTypesBase_v0_1_c_ifspec
-IWinTypesBase_v0_1_s_ifspec
 --file
 shared-wtypesbase.h
 --output

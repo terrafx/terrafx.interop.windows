@@ -1,15 +1,16 @@
 @../../settings.rsp
 @../../remap.rsp
 -exclude
+IID_IServiceProvider
+IServiceProvider.QueryService<Q>(const GUID &, Q **):HRESULT
+IServiceProvider_QueryService_Proxy(IServiceProvider *, const GUID &, const IID &, void **):HRESULT
+IServiceProvider_QueryService_Stub(IServiceProvider *, const GUID &, const IID &, IUnknown **):HRESULT
+IServiceProvider_RemoteQueryService_Proxy(IServiceProvider *, const GUID &, const IID &, IUnknown **):HRESULT
+IServiceProvider_RemoteQueryService_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
 __MIDL_itf_servprov_0000_0000_v0_0_c_ifspec
 __MIDL_itf_servprov_0000_0000_v0_0_s_ifspec
 __MIDL_itf_servprov_0000_0001_v0_0_c_ifspec
 __MIDL_itf_servprov_0000_0001_v0_0_s_ifspec
-IID_IServiceProvider
-IServiceProvider_QueryService_Proxy
-IServiceProvider_QueryService_Stub
-IServiceProvider_RemoteQueryService_Proxy
-IServiceProvider_RemoteQueryService_Stub
 --file
 um-servprov.h
 --output

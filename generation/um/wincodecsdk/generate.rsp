@@ -1,22 +1,14 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-__MIDL_itf_wincodecsdk_0000_0000_v0_0_c_ifspec
-__MIDL_itf_wincodecsdk_0000_0000_v0_0_s_ifspec
-__MIDL_itf_wincodecsdk_0000_0007_v0_0_c_ifspec
-__MIDL_itf_wincodecsdk_0000_0007_v0_0_s_ifspec
-__MIDL_itf_wincodecsdk_0000_0008_v0_0_c_ifspec
-__MIDL_itf_wincodecsdk_0000_0008_v0_0_s_ifspec
-__MIDL_itf_wincodecsdk_0000_0010_v0_0_c_ifspec
-__MIDL_itf_wincodecsdk_0000_0010_v0_0_s_ifspec
-BSTR_UserFree
-BSTR_UserMarshal
-BSTR_UserSize
-BSTR_UserUnmarshal
-CLIPFORMAT_UserFree
-CLIPFORMAT_UserMarshal
-CLIPFORMAT_UserSize
-CLIPFORMAT_UserUnmarshal
+BSTR_UserFree(unsigned long *, BSTR *):void
+BSTR_UserMarshal(unsigned long *, unsigned char *, BSTR *):unsigned char *
+BSTR_UserSize(unsigned long *, unsigned long, BSTR *):unsigned long
+BSTR_UserUnmarshal(unsigned long *, unsigned char *, BSTR *):unsigned char *
+CLIPFORMAT_UserFree(unsigned long *, CLIPFORMAT *):void
+CLIPFORMAT_UserMarshal(unsigned long *, unsigned char *, CLIPFORMAT *):unsigned char *
+CLIPFORMAT_UserSize(unsigned long *, unsigned long, CLIPFORMAT *):unsigned long
+CLIPFORMAT_UserUnmarshal(unsigned long *, unsigned char *, CLIPFORMAT *):unsigned char *
 CLSID_WIC8BIMIPTCDigestMetadataReader
 CLSID_WIC8BIMIPTCDigestMetadataWriter
 CLSID_WIC8BIMIPTCMetadataReader
@@ -27,10 +19,10 @@ CLSID_WICAPEMetadataReader
 CLSID_WICAPEMetadataWriter
 CLSID_WICApp0MetadataReader
 CLSID_WICApp0MetadataWriter
-CLSID_WICApp13MetadataReader
-CLSID_WICApp13MetadataWriter
 CLSID_WICApp1MetadataReader
 CLSID_WICApp1MetadataWriter
+CLSID_WICApp13MetadataReader
+CLSID_WICApp13MetadataWriter
 CLSID_WICDdsMetadataReader
 CLSID_WICDdsMetadataWriter
 CLSID_WICExifMetadataReader
@@ -150,18 +142,26 @@ IID_IWICMetadataWriter
 IID_IWICMetadataWriterInfo
 IID_IWICPersistStream
 IID_IWICStreamProvider
-IWICMetadataReaderInfo_Remote_GetPatterns_Proxy
-IWICMetadataReaderInfo_Remote_GetPatterns_Stub
-IWICMetadataWriterInfo_Remote_GetHeader_Proxy
-IWICMetadataWriterInfo_Remote_GetHeader_Stub
-IWICMetadataReaderInfo_GetPatterns_Proxy
-IWICMetadataReaderInfo_GetPatterns_Stub
-IWICMetadataWriterInfo_GetHeader_Proxy
-IWICMetadataWriterInfo_GetHeader_Stub
-LPSAFEARRAY_UserFree
-LPSAFEARRAY_UserMarshal
-LPSAFEARRAY_UserSize
-LPSAFEARRAY_UserUnmarshal
+IWICMetadataReaderInfo_GetPatterns_Proxy(IWICMetadataReaderInfo *, const GUID &, UINT, WICMetadataPattern *, UINT *, UINT *):HRESULT
+IWICMetadataReaderInfo_GetPatterns_Stub(IWICMetadataReaderInfo *, const GUID &, WICMetadataPattern **, UINT *):HRESULT
+IWICMetadataReaderInfo_Remote_GetPatterns_Proxy(IWICMetadataReaderInfo *, const GUID &, WICMetadataPattern **, UINT *):HRESULT
+IWICMetadataReaderInfo_Remote_GetPatterns_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
+IWICMetadataWriterInfo_GetHeader_Proxy(IWICMetadataWriterInfo *, const GUID &, UINT, WICMetadataHeader *, UINT *):HRESULT
+IWICMetadataWriterInfo_GetHeader_Stub(IWICMetadataWriterInfo *, const GUID &, WICMetadataHeader *):HRESULT
+IWICMetadataWriterInfo_Remote_GetHeader_Proxy(IWICMetadataWriterInfo *, const GUID &, WICMetadataHeader *):HRESULT
+IWICMetadataWriterInfo_Remote_GetHeader_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
+LPSAFEARRAY_UserFree(unsigned long *, LPSAFEARRAY *):void
+LPSAFEARRAY_UserMarshal(unsigned long *, unsigned char *, LPSAFEARRAY *):unsigned char *
+LPSAFEARRAY_UserSize(unsigned long *, unsigned long, LPSAFEARRAY *):unsigned long
+LPSAFEARRAY_UserUnmarshal(unsigned long *, unsigned char *, LPSAFEARRAY *):unsigned char *
+__MIDL_itf_wincodecsdk_0000_0000_v0_0_c_ifspec
+__MIDL_itf_wincodecsdk_0000_0000_v0_0_s_ifspec
+__MIDL_itf_wincodecsdk_0000_0007_v0_0_c_ifspec
+__MIDL_itf_wincodecsdk_0000_0007_v0_0_s_ifspec
+__MIDL_itf_wincodecsdk_0000_0008_v0_0_c_ifspec
+__MIDL_itf_wincodecsdk_0000_0008_v0_0_s_ifspec
+__MIDL_itf_wincodecsdk_0000_0010_v0_0_c_ifspec
+__MIDL_itf_wincodecsdk_0000_0010_v0_0_s_ifspec
 --file
 um-wincodecsdk.h
 --output

@@ -1,24 +1,36 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-_InterlockedAnd
-_InterlockedCompareExchange
-_InterlockedDecrement
-_InterlockedExchange
-_InterlockedExchangeAdd
-_InterlockedIncrement
-_InterlockedOr
-_InterlockedXor
-DestroyThreadpoolEnvironment
-InitializeThreadpoolEnvironment
-InterlockedExchangeSubtract
-SetThreadpoolCallbackCleanupGroup
-SetThreadpoolCallbackLibrary
-SetThreadpoolCallbackPersistent
-SetThreadpoolCallbackPool
-SetThreadpoolCallbackPriority
-SetThreadpoolCallbackRunsLong
-SignalObjectAndWait
+DestroyThreadpoolEnvironment(PTP_CALLBACK_ENVIRON):void
+InitializeThreadpoolEnvironment(PTP_CALLBACK_ENVIRON):void
+InterlockedExchangeSubtract(volatile unsigned int *, unsigned int):unsigned int
+InterlockedExchangeSubtract(volatile unsigned long *, unsigned long):unsigned long
+InterlockedExchangeSubtract(volatile unsigned long long *, unsigned long long):unsigned long long
+SetThreadpoolCallbackCleanupGroup(PTP_CALLBACK_ENVIRON, PTP_CLEANUP_GROUP, PTP_CLEANUP_GROUP_CANCEL_CALLBACK):void
+SetThreadpoolCallbackLibrary(PTP_CALLBACK_ENVIRON, PVOID):void
+SetThreadpoolCallbackPersistent(PTP_CALLBACK_ENVIRON):void
+SetThreadpoolCallbackPool(PTP_CALLBACK_ENVIRON, PTP_POOL):void
+SetThreadpoolCallbackPriority(PTP_CALLBACK_ENVIRON, TP_CALLBACK_PRIORITY):void
+SetThreadpoolCallbackRunsLong(PTP_CALLBACK_ENVIRON):void
+SignalObjectAndWait(HANDLE, HANDLE, DWORD, BOOL):DWORD
+_InterlockedAnd(volatile unsigned long long *, unsigned long long):unsigned long long
+_InterlockedCompareExchange(volatile unsigned int *, unsigned int, unsigned int):unsigned int
+_InterlockedCompareExchange(volatile unsigned long *, unsigned long, unsigned long):unsigned long
+_InterlockedCompareExchange(volatile unsigned long long *, unsigned long long, unsigned long long):unsigned long long
+_InterlockedDecrement(volatile unsigned int *):unsigned int
+_InterlockedDecrement(volatile unsigned long *):unsigned long
+_InterlockedDecrement(volatile unsigned long long *):unsigned long long
+_InterlockedExchange(volatile unsigned int *, unsigned int):unsigned int
+_InterlockedExchange(volatile unsigned long *, unsigned long):unsigned long
+_InterlockedExchange(volatile unsigned long long *, unsigned long long):unsigned long long
+_InterlockedExchangeAdd(volatile unsigned int *, unsigned int):unsigned int
+_InterlockedExchangeAdd(volatile unsigned long *, unsigned long):unsigned long
+_InterlockedExchangeAdd(volatile unsigned long long *, unsigned long long):unsigned long long
+_InterlockedIncrement(volatile unsigned int *):unsigned int
+_InterlockedIncrement(volatile unsigned long *):unsigned long
+_InterlockedIncrement(volatile unsigned long long *):unsigned long long
+_InterlockedOr(volatile unsigned long long *, unsigned long long):unsigned long long
+_InterlockedXor(volatile unsigned long long *, unsigned long long):unsigned long long
 --file
 um-WinBase.h
 --output

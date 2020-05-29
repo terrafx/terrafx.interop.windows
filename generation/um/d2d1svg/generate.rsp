@@ -1,6 +1,13 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
+ID2D1SvgDocument.CreatePaint(D2D1_SVG_PAINT_TYPE, const D2D1_COLOR_F &, PCWSTR, ID2D1SvgPaint **):HRESULT nothrow
+ID2D1SvgElement.GetAttributeValue(PCWSTR, ID2D1SvgAttribute **):HRESULT nothrow
+ID2D1SvgElement.GetAttributeValue(PCWSTR, ID2D1SvgPaint **):HRESULT nothrow
+ID2D1SvgElement.GetAttributeValue(PCWSTR, ID2D1SvgPathData **):HRESULT nothrow
+ID2D1SvgElement.GetAttributeValue(PCWSTR, ID2D1SvgPointCollection **):HRESULT nothrow
+ID2D1SvgElement.GetAttributeValue(PCWSTR, ID2D1SvgStrokeDashArray **):HRESULT nothrow
+ID2D1SvgPaint.SetColor(const D2D1_COLOR_F &):HRESULT nothrow
 IID_ID2D1SvgAttribute
 IID_ID2D1SvgDocument
 IID_ID2D1SvgElement
@@ -8,39 +15,6 @@ IID_ID2D1SvgPaint
 IID_ID2D1SvgPathData
 IID_ID2D1SvgPointCollection
 IID_ID2D1SvgStrokeDashArray
-HRESULT CreatePaint(D2D1_SVG_PAINT_TYPE, const D2D1_COLOR_F &, PCWSTR, ID2D1SvgPaint **)
-HRESULT GetAttributeValue(PCWSTR, D2D1_COLOR_F *)
-HRESULT GetAttributeValue(PCWSTR, D2D1_EXTEND_MODE *)
-HRESULT GetAttributeValue(PCWSTR, D2D1_FILL_MODE *)
-HRESULT GetAttributeValue(PCWSTR, D2D1_MATRIX_3X2_F *)
-HRESULT GetAttributeValue(PCWSTR, D2D1_SVG_DISPLAY *)
-HRESULT GetAttributeValue(PCWSTR, D2D1_SVG_LENGTH *)
-HRESULT GetAttributeValue(PCWSTR, D2D1_SVG_LINE_CAP *)
-HRESULT GetAttributeValue(PCWSTR, D2D1_SVG_LINE_JOIN *)
-HRESULT GetAttributeValue(PCWSTR, D2D1_SVG_OVERFLOW *)
-HRESULT GetAttributeValue(PCWSTR, D2D1_SVG_PRESERVE_ASPECT_RATIO *)
-HRESULT GetAttributeValue(PCWSTR, D2D1_SVG_UNIT_TYPE *)
-HRESULT GetAttributeValue(PCWSTR, D2D1_SVG_VISIBILITY *)
-HRESULT GetAttributeValue(PCWSTR, FLOAT *)
-HRESULT GetAttributeValue(PCWSTR, ID2D1SvgAttribute **)
-HRESULT GetAttributeValue(PCWSTR, ID2D1SvgPaint **)
-HRESULT GetAttributeValue(PCWSTR, ID2D1SvgPathData **)
-HRESULT GetAttributeValue(PCWSTR, ID2D1SvgPointCollection **)
-HRESULT GetAttributeValue(PCWSTR, ID2D1SvgStrokeDashArray **)
-HRESULT SetAttributeValue(PCWSTR, const D2D1_COLOR_F &)
-HRESULT SetAttributeValue(PCWSTR, const D2D1_MATRIX_3X2_F &)
-HRESULT SetAttributeValue(PCWSTR, const D2D1_SVG_LENGTH &)
-HRESULT SetAttributeValue(PCWSTR, const D2D1_SVG_PRESERVE_ASPECT_RATIO &)
-HRESULT SetAttributeValue(PCWSTR, D2D1_EXTEND_MODE)
-HRESULT SetAttributeValue(PCWSTR, D2D1_FILL_MODE)
-HRESULT SetAttributeValue(PCWSTR, D2D1_SVG_DISPLAY)
-HRESULT SetAttributeValue(PCWSTR, D2D1_SVG_LINE_CAP)
-HRESULT SetAttributeValue(PCWSTR, D2D1_SVG_LINE_JOIN)
-HRESULT SetAttributeValue(PCWSTR, D2D1_SVG_OVERFLOW)
-HRESULT SetAttributeValue(PCWSTR, D2D1_SVG_UNIT_TYPE)
-HRESULT SetAttributeValue(PCWSTR, D2D1_SVG_VISIBILITY)
-HRESULT SetAttributeValue(PCWSTR, FLOAT)
-HRESULT SetColor(const D2D1_COLOR_F &)
 --file
 um-d2d1svg.h
 --output

@@ -1,50 +1,15 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-__MIDL_itf_objidlbase_0000_0000_v0_0_c_ifspec
-__MIDL_itf_objidlbase_0000_0000_v0_0_s_ifspec
-__MIDL_itf_objidlbase_0000_0003_v0_0_c_ifspec
-__MIDL_itf_objidlbase_0000_0003_v0_0_s_ifspec
-__MIDL_itf_objidlbase_0000_0008_v0_0_c_ifspec
-__MIDL_itf_objidlbase_0000_0008_v0_0_s_ifspec
-__MIDL_itf_objidlbase_0000_0009_v0_0_c_ifspec
-__MIDL_itf_objidlbase_0000_0009_v0_0_s_ifspec
-__MIDL_itf_objidlbase_0000_0010_v0_0_c_ifspec
-__MIDL_itf_objidlbase_0000_0010_v0_0_s_ifspec
-__MIDL_itf_objidlbase_0000_0015_v0_0_c_ifspec
-__MIDL_itf_objidlbase_0000_0015_v0_0_s_ifspec
-__MIDL_itf_objidlbase_0000_0020_v0_0_c_ifspec
-__MIDL_itf_objidlbase_0000_0020_v0_0_s_ifspec
-__MIDL_itf_objidlbase_0000_0022_v0_0_c_ifspec
-__MIDL_itf_objidlbase_0000_0022_v0_0_s_ifspec
-__MIDL_itf_objidlbase_0000_0023_v0_0_c_ifspec
-__MIDL_itf_objidlbase_0000_0023_v0_0_s_ifspec
-__MIDL_itf_objidlbase_0000_0024_v0_0_c_ifspec
-__MIDL_itf_objidlbase_0000_0024_v0_0_s_ifspec
-__MIDL_itf_objidlbase_0000_0025_v0_0_c_ifspec
-__MIDL_itf_objidlbase_0000_0025_v0_0_s_ifspec
-__MIDL_itf_objidlbase_0000_0026_v0_0_c_ifspec
-__MIDL_itf_objidlbase_0000_0026_v0_0_s_ifspec
-__MIDL_itf_objidlbase_0000_0027_v0_0_c_ifspec
-__MIDL_itf_objidlbase_0000_0027_v0_0_s_ifspec
-__MIDL_itf_objidlbase_0000_0029_v0_0_c_ifspec
-__MIDL_itf_objidlbase_0000_0029_v0_0_s_ifspec
-__MIDL_itf_objidlbase_0000_0048_v0_0_c_ifspec
-__MIDL_itf_objidlbase_0000_0048_v0_0_s_ifspec
-__MIDL_itf_objidlbase_0000_0051_v0_0_c_ifspec
-__MIDL_itf_objidlbase_0000_0051_v0_0_s_ifspec
-__MIDL_itf_objidlbase_0000_0052_v0_0_c_ifspec
-__MIDL_itf_objidlbase_0000_0052_v0_0_s_ifspec
-__MIDL_itf_objidlbase_0000_0053_v0_0_c_ifspec
-__MIDL_itf_objidlbase_0000_0053_v0_0_s_ifspec
-IEnumString_Next_Proxy
-IEnumString_Next_Stub
-IEnumString_RemoteNext_Proxy
-IEnumString_RemoteNext_Stub
-IEnumUnknown_Next_Proxy
-IEnumUnknown_Next_Stub
-IEnumUnknown_RemoteNext_Proxy
-IEnumUnknown_RemoteNext_Stub
+IAgileReference.Resolve<Q>(Q **):HRESULT
+IEnumString_Next_Proxy(IEnumString *, ULONG, LPOLESTR *, ULONG *):HRESULT
+IEnumString_Next_Stub(IEnumString *, ULONG, LPOLESTR *, ULONG *):HRESULT
+IEnumString_RemoteNext_Proxy(IEnumString *, ULONG, LPOLESTR *, ULONG *):HRESULT
+IEnumString_RemoteNext_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
+IEnumUnknown_Next_Proxy(IEnumUnknown *, ULONG, IUnknown **, ULONG *):HRESULT
+IEnumUnknown_Next_Stub(IEnumUnknown *, ULONG, IUnknown **, ULONG *):HRESULT
+IEnumUnknown_RemoteNext_Proxy(IEnumUnknown *, ULONG, IUnknown **, ULONG *):HRESULT
+IEnumUnknown_RemoteNext_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
 IID_AsyncIMultiQI
 IID_AsyncIPipeByte
 IID_AsyncIPipeDouble
@@ -100,22 +65,58 @@ IID_ISynchronizeEvent
 IID_ISynchronizeHandle
 IID_ISynchronizeMutex
 IID_IWaitMultiple
-ISequentialStream_Read_Proxy
-ISequentialStream_Read_Stub
-ISequentialStream_RemoteRead_Proxy
-ISequentialStream_RemoteRead_Stub
-ISequentialStream_RemoteWrite_Proxy
-ISequentialStream_RemoteWrite_Stub
-ISequentialStream_Write_Proxy
-ISequentialStream_Write_Stub
-IStream_CopyTo_Proxy
-IStream_CopyTo_Stub
-IStream_RemoteCopyTo_Proxy
-IStream_RemoteCopyTo_Stub
-IStream_RemoteSeek_Proxy
-IStream_RemoteSeek_Stub
-IStream_Seek_Proxy
-IStream_Seek_Stub
+ISequentialStream_Read_Proxy(ISequentialStream *, void *, ULONG, ULONG *):HRESULT
+ISequentialStream_Read_Stub(ISequentialStream *, byte *, ULONG, ULONG *):HRESULT
+ISequentialStream_RemoteRead_Proxy(ISequentialStream *, byte *, ULONG, ULONG *):HRESULT
+ISequentialStream_RemoteRead_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
+ISequentialStream_RemoteWrite_Proxy(ISequentialStream *, const byte *, ULONG, ULONG *):HRESULT
+ISequentialStream_RemoteWrite_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
+ISequentialStream_Write_Proxy(ISequentialStream *, const void *, ULONG, ULONG *):HRESULT
+ISequentialStream_Write_Stub(ISequentialStream *, const byte *, ULONG, ULONG *):HRESULT
+IStream_CopyTo_Proxy(IStream *, IStream *, ULARGE_INTEGER, ULARGE_INTEGER *, ULARGE_INTEGER *):HRESULT
+IStream_CopyTo_Stub(IStream *, IStream *, ULARGE_INTEGER, ULARGE_INTEGER *, ULARGE_INTEGER *):HRESULT
+IStream_RemoteCopyTo_Proxy(IStream *, IStream *, ULARGE_INTEGER, ULARGE_INTEGER *, ULARGE_INTEGER *):HRESULT
+IStream_RemoteCopyTo_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
+IStream_RemoteSeek_Proxy(IStream *, LARGE_INTEGER, DWORD, ULARGE_INTEGER *):HRESULT
+IStream_RemoteSeek_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
+IStream_Seek_Proxy(IStream *, LARGE_INTEGER, DWORD, ULARGE_INTEGER *):HRESULT
+IStream_Seek_Stub(IStream *, LARGE_INTEGER, DWORD, ULARGE_INTEGER *):HRESULT
+__MIDL_itf_objidlbase_0000_0000_v0_0_c_ifspec
+__MIDL_itf_objidlbase_0000_0000_v0_0_s_ifspec
+__MIDL_itf_objidlbase_0000_0003_v0_0_c_ifspec
+__MIDL_itf_objidlbase_0000_0003_v0_0_s_ifspec
+__MIDL_itf_objidlbase_0000_0008_v0_0_c_ifspec
+__MIDL_itf_objidlbase_0000_0008_v0_0_s_ifspec
+__MIDL_itf_objidlbase_0000_0009_v0_0_c_ifspec
+__MIDL_itf_objidlbase_0000_0009_v0_0_s_ifspec
+__MIDL_itf_objidlbase_0000_0010_v0_0_c_ifspec
+__MIDL_itf_objidlbase_0000_0010_v0_0_s_ifspec
+__MIDL_itf_objidlbase_0000_0015_v0_0_c_ifspec
+__MIDL_itf_objidlbase_0000_0015_v0_0_s_ifspec
+__MIDL_itf_objidlbase_0000_0020_v0_0_c_ifspec
+__MIDL_itf_objidlbase_0000_0020_v0_0_s_ifspec
+__MIDL_itf_objidlbase_0000_0022_v0_0_c_ifspec
+__MIDL_itf_objidlbase_0000_0022_v0_0_s_ifspec
+__MIDL_itf_objidlbase_0000_0023_v0_0_c_ifspec
+__MIDL_itf_objidlbase_0000_0023_v0_0_s_ifspec
+__MIDL_itf_objidlbase_0000_0024_v0_0_c_ifspec
+__MIDL_itf_objidlbase_0000_0024_v0_0_s_ifspec
+__MIDL_itf_objidlbase_0000_0025_v0_0_c_ifspec
+__MIDL_itf_objidlbase_0000_0025_v0_0_s_ifspec
+__MIDL_itf_objidlbase_0000_0026_v0_0_c_ifspec
+__MIDL_itf_objidlbase_0000_0026_v0_0_s_ifspec
+__MIDL_itf_objidlbase_0000_0027_v0_0_c_ifspec
+__MIDL_itf_objidlbase_0000_0027_v0_0_s_ifspec
+__MIDL_itf_objidlbase_0000_0029_v0_0_c_ifspec
+__MIDL_itf_objidlbase_0000_0029_v0_0_s_ifspec
+__MIDL_itf_objidlbase_0000_0048_v0_0_c_ifspec
+__MIDL_itf_objidlbase_0000_0048_v0_0_s_ifspec
+__MIDL_itf_objidlbase_0000_0051_v0_0_c_ifspec
+__MIDL_itf_objidlbase_0000_0051_v0_0_s_ifspec
+__MIDL_itf_objidlbase_0000_0052_v0_0_c_ifspec
+__MIDL_itf_objidlbase_0000_0052_v0_0_s_ifspec
+__MIDL_itf_objidlbase_0000_0053_v0_0_c_ifspec
+__MIDL_itf_objidlbase_0000_0053_v0_0_s_ifspec
 --file
 um-ObjIdlbase.h
 --output

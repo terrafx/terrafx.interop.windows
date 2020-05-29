@@ -3,6 +3,7 @@
 --exclude
 CO_DEVICE_CATALOG_COOKIE__
 CO_MTA_USAGE_COOKIE__
+IID_PPV_ARGS_Helper<T>(T **):void **
 --file
 um-combaseapi.h
 --output

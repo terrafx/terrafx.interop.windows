@@ -1,10 +1,6 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-__MIDL_itf_dxgidebug_0000_0000_v0_0_c_ifspec
-__MIDL_itf_dxgidebug_0000_0000_v0_0_s_ifspec
-__MIDL_itf_dxgidebug_0000_0003_v0_0_c_ifspec
-__MIDL_itf_dxgidebug_0000_0003_v0_0_s_ifspec
 DXGI_DEBUG_ALL
 DXGI_DEBUG_APP
 DXGI_DEBUG_DX
@@ -12,6 +8,10 @@ DXGI_DEBUG_DXGI
 IID_IDXGIDebug
 IID_IDXGIDebug1
 IID_IDXGIInfoQueue
+__MIDL_itf_dxgidebug_0000_0000_v0_0_c_ifspec
+__MIDL_itf_dxgidebug_0000_0000_v0_0_s_ifspec
+__MIDL_itf_dxgidebug_0000_0003_v0_0_c_ifspec
+__MIDL_itf_dxgidebug_0000_0003_v0_0_s_ifspec
 --file
 um-dxgidebug.h
 --output

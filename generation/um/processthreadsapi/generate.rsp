@@ -1,10 +1,10 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
+GetCurrentProcessToken():HANDLE
+GetCurrentThreadEffectiveToken():HANDLE
+GetCurrentThreadToken():HANDLE
 _PROC_THREAD_ATTRIBUTE_LIST
-GetCurrentProcessToken
-GetCurrentThreadToken
-GetCurrentThreadEffectiveToken
 --file
 um-processthreadsapi.h
 --output

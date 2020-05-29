@@ -1,12 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-D3DCreateFunctionLinkingGraph
-D3DCreateLinker
-D3DDisassemble10Effect
-D3DLoadModule
-D3D12Reflect
-D3D12ReflectLibrary
+D3DDisassemble10Effect(struct ID3D10Effect *, UINT, ID3DBlob **):HRESULT
 ID3D10Effect
 --file
 um-d3dcompiler.h
