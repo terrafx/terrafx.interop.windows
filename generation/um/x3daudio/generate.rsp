@@ -1,0 +1,17 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+X3DAudioDefault_DirectionalCone
+X3DAudioDefault_LinearCurve
+X3DAudioDefault_LinearCurvePoints
+--file
+um-x3daudio.h
+--output
+../../../sources/Interop/Windows/um/x3daudio
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/x3daudio.h
+--with-using
+X3DAUDIO_EMITTER=System.Numerics
+X3DAUDIO_LISTENER=System.Numerics
+--with-librarypath
+*=X3DAudio1_7

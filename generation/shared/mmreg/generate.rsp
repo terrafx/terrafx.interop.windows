@@ -1,0 +1,10 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+tag_s_RIFFWAVE_INST
+--file
+shared-mmreg.h
+--output
+../../../sources/Interop/Windows/shared/mmreg
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/mmreg.h
