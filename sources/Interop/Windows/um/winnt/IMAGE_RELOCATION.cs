@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
+    [StructLayout(LayoutKind.Sequential, Pack = 2)]
     public partial struct IMAGE_RELOCATION
     {
         [NativeTypeName("_IMAGE_RELOCATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17622:5)")]
@@ -18,7 +19,7 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort Type;
 
-        [StructLayout(LayoutKind.Explicit)]
+        [StructLayout(LayoutKind.Explicit, Pack = 2)]
         public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]

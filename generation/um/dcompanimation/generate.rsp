@@ -1,0 +1,16 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+IID_IDCompositionAnimation
+__MIDL_itf_dcompanimation_0000_0000_v0_0_c_ifspec
+__MIDL_itf_dcompanimation_0000_0000_v0_0_s_ifspec
+__MIDL_itf_dcompanimation_0000_0001_v0_0_c_ifspec
+__MIDL_itf_dcompanimation_0000_0001_v0_0_s_ifspec
+--file
+um-dcompanimation.h
+--output
+../../../sources/Interop/Windows/um/dcompanimation
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dcompanimation.h
+--with-attribute
+IDCompositionAnimation=Guid("CBFD91D9-51B2-45e4-B3DE-D19CCFB863C5")

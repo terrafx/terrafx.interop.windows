@@ -1,0 +1,19 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+CLSID_FXEcho
+CLSID_FXEQ
+CLSID_FXMasteringLimiter
+CLSID_FXReverb
+FXEcho
+FXEQ
+FXMasteringLimiter
+FXReverb
+--file
+um-xapofx.h
+--output
+../../../sources/Interop/Windows/um/xapofx
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/xapofx.h
+--with-librarypath
+*=Windows.Media.Audio

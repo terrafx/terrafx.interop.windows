@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
     public partial struct IMAGE_TLS_DIRECTORY64
     {
         [NativeTypeName("ULONGLONG")]

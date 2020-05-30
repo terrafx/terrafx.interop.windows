@@ -742,6 +742,111 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxcapi", "dxcapi", "{CB8001
 		generation\um\dxcapi\um-dxcapi.h = generation\um\dxcapi\um-dxcapi.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxcore", "dxcore", "{4F134A2D-BBD7-4105-9D1E-18961D8D6600}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\dxcore\generate.rsp = generation\um\dxcore\generate.rsp
+		generation\um\dxcore\header.txt = generation\um\dxcore\header.txt
+		generation\um\dxcore\um-dxcore.h = generation\um\dxcore\um-dxcore.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxcore_interface", "dxcore_interface", "{B5B39F76-5BDC-400C-94B9-73DE33D8E3CF}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\dxcore_interface\generate.rsp = generation\um\dxcore_interface\generate.rsp
+		generation\um\dxcore_interface\header.txt = generation\um\dxcore_interface\header.txt
+		generation\um\dxcore_interface\um-dxcore_interface.h = generation\um\dxcore_interface\um-dxcore_interface.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dcomptypes", "dcomptypes", "{A91EFD53-A552-4410-9549-19F57E02E95A}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\dcomptypes\generate.rsp = generation\shared\dcomptypes\generate.rsp
+		generation\shared\dcomptypes\header.txt = generation\shared\dcomptypes\header.txt
+		generation\shared\dcomptypes\shared-dcomptypes.h = generation\shared\dcomptypes\shared-dcomptypes.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dcomp", "dcomp", "{B05F9DF2-502C-49DE-B50D-B0A60736004B}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\dcomp\generate.rsp = generation\um\dcomp\generate.rsp
+		generation\um\dcomp\header.txt = generation\um\dcomp\header.txt
+		generation\um\dcomp\um-dcomp.h = generation\um\dcomp\um-dcomp.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dcompanimation", "dcompanimation", "{EC83F1EF-197E-48E8-8726-9805EC8CFBE3}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\dcompanimation\generate.rsp = generation\um\dcompanimation\generate.rsp
+		generation\um\dcompanimation\header.txt = generation\um\dcompanimation\header.txt
+		generation\um\dcompanimation\um-dcompanimation.h = generation\um\dcompanimation\um-dcompanimation.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xaudio2", "xaudio2", "{EF133177-5261-4B8E-9DE2-0E0E069CF542}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\xaudio2\generate.rsp = generation\um\xaudio2\generate.rsp
+		generation\um\xaudio2\header.txt = generation\um\xaudio2\header.txt
+		generation\um\xaudio2\um-xaudio2.h = generation\um\xaudio2\um-xaudio2.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xaudio2fx", "xaudio2fx", "{1A4B460B-F26E-4B3C-BFCC-7417C9D1B19C}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\xaudio2fx\generate.rsp = generation\um\xaudio2fx\generate.rsp
+		generation\um\xaudio2fx\header.txt = generation\um\xaudio2fx\header.txt
+		generation\um\xaudio2fx\um-xaudio2fx.h = generation\um\xaudio2fx\um-xaudio2fx.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xapo", "xapo", "{81650B24-E7C8-41BE-8297-DD8E50B43220}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\xapo\generate.rsp = generation\um\xapo\generate.rsp
+		generation\um\xapo\header.txt = generation\um\xapo\header.txt
+		generation\um\xapo\um-xapo.h = generation\um\xapo\um-xapo.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xapobase", "xapobase", "{6BC63DCF-7DF0-454C-86D5-20042D6EB9CF}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\xapobase\generate.rsp = generation\um\xapobase\generate.rsp
+		generation\um\xapobase\header.txt = generation\um\xapobase\header.txt
+		generation\um\xapobase\um-xapobase.h = generation\um\xapobase\um-xapobase.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xapofx", "xapofx", "{B64DCBFD-3EED-4F15-B6DD-31014BBCE1C4}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\xapofx\generate.rsp = generation\um\xapofx\generate.rsp
+		generation\um\xapofx\header.txt = generation\um\xapofx\header.txt
+		generation\um\xapofx\um-xapofx.h = generation\um\xapofx\um-xapofx.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "x3daudio", "x3daudio", "{A87FCD03-C198-4F4F-8951-A3EB973599F7}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\x3daudio\generate.rsp = generation\um\x3daudio\generate.rsp
+		generation\um\x3daudio\header.txt = generation\um\x3daudio\header.txt
+		generation\um\x3daudio\um-x3daudio.h = generation\um\x3daudio\um-x3daudio.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mmeapi", "mmeapi", "{43560D77-BB58-44C0-ACFD-33AFC1031460}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\mmeapi\generate.rsp = generation\um\mmeapi\generate.rsp
+		generation\um\mmeapi\header.txt = generation\um\mmeapi\header.txt
+		generation\um\mmeapi\um-mmeapi.h = generation\um\mmeapi\um-mmeapi.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mmsyscom", "mmsyscom", "{E946BCCF-E6E9-4646-9C35-8E13F514203A}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\mmsyscom\generate.rsp = generation\um\mmsyscom\generate.rsp
+		generation\um\mmsyscom\header.txt = generation\um\mmsyscom\header.txt
+		generation\um\mmsyscom\um-mmsyscom.h = generation\um\mmsyscom\um-mmsyscom.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AudioSessionTypes", "AudioSessionTypes", "{50062655-7A86-43ED-AE26-D441B771CFDB}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\AudioSessionTypes\generate.rsp = generation\um\AudioSessionTypes\generate.rsp
+		generation\um\AudioSessionTypes\header.txt = generation\um\AudioSessionTypes\header.txt
+		generation\um\AudioSessionTypes\um-AudioSessionTypes.h = generation\um\AudioSessionTypes\um-AudioSessionTypes.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mmreg", "mmreg", "{A6F7ABE5-89E1-483A-ADBD-D89EF79E6E16}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\mmreg\generate.rsp = generation\shared\mmreg\generate.rsp
+		generation\shared\mmreg\header.txt = generation\shared\mmreg\header.txt
+		generation\shared\mmreg\shared-mmreg.h = generation\shared\mmreg\shared-mmreg.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -868,6 +973,21 @@ Global
 		{5653F94C-B8A1-4B7E-8226-34813ECA01C0} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{C51AED35-0089-4BDE-842F-5390F69BE055} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{CB8001DB-06E1-4391-B9DC-4C163DD343B6} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{4F134A2D-BBD7-4105-9D1E-18961D8D6600} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{B5B39F76-5BDC-400C-94B9-73DE33D8E3CF} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{A91EFD53-A552-4410-9549-19F57E02E95A} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{B05F9DF2-502C-49DE-B50D-B0A60736004B} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{EC83F1EF-197E-48E8-8726-9805EC8CFBE3} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{EF133177-5261-4B8E-9DE2-0E0E069CF542} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{1A4B460B-F26E-4B3C-BFCC-7417C9D1B19C} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{81650B24-E7C8-41BE-8297-DD8E50B43220} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{6BC63DCF-7DF0-454C-86D5-20042D6EB9CF} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{B64DCBFD-3EED-4F15-B6DD-31014BBCE1C4} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{A87FCD03-C198-4F4F-8951-A3EB973599F7} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{43560D77-BB58-44C0-ACFD-33AFC1031460} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{E946BCCF-E6E9-4646-9C35-8E13F514203A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{50062655-7A86-43ED-AE26-D441B771CFDB} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{A6F7ABE5-89E1-483A-ADBD-D89EF79E6E16} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}

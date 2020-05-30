@@ -15,7 +15,7 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort Linenumber;
 
-        [StructLayout(LayoutKind.Explicit)]
+        [StructLayout(LayoutKind.Explicit, Pack = 2)]
         public partial struct _Type_e__Union
         {
             [FieldOffset(0)]

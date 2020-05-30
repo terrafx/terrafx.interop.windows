@@ -2302,6 +2302,8 @@ namespace TerraFX.Interop
 
         public const int WDA_MONITOR = 0x00000001;
 
+        public const int WDA_EXCLUDEFROMCAPTURE = 0x00000011;
+
         public const int SWP_NOSIZE = 0x0001;
 
         public const int SWP_NOMOVE = 0x0002;
@@ -5114,6 +5116,8 @@ namespace TerraFX.Interop
         public const int HCF_LOGONDESKTOP = 0x00000100;
 
         public const int HCF_DEFAULTDESKTOP = 0x00000200;
+
+        public const int HCF_OPTION_NOTHEMECHANGE = 0x00001000;
 
         public const int CDS_UPDATEREGISTRY = 0x00000001;
 

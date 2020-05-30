@@ -29,6 +29,7 @@ namespace TerraFX.Interop
         [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17557:5)")]
         public _CRC_e__Struct CRC;
 
+        [StructLayout(LayoutKind.Sequential, Pack = 2)]
         public partial struct _Sym_e__Struct
         {
             [NativeTypeName("DWORD")]
@@ -43,7 +44,7 @@ namespace TerraFX.Interop
             [NativeTypeName("WORD")]
             public ushort TvIndex;
 
-            [StructLayout(LayoutKind.Explicit)]
+            [StructLayout(LayoutKind.Explicit, Pack = 2)]
             public partial struct _Misc_e__Union
             {
                 [FieldOffset(0)]
@@ -75,6 +76,7 @@ namespace TerraFX.Interop
                 [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17537:13)")]
                 public _Array_e__Struct Array;
 
+                [StructLayout(LayoutKind.Sequential, Pack = 2)]
                 public partial struct _Function_e__Struct
                 {
                     [NativeTypeName("DWORD")]
@@ -98,6 +100,7 @@ namespace TerraFX.Interop
             public fixed byte Name[18];
         }
 
+        [StructLayout(LayoutKind.Sequential, Pack = 2)]
         public partial struct _Section_e__Struct
         {
             [NativeTypeName("DWORD")]
@@ -125,6 +128,7 @@ namespace TerraFX.Interop
             public short HighNumber;
         }
 
+        [StructLayout(LayoutKind.Sequential, Pack = 2)]
         public unsafe partial struct _CRC_e__Struct
         {
             [NativeTypeName("DWORD")]

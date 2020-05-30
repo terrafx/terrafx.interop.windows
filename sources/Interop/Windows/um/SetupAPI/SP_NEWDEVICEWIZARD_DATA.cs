@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public partial struct SP_NEWDEVICEWIZARD_DATA
     {
         public SP_CLASSINSTALL_HEADER ClassInstallHeader;
@@ -24,6 +25,7 @@ namespace TerraFX.Interop
         [NativeTypeName("HWND")]
         public IntPtr hwndWizardDlg;
 
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
         public partial struct _DynamicPages_e__FixedBuffer
         {
             internal IntPtr e0;

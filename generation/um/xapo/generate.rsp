@@ -1,0 +1,15 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+IID_IXAPO
+IID_IXAPOParameters
+--file
+um-xapo.h
+--output
+../../../sources/Interop/Windows/um/xapo
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/xapo.h
+--with-attribute
+IXAPO=Guid("A410B984-9839-4819-A0BE-2856AE6B3ADB")
+IXAPOParameters=Guid("26D95C66-80F2-499A-AD54-5AE7F01C6D98")
+XAPO_BUFFER_FLAGS=Flags

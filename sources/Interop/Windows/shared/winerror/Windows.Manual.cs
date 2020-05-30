@@ -131,6 +131,8 @@ namespace TerraFX.Interop
 
         public const int FACILITY_INPUT = 64;
 
+        public const int FACILITY_QUIC = 65;
+
         public const int FACILITY_EAP = 66;
 
         public const int FACILITY_WINDOWS_DEFENDER = 80;
@@ -233,6 +235,8 @@ namespace TerraFX.Interop
 
         public const int FACILITY_AUDIOSTREAMING = 1094;
 
+        public const int FACILITY_TTD = 1490;
+
         public const int FACILITY_ACCELERATOR = 1536;
 
         public const int FACILITY_WMAAECMA = 1996;
@@ -252,6 +256,8 @@ namespace TerraFX.Interop
         public const int FACILITY_DIRECT3D12 = 2174;
 
         public const int FACILITY_DIRECT3D12_DEBUG = 2175;
+
+        public const int FACILITY_DXCORE = 2176;
 
         public const int FACILITY_LEAP = 2184;
 
@@ -961,6 +967,26 @@ namespace TerraFX.Interop
 
         public const int ERROR_NO_SUCH_DEVICE = 433;
 
+        public const int ERROR_CLOUD_FILE_DEHYDRATION_DISALLOWED = 434;
+
+        public const int ERROR_FILE_SNAP_IN_PROGRESS = 435;
+
+        public const int ERROR_FILE_SNAP_USER_SECTION_NOT_SUPPORTED = 436;
+
+        public const int ERROR_FILE_SNAP_MODIFY_NOT_SUPPORTED = 437;
+
+        public const int ERROR_FILE_SNAP_IO_NOT_COORDINATED = 438;
+
+        public const int ERROR_FILE_SNAP_UNEXPECTED_ERROR = 439;
+
+        public const int ERROR_FILE_SNAP_INVALID_PARAMETER = 440;
+
+        public const int ERROR_UNSATISFIED_DEPENDENCIES = 441;
+
+        public const int ERROR_CASE_SENSITIVE_PATH = 442;
+
+        public const int ERROR_UNEXPECTED_NTCACHEMANAGER_ERROR = 443;
+
         public const int ERROR_CAPAUTHZ_NOT_DEVUNLOCKED = 450;
 
         public const int ERROR_CAPAUTHZ_CHANGE_TYPE = 451;
@@ -993,7 +1019,7 @@ namespace TerraFX.Interop
 
         public const int ERROR_INVALID_ADDRESS = 487;
 
-        public const int ERROR_VRF_CFG_ENABLED = 1183;
+        public const int ERROR_VRF_CFG_AND_IO_ENABLED = 1183;
 
         public const int ERROR_PARTITION_TERMINATING = 1184;
 
@@ -2471,6 +2497,8 @@ namespace TerraFX.Interop
 
         public const int ERROR_CROSS_PARTITION_VIOLATION = 1661;
 
+        public const int ERROR_RETURN_ADDRESS_HIJACK_ATTEMPT = 1662;
+
         public const int RPC_S_INVALID_STRING_BINDING = 1700;
 
         public const int RPC_S_WRONG_KIND_OF_BINDING = 1701;
@@ -3674,6 +3702,8 @@ namespace TerraFX.Interop
         public const int ERROR_NO_BROWSER_SERVERS_FOUND = 6118;
 
         public const int SCHED_E_SERVICE_NOT_LOCALSYSTEM = 6200;
+
+        public const int ERROR_CLUSTER_OBJECT_IS_CLUSTER_SET_VM = 6250;
 
         public const int ERROR_LOG_SECTOR_INVALID = 6600;
 
@@ -6364,6 +6394,20 @@ namespace TerraFX.Interop
         public const int ERROR_SERVICE_EXISTS_AS_NON_PACKAGED_SERVICE = 15655;
 
         public const int ERROR_PACKAGED_SERVICE_REQUIRES_ADMIN_PRIVILEGES = 15656;
+
+        public const int ERROR_REDIRECTION_TO_DEFAULT_ACCOUNT_NOT_ALLOWED = 15657;
+
+        public const int ERROR_PACKAGE_LACKS_CAPABILITY_TO_DEPLOY_ON_HOST = 15658;
+
+        public const int ERROR_UNSIGNED_PACKAGE_INVALID_CONTENT = 15659;
+
+        public const int ERROR_UNSIGNED_PACKAGE_INVALID_PUBLISHER_NAMESPACE = 15660;
+
+        public const int ERROR_SIGNED_PACKAGE_INVALID_PUBLISHER_NAMESPACE = 15661;
+
+        public const int ERROR_PACKAGE_EXTERNAL_LOCATION_NOT_ALLOWED = 15662;
+
+        public const int ERROR_INSTALL_FULLTRUST_HOSTRUNTIME_REQUIRES_MAIN_PACKAGE_FULLTRUST_CAPABILITY = 15663;
 
         public const int APPMODEL_ERROR_NO_PACKAGE = 15700;
 
@@ -9303,6 +9347,10 @@ namespace TerraFX.Interop
 
         public const int ERROR_GRAPHICS_INDIRECT_DISPLAY_DEVICE_STOPPED = unchecked((int)0xC0262013);
 
+        public const int ERROR_GRAPHICS_VAIL_FAILED_TO_SEND_CREATE_SUPERWETINK_MESSAGE = unchecked((int)0xC0262014);
+
+        public const int ERROR_GRAPHICS_VAIL_FAILED_TO_SEND_DESTROY_SUPERWETINK_MESSAGE = unchecked((int)0xC0262015);
+
         public const int ERROR_GRAPHICS_NO_VIDEO_MEMORY = unchecked((int)0xC0262100);
 
         public const int ERROR_GRAPHICS_CANT_LOCK_MEMORY = unchecked((int)0xC0262101);
@@ -10217,6 +10265,10 @@ namespace TerraFX.Interop
 
         public const int TPMAPI_E_SEALING_KEY_CHANGED = unchecked((int)0x8029012C);
 
+        public const int TPMAPI_E_INVALID_TPM_VERSION = unchecked((int)0x8029012D);
+
+        public const int TPMAPI_E_INVALID_POLICYAUTH_BLOB_TYPE = unchecked((int)0x8029012E);
+
         public const int TBSIMP_E_BUFFER_TOO_SMALL = unchecked((int)0x80290200);
 
         public const int TBSIMP_E_CLEANUP_FAILED = unchecked((int)0x80290201);
@@ -10353,7 +10405,19 @@ namespace TerraFX.Interop
 
         public const int TPM_E_PCP_UNSUPPORTED_PSS_SALT = 0x40290423;
 
+        public const int TPM_E_PCP_PLATFORM_CLAIM_MAY_BE_OUTDATED = 0x40290424;
+
+        public const int TPM_E_PCP_PLATFORM_CLAIM_OUTDATED = 0x40290425;
+
+        public const int TPM_E_PCP_PLATFORM_CLAIM_REBOOT = 0x40290426;
+
         public const int TPM_E_ZERO_EXHAUST_ENABLED = unchecked((int)0x80290500);
+
+        public const int TPM_E_PROVISIONING_INCOMPLETE = unchecked((int)0x80290600);
+
+        public const int TPM_E_INVALID_OWNER_AUTH = unchecked((int)0x80290601);
+
+        public const int TPM_E_TOO_MUCH_DATA = unchecked((int)0x80290602);
 
         public const int PLA_E_DCS_NOT_FOUND = unchecked((int)0x80300002);
 
@@ -10829,6 +10893,8 @@ namespace TerraFX.Interop
 
         public const int FVE_E_DEVICE_NOT_JOINED = unchecked((int)0x803100E0);
 
+        public const int FVE_E_AAD_ENDPOINT_BUSY = unchecked((int)0x803100E1);
+
         public const int FWP_E_CALLOUT_NOT_FOUND = unchecked((int)0x80320001);
 
         public const int FWP_E_CONDITION_NOT_FOUND = unchecked((int)0x80320002);
@@ -11233,6 +11299,10 @@ namespace TerraFX.Interop
 
         public const uint ERROR_HV_INSUFFICIENT_ROOT_MEMORY = 0xC0350073;
 
+        public const uint ERROR_HV_EVENT_BUFFER_ALREADY_FREED = 0xC0350074;
+
+        public const uint ERROR_HV_INSUFFICIENT_CONTIGUOUS_MEMORY = 0xC0350075;
+
         public const uint ERROR_HV_NOT_PRESENT = 0xC0351000;
 
         public const uint ERROR_VID_DUPLICATE_HANDLER = 0xC0370001;
@@ -11413,6 +11483,12 @@ namespace TerraFX.Interop
 
         public const int HCS_E_GUEST_CRITICAL_ERROR = unchecked((int)0x8037011C);
 
+        public const int HCS_E_PROCESS_INFO_NOT_AVAILABLE = unchecked((int)0x8037011D);
+
+        public const int HCS_E_SERVICE_DISCONNECT = unchecked((int)0x8037011E);
+
+        public const int HCS_E_PROCESS_ALREADY_STOPPED = unchecked((int)0x8037011F);
+
         public const uint ERROR_VNET_VIRTUAL_SWITCH_NAME_NOT_FOUND = 0xC0370200;
 
         public const uint ERROR_VID_REMOTE_NODE_PARENT_GPA_PAGES_USED = 0x80370001;
@@ -11437,9 +11513,29 @@ namespace TerraFX.Interop
 
         public const int WHV_E_INVALID_VP_REGISTER_NAME = unchecked((int)0x80370309);
 
+        public const int WHV_E_UNSUPPORTED_PROCESSOR_CONFIG = unchecked((int)0x80370310);
+
         public const uint ERROR_VSMB_SAVED_STATE_FILE_NOT_FOUND = 0xC0370400;
 
         public const uint ERROR_VSMB_SAVED_STATE_CORRUPT = 0xC0370401;
+
+        public const int VM_SAVED_STATE_DUMP_E_PARTITION_STATE_NOT_FOUND = unchecked((int)0xC0370500);
+
+        public const int VM_SAVED_STATE_DUMP_E_GUEST_MEMORY_NOT_FOUND = unchecked((int)0xC0370501);
+
+        public const int VM_SAVED_STATE_DUMP_E_NO_VP_FOUND_IN_PARTITION_STATE = unchecked((int)0xC0370502);
+
+        public const int VM_SAVED_STATE_DUMP_E_NESTED_VIRTUALIZATION_NOT_SUPPORTED = unchecked((int)0xC0370503);
+
+        public const int VM_SAVED_STATE_DUMP_E_WINDOWS_KERNEL_IMAGE_NOT_FOUND = unchecked((int)0xC0370504);
+
+        public const int VM_SAVED_STATE_DUMP_E_PXE_NOT_PRESENT = unchecked((int)0xC0370505);
+
+        public const int VM_SAVED_STATE_DUMP_E_PDPTE_NOT_PRESENT = unchecked((int)0xC0370506);
+
+        public const int VM_SAVED_STATE_DUMP_E_PDE_NOT_PRESENT = unchecked((int)0xC0370507);
+
+        public const int VM_SAVED_STATE_DUMP_E_PTE_NOT_PRESENT = unchecked((int)0xC0370508);
 
         public const uint ERROR_VOLMGR_INCOMPLETE_REGENERATION = 0x80380001;
 
@@ -11816,6 +11912,20 @@ namespace TerraFX.Interop
         public const int HCN_E_NAMESPACE_ATTACH_FAILED = unchecked((int)0x803B002E);
 
         public const int HCN_E_ADDR_INVALID_OR_RESERVED = unchecked((int)0x803B002F);
+
+        public const int HCN_E_INVALID_PREFIX = unchecked((int)0x803B0030);
+
+        public const int HCN_E_OBJECT_USED_AFTER_UNLOAD = unchecked((int)0x803B0031);
+
+        public const int HCN_E_INVALID_SUBNET = unchecked((int)0x803B0032);
+
+        public const int HCN_E_INVALID_IP_SUBNET = unchecked((int)0x803B0033);
+
+        public const int HCN_E_ENDPOINT_NOT_ATTACHED = unchecked((int)0x803B0034);
+
+        public const int HCN_E_ENDPOINT_NOT_LOCAL = unchecked((int)0x803B0035);
+
+        public const int HCN_INTERFACEPARAMETERS_ALREADY_APPLIED = unchecked((int)0x803B0036);
 
         public const uint SDIAG_E_CANCELLED = 0x803C0100;
 
@@ -12434,6 +12544,8 @@ namespace TerraFX.Interop
         public const int DXGI_ERROR_DYNAMIC_CODE_POLICY_VIOLATION = unchecked((int)0x887A0031);
 
         public const int DXGI_ERROR_NON_COMPOSITED_UI = unchecked((int)0x887A0032);
+
+        public const int DXCORE_ERROR_EVENT_NOT_UNREGISTERED = unchecked((int)0x88800001);
 
         public const int DXGI_STATUS_UNOCCLUDED = 0x087A0009;
 
@@ -13681,8 +13793,6 @@ namespace TerraFX.Interop
 
         public const int UTC_E_BINARY_MISSING = unchecked((int)0x87C51034);
 
-        public const int UTC_E_NETWORK_CAPTURE_NOT_ALLOWED = unchecked((int)0x87C51035);
-
         public const int UTC_E_FAILED_TO_RESOLVE_CONTAINER_ID = unchecked((int)0x87C51036);
 
         public const int UTC_E_UNABLE_TO_RESOLVE_SESSION = unchecked((int)0x87C51037);
@@ -13756,6 +13866,10 @@ namespace TerraFX.Interop
         public const int WINML_ERR_VALUE_NOTFOUND = unchecked((int)0x88900003);
 
         public const int WINML_ERR_SIZE_MISMATCH = unchecked((int)0x88900004);
+
+        public const int ERROR_QUIC_HANDSHAKE_FAILURE = unchecked((int)0x80410000);
+
+        public const int ERROR_QUIC_VER_NEG_FAILURE = unchecked((int)0x80410001);
 
         public const int DS_S_SUCCESS = NO_ERROR;
 
