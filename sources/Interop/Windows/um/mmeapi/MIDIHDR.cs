@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe partial struct MIDIHDR
     {
         [NativeTypeName("LPSTR")]
@@ -37,6 +38,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD_PTR [8]")]
         public _dwReserved_e__FixedBuffer dwReserved;
 
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
         public partial struct _dwReserved_e__FixedBuffer
         {
             internal nuint e0;

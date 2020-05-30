@@ -4,9 +4,11 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe partial struct SP_DETECTDEVICE_PARAMS
     {
         public SP_CLASSINSTALL_HEADER ClassInstallHeader;

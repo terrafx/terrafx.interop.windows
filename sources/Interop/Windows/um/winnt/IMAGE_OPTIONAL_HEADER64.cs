@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
     public partial struct IMAGE_OPTIONAL_HEADER64
     {
         [NativeTypeName("WORD")]
@@ -100,6 +101,7 @@ namespace TerraFX.Interop
         [NativeTypeName("IMAGE_DATA_DIRECTORY [16]")]
         public _DataDirectory_e__FixedBuffer DataDirectory;
 
+        [StructLayout(LayoutKind.Sequential, Pack = 4)]
         public partial struct _DataDirectory_e__FixedBuffer
         {
             internal IMAGE_DATA_DIRECTORY e0;

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public partial struct MMTIME
     {
         [NativeTypeName("UINT")]
@@ -15,7 +16,7 @@ namespace TerraFX.Interop
         [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mmsyscom.h:110:5)")]
         public _u_e__Union u;
 
-        [StructLayout(LayoutKind.Explicit)]
+        [StructLayout(LayoutKind.Explicit, Pack = 1)]
         public partial struct _u_e__Union
         {
             [FieldOffset(0)]
@@ -66,6 +67,7 @@ namespace TerraFX.Interop
                 public fixed byte pad[2];
             }
 
+            [StructLayout(LayoutKind.Sequential, Pack = 1)]
             public partial struct _midi_e__Struct
             {
                 [NativeTypeName("DWORD")]

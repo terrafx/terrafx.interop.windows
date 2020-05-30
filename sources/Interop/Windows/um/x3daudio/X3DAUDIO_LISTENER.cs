@@ -4,9 +4,11 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Numerics;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe partial struct X3DAUDIO_LISTENER
     {
         [NativeTypeName("X3DAUDIO_VECTOR")]

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
+    [StructLayout(LayoutKind.Sequential, Pack = 2)]
     public partial struct IMAGE_SYMBOL
     {
         [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17350:5)")]
@@ -27,7 +28,7 @@ namespace TerraFX.Interop
         [NativeTypeName("BYTE")]
         public byte NumberOfAuxSymbols;
 
-        [StructLayout(LayoutKind.Explicit)]
+        [StructLayout(LayoutKind.Explicit, Pack = 2)]
         public unsafe partial struct _N_e__Union
         {
             [FieldOffset(0)]
@@ -42,6 +43,7 @@ namespace TerraFX.Interop
             [NativeTypeName("DWORD [2]")]
             public fixed uint LongName[2];
 
+            [StructLayout(LayoutKind.Sequential, Pack = 2)]
             public partial struct _Name_e__Struct
             {
                 [NativeTypeName("DWORD")]

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe partial struct MIXERLINECONTROLSA
     {
         [NativeTypeName("DWORD")]
@@ -27,7 +28,7 @@ namespace TerraFX.Interop
         [NativeTypeName("LPMIXERCONTROLA")]
         public MIXERCONTROLA* pamxctrl;
 
-        [StructLayout(LayoutKind.Explicit)]
+        [StructLayout(LayoutKind.Explicit, Pack = 1)]
         public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]

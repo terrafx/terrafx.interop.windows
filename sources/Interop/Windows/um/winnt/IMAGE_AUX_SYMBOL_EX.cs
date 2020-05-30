@@ -30,6 +30,7 @@ namespace TerraFX.Interop
         [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17588:5)")]
         public _CRC_e__Struct CRC;
 
+        [StructLayout(LayoutKind.Sequential, Pack = 2)]
         public unsafe partial struct _Sym_e__Struct
         {
             [NativeTypeName("DWORD")]
@@ -48,6 +49,7 @@ namespace TerraFX.Interop
             public fixed byte Name[20];
         }
 
+        [StructLayout(LayoutKind.Sequential, Pack = 2)]
         public unsafe partial struct _Section_e__Struct
         {
             [NativeTypeName("DWORD")]
@@ -86,6 +88,7 @@ namespace TerraFX.Interop
             public fixed byte rgbReserved[2];
         }
 
+        [StructLayout(LayoutKind.Sequential, Pack = 2)]
         public unsafe partial struct _CRC_e__Struct
         {
             [NativeTypeName("DWORD")]

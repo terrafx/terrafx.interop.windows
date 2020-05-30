@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe partial struct MIXERCONTROLA
     {
         [NativeTypeName("DWORD")]
@@ -36,7 +37,7 @@ namespace TerraFX.Interop
         [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mmeapi.h:2099:5)")]
         public _Metrics_e__Union Metrics;
 
-        [StructLayout(LayoutKind.Explicit)]
+        [StructLayout(LayoutKind.Explicit, Pack = 1)]
         public unsafe partial struct _Bounds_e__Union
         {
             [FieldOffset(0)]
@@ -51,6 +52,7 @@ namespace TerraFX.Interop
             [NativeTypeName("DWORD [6]")]
             public fixed uint dwReserved[6];
 
+            [StructLayout(LayoutKind.Sequential, Pack = 1)]
             public partial struct _Anonymous1_e__Struct
             {
                 [NativeTypeName("LONG")]
@@ -60,6 +62,7 @@ namespace TerraFX.Interop
                 public int lMaximum;
             }
 
+            [StructLayout(LayoutKind.Sequential, Pack = 1)]
             public partial struct _Anonymous2_e__Struct
             {
                 [NativeTypeName("DWORD")]
@@ -70,7 +73,7 @@ namespace TerraFX.Interop
             }
         }
 
-        [StructLayout(LayoutKind.Explicit)]
+        [StructLayout(LayoutKind.Explicit, Pack = 1)]
         public unsafe partial struct _Metrics_e__Union
         {
             [FieldOffset(0)]

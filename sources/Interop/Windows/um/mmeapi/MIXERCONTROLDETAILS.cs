@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe partial struct MIXERCONTROLDETAILS
     {
         [NativeTypeName("DWORD")]
@@ -28,7 +29,7 @@ namespace TerraFX.Interop
         [NativeTypeName("LPVOID")]
         public void* paDetails;
 
-        [StructLayout(LayoutKind.Explicit)]
+        [StructLayout(LayoutKind.Explicit, Pack = 1)]
         public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]

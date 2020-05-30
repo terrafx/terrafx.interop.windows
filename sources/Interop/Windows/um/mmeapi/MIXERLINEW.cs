@@ -3,8 +3,11 @@
 // Ported from um/mmeapi.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.InteropServices;
+
 namespace TerraFX.Interop
 {
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public unsafe partial struct MIXERLINEW
     {
         [NativeTypeName("DWORD")]
@@ -46,6 +49,7 @@ namespace TerraFX.Interop
         [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mmeapi.h:1931:5)")]
         public _Target_e__Struct Target;
 
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
         public unsafe partial struct _Target_e__Struct
         {
             [NativeTypeName("DWORD")]

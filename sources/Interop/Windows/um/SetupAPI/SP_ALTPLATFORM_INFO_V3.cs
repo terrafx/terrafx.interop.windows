@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public partial struct SP_ALTPLATFORM_INFO_V3
     {
         [NativeTypeName("DWORD")]
@@ -42,7 +43,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint BuildNumber;
 
-        [StructLayout(LayoutKind.Explicit)]
+        [StructLayout(LayoutKind.Explicit, Pack = 1)]
         public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]

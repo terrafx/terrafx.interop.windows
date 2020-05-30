@@ -6,6 +6,8 @@ X3DAudioDefault_LinearCurve
 X3DAudioDefault_LinearCurvePoints
 --file
 um-x3daudio.h
+--include-directory
+./
 --output
 ../../../sources/Interop/Windows/um/x3daudio
 --traverse

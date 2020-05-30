@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
     public partial struct IMAGE_FUNCTION_ENTRY64
     {
         [NativeTypeName("ULONGLONG")]
@@ -18,7 +19,7 @@ namespace TerraFX.Interop
         [NativeTypeName("_IMAGE_FUNCTION_ENTRY64::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:19009:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        [StructLayout(LayoutKind.Explicit)]
+        [StructLayout(LayoutKind.Explicit, Pack = 4)]
         public partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
