@@ -742,6 +742,41 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxcapi", "dxcapi", "{CB8001
 		generation\um\dxcapi\um-dxcapi.h = generation\um\dxcapi\um-dxcapi.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxcore", "dxcore", "{4F134A2D-BBD7-4105-9D1E-18961D8D6600}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\dxcore\generate.rsp = generation\um\dxcore\generate.rsp
+		generation\um\dxcore\header.txt = generation\um\dxcore\header.txt
+		generation\um\dxcore\um-dxcore.h = generation\um\dxcore\um-dxcore.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxcore_interface", "dxcore_interface", "{B5B39F76-5BDC-400C-94B9-73DE33D8E3CF}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\dxcore_interface\generate.rsp = generation\um\dxcore_interface\generate.rsp
+		generation\um\dxcore_interface\header.txt = generation\um\dxcore_interface\header.txt
+		generation\um\dxcore_interface\um-dxcore_interface.h = generation\um\dxcore_interface\um-dxcore_interface.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dcomptypes", "dcomptypes", "{A91EFD53-A552-4410-9549-19F57E02E95A}"
+	ProjectSection(SolutionItems) = preProject
+		generation\shared\dcomptypes\generate.rsp = generation\shared\dcomptypes\generate.rsp
+		generation\shared\dcomptypes\header.txt = generation\shared\dcomptypes\header.txt
+		generation\shared\dcomptypes\shared-dcomptypes.h = generation\shared\dcomptypes\shared-dcomptypes.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dcomp", "dcomp", "{B05F9DF2-502C-49DE-B50D-B0A60736004B}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\dcomp\generate.rsp = generation\um\dcomp\generate.rsp
+		generation\um\dcomp\header.txt = generation\um\dcomp\header.txt
+		generation\um\dcomp\um-dcomp.h = generation\um\dcomp\um-dcomp.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dcompanimation", "dcompanimation", "{EC83F1EF-197E-48E8-8726-9805EC8CFBE3}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\dcompanimation\generate.rsp = generation\um\dcompanimation\generate.rsp
+		generation\um\dcompanimation\header.txt = generation\um\dcompanimation\header.txt
+		generation\um\dcompanimation\um-dcompanimation.h = generation\um\dcompanimation\um-dcompanimation.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -868,6 +903,11 @@ Global
 		{5653F94C-B8A1-4B7E-8226-34813ECA01C0} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{C51AED35-0089-4BDE-842F-5390F69BE055} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{CB8001DB-06E1-4391-B9DC-4C163DD343B6} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{4F134A2D-BBD7-4105-9D1E-18961D8D6600} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{B5B39F76-5BDC-400C-94B9-73DE33D8E3CF} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{A91EFD53-A552-4410-9549-19F57E02E95A} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{B05F9DF2-502C-49DE-B50D-B0A60736004B} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{EC83F1EF-197E-48E8-8726-9805EC8CFBE3} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
