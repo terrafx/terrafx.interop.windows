@@ -9,7 +9,6 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    [Guid("CEDB484A-D4E9-445A-B991-CA21CA157DC2")]
     public unsafe partial struct IDxcOperationResult
     {
         public Vtbl* lpVtbl;
@@ -32,11 +31,11 @@ namespace TerraFX.Interop
 
         [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetResult(IDxcOperationResult* pThis, [NativeTypeName("IDxcBlob **")] IDxcBlob** ppResult);
+        public delegate int _GetResult(IDxcOperationResult* pThis, [NativeTypeName("IDxcBlob **")] IDxcBlob** pResult);
 
         [UnmanagedFunctionPointer(CallingConvention.Winapi)]
         [return: NativeTypeName("HRESULT")]
-        public delegate int _GetErrorBuffer(IDxcOperationResult* pThis, [NativeTypeName("IDxcBlobEncoding **")] IDxcBlobEncoding** ppErrors);
+        public delegate int _GetErrorBuffer(IDxcOperationResult* pThis, [NativeTypeName("IDxcBlobEncoding **")] IDxcBlobEncoding** pErrors);
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
@@ -63,15 +62,15 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetResult([NativeTypeName("IDxcBlob **")] IDxcBlob** ppResult)
+        public int GetResult([NativeTypeName("IDxcBlob **")] IDxcBlob** pResult)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetResult>(lpVtbl->GetResult)((IDxcOperationResult*)Unsafe.AsPointer(ref this), ppResult);
+            return Marshal.GetDelegateForFunctionPointer<_GetResult>(lpVtbl->GetResult)((IDxcOperationResult*)Unsafe.AsPointer(ref this), pResult);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetErrorBuffer([NativeTypeName("IDxcBlobEncoding **")] IDxcBlobEncoding** ppErrors)
+        public int GetErrorBuffer([NativeTypeName("IDxcBlobEncoding **")] IDxcBlobEncoding** pErrors)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetErrorBuffer>(lpVtbl->GetErrorBuffer)((IDxcOperationResult*)Unsafe.AsPointer(ref this), ppErrors);
+            return Marshal.GetDelegateForFunctionPointer<_GetErrorBuffer>(lpVtbl->GetErrorBuffer)((IDxcOperationResult*)Unsafe.AsPointer(ref this), pErrors);
         }
 
         public partial struct Vtbl
