@@ -58,3 +58,5 @@ IDxcResult=Guid("58346CDA-DDE7-4497-9461-6F87AF5E0659")
 IDxcUtils=Guid("4605C4CB-2019-492A-ADA4-65F20BB7D67F")
 --with-librarypath
 *=dxcompiler
+--with-type
+DXC_OUT_KIND=uint

@@ -1,11 +1,12 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from include/dxc/dxcapi.h in the microsoft/DirectXCompiler repository (https://github.com/microsoft/DirectXShaderCompiler/) at commit e0cde072b09b51506c0460697b2695d6cccca59d
+// Ported from include/dxc/dxcapi.h in the microsoft/DirectXCompiler commit e0cde072b09b51506c0460697b2695d6cccca59d
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop
 {
-    public enum DXC_OUT_KIND
+    [NativeTypeName("int")]
+    public enum DXC_OUT_KIND : uint
     {
         DXC_OUT_NONE = 0,
         DXC_OUT_OBJECT = 1,
