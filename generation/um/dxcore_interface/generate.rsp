@@ -1,0 +1,28 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+DXCORE_ADAPTER_ATTRIBUTE_D3D11_GRAPHICS
+DXCORE_ADAPTER_ATTRIBUTE_D3D12_CORE_COMPUTE
+DXCORE_ADAPTER_ATTRIBUTE_D3D12_GRAPHICS
+IDXCoreAdapter.GetFactory<T>(T **):HRESULT
+IDXCoreAdapter.GetProperty<T>(DXCoreAdapterProperty, T *):HRESULT
+IDXCoreAdapter.QueryState<T1, T2>(DXCoreAdapterState, const T1 *, T2 *):HRESULT
+IDXCoreAdapter.QueryState<T>(DXCoreAdapterState, T *):HRESULT
+IDXCoreAdapter.SetState<T1, T2>(DXCoreAdapterState, const T1 *, const T2 *):HRESULT
+IDXCoreAdapterFactory.CreateAdapterList<T>(uint32_t, const GUID *, T **):HRESULT
+IDXCoreAdapterFactory.GetAdapterByLuid<T>(const LUID &, T **):HRESULT
+IDXCoreAdapterList.GetAdapter<T>(uint32_t, T **):HRESULT
+IDXCoreAdapterList.GetFactory<T>(T **):HRESULT
+IID_IDXCoreAdapter
+IID_IDXCoreAdapterFactory
+IID_IDXCoreAdapterList
+--file
+um-dxcore_interface.h
+--output
+../../../sources/Interop/Windows/um/dxcore_interface
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dxcore_interface.h
+--with-attribute
+IDXCoreAdapter=Guid("F0DB4C7F-FE5A-42A2-BD62-F2A6CF6FC83E")
+IDXCoreAdapterFactory=Guid("78EE5945-C36E-4B13-A669-005DD11C0F06")
+IDXCoreAdapterList=Guid("526C7776-40E9-459B-B711-F32AD76DFC28")

@@ -1,0 +1,12 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+DXCoreCreateAdapterFactory<T>(T **):HRESULT
+--file
+um-dxcore.h
+--output
+../../../sources/Interop/Windows/um/dxcore
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dxcore.h
+--with-librarypath
+*=DXCore
