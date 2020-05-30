@@ -39,9 +39,6 @@ namespace TerraFX.Interop
         public static readonly Guid CLSID_DxcDiaDataSource = new Guid(0xcd1f6b73, 0x2ab0, 0x484d, 0x8e, 0xdc, 0xeb, 0xe7, 0xa4, 0x3c, 0xa0, 0x9f);
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_DxcLibrary = new Guid(0x6245d6af, 0x66e0, 0x48fd, 0x80, 0xb4, 0x4d, 0x27, 0x17, 0x96, 0x74, 0x8c);
-
-        [NativeTypeName("const GUID")]
         public static readonly Guid CLSID_DxcValidator = new Guid(0x8ca3e215, 0xf728, 0x4cf3, 0x8c, 0xdd, 0x88, 0xaf, 0x91, 0x75, 0x87, 0xa1);
 
         [NativeTypeName("const GUID")]
@@ -55,9 +52,6 @@ namespace TerraFX.Interop
 
         [NativeTypeName("const GUID")]
         public static readonly Guid CLSID_DxcContainerBuilder = new Guid(0x94134294, 0x411f, 0x4574, 0xb4, 0xd0, 0x87, 0x41, 0xe2, 0x52, 0x40, 0xd2);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_DxcUtils = CLSID_DxcLibrary;
 
         public static readonly Guid IID_IDxcAssembly = new Guid(0x091F7A26, 0x1C1F, 0x4948, 0x90, 0x4B, 0xE6, 0xE3, 0xA8, 0xA7, 0x71, 0xD5);
 
