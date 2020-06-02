@@ -14,72 +14,52 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDCompositionDeviceDebug* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDCompositionDeviceDebug* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDCompositionDeviceDebug* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _EnableDebugCounters(IDCompositionDeviceDebug* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _DisableDebugCounters(IDCompositionDeviceDebug* pThis);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDCompositionDeviceDebug*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IDCompositionDeviceDebug*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDCompositionDeviceDebug*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IDCompositionDeviceDebug*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDCompositionDeviceDebug*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IDCompositionDeviceDebug*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int EnableDebugCounters()
         {
-            return Marshal.GetDelegateForFunctionPointer<_EnableDebugCounters>(lpVtbl->EnableDebugCounters)((IDCompositionDeviceDebug*)Unsafe.AsPointer(ref this));
+            return lpVtbl->EnableDebugCounters((IDCompositionDeviceDebug*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int DisableDebugCounters()
         {
-            return Marshal.GetDelegateForFunctionPointer<_DisableDebugCounters>(lpVtbl->DisableDebugCounters)((IDCompositionDeviceDebug*)Unsafe.AsPointer(ref this));
+            return lpVtbl->DisableDebugCounters((IDCompositionDeviceDebug*)Unsafe.AsPointer(ref this));
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IDCompositionDeviceDebug*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IDCompositionDeviceDebug*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IDCompositionDeviceDebug*, uint> Release;
 
             [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr EnableDebugCounters;
+            public delegate* stdcall<IDCompositionDeviceDebug*, int> EnableDebugCounters;
 
             [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr DisableDebugCounters;
+            public delegate* stdcall<IDCompositionDeviceDebug*, int> DisableDebugCounters;
         }
     }
 }

@@ -14,124 +14,88 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IOleClientSite* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IOleClientSite* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IOleClientSite* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SaveObject(IOleClientSite* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetMoniker(IOleClientSite* pThis, [NativeTypeName("DWORD")] uint dwAssign, [NativeTypeName("DWORD")] uint dwWhichMoniker, [NativeTypeName("IMoniker **")] IMoniker** ppmk);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetContainer(IOleClientSite* pThis, [NativeTypeName("IOleContainer **")] IOleContainer** ppContainer);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _ShowObject(IOleClientSite* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _OnShowWindow(IOleClientSite* pThis, [NativeTypeName("BOOL")] int fShow);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _RequestNewObjectLayout(IOleClientSite* pThis);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IOleClientSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IOleClientSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IOleClientSite*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IOleClientSite*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IOleClientSite*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IOleClientSite*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SaveObject()
         {
-            return Marshal.GetDelegateForFunctionPointer<_SaveObject>(lpVtbl->SaveObject)((IOleClientSite*)Unsafe.AsPointer(ref this));
+            return lpVtbl->SaveObject((IOleClientSite*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetMoniker([NativeTypeName("DWORD")] uint dwAssign, [NativeTypeName("DWORD")] uint dwWhichMoniker, [NativeTypeName("IMoniker **")] IMoniker** ppmk)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetMoniker>(lpVtbl->GetMoniker)((IOleClientSite*)Unsafe.AsPointer(ref this), dwAssign, dwWhichMoniker, ppmk);
+            return lpVtbl->GetMoniker((IOleClientSite*)Unsafe.AsPointer(ref this), dwAssign, dwWhichMoniker, ppmk);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetContainer([NativeTypeName("IOleContainer **")] IOleContainer** ppContainer)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetContainer>(lpVtbl->GetContainer)((IOleClientSite*)Unsafe.AsPointer(ref this), ppContainer);
+            return lpVtbl->GetContainer((IOleClientSite*)Unsafe.AsPointer(ref this), ppContainer);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ShowObject()
         {
-            return Marshal.GetDelegateForFunctionPointer<_ShowObject>(lpVtbl->ShowObject)((IOleClientSite*)Unsafe.AsPointer(ref this));
+            return lpVtbl->ShowObject((IOleClientSite*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int OnShowWindow([NativeTypeName("BOOL")] int fShow)
         {
-            return Marshal.GetDelegateForFunctionPointer<_OnShowWindow>(lpVtbl->OnShowWindow)((IOleClientSite*)Unsafe.AsPointer(ref this), fShow);
+            return lpVtbl->OnShowWindow((IOleClientSite*)Unsafe.AsPointer(ref this), fShow);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int RequestNewObjectLayout()
         {
-            return Marshal.GetDelegateForFunctionPointer<_RequestNewObjectLayout>(lpVtbl->RequestNewObjectLayout)((IOleClientSite*)Unsafe.AsPointer(ref this));
+            return lpVtbl->RequestNewObjectLayout((IOleClientSite*)Unsafe.AsPointer(ref this));
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IOleClientSite*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IOleClientSite*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IOleClientSite*, uint> Release;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr SaveObject;
+            public delegate* stdcall<IOleClientSite*, int> SaveObject;
 
             [NativeTypeName("HRESULT (DWORD, DWORD, IMoniker **) __attribute__((stdcall))")]
-            public IntPtr GetMoniker;
+            public delegate* stdcall<IOleClientSite*, uint, uint, IMoniker**, int> GetMoniker;
 
             [NativeTypeName("HRESULT (IOleContainer **) __attribute__((stdcall))")]
-            public IntPtr GetContainer;
+            public delegate* stdcall<IOleClientSite*, IOleContainer**, int> GetContainer;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr ShowObject;
+            public delegate* stdcall<IOleClientSite*, int> ShowObject;
 
             [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public IntPtr OnShowWindow;
+            public delegate* stdcall<IOleClientSite*, int, int> OnShowWindow;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr RequestNewObjectLayout;
+            public delegate* stdcall<IOleClientSite*, int> RequestNewObjectLayout;
         }
     }
 }

@@ -14,72 +14,52 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IPipeDouble* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IPipeDouble* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IPipeDouble* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Pull(IPipeDouble* pThis, [NativeTypeName("DOUBLE *")] double* buf, [NativeTypeName("ULONG")] uint cRequest, [NativeTypeName("ULONG *")] uint* pcReturned);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Push(IPipeDouble* pThis, [NativeTypeName("DOUBLE *")] double* buf, [NativeTypeName("ULONG")] uint cSent);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IPipeDouble*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IPipeDouble*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IPipeDouble*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IPipeDouble*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IPipeDouble*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IPipeDouble*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Pull([NativeTypeName("DOUBLE *")] double* buf, [NativeTypeName("ULONG")] uint cRequest, [NativeTypeName("ULONG *")] uint* pcReturned)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Pull>(lpVtbl->Pull)((IPipeDouble*)Unsafe.AsPointer(ref this), buf, cRequest, pcReturned);
+            return lpVtbl->Pull((IPipeDouble*)Unsafe.AsPointer(ref this), buf, cRequest, pcReturned);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Push([NativeTypeName("DOUBLE *")] double* buf, [NativeTypeName("ULONG")] uint cSent)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Push>(lpVtbl->Push)((IPipeDouble*)Unsafe.AsPointer(ref this), buf, cSent);
+            return lpVtbl->Push((IPipeDouble*)Unsafe.AsPointer(ref this), buf, cSent);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IPipeDouble*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IPipeDouble*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IPipeDouble*, uint> Release;
 
             [NativeTypeName("HRESULT (DOUBLE *, ULONG, ULONG *) __attribute__((stdcall))")]
-            public IntPtr Pull;
+            public delegate* stdcall<IPipeDouble*, double*, uint, uint*, int> Pull;
 
             [NativeTypeName("HRESULT (DOUBLE *, ULONG) __attribute__((stdcall))")]
-            public IntPtr Push;
+            public delegate* stdcall<IPipeDouble*, double*, uint, int> Push;
         }
     }
 }

@@ -14,178 +14,130 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(AsyncIAdviseSink2* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(AsyncIAdviseSink2* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(AsyncIAdviseSink2* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _Begin_OnDataChange(AsyncIAdviseSink2* pThis, [NativeTypeName("FORMATETC *")] FORMATETC* pFormatetc, [NativeTypeName("STGMEDIUM *")] STGMEDIUM* pStgmed);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _Finish_OnDataChange(AsyncIAdviseSink2* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _Begin_OnViewChange(AsyncIAdviseSink2* pThis, [NativeTypeName("DWORD")] uint dwAspect, [NativeTypeName("LONG")] int lindex);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _Finish_OnViewChange(AsyncIAdviseSink2* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _Begin_OnRename(AsyncIAdviseSink2* pThis, [NativeTypeName("IMoniker *")] IMoniker* pmk);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _Finish_OnRename(AsyncIAdviseSink2* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _Begin_OnSave(AsyncIAdviseSink2* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _Finish_OnSave(AsyncIAdviseSink2* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _Begin_OnClose(AsyncIAdviseSink2* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _Finish_OnClose(AsyncIAdviseSink2* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _Begin_OnLinkSrcChange(AsyncIAdviseSink2* pThis, [NativeTypeName("IMoniker *")] IMoniker* pmk);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _Finish_OnLinkSrcChange(AsyncIAdviseSink2* pThis);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this));
         }
 
         public void Begin_OnDataChange([NativeTypeName("FORMATETC *")] FORMATETC* pFormatetc, [NativeTypeName("STGMEDIUM *")] STGMEDIUM* pStgmed)
         {
-            Marshal.GetDelegateForFunctionPointer<_Begin_OnDataChange>(lpVtbl->Begin_OnDataChange)((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this), pFormatetc, pStgmed);
+            lpVtbl->Begin_OnDataChange((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this), pFormatetc, pStgmed);
         }
 
         public void Finish_OnDataChange()
         {
-            Marshal.GetDelegateForFunctionPointer<_Finish_OnDataChange>(lpVtbl->Finish_OnDataChange)((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this));
+            lpVtbl->Finish_OnDataChange((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this));
         }
 
         public void Begin_OnViewChange([NativeTypeName("DWORD")] uint dwAspect, [NativeTypeName("LONG")] int lindex)
         {
-            Marshal.GetDelegateForFunctionPointer<_Begin_OnViewChange>(lpVtbl->Begin_OnViewChange)((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this), dwAspect, lindex);
+            lpVtbl->Begin_OnViewChange((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this), dwAspect, lindex);
         }
 
         public void Finish_OnViewChange()
         {
-            Marshal.GetDelegateForFunctionPointer<_Finish_OnViewChange>(lpVtbl->Finish_OnViewChange)((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this));
+            lpVtbl->Finish_OnViewChange((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this));
         }
 
         public void Begin_OnRename([NativeTypeName("IMoniker *")] IMoniker* pmk)
         {
-            Marshal.GetDelegateForFunctionPointer<_Begin_OnRename>(lpVtbl->Begin_OnRename)((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this), pmk);
+            lpVtbl->Begin_OnRename((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this), pmk);
         }
 
         public void Finish_OnRename()
         {
-            Marshal.GetDelegateForFunctionPointer<_Finish_OnRename>(lpVtbl->Finish_OnRename)((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this));
+            lpVtbl->Finish_OnRename((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this));
         }
 
         public void Begin_OnSave()
         {
-            Marshal.GetDelegateForFunctionPointer<_Begin_OnSave>(lpVtbl->Begin_OnSave)((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this));
+            lpVtbl->Begin_OnSave((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this));
         }
 
         public void Finish_OnSave()
         {
-            Marshal.GetDelegateForFunctionPointer<_Finish_OnSave>(lpVtbl->Finish_OnSave)((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this));
+            lpVtbl->Finish_OnSave((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this));
         }
 
         public void Begin_OnClose()
         {
-            Marshal.GetDelegateForFunctionPointer<_Begin_OnClose>(lpVtbl->Begin_OnClose)((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this));
+            lpVtbl->Begin_OnClose((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this));
         }
 
         public void Finish_OnClose()
         {
-            Marshal.GetDelegateForFunctionPointer<_Finish_OnClose>(lpVtbl->Finish_OnClose)((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this));
+            lpVtbl->Finish_OnClose((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this));
         }
 
         public void Begin_OnLinkSrcChange([NativeTypeName("IMoniker *")] IMoniker* pmk)
         {
-            Marshal.GetDelegateForFunctionPointer<_Begin_OnLinkSrcChange>(lpVtbl->Begin_OnLinkSrcChange)((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this), pmk);
+            lpVtbl->Begin_OnLinkSrcChange((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this), pmk);
         }
 
         public void Finish_OnLinkSrcChange()
         {
-            Marshal.GetDelegateForFunctionPointer<_Finish_OnLinkSrcChange>(lpVtbl->Finish_OnLinkSrcChange)((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this));
+            lpVtbl->Finish_OnLinkSrcChange((AsyncIAdviseSink2*)Unsafe.AsPointer(ref this));
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<AsyncIAdviseSink2*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<AsyncIAdviseSink2*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<AsyncIAdviseSink2*, uint> Release;
 
             [NativeTypeName("void (FORMATETC *, STGMEDIUM *) __attribute__((stdcall))")]
-            public IntPtr Begin_OnDataChange;
+            public delegate* stdcall<AsyncIAdviseSink2*, FORMATETC*, STGMEDIUM*, void> Begin_OnDataChange;
 
             [NativeTypeName("void () __attribute__((stdcall))")]
-            public IntPtr Finish_OnDataChange;
+            public delegate* stdcall<AsyncIAdviseSink2*, void> Finish_OnDataChange;
 
             [NativeTypeName("void (DWORD, LONG) __attribute__((stdcall))")]
-            public IntPtr Begin_OnViewChange;
+            public delegate* stdcall<AsyncIAdviseSink2*, uint, int, void> Begin_OnViewChange;
 
             [NativeTypeName("void () __attribute__((stdcall))")]
-            public IntPtr Finish_OnViewChange;
+            public delegate* stdcall<AsyncIAdviseSink2*, void> Finish_OnViewChange;
 
             [NativeTypeName("void (IMoniker *) __attribute__((stdcall))")]
-            public IntPtr Begin_OnRename;
+            public delegate* stdcall<AsyncIAdviseSink2*, IMoniker*, void> Begin_OnRename;
 
             [NativeTypeName("void () __attribute__((stdcall))")]
-            public IntPtr Finish_OnRename;
+            public delegate* stdcall<AsyncIAdviseSink2*, void> Finish_OnRename;
 
             [NativeTypeName("void () __attribute__((stdcall))")]
-            public IntPtr Begin_OnSave;
+            public delegate* stdcall<AsyncIAdviseSink2*, void> Begin_OnSave;
 
             [NativeTypeName("void () __attribute__((stdcall))")]
-            public IntPtr Finish_OnSave;
+            public delegate* stdcall<AsyncIAdviseSink2*, void> Finish_OnSave;
 
             [NativeTypeName("void () __attribute__((stdcall))")]
-            public IntPtr Begin_OnClose;
+            public delegate* stdcall<AsyncIAdviseSink2*, void> Begin_OnClose;
 
             [NativeTypeName("void () __attribute__((stdcall))")]
-            public IntPtr Finish_OnClose;
+            public delegate* stdcall<AsyncIAdviseSink2*, void> Finish_OnClose;
 
             [NativeTypeName("void (IMoniker *) __attribute__((stdcall))")]
-            public IntPtr Begin_OnLinkSrcChange;
+            public delegate* stdcall<AsyncIAdviseSink2*, IMoniker*, void> Begin_OnLinkSrcChange;
 
             [NativeTypeName("void () __attribute__((stdcall))")]
-            public IntPtr Finish_OnLinkSrcChange;
+            public delegate* stdcall<AsyncIAdviseSink2*, void> Finish_OnLinkSrcChange;
         }
     }
 }

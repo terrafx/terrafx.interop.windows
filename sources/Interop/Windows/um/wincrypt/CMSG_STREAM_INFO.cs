@@ -3,8 +3,6 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct CMSG_STREAM_INFO
@@ -13,7 +11,7 @@ namespace TerraFX.Interop
         public uint cbContent;
 
         [NativeTypeName("PFN_CMSG_STREAM_OUTPUT")]
-        public IntPtr pfnStreamOutput;
+        public delegate* stdcall<void*, byte*, uint, int, int> pfnStreamOutput;
 
         [NativeTypeName("void *")]
         public void* pvArg;

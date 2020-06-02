@@ -6,7 +6,6 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using InteropMarshal = System.Runtime.InteropServices.Marshal;
 
 namespace TerraFX.Interop
 {
@@ -15,98 +14,70 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ITypeMarshal* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ITypeMarshal* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ITypeMarshal* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Size(ITypeMarshal* pThis, [NativeTypeName("PVOID")] void* pvType, [NativeTypeName("DWORD")] uint dwDestContext, [NativeTypeName("PVOID")] void* pvDestContext, [NativeTypeName("ULONG *")] uint* pSize);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Marshal(ITypeMarshal* pThis, [NativeTypeName("PVOID")] void* pvType, [NativeTypeName("DWORD")] uint dwDestContext, [NativeTypeName("PVOID")] void* pvDestContext, [NativeTypeName("ULONG")] uint cbBufferLength, [NativeTypeName("BYTE *")] byte* pBuffer, [NativeTypeName("ULONG *")] uint* pcbWritten);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Unmarshal(ITypeMarshal* pThis, [NativeTypeName("PVOID")] void* pvType, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG")] uint cbBufferLength, [NativeTypeName("BYTE *")] byte* pBuffer, [NativeTypeName("ULONG *")] uint* pcbRead);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Free(ITypeMarshal* pThis, [NativeTypeName("PVOID")] void* pvType);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return InteropMarshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ITypeMarshal*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((ITypeMarshal*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return InteropMarshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ITypeMarshal*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((ITypeMarshal*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return InteropMarshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ITypeMarshal*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((ITypeMarshal*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Size([NativeTypeName("PVOID")] void* pvType, [NativeTypeName("DWORD")] uint dwDestContext, [NativeTypeName("PVOID")] void* pvDestContext, [NativeTypeName("ULONG *")] uint* pSize)
         {
-            return InteropMarshal.GetDelegateForFunctionPointer<_Size>(lpVtbl->Size)((ITypeMarshal*)Unsafe.AsPointer(ref this), pvType, dwDestContext, pvDestContext, pSize);
+            return lpVtbl->Size((ITypeMarshal*)Unsafe.AsPointer(ref this), pvType, dwDestContext, pvDestContext, pSize);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Marshal([NativeTypeName("PVOID")] void* pvType, [NativeTypeName("DWORD")] uint dwDestContext, [NativeTypeName("PVOID")] void* pvDestContext, [NativeTypeName("ULONG")] uint cbBufferLength, [NativeTypeName("BYTE *")] byte* pBuffer, [NativeTypeName("ULONG *")] uint* pcbWritten)
         {
-            return InteropMarshal.GetDelegateForFunctionPointer<_Marshal>(lpVtbl->Marshal)((ITypeMarshal*)Unsafe.AsPointer(ref this), pvType, dwDestContext, pvDestContext, cbBufferLength, pBuffer, pcbWritten);
+            return lpVtbl->Marshal((ITypeMarshal*)Unsafe.AsPointer(ref this), pvType, dwDestContext, pvDestContext, cbBufferLength, pBuffer, pcbWritten);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Unmarshal([NativeTypeName("PVOID")] void* pvType, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG")] uint cbBufferLength, [NativeTypeName("BYTE *")] byte* pBuffer, [NativeTypeName("ULONG *")] uint* pcbRead)
         {
-            return InteropMarshal.GetDelegateForFunctionPointer<_Unmarshal>(lpVtbl->Unmarshal)((ITypeMarshal*)Unsafe.AsPointer(ref this), pvType, dwFlags, cbBufferLength, pBuffer, pcbRead);
+            return lpVtbl->Unmarshal((ITypeMarshal*)Unsafe.AsPointer(ref this), pvType, dwFlags, cbBufferLength, pBuffer, pcbRead);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Free([NativeTypeName("PVOID")] void* pvType)
         {
-            return InteropMarshal.GetDelegateForFunctionPointer<_Free>(lpVtbl->Free)((ITypeMarshal*)Unsafe.AsPointer(ref this), pvType);
+            return lpVtbl->Free((ITypeMarshal*)Unsafe.AsPointer(ref this), pvType);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<ITypeMarshal*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<ITypeMarshal*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<ITypeMarshal*, uint> Release;
 
             [NativeTypeName("HRESULT (PVOID, DWORD, PVOID, ULONG *) __attribute__((stdcall))")]
-            public IntPtr Size;
+            public delegate* stdcall<ITypeMarshal*, void*, uint, void*, uint*, int> Size;
 
             [NativeTypeName("HRESULT (PVOID, DWORD, PVOID, ULONG, BYTE *, ULONG *) __attribute__((stdcall))")]
-            public IntPtr Marshal;
+            public delegate* stdcall<ITypeMarshal*, void*, uint, void*, uint, byte*, uint*, int> Marshal;
 
             [NativeTypeName("HRESULT (PVOID, DWORD, ULONG, BYTE *, ULONG *) __attribute__((stdcall))")]
-            public IntPtr Unmarshal;
+            public delegate* stdcall<ITypeMarshal*, void*, uint, uint, byte*, uint*, int> Unmarshal;
 
             [NativeTypeName("HRESULT (PVOID) __attribute__((stdcall))")]
-            public IntPtr Free;
+            public delegate* stdcall<ITypeMarshal*, void*, int> Free;
         }
     }
 }

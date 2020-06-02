@@ -13,84 +13,63 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _OnVoiceProcessingPassStart(IXAudio2VoiceCallback* pThis, [NativeTypeName("UINT32")] uint BytesRequired);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _OnVoiceProcessingPassEnd(IXAudio2VoiceCallback* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _OnStreamEnd(IXAudio2VoiceCallback* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _OnBufferStart(IXAudio2VoiceCallback* pThis, [NativeTypeName("void *")] void* pBufferContext);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _OnBufferEnd(IXAudio2VoiceCallback* pThis, [NativeTypeName("void *")] void* pBufferContext);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _OnLoopEnd(IXAudio2VoiceCallback* pThis, [NativeTypeName("void *")] void* pBufferContext);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _OnVoiceError(IXAudio2VoiceCallback* pThis, [NativeTypeName("void *")] void* pBufferContext, [NativeTypeName("HRESULT")] int Error);
-
         public void OnVoiceProcessingPassStart([NativeTypeName("UINT32")] uint BytesRequired)
         {
-            Marshal.GetDelegateForFunctionPointer<_OnVoiceProcessingPassStart>(lpVtbl->OnVoiceProcessingPassStart)((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), BytesRequired);
+            lpVtbl->OnVoiceProcessingPassStart((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), BytesRequired);
         }
 
         public void OnVoiceProcessingPassEnd()
         {
-            Marshal.GetDelegateForFunctionPointer<_OnVoiceProcessingPassEnd>(lpVtbl->OnVoiceProcessingPassEnd)((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this));
+            lpVtbl->OnVoiceProcessingPassEnd((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this));
         }
 
         public void OnStreamEnd()
         {
-            Marshal.GetDelegateForFunctionPointer<_OnStreamEnd>(lpVtbl->OnStreamEnd)((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this));
+            lpVtbl->OnStreamEnd((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this));
         }
 
         public void OnBufferStart([NativeTypeName("void *")] void* pBufferContext)
         {
-            Marshal.GetDelegateForFunctionPointer<_OnBufferStart>(lpVtbl->OnBufferStart)((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext);
+            lpVtbl->OnBufferStart((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext);
         }
 
         public void OnBufferEnd([NativeTypeName("void *")] void* pBufferContext)
         {
-            Marshal.GetDelegateForFunctionPointer<_OnBufferEnd>(lpVtbl->OnBufferEnd)((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext);
+            lpVtbl->OnBufferEnd((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext);
         }
 
         public void OnLoopEnd([NativeTypeName("void *")] void* pBufferContext)
         {
-            Marshal.GetDelegateForFunctionPointer<_OnLoopEnd>(lpVtbl->OnLoopEnd)((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext);
+            lpVtbl->OnLoopEnd((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext);
         }
 
         public void OnVoiceError([NativeTypeName("void *")] void* pBufferContext, [NativeTypeName("HRESULT")] int Error)
         {
-            Marshal.GetDelegateForFunctionPointer<_OnVoiceError>(lpVtbl->OnVoiceError)((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext, Error);
+            lpVtbl->OnVoiceError((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext, Error);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("void (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr OnVoiceProcessingPassStart;
+            public delegate* stdcall<IXAudio2VoiceCallback*, uint, void> OnVoiceProcessingPassStart;
 
             [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr OnVoiceProcessingPassEnd;
+            public delegate* stdcall<IXAudio2VoiceCallback*, void> OnVoiceProcessingPassEnd;
 
             [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr OnStreamEnd;
+            public delegate* stdcall<IXAudio2VoiceCallback*, void> OnStreamEnd;
 
             [NativeTypeName("void (void *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr OnBufferStart;
+            public delegate* stdcall<IXAudio2VoiceCallback*, void*, void> OnBufferStart;
 
             [NativeTypeName("void (void *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr OnBufferEnd;
+            public delegate* stdcall<IXAudio2VoiceCallback*, void*, void> OnBufferEnd;
 
             [NativeTypeName("void (void *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr OnLoopEnd;
+            public delegate* stdcall<IXAudio2VoiceCallback*, void*, void> OnLoopEnd;
 
             [NativeTypeName("void (void *, HRESULT) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr OnVoiceError;
+            public delegate* stdcall<IXAudio2VoiceCallback*, void*, int, void> OnVoiceError;
         }
     }
 }

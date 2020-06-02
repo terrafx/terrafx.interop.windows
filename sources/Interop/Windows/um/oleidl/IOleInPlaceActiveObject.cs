@@ -14,137 +14,97 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IOleInPlaceActiveObject* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IOleInPlaceActiveObject* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IOleInPlaceActiveObject* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetWindow(IOleInPlaceActiveObject* pThis, [NativeTypeName("HWND *")] IntPtr* phwnd);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _ContextSensitiveHelp(IOleInPlaceActiveObject* pThis, [NativeTypeName("BOOL")] int fEnterMode);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _TranslateAcceleratorA(IOleInPlaceActiveObject* pThis, [NativeTypeName("LPMSG")] MSG* lpmsg);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _OnFrameWindowActivate(IOleInPlaceActiveObject* pThis, [NativeTypeName("BOOL")] int fActivate);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _OnDocWindowActivate(IOleInPlaceActiveObject* pThis, [NativeTypeName("BOOL")] int fActivate);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _ResizeBorder(IOleInPlaceActiveObject* pThis, [NativeTypeName("LPCRECT")] RECT* prcBorder, [NativeTypeName("IOleInPlaceUIWindow *")] IOleInPlaceUIWindow* pUIWindow, [NativeTypeName("BOOL")] int fFrameWindow);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _EnableModeless(IOleInPlaceActiveObject* pThis, [NativeTypeName("BOOL")] int fEnable);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetWindow([NativeTypeName("HWND *")] IntPtr* phwnd)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetWindow>(lpVtbl->GetWindow)((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), phwnd);
+            return lpVtbl->GetWindow((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), phwnd);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ContextSensitiveHelp([NativeTypeName("BOOL")] int fEnterMode)
         {
-            return Marshal.GetDelegateForFunctionPointer<_ContextSensitiveHelp>(lpVtbl->ContextSensitiveHelp)((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), fEnterMode);
+            return lpVtbl->ContextSensitiveHelp((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), fEnterMode);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int TranslateAcceleratorA([NativeTypeName("LPMSG")] MSG* lpmsg)
         {
-            return Marshal.GetDelegateForFunctionPointer<_TranslateAcceleratorA>(lpVtbl->TranslateAcceleratorA)((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), lpmsg);
+            return lpVtbl->TranslateAcceleratorA((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), lpmsg);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int OnFrameWindowActivate([NativeTypeName("BOOL")] int fActivate)
         {
-            return Marshal.GetDelegateForFunctionPointer<_OnFrameWindowActivate>(lpVtbl->OnFrameWindowActivate)((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), fActivate);
+            return lpVtbl->OnFrameWindowActivate((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), fActivate);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int OnDocWindowActivate([NativeTypeName("BOOL")] int fActivate)
         {
-            return Marshal.GetDelegateForFunctionPointer<_OnDocWindowActivate>(lpVtbl->OnDocWindowActivate)((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), fActivate);
+            return lpVtbl->OnDocWindowActivate((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), fActivate);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ResizeBorder([NativeTypeName("LPCRECT")] RECT* prcBorder, [NativeTypeName("IOleInPlaceUIWindow *")] IOleInPlaceUIWindow* pUIWindow, [NativeTypeName("BOOL")] int fFrameWindow)
         {
-            return Marshal.GetDelegateForFunctionPointer<_ResizeBorder>(lpVtbl->ResizeBorder)((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), prcBorder, pUIWindow, fFrameWindow);
+            return lpVtbl->ResizeBorder((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), prcBorder, pUIWindow, fFrameWindow);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int EnableModeless([NativeTypeName("BOOL")] int fEnable)
         {
-            return Marshal.GetDelegateForFunctionPointer<_EnableModeless>(lpVtbl->EnableModeless)((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), fEnable);
+            return lpVtbl->EnableModeless((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), fEnable);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IOleInPlaceActiveObject*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IOleInPlaceActiveObject*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IOleInPlaceActiveObject*, uint> Release;
 
             [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-            public IntPtr GetWindow;
+            public delegate* stdcall<IOleInPlaceActiveObject*, IntPtr*, int> GetWindow;
 
             [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public IntPtr ContextSensitiveHelp;
+            public delegate* stdcall<IOleInPlaceActiveObject*, int, int> ContextSensitiveHelp;
 
             [NativeTypeName("HRESULT (LPMSG) __attribute__((stdcall))")]
-            public IntPtr TranslateAcceleratorA;
+            public delegate* stdcall<IOleInPlaceActiveObject*, MSG*, int> TranslateAcceleratorA;
 
             [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public IntPtr OnFrameWindowActivate;
+            public delegate* stdcall<IOleInPlaceActiveObject*, int, int> OnFrameWindowActivate;
 
             [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public IntPtr OnDocWindowActivate;
+            public delegate* stdcall<IOleInPlaceActiveObject*, int, int> OnDocWindowActivate;
 
             [NativeTypeName("HRESULT (LPCRECT, IOleInPlaceUIWindow *, BOOL) __attribute__((stdcall))")]
-            public IntPtr ResizeBorder;
+            public delegate* stdcall<IOleInPlaceActiveObject*, RECT*, IOleInPlaceUIWindow*, int, int> ResizeBorder;
 
             [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public IntPtr EnableModeless;
+            public delegate* stdcall<IOleInPlaceActiveObject*, int, int> EnableModeless;
         }
     }
 }

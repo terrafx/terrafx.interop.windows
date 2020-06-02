@@ -14,150 +14,106 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ITypeLibRegistration* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ITypeLibRegistration* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ITypeLibRegistration* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetGuid(ITypeLibRegistration* pThis, [NativeTypeName("GUID *")] Guid* pGuid);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetVersion(ITypeLibRegistration* pThis, [NativeTypeName("BSTR *")] ushort** pVersion);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLcid(ITypeLibRegistration* pThis, [NativeTypeName("LCID *")] uint* pLcid);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetWin32Path(ITypeLibRegistration* pThis, [NativeTypeName("BSTR *")] ushort** pWin32Path);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetWin64Path(ITypeLibRegistration* pThis, [NativeTypeName("BSTR *")] ushort** pWin64Path);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDisplayName(ITypeLibRegistration* pThis, [NativeTypeName("BSTR *")] ushort** pDisplayName);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFlags(ITypeLibRegistration* pThis, [NativeTypeName("DWORD *")] uint* pFlags);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetHelpDir(ITypeLibRegistration* pThis, [NativeTypeName("BSTR *")] ushort** pHelpDir);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ITypeLibRegistration*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((ITypeLibRegistration*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ITypeLibRegistration*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((ITypeLibRegistration*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ITypeLibRegistration*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((ITypeLibRegistration*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetGuid([NativeTypeName("GUID *")] Guid* pGuid)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetGuid>(lpVtbl->GetGuid)((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pGuid);
+            return lpVtbl->GetGuid((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pGuid);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetVersion([NativeTypeName("BSTR *")] ushort** pVersion)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetVersion>(lpVtbl->GetVersion)((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pVersion);
+            return lpVtbl->GetVersion((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pVersion);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetLcid([NativeTypeName("LCID *")] uint* pLcid)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetLcid>(lpVtbl->GetLcid)((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pLcid);
+            return lpVtbl->GetLcid((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pLcid);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetWin32Path([NativeTypeName("BSTR *")] ushort** pWin32Path)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetWin32Path>(lpVtbl->GetWin32Path)((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pWin32Path);
+            return lpVtbl->GetWin32Path((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pWin32Path);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetWin64Path([NativeTypeName("BSTR *")] ushort** pWin64Path)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetWin64Path>(lpVtbl->GetWin64Path)((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pWin64Path);
+            return lpVtbl->GetWin64Path((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pWin64Path);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDisplayName([NativeTypeName("BSTR *")] ushort** pDisplayName)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetDisplayName>(lpVtbl->GetDisplayName)((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pDisplayName);
+            return lpVtbl->GetDisplayName((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pDisplayName);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetFlags([NativeTypeName("DWORD *")] uint* pFlags)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetFlags>(lpVtbl->GetFlags)((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pFlags);
+            return lpVtbl->GetFlags((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pFlags);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetHelpDir([NativeTypeName("BSTR *")] ushort** pHelpDir)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetHelpDir>(lpVtbl->GetHelpDir)((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pHelpDir);
+            return lpVtbl->GetHelpDir((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pHelpDir);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<ITypeLibRegistration*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<ITypeLibRegistration*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<ITypeLibRegistration*, uint> Release;
 
             [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-            public IntPtr GetGuid;
+            public delegate* stdcall<ITypeLibRegistration*, Guid*, int> GetGuid;
 
             [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public IntPtr GetVersion;
+            public delegate* stdcall<ITypeLibRegistration*, ushort**, int> GetVersion;
 
             [NativeTypeName("HRESULT (LCID *) __attribute__((stdcall))")]
-            public IntPtr GetLcid;
+            public delegate* stdcall<ITypeLibRegistration*, uint*, int> GetLcid;
 
             [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public IntPtr GetWin32Path;
+            public delegate* stdcall<ITypeLibRegistration*, ushort**, int> GetWin32Path;
 
             [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public IntPtr GetWin64Path;
+            public delegate* stdcall<ITypeLibRegistration*, ushort**, int> GetWin64Path;
 
             [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public IntPtr GetDisplayName;
+            public delegate* stdcall<ITypeLibRegistration*, ushort**, int> GetDisplayName;
 
             [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public IntPtr GetFlags;
+            public delegate* stdcall<ITypeLibRegistration*, uint*, int> GetFlags;
 
             [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public IntPtr GetHelpDir;
+            public delegate* stdcall<ITypeLibRegistration*, ushort**, int> GetHelpDir;
         }
     }
 }

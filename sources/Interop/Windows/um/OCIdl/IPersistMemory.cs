@@ -14,124 +14,88 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IPersistMemory* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IPersistMemory* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IPersistMemory* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetClassID(IPersistMemory* pThis, [NativeTypeName("CLSID *")] Guid* pClassID);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _IsDirty(IPersistMemory* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Load(IPersistMemory* pThis, [NativeTypeName("LPVOID")] void* pMem, [NativeTypeName("ULONG")] uint cbSize);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Save(IPersistMemory* pThis, [NativeTypeName("LPVOID")] void* pMem, [NativeTypeName("BOOL")] int fClearDirty, [NativeTypeName("ULONG")] uint cbSize);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetSizeMax(IPersistMemory* pThis, [NativeTypeName("ULONG *")] uint* pCbSize);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _InitNew(IPersistMemory* pThis);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IPersistMemory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IPersistMemory*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IPersistMemory*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IPersistMemory*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IPersistMemory*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IPersistMemory*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetClassID>(lpVtbl->GetClassID)((IPersistMemory*)Unsafe.AsPointer(ref this), pClassID);
+            return lpVtbl->GetClassID((IPersistMemory*)Unsafe.AsPointer(ref this), pClassID);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int IsDirty()
         {
-            return Marshal.GetDelegateForFunctionPointer<_IsDirty>(lpVtbl->IsDirty)((IPersistMemory*)Unsafe.AsPointer(ref this));
+            return lpVtbl->IsDirty((IPersistMemory*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Load([NativeTypeName("LPVOID")] void* pMem, [NativeTypeName("ULONG")] uint cbSize)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Load>(lpVtbl->Load)((IPersistMemory*)Unsafe.AsPointer(ref this), pMem, cbSize);
+            return lpVtbl->Load((IPersistMemory*)Unsafe.AsPointer(ref this), pMem, cbSize);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Save([NativeTypeName("LPVOID")] void* pMem, [NativeTypeName("BOOL")] int fClearDirty, [NativeTypeName("ULONG")] uint cbSize)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Save>(lpVtbl->Save)((IPersistMemory*)Unsafe.AsPointer(ref this), pMem, fClearDirty, cbSize);
+            return lpVtbl->Save((IPersistMemory*)Unsafe.AsPointer(ref this), pMem, fClearDirty, cbSize);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetSizeMax([NativeTypeName("ULONG *")] uint* pCbSize)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetSizeMax>(lpVtbl->GetSizeMax)((IPersistMemory*)Unsafe.AsPointer(ref this), pCbSize);
+            return lpVtbl->GetSizeMax((IPersistMemory*)Unsafe.AsPointer(ref this), pCbSize);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int InitNew()
         {
-            return Marshal.GetDelegateForFunctionPointer<_InitNew>(lpVtbl->InitNew)((IPersistMemory*)Unsafe.AsPointer(ref this));
+            return lpVtbl->InitNew((IPersistMemory*)Unsafe.AsPointer(ref this));
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IPersistMemory*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IPersistMemory*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IPersistMemory*, uint> Release;
 
             [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-            public IntPtr GetClassID;
+            public delegate* stdcall<IPersistMemory*, Guid*, int> GetClassID;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr IsDirty;
+            public delegate* stdcall<IPersistMemory*, int> IsDirty;
 
             [NativeTypeName("HRESULT (LPVOID, ULONG) __attribute__((stdcall))")]
-            public IntPtr Load;
+            public delegate* stdcall<IPersistMemory*, void*, uint, int> Load;
 
             [NativeTypeName("HRESULT (LPVOID, BOOL, ULONG) __attribute__((stdcall))")]
-            public IntPtr Save;
+            public delegate* stdcall<IPersistMemory*, void*, int, uint, int> Save;
 
             [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-            public IntPtr GetSizeMax;
+            public delegate* stdcall<IPersistMemory*, uint*, int> GetSizeMax;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr InitNew;
+            public delegate* stdcall<IPersistMemory*, int> InitNew;
         }
     }
 }

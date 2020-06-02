@@ -3,8 +3,6 @@
 // Ported from um/d2d1effectauthor.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct D2D1_PROPERTY_BINDING
@@ -13,9 +11,9 @@ namespace TerraFX.Interop
         public ushort* propertyName;
 
         [NativeTypeName("PD2D1_PROPERTY_SET_FUNCTION")]
-        public IntPtr setFunction;
+        public delegate* stdcall<IUnknown*, byte*, uint, int> setFunction;
 
         [NativeTypeName("PD2D1_PROPERTY_GET_FUNCTION")]
-        public IntPtr getFunction;
+        public delegate* stdcall<IUnknown*, byte*, uint, uint*, int> getFunction;
     }
 }

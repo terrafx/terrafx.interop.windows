@@ -14,70 +14,51 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ID2D1TessellationSink* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ID2D1TessellationSink* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ID2D1TessellationSink* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _AddTriangles(ID2D1TessellationSink* pThis, [NativeTypeName("const D2D1_TRIANGLE *")] D2D1_TRIANGLE* triangles, [NativeTypeName("UINT32")] uint trianglesCount);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Close(ID2D1TessellationSink* pThis);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ID2D1TessellationSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((ID2D1TessellationSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ID2D1TessellationSink*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((ID2D1TessellationSink*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ID2D1TessellationSink*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((ID2D1TessellationSink*)Unsafe.AsPointer(ref this));
         }
 
         public void AddTriangles([NativeTypeName("const D2D1_TRIANGLE *")] D2D1_TRIANGLE* triangles, [NativeTypeName("UINT32")] uint trianglesCount)
         {
-            Marshal.GetDelegateForFunctionPointer<_AddTriangles>(lpVtbl->AddTriangles)((ID2D1TessellationSink*)Unsafe.AsPointer(ref this), triangles, trianglesCount);
+            lpVtbl->AddTriangles((ID2D1TessellationSink*)Unsafe.AsPointer(ref this), triangles, trianglesCount);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Close()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Close>(lpVtbl->Close)((ID2D1TessellationSink*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Close((ID2D1TessellationSink*)Unsafe.AsPointer(ref this));
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<ID2D1TessellationSink*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<ID2D1TessellationSink*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<ID2D1TessellationSink*, uint> Release;
 
             [NativeTypeName("void (const D2D1_TRIANGLE *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr AddTriangles;
+            public delegate* stdcall<ID2D1TessellationSink*, D2D1_TRIANGLE*, uint, void> AddTriangles;
 
             [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr Close;
+            public delegate* stdcall<ID2D1TessellationSink*, int> Close;
         }
     }
 }

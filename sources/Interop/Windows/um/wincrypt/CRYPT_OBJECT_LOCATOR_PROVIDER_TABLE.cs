@@ -3,28 +3,26 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
-    public partial struct CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE
+    public unsafe partial struct CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE
     {
         [NativeTypeName("DWORD")]
         public uint cbSize;
 
         [NativeTypeName("PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_GET")]
-        public IntPtr pfnGet;
+        public delegate* stdcall<void*, CRYPTOAPI_BLOB*, uint, CRYPTOAPI_BLOB*, byte**, uint*, ushort**, CRYPTOAPI_BLOB**, int> pfnGet;
 
         [NativeTypeName("PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_RELEASE")]
-        public IntPtr pfnRelease;
+        public delegate* stdcall<uint, void*, void> pfnRelease;
 
         [NativeTypeName("PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE_PASSWORD")]
-        public IntPtr pfnFreePassword;
+        public delegate* stdcall<void*, ushort*, void> pfnFreePassword;
 
         [NativeTypeName("PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE")]
-        public IntPtr pfnFree;
+        public delegate* stdcall<void*, byte*, void> pfnFree;
 
         [NativeTypeName("PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE_IDENTIFIER")]
-        public IntPtr pfnFreeIdentifier;
+        public delegate* stdcall<void*, CRYPTOAPI_BLOB*, void> pfnFreeIdentifier;
     }
 }

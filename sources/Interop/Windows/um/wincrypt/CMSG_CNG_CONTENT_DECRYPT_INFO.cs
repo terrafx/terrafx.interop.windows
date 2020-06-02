@@ -3,8 +3,6 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct CMSG_CNG_CONTENT_DECRYPT_INFO
@@ -15,10 +13,10 @@ namespace TerraFX.Interop
         public CRYPT_ALGORITHM_IDENTIFIER ContentEncryptionAlgorithm;
 
         [NativeTypeName("PFN_CMSG_ALLOC")]
-        public IntPtr pfnAlloc;
+        public delegate* stdcall<nuint, void*> pfnAlloc;
 
         [NativeTypeName("PFN_CMSG_FREE")]
-        public IntPtr pfnFree;
+        public delegate* stdcall<void*, void> pfnFree;
 
         [NativeTypeName("NCRYPT_KEY_HANDLE")]
         public nuint hNCryptKey;

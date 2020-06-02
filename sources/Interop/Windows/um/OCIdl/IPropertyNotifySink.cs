@@ -14,72 +14,52 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IPropertyNotifySink* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IPropertyNotifySink* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IPropertyNotifySink* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _OnChanged(IPropertyNotifySink* pThis, [NativeTypeName("DISPID")] int dispID);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _OnRequestEdit(IPropertyNotifySink* pThis, [NativeTypeName("DISPID")] int dispID);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IPropertyNotifySink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IPropertyNotifySink*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IPropertyNotifySink*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IPropertyNotifySink*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IPropertyNotifySink*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IPropertyNotifySink*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int OnChanged([NativeTypeName("DISPID")] int dispID)
         {
-            return Marshal.GetDelegateForFunctionPointer<_OnChanged>(lpVtbl->OnChanged)((IPropertyNotifySink*)Unsafe.AsPointer(ref this), dispID);
+            return lpVtbl->OnChanged((IPropertyNotifySink*)Unsafe.AsPointer(ref this), dispID);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int OnRequestEdit([NativeTypeName("DISPID")] int dispID)
         {
-            return Marshal.GetDelegateForFunctionPointer<_OnRequestEdit>(lpVtbl->OnRequestEdit)((IPropertyNotifySink*)Unsafe.AsPointer(ref this), dispID);
+            return lpVtbl->OnRequestEdit((IPropertyNotifySink*)Unsafe.AsPointer(ref this), dispID);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IPropertyNotifySink*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IPropertyNotifySink*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IPropertyNotifySink*, uint> Release;
 
             [NativeTypeName("HRESULT (DISPID) __attribute__((stdcall))")]
-            public IntPtr OnChanged;
+            public delegate* stdcall<IPropertyNotifySink*, int, int> OnChanged;
 
             [NativeTypeName("HRESULT (DISPID) __attribute__((stdcall))")]
-            public IntPtr OnRequestEdit;
+            public delegate* stdcall<IPropertyNotifySink*, int, int> OnRequestEdit;
         }
     }
 }

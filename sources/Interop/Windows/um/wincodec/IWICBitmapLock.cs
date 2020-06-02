@@ -14,98 +14,70 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IWICBitmapLock* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IWICBitmapLock* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IWICBitmapLock* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetSize(IWICBitmapLock* pThis, [NativeTypeName("UINT *")] uint* puiWidth, [NativeTypeName("UINT *")] uint* puiHeight);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetStride(IWICBitmapLock* pThis, [NativeTypeName("UINT *")] uint* pcbStride);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDataPointer(IWICBitmapLock* pThis, [NativeTypeName("UINT *")] uint* pcbBufferSize, [NativeTypeName("WICInProcPointer *")] byte** ppbData);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPixelFormat(IWICBitmapLock* pThis, [NativeTypeName("WICPixelFormatGUID *")] Guid* pPixelFormat);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IWICBitmapLock*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IWICBitmapLock*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IWICBitmapLock*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IWICBitmapLock*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IWICBitmapLock*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IWICBitmapLock*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetSize([NativeTypeName("UINT *")] uint* puiWidth, [NativeTypeName("UINT *")] uint* puiHeight)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetSize>(lpVtbl->GetSize)((IWICBitmapLock*)Unsafe.AsPointer(ref this), puiWidth, puiHeight);
+            return lpVtbl->GetSize((IWICBitmapLock*)Unsafe.AsPointer(ref this), puiWidth, puiHeight);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetStride([NativeTypeName("UINT *")] uint* pcbStride)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetStride>(lpVtbl->GetStride)((IWICBitmapLock*)Unsafe.AsPointer(ref this), pcbStride);
+            return lpVtbl->GetStride((IWICBitmapLock*)Unsafe.AsPointer(ref this), pcbStride);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDataPointer([NativeTypeName("UINT *")] uint* pcbBufferSize, [NativeTypeName("WICInProcPointer *")] byte** ppbData)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetDataPointer>(lpVtbl->GetDataPointer)((IWICBitmapLock*)Unsafe.AsPointer(ref this), pcbBufferSize, ppbData);
+            return lpVtbl->GetDataPointer((IWICBitmapLock*)Unsafe.AsPointer(ref this), pcbBufferSize, ppbData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPixelFormat([NativeTypeName("WICPixelFormatGUID *")] Guid* pPixelFormat)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetPixelFormat>(lpVtbl->GetPixelFormat)((IWICBitmapLock*)Unsafe.AsPointer(ref this), pPixelFormat);
+            return lpVtbl->GetPixelFormat((IWICBitmapLock*)Unsafe.AsPointer(ref this), pPixelFormat);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IWICBitmapLock*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IWICBitmapLock*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IWICBitmapLock*, uint> Release;
 
             [NativeTypeName("HRESULT (UINT *, UINT *) __attribute__((stdcall))")]
-            public IntPtr GetSize;
+            public delegate* stdcall<IWICBitmapLock*, uint*, uint*, int> GetSize;
 
             [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public IntPtr GetStride;
+            public delegate* stdcall<IWICBitmapLock*, uint*, int> GetStride;
 
             [NativeTypeName("HRESULT (UINT *, WICInProcPointer *) __attribute__((stdcall))")]
-            public IntPtr GetDataPointer;
+            public delegate* stdcall<IWICBitmapLock*, uint*, byte**, int> GetDataPointer;
 
             [NativeTypeName("HRESULT (WICPixelFormatGUID *) __attribute__((stdcall))")]
-            public IntPtr GetPixelFormat;
+            public delegate* stdcall<IWICBitmapLock*, Guid*, int> GetPixelFormat;
         }
     }
 }

@@ -14,96 +14,69 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ID3D12StateObjectProperties* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ID3D12StateObjectProperties* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ID3D12StateObjectProperties* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("void *")]
-        public delegate void* _GetShaderIdentifier(ID3D12StateObjectProperties* pThis, [NativeTypeName("LPCWSTR")] ushort* pExportName);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("UINT64")]
-        public delegate ulong _GetShaderStackSize(ID3D12StateObjectProperties* pThis, [NativeTypeName("LPCWSTR")] ushort* pExportName);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("UINT64")]
-        public delegate ulong _GetPipelineStackSize(ID3D12StateObjectProperties* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _SetPipelineStackSize(ID3D12StateObjectProperties* pThis, [NativeTypeName("UINT64")] ulong PipelineStackSizeInBytes);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("void *")]
         public void* GetShaderIdentifier([NativeTypeName("LPCWSTR")] ushort* pExportName)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetShaderIdentifier>(lpVtbl->GetShaderIdentifier)((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this), pExportName);
+            return lpVtbl->GetShaderIdentifier((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this), pExportName);
         }
 
         [return: NativeTypeName("UINT64")]
         public ulong GetShaderStackSize([NativeTypeName("LPCWSTR")] ushort* pExportName)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetShaderStackSize>(lpVtbl->GetShaderStackSize)((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this), pExportName);
+            return lpVtbl->GetShaderStackSize((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this), pExportName);
         }
 
         [return: NativeTypeName("UINT64")]
         public ulong GetPipelineStackSize()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetPipelineStackSize>(lpVtbl->GetPipelineStackSize)((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetPipelineStackSize((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this));
         }
 
         public void SetPipelineStackSize([NativeTypeName("UINT64")] ulong PipelineStackSizeInBytes)
         {
-            Marshal.GetDelegateForFunctionPointer<_SetPipelineStackSize>(lpVtbl->SetPipelineStackSize)((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this), PipelineStackSizeInBytes);
+            lpVtbl->SetPipelineStackSize((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this), PipelineStackSizeInBytes);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<ID3D12StateObjectProperties*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<ID3D12StateObjectProperties*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<ID3D12StateObjectProperties*, uint> Release;
 
             [NativeTypeName("void *(LPCWSTR) __attribute__((stdcall))")]
-            public IntPtr GetShaderIdentifier;
+            public delegate* stdcall<ID3D12StateObjectProperties*, ushort*, void*> GetShaderIdentifier;
 
             [NativeTypeName("UINT64 (LPCWSTR) __attribute__((stdcall))")]
-            public IntPtr GetShaderStackSize;
+            public delegate* stdcall<ID3D12StateObjectProperties*, ushort*, ulong> GetShaderStackSize;
 
             [NativeTypeName("UINT64 () __attribute__((stdcall))")]
-            public IntPtr GetPipelineStackSize;
+            public delegate* stdcall<ID3D12StateObjectProperties*, ulong> GetPipelineStackSize;
 
             [NativeTypeName("void (UINT64) __attribute__((stdcall))")]
-            public IntPtr SetPipelineStackSize;
+            public delegate* stdcall<ID3D12StateObjectProperties*, ulong, void> SetPipelineStackSize;
         }
     }
 }

@@ -14,111 +14,79 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDxcBlobUtf16* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDxcBlobUtf16* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDxcBlobUtf16* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("LPVOID")]
-        public delegate void* _GetBufferPointer(IDxcBlobUtf16* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("SIZE_T")]
-        public delegate nuint _GetBufferSize(IDxcBlobUtf16* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetEncoding(IDxcBlobUtf16* pThis, [NativeTypeName("BOOL *")] int* pKnown, [NativeTypeName("UINT32 *")] uint* pCodePage);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("LPCWSTR")]
-        public delegate ushort* _GetStringPointer(IDxcBlobUtf16* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("SIZE_T")]
-        public delegate nuint _GetStringLength(IDxcBlobUtf16* pThis);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDxcBlobUtf16*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IDxcBlobUtf16*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDxcBlobUtf16*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IDxcBlobUtf16*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDxcBlobUtf16*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IDxcBlobUtf16*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("LPVOID")]
         public void* GetBufferPointer()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetBufferPointer>(lpVtbl->GetBufferPointer)((IDxcBlobUtf16*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetBufferPointer((IDxcBlobUtf16*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("SIZE_T")]
         public nuint GetBufferSize()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetBufferSize>(lpVtbl->GetBufferSize)((IDxcBlobUtf16*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetBufferSize((IDxcBlobUtf16*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetEncoding([NativeTypeName("BOOL *")] int* pKnown, [NativeTypeName("UINT32 *")] uint* pCodePage)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetEncoding>(lpVtbl->GetEncoding)((IDxcBlobUtf16*)Unsafe.AsPointer(ref this), pKnown, pCodePage);
+            return lpVtbl->GetEncoding((IDxcBlobUtf16*)Unsafe.AsPointer(ref this), pKnown, pCodePage);
         }
 
         [return: NativeTypeName("LPCWSTR")]
         public ushort* GetStringPointer()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetStringPointer>(lpVtbl->GetStringPointer)((IDxcBlobUtf16*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetStringPointer((IDxcBlobUtf16*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("SIZE_T")]
         public nuint GetStringLength()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetStringLength>(lpVtbl->GetStringLength)((IDxcBlobUtf16*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetStringLength((IDxcBlobUtf16*)Unsafe.AsPointer(ref this));
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IDxcBlobUtf16*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IDxcBlobUtf16*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IDxcBlobUtf16*, uint> Release;
 
             [NativeTypeName("LPVOID () __attribute__((stdcall))")]
-            public IntPtr GetBufferPointer;
+            public delegate* stdcall<IDxcBlobUtf16*, void*> GetBufferPointer;
 
             [NativeTypeName("SIZE_T () __attribute__((stdcall))")]
-            public IntPtr GetBufferSize;
+            public delegate* stdcall<IDxcBlobUtf16*, nuint> GetBufferSize;
 
             [NativeTypeName("HRESULT (BOOL *, UINT32 *) __attribute__((stdcall))")]
-            public IntPtr GetEncoding;
+            public delegate* stdcall<IDxcBlobUtf16*, int*, uint*, int> GetEncoding;
 
             [NativeTypeName("LPCWSTR () __attribute__((stdcall))")]
-            public IntPtr GetStringPointer;
+            public delegate* stdcall<IDxcBlobUtf16*, ushort*> GetStringPointer;
 
             [NativeTypeName("SIZE_T () __attribute__((stdcall))")]
-            public IntPtr GetStringLength;
+            public delegate* stdcall<IDxcBlobUtf16*, nuint> GetStringLength;
         }
     }
 }

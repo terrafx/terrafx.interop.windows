@@ -14,81 +14,59 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ID2D1Multithread* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ID2D1Multithread* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ID2D1Multithread* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("BOOL")]
-        public delegate int _GetMultithreadProtected(ID2D1Multithread* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _Enter(ID2D1Multithread* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _Leave(ID2D1Multithread* pThis);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ID2D1Multithread*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((ID2D1Multithread*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ID2D1Multithread*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((ID2D1Multithread*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ID2D1Multithread*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((ID2D1Multithread*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("BOOL")]
         public int GetMultithreadProtected()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetMultithreadProtected>(lpVtbl->GetMultithreadProtected)((ID2D1Multithread*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetMultithreadProtected((ID2D1Multithread*)Unsafe.AsPointer(ref this));
         }
 
         public void Enter()
         {
-            Marshal.GetDelegateForFunctionPointer<_Enter>(lpVtbl->Enter)((ID2D1Multithread*)Unsafe.AsPointer(ref this));
+            lpVtbl->Enter((ID2D1Multithread*)Unsafe.AsPointer(ref this));
         }
 
         public void Leave()
         {
-            Marshal.GetDelegateForFunctionPointer<_Leave>(lpVtbl->Leave)((ID2D1Multithread*)Unsafe.AsPointer(ref this));
+            lpVtbl->Leave((ID2D1Multithread*)Unsafe.AsPointer(ref this));
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<ID2D1Multithread*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<ID2D1Multithread*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<ID2D1Multithread*, uint> Release;
 
             [NativeTypeName("BOOL () const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetMultithreadProtected;
+            public delegate* stdcall<ID2D1Multithread*, int> GetMultithreadProtected;
 
             [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr Enter;
+            public delegate* stdcall<ID2D1Multithread*, void> Enter;
 
             [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr Leave;
+            public delegate* stdcall<ID2D1Multithread*, void> Leave;
         }
     }
 }

@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public partial struct SIP_DISPATCH_INFO
+    public unsafe partial struct SIP_DISPATCH_INFO
     {
         [NativeTypeName("DWORD")]
         public uint cbSize;
@@ -16,18 +16,18 @@ namespace TerraFX.Interop
         public IntPtr hSIP;
 
         [NativeTypeName("pCryptSIPGetSignedDataMsg")]
-        public IntPtr pfGet;
+        public delegate* stdcall<SIP_SUBJECTINFO*, uint*, uint, uint*, byte*, int> pfGet;
 
         [NativeTypeName("pCryptSIPPutSignedDataMsg")]
-        public IntPtr pfPut;
+        public delegate* stdcall<SIP_SUBJECTINFO*, uint, uint*, uint, byte*, int> pfPut;
 
         [NativeTypeName("pCryptSIPCreateIndirectData")]
-        public IntPtr pfCreate;
+        public delegate* stdcall<SIP_SUBJECTINFO*, uint*, SIP_INDIRECT_DATA*, int> pfCreate;
 
         [NativeTypeName("pCryptSIPVerifyIndirectData")]
-        public IntPtr pfVerify;
+        public delegate* stdcall<SIP_SUBJECTINFO*, SIP_INDIRECT_DATA*, int> pfVerify;
 
         [NativeTypeName("pCryptSIPRemoveSignedDataMsg")]
-        public IntPtr pfRemove;
+        public delegate* stdcall<SIP_SUBJECTINFO*, uint, int> pfRemove;
     }
 }

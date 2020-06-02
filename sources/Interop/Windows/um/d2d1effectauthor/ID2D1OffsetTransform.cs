@@ -14,84 +14,61 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ID2D1OffsetTransform* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ID2D1OffsetTransform* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ID2D1OffsetTransform* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("UINT32")]
-        public delegate uint _GetInputCount(ID2D1OffsetTransform* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _SetOffset(ID2D1OffsetTransform* pThis, [NativeTypeName("D2D1_POINT_2L")] POINT offset);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("D2D1_POINT_2L")]
-        public delegate POINT* _GetOffset(ID2D1OffsetTransform* pThis, POINT* _result);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ID2D1OffsetTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((ID2D1OffsetTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ID2D1OffsetTransform*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((ID2D1OffsetTransform*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ID2D1OffsetTransform*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((ID2D1OffsetTransform*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("UINT32")]
         public uint GetInputCount()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetInputCount>(lpVtbl->GetInputCount)((ID2D1OffsetTransform*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetInputCount((ID2D1OffsetTransform*)Unsafe.AsPointer(ref this));
         }
 
         public void SetOffset([NativeTypeName("D2D1_POINT_2L")] POINT offset)
         {
-            Marshal.GetDelegateForFunctionPointer<_SetOffset>(lpVtbl->SetOffset)((ID2D1OffsetTransform*)Unsafe.AsPointer(ref this), offset);
+            lpVtbl->SetOffset((ID2D1OffsetTransform*)Unsafe.AsPointer(ref this), offset);
         }
 
         [return: NativeTypeName("D2D1_POINT_2L")]
         public POINT GetOffset()
         {
             POINT result;
-            return *Marshal.GetDelegateForFunctionPointer<_GetOffset>(lpVtbl->GetOffset)((ID2D1OffsetTransform*)Unsafe.AsPointer(ref this), &result);
+            return *lpVtbl->GetOffset((ID2D1OffsetTransform*)Unsafe.AsPointer(ref this), &result);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<ID2D1OffsetTransform*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<ID2D1OffsetTransform*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<ID2D1OffsetTransform*, uint> Release;
 
             [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetInputCount;
+            public delegate* stdcall<ID2D1OffsetTransform*, uint> GetInputCount;
 
             [NativeTypeName("void (D2D1_POINT_2L) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetOffset;
+            public delegate* stdcall<ID2D1OffsetTransform*, POINT, void> SetOffset;
 
             [NativeTypeName("D2D1_POINT_2L () const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetOffset;
+            public delegate* stdcall<ID2D1OffsetTransform*, POINT*, POINT*> GetOffset;
         }
     }
 }

@@ -14,72 +14,52 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IOleWindow* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IOleWindow* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IOleWindow* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetWindow(IOleWindow* pThis, [NativeTypeName("HWND *")] IntPtr* phwnd);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _ContextSensitiveHelp(IOleWindow* pThis, [NativeTypeName("BOOL")] int fEnterMode);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IOleWindow*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IOleWindow*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IOleWindow*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IOleWindow*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IOleWindow*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IOleWindow*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetWindow([NativeTypeName("HWND *")] IntPtr* phwnd)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetWindow>(lpVtbl->GetWindow)((IOleWindow*)Unsafe.AsPointer(ref this), phwnd);
+            return lpVtbl->GetWindow((IOleWindow*)Unsafe.AsPointer(ref this), phwnd);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ContextSensitiveHelp([NativeTypeName("BOOL")] int fEnterMode)
         {
-            return Marshal.GetDelegateForFunctionPointer<_ContextSensitiveHelp>(lpVtbl->ContextSensitiveHelp)((IOleWindow*)Unsafe.AsPointer(ref this), fEnterMode);
+            return lpVtbl->ContextSensitiveHelp((IOleWindow*)Unsafe.AsPointer(ref this), fEnterMode);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IOleWindow*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IOleWindow*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IOleWindow*, uint> Release;
 
             [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-            public IntPtr GetWindow;
+            public delegate* stdcall<IOleWindow*, IntPtr*, int> GetWindow;
 
             [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public IntPtr ContextSensitiveHelp;
+            public delegate* stdcall<IOleWindow*, int, int> ContextSensitiveHelp;
         }
     }
 }

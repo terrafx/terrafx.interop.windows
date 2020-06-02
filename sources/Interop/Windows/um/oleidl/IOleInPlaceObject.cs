@@ -14,124 +14,88 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IOleInPlaceObject* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IOleInPlaceObject* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IOleInPlaceObject* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetWindow(IOleInPlaceObject* pThis, [NativeTypeName("HWND *")] IntPtr* phwnd);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _ContextSensitiveHelp(IOleInPlaceObject* pThis, [NativeTypeName("BOOL")] int fEnterMode);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _InPlaceDeactivate(IOleInPlaceObject* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _UIDeactivate(IOleInPlaceObject* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetObjectRects(IOleInPlaceObject* pThis, [NativeTypeName("LPCRECT")] RECT* lprcPosRect, [NativeTypeName("LPCRECT")] RECT* lprcClipRect);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _ReactivateAndUndo(IOleInPlaceObject* pThis);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IOleInPlaceObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IOleInPlaceObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IOleInPlaceObject*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IOleInPlaceObject*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IOleInPlaceObject*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IOleInPlaceObject*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetWindow([NativeTypeName("HWND *")] IntPtr* phwnd)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetWindow>(lpVtbl->GetWindow)((IOleInPlaceObject*)Unsafe.AsPointer(ref this), phwnd);
+            return lpVtbl->GetWindow((IOleInPlaceObject*)Unsafe.AsPointer(ref this), phwnd);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ContextSensitiveHelp([NativeTypeName("BOOL")] int fEnterMode)
         {
-            return Marshal.GetDelegateForFunctionPointer<_ContextSensitiveHelp>(lpVtbl->ContextSensitiveHelp)((IOleInPlaceObject*)Unsafe.AsPointer(ref this), fEnterMode);
+            return lpVtbl->ContextSensitiveHelp((IOleInPlaceObject*)Unsafe.AsPointer(ref this), fEnterMode);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int InPlaceDeactivate()
         {
-            return Marshal.GetDelegateForFunctionPointer<_InPlaceDeactivate>(lpVtbl->InPlaceDeactivate)((IOleInPlaceObject*)Unsafe.AsPointer(ref this));
+            return lpVtbl->InPlaceDeactivate((IOleInPlaceObject*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int UIDeactivate()
         {
-            return Marshal.GetDelegateForFunctionPointer<_UIDeactivate>(lpVtbl->UIDeactivate)((IOleInPlaceObject*)Unsafe.AsPointer(ref this));
+            return lpVtbl->UIDeactivate((IOleInPlaceObject*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetObjectRects([NativeTypeName("LPCRECT")] RECT* lprcPosRect, [NativeTypeName("LPCRECT")] RECT* lprcClipRect)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetObjectRects>(lpVtbl->SetObjectRects)((IOleInPlaceObject*)Unsafe.AsPointer(ref this), lprcPosRect, lprcClipRect);
+            return lpVtbl->SetObjectRects((IOleInPlaceObject*)Unsafe.AsPointer(ref this), lprcPosRect, lprcClipRect);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ReactivateAndUndo()
         {
-            return Marshal.GetDelegateForFunctionPointer<_ReactivateAndUndo>(lpVtbl->ReactivateAndUndo)((IOleInPlaceObject*)Unsafe.AsPointer(ref this));
+            return lpVtbl->ReactivateAndUndo((IOleInPlaceObject*)Unsafe.AsPointer(ref this));
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IOleInPlaceObject*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IOleInPlaceObject*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IOleInPlaceObject*, uint> Release;
 
             [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-            public IntPtr GetWindow;
+            public delegate* stdcall<IOleInPlaceObject*, IntPtr*, int> GetWindow;
 
             [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public IntPtr ContextSensitiveHelp;
+            public delegate* stdcall<IOleInPlaceObject*, int, int> ContextSensitiveHelp;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr InPlaceDeactivate;
+            public delegate* stdcall<IOleInPlaceObject*, int> InPlaceDeactivate;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr UIDeactivate;
+            public delegate* stdcall<IOleInPlaceObject*, int> UIDeactivate;
 
             [NativeTypeName("HRESULT (LPCRECT, LPCRECT) __attribute__((stdcall))")]
-            public IntPtr SetObjectRects;
+            public delegate* stdcall<IOleInPlaceObject*, RECT*, RECT*, int> SetObjectRects;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr ReactivateAndUndo;
+            public delegate* stdcall<IOleInPlaceObject*, int> ReactivateAndUndo;
         }
     }
 }

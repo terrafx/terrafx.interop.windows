@@ -14,85 +14,61 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ID2D1EffectImpl* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ID2D1EffectImpl* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ID2D1EffectImpl* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Initialize(ID2D1EffectImpl* pThis, [NativeTypeName("ID2D1EffectContext *")] ID2D1EffectContext* effectContext, [NativeTypeName("ID2D1TransformGraph *")] ID2D1TransformGraph* transformGraph);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _PrepareForRender(ID2D1EffectImpl* pThis, D2D1_CHANGE_TYPE changeType);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetGraph(ID2D1EffectImpl* pThis, [NativeTypeName("ID2D1TransformGraph *")] ID2D1TransformGraph* transformGraph);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ID2D1EffectImpl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((ID2D1EffectImpl*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ID2D1EffectImpl*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((ID2D1EffectImpl*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ID2D1EffectImpl*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((ID2D1EffectImpl*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Initialize([NativeTypeName("ID2D1EffectContext *")] ID2D1EffectContext* effectContext, [NativeTypeName("ID2D1TransformGraph *")] ID2D1TransformGraph* transformGraph)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Initialize>(lpVtbl->Initialize)((ID2D1EffectImpl*)Unsafe.AsPointer(ref this), effectContext, transformGraph);
+            return lpVtbl->Initialize((ID2D1EffectImpl*)Unsafe.AsPointer(ref this), effectContext, transformGraph);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int PrepareForRender(D2D1_CHANGE_TYPE changeType)
         {
-            return Marshal.GetDelegateForFunctionPointer<_PrepareForRender>(lpVtbl->PrepareForRender)((ID2D1EffectImpl*)Unsafe.AsPointer(ref this), changeType);
+            return lpVtbl->PrepareForRender((ID2D1EffectImpl*)Unsafe.AsPointer(ref this), changeType);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetGraph([NativeTypeName("ID2D1TransformGraph *")] ID2D1TransformGraph* transformGraph)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetGraph>(lpVtbl->SetGraph)((ID2D1EffectImpl*)Unsafe.AsPointer(ref this), transformGraph);
+            return lpVtbl->SetGraph((ID2D1EffectImpl*)Unsafe.AsPointer(ref this), transformGraph);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<ID2D1EffectImpl*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<ID2D1EffectImpl*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<ID2D1EffectImpl*, uint> Release;
 
             [NativeTypeName("HRESULT (ID2D1EffectContext *, ID2D1TransformGraph *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr Initialize;
+            public delegate* stdcall<ID2D1EffectImpl*, ID2D1EffectContext*, ID2D1TransformGraph*, int> Initialize;
 
             [NativeTypeName("HRESULT (D2D1_CHANGE_TYPE) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr PrepareForRender;
+            public delegate* stdcall<ID2D1EffectImpl*, D2D1_CHANGE_TYPE, int> PrepareForRender;
 
             [NativeTypeName("HRESULT (ID2D1TransformGraph *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetGraph;
+            public delegate* stdcall<ID2D1EffectImpl*, ID2D1TransformGraph*, int> SetGraph;
         }
     }
 }

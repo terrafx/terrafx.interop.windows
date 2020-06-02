@@ -14,85 +14,61 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IZoneIdentifier* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IZoneIdentifier* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IZoneIdentifier* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetId(IZoneIdentifier* pThis, [NativeTypeName("DWORD *")] uint* pdwZone);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetId(IZoneIdentifier* pThis, [NativeTypeName("DWORD")] uint dwZone);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Remove(IZoneIdentifier* pThis);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IZoneIdentifier*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IZoneIdentifier*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IZoneIdentifier*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IZoneIdentifier*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IZoneIdentifier*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IZoneIdentifier*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetId([NativeTypeName("DWORD *")] uint* pdwZone)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetId>(lpVtbl->GetId)((IZoneIdentifier*)Unsafe.AsPointer(ref this), pdwZone);
+            return lpVtbl->GetId((IZoneIdentifier*)Unsafe.AsPointer(ref this), pdwZone);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetId([NativeTypeName("DWORD")] uint dwZone)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetId>(lpVtbl->SetId)((IZoneIdentifier*)Unsafe.AsPointer(ref this), dwZone);
+            return lpVtbl->SetId((IZoneIdentifier*)Unsafe.AsPointer(ref this), dwZone);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Remove()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Remove>(lpVtbl->Remove)((IZoneIdentifier*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Remove((IZoneIdentifier*)Unsafe.AsPointer(ref this));
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IZoneIdentifier*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IZoneIdentifier*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IZoneIdentifier*, uint> Release;
 
             [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public IntPtr GetId;
+            public delegate* stdcall<IZoneIdentifier*, uint*, int> GetId;
 
             [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public IntPtr SetId;
+            public delegate* stdcall<IZoneIdentifier*, uint, int> SetId;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr Remove;
+            public delegate* stdcall<IZoneIdentifier*, int> Remove;
         }
     }
 }

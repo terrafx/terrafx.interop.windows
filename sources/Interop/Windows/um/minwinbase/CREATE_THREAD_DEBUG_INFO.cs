@@ -16,6 +16,6 @@ namespace TerraFX.Interop
         public void* lpThreadLocalBase;
 
         [NativeTypeName("LPTHREAD_START_ROUTINE")]
-        public IntPtr lpStartAddress;
+        public delegate* stdcall<void*, uint> lpStartAddress;
     }
 }

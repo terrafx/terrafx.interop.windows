@@ -14,98 +14,70 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IPropertyPageSite* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IPropertyPageSite* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IPropertyPageSite* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _OnStatusChange(IPropertyPageSite* pThis, [NativeTypeName("DWORD")] uint dwFlags);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLocaleID(IPropertyPageSite* pThis, [NativeTypeName("LCID *")] uint* pLocaleID);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPageContainer(IPropertyPageSite* pThis, [NativeTypeName("IUnknown **")] IUnknown** ppUnk);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _TranslateAcceleratorA(IPropertyPageSite* pThis, [NativeTypeName("MSG *")] MSG* pMsg);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IPropertyPageSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IPropertyPageSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IPropertyPageSite*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IPropertyPageSite*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IPropertyPageSite*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IPropertyPageSite*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int OnStatusChange([NativeTypeName("DWORD")] uint dwFlags)
         {
-            return Marshal.GetDelegateForFunctionPointer<_OnStatusChange>(lpVtbl->OnStatusChange)((IPropertyPageSite*)Unsafe.AsPointer(ref this), dwFlags);
+            return lpVtbl->OnStatusChange((IPropertyPageSite*)Unsafe.AsPointer(ref this), dwFlags);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetLocaleID([NativeTypeName("LCID *")] uint* pLocaleID)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetLocaleID>(lpVtbl->GetLocaleID)((IPropertyPageSite*)Unsafe.AsPointer(ref this), pLocaleID);
+            return lpVtbl->GetLocaleID((IPropertyPageSite*)Unsafe.AsPointer(ref this), pLocaleID);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPageContainer([NativeTypeName("IUnknown **")] IUnknown** ppUnk)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetPageContainer>(lpVtbl->GetPageContainer)((IPropertyPageSite*)Unsafe.AsPointer(ref this), ppUnk);
+            return lpVtbl->GetPageContainer((IPropertyPageSite*)Unsafe.AsPointer(ref this), ppUnk);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int TranslateAcceleratorA([NativeTypeName("MSG *")] MSG* pMsg)
         {
-            return Marshal.GetDelegateForFunctionPointer<_TranslateAcceleratorA>(lpVtbl->TranslateAcceleratorA)((IPropertyPageSite*)Unsafe.AsPointer(ref this), pMsg);
+            return lpVtbl->TranslateAcceleratorA((IPropertyPageSite*)Unsafe.AsPointer(ref this), pMsg);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IPropertyPageSite*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IPropertyPageSite*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IPropertyPageSite*, uint> Release;
 
             [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public IntPtr OnStatusChange;
+            public delegate* stdcall<IPropertyPageSite*, uint, int> OnStatusChange;
 
             [NativeTypeName("HRESULT (LCID *) __attribute__((stdcall))")]
-            public IntPtr GetLocaleID;
+            public delegate* stdcall<IPropertyPageSite*, uint*, int> GetLocaleID;
 
             [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-            public IntPtr GetPageContainer;
+            public delegate* stdcall<IPropertyPageSite*, IUnknown**, int> GetPageContainer;
 
             [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
-            public IntPtr TranslateAcceleratorA;
+            public delegate* stdcall<IPropertyPageSite*, MSG*, int> TranslateAcceleratorA;
         }
     }
 }

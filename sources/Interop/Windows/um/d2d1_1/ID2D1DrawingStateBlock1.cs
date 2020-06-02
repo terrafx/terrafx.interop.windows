@@ -14,123 +14,90 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ID2D1DrawingStateBlock1* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ID2D1DrawingStateBlock1* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ID2D1DrawingStateBlock1* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _GetFactory(ID2D1DrawingStateBlock1* pThis, [NativeTypeName("ID2D1Factory **")] ID2D1Factory** factory);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _GetDescription(ID2D1DrawingStateBlock1* pThis, [NativeTypeName("D2D1_DRAWING_STATE_DESCRIPTION *")] D2D1_DRAWING_STATE_DESCRIPTION* stateDescription);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _SetDescription(ID2D1DrawingStateBlock1* pThis, [NativeTypeName("const D2D1_DRAWING_STATE_DESCRIPTION *")] D2D1_DRAWING_STATE_DESCRIPTION* stateDescription);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _SetTextRenderingParams(ID2D1DrawingStateBlock1* pThis, [NativeTypeName("IDWriteRenderingParams *")] IDWriteRenderingParams* textRenderingParams = null);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _GetTextRenderingParams(ID2D1DrawingStateBlock1* pThis, [NativeTypeName("IDWriteRenderingParams **")] IDWriteRenderingParams** textRenderingParams);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _GetDescription1(ID2D1DrawingStateBlock1* pThis, [NativeTypeName("D2D1_DRAWING_STATE_DESCRIPTION1 *")] D2D1_DRAWING_STATE_DESCRIPTION1* stateDescription);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _SetDescription1(ID2D1DrawingStateBlock1* pThis, [NativeTypeName("const D2D1_DRAWING_STATE_DESCRIPTION1 *")] D2D1_DRAWING_STATE_DESCRIPTION1* stateDescription);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ID2D1DrawingStateBlock1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((ID2D1DrawingStateBlock1*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ID2D1DrawingStateBlock1*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((ID2D1DrawingStateBlock1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ID2D1DrawingStateBlock1*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((ID2D1DrawingStateBlock1*)Unsafe.AsPointer(ref this));
         }
 
         public void GetFactory([NativeTypeName("ID2D1Factory **")] ID2D1Factory** factory)
         {
-            Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)((ID2D1DrawingStateBlock1*)Unsafe.AsPointer(ref this), factory);
+            lpVtbl->GetFactory((ID2D1DrawingStateBlock1*)Unsafe.AsPointer(ref this), factory);
         }
 
         public void GetDescription([NativeTypeName("D2D1_DRAWING_STATE_DESCRIPTION *")] D2D1_DRAWING_STATE_DESCRIPTION* stateDescription)
         {
-            Marshal.GetDelegateForFunctionPointer<_GetDescription>(lpVtbl->GetDescription)((ID2D1DrawingStateBlock1*)Unsafe.AsPointer(ref this), stateDescription);
+            lpVtbl->GetDescription((ID2D1DrawingStateBlock1*)Unsafe.AsPointer(ref this), stateDescription);
         }
 
         public void SetDescription([NativeTypeName("const D2D1_DRAWING_STATE_DESCRIPTION *")] D2D1_DRAWING_STATE_DESCRIPTION* stateDescription)
         {
-            Marshal.GetDelegateForFunctionPointer<_SetDescription>(lpVtbl->SetDescription)((ID2D1DrawingStateBlock1*)Unsafe.AsPointer(ref this), stateDescription);
+            lpVtbl->SetDescription((ID2D1DrawingStateBlock1*)Unsafe.AsPointer(ref this), stateDescription);
         }
 
         public void SetTextRenderingParams([NativeTypeName("IDWriteRenderingParams *")] IDWriteRenderingParams* textRenderingParams = null)
         {
-            Marshal.GetDelegateForFunctionPointer<_SetTextRenderingParams>(lpVtbl->SetTextRenderingParams)((ID2D1DrawingStateBlock1*)Unsafe.AsPointer(ref this), textRenderingParams);
+            lpVtbl->SetTextRenderingParams((ID2D1DrawingStateBlock1*)Unsafe.AsPointer(ref this), textRenderingParams);
         }
 
         public void GetTextRenderingParams([NativeTypeName("IDWriteRenderingParams **")] IDWriteRenderingParams** textRenderingParams)
         {
-            Marshal.GetDelegateForFunctionPointer<_GetTextRenderingParams>(lpVtbl->GetTextRenderingParams)((ID2D1DrawingStateBlock1*)Unsafe.AsPointer(ref this), textRenderingParams);
+            lpVtbl->GetTextRenderingParams((ID2D1DrawingStateBlock1*)Unsafe.AsPointer(ref this), textRenderingParams);
         }
 
         public void GetDescription([NativeTypeName("D2D1_DRAWING_STATE_DESCRIPTION1 *")] D2D1_DRAWING_STATE_DESCRIPTION1* stateDescription)
         {
-            Marshal.GetDelegateForFunctionPointer<_GetDescription1>(lpVtbl->GetDescription1)((ID2D1DrawingStateBlock1*)Unsafe.AsPointer(ref this), stateDescription);
+            lpVtbl->GetDescription1((ID2D1DrawingStateBlock1*)Unsafe.AsPointer(ref this), stateDescription);
         }
 
         public void SetDescription([NativeTypeName("const D2D1_DRAWING_STATE_DESCRIPTION1 *")] D2D1_DRAWING_STATE_DESCRIPTION1* stateDescription)
         {
-            Marshal.GetDelegateForFunctionPointer<_SetDescription1>(lpVtbl->SetDescription1)((ID2D1DrawingStateBlock1*)Unsafe.AsPointer(ref this), stateDescription);
+            lpVtbl->SetDescription1((ID2D1DrawingStateBlock1*)Unsafe.AsPointer(ref this), stateDescription);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<ID2D1DrawingStateBlock1*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<ID2D1DrawingStateBlock1*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<ID2D1DrawingStateBlock1*, uint> Release;
 
             [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetFactory;
+            public delegate* stdcall<ID2D1DrawingStateBlock1*, ID2D1Factory**, void> GetFactory;
 
             [NativeTypeName("void (D2D1_DRAWING_STATE_DESCRIPTION *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetDescription;
+            public delegate* stdcall<ID2D1DrawingStateBlock1*, D2D1_DRAWING_STATE_DESCRIPTION*, void> GetDescription;
 
             [NativeTypeName("void (const D2D1_DRAWING_STATE_DESCRIPTION *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetDescription;
+            public delegate* stdcall<ID2D1DrawingStateBlock1*, D2D1_DRAWING_STATE_DESCRIPTION*, void> SetDescription;
 
             [NativeTypeName("void (IDWriteRenderingParams *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetTextRenderingParams;
+            public delegate* stdcall<ID2D1DrawingStateBlock1*, IDWriteRenderingParams*, void> SetTextRenderingParams;
 
             [NativeTypeName("void (IDWriteRenderingParams **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetTextRenderingParams;
+            public delegate* stdcall<ID2D1DrawingStateBlock1*, IDWriteRenderingParams**, void> GetTextRenderingParams;
 
             [NativeTypeName("void (D2D1_DRAWING_STATE_DESCRIPTION1 *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetDescription1;
+            public delegate* stdcall<ID2D1DrawingStateBlock1*, D2D1_DRAWING_STATE_DESCRIPTION1*, void> GetDescription1;
 
             [NativeTypeName("void (const D2D1_DRAWING_STATE_DESCRIPTION1 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetDescription1;
+            public delegate* stdcall<ID2D1DrawingStateBlock1*, D2D1_DRAWING_STATE_DESCRIPTION1*, void> SetDescription1;
         }
     }
 }

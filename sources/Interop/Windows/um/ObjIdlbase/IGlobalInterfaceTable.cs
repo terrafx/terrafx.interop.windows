@@ -14,85 +14,61 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IGlobalInterfaceTable* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IGlobalInterfaceTable* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IGlobalInterfaceTable* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _RegisterInterfaceInGlobal(IGlobalInterfaceTable* pThis, [NativeTypeName("IUnknown *")] IUnknown* pUnk, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("DWORD *")] uint* pdwCookie);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _RevokeInterfaceFromGlobal(IGlobalInterfaceTable* pThis, [NativeTypeName("DWORD")] uint dwCookie);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetInterfaceFromGlobal(IGlobalInterfaceTable* pThis, [NativeTypeName("DWORD")] uint dwCookie, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppv);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IGlobalInterfaceTable*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IGlobalInterfaceTable*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IGlobalInterfaceTable*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IGlobalInterfaceTable*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IGlobalInterfaceTable*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IGlobalInterfaceTable*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int RegisterInterfaceInGlobal([NativeTypeName("IUnknown *")] IUnknown* pUnk, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("DWORD *")] uint* pdwCookie)
         {
-            return Marshal.GetDelegateForFunctionPointer<_RegisterInterfaceInGlobal>(lpVtbl->RegisterInterfaceInGlobal)((IGlobalInterfaceTable*)Unsafe.AsPointer(ref this), pUnk, riid, pdwCookie);
+            return lpVtbl->RegisterInterfaceInGlobal((IGlobalInterfaceTable*)Unsafe.AsPointer(ref this), pUnk, riid, pdwCookie);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int RevokeInterfaceFromGlobal([NativeTypeName("DWORD")] uint dwCookie)
         {
-            return Marshal.GetDelegateForFunctionPointer<_RevokeInterfaceFromGlobal>(lpVtbl->RevokeInterfaceFromGlobal)((IGlobalInterfaceTable*)Unsafe.AsPointer(ref this), dwCookie);
+            return lpVtbl->RevokeInterfaceFromGlobal((IGlobalInterfaceTable*)Unsafe.AsPointer(ref this), dwCookie);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetInterfaceFromGlobal([NativeTypeName("DWORD")] uint dwCookie, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppv)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetInterfaceFromGlobal>(lpVtbl->GetInterfaceFromGlobal)((IGlobalInterfaceTable*)Unsafe.AsPointer(ref this), dwCookie, riid, ppv);
+            return lpVtbl->GetInterfaceFromGlobal((IGlobalInterfaceTable*)Unsafe.AsPointer(ref this), dwCookie, riid, ppv);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IGlobalInterfaceTable*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IGlobalInterfaceTable*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IGlobalInterfaceTable*, uint> Release;
 
             [NativeTypeName("HRESULT (IUnknown *, const IID &, DWORD *) __attribute__((stdcall))")]
-            public IntPtr RegisterInterfaceInGlobal;
+            public delegate* stdcall<IGlobalInterfaceTable*, IUnknown*, Guid*, uint*, int> RegisterInterfaceInGlobal;
 
             [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public IntPtr RevokeInterfaceFromGlobal;
+            public delegate* stdcall<IGlobalInterfaceTable*, uint, int> RevokeInterfaceFromGlobal;
 
             [NativeTypeName("HRESULT (DWORD, const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr GetInterfaceFromGlobal;
+            public delegate* stdcall<IGlobalInterfaceTable*, uint, Guid*, void**, int> GetInterfaceFromGlobal;
         }
     }
 }

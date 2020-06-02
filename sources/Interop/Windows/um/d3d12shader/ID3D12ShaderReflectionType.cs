@@ -14,150 +14,106 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDesc(ID3D12ShaderReflectionType* pThis, [NativeTypeName("D3D12_SHADER_TYPE_DESC *")] D3D12_SHADER_TYPE_DESC* pDesc);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ID3D12ShaderReflectionType *")]
-        public delegate ID3D12ShaderReflectionType* _GetMemberTypeByIndex(ID3D12ShaderReflectionType* pThis, [NativeTypeName("UINT")] uint Index);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ID3D12ShaderReflectionType *")]
-        public delegate ID3D12ShaderReflectionType* _GetMemberTypeByName(ID3D12ShaderReflectionType* pThis, [NativeTypeName("LPCSTR")] sbyte* Name);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("LPCSTR")]
-        public delegate sbyte* _GetMemberTypeName(ID3D12ShaderReflectionType* pThis, [NativeTypeName("UINT")] uint Index);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _IsEqual(ID3D12ShaderReflectionType* pThis, [NativeTypeName("ID3D12ShaderReflectionType *")] ID3D12ShaderReflectionType* pType);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ID3D12ShaderReflectionType *")]
-        public delegate ID3D12ShaderReflectionType* _GetSubType(ID3D12ShaderReflectionType* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ID3D12ShaderReflectionType *")]
-        public delegate ID3D12ShaderReflectionType* _GetBaseClass(ID3D12ShaderReflectionType* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("UINT")]
-        public delegate uint _GetNumInterfaces(ID3D12ShaderReflectionType* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ID3D12ShaderReflectionType *")]
-        public delegate ID3D12ShaderReflectionType* _GetInterfaceByIndex(ID3D12ShaderReflectionType* pThis, [NativeTypeName("UINT")] uint uIndex);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _IsOfType(ID3D12ShaderReflectionType* pThis, [NativeTypeName("ID3D12ShaderReflectionType *")] ID3D12ShaderReflectionType* pType);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _ImplementsInterface(ID3D12ShaderReflectionType* pThis, [NativeTypeName("ID3D12ShaderReflectionType *")] ID3D12ShaderReflectionType* pBase);
-
         [return: NativeTypeName("HRESULT")]
         public int GetDesc([NativeTypeName("D3D12_SHADER_TYPE_DESC *")] D3D12_SHADER_TYPE_DESC* pDesc)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), pDesc);
+            return lpVtbl->GetDesc((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         [return: NativeTypeName("ID3D12ShaderReflectionType *")]
         public ID3D12ShaderReflectionType* GetMemberTypeByIndex([NativeTypeName("UINT")] uint Index)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetMemberTypeByIndex>(lpVtbl->GetMemberTypeByIndex)((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), Index);
+            return lpVtbl->GetMemberTypeByIndex((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), Index);
         }
 
         [return: NativeTypeName("ID3D12ShaderReflectionType *")]
         public ID3D12ShaderReflectionType* GetMemberTypeByName([NativeTypeName("LPCSTR")] sbyte* Name)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetMemberTypeByName>(lpVtbl->GetMemberTypeByName)((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), Name);
+            return lpVtbl->GetMemberTypeByName((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), Name);
         }
 
         [return: NativeTypeName("LPCSTR")]
         public sbyte* GetMemberTypeName([NativeTypeName("UINT")] uint Index)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetMemberTypeName>(lpVtbl->GetMemberTypeName)((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), Index);
+            return lpVtbl->GetMemberTypeName((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), Index);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int IsEqual([NativeTypeName("ID3D12ShaderReflectionType *")] ID3D12ShaderReflectionType* pType)
         {
-            return Marshal.GetDelegateForFunctionPointer<_IsEqual>(lpVtbl->IsEqual)((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), pType);
+            return lpVtbl->IsEqual((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), pType);
         }
 
         [return: NativeTypeName("ID3D12ShaderReflectionType *")]
         public ID3D12ShaderReflectionType* GetSubType()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetSubType>(lpVtbl->GetSubType)((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetSubType((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ID3D12ShaderReflectionType *")]
         public ID3D12ShaderReflectionType* GetBaseClass()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetBaseClass>(lpVtbl->GetBaseClass)((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetBaseClass((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("UINT")]
         public uint GetNumInterfaces()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetNumInterfaces>(lpVtbl->GetNumInterfaces)((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetNumInterfaces((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ID3D12ShaderReflectionType *")]
         public ID3D12ShaderReflectionType* GetInterfaceByIndex([NativeTypeName("UINT")] uint uIndex)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetInterfaceByIndex>(lpVtbl->GetInterfaceByIndex)((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), uIndex);
+            return lpVtbl->GetInterfaceByIndex((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), uIndex);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int IsOfType([NativeTypeName("ID3D12ShaderReflectionType *")] ID3D12ShaderReflectionType* pType)
         {
-            return Marshal.GetDelegateForFunctionPointer<_IsOfType>(lpVtbl->IsOfType)((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), pType);
+            return lpVtbl->IsOfType((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), pType);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ImplementsInterface([NativeTypeName("ID3D12ShaderReflectionType *")] ID3D12ShaderReflectionType* pBase)
         {
-            return Marshal.GetDelegateForFunctionPointer<_ImplementsInterface>(lpVtbl->ImplementsInterface)((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), pBase);
+            return lpVtbl->ImplementsInterface((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), pBase);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (D3D12_SHADER_TYPE_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetDesc;
+            public delegate* stdcall<ID3D12ShaderReflectionType*, D3D12_SHADER_TYPE_DESC*, int> GetDesc;
 
             [NativeTypeName("ID3D12ShaderReflectionType *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetMemberTypeByIndex;
+            public delegate* stdcall<ID3D12ShaderReflectionType*, uint, ID3D12ShaderReflectionType*> GetMemberTypeByIndex;
 
             [NativeTypeName("ID3D12ShaderReflectionType *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetMemberTypeByName;
+            public delegate* stdcall<ID3D12ShaderReflectionType*, sbyte*, ID3D12ShaderReflectionType*> GetMemberTypeByName;
 
             [NativeTypeName("LPCSTR (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetMemberTypeName;
+            public delegate* stdcall<ID3D12ShaderReflectionType*, uint, sbyte*> GetMemberTypeName;
 
             [NativeTypeName("HRESULT (ID3D12ShaderReflectionType *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr IsEqual;
+            public delegate* stdcall<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*, int> IsEqual;
 
             [NativeTypeName("ID3D12ShaderReflectionType *() __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetSubType;
+            public delegate* stdcall<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*> GetSubType;
 
             [NativeTypeName("ID3D12ShaderReflectionType *() __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetBaseClass;
+            public delegate* stdcall<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*> GetBaseClass;
 
             [NativeTypeName("UINT () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetNumInterfaces;
+            public delegate* stdcall<ID3D12ShaderReflectionType*, uint> GetNumInterfaces;
 
             [NativeTypeName("ID3D12ShaderReflectionType *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetInterfaceByIndex;
+            public delegate* stdcall<ID3D12ShaderReflectionType*, uint, ID3D12ShaderReflectionType*> GetInterfaceByIndex;
 
             [NativeTypeName("HRESULT (ID3D12ShaderReflectionType *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr IsOfType;
+            public delegate* stdcall<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*, int> IsOfType;
 
             [NativeTypeName("HRESULT (ID3D12ShaderReflectionType *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr ImplementsInterface;
+            public delegate* stdcall<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*, int> ImplementsInterface;
         }
     }
 }

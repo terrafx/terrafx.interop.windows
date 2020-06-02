@@ -14,98 +14,70 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IWICStreamProvider* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IWICStreamProvider* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IWICStreamProvider* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetStream(IWICStreamProvider* pThis, [NativeTypeName("IStream **")] IStream** ppIStream);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPersistOptions(IWICStreamProvider* pThis, [NativeTypeName("DWORD *")] uint* pdwPersistOptions);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPreferredVendorGUID(IWICStreamProvider* pThis, [NativeTypeName("GUID *")] Guid* pguidPreferredVendor);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _RefreshStream(IWICStreamProvider* pThis);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IWICStreamProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IWICStreamProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IWICStreamProvider*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IWICStreamProvider*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IWICStreamProvider*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IWICStreamProvider*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetStream([NativeTypeName("IStream **")] IStream** ppIStream)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetStream>(lpVtbl->GetStream)((IWICStreamProvider*)Unsafe.AsPointer(ref this), ppIStream);
+            return lpVtbl->GetStream((IWICStreamProvider*)Unsafe.AsPointer(ref this), ppIStream);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPersistOptions([NativeTypeName("DWORD *")] uint* pdwPersistOptions)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetPersistOptions>(lpVtbl->GetPersistOptions)((IWICStreamProvider*)Unsafe.AsPointer(ref this), pdwPersistOptions);
+            return lpVtbl->GetPersistOptions((IWICStreamProvider*)Unsafe.AsPointer(ref this), pdwPersistOptions);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPreferredVendorGUID([NativeTypeName("GUID *")] Guid* pguidPreferredVendor)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetPreferredVendorGUID>(lpVtbl->GetPreferredVendorGUID)((IWICStreamProvider*)Unsafe.AsPointer(ref this), pguidPreferredVendor);
+            return lpVtbl->GetPreferredVendorGUID((IWICStreamProvider*)Unsafe.AsPointer(ref this), pguidPreferredVendor);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int RefreshStream()
         {
-            return Marshal.GetDelegateForFunctionPointer<_RefreshStream>(lpVtbl->RefreshStream)((IWICStreamProvider*)Unsafe.AsPointer(ref this));
+            return lpVtbl->RefreshStream((IWICStreamProvider*)Unsafe.AsPointer(ref this));
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IWICStreamProvider*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IWICStreamProvider*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IWICStreamProvider*, uint> Release;
 
             [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
-            public IntPtr GetStream;
+            public delegate* stdcall<IWICStreamProvider*, IStream**, int> GetStream;
 
             [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public IntPtr GetPersistOptions;
+            public delegate* stdcall<IWICStreamProvider*, uint*, int> GetPersistOptions;
 
             [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-            public IntPtr GetPreferredVendorGUID;
+            public delegate* stdcall<IWICStreamProvider*, Guid*, int> GetPreferredVendorGUID;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr RefreshStream;
+            public delegate* stdcall<IWICStreamProvider*, int> RefreshStream;
         }
     }
 }

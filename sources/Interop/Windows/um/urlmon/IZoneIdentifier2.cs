@@ -14,163 +14,115 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IZoneIdentifier2* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IZoneIdentifier2* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IZoneIdentifier2* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetId(IZoneIdentifier2* pThis, [NativeTypeName("DWORD *")] uint* pdwZone);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetId(IZoneIdentifier2* pThis, [NativeTypeName("DWORD")] uint dwZone);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Remove(IZoneIdentifier2* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLastWriterPackageFamilyName(IZoneIdentifier2* pThis, [NativeTypeName("LPWSTR *")] ushort** packageFamilyName);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetLastWriterPackageFamilyName(IZoneIdentifier2* pThis, [NativeTypeName("LPCWSTR")] ushort* packageFamilyName);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _RemoveLastWriterPackageFamilyName(IZoneIdentifier2* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetAppZoneId(IZoneIdentifier2* pThis, [NativeTypeName("DWORD *")] uint* zone);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetAppZoneId(IZoneIdentifier2* pThis, [NativeTypeName("DWORD")] uint zone);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _RemoveAppZoneId(IZoneIdentifier2* pThis);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IZoneIdentifier2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IZoneIdentifier2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IZoneIdentifier2*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IZoneIdentifier2*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IZoneIdentifier2*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IZoneIdentifier2*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetId([NativeTypeName("DWORD *")] uint* pdwZone)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetId>(lpVtbl->GetId)((IZoneIdentifier2*)Unsafe.AsPointer(ref this), pdwZone);
+            return lpVtbl->GetId((IZoneIdentifier2*)Unsafe.AsPointer(ref this), pdwZone);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetId([NativeTypeName("DWORD")] uint dwZone)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetId>(lpVtbl->SetId)((IZoneIdentifier2*)Unsafe.AsPointer(ref this), dwZone);
+            return lpVtbl->SetId((IZoneIdentifier2*)Unsafe.AsPointer(ref this), dwZone);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Remove()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Remove>(lpVtbl->Remove)((IZoneIdentifier2*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Remove((IZoneIdentifier2*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetLastWriterPackageFamilyName([NativeTypeName("LPWSTR *")] ushort** packageFamilyName)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetLastWriterPackageFamilyName>(lpVtbl->GetLastWriterPackageFamilyName)((IZoneIdentifier2*)Unsafe.AsPointer(ref this), packageFamilyName);
+            return lpVtbl->GetLastWriterPackageFamilyName((IZoneIdentifier2*)Unsafe.AsPointer(ref this), packageFamilyName);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetLastWriterPackageFamilyName([NativeTypeName("LPCWSTR")] ushort* packageFamilyName)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetLastWriterPackageFamilyName>(lpVtbl->SetLastWriterPackageFamilyName)((IZoneIdentifier2*)Unsafe.AsPointer(ref this), packageFamilyName);
+            return lpVtbl->SetLastWriterPackageFamilyName((IZoneIdentifier2*)Unsafe.AsPointer(ref this), packageFamilyName);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int RemoveLastWriterPackageFamilyName()
         {
-            return Marshal.GetDelegateForFunctionPointer<_RemoveLastWriterPackageFamilyName>(lpVtbl->RemoveLastWriterPackageFamilyName)((IZoneIdentifier2*)Unsafe.AsPointer(ref this));
+            return lpVtbl->RemoveLastWriterPackageFamilyName((IZoneIdentifier2*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetAppZoneId([NativeTypeName("DWORD *")] uint* zone)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetAppZoneId>(lpVtbl->GetAppZoneId)((IZoneIdentifier2*)Unsafe.AsPointer(ref this), zone);
+            return lpVtbl->GetAppZoneId((IZoneIdentifier2*)Unsafe.AsPointer(ref this), zone);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetAppZoneId([NativeTypeName("DWORD")] uint zone)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetAppZoneId>(lpVtbl->SetAppZoneId)((IZoneIdentifier2*)Unsafe.AsPointer(ref this), zone);
+            return lpVtbl->SetAppZoneId((IZoneIdentifier2*)Unsafe.AsPointer(ref this), zone);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int RemoveAppZoneId()
         {
-            return Marshal.GetDelegateForFunctionPointer<_RemoveAppZoneId>(lpVtbl->RemoveAppZoneId)((IZoneIdentifier2*)Unsafe.AsPointer(ref this));
+            return lpVtbl->RemoveAppZoneId((IZoneIdentifier2*)Unsafe.AsPointer(ref this));
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IZoneIdentifier2*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IZoneIdentifier2*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IZoneIdentifier2*, uint> Release;
 
             [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public IntPtr GetId;
+            public delegate* stdcall<IZoneIdentifier2*, uint*, int> GetId;
 
             [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public IntPtr SetId;
+            public delegate* stdcall<IZoneIdentifier2*, uint, int> SetId;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr Remove;
+            public delegate* stdcall<IZoneIdentifier2*, int> Remove;
 
             [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-            public IntPtr GetLastWriterPackageFamilyName;
+            public delegate* stdcall<IZoneIdentifier2*, ushort**, int> GetLastWriterPackageFamilyName;
 
             [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public IntPtr SetLastWriterPackageFamilyName;
+            public delegate* stdcall<IZoneIdentifier2*, ushort*, int> SetLastWriterPackageFamilyName;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr RemoveLastWriterPackageFamilyName;
+            public delegate* stdcall<IZoneIdentifier2*, int> RemoveLastWriterPackageFamilyName;
 
             [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public IntPtr GetAppZoneId;
+            public delegate* stdcall<IZoneIdentifier2*, uint*, int> GetAppZoneId;
 
             [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public IntPtr SetAppZoneId;
+            public delegate* stdcall<IZoneIdentifier2*, uint, int> SetAppZoneId;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr RemoveAppZoneId;
+            public delegate* stdcall<IZoneIdentifier2*, int> RemoveAppZoneId;
         }
     }
 }

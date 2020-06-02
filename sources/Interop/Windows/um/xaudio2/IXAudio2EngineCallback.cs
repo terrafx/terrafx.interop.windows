@@ -13,40 +13,31 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _OnProcessingPassStart(IXAudio2EngineCallback* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _OnProcessingPassEnd(IXAudio2EngineCallback* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _OnCriticalError(IXAudio2EngineCallback* pThis, [NativeTypeName("HRESULT")] int Error);
-
         public void OnProcessingPassStart()
         {
-            Marshal.GetDelegateForFunctionPointer<_OnProcessingPassStart>(lpVtbl->OnProcessingPassStart)((IXAudio2EngineCallback*)Unsafe.AsPointer(ref this));
+            lpVtbl->OnProcessingPassStart((IXAudio2EngineCallback*)Unsafe.AsPointer(ref this));
         }
 
         public void OnProcessingPassEnd()
         {
-            Marshal.GetDelegateForFunctionPointer<_OnProcessingPassEnd>(lpVtbl->OnProcessingPassEnd)((IXAudio2EngineCallback*)Unsafe.AsPointer(ref this));
+            lpVtbl->OnProcessingPassEnd((IXAudio2EngineCallback*)Unsafe.AsPointer(ref this));
         }
 
         public void OnCriticalError([NativeTypeName("HRESULT")] int Error)
         {
-            Marshal.GetDelegateForFunctionPointer<_OnCriticalError>(lpVtbl->OnCriticalError)((IXAudio2EngineCallback*)Unsafe.AsPointer(ref this), Error);
+            lpVtbl->OnCriticalError((IXAudio2EngineCallback*)Unsafe.AsPointer(ref this), Error);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr OnProcessingPassStart;
+            public delegate* stdcall<IXAudio2EngineCallback*, void> OnProcessingPassStart;
 
             [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr OnProcessingPassEnd;
+            public delegate* stdcall<IXAudio2EngineCallback*, void> OnProcessingPassEnd;
 
             [NativeTypeName("void (HRESULT) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr OnCriticalError;
+            public delegate* stdcall<IXAudio2EngineCallback*, int, void> OnCriticalError;
         }
     }
 }

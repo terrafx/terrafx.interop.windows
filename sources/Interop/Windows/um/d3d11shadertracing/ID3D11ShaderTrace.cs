@@ -14,148 +14,105 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ID3D11ShaderTrace* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ID3D11ShaderTrace* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ID3D11ShaderTrace* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _TraceReady(ID3D11ShaderTrace* pThis, [NativeTypeName("UINT64 *")] ulong* pTestCount);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _ResetTrace(ID3D11ShaderTrace* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetTraceStats(ID3D11ShaderTrace* pThis, [NativeTypeName("D3D11_TRACE_STATS *")] D3D11_TRACE_STATS* pTraceStats);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _PSSelectStamp(ID3D11ShaderTrace* pThis, [NativeTypeName("UINT")] uint stampIndex);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetInitialRegisterContents(ID3D11ShaderTrace* pThis, [NativeTypeName("D3D11_TRACE_REGISTER *")] D3D11_TRACE_REGISTER* pRegister, [NativeTypeName("D3D11_TRACE_VALUE *")] D3D11_TRACE_VALUE* pValue);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetStep(ID3D11ShaderTrace* pThis, [NativeTypeName("UINT")] uint stepIndex, [NativeTypeName("D3D11_TRACE_STEP *")] D3D11_TRACE_STEP* pTraceStep);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetWrittenRegister(ID3D11ShaderTrace* pThis, [NativeTypeName("UINT")] uint stepIndex, [NativeTypeName("UINT")] uint writtenRegisterIndex, [NativeTypeName("D3D11_TRACE_REGISTER *")] D3D11_TRACE_REGISTER* pRegister, [NativeTypeName("D3D11_TRACE_VALUE *")] D3D11_TRACE_VALUE* pValue);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetReadRegister(ID3D11ShaderTrace* pThis, [NativeTypeName("UINT")] uint stepIndex, [NativeTypeName("UINT")] uint readRegisterIndex, [NativeTypeName("D3D11_TRACE_REGISTER *")] D3D11_TRACE_REGISTER* pRegister, [NativeTypeName("D3D11_TRACE_VALUE *")] D3D11_TRACE_VALUE* pValue);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int TraceReady([NativeTypeName("UINT64 *")] ulong* pTestCount)
         {
-            return Marshal.GetDelegateForFunctionPointer<_TraceReady>(lpVtbl->TraceReady)((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), pTestCount);
+            return lpVtbl->TraceReady((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), pTestCount);
         }
 
         public void ResetTrace()
         {
-            Marshal.GetDelegateForFunctionPointer<_ResetTrace>(lpVtbl->ResetTrace)((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this));
+            lpVtbl->ResetTrace((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetTraceStats([NativeTypeName("D3D11_TRACE_STATS *")] D3D11_TRACE_STATS* pTraceStats)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetTraceStats>(lpVtbl->GetTraceStats)((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), pTraceStats);
+            return lpVtbl->GetTraceStats((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), pTraceStats);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int PSSelectStamp([NativeTypeName("UINT")] uint stampIndex)
         {
-            return Marshal.GetDelegateForFunctionPointer<_PSSelectStamp>(lpVtbl->PSSelectStamp)((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), stampIndex);
+            return lpVtbl->PSSelectStamp((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), stampIndex);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetInitialRegisterContents([NativeTypeName("D3D11_TRACE_REGISTER *")] D3D11_TRACE_REGISTER* pRegister, [NativeTypeName("D3D11_TRACE_VALUE *")] D3D11_TRACE_VALUE* pValue)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetInitialRegisterContents>(lpVtbl->GetInitialRegisterContents)((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), pRegister, pValue);
+            return lpVtbl->GetInitialRegisterContents((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), pRegister, pValue);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetStep([NativeTypeName("UINT")] uint stepIndex, [NativeTypeName("D3D11_TRACE_STEP *")] D3D11_TRACE_STEP* pTraceStep)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetStep>(lpVtbl->GetStep)((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), stepIndex, pTraceStep);
+            return lpVtbl->GetStep((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), stepIndex, pTraceStep);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetWrittenRegister([NativeTypeName("UINT")] uint stepIndex, [NativeTypeName("UINT")] uint writtenRegisterIndex, [NativeTypeName("D3D11_TRACE_REGISTER *")] D3D11_TRACE_REGISTER* pRegister, [NativeTypeName("D3D11_TRACE_VALUE *")] D3D11_TRACE_VALUE* pValue)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetWrittenRegister>(lpVtbl->GetWrittenRegister)((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), stepIndex, writtenRegisterIndex, pRegister, pValue);
+            return lpVtbl->GetWrittenRegister((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), stepIndex, writtenRegisterIndex, pRegister, pValue);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetReadRegister([NativeTypeName("UINT")] uint stepIndex, [NativeTypeName("UINT")] uint readRegisterIndex, [NativeTypeName("D3D11_TRACE_REGISTER *")] D3D11_TRACE_REGISTER* pRegister, [NativeTypeName("D3D11_TRACE_VALUE *")] D3D11_TRACE_VALUE* pValue)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetReadRegister>(lpVtbl->GetReadRegister)((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), stepIndex, readRegisterIndex, pRegister, pValue);
+            return lpVtbl->GetReadRegister((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), stepIndex, readRegisterIndex, pRegister, pValue);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<ID3D11ShaderTrace*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<ID3D11ShaderTrace*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<ID3D11ShaderTrace*, uint> Release;
 
             [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
-            public IntPtr TraceReady;
+            public delegate* stdcall<ID3D11ShaderTrace*, ulong*, int> TraceReady;
 
             [NativeTypeName("void () __attribute__((stdcall))")]
-            public IntPtr ResetTrace;
+            public delegate* stdcall<ID3D11ShaderTrace*, void> ResetTrace;
 
             [NativeTypeName("HRESULT (D3D11_TRACE_STATS *) __attribute__((stdcall))")]
-            public IntPtr GetTraceStats;
+            public delegate* stdcall<ID3D11ShaderTrace*, D3D11_TRACE_STATS*, int> GetTraceStats;
 
             [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-            public IntPtr PSSelectStamp;
+            public delegate* stdcall<ID3D11ShaderTrace*, uint, int> PSSelectStamp;
 
             [NativeTypeName("HRESULT (D3D11_TRACE_REGISTER *, D3D11_TRACE_VALUE *) __attribute__((stdcall))")]
-            public IntPtr GetInitialRegisterContents;
+            public delegate* stdcall<ID3D11ShaderTrace*, D3D11_TRACE_REGISTER*, D3D11_TRACE_VALUE*, int> GetInitialRegisterContents;
 
             [NativeTypeName("HRESULT (UINT, D3D11_TRACE_STEP *) __attribute__((stdcall))")]
-            public IntPtr GetStep;
+            public delegate* stdcall<ID3D11ShaderTrace*, uint, D3D11_TRACE_STEP*, int> GetStep;
 
             [NativeTypeName("HRESULT (UINT, UINT, D3D11_TRACE_REGISTER *, D3D11_TRACE_VALUE *) __attribute__((stdcall))")]
-            public IntPtr GetWrittenRegister;
+            public delegate* stdcall<ID3D11ShaderTrace*, uint, uint, D3D11_TRACE_REGISTER*, D3D11_TRACE_VALUE*, int> GetWrittenRegister;
 
             [NativeTypeName("HRESULT (UINT, UINT, D3D11_TRACE_REGISTER *, D3D11_TRACE_VALUE *) __attribute__((stdcall))")]
-            public IntPtr GetReadRegister;
+            public delegate* stdcall<ID3D11ShaderTrace*, uint, uint, D3D11_TRACE_REGISTER*, D3D11_TRACE_VALUE*, int> GetReadRegister;
         }
     }
 }

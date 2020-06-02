@@ -14,68 +14,50 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IXAudio2Extension* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IXAudio2Extension* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IXAudio2Extension* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _GetProcessingQuantum(IXAudio2Extension* pThis, [NativeTypeName("UINT32 *")] uint* quantumNumerator, [NativeTypeName("UINT32 *")] uint* quantumDenominator);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _GetProcessor(IXAudio2Extension* pThis, [NativeTypeName("XAUDIO2_PROCESSOR *")] uint* processor);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IXAudio2Extension*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IXAudio2Extension*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IXAudio2Extension*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IXAudio2Extension*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IXAudio2Extension*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IXAudio2Extension*)Unsafe.AsPointer(ref this));
         }
 
         public void GetProcessingQuantum([NativeTypeName("UINT32 *")] uint* quantumNumerator, [NativeTypeName("UINT32 *")] uint* quantumDenominator)
         {
-            Marshal.GetDelegateForFunctionPointer<_GetProcessingQuantum>(lpVtbl->GetProcessingQuantum)((IXAudio2Extension*)Unsafe.AsPointer(ref this), quantumNumerator, quantumDenominator);
+            lpVtbl->GetProcessingQuantum((IXAudio2Extension*)Unsafe.AsPointer(ref this), quantumNumerator, quantumDenominator);
         }
 
         public void GetProcessor([NativeTypeName("XAUDIO2_PROCESSOR *")] uint* processor)
         {
-            Marshal.GetDelegateForFunctionPointer<_GetProcessor>(lpVtbl->GetProcessor)((IXAudio2Extension*)Unsafe.AsPointer(ref this), processor);
+            lpVtbl->GetProcessor((IXAudio2Extension*)Unsafe.AsPointer(ref this), processor);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IXAudio2Extension*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IXAudio2Extension*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IXAudio2Extension*, uint> Release;
 
             [NativeTypeName("void (UINT32 *, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetProcessingQuantum;
+            public delegate* stdcall<IXAudio2Extension*, uint*, uint*, void> GetProcessingQuantum;
 
             [NativeTypeName("void (XAUDIO2_PROCESSOR *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetProcessor;
+            public delegate* stdcall<IXAudio2Extension*, uint*, void> GetProcessor;
         }
     }
 }

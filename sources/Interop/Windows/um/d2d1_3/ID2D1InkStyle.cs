@@ -14,101 +14,74 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ID2D1InkStyle* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ID2D1InkStyle* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ID2D1InkStyle* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _GetFactory(ID2D1InkStyle* pThis, [NativeTypeName("ID2D1Factory **")] ID2D1Factory** factory);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _SetNibTransform(ID2D1InkStyle* pThis, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _GetNibTransform(ID2D1InkStyle* pThis, [NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _SetNibShape(ID2D1InkStyle* pThis, D2D1_INK_NIB_SHAPE nibShape);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate D2D1_INK_NIB_SHAPE _GetNibShape(ID2D1InkStyle* pThis);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ID2D1InkStyle*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((ID2D1InkStyle*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ID2D1InkStyle*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((ID2D1InkStyle*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ID2D1InkStyle*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((ID2D1InkStyle*)Unsafe.AsPointer(ref this));
         }
 
         public void GetFactory([NativeTypeName("ID2D1Factory **")] ID2D1Factory** factory)
         {
-            Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)((ID2D1InkStyle*)Unsafe.AsPointer(ref this), factory);
+            lpVtbl->GetFactory((ID2D1InkStyle*)Unsafe.AsPointer(ref this), factory);
         }
 
         public void SetNibTransform([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
         {
-            Marshal.GetDelegateForFunctionPointer<_SetNibTransform>(lpVtbl->SetNibTransform)((ID2D1InkStyle*)Unsafe.AsPointer(ref this), transform);
+            lpVtbl->SetNibTransform((ID2D1InkStyle*)Unsafe.AsPointer(ref this), transform);
         }
 
         public void GetNibTransform([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
         {
-            Marshal.GetDelegateForFunctionPointer<_GetNibTransform>(lpVtbl->GetNibTransform)((ID2D1InkStyle*)Unsafe.AsPointer(ref this), transform);
+            lpVtbl->GetNibTransform((ID2D1InkStyle*)Unsafe.AsPointer(ref this), transform);
         }
 
         public void SetNibShape(D2D1_INK_NIB_SHAPE nibShape)
         {
-            Marshal.GetDelegateForFunctionPointer<_SetNibShape>(lpVtbl->SetNibShape)((ID2D1InkStyle*)Unsafe.AsPointer(ref this), nibShape);
+            lpVtbl->SetNibShape((ID2D1InkStyle*)Unsafe.AsPointer(ref this), nibShape);
         }
 
         public D2D1_INK_NIB_SHAPE GetNibShape()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetNibShape>(lpVtbl->GetNibShape)((ID2D1InkStyle*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetNibShape((ID2D1InkStyle*)Unsafe.AsPointer(ref this));
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<ID2D1InkStyle*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<ID2D1InkStyle*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<ID2D1InkStyle*, uint> Release;
 
             [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetFactory;
+            public delegate* stdcall<ID2D1InkStyle*, ID2D1Factory**, void> GetFactory;
 
             [NativeTypeName("void (const D2D1_MATRIX_3X2_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetNibTransform;
+            public delegate* stdcall<ID2D1InkStyle*, D2D_MATRIX_3X2_F*, void> SetNibTransform;
 
             [NativeTypeName("void (D2D1_MATRIX_3X2_F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetNibTransform;
+            public delegate* stdcall<ID2D1InkStyle*, D2D_MATRIX_3X2_F*, void> GetNibTransform;
 
             [NativeTypeName("void (D2D1_INK_NIB_SHAPE) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetNibShape;
+            public delegate* stdcall<ID2D1InkStyle*, D2D1_INK_NIB_SHAPE, void> SetNibShape;
 
             [NativeTypeName("D2D1_INK_NIB_SHAPE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetNibShape;
+            public delegate* stdcall<ID2D1InkStyle*, D2D1_INK_NIB_SHAPE> GetNibShape;
         }
     }
 }

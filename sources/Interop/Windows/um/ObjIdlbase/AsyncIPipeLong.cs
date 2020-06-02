@@ -14,98 +14,70 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(AsyncIPipeLong* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(AsyncIPipeLong* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(AsyncIPipeLong* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Begin_Pull(AsyncIPipeLong* pThis, [NativeTypeName("ULONG")] uint cRequest);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Finish_Pull(AsyncIPipeLong* pThis, [NativeTypeName("LONG *")] int* buf, [NativeTypeName("ULONG *")] uint* pcReturned);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Begin_Push(AsyncIPipeLong* pThis, [NativeTypeName("LONG *")] int* buf, [NativeTypeName("ULONG")] uint cSent);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Finish_Push(AsyncIPipeLong* pThis);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((AsyncIPipeLong*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((AsyncIPipeLong*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((AsyncIPipeLong*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((AsyncIPipeLong*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((AsyncIPipeLong*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((AsyncIPipeLong*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Begin_Pull([NativeTypeName("ULONG")] uint cRequest)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Begin_Pull>(lpVtbl->Begin_Pull)((AsyncIPipeLong*)Unsafe.AsPointer(ref this), cRequest);
+            return lpVtbl->Begin_Pull((AsyncIPipeLong*)Unsafe.AsPointer(ref this), cRequest);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Finish_Pull([NativeTypeName("LONG *")] int* buf, [NativeTypeName("ULONG *")] uint* pcReturned)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Finish_Pull>(lpVtbl->Finish_Pull)((AsyncIPipeLong*)Unsafe.AsPointer(ref this), buf, pcReturned);
+            return lpVtbl->Finish_Pull((AsyncIPipeLong*)Unsafe.AsPointer(ref this), buf, pcReturned);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Begin_Push([NativeTypeName("LONG *")] int* buf, [NativeTypeName("ULONG")] uint cSent)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Begin_Push>(lpVtbl->Begin_Push)((AsyncIPipeLong*)Unsafe.AsPointer(ref this), buf, cSent);
+            return lpVtbl->Begin_Push((AsyncIPipeLong*)Unsafe.AsPointer(ref this), buf, cSent);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Finish_Push()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Finish_Push>(lpVtbl->Finish_Push)((AsyncIPipeLong*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Finish_Push((AsyncIPipeLong*)Unsafe.AsPointer(ref this));
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<AsyncIPipeLong*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<AsyncIPipeLong*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<AsyncIPipeLong*, uint> Release;
 
             [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-            public IntPtr Begin_Pull;
+            public delegate* stdcall<AsyncIPipeLong*, uint, int> Begin_Pull;
 
             [NativeTypeName("HRESULT (LONG *, ULONG *) __attribute__((stdcall))")]
-            public IntPtr Finish_Pull;
+            public delegate* stdcall<AsyncIPipeLong*, int*, uint*, int> Finish_Pull;
 
             [NativeTypeName("HRESULT (LONG *, ULONG) __attribute__((stdcall))")]
-            public IntPtr Begin_Push;
+            public delegate* stdcall<AsyncIPipeLong*, int*, uint, int> Begin_Push;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr Finish_Push;
+            public delegate* stdcall<AsyncIPipeLong*, int> Finish_Push;
         }
     }
 }

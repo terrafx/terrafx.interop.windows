@@ -89,15 +89,15 @@ namespace TerraFX.Interop
 
         [DllImport("user32", EntryPoint = "EnumDesktopsA", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumDesktopsA([NativeTypeName("HWINSTA")] IntPtr hwinsta, [NativeTypeName("DESKTOPENUMPROCA")] IntPtr lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumDesktopsA([NativeTypeName("HWINSTA")] IntPtr hwinsta, [NativeTypeName("DESKTOPENUMPROCA")] delegate* stdcall<sbyte*, nint, int> lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", EntryPoint = "EnumDesktopsW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumDesktopsW([NativeTypeName("HWINSTA")] IntPtr hwinsta, [NativeTypeName("DESKTOPENUMPROCW")] IntPtr lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumDesktopsW([NativeTypeName("HWINSTA")] IntPtr hwinsta, [NativeTypeName("DESKTOPENUMPROCW")] delegate* stdcall<ushort*, nint, int> lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", EntryPoint = "EnumDesktopWindows", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumDesktopWindows([NativeTypeName("HDESK")] IntPtr hDesktop, [NativeTypeName("WNDENUMPROC")] IntPtr lpfn, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumDesktopWindows([NativeTypeName("HDESK")] IntPtr hDesktop, [NativeTypeName("WNDENUMPROC")] delegate* stdcall<IntPtr, nint, int> lpfn, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", EntryPoint = "SwitchDesktop", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
@@ -133,11 +133,11 @@ namespace TerraFX.Interop
 
         [DllImport("user32", EntryPoint = "EnumWindowStationsA", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumWindowStationsA([NativeTypeName("WINSTAENUMPROCA")] IntPtr lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumWindowStationsA([NativeTypeName("WINSTAENUMPROCA")] delegate* stdcall<sbyte*, nint, int> lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", EntryPoint = "EnumWindowStationsW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumWindowStationsW([NativeTypeName("WINSTAENUMPROCW")] IntPtr lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumWindowStationsW([NativeTypeName("WINSTAENUMPROCW")] delegate* stdcall<ushort*, nint, int> lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", EntryPoint = "CloseWindowStation", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
@@ -308,11 +308,11 @@ namespace TerraFX.Interop
 
         [DllImport("user32", EntryPoint = "SendMessageCallbackA", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SendMessageCallbackA([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("SENDASYNCPROC")] IntPtr lpResultCallBack, [NativeTypeName("ULONG_PTR")] nuint dwData);
+        public static extern int SendMessageCallbackA([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("SENDASYNCPROC")] delegate* stdcall<IntPtr, uint, nuint, nint, void> lpResultCallBack, [NativeTypeName("ULONG_PTR")] nuint dwData);
 
         [DllImport("user32", EntryPoint = "SendMessageCallbackW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SendMessageCallbackW([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("SENDASYNCPROC")] IntPtr lpResultCallBack, [NativeTypeName("ULONG_PTR")] nuint dwData);
+        public static extern int SendMessageCallbackW([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("SENDASYNCPROC")] delegate* stdcall<IntPtr, uint, nuint, nint, void> lpResultCallBack, [NativeTypeName("ULONG_PTR")] nuint dwData);
 
         [DllImport("user32", EntryPoint = "BroadcastSystemMessageExA", ExactSpelling = true)]
         [return: NativeTypeName("long")]
@@ -403,11 +403,11 @@ namespace TerraFX.Interop
 
         [DllImport("user32", EntryPoint = "CallWindowProcA", ExactSpelling = true)]
         [return: NativeTypeName("LRESULT")]
-        public static extern nint CallWindowProcA([NativeTypeName("WNDPROC")] IntPtr lpPrevWndFunc, [NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern nint CallWindowProcA([NativeTypeName("WNDPROC")] delegate* stdcall<IntPtr, uint, nuint, nint, nint> lpPrevWndFunc, [NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", EntryPoint = "CallWindowProcW", ExactSpelling = true)]
         [return: NativeTypeName("LRESULT")]
-        public static extern nint CallWindowProcW([NativeTypeName("WNDPROC")] IntPtr lpPrevWndFunc, [NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern nint CallWindowProcW([NativeTypeName("WNDPROC")] delegate* stdcall<IntPtr, uint, nuint, nint, nint> lpPrevWndFunc, [NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", EntryPoint = "InSendMessage", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -599,35 +599,35 @@ namespace TerraFX.Interop
 
         [DllImport("user32", EntryPoint = "CreateDialogParamA", ExactSpelling = true)]
         [return: NativeTypeName("HWND")]
-        public static extern IntPtr CreateDialogParamA([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCSTR")] sbyte* lpTemplateName, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] IntPtr lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
+        public static extern IntPtr CreateDialogParamA([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCSTR")] sbyte* lpTemplateName, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* stdcall<IntPtr, uint, nuint, nint, nint> lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
 
         [DllImport("user32", EntryPoint = "CreateDialogParamW", ExactSpelling = true)]
         [return: NativeTypeName("HWND")]
-        public static extern IntPtr CreateDialogParamW([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCWSTR")] ushort* lpTemplateName, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] IntPtr lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
+        public static extern IntPtr CreateDialogParamW([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCWSTR")] ushort* lpTemplateName, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* stdcall<IntPtr, uint, nuint, nint, nint> lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
 
         [DllImport("user32", EntryPoint = "CreateDialogIndirectParamA", ExactSpelling = true)]
         [return: NativeTypeName("HWND")]
-        public static extern IntPtr CreateDialogIndirectParamA([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCDLGTEMPLATEA")] DLGTEMPLATE* lpTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] IntPtr lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
+        public static extern IntPtr CreateDialogIndirectParamA([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCDLGTEMPLATEA")] DLGTEMPLATE* lpTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* stdcall<IntPtr, uint, nuint, nint, nint> lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
 
         [DllImport("user32", EntryPoint = "CreateDialogIndirectParamW", ExactSpelling = true)]
         [return: NativeTypeName("HWND")]
-        public static extern IntPtr CreateDialogIndirectParamW([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* lpTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] IntPtr lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
+        public static extern IntPtr CreateDialogIndirectParamW([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* lpTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* stdcall<IntPtr, uint, nuint, nint, nint> lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
 
         [DllImport("user32", EntryPoint = "DialogBoxParamA", ExactSpelling = true)]
         [return: NativeTypeName("INT_PTR")]
-        public static extern nint DialogBoxParamA([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCSTR")] sbyte* lpTemplateName, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] IntPtr lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
+        public static extern nint DialogBoxParamA([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCSTR")] sbyte* lpTemplateName, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* stdcall<IntPtr, uint, nuint, nint, nint> lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
 
         [DllImport("user32", EntryPoint = "DialogBoxParamW", ExactSpelling = true)]
         [return: NativeTypeName("INT_PTR")]
-        public static extern nint DialogBoxParamW([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCWSTR")] ushort* lpTemplateName, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] IntPtr lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
+        public static extern nint DialogBoxParamW([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCWSTR")] ushort* lpTemplateName, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* stdcall<IntPtr, uint, nuint, nint, nint> lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
 
         [DllImport("user32", EntryPoint = "DialogBoxIndirectParamA", ExactSpelling = true)]
         [return: NativeTypeName("INT_PTR")]
-        public static extern nint DialogBoxIndirectParamA([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCDLGTEMPLATEA")] DLGTEMPLATE* hDialogTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] IntPtr lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
+        public static extern nint DialogBoxIndirectParamA([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCDLGTEMPLATEA")] DLGTEMPLATE* hDialogTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* stdcall<IntPtr, uint, nuint, nint, nint> lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
 
         [DllImport("user32", EntryPoint = "DialogBoxIndirectParamW", ExactSpelling = true)]
         [return: NativeTypeName("INT_PTR")]
-        public static extern nint DialogBoxIndirectParamW([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* hDialogTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] IntPtr lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
+        public static extern nint DialogBoxIndirectParamW([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* hDialogTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* stdcall<IntPtr, uint, nuint, nint, nint> lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
 
         [DllImport("user32", EntryPoint = "EndDialog", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
@@ -1215,11 +1215,11 @@ namespace TerraFX.Interop
 
         [DllImport("user32", EntryPoint = "SetTimer", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("UINT_PTR")]
-        public static extern nuint SetTimer([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT_PTR")] nuint nIDEvent, [NativeTypeName("UINT")] uint uElapse, [NativeTypeName("TIMERPROC")] IntPtr lpTimerFunc);
+        public static extern nuint SetTimer([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT_PTR")] nuint nIDEvent, [NativeTypeName("UINT")] uint uElapse, [NativeTypeName("TIMERPROC")] delegate* stdcall<IntPtr, uint, nuint, uint, void> lpTimerFunc);
 
         [DllImport("user32", EntryPoint = "SetCoalescableTimer", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("UINT_PTR")]
-        public static extern nuint SetCoalescableTimer([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT_PTR")] nuint nIDEvent, [NativeTypeName("UINT")] uint uElapse, [NativeTypeName("TIMERPROC")] IntPtr lpTimerFunc, [NativeTypeName("ULONG")] uint uToleranceDelay);
+        public static extern nuint SetCoalescableTimer([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT_PTR")] nuint nIDEvent, [NativeTypeName("UINT")] uint uElapse, [NativeTypeName("TIMERPROC")] delegate* stdcall<IntPtr, uint, nuint, uint, void> lpTimerFunc, [NativeTypeName("ULONG")] uint uToleranceDelay);
 
         [DllImport("user32", EntryPoint = "KillTimer", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
@@ -1489,19 +1489,19 @@ namespace TerraFX.Interop
 
         [DllImport("user32", EntryPoint = "GrayStringA", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int GrayStringA([NativeTypeName("HDC")] IntPtr hDC, [NativeTypeName("HBRUSH")] IntPtr hBrush, [NativeTypeName("GRAYSTRINGPROC")] IntPtr lpOutputFunc, [NativeTypeName("LPARAM")] nint lpData, int nCount, int X, int Y, int nWidth, int nHeight);
+        public static extern int GrayStringA([NativeTypeName("HDC")] IntPtr hDC, [NativeTypeName("HBRUSH")] IntPtr hBrush, [NativeTypeName("GRAYSTRINGPROC")] delegate* stdcall<IntPtr, nint, int, int> lpOutputFunc, [NativeTypeName("LPARAM")] nint lpData, int nCount, int X, int Y, int nWidth, int nHeight);
 
         [DllImport("user32", EntryPoint = "GrayStringW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int GrayStringW([NativeTypeName("HDC")] IntPtr hDC, [NativeTypeName("HBRUSH")] IntPtr hBrush, [NativeTypeName("GRAYSTRINGPROC")] IntPtr lpOutputFunc, [NativeTypeName("LPARAM")] nint lpData, int nCount, int X, int Y, int nWidth, int nHeight);
+        public static extern int GrayStringW([NativeTypeName("HDC")] IntPtr hDC, [NativeTypeName("HBRUSH")] IntPtr hBrush, [NativeTypeName("GRAYSTRINGPROC")] delegate* stdcall<IntPtr, nint, int, int> lpOutputFunc, [NativeTypeName("LPARAM")] nint lpData, int nCount, int X, int Y, int nWidth, int nHeight);
 
         [DllImport("user32", EntryPoint = "DrawStateA", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int DrawStateA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HBRUSH")] IntPtr hbrFore, [NativeTypeName("DRAWSTATEPROC")] IntPtr qfnCallBack, [NativeTypeName("LPARAM")] nint lData, [NativeTypeName("WPARAM")] nuint wData, int x, int y, int cx, int cy, [NativeTypeName("UINT")] uint uFlags);
+        public static extern int DrawStateA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HBRUSH")] IntPtr hbrFore, [NativeTypeName("DRAWSTATEPROC")] delegate* stdcall<IntPtr, nint, nuint, int, int, int> qfnCallBack, [NativeTypeName("LPARAM")] nint lData, [NativeTypeName("WPARAM")] nuint wData, int x, int y, int cx, int cy, [NativeTypeName("UINT")] uint uFlags);
 
         [DllImport("user32", EntryPoint = "DrawStateW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int DrawStateW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HBRUSH")] IntPtr hbrFore, [NativeTypeName("DRAWSTATEPROC")] IntPtr qfnCallBack, [NativeTypeName("LPARAM")] nint lData, [NativeTypeName("WPARAM")] nuint wData, int x, int y, int cx, int cy, [NativeTypeName("UINT")] uint uFlags);
+        public static extern int DrawStateW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HBRUSH")] IntPtr hbrFore, [NativeTypeName("DRAWSTATEPROC")] delegate* stdcall<IntPtr, nint, nuint, int, int, int> qfnCallBack, [NativeTypeName("LPARAM")] nint lData, [NativeTypeName("WPARAM")] nuint wData, int x, int y, int cx, int cy, [NativeTypeName("UINT")] uint uFlags);
 
         [DllImport("user32", EntryPoint = "TabbedTextOutA", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
@@ -1678,16 +1678,16 @@ namespace TerraFX.Interop
         public static extern IntPtr RemovePropW([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("LPCWSTR")] ushort* lpString);
 
         [DllImport("user32", EntryPoint = "EnumPropsExA", ExactSpelling = true)]
-        public static extern int EnumPropsExA([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("PROPENUMPROCEXA")] IntPtr lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumPropsExA([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("PROPENUMPROCEXA")] delegate* stdcall<IntPtr, sbyte*, IntPtr, nuint, int> lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", EntryPoint = "EnumPropsExW", ExactSpelling = true)]
-        public static extern int EnumPropsExW([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("PROPENUMPROCEXW")] IntPtr lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumPropsExW([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("PROPENUMPROCEXW")] delegate* stdcall<IntPtr, ushort*, IntPtr, nuint, int> lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", EntryPoint = "EnumPropsA", ExactSpelling = true)]
-        public static extern int EnumPropsA([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("PROPENUMPROCA")] IntPtr lpEnumFunc);
+        public static extern int EnumPropsA([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("PROPENUMPROCA")] delegate* stdcall<IntPtr, sbyte*, IntPtr, int> lpEnumFunc);
 
         [DllImport("user32", EntryPoint = "EnumPropsW", ExactSpelling = true)]
-        public static extern int EnumPropsW([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("PROPENUMPROCW")] IntPtr lpEnumFunc);
+        public static extern int EnumPropsW([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("PROPENUMPROCW")] delegate* stdcall<IntPtr, ushort*, IntPtr, int> lpEnumFunc);
 
         [DllImport("user32", EntryPoint = "SetWindowTextA", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -2017,7 +2017,7 @@ namespace TerraFX.Interop
 
         [DllImport("user32", EntryPoint = "EnumChildWindows", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumChildWindows([NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("WNDENUMPROC")] IntPtr lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumChildWindows([NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("WNDENUMPROC")] delegate* stdcall<IntPtr, nint, int> lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", EntryPoint = "FindWindowA", ExactSpelling = true)]
         [return: NativeTypeName("HWND")]
@@ -2049,11 +2049,11 @@ namespace TerraFX.Interop
 
         [DllImport("user32", EntryPoint = "EnumWindows", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumWindows([NativeTypeName("WNDENUMPROC")] IntPtr lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumWindows([NativeTypeName("WNDENUMPROC")] delegate* stdcall<IntPtr, nint, int> lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", EntryPoint = "EnumThreadWindows", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumThreadWindows([NativeTypeName("DWORD")] uint dwThreadId, [NativeTypeName("WNDENUMPROC")] IntPtr lpfn, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumThreadWindows([NativeTypeName("DWORD")] uint dwThreadId, [NativeTypeName("WNDENUMPROC")] delegate* stdcall<IntPtr, nint, int> lpfn, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", EntryPoint = "GetClassNameA", ExactSpelling = true)]
         public static extern int GetClassNameA([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("LPSTR")] sbyte* lpClassName, int nMaxCount);
@@ -2083,23 +2083,23 @@ namespace TerraFX.Interop
 
         [DllImport("user32", EntryPoint = "SetWindowsHookA", ExactSpelling = true)]
         [return: NativeTypeName("HHOOK")]
-        public static extern IntPtr SetWindowsHookA(int nFilterType, [NativeTypeName("HOOKPROC")] IntPtr pfnFilterProc);
+        public static extern IntPtr SetWindowsHookA(int nFilterType, [NativeTypeName("HOOKPROC")] delegate* stdcall<int, nuint, nint, nint> pfnFilterProc);
 
         [DllImport("user32", EntryPoint = "SetWindowsHookW", ExactSpelling = true)]
         [return: NativeTypeName("HHOOK")]
-        public static extern IntPtr SetWindowsHookW(int nFilterType, [NativeTypeName("HOOKPROC")] IntPtr pfnFilterProc);
+        public static extern IntPtr SetWindowsHookW(int nFilterType, [NativeTypeName("HOOKPROC")] delegate* stdcall<int, nuint, nint, nint> pfnFilterProc);
 
         [DllImport("user32", EntryPoint = "UnhookWindowsHook", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int UnhookWindowsHook(int nCode, [NativeTypeName("HOOKPROC")] IntPtr pfnFilterProc);
+        public static extern int UnhookWindowsHook(int nCode, [NativeTypeName("HOOKPROC")] delegate* stdcall<int, nuint, nint, nint> pfnFilterProc);
 
         [DllImport("user32", EntryPoint = "SetWindowsHookExA", ExactSpelling = true)]
         [return: NativeTypeName("HHOOK")]
-        public static extern IntPtr SetWindowsHookExA(int idHook, [NativeTypeName("HOOKPROC")] IntPtr lpfn, [NativeTypeName("HINSTANCE")] IntPtr hmod, [NativeTypeName("DWORD")] uint dwThreadId);
+        public static extern IntPtr SetWindowsHookExA(int idHook, [NativeTypeName("HOOKPROC")] delegate* stdcall<int, nuint, nint, nint> lpfn, [NativeTypeName("HINSTANCE")] IntPtr hmod, [NativeTypeName("DWORD")] uint dwThreadId);
 
         [DllImport("user32", EntryPoint = "SetWindowsHookExW", ExactSpelling = true)]
         [return: NativeTypeName("HHOOK")]
-        public static extern IntPtr SetWindowsHookExW(int idHook, [NativeTypeName("HOOKPROC")] IntPtr lpfn, [NativeTypeName("HINSTANCE")] IntPtr hmod, [NativeTypeName("DWORD")] uint dwThreadId);
+        public static extern IntPtr SetWindowsHookExW(int idHook, [NativeTypeName("HOOKPROC")] delegate* stdcall<int, nuint, nint, nint> lpfn, [NativeTypeName("HINSTANCE")] IntPtr hmod, [NativeTypeName("DWORD")] uint dwThreadId);
 
         [DllImport("user32", EntryPoint = "UnhookWindowsHookEx", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
@@ -2433,14 +2433,14 @@ namespace TerraFX.Interop
 
         [DllImport("user32", EntryPoint = "EnumDisplayMonitors", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumDisplayMonitors([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCRECT")] RECT* lprcClip, [NativeTypeName("MONITORENUMPROC")] IntPtr lpfnEnum, [NativeTypeName("LPARAM")] nint dwData);
+        public static extern int EnumDisplayMonitors([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCRECT")] RECT* lprcClip, [NativeTypeName("MONITORENUMPROC")] delegate* stdcall<IntPtr, IntPtr, RECT*, nint, int> lpfnEnum, [NativeTypeName("LPARAM")] nint dwData);
 
         [DllImport("user32", EntryPoint = "NotifyWinEvent", ExactSpelling = true)]
         public static extern void NotifyWinEvent([NativeTypeName("DWORD")] uint @event, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LONG")] int idObject, [NativeTypeName("LONG")] int idChild);
 
         [DllImport("user32", EntryPoint = "SetWinEventHook", ExactSpelling = true)]
         [return: NativeTypeName("HWINEVENTHOOK")]
-        public static extern IntPtr SetWinEventHook([NativeTypeName("DWORD")] uint eventMin, [NativeTypeName("DWORD")] uint eventMax, [NativeTypeName("HMODULE")] IntPtr hmodWinEventProc, [NativeTypeName("WINEVENTPROC")] IntPtr pfnWinEventProc, [NativeTypeName("DWORD")] uint idProcess, [NativeTypeName("DWORD")] uint idThread, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern IntPtr SetWinEventHook([NativeTypeName("DWORD")] uint eventMin, [NativeTypeName("DWORD")] uint eventMax, [NativeTypeName("HMODULE")] IntPtr hmodWinEventProc, [NativeTypeName("WINEVENTPROC")] delegate* stdcall<IntPtr, uint, IntPtr, int, int, uint, uint, void> pfnWinEventProc, [NativeTypeName("DWORD")] uint idProcess, [NativeTypeName("DWORD")] uint idThread, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("user32", EntryPoint = "IsWinEventHookInstalled", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]

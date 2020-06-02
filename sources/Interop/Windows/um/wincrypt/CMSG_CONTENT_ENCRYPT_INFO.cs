@@ -3,7 +3,6 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -28,10 +27,10 @@ namespace TerraFX.Interop
         public CMSG_RECIPIENT_ENCODE_INFO* rgCmsRecipients;
 
         [NativeTypeName("PFN_CMSG_ALLOC")]
-        public IntPtr pfnAlloc;
+        public delegate* stdcall<nuint, void*> pfnAlloc;
 
         [NativeTypeName("PFN_CMSG_FREE")]
-        public IntPtr pfnFree;
+        public delegate* stdcall<void*, void> pfnFree;
 
         [NativeTypeName("DWORD")]
         public uint dwEncryptFlags;

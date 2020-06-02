@@ -15,78 +15,6 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ID2D1Effect* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ID2D1Effect* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ID2D1Effect* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("UINT32")]
-        public delegate uint _GetPropertyCount(ID2D1Effect* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPropertyName(ID2D1Effect* pThis, [NativeTypeName("UINT32")] uint index, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("UINT32")]
-        public delegate uint _GetPropertyNameLength(ID2D1Effect* pThis, [NativeTypeName("UINT32")] uint index);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate D2D1_PROPERTY_TYPE _GetType(ID2D1Effect* pThis, [NativeTypeName("UINT32")] uint index);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("UINT32")]
-        public delegate uint _GetPropertyIndex(ID2D1Effect* pThis, [NativeTypeName("PCWSTR")] ushort* name);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetValueByName(ID2D1Effect* pThis, [NativeTypeName("PCWSTR")] ushort* name, D2D1_PROPERTY_TYPE type, [NativeTypeName("const BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataSize);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetValue(ID2D1Effect* pThis, [NativeTypeName("UINT32")] uint index, D2D1_PROPERTY_TYPE type, [NativeTypeName("const BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataSize);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetValueByName(ID2D1Effect* pThis, [NativeTypeName("PCWSTR")] ushort* name, D2D1_PROPERTY_TYPE type, [NativeTypeName("BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataSize);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetValue(ID2D1Effect* pThis, [NativeTypeName("UINT32")] uint index, D2D1_PROPERTY_TYPE type, [NativeTypeName("BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataSize);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("UINT32")]
-        public delegate uint _GetValueSize(ID2D1Effect* pThis, [NativeTypeName("UINT32")] uint index);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetSubProperties(ID2D1Effect* pThis, [NativeTypeName("UINT32")] uint index, [NativeTypeName("ID2D1Properties **")] ID2D1Properties** subProperties);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _SetInput(ID2D1Effect* pThis, [NativeTypeName("UINT32")] uint index, [NativeTypeName("ID2D1Image *")] ID2D1Image* input, [NativeTypeName("BOOL")] int invalidate = 1);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetInputCount(ID2D1Effect* pThis, [NativeTypeName("UINT32")] uint inputCount);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _GetInput(ID2D1Effect* pThis, [NativeTypeName("UINT32")] uint index, [NativeTypeName("ID2D1Image **")] ID2D1Image** input);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("UINT32")]
-        public delegate uint _GetInputCount(ID2D1Effect* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _GetOutput(ID2D1Effect* pThis, [NativeTypeName("ID2D1Image **")] ID2D1Image** outputImage);
-
         [return: NativeTypeName("HRESULT")]
         public int SetValueByName([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("const BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataSize)
         {
@@ -130,171 +58,171 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ID2D1Effect*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((ID2D1Effect*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ID2D1Effect*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((ID2D1Effect*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ID2D1Effect*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((ID2D1Effect*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("UINT32")]
         public uint GetPropertyCount()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetPropertyCount>(lpVtbl->GetPropertyCount)((ID2D1Effect*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetPropertyCount((ID2D1Effect*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPropertyName([NativeTypeName("UINT32")] uint index, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetPropertyName>(lpVtbl->GetPropertyName)((ID2D1Effect*)Unsafe.AsPointer(ref this), index, name, nameCount);
+            return lpVtbl->GetPropertyName((ID2D1Effect*)Unsafe.AsPointer(ref this), index, name, nameCount);
         }
 
         [return: NativeTypeName("UINT32")]
         public uint GetPropertyNameLength([NativeTypeName("UINT32")] uint index)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetPropertyNameLength>(lpVtbl->GetPropertyNameLength)((ID2D1Effect*)Unsafe.AsPointer(ref this), index);
+            return lpVtbl->GetPropertyNameLength((ID2D1Effect*)Unsafe.AsPointer(ref this), index);
         }
 
         public D2D1_PROPERTY_TYPE GetType([NativeTypeName("UINT32")] uint index)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetType>(lpVtbl->GetType)((ID2D1Effect*)Unsafe.AsPointer(ref this), index);
+            return lpVtbl->GetType((ID2D1Effect*)Unsafe.AsPointer(ref this), index);
         }
 
         [return: NativeTypeName("UINT32")]
         public uint GetPropertyIndex([NativeTypeName("PCWSTR")] ushort* name)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetPropertyIndex>(lpVtbl->GetPropertyIndex)((ID2D1Effect*)Unsafe.AsPointer(ref this), name);
+            return lpVtbl->GetPropertyIndex((ID2D1Effect*)Unsafe.AsPointer(ref this), name);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetValueByName([NativeTypeName("PCWSTR")] ushort* name, D2D1_PROPERTY_TYPE type, [NativeTypeName("const BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataSize)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetValueByName>(lpVtbl->SetValueByName)((ID2D1Effect*)Unsafe.AsPointer(ref this), name, type, data, dataSize);
+            return lpVtbl->SetValueByName((ID2D1Effect*)Unsafe.AsPointer(ref this), name, type, data, dataSize);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetValue([NativeTypeName("UINT32")] uint index, D2D1_PROPERTY_TYPE type, [NativeTypeName("const BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataSize)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetValue>(lpVtbl->SetValue)((ID2D1Effect*)Unsafe.AsPointer(ref this), index, type, data, dataSize);
+            return lpVtbl->SetValue((ID2D1Effect*)Unsafe.AsPointer(ref this), index, type, data, dataSize);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetValueByName([NativeTypeName("PCWSTR")] ushort* name, D2D1_PROPERTY_TYPE type, [NativeTypeName("BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataSize)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetValueByName>(lpVtbl->GetValueByName)((ID2D1Effect*)Unsafe.AsPointer(ref this), name, type, data, dataSize);
+            return lpVtbl->GetValueByName((ID2D1Effect*)Unsafe.AsPointer(ref this), name, type, data, dataSize);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetValue([NativeTypeName("UINT32")] uint index, D2D1_PROPERTY_TYPE type, [NativeTypeName("BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataSize)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetValue>(lpVtbl->GetValue)((ID2D1Effect*)Unsafe.AsPointer(ref this), index, type, data, dataSize);
+            return lpVtbl->GetValue((ID2D1Effect*)Unsafe.AsPointer(ref this), index, type, data, dataSize);
         }
 
         [return: NativeTypeName("UINT32")]
         public uint GetValueSize([NativeTypeName("UINT32")] uint index)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetValueSize>(lpVtbl->GetValueSize)((ID2D1Effect*)Unsafe.AsPointer(ref this), index);
+            return lpVtbl->GetValueSize((ID2D1Effect*)Unsafe.AsPointer(ref this), index);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetSubProperties([NativeTypeName("UINT32")] uint index, [NativeTypeName("ID2D1Properties **")] ID2D1Properties** subProperties)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetSubProperties>(lpVtbl->GetSubProperties)((ID2D1Effect*)Unsafe.AsPointer(ref this), index, subProperties);
+            return lpVtbl->GetSubProperties((ID2D1Effect*)Unsafe.AsPointer(ref this), index, subProperties);
         }
 
         public void SetInput([NativeTypeName("UINT32")] uint index, [NativeTypeName("ID2D1Image *")] ID2D1Image* input, [NativeTypeName("BOOL")] int invalidate = 1)
         {
-            Marshal.GetDelegateForFunctionPointer<_SetInput>(lpVtbl->SetInput)((ID2D1Effect*)Unsafe.AsPointer(ref this), index, input, invalidate);
+            lpVtbl->SetInput((ID2D1Effect*)Unsafe.AsPointer(ref this), index, input, invalidate);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetInputCount([NativeTypeName("UINT32")] uint inputCount)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetInputCount>(lpVtbl->SetInputCount)((ID2D1Effect*)Unsafe.AsPointer(ref this), inputCount);
+            return lpVtbl->SetInputCount((ID2D1Effect*)Unsafe.AsPointer(ref this), inputCount);
         }
 
         public void GetInput([NativeTypeName("UINT32")] uint index, [NativeTypeName("ID2D1Image **")] ID2D1Image** input)
         {
-            Marshal.GetDelegateForFunctionPointer<_GetInput>(lpVtbl->GetInput)((ID2D1Effect*)Unsafe.AsPointer(ref this), index, input);
+            lpVtbl->GetInput((ID2D1Effect*)Unsafe.AsPointer(ref this), index, input);
         }
 
         [return: NativeTypeName("UINT32")]
         public uint GetInputCount()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetInputCount>(lpVtbl->GetInputCount)((ID2D1Effect*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetInputCount((ID2D1Effect*)Unsafe.AsPointer(ref this));
         }
 
         public void GetOutput([NativeTypeName("ID2D1Image **")] ID2D1Image** outputImage)
         {
-            Marshal.GetDelegateForFunctionPointer<_GetOutput>(lpVtbl->GetOutput)((ID2D1Effect*)Unsafe.AsPointer(ref this), outputImage);
+            lpVtbl->GetOutput((ID2D1Effect*)Unsafe.AsPointer(ref this), outputImage);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<ID2D1Effect*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<ID2D1Effect*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<ID2D1Effect*, uint> Release;
 
             [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetPropertyCount;
+            public delegate* stdcall<ID2D1Effect*, uint> GetPropertyCount;
 
             [NativeTypeName("HRESULT (UINT32, PWSTR, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetPropertyName;
+            public delegate* stdcall<ID2D1Effect*, uint, ushort*, uint, int> GetPropertyName;
 
             [NativeTypeName("UINT32 (UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetPropertyNameLength;
+            public delegate* stdcall<ID2D1Effect*, uint, uint> GetPropertyNameLength;
 
             [NativeTypeName("D2D1_PROPERTY_TYPE (UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public new IntPtr GetType;
+            public new delegate* stdcall<ID2D1Effect*, uint, D2D1_PROPERTY_TYPE> GetType;
 
             [NativeTypeName("UINT32 (PCWSTR) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetPropertyIndex;
+            public delegate* stdcall<ID2D1Effect*, ushort*, uint> GetPropertyIndex;
 
             [NativeTypeName("HRESULT (PCWSTR, D2D1_PROPERTY_TYPE, const BYTE *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetValueByName;
+            public delegate* stdcall<ID2D1Effect*, ushort*, D2D1_PROPERTY_TYPE, byte*, uint, int> SetValueByName;
 
             [NativeTypeName("HRESULT (UINT32, D2D1_PROPERTY_TYPE, const BYTE *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetValue;
+            public delegate* stdcall<ID2D1Effect*, uint, D2D1_PROPERTY_TYPE, byte*, uint, int> SetValue;
 
             [NativeTypeName("HRESULT (PCWSTR, D2D1_PROPERTY_TYPE, BYTE *, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetValueByName;
+            public delegate* stdcall<ID2D1Effect*, ushort*, D2D1_PROPERTY_TYPE, byte*, uint, int> GetValueByName;
 
             [NativeTypeName("HRESULT (UINT32, D2D1_PROPERTY_TYPE, BYTE *, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetValue;
+            public delegate* stdcall<ID2D1Effect*, uint, D2D1_PROPERTY_TYPE, byte*, uint, int> GetValue;
 
             [NativeTypeName("UINT32 (UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetValueSize;
+            public delegate* stdcall<ID2D1Effect*, uint, uint> GetValueSize;
 
             [NativeTypeName("HRESULT (UINT32, ID2D1Properties **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetSubProperties;
+            public delegate* stdcall<ID2D1Effect*, uint, ID2D1Properties**, int> GetSubProperties;
 
             [NativeTypeName("void (UINT32, ID2D1Image *, BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetInput;
+            public delegate* stdcall<ID2D1Effect*, uint, ID2D1Image*, int, void> SetInput;
 
             [NativeTypeName("HRESULT (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetInputCount;
+            public delegate* stdcall<ID2D1Effect*, uint, int> SetInputCount;
 
             [NativeTypeName("void (UINT32, ID2D1Image **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetInput;
+            public delegate* stdcall<ID2D1Effect*, uint, ID2D1Image**, void> GetInput;
 
             [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetInputCount;
+            public delegate* stdcall<ID2D1Effect*, uint> GetInputCount;
 
             [NativeTypeName("void (ID2D1Image **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetOutput;
+            public delegate* stdcall<ID2D1Effect*, ID2D1Image**, void> GetOutput;
         }
     }
 }

@@ -14,150 +14,106 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDCompositionTurbulenceEffect* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDCompositionTurbulenceEffect* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDCompositionTurbulenceEffect* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetInput(IDCompositionTurbulenceEffect* pThis, [NativeTypeName("UINT")] uint index, [NativeTypeName("IUnknown *")] IUnknown* input, [NativeTypeName("UINT")] uint flags);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetOffset(IDCompositionTurbulenceEffect* pThis, [NativeTypeName("const D2D1_VECTOR_2F &")] D2D_VECTOR_2F* offset);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetBaseFrequency(IDCompositionTurbulenceEffect* pThis, [NativeTypeName("const D2D1_VECTOR_2F &")] D2D_VECTOR_2F* frequency);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetSize(IDCompositionTurbulenceEffect* pThis, [NativeTypeName("const D2D1_VECTOR_2F &")] D2D_VECTOR_2F* size);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetNumOctaves(IDCompositionTurbulenceEffect* pThis, [NativeTypeName("UINT")] uint numOctaves);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetSeed(IDCompositionTurbulenceEffect* pThis, [NativeTypeName("UINT")] uint seed);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetNoise(IDCompositionTurbulenceEffect* pThis, D2D1_TURBULENCE_NOISE noise);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetStitchable(IDCompositionTurbulenceEffect* pThis, [NativeTypeName("BOOL")] int stitchable);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetInput([NativeTypeName("UINT")] uint index, [NativeTypeName("IUnknown *")] IUnknown* input, [NativeTypeName("UINT")] uint flags)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetInput>(lpVtbl->SetInput)((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), index, input, flags);
+            return lpVtbl->SetInput((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), index, input, flags);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetOffset([NativeTypeName("const D2D1_VECTOR_2F &")] D2D_VECTOR_2F* offset)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetOffset>(lpVtbl->SetOffset)((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), offset);
+            return lpVtbl->SetOffset((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), offset);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetBaseFrequency([NativeTypeName("const D2D1_VECTOR_2F &")] D2D_VECTOR_2F* frequency)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetBaseFrequency>(lpVtbl->SetBaseFrequency)((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), frequency);
+            return lpVtbl->SetBaseFrequency((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), frequency);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetSize([NativeTypeName("const D2D1_VECTOR_2F &")] D2D_VECTOR_2F* size)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetSize>(lpVtbl->SetSize)((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), size);
+            return lpVtbl->SetSize((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), size);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetNumOctaves([NativeTypeName("UINT")] uint numOctaves)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetNumOctaves>(lpVtbl->SetNumOctaves)((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), numOctaves);
+            return lpVtbl->SetNumOctaves((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), numOctaves);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetSeed([NativeTypeName("UINT")] uint seed)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetSeed>(lpVtbl->SetSeed)((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), seed);
+            return lpVtbl->SetSeed((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), seed);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetNoise(D2D1_TURBULENCE_NOISE noise)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetNoise>(lpVtbl->SetNoise)((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), noise);
+            return lpVtbl->SetNoise((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), noise);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetStitchable([NativeTypeName("BOOL")] int stitchable)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetStitchable>(lpVtbl->SetStitchable)((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), stitchable);
+            return lpVtbl->SetStitchable((IDCompositionTurbulenceEffect*)Unsafe.AsPointer(ref this), stitchable);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IDCompositionTurbulenceEffect*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IDCompositionTurbulenceEffect*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IDCompositionTurbulenceEffect*, uint> Release;
 
             [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetInput;
+            public delegate* stdcall<IDCompositionTurbulenceEffect*, uint, IUnknown*, uint, int> SetInput;
 
             [NativeTypeName("HRESULT (const D2D1_VECTOR_2F &) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetOffset;
+            public delegate* stdcall<IDCompositionTurbulenceEffect*, D2D_VECTOR_2F*, int> SetOffset;
 
             [NativeTypeName("HRESULT (const D2D1_VECTOR_2F &) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetBaseFrequency;
+            public delegate* stdcall<IDCompositionTurbulenceEffect*, D2D_VECTOR_2F*, int> SetBaseFrequency;
 
             [NativeTypeName("HRESULT (const D2D1_VECTOR_2F &) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetSize;
+            public delegate* stdcall<IDCompositionTurbulenceEffect*, D2D_VECTOR_2F*, int> SetSize;
 
             [NativeTypeName("HRESULT (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetNumOctaves;
+            public delegate* stdcall<IDCompositionTurbulenceEffect*, uint, int> SetNumOctaves;
 
             [NativeTypeName("HRESULT (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetSeed;
+            public delegate* stdcall<IDCompositionTurbulenceEffect*, uint, int> SetSeed;
 
             [NativeTypeName("HRESULT (D2D1_TURBULENCE_NOISE) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetNoise;
+            public delegate* stdcall<IDCompositionTurbulenceEffect*, D2D1_TURBULENCE_NOISE, int> SetNoise;
 
             [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetStitchable;
+            public delegate* stdcall<IDCompositionTurbulenceEffect*, int, int> SetStitchable;
         }
     }
 }

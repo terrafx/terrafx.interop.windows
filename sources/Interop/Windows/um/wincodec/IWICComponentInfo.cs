@@ -14,150 +14,106 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IWICComponentInfo* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IWICComponentInfo* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IWICComponentInfo* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetComponentType(IWICComponentInfo* pThis, [NativeTypeName("WICComponentType *")] WICComponentType* pType);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetCLSID(IWICComponentInfo* pThis, [NativeTypeName("CLSID *")] Guid* pclsid);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetSigningStatus(IWICComponentInfo* pThis, [NativeTypeName("DWORD *")] uint* pStatus);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetAuthor(IWICComponentInfo* pThis, [NativeTypeName("UINT")] uint cchAuthor, [NativeTypeName("WCHAR *")] ushort* wzAuthor, [NativeTypeName("UINT *")] uint* pcchActual);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetVendorGUID(IWICComponentInfo* pThis, [NativeTypeName("GUID *")] Guid* pguidVendor);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetVersion(IWICComponentInfo* pThis, [NativeTypeName("UINT")] uint cchVersion, [NativeTypeName("WCHAR *")] ushort* wzVersion, [NativeTypeName("UINT *")] uint* pcchActual);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetSpecVersion(IWICComponentInfo* pThis, [NativeTypeName("UINT")] uint cchSpecVersion, [NativeTypeName("WCHAR *")] ushort* wzSpecVersion, [NativeTypeName("UINT *")] uint* pcchActual);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFriendlyName(IWICComponentInfo* pThis, [NativeTypeName("UINT")] uint cchFriendlyName, [NativeTypeName("WCHAR *")] ushort* wzFriendlyName, [NativeTypeName("UINT *")] uint* pcchActual);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IWICComponentInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IWICComponentInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IWICComponentInfo*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IWICComponentInfo*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IWICComponentInfo*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IWICComponentInfo*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetComponentType([NativeTypeName("WICComponentType *")] WICComponentType* pType)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetComponentType>(lpVtbl->GetComponentType)((IWICComponentInfo*)Unsafe.AsPointer(ref this), pType);
+            return lpVtbl->GetComponentType((IWICComponentInfo*)Unsafe.AsPointer(ref this), pType);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetCLSID([NativeTypeName("CLSID *")] Guid* pclsid)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetCLSID>(lpVtbl->GetCLSID)((IWICComponentInfo*)Unsafe.AsPointer(ref this), pclsid);
+            return lpVtbl->GetCLSID((IWICComponentInfo*)Unsafe.AsPointer(ref this), pclsid);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetSigningStatus([NativeTypeName("DWORD *")] uint* pStatus)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetSigningStatus>(lpVtbl->GetSigningStatus)((IWICComponentInfo*)Unsafe.AsPointer(ref this), pStatus);
+            return lpVtbl->GetSigningStatus((IWICComponentInfo*)Unsafe.AsPointer(ref this), pStatus);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetAuthor([NativeTypeName("UINT")] uint cchAuthor, [NativeTypeName("WCHAR *")] ushort* wzAuthor, [NativeTypeName("UINT *")] uint* pcchActual)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetAuthor>(lpVtbl->GetAuthor)((IWICComponentInfo*)Unsafe.AsPointer(ref this), cchAuthor, wzAuthor, pcchActual);
+            return lpVtbl->GetAuthor((IWICComponentInfo*)Unsafe.AsPointer(ref this), cchAuthor, wzAuthor, pcchActual);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetVendorGUID([NativeTypeName("GUID *")] Guid* pguidVendor)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetVendorGUID>(lpVtbl->GetVendorGUID)((IWICComponentInfo*)Unsafe.AsPointer(ref this), pguidVendor);
+            return lpVtbl->GetVendorGUID((IWICComponentInfo*)Unsafe.AsPointer(ref this), pguidVendor);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetVersion([NativeTypeName("UINT")] uint cchVersion, [NativeTypeName("WCHAR *")] ushort* wzVersion, [NativeTypeName("UINT *")] uint* pcchActual)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetVersion>(lpVtbl->GetVersion)((IWICComponentInfo*)Unsafe.AsPointer(ref this), cchVersion, wzVersion, pcchActual);
+            return lpVtbl->GetVersion((IWICComponentInfo*)Unsafe.AsPointer(ref this), cchVersion, wzVersion, pcchActual);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetSpecVersion([NativeTypeName("UINT")] uint cchSpecVersion, [NativeTypeName("WCHAR *")] ushort* wzSpecVersion, [NativeTypeName("UINT *")] uint* pcchActual)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetSpecVersion>(lpVtbl->GetSpecVersion)((IWICComponentInfo*)Unsafe.AsPointer(ref this), cchSpecVersion, wzSpecVersion, pcchActual);
+            return lpVtbl->GetSpecVersion((IWICComponentInfo*)Unsafe.AsPointer(ref this), cchSpecVersion, wzSpecVersion, pcchActual);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetFriendlyName([NativeTypeName("UINT")] uint cchFriendlyName, [NativeTypeName("WCHAR *")] ushort* wzFriendlyName, [NativeTypeName("UINT *")] uint* pcchActual)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetFriendlyName>(lpVtbl->GetFriendlyName)((IWICComponentInfo*)Unsafe.AsPointer(ref this), cchFriendlyName, wzFriendlyName, pcchActual);
+            return lpVtbl->GetFriendlyName((IWICComponentInfo*)Unsafe.AsPointer(ref this), cchFriendlyName, wzFriendlyName, pcchActual);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IWICComponentInfo*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IWICComponentInfo*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IWICComponentInfo*, uint> Release;
 
             [NativeTypeName("HRESULT (WICComponentType *) __attribute__((stdcall))")]
-            public IntPtr GetComponentType;
+            public delegate* stdcall<IWICComponentInfo*, WICComponentType*, int> GetComponentType;
 
             [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-            public IntPtr GetCLSID;
+            public delegate* stdcall<IWICComponentInfo*, Guid*, int> GetCLSID;
 
             [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public IntPtr GetSigningStatus;
+            public delegate* stdcall<IWICComponentInfo*, uint*, int> GetSigningStatus;
 
             [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-            public IntPtr GetAuthor;
+            public delegate* stdcall<IWICComponentInfo*, uint, ushort*, uint*, int> GetAuthor;
 
             [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-            public IntPtr GetVendorGUID;
+            public delegate* stdcall<IWICComponentInfo*, Guid*, int> GetVendorGUID;
 
             [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-            public IntPtr GetVersion;
+            public delegate* stdcall<IWICComponentInfo*, uint, ushort*, uint*, int> GetVersion;
 
             [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-            public IntPtr GetSpecVersion;
+            public delegate* stdcall<IWICComponentInfo*, uint, ushort*, uint*, int> GetSpecVersion;
 
             [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-            public IntPtr GetFriendlyName;
+            public delegate* stdcall<IWICComponentInfo*, uint, ushort*, uint*, int> GetFriendlyName;
         }
     }
 }

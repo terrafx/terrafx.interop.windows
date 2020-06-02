@@ -14,85 +14,61 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IWICDdsEncoder* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IWICDdsEncoder* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IWICDdsEncoder* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetParameters(IWICDdsEncoder* pThis, [NativeTypeName("WICDdsParameters *")] WICDdsParameters* pParameters);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetParameters(IWICDdsEncoder* pThis, [NativeTypeName("WICDdsParameters *")] WICDdsParameters* pParameters);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateNewFrame(IWICDdsEncoder* pThis, [NativeTypeName("IWICBitmapFrameEncode **")] IWICBitmapFrameEncode** ppIFrameEncode, [NativeTypeName("UINT *")] uint* pArrayIndex, [NativeTypeName("UINT *")] uint* pMipLevel, [NativeTypeName("UINT *")] uint* pSliceIndex);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IWICDdsEncoder*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IWICDdsEncoder*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IWICDdsEncoder*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IWICDdsEncoder*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IWICDdsEncoder*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IWICDdsEncoder*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetParameters([NativeTypeName("WICDdsParameters *")] WICDdsParameters* pParameters)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetParameters>(lpVtbl->SetParameters)((IWICDdsEncoder*)Unsafe.AsPointer(ref this), pParameters);
+            return lpVtbl->SetParameters((IWICDdsEncoder*)Unsafe.AsPointer(ref this), pParameters);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetParameters([NativeTypeName("WICDdsParameters *")] WICDdsParameters* pParameters)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetParameters>(lpVtbl->GetParameters)((IWICDdsEncoder*)Unsafe.AsPointer(ref this), pParameters);
+            return lpVtbl->GetParameters((IWICDdsEncoder*)Unsafe.AsPointer(ref this), pParameters);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CreateNewFrame([NativeTypeName("IWICBitmapFrameEncode **")] IWICBitmapFrameEncode** ppIFrameEncode, [NativeTypeName("UINT *")] uint* pArrayIndex, [NativeTypeName("UINT *")] uint* pMipLevel, [NativeTypeName("UINT *")] uint* pSliceIndex)
         {
-            return Marshal.GetDelegateForFunctionPointer<_CreateNewFrame>(lpVtbl->CreateNewFrame)((IWICDdsEncoder*)Unsafe.AsPointer(ref this), ppIFrameEncode, pArrayIndex, pMipLevel, pSliceIndex);
+            return lpVtbl->CreateNewFrame((IWICDdsEncoder*)Unsafe.AsPointer(ref this), ppIFrameEncode, pArrayIndex, pMipLevel, pSliceIndex);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IWICDdsEncoder*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IWICDdsEncoder*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IWICDdsEncoder*, uint> Release;
 
             [NativeTypeName("HRESULT (WICDdsParameters *) __attribute__((stdcall))")]
-            public IntPtr SetParameters;
+            public delegate* stdcall<IWICDdsEncoder*, WICDdsParameters*, int> SetParameters;
 
             [NativeTypeName("HRESULT (WICDdsParameters *) __attribute__((stdcall))")]
-            public IntPtr GetParameters;
+            public delegate* stdcall<IWICDdsEncoder*, WICDdsParameters*, int> GetParameters;
 
             [NativeTypeName("HRESULT (IWICBitmapFrameEncode **, UINT *, UINT *, UINT *) __attribute__((stdcall))")]
-            public IntPtr CreateNewFrame;
+            public delegate* stdcall<IWICDdsEncoder*, IWICBitmapFrameEncode**, uint*, uint*, uint*, int> CreateNewFrame;
         }
     }
 }

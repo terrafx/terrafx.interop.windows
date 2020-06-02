@@ -14,137 +14,97 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDWriteFontSetBuilder2* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDWriteFontSetBuilder2* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDWriteFontSetBuilder2* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _AddFontFaceReference(IDWriteFontSetBuilder2* pThis, [NativeTypeName("IDWriteFontFaceReference *")] IDWriteFontFaceReference* fontFaceReference);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _AddFontFaceReference1(IDWriteFontSetBuilder2* pThis, [NativeTypeName("IDWriteFontFaceReference *")] IDWriteFontFaceReference* fontFaceReference, [NativeTypeName("const DWRITE_FONT_PROPERTY *")] DWRITE_FONT_PROPERTY* properties, [NativeTypeName("UINT32")] uint propertyCount);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _AddFontSet(IDWriteFontSetBuilder2* pThis, [NativeTypeName("IDWriteFontSet *")] IDWriteFontSet* fontSet);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateFontSet(IDWriteFontSetBuilder2* pThis, [NativeTypeName("IDWriteFontSet **")] IDWriteFontSet** fontSet);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _AddFontFile(IDWriteFontSetBuilder2* pThis, [NativeTypeName("IDWriteFontFile *")] IDWriteFontFile* fontFile);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _AddFont(IDWriteFontSetBuilder2* pThis, [NativeTypeName("IDWriteFontFile *")] IDWriteFontFile* fontFile, [NativeTypeName("UINT32")] uint fontFaceIndex, DWRITE_FONT_SIMULATIONS fontSimulations, [NativeTypeName("const DWRITE_FONT_AXIS_VALUE *")] DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount, [NativeTypeName("const DWRITE_FONT_AXIS_RANGE *")] DWRITE_FONT_AXIS_RANGE* fontAxisRanges, [NativeTypeName("UINT32")] uint fontAxisRangeCount, [NativeTypeName("const DWRITE_FONT_PROPERTY *")] DWRITE_FONT_PROPERTY* properties, [NativeTypeName("UINT32")] uint propertyCount);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _AddFontFile1(IDWriteFontSetBuilder2* pThis, [NativeTypeName("const WCHAR *")] ushort* filePath);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDWriteFontSetBuilder2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IDWriteFontSetBuilder2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDWriteFontSetBuilder2*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IDWriteFontSetBuilder2*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDWriteFontSetBuilder2*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IDWriteFontSetBuilder2*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int AddFontFaceReference([NativeTypeName("IDWriteFontFaceReference *")] IDWriteFontFaceReference* fontFaceReference)
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddFontFaceReference>(lpVtbl->AddFontFaceReference)((IDWriteFontSetBuilder2*)Unsafe.AsPointer(ref this), fontFaceReference);
+            return lpVtbl->AddFontFaceReference((IDWriteFontSetBuilder2*)Unsafe.AsPointer(ref this), fontFaceReference);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int AddFontFaceReference([NativeTypeName("IDWriteFontFaceReference *")] IDWriteFontFaceReference* fontFaceReference, [NativeTypeName("const DWRITE_FONT_PROPERTY *")] DWRITE_FONT_PROPERTY* properties, [NativeTypeName("UINT32")] uint propertyCount)
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddFontFaceReference1>(lpVtbl->AddFontFaceReference1)((IDWriteFontSetBuilder2*)Unsafe.AsPointer(ref this), fontFaceReference, properties, propertyCount);
+            return lpVtbl->AddFontFaceReference1((IDWriteFontSetBuilder2*)Unsafe.AsPointer(ref this), fontFaceReference, properties, propertyCount);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int AddFontSet([NativeTypeName("IDWriteFontSet *")] IDWriteFontSet* fontSet)
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddFontSet>(lpVtbl->AddFontSet)((IDWriteFontSetBuilder2*)Unsafe.AsPointer(ref this), fontSet);
+            return lpVtbl->AddFontSet((IDWriteFontSetBuilder2*)Unsafe.AsPointer(ref this), fontSet);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CreateFontSet([NativeTypeName("IDWriteFontSet **")] IDWriteFontSet** fontSet)
         {
-            return Marshal.GetDelegateForFunctionPointer<_CreateFontSet>(lpVtbl->CreateFontSet)((IDWriteFontSetBuilder2*)Unsafe.AsPointer(ref this), fontSet);
+            return lpVtbl->CreateFontSet((IDWriteFontSetBuilder2*)Unsafe.AsPointer(ref this), fontSet);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int AddFontFile([NativeTypeName("IDWriteFontFile *")] IDWriteFontFile* fontFile)
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddFontFile>(lpVtbl->AddFontFile)((IDWriteFontSetBuilder2*)Unsafe.AsPointer(ref this), fontFile);
+            return lpVtbl->AddFontFile((IDWriteFontSetBuilder2*)Unsafe.AsPointer(ref this), fontFile);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int AddFont([NativeTypeName("IDWriteFontFile *")] IDWriteFontFile* fontFile, [NativeTypeName("UINT32")] uint fontFaceIndex, DWRITE_FONT_SIMULATIONS fontSimulations, [NativeTypeName("const DWRITE_FONT_AXIS_VALUE *")] DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount, [NativeTypeName("const DWRITE_FONT_AXIS_RANGE *")] DWRITE_FONT_AXIS_RANGE* fontAxisRanges, [NativeTypeName("UINT32")] uint fontAxisRangeCount, [NativeTypeName("const DWRITE_FONT_PROPERTY *")] DWRITE_FONT_PROPERTY* properties, [NativeTypeName("UINT32")] uint propertyCount)
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddFont>(lpVtbl->AddFont)((IDWriteFontSetBuilder2*)Unsafe.AsPointer(ref this), fontFile, fontFaceIndex, fontSimulations, fontAxisValues, fontAxisValueCount, fontAxisRanges, fontAxisRangeCount, properties, propertyCount);
+            return lpVtbl->AddFont((IDWriteFontSetBuilder2*)Unsafe.AsPointer(ref this), fontFile, fontFaceIndex, fontSimulations, fontAxisValues, fontAxisValueCount, fontAxisRanges, fontAxisRangeCount, properties, propertyCount);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int AddFontFile([NativeTypeName("const WCHAR *")] ushort* filePath)
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddFontFile1>(lpVtbl->AddFontFile1)((IDWriteFontSetBuilder2*)Unsafe.AsPointer(ref this), filePath);
+            return lpVtbl->AddFontFile1((IDWriteFontSetBuilder2*)Unsafe.AsPointer(ref this), filePath);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IDWriteFontSetBuilder2*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IDWriteFontSetBuilder2*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IDWriteFontSetBuilder2*, uint> Release;
 
             [NativeTypeName("HRESULT (IDWriteFontFaceReference *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr AddFontFaceReference;
+            public delegate* stdcall<IDWriteFontSetBuilder2*, IDWriteFontFaceReference*, int> AddFontFaceReference;
 
             [NativeTypeName("HRESULT (IDWriteFontFaceReference *, const DWRITE_FONT_PROPERTY *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr AddFontFaceReference1;
+            public delegate* stdcall<IDWriteFontSetBuilder2*, IDWriteFontFaceReference*, DWRITE_FONT_PROPERTY*, uint, int> AddFontFaceReference1;
 
             [NativeTypeName("HRESULT (IDWriteFontSet *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr AddFontSet;
+            public delegate* stdcall<IDWriteFontSetBuilder2*, IDWriteFontSet*, int> AddFontSet;
 
             [NativeTypeName("HRESULT (IDWriteFontSet **) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr CreateFontSet;
+            public delegate* stdcall<IDWriteFontSetBuilder2*, IDWriteFontSet**, int> CreateFontSet;
 
             [NativeTypeName("HRESULT (IDWriteFontFile *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr AddFontFile;
+            public delegate* stdcall<IDWriteFontSetBuilder2*, IDWriteFontFile*, int> AddFontFile;
 
             [NativeTypeName("HRESULT (IDWriteFontFile *, UINT32, DWRITE_FONT_SIMULATIONS, const DWRITE_FONT_AXIS_VALUE *, UINT32, const DWRITE_FONT_AXIS_RANGE *, UINT32, const DWRITE_FONT_PROPERTY *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr AddFont;
+            public delegate* stdcall<IDWriteFontSetBuilder2*, IDWriteFontFile*, uint, DWRITE_FONT_SIMULATIONS, DWRITE_FONT_AXIS_VALUE*, uint, DWRITE_FONT_AXIS_RANGE*, uint, DWRITE_FONT_PROPERTY*, uint, int> AddFont;
 
             [NativeTypeName("HRESULT (const WCHAR *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr AddFontFile1;
+            public delegate* stdcall<IDWriteFontSetBuilder2*, ushort*, int> AddFontFile1;
         }
     }
 }

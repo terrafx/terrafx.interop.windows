@@ -14,397 +14,277 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IOleInPlaceSiteWindowless* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IOleInPlaceSiteWindowless* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IOleInPlaceSiteWindowless* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetWindow(IOleInPlaceSiteWindowless* pThis, [NativeTypeName("HWND *")] IntPtr* phwnd);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _ContextSensitiveHelp(IOleInPlaceSiteWindowless* pThis, [NativeTypeName("BOOL")] int fEnterMode);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _CanInPlaceActivate(IOleInPlaceSiteWindowless* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _OnInPlaceActivate(IOleInPlaceSiteWindowless* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _OnUIActivate(IOleInPlaceSiteWindowless* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetWindowContext(IOleInPlaceSiteWindowless* pThis, [NativeTypeName("IOleInPlaceFrame **")] IOleInPlaceFrame** ppFrame, [NativeTypeName("IOleInPlaceUIWindow **")] IOleInPlaceUIWindow** ppDoc, [NativeTypeName("LPRECT")] RECT* lprcPosRect, [NativeTypeName("LPRECT")] RECT* lprcClipRect, [NativeTypeName("LPOLEINPLACEFRAMEINFO")] OIFI* lpFrameInfo);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Scroll(IOleInPlaceSiteWindowless* pThis, SIZE scrollExtant);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _OnUIDeactivate(IOleInPlaceSiteWindowless* pThis, [NativeTypeName("BOOL")] int fUndoable);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _OnInPlaceDeactivate(IOleInPlaceSiteWindowless* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _DiscardUndoState(IOleInPlaceSiteWindowless* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _DeactivateAndUndo(IOleInPlaceSiteWindowless* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _OnPosRectChange(IOleInPlaceSiteWindowless* pThis, [NativeTypeName("LPCRECT")] RECT* lprcPosRect);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _OnInPlaceActivateEx(IOleInPlaceSiteWindowless* pThis, [NativeTypeName("BOOL *")] int* pfNoRedraw, [NativeTypeName("DWORD")] uint dwFlags);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _OnInPlaceDeactivateEx(IOleInPlaceSiteWindowless* pThis, [NativeTypeName("BOOL")] int fNoRedraw);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _RequestUIActivate(IOleInPlaceSiteWindowless* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _CanWindowlessActivate(IOleInPlaceSiteWindowless* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetCapture(IOleInPlaceSiteWindowless* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetCapture(IOleInPlaceSiteWindowless* pThis, [NativeTypeName("BOOL")] int fCapture);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFocus(IOleInPlaceSiteWindowless* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetFocus(IOleInPlaceSiteWindowless* pThis, [NativeTypeName("BOOL")] int fFocus);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDC(IOleInPlaceSiteWindowless* pThis, [NativeTypeName("LPCRECT")] RECT* pRect, [NativeTypeName("DWORD")] uint grfFlags, [NativeTypeName("HDC *")] IntPtr* phDC);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _ReleaseDC(IOleInPlaceSiteWindowless* pThis, [NativeTypeName("HDC")] IntPtr hDC);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _InvalidateRect(IOleInPlaceSiteWindowless* pThis, [NativeTypeName("LPCRECT")] RECT* pRect, [NativeTypeName("BOOL")] int fErase);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _InvalidateRgn(IOleInPlaceSiteWindowless* pThis, [NativeTypeName("HRGN")] IntPtr hRGN, [NativeTypeName("BOOL")] int fErase);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _ScrollRect(IOleInPlaceSiteWindowless* pThis, [NativeTypeName("INT")] int dx, [NativeTypeName("INT")] int dy, [NativeTypeName("LPCRECT")] RECT* pRectScroll, [NativeTypeName("LPCRECT")] RECT* pRectClip);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _AdjustRect(IOleInPlaceSiteWindowless* pThis, [NativeTypeName("LPRECT")] RECT* prc);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _OnDefWindowMessage(IOleInPlaceSiteWindowless* pThis, [NativeTypeName("UINT")] uint msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("LRESULT *")] nint* plResult);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetWindow([NativeTypeName("HWND *")] IntPtr* phwnd)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetWindow>(lpVtbl->GetWindow)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), phwnd);
+            return lpVtbl->GetWindow((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), phwnd);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ContextSensitiveHelp([NativeTypeName("BOOL")] int fEnterMode)
         {
-            return Marshal.GetDelegateForFunctionPointer<_ContextSensitiveHelp>(lpVtbl->ContextSensitiveHelp)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), fEnterMode);
+            return lpVtbl->ContextSensitiveHelp((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), fEnterMode);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CanInPlaceActivate()
         {
-            return Marshal.GetDelegateForFunctionPointer<_CanInPlaceActivate>(lpVtbl->CanInPlaceActivate)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this));
+            return lpVtbl->CanInPlaceActivate((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int OnInPlaceActivate()
         {
-            return Marshal.GetDelegateForFunctionPointer<_OnInPlaceActivate>(lpVtbl->OnInPlaceActivate)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this));
+            return lpVtbl->OnInPlaceActivate((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int OnUIActivate()
         {
-            return Marshal.GetDelegateForFunctionPointer<_OnUIActivate>(lpVtbl->OnUIActivate)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this));
+            return lpVtbl->OnUIActivate((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetWindowContext([NativeTypeName("IOleInPlaceFrame **")] IOleInPlaceFrame** ppFrame, [NativeTypeName("IOleInPlaceUIWindow **")] IOleInPlaceUIWindow** ppDoc, [NativeTypeName("LPRECT")] RECT* lprcPosRect, [NativeTypeName("LPRECT")] RECT* lprcClipRect, [NativeTypeName("LPOLEINPLACEFRAMEINFO")] OIFI* lpFrameInfo)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetWindowContext>(lpVtbl->GetWindowContext)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), ppFrame, ppDoc, lprcPosRect, lprcClipRect, lpFrameInfo);
+            return lpVtbl->GetWindowContext((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), ppFrame, ppDoc, lprcPosRect, lprcClipRect, lpFrameInfo);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Scroll(SIZE scrollExtant)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Scroll>(lpVtbl->Scroll)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), scrollExtant);
+            return lpVtbl->Scroll((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), scrollExtant);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int OnUIDeactivate([NativeTypeName("BOOL")] int fUndoable)
         {
-            return Marshal.GetDelegateForFunctionPointer<_OnUIDeactivate>(lpVtbl->OnUIDeactivate)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), fUndoable);
+            return lpVtbl->OnUIDeactivate((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), fUndoable);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int OnInPlaceDeactivate()
         {
-            return Marshal.GetDelegateForFunctionPointer<_OnInPlaceDeactivate>(lpVtbl->OnInPlaceDeactivate)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this));
+            return lpVtbl->OnInPlaceDeactivate((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int DiscardUndoState()
         {
-            return Marshal.GetDelegateForFunctionPointer<_DiscardUndoState>(lpVtbl->DiscardUndoState)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this));
+            return lpVtbl->DiscardUndoState((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int DeactivateAndUndo()
         {
-            return Marshal.GetDelegateForFunctionPointer<_DeactivateAndUndo>(lpVtbl->DeactivateAndUndo)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this));
+            return lpVtbl->DeactivateAndUndo((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int OnPosRectChange([NativeTypeName("LPCRECT")] RECT* lprcPosRect)
         {
-            return Marshal.GetDelegateForFunctionPointer<_OnPosRectChange>(lpVtbl->OnPosRectChange)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), lprcPosRect);
+            return lpVtbl->OnPosRectChange((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), lprcPosRect);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int OnInPlaceActivateEx([NativeTypeName("BOOL *")] int* pfNoRedraw, [NativeTypeName("DWORD")] uint dwFlags)
         {
-            return Marshal.GetDelegateForFunctionPointer<_OnInPlaceActivateEx>(lpVtbl->OnInPlaceActivateEx)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), pfNoRedraw, dwFlags);
+            return lpVtbl->OnInPlaceActivateEx((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), pfNoRedraw, dwFlags);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int OnInPlaceDeactivateEx([NativeTypeName("BOOL")] int fNoRedraw)
         {
-            return Marshal.GetDelegateForFunctionPointer<_OnInPlaceDeactivateEx>(lpVtbl->OnInPlaceDeactivateEx)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), fNoRedraw);
+            return lpVtbl->OnInPlaceDeactivateEx((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), fNoRedraw);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int RequestUIActivate()
         {
-            return Marshal.GetDelegateForFunctionPointer<_RequestUIActivate>(lpVtbl->RequestUIActivate)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this));
+            return lpVtbl->RequestUIActivate((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CanWindowlessActivate()
         {
-            return Marshal.GetDelegateForFunctionPointer<_CanWindowlessActivate>(lpVtbl->CanWindowlessActivate)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this));
+            return lpVtbl->CanWindowlessActivate((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetCapture()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetCapture>(lpVtbl->GetCapture)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetCapture((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetCapture([NativeTypeName("BOOL")] int fCapture)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetCapture>(lpVtbl->SetCapture)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), fCapture);
+            return lpVtbl->SetCapture((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), fCapture);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetFocus()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetFocus>(lpVtbl->GetFocus)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetFocus((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetFocus([NativeTypeName("BOOL")] int fFocus)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetFocus>(lpVtbl->SetFocus)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), fFocus);
+            return lpVtbl->SetFocus((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), fFocus);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDC([NativeTypeName("LPCRECT")] RECT* pRect, [NativeTypeName("DWORD")] uint grfFlags, [NativeTypeName("HDC *")] IntPtr* phDC)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetDC>(lpVtbl->GetDC)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), pRect, grfFlags, phDC);
+            return lpVtbl->GetDC((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), pRect, grfFlags, phDC);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ReleaseDC([NativeTypeName("HDC")] IntPtr hDC)
         {
-            return Marshal.GetDelegateForFunctionPointer<_ReleaseDC>(lpVtbl->ReleaseDC)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), hDC);
+            return lpVtbl->ReleaseDC((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), hDC);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int InvalidateRect([NativeTypeName("LPCRECT")] RECT* pRect, [NativeTypeName("BOOL")] int fErase)
         {
-            return Marshal.GetDelegateForFunctionPointer<_InvalidateRect>(lpVtbl->InvalidateRect)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), pRect, fErase);
+            return lpVtbl->InvalidateRect((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), pRect, fErase);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int InvalidateRgn([NativeTypeName("HRGN")] IntPtr hRGN, [NativeTypeName("BOOL")] int fErase)
         {
-            return Marshal.GetDelegateForFunctionPointer<_InvalidateRgn>(lpVtbl->InvalidateRgn)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), hRGN, fErase);
+            return lpVtbl->InvalidateRgn((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), hRGN, fErase);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ScrollRect([NativeTypeName("INT")] int dx, [NativeTypeName("INT")] int dy, [NativeTypeName("LPCRECT")] RECT* pRectScroll, [NativeTypeName("LPCRECT")] RECT* pRectClip)
         {
-            return Marshal.GetDelegateForFunctionPointer<_ScrollRect>(lpVtbl->ScrollRect)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), dx, dy, pRectScroll, pRectClip);
+            return lpVtbl->ScrollRect((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), dx, dy, pRectScroll, pRectClip);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int AdjustRect([NativeTypeName("LPRECT")] RECT* prc)
         {
-            return Marshal.GetDelegateForFunctionPointer<_AdjustRect>(lpVtbl->AdjustRect)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), prc);
+            return lpVtbl->AdjustRect((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), prc);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int OnDefWindowMessage([NativeTypeName("UINT")] uint msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("LRESULT *")] nint* plResult)
         {
-            return Marshal.GetDelegateForFunctionPointer<_OnDefWindowMessage>(lpVtbl->OnDefWindowMessage)((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), msg, wParam, lParam, plResult);
+            return lpVtbl->OnDefWindowMessage((IOleInPlaceSiteWindowless*)Unsafe.AsPointer(ref this), msg, wParam, lParam, plResult);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, uint> Release;
 
             [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-            public IntPtr GetWindow;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, IntPtr*, int> GetWindow;
 
             [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public IntPtr ContextSensitiveHelp;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, int, int> ContextSensitiveHelp;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr CanInPlaceActivate;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, int> CanInPlaceActivate;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr OnInPlaceActivate;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, int> OnInPlaceActivate;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr OnUIActivate;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, int> OnUIActivate;
 
             [NativeTypeName("HRESULT (IOleInPlaceFrame **, IOleInPlaceUIWindow **, LPRECT, LPRECT, LPOLEINPLACEFRAMEINFO) __attribute__((stdcall))")]
-            public IntPtr GetWindowContext;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, IOleInPlaceFrame**, IOleInPlaceUIWindow**, RECT*, RECT*, OIFI*, int> GetWindowContext;
 
             [NativeTypeName("HRESULT (SIZE) __attribute__((stdcall))")]
-            public IntPtr Scroll;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, SIZE, int> Scroll;
 
             [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public IntPtr OnUIDeactivate;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, int, int> OnUIDeactivate;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr OnInPlaceDeactivate;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, int> OnInPlaceDeactivate;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr DiscardUndoState;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, int> DiscardUndoState;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr DeactivateAndUndo;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, int> DeactivateAndUndo;
 
             [NativeTypeName("HRESULT (LPCRECT) __attribute__((stdcall))")]
-            public IntPtr OnPosRectChange;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, RECT*, int> OnPosRectChange;
 
             [NativeTypeName("HRESULT (BOOL *, DWORD) __attribute__((stdcall))")]
-            public IntPtr OnInPlaceActivateEx;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, int*, uint, int> OnInPlaceActivateEx;
 
             [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public IntPtr OnInPlaceDeactivateEx;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, int, int> OnInPlaceDeactivateEx;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr RequestUIActivate;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, int> RequestUIActivate;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr CanWindowlessActivate;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, int> CanWindowlessActivate;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr GetCapture;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, int> GetCapture;
 
             [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public IntPtr SetCapture;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, int, int> SetCapture;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr GetFocus;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, int> GetFocus;
 
             [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public IntPtr SetFocus;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, int, int> SetFocus;
 
             [NativeTypeName("HRESULT (LPCRECT, DWORD, HDC *) __attribute__((stdcall))")]
-            public IntPtr GetDC;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, RECT*, uint, IntPtr*, int> GetDC;
 
             [NativeTypeName("HRESULT (HDC) __attribute__((stdcall))")]
-            public IntPtr ReleaseDC;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, IntPtr, int> ReleaseDC;
 
             [NativeTypeName("HRESULT (LPCRECT, BOOL) __attribute__((stdcall))")]
-            public IntPtr InvalidateRect;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, RECT*, int, int> InvalidateRect;
 
             [NativeTypeName("HRESULT (HRGN, BOOL) __attribute__((stdcall))")]
-            public IntPtr InvalidateRgn;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, IntPtr, int, int> InvalidateRgn;
 
             [NativeTypeName("HRESULT (INT, INT, LPCRECT, LPCRECT) __attribute__((stdcall))")]
-            public IntPtr ScrollRect;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, int, int, RECT*, RECT*, int> ScrollRect;
 
             [NativeTypeName("HRESULT (LPRECT) __attribute__((stdcall))")]
-            public IntPtr AdjustRect;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, RECT*, int> AdjustRect;
 
             [NativeTypeName("HRESULT (UINT, WPARAM, LPARAM, LRESULT *) __attribute__((stdcall))")]
-            public IntPtr OnDefWindowMessage;
+            public delegate* stdcall<IOleInPlaceSiteWindowless*, uint, nuint, nint, nint*, int> OnDefWindowMessage;
         }
     }
 }

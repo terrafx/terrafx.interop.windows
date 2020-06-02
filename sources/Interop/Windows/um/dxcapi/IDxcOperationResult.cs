@@ -14,85 +14,61 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDxcOperationResult* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDxcOperationResult* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDxcOperationResult* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetStatus(IDxcOperationResult* pThis, [NativeTypeName("HRESULT *")] int* pStatus);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetResult(IDxcOperationResult* pThis, [NativeTypeName("IDxcBlob **")] IDxcBlob** pResult);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetErrorBuffer(IDxcOperationResult* pThis, [NativeTypeName("IDxcBlobEncoding **")] IDxcBlobEncoding** pErrors);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDxcOperationResult*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IDxcOperationResult*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDxcOperationResult*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IDxcOperationResult*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDxcOperationResult*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IDxcOperationResult*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetStatus([NativeTypeName("HRESULT *")] int* pStatus)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetStatus>(lpVtbl->GetStatus)((IDxcOperationResult*)Unsafe.AsPointer(ref this), pStatus);
+            return lpVtbl->GetStatus((IDxcOperationResult*)Unsafe.AsPointer(ref this), pStatus);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetResult([NativeTypeName("IDxcBlob **")] IDxcBlob** pResult)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetResult>(lpVtbl->GetResult)((IDxcOperationResult*)Unsafe.AsPointer(ref this), pResult);
+            return lpVtbl->GetResult((IDxcOperationResult*)Unsafe.AsPointer(ref this), pResult);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetErrorBuffer([NativeTypeName("IDxcBlobEncoding **")] IDxcBlobEncoding** pErrors)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetErrorBuffer>(lpVtbl->GetErrorBuffer)((IDxcOperationResult*)Unsafe.AsPointer(ref this), pErrors);
+            return lpVtbl->GetErrorBuffer((IDxcOperationResult*)Unsafe.AsPointer(ref this), pErrors);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IDxcOperationResult*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IDxcOperationResult*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IDxcOperationResult*, uint> Release;
 
             [NativeTypeName("HRESULT (HRESULT *) __attribute__((stdcall))")]
-            public IntPtr GetStatus;
+            public delegate* stdcall<IDxcOperationResult*, int*, int> GetStatus;
 
             [NativeTypeName("HRESULT (IDxcBlob **) __attribute__((stdcall))")]
-            public IntPtr GetResult;
+            public delegate* stdcall<IDxcOperationResult*, IDxcBlob**, int> GetResult;
 
             [NativeTypeName("HRESULT (IDxcBlobEncoding **) __attribute__((stdcall))")]
-            public IntPtr GetErrorBuffer;
+            public delegate* stdcall<IDxcOperationResult*, IDxcBlobEncoding**, int> GetErrorBuffer;
         }
     }
 }

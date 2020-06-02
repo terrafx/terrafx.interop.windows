@@ -14,98 +14,70 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IPropertySetStorage* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IPropertySetStorage* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IPropertySetStorage* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Create(IPropertySetStorage* pThis, [NativeTypeName("const IID &")] Guid* rfmtid, [NativeTypeName("const CLSID *")] Guid* pclsid, [NativeTypeName("DWORD")] uint grfFlags, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("IPropertyStorage **")] IPropertyStorage** ppprstg);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Open(IPropertySetStorage* pThis, [NativeTypeName("const IID &")] Guid* rfmtid, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("IPropertyStorage **")] IPropertyStorage** ppprstg);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Delete(IPropertySetStorage* pThis, [NativeTypeName("const IID &")] Guid* rfmtid);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Enum(IPropertySetStorage* pThis, [NativeTypeName("IEnumSTATPROPSETSTG **")] IEnumSTATPROPSETSTG** ppenum);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IPropertySetStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IPropertySetStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IPropertySetStorage*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IPropertySetStorage*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IPropertySetStorage*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IPropertySetStorage*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Create([NativeTypeName("const IID &")] Guid* rfmtid, [NativeTypeName("const CLSID *")] Guid* pclsid, [NativeTypeName("DWORD")] uint grfFlags, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("IPropertyStorage **")] IPropertyStorage** ppprstg)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Create>(lpVtbl->Create)((IPropertySetStorage*)Unsafe.AsPointer(ref this), rfmtid, pclsid, grfFlags, grfMode, ppprstg);
+            return lpVtbl->Create((IPropertySetStorage*)Unsafe.AsPointer(ref this), rfmtid, pclsid, grfFlags, grfMode, ppprstg);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Open([NativeTypeName("const IID &")] Guid* rfmtid, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("IPropertyStorage **")] IPropertyStorage** ppprstg)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Open>(lpVtbl->Open)((IPropertySetStorage*)Unsafe.AsPointer(ref this), rfmtid, grfMode, ppprstg);
+            return lpVtbl->Open((IPropertySetStorage*)Unsafe.AsPointer(ref this), rfmtid, grfMode, ppprstg);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Delete([NativeTypeName("const IID &")] Guid* rfmtid)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Delete>(lpVtbl->Delete)((IPropertySetStorage*)Unsafe.AsPointer(ref this), rfmtid);
+            return lpVtbl->Delete((IPropertySetStorage*)Unsafe.AsPointer(ref this), rfmtid);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Enum([NativeTypeName("IEnumSTATPROPSETSTG **")] IEnumSTATPROPSETSTG** ppenum)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Enum>(lpVtbl->Enum)((IPropertySetStorage*)Unsafe.AsPointer(ref this), ppenum);
+            return lpVtbl->Enum((IPropertySetStorage*)Unsafe.AsPointer(ref this), ppenum);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IPropertySetStorage*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IPropertySetStorage*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IPropertySetStorage*, uint> Release;
 
             [NativeTypeName("HRESULT (const IID &, const CLSID *, DWORD, DWORD, IPropertyStorage **) __attribute__((stdcall))")]
-            public IntPtr Create;
+            public delegate* stdcall<IPropertySetStorage*, Guid*, Guid*, uint, uint, IPropertyStorage**, int> Create;
 
             [NativeTypeName("HRESULT (const IID &, DWORD, IPropertyStorage **) __attribute__((stdcall))")]
-            public IntPtr Open;
+            public delegate* stdcall<IPropertySetStorage*, Guid*, uint, IPropertyStorage**, int> Open;
 
             [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-            public IntPtr Delete;
+            public delegate* stdcall<IPropertySetStorage*, Guid*, int> Delete;
 
             [NativeTypeName("HRESULT (IEnumSTATPROPSETSTG **) __attribute__((stdcall))")]
-            public IntPtr Enum;
+            public delegate* stdcall<IPropertySetStorage*, IEnumSTATPROPSETSTG**, int> Enum;
         }
     }
 }

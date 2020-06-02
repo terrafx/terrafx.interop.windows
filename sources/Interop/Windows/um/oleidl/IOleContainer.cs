@@ -14,85 +14,61 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IOleContainer* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IOleContainer* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IOleContainer* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _ParseDisplayName(IOleContainer* pThis, [NativeTypeName("IBindCtx *")] IBindCtx* pbc, [NativeTypeName("LPOLESTR")] ushort* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, [NativeTypeName("IMoniker **")] IMoniker** ppmkOut);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _EnumObjects(IOleContainer* pThis, [NativeTypeName("DWORD")] uint grfFlags, [NativeTypeName("IEnumUnknown **")] IEnumUnknown** ppenum);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _LockContainer(IOleContainer* pThis, [NativeTypeName("BOOL")] int fLock);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IOleContainer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IOleContainer*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IOleContainer*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IOleContainer*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IOleContainer*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IOleContainer*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ParseDisplayName([NativeTypeName("IBindCtx *")] IBindCtx* pbc, [NativeTypeName("LPOLESTR")] ushort* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, [NativeTypeName("IMoniker **")] IMoniker** ppmkOut)
         {
-            return Marshal.GetDelegateForFunctionPointer<_ParseDisplayName>(lpVtbl->ParseDisplayName)((IOleContainer*)Unsafe.AsPointer(ref this), pbc, pszDisplayName, pchEaten, ppmkOut);
+            return lpVtbl->ParseDisplayName((IOleContainer*)Unsafe.AsPointer(ref this), pbc, pszDisplayName, pchEaten, ppmkOut);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int EnumObjects([NativeTypeName("DWORD")] uint grfFlags, [NativeTypeName("IEnumUnknown **")] IEnumUnknown** ppenum)
         {
-            return Marshal.GetDelegateForFunctionPointer<_EnumObjects>(lpVtbl->EnumObjects)((IOleContainer*)Unsafe.AsPointer(ref this), grfFlags, ppenum);
+            return lpVtbl->EnumObjects((IOleContainer*)Unsafe.AsPointer(ref this), grfFlags, ppenum);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int LockContainer([NativeTypeName("BOOL")] int fLock)
         {
-            return Marshal.GetDelegateForFunctionPointer<_LockContainer>(lpVtbl->LockContainer)((IOleContainer*)Unsafe.AsPointer(ref this), fLock);
+            return lpVtbl->LockContainer((IOleContainer*)Unsafe.AsPointer(ref this), fLock);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IOleContainer*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IOleContainer*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IOleContainer*, uint> Release;
 
             [NativeTypeName("HRESULT (IBindCtx *, LPOLESTR, ULONG *, IMoniker **) __attribute__((stdcall))")]
-            public IntPtr ParseDisplayName;
+            public delegate* stdcall<IOleContainer*, IBindCtx*, ushort*, uint*, IMoniker**, int> ParseDisplayName;
 
             [NativeTypeName("HRESULT (DWORD, IEnumUnknown **) __attribute__((stdcall))")]
-            public IntPtr EnumObjects;
+            public delegate* stdcall<IOleContainer*, uint, IEnumUnknown**, int> EnumObjects;
 
             [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public IntPtr LockContainer;
+            public delegate* stdcall<IOleContainer*, int, int> LockContainer;
         }
     }
 }

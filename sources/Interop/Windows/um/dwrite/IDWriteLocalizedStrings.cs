@@ -14,124 +14,88 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDWriteLocalizedStrings* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDWriteLocalizedStrings* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDWriteLocalizedStrings* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("UINT32")]
-        public delegate uint _GetCount(IDWriteLocalizedStrings* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _FindLocaleName(IDWriteLocalizedStrings* pThis, [NativeTypeName("const WCHAR *")] ushort* localeName, [NativeTypeName("UINT32 *")] uint* index, [NativeTypeName("BOOL *")] int* exists);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLocaleNameLength(IDWriteLocalizedStrings* pThis, [NativeTypeName("UINT32")] uint index, [NativeTypeName("UINT32 *")] uint* length);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLocaleName(IDWriteLocalizedStrings* pThis, [NativeTypeName("UINT32")] uint index, [NativeTypeName("WCHAR *")] ushort* localeName, [NativeTypeName("UINT32")] uint size);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetStringLength(IDWriteLocalizedStrings* pThis, [NativeTypeName("UINT32")] uint index, [NativeTypeName("UINT32 *")] uint* length);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetString(IDWriteLocalizedStrings* pThis, [NativeTypeName("UINT32")] uint index, [NativeTypeName("WCHAR *")] ushort* stringBuffer, [NativeTypeName("UINT32")] uint size);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDWriteLocalizedStrings*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IDWriteLocalizedStrings*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDWriteLocalizedStrings*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IDWriteLocalizedStrings*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDWriteLocalizedStrings*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IDWriteLocalizedStrings*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("UINT32")]
         public uint GetCount()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetCount>(lpVtbl->GetCount)((IDWriteLocalizedStrings*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetCount((IDWriteLocalizedStrings*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int FindLocaleName([NativeTypeName("const WCHAR *")] ushort* localeName, [NativeTypeName("UINT32 *")] uint* index, [NativeTypeName("BOOL *")] int* exists)
         {
-            return Marshal.GetDelegateForFunctionPointer<_FindLocaleName>(lpVtbl->FindLocaleName)((IDWriteLocalizedStrings*)Unsafe.AsPointer(ref this), localeName, index, exists);
+            return lpVtbl->FindLocaleName((IDWriteLocalizedStrings*)Unsafe.AsPointer(ref this), localeName, index, exists);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetLocaleNameLength([NativeTypeName("UINT32")] uint index, [NativeTypeName("UINT32 *")] uint* length)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetLocaleNameLength>(lpVtbl->GetLocaleNameLength)((IDWriteLocalizedStrings*)Unsafe.AsPointer(ref this), index, length);
+            return lpVtbl->GetLocaleNameLength((IDWriteLocalizedStrings*)Unsafe.AsPointer(ref this), index, length);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetLocaleName([NativeTypeName("UINT32")] uint index, [NativeTypeName("WCHAR *")] ushort* localeName, [NativeTypeName("UINT32")] uint size)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetLocaleName>(lpVtbl->GetLocaleName)((IDWriteLocalizedStrings*)Unsafe.AsPointer(ref this), index, localeName, size);
+            return lpVtbl->GetLocaleName((IDWriteLocalizedStrings*)Unsafe.AsPointer(ref this), index, localeName, size);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetStringLength([NativeTypeName("UINT32")] uint index, [NativeTypeName("UINT32 *")] uint* length)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetStringLength>(lpVtbl->GetStringLength)((IDWriteLocalizedStrings*)Unsafe.AsPointer(ref this), index, length);
+            return lpVtbl->GetStringLength((IDWriteLocalizedStrings*)Unsafe.AsPointer(ref this), index, length);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetString([NativeTypeName("UINT32")] uint index, [NativeTypeName("WCHAR *")] ushort* stringBuffer, [NativeTypeName("UINT32")] uint size)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetString>(lpVtbl->GetString)((IDWriteLocalizedStrings*)Unsafe.AsPointer(ref this), index, stringBuffer, size);
+            return lpVtbl->GetString((IDWriteLocalizedStrings*)Unsafe.AsPointer(ref this), index, stringBuffer, size);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IDWriteLocalizedStrings*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IDWriteLocalizedStrings*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IDWriteLocalizedStrings*, uint> Release;
 
             [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetCount;
+            public delegate* stdcall<IDWriteLocalizedStrings*, uint> GetCount;
 
             [NativeTypeName("HRESULT (const WCHAR *, UINT32 *, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr FindLocaleName;
+            public delegate* stdcall<IDWriteLocalizedStrings*, ushort*, uint*, int*, int> FindLocaleName;
 
             [NativeTypeName("HRESULT (UINT32, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetLocaleNameLength;
+            public delegate* stdcall<IDWriteLocalizedStrings*, uint, uint*, int> GetLocaleNameLength;
 
             [NativeTypeName("HRESULT (UINT32, WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetLocaleName;
+            public delegate* stdcall<IDWriteLocalizedStrings*, uint, ushort*, uint, int> GetLocaleName;
 
             [NativeTypeName("HRESULT (UINT32, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetStringLength;
+            public delegate* stdcall<IDWriteLocalizedStrings*, uint, uint*, int> GetStringLength;
 
             [NativeTypeName("HRESULT (UINT32, WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetString;
+            public delegate* stdcall<IDWriteLocalizedStrings*, uint, ushort*, uint, int> GetString;
         }
     }
 }

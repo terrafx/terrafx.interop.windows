@@ -16,15 +16,15 @@ namespace TerraFX.Interop
         public CRYPT_PROVUI_DATA* psUIData;
 
         [NativeTypeName("PFN_PROVUI_CALL")]
-        public IntPtr pfnOnMoreInfoClick;
+        public delegate* stdcall<IntPtr, CRYPT_PROVIDER_DATA*, int> pfnOnMoreInfoClick;
 
         [NativeTypeName("PFN_PROVUI_CALL")]
-        public IntPtr pfnOnMoreInfoClickDefault;
+        public delegate* stdcall<IntPtr, CRYPT_PROVIDER_DATA*, int> pfnOnMoreInfoClickDefault;
 
         [NativeTypeName("PFN_PROVUI_CALL")]
-        public IntPtr pfnOnAdvancedClick;
+        public delegate* stdcall<IntPtr, CRYPT_PROVIDER_DATA*, int> pfnOnAdvancedClick;
 
         [NativeTypeName("PFN_PROVUI_CALL")]
-        public IntPtr pfnOnAdvancedClickDefault;
+        public delegate* stdcall<IntPtr, CRYPT_PROVIDER_DATA*, int> pfnOnAdvancedClickDefault;
     }
 }

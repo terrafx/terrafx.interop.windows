@@ -14,111 +14,79 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IRunnableObject* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IRunnableObject* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IRunnableObject* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetRunningClass(IRunnableObject* pThis, [NativeTypeName("LPCLSID")] Guid* lpClsid);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Run(IRunnableObject* pThis, [NativeTypeName("LPBINDCTX")] IBindCtx* pbc);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("BOOL")]
-        public delegate int _IsRunning(IRunnableObject* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _LockRunning(IRunnableObject* pThis, [NativeTypeName("BOOL")] int fLock, [NativeTypeName("BOOL")] int fLastUnlockCloses);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetContainedObject(IRunnableObject* pThis, [NativeTypeName("BOOL")] int fContained);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IRunnableObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IRunnableObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IRunnableObject*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IRunnableObject*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IRunnableObject*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IRunnableObject*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetRunningClass([NativeTypeName("LPCLSID")] Guid* lpClsid)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetRunningClass>(lpVtbl->GetRunningClass)((IRunnableObject*)Unsafe.AsPointer(ref this), lpClsid);
+            return lpVtbl->GetRunningClass((IRunnableObject*)Unsafe.AsPointer(ref this), lpClsid);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Run([NativeTypeName("LPBINDCTX")] IBindCtx* pbc)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Run>(lpVtbl->Run)((IRunnableObject*)Unsafe.AsPointer(ref this), pbc);
+            return lpVtbl->Run((IRunnableObject*)Unsafe.AsPointer(ref this), pbc);
         }
 
         [return: NativeTypeName("BOOL")]
         public int IsRunning()
         {
-            return Marshal.GetDelegateForFunctionPointer<_IsRunning>(lpVtbl->IsRunning)((IRunnableObject*)Unsafe.AsPointer(ref this));
+            return lpVtbl->IsRunning((IRunnableObject*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int LockRunning([NativeTypeName("BOOL")] int fLock, [NativeTypeName("BOOL")] int fLastUnlockCloses)
         {
-            return Marshal.GetDelegateForFunctionPointer<_LockRunning>(lpVtbl->LockRunning)((IRunnableObject*)Unsafe.AsPointer(ref this), fLock, fLastUnlockCloses);
+            return lpVtbl->LockRunning((IRunnableObject*)Unsafe.AsPointer(ref this), fLock, fLastUnlockCloses);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetContainedObject([NativeTypeName("BOOL")] int fContained)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetContainedObject>(lpVtbl->SetContainedObject)((IRunnableObject*)Unsafe.AsPointer(ref this), fContained);
+            return lpVtbl->SetContainedObject((IRunnableObject*)Unsafe.AsPointer(ref this), fContained);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IRunnableObject*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IRunnableObject*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IRunnableObject*, uint> Release;
 
             [NativeTypeName("HRESULT (LPCLSID) __attribute__((stdcall))")]
-            public IntPtr GetRunningClass;
+            public delegate* stdcall<IRunnableObject*, Guid*, int> GetRunningClass;
 
             [NativeTypeName("HRESULT (LPBINDCTX) __attribute__((stdcall))")]
-            public IntPtr Run;
+            public delegate* stdcall<IRunnableObject*, IBindCtx*, int> Run;
 
             [NativeTypeName("BOOL () __attribute__((stdcall))")]
-            public IntPtr IsRunning;
+            public delegate* stdcall<IRunnableObject*, int> IsRunning;
 
             [NativeTypeName("HRESULT (BOOL, BOOL) __attribute__((stdcall))")]
-            public IntPtr LockRunning;
+            public delegate* stdcall<IRunnableObject*, int, int, int> LockRunning;
 
             [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public IntPtr SetContainedObject;
+            public delegate* stdcall<IRunnableObject*, int, int> SetContainedObject;
         }
     }
 }

@@ -14,384 +14,268 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDXGISwapChain1* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDXGISwapChain1* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDXGISwapChain1* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateData(IDXGISwapChain1* pThis, [NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateDataInterface(IDXGISwapChain1* pThis, [NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("const IUnknown *")] IUnknown* pUnknown);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPrivateData(IDXGISwapChain1* pThis, [NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetParent(IDXGISwapChain1* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppParent);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDevice(IDXGISwapChain1* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppDevice);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Present(IDXGISwapChain1* pThis, [NativeTypeName("UINT")] uint SyncInterval, [NativeTypeName("UINT")] uint Flags);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetBuffer(IDXGISwapChain1* pThis, [NativeTypeName("UINT")] uint Buffer, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppSurface);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetFullscreenState(IDXGISwapChain1* pThis, [NativeTypeName("BOOL")] int Fullscreen, [NativeTypeName("IDXGIOutput *")] IDXGIOutput* pTarget);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFullscreenState(IDXGISwapChain1* pThis, [NativeTypeName("BOOL *")] int* pFullscreen, [NativeTypeName("IDXGIOutput **")] IDXGIOutput** ppTarget);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDesc(IDXGISwapChain1* pThis, [NativeTypeName("DXGI_SWAP_CHAIN_DESC *")] DXGI_SWAP_CHAIN_DESC* pDesc);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _ResizeBuffers(IDXGISwapChain1* pThis, [NativeTypeName("UINT")] uint BufferCount, [NativeTypeName("UINT")] uint Width, [NativeTypeName("UINT")] uint Height, DXGI_FORMAT NewFormat, [NativeTypeName("UINT")] uint SwapChainFlags);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _ResizeTarget(IDXGISwapChain1* pThis, [NativeTypeName("const DXGI_MODE_DESC *")] DXGI_MODE_DESC* pNewTargetParameters);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetContainingOutput(IDXGISwapChain1* pThis, [NativeTypeName("IDXGIOutput **")] IDXGIOutput** ppOutput);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFrameStatistics(IDXGISwapChain1* pThis, [NativeTypeName("DXGI_FRAME_STATISTICS *")] DXGI_FRAME_STATISTICS* pStats);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLastPresentCount(IDXGISwapChain1* pThis, [NativeTypeName("UINT *")] uint* pLastPresentCount);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDesc1(IDXGISwapChain1* pThis, [NativeTypeName("DXGI_SWAP_CHAIN_DESC1 *")] DXGI_SWAP_CHAIN_DESC1* pDesc);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFullscreenDesc(IDXGISwapChain1* pThis, [NativeTypeName("DXGI_SWAP_CHAIN_FULLSCREEN_DESC *")] DXGI_SWAP_CHAIN_FULLSCREEN_DESC* pDesc);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetHwnd(IDXGISwapChain1* pThis, [NativeTypeName("HWND *")] IntPtr* pHwnd);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetCoreWindow(IDXGISwapChain1* pThis, [NativeTypeName("const IID &")] Guid* refiid, [NativeTypeName("void **")] void** ppUnk);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Present1(IDXGISwapChain1* pThis, [NativeTypeName("UINT")] uint SyncInterval, [NativeTypeName("UINT")] uint PresentFlags, [NativeTypeName("const DXGI_PRESENT_PARAMETERS *")] DXGI_PRESENT_PARAMETERS* pPresentParameters);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("BOOL")]
-        public delegate int _IsTemporaryMonoSupported(IDXGISwapChain1* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetRestrictToOutput(IDXGISwapChain1* pThis, [NativeTypeName("IDXGIOutput **")] IDXGIOutput** ppRestrictToOutput);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetBackgroundColor(IDXGISwapChain1* pThis, [NativeTypeName("const DXGI_RGBA *")] DXGI_RGBA* pColor);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetBackgroundColor(IDXGISwapChain1* pThis, [NativeTypeName("DXGI_RGBA *")] DXGI_RGBA* pColor);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetRotation(IDXGISwapChain1* pThis, DXGI_MODE_ROTATION Rotation);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetRotation(IDXGISwapChain1* pThis, [NativeTypeName("DXGI_MODE_ROTATION *")] DXGI_MODE_ROTATION* pRotation);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDXGISwapChain1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IDXGISwapChain1*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDXGISwapChain1*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IDXGISwapChain1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDXGISwapChain1*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IDXGISwapChain1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)((IDXGISwapChain1*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
+            return lpVtbl->SetPrivateData((IDXGISwapChain1*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("const IUnknown *")] IUnknown* pUnknown)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)((IDXGISwapChain1*)Unsafe.AsPointer(ref this), Name, pUnknown);
+            return lpVtbl->SetPrivateDataInterface((IDXGISwapChain1*)Unsafe.AsPointer(ref this), Name, pUnknown);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPrivateData([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)((IDXGISwapChain1*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
+            return lpVtbl->GetPrivateData((IDXGISwapChain1*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetParent([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppParent)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetParent>(lpVtbl->GetParent)((IDXGISwapChain1*)Unsafe.AsPointer(ref this), riid, ppParent);
+            return lpVtbl->GetParent((IDXGISwapChain1*)Unsafe.AsPointer(ref this), riid, ppParent);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDevice([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppDevice)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetDevice>(lpVtbl->GetDevice)((IDXGISwapChain1*)Unsafe.AsPointer(ref this), riid, ppDevice);
+            return lpVtbl->GetDevice((IDXGISwapChain1*)Unsafe.AsPointer(ref this), riid, ppDevice);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Present([NativeTypeName("UINT")] uint SyncInterval, [NativeTypeName("UINT")] uint Flags)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Present>(lpVtbl->Present)((IDXGISwapChain1*)Unsafe.AsPointer(ref this), SyncInterval, Flags);
+            return lpVtbl->Present((IDXGISwapChain1*)Unsafe.AsPointer(ref this), SyncInterval, Flags);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetBuffer([NativeTypeName("UINT")] uint Buffer, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppSurface)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetBuffer>(lpVtbl->GetBuffer)((IDXGISwapChain1*)Unsafe.AsPointer(ref this), Buffer, riid, ppSurface);
+            return lpVtbl->GetBuffer((IDXGISwapChain1*)Unsafe.AsPointer(ref this), Buffer, riid, ppSurface);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetFullscreenState([NativeTypeName("BOOL")] int Fullscreen, [NativeTypeName("IDXGIOutput *")] IDXGIOutput* pTarget)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetFullscreenState>(lpVtbl->SetFullscreenState)((IDXGISwapChain1*)Unsafe.AsPointer(ref this), Fullscreen, pTarget);
+            return lpVtbl->SetFullscreenState((IDXGISwapChain1*)Unsafe.AsPointer(ref this), Fullscreen, pTarget);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetFullscreenState([NativeTypeName("BOOL *")] int* pFullscreen, [NativeTypeName("IDXGIOutput **")] IDXGIOutput** ppTarget)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetFullscreenState>(lpVtbl->GetFullscreenState)((IDXGISwapChain1*)Unsafe.AsPointer(ref this), pFullscreen, ppTarget);
+            return lpVtbl->GetFullscreenState((IDXGISwapChain1*)Unsafe.AsPointer(ref this), pFullscreen, ppTarget);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDesc([NativeTypeName("DXGI_SWAP_CHAIN_DESC *")] DXGI_SWAP_CHAIN_DESC* pDesc)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)((IDXGISwapChain1*)Unsafe.AsPointer(ref this), pDesc);
+            return lpVtbl->GetDesc((IDXGISwapChain1*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ResizeBuffers([NativeTypeName("UINT")] uint BufferCount, [NativeTypeName("UINT")] uint Width, [NativeTypeName("UINT")] uint Height, DXGI_FORMAT NewFormat, [NativeTypeName("UINT")] uint SwapChainFlags)
         {
-            return Marshal.GetDelegateForFunctionPointer<_ResizeBuffers>(lpVtbl->ResizeBuffers)((IDXGISwapChain1*)Unsafe.AsPointer(ref this), BufferCount, Width, Height, NewFormat, SwapChainFlags);
+            return lpVtbl->ResizeBuffers((IDXGISwapChain1*)Unsafe.AsPointer(ref this), BufferCount, Width, Height, NewFormat, SwapChainFlags);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ResizeTarget([NativeTypeName("const DXGI_MODE_DESC *")] DXGI_MODE_DESC* pNewTargetParameters)
         {
-            return Marshal.GetDelegateForFunctionPointer<_ResizeTarget>(lpVtbl->ResizeTarget)((IDXGISwapChain1*)Unsafe.AsPointer(ref this), pNewTargetParameters);
+            return lpVtbl->ResizeTarget((IDXGISwapChain1*)Unsafe.AsPointer(ref this), pNewTargetParameters);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetContainingOutput([NativeTypeName("IDXGIOutput **")] IDXGIOutput** ppOutput)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetContainingOutput>(lpVtbl->GetContainingOutput)((IDXGISwapChain1*)Unsafe.AsPointer(ref this), ppOutput);
+            return lpVtbl->GetContainingOutput((IDXGISwapChain1*)Unsafe.AsPointer(ref this), ppOutput);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetFrameStatistics([NativeTypeName("DXGI_FRAME_STATISTICS *")] DXGI_FRAME_STATISTICS* pStats)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetFrameStatistics>(lpVtbl->GetFrameStatistics)((IDXGISwapChain1*)Unsafe.AsPointer(ref this), pStats);
+            return lpVtbl->GetFrameStatistics((IDXGISwapChain1*)Unsafe.AsPointer(ref this), pStats);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetLastPresentCount([NativeTypeName("UINT *")] uint* pLastPresentCount)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetLastPresentCount>(lpVtbl->GetLastPresentCount)((IDXGISwapChain1*)Unsafe.AsPointer(ref this), pLastPresentCount);
+            return lpVtbl->GetLastPresentCount((IDXGISwapChain1*)Unsafe.AsPointer(ref this), pLastPresentCount);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDesc1([NativeTypeName("DXGI_SWAP_CHAIN_DESC1 *")] DXGI_SWAP_CHAIN_DESC1* pDesc)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetDesc1>(lpVtbl->GetDesc1)((IDXGISwapChain1*)Unsafe.AsPointer(ref this), pDesc);
+            return lpVtbl->GetDesc1((IDXGISwapChain1*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetFullscreenDesc([NativeTypeName("DXGI_SWAP_CHAIN_FULLSCREEN_DESC *")] DXGI_SWAP_CHAIN_FULLSCREEN_DESC* pDesc)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetFullscreenDesc>(lpVtbl->GetFullscreenDesc)((IDXGISwapChain1*)Unsafe.AsPointer(ref this), pDesc);
+            return lpVtbl->GetFullscreenDesc((IDXGISwapChain1*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetHwnd([NativeTypeName("HWND *")] IntPtr* pHwnd)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetHwnd>(lpVtbl->GetHwnd)((IDXGISwapChain1*)Unsafe.AsPointer(ref this), pHwnd);
+            return lpVtbl->GetHwnd((IDXGISwapChain1*)Unsafe.AsPointer(ref this), pHwnd);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetCoreWindow([NativeTypeName("const IID &")] Guid* refiid, [NativeTypeName("void **")] void** ppUnk)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetCoreWindow>(lpVtbl->GetCoreWindow)((IDXGISwapChain1*)Unsafe.AsPointer(ref this), refiid, ppUnk);
+            return lpVtbl->GetCoreWindow((IDXGISwapChain1*)Unsafe.AsPointer(ref this), refiid, ppUnk);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Present1([NativeTypeName("UINT")] uint SyncInterval, [NativeTypeName("UINT")] uint PresentFlags, [NativeTypeName("const DXGI_PRESENT_PARAMETERS *")] DXGI_PRESENT_PARAMETERS* pPresentParameters)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Present1>(lpVtbl->Present1)((IDXGISwapChain1*)Unsafe.AsPointer(ref this), SyncInterval, PresentFlags, pPresentParameters);
+            return lpVtbl->Present1((IDXGISwapChain1*)Unsafe.AsPointer(ref this), SyncInterval, PresentFlags, pPresentParameters);
         }
 
         [return: NativeTypeName("BOOL")]
         public int IsTemporaryMonoSupported()
         {
-            return Marshal.GetDelegateForFunctionPointer<_IsTemporaryMonoSupported>(lpVtbl->IsTemporaryMonoSupported)((IDXGISwapChain1*)Unsafe.AsPointer(ref this));
+            return lpVtbl->IsTemporaryMonoSupported((IDXGISwapChain1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetRestrictToOutput([NativeTypeName("IDXGIOutput **")] IDXGIOutput** ppRestrictToOutput)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetRestrictToOutput>(lpVtbl->GetRestrictToOutput)((IDXGISwapChain1*)Unsafe.AsPointer(ref this), ppRestrictToOutput);
+            return lpVtbl->GetRestrictToOutput((IDXGISwapChain1*)Unsafe.AsPointer(ref this), ppRestrictToOutput);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetBackgroundColor([NativeTypeName("const DXGI_RGBA *")] DXGI_RGBA* pColor)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetBackgroundColor>(lpVtbl->SetBackgroundColor)((IDXGISwapChain1*)Unsafe.AsPointer(ref this), pColor);
+            return lpVtbl->SetBackgroundColor((IDXGISwapChain1*)Unsafe.AsPointer(ref this), pColor);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetBackgroundColor([NativeTypeName("DXGI_RGBA *")] DXGI_RGBA* pColor)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetBackgroundColor>(lpVtbl->GetBackgroundColor)((IDXGISwapChain1*)Unsafe.AsPointer(ref this), pColor);
+            return lpVtbl->GetBackgroundColor((IDXGISwapChain1*)Unsafe.AsPointer(ref this), pColor);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetRotation(DXGI_MODE_ROTATION Rotation)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetRotation>(lpVtbl->SetRotation)((IDXGISwapChain1*)Unsafe.AsPointer(ref this), Rotation);
+            return lpVtbl->SetRotation((IDXGISwapChain1*)Unsafe.AsPointer(ref this), Rotation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetRotation([NativeTypeName("DXGI_MODE_ROTATION *")] DXGI_MODE_ROTATION* pRotation)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetRotation>(lpVtbl->GetRotation)((IDXGISwapChain1*)Unsafe.AsPointer(ref this), pRotation);
+            return lpVtbl->GetRotation((IDXGISwapChain1*)Unsafe.AsPointer(ref this), pRotation);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IDXGISwapChain1*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IDXGISwapChain1*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IDXGISwapChain1*, uint> Release;
 
             [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-            public IntPtr SetPrivateData;
+            public delegate* stdcall<IDXGISwapChain1*, Guid*, uint, void*, int> SetPrivateData;
 
             [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-            public IntPtr SetPrivateDataInterface;
+            public delegate* stdcall<IDXGISwapChain1*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
             [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-            public IntPtr GetPrivateData;
+            public delegate* stdcall<IDXGISwapChain1*, Guid*, uint*, void*, int> GetPrivateData;
 
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr GetParent;
+            public delegate* stdcall<IDXGISwapChain1*, Guid*, void**, int> GetParent;
 
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr GetDevice;
+            public delegate* stdcall<IDXGISwapChain1*, Guid*, void**, int> GetDevice;
 
             [NativeTypeName("HRESULT (UINT, UINT) __attribute__((stdcall))")]
-            public IntPtr Present;
+            public delegate* stdcall<IDXGISwapChain1*, uint, uint, int> Present;
 
             [NativeTypeName("HRESULT (UINT, const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr GetBuffer;
+            public delegate* stdcall<IDXGISwapChain1*, uint, Guid*, void**, int> GetBuffer;
 
             [NativeTypeName("HRESULT (BOOL, IDXGIOutput *) __attribute__((stdcall))")]
-            public IntPtr SetFullscreenState;
+            public delegate* stdcall<IDXGISwapChain1*, int, IDXGIOutput*, int> SetFullscreenState;
 
             [NativeTypeName("HRESULT (BOOL *, IDXGIOutput **) __attribute__((stdcall))")]
-            public IntPtr GetFullscreenState;
+            public delegate* stdcall<IDXGISwapChain1*, int*, IDXGIOutput**, int> GetFullscreenState;
 
             [NativeTypeName("HRESULT (DXGI_SWAP_CHAIN_DESC *) __attribute__((stdcall))")]
-            public IntPtr GetDesc;
+            public delegate* stdcall<IDXGISwapChain1*, DXGI_SWAP_CHAIN_DESC*, int> GetDesc;
 
             [NativeTypeName("HRESULT (UINT, UINT, UINT, DXGI_FORMAT, UINT) __attribute__((stdcall))")]
-            public IntPtr ResizeBuffers;
+            public delegate* stdcall<IDXGISwapChain1*, uint, uint, uint, DXGI_FORMAT, uint, int> ResizeBuffers;
 
             [NativeTypeName("HRESULT (const DXGI_MODE_DESC *) __attribute__((stdcall))")]
-            public IntPtr ResizeTarget;
+            public delegate* stdcall<IDXGISwapChain1*, DXGI_MODE_DESC*, int> ResizeTarget;
 
             [NativeTypeName("HRESULT (IDXGIOutput **) __attribute__((stdcall))")]
-            public IntPtr GetContainingOutput;
+            public delegate* stdcall<IDXGISwapChain1*, IDXGIOutput**, int> GetContainingOutput;
 
             [NativeTypeName("HRESULT (DXGI_FRAME_STATISTICS *) __attribute__((stdcall))")]
-            public IntPtr GetFrameStatistics;
+            public delegate* stdcall<IDXGISwapChain1*, DXGI_FRAME_STATISTICS*, int> GetFrameStatistics;
 
             [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public IntPtr GetLastPresentCount;
+            public delegate* stdcall<IDXGISwapChain1*, uint*, int> GetLastPresentCount;
 
             [NativeTypeName("HRESULT (DXGI_SWAP_CHAIN_DESC1 *) __attribute__((stdcall))")]
-            public IntPtr GetDesc1;
+            public delegate* stdcall<IDXGISwapChain1*, DXGI_SWAP_CHAIN_DESC1*, int> GetDesc1;
 
             [NativeTypeName("HRESULT (DXGI_SWAP_CHAIN_FULLSCREEN_DESC *) __attribute__((stdcall))")]
-            public IntPtr GetFullscreenDesc;
+            public delegate* stdcall<IDXGISwapChain1*, DXGI_SWAP_CHAIN_FULLSCREEN_DESC*, int> GetFullscreenDesc;
 
             [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-            public IntPtr GetHwnd;
+            public delegate* stdcall<IDXGISwapChain1*, IntPtr*, int> GetHwnd;
 
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr GetCoreWindow;
+            public delegate* stdcall<IDXGISwapChain1*, Guid*, void**, int> GetCoreWindow;
 
             [NativeTypeName("HRESULT (UINT, UINT, const DXGI_PRESENT_PARAMETERS *) __attribute__((stdcall))")]
-            public IntPtr Present1;
+            public delegate* stdcall<IDXGISwapChain1*, uint, uint, DXGI_PRESENT_PARAMETERS*, int> Present1;
 
             [NativeTypeName("BOOL () __attribute__((stdcall))")]
-            public IntPtr IsTemporaryMonoSupported;
+            public delegate* stdcall<IDXGISwapChain1*, int> IsTemporaryMonoSupported;
 
             [NativeTypeName("HRESULT (IDXGIOutput **) __attribute__((stdcall))")]
-            public IntPtr GetRestrictToOutput;
+            public delegate* stdcall<IDXGISwapChain1*, IDXGIOutput**, int> GetRestrictToOutput;
 
             [NativeTypeName("HRESULT (const DXGI_RGBA *) __attribute__((stdcall))")]
-            public IntPtr SetBackgroundColor;
+            public delegate* stdcall<IDXGISwapChain1*, DXGI_RGBA*, int> SetBackgroundColor;
 
             [NativeTypeName("HRESULT (DXGI_RGBA *) __attribute__((stdcall))")]
-            public IntPtr GetBackgroundColor;
+            public delegate* stdcall<IDXGISwapChain1*, DXGI_RGBA*, int> GetBackgroundColor;
 
             [NativeTypeName("HRESULT (DXGI_MODE_ROTATION) __attribute__((stdcall))")]
-            public IntPtr SetRotation;
+            public delegate* stdcall<IDXGISwapChain1*, DXGI_MODE_ROTATION, int> SetRotation;
 
             [NativeTypeName("HRESULT (DXGI_MODE_ROTATION *) __attribute__((stdcall))")]
-            public IntPtr GetRotation;
+            public delegate* stdcall<IDXGISwapChain1*, DXGI_MODE_ROTATION*, int> GetRotation;
         }
     }
 }

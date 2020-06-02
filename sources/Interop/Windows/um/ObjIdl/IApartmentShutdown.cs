@@ -14,57 +14,42 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IApartmentShutdown* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IApartmentShutdown* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IApartmentShutdown* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _OnUninitialize(IApartmentShutdown* pThis, [NativeTypeName("UINT64")] ulong ui64ApartmentIdentifier);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IApartmentShutdown*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IApartmentShutdown*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IApartmentShutdown*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IApartmentShutdown*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IApartmentShutdown*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IApartmentShutdown*)Unsafe.AsPointer(ref this));
         }
 
         public void OnUninitialize([NativeTypeName("UINT64")] ulong ui64ApartmentIdentifier)
         {
-            Marshal.GetDelegateForFunctionPointer<_OnUninitialize>(lpVtbl->OnUninitialize)((IApartmentShutdown*)Unsafe.AsPointer(ref this), ui64ApartmentIdentifier);
+            lpVtbl->OnUninitialize((IApartmentShutdown*)Unsafe.AsPointer(ref this), ui64ApartmentIdentifier);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IApartmentShutdown*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IApartmentShutdown*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IApartmentShutdown*, uint> Release;
 
             [NativeTypeName("void (UINT64) __attribute__((stdcall))")]
-            public IntPtr OnUninitialize;
+            public delegate* stdcall<IApartmentShutdown*, ulong, void> OnUninitialize;
         }
     }
 }

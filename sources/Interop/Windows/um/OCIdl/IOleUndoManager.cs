@@ -14,202 +14,142 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IOleUndoManager* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IOleUndoManager* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IOleUndoManager* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Open(IOleUndoManager* pThis, [NativeTypeName("IOleParentUndoUnit *")] IOleParentUndoUnit* pPUU);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Close(IOleUndoManager* pThis, [NativeTypeName("IOleParentUndoUnit *")] IOleParentUndoUnit* pPUU, [NativeTypeName("BOOL")] int fCommit);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Add(IOleUndoManager* pThis, [NativeTypeName("IOleUndoUnit *")] IOleUndoUnit* pUU);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetOpenParentState(IOleUndoManager* pThis, [NativeTypeName("DWORD *")] uint* pdwState);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _DiscardFrom(IOleUndoManager* pThis, [NativeTypeName("IOleUndoUnit *")] IOleUndoUnit* pUU);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _UndoTo(IOleUndoManager* pThis, [NativeTypeName("IOleUndoUnit *")] IOleUndoUnit* pUU);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _RedoTo(IOleUndoManager* pThis, [NativeTypeName("IOleUndoUnit *")] IOleUndoUnit* pUU);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _EnumUndoable(IOleUndoManager* pThis, [NativeTypeName("IEnumOleUndoUnits **")] IEnumOleUndoUnits** ppEnum);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _EnumRedoable(IOleUndoManager* pThis, [NativeTypeName("IEnumOleUndoUnits **")] IEnumOleUndoUnits** ppEnum);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLastUndoDescription(IOleUndoManager* pThis, [NativeTypeName("BSTR *")] ushort** pBstr);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLastRedoDescription(IOleUndoManager* pThis, [NativeTypeName("BSTR *")] ushort** pBstr);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Enable(IOleUndoManager* pThis, [NativeTypeName("BOOL")] int fEnable);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IOleUndoManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IOleUndoManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IOleUndoManager*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IOleUndoManager*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IOleUndoManager*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IOleUndoManager*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Open([NativeTypeName("IOleParentUndoUnit *")] IOleParentUndoUnit* pPUU)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Open>(lpVtbl->Open)((IOleUndoManager*)Unsafe.AsPointer(ref this), pPUU);
+            return lpVtbl->Open((IOleUndoManager*)Unsafe.AsPointer(ref this), pPUU);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Close([NativeTypeName("IOleParentUndoUnit *")] IOleParentUndoUnit* pPUU, [NativeTypeName("BOOL")] int fCommit)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Close>(lpVtbl->Close)((IOleUndoManager*)Unsafe.AsPointer(ref this), pPUU, fCommit);
+            return lpVtbl->Close((IOleUndoManager*)Unsafe.AsPointer(ref this), pPUU, fCommit);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Add([NativeTypeName("IOleUndoUnit *")] IOleUndoUnit* pUU)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Add>(lpVtbl->Add)((IOleUndoManager*)Unsafe.AsPointer(ref this), pUU);
+            return lpVtbl->Add((IOleUndoManager*)Unsafe.AsPointer(ref this), pUU);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetOpenParentState([NativeTypeName("DWORD *")] uint* pdwState)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetOpenParentState>(lpVtbl->GetOpenParentState)((IOleUndoManager*)Unsafe.AsPointer(ref this), pdwState);
+            return lpVtbl->GetOpenParentState((IOleUndoManager*)Unsafe.AsPointer(ref this), pdwState);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int DiscardFrom([NativeTypeName("IOleUndoUnit *")] IOleUndoUnit* pUU)
         {
-            return Marshal.GetDelegateForFunctionPointer<_DiscardFrom>(lpVtbl->DiscardFrom)((IOleUndoManager*)Unsafe.AsPointer(ref this), pUU);
+            return lpVtbl->DiscardFrom((IOleUndoManager*)Unsafe.AsPointer(ref this), pUU);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int UndoTo([NativeTypeName("IOleUndoUnit *")] IOleUndoUnit* pUU)
         {
-            return Marshal.GetDelegateForFunctionPointer<_UndoTo>(lpVtbl->UndoTo)((IOleUndoManager*)Unsafe.AsPointer(ref this), pUU);
+            return lpVtbl->UndoTo((IOleUndoManager*)Unsafe.AsPointer(ref this), pUU);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int RedoTo([NativeTypeName("IOleUndoUnit *")] IOleUndoUnit* pUU)
         {
-            return Marshal.GetDelegateForFunctionPointer<_RedoTo>(lpVtbl->RedoTo)((IOleUndoManager*)Unsafe.AsPointer(ref this), pUU);
+            return lpVtbl->RedoTo((IOleUndoManager*)Unsafe.AsPointer(ref this), pUU);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int EnumUndoable([NativeTypeName("IEnumOleUndoUnits **")] IEnumOleUndoUnits** ppEnum)
         {
-            return Marshal.GetDelegateForFunctionPointer<_EnumUndoable>(lpVtbl->EnumUndoable)((IOleUndoManager*)Unsafe.AsPointer(ref this), ppEnum);
+            return lpVtbl->EnumUndoable((IOleUndoManager*)Unsafe.AsPointer(ref this), ppEnum);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int EnumRedoable([NativeTypeName("IEnumOleUndoUnits **")] IEnumOleUndoUnits** ppEnum)
         {
-            return Marshal.GetDelegateForFunctionPointer<_EnumRedoable>(lpVtbl->EnumRedoable)((IOleUndoManager*)Unsafe.AsPointer(ref this), ppEnum);
+            return lpVtbl->EnumRedoable((IOleUndoManager*)Unsafe.AsPointer(ref this), ppEnum);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetLastUndoDescription([NativeTypeName("BSTR *")] ushort** pBstr)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetLastUndoDescription>(lpVtbl->GetLastUndoDescription)((IOleUndoManager*)Unsafe.AsPointer(ref this), pBstr);
+            return lpVtbl->GetLastUndoDescription((IOleUndoManager*)Unsafe.AsPointer(ref this), pBstr);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetLastRedoDescription([NativeTypeName("BSTR *")] ushort** pBstr)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetLastRedoDescription>(lpVtbl->GetLastRedoDescription)((IOleUndoManager*)Unsafe.AsPointer(ref this), pBstr);
+            return lpVtbl->GetLastRedoDescription((IOleUndoManager*)Unsafe.AsPointer(ref this), pBstr);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Enable([NativeTypeName("BOOL")] int fEnable)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Enable>(lpVtbl->Enable)((IOleUndoManager*)Unsafe.AsPointer(ref this), fEnable);
+            return lpVtbl->Enable((IOleUndoManager*)Unsafe.AsPointer(ref this), fEnable);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IOleUndoManager*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IOleUndoManager*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IOleUndoManager*, uint> Release;
 
             [NativeTypeName("HRESULT (IOleParentUndoUnit *) __attribute__((stdcall))")]
-            public IntPtr Open;
+            public delegate* stdcall<IOleUndoManager*, IOleParentUndoUnit*, int> Open;
 
             [NativeTypeName("HRESULT (IOleParentUndoUnit *, BOOL) __attribute__((stdcall))")]
-            public IntPtr Close;
+            public delegate* stdcall<IOleUndoManager*, IOleParentUndoUnit*, int, int> Close;
 
             [NativeTypeName("HRESULT (IOleUndoUnit *) __attribute__((stdcall))")]
-            public IntPtr Add;
+            public delegate* stdcall<IOleUndoManager*, IOleUndoUnit*, int> Add;
 
             [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public IntPtr GetOpenParentState;
+            public delegate* stdcall<IOleUndoManager*, uint*, int> GetOpenParentState;
 
             [NativeTypeName("HRESULT (IOleUndoUnit *) __attribute__((stdcall))")]
-            public IntPtr DiscardFrom;
+            public delegate* stdcall<IOleUndoManager*, IOleUndoUnit*, int> DiscardFrom;
 
             [NativeTypeName("HRESULT (IOleUndoUnit *) __attribute__((stdcall))")]
-            public IntPtr UndoTo;
+            public delegate* stdcall<IOleUndoManager*, IOleUndoUnit*, int> UndoTo;
 
             [NativeTypeName("HRESULT (IOleUndoUnit *) __attribute__((stdcall))")]
-            public IntPtr RedoTo;
+            public delegate* stdcall<IOleUndoManager*, IOleUndoUnit*, int> RedoTo;
 
             [NativeTypeName("HRESULT (IEnumOleUndoUnits **) __attribute__((stdcall))")]
-            public IntPtr EnumUndoable;
+            public delegate* stdcall<IOleUndoManager*, IEnumOleUndoUnits**, int> EnumUndoable;
 
             [NativeTypeName("HRESULT (IEnumOleUndoUnits **) __attribute__((stdcall))")]
-            public IntPtr EnumRedoable;
+            public delegate* stdcall<IOleUndoManager*, IEnumOleUndoUnits**, int> EnumRedoable;
 
             [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public IntPtr GetLastUndoDescription;
+            public delegate* stdcall<IOleUndoManager*, ushort**, int> GetLastUndoDescription;
 
             [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public IntPtr GetLastRedoDescription;
+            public delegate* stdcall<IOleUndoManager*, ushort**, int> GetLastRedoDescription;
 
             [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public IntPtr Enable;
+            public delegate* stdcall<IOleUndoManager*, int, int> Enable;
         }
     }
 }

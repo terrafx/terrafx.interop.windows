@@ -66,7 +66,7 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", EntryPoint = "InitOnceExecuteOnce", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int InitOnceExecuteOnce([NativeTypeName("PINIT_ONCE")] RTL_RUN_ONCE* InitOnce, [NativeTypeName("PINIT_ONCE_FN")] IntPtr InitFn, [NativeTypeName("PVOID")] void* Parameter, [NativeTypeName("LPVOID *")] void** Context);
+        public static extern int InitOnceExecuteOnce([NativeTypeName("PINIT_ONCE")] RTL_RUN_ONCE* InitOnce, [NativeTypeName("PINIT_ONCE_FN")] delegate* stdcall<RTL_RUN_ONCE*, void*, void**, int> InitFn, [NativeTypeName("PVOID")] void* Parameter, [NativeTypeName("LPVOID *")] void** Context);
 
         [DllImport("kernel32", EntryPoint = "InitOnceBeginInitialize", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -163,11 +163,11 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", EntryPoint = "SetWaitableTimerEx", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetWaitableTimerEx([NativeTypeName("HANDLE")] IntPtr hTimer, [NativeTypeName("const LARGE_INTEGER *")] LARGE_INTEGER* lpDueTime, [NativeTypeName("LONG")] int lPeriod, [NativeTypeName("PTIMERAPCROUTINE")] IntPtr pfnCompletionRoutine, [NativeTypeName("LPVOID")] void* lpArgToCompletionRoutine, [NativeTypeName("PREASON_CONTEXT")] REASON_CONTEXT* WakeContext, [NativeTypeName("ULONG")] uint TolerableDelay);
+        public static extern int SetWaitableTimerEx([NativeTypeName("HANDLE")] IntPtr hTimer, [NativeTypeName("const LARGE_INTEGER *")] LARGE_INTEGER* lpDueTime, [NativeTypeName("LONG")] int lPeriod, [NativeTypeName("PTIMERAPCROUTINE")] delegate* stdcall<void*, uint, uint, void> pfnCompletionRoutine, [NativeTypeName("LPVOID")] void* lpArgToCompletionRoutine, [NativeTypeName("PREASON_CONTEXT")] REASON_CONTEXT* WakeContext, [NativeTypeName("ULONG")] uint TolerableDelay);
 
         [DllImport("kernel32", EntryPoint = "SetWaitableTimer", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetWaitableTimer([NativeTypeName("HANDLE")] IntPtr hTimer, [NativeTypeName("const LARGE_INTEGER *")] LARGE_INTEGER* lpDueTime, [NativeTypeName("LONG")] int lPeriod, [NativeTypeName("PTIMERAPCROUTINE")] IntPtr pfnCompletionRoutine, [NativeTypeName("LPVOID")] void* lpArgToCompletionRoutine, [NativeTypeName("BOOL")] int fResume);
+        public static extern int SetWaitableTimer([NativeTypeName("HANDLE")] IntPtr hTimer, [NativeTypeName("const LARGE_INTEGER *")] LARGE_INTEGER* lpDueTime, [NativeTypeName("LONG")] int lPeriod, [NativeTypeName("PTIMERAPCROUTINE")] delegate* stdcall<void*, uint, uint, void> pfnCompletionRoutine, [NativeTypeName("LPVOID")] void* lpArgToCompletionRoutine, [NativeTypeName("BOOL")] int fResume);
 
         [DllImport("kernel32", EntryPoint = "CancelWaitableTimer", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]

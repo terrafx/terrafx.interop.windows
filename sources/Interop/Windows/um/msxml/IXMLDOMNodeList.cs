@@ -14,163 +14,115 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IXMLDOMNodeList* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IXMLDOMNodeList* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IXMLDOMNodeList* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetTypeInfoCount(IXMLDOMNodeList* pThis, [NativeTypeName("UINT *")] uint* pctinfo);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetTypeInfo(IXMLDOMNodeList* pThis, [NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ITypeInfo **")] ITypeInfo** ppTInfo);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetIDsOfNames(IXMLDOMNodeList* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Invoke(IXMLDOMNodeList* pThis, [NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, [NativeTypeName("DISPPARAMS *")] DISPPARAMS* pDispParams, [NativeTypeName("VARIANT *")] VARIANT* pVarResult, [NativeTypeName("EXCEPINFO *")] EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _get_item(IXMLDOMNodeList* pThis, [NativeTypeName("long")] int index, [NativeTypeName("IXMLDOMNode **")] IXMLDOMNode** listItem);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _get_length(IXMLDOMNodeList* pThis, [NativeTypeName("long *")] int* listLength);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _nextNode(IXMLDOMNodeList* pThis, [NativeTypeName("IXMLDOMNode **")] IXMLDOMNode** nextItem);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _reset(IXMLDOMNodeList* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _get__newEnum(IXMLDOMNodeList* pThis, [NativeTypeName("IUnknown **")] IUnknown** ppUnk);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IXMLDOMNodeList*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IXMLDOMNodeList*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IXMLDOMNodeList*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IXMLDOMNodeList*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IXMLDOMNodeList*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IXMLDOMNodeList*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetTypeInfoCount([NativeTypeName("UINT *")] uint* pctinfo)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetTypeInfoCount>(lpVtbl->GetTypeInfoCount)((IXMLDOMNodeList*)Unsafe.AsPointer(ref this), pctinfo);
+            return lpVtbl->GetTypeInfoCount((IXMLDOMNodeList*)Unsafe.AsPointer(ref this), pctinfo);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ITypeInfo **")] ITypeInfo** ppTInfo)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetTypeInfo>(lpVtbl->GetTypeInfo)((IXMLDOMNodeList*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+            return lpVtbl->GetTypeInfo((IXMLDOMNodeList*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetIDsOfNames>(lpVtbl->GetIDsOfNames)((IXMLDOMNodeList*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+            return lpVtbl->GetIDsOfNames((IXMLDOMNodeList*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, [NativeTypeName("DISPPARAMS *")] DISPPARAMS* pDispParams, [NativeTypeName("VARIANT *")] VARIANT* pVarResult, [NativeTypeName("EXCEPINFO *")] EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Invoke>(lpVtbl->Invoke)((IXMLDOMNodeList*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+            return lpVtbl->Invoke((IXMLDOMNodeList*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_item([NativeTypeName("long")] int index, [NativeTypeName("IXMLDOMNode **")] IXMLDOMNode** listItem)
         {
-            return Marshal.GetDelegateForFunctionPointer<_get_item>(lpVtbl->get_item)((IXMLDOMNodeList*)Unsafe.AsPointer(ref this), index, listItem);
+            return lpVtbl->get_item((IXMLDOMNodeList*)Unsafe.AsPointer(ref this), index, listItem);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_length([NativeTypeName("long *")] int* listLength)
         {
-            return Marshal.GetDelegateForFunctionPointer<_get_length>(lpVtbl->get_length)((IXMLDOMNodeList*)Unsafe.AsPointer(ref this), listLength);
+            return lpVtbl->get_length((IXMLDOMNodeList*)Unsafe.AsPointer(ref this), listLength);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int nextNode([NativeTypeName("IXMLDOMNode **")] IXMLDOMNode** nextItem)
         {
-            return Marshal.GetDelegateForFunctionPointer<_nextNode>(lpVtbl->nextNode)((IXMLDOMNodeList*)Unsafe.AsPointer(ref this), nextItem);
+            return lpVtbl->nextNode((IXMLDOMNodeList*)Unsafe.AsPointer(ref this), nextItem);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int reset()
         {
-            return Marshal.GetDelegateForFunctionPointer<_reset>(lpVtbl->reset)((IXMLDOMNodeList*)Unsafe.AsPointer(ref this));
+            return lpVtbl->reset((IXMLDOMNodeList*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get__newEnum([NativeTypeName("IUnknown **")] IUnknown** ppUnk)
         {
-            return Marshal.GetDelegateForFunctionPointer<_get__newEnum>(lpVtbl->get__newEnum)((IXMLDOMNodeList*)Unsafe.AsPointer(ref this), ppUnk);
+            return lpVtbl->get__newEnum((IXMLDOMNodeList*)Unsafe.AsPointer(ref this), ppUnk);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IXMLDOMNodeList*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IXMLDOMNodeList*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IXMLDOMNodeList*, uint> Release;
 
             [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public IntPtr GetTypeInfoCount;
+            public delegate* stdcall<IXMLDOMNodeList*, uint*, int> GetTypeInfoCount;
 
             [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-            public IntPtr GetTypeInfo;
+            public delegate* stdcall<IXMLDOMNodeList*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
             [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-            public IntPtr GetIDsOfNames;
+            public delegate* stdcall<IXMLDOMNodeList*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
             [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-            public IntPtr Invoke;
+            public delegate* stdcall<IXMLDOMNodeList*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
             [NativeTypeName("HRESULT (long, IXMLDOMNode **) __attribute__((stdcall))")]
-            public IntPtr get_item;
+            public delegate* stdcall<IXMLDOMNodeList*, int, IXMLDOMNode**, int> get_item;
 
             [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public IntPtr get_length;
+            public delegate* stdcall<IXMLDOMNodeList*, int*, int> get_length;
 
             [NativeTypeName("HRESULT (IXMLDOMNode **) __attribute__((stdcall))")]
-            public IntPtr nextNode;
+            public delegate* stdcall<IXMLDOMNodeList*, IXMLDOMNode**, int> nextNode;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr reset;
+            public delegate* stdcall<IXMLDOMNodeList*, int> reset;
 
             [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-            public IntPtr get__newEnum;
+            public delegate* stdcall<IXMLDOMNodeList*, IUnknown**, int> get__newEnum;
         }
     }
 }

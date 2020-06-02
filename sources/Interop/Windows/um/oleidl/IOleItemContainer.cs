@@ -14,124 +14,88 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IOleItemContainer* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IOleItemContainer* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IOleItemContainer* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _ParseDisplayName(IOleItemContainer* pThis, [NativeTypeName("IBindCtx *")] IBindCtx* pbc, [NativeTypeName("LPOLESTR")] ushort* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, [NativeTypeName("IMoniker **")] IMoniker** ppmkOut);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _EnumObjects(IOleItemContainer* pThis, [NativeTypeName("DWORD")] uint grfFlags, [NativeTypeName("IEnumUnknown **")] IEnumUnknown** ppenum);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _LockContainer(IOleItemContainer* pThis, [NativeTypeName("BOOL")] int fLock);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetObjectA(IOleItemContainer* pThis, [NativeTypeName("LPOLESTR")] ushort* pszItem, [NativeTypeName("DWORD")] uint dwSpeedNeeded, [NativeTypeName("IBindCtx *")] IBindCtx* pbc, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetObjectStorage(IOleItemContainer* pThis, [NativeTypeName("LPOLESTR")] ushort* pszItem, [NativeTypeName("IBindCtx *")] IBindCtx* pbc, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvStorage);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _IsRunning(IOleItemContainer* pThis, [NativeTypeName("LPOLESTR")] ushort* pszItem);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IOleItemContainer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IOleItemContainer*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IOleItemContainer*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IOleItemContainer*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IOleItemContainer*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IOleItemContainer*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ParseDisplayName([NativeTypeName("IBindCtx *")] IBindCtx* pbc, [NativeTypeName("LPOLESTR")] ushort* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, [NativeTypeName("IMoniker **")] IMoniker** ppmkOut)
         {
-            return Marshal.GetDelegateForFunctionPointer<_ParseDisplayName>(lpVtbl->ParseDisplayName)((IOleItemContainer*)Unsafe.AsPointer(ref this), pbc, pszDisplayName, pchEaten, ppmkOut);
+            return lpVtbl->ParseDisplayName((IOleItemContainer*)Unsafe.AsPointer(ref this), pbc, pszDisplayName, pchEaten, ppmkOut);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int EnumObjects([NativeTypeName("DWORD")] uint grfFlags, [NativeTypeName("IEnumUnknown **")] IEnumUnknown** ppenum)
         {
-            return Marshal.GetDelegateForFunctionPointer<_EnumObjects>(lpVtbl->EnumObjects)((IOleItemContainer*)Unsafe.AsPointer(ref this), grfFlags, ppenum);
+            return lpVtbl->EnumObjects((IOleItemContainer*)Unsafe.AsPointer(ref this), grfFlags, ppenum);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int LockContainer([NativeTypeName("BOOL")] int fLock)
         {
-            return Marshal.GetDelegateForFunctionPointer<_LockContainer>(lpVtbl->LockContainer)((IOleItemContainer*)Unsafe.AsPointer(ref this), fLock);
+            return lpVtbl->LockContainer((IOleItemContainer*)Unsafe.AsPointer(ref this), fLock);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetObjectA([NativeTypeName("LPOLESTR")] ushort* pszItem, [NativeTypeName("DWORD")] uint dwSpeedNeeded, [NativeTypeName("IBindCtx *")] IBindCtx* pbc, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetObjectA>(lpVtbl->GetObjectA)((IOleItemContainer*)Unsafe.AsPointer(ref this), pszItem, dwSpeedNeeded, pbc, riid, ppvObject);
+            return lpVtbl->GetObjectA((IOleItemContainer*)Unsafe.AsPointer(ref this), pszItem, dwSpeedNeeded, pbc, riid, ppvObject);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetObjectStorage([NativeTypeName("LPOLESTR")] ushort* pszItem, [NativeTypeName("IBindCtx *")] IBindCtx* pbc, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvStorage)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetObjectStorage>(lpVtbl->GetObjectStorage)((IOleItemContainer*)Unsafe.AsPointer(ref this), pszItem, pbc, riid, ppvStorage);
+            return lpVtbl->GetObjectStorage((IOleItemContainer*)Unsafe.AsPointer(ref this), pszItem, pbc, riid, ppvStorage);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int IsRunning([NativeTypeName("LPOLESTR")] ushort* pszItem)
         {
-            return Marshal.GetDelegateForFunctionPointer<_IsRunning>(lpVtbl->IsRunning)((IOleItemContainer*)Unsafe.AsPointer(ref this), pszItem);
+            return lpVtbl->IsRunning((IOleItemContainer*)Unsafe.AsPointer(ref this), pszItem);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IOleItemContainer*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IOleItemContainer*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IOleItemContainer*, uint> Release;
 
             [NativeTypeName("HRESULT (IBindCtx *, LPOLESTR, ULONG *, IMoniker **) __attribute__((stdcall))")]
-            public IntPtr ParseDisplayName;
+            public delegate* stdcall<IOleItemContainer*, IBindCtx*, ushort*, uint*, IMoniker**, int> ParseDisplayName;
 
             [NativeTypeName("HRESULT (DWORD, IEnumUnknown **) __attribute__((stdcall))")]
-            public IntPtr EnumObjects;
+            public delegate* stdcall<IOleItemContainer*, uint, IEnumUnknown**, int> EnumObjects;
 
             [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public IntPtr LockContainer;
+            public delegate* stdcall<IOleItemContainer*, int, int> LockContainer;
 
             [NativeTypeName("HRESULT (LPOLESTR, DWORD, IBindCtx *, const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr GetObjectA;
+            public delegate* stdcall<IOleItemContainer*, ushort*, uint, IBindCtx*, Guid*, void**, int> GetObjectA;
 
             [NativeTypeName("HRESULT (LPOLESTR, IBindCtx *, const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr GetObjectStorage;
+            public delegate* stdcall<IOleItemContainer*, ushort*, IBindCtx*, Guid*, void**, int> GetObjectStorage;
 
             [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-            public IntPtr IsRunning;
+            public delegate* stdcall<IOleItemContainer*, ushort*, int> IsRunning;
         }
     }
 }
