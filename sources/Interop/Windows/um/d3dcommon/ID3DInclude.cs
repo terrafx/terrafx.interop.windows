@@ -13,33 +13,25 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Open(ID3DInclude* pThis, D3D_INCLUDE_TYPE IncludeType, [NativeTypeName("LPCSTR")] sbyte* pFileName, [NativeTypeName("LPCVOID")] void* pParentData, [NativeTypeName("LPCVOID *")] void** ppData, [NativeTypeName("UINT *")] uint* pBytes);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Close(ID3DInclude* pThis, [NativeTypeName("LPCVOID")] void* pData);
-
         [return: NativeTypeName("HRESULT")]
         public int Open(D3D_INCLUDE_TYPE IncludeType, [NativeTypeName("LPCSTR")] sbyte* pFileName, [NativeTypeName("LPCVOID")] void* pParentData, [NativeTypeName("LPCVOID *")] void** ppData, [NativeTypeName("UINT *")] uint* pBytes)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Open>(lpVtbl->Open)((ID3DInclude*)Unsafe.AsPointer(ref this), IncludeType, pFileName, pParentData, ppData, pBytes);
+            return lpVtbl->Open((ID3DInclude*)Unsafe.AsPointer(ref this), IncludeType, pFileName, pParentData, ppData, pBytes);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Close([NativeTypeName("LPCVOID")] void* pData)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Close>(lpVtbl->Close)((ID3DInclude*)Unsafe.AsPointer(ref this), pData);
+            return lpVtbl->Close((ID3DInclude*)Unsafe.AsPointer(ref this), pData);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (D3D_INCLUDE_TYPE, LPCSTR, LPCVOID, LPCVOID *, UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr Open;
+            public delegate* stdcall<ID3DInclude*, D3D_INCLUDE_TYPE, sbyte*, void*, void**, uint*, int> Open;
 
             [NativeTypeName("HRESULT (LPCVOID) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr Close;
+            public delegate* stdcall<ID3DInclude*, void*, int> Close;
         }
     }
 }

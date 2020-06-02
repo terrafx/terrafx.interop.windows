@@ -14,72 +14,52 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IProcessLock* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IProcessLock* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IProcessLock* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRefOnProcess(IProcessLock* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _ReleaseRefOnProcess(IProcessLock* pThis);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IProcessLock*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IProcessLock*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IProcessLock*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IProcessLock*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IProcessLock*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IProcessLock*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRefOnProcess()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRefOnProcess>(lpVtbl->AddRefOnProcess)((IProcessLock*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRefOnProcess((IProcessLock*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint ReleaseRefOnProcess()
         {
-            return Marshal.GetDelegateForFunctionPointer<_ReleaseRefOnProcess>(lpVtbl->ReleaseRefOnProcess)((IProcessLock*)Unsafe.AsPointer(ref this));
+            return lpVtbl->ReleaseRefOnProcess((IProcessLock*)Unsafe.AsPointer(ref this));
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IProcessLock*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IProcessLock*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IProcessLock*, uint> Release;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRefOnProcess;
+            public delegate* stdcall<IProcessLock*, uint> AddRefOnProcess;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr ReleaseRefOnProcess;
+            public delegate* stdcall<IProcessLock*, uint> ReleaseRefOnProcess;
         }
     }
 }

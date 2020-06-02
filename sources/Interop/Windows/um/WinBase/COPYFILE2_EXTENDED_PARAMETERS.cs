@@ -3,8 +3,6 @@
 // Ported from um/WinBase.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct COPYFILE2_EXTENDED_PARAMETERS
@@ -19,7 +17,7 @@ namespace TerraFX.Interop
         public int* pfCancel;
 
         [NativeTypeName("PCOPYFILE2_PROGRESS_ROUTINE")]
-        public IntPtr pProgressRoutine;
+        public delegate* stdcall<COPYFILE2_MESSAGE*, void*, COPYFILE2_MESSAGE_ACTION> pProgressRoutine;
 
         [NativeTypeName("PVOID")]
         public void* pvCallbackContext;

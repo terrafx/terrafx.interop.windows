@@ -14,124 +14,88 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IPersistStreamInit* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IPersistStreamInit* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IPersistStreamInit* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetClassID(IPersistStreamInit* pThis, [NativeTypeName("CLSID *")] Guid* pClassID);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _IsDirty(IPersistStreamInit* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Load(IPersistStreamInit* pThis, [NativeTypeName("LPSTREAM")] IStream* pStm);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Save(IPersistStreamInit* pThis, [NativeTypeName("LPSTREAM")] IStream* pStm, [NativeTypeName("BOOL")] int fClearDirty);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetSizeMax(IPersistStreamInit* pThis, [NativeTypeName("ULARGE_INTEGER *")] ULARGE_INTEGER* pCbSize);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _InitNew(IPersistStreamInit* pThis);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IPersistStreamInit*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IPersistStreamInit*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IPersistStreamInit*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IPersistStreamInit*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IPersistStreamInit*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IPersistStreamInit*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetClassID>(lpVtbl->GetClassID)((IPersistStreamInit*)Unsafe.AsPointer(ref this), pClassID);
+            return lpVtbl->GetClassID((IPersistStreamInit*)Unsafe.AsPointer(ref this), pClassID);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int IsDirty()
         {
-            return Marshal.GetDelegateForFunctionPointer<_IsDirty>(lpVtbl->IsDirty)((IPersistStreamInit*)Unsafe.AsPointer(ref this));
+            return lpVtbl->IsDirty((IPersistStreamInit*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Load([NativeTypeName("LPSTREAM")] IStream* pStm)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Load>(lpVtbl->Load)((IPersistStreamInit*)Unsafe.AsPointer(ref this), pStm);
+            return lpVtbl->Load((IPersistStreamInit*)Unsafe.AsPointer(ref this), pStm);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Save([NativeTypeName("LPSTREAM")] IStream* pStm, [NativeTypeName("BOOL")] int fClearDirty)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Save>(lpVtbl->Save)((IPersistStreamInit*)Unsafe.AsPointer(ref this), pStm, fClearDirty);
+            return lpVtbl->Save((IPersistStreamInit*)Unsafe.AsPointer(ref this), pStm, fClearDirty);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetSizeMax([NativeTypeName("ULARGE_INTEGER *")] ULARGE_INTEGER* pCbSize)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetSizeMax>(lpVtbl->GetSizeMax)((IPersistStreamInit*)Unsafe.AsPointer(ref this), pCbSize);
+            return lpVtbl->GetSizeMax((IPersistStreamInit*)Unsafe.AsPointer(ref this), pCbSize);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int InitNew()
         {
-            return Marshal.GetDelegateForFunctionPointer<_InitNew>(lpVtbl->InitNew)((IPersistStreamInit*)Unsafe.AsPointer(ref this));
+            return lpVtbl->InitNew((IPersistStreamInit*)Unsafe.AsPointer(ref this));
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IPersistStreamInit*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IPersistStreamInit*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IPersistStreamInit*, uint> Release;
 
             [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-            public IntPtr GetClassID;
+            public delegate* stdcall<IPersistStreamInit*, Guid*, int> GetClassID;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr IsDirty;
+            public delegate* stdcall<IPersistStreamInit*, int> IsDirty;
 
             [NativeTypeName("HRESULT (LPSTREAM) __attribute__((stdcall))")]
-            public IntPtr Load;
+            public delegate* stdcall<IPersistStreamInit*, IStream*, int> Load;
 
             [NativeTypeName("HRESULT (LPSTREAM, BOOL) __attribute__((stdcall))")]
-            public IntPtr Save;
+            public delegate* stdcall<IPersistStreamInit*, IStream*, int, int> Save;
 
             [NativeTypeName("HRESULT (ULARGE_INTEGER *) __attribute__((stdcall))")]
-            public IntPtr GetSizeMax;
+            public delegate* stdcall<IPersistStreamInit*, ULARGE_INTEGER*, int> GetSizeMax;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr InitNew;
+            public delegate* stdcall<IPersistStreamInit*, int> InitNew;
         }
     }
 }

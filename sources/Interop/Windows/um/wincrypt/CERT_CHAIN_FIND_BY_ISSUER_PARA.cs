@@ -3,8 +3,6 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct CERT_CHAIN_FIND_BY_ISSUER_PARA
@@ -28,7 +26,7 @@ namespace TerraFX.Interop
         public CRYPTOAPI_BLOB* rgIssuer;
 
         [NativeTypeName("PFN_CERT_CHAIN_FIND_BY_ISSUER_CALLBACK")]
-        public IntPtr pfnFindCallback;
+        public delegate* stdcall<CERT_CONTEXT*, void*, int> pfnFindCallback;
 
         [NativeTypeName("void *")]
         public void* pvFindArg;

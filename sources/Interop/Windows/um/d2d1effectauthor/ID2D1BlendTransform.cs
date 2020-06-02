@@ -14,105 +14,76 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ID2D1BlendTransform* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ID2D1BlendTransform* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ID2D1BlendTransform* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("UINT32")]
-        public delegate uint _GetInputCount(ID2D1BlendTransform* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetOutputBuffer(ID2D1BlendTransform* pThis, D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _SetCached(ID2D1BlendTransform* pThis, [NativeTypeName("BOOL")] int isCached);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _SetDescription(ID2D1BlendTransform* pThis, [NativeTypeName("const D2D1_BLEND_DESCRIPTION *")] D2D1_BLEND_DESCRIPTION* description);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _GetDescription(ID2D1BlendTransform* pThis, [NativeTypeName("D2D1_BLEND_DESCRIPTION *")] D2D1_BLEND_DESCRIPTION* description);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ID2D1BlendTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((ID2D1BlendTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ID2D1BlendTransform*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((ID2D1BlendTransform*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ID2D1BlendTransform*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((ID2D1BlendTransform*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("UINT32")]
         public uint GetInputCount()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetInputCount>(lpVtbl->GetInputCount)((ID2D1BlendTransform*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetInputCount((ID2D1BlendTransform*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetOutputBuffer(D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetOutputBuffer>(lpVtbl->SetOutputBuffer)((ID2D1BlendTransform*)Unsafe.AsPointer(ref this), bufferPrecision, channelDepth);
+            return lpVtbl->SetOutputBuffer((ID2D1BlendTransform*)Unsafe.AsPointer(ref this), bufferPrecision, channelDepth);
         }
 
         public void SetCached([NativeTypeName("BOOL")] int isCached)
         {
-            Marshal.GetDelegateForFunctionPointer<_SetCached>(lpVtbl->SetCached)((ID2D1BlendTransform*)Unsafe.AsPointer(ref this), isCached);
+            lpVtbl->SetCached((ID2D1BlendTransform*)Unsafe.AsPointer(ref this), isCached);
         }
 
         public void SetDescription([NativeTypeName("const D2D1_BLEND_DESCRIPTION *")] D2D1_BLEND_DESCRIPTION* description)
         {
-            Marshal.GetDelegateForFunctionPointer<_SetDescription>(lpVtbl->SetDescription)((ID2D1BlendTransform*)Unsafe.AsPointer(ref this), description);
+            lpVtbl->SetDescription((ID2D1BlendTransform*)Unsafe.AsPointer(ref this), description);
         }
 
         public void GetDescription([NativeTypeName("D2D1_BLEND_DESCRIPTION *")] D2D1_BLEND_DESCRIPTION* description)
         {
-            Marshal.GetDelegateForFunctionPointer<_GetDescription>(lpVtbl->GetDescription)((ID2D1BlendTransform*)Unsafe.AsPointer(ref this), description);
+            lpVtbl->GetDescription((ID2D1BlendTransform*)Unsafe.AsPointer(ref this), description);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<ID2D1BlendTransform*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<ID2D1BlendTransform*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<ID2D1BlendTransform*, uint> Release;
 
             [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetInputCount;
+            public delegate* stdcall<ID2D1BlendTransform*, uint> GetInputCount;
 
             [NativeTypeName("HRESULT (D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetOutputBuffer;
+            public delegate* stdcall<ID2D1BlendTransform*, D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH, int> SetOutputBuffer;
 
             [NativeTypeName("void (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetCached;
+            public delegate* stdcall<ID2D1BlendTransform*, int, void> SetCached;
 
             [NativeTypeName("void (const D2D1_BLEND_DESCRIPTION *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetDescription;
+            public delegate* stdcall<ID2D1BlendTransform*, D2D1_BLEND_DESCRIPTION*, void> SetDescription;
 
             [NativeTypeName("void (D2D1_BLEND_DESCRIPTION *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetDescription;
+            public delegate* stdcall<ID2D1BlendTransform*, D2D1_BLEND_DESCRIPTION*, void> GetDescription;
         }
     }
 }

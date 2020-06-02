@@ -14,111 +14,79 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ISurrogateService* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ISurrogateService* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ISurrogateService* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Init(ISurrogateService* pThis, [NativeTypeName("const GUID &")] Guid* rguidProcessID, [NativeTypeName("IProcessLock *")] IProcessLock* pProcessLock, [NativeTypeName("BOOL *")] int* pfApplicationAware);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _ApplicationLaunch(ISurrogateService* pThis, [NativeTypeName("const GUID &")] Guid* rguidApplID, ApplicationType appType);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _ApplicationFree(ISurrogateService* pThis, [NativeTypeName("const GUID &")] Guid* rguidApplID);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _CatalogRefresh(ISurrogateService* pThis, [NativeTypeName("ULONG")] uint ulReserved);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _ProcessShutdown(ISurrogateService* pThis, ShutdownType shutdownType);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ISurrogateService*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((ISurrogateService*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ISurrogateService*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((ISurrogateService*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ISurrogateService*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((ISurrogateService*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Init([NativeTypeName("const GUID &")] Guid* rguidProcessID, [NativeTypeName("IProcessLock *")] IProcessLock* pProcessLock, [NativeTypeName("BOOL *")] int* pfApplicationAware)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Init>(lpVtbl->Init)((ISurrogateService*)Unsafe.AsPointer(ref this), rguidProcessID, pProcessLock, pfApplicationAware);
+            return lpVtbl->Init((ISurrogateService*)Unsafe.AsPointer(ref this), rguidProcessID, pProcessLock, pfApplicationAware);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ApplicationLaunch([NativeTypeName("const GUID &")] Guid* rguidApplID, ApplicationType appType)
         {
-            return Marshal.GetDelegateForFunctionPointer<_ApplicationLaunch>(lpVtbl->ApplicationLaunch)((ISurrogateService*)Unsafe.AsPointer(ref this), rguidApplID, appType);
+            return lpVtbl->ApplicationLaunch((ISurrogateService*)Unsafe.AsPointer(ref this), rguidApplID, appType);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ApplicationFree([NativeTypeName("const GUID &")] Guid* rguidApplID)
         {
-            return Marshal.GetDelegateForFunctionPointer<_ApplicationFree>(lpVtbl->ApplicationFree)((ISurrogateService*)Unsafe.AsPointer(ref this), rguidApplID);
+            return lpVtbl->ApplicationFree((ISurrogateService*)Unsafe.AsPointer(ref this), rguidApplID);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CatalogRefresh([NativeTypeName("ULONG")] uint ulReserved)
         {
-            return Marshal.GetDelegateForFunctionPointer<_CatalogRefresh>(lpVtbl->CatalogRefresh)((ISurrogateService*)Unsafe.AsPointer(ref this), ulReserved);
+            return lpVtbl->CatalogRefresh((ISurrogateService*)Unsafe.AsPointer(ref this), ulReserved);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ProcessShutdown(ShutdownType shutdownType)
         {
-            return Marshal.GetDelegateForFunctionPointer<_ProcessShutdown>(lpVtbl->ProcessShutdown)((ISurrogateService*)Unsafe.AsPointer(ref this), shutdownType);
+            return lpVtbl->ProcessShutdown((ISurrogateService*)Unsafe.AsPointer(ref this), shutdownType);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<ISurrogateService*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<ISurrogateService*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<ISurrogateService*, uint> Release;
 
             [NativeTypeName("HRESULT (const GUID &, IProcessLock *, BOOL *) __attribute__((stdcall))")]
-            public IntPtr Init;
+            public delegate* stdcall<ISurrogateService*, Guid*, IProcessLock*, int*, int> Init;
 
             [NativeTypeName("HRESULT (const GUID &, ApplicationType) __attribute__((stdcall))")]
-            public IntPtr ApplicationLaunch;
+            public delegate* stdcall<ISurrogateService*, Guid*, ApplicationType, int> ApplicationLaunch;
 
             [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
-            public IntPtr ApplicationFree;
+            public delegate* stdcall<ISurrogateService*, Guid*, int> ApplicationFree;
 
             [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-            public IntPtr CatalogRefresh;
+            public delegate* stdcall<ISurrogateService*, uint, int> CatalogRefresh;
 
             [NativeTypeName("HRESULT (ShutdownType) __attribute__((stdcall))")]
-            public IntPtr ProcessShutdown;
+            public delegate* stdcall<ISurrogateService*, ShutdownType, int> ProcessShutdown;
         }
     }
 }

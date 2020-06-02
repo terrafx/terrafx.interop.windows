@@ -14,304 +14,213 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDXGIOutput1* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDXGIOutput1* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDXGIOutput1* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateData(IDXGIOutput1* pThis, [NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateDataInterface(IDXGIOutput1* pThis, [NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("const IUnknown *")] IUnknown* pUnknown);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPrivateData(IDXGIOutput1* pThis, [NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetParent(IDXGIOutput1* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppParent);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDesc(IDXGIOutput1* pThis, [NativeTypeName("DXGI_OUTPUT_DESC *")] DXGI_OUTPUT_DESC* pDesc);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDisplayModeList(IDXGIOutput1* pThis, DXGI_FORMAT EnumFormat, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("UINT *")] uint* pNumModes, [NativeTypeName("DXGI_MODE_DESC *")] DXGI_MODE_DESC* pDesc);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _FindClosestMatchingMode(IDXGIOutput1* pThis, [NativeTypeName("const DXGI_MODE_DESC *")] DXGI_MODE_DESC* pModeToMatch, [NativeTypeName("DXGI_MODE_DESC *")] DXGI_MODE_DESC* pClosestMatch, [NativeTypeName("IUnknown *")] IUnknown* pConcernedDevice);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _WaitForVBlank(IDXGIOutput1* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _TakeOwnership(IDXGIOutput1* pThis, [NativeTypeName("IUnknown *")] IUnknown* pDevice, [NativeTypeName("BOOL")] int Exclusive);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _ReleaseOwnership(IDXGIOutput1* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetGammaControlCapabilities(IDXGIOutput1* pThis, [NativeTypeName("DXGI_GAMMA_CONTROL_CAPABILITIES *")] DXGI_GAMMA_CONTROL_CAPABILITIES* pGammaCaps);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetGammaControl(IDXGIOutput1* pThis, [NativeTypeName("const DXGI_GAMMA_CONTROL *")] DXGI_GAMMA_CONTROL* pArray);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetGammaControl(IDXGIOutput1* pThis, [NativeTypeName("DXGI_GAMMA_CONTROL *")] DXGI_GAMMA_CONTROL* pArray);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetDisplaySurface(IDXGIOutput1* pThis, [NativeTypeName("IDXGISurface *")] IDXGISurface* pScanoutSurface);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDisplaySurfaceData(IDXGIOutput1* pThis, [NativeTypeName("IDXGISurface *")] IDXGISurface* pDestination);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFrameStatistics(IDXGIOutput1* pThis, [NativeTypeName("DXGI_FRAME_STATISTICS *")] DXGI_FRAME_STATISTICS* pStats);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDisplayModeList1(IDXGIOutput1* pThis, DXGI_FORMAT EnumFormat, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("UINT *")] uint* pNumModes, [NativeTypeName("DXGI_MODE_DESC1 *")] DXGI_MODE_DESC1* pDesc);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _FindClosestMatchingMode1(IDXGIOutput1* pThis, [NativeTypeName("const DXGI_MODE_DESC1 *")] DXGI_MODE_DESC1* pModeToMatch, [NativeTypeName("DXGI_MODE_DESC1 *")] DXGI_MODE_DESC1* pClosestMatch, [NativeTypeName("IUnknown *")] IUnknown* pConcernedDevice);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDisplaySurfaceData1(IDXGIOutput1* pThis, [NativeTypeName("IDXGIResource *")] IDXGIResource* pDestination);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _DuplicateOutput(IDXGIOutput1* pThis, [NativeTypeName("IUnknown *")] IUnknown* pDevice, [NativeTypeName("IDXGIOutputDuplication **")] IDXGIOutputDuplication** ppOutputDuplication);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDXGIOutput1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IDXGIOutput1*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDXGIOutput1*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IDXGIOutput1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDXGIOutput1*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IDXGIOutput1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)((IDXGIOutput1*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
+            return lpVtbl->SetPrivateData((IDXGIOutput1*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("const IUnknown *")] IUnknown* pUnknown)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)((IDXGIOutput1*)Unsafe.AsPointer(ref this), Name, pUnknown);
+            return lpVtbl->SetPrivateDataInterface((IDXGIOutput1*)Unsafe.AsPointer(ref this), Name, pUnknown);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPrivateData([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)((IDXGIOutput1*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
+            return lpVtbl->GetPrivateData((IDXGIOutput1*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetParent([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppParent)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetParent>(lpVtbl->GetParent)((IDXGIOutput1*)Unsafe.AsPointer(ref this), riid, ppParent);
+            return lpVtbl->GetParent((IDXGIOutput1*)Unsafe.AsPointer(ref this), riid, ppParent);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDesc([NativeTypeName("DXGI_OUTPUT_DESC *")] DXGI_OUTPUT_DESC* pDesc)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)((IDXGIOutput1*)Unsafe.AsPointer(ref this), pDesc);
+            return lpVtbl->GetDesc((IDXGIOutput1*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDisplayModeList(DXGI_FORMAT EnumFormat, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("UINT *")] uint* pNumModes, [NativeTypeName("DXGI_MODE_DESC *")] DXGI_MODE_DESC* pDesc)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetDisplayModeList>(lpVtbl->GetDisplayModeList)((IDXGIOutput1*)Unsafe.AsPointer(ref this), EnumFormat, Flags, pNumModes, pDesc);
+            return lpVtbl->GetDisplayModeList((IDXGIOutput1*)Unsafe.AsPointer(ref this), EnumFormat, Flags, pNumModes, pDesc);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int FindClosestMatchingMode([NativeTypeName("const DXGI_MODE_DESC *")] DXGI_MODE_DESC* pModeToMatch, [NativeTypeName("DXGI_MODE_DESC *")] DXGI_MODE_DESC* pClosestMatch, [NativeTypeName("IUnknown *")] IUnknown* pConcernedDevice)
         {
-            return Marshal.GetDelegateForFunctionPointer<_FindClosestMatchingMode>(lpVtbl->FindClosestMatchingMode)((IDXGIOutput1*)Unsafe.AsPointer(ref this), pModeToMatch, pClosestMatch, pConcernedDevice);
+            return lpVtbl->FindClosestMatchingMode((IDXGIOutput1*)Unsafe.AsPointer(ref this), pModeToMatch, pClosestMatch, pConcernedDevice);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int WaitForVBlank()
         {
-            return Marshal.GetDelegateForFunctionPointer<_WaitForVBlank>(lpVtbl->WaitForVBlank)((IDXGIOutput1*)Unsafe.AsPointer(ref this));
+            return lpVtbl->WaitForVBlank((IDXGIOutput1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int TakeOwnership([NativeTypeName("IUnknown *")] IUnknown* pDevice, [NativeTypeName("BOOL")] int Exclusive)
         {
-            return Marshal.GetDelegateForFunctionPointer<_TakeOwnership>(lpVtbl->TakeOwnership)((IDXGIOutput1*)Unsafe.AsPointer(ref this), pDevice, Exclusive);
+            return lpVtbl->TakeOwnership((IDXGIOutput1*)Unsafe.AsPointer(ref this), pDevice, Exclusive);
         }
 
         public void ReleaseOwnership()
         {
-            Marshal.GetDelegateForFunctionPointer<_ReleaseOwnership>(lpVtbl->ReleaseOwnership)((IDXGIOutput1*)Unsafe.AsPointer(ref this));
+            lpVtbl->ReleaseOwnership((IDXGIOutput1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetGammaControlCapabilities([NativeTypeName("DXGI_GAMMA_CONTROL_CAPABILITIES *")] DXGI_GAMMA_CONTROL_CAPABILITIES* pGammaCaps)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetGammaControlCapabilities>(lpVtbl->GetGammaControlCapabilities)((IDXGIOutput1*)Unsafe.AsPointer(ref this), pGammaCaps);
+            return lpVtbl->GetGammaControlCapabilities((IDXGIOutput1*)Unsafe.AsPointer(ref this), pGammaCaps);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetGammaControl([NativeTypeName("const DXGI_GAMMA_CONTROL *")] DXGI_GAMMA_CONTROL* pArray)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetGammaControl>(lpVtbl->SetGammaControl)((IDXGIOutput1*)Unsafe.AsPointer(ref this), pArray);
+            return lpVtbl->SetGammaControl((IDXGIOutput1*)Unsafe.AsPointer(ref this), pArray);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetGammaControl([NativeTypeName("DXGI_GAMMA_CONTROL *")] DXGI_GAMMA_CONTROL* pArray)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetGammaControl>(lpVtbl->GetGammaControl)((IDXGIOutput1*)Unsafe.AsPointer(ref this), pArray);
+            return lpVtbl->GetGammaControl((IDXGIOutput1*)Unsafe.AsPointer(ref this), pArray);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetDisplaySurface([NativeTypeName("IDXGISurface *")] IDXGISurface* pScanoutSurface)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetDisplaySurface>(lpVtbl->SetDisplaySurface)((IDXGIOutput1*)Unsafe.AsPointer(ref this), pScanoutSurface);
+            return lpVtbl->SetDisplaySurface((IDXGIOutput1*)Unsafe.AsPointer(ref this), pScanoutSurface);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDisplaySurfaceData([NativeTypeName("IDXGISurface *")] IDXGISurface* pDestination)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetDisplaySurfaceData>(lpVtbl->GetDisplaySurfaceData)((IDXGIOutput1*)Unsafe.AsPointer(ref this), pDestination);
+            return lpVtbl->GetDisplaySurfaceData((IDXGIOutput1*)Unsafe.AsPointer(ref this), pDestination);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetFrameStatistics([NativeTypeName("DXGI_FRAME_STATISTICS *")] DXGI_FRAME_STATISTICS* pStats)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetFrameStatistics>(lpVtbl->GetFrameStatistics)((IDXGIOutput1*)Unsafe.AsPointer(ref this), pStats);
+            return lpVtbl->GetFrameStatistics((IDXGIOutput1*)Unsafe.AsPointer(ref this), pStats);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDisplayModeList1(DXGI_FORMAT EnumFormat, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("UINT *")] uint* pNumModes, [NativeTypeName("DXGI_MODE_DESC1 *")] DXGI_MODE_DESC1* pDesc)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetDisplayModeList1>(lpVtbl->GetDisplayModeList1)((IDXGIOutput1*)Unsafe.AsPointer(ref this), EnumFormat, Flags, pNumModes, pDesc);
+            return lpVtbl->GetDisplayModeList1((IDXGIOutput1*)Unsafe.AsPointer(ref this), EnumFormat, Flags, pNumModes, pDesc);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int FindClosestMatchingMode1([NativeTypeName("const DXGI_MODE_DESC1 *")] DXGI_MODE_DESC1* pModeToMatch, [NativeTypeName("DXGI_MODE_DESC1 *")] DXGI_MODE_DESC1* pClosestMatch, [NativeTypeName("IUnknown *")] IUnknown* pConcernedDevice)
         {
-            return Marshal.GetDelegateForFunctionPointer<_FindClosestMatchingMode1>(lpVtbl->FindClosestMatchingMode1)((IDXGIOutput1*)Unsafe.AsPointer(ref this), pModeToMatch, pClosestMatch, pConcernedDevice);
+            return lpVtbl->FindClosestMatchingMode1((IDXGIOutput1*)Unsafe.AsPointer(ref this), pModeToMatch, pClosestMatch, pConcernedDevice);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDisplaySurfaceData1([NativeTypeName("IDXGIResource *")] IDXGIResource* pDestination)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetDisplaySurfaceData1>(lpVtbl->GetDisplaySurfaceData1)((IDXGIOutput1*)Unsafe.AsPointer(ref this), pDestination);
+            return lpVtbl->GetDisplaySurfaceData1((IDXGIOutput1*)Unsafe.AsPointer(ref this), pDestination);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int DuplicateOutput([NativeTypeName("IUnknown *")] IUnknown* pDevice, [NativeTypeName("IDXGIOutputDuplication **")] IDXGIOutputDuplication** ppOutputDuplication)
         {
-            return Marshal.GetDelegateForFunctionPointer<_DuplicateOutput>(lpVtbl->DuplicateOutput)((IDXGIOutput1*)Unsafe.AsPointer(ref this), pDevice, ppOutputDuplication);
+            return lpVtbl->DuplicateOutput((IDXGIOutput1*)Unsafe.AsPointer(ref this), pDevice, ppOutputDuplication);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IDXGIOutput1*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IDXGIOutput1*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IDXGIOutput1*, uint> Release;
 
             [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-            public IntPtr SetPrivateData;
+            public delegate* stdcall<IDXGIOutput1*, Guid*, uint, void*, int> SetPrivateData;
 
             [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-            public IntPtr SetPrivateDataInterface;
+            public delegate* stdcall<IDXGIOutput1*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
             [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-            public IntPtr GetPrivateData;
+            public delegate* stdcall<IDXGIOutput1*, Guid*, uint*, void*, int> GetPrivateData;
 
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr GetParent;
+            public delegate* stdcall<IDXGIOutput1*, Guid*, void**, int> GetParent;
 
             [NativeTypeName("HRESULT (DXGI_OUTPUT_DESC *) __attribute__((stdcall))")]
-            public IntPtr GetDesc;
+            public delegate* stdcall<IDXGIOutput1*, DXGI_OUTPUT_DESC*, int> GetDesc;
 
             [NativeTypeName("HRESULT (DXGI_FORMAT, UINT, UINT *, DXGI_MODE_DESC *) __attribute__((stdcall))")]
-            public IntPtr GetDisplayModeList;
+            public delegate* stdcall<IDXGIOutput1*, DXGI_FORMAT, uint, uint*, DXGI_MODE_DESC*, int> GetDisplayModeList;
 
             [NativeTypeName("HRESULT (const DXGI_MODE_DESC *, DXGI_MODE_DESC *, IUnknown *) __attribute__((stdcall))")]
-            public IntPtr FindClosestMatchingMode;
+            public delegate* stdcall<IDXGIOutput1*, DXGI_MODE_DESC*, DXGI_MODE_DESC*, IUnknown*, int> FindClosestMatchingMode;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr WaitForVBlank;
+            public delegate* stdcall<IDXGIOutput1*, int> WaitForVBlank;
 
             [NativeTypeName("HRESULT (IUnknown *, BOOL) __attribute__((stdcall))")]
-            public IntPtr TakeOwnership;
+            public delegate* stdcall<IDXGIOutput1*, IUnknown*, int, int> TakeOwnership;
 
             [NativeTypeName("void () __attribute__((stdcall))")]
-            public IntPtr ReleaseOwnership;
+            public delegate* stdcall<IDXGIOutput1*, void> ReleaseOwnership;
 
             [NativeTypeName("HRESULT (DXGI_GAMMA_CONTROL_CAPABILITIES *) __attribute__((stdcall))")]
-            public IntPtr GetGammaControlCapabilities;
+            public delegate* stdcall<IDXGIOutput1*, DXGI_GAMMA_CONTROL_CAPABILITIES*, int> GetGammaControlCapabilities;
 
             [NativeTypeName("HRESULT (const DXGI_GAMMA_CONTROL *) __attribute__((stdcall))")]
-            public IntPtr SetGammaControl;
+            public delegate* stdcall<IDXGIOutput1*, DXGI_GAMMA_CONTROL*, int> SetGammaControl;
 
             [NativeTypeName("HRESULT (DXGI_GAMMA_CONTROL *) __attribute__((stdcall))")]
-            public IntPtr GetGammaControl;
+            public delegate* stdcall<IDXGIOutput1*, DXGI_GAMMA_CONTROL*, int> GetGammaControl;
 
             [NativeTypeName("HRESULT (IDXGISurface *) __attribute__((stdcall))")]
-            public IntPtr SetDisplaySurface;
+            public delegate* stdcall<IDXGIOutput1*, IDXGISurface*, int> SetDisplaySurface;
 
             [NativeTypeName("HRESULT (IDXGISurface *) __attribute__((stdcall))")]
-            public IntPtr GetDisplaySurfaceData;
+            public delegate* stdcall<IDXGIOutput1*, IDXGISurface*, int> GetDisplaySurfaceData;
 
             [NativeTypeName("HRESULT (DXGI_FRAME_STATISTICS *) __attribute__((stdcall))")]
-            public IntPtr GetFrameStatistics;
+            public delegate* stdcall<IDXGIOutput1*, DXGI_FRAME_STATISTICS*, int> GetFrameStatistics;
 
             [NativeTypeName("HRESULT (DXGI_FORMAT, UINT, UINT *, DXGI_MODE_DESC1 *) __attribute__((stdcall))")]
-            public IntPtr GetDisplayModeList1;
+            public delegate* stdcall<IDXGIOutput1*, DXGI_FORMAT, uint, uint*, DXGI_MODE_DESC1*, int> GetDisplayModeList1;
 
             [NativeTypeName("HRESULT (const DXGI_MODE_DESC1 *, DXGI_MODE_DESC1 *, IUnknown *) __attribute__((stdcall))")]
-            public IntPtr FindClosestMatchingMode1;
+            public delegate* stdcall<IDXGIOutput1*, DXGI_MODE_DESC1*, DXGI_MODE_DESC1*, IUnknown*, int> FindClosestMatchingMode1;
 
             [NativeTypeName("HRESULT (IDXGIResource *) __attribute__((stdcall))")]
-            public IntPtr GetDisplaySurfaceData1;
+            public delegate* stdcall<IDXGIOutput1*, IDXGIResource*, int> GetDisplaySurfaceData1;
 
             [NativeTypeName("HRESULT (IUnknown *, IDXGIOutputDuplication **) __attribute__((stdcall))")]
-            public IntPtr DuplicateOutput;
+            public delegate* stdcall<IDXGIOutput1*, IUnknown*, IDXGIOutputDuplication**, int> DuplicateOutput;
         }
     }
 }

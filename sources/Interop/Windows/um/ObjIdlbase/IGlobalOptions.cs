@@ -14,72 +14,52 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IGlobalOptions* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IGlobalOptions* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IGlobalOptions* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Set(IGlobalOptions* pThis, GLOBALOPT_PROPERTIES dwProperty, [NativeTypeName("ULONG_PTR")] nuint dwValue);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Query(IGlobalOptions* pThis, GLOBALOPT_PROPERTIES dwProperty, [NativeTypeName("ULONG_PTR *")] nuint* pdwValue);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IGlobalOptions*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IGlobalOptions*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IGlobalOptions*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IGlobalOptions*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IGlobalOptions*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IGlobalOptions*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Set(GLOBALOPT_PROPERTIES dwProperty, [NativeTypeName("ULONG_PTR")] nuint dwValue)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Set>(lpVtbl->Set)((IGlobalOptions*)Unsafe.AsPointer(ref this), dwProperty, dwValue);
+            return lpVtbl->Set((IGlobalOptions*)Unsafe.AsPointer(ref this), dwProperty, dwValue);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Query(GLOBALOPT_PROPERTIES dwProperty, [NativeTypeName("ULONG_PTR *")] nuint* pdwValue)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Query>(lpVtbl->Query)((IGlobalOptions*)Unsafe.AsPointer(ref this), dwProperty, pdwValue);
+            return lpVtbl->Query((IGlobalOptions*)Unsafe.AsPointer(ref this), dwProperty, pdwValue);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IGlobalOptions*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IGlobalOptions*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IGlobalOptions*, uint> Release;
 
             [NativeTypeName("HRESULT (GLOBALOPT_PROPERTIES, ULONG_PTR) __attribute__((stdcall))")]
-            public IntPtr Set;
+            public delegate* stdcall<IGlobalOptions*, GLOBALOPT_PROPERTIES, nuint, int> Set;
 
             [NativeTypeName("HRESULT (GLOBALOPT_PROPERTIES, ULONG_PTR *) __attribute__((stdcall))")]
-            public IntPtr Query;
+            public delegate* stdcall<IGlobalOptions*, GLOBALOPT_PROPERTIES, nuint*, int> Query;
         }
     }
 }

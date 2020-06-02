@@ -14,85 +14,61 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDxcVersionInfo2* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDxcVersionInfo2* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDxcVersionInfo2* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetVersion(IDxcVersionInfo2* pThis, [NativeTypeName("UINT32 *")] uint* pMajor, [NativeTypeName("UINT32 *")] uint* pMinor);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFlags(IDxcVersionInfo2* pThis, [NativeTypeName("UINT32 *")] uint* pFlags);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetCommitInfo(IDxcVersionInfo2* pThis, [NativeTypeName("UINT32 *")] uint* pCommitCount, [NativeTypeName("char **")] sbyte** pCommitHash);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDxcVersionInfo2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IDxcVersionInfo2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDxcVersionInfo2*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IDxcVersionInfo2*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDxcVersionInfo2*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IDxcVersionInfo2*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetVersion([NativeTypeName("UINT32 *")] uint* pMajor, [NativeTypeName("UINT32 *")] uint* pMinor)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetVersion>(lpVtbl->GetVersion)((IDxcVersionInfo2*)Unsafe.AsPointer(ref this), pMajor, pMinor);
+            return lpVtbl->GetVersion((IDxcVersionInfo2*)Unsafe.AsPointer(ref this), pMajor, pMinor);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetFlags([NativeTypeName("UINT32 *")] uint* pFlags)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetFlags>(lpVtbl->GetFlags)((IDxcVersionInfo2*)Unsafe.AsPointer(ref this), pFlags);
+            return lpVtbl->GetFlags((IDxcVersionInfo2*)Unsafe.AsPointer(ref this), pFlags);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetCommitInfo([NativeTypeName("UINT32 *")] uint* pCommitCount, [NativeTypeName("char **")] sbyte** pCommitHash)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetCommitInfo>(lpVtbl->GetCommitInfo)((IDxcVersionInfo2*)Unsafe.AsPointer(ref this), pCommitCount, pCommitHash);
+            return lpVtbl->GetCommitInfo((IDxcVersionInfo2*)Unsafe.AsPointer(ref this), pCommitCount, pCommitHash);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IDxcVersionInfo2*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IDxcVersionInfo2*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IDxcVersionInfo2*, uint> Release;
 
             [NativeTypeName("HRESULT (UINT32 *, UINT32 *) __attribute__((stdcall))")]
-            public IntPtr GetVersion;
+            public delegate* stdcall<IDxcVersionInfo2*, uint*, uint*, int> GetVersion;
 
             [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
-            public IntPtr GetFlags;
+            public delegate* stdcall<IDxcVersionInfo2*, uint*, int> GetFlags;
 
             [NativeTypeName("HRESULT (UINT32 *, char **) __attribute__((stdcall))")]
-            public IntPtr GetCommitInfo;
+            public delegate* stdcall<IDxcVersionInfo2*, uint*, sbyte**, int> GetCommitInfo;
         }
     }
 }

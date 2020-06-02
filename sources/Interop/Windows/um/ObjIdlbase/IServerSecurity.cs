@@ -14,98 +14,70 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IServerSecurity* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IServerSecurity* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IServerSecurity* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryBlanket(IServerSecurity* pThis, [NativeTypeName("DWORD *")] uint* pAuthnSvc, [NativeTypeName("DWORD *")] uint* pAuthzSvc, [NativeTypeName("OLECHAR **")] ushort** pServerPrincName, [NativeTypeName("DWORD *")] uint* pAuthnLevel, [NativeTypeName("DWORD *")] uint* pImpLevel, [NativeTypeName("void **")] void** pPrivs, [NativeTypeName("DWORD *")] uint* pCapabilities);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _ImpersonateClient(IServerSecurity* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _RevertToSelf(IServerSecurity* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("BOOL")]
-        public delegate int _IsImpersonating(IServerSecurity* pThis);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IServerSecurity*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IServerSecurity*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IServerSecurity*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IServerSecurity*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IServerSecurity*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IServerSecurity*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int QueryBlanket([NativeTypeName("DWORD *")] uint* pAuthnSvc, [NativeTypeName("DWORD *")] uint* pAuthzSvc, [NativeTypeName("OLECHAR **")] ushort** pServerPrincName, [NativeTypeName("DWORD *")] uint* pAuthnLevel, [NativeTypeName("DWORD *")] uint* pImpLevel, [NativeTypeName("void **")] void** pPrivs, [NativeTypeName("DWORD *")] uint* pCapabilities)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryBlanket>(lpVtbl->QueryBlanket)((IServerSecurity*)Unsafe.AsPointer(ref this), pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
+            return lpVtbl->QueryBlanket((IServerSecurity*)Unsafe.AsPointer(ref this), pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ImpersonateClient()
         {
-            return Marshal.GetDelegateForFunctionPointer<_ImpersonateClient>(lpVtbl->ImpersonateClient)((IServerSecurity*)Unsafe.AsPointer(ref this));
+            return lpVtbl->ImpersonateClient((IServerSecurity*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int RevertToSelf()
         {
-            return Marshal.GetDelegateForFunctionPointer<_RevertToSelf>(lpVtbl->RevertToSelf)((IServerSecurity*)Unsafe.AsPointer(ref this));
+            return lpVtbl->RevertToSelf((IServerSecurity*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("BOOL")]
         public int IsImpersonating()
         {
-            return Marshal.GetDelegateForFunctionPointer<_IsImpersonating>(lpVtbl->IsImpersonating)((IServerSecurity*)Unsafe.AsPointer(ref this));
+            return lpVtbl->IsImpersonating((IServerSecurity*)Unsafe.AsPointer(ref this));
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IServerSecurity*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IServerSecurity*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IServerSecurity*, uint> Release;
 
             [NativeTypeName("HRESULT (DWORD *, DWORD *, OLECHAR **, DWORD *, DWORD *, void **, DWORD *) __attribute__((stdcall))")]
-            public IntPtr QueryBlanket;
+            public delegate* stdcall<IServerSecurity*, uint*, uint*, ushort**, uint*, uint*, void**, uint*, int> QueryBlanket;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr ImpersonateClient;
+            public delegate* stdcall<IServerSecurity*, int> ImpersonateClient;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr RevertToSelf;
+            public delegate* stdcall<IServerSecurity*, int> RevertToSelf;
 
             [NativeTypeName("BOOL () __attribute__((stdcall))")]
-            public IntPtr IsImpersonating;
+            public delegate* stdcall<IServerSecurity*, int> IsImpersonating;
         }
     }
 }

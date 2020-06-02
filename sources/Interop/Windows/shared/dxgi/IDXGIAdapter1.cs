@@ -14,150 +14,106 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDXGIAdapter1* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDXGIAdapter1* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDXGIAdapter1* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateData(IDXGIAdapter1* pThis, [NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateDataInterface(IDXGIAdapter1* pThis, [NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("const IUnknown *")] IUnknown* pUnknown);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPrivateData(IDXGIAdapter1* pThis, [NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetParent(IDXGIAdapter1* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppParent);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _EnumOutputs(IDXGIAdapter1* pThis, [NativeTypeName("UINT")] uint Output, [NativeTypeName("IDXGIOutput **")] IDXGIOutput** ppOutput);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDesc(IDXGIAdapter1* pThis, [NativeTypeName("DXGI_ADAPTER_DESC *")] DXGI_ADAPTER_DESC* pDesc);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _CheckInterfaceSupport(IDXGIAdapter1* pThis, [NativeTypeName("const GUID &")] Guid* InterfaceName, [NativeTypeName("LARGE_INTEGER *")] LARGE_INTEGER* pUMDVersion);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDesc1(IDXGIAdapter1* pThis, [NativeTypeName("DXGI_ADAPTER_DESC1 *")] DXGI_ADAPTER_DESC1* pDesc);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDXGIAdapter1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IDXGIAdapter1*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDXGIAdapter1*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IDXGIAdapter1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDXGIAdapter1*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IDXGIAdapter1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)((IDXGIAdapter1*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
+            return lpVtbl->SetPrivateData((IDXGIAdapter1*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("const IUnknown *")] IUnknown* pUnknown)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)((IDXGIAdapter1*)Unsafe.AsPointer(ref this), Name, pUnknown);
+            return lpVtbl->SetPrivateDataInterface((IDXGIAdapter1*)Unsafe.AsPointer(ref this), Name, pUnknown);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPrivateData([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)((IDXGIAdapter1*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
+            return lpVtbl->GetPrivateData((IDXGIAdapter1*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetParent([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppParent)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetParent>(lpVtbl->GetParent)((IDXGIAdapter1*)Unsafe.AsPointer(ref this), riid, ppParent);
+            return lpVtbl->GetParent((IDXGIAdapter1*)Unsafe.AsPointer(ref this), riid, ppParent);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int EnumOutputs([NativeTypeName("UINT")] uint Output, [NativeTypeName("IDXGIOutput **")] IDXGIOutput** ppOutput)
         {
-            return Marshal.GetDelegateForFunctionPointer<_EnumOutputs>(lpVtbl->EnumOutputs)((IDXGIAdapter1*)Unsafe.AsPointer(ref this), Output, ppOutput);
+            return lpVtbl->EnumOutputs((IDXGIAdapter1*)Unsafe.AsPointer(ref this), Output, ppOutput);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDesc([NativeTypeName("DXGI_ADAPTER_DESC *")] DXGI_ADAPTER_DESC* pDesc)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)((IDXGIAdapter1*)Unsafe.AsPointer(ref this), pDesc);
+            return lpVtbl->GetDesc((IDXGIAdapter1*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CheckInterfaceSupport([NativeTypeName("const GUID &")] Guid* InterfaceName, [NativeTypeName("LARGE_INTEGER *")] LARGE_INTEGER* pUMDVersion)
         {
-            return Marshal.GetDelegateForFunctionPointer<_CheckInterfaceSupport>(lpVtbl->CheckInterfaceSupport)((IDXGIAdapter1*)Unsafe.AsPointer(ref this), InterfaceName, pUMDVersion);
+            return lpVtbl->CheckInterfaceSupport((IDXGIAdapter1*)Unsafe.AsPointer(ref this), InterfaceName, pUMDVersion);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDesc1([NativeTypeName("DXGI_ADAPTER_DESC1 *")] DXGI_ADAPTER_DESC1* pDesc)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetDesc1>(lpVtbl->GetDesc1)((IDXGIAdapter1*)Unsafe.AsPointer(ref this), pDesc);
+            return lpVtbl->GetDesc1((IDXGIAdapter1*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IDXGIAdapter1*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IDXGIAdapter1*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IDXGIAdapter1*, uint> Release;
 
             [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-            public IntPtr SetPrivateData;
+            public delegate* stdcall<IDXGIAdapter1*, Guid*, uint, void*, int> SetPrivateData;
 
             [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-            public IntPtr SetPrivateDataInterface;
+            public delegate* stdcall<IDXGIAdapter1*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
             [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-            public IntPtr GetPrivateData;
+            public delegate* stdcall<IDXGIAdapter1*, Guid*, uint*, void*, int> GetPrivateData;
 
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr GetParent;
+            public delegate* stdcall<IDXGIAdapter1*, Guid*, void**, int> GetParent;
 
             [NativeTypeName("HRESULT (UINT, IDXGIOutput **) __attribute__((stdcall))")]
-            public IntPtr EnumOutputs;
+            public delegate* stdcall<IDXGIAdapter1*, uint, IDXGIOutput**, int> EnumOutputs;
 
             [NativeTypeName("HRESULT (DXGI_ADAPTER_DESC *) __attribute__((stdcall))")]
-            public IntPtr GetDesc;
+            public delegate* stdcall<IDXGIAdapter1*, DXGI_ADAPTER_DESC*, int> GetDesc;
 
             [NativeTypeName("HRESULT (const GUID &, LARGE_INTEGER *) __attribute__((stdcall))")]
-            public IntPtr CheckInterfaceSupport;
+            public delegate* stdcall<IDXGIAdapter1*, Guid*, LARGE_INTEGER*, int> CheckInterfaceSupport;
 
             [NativeTypeName("HRESULT (DXGI_ADAPTER_DESC1 *) __attribute__((stdcall))")]
-            public IntPtr GetDesc1;
+            public delegate* stdcall<IDXGIAdapter1*, DXGI_ADAPTER_DESC1*, int> GetDesc1;
         }
     }
 }

@@ -14,85 +14,61 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IWICDdsFrameDecode* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IWICDdsFrameDecode* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IWICDdsFrameDecode* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetSizeInBlocks(IWICDdsFrameDecode* pThis, [NativeTypeName("UINT *")] uint* pWidthInBlocks, [NativeTypeName("UINT *")] uint* pHeightInBlocks);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFormatInfo(IWICDdsFrameDecode* pThis, [NativeTypeName("WICDdsFormatInfo *")] WICDdsFormatInfo* pFormatInfo);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _CopyBlocks(IWICDdsFrameDecode* pThis, [NativeTypeName("const WICRect *")] WICRect* prcBoundsInBlocks, [NativeTypeName("UINT")] uint cbStride, [NativeTypeName("UINT")] uint cbBufferSize, [NativeTypeName("BYTE *")] byte* pbBuffer);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IWICDdsFrameDecode*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IWICDdsFrameDecode*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IWICDdsFrameDecode*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IWICDdsFrameDecode*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IWICDdsFrameDecode*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IWICDdsFrameDecode*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetSizeInBlocks([NativeTypeName("UINT *")] uint* pWidthInBlocks, [NativeTypeName("UINT *")] uint* pHeightInBlocks)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetSizeInBlocks>(lpVtbl->GetSizeInBlocks)((IWICDdsFrameDecode*)Unsafe.AsPointer(ref this), pWidthInBlocks, pHeightInBlocks);
+            return lpVtbl->GetSizeInBlocks((IWICDdsFrameDecode*)Unsafe.AsPointer(ref this), pWidthInBlocks, pHeightInBlocks);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetFormatInfo([NativeTypeName("WICDdsFormatInfo *")] WICDdsFormatInfo* pFormatInfo)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetFormatInfo>(lpVtbl->GetFormatInfo)((IWICDdsFrameDecode*)Unsafe.AsPointer(ref this), pFormatInfo);
+            return lpVtbl->GetFormatInfo((IWICDdsFrameDecode*)Unsafe.AsPointer(ref this), pFormatInfo);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CopyBlocks([NativeTypeName("const WICRect *")] WICRect* prcBoundsInBlocks, [NativeTypeName("UINT")] uint cbStride, [NativeTypeName("UINT")] uint cbBufferSize, [NativeTypeName("BYTE *")] byte* pbBuffer)
         {
-            return Marshal.GetDelegateForFunctionPointer<_CopyBlocks>(lpVtbl->CopyBlocks)((IWICDdsFrameDecode*)Unsafe.AsPointer(ref this), prcBoundsInBlocks, cbStride, cbBufferSize, pbBuffer);
+            return lpVtbl->CopyBlocks((IWICDdsFrameDecode*)Unsafe.AsPointer(ref this), prcBoundsInBlocks, cbStride, cbBufferSize, pbBuffer);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IWICDdsFrameDecode*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IWICDdsFrameDecode*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IWICDdsFrameDecode*, uint> Release;
 
             [NativeTypeName("HRESULT (UINT *, UINT *) __attribute__((stdcall))")]
-            public IntPtr GetSizeInBlocks;
+            public delegate* stdcall<IWICDdsFrameDecode*, uint*, uint*, int> GetSizeInBlocks;
 
             [NativeTypeName("HRESULT (WICDdsFormatInfo *) __attribute__((stdcall))")]
-            public IntPtr GetFormatInfo;
+            public delegate* stdcall<IWICDdsFrameDecode*, WICDdsFormatInfo*, int> GetFormatInfo;
 
             [NativeTypeName("HRESULT (const WICRect *, UINT, UINT, BYTE *) __attribute__((stdcall))")]
-            public IntPtr CopyBlocks;
+            public delegate* stdcall<IWICDdsFrameDecode*, WICRect*, uint, uint, byte*, int> CopyBlocks;
         }
     }
 }

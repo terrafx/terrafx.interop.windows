@@ -14,110 +14,78 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDXCoreAdapterFactory* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDXCoreAdapterFactory* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDXCoreAdapterFactory* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateAdapterList(IDXCoreAdapterFactory* pThis, [NativeTypeName("uint32_t")] uint numAttributes, [NativeTypeName("const GUID *")] Guid* filterAttributes, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvAdapterList);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetAdapterByLuid(IDXCoreAdapterFactory* pThis, [NativeTypeName("const LUID &")] LUID* adapterLUID, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvAdapter);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("bool")]
-        public delegate byte _IsNotificationTypeSupported(IDXCoreAdapterFactory* pThis, DXCoreNotificationType notificationType);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _RegisterEventNotification(IDXCoreAdapterFactory* pThis, [NativeTypeName("IUnknown *")] IUnknown* dxCoreObject, DXCoreNotificationType notificationType, [NativeTypeName("PFN_DXCORE_NOTIFICATION_CALLBACK")] IntPtr callbackFunction, [NativeTypeName("void *")] void* callbackContext, [NativeTypeName("uint32_t *")] uint* eventCookie);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _UnregisterEventNotification(IDXCoreAdapterFactory* pThis, [NativeTypeName("uint32_t")] uint eventCookie);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDXCoreAdapterFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IDXCoreAdapterFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDXCoreAdapterFactory*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IDXCoreAdapterFactory*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDXCoreAdapterFactory*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IDXCoreAdapterFactory*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CreateAdapterList([NativeTypeName("uint32_t")] uint numAttributes, [NativeTypeName("const GUID *")] Guid* filterAttributes, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvAdapterList)
         {
-            return Marshal.GetDelegateForFunctionPointer<_CreateAdapterList>(lpVtbl->CreateAdapterList)((IDXCoreAdapterFactory*)Unsafe.AsPointer(ref this), numAttributes, filterAttributes, riid, ppvAdapterList);
+            return lpVtbl->CreateAdapterList((IDXCoreAdapterFactory*)Unsafe.AsPointer(ref this), numAttributes, filterAttributes, riid, ppvAdapterList);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetAdapterByLuid([NativeTypeName("const LUID &")] LUID* adapterLUID, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvAdapter)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetAdapterByLuid>(lpVtbl->GetAdapterByLuid)((IDXCoreAdapterFactory*)Unsafe.AsPointer(ref this), adapterLUID, riid, ppvAdapter);
+            return lpVtbl->GetAdapterByLuid((IDXCoreAdapterFactory*)Unsafe.AsPointer(ref this), adapterLUID, riid, ppvAdapter);
         }
 
         public bool IsNotificationTypeSupported(DXCoreNotificationType notificationType)
         {
-            return Marshal.GetDelegateForFunctionPointer<_IsNotificationTypeSupported>(lpVtbl->IsNotificationTypeSupported)((IDXCoreAdapterFactory*)Unsafe.AsPointer(ref this), notificationType) != 0;
+            return lpVtbl->IsNotificationTypeSupported((IDXCoreAdapterFactory*)Unsafe.AsPointer(ref this), notificationType) != 0;
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int RegisterEventNotification([NativeTypeName("IUnknown *")] IUnknown* dxCoreObject, DXCoreNotificationType notificationType, [NativeTypeName("PFN_DXCORE_NOTIFICATION_CALLBACK")] IntPtr callbackFunction, [NativeTypeName("void *")] void* callbackContext, [NativeTypeName("uint32_t *")] uint* eventCookie)
+        public int RegisterEventNotification([NativeTypeName("IUnknown *")] IUnknown* dxCoreObject, DXCoreNotificationType notificationType, [NativeTypeName("PFN_DXCORE_NOTIFICATION_CALLBACK")] delegate* stdcall<DXCoreNotificationType, IUnknown*, void*, void> callbackFunction, [NativeTypeName("void *")] void* callbackContext, [NativeTypeName("uint32_t *")] uint* eventCookie)
         {
-            return Marshal.GetDelegateForFunctionPointer<_RegisterEventNotification>(lpVtbl->RegisterEventNotification)((IDXCoreAdapterFactory*)Unsafe.AsPointer(ref this), dxCoreObject, notificationType, callbackFunction, callbackContext, eventCookie);
+            return lpVtbl->RegisterEventNotification((IDXCoreAdapterFactory*)Unsafe.AsPointer(ref this), dxCoreObject, notificationType, callbackFunction, callbackContext, eventCookie);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int UnregisterEventNotification([NativeTypeName("uint32_t")] uint eventCookie)
         {
-            return Marshal.GetDelegateForFunctionPointer<_UnregisterEventNotification>(lpVtbl->UnregisterEventNotification)((IDXCoreAdapterFactory*)Unsafe.AsPointer(ref this), eventCookie);
+            return lpVtbl->UnregisterEventNotification((IDXCoreAdapterFactory*)Unsafe.AsPointer(ref this), eventCookie);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IDXCoreAdapterFactory*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IDXCoreAdapterFactory*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IDXCoreAdapterFactory*, uint> Release;
 
             [NativeTypeName("HRESULT (uint32_t, const GUID *, const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr CreateAdapterList;
+            public delegate* stdcall<IDXCoreAdapterFactory*, uint, Guid*, Guid*, void**, int> CreateAdapterList;
 
             [NativeTypeName("HRESULT (const LUID &, const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr GetAdapterByLuid;
+            public delegate* stdcall<IDXCoreAdapterFactory*, LUID*, Guid*, void**, int> GetAdapterByLuid;
 
             [NativeTypeName("bool (DXCoreNotificationType) __attribute__((stdcall))")]
-            public IntPtr IsNotificationTypeSupported;
+            public delegate* stdcall<IDXCoreAdapterFactory*, DXCoreNotificationType, byte> IsNotificationTypeSupported;
 
             [NativeTypeName("HRESULT (IUnknown *, DXCoreNotificationType, PFN_DXCORE_NOTIFICATION_CALLBACK, void *, uint32_t *) __attribute__((stdcall))")]
-            public IntPtr RegisterEventNotification;
+            public delegate* stdcall<IDXCoreAdapterFactory*, IUnknown*, DXCoreNotificationType, delegate* stdcall<DXCoreNotificationType, IUnknown*, void*, void>, void*, uint*, int> RegisterEventNotification;
 
             [NativeTypeName("HRESULT (uint32_t) __attribute__((stdcall))")]
-            public IntPtr UnregisterEventNotification;
+            public delegate* stdcall<IDXCoreAdapterFactory*, uint, int> UnregisterEventNotification;
         }
     }
 }

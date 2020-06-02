@@ -14,189 +14,133 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IOleLink* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IOleLink* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IOleLink* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetUpdateOptions(IOleLink* pThis, [NativeTypeName("DWORD")] uint dwUpdateOpt);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetUpdateOptions(IOleLink* pThis, [NativeTypeName("DWORD *")] uint* pdwUpdateOpt);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetSourceMoniker(IOleLink* pThis, [NativeTypeName("IMoniker *")] IMoniker* pmk, [NativeTypeName("const IID &")] Guid* rclsid);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetSourceMoniker(IOleLink* pThis, [NativeTypeName("IMoniker **")] IMoniker** ppmk);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetSourceDisplayName(IOleLink* pThis, [NativeTypeName("LPCOLESTR")] ushort* pszStatusText);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetSourceDisplayName(IOleLink* pThis, [NativeTypeName("LPOLESTR *")] ushort** ppszDisplayName);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _BindToSource(IOleLink* pThis, [NativeTypeName("DWORD")] uint bindflags, [NativeTypeName("IBindCtx *")] IBindCtx* pbc);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _BindIfRunning(IOleLink* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetBoundSource(IOleLink* pThis, [NativeTypeName("IUnknown **")] IUnknown** ppunk);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _UnbindSource(IOleLink* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Update(IOleLink* pThis, [NativeTypeName("IBindCtx *")] IBindCtx* pbc);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IOleLink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IOleLink*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IOleLink*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IOleLink*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IOleLink*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IOleLink*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetUpdateOptions([NativeTypeName("DWORD")] uint dwUpdateOpt)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetUpdateOptions>(lpVtbl->SetUpdateOptions)((IOleLink*)Unsafe.AsPointer(ref this), dwUpdateOpt);
+            return lpVtbl->SetUpdateOptions((IOleLink*)Unsafe.AsPointer(ref this), dwUpdateOpt);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetUpdateOptions([NativeTypeName("DWORD *")] uint* pdwUpdateOpt)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetUpdateOptions>(lpVtbl->GetUpdateOptions)((IOleLink*)Unsafe.AsPointer(ref this), pdwUpdateOpt);
+            return lpVtbl->GetUpdateOptions((IOleLink*)Unsafe.AsPointer(ref this), pdwUpdateOpt);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetSourceMoniker([NativeTypeName("IMoniker *")] IMoniker* pmk, [NativeTypeName("const IID &")] Guid* rclsid)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetSourceMoniker>(lpVtbl->SetSourceMoniker)((IOleLink*)Unsafe.AsPointer(ref this), pmk, rclsid);
+            return lpVtbl->SetSourceMoniker((IOleLink*)Unsafe.AsPointer(ref this), pmk, rclsid);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetSourceMoniker([NativeTypeName("IMoniker **")] IMoniker** ppmk)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetSourceMoniker>(lpVtbl->GetSourceMoniker)((IOleLink*)Unsafe.AsPointer(ref this), ppmk);
+            return lpVtbl->GetSourceMoniker((IOleLink*)Unsafe.AsPointer(ref this), ppmk);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetSourceDisplayName([NativeTypeName("LPCOLESTR")] ushort* pszStatusText)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetSourceDisplayName>(lpVtbl->SetSourceDisplayName)((IOleLink*)Unsafe.AsPointer(ref this), pszStatusText);
+            return lpVtbl->SetSourceDisplayName((IOleLink*)Unsafe.AsPointer(ref this), pszStatusText);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetSourceDisplayName([NativeTypeName("LPOLESTR *")] ushort** ppszDisplayName)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetSourceDisplayName>(lpVtbl->GetSourceDisplayName)((IOleLink*)Unsafe.AsPointer(ref this), ppszDisplayName);
+            return lpVtbl->GetSourceDisplayName((IOleLink*)Unsafe.AsPointer(ref this), ppszDisplayName);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int BindToSource([NativeTypeName("DWORD")] uint bindflags, [NativeTypeName("IBindCtx *")] IBindCtx* pbc)
         {
-            return Marshal.GetDelegateForFunctionPointer<_BindToSource>(lpVtbl->BindToSource)((IOleLink*)Unsafe.AsPointer(ref this), bindflags, pbc);
+            return lpVtbl->BindToSource((IOleLink*)Unsafe.AsPointer(ref this), bindflags, pbc);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int BindIfRunning()
         {
-            return Marshal.GetDelegateForFunctionPointer<_BindIfRunning>(lpVtbl->BindIfRunning)((IOleLink*)Unsafe.AsPointer(ref this));
+            return lpVtbl->BindIfRunning((IOleLink*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetBoundSource([NativeTypeName("IUnknown **")] IUnknown** ppunk)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetBoundSource>(lpVtbl->GetBoundSource)((IOleLink*)Unsafe.AsPointer(ref this), ppunk);
+            return lpVtbl->GetBoundSource((IOleLink*)Unsafe.AsPointer(ref this), ppunk);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int UnbindSource()
         {
-            return Marshal.GetDelegateForFunctionPointer<_UnbindSource>(lpVtbl->UnbindSource)((IOleLink*)Unsafe.AsPointer(ref this));
+            return lpVtbl->UnbindSource((IOleLink*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Update([NativeTypeName("IBindCtx *")] IBindCtx* pbc)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Update>(lpVtbl->Update)((IOleLink*)Unsafe.AsPointer(ref this), pbc);
+            return lpVtbl->Update((IOleLink*)Unsafe.AsPointer(ref this), pbc);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IOleLink*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IOleLink*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IOleLink*, uint> Release;
 
             [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public IntPtr SetUpdateOptions;
+            public delegate* stdcall<IOleLink*, uint, int> SetUpdateOptions;
 
             [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public IntPtr GetUpdateOptions;
+            public delegate* stdcall<IOleLink*, uint*, int> GetUpdateOptions;
 
             [NativeTypeName("HRESULT (IMoniker *, const IID &) __attribute__((stdcall))")]
-            public IntPtr SetSourceMoniker;
+            public delegate* stdcall<IOleLink*, IMoniker*, Guid*, int> SetSourceMoniker;
 
             [NativeTypeName("HRESULT (IMoniker **) __attribute__((stdcall))")]
-            public IntPtr GetSourceMoniker;
+            public delegate* stdcall<IOleLink*, IMoniker**, int> GetSourceMoniker;
 
             [NativeTypeName("HRESULT (LPCOLESTR) __attribute__((stdcall))")]
-            public IntPtr SetSourceDisplayName;
+            public delegate* stdcall<IOleLink*, ushort*, int> SetSourceDisplayName;
 
             [NativeTypeName("HRESULT (LPOLESTR *) __attribute__((stdcall))")]
-            public IntPtr GetSourceDisplayName;
+            public delegate* stdcall<IOleLink*, ushort**, int> GetSourceDisplayName;
 
             [NativeTypeName("HRESULT (DWORD, IBindCtx *) __attribute__((stdcall))")]
-            public IntPtr BindToSource;
+            public delegate* stdcall<IOleLink*, uint, IBindCtx*, int> BindToSource;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr BindIfRunning;
+            public delegate* stdcall<IOleLink*, int> BindIfRunning;
 
             [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-            public IntPtr GetBoundSource;
+            public delegate* stdcall<IOleLink*, IUnknown**, int> GetBoundSource;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr UnbindSource;
+            public delegate* stdcall<IOleLink*, int> UnbindSource;
 
             [NativeTypeName("HRESULT (IBindCtx *) __attribute__((stdcall))")]
-            public IntPtr Update;
+            public delegate* stdcall<IOleLink*, IBindCtx*, int> Update;
         }
     }
 }

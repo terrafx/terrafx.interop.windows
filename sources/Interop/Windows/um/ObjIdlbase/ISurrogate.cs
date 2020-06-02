@@ -14,72 +14,52 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ISurrogate* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ISurrogate* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ISurrogate* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _LoadDllServer(ISurrogate* pThis, [NativeTypeName("const IID &")] Guid* Clsid);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _FreeSurrogate(ISurrogate* pThis);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ISurrogate*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((ISurrogate*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ISurrogate*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((ISurrogate*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ISurrogate*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((ISurrogate*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int LoadDllServer([NativeTypeName("const IID &")] Guid* Clsid)
         {
-            return Marshal.GetDelegateForFunctionPointer<_LoadDllServer>(lpVtbl->LoadDllServer)((ISurrogate*)Unsafe.AsPointer(ref this), Clsid);
+            return lpVtbl->LoadDllServer((ISurrogate*)Unsafe.AsPointer(ref this), Clsid);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int FreeSurrogate()
         {
-            return Marshal.GetDelegateForFunctionPointer<_FreeSurrogate>(lpVtbl->FreeSurrogate)((ISurrogate*)Unsafe.AsPointer(ref this));
+            return lpVtbl->FreeSurrogate((ISurrogate*)Unsafe.AsPointer(ref this));
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<ISurrogate*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<ISurrogate*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<ISurrogate*, uint> Release;
 
             [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-            public IntPtr LoadDllServer;
+            public delegate* stdcall<ISurrogate*, Guid*, int> LoadDllServer;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr FreeSurrogate;
+            public delegate* stdcall<ISurrogate*, int> FreeSurrogate;
         }
     }
 }

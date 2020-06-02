@@ -14,72 +14,52 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IInternetSecurityMgrSite* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IInternetSecurityMgrSite* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IInternetSecurityMgrSite* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetWindow(IInternetSecurityMgrSite* pThis, [NativeTypeName("HWND *")] IntPtr* phwnd);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _EnableModeless(IInternetSecurityMgrSite* pThis, [NativeTypeName("BOOL")] int fEnable);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IInternetSecurityMgrSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IInternetSecurityMgrSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IInternetSecurityMgrSite*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IInternetSecurityMgrSite*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IInternetSecurityMgrSite*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IInternetSecurityMgrSite*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetWindow([NativeTypeName("HWND *")] IntPtr* phwnd)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetWindow>(lpVtbl->GetWindow)((IInternetSecurityMgrSite*)Unsafe.AsPointer(ref this), phwnd);
+            return lpVtbl->GetWindow((IInternetSecurityMgrSite*)Unsafe.AsPointer(ref this), phwnd);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int EnableModeless([NativeTypeName("BOOL")] int fEnable)
         {
-            return Marshal.GetDelegateForFunctionPointer<_EnableModeless>(lpVtbl->EnableModeless)((IInternetSecurityMgrSite*)Unsafe.AsPointer(ref this), fEnable);
+            return lpVtbl->EnableModeless((IInternetSecurityMgrSite*)Unsafe.AsPointer(ref this), fEnable);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IInternetSecurityMgrSite*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IInternetSecurityMgrSite*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IInternetSecurityMgrSite*, uint> Release;
 
             [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-            public IntPtr GetWindow;
+            public delegate* stdcall<IInternetSecurityMgrSite*, IntPtr*, int> GetWindow;
 
             [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public IntPtr EnableModeless;
+            public delegate* stdcall<IInternetSecurityMgrSite*, int, int> EnableModeless;
         }
     }
 }

@@ -14,128 +14,93 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ID2D1SolidColorBrush* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ID2D1SolidColorBrush* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ID2D1SolidColorBrush* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _GetFactory(ID2D1SolidColorBrush* pThis, [NativeTypeName("ID2D1Factory **")] ID2D1Factory** factory);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _SetOpacity(ID2D1SolidColorBrush* pThis, [NativeTypeName("FLOAT")] float opacity);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _SetTransform(ID2D1SolidColorBrush* pThis, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("FLOAT")]
-        public delegate float _GetOpacity(ID2D1SolidColorBrush* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _GetTransform(ID2D1SolidColorBrush* pThis, [NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _SetColor(ID2D1SolidColorBrush* pThis, [NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* color);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("D2D1_COLOR_F")]
-        public delegate DXGI_RGBA* _GetColor(ID2D1SolidColorBrush* pThis, DXGI_RGBA* _result);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ID2D1SolidColorBrush*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((ID2D1SolidColorBrush*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ID2D1SolidColorBrush*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((ID2D1SolidColorBrush*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ID2D1SolidColorBrush*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((ID2D1SolidColorBrush*)Unsafe.AsPointer(ref this));
         }
 
         public void GetFactory([NativeTypeName("ID2D1Factory **")] ID2D1Factory** factory)
         {
-            Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)((ID2D1SolidColorBrush*)Unsafe.AsPointer(ref this), factory);
+            lpVtbl->GetFactory((ID2D1SolidColorBrush*)Unsafe.AsPointer(ref this), factory);
         }
 
         public void SetOpacity([NativeTypeName("FLOAT")] float opacity)
         {
-            Marshal.GetDelegateForFunctionPointer<_SetOpacity>(lpVtbl->SetOpacity)((ID2D1SolidColorBrush*)Unsafe.AsPointer(ref this), opacity);
+            lpVtbl->SetOpacity((ID2D1SolidColorBrush*)Unsafe.AsPointer(ref this), opacity);
         }
 
         public void SetTransform([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
         {
-            Marshal.GetDelegateForFunctionPointer<_SetTransform>(lpVtbl->SetTransform)((ID2D1SolidColorBrush*)Unsafe.AsPointer(ref this), transform);
+            lpVtbl->SetTransform((ID2D1SolidColorBrush*)Unsafe.AsPointer(ref this), transform);
         }
 
         [return: NativeTypeName("FLOAT")]
         public float GetOpacity()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetOpacity>(lpVtbl->GetOpacity)((ID2D1SolidColorBrush*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetOpacity((ID2D1SolidColorBrush*)Unsafe.AsPointer(ref this));
         }
 
         public void GetTransform([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
         {
-            Marshal.GetDelegateForFunctionPointer<_GetTransform>(lpVtbl->GetTransform)((ID2D1SolidColorBrush*)Unsafe.AsPointer(ref this), transform);
+            lpVtbl->GetTransform((ID2D1SolidColorBrush*)Unsafe.AsPointer(ref this), transform);
         }
 
         public void SetColor([NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* color)
         {
-            Marshal.GetDelegateForFunctionPointer<_SetColor>(lpVtbl->SetColor)((ID2D1SolidColorBrush*)Unsafe.AsPointer(ref this), color);
+            lpVtbl->SetColor((ID2D1SolidColorBrush*)Unsafe.AsPointer(ref this), color);
         }
 
         [return: NativeTypeName("D2D1_COLOR_F")]
         public DXGI_RGBA GetColor()
         {
             DXGI_RGBA result;
-            return *Marshal.GetDelegateForFunctionPointer<_GetColor>(lpVtbl->GetColor)((ID2D1SolidColorBrush*)Unsafe.AsPointer(ref this), &result);
+            return *lpVtbl->GetColor((ID2D1SolidColorBrush*)Unsafe.AsPointer(ref this), &result);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<ID2D1SolidColorBrush*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<ID2D1SolidColorBrush*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<ID2D1SolidColorBrush*, uint> Release;
 
             [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetFactory;
+            public delegate* stdcall<ID2D1SolidColorBrush*, ID2D1Factory**, void> GetFactory;
 
             [NativeTypeName("void (FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetOpacity;
+            public delegate* stdcall<ID2D1SolidColorBrush*, float, void> SetOpacity;
 
             [NativeTypeName("void (const D2D1_MATRIX_3X2_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetTransform;
+            public delegate* stdcall<ID2D1SolidColorBrush*, D2D_MATRIX_3X2_F*, void> SetTransform;
 
             [NativeTypeName("FLOAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetOpacity;
+            public delegate* stdcall<ID2D1SolidColorBrush*, float> GetOpacity;
 
             [NativeTypeName("void (D2D1_MATRIX_3X2_F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetTransform;
+            public delegate* stdcall<ID2D1SolidColorBrush*, D2D_MATRIX_3X2_F*, void> GetTransform;
 
             [NativeTypeName("void (const D2D1_COLOR_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetColor;
+            public delegate* stdcall<ID2D1SolidColorBrush*, DXGI_RGBA*, void> SetColor;
 
             [NativeTypeName("D2D1_COLOR_F () const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetColor;
+            public delegate* stdcall<ID2D1SolidColorBrush*, DXGI_RGBA*, DXGI_RGBA*> GetColor;
         }
     }
 }

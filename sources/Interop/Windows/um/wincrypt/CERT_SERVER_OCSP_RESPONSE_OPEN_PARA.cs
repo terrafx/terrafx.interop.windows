@@ -3,8 +3,6 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct CERT_SERVER_OCSP_RESPONSE_OPEN_PARA
@@ -22,7 +20,7 @@ namespace TerraFX.Interop
         public ushort* pwszOcspDirectory;
 
         [NativeTypeName("PFN_CERT_SERVER_OCSP_RESPONSE_UPDATE_CALLBACK")]
-        public IntPtr pfnUpdateCallback;
+        public delegate* stdcall<CERT_CHAIN_CONTEXT*, CERT_SERVER_OCSP_RESPONSE_CONTEXT*, CRL_CONTEXT*, CRL_CONTEXT*, void*, uint, void> pfnUpdateCallback;
 
         [NativeTypeName("PVOID")]
         public void* pvUpdateCallbackArg;

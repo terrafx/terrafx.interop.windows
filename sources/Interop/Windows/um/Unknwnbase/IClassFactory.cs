@@ -14,72 +14,52 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IClassFactory* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IClassFactory* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IClassFactory* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateInstance(IClassFactory* pThis, [NativeTypeName("IUnknown *")] IUnknown* pUnkOuter, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _LockServer(IClassFactory* pThis, [NativeTypeName("BOOL")] int fLock);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IClassFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IClassFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IClassFactory*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IClassFactory*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IClassFactory*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IClassFactory*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CreateInstance([NativeTypeName("IUnknown *")] IUnknown* pUnkOuter, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_CreateInstance>(lpVtbl->CreateInstance)((IClassFactory*)Unsafe.AsPointer(ref this), pUnkOuter, riid, ppvObject);
+            return lpVtbl->CreateInstance((IClassFactory*)Unsafe.AsPointer(ref this), pUnkOuter, riid, ppvObject);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int LockServer([NativeTypeName("BOOL")] int fLock)
         {
-            return Marshal.GetDelegateForFunctionPointer<_LockServer>(lpVtbl->LockServer)((IClassFactory*)Unsafe.AsPointer(ref this), fLock);
+            return lpVtbl->LockServer((IClassFactory*)Unsafe.AsPointer(ref this), fLock);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IClassFactory*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IClassFactory*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IClassFactory*, uint> Release;
 
             [NativeTypeName("HRESULT (IUnknown *, const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr CreateInstance;
+            public delegate* stdcall<IClassFactory*, IUnknown*, Guid*, void**, int> CreateInstance;
 
             [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public IntPtr LockServer;
+            public delegate* stdcall<IClassFactory*, int, int> LockServer;
         }
     }
 }

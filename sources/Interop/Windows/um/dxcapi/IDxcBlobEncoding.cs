@@ -14,85 +14,61 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDxcBlobEncoding* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDxcBlobEncoding* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDxcBlobEncoding* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("LPVOID")]
-        public delegate void* _GetBufferPointer(IDxcBlobEncoding* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("SIZE_T")]
-        public delegate nuint _GetBufferSize(IDxcBlobEncoding* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetEncoding(IDxcBlobEncoding* pThis, [NativeTypeName("BOOL *")] int* pKnown, [NativeTypeName("UINT32 *")] uint* pCodePage);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDxcBlobEncoding*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IDxcBlobEncoding*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDxcBlobEncoding*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IDxcBlobEncoding*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDxcBlobEncoding*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IDxcBlobEncoding*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("LPVOID")]
         public void* GetBufferPointer()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetBufferPointer>(lpVtbl->GetBufferPointer)((IDxcBlobEncoding*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetBufferPointer((IDxcBlobEncoding*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("SIZE_T")]
         public nuint GetBufferSize()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetBufferSize>(lpVtbl->GetBufferSize)((IDxcBlobEncoding*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetBufferSize((IDxcBlobEncoding*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetEncoding([NativeTypeName("BOOL *")] int* pKnown, [NativeTypeName("UINT32 *")] uint* pCodePage)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetEncoding>(lpVtbl->GetEncoding)((IDxcBlobEncoding*)Unsafe.AsPointer(ref this), pKnown, pCodePage);
+            return lpVtbl->GetEncoding((IDxcBlobEncoding*)Unsafe.AsPointer(ref this), pKnown, pCodePage);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IDxcBlobEncoding*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IDxcBlobEncoding*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IDxcBlobEncoding*, uint> Release;
 
             [NativeTypeName("LPVOID () __attribute__((stdcall))")]
-            public IntPtr GetBufferPointer;
+            public delegate* stdcall<IDxcBlobEncoding*, void*> GetBufferPointer;
 
             [NativeTypeName("SIZE_T () __attribute__((stdcall))")]
-            public IntPtr GetBufferSize;
+            public delegate* stdcall<IDxcBlobEncoding*, nuint> GetBufferSize;
 
             [NativeTypeName("HRESULT (BOOL *, UINT32 *) __attribute__((stdcall))")]
-            public IntPtr GetEncoding;
+            public delegate* stdcall<IDxcBlobEncoding*, int*, uint*, int> GetEncoding;
         }
     }
 }

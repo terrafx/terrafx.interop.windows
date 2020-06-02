@@ -14,46 +14,34 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDesc(ID3D11ShaderReflectionConstantBuffer* pThis, [NativeTypeName("D3D11_SHADER_BUFFER_DESC *")] D3D11_SHADER_BUFFER_DESC* pDesc);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ID3D11ShaderReflectionVariable *")]
-        public delegate ID3D11ShaderReflectionVariable* _GetVariableByIndex(ID3D11ShaderReflectionConstantBuffer* pThis, [NativeTypeName("UINT")] uint Index);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ID3D11ShaderReflectionVariable *")]
-        public delegate ID3D11ShaderReflectionVariable* _GetVariableByName(ID3D11ShaderReflectionConstantBuffer* pThis, [NativeTypeName("LPCSTR")] sbyte* Name);
-
         [return: NativeTypeName("HRESULT")]
         public int GetDesc([NativeTypeName("D3D11_SHADER_BUFFER_DESC *")] D3D11_SHADER_BUFFER_DESC* pDesc)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)((ID3D11ShaderReflectionConstantBuffer*)Unsafe.AsPointer(ref this), pDesc);
+            return lpVtbl->GetDesc((ID3D11ShaderReflectionConstantBuffer*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         [return: NativeTypeName("ID3D11ShaderReflectionVariable *")]
         public ID3D11ShaderReflectionVariable* GetVariableByIndex([NativeTypeName("UINT")] uint Index)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetVariableByIndex>(lpVtbl->GetVariableByIndex)((ID3D11ShaderReflectionConstantBuffer*)Unsafe.AsPointer(ref this), Index);
+            return lpVtbl->GetVariableByIndex((ID3D11ShaderReflectionConstantBuffer*)Unsafe.AsPointer(ref this), Index);
         }
 
         [return: NativeTypeName("ID3D11ShaderReflectionVariable *")]
         public ID3D11ShaderReflectionVariable* GetVariableByName([NativeTypeName("LPCSTR")] sbyte* Name)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetVariableByName>(lpVtbl->GetVariableByName)((ID3D11ShaderReflectionConstantBuffer*)Unsafe.AsPointer(ref this), Name);
+            return lpVtbl->GetVariableByName((ID3D11ShaderReflectionConstantBuffer*)Unsafe.AsPointer(ref this), Name);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (D3D11_SHADER_BUFFER_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetDesc;
+            public delegate* stdcall<ID3D11ShaderReflectionConstantBuffer*, D3D11_SHADER_BUFFER_DESC*, int> GetDesc;
 
             [NativeTypeName("ID3D11ShaderReflectionVariable *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetVariableByIndex;
+            public delegate* stdcall<ID3D11ShaderReflectionConstantBuffer*, uint, ID3D11ShaderReflectionVariable*> GetVariableByIndex;
 
             [NativeTypeName("ID3D11ShaderReflectionVariable *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetVariableByName;
+            public delegate* stdcall<ID3D11ShaderReflectionConstantBuffer*, sbyte*, ID3D11ShaderReflectionVariable*> GetVariableByName;
         }
     }
 }

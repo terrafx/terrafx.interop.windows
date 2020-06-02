@@ -14,90 +14,66 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ID3D12SharingContract* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ID3D12SharingContract* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ID3D12SharingContract* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _Present(ID3D12SharingContract* pThis, [NativeTypeName("ID3D12Resource *")] ID3D12Resource* pResource, [NativeTypeName("UINT")] uint Subresource, [NativeTypeName("HWND")] IntPtr window);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _SharedFenceSignal(ID3D12SharingContract* pThis, [NativeTypeName("ID3D12Fence *")] ID3D12Fence* pFence, [NativeTypeName("UINT64")] ulong FenceValue);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _BeginCapturableWork(ID3D12SharingContract* pThis, [NativeTypeName("const GUID &")] Guid* guid);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _EndCapturableWork(ID3D12SharingContract* pThis, [NativeTypeName("const GUID &")] Guid* guid);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ID3D12SharingContract*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((ID3D12SharingContract*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ID3D12SharingContract*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((ID3D12SharingContract*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ID3D12SharingContract*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((ID3D12SharingContract*)Unsafe.AsPointer(ref this));
         }
 
         public void Present([NativeTypeName("ID3D12Resource *")] ID3D12Resource* pResource, [NativeTypeName("UINT")] uint Subresource, [NativeTypeName("HWND")] IntPtr window)
         {
-            Marshal.GetDelegateForFunctionPointer<_Present>(lpVtbl->Present)((ID3D12SharingContract*)Unsafe.AsPointer(ref this), pResource, Subresource, window);
+            lpVtbl->Present((ID3D12SharingContract*)Unsafe.AsPointer(ref this), pResource, Subresource, window);
         }
 
         public void SharedFenceSignal([NativeTypeName("ID3D12Fence *")] ID3D12Fence* pFence, [NativeTypeName("UINT64")] ulong FenceValue)
         {
-            Marshal.GetDelegateForFunctionPointer<_SharedFenceSignal>(lpVtbl->SharedFenceSignal)((ID3D12SharingContract*)Unsafe.AsPointer(ref this), pFence, FenceValue);
+            lpVtbl->SharedFenceSignal((ID3D12SharingContract*)Unsafe.AsPointer(ref this), pFence, FenceValue);
         }
 
         public void BeginCapturableWork([NativeTypeName("const GUID &")] Guid* guid)
         {
-            Marshal.GetDelegateForFunctionPointer<_BeginCapturableWork>(lpVtbl->BeginCapturableWork)((ID3D12SharingContract*)Unsafe.AsPointer(ref this), guid);
+            lpVtbl->BeginCapturableWork((ID3D12SharingContract*)Unsafe.AsPointer(ref this), guid);
         }
 
         public void EndCapturableWork([NativeTypeName("const GUID &")] Guid* guid)
         {
-            Marshal.GetDelegateForFunctionPointer<_EndCapturableWork>(lpVtbl->EndCapturableWork)((ID3D12SharingContract*)Unsafe.AsPointer(ref this), guid);
+            lpVtbl->EndCapturableWork((ID3D12SharingContract*)Unsafe.AsPointer(ref this), guid);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<ID3D12SharingContract*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<ID3D12SharingContract*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<ID3D12SharingContract*, uint> Release;
 
             [NativeTypeName("void (ID3D12Resource *, UINT, HWND) __attribute__((stdcall))")]
-            public IntPtr Present;
+            public delegate* stdcall<ID3D12SharingContract*, ID3D12Resource*, uint, IntPtr, void> Present;
 
             [NativeTypeName("void (ID3D12Fence *, UINT64) __attribute__((stdcall))")]
-            public IntPtr SharedFenceSignal;
+            public delegate* stdcall<ID3D12SharingContract*, ID3D12Fence*, ulong, void> SharedFenceSignal;
 
             [NativeTypeName("void (const GUID &) __attribute__((stdcall))")]
-            public IntPtr BeginCapturableWork;
+            public delegate* stdcall<ID3D12SharingContract*, Guid*, void> BeginCapturableWork;
 
             [NativeTypeName("void (const GUID &) __attribute__((stdcall))")]
-            public IntPtr EndCapturableWork;
+            public delegate* stdcall<ID3D12SharingContract*, Guid*, void> EndCapturableWork;
         }
     }
 }

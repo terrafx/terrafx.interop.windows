@@ -12,8 +12,11 @@ namespace TerraFX.Samples.DirectX
 {
     public static unsafe class Win32Application
     {
+        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
+        private delegate nint WNDPROC(IntPtr param0, uint param1, nuint param2, nint param3);
+
         private static readonly WNDPROC s_wndProc = (hwnd, message, wParam, lParam) => WindowProc(hwnd, message, wParam, lParam);
-        private static readonly IntPtr s_wndProcHandle = Marshal.GetFunctionPointerForDelegate(s_wndProc);
+        private static readonly delegate* stdcall<IntPtr, uint, nuint, nint, nint> s_wndProcHandle = (delegate* stdcall<IntPtr, uint, nuint, nint, nint>)Marshal.GetFunctionPointerForDelegate(s_wndProc);
 
         private static HWND s_hwnd;
 

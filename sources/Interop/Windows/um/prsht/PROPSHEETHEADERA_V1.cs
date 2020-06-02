@@ -38,7 +38,7 @@ namespace TerraFX.Interop
         public _Anonymous3_e__Union Anonymous3;
 
         [NativeTypeName("PFNPROPSHEETCALLBACK")]
-        public IntPtr pfnCallback;
+        public delegate* stdcall<IntPtr, uint, nint, int> pfnCallback;
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous1_e__Union

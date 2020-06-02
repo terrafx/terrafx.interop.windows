@@ -14,59 +14,43 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ITypeLibRegistrationReader* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ITypeLibRegistrationReader* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ITypeLibRegistrationReader* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _EnumTypeLibRegistrations(ITypeLibRegistrationReader* pThis, [NativeTypeName("IEnumUnknown **")] IEnumUnknown** ppEnumUnknown);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ITypeLibRegistrationReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((ITypeLibRegistrationReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ITypeLibRegistrationReader*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((ITypeLibRegistrationReader*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ITypeLibRegistrationReader*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((ITypeLibRegistrationReader*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int EnumTypeLibRegistrations([NativeTypeName("IEnumUnknown **")] IEnumUnknown** ppEnumUnknown)
         {
-            return Marshal.GetDelegateForFunctionPointer<_EnumTypeLibRegistrations>(lpVtbl->EnumTypeLibRegistrations)((ITypeLibRegistrationReader*)Unsafe.AsPointer(ref this), ppEnumUnknown);
+            return lpVtbl->EnumTypeLibRegistrations((ITypeLibRegistrationReader*)Unsafe.AsPointer(ref this), ppEnumUnknown);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<ITypeLibRegistrationReader*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<ITypeLibRegistrationReader*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<ITypeLibRegistrationReader*, uint> Release;
 
             [NativeTypeName("HRESULT (IEnumUnknown **) __attribute__((stdcall))")]
-            public IntPtr EnumTypeLibRegistrations;
+            public delegate* stdcall<ITypeLibRegistrationReader*, IEnumUnknown**, int> EnumTypeLibRegistrations;
         }
     }
 }

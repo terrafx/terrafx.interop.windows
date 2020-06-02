@@ -237,7 +237,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     _rtvDescriptorSize = _device->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_RTV);
 
                     // Describe and create a constant buffer view (CBV) descriptor heap.
-                    // Flags indicate that this descriptor heap can be bound to the pipeline 
+                    // Flags indicate that this descriptor heap can be bound to the pipeline
                     // and that descriptors contained in it can be referenced by a root table.
                     var cbvHeapDesc = new D3D12_DESCRIPTOR_HEAP_DESC {
                         NumDescriptors = 1,
@@ -419,7 +419,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     fixed (ID3D12PipelineState** pipelineState = &_pipelineState)
                     {
                         iid = IID_ID3D12PipelineState;
-                        ThrowIfFailed(nameof(ID3D12Device._CreateGraphicsPipelineState), _device->CreateGraphicsPipelineState(&psoDesc, &iid, (void**)pipelineState));
+                        ThrowIfFailed(nameof(ID3D12Device.CreateGraphicsPipelineState), _device->CreateGraphicsPipelineState(&psoDesc, &iid, (void**)pipelineState));
                     }
                 }
 
@@ -465,7 +465,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                         var bufferDesc = D3D12_RESOURCE_DESC.Buffer(vertexBufferSize);
 
                         iid = IID_ID3D12Resource;
-                        ThrowIfFailed(nameof(ID3D12Device._CreateCommittedResource), _device->CreateCommittedResource(
+                        ThrowIfFailed(nameof(ID3D12Device.CreateCommittedResource), _device->CreateCommittedResource(
                             &heapProperties,
                             D3D12_HEAP_FLAG_NONE,
                             &bufferDesc,

@@ -14,250 +14,176 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDXGIAdapter4* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDXGIAdapter4* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDXGIAdapter4* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateData(IDXGIAdapter4* pThis, [NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateDataInterface(IDXGIAdapter4* pThis, [NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("const IUnknown *")] IUnknown* pUnknown);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPrivateData(IDXGIAdapter4* pThis, [NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetParent(IDXGIAdapter4* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppParent);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _EnumOutputs(IDXGIAdapter4* pThis, [NativeTypeName("UINT")] uint Output, [NativeTypeName("IDXGIOutput **")] IDXGIOutput** ppOutput);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDesc(IDXGIAdapter4* pThis, [NativeTypeName("DXGI_ADAPTER_DESC *")] DXGI_ADAPTER_DESC* pDesc);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _CheckInterfaceSupport(IDXGIAdapter4* pThis, [NativeTypeName("const GUID &")] Guid* InterfaceName, [NativeTypeName("LARGE_INTEGER *")] LARGE_INTEGER* pUMDVersion);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDesc1(IDXGIAdapter4* pThis, [NativeTypeName("DXGI_ADAPTER_DESC1 *")] DXGI_ADAPTER_DESC1* pDesc);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDesc2(IDXGIAdapter4* pThis, [NativeTypeName("DXGI_ADAPTER_DESC2 *")] DXGI_ADAPTER_DESC2* pDesc);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _RegisterHardwareContentProtectionTeardownStatusEvent(IDXGIAdapter4* pThis, [NativeTypeName("HANDLE")] IntPtr hEvent, [NativeTypeName("DWORD *")] uint* pdwCookie);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _UnregisterHardwareContentProtectionTeardownStatus(IDXGIAdapter4* pThis, [NativeTypeName("DWORD")] uint dwCookie);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryVideoMemoryInfo(IDXGIAdapter4* pThis, [NativeTypeName("UINT")] uint NodeIndex, DXGI_MEMORY_SEGMENT_GROUP MemorySegmentGroup, [NativeTypeName("DXGI_QUERY_VIDEO_MEMORY_INFO *")] DXGI_QUERY_VIDEO_MEMORY_INFO* pVideoMemoryInfo);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetVideoMemoryReservation(IDXGIAdapter4* pThis, [NativeTypeName("UINT")] uint NodeIndex, DXGI_MEMORY_SEGMENT_GROUP MemorySegmentGroup, [NativeTypeName("UINT64")] ulong Reservation);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _RegisterVideoMemoryBudgetChangeNotificationEvent(IDXGIAdapter4* pThis, [NativeTypeName("HANDLE")] IntPtr hEvent, [NativeTypeName("DWORD *")] uint* pdwCookie);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _UnregisterVideoMemoryBudgetChangeNotification(IDXGIAdapter4* pThis, [NativeTypeName("DWORD")] uint dwCookie);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDesc3(IDXGIAdapter4* pThis, [NativeTypeName("DXGI_ADAPTER_DESC3 *")] DXGI_ADAPTER_DESC3* pDesc);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDXGIAdapter4*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IDXGIAdapter4*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDXGIAdapter4*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IDXGIAdapter4*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDXGIAdapter4*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IDXGIAdapter4*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)((IDXGIAdapter4*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
+            return lpVtbl->SetPrivateData((IDXGIAdapter4*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("const IUnknown *")] IUnknown* pUnknown)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)((IDXGIAdapter4*)Unsafe.AsPointer(ref this), Name, pUnknown);
+            return lpVtbl->SetPrivateDataInterface((IDXGIAdapter4*)Unsafe.AsPointer(ref this), Name, pUnknown);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPrivateData([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)((IDXGIAdapter4*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
+            return lpVtbl->GetPrivateData((IDXGIAdapter4*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetParent([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppParent)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetParent>(lpVtbl->GetParent)((IDXGIAdapter4*)Unsafe.AsPointer(ref this), riid, ppParent);
+            return lpVtbl->GetParent((IDXGIAdapter4*)Unsafe.AsPointer(ref this), riid, ppParent);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int EnumOutputs([NativeTypeName("UINT")] uint Output, [NativeTypeName("IDXGIOutput **")] IDXGIOutput** ppOutput)
         {
-            return Marshal.GetDelegateForFunctionPointer<_EnumOutputs>(lpVtbl->EnumOutputs)((IDXGIAdapter4*)Unsafe.AsPointer(ref this), Output, ppOutput);
+            return lpVtbl->EnumOutputs((IDXGIAdapter4*)Unsafe.AsPointer(ref this), Output, ppOutput);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDesc([NativeTypeName("DXGI_ADAPTER_DESC *")] DXGI_ADAPTER_DESC* pDesc)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)((IDXGIAdapter4*)Unsafe.AsPointer(ref this), pDesc);
+            return lpVtbl->GetDesc((IDXGIAdapter4*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CheckInterfaceSupport([NativeTypeName("const GUID &")] Guid* InterfaceName, [NativeTypeName("LARGE_INTEGER *")] LARGE_INTEGER* pUMDVersion)
         {
-            return Marshal.GetDelegateForFunctionPointer<_CheckInterfaceSupport>(lpVtbl->CheckInterfaceSupport)((IDXGIAdapter4*)Unsafe.AsPointer(ref this), InterfaceName, pUMDVersion);
+            return lpVtbl->CheckInterfaceSupport((IDXGIAdapter4*)Unsafe.AsPointer(ref this), InterfaceName, pUMDVersion);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDesc1([NativeTypeName("DXGI_ADAPTER_DESC1 *")] DXGI_ADAPTER_DESC1* pDesc)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetDesc1>(lpVtbl->GetDesc1)((IDXGIAdapter4*)Unsafe.AsPointer(ref this), pDesc);
+            return lpVtbl->GetDesc1((IDXGIAdapter4*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDesc2([NativeTypeName("DXGI_ADAPTER_DESC2 *")] DXGI_ADAPTER_DESC2* pDesc)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetDesc2>(lpVtbl->GetDesc2)((IDXGIAdapter4*)Unsafe.AsPointer(ref this), pDesc);
+            return lpVtbl->GetDesc2((IDXGIAdapter4*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int RegisterHardwareContentProtectionTeardownStatusEvent([NativeTypeName("HANDLE")] IntPtr hEvent, [NativeTypeName("DWORD *")] uint* pdwCookie)
         {
-            return Marshal.GetDelegateForFunctionPointer<_RegisterHardwareContentProtectionTeardownStatusEvent>(lpVtbl->RegisterHardwareContentProtectionTeardownStatusEvent)((IDXGIAdapter4*)Unsafe.AsPointer(ref this), hEvent, pdwCookie);
+            return lpVtbl->RegisterHardwareContentProtectionTeardownStatusEvent((IDXGIAdapter4*)Unsafe.AsPointer(ref this), hEvent, pdwCookie);
         }
 
         public void UnregisterHardwareContentProtectionTeardownStatus([NativeTypeName("DWORD")] uint dwCookie)
         {
-            Marshal.GetDelegateForFunctionPointer<_UnregisterHardwareContentProtectionTeardownStatus>(lpVtbl->UnregisterHardwareContentProtectionTeardownStatus)((IDXGIAdapter4*)Unsafe.AsPointer(ref this), dwCookie);
+            lpVtbl->UnregisterHardwareContentProtectionTeardownStatus((IDXGIAdapter4*)Unsafe.AsPointer(ref this), dwCookie);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int QueryVideoMemoryInfo([NativeTypeName("UINT")] uint NodeIndex, DXGI_MEMORY_SEGMENT_GROUP MemorySegmentGroup, [NativeTypeName("DXGI_QUERY_VIDEO_MEMORY_INFO *")] DXGI_QUERY_VIDEO_MEMORY_INFO* pVideoMemoryInfo)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryVideoMemoryInfo>(lpVtbl->QueryVideoMemoryInfo)((IDXGIAdapter4*)Unsafe.AsPointer(ref this), NodeIndex, MemorySegmentGroup, pVideoMemoryInfo);
+            return lpVtbl->QueryVideoMemoryInfo((IDXGIAdapter4*)Unsafe.AsPointer(ref this), NodeIndex, MemorySegmentGroup, pVideoMemoryInfo);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetVideoMemoryReservation([NativeTypeName("UINT")] uint NodeIndex, DXGI_MEMORY_SEGMENT_GROUP MemorySegmentGroup, [NativeTypeName("UINT64")] ulong Reservation)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetVideoMemoryReservation>(lpVtbl->SetVideoMemoryReservation)((IDXGIAdapter4*)Unsafe.AsPointer(ref this), NodeIndex, MemorySegmentGroup, Reservation);
+            return lpVtbl->SetVideoMemoryReservation((IDXGIAdapter4*)Unsafe.AsPointer(ref this), NodeIndex, MemorySegmentGroup, Reservation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int RegisterVideoMemoryBudgetChangeNotificationEvent([NativeTypeName("HANDLE")] IntPtr hEvent, [NativeTypeName("DWORD *")] uint* pdwCookie)
         {
-            return Marshal.GetDelegateForFunctionPointer<_RegisterVideoMemoryBudgetChangeNotificationEvent>(lpVtbl->RegisterVideoMemoryBudgetChangeNotificationEvent)((IDXGIAdapter4*)Unsafe.AsPointer(ref this), hEvent, pdwCookie);
+            return lpVtbl->RegisterVideoMemoryBudgetChangeNotificationEvent((IDXGIAdapter4*)Unsafe.AsPointer(ref this), hEvent, pdwCookie);
         }
 
         public void UnregisterVideoMemoryBudgetChangeNotification([NativeTypeName("DWORD")] uint dwCookie)
         {
-            Marshal.GetDelegateForFunctionPointer<_UnregisterVideoMemoryBudgetChangeNotification>(lpVtbl->UnregisterVideoMemoryBudgetChangeNotification)((IDXGIAdapter4*)Unsafe.AsPointer(ref this), dwCookie);
+            lpVtbl->UnregisterVideoMemoryBudgetChangeNotification((IDXGIAdapter4*)Unsafe.AsPointer(ref this), dwCookie);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDesc3([NativeTypeName("DXGI_ADAPTER_DESC3 *")] DXGI_ADAPTER_DESC3* pDesc)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetDesc3>(lpVtbl->GetDesc3)((IDXGIAdapter4*)Unsafe.AsPointer(ref this), pDesc);
+            return lpVtbl->GetDesc3((IDXGIAdapter4*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IDXGIAdapter4*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IDXGIAdapter4*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IDXGIAdapter4*, uint> Release;
 
             [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-            public IntPtr SetPrivateData;
+            public delegate* stdcall<IDXGIAdapter4*, Guid*, uint, void*, int> SetPrivateData;
 
             [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-            public IntPtr SetPrivateDataInterface;
+            public delegate* stdcall<IDXGIAdapter4*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
             [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-            public IntPtr GetPrivateData;
+            public delegate* stdcall<IDXGIAdapter4*, Guid*, uint*, void*, int> GetPrivateData;
 
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr GetParent;
+            public delegate* stdcall<IDXGIAdapter4*, Guid*, void**, int> GetParent;
 
             [NativeTypeName("HRESULT (UINT, IDXGIOutput **) __attribute__((stdcall))")]
-            public IntPtr EnumOutputs;
+            public delegate* stdcall<IDXGIAdapter4*, uint, IDXGIOutput**, int> EnumOutputs;
 
             [NativeTypeName("HRESULT (DXGI_ADAPTER_DESC *) __attribute__((stdcall))")]
-            public IntPtr GetDesc;
+            public delegate* stdcall<IDXGIAdapter4*, DXGI_ADAPTER_DESC*, int> GetDesc;
 
             [NativeTypeName("HRESULT (const GUID &, LARGE_INTEGER *) __attribute__((stdcall))")]
-            public IntPtr CheckInterfaceSupport;
+            public delegate* stdcall<IDXGIAdapter4*, Guid*, LARGE_INTEGER*, int> CheckInterfaceSupport;
 
             [NativeTypeName("HRESULT (DXGI_ADAPTER_DESC1 *) __attribute__((stdcall))")]
-            public IntPtr GetDesc1;
+            public delegate* stdcall<IDXGIAdapter4*, DXGI_ADAPTER_DESC1*, int> GetDesc1;
 
             [NativeTypeName("HRESULT (DXGI_ADAPTER_DESC2 *) __attribute__((stdcall))")]
-            public IntPtr GetDesc2;
+            public delegate* stdcall<IDXGIAdapter4*, DXGI_ADAPTER_DESC2*, int> GetDesc2;
 
             [NativeTypeName("HRESULT (HANDLE, DWORD *) __attribute__((stdcall))")]
-            public IntPtr RegisterHardwareContentProtectionTeardownStatusEvent;
+            public delegate* stdcall<IDXGIAdapter4*, IntPtr, uint*, int> RegisterHardwareContentProtectionTeardownStatusEvent;
 
             [NativeTypeName("void (DWORD) __attribute__((stdcall))")]
-            public IntPtr UnregisterHardwareContentProtectionTeardownStatus;
+            public delegate* stdcall<IDXGIAdapter4*, uint, void> UnregisterHardwareContentProtectionTeardownStatus;
 
             [NativeTypeName("HRESULT (UINT, DXGI_MEMORY_SEGMENT_GROUP, DXGI_QUERY_VIDEO_MEMORY_INFO *) __attribute__((stdcall))")]
-            public IntPtr QueryVideoMemoryInfo;
+            public delegate* stdcall<IDXGIAdapter4*, uint, DXGI_MEMORY_SEGMENT_GROUP, DXGI_QUERY_VIDEO_MEMORY_INFO*, int> QueryVideoMemoryInfo;
 
             [NativeTypeName("HRESULT (UINT, DXGI_MEMORY_SEGMENT_GROUP, UINT64) __attribute__((stdcall))")]
-            public IntPtr SetVideoMemoryReservation;
+            public delegate* stdcall<IDXGIAdapter4*, uint, DXGI_MEMORY_SEGMENT_GROUP, ulong, int> SetVideoMemoryReservation;
 
             [NativeTypeName("HRESULT (HANDLE, DWORD *) __attribute__((stdcall))")]
-            public IntPtr RegisterVideoMemoryBudgetChangeNotificationEvent;
+            public delegate* stdcall<IDXGIAdapter4*, IntPtr, uint*, int> RegisterVideoMemoryBudgetChangeNotificationEvent;
 
             [NativeTypeName("void (DWORD) __attribute__((stdcall))")]
-            public IntPtr UnregisterVideoMemoryBudgetChangeNotification;
+            public delegate* stdcall<IDXGIAdapter4*, uint, void> UnregisterVideoMemoryBudgetChangeNotification;
 
             [NativeTypeName("HRESULT (DXGI_ADAPTER_DESC3 *) __attribute__((stdcall))")]
-            public IntPtr GetDesc3;
+            public delegate* stdcall<IDXGIAdapter4*, DXGI_ADAPTER_DESC3*, int> GetDesc3;
         }
     }
 }

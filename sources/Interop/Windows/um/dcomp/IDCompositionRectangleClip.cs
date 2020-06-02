@@ -14,358 +14,250 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDCompositionRectangleClip* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDCompositionRectangleClip* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDCompositionRectangleClip* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetLeft(IDCompositionRectangleClip* pThis, float left);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetLeft1(IDCompositionRectangleClip* pThis, [NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetTop(IDCompositionRectangleClip* pThis, float top);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetTop1(IDCompositionRectangleClip* pThis, [NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetRight(IDCompositionRectangleClip* pThis, float right);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetRight1(IDCompositionRectangleClip* pThis, [NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetBottom(IDCompositionRectangleClip* pThis, float bottom);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetBottom1(IDCompositionRectangleClip* pThis, [NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetTopLeftRadiusX(IDCompositionRectangleClip* pThis, float radius);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetTopLeftRadiusX1(IDCompositionRectangleClip* pThis, [NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetTopLeftRadiusY(IDCompositionRectangleClip* pThis, float radius);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetTopLeftRadiusY1(IDCompositionRectangleClip* pThis, [NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetTopRightRadiusX(IDCompositionRectangleClip* pThis, float radius);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetTopRightRadiusX1(IDCompositionRectangleClip* pThis, [NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetTopRightRadiusY(IDCompositionRectangleClip* pThis, float radius);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetTopRightRadiusY1(IDCompositionRectangleClip* pThis, [NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetBottomLeftRadiusX(IDCompositionRectangleClip* pThis, float radius);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetBottomLeftRadiusX1(IDCompositionRectangleClip* pThis, [NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetBottomLeftRadiusY(IDCompositionRectangleClip* pThis, float radius);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetBottomLeftRadiusY1(IDCompositionRectangleClip* pThis, [NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetBottomRightRadiusX(IDCompositionRectangleClip* pThis, float radius);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetBottomRightRadiusX1(IDCompositionRectangleClip* pThis, [NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetBottomRightRadiusY(IDCompositionRectangleClip* pThis, float radius);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetBottomRightRadiusY1(IDCompositionRectangleClip* pThis, [NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetLeft(float left)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetLeft>(lpVtbl->SetLeft)((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), left);
+            return lpVtbl->SetLeft((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), left);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetLeft([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetLeft1>(lpVtbl->SetLeft1)((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
+            return lpVtbl->SetLeft1((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetTop(float top)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetTop>(lpVtbl->SetTop)((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), top);
+            return lpVtbl->SetTop((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), top);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetTop([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetTop1>(lpVtbl->SetTop1)((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
+            return lpVtbl->SetTop1((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetRight(float right)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetRight>(lpVtbl->SetRight)((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), right);
+            return lpVtbl->SetRight((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), right);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetRight([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetRight1>(lpVtbl->SetRight1)((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
+            return lpVtbl->SetRight1((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetBottom(float bottom)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetBottom>(lpVtbl->SetBottom)((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), bottom);
+            return lpVtbl->SetBottom((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), bottom);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetBottom([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetBottom1>(lpVtbl->SetBottom1)((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
+            return lpVtbl->SetBottom1((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetTopLeftRadiusX(float radius)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetTopLeftRadiusX>(lpVtbl->SetTopLeftRadiusX)((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
+            return lpVtbl->SetTopLeftRadiusX((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetTopLeftRadiusX([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetTopLeftRadiusX1>(lpVtbl->SetTopLeftRadiusX1)((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
+            return lpVtbl->SetTopLeftRadiusX1((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetTopLeftRadiusY(float radius)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetTopLeftRadiusY>(lpVtbl->SetTopLeftRadiusY)((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
+            return lpVtbl->SetTopLeftRadiusY((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetTopLeftRadiusY([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetTopLeftRadiusY1>(lpVtbl->SetTopLeftRadiusY1)((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
+            return lpVtbl->SetTopLeftRadiusY1((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetTopRightRadiusX(float radius)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetTopRightRadiusX>(lpVtbl->SetTopRightRadiusX)((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
+            return lpVtbl->SetTopRightRadiusX((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetTopRightRadiusX([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetTopRightRadiusX1>(lpVtbl->SetTopRightRadiusX1)((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
+            return lpVtbl->SetTopRightRadiusX1((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetTopRightRadiusY(float radius)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetTopRightRadiusY>(lpVtbl->SetTopRightRadiusY)((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
+            return lpVtbl->SetTopRightRadiusY((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetTopRightRadiusY([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetTopRightRadiusY1>(lpVtbl->SetTopRightRadiusY1)((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
+            return lpVtbl->SetTopRightRadiusY1((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetBottomLeftRadiusX(float radius)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetBottomLeftRadiusX>(lpVtbl->SetBottomLeftRadiusX)((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
+            return lpVtbl->SetBottomLeftRadiusX((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetBottomLeftRadiusX([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetBottomLeftRadiusX1>(lpVtbl->SetBottomLeftRadiusX1)((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
+            return lpVtbl->SetBottomLeftRadiusX1((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetBottomLeftRadiusY(float radius)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetBottomLeftRadiusY>(lpVtbl->SetBottomLeftRadiusY)((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
+            return lpVtbl->SetBottomLeftRadiusY((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetBottomLeftRadiusY([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetBottomLeftRadiusY1>(lpVtbl->SetBottomLeftRadiusY1)((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
+            return lpVtbl->SetBottomLeftRadiusY1((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetBottomRightRadiusX(float radius)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetBottomRightRadiusX>(lpVtbl->SetBottomRightRadiusX)((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
+            return lpVtbl->SetBottomRightRadiusX((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetBottomRightRadiusX([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetBottomRightRadiusX1>(lpVtbl->SetBottomRightRadiusX1)((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
+            return lpVtbl->SetBottomRightRadiusX1((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetBottomRightRadiusY(float radius)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetBottomRightRadiusY>(lpVtbl->SetBottomRightRadiusY)((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
+            return lpVtbl->SetBottomRightRadiusY((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), radius);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetBottomRightRadiusY([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetBottomRightRadiusY1>(lpVtbl->SetBottomRightRadiusY1)((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
+            return lpVtbl->SetBottomRightRadiusY1((IDCompositionRectangleClip*)Unsafe.AsPointer(ref this), animation);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IDCompositionRectangleClip*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IDCompositionRectangleClip*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IDCompositionRectangleClip*, uint> Release;
 
             [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetLeft;
+            public delegate* stdcall<IDCompositionRectangleClip*, float, int> SetLeft;
 
             [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetLeft1;
+            public delegate* stdcall<IDCompositionRectangleClip*, IDCompositionAnimation*, int> SetLeft1;
 
             [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetTop;
+            public delegate* stdcall<IDCompositionRectangleClip*, float, int> SetTop;
 
             [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetTop1;
+            public delegate* stdcall<IDCompositionRectangleClip*, IDCompositionAnimation*, int> SetTop1;
 
             [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetRight;
+            public delegate* stdcall<IDCompositionRectangleClip*, float, int> SetRight;
 
             [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetRight1;
+            public delegate* stdcall<IDCompositionRectangleClip*, IDCompositionAnimation*, int> SetRight1;
 
             [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetBottom;
+            public delegate* stdcall<IDCompositionRectangleClip*, float, int> SetBottom;
 
             [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetBottom1;
+            public delegate* stdcall<IDCompositionRectangleClip*, IDCompositionAnimation*, int> SetBottom1;
 
             [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetTopLeftRadiusX;
+            public delegate* stdcall<IDCompositionRectangleClip*, float, int> SetTopLeftRadiusX;
 
             [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetTopLeftRadiusX1;
+            public delegate* stdcall<IDCompositionRectangleClip*, IDCompositionAnimation*, int> SetTopLeftRadiusX1;
 
             [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetTopLeftRadiusY;
+            public delegate* stdcall<IDCompositionRectangleClip*, float, int> SetTopLeftRadiusY;
 
             [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetTopLeftRadiusY1;
+            public delegate* stdcall<IDCompositionRectangleClip*, IDCompositionAnimation*, int> SetTopLeftRadiusY1;
 
             [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetTopRightRadiusX;
+            public delegate* stdcall<IDCompositionRectangleClip*, float, int> SetTopRightRadiusX;
 
             [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetTopRightRadiusX1;
+            public delegate* stdcall<IDCompositionRectangleClip*, IDCompositionAnimation*, int> SetTopRightRadiusX1;
 
             [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetTopRightRadiusY;
+            public delegate* stdcall<IDCompositionRectangleClip*, float, int> SetTopRightRadiusY;
 
             [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetTopRightRadiusY1;
+            public delegate* stdcall<IDCompositionRectangleClip*, IDCompositionAnimation*, int> SetTopRightRadiusY1;
 
             [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetBottomLeftRadiusX;
+            public delegate* stdcall<IDCompositionRectangleClip*, float, int> SetBottomLeftRadiusX;
 
             [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetBottomLeftRadiusX1;
+            public delegate* stdcall<IDCompositionRectangleClip*, IDCompositionAnimation*, int> SetBottomLeftRadiusX1;
 
             [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetBottomLeftRadiusY;
+            public delegate* stdcall<IDCompositionRectangleClip*, float, int> SetBottomLeftRadiusY;
 
             [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetBottomLeftRadiusY1;
+            public delegate* stdcall<IDCompositionRectangleClip*, IDCompositionAnimation*, int> SetBottomLeftRadiusY1;
 
             [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetBottomRightRadiusX;
+            public delegate* stdcall<IDCompositionRectangleClip*, float, int> SetBottomRightRadiusX;
 
             [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetBottomRightRadiusX1;
+            public delegate* stdcall<IDCompositionRectangleClip*, IDCompositionAnimation*, int> SetBottomRightRadiusX1;
 
             [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetBottomRightRadiusY;
+            public delegate* stdcall<IDCompositionRectangleClip*, float, int> SetBottomRightRadiusY;
 
             [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetBottomRightRadiusY1;
+            public delegate* stdcall<IDCompositionRectangleClip*, IDCompositionAnimation*, int> SetBottomRightRadiusY1;
         }
     }
 }

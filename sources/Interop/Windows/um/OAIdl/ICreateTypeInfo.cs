@@ -14,345 +14,241 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ICreateTypeInfo* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ICreateTypeInfo* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ICreateTypeInfo* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetGuid(ICreateTypeInfo* pThis, [NativeTypeName("const GUID &")] Guid* guid);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetTypeFlags(ICreateTypeInfo* pThis, [NativeTypeName("UINT")] uint uTypeFlags);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetDocString(ICreateTypeInfo* pThis, [NativeTypeName("LPOLESTR")] ushort* pStrDoc);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetHelpContext(ICreateTypeInfo* pThis, [NativeTypeName("DWORD")] uint dwHelpContext);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetVersion(ICreateTypeInfo* pThis, [NativeTypeName("WORD")] ushort wMajorVerNum, [NativeTypeName("WORD")] ushort wMinorVerNum);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _AddRefTypeInfo(ICreateTypeInfo* pThis, [NativeTypeName("ITypeInfo *")] ITypeInfo* pTInfo, [NativeTypeName("HREFTYPE *")] uint* phRefType);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _AddFuncDesc(ICreateTypeInfo* pThis, [NativeTypeName("UINT")] uint index, [NativeTypeName("FUNCDESC *")] FUNCDESC* pFuncDesc);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _AddImplType(ICreateTypeInfo* pThis, [NativeTypeName("UINT")] uint index, [NativeTypeName("HREFTYPE")] uint hRefType);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetImplTypeFlags(ICreateTypeInfo* pThis, [NativeTypeName("UINT")] uint index, [NativeTypeName("INT")] int implTypeFlags);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetAlignment(ICreateTypeInfo* pThis, [NativeTypeName("WORD")] ushort cbAlignment);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetSchema(ICreateTypeInfo* pThis, [NativeTypeName("LPOLESTR")] ushort* pStrSchema);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _AddVarDesc(ICreateTypeInfo* pThis, [NativeTypeName("UINT")] uint index, [NativeTypeName("VARDESC *")] VARDESC* pVarDesc);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetFuncAndParamNames(ICreateTypeInfo* pThis, [NativeTypeName("UINT")] uint index, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetVarName(ICreateTypeInfo* pThis, [NativeTypeName("UINT")] uint index, [NativeTypeName("LPOLESTR")] ushort* szName);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetTypeDescAlias(ICreateTypeInfo* pThis, [NativeTypeName("TYPEDESC *")] TYPEDESC* pTDescAlias);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _DefineFuncAsDllEntry(ICreateTypeInfo* pThis, [NativeTypeName("UINT")] uint index, [NativeTypeName("LPOLESTR")] ushort* szDllName, [NativeTypeName("LPOLESTR")] ushort* szProcName);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetFuncDocString(ICreateTypeInfo* pThis, [NativeTypeName("UINT")] uint index, [NativeTypeName("LPOLESTR")] ushort* szDocString);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetVarDocString(ICreateTypeInfo* pThis, [NativeTypeName("UINT")] uint index, [NativeTypeName("LPOLESTR")] ushort* szDocString);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetFuncHelpContext(ICreateTypeInfo* pThis, [NativeTypeName("UINT")] uint index, [NativeTypeName("DWORD")] uint dwHelpContext);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetVarHelpContext(ICreateTypeInfo* pThis, [NativeTypeName("UINT")] uint index, [NativeTypeName("DWORD")] uint dwHelpContext);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetMops(ICreateTypeInfo* pThis, [NativeTypeName("UINT")] uint index, [NativeTypeName("BSTR")] ushort* bstrMops);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetTypeIdldesc(ICreateTypeInfo* pThis, [NativeTypeName("IDLDESC *")] IDLDESC* pIdlDesc);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _LayOut(ICreateTypeInfo* pThis);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ICreateTypeInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((ICreateTypeInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ICreateTypeInfo*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((ICreateTypeInfo*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ICreateTypeInfo*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((ICreateTypeInfo*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetGuid([NativeTypeName("const GUID &")] Guid* guid)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetGuid>(lpVtbl->SetGuid)((ICreateTypeInfo*)Unsafe.AsPointer(ref this), guid);
+            return lpVtbl->SetGuid((ICreateTypeInfo*)Unsafe.AsPointer(ref this), guid);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetTypeFlags([NativeTypeName("UINT")] uint uTypeFlags)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetTypeFlags>(lpVtbl->SetTypeFlags)((ICreateTypeInfo*)Unsafe.AsPointer(ref this), uTypeFlags);
+            return lpVtbl->SetTypeFlags((ICreateTypeInfo*)Unsafe.AsPointer(ref this), uTypeFlags);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetDocString([NativeTypeName("LPOLESTR")] ushort* pStrDoc)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetDocString>(lpVtbl->SetDocString)((ICreateTypeInfo*)Unsafe.AsPointer(ref this), pStrDoc);
+            return lpVtbl->SetDocString((ICreateTypeInfo*)Unsafe.AsPointer(ref this), pStrDoc);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetHelpContext([NativeTypeName("DWORD")] uint dwHelpContext)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetHelpContext>(lpVtbl->SetHelpContext)((ICreateTypeInfo*)Unsafe.AsPointer(ref this), dwHelpContext);
+            return lpVtbl->SetHelpContext((ICreateTypeInfo*)Unsafe.AsPointer(ref this), dwHelpContext);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetVersion([NativeTypeName("WORD")] ushort wMajorVerNum, [NativeTypeName("WORD")] ushort wMinorVerNum)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetVersion>(lpVtbl->SetVersion)((ICreateTypeInfo*)Unsafe.AsPointer(ref this), wMajorVerNum, wMinorVerNum);
+            return lpVtbl->SetVersion((ICreateTypeInfo*)Unsafe.AsPointer(ref this), wMajorVerNum, wMinorVerNum);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int AddRefTypeInfo([NativeTypeName("ITypeInfo *")] ITypeInfo* pTInfo, [NativeTypeName("HREFTYPE *")] uint* phRefType)
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRefTypeInfo>(lpVtbl->AddRefTypeInfo)((ICreateTypeInfo*)Unsafe.AsPointer(ref this), pTInfo, phRefType);
+            return lpVtbl->AddRefTypeInfo((ICreateTypeInfo*)Unsafe.AsPointer(ref this), pTInfo, phRefType);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int AddFuncDesc([NativeTypeName("UINT")] uint index, [NativeTypeName("FUNCDESC *")] FUNCDESC* pFuncDesc)
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddFuncDesc>(lpVtbl->AddFuncDesc)((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, pFuncDesc);
+            return lpVtbl->AddFuncDesc((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, pFuncDesc);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int AddImplType([NativeTypeName("UINT")] uint index, [NativeTypeName("HREFTYPE")] uint hRefType)
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddImplType>(lpVtbl->AddImplType)((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, hRefType);
+            return lpVtbl->AddImplType((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, hRefType);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetImplTypeFlags([NativeTypeName("UINT")] uint index, [NativeTypeName("INT")] int implTypeFlags)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetImplTypeFlags>(lpVtbl->SetImplTypeFlags)((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, implTypeFlags);
+            return lpVtbl->SetImplTypeFlags((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, implTypeFlags);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetAlignment([NativeTypeName("WORD")] ushort cbAlignment)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetAlignment>(lpVtbl->SetAlignment)((ICreateTypeInfo*)Unsafe.AsPointer(ref this), cbAlignment);
+            return lpVtbl->SetAlignment((ICreateTypeInfo*)Unsafe.AsPointer(ref this), cbAlignment);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetSchema([NativeTypeName("LPOLESTR")] ushort* pStrSchema)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetSchema>(lpVtbl->SetSchema)((ICreateTypeInfo*)Unsafe.AsPointer(ref this), pStrSchema);
+            return lpVtbl->SetSchema((ICreateTypeInfo*)Unsafe.AsPointer(ref this), pStrSchema);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int AddVarDesc([NativeTypeName("UINT")] uint index, [NativeTypeName("VARDESC *")] VARDESC* pVarDesc)
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddVarDesc>(lpVtbl->AddVarDesc)((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, pVarDesc);
+            return lpVtbl->AddVarDesc((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, pVarDesc);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetFuncAndParamNames([NativeTypeName("UINT")] uint index, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetFuncAndParamNames>(lpVtbl->SetFuncAndParamNames)((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, rgszNames, cNames);
+            return lpVtbl->SetFuncAndParamNames((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, rgszNames, cNames);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetVarName([NativeTypeName("UINT")] uint index, [NativeTypeName("LPOLESTR")] ushort* szName)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetVarName>(lpVtbl->SetVarName)((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, szName);
+            return lpVtbl->SetVarName((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, szName);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetTypeDescAlias([NativeTypeName("TYPEDESC *")] TYPEDESC* pTDescAlias)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetTypeDescAlias>(lpVtbl->SetTypeDescAlias)((ICreateTypeInfo*)Unsafe.AsPointer(ref this), pTDescAlias);
+            return lpVtbl->SetTypeDescAlias((ICreateTypeInfo*)Unsafe.AsPointer(ref this), pTDescAlias);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int DefineFuncAsDllEntry([NativeTypeName("UINT")] uint index, [NativeTypeName("LPOLESTR")] ushort* szDllName, [NativeTypeName("LPOLESTR")] ushort* szProcName)
         {
-            return Marshal.GetDelegateForFunctionPointer<_DefineFuncAsDllEntry>(lpVtbl->DefineFuncAsDllEntry)((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, szDllName, szProcName);
+            return lpVtbl->DefineFuncAsDllEntry((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, szDllName, szProcName);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetFuncDocString([NativeTypeName("UINT")] uint index, [NativeTypeName("LPOLESTR")] ushort* szDocString)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetFuncDocString>(lpVtbl->SetFuncDocString)((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, szDocString);
+            return lpVtbl->SetFuncDocString((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, szDocString);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetVarDocString([NativeTypeName("UINT")] uint index, [NativeTypeName("LPOLESTR")] ushort* szDocString)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetVarDocString>(lpVtbl->SetVarDocString)((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, szDocString);
+            return lpVtbl->SetVarDocString((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, szDocString);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetFuncHelpContext([NativeTypeName("UINT")] uint index, [NativeTypeName("DWORD")] uint dwHelpContext)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetFuncHelpContext>(lpVtbl->SetFuncHelpContext)((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, dwHelpContext);
+            return lpVtbl->SetFuncHelpContext((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, dwHelpContext);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetVarHelpContext([NativeTypeName("UINT")] uint index, [NativeTypeName("DWORD")] uint dwHelpContext)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetVarHelpContext>(lpVtbl->SetVarHelpContext)((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, dwHelpContext);
+            return lpVtbl->SetVarHelpContext((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, dwHelpContext);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetMops([NativeTypeName("UINT")] uint index, [NativeTypeName("BSTR")] ushort* bstrMops)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetMops>(lpVtbl->SetMops)((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, bstrMops);
+            return lpVtbl->SetMops((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, bstrMops);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetTypeIdldesc([NativeTypeName("IDLDESC *")] IDLDESC* pIdlDesc)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetTypeIdldesc>(lpVtbl->SetTypeIdldesc)((ICreateTypeInfo*)Unsafe.AsPointer(ref this), pIdlDesc);
+            return lpVtbl->SetTypeIdldesc((ICreateTypeInfo*)Unsafe.AsPointer(ref this), pIdlDesc);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int LayOut()
         {
-            return Marshal.GetDelegateForFunctionPointer<_LayOut>(lpVtbl->LayOut)((ICreateTypeInfo*)Unsafe.AsPointer(ref this));
+            return lpVtbl->LayOut((ICreateTypeInfo*)Unsafe.AsPointer(ref this));
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<ICreateTypeInfo*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<ICreateTypeInfo*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<ICreateTypeInfo*, uint> Release;
 
             [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
-            public IntPtr SetGuid;
+            public delegate* stdcall<ICreateTypeInfo*, Guid*, int> SetGuid;
 
             [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-            public IntPtr SetTypeFlags;
+            public delegate* stdcall<ICreateTypeInfo*, uint, int> SetTypeFlags;
 
             [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-            public IntPtr SetDocString;
+            public delegate* stdcall<ICreateTypeInfo*, ushort*, int> SetDocString;
 
             [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public IntPtr SetHelpContext;
+            public delegate* stdcall<ICreateTypeInfo*, uint, int> SetHelpContext;
 
             [NativeTypeName("HRESULT (WORD, WORD) __attribute__((stdcall))")]
-            public IntPtr SetVersion;
+            public delegate* stdcall<ICreateTypeInfo*, ushort, ushort, int> SetVersion;
 
             [NativeTypeName("HRESULT (ITypeInfo *, HREFTYPE *) __attribute__((stdcall))")]
-            public IntPtr AddRefTypeInfo;
+            public delegate* stdcall<ICreateTypeInfo*, ITypeInfo*, uint*, int> AddRefTypeInfo;
 
             [NativeTypeName("HRESULT (UINT, FUNCDESC *) __attribute__((stdcall))")]
-            public IntPtr AddFuncDesc;
+            public delegate* stdcall<ICreateTypeInfo*, uint, FUNCDESC*, int> AddFuncDesc;
 
             [NativeTypeName("HRESULT (UINT, HREFTYPE) __attribute__((stdcall))")]
-            public IntPtr AddImplType;
+            public delegate* stdcall<ICreateTypeInfo*, uint, uint, int> AddImplType;
 
             [NativeTypeName("HRESULT (UINT, INT) __attribute__((stdcall))")]
-            public IntPtr SetImplTypeFlags;
+            public delegate* stdcall<ICreateTypeInfo*, uint, int, int> SetImplTypeFlags;
 
             [NativeTypeName("HRESULT (WORD) __attribute__((stdcall))")]
-            public IntPtr SetAlignment;
+            public delegate* stdcall<ICreateTypeInfo*, ushort, int> SetAlignment;
 
             [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-            public IntPtr SetSchema;
+            public delegate* stdcall<ICreateTypeInfo*, ushort*, int> SetSchema;
 
             [NativeTypeName("HRESULT (UINT, VARDESC *) __attribute__((stdcall))")]
-            public IntPtr AddVarDesc;
+            public delegate* stdcall<ICreateTypeInfo*, uint, VARDESC*, int> AddVarDesc;
 
             [NativeTypeName("HRESULT (UINT, LPOLESTR *, UINT) __attribute__((stdcall))")]
-            public IntPtr SetFuncAndParamNames;
+            public delegate* stdcall<ICreateTypeInfo*, uint, ushort**, uint, int> SetFuncAndParamNames;
 
             [NativeTypeName("HRESULT (UINT, LPOLESTR) __attribute__((stdcall))")]
-            public IntPtr SetVarName;
+            public delegate* stdcall<ICreateTypeInfo*, uint, ushort*, int> SetVarName;
 
             [NativeTypeName("HRESULT (TYPEDESC *) __attribute__((stdcall))")]
-            public IntPtr SetTypeDescAlias;
+            public delegate* stdcall<ICreateTypeInfo*, TYPEDESC*, int> SetTypeDescAlias;
 
             [NativeTypeName("HRESULT (UINT, LPOLESTR, LPOLESTR) __attribute__((stdcall))")]
-            public IntPtr DefineFuncAsDllEntry;
+            public delegate* stdcall<ICreateTypeInfo*, uint, ushort*, ushort*, int> DefineFuncAsDllEntry;
 
             [NativeTypeName("HRESULT (UINT, LPOLESTR) __attribute__((stdcall))")]
-            public IntPtr SetFuncDocString;
+            public delegate* stdcall<ICreateTypeInfo*, uint, ushort*, int> SetFuncDocString;
 
             [NativeTypeName("HRESULT (UINT, LPOLESTR) __attribute__((stdcall))")]
-            public IntPtr SetVarDocString;
+            public delegate* stdcall<ICreateTypeInfo*, uint, ushort*, int> SetVarDocString;
 
             [NativeTypeName("HRESULT (UINT, DWORD) __attribute__((stdcall))")]
-            public IntPtr SetFuncHelpContext;
+            public delegate* stdcall<ICreateTypeInfo*, uint, uint, int> SetFuncHelpContext;
 
             [NativeTypeName("HRESULT (UINT, DWORD) __attribute__((stdcall))")]
-            public IntPtr SetVarHelpContext;
+            public delegate* stdcall<ICreateTypeInfo*, uint, uint, int> SetVarHelpContext;
 
             [NativeTypeName("HRESULT (UINT, BSTR) __attribute__((stdcall))")]
-            public IntPtr SetMops;
+            public delegate* stdcall<ICreateTypeInfo*, uint, ushort*, int> SetMops;
 
             [NativeTypeName("HRESULT (IDLDESC *) __attribute__((stdcall))")]
-            public IntPtr SetTypeIdldesc;
+            public delegate* stdcall<ICreateTypeInfo*, IDLDESC*, int> SetTypeIdldesc;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr LayOut;
+            public delegate* stdcall<ICreateTypeInfo*, int> LayOut;
         }
     }
 }

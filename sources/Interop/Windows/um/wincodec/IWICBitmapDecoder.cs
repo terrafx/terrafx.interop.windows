@@ -14,189 +14,133 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IWICBitmapDecoder* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IWICBitmapDecoder* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IWICBitmapDecoder* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryCapability(IWICBitmapDecoder* pThis, [NativeTypeName("IStream *")] IStream* pIStream, [NativeTypeName("DWORD *")] uint* pdwCapability);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Initialize(IWICBitmapDecoder* pThis, [NativeTypeName("IStream *")] IStream* pIStream, WICDecodeOptions cacheOptions);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetContainerFormat(IWICBitmapDecoder* pThis, [NativeTypeName("GUID *")] Guid* pguidContainerFormat);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDecoderInfo(IWICBitmapDecoder* pThis, [NativeTypeName("IWICBitmapDecoderInfo **")] IWICBitmapDecoderInfo** ppIDecoderInfo);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _CopyPalette(IWICBitmapDecoder* pThis, [NativeTypeName("IWICPalette *")] IWICPalette* pIPalette);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetMetadataQueryReader(IWICBitmapDecoder* pThis, [NativeTypeName("IWICMetadataQueryReader **")] IWICMetadataQueryReader** ppIMetadataQueryReader);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPreview(IWICBitmapDecoder* pThis, [NativeTypeName("IWICBitmapSource **")] IWICBitmapSource** ppIBitmapSource);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetColorContexts(IWICBitmapDecoder* pThis, [NativeTypeName("UINT")] uint cCount, [NativeTypeName("IWICColorContext **")] IWICColorContext** ppIColorContexts, [NativeTypeName("UINT *")] uint* pcActualCount);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetThumbnail(IWICBitmapDecoder* pThis, [NativeTypeName("IWICBitmapSource **")] IWICBitmapSource** ppIThumbnail);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFrameCount(IWICBitmapDecoder* pThis, [NativeTypeName("UINT *")] uint* pCount);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFrame(IWICBitmapDecoder* pThis, [NativeTypeName("UINT")] uint index, [NativeTypeName("IWICBitmapFrameDecode **")] IWICBitmapFrameDecode** ppIBitmapFrame);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IWICBitmapDecoder*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IWICBitmapDecoder*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IWICBitmapDecoder*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IWICBitmapDecoder*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IWICBitmapDecoder*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IWICBitmapDecoder*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int QueryCapability([NativeTypeName("IStream *")] IStream* pIStream, [NativeTypeName("DWORD *")] uint* pdwCapability)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryCapability>(lpVtbl->QueryCapability)((IWICBitmapDecoder*)Unsafe.AsPointer(ref this), pIStream, pdwCapability);
+            return lpVtbl->QueryCapability((IWICBitmapDecoder*)Unsafe.AsPointer(ref this), pIStream, pdwCapability);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Initialize([NativeTypeName("IStream *")] IStream* pIStream, WICDecodeOptions cacheOptions)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Initialize>(lpVtbl->Initialize)((IWICBitmapDecoder*)Unsafe.AsPointer(ref this), pIStream, cacheOptions);
+            return lpVtbl->Initialize((IWICBitmapDecoder*)Unsafe.AsPointer(ref this), pIStream, cacheOptions);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetContainerFormat([NativeTypeName("GUID *")] Guid* pguidContainerFormat)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetContainerFormat>(lpVtbl->GetContainerFormat)((IWICBitmapDecoder*)Unsafe.AsPointer(ref this), pguidContainerFormat);
+            return lpVtbl->GetContainerFormat((IWICBitmapDecoder*)Unsafe.AsPointer(ref this), pguidContainerFormat);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDecoderInfo([NativeTypeName("IWICBitmapDecoderInfo **")] IWICBitmapDecoderInfo** ppIDecoderInfo)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetDecoderInfo>(lpVtbl->GetDecoderInfo)((IWICBitmapDecoder*)Unsafe.AsPointer(ref this), ppIDecoderInfo);
+            return lpVtbl->GetDecoderInfo((IWICBitmapDecoder*)Unsafe.AsPointer(ref this), ppIDecoderInfo);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CopyPalette([NativeTypeName("IWICPalette *")] IWICPalette* pIPalette)
         {
-            return Marshal.GetDelegateForFunctionPointer<_CopyPalette>(lpVtbl->CopyPalette)((IWICBitmapDecoder*)Unsafe.AsPointer(ref this), pIPalette);
+            return lpVtbl->CopyPalette((IWICBitmapDecoder*)Unsafe.AsPointer(ref this), pIPalette);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetMetadataQueryReader([NativeTypeName("IWICMetadataQueryReader **")] IWICMetadataQueryReader** ppIMetadataQueryReader)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetMetadataQueryReader>(lpVtbl->GetMetadataQueryReader)((IWICBitmapDecoder*)Unsafe.AsPointer(ref this), ppIMetadataQueryReader);
+            return lpVtbl->GetMetadataQueryReader((IWICBitmapDecoder*)Unsafe.AsPointer(ref this), ppIMetadataQueryReader);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPreview([NativeTypeName("IWICBitmapSource **")] IWICBitmapSource** ppIBitmapSource)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetPreview>(lpVtbl->GetPreview)((IWICBitmapDecoder*)Unsafe.AsPointer(ref this), ppIBitmapSource);
+            return lpVtbl->GetPreview((IWICBitmapDecoder*)Unsafe.AsPointer(ref this), ppIBitmapSource);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetColorContexts([NativeTypeName("UINT")] uint cCount, [NativeTypeName("IWICColorContext **")] IWICColorContext** ppIColorContexts, [NativeTypeName("UINT *")] uint* pcActualCount)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetColorContexts>(lpVtbl->GetColorContexts)((IWICBitmapDecoder*)Unsafe.AsPointer(ref this), cCount, ppIColorContexts, pcActualCount);
+            return lpVtbl->GetColorContexts((IWICBitmapDecoder*)Unsafe.AsPointer(ref this), cCount, ppIColorContexts, pcActualCount);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetThumbnail([NativeTypeName("IWICBitmapSource **")] IWICBitmapSource** ppIThumbnail)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetThumbnail>(lpVtbl->GetThumbnail)((IWICBitmapDecoder*)Unsafe.AsPointer(ref this), ppIThumbnail);
+            return lpVtbl->GetThumbnail((IWICBitmapDecoder*)Unsafe.AsPointer(ref this), ppIThumbnail);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetFrameCount([NativeTypeName("UINT *")] uint* pCount)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetFrameCount>(lpVtbl->GetFrameCount)((IWICBitmapDecoder*)Unsafe.AsPointer(ref this), pCount);
+            return lpVtbl->GetFrameCount((IWICBitmapDecoder*)Unsafe.AsPointer(ref this), pCount);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetFrame([NativeTypeName("UINT")] uint index, [NativeTypeName("IWICBitmapFrameDecode **")] IWICBitmapFrameDecode** ppIBitmapFrame)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetFrame>(lpVtbl->GetFrame)((IWICBitmapDecoder*)Unsafe.AsPointer(ref this), index, ppIBitmapFrame);
+            return lpVtbl->GetFrame((IWICBitmapDecoder*)Unsafe.AsPointer(ref this), index, ppIBitmapFrame);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IWICBitmapDecoder*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IWICBitmapDecoder*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IWICBitmapDecoder*, uint> Release;
 
             [NativeTypeName("HRESULT (IStream *, DWORD *) __attribute__((stdcall))")]
-            public IntPtr QueryCapability;
+            public delegate* stdcall<IWICBitmapDecoder*, IStream*, uint*, int> QueryCapability;
 
             [NativeTypeName("HRESULT (IStream *, WICDecodeOptions) __attribute__((stdcall))")]
-            public IntPtr Initialize;
+            public delegate* stdcall<IWICBitmapDecoder*, IStream*, WICDecodeOptions, int> Initialize;
 
             [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-            public IntPtr GetContainerFormat;
+            public delegate* stdcall<IWICBitmapDecoder*, Guid*, int> GetContainerFormat;
 
             [NativeTypeName("HRESULT (IWICBitmapDecoderInfo **) __attribute__((stdcall))")]
-            public IntPtr GetDecoderInfo;
+            public delegate* stdcall<IWICBitmapDecoder*, IWICBitmapDecoderInfo**, int> GetDecoderInfo;
 
             [NativeTypeName("HRESULT (IWICPalette *) __attribute__((stdcall))")]
-            public IntPtr CopyPalette;
+            public delegate* stdcall<IWICBitmapDecoder*, IWICPalette*, int> CopyPalette;
 
             [NativeTypeName("HRESULT (IWICMetadataQueryReader **) __attribute__((stdcall))")]
-            public IntPtr GetMetadataQueryReader;
+            public delegate* stdcall<IWICBitmapDecoder*, IWICMetadataQueryReader**, int> GetMetadataQueryReader;
 
             [NativeTypeName("HRESULT (IWICBitmapSource **) __attribute__((stdcall))")]
-            public IntPtr GetPreview;
+            public delegate* stdcall<IWICBitmapDecoder*, IWICBitmapSource**, int> GetPreview;
 
             [NativeTypeName("HRESULT (UINT, IWICColorContext **, UINT *) __attribute__((stdcall))")]
-            public IntPtr GetColorContexts;
+            public delegate* stdcall<IWICBitmapDecoder*, uint, IWICColorContext**, uint*, int> GetColorContexts;
 
             [NativeTypeName("HRESULT (IWICBitmapSource **) __attribute__((stdcall))")]
-            public IntPtr GetThumbnail;
+            public delegate* stdcall<IWICBitmapDecoder*, IWICBitmapSource**, int> GetThumbnail;
 
             [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public IntPtr GetFrameCount;
+            public delegate* stdcall<IWICBitmapDecoder*, uint*, int> GetFrameCount;
 
             [NativeTypeName("HRESULT (UINT, IWICBitmapFrameDecode **) __attribute__((stdcall))")]
-            public IntPtr GetFrame;
+            public delegate* stdcall<IWICBitmapDecoder*, uint, IWICBitmapFrameDecode**, int> GetFrame;
         }
     }
 }

@@ -3,7 +3,6 @@
 // Ported from um/SoftPub.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -20,7 +19,7 @@ namespace TerraFX.Interop
         public WTD_GENERIC_CHAIN_POLICY_CREATE_INFO* pCounterSignerChainInfo;
 
         [NativeTypeName("PFN_WTD_GENERIC_CHAIN_POLICY_CALLBACK")]
-        public IntPtr pfnPolicyCallback;
+        public delegate* stdcall<CRYPT_PROVIDER_DATA*, uint, uint, uint, WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO**, void*, int> pfnPolicyCallback;
 
         [NativeTypeName("void *")]
         public void* pvPolicyArg;

@@ -14,59 +14,43 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDesc(ID3D11ShaderReflectionVariable* pThis, [NativeTypeName("D3D11_SHADER_VARIABLE_DESC *")] D3D11_SHADER_VARIABLE_DESC* pDesc);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ID3D11ShaderReflectionType *")]
-        public delegate ID3D11ShaderReflectionType* _GetType(ID3D11ShaderReflectionVariable* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ID3D11ShaderReflectionConstantBuffer *")]
-        public delegate ID3D11ShaderReflectionConstantBuffer* _GetBuffer(ID3D11ShaderReflectionVariable* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("UINT")]
-        public delegate uint _GetInterfaceSlot(ID3D11ShaderReflectionVariable* pThis, [NativeTypeName("UINT")] uint uArrayIndex);
-
         [return: NativeTypeName("HRESULT")]
         public int GetDesc([NativeTypeName("D3D11_SHADER_VARIABLE_DESC *")] D3D11_SHADER_VARIABLE_DESC* pDesc)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)((ID3D11ShaderReflectionVariable*)Unsafe.AsPointer(ref this), pDesc);
+            return lpVtbl->GetDesc((ID3D11ShaderReflectionVariable*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         [return: NativeTypeName("ID3D11ShaderReflectionType *")]
         public new ID3D11ShaderReflectionType* GetType()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetType>(lpVtbl->GetType)((ID3D11ShaderReflectionVariable*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetType((ID3D11ShaderReflectionVariable*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ID3D11ShaderReflectionConstantBuffer *")]
         public ID3D11ShaderReflectionConstantBuffer* GetBuffer()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetBuffer>(lpVtbl->GetBuffer)((ID3D11ShaderReflectionVariable*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetBuffer((ID3D11ShaderReflectionVariable*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("UINT")]
         public uint GetInterfaceSlot([NativeTypeName("UINT")] uint uArrayIndex)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetInterfaceSlot>(lpVtbl->GetInterfaceSlot)((ID3D11ShaderReflectionVariable*)Unsafe.AsPointer(ref this), uArrayIndex);
+            return lpVtbl->GetInterfaceSlot((ID3D11ShaderReflectionVariable*)Unsafe.AsPointer(ref this), uArrayIndex);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (D3D11_SHADER_VARIABLE_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetDesc;
+            public delegate* stdcall<ID3D11ShaderReflectionVariable*, D3D11_SHADER_VARIABLE_DESC*, int> GetDesc;
 
             [NativeTypeName("ID3D11ShaderReflectionType *() __attribute__((nothrow)) __attribute__((stdcall))")]
-            public new IntPtr GetType;
+            public new delegate* stdcall<ID3D11ShaderReflectionVariable*, ID3D11ShaderReflectionType*> GetType;
 
             [NativeTypeName("ID3D11ShaderReflectionConstantBuffer *() __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetBuffer;
+            public delegate* stdcall<ID3D11ShaderReflectionVariable*, ID3D11ShaderReflectionConstantBuffer*> GetBuffer;
 
             [NativeTypeName("UINT (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetInterfaceSlot;
+            public delegate* stdcall<ID3D11ShaderReflectionVariable*, uint, uint> GetInterfaceSlot;
         }
     }
 }

@@ -14,135 +14,96 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ID3D11Fence* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ID3D11Fence* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ID3D11Fence* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _GetDevice(ID3D11Fence* pThis, [NativeTypeName("ID3D11Device **")] ID3D11Device** ppDevice);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPrivateData(ID3D11Fence* pThis, [NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateData(ID3D11Fence* pThis, [NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateDataInterface(ID3D11Fence* pThis, [NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateSharedHandle(ID3D11Fence* pThis, [NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint dwAccess, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("HANDLE *")] IntPtr* pHandle);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("UINT64")]
-        public delegate ulong _GetCompletedValue(ID3D11Fence* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetEventOnCompletion(ID3D11Fence* pThis, [NativeTypeName("UINT64")] ulong Value, [NativeTypeName("HANDLE")] IntPtr hEvent);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ID3D11Fence*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((ID3D11Fence*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ID3D11Fence*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((ID3D11Fence*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ID3D11Fence*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((ID3D11Fence*)Unsafe.AsPointer(ref this));
         }
 
         public void GetDevice([NativeTypeName("ID3D11Device **")] ID3D11Device** ppDevice)
         {
-            Marshal.GetDelegateForFunctionPointer<_GetDevice>(lpVtbl->GetDevice)((ID3D11Fence*)Unsafe.AsPointer(ref this), ppDevice);
+            lpVtbl->GetDevice((ID3D11Fence*)Unsafe.AsPointer(ref this), ppDevice);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)((ID3D11Fence*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
+            return lpVtbl->GetPrivateData((ID3D11Fence*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)((ID3D11Fence*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
+            return lpVtbl->SetPrivateData((ID3D11Fence*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)((ID3D11Fence*)Unsafe.AsPointer(ref this), guid, pData);
+            return lpVtbl->SetPrivateDataInterface((ID3D11Fence*)Unsafe.AsPointer(ref this), guid, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CreateSharedHandle([NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint dwAccess, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("HANDLE *")] IntPtr* pHandle)
         {
-            return Marshal.GetDelegateForFunctionPointer<_CreateSharedHandle>(lpVtbl->CreateSharedHandle)((ID3D11Fence*)Unsafe.AsPointer(ref this), pAttributes, dwAccess, lpName, pHandle);
+            return lpVtbl->CreateSharedHandle((ID3D11Fence*)Unsafe.AsPointer(ref this), pAttributes, dwAccess, lpName, pHandle);
         }
 
         [return: NativeTypeName("UINT64")]
         public ulong GetCompletedValue()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetCompletedValue>(lpVtbl->GetCompletedValue)((ID3D11Fence*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetCompletedValue((ID3D11Fence*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetEventOnCompletion([NativeTypeName("UINT64")] ulong Value, [NativeTypeName("HANDLE")] IntPtr hEvent)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetEventOnCompletion>(lpVtbl->SetEventOnCompletion)((ID3D11Fence*)Unsafe.AsPointer(ref this), Value, hEvent);
+            return lpVtbl->SetEventOnCompletion((ID3D11Fence*)Unsafe.AsPointer(ref this), Value, hEvent);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<ID3D11Fence*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<ID3D11Fence*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<ID3D11Fence*, uint> Release;
 
             [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
-            public IntPtr GetDevice;
+            public delegate* stdcall<ID3D11Fence*, ID3D11Device**, void> GetDevice;
 
             [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-            public IntPtr GetPrivateData;
+            public delegate* stdcall<ID3D11Fence*, Guid*, uint*, void*, int> GetPrivateData;
 
             [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-            public IntPtr SetPrivateData;
+            public delegate* stdcall<ID3D11Fence*, Guid*, uint, void*, int> SetPrivateData;
 
             [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-            public IntPtr SetPrivateDataInterface;
+            public delegate* stdcall<ID3D11Fence*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
             [NativeTypeName("HRESULT (const SECURITY_ATTRIBUTES *, DWORD, LPCWSTR, HANDLE *) __attribute__((stdcall))")]
-            public IntPtr CreateSharedHandle;
+            public delegate* stdcall<ID3D11Fence*, SECURITY_ATTRIBUTES*, uint, ushort*, IntPtr*, int> CreateSharedHandle;
 
             [NativeTypeName("UINT64 () __attribute__((stdcall))")]
-            public IntPtr GetCompletedValue;
+            public delegate* stdcall<ID3D11Fence*, ulong> GetCompletedValue;
 
             [NativeTypeName("HRESULT (UINT64, HANDLE) __attribute__((stdcall))")]
-            public IntPtr SetEventOnCompletion;
+            public delegate* stdcall<ID3D11Fence*, ulong, IntPtr, int> SetEventOnCompletion;
         }
     }
 }

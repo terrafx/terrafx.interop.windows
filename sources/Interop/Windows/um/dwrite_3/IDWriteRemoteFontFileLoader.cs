@@ -14,98 +14,70 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDWriteRemoteFontFileLoader* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDWriteRemoteFontFileLoader* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDWriteRemoteFontFileLoader* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateStreamFromKey(IDWriteRemoteFontFileLoader* pThis, [NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("IDWriteFontFileStream **")] IDWriteFontFileStream** fontFileStream);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateRemoteStreamFromKey(IDWriteRemoteFontFileLoader* pThis, [NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("IDWriteRemoteFontFileStream **")] IDWriteRemoteFontFileStream** fontFileStream);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLocalityFromKey(IDWriteRemoteFontFileLoader* pThis, [NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("DWRITE_LOCALITY *")] DWRITE_LOCALITY* locality);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateFontFileReferenceFromUrl(IDWriteRemoteFontFileLoader* pThis, [NativeTypeName("IDWriteFactory *")] IDWriteFactory* factory, [NativeTypeName("const WCHAR *")] ushort* baseUrl, [NativeTypeName("const WCHAR *")] ushort* fontFileUrl, [NativeTypeName("IDWriteFontFile **")] IDWriteFontFile** fontFile);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDWriteRemoteFontFileLoader*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IDWriteRemoteFontFileLoader*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDWriteRemoteFontFileLoader*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IDWriteRemoteFontFileLoader*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDWriteRemoteFontFileLoader*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IDWriteRemoteFontFileLoader*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CreateStreamFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("IDWriteFontFileStream **")] IDWriteFontFileStream** fontFileStream)
         {
-            return Marshal.GetDelegateForFunctionPointer<_CreateStreamFromKey>(lpVtbl->CreateStreamFromKey)((IDWriteRemoteFontFileLoader*)Unsafe.AsPointer(ref this), fontFileReferenceKey, fontFileReferenceKeySize, fontFileStream);
+            return lpVtbl->CreateStreamFromKey((IDWriteRemoteFontFileLoader*)Unsafe.AsPointer(ref this), fontFileReferenceKey, fontFileReferenceKeySize, fontFileStream);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CreateRemoteStreamFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("IDWriteRemoteFontFileStream **")] IDWriteRemoteFontFileStream** fontFileStream)
         {
-            return Marshal.GetDelegateForFunctionPointer<_CreateRemoteStreamFromKey>(lpVtbl->CreateRemoteStreamFromKey)((IDWriteRemoteFontFileLoader*)Unsafe.AsPointer(ref this), fontFileReferenceKey, fontFileReferenceKeySize, fontFileStream);
+            return lpVtbl->CreateRemoteStreamFromKey((IDWriteRemoteFontFileLoader*)Unsafe.AsPointer(ref this), fontFileReferenceKey, fontFileReferenceKeySize, fontFileStream);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetLocalityFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("DWRITE_LOCALITY *")] DWRITE_LOCALITY* locality)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetLocalityFromKey>(lpVtbl->GetLocalityFromKey)((IDWriteRemoteFontFileLoader*)Unsafe.AsPointer(ref this), fontFileReferenceKey, fontFileReferenceKeySize, locality);
+            return lpVtbl->GetLocalityFromKey((IDWriteRemoteFontFileLoader*)Unsafe.AsPointer(ref this), fontFileReferenceKey, fontFileReferenceKeySize, locality);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CreateFontFileReferenceFromUrl([NativeTypeName("IDWriteFactory *")] IDWriteFactory* factory, [NativeTypeName("const WCHAR *")] ushort* baseUrl, [NativeTypeName("const WCHAR *")] ushort* fontFileUrl, [NativeTypeName("IDWriteFontFile **")] IDWriteFontFile** fontFile)
         {
-            return Marshal.GetDelegateForFunctionPointer<_CreateFontFileReferenceFromUrl>(lpVtbl->CreateFontFileReferenceFromUrl)((IDWriteRemoteFontFileLoader*)Unsafe.AsPointer(ref this), factory, baseUrl, fontFileUrl, fontFile);
+            return lpVtbl->CreateFontFileReferenceFromUrl((IDWriteRemoteFontFileLoader*)Unsafe.AsPointer(ref this), factory, baseUrl, fontFileUrl, fontFile);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IDWriteRemoteFontFileLoader*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IDWriteRemoteFontFileLoader*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IDWriteRemoteFontFileLoader*, uint> Release;
 
             [NativeTypeName("HRESULT (const void *, UINT32, IDWriteFontFileStream **) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr CreateStreamFromKey;
+            public delegate* stdcall<IDWriteRemoteFontFileLoader*, void*, uint, IDWriteFontFileStream**, int> CreateStreamFromKey;
 
             [NativeTypeName("HRESULT (const void *, UINT32, IDWriteRemoteFontFileStream **) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr CreateRemoteStreamFromKey;
+            public delegate* stdcall<IDWriteRemoteFontFileLoader*, void*, uint, IDWriteRemoteFontFileStream**, int> CreateRemoteStreamFromKey;
 
             [NativeTypeName("HRESULT (const void *, UINT32, DWRITE_LOCALITY *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetLocalityFromKey;
+            public delegate* stdcall<IDWriteRemoteFontFileLoader*, void*, uint, DWRITE_LOCALITY*, int> GetLocalityFromKey;
 
             [NativeTypeName("HRESULT (IDWriteFactory *, const WCHAR *, const WCHAR *, IDWriteFontFile **) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr CreateFontFileReferenceFromUrl;
+            public delegate* stdcall<IDWriteRemoteFontFileLoader*, IDWriteFactory*, ushort*, ushort*, IDWriteFontFile**, int> CreateFontFileReferenceFromUrl;
         }
     }
 }

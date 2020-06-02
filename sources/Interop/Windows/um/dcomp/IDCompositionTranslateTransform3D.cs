@@ -14,124 +14,88 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDCompositionTranslateTransform3D* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDCompositionTranslateTransform3D* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDCompositionTranslateTransform3D* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetOffsetX(IDCompositionTranslateTransform3D* pThis, float offsetX);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetOffsetX1(IDCompositionTranslateTransform3D* pThis, [NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetOffsetY(IDCompositionTranslateTransform3D* pThis, float offsetY);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetOffsetY1(IDCompositionTranslateTransform3D* pThis, [NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetOffsetZ(IDCompositionTranslateTransform3D* pThis, float offsetZ);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetOffsetZ1(IDCompositionTranslateTransform3D* pThis, [NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDCompositionTranslateTransform3D*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IDCompositionTranslateTransform3D*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDCompositionTranslateTransform3D*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IDCompositionTranslateTransform3D*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDCompositionTranslateTransform3D*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IDCompositionTranslateTransform3D*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetOffsetX(float offsetX)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetOffsetX>(lpVtbl->SetOffsetX)((IDCompositionTranslateTransform3D*)Unsafe.AsPointer(ref this), offsetX);
+            return lpVtbl->SetOffsetX((IDCompositionTranslateTransform3D*)Unsafe.AsPointer(ref this), offsetX);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetOffsetX([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetOffsetX1>(lpVtbl->SetOffsetX1)((IDCompositionTranslateTransform3D*)Unsafe.AsPointer(ref this), animation);
+            return lpVtbl->SetOffsetX1((IDCompositionTranslateTransform3D*)Unsafe.AsPointer(ref this), animation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetOffsetY(float offsetY)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetOffsetY>(lpVtbl->SetOffsetY)((IDCompositionTranslateTransform3D*)Unsafe.AsPointer(ref this), offsetY);
+            return lpVtbl->SetOffsetY((IDCompositionTranslateTransform3D*)Unsafe.AsPointer(ref this), offsetY);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetOffsetY([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetOffsetY1>(lpVtbl->SetOffsetY1)((IDCompositionTranslateTransform3D*)Unsafe.AsPointer(ref this), animation);
+            return lpVtbl->SetOffsetY1((IDCompositionTranslateTransform3D*)Unsafe.AsPointer(ref this), animation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetOffsetZ(float offsetZ)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetOffsetZ>(lpVtbl->SetOffsetZ)((IDCompositionTranslateTransform3D*)Unsafe.AsPointer(ref this), offsetZ);
+            return lpVtbl->SetOffsetZ((IDCompositionTranslateTransform3D*)Unsafe.AsPointer(ref this), offsetZ);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetOffsetZ([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetOffsetZ1>(lpVtbl->SetOffsetZ1)((IDCompositionTranslateTransform3D*)Unsafe.AsPointer(ref this), animation);
+            return lpVtbl->SetOffsetZ1((IDCompositionTranslateTransform3D*)Unsafe.AsPointer(ref this), animation);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IDCompositionTranslateTransform3D*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IDCompositionTranslateTransform3D*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IDCompositionTranslateTransform3D*, uint> Release;
 
             [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetOffsetX;
+            public delegate* stdcall<IDCompositionTranslateTransform3D*, float, int> SetOffsetX;
 
             [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetOffsetX1;
+            public delegate* stdcall<IDCompositionTranslateTransform3D*, IDCompositionAnimation*, int> SetOffsetX1;
 
             [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetOffsetY;
+            public delegate* stdcall<IDCompositionTranslateTransform3D*, float, int> SetOffsetY;
 
             [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetOffsetY1;
+            public delegate* stdcall<IDCompositionTranslateTransform3D*, IDCompositionAnimation*, int> SetOffsetY1;
 
             [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetOffsetZ;
+            public delegate* stdcall<IDCompositionTranslateTransform3D*, float, int> SetOffsetZ;
 
             [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetOffsetZ1;
+            public delegate* stdcall<IDCompositionTranslateTransform3D*, IDCompositionAnimation*, int> SetOffsetZ1;
         }
     }
 }

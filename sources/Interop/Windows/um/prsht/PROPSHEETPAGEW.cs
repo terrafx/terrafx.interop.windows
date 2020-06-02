@@ -29,13 +29,13 @@ namespace TerraFX.Interop
         public ushort* pszTitle;
 
         [NativeTypeName("DLGPROC")]
-        public IntPtr pfnDlgProc;
+        public delegate* stdcall<IntPtr, uint, nuint, nint, nint> pfnDlgProc;
 
         [NativeTypeName("LPARAM")]
         public nint lParam;
 
         [NativeTypeName("LPFNPSPCALLBACKW")]
-        public IntPtr pfnCallback;
+        public delegate* stdcall<IntPtr, uint, PROPSHEETPAGEW*, uint> pfnCallback;
 
         [NativeTypeName("UINT *")]
         public uint* pcRefParent;

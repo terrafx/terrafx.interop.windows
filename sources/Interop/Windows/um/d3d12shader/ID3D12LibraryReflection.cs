@@ -14,72 +14,52 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ID3D12LibraryReflection* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ID3D12LibraryReflection* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ID3D12LibraryReflection* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDesc(ID3D12LibraryReflection* pThis, [NativeTypeName("D3D12_LIBRARY_DESC *")] D3D12_LIBRARY_DESC* pDesc);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ID3D12FunctionReflection *")]
-        public delegate ID3D12FunctionReflection* _GetFunctionByIndex(ID3D12LibraryReflection* pThis, [NativeTypeName("INT")] int FunctionIndex);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ID3D12LibraryReflection*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((ID3D12LibraryReflection*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ID3D12LibraryReflection*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((ID3D12LibraryReflection*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ID3D12LibraryReflection*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((ID3D12LibraryReflection*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDesc([NativeTypeName("D3D12_LIBRARY_DESC *")] D3D12_LIBRARY_DESC* pDesc)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)((ID3D12LibraryReflection*)Unsafe.AsPointer(ref this), pDesc);
+            return lpVtbl->GetDesc((ID3D12LibraryReflection*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         [return: NativeTypeName("ID3D12FunctionReflection *")]
         public ID3D12FunctionReflection* GetFunctionByIndex([NativeTypeName("INT")] int FunctionIndex)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetFunctionByIndex>(lpVtbl->GetFunctionByIndex)((ID3D12LibraryReflection*)Unsafe.AsPointer(ref this), FunctionIndex);
+            return lpVtbl->GetFunctionByIndex((ID3D12LibraryReflection*)Unsafe.AsPointer(ref this), FunctionIndex);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<ID3D12LibraryReflection*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<ID3D12LibraryReflection*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<ID3D12LibraryReflection*, uint> Release;
 
             [NativeTypeName("HRESULT (D3D12_LIBRARY_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetDesc;
+            public delegate* stdcall<ID3D12LibraryReflection*, D3D12_LIBRARY_DESC*, int> GetDesc;
 
             [NativeTypeName("ID3D12FunctionReflection *(INT) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetFunctionByIndex;
+            public delegate* stdcall<ID3D12LibraryReflection*, int, ID3D12FunctionReflection*> GetFunctionByIndex;
         }
     }
 }

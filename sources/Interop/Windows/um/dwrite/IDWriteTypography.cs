@@ -14,85 +14,61 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDWriteTypography* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDWriteTypography* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDWriteTypography* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _AddFontFeature(IDWriteTypography* pThis, DWRITE_FONT_FEATURE fontFeature);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("UINT32")]
-        public delegate uint _GetFontFeatureCount(IDWriteTypography* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFontFeature(IDWriteTypography* pThis, [NativeTypeName("UINT32")] uint fontFeatureIndex, [NativeTypeName("DWRITE_FONT_FEATURE *")] DWRITE_FONT_FEATURE* fontFeature);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDWriteTypography*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IDWriteTypography*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDWriteTypography*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IDWriteTypography*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDWriteTypography*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IDWriteTypography*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int AddFontFeature(DWRITE_FONT_FEATURE fontFeature)
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddFontFeature>(lpVtbl->AddFontFeature)((IDWriteTypography*)Unsafe.AsPointer(ref this), fontFeature);
+            return lpVtbl->AddFontFeature((IDWriteTypography*)Unsafe.AsPointer(ref this), fontFeature);
         }
 
         [return: NativeTypeName("UINT32")]
         public uint GetFontFeatureCount()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetFontFeatureCount>(lpVtbl->GetFontFeatureCount)((IDWriteTypography*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetFontFeatureCount((IDWriteTypography*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetFontFeature([NativeTypeName("UINT32")] uint fontFeatureIndex, [NativeTypeName("DWRITE_FONT_FEATURE *")] DWRITE_FONT_FEATURE* fontFeature)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetFontFeature>(lpVtbl->GetFontFeature)((IDWriteTypography*)Unsafe.AsPointer(ref this), fontFeatureIndex, fontFeature);
+            return lpVtbl->GetFontFeature((IDWriteTypography*)Unsafe.AsPointer(ref this), fontFeatureIndex, fontFeature);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IDWriteTypography*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IDWriteTypography*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IDWriteTypography*, uint> Release;
 
             [NativeTypeName("HRESULT (DWRITE_FONT_FEATURE) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr AddFontFeature;
+            public delegate* stdcall<IDWriteTypography*, DWRITE_FONT_FEATURE, int> AddFontFeature;
 
             [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetFontFeatureCount;
+            public delegate* stdcall<IDWriteTypography*, uint> GetFontFeatureCount;
 
             [NativeTypeName("HRESULT (UINT32, DWRITE_FONT_FEATURE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetFontFeature;
+            public delegate* stdcall<IDWriteTypography*, uint, DWRITE_FONT_FEATURE*, int> GetFontFeature;
         }
     }
 }

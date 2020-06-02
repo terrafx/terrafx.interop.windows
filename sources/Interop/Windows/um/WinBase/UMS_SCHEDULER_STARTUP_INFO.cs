@@ -3,8 +3,6 @@
 // Ported from um/WinBase.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct UMS_SCHEDULER_STARTUP_INFO
@@ -16,7 +14,7 @@ namespace TerraFX.Interop
         public void* CompletionList;
 
         [NativeTypeName("PUMS_SCHEDULER_ENTRY_POINT")]
-        public IntPtr* SchedulerProc;
+        public delegate* stdcall<RTL_UMS_SCHEDULER_REASON, nuint, void*, void>* SchedulerProc;
 
         [NativeTypeName("PVOID")]
         public void* SchedulerParam;

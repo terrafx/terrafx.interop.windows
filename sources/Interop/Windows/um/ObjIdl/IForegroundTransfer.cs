@@ -14,59 +14,43 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IForegroundTransfer* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IForegroundTransfer* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IForegroundTransfer* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _AllowForegroundTransfer(IForegroundTransfer* pThis, [NativeTypeName("void *")] void* lpvReserved);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IForegroundTransfer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IForegroundTransfer*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IForegroundTransfer*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IForegroundTransfer*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IForegroundTransfer*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IForegroundTransfer*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int AllowForegroundTransfer([NativeTypeName("void *")] void* lpvReserved)
         {
-            return Marshal.GetDelegateForFunctionPointer<_AllowForegroundTransfer>(lpVtbl->AllowForegroundTransfer)((IForegroundTransfer*)Unsafe.AsPointer(ref this), lpvReserved);
+            return lpVtbl->AllowForegroundTransfer((IForegroundTransfer*)Unsafe.AsPointer(ref this), lpvReserved);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IForegroundTransfer*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IForegroundTransfer*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IForegroundTransfer*, uint> Release;
 
             [NativeTypeName("HRESULT (void *) __attribute__((stdcall))")]
-            public IntPtr AllowForegroundTransfer;
+            public delegate* stdcall<IForegroundTransfer*, void*, int> AllowForegroundTransfer;
         }
     }
 }

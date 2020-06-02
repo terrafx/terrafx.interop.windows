@@ -14,124 +14,88 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IPersistFile* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IPersistFile* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IPersistFile* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetClassID(IPersistFile* pThis, [NativeTypeName("CLSID *")] Guid* pClassID);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _IsDirty(IPersistFile* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Load(IPersistFile* pThis, [NativeTypeName("LPCOLESTR")] ushort* pszFileName, [NativeTypeName("DWORD")] uint dwMode);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Save(IPersistFile* pThis, [NativeTypeName("LPCOLESTR")] ushort* pszFileName, [NativeTypeName("BOOL")] int fRemember);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SaveCompleted(IPersistFile* pThis, [NativeTypeName("LPCOLESTR")] ushort* pszFileName);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetCurFile(IPersistFile* pThis, [NativeTypeName("LPOLESTR *")] ushort** ppszFileName);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IPersistFile*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IPersistFile*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IPersistFile*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IPersistFile*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IPersistFile*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IPersistFile*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetClassID>(lpVtbl->GetClassID)((IPersistFile*)Unsafe.AsPointer(ref this), pClassID);
+            return lpVtbl->GetClassID((IPersistFile*)Unsafe.AsPointer(ref this), pClassID);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int IsDirty()
         {
-            return Marshal.GetDelegateForFunctionPointer<_IsDirty>(lpVtbl->IsDirty)((IPersistFile*)Unsafe.AsPointer(ref this));
+            return lpVtbl->IsDirty((IPersistFile*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Load([NativeTypeName("LPCOLESTR")] ushort* pszFileName, [NativeTypeName("DWORD")] uint dwMode)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Load>(lpVtbl->Load)((IPersistFile*)Unsafe.AsPointer(ref this), pszFileName, dwMode);
+            return lpVtbl->Load((IPersistFile*)Unsafe.AsPointer(ref this), pszFileName, dwMode);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Save([NativeTypeName("LPCOLESTR")] ushort* pszFileName, [NativeTypeName("BOOL")] int fRemember)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Save>(lpVtbl->Save)((IPersistFile*)Unsafe.AsPointer(ref this), pszFileName, fRemember);
+            return lpVtbl->Save((IPersistFile*)Unsafe.AsPointer(ref this), pszFileName, fRemember);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SaveCompleted([NativeTypeName("LPCOLESTR")] ushort* pszFileName)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SaveCompleted>(lpVtbl->SaveCompleted)((IPersistFile*)Unsafe.AsPointer(ref this), pszFileName);
+            return lpVtbl->SaveCompleted((IPersistFile*)Unsafe.AsPointer(ref this), pszFileName);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetCurFile([NativeTypeName("LPOLESTR *")] ushort** ppszFileName)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetCurFile>(lpVtbl->GetCurFile)((IPersistFile*)Unsafe.AsPointer(ref this), ppszFileName);
+            return lpVtbl->GetCurFile((IPersistFile*)Unsafe.AsPointer(ref this), ppszFileName);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IPersistFile*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IPersistFile*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IPersistFile*, uint> Release;
 
             [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-            public IntPtr GetClassID;
+            public delegate* stdcall<IPersistFile*, Guid*, int> GetClassID;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr IsDirty;
+            public delegate* stdcall<IPersistFile*, int> IsDirty;
 
             [NativeTypeName("HRESULT (LPCOLESTR, DWORD) __attribute__((stdcall))")]
-            public IntPtr Load;
+            public delegate* stdcall<IPersistFile*, ushort*, uint, int> Load;
 
             [NativeTypeName("HRESULT (LPCOLESTR, BOOL) __attribute__((stdcall))")]
-            public IntPtr Save;
+            public delegate* stdcall<IPersistFile*, ushort*, int, int> Save;
 
             [NativeTypeName("HRESULT (LPCOLESTR) __attribute__((stdcall))")]
-            public IntPtr SaveCompleted;
+            public delegate* stdcall<IPersistFile*, ushort*, int> SaveCompleted;
 
             [NativeTypeName("HRESULT (LPOLESTR *) __attribute__((stdcall))")]
-            public IntPtr GetCurFile;
+            public delegate* stdcall<IPersistFile*, ushort**, int> GetCurFile;
         }
     }
 }

@@ -14,59 +14,43 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ID3D11RefTrackingOptions* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ID3D11RefTrackingOptions* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ID3D11RefTrackingOptions* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetTrackingOptions(ID3D11RefTrackingOptions* pThis, [NativeTypeName("UINT")] uint uOptions);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ID3D11RefTrackingOptions*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((ID3D11RefTrackingOptions*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ID3D11RefTrackingOptions*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((ID3D11RefTrackingOptions*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ID3D11RefTrackingOptions*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((ID3D11RefTrackingOptions*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetTrackingOptions([NativeTypeName("UINT")] uint uOptions)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetTrackingOptions>(lpVtbl->SetTrackingOptions)((ID3D11RefTrackingOptions*)Unsafe.AsPointer(ref this), uOptions);
+            return lpVtbl->SetTrackingOptions((ID3D11RefTrackingOptions*)Unsafe.AsPointer(ref this), uOptions);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<ID3D11RefTrackingOptions*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<ID3D11RefTrackingOptions*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<ID3D11RefTrackingOptions*, uint> Release;
 
             [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-            public IntPtr SetTrackingOptions;
+            public delegate* stdcall<ID3D11RefTrackingOptions*, uint, int> SetTrackingOptions;
         }
     }
 }

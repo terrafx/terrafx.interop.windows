@@ -14,171 +14,119 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDXCoreAdapter* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDXCoreAdapter* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDXCoreAdapter* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("bool")]
-        public delegate byte _IsValid(IDXCoreAdapter* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("bool")]
-        public delegate byte _IsAttributeSupported(IDXCoreAdapter* pThis, [NativeTypeName("const GUID &")] Guid* attributeGUID);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("bool")]
-        public delegate byte _IsPropertySupported(IDXCoreAdapter* pThis, DXCoreAdapterProperty property);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetProperty(IDXCoreAdapter* pThis, DXCoreAdapterProperty property, [NativeTypeName("size_t")] nuint bufferSize, [NativeTypeName("void *")] void* propertyData);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPropertySize(IDXCoreAdapter* pThis, DXCoreAdapterProperty property, [NativeTypeName("size_t *")] nuint* bufferSize);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("bool")]
-        public delegate byte _IsQueryStateSupported(IDXCoreAdapter* pThis, DXCoreAdapterState property);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryState(IDXCoreAdapter* pThis, DXCoreAdapterState state, [NativeTypeName("size_t")] nuint inputStateDetailsSize, [NativeTypeName("const void *")] void* inputStateDetails, [NativeTypeName("size_t")] nuint outputBufferSize, [NativeTypeName("void *")] void* outputBuffer);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("bool")]
-        public delegate byte _IsSetStateSupported(IDXCoreAdapter* pThis, DXCoreAdapterState property);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetState(IDXCoreAdapter* pThis, DXCoreAdapterState state, [NativeTypeName("size_t")] nuint inputStateDetailsSize, [NativeTypeName("const void *")] void* inputStateDetails, [NativeTypeName("size_t")] nuint inputDataSize, [NativeTypeName("const void *")] void* inputData);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetFactory(IDXCoreAdapter* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvFactory);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDXCoreAdapter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IDXCoreAdapter*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDXCoreAdapter*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IDXCoreAdapter*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDXCoreAdapter*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IDXCoreAdapter*)Unsafe.AsPointer(ref this));
         }
 
         public bool IsValid()
         {
-            return Marshal.GetDelegateForFunctionPointer<_IsValid>(lpVtbl->IsValid)((IDXCoreAdapter*)Unsafe.AsPointer(ref this)) != 0;
+            return lpVtbl->IsValid((IDXCoreAdapter*)Unsafe.AsPointer(ref this)) != 0;
         }
 
         public bool IsAttributeSupported([NativeTypeName("const GUID &")] Guid* attributeGUID)
         {
-            return Marshal.GetDelegateForFunctionPointer<_IsAttributeSupported>(lpVtbl->IsAttributeSupported)((IDXCoreAdapter*)Unsafe.AsPointer(ref this), attributeGUID) != 0;
+            return lpVtbl->IsAttributeSupported((IDXCoreAdapter*)Unsafe.AsPointer(ref this), attributeGUID) != 0;
         }
 
         public bool IsPropertySupported(DXCoreAdapterProperty property)
         {
-            return Marshal.GetDelegateForFunctionPointer<_IsPropertySupported>(lpVtbl->IsPropertySupported)((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property) != 0;
+            return lpVtbl->IsPropertySupported((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property) != 0;
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetProperty(DXCoreAdapterProperty property, [NativeTypeName("size_t")] nuint bufferSize, [NativeTypeName("void *")] void* propertyData)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetProperty>(lpVtbl->GetProperty)((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property, bufferSize, propertyData);
+            return lpVtbl->GetProperty((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property, bufferSize, propertyData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPropertySize(DXCoreAdapterProperty property, [NativeTypeName("size_t *")] nuint* bufferSize)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetPropertySize>(lpVtbl->GetPropertySize)((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property, bufferSize);
+            return lpVtbl->GetPropertySize((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property, bufferSize);
         }
 
         public bool IsQueryStateSupported(DXCoreAdapterState property)
         {
-            return Marshal.GetDelegateForFunctionPointer<_IsQueryStateSupported>(lpVtbl->IsQueryStateSupported)((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property) != 0;
+            return lpVtbl->IsQueryStateSupported((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property) != 0;
         }
 
         [return: NativeTypeName("HRESULT")]
         public int QueryState(DXCoreAdapterState state, [NativeTypeName("size_t")] nuint inputStateDetailsSize, [NativeTypeName("const void *")] void* inputStateDetails, [NativeTypeName("size_t")] nuint outputBufferSize, [NativeTypeName("void *")] void* outputBuffer)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryState>(lpVtbl->QueryState)((IDXCoreAdapter*)Unsafe.AsPointer(ref this), state, inputStateDetailsSize, inputStateDetails, outputBufferSize, outputBuffer);
+            return lpVtbl->QueryState((IDXCoreAdapter*)Unsafe.AsPointer(ref this), state, inputStateDetailsSize, inputStateDetails, outputBufferSize, outputBuffer);
         }
 
         public bool IsSetStateSupported(DXCoreAdapterState property)
         {
-            return Marshal.GetDelegateForFunctionPointer<_IsSetStateSupported>(lpVtbl->IsSetStateSupported)((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property) != 0;
+            return lpVtbl->IsSetStateSupported((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property) != 0;
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetState(DXCoreAdapterState state, [NativeTypeName("size_t")] nuint inputStateDetailsSize, [NativeTypeName("const void *")] void* inputStateDetails, [NativeTypeName("size_t")] nuint inputDataSize, [NativeTypeName("const void *")] void* inputData)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetState>(lpVtbl->SetState)((IDXCoreAdapter*)Unsafe.AsPointer(ref this), state, inputStateDetailsSize, inputStateDetails, inputDataSize, inputData);
+            return lpVtbl->SetState((IDXCoreAdapter*)Unsafe.AsPointer(ref this), state, inputStateDetailsSize, inputStateDetails, inputDataSize, inputData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetFactory([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvFactory)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetFactory>(lpVtbl->GetFactory)((IDXCoreAdapter*)Unsafe.AsPointer(ref this), riid, ppvFactory);
+            return lpVtbl->GetFactory((IDXCoreAdapter*)Unsafe.AsPointer(ref this), riid, ppvFactory);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IDXCoreAdapter*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IDXCoreAdapter*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IDXCoreAdapter*, uint> Release;
 
             [NativeTypeName("bool () __attribute__((stdcall))")]
-            public IntPtr IsValid;
+            public delegate* stdcall<IDXCoreAdapter*, byte> IsValid;
 
             [NativeTypeName("bool (const GUID &) __attribute__((stdcall))")]
-            public IntPtr IsAttributeSupported;
+            public delegate* stdcall<IDXCoreAdapter*, Guid*, byte> IsAttributeSupported;
 
             [NativeTypeName("bool (DXCoreAdapterProperty) __attribute__((stdcall))")]
-            public IntPtr IsPropertySupported;
+            public delegate* stdcall<IDXCoreAdapter*, DXCoreAdapterProperty, byte> IsPropertySupported;
 
             [NativeTypeName("HRESULT (DXCoreAdapterProperty, size_t, void *) __attribute__((stdcall))")]
-            public IntPtr GetProperty;
+            public delegate* stdcall<IDXCoreAdapter*, DXCoreAdapterProperty, nuint, void*, int> GetProperty;
 
             [NativeTypeName("HRESULT (DXCoreAdapterProperty, size_t *) __attribute__((stdcall))")]
-            public IntPtr GetPropertySize;
+            public delegate* stdcall<IDXCoreAdapter*, DXCoreAdapterProperty, nuint*, int> GetPropertySize;
 
             [NativeTypeName("bool (DXCoreAdapterState) __attribute__((stdcall))")]
-            public IntPtr IsQueryStateSupported;
+            public delegate* stdcall<IDXCoreAdapter*, DXCoreAdapterState, byte> IsQueryStateSupported;
 
             [NativeTypeName("HRESULT (DXCoreAdapterState, size_t, const void *, size_t, void *) __attribute__((stdcall))")]
-            public IntPtr QueryState;
+            public delegate* stdcall<IDXCoreAdapter*, DXCoreAdapterState, nuint, void*, nuint, void*, int> QueryState;
 
             [NativeTypeName("bool (DXCoreAdapterState) __attribute__((stdcall))")]
-            public IntPtr IsSetStateSupported;
+            public delegate* stdcall<IDXCoreAdapter*, DXCoreAdapterState, byte> IsSetStateSupported;
 
             [NativeTypeName("HRESULT (DXCoreAdapterState, size_t, const void *, size_t, const void *) __attribute__((stdcall))")]
-            public IntPtr SetState;
+            public delegate* stdcall<IDXCoreAdapter*, DXCoreAdapterState, nuint, void*, nuint, void*, int> SetState;
 
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr GetFactory;
+            public delegate* stdcall<IDXCoreAdapter*, Guid*, void**, int> GetFactory;
         }
     }
 }

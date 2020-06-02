@@ -3,8 +3,6 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct CRYPT_VERIFY_MESSAGE_PARA
@@ -19,7 +17,7 @@ namespace TerraFX.Interop
         public nuint hCryptProv;
 
         [NativeTypeName("PFN_CRYPT_GET_SIGNER_CERTIFICATE")]
-        public IntPtr pfnGetSignerCertificate;
+        public delegate* stdcall<void*, uint, CERT_INFO*, void*, CERT_CONTEXT*> pfnGetSignerCertificate;
 
         [NativeTypeName("void *")]
         public void* pvGetArg;

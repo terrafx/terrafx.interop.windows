@@ -14,72 +14,52 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IRpcOptions* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IRpcOptions* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IRpcOptions* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Set(IRpcOptions* pThis, [NativeTypeName("IUnknown *")] IUnknown* pPrx, RPCOPT_PROPERTIES dwProperty, [NativeTypeName("ULONG_PTR")] nuint dwValue);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Query(IRpcOptions* pThis, [NativeTypeName("IUnknown *")] IUnknown* pPrx, RPCOPT_PROPERTIES dwProperty, [NativeTypeName("ULONG_PTR *")] nuint* pdwValue);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IRpcOptions*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IRpcOptions*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IRpcOptions*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IRpcOptions*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IRpcOptions*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IRpcOptions*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Set([NativeTypeName("IUnknown *")] IUnknown* pPrx, RPCOPT_PROPERTIES dwProperty, [NativeTypeName("ULONG_PTR")] nuint dwValue)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Set>(lpVtbl->Set)((IRpcOptions*)Unsafe.AsPointer(ref this), pPrx, dwProperty, dwValue);
+            return lpVtbl->Set((IRpcOptions*)Unsafe.AsPointer(ref this), pPrx, dwProperty, dwValue);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Query([NativeTypeName("IUnknown *")] IUnknown* pPrx, RPCOPT_PROPERTIES dwProperty, [NativeTypeName("ULONG_PTR *")] nuint* pdwValue)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Query>(lpVtbl->Query)((IRpcOptions*)Unsafe.AsPointer(ref this), pPrx, dwProperty, pdwValue);
+            return lpVtbl->Query((IRpcOptions*)Unsafe.AsPointer(ref this), pPrx, dwProperty, pdwValue);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IRpcOptions*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IRpcOptions*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IRpcOptions*, uint> Release;
 
             [NativeTypeName("HRESULT (IUnknown *, RPCOPT_PROPERTIES, ULONG_PTR) __attribute__((stdcall))")]
-            public IntPtr Set;
+            public delegate* stdcall<IRpcOptions*, IUnknown*, RPCOPT_PROPERTIES, nuint, int> Set;
 
             [NativeTypeName("HRESULT (IUnknown *, RPCOPT_PROPERTIES, ULONG_PTR *) __attribute__((stdcall))")]
-            public IntPtr Query;
+            public delegate* stdcall<IRpcOptions*, IUnknown*, RPCOPT_PROPERTIES, nuint*, int> Query;
         }
     }
 }

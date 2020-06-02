@@ -3,8 +3,6 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct CERT_CREATE_CONTEXT_PARA
@@ -13,13 +11,13 @@ namespace TerraFX.Interop
         public uint cbSize;
 
         [NativeTypeName("PFN_CRYPT_FREE")]
-        public IntPtr pfnFree;
+        public delegate* stdcall<void*, void> pfnFree;
 
         [NativeTypeName("void *")]
         public void* pvFree;
 
         [NativeTypeName("PFN_CERT_CREATE_CONTEXT_SORT_FUNC")]
-        public IntPtr pfnSort;
+        public delegate* stdcall<uint, uint, uint, void*, int> pfnSort;
 
         [NativeTypeName("void *")]
         public void* pvSort;

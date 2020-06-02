@@ -14,72 +14,52 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ISynchronizeEvent* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ISynchronizeEvent* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ISynchronizeEvent* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetHandle(ISynchronizeEvent* pThis, [NativeTypeName("HANDLE *")] IntPtr* ph);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetEventHandle(ISynchronizeEvent* pThis, [NativeTypeName("HANDLE *")] IntPtr* ph);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ISynchronizeEvent*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((ISynchronizeEvent*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ISynchronizeEvent*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((ISynchronizeEvent*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ISynchronizeEvent*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((ISynchronizeEvent*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetHandle([NativeTypeName("HANDLE *")] IntPtr* ph)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetHandle>(lpVtbl->GetHandle)((ISynchronizeEvent*)Unsafe.AsPointer(ref this), ph);
+            return lpVtbl->GetHandle((ISynchronizeEvent*)Unsafe.AsPointer(ref this), ph);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetEventHandle([NativeTypeName("HANDLE *")] IntPtr* ph)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetEventHandle>(lpVtbl->SetEventHandle)((ISynchronizeEvent*)Unsafe.AsPointer(ref this), ph);
+            return lpVtbl->SetEventHandle((ISynchronizeEvent*)Unsafe.AsPointer(ref this), ph);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<ISynchronizeEvent*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<ISynchronizeEvent*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<ISynchronizeEvent*, uint> Release;
 
             [NativeTypeName("HRESULT (HANDLE *) __attribute__((stdcall))")]
-            public IntPtr GetHandle;
+            public delegate* stdcall<ISynchronizeEvent*, IntPtr*, int> GetHandle;
 
             [NativeTypeName("HRESULT (HANDLE *) __attribute__((stdcall))")]
-            public IntPtr SetEventHandle;
+            public delegate* stdcall<ISynchronizeEvent*, IntPtr*, int> SetEventHandle;
         }
     }
 }

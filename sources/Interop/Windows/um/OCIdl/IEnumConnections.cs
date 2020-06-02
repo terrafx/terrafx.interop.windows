@@ -14,98 +14,70 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IEnumConnections* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IEnumConnections* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IEnumConnections* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Next(IEnumConnections* pThis, [NativeTypeName("ULONG")] uint cConnections, [NativeTypeName("LPCONNECTDATA")] CONNECTDATA* rgcd, [NativeTypeName("ULONG *")] uint* pcFetched);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Skip(IEnumConnections* pThis, [NativeTypeName("ULONG")] uint cConnections);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Reset(IEnumConnections* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Clone(IEnumConnections* pThis, [NativeTypeName("IEnumConnections **")] IEnumConnections** ppEnum);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IEnumConnections*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IEnumConnections*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IEnumConnections*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IEnumConnections*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IEnumConnections*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IEnumConnections*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Next([NativeTypeName("ULONG")] uint cConnections, [NativeTypeName("LPCONNECTDATA")] CONNECTDATA* rgcd, [NativeTypeName("ULONG *")] uint* pcFetched)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Next>(lpVtbl->Next)((IEnumConnections*)Unsafe.AsPointer(ref this), cConnections, rgcd, pcFetched);
+            return lpVtbl->Next((IEnumConnections*)Unsafe.AsPointer(ref this), cConnections, rgcd, pcFetched);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Skip([NativeTypeName("ULONG")] uint cConnections)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Skip>(lpVtbl->Skip)((IEnumConnections*)Unsafe.AsPointer(ref this), cConnections);
+            return lpVtbl->Skip((IEnumConnections*)Unsafe.AsPointer(ref this), cConnections);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Reset()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Reset>(lpVtbl->Reset)((IEnumConnections*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Reset((IEnumConnections*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Clone([NativeTypeName("IEnumConnections **")] IEnumConnections** ppEnum)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Clone>(lpVtbl->Clone)((IEnumConnections*)Unsafe.AsPointer(ref this), ppEnum);
+            return lpVtbl->Clone((IEnumConnections*)Unsafe.AsPointer(ref this), ppEnum);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IEnumConnections*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IEnumConnections*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IEnumConnections*, uint> Release;
 
             [NativeTypeName("HRESULT (ULONG, LPCONNECTDATA, ULONG *) __attribute__((stdcall))")]
-            public IntPtr Next;
+            public delegate* stdcall<IEnumConnections*, uint, CONNECTDATA*, uint*, int> Next;
 
             [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-            public IntPtr Skip;
+            public delegate* stdcall<IEnumConnections*, uint, int> Skip;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr Reset;
+            public delegate* stdcall<IEnumConnections*, int> Reset;
 
             [NativeTypeName("HRESULT (IEnumConnections **) __attribute__((stdcall))")]
-            public IntPtr Clone;
+            public delegate* stdcall<IEnumConnections*, IEnumConnections**, int> Clone;
         }
     }
 }

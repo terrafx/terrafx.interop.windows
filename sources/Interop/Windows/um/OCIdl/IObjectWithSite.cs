@@ -14,72 +14,52 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IObjectWithSite* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IObjectWithSite* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IObjectWithSite* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetSite(IObjectWithSite* pThis, [NativeTypeName("IUnknown *")] IUnknown* pUnkSite);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetSite(IObjectWithSite* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvSite);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IObjectWithSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IObjectWithSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IObjectWithSite*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IObjectWithSite*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IObjectWithSite*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IObjectWithSite*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetSite([NativeTypeName("IUnknown *")] IUnknown* pUnkSite)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetSite>(lpVtbl->SetSite)((IObjectWithSite*)Unsafe.AsPointer(ref this), pUnkSite);
+            return lpVtbl->SetSite((IObjectWithSite*)Unsafe.AsPointer(ref this), pUnkSite);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetSite([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvSite)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetSite>(lpVtbl->GetSite)((IObjectWithSite*)Unsafe.AsPointer(ref this), riid, ppvSite);
+            return lpVtbl->GetSite((IObjectWithSite*)Unsafe.AsPointer(ref this), riid, ppvSite);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IObjectWithSite*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IObjectWithSite*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IObjectWithSite*, uint> Release;
 
             [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-            public IntPtr SetSite;
+            public delegate* stdcall<IObjectWithSite*, IUnknown*, int> SetSite;
 
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr GetSite;
+            public delegate* stdcall<IObjectWithSite*, Guid*, void**, int> GetSite;
         }
     }
 }

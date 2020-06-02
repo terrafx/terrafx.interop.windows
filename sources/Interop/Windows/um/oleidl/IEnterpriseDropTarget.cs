@@ -14,72 +14,52 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IEnterpriseDropTarget* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IEnterpriseDropTarget* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IEnterpriseDropTarget* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetDropSourceEnterpriseId(IEnterpriseDropTarget* pThis, [NativeTypeName("LPCWSTR")] ushort* identity);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _IsEvaluatingEdpPolicy(IEnterpriseDropTarget* pThis, [NativeTypeName("BOOL *")] int* value);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetDropSourceEnterpriseId([NativeTypeName("LPCWSTR")] ushort* identity)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetDropSourceEnterpriseId>(lpVtbl->SetDropSourceEnterpriseId)((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this), identity);
+            return lpVtbl->SetDropSourceEnterpriseId((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this), identity);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int IsEvaluatingEdpPolicy([NativeTypeName("BOOL *")] int* value)
         {
-            return Marshal.GetDelegateForFunctionPointer<_IsEvaluatingEdpPolicy>(lpVtbl->IsEvaluatingEdpPolicy)((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this), value);
+            return lpVtbl->IsEvaluatingEdpPolicy((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this), value);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IEnterpriseDropTarget*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IEnterpriseDropTarget*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IEnterpriseDropTarget*, uint> Release;
 
             [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public IntPtr SetDropSourceEnterpriseId;
+            public delegate* stdcall<IEnterpriseDropTarget*, ushort*, int> SetDropSourceEnterpriseId;
 
             [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public IntPtr IsEvaluatingEdpPolicy;
+            public delegate* stdcall<IEnterpriseDropTarget*, int*, int> IsEvaluatingEdpPolicy;
         }
     }
 }

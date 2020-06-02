@@ -14,124 +14,88 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDWriteFontDownloadQueue* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDWriteFontDownloadQueue* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDWriteFontDownloadQueue* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _AddListener(IDWriteFontDownloadQueue* pThis, [NativeTypeName("IDWriteFontDownloadListener *")] IDWriteFontDownloadListener* listener, [NativeTypeName("UINT32 *")] uint* token);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _RemoveListener(IDWriteFontDownloadQueue* pThis, [NativeTypeName("UINT32")] uint token);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("BOOL")]
-        public delegate int _IsEmpty(IDWriteFontDownloadQueue* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _BeginDownload(IDWriteFontDownloadQueue* pThis, [NativeTypeName("IUnknown *")] IUnknown* context = null);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _CancelDownload(IDWriteFontDownloadQueue* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("UINT64")]
-        public delegate ulong _GetGenerationCount(IDWriteFontDownloadQueue* pThis);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int AddListener([NativeTypeName("IDWriteFontDownloadListener *")] IDWriteFontDownloadListener* listener, [NativeTypeName("UINT32 *")] uint* token)
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddListener>(lpVtbl->AddListener)((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this), listener, token);
+            return lpVtbl->AddListener((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this), listener, token);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int RemoveListener([NativeTypeName("UINT32")] uint token)
         {
-            return Marshal.GetDelegateForFunctionPointer<_RemoveListener>(lpVtbl->RemoveListener)((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this), token);
+            return lpVtbl->RemoveListener((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this), token);
         }
 
         [return: NativeTypeName("BOOL")]
         public int IsEmpty()
         {
-            return Marshal.GetDelegateForFunctionPointer<_IsEmpty>(lpVtbl->IsEmpty)((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this));
+            return lpVtbl->IsEmpty((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int BeginDownload([NativeTypeName("IUnknown *")] IUnknown* context = null)
         {
-            return Marshal.GetDelegateForFunctionPointer<_BeginDownload>(lpVtbl->BeginDownload)((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this), context);
+            return lpVtbl->BeginDownload((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this), context);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CancelDownload()
         {
-            return Marshal.GetDelegateForFunctionPointer<_CancelDownload>(lpVtbl->CancelDownload)((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this));
+            return lpVtbl->CancelDownload((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("UINT64")]
         public ulong GetGenerationCount()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetGenerationCount>(lpVtbl->GetGenerationCount)((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetGenerationCount((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this));
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IDWriteFontDownloadQueue*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IDWriteFontDownloadQueue*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IDWriteFontDownloadQueue*, uint> Release;
 
             [NativeTypeName("HRESULT (IDWriteFontDownloadListener *, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr AddListener;
+            public delegate* stdcall<IDWriteFontDownloadQueue*, IDWriteFontDownloadListener*, uint*, int> AddListener;
 
             [NativeTypeName("HRESULT (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr RemoveListener;
+            public delegate* stdcall<IDWriteFontDownloadQueue*, uint, int> RemoveListener;
 
             [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr IsEmpty;
+            public delegate* stdcall<IDWriteFontDownloadQueue*, int> IsEmpty;
 
             [NativeTypeName("HRESULT (IUnknown *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr BeginDownload;
+            public delegate* stdcall<IDWriteFontDownloadQueue*, IUnknown*, int> BeginDownload;
 
             [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr CancelDownload;
+            public delegate* stdcall<IDWriteFontDownloadQueue*, int> CancelDownload;
 
             [NativeTypeName("UINT64 () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetGenerationCount;
+            public delegate* stdcall<IDWriteFontDownloadQueue*, ulong> GetGenerationCount;
         }
     }
 }

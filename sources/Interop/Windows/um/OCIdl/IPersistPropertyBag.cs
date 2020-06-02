@@ -14,98 +14,70 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IPersistPropertyBag* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IPersistPropertyBag* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IPersistPropertyBag* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetClassID(IPersistPropertyBag* pThis, [NativeTypeName("CLSID *")] Guid* pClassID);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _InitNew(IPersistPropertyBag* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Load(IPersistPropertyBag* pThis, [NativeTypeName("IPropertyBag *")] IPropertyBag* pPropBag, [NativeTypeName("IErrorLog *")] IErrorLog* pErrorLog);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Save(IPersistPropertyBag* pThis, [NativeTypeName("IPropertyBag *")] IPropertyBag* pPropBag, [NativeTypeName("BOOL")] int fClearDirty, [NativeTypeName("BOOL")] int fSaveAllProperties);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IPersistPropertyBag*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IPersistPropertyBag*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IPersistPropertyBag*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IPersistPropertyBag*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IPersistPropertyBag*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IPersistPropertyBag*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetClassID>(lpVtbl->GetClassID)((IPersistPropertyBag*)Unsafe.AsPointer(ref this), pClassID);
+            return lpVtbl->GetClassID((IPersistPropertyBag*)Unsafe.AsPointer(ref this), pClassID);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int InitNew()
         {
-            return Marshal.GetDelegateForFunctionPointer<_InitNew>(lpVtbl->InitNew)((IPersistPropertyBag*)Unsafe.AsPointer(ref this));
+            return lpVtbl->InitNew((IPersistPropertyBag*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Load([NativeTypeName("IPropertyBag *")] IPropertyBag* pPropBag, [NativeTypeName("IErrorLog *")] IErrorLog* pErrorLog)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Load>(lpVtbl->Load)((IPersistPropertyBag*)Unsafe.AsPointer(ref this), pPropBag, pErrorLog);
+            return lpVtbl->Load((IPersistPropertyBag*)Unsafe.AsPointer(ref this), pPropBag, pErrorLog);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Save([NativeTypeName("IPropertyBag *")] IPropertyBag* pPropBag, [NativeTypeName("BOOL")] int fClearDirty, [NativeTypeName("BOOL")] int fSaveAllProperties)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Save>(lpVtbl->Save)((IPersistPropertyBag*)Unsafe.AsPointer(ref this), pPropBag, fClearDirty, fSaveAllProperties);
+            return lpVtbl->Save((IPersistPropertyBag*)Unsafe.AsPointer(ref this), pPropBag, fClearDirty, fSaveAllProperties);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IPersistPropertyBag*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IPersistPropertyBag*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IPersistPropertyBag*, uint> Release;
 
             [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-            public IntPtr GetClassID;
+            public delegate* stdcall<IPersistPropertyBag*, Guid*, int> GetClassID;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr InitNew;
+            public delegate* stdcall<IPersistPropertyBag*, int> InitNew;
 
             [NativeTypeName("HRESULT (IPropertyBag *, IErrorLog *) __attribute__((stdcall))")]
-            public IntPtr Load;
+            public delegate* stdcall<IPersistPropertyBag*, IPropertyBag*, IErrorLog*, int> Load;
 
             [NativeTypeName("HRESULT (IPropertyBag *, BOOL, BOOL) __attribute__((stdcall))")]
-            public IntPtr Save;
+            public delegate* stdcall<IPersistPropertyBag*, IPropertyBag*, int, int, int> Save;
         }
     }
 }

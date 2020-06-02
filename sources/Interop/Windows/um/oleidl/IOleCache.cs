@@ -14,111 +14,79 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IOleCache* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IOleCache* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IOleCache* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Cache(IOleCache* pThis, [NativeTypeName("FORMATETC *")] FORMATETC* pformatetc, [NativeTypeName("DWORD")] uint advf, [NativeTypeName("DWORD *")] uint* pdwConnection);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Uncache(IOleCache* pThis, [NativeTypeName("DWORD")] uint dwConnection);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _EnumCache(IOleCache* pThis, [NativeTypeName("IEnumSTATDATA **")] IEnumSTATDATA** ppenumSTATDATA);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _InitCache(IOleCache* pThis, [NativeTypeName("IDataObject *")] IDataObject* pDataObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetData(IOleCache* pThis, [NativeTypeName("FORMATETC *")] FORMATETC* pformatetc, [NativeTypeName("STGMEDIUM *")] STGMEDIUM* pmedium, [NativeTypeName("BOOL")] int fRelease);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IOleCache*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IOleCache*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IOleCache*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IOleCache*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IOleCache*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IOleCache*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Cache([NativeTypeName("FORMATETC *")] FORMATETC* pformatetc, [NativeTypeName("DWORD")] uint advf, [NativeTypeName("DWORD *")] uint* pdwConnection)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Cache>(lpVtbl->Cache)((IOleCache*)Unsafe.AsPointer(ref this), pformatetc, advf, pdwConnection);
+            return lpVtbl->Cache((IOleCache*)Unsafe.AsPointer(ref this), pformatetc, advf, pdwConnection);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Uncache([NativeTypeName("DWORD")] uint dwConnection)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Uncache>(lpVtbl->Uncache)((IOleCache*)Unsafe.AsPointer(ref this), dwConnection);
+            return lpVtbl->Uncache((IOleCache*)Unsafe.AsPointer(ref this), dwConnection);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int EnumCache([NativeTypeName("IEnumSTATDATA **")] IEnumSTATDATA** ppenumSTATDATA)
         {
-            return Marshal.GetDelegateForFunctionPointer<_EnumCache>(lpVtbl->EnumCache)((IOleCache*)Unsafe.AsPointer(ref this), ppenumSTATDATA);
+            return lpVtbl->EnumCache((IOleCache*)Unsafe.AsPointer(ref this), ppenumSTATDATA);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int InitCache([NativeTypeName("IDataObject *")] IDataObject* pDataObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_InitCache>(lpVtbl->InitCache)((IOleCache*)Unsafe.AsPointer(ref this), pDataObject);
+            return lpVtbl->InitCache((IOleCache*)Unsafe.AsPointer(ref this), pDataObject);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetData([NativeTypeName("FORMATETC *")] FORMATETC* pformatetc, [NativeTypeName("STGMEDIUM *")] STGMEDIUM* pmedium, [NativeTypeName("BOOL")] int fRelease)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetData>(lpVtbl->SetData)((IOleCache*)Unsafe.AsPointer(ref this), pformatetc, pmedium, fRelease);
+            return lpVtbl->SetData((IOleCache*)Unsafe.AsPointer(ref this), pformatetc, pmedium, fRelease);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IOleCache*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IOleCache*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IOleCache*, uint> Release;
 
             [NativeTypeName("HRESULT (FORMATETC *, DWORD, DWORD *) __attribute__((stdcall))")]
-            public IntPtr Cache;
+            public delegate* stdcall<IOleCache*, FORMATETC*, uint, uint*, int> Cache;
 
             [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public IntPtr Uncache;
+            public delegate* stdcall<IOleCache*, uint, int> Uncache;
 
             [NativeTypeName("HRESULT (IEnumSTATDATA **) __attribute__((stdcall))")]
-            public IntPtr EnumCache;
+            public delegate* stdcall<IOleCache*, IEnumSTATDATA**, int> EnumCache;
 
             [NativeTypeName("HRESULT (IDataObject *) __attribute__((stdcall))")]
-            public IntPtr InitCache;
+            public delegate* stdcall<IOleCache*, IDataObject*, int> InitCache;
 
             [NativeTypeName("HRESULT (FORMATETC *, STGMEDIUM *, BOOL) __attribute__((stdcall))")]
-            public IntPtr SetData;
+            public delegate* stdcall<IOleCache*, FORMATETC*, STGMEDIUM*, int, int> SetData;
         }
     }
 }

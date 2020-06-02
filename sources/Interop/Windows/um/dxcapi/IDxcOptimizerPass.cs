@@ -14,111 +14,79 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDxcOptimizerPass* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDxcOptimizerPass* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDxcOptimizerPass* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetOptionName(IDxcOptimizerPass* pThis, [NativeTypeName("LPWSTR *")] ushort** ppResult);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDescription(IDxcOptimizerPass* pThis, [NativeTypeName("LPWSTR *")] ushort** ppResult);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetOptionArgCount(IDxcOptimizerPass* pThis, [NativeTypeName("UINT32 *")] uint* pCount);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetOptionArgName(IDxcOptimizerPass* pThis, [NativeTypeName("UINT32")] uint argIndex, [NativeTypeName("LPWSTR *")] ushort** ppResult);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetOptionArgDescription(IDxcOptimizerPass* pThis, [NativeTypeName("UINT32")] uint argIndex, [NativeTypeName("LPWSTR *")] ushort** ppResult);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDxcOptimizerPass*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IDxcOptimizerPass*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDxcOptimizerPass*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IDxcOptimizerPass*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDxcOptimizerPass*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IDxcOptimizerPass*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetOptionName([NativeTypeName("LPWSTR *")] ushort** ppResult)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetOptionName>(lpVtbl->GetOptionName)((IDxcOptimizerPass*)Unsafe.AsPointer(ref this), ppResult);
+            return lpVtbl->GetOptionName((IDxcOptimizerPass*)Unsafe.AsPointer(ref this), ppResult);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDescription([NativeTypeName("LPWSTR *")] ushort** ppResult)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetDescription>(lpVtbl->GetDescription)((IDxcOptimizerPass*)Unsafe.AsPointer(ref this), ppResult);
+            return lpVtbl->GetDescription((IDxcOptimizerPass*)Unsafe.AsPointer(ref this), ppResult);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetOptionArgCount([NativeTypeName("UINT32 *")] uint* pCount)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetOptionArgCount>(lpVtbl->GetOptionArgCount)((IDxcOptimizerPass*)Unsafe.AsPointer(ref this), pCount);
+            return lpVtbl->GetOptionArgCount((IDxcOptimizerPass*)Unsafe.AsPointer(ref this), pCount);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetOptionArgName([NativeTypeName("UINT32")] uint argIndex, [NativeTypeName("LPWSTR *")] ushort** ppResult)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetOptionArgName>(lpVtbl->GetOptionArgName)((IDxcOptimizerPass*)Unsafe.AsPointer(ref this), argIndex, ppResult);
+            return lpVtbl->GetOptionArgName((IDxcOptimizerPass*)Unsafe.AsPointer(ref this), argIndex, ppResult);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetOptionArgDescription([NativeTypeName("UINT32")] uint argIndex, [NativeTypeName("LPWSTR *")] ushort** ppResult)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetOptionArgDescription>(lpVtbl->GetOptionArgDescription)((IDxcOptimizerPass*)Unsafe.AsPointer(ref this), argIndex, ppResult);
+            return lpVtbl->GetOptionArgDescription((IDxcOptimizerPass*)Unsafe.AsPointer(ref this), argIndex, ppResult);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IDxcOptimizerPass*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IDxcOptimizerPass*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IDxcOptimizerPass*, uint> Release;
 
             [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-            public IntPtr GetOptionName;
+            public delegate* stdcall<IDxcOptimizerPass*, ushort**, int> GetOptionName;
 
             [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-            public IntPtr GetDescription;
+            public delegate* stdcall<IDxcOptimizerPass*, ushort**, int> GetDescription;
 
             [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
-            public IntPtr GetOptionArgCount;
+            public delegate* stdcall<IDxcOptimizerPass*, uint*, int> GetOptionArgCount;
 
             [NativeTypeName("HRESULT (UINT32, LPWSTR *) __attribute__((stdcall))")]
-            public IntPtr GetOptionArgName;
+            public delegate* stdcall<IDxcOptimizerPass*, uint, ushort**, int> GetOptionArgName;
 
             [NativeTypeName("HRESULT (UINT32, LPWSTR *) __attribute__((stdcall))")]
-            public IntPtr GetOptionArgDescription;
+            public delegate* stdcall<IDxcOptimizerPass*, uint, ushort**, int> GetOptionArgDescription;
         }
     }
 }

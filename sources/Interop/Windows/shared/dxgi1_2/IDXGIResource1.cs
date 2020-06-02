@@ -14,189 +14,133 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDXGIResource1* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDXGIResource1* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDXGIResource1* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateData(IDXGIResource1* pThis, [NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateDataInterface(IDXGIResource1* pThis, [NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("const IUnknown *")] IUnknown* pUnknown);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPrivateData(IDXGIResource1* pThis, [NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetParent(IDXGIResource1* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppParent);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDevice(IDXGIResource1* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppDevice);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetSharedHandle(IDXGIResource1* pThis, [NativeTypeName("HANDLE *")] IntPtr* pSharedHandle);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetUsage(IDXGIResource1* pThis, [NativeTypeName("DXGI_USAGE *")] uint* pUsage);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetEvictionPriority(IDXGIResource1* pThis, [NativeTypeName("UINT")] uint EvictionPriority);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetEvictionPriority(IDXGIResource1* pThis, [NativeTypeName("UINT *")] uint* pEvictionPriority);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateSubresourceSurface(IDXGIResource1* pThis, [NativeTypeName("UINT")] uint index, [NativeTypeName("IDXGISurface2 **")] IDXGISurface2** ppSurface);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateSharedHandle(IDXGIResource1* pThis, [NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint dwAccess, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("HANDLE *")] IntPtr* pHandle);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDXGIResource1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IDXGIResource1*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDXGIResource1*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IDXGIResource1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDXGIResource1*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IDXGIResource1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)((IDXGIResource1*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
+            return lpVtbl->SetPrivateData((IDXGIResource1*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("const IUnknown *")] IUnknown* pUnknown)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)((IDXGIResource1*)Unsafe.AsPointer(ref this), Name, pUnknown);
+            return lpVtbl->SetPrivateDataInterface((IDXGIResource1*)Unsafe.AsPointer(ref this), Name, pUnknown);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPrivateData([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)((IDXGIResource1*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
+            return lpVtbl->GetPrivateData((IDXGIResource1*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetParent([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppParent)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetParent>(lpVtbl->GetParent)((IDXGIResource1*)Unsafe.AsPointer(ref this), riid, ppParent);
+            return lpVtbl->GetParent((IDXGIResource1*)Unsafe.AsPointer(ref this), riid, ppParent);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDevice([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppDevice)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetDevice>(lpVtbl->GetDevice)((IDXGIResource1*)Unsafe.AsPointer(ref this), riid, ppDevice);
+            return lpVtbl->GetDevice((IDXGIResource1*)Unsafe.AsPointer(ref this), riid, ppDevice);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetSharedHandle([NativeTypeName("HANDLE *")] IntPtr* pSharedHandle)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetSharedHandle>(lpVtbl->GetSharedHandle)((IDXGIResource1*)Unsafe.AsPointer(ref this), pSharedHandle);
+            return lpVtbl->GetSharedHandle((IDXGIResource1*)Unsafe.AsPointer(ref this), pSharedHandle);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetUsage([NativeTypeName("DXGI_USAGE *")] uint* pUsage)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetUsage>(lpVtbl->GetUsage)((IDXGIResource1*)Unsafe.AsPointer(ref this), pUsage);
+            return lpVtbl->GetUsage((IDXGIResource1*)Unsafe.AsPointer(ref this), pUsage);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetEvictionPriority([NativeTypeName("UINT")] uint EvictionPriority)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetEvictionPriority>(lpVtbl->SetEvictionPriority)((IDXGIResource1*)Unsafe.AsPointer(ref this), EvictionPriority);
+            return lpVtbl->SetEvictionPriority((IDXGIResource1*)Unsafe.AsPointer(ref this), EvictionPriority);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetEvictionPriority([NativeTypeName("UINT *")] uint* pEvictionPriority)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetEvictionPriority>(lpVtbl->GetEvictionPriority)((IDXGIResource1*)Unsafe.AsPointer(ref this), pEvictionPriority);
+            return lpVtbl->GetEvictionPriority((IDXGIResource1*)Unsafe.AsPointer(ref this), pEvictionPriority);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CreateSubresourceSurface([NativeTypeName("UINT")] uint index, [NativeTypeName("IDXGISurface2 **")] IDXGISurface2** ppSurface)
         {
-            return Marshal.GetDelegateForFunctionPointer<_CreateSubresourceSurface>(lpVtbl->CreateSubresourceSurface)((IDXGIResource1*)Unsafe.AsPointer(ref this), index, ppSurface);
+            return lpVtbl->CreateSubresourceSurface((IDXGIResource1*)Unsafe.AsPointer(ref this), index, ppSurface);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CreateSharedHandle([NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint dwAccess, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("HANDLE *")] IntPtr* pHandle)
         {
-            return Marshal.GetDelegateForFunctionPointer<_CreateSharedHandle>(lpVtbl->CreateSharedHandle)((IDXGIResource1*)Unsafe.AsPointer(ref this), pAttributes, dwAccess, lpName, pHandle);
+            return lpVtbl->CreateSharedHandle((IDXGIResource1*)Unsafe.AsPointer(ref this), pAttributes, dwAccess, lpName, pHandle);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IDXGIResource1*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IDXGIResource1*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IDXGIResource1*, uint> Release;
 
             [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-            public IntPtr SetPrivateData;
+            public delegate* stdcall<IDXGIResource1*, Guid*, uint, void*, int> SetPrivateData;
 
             [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-            public IntPtr SetPrivateDataInterface;
+            public delegate* stdcall<IDXGIResource1*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
             [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-            public IntPtr GetPrivateData;
+            public delegate* stdcall<IDXGIResource1*, Guid*, uint*, void*, int> GetPrivateData;
 
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr GetParent;
+            public delegate* stdcall<IDXGIResource1*, Guid*, void**, int> GetParent;
 
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr GetDevice;
+            public delegate* stdcall<IDXGIResource1*, Guid*, void**, int> GetDevice;
 
             [NativeTypeName("HRESULT (HANDLE *) __attribute__((stdcall))")]
-            public IntPtr GetSharedHandle;
+            public delegate* stdcall<IDXGIResource1*, IntPtr*, int> GetSharedHandle;
 
             [NativeTypeName("HRESULT (DXGI_USAGE *) __attribute__((stdcall))")]
-            public IntPtr GetUsage;
+            public delegate* stdcall<IDXGIResource1*, uint*, int> GetUsage;
 
             [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-            public IntPtr SetEvictionPriority;
+            public delegate* stdcall<IDXGIResource1*, uint, int> SetEvictionPriority;
 
             [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public IntPtr GetEvictionPriority;
+            public delegate* stdcall<IDXGIResource1*, uint*, int> GetEvictionPriority;
 
             [NativeTypeName("HRESULT (UINT, IDXGISurface2 **) __attribute__((stdcall))")]
-            public IntPtr CreateSubresourceSurface;
+            public delegate* stdcall<IDXGIResource1*, uint, IDXGISurface2**, int> CreateSubresourceSurface;
 
             [NativeTypeName("HRESULT (const SECURITY_ATTRIBUTES *, DWORD, LPCWSTR, HANDLE *) __attribute__((stdcall))")]
-            public IntPtr CreateSharedHandle;
+            public delegate* stdcall<IDXGIResource1*, SECURITY_ATTRIBUTES*, uint, ushort*, IntPtr*, int> CreateSharedHandle;
         }
     }
 }

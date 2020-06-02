@@ -14,124 +14,88 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDCompositionColorMatrixEffect* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDCompositionColorMatrixEffect* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDCompositionColorMatrixEffect* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetInput(IDCompositionColorMatrixEffect* pThis, [NativeTypeName("UINT")] uint index, [NativeTypeName("IUnknown *")] IUnknown* input, [NativeTypeName("UINT")] uint flags);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetMatrix(IDCompositionColorMatrixEffect* pThis, [NativeTypeName("const D2D1_MATRIX_5X4_F &")] D2D_MATRIX_5X4_F* matrix);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetMatrixElement(IDCompositionColorMatrixEffect* pThis, int row, int column, float value);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetMatrixElement1(IDCompositionColorMatrixEffect* pThis, int row, int column, [NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetAlphaMode(IDCompositionColorMatrixEffect* pThis, D2D1_COLORMATRIX_ALPHA_MODE mode);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetClampOutput(IDCompositionColorMatrixEffect* pThis, [NativeTypeName("BOOL")] int clamp);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetInput([NativeTypeName("UINT")] uint index, [NativeTypeName("IUnknown *")] IUnknown* input, [NativeTypeName("UINT")] uint flags)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetInput>(lpVtbl->SetInput)((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), index, input, flags);
+            return lpVtbl->SetInput((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), index, input, flags);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetMatrix([NativeTypeName("const D2D1_MATRIX_5X4_F &")] D2D_MATRIX_5X4_F* matrix)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetMatrix>(lpVtbl->SetMatrix)((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), matrix);
+            return lpVtbl->SetMatrix((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), matrix);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetMatrixElement(int row, int column, float value)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetMatrixElement>(lpVtbl->SetMatrixElement)((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), row, column, value);
+            return lpVtbl->SetMatrixElement((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), row, column, value);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetMatrixElement(int row, int column, [NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetMatrixElement1>(lpVtbl->SetMatrixElement1)((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), row, column, animation);
+            return lpVtbl->SetMatrixElement1((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), row, column, animation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetAlphaMode(D2D1_COLORMATRIX_ALPHA_MODE mode)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetAlphaMode>(lpVtbl->SetAlphaMode)((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), mode);
+            return lpVtbl->SetAlphaMode((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), mode);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetClampOutput([NativeTypeName("BOOL")] int clamp)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetClampOutput>(lpVtbl->SetClampOutput)((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), clamp);
+            return lpVtbl->SetClampOutput((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), clamp);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IDCompositionColorMatrixEffect*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IDCompositionColorMatrixEffect*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IDCompositionColorMatrixEffect*, uint> Release;
 
             [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetInput;
+            public delegate* stdcall<IDCompositionColorMatrixEffect*, uint, IUnknown*, uint, int> SetInput;
 
             [NativeTypeName("HRESULT (const D2D1_MATRIX_5X4_F &) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetMatrix;
+            public delegate* stdcall<IDCompositionColorMatrixEffect*, D2D_MATRIX_5X4_F*, int> SetMatrix;
 
             [NativeTypeName("HRESULT (int, int, float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetMatrixElement;
+            public delegate* stdcall<IDCompositionColorMatrixEffect*, int, int, float, int> SetMatrixElement;
 
             [NativeTypeName("HRESULT (int, int, IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetMatrixElement1;
+            public delegate* stdcall<IDCompositionColorMatrixEffect*, int, int, IDCompositionAnimation*, int> SetMatrixElement1;
 
             [NativeTypeName("HRESULT (D2D1_COLORMATRIX_ALPHA_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetAlphaMode;
+            public delegate* stdcall<IDCompositionColorMatrixEffect*, D2D1_COLORMATRIX_ALPHA_MODE, int> SetAlphaMode;
 
             [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetClampOutput;
+            public delegate* stdcall<IDCompositionColorMatrixEffect*, int, int> SetClampOutput;
         }
     }
 }

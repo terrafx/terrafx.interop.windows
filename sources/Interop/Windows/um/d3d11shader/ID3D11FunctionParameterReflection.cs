@@ -14,20 +14,16 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDesc(ID3D11FunctionParameterReflection* pThis, [NativeTypeName("D3D11_PARAMETER_DESC *")] D3D11_PARAMETER_DESC* pDesc);
-
         [return: NativeTypeName("HRESULT")]
         public int GetDesc([NativeTypeName("D3D11_PARAMETER_DESC *")] D3D11_PARAMETER_DESC* pDesc)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)((ID3D11FunctionParameterReflection*)Unsafe.AsPointer(ref this), pDesc);
+            return lpVtbl->GetDesc((ID3D11FunctionParameterReflection*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (D3D11_PARAMETER_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetDesc;
+            public delegate* stdcall<ID3D11FunctionParameterReflection*, D3D11_PARAMETER_DESC*, int> GetDesc;
         }
     }
 }

@@ -14,72 +14,52 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IExternalConnection* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IExternalConnection* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IExternalConnection* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("DWORD")]
-        public delegate uint _AddConnection(IExternalConnection* pThis, [NativeTypeName("DWORD")] uint extconn, [NativeTypeName("DWORD")] uint reserved);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("DWORD")]
-        public delegate uint _ReleaseConnection(IExternalConnection* pThis, [NativeTypeName("DWORD")] uint extconn, [NativeTypeName("DWORD")] uint reserved, [NativeTypeName("BOOL")] int fLastReleaseCloses);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IExternalConnection*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IExternalConnection*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IExternalConnection*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IExternalConnection*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IExternalConnection*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IExternalConnection*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("DWORD")]
         public uint AddConnection([NativeTypeName("DWORD")] uint extconn, [NativeTypeName("DWORD")] uint reserved)
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddConnection>(lpVtbl->AddConnection)((IExternalConnection*)Unsafe.AsPointer(ref this), extconn, reserved);
+            return lpVtbl->AddConnection((IExternalConnection*)Unsafe.AsPointer(ref this), extconn, reserved);
         }
 
         [return: NativeTypeName("DWORD")]
         public uint ReleaseConnection([NativeTypeName("DWORD")] uint extconn, [NativeTypeName("DWORD")] uint reserved, [NativeTypeName("BOOL")] int fLastReleaseCloses)
         {
-            return Marshal.GetDelegateForFunctionPointer<_ReleaseConnection>(lpVtbl->ReleaseConnection)((IExternalConnection*)Unsafe.AsPointer(ref this), extconn, reserved, fLastReleaseCloses);
+            return lpVtbl->ReleaseConnection((IExternalConnection*)Unsafe.AsPointer(ref this), extconn, reserved, fLastReleaseCloses);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IExternalConnection*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IExternalConnection*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IExternalConnection*, uint> Release;
 
             [NativeTypeName("DWORD (DWORD, DWORD) __attribute__((stdcall))")]
-            public IntPtr AddConnection;
+            public delegate* stdcall<IExternalConnection*, uint, uint, uint> AddConnection;
 
             [NativeTypeName("DWORD (DWORD, DWORD, BOOL) __attribute__((stdcall))")]
-            public IntPtr ReleaseConnection;
+            public delegate* stdcall<IExternalConnection*, uint, uint, int, uint> ReleaseConnection;
         }
     }
 }

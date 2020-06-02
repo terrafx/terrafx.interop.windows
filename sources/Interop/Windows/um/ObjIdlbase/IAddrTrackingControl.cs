@@ -14,72 +14,52 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IAddrTrackingControl* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IAddrTrackingControl* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IAddrTrackingControl* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _EnableCOMDynamicAddrTracking(IAddrTrackingControl* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _DisableCOMDynamicAddrTracking(IAddrTrackingControl* pThis);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IAddrTrackingControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IAddrTrackingControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int EnableCOMDynamicAddrTracking()
         {
-            return Marshal.GetDelegateForFunctionPointer<_EnableCOMDynamicAddrTracking>(lpVtbl->EnableCOMDynamicAddrTracking)((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
+            return lpVtbl->EnableCOMDynamicAddrTracking((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int DisableCOMDynamicAddrTracking()
         {
-            return Marshal.GetDelegateForFunctionPointer<_DisableCOMDynamicAddrTracking>(lpVtbl->DisableCOMDynamicAddrTracking)((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
+            return lpVtbl->DisableCOMDynamicAddrTracking((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IAddrTrackingControl*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IAddrTrackingControl*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IAddrTrackingControl*, uint> Release;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr EnableCOMDynamicAddrTracking;
+            public delegate* stdcall<IAddrTrackingControl*, int> EnableCOMDynamicAddrTracking;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr DisableCOMDynamicAddrTracking;
+            public delegate* stdcall<IAddrTrackingControl*, int> DisableCOMDynamicAddrTracking;
         }
     }
 }

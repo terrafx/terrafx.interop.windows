@@ -15,168 +15,120 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IXAudio2* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IXAudio2* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IXAudio2* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _RegisterForCallbacks(IXAudio2* pThis, [NativeTypeName("IXAudio2EngineCallback *")] IXAudio2EngineCallback* pCallback);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _UnregisterForCallbacks(IXAudio2* pThis, [NativeTypeName("IXAudio2EngineCallback *")] IXAudio2EngineCallback* pCallback);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateSourceVoice(IXAudio2* pThis, [NativeTypeName("IXAudio2SourceVoice **")] IXAudio2SourceVoice** ppSourceVoice, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pSourceFormat, [NativeTypeName("UINT32")] uint Flags = 0, float MaxFrequencyRatio = 2.0f, [NativeTypeName("IXAudio2VoiceCallback *")] IXAudio2VoiceCallback* pCallback = null, [NativeTypeName("const XAUDIO2_VOICE_SENDS *")] XAUDIO2_VOICE_SENDS* pSendList = null, [NativeTypeName("const XAUDIO2_EFFECT_CHAIN *")] XAUDIO2_EFFECT_CHAIN* pEffectChain = null);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateSubmixVoice(IXAudio2* pThis, [NativeTypeName("IXAudio2SubmixVoice **")] IXAudio2SubmixVoice** ppSubmixVoice, [NativeTypeName("UINT32")] uint InputChannels, [NativeTypeName("UINT32")] uint InputSampleRate, [NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("UINT32")] uint ProcessingStage = 0, [NativeTypeName("const XAUDIO2_VOICE_SENDS *")] XAUDIO2_VOICE_SENDS* pSendList = null, [NativeTypeName("const XAUDIO2_EFFECT_CHAIN *")] XAUDIO2_EFFECT_CHAIN* pEffectChain = null);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _CreateMasteringVoice(IXAudio2* pThis, [NativeTypeName("IXAudio2MasteringVoice **")] IXAudio2MasteringVoice** ppMasteringVoice, [NativeTypeName("UINT32")] uint InputChannels = 0, [NativeTypeName("UINT32")] uint InputSampleRate = 0, [NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("LPCWSTR")] ushort* szDeviceId = null, [NativeTypeName("const XAUDIO2_EFFECT_CHAIN *")] XAUDIO2_EFFECT_CHAIN* pEffectChain = null, AUDIO_STREAM_CATEGORY StreamCategory = AudioCategory_GameEffects);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _StartEngine(IXAudio2* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _StopEngine(IXAudio2* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _CommitChanges(IXAudio2* pThis, [NativeTypeName("UINT32")] uint OperationSet);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _GetPerformanceData(IXAudio2* pThis, [NativeTypeName("XAUDIO2_PERFORMANCE_DATA *")] XAUDIO2_PERFORMANCE_DATA* pPerfData);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _SetDebugConfiguration(IXAudio2* pThis, [NativeTypeName("const XAUDIO2_DEBUG_CONFIGURATION *")] XAUDIO2_DEBUG_CONFIGURATION* pDebugConfiguration, [NativeTypeName("void *")] void* pReserved = null);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IXAudio2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IXAudio2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IXAudio2*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IXAudio2*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IXAudio2*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IXAudio2*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int RegisterForCallbacks([NativeTypeName("IXAudio2EngineCallback *")] IXAudio2EngineCallback* pCallback)
         {
-            return Marshal.GetDelegateForFunctionPointer<_RegisterForCallbacks>(lpVtbl->RegisterForCallbacks)((IXAudio2*)Unsafe.AsPointer(ref this), pCallback);
+            return lpVtbl->RegisterForCallbacks((IXAudio2*)Unsafe.AsPointer(ref this), pCallback);
         }
 
         public void UnregisterForCallbacks([NativeTypeName("IXAudio2EngineCallback *")] IXAudio2EngineCallback* pCallback)
         {
-            Marshal.GetDelegateForFunctionPointer<_UnregisterForCallbacks>(lpVtbl->UnregisterForCallbacks)((IXAudio2*)Unsafe.AsPointer(ref this), pCallback);
+            lpVtbl->UnregisterForCallbacks((IXAudio2*)Unsafe.AsPointer(ref this), pCallback);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CreateSourceVoice([NativeTypeName("IXAudio2SourceVoice **")] IXAudio2SourceVoice** ppSourceVoice, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pSourceFormat, [NativeTypeName("UINT32")] uint Flags = 0, float MaxFrequencyRatio = 2.0f, [NativeTypeName("IXAudio2VoiceCallback *")] IXAudio2VoiceCallback* pCallback = null, [NativeTypeName("const XAUDIO2_VOICE_SENDS *")] XAUDIO2_VOICE_SENDS* pSendList = null, [NativeTypeName("const XAUDIO2_EFFECT_CHAIN *")] XAUDIO2_EFFECT_CHAIN* pEffectChain = null)
         {
-            return Marshal.GetDelegateForFunctionPointer<_CreateSourceVoice>(lpVtbl->CreateSourceVoice)((IXAudio2*)Unsafe.AsPointer(ref this), ppSourceVoice, pSourceFormat, Flags, MaxFrequencyRatio, pCallback, pSendList, pEffectChain);
+            return lpVtbl->CreateSourceVoice((IXAudio2*)Unsafe.AsPointer(ref this), ppSourceVoice, pSourceFormat, Flags, MaxFrequencyRatio, pCallback, pSendList, pEffectChain);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CreateSubmixVoice([NativeTypeName("IXAudio2SubmixVoice **")] IXAudio2SubmixVoice** ppSubmixVoice, [NativeTypeName("UINT32")] uint InputChannels, [NativeTypeName("UINT32")] uint InputSampleRate, [NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("UINT32")] uint ProcessingStage = 0, [NativeTypeName("const XAUDIO2_VOICE_SENDS *")] XAUDIO2_VOICE_SENDS* pSendList = null, [NativeTypeName("const XAUDIO2_EFFECT_CHAIN *")] XAUDIO2_EFFECT_CHAIN* pEffectChain = null)
         {
-            return Marshal.GetDelegateForFunctionPointer<_CreateSubmixVoice>(lpVtbl->CreateSubmixVoice)((IXAudio2*)Unsafe.AsPointer(ref this), ppSubmixVoice, InputChannels, InputSampleRate, Flags, ProcessingStage, pSendList, pEffectChain);
+            return lpVtbl->CreateSubmixVoice((IXAudio2*)Unsafe.AsPointer(ref this), ppSubmixVoice, InputChannels, InputSampleRate, Flags, ProcessingStage, pSendList, pEffectChain);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CreateMasteringVoice([NativeTypeName("IXAudio2MasteringVoice **")] IXAudio2MasteringVoice** ppMasteringVoice, [NativeTypeName("UINT32")] uint InputChannels = 0, [NativeTypeName("UINT32")] uint InputSampleRate = 0, [NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("LPCWSTR")] ushort* szDeviceId = null, [NativeTypeName("const XAUDIO2_EFFECT_CHAIN *")] XAUDIO2_EFFECT_CHAIN* pEffectChain = null, AUDIO_STREAM_CATEGORY StreamCategory = AudioCategory_GameEffects)
         {
-            return Marshal.GetDelegateForFunctionPointer<_CreateMasteringVoice>(lpVtbl->CreateMasteringVoice)((IXAudio2*)Unsafe.AsPointer(ref this), ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceId, pEffectChain, StreamCategory);
+            return lpVtbl->CreateMasteringVoice((IXAudio2*)Unsafe.AsPointer(ref this), ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceId, pEffectChain, StreamCategory);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int StartEngine()
         {
-            return Marshal.GetDelegateForFunctionPointer<_StartEngine>(lpVtbl->StartEngine)((IXAudio2*)Unsafe.AsPointer(ref this));
+            return lpVtbl->StartEngine((IXAudio2*)Unsafe.AsPointer(ref this));
         }
 
         public void StopEngine()
         {
-            Marshal.GetDelegateForFunctionPointer<_StopEngine>(lpVtbl->StopEngine)((IXAudio2*)Unsafe.AsPointer(ref this));
+            lpVtbl->StopEngine((IXAudio2*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CommitChanges([NativeTypeName("UINT32")] uint OperationSet)
         {
-            return Marshal.GetDelegateForFunctionPointer<_CommitChanges>(lpVtbl->CommitChanges)((IXAudio2*)Unsafe.AsPointer(ref this), OperationSet);
+            return lpVtbl->CommitChanges((IXAudio2*)Unsafe.AsPointer(ref this), OperationSet);
         }
 
         public void GetPerformanceData([NativeTypeName("XAUDIO2_PERFORMANCE_DATA *")] XAUDIO2_PERFORMANCE_DATA* pPerfData)
         {
-            Marshal.GetDelegateForFunctionPointer<_GetPerformanceData>(lpVtbl->GetPerformanceData)((IXAudio2*)Unsafe.AsPointer(ref this), pPerfData);
+            lpVtbl->GetPerformanceData((IXAudio2*)Unsafe.AsPointer(ref this), pPerfData);
         }
 
         public void SetDebugConfiguration([NativeTypeName("const XAUDIO2_DEBUG_CONFIGURATION *")] XAUDIO2_DEBUG_CONFIGURATION* pDebugConfiguration, [NativeTypeName("void *")] void* pReserved = null)
         {
-            Marshal.GetDelegateForFunctionPointer<_SetDebugConfiguration>(lpVtbl->SetDebugConfiguration)((IXAudio2*)Unsafe.AsPointer(ref this), pDebugConfiguration, pReserved);
+            lpVtbl->SetDebugConfiguration((IXAudio2*)Unsafe.AsPointer(ref this), pDebugConfiguration, pReserved);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IXAudio2*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IXAudio2*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IXAudio2*, uint> Release;
 
             [NativeTypeName("HRESULT (IXAudio2EngineCallback *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr RegisterForCallbacks;
+            public delegate* stdcall<IXAudio2*, IXAudio2EngineCallback*, int> RegisterForCallbacks;
 
             [NativeTypeName("void (IXAudio2EngineCallback *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr UnregisterForCallbacks;
+            public delegate* stdcall<IXAudio2*, IXAudio2EngineCallback*, void> UnregisterForCallbacks;
 
             [NativeTypeName("HRESULT (IXAudio2SourceVoice **, const WAVEFORMATEX *, UINT32, float, IXAudio2VoiceCallback *, const XAUDIO2_VOICE_SENDS *, const XAUDIO2_EFFECT_CHAIN *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr CreateSourceVoice;
+            public delegate* stdcall<IXAudio2*, IXAudio2SourceVoice**, WAVEFORMATEX*, uint, float, IXAudio2VoiceCallback*, XAUDIO2_VOICE_SENDS*, XAUDIO2_EFFECT_CHAIN*, int> CreateSourceVoice;
 
             [NativeTypeName("HRESULT (IXAudio2SubmixVoice **, UINT32, UINT32, UINT32, UINT32, const XAUDIO2_VOICE_SENDS *, const XAUDIO2_EFFECT_CHAIN *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr CreateSubmixVoice;
+            public delegate* stdcall<IXAudio2*, IXAudio2SubmixVoice**, uint, uint, uint, uint, XAUDIO2_VOICE_SENDS*, XAUDIO2_EFFECT_CHAIN*, int> CreateSubmixVoice;
 
             [NativeTypeName("HRESULT (IXAudio2MasteringVoice **, UINT32, UINT32, UINT32, LPCWSTR, const XAUDIO2_EFFECT_CHAIN *, AUDIO_STREAM_CATEGORY) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr CreateMasteringVoice;
+            public delegate* stdcall<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, ushort*, XAUDIO2_EFFECT_CHAIN*, AUDIO_STREAM_CATEGORY, int> CreateMasteringVoice;
 
             [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr StartEngine;
+            public delegate* stdcall<IXAudio2*, int> StartEngine;
 
             [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr StopEngine;
+            public delegate* stdcall<IXAudio2*, void> StopEngine;
 
             [NativeTypeName("HRESULT (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr CommitChanges;
+            public delegate* stdcall<IXAudio2*, uint, int> CommitChanges;
 
             [NativeTypeName("void (XAUDIO2_PERFORMANCE_DATA *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetPerformanceData;
+            public delegate* stdcall<IXAudio2*, XAUDIO2_PERFORMANCE_DATA*, void> GetPerformanceData;
 
             [NativeTypeName("void (const XAUDIO2_DEBUG_CONFIGURATION *, void *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetDebugConfiguration;
+            public delegate* stdcall<IXAudio2*, XAUDIO2_DEBUG_CONFIGURATION*, void*, void> SetDebugConfiguration;
         }
     }
 }

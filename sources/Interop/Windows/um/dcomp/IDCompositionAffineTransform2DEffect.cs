@@ -14,150 +14,106 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDCompositionAffineTransform2DEffect* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDCompositionAffineTransform2DEffect* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDCompositionAffineTransform2DEffect* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetInput(IDCompositionAffineTransform2DEffect* pThis, [NativeTypeName("UINT")] uint index, [NativeTypeName("IUnknown *")] IUnknown* input, [NativeTypeName("UINT")] uint flags);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetInterpolationMode(IDCompositionAffineTransform2DEffect* pThis, D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE interpolationMode);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetBorderMode(IDCompositionAffineTransform2DEffect* pThis, D2D1_BORDER_MODE borderMode);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetTransformMatrix(IDCompositionAffineTransform2DEffect* pThis, [NativeTypeName("const D2D1_MATRIX_3X2_F &")] D2D_MATRIX_3X2_F* transformMatrix);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetTransformMatrixElement(IDCompositionAffineTransform2DEffect* pThis, int row, int column, float value);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetTransformMatrixElement1(IDCompositionAffineTransform2DEffect* pThis, int row, int column, [NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetSharpness(IDCompositionAffineTransform2DEffect* pThis, float sharpness);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetSharpness1(IDCompositionAffineTransform2DEffect* pThis, [NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDCompositionAffineTransform2DEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IDCompositionAffineTransform2DEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDCompositionAffineTransform2DEffect*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IDCompositionAffineTransform2DEffect*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDCompositionAffineTransform2DEffect*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IDCompositionAffineTransform2DEffect*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetInput([NativeTypeName("UINT")] uint index, [NativeTypeName("IUnknown *")] IUnknown* input, [NativeTypeName("UINT")] uint flags)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetInput>(lpVtbl->SetInput)((IDCompositionAffineTransform2DEffect*)Unsafe.AsPointer(ref this), index, input, flags);
+            return lpVtbl->SetInput((IDCompositionAffineTransform2DEffect*)Unsafe.AsPointer(ref this), index, input, flags);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetInterpolationMode(D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE interpolationMode)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetInterpolationMode>(lpVtbl->SetInterpolationMode)((IDCompositionAffineTransform2DEffect*)Unsafe.AsPointer(ref this), interpolationMode);
+            return lpVtbl->SetInterpolationMode((IDCompositionAffineTransform2DEffect*)Unsafe.AsPointer(ref this), interpolationMode);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetBorderMode(D2D1_BORDER_MODE borderMode)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetBorderMode>(lpVtbl->SetBorderMode)((IDCompositionAffineTransform2DEffect*)Unsafe.AsPointer(ref this), borderMode);
+            return lpVtbl->SetBorderMode((IDCompositionAffineTransform2DEffect*)Unsafe.AsPointer(ref this), borderMode);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetTransformMatrix([NativeTypeName("const D2D1_MATRIX_3X2_F &")] D2D_MATRIX_3X2_F* transformMatrix)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetTransformMatrix>(lpVtbl->SetTransformMatrix)((IDCompositionAffineTransform2DEffect*)Unsafe.AsPointer(ref this), transformMatrix);
+            return lpVtbl->SetTransformMatrix((IDCompositionAffineTransform2DEffect*)Unsafe.AsPointer(ref this), transformMatrix);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetTransformMatrixElement(int row, int column, float value)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetTransformMatrixElement>(lpVtbl->SetTransformMatrixElement)((IDCompositionAffineTransform2DEffect*)Unsafe.AsPointer(ref this), row, column, value);
+            return lpVtbl->SetTransformMatrixElement((IDCompositionAffineTransform2DEffect*)Unsafe.AsPointer(ref this), row, column, value);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetTransformMatrixElement(int row, int column, [NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetTransformMatrixElement1>(lpVtbl->SetTransformMatrixElement1)((IDCompositionAffineTransform2DEffect*)Unsafe.AsPointer(ref this), row, column, animation);
+            return lpVtbl->SetTransformMatrixElement1((IDCompositionAffineTransform2DEffect*)Unsafe.AsPointer(ref this), row, column, animation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetSharpness(float sharpness)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetSharpness>(lpVtbl->SetSharpness)((IDCompositionAffineTransform2DEffect*)Unsafe.AsPointer(ref this), sharpness);
+            return lpVtbl->SetSharpness((IDCompositionAffineTransform2DEffect*)Unsafe.AsPointer(ref this), sharpness);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetSharpness([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetSharpness1>(lpVtbl->SetSharpness1)((IDCompositionAffineTransform2DEffect*)Unsafe.AsPointer(ref this), animation);
+            return lpVtbl->SetSharpness1((IDCompositionAffineTransform2DEffect*)Unsafe.AsPointer(ref this), animation);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IDCompositionAffineTransform2DEffect*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IDCompositionAffineTransform2DEffect*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IDCompositionAffineTransform2DEffect*, uint> Release;
 
             [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetInput;
+            public delegate* stdcall<IDCompositionAffineTransform2DEffect*, uint, IUnknown*, uint, int> SetInput;
 
             [NativeTypeName("HRESULT (D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetInterpolationMode;
+            public delegate* stdcall<IDCompositionAffineTransform2DEffect*, D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE, int> SetInterpolationMode;
 
             [NativeTypeName("HRESULT (D2D1_BORDER_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetBorderMode;
+            public delegate* stdcall<IDCompositionAffineTransform2DEffect*, D2D1_BORDER_MODE, int> SetBorderMode;
 
             [NativeTypeName("HRESULT (const D2D1_MATRIX_3X2_F &) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetTransformMatrix;
+            public delegate* stdcall<IDCompositionAffineTransform2DEffect*, D2D_MATRIX_3X2_F*, int> SetTransformMatrix;
 
             [NativeTypeName("HRESULT (int, int, float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetTransformMatrixElement;
+            public delegate* stdcall<IDCompositionAffineTransform2DEffect*, int, int, float, int> SetTransformMatrixElement;
 
             [NativeTypeName("HRESULT (int, int, IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetTransformMatrixElement1;
+            public delegate* stdcall<IDCompositionAffineTransform2DEffect*, int, int, IDCompositionAnimation*, int> SetTransformMatrixElement1;
 
             [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetSharpness;
+            public delegate* stdcall<IDCompositionAffineTransform2DEffect*, float, int> SetSharpness;
 
             [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetSharpness1;
+            public delegate* stdcall<IDCompositionAffineTransform2DEffect*, IDCompositionAnimation*, int> SetSharpness1;
         }
     }
 }

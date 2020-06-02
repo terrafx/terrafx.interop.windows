@@ -14,120 +14,86 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IDWriteRenderingParams1* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IDWriteRenderingParams1* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IDWriteRenderingParams1* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("FLOAT")]
-        public delegate float _GetGamma(IDWriteRenderingParams1* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("FLOAT")]
-        public delegate float _GetEnhancedContrast(IDWriteRenderingParams1* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("FLOAT")]
-        public delegate float _GetClearTypeLevel(IDWriteRenderingParams1* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate DWRITE_PIXEL_GEOMETRY _GetPixelGeometry(IDWriteRenderingParams1* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate DWRITE_RENDERING_MODE _GetRenderingMode(IDWriteRenderingParams1* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("FLOAT")]
-        public delegate float _GetGrayscaleEnhancedContrast(IDWriteRenderingParams1* pThis);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("FLOAT")]
         public float GetGamma()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetGamma>(lpVtbl->GetGamma)((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetGamma((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("FLOAT")]
         public float GetEnhancedContrast()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetEnhancedContrast>(lpVtbl->GetEnhancedContrast)((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetEnhancedContrast((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("FLOAT")]
         public float GetClearTypeLevel()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetClearTypeLevel>(lpVtbl->GetClearTypeLevel)((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetClearTypeLevel((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
         }
 
         public DWRITE_PIXEL_GEOMETRY GetPixelGeometry()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetPixelGeometry>(lpVtbl->GetPixelGeometry)((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetPixelGeometry((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
         }
 
         public DWRITE_RENDERING_MODE GetRenderingMode()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetRenderingMode>(lpVtbl->GetRenderingMode)((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetRenderingMode((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("FLOAT")]
         public float GetGrayscaleEnhancedContrast()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetGrayscaleEnhancedContrast>(lpVtbl->GetGrayscaleEnhancedContrast)((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetGrayscaleEnhancedContrast((IDWriteRenderingParams1*)Unsafe.AsPointer(ref this));
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IDWriteRenderingParams1*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IDWriteRenderingParams1*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IDWriteRenderingParams1*, uint> Release;
 
             [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetGamma;
+            public delegate* stdcall<IDWriteRenderingParams1*, float> GetGamma;
 
             [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetEnhancedContrast;
+            public delegate* stdcall<IDWriteRenderingParams1*, float> GetEnhancedContrast;
 
             [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetClearTypeLevel;
+            public delegate* stdcall<IDWriteRenderingParams1*, float> GetClearTypeLevel;
 
             [NativeTypeName("DWRITE_PIXEL_GEOMETRY () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetPixelGeometry;
+            public delegate* stdcall<IDWriteRenderingParams1*, DWRITE_PIXEL_GEOMETRY> GetPixelGeometry;
 
             [NativeTypeName("DWRITE_RENDERING_MODE () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetRenderingMode;
+            public delegate* stdcall<IDWriteRenderingParams1*, DWRITE_RENDERING_MODE> GetRenderingMode;
 
             [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetGrayscaleEnhancedContrast;
+            public delegate* stdcall<IDWriteRenderingParams1*, float> GetGrayscaleEnhancedContrast;
         }
     }
 }

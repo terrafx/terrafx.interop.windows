@@ -14,72 +14,52 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ISynchronizeContainer* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ISynchronizeContainer* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ISynchronizeContainer* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _AddSynchronize(ISynchronizeContainer* pThis, [NativeTypeName("ISynchronize *")] ISynchronize* pSync);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _WaitMultiple(ISynchronizeContainer* pThis, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwTimeOut, [NativeTypeName("ISynchronize **")] ISynchronize** ppSync);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ISynchronizeContainer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((ISynchronizeContainer*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ISynchronizeContainer*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((ISynchronizeContainer*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ISynchronizeContainer*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((ISynchronizeContainer*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int AddSynchronize([NativeTypeName("ISynchronize *")] ISynchronize* pSync)
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddSynchronize>(lpVtbl->AddSynchronize)((ISynchronizeContainer*)Unsafe.AsPointer(ref this), pSync);
+            return lpVtbl->AddSynchronize((ISynchronizeContainer*)Unsafe.AsPointer(ref this), pSync);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int WaitMultiple([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwTimeOut, [NativeTypeName("ISynchronize **")] ISynchronize** ppSync)
         {
-            return Marshal.GetDelegateForFunctionPointer<_WaitMultiple>(lpVtbl->WaitMultiple)((ISynchronizeContainer*)Unsafe.AsPointer(ref this), dwFlags, dwTimeOut, ppSync);
+            return lpVtbl->WaitMultiple((ISynchronizeContainer*)Unsafe.AsPointer(ref this), dwFlags, dwTimeOut, ppSync);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<ISynchronizeContainer*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<ISynchronizeContainer*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<ISynchronizeContainer*, uint> Release;
 
             [NativeTypeName("HRESULT (ISynchronize *) __attribute__((stdcall))")]
-            public IntPtr AddSynchronize;
+            public delegate* stdcall<ISynchronizeContainer*, ISynchronize*, int> AddSynchronize;
 
             [NativeTypeName("HRESULT (DWORD, DWORD, ISynchronize **) __attribute__((stdcall))")]
-            public IntPtr WaitMultiple;
+            public delegate* stdcall<ISynchronizeContainer*, uint, uint, ISynchronize**, int> WaitMultiple;
         }
     }
 }

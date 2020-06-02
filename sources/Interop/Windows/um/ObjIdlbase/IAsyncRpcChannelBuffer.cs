@@ -14,163 +14,115 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IAsyncRpcChannelBuffer* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IAsyncRpcChannelBuffer* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IAsyncRpcChannelBuffer* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetBuffer(IAsyncRpcChannelBuffer* pThis, [NativeTypeName("RPCOLEMESSAGE *")] RPCOLEMESSAGE* pMessage, [NativeTypeName("const IID &")] Guid* riid);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SendReceive(IAsyncRpcChannelBuffer* pThis, [NativeTypeName("RPCOLEMESSAGE *")] RPCOLEMESSAGE* pMessage, [NativeTypeName("ULONG *")] uint* pStatus);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _FreeBuffer(IAsyncRpcChannelBuffer* pThis, [NativeTypeName("RPCOLEMESSAGE *")] RPCOLEMESSAGE* pMessage);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDestCtx(IAsyncRpcChannelBuffer* pThis, [NativeTypeName("DWORD *")] uint* pdwDestContext, [NativeTypeName("void **")] void** ppvDestContext);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _IsConnected(IAsyncRpcChannelBuffer* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetProtocolVersion(IAsyncRpcChannelBuffer* pThis, [NativeTypeName("DWORD *")] uint* pdwVersion);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Send(IAsyncRpcChannelBuffer* pThis, [NativeTypeName("RPCOLEMESSAGE *")] RPCOLEMESSAGE* pMsg, [NativeTypeName("ISynchronize *")] ISynchronize* pSync, [NativeTypeName("ULONG *")] uint* pulStatus);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Receive(IAsyncRpcChannelBuffer* pThis, [NativeTypeName("RPCOLEMESSAGE *")] RPCOLEMESSAGE* pMsg, [NativeTypeName("ULONG *")] uint* pulStatus);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDestCtxEx(IAsyncRpcChannelBuffer* pThis, [NativeTypeName("RPCOLEMESSAGE *")] RPCOLEMESSAGE* pMsg, [NativeTypeName("DWORD *")] uint* pdwDestContext, [NativeTypeName("void **")] void** ppvDestContext);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetBuffer([NativeTypeName("RPCOLEMESSAGE *")] RPCOLEMESSAGE* pMessage, [NativeTypeName("const IID &")] Guid* riid)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetBuffer>(lpVtbl->GetBuffer)((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this), pMessage, riid);
+            return lpVtbl->GetBuffer((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this), pMessage, riid);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SendReceive([NativeTypeName("RPCOLEMESSAGE *")] RPCOLEMESSAGE* pMessage, [NativeTypeName("ULONG *")] uint* pStatus)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SendReceive>(lpVtbl->SendReceive)((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this), pMessage, pStatus);
+            return lpVtbl->SendReceive((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this), pMessage, pStatus);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int FreeBuffer([NativeTypeName("RPCOLEMESSAGE *")] RPCOLEMESSAGE* pMessage)
         {
-            return Marshal.GetDelegateForFunctionPointer<_FreeBuffer>(lpVtbl->FreeBuffer)((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this), pMessage);
+            return lpVtbl->FreeBuffer((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this), pMessage);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDestCtx([NativeTypeName("DWORD *")] uint* pdwDestContext, [NativeTypeName("void **")] void** ppvDestContext)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetDestCtx>(lpVtbl->GetDestCtx)((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this), pdwDestContext, ppvDestContext);
+            return lpVtbl->GetDestCtx((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this), pdwDestContext, ppvDestContext);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int IsConnected()
         {
-            return Marshal.GetDelegateForFunctionPointer<_IsConnected>(lpVtbl->IsConnected)((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this));
+            return lpVtbl->IsConnected((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetProtocolVersion([NativeTypeName("DWORD *")] uint* pdwVersion)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetProtocolVersion>(lpVtbl->GetProtocolVersion)((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this), pdwVersion);
+            return lpVtbl->GetProtocolVersion((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this), pdwVersion);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Send([NativeTypeName("RPCOLEMESSAGE *")] RPCOLEMESSAGE* pMsg, [NativeTypeName("ISynchronize *")] ISynchronize* pSync, [NativeTypeName("ULONG *")] uint* pulStatus)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Send>(lpVtbl->Send)((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this), pMsg, pSync, pulStatus);
+            return lpVtbl->Send((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this), pMsg, pSync, pulStatus);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Receive([NativeTypeName("RPCOLEMESSAGE *")] RPCOLEMESSAGE* pMsg, [NativeTypeName("ULONG *")] uint* pulStatus)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Receive>(lpVtbl->Receive)((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this), pMsg, pulStatus);
+            return lpVtbl->Receive((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this), pMsg, pulStatus);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDestCtxEx([NativeTypeName("RPCOLEMESSAGE *")] RPCOLEMESSAGE* pMsg, [NativeTypeName("DWORD *")] uint* pdwDestContext, [NativeTypeName("void **")] void** ppvDestContext)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetDestCtxEx>(lpVtbl->GetDestCtxEx)((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this), pMsg, pdwDestContext, ppvDestContext);
+            return lpVtbl->GetDestCtxEx((IAsyncRpcChannelBuffer*)Unsafe.AsPointer(ref this), pMsg, pdwDestContext, ppvDestContext);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IAsyncRpcChannelBuffer*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IAsyncRpcChannelBuffer*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IAsyncRpcChannelBuffer*, uint> Release;
 
             [NativeTypeName("HRESULT (RPCOLEMESSAGE *, const IID &) __attribute__((stdcall))")]
-            public IntPtr GetBuffer;
+            public delegate* stdcall<IAsyncRpcChannelBuffer*, RPCOLEMESSAGE*, Guid*, int> GetBuffer;
 
             [NativeTypeName("HRESULT (RPCOLEMESSAGE *, ULONG *) __attribute__((stdcall))")]
-            public IntPtr SendReceive;
+            public delegate* stdcall<IAsyncRpcChannelBuffer*, RPCOLEMESSAGE*, uint*, int> SendReceive;
 
             [NativeTypeName("HRESULT (RPCOLEMESSAGE *) __attribute__((stdcall))")]
-            public IntPtr FreeBuffer;
+            public delegate* stdcall<IAsyncRpcChannelBuffer*, RPCOLEMESSAGE*, int> FreeBuffer;
 
             [NativeTypeName("HRESULT (DWORD *, void **) __attribute__((stdcall))")]
-            public IntPtr GetDestCtx;
+            public delegate* stdcall<IAsyncRpcChannelBuffer*, uint*, void**, int> GetDestCtx;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr IsConnected;
+            public delegate* stdcall<IAsyncRpcChannelBuffer*, int> IsConnected;
 
             [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public IntPtr GetProtocolVersion;
+            public delegate* stdcall<IAsyncRpcChannelBuffer*, uint*, int> GetProtocolVersion;
 
             [NativeTypeName("HRESULT (RPCOLEMESSAGE *, ISynchronize *, ULONG *) __attribute__((stdcall))")]
-            public IntPtr Send;
+            public delegate* stdcall<IAsyncRpcChannelBuffer*, RPCOLEMESSAGE*, ISynchronize*, uint*, int> Send;
 
             [NativeTypeName("HRESULT (RPCOLEMESSAGE *, ULONG *) __attribute__((stdcall))")]
-            public IntPtr Receive;
+            public delegate* stdcall<IAsyncRpcChannelBuffer*, RPCOLEMESSAGE*, uint*, int> Receive;
 
             [NativeTypeName("HRESULT (RPCOLEMESSAGE *, DWORD *, void **) __attribute__((stdcall))")]
-            public IntPtr GetDestCtxEx;
+            public delegate* stdcall<IAsyncRpcChannelBuffer*, RPCOLEMESSAGE*, uint*, void**, int> GetDestCtxEx;
         }
     }
 }

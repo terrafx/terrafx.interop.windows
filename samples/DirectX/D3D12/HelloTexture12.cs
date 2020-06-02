@@ -402,7 +402,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                             InputSlotClass = D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA,
                         },
                     };
-                        
+
                     // Describe and create the graphics pipeline state object (PSO).
                     var psoDesc = new D3D12_GRAPHICS_PIPELINE_STATE_DESC {
                         InputLayout = new D3D12_INPUT_LAYOUT_DESC {
@@ -470,7 +470,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                         var bufferDesc = D3D12_RESOURCE_DESC.Buffer(vertexBufferSize);
 
                         iid = IID_ID3D12Resource;
-                        ThrowIfFailed(nameof(ID3D12Device._CreateCommittedResource), _device->CreateCommittedResource(
+                        ThrowIfFailed(nameof(ID3D12Device.CreateCommittedResource), _device->CreateCommittedResource(
                             &heapProperties,
                             D3D12_HEAP_FLAG_NONE,
                             &bufferDesc,
@@ -484,7 +484,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     // Copy the triangle data to the vertex buffer.
                     var readRange = new D3D12_RANGE();
                     byte* pVertexDataBegin;
-                    ThrowIfFailed(nameof(ID3D12Resource._Map), _vertexBuffer->Map(Subresource: 0, &readRange, (void**)&pVertexDataBegin));
+                    ThrowIfFailed(nameof(ID3D12Resource.Map), _vertexBuffer->Map(Subresource: 0, &readRange, (void**)&pVertexDataBegin));
                     Unsafe.CopyBlock(pVertexDataBegin, triangleVertices, vertexBufferSize);
                     _vertexBuffer->Unmap(0, null);
 
@@ -521,7 +521,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     {
                         var heapProperties = new D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_DEFAULT);
                         iid = IID_ID3D12Resource;
-                        ThrowIfFailed(nameof(ID3D12Device._CreateCommittedResource), _device->CreateCommittedResource(
+                        ThrowIfFailed(nameof(ID3D12Device.CreateCommittedResource), _device->CreateCommittedResource(
                             &heapProperties,
                             D3D12_HEAP_FLAG_NONE,
                             &textureDesc,
@@ -536,7 +536,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                         // Create the GPU upload buffer.
                         heapProperties = new D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD);
                         var bufferDesc = D3D12_RESOURCE_DESC.Buffer(uploadBufferSize);
-                        ThrowIfFailed(nameof(ID3D12Device._CreateCommittedResource), _device->CreateCommittedResource(
+                        ThrowIfFailed(nameof(ID3D12Device.CreateCommittedResource), _device->CreateCommittedResource(
                             &heapProperties,
                             D3D12_HEAP_FLAG_NONE,
                             &bufferDesc,
@@ -547,7 +547,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                         ));
                     }
 
-                    // Copy data to the intermediate upload heap and then schedule a copy 
+                    // Copy data to the intermediate upload heap and then schedule a copy
                     // from the upload heap to the Texture2D.
                     var texture = GenerateTextureData();
                     var rowPitch = TextureWidth * TexturePixelSize;
@@ -564,7 +564,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     UpdateSubresources(_commandList, _texture, textureUploadHeap, 0, 0, 1, &textureData);
                     var barrier = D3D12_RESOURCE_BARRIER.InitTransition(_texture, D3D12_RESOURCE_STATE_COPY_DEST, D3D12_RESOURCE_STATE_PIXEL_SHADER_RESOURCE);
                     _commandList->ResourceBarrier(1, &barrier);
-                    
+
                     // Describe and create a SRV for the texture.
                     var srvDesc = new D3D12_SHADER_RESOURCE_VIEW_DESC {
                         Shader4ComponentMapping = D3D12_DEFAULT_SHADER_4_COMPONENT_MAPPING,
@@ -572,7 +572,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                         ViewDimension = D3D12_SRV_DIMENSION_TEXTURE2D,
                     };
                     srvDesc.Anonymous.Texture2D.MipLevels = 1;
-                    
+
                     _device->CreateShaderResourceView(_texture, &srvDesc, _srvHeap->GetCPUDescriptorHandleForHeapStart());
                 }
 

@@ -14,129 +14,93 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ID3D11ShaderResourceView1* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ID3D11ShaderResourceView1* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ID3D11ShaderResourceView1* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _GetDevice(ID3D11ShaderResourceView1* pThis, [NativeTypeName("ID3D11Device **")] ID3D11Device** ppDevice);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPrivateData(ID3D11ShaderResourceView1* pThis, [NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateData(ID3D11ShaderResourceView1* pThis, [NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateDataInterface(ID3D11ShaderResourceView1* pThis, [NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _GetResource(ID3D11ShaderResourceView1* pThis, [NativeTypeName("ID3D11Resource **")] ID3D11Resource** ppResource);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _GetDesc(ID3D11ShaderResourceView1* pThis, [NativeTypeName("D3D11_SHADER_RESOURCE_VIEW_DESC *")] D3D11_SHADER_RESOURCE_VIEW_DESC* pDesc);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _GetDesc1(ID3D11ShaderResourceView1* pThis, [NativeTypeName("D3D11_SHADER_RESOURCE_VIEW_DESC1 *")] D3D11_SHADER_RESOURCE_VIEW_DESC1* pDesc1);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ID3D11ShaderResourceView1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((ID3D11ShaderResourceView1*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ID3D11ShaderResourceView1*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((ID3D11ShaderResourceView1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ID3D11ShaderResourceView1*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((ID3D11ShaderResourceView1*)Unsafe.AsPointer(ref this));
         }
 
         public void GetDevice([NativeTypeName("ID3D11Device **")] ID3D11Device** ppDevice)
         {
-            Marshal.GetDelegateForFunctionPointer<_GetDevice>(lpVtbl->GetDevice)((ID3D11ShaderResourceView1*)Unsafe.AsPointer(ref this), ppDevice);
+            lpVtbl->GetDevice((ID3D11ShaderResourceView1*)Unsafe.AsPointer(ref this), ppDevice);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)((ID3D11ShaderResourceView1*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
+            return lpVtbl->GetPrivateData((ID3D11ShaderResourceView1*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)((ID3D11ShaderResourceView1*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
+            return lpVtbl->SetPrivateData((ID3D11ShaderResourceView1*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)((ID3D11ShaderResourceView1*)Unsafe.AsPointer(ref this), guid, pData);
+            return lpVtbl->SetPrivateDataInterface((ID3D11ShaderResourceView1*)Unsafe.AsPointer(ref this), guid, pData);
         }
 
         public void GetResource([NativeTypeName("ID3D11Resource **")] ID3D11Resource** ppResource)
         {
-            Marshal.GetDelegateForFunctionPointer<_GetResource>(lpVtbl->GetResource)((ID3D11ShaderResourceView1*)Unsafe.AsPointer(ref this), ppResource);
+            lpVtbl->GetResource((ID3D11ShaderResourceView1*)Unsafe.AsPointer(ref this), ppResource);
         }
 
         public void GetDesc([NativeTypeName("D3D11_SHADER_RESOURCE_VIEW_DESC *")] D3D11_SHADER_RESOURCE_VIEW_DESC* pDesc)
         {
-            Marshal.GetDelegateForFunctionPointer<_GetDesc>(lpVtbl->GetDesc)((ID3D11ShaderResourceView1*)Unsafe.AsPointer(ref this), pDesc);
+            lpVtbl->GetDesc((ID3D11ShaderResourceView1*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         public void GetDesc1([NativeTypeName("D3D11_SHADER_RESOURCE_VIEW_DESC1 *")] D3D11_SHADER_RESOURCE_VIEW_DESC1* pDesc1)
         {
-            Marshal.GetDelegateForFunctionPointer<_GetDesc1>(lpVtbl->GetDesc1)((ID3D11ShaderResourceView1*)Unsafe.AsPointer(ref this), pDesc1);
+            lpVtbl->GetDesc1((ID3D11ShaderResourceView1*)Unsafe.AsPointer(ref this), pDesc1);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<ID3D11ShaderResourceView1*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<ID3D11ShaderResourceView1*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<ID3D11ShaderResourceView1*, uint> Release;
 
             [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
-            public IntPtr GetDevice;
+            public delegate* stdcall<ID3D11ShaderResourceView1*, ID3D11Device**, void> GetDevice;
 
             [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-            public IntPtr GetPrivateData;
+            public delegate* stdcall<ID3D11ShaderResourceView1*, Guid*, uint*, void*, int> GetPrivateData;
 
             [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-            public IntPtr SetPrivateData;
+            public delegate* stdcall<ID3D11ShaderResourceView1*, Guid*, uint, void*, int> SetPrivateData;
 
             [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-            public IntPtr SetPrivateDataInterface;
+            public delegate* stdcall<ID3D11ShaderResourceView1*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
             [NativeTypeName("void (ID3D11Resource **) __attribute__((stdcall))")]
-            public IntPtr GetResource;
+            public delegate* stdcall<ID3D11ShaderResourceView1*, ID3D11Resource**, void> GetResource;
 
             [NativeTypeName("void (D3D11_SHADER_RESOURCE_VIEW_DESC *) __attribute__((stdcall))")]
-            public IntPtr GetDesc;
+            public delegate* stdcall<ID3D11ShaderResourceView1*, D3D11_SHADER_RESOURCE_VIEW_DESC*, void> GetDesc;
 
             [NativeTypeName("void (D3D11_SHADER_RESOURCE_VIEW_DESC1 *) __attribute__((stdcall))")]
-            public IntPtr GetDesc1;
+            public delegate* stdcall<ID3D11ShaderResourceView1*, D3D11_SHADER_RESOURCE_VIEW_DESC1*, void> GetDesc1;
         }
     }
 }

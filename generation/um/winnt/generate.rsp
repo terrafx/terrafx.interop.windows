@@ -345,6 +345,7 @@ _bittestandset(LONG *, LONG):BOOLEAN
 _ENUM_FLAG_INTEGER_FOR_SIZE<S>
 _ENUM_FLAG_INTEGER_FOR_SIZE<?>
 _ENUM_FLAG_SIZED_INTEGER<T>
+_EXCEPTION_REGISTRATION_RECORD
 _ImageArchitectureHeader
 _InlineBitScanForward64(DWORD *, DWORD64):BOOLEAN
 _InlineBitScanReverse64(DWORD *, DWORD64):BOOLEAN
@@ -384,6 +385,7 @@ _InterlockedXor8(volatile char *, char):char
 _InterlockedXor16(volatile SHORT *, SHORT):SHORT
 _mm_pause():void
 _mm_prefetch(const CHAR *, int):void
+_NT_TIB
 _rotl(unsigned int, int):unsigned int
 _rotl64(unsigned long long, int):unsigned long long
 _rotr(unsigned int, int):unsigned int

@@ -14,161 +14,114 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ID3D12Fence1* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ID3D12Fence1* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ID3D12Fence1* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetPrivateData(ID3D12Fence1* pThis, [NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateData(ID3D12Fence1* pThis, [NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetPrivateDataInterface(ID3D12Fence1* pThis, [NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetName(ID3D12Fence1* pThis, [NativeTypeName("LPCWSTR")] ushort* Name);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetDevice(ID3D12Fence1* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvDevice);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("UINT64")]
-        public delegate ulong _GetCompletedValue(ID3D12Fence1* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetEventOnCompletion(ID3D12Fence1* pThis, [NativeTypeName("UINT64")] ulong Value, [NativeTypeName("HANDLE")] IntPtr hEvent);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Signal(ID3D12Fence1* pThis, [NativeTypeName("UINT64")] ulong Value);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate D3D12_FENCE_FLAGS _GetCreationFlags(ID3D12Fence1* pThis);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ID3D12Fence1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((ID3D12Fence1*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ID3D12Fence1*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((ID3D12Fence1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ID3D12Fence1*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((ID3D12Fence1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetPrivateData>(lpVtbl->GetPrivateData)((ID3D12Fence1*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
+            return lpVtbl->GetPrivateData((ID3D12Fence1*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetPrivateData>(lpVtbl->SetPrivateData)((ID3D12Fence1*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
+            return lpVtbl->SetPrivateData((ID3D12Fence1*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetPrivateDataInterface>(lpVtbl->SetPrivateDataInterface)((ID3D12Fence1*)Unsafe.AsPointer(ref this), guid, pData);
+            return lpVtbl->SetPrivateDataInterface((ID3D12Fence1*)Unsafe.AsPointer(ref this), guid, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetName([NativeTypeName("LPCWSTR")] ushort* Name)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetName>(lpVtbl->SetName)((ID3D12Fence1*)Unsafe.AsPointer(ref this), Name);
+            return lpVtbl->SetName((ID3D12Fence1*)Unsafe.AsPointer(ref this), Name);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDevice([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvDevice)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetDevice>(lpVtbl->GetDevice)((ID3D12Fence1*)Unsafe.AsPointer(ref this), riid, ppvDevice);
+            return lpVtbl->GetDevice((ID3D12Fence1*)Unsafe.AsPointer(ref this), riid, ppvDevice);
         }
 
         [return: NativeTypeName("UINT64")]
         public ulong GetCompletedValue()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetCompletedValue>(lpVtbl->GetCompletedValue)((ID3D12Fence1*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetCompletedValue((ID3D12Fence1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetEventOnCompletion([NativeTypeName("UINT64")] ulong Value, [NativeTypeName("HANDLE")] IntPtr hEvent)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetEventOnCompletion>(lpVtbl->SetEventOnCompletion)((ID3D12Fence1*)Unsafe.AsPointer(ref this), Value, hEvent);
+            return lpVtbl->SetEventOnCompletion((ID3D12Fence1*)Unsafe.AsPointer(ref this), Value, hEvent);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Signal([NativeTypeName("UINT64")] ulong Value)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Signal>(lpVtbl->Signal)((ID3D12Fence1*)Unsafe.AsPointer(ref this), Value);
+            return lpVtbl->Signal((ID3D12Fence1*)Unsafe.AsPointer(ref this), Value);
         }
 
         public D3D12_FENCE_FLAGS GetCreationFlags()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetCreationFlags>(lpVtbl->GetCreationFlags)((ID3D12Fence1*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetCreationFlags((ID3D12Fence1*)Unsafe.AsPointer(ref this));
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<ID3D12Fence1*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<ID3D12Fence1*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<ID3D12Fence1*, uint> Release;
 
             [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-            public IntPtr GetPrivateData;
+            public delegate* stdcall<ID3D12Fence1*, Guid*, uint*, void*, int> GetPrivateData;
 
             [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-            public IntPtr SetPrivateData;
+            public delegate* stdcall<ID3D12Fence1*, Guid*, uint, void*, int> SetPrivateData;
 
             [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-            public IntPtr SetPrivateDataInterface;
+            public delegate* stdcall<ID3D12Fence1*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
             [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public IntPtr SetName;
+            public delegate* stdcall<ID3D12Fence1*, ushort*, int> SetName;
 
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr GetDevice;
+            public delegate* stdcall<ID3D12Fence1*, Guid*, void**, int> GetDevice;
 
             [NativeTypeName("UINT64 () __attribute__((stdcall))")]
-            public IntPtr GetCompletedValue;
+            public delegate* stdcall<ID3D12Fence1*, ulong> GetCompletedValue;
 
             [NativeTypeName("HRESULT (UINT64, HANDLE) __attribute__((stdcall))")]
-            public IntPtr SetEventOnCompletion;
+            public delegate* stdcall<ID3D12Fence1*, ulong, IntPtr, int> SetEventOnCompletion;
 
             [NativeTypeName("HRESULT (UINT64) __attribute__((stdcall))")]
-            public IntPtr Signal;
+            public delegate* stdcall<ID3D12Fence1*, ulong, int> Signal;
 
             [NativeTypeName("D3D12_FENCE_FLAGS () __attribute__((stdcall))")]
-            public IntPtr GetCreationFlags;
+            public delegate* stdcall<ID3D12Fence1*, D3D12_FENCE_FLAGS> GetCreationFlags;
         }
     }
 }

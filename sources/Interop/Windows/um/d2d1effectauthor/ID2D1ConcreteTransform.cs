@@ -14,83 +14,60 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ID2D1ConcreteTransform* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ID2D1ConcreteTransform* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ID2D1ConcreteTransform* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("UINT32")]
-        public delegate uint _GetInputCount(ID2D1ConcreteTransform* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetOutputBuffer(ID2D1ConcreteTransform* pThis, D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        public delegate void _SetCached(ID2D1ConcreteTransform* pThis, [NativeTypeName("BOOL")] int isCached);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ID2D1ConcreteTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((ID2D1ConcreteTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ID2D1ConcreteTransform*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((ID2D1ConcreteTransform*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ID2D1ConcreteTransform*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((ID2D1ConcreteTransform*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("UINT32")]
         public uint GetInputCount()
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetInputCount>(lpVtbl->GetInputCount)((ID2D1ConcreteTransform*)Unsafe.AsPointer(ref this));
+            return lpVtbl->GetInputCount((ID2D1ConcreteTransform*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetOutputBuffer(D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetOutputBuffer>(lpVtbl->SetOutputBuffer)((ID2D1ConcreteTransform*)Unsafe.AsPointer(ref this), bufferPrecision, channelDepth);
+            return lpVtbl->SetOutputBuffer((ID2D1ConcreteTransform*)Unsafe.AsPointer(ref this), bufferPrecision, channelDepth);
         }
 
         public void SetCached([NativeTypeName("BOOL")] int isCached)
         {
-            Marshal.GetDelegateForFunctionPointer<_SetCached>(lpVtbl->SetCached)((ID2D1ConcreteTransform*)Unsafe.AsPointer(ref this), isCached);
+            lpVtbl->SetCached((ID2D1ConcreteTransform*)Unsafe.AsPointer(ref this), isCached);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<ID2D1ConcreteTransform*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<ID2D1ConcreteTransform*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<ID2D1ConcreteTransform*, uint> Release;
 
             [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr GetInputCount;
+            public delegate* stdcall<ID2D1ConcreteTransform*, uint> GetInputCount;
 
             [NativeTypeName("HRESULT (D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetOutputBuffer;
+            public delegate* stdcall<ID2D1ConcreteTransform*, D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH, int> SetOutputBuffer;
 
             [NativeTypeName("void (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public IntPtr SetCached;
+            public delegate* stdcall<ID2D1ConcreteTransform*, int, void> SetCached;
         }
     }
 }

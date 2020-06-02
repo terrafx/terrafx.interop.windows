@@ -14,59 +14,43 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ISupportErrorInfo* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ISupportErrorInfo* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ISupportErrorInfo* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _InterfaceSupportsErrorInfo(ISupportErrorInfo* pThis, [NativeTypeName("const IID &")] Guid* riid);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ISupportErrorInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((ISupportErrorInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ISupportErrorInfo*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((ISupportErrorInfo*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ISupportErrorInfo*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((ISupportErrorInfo*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int InterfaceSupportsErrorInfo([NativeTypeName("const IID &")] Guid* riid)
         {
-            return Marshal.GetDelegateForFunctionPointer<_InterfaceSupportsErrorInfo>(lpVtbl->InterfaceSupportsErrorInfo)((ISupportErrorInfo*)Unsafe.AsPointer(ref this), riid);
+            return lpVtbl->InterfaceSupportsErrorInfo((ISupportErrorInfo*)Unsafe.AsPointer(ref this), riid);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<ISupportErrorInfo*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<ISupportErrorInfo*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<ISupportErrorInfo*, uint> Release;
 
             [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-            public IntPtr InterfaceSupportsErrorInfo;
+            public delegate* stdcall<ISupportErrorInfo*, Guid*, int> InterfaceSupportsErrorInfo;
         }
     }
 }

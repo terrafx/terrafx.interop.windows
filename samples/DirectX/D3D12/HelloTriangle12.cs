@@ -290,7 +290,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     fixed (ID3D12RootSignature** rootSignature = &_rootSignature)
                     {
                         iid = IID_ID3D12RootSignature;
-                        ThrowIfFailed(nameof(ID3D12Device._CreateRootSignature), _device->CreateRootSignature(nodeMask: 0, signature->GetBufferPointer(), signature->GetBufferSize(), &iid, (void**)rootSignature));
+                        ThrowIfFailed(nameof(ID3D12Device.CreateRootSignature), _device->CreateRootSignature(nodeMask: 0, signature->GetBufferPointer(), signature->GetBufferSize(), &iid, (void**)rootSignature));
                     }
                 }
 
@@ -362,7 +362,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                     fixed (ID3D12PipelineState** pipelineState = &_pipelineState)
                     {
                         iid = IID_ID3D12PipelineState;
-                        ThrowIfFailed(nameof(ID3D12Device._CreateGraphicsPipelineState), _device->CreateGraphicsPipelineState(&psoDesc, &iid, (void**)pipelineState));
+                        ThrowIfFailed(nameof(ID3D12Device.CreateGraphicsPipelineState), _device->CreateGraphicsPipelineState(&psoDesc, &iid, (void**)pipelineState));
                     }
                 }
 
@@ -408,7 +408,7 @@ namespace TerraFX.Samples.DirectX.D3D12
                         var bufferDesc = D3D12_RESOURCE_DESC.Buffer(vertexBufferSize);
 
                         iid = IID_ID3D12Resource;
-                        ThrowIfFailed(nameof(ID3D12Device._CreateCommittedResource), _device->CreateCommittedResource(
+                        ThrowIfFailed(nameof(ID3D12Device.CreateCommittedResource), _device->CreateCommittedResource(
                             &heapProperties,
                             D3D12_HEAP_FLAG_NONE,
                             &bufferDesc,

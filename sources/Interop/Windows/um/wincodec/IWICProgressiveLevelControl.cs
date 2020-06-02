@@ -14,85 +14,61 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(IWICProgressiveLevelControl* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(IWICProgressiveLevelControl* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(IWICProgressiveLevelControl* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetLevelCount(IWICProgressiveLevelControl* pThis, [NativeTypeName("UINT *")] uint* pcLevels);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _GetCurrentLevel(IWICProgressiveLevelControl* pThis, [NativeTypeName("UINT *")] uint* pnLevel);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetCurrentLevel(IWICProgressiveLevelControl* pThis, [NativeTypeName("UINT")] uint nLevel);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetLevelCount([NativeTypeName("UINT *")] uint* pcLevels)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetLevelCount>(lpVtbl->GetLevelCount)((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this), pcLevels);
+            return lpVtbl->GetLevelCount((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this), pcLevels);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetCurrentLevel([NativeTypeName("UINT *")] uint* pnLevel)
         {
-            return Marshal.GetDelegateForFunctionPointer<_GetCurrentLevel>(lpVtbl->GetCurrentLevel)((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this), pnLevel);
+            return lpVtbl->GetCurrentLevel((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this), pnLevel);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetCurrentLevel([NativeTypeName("UINT")] uint nLevel)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetCurrentLevel>(lpVtbl->SetCurrentLevel)((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this), nLevel);
+            return lpVtbl->SetCurrentLevel((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this), nLevel);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<IWICProgressiveLevelControl*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<IWICProgressiveLevelControl*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<IWICProgressiveLevelControl*, uint> Release;
 
             [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public IntPtr GetLevelCount;
+            public delegate* stdcall<IWICProgressiveLevelControl*, uint*, int> GetLevelCount;
 
             [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public IntPtr GetCurrentLevel;
+            public delegate* stdcall<IWICProgressiveLevelControl*, uint*, int> GetCurrentLevel;
 
             [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-            public IntPtr SetCurrentLevel;
+            public delegate* stdcall<IWICProgressiveLevelControl*, uint, int> SetCurrentLevel;
         }
     }
 }

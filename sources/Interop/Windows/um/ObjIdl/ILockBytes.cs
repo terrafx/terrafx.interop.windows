@@ -14,137 +14,97 @@ namespace TerraFX.Interop
     {
         public Vtbl* lpVtbl;
 
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _QueryInterface(ILockBytes* pThis, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _AddRef(ILockBytes* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("ULONG")]
-        public delegate uint _Release(ILockBytes* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _ReadAt(ILockBytes* pThis, ULARGE_INTEGER ulOffset, [NativeTypeName("void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _WriteAt(ILockBytes* pThis, ULARGE_INTEGER ulOffset, [NativeTypeName("const void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbWritten);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Flush(ILockBytes* pThis);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _SetSize(ILockBytes* pThis, ULARGE_INTEGER cb);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _LockRegion(ILockBytes* pThis, ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _UnlockRegion(ILockBytes* pThis, ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType);
-
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        [return: NativeTypeName("HRESULT")]
-        public delegate int _Stat(ILockBytes* pThis, [NativeTypeName("STATSTG *")] STATSTG* pstatstg, [NativeTypeName("DWORD")] uint grfStatFlag);
-
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>(lpVtbl->QueryInterface)((ILockBytes*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return lpVtbl->QueryInterface((ILockBytes*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return Marshal.GetDelegateForFunctionPointer<_AddRef>(lpVtbl->AddRef)((ILockBytes*)Unsafe.AsPointer(ref this));
+            return lpVtbl->AddRef((ILockBytes*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Release>(lpVtbl->Release)((ILockBytes*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Release((ILockBytes*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ReadAt(ULARGE_INTEGER ulOffset, [NativeTypeName("void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead)
         {
-            return Marshal.GetDelegateForFunctionPointer<_ReadAt>(lpVtbl->ReadAt)((ILockBytes*)Unsafe.AsPointer(ref this), ulOffset, pv, cb, pcbRead);
+            return lpVtbl->ReadAt((ILockBytes*)Unsafe.AsPointer(ref this), ulOffset, pv, cb, pcbRead);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int WriteAt(ULARGE_INTEGER ulOffset, [NativeTypeName("const void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbWritten)
         {
-            return Marshal.GetDelegateForFunctionPointer<_WriteAt>(lpVtbl->WriteAt)((ILockBytes*)Unsafe.AsPointer(ref this), ulOffset, pv, cb, pcbWritten);
+            return lpVtbl->WriteAt((ILockBytes*)Unsafe.AsPointer(ref this), ulOffset, pv, cb, pcbWritten);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Flush()
         {
-            return Marshal.GetDelegateForFunctionPointer<_Flush>(lpVtbl->Flush)((ILockBytes*)Unsafe.AsPointer(ref this));
+            return lpVtbl->Flush((ILockBytes*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetSize(ULARGE_INTEGER cb)
         {
-            return Marshal.GetDelegateForFunctionPointer<_SetSize>(lpVtbl->SetSize)((ILockBytes*)Unsafe.AsPointer(ref this), cb);
+            return lpVtbl->SetSize((ILockBytes*)Unsafe.AsPointer(ref this), cb);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int LockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType)
         {
-            return Marshal.GetDelegateForFunctionPointer<_LockRegion>(lpVtbl->LockRegion)((ILockBytes*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
+            return lpVtbl->LockRegion((ILockBytes*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int UnlockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType)
         {
-            return Marshal.GetDelegateForFunctionPointer<_UnlockRegion>(lpVtbl->UnlockRegion)((ILockBytes*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
+            return lpVtbl->UnlockRegion((ILockBytes*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Stat([NativeTypeName("STATSTG *")] STATSTG* pstatstg, [NativeTypeName("DWORD")] uint grfStatFlag)
         {
-            return Marshal.GetDelegateForFunctionPointer<_Stat>(lpVtbl->Stat)((ILockBytes*)Unsafe.AsPointer(ref this), pstatstg, grfStatFlag);
+            return lpVtbl->Stat((ILockBytes*)Unsafe.AsPointer(ref this), pstatstg, grfStatFlag);
         }
 
         public partial struct Vtbl
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public IntPtr QueryInterface;
+            public delegate* stdcall<ILockBytes*, Guid*, void**, int> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr AddRef;
+            public delegate* stdcall<ILockBytes*, uint> AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public IntPtr Release;
+            public delegate* stdcall<ILockBytes*, uint> Release;
 
             [NativeTypeName("HRESULT (ULARGE_INTEGER, void *, ULONG, ULONG *) __attribute__((stdcall))")]
-            public IntPtr ReadAt;
+            public delegate* stdcall<ILockBytes*, ULARGE_INTEGER, void*, uint, uint*, int> ReadAt;
 
             [NativeTypeName("HRESULT (ULARGE_INTEGER, const void *, ULONG, ULONG *) __attribute__((stdcall))")]
-            public IntPtr WriteAt;
+            public delegate* stdcall<ILockBytes*, ULARGE_INTEGER, void*, uint, uint*, int> WriteAt;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public IntPtr Flush;
+            public delegate* stdcall<ILockBytes*, int> Flush;
 
             [NativeTypeName("HRESULT (ULARGE_INTEGER) __attribute__((stdcall))")]
-            public IntPtr SetSize;
+            public delegate* stdcall<ILockBytes*, ULARGE_INTEGER, int> SetSize;
 
             [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
-            public IntPtr LockRegion;
+            public delegate* stdcall<ILockBytes*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> LockRegion;
 
             [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
-            public IntPtr UnlockRegion;
+            public delegate* stdcall<ILockBytes*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> UnlockRegion;
 
             [NativeTypeName("HRESULT (STATSTG *, DWORD) __attribute__((stdcall))")]
-            public IntPtr Stat;
+            public delegate* stdcall<ILockBytes*, STATSTG*, uint, int> Stat;
         }
     }
 }
