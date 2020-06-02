@@ -847,6 +847,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mmreg", "mmreg", "{A6F7ABE5
 		generation\shared\mmreg\shared-mmreg.h = generation\shared\mmreg\shared-mmreg.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DirectML", "DirectML", "{7B34FD9E-65C1-4140-80D5-6E8A8D39A8CF}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\DirectML\generate.rsp = generation\um\DirectML\generate.rsp
+		generation\um\DirectML\header.txt = generation\um\DirectML\header.txt
+		generation\um\DirectML\um-DirectML.h = generation\um\DirectML\um-DirectML.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -988,6 +995,7 @@ Global
 		{E946BCCF-E6E9-4646-9C35-8E13F514203A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{50062655-7A86-43ED-AE26-D441B771CFDB} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{A6F7ABE5-89E1-483A-ADBD-D89EF79E6E16} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{7B34FD9E-65C1-4140-80D5-6E8A8D39A8CF} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
