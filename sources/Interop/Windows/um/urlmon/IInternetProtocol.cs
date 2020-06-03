@@ -12,126 +12,84 @@ namespace TerraFX.Interop
     [Guid("79EAC9E4-BAF9-11CE-8C82-00AA004BA90B")]
     public unsafe partial struct IInternetProtocol
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IInternetProtocol*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IInternetProtocol*, Guid*, void**, int>)(lpVtbl[0]))((IInternetProtocol*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IInternetProtocol*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IInternetProtocol*, uint>)(lpVtbl[1]))((IInternetProtocol*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IInternetProtocol*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IInternetProtocol*, uint>)(lpVtbl[2]))((IInternetProtocol*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Start([NativeTypeName("LPCWSTR")] ushort* szUrl, [NativeTypeName("IInternetProtocolSink *")] IInternetProtocolSink* pOIProtSink, [NativeTypeName("IInternetBindInfo *")] IInternetBindInfo* pOIBindInfo, [NativeTypeName("DWORD")] uint grfPI, [NativeTypeName("HANDLE_PTR")] nuint dwReserved)
         {
-            return lpVtbl->Start((IInternetProtocol*)Unsafe.AsPointer(ref this), szUrl, pOIProtSink, pOIBindInfo, grfPI, dwReserved);
+            return ((delegate* stdcall<IInternetProtocol*, ushort*, IInternetProtocolSink*, IInternetBindInfo*, uint, nuint, int>)(lpVtbl[3]))((IInternetProtocol*)Unsafe.AsPointer(ref this), szUrl, pOIProtSink, pOIBindInfo, grfPI, dwReserved);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Continue([NativeTypeName("PROTOCOLDATA *")] PROTOCOLDATA* pProtocolData)
         {
-            return lpVtbl->Continue((IInternetProtocol*)Unsafe.AsPointer(ref this), pProtocolData);
+            return ((delegate* stdcall<IInternetProtocol*, PROTOCOLDATA*, int>)(lpVtbl[4]))((IInternetProtocol*)Unsafe.AsPointer(ref this), pProtocolData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Abort([NativeTypeName("HRESULT")] int hrReason, [NativeTypeName("DWORD")] uint dwOptions)
         {
-            return lpVtbl->Abort((IInternetProtocol*)Unsafe.AsPointer(ref this), hrReason, dwOptions);
+            return ((delegate* stdcall<IInternetProtocol*, int, uint, int>)(lpVtbl[5]))((IInternetProtocol*)Unsafe.AsPointer(ref this), hrReason, dwOptions);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Terminate([NativeTypeName("DWORD")] uint dwOptions)
         {
-            return lpVtbl->Terminate((IInternetProtocol*)Unsafe.AsPointer(ref this), dwOptions);
+            return ((delegate* stdcall<IInternetProtocol*, uint, int>)(lpVtbl[6]))((IInternetProtocol*)Unsafe.AsPointer(ref this), dwOptions);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Suspend()
         {
-            return lpVtbl->Suspend((IInternetProtocol*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IInternetProtocol*, int>)(lpVtbl[7]))((IInternetProtocol*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Resume()
         {
-            return lpVtbl->Resume((IInternetProtocol*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IInternetProtocol*, int>)(lpVtbl[8]))((IInternetProtocol*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Read([NativeTypeName("void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead)
         {
-            return lpVtbl->Read((IInternetProtocol*)Unsafe.AsPointer(ref this), pv, cb, pcbRead);
+            return ((delegate* stdcall<IInternetProtocol*, void*, uint, uint*, int>)(lpVtbl[9]))((IInternetProtocol*)Unsafe.AsPointer(ref this), pv, cb, pcbRead);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Seek(LARGE_INTEGER dlibMove, [NativeTypeName("DWORD")] uint dwOrigin, [NativeTypeName("ULARGE_INTEGER *")] ULARGE_INTEGER* plibNewPosition)
         {
-            return lpVtbl->Seek((IInternetProtocol*)Unsafe.AsPointer(ref this), dlibMove, dwOrigin, plibNewPosition);
+            return ((delegate* stdcall<IInternetProtocol*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int>)(lpVtbl[10]))((IInternetProtocol*)Unsafe.AsPointer(ref this), dlibMove, dwOrigin, plibNewPosition);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int LockRequest([NativeTypeName("DWORD")] uint dwOptions)
         {
-            return lpVtbl->LockRequest((IInternetProtocol*)Unsafe.AsPointer(ref this), dwOptions);
+            return ((delegate* stdcall<IInternetProtocol*, uint, int>)(lpVtbl[11]))((IInternetProtocol*)Unsafe.AsPointer(ref this), dwOptions);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int UnlockRequest()
         {
-            return lpVtbl->UnlockRequest((IInternetProtocol*)Unsafe.AsPointer(ref this));
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IInternetProtocol*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IInternetProtocol*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IInternetProtocol*, uint> Release;
-
-            [NativeTypeName("HRESULT (LPCWSTR, IInternetProtocolSink *, IInternetBindInfo *, DWORD, HANDLE_PTR) __attribute__((stdcall))")]
-            public delegate* stdcall<IInternetProtocol*, ushort*, IInternetProtocolSink*, IInternetBindInfo*, uint, nuint, int> Start;
-
-            [NativeTypeName("HRESULT (PROTOCOLDATA *) __attribute__((stdcall))")]
-            public delegate* stdcall<IInternetProtocol*, PROTOCOLDATA*, int> Continue;
-
-            [NativeTypeName("HRESULT (HRESULT, DWORD) __attribute__((stdcall))")]
-            public delegate* stdcall<IInternetProtocol*, int, uint, int> Abort;
-
-            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public delegate* stdcall<IInternetProtocol*, uint, int> Terminate;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* stdcall<IInternetProtocol*, int> Suspend;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* stdcall<IInternetProtocol*, int> Resume;
-
-            [NativeTypeName("HRESULT (void *, ULONG, ULONG *) __attribute__((stdcall))")]
-            public delegate* stdcall<IInternetProtocol*, void*, uint, uint*, int> Read;
-
-            [NativeTypeName("HRESULT (LARGE_INTEGER, DWORD, ULARGE_INTEGER *) __attribute__((stdcall))")]
-            public delegate* stdcall<IInternetProtocol*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int> Seek;
-
-            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public delegate* stdcall<IInternetProtocol*, uint, int> LockRequest;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* stdcall<IInternetProtocol*, int> UnlockRequest;
+            return ((delegate* stdcall<IInternetProtocol*, int>)(lpVtbl[12]))((IInternetProtocol*)Unsafe.AsPointer(ref this));
         }
     }
 }

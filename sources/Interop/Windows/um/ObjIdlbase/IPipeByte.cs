@@ -12,54 +12,36 @@ namespace TerraFX.Interop
     [Guid("DB2F3ACA-2F86-11D1-8E04-00C04FB9989A")]
     public unsafe partial struct IPipeByte
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IPipeByte*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IPipeByte*, Guid*, void**, int>)(lpVtbl[0]))((IPipeByte*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IPipeByte*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IPipeByte*, uint>)(lpVtbl[1]))((IPipeByte*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IPipeByte*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IPipeByte*, uint>)(lpVtbl[2]))((IPipeByte*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Pull([NativeTypeName("BYTE *")] byte* buf, [NativeTypeName("ULONG")] uint cRequest, [NativeTypeName("ULONG *")] uint* pcReturned)
         {
-            return lpVtbl->Pull((IPipeByte*)Unsafe.AsPointer(ref this), buf, cRequest, pcReturned);
+            return ((delegate* stdcall<IPipeByte*, byte*, uint, uint*, int>)(lpVtbl[3]))((IPipeByte*)Unsafe.AsPointer(ref this), buf, cRequest, pcReturned);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Push([NativeTypeName("BYTE *")] byte* buf, [NativeTypeName("ULONG")] uint cSent)
         {
-            return lpVtbl->Push((IPipeByte*)Unsafe.AsPointer(ref this), buf, cSent);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IPipeByte*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IPipeByte*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IPipeByte*, uint> Release;
-
-            [NativeTypeName("HRESULT (BYTE *, ULONG, ULONG *) __attribute__((stdcall))")]
-            public delegate* stdcall<IPipeByte*, byte*, uint, uint*, int> Pull;
-
-            [NativeTypeName("HRESULT (BYTE *, ULONG) __attribute__((stdcall))")]
-            public delegate* stdcall<IPipeByte*, byte*, uint, int> Push;
+            return ((delegate* stdcall<IPipeByte*, byte*, uint, int>)(lpVtbl[4]))((IPipeByte*)Unsafe.AsPointer(ref this), buf, cSent);
         }
     }
 }

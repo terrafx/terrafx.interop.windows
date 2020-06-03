@@ -12,70 +12,46 @@ namespace TerraFX.Interop
     [Guid("9B7E4E00-342C-4106-A19F-4F2704F689F0")]
     public unsafe partial struct ID3D11Multithread
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID3D11Multithread*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID3D11Multithread*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11Multithread*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID3D11Multithread*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D11Multithread*, uint>)(lpVtbl[1]))((ID3D11Multithread*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID3D11Multithread*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D11Multithread*, uint>)(lpVtbl[2]))((ID3D11Multithread*)Unsafe.AsPointer(ref this));
         }
 
         public void Enter()
         {
-            lpVtbl->Enter((ID3D11Multithread*)Unsafe.AsPointer(ref this));
+            ((delegate* stdcall<ID3D11Multithread*, void>)(lpVtbl[3]))((ID3D11Multithread*)Unsafe.AsPointer(ref this));
         }
 
         public void Leave()
         {
-            lpVtbl->Leave((ID3D11Multithread*)Unsafe.AsPointer(ref this));
+            ((delegate* stdcall<ID3D11Multithread*, void>)(lpVtbl[4]))((ID3D11Multithread*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("BOOL")]
         public int SetMultithreadProtected([NativeTypeName("BOOL")] int bMTProtect)
         {
-            return lpVtbl->SetMultithreadProtected((ID3D11Multithread*)Unsafe.AsPointer(ref this), bMTProtect);
+            return ((delegate* stdcall<ID3D11Multithread*, int, int>)(lpVtbl[5]))((ID3D11Multithread*)Unsafe.AsPointer(ref this), bMTProtect);
         }
 
         [return: NativeTypeName("BOOL")]
         public int GetMultithreadProtected()
         {
-            return lpVtbl->GetMultithreadProtected((ID3D11Multithread*)Unsafe.AsPointer(ref this));
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11Multithread*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11Multithread*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11Multithread*, uint> Release;
-
-            [NativeTypeName("void () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11Multithread*, void> Enter;
-
-            [NativeTypeName("void () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11Multithread*, void> Leave;
-
-            [NativeTypeName("BOOL (BOOL) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11Multithread*, int, int> SetMultithreadProtected;
-
-            [NativeTypeName("BOOL () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11Multithread*, int> GetMultithreadProtected;
+            return ((delegate* stdcall<ID3D11Multithread*, int>)(lpVtbl[6]))((ID3D11Multithread*)Unsafe.AsPointer(ref this));
         }
     }
 }

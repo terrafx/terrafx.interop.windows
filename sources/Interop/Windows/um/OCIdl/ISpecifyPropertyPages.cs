@@ -12,45 +12,30 @@ namespace TerraFX.Interop
     [Guid("B196B28B-BAB4-101A-B69C-00AA00341D07")]
     public unsafe partial struct ISpecifyPropertyPages
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ISpecifyPropertyPages*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ISpecifyPropertyPages*, Guid*, void**, int>)(lpVtbl[0]))((ISpecifyPropertyPages*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ISpecifyPropertyPages*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ISpecifyPropertyPages*, uint>)(lpVtbl[1]))((ISpecifyPropertyPages*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ISpecifyPropertyPages*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ISpecifyPropertyPages*, uint>)(lpVtbl[2]))((ISpecifyPropertyPages*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPages([NativeTypeName("CAUUID *")] CAUUID* pPages)
         {
-            return lpVtbl->GetPages((ISpecifyPropertyPages*)Unsafe.AsPointer(ref this), pPages);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ISpecifyPropertyPages*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ISpecifyPropertyPages*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ISpecifyPropertyPages*, uint> Release;
-
-            [NativeTypeName("HRESULT (CAUUID *) __attribute__((stdcall))")]
-            public delegate* stdcall<ISpecifyPropertyPages*, CAUUID*, int> GetPages;
+            return ((delegate* stdcall<ISpecifyPropertyPages*, CAUUID*, int>)(lpVtbl[3]))((ISpecifyPropertyPages*)Unsafe.AsPointer(ref this), pPages);
         }
     }
 }

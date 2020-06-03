@@ -12,45 +12,30 @@ namespace TerraFX.Interop
     [Guid("11C81BC2-121E-4ED5-B9C4-B430BD54F2C0")]
     public unsafe partial struct IBindCallbackRedirect
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IBindCallbackRedirect*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IBindCallbackRedirect*, Guid*, void**, int>)(lpVtbl[0]))((IBindCallbackRedirect*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IBindCallbackRedirect*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IBindCallbackRedirect*, uint>)(lpVtbl[1]))((IBindCallbackRedirect*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IBindCallbackRedirect*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IBindCallbackRedirect*, uint>)(lpVtbl[2]))((IBindCallbackRedirect*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Redirect([NativeTypeName("LPCWSTR")] ushort* lpcUrl, [NativeTypeName("VARIANT_BOOL *")] short* vbCancel)
         {
-            return lpVtbl->Redirect((IBindCallbackRedirect*)Unsafe.AsPointer(ref this), lpcUrl, vbCancel);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IBindCallbackRedirect*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IBindCallbackRedirect*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IBindCallbackRedirect*, uint> Release;
-
-            [NativeTypeName("HRESULT (LPCWSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* stdcall<IBindCallbackRedirect*, ushort*, short*, int> Redirect;
+            return ((delegate* stdcall<IBindCallbackRedirect*, ushort*, short*, int>)(lpVtbl[3]))((IBindCallbackRedirect*)Unsafe.AsPointer(ref this), lpcUrl, vbCancel);
         }
     }
 }

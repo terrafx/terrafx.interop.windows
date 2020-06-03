@@ -12,54 +12,36 @@ namespace TerraFX.Interop
     [Guid("00000001-0000-0000-C000-000000000046")]
     public unsafe partial struct IClassFactory
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IClassFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IClassFactory*, Guid*, void**, int>)(lpVtbl[0]))((IClassFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IClassFactory*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IClassFactory*, uint>)(lpVtbl[1]))((IClassFactory*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IClassFactory*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IClassFactory*, uint>)(lpVtbl[2]))((IClassFactory*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CreateInstance([NativeTypeName("IUnknown *")] IUnknown* pUnkOuter, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->CreateInstance((IClassFactory*)Unsafe.AsPointer(ref this), pUnkOuter, riid, ppvObject);
+            return ((delegate* stdcall<IClassFactory*, IUnknown*, Guid*, void**, int>)(lpVtbl[3]))((IClassFactory*)Unsafe.AsPointer(ref this), pUnkOuter, riid, ppvObject);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int LockServer([NativeTypeName("BOOL")] int fLock)
         {
-            return lpVtbl->LockServer((IClassFactory*)Unsafe.AsPointer(ref this), fLock);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IClassFactory*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IClassFactory*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IClassFactory*, uint> Release;
-
-            [NativeTypeName("HRESULT (IUnknown *, const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IClassFactory*, IUnknown*, Guid*, void**, int> CreateInstance;
-
-            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public delegate* stdcall<IClassFactory*, int, int> LockServer;
+            return ((delegate* stdcall<IClassFactory*, int, int>)(lpVtbl[4]))((IClassFactory*)Unsafe.AsPointer(ref this), fLock);
         }
     }
 }

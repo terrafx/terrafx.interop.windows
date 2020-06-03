@@ -12,36 +12,24 @@ namespace TerraFX.Interop
     [Guid("94EA2B94-E9CC-49E0-C0FF-EE64CA8F5B90")]
     public unsafe partial struct IAgileObject
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IAgileObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IAgileObject*, Guid*, void**, int>)(lpVtbl[0]))((IAgileObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IAgileObject*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IAgileObject*, uint>)(lpVtbl[1]))((IAgileObject*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IAgileObject*)Unsafe.AsPointer(ref this));
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IAgileObject*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IAgileObject*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IAgileObject*, uint> Release;
+            return ((delegate* stdcall<IAgileObject*, uint>)(lpVtbl[2]))((IAgileObject*)Unsafe.AsPointer(ref this));
         }
     }
 }

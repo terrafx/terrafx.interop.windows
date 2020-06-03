@@ -12,52 +12,34 @@ namespace TerraFX.Interop
     [Guid("26D95C66-80F2-499A-AD54-5AE7F01C6D98")]
     public unsafe partial struct IXAPOParameters
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IXAPOParameters*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IXAPOParameters*, Guid*, void**, int>)(lpVtbl[0]))((IXAPOParameters*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IXAPOParameters*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IXAPOParameters*, uint>)(lpVtbl[1]))((IXAPOParameters*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IXAPOParameters*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IXAPOParameters*, uint>)(lpVtbl[2]))((IXAPOParameters*)Unsafe.AsPointer(ref this));
         }
 
         public void SetParameters([NativeTypeName("const void *")] void* pParameters, [NativeTypeName("UINT32")] uint ParameterByteSize)
         {
-            lpVtbl->SetParameters((IXAPOParameters*)Unsafe.AsPointer(ref this), pParameters, ParameterByteSize);
+            ((delegate* stdcall<IXAPOParameters*, void*, uint, void>)(lpVtbl[3]))((IXAPOParameters*)Unsafe.AsPointer(ref this), pParameters, ParameterByteSize);
         }
 
         public void GetParameters([NativeTypeName("void *")] void* pParameters, [NativeTypeName("UINT32")] uint ParameterByteSize)
         {
-            lpVtbl->GetParameters((IXAPOParameters*)Unsafe.AsPointer(ref this), pParameters, ParameterByteSize);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IXAPOParameters*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IXAPOParameters*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IXAPOParameters*, uint> Release;
-
-            [NativeTypeName("void (const void *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IXAPOParameters*, void*, uint, void> SetParameters;
-
-            [NativeTypeName("void (void *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IXAPOParameters*, void*, uint, void> GetParameters;
+            ((delegate* stdcall<IXAPOParameters*, void*, uint, void>)(lpVtbl[4]))((IXAPOParameters*)Unsafe.AsPointer(ref this), pParameters, ParameterByteSize);
         }
     }
 }

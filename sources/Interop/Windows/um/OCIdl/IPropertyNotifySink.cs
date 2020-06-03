@@ -12,54 +12,36 @@ namespace TerraFX.Interop
     [Guid("9BFBBC02-EFF1-101A-84ED-00AA00341D07")]
     public unsafe partial struct IPropertyNotifySink
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IPropertyNotifySink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IPropertyNotifySink*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyNotifySink*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IPropertyNotifySink*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IPropertyNotifySink*, uint>)(lpVtbl[1]))((IPropertyNotifySink*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IPropertyNotifySink*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IPropertyNotifySink*, uint>)(lpVtbl[2]))((IPropertyNotifySink*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int OnChanged([NativeTypeName("DISPID")] int dispID)
         {
-            return lpVtbl->OnChanged((IPropertyNotifySink*)Unsafe.AsPointer(ref this), dispID);
+            return ((delegate* stdcall<IPropertyNotifySink*, int, int>)(lpVtbl[3]))((IPropertyNotifySink*)Unsafe.AsPointer(ref this), dispID);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int OnRequestEdit([NativeTypeName("DISPID")] int dispID)
         {
-            return lpVtbl->OnRequestEdit((IPropertyNotifySink*)Unsafe.AsPointer(ref this), dispID);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IPropertyNotifySink*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IPropertyNotifySink*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IPropertyNotifySink*, uint> Release;
-
-            [NativeTypeName("HRESULT (DISPID) __attribute__((stdcall))")]
-            public delegate* stdcall<IPropertyNotifySink*, int, int> OnChanged;
-
-            [NativeTypeName("HRESULT (DISPID) __attribute__((stdcall))")]
-            public delegate* stdcall<IPropertyNotifySink*, int, int> OnRequestEdit;
+            return ((delegate* stdcall<IPropertyNotifySink*, int, int>)(lpVtbl[4]))((IPropertyNotifySink*)Unsafe.AsPointer(ref this), dispID);
         }
     }
 }

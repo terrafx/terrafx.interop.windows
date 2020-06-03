@@ -12,45 +12,30 @@ namespace TerraFX.Interop
     [Guid("1C733A30-2A1C-11CE-ADE5-00AA0044773D")]
     public unsafe partial struct ICallFactory
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ICallFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ICallFactory*, Guid*, void**, int>)(lpVtbl[0]))((ICallFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ICallFactory*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ICallFactory*, uint>)(lpVtbl[1]))((ICallFactory*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ICallFactory*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ICallFactory*, uint>)(lpVtbl[2]))((ICallFactory*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CreateCall([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("IUnknown *")] IUnknown* pCtrlUnk, [NativeTypeName("const IID &")] Guid* riid2, [NativeTypeName("IUnknown **")] IUnknown** ppv)
         {
-            return lpVtbl->CreateCall((ICallFactory*)Unsafe.AsPointer(ref this), riid, pCtrlUnk, riid2, ppv);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ICallFactory*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ICallFactory*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ICallFactory*, uint> Release;
-
-            [NativeTypeName("HRESULT (const IID &, IUnknown *, const IID &, IUnknown **) __attribute__((stdcall))")]
-            public delegate* stdcall<ICallFactory*, Guid*, IUnknown*, Guid*, IUnknown**, int> CreateCall;
+            return ((delegate* stdcall<ICallFactory*, Guid*, IUnknown*, Guid*, IUnknown**, int>)(lpVtbl[3]))((ICallFactory*)Unsafe.AsPointer(ref this), riid, pCtrlUnk, riid2, ppv);
         }
     }
 }

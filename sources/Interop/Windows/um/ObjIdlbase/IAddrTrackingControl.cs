@@ -12,54 +12,36 @@ namespace TerraFX.Interop
     [Guid("00000147-0000-0000-C000-000000000046")]
     public unsafe partial struct IAddrTrackingControl
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IAddrTrackingControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IAddrTrackingControl*, Guid*, void**, int>)(lpVtbl[0]))((IAddrTrackingControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IAddrTrackingControl*, uint>)(lpVtbl[1]))((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IAddrTrackingControl*, uint>)(lpVtbl[2]))((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int EnableCOMDynamicAddrTracking()
         {
-            return lpVtbl->EnableCOMDynamicAddrTracking((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IAddrTrackingControl*, int>)(lpVtbl[3]))((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int DisableCOMDynamicAddrTracking()
         {
-            return lpVtbl->DisableCOMDynamicAddrTracking((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IAddrTrackingControl*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IAddrTrackingControl*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IAddrTrackingControl*, uint> Release;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* stdcall<IAddrTrackingControl*, int> EnableCOMDynamicAddrTracking;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* stdcall<IAddrTrackingControl*, int> DisableCOMDynamicAddrTracking;
+            return ((delegate* stdcall<IAddrTrackingControl*, int>)(lpVtbl[4]))((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
         }
     }
 }

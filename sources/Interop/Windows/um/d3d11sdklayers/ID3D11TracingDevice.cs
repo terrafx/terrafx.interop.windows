@@ -12,54 +12,36 @@ namespace TerraFX.Interop
     [Guid("1911C771-1587-413E-A7E0-FB26C3DE0268")]
     public unsafe partial struct ID3D11TracingDevice
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID3D11TracingDevice*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID3D11TracingDevice*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11TracingDevice*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID3D11TracingDevice*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D11TracingDevice*, uint>)(lpVtbl[1]))((ID3D11TracingDevice*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID3D11TracingDevice*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D11TracingDevice*, uint>)(lpVtbl[2]))((ID3D11TracingDevice*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetShaderTrackingOptionsByType([NativeTypeName("UINT")] uint ResourceTypeFlags, [NativeTypeName("UINT")] uint Options)
         {
-            return lpVtbl->SetShaderTrackingOptionsByType((ID3D11TracingDevice*)Unsafe.AsPointer(ref this), ResourceTypeFlags, Options);
+            return ((delegate* stdcall<ID3D11TracingDevice*, uint, uint, int>)(lpVtbl[3]))((ID3D11TracingDevice*)Unsafe.AsPointer(ref this), ResourceTypeFlags, Options);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetShaderTrackingOptions([NativeTypeName("IUnknown *")] IUnknown* pShader, [NativeTypeName("UINT")] uint Options)
         {
-            return lpVtbl->SetShaderTrackingOptions((ID3D11TracingDevice*)Unsafe.AsPointer(ref this), pShader, Options);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11TracingDevice*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11TracingDevice*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11TracingDevice*, uint> Release;
-
-            [NativeTypeName("HRESULT (UINT, UINT) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11TracingDevice*, uint, uint, int> SetShaderTrackingOptionsByType;
-
-            [NativeTypeName("HRESULT (IUnknown *, UINT) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11TracingDevice*, IUnknown*, uint, int> SetShaderTrackingOptions;
+            return ((delegate* stdcall<ID3D11TracingDevice*, IUnknown*, uint, int>)(lpVtbl[4]))((ID3D11TracingDevice*)Unsafe.AsPointer(ref this), pShader, Options);
         }
     }
 }

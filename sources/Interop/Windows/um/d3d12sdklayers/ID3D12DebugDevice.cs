@@ -12,62 +12,41 @@ namespace TerraFX.Interop
     [Guid("3FEBD6DD-4973-4787-8194-E45F9E28923E")]
     public unsafe partial struct ID3D12DebugDevice
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID3D12DebugDevice*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID3D12DebugDevice*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12DebugDevice*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID3D12DebugDevice*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D12DebugDevice*, uint>)(lpVtbl[1]))((ID3D12DebugDevice*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID3D12DebugDevice*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D12DebugDevice*, uint>)(lpVtbl[2]))((ID3D12DebugDevice*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetFeatureMask(D3D12_DEBUG_FEATURE Mask)
         {
-            return lpVtbl->SetFeatureMask((ID3D12DebugDevice*)Unsafe.AsPointer(ref this), Mask);
+            return ((delegate* stdcall<ID3D12DebugDevice*, D3D12_DEBUG_FEATURE, int>)(lpVtbl[3]))((ID3D12DebugDevice*)Unsafe.AsPointer(ref this), Mask);
         }
 
         public D3D12_DEBUG_FEATURE GetFeatureMask()
         {
-            return lpVtbl->GetFeatureMask((ID3D12DebugDevice*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D12DebugDevice*, D3D12_DEBUG_FEATURE>)(lpVtbl[4]))((ID3D12DebugDevice*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ReportLiveDeviceObjects(D3D12_RLDO_FLAGS Flags)
         {
-            return lpVtbl->ReportLiveDeviceObjects((ID3D12DebugDevice*)Unsafe.AsPointer(ref this), Flags);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12DebugDevice*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12DebugDevice*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12DebugDevice*, uint> Release;
-
-            [NativeTypeName("HRESULT (D3D12_DEBUG_FEATURE) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12DebugDevice*, D3D12_DEBUG_FEATURE, int> SetFeatureMask;
-
-            [NativeTypeName("D3D12_DEBUG_FEATURE () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12DebugDevice*, D3D12_DEBUG_FEATURE> GetFeatureMask;
-
-            [NativeTypeName("HRESULT (D3D12_RLDO_FLAGS) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12DebugDevice*, D3D12_RLDO_FLAGS, int> ReportLiveDeviceObjects;
+            return ((delegate* stdcall<ID3D12DebugDevice*, D3D12_RLDO_FLAGS, int>)(lpVtbl[5]))((ID3D12DebugDevice*)Unsafe.AsPointer(ref this), Flags);
         }
     }
 }

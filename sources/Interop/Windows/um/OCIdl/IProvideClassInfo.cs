@@ -12,45 +12,30 @@ namespace TerraFX.Interop
     [Guid("B196B283-BAB4-101A-B69C-00AA00341D07")]
     public unsafe partial struct IProvideClassInfo
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IProvideClassInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IProvideClassInfo*, Guid*, void**, int>)(lpVtbl[0]))((IProvideClassInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IProvideClassInfo*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IProvideClassInfo*, uint>)(lpVtbl[1]))((IProvideClassInfo*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IProvideClassInfo*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IProvideClassInfo*, uint>)(lpVtbl[2]))((IProvideClassInfo*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetClassInfoA([NativeTypeName("ITypeInfo **")] ITypeInfo** ppTI)
         {
-            return lpVtbl->GetClassInfoA((IProvideClassInfo*)Unsafe.AsPointer(ref this), ppTI);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IProvideClassInfo*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IProvideClassInfo*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IProvideClassInfo*, uint> Release;
-
-            [NativeTypeName("HRESULT (ITypeInfo **) __attribute__((stdcall))")]
-            public delegate* stdcall<IProvideClassInfo*, ITypeInfo**, int> GetClassInfoA;
+            return ((delegate* stdcall<IProvideClassInfo*, ITypeInfo**, int>)(lpVtbl[3]))((IProvideClassInfo*)Unsafe.AsPointer(ref this), ppTI);
         }
     }
 }

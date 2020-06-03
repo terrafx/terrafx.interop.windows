@@ -7,6 +7,8 @@ CLSID_XMLDocument
 CLSID_XMLDSOControl
 CLSID_XMLHTTPRequest
 DIID_XMLDOMDocumentEvents
+DOMDocument
+DOMFreeThreadedDocument
 IID_IXMLAttribute
 IID_IXMLDocument
 IID_IXMLDocument2
@@ -36,6 +38,9 @@ IID_IXMLError
 IID_IXMLHttpRequest
 IID_IXTLRuntime
 LIBID_MSXML
+XMLDocument
+XMLDSOControl
+XMLHTTPRequest
 __MIDL_itf_msxml_0000_0000_v0_0_c_ifspec
 __MIDL_itf_msxml_0000_0000_v0_0_s_ifspec
 __MIDL_itf_msxml_0000_0001_v0_0_c_ifspec
@@ -75,3 +80,4 @@ IXMLElementCollection=Guid("65725580-9B5D-11D0-9BFE-00C04FC99C8E")
 IXMLError=Guid("948C5AD3-C58D-11D0-9C0B-00C04FC99C8E")
 IXMLHttpRequest=Guid("ED8C108D-4349-11D2-91A4-00C04F7969E8")
 IXTLRuntime=Guid("3EFAA425-272F-11D2-836F-0000F87A7782")
+XMLDOMDocumentEvents=Guid("7D5ED177-3263-3311-A8AD-9B085C7F6C79")

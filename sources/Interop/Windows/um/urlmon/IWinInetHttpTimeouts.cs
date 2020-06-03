@@ -12,45 +12,30 @@ namespace TerraFX.Interop
     [Guid("F286FA56-C1FD-4270-8E67-B3EB790A81E8")]
     public unsafe partial struct IWinInetHttpTimeouts
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IWinInetHttpTimeouts*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IWinInetHttpTimeouts*, Guid*, void**, int>)(lpVtbl[0]))((IWinInetHttpTimeouts*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IWinInetHttpTimeouts*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IWinInetHttpTimeouts*, uint>)(lpVtbl[1]))((IWinInetHttpTimeouts*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IWinInetHttpTimeouts*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IWinInetHttpTimeouts*, uint>)(lpVtbl[2]))((IWinInetHttpTimeouts*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetRequestTimeouts([NativeTypeName("DWORD *")] uint* pdwConnectTimeout, [NativeTypeName("DWORD *")] uint* pdwSendTimeout, [NativeTypeName("DWORD *")] uint* pdwReceiveTimeout)
         {
-            return lpVtbl->GetRequestTimeouts((IWinInetHttpTimeouts*)Unsafe.AsPointer(ref this), pdwConnectTimeout, pdwSendTimeout, pdwReceiveTimeout);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IWinInetHttpTimeouts*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IWinInetHttpTimeouts*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IWinInetHttpTimeouts*, uint> Release;
-
-            [NativeTypeName("HRESULT (DWORD *, DWORD *, DWORD *) __attribute__((stdcall))")]
-            public delegate* stdcall<IWinInetHttpTimeouts*, uint*, uint*, uint*, int> GetRequestTimeouts;
+            return ((delegate* stdcall<IWinInetHttpTimeouts*, uint*, uint*, uint*, int>)(lpVtbl[3]))((IWinInetHttpTimeouts*)Unsafe.AsPointer(ref this), pdwConnectTimeout, pdwSendTimeout, pdwReceiveTimeout);
         }
     }
 }

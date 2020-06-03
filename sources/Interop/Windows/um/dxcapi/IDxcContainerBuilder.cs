@@ -12,72 +12,48 @@ namespace TerraFX.Interop
     [Guid("334b1f50-2292-4b35-99a1-25588d8c17fe")]
     public unsafe partial struct IDxcContainerBuilder
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IDxcContainerBuilder*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IDxcContainerBuilder*, Guid*, void**, int>)(lpVtbl[0]))((IDxcContainerBuilder*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IDxcContainerBuilder*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDxcContainerBuilder*, uint>)(lpVtbl[1]))((IDxcContainerBuilder*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IDxcContainerBuilder*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDxcContainerBuilder*, uint>)(lpVtbl[2]))((IDxcContainerBuilder*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Load([NativeTypeName("IDxcBlob *")] IDxcBlob* pDxilContainerHeader)
         {
-            return lpVtbl->Load((IDxcContainerBuilder*)Unsafe.AsPointer(ref this), pDxilContainerHeader);
+            return ((delegate* stdcall<IDxcContainerBuilder*, IDxcBlob*, int>)(lpVtbl[3]))((IDxcContainerBuilder*)Unsafe.AsPointer(ref this), pDxilContainerHeader);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int AddPart([NativeTypeName("UINT32")] uint fourCC, [NativeTypeName("IDxcBlob *")] IDxcBlob* pSource)
         {
-            return lpVtbl->AddPart((IDxcContainerBuilder*)Unsafe.AsPointer(ref this), fourCC, pSource);
+            return ((delegate* stdcall<IDxcContainerBuilder*, uint, IDxcBlob*, int>)(lpVtbl[4]))((IDxcContainerBuilder*)Unsafe.AsPointer(ref this), fourCC, pSource);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int RemovePart([NativeTypeName("UINT32")] uint fourCC)
         {
-            return lpVtbl->RemovePart((IDxcContainerBuilder*)Unsafe.AsPointer(ref this), fourCC);
+            return ((delegate* stdcall<IDxcContainerBuilder*, uint, int>)(lpVtbl[5]))((IDxcContainerBuilder*)Unsafe.AsPointer(ref this), fourCC);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SerializeContainer([NativeTypeName("IDxcOperationResult **")] IDxcOperationResult** ppResult)
         {
-            return lpVtbl->SerializeContainer((IDxcContainerBuilder*)Unsafe.AsPointer(ref this), ppResult);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IDxcContainerBuilder*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IDxcContainerBuilder*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IDxcContainerBuilder*, uint> Release;
-
-            [NativeTypeName("HRESULT (IDxcBlob *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDxcContainerBuilder*, IDxcBlob*, int> Load;
-
-            [NativeTypeName("HRESULT (UINT32, IDxcBlob *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDxcContainerBuilder*, uint, IDxcBlob*, int> AddPart;
-
-            [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
-            public delegate* stdcall<IDxcContainerBuilder*, uint, int> RemovePart;
-
-            [NativeTypeName("HRESULT (IDxcOperationResult **) __attribute__((stdcall))")]
-            public delegate* stdcall<IDxcContainerBuilder*, IDxcOperationResult**, int> SerializeContainer;
+            return ((delegate* stdcall<IDxcContainerBuilder*, IDxcOperationResult**, int>)(lpVtbl[6]))((IDxcContainerBuilder*)Unsafe.AsPointer(ref this), ppResult);
         }
     }
 }

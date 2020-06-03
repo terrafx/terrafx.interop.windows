@@ -12,45 +12,30 @@ namespace TerraFX.Interop
     [Guid("948C5AD3-C58D-11D0-9C0B-00C04FC99C8E")]
     public unsafe partial struct IXMLError
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IXMLError*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IXMLError*, Guid*, void**, int>)(lpVtbl[0]))((IXMLError*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IXMLError*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IXMLError*, uint>)(lpVtbl[1]))((IXMLError*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IXMLError*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IXMLError*, uint>)(lpVtbl[2]))((IXMLError*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetErrorInfo([NativeTypeName("XML_ERROR *")] XML_ERROR* pErrorReturn)
         {
-            return lpVtbl->GetErrorInfo((IXMLError*)Unsafe.AsPointer(ref this), pErrorReturn);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLError*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLError*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLError*, uint> Release;
-
-            [NativeTypeName("HRESULT (XML_ERROR *) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLError*, XML_ERROR*, int> GetErrorInfo;
+            return ((delegate* stdcall<IXMLError*, XML_ERROR*, int>)(lpVtbl[3]))((IXMLError*)Unsafe.AsPointer(ref this), pErrorReturn);
         }
     }
 }

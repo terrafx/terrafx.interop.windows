@@ -12,36 +12,24 @@ namespace TerraFX.Interop
     [Guid("79EAC9E0-BAF9-11CE-8C82-00AA004BA90B")]
     public unsafe partial struct IInternet
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IInternet*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IInternet*, Guid*, void**, int>)(lpVtbl[0]))((IInternet*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IInternet*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IInternet*, uint>)(lpVtbl[1]))((IInternet*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IInternet*)Unsafe.AsPointer(ref this));
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IInternet*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IInternet*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IInternet*, uint> Release;
+            return ((delegate* stdcall<IInternet*, uint>)(lpVtbl[2]))((IInternet*)Unsafe.AsPointer(ref this));
         }
     }
 }

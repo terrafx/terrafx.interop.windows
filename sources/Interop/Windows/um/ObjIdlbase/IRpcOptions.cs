@@ -12,54 +12,36 @@ namespace TerraFX.Interop
     [Guid("00000144-0000-0000-C000-000000000046")]
     public unsafe partial struct IRpcOptions
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IRpcOptions*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IRpcOptions*, Guid*, void**, int>)(lpVtbl[0]))((IRpcOptions*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IRpcOptions*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IRpcOptions*, uint>)(lpVtbl[1]))((IRpcOptions*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IRpcOptions*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IRpcOptions*, uint>)(lpVtbl[2]))((IRpcOptions*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Set([NativeTypeName("IUnknown *")] IUnknown* pPrx, RPCOPT_PROPERTIES dwProperty, [NativeTypeName("ULONG_PTR")] nuint dwValue)
         {
-            return lpVtbl->Set((IRpcOptions*)Unsafe.AsPointer(ref this), pPrx, dwProperty, dwValue);
+            return ((delegate* stdcall<IRpcOptions*, IUnknown*, RPCOPT_PROPERTIES, nuint, int>)(lpVtbl[3]))((IRpcOptions*)Unsafe.AsPointer(ref this), pPrx, dwProperty, dwValue);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Query([NativeTypeName("IUnknown *")] IUnknown* pPrx, RPCOPT_PROPERTIES dwProperty, [NativeTypeName("ULONG_PTR *")] nuint* pdwValue)
         {
-            return lpVtbl->Query((IRpcOptions*)Unsafe.AsPointer(ref this), pPrx, dwProperty, pdwValue);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IRpcOptions*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IRpcOptions*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IRpcOptions*, uint> Release;
-
-            [NativeTypeName("HRESULT (IUnknown *, RPCOPT_PROPERTIES, ULONG_PTR) __attribute__((stdcall))")]
-            public delegate* stdcall<IRpcOptions*, IUnknown*, RPCOPT_PROPERTIES, nuint, int> Set;
-
-            [NativeTypeName("HRESULT (IUnknown *, RPCOPT_PROPERTIES, ULONG_PTR *) __attribute__((stdcall))")]
-            public delegate* stdcall<IRpcOptions*, IUnknown*, RPCOPT_PROPERTIES, nuint*, int> Query;
+            return ((delegate* stdcall<IRpcOptions*, IUnknown*, RPCOPT_PROPERTIES, nuint*, int>)(lpVtbl[4]))((IRpcOptions*)Unsafe.AsPointer(ref this), pPrx, dwProperty, pdwValue);
         }
     }
 }

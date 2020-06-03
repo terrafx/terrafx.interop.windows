@@ -12,108 +12,72 @@ namespace TerraFX.Interop
     [Guid("0A753DCF-C4D8-4B91-ADF6-BE5A60D95A76")]
     public unsafe partial struct ID3D12Fence
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID3D12Fence*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID3D12Fence*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12Fence*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID3D12Fence*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D12Fence*, uint>)(lpVtbl[1]))((ID3D12Fence*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID3D12Fence*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D12Fence*, uint>)(lpVtbl[2]))((ID3D12Fence*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData)
         {
-            return lpVtbl->GetPrivateData((ID3D12Fence*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
+            return ((delegate* stdcall<ID3D12Fence*, Guid*, uint*, void*, int>)(lpVtbl[3]))((ID3D12Fence*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData)
         {
-            return lpVtbl->SetPrivateData((ID3D12Fence*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
+            return ((delegate* stdcall<ID3D12Fence*, Guid*, uint, void*, int>)(lpVtbl[4]))((ID3D12Fence*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
         {
-            return lpVtbl->SetPrivateDataInterface((ID3D12Fence*)Unsafe.AsPointer(ref this), guid, pData);
+            return ((delegate* stdcall<ID3D12Fence*, Guid*, IUnknown*, int>)(lpVtbl[5]))((ID3D12Fence*)Unsafe.AsPointer(ref this), guid, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetName([NativeTypeName("LPCWSTR")] ushort* Name)
         {
-            return lpVtbl->SetName((ID3D12Fence*)Unsafe.AsPointer(ref this), Name);
+            return ((delegate* stdcall<ID3D12Fence*, ushort*, int>)(lpVtbl[6]))((ID3D12Fence*)Unsafe.AsPointer(ref this), Name);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDevice([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvDevice)
         {
-            return lpVtbl->GetDevice((ID3D12Fence*)Unsafe.AsPointer(ref this), riid, ppvDevice);
+            return ((delegate* stdcall<ID3D12Fence*, Guid*, void**, int>)(lpVtbl[7]))((ID3D12Fence*)Unsafe.AsPointer(ref this), riid, ppvDevice);
         }
 
         [return: NativeTypeName("UINT64")]
         public ulong GetCompletedValue()
         {
-            return lpVtbl->GetCompletedValue((ID3D12Fence*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D12Fence*, ulong>)(lpVtbl[8]))((ID3D12Fence*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetEventOnCompletion([NativeTypeName("UINT64")] ulong Value, [NativeTypeName("HANDLE")] IntPtr hEvent)
         {
-            return lpVtbl->SetEventOnCompletion((ID3D12Fence*)Unsafe.AsPointer(ref this), Value, hEvent);
+            return ((delegate* stdcall<ID3D12Fence*, ulong, IntPtr, int>)(lpVtbl[9]))((ID3D12Fence*)Unsafe.AsPointer(ref this), Value, hEvent);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Signal([NativeTypeName("UINT64")] ulong Value)
         {
-            return lpVtbl->Signal((ID3D12Fence*)Unsafe.AsPointer(ref this), Value);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12Fence*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12Fence*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12Fence*, uint> Release;
-
-            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12Fence*, Guid*, uint*, void*, int> GetPrivateData;
-
-            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12Fence*, Guid*, uint, void*, int> SetPrivateData;
-
-            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12Fence*, Guid*, IUnknown*, int> SetPrivateDataInterface;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12Fence*, ushort*, int> SetName;
-
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12Fence*, Guid*, void**, int> GetDevice;
-
-            [NativeTypeName("UINT64 () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12Fence*, ulong> GetCompletedValue;
-
-            [NativeTypeName("HRESULT (UINT64, HANDLE) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12Fence*, ulong, IntPtr, int> SetEventOnCompletion;
-
-            [NativeTypeName("HRESULT (UINT64) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12Fence*, ulong, int> Signal;
+            return ((delegate* stdcall<ID3D12Fence*, ulong, int>)(lpVtbl[10]))((ID3D12Fence*)Unsafe.AsPointer(ref this), Value);
         }
     }
 }

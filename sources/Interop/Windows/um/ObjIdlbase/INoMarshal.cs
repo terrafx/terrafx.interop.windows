@@ -12,36 +12,24 @@ namespace TerraFX.Interop
     [Guid("ECC8691B-C1DB-4DC0-855E-65F6C551AF49")]
     public unsafe partial struct INoMarshal
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((INoMarshal*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<INoMarshal*, Guid*, void**, int>)(lpVtbl[0]))((INoMarshal*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((INoMarshal*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<INoMarshal*, uint>)(lpVtbl[1]))((INoMarshal*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((INoMarshal*)Unsafe.AsPointer(ref this));
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<INoMarshal*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<INoMarshal*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<INoMarshal*, uint> Release;
+            return ((delegate* stdcall<INoMarshal*, uint>)(lpVtbl[2]))((INoMarshal*)Unsafe.AsPointer(ref this));
         }
     }
 }

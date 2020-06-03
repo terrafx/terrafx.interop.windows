@@ -12,116 +12,74 @@ namespace TerraFX.Interop
     [Guid("00000150-0000-0000-C000-000000000046")]
     public unsafe partial struct AsyncIAdviseSink
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((AsyncIAdviseSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<AsyncIAdviseSink*, Guid*, void**, int>)(lpVtbl[0]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<AsyncIAdviseSink*, uint>)(lpVtbl[1]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<AsyncIAdviseSink*, uint>)(lpVtbl[2]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
         }
 
         public void Begin_OnDataChange([NativeTypeName("FORMATETC *")] FORMATETC* pFormatetc, [NativeTypeName("STGMEDIUM *")] STGMEDIUM* pStgmed)
         {
-            lpVtbl->Begin_OnDataChange((AsyncIAdviseSink*)Unsafe.AsPointer(ref this), pFormatetc, pStgmed);
+            ((delegate* stdcall<AsyncIAdviseSink*, FORMATETC*, STGMEDIUM*, void>)(lpVtbl[3]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this), pFormatetc, pStgmed);
         }
 
         public void Finish_OnDataChange()
         {
-            lpVtbl->Finish_OnDataChange((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
+            ((delegate* stdcall<AsyncIAdviseSink*, void>)(lpVtbl[4]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
         }
 
         public void Begin_OnViewChange([NativeTypeName("DWORD")] uint dwAspect, [NativeTypeName("LONG")] int lindex)
         {
-            lpVtbl->Begin_OnViewChange((AsyncIAdviseSink*)Unsafe.AsPointer(ref this), dwAspect, lindex);
+            ((delegate* stdcall<AsyncIAdviseSink*, uint, int, void>)(lpVtbl[5]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this), dwAspect, lindex);
         }
 
         public void Finish_OnViewChange()
         {
-            lpVtbl->Finish_OnViewChange((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
+            ((delegate* stdcall<AsyncIAdviseSink*, void>)(lpVtbl[6]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
         }
 
         public void Begin_OnRename([NativeTypeName("IMoniker *")] IMoniker* pmk)
         {
-            lpVtbl->Begin_OnRename((AsyncIAdviseSink*)Unsafe.AsPointer(ref this), pmk);
+            ((delegate* stdcall<AsyncIAdviseSink*, IMoniker*, void>)(lpVtbl[7]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this), pmk);
         }
 
         public void Finish_OnRename()
         {
-            lpVtbl->Finish_OnRename((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
+            ((delegate* stdcall<AsyncIAdviseSink*, void>)(lpVtbl[8]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
         }
 
         public void Begin_OnSave()
         {
-            lpVtbl->Begin_OnSave((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
+            ((delegate* stdcall<AsyncIAdviseSink*, void>)(lpVtbl[9]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
         }
 
         public void Finish_OnSave()
         {
-            lpVtbl->Finish_OnSave((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
+            ((delegate* stdcall<AsyncIAdviseSink*, void>)(lpVtbl[10]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
         }
 
         public void Begin_OnClose()
         {
-            lpVtbl->Begin_OnClose((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
+            ((delegate* stdcall<AsyncIAdviseSink*, void>)(lpVtbl[11]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
         }
 
         public void Finish_OnClose()
         {
-            lpVtbl->Finish_OnClose((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<AsyncIAdviseSink*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<AsyncIAdviseSink*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<AsyncIAdviseSink*, uint> Release;
-
-            [NativeTypeName("void (FORMATETC *, STGMEDIUM *) __attribute__((stdcall))")]
-            public delegate* stdcall<AsyncIAdviseSink*, FORMATETC*, STGMEDIUM*, void> Begin_OnDataChange;
-
-            [NativeTypeName("void () __attribute__((stdcall))")]
-            public delegate* stdcall<AsyncIAdviseSink*, void> Finish_OnDataChange;
-
-            [NativeTypeName("void (DWORD, LONG) __attribute__((stdcall))")]
-            public delegate* stdcall<AsyncIAdviseSink*, uint, int, void> Begin_OnViewChange;
-
-            [NativeTypeName("void () __attribute__((stdcall))")]
-            public delegate* stdcall<AsyncIAdviseSink*, void> Finish_OnViewChange;
-
-            [NativeTypeName("void (IMoniker *) __attribute__((stdcall))")]
-            public delegate* stdcall<AsyncIAdviseSink*, IMoniker*, void> Begin_OnRename;
-
-            [NativeTypeName("void () __attribute__((stdcall))")]
-            public delegate* stdcall<AsyncIAdviseSink*, void> Finish_OnRename;
-
-            [NativeTypeName("void () __attribute__((stdcall))")]
-            public delegate* stdcall<AsyncIAdviseSink*, void> Begin_OnSave;
-
-            [NativeTypeName("void () __attribute__((stdcall))")]
-            public delegate* stdcall<AsyncIAdviseSink*, void> Finish_OnSave;
-
-            [NativeTypeName("void () __attribute__((stdcall))")]
-            public delegate* stdcall<AsyncIAdviseSink*, void> Begin_OnClose;
-
-            [NativeTypeName("void () __attribute__((stdcall))")]
-            public delegate* stdcall<AsyncIAdviseSink*, void> Finish_OnClose;
+            ((delegate* stdcall<AsyncIAdviseSink*, void>)(lpVtbl[12]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
         }
     }
 }

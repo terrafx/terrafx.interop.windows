@@ -12,45 +12,30 @@ namespace TerraFX.Interop
     [Guid("DD1EC3B3-8391-4FDB-A9E6-347C3CAAA7DD")]
     public unsafe partial struct IWinInetCacheHints
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IWinInetCacheHints*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IWinInetCacheHints*, Guid*, void**, int>)(lpVtbl[0]))((IWinInetCacheHints*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IWinInetCacheHints*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IWinInetCacheHints*, uint>)(lpVtbl[1]))((IWinInetCacheHints*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IWinInetCacheHints*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IWinInetCacheHints*, uint>)(lpVtbl[2]))((IWinInetCacheHints*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetCacheExtension([NativeTypeName("LPCWSTR")] ushort* pwzExt, [NativeTypeName("LPVOID")] void* pszCacheFile, [NativeTypeName("DWORD *")] uint* pcbCacheFile, [NativeTypeName("DWORD *")] uint* pdwWinInetError, [NativeTypeName("DWORD *")] uint* pdwReserved)
         {
-            return lpVtbl->SetCacheExtension((IWinInetCacheHints*)Unsafe.AsPointer(ref this), pwzExt, pszCacheFile, pcbCacheFile, pdwWinInetError, pdwReserved);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IWinInetCacheHints*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IWinInetCacheHints*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IWinInetCacheHints*, uint> Release;
-
-            [NativeTypeName("HRESULT (LPCWSTR, LPVOID, DWORD *, DWORD *, DWORD *) __attribute__((stdcall))")]
-            public delegate* stdcall<IWinInetCacheHints*, ushort*, void*, uint*, uint*, uint*, int> SetCacheExtension;
+            return ((delegate* stdcall<IWinInetCacheHints*, ushort*, void*, uint*, uint*, uint*, int>)(lpVtbl[3]))((IWinInetCacheHints*)Unsafe.AsPointer(ref this), pwzExt, pszCacheFile, pcbCacheFile, pdwWinInetError, pdwReserved);
         }
     }
 }

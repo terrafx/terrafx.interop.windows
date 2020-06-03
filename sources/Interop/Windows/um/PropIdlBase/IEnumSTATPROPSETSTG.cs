@@ -12,72 +12,48 @@ namespace TerraFX.Interop
     [Guid("0000013B-0000-0000-C000-000000000046")]
     public unsafe partial struct IEnumSTATPROPSETSTG
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IEnumSTATPROPSETSTG*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IEnumSTATPROPSETSTG*, Guid*, void**, int>)(lpVtbl[0]))((IEnumSTATPROPSETSTG*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IEnumSTATPROPSETSTG*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IEnumSTATPROPSETSTG*, uint>)(lpVtbl[1]))((IEnumSTATPROPSETSTG*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IEnumSTATPROPSETSTG*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IEnumSTATPROPSETSTG*, uint>)(lpVtbl[2]))((IEnumSTATPROPSETSTG*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("STATPROPSETSTG *")] STATPROPSETSTG* rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
         {
-            return lpVtbl->Next((IEnumSTATPROPSETSTG*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
+            return ((delegate* stdcall<IEnumSTATPROPSETSTG*, uint, STATPROPSETSTG*, uint*, int>)(lpVtbl[3]))((IEnumSTATPROPSETSTG*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Skip([NativeTypeName("ULONG")] uint celt)
         {
-            return lpVtbl->Skip((IEnumSTATPROPSETSTG*)Unsafe.AsPointer(ref this), celt);
+            return ((delegate* stdcall<IEnumSTATPROPSETSTG*, uint, int>)(lpVtbl[4]))((IEnumSTATPROPSETSTG*)Unsafe.AsPointer(ref this), celt);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Reset()
         {
-            return lpVtbl->Reset((IEnumSTATPROPSETSTG*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IEnumSTATPROPSETSTG*, int>)(lpVtbl[5]))((IEnumSTATPROPSETSTG*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Clone([NativeTypeName("IEnumSTATPROPSETSTG **")] IEnumSTATPROPSETSTG** ppenum)
         {
-            return lpVtbl->Clone((IEnumSTATPROPSETSTG*)Unsafe.AsPointer(ref this), ppenum);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IEnumSTATPROPSETSTG*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IEnumSTATPROPSETSTG*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IEnumSTATPROPSETSTG*, uint> Release;
-
-            [NativeTypeName("HRESULT (ULONG, STATPROPSETSTG *, ULONG *) __attribute__((stdcall))")]
-            public delegate* stdcall<IEnumSTATPROPSETSTG*, uint, STATPROPSETSTG*, uint*, int> Next;
-
-            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-            public delegate* stdcall<IEnumSTATPROPSETSTG*, uint, int> Skip;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* stdcall<IEnumSTATPROPSETSTG*, int> Reset;
-
-            [NativeTypeName("HRESULT (IEnumSTATPROPSETSTG **) __attribute__((stdcall))")]
-            public delegate* stdcall<IEnumSTATPROPSETSTG*, IEnumSTATPROPSETSTG**, int> Clone;
+            return ((delegate* stdcall<IEnumSTATPROPSETSTG*, IEnumSTATPROPSETSTG**, int>)(lpVtbl[6]))((IEnumSTATPROPSETSTG*)Unsafe.AsPointer(ref this), ppenum);
         }
     }
 }

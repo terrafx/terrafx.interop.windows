@@ -12,108 +12,72 @@ namespace TerraFX.Interop
     [Guid("E57AA735-DCDB-4c72-9C61-0591F58889EE")]
     public unsafe partial struct IDCompositionSkewTransform
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IDCompositionSkewTransform*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDCompositionSkewTransform*, uint>)(lpVtbl[1]))((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDCompositionSkewTransform*, uint>)(lpVtbl[2]))((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetAngleX(float angleX)
         {
-            return lpVtbl->SetAngleX((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this), angleX);
+            return ((delegate* stdcall<IDCompositionSkewTransform*, float, int>)(lpVtbl[3]))((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this), angleX);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetAngleX([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return lpVtbl->SetAngleX1((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this), animation);
+            return ((delegate* stdcall<IDCompositionSkewTransform*, IDCompositionAnimation*, int>)(lpVtbl[4]))((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this), animation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetAngleY(float angleY)
         {
-            return lpVtbl->SetAngleY((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this), angleY);
+            return ((delegate* stdcall<IDCompositionSkewTransform*, float, int>)(lpVtbl[5]))((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this), angleY);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetAngleY([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return lpVtbl->SetAngleY1((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this), animation);
+            return ((delegate* stdcall<IDCompositionSkewTransform*, IDCompositionAnimation*, int>)(lpVtbl[6]))((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this), animation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetCenterX(float centerX)
         {
-            return lpVtbl->SetCenterX((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this), centerX);
+            return ((delegate* stdcall<IDCompositionSkewTransform*, float, int>)(lpVtbl[7]))((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this), centerX);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetCenterX([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return lpVtbl->SetCenterX1((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this), animation);
+            return ((delegate* stdcall<IDCompositionSkewTransform*, IDCompositionAnimation*, int>)(lpVtbl[8]))((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this), animation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetCenterY(float centerY)
         {
-            return lpVtbl->SetCenterY((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this), centerY);
+            return ((delegate* stdcall<IDCompositionSkewTransform*, float, int>)(lpVtbl[9]))((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this), centerY);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetCenterY([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return lpVtbl->SetCenterY1((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this), animation);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionSkewTransform*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionSkewTransform*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionSkewTransform*, uint> Release;
-
-            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionSkewTransform*, float, int> SetAngleX;
-
-            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionSkewTransform*, IDCompositionAnimation*, int> SetAngleX1;
-
-            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionSkewTransform*, float, int> SetAngleY;
-
-            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionSkewTransform*, IDCompositionAnimation*, int> SetAngleY1;
-
-            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionSkewTransform*, float, int> SetCenterX;
-
-            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionSkewTransform*, IDCompositionAnimation*, int> SetCenterX1;
-
-            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionSkewTransform*, float, int> SetCenterY;
-
-            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionSkewTransform*, IDCompositionAnimation*, int> SetCenterY1;
+            return ((delegate* stdcall<IDCompositionSkewTransform*, IDCompositionAnimation*, int>)(lpVtbl[10]))((IDCompositionSkewTransform*)Unsafe.AsPointer(ref this), animation);
         }
     }
 }

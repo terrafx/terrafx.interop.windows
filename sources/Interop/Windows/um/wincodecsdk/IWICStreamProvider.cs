@@ -12,72 +12,48 @@ namespace TerraFX.Interop
     [Guid("449494BC-B468-4927-96D7-BA90D31AB505")]
     public unsafe partial struct IWICStreamProvider
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IWICStreamProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IWICStreamProvider*, Guid*, void**, int>)(lpVtbl[0]))((IWICStreamProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IWICStreamProvider*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IWICStreamProvider*, uint>)(lpVtbl[1]))((IWICStreamProvider*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IWICStreamProvider*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IWICStreamProvider*, uint>)(lpVtbl[2]))((IWICStreamProvider*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetStream([NativeTypeName("IStream **")] IStream** ppIStream)
         {
-            return lpVtbl->GetStream((IWICStreamProvider*)Unsafe.AsPointer(ref this), ppIStream);
+            return ((delegate* stdcall<IWICStreamProvider*, IStream**, int>)(lpVtbl[3]))((IWICStreamProvider*)Unsafe.AsPointer(ref this), ppIStream);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPersistOptions([NativeTypeName("DWORD *")] uint* pdwPersistOptions)
         {
-            return lpVtbl->GetPersistOptions((IWICStreamProvider*)Unsafe.AsPointer(ref this), pdwPersistOptions);
+            return ((delegate* stdcall<IWICStreamProvider*, uint*, int>)(lpVtbl[4]))((IWICStreamProvider*)Unsafe.AsPointer(ref this), pdwPersistOptions);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPreferredVendorGUID([NativeTypeName("GUID *")] Guid* pguidPreferredVendor)
         {
-            return lpVtbl->GetPreferredVendorGUID((IWICStreamProvider*)Unsafe.AsPointer(ref this), pguidPreferredVendor);
+            return ((delegate* stdcall<IWICStreamProvider*, Guid*, int>)(lpVtbl[5]))((IWICStreamProvider*)Unsafe.AsPointer(ref this), pguidPreferredVendor);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int RefreshStream()
         {
-            return lpVtbl->RefreshStream((IWICStreamProvider*)Unsafe.AsPointer(ref this));
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IWICStreamProvider*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IWICStreamProvider*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IWICStreamProvider*, uint> Release;
-
-            [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
-            public delegate* stdcall<IWICStreamProvider*, IStream**, int> GetStream;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* stdcall<IWICStreamProvider*, uint*, int> GetPersistOptions;
-
-            [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-            public delegate* stdcall<IWICStreamProvider*, Guid*, int> GetPreferredVendorGUID;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* stdcall<IWICStreamProvider*, int> RefreshStream;
+            return ((delegate* stdcall<IWICStreamProvider*, int>)(lpVtbl[6]))((IWICStreamProvider*)Unsafe.AsPointer(ref this));
         }
     }
 }

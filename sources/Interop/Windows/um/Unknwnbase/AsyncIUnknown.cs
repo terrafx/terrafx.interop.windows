@@ -12,90 +12,60 @@ namespace TerraFX.Interop
     [Guid("000E0000-0000-0000-C000-000000000046")]
     public unsafe partial struct AsyncIUnknown
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((AsyncIUnknown*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<AsyncIUnknown*, Guid*, void**, int>)(lpVtbl[0]))((AsyncIUnknown*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((AsyncIUnknown*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<AsyncIUnknown*, uint>)(lpVtbl[1]))((AsyncIUnknown*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((AsyncIUnknown*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<AsyncIUnknown*, uint>)(lpVtbl[2]))((AsyncIUnknown*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Begin_QueryInterface([NativeTypeName("const IID &")] Guid* riid)
         {
-            return lpVtbl->Begin_QueryInterface((AsyncIUnknown*)Unsafe.AsPointer(ref this), riid);
+            return ((delegate* stdcall<AsyncIUnknown*, Guid*, int>)(lpVtbl[3]))((AsyncIUnknown*)Unsafe.AsPointer(ref this), riid);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Finish_QueryInterface([NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->Finish_QueryInterface((AsyncIUnknown*)Unsafe.AsPointer(ref this), ppvObject);
+            return ((delegate* stdcall<AsyncIUnknown*, void**, int>)(lpVtbl[4]))((AsyncIUnknown*)Unsafe.AsPointer(ref this), ppvObject);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Begin_AddRef()
         {
-            return lpVtbl->Begin_AddRef((AsyncIUnknown*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<AsyncIUnknown*, int>)(lpVtbl[5]))((AsyncIUnknown*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Finish_AddRef()
         {
-            return lpVtbl->Finish_AddRef((AsyncIUnknown*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<AsyncIUnknown*, uint>)(lpVtbl[6]))((AsyncIUnknown*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Begin_Release()
         {
-            return lpVtbl->Begin_Release((AsyncIUnknown*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<AsyncIUnknown*, int>)(lpVtbl[7]))((AsyncIUnknown*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Finish_Release()
         {
-            return lpVtbl->Finish_Release((AsyncIUnknown*)Unsafe.AsPointer(ref this));
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<AsyncIUnknown*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<AsyncIUnknown*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<AsyncIUnknown*, uint> Release;
-
-            [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-            public delegate* stdcall<AsyncIUnknown*, Guid*, int> Begin_QueryInterface;
-
-            [NativeTypeName("HRESULT (void **) __attribute__((stdcall))")]
-            public delegate* stdcall<AsyncIUnknown*, void**, int> Finish_QueryInterface;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* stdcall<AsyncIUnknown*, int> Begin_AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<AsyncIUnknown*, uint> Finish_AddRef;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* stdcall<AsyncIUnknown*, int> Begin_Release;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<AsyncIUnknown*, uint> Finish_Release;
+            return ((delegate* stdcall<AsyncIUnknown*, uint>)(lpVtbl[8]))((AsyncIUnknown*)Unsafe.AsPointer(ref this));
         }
     }
 }

@@ -12,45 +12,30 @@ namespace TerraFX.Interop
     [Guid("B2EFE1E7-729F-4102-949F-505FA21BF666")]
     public unsafe partial struct ID2D1TransformNode
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID2D1TransformNode*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID2D1TransformNode*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1TransformNode*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID2D1TransformNode*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID2D1TransformNode*, uint>)(lpVtbl[1]))((ID2D1TransformNode*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID2D1TransformNode*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID2D1TransformNode*, uint>)(lpVtbl[2]))((ID2D1TransformNode*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("UINT32")]
         public uint GetInputCount()
         {
-            return lpVtbl->GetInputCount((ID2D1TransformNode*)Unsafe.AsPointer(ref this));
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1TransformNode*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1TransformNode*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1TransformNode*, uint> Release;
-
-            [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1TransformNode*, uint> GetInputCount;
+            return ((delegate* stdcall<ID2D1TransformNode*, uint>)(lpVtbl[3]))((ID2D1TransformNode*)Unsafe.AsPointer(ref this));
         }
     }
 }

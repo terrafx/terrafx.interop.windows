@@ -12,54 +12,36 @@ namespace TerraFX.Interop
     [Guid("54384F1B-5B3E-4BB7-AE01-60BA3097CBB6")]
     public unsafe partial struct ID3D11LibraryReflection
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID3D11LibraryReflection*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID3D11LibraryReflection*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11LibraryReflection*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID3D11LibraryReflection*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D11LibraryReflection*, uint>)(lpVtbl[1]))((ID3D11LibraryReflection*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID3D11LibraryReflection*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D11LibraryReflection*, uint>)(lpVtbl[2]))((ID3D11LibraryReflection*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDesc([NativeTypeName("D3D11_LIBRARY_DESC *")] D3D11_LIBRARY_DESC* pDesc)
         {
-            return lpVtbl->GetDesc((ID3D11LibraryReflection*)Unsafe.AsPointer(ref this), pDesc);
+            return ((delegate* stdcall<ID3D11LibraryReflection*, D3D11_LIBRARY_DESC*, int>)(lpVtbl[3]))((ID3D11LibraryReflection*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         [return: NativeTypeName("ID3D11FunctionReflection *")]
         public ID3D11FunctionReflection* GetFunctionByIndex([NativeTypeName("INT")] int FunctionIndex)
         {
-            return lpVtbl->GetFunctionByIndex((ID3D11LibraryReflection*)Unsafe.AsPointer(ref this), FunctionIndex);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11LibraryReflection*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11LibraryReflection*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11LibraryReflection*, uint> Release;
-
-            [NativeTypeName("HRESULT (D3D11_LIBRARY_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11LibraryReflection*, D3D11_LIBRARY_DESC*, int> GetDesc;
-
-            [NativeTypeName("ID3D11FunctionReflection *(INT) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11LibraryReflection*, int, ID3D11FunctionReflection*> GetFunctionByIndex;
+            return ((delegate* stdcall<ID3D11LibraryReflection*, int, ID3D11FunctionReflection*>)(lpVtbl[4]))((ID3D11LibraryReflection*)Unsafe.AsPointer(ref this), FunctionIndex);
         }
     }
 }

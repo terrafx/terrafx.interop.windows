@@ -12,45 +12,30 @@ namespace TerraFX.Interop
     [Guid("947990DE-CC28-11D2-A0F7-00805F858FB1")]
     public unsafe partial struct IDummyHICONIncluder
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IDummyHICONIncluder*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IDummyHICONIncluder*, Guid*, void**, int>)(lpVtbl[0]))((IDummyHICONIncluder*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IDummyHICONIncluder*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDummyHICONIncluder*, uint>)(lpVtbl[1]))((IDummyHICONIncluder*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IDummyHICONIncluder*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDummyHICONIncluder*, uint>)(lpVtbl[2]))((IDummyHICONIncluder*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Dummy([NativeTypeName("HICON")] IntPtr h1, [NativeTypeName("HDC")] IntPtr h2)
         {
-            return lpVtbl->Dummy((IDummyHICONIncluder*)Unsafe.AsPointer(ref this), h1, h2);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IDummyHICONIncluder*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IDummyHICONIncluder*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IDummyHICONIncluder*, uint> Release;
-
-            [NativeTypeName("HRESULT (HICON, HDC) __attribute__((stdcall))")]
-            public delegate* stdcall<IDummyHICONIncluder*, IntPtr, IntPtr, int> Dummy;
+            return ((delegate* stdcall<IDummyHICONIncluder*, IntPtr, IntPtr, int>)(lpVtbl[3]))((IDummyHICONIncluder*)Unsafe.AsPointer(ref this), h1, h2);
         }
     }
 }

@@ -12,63 +12,42 @@ namespace TerraFX.Interop
     [Guid("CF51ED10-62FE-11CF-BF86-00A0C9034836")]
     public unsafe partial struct IQuickActivate
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IQuickActivate*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IQuickActivate*, Guid*, void**, int>)(lpVtbl[0]))((IQuickActivate*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IQuickActivate*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IQuickActivate*, uint>)(lpVtbl[1]))((IQuickActivate*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IQuickActivate*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IQuickActivate*, uint>)(lpVtbl[2]))((IQuickActivate*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int QuickActivate([NativeTypeName("QACONTAINER *")] QACONTAINER* pQaContainer, [NativeTypeName("QACONTROL *")] QACONTROL* pQaControl)
         {
-            return lpVtbl->QuickActivate((IQuickActivate*)Unsafe.AsPointer(ref this), pQaContainer, pQaControl);
+            return ((delegate* stdcall<IQuickActivate*, QACONTAINER*, QACONTROL*, int>)(lpVtbl[3]))((IQuickActivate*)Unsafe.AsPointer(ref this), pQaContainer, pQaControl);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetContentExtent([NativeTypeName("LPSIZEL")] SIZE* pSizel)
         {
-            return lpVtbl->SetContentExtent((IQuickActivate*)Unsafe.AsPointer(ref this), pSizel);
+            return ((delegate* stdcall<IQuickActivate*, SIZE*, int>)(lpVtbl[4]))((IQuickActivate*)Unsafe.AsPointer(ref this), pSizel);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetContentExtent([NativeTypeName("LPSIZEL")] SIZE* pSizel)
         {
-            return lpVtbl->GetContentExtent((IQuickActivate*)Unsafe.AsPointer(ref this), pSizel);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IQuickActivate*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IQuickActivate*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IQuickActivate*, uint> Release;
-
-            [NativeTypeName("HRESULT (QACONTAINER *, QACONTROL *) __attribute__((stdcall))")]
-            public delegate* stdcall<IQuickActivate*, QACONTAINER*, QACONTROL*, int> QuickActivate;
-
-            [NativeTypeName("HRESULT (LPSIZEL) __attribute__((stdcall))")]
-            public delegate* stdcall<IQuickActivate*, SIZE*, int> SetContentExtent;
-
-            [NativeTypeName("HRESULT (LPSIZEL) __attribute__((stdcall))")]
-            public delegate* stdcall<IQuickActivate*, SIZE*, int> GetContentExtent;
+            return ((delegate* stdcall<IQuickActivate*, SIZE*, int>)(lpVtbl[5]))((IQuickActivate*)Unsafe.AsPointer(ref this), pSizel);
         }
     }
 }

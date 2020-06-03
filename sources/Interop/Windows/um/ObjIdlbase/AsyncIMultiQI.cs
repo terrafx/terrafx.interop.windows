@@ -12,54 +12,36 @@ namespace TerraFX.Interop
     [Guid("000E0020-0000-0000-C000-000000000046")]
     public unsafe partial struct AsyncIMultiQI
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((AsyncIMultiQI*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<AsyncIMultiQI*, Guid*, void**, int>)(lpVtbl[0]))((AsyncIMultiQI*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((AsyncIMultiQI*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<AsyncIMultiQI*, uint>)(lpVtbl[1]))((AsyncIMultiQI*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((AsyncIMultiQI*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<AsyncIMultiQI*, uint>)(lpVtbl[2]))((AsyncIMultiQI*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Begin_QueryMultipleInterfaces([NativeTypeName("ULONG")] uint cMQIs, [NativeTypeName("MULTI_QI *")] MULTI_QI* pMQIs)
         {
-            return lpVtbl->Begin_QueryMultipleInterfaces((AsyncIMultiQI*)Unsafe.AsPointer(ref this), cMQIs, pMQIs);
+            return ((delegate* stdcall<AsyncIMultiQI*, uint, MULTI_QI*, int>)(lpVtbl[3]))((AsyncIMultiQI*)Unsafe.AsPointer(ref this), cMQIs, pMQIs);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Finish_QueryMultipleInterfaces([NativeTypeName("MULTI_QI *")] MULTI_QI* pMQIs)
         {
-            return lpVtbl->Finish_QueryMultipleInterfaces((AsyncIMultiQI*)Unsafe.AsPointer(ref this), pMQIs);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<AsyncIMultiQI*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<AsyncIMultiQI*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<AsyncIMultiQI*, uint> Release;
-
-            [NativeTypeName("HRESULT (ULONG, MULTI_QI *) __attribute__((stdcall))")]
-            public delegate* stdcall<AsyncIMultiQI*, uint, MULTI_QI*, int> Begin_QueryMultipleInterfaces;
-
-            [NativeTypeName("HRESULT (MULTI_QI *) __attribute__((stdcall))")]
-            public delegate* stdcall<AsyncIMultiQI*, MULTI_QI*, int> Finish_QueryMultipleInterfaces;
+            return ((delegate* stdcall<AsyncIMultiQI*, MULTI_QI*, int>)(lpVtbl[4]))((AsyncIMultiQI*)Unsafe.AsPointer(ref this), pMQIs);
         }
     }
 }

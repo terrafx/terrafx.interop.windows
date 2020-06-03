@@ -12,45 +12,30 @@ namespace TerraFX.Interop
     [Guid("79EAC9D0-BAF9-11CE-8C82-00AA004BA90B")]
     public unsafe partial struct IAuthenticate
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IAuthenticate*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IAuthenticate*, Guid*, void**, int>)(lpVtbl[0]))((IAuthenticate*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IAuthenticate*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IAuthenticate*, uint>)(lpVtbl[1]))((IAuthenticate*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IAuthenticate*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IAuthenticate*, uint>)(lpVtbl[2]))((IAuthenticate*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Authenticate([NativeTypeName("HWND *")] IntPtr* phwnd, [NativeTypeName("LPWSTR *")] ushort** pszUsername, [NativeTypeName("LPWSTR *")] ushort** pszPassword)
         {
-            return lpVtbl->Authenticate((IAuthenticate*)Unsafe.AsPointer(ref this), phwnd, pszUsername, pszPassword);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IAuthenticate*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IAuthenticate*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IAuthenticate*, uint> Release;
-
-            [NativeTypeName("HRESULT (HWND *, LPWSTR *, LPWSTR *) __attribute__((stdcall))")]
-            public delegate* stdcall<IAuthenticate*, IntPtr*, ushort**, ushort**, int> Authenticate;
+            return ((delegate* stdcall<IAuthenticate*, IntPtr*, ushort**, ushort**, int>)(lpVtbl[3]))((IAuthenticate*)Unsafe.AsPointer(ref this), phwnd, pszUsername, pszPassword);
         }
     }
 }

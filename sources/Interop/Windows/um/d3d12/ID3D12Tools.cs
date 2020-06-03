@@ -12,53 +12,35 @@ namespace TerraFX.Interop
     [Guid("7071E1F0-E84B-4B33-974F-12FA49DE65C5")]
     public unsafe partial struct ID3D12Tools
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID3D12Tools*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID3D12Tools*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12Tools*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID3D12Tools*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D12Tools*, uint>)(lpVtbl[1]))((ID3D12Tools*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID3D12Tools*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D12Tools*, uint>)(lpVtbl[2]))((ID3D12Tools*)Unsafe.AsPointer(ref this));
         }
 
         public void EnableShaderInstrumentation([NativeTypeName("BOOL")] int bEnable)
         {
-            lpVtbl->EnableShaderInstrumentation((ID3D12Tools*)Unsafe.AsPointer(ref this), bEnable);
+            ((delegate* stdcall<ID3D12Tools*, int, void>)(lpVtbl[3]))((ID3D12Tools*)Unsafe.AsPointer(ref this), bEnable);
         }
 
         [return: NativeTypeName("BOOL")]
         public int ShaderInstrumentationEnabled()
         {
-            return lpVtbl->ShaderInstrumentationEnabled((ID3D12Tools*)Unsafe.AsPointer(ref this));
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12Tools*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12Tools*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12Tools*, uint> Release;
-
-            [NativeTypeName("void (BOOL) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12Tools*, int, void> EnableShaderInstrumentation;
-
-            [NativeTypeName("BOOL () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12Tools*, int> ShaderInstrumentationEnabled;
+            return ((delegate* stdcall<ID3D12Tools*, int>)(lpVtbl[4]))((ID3D12Tools*)Unsafe.AsPointer(ref this));
         }
     }
 }

@@ -12,113 +12,74 @@ namespace TerraFX.Interop
     [Guid("9B32F9AD-BDCC-40A6-A39D-D5C865845720")]
     public unsafe partial struct ID3D11CryptoSession
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID3D11CryptoSession*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID3D11CryptoSession*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D11CryptoSession*, uint>)(lpVtbl[1]))((ID3D11CryptoSession*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID3D11CryptoSession*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D11CryptoSession*, uint>)(lpVtbl[2]))((ID3D11CryptoSession*)Unsafe.AsPointer(ref this));
         }
 
         public void GetDevice([NativeTypeName("ID3D11Device **")] ID3D11Device** ppDevice)
         {
-            lpVtbl->GetDevice((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), ppDevice);
+            ((delegate* stdcall<ID3D11CryptoSession*, ID3D11Device**, void>)(lpVtbl[3]))((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), ppDevice);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData)
         {
-            return lpVtbl->GetPrivateData((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
+            return ((delegate* stdcall<ID3D11CryptoSession*, Guid*, uint*, void*, int>)(lpVtbl[4]))((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData)
         {
-            return lpVtbl->SetPrivateData((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
+            return ((delegate* stdcall<ID3D11CryptoSession*, Guid*, uint, void*, int>)(lpVtbl[5]))((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
         {
-            return lpVtbl->SetPrivateDataInterface((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), guid, pData);
+            return ((delegate* stdcall<ID3D11CryptoSession*, Guid*, IUnknown*, int>)(lpVtbl[6]))((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), guid, pData);
         }
 
         public void GetCryptoType([NativeTypeName("GUID *")] Guid* pCryptoType)
         {
-            lpVtbl->GetCryptoType((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), pCryptoType);
+            ((delegate* stdcall<ID3D11CryptoSession*, Guid*, void>)(lpVtbl[7]))((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), pCryptoType);
         }
 
         public void GetDecoderProfile([NativeTypeName("GUID *")] Guid* pDecoderProfile)
         {
-            lpVtbl->GetDecoderProfile((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), pDecoderProfile);
+            ((delegate* stdcall<ID3D11CryptoSession*, Guid*, void>)(lpVtbl[8]))((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), pDecoderProfile);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetCertificateSize([NativeTypeName("UINT *")] uint* pCertificateSize)
         {
-            return lpVtbl->GetCertificateSize((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), pCertificateSize);
+            return ((delegate* stdcall<ID3D11CryptoSession*, uint*, int>)(lpVtbl[9]))((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), pCertificateSize);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetCertificate([NativeTypeName("UINT")] uint CertificateSize, [NativeTypeName("BYTE *")] byte* pCertificate)
         {
-            return lpVtbl->GetCertificate((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), CertificateSize, pCertificate);
+            return ((delegate* stdcall<ID3D11CryptoSession*, uint, byte*, int>)(lpVtbl[10]))((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), CertificateSize, pCertificate);
         }
 
         public void GetCryptoSessionHandle([NativeTypeName("HANDLE *")] IntPtr* pCryptoSessionHandle)
         {
-            lpVtbl->GetCryptoSessionHandle((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), pCryptoSessionHandle);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11CryptoSession*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11CryptoSession*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11CryptoSession*, uint> Release;
-
-            [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11CryptoSession*, ID3D11Device**, void> GetDevice;
-
-            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11CryptoSession*, Guid*, uint*, void*, int> GetPrivateData;
-
-            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11CryptoSession*, Guid*, uint, void*, int> SetPrivateData;
-
-            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11CryptoSession*, Guid*, IUnknown*, int> SetPrivateDataInterface;
-
-            [NativeTypeName("void (GUID *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11CryptoSession*, Guid*, void> GetCryptoType;
-
-            [NativeTypeName("void (GUID *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11CryptoSession*, Guid*, void> GetDecoderProfile;
-
-            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11CryptoSession*, uint*, int> GetCertificateSize;
-
-            [NativeTypeName("HRESULT (UINT, BYTE *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11CryptoSession*, uint, byte*, int> GetCertificate;
-
-            [NativeTypeName("void (HANDLE *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11CryptoSession*, IntPtr*, void> GetCryptoSessionHandle;
+            ((delegate* stdcall<ID3D11CryptoSession*, IntPtr*, void>)(lpVtbl[11]))((ID3D11CryptoSession*)Unsafe.AsPointer(ref this), pCryptoSessionHandle);
         }
     }
 }

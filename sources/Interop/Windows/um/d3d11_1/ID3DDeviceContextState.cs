@@ -12,71 +12,47 @@ namespace TerraFX.Interop
     [Guid("5C1E0D8A-7C23-48F9-8C59-A92958CEFF11")]
     public unsafe partial struct ID3DDeviceContextState
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID3DDeviceContextState*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID3DDeviceContextState*, Guid*, void**, int>)(lpVtbl[0]))((ID3DDeviceContextState*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID3DDeviceContextState*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3DDeviceContextState*, uint>)(lpVtbl[1]))((ID3DDeviceContextState*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID3DDeviceContextState*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3DDeviceContextState*, uint>)(lpVtbl[2]))((ID3DDeviceContextState*)Unsafe.AsPointer(ref this));
         }
 
         public void GetDevice([NativeTypeName("ID3D11Device **")] ID3D11Device** ppDevice)
         {
-            lpVtbl->GetDevice((ID3DDeviceContextState*)Unsafe.AsPointer(ref this), ppDevice);
+            ((delegate* stdcall<ID3DDeviceContextState*, ID3D11Device**, void>)(lpVtbl[3]))((ID3DDeviceContextState*)Unsafe.AsPointer(ref this), ppDevice);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData)
         {
-            return lpVtbl->GetPrivateData((ID3DDeviceContextState*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
+            return ((delegate* stdcall<ID3DDeviceContextState*, Guid*, uint*, void*, int>)(lpVtbl[4]))((ID3DDeviceContextState*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData)
         {
-            return lpVtbl->SetPrivateData((ID3DDeviceContextState*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
+            return ((delegate* stdcall<ID3DDeviceContextState*, Guid*, uint, void*, int>)(lpVtbl[5]))((ID3DDeviceContextState*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
         {
-            return lpVtbl->SetPrivateDataInterface((ID3DDeviceContextState*)Unsafe.AsPointer(ref this), guid, pData);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3DDeviceContextState*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3DDeviceContextState*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3DDeviceContextState*, uint> Release;
-
-            [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3DDeviceContextState*, ID3D11Device**, void> GetDevice;
-
-            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3DDeviceContextState*, Guid*, uint*, void*, int> GetPrivateData;
-
-            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3DDeviceContextState*, Guid*, uint, void*, int> SetPrivateData;
-
-            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3DDeviceContextState*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+            return ((delegate* stdcall<ID3DDeviceContextState*, Guid*, IUnknown*, int>)(lpVtbl[6]))((ID3DDeviceContextState*)Unsafe.AsPointer(ref this), guid, pData);
         }
     }
 }

@@ -12,423 +12,282 @@ namespace TerraFX.Interop
     [Guid("2933BF89-7B36-11D2-B20E-00C04F983E60")]
     public unsafe partial struct IXMLDOMProcessingInstruction
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, Guid*, void**, int>)(lpVtbl[0]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, uint>)(lpVtbl[1]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, uint>)(lpVtbl[2]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetTypeInfoCount([NativeTypeName("UINT *")] uint* pctinfo)
         {
-            return lpVtbl->GetTypeInfoCount((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), pctinfo);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, uint*, int>)(lpVtbl[3]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), pctinfo);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ITypeInfo **")] ITypeInfo** ppTInfo)
         {
-            return lpVtbl->GetTypeInfo((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
         {
-            return lpVtbl->GetIDsOfNames((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, [NativeTypeName("DISPPARAMS *")] DISPPARAMS* pDispParams, [NativeTypeName("VARIANT *")] VARIANT* pVarResult, [NativeTypeName("EXCEPINFO *")] EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
         {
-            return lpVtbl->Invoke((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_nodeName([NativeTypeName("BSTR *")] ushort** name)
         {
-            return lpVtbl->get_nodeName((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), name);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, ushort**, int>)(lpVtbl[7]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), name);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_nodeValue([NativeTypeName("VARIANT *")] VARIANT* value)
         {
-            return lpVtbl->get_nodeValue((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), value);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, VARIANT*, int>)(lpVtbl[8]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), value);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int put_nodeValue(VARIANT value)
         {
-            return lpVtbl->put_nodeValue((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), value);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, VARIANT, int>)(lpVtbl[9]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), value);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_nodeType([NativeTypeName("DOMNodeType *")] DOMNodeType* type)
         {
-            return lpVtbl->get_nodeType((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), type);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, DOMNodeType*, int>)(lpVtbl[10]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), type);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_parentNode([NativeTypeName("IXMLDOMNode **")] IXMLDOMNode** parent)
         {
-            return lpVtbl->get_parentNode((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), parent);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMNode**, int>)(lpVtbl[11]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), parent);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_childNodes([NativeTypeName("IXMLDOMNodeList **")] IXMLDOMNodeList** childList)
         {
-            return lpVtbl->get_childNodes((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), childList);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMNodeList**, int>)(lpVtbl[12]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), childList);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_firstChild([NativeTypeName("IXMLDOMNode **")] IXMLDOMNode** firstChild)
         {
-            return lpVtbl->get_firstChild((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), firstChild);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMNode**, int>)(lpVtbl[13]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), firstChild);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_lastChild([NativeTypeName("IXMLDOMNode **")] IXMLDOMNode** lastChild)
         {
-            return lpVtbl->get_lastChild((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), lastChild);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMNode**, int>)(lpVtbl[14]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), lastChild);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_previousSibling([NativeTypeName("IXMLDOMNode **")] IXMLDOMNode** previousSibling)
         {
-            return lpVtbl->get_previousSibling((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), previousSibling);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMNode**, int>)(lpVtbl[15]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), previousSibling);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_nextSibling([NativeTypeName("IXMLDOMNode **")] IXMLDOMNode** nextSibling)
         {
-            return lpVtbl->get_nextSibling((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), nextSibling);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMNode**, int>)(lpVtbl[16]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), nextSibling);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_attributes([NativeTypeName("IXMLDOMNamedNodeMap **")] IXMLDOMNamedNodeMap** attributeMap)
         {
-            return lpVtbl->get_attributes((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), attributeMap);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMNamedNodeMap**, int>)(lpVtbl[17]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), attributeMap);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int insertBefore([NativeTypeName("IXMLDOMNode *")] IXMLDOMNode* newChild, VARIANT refChild, [NativeTypeName("IXMLDOMNode **")] IXMLDOMNode** outNewChild)
         {
-            return lpVtbl->insertBefore((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), newChild, refChild, outNewChild);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMNode*, VARIANT, IXMLDOMNode**, int>)(lpVtbl[18]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), newChild, refChild, outNewChild);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int replaceChild([NativeTypeName("IXMLDOMNode *")] IXMLDOMNode* newChild, [NativeTypeName("IXMLDOMNode *")] IXMLDOMNode* oldChild, [NativeTypeName("IXMLDOMNode **")] IXMLDOMNode** outOldChild)
         {
-            return lpVtbl->replaceChild((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), newChild, oldChild, outOldChild);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMNode*, IXMLDOMNode*, IXMLDOMNode**, int>)(lpVtbl[19]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), newChild, oldChild, outOldChild);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int removeChild([NativeTypeName("IXMLDOMNode *")] IXMLDOMNode* childNode, [NativeTypeName("IXMLDOMNode **")] IXMLDOMNode** oldChild)
         {
-            return lpVtbl->removeChild((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), childNode, oldChild);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMNode*, IXMLDOMNode**, int>)(lpVtbl[20]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), childNode, oldChild);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int appendChild([NativeTypeName("IXMLDOMNode *")] IXMLDOMNode* newChild, [NativeTypeName("IXMLDOMNode **")] IXMLDOMNode** outNewChild)
         {
-            return lpVtbl->appendChild((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), newChild, outNewChild);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMNode*, IXMLDOMNode**, int>)(lpVtbl[21]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), newChild, outNewChild);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int hasChildNodes([NativeTypeName("VARIANT_BOOL *")] short* hasChild)
         {
-            return lpVtbl->hasChildNodes((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), hasChild);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, short*, int>)(lpVtbl[22]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), hasChild);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_ownerDocument([NativeTypeName("IXMLDOMDocument **")] IXMLDOMDocument** XMLDOMDocument)
         {
-            return lpVtbl->get_ownerDocument((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), XMLDOMDocument);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMDocument**, int>)(lpVtbl[23]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), XMLDOMDocument);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int cloneNode([NativeTypeName("VARIANT_BOOL")] short deep, [NativeTypeName("IXMLDOMNode **")] IXMLDOMNode** cloneRoot)
         {
-            return lpVtbl->cloneNode((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), deep, cloneRoot);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, short, IXMLDOMNode**, int>)(lpVtbl[24]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), deep, cloneRoot);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_nodeTypeString([NativeTypeName("BSTR *")] ushort** nodeType)
         {
-            return lpVtbl->get_nodeTypeString((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), nodeType);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, ushort**, int>)(lpVtbl[25]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), nodeType);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_text([NativeTypeName("BSTR *")] ushort** text)
         {
-            return lpVtbl->get_text((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), text);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, ushort**, int>)(lpVtbl[26]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), text);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int put_text([NativeTypeName("BSTR")] ushort* text)
         {
-            return lpVtbl->put_text((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), text);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, ushort*, int>)(lpVtbl[27]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), text);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_specified([NativeTypeName("VARIANT_BOOL *")] short* isSpecified)
         {
-            return lpVtbl->get_specified((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), isSpecified);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, short*, int>)(lpVtbl[28]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), isSpecified);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_definition([NativeTypeName("IXMLDOMNode **")] IXMLDOMNode** definitionNode)
         {
-            return lpVtbl->get_definition((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), definitionNode);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMNode**, int>)(lpVtbl[29]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), definitionNode);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_nodeTypedValue([NativeTypeName("VARIANT *")] VARIANT* typedValue)
         {
-            return lpVtbl->get_nodeTypedValue((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), typedValue);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, VARIANT*, int>)(lpVtbl[30]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), typedValue);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int put_nodeTypedValue(VARIANT typedValue)
         {
-            return lpVtbl->put_nodeTypedValue((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), typedValue);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, VARIANT, int>)(lpVtbl[31]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), typedValue);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_dataType([NativeTypeName("VARIANT *")] VARIANT* dataTypeName)
         {
-            return lpVtbl->get_dataType((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), dataTypeName);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, VARIANT*, int>)(lpVtbl[32]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), dataTypeName);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int put_dataType([NativeTypeName("BSTR")] ushort* dataTypeName)
         {
-            return lpVtbl->put_dataType((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), dataTypeName);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, ushort*, int>)(lpVtbl[33]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), dataTypeName);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_xml([NativeTypeName("BSTR *")] ushort** xmlString)
         {
-            return lpVtbl->get_xml((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), xmlString);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, ushort**, int>)(lpVtbl[34]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), xmlString);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int transformNode([NativeTypeName("IXMLDOMNode *")] IXMLDOMNode* stylesheet, [NativeTypeName("BSTR *")] ushort** xmlString)
         {
-            return lpVtbl->transformNode((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), stylesheet, xmlString);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMNode*, ushort**, int>)(lpVtbl[35]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), stylesheet, xmlString);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int selectNodes([NativeTypeName("BSTR")] ushort* queryString, [NativeTypeName("IXMLDOMNodeList **")] IXMLDOMNodeList** resultList)
         {
-            return lpVtbl->selectNodes((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), queryString, resultList);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, ushort*, IXMLDOMNodeList**, int>)(lpVtbl[36]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), queryString, resultList);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int selectSingleNode([NativeTypeName("BSTR")] ushort* queryString, [NativeTypeName("IXMLDOMNode **")] IXMLDOMNode** resultNode)
         {
-            return lpVtbl->selectSingleNode((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), queryString, resultNode);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, ushort*, IXMLDOMNode**, int>)(lpVtbl[37]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), queryString, resultNode);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_parsed([NativeTypeName("VARIANT_BOOL *")] short* isParsed)
         {
-            return lpVtbl->get_parsed((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), isParsed);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, short*, int>)(lpVtbl[38]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), isParsed);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_namespaceURI([NativeTypeName("BSTR *")] ushort** namespaceURI)
         {
-            return lpVtbl->get_namespaceURI((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), namespaceURI);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, ushort**, int>)(lpVtbl[39]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), namespaceURI);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_prefix([NativeTypeName("BSTR *")] ushort** prefixString)
         {
-            return lpVtbl->get_prefix((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), prefixString);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, ushort**, int>)(lpVtbl[40]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), prefixString);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_baseName([NativeTypeName("BSTR *")] ushort** nameString)
         {
-            return lpVtbl->get_baseName((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), nameString);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, ushort**, int>)(lpVtbl[41]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), nameString);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int transformNodeToObject([NativeTypeName("IXMLDOMNode *")] IXMLDOMNode* stylesheet, VARIANT outputObject)
         {
-            return lpVtbl->transformNodeToObject((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), stylesheet, outputObject);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMNode*, VARIANT, int>)(lpVtbl[42]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), stylesheet, outputObject);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_target([NativeTypeName("BSTR *")] ushort** name)
         {
-            return lpVtbl->get_target((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), name);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, ushort**, int>)(lpVtbl[43]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), name);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_data([NativeTypeName("BSTR *")] ushort** value)
         {
-            return lpVtbl->get_data((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), value);
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, ushort**, int>)(lpVtbl[44]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), value);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int put_data([NativeTypeName("BSTR")] ushort* value)
         {
-            return lpVtbl->put_data((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), value);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, uint> Release;
-
-            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, uint*, int> GetTypeInfoCount;
-
-            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, uint, uint, ITypeInfo**, int> GetTypeInfo;
-
-            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
-
-            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, ushort**, int> get_nodeName;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, VARIANT*, int> get_nodeValue;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, VARIANT, int> put_nodeValue;
-
-            [NativeTypeName("HRESULT (DOMNodeType *) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, DOMNodeType*, int> get_nodeType;
-
-            [NativeTypeName("HRESULT (IXMLDOMNode **) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMNode**, int> get_parentNode;
-
-            [NativeTypeName("HRESULT (IXMLDOMNodeList **) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMNodeList**, int> get_childNodes;
-
-            [NativeTypeName("HRESULT (IXMLDOMNode **) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMNode**, int> get_firstChild;
-
-            [NativeTypeName("HRESULT (IXMLDOMNode **) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMNode**, int> get_lastChild;
-
-            [NativeTypeName("HRESULT (IXMLDOMNode **) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMNode**, int> get_previousSibling;
-
-            [NativeTypeName("HRESULT (IXMLDOMNode **) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMNode**, int> get_nextSibling;
-
-            [NativeTypeName("HRESULT (IXMLDOMNamedNodeMap **) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMNamedNodeMap**, int> get_attributes;
-
-            [NativeTypeName("HRESULT (IXMLDOMNode *, VARIANT, IXMLDOMNode **) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMNode*, VARIANT, IXMLDOMNode**, int> insertBefore;
-
-            [NativeTypeName("HRESULT (IXMLDOMNode *, IXMLDOMNode *, IXMLDOMNode **) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMNode*, IXMLDOMNode*, IXMLDOMNode**, int> replaceChild;
-
-            [NativeTypeName("HRESULT (IXMLDOMNode *, IXMLDOMNode **) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMNode*, IXMLDOMNode**, int> removeChild;
-
-            [NativeTypeName("HRESULT (IXMLDOMNode *, IXMLDOMNode **) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMNode*, IXMLDOMNode**, int> appendChild;
-
-            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, short*, int> hasChildNodes;
-
-            [NativeTypeName("HRESULT (IXMLDOMDocument **) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMDocument**, int> get_ownerDocument;
-
-            [NativeTypeName("HRESULT (VARIANT_BOOL, IXMLDOMNode **) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, short, IXMLDOMNode**, int> cloneNode;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, ushort**, int> get_nodeTypeString;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, ushort**, int> get_text;
-
-            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, ushort*, int> put_text;
-
-            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, short*, int> get_specified;
-
-            [NativeTypeName("HRESULT (IXMLDOMNode **) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMNode**, int> get_definition;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, VARIANT*, int> get_nodeTypedValue;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, VARIANT, int> put_nodeTypedValue;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, VARIANT*, int> get_dataType;
-
-            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, ushort*, int> put_dataType;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, ushort**, int> get_xml;
-
-            [NativeTypeName("HRESULT (IXMLDOMNode *, BSTR *) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMNode*, ushort**, int> transformNode;
-
-            [NativeTypeName("HRESULT (BSTR, IXMLDOMNodeList **) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, ushort*, IXMLDOMNodeList**, int> selectNodes;
-
-            [NativeTypeName("HRESULT (BSTR, IXMLDOMNode **) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, ushort*, IXMLDOMNode**, int> selectSingleNode;
-
-            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, short*, int> get_parsed;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, ushort**, int> get_namespaceURI;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, ushort**, int> get_prefix;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, ushort**, int> get_baseName;
-
-            [NativeTypeName("HRESULT (IXMLDOMNode *, VARIANT) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, IXMLDOMNode*, VARIANT, int> transformNodeToObject;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, ushort**, int> get_target;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, ushort**, int> get_data;
-
-            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDOMProcessingInstruction*, ushort*, int> put_data;
+            return ((delegate* stdcall<IXMLDOMProcessingInstruction*, ushort*, int>)(lpVtbl[45]))((IXMLDOMProcessingInstruction*)Unsafe.AsPointer(ref this), value);
         }
     }
 }

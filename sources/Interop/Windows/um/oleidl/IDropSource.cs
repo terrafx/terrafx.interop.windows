@@ -12,54 +12,36 @@ namespace TerraFX.Interop
     [Guid("00000121-0000-0000-C000-000000000046")]
     public unsafe partial struct IDropSource
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IDropSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IDropSource*, Guid*, void**, int>)(lpVtbl[0]))((IDropSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IDropSource*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDropSource*, uint>)(lpVtbl[1]))((IDropSource*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IDropSource*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDropSource*, uint>)(lpVtbl[2]))((IDropSource*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int QueryContinueDrag([NativeTypeName("BOOL")] int fEscapePressed, [NativeTypeName("DWORD")] uint grfKeyState)
         {
-            return lpVtbl->QueryContinueDrag((IDropSource*)Unsafe.AsPointer(ref this), fEscapePressed, grfKeyState);
+            return ((delegate* stdcall<IDropSource*, int, uint, int>)(lpVtbl[3]))((IDropSource*)Unsafe.AsPointer(ref this), fEscapePressed, grfKeyState);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GiveFeedback([NativeTypeName("DWORD")] uint dwEffect)
         {
-            return lpVtbl->GiveFeedback((IDropSource*)Unsafe.AsPointer(ref this), dwEffect);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IDropSource*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IDropSource*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IDropSource*, uint> Release;
-
-            [NativeTypeName("HRESULT (BOOL, DWORD) __attribute__((stdcall))")]
-            public delegate* stdcall<IDropSource*, int, uint, int> QueryContinueDrag;
-
-            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public delegate* stdcall<IDropSource*, uint, int> GiveFeedback;
+            return ((delegate* stdcall<IDropSource*, uint, int>)(lpVtbl[4]))((IDropSource*)Unsafe.AsPointer(ref this), dwEffect);
         }
     }
 }

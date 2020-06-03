@@ -12,88 +12,58 @@ namespace TerraFX.Interop
     [Guid("77395441-1C8F-4555-8683-F50DAB0FE792")]
     public unsafe partial struct ID2D1ImageSourceFromWic
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID2D1ImageSourceFromWic*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID2D1ImageSourceFromWic*, uint>)(lpVtbl[1]))((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID2D1ImageSourceFromWic*, uint>)(lpVtbl[2]))((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this));
         }
 
         public void GetFactory([NativeTypeName("ID2D1Factory **")] ID2D1Factory** factory)
         {
-            lpVtbl->GetFactory((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this), factory);
+            ((delegate* stdcall<ID2D1ImageSourceFromWic*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this), factory);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int OfferResources()
         {
-            return lpVtbl->OfferResources((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID2D1ImageSourceFromWic*, int>)(lpVtbl[4]))((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int TryReclaimResources([NativeTypeName("BOOL *")] int* resourcesDiscarded)
         {
-            return lpVtbl->TryReclaimResources((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this), resourcesDiscarded);
+            return ((delegate* stdcall<ID2D1ImageSourceFromWic*, int*, int>)(lpVtbl[5]))((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this), resourcesDiscarded);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int EnsureCached([NativeTypeName("const D2D1_RECT_U *")] D2D_RECT_U* rectangleToFill)
         {
-            return lpVtbl->EnsureCached((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this), rectangleToFill);
+            return ((delegate* stdcall<ID2D1ImageSourceFromWic*, D2D_RECT_U*, int>)(lpVtbl[6]))((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this), rectangleToFill);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int TrimCache([NativeTypeName("const D2D1_RECT_U *")] D2D_RECT_U* rectangleToPreserve)
         {
-            return lpVtbl->TrimCache((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this), rectangleToPreserve);
+            return ((delegate* stdcall<ID2D1ImageSourceFromWic*, D2D_RECT_U*, int>)(lpVtbl[7]))((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this), rectangleToPreserve);
         }
 
         public void GetSource([NativeTypeName("IWICBitmapSource **")] IWICBitmapSource** wicBitmapSource)
         {
-            lpVtbl->GetSource((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this), wicBitmapSource);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1ImageSourceFromWic*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1ImageSourceFromWic*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1ImageSourceFromWic*, uint> Release;
-
-            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1ImageSourceFromWic*, ID2D1Factory**, void> GetFactory;
-
-            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1ImageSourceFromWic*, int> OfferResources;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1ImageSourceFromWic*, int*, int> TryReclaimResources;
-
-            [NativeTypeName("HRESULT (const D2D1_RECT_U *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1ImageSourceFromWic*, D2D_RECT_U*, int> EnsureCached;
-
-            [NativeTypeName("HRESULT (const D2D1_RECT_U *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1ImageSourceFromWic*, D2D_RECT_U*, int> TrimCache;
-
-            [NativeTypeName("void (IWICBitmapSource **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1ImageSourceFromWic*, IWICBitmapSource**, void> GetSource;
+            ((delegate* stdcall<ID2D1ImageSourceFromWic*, IWICBitmapSource**, void>)(lpVtbl[8]))((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this), wicBitmapSource);
         }
     }
 }

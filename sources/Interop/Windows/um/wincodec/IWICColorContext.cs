@@ -12,90 +12,60 @@ namespace TerraFX.Interop
     [Guid("3C613A02-34B2-44EA-9A7C-45AEA9C6FD6D")]
     public unsafe partial struct IWICColorContext
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IWICColorContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IWICColorContext*, Guid*, void**, int>)(lpVtbl[0]))((IWICColorContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IWICColorContext*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IWICColorContext*, uint>)(lpVtbl[1]))((IWICColorContext*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IWICColorContext*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IWICColorContext*, uint>)(lpVtbl[2]))((IWICColorContext*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int InitializeFromFilename([NativeTypeName("LPCWSTR")] ushort* wzFilename)
         {
-            return lpVtbl->InitializeFromFilename((IWICColorContext*)Unsafe.AsPointer(ref this), wzFilename);
+            return ((delegate* stdcall<IWICColorContext*, ushort*, int>)(lpVtbl[3]))((IWICColorContext*)Unsafe.AsPointer(ref this), wzFilename);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int InitializeFromMemory([NativeTypeName("const BYTE *")] byte* pbBuffer, [NativeTypeName("UINT")] uint cbBufferSize)
         {
-            return lpVtbl->InitializeFromMemory((IWICColorContext*)Unsafe.AsPointer(ref this), pbBuffer, cbBufferSize);
+            return ((delegate* stdcall<IWICColorContext*, byte*, uint, int>)(lpVtbl[4]))((IWICColorContext*)Unsafe.AsPointer(ref this), pbBuffer, cbBufferSize);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int InitializeFromExifColorSpace([NativeTypeName("UINT")] uint value)
         {
-            return lpVtbl->InitializeFromExifColorSpace((IWICColorContext*)Unsafe.AsPointer(ref this), value);
+            return ((delegate* stdcall<IWICColorContext*, uint, int>)(lpVtbl[5]))((IWICColorContext*)Unsafe.AsPointer(ref this), value);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetType([NativeTypeName("WICColorContextType *")] WICColorContextType* pType)
         {
-            return lpVtbl->GetType((IWICColorContext*)Unsafe.AsPointer(ref this), pType);
+            return ((delegate* stdcall<IWICColorContext*, WICColorContextType*, int>)(lpVtbl[6]))((IWICColorContext*)Unsafe.AsPointer(ref this), pType);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetProfileBytes([NativeTypeName("UINT")] uint cbBuffer, [NativeTypeName("BYTE *")] byte* pbBuffer, [NativeTypeName("UINT *")] uint* pcbActual)
         {
-            return lpVtbl->GetProfileBytes((IWICColorContext*)Unsafe.AsPointer(ref this), cbBuffer, pbBuffer, pcbActual);
+            return ((delegate* stdcall<IWICColorContext*, uint, byte*, uint*, int>)(lpVtbl[7]))((IWICColorContext*)Unsafe.AsPointer(ref this), cbBuffer, pbBuffer, pcbActual);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetExifColorSpace([NativeTypeName("UINT *")] uint* pValue)
         {
-            return lpVtbl->GetExifColorSpace((IWICColorContext*)Unsafe.AsPointer(ref this), pValue);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IWICColorContext*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IWICColorContext*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IWICColorContext*, uint> Release;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* stdcall<IWICColorContext*, ushort*, int> InitializeFromFilename;
-
-            [NativeTypeName("HRESULT (const BYTE *, UINT) __attribute__((stdcall))")]
-            public delegate* stdcall<IWICColorContext*, byte*, uint, int> InitializeFromMemory;
-
-            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-            public delegate* stdcall<IWICColorContext*, uint, int> InitializeFromExifColorSpace;
-
-            [NativeTypeName("HRESULT (WICColorContextType *) __attribute__((stdcall))")]
-            public new delegate* stdcall<IWICColorContext*, WICColorContextType*, int> GetType;
-
-            [NativeTypeName("HRESULT (UINT, BYTE *, UINT *) __attribute__((stdcall))")]
-            public delegate* stdcall<IWICColorContext*, uint, byte*, uint*, int> GetProfileBytes;
-
-            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public delegate* stdcall<IWICColorContext*, uint*, int> GetExifColorSpace;
+            return ((delegate* stdcall<IWICColorContext*, uint*, int>)(lpVtbl[8]))((IWICColorContext*)Unsafe.AsPointer(ref this), pValue);
         }
     }
 }

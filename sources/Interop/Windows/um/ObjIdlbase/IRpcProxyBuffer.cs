@@ -12,53 +12,35 @@ namespace TerraFX.Interop
     [Guid("D5F56A34-593B-101A-B569-08002B2DBF7A")]
     public unsafe partial struct IRpcProxyBuffer
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IRpcProxyBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IRpcProxyBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IRpcProxyBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IRpcProxyBuffer*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IRpcProxyBuffer*, uint>)(lpVtbl[1]))((IRpcProxyBuffer*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IRpcProxyBuffer*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IRpcProxyBuffer*, uint>)(lpVtbl[2]))((IRpcProxyBuffer*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Connect([NativeTypeName("IRpcChannelBuffer *")] IRpcChannelBuffer* pRpcChannelBuffer)
         {
-            return lpVtbl->Connect((IRpcProxyBuffer*)Unsafe.AsPointer(ref this), pRpcChannelBuffer);
+            return ((delegate* stdcall<IRpcProxyBuffer*, IRpcChannelBuffer*, int>)(lpVtbl[3]))((IRpcProxyBuffer*)Unsafe.AsPointer(ref this), pRpcChannelBuffer);
         }
 
         public void Disconnect()
         {
-            lpVtbl->Disconnect((IRpcProxyBuffer*)Unsafe.AsPointer(ref this));
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IRpcProxyBuffer*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IRpcProxyBuffer*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IRpcProxyBuffer*, uint> Release;
-
-            [NativeTypeName("HRESULT (IRpcChannelBuffer *) __attribute__((stdcall))")]
-            public delegate* stdcall<IRpcProxyBuffer*, IRpcChannelBuffer*, int> Connect;
-
-            [NativeTypeName("void () __attribute__((stdcall))")]
-            public delegate* stdcall<IRpcProxyBuffer*, void> Disconnect;
+            ((delegate* stdcall<IRpcProxyBuffer*, void>)(lpVtbl[4]))((IRpcProxyBuffer*)Unsafe.AsPointer(ref this));
         }
     }
 }

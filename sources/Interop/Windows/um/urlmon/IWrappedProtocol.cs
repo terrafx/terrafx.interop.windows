@@ -12,45 +12,30 @@ namespace TerraFX.Interop
     [Guid("53C84785-8425-4DC5-971B-E58D9C19F9B6")]
     public unsafe partial struct IWrappedProtocol
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IWrappedProtocol*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IWrappedProtocol*, Guid*, void**, int>)(lpVtbl[0]))((IWrappedProtocol*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IWrappedProtocol*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IWrappedProtocol*, uint>)(lpVtbl[1]))((IWrappedProtocol*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IWrappedProtocol*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IWrappedProtocol*, uint>)(lpVtbl[2]))((IWrappedProtocol*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetWrapperCode([NativeTypeName("LONG *")] int* pnCode, [NativeTypeName("DWORD_PTR")] nuint dwReserved)
         {
-            return lpVtbl->GetWrapperCode((IWrappedProtocol*)Unsafe.AsPointer(ref this), pnCode, dwReserved);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IWrappedProtocol*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IWrappedProtocol*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IWrappedProtocol*, uint> Release;
-
-            [NativeTypeName("HRESULT (LONG *, DWORD_PTR) __attribute__((stdcall))")]
-            public delegate* stdcall<IWrappedProtocol*, int*, nuint, int> GetWrapperCode;
+            return ((delegate* stdcall<IWrappedProtocol*, int*, nuint, int>)(lpVtbl[3]))((IWrappedProtocol*)Unsafe.AsPointer(ref this), pnCode, dwReserved);
         }
     }
 }

@@ -12,117 +12,78 @@ namespace TerraFX.Interop
     [Guid("310AFA62-0575-11D2-9CA9-0060B0EC3D39")]
     public unsafe partial struct IXMLDSOControl
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IXMLDSOControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IXMLDSOControl*, Guid*, void**, int>)(lpVtbl[0]))((IXMLDSOControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IXMLDSOControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IXMLDSOControl*, uint>)(lpVtbl[1]))((IXMLDSOControl*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IXMLDSOControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IXMLDSOControl*, uint>)(lpVtbl[2]))((IXMLDSOControl*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetTypeInfoCount([NativeTypeName("UINT *")] uint* pctinfo)
         {
-            return lpVtbl->GetTypeInfoCount((IXMLDSOControl*)Unsafe.AsPointer(ref this), pctinfo);
+            return ((delegate* stdcall<IXMLDSOControl*, uint*, int>)(lpVtbl[3]))((IXMLDSOControl*)Unsafe.AsPointer(ref this), pctinfo);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ITypeInfo **")] ITypeInfo** ppTInfo)
         {
-            return lpVtbl->GetTypeInfo((IXMLDSOControl*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+            return ((delegate* stdcall<IXMLDSOControl*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IXMLDSOControl*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
         {
-            return lpVtbl->GetIDsOfNames((IXMLDSOControl*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+            return ((delegate* stdcall<IXMLDSOControl*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IXMLDSOControl*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, [NativeTypeName("DISPPARAMS *")] DISPPARAMS* pDispParams, [NativeTypeName("VARIANT *")] VARIANT* pVarResult, [NativeTypeName("EXCEPINFO *")] EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
         {
-            return lpVtbl->Invoke((IXMLDSOControl*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+            return ((delegate* stdcall<IXMLDSOControl*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IXMLDSOControl*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_XMLDocument([NativeTypeName("IXMLDOMDocument **")] IXMLDOMDocument** ppDoc)
         {
-            return lpVtbl->get_XMLDocument((IXMLDSOControl*)Unsafe.AsPointer(ref this), ppDoc);
+            return ((delegate* stdcall<IXMLDSOControl*, IXMLDOMDocument**, int>)(lpVtbl[7]))((IXMLDSOControl*)Unsafe.AsPointer(ref this), ppDoc);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int put_XMLDocument([NativeTypeName("IXMLDOMDocument *")] IXMLDOMDocument* ppDoc)
         {
-            return lpVtbl->put_XMLDocument((IXMLDSOControl*)Unsafe.AsPointer(ref this), ppDoc);
+            return ((delegate* stdcall<IXMLDSOControl*, IXMLDOMDocument*, int>)(lpVtbl[8]))((IXMLDSOControl*)Unsafe.AsPointer(ref this), ppDoc);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_JavaDSOCompatible([NativeTypeName("BOOL *")] int* fJavaDSOCompatible)
         {
-            return lpVtbl->get_JavaDSOCompatible((IXMLDSOControl*)Unsafe.AsPointer(ref this), fJavaDSOCompatible);
+            return ((delegate* stdcall<IXMLDSOControl*, int*, int>)(lpVtbl[9]))((IXMLDSOControl*)Unsafe.AsPointer(ref this), fJavaDSOCompatible);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int put_JavaDSOCompatible([NativeTypeName("BOOL")] int fJavaDSOCompatible)
         {
-            return lpVtbl->put_JavaDSOCompatible((IXMLDSOControl*)Unsafe.AsPointer(ref this), fJavaDSOCompatible);
+            return ((delegate* stdcall<IXMLDSOControl*, int, int>)(lpVtbl[10]))((IXMLDSOControl*)Unsafe.AsPointer(ref this), fJavaDSOCompatible);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int get_readyState([NativeTypeName("long *")] int* state)
         {
-            return lpVtbl->get_readyState((IXMLDSOControl*)Unsafe.AsPointer(ref this), state);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDSOControl*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDSOControl*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDSOControl*, uint> Release;
-
-            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDSOControl*, uint*, int> GetTypeInfoCount;
-
-            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDSOControl*, uint, uint, ITypeInfo**, int> GetTypeInfo;
-
-            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDSOControl*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
-
-            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDSOControl*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
-
-            [NativeTypeName("HRESULT (IXMLDOMDocument **) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDSOControl*, IXMLDOMDocument**, int> get_XMLDocument;
-
-            [NativeTypeName("HRESULT (IXMLDOMDocument *) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDSOControl*, IXMLDOMDocument*, int> put_XMLDocument;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDSOControl*, int*, int> get_JavaDSOCompatible;
-
-            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDSOControl*, int, int> put_JavaDSOCompatible;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* stdcall<IXMLDSOControl*, int*, int> get_readyState;
+            return ((delegate* stdcall<IXMLDSOControl*, int*, int>)(lpVtbl[11]))((IXMLDSOControl*)Unsafe.AsPointer(ref this), state);
         }
     }
 }

@@ -12,54 +12,36 @@ namespace TerraFX.Interop
     [Guid("000001D5-0000-0000-C000-000000000046")]
     public unsafe partial struct IProcessLock
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IProcessLock*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IProcessLock*, Guid*, void**, int>)(lpVtbl[0]))((IProcessLock*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IProcessLock*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IProcessLock*, uint>)(lpVtbl[1]))((IProcessLock*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IProcessLock*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IProcessLock*, uint>)(lpVtbl[2]))((IProcessLock*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRefOnProcess()
         {
-            return lpVtbl->AddRefOnProcess((IProcessLock*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IProcessLock*, uint>)(lpVtbl[3]))((IProcessLock*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint ReleaseRefOnProcess()
         {
-            return lpVtbl->ReleaseRefOnProcess((IProcessLock*)Unsafe.AsPointer(ref this));
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IProcessLock*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IProcessLock*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IProcessLock*, uint> Release;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IProcessLock*, uint> AddRefOnProcess;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IProcessLock*, uint> ReleaseRefOnProcess;
+            return ((delegate* stdcall<IProcessLock*, uint>)(lpVtbl[4]))((IProcessLock*)Unsafe.AsPointer(ref this));
         }
     }
 }

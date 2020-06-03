@@ -5,10 +5,10 @@
 
 namespace TerraFX.Interop
 {
-    public partial struct SPC_SERIALIZED_OBJECT
+    public unsafe partial struct SPC_SERIALIZED_OBJECT
     {
         [NativeTypeName("SPC_UUID")]
-        public byte ClassId;
+        public fixed byte ClassId[16];
 
         [NativeTypeName("CRYPT_DATA_BLOB")]
         public CRYPTOAPI_BLOB SerializedData;

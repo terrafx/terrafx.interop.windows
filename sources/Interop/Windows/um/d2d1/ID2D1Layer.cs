@@ -12,54 +12,36 @@ namespace TerraFX.Interop
     [Guid("2CD9069B-12E2-11DC-9FED-001143A055F9")]
     public unsafe partial struct ID2D1Layer
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID2D1Layer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID2D1Layer*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1Layer*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID2D1Layer*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID2D1Layer*, uint>)(lpVtbl[1]))((ID2D1Layer*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID2D1Layer*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID2D1Layer*, uint>)(lpVtbl[2]))((ID2D1Layer*)Unsafe.AsPointer(ref this));
         }
 
         public void GetFactory([NativeTypeName("ID2D1Factory **")] ID2D1Factory** factory)
         {
-            lpVtbl->GetFactory((ID2D1Layer*)Unsafe.AsPointer(ref this), factory);
+            ((delegate* stdcall<ID2D1Layer*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1Layer*)Unsafe.AsPointer(ref this), factory);
         }
 
         [return: NativeTypeName("D2D1_SIZE_F")]
         public D2D_SIZE_F GetSize()
         {
             D2D_SIZE_F result;
-            return *lpVtbl->GetSize((ID2D1Layer*)Unsafe.AsPointer(ref this), &result);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1Layer*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1Layer*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1Layer*, uint> Release;
-
-            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1Layer*, ID2D1Factory**, void> GetFactory;
-
-            [NativeTypeName("D2D1_SIZE_F () const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1Layer*, D2D_SIZE_F*, D2D_SIZE_F*> GetSize;
+            return *((delegate* stdcall<ID2D1Layer*, D2D_SIZE_F*, D2D_SIZE_F*>)(lpVtbl[4]))((ID2D1Layer*)Unsafe.AsPointer(ref this), &result);
         }
     }
 }
