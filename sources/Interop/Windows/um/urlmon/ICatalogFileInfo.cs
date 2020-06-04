@@ -12,54 +12,36 @@ namespace TerraFX.Interop
     [Guid("711C7600-6B48-11D1-B403-00AA00B92AF1")]
     public unsafe partial struct ICatalogFileInfo
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ICatalogFileInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ICatalogFileInfo*, Guid*, void**, int>)(lpVtbl[0]))((ICatalogFileInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ICatalogFileInfo*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ICatalogFileInfo*, uint>)(lpVtbl[1]))((ICatalogFileInfo*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ICatalogFileInfo*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ICatalogFileInfo*, uint>)(lpVtbl[2]))((ICatalogFileInfo*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetCatalogFile([NativeTypeName("LPSTR *")] sbyte** ppszCatalogFile)
         {
-            return lpVtbl->GetCatalogFile((ICatalogFileInfo*)Unsafe.AsPointer(ref this), ppszCatalogFile);
+            return ((delegate* stdcall<ICatalogFileInfo*, sbyte**, int>)(lpVtbl[3]))((ICatalogFileInfo*)Unsafe.AsPointer(ref this), ppszCatalogFile);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetJavaTrust([NativeTypeName("void **")] void** ppJavaTrust)
         {
-            return lpVtbl->GetJavaTrust((ICatalogFileInfo*)Unsafe.AsPointer(ref this), ppJavaTrust);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ICatalogFileInfo*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ICatalogFileInfo*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ICatalogFileInfo*, uint> Release;
-
-            [NativeTypeName("HRESULT (LPSTR *) __attribute__((stdcall))")]
-            public delegate* stdcall<ICatalogFileInfo*, sbyte**, int> GetCatalogFile;
-
-            [NativeTypeName("HRESULT (void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ICatalogFileInfo*, void**, int> GetJavaTrust;
+            return ((delegate* stdcall<ICatalogFileInfo*, void**, int>)(lpVtbl[4]))((ICatalogFileInfo*)Unsafe.AsPointer(ref this), ppJavaTrust);
         }
     }
 }

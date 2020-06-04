@@ -12,45 +12,30 @@ namespace TerraFX.Interop
     [Guid("ED6A8A2A-B160-4E77-8F73-AA7435CD5C27")]
     public unsafe partial struct ITypeLibRegistrationReader
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ITypeLibRegistrationReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ITypeLibRegistrationReader*, Guid*, void**, int>)(lpVtbl[0]))((ITypeLibRegistrationReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ITypeLibRegistrationReader*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ITypeLibRegistrationReader*, uint>)(lpVtbl[1]))((ITypeLibRegistrationReader*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ITypeLibRegistrationReader*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ITypeLibRegistrationReader*, uint>)(lpVtbl[2]))((ITypeLibRegistrationReader*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int EnumTypeLibRegistrations([NativeTypeName("IEnumUnknown **")] IEnumUnknown** ppEnumUnknown)
         {
-            return lpVtbl->EnumTypeLibRegistrations((ITypeLibRegistrationReader*)Unsafe.AsPointer(ref this), ppEnumUnknown);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ITypeLibRegistrationReader*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ITypeLibRegistrationReader*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ITypeLibRegistrationReader*, uint> Release;
-
-            [NativeTypeName("HRESULT (IEnumUnknown **) __attribute__((stdcall))")]
-            public delegate* stdcall<ITypeLibRegistrationReader*, IEnumUnknown**, int> EnumTypeLibRegistrations;
+            return ((delegate* stdcall<ITypeLibRegistrationReader*, IEnumUnknown**, int>)(lpVtbl[3]))((ITypeLibRegistrationReader*)Unsafe.AsPointer(ref this), ppEnumUnknown);
         }
     }
 }

@@ -12,103 +12,67 @@ namespace TerraFX.Interop
     [Guid("A6CD7FAA-B0B7-4A2F-9436-8662A65797CB")]
     public unsafe partial struct ID3D11ClassInstance
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID3D11ClassInstance*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID3D11ClassInstance*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D11ClassInstance*, uint>)(lpVtbl[1]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID3D11ClassInstance*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D11ClassInstance*, uint>)(lpVtbl[2]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this));
         }
 
         public void GetDevice([NativeTypeName("ID3D11Device **")] ID3D11Device** ppDevice)
         {
-            lpVtbl->GetDevice((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), ppDevice);
+            ((delegate* stdcall<ID3D11ClassInstance*, ID3D11Device**, void>)(lpVtbl[3]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), ppDevice);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData)
         {
-            return lpVtbl->GetPrivateData((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
+            return ((delegate* stdcall<ID3D11ClassInstance*, Guid*, uint*, void*, int>)(lpVtbl[4]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData)
         {
-            return lpVtbl->SetPrivateData((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
+            return ((delegate* stdcall<ID3D11ClassInstance*, Guid*, uint, void*, int>)(lpVtbl[5]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
         {
-            return lpVtbl->SetPrivateDataInterface((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), guid, pData);
+            return ((delegate* stdcall<ID3D11ClassInstance*, Guid*, IUnknown*, int>)(lpVtbl[6]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), guid, pData);
         }
 
         public void GetClassLinkage([NativeTypeName("ID3D11ClassLinkage **")] ID3D11ClassLinkage** ppLinkage)
         {
-            lpVtbl->GetClassLinkage((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), ppLinkage);
+            ((delegate* stdcall<ID3D11ClassInstance*, ID3D11ClassLinkage**, void>)(lpVtbl[7]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), ppLinkage);
         }
 
         public void GetDesc([NativeTypeName("D3D11_CLASS_INSTANCE_DESC *")] D3D11_CLASS_INSTANCE_DESC* pDesc)
         {
-            lpVtbl->GetDesc((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), pDesc);
+            ((delegate* stdcall<ID3D11ClassInstance*, D3D11_CLASS_INSTANCE_DESC*, void>)(lpVtbl[8]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         public void GetInstanceName([NativeTypeName("LPSTR")] sbyte* pInstanceName, [NativeTypeName("SIZE_T *")] nuint* pBufferLength)
         {
-            lpVtbl->GetInstanceName((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), pInstanceName, pBufferLength);
+            ((delegate* stdcall<ID3D11ClassInstance*, sbyte*, nuint*, void>)(lpVtbl[9]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), pInstanceName, pBufferLength);
         }
 
         public void GetTypeName([NativeTypeName("LPSTR")] sbyte* pTypeName, [NativeTypeName("SIZE_T *")] nuint* pBufferLength)
         {
-            lpVtbl->GetTypeName((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), pTypeName, pBufferLength);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11ClassInstance*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11ClassInstance*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11ClassInstance*, uint> Release;
-
-            [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11ClassInstance*, ID3D11Device**, void> GetDevice;
-
-            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11ClassInstance*, Guid*, uint*, void*, int> GetPrivateData;
-
-            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11ClassInstance*, Guid*, uint, void*, int> SetPrivateData;
-
-            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11ClassInstance*, Guid*, IUnknown*, int> SetPrivateDataInterface;
-
-            [NativeTypeName("void (ID3D11ClassLinkage **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11ClassInstance*, ID3D11ClassLinkage**, void> GetClassLinkage;
-
-            [NativeTypeName("void (D3D11_CLASS_INSTANCE_DESC *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11ClassInstance*, D3D11_CLASS_INSTANCE_DESC*, void> GetDesc;
-
-            [NativeTypeName("void (LPSTR, SIZE_T *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11ClassInstance*, sbyte*, nuint*, void> GetInstanceName;
-
-            [NativeTypeName("void (LPSTR, SIZE_T *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11ClassInstance*, sbyte*, nuint*, void> GetTypeName;
+            ((delegate* stdcall<ID3D11ClassInstance*, sbyte*, nuint*, void>)(lpVtbl[10]))((ID3D11ClassInstance*)Unsafe.AsPointer(ref this), pTypeName, pBufferLength);
         }
     }
 }

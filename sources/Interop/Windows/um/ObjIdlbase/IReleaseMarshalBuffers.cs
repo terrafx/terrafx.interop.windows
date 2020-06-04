@@ -12,45 +12,30 @@ namespace TerraFX.Interop
     [Guid("EB0CB9E8-7996-11D2-872E-0000F8080859")]
     public unsafe partial struct IReleaseMarshalBuffers
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IReleaseMarshalBuffers*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IReleaseMarshalBuffers*, Guid*, void**, int>)(lpVtbl[0]))((IReleaseMarshalBuffers*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IReleaseMarshalBuffers*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IReleaseMarshalBuffers*, uint>)(lpVtbl[1]))((IReleaseMarshalBuffers*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IReleaseMarshalBuffers*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IReleaseMarshalBuffers*, uint>)(lpVtbl[2]))((IReleaseMarshalBuffers*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ReleaseMarshalBuffer([NativeTypeName("RPCOLEMESSAGE *")] RPCOLEMESSAGE* pMsg, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("IUnknown *")] IUnknown* pChnl)
         {
-            return lpVtbl->ReleaseMarshalBuffer((IReleaseMarshalBuffers*)Unsafe.AsPointer(ref this), pMsg, dwFlags, pChnl);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IReleaseMarshalBuffers*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IReleaseMarshalBuffers*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IReleaseMarshalBuffers*, uint> Release;
-
-            [NativeTypeName("HRESULT (RPCOLEMESSAGE *, DWORD, IUnknown *) __attribute__((stdcall))")]
-            public delegate* stdcall<IReleaseMarshalBuffers*, RPCOLEMESSAGE*, uint, IUnknown*, int> ReleaseMarshalBuffer;
+            return ((delegate* stdcall<IReleaseMarshalBuffers*, RPCOLEMESSAGE*, uint, IUnknown*, int>)(lpVtbl[3]))((IReleaseMarshalBuffers*)Unsafe.AsPointer(ref this), pMsg, dwFlags, pChnl);
         }
     }
 }

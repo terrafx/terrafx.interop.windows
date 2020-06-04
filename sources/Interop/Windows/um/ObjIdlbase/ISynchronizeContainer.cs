@@ -12,54 +12,36 @@ namespace TerraFX.Interop
     [Guid("00000033-0000-0000-C000-000000000046")]
     public unsafe partial struct ISynchronizeContainer
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ISynchronizeContainer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ISynchronizeContainer*, Guid*, void**, int>)(lpVtbl[0]))((ISynchronizeContainer*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ISynchronizeContainer*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ISynchronizeContainer*, uint>)(lpVtbl[1]))((ISynchronizeContainer*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ISynchronizeContainer*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ISynchronizeContainer*, uint>)(lpVtbl[2]))((ISynchronizeContainer*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int AddSynchronize([NativeTypeName("ISynchronize *")] ISynchronize* pSync)
         {
-            return lpVtbl->AddSynchronize((ISynchronizeContainer*)Unsafe.AsPointer(ref this), pSync);
+            return ((delegate* stdcall<ISynchronizeContainer*, ISynchronize*, int>)(lpVtbl[3]))((ISynchronizeContainer*)Unsafe.AsPointer(ref this), pSync);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int WaitMultiple([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwTimeOut, [NativeTypeName("ISynchronize **")] ISynchronize** ppSync)
         {
-            return lpVtbl->WaitMultiple((ISynchronizeContainer*)Unsafe.AsPointer(ref this), dwFlags, dwTimeOut, ppSync);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ISynchronizeContainer*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ISynchronizeContainer*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ISynchronizeContainer*, uint> Release;
-
-            [NativeTypeName("HRESULT (ISynchronize *) __attribute__((stdcall))")]
-            public delegate* stdcall<ISynchronizeContainer*, ISynchronize*, int> AddSynchronize;
-
-            [NativeTypeName("HRESULT (DWORD, DWORD, ISynchronize **) __attribute__((stdcall))")]
-            public delegate* stdcall<ISynchronizeContainer*, uint, uint, ISynchronize**, int> WaitMultiple;
+            return ((delegate* stdcall<ISynchronizeContainer*, uint, uint, ISynchronize**, int>)(lpVtbl[4]))((ISynchronizeContainer*)Unsafe.AsPointer(ref this), dwFlags, dwTimeOut, ppSync);
         }
     }
 }

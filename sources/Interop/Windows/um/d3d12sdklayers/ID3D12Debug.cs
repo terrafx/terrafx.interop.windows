@@ -12,44 +12,29 @@ namespace TerraFX.Interop
     [Guid("344488B7-6846-474B-B989-F027448245E0")]
     public unsafe partial struct ID3D12Debug
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID3D12Debug*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID3D12Debug*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12Debug*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID3D12Debug*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D12Debug*, uint>)(lpVtbl[1]))((ID3D12Debug*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID3D12Debug*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D12Debug*, uint>)(lpVtbl[2]))((ID3D12Debug*)Unsafe.AsPointer(ref this));
         }
 
         public void EnableDebugLayer()
         {
-            lpVtbl->EnableDebugLayer((ID3D12Debug*)Unsafe.AsPointer(ref this));
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12Debug*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12Debug*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12Debug*, uint> Release;
-
-            [NativeTypeName("void () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12Debug*, void> EnableDebugLayer;
+            ((delegate* stdcall<ID3D12Debug*, void>)(lpVtbl[3]))((ID3D12Debug*)Unsafe.AsPointer(ref this));
         }
     }
 }

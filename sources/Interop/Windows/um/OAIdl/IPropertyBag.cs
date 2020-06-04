@@ -12,54 +12,36 @@ namespace TerraFX.Interop
     [Guid("55272A00-42CB-11CE-8135-00AA004BB851")]
     public unsafe partial struct IPropertyBag
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IPropertyBag*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IPropertyBag*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyBag*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IPropertyBag*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IPropertyBag*, uint>)(lpVtbl[1]))((IPropertyBag*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IPropertyBag*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IPropertyBag*, uint>)(lpVtbl[2]))((IPropertyBag*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Read([NativeTypeName("LPCOLESTR")] ushort* pszPropName, [NativeTypeName("VARIANT *")] VARIANT* pVar, [NativeTypeName("IErrorLog *")] IErrorLog* pErrorLog)
         {
-            return lpVtbl->Read((IPropertyBag*)Unsafe.AsPointer(ref this), pszPropName, pVar, pErrorLog);
+            return ((delegate* stdcall<IPropertyBag*, ushort*, VARIANT*, IErrorLog*, int>)(lpVtbl[3]))((IPropertyBag*)Unsafe.AsPointer(ref this), pszPropName, pVar, pErrorLog);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Write([NativeTypeName("LPCOLESTR")] ushort* pszPropName, [NativeTypeName("VARIANT *")] VARIANT* pVar)
         {
-            return lpVtbl->Write((IPropertyBag*)Unsafe.AsPointer(ref this), pszPropName, pVar);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IPropertyBag*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IPropertyBag*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IPropertyBag*, uint> Release;
-
-            [NativeTypeName("HRESULT (LPCOLESTR, VARIANT *, IErrorLog *) __attribute__((stdcall))")]
-            public delegate* stdcall<IPropertyBag*, ushort*, VARIANT*, IErrorLog*, int> Read;
-
-            [NativeTypeName("HRESULT (LPCOLESTR, VARIANT *) __attribute__((stdcall))")]
-            public delegate* stdcall<IPropertyBag*, ushort*, VARIANT*, int> Write;
+            return ((delegate* stdcall<IPropertyBag*, ushort*, VARIANT*, int>)(lpVtbl[4]))((IPropertyBag*)Unsafe.AsPointer(ref this), pszPropName, pVar);
         }
     }
 }

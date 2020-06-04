@@ -12,99 +12,66 @@ namespace TerraFX.Interop
     [Guid("0000010A-0000-0000-C000-000000000046")]
     public unsafe partial struct IPersistStorage
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IPersistStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IPersistStorage*, Guid*, void**, int>)(lpVtbl[0]))((IPersistStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IPersistStorage*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IPersistStorage*, uint>)(lpVtbl[1]))((IPersistStorage*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IPersistStorage*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IPersistStorage*, uint>)(lpVtbl[2]))((IPersistStorage*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
         {
-            return lpVtbl->GetClassID((IPersistStorage*)Unsafe.AsPointer(ref this), pClassID);
+            return ((delegate* stdcall<IPersistStorage*, Guid*, int>)(lpVtbl[3]))((IPersistStorage*)Unsafe.AsPointer(ref this), pClassID);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int IsDirty()
         {
-            return lpVtbl->IsDirty((IPersistStorage*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IPersistStorage*, int>)(lpVtbl[4]))((IPersistStorage*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int InitNew([NativeTypeName("IStorage *")] IStorage* pStg)
         {
-            return lpVtbl->InitNew((IPersistStorage*)Unsafe.AsPointer(ref this), pStg);
+            return ((delegate* stdcall<IPersistStorage*, IStorage*, int>)(lpVtbl[5]))((IPersistStorage*)Unsafe.AsPointer(ref this), pStg);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Load([NativeTypeName("IStorage *")] IStorage* pStg)
         {
-            return lpVtbl->Load((IPersistStorage*)Unsafe.AsPointer(ref this), pStg);
+            return ((delegate* stdcall<IPersistStorage*, IStorage*, int>)(lpVtbl[6]))((IPersistStorage*)Unsafe.AsPointer(ref this), pStg);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Save([NativeTypeName("IStorage *")] IStorage* pStgSave, [NativeTypeName("BOOL")] int fSameAsLoad)
         {
-            return lpVtbl->Save((IPersistStorage*)Unsafe.AsPointer(ref this), pStgSave, fSameAsLoad);
+            return ((delegate* stdcall<IPersistStorage*, IStorage*, int, int>)(lpVtbl[7]))((IPersistStorage*)Unsafe.AsPointer(ref this), pStgSave, fSameAsLoad);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SaveCompleted([NativeTypeName("IStorage *")] IStorage* pStgNew)
         {
-            return lpVtbl->SaveCompleted((IPersistStorage*)Unsafe.AsPointer(ref this), pStgNew);
+            return ((delegate* stdcall<IPersistStorage*, IStorage*, int>)(lpVtbl[8]))((IPersistStorage*)Unsafe.AsPointer(ref this), pStgNew);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int HandsOffStorage()
         {
-            return lpVtbl->HandsOffStorage((IPersistStorage*)Unsafe.AsPointer(ref this));
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IPersistStorage*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IPersistStorage*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IPersistStorage*, uint> Release;
-
-            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-            public delegate* stdcall<IPersistStorage*, Guid*, int> GetClassID;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* stdcall<IPersistStorage*, int> IsDirty;
-
-            [NativeTypeName("HRESULT (IStorage *) __attribute__((stdcall))")]
-            public delegate* stdcall<IPersistStorage*, IStorage*, int> InitNew;
-
-            [NativeTypeName("HRESULT (IStorage *) __attribute__((stdcall))")]
-            public delegate* stdcall<IPersistStorage*, IStorage*, int> Load;
-
-            [NativeTypeName("HRESULT (IStorage *, BOOL) __attribute__((stdcall))")]
-            public delegate* stdcall<IPersistStorage*, IStorage*, int, int> Save;
-
-            [NativeTypeName("HRESULT (IStorage *) __attribute__((stdcall))")]
-            public delegate* stdcall<IPersistStorage*, IStorage*, int> SaveCompleted;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* stdcall<IPersistStorage*, int> HandsOffStorage;
+            return ((delegate* stdcall<IPersistStorage*, int>)(lpVtbl[9]))((IPersistStorage*)Unsafe.AsPointer(ref this));
         }
     }
 }

@@ -12,54 +12,36 @@ namespace TerraFX.Interop
     [Guid("1EF337E3-58E7-4F83-A692-DB221F5ED47E")]
     public unsafe partial struct ID3D11SwitchToRef
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID3D11SwitchToRef*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID3D11SwitchToRef*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11SwitchToRef*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID3D11SwitchToRef*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D11SwitchToRef*, uint>)(lpVtbl[1]))((ID3D11SwitchToRef*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID3D11SwitchToRef*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D11SwitchToRef*, uint>)(lpVtbl[2]))((ID3D11SwitchToRef*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("BOOL")]
         public int SetUseRef([NativeTypeName("BOOL")] int UseRef)
         {
-            return lpVtbl->SetUseRef((ID3D11SwitchToRef*)Unsafe.AsPointer(ref this), UseRef);
+            return ((delegate* stdcall<ID3D11SwitchToRef*, int, int>)(lpVtbl[3]))((ID3D11SwitchToRef*)Unsafe.AsPointer(ref this), UseRef);
         }
 
         [return: NativeTypeName("BOOL")]
         public int GetUseRef()
         {
-            return lpVtbl->GetUseRef((ID3D11SwitchToRef*)Unsafe.AsPointer(ref this));
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11SwitchToRef*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11SwitchToRef*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11SwitchToRef*, uint> Release;
-
-            [NativeTypeName("BOOL (BOOL) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11SwitchToRef*, int, int> SetUseRef;
-
-            [NativeTypeName("BOOL () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11SwitchToRef*, int> GetUseRef;
+            return ((delegate* stdcall<ID3D11SwitchToRef*, int>)(lpVtbl[4]))((ID3D11SwitchToRef*)Unsafe.AsPointer(ref this));
         }
     }
 }

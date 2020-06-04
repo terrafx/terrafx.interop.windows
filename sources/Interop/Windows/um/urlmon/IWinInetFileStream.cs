@@ -12,54 +12,36 @@ namespace TerraFX.Interop
     [Guid("F134C4B7-B1F8-4E75-B886-74B90943BECB")]
     public unsafe partial struct IWinInetFileStream
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IWinInetFileStream*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IWinInetFileStream*, Guid*, void**, int>)(lpVtbl[0]))((IWinInetFileStream*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IWinInetFileStream*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IWinInetFileStream*, uint>)(lpVtbl[1]))((IWinInetFileStream*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IWinInetFileStream*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IWinInetFileStream*, uint>)(lpVtbl[2]))((IWinInetFileStream*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetHandleForUnlock([NativeTypeName("DWORD_PTR")] nuint hWinInetLockHandle, [NativeTypeName("DWORD_PTR")] nuint dwReserved)
         {
-            return lpVtbl->SetHandleForUnlock((IWinInetFileStream*)Unsafe.AsPointer(ref this), hWinInetLockHandle, dwReserved);
+            return ((delegate* stdcall<IWinInetFileStream*, nuint, nuint, int>)(lpVtbl[3]))((IWinInetFileStream*)Unsafe.AsPointer(ref this), hWinInetLockHandle, dwReserved);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetDeleteFile([NativeTypeName("DWORD_PTR")] nuint dwReserved)
         {
-            return lpVtbl->SetDeleteFile((IWinInetFileStream*)Unsafe.AsPointer(ref this), dwReserved);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IWinInetFileStream*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IWinInetFileStream*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IWinInetFileStream*, uint> Release;
-
-            [NativeTypeName("HRESULT (DWORD_PTR, DWORD_PTR) __attribute__((stdcall))")]
-            public delegate* stdcall<IWinInetFileStream*, nuint, nuint, int> SetHandleForUnlock;
-
-            [NativeTypeName("HRESULT (DWORD_PTR) __attribute__((stdcall))")]
-            public delegate* stdcall<IWinInetFileStream*, nuint, int> SetDeleteFile;
+            return ((delegate* stdcall<IWinInetFileStream*, nuint, int>)(lpVtbl[4]))((IWinInetFileStream*)Unsafe.AsPointer(ref this), dwReserved);
         }
     }
 }

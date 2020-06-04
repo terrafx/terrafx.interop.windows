@@ -12,44 +12,29 @@ namespace TerraFX.Interop
     [Guid("E667AF9F-CD56-4F46-83CE-032E595D70A8")]
     public unsafe partial struct ID3D12LifetimeOwner
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID3D12LifetimeOwner*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID3D12LifetimeOwner*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12LifetimeOwner*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID3D12LifetimeOwner*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D12LifetimeOwner*, uint>)(lpVtbl[1]))((ID3D12LifetimeOwner*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID3D12LifetimeOwner*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D12LifetimeOwner*, uint>)(lpVtbl[2]))((ID3D12LifetimeOwner*)Unsafe.AsPointer(ref this));
         }
 
         public void LifetimeStateUpdated(D3D12_LIFETIME_STATE NewState)
         {
-            lpVtbl->LifetimeStateUpdated((ID3D12LifetimeOwner*)Unsafe.AsPointer(ref this), NewState);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12LifetimeOwner*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12LifetimeOwner*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12LifetimeOwner*, uint> Release;
-
-            [NativeTypeName("void (D3D12_LIFETIME_STATE) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12LifetimeOwner*, D3D12_LIFETIME_STATE, void> LifetimeStateUpdated;
+            ((delegate* stdcall<ID3D12LifetimeOwner*, D3D12_LIFETIME_STATE, void>)(lpVtbl[3]))((ID3D12LifetimeOwner*)Unsafe.AsPointer(ref this), NewState);
         }
     }
 }

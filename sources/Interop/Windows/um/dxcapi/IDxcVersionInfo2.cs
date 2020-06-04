@@ -12,63 +12,42 @@ namespace TerraFX.Interop
     [Guid("fb6904c4-42f0-4b62-9c46-983af7da7c83")]
     public unsafe partial struct IDxcVersionInfo2
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IDxcVersionInfo2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IDxcVersionInfo2*, Guid*, void**, int>)(lpVtbl[0]))((IDxcVersionInfo2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IDxcVersionInfo2*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDxcVersionInfo2*, uint>)(lpVtbl[1]))((IDxcVersionInfo2*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IDxcVersionInfo2*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDxcVersionInfo2*, uint>)(lpVtbl[2]))((IDxcVersionInfo2*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetVersion([NativeTypeName("UINT32 *")] uint* pMajor, [NativeTypeName("UINT32 *")] uint* pMinor)
         {
-            return lpVtbl->GetVersion((IDxcVersionInfo2*)Unsafe.AsPointer(ref this), pMajor, pMinor);
+            return ((delegate* stdcall<IDxcVersionInfo2*, uint*, uint*, int>)(lpVtbl[3]))((IDxcVersionInfo2*)Unsafe.AsPointer(ref this), pMajor, pMinor);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetFlags([NativeTypeName("UINT32 *")] uint* pFlags)
         {
-            return lpVtbl->GetFlags((IDxcVersionInfo2*)Unsafe.AsPointer(ref this), pFlags);
+            return ((delegate* stdcall<IDxcVersionInfo2*, uint*, int>)(lpVtbl[4]))((IDxcVersionInfo2*)Unsafe.AsPointer(ref this), pFlags);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetCommitInfo([NativeTypeName("UINT32 *")] uint* pCommitCount, [NativeTypeName("char **")] sbyte** pCommitHash)
         {
-            return lpVtbl->GetCommitInfo((IDxcVersionInfo2*)Unsafe.AsPointer(ref this), pCommitCount, pCommitHash);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IDxcVersionInfo2*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IDxcVersionInfo2*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IDxcVersionInfo2*, uint> Release;
-
-            [NativeTypeName("HRESULT (UINT32 *, UINT32 *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDxcVersionInfo2*, uint*, uint*, int> GetVersion;
-
-            [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDxcVersionInfo2*, uint*, int> GetFlags;
-
-            [NativeTypeName("HRESULT (UINT32 *, char **) __attribute__((stdcall))")]
-            public delegate* stdcall<IDxcVersionInfo2*, uint*, sbyte**, int> GetCommitInfo;
+            return ((delegate* stdcall<IDxcVersionInfo2*, uint*, sbyte**, int>)(lpVtbl[5]))((IDxcVersionInfo2*)Unsafe.AsPointer(ref this), pCommitCount, pCommitHash);
         }
     }
 }

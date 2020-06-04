@@ -12,45 +12,30 @@ namespace TerraFX.Interop
     [Guid("64C1024E-C3CF-4462-8078-88C2B11C46D9")]
     public unsafe partial struct IWICBitmapCodecProgressNotification
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IWICBitmapCodecProgressNotification*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IWICBitmapCodecProgressNotification*, Guid*, void**, int>)(lpVtbl[0]))((IWICBitmapCodecProgressNotification*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IWICBitmapCodecProgressNotification*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IWICBitmapCodecProgressNotification*, uint>)(lpVtbl[1]))((IWICBitmapCodecProgressNotification*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IWICBitmapCodecProgressNotification*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IWICBitmapCodecProgressNotification*, uint>)(lpVtbl[2]))((IWICBitmapCodecProgressNotification*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int RegisterProgressNotification([NativeTypeName("PFNProgressNotification")] delegate* stdcall<void*, uint, WICProgressOperation, double, int> pfnProgressNotification, [NativeTypeName("LPVOID")] void* pvData, [NativeTypeName("DWORD")] uint dwProgressFlags)
         {
-            return lpVtbl->RegisterProgressNotification((IWICBitmapCodecProgressNotification*)Unsafe.AsPointer(ref this), pfnProgressNotification, pvData, dwProgressFlags);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IWICBitmapCodecProgressNotification*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IWICBitmapCodecProgressNotification*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IWICBitmapCodecProgressNotification*, uint> Release;
-
-            [NativeTypeName("HRESULT (PFNProgressNotification, LPVOID, DWORD) __attribute__((stdcall))")]
-            public delegate* stdcall<IWICBitmapCodecProgressNotification*, delegate* stdcall<void*, uint, WICProgressOperation, double, int>, void*, uint, int> RegisterProgressNotification;
+            return ((delegate* stdcall<IWICBitmapCodecProgressNotification*, delegate* stdcall<void*, uint, WICProgressOperation, double, int>, void*, uint, int>)(lpVtbl[3]))((IWICBitmapCodecProgressNotification*)Unsafe.AsPointer(ref this), pfnProgressNotification, pvData, dwProgressFlags);
         }
     }
 }

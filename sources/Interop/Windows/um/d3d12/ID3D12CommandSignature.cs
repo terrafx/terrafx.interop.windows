@@ -12,81 +12,54 @@ namespace TerraFX.Interop
     [Guid("C36A797C-EC80-4F0A-8985-A7B2475082D1")]
     public unsafe partial struct ID3D12CommandSignature
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID3D12CommandSignature*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID3D12CommandSignature*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12CommandSignature*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID3D12CommandSignature*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D12CommandSignature*, uint>)(lpVtbl[1]))((ID3D12CommandSignature*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID3D12CommandSignature*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D12CommandSignature*, uint>)(lpVtbl[2]))((ID3D12CommandSignature*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData)
         {
-            return lpVtbl->GetPrivateData((ID3D12CommandSignature*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
+            return ((delegate* stdcall<ID3D12CommandSignature*, Guid*, uint*, void*, int>)(lpVtbl[3]))((ID3D12CommandSignature*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData)
         {
-            return lpVtbl->SetPrivateData((ID3D12CommandSignature*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
+            return ((delegate* stdcall<ID3D12CommandSignature*, Guid*, uint, void*, int>)(lpVtbl[4]))((ID3D12CommandSignature*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
         {
-            return lpVtbl->SetPrivateDataInterface((ID3D12CommandSignature*)Unsafe.AsPointer(ref this), guid, pData);
+            return ((delegate* stdcall<ID3D12CommandSignature*, Guid*, IUnknown*, int>)(lpVtbl[5]))((ID3D12CommandSignature*)Unsafe.AsPointer(ref this), guid, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetName([NativeTypeName("LPCWSTR")] ushort* Name)
         {
-            return lpVtbl->SetName((ID3D12CommandSignature*)Unsafe.AsPointer(ref this), Name);
+            return ((delegate* stdcall<ID3D12CommandSignature*, ushort*, int>)(lpVtbl[6]))((ID3D12CommandSignature*)Unsafe.AsPointer(ref this), Name);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDevice([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvDevice)
         {
-            return lpVtbl->GetDevice((ID3D12CommandSignature*)Unsafe.AsPointer(ref this), riid, ppvDevice);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12CommandSignature*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12CommandSignature*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12CommandSignature*, uint> Release;
-
-            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12CommandSignature*, Guid*, uint*, void*, int> GetPrivateData;
-
-            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12CommandSignature*, Guid*, uint, void*, int> SetPrivateData;
-
-            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12CommandSignature*, Guid*, IUnknown*, int> SetPrivateDataInterface;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12CommandSignature*, ushort*, int> SetName;
-
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12CommandSignature*, Guid*, void**, int> GetDevice;
+            return ((delegate* stdcall<ID3D12CommandSignature*, Guid*, void**, int>)(lpVtbl[7]))((ID3D12CommandSignature*)Unsafe.AsPointer(ref this), riid, ppvDevice);
         }
     }
 }

@@ -12,60 +12,39 @@ namespace TerraFX.Interop
     [Guid("AFFAA4CA-63FE-4D8E-B8AD-159000AF4304")]
     public unsafe partial struct ID3D12Debug1
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID3D12Debug1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID3D12Debug1*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12Debug1*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID3D12Debug1*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D12Debug1*, uint>)(lpVtbl[1]))((ID3D12Debug1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID3D12Debug1*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D12Debug1*, uint>)(lpVtbl[2]))((ID3D12Debug1*)Unsafe.AsPointer(ref this));
         }
 
         public void EnableDebugLayer()
         {
-            lpVtbl->EnableDebugLayer((ID3D12Debug1*)Unsafe.AsPointer(ref this));
+            ((delegate* stdcall<ID3D12Debug1*, void>)(lpVtbl[3]))((ID3D12Debug1*)Unsafe.AsPointer(ref this));
         }
 
         public void SetEnableGPUBasedValidation([NativeTypeName("BOOL")] int Enable)
         {
-            lpVtbl->SetEnableGPUBasedValidation((ID3D12Debug1*)Unsafe.AsPointer(ref this), Enable);
+            ((delegate* stdcall<ID3D12Debug1*, int, void>)(lpVtbl[4]))((ID3D12Debug1*)Unsafe.AsPointer(ref this), Enable);
         }
 
         public void SetEnableSynchronizedCommandQueueValidation([NativeTypeName("BOOL")] int Enable)
         {
-            lpVtbl->SetEnableSynchronizedCommandQueueValidation((ID3D12Debug1*)Unsafe.AsPointer(ref this), Enable);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12Debug1*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12Debug1*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12Debug1*, uint> Release;
-
-            [NativeTypeName("void () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12Debug1*, void> EnableDebugLayer;
-
-            [NativeTypeName("void (BOOL) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12Debug1*, int, void> SetEnableGPUBasedValidation;
-
-            [NativeTypeName("void (BOOL) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12Debug1*, int, void> SetEnableSynchronizedCommandQueueValidation;
+            ((delegate* stdcall<ID3D12Debug1*, int, void>)(lpVtbl[5]))((ID3D12Debug1*)Unsafe.AsPointer(ref this), Enable);
         }
     }
 }

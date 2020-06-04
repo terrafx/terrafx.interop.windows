@@ -12,45 +12,30 @@ namespace TerraFX.Interop
     [Guid("A158A630-ED6F-45FB-B987-F68676F57752")]
     public unsafe partial struct IUriContainer
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IUriContainer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IUriContainer*, Guid*, void**, int>)(lpVtbl[0]))((IUriContainer*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IUriContainer*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IUriContainer*, uint>)(lpVtbl[1]))((IUriContainer*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IUriContainer*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IUriContainer*, uint>)(lpVtbl[2]))((IUriContainer*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetIUri([NativeTypeName("IUri **")] IUri** ppIUri)
         {
-            return lpVtbl->GetIUri((IUriContainer*)Unsafe.AsPointer(ref this), ppIUri);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IUriContainer*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IUriContainer*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IUriContainer*, uint> Release;
-
-            [NativeTypeName("HRESULT (IUri **) __attribute__((stdcall))")]
-            public delegate* stdcall<IUriContainer*, IUri**, int> GetIUri;
+            return ((delegate* stdcall<IUriContainer*, IUri**, int>)(lpVtbl[3]))((IUriContainer*)Unsafe.AsPointer(ref this), ppIUri);
         }
     }
 }

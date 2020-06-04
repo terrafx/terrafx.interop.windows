@@ -12,54 +12,36 @@ namespace TerraFX.Interop
     [Guid("00020410-0000-0000-C000-000000000046")]
     public unsafe partial struct ITypeChangeEvents
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ITypeChangeEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ITypeChangeEvents*, Guid*, void**, int>)(lpVtbl[0]))((ITypeChangeEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ITypeChangeEvents*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ITypeChangeEvents*, uint>)(lpVtbl[1]))((ITypeChangeEvents*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ITypeChangeEvents*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ITypeChangeEvents*, uint>)(lpVtbl[2]))((ITypeChangeEvents*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int RequestTypeChange(CHANGEKIND changeKind, [NativeTypeName("ITypeInfo *")] ITypeInfo* pTInfoBefore, [NativeTypeName("LPOLESTR")] ushort* pStrName, [NativeTypeName("INT *")] int* pfCancel)
         {
-            return lpVtbl->RequestTypeChange((ITypeChangeEvents*)Unsafe.AsPointer(ref this), changeKind, pTInfoBefore, pStrName, pfCancel);
+            return ((delegate* stdcall<ITypeChangeEvents*, CHANGEKIND, ITypeInfo*, ushort*, int*, int>)(lpVtbl[3]))((ITypeChangeEvents*)Unsafe.AsPointer(ref this), changeKind, pTInfoBefore, pStrName, pfCancel);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int AfterTypeChange(CHANGEKIND changeKind, [NativeTypeName("ITypeInfo *")] ITypeInfo* pTInfoAfter, [NativeTypeName("LPOLESTR")] ushort* pStrName)
         {
-            return lpVtbl->AfterTypeChange((ITypeChangeEvents*)Unsafe.AsPointer(ref this), changeKind, pTInfoAfter, pStrName);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ITypeChangeEvents*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ITypeChangeEvents*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ITypeChangeEvents*, uint> Release;
-
-            [NativeTypeName("HRESULT (CHANGEKIND, ITypeInfo *, LPOLESTR, INT *) __attribute__((stdcall))")]
-            public delegate* stdcall<ITypeChangeEvents*, CHANGEKIND, ITypeInfo*, ushort*, int*, int> RequestTypeChange;
-
-            [NativeTypeName("HRESULT (CHANGEKIND, ITypeInfo *, LPOLESTR) __attribute__((stdcall))")]
-            public delegate* stdcall<ITypeChangeEvents*, CHANGEKIND, ITypeInfo*, ushort*, int> AfterTypeChange;
+            return ((delegate* stdcall<ITypeChangeEvents*, CHANGEKIND, ITypeInfo*, ushort*, int>)(lpVtbl[4]))((ITypeChangeEvents*)Unsafe.AsPointer(ref this), changeKind, pTInfoAfter, pStrName);
         }
     }
 }

@@ -12,54 +12,36 @@ namespace TerraFX.Interop
     [Guid("0000002B-0000-0000-C000-000000000046")]
     public unsafe partial struct IWaitMultiple
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IWaitMultiple*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IWaitMultiple*, Guid*, void**, int>)(lpVtbl[0]))((IWaitMultiple*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IWaitMultiple*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IWaitMultiple*, uint>)(lpVtbl[1]))((IWaitMultiple*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IWaitMultiple*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IWaitMultiple*, uint>)(lpVtbl[2]))((IWaitMultiple*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int WaitMultiple([NativeTypeName("DWORD")] uint timeout, [NativeTypeName("ISynchronize **")] ISynchronize** pSync)
         {
-            return lpVtbl->WaitMultiple((IWaitMultiple*)Unsafe.AsPointer(ref this), timeout, pSync);
+            return ((delegate* stdcall<IWaitMultiple*, uint, ISynchronize**, int>)(lpVtbl[3]))((IWaitMultiple*)Unsafe.AsPointer(ref this), timeout, pSync);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int AddSynchronize([NativeTypeName("ISynchronize *")] ISynchronize* pSync)
         {
-            return lpVtbl->AddSynchronize((IWaitMultiple*)Unsafe.AsPointer(ref this), pSync);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IWaitMultiple*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IWaitMultiple*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IWaitMultiple*, uint> Release;
-
-            [NativeTypeName("HRESULT (DWORD, ISynchronize **) __attribute__((stdcall))")]
-            public delegate* stdcall<IWaitMultiple*, uint, ISynchronize**, int> WaitMultiple;
-
-            [NativeTypeName("HRESULT (ISynchronize *) __attribute__((stdcall))")]
-            public delegate* stdcall<IWaitMultiple*, ISynchronize*, int> AddSynchronize;
+            return ((delegate* stdcall<IWaitMultiple*, ISynchronize*, int>)(lpVtbl[4]))((IWaitMultiple*)Unsafe.AsPointer(ref this), pSync);
         }
     }
 }

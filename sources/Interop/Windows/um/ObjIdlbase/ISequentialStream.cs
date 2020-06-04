@@ -12,54 +12,36 @@ namespace TerraFX.Interop
     [Guid("0C733A30-2A1C-11CE-ADE5-00AA0044773D")]
     public unsafe partial struct ISequentialStream
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ISequentialStream*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ISequentialStream*, Guid*, void**, int>)(lpVtbl[0]))((ISequentialStream*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ISequentialStream*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ISequentialStream*, uint>)(lpVtbl[1]))((ISequentialStream*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ISequentialStream*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ISequentialStream*, uint>)(lpVtbl[2]))((ISequentialStream*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Read([NativeTypeName("void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead)
         {
-            return lpVtbl->Read((ISequentialStream*)Unsafe.AsPointer(ref this), pv, cb, pcbRead);
+            return ((delegate* stdcall<ISequentialStream*, void*, uint, uint*, int>)(lpVtbl[3]))((ISequentialStream*)Unsafe.AsPointer(ref this), pv, cb, pcbRead);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Write([NativeTypeName("const void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbWritten)
         {
-            return lpVtbl->Write((ISequentialStream*)Unsafe.AsPointer(ref this), pv, cb, pcbWritten);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ISequentialStream*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ISequentialStream*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ISequentialStream*, uint> Release;
-
-            [NativeTypeName("HRESULT (void *, ULONG, ULONG *) __attribute__((stdcall))")]
-            public delegate* stdcall<ISequentialStream*, void*, uint, uint*, int> Read;
-
-            [NativeTypeName("HRESULT (const void *, ULONG, ULONG *) __attribute__((stdcall))")]
-            public delegate* stdcall<ISequentialStream*, void*, uint, uint*, int> Write;
+            return ((delegate* stdcall<ISequentialStream*, void*, uint, uint*, int>)(lpVtbl[4]))((ISequentialStream*)Unsafe.AsPointer(ref this), pv, cb, pcbWritten);
         }
     }
 }

@@ -12,45 +12,30 @@ namespace TerraFX.Interop
     [Guid("79EAC9CD-BAF9-11CE-8C82-00AA004BA90B")]
     public unsafe partial struct IBindProtocol
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IBindProtocol*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IBindProtocol*, Guid*, void**, int>)(lpVtbl[0]))((IBindProtocol*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IBindProtocol*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IBindProtocol*, uint>)(lpVtbl[1]))((IBindProtocol*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IBindProtocol*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IBindProtocol*, uint>)(lpVtbl[2]))((IBindProtocol*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CreateBinding([NativeTypeName("LPCWSTR")] ushort* szUrl, [NativeTypeName("IBindCtx *")] IBindCtx* pbc, [NativeTypeName("IBinding **")] IBinding** ppb)
         {
-            return lpVtbl->CreateBinding((IBindProtocol*)Unsafe.AsPointer(ref this), szUrl, pbc, ppb);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IBindProtocol*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IBindProtocol*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IBindProtocol*, uint> Release;
-
-            [NativeTypeName("HRESULT (LPCWSTR, IBindCtx *, IBinding **) __attribute__((stdcall))")]
-            public delegate* stdcall<IBindProtocol*, ushort*, IBindCtx*, IBinding**, int> CreateBinding;
+            return ((delegate* stdcall<IBindProtocol*, ushort*, IBindCtx*, IBinding**, int>)(lpVtbl[3]))((IBindProtocol*)Unsafe.AsPointer(ref this), szUrl, pbc, ppb);
         }
     }
 }

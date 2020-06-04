@@ -12,97 +12,64 @@ namespace TerraFX.Interop
     [Guid("9DBE4C0D-3572-4DD9-9825-5530813BB712")]
     public unsafe partial struct ID2D1SvgPointCollection
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID2D1SvgPointCollection*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID2D1SvgPointCollection*, uint>)(lpVtbl[1]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID2D1SvgPointCollection*, uint>)(lpVtbl[2]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this));
         }
 
         public void GetFactory([NativeTypeName("ID2D1Factory **")] ID2D1Factory** factory)
         {
-            lpVtbl->GetFactory((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this), factory);
+            ((delegate* stdcall<ID2D1SvgPointCollection*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this), factory);
         }
 
         public void GetElement([NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** element)
         {
-            lpVtbl->GetElement((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this), element);
+            ((delegate* stdcall<ID2D1SvgPointCollection*, ID2D1SvgElement**, void>)(lpVtbl[4]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this), element);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Clone([NativeTypeName("ID2D1SvgAttribute **")] ID2D1SvgAttribute** attribute)
         {
-            return lpVtbl->Clone((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this), attribute);
+            return ((delegate* stdcall<ID2D1SvgPointCollection*, ID2D1SvgAttribute**, int>)(lpVtbl[5]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this), attribute);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int RemovePointsAtEnd([NativeTypeName("UINT32")] uint pointsCount)
         {
-            return lpVtbl->RemovePointsAtEnd((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this), pointsCount);
+            return ((delegate* stdcall<ID2D1SvgPointCollection*, uint, int>)(lpVtbl[6]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this), pointsCount);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int UpdatePoints([NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* points, [NativeTypeName("UINT32")] uint pointsCount, [NativeTypeName("UINT32")] uint startIndex = 0)
         {
-            return lpVtbl->UpdatePoints((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this), points, pointsCount, startIndex);
+            return ((delegate* stdcall<ID2D1SvgPointCollection*, D2D_POINT_2F*, uint, uint, int>)(lpVtbl[7]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this), points, pointsCount, startIndex);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPoints([NativeTypeName("D2D1_POINT_2F *")] D2D_POINT_2F* points, [NativeTypeName("UINT32")] uint pointsCount, [NativeTypeName("UINT32")] uint startIndex = 0)
         {
-            return lpVtbl->GetPoints((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this), points, pointsCount, startIndex);
+            return ((delegate* stdcall<ID2D1SvgPointCollection*, D2D_POINT_2F*, uint, uint, int>)(lpVtbl[8]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this), points, pointsCount, startIndex);
         }
 
         [return: NativeTypeName("UINT32")]
         public uint GetPointsCount()
         {
-            return lpVtbl->GetPointsCount((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this));
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1SvgPointCollection*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1SvgPointCollection*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1SvgPointCollection*, uint> Release;
-
-            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1SvgPointCollection*, ID2D1Factory**, void> GetFactory;
-
-            [NativeTypeName("void (ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1SvgPointCollection*, ID2D1SvgElement**, void> GetElement;
-
-            [NativeTypeName("HRESULT (ID2D1SvgAttribute **) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1SvgPointCollection*, ID2D1SvgAttribute**, int> Clone;
-
-            [NativeTypeName("HRESULT (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1SvgPointCollection*, uint, int> RemovePointsAtEnd;
-
-            [NativeTypeName("HRESULT (const D2D1_POINT_2F *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1SvgPointCollection*, D2D_POINT_2F*, uint, uint, int> UpdatePoints;
-
-            [NativeTypeName("HRESULT (D2D1_POINT_2F *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1SvgPointCollection*, D2D_POINT_2F*, uint, uint, int> GetPoints;
-
-            [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1SvgPointCollection*, uint> GetPointsCount;
+            return ((delegate* stdcall<ID2D1SvgPointCollection*, uint>)(lpVtbl[9]))((ID2D1SvgPointCollection*)Unsafe.AsPointer(ref this));
         }
     }
 }

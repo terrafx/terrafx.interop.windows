@@ -12,143 +12,95 @@ namespace TerraFX.Interop
     [Guid("191CFAC3-A341-470D-B26E-A864F428319C")]
     public unsafe partial struct IDXGIOutputDuplication
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IDXGIOutputDuplication*, Guid*, void**, int>)(lpVtbl[0]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDXGIOutputDuplication*, uint>)(lpVtbl[1]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDXGIOutputDuplication*, uint>)(lpVtbl[2]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData)
         {
-            return lpVtbl->SetPrivateData((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
+            return ((delegate* stdcall<IDXGIOutputDuplication*, Guid*, uint, void*, int>)(lpVtbl[3]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("const IUnknown *")] IUnknown* pUnknown)
         {
-            return lpVtbl->SetPrivateDataInterface((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), Name, pUnknown);
+            return ((delegate* stdcall<IDXGIOutputDuplication*, Guid*, IUnknown*, int>)(lpVtbl[4]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), Name, pUnknown);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPrivateData([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData)
         {
-            return lpVtbl->GetPrivateData((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
+            return ((delegate* stdcall<IDXGIOutputDuplication*, Guid*, uint*, void*, int>)(lpVtbl[5]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetParent([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppParent)
         {
-            return lpVtbl->GetParent((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), riid, ppParent);
+            return ((delegate* stdcall<IDXGIOutputDuplication*, Guid*, void**, int>)(lpVtbl[6]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), riid, ppParent);
         }
 
         public void GetDesc([NativeTypeName("DXGI_OUTDUPL_DESC *")] DXGI_OUTDUPL_DESC* pDesc)
         {
-            lpVtbl->GetDesc((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), pDesc);
+            ((delegate* stdcall<IDXGIOutputDuplication*, DXGI_OUTDUPL_DESC*, void>)(lpVtbl[7]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int AcquireNextFrame([NativeTypeName("UINT")] uint TimeoutInMilliseconds, [NativeTypeName("DXGI_OUTDUPL_FRAME_INFO *")] DXGI_OUTDUPL_FRAME_INFO* pFrameInfo, [NativeTypeName("IDXGIResource **")] IDXGIResource** ppDesktopResource)
         {
-            return lpVtbl->AcquireNextFrame((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), TimeoutInMilliseconds, pFrameInfo, ppDesktopResource);
+            return ((delegate* stdcall<IDXGIOutputDuplication*, uint, DXGI_OUTDUPL_FRAME_INFO*, IDXGIResource**, int>)(lpVtbl[8]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), TimeoutInMilliseconds, pFrameInfo, ppDesktopResource);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetFrameDirtyRects([NativeTypeName("UINT")] uint DirtyRectsBufferSize, [NativeTypeName("RECT *")] RECT* pDirtyRectsBuffer, [NativeTypeName("UINT *")] uint* pDirtyRectsBufferSizeRequired)
         {
-            return lpVtbl->GetFrameDirtyRects((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), DirtyRectsBufferSize, pDirtyRectsBuffer, pDirtyRectsBufferSizeRequired);
+            return ((delegate* stdcall<IDXGIOutputDuplication*, uint, RECT*, uint*, int>)(lpVtbl[9]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), DirtyRectsBufferSize, pDirtyRectsBuffer, pDirtyRectsBufferSizeRequired);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetFrameMoveRects([NativeTypeName("UINT")] uint MoveRectsBufferSize, [NativeTypeName("DXGI_OUTDUPL_MOVE_RECT *")] DXGI_OUTDUPL_MOVE_RECT* pMoveRectBuffer, [NativeTypeName("UINT *")] uint* pMoveRectsBufferSizeRequired)
         {
-            return lpVtbl->GetFrameMoveRects((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), MoveRectsBufferSize, pMoveRectBuffer, pMoveRectsBufferSizeRequired);
+            return ((delegate* stdcall<IDXGIOutputDuplication*, uint, DXGI_OUTDUPL_MOVE_RECT*, uint*, int>)(lpVtbl[10]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), MoveRectsBufferSize, pMoveRectBuffer, pMoveRectsBufferSizeRequired);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetFramePointerShape([NativeTypeName("UINT")] uint PointerShapeBufferSize, [NativeTypeName("void *")] void* pPointerShapeBuffer, [NativeTypeName("UINT *")] uint* pPointerShapeBufferSizeRequired, [NativeTypeName("DXGI_OUTDUPL_POINTER_SHAPE_INFO *")] DXGI_OUTDUPL_POINTER_SHAPE_INFO* pPointerShapeInfo)
         {
-            return lpVtbl->GetFramePointerShape((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), PointerShapeBufferSize, pPointerShapeBuffer, pPointerShapeBufferSizeRequired, pPointerShapeInfo);
+            return ((delegate* stdcall<IDXGIOutputDuplication*, uint, void*, uint*, DXGI_OUTDUPL_POINTER_SHAPE_INFO*, int>)(lpVtbl[11]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), PointerShapeBufferSize, pPointerShapeBuffer, pPointerShapeBufferSizeRequired, pPointerShapeInfo);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int MapDesktopSurface([NativeTypeName("DXGI_MAPPED_RECT *")] DXGI_MAPPED_RECT* pLockedRect)
         {
-            return lpVtbl->MapDesktopSurface((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), pLockedRect);
+            return ((delegate* stdcall<IDXGIOutputDuplication*, DXGI_MAPPED_RECT*, int>)(lpVtbl[12]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this), pLockedRect);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int UnMapDesktopSurface()
         {
-            return lpVtbl->UnMapDesktopSurface((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDXGIOutputDuplication*, int>)(lpVtbl[13]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ReleaseFrame()
         {
-            return lpVtbl->ReleaseFrame((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this));
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutputDuplication*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutputDuplication*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutputDuplication*, uint> Release;
-
-            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutputDuplication*, Guid*, uint, void*, int> SetPrivateData;
-
-            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutputDuplication*, Guid*, IUnknown*, int> SetPrivateDataInterface;
-
-            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutputDuplication*, Guid*, uint*, void*, int> GetPrivateData;
-
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutputDuplication*, Guid*, void**, int> GetParent;
-
-            [NativeTypeName("void (DXGI_OUTDUPL_DESC *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutputDuplication*, DXGI_OUTDUPL_DESC*, void> GetDesc;
-
-            [NativeTypeName("HRESULT (UINT, DXGI_OUTDUPL_FRAME_INFO *, IDXGIResource **) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutputDuplication*, uint, DXGI_OUTDUPL_FRAME_INFO*, IDXGIResource**, int> AcquireNextFrame;
-
-            [NativeTypeName("HRESULT (UINT, RECT *, UINT *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutputDuplication*, uint, RECT*, uint*, int> GetFrameDirtyRects;
-
-            [NativeTypeName("HRESULT (UINT, DXGI_OUTDUPL_MOVE_RECT *, UINT *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutputDuplication*, uint, DXGI_OUTDUPL_MOVE_RECT*, uint*, int> GetFrameMoveRects;
-
-            [NativeTypeName("HRESULT (UINT, void *, UINT *, DXGI_OUTDUPL_POINTER_SHAPE_INFO *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutputDuplication*, uint, void*, uint*, DXGI_OUTDUPL_POINTER_SHAPE_INFO*, int> GetFramePointerShape;
-
-            [NativeTypeName("HRESULT (DXGI_MAPPED_RECT *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutputDuplication*, DXGI_MAPPED_RECT*, int> MapDesktopSurface;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutputDuplication*, int> UnMapDesktopSurface;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutputDuplication*, int> ReleaseFrame;
+            return ((delegate* stdcall<IDXGIOutputDuplication*, int>)(lpVtbl[14]))((IDXGIOutputDuplication*)Unsafe.AsPointer(ref this));
         }
     }
 }

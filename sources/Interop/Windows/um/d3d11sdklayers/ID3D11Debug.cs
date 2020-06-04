@@ -12,117 +12,78 @@ namespace TerraFX.Interop
     [Guid("79CF2233-7536-4948-9D36-1E4692DC5760")]
     public unsafe partial struct ID3D11Debug
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID3D11Debug*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID3D11Debug*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11Debug*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID3D11Debug*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D11Debug*, uint>)(lpVtbl[1]))((ID3D11Debug*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID3D11Debug*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D11Debug*, uint>)(lpVtbl[2]))((ID3D11Debug*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetFeatureMask([NativeTypeName("UINT")] uint Mask)
         {
-            return lpVtbl->SetFeatureMask((ID3D11Debug*)Unsafe.AsPointer(ref this), Mask);
+            return ((delegate* stdcall<ID3D11Debug*, uint, int>)(lpVtbl[3]))((ID3D11Debug*)Unsafe.AsPointer(ref this), Mask);
         }
 
         [return: NativeTypeName("UINT")]
         public uint GetFeatureMask()
         {
-            return lpVtbl->GetFeatureMask((ID3D11Debug*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D11Debug*, uint>)(lpVtbl[4]))((ID3D11Debug*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPresentPerRenderOpDelay([NativeTypeName("UINT")] uint Milliseconds)
         {
-            return lpVtbl->SetPresentPerRenderOpDelay((ID3D11Debug*)Unsafe.AsPointer(ref this), Milliseconds);
+            return ((delegate* stdcall<ID3D11Debug*, uint, int>)(lpVtbl[5]))((ID3D11Debug*)Unsafe.AsPointer(ref this), Milliseconds);
         }
 
         [return: NativeTypeName("UINT")]
         public uint GetPresentPerRenderOpDelay()
         {
-            return lpVtbl->GetPresentPerRenderOpDelay((ID3D11Debug*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D11Debug*, uint>)(lpVtbl[6]))((ID3D11Debug*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetSwapChain([NativeTypeName("IDXGISwapChain *")] IDXGISwapChain* pSwapChain)
         {
-            return lpVtbl->SetSwapChain((ID3D11Debug*)Unsafe.AsPointer(ref this), pSwapChain);
+            return ((delegate* stdcall<ID3D11Debug*, IDXGISwapChain*, int>)(lpVtbl[7]))((ID3D11Debug*)Unsafe.AsPointer(ref this), pSwapChain);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetSwapChain([NativeTypeName("IDXGISwapChain **")] IDXGISwapChain** ppSwapChain)
         {
-            return lpVtbl->GetSwapChain((ID3D11Debug*)Unsafe.AsPointer(ref this), ppSwapChain);
+            return ((delegate* stdcall<ID3D11Debug*, IDXGISwapChain**, int>)(lpVtbl[8]))((ID3D11Debug*)Unsafe.AsPointer(ref this), ppSwapChain);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ValidateContext([NativeTypeName("ID3D11DeviceContext *")] ID3D11DeviceContext* pContext)
         {
-            return lpVtbl->ValidateContext((ID3D11Debug*)Unsafe.AsPointer(ref this), pContext);
+            return ((delegate* stdcall<ID3D11Debug*, ID3D11DeviceContext*, int>)(lpVtbl[9]))((ID3D11Debug*)Unsafe.AsPointer(ref this), pContext);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ReportLiveDeviceObjects(D3D11_RLDO_FLAGS Flags)
         {
-            return lpVtbl->ReportLiveDeviceObjects((ID3D11Debug*)Unsafe.AsPointer(ref this), Flags);
+            return ((delegate* stdcall<ID3D11Debug*, D3D11_RLDO_FLAGS, int>)(lpVtbl[10]))((ID3D11Debug*)Unsafe.AsPointer(ref this), Flags);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ValidateContextForDispatch([NativeTypeName("ID3D11DeviceContext *")] ID3D11DeviceContext* pContext)
         {
-            return lpVtbl->ValidateContextForDispatch((ID3D11Debug*)Unsafe.AsPointer(ref this), pContext);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11Debug*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11Debug*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11Debug*, uint> Release;
-
-            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11Debug*, uint, int> SetFeatureMask;
-
-            [NativeTypeName("UINT () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11Debug*, uint> GetFeatureMask;
-
-            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11Debug*, uint, int> SetPresentPerRenderOpDelay;
-
-            [NativeTypeName("UINT () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11Debug*, uint> GetPresentPerRenderOpDelay;
-
-            [NativeTypeName("HRESULT (IDXGISwapChain *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11Debug*, IDXGISwapChain*, int> SetSwapChain;
-
-            [NativeTypeName("HRESULT (IDXGISwapChain **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11Debug*, IDXGISwapChain**, int> GetSwapChain;
-
-            [NativeTypeName("HRESULT (ID3D11DeviceContext *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11Debug*, ID3D11DeviceContext*, int> ValidateContext;
-
-            [NativeTypeName("HRESULT (D3D11_RLDO_FLAGS) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11Debug*, D3D11_RLDO_FLAGS, int> ReportLiveDeviceObjects;
-
-            [NativeTypeName("HRESULT (ID3D11DeviceContext *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11Debug*, ID3D11DeviceContext*, int> ValidateContextForDispatch;
+            return ((delegate* stdcall<ID3D11Debug*, ID3D11DeviceContext*, int>)(lpVtbl[11]))((ID3D11Debug*)Unsafe.AsPointer(ref this), pContext);
         }
     }
 }

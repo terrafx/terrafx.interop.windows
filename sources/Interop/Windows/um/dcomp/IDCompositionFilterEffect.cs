@@ -12,45 +12,30 @@ namespace TerraFX.Interop
     [Guid("30C421D5-8CB2-4E9F-B133-37BE270D4AC2")]
     public unsafe partial struct IDCompositionFilterEffect
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IDCompositionFilterEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IDCompositionFilterEffect*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionFilterEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IDCompositionFilterEffect*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDCompositionFilterEffect*, uint>)(lpVtbl[1]))((IDCompositionFilterEffect*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IDCompositionFilterEffect*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDCompositionFilterEffect*, uint>)(lpVtbl[2]))((IDCompositionFilterEffect*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetInput([NativeTypeName("UINT")] uint index, [NativeTypeName("IUnknown *")] IUnknown* input, [NativeTypeName("UINT")] uint flags)
         {
-            return lpVtbl->SetInput((IDCompositionFilterEffect*)Unsafe.AsPointer(ref this), index, input, flags);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionFilterEffect*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionFilterEffect*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionFilterEffect*, uint> Release;
-
-            [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionFilterEffect*, uint, IUnknown*, uint, int> SetInput;
+            return ((delegate* stdcall<IDCompositionFilterEffect*, uint, IUnknown*, uint, int>)(lpVtbl[3]))((IDCompositionFilterEffect*)Unsafe.AsPointer(ref this), index, input, flags);
         }
     }
 }

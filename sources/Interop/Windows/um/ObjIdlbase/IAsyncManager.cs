@@ -12,63 +12,42 @@ namespace TerraFX.Interop
     [Guid("0000002A-0000-0000-C000-000000000046")]
     public unsafe partial struct IAsyncManager
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IAsyncManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IAsyncManager*, Guid*, void**, int>)(lpVtbl[0]))((IAsyncManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IAsyncManager*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IAsyncManager*, uint>)(lpVtbl[1]))((IAsyncManager*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IAsyncManager*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IAsyncManager*, uint>)(lpVtbl[2]))((IAsyncManager*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CompleteCall([NativeTypeName("HRESULT")] int Result)
         {
-            return lpVtbl->CompleteCall((IAsyncManager*)Unsafe.AsPointer(ref this), Result);
+            return ((delegate* stdcall<IAsyncManager*, int, int>)(lpVtbl[3]))((IAsyncManager*)Unsafe.AsPointer(ref this), Result);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetCallContext([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** pInterface)
         {
-            return lpVtbl->GetCallContext((IAsyncManager*)Unsafe.AsPointer(ref this), riid, pInterface);
+            return ((delegate* stdcall<IAsyncManager*, Guid*, void**, int>)(lpVtbl[4]))((IAsyncManager*)Unsafe.AsPointer(ref this), riid, pInterface);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetState([NativeTypeName("ULONG *")] uint* pulStateFlags)
         {
-            return lpVtbl->GetState((IAsyncManager*)Unsafe.AsPointer(ref this), pulStateFlags);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IAsyncManager*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IAsyncManager*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IAsyncManager*, uint> Release;
-
-            [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
-            public delegate* stdcall<IAsyncManager*, int, int> CompleteCall;
-
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IAsyncManager*, Guid*, void**, int> GetCallContext;
-
-            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-            public delegate* stdcall<IAsyncManager*, uint*, int> GetState;
+            return ((delegate* stdcall<IAsyncManager*, uint*, int>)(lpVtbl[5]))((IAsyncManager*)Unsafe.AsPointer(ref this), pulStateFlags);
         }
     }
 }

@@ -12,54 +12,36 @@ namespace TerraFX.Interop
     [Guid("79EAC9D7-BAFA-11CE-8C82-00AA004BA90B")]
     public unsafe partial struct IHttpSecurity
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IHttpSecurity*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IHttpSecurity*, Guid*, void**, int>)(lpVtbl[0]))((IHttpSecurity*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IHttpSecurity*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IHttpSecurity*, uint>)(lpVtbl[1]))((IHttpSecurity*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IHttpSecurity*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IHttpSecurity*, uint>)(lpVtbl[2]))((IHttpSecurity*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetWindow([NativeTypeName("const GUID &")] Guid* rguidReason, [NativeTypeName("HWND *")] IntPtr* phwnd)
         {
-            return lpVtbl->GetWindow((IHttpSecurity*)Unsafe.AsPointer(ref this), rguidReason, phwnd);
+            return ((delegate* stdcall<IHttpSecurity*, Guid*, IntPtr*, int>)(lpVtbl[3]))((IHttpSecurity*)Unsafe.AsPointer(ref this), rguidReason, phwnd);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int OnSecurityProblem([NativeTypeName("DWORD")] uint dwProblem)
         {
-            return lpVtbl->OnSecurityProblem((IHttpSecurity*)Unsafe.AsPointer(ref this), dwProblem);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IHttpSecurity*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IHttpSecurity*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IHttpSecurity*, uint> Release;
-
-            [NativeTypeName("HRESULT (const GUID &, HWND *) __attribute__((stdcall))")]
-            public delegate* stdcall<IHttpSecurity*, Guid*, IntPtr*, int> GetWindow;
-
-            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public delegate* stdcall<IHttpSecurity*, uint, int> OnSecurityProblem;
+            return ((delegate* stdcall<IHttpSecurity*, uint, int>)(lpVtbl[4]))((IHttpSecurity*)Unsafe.AsPointer(ref this), dwProblem);
         }
     }
 }

@@ -12,54 +12,36 @@ namespace TerraFX.Interop
     [Guid("79EAC9ED-BAF9-11CE-8C82-00AA004BA90B")]
     public unsafe partial struct IInternetSecurityMgrSite
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IInternetSecurityMgrSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IInternetSecurityMgrSite*, Guid*, void**, int>)(lpVtbl[0]))((IInternetSecurityMgrSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IInternetSecurityMgrSite*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IInternetSecurityMgrSite*, uint>)(lpVtbl[1]))((IInternetSecurityMgrSite*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IInternetSecurityMgrSite*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IInternetSecurityMgrSite*, uint>)(lpVtbl[2]))((IInternetSecurityMgrSite*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetWindow([NativeTypeName("HWND *")] IntPtr* phwnd)
         {
-            return lpVtbl->GetWindow((IInternetSecurityMgrSite*)Unsafe.AsPointer(ref this), phwnd);
+            return ((delegate* stdcall<IInternetSecurityMgrSite*, IntPtr*, int>)(lpVtbl[3]))((IInternetSecurityMgrSite*)Unsafe.AsPointer(ref this), phwnd);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int EnableModeless([NativeTypeName("BOOL")] int fEnable)
         {
-            return lpVtbl->EnableModeless((IInternetSecurityMgrSite*)Unsafe.AsPointer(ref this), fEnable);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IInternetSecurityMgrSite*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IInternetSecurityMgrSite*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IInternetSecurityMgrSite*, uint> Release;
-
-            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-            public delegate* stdcall<IInternetSecurityMgrSite*, IntPtr*, int> GetWindow;
-
-            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public delegate* stdcall<IInternetSecurityMgrSite*, int, int> EnableModeless;
+            return ((delegate* stdcall<IInternetSecurityMgrSite*, int, int>)(lpVtbl[4]))((IInternetSecurityMgrSite*)Unsafe.AsPointer(ref this), fEnable);
         }
     }
 }

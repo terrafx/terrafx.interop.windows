@@ -12,116 +12,77 @@ namespace TerraFX.Interop
     [Guid("D6F12DD6-76FB-406E-8961-4296EEFC0409")]
     public unsafe partial struct ID3D12ProtectedResourceSession1
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID3D12ProtectedResourceSession1*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D12ProtectedResourceSession1*, uint>)(lpVtbl[1]))((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D12ProtectedResourceSession1*, uint>)(lpVtbl[2]))((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData)
         {
-            return lpVtbl->GetPrivateData((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
+            return ((delegate* stdcall<ID3D12ProtectedResourceSession1*, Guid*, uint*, void*, int>)(lpVtbl[3]))((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData)
         {
-            return lpVtbl->SetPrivateData((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
+            return ((delegate* stdcall<ID3D12ProtectedResourceSession1*, Guid*, uint, void*, int>)(lpVtbl[4]))((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
         {
-            return lpVtbl->SetPrivateDataInterface((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this), guid, pData);
+            return ((delegate* stdcall<ID3D12ProtectedResourceSession1*, Guid*, IUnknown*, int>)(lpVtbl[5]))((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this), guid, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetName([NativeTypeName("LPCWSTR")] ushort* Name)
         {
-            return lpVtbl->SetName((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this), Name);
+            return ((delegate* stdcall<ID3D12ProtectedResourceSession1*, ushort*, int>)(lpVtbl[6]))((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this), Name);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDevice([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvDevice)
         {
-            return lpVtbl->GetDevice((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this), riid, ppvDevice);
+            return ((delegate* stdcall<ID3D12ProtectedResourceSession1*, Guid*, void**, int>)(lpVtbl[7]))((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this), riid, ppvDevice);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetStatusFence([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppFence)
         {
-            return lpVtbl->GetStatusFence((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this), riid, ppFence);
+            return ((delegate* stdcall<ID3D12ProtectedResourceSession1*, Guid*, void**, int>)(lpVtbl[8]))((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this), riid, ppFence);
         }
 
         public D3D12_PROTECTED_SESSION_STATUS GetSessionStatus()
         {
-            return lpVtbl->GetSessionStatus((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D12ProtectedResourceSession1*, D3D12_PROTECTED_SESSION_STATUS>)(lpVtbl[9]))((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this));
         }
 
         public D3D12_PROTECTED_RESOURCE_SESSION_DESC GetDesc()
         {
             D3D12_PROTECTED_RESOURCE_SESSION_DESC result;
-            return *lpVtbl->GetDesc((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this), &result);
+            return *((delegate* stdcall<ID3D12ProtectedResourceSession1*, D3D12_PROTECTED_RESOURCE_SESSION_DESC*, D3D12_PROTECTED_RESOURCE_SESSION_DESC*>)(lpVtbl[10]))((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this), &result);
         }
 
         public D3D12_PROTECTED_RESOURCE_SESSION_DESC1 GetDesc1()
         {
             D3D12_PROTECTED_RESOURCE_SESSION_DESC1 result;
-            return *lpVtbl->GetDesc1((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this), &result);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12ProtectedResourceSession1*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12ProtectedResourceSession1*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12ProtectedResourceSession1*, uint> Release;
-
-            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12ProtectedResourceSession1*, Guid*, uint*, void*, int> GetPrivateData;
-
-            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12ProtectedResourceSession1*, Guid*, uint, void*, int> SetPrivateData;
-
-            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12ProtectedResourceSession1*, Guid*, IUnknown*, int> SetPrivateDataInterface;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12ProtectedResourceSession1*, ushort*, int> SetName;
-
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12ProtectedResourceSession1*, Guid*, void**, int> GetDevice;
-
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12ProtectedResourceSession1*, Guid*, void**, int> GetStatusFence;
-
-            [NativeTypeName("D3D12_PROTECTED_SESSION_STATUS () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12ProtectedResourceSession1*, D3D12_PROTECTED_SESSION_STATUS> GetSessionStatus;
-
-            [NativeTypeName("D3D12_PROTECTED_RESOURCE_SESSION_DESC () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12ProtectedResourceSession1*, D3D12_PROTECTED_RESOURCE_SESSION_DESC*, D3D12_PROTECTED_RESOURCE_SESSION_DESC*> GetDesc;
-
-            [NativeTypeName("D3D12_PROTECTED_RESOURCE_SESSION_DESC1 () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12ProtectedResourceSession1*, D3D12_PROTECTED_RESOURCE_SESSION_DESC1*, D3D12_PROTECTED_RESOURCE_SESSION_DESC1*> GetDesc1;
+            return *((delegate* stdcall<ID3D12ProtectedResourceSession1*, D3D12_PROTECTED_RESOURCE_SESSION_DESC1*, D3D12_PROTECTED_RESOURCE_SESSION_DESC1*>)(lpVtbl[11]))((ID3D12ProtectedResourceSession1*)Unsafe.AsPointer(ref this), &result);
         }
     }
 }

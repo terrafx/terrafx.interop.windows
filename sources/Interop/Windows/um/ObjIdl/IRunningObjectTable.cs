@@ -12,99 +12,66 @@ namespace TerraFX.Interop
     [Guid("00000010-0000-0000-C000-000000000046")]
     public unsafe partial struct IRunningObjectTable
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IRunningObjectTable*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IRunningObjectTable*, Guid*, void**, int>)(lpVtbl[0]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IRunningObjectTable*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IRunningObjectTable*, uint>)(lpVtbl[1]))((IRunningObjectTable*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IRunningObjectTable*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IRunningObjectTable*, uint>)(lpVtbl[2]))((IRunningObjectTable*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Register([NativeTypeName("DWORD")] uint grfFlags, [NativeTypeName("IUnknown *")] IUnknown* punkObject, [NativeTypeName("IMoniker *")] IMoniker* pmkObjectName, [NativeTypeName("DWORD *")] uint* pdwRegister)
         {
-            return lpVtbl->Register((IRunningObjectTable*)Unsafe.AsPointer(ref this), grfFlags, punkObject, pmkObjectName, pdwRegister);
+            return ((delegate* stdcall<IRunningObjectTable*, uint, IUnknown*, IMoniker*, uint*, int>)(lpVtbl[3]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), grfFlags, punkObject, pmkObjectName, pdwRegister);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Revoke([NativeTypeName("DWORD")] uint dwRegister)
         {
-            return lpVtbl->Revoke((IRunningObjectTable*)Unsafe.AsPointer(ref this), dwRegister);
+            return ((delegate* stdcall<IRunningObjectTable*, uint, int>)(lpVtbl[4]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), dwRegister);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int IsRunning([NativeTypeName("IMoniker *")] IMoniker* pmkObjectName)
         {
-            return lpVtbl->IsRunning((IRunningObjectTable*)Unsafe.AsPointer(ref this), pmkObjectName);
+            return ((delegate* stdcall<IRunningObjectTable*, IMoniker*, int>)(lpVtbl[5]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), pmkObjectName);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetObjectA([NativeTypeName("IMoniker *")] IMoniker* pmkObjectName, [NativeTypeName("IUnknown **")] IUnknown** ppunkObject)
         {
-            return lpVtbl->GetObjectA((IRunningObjectTable*)Unsafe.AsPointer(ref this), pmkObjectName, ppunkObject);
+            return ((delegate* stdcall<IRunningObjectTable*, IMoniker*, IUnknown**, int>)(lpVtbl[6]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), pmkObjectName, ppunkObject);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int NoteChangeTime([NativeTypeName("DWORD")] uint dwRegister, [NativeTypeName("FILETIME *")] FILETIME* pfiletime)
         {
-            return lpVtbl->NoteChangeTime((IRunningObjectTable*)Unsafe.AsPointer(ref this), dwRegister, pfiletime);
+            return ((delegate* stdcall<IRunningObjectTable*, uint, FILETIME*, int>)(lpVtbl[7]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), dwRegister, pfiletime);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetTimeOfLastChange([NativeTypeName("IMoniker *")] IMoniker* pmkObjectName, [NativeTypeName("FILETIME *")] FILETIME* pfiletime)
         {
-            return lpVtbl->GetTimeOfLastChange((IRunningObjectTable*)Unsafe.AsPointer(ref this), pmkObjectName, pfiletime);
+            return ((delegate* stdcall<IRunningObjectTable*, IMoniker*, FILETIME*, int>)(lpVtbl[8]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), pmkObjectName, pfiletime);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int EnumRunning([NativeTypeName("IEnumMoniker **")] IEnumMoniker** ppenumMoniker)
         {
-            return lpVtbl->EnumRunning((IRunningObjectTable*)Unsafe.AsPointer(ref this), ppenumMoniker);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IRunningObjectTable*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IRunningObjectTable*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IRunningObjectTable*, uint> Release;
-
-            [NativeTypeName("HRESULT (DWORD, IUnknown *, IMoniker *, DWORD *) __attribute__((stdcall))")]
-            public delegate* stdcall<IRunningObjectTable*, uint, IUnknown*, IMoniker*, uint*, int> Register;
-
-            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public delegate* stdcall<IRunningObjectTable*, uint, int> Revoke;
-
-            [NativeTypeName("HRESULT (IMoniker *) __attribute__((stdcall))")]
-            public delegate* stdcall<IRunningObjectTable*, IMoniker*, int> IsRunning;
-
-            [NativeTypeName("HRESULT (IMoniker *, IUnknown **) __attribute__((stdcall))")]
-            public delegate* stdcall<IRunningObjectTable*, IMoniker*, IUnknown**, int> GetObjectA;
-
-            [NativeTypeName("HRESULT (DWORD, FILETIME *) __attribute__((stdcall))")]
-            public delegate* stdcall<IRunningObjectTable*, uint, FILETIME*, int> NoteChangeTime;
-
-            [NativeTypeName("HRESULT (IMoniker *, FILETIME *) __attribute__((stdcall))")]
-            public delegate* stdcall<IRunningObjectTable*, IMoniker*, FILETIME*, int> GetTimeOfLastChange;
-
-            [NativeTypeName("HRESULT (IEnumMoniker **) __attribute__((stdcall))")]
-            public delegate* stdcall<IRunningObjectTable*, IEnumMoniker**, int> EnumRunning;
+            return ((delegate* stdcall<IRunningObjectTable*, IEnumMoniker**, int>)(lpVtbl[9]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), ppenumMoniker);
         }
     }
 }

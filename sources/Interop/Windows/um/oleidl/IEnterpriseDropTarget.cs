@@ -12,54 +12,36 @@ namespace TerraFX.Interop
     [Guid("390E3878-FD55-4E18-819D-4682081C0CFD")]
     public unsafe partial struct IEnterpriseDropTarget
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IEnterpriseDropTarget*, Guid*, void**, int>)(lpVtbl[0]))((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IEnterpriseDropTarget*, uint>)(lpVtbl[1]))((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IEnterpriseDropTarget*, uint>)(lpVtbl[2]))((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetDropSourceEnterpriseId([NativeTypeName("LPCWSTR")] ushort* identity)
         {
-            return lpVtbl->SetDropSourceEnterpriseId((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this), identity);
+            return ((delegate* stdcall<IEnterpriseDropTarget*, ushort*, int>)(lpVtbl[3]))((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this), identity);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int IsEvaluatingEdpPolicy([NativeTypeName("BOOL *")] int* value)
         {
-            return lpVtbl->IsEvaluatingEdpPolicy((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this), value);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IEnterpriseDropTarget*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IEnterpriseDropTarget*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IEnterpriseDropTarget*, uint> Release;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* stdcall<IEnterpriseDropTarget*, ushort*, int> SetDropSourceEnterpriseId;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* stdcall<IEnterpriseDropTarget*, int*, int> IsEvaluatingEdpPolicy;
+            return ((delegate* stdcall<IEnterpriseDropTarget*, int*, int>)(lpVtbl[4]))((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this), value);
         }
     }
 }

@@ -12,45 +12,30 @@ namespace TerraFX.Interop
     [Guid("58A08519-24C8-4935-B482-3FD823333A4F")]
     public unsafe partial struct IRpcSyntaxNegotiate
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IRpcSyntaxNegotiate*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IRpcSyntaxNegotiate*, Guid*, void**, int>)(lpVtbl[0]))((IRpcSyntaxNegotiate*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IRpcSyntaxNegotiate*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IRpcSyntaxNegotiate*, uint>)(lpVtbl[1]))((IRpcSyntaxNegotiate*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IRpcSyntaxNegotiate*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IRpcSyntaxNegotiate*, uint>)(lpVtbl[2]))((IRpcSyntaxNegotiate*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int NegotiateSyntax([NativeTypeName("RPCOLEMESSAGE *")] RPCOLEMESSAGE* pMsg)
         {
-            return lpVtbl->NegotiateSyntax((IRpcSyntaxNegotiate*)Unsafe.AsPointer(ref this), pMsg);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IRpcSyntaxNegotiate*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IRpcSyntaxNegotiate*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IRpcSyntaxNegotiate*, uint> Release;
-
-            [NativeTypeName("HRESULT (RPCOLEMESSAGE *) __attribute__((stdcall))")]
-            public delegate* stdcall<IRpcSyntaxNegotiate*, RPCOLEMESSAGE*, int> NegotiateSyntax;
+            return ((delegate* stdcall<IRpcSyntaxNegotiate*, RPCOLEMESSAGE*, int>)(lpVtbl[3]))((IRpcSyntaxNegotiate*)Unsafe.AsPointer(ref this), pMsg);
         }
     }
 }

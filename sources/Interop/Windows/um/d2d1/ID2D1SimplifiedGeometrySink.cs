@@ -12,93 +12,60 @@ namespace TerraFX.Interop
     [Guid("2CD9069E-12E2-11DC-9FED-001143A055F9")]
     public unsafe partial struct ID2D1SimplifiedGeometrySink
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID2D1SimplifiedGeometrySink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID2D1SimplifiedGeometrySink*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1SimplifiedGeometrySink*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID2D1SimplifiedGeometrySink*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID2D1SimplifiedGeometrySink*, uint>)(lpVtbl[1]))((ID2D1SimplifiedGeometrySink*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID2D1SimplifiedGeometrySink*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID2D1SimplifiedGeometrySink*, uint>)(lpVtbl[2]))((ID2D1SimplifiedGeometrySink*)Unsafe.AsPointer(ref this));
         }
 
         public void SetFillMode(D2D1_FILL_MODE fillMode)
         {
-            lpVtbl->SetFillMode((ID2D1SimplifiedGeometrySink*)Unsafe.AsPointer(ref this), fillMode);
+            ((delegate* stdcall<ID2D1SimplifiedGeometrySink*, D2D1_FILL_MODE, void>)(lpVtbl[3]))((ID2D1SimplifiedGeometrySink*)Unsafe.AsPointer(ref this), fillMode);
         }
 
         public void SetSegmentFlags(D2D1_PATH_SEGMENT vertexFlags)
         {
-            lpVtbl->SetSegmentFlags((ID2D1SimplifiedGeometrySink*)Unsafe.AsPointer(ref this), vertexFlags);
+            ((delegate* stdcall<ID2D1SimplifiedGeometrySink*, D2D1_PATH_SEGMENT, void>)(lpVtbl[4]))((ID2D1SimplifiedGeometrySink*)Unsafe.AsPointer(ref this), vertexFlags);
         }
 
         public void BeginFigure([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F startPoint, D2D1_FIGURE_BEGIN figureBegin)
         {
-            lpVtbl->BeginFigure((ID2D1SimplifiedGeometrySink*)Unsafe.AsPointer(ref this), startPoint, figureBegin);
+            ((delegate* stdcall<ID2D1SimplifiedGeometrySink*, D2D_POINT_2F, D2D1_FIGURE_BEGIN, void>)(lpVtbl[5]))((ID2D1SimplifiedGeometrySink*)Unsafe.AsPointer(ref this), startPoint, figureBegin);
         }
 
         public void AddLines([NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* points, [NativeTypeName("UINT32")] uint pointsCount)
         {
-            lpVtbl->AddLines((ID2D1SimplifiedGeometrySink*)Unsafe.AsPointer(ref this), points, pointsCount);
+            ((delegate* stdcall<ID2D1SimplifiedGeometrySink*, D2D_POINT_2F*, uint, void>)(lpVtbl[6]))((ID2D1SimplifiedGeometrySink*)Unsafe.AsPointer(ref this), points, pointsCount);
         }
 
         public void AddBeziers([NativeTypeName("const D2D1_BEZIER_SEGMENT *")] D2D1_BEZIER_SEGMENT* beziers, [NativeTypeName("UINT32")] uint beziersCount)
         {
-            lpVtbl->AddBeziers((ID2D1SimplifiedGeometrySink*)Unsafe.AsPointer(ref this), beziers, beziersCount);
+            ((delegate* stdcall<ID2D1SimplifiedGeometrySink*, D2D1_BEZIER_SEGMENT*, uint, void>)(lpVtbl[7]))((ID2D1SimplifiedGeometrySink*)Unsafe.AsPointer(ref this), beziers, beziersCount);
         }
 
         public void EndFigure(D2D1_FIGURE_END figureEnd)
         {
-            lpVtbl->EndFigure((ID2D1SimplifiedGeometrySink*)Unsafe.AsPointer(ref this), figureEnd);
+            ((delegate* stdcall<ID2D1SimplifiedGeometrySink*, D2D1_FIGURE_END, void>)(lpVtbl[8]))((ID2D1SimplifiedGeometrySink*)Unsafe.AsPointer(ref this), figureEnd);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Close()
         {
-            return lpVtbl->Close((ID2D1SimplifiedGeometrySink*)Unsafe.AsPointer(ref this));
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1SimplifiedGeometrySink*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1SimplifiedGeometrySink*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1SimplifiedGeometrySink*, uint> Release;
-
-            [NativeTypeName("void (D2D1_FILL_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1SimplifiedGeometrySink*, D2D1_FILL_MODE, void> SetFillMode;
-
-            [NativeTypeName("void (D2D1_PATH_SEGMENT) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1SimplifiedGeometrySink*, D2D1_PATH_SEGMENT, void> SetSegmentFlags;
-
-            [NativeTypeName("void (D2D1_POINT_2F, D2D1_FIGURE_BEGIN) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1SimplifiedGeometrySink*, D2D_POINT_2F, D2D1_FIGURE_BEGIN, void> BeginFigure;
-
-            [NativeTypeName("void (const D2D1_POINT_2F *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1SimplifiedGeometrySink*, D2D_POINT_2F*, uint, void> AddLines;
-
-            [NativeTypeName("void (const D2D1_BEZIER_SEGMENT *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1SimplifiedGeometrySink*, D2D1_BEZIER_SEGMENT*, uint, void> AddBeziers;
-
-            [NativeTypeName("void (D2D1_FIGURE_END) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1SimplifiedGeometrySink*, D2D1_FIGURE_END, void> EndFigure;
-
-            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1SimplifiedGeometrySink*, int> Close;
+            return ((delegate* stdcall<ID2D1SimplifiedGeometrySink*, int>)(lpVtbl[9]))((ID2D1SimplifiedGeometrySink*)Unsafe.AsPointer(ref this));
         }
     }
 }

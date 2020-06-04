@@ -12,45 +12,30 @@ namespace TerraFX.Interop
     [Guid("79EAC9D6-BAFA-11CE-8C82-00AA004BA90B")]
     public unsafe partial struct IWinInetInfo
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IWinInetInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IWinInetInfo*, Guid*, void**, int>)(lpVtbl[0]))((IWinInetInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IWinInetInfo*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IWinInetInfo*, uint>)(lpVtbl[1]))((IWinInetInfo*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IWinInetInfo*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IWinInetInfo*, uint>)(lpVtbl[2]))((IWinInetInfo*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int QueryOption([NativeTypeName("DWORD")] uint dwOption, [NativeTypeName("LPVOID")] void* pBuffer, [NativeTypeName("DWORD *")] uint* pcbBuf)
         {
-            return lpVtbl->QueryOption((IWinInetInfo*)Unsafe.AsPointer(ref this), dwOption, pBuffer, pcbBuf);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IWinInetInfo*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IWinInetInfo*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IWinInetInfo*, uint> Release;
-
-            [NativeTypeName("HRESULT (DWORD, LPVOID, DWORD *) __attribute__((stdcall))")]
-            public delegate* stdcall<IWinInetInfo*, uint, void*, uint*, int> QueryOption;
+            return ((delegate* stdcall<IWinInetInfo*, uint, void*, uint*, int>)(lpVtbl[3]))((IWinInetInfo*)Unsafe.AsPointer(ref this), dwOption, pBuffer, pcbBuf);
         }
     }
 }

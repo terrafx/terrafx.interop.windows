@@ -1,25 +1,36 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-using System.Runtime.InteropServices;
+// Ported from um/d3d12sdklayers.h in the Windows SDK for Windows 10.0.19041.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
 using NUnit.Framework;
+using System;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="D3D12_DEBUG_COMMAND_LIST_GPU_BASED_VALIDATION_SETTINGS" /> struct.</summary>
-    public static class D3D12_DEBUG_COMMAND_LIST_GPU_BASED_VALIDATION_SETTINGSTests
+    public static unsafe class D3D12_DEBUG_COMMAND_LIST_GPU_BASED_VALIDATION_SETTINGSTests
     {
-        /// <summary>Validates that the layout of the <see cref="D3D12_DEBUG_COMMAND_LIST_GPU_BASED_VALIDATION_SETTINGS" /> struct is <see cref="LayoutKind.Sequential" />.</summary>
+        /// <summary>Validates that the <see cref="D3D12_DEBUG_COMMAND_LIST_GPU_BASED_VALIDATION_SETTINGS" /> struct is blittable.</summary>
+        [Test]
+        public static void IsBlittableTest()
+        {
+            Assert.That(Marshal.SizeOf<D3D12_DEBUG_COMMAND_LIST_GPU_BASED_VALIDATION_SETTINGS>(), Is.EqualTo(sizeof(D3D12_DEBUG_COMMAND_LIST_GPU_BASED_VALIDATION_SETTINGS)));
+        }
+
+        /// <summary>Validates that the <see cref="D3D12_DEBUG_COMMAND_LIST_GPU_BASED_VALIDATION_SETTINGS" /> struct has the right <see cref="LayoutKind" />.</summary>
         [Test]
         public static void IsLayoutSequentialTest()
         {
             Assert.That(typeof(D3D12_DEBUG_COMMAND_LIST_GPU_BASED_VALIDATION_SETTINGS).IsLayoutSequential, Is.True);
         }
 
-        /// <summary>Validates that the size of the <see cref="D3D12_DEBUG_COMMAND_LIST_GPU_BASED_VALIDATION_SETTINGS" /> struct is correct.</summary>
+        /// <summary>Validates that the <see cref="D3D12_DEBUG_COMMAND_LIST_GPU_BASED_VALIDATION_SETTINGS" /> struct has the correct size.</summary>
         [Test]
         public static void SizeOfTest()
         {
-            Assert.That(Marshal.SizeOf<D3D12_DEBUG_COMMAND_LIST_GPU_BASED_VALIDATION_SETTINGS>(), Is.EqualTo(4));
+            Assert.That(sizeof(D3D12_DEBUG_COMMAND_LIST_GPU_BASED_VALIDATION_SETTINGS), Is.EqualTo(4));
         }
     }
 }

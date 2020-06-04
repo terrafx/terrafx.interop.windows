@@ -12,90 +12,60 @@ namespace TerraFX.Interop
     [Guid("79EAC9C0-BAF9-11CE-8C82-00AA004BA90B")]
     public unsafe partial struct IBinding
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IBinding*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IBinding*, Guid*, void**, int>)(lpVtbl[0]))((IBinding*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IBinding*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IBinding*, uint>)(lpVtbl[1]))((IBinding*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IBinding*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IBinding*, uint>)(lpVtbl[2]))((IBinding*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Abort()
         {
-            return lpVtbl->Abort((IBinding*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IBinding*, int>)(lpVtbl[3]))((IBinding*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Suspend()
         {
-            return lpVtbl->Suspend((IBinding*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IBinding*, int>)(lpVtbl[4]))((IBinding*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Resume()
         {
-            return lpVtbl->Resume((IBinding*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IBinding*, int>)(lpVtbl[5]))((IBinding*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPriority([NativeTypeName("LONG")] int nPriority)
         {
-            return lpVtbl->SetPriority((IBinding*)Unsafe.AsPointer(ref this), nPriority);
+            return ((delegate* stdcall<IBinding*, int, int>)(lpVtbl[6]))((IBinding*)Unsafe.AsPointer(ref this), nPriority);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPriority([NativeTypeName("LONG *")] int* pnPriority)
         {
-            return lpVtbl->GetPriority((IBinding*)Unsafe.AsPointer(ref this), pnPriority);
+            return ((delegate* stdcall<IBinding*, int*, int>)(lpVtbl[7]))((IBinding*)Unsafe.AsPointer(ref this), pnPriority);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetBindResult([NativeTypeName("CLSID *")] Guid* pclsidProtocol, [NativeTypeName("DWORD *")] uint* pdwResult, [NativeTypeName("LPOLESTR *")] ushort** pszResult, [NativeTypeName("DWORD *")] uint* pdwReserved)
         {
-            return lpVtbl->GetBindResult((IBinding*)Unsafe.AsPointer(ref this), pclsidProtocol, pdwResult, pszResult, pdwReserved);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IBinding*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IBinding*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IBinding*, uint> Release;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* stdcall<IBinding*, int> Abort;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* stdcall<IBinding*, int> Suspend;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* stdcall<IBinding*, int> Resume;
-
-            [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-            public delegate* stdcall<IBinding*, int, int> SetPriority;
-
-            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-            public delegate* stdcall<IBinding*, int*, int> GetPriority;
-
-            [NativeTypeName("HRESULT (CLSID *, DWORD *, LPOLESTR *, DWORD *) __attribute__((stdcall))")]
-            public delegate* stdcall<IBinding*, Guid*, uint*, ushort**, uint*, int> GetBindResult;
+            return ((delegate* stdcall<IBinding*, Guid*, uint*, ushort**, uint*, int>)(lpVtbl[8]))((IBinding*)Unsafe.AsPointer(ref this), pclsidProtocol, pdwResult, pszResult, pdwReserved);
         }
     }
 }

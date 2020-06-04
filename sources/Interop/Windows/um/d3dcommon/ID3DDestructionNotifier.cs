@@ -12,54 +12,36 @@ namespace TerraFX.Interop
     [Guid("A06EB39A-50DA-425B-8C31-4EECD6C270F3")]
     public unsafe partial struct ID3DDestructionNotifier
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID3DDestructionNotifier*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID3DDestructionNotifier*, Guid*, void**, int>)(lpVtbl[0]))((ID3DDestructionNotifier*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID3DDestructionNotifier*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3DDestructionNotifier*, uint>)(lpVtbl[1]))((ID3DDestructionNotifier*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID3DDestructionNotifier*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3DDestructionNotifier*, uint>)(lpVtbl[2]))((ID3DDestructionNotifier*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int RegisterDestructionCallback([NativeTypeName("PFN_DESTRUCTION_CALLBACK")] delegate* stdcall<void*, void> callbackFn, [NativeTypeName("void *")] void* pData, [NativeTypeName("UINT *")] uint* pCallbackID)
         {
-            return lpVtbl->RegisterDestructionCallback((ID3DDestructionNotifier*)Unsafe.AsPointer(ref this), callbackFn, pData, pCallbackID);
+            return ((delegate* stdcall<ID3DDestructionNotifier*, delegate* stdcall<void*, void>, void*, uint*, int>)(lpVtbl[3]))((ID3DDestructionNotifier*)Unsafe.AsPointer(ref this), callbackFn, pData, pCallbackID);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int UnregisterDestructionCallback([NativeTypeName("UINT")] uint callbackID)
         {
-            return lpVtbl->UnregisterDestructionCallback((ID3DDestructionNotifier*)Unsafe.AsPointer(ref this), callbackID);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3DDestructionNotifier*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3DDestructionNotifier*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3DDestructionNotifier*, uint> Release;
-
-            [NativeTypeName("HRESULT (PFN_DESTRUCTION_CALLBACK, void *, UINT *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3DDestructionNotifier*, delegate* stdcall<void*, void>, void*, uint*, int> RegisterDestructionCallback;
-
-            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3DDestructionNotifier*, uint, int> UnregisterDestructionCallback;
+            return ((delegate* stdcall<ID3DDestructionNotifier*, uint, int>)(lpVtbl[4]))((ID3DDestructionNotifier*)Unsafe.AsPointer(ref this), callbackID);
         }
     }
 }

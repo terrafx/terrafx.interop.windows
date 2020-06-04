@@ -12,61 +12,40 @@ namespace TerraFX.Interop
     [Guid("90F732E2-5092-4606-A819-8651970BACCD")]
     public unsafe partial struct ID2D1BoundsAdjustmentTransform
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID2D1BoundsAdjustmentTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID2D1BoundsAdjustmentTransform*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1BoundsAdjustmentTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID2D1BoundsAdjustmentTransform*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID2D1BoundsAdjustmentTransform*, uint>)(lpVtbl[1]))((ID2D1BoundsAdjustmentTransform*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID2D1BoundsAdjustmentTransform*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID2D1BoundsAdjustmentTransform*, uint>)(lpVtbl[2]))((ID2D1BoundsAdjustmentTransform*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("UINT32")]
         public uint GetInputCount()
         {
-            return lpVtbl->GetInputCount((ID2D1BoundsAdjustmentTransform*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID2D1BoundsAdjustmentTransform*, uint>)(lpVtbl[3]))((ID2D1BoundsAdjustmentTransform*)Unsafe.AsPointer(ref this));
         }
 
         public void SetOutputBounds([NativeTypeName("const D2D1_RECT_L *")] RECT* outputBounds)
         {
-            lpVtbl->SetOutputBounds((ID2D1BoundsAdjustmentTransform*)Unsafe.AsPointer(ref this), outputBounds);
+            ((delegate* stdcall<ID2D1BoundsAdjustmentTransform*, RECT*, void>)(lpVtbl[4]))((ID2D1BoundsAdjustmentTransform*)Unsafe.AsPointer(ref this), outputBounds);
         }
 
         public void GetOutputBounds([NativeTypeName("D2D1_RECT_L *")] RECT* outputBounds)
         {
-            lpVtbl->GetOutputBounds((ID2D1BoundsAdjustmentTransform*)Unsafe.AsPointer(ref this), outputBounds);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1BoundsAdjustmentTransform*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1BoundsAdjustmentTransform*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1BoundsAdjustmentTransform*, uint> Release;
-
-            [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1BoundsAdjustmentTransform*, uint> GetInputCount;
-
-            [NativeTypeName("void (const D2D1_RECT_L *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1BoundsAdjustmentTransform*, RECT*, void> SetOutputBounds;
-
-            [NativeTypeName("void (D2D1_RECT_L *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1BoundsAdjustmentTransform*, RECT*, void> GetOutputBounds;
+            ((delegate* stdcall<ID2D1BoundsAdjustmentTransform*, RECT*, void>)(lpVtbl[5]))((ID2D1BoundsAdjustmentTransform*)Unsafe.AsPointer(ref this), outputBounds);
         }
     }
 }

@@ -12,71 +12,47 @@ namespace TerraFX.Interop
     [Guid("B2DAAD8B-03D4-4DBF-95EB-32AB4B63D0AB")]
     public unsafe partial struct ID3DUserDefinedAnnotation
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID3DUserDefinedAnnotation*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID3DUserDefinedAnnotation*, Guid*, void**, int>)(lpVtbl[0]))((ID3DUserDefinedAnnotation*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID3DUserDefinedAnnotation*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3DUserDefinedAnnotation*, uint>)(lpVtbl[1]))((ID3DUserDefinedAnnotation*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID3DUserDefinedAnnotation*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3DUserDefinedAnnotation*, uint>)(lpVtbl[2]))((ID3DUserDefinedAnnotation*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("INT")]
         public int BeginEvent([NativeTypeName("LPCWSTR")] ushort* Name)
         {
-            return lpVtbl->BeginEvent((ID3DUserDefinedAnnotation*)Unsafe.AsPointer(ref this), Name);
+            return ((delegate* stdcall<ID3DUserDefinedAnnotation*, ushort*, int>)(lpVtbl[3]))((ID3DUserDefinedAnnotation*)Unsafe.AsPointer(ref this), Name);
         }
 
         [return: NativeTypeName("INT")]
         public int EndEvent()
         {
-            return lpVtbl->EndEvent((ID3DUserDefinedAnnotation*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3DUserDefinedAnnotation*, int>)(lpVtbl[4]))((ID3DUserDefinedAnnotation*)Unsafe.AsPointer(ref this));
         }
 
         public void SetMarker([NativeTypeName("LPCWSTR")] ushort* Name)
         {
-            lpVtbl->SetMarker((ID3DUserDefinedAnnotation*)Unsafe.AsPointer(ref this), Name);
+            ((delegate* stdcall<ID3DUserDefinedAnnotation*, ushort*, void>)(lpVtbl[5]))((ID3DUserDefinedAnnotation*)Unsafe.AsPointer(ref this), Name);
         }
 
         [return: NativeTypeName("BOOL")]
         public int GetStatus()
         {
-            return lpVtbl->GetStatus((ID3DUserDefinedAnnotation*)Unsafe.AsPointer(ref this));
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3DUserDefinedAnnotation*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3DUserDefinedAnnotation*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3DUserDefinedAnnotation*, uint> Release;
-
-            [NativeTypeName("INT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3DUserDefinedAnnotation*, ushort*, int> BeginEvent;
-
-            [NativeTypeName("INT () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3DUserDefinedAnnotation*, int> EndEvent;
-
-            [NativeTypeName("void (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3DUserDefinedAnnotation*, ushort*, void> SetMarker;
-
-            [NativeTypeName("BOOL () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3DUserDefinedAnnotation*, int> GetStatus;
+            return ((delegate* stdcall<ID3DUserDefinedAnnotation*, int>)(lpVtbl[6]))((ID3DUserDefinedAnnotation*)Unsafe.AsPointer(ref this));
         }
     }
 }

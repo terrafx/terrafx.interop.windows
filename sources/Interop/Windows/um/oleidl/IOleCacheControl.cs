@@ -12,54 +12,36 @@ namespace TerraFX.Interop
     [Guid("00000129-0000-0000-C000-000000000046")]
     public unsafe partial struct IOleCacheControl
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IOleCacheControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IOleCacheControl*, Guid*, void**, int>)(lpVtbl[0]))((IOleCacheControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IOleCacheControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IOleCacheControl*, uint>)(lpVtbl[1]))((IOleCacheControl*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IOleCacheControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IOleCacheControl*, uint>)(lpVtbl[2]))((IOleCacheControl*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int OnRun([NativeTypeName("LPDATAOBJECT")] IDataObject* pDataObject)
         {
-            return lpVtbl->OnRun((IOleCacheControl*)Unsafe.AsPointer(ref this), pDataObject);
+            return ((delegate* stdcall<IOleCacheControl*, IDataObject*, int>)(lpVtbl[3]))((IOleCacheControl*)Unsafe.AsPointer(ref this), pDataObject);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int OnStop()
         {
-            return lpVtbl->OnStop((IOleCacheControl*)Unsafe.AsPointer(ref this));
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IOleCacheControl*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IOleCacheControl*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IOleCacheControl*, uint> Release;
-
-            [NativeTypeName("HRESULT (LPDATAOBJECT) __attribute__((stdcall))")]
-            public delegate* stdcall<IOleCacheControl*, IDataObject*, int> OnRun;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* stdcall<IOleCacheControl*, int> OnStop;
+            return ((delegate* stdcall<IOleCacheControl*, int>)(lpVtbl[4]))((IOleCacheControl*)Unsafe.AsPointer(ref this));
         }
     }
 }

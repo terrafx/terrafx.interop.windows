@@ -12,45 +12,30 @@ namespace TerraFX.Interop
     [Guid("72380D55-8D2B-43A3-8513-2B6EF31434E9")]
     public unsafe partial struct IProcessInitControl
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IProcessInitControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IProcessInitControl*, Guid*, void**, int>)(lpVtbl[0]))((IProcessInitControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IProcessInitControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IProcessInitControl*, uint>)(lpVtbl[1]))((IProcessInitControl*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IProcessInitControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IProcessInitControl*, uint>)(lpVtbl[2]))((IProcessInitControl*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ResetInitializerTimeout([NativeTypeName("DWORD")] uint dwSecondsRemaining)
         {
-            return lpVtbl->ResetInitializerTimeout((IProcessInitControl*)Unsafe.AsPointer(ref this), dwSecondsRemaining);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IProcessInitControl*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IProcessInitControl*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IProcessInitControl*, uint> Release;
-
-            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public delegate* stdcall<IProcessInitControl*, uint, int> ResetInitializerTimeout;
+            return ((delegate* stdcall<IProcessInitControl*, uint, int>)(lpVtbl[3]))((IProcessInitControl*)Unsafe.AsPointer(ref this), dwSecondsRemaining);
         }
     }
 }

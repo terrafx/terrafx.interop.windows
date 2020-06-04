@@ -2,6 +2,8 @@
 @../../remap.rsp
 --exclude
 IAgileReference.Resolve<Q>(Q **):HRESULT
+IContext
+IEnumContextProps
 IEnumString_Next_Proxy(IEnumString *, ULONG, LPOLESTR *, ULONG *):HRESULT
 IEnumString_Next_Stub(IEnumString *, ULONG, LPOLESTR *, ULONG *):HRESULT
 IEnumString_RemoteNext_Proxy(IEnumString *, ULONG, LPOLESTR *, ULONG *):HRESULT
@@ -65,6 +67,7 @@ IID_ISynchronizeEvent
 IID_ISynchronizeHandle
 IID_ISynchronizeMutex
 IID_IWaitMultiple
+IObjContext
 ISequentialStream_Read_Proxy(ISequentialStream *, void *, ULONG, ULONG *):HRESULT
 ISequentialStream_Read_Stub(ISequentialStream *, byte *, ULONG, ULONG *):HRESULT
 ISequentialStream_RemoteRead_Proxy(ISequentialStream *, byte *, ULONG, ULONG *):HRESULT

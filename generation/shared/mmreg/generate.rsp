@@ -1,6 +1,9 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
+KSDATAFORMAT_SUBTYPE_IEEE_FLOAT
+KSDATAFORMAT_SUBTYPE_PCM
+KSDATAFORMAT_SUBTYPE_WAVEFORMATEX
 tag_s_RIFFWAVE_INST
 --file
 shared-mmreg.h

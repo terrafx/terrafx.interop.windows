@@ -12,54 +12,36 @@ namespace TerraFX.Interop
     [Guid("00000149-0000-0000-C000-000000000046")]
     public unsafe partial struct IRpcHelper
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IRpcHelper*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IRpcHelper*, Guid*, void**, int>)(lpVtbl[0]))((IRpcHelper*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IRpcHelper*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IRpcHelper*, uint>)(lpVtbl[1]))((IRpcHelper*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IRpcHelper*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IRpcHelper*, uint>)(lpVtbl[2]))((IRpcHelper*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDCOMProtocolVersion([NativeTypeName("DWORD *")] uint* pComVersion)
         {
-            return lpVtbl->GetDCOMProtocolVersion((IRpcHelper*)Unsafe.AsPointer(ref this), pComVersion);
+            return ((delegate* stdcall<IRpcHelper*, uint*, int>)(lpVtbl[3]))((IRpcHelper*)Unsafe.AsPointer(ref this), pComVersion);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetIIDFromOBJREF([NativeTypeName("void *")] void* pObjRef, [NativeTypeName("IID **")] Guid** piid)
         {
-            return lpVtbl->GetIIDFromOBJREF((IRpcHelper*)Unsafe.AsPointer(ref this), pObjRef, piid);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IRpcHelper*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IRpcHelper*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IRpcHelper*, uint> Release;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* stdcall<IRpcHelper*, uint*, int> GetDCOMProtocolVersion;
-
-            [NativeTypeName("HRESULT (void *, IID **) __attribute__((stdcall))")]
-            public delegate* stdcall<IRpcHelper*, void*, Guid**, int> GetIIDFromOBJREF;
+            return ((delegate* stdcall<IRpcHelper*, void*, Guid**, int>)(lpVtbl[4]))((IRpcHelper*)Unsafe.AsPointer(ref this), pObjRef, piid);
         }
     }
 }

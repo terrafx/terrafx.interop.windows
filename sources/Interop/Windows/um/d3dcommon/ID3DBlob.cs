@@ -12,54 +12,36 @@ namespace TerraFX.Interop
     [Guid("8BA5FB08-5195-40e2-AC58-0D989C3A0102")]
     public unsafe partial struct ID3DBlob
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID3DBlob*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID3DBlob*, Guid*, void**, int>)(lpVtbl[0]))((ID3DBlob*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID3DBlob*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3DBlob*, uint>)(lpVtbl[1]))((ID3DBlob*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID3DBlob*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3DBlob*, uint>)(lpVtbl[2]))((ID3DBlob*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("LPVOID")]
         public void* GetBufferPointer()
         {
-            return lpVtbl->GetBufferPointer((ID3DBlob*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3DBlob*, void*>)(lpVtbl[3]))((ID3DBlob*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("SIZE_T")]
         public nuint GetBufferSize()
         {
-            return lpVtbl->GetBufferSize((ID3DBlob*)Unsafe.AsPointer(ref this));
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3DBlob*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3DBlob*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3DBlob*, uint> Release;
-
-            [NativeTypeName("LPVOID () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3DBlob*, void*> GetBufferPointer;
-
-            [NativeTypeName("SIZE_T () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3DBlob*, nuint> GetBufferSize;
+            return ((delegate* stdcall<ID3DBlob*, nuint>)(lpVtbl[4]))((ID3DBlob*)Unsafe.AsPointer(ref this));
         }
     }
 }

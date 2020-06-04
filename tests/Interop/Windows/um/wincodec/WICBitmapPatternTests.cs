@@ -1,32 +1,42 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
+// Ported from um/wincodec.h in the Windows SDK for Windows 10.0.19041.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
-using NUnit.Framework;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WICBitmapPattern" /> struct.</summary>
-    public static class WICBitmapPatternTests
+    public static unsafe class WICBitmapPatternTests
     {
-        /// <summary>Validates that the layout of the <see cref="WICBitmapPattern" /> struct is <see cref="LayoutKind.Sequential" />.</summary>
+        /// <summary>Validates that the <see cref="WICBitmapPattern" /> struct is blittable.</summary>
+        [Test]
+        public static void IsBlittableTest()
+        {
+            Assert.That(Marshal.SizeOf<WICBitmapPattern>(), Is.EqualTo(sizeof(WICBitmapPattern)));
+        }
+
+        /// <summary>Validates that the <see cref="WICBitmapPattern" /> struct has the right <see cref="LayoutKind" />.</summary>
         [Test]
         public static void IsLayoutSequentialTest()
         {
             Assert.That(typeof(WICBitmapPattern).IsLayoutSequential, Is.True);
         }
 
-        /// <summary>Validates that the size of the <see cref="WICBitmapPattern" /> struct is correct.</summary>
+        /// <summary>Validates that the <see cref="WICBitmapPattern" /> struct has the correct size.</summary>
         [Test]
         public static void SizeOfTest()
         {
             if (Environment.Is64BitProcess)
             {
-                Assert.That(Marshal.SizeOf<WICBitmapPattern>(), Is.EqualTo(40));
+                Assert.That(sizeof(WICBitmapPattern), Is.EqualTo(40));
             }
             else
             {
-                Assert.That(Marshal.SizeOf<WICBitmapPattern>(), Is.EqualTo(24));
+                Assert.That(sizeof(WICBitmapPattern), Is.EqualTo(24));
             }
         }
     }

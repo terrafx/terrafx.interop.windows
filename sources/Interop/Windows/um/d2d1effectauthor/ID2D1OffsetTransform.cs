@@ -12,63 +12,42 @@ namespace TerraFX.Interop
     [Guid("3FE6ADEA-7643-4F53-BD14-A0CE63F24042")]
     public unsafe partial struct ID2D1OffsetTransform
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID2D1OffsetTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID2D1OffsetTransform*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1OffsetTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID2D1OffsetTransform*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID2D1OffsetTransform*, uint>)(lpVtbl[1]))((ID2D1OffsetTransform*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID2D1OffsetTransform*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID2D1OffsetTransform*, uint>)(lpVtbl[2]))((ID2D1OffsetTransform*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("UINT32")]
         public uint GetInputCount()
         {
-            return lpVtbl->GetInputCount((ID2D1OffsetTransform*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID2D1OffsetTransform*, uint>)(lpVtbl[3]))((ID2D1OffsetTransform*)Unsafe.AsPointer(ref this));
         }
 
         public void SetOffset([NativeTypeName("D2D1_POINT_2L")] POINT offset)
         {
-            lpVtbl->SetOffset((ID2D1OffsetTransform*)Unsafe.AsPointer(ref this), offset);
+            ((delegate* stdcall<ID2D1OffsetTransform*, POINT, void>)(lpVtbl[4]))((ID2D1OffsetTransform*)Unsafe.AsPointer(ref this), offset);
         }
 
         [return: NativeTypeName("D2D1_POINT_2L")]
         public POINT GetOffset()
         {
             POINT result;
-            return *lpVtbl->GetOffset((ID2D1OffsetTransform*)Unsafe.AsPointer(ref this), &result);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1OffsetTransform*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1OffsetTransform*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1OffsetTransform*, uint> Release;
-
-            [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1OffsetTransform*, uint> GetInputCount;
-
-            [NativeTypeName("void (D2D1_POINT_2L) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1OffsetTransform*, POINT, void> SetOffset;
-
-            [NativeTypeName("D2D1_POINT_2L () const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1OffsetTransform*, POINT*, POINT*> GetOffset;
+            return *((delegate* stdcall<ID2D1OffsetTransform*, POINT*, POINT*>)(lpVtbl[5]))((ID2D1OffsetTransform*)Unsafe.AsPointer(ref this), &result);
         }
     }
 }

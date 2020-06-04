@@ -12,63 +12,42 @@ namespace TerraFX.Interop
     [Guid("55980BA0-35AA-11CF-B671-00AA004CD6D8")]
     public unsafe partial struct IPointerInactive
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IPointerInactive*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IPointerInactive*, Guid*, void**, int>)(lpVtbl[0]))((IPointerInactive*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IPointerInactive*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IPointerInactive*, uint>)(lpVtbl[1]))((IPointerInactive*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IPointerInactive*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IPointerInactive*, uint>)(lpVtbl[2]))((IPointerInactive*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetActivationPolicy([NativeTypeName("DWORD *")] uint* pdwPolicy)
         {
-            return lpVtbl->GetActivationPolicy((IPointerInactive*)Unsafe.AsPointer(ref this), pdwPolicy);
+            return ((delegate* stdcall<IPointerInactive*, uint*, int>)(lpVtbl[3]))((IPointerInactive*)Unsafe.AsPointer(ref this), pdwPolicy);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int OnInactiveMouseMove([NativeTypeName("LPCRECT")] RECT* pRectBounds, [NativeTypeName("LONG")] int x, [NativeTypeName("LONG")] int y, [NativeTypeName("DWORD")] uint grfKeyState)
         {
-            return lpVtbl->OnInactiveMouseMove((IPointerInactive*)Unsafe.AsPointer(ref this), pRectBounds, x, y, grfKeyState);
+            return ((delegate* stdcall<IPointerInactive*, RECT*, int, int, uint, int>)(lpVtbl[4]))((IPointerInactive*)Unsafe.AsPointer(ref this), pRectBounds, x, y, grfKeyState);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int OnInactiveSetCursor([NativeTypeName("LPCRECT")] RECT* pRectBounds, [NativeTypeName("LONG")] int x, [NativeTypeName("LONG")] int y, [NativeTypeName("DWORD")] uint dwMouseMsg, [NativeTypeName("BOOL")] int fSetAlways)
         {
-            return lpVtbl->OnInactiveSetCursor((IPointerInactive*)Unsafe.AsPointer(ref this), pRectBounds, x, y, dwMouseMsg, fSetAlways);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IPointerInactive*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IPointerInactive*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IPointerInactive*, uint> Release;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* stdcall<IPointerInactive*, uint*, int> GetActivationPolicy;
-
-            [NativeTypeName("HRESULT (LPCRECT, LONG, LONG, DWORD) __attribute__((stdcall))")]
-            public delegate* stdcall<IPointerInactive*, RECT*, int, int, uint, int> OnInactiveMouseMove;
-
-            [NativeTypeName("HRESULT (LPCRECT, LONG, LONG, DWORD, BOOL) __attribute__((stdcall))")]
-            public delegate* stdcall<IPointerInactive*, RECT*, int, int, uint, int, int> OnInactiveSetCursor;
+            return ((delegate* stdcall<IPointerInactive*, RECT*, int, int, uint, int, int>)(lpVtbl[5]))((IPointerInactive*)Unsafe.AsPointer(ref this), pRectBounds, x, y, dwMouseMsg, fSetAlways);
         }
     }
 }

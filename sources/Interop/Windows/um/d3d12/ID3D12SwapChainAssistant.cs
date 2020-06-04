@@ -12,72 +12,48 @@ namespace TerraFX.Interop
     [Guid("F1DF64B6-57FD-49CD-8807-C0EB88B45C8F")]
     public unsafe partial struct ID3D12SwapChainAssistant
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID3D12SwapChainAssistant*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID3D12SwapChainAssistant*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12SwapChainAssistant*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID3D12SwapChainAssistant*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D12SwapChainAssistant*, uint>)(lpVtbl[1]))((ID3D12SwapChainAssistant*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID3D12SwapChainAssistant*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D12SwapChainAssistant*, uint>)(lpVtbl[2]))((ID3D12SwapChainAssistant*)Unsafe.AsPointer(ref this));
         }
 
         public LUID GetLUID()
         {
             LUID result;
-            return *lpVtbl->GetLUID((ID3D12SwapChainAssistant*)Unsafe.AsPointer(ref this), &result);
+            return *((delegate* stdcall<ID3D12SwapChainAssistant*, LUID*, LUID*>)(lpVtbl[3]))((ID3D12SwapChainAssistant*)Unsafe.AsPointer(ref this), &result);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetSwapChainObject([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppv)
         {
-            return lpVtbl->GetSwapChainObject((ID3D12SwapChainAssistant*)Unsafe.AsPointer(ref this), riid, ppv);
+            return ((delegate* stdcall<ID3D12SwapChainAssistant*, Guid*, void**, int>)(lpVtbl[4]))((ID3D12SwapChainAssistant*)Unsafe.AsPointer(ref this), riid, ppv);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetCurrentResourceAndCommandQueue([NativeTypeName("const IID &")] Guid* riidResource, [NativeTypeName("void **")] void** ppvResource, [NativeTypeName("const IID &")] Guid* riidQueue, [NativeTypeName("void **")] void** ppvQueue)
         {
-            return lpVtbl->GetCurrentResourceAndCommandQueue((ID3D12SwapChainAssistant*)Unsafe.AsPointer(ref this), riidResource, ppvResource, riidQueue, ppvQueue);
+            return ((delegate* stdcall<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)(lpVtbl[5]))((ID3D12SwapChainAssistant*)Unsafe.AsPointer(ref this), riidResource, ppvResource, riidQueue, ppvQueue);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int InsertImplicitSync()
         {
-            return lpVtbl->InsertImplicitSync((ID3D12SwapChainAssistant*)Unsafe.AsPointer(ref this));
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12SwapChainAssistant*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12SwapChainAssistant*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12SwapChainAssistant*, uint> Release;
-
-            [NativeTypeName("LUID () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12SwapChainAssistant*, LUID*, LUID*> GetLUID;
-
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12SwapChainAssistant*, Guid*, void**, int> GetSwapChainObject;
-
-            [NativeTypeName("HRESULT (const IID &, void **, const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int> GetCurrentResourceAndCommandQueue;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12SwapChainAssistant*, int> InsertImplicitSync;
+            return ((delegate* stdcall<ID3D12SwapChainAssistant*, int>)(lpVtbl[6]))((ID3D12SwapChainAssistant*)Unsafe.AsPointer(ref this));
         }
     }
 }

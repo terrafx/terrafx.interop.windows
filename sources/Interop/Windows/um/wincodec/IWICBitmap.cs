@@ -12,108 +12,72 @@ namespace TerraFX.Interop
     [Guid("00000121-A8F2-4877-BA0A-FD2B6645FB94")]
     public unsafe partial struct IWICBitmap
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IWICBitmap*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IWICBitmap*, Guid*, void**, int>)(lpVtbl[0]))((IWICBitmap*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IWICBitmap*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IWICBitmap*, uint>)(lpVtbl[1]))((IWICBitmap*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IWICBitmap*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IWICBitmap*, uint>)(lpVtbl[2]))((IWICBitmap*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetSize([NativeTypeName("UINT *")] uint* puiWidth, [NativeTypeName("UINT *")] uint* puiHeight)
         {
-            return lpVtbl->GetSize((IWICBitmap*)Unsafe.AsPointer(ref this), puiWidth, puiHeight);
+            return ((delegate* stdcall<IWICBitmap*, uint*, uint*, int>)(lpVtbl[3]))((IWICBitmap*)Unsafe.AsPointer(ref this), puiWidth, puiHeight);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPixelFormat([NativeTypeName("WICPixelFormatGUID *")] Guid* pPixelFormat)
         {
-            return lpVtbl->GetPixelFormat((IWICBitmap*)Unsafe.AsPointer(ref this), pPixelFormat);
+            return ((delegate* stdcall<IWICBitmap*, Guid*, int>)(lpVtbl[4]))((IWICBitmap*)Unsafe.AsPointer(ref this), pPixelFormat);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetResolution([NativeTypeName("double *")] double* pDpiX, [NativeTypeName("double *")] double* pDpiY)
         {
-            return lpVtbl->GetResolution((IWICBitmap*)Unsafe.AsPointer(ref this), pDpiX, pDpiY);
+            return ((delegate* stdcall<IWICBitmap*, double*, double*, int>)(lpVtbl[5]))((IWICBitmap*)Unsafe.AsPointer(ref this), pDpiX, pDpiY);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CopyPalette([NativeTypeName("IWICPalette *")] IWICPalette* pIPalette)
         {
-            return lpVtbl->CopyPalette((IWICBitmap*)Unsafe.AsPointer(ref this), pIPalette);
+            return ((delegate* stdcall<IWICBitmap*, IWICPalette*, int>)(lpVtbl[6]))((IWICBitmap*)Unsafe.AsPointer(ref this), pIPalette);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CopyPixels([NativeTypeName("const WICRect *")] WICRect* prc, [NativeTypeName("UINT")] uint cbStride, [NativeTypeName("UINT")] uint cbBufferSize, [NativeTypeName("BYTE *")] byte* pbBuffer)
         {
-            return lpVtbl->CopyPixels((IWICBitmap*)Unsafe.AsPointer(ref this), prc, cbStride, cbBufferSize, pbBuffer);
+            return ((delegate* stdcall<IWICBitmap*, WICRect*, uint, uint, byte*, int>)(lpVtbl[7]))((IWICBitmap*)Unsafe.AsPointer(ref this), prc, cbStride, cbBufferSize, pbBuffer);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Lock([NativeTypeName("const WICRect *")] WICRect* prcLock, [NativeTypeName("DWORD")] uint flags, [NativeTypeName("IWICBitmapLock **")] IWICBitmapLock** ppILock)
         {
-            return lpVtbl->Lock((IWICBitmap*)Unsafe.AsPointer(ref this), prcLock, flags, ppILock);
+            return ((delegate* stdcall<IWICBitmap*, WICRect*, uint, IWICBitmapLock**, int>)(lpVtbl[8]))((IWICBitmap*)Unsafe.AsPointer(ref this), prcLock, flags, ppILock);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPalette([NativeTypeName("IWICPalette *")] IWICPalette* pIPalette)
         {
-            return lpVtbl->SetPalette((IWICBitmap*)Unsafe.AsPointer(ref this), pIPalette);
+            return ((delegate* stdcall<IWICBitmap*, IWICPalette*, int>)(lpVtbl[9]))((IWICBitmap*)Unsafe.AsPointer(ref this), pIPalette);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetResolution(double dpiX, double dpiY)
         {
-            return lpVtbl->SetResolution((IWICBitmap*)Unsafe.AsPointer(ref this), dpiX, dpiY);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IWICBitmap*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IWICBitmap*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IWICBitmap*, uint> Release;
-
-            [NativeTypeName("HRESULT (UINT *, UINT *) __attribute__((stdcall))")]
-            public delegate* stdcall<IWICBitmap*, uint*, uint*, int> GetSize;
-
-            [NativeTypeName("HRESULT (WICPixelFormatGUID *) __attribute__((stdcall))")]
-            public delegate* stdcall<IWICBitmap*, Guid*, int> GetPixelFormat;
-
-            [NativeTypeName("HRESULT (double *, double *) __attribute__((stdcall))")]
-            public delegate* stdcall<IWICBitmap*, double*, double*, int> GetResolution;
-
-            [NativeTypeName("HRESULT (IWICPalette *) __attribute__((stdcall))")]
-            public delegate* stdcall<IWICBitmap*, IWICPalette*, int> CopyPalette;
-
-            [NativeTypeName("HRESULT (const WICRect *, UINT, UINT, BYTE *) __attribute__((stdcall))")]
-            public delegate* stdcall<IWICBitmap*, WICRect*, uint, uint, byte*, int> CopyPixels;
-
-            [NativeTypeName("HRESULT (const WICRect *, DWORD, IWICBitmapLock **) __attribute__((stdcall))")]
-            public delegate* stdcall<IWICBitmap*, WICRect*, uint, IWICBitmapLock**, int> Lock;
-
-            [NativeTypeName("HRESULT (IWICPalette *) __attribute__((stdcall))")]
-            public delegate* stdcall<IWICBitmap*, IWICPalette*, int> SetPalette;
-
-            [NativeTypeName("HRESULT (double, double) __attribute__((stdcall))")]
-            public delegate* stdcall<IWICBitmap*, double, double, int> SetResolution;
+            return ((delegate* stdcall<IWICBitmap*, double, double, int>)(lpVtbl[10]))((IWICBitmap*)Unsafe.AsPointer(ref this), dpiX, dpiY);
         }
     }
 }

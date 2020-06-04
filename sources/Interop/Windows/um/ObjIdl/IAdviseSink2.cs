@@ -12,84 +12,54 @@ namespace TerraFX.Interop
     [Guid("00000125-0000-0000-C000-000000000046")]
     public unsafe partial struct IAdviseSink2
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IAdviseSink2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IAdviseSink2*, Guid*, void**, int>)(lpVtbl[0]))((IAdviseSink2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IAdviseSink2*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IAdviseSink2*, uint>)(lpVtbl[1]))((IAdviseSink2*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IAdviseSink2*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IAdviseSink2*, uint>)(lpVtbl[2]))((IAdviseSink2*)Unsafe.AsPointer(ref this));
         }
 
         public void OnDataChange([NativeTypeName("FORMATETC *")] FORMATETC* pFormatetc, [NativeTypeName("STGMEDIUM *")] STGMEDIUM* pStgmed)
         {
-            lpVtbl->OnDataChange((IAdviseSink2*)Unsafe.AsPointer(ref this), pFormatetc, pStgmed);
+            ((delegate* stdcall<IAdviseSink2*, FORMATETC*, STGMEDIUM*, void>)(lpVtbl[3]))((IAdviseSink2*)Unsafe.AsPointer(ref this), pFormatetc, pStgmed);
         }
 
         public void OnViewChange([NativeTypeName("DWORD")] uint dwAspect, [NativeTypeName("LONG")] int lindex)
         {
-            lpVtbl->OnViewChange((IAdviseSink2*)Unsafe.AsPointer(ref this), dwAspect, lindex);
+            ((delegate* stdcall<IAdviseSink2*, uint, int, void>)(lpVtbl[4]))((IAdviseSink2*)Unsafe.AsPointer(ref this), dwAspect, lindex);
         }
 
         public void OnRename([NativeTypeName("IMoniker *")] IMoniker* pmk)
         {
-            lpVtbl->OnRename((IAdviseSink2*)Unsafe.AsPointer(ref this), pmk);
+            ((delegate* stdcall<IAdviseSink2*, IMoniker*, void>)(lpVtbl[5]))((IAdviseSink2*)Unsafe.AsPointer(ref this), pmk);
         }
 
         public void OnSave()
         {
-            lpVtbl->OnSave((IAdviseSink2*)Unsafe.AsPointer(ref this));
+            ((delegate* stdcall<IAdviseSink2*, void>)(lpVtbl[6]))((IAdviseSink2*)Unsafe.AsPointer(ref this));
         }
 
         public void OnClose()
         {
-            lpVtbl->OnClose((IAdviseSink2*)Unsafe.AsPointer(ref this));
+            ((delegate* stdcall<IAdviseSink2*, void>)(lpVtbl[7]))((IAdviseSink2*)Unsafe.AsPointer(ref this));
         }
 
         public void OnLinkSrcChange([NativeTypeName("IMoniker *")] IMoniker* pmk)
         {
-            lpVtbl->OnLinkSrcChange((IAdviseSink2*)Unsafe.AsPointer(ref this), pmk);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IAdviseSink2*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IAdviseSink2*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IAdviseSink2*, uint> Release;
-
-            [NativeTypeName("void (FORMATETC *, STGMEDIUM *) __attribute__((stdcall))")]
-            public delegate* stdcall<IAdviseSink2*, FORMATETC*, STGMEDIUM*, void> OnDataChange;
-
-            [NativeTypeName("void (DWORD, LONG) __attribute__((stdcall))")]
-            public delegate* stdcall<IAdviseSink2*, uint, int, void> OnViewChange;
-
-            [NativeTypeName("void (IMoniker *) __attribute__((stdcall))")]
-            public delegate* stdcall<IAdviseSink2*, IMoniker*, void> OnRename;
-
-            [NativeTypeName("void () __attribute__((stdcall))")]
-            public delegate* stdcall<IAdviseSink2*, void> OnSave;
-
-            [NativeTypeName("void () __attribute__((stdcall))")]
-            public delegate* stdcall<IAdviseSink2*, void> OnClose;
-
-            [NativeTypeName("void (IMoniker *) __attribute__((stdcall))")]
-            public delegate* stdcall<IAdviseSink2*, IMoniker*, void> OnLinkSrcChange;
+            ((delegate* stdcall<IAdviseSink2*, IMoniker*, void>)(lpVtbl[8]))((IAdviseSink2*)Unsafe.AsPointer(ref this), pmk);
         }
     }
 }

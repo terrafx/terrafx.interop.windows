@@ -12,45 +12,30 @@ namespace TerraFX.Interop
     [Guid("193DACDF-0DB2-4C05-A55C-EF06CAC56FD9")]
     public unsafe partial struct ID3D11RefTrackingOptions
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID3D11RefTrackingOptions*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID3D11RefTrackingOptions*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11RefTrackingOptions*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID3D11RefTrackingOptions*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D11RefTrackingOptions*, uint>)(lpVtbl[1]))((ID3D11RefTrackingOptions*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID3D11RefTrackingOptions*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D11RefTrackingOptions*, uint>)(lpVtbl[2]))((ID3D11RefTrackingOptions*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetTrackingOptions([NativeTypeName("UINT")] uint uOptions)
         {
-            return lpVtbl->SetTrackingOptions((ID3D11RefTrackingOptions*)Unsafe.AsPointer(ref this), uOptions);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11RefTrackingOptions*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11RefTrackingOptions*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11RefTrackingOptions*, uint> Release;
-
-            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11RefTrackingOptions*, uint, int> SetTrackingOptions;
+            return ((delegate* stdcall<ID3D11RefTrackingOptions*, uint, int>)(lpVtbl[3]))((ID3D11RefTrackingOptions*)Unsafe.AsPointer(ref this), uOptions);
         }
     }
 }

@@ -12,54 +12,36 @@ namespace TerraFX.Interop
     [Guid("E982CE48-0B96-440C-BC37-0C869B27A29E")]
     public unsafe partial struct IUriBuilderFactory
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IUriBuilderFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IUriBuilderFactory*, Guid*, void**, int>)(lpVtbl[0]))((IUriBuilderFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IUriBuilderFactory*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IUriBuilderFactory*, uint>)(lpVtbl[1]))((IUriBuilderFactory*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IUriBuilderFactory*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IUriBuilderFactory*, uint>)(lpVtbl[2]))((IUriBuilderFactory*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CreateIUriBuilder([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved, [NativeTypeName("IUriBuilder **")] IUriBuilder** ppIUriBuilder)
         {
-            return lpVtbl->CreateIUriBuilder((IUriBuilderFactory*)Unsafe.AsPointer(ref this), dwFlags, dwReserved, ppIUriBuilder);
+            return ((delegate* stdcall<IUriBuilderFactory*, uint, nuint, IUriBuilder**, int>)(lpVtbl[3]))((IUriBuilderFactory*)Unsafe.AsPointer(ref this), dwFlags, dwReserved, ppIUriBuilder);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CreateInitializedIUriBuilder([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved, [NativeTypeName("IUriBuilder **")] IUriBuilder** ppIUriBuilder)
         {
-            return lpVtbl->CreateInitializedIUriBuilder((IUriBuilderFactory*)Unsafe.AsPointer(ref this), dwFlags, dwReserved, ppIUriBuilder);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IUriBuilderFactory*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IUriBuilderFactory*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IUriBuilderFactory*, uint> Release;
-
-            [NativeTypeName("HRESULT (DWORD, DWORD_PTR, IUriBuilder **) __attribute__((stdcall))")]
-            public delegate* stdcall<IUriBuilderFactory*, uint, nuint, IUriBuilder**, int> CreateIUriBuilder;
-
-            [NativeTypeName("HRESULT (DWORD, DWORD_PTR, IUriBuilder **) __attribute__((stdcall))")]
-            public delegate* stdcall<IUriBuilderFactory*, uint, nuint, IUriBuilder**, int> CreateInitializedIUriBuilder;
+            return ((delegate* stdcall<IUriBuilderFactory*, uint, nuint, IUriBuilder**, int>)(lpVtbl[4]))((IUriBuilderFactory*)Unsafe.AsPointer(ref this), dwFlags, dwReserved, ppIUriBuilder);
         }
     }
 }

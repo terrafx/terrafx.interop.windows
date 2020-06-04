@@ -12,53 +12,35 @@ namespace TerraFX.Interop
     [Guid("2CD906C1-12E2-11DC-9FED-001143A055F9")]
     public unsafe partial struct ID2D1TessellationSink
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID2D1TessellationSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID2D1TessellationSink*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1TessellationSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID2D1TessellationSink*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID2D1TessellationSink*, uint>)(lpVtbl[1]))((ID2D1TessellationSink*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID2D1TessellationSink*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID2D1TessellationSink*, uint>)(lpVtbl[2]))((ID2D1TessellationSink*)Unsafe.AsPointer(ref this));
         }
 
         public void AddTriangles([NativeTypeName("const D2D1_TRIANGLE *")] D2D1_TRIANGLE* triangles, [NativeTypeName("UINT32")] uint trianglesCount)
         {
-            lpVtbl->AddTriangles((ID2D1TessellationSink*)Unsafe.AsPointer(ref this), triangles, trianglesCount);
+            ((delegate* stdcall<ID2D1TessellationSink*, D2D1_TRIANGLE*, uint, void>)(lpVtbl[3]))((ID2D1TessellationSink*)Unsafe.AsPointer(ref this), triangles, trianglesCount);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Close()
         {
-            return lpVtbl->Close((ID2D1TessellationSink*)Unsafe.AsPointer(ref this));
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1TessellationSink*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1TessellationSink*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1TessellationSink*, uint> Release;
-
-            [NativeTypeName("void (const D2D1_TRIANGLE *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1TessellationSink*, D2D1_TRIANGLE*, uint, void> AddTriangles;
-
-            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1TessellationSink*, int> Close;
+            return ((delegate* stdcall<ID2D1TessellationSink*, int>)(lpVtbl[4]))((ID2D1TessellationSink*)Unsafe.AsPointer(ref this));
         }
     }
 }

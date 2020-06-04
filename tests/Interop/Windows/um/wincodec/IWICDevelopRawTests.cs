@@ -1,14 +1,17 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
+// Ported from um/wincodec.h in the Windows SDK for Windows 10.0.19041.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
-using NUnit.Framework;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IWICDevelopRaw" /> struct.</summary>
-    public static class IWICDevelopRawTests
+    public static unsafe class IWICDevelopRawTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWICDevelopRaw" /> struct is correct.</summary>
         [Test]
@@ -17,49 +20,31 @@ namespace TerraFX.Interop.UnitTests
             Assert.That(typeof(IWICDevelopRaw).GUID, Is.EqualTo(IID_IWICDevelopRaw));
         }
 
-        /// <summary>Validates that the layout of the <see cref="IWICDevelopRaw" /> struct is <see cref="LayoutKind.Sequential" />.</summary>
+        /// <summary>Validates that the <see cref="IWICDevelopRaw" /> struct is blittable.</summary>
+        [Test]
+        public static void IsBlittableTest()
+        {
+            Assert.That(Marshal.SizeOf<IWICDevelopRaw>(), Is.EqualTo(sizeof(IWICDevelopRaw)));
+        }
+
+        /// <summary>Validates that the <see cref="IWICDevelopRaw" /> struct has the right <see cref="LayoutKind" />.</summary>
         [Test]
         public static void IsLayoutSequentialTest()
         {
             Assert.That(typeof(IWICDevelopRaw).IsLayoutSequential, Is.True);
         }
 
-        /// <summary>Validates that the size of the <see cref="IWICDevelopRaw" /> struct is correct.</summary>
+        /// <summary>Validates that the <see cref="IWICDevelopRaw" /> struct has the correct size.</summary>
         [Test]
         public static void SizeOfTest()
         {
             if (Environment.Is64BitProcess)
             {
-                Assert.That(Marshal.SizeOf<IWICDevelopRaw>(), Is.EqualTo(8));
+                Assert.That(sizeof(IWICDevelopRaw), Is.EqualTo(8));
             }
             else
             {
-                Assert.That(Marshal.SizeOf<IWICDevelopRaw>(), Is.EqualTo(4));
-            }
-        }
-
-        /// <summary>Provides validation of the <see cref="IWICDevelopRaw.Vtbl" /> struct.</summary>
-        public static class VtblTests
-        {
-            /// <summary>Validates that the layout of the <see cref="IWICDevelopRaw" /> struct is <see cref="LayoutKind.Sequential" />.</summary>
-            [Test]
-            public static void IsLayoutSequentialTest()
-            {
-                Assert.That(typeof(IWICDevelopRaw.Vtbl).IsLayoutSequential, Is.True);
-            }
-
-            /// <summary>Validates that the size of the <see cref="IWICDevelopRaw" /> struct is correct.</summary>
-            [Test]
-            public static void SizeOfTest()
-            {
-                if (Environment.Is64BitProcess)
-                {
-                    Assert.That(Marshal.SizeOf<IWICDevelopRaw.Vtbl>(), Is.EqualTo(344));
-                }
-                else
-                {
-                    Assert.That(Marshal.SizeOf<IWICDevelopRaw.Vtbl>(), Is.EqualTo(172));
-                }
+                Assert.That(sizeof(IWICDevelopRaw), Is.EqualTo(4));
             }
         }
     }

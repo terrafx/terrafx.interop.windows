@@ -12,61 +12,40 @@ namespace TerraFX.Interop
     [Guid("85611E73-70A9-490E-9614-A9E302777904")]
     public unsafe partial struct ID3D11On12Device
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID3D11On12Device*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID3D11On12Device*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11On12Device*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID3D11On12Device*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D11On12Device*, uint>)(lpVtbl[1]))((ID3D11On12Device*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID3D11On12Device*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D11On12Device*, uint>)(lpVtbl[2]))((ID3D11On12Device*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CreateWrappedResource([NativeTypeName("IUnknown *")] IUnknown* pResource12, [NativeTypeName("const D3D11_RESOURCE_FLAGS *")] D3D11_RESOURCE_FLAGS* pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppResource11)
         {
-            return lpVtbl->CreateWrappedResource((ID3D11On12Device*)Unsafe.AsPointer(ref this), pResource12, pFlags11, InState, OutState, riid, ppResource11);
+            return ((delegate* stdcall<ID3D11On12Device*, IUnknown*, D3D11_RESOURCE_FLAGS*, D3D12_RESOURCE_STATES, D3D12_RESOURCE_STATES, Guid*, void**, int>)(lpVtbl[3]))((ID3D11On12Device*)Unsafe.AsPointer(ref this), pResource12, pFlags11, InState, OutState, riid, ppResource11);
         }
 
         public void ReleaseWrappedResources([NativeTypeName("ID3D11Resource *const *")] ID3D11Resource** ppResources, [NativeTypeName("UINT")] uint NumResources)
         {
-            lpVtbl->ReleaseWrappedResources((ID3D11On12Device*)Unsafe.AsPointer(ref this), ppResources, NumResources);
+            ((delegate* stdcall<ID3D11On12Device*, ID3D11Resource**, uint, void>)(lpVtbl[4]))((ID3D11On12Device*)Unsafe.AsPointer(ref this), ppResources, NumResources);
         }
 
         public void AcquireWrappedResources([NativeTypeName("ID3D11Resource *const *")] ID3D11Resource** ppResources, [NativeTypeName("UINT")] uint NumResources)
         {
-            lpVtbl->AcquireWrappedResources((ID3D11On12Device*)Unsafe.AsPointer(ref this), ppResources, NumResources);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11On12Device*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11On12Device*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11On12Device*, uint> Release;
-
-            [NativeTypeName("HRESULT (IUnknown *, const D3D11_RESOURCE_FLAGS *, D3D12_RESOURCE_STATES, D3D12_RESOURCE_STATES, const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11On12Device*, IUnknown*, D3D11_RESOURCE_FLAGS*, D3D12_RESOURCE_STATES, D3D12_RESOURCE_STATES, Guid*, void**, int> CreateWrappedResource;
-
-            [NativeTypeName("void (ID3D11Resource *const *, UINT) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11On12Device*, ID3D11Resource**, uint, void> ReleaseWrappedResources;
-
-            [NativeTypeName("void (ID3D11Resource *const *, UINT) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D11On12Device*, ID3D11Resource**, uint, void> AcquireWrappedResources;
+            ((delegate* stdcall<ID3D11On12Device*, ID3D11Resource**, uint, void>)(lpVtbl[5]))((ID3D11On12Device*)Unsafe.AsPointer(ref this), ppResources, NumResources);
         }
     }
 }

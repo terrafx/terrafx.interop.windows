@@ -12,63 +12,42 @@ namespace TerraFX.Interop
     [Guid("69D14C80-C18E-11D0-A9CE-006097942311")]
     public unsafe partial struct IDataFilter
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IDataFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IDataFilter*, Guid*, void**, int>)(lpVtbl[0]))((IDataFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IDataFilter*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDataFilter*, uint>)(lpVtbl[1]))((IDataFilter*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IDataFilter*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDataFilter*, uint>)(lpVtbl[2]))((IDataFilter*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int DoEncode([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LONG")] int lInBufferSize, [NativeTypeName("BYTE *")] byte* pbInBuffer, [NativeTypeName("LONG")] int lOutBufferSize, [NativeTypeName("BYTE *")] byte* pbOutBuffer, [NativeTypeName("LONG")] int lInBytesAvailable, [NativeTypeName("LONG *")] int* plInBytesRead, [NativeTypeName("LONG *")] int* plOutBytesWritten, [NativeTypeName("DWORD")] uint dwReserved)
         {
-            return lpVtbl->DoEncode((IDataFilter*)Unsafe.AsPointer(ref this), dwFlags, lInBufferSize, pbInBuffer, lOutBufferSize, pbOutBuffer, lInBytesAvailable, plInBytesRead, plOutBytesWritten, dwReserved);
+            return ((delegate* stdcall<IDataFilter*, uint, int, byte*, int, byte*, int, int*, int*, uint, int>)(lpVtbl[3]))((IDataFilter*)Unsafe.AsPointer(ref this), dwFlags, lInBufferSize, pbInBuffer, lOutBufferSize, pbOutBuffer, lInBytesAvailable, plInBytesRead, plOutBytesWritten, dwReserved);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int DoDecode([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LONG")] int lInBufferSize, [NativeTypeName("BYTE *")] byte* pbInBuffer, [NativeTypeName("LONG")] int lOutBufferSize, [NativeTypeName("BYTE *")] byte* pbOutBuffer, [NativeTypeName("LONG")] int lInBytesAvailable, [NativeTypeName("LONG *")] int* plInBytesRead, [NativeTypeName("LONG *")] int* plOutBytesWritten, [NativeTypeName("DWORD")] uint dwReserved)
         {
-            return lpVtbl->DoDecode((IDataFilter*)Unsafe.AsPointer(ref this), dwFlags, lInBufferSize, pbInBuffer, lOutBufferSize, pbOutBuffer, lInBytesAvailable, plInBytesRead, plOutBytesWritten, dwReserved);
+            return ((delegate* stdcall<IDataFilter*, uint, int, byte*, int, byte*, int, int*, int*, uint, int>)(lpVtbl[4]))((IDataFilter*)Unsafe.AsPointer(ref this), dwFlags, lInBufferSize, pbInBuffer, lOutBufferSize, pbOutBuffer, lInBytesAvailable, plInBytesRead, plOutBytesWritten, dwReserved);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetEncodingLevel([NativeTypeName("DWORD")] uint dwEncLevel)
         {
-            return lpVtbl->SetEncodingLevel((IDataFilter*)Unsafe.AsPointer(ref this), dwEncLevel);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IDataFilter*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IDataFilter*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IDataFilter*, uint> Release;
-
-            [NativeTypeName("HRESULT (DWORD, LONG, BYTE *, LONG, BYTE *, LONG, LONG *, LONG *, DWORD) __attribute__((stdcall))")]
-            public delegate* stdcall<IDataFilter*, uint, int, byte*, int, byte*, int, int*, int*, uint, int> DoEncode;
-
-            [NativeTypeName("HRESULT (DWORD, LONG, BYTE *, LONG, BYTE *, LONG, LONG *, LONG *, DWORD) __attribute__((stdcall))")]
-            public delegate* stdcall<IDataFilter*, uint, int, byte*, int, byte*, int, int*, int*, uint, int> DoDecode;
-
-            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public delegate* stdcall<IDataFilter*, uint, int> SetEncodingLevel;
+            return ((delegate* stdcall<IDataFilter*, uint, int>)(lpVtbl[5]))((IDataFilter*)Unsafe.AsPointer(ref this), dwEncLevel);
         }
     }
 }

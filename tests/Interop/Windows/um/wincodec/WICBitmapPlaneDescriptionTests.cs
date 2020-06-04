@@ -1,25 +1,36 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-using System.Runtime.InteropServices;
+// Ported from um/wincodec.h in the Windows SDK for Windows 10.0.19041.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
 using NUnit.Framework;
+using System;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WICBitmapPlaneDescription" /> struct.</summary>
-    public static class WICBitmapPlaneDescriptionTests
+    public static unsafe class WICBitmapPlaneDescriptionTests
     {
-        /// <summary>Validates that the layout of the <see cref="WICBitmapPlaneDescription" /> struct is <see cref="LayoutKind.Sequential" />.</summary>
+        /// <summary>Validates that the <see cref="WICBitmapPlaneDescription" /> struct is blittable.</summary>
+        [Test]
+        public static void IsBlittableTest()
+        {
+            Assert.That(Marshal.SizeOf<WICBitmapPlaneDescription>(), Is.EqualTo(sizeof(WICBitmapPlaneDescription)));
+        }
+
+        /// <summary>Validates that the <see cref="WICBitmapPlaneDescription" /> struct has the right <see cref="LayoutKind" />.</summary>
         [Test]
         public static void IsLayoutSequentialTest()
         {
             Assert.That(typeof(WICBitmapPlaneDescription).IsLayoutSequential, Is.True);
         }
 
-        /// <summary>Validates that the size of the <see cref="WICBitmapPlaneDescription" /> struct is correct.</summary>
+        /// <summary>Validates that the <see cref="WICBitmapPlaneDescription" /> struct has the correct size.</summary>
         [Test]
         public static void SizeOfTest()
         {
-            Assert.That(Marshal.SizeOf<WICBitmapPlaneDescription>(), Is.EqualTo(24));
+            Assert.That(sizeof(WICBitmapPlaneDescription), Is.EqualTo(24));
         }
     }
 }

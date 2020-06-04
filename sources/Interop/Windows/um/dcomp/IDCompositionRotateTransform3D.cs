@@ -12,162 +12,108 @@ namespace TerraFX.Interop
     [Guid("D8F5B23F-D429-4a91-B55A-D2F45FD75B18")]
     public unsafe partial struct IDCompositionRotateTransform3D
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IDCompositionRotateTransform3D*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDCompositionRotateTransform3D*, uint>)(lpVtbl[1]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDCompositionRotateTransform3D*, uint>)(lpVtbl[2]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetAngle(float angle)
         {
-            return lpVtbl->SetAngle((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), angle);
+            return ((delegate* stdcall<IDCompositionRotateTransform3D*, float, int>)(lpVtbl[3]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), angle);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetAngle([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return lpVtbl->SetAngle1((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), animation);
+            return ((delegate* stdcall<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int>)(lpVtbl[4]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), animation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetAxisX(float axisX)
         {
-            return lpVtbl->SetAxisX((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), axisX);
+            return ((delegate* stdcall<IDCompositionRotateTransform3D*, float, int>)(lpVtbl[5]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), axisX);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetAxisX([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return lpVtbl->SetAxisX1((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), animation);
+            return ((delegate* stdcall<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int>)(lpVtbl[6]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), animation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetAxisY(float axisY)
         {
-            return lpVtbl->SetAxisY((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), axisY);
+            return ((delegate* stdcall<IDCompositionRotateTransform3D*, float, int>)(lpVtbl[7]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), axisY);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetAxisY([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return lpVtbl->SetAxisY1((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), animation);
+            return ((delegate* stdcall<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int>)(lpVtbl[8]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), animation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetAxisZ(float axisZ)
         {
-            return lpVtbl->SetAxisZ((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), axisZ);
+            return ((delegate* stdcall<IDCompositionRotateTransform3D*, float, int>)(lpVtbl[9]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), axisZ);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetAxisZ([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return lpVtbl->SetAxisZ1((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), animation);
+            return ((delegate* stdcall<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int>)(lpVtbl[10]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), animation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetCenterX(float centerX)
         {
-            return lpVtbl->SetCenterX((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), centerX);
+            return ((delegate* stdcall<IDCompositionRotateTransform3D*, float, int>)(lpVtbl[11]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), centerX);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetCenterX([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return lpVtbl->SetCenterX1((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), animation);
+            return ((delegate* stdcall<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int>)(lpVtbl[12]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), animation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetCenterY(float centerY)
         {
-            return lpVtbl->SetCenterY((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), centerY);
+            return ((delegate* stdcall<IDCompositionRotateTransform3D*, float, int>)(lpVtbl[13]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), centerY);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetCenterY([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return lpVtbl->SetCenterY1((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), animation);
+            return ((delegate* stdcall<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int>)(lpVtbl[14]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), animation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetCenterZ(float centerZ)
         {
-            return lpVtbl->SetCenterZ((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), centerZ);
+            return ((delegate* stdcall<IDCompositionRotateTransform3D*, float, int>)(lpVtbl[15]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), centerZ);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetCenterZ([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return lpVtbl->SetCenterZ1((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), animation);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionRotateTransform3D*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionRotateTransform3D*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionRotateTransform3D*, uint> Release;
-
-            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionRotateTransform3D*, float, int> SetAngle;
-
-            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int> SetAngle1;
-
-            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionRotateTransform3D*, float, int> SetAxisX;
-
-            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int> SetAxisX1;
-
-            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionRotateTransform3D*, float, int> SetAxisY;
-
-            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int> SetAxisY1;
-
-            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionRotateTransform3D*, float, int> SetAxisZ;
-
-            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int> SetAxisZ1;
-
-            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionRotateTransform3D*, float, int> SetCenterX;
-
-            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int> SetCenterX1;
-
-            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionRotateTransform3D*, float, int> SetCenterY;
-
-            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int> SetCenterY1;
-
-            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionRotateTransform3D*, float, int> SetCenterZ;
-
-            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int> SetCenterZ1;
+            return ((delegate* stdcall<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int>)(lpVtbl[16]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), animation);
         }
     }
 }

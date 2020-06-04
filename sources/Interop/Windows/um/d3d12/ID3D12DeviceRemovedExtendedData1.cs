@@ -12,72 +12,48 @@ namespace TerraFX.Interop
     [Guid("9727A022-CF1D-4DDA-9EBA-EFFA653FC506")]
     public unsafe partial struct ID3D12DeviceRemovedExtendedData1
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID3D12DeviceRemovedExtendedData1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID3D12DeviceRemovedExtendedData1*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12DeviceRemovedExtendedData1*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID3D12DeviceRemovedExtendedData1*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D12DeviceRemovedExtendedData1*, uint>)(lpVtbl[1]))((ID3D12DeviceRemovedExtendedData1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID3D12DeviceRemovedExtendedData1*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D12DeviceRemovedExtendedData1*, uint>)(lpVtbl[2]))((ID3D12DeviceRemovedExtendedData1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetAutoBreadcrumbsOutput([NativeTypeName("D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT *")] D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT* pOutput)
         {
-            return lpVtbl->GetAutoBreadcrumbsOutput((ID3D12DeviceRemovedExtendedData1*)Unsafe.AsPointer(ref this), pOutput);
+            return ((delegate* stdcall<ID3D12DeviceRemovedExtendedData1*, D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT*, int>)(lpVtbl[3]))((ID3D12DeviceRemovedExtendedData1*)Unsafe.AsPointer(ref this), pOutput);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPageFaultAllocationOutput([NativeTypeName("D3D12_DRED_PAGE_FAULT_OUTPUT *")] D3D12_DRED_PAGE_FAULT_OUTPUT* pOutput)
         {
-            return lpVtbl->GetPageFaultAllocationOutput((ID3D12DeviceRemovedExtendedData1*)Unsafe.AsPointer(ref this), pOutput);
+            return ((delegate* stdcall<ID3D12DeviceRemovedExtendedData1*, D3D12_DRED_PAGE_FAULT_OUTPUT*, int>)(lpVtbl[4]))((ID3D12DeviceRemovedExtendedData1*)Unsafe.AsPointer(ref this), pOutput);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetAutoBreadcrumbsOutput1([NativeTypeName("D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT1 *")] D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT1* pOutput)
         {
-            return lpVtbl->GetAutoBreadcrumbsOutput1((ID3D12DeviceRemovedExtendedData1*)Unsafe.AsPointer(ref this), pOutput);
+            return ((delegate* stdcall<ID3D12DeviceRemovedExtendedData1*, D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT1*, int>)(lpVtbl[5]))((ID3D12DeviceRemovedExtendedData1*)Unsafe.AsPointer(ref this), pOutput);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPageFaultAllocationOutput1([NativeTypeName("D3D12_DRED_PAGE_FAULT_OUTPUT1 *")] D3D12_DRED_PAGE_FAULT_OUTPUT1* pOutput)
         {
-            return lpVtbl->GetPageFaultAllocationOutput1((ID3D12DeviceRemovedExtendedData1*)Unsafe.AsPointer(ref this), pOutput);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12DeviceRemovedExtendedData1*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12DeviceRemovedExtendedData1*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12DeviceRemovedExtendedData1*, uint> Release;
-
-            [NativeTypeName("HRESULT (D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12DeviceRemovedExtendedData1*, D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT*, int> GetAutoBreadcrumbsOutput;
-
-            [NativeTypeName("HRESULT (D3D12_DRED_PAGE_FAULT_OUTPUT *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12DeviceRemovedExtendedData1*, D3D12_DRED_PAGE_FAULT_OUTPUT*, int> GetPageFaultAllocationOutput;
-
-            [NativeTypeName("HRESULT (D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT1 *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12DeviceRemovedExtendedData1*, D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT1*, int> GetAutoBreadcrumbsOutput1;
-
-            [NativeTypeName("HRESULT (D3D12_DRED_PAGE_FAULT_OUTPUT1 *) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12DeviceRemovedExtendedData1*, D3D12_DRED_PAGE_FAULT_OUTPUT1*, int> GetPageFaultAllocationOutput1;
+            return ((delegate* stdcall<ID3D12DeviceRemovedExtendedData1*, D3D12_DRED_PAGE_FAULT_OUTPUT1*, int>)(lpVtbl[6]))((ID3D12DeviceRemovedExtendedData1*)Unsafe.AsPointer(ref this), pOutput);
         }
     }
 }

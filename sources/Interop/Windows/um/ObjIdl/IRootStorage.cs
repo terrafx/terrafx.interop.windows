@@ -12,45 +12,30 @@ namespace TerraFX.Interop
     [Guid("00000012-0000-0000-C000-000000000046")]
     public unsafe partial struct IRootStorage
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IRootStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IRootStorage*, Guid*, void**, int>)(lpVtbl[0]))((IRootStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IRootStorage*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IRootStorage*, uint>)(lpVtbl[1]))((IRootStorage*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IRootStorage*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IRootStorage*, uint>)(lpVtbl[2]))((IRootStorage*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SwitchToFile([NativeTypeName("LPOLESTR")] ushort* pszFile)
         {
-            return lpVtbl->SwitchToFile((IRootStorage*)Unsafe.AsPointer(ref this), pszFile);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IRootStorage*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IRootStorage*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IRootStorage*, uint> Release;
-
-            [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-            public delegate* stdcall<IRootStorage*, ushort*, int> SwitchToFile;
+            return ((delegate* stdcall<IRootStorage*, ushort*, int>)(lpVtbl[3]))((IRootStorage*)Unsafe.AsPointer(ref this), pszFile);
         }
     }
 }

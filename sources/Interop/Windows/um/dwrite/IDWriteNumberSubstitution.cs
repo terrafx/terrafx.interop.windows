@@ -12,36 +12,24 @@ namespace TerraFX.Interop
     [Guid("14885CC9-BAB0-4F90-B6ED-5C366A2CD03D")]
     public unsafe partial struct IDWriteNumberSubstitution
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IDWriteNumberSubstitution*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IDWriteNumberSubstitution*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteNumberSubstitution*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IDWriteNumberSubstitution*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDWriteNumberSubstitution*, uint>)(lpVtbl[1]))((IDWriteNumberSubstitution*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IDWriteNumberSubstitution*)Unsafe.AsPointer(ref this));
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IDWriteNumberSubstitution*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IDWriteNumberSubstitution*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IDWriteNumberSubstitution*, uint> Release;
+            return ((delegate* stdcall<IDWriteNumberSubstitution*, uint>)(lpVtbl[2]))((IDWriteNumberSubstitution*)Unsafe.AsPointer(ref this));
         }
     }
 }

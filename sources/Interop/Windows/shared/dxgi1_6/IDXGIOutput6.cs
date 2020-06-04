@@ -12,269 +12,179 @@ namespace TerraFX.Interop
     [Guid("068346E8-AAEC-4B84-ADD7-137F513F77A1")]
     public unsafe partial struct IDXGIOutput6
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IDXGIOutput6*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IDXGIOutput6*, Guid*, void**, int>)(lpVtbl[0]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IDXGIOutput6*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDXGIOutput6*, uint>)(lpVtbl[1]))((IDXGIOutput6*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IDXGIOutput6*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDXGIOutput6*, uint>)(lpVtbl[2]))((IDXGIOutput6*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData)
         {
-            return lpVtbl->SetPrivateData((IDXGIOutput6*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
+            return ((delegate* stdcall<IDXGIOutput6*, Guid*, uint, void*, int>)(lpVtbl[3]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("const IUnknown *")] IUnknown* pUnknown)
         {
-            return lpVtbl->SetPrivateDataInterface((IDXGIOutput6*)Unsafe.AsPointer(ref this), Name, pUnknown);
+            return ((delegate* stdcall<IDXGIOutput6*, Guid*, IUnknown*, int>)(lpVtbl[4]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), Name, pUnknown);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetPrivateData([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData)
         {
-            return lpVtbl->GetPrivateData((IDXGIOutput6*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
+            return ((delegate* stdcall<IDXGIOutput6*, Guid*, uint*, void*, int>)(lpVtbl[5]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetParent([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppParent)
         {
-            return lpVtbl->GetParent((IDXGIOutput6*)Unsafe.AsPointer(ref this), riid, ppParent);
+            return ((delegate* stdcall<IDXGIOutput6*, Guid*, void**, int>)(lpVtbl[6]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), riid, ppParent);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDesc([NativeTypeName("DXGI_OUTPUT_DESC *")] DXGI_OUTPUT_DESC* pDesc)
         {
-            return lpVtbl->GetDesc((IDXGIOutput6*)Unsafe.AsPointer(ref this), pDesc);
+            return ((delegate* stdcall<IDXGIOutput6*, DXGI_OUTPUT_DESC*, int>)(lpVtbl[7]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDisplayModeList(DXGI_FORMAT EnumFormat, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("UINT *")] uint* pNumModes, [NativeTypeName("DXGI_MODE_DESC *")] DXGI_MODE_DESC* pDesc)
         {
-            return lpVtbl->GetDisplayModeList((IDXGIOutput6*)Unsafe.AsPointer(ref this), EnumFormat, Flags, pNumModes, pDesc);
+            return ((delegate* stdcall<IDXGIOutput6*, DXGI_FORMAT, uint, uint*, DXGI_MODE_DESC*, int>)(lpVtbl[8]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), EnumFormat, Flags, pNumModes, pDesc);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int FindClosestMatchingMode([NativeTypeName("const DXGI_MODE_DESC *")] DXGI_MODE_DESC* pModeToMatch, [NativeTypeName("DXGI_MODE_DESC *")] DXGI_MODE_DESC* pClosestMatch, [NativeTypeName("IUnknown *")] IUnknown* pConcernedDevice)
         {
-            return lpVtbl->FindClosestMatchingMode((IDXGIOutput6*)Unsafe.AsPointer(ref this), pModeToMatch, pClosestMatch, pConcernedDevice);
+            return ((delegate* stdcall<IDXGIOutput6*, DXGI_MODE_DESC*, DXGI_MODE_DESC*, IUnknown*, int>)(lpVtbl[9]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), pModeToMatch, pClosestMatch, pConcernedDevice);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int WaitForVBlank()
         {
-            return lpVtbl->WaitForVBlank((IDXGIOutput6*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDXGIOutput6*, int>)(lpVtbl[10]))((IDXGIOutput6*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int TakeOwnership([NativeTypeName("IUnknown *")] IUnknown* pDevice, [NativeTypeName("BOOL")] int Exclusive)
         {
-            return lpVtbl->TakeOwnership((IDXGIOutput6*)Unsafe.AsPointer(ref this), pDevice, Exclusive);
+            return ((delegate* stdcall<IDXGIOutput6*, IUnknown*, int, int>)(lpVtbl[11]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), pDevice, Exclusive);
         }
 
         public void ReleaseOwnership()
         {
-            lpVtbl->ReleaseOwnership((IDXGIOutput6*)Unsafe.AsPointer(ref this));
+            ((delegate* stdcall<IDXGIOutput6*, void>)(lpVtbl[12]))((IDXGIOutput6*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetGammaControlCapabilities([NativeTypeName("DXGI_GAMMA_CONTROL_CAPABILITIES *")] DXGI_GAMMA_CONTROL_CAPABILITIES* pGammaCaps)
         {
-            return lpVtbl->GetGammaControlCapabilities((IDXGIOutput6*)Unsafe.AsPointer(ref this), pGammaCaps);
+            return ((delegate* stdcall<IDXGIOutput6*, DXGI_GAMMA_CONTROL_CAPABILITIES*, int>)(lpVtbl[13]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), pGammaCaps);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetGammaControl([NativeTypeName("const DXGI_GAMMA_CONTROL *")] DXGI_GAMMA_CONTROL* pArray)
         {
-            return lpVtbl->SetGammaControl((IDXGIOutput6*)Unsafe.AsPointer(ref this), pArray);
+            return ((delegate* stdcall<IDXGIOutput6*, DXGI_GAMMA_CONTROL*, int>)(lpVtbl[14]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), pArray);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetGammaControl([NativeTypeName("DXGI_GAMMA_CONTROL *")] DXGI_GAMMA_CONTROL* pArray)
         {
-            return lpVtbl->GetGammaControl((IDXGIOutput6*)Unsafe.AsPointer(ref this), pArray);
+            return ((delegate* stdcall<IDXGIOutput6*, DXGI_GAMMA_CONTROL*, int>)(lpVtbl[15]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), pArray);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetDisplaySurface([NativeTypeName("IDXGISurface *")] IDXGISurface* pScanoutSurface)
         {
-            return lpVtbl->SetDisplaySurface((IDXGIOutput6*)Unsafe.AsPointer(ref this), pScanoutSurface);
+            return ((delegate* stdcall<IDXGIOutput6*, IDXGISurface*, int>)(lpVtbl[16]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), pScanoutSurface);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDisplaySurfaceData([NativeTypeName("IDXGISurface *")] IDXGISurface* pDestination)
         {
-            return lpVtbl->GetDisplaySurfaceData((IDXGIOutput6*)Unsafe.AsPointer(ref this), pDestination);
+            return ((delegate* stdcall<IDXGIOutput6*, IDXGISurface*, int>)(lpVtbl[17]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), pDestination);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetFrameStatistics([NativeTypeName("DXGI_FRAME_STATISTICS *")] DXGI_FRAME_STATISTICS* pStats)
         {
-            return lpVtbl->GetFrameStatistics((IDXGIOutput6*)Unsafe.AsPointer(ref this), pStats);
+            return ((delegate* stdcall<IDXGIOutput6*, DXGI_FRAME_STATISTICS*, int>)(lpVtbl[18]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), pStats);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDisplayModeList1(DXGI_FORMAT EnumFormat, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("UINT *")] uint* pNumModes, [NativeTypeName("DXGI_MODE_DESC1 *")] DXGI_MODE_DESC1* pDesc)
         {
-            return lpVtbl->GetDisplayModeList1((IDXGIOutput6*)Unsafe.AsPointer(ref this), EnumFormat, Flags, pNumModes, pDesc);
+            return ((delegate* stdcall<IDXGIOutput6*, DXGI_FORMAT, uint, uint*, DXGI_MODE_DESC1*, int>)(lpVtbl[19]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), EnumFormat, Flags, pNumModes, pDesc);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int FindClosestMatchingMode1([NativeTypeName("const DXGI_MODE_DESC1 *")] DXGI_MODE_DESC1* pModeToMatch, [NativeTypeName("DXGI_MODE_DESC1 *")] DXGI_MODE_DESC1* pClosestMatch, [NativeTypeName("IUnknown *")] IUnknown* pConcernedDevice)
         {
-            return lpVtbl->FindClosestMatchingMode1((IDXGIOutput6*)Unsafe.AsPointer(ref this), pModeToMatch, pClosestMatch, pConcernedDevice);
+            return ((delegate* stdcall<IDXGIOutput6*, DXGI_MODE_DESC1*, DXGI_MODE_DESC1*, IUnknown*, int>)(lpVtbl[20]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), pModeToMatch, pClosestMatch, pConcernedDevice);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDisplaySurfaceData1([NativeTypeName("IDXGIResource *")] IDXGIResource* pDestination)
         {
-            return lpVtbl->GetDisplaySurfaceData1((IDXGIOutput6*)Unsafe.AsPointer(ref this), pDestination);
+            return ((delegate* stdcall<IDXGIOutput6*, IDXGIResource*, int>)(lpVtbl[21]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), pDestination);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int DuplicateOutput([NativeTypeName("IUnknown *")] IUnknown* pDevice, [NativeTypeName("IDXGIOutputDuplication **")] IDXGIOutputDuplication** ppOutputDuplication)
         {
-            return lpVtbl->DuplicateOutput((IDXGIOutput6*)Unsafe.AsPointer(ref this), pDevice, ppOutputDuplication);
+            return ((delegate* stdcall<IDXGIOutput6*, IUnknown*, IDXGIOutputDuplication**, int>)(lpVtbl[22]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), pDevice, ppOutputDuplication);
         }
 
         [return: NativeTypeName("BOOL")]
         public int SupportsOverlays()
         {
-            return lpVtbl->SupportsOverlays((IDXGIOutput6*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDXGIOutput6*, int>)(lpVtbl[23]))((IDXGIOutput6*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CheckOverlaySupport(DXGI_FORMAT EnumFormat, [NativeTypeName("IUnknown *")] IUnknown* pConcernedDevice, [NativeTypeName("UINT *")] uint* pFlags)
         {
-            return lpVtbl->CheckOverlaySupport((IDXGIOutput6*)Unsafe.AsPointer(ref this), EnumFormat, pConcernedDevice, pFlags);
+            return ((delegate* stdcall<IDXGIOutput6*, DXGI_FORMAT, IUnknown*, uint*, int>)(lpVtbl[24]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), EnumFormat, pConcernedDevice, pFlags);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CheckOverlayColorSpaceSupport(DXGI_FORMAT Format, DXGI_COLOR_SPACE_TYPE ColorSpace, [NativeTypeName("IUnknown *")] IUnknown* pConcernedDevice, [NativeTypeName("UINT *")] uint* pFlags)
         {
-            return lpVtbl->CheckOverlayColorSpaceSupport((IDXGIOutput6*)Unsafe.AsPointer(ref this), Format, ColorSpace, pConcernedDevice, pFlags);
+            return ((delegate* stdcall<IDXGIOutput6*, DXGI_FORMAT, DXGI_COLOR_SPACE_TYPE, IUnknown*, uint*, int>)(lpVtbl[25]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), Format, ColorSpace, pConcernedDevice, pFlags);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int DuplicateOutput1([NativeTypeName("IUnknown *")] IUnknown* pDevice, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("UINT")] uint SupportedFormatsCount, [NativeTypeName("const DXGI_FORMAT *")] DXGI_FORMAT* pSupportedFormats, [NativeTypeName("IDXGIOutputDuplication **")] IDXGIOutputDuplication** ppOutputDuplication)
         {
-            return lpVtbl->DuplicateOutput1((IDXGIOutput6*)Unsafe.AsPointer(ref this), pDevice, Flags, SupportedFormatsCount, pSupportedFormats, ppOutputDuplication);
+            return ((delegate* stdcall<IDXGIOutput6*, IUnknown*, uint, uint, DXGI_FORMAT*, IDXGIOutputDuplication**, int>)(lpVtbl[26]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), pDevice, Flags, SupportedFormatsCount, pSupportedFormats, ppOutputDuplication);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetDesc1([NativeTypeName("DXGI_OUTPUT_DESC1 *")] DXGI_OUTPUT_DESC1* pDesc)
         {
-            return lpVtbl->GetDesc1((IDXGIOutput6*)Unsafe.AsPointer(ref this), pDesc);
+            return ((delegate* stdcall<IDXGIOutput6*, DXGI_OUTPUT_DESC1*, int>)(lpVtbl[27]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int CheckHardwareCompositionSupport([NativeTypeName("UINT *")] uint* pFlags)
         {
-            return lpVtbl->CheckHardwareCompositionSupport((IDXGIOutput6*)Unsafe.AsPointer(ref this), pFlags);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, uint> Release;
-
-            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, Guid*, uint, void*, int> SetPrivateData;
-
-            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, Guid*, IUnknown*, int> SetPrivateDataInterface;
-
-            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, Guid*, uint*, void*, int> GetPrivateData;
-
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, Guid*, void**, int> GetParent;
-
-            [NativeTypeName("HRESULT (DXGI_OUTPUT_DESC *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, DXGI_OUTPUT_DESC*, int> GetDesc;
-
-            [NativeTypeName("HRESULT (DXGI_FORMAT, UINT, UINT *, DXGI_MODE_DESC *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, DXGI_FORMAT, uint, uint*, DXGI_MODE_DESC*, int> GetDisplayModeList;
-
-            [NativeTypeName("HRESULT (const DXGI_MODE_DESC *, DXGI_MODE_DESC *, IUnknown *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, DXGI_MODE_DESC*, DXGI_MODE_DESC*, IUnknown*, int> FindClosestMatchingMode;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, int> WaitForVBlank;
-
-            [NativeTypeName("HRESULT (IUnknown *, BOOL) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, IUnknown*, int, int> TakeOwnership;
-
-            [NativeTypeName("void () __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, void> ReleaseOwnership;
-
-            [NativeTypeName("HRESULT (DXGI_GAMMA_CONTROL_CAPABILITIES *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, DXGI_GAMMA_CONTROL_CAPABILITIES*, int> GetGammaControlCapabilities;
-
-            [NativeTypeName("HRESULT (const DXGI_GAMMA_CONTROL *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, DXGI_GAMMA_CONTROL*, int> SetGammaControl;
-
-            [NativeTypeName("HRESULT (DXGI_GAMMA_CONTROL *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, DXGI_GAMMA_CONTROL*, int> GetGammaControl;
-
-            [NativeTypeName("HRESULT (IDXGISurface *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, IDXGISurface*, int> SetDisplaySurface;
-
-            [NativeTypeName("HRESULT (IDXGISurface *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, IDXGISurface*, int> GetDisplaySurfaceData;
-
-            [NativeTypeName("HRESULT (DXGI_FRAME_STATISTICS *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, DXGI_FRAME_STATISTICS*, int> GetFrameStatistics;
-
-            [NativeTypeName("HRESULT (DXGI_FORMAT, UINT, UINT *, DXGI_MODE_DESC1 *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, DXGI_FORMAT, uint, uint*, DXGI_MODE_DESC1*, int> GetDisplayModeList1;
-
-            [NativeTypeName("HRESULT (const DXGI_MODE_DESC1 *, DXGI_MODE_DESC1 *, IUnknown *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, DXGI_MODE_DESC1*, DXGI_MODE_DESC1*, IUnknown*, int> FindClosestMatchingMode1;
-
-            [NativeTypeName("HRESULT (IDXGIResource *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, IDXGIResource*, int> GetDisplaySurfaceData1;
-
-            [NativeTypeName("HRESULT (IUnknown *, IDXGIOutputDuplication **) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, IUnknown*, IDXGIOutputDuplication**, int> DuplicateOutput;
-
-            [NativeTypeName("BOOL () __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, int> SupportsOverlays;
-
-            [NativeTypeName("HRESULT (DXGI_FORMAT, IUnknown *, UINT *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, DXGI_FORMAT, IUnknown*, uint*, int> CheckOverlaySupport;
-
-            [NativeTypeName("HRESULT (DXGI_FORMAT, DXGI_COLOR_SPACE_TYPE, IUnknown *, UINT *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, DXGI_FORMAT, DXGI_COLOR_SPACE_TYPE, IUnknown*, uint*, int> CheckOverlayColorSpaceSupport;
-
-            [NativeTypeName("HRESULT (IUnknown *, UINT, UINT, const DXGI_FORMAT *, IDXGIOutputDuplication **) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, IUnknown*, uint, uint, DXGI_FORMAT*, IDXGIOutputDuplication**, int> DuplicateOutput1;
-
-            [NativeTypeName("HRESULT (DXGI_OUTPUT_DESC1 *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, DXGI_OUTPUT_DESC1*, int> GetDesc1;
-
-            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDXGIOutput6*, uint*, int> CheckHardwareCompositionSupport;
+            return ((delegate* stdcall<IDXGIOutput6*, uint*, int>)(lpVtbl[28]))((IDXGIOutput6*)Unsafe.AsPointer(ref this), pFlags);
         }
     }
 }

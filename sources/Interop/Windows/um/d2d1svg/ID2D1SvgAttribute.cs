@@ -12,61 +12,40 @@ namespace TerraFX.Interop
     [Guid("C9CDB0DD-F8C9-4E70-B7C2-301C80292C5E")]
     public unsafe partial struct ID2D1SvgAttribute
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID2D1SvgAttribute*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID2D1SvgAttribute*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1SvgAttribute*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID2D1SvgAttribute*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID2D1SvgAttribute*, uint>)(lpVtbl[1]))((ID2D1SvgAttribute*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID2D1SvgAttribute*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID2D1SvgAttribute*, uint>)(lpVtbl[2]))((ID2D1SvgAttribute*)Unsafe.AsPointer(ref this));
         }
 
         public void GetFactory([NativeTypeName("ID2D1Factory **")] ID2D1Factory** factory)
         {
-            lpVtbl->GetFactory((ID2D1SvgAttribute*)Unsafe.AsPointer(ref this), factory);
+            ((delegate* stdcall<ID2D1SvgAttribute*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1SvgAttribute*)Unsafe.AsPointer(ref this), factory);
         }
 
         public void GetElement([NativeTypeName("ID2D1SvgElement **")] ID2D1SvgElement** element)
         {
-            lpVtbl->GetElement((ID2D1SvgAttribute*)Unsafe.AsPointer(ref this), element);
+            ((delegate* stdcall<ID2D1SvgAttribute*, ID2D1SvgElement**, void>)(lpVtbl[4]))((ID2D1SvgAttribute*)Unsafe.AsPointer(ref this), element);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Clone([NativeTypeName("ID2D1SvgAttribute **")] ID2D1SvgAttribute** attribute)
         {
-            return lpVtbl->Clone((ID2D1SvgAttribute*)Unsafe.AsPointer(ref this), attribute);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1SvgAttribute*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1SvgAttribute*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1SvgAttribute*, uint> Release;
-
-            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1SvgAttribute*, ID2D1Factory**, void> GetFactory;
-
-            [NativeTypeName("void (ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1SvgAttribute*, ID2D1SvgElement**, void> GetElement;
-
-            [NativeTypeName("HRESULT (ID2D1SvgAttribute **) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1SvgAttribute*, ID2D1SvgAttribute**, int> Clone;
+            return ((delegate* stdcall<ID2D1SvgAttribute*, ID2D1SvgAttribute**, int>)(lpVtbl[5]))((ID2D1SvgAttribute*)Unsafe.AsPointer(ref this), attribute);
         }
     }
 }

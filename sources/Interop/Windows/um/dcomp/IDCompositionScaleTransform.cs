@@ -12,108 +12,72 @@ namespace TerraFX.Interop
     [Guid("71FDE914-40EF-45ef-BD51-68B037C339F9")]
     public unsafe partial struct IDCompositionScaleTransform
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IDCompositionScaleTransform*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDCompositionScaleTransform*, uint>)(lpVtbl[1]))((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDCompositionScaleTransform*, uint>)(lpVtbl[2]))((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetScaleX(float scaleX)
         {
-            return lpVtbl->SetScaleX((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this), scaleX);
+            return ((delegate* stdcall<IDCompositionScaleTransform*, float, int>)(lpVtbl[3]))((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this), scaleX);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetScaleX([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return lpVtbl->SetScaleX1((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this), animation);
+            return ((delegate* stdcall<IDCompositionScaleTransform*, IDCompositionAnimation*, int>)(lpVtbl[4]))((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this), animation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetScaleY(float scaleY)
         {
-            return lpVtbl->SetScaleY((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this), scaleY);
+            return ((delegate* stdcall<IDCompositionScaleTransform*, float, int>)(lpVtbl[5]))((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this), scaleY);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetScaleY([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return lpVtbl->SetScaleY1((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this), animation);
+            return ((delegate* stdcall<IDCompositionScaleTransform*, IDCompositionAnimation*, int>)(lpVtbl[6]))((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this), animation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetCenterX(float centerX)
         {
-            return lpVtbl->SetCenterX((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this), centerX);
+            return ((delegate* stdcall<IDCompositionScaleTransform*, float, int>)(lpVtbl[7]))((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this), centerX);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetCenterX([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return lpVtbl->SetCenterX1((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this), animation);
+            return ((delegate* stdcall<IDCompositionScaleTransform*, IDCompositionAnimation*, int>)(lpVtbl[8]))((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this), animation);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetCenterY(float centerY)
         {
-            return lpVtbl->SetCenterY((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this), centerY);
+            return ((delegate* stdcall<IDCompositionScaleTransform*, float, int>)(lpVtbl[9]))((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this), centerY);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetCenterY([NativeTypeName("IDCompositionAnimation *")] IDCompositionAnimation* animation)
         {
-            return lpVtbl->SetCenterY1((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this), animation);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionScaleTransform*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionScaleTransform*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionScaleTransform*, uint> Release;
-
-            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionScaleTransform*, float, int> SetScaleX;
-
-            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionScaleTransform*, IDCompositionAnimation*, int> SetScaleX1;
-
-            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionScaleTransform*, float, int> SetScaleY;
-
-            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionScaleTransform*, IDCompositionAnimation*, int> SetScaleY1;
-
-            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionScaleTransform*, float, int> SetCenterX;
-
-            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionScaleTransform*, IDCompositionAnimation*, int> SetCenterX1;
-
-            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionScaleTransform*, float, int> SetCenterY;
-
-            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionScaleTransform*, IDCompositionAnimation*, int> SetCenterY1;
+            return ((delegate* stdcall<IDCompositionScaleTransform*, IDCompositionAnimation*, int>)(lpVtbl[10]))((IDCompositionScaleTransform*)Unsafe.AsPointer(ref this), animation);
         }
     }
 }

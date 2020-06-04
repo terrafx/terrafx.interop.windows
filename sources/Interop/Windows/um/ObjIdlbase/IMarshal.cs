@@ -12,90 +12,60 @@ namespace TerraFX.Interop
     [Guid("00000003-0000-0000-C000-000000000046")]
     public unsafe partial struct IMarshal
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IMarshal*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IMarshal*, Guid*, void**, int>)(lpVtbl[0]))((IMarshal*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IMarshal*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IMarshal*, uint>)(lpVtbl[1]))((IMarshal*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IMarshal*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IMarshal*, uint>)(lpVtbl[2]))((IMarshal*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetUnmarshalClass([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void *")] void* pv, [NativeTypeName("DWORD")] uint dwDestContext, [NativeTypeName("void *")] void* pvDestContext, [NativeTypeName("DWORD")] uint mshlflags, [NativeTypeName("CLSID *")] Guid* pCid)
         {
-            return lpVtbl->GetUnmarshalClass((IMarshal*)Unsafe.AsPointer(ref this), riid, pv, dwDestContext, pvDestContext, mshlflags, pCid);
+            return ((delegate* stdcall<IMarshal*, Guid*, void*, uint, void*, uint, Guid*, int>)(lpVtbl[3]))((IMarshal*)Unsafe.AsPointer(ref this), riid, pv, dwDestContext, pvDestContext, mshlflags, pCid);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetMarshalSizeMax([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void *")] void* pv, [NativeTypeName("DWORD")] uint dwDestContext, [NativeTypeName("void *")] void* pvDestContext, [NativeTypeName("DWORD")] uint mshlflags, [NativeTypeName("DWORD *")] uint* pSize)
         {
-            return lpVtbl->GetMarshalSizeMax((IMarshal*)Unsafe.AsPointer(ref this), riid, pv, dwDestContext, pvDestContext, mshlflags, pSize);
+            return ((delegate* stdcall<IMarshal*, Guid*, void*, uint, void*, uint, uint*, int>)(lpVtbl[4]))((IMarshal*)Unsafe.AsPointer(ref this), riid, pv, dwDestContext, pvDestContext, mshlflags, pSize);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int MarshalInterface([NativeTypeName("IStream *")] IStream* pStm, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void *")] void* pv, [NativeTypeName("DWORD")] uint dwDestContext, [NativeTypeName("void *")] void* pvDestContext, [NativeTypeName("DWORD")] uint mshlflags)
         {
-            return lpVtbl->MarshalInterface((IMarshal*)Unsafe.AsPointer(ref this), pStm, riid, pv, dwDestContext, pvDestContext, mshlflags);
+            return ((delegate* stdcall<IMarshal*, IStream*, Guid*, void*, uint, void*, uint, int>)(lpVtbl[5]))((IMarshal*)Unsafe.AsPointer(ref this), pStm, riid, pv, dwDestContext, pvDestContext, mshlflags);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int UnmarshalInterface([NativeTypeName("IStream *")] IStream* pStm, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppv)
         {
-            return lpVtbl->UnmarshalInterface((IMarshal*)Unsafe.AsPointer(ref this), pStm, riid, ppv);
+            return ((delegate* stdcall<IMarshal*, IStream*, Guid*, void**, int>)(lpVtbl[6]))((IMarshal*)Unsafe.AsPointer(ref this), pStm, riid, ppv);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int ReleaseMarshalData([NativeTypeName("IStream *")] IStream* pStm)
         {
-            return lpVtbl->ReleaseMarshalData((IMarshal*)Unsafe.AsPointer(ref this), pStm);
+            return ((delegate* stdcall<IMarshal*, IStream*, int>)(lpVtbl[7]))((IMarshal*)Unsafe.AsPointer(ref this), pStm);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int DisconnectObject([NativeTypeName("DWORD")] uint dwReserved)
         {
-            return lpVtbl->DisconnectObject((IMarshal*)Unsafe.AsPointer(ref this), dwReserved);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IMarshal*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IMarshal*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IMarshal*, uint> Release;
-
-            [NativeTypeName("HRESULT (const IID &, void *, DWORD, void *, DWORD, CLSID *) __attribute__((stdcall))")]
-            public delegate* stdcall<IMarshal*, Guid*, void*, uint, void*, uint, Guid*, int> GetUnmarshalClass;
-
-            [NativeTypeName("HRESULT (const IID &, void *, DWORD, void *, DWORD, DWORD *) __attribute__((stdcall))")]
-            public delegate* stdcall<IMarshal*, Guid*, void*, uint, void*, uint, uint*, int> GetMarshalSizeMax;
-
-            [NativeTypeName("HRESULT (IStream *, const IID &, void *, DWORD, void *, DWORD) __attribute__((stdcall))")]
-            public delegate* stdcall<IMarshal*, IStream*, Guid*, void*, uint, void*, uint, int> MarshalInterface;
-
-            [NativeTypeName("HRESULT (IStream *, const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IMarshal*, IStream*, Guid*, void**, int> UnmarshalInterface;
-
-            [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
-            public delegate* stdcall<IMarshal*, IStream*, int> ReleaseMarshalData;
-
-            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public delegate* stdcall<IMarshal*, uint, int> DisconnectObject;
+            return ((delegate* stdcall<IMarshal*, uint, int>)(lpVtbl[8]))((IMarshal*)Unsafe.AsPointer(ref this), dwReserved);
         }
     }
 }

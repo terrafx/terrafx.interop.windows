@@ -12,45 +12,30 @@ namespace TerraFX.Interop
     [Guid("eacdd04c-117e-4e17-88f4-d1b12b0e3d89")]
     public unsafe partial struct IDCompositionTarget
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IDCompositionTarget*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IDCompositionTarget*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionTarget*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IDCompositionTarget*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDCompositionTarget*, uint>)(lpVtbl[1]))((IDCompositionTarget*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IDCompositionTarget*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDCompositionTarget*, uint>)(lpVtbl[2]))((IDCompositionTarget*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetRoot([NativeTypeName("IDCompositionVisual *")] IDCompositionVisual* visual)
         {
-            return lpVtbl->SetRoot((IDCompositionTarget*)Unsafe.AsPointer(ref this), visual);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionTarget*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionTarget*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionTarget*, uint> Release;
-
-            [NativeTypeName("HRESULT (IDCompositionVisual *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<IDCompositionTarget*, IDCompositionVisual*, int> SetRoot;
+            return ((delegate* stdcall<IDCompositionTarget*, IDCompositionVisual*, int>)(lpVtbl[3]))((IDCompositionTarget*)Unsafe.AsPointer(ref this), visual);
         }
     }
 }

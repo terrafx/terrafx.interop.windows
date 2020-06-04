@@ -12,68 +12,44 @@ namespace TerraFX.Interop
     [Guid("DBD5AE51-3317-4F0A-ADF9-1D7CEDCAAE0B")]
     public unsafe partial struct ID3D12DeviceRemovedExtendedDataSettings1
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID3D12DeviceRemovedExtendedDataSettings1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID3D12DeviceRemovedExtendedDataSettings1*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12DeviceRemovedExtendedDataSettings1*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID3D12DeviceRemovedExtendedDataSettings1*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D12DeviceRemovedExtendedDataSettings1*, uint>)(lpVtbl[1]))((ID3D12DeviceRemovedExtendedDataSettings1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID3D12DeviceRemovedExtendedDataSettings1*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D12DeviceRemovedExtendedDataSettings1*, uint>)(lpVtbl[2]))((ID3D12DeviceRemovedExtendedDataSettings1*)Unsafe.AsPointer(ref this));
         }
 
         public void SetAutoBreadcrumbsEnablement(D3D12_DRED_ENABLEMENT Enablement)
         {
-            lpVtbl->SetAutoBreadcrumbsEnablement((ID3D12DeviceRemovedExtendedDataSettings1*)Unsafe.AsPointer(ref this), Enablement);
+            ((delegate* stdcall<ID3D12DeviceRemovedExtendedDataSettings1*, D3D12_DRED_ENABLEMENT, void>)(lpVtbl[3]))((ID3D12DeviceRemovedExtendedDataSettings1*)Unsafe.AsPointer(ref this), Enablement);
         }
 
         public void SetPageFaultEnablement(D3D12_DRED_ENABLEMENT Enablement)
         {
-            lpVtbl->SetPageFaultEnablement((ID3D12DeviceRemovedExtendedDataSettings1*)Unsafe.AsPointer(ref this), Enablement);
+            ((delegate* stdcall<ID3D12DeviceRemovedExtendedDataSettings1*, D3D12_DRED_ENABLEMENT, void>)(lpVtbl[4]))((ID3D12DeviceRemovedExtendedDataSettings1*)Unsafe.AsPointer(ref this), Enablement);
         }
 
         public void SetWatsonDumpEnablement(D3D12_DRED_ENABLEMENT Enablement)
         {
-            lpVtbl->SetWatsonDumpEnablement((ID3D12DeviceRemovedExtendedDataSettings1*)Unsafe.AsPointer(ref this), Enablement);
+            ((delegate* stdcall<ID3D12DeviceRemovedExtendedDataSettings1*, D3D12_DRED_ENABLEMENT, void>)(lpVtbl[5]))((ID3D12DeviceRemovedExtendedDataSettings1*)Unsafe.AsPointer(ref this), Enablement);
         }
 
         public void SetBreadcrumbContextEnablement(D3D12_DRED_ENABLEMENT Enablement)
         {
-            lpVtbl->SetBreadcrumbContextEnablement((ID3D12DeviceRemovedExtendedDataSettings1*)Unsafe.AsPointer(ref this), Enablement);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12DeviceRemovedExtendedDataSettings1*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12DeviceRemovedExtendedDataSettings1*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12DeviceRemovedExtendedDataSettings1*, uint> Release;
-
-            [NativeTypeName("void (D3D12_DRED_ENABLEMENT) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12DeviceRemovedExtendedDataSettings1*, D3D12_DRED_ENABLEMENT, void> SetAutoBreadcrumbsEnablement;
-
-            [NativeTypeName("void (D3D12_DRED_ENABLEMENT) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12DeviceRemovedExtendedDataSettings1*, D3D12_DRED_ENABLEMENT, void> SetPageFaultEnablement;
-
-            [NativeTypeName("void (D3D12_DRED_ENABLEMENT) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12DeviceRemovedExtendedDataSettings1*, D3D12_DRED_ENABLEMENT, void> SetWatsonDumpEnablement;
-
-            [NativeTypeName("void (D3D12_DRED_ENABLEMENT) __attribute__((stdcall))")]
-            public delegate* stdcall<ID3D12DeviceRemovedExtendedDataSettings1*, D3D12_DRED_ENABLEMENT, void> SetBreadcrumbContextEnablement;
+            ((delegate* stdcall<ID3D12DeviceRemovedExtendedDataSettings1*, D3D12_DRED_ENABLEMENT, void>)(lpVtbl[6]))((ID3D12DeviceRemovedExtendedDataSettings1*)Unsafe.AsPointer(ref this), Enablement);
         }
     }
 }

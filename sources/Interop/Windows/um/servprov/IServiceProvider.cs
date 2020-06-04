@@ -12,45 +12,30 @@ namespace TerraFX.Interop
     [Guid("6D5140C1-7436-11CE-8034-00AA006009FA")]
     public unsafe partial struct IServiceProvider
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IServiceProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IServiceProvider*, Guid*, void**, int>)(lpVtbl[0]))((IServiceProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IServiceProvider*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IServiceProvider*, uint>)(lpVtbl[1]))((IServiceProvider*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IServiceProvider*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IServiceProvider*, uint>)(lpVtbl[2]))((IServiceProvider*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int QueryService([NativeTypeName("const GUID &")] Guid* guidService, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryService((IServiceProvider*)Unsafe.AsPointer(ref this), guidService, riid, ppvObject);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IServiceProvider*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IServiceProvider*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IServiceProvider*, uint> Release;
-
-            [NativeTypeName("HRESULT (const GUID &, const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IServiceProvider*, Guid*, Guid*, void**, int> QueryService;
+            return ((delegate* stdcall<IServiceProvider*, Guid*, Guid*, void**, int>)(lpVtbl[3]))((IServiceProvider*)Unsafe.AsPointer(ref this), guidService, riid, ppvObject);
         }
     }
 }

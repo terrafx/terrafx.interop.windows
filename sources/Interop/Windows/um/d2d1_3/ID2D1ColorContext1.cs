@@ -12,95 +12,62 @@ namespace TerraFX.Interop
     [Guid("1AB42875-C57F-4BE9-BD85-9CD78D6F55EE")]
     public unsafe partial struct ID2D1ColorContext1
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((ID2D1ColorContext1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<ID2D1ColorContext1*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1ColorContext1*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((ID2D1ColorContext1*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID2D1ColorContext1*, uint>)(lpVtbl[1]))((ID2D1ColorContext1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((ID2D1ColorContext1*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID2D1ColorContext1*, uint>)(lpVtbl[2]))((ID2D1ColorContext1*)Unsafe.AsPointer(ref this));
         }
 
         public void GetFactory([NativeTypeName("ID2D1Factory **")] ID2D1Factory** factory)
         {
-            lpVtbl->GetFactory((ID2D1ColorContext1*)Unsafe.AsPointer(ref this), factory);
+            ((delegate* stdcall<ID2D1ColorContext1*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1ColorContext1*)Unsafe.AsPointer(ref this), factory);
         }
 
         public D2D1_COLOR_SPACE GetColorSpace()
         {
-            return lpVtbl->GetColorSpace((ID2D1ColorContext1*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID2D1ColorContext1*, D2D1_COLOR_SPACE>)(lpVtbl[4]))((ID2D1ColorContext1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("UINT32")]
         public uint GetProfileSize()
         {
-            return lpVtbl->GetProfileSize((ID2D1ColorContext1*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID2D1ColorContext1*, uint>)(lpVtbl[5]))((ID2D1ColorContext1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetProfile([NativeTypeName("BYTE *")] byte* profile, [NativeTypeName("UINT32")] uint profileSize)
         {
-            return lpVtbl->GetProfile((ID2D1ColorContext1*)Unsafe.AsPointer(ref this), profile, profileSize);
+            return ((delegate* stdcall<ID2D1ColorContext1*, byte*, uint, int>)(lpVtbl[6]))((ID2D1ColorContext1*)Unsafe.AsPointer(ref this), profile, profileSize);
         }
 
         public D2D1_COLOR_CONTEXT_TYPE GetColorContextType()
         {
-            return lpVtbl->GetColorContextType((ID2D1ColorContext1*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID2D1ColorContext1*, D2D1_COLOR_CONTEXT_TYPE>)(lpVtbl[7]))((ID2D1ColorContext1*)Unsafe.AsPointer(ref this));
         }
 
         public DXGI_COLOR_SPACE_TYPE GetDXGIColorSpace()
         {
-            return lpVtbl->GetDXGIColorSpace((ID2D1ColorContext1*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID2D1ColorContext1*, DXGI_COLOR_SPACE_TYPE>)(lpVtbl[8]))((ID2D1ColorContext1*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetSimpleColorProfile([NativeTypeName("D2D1_SIMPLE_COLOR_PROFILE *")] D2D1_SIMPLE_COLOR_PROFILE* simpleProfile)
         {
-            return lpVtbl->GetSimpleColorProfile((ID2D1ColorContext1*)Unsafe.AsPointer(ref this), simpleProfile);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1ColorContext1*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1ColorContext1*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1ColorContext1*, uint> Release;
-
-            [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1ColorContext1*, ID2D1Factory**, void> GetFactory;
-
-            [NativeTypeName("D2D1_COLOR_SPACE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1ColorContext1*, D2D1_COLOR_SPACE> GetColorSpace;
-
-            [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1ColorContext1*, uint> GetProfileSize;
-
-            [NativeTypeName("HRESULT (BYTE *, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1ColorContext1*, byte*, uint, int> GetProfile;
-
-            [NativeTypeName("D2D1_COLOR_CONTEXT_TYPE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1ColorContext1*, D2D1_COLOR_CONTEXT_TYPE> GetColorContextType;
-
-            [NativeTypeName("DXGI_COLOR_SPACE_TYPE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1ColorContext1*, DXGI_COLOR_SPACE_TYPE> GetDXGIColorSpace;
-
-            [NativeTypeName("HRESULT (D2D1_SIMPLE_COLOR_PROFILE *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* stdcall<ID2D1ColorContext1*, D2D1_SIMPLE_COLOR_PROFILE*, int> GetSimpleColorProfile;
+            return ((delegate* stdcall<ID2D1ColorContext1*, D2D1_SIMPLE_COLOR_PROFILE*, int>)(lpVtbl[9]))((ID2D1ColorContext1*)Unsafe.AsPointer(ref this), simpleProfile);
         }
     }
 }

@@ -12,72 +12,48 @@ namespace TerraFX.Interop
     [Guid("00000110-0000-0000-C000-000000000046")]
     public unsafe partial struct IDataAdviseHolder
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IDataAdviseHolder*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IDataAdviseHolder*, Guid*, void**, int>)(lpVtbl[0]))((IDataAdviseHolder*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IDataAdviseHolder*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDataAdviseHolder*, uint>)(lpVtbl[1]))((IDataAdviseHolder*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IDataAdviseHolder*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDataAdviseHolder*, uint>)(lpVtbl[2]))((IDataAdviseHolder*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Advise([NativeTypeName("IDataObject *")] IDataObject* pDataObject, [NativeTypeName("FORMATETC *")] FORMATETC* pFetc, [NativeTypeName("DWORD")] uint advf, [NativeTypeName("IAdviseSink *")] IAdviseSink* pAdvise, [NativeTypeName("DWORD *")] uint* pdwConnection)
         {
-            return lpVtbl->Advise((IDataAdviseHolder*)Unsafe.AsPointer(ref this), pDataObject, pFetc, advf, pAdvise, pdwConnection);
+            return ((delegate* stdcall<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)(lpVtbl[3]))((IDataAdviseHolder*)Unsafe.AsPointer(ref this), pDataObject, pFetc, advf, pAdvise, pdwConnection);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Unadvise([NativeTypeName("DWORD")] uint dwConnection)
         {
-            return lpVtbl->Unadvise((IDataAdviseHolder*)Unsafe.AsPointer(ref this), dwConnection);
+            return ((delegate* stdcall<IDataAdviseHolder*, uint, int>)(lpVtbl[4]))((IDataAdviseHolder*)Unsafe.AsPointer(ref this), dwConnection);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int EnumAdvise([NativeTypeName("IEnumSTATDATA **")] IEnumSTATDATA** ppenumAdvise)
         {
-            return lpVtbl->EnumAdvise((IDataAdviseHolder*)Unsafe.AsPointer(ref this), ppenumAdvise);
+            return ((delegate* stdcall<IDataAdviseHolder*, IEnumSTATDATA**, int>)(lpVtbl[5]))((IDataAdviseHolder*)Unsafe.AsPointer(ref this), ppenumAdvise);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SendOnDataChange([NativeTypeName("IDataObject *")] IDataObject* pDataObject, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("DWORD")] uint advf)
         {
-            return lpVtbl->SendOnDataChange((IDataAdviseHolder*)Unsafe.AsPointer(ref this), pDataObject, dwReserved, advf);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IDataAdviseHolder*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IDataAdviseHolder*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IDataAdviseHolder*, uint> Release;
-
-            [NativeTypeName("HRESULT (IDataObject *, FORMATETC *, DWORD, IAdviseSink *, DWORD *) __attribute__((stdcall))")]
-            public delegate* stdcall<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int> Advise;
-
-            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public delegate* stdcall<IDataAdviseHolder*, uint, int> Unadvise;
-
-            [NativeTypeName("HRESULT (IEnumSTATDATA **) __attribute__((stdcall))")]
-            public delegate* stdcall<IDataAdviseHolder*, IEnumSTATDATA**, int> EnumAdvise;
-
-            [NativeTypeName("HRESULT (IDataObject *, DWORD, DWORD) __attribute__((stdcall))")]
-            public delegate* stdcall<IDataAdviseHolder*, IDataObject*, uint, uint, int> SendOnDataChange;
+            return ((delegate* stdcall<IDataAdviseHolder*, IDataObject*, uint, uint, int>)(lpVtbl[6]))((IDataAdviseHolder*)Unsafe.AsPointer(ref this), pDataObject, dwReserved, advf);
         }
     }
 }

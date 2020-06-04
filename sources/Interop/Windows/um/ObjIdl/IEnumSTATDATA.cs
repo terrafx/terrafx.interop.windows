@@ -12,72 +12,48 @@ namespace TerraFX.Interop
     [Guid("00000105-0000-0000-C000-000000000046")]
     public unsafe partial struct IEnumSTATDATA
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IEnumSTATDATA*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IEnumSTATDATA*, Guid*, void**, int>)(lpVtbl[0]))((IEnumSTATDATA*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IEnumSTATDATA*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IEnumSTATDATA*, uint>)(lpVtbl[1]))((IEnumSTATDATA*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IEnumSTATDATA*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IEnumSTATDATA*, uint>)(lpVtbl[2]))((IEnumSTATDATA*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("STATDATA *")] STATDATA* rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
         {
-            return lpVtbl->Next((IEnumSTATDATA*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
+            return ((delegate* stdcall<IEnumSTATDATA*, uint, STATDATA*, uint*, int>)(lpVtbl[3]))((IEnumSTATDATA*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Skip([NativeTypeName("ULONG")] uint celt)
         {
-            return lpVtbl->Skip((IEnumSTATDATA*)Unsafe.AsPointer(ref this), celt);
+            return ((delegate* stdcall<IEnumSTATDATA*, uint, int>)(lpVtbl[4]))((IEnumSTATDATA*)Unsafe.AsPointer(ref this), celt);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Reset()
         {
-            return lpVtbl->Reset((IEnumSTATDATA*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IEnumSTATDATA*, int>)(lpVtbl[5]))((IEnumSTATDATA*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Clone([NativeTypeName("IEnumSTATDATA **")] IEnumSTATDATA** ppenum)
         {
-            return lpVtbl->Clone((IEnumSTATDATA*)Unsafe.AsPointer(ref this), ppenum);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IEnumSTATDATA*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IEnumSTATDATA*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IEnumSTATDATA*, uint> Release;
-
-            [NativeTypeName("HRESULT (ULONG, STATDATA *, ULONG *) __attribute__((stdcall))")]
-            public delegate* stdcall<IEnumSTATDATA*, uint, STATDATA*, uint*, int> Next;
-
-            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-            public delegate* stdcall<IEnumSTATDATA*, uint, int> Skip;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* stdcall<IEnumSTATDATA*, int> Reset;
-
-            [NativeTypeName("HRESULT (IEnumSTATDATA **) __attribute__((stdcall))")]
-            public delegate* stdcall<IEnumSTATDATA*, IEnumSTATDATA**, int> Clone;
+            return ((delegate* stdcall<IEnumSTATDATA*, IEnumSTATDATA**, int>)(lpVtbl[6]))((IEnumSTATDATA*)Unsafe.AsPointer(ref this), ppenum);
         }
     }
 }

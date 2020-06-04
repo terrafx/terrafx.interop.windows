@@ -12,45 +12,30 @@ namespace TerraFX.Interop
     [Guid("00000020-0000-0000-C000-000000000046")]
     public unsafe partial struct IMultiQI
     {
-        public Vtbl* lpVtbl;
+        public void** lpVtbl;
 
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return lpVtbl->QueryInterface((IMultiQI*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* stdcall<IMultiQI*, Guid*, void**, int>)(lpVtbl[0]))((IMultiQI*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return lpVtbl->AddRef((IMultiQI*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IMultiQI*, uint>)(lpVtbl[1]))((IMultiQI*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return lpVtbl->Release((IMultiQI*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IMultiQI*, uint>)(lpVtbl[2]))((IMultiQI*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int QueryMultipleInterfaces([NativeTypeName("ULONG")] uint cMQIs, [NativeTypeName("MULTI_QI *")] MULTI_QI* pMQIs)
         {
-            return lpVtbl->QueryMultipleInterfaces((IMultiQI*)Unsafe.AsPointer(ref this), cMQIs, pMQIs);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* stdcall<IMultiQI*, Guid*, void**, int> QueryInterface;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IMultiQI*, uint> AddRef;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* stdcall<IMultiQI*, uint> Release;
-
-            [NativeTypeName("HRESULT (ULONG, MULTI_QI *) __attribute__((stdcall))")]
-            public delegate* stdcall<IMultiQI*, uint, MULTI_QI*, int> QueryMultipleInterfaces;
+            return ((delegate* stdcall<IMultiQI*, uint, MULTI_QI*, int>)(lpVtbl[3]))((IMultiQI*)Unsafe.AsPointer(ref this), cMQIs, pMQIs);
         }
     }
 }
