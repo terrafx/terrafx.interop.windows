@@ -1,32 +1,42 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
+// Ported from um/wincodecsdk.h in the Windows SDK for Windows 10.0.19041.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
-using NUnit.Framework;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="WICMetadataPattern" /> struct.</summary>
-    public static class WICMetadataPatternTests
+    public static unsafe class WICMetadataPatternTests
     {
-        /// <summary>Validates that the layout of the <see cref="WICMetadataPattern" /> struct is <see cref="LayoutKind.Sequential" />.</summary>
+        /// <summary>Validates that the <see cref="WICMetadataPattern" /> struct is blittable.</summary>
+        [Test]
+        public static void IsBlittableTest()
+        {
+            Assert.That(Marshal.SizeOf<WICMetadataPattern>(), Is.EqualTo(sizeof(WICMetadataPattern)));
+        }
+
+        /// <summary>Validates that the <see cref="WICMetadataPattern" /> struct has the right <see cref="LayoutKind" />.</summary>
         [Test]
         public static void IsLayoutSequentialTest()
         {
             Assert.That(typeof(WICMetadataPattern).IsLayoutSequential, Is.True);
         }
 
-        /// <summary>Validates that the size of the <see cref="WICMetadataPattern" /> struct is correct.</summary>
+        /// <summary>Validates that the <see cref="WICMetadataPattern" /> struct has the correct size.</summary>
         [Test]
         public static void SizeOfTest()
         {
             if (Environment.Is64BitProcess)
             {
-                Assert.That(Marshal.SizeOf<WICMetadataPattern>(), Is.EqualTo(40));
+                Assert.That(sizeof(WICMetadataPattern), Is.EqualTo(40));
             }
             else
             {
-                Assert.That(Marshal.SizeOf<WICMetadataPattern>(), Is.EqualTo(32));
+                Assert.That(sizeof(WICMetadataPattern), Is.EqualTo(32));
             }
         }
     }

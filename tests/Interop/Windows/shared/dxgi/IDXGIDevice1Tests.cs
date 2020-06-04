@@ -1,14 +1,17 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
+// Ported from shared/dxgi.h in the Windows SDK for Windows 10.0.19041.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
-using NUnit.Framework;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IDXGIDevice1" /> struct.</summary>
-    public static class IDXGIDevice1Tests
+    public static unsafe class IDXGIDevice1Tests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDXGIDevice1" /> struct is correct.</summary>
         [Test]
@@ -17,49 +20,31 @@ namespace TerraFX.Interop.UnitTests
             Assert.That(typeof(IDXGIDevice1).GUID, Is.EqualTo(IID_IDXGIDevice1));
         }
 
-        /// <summary>Validates that the layout of the <see cref="IDXGIDevice1" /> struct is <see cref="LayoutKind.Sequential" />.</summary>
+        /// <summary>Validates that the <see cref="IDXGIDevice1" /> struct is blittable.</summary>
+        [Test]
+        public static void IsBlittableTest()
+        {
+            Assert.That(Marshal.SizeOf<IDXGIDevice1>(), Is.EqualTo(sizeof(IDXGIDevice1)));
+        }
+
+        /// <summary>Validates that the <see cref="IDXGIDevice1" /> struct has the right <see cref="LayoutKind" />.</summary>
         [Test]
         public static void IsLayoutSequentialTest()
         {
             Assert.That(typeof(IDXGIDevice1).IsLayoutSequential, Is.True);
         }
 
-        /// <summary>Validates that the size of the <see cref="IDXGIDevice1" /> struct is correct.</summary>
+        /// <summary>Validates that the <see cref="IDXGIDevice1" /> struct has the correct size.</summary>
         [Test]
         public static void SizeOfTest()
         {
             if (Environment.Is64BitProcess)
             {
-                Assert.That(Marshal.SizeOf<IDXGIDevice1>(), Is.EqualTo(8));
+                Assert.That(sizeof(IDXGIDevice1), Is.EqualTo(8));
             }
             else
             {
-                Assert.That(Marshal.SizeOf<IDXGIDevice1>(), Is.EqualTo(4));
-            }
-        }
-
-        /// <summary>Provides validation of the <see cref="IDXGIDevice1.Vtbl" /> struct.</summary>
-        public static class VtblTests
-        {
-            /// <summary>Validates that the layout of the <see cref="IDXGIDevice1" /> struct is <see cref="LayoutKind.Sequential" />.</summary>
-            [Test]
-            public static void IsLayoutSequentialTest()
-            {
-                Assert.That(typeof(IDXGIDevice1.Vtbl).IsLayoutSequential, Is.True);
-            }
-
-            /// <summary>Validates that the size of the <see cref="IDXGIDevice1" /> struct is correct.</summary>
-            [Test]
-            public static void SizeOfTest()
-            {
-                if (Environment.Is64BitProcess)
-                {
-                    Assert.That(Marshal.SizeOf<IDXGIDevice1.Vtbl>(), Is.EqualTo(112));
-                }
-                else
-                {
-                    Assert.That(Marshal.SizeOf<IDXGIDevice1.Vtbl>(), Is.EqualTo(56));
-                }
+                Assert.That(sizeof(IDXGIDevice1), Is.EqualTo(4));
             }
         }
     }

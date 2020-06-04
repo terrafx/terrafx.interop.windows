@@ -1,32 +1,42 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
+// Ported from um/OAIdl.h in the Windows SDK for Windows 10.0.19041.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
-using NUnit.Framework;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="VARIANT" /> struct.</summary>
-    public static class VARIANTTests
+    public static unsafe class VARIANTTests
     {
-        /// <summary>Validates that the layout of the <see cref="VARIANT" /> struct is <see cref="LayoutKind.Sequential" />.</summary>
+        /// <summary>Validates that the <see cref="VARIANT" /> struct is blittable.</summary>
+        [Test]
+        public static void IsBlittableTest()
+        {
+            Assert.That(Marshal.SizeOf<VARIANT>(), Is.EqualTo(sizeof(VARIANT)));
+        }
+
+        /// <summary>Validates that the <see cref="VARIANT" /> struct has the right <see cref="LayoutKind" />.</summary>
         [Test]
         public static void IsLayoutSequentialTest()
         {
             Assert.That(typeof(VARIANT).IsLayoutSequential, Is.True);
         }
 
-        /// <summary>Validates that the size of the <see cref="VARIANT" /> struct is correct.</summary>
+        /// <summary>Validates that the <see cref="VARIANT" /> struct has the correct size.</summary>
         [Test]
         public static void SizeOfTest()
         {
             if (Environment.Is64BitProcess)
             {
-                Assert.That(Marshal.SizeOf<VARIANT>(), Is.EqualTo(24));
+                Assert.That(sizeof(VARIANT), Is.EqualTo(24));
             }
             else
             {
-                Assert.That(Marshal.SizeOf<VARIANT>(), Is.EqualTo(16));
+                Assert.That(sizeof(VARIANT), Is.EqualTo(16));
             }
         }
     }

@@ -1,14 +1,17 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
+// Ported from um/wincodec.h in the Windows SDK for Windows 10.0.19041.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
-using NUnit.Framework;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IWICBitmapEncoder" /> struct.</summary>
-    public static class IWICBitmapEncoderTests
+    public static unsafe class IWICBitmapEncoderTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWICBitmapEncoder" /> struct is correct.</summary>
         [Test]
@@ -17,49 +20,31 @@ namespace TerraFX.Interop.UnitTests
             Assert.That(typeof(IWICBitmapEncoder).GUID, Is.EqualTo(IID_IWICBitmapEncoder));
         }
 
-        /// <summary>Validates that the layout of the <see cref="IWICBitmapEncoder" /> struct is <see cref="LayoutKind.Sequential" />.</summary>
+        /// <summary>Validates that the <see cref="IWICBitmapEncoder" /> struct is blittable.</summary>
+        [Test]
+        public static void IsBlittableTest()
+        {
+            Assert.That(Marshal.SizeOf<IWICBitmapEncoder>(), Is.EqualTo(sizeof(IWICBitmapEncoder)));
+        }
+
+        /// <summary>Validates that the <see cref="IWICBitmapEncoder" /> struct has the right <see cref="LayoutKind" />.</summary>
         [Test]
         public static void IsLayoutSequentialTest()
         {
             Assert.That(typeof(IWICBitmapEncoder).IsLayoutSequential, Is.True);
         }
 
-        /// <summary>Validates that the size of the <see cref="IWICBitmapEncoder" /> struct is correct.</summary>
+        /// <summary>Validates that the <see cref="IWICBitmapEncoder" /> struct has the correct size.</summary>
         [Test]
         public static void SizeOfTest()
         {
             if (Environment.Is64BitProcess)
             {
-                Assert.That(Marshal.SizeOf<IWICBitmapEncoder>(), Is.EqualTo(8));
+                Assert.That(sizeof(IWICBitmapEncoder), Is.EqualTo(8));
             }
             else
             {
-                Assert.That(Marshal.SizeOf<IWICBitmapEncoder>(), Is.EqualTo(4));
-            }
-        }
-
-        /// <summary>Provides validation of the <see cref="IWICBitmapEncoder.Vtbl" /> struct.</summary>
-        public static class VtblTests
-        {
-            /// <summary>Validates that the layout of the <see cref="IWICBitmapEncoder" /> struct is <see cref="LayoutKind.Sequential" />.</summary>
-            [Test]
-            public static void IsLayoutSequentialTest()
-            {
-                Assert.That(typeof(IWICBitmapEncoder.Vtbl).IsLayoutSequential, Is.True);
-            }
-
-            /// <summary>Validates that the size of the <see cref="IWICBitmapEncoder" /> struct is correct.</summary>
-            [Test]
-            public static void SizeOfTest()
-            {
-                if (Environment.Is64BitProcess)
-                {
-                    Assert.That(Marshal.SizeOf<IWICBitmapEncoder.Vtbl>(), Is.EqualTo(104));
-                }
-                else
-                {
-                    Assert.That(Marshal.SizeOf<IWICBitmapEncoder.Vtbl>(), Is.EqualTo(52));
-                }
+                Assert.That(sizeof(IWICBitmapEncoder), Is.EqualTo(4));
             }
         }
     }

@@ -1,14 +1,17 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
+// Ported from um/dwrite_3.h in the Windows SDK for Windows 10.0.19041.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
-using NUnit.Framework;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IDWriteFontSet" /> struct.</summary>
-    public static class IDWriteFontSetTests
+    public static unsafe class IDWriteFontSetTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDWriteFontSet" /> struct is correct.</summary>
         [Test]
@@ -17,49 +20,31 @@ namespace TerraFX.Interop.UnitTests
             Assert.That(typeof(IDWriteFontSet).GUID, Is.EqualTo(IID_IDWriteFontSet));
         }
 
-        /// <summary>Validates that the layout of the <see cref="IDWriteFontSet" /> struct is <see cref="LayoutKind.Sequential" />.</summary>
+        /// <summary>Validates that the <see cref="IDWriteFontSet" /> struct is blittable.</summary>
+        [Test]
+        public static void IsBlittableTest()
+        {
+            Assert.That(Marshal.SizeOf<IDWriteFontSet>(), Is.EqualTo(sizeof(IDWriteFontSet)));
+        }
+
+        /// <summary>Validates that the <see cref="IDWriteFontSet" /> struct has the right <see cref="LayoutKind" />.</summary>
         [Test]
         public static void IsLayoutSequentialTest()
         {
             Assert.That(typeof(IDWriteFontSet).IsLayoutSequential, Is.True);
         }
 
-        /// <summary>Validates that the size of the <see cref="IDWriteFontSet" /> struct is correct.</summary>
+        /// <summary>Validates that the <see cref="IDWriteFontSet" /> struct has the correct size.</summary>
         [Test]
         public static void SizeOfTest()
         {
             if (Environment.Is64BitProcess)
             {
-                Assert.That(Marshal.SizeOf<IDWriteFontSet>(), Is.EqualTo(8));
+                Assert.That(sizeof(IDWriteFontSet), Is.EqualTo(8));
             }
             else
             {
-                Assert.That(Marshal.SizeOf<IDWriteFontSet>(), Is.EqualTo(4));
-            }
-        }
-
-        /// <summary>Provides validation of the <see cref="IDWriteFontSet.Vtbl" /> struct.</summary>
-        public static class VtblTests
-        {
-            /// <summary>Validates that the layout of the <see cref="IDWriteFontSet" /> struct is <see cref="LayoutKind.Sequential" />.</summary>
-            [Test]
-            public static void IsLayoutSequentialTest()
-            {
-                Assert.That(typeof(IDWriteFontSet.Vtbl).IsLayoutSequential, Is.True);
-            }
-
-            /// <summary>Validates that the size of the <see cref="IDWriteFontSet" /> struct is correct.</summary>
-            [Test]
-            public static void SizeOfTest()
-            {
-                if (Environment.Is64BitProcess)
-                {
-                    Assert.That(Marshal.SizeOf<IDWriteFontSet.Vtbl>(), Is.EqualTo(104));
-                }
-                else
-                {
-                    Assert.That(Marshal.SizeOf<IDWriteFontSet.Vtbl>(), Is.EqualTo(52));
-                }
+                Assert.That(sizeof(IDWriteFontSet), Is.EqualTo(4));
             }
         }
     }

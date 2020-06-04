@@ -1,32 +1,42 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
+// Ported from um/OAIdl.h in the Windows SDK for Windows 10.0.19041.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
-using NUnit.Framework;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="PARAMDESCEX" /> struct.</summary>
-    public static class PARAMDESCEXTests
+    public static unsafe class PARAMDESCEXTests
     {
-        /// <summary>Validates that the layout of the <see cref="PARAMDESCEX" /> struct is <see cref="LayoutKind.Sequential" />.</summary>
+        /// <summary>Validates that the <see cref="PARAMDESCEX" /> struct is blittable.</summary>
+        [Test]
+        public static void IsBlittableTest()
+        {
+            Assert.That(Marshal.SizeOf<PARAMDESCEX>(), Is.EqualTo(sizeof(PARAMDESCEX)));
+        }
+
+        /// <summary>Validates that the <see cref="PARAMDESCEX" /> struct has the right <see cref="LayoutKind" />.</summary>
         [Test]
         public static void IsLayoutSequentialTest()
         {
             Assert.That(typeof(PARAMDESCEX).IsLayoutSequential, Is.True);
         }
 
-        /// <summary>Validates that the size of the <see cref="PARAMDESCEX" /> struct is correct.</summary>
+        /// <summary>Validates that the <see cref="PARAMDESCEX" /> struct has the correct size.</summary>
         [Test]
         public static void SizeOfTest()
         {
             if (Environment.Is64BitProcess)
             {
-                Assert.That(Marshal.SizeOf<PARAMDESCEX>(), Is.EqualTo(32));
+                Assert.That(sizeof(PARAMDESCEX), Is.EqualTo(32));
             }
             else
             {
-                Assert.That(Marshal.SizeOf<PARAMDESCEX>(), Is.EqualTo(24));
+                Assert.That(sizeof(PARAMDESCEX), Is.EqualTo(24));
             }
         }
     }

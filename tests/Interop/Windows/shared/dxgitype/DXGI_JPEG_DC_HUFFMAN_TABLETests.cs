@@ -1,25 +1,36 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-using System.Runtime.InteropServices;
+// Ported from shared/dxgitype.h in the Windows SDK for Windows 10.0.19041.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
 using NUnit.Framework;
+using System;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="DXGI_JPEG_DC_HUFFMAN_TABLE" /> struct.</summary>
-    public static class DXGI_JPEG_DC_HUFFMAN_TABLETests
+    public static unsafe class DXGI_JPEG_DC_HUFFMAN_TABLETests
     {
-        /// <summary>Validates that the layout of the <see cref="DXGI_JPEG_DC_HUFFMAN_TABLE" /> struct is <see cref="LayoutKind.Sequential" />.</summary>
+        /// <summary>Validates that the <see cref="DXGI_JPEG_DC_HUFFMAN_TABLE" /> struct is blittable.</summary>
+        [Test]
+        public static void IsBlittableTest()
+        {
+            Assert.That(Marshal.SizeOf<DXGI_JPEG_DC_HUFFMAN_TABLE>(), Is.EqualTo(sizeof(DXGI_JPEG_DC_HUFFMAN_TABLE)));
+        }
+
+        /// <summary>Validates that the <see cref="DXGI_JPEG_DC_HUFFMAN_TABLE" /> struct has the right <see cref="LayoutKind" />.</summary>
         [Test]
         public static void IsLayoutSequentialTest()
         {
             Assert.That(typeof(DXGI_JPEG_DC_HUFFMAN_TABLE).IsLayoutSequential, Is.True);
         }
 
-        /// <summary>Validates that the size of the <see cref="DXGI_JPEG_DC_HUFFMAN_TABLE" /> struct is correct.</summary>
+        /// <summary>Validates that the <see cref="DXGI_JPEG_DC_HUFFMAN_TABLE" /> struct has the correct size.</summary>
         [Test]
         public static void SizeOfTest()
         {
-            Assert.That(Marshal.SizeOf<DXGI_JPEG_DC_HUFFMAN_TABLE>(), Is.EqualTo(24));
+            Assert.That(sizeof(DXGI_JPEG_DC_HUFFMAN_TABLE), Is.EqualTo(24));
         }
     }
 }
