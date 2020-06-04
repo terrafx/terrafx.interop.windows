@@ -1,7 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
 // Ported from d3dx12.h in DirectX-Graphics-Samples commit a7a87f1853b5540f10920518021d91ae641033fb
-// Original source is Copyright © Microsoft. All rights reserved.
+// Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
 using static TerraFX.Interop.D3D12_RESOURCE_DIMENSION;
 
@@ -18,7 +18,7 @@ namespace TerraFX.Interop
             RowPitch = rowPitch;
         }
 
-        public D3D12_SUBRESOURCE_FOOTPRINT([NativeTypeName("const D3D12_RESOURCE_DESC &")] in D3D12_RESOURCE_DESC resDesc, [NativeTypeName("UINT")] uint rowPitch) 
+        public D3D12_SUBRESOURCE_FOOTPRINT([NativeTypeName("const D3D12_RESOURCE_DESC &")] in D3D12_RESOURCE_DESC resDesc, [NativeTypeName("UINT")] uint rowPitch)
         {
             Format = resDesc.Format;
             Width = (uint)resDesc.Width;
