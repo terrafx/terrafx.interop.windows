@@ -35,31 +35,31 @@ namespace TerraFX.Interop
         [return: NativeTypeName("LPVOID")]
         public void* GetBufferPointer()
         {
-            return ((delegate* stdcall<IDxcBlobUtf8*, void*>)(lpVtbl[0]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDxcBlobUtf8*, void*>)(lpVtbl[3]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("SIZE_T")]
         public nuint GetBufferSize()
         {
-            return ((delegate* stdcall<IDxcBlobUtf8*, nuint>)(lpVtbl[1]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDxcBlobUtf8*, nuint>)(lpVtbl[4]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetEncoding([NativeTypeName("BOOL *")] int* pKnown, [NativeTypeName("UINT32 *")] uint* pCodePage)
         {
-            return ((delegate* stdcall<IDxcBlobUtf8*, int*, uint*, int>)(lpVtbl[0]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this), pKnown, pCodePage);
+            return ((delegate* stdcall<IDxcBlobUtf8*, int*, uint*, int>)(lpVtbl[5]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this), pKnown, pCodePage);
         }
 
         [return: NativeTypeName("LPCSTR")]
         public sbyte* GetStringPointer()
         {
-            return ((delegate* stdcall<IDxcBlobUtf8*, sbyte*>)(lpVtbl[0]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDxcBlobUtf8*, sbyte*>)(lpVtbl[6]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("SIZE_T")]
         public nuint GetStringLength()
         {
-            return ((delegate* stdcall<IDxcBlobUtf8*, nuint>)(lpVtbl[1]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDxcBlobUtf8*, nuint>)(lpVtbl[7]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
         }
     }
 }
