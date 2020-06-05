@@ -122,6 +122,8 @@ operator~(D2D1_TRANSFORMED_IMAGE_SOURCE_OPTIONS):D2D1_TRANSFORMED_IMAGE_SOURCE_O
 um-d2d1_3.h
 --output
 ../../../sources/Interop/Windows/um/d2d1_3
+--test-output
+../../../tests/Interop/Windows/um/d2d1_3
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1_3.h
 --with-attribute

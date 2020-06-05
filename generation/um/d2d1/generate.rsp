@@ -152,6 +152,8 @@ operator~(D2D1_WINDOW_STATE):D2D1_WINDOW_STATE
 um-d2d1.h
 --output
 ../../../sources/Interop/Windows/um/d2d1
+--test-output
+../../../tests/Interop/Windows/um/d2d1
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1.h
 --with-attribute

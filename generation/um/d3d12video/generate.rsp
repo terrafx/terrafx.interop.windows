@@ -170,6 +170,8 @@ __MIDL_itf_d3d12video_0000_0020_v0_0_s_ifspec
 um-d3d12video.h
 --output
 ../../../sources/Interop/Windows/um/d3d12video
+--test-output
+../../../tests/Interop/Windows/um/d3d12video
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12video.h
 --with-attribute

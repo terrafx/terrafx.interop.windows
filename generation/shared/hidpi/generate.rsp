@@ -6,6 +6,8 @@ _HIDP_PREPARSED_DATA
 shared-hidpi.h
 --output
 ../../../sources/Interop/Windows/shared/hidpi
+--test-output
+../../../tests/Interop/Windows/shared/hidpi
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/hidpi.h
 --with-librarypath

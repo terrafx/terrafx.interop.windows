@@ -33,6 +33,8 @@ operator~(D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT_FLAGS):D3D11_VIDEO_DECODER_HIS
 um-d3d11_4.h
 --output
 ../../../sources/Interop/Windows/um/d3d11_4
+--test-output
+../../../tests/Interop/Windows/um/d3d11_4
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11_4.h
 --with-attribute

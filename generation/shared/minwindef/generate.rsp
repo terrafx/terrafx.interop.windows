@@ -16,5 +16,7 @@ HWINSTA__
 shared-minwindef.h
 --output
 ../../../sources/Interop/Windows/shared/minwindef
+--test-output
+../../../tests/Interop/Windows/shared/minwindef
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/minwindef.h

@@ -46,6 +46,8 @@ IDxcVersionInfo2
 other-dxcapi.h
 --output
 ../../../../sources/Interop/Windows/other/dxc/dxcapi
+--test-output
+../../../../tests/Interop/Windows/other/dxc/dxcapi
 --traverse
 include/dxc/dxcapi.h
 --with-attribute

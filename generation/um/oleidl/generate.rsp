@@ -129,6 +129,8 @@ __MIDL_itf_oleidl_0000_0025_v0_0_s_ifspec
 um-oleidl.h
 --output
 ../../../sources/Interop/Windows/um/oleidl
+--test-output
+../../../tests/Interop/Windows/um/oleidl
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/oleidl.h
 --with-attribute

@@ -8,5 +8,7 @@ GUID_HID_INTERFACE_HIDPARSE
 shared-hidclass.h
 --output
 ../../../sources/Interop/Windows/shared/hidclass
+--test-output
+../../../tests/Interop/Windows/shared/hidclass
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/hidclass.h

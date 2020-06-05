@@ -38,6 +38,8 @@ IID_ID3D11ShaderReflectionVariable
 um-d3d11shader.h
 --output
 ../../../sources/Interop/Windows/um/d3d11shader
+--test-output
+../../../tests/Interop/Windows/um/d3d11shader
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11shader.h
 --with-attribute

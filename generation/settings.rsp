@@ -6,6 +6,7 @@
 -Wno-nonportable-include-path
 -Wno-pragma-pack
 --config
+generate-tests-nunit
 multi-file
 preview-codegen-fnptr
 preview-codegen-nint
