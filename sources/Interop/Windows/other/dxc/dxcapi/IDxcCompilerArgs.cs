@@ -35,31 +35,31 @@ namespace TerraFX.Interop
         [return: NativeTypeName("LPCWSTR *")]
         public ushort** GetArguments()
         {
-            return ((delegate* stdcall<IDxcCompilerArgs*, ushort**>)(lpVtbl[0]))((IDxcCompilerArgs*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDxcCompilerArgs*, ushort**>)(lpVtbl[3]))((IDxcCompilerArgs*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("UINT32")]
         public uint GetCount()
         {
-            return ((delegate* stdcall<IDxcCompilerArgs*, uint>)(lpVtbl[1]))((IDxcCompilerArgs*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<IDxcCompilerArgs*, uint>)(lpVtbl[4]))((IDxcCompilerArgs*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int AddArguments([NativeTypeName("LPCWSTR *")] ushort** pArguments, [NativeTypeName("UINT32")] uint argCount)
         {
-            return ((delegate* stdcall<IDxcCompilerArgs*, ushort**, uint, int>)(lpVtbl[2]))((IDxcCompilerArgs*)Unsafe.AsPointer(ref this), pArguments, argCount);
+            return ((delegate* stdcall<IDxcCompilerArgs*, ushort**, uint, int>)(lpVtbl[5]))((IDxcCompilerArgs*)Unsafe.AsPointer(ref this), pArguments, argCount);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int AddArgumentsUTF8([NativeTypeName("LPCSTR *")] sbyte** pArguments, [NativeTypeName("UINT32")] uint argCount)
         {
-            return ((delegate* stdcall<IDxcCompilerArgs*, sbyte**, uint, int>)(lpVtbl[3]))((IDxcCompilerArgs*)Unsafe.AsPointer(ref this), pArguments, argCount);
+            return ((delegate* stdcall<IDxcCompilerArgs*, sbyte**, uint, int>)(lpVtbl[6]))((IDxcCompilerArgs*)Unsafe.AsPointer(ref this), pArguments, argCount);
         }
 
         [return: NativeTypeName("HRESULT")]
         public int AddDefines([NativeTypeName("const DxcDefine *")] DxcDefine* pDefines, [NativeTypeName("UINT32")] uint defineCount)
         {
-            return ((delegate* stdcall<IDxcCompilerArgs*, DxcDefine*, uint, int>)(lpVtbl[4]))((IDxcCompilerArgs*)Unsafe.AsPointer(ref this), pDefines, defineCount);
+            return ((delegate* stdcall<IDxcCompilerArgs*, DxcDefine*, uint, int>)(lpVtbl[7]))((IDxcCompilerArgs*)Unsafe.AsPointer(ref this), pDefines, defineCount);
         }
     }
 }
