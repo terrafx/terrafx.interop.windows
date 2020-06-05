@@ -8,6 +8,8 @@ IID_PPV_ARGS_Helper<T>(T **):void **
 um-combaseapi.h
 --output
 ../../../sources/Interop/Windows/um/combaseapi
+--test-output
+../../../tests/Interop/Windows/um/combaseapi
 --with-attribute
 COINITBASE=Flags
 COWAIT_FLAGS=Flags

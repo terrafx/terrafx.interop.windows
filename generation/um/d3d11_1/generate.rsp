@@ -26,6 +26,8 @@ __MIDL_itf_d3d11_1_0000_0009_v0_0_s_ifspec
 um-d3d11_1.h
 --output
 ../../../sources/Interop/Windows/um/d3d11_1
+--test-output
+../../../tests/Interop/Windows/um/d3d11_1
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11_1.h
 --with-attribute

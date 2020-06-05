@@ -4,5 +4,7 @@
 shared-winerror.h
 --output
 ../../../sources/Interop/Windows/shared/winerror
+--test-output
+../../../tests/Interop/Windows/shared/winerror
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/winerror.h

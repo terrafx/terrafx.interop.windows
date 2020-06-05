@@ -18,6 +18,8 @@ WAVECALLBACK
 um-mmeapi.h
 --output
 ../../../sources/Interop/Windows/um/mmeapi
+--test-output
+../../../tests/Interop/Windows/um/mmeapi
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mmeapi.h
 --with-librarypath

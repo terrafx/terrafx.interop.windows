@@ -31,6 +31,8 @@ operator~(DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS):DXGI_HARDWARE_COMPOSITION_SUP
 shared-dxgi1_6.h
 --output
 ../../../sources/Interop/Windows/shared/dxgi1_6
+--test-output
+../../../tests/Interop/Windows/shared/dxgi1_6
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgi1_6.h
 --with-attribute

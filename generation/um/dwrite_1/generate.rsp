@@ -4,6 +4,8 @@
 um-dwrite_1.h
 --output
 ../../../sources/Interop/Windows/um/dwrite_1
+--test-output
+../../../tests/Interop/Windows/um/dwrite_1
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dwrite_1.h
 --with-attribute

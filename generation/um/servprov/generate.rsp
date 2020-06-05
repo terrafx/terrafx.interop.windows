@@ -15,6 +15,8 @@ __MIDL_itf_servprov_0000_0001_v0_0_s_ifspec
 um-servprov.h
 --output
 ../../../sources/Interop/Windows/um/servprov
+--test-output
+../../../tests/Interop/Windows/um/servprov
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/servprov.h
 --with-attribute
