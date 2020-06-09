@@ -34,61 +34,61 @@ namespace TerraFX.Interop
         public const uint DxcVersionInfoFlags_Internal = 2;
 
         [NativeTypeName("const CLSID")]
-        public static readonly Guid CLSID_DxcCompiler = new Guid(0x73e22d93, 0xe6ce, 0x47f3, 0xb5, 0xbf, 0xf0, 0x66, 0x4f, 0x39, 0xc1, 0xb0);
+        public static readonly Guid CLSID_DxcCompiler = new Guid(0X73E22D93, 0XE6CE, 0X47F3, 0XB5, 0XBF, 0XF0, 0X66, 0X4F, 0X39, 0XC1, 0XB0);
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_DxcLinker = new Guid(0xef6a8087, 0xb0ea, 0x4d56, 0x9e, 0x45, 0xd0, 0x7e, 0x1a, 0x8b, 0x78, 0x6);
+        public static readonly Guid CLSID_DxcLinker = new Guid(0XEF6A8087, 0XB0EA, 0X4D56, 0X9E, 0X45, 0XD0, 0X7E, 0X1A, 0X8B, 0X78, 0X6);
 
         [NativeTypeName("const CLSID")]
-        public static readonly Guid CLSID_DxcDiaDataSource = new Guid(0xcd1f6b73, 0x2ab0, 0x484d, 0x8e, 0xdc, 0xeb, 0xe7, 0xa4, 0x3c, 0xa0, 0x9f);
+        public static readonly Guid CLSID_DxcDiaDataSource = new Guid(0XCD1F6B73, 0X2AB0, 0X484D, 0X8E, 0XDC, 0XEB, 0XE7, 0XA4, 0X3C, 0XA0, 0X9F);
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_DxcValidator = new Guid(0x8ca3e215, 0xf728, 0x4cf3, 0x8c, 0xdd, 0x88, 0xaf, 0x91, 0x75, 0x87, 0xa1);
+        public static readonly Guid CLSID_DxcValidator = new Guid(0X8CA3E215, 0XF728, 0X4CF3, 0X8C, 0XDD, 0X88, 0XAF, 0X91, 0X75, 0X87, 0XA1);
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_DxcAssembler = new Guid(0xd728db68, 0xf903, 0x4f80, 0x94, 0xcd, 0xdc, 0xcf, 0x76, 0xec, 0x71, 0x51);
+        public static readonly Guid CLSID_DxcAssembler = new Guid(0XD728DB68, 0XF903, 0X4F80, 0X94, 0XCD, 0XDC, 0XCF, 0X76, 0XEC, 0X71, 0X51);
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_DxcContainerReflection = new Guid(0xb9f54489, 0x55b8, 0x400c, 0xba, 0x3a, 0x16, 0x75, 0xe4, 0x72, 0x8b, 0x91);
+        public static readonly Guid CLSID_DxcContainerReflection = new Guid(0XB9F54489, 0X55B8, 0X400C, 0XBA, 0X3A, 0X16, 0X75, 0XE4, 0X72, 0X8B, 0X91);
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_DxcOptimizer = new Guid(0xae2cd79f, 0xcc22, 0x453f, 0x9b, 0x6b, 0xb1, 0x24, 0xe7, 0xa5, 0x20, 0x4c);
+        public static readonly Guid CLSID_DxcOptimizer = new Guid(0XAE2CD79F, 0XCC22, 0X453F, 0X9B, 0X6B, 0XB1, 0X24, 0XE7, 0XA5, 0X20, 0X4C);
 
         [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_DxcContainerBuilder = new Guid(0x94134294, 0x411f, 0x4574, 0xb4, 0xd0, 0x87, 0x41, 0xe2, 0x52, 0x40, 0xd2);
+        public static readonly Guid CLSID_DxcContainerBuilder = new Guid(0X94134294, 0X411F, 0X4574, 0XB4, 0XD0, 0X87, 0X41, 0XE2, 0X52, 0X40, 0XD2);
 
-        public static readonly Guid IID_IDxcAssembly = new Guid(0x091F7A26, 0x1C1F, 0x4948, 0x90, 0x4B, 0xE6, 0xE3, 0xA8, 0xA7, 0x71, 0xD5);
+        public static readonly Guid IID_IDxcAssembly = new Guid(0X091F7A26, 0X1C1F, 0X4948, 0X90, 0X4B, 0XE6, 0XE3, 0XA8, 0XA7, 0X71, 0XD5);
 
-        public static readonly Guid IID_IDxcBlob = new Guid(0x8BA5FB08, 0x5195, 0x40e2, 0xAC, 0x58, 0x0D, 0x98, 0x9C, 0x3A, 0x01, 0x02);
+        public static readonly Guid IID_IDxcBlob = new Guid(0X8BA5FB08, 0X5195, 0X40E2, 0XAC, 0X58, 0X0D, 0X98, 0X9C, 0X3A, 0X01, 0X02);
 
-        public static readonly Guid IID_IDxcBlobEncoding = new Guid(0x7241d424, 0x2646, 0x4191, 0x97, 0xc0, 0x98, 0xe9, 0x6e, 0x42, 0xfc, 0x68);
+        public static readonly Guid IID_IDxcBlobEncoding = new Guid(0X7241D424, 0X2646, 0X4191, 0X97, 0XC0, 0X98, 0XE9, 0X6E, 0X42, 0XFC, 0X68);
 
-        public static readonly Guid IID_IDxcIncludeHandler = new Guid(0x7f61fc7d, 0x950d, 0x467f, 0xb3, 0xe3, 0x3c, 0x02, 0xfb, 0x49, 0x18, 0x7c);
+        public static readonly Guid IID_IDxcIncludeHandler = new Guid(0X7F61FC7D, 0X950D, 0X467F, 0XB3, 0XE3, 0X3C, 0X02, 0XFB, 0X49, 0X18, 0X7C);
 
-        public static readonly Guid IID_IDxcLibrary = new Guid(0xe5204dc7, 0xd18c, 0x4c3c, 0xbd, 0xfb, 0x85, 0x16, 0x73, 0x98, 0x0f, 0xe7);
+        public static readonly Guid IID_IDxcLibrary = new Guid(0XE5204DC7, 0XD18C, 0X4C3C, 0XBD, 0XFB, 0X85, 0X16, 0X73, 0X98, 0X0F, 0XE7);
 
-        public static readonly Guid IID_IDxcOperationResult = new Guid(0xCEDB484A, 0xD4E9, 0x445A, 0xB9, 0x91, 0xCA, 0x21, 0xCA, 0x15, 0x7D, 0xC2);
+        public static readonly Guid IID_IDxcOperationResult = new Guid(0XCEDB484A, 0XD4E9, 0X445A, 0XB9, 0X91, 0XCA, 0X21, 0XCA, 0X15, 0X7D, 0XC2);
 
-        public static readonly Guid IID_IDxcCompiler = new Guid(0x8c210bf3, 0x011f, 0x4422, 0x8d, 0x70, 0x6f, 0x9a, 0xcb, 0x8d, 0xb6, 0x17);
+        public static readonly Guid IID_IDxcCompiler = new Guid(0X8C210BF3, 0X011F, 0X4422, 0X8D, 0X70, 0X6F, 0X9A, 0XCB, 0X8D, 0XB6, 0X17);
 
-        public static readonly Guid IID_IDxcCompiler2 = new Guid(0xA005A9D9, 0xB8BB, 0x4594, 0xB5, 0xC9, 0x0E, 0x63, 0x3B, 0xEC, 0x4D, 0x37);
+        public static readonly Guid IID_IDxcCompiler2 = new Guid(0XA005A9D9, 0XB8BB, 0X4594, 0XB5, 0XC9, 0X0E, 0X63, 0X3B, 0XEC, 0X4D, 0X37);
 
-        public static readonly Guid IID_IDxcLinker = new Guid(0xF1B5BE2A, 0x62DD, 0x4327, 0xA1, 0xC2, 0x42, 0xAC, 0x1E, 0x1E, 0x78, 0xE6);
+        public static readonly Guid IID_IDxcLinker = new Guid(0XF1B5BE2A, 0X62DD, 0X4327, 0XA1, 0XC2, 0X42, 0XAC, 0X1E, 0X1E, 0X78, 0XE6);
 
-        public static readonly Guid IID_IDxcValidator = new Guid(0xA6E82BD2, 0x1FD7, 0x4826, 0x98, 0x11, 0x28, 0x57, 0xE7, 0x97, 0xF4, 0x9A);
+        public static readonly Guid IID_IDxcValidator = new Guid(0XA6E82BD2, 0X1FD7, 0X4826, 0X98, 0X11, 0X28, 0X57, 0XE7, 0X97, 0XF4, 0X9A);
 
-        public static readonly Guid IID_IDxcContainerBuilder = new Guid(0x334b1f50, 0x2292, 0x4b35, 0x99, 0xa1, 0x25, 0x58, 0x8d, 0x8c, 0x17, 0xfe);
+        public static readonly Guid IID_IDxcContainerBuilder = new Guid(0X334B1F50, 0X2292, 0X4B35, 0X99, 0XA1, 0X25, 0X58, 0X8D, 0X8C, 0X17, 0XFE);
 
-        public static readonly Guid IID_IDxcAssembler = new Guid(0x091f7a26, 0x1c1f, 0x4948, 0x90, 0x4b, 0xe6, 0xe3, 0xa8, 0xa7, 0x71, 0xd5);
+        public static readonly Guid IID_IDxcAssembler = new Guid(0X091F7A26, 0X1C1F, 0X4948, 0X90, 0X4B, 0XE6, 0XE3, 0XA8, 0XA7, 0X71, 0XD5);
 
-        public static readonly Guid IID_IDxcContainerReflection = new Guid(0xd2c21b26, 0x8350, 0x4bdc, 0x97, 0x6a, 0x33, 0x1c, 0xe6, 0xf4, 0xc5, 0x4c);
+        public static readonly Guid IID_IDxcContainerReflection = new Guid(0XD2C21B26, 0X8350, 0X4BDC, 0X97, 0X6A, 0X33, 0X1C, 0XE6, 0XF4, 0XC5, 0X4C);
 
-        public static readonly Guid IID_IDxcOptimizerPass = new Guid(0xAE2CD79F, 0xCC22, 0x453F, 0x9B, 0x6B, 0xB1, 0x24, 0xE7, 0xA5, 0x20, 0x4C);
+        public static readonly Guid IID_IDxcOptimizerPass = new Guid(0XAE2CD79F, 0XCC22, 0X453F, 0X9B, 0X6B, 0XB1, 0X24, 0XE7, 0XA5, 0X20, 0X4C);
 
-        public static readonly Guid IID_IDxcOptimizer = new Guid(0x25740E2E, 0x9CBA, 0x401B, 0x91, 0x19, 0x4F, 0xB4, 0x2F, 0x39, 0xF2, 0x70);
+        public static readonly Guid IID_IDxcOptimizer = new Guid(0X25740E2E, 0X9CBA, 0X401B, 0X91, 0X19, 0X4F, 0XB4, 0X2F, 0X39, 0XF2, 0X70);
 
-        public static readonly Guid IID_IDxcVersionInfo = new Guid(0xb04f5b50, 0x2059, 0x4f12, 0xa8, 0xff, 0xa1, 0xe0, 0xcd, 0xe1, 0xcc, 0x7e);
+        public static readonly Guid IID_IDxcVersionInfo = new Guid(0XB04F5B50, 0X2059, 0X4F12, 0XA8, 0XFF, 0XA1, 0XE0, 0XCD, 0XE1, 0XCC, 0X7E);
 
-        public static readonly Guid IID_IDxcVersionInfo2 = new Guid(0xfb6904c4, 0x42f0, 0x4b62, 0x9c, 0x46, 0x98, 0x3a, 0xf7, 0xda, 0x7c, 0x83);
+        public static readonly Guid IID_IDxcVersionInfo2 = new Guid(0XFB6904C4, 0X42F0, 0X4B62, 0X9C, 0X46, 0X98, 0X3A, 0XF7, 0XDA, 0X7C, 0X83);
     }
 }

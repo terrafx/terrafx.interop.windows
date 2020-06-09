@@ -1,0 +1,25 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+CLSID_DxDiagProvider
+IID_IDxDiagProvider
+IID_IDxDiagContainer
+IDxDiagProvider.AddRef():ULONG nothrow
+IDxDiagContainer.Release():ULONG nothrow
+IDxDiagProvider.QueryInterface(const IID &, LPVOID *):HRESULT nothrow
+IDxDiagContainer.AddRef():ULONG nothrow
+IDxDiagProvider.Release():ULONG nothrow
+IDxDiagContainer.QueryInterface(const IID &, LPVOID *):HRESULT nothrow
+--file
+um-dxdiag.h
+--output
+../../../sources/Interop/Windows/um/dxdiag
+--test-output
+../../../tests/Interop/Windows/um/dxdiag
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dxdiag.h
+--with-attribute
+IDxDiagProvider=Guid("9C6B4CB0-23F8-49CC-A3ED-45A55000A6D2")
+IDxDiagContainer=Guid("7D0F462F-4064-4862-BC7F-933E5058C10F")
+--with-librarypath
+*=dxdiag
