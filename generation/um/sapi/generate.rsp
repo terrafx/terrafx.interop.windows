@@ -1,0 +1,217 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+SpAudioFormat
+SpCompressedLexicon
+SpCustomStream
+SPDFID_Text
+SPDFID_WaveFormatEx
+SpFileStream
+SpInProcRecoContext
+SpInprocRecognizer
+SpLexicon
+SpMemoryStream
+SpMMAudioEnum
+SpMMAudioIn
+SpMMAudioOut
+SpNotifyTranslator
+SpNullPhoneConverter
+SpObjectToken
+SpObjectTokenCategory
+SpPhoneConverter
+SpPhoneticAlphabetConverter
+SpPhraseInfoBuilder
+SpResourceManager
+SpSharedRecoContext
+SpSharedRecognizer
+SpShortcut
+SpStream
+SpStreamFormatConverter
+SpTextSelectionInformation
+SpUnCompressedLexicon
+SpVoice
+SpWaveFormatEx
+__MIDL_itf_sapi_0000_0000_v0_0_c_ifspec
+__MIDL_itf_sapi_0000_0000_v0_0_s_ifspec
+__MIDL_itf_sapi_0000_0011_v0_0_c_ifspec
+__MIDL_itf_sapi_0000_0011_v0_0_s_ifspec
+__MIDL_itf_sapi_0000_0015_v0_0_c_ifspec
+__MIDL_itf_sapi_0000_0015_v0_0_s_ifspec
+__MIDL_itf_sapi_0000_0017_v0_0_c_ifspec
+__MIDL_itf_sapi_0000_0017_v0_0_s_ifspec
+__MIDL_itf_sapi_0000_0020_v0_0_c_ifspec
+__MIDL_itf_sapi_0000_0020_v0_0_s_ifspec
+__MIDL_itf_sapi_0000_0022_v0_0_c_ifspec
+__MIDL_itf_sapi_0000_0022_v0_0_s_ifspec
+__MIDL_itf_sapi_0000_0026_v0_0_c_ifspec
+__MIDL_itf_sapi_0000_0026_v0_0_s_ifspec
+__MIDL_itf_sapi_0000_0029_v0_0_c_ifspec
+__MIDL_itf_sapi_0000_0029_v0_0_s_ifspec
+__MIDL_itf_sapi_0000_0030_v0_0_c_ifspec
+__MIDL_itf_sapi_0000_0030_v0_0_s_ifspec
+__MIDL_itf_sapi_0000_0031_v0_0_c_ifspec
+__MIDL_itf_sapi_0000_0031_v0_0_s_ifspec
+__MIDL_itf_sapi_0000_0033_v0_0_c_ifspec
+__MIDL_itf_sapi_0000_0033_v0_0_s_ifspec
+__MIDL_itf_sapi_0000_0034_v0_0_c_ifspec
+__MIDL_itf_sapi_0000_0034_v0_0_s_ifspec
+__MIDL_itf_sapi_0000_0035_v0_0_c_ifspec
+__MIDL_itf_sapi_0000_0035_v0_0_s_ifspec
+__MIDL_itf_sapi_0000_0036_v0_0_c_ifspec
+__MIDL_itf_sapi_0000_0036_v0_0_s_ifspec
+__MIDL_itf_sapi_0000_0038_v0_0_c_ifspec
+__MIDL_itf_sapi_0000_0038_v0_0_s_ifspec
+__MIDL_itf_sapi_0000_0039_v0_0_c_ifspec
+__MIDL_itf_sapi_0000_0039_v0_0_s_ifspec
+__MIDL_itf_sapi_0000_0041_v0_0_c_ifspec
+__MIDL_itf_sapi_0000_0041_v0_0_s_ifspec
+__MIDL_itf_sapi_0000_0044_v0_0_c_ifspec
+__MIDL_itf_sapi_0000_0044_v0_0_s_ifspec
+__MIDL_itf_sapi_0000_0046_v0_0_c_ifspec
+__MIDL_itf_sapi_0000_0046_v0_0_s_ifspec
+__MIDL_itf_sapi_0000_0047_v0_0_c_ifspec
+__MIDL_itf_sapi_0000_0047_v0_0_s_ifspec
+__MIDL_itf_sapi_0000_0049_v0_0_c_ifspec
+__MIDL_itf_sapi_0000_0049_v0_0_s_ifspec
+--file
+um-sapi.h
+--output
+../../../sources/Interop/Windows/um/sapi
+--test-output
+../../../tests/Interop/Windows/um/sapi
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/sapi.h
+--with-attribute
+IEnumSpObjectTokens=Guid("06B64F9E-7FDA-11D2-B4F2-00C04F797396")
+ISpAudio=Guid("C05C768F-FAE8-4EC2-8E07-338321C12452")
+ISpContainerLexicon=Guid("8565572F-C094-41CC-B56E-10BD9C3FF044")
+ISpDataKey=Guid("14056581-E16C-11D2-BB90-00C04F8EE6C0")
+ISpDisplayAlternates=Guid("C8D7C7E2-0DDE-44B7-AFE3-B0C991FBEB5E")
+ISpEnginePronunciation=Guid("C360CE4B-76D1-4214-AD68-52657D5083DA")
+ISpEventSink=Guid("BE7A9CC9-5F9E-11D2-960F-00C04F8EE628")
+ISpEventSource2=Guid("2373A435-6A4B-429E-A6AC-D4231A61975B")
+ISpEventSource=Guid("BE7A9CCE-5F9E-11D2-960F-00C04F8EE628")
+ISpGrammarBuilder2=Guid("8AB10026-20CC-4B20-8C22-A49C9BA78F60")
+ISpGrammarBuilder=Guid("8137828F-591A-4A42-BE58-49EA7EBAAC68")
+ISpLexicon=Guid("DA41A7C2-5383-4DB2-916B-6C1719E3DB58")
+ISpMMSysAudio=Guid("15806F6E-1D70-4B48-98E6-3B1A007509AB")
+ISpNotifySink=Guid("259684DC-37C3-11D2-9603-00C04F8EE628")
+ISpNotifySource=Guid("5EFF4AEF-8487-11D2-961C-00C04F8EE628")
+ISpNotifyTranslator=Guid("ACA16614-5D3D-11D2-960E-00C04F8EE628")
+ISpObjectToken=Guid("14056589-E16C-11D2-BB90-00C04F8EE6C0")
+ISpObjectTokenCategory=Guid("2D3D3845-39AF-4850-BBF9-40B49780011D")
+ISpObjectTokenInit=Guid("B8AAB0CF-346F-49D8-9499-C8B03F161D51")
+ISpObjectWithToken=Guid("5B559F40-E952-11D2-BB91-00C04F8EE6C0")
+ISpPhoneConverter=Guid("8445C581-0CAC-4A38-ABFE-9B2CE2826455")
+ISpPhoneticAlphabetConverter=Guid("133ADCD4-19B4-4020-9FDC-842E78253B17")
+ISpPhoneticAlphabetSelection=Guid("B2745EFD-42CE-48CA-81F1-A96E02538A90")
+ISpPhrase2=Guid("F264DA52-E457-4696-B856-A737B717AF79")
+ISpPhrase=Guid("1A5C0354-B621-4B5A-8791-D306ED379E53")
+ISpPhraseAlt=Guid("8FCEBC98-4E49-4067-9C6C-D86A0E092E3D")
+ISpProperties=Guid("5B4FB971-B115-4DE1-AD97-E482E3BF6EE4")
+ISpRecoCategory=Guid("DA0CD0F9-14A2-4F09-8C2A-85CC48979345")
+ISpRecoContext2=Guid("BEAD311C-52FF-437F-9464-6B21054CA73D")
+ISpRecoContext=Guid("F740A62F-7C15-489E-8234-940A33D9272D")
+ISpRecoGrammar2=Guid("4B37BC9E-9ED6-44A3-93D3-18F022B79EC3")
+ISpRecoGrammar=Guid("2177DB29-7F45-47D0-8554-067E91C80502")
+ISpRecoResult2=Guid("27CAC6C4-88F2-41F2-8817-0C95E59F1E6E")
+ISpRecoResult=Guid("20B053BE-E235-43CD-9A2A-8D17A48B7842")
+ISpRecognizer2=Guid("8FC6D974-C81E-4098-93C5-0147F61ED4D3")
+ISpRecognizer3=Guid("DF1B943C-5838-4AA2-8706-D7CD5B333499")
+ISpRecognizer=Guid("C2B5F241-DAA0-4507-9E16-5A1EAA2B7A5C")
+ISpRegDataKey=Guid("92A66E2B-C830-4149-83DF-6FC2BA1E7A5B")
+ISpResourceManager=Guid("93384E18-5014-43D5-ADBB-A78E055926BD")
+ISpSerializeState=Guid("21B501A0-0EC7-46C9-92C3-A2BC784C54B9")
+ISpShortcut=Guid("3DF681E2-EA56-11D9-8BDE-F66BAD1E3F3A")
+ISpStream=Guid("12E3CCA9-7518-44C5-A5E7-BA5A79CB929E")
+ISpStreamFormat=Guid("BED530BE-2606-4F4D-A1C0-54C5CDA5566F")
+ISpStreamFormatConverter=Guid("678A932C-EA71-4446-9B41-78FDA6280A29")
+ISpTranscript=Guid("10F63BCE-201A-11D3-AC70-00C04F8EE6C0")
+ISpVoice=Guid("6C44DF74-72B9-4992-A1EC-EF996E0422D4")
+ISpXMLRecoResult=Guid("AE39362B-45A8-4074-9B9E-CCF49AA2D0B6")
+ISpeechAudio=Guid("CFF8E175-019E-11D3-A08E-00C04F8EF9B5")
+ISpeechAudioBufferInfo=Guid("11B103D8-1142-4EDF-A093-82FB3915F8CC")
+ISpeechAudioFormat=Guid("E6E9C590-3E18-40E3-8299-061F98BDE7C7")
+ISpeechAudioStatus=Guid("C62D9C91-7458-47F6-862D-1EF86FB0B278")
+ISpeechBaseStream=Guid("6450336F-7D49-4CED-8097-49D6DEE37294")
+ISpeechCustomStream=Guid("1A9E9F4F-104F-4DB8-A115-EFD7FD0C97AE")
+ISpeechDataKey=Guid("CE17C09B-4EFA-44D5-A4C9-59D9585AB0CD")
+ISpeechFileStream=Guid("AF67F125-AB39-4E93-B4A2-CC2E66E182A7")
+ISpeechGrammarRule=Guid("AFE719CF-5DD1-44F2-999C-7A399F1CFCCC")
+ISpeechGrammarRuleState=Guid("D4286F2C-EE67-45AE-B928-28D695362EDA")
+ISpeechGrammarRuleStateTransition=Guid("CAFD1DB1-41D1-4A06-9863-E2E81DA17A9A")
+ISpeechGrammarRuleStateTransitions=Guid("EABCE657-75BC-44A2-AA7F-C56476742963")
+ISpeechGrammarRules=Guid("6FFA3B44-FC2D-40D1-8AFC-32911C7F1AD1")
+ISpeechLexicon=Guid("3DA7627A-C7AE-4B23-8708-638C50362C25")
+ISpeechLexiconPronunciation=Guid("95252C5D-9E43-4F4A-9899-48EE73352F9F")
+ISpeechLexiconPronunciations=Guid("72829128-5682-4704-A0D4-3E2BB6F2EAD3")
+ISpeechLexiconWord=Guid("4E5B933C-C9BE-48ED-8842-1EE51BB1D4FF")
+ISpeechLexiconWords=Guid("8D199862-415E-47D5-AC4F-FAA608B424E6")
+ISpeechMMSysAudio=Guid("3C76AF6D-1FD7-4831-81D1-3B71D5A13C44")
+ISpeechMemoryStream=Guid("EEB14B68-808B-4ABE-A5EA-B51DA7588008")
+ISpeechObjectToken=Guid("C74A3ADC-B727-4500-A84A-B526721C8B8C")
+ISpeechObjectTokenCategory=Guid("CA7EAC50-2D01-4145-86D4-5AE7D70F4469")
+ISpeechObjectTokens=Guid("9285B776-2E7B-4BC0-B53E-580EB6FA967F")
+ISpeechPhoneConverter=Guid("C3E4F353-433F-43D6-89A1-6A62A7054C3D")
+ISpeechPhraseAlternate=Guid("27864A2A-2B9F-4CB8-92D3-0D2722FD1E73")
+ISpeechPhraseAlternates=Guid("B238B6D5-F276-4C3D-A6C1-2974801C3CC2")
+ISpeechPhraseElement=Guid("E6176F96-E373-4801-B223-3B62C068C0B4")
+ISpeechPhraseElements=Guid("0626B328-3478-467D-A0B3-D0853B93DDA3")
+ISpeechPhraseInfo=Guid("961559CF-4E67-4662-8BF0-D93F1FCD61B3")
+ISpeechPhraseInfoBuilder=Guid("3B151836-DF3A-4E0A-846C-D2ADC9334333")
+ISpeechPhraseProperties=Guid("08166B47-102E-4B23-A599-BDB98DBFD1F4")
+ISpeechPhraseProperty=Guid("CE563D48-961E-4732-A2E1-378A42B430BE")
+ISpeechPhraseReplacement=Guid("2890A410-53A7-4FB5-94EC-06D4998E3D02")
+ISpeechPhraseReplacements=Guid("38BC662F-2257-4525-959E-2069D2596C05")
+ISpeechPhraseRule=Guid("A7BFE112-A4A0-48D9-B602-C313843F6964")
+ISpeechPhraseRules=Guid("9047D593-01DD-4B72-81A3-E4A0CA69F407")
+ISpeechRecoContext=Guid("580AA49D-7E1E-4809-B8E2-57DA806104B8")
+ISpeechRecoGrammar=Guid("B6D6F79F-2158-4E50-B5BC-9A9CCD852A09")
+ISpeechRecoResult2=Guid("8E0A246D-D3C8-45DE-8657-04290C458C3C")
+ISpeechRecoResult=Guid("ED2879CF-CED9-4EE6-A534-DE0191D5468D")
+ISpeechRecoResultDispatch=Guid("6D60EB64-ACED-40A6-BBF3-4E557F71DEE2")
+ISpeechRecoResultTimes=Guid("62B3B8FB-F6E7-41BE-BDCB-056B1C29EFC0")
+ISpeechRecognizer=Guid("2D5F1C0C-BD75-4B08-9478-3B11FEA2586C")
+ISpeechRecognizerStatus=Guid("BFF9E781-53EC-484E-BB8A-0E1B5551E35C")
+ISpeechResourceLoader=Guid("B9AC5783-FCD0-4B21-B119-B4F8DA8FD2C3")
+ISpeechTextSelectionInformation=Guid("3B9C7E7A-6EEE-4DED-9092-11657279ADBE")
+ISpeechVoice=Guid("269316D8-57BD-11D2-9EEE-00C04F797396")
+ISpeechVoiceStatus=Guid("8BE47B07-57F6-11D2-9EEE-00C04F797396")
+ISpeechWaveFormatEx=Guid("7A1EF0D5-1581-4741-88E4-209A49F11A10")
+ISpeechXMLRecoResult=Guid("AAEC54AF-8F85-4924-944D-B79D39D72E19")
+_ISpeechRecoContextEvents=Guid("7B8FCB42-0E9D-4F00-A048-7B04D6179D3D")
+_ISpeechVoiceEvents=Guid("A372ACD1-3BEF-4BBD-8FFB-CB3E2B416AF8")
+--with-using
+DISPID_SpeechRecoResult2=static TerraFX.Interop.DISPID_SpeechXMLRecoResult
+DISPID_SpeechXMLRecoResult=static TerraFX.Interop.DISPID_SpeechRecoResult
+ISpeechFileStream=static TerraFX.Interop.SpeechStreamFileMode
+ISpeechGrammarRuleState=static TerraFX.Interop.SpeechGrammarWordType
+ISpeechLexicon=static TerraFX.Interop.SpeechPartOfSpeech
+ISpeechRecoGrammar=static TerraFX.Interop.SpeechLoadOption
+SpeechAudioState=static TerraFX.Interop.SPAUDIOSTATE
+SpeechBookmarkOptions=static TerraFX.Interop.SPBOOKMARKOPTIONS
+SpeechDataKeyLocation=static TerraFX.Interop.SPDATAKEYLOCATION
+SpeechDiscardType=static TerraFX.Interop.SPVALUETYPE
+SpeechDisplayAttributes=static TerraFX.Interop.SPDISPLYATTRIBUTES
+SpeechFormatType=static TerraFX.Interop.SPWAVEFORMATTYPE
+SpeechGrammarState=static TerraFX.Interop.SPGRAMMARSTATE
+SpeechGrammarWordType=static TerraFX.Interop.SPGRAMMARWORDTYPE
+SpeechInterference=static TerraFX.Interop.SPINTERFERENCE
+SpeechLexiconType=static TerraFX.Interop.SPLEXICONTYPE
+SpeechLoadOption=static TerraFX.Interop.SPLOADOPTIONS
+SpeechPartOfSpeech=static TerraFX.Interop.SPPARTOFSPEECH
+SpeechRecoContextState=static TerraFX.Interop.SPCONTEXTSTATE
+SpeechRecognitionType=static TerraFX.Interop.SPRECOEVENTFLAGS
+SpeechRecognizerState=static TerraFX.Interop.SPRECOSTATE
+SpeechRetainedAudioOptions=static TerraFX.Interop.SPAUDIOOPTIONS
+SpeechRuleAttributes=static TerraFX.Interop.SPCFGRULEATTRIBUTES
+SpeechRuleState=static TerraFX.Interop.SPRULESTATE
+SpeechRunState=static TerraFX.Interop.SPRUNSTATE
+SpeechStreamFileMode=static TerraFX.Interop.SPFILEMODE
+SpeechStreamSeekPositionType=static TerraFX.Interop.STREAM_SEEK
+SpeechTokenContext=static TerraFX.Interop.CLSCTX
+SpeechVisemeFeature=static TerraFX.Interop.SPVFEATURE
+SpeechVoicePriority=static TerraFX.Interop.SPVPRIORITY
+SpeechVoiceSpeakFlags=static TerraFX.Interop.SPEAKFLAGS
+SpeechWordPronounceable=static TerraFX.Interop.SPWORDPRONOUNCEABLE
+SpeechWordType=static TerraFX.Interop.SPWORDTYPE
