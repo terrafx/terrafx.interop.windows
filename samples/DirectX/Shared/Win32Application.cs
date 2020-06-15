@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop;
 using static TerraFX.Interop.Windows;
@@ -12,12 +13,6 @@ namespace TerraFX.Samples.DirectX
 {
     public static unsafe class Win32Application
     {
-        [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        private delegate nint WNDPROC(IntPtr param0, uint param1, nuint param2, nint param3);
-
-        private static readonly WNDPROC s_wndProc = (hwnd, message, wParam, lParam) => WindowProc(hwnd, message, wParam, lParam);
-        private static readonly delegate* stdcall<IntPtr, uint, nuint, nint, nint> s_wndProcHandle = (delegate* stdcall<IntPtr, uint, nuint, nint, nint>)Marshal.GetFunctionPointerForDelegate(s_wndProc);
-
         private static HWND s_hwnd;
 
         public static HWND Hwnd => s_hwnd;
@@ -30,11 +25,14 @@ namespace TerraFX.Samples.DirectX
             fixed (char* lpszClassName = "DXSampleClass")
             fixed (char* lpWindowName = pSample.Title)
             {
+                // Requires an explicit cast until C# handles UnmanagedCallersOnly
+                var wndProc = (delegate* stdcall<IntPtr, uint, nuint, nint, nint>)(delegate* managed<IntPtr, uint, nuint, nint, nint>)&WindowProc;
+
                 // Initialize the window class.
                 var windowClass = new WNDCLASSEXW {
                     cbSize = (uint)sizeof(WNDCLASSEXW),
                     style = CS_HREDRAW | CS_VREDRAW,
-                    lpfnWndProc = s_wndProcHandle,
+                    lpfnWndProc = wndProc,
                     hInstance = hInstance,
                     hCursor = LoadCursorW(IntPtr.Zero, (ushort*)IDC_ARROW),
                     lpszClassName = (ushort*)lpszClassName
@@ -90,7 +88,8 @@ namespace TerraFX.Samples.DirectX
         }
 
         // Main message handler for the sample
-        private static IntPtr WindowProc(HWND hWnd, uint message, UIntPtr wParam, IntPtr lParam)
+        [UnmanagedCallersOnly]
+        private static nint WindowProc(IntPtr hWnd, uint message, nuint wParam, nint lParam)
         {
             var handle = GetWindowLongPtrW(hWnd, GWLP_USERDATA);
             var pSample = (handle != IntPtr.Zero) ? (DXSample?)GCHandle.FromIntPtr(handle).Target : null;
