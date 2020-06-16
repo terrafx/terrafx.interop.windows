@@ -7,6 +7,8 @@ namespace TerraFX.Interop
 {
     public static partial class Windows
     {
+        public const uint UINT_MAX = 0xFFFFFFFF;
+
         public const ulong ULONGLONG_MAX = 0xFFFFFFFFFFFFFFFF;
 
         public const int INTSAFE_E_ARITHMETIC_OVERFLOW = unchecked((int)0x80070216);

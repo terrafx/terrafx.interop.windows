@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct _wireSAFEARR_DISPATCH
+    public unsafe partial struct wireSAFEARR_DISPATCH
     {
         [NativeTypeName("ULONG")]
         public uint Size;

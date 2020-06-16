@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public partial struct _wireSAFEARRAY
+    public partial struct wireSAFEARRAY
     {
         [NativeTypeName("USHORT")]
         public ushort cDims;
@@ -23,7 +23,7 @@ namespace TerraFX.Interop
         public uint cLocks;
 
         [NativeTypeName("SAFEARRAYUNION")]
-        public _wireSAFEARRAY_UNION uArrayStructs;
+        public wireSAFEARRAY_UNION uArrayStructs;
 
         [NativeTypeName("SAFEARRAYBOUND [1]")]
         public _rgsabound_e__FixedBuffer rgsabound;

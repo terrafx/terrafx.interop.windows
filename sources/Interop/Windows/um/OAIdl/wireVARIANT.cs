@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public partial struct _wireVARIANT
+    public partial struct wireVARIANT
     {
         [NativeTypeName("DWORD")]
         public uint clSize;
@@ -86,11 +86,11 @@ namespace TerraFX.Interop
 
             [FieldOffset(0)]
             [NativeTypeName("wirePSAFEARRAY")]
-            public _wireSAFEARRAY** parray;
+            public wireSAFEARRAY** parray;
 
             [FieldOffset(0)]
             [NativeTypeName("wireBRECORD")]
-            public _wireBRECORD* brecVal;
+            public wireBRECORD* brecVal;
 
             [FieldOffset(0)]
             [NativeTypeName("BYTE *")]
@@ -146,11 +146,11 @@ namespace TerraFX.Interop
 
             [FieldOffset(0)]
             [NativeTypeName("wirePSAFEARRAY *")]
-            public _wireSAFEARRAY*** pparray;
+            public wireSAFEARRAY*** pparray;
 
             [FieldOffset(0)]
             [NativeTypeName("wireVARIANT *")]
-            public _wireVARIANT** pvarVal;
+            public wireVARIANT** pvarVal;
 
             [FieldOffset(0)]
             [NativeTypeName("CHAR")]

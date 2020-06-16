@@ -5,12 +5,12 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct _wireSAFEARR_BSTR
+    public unsafe partial struct wireSAFEARR_VARIANT
     {
         [NativeTypeName("ULONG")]
         public uint Size;
 
-        [NativeTypeName("wireBSTR *")]
-        public FLAGGED_WORD_BLOB** aBstr;
+        [NativeTypeName("wireVARIANT *")]
+        public wireVARIANT** aVariant;
     }
 }

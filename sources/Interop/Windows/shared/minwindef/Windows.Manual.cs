@@ -9,28 +9,36 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
+        public const int MAX_PATH = 260;
+
+        public const int NULL = 0;
+
         public const int FALSE = 0;
 
         public const int TRUE = 1;
 
-        public const int MAX_PATH = 260;
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [return: NativeTypeName("WORD")]
+        public static ushort MAKEWORD([NativeTypeName("DWORD_PTR")] nuint a, [NativeTypeName("DWORD_PTR")] nuint b) => ((ushort)(((byte)(((nuint)(a)) & 0xff)) | ((ushort)((byte)(((nuint)(b)) & 0xff))) << 8));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ushort MAKEWORD(byte a, byte b) => (ushort)(a | (b << 8));
+        [return: NativeTypeName("LONG")]
+        public static int MAKELONG([NativeTypeName("DWORD_PTR")] nuint a, [NativeTypeName("DWORD_PTR")] nuint b) => ((int)(((ushort)(((nuint)(a)) & 0xffff)) | ((uint)((ushort)(((nuint)(b)) & 0xffff))) << 16));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static int MAKELONG(ushort a, ushort b) => a | (b << 16);
+        [return: NativeTypeName("WORD")]
+        public static ushort LOWORD([NativeTypeName("DWORD_PTR")] nuint l) => ((ushort)(((nuint)(l)) & 0xffff));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ushort LOWORD(uint l) => unchecked((ushort)l);
+        [return: NativeTypeName("WORD")]
+        public static ushort HIWORD([NativeTypeName("DWORD_PTR")] nuint l) => ((ushort)((((nuint)(l)) >> 16) & 0xffff));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ushort HIWORD(uint l) => unchecked((ushort)(l >> 16));
+        [return: NativeTypeName("BYTE")]
+        public static byte LOBYTE([NativeTypeName("DWORD_PTR")] nuint w) => ((byte)(((nuint)(w)) & 0xff));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static byte LOBYTE(ushort w) => unchecked((byte)w);
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static byte HIBYTE(ushort w) => unchecked((byte)(w >> 8));
+        [return: NativeTypeName("BYTE")]
+        public static byte HIBYTE([NativeTypeName("DWORD_PTR")] nuint w) => ((byte)((((nuint)(w)) >> 8) & 0xff));
     }
 }

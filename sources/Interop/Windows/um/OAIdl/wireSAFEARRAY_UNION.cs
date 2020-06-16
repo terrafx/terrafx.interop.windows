@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public partial struct _wireSAFEARRAY_UNION
+    public partial struct wireSAFEARRAY_UNION
     {
         [NativeTypeName("ULONG")]
         public uint sfType;
@@ -20,27 +20,27 @@ namespace TerraFX.Interop
         {
             [FieldOffset(0)]
             [NativeTypeName("SAFEARR_BSTR")]
-            public _wireSAFEARR_BSTR BstrStr;
+            public wireSAFEARR_BSTR BstrStr;
 
             [FieldOffset(0)]
             [NativeTypeName("SAFEARR_UNKNOWN")]
-            public _wireSAFEARR_UNKNOWN UnknownStr;
+            public wireSAFEARR_UNKNOWN UnknownStr;
 
             [FieldOffset(0)]
             [NativeTypeName("SAFEARR_DISPATCH")]
-            public _wireSAFEARR_DISPATCH DispatchStr;
+            public wireSAFEARR_DISPATCH DispatchStr;
 
             [FieldOffset(0)]
             [NativeTypeName("SAFEARR_VARIANT")]
-            public _wireSAFEARR_VARIANT VariantStr;
+            public wireSAFEARR_VARIANT VariantStr;
 
             [FieldOffset(0)]
             [NativeTypeName("SAFEARR_BRECORD")]
-            public _wireSAFEARR_BRECORD RecordStr;
+            public wireSAFEARR_BRECORD RecordStr;
 
             [FieldOffset(0)]
             [NativeTypeName("SAFEARR_HAVEIID")]
-            public _wireSAFEARR_HAVEIID HaveIidStr;
+            public wireSAFEARR_HAVEIID HaveIidStr;
 
             [FieldOffset(0)]
             public BYTE_SIZEDARR ByteStr;

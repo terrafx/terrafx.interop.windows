@@ -9,6 +9,10 @@ namespace TerraFX.Interop
     {
         public const int _FACDXGI = 0x87A;
 
+        public static int MAKE_DXGI_HRESULT(int code) => MAKE_HRESULT(1, _FACDXGI, code);
+
+        public static int MAKE_DXGI_STATUS(int code) => MAKE_HRESULT(0, _FACDXGI, code);
+
         public const int DXGI_CPU_ACCESS_NONE = 0;
 
         public const int DXGI_CPU_ACCESS_DYNAMIC = 1;
@@ -18,9 +22,5 @@ namespace TerraFX.Interop
         public const int DXGI_CPU_ACCESS_SCRATCH = 3;
 
         public const int DXGI_CPU_ACCESS_FIELD = 15;
-
-        public static int MAKE_DXGI_HRESULT(int code) => MAKE_HRESULT(1, _FACDXGI, code);
-
-        public static int MAKE_DXGI_STATUS(int code) => MAKE_HRESULT(0, _FACDXGI, code);
     }
 }

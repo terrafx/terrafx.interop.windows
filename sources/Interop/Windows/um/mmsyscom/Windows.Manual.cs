@@ -187,6 +187,5 @@ namespace TerraFX.Interop
         public const int CALLBACK_THREAD = (CALLBACK_TASK);
 
         public const int CALLBACK_EVENT = 0x00050000;
-
     }
 }

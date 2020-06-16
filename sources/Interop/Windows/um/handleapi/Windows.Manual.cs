@@ -7,6 +7,6 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        public const int INVALID_HANDLE_VALUE = -1;
+        public const nuint INVALID_HANDLE_VALUE = unchecked((nuint)(-1));
     }
 }

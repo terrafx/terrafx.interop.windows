@@ -9,34 +9,34 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="_wireBRECORD" /> struct.</summary>
-    public static unsafe class _wireBRECORDTests
+    /// <summary>Provides validation of the <see cref="wireBRECORD" /> struct.</summary>
+    public static unsafe class wireBRECORDTests
     {
-        /// <summary>Validates that the <see cref="_wireBRECORD" /> struct is blittable.</summary>
+        /// <summary>Validates that the <see cref="wireBRECORD" /> struct is blittable.</summary>
         [Test]
         public static void IsBlittableTest()
         {
-            Assert.That(Marshal.SizeOf<_wireBRECORD>(), Is.EqualTo(sizeof(_wireBRECORD)));
+            Assert.That(Marshal.SizeOf<wireBRECORD>(), Is.EqualTo(sizeof(wireBRECORD)));
         }
 
-        /// <summary>Validates that the <see cref="_wireBRECORD" /> struct has the right <see cref="LayoutKind" />.</summary>
+        /// <summary>Validates that the <see cref="wireBRECORD" /> struct has the right <see cref="LayoutKind" />.</summary>
         [Test]
         public static void IsLayoutSequentialTest()
         {
-            Assert.That(typeof(_wireBRECORD).IsLayoutSequential, Is.True);
+            Assert.That(typeof(wireBRECORD).IsLayoutSequential, Is.True);
         }
 
-        /// <summary>Validates that the <see cref="_wireBRECORD" /> struct has the correct size.</summary>
+        /// <summary>Validates that the <see cref="wireBRECORD" /> struct has the correct size.</summary>
         [Test]
         public static void SizeOfTest()
         {
             if (Environment.Is64BitProcess)
             {
-                Assert.That(sizeof(_wireBRECORD), Is.EqualTo(24));
+                Assert.That(sizeof(wireBRECORD), Is.EqualTo(24));
             }
             else
             {
-                Assert.That(sizeof(_wireBRECORD), Is.EqualTo(16));
+                Assert.That(sizeof(wireBRECORD), Is.EqualTo(16));
             }
         }
     }
