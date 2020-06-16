@@ -633,9 +633,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "winerror", "winerror", "{F2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "winioctl", "winioctl", "{EAC155AF-13A3-404C-A0D6-4BB3754DB357}"
 	ProjectSection(SolutionItems) = preProject
-		generation\shared\winioctl\generate.rsp = generation\shared\winioctl\generate.rsp
-		generation\shared\winioctl\header.txt = generation\shared\winioctl\header.txt
-		generation\shared\winioctl\shared-winioctl.h = generation\shared\winioctl\shared-winioctl.h
+		generation\um\winioctl\generate.rsp = generation\um\winioctl\generate.rsp
+		generation\um\winioctl\header.txt = generation\um\winioctl\header.txt
+		generation\um\winioctl\um-winioctl.h = generation\um\winioctl\um-winioctl.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wtypes", "wtypes", "{7303F50F-3042-406D-9659-670BA4BDAFF3}"
@@ -682,9 +682,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ObjIdl", "ObjIdl", "{F19163
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ntstatus", "ntstatus", "{274AC85C-C366-4770-8822-277548199E27}"
 	ProjectSection(SolutionItems) = preProject
-		generation\um\ntstatus\generate.rsp = generation\um\ntstatus\generate.rsp
-		generation\um\ntstatus\header.txt = generation\um\ntstatus\header.txt
-		generation\um\ntstatus\um-ntstatus.h = generation\um\ntstatus\um-ntstatus.h
+		generation\shared\ntstatus\generate.rsp = generation\shared\ntstatus\generate.rsp
+		generation\shared\ntstatus\header.txt = generation\shared\ntstatus\header.txt
+		generation\shared\ntstatus\shared-ntstatus.h = generation\shared\ntstatus\shared-ntstatus.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unknwnbase", "Unknwnbase", "{ACB478FC-1728-4302-ABFE-F3AEBE6C207E}"
@@ -972,14 +972,14 @@ Global
 		{70E2740C-8582-4522-9DB8-F0AAF4222CB0} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 		{E3052240-0386-4984-8562-DC906A171B9A} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 		{F23F8885-BCAE-4520-99DF-F0D00D96F934} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
-		{EAC155AF-13A3-404C-A0D6-4BB3754DB357} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{EAC155AF-13A3-404C-A0D6-4BB3754DB357} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{7303F50F-3042-406D-9659-670BA4BDAFF3} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 		{5A59FFC1-BE87-45A2-A8A7-B6FE1BCED271} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 		{6FE54E38-7148-410E-B705-DBD1DEADB289} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{388063B8-ADB3-4247-AB55-575151D6171E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{54243AB4-DCF7-4557-B3D7-31FF74DD8367} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{F191637A-421E-4826-A26E-DE73ACE93494} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{274AC85C-C366-4770-8822-277548199E27} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{274AC85C-C366-4770-8822-277548199E27} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 		{ACB478FC-1728-4302-ABFE-F3AEBE6C207E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{E3D36D88-D550-40DF-80F7-01036FE8F684} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{811E51D3-DBA8-4988-A365-9E801DD3DAD5} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
