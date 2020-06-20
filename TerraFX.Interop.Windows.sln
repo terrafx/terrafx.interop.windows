@@ -862,6 +862,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sapi", "sapi", "{C06939FB-3
 		generation\um\sapi\um-sapi.h = generation\um\sapi\um-sapi.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "codecapi", "codecapi", "{99A06B48-0BBC-49AB-A198-2303045529BC}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\codecapi\generate.rsp = generation\um\codecapi\generate.rsp
+		generation\um\codecapi\header.txt = generation\um\codecapi\header.txt
+		generation\um\codecapi\um-codecapi.h = generation\um\codecapi\um-codecapi.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1005,6 +1012,7 @@ Global
 		{A6F7ABE5-89E1-483A-ADBD-D89EF79E6E16} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 		{7B34FD9E-65C1-4140-80D5-6E8A8D39A8CF} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{C06939FB-3A0B-4706-8DF3-0404392920FB} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{99A06B48-0BBC-49AB-A198-2303045529BC} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
