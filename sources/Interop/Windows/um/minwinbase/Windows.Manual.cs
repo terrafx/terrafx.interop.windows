@@ -128,7 +128,5 @@ namespace TerraFX.Interop
         public const uint NONZEROLPTR = LMEM_FIXED;
 
         public const uint NUMA_NO_PREFERRED_NODE = unchecked((uint)-1);
-
-        // Line 433: #define LocalDiscard( h )   LocalReAlloc( (h), 0, LMEM_MOVEABLE )
     }
 }

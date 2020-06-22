@@ -272,39 +272,5 @@ namespace TerraFX.Interop
         public const int PSM_SETBUTTONTEXTW = WM_USER + 140;
 
         public const int ID_PSREBOOTSYSTEM = ID_PSRESTARTWINDOWS | 0x1;
-
-        // Line 637: #define PropSheet_SetCurSel(hDlg, hpage, index) \
-        // Line 642: #define PropSheet_RemovePage(hDlg, index, hpage) \
-        // Line 647: #define PropSheet_AddPage(hDlg, hpage) \
-        // Line 652: #define PropSheet_Changed(hDlg, hwnd) \
-        // Line 657: #define PropSheet_RestartWindows(hDlg) \
-        // Line 662: #define PropSheet_RebootSystem(hDlg) \
-        // Line 667: #define PropSheet_CancelToClose(hDlg) \
-        // Line 672: #define PropSheet_QuerySiblings(hDlg, wParam, lParam) \
-        // Line 677: #define PropSheet_UnChanged(hDlg, hwnd) \
-        // Line 682: #define PropSheet_Apply(hDlg) \
-        // Line 696: #define PropSheet_SetTitle(hDlg, wStyle, lpszText)\
-        // Line 701: #define PropSheet_SetWizButtons(hDlg, dwFlags) \
-        // Line 719: #define PropSheet_PressButton(hDlg, iButton) \
-        // Line 735: #define PropSheet_SetCurSelByID(hDlg, id) \
-        // Line 748: #define PropSheet_SetFinishText(hDlg, lpszText) \
-        // Line 753: #define PropSheet_GetTabControl(hDlg) \
-        // Line 757: #define PropSheet_IsDialogMessage(hDlg, pMsg) \
-        // Line 761: #define PropSheet_GetCurrentPageHwnd(hDlg) \
-        // Line 765: #define PropSheet_InsertPage(hDlg, index, hpage) \
-        // Line 782: #define PropSheet_SetHeaderTitle(hDlg, index, lpszText) \
-        // Line 795: #define PropSheet_SetHeaderSubTitle(hDlg, index, lpszText) \
-        // Line 799: #define PropSheet_HwndToIndex(hDlg, hwnd) \
-        // Line 803: #define PropSheet_IndexToHwnd(hDlg, i) \
-        // Line 807: #define PropSheet_PageToIndex(hDlg, hpage) \
-        // Line 811: #define PropSheet_IndexToPage(hDlg, i) \
-        // Line 815: #define PropSheet_IdToIndex(hDlg, id) \
-        // Line 819: #define PropSheet_IndexToId(hDlg, i) \
-        // Line 823: #define PropSheet_GetResult(hDlg) \
-        // Line 827: #define PropSheet_RecalcPageSizes(hDlg) \
-        // Line 839: #define PropSheet_SetNextText(hDlg, lpszText) \
-        // Line 847: #define PropSheet_ShowWizButtons(hDlg, dwFlag, dwButton) \
-        // Line 852: #define PropSheet_EnableWizButtons(hDlg, dwState, dwMask) \
-        // Line 858: #define PropSheet_SetButtonText(hDlg, dwButton, lpszText) \
     }
 }

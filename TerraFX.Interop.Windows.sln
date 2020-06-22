@@ -633,9 +633,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "winerror", "winerror", "{F2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "winioctl", "winioctl", "{EAC155AF-13A3-404C-A0D6-4BB3754DB357}"
 	ProjectSection(SolutionItems) = preProject
-		generation\shared\winioctl\generate.rsp = generation\shared\winioctl\generate.rsp
-		generation\shared\winioctl\header.txt = generation\shared\winioctl\header.txt
-		generation\shared\winioctl\shared-winioctl.h = generation\shared\winioctl\shared-winioctl.h
+		generation\um\winioctl\generate.rsp = generation\um\winioctl\generate.rsp
+		generation\um\winioctl\header.txt = generation\um\winioctl\header.txt
+		generation\um\winioctl\um-winioctl.h = generation\um\winioctl\um-winioctl.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wtypes", "wtypes", "{7303F50F-3042-406D-9659-670BA4BDAFF3}"
@@ -682,9 +682,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ObjIdl", "ObjIdl", "{F19163
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ntstatus", "ntstatus", "{274AC85C-C366-4770-8822-277548199E27}"
 	ProjectSection(SolutionItems) = preProject
-		generation\um\ntstatus\generate.rsp = generation\um\ntstatus\generate.rsp
-		generation\um\ntstatus\header.txt = generation\um\ntstatus\header.txt
-		generation\um\ntstatus\um-ntstatus.h = generation\um\ntstatus\um-ntstatus.h
+		generation\shared\ntstatus\generate.rsp = generation\shared\ntstatus\generate.rsp
+		generation\shared\ntstatus\header.txt = generation\shared\ntstatus\header.txt
+		generation\shared\ntstatus\shared-ntstatus.h = generation\shared\ntstatus\shared-ntstatus.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unknwnbase", "Unknwnbase", "{ACB478FC-1728-4302-ABFE-F3AEBE6C207E}"
@@ -862,6 +862,167 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sapi", "sapi", "{C06939FB-3
 		generation\um\sapi\um-sapi.h = generation\um\sapi\um-sapi.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "codecapi", "codecapi", "{99A06B48-0BBC-49AB-A198-2303045529BC}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\codecapi\generate.rsp = generation\um\codecapi\generate.rsp
+		generation\um\codecapi\header.txt = generation\um\codecapi\header.txt
+		generation\um\codecapi\um-codecapi.h = generation\um\codecapi\um-codecapi.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mfapi", "mfapi", "{A2B8890A-416E-4AA4-80C9-AE3E0F0B3EB6}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\mfapi\generate.rsp = generation\um\mfapi\generate.rsp
+		generation\um\mfapi\header.txt = generation\um\mfapi\header.txt
+		generation\um\mfapi\um-mfapi.h = generation\um\mfapi\um-mfapi.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mfcaptureengine", "mfcaptureengine", "{F5276A58-24A7-4933-9D3E-5A749A8D9880}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\mfcaptureengine\generate.rsp = generation\um\mfcaptureengine\generate.rsp
+		generation\um\mfcaptureengine\header.txt = generation\um\mfcaptureengine\header.txt
+		generation\um\mfcaptureengine\um-mfcaptureengine.h = generation\um\mfcaptureengine\um-mfcaptureengine.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mfcontentdecryptionmodule", "mfcontentdecryptionmodule", "{65787E22-85B7-44B5-B46B-13745BCBDBA1}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\mfcontentdecryptionmodule\generate.rsp = generation\um\mfcontentdecryptionmodule\generate.rsp
+		generation\um\mfcontentdecryptionmodule\header.txt = generation\um\mfcontentdecryptionmodule\header.txt
+		generation\um\mfcontentdecryptionmodule\um-mfcontentdecryptionmodule.h = generation\um\mfcontentdecryptionmodule\um-mfcontentdecryptionmodule.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mferror", "Mferror", "{A0F90866-A578-426F-928E-3FF8F593554A}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\Mferror\generate.rsp = generation\um\Mferror\generate.rsp
+		generation\um\Mferror\header.txt = generation\um\Mferror\header.txt
+		generation\um\Mferror\um-Mferror.h = generation\um\Mferror\um-Mferror.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mfidl", "mfidl", "{BE90524A-D44F-4F55-9CEA-4B6A689DC3DB}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\mfidl\generate.rsp = generation\um\mfidl\generate.rsp
+		generation\um\mfidl\header.txt = generation\um\mfidl\header.txt
+		generation\um\mfidl\um-mfidl.h = generation\um\mfidl\um-mfidl.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mfmediacapture", "mfmediacapture", "{86EAC66F-A550-41CC-AA22-02441125D703}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\mfmediacapture\generate.rsp = generation\um\mfmediacapture\generate.rsp
+		generation\um\mfmediacapture\header.txt = generation\um\mfmediacapture\header.txt
+		generation\um\mfmediacapture\um-mfmediacapture.h = generation\um\mfmediacapture\um-mfmediacapture.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mfmediaengine", "mfmediaengine", "{DC03B485-BBF9-4F44-A222-087E35F8013C}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\mfmediaengine\generate.rsp = generation\um\mfmediaengine\generate.rsp
+		generation\um\mfmediaengine\header.txt = generation\um\mfmediaengine\header.txt
+		generation\um\mfmediaengine\um-mfmediaengine.h = generation\um\mfmediaengine\um-mfmediaengine.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mfmp2dlna", "mfmp2dlna", "{796DAD5E-1771-4855-BBBE-82F4E0D3EF9A}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\mfmp2dlna\generate.rsp = generation\um\mfmp2dlna\generate.rsp
+		generation\um\mfmp2dlna\header.txt = generation\um\mfmp2dlna\header.txt
+		generation\um\mfmp2dlna\um-mfmp2dlna.h = generation\um\mfmp2dlna\um-mfmp2dlna.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mfobjects", "mfobjects", "{46848313-1E17-49CE-AFE4-9D224693FAEE}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\mfobjects\generate.rsp = generation\um\mfobjects\generate.rsp
+		generation\um\mfobjects\header.txt = generation\um\mfobjects\header.txt
+		generation\um\mfobjects\um-mfobjects.h = generation\um\mfobjects\um-mfobjects.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mfplay", "mfplay", "{32B0843B-BFB6-4297-BD52-D6F9FD6A3BBF}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\mfplay\generate.rsp = generation\um\mfplay\generate.rsp
+		generation\um\mfplay\header.txt = generation\um\mfplay\header.txt
+		generation\um\mfplay\um-mfplay.h = generation\um\mfplay\um-mfplay.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mfreadwrite", "mfreadwrite", "{F40B303C-3C3A-41B5-BE28-60C510864367}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\mfreadwrite\generate.rsp = generation\um\mfreadwrite\generate.rsp
+		generation\um\mfreadwrite\header.txt = generation\um\mfreadwrite\header.txt
+		generation\um\mfreadwrite\um-mfreadwrite.h = generation\um\mfreadwrite\um-mfreadwrite.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mfsharingengine", "mfsharingengine", "{86D78CDB-EA3C-4CA7-B546-452867032DA1}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\mfsharingengine\generate.rsp = generation\um\mfsharingengine\generate.rsp
+		generation\um\mfsharingengine\header.txt = generation\um\mfsharingengine\header.txt
+		generation\um\mfsharingengine\um-mfsharingengine.h = generation\um\mfsharingengine\um-mfsharingengine.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mfspatialaudio", "mfspatialaudio", "{254DF00C-824D-45BC-A9B0-359AE0C63ACE}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\mfspatialaudio\generate.rsp = generation\um\mfspatialaudio\generate.rsp
+		generation\um\mfspatialaudio\header.txt = generation\um\mfspatialaudio\header.txt
+		generation\um\mfspatialaudio\um-mfspatialaudio.h = generation\um\mfspatialaudio\um-mfspatialaudio.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mftransform", "mftransform", "{EE9CB1C1-EAC5-4F5D-B4DB-EACFC7493B90}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\mftransform\generate.rsp = generation\um\mftransform\generate.rsp
+		generation\um\mftransform\header.txt = generation\um\mftransform\header.txt
+		generation\um\mftransform\um-mftransform.h = generation\um\mftransform\um-mftransform.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mediaobj", "mediaobj", "{B7551907-89DD-4845-B866-0DA7E590FED2}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\mediaobj\generate.rsp = generation\um\mediaobj\generate.rsp
+		generation\um\mediaobj\header.txt = generation\um\mediaobj\header.txt
+		generation\um\mediaobj\um-mediaobj.h = generation\um\mediaobj\um-mediaobj.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dvdmedia", "dvdmedia", "{E723EDB1-B969-4785-B4BD-F7C0808E625A}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\dvdmedia\generate.rsp = generation\um\dvdmedia\generate.rsp
+		generation\um\dvdmedia\header.txt = generation\um\dvdmedia\header.txt
+		generation\um\dvdmedia\um-dvdmedia.h = generation\um\dvdmedia\um-dvdmedia.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "amvideo", "amvideo", "{C5C1C25E-25EF-4AF1-8D37-D14EE11857FC}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\amvideo\generate.rsp = generation\um\amvideo\generate.rsp
+		generation\um\amvideo\header.txt = generation\um\amvideo\header.txt
+		generation\um\amvideo\um-amvideo.h = generation\um\amvideo\um-amvideo.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "strmif", "strmif", "{8C4F844D-A298-49EC-A261-382639858756}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\strmif\generate.rsp = generation\um\strmif\generate.rsp
+		generation\um\strmif\header.txt = generation\um\strmif\header.txt
+		generation\um\strmif\um-strmif.h = generation\um\strmif\um-strmif.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "propsys", "propsys", "{38CDFDD6-B445-4AFD-8F29-CB623B6FE799}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\propsys\generate.rsp = generation\um\propsys\generate.rsp
+		generation\um\propsys\header.txt = generation\um\propsys\header.txt
+		generation\um\propsys\um-propsys.h = generation\um\propsys\um-propsys.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SpatialAudioClient", "SpatialAudioClient", "{C74A86CA-3656-4A8C-A6EC-C3F18C5DEB1A}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\SpatialAudioClient\generate.rsp = generation\um\SpatialAudioClient\generate.rsp
+		generation\um\SpatialAudioClient\header.txt = generation\um\SpatialAudioClient\header.txt
+		generation\um\SpatialAudioClient\um-SpatialAudioClient.h = generation\um\SpatialAudioClient\um-SpatialAudioClient.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SpatialAudioMetadata", "SpatialAudioMetadata", "{923F9247-32E5-46F5-8F45-D10580795B2B}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\SpatialAudioMetadata\generate.rsp = generation\um\SpatialAudioMetadata\generate.rsp
+		generation\um\SpatialAudioMetadata\header.txt = generation\um\SpatialAudioMetadata\header.txt
+		generation\um\SpatialAudioMetadata\um-SpatialAudioMetadata.h = generation\um\SpatialAudioMetadata\um-SpatialAudioMetadata.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StructuredQueryCondition", "StructuredQueryCondition", "{6FF35ADB-F57C-40CB-9068-D8DE70A99C74}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\StructuredQueryCondition\generate.rsp = generation\um\StructuredQueryCondition\generate.rsp
+		generation\um\StructuredQueryCondition\header.txt = generation\um\StructuredQueryCondition\header.txt
+		generation\um\StructuredQueryCondition\um-StructuredQueryCondition.h = generation\um\StructuredQueryCondition\um-StructuredQueryCondition.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -972,14 +1133,14 @@ Global
 		{70E2740C-8582-4522-9DB8-F0AAF4222CB0} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 		{E3052240-0386-4984-8562-DC906A171B9A} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 		{F23F8885-BCAE-4520-99DF-F0D00D96F934} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
-		{EAC155AF-13A3-404C-A0D6-4BB3754DB357} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{EAC155AF-13A3-404C-A0D6-4BB3754DB357} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{7303F50F-3042-406D-9659-670BA4BDAFF3} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 		{5A59FFC1-BE87-45A2-A8A7-B6FE1BCED271} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 		{6FE54E38-7148-410E-B705-DBD1DEADB289} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{388063B8-ADB3-4247-AB55-575151D6171E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{54243AB4-DCF7-4557-B3D7-31FF74DD8367} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{F191637A-421E-4826-A26E-DE73ACE93494} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{274AC85C-C366-4770-8822-277548199E27} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{274AC85C-C366-4770-8822-277548199E27} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 		{ACB478FC-1728-4302-ABFE-F3AEBE6C207E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{E3D36D88-D550-40DF-80F7-01036FE8F684} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{811E51D3-DBA8-4988-A365-9E801DD3DAD5} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
@@ -1005,6 +1166,29 @@ Global
 		{A6F7ABE5-89E1-483A-ADBD-D89EF79E6E16} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 		{7B34FD9E-65C1-4140-80D5-6E8A8D39A8CF} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{C06939FB-3A0B-4706-8DF3-0404392920FB} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{99A06B48-0BBC-49AB-A198-2303045529BC} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{A2B8890A-416E-4AA4-80C9-AE3E0F0B3EB6} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{F5276A58-24A7-4933-9D3E-5A749A8D9880} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{65787E22-85B7-44B5-B46B-13745BCBDBA1} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{A0F90866-A578-426F-928E-3FF8F593554A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{BE90524A-D44F-4F55-9CEA-4B6A689DC3DB} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{86EAC66F-A550-41CC-AA22-02441125D703} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{DC03B485-BBF9-4F44-A222-087E35F8013C} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{796DAD5E-1771-4855-BBBE-82F4E0D3EF9A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{46848313-1E17-49CE-AFE4-9D224693FAEE} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{32B0843B-BFB6-4297-BD52-D6F9FD6A3BBF} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{F40B303C-3C3A-41B5-BE28-60C510864367} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{86D78CDB-EA3C-4CA7-B546-452867032DA1} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{254DF00C-824D-45BC-A9B0-359AE0C63ACE} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{EE9CB1C1-EAC5-4F5D-B4DB-EACFC7493B90} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{B7551907-89DD-4845-B866-0DA7E590FED2} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{E723EDB1-B969-4785-B4BD-F7C0808E625A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{C5C1C25E-25EF-4AF1-8D37-D14EE11857FC} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{8C4F844D-A298-49EC-A261-382639858756} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{38CDFDD6-B445-4AFD-8F29-CB623B6FE799} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{C74A86CA-3656-4A8C-A6EC-C3F18C5DEB1A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{923F9247-32E5-46F5-8F45-D10580795B2B} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{6FF35ADB-F57C-40CB-9068-D8DE70A99C74} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}

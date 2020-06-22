@@ -49,6 +49,8 @@ namespace TerraFX.Interop
 
         public const uint DEVPROP_TYPE_STRING = 0x00000012;
 
+        public const uint DEVPROP_TYPE_STRING_LIST = DEVPROP_TYPE_STRING | DEVPROP_TYPEMOD_LIST;
+
         public const uint DEVPROP_TYPE_SECURITY_DESCRIPTOR = 0x00000013;
 
         public const uint DEVPROP_TYPE_SECURITY_DESCRIPTOR_STRING = 0x00000014;
@@ -56,6 +58,8 @@ namespace TerraFX.Interop
         public const uint DEVPROP_TYPE_DEVPROPKEY = 0x00000015;
 
         public const uint DEVPROP_TYPE_DEVPROPTYPE = 0x00000016;
+
+        public const uint DEVPROP_TYPE_BINARY = DEVPROP_TYPE_BYTE | DEVPROP_TYPEMOD_ARRAY;
 
         public const uint DEVPROP_TYPE_ERROR = 0x00000017;
 
@@ -71,21 +75,10 @@ namespace TerraFX.Interop
 
         public const uint DEVPROP_MASK_TYPEMOD = 0x0000F000;
 
-        public const int DEVPROPID_FIRST_USABLE = 2;
-
-        public const uint DEVPROP_TYPE_STRING_LIST = DEVPROP_TYPE_STRING | DEVPROP_TYPEMOD_LIST;
-
-        public const uint DEVPROP_TYPE_BINARY = DEVPROP_TYPE_BYTE | DEVPROP_TYPEMOD_ARRAY;
-
         public const sbyte DEVPROP_TRUE = -1;
 
         public const sbyte DEVPROP_FALSE = 0;
 
-        // Line 116: #define IsEqualDevPropKey(a, b)   (((a).pid == (b).pid) && IsEqualGUID((a).fmtid, (b).fmtid))
-        // Line 124: #define IsEqualDevPropKey(a, b)   (((a).pid == (b).pid) && IsEqualGUID(&(a).fmtid, &(b).fmtid))
-        // Line 160: #define IsEqualLocaleName(a, b) (((a) == (b)) || (((a) != NULL) && ((b) != NULL) && (_wcsicmp((a), (b)) == 0)))
-        // Line 164: #define IsEqualDevPropCompKey(a, b) (IsEqualDevPropKey((a).Key, (b).Key) && ((a).Store == (b).Store) && IsEqualLocaleName((a).LocaleName, (b).LocaleName))
-        // Line 204: #define DEFINE_DEVPROPKEY(name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8, pid) EXTERN_C const DEVPROPKEY DECLSPEC_SELECTANY name = { { l, w1, w2, { b1, b2,  b3,  b4,  b5,  b6,  b7,  b8 } }, pid }
-        // Line 206: #define DEFINE_DEVPROPKEY(name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8, pid) EXTERN_C const DEVPROPKEY name
+        public const int DEVPROPID_FIRST_USABLE = 2;
     }
 }

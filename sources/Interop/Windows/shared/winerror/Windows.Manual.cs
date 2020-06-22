@@ -13965,12 +13965,5 @@ namespace TerraFX.Interop
         {
             return __HRESULT_FROM_WIN32(x);
         }
-
-        // Line 28866: #define HRESULT_FROM_NT(x)      ((HRESULT) ((x) | FACILITY_NT_BIT))
-        // Line 28877: #define GetScode(hr) ((SCODE) (hr))
-        // Line 28881: #define ResultFromScode(sc) ((HRESULT) (sc))
-        // Line 28885: #define PropagateResult(hrPrevious, scBase) ((HRESULT) scBase)
-        // Line 38351: #define HRESULT_FROM_SETUPAPI(x) ((((x) & (APPLICATION_ERROR_MASK|ERROR_SEVERITY_ERROR)) == (APPLICATION_ERROR_MASK|ERROR_SEVERITY_ERROR)) \
-        // Line 40985: #define FILTER_HRESULT_FROM_FLT_NTSTATUS(x) (ASSERT((x & 0xfff0000) == 0x001c0000),(HRESULT) (((x) & 0x8000FFFF) | (FACILITY_USERMODE_FILTER_MANAGER << 16)))
     }
 }

@@ -5924,37 +5924,5 @@ namespace TerraFX.Interop
         public const int CERT_SELECT_LAST = CERT_SELECT_BY_TLS_SIGNATURES;
 
         public const int CERT_SELECT_MAX = CERT_SELECT_LAST * 3;
-
-        // Line 149:   #define GET_ALG_CLASS(x)                (x & (7 << 13))
-        // Line 150:   #define GET_ALG_TYPE(x)                 (x & (15 << 9))
-        // Line 151:   #define GET_ALG_SID(x)                  (x & (511))
-        // Line 577:   #define RCRYPT_SUCCEEDED(rt)     ((rt) == CRYPT_SUCCEED)
-        // Line 578:   #define RCRYPT_FAILED(rt)        ((rt) == CRYPT_FAILED)
-        // Line 2139:  #define IS_CERT_RDN_CHAR_STRING(X)      \
-        // Line 2559:  #define GET_CERT_ENCODING_TYPE(X)   (X & CERT_ENCODING_TYPE_MASK)
-        // Line 2560:  #define GET_CMSG_ENCODING_TYPE(X)   (X & CMSG_ENCODING_TYPE_MASK)
-        // Line 3862:  #define GET_CERT_UNICODE_RDN_ERR_INDEX(X)   \
-        // Line 3864:  #define GET_CERT_UNICODE_ATTR_ERR_INDEX(X)  \
-        // Line 3866:  #define GET_CERT_UNICODE_VALUE_ERR_INDEX(X) \
-        // Line 4006:  #define GET_CERT_ALT_NAME_ENTRY_ERR_INDEX(X)   \
-        // Line 4009:  #define GET_CERT_ALT_NAME_VALUE_ERR_INDEX(X) \
-        // Line 4464:  #define GET_CRL_DIST_POINT_ERR_INDEX(X)   \
-        // Line 4468:  #define IS_CRL_DIST_POINT_ERR_CRL_ISSUER(X)   \
-        // Line 4498:  #define GET_CROSS_CERT_DIST_POINT_ERR_INDEX(X)   \
-        // Line 4595:  #define IS_CERT_EXCLUDED_SUBTREE(X)     \
-        // Line 6184:  #define IS_SPECIAL_OID_INFO_ALGID(Algid)        (Algid >= CALG_OID_INFO_PARAMETERS)
-        // Line 6573:  #define CERT_STRONG_SIGN_PARA_OS_1 \
-        // Line 6580:  #define CERT_STRONG_SIGN_PARA_OS_CURRENT \
-        // Line 6599:  #define CERT_STRONG_KEY_PARA_OS_1 \
-        // Line 6606:  #define CERT_STRONG_KEY_PARA_OS_CURRENT \
-        // Line 9209:  #define IS_CERT_HASH_PROP_ID(X)     (CERT_SHA1_HASH_PROP_ID == (X) || \
-        // Line 9214:  #define IS_PUBKEY_HASH_PROP_ID(X)     (CERT_ISSUER_PUBLIC_KEY_MD5_HASH_PROP_ID == (X) || \
-        // Line 9218:  #define IS_CHAIN_HASH_PROP_ID(X)     (CERT_ISSUER_PUBLIC_KEY_MD5_HASH_PROP_ID == (X) || \
-        // Line 9224:  #define IS_STRONG_SIGN_PROP_ID(X)     (CERT_SIGN_HASH_CNG_ALG_PROP_ID == (X) || \
-        // Line 9235:  #define _szPROP_ID(PropId)       #PropId
-        // Line 9238:  #define szOID_CERT_PROP_ID(PropId) szOID_CERT_PROP_ID_PREFIX _szPROP_ID(PropId)
-        // Line 9241:  #define __CRYPT32WTEXT(quote)           L##quote
-        // Line 9242:  #define _CRYPT32WTEXT(quote)            __CRYPT32WTEXT(quote)
-        // Line 9243:  #define wszOID_CERT_PROP_ID(PropId) \
     }
 }

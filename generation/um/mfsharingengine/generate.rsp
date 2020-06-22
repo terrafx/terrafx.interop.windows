@@ -1,0 +1,57 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+CLSID_MFImageSharingEngineClassFactory
+CLSID_MFMediaSharingEngineClassFactory
+CLSID_PlayToSourceClassFactory
+GUID_NativeDeviceService
+GUID_PlayToService
+IID_IMFImageSharingEngine
+IID_IMFImageSharingEngineClassFactory
+IID_IMFMediaSharingEngine
+IID_IMFMediaSharingEngineClassFactory
+IID_IMFSharingEngineClassFactory
+IID_IPlayToControl
+IID_IPlayToControlWithCapabilities
+IID_IPlayToSourceClassFactory
+MF_MEDIA_SHARING_ENGINE_DEVICE
+MF_MEDIA_SHARING_ENGINE_DEVICE_NAME
+MF_MEDIA_SHARING_ENGINE_INITIAL_SEEK_TIME
+MF_PREFERRED_SOURCE_URI
+MF_SHARING_ENGINE_CALLBACK
+MF_SHARING_ENGINE_SHAREDRENDERER
+MF_SHUTDOWN_RENDERER_ON_ENGINE_SHUTDOWN
+operator&(PLAYTO_SOURCE_CREATEFLAGS, PLAYTO_SOURCE_CREATEFLAGS):PLAYTO_SOURCE_CREATEFLAGS
+operator&=(PLAYTO_SOURCE_CREATEFLAGS &, PLAYTO_SOURCE_CREATEFLAGS):PLAYTO_SOURCE_CREATEFLAGS &
+operator^(PLAYTO_SOURCE_CREATEFLAGS, PLAYTO_SOURCE_CREATEFLAGS):PLAYTO_SOURCE_CREATEFLAGS
+operator^=(PLAYTO_SOURCE_CREATEFLAGS &, PLAYTO_SOURCE_CREATEFLAGS):PLAYTO_SOURCE_CREATEFLAGS &
+operator|(PLAYTO_SOURCE_CREATEFLAGS, PLAYTO_SOURCE_CREATEFLAGS):PLAYTO_SOURCE_CREATEFLAGS
+operator|=(PLAYTO_SOURCE_CREATEFLAGS &, PLAYTO_SOURCE_CREATEFLAGS):PLAYTO_SOURCE_CREATEFLAGS &
+operator~(PLAYTO_SOURCE_CREATEFLAGS):PLAYTO_SOURCE_CREATEFLAGS
+__MIDL_itf_mfsharingengine_0000_0000_v0_0_c_ifspec
+__MIDL_itf_mfsharingengine_0000_0000_v0_0_s_ifspec
+__MIDL_itf_mfsharingengine_0000_0002_v0_0_c_ifspec
+__MIDL_itf_mfsharingengine_0000_0002_v0_0_s_ifspec
+__MIDL_itf_mfsharingengine_0000_0003_v0_0_c_ifspec
+__MIDL_itf_mfsharingengine_0000_0003_v0_0_s_ifspec
+__MIDL_itf_mfsharingengine_0000_0005_v0_0_c_ifspec
+__MIDL_itf_mfsharingengine_0000_0005_v0_0_s_ifspec
+__MIDL_itf_mfsharingengine_0000_0008_v0_0_c_ifspec
+__MIDL_itf_mfsharingengine_0000_0008_v0_0_s_ifspec
+--file
+um-mfsharingengine.h
+--output
+../../../sources/Interop/Windows/um/mfsharingengine
+--test-output
+../../../tests/Interop/Windows/um/mfsharingengine
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mfsharingengine.h
+--with-attribute
+IMFImageSharingEngine=Guid("CFA0AE8E-7E1C-44D2-AE68-FC4C148A6354")
+IMFImageSharingEngineClassFactory=Guid("1FC55727-A7FB-4FC8-83AE-8AF024990AF1")
+IMFMediaSharingEngine=Guid("8D3CE1BF-2367-40E0-9EEE-40D377CC1B46")
+IMFMediaSharingEngineClassFactory=Guid("524D2BC4-B2B1-4FE5-8FAC-FA4E4512B4E0")
+IMFSharingEngineClassFactory=Guid("2BA61F92-8305-413B-9733-FAF15F259384")
+IPlayToControl=Guid("607574EB-F4B6-45C1-B08C-CB715122901D")
+IPlayToControlWithCapabilities=Guid("AA9DD80F-C50A-4220-91C1-332287F82A34")
+IPlayToSourceClassFactory=Guid("842B32A3-9B9B-4D1C-B3F3-49193248A554")

@@ -9,6 +9,8 @@ namespace TerraFX.Interop
 {
     public static partial class Windows
     {
+        public const float D2D1_SCENE_REFERRED_SDR_WHITE_LEVEL = 80.0f;
+
         public static readonly Guid CLSID_D2D1Contrast = new Guid(0xB648A78A, 0x0ED5, 0x4F80, 0xA9, 0x4A, 0x8E, 0x82, 0x5A, 0xCA, 0x6B, 0x77);
 
         public static readonly Guid CLSID_D2D1RgbToHue = new Guid(0x23F3E5EC, 0x91E8, 0x4D3D, 0xAD, 0x0A, 0xAF, 0xAD, 0xC1, 0x00, 0x4A, 0xA1);

@@ -1,0 +1,10 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+um-Mferror.h
+--output
+../../../sources/Interop/Windows/um/Mferror
+--test-output
+../../../tests/Interop/Windows/um/Mferror
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/Mferror.h

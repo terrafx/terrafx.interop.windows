@@ -1,0 +1,10 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+shared-ntstatus.h
+--output
+../../../sources/Interop/Windows/shared/ntstatus
+--test-output
+../../../tests/Interop/Windows/shared/ntstatus
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/ntstatus.h

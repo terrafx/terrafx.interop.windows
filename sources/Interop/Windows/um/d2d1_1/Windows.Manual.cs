@@ -9,6 +9,8 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
+        public const uint D2D1_INVALID_PROPERTY_INDEX = UINT_MAX;
+
         public static readonly Guid IID_ID2D1GdiMetafileSink = new Guid(0x82237326, 0x8111, 0x4F7C, 0xBC, 0xF4, 0xB5, 0xC1, 0x17, 0x55, 0x64, 0xFE);
 
         public static readonly Guid IID_ID2D1GdiMetafile = new Guid(0x2F543DC3, 0xCFC1, 0x4211, 0x86, 0x4F, 0xCF, 0xD9, 0x1C, 0x6F, 0x33, 0x95);

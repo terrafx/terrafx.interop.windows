@@ -1,0 +1,47 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from um/mfidl.h in the Windows SDK for Windows 10.0.19041.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+namespace TerraFX.Interop
+{
+    [Guid("97EC2EA4-0E42-4937-97AC-9D6D328824E1")]
+    public unsafe partial struct IMFShutdown
+    {
+        public void** lpVtbl;
+
+        [return: NativeTypeName("HRESULT")]
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        {
+            return ((delegate* stdcall<IMFShutdown*, Guid*, void**, int>)(lpVtbl[0]))((IMFShutdown*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        }
+
+        [return: NativeTypeName("ULONG")]
+        public uint AddRef()
+        {
+            return ((delegate* stdcall<IMFShutdown*, uint>)(lpVtbl[1]))((IMFShutdown*)Unsafe.AsPointer(ref this));
+        }
+
+        [return: NativeTypeName("ULONG")]
+        public uint Release()
+        {
+            return ((delegate* stdcall<IMFShutdown*, uint>)(lpVtbl[2]))((IMFShutdown*)Unsafe.AsPointer(ref this));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int Shutdown()
+        {
+            return ((delegate* stdcall<IMFShutdown*, int>)(lpVtbl[3]))((IMFShutdown*)Unsafe.AsPointer(ref this));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetShutdownStatus([NativeTypeName("MFSHUTDOWN_STATUS *")] MFSHUTDOWN_STATUS* pStatus)
+        {
+            return ((delegate* stdcall<IMFShutdown*, MFSHUTDOWN_STATUS*, int>)(lpVtbl[4]))((IMFShutdown*)Unsafe.AsPointer(ref this), pStatus);
+        }
+    }
+}

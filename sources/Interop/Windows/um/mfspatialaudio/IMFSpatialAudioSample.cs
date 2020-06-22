@@ -1,0 +1,317 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from um/mfspatialaudio.h in the Windows SDK for Windows 10.0.19041.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+namespace TerraFX.Interop
+{
+    [Guid("ABF28A9B-3393-4290-BA79-5FFC46D986B2")]
+    public unsafe partial struct IMFSpatialAudioSample
+    {
+        public void** lpVtbl;
+
+        [return: NativeTypeName("HRESULT")]
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, void**, int>)(lpVtbl[0]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        }
+
+        [return: NativeTypeName("ULONG")]
+        public uint AddRef()
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, uint>)(lpVtbl[1]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this));
+        }
+
+        [return: NativeTypeName("ULONG")]
+        public uint Release()
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, uint>)(lpVtbl[2]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetItem([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("PROPVARIANT *")] PROPVARIANT* pValue)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, PROPVARIANT*, int>)(lpVtbl[3]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pValue);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetItemType([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("MF_ATTRIBUTE_TYPE *")] MF_ATTRIBUTE_TYPE* pType)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, MF_ATTRIBUTE_TYPE*, int>)(lpVtbl[4]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pType);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int CompareItem([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* Value, [NativeTypeName("BOOL *")] int* pbResult)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, PROPVARIANT*, int*, int>)(lpVtbl[5]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, Value, pbResult);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int Compare([NativeTypeName("IMFAttributes *")] IMFAttributes* pTheirs, MF_ATTRIBUTES_MATCH_TYPE MatchType, [NativeTypeName("BOOL *")] int* pbResult)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, IMFAttributes*, MF_ATTRIBUTES_MATCH_TYPE, int*, int>)(lpVtbl[6]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pTheirs, MatchType, pbResult);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetUINT32([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32 *")] uint* punValue)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, uint*, int>)(lpVtbl[7]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, punValue);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetUINT64([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT64 *")] ulong* punValue)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, ulong*, int>)(lpVtbl[8]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, punValue);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetDouble([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("double *")] double* pfValue)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, double*, int>)(lpVtbl[9]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pfValue);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetGUID([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("GUID *")] Guid* pguidValue)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, Guid*, int>)(lpVtbl[10]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pguidValue);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetStringLength([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32 *")] uint* pcchLength)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, uint*, int>)(lpVtbl[11]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pcchLength);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetString([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("LPWSTR")] ushort* pwszValue, [NativeTypeName("UINT32")] uint cchBufSize, [NativeTypeName("UINT32 *")] uint* pcchLength)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, ushort*, uint, uint*, int>)(lpVtbl[12]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pwszValue, cchBufSize, pcchLength);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetAllocatedString([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("LPWSTR *")] ushort** ppwszValue, [NativeTypeName("UINT32 *")] uint* pcchLength)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, ushort**, uint*, int>)(lpVtbl[13]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, ppwszValue, pcchLength);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetBlobSize([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32 *")] uint* pcbBlobSize)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, uint*, int>)(lpVtbl[14]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pcbBlobSize);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetBlob([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT8 *")] byte* pBuf, [NativeTypeName("UINT32")] uint cbBufSize, [NativeTypeName("UINT32 *")] uint* pcbBlobSize)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, byte*, uint, uint*, int>)(lpVtbl[15]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pBuf, cbBufSize, pcbBlobSize);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetAllocatedBlob([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT8 **")] byte** ppBuf, [NativeTypeName("UINT32 *")] uint* pcbSize)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, byte**, uint*, int>)(lpVtbl[16]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, ppBuf, pcbSize);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetUnknown([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, Guid*, void**, int>)(lpVtbl[17]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, riid, ppv);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int SetItem([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* Value)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, PROPVARIANT*, int>)(lpVtbl[18]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, Value);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int DeleteItem([NativeTypeName("const GUID &")] Guid* guidKey)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, int>)(lpVtbl[19]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int DeleteAllItems()
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, int>)(lpVtbl[20]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int SetUINT32([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32")] uint unValue)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, uint, int>)(lpVtbl[21]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, unValue);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int SetUINT64([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT64")] ulong unValue)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, ulong, int>)(lpVtbl[22]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, unValue);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int SetDouble([NativeTypeName("const GUID &")] Guid* guidKey, double fValue)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, double, int>)(lpVtbl[23]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, fValue);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int SetGUID([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const GUID &")] Guid* guidValue)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, Guid*, int>)(lpVtbl[24]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, guidValue);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int SetString([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("LPCWSTR")] ushort* wszValue)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, ushort*, int>)(lpVtbl[25]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, wszValue);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int SetBlob([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const UINT8 *")] byte* pBuf, [NativeTypeName("UINT32")] uint cbBufSize)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, byte*, uint, int>)(lpVtbl[26]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pBuf, cbBufSize);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int SetUnknown([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("IUnknown *")] IUnknown* pUnknown)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, IUnknown*, int>)(lpVtbl[27]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pUnknown);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int LockStore()
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, int>)(lpVtbl[28]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int UnlockStore()
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, int>)(lpVtbl[29]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetCount([NativeTypeName("UINT32 *")] uint* pcItems)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, uint*, int>)(lpVtbl[30]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pcItems);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetItemByIndex([NativeTypeName("UINT32")] uint unIndex, [NativeTypeName("GUID *")] Guid* pguidKey, [NativeTypeName("PROPVARIANT *")] PROPVARIANT* pValue)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, uint, Guid*, PROPVARIANT*, int>)(lpVtbl[31]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), unIndex, pguidKey, pValue);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int CopyAllItems([NativeTypeName("IMFAttributes *")] IMFAttributes* pDest)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, IMFAttributes*, int>)(lpVtbl[32]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pDest);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetSampleFlags([NativeTypeName("DWORD *")] uint* pdwSampleFlags)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, uint*, int>)(lpVtbl[33]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pdwSampleFlags);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int SetSampleFlags([NativeTypeName("DWORD")] uint dwSampleFlags)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, uint, int>)(lpVtbl[34]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), dwSampleFlags);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetSampleTime([NativeTypeName("LONGLONG *")] long* phnsSampleTime)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, long*, int>)(lpVtbl[35]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), phnsSampleTime);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int SetSampleTime([NativeTypeName("LONGLONG")] long hnsSampleTime)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, long, int>)(lpVtbl[36]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), hnsSampleTime);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetSampleDuration([NativeTypeName("LONGLONG *")] long* phnsSampleDuration)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, long*, int>)(lpVtbl[37]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), phnsSampleDuration);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int SetSampleDuration([NativeTypeName("LONGLONG")] long hnsSampleDuration)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, long, int>)(lpVtbl[38]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), hnsSampleDuration);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetBufferCount([NativeTypeName("DWORD *")] uint* pdwBufferCount)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, uint*, int>)(lpVtbl[39]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pdwBufferCount);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetBufferByIndex([NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("IMFMediaBuffer **")] IMFMediaBuffer** ppBuffer)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, uint, IMFMediaBuffer**, int>)(lpVtbl[40]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), dwIndex, ppBuffer);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int ConvertToContiguousBuffer([NativeTypeName("IMFMediaBuffer **")] IMFMediaBuffer** ppBuffer)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, IMFMediaBuffer**, int>)(lpVtbl[41]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), ppBuffer);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int AddBuffer([NativeTypeName("IMFMediaBuffer *")] IMFMediaBuffer* pBuffer)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, IMFMediaBuffer*, int>)(lpVtbl[42]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pBuffer);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int RemoveBufferByIndex([NativeTypeName("DWORD")] uint dwIndex)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, uint, int>)(lpVtbl[43]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), dwIndex);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int RemoveAllBuffers()
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, int>)(lpVtbl[44]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetTotalLength([NativeTypeName("DWORD *")] uint* pcbTotalLength)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, uint*, int>)(lpVtbl[45]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pcbTotalLength);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int CopyToBuffer([NativeTypeName("IMFMediaBuffer *")] IMFMediaBuffer* pBuffer)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, IMFMediaBuffer*, int>)(lpVtbl[46]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pBuffer);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetObjectCount([NativeTypeName("DWORD *")] uint* pdwObjectCount)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, uint*, int>)(lpVtbl[47]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pdwObjectCount);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int AddSpatialAudioObject([NativeTypeName("IMFSpatialAudioObjectBuffer *")] IMFSpatialAudioObjectBuffer* pAudioObjBuffer)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, IMFSpatialAudioObjectBuffer*, int>)(lpVtbl[48]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pAudioObjBuffer);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetSpatialAudioObjectByIndex([NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("IMFSpatialAudioObjectBuffer **")] IMFSpatialAudioObjectBuffer** ppAudioObjBuffer)
+        {
+            return ((delegate* stdcall<IMFSpatialAudioSample*, uint, IMFSpatialAudioObjectBuffer**, int>)(lpVtbl[49]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), dwIndex, ppAudioObjBuffer);
+        }
+    }
+}

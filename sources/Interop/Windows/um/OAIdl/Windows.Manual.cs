@@ -9,6 +9,64 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
+        public const int FADF_AUTO = 0x1;
+
+        public const int FADF_STATIC = 0x2;
+
+        public const int FADF_EMBEDDED = 0x4;
+
+        public const int FADF_FIXEDSIZE = 0x10;
+
+        public const int FADF_RECORD = 0x20;
+
+        public const int FADF_HAVEIID = 0x40;
+
+        public const int FADF_HAVEVARTYPE = 0x80;
+
+        public const int FADF_BSTR = 0x100;
+
+        public const int FADF_UNKNOWN = 0x200;
+
+        public const int FADF_DISPATCH = 0x400;
+
+        public const int FADF_VARIANT = 0x800;
+
+        public const int FADF_RESERVED = 0xF008;
+
+        public const int PARAMFLAG_NONE = 0;
+
+        public const int PARAMFLAG_FIN = 0x1;
+
+        public const int PARAMFLAG_FOUT = 0x2;
+
+        public const int PARAMFLAG_FLCID = 0x4;
+
+        public const int PARAMFLAG_FRETVAL = 0x8;
+
+        public const int PARAMFLAG_FOPT = 0x10;
+
+        public const int PARAMFLAG_FHASDEFAULT = 0x20;
+
+        public const int PARAMFLAG_FHASCUSTDATA = 0x40;
+
+        public const int IDLFLAG_NONE = PARAMFLAG_NONE;
+
+        public const int IDLFLAG_FIN = PARAMFLAG_FIN;
+
+        public const int IDLFLAG_FOUT = PARAMFLAG_FOUT;
+
+        public const int IDLFLAG_FLCID = PARAMFLAG_FLCID;
+
+        public const int IDLFLAG_FRETVAL = PARAMFLAG_FRETVAL;
+
+        public const int IMPLTYPEFLAG_FDEFAULT = 0x1;
+
+        public const int IMPLTYPEFLAG_FSOURCE = 0x2;
+
+        public const int IMPLTYPEFLAG_FRESTRICTED = 0x4;
+
+        public const int IMPLTYPEFLAG_FDEFAULTVTABLE = 0x8;
+
         public static readonly Guid IID_ICreateTypeInfo = new Guid(0x00020405, 0x0000, 0x0000, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 
         public static readonly Guid IID_ICreateTypeInfo2 = new Guid(0x0002040E, 0x0000, 0x0000, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);

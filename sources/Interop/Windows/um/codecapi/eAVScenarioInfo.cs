@@ -1,0 +1,18 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from um/codecapi.h in the Windows SDK for Windows 10.0.19041.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+namespace TerraFX.Interop
+{
+    public enum eAVScenarioInfo
+    {
+        eAVScenarioInfo_Unknown = 0,
+        eAVScenarioInfo_DisplayRemoting = 1,
+        eAVScenarioInfo_VideoConference = 2,
+        eAVScenarioInfo_Archive = 3,
+        eAVScenarioInfo_LiveStreaming = 4,
+        eAVScenarioInfo_CameraRecord = 5,
+        eAVScenarioInfo_DisplayRemotingWithFeatureMap = 6,
+    }
+}
