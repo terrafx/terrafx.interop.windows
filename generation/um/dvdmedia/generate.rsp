@@ -1,0 +1,10 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+um-dvdmedia.h
+--output
+../../../sources/Interop/Windows/um/dvdmedia
+--test-output
+../../../tests/Interop/Windows/um/dvdmedia
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dvdmedia.h

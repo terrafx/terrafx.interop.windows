@@ -1,0 +1,119 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from um/mfidl.h in the Windows SDK for Windows 10.0.19041.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+namespace TerraFX.Interop
+{
+    [Guid("FBB03414-D13B-4786-8319-5AC51FC0A136")]
+    public unsafe partial struct IMFMediaSource2
+    {
+        public void** lpVtbl;
+
+        [return: NativeTypeName("HRESULT")]
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        {
+            return ((delegate* stdcall<IMFMediaSource2*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSource2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        }
+
+        [return: NativeTypeName("ULONG")]
+        public uint AddRef()
+        {
+            return ((delegate* stdcall<IMFMediaSource2*, uint>)(lpVtbl[1]))((IMFMediaSource2*)Unsafe.AsPointer(ref this));
+        }
+
+        [return: NativeTypeName("ULONG")]
+        public uint Release()
+        {
+            return ((delegate* stdcall<IMFMediaSource2*, uint>)(lpVtbl[2]))((IMFMediaSource2*)Unsafe.AsPointer(ref this));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetEvent([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("IMFMediaEvent **")] IMFMediaEvent** ppEvent)
+        {
+            return ((delegate* stdcall<IMFMediaSource2*, uint, IMFMediaEvent**, int>)(lpVtbl[3]))((IMFMediaSource2*)Unsafe.AsPointer(ref this), dwFlags, ppEvent);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int BeginGetEvent([NativeTypeName("IMFAsyncCallback *")] IMFAsyncCallback* pCallback, [NativeTypeName("IUnknown *")] IUnknown* punkState)
+        {
+            return ((delegate* stdcall<IMFMediaSource2*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[4]))((IMFMediaSource2*)Unsafe.AsPointer(ref this), pCallback, punkState);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int EndGetEvent([NativeTypeName("IMFAsyncResult *")] IMFAsyncResult* pResult, [NativeTypeName("IMFMediaEvent **")] IMFMediaEvent** ppEvent)
+        {
+            return ((delegate* stdcall<IMFMediaSource2*, IMFAsyncResult*, IMFMediaEvent**, int>)(lpVtbl[5]))((IMFMediaSource2*)Unsafe.AsPointer(ref this), pResult, ppEvent);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int QueueEvent([NativeTypeName("MediaEventType")] uint met, [NativeTypeName("const GUID &")] Guid* guidExtendedType, [NativeTypeName("HRESULT")] int hrStatus, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvValue)
+        {
+            return ((delegate* stdcall<IMFMediaSource2*, uint, Guid*, int, PROPVARIANT*, int>)(lpVtbl[6]))((IMFMediaSource2*)Unsafe.AsPointer(ref this), met, guidExtendedType, hrStatus, pvValue);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetCharacteristics([NativeTypeName("DWORD *")] uint* pdwCharacteristics)
+        {
+            return ((delegate* stdcall<IMFMediaSource2*, uint*, int>)(lpVtbl[7]))((IMFMediaSource2*)Unsafe.AsPointer(ref this), pdwCharacteristics);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int CreatePresentationDescriptor([NativeTypeName("IMFPresentationDescriptor **")] IMFPresentationDescriptor** ppPresentationDescriptor)
+        {
+            return ((delegate* stdcall<IMFMediaSource2*, IMFPresentationDescriptor**, int>)(lpVtbl[8]))((IMFMediaSource2*)Unsafe.AsPointer(ref this), ppPresentationDescriptor);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int Start([NativeTypeName("IMFPresentationDescriptor *")] IMFPresentationDescriptor* pPresentationDescriptor, [NativeTypeName("const GUID *")] Guid* pguidTimeFormat, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarStartPosition)
+        {
+            return ((delegate* stdcall<IMFMediaSource2*, IMFPresentationDescriptor*, Guid*, PROPVARIANT*, int>)(lpVtbl[9]))((IMFMediaSource2*)Unsafe.AsPointer(ref this), pPresentationDescriptor, pguidTimeFormat, pvarStartPosition);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int Stop()
+        {
+            return ((delegate* stdcall<IMFMediaSource2*, int>)(lpVtbl[10]))((IMFMediaSource2*)Unsafe.AsPointer(ref this));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int Pause()
+        {
+            return ((delegate* stdcall<IMFMediaSource2*, int>)(lpVtbl[11]))((IMFMediaSource2*)Unsafe.AsPointer(ref this));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int Shutdown()
+        {
+            return ((delegate* stdcall<IMFMediaSource2*, int>)(lpVtbl[12]))((IMFMediaSource2*)Unsafe.AsPointer(ref this));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetSourceAttributes([NativeTypeName("IMFAttributes **")] IMFAttributes** ppAttributes)
+        {
+            return ((delegate* stdcall<IMFMediaSource2*, IMFAttributes**, int>)(lpVtbl[13]))((IMFMediaSource2*)Unsafe.AsPointer(ref this), ppAttributes);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetStreamAttributes([NativeTypeName("DWORD")] uint dwStreamIdentifier, [NativeTypeName("IMFAttributes **")] IMFAttributes** ppAttributes)
+        {
+            return ((delegate* stdcall<IMFMediaSource2*, uint, IMFAttributes**, int>)(lpVtbl[14]))((IMFMediaSource2*)Unsafe.AsPointer(ref this), dwStreamIdentifier, ppAttributes);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int SetD3DManager([NativeTypeName("IUnknown *")] IUnknown* pManager)
+        {
+            return ((delegate* stdcall<IMFMediaSource2*, IUnknown*, int>)(lpVtbl[15]))((IMFMediaSource2*)Unsafe.AsPointer(ref this), pManager);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int SetMediaType([NativeTypeName("DWORD")] uint dwStreamID, [NativeTypeName("IMFMediaType *")] IMFMediaType* pMediaType)
+        {
+            return ((delegate* stdcall<IMFMediaSource2*, uint, IMFMediaType*, int>)(lpVtbl[16]))((IMFMediaSource2*)Unsafe.AsPointer(ref this), dwStreamID, pMediaType);
+        }
+    }
+}

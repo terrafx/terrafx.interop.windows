@@ -1,0 +1,71 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from um/mfobjects.h in the Windows SDK for Windows 10.0.19041.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+namespace TerraFX.Interop
+{
+    [Guid("5BC8A76B-869A-46A3-9B03-FA218A66AEBE")]
+    public unsafe partial struct IMFCollection
+    {
+        public void** lpVtbl;
+
+        [return: NativeTypeName("HRESULT")]
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        {
+            return ((delegate* stdcall<IMFCollection*, Guid*, void**, int>)(lpVtbl[0]))((IMFCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        }
+
+        [return: NativeTypeName("ULONG")]
+        public uint AddRef()
+        {
+            return ((delegate* stdcall<IMFCollection*, uint>)(lpVtbl[1]))((IMFCollection*)Unsafe.AsPointer(ref this));
+        }
+
+        [return: NativeTypeName("ULONG")]
+        public uint Release()
+        {
+            return ((delegate* stdcall<IMFCollection*, uint>)(lpVtbl[2]))((IMFCollection*)Unsafe.AsPointer(ref this));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetElementCount([NativeTypeName("DWORD *")] uint* pcElements)
+        {
+            return ((delegate* stdcall<IMFCollection*, uint*, int>)(lpVtbl[3]))((IMFCollection*)Unsafe.AsPointer(ref this), pcElements);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetElement([NativeTypeName("DWORD")] uint dwElementIndex, [NativeTypeName("IUnknown **")] IUnknown** ppUnkElement)
+        {
+            return ((delegate* stdcall<IMFCollection*, uint, IUnknown**, int>)(lpVtbl[4]))((IMFCollection*)Unsafe.AsPointer(ref this), dwElementIndex, ppUnkElement);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int AddElement([NativeTypeName("IUnknown *")] IUnknown* pUnkElement)
+        {
+            return ((delegate* stdcall<IMFCollection*, IUnknown*, int>)(lpVtbl[5]))((IMFCollection*)Unsafe.AsPointer(ref this), pUnkElement);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int RemoveElement([NativeTypeName("DWORD")] uint dwElementIndex, [NativeTypeName("IUnknown **")] IUnknown** ppUnkElement)
+        {
+            return ((delegate* stdcall<IMFCollection*, uint, IUnknown**, int>)(lpVtbl[6]))((IMFCollection*)Unsafe.AsPointer(ref this), dwElementIndex, ppUnkElement);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int InsertElementAt([NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("IUnknown *")] IUnknown* pUnknown)
+        {
+            return ((delegate* stdcall<IMFCollection*, uint, IUnknown*, int>)(lpVtbl[7]))((IMFCollection*)Unsafe.AsPointer(ref this), dwIndex, pUnknown);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int RemoveAllElements()
+        {
+            return ((delegate* stdcall<IMFCollection*, int>)(lpVtbl[8]))((IMFCollection*)Unsafe.AsPointer(ref this));
+        }
+    }
+}

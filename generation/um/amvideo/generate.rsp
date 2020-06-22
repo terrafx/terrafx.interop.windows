@@ -1,0 +1,26 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+IBaseVideoMixer.AddRef():ULONG nothrow
+IBaseVideoMixer.QueryInterface(const IID &, LPVOID *):HRESULT nothrow
+IBaseVideoMixer.Release():ULONG nothrow
+IDirectDrawVideo.AddRef():ULONG nothrow
+IDirectDrawVideo.QueryInterface(const IID &, LPVOID *):HRESULT nothrow
+IDirectDrawVideo.Release():ULONG nothrow
+IFullScreenVideo.AddRef():ULONG nothrow
+IFullScreenVideo.QueryInterface(const IID &, LPVOID *):HRESULT nothrow
+IFullScreenVideo.Release():ULONG nothrow
+IFullScreenVideoEx.AddRef():ULONG nothrow
+IFullScreenVideoEx.QueryInterface(const IID &, LPVOID *):HRESULT nothrow
+IFullScreenVideoEx.Release():ULONG nothrow
+IQualProp.AddRef():ULONG nothrow
+IQualProp.QueryInterface(const IID &, LPVOID *):HRESULT nothrow
+IQualProp.Release():ULONG nothrow
+--file
+um-amvideo.h
+--output
+../../../sources/Interop/Windows/um/amvideo
+--test-output
+../../../tests/Interop/Windows/um/amvideo
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/amvideo.h

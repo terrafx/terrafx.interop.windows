@@ -1,0 +1,77 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from um/propsys.h in the Windows SDK for Windows 10.0.19041.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+namespace TerraFX.Interop
+{
+    [Guid("380F5CAD-1B5E-42F2-805D-637FD392D31E")]
+    public unsafe partial struct IPropertyChangeArray
+    {
+        public void** lpVtbl;
+
+        [return: NativeTypeName("HRESULT")]
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        {
+            return ((delegate* stdcall<IPropertyChangeArray*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        }
+
+        [return: NativeTypeName("ULONG")]
+        public uint AddRef()
+        {
+            return ((delegate* stdcall<IPropertyChangeArray*, uint>)(lpVtbl[1]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this));
+        }
+
+        [return: NativeTypeName("ULONG")]
+        public uint Release()
+        {
+            return ((delegate* stdcall<IPropertyChangeArray*, uint>)(lpVtbl[2]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetCount([NativeTypeName("UINT *")] uint* pcOperations)
+        {
+            return ((delegate* stdcall<IPropertyChangeArray*, uint*, int>)(lpVtbl[3]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this), pcOperations);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int GetAt([NativeTypeName("UINT")] uint iIndex, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppv)
+        {
+            return ((delegate* stdcall<IPropertyChangeArray*, uint, Guid*, void**, int>)(lpVtbl[4]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this), iIndex, riid, ppv);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int InsertAt([NativeTypeName("UINT")] uint iIndex, [NativeTypeName("IPropertyChange *")] IPropertyChange* ppropChange)
+        {
+            return ((delegate* stdcall<IPropertyChangeArray*, uint, IPropertyChange*, int>)(lpVtbl[5]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this), iIndex, ppropChange);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int Append([NativeTypeName("IPropertyChange *")] IPropertyChange* ppropChange)
+        {
+            return ((delegate* stdcall<IPropertyChangeArray*, IPropertyChange*, int>)(lpVtbl[6]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this), ppropChange);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int AppendOrReplace([NativeTypeName("IPropertyChange *")] IPropertyChange* ppropChange)
+        {
+            return ((delegate* stdcall<IPropertyChangeArray*, IPropertyChange*, int>)(lpVtbl[7]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this), ppropChange);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int RemoveAt([NativeTypeName("UINT")] uint iIndex)
+        {
+            return ((delegate* stdcall<IPropertyChangeArray*, uint, int>)(lpVtbl[8]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this), iIndex);
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int IsKeyInArray([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key)
+        {
+            return ((delegate* stdcall<IPropertyChangeArray*, PROPERTYKEY*, int>)(lpVtbl[9]))((IPropertyChangeArray*)Unsafe.AsPointer(ref this), key);
+        }
+    }
+}

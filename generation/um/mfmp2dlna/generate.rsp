@@ -1,0 +1,24 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+CLSID_MPEG2DLNASink
+IID_IMFDLNASinkInit
+MF_MP2DLNA_AUDIO_BIT_RATE
+MF_MP2DLNA_ENCODE_QUALITY
+MF_MP2DLNA_STATISTICS
+MF_MP2DLNA_USE_MMCSS
+MF_MP2DLNA_VIDEO_BIT_RATE
+__MIDL_itf_mfmp2dlna_0000_0000_v0_0_c_ifspec
+__MIDL_itf_mfmp2dlna_0000_0000_v0_0_s_ifspec
+__MIDL_itf_mfmp2dlna_0000_0001_v0_0_c_ifspec
+__MIDL_itf_mfmp2dlna_0000_0001_v0_0_s_ifspec
+--file
+um-mfmp2dlna.h
+--output
+../../../sources/Interop/Windows/um/mfmp2dlna
+--test-output
+../../../tests/Interop/Windows/um/mfmp2dlna
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mfmp2dlna.h
+--with-attribute
+IMFDLNASinkInit=Guid("0C012799-1B61-4C10-BDA9-04445BE5F561")

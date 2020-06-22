@@ -1,0 +1,23 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from um/mfplay.h in the Windows SDK for Windows 10.0.19041.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+namespace TerraFX.Interop
+{
+    public unsafe partial struct MFP_EVENT_HEADER
+    {
+        public MFP_EVENT_TYPE eEventType;
+
+        [NativeTypeName("HRESULT")]
+        public int hrEvent;
+
+        [NativeTypeName("IMFPMediaPlayer *")]
+        public IMFPMediaPlayer* pMediaPlayer;
+
+        public MFP_MEDIAPLAYER_STATE eState;
+
+        [NativeTypeName("IPropertyStore *")]
+        public IPropertyStore* pPropertyStore;
+    }
+}
