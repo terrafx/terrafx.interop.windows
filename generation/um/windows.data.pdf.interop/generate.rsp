@@ -10,6 +10,8 @@ um-windows.data.pdf.interop.h
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/windows.data.pdf.interop.h
 --with-librarypath
 *=Windows.Data.Pdf
+--with-attribute
+IPdfRendererNative=Guid("7d9dcd91-d277-4947-8527-07a0daeda94a")
 --exclude
 ID2D1DeviceContext
 sc_PdfRenderParamsDefaultSrcRect

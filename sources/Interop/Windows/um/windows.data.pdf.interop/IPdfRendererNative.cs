@@ -5,9 +5,11 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
+    [Guid("7d9dcd91-d277-4947-8527-07a0daeda94a")]
     public unsafe partial struct IPdfRendererNative
     {
         public void** lpVtbl;
