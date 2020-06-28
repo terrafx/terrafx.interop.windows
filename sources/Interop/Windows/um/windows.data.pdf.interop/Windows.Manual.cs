@@ -10,10 +10,10 @@ namespace TerraFX.Interop
     public static partial class Windows
     {
         [NativeTypeName("const D2D_RECT_F")]
-        public static D2D_RECT_F sc_PdfRenderParamsDefaultSrcRect = new D2D_RECT_F(0f, 0f, 0f, 0f);
+        public static readonly D2D_RECT_F sc_PdfRenderParamsDefaultSrcRect = new D2D_RECT_F(0f, 0f, 0f, 0f);
 
         [NativeTypeName("const D2D_COLOR_F")]
-        public static DXGI_RGBA sc_PdfRenderParamsDefaultBkColor = new DXGI_RGBA(1f, 1f, 1f, 1f);
+        public static readonly DXGI_RGBA sc_PdfRenderParamsDefaultBkColor = new DXGI_RGBA(1f, 1f, 1f, 1f);
 
         public static unsafe PDF_RENDER_PARAMS PdfRenderParams([NativeTypeName("const D2D_RECT_F &")] D2D_RECT_F* srcRect, [NativeTypeName("UINT32")] uint destinationWidth, [NativeTypeName("UINT32")] uint destinationHeight, [NativeTypeName("const D2D_COLOR_F &")] DXGI_RGBA* bkColor, [NativeTypeName("BOOLEAN")] byte ignoreHighContrast)
         {
