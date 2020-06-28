@@ -19,10 +19,10 @@ namespace TerraFX.Interop
         {
             PDF_RENDER_PARAMS p = new PDF_RENDER_PARAMS
             {
-                SourceRect = &srcRect,
+                SourceRect = *srcRect,
                 DestinationWidth = destinationWidth,
                 DestinationHeight = destinationHeight,
-                BackgroundColor = &bkColor,
+                BackgroundColor = *bkColor,
                 IgnoreHighContrast = ignoreHighContrast,
             };
 
