@@ -38,7 +38,7 @@ namespace TerraFX.Samples.DirectX.D3D12
         // 1 means no MSAA, 2 means 2x MSAA, etc
         // It must be non-zero and a power of 2
         // 4 and 8x MSAA are required for a DX12 GPU
-        private const int MsaaCount = 2;
+        private const uint MsaaCount = 2;
         private const uint FrameCount = 2;
 
         // Pipeline objects
