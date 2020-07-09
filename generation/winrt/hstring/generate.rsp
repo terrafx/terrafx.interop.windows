@@ -1,0 +1,16 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+HSTRING__
+HSTRING_BUFFER__
+__MIDL_itf_hstring_0000_0000_v0_0_c_ifspec
+__MIDL_itf_hstring_0000_0000_v0_0_s_ifspec
+--file
+winrt-hstring.h
+--output
+../../../sources/Interop/Windows/winrt/hstring
+--test-output
+../../../tests/Interop/Windows/winrt/hstring
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/winrt/hstring.h
+
