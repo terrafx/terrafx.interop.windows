@@ -1,0 +1,21 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+__MIDL_itf_windows2Egraphics2Eimaging2Einterop_0000_0000_v0_0_c_ifspec
+__MIDL_itf_windows2Egraphics2Eimaging2Einterop_0000_0000_v0_0_s_ifspec
+__MIDL_itf_windows2Egraphics2Eimaging2Einterop_0000_0002_v0_0_c_ifspec
+__MIDL_itf_windows2Egraphics2Eimaging2Einterop_0000_0002_v0_0_s_ifspec
+IID_ISoftwareBitmapNative
+IID_ISoftwareBitmapNativeFactory
+CLSID_SoftwareBitmapNativeFactory
+--file
+um-windows.graphics.imaging.interop.h
+--output
+../../../sources/Interop/Windows/um/windows.graphics.imaging.interop
+--test-output
+../../../tests/Interop/Windows/um/windows.graphics.imaging.interop
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/windows.graphics.imaging.interop.h
+--with-attribute
+ISoftwareBitmapNative=Guid("94BC8415-04EA-4B2E-AF13-4DE95AA898EB")
+ISoftwareBitmapNativeFactory=Guid("C3C181EC-2914-4791-AF02-02D224A10B43")
