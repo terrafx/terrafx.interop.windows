@@ -1,4 +1,7 @@
 --remap
+ABI::Windows::Foundation::IPropertyValue*=void*
+ABI::Windows::Graphics::Effects::IGraphicsEffectSource*=void*
+ABI::Windows::Graphics::Effects::GRAPHICS_EFFECT_PROPERTY_MAPPING=GRAPHICS_EFFECT_PROPERTY_MAPPING
 AM_SEEKING_SeekingFlags=AM_SEEKING_SEEKING_FLAGS
 AM_SEEKING_SeekingCapabilities=AM_SEEKING_SEEKING_CAPABILITIES
 adpcmcoef_tag=ADPCMCOEFSET
