@@ -1,0 +1,21 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+IID_IInspectable
+IID_INS_ARGS_Helper
+__MIDL_itf_inspectable_0000_0000_v0_0_c_ifspec
+__MIDL_itf_inspectable_0000_0000_v0_0_s_ifspec
+__MIDL_itf_inspectable_0000_0001_v0_0_c_ifspec
+__MIDL_itf_inspectable_0000_0001_v0_0_s_ifspec
+--file
+winrt-inspectable.h
+--output
+../../../sources/Interop/Windows/winrt/inspectable
+--test-output
+../../../tests/Interop/Windows/winrt/inspectable
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/winrt/inspectable.h
+--with-attribute
+IInspectable=Guid("AF86E2E0-B12D-4C6A-9C5A-D7AA65101E90")
+--with-librarypath
+*=ComBase
