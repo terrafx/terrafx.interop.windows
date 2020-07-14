@@ -7,10 +7,10 @@ um-wincon.h
 --test-output
 ../../../tests/Interop/Windows/um/wincon
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincon.h
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/consoleapi.h
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/consoleapi2.h
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/consoleapi3.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincon.h
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincontypes.h
 --with-librarypath
 *=kernel32
