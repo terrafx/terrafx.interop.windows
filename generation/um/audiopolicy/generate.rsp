@@ -1,0 +1,19 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+um-audiopolicy.h
+--output
+../../../sources/Interop/Windows/um/audiopolicy
+--test-output
+../../../tests/Interop/Windows/um/audiopolicy
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/audiopolicy.h
+--with-attribute
+IAudioSessionControl=Guid("F4B1A599-7266-4319-A8CA-E70ACB11E8CD")
+IAudioSessionControl2=Guid("BFB7FF88-7239-4FC9-8FA2-07C950BE9C6D")
+IAudioSessionEnumerator=Guid("E2F5BB11-0570-40CA-ACDD-3AA01277DEE8")
+IAudioSessionEvents=Guid("24918ACC-64B3-37C1-8CA9-74A66E9957A8")
+IAudioSessionManager=Guid("BFA971F1-4D5E-40BB-935E-967039BFBEE4")
+IAudioSessionManager2=Guid("77AA99A0-1BD6-484F-8BC7-2C654C9A9B6F")
+IAudioSessionNotification=Guid("641DD20B-4D41-49CC-ABA3-174B9477BB08")
+IAudioVolumeDuckNotification=Guid("C3B284D4-6D39-4359-B3CF-B56DDB3BB39C")
