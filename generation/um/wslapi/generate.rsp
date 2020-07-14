@@ -1,0 +1,22 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+operator^=
+operator^
+operator~
+operator&=
+operator|=
+operator|
+operator&
+--file
+um-wslapi.h
+--output
+../../../sources/Interop/Windows/um/wslapi
+--test-output
+../../../tests/Interop/Windows/um/wslapi
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wslapi.h
+--with-attribute
+WSL_DISTRIBUTION_FLAGS=Flags
+--with-librarypath
+*=api-ms-win-wsl-api-l1-1-0
