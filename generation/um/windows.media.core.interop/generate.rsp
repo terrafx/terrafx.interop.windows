@@ -1,10 +1,5 @@
 @../../settings.rsp
 @../../remap.rsp
---exclude
-IID_IAudioFrameNative
-IID_IAudioFrameNativeFactory
-IID_IVideoFrameNative
-IID_IVideoFrameNativeFactory
 --file
 um-windows.media.core.interop.h
 --output
