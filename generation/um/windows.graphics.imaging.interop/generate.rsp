@@ -1,13 +1,5 @@
 @../../settings.rsp
 @../../remap.rsp
---exclude
-__MIDL_itf_windows2Egraphics2Eimaging2Einterop_0000_0000_v0_0_c_ifspec
-__MIDL_itf_windows2Egraphics2Eimaging2Einterop_0000_0000_v0_0_s_ifspec
-__MIDL_itf_windows2Egraphics2Eimaging2Einterop_0000_0002_v0_0_c_ifspec
-__MIDL_itf_windows2Egraphics2Eimaging2Einterop_0000_0002_v0_0_s_ifspec
-IID_ISoftwareBitmapNative
-IID_ISoftwareBitmapNativeFactory
-CLSID_SoftwareBitmapNativeFactory
 --file
 um-windows.graphics.imaging.interop.h
 --output
