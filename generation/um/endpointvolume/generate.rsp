@@ -1,0 +1,15 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+um-endpointvolume.h
+--output
+../../../sources/Interop/Windows/um/endpointvolume
+--test-output
+../../../tests/Interop/Windows/um/endpointvolume
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/endpointvolume.h
+--with-attribute
+IAudioEndpointVolume=Guid("5CDF2C82-841E-4546-9722-0CF74078229A")
+IAudioEndpointVolumeCallback=Guid("657804FA-D6AD-4496-8A60-352752AF4F89")
+IAudioEndpointVolumeEx=Guid("66E11784-F695-4F28-A505-A7080081A78F")
+IAudioMeterInformation=Guid("C02216F6-8C67-4B5B-9D00-D008E73E0064")
