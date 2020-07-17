@@ -10,3 +10,23 @@ um-consoleapi3.h
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/consoleapi3.h
 --with-librarypath
 *=kernel32
+--with-setlasterror
+AddConsoleAliasA
+AddConsoleAliasW
+GetConsoleAliasA
+GetConsoleAliasW
+GetConsoleAliasesA
+GetConsoleAliasesW
+GetConsoleAliasExesA
+GetConsoleAliasExesW
+GetConsoleDisplayMode
+GetConsoleFontSize
+GetConsoleHistoryInfo
+GetConsoleProcessList
+GetConsoleSelectionInfo
+GetCurrentConsoleFont
+GetCurrentConsoleFontEx
+GetNumberOfConsoleMouseButtons
+SetConsoleDisplayMode
+SetConsoleHistoryInfo
+SetCurrentConsoleFontEx
