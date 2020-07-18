@@ -4,6 +4,7 @@ using System;
 using System.Linq;
 using TerraFX.Samples.DirectX.D3D11;
 using TerraFX.Samples.DirectX.D3D12;
+using TerraFX.Samples.DirectX.DWrite;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Samples.DirectX
@@ -18,6 +19,7 @@ namespace TerraFX.Samples.DirectX
             new HelloConstBuffer12(1280, 720, "D3D12.HelloConstBuffer"),
             new HelloTexture12(1280, 720, "D3D12.HelloTexture"),
             new HelloBundles12(1280, 720, "D3D12.HelloBundles"),
+            new HelloWrite(1280, 720, "DWrite.HelloWrite"),
         };
 
         public static void Main(string[] args)
