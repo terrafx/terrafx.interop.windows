@@ -1,8 +1,14 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-ICoreWindowAdapterInterop
-ICoreWindowComponentInterop
+HWND_UserFree
+HWND_UserFree64
+HWND_UserMarshal
+HWND_UserMarshal64
+HWND_UserSize
+HWND_UserSize64
+HWND_UserUnmarshal
+HWND_UserUnmarshal64
 --file
 winrt-CoreWindow.h
 --output
@@ -13,6 +19,8 @@ winrt-CoreWindow.h
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/winrt/CoreWindow.h
 --with-attribute
 ICoreInputInterop=Guid("40BFE3E3-B75A-4479-AC96-475365749BB8")
+ICoreWindowAdapterInterop=Guid("7A5B6FD1-CD73-4B6C-9CF4-2E869EAF470A")
+ICoreWindowComponentInterop=Guid("0576AB31-A310-4C40-BA31-FD37E0298DFA")
 ICoreWindowInterop=Guid("45D64A29-A63E-4CB6-B498-5781D298CB4F")
 --with-librarypath
 *=Windows.UI
