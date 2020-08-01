@@ -5,10 +5,8 @@ CLSID_FXEcho
 CLSID_FXEQ
 CLSID_FXMasteringLimiter
 CLSID_FXReverb
-FXEcho
-FXEQ
-FXMasteringLimiter
-FXReverb
+DEFAULT
+FX_API_
 --file
 um-xapofx.h
 --output

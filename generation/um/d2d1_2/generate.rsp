@@ -1,54 +1,5 @@
 @../../settings.rsp
 @../../remap.rsp
---exclude
-ID2D1Device.CreatePrintControl(IWICImagingFactory *, IPrintDocumentPackageTarget *, const D2D1_PRINT_CONTROL_PROPERTIES &, ID2D1PrintControl **):HRESULT nothrow
-ID2D1DeviceContext.CreateBitmap(D2D1_SIZE_U, const void *, UINT32, const D2D1_BITMAP_PROPERTIES1 &, ID2D1Bitmap1 **):HRESULT nothrow
-ID2D1DeviceContext.CreateBitmapBrush(ID2D1Bitmap *, const D2D1_BITMAP_BRUSH_PROPERTIES1 &, const D2D1_BRUSH_PROPERTIES &, ID2D1BitmapBrush1 **):HRESULT nothrow
-ID2D1DeviceContext.CreateBitmapFromDxgiSurface(IDXGISurface *, const D2D1_BITMAP_PROPERTIES1 &, ID2D1Bitmap1 **):HRESULT nothrow
-ID2D1DeviceContext.CreateBitmapFromWicBitmap(IWICBitmapSource *, const D2D1_BITMAP_PROPERTIES1 &, ID2D1Bitmap1 **):HRESULT nothrow
-ID2D1DeviceContext.CreateImageBrush(ID2D1Image *, const D2D1_IMAGE_BRUSH_PROPERTIES &, const D2D1_BRUSH_PROPERTIES &, ID2D1ImageBrush **):HRESULT nothrow
-ID2D1DeviceContext.DrawBitmap(ID2D1Bitmap *, const D2D1_RECT_F &, FLOAT, D2D1_INTERPOLATION_MODE, const D2D1_RECT_F &, const D2D1_MATRIX_4X4_F &):void nothrow
-ID2D1DeviceContext.DrawBitmap(ID2D1Bitmap *, const D2D1_RECT_F &, FLOAT, D2D1_INTERPOLATION_MODE, const D2D1_RECT_F &, const D2D1_MATRIX_4X4_F *):void nothrow
-ID2D1DeviceContext.DrawBitmap(ID2D1Bitmap *, const D2D1_RECT_F &, FLOAT, D2D1_INTERPOLATION_MODE, const D2D1_RECT_F *, const D2D1_MATRIX_4X4_F *):void nothrow
-ID2D1DeviceContext.FillOpacityMask(ID2D1Bitmap *, ID2D1Brush *, const D2D1_RECT_F &, const D2D1_RECT_F &):void nothrow
-ID2D1DeviceContext.FillOpacityMask(ID2D1Bitmap *, ID2D1Brush *, const D2D1_RECT_F &, const D2D1_RECT_F *):void nothrow
-ID2D1DeviceContext.PushLayer(const D2D1_LAYER_PARAMETERS1 &, ID2D1Layer *):void nothrow
-ID2D1DeviceContext.SetRenderingControls(const D2D1_RENDERING_CONTROLS &):void nothrow
-ID2D1Factory.CreateDxgiSurfaceRenderTarget(IDXGISurface *, const D2D1_RENDER_TARGET_PROPERTIES &, ID2D1RenderTarget **):HRESULT nothrow
-ID2D1Factory.CreateEllipseGeometry(const D2D1_ELLIPSE &, ID2D1EllipseGeometry **):HRESULT nothrow
-ID2D1Factory.CreateHwndRenderTarget(const D2D1_RENDER_TARGET_PROPERTIES &, const D2D1_HWND_RENDER_TARGET_PROPERTIES &, ID2D1HwndRenderTarget **):HRESULT nothrow
-ID2D1Factory.CreateRectangleGeometry(const D2D1_RECT_F &, ID2D1RectangleGeometry **):HRESULT nothrow
-ID2D1Factory.CreateRoundedRectangleGeometry(const D2D1_ROUNDED_RECT &, ID2D1RoundedRectangleGeometry **):HRESULT nothrow
-ID2D1Factory.CreateStrokeStyle(const D2D1_STROKE_STYLE_PROPERTIES &, const FLOAT *, UINT32, ID2D1StrokeStyle **):HRESULT nothrow
-ID2D1Factory.CreateTransformedGeometry(ID2D1Geometry *, const D2D1_MATRIX_3X2_F &, ID2D1TransformedGeometry **):HRESULT nothrow
-ID2D1Factory.CreateWicBitmapRenderTarget(IWICBitmap *, const D2D1_RENDER_TARGET_PROPERTIES &, ID2D1RenderTarget **):HRESULT nothrow
-ID2D1Factory1.CreateStrokeStyle(const D2D1_STROKE_STYLE_PROPERTIES1 &, const FLOAT *, UINT32, ID2D1StrokeStyle1 **):HRESULT nothrow
-ID2D1RenderTarget.Clear(const D2D1_COLOR_F &):void nothrow
-ID2D1RenderTarget.CreateBitmap(D2D1_SIZE_U, const void *, UINT32, const D2D1_BITMAP_PROPERTIES &, ID2D1Bitmap **):HRESULT nothrow
-ID2D1RenderTarget.CreateBitmapBrush(ID2D1Bitmap *, const D2D1_BITMAP_BRUSH_PROPERTIES &, const D2D1_BRUSH_PROPERTIES &, ID2D1BitmapBrush **):HRESULT nothrow
-ID2D1RenderTarget.CreateBitmapFromWicBitmap(IWICBitmapSource *, const D2D1_BITMAP_PROPERTIES &, ID2D1Bitmap **):HRESULT nothrow
-ID2D1RenderTarget.CreateLinearGradientBrush(const D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES &, const D2D1_BRUSH_PROPERTIES &, ID2D1GradientStopCollection *, ID2D1LinearGradientBrush **):HRESULT nothrow
-ID2D1RenderTarget.CreateRadialGradientBrush(const D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES &, const D2D1_BRUSH_PROPERTIES &, ID2D1GradientStopCollection *, ID2D1RadialGradientBrush **):HRESULT nothrow
-ID2D1RenderTarget.CreateSolidColorBrush(const D2D1_COLOR_F &, const D2D1_BRUSH_PROPERTIES &, ID2D1SolidColorBrush **):HRESULT nothrow
-ID2D1RenderTarget.DrawBitmap(ID2D1Bitmap *, const D2D1_RECT_F &, FLOAT, D2D1_BITMAP_INTERPOLATION_MODE, const D2D1_RECT_F &):void nothrow
-ID2D1RenderTarget.DrawBitmap(ID2D1Bitmap *, const D2D1_RECT_F &, FLOAT, D2D1_BITMAP_INTERPOLATION_MODE, const D2D1_RECT_F *):void nothrow
-ID2D1RenderTarget.DrawEllipse(const D2D1_ELLIPSE &, ID2D1Brush *, FLOAT, ID2D1StrokeStyle *):void nothrow
-ID2D1RenderTarget.DrawRectangle(const D2D1_RECT_F &, ID2D1Brush *, FLOAT, ID2D1StrokeStyle *):void nothrow
-ID2D1RenderTarget.DrawRoundedRectangle(const D2D1_ROUNDED_RECT &, ID2D1Brush *, FLOAT, ID2D1StrokeStyle *):void nothrow
-ID2D1RenderTarget.DrawTextA(const WCHAR *, UINT32, IDWriteTextFormat *, const D2D1_RECT_F &, ID2D1Brush *, D2D1_DRAW_TEXT_OPTIONS, DWRITE_MEASURING_MODE):void nothrow
-ID2D1RenderTarget.FillEllipse(const D2D1_ELLIPSE &, ID2D1Brush *):void nothrow
-ID2D1RenderTarget.FillOpacityMask(ID2D1Bitmap *, ID2D1Brush *, D2D1_OPACITY_MASK_CONTENT, const D2D1_RECT_F &, const D2D1_RECT_F &):void nothrow
-ID2D1RenderTarget.FillRectangle(const D2D1_RECT_F &, ID2D1Brush *):void nothrow
-ID2D1RenderTarget.FillRoundedRectangle(const D2D1_ROUNDED_RECT &, ID2D1Brush *):void nothrow
-ID2D1RenderTarget.IsSupported(const D2D1_RENDER_TARGET_PROPERTIES &):BOOL nothrow
-ID2D1RenderTarget.PushAxisAlignedClip(const D2D1_RECT_F &, D2D1_ANTIALIAS_MODE):void nothrow
-ID2D1RenderTarget.PushLayer(const D2D1_LAYER_PARAMETERS &, ID2D1Layer *):void nothrow
-ID2D1RenderTarget.SetTransform(const D2D1_MATRIX_3X2_F &):void nothrow
-IID_ID2D1CommandSink1
-IID_ID2D1Device1
-IID_ID2D1DeviceContext1
-IID_ID2D1Factory2
-IID_ID2D1GeometryRealization
 --file
 um-d2d1_2.h
 --output
@@ -63,16 +14,5 @@ ID2D1Device1=Guid("D21768E1-23A4-4823-A14B-7C3EBA85D658")
 ID2D1DeviceContext1=Guid("D37F57E4-6908-459F-A199-E72F24F79987")
 ID2D1Factory2=Guid("94F81A73-9212-4376-9C58-B16A3A0D3992")
 ID2D1GeometryRealization=Guid("A16907D7-BC02-4801-99E8-8CF7F485F774")
---with-type
-D2D1_RENDERING_PRIORITY=uint
---with-using
-ID2D1DeviceContext1=static TerraFX.Interop.D2D1_BITMAP_INTERPOLATION_MODE
-ID2D1DeviceContext1=static TerraFX.Interop.D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS
-ID2D1DeviceContext1=static TerraFX.Interop.D2D1_COMPOSITE_MODE
-ID2D1DeviceContext1=static TerraFX.Interop.D2D1_DRAW_TEXT_OPTIONS
-ID2D1DeviceContext1=static TerraFX.Interop.D2D1_EXTEND_MODE
-ID2D1DeviceContext1=static TerraFX.Interop.D2D1_GAMMA
-ID2D1DeviceContext1=static TerraFX.Interop.D2D1_INTERPOLATION_MODE
-ID2D1DeviceContext1=static TerraFX.Interop.DWRITE_MEASURING_MODE
 --with-librarypath
 *=d2d1

@@ -45,11 +45,11 @@ IDxcVersionInfo2
 --file
 other-dxcapi.h
 --output
-../../../../sources/Interop/Windows/other/dxc/dxcapi
+../../../../sources/Interop/Windows/other/dxcapi
 --test-output
-../../../../tests/Interop/Windows/other/dxc/dxcapi
+../../../../tests/Interop/Windows/other/dxcapi
 --traverse
-include/dxc/dxcapi.h
+dxcapi.h
 --with-attribute
 IDxcBlobUtf16=Guid("A3F84EAB-0FAA-497E-A39C-EE6ED60B2D84")
 IDxcBlobUtf8=Guid("3DA636C9-BA71-4024-A301-30CBF125305B")

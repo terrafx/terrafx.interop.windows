@@ -1023,6 +1023,29 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StructuredQueryCondition", 
 		generation\um\StructuredQueryCondition\um-StructuredQueryCondition.h = generation\um\StructuredQueryCondition\um-StructuredQueryCondition.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxdiag", "dxdiag", "{7E206372-25DC-4E61-8F29-B8C0285D06B2}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\dxdiag\generate.rsp = generation\um\dxdiag\generate.rsp
+		generation\um\dxdiag\header.txt = generation\um\dxdiag\header.txt
+		generation\um\dxdiag\um-dxdiag.h = generation\um\dxdiag\um-dxdiag.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "other", "other", "{B09A774C-A2CD-4E0D-8DE8-AC48459E1699}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dxcapi", "dxcapi", "{97B0FE61-F7D8-4735-BE90-77A1ECC3515C}"
+	ProjectSection(SolutionItems) = preProject
+		generation\other\dxcapi\generate.rsp = generation\other\dxcapi\generate.rsp
+		generation\other\dxcapi\header.txt = generation\other\dxcapi\header.txt
+		generation\other\dxcapi\other-dxcapi.h = generation\other\dxcapi\other-dxcapi.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3dx12", "d3dx12", "{2415556F-BC68-40A5-AF8C-FB66B31073C5}"
+	ProjectSection(SolutionItems) = preProject
+		generation\other\d3dx12\generate.rsp = generation\other\d3dx12\generate.rsp
+		generation\other\d3dx12\header.txt = generation\other\d3dx12\header.txt
+		generation\other\d3dx12\other-d3dx12.h = generation\other\d3dx12\other-d3dx12.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1189,6 +1212,10 @@ Global
 		{C74A86CA-3656-4A8C-A6EC-C3F18C5DEB1A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{923F9247-32E5-46F5-8F45-D10580795B2B} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{6FF35ADB-F57C-40CB-9068-D8DE70A99C74} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{7E206372-25DC-4E61-8F29-B8C0285D06B2} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{B09A774C-A2CD-4E0D-8DE8-AC48459E1699} = {D9638FEE-50A4-44FF-B1F6-72E59548490B}
+		{97B0FE61-F7D8-4735-BE90-77A1ECC3515C} = {B09A774C-A2CD-4E0D-8DE8-AC48459E1699}
+		{2415556F-BC68-40A5-AF8C-FB66B31073C5} = {B09A774C-A2CD-4E0D-8DE8-AC48459E1699}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}

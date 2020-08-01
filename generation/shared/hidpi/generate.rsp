@@ -1,7 +1,13 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-_HIDP_PREPARSED_DATA
+FACILITY_HID_ERROR_CODE
+HIDP_ERROR_CODES
+HidP_GetButtons
+HidP_GetButtonsEx
+HidP_IsSameUsageAndPage
+HidP_SetButtons
+HidP_UnsetButtons
 --file
 shared-hidpi.h
 --output

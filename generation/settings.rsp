@@ -7,10 +7,17 @@
 -Wno-pragma-pack
 -Wno-macro-redefined
 --config
+exclude-com-proxies
+exclude-empty-records
+exclude-enum-operators
 generate-tests-nunit
 multi-file
 preview-codegen-fnptr
 preview-codegen-nint
+--define-macro
+INITGUID
+NOSYSPARAMSINFO
+UNICODE
 --headerFile
 header.txt
 --include-directory

@@ -3,6 +3,8 @@
 --exclude
 CXAPOBase
 CXAPOParametersBase
+XAPOASSERT
+XAPOASSERT_NO_OUTPUT
 --file
 um-xapobase.h
 --output

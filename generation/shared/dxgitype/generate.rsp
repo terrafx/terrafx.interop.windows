@@ -1,5 +1,8 @@
 @../../settings.rsp
 @../../remap.rsp
+--exclude
+MAKE_DXGI_HRESULT
+MAKE_DXGI_STATUS
 --file
 shared-dxgitype.h
 --output

@@ -1,8 +1,8 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-IID_IXAPO
-IID_IXAPOParameters
+XAPOAlloc
+XAPOFree
 --file
 um-xapo.h
 --output

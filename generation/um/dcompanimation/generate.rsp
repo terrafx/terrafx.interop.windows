@@ -1,11 +1,5 @@
 @../../settings.rsp
 @../../remap.rsp
---exclude
-IID_IDCompositionAnimation
-__MIDL_itf_dcompanimation_0000_0000_v0_0_c_ifspec
-__MIDL_itf_dcompanimation_0000_0000_v0_0_s_ifspec
-__MIDL_itf_dcompanimation_0000_0001_v0_0_c_ifspec
-__MIDL_itf_dcompanimation_0000_0001_v0_0_s_ifspec
 --file
 um-dcompanimation.h
 --output

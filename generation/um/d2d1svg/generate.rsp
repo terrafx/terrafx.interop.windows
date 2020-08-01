@@ -1,20 +1,11 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-ID2D1SvgDocument.CreatePaint(D2D1_SVG_PAINT_TYPE, const D2D1_COLOR_F &, PCWSTR, ID2D1SvgPaint **):HRESULT nothrow
 ID2D1SvgElement.GetAttributeValue(PCWSTR, ID2D1SvgAttribute **):HRESULT nothrow
 ID2D1SvgElement.GetAttributeValue(PCWSTR, ID2D1SvgPaint **):HRESULT nothrow
 ID2D1SvgElement.GetAttributeValue(PCWSTR, ID2D1SvgPathData **):HRESULT nothrow
 ID2D1SvgElement.GetAttributeValue(PCWSTR, ID2D1SvgPointCollection **):HRESULT nothrow
 ID2D1SvgElement.GetAttributeValue(PCWSTR, ID2D1SvgStrokeDashArray **):HRESULT nothrow
-ID2D1SvgPaint.SetColor(const D2D1_COLOR_F &):HRESULT nothrow
-IID_ID2D1SvgAttribute
-IID_ID2D1SvgDocument
-IID_ID2D1SvgElement
-IID_ID2D1SvgPaint
-IID_ID2D1SvgPathData
-IID_ID2D1SvgPointCollection
-IID_ID2D1SvgStrokeDashArray
 --file
 um-d2d1svg.h
 --output
@@ -31,21 +22,3 @@ ID2D1SvgPaint=Guid("D59BAB0A-68A2-455B-A5DC-9EB2854E2490")
 ID2D1SvgPathData=Guid("C095E4F4-BB98-43D6-9745-4D1B84EC9888")
 ID2D1SvgPointCollection=Guid("9DBE4C0D-3572-4DD9-9825-5530813BB712")
 ID2D1SvgStrokeDashArray=Guid("F1C0CA52-92A3-4F00-B4CE-F35691EFD9D9")
---with-type
-D2D1_SVG_ASPECT_ALIGN=uint
-D2D1_SVG_ASPECT_SCALING=uint
-D2D1_SVG_ATTRIBUTE_POD_TYPE=uint
-D2D1_SVG_ATTRIBUTE_STRING_TYPE=uint
-D2D1_SVG_DISPLAY=uint
-D2D1_SVG_LENGTH_UNITS=uint
-D2D1_SVG_LINE_CAP=uint
-D2D1_SVG_LINE_JOIN=uint
-D2D1_SVG_OVERFLOW=uint
-D2D1_SVG_PAINT_TYPE=uint
-D2D1_SVG_PATH_COMMAND=uint
-D2D1_SVG_UNIT_TYPE=uint
-D2D1_SVG_VISIBILITY=uint
---with-using
-D2D1_SVG_LINE_CAP=static TerraFX.Interop.D2D1_CAP_STYLE
-D2D1_SVG_LINE_JOIN=static TerraFX.Interop.D2D1_LINE_JOIN
-ID2D1SvgElement=static TerraFX.Interop.D2D1_SVG_ATTRIBUTE_POD_TYPE

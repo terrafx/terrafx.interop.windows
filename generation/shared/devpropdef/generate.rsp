@@ -1,6 +1,10 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
+DEFINE_DEVPROPKEY
+IsEqualDevPropCompKey
+IsEqualDevPropKey
+IsEqualLocaleName
 operator==(const DEVPROPKEY &, const DEVPROPKEY &):bool
 operator==(const DEVPROPCOMPKEY &, const DEVPROPCOMPKEY &):bool
 operator!=(const DEVPROPKEY &, const DEVPROPKEY &):bool
