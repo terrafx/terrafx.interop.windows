@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IAdvancedMediaCaptureInitializationSettings" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="IAdvancedMediaCaptureInitializationSettings" />struct.</summary>
     public static unsafe class IAdvancedMediaCaptureInitializationSettingsTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAdvancedMediaCaptureInitializationSettings" /> struct is correct.</summary>

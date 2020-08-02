@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="PPM_THERMAL_POLICY_EVENT" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="PPM_THERMAL_POLICY_EVENT" />struct.</summary>
     public static unsafe class PPM_THERMAL_POLICY_EVENTTests
     {
         /// <summary>Validates that the <see cref="PPM_THERMAL_POLICY_EVENT" /> struct is blittable.</summary>

@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_SATURATION_PROP : uint
     {
         D2D1_SATURATION_PROP_SATURATION = 0,

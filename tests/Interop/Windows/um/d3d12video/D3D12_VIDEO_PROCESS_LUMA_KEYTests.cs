@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D12_VIDEO_PROCESS_LUMA_KEY" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D12_VIDEO_PROCESS_LUMA_KEY" />struct.</summary>
     public static unsafe class D3D12_VIDEO_PROCESS_LUMA_KEYTests
     {
         /// <summary>Validates that the <see cref="D3D12_VIDEO_PROCESS_LUMA_KEY" /> struct is blittable.</summary>

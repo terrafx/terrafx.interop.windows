@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="UMS_SYSTEM_THREAD_INFORMATION" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="UMS_SYSTEM_THREAD_INFORMATION" />struct.</summary>
     public static unsafe class UMS_SYSTEM_THREAD_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="UMS_SYSTEM_THREAD_INFORMATION" /> struct is blittable.</summary>

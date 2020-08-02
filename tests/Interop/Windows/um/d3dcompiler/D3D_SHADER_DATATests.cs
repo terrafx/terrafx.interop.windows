@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D_SHADER_DATA" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D_SHADER_DATA" />struct.</summary>
     public static unsafe class D3D_SHADER_DATATests
     {
         /// <summary>Validates that the <see cref="D3D_SHADER_DATA" /> struct is blittable.</summary>

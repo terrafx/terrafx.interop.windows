@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SCROLLBARINFO" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="SCROLLBARINFO" />struct.</summary>
     public static unsafe class SCROLLBARINFOTests
     {
         /// <summary>Validates that the <see cref="SCROLLBARINFO" /> struct is blittable.</summary>

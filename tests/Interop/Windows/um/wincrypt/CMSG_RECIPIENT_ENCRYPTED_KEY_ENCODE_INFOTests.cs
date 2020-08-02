@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO" />struct.</summary>
     public static unsafe class CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFOTests
     {
         /// <summary>Validates that the <see cref="CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO" /> struct is blittable.</summary>

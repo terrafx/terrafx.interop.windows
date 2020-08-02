@@ -8,8 +8,7 @@ using System;
 namespace TerraFX.Interop
 {
     [Flags]
-    [NativeTypeName("int")]
-    public enum ZAFLAGS : uint
+    public enum ZAFLAGS
     {
         ZAFLAGS_CUSTOM_EDIT = 0x1,
         ZAFLAGS_ADD_SITES = 0x2,

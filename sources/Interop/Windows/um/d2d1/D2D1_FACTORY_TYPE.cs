@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_FACTORY_TYPE : uint
     {
         D2D1_FACTORY_TYPE_SINGLE_THREADED = 0,

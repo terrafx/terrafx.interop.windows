@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public enum WICPngIccpProperties
+    public enum WICPngIccpProperties : uint
     {
         WICPngIccpProfileName = 0x1,
         WICPngIccpProfileData = 0x2,

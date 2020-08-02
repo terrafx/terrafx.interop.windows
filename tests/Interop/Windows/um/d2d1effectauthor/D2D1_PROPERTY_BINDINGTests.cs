@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D2D1_PROPERTY_BINDING" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="D2D1_PROPERTY_BINDING" />struct.</summary>
     public static unsafe class D2D1_PROPERTY_BINDINGTests
     {
         /// <summary>Validates that the <see cref="D2D1_PROPERTY_BINDING" /> struct is blittable.</summary>

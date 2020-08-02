@@ -13,7 +13,7 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT16")]
         public ushort length;
 
-        internal ushort _bitfield;
+        public ushort _bitfield;
 
         [NativeTypeName("UINT16 : 1")]
         public ushort canWrapLineAfter

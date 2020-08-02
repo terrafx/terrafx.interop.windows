@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public enum WICPngChrmProperties
+    public enum WICPngChrmProperties : uint
     {
         WICPngChrmWhitePointX = 0x1,
         WICPngChrmWhitePointY = 0x2,

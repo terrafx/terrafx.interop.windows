@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D2D1_ELLIPSE" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="D2D1_ELLIPSE" />struct.</summary>
     public static unsafe class D2D1_ELLIPSETests
     {
         /// <summary>Validates that the <see cref="D2D1_ELLIPSE" /> struct is blittable.</summary>

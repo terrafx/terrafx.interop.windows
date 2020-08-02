@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CPS_URLS" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="CPS_URLS" />struct.</summary>
     public static unsafe class CPS_URLSTests
     {
         /// <summary>Validates that the <see cref="CPS_URLS" /> struct is blittable.</summary>

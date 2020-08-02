@@ -76,6 +76,17 @@ namespace TerraFX.Interop
         [NativeTypeName("_CRYPT_PROVIDER_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinTrust.h:688:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref PROVDATA_SIP* pPDSip
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->pPDSip;
+                }
+            }
+        }
+
         [NativeTypeName("char *")]
         public sbyte* pszUsageOID;
 

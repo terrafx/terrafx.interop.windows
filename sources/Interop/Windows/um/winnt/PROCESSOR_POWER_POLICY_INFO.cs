@@ -25,7 +25,7 @@ namespace TerraFX.Interop
         [NativeTypeName("BYTE [2]")]
         public fixed byte Spare[2];
 
-        internal uint _bitfield;
+        public uint _bitfield;
 
         [NativeTypeName("DWORD : 1")]
         public uint AllowDemotion

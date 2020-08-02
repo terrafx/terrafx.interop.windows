@@ -36,11 +36,11 @@ namespace TerraFX.Interop
 
         public partial struct _rgOutputActions_e__FixedBuffer
         {
-            internal MFINPUTTRUSTAUTHORITY_ACTION e0;
+            public MFINPUTTRUSTAUTHORITY_ACCESS_ACTION e0;
 
-            public ref MFINPUTTRUSTAUTHORITY_ACTION this[int index] => ref AsSpan(int.MaxValue)[index];
+            public ref MFINPUTTRUSTAUTHORITY_ACCESS_ACTION this[int index] => ref AsSpan(int.MaxValue)[index];
 
-            public Span<MFINPUTTRUSTAUTHORITY_ACTION> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public Span<MFINPUTTRUSTAUTHORITY_ACCESS_ACTION> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
     }
 }

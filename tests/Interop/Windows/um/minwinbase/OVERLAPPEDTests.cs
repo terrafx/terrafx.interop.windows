@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="OVERLAPPED" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="OVERLAPPED" />struct.</summary>
     public static unsafe class OVERLAPPEDTests
     {
         /// <summary>Validates that the <see cref="OVERLAPPED" /> struct is blittable.</summary>

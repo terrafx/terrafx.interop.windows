@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="GRADIENT_RECT" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="GRADIENT_RECT" />struct.</summary>
     public static unsafe class GRADIENT_RECTTests
     {
         /// <summary>Validates that the <see cref="GRADIENT_RECT" /> struct is blittable.</summary>

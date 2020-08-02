@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D2D1_RENDERING_CONTROLS" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="D2D1_RENDERING_CONTROLS" />struct.</summary>
     public static unsafe class D2D1_RENDERING_CONTROLSTests
     {
         /// <summary>Validates that the <see cref="D2D1_RENDERING_CONTROLS" /> struct is blittable.</summary>

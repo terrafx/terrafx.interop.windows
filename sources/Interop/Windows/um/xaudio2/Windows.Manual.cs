@@ -15,10 +15,6 @@ namespace TerraFX.Interop
 
         public const string XAUDIO2D_DLL_W = "xaudio2_9d.dll";
 
-        public static readonly Guid IID_IXAudio2 = new Guid(0x2B02E3CF, 0x2E0B, 0x4EC3, 0xBE, 0x45, 0x1B, 0x2A, 0x3F, 0xE7, 0x21, 0x0D);
-
-        public static readonly Guid IID_IXAudio2Extension = new Guid(0x84AC29BB, 0xD619, 0x44D2, 0xB1, 0x97, 0xE4, 0xAC, 0xF7, 0xDF, 0x3E, 0xD6);
-
         public const int XAUDIO2_MAX_BUFFER_BYTES = unchecked((int)0x80000000);
 
         public const int XAUDIO2_MAX_QUEUED_BUFFERS = 64;

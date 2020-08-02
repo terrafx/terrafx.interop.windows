@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="PSHNOTIFY" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="PSHNOTIFY" />struct.</summary>
     public static unsafe class PSHNOTIFYTests
     {
         /// <summary>Validates that the <see cref="PSHNOTIFY" /> struct is blittable.</summary>

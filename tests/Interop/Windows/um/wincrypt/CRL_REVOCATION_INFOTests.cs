@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CRL_REVOCATION_INFO" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="CRL_REVOCATION_INFO" />struct.</summary>
     public static unsafe class CRL_REVOCATION_INFOTests
     {
         /// <summary>Validates that the <see cref="CRL_REVOCATION_INFO" /> struct is blittable.</summary>

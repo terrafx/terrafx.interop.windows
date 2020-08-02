@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="RAWKEYBOARD" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="RAWKEYBOARD" />struct.</summary>
     public static unsafe class RAWKEYBOARDTests
     {
         /// <summary>Validates that the <see cref="RAWKEYBOARD" /> struct is blittable.</summary>

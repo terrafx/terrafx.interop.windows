@@ -3,9 +3,6 @@
 // Ported from um/ObjIdlbase.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-using System.Runtime.InteropServices;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct RPCOLEMESSAGE
@@ -31,17 +28,24 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint rpcFlags;
 
-        public partial struct _reserved2_e__FixedBuffer
+        public unsafe partial struct _reserved2_e__FixedBuffer
         {
-            internal IntPtr e0;
-            internal IntPtr e1;
-            internal IntPtr e2;
-            internal IntPtr e3;
-            internal IntPtr e4;
+            public void* e0;
+            public void* e1;
+            public void* e2;
+            public void* e3;
+            public void* e4;
 
-            public ref IntPtr this[int index] => ref AsSpan()[index];
-
-            public Span<IntPtr> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 5);
+            public ref void* this[int index]
+            {
+                get
+                {
+                    fixed (void** pThis = &e0)
+                    {
+                        return ref pThis[index];
+                    }
+                }
+            }
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D11_DRAW_INSTANCED_INDIRECT_ARGS" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D11_DRAW_INSTANCED_INDIRECT_ARGS" />struct.</summary>
     public static unsafe class D3D11_DRAW_INSTANCED_INDIRECT_ARGSTests
     {
         /// <summary>Validates that the <see cref="D3D11_DRAW_INSTANCED_INDIRECT_ARGS" /> struct is blittable.</summary>

@@ -16,7 +16,7 @@ namespace TerraFX.Interop
         [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:5183:5) [1]")]
         public _ScopeRecord_e__FixedBuffer ScopeRecord;
 
-        public partial struct _ScopeRecord_e__Struct
+        public partial struct _Anonymous_e__Struct
         {
             [NativeTypeName("DWORD")]
             public uint BeginAddress;
@@ -33,11 +33,11 @@ namespace TerraFX.Interop
 
         public partial struct _ScopeRecord_e__FixedBuffer
         {
-            internal _ScopeRecord_e__Struct e0;
+            public _Anonymous_e__Struct e0;
 
-            public ref _ScopeRecord_e__Struct this[int index] => ref AsSpan(int.MaxValue)[index];
+            public ref _Anonymous_e__Struct this[int index] => ref AsSpan(int.MaxValue)[index];
 
-            public Span<_ScopeRecord_e__Struct> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            public Span<_Anonymous_e__Struct> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
     }
 }

@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IMFNetProxyLocatorFactory" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="IMFNetProxyLocatorFactory" />struct.</summary>
     public static unsafe class IMFNetProxyLocatorFactoryTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFNetProxyLocatorFactory" /> struct is correct.</summary>

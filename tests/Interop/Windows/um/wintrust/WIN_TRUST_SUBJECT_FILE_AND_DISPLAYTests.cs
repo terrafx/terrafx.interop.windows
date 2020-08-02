@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="WIN_TRUST_SUBJECT_FILE_AND_DISPLAY" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="WIN_TRUST_SUBJECT_FILE_AND_DISPLAY" />struct.</summary>
     public static unsafe class WIN_TRUST_SUBJECT_FILE_AND_DISPLAYTests
     {
         /// <summary>Validates that the <see cref="WIN_TRUST_SUBJECT_FILE_AND_DISPLAY" /> struct is blittable.</summary>

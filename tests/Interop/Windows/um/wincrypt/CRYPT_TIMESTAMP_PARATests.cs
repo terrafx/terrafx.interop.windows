@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CRYPT_TIMESTAMP_PARA" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="CRYPT_TIMESTAMP_PARA" />struct.</summary>
     public static unsafe class CRYPT_TIMESTAMP_PARATests
     {
         /// <summary>Validates that the <see cref="CRYPT_TIMESTAMP_PARA" /> struct is blittable.</summary>

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D11_AUTHENTICATED_QUERY_CRYPTO_SESSION_OUTPUT" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D11_AUTHENTICATED_QUERY_CRYPTO_SESSION_OUTPUT" />struct.</summary>
     public static unsafe class D3D11_AUTHENTICATED_QUERY_CRYPTO_SESSION_OUTPUTTests
     {
         /// <summary>Validates that the <see cref="D3D11_AUTHENTICATED_QUERY_CRYPTO_SESSION_OUTPUT" /> struct is blittable.</summary>

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D2D1_EFFECT_INPUT_DESCRIPTION" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="D2D1_EFFECT_INPUT_DESCRIPTION" />struct.</summary>
     public static unsafe class D2D1_EFFECT_INPUT_DESCRIPTIONTests
     {
         /// <summary>Validates that the <see cref="D2D1_EFFECT_INPUT_DESCRIPTION" /> struct is blittable.</summary>

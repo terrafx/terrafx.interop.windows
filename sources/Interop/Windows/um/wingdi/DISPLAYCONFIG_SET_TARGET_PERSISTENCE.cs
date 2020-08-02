@@ -14,6 +14,34 @@ namespace TerraFX.Interop
         [NativeTypeName("DISPLAYCONFIG_SET_TARGET_PERSISTENCE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wingdi.h:3121:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public uint bootPersistenceOn
+        {
+            get
+            {
+                return Anonymous.Anonymous.bootPersistenceOn;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.bootPersistenceOn = value;
+            }
+        }
+
+        public uint reserved
+        {
+            get
+            {
+                return Anonymous.Anonymous.reserved;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.reserved = value;
+            }
+        }
+
+        public ref uint value => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.value, 1));
+
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {
@@ -27,7 +55,7 @@ namespace TerraFX.Interop
 
             public partial struct _Anonymous_e__Struct
             {
-                internal uint _bitfield;
+                public uint _bitfield;
 
                 [NativeTypeName("UINT32 : 1")]
                 public uint bootPersistenceOn

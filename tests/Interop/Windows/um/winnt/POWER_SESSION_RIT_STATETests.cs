@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="POWER_SESSION_RIT_STATE" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="POWER_SESSION_RIT_STATE" />struct.</summary>
     public static unsafe class POWER_SESSION_RIT_STATETests
     {
         /// <summary>Validates that the <see cref="POWER_SESSION_RIT_STATE" /> struct is blittable.</summary>

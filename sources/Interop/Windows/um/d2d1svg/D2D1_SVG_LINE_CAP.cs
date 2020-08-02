@@ -7,7 +7,6 @@ using static TerraFX.Interop.D2D1_CAP_STYLE;
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_SVG_LINE_CAP : uint
     {
         D2D1_SVG_LINE_CAP_BUTT = D2D1_CAP_STYLE_FLAT,

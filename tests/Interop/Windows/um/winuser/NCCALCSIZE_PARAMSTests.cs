@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="NCCALCSIZE_PARAMS" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="NCCALCSIZE_PARAMS" />struct.</summary>
     public static unsafe class NCCALCSIZE_PARAMSTests
     {
         /// <summary>Validates that the <see cref="NCCALCSIZE_PARAMS" /> struct is blittable.</summary>

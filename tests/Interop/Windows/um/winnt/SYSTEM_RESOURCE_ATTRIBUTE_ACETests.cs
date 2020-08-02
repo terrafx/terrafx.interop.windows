@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SYSTEM_RESOURCE_ATTRIBUTE_ACE" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="SYSTEM_RESOURCE_ATTRIBUTE_ACE" />struct.</summary>
     public static unsafe class SYSTEM_RESOURCE_ATTRIBUTE_ACETests
     {
         /// <summary>Validates that the <see cref="SYSTEM_RESOURCE_ATTRIBUTE_ACE" /> struct is blittable.</summary>

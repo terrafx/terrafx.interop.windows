@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="userBITMAP" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="userBITMAP" />struct.</summary>
     public static unsafe class userBITMAPTests
     {
         /// <summary>Validates that the <see cref="userBITMAP" /> struct is blittable.</summary>

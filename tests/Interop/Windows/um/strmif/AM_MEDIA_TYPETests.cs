@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="AM_MEDIA_TYPE" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="AM_MEDIA_TYPE" />struct.</summary>
     public static unsafe class AM_MEDIA_TYPETests
     {
         /// <summary>Validates that the <see cref="AM_MEDIA_TYPE" /> struct is blittable.</summary>

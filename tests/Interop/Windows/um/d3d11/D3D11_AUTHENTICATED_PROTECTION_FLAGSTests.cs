@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D11_AUTHENTICATED_PROTECTION_FLAGS" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D11_AUTHENTICATED_PROTECTION_FLAGS" />struct.</summary>
     public static unsafe class D3D11_AUTHENTICATED_PROTECTION_FLAGSTests
     {
         /// <summary>Validates that the <see cref="D3D11_AUTHENTICATED_PROTECTION_FLAGS" /> struct is blittable.</summary>

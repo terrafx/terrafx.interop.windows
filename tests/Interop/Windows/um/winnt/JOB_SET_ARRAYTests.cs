@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="JOB_SET_ARRAY" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="JOB_SET_ARRAY" />struct.</summary>
     public static unsafe class JOB_SET_ARRAYTests
     {
         /// <summary>Validates that the <see cref="JOB_SET_ARRAY" /> struct is blittable.</summary>

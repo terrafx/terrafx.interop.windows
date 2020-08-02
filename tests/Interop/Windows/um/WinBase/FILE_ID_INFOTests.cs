@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="FILE_ID_INFO" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="FILE_ID_INFO" />struct.</summary>
     public static unsafe class FILE_ID_INFOTests
     {
         /// <summary>Validates that the <see cref="FILE_ID_INFO" /> struct is blittable.</summary>

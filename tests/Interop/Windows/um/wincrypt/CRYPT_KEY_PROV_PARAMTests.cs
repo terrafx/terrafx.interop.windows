@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CRYPT_KEY_PROV_PARAM" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="CRYPT_KEY_PROV_PARAM" />struct.</summary>
     public static unsafe class CRYPT_KEY_PROV_PARAMTests
     {
         /// <summary>Validates that the <see cref="CRYPT_KEY_PROV_PARAM" /> struct is blittable.</summary>

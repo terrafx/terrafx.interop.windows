@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="HIDP_CAPS" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="HIDP_CAPS" />struct.</summary>
     public static unsafe class HIDP_CAPSTests
     {
         /// <summary>Validates that the <see cref="HIDP_CAPS" /> struct is blittable.</summary>

@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IProcessLock" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="IProcessLock" />struct.</summary>
     public static unsafe class IProcessLockTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IProcessLock" /> struct is correct.</summary>

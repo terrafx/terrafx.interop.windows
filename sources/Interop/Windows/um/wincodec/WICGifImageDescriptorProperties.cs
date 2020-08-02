@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public enum WICGifImageDescriptorProperties
+    public enum WICGifImageDescriptorProperties : uint
     {
         WICGifImageDescriptorLeft = 0x1,
         WICGifImageDescriptorTop = 0x2,

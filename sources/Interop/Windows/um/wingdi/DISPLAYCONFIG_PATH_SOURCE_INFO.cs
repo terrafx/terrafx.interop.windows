@@ -17,6 +17,34 @@ namespace TerraFX.Interop
         [NativeTypeName("DISPLAYCONFIG_PATH_SOURCE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wingdi.h:2950:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref uint modeInfoIdx => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.modeInfoIdx, 1));
+
+        public uint cloneGroupId
+        {
+            get
+            {
+                return Anonymous.Anonymous.cloneGroupId;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.cloneGroupId = value;
+            }
+        }
+
+        public uint sourceModeInfoIdx
+        {
+            get
+            {
+                return Anonymous.Anonymous.sourceModeInfoIdx;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.sourceModeInfoIdx = value;
+            }
+        }
+
         [NativeTypeName("UINT32")]
         public uint statusFlags;
 
@@ -33,7 +61,7 @@ namespace TerraFX.Interop
 
             public partial struct _Anonymous_e__Struct
             {
-                internal uint _bitfield;
+                public uint _bitfield;
 
                 [NativeTypeName("UINT32 : 16")]
                 public uint cloneGroupId

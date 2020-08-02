@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MFRatio" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="MFRatio" />struct.</summary>
     public static unsafe class MFRatioTests
     {
         /// <summary>Validates that the <see cref="MFRatio" /> struct is blittable.</summary>

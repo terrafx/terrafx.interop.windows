@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IInternalUnknown" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="IInternalUnknown" />struct.</summary>
     public static unsafe class IInternalUnknownTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IInternalUnknown" /> struct is correct.</summary>

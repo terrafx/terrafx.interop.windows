@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="XAPO_PROCESS_BUFFER_PARAMETERS" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="XAPO_PROCESS_BUFFER_PARAMETERS" />struct.</summary>
     public static unsafe class XAPO_PROCESS_BUFFER_PARAMETERSTests
     {
         /// <summary>Validates that the <see cref="XAPO_PROCESS_BUFFER_PARAMETERS" /> struct is blittable.</summary>

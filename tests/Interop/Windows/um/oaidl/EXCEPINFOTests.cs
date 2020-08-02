@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="EXCEPINFO" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="EXCEPINFO" />struct.</summary>
     public static unsafe class EXCEPINFOTests
     {
         /// <summary>Validates that the <see cref="EXCEPINFO" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="AM_AC3_DIALOGUE_LEVEL" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="AM_AC3_DIALOGUE_LEVEL" />struct.</summary>
     public static unsafe class AM_AC3_DIALOGUE_LEVELTests
     {
         /// <summary>Validates that the <see cref="AM_AC3_DIALOGUE_LEVEL" /> struct is blittable.</summary>

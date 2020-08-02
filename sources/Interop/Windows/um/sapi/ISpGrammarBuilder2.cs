@@ -33,9 +33,9 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int AddTextSubset([NativeTypeName("SPSTATEHANDLE")] SPSTATEHANDLE__* hFromState, [NativeTypeName("SPSTATEHANDLE")] SPSTATEHANDLE__* hToState, [NativeTypeName("LPCWSTR")] ushort* psz, SPMATCHINGMODE eMatchMode)
+        public int AddTextSubset([NativeTypeName("SPSTATEHANDLE")] IntPtr hFromState, [NativeTypeName("SPSTATEHANDLE")] IntPtr hToState, [NativeTypeName("LPCWSTR")] ushort* psz, SPMATCHINGMODE eMatchMode)
         {
-            return ((delegate* stdcall<ISpGrammarBuilder2*, SPSTATEHANDLE__*, SPSTATEHANDLE__*, ushort*, SPMATCHINGMODE, int>)(lpVtbl[3]))((ISpGrammarBuilder2*)Unsafe.AsPointer(ref this), hFromState, hToState, psz, eMatchMode);
+            return ((delegate* stdcall<ISpGrammarBuilder2*, IntPtr, IntPtr, ushort*, SPMATCHINGMODE, int>)(lpVtbl[3]))((ISpGrammarBuilder2*)Unsafe.AsPointer(ref this), hFromState, hToState, psz, eMatchMode);
         }
 
         [return: NativeTypeName("HRESULT")]

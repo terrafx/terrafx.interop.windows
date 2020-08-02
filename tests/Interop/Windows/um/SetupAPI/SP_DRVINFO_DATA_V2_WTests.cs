@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SP_DRVINFO_DATA_V2_W" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="SP_DRVINFO_DATA_V2_W" />struct.</summary>
     public static unsafe class SP_DRVINFO_DATA_V2_WTests
     {
         /// <summary>Validates that the <see cref="SP_DRVINFO_DATA_V2_W" /> struct is blittable.</summary>

@@ -38,9 +38,9 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int DeleteFileA([NativeTypeName("LPCSTR")] sbyte* lpFileName);
 
-        [DllImport("kernel32", EntryPoint = "DeleteFileW", ExactSpelling = true)]
+        [DllImport("kernel32", EntryPoint = "DeleteFileW", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int DeleteFileW([NativeTypeName("LPCWSTR")] ushort* lpFileName);
+        public static extern int DeleteFile([NativeTypeName("LPCWSTR")] ushort* lpFileName);
 
         [DllImport("kernel32", EntryPoint = "DeleteVolumeMountPointW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]

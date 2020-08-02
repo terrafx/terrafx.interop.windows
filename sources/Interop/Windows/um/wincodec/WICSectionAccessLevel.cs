@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public enum WICSectionAccessLevel
+    public enum WICSectionAccessLevel : uint
     {
         WICSectionAccessLevelRead = 0x1,
         WICSectionAccessLevelReadWrite = 0x3,

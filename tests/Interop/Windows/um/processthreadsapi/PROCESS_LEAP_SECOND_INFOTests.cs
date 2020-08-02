@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="PROCESS_LEAP_SECOND_INFO" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="PROCESS_LEAP_SECOND_INFO" />struct.</summary>
     public static unsafe class PROCESS_LEAP_SECOND_INFOTests
     {
         /// <summary>Validates that the <see cref="PROCESS_LEAP_SECOND_INFO" /> struct is blittable.</summary>

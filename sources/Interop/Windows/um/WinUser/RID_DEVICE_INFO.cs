@@ -18,6 +18,12 @@ namespace TerraFX.Interop
         [NativeTypeName("tagRID_DEVICE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinUser.h:15159:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref RID_DEVICE_INFO_MOUSE mouse => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.mouse, 1));
+
+        public ref RID_DEVICE_INFO_KEYBOARD keyboard => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.keyboard, 1));
+
+        public ref RID_DEVICE_INFO_HID hid => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hid, 1));
+
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {

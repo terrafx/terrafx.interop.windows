@@ -24,7 +24,7 @@ namespace TerraFX.Interop
 
         public partial struct _GroupInfo_e__FixedBuffer
         {
-            internal PROCESSOR_GROUP_INFO e0;
+            public PROCESSOR_GROUP_INFO e0;
 
             public ref PROCESSOR_GROUP_INFO this[int index] => ref AsSpan(int.MaxValue)[index];
 

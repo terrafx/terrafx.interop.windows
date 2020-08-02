@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_SEPIA_PROP : uint
     {
         D2D1_SEPIA_PROP_INTENSITY = 0,

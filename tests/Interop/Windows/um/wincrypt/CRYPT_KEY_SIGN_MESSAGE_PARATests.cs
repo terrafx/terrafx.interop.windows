@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CRYPT_KEY_SIGN_MESSAGE_PARA" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="CRYPT_KEY_SIGN_MESSAGE_PARA" />struct.</summary>
     public static unsafe class CRYPT_KEY_SIGN_MESSAGE_PARATests
     {
         /// <summary>Validates that the <see cref="CRYPT_KEY_SIGN_MESSAGE_PARA" /> struct is blittable.</summary>

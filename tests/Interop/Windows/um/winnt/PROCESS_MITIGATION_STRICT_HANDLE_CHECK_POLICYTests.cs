@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="PROCESS_MITIGATION_STRICT_HANDLE_CHECK_POLICY" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="PROCESS_MITIGATION_STRICT_HANDLE_CHECK_POLICY" />struct.</summary>
     public static unsafe class PROCESS_MITIGATION_STRICT_HANDLE_CHECK_POLICYTests
     {
         /// <summary>Validates that the <see cref="PROCESS_MITIGATION_STRICT_HANDLE_CHECK_POLICY" /> struct is blittable.</summary>

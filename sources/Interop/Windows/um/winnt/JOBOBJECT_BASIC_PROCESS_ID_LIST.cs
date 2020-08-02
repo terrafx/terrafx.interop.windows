@@ -21,7 +21,7 @@ namespace TerraFX.Interop
 
         public partial struct _ProcessIdList_e__FixedBuffer
         {
-            internal nuint e0;
+            public nuint e0;
 
             public ref nuint this[int index] => ref AsSpan(int.MaxValue)[index];
 

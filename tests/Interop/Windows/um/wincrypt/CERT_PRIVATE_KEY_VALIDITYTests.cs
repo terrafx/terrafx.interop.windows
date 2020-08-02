@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CERT_PRIVATE_KEY_VALIDITY" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="CERT_PRIVATE_KEY_VALIDITY" />struct.</summary>
     public static unsafe class CERT_PRIVATE_KEY_VALIDITYTests
     {
         /// <summary>Validates that the <see cref="CERT_PRIVATE_KEY_VALIDITY" /> struct is blittable.</summary>

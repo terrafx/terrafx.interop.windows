@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="ISpeechPhraseAlternates" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="ISpeechPhraseAlternates" />struct.</summary>
     public static unsafe class ISpeechPhraseAlternatesTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISpeechPhraseAlternates" /> struct is correct.</summary>

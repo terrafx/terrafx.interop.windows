@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="TTPOLYCURVE" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="TTPOLYCURVE" />struct.</summary>
     public static unsafe class TTPOLYCURVETests
     {
         /// <summary>Validates that the <see cref="TTPOLYCURVE" /> struct is blittable.</summary>

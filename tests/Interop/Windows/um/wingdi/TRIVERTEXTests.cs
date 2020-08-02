@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="TRIVERTEX" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="TRIVERTEX" />struct.</summary>
     public static unsafe class TRIVERTEXTests
     {
         /// <summary>Validates that the <see cref="TRIVERTEX" /> struct is blittable.</summary>

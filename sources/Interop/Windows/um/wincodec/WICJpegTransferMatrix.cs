@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public enum WICJpegTransferMatrix
+    public enum WICJpegTransferMatrix : uint
     {
         WICJpegTransferMatrixIdentity = 0,
         WICJpegTransferMatrixBT601 = 0x1,

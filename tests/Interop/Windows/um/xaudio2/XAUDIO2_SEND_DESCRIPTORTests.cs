@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="XAUDIO2_SEND_DESCRIPTOR" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="XAUDIO2_SEND_DESCRIPTOR" />struct.</summary>
     public static unsafe class XAUDIO2_SEND_DESCRIPTORTests
     {
         /// <summary>Validates that the <see cref="XAUDIO2_SEND_DESCRIPTOR" /> struct is blittable.</summary>

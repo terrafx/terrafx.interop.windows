@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="PROV_ENUMALGS" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="PROV_ENUMALGS" />struct.</summary>
     public static unsafe class PROV_ENUMALGSTests
     {
         /// <summary>Validates that the <see cref="PROV_ENUMALGS" /> struct is blittable.</summary>

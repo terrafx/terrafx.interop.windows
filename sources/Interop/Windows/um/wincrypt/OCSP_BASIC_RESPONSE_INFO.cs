@@ -18,6 +18,10 @@ namespace TerraFX.Interop
         [NativeTypeName("_OCSP_BASIC_RESPONSE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:5706:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref CRYPTOAPI_BLOB ByNameResponderId => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ByNameResponderId, 1));
+
+        public ref CRYPTOAPI_BLOB ByKeyResponderId => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ByKeyResponderId, 1));
+
         public FILETIME ProducedAt;
 
         [NativeTypeName("DWORD")]

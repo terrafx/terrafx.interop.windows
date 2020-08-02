@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public enum WICPngTimeProperties
+    public enum WICPngTimeProperties : uint
     {
         WICPngTimeYear = 0x1,
         WICPngTimeMonth = 0x2,

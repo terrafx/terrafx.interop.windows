@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="GDI_NONREMOTE" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="GDI_NONREMOTE" />struct.</summary>
     public static unsafe class GDI_NONREMOTETests
     {
         /// <summary>Validates that the <see cref="GDI_NONREMOTE" /> struct is blittable.</summary>

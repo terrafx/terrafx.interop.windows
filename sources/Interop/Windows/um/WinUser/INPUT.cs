@@ -15,6 +15,12 @@ namespace TerraFX.Interop
         [NativeTypeName("tagINPUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinUser.h:6130:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref MOUSEINPUT mi => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.mi, 1));
+
+        public ref KEYBDINPUT ki => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ki, 1));
+
+        public ref HARDWAREINPUT hi => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hi, 1));
+
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {

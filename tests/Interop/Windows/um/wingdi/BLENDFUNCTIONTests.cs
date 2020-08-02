@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="BLENDFUNCTION" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="BLENDFUNCTION" />struct.</summary>
     public static unsafe class BLENDFUNCTIONTests
     {
         /// <summary>Validates that the <see cref="BLENDFUNCTION" /> struct is blittable.</summary>

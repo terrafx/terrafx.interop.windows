@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MAT2" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="MAT2" />struct.</summary>
     public static unsafe class MAT2Tests
     {
         /// <summary>Validates that the <see cref="MAT2" /> struct is blittable.</summary>

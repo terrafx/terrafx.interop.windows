@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CHANGEFILTERSTRUCT" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="CHANGEFILTERSTRUCT" />struct.</summary>
     public static unsafe class CHANGEFILTERSTRUCTTests
     {
         /// <summary>Validates that the <see cref="CHANGEFILTERSTRUCT" /> struct is blittable.</summary>

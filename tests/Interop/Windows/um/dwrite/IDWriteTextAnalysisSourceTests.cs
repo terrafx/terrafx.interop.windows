@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IDWriteTextAnalysisSource" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="IDWriteTextAnalysisSource" />struct.</summary>
     public static unsafe class IDWriteTextAnalysisSourceTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDWriteTextAnalysisSource" /> struct is correct.</summary>

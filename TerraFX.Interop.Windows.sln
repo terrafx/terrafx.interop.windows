@@ -1046,6 +1046,34 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3dx12", "d3dx12", "{241555
 		generation\other\d3dx12\other-d3dx12.h = generation\other\d3dx12\other-d3dx12.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d2d1_1helper", "d2d1_1helper", "{2113E8BA-43E5-42AF-95AC-8E780EAF8923}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\d2d1_1helper\generate.rsp = generation\um\d2d1_1helper\generate.rsp
+		generation\um\d2d1_1helper\header.txt = generation\um\d2d1_1helper\header.txt
+		generation\um\d2d1_1helper\um-d2d1_1helper.h = generation\um\d2d1_1helper\um-d2d1_1helper.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d2d1_2helper", "d2d1_2helper", "{E5BBCCC1-5220-4AB4-9031-F1B827496BF0}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\d2d1_2helper\generate.rsp = generation\um\d2d1_2helper\generate.rsp
+		generation\um\d2d1_2helper\header.txt = generation\um\d2d1_2helper\header.txt
+		generation\um\d2d1_2helper\um-d2d1_2helper.h = generation\um\d2d1_2helper\um-d2d1_2helper.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d2d1_3helper", "d2d1_3helper", "{C0424079-3B2E-49E3-8F20-0083304B40DE}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\d2d1_3helper\generate.rsp = generation\um\d2d1_3helper\generate.rsp
+		generation\um\d2d1_3helper\header.txt = generation\um\d2d1_3helper\header.txt
+		generation\um\d2d1_3helper\um-d2d1_3helper.h = generation\um\d2d1_3helper\um-d2d1_3helper.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ddraw", "ddraw", "{FCCFAB49-A9AD-453C-85C0-61A9D4E57CEE}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\ddraw\generate.rsp = generation\um\ddraw\generate.rsp
+		generation\um\ddraw\header.txt = generation\um\ddraw\header.txt
+		generation\um\ddraw\um-ddraw.h = generation\um\ddraw\um-ddraw.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1216,6 +1244,10 @@ Global
 		{B09A774C-A2CD-4E0D-8DE8-AC48459E1699} = {D9638FEE-50A4-44FF-B1F6-72E59548490B}
 		{97B0FE61-F7D8-4735-BE90-77A1ECC3515C} = {B09A774C-A2CD-4E0D-8DE8-AC48459E1699}
 		{2415556F-BC68-40A5-AF8C-FB66B31073C5} = {B09A774C-A2CD-4E0D-8DE8-AC48459E1699}
+		{2113E8BA-43E5-42AF-95AC-8E780EAF8923} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{E5BBCCC1-5220-4AB4-9031-F1B827496BF0} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{C0424079-3B2E-49E3-8F20-0083304B40DE} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{FCCFAB49-A9AD-453C-85C0-61A9D4E57CEE} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}

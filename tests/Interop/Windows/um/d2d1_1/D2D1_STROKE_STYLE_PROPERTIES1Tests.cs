@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D2D1_STROKE_STYLE_PROPERTIES1" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="D2D1_STROKE_STYLE_PROPERTIES1" />struct.</summary>
     public static unsafe class D2D1_STROKE_STYLE_PROPERTIES1Tests
     {
         /// <summary>Validates that the <see cref="D2D1_STROKE_STYLE_PROPERTIES1" /> struct is blittable.</summary>

@@ -21,7 +21,7 @@ namespace TerraFX.Interop
 
         public partial struct _apfx_e__FixedBuffer
         {
-            internal POINTFX e0;
+            public POINTFX e0;
 
             public ref POINTFX this[int index] => ref AsSpan(int.MaxValue)[index];
 

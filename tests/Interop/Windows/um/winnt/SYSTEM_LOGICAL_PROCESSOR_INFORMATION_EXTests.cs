@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX" />struct.</summary>
     public static unsafe class SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EXTests
     {
         /// <summary>Validates that the <see cref="SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX" /> struct is blittable.</summary>

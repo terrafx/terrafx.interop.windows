@@ -8,13 +8,448 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public partial struct PROPVARIANT
+    public unsafe partial struct PROPVARIANT
     {
         [NativeTypeName("tagPROPVARIANT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/PropIdlBase.h:295:3)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref ushort vt => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.vt, 1));
+
+        public ref ushort wReserved1 => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.wReserved1, 1));
+
+        public ref ushort wReserved2 => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.wReserved2, 1));
+
+        public ref ushort wReserved3 => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.wReserved3, 1));
+
+        public ref sbyte cVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cVal, 1));
+
+        public ref byte bVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.bVal, 1));
+
+        public ref short iVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.iVal, 1));
+
+        public ref ushort uiVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.uiVal, 1));
+
+        public ref int lVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.lVal, 1));
+
+        public ref uint ulVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.ulVal, 1));
+
+        public ref int intVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.intVal, 1));
+
+        public ref uint uintVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.uintVal, 1));
+
+        public ref LARGE_INTEGER hVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.hVal, 1));
+
+        public ref ULARGE_INTEGER uhVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.uhVal, 1));
+
+        public ref float fltVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.fltVal, 1));
+
+        public ref double dblVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.dblVal, 1));
+
+        public ref short boolVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.boolVal, 1));
+
+        public ref short __OBSOLETE__VARIANT_BOOL => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.__OBSOLETE__VARIANT_BOOL, 1));
+
+        public ref int scode => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.scode, 1));
+
+        public ref CY cyVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cyVal, 1));
+
+        public ref double date => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.date, 1));
+
+        public ref FILETIME filetime => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.filetime, 1));
+
+        public ref Guid* puuid
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->puuid;
+                }
+            }
+        }
+
+        public ref CLIPDATA* pclipdata
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->pclipdata;
+                }
+            }
+        }
+
+        public ref ushort* bstrVal
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->bstrVal;
+                }
+            }
+        }
+
+        public ref BSTRBLOB bstrblobVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.bstrblobVal, 1));
+
+        public ref BLOB blob => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.blob, 1));
+
+        public ref sbyte* pszVal
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->pszVal;
+                }
+            }
+        }
+
+        public ref ushort* pwszVal
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->pwszVal;
+                }
+            }
+        }
+
+        public ref IUnknown* punkVal
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->punkVal;
+                }
+            }
+        }
+
+        public ref IDispatch* pdispVal
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->pdispVal;
+                }
+            }
+        }
+
+        public ref IStream* pStream
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->pStream;
+                }
+            }
+        }
+
+        public ref IStorage* pStorage
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->pStorage;
+                }
+            }
+        }
+
+        public ref VERSIONEDSTREAM* pVersionedStream
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->pVersionedStream;
+                }
+            }
+        }
+
+        public ref SAFEARRAY* parray
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->parray;
+                }
+            }
+        }
+
+        public ref CAC cac => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cac, 1));
+
+        public ref CAUB caub => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.caub, 1));
+
+        public ref CAI cai => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cai, 1));
+
+        public ref CAUI caui => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.caui, 1));
+
+        public ref CAL cal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cal, 1));
+
+        public ref CAUL caul => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.caul, 1));
+
+        public ref CAH cah => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cah, 1));
+
+        public ref CAUH cauh => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cauh, 1));
+
+        public ref CAFLT caflt => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.caflt, 1));
+
+        public ref CADBL cadbl => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cadbl, 1));
+
+        public ref CABOOL cabool => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cabool, 1));
+
+        public ref CASCODE cascode => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cascode, 1));
+
+        public ref CACY cacy => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cacy, 1));
+
+        public ref CADATE cadate => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cadate, 1));
+
+        public ref CAFILETIME cafiletime => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cafiletime, 1));
+
+        public ref CACLSID cauuid => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cauuid, 1));
+
+        public ref CACLIPDATA caclipdata => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.caclipdata, 1));
+
+        public ref CABSTR cabstr => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cabstr, 1));
+
+        public ref CABSTRBLOB cabstrblob => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.cabstrblob, 1));
+
+        public ref CALPSTR calpstr => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.calpstr, 1));
+
+        public ref CALPWSTR calpwstr => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.calpwstr, 1));
+
+        public ref CAPROPVARIANT capropvar => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Anonymous.capropvar, 1));
+
+        public ref sbyte* pcVal
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->pcVal;
+                }
+            }
+        }
+
+        public ref byte* pbVal
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->pbVal;
+                }
+            }
+        }
+
+        public ref short* piVal
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->piVal;
+                }
+            }
+        }
+
+        public ref ushort* puiVal
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->puiVal;
+                }
+            }
+        }
+
+        public ref int* plVal
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->plVal;
+                }
+            }
+        }
+
+        public ref uint* pulVal
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->pulVal;
+                }
+            }
+        }
+
+        public ref int* pintVal
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->pintVal;
+                }
+            }
+        }
+
+        public ref uint* puintVal
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->puintVal;
+                }
+            }
+        }
+
+        public ref float* pfltVal
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->pfltVal;
+                }
+            }
+        }
+
+        public ref double* pdblVal
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->pdblVal;
+                }
+            }
+        }
+
+        public ref short* pboolVal
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->pboolVal;
+                }
+            }
+        }
+
+        public ref DECIMAL* pdecVal
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->pdecVal;
+                }
+            }
+        }
+
+        public ref int* pscode
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->pscode;
+                }
+            }
+        }
+
+        public ref CY* pcyVal
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->pcyVal;
+                }
+            }
+        }
+
+        public ref double* pdate
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->pdate;
+                }
+            }
+        }
+
+        public ref ushort** pbstrVal
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->pbstrVal;
+                }
+            }
+        }
+
+        public ref IUnknown** ppunkVal
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->ppunkVal;
+                }
+            }
+        }
+
+        public ref IDispatch** ppdispVal
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->ppdispVal;
+                }
+            }
+        }
+
+        public ref SAFEARRAY** pparray
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->pparray;
+                }
+            }
+        }
+
+        public ref PROPVARIANT* pvarVal
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union._Anonymous_e__Struct._Anonymous_e__Union* pField = &Anonymous.Anonymous.Anonymous)
+                {
+                    return ref pField->pvarVal;
+                }
+            }
+        }
+
+        public ref DECIMAL decVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.decVal, 1));
+
         [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
+        public unsafe partial struct _Anonymous_e__Union
         {
             [FieldOffset(0)]
             [NativeTypeName("tagPROPVARIANT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/PropIdlBase.h:297:1)")]
@@ -23,7 +458,7 @@ namespace TerraFX.Interop
             [FieldOffset(0)]
             public DECIMAL decVal;
 
-            public partial struct _Anonymous_e__Struct
+            public unsafe partial struct _Anonymous_e__Struct
             {
                 [NativeTypeName("VARTYPE")]
                 public ushort vt;

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="HW_PROFILE_INFOA" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="HW_PROFILE_INFOA" />struct.</summary>
     public static unsafe class HW_PROFILE_INFOATests
     {
         /// <summary>Validates that the <see cref="HW_PROFILE_INFOA" /> struct is blittable.</summary>

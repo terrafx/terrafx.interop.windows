@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DML_SIZE_2D" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="DML_SIZE_2D" />struct.</summary>
     public static unsafe class DML_SIZE_2DTests
     {
         /// <summary>Validates that the <see cref="DML_SIZE_2D" /> struct is blittable.</summary>

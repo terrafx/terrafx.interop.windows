@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D11_FEATURE_DATA_SHADER_MIN_PRECISION_SUPPORT" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D11_FEATURE_DATA_SHADER_MIN_PRECISION_SUPPORT" />struct.</summary>
     public static unsafe class D3D11_FEATURE_DATA_SHADER_MIN_PRECISION_SUPPORTTests
     {
         /// <summary>Validates that the <see cref="D3D11_FEATURE_DATA_SHADER_MIN_PRECISION_SUPPORT" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="COMPATIBILITY_CONTEXT_ELEMENT" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="COMPATIBILITY_CONTEXT_ELEMENT" />struct.</summary>
     public static unsafe class COMPATIBILITY_CONTEXT_ELEMENTTests
     {
         /// <summary>Validates that the <see cref="COMPATIBILITY_CONTEXT_ELEMENT" /> struct is blittable.</summary>

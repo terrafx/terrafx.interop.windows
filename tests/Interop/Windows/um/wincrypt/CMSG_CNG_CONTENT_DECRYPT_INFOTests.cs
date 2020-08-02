@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CMSG_CNG_CONTENT_DECRYPT_INFO" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="CMSG_CNG_CONTENT_DECRYPT_INFO" />struct.</summary>
     public static unsafe class CMSG_CNG_CONTENT_DECRYPT_INFOTests
     {
         /// <summary>Validates that the <see cref="CMSG_CNG_CONTENT_DECRYPT_INFO" /> struct is blittable.</summary>

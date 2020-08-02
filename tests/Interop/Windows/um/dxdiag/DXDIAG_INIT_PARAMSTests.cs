@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DXDIAG_INIT_PARAMS" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="DXDIAG_INIT_PARAMS" />struct.</summary>
     public static unsafe class DXDIAG_INIT_PARAMSTests
     {
         /// <summary>Validates that the <see cref="DXDIAG_INIT_PARAMS" /> struct is blittable.</summary>

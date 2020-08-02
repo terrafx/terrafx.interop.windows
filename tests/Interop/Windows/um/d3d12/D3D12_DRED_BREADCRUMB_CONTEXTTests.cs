@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D12_DRED_BREADCRUMB_CONTEXT" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D12_DRED_BREADCRUMB_CONTEXT" />struct.</summary>
     public static unsafe class D3D12_DRED_BREADCRUMB_CONTEXTTests
     {
         /// <summary>Validates that the <see cref="D3D12_DRED_BREADCRUMB_CONTEXT" /> struct is blittable.</summary>

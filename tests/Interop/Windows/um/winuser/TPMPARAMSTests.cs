@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="TPMPARAMS" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="TPMPARAMS" />struct.</summary>
     public static unsafe class TPMPARAMSTests
     {
         /// <summary>Validates that the <see cref="TPMPARAMS" /> struct is blittable.</summary>

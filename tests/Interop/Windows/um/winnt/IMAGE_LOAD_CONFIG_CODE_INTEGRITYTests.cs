@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IMAGE_LOAD_CONFIG_CODE_INTEGRITY" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="IMAGE_LOAD_CONFIG_CODE_INTEGRITY" />struct.</summary>
     public static unsafe class IMAGE_LOAD_CONFIG_CODE_INTEGRITYTests
     {
         /// <summary>Validates that the <see cref="IMAGE_LOAD_CONFIG_CODE_INTEGRITY" /> struct is blittable.</summary>

@@ -8,7 +8,6 @@ using System;
 namespace TerraFX.Interop
 {
     [Flags]
-    [NativeTypeName("int")]
     public enum D2D1_WINDOW_STATE : uint
     {
         D2D1_WINDOW_STATE_NONE = 0x0000000,

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="GLYPHSET" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="GLYPHSET" />struct.</summary>
     public static unsafe class GLYPHSETTests
     {
         /// <summary>Validates that the <see cref="GLYPHSET" /> struct is blittable.</summary>

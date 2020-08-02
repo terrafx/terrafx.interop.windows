@@ -10,6 +10,18 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
+        [NativeTypeName("const UINT")]
+        public const uint DML_TENSOR_DIMENSION_COUNT_MAX = 5;
+
+        [NativeTypeName("const UINT")]
+        public const uint DML_TEMPORARY_BUFFER_ALIGNMENT = 256;
+
+        [NativeTypeName("const UINT")]
+        public const uint DML_PERSISTENT_BUFFER_ALIGNMENT = 256;
+
+        [NativeTypeName("const UINT")]
+        public const uint DML_MINIMUM_BUFFER_TENSOR_ALIGNMENT = 16;
+
         [DllImport("DirectML", EntryPoint = "DMLCreateDevice", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int DMLCreateDevice([NativeTypeName("ID3D12Device *")] ID3D12Device* d3d12Device, DML_CREATE_DEVICE_FLAGS flags, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppv);

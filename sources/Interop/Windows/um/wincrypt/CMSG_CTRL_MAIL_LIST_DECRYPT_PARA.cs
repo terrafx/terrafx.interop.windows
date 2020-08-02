@@ -27,6 +27,19 @@ namespace TerraFX.Interop
         [NativeTypeName("_CMSG_CTRL_MAIL_LIST_DECRYPT_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:8135:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref nuint hKeyEncryptionKey => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hKeyEncryptionKey, 1));
+
+        public ref void* pvKeyEncryptionKey
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->pvKeyEncryptionKey;
+                }
+            }
+        }
+
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union
         {

@@ -21,7 +21,7 @@ namespace TerraFX.Interop
 
         public partial struct _ObjectIds_e__FixedBuffer
         {
-            internal Guid e0;
+            public Guid e0;
 
             public ref Guid this[int index] => ref AsSpan(int.MaxValue)[index];
 

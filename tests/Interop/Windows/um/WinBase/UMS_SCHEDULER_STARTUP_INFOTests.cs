@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="UMS_SCHEDULER_STARTUP_INFO" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="UMS_SCHEDULER_STARTUP_INFO" />struct.</summary>
     public static unsafe class UMS_SCHEDULER_STARTUP_INFOTests
     {
         /// <summary>Validates that the <see cref="UMS_SCHEDULER_STARTUP_INFO" /> struct is blittable.</summary>

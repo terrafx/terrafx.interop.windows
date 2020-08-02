@@ -7,13 +7,37 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public partial struct SPC_LINK
+    public unsafe partial struct SPC_LINK
     {
         [NativeTypeName("DWORD")]
         public uint dwLinkChoice;
 
         [NativeTypeName("SPC_LINK_::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinTrust.h:1280:5)")]
         public _Anonymous_e__Union Anonymous;
+
+        public ref ushort* pwszUrl
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->pwszUrl;
+                }
+            }
+        }
+
+        public ref SPC_SERIALIZED_OBJECT Moniker => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Moniker, 1));
+
+        public ref ushort* pwszFile
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->pwszFile;
+                }
+            }
+        }
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union

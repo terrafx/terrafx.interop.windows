@@ -8,8 +8,7 @@ using System;
 namespace TerraFX.Interop
 {
     [Flags]
-    [NativeTypeName("int")]
-    public enum BINDINFOF : uint
+    public enum BINDINFOF
     {
         BINDINFOF_URLENCODESTGMEDDATA = 0x1,
         BINDINFOF_URLENCODEDEXTRAINFO = 0x2,

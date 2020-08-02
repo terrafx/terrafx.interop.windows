@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="EVENTSFORLOGFILE" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="EVENTSFORLOGFILE" />struct.</summary>
     public static unsafe class EVENTSFORLOGFILETests
     {
         /// <summary>Validates that the <see cref="EVENTSFORLOGFILE" /> struct is blittable.</summary>

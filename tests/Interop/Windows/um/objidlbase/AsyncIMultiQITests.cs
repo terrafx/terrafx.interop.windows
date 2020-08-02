@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="AsyncIMultiQI" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="AsyncIMultiQI" />struct.</summary>
     public static unsafe class AsyncIMultiQITests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="AsyncIMultiQI" /> struct is correct.</summary>

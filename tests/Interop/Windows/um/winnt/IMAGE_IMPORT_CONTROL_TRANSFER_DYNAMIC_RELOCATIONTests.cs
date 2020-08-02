@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION" />struct.</summary>
     public static unsafe class IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATIONTests
     {
         /// <summary>Validates that the <see cref="IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION" /> struct is blittable.</summary>

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="GROUP_RELATIONSHIP" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="GROUP_RELATIONSHIP" />struct.</summary>
     public static unsafe class GROUP_RELATIONSHIPTests
     {
         /// <summary>Validates that the <see cref="GROUP_RELATIONSHIP" /> struct is blittable.</summary>

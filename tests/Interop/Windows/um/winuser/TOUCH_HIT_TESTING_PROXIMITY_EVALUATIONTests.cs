@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="TOUCH_HIT_TESTING_PROXIMITY_EVALUATION" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="TOUCH_HIT_TESTING_PROXIMITY_EVALUATION" />struct.</summary>
     public static unsafe class TOUCH_HIT_TESTING_PROXIMITY_EVALUATIONTests
     {
         /// <summary>Validates that the <see cref="TOUCH_HIT_TESTING_PROXIMITY_EVALUATION" /> struct is blittable.</summary>

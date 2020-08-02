@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="JOBOBJECT_ASSOCIATE_COMPLETION_PORT" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="JOBOBJECT_ASSOCIATE_COMPLETION_PORT" />struct.</summary>
     public static unsafe class JOBOBJECT_ASSOCIATE_COMPLETION_PORTTests
     {
         /// <summary>Validates that the <see cref="JOBOBJECT_ASSOCIATE_COMPLETION_PORT" /> struct is blittable.</summary>

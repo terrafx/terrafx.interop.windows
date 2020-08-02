@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="AM_FRAMESTEP_STEP" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="AM_FRAMESTEP_STEP" />struct.</summary>
     public static unsafe class AM_FRAMESTEP_STEPTests
     {
         /// <summary>Validates that the <see cref="AM_FRAMESTEP_STEP" /> struct is blittable.</summary>

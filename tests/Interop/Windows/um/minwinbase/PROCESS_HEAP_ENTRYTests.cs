@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="PROCESS_HEAP_ENTRY" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="PROCESS_HEAP_ENTRY" />struct.</summary>
     public static unsafe class PROCESS_HEAP_ENTRYTests
     {
         /// <summary>Validates that the <see cref="PROCESS_HEAP_ENTRY" /> struct is blittable.</summary>

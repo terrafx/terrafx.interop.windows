@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="INPUT_INJECTION_VALUE" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="INPUT_INJECTION_VALUE" />struct.</summary>
     public static unsafe class INPUT_INJECTION_VALUETests
     {
         /// <summary>Validates that the <see cref="INPUT_INJECTION_VALUE" /> struct is blittable.</summary>

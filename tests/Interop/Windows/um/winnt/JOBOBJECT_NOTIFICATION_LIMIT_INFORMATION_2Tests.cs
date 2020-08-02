@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2" />struct.</summary>
     public static unsafe class JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2Tests
     {
         /// <summary>Validates that the <see cref="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2" /> struct is blittable.</summary>

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D12_INFO_QUEUE_FILTER_DESC" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D12_INFO_QUEUE_FILTER_DESC" />struct.</summary>
     public static unsafe class D3D12_INFO_QUEUE_FILTER_DESCTests
     {
         /// <summary>Validates that the <see cref="D3D12_INFO_QUEUE_FILTER_DESC" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MPEG1VIDEOINFO" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="MPEG1VIDEOINFO" />struct.</summary>
     public static unsafe class MPEG1VIDEOINFOTests
     {
         /// <summary>Validates that the <see cref="MPEG1VIDEOINFO" /> struct is blittable.</summary>

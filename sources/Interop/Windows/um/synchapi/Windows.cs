@@ -123,7 +123,7 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", EntryPoint = "WaitForMultipleObjectsEx", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WaitForMultipleObjectsEx([NativeTypeName("DWORD")] uint nCount, [NativeTypeName("const HANDLE *")] void** lpHandles, [NativeTypeName("BOOL")] int bWaitAll, [NativeTypeName("DWORD")] uint dwMilliseconds, [NativeTypeName("BOOL")] int bAlertable);
+        public static extern uint WaitForMultipleObjectsEx([NativeTypeName("DWORD")] uint nCount, [NativeTypeName("const HANDLE *")] IntPtr* lpHandles, [NativeTypeName("BOOL")] int bWaitAll, [NativeTypeName("DWORD")] uint dwMilliseconds, [NativeTypeName("BOOL")] int bAlertable);
 
         [DllImport("kernel32", EntryPoint = "CreateMutexA", ExactSpelling = true)]
         [return: NativeTypeName("HANDLE")]
@@ -228,7 +228,7 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", EntryPoint = "WaitForMultipleObjects", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint WaitForMultipleObjects([NativeTypeName("DWORD")] uint nCount, [NativeTypeName("const HANDLE *")] void** lpHandles, [NativeTypeName("BOOL")] int bWaitAll, [NativeTypeName("DWORD")] uint dwMilliseconds);
+        public static extern uint WaitForMultipleObjects([NativeTypeName("DWORD")] uint nCount, [NativeTypeName("const HANDLE *")] IntPtr* lpHandles, [NativeTypeName("BOOL")] int bWaitAll, [NativeTypeName("DWORD")] uint dwMilliseconds);
 
         [DllImport("kernel32", EntryPoint = "CreateSemaphoreW", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HANDLE")]

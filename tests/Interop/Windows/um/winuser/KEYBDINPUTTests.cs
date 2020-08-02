@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="KEYBDINPUT" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="KEYBDINPUT" />struct.</summary>
     public static unsafe class KEYBDINPUTTests
     {
         /// <summary>Validates that the <see cref="KEYBDINPUT" /> struct is blittable.</summary>

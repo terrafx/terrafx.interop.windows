@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SENSORPROFILEID" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="SENSORPROFILEID" />struct.</summary>
     public static unsafe class SENSORPROFILEIDTests
     {
         /// <summary>Validates that the <see cref="SENSORPROFILEID" /> struct is blittable.</summary>

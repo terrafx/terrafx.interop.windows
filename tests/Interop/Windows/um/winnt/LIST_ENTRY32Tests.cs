@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="LIST_ENTRY32" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="LIST_ENTRY32" />struct.</summary>
     public static unsafe class LIST_ENTRY32Tests
     {
         /// <summary>Validates that the <see cref="LIST_ENTRY32" /> struct is blittable.</summary>

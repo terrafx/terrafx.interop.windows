@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="WAVEFORMATEXTENSIBLE" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="WAVEFORMATEXTENSIBLE" />struct.</summary>
     public static unsafe class WAVEFORMATEXTENSIBLETests
     {
         /// <summary>Validates that the <see cref="WAVEFORMATEXTENSIBLE" /> struct is blittable.</summary>

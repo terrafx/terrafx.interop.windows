@@ -25,16 +25,16 @@ namespace TerraFX.Interop
 
         public partial struct _FrameArguments_e__FixedBuffer
         {
-            internal D3D12_VIDEO_DECODE_FRAME_ARGUMENT e0;
-            internal D3D12_VIDEO_DECODE_FRAME_ARGUMENT e1;
-            internal D3D12_VIDEO_DECODE_FRAME_ARGUMENT e2;
-            internal D3D12_VIDEO_DECODE_FRAME_ARGUMENT e3;
-            internal D3D12_VIDEO_DECODE_FRAME_ARGUMENT e4;
-            internal D3D12_VIDEO_DECODE_FRAME_ARGUMENT e5;
-            internal D3D12_VIDEO_DECODE_FRAME_ARGUMENT e6;
-            internal D3D12_VIDEO_DECODE_FRAME_ARGUMENT e7;
-            internal D3D12_VIDEO_DECODE_FRAME_ARGUMENT e8;
-            internal D3D12_VIDEO_DECODE_FRAME_ARGUMENT e9;
+            public D3D12_VIDEO_DECODE_FRAME_ARGUMENT e0;
+            public D3D12_VIDEO_DECODE_FRAME_ARGUMENT e1;
+            public D3D12_VIDEO_DECODE_FRAME_ARGUMENT e2;
+            public D3D12_VIDEO_DECODE_FRAME_ARGUMENT e3;
+            public D3D12_VIDEO_DECODE_FRAME_ARGUMENT e4;
+            public D3D12_VIDEO_DECODE_FRAME_ARGUMENT e5;
+            public D3D12_VIDEO_DECODE_FRAME_ARGUMENT e6;
+            public D3D12_VIDEO_DECODE_FRAME_ARGUMENT e7;
+            public D3D12_VIDEO_DECODE_FRAME_ARGUMENT e8;
+            public D3D12_VIDEO_DECODE_FRAME_ARGUMENT e9;
 
             public ref D3D12_VIDEO_DECODE_FRAME_ARGUMENT this[int index] => ref AsSpan()[index];
 

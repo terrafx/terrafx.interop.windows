@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="PUBLICKEYSTRUC" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="PUBLICKEYSTRUC" />struct.</summary>
     public static unsafe class PUBLICKEYSTRUCTests
     {
         /// <summary>Validates that the <see cref="PUBLICKEYSTRUC" /> struct is blittable.</summary>

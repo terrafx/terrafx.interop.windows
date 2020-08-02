@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IRunningObjectTable" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="IRunningObjectTable" />struct.</summary>
     public static unsafe class IRunningObjectTableTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IRunningObjectTable" /> struct is correct.</summary>

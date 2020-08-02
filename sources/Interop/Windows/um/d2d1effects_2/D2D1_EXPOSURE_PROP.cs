@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_EXPOSURE_PROP : uint
     {
         D2D1_EXPOSURE_PROP_EXPOSURE_VALUE = 0,

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="AM_DVD_ChangeRate" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="AM_DVD_ChangeRate" />struct.</summary>
     public static unsafe class AM_DVD_ChangeRateTests
     {
         /// <summary>Validates that the <see cref="AM_DVD_ChangeRate" /> struct is blittable.</summary>

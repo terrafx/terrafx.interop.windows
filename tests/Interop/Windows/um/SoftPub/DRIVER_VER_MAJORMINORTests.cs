@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DRIVER_VER_MAJORMINOR" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="DRIVER_VER_MAJORMINOR" />struct.</summary>
     public static unsafe class DRIVER_VER_MAJORMINORTests
     {
         /// <summary>Validates that the <see cref="DRIVER_VER_MAJORMINOR" /> struct is blittable.</summary>

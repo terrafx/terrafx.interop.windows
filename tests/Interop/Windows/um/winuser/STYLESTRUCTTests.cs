@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="STYLESTRUCT" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="STYLESTRUCT" />struct.</summary>
     public static unsafe class STYLESTRUCTTests
     {
         /// <summary>Validates that the <see cref="STYLESTRUCT" /> struct is blittable.</summary>

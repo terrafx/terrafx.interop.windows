@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_HISTOGRAM_PROP : uint
     {
         D2D1_HISTOGRAM_PROP_NUM_BINS = 0,

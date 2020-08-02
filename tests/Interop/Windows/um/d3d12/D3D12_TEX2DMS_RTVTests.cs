@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D12_TEX2DMS_RTV" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D12_TEX2DMS_RTV" />struct.</summary>
     public static unsafe class D3D12_TEX2DMS_RTVTests
     {
         /// <summary>Validates that the <see cref="D3D12_TEX2DMS_RTV" /> struct is blittable.</summary>

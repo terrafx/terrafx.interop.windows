@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IMAGE_DYNAMIC_RELOCATION_TABLE" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="IMAGE_DYNAMIC_RELOCATION_TABLE" />struct.</summary>
     public static unsafe class IMAGE_DYNAMIC_RELOCATION_TABLETests
     {
         /// <summary>Validates that the <see cref="IMAGE_DYNAMIC_RELOCATION_TABLE" /> struct is blittable.</summary>

@@ -140,11 +140,11 @@ namespace TerraFX.Interop
 
         [DllImport("propsys", EntryPoint = "PSGetPropertyFromPropertyStorage", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int PSGetPropertyFromPropertyStorage([NativeTypeName("PCUSERIALIZEDPROPSTORAGE")] SERIALIZEDPROPSTORAGE* psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* rpkey, [NativeTypeName("PROPVARIANT *")] PROPVARIANT* ppropvar);
+        public static extern int PSGetPropertyFromPropertyStorage([NativeTypeName("PCUSERIALIZEDPROPSTORAGE")] IntPtr psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* rpkey, [NativeTypeName("PROPVARIANT *")] PROPVARIANT* ppropvar);
 
         [DllImport("propsys", EntryPoint = "PSGetNamedPropertyFromPropertyStorage", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int PSGetNamedPropertyFromPropertyStorage([NativeTypeName("PCUSERIALIZEDPROPSTORAGE")] SERIALIZEDPROPSTORAGE* psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("PROPVARIANT *")] PROPVARIANT* ppropvar);
+        public static extern int PSGetNamedPropertyFromPropertyStorage([NativeTypeName("PCUSERIALIZEDPROPSTORAGE")] IntPtr psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("PROPVARIANT *")] PROPVARIANT* ppropvar);
 
         [DllImport("propsys", EntryPoint = "PSPropertyBag_ReadType", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

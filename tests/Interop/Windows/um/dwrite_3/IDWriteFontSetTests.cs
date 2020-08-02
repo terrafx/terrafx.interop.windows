@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IDWriteFontSet" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="IDWriteFontSet" />struct.</summary>
     public static unsafe class IDWriteFontSetTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDWriteFontSet" /> struct is correct.</summary>

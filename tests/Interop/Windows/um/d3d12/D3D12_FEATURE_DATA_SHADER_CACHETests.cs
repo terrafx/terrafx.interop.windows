@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D12_FEATURE_DATA_SHADER_CACHE" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D12_FEATURE_DATA_SHADER_CACHE" />struct.</summary>
     public static unsafe class D3D12_FEATURE_DATA_SHADER_CACHETests
     {
         /// <summary>Validates that the <see cref="D3D12_FEATURE_DATA_SHADER_CACHE" /> struct is blittable.</summary>

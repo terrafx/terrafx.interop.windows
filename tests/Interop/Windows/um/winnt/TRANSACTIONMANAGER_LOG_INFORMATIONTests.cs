@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="TRANSACTIONMANAGER_LOG_INFORMATION" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="TRANSACTIONMANAGER_LOG_INFORMATION" />struct.</summary>
     public static unsafe class TRANSACTIONMANAGER_LOG_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="TRANSACTIONMANAGER_LOG_INFORMATION" /> struct is blittable.</summary>

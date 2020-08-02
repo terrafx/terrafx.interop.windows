@@ -15,6 +15,125 @@ namespace TerraFX.Interop
         [NativeTypeName("_IMAGE_ARM_RUNTIME_FUNCTION_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18732:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref uint UnwindData => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.UnwindData, 1));
+
+        public uint Flag
+        {
+            get
+            {
+                return Anonymous.Anonymous.Flag;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.Flag = value;
+            }
+        }
+
+        public uint FunctionLength
+        {
+            get
+            {
+                return Anonymous.Anonymous.FunctionLength;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.FunctionLength = value;
+            }
+        }
+
+        public uint Ret
+        {
+            get
+            {
+                return Anonymous.Anonymous.Ret;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.Ret = value;
+            }
+        }
+
+        public uint H
+        {
+            get
+            {
+                return Anonymous.Anonymous.H;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.H = value;
+            }
+        }
+
+        public uint Reg
+        {
+            get
+            {
+                return Anonymous.Anonymous.Reg;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.Reg = value;
+            }
+        }
+
+        public uint R
+        {
+            get
+            {
+                return Anonymous.Anonymous.R;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.R = value;
+            }
+        }
+
+        public uint L
+        {
+            get
+            {
+                return Anonymous.Anonymous.L;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.L = value;
+            }
+        }
+
+        public uint C
+        {
+            get
+            {
+                return Anonymous.Anonymous.C;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.C = value;
+            }
+        }
+
+        public uint StackAdjust
+        {
+            get
+            {
+                return Anonymous.Anonymous.StackAdjust;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.StackAdjust = value;
+            }
+        }
+
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {
@@ -28,7 +147,7 @@ namespace TerraFX.Interop
 
             public partial struct _Anonymous_e__Struct
             {
-                internal uint _bitfield;
+                public uint _bitfield;
 
                 [NativeTypeName("DWORD : 2")]
                 public uint Flag

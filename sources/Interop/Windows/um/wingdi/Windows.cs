@@ -523,13 +523,13 @@ namespace TerraFX.Interop
         [return: NativeTypeName("DWORD")]
         public static extern uint GetFontUnicodeRanges([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPGLYPHSET")] GLYPHSET* lpgs);
 
-        [DllImport("gdi32", EntryPoint = "GetGlyphIndices", ExactSpelling = true)]
+        [DllImport("gdi32", EntryPoint = "GetGlyphIndicesA", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetGlyphIndices([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCSTR")] sbyte* lpstr, int c, [NativeTypeName("LPWORD")] ushort* pgi, [NativeTypeName("DWORD")] uint fl);
+        public static extern uint GetGlyphIndicesA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCSTR")] sbyte* lpstr, int c, [NativeTypeName("LPWORD")] ushort* pgi, [NativeTypeName("DWORD")] uint fl);
 
         [DllImport("gdi32", EntryPoint = "GetGlyphIndicesW", ExactSpelling = true)]
         [return: NativeTypeName("DWORD")]
-        public static extern uint GetGlyphIndicesW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpstr, int c, [NativeTypeName("LPWORD")] ushort* pgi, [NativeTypeName("DWORD")] uint fl);
+        public static extern uint GetGlyphIndices([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpstr, int c, [NativeTypeName("LPWORD")] ushort* pgi, [NativeTypeName("DWORD")] uint fl);
 
         [DllImport("gdi32", EntryPoint = "GetTextExtentPointI", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -1094,7 +1094,7 @@ namespace TerraFX.Interop
         public static extern int GetObjectA([NativeTypeName("HANDLE")] IntPtr h, int c, [NativeTypeName("LPVOID")] void* pv);
 
         [DllImport("gdi32", EntryPoint = "GetObjectW", ExactSpelling = true)]
-        public static extern int GetObjectW([NativeTypeName("HANDLE")] IntPtr h, int c, [NativeTypeName("LPVOID")] void* pv);
+        public static extern int GetObject([NativeTypeName("HANDLE")] IntPtr h, int c, [NativeTypeName("LPVOID")] void* pv);
 
         [DllImport("gdi32", EntryPoint = "MoveToEx", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]

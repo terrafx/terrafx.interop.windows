@@ -240,7 +240,7 @@ namespace TerraFX.Interop
 
         [DllImport("crypt32", EntryPoint = "CryptEnumOIDFunction", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int CryptEnumOIDFunction([NativeTypeName("DWORD")] uint dwEncodingType, [NativeTypeName("LPCSTR")] sbyte* pszFuncName, [NativeTypeName("LPCSTR")] sbyte* pszOID, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("void *")] void* pvArg, [NativeTypeName("PFN_CRYPT_ENUM_OID_FUNC")] delegate* stdcall<uint, sbyte*, sbyte*, uint, uint, ushort*, byte*, uint, void*, int> pfnEnumOIDFunc);
+        public static extern int CryptEnumOIDFunction([NativeTypeName("DWORD")] uint dwEncodingType, [NativeTypeName("LPCSTR")] sbyte* pszFuncName, [NativeTypeName("LPCSTR")] sbyte* pszOID, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("void *")] void* pvArg, [NativeTypeName("PFN_CRYPT_ENUM_OID_FUNC")] delegate* stdcall<uint, sbyte*, sbyte*, uint, uint*, ushort**, byte**, uint*, void*, int> pfnEnumOIDFunc);
 
         [DllImport("crypt32", EntryPoint = "CryptFindOIDInfo", ExactSpelling = true)]
         [return: NativeTypeName("PCCRYPT_OID_INFO")]

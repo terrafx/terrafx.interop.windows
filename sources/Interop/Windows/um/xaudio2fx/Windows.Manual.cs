@@ -9,8 +9,10 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
+        [NativeTypeName("const GUID")]
         public static readonly Guid CLSID_AudioVolumeMeter = new Guid(0x4FC3B166, 0x972A, 0x40CF, 0xBC, 0x37, 0x7D, 0xB0, 0x3D, 0xB2, 0xFB, 0xA3);
 
+        [NativeTypeName("const GUID")]
         public static readonly Guid CLSID_AudioReverb = new Guid(0xC2633B16, 0x471B, 0x4498, 0xB8, 0xC5, 0x4F, 0x09, 0x59, 0xE2, 0xEC, 0x09);
 
         public const int XAUDIO2FX_REVERB_MIN_FRAMERATE = 20000;

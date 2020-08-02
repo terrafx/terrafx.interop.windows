@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="NON_PAGED_DEBUG_INFO" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="NON_PAGED_DEBUG_INFO" />struct.</summary>
     public static unsafe class NON_PAGED_DEBUG_INFOTests
     {
         /// <summary>Validates that the <see cref="NON_PAGED_DEBUG_INFO" /> struct is blittable.</summary>

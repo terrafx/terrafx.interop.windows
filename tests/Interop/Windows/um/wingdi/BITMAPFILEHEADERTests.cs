@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="BITMAPFILEHEADER" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="BITMAPFILEHEADER" />struct.</summary>
     public static unsafe class BITMAPFILEHEADERTests
     {
         /// <summary>Validates that the <see cref="BITMAPFILEHEADER" /> struct is blittable.</summary>

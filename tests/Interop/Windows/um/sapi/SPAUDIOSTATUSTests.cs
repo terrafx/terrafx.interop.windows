@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SPAUDIOSTATUS" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="SPAUDIOSTATUS" />struct.</summary>
     public static unsafe class SPAUDIOSTATUSTests
     {
         /// <summary>Validates that the <see cref="SPAUDIOSTATUS" /> struct is blittable.</summary>

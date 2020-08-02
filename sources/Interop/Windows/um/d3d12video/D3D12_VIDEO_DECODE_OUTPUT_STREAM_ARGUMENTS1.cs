@@ -23,10 +23,10 @@ namespace TerraFX.Interop
 
         public partial struct _Histograms_e__FixedBuffer
         {
-            internal D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM e0;
-            internal D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM e1;
-            internal D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM e2;
-            internal D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM e3;
+            public D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM e0;
+            public D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM e1;
+            public D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM e2;
+            public D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM e3;
 
             public ref D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM this[int index] => ref AsSpan()[index];
 

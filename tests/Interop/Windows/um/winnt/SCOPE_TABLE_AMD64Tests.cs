@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SCOPE_TABLE_AMD64" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="SCOPE_TABLE_AMD64" />struct.</summary>
     public static unsafe class SCOPE_TABLE_AMD64Tests
     {
         /// <summary>Validates that the <see cref="SCOPE_TABLE_AMD64" /> struct is blittable.</summary>

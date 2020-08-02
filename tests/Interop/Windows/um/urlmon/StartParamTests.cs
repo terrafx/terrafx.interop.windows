@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="StartParam" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="StartParam" />struct.</summary>
     public static unsafe class StartParamTests
     {
         /// <summary>Validates that the <see cref="StartParam" /> struct is blittable.</summary>

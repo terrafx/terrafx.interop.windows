@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CRYPT_TIMESTAMP_ACCURACY" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="CRYPT_TIMESTAMP_ACCURACY" />struct.</summary>
     public static unsafe class CRYPT_TIMESTAMP_ACCURACYTests
     {
         /// <summary>Validates that the <see cref="CRYPT_TIMESTAMP_ACCURACY" /> struct is blittable.</summary>

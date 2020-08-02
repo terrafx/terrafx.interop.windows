@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MSLLHOOKSTRUCT" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="MSLLHOOKSTRUCT" />struct.</summary>
     public static unsafe class MSLLHOOKSTRUCTTests
     {
         /// <summary>Validates that the <see cref="MSLLHOOKSTRUCT" /> struct is blittable.</summary>

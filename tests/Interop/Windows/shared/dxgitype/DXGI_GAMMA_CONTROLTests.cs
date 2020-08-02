@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DXGI_GAMMA_CONTROL" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="DXGI_GAMMA_CONTROL" />struct.</summary>
     public static unsafe class DXGI_GAMMA_CONTROLTests
     {
         /// <summary>Validates that the <see cref="DXGI_GAMMA_CONTROL" /> struct is blittable.</summary>

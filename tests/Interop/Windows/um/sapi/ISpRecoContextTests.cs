@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="ISpRecoContext" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="ISpRecoContext" />struct.</summary>
     public static unsafe class ISpRecoContextTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISpRecoContext" /> struct is correct.</summary>

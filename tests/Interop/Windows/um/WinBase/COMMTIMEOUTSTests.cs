@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="COMMTIMEOUTS" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="COMMTIMEOUTS" />struct.</summary>
     public static unsafe class COMMTIMEOUTSTests
     {
         /// <summary>Validates that the <see cref="COMMTIMEOUTS" /> struct is blittable.</summary>

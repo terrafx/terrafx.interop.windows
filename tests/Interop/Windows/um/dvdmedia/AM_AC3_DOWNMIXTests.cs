@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="AM_AC3_DOWNMIX" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="AM_AC3_DOWNMIX" />struct.</summary>
     public static unsafe class AM_AC3_DOWNMIXTests
     {
         /// <summary>Validates that the <see cref="AM_AC3_DOWNMIX" /> struct is blittable.</summary>

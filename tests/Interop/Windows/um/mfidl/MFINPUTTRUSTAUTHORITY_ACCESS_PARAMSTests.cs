@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS" />struct.</summary>
     public static unsafe class MFINPUTTRUSTAUTHORITY_ACCESS_PARAMSTests
     {
         /// <summary>Validates that the <see cref="MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS" /> struct is blittable.</summary>

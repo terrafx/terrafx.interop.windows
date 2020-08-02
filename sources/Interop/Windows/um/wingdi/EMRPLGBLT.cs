@@ -72,9 +72,9 @@ namespace TerraFX.Interop
 
         public partial struct _aptlDest_e__FixedBuffer
         {
-            internal POINTL e0;
-            internal POINTL e1;
-            internal POINTL e2;
+            public POINTL e0;
+            public POINTL e1;
+            public POINTL e2;
 
             public ref POINTL this[int index] => ref AsSpan()[index];
 

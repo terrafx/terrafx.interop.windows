@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="userHPALETTE" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="userHPALETTE" />struct.</summary>
     public static unsafe class userHPALETTETests
     {
         /// <summary>Validates that the <see cref="userHPALETTE" /> struct is blittable.</summary>

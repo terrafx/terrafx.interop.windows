@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DISPLAYCONFIG_PATH_INFO" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="DISPLAYCONFIG_PATH_INFO" />struct.</summary>
     public static unsafe class DISPLAYCONFIG_PATH_INFOTests
     {
         /// <summary>Validates that the <see cref="DISPLAYCONFIG_PATH_INFO" /> struct is blittable.</summary>

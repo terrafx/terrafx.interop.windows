@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MESSAGE_RESOURCE_DATA" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="MESSAGE_RESOURCE_DATA" />struct.</summary>
     public static unsafe class MESSAGE_RESOURCE_DATATests
     {
         /// <summary>Validates that the <see cref="MESSAGE_RESOURCE_DATA" /> struct is blittable.</summary>

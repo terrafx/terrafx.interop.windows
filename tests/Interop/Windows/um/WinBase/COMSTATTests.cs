@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="COMSTAT" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="COMSTAT" />struct.</summary>
     public static unsafe class COMSTATTests
     {
         /// <summary>Validates that the <see cref="COMSTAT" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IMAGE_COR20_HEADER" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="IMAGE_COR20_HEADER" />struct.</summary>
     public static unsafe class IMAGE_COR20_HEADERTests
     {
         /// <summary>Validates that the <see cref="IMAGE_COR20_HEADER" /> struct is blittable.</summary>

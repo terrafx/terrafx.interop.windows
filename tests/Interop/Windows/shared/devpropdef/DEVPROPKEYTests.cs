@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DEVPROPKEY" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="DEVPROPKEY" />struct.</summary>
     public static unsafe class DEVPROPKEYTests
     {
         /// <summary>Validates that the <see cref="DEVPROPKEY" /> struct is blittable.</summary>

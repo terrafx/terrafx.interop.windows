@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="PPM_WMI_LEGACY_PERFSTATE" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="PPM_WMI_LEGACY_PERFSTATE" />struct.</summary>
     public static unsafe class PPM_WMI_LEGACY_PERFSTATETests
     {
         /// <summary>Validates that the <see cref="PPM_WMI_LEGACY_PERFSTATE" /> struct is blittable.</summary>

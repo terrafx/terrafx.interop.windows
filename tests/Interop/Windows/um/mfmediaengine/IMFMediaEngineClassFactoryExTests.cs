@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IMFMediaEngineClassFactoryEx" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="IMFMediaEngineClassFactoryEx" />struct.</summary>
     public static unsafe class IMFMediaEngineClassFactoryExTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFMediaEngineClassFactoryEx" /> struct is correct.</summary>

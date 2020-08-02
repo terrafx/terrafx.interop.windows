@@ -20,7 +20,7 @@ namespace TerraFX.Interop
         [NativeTypeName("HWND")]
         public IntPtr hwndMenu;
 
-        internal int _bitfield;
+        public int _bitfield;
 
         [NativeTypeName("BOOL : 1")]
         public int fBarFocused

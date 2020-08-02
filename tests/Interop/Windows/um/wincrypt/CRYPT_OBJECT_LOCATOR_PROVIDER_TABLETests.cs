@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE" />struct.</summary>
     public static unsafe class CRYPT_OBJECT_LOCATOR_PROVIDER_TABLETests
     {
         /// <summary>Validates that the <see cref="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE" /> struct is blittable.</summary>

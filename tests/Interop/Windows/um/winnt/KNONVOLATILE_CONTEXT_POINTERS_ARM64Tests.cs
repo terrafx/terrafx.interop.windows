@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="KNONVOLATILE_CONTEXT_POINTERS_ARM64" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="KNONVOLATILE_CONTEXT_POINTERS_ARM64" />struct.</summary>
     public static unsafe class KNONVOLATILE_CONTEXT_POINTERS_ARM64Tests
     {
         /// <summary>Validates that the <see cref="KNONVOLATILE_CONTEXT_POINTERS_ARM64" /> struct is blittable.</summary>

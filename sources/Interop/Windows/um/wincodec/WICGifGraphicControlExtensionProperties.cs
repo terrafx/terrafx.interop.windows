@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public enum WICGifGraphicControlExtensionProperties
+    public enum WICGifGraphicControlExtensionProperties : uint
     {
         WICGifGraphicControlExtensionDisposal = 0x1,
         WICGifGraphicControlExtensionUserInputFlag = 0x2,

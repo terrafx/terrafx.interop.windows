@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public enum WICGifApplicationExtensionProperties
+    public enum WICGifApplicationExtensionProperties : uint
     {
         WICGifApplicationExtensionApplication = 0x1,
         WICGifApplicationExtensionData = 0x2,

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="FaceCharacterization" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="FaceCharacterization" />struct.</summary>
     public static unsafe class FaceCharacterizationTests
     {
         /// <summary>Validates that the <see cref="FaceCharacterization" /> struct is blittable.</summary>

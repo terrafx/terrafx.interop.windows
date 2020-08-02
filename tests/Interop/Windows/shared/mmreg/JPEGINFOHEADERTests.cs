@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="JPEGINFOHEADER" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="JPEGINFOHEADER" />struct.</summary>
     public static unsafe class JPEGINFOHEADERTests
     {
         /// <summary>Validates that the <see cref="JPEGINFOHEADER" /> struct is blittable.</summary>

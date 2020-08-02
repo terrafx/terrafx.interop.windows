@@ -16,6 +16,12 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D12_RESOURCE_BARRIER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12.h:2754:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref D3D12_RESOURCE_TRANSITION_BARRIER Transition => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Transition, 1));
+
+        public ref D3D12_RESOURCE_ALIASING_BARRIER Aliasing => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Aliasing, 1));
+
+        public ref D3D12_RESOURCE_UAV_BARRIER UAV => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.UAV, 1));
+
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {

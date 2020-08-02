@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IWICPersistStream" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="IWICPersistStream" />struct.</summary>
     public static unsafe class IWICPersistStreamTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWICPersistStream" /> struct is correct.</summary>

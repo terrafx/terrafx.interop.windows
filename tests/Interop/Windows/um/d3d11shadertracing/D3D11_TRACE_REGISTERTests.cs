@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D11_TRACE_REGISTER" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D11_TRACE_REGISTER" />struct.</summary>
     public static unsafe class D3D11_TRACE_REGISTERTests
     {
         /// <summary>Validates that the <see cref="D3D11_TRACE_REGISTER" /> struct is blittable.</summary>

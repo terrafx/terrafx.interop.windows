@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D12_RESOURCE_TRANSITION_BARRIER" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D12_RESOURCE_TRANSITION_BARRIER" />struct.</summary>
     public static unsafe class D3D12_RESOURCE_TRANSITION_BARRIERTests
     {
         /// <summary>Validates that the <see cref="D3D12_RESOURCE_TRANSITION_BARRIER" /> struct is blittable.</summary>

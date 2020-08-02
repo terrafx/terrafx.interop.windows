@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SP_TROUBLESHOOTER_PARAMS_W" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="SP_TROUBLESHOOTER_PARAMS_W" />struct.</summary>
     public static unsafe class SP_TROUBLESHOOTER_PARAMS_WTests
     {
         /// <summary>Validates that the <see cref="SP_TROUBLESHOOTER_PARAMS_W" /> struct is blittable.</summary>

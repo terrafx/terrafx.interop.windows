@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D11_VIDEO_COLOR_RGBA" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D11_VIDEO_COLOR_RGBA" />struct.</summary>
     public static unsafe class D3D11_VIDEO_COLOR_RGBATests
     {
         /// <summary>Validates that the <see cref="D3D11_VIDEO_COLOR_RGBA" /> struct is blittable.</summary>

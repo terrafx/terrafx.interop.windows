@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public enum WIC8BIMIptcDigestProperties
+    public enum WIC8BIMIptcDigestProperties : uint
     {
         WIC8BIMIptcDigestPString = 0x1,
         WIC8BIMIptcDigestIptcDigest = 0x2,

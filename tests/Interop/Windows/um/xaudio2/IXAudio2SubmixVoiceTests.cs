@@ -6,10 +6,11 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IXAudio2SubmixVoice" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="IXAudio2SubmixVoice" />struct.</summary>
     public static unsafe class IXAudio2SubmixVoiceTests
     {
         /// <summary>Validates that the <see cref="IXAudio2SubmixVoice" /> struct is blittable.</summary>

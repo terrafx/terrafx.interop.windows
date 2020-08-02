@@ -8,8 +8,7 @@ using System;
 namespace TerraFX.Interop
 {
     [Flags]
-    [NativeTypeName("int")]
-    public enum BINDF : uint
+    public enum BINDF
     {
         BINDF_ASYNCHRONOUS = 0x1,
         BINDF_ASYNCSTORAGE = 0x2,
@@ -35,7 +34,7 @@ namespace TerraFX.Interop
         BINDF_FWD_BACK = 0x200000,
         BINDF_PREFERDEFAULTHANDLER = 0x400000,
         BINDF_ENFORCERESTRICTED = 0x800000,
-        BINDF_RESERVED_2 = 0x80000000,
+        BINDF_RESERVED_2 = unchecked((int)(0x80000000)),
         BINDF_RESERVED_3 = 0x1000000,
         BINDF_RESERVED_4 = 0x2000000,
         BINDF_RESERVED_5 = 0x4000000,

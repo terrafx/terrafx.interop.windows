@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="ID3D12VideoExtensionCommand" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="ID3D12VideoExtensionCommand" />struct.</summary>
     public static unsafe class ID3D12VideoExtensionCommandTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ID3D12VideoExtensionCommand" /> struct is correct.</summary>

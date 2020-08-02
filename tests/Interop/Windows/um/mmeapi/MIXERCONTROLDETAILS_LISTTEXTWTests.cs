@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MIXERCONTROLDETAILS_LISTTEXTW" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="MIXERCONTROLDETAILS_LISTTEXTW" />struct.</summary>
     public static unsafe class MIXERCONTROLDETAILS_LISTTEXTWTests
     {
         /// <summary>Validates that the <see cref="MIXERCONTROLDETAILS_LISTTEXTW" /> struct is blittable.</summary>

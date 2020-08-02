@@ -28,7 +28,7 @@ namespace TerraFX.Interop
 
         public partial struct _Ver_e__FixedBuffer
         {
-            internal TRIVERTEX e0;
+            public TRIVERTEX e0;
 
             public ref TRIVERTEX this[int index] => ref AsSpan(int.MaxValue)[index];
 

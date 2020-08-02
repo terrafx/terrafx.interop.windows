@@ -53,25 +53,9 @@ namespace TerraFX.Interop
 
         public const int X3DAUDIO_CALCULATE_REDIRECT_TO_LFE = 0x00020000;
 
-        public static readonly X3DAUDIO_DISTANCE_CURVE_POINT[] X3DAudioDefault_LinearCurvePoints = new X3DAUDIO_DISTANCE_CURVE_POINT[2] {
-            new X3DAUDIO_DISTANCE_CURVE_POINT { Distance = 0.0f, DSPSetting = 1.0f },
-            new X3DAUDIO_DISTANCE_CURVE_POINT { Distance = 1.0f, DSPSetting = 0.0f },
-        };
-
         // public static readonly X3DAUDIO_DISTANCE_CURVE X3DAudioDefault_LinearCurve = new X3DAUDIO_DISTANCE_CURVE {
         //    pPoints = &X3DAudioDefault_LinearCurvePoints[0],
         //    PointsCount = 2,
         // };
-
-        public static readonly X3DAUDIO_CONE X3DAudioDefault_DirectionalCone = new X3DAUDIO_CONE {
-            InnerAngle = X3DAUDIO_PI / 2,
-            OuterAngle = X3DAUDIO_PI,
-            InnerVolume = 1.0f,
-            OuterVolume = 0.708f,
-            InnerLPF = 0.0f,
-            OuterLPF = 0.25f,
-            InnerReverb = 0.708f,
-            OuterReverb = 1.0f,
-        };
     }
 }

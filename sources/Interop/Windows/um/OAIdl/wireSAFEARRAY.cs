@@ -22,15 +22,14 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG")]
         public uint cLocks;
 
-        [NativeTypeName("SAFEARRAYUNION")]
-        public wireSAFEARRAY_UNION uArrayStructs;
+        public SAFEARRAYUNION uArrayStructs;
 
         [NativeTypeName("SAFEARRAYBOUND [1]")]
         public _rgsabound_e__FixedBuffer rgsabound;
 
         public partial struct _rgsabound_e__FixedBuffer
         {
-            internal SAFEARRAYBOUND e0;
+            public SAFEARRAYBOUND e0;
 
             public ref SAFEARRAYBOUND this[int index] => ref AsSpan(int.MaxValue)[index];
 

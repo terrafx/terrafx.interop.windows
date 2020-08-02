@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D11_SO_DECLARATION_ENTRY" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D11_SO_DECLARATION_ENTRY" />struct.</summary>
     public static unsafe class D3D11_SO_DECLARATION_ENTRYTests
     {
         /// <summary>Validates that the <see cref="D3D11_SO_DECLARATION_ENTRY" /> struct is blittable.</summary>

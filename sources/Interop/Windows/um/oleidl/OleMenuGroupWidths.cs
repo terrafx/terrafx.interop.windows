@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct OleMenuGroupWidths
+    public unsafe partial struct OLEMENUGROUPWIDTHS
     {
         [NativeTypeName("LONG [6]")]
         public fixed int width[6];

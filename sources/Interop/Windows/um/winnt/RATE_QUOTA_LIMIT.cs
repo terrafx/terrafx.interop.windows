@@ -18,9 +18,35 @@ namespace TerraFX.Interop
         [NativeTypeName("_RATE_QUOTA_LIMIT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11632:5)")]
         public _Anonymous_e__Struct Anonymous;
 
+        public uint RatePercent
+        {
+            get
+            {
+                return Anonymous.RatePercent;
+            }
+
+            set
+            {
+                Anonymous.RatePercent = value;
+            }
+        }
+
+        public uint Reserved0
+        {
+            get
+            {
+                return Anonymous.Reserved0;
+            }
+
+            set
+            {
+                Anonymous.Reserved0 = value;
+            }
+        }
+
         public partial struct _Anonymous_e__Struct
         {
-            internal uint _bitfield;
+            public uint _bitfield;
 
             [NativeTypeName("DWORD : 7")]
             public uint RatePercent

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D12_VIEW_INSTANCING_DESC" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D12_VIEW_INSTANCING_DESC" />struct.</summary>
     public static unsafe class D3D12_VIEW_INSTANCING_DESCTests
     {
         /// <summary>Validates that the <see cref="D3D12_VIEW_INSTANCING_DESC" /> struct is blittable.</summary>

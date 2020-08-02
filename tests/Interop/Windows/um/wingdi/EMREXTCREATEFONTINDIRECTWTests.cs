@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="EMREXTCREATEFONTINDIRECTW" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="EMREXTCREATEFONTINDIRECTW" />struct.</summary>
     public static unsafe class EMREXTCREATEFONTINDIRECTWTests
     {
         /// <summary>Validates that the <see cref="EMREXTCREATEFONTINDIRECTW" /> struct is blittable.</summary>

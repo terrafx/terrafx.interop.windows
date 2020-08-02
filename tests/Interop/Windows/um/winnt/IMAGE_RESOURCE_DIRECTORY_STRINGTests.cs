@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IMAGE_RESOURCE_DIRECTORY_STRING" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="IMAGE_RESOURCE_DIRECTORY_STRING" />struct.</summary>
     public static unsafe class IMAGE_RESOURCE_DIRECTORY_STRINGTests
     {
         /// <summary>Validates that the <see cref="IMAGE_RESOURCE_DIRECTORY_STRING" /> struct is blittable.</summary>

@@ -6,10 +6,11 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MFASYNCRESULT" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="MFASYNCRESULT" />struct.</summary>
     public static unsafe class MFASYNCRESULTTests
     {
         /// <summary>Validates that the <see cref="MFASYNCRESULT" /> struct is blittable.</summary>

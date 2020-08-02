@@ -33,7 +33,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetClassInfoA([NativeTypeName("ITypeInfo **")] ITypeInfo** ppTI)
+        public int GetClassInfo([NativeTypeName("ITypeInfo **")] ITypeInfo** ppTI)
         {
             return ((delegate* stdcall<IProvideClassInfo2*, ITypeInfo**, int>)(lpVtbl[3]))((IProvideClassInfo2*)Unsafe.AsPointer(ref this), ppTI);
         }

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IMAGE_POLICY_METADATA" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="IMAGE_POLICY_METADATA" />struct.</summary>
     public static unsafe class IMAGE_POLICY_METADATATests
     {
         /// <summary>Validates that the <see cref="IMAGE_POLICY_METADATA" /> struct is blittable.</summary>

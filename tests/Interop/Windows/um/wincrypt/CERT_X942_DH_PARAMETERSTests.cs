@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CERT_X942_DH_PARAMETERS" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="CERT_X942_DH_PARAMETERS" />struct.</summary>
     public static unsafe class CERT_X942_DH_PARAMETERSTests
     {
         /// <summary>Validates that the <see cref="CERT_X942_DH_PARAMETERS" /> struct is blittable.</summary>

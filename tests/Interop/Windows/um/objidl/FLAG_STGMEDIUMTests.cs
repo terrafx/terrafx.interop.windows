@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="FLAG_STGMEDIUM" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="FLAG_STGMEDIUM" />struct.</summary>
     public static unsafe class FLAG_STGMEDIUMTests
     {
         /// <summary>Validates that the <see cref="FLAG_STGMEDIUM" /> struct is blittable.</summary>

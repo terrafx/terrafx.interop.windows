@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_COLOR_INTERPOLATION_MODE : uint
     {
         D2D1_COLOR_INTERPOLATION_MODE_STRAIGHT = 0,

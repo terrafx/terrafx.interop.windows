@@ -345,18 +345,6 @@ namespace TerraFX.Interop
 
         public const uint SP_MAX_LANGIDS = 20;
 
-        public const float Speech_Default_Weight = DEFAULT_WEIGHT;
-
-        public const uint Speech_Max_Word_Length = SP_MAX_WORD_LENGTH;
-
-        public const uint Speech_Max_Pron_Length = SP_MAX_PRON_LENGTH;
-
-        public const ulong Speech_StreamPos_Asap = SP_STREAMPOS_ASAP;
-
-        public const ulong Speech_StreamPos_RealTime = SP_STREAMPOS_REALTIME;
-
-        public const SPPHRASERNG SpeechAllElements = SPPR_ALL_ELEMENTS;
-
         public static readonly Guid IID_ISpeechXMLRecoResult = new Guid(0xAAEC54AF, 0x8F85, 0x4924, 0x94, 0x4D, 0xB7, 0x9D, 0x39, 0xD7, 0x2E, 0x19);
 
         public static readonly Guid IID_ISpeechRecoResultDispatch = new Guid(0x6D60EB64, 0xACED, 0x40A6, 0xBB, 0xF3, 0x4E, 0x55, 0x7F, 0x71, 0xDE, 0xE2);

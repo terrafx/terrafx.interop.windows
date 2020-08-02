@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="X3DAUDIO_DISTANCE_CURVE_POINT" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="X3DAUDIO_DISTANCE_CURVE_POINT" />struct.</summary>
     public static unsafe class X3DAUDIO_DISTANCE_CURVE_POINTTests
     {
         /// <summary>Validates that the <see cref="X3DAUDIO_DISTANCE_CURVE_POINT" /> struct is blittable.</summary>

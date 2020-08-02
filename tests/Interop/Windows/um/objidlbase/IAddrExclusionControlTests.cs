@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IAddrExclusionControl" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="IAddrExclusionControl" />struct.</summary>
     public static unsafe class IAddrExclusionControlTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAddrExclusionControl" /> struct is correct.</summary>

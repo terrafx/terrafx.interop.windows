@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DVTARGETDEVICE" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="DVTARGETDEVICE" />struct.</summary>
     public static unsafe class DVTARGETDEVICETests
     {
         /// <summary>Validates that the <see cref="DVTARGETDEVICE" /> struct is blittable.</summary>

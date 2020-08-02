@@ -33,6 +33,6 @@ namespace TerraFX.Interop
         CLSCTX_ACTIVATE_AAA_AS_IU = 0x800000,
         CLSCTX_RESERVED6 = 0x1000000,
         CLSCTX_ACTIVATE_ARM32_SERVER = 0x2000000,
-        CLSCTX_PS_DLL = unchecked((int)0x80000000),
+        CLSCTX_PS_DLL = unchecked((int)(0x80000000)),
     }
 }

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CRYPT_OID_FUNC_ENTRY" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="CRYPT_OID_FUNC_ENTRY" />struct.</summary>
     public static unsafe class CRYPT_OID_FUNC_ENTRYTests
     {
         /// <summary>Validates that the <see cref="CRYPT_OID_FUNC_ENTRY" /> struct is blittable.</summary>

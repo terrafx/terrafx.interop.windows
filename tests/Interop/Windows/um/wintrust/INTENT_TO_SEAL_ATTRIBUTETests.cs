@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="INTENT_TO_SEAL_ATTRIBUTE" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="INTENT_TO_SEAL_ATTRIBUTE" />struct.</summary>
     public static unsafe class INTENT_TO_SEAL_ATTRIBUTETests
     {
         /// <summary>Validates that the <see cref="INTENT_TO_SEAL_ATTRIBUTE" /> struct is blittable.</summary>

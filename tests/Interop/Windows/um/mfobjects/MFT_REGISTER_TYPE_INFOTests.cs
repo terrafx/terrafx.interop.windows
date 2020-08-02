@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MFT_REGISTER_TYPE_INFO" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="MFT_REGISTER_TYPE_INFO" />struct.</summary>
     public static unsafe class MFT_REGISTER_TYPE_INFOTests
     {
         /// <summary>Validates that the <see cref="MFT_REGISTER_TYPE_INFO" /> struct is blittable.</summary>

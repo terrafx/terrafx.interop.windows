@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="LOGPALETTE" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="LOGPALETTE" />struct.</summary>
     public static unsafe class LOGPALETTETests
     {
         /// <summary>Validates that the <see cref="LOGPALETTE" /> struct is blittable.</summary>

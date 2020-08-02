@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IDMOVideoOutputOptimizations" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="IDMOVideoOutputOptimizations" />struct.</summary>
     public static unsafe class IDMOVideoOutputOptimizationsTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDMOVideoOutputOptimizations" /> struct is correct.</summary>

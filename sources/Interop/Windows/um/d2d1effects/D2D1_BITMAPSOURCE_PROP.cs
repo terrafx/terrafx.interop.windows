@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_BITMAPSOURCE_PROP : uint
     {
         D2D1_BITMAPSOURCE_PROP_WIC_BITMAP_SOURCE = 0,

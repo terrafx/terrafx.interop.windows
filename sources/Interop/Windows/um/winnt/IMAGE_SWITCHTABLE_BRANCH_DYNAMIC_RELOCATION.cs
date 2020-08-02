@@ -10,7 +10,7 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public partial struct IMAGE_SWITCHTABLE_BRANCH_DYNAMIC_RELOCATION
     {
-        internal ushort _bitfield;
+        public ushort _bitfield;
 
         [NativeTypeName("WORD : 12")]
         public ushort PageRelativeOffset

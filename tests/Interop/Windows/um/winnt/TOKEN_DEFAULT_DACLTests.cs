@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="TOKEN_DEFAULT_DACL" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="TOKEN_DEFAULT_DACL" />struct.</summary>
     public static unsafe class TOKEN_DEFAULT_DACLTests
     {
         /// <summary>Validates that the <see cref="TOKEN_DEFAULT_DACL" /> struct is blittable.</summary>

@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum DXGI_ALPHA_MODE : uint
     {
         DXGI_ALPHA_MODE_UNSPECIFIED = 0,

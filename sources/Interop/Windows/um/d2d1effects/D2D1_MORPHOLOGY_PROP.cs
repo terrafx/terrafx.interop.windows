@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_MORPHOLOGY_PROP : uint
     {
         D2D1_MORPHOLOGY_PROP_MODE = 0,

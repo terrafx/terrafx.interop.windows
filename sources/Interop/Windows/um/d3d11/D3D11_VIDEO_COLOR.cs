@@ -12,6 +12,10 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D11_VIDEO_COLOR::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11.h:10354:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref D3D11_VIDEO_COLOR_YCbCrA YCbCr => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.YCbCr, 1));
+
+        public ref D3D11_VIDEO_COLOR_RGBA RGBA => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.RGBA, 1));
+
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {

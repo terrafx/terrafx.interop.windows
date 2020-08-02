@@ -23,12 +23,12 @@ namespace TerraFX.Interop
 
         public partial struct _rgrect_e__FixedBuffer
         {
-            internal RECT e0;
-            internal RECT e1;
-            internal RECT e2;
-            internal RECT e3;
-            internal RECT e4;
-            internal RECT e5;
+            public RECT e0;
+            public RECT e1;
+            public RECT e2;
+            public RECT e3;
+            public RECT e4;
+            public RECT e5;
 
             public ref RECT this[int index] => ref AsSpan()[index];
 

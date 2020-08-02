@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_HDRTONEMAP_DISPLAY_MODE : uint
     {
         D2D1_HDRTONEMAP_DISPLAY_MODE_SDR = 0,

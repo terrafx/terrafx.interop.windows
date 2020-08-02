@@ -308,7 +308,7 @@ namespace TerraFX.Interop
 
         [DllImport("combase", EntryPoint = "CoWaitForMultipleObjects", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int CoWaitForMultipleObjects([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("ULONG")] uint cHandles, [NativeTypeName("const HANDLE *")] void** pHandles, [NativeTypeName("LPDWORD")] uint* lpdwindex);
+        public static extern int CoWaitForMultipleObjects([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("ULONG")] uint cHandles, [NativeTypeName("const HANDLE *")] IntPtr* pHandles, [NativeTypeName("LPDWORD")] uint* lpdwindex);
 
         [DllImport("Ole32", EntryPoint = "CoGetTreatAsClass", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

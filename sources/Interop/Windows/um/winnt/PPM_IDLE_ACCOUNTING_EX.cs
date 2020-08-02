@@ -30,7 +30,7 @@ namespace TerraFX.Interop
 
         public partial struct _State_e__FixedBuffer
         {
-            internal PPM_IDLE_STATE_ACCOUNTING_EX e0;
+            public PPM_IDLE_STATE_ACCOUNTING_EX e0;
 
             public ref PPM_IDLE_STATE_ACCOUNTING_EX this[int index] => ref AsSpan(int.MaxValue)[index];
 

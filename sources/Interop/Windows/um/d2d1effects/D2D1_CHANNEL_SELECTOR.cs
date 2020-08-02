@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_CHANNEL_SELECTOR : uint
     {
         D2D1_CHANNEL_SELECTOR_R = 0,

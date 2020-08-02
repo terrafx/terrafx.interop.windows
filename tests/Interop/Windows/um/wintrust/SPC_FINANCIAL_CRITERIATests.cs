@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SPC_FINANCIAL_CRITERIA" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="SPC_FINANCIAL_CRITERIA" />struct.</summary>
     public static unsafe class SPC_FINANCIAL_CRITERIATests
     {
         /// <summary>Validates that the <see cref="SPC_FINANCIAL_CRITERIA" /> struct is blittable.</summary>

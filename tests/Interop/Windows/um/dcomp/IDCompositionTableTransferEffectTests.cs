@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IDCompositionTableTransferEffect" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="IDCompositionTableTransferEffect" />struct.</summary>
     public static unsafe class IDCompositionTableTransferEffectTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDCompositionTableTransferEffect" /> struct is correct.</summary>

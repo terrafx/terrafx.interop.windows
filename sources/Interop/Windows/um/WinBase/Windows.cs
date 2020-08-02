@@ -1508,13 +1508,13 @@ namespace TerraFX.Interop
         [return: NativeTypeName("BOOL")]
         public static extern int DnsHostnameToComputerNameW([NativeTypeName("LPCWSTR")] ushort* Hostname, [NativeTypeName("LPWSTR")] ushort* ComputerName, [NativeTypeName("LPDWORD")] uint* nSize);
 
-        [DllImport("kernel32", EntryPoint = "GetUserNameA", ExactSpelling = true)]
+        [DllImport("advapi32", EntryPoint = "GetUserNameA", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int GetUserNameA([NativeTypeName("LPSTR")] sbyte* lpBuffer, [NativeTypeName("LPDWORD")] uint* pcbBuffer);
 
-        [DllImport("kernel32", EntryPoint = "GetUserNameW", ExactSpelling = true)]
+        [DllImport("kernel32", EntryPoint = "GetUserNameW", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int GetUserNameW([NativeTypeName("LPWSTR")] ushort* lpBuffer, [NativeTypeName("LPDWORD")] uint* pcbBuffer);
+        public static extern int GetUserName([NativeTypeName("LPWSTR")] ushort* lpBuffer, [NativeTypeName("LPDWORD")] uint* pcbBuffer);
 
         [DllImport("kernel32", EntryPoint = "LogonUserA", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]

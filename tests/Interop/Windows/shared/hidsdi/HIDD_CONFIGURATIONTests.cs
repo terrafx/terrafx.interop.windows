@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="HIDD_CONFIGURATION" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="HIDD_CONFIGURATION" />struct.</summary>
     public static unsafe class HIDD_CONFIGURATIONTests
     {
         /// <summary>Validates that the <see cref="HIDD_CONFIGURATION" /> struct is blittable.</summary>

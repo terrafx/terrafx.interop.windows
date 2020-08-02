@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="WINDOWPLACEMENT" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="WINDOWPLACEMENT" />struct.</summary>
     public static unsafe class WINDOWPLACEMENTTests
     {
         /// <summary>Validates that the <see cref="WINDOWPLACEMENT" /> struct is blittable.</summary>

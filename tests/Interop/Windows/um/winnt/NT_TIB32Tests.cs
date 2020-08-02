@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="NT_TIB32" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="NT_TIB32" />struct.</summary>
     public static unsafe class NT_TIB32Tests
     {
         /// <summary>Validates that the <see cref="NT_TIB32" /> struct is blittable.</summary>

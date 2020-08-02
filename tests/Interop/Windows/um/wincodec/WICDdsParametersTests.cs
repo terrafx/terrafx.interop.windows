@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="WICDdsParameters" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="WICDdsParameters" />struct.</summary>
     public static unsafe class WICDdsParametersTests
     {
         /// <summary>Validates that the <see cref="WICDdsParameters" /> struct is blittable.</summary>

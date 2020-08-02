@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SPWORDPRONUNCIATION" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="SPWORDPRONUNCIATION" />struct.</summary>
     public static unsafe class SPWORDPRONUNCIATIONTests
     {
         /// <summary>Validates that the <see cref="SPWORDPRONUNCIATION" /> struct is blittable.</summary>

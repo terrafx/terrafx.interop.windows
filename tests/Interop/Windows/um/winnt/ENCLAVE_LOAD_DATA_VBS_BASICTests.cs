@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="ENCLAVE_LOAD_DATA_VBS_BASIC" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="ENCLAVE_LOAD_DATA_VBS_BASIC" />struct.</summary>
     public static unsafe class ENCLAVE_LOAD_DATA_VBS_BASICTests
     {
         /// <summary>Validates that the <see cref="ENCLAVE_LOAD_DATA_VBS_BASIC" /> struct is blittable.</summary>

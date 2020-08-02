@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DWRITE_COLOR_GLYPH_RUN" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="DWRITE_COLOR_GLYPH_RUN" />struct.</summary>
     public static unsafe class DWRITE_COLOR_GLYPH_RUNTests
     {
         /// <summary>Validates that the <see cref="DWRITE_COLOR_GLYPH_RUN" /> struct is blittable.</summary>

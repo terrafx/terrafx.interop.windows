@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="ID3D11FunctionLinkingGraph" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="ID3D11FunctionLinkingGraph" />struct.</summary>
     public static unsafe class ID3D11FunctionLinkingGraphTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ID3D11FunctionLinkingGraph" /> struct is correct.</summary>

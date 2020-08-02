@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="OPERATION_START_PARAMETERS" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="OPERATION_START_PARAMETERS" />struct.</summary>
     public static unsafe class OPERATION_START_PARAMETERSTests
     {
         /// <summary>Validates that the <see cref="OPERATION_START_PARAMETERS" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="WTSSESSION_NOTIFICATION" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="WTSSESSION_NOTIFICATION" />struct.</summary>
     public static unsafe class WTSSESSION_NOTIFICATIONTests
     {
         /// <summary>Validates that the <see cref="WTSSESSION_NOTIFICATION" /> struct is blittable.</summary>

@@ -24,6 +24,10 @@ namespace TerraFX.Interop
         [NativeTypeName("_NT_TIB32::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11512:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref uint FiberData => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.FiberData, 1));
+
+        public ref uint Version => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Version, 1));
+
         [NativeTypeName("DWORD")]
         public uint ArbitraryUserPointer;
 

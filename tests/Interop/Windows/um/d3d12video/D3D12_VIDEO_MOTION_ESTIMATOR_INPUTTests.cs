@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D12_VIDEO_MOTION_ESTIMATOR_INPUT" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D12_VIDEO_MOTION_ESTIMATOR_INPUT" />struct.</summary>
     public static unsafe class D3D12_VIDEO_MOTION_ESTIMATOR_INPUTTests
     {
         /// <summary>Validates that the <see cref="D3D12_VIDEO_MOTION_ESTIMATOR_INPUT" /> struct is blittable.</summary>

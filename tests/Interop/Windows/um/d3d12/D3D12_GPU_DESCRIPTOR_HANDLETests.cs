@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D12_GPU_DESCRIPTOR_HANDLE" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D12_GPU_DESCRIPTOR_HANDLE" />struct.</summary>
     public static unsafe class D3D12_GPU_DESCRIPTOR_HANDLETests
     {
         /// <summary>Validates that the <see cref="D3D12_GPU_DESCRIPTOR_HANDLE" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="LUID" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="LUID" />struct.</summary>
     public static unsafe class LUIDTests
     {
         /// <summary>Validates that the <see cref="LUID" /> struct is blittable.</summary>

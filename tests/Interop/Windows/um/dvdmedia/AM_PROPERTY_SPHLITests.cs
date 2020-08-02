@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="AM_PROPERTY_SPHLI" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="AM_PROPERTY_SPHLI" />struct.</summary>
     public static unsafe class AM_PROPERTY_SPHLITests
     {
         /// <summary>Validates that the <see cref="AM_PROPERTY_SPHLI" /> struct is blittable.</summary>

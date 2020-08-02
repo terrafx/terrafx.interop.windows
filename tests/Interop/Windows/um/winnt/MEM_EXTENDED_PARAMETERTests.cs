@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MEM_EXTENDED_PARAMETER" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="MEM_EXTENDED_PARAMETER" />struct.</summary>
     public static unsafe class MEM_EXTENDED_PARAMETERTests
     {
         /// <summary>Validates that the <see cref="MEM_EXTENDED_PARAMETER" /> struct is blittable.</summary>

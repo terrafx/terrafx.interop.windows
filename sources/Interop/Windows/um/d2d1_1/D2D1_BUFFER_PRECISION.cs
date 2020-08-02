@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_BUFFER_PRECISION : uint
     {
         D2D1_BUFFER_PRECISION_UNKNOWN = 0,

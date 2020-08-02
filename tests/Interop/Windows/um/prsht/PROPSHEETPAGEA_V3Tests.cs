@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="PROPSHEETPAGEA_V3" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="PROPSHEETPAGEA_V3" />struct.</summary>
     public static unsafe class PROPSHEETPAGEA_V3Tests
     {
         /// <summary>Validates that the <see cref="PROPSHEETPAGEA_V3" /> struct is blittable.</summary>

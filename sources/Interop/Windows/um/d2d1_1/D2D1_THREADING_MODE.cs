@@ -7,7 +7,6 @@ using static TerraFX.Interop.D2D1_FACTORY_TYPE;
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_THREADING_MODE : uint
     {
         D2D1_THREADING_MODE_SINGLE_THREADED = D2D1_FACTORY_TYPE_SINGLE_THREADED,

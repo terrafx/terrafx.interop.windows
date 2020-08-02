@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA" />struct.</summary>
     public static unsafe class MFCONTENTPROTECTIONDEVICE_OUTPUT_DATATests
     {
         /// <summary>Validates that the <see cref="MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA" /> struct is blittable.</summary>

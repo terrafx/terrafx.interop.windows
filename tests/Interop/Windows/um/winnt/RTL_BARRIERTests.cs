@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="RTL_BARRIER" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="RTL_BARRIER" />struct.</summary>
     public static unsafe class RTL_BARRIERTests
     {
         /// <summary>Validates that the <see cref="RTL_BARRIER" /> struct is blittable.</summary>

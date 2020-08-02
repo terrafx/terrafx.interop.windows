@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DESIGNVECTOR" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="DESIGNVECTOR" />struct.</summary>
     public static unsafe class DESIGNVECTORTests
     {
         /// <summary>Validates that the <see cref="DESIGNVECTOR" /> struct is blittable.</summary>

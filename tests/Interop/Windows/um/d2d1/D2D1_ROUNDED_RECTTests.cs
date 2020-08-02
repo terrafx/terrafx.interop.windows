@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D2D1_ROUNDED_RECT" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="D2D1_ROUNDED_RECT" />struct.</summary>
     public static unsafe class D2D1_ROUNDED_RECTTests
     {
         /// <summary>Validates that the <see cref="D2D1_ROUNDED_RECT" /> struct is blittable.</summary>

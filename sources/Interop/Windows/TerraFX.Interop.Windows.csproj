@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <Folder Include="um\Mferror\" />
-    <Folder Include="um\SpatialAudioMetadata\" />
   </ItemGroup>
 
 </Project>

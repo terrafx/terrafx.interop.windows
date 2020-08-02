@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="userCLIPFORMAT" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="userCLIPFORMAT" />struct.</summary>
     public static unsafe class userCLIPFORMATTests
     {
         /// <summary>Validates that the <see cref="userCLIPFORMAT" /> struct is blittable.</summary>

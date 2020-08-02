@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SYSTEM_PROCESSOR_CYCLE_TIME_INFORMATION" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="SYSTEM_PROCESSOR_CYCLE_TIME_INFORMATION" />struct.</summary>
     public static unsafe class SYSTEM_PROCESSOR_CYCLE_TIME_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="SYSTEM_PROCESSOR_CYCLE_TIME_INFORMATION" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DEVMODEW" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="DEVMODEW" />struct.</summary>
     public static unsafe class DEVMODEWTests
     {
         /// <summary>Validates that the <see cref="DEVMODEW" /> struct is blittable.</summary>

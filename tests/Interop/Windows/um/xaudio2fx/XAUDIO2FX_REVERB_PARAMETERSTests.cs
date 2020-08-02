@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="XAUDIO2FX_REVERB_PARAMETERS" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="XAUDIO2FX_REVERB_PARAMETERS" />struct.</summary>
     public static unsafe class XAUDIO2FX_REVERB_PARAMETERSTests
     {
         /// <summary>Validates that the <see cref="XAUDIO2FX_REVERB_PARAMETERS" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="PIXELFORMATDESCRIPTOR" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="PIXELFORMATDESCRIPTOR" />struct.</summary>
     public static unsafe class PIXELFORMATDESCRIPTORTests
     {
         /// <summary>Validates that the <see cref="PIXELFORMATDESCRIPTOR" /> struct is blittable.</summary>

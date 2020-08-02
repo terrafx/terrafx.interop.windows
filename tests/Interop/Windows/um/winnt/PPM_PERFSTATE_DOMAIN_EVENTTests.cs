@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="PPM_PERFSTATE_DOMAIN_EVENT" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="PPM_PERFSTATE_DOMAIN_EVENT" />struct.</summary>
     public static unsafe class PPM_PERFSTATE_DOMAIN_EVENTTests
     {
         /// <summary>Validates that the <see cref="PPM_PERFSTATE_DOMAIN_EVENT" /> struct is blittable.</summary>

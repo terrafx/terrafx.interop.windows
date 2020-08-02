@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public enum WICPixelFormatNumericRepresentation
+    public enum WICPixelFormatNumericRepresentation : uint
     {
         WICPixelFormatNumericRepresentationUnspecified = 0,
         WICPixelFormatNumericRepresentationIndexed = 0x1,

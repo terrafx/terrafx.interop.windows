@@ -45,7 +45,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetObjectA([NativeTypeName("const GUID &")] Guid* guidServiceId, [NativeTypeName("const IID &")] Guid* ObjectCLSID, [NativeTypeName("const IID &")] Guid* ObjectIID, [NativeTypeName("BOOL")] int fReleaseWhenLastExternalRefReleased, [NativeTypeName("void **")] void** ppObject)
+        public int GetObject([NativeTypeName("const GUID &")] Guid* guidServiceId, [NativeTypeName("const IID &")] Guid* ObjectCLSID, [NativeTypeName("const IID &")] Guid* ObjectIID, [NativeTypeName("BOOL")] int fReleaseWhenLastExternalRefReleased, [NativeTypeName("void **")] void** ppObject)
         {
             return ((delegate* stdcall<ISpResourceManager*, Guid*, Guid*, Guid*, int, void**, int>)(lpVtbl[5]))((ISpResourceManager*)Unsafe.AsPointer(ref this), guidServiceId, ObjectCLSID, ObjectIID, fReleaseWhenLastExternalRefReleased, ppObject);
         }

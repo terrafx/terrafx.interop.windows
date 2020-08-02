@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IMFClockStateSink" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="IMFClockStateSink" />struct.</summary>
     public static unsafe class IMFClockStateSinkTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFClockStateSink" /> struct is correct.</summary>

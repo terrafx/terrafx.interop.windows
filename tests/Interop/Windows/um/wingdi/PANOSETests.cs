@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="PANOSE" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="PANOSE" />struct.</summary>
     public static unsafe class PANOSETests
     {
         /// <summary>Validates that the <see cref="PANOSE" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="POWER_SESSION_TIMEOUTS" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="POWER_SESSION_TIMEOUTS" />struct.</summary>
     public static unsafe class POWER_SESSION_TIMEOUTSTests
     {
         /// <summary>Validates that the <see cref="POWER_SESSION_TIMEOUTS" /> struct is blittable.</summary>

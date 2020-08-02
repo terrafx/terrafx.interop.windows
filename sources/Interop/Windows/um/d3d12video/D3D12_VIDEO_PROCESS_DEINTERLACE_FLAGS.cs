@@ -8,11 +8,10 @@ using System;
 namespace TerraFX.Interop
 {
     [Flags]
-    [NativeTypeName("int")]
-    public enum D3D12_VIDEO_PROCESS_DEINTERLACE_FLAGS : uint
+    public enum D3D12_VIDEO_PROCESS_DEINTERLACE_FLAGS
     {
         D3D12_VIDEO_PROCESS_DEINTERLACE_FLAG_NONE = 0,
         D3D12_VIDEO_PROCESS_DEINTERLACE_FLAG_BOB = 0x1,
-        D3D12_VIDEO_PROCESS_DEINTERLACE_FLAG_CUSTOM = 0x80000000,
+        D3D12_VIDEO_PROCESS_DEINTERLACE_FLAG_CUSTOM = unchecked((int)(0x80000000)),
     }
 }

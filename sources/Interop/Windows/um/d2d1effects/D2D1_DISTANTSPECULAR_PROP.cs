@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_DISTANTSPECULAR_PROP : uint
     {
         D2D1_DISTANTSPECULAR_PROP_AZIMUTH = 0,

@@ -12,12 +12,6 @@ namespace TerraFX.Interop
     {
         public const int HID_REVISION = 0x00000001;
 
-        public static readonly Guid GUID_DEVINTERFACE_HID = new Guid(0x4D1E55B2, 0xF16F, 0x11CF, 0x88, 0xCB, 0x00, 0x11, 0x11, 0x00, 0x00, 0x30);
-
-        public static readonly Guid GUID_HID_INTERFACE_NOTIFY = new Guid(0x2C4E2E88, 0x25E6, 0x4C33, 0x88, 0x2F, 0x3D, 0x82, 0xE6, 0x07, 0x36, 0x81);
-
-        public static readonly Guid GUID_HID_INTERFACE_HIDPARSE = new Guid(0xF5C315A5, 0x69AC, 0x4BC2, 0x92, 0x79, 0xD0, 0xB6, 0x45, 0x76, 0xF4, 0x4B);
-
         public static readonly Guid GUID_CLASS_INPUT = GUID_DEVINTERFACE_HID;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

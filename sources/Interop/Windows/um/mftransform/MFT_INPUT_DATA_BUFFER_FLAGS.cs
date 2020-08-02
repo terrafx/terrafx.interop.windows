@@ -7,6 +7,6 @@ namespace TerraFX.Interop
 {
     public enum MFT_INPUT_DATA_BUFFER_FLAGS
     {
-        MFT_INPUT_DATA_BUFFER_PLACEHOLDER = unchecked((int)0xffffffff),
+        MFT_INPUT_DATA_BUFFER_PLACEHOLDER = unchecked((int)(0xffffffff)),
     }
 }

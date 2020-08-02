@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="RemBINDINFO" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="RemBINDINFO" />struct.</summary>
     public static unsafe class RemBINDINFOTests
     {
         /// <summary>Validates that the <see cref="RemBINDINFO" /> struct is blittable.</summary>

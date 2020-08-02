@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public partial struct OVERLAPPED
+    public unsafe partial struct OVERLAPPED
     {
         [NativeTypeName("ULONG_PTR")]
         public nuint Internal;
@@ -18,6 +18,21 @@ namespace TerraFX.Interop
 
         [NativeTypeName("_OVERLAPPED::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/minwinbase.h:55:5)")]
         public _Anonymous_e__Union Anonymous;
+
+        public ref uint Offset => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Offset, 1));
+
+        public ref uint OffsetHigh => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.OffsetHigh, 1));
+
+        public ref void* Pointer
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->Pointer;
+                }
+            }
+        }
 
         [NativeTypeName("HANDLE")]
         public IntPtr hEvent;

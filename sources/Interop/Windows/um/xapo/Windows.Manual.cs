@@ -9,10 +9,6 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        public static readonly Guid IID_IXAPO = new Guid(0xA410B984, 0x9839, 0x4819, 0xA0, 0xBE, 0x28, 0x56, 0xAE, 0x6B, 0x3A, 0xDB);
-
-        public static readonly Guid IID_IXAPOParameters = new Guid(0x26D95C66, 0x80F2, 0x499A, 0xAD, 0x54, 0x5A, 0xE7, 0xF0, 0x1C, 0x6D, 0x98);
-
         public const int FACILITY_XAPO = 0x897;
 
         public const int XAPO_E_FORMAT_UNSUPPORTED = unchecked((int)0x88970001);

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MFAYUVSample" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="MFAYUVSample" />struct.</summary>
     public static unsafe class MFAYUVSampleTests
     {
         /// <summary>Validates that the <see cref="MFAYUVSample" /> struct is blittable.</summary>

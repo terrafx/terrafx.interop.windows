@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public partial struct D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_INPUTS
+    public unsafe partial struct D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_INPUTS
     {
         public D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE Type;
 
@@ -20,6 +20,30 @@ namespace TerraFX.Interop
 
         [NativeTypeName("D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_INPUTS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12.h:12497:5)")]
         public _Anonymous_e__Union Anonymous;
+
+        public ref ulong InstanceDescs => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.InstanceDescs, 1));
+
+        public ref D3D12_RAYTRACING_GEOMETRY_DESC* pGeometryDescs
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->pGeometryDescs;
+                }
+            }
+        }
+
+        public ref D3D12_RAYTRACING_GEOMETRY_DESC** ppGeometryDescs
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->ppGeometryDescs;
+                }
+            }
+        }
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union

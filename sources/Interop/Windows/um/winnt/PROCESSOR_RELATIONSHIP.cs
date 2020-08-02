@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public partial struct _GroupMask_e__FixedBuffer
         {
-            internal GROUP_AFFINITY e0;
+            public GROUP_AFFINITY e0;
 
             public ref GROUP_AFFINITY this[int index] => ref AsSpan(int.MaxValue)[index];
 

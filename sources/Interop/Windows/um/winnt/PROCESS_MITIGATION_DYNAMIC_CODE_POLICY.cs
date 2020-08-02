@@ -12,6 +12,73 @@ namespace TerraFX.Interop
         [NativeTypeName("_PROCESS_MITIGATION_DYNAMIC_CODE_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11753:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref uint Flags => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
+
+        public uint ProhibitDynamicCode
+        {
+            get
+            {
+                return Anonymous.Anonymous.ProhibitDynamicCode;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.ProhibitDynamicCode = value;
+            }
+        }
+
+        public uint AllowThreadOptOut
+        {
+            get
+            {
+                return Anonymous.Anonymous.AllowThreadOptOut;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.AllowThreadOptOut = value;
+            }
+        }
+
+        public uint AllowRemoteDowngrade
+        {
+            get
+            {
+                return Anonymous.Anonymous.AllowRemoteDowngrade;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.AllowRemoteDowngrade = value;
+            }
+        }
+
+        public uint AuditProhibitDynamicCode
+        {
+            get
+            {
+                return Anonymous.Anonymous.AuditProhibitDynamicCode;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.AuditProhibitDynamicCode = value;
+            }
+        }
+
+        public uint ReservedFlags
+        {
+            get
+            {
+                return Anonymous.Anonymous.ReservedFlags;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.ReservedFlags = value;
+            }
+        }
+
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {
@@ -25,7 +92,7 @@ namespace TerraFX.Interop
 
             public partial struct _Anonymous_e__Struct
             {
-                internal uint _bitfield;
+                public uint _bitfield;
 
                 [NativeTypeName("DWORD : 1")]
                 public uint ProhibitDynamicCode

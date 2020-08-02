@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="ENUMLOGFONTEXDVW" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="ENUMLOGFONTEXDVW" />struct.</summary>
     public static unsafe class ENUMLOGFONTEXDVWTests
     {
         /// <summary>Validates that the <see cref="ENUMLOGFONTEXDVW" /> struct is blittable.</summary>

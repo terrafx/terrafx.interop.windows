@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DXGI_JPEG_DC_HUFFMAN_TABLE" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="DXGI_JPEG_DC_HUFFMAN_TABLE" />struct.</summary>
     public static unsafe class DXGI_JPEG_DC_HUFFMAN_TABLETests
     {
         /// <summary>Validates that the <see cref="DXGI_JPEG_DC_HUFFMAN_TABLE" /> struct is blittable.</summary>

@@ -21,22 +21,22 @@ namespace TerraFX.Interop
 
         public partial struct _axlAxisInfo_e__FixedBuffer
         {
-            internal AXISINFOW e0;
-            internal AXISINFOW e1;
-            internal AXISINFOW e2;
-            internal AXISINFOW e3;
-            internal AXISINFOW e4;
-            internal AXISINFOW e5;
-            internal AXISINFOW e6;
-            internal AXISINFOW e7;
-            internal AXISINFOW e8;
-            internal AXISINFOW e9;
-            internal AXISINFOW e10;
-            internal AXISINFOW e11;
-            internal AXISINFOW e12;
-            internal AXISINFOW e13;
-            internal AXISINFOW e14;
-            internal AXISINFOW e15;
+            public AXISINFOW e0;
+            public AXISINFOW e1;
+            public AXISINFOW e2;
+            public AXISINFOW e3;
+            public AXISINFOW e4;
+            public AXISINFOW e5;
+            public AXISINFOW e6;
+            public AXISINFOW e7;
+            public AXISINFOW e8;
+            public AXISINFOW e9;
+            public AXISINFOW e10;
+            public AXISINFOW e11;
+            public AXISINFOW e12;
+            public AXISINFOW e13;
+            public AXISINFOW e14;
+            public AXISINFOW e15;
 
             public ref AXISINFOW this[int index] => ref AsSpan()[index];
 

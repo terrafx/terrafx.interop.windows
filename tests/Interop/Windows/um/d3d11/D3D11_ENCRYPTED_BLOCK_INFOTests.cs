@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D11_ENCRYPTED_BLOCK_INFO" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D11_ENCRYPTED_BLOCK_INFO" />struct.</summary>
     public static unsafe class D3D11_ENCRYPTED_BLOCK_INFOTests
     {
         /// <summary>Validates that the <see cref="D3D11_ENCRYPTED_BLOCK_INFO" /> struct is blittable.</summary>

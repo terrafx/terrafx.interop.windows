@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IMFSinkWriterEx" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="IMFSinkWriterEx" />struct.</summary>
     public static unsafe class IMFSinkWriterExTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFSinkWriterEx" /> struct is correct.</summary>

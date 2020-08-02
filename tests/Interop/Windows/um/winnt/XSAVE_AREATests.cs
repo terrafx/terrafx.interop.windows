@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="XSAVE_AREA" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="XSAVE_AREA" />struct.</summary>
     public static unsafe class XSAVE_AREATests
     {
         /// <summary>Validates that the <see cref="XSAVE_AREA" /> struct is blittable.</summary>

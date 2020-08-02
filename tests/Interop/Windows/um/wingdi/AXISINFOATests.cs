@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="AXISINFOA" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="AXISINFOA" />struct.</summary>
     public static unsafe class AXISINFOATests
     {
         /// <summary>Validates that the <see cref="AXISINFOA" /> struct is blittable.</summary>

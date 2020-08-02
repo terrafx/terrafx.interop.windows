@@ -13,10 +13,10 @@ namespace TerraFX.Interop
         public int fContext;
 
         [NativeTypeName("union __MIDL_IWinTypes_0003")]
-        public _u_e__Struct u;
+        public _u_e__Union u;
 
         [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _u_e__Struct
+        public unsafe partial struct _u_e__Union
         {
             [FieldOffset(0)]
             [NativeTypeName("LONG")]

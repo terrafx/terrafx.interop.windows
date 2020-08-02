@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="WICMetadataPattern" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="WICMetadataPattern" />struct.</summary>
     public static unsafe class WICMetadataPatternTests
     {
         /// <summary>Validates that the <see cref="WICMetadataPattern" /> struct is blittable.</summary>

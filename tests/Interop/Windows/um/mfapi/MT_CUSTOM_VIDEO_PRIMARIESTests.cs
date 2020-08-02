@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MT_CUSTOM_VIDEO_PRIMARIES" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="MT_CUSTOM_VIDEO_PRIMARIES" />struct.</summary>
     public static unsafe class MT_CUSTOM_VIDEO_PRIMARIESTests
     {
         /// <summary>Validates that the <see cref="MT_CUSTOM_VIDEO_PRIMARIES" /> struct is blittable.</summary>

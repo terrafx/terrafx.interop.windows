@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_GEOMETRY_RELATION : uint
     {
         D2D1_GEOMETRY_RELATION_UNKNOWN = 0,

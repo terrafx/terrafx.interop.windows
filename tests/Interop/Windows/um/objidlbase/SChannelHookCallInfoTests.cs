@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SChannelHookCallInfo" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="SChannelHookCallInfo" />struct.</summary>
     public static unsafe class SChannelHookCallInfoTests
     {
         /// <summary>Validates that the <see cref="SChannelHookCallInfo" /> struct is blittable.</summary>

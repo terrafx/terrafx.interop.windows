@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CERT_ECC_SIGNATURE" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="CERT_ECC_SIGNATURE" />struct.</summary>
     public static unsafe class CERT_ECC_SIGNATURETests
     {
         /// <summary>Validates that the <see cref="CERT_ECC_SIGNATURE" /> struct is blittable.</summary>

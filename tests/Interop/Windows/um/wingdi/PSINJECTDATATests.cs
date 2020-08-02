@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="PSINJECTDATA" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="PSINJECTDATA" />struct.</summary>
     public static unsafe class PSINJECTDATATests
     {
         /// <summary>Validates that the <see cref="PSINJECTDATA" /> struct is blittable.</summary>

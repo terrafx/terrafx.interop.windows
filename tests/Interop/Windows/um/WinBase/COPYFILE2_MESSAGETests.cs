@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="COPYFILE2_MESSAGE" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="COPYFILE2_MESSAGE" />struct.</summary>
     public static unsafe class COPYFILE2_MESSAGETests
     {
         /// <summary>Validates that the <see cref="COPYFILE2_MESSAGE" /> struct is blittable.</summary>

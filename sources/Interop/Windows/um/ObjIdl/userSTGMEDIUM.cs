@@ -18,10 +18,10 @@ namespace TerraFX.Interop
             public uint tymed;
 
             [NativeTypeName("union __MIDL_IAdviseSink_0003")]
-            public _u_e__Struct u;
+            public _u_e__Union u;
 
             [StructLayout(LayoutKind.Explicit)]
-            public unsafe partial struct _u_e__Struct
+            public unsafe partial struct _u_e__Union
             {
                 [FieldOffset(0)]
                 [NativeTypeName("wireHMETAFILEPICT")]

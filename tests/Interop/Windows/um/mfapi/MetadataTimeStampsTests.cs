@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MetadataTimeStamps" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="MetadataTimeStamps" />struct.</summary>
     public static unsafe class MetadataTimeStampsTests
     {
         /// <summary>Validates that the <see cref="MetadataTimeStamps" /> struct is blittable.</summary>

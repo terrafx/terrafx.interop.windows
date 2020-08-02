@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MEMORY_BASIC_INFORMATION32" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="MEMORY_BASIC_INFORMATION32" />struct.</summary>
     public static unsafe class MEMORY_BASIC_INFORMATION32Tests
     {
         /// <summary>Validates that the <see cref="MEMORY_BASIC_INFORMATION32" /> struct is blittable.</summary>

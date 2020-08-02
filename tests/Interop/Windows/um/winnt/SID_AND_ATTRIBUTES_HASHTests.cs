@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SID_AND_ATTRIBUTES_HASH" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="SID_AND_ATTRIBUTES_HASH" />struct.</summary>
     public static unsafe class SID_AND_ATTRIBUTES_HASHTests
     {
         /// <summary>Validates that the <see cref="SID_AND_ATTRIBUTES_HASH" /> struct is blittable.</summary>

@@ -8,7 +8,6 @@ using System;
 namespace TerraFX.Interop
 {
     [Flags]
-    [NativeTypeName("int")]
     public enum DXGI_ADAPTER_FLAG : uint
     {
         DXGI_ADAPTER_FLAG_NONE = 0,

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="KEY_TYPE_SUBTYPE" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="KEY_TYPE_SUBTYPE" />struct.</summary>
     public static unsafe class KEY_TYPE_SUBTYPETests
     {
         /// <summary>Validates that the <see cref="KEY_TYPE_SUBTYPE" /> struct is blittable.</summary>

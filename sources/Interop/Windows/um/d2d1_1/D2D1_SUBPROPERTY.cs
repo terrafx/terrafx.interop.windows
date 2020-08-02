@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_SUBPROPERTY : uint
     {
         D2D1_SUBPROPERTY_DISPLAYNAME = 0x80000000,

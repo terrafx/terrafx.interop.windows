@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IWICBitmapSourceTransform" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="IWICBitmapSourceTransform" />struct.</summary>
     public static unsafe class IWICBitmapSourceTransformTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWICBitmapSourceTransform" /> struct is correct.</summary>

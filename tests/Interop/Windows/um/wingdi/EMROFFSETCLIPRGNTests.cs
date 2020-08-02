@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="EMROFFSETCLIPRGN" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="EMROFFSETCLIPRGN" />struct.</summary>
     public static unsafe class EMROFFSETCLIPRGNTests
     {
         /// <summary>Validates that the <see cref="EMROFFSETCLIPRGN" /> struct is blittable.</summary>

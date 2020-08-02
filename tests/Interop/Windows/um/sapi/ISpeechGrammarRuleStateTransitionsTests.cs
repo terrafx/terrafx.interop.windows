@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="ISpeechGrammarRuleStateTransitions" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="ISpeechGrammarRuleStateTransitions" />struct.</summary>
     public static unsafe class ISpeechGrammarRuleStateTransitionsTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISpeechGrammarRuleStateTransitions" /> struct is correct.</summary>

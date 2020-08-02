@@ -12,6 +12,12 @@ namespace TerraFX.Interop
         [NativeTypeName("_SYSTEM_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/sysinfoapi.h:48:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref uint dwOemId => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwOemId, 1));
+
+        public ref ushort wProcessorArchitecture => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.wProcessorArchitecture, 1));
+
+        public ref ushort wReserved => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.wReserved, 1));
+
         [NativeTypeName("DWORD")]
         public uint dwPageSize;
 

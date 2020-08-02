@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="METARECORD" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="METARECORD" />struct.</summary>
     public static unsafe class METARECORDTests
     {
         /// <summary>Validates that the <see cref="METARECORD" /> struct is blittable.</summary>

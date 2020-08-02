@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IDCompositionTransform" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="IDCompositionTransform" />struct.</summary>
     public static unsafe class IDCompositionTransformTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDCompositionTransform" /> struct is correct.</summary>

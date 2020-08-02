@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CAPROPVARIANT" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="CAPROPVARIANT" />struct.</summary>
     public static unsafe class CAPROPVARIANTTests
     {
         /// <summary>Validates that the <see cref="CAPROPVARIANT" /> struct is blittable.</summary>

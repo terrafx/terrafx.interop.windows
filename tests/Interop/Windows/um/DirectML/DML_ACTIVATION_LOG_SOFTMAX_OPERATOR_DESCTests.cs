@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DML_ACTIVATION_LOG_SOFTMAX_OPERATOR_DESC" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="DML_ACTIVATION_LOG_SOFTMAX_OPERATOR_DESC" />struct.</summary>
     public static unsafe class DML_ACTIVATION_LOG_SOFTMAX_OPERATOR_DESCTests
     {
         /// <summary>Validates that the <see cref="DML_ACTIVATION_LOG_SOFTMAX_OPERATOR_DESC" /> struct is blittable.</summary>

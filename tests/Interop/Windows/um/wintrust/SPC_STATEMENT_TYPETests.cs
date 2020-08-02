@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SPC_STATEMENT_TYPE" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="SPC_STATEMENT_TYPE" />struct.</summary>
     public static unsafe class SPC_STATEMENT_TYPETests
     {
         /// <summary>Validates that the <see cref="SPC_STATEMENT_TYPE" /> struct is blittable.</summary>

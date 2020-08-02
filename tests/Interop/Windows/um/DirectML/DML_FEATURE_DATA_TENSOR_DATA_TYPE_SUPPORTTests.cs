@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT" />struct.</summary>
     public static unsafe class DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORTTests
     {
         /// <summary>Validates that the <see cref="DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT" /> struct is blittable.</summary>

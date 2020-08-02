@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MF_BYTE_STREAM_CACHE_RANGE" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="MF_BYTE_STREAM_CACHE_RANGE" />struct.</summary>
     public static unsafe class MF_BYTE_STREAM_CACHE_RANGETests
     {
         /// <summary>Validates that the <see cref="MF_BYTE_STREAM_CACHE_RANGE" /> struct is blittable.</summary>

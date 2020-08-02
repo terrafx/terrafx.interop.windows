@@ -6,10 +6,11 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IXAudio2VoiceCallback" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="IXAudio2VoiceCallback" />struct.</summary>
     public static unsafe class IXAudio2VoiceCallbackTests
     {
         /// <summary>Validates that the <see cref="IXAudio2VoiceCallback" /> struct is blittable.</summary>

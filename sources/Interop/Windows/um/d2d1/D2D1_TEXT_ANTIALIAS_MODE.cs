@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_TEXT_ANTIALIAS_MODE : uint
     {
         D2D1_TEXT_ANTIALIAS_MODE_DEFAULT = 0,

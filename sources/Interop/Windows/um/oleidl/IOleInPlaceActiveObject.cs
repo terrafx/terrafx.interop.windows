@@ -45,7 +45,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int TranslateAcceleratorA([NativeTypeName("LPMSG")] MSG* lpmsg)
+        public int TranslateAccelerator([NativeTypeName("LPMSG")] MSG* lpmsg)
         {
             return ((delegate* stdcall<IOleInPlaceActiveObject*, MSG*, int>)(lpVtbl[5]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), lpmsg);
         }

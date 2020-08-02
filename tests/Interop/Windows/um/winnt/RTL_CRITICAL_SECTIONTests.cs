@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="RTL_CRITICAL_SECTION" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="RTL_CRITICAL_SECTION" />struct.</summary>
     public static unsafe class RTL_CRITICAL_SECTIONTests
     {
         /// <summary>Validates that the <see cref="RTL_CRITICAL_SECTION" /> struct is blittable.</summary>

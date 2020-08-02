@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MFP_PAUSE_EVENT" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="MFP_PAUSE_EVENT" />struct.</summary>
     public static unsafe class MFP_PAUSE_EVENTTests
     {
         /// <summary>Validates that the <see cref="MFP_PAUSE_EVENT" /> struct is blittable.</summary>

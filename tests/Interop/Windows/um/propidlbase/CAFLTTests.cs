@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CAFLT" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="CAFLT" />struct.</summary>
     public static unsafe class CAFLTTests
     {
         /// <summary>Validates that the <see cref="CAFLT" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="WMAUDIO3WAVEFORMAT" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="WMAUDIO3WAVEFORMAT" />struct.</summary>
     public static unsafe class WMAUDIO3WAVEFORMATTests
     {
         /// <summary>Validates that the <see cref="WMAUDIO3WAVEFORMAT" /> struct is blittable.</summary>

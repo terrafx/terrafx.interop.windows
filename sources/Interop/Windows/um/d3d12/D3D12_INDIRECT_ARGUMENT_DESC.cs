@@ -14,6 +14,16 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D12_INDIRECT_ARGUMENT_DESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12.h:3951:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref _Anonymous_e__Union._VertexBuffer_e__Struct VertexBuffer => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.VertexBuffer, 1));
+
+        public ref _Anonymous_e__Union._Constant_e__Struct Constant => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Constant, 1));
+
+        public ref _Anonymous_e__Union._ConstantBufferView_e__Struct ConstantBufferView => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ConstantBufferView, 1));
+
+        public ref _Anonymous_e__Union._ShaderResourceView_e__Struct ShaderResourceView => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ShaderResourceView, 1));
+
+        public ref _Anonymous_e__Union._UnorderedAccessView_e__Struct UnorderedAccessView => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.UnorderedAccessView, 1));
+
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {

@@ -51,39 +51,39 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetInputType([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("DWORD")] uint dwTypeIndex, [NativeTypeName("DMO_MEDIA_TYPE *")] DMOMediaType* pmt)
+        public int GetInputType([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("DWORD")] uint dwTypeIndex, [NativeTypeName("DMO_MEDIA_TYPE *")] DMO_MEDIA_TYPE* pmt)
         {
-            return ((delegate* stdcall<IMediaObject*, uint, uint, DMOMediaType*, int>)(lpVtbl[6]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, dwTypeIndex, pmt);
+            return ((delegate* stdcall<IMediaObject*, uint, uint, DMO_MEDIA_TYPE*, int>)(lpVtbl[6]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, dwTypeIndex, pmt);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetOutputType([NativeTypeName("DWORD")] uint dwOutputStreamIndex, [NativeTypeName("DWORD")] uint dwTypeIndex, [NativeTypeName("DMO_MEDIA_TYPE *")] DMOMediaType* pmt)
+        public int GetOutputType([NativeTypeName("DWORD")] uint dwOutputStreamIndex, [NativeTypeName("DWORD")] uint dwTypeIndex, [NativeTypeName("DMO_MEDIA_TYPE *")] DMO_MEDIA_TYPE* pmt)
         {
-            return ((delegate* stdcall<IMediaObject*, uint, uint, DMOMediaType*, int>)(lpVtbl[7]))((IMediaObject*)Unsafe.AsPointer(ref this), dwOutputStreamIndex, dwTypeIndex, pmt);
+            return ((delegate* stdcall<IMediaObject*, uint, uint, DMO_MEDIA_TYPE*, int>)(lpVtbl[7]))((IMediaObject*)Unsafe.AsPointer(ref this), dwOutputStreamIndex, dwTypeIndex, pmt);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetInputType([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("const DMO_MEDIA_TYPE *")] DMOMediaType* pmt, [NativeTypeName("DWORD")] uint dwFlags)
+        public int SetInputType([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("const DMO_MEDIA_TYPE *")] DMO_MEDIA_TYPE* pmt, [NativeTypeName("DWORD")] uint dwFlags)
         {
-            return ((delegate* stdcall<IMediaObject*, uint, DMOMediaType*, uint, int>)(lpVtbl[8]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, pmt, dwFlags);
+            return ((delegate* stdcall<IMediaObject*, uint, DMO_MEDIA_TYPE*, uint, int>)(lpVtbl[8]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, pmt, dwFlags);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetOutputType([NativeTypeName("DWORD")] uint dwOutputStreamIndex, [NativeTypeName("const DMO_MEDIA_TYPE *")] DMOMediaType* pmt, [NativeTypeName("DWORD")] uint dwFlags)
+        public int SetOutputType([NativeTypeName("DWORD")] uint dwOutputStreamIndex, [NativeTypeName("const DMO_MEDIA_TYPE *")] DMO_MEDIA_TYPE* pmt, [NativeTypeName("DWORD")] uint dwFlags)
         {
-            return ((delegate* stdcall<IMediaObject*, uint, DMOMediaType*, uint, int>)(lpVtbl[9]))((IMediaObject*)Unsafe.AsPointer(ref this), dwOutputStreamIndex, pmt, dwFlags);
+            return ((delegate* stdcall<IMediaObject*, uint, DMO_MEDIA_TYPE*, uint, int>)(lpVtbl[9]))((IMediaObject*)Unsafe.AsPointer(ref this), dwOutputStreamIndex, pmt, dwFlags);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetInputCurrentType([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("DMO_MEDIA_TYPE *")] DMOMediaType* pmt)
+        public int GetInputCurrentType([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("DMO_MEDIA_TYPE *")] DMO_MEDIA_TYPE* pmt)
         {
-            return ((delegate* stdcall<IMediaObject*, uint, DMOMediaType*, int>)(lpVtbl[10]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, pmt);
+            return ((delegate* stdcall<IMediaObject*, uint, DMO_MEDIA_TYPE*, int>)(lpVtbl[10]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, pmt);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetOutputCurrentType([NativeTypeName("DWORD")] uint dwOutputStreamIndex, [NativeTypeName("DMO_MEDIA_TYPE *")] DMOMediaType* pmt)
+        public int GetOutputCurrentType([NativeTypeName("DWORD")] uint dwOutputStreamIndex, [NativeTypeName("DMO_MEDIA_TYPE *")] DMO_MEDIA_TYPE* pmt)
         {
-            return ((delegate* stdcall<IMediaObject*, uint, DMOMediaType*, int>)(lpVtbl[11]))((IMediaObject*)Unsafe.AsPointer(ref this), dwOutputStreamIndex, pmt);
+            return ((delegate* stdcall<IMediaObject*, uint, DMO_MEDIA_TYPE*, int>)(lpVtbl[11]))((IMediaObject*)Unsafe.AsPointer(ref this), dwOutputStreamIndex, pmt);
         }
 
         [return: NativeTypeName("HRESULT")]

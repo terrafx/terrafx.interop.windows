@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SPVPITCH" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="SPVPITCH" />struct.</summary>
     public static unsafe class SPVPITCHTests
     {
         /// <summary>Validates that the <see cref="SPVPITCH" /> struct is blittable.</summary>

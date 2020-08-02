@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DWORD_BLOB" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="DWORD_BLOB" />struct.</summary>
     public static unsafe class DWORD_BLOBTests
     {
         /// <summary>Validates that the <see cref="DWORD_BLOB" /> struct is blittable.</summary>

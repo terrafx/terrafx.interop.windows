@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_FILL_MODE : uint
     {
         D2D1_FILL_MODE_ALTERNATE = 0,

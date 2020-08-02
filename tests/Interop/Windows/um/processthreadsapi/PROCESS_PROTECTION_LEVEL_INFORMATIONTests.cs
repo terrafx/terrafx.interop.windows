@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="PROCESS_PROTECTION_LEVEL_INFORMATION" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="PROCESS_PROTECTION_LEVEL_INFORMATION" />struct.</summary>
     public static unsafe class PROCESS_PROTECTION_LEVEL_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="PROCESS_PROTECTION_LEVEL_INFORMATION" /> struct is blittable.</summary>

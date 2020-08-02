@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D12_RAYTRACING_PIPELINE_CONFIG" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D12_RAYTRACING_PIPELINE_CONFIG" />struct.</summary>
     public static unsafe class D3D12_RAYTRACING_PIPELINE_CONFIGTests
     {
         /// <summary>Validates that the <see cref="D3D12_RAYTRACING_PIPELINE_CONFIG" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DML_SCALE_BIAS" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="DML_SCALE_BIAS" />struct.</summary>
     public static unsafe class DML_SCALE_BIASTests
     {
         /// <summary>Validates that the <see cref="DML_SCALE_BIAS" /> struct is blittable.</summary>

@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_COLOR_CONTEXT_TYPE : uint
     {
         D2D1_COLOR_CONTEXT_TYPE_ICC = 0,

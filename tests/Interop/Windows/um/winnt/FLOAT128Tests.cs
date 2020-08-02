@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="FLOAT128" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="FLOAT128" />struct.</summary>
     public static unsafe class FLOAT128Tests
     {
         /// <summary>Validates that the <see cref="FLOAT128" /> struct is blittable.</summary>

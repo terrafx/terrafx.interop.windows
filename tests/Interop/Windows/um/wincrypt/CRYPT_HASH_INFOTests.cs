@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CRYPT_HASH_INFO" /> struct.</summary>
+    /// <summary>Provides validation of the <see cref="CRYPT_HASH_INFO" />struct.</summary>
     public static unsafe class CRYPT_HASH_INFOTests
     {
         /// <summary>Validates that the <see cref="CRYPT_HASH_INFO" /> struct is blittable.</summary>
