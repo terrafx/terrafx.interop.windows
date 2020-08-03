@@ -354,5 +354,19 @@ um-ddraw.h
 ../../../tests/Interop/Windows/um/ddraw
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h
+--with-attribute
+IDirectDraw=Guid("6C14DB80-A733-11CE-A521-0020AF0BE560")
+IDirectDraw2=Guid("B3A6F3E0-2B43-11CF-A2DE-00AA00B93356")
+IDirectDraw4=Guid("9C59509A-39BD-11D1-8C4A-00C04FD930C5")
+IDirectDraw7=Guid("15E65EC0-3B9C-11D2-B92F-00609797EA5B")
+IDirectDrawClipper=Guid("6C14DB85-A733-11CE-A521-0020AF0BE560")
+IDirectDrawColorControl=Guid("4B9F0EE0-0D7E-11D0-9B06-00A0C903A3B8")
+IDirectDrawGammaControl=Guid("69C11C3E-B46B-11D1-AD7A-00C04FC29B4E")
+IDirectDrawPalette=Guid("6C14DB84-A733-11CE-A521-0020AF0BE560")
+IDirectDrawSurface=Guid("6C14DB81-A733-11CE-A521-0020AF0BE560")
+IDirectDrawSurface2=Guid("57805885-6EEC-11CF-9441-A82303C10E27")
+IDirectDrawSurface3=Guid("DA044E00-69B2-11D0-A1D5-00AA00B8DFBB")
+IDirectDrawSurface4=Guid("0B2B8630-AD35-11D0-8EA6-00609797EA5B")
+IDirectDrawSurface7=Guid("06675A80-3B9B-11D2-B92F-00609797EA5B")
 --with-librarypath
 *=ddraw

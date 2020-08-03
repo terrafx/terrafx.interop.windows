@@ -5,9 +5,11 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
+    [Guid("4B9F0EE0-0D7E-11D0-9B06-00A0C903A3B8")]
     public unsafe partial struct IDirectDrawColorControl
     {
         public void** lpVtbl;
