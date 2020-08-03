@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="WOF_EXTERNAL_FILE_ID" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="WOF_EXTERNAL_FILE_ID" /> struct.</summary>
     public static unsafe class WOF_EXTERNAL_FILE_IDTests
     {
         /// <summary>Validates that the <see cref="WOF_EXTERNAL_FILE_ID" /> struct is blittable.</summary>

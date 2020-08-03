@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DXGI_SHARED_RESOURCE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="DXGI_SHARED_RESOURCE" /> struct.</summary>
     public static unsafe class DXGI_SHARED_RESOURCETests
     {
         /// <summary>Validates that the <see cref="DXGI_SHARED_RESOURCE" /> struct is blittable.</summary>

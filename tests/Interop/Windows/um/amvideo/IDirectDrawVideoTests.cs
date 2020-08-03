@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IDirectDrawVideo" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="IDirectDrawVideo" /> struct.</summary>
     public static unsafe class IDirectDrawVideoTests
     {
         /// <summary>Validates that the <see cref="IDirectDrawVideo" /> struct is blittable.</summary>

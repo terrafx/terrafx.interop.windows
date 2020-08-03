@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SD_ENUM_SDS_OUTPUT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="SD_ENUM_SDS_OUTPUT" /> struct.</summary>
     public static unsafe class SD_ENUM_SDS_OUTPUTTests
     {
         /// <summary>Validates that the <see cref="SD_ENUM_SDS_OUTPUT" /> struct is blittable.</summary>

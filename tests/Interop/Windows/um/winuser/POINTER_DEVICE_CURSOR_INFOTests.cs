@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="POINTER_DEVICE_CURSOR_INFO" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="POINTER_DEVICE_CURSOR_INFO" /> struct.</summary>
     public static unsafe class POINTER_DEVICE_CURSOR_INFOTests
     {
         /// <summary>Validates that the <see cref="POINTER_DEVICE_CURSOR_INFO" /> struct is blittable.</summary>

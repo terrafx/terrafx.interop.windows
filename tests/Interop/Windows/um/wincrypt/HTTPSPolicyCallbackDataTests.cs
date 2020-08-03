@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="HTTPSPolicyCallbackData" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="HTTPSPolicyCallbackData" /> struct.</summary>
     public static unsafe class HTTPSPolicyCallbackDataTests
     {
         /// <summary>Validates that the <see cref="HTTPSPolicyCallbackData" /> struct is blittable.</summary>

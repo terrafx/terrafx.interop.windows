@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA" /> struct.</summary>
     public static unsafe class IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATATests
     {
         /// <summary>Validates that the <see cref="IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA" /> struct is blittable.</summary>

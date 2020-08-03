@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MF_VIDEO_SPHERICAL_VIEWDIRECTION" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="MF_VIDEO_SPHERICAL_VIEWDIRECTION" /> struct.</summary>
     public static unsafe class MF_VIDEO_SPHERICAL_VIEWDIRECTIONTests
     {
         /// <summary>Validates that the <see cref="MF_VIDEO_SPHERICAL_VIEWDIRECTION" /> struct is blittable.</summary>

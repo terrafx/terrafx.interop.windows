@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="ZONEATTRIBUTES" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="ZONEATTRIBUTES" /> struct.</summary>
     public static unsafe class ZONEATTRIBUTESTests
     {
         /// <summary>Validates that the <see cref="ZONEATTRIBUTES" /> struct is blittable.</summary>

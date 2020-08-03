@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="LOGCOLORSPACEA" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="LOGCOLORSPACEA" /> struct.</summary>
     public static unsafe class LOGCOLORSPACEATests
     {
         /// <summary>Validates that the <see cref="LOGCOLORSPACEA" /> struct is blittable.</summary>

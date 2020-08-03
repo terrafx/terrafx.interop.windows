@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D11_SUBRESOURCE_TILING" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D11_SUBRESOURCE_TILING" /> struct.</summary>
     public static unsafe class D3D11_SUBRESOURCE_TILINGTests
     {
         /// <summary>Validates that the <see cref="D3D11_SUBRESOURCE_TILING" /> struct is blittable.</summary>

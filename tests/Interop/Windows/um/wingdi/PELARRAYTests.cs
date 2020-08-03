@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="PELARRAY" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="PELARRAY" /> struct.</summary>
     public static unsafe class PELARRAYTests
     {
         /// <summary>Validates that the <see cref="PELARRAY" /> struct is blittable.</summary>

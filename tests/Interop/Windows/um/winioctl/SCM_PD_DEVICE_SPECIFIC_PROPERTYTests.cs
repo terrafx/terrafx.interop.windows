@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SCM_PD_DEVICE_SPECIFIC_PROPERTY" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="SCM_PD_DEVICE_SPECIFIC_PROPERTY" /> struct.</summary>
     public static unsafe class SCM_PD_DEVICE_SPECIFIC_PROPERTYTests
     {
         /// <summary>Validates that the <see cref="SCM_PD_DEVICE_SPECIFIC_PROPERTY" /> struct is blittable.</summary>

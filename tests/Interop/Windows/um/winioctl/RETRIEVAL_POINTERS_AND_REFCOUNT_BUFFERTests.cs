@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="RETRIEVAL_POINTERS_AND_REFCOUNT_BUFFER" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="RETRIEVAL_POINTERS_AND_REFCOUNT_BUFFER" /> struct.</summary>
     public static unsafe class RETRIEVAL_POINTERS_AND_REFCOUNT_BUFFERTests
     {
         /// <summary>Validates that the <see cref="RETRIEVAL_POINTERS_AND_REFCOUNT_BUFFER" /> struct is blittable.</summary>

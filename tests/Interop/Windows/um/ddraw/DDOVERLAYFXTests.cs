@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DDOVERLAYFX" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="DDOVERLAYFX" /> struct.</summary>
     public static unsafe class DDOVERLAYFXTests
     {
         /// <summary>Validates that the <see cref="DDOVERLAYFX" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D11_VIDEO_DECODER_SUB_SAMPLE_MAPPING_BLOCK" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D11_VIDEO_DECODER_SUB_SAMPLE_MAPPING_BLOCK" /> struct.</summary>
     public static unsafe class D3D11_VIDEO_DECODER_SUB_SAMPLE_MAPPING_BLOCKTests
     {
         /// <summary>Validates that the <see cref="D3D11_VIDEO_DECODER_SUB_SAMPLE_MAPPING_BLOCK" /> struct is blittable.</summary>

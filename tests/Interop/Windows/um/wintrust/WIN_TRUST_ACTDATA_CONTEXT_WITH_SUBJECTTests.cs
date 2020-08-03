@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="WIN_TRUST_ACTDATA_CONTEXT_WITH_SUBJECT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="WIN_TRUST_ACTDATA_CONTEXT_WITH_SUBJECT" /> struct.</summary>
     public static unsafe class WIN_TRUST_ACTDATA_CONTEXT_WITH_SUBJECTTests
     {
         /// <summary>Validates that the <see cref="WIN_TRUST_ACTDATA_CONTEXT_WITH_SUBJECT" /> struct is blittable.</summary>

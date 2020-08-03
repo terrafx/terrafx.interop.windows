@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SINGLE_LIST_ENTRY" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="SINGLE_LIST_ENTRY" /> struct.</summary>
     public static unsafe class SINGLE_LIST_ENTRYTests
     {
         /// <summary>Validates that the <see cref="SINGLE_LIST_ENTRY" /> struct is blittable.</summary>

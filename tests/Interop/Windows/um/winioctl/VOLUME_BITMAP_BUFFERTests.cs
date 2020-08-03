@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="VOLUME_BITMAP_BUFFER" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="VOLUME_BITMAP_BUFFER" /> struct.</summary>
     public static unsafe class VOLUME_BITMAP_BUFFERTests
     {
         /// <summary>Validates that the <see cref="VOLUME_BITMAP_BUFFER" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CSV_NAMESPACE_INFO" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CSV_NAMESPACE_INFO" /> struct.</summary>
     public static unsafe class CSV_NAMESPACE_INFOTests
     {
         /// <summary>Validates that the <see cref="CSV_NAMESPACE_INFO" /> struct is blittable.</summary>

@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IAMCopyCaptureFileProgress" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="IAMCopyCaptureFileProgress" /> struct.</summary>
     public static unsafe class IAMCopyCaptureFileProgressTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAMCopyCaptureFileProgress" /> struct is correct.</summary>

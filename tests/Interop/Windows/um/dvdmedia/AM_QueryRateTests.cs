@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="AM_QueryRate" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="AM_QueryRate" /> struct.</summary>
     public static unsafe class AM_QueryRateTests
     {
         /// <summary>Validates that the <see cref="AM_QueryRate" /> struct is blittable.</summary>

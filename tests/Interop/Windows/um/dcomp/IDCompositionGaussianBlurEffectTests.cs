@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IDCompositionGaussianBlurEffect" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="IDCompositionGaussianBlurEffect" /> struct.</summary>
     public static unsafe class IDCompositionGaussianBlurEffectTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDCompositionGaussianBlurEffect" /> struct is correct.</summary>

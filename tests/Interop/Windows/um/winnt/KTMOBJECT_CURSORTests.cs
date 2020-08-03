@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="KTMOBJECT_CURSOR" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="KTMOBJECT_CURSOR" /> struct.</summary>
     public static unsafe class KTMOBJECT_CURSORTests
     {
         /// <summary>Validates that the <see cref="KTMOBJECT_CURSOR" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX" /> struct.</summary>
     public static unsafe class FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EXTests
     {
         /// <summary>Validates that the <see cref="FSCTL_SET_INTEGRITY_INFORMATION_BUFFER_EX" /> struct is blittable.</summary>

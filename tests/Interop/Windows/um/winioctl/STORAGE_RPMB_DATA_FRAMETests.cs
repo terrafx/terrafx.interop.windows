@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="STORAGE_RPMB_DATA_FRAME" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="STORAGE_RPMB_DATA_FRAME" /> struct.</summary>
     public static unsafe class STORAGE_RPMB_DATA_FRAMETests
     {
         /// <summary>Validates that the <see cref="STORAGE_RPMB_DATA_FRAME" /> struct is blittable.</summary>

@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IMF2DBuffer" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="IMF2DBuffer" /> struct.</summary>
     public static unsafe class IMF2DBufferTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMF2DBuffer" /> struct is correct.</summary>

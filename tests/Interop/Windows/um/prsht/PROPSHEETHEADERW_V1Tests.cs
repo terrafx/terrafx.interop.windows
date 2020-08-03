@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="PROPSHEETHEADERW_V1" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="PROPSHEETHEADERW_V1" /> struct.</summary>
     public static unsafe class PROPSHEETHEADERW_V1Tests
     {
         /// <summary>Validates that the <see cref="PROPSHEETHEADERW_V1" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MOVE_FILE_DATA" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="MOVE_FILE_DATA" /> struct.</summary>
     public static unsafe class MOVE_FILE_DATATests
     {
         /// <summary>Validates that the <see cref="MOVE_FILE_DATA" /> struct is blittable.</summary>

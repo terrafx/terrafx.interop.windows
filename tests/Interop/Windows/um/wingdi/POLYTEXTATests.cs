@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="POLYTEXTA" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="POLYTEXTA" /> struct.</summary>
     public static unsafe class POLYTEXTATests
     {
         /// <summary>Validates that the <see cref="POLYTEXTA" /> struct is blittable.</summary>

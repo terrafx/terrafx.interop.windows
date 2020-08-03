@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2" /> struct.</summary>
     public static unsafe class JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2Tests
     {
         /// <summary>Validates that the <see cref="JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2" /> struct is blittable.</summary>

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CBT_CREATEWNDW" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CBT_CREATEWNDW" /> struct.</summary>
     public static unsafe class CBT_CREATEWNDWTests
     {
         /// <summary>Validates that the <see cref="CBT_CREATEWNDW" /> struct is blittable.</summary>

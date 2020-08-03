@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="NTFS_FILE_RECORD_OUTPUT_BUFFER" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="NTFS_FILE_RECORD_OUTPUT_BUFFER" /> struct.</summary>
     public static unsafe class NTFS_FILE_RECORD_OUTPUT_BUFFERTests
     {
         /// <summary>Validates that the <see cref="NTFS_FILE_RECORD_OUTPUT_BUFFER" /> struct is blittable.</summary>

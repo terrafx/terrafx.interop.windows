@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CMSG_RC4_AUX_INFO" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CMSG_RC4_AUX_INFO" /> struct.</summary>
     public static unsafe class CMSG_RC4_AUX_INFOTests
     {
         /// <summary>Validates that the <see cref="CMSG_RC4_AUX_INFO" /> struct is blittable.</summary>

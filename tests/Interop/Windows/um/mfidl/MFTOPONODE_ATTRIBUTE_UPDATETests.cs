@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MFTOPONODE_ATTRIBUTE_UPDATE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="MFTOPONODE_ATTRIBUTE_UPDATE" /> struct.</summary>
     public static unsafe class MFTOPONODE_ATTRIBUTE_UPDATETests
     {
         /// <summary>Validates that the <see cref="MFTOPONODE_ATTRIBUTE_UPDATE" /> struct is blittable.</summary>

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="PROPVARIANT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="PROPVARIANT" /> struct.</summary>
     public static unsafe class PROPVARIANTTests
     {
         /// <summary>Validates that the <see cref="PROPVARIANT" /> struct is blittable.</summary>

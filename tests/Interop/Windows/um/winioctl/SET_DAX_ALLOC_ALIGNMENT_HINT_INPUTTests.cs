@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SET_DAX_ALLOC_ALIGNMENT_HINT_INPUT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="SET_DAX_ALLOC_ALIGNMENT_HINT_INPUT" /> struct.</summary>
     public static unsafe class SET_DAX_ALLOC_ALIGNMENT_HINT_INPUTTests
     {
         /// <summary>Validates that the <see cref="SET_DAX_ALLOC_ALIGNMENT_HINT_INPUT" /> struct is blittable.</summary>

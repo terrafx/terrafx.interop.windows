@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DISK_LOGGING" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="DISK_LOGGING" /> struct.</summary>
     public static unsafe class DISK_LOGGINGTests
     {
         /// <summary>Validates that the <see cref="DISK_LOGGING" /> struct is blittable.</summary>

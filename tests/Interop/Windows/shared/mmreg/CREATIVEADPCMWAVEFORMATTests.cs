@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CREATIVEADPCMWAVEFORMAT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CREATIVEADPCMWAVEFORMAT" /> struct.</summary>
     public static unsafe class CREATIVEADPCMWAVEFORMATTests
     {
         /// <summary>Validates that the <see cref="CREATIVEADPCMWAVEFORMAT" /> struct is blittable.</summary>

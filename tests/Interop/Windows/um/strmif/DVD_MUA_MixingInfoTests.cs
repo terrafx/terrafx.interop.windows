@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DVD_MUA_MixingInfo" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="DVD_MUA_MixingInfo" /> struct.</summary>
     public static unsafe class DVD_MUA_MixingInfoTests
     {
         /// <summary>Validates that the <see cref="DVD_MUA_MixingInfo" /> struct is blittable.</summary>

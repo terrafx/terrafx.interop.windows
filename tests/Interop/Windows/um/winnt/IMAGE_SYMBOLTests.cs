@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IMAGE_SYMBOL" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="IMAGE_SYMBOL" /> struct.</summary>
     public static unsafe class IMAGE_SYMBOLTests
     {
         /// <summary>Validates that the <see cref="IMAGE_SYMBOL" /> struct is blittable.</summary>

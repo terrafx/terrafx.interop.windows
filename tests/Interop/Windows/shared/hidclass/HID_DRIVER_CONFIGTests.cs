@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="HID_DRIVER_CONFIG" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="HID_DRIVER_CONFIG" /> struct.</summary>
     public static unsafe class HID_DRIVER_CONFIGTests
     {
         /// <summary>Validates that the <see cref="HID_DRIVER_CONFIG" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CSV_QUERY_FILE_REVISION" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CSV_QUERY_FILE_REVISION" /> struct.</summary>
     public static unsafe class CSV_QUERY_FILE_REVISIONTests
     {
         /// <summary>Validates that the <see cref="CSV_QUERY_FILE_REVISION" /> struct is blittable.</summary>

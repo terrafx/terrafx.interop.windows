@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CMC_TAGGED_OTHER_MSG" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CMC_TAGGED_OTHER_MSG" /> struct.</summary>
     public static unsafe class CMC_TAGGED_OTHER_MSGTests
     {
         /// <summary>Validates that the <see cref="CMC_TAGGED_OTHER_MSG" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="AMCOPPSignature" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="AMCOPPSignature" /> struct.</summary>
     public static unsafe class AMCOPPSignatureTests
     {
         /// <summary>Validates that the <see cref="AMCOPPSignature" /> struct is blittable.</summary>

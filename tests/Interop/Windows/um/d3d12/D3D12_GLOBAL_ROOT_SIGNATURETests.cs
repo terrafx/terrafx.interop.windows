@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D12_GLOBAL_ROOT_SIGNATURE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D12_GLOBAL_ROOT_SIGNATURE" /> struct.</summary>
     public static unsafe class D3D12_GLOBAL_ROOT_SIGNATURETests
     {
         /// <summary>Validates that the <see cref="D3D12_GLOBAL_ROOT_SIGNATURE" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DEVICE_DSM_TIERING_QUERY_INPUT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="DEVICE_DSM_TIERING_QUERY_INPUT" /> struct.</summary>
     public static unsafe class DEVICE_DSM_TIERING_QUERY_INPUTTests
     {
         /// <summary>Validates that the <see cref="DEVICE_DSM_TIERING_QUERY_INPUT" /> struct is blittable.</summary>

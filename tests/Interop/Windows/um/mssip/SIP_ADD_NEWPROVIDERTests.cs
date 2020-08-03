@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SIP_ADD_NEWPROVIDER" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="SIP_ADD_NEWPROVIDER" /> struct.</summary>
     public static unsafe class SIP_ADD_NEWPROVIDERTests
     {
         /// <summary>Validates that the <see cref="SIP_ADD_NEWPROVIDER" /> struct is blittable.</summary>

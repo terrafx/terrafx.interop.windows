@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MARK_HANDLE_INFO" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="MARK_HANDLE_INFO" /> struct.</summary>
     public static unsafe class MARK_HANDLE_INFOTests
     {
         /// <summary>Validates that the <see cref="MARK_HANDLE_INFO" /> struct is blittable.</summary>

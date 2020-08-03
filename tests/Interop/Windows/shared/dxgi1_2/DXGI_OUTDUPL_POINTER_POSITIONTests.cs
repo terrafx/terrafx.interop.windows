@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DXGI_OUTDUPL_POINTER_POSITION" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="DXGI_OUTDUPL_POINTER_POSITION" /> struct.</summary>
     public static unsafe class DXGI_OUTDUPL_POINTER_POSITIONTests
     {
         /// <summary>Validates that the <see cref="DXGI_OUTDUPL_POINTER_POSITION" /> struct is blittable.</summary>

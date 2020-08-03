@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="REDIRECTION_FUNCTION_DESCRIPTOR" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="REDIRECTION_FUNCTION_DESCRIPTOR" /> struct.</summary>
     public static unsafe class REDIRECTION_FUNCTION_DESCRIPTORTests
     {
         /// <summary>Validates that the <see cref="REDIRECTION_FUNCTION_DESCRIPTOR" /> struct is blittable.</summary>

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CRYPT_ATTRIBUTE_TYPE_VALUE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CRYPT_ATTRIBUTE_TYPE_VALUE" /> struct.</summary>
     public static unsafe class CRYPT_ATTRIBUTE_TYPE_VALUETests
     {
         /// <summary>Validates that the <see cref="CRYPT_ATTRIBUTE_TYPE_VALUE" /> struct is blittable.</summary>

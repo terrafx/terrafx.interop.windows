@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="STREAM_MEDIUM" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="STREAM_MEDIUM" /> struct.</summary>
     public static unsafe class STREAM_MEDIUMTests
     {
         /// <summary>Validates that the <see cref="STREAM_MEDIUM" /> struct is blittable.</summary>

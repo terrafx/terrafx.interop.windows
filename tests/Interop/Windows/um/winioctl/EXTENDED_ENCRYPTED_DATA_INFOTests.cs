@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="EXTENDED_ENCRYPTED_DATA_INFO" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="EXTENDED_ENCRYPTED_DATA_INFO" /> struct.</summary>
     public static unsafe class EXTENDED_ENCRYPTED_DATA_INFOTests
     {
         /// <summary>Validates that the <see cref="EXTENDED_ENCRYPTED_DATA_INFO" /> struct is blittable.</summary>

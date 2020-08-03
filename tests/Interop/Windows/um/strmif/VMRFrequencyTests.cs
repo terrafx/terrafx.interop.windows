@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="VMRFrequency" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="VMRFrequency" /> struct.</summary>
     public static unsafe class VMRFrequencyTests
     {
         /// <summary>Validates that the <see cref="VMRFrequency" /> struct is blittable.</summary>

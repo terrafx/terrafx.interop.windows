@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="TXFS_GET_TRANSACTED_VERSION" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="TXFS_GET_TRANSACTED_VERSION" /> struct.</summary>
     public static unsafe class TXFS_GET_TRANSACTED_VERSIONTests
     {
         /// <summary>Validates that the <see cref="TXFS_GET_TRANSACTED_VERSION" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="NETWORK_APP_INSTANCE_EA" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="NETWORK_APP_INSTANCE_EA" /> struct.</summary>
     public static unsafe class NETWORK_APP_INSTANCE_EATests
     {
         /// <summary>Validates that the <see cref="NETWORK_APP_INSTANCE_EA" /> struct is blittable.</summary>

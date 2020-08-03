@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SpatialAudioClientActivationParams" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="SpatialAudioClientActivationParams" /> struct.</summary>
     public static unsafe class SpatialAudioClientActivationParamsTests
     {
         /// <summary>Validates that the <see cref="SpatialAudioClientActivationParams" /> struct is blittable.</summary>

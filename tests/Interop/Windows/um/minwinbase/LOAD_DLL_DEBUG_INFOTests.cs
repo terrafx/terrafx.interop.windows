@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="LOAD_DLL_DEBUG_INFO" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="LOAD_DLL_DEBUG_INFO" /> struct.</summary>
     public static unsafe class LOAD_DLL_DEBUG_INFOTests
     {
         /// <summary>Validates that the <see cref="LOAD_DLL_DEBUG_INFO" /> struct is blittable.</summary>

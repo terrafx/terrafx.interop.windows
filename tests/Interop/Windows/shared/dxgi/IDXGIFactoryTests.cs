@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IDXGIFactory" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="IDXGIFactory" /> struct.</summary>
     public static unsafe class IDXGIFactoryTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDXGIFactory" /> struct is correct.</summary>

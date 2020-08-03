@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D11_VIDEO_DECODER_BEGIN_FRAME_CRYPTO_SESSION" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D11_VIDEO_DECODER_BEGIN_FRAME_CRYPTO_SESSION" /> struct.</summary>
     public static unsafe class D3D11_VIDEO_DECODER_BEGIN_FRAME_CRYPTO_SESSIONTests
     {
         /// <summary>Validates that the <see cref="D3D11_VIDEO_DECODER_BEGIN_FRAME_CRYPTO_SESSION" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="TXFS_QUERY_RM_INFORMATION" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="TXFS_QUERY_RM_INFORMATION" /> struct.</summary>
     public static unsafe class TXFS_QUERY_RM_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="TXFS_QUERY_RM_INFORMATION" /> struct is blittable.</summary>

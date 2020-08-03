@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CRYPT_SMART_CARD_ROOT_INFO" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CRYPT_SMART_CARD_ROOT_INFO" /> struct.</summary>
     public static unsafe class CRYPT_SMART_CARD_ROOT_INFOTests
     {
         /// <summary>Validates that the <see cref="CRYPT_SMART_CARD_ROOT_INFO" /> struct is blittable.</summary>

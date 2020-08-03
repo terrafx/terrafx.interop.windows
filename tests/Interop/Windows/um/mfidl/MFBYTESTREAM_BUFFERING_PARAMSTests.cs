@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MFBYTESTREAM_BUFFERING_PARAMS" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="MFBYTESTREAM_BUFFERING_PARAMS" /> struct.</summary>
     public static unsafe class MFBYTESTREAM_BUFFERING_PARAMSTests
     {
         /// <summary>Validates that the <see cref="MFBYTESTREAM_BUFFERING_PARAMS" /> struct is blittable.</summary>

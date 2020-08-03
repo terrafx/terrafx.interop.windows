@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="GESTURENOTIFYSTRUCT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="GESTURENOTIFYSTRUCT" /> struct.</summary>
     public static unsafe class GESTURENOTIFYSTRUCTTests
     {
         /// <summary>Validates that the <see cref="GESTURENOTIFYSTRUCT" /> struct is blittable.</summary>

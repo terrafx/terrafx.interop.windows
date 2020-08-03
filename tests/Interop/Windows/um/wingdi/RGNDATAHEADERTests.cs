@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="RGNDATAHEADER" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="RGNDATAHEADER" /> struct.</summary>
     public static unsafe class RGNDATAHEADERTests
     {
         /// <summary>Validates that the <see cref="RGNDATAHEADER" /> struct is blittable.</summary>

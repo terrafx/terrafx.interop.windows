@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DDSURFACEDESC2" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="DDSURFACEDESC2" /> struct.</summary>
     public static unsafe class DDSURFACEDESC2Tests
     {
         /// <summary>Validates that the <see cref="DDSURFACEDESC2" /> struct is blittable.</summary>

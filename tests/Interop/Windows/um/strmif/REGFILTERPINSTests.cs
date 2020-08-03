@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="REGFILTERPINS" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="REGFILTERPINS" /> struct.</summary>
     public static unsafe class REGFILTERPINSTests
     {
         /// <summary>Validates that the <see cref="REGFILTERPINS" /> struct is blittable.</summary>

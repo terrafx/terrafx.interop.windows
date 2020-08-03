@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DEVICEDUMP_SECTION_HEADER" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="DEVICEDUMP_SECTION_HEADER" /> struct.</summary>
     public static unsafe class DEVICEDUMP_SECTION_HEADERTests
     {
         /// <summary>Validates that the <see cref="DEVICEDUMP_SECTION_HEADER" /> struct is blittable.</summary>

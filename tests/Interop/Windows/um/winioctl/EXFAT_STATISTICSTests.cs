@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="EXFAT_STATISTICS" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="EXFAT_STATISTICS" /> struct.</summary>
     public static unsafe class EXFAT_STATISTICSTests
     {
         /// <summary>Validates that the <see cref="EXFAT_STATISTICS" /> struct is blittable.</summary>

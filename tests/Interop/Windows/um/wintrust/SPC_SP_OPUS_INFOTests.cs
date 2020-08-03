@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SPC_SP_OPUS_INFO" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="SPC_SP_OPUS_INFO" /> struct.</summary>
     public static unsafe class SPC_SP_OPUS_INFOTests
     {
         /// <summary>Validates that the <see cref="SPC_SP_OPUS_INFO" /> struct is blittable.</summary>

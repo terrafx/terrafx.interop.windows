@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CSPLATFORM" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CSPLATFORM" /> struct.</summary>
     public static unsafe class CSPLATFORMTests
     {
         /// <summary>Validates that the <see cref="CSPLATFORM" /> struct is blittable.</summary>

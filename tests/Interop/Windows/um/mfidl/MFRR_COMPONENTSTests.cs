@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MFRR_COMPONENTS" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="MFRR_COMPONENTS" /> struct.</summary>
     public static unsafe class MFRR_COMPONENTSTests
     {
         /// <summary>Validates that the <see cref="MFRR_COMPONENTS" /> struct is blittable.</summary>

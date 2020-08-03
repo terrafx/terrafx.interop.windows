@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SP_REGISTER_CONTROL_STATUSW" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="SP_REGISTER_CONTROL_STATUSW" /> struct.</summary>
     public static unsafe class SP_REGISTER_CONTROL_STATUSWTests
     {
         /// <summary>Validates that the <see cref="SP_REGISTER_CONTROL_STATUSW" /> struct is blittable.</summary>

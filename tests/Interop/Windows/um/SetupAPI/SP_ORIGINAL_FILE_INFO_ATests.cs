@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SP_ORIGINAL_FILE_INFO_A" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="SP_ORIGINAL_FILE_INFO_A" /> struct.</summary>
     public static unsafe class SP_ORIGINAL_FILE_INFO_ATests
     {
         /// <summary>Validates that the <see cref="SP_ORIGINAL_FILE_INFO_A" /> struct is blittable.</summary>

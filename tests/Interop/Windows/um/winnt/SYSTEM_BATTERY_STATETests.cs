@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SYSTEM_BATTERY_STATE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="SYSTEM_BATTERY_STATE" /> struct.</summary>
     public static unsafe class SYSTEM_BATTERY_STATETests
     {
         /// <summary>Validates that the <see cref="SYSTEM_BATTERY_STATE" /> struct is blittable.</summary>

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="PARAMDESC" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="PARAMDESC" /> struct.</summary>
     public static unsafe class PARAMDESCTests
     {
         /// <summary>Validates that the <see cref="PARAMDESC" /> struct is blittable.</summary>

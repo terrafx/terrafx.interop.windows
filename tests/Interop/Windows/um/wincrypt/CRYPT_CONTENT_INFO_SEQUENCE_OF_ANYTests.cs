@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CRYPT_CONTENT_INFO_SEQUENCE_OF_ANY" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CRYPT_CONTENT_INFO_SEQUENCE_OF_ANY" /> struct.</summary>
     public static unsafe class CRYPT_CONTENT_INFO_SEQUENCE_OF_ANYTests
     {
         /// <summary>Validates that the <see cref="CRYPT_CONTENT_INFO_SEQUENCE_OF_ANY" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D11_DEPTH_STENCIL_DESC" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D11_DEPTH_STENCIL_DESC" /> struct.</summary>
     public static unsafe class D3D11_DEPTH_STENCIL_DESCTests
     {
         /// <summary>Validates that the <see cref="D3D11_DEPTH_STENCIL_DESC" /> struct is blittable.</summary>

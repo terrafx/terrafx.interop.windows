@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MFPaletteEntry" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="MFPaletteEntry" /> struct.</summary>
     public static unsafe class MFPaletteEntryTests
     {
         /// <summary>Validates that the <see cref="MFPaletteEntry" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D2D1_SIMPLE_COLOR_PROFILE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="D2D1_SIMPLE_COLOR_PROFILE" /> struct.</summary>
     public static unsafe class D2D1_SIMPLE_COLOR_PROFILETests
     {
         /// <summary>Validates that the <see cref="D2D1_SIMPLE_COLOR_PROFILE" /> struct is blittable.</summary>

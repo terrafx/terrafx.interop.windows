@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IXAudio2EngineCallback" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="IXAudio2EngineCallback" /> struct.</summary>
     public static unsafe class IXAudio2EngineCallbackTests
     {
         /// <summary>Validates that the <see cref="IXAudio2EngineCallback" /> struct is blittable.</summary>

@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IDWriteRemoteFontFileLoader" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="IDWriteRemoteFontFileLoader" /> struct.</summary>
     public static unsafe class IDWriteRemoteFontFileLoaderTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDWriteRemoteFontFileLoader" /> struct is correct.</summary>

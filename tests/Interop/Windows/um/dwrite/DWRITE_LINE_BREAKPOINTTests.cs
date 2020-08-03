@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DWRITE_LINE_BREAKPOINT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="DWRITE_LINE_BREAKPOINT" /> struct.</summary>
     public static unsafe class DWRITE_LINE_BREAKPOINTTests
     {
         /// <summary>Validates that the <see cref="DWRITE_LINE_BREAKPOINT" /> struct is blittable.</summary>

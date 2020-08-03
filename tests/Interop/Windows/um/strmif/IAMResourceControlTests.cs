@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IAMResourceControl" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="IAMResourceControl" /> struct.</summary>
     public static unsafe class IAMResourceControlTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAMResourceControl" /> struct is correct.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="FSCTL_QUERY_REGION_INFO_INPUT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="FSCTL_QUERY_REGION_INFO_INPUT" /> struct.</summary>
     public static unsafe class FSCTL_QUERY_REGION_INFO_INPUTTests
     {
         /// <summary>Validates that the <see cref="FSCTL_QUERY_REGION_INFO_INPUT" /> struct is blittable.</summary>

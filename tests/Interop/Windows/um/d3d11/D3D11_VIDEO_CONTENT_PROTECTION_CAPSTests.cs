@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D11_VIDEO_CONTENT_PROTECTION_CAPS" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D11_VIDEO_CONTENT_PROTECTION_CAPS" /> struct.</summary>
     public static unsafe class D3D11_VIDEO_CONTENT_PROTECTION_CAPSTests
     {
         /// <summary>Validates that the <see cref="D3D11_VIDEO_CONTENT_PROTECTION_CAPS" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DDOSCAPS" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="DDOSCAPS" /> struct.</summary>
     public static unsafe class DDOSCAPSTests
     {
         /// <summary>Validates that the <see cref="DDOSCAPS" /> struct is blittable.</summary>

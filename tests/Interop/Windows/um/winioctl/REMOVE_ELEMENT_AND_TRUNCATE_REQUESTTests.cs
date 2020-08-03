@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="REMOVE_ELEMENT_AND_TRUNCATE_REQUEST" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="REMOVE_ELEMENT_AND_TRUNCATE_REQUEST" /> struct.</summary>
     public static unsafe class REMOVE_ELEMENT_AND_TRUNCATE_REQUESTTests
     {
         /// <summary>Validates that the <see cref="REMOVE_ELEMENT_AND_TRUNCATE_REQUEST" /> struct is blittable.</summary>

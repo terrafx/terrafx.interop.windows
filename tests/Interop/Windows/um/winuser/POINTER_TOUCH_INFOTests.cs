@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="POINTER_TOUCH_INFO" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="POINTER_TOUCH_INFO" /> struct.</summary>
     public static unsafe class POINTER_TOUCH_INFOTests
     {
         /// <summary>Validates that the <see cref="POINTER_TOUCH_INFO" /> struct is blittable.</summary>

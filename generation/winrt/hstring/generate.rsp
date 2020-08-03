@@ -1,10 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-HSTRING__
-HSTRING_BUFFER__
-__MIDL_itf_hstring_0000_0000_v0_0_c_ifspec
-__MIDL_itf_hstring_0000_0000_v0_0_s_ifspec
+HSTRING_HEADER
 --file
 winrt-hstring.h
 --output

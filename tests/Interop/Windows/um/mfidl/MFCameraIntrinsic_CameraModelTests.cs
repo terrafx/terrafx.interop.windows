@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MFCameraIntrinsic_CameraModel" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="MFCameraIntrinsic_CameraModel" /> struct.</summary>
     public static unsafe class MFCameraIntrinsic_CameraModelTests
     {
         /// <summary>Validates that the <see cref="MFCameraIntrinsic_CameraModel" /> struct is blittable.</summary>

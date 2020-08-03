@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CHANGER_SET_POSITION" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CHANGER_SET_POSITION" /> struct.</summary>
     public static unsafe class CHANGER_SET_POSITIONTests
     {
         /// <summary>Validates that the <see cref="CHANGER_SET_POSITION" /> struct is blittable.</summary>

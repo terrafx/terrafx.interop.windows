@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class Windows
+    public static partial class Windows
     {
         [NativeTypeName("#define AMDDS_NONE 0x00")]
         public const int AMDDS_NONE = 0x00;

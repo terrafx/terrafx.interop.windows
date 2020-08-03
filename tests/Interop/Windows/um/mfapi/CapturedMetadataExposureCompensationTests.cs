@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CapturedMetadataExposureCompensation" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CapturedMetadataExposureCompensation" /> struct.</summary>
     public static unsafe class CapturedMetadataExposureCompensationTests
     {
         /// <summary>Validates that the <see cref="CapturedMetadataExposureCompensation" /> struct is blittable.</summary>

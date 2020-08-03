@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="remoteMETAFILEPICT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="remoteMETAFILEPICT" /> struct.</summary>
     public static unsafe class remoteMETAFILEPICTTests
     {
         /// <summary>Validates that the <see cref="remoteMETAFILEPICT" /> struct is blittable.</summary>

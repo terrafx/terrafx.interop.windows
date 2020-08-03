@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D2D1_RESOURCE_TEXTURE_PROPERTIES" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="D2D1_RESOURCE_TEXTURE_PROPERTIES" /> struct.</summary>
     public static unsafe class D2D1_RESOURCE_TEXTURE_PROPERTIESTests
     {
         /// <summary>Validates that the <see cref="D2D1_RESOURCE_TEXTURE_PROPERTIES" /> struct is blittable.</summary>

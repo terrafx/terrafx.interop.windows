@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IAMFilterGraphCallback" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="IAMFilterGraphCallback" /> struct.</summary>
     public static unsafe class IAMFilterGraphCallbackTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAMFilterGraphCallback" /> struct is correct.</summary>

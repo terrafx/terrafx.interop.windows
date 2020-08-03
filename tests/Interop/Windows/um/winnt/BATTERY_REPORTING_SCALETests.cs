@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="BATTERY_REPORTING_SCALE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="BATTERY_REPORTING_SCALE" /> struct.</summary>
     public static unsafe class BATTERY_REPORTING_SCALETests
     {
         /// <summary>Validates that the <see cref="BATTERY_REPORTING_SCALE" /> struct is blittable.</summary>

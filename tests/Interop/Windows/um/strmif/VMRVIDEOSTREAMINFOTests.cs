@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="VMRVIDEOSTREAMINFO" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="VMRVIDEOSTREAMINFO" /> struct.</summary>
     public static unsafe class VMRVIDEOSTREAMINFOTests
     {
         /// <summary>Validates that the <see cref="VMRVIDEOSTREAMINFO" /> struct is blittable.</summary>

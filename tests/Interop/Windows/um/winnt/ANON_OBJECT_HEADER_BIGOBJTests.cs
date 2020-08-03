@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="ANON_OBJECT_HEADER_BIGOBJ" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="ANON_OBJECT_HEADER_BIGOBJ" /> struct.</summary>
     public static unsafe class ANON_OBJECT_HEADER_BIGOBJTests
     {
         /// <summary>Validates that the <see cref="ANON_OBJECT_HEADER_BIGOBJ" /> struct is blittable.</summary>

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MFT_OUTPUT_DATA_BUFFER" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="MFT_OUTPUT_DATA_BUFFER" /> struct.</summary>
     public static unsafe class MFT_OUTPUT_DATA_BUFFERTests
     {
         /// <summary>Validates that the <see cref="MFT_OUTPUT_DATA_BUFFER" /> struct is blittable.</summary>

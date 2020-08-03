@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D12_RENDER_PASS_BEGINNING_ACCESS_CLEAR_PARAMETERS" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D12_RENDER_PASS_BEGINNING_ACCESS_CLEAR_PARAMETERS" /> struct.</summary>
     public static unsafe class D3D12_RENDER_PASS_BEGINNING_ACCESS_CLEAR_PARAMETERSTests
     {
         /// <summary>Validates that the <see cref="D3D12_RENDER_PASS_BEGINNING_ACCESS_CLEAR_PARAMETERS" /> struct is blittable.</summary>

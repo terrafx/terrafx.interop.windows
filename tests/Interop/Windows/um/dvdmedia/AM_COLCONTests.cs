@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="AM_COLCON" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="AM_COLCON" /> struct.</summary>
     public static unsafe class AM_COLCONTests
     {
         /// <summary>Validates that the <see cref="AM_COLCON" /> struct is blittable.</summary>

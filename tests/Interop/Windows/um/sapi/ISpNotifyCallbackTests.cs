@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="ISpNotifyCallback" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="ISpNotifyCallback" /> struct.</summary>
     public static unsafe class ISpNotifyCallbackTests
     {
         /// <summary>Validates that the <see cref="ISpNotifyCallback" /> struct is blittable.</summary>

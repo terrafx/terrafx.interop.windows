@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IPersistMediaPropertyBag" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="IPersistMediaPropertyBag" /> struct.</summary>
     public static unsafe class IPersistMediaPropertyBagTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPersistMediaPropertyBag" /> struct is correct.</summary>

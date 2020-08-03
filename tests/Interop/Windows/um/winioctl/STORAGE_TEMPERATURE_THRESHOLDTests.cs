@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="STORAGE_TEMPERATURE_THRESHOLD" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="STORAGE_TEMPERATURE_THRESHOLD" /> struct.</summary>
     public static unsafe class STORAGE_TEMPERATURE_THRESHOLDTests
     {
         /// <summary>Validates that the <see cref="STORAGE_TEMPERATURE_THRESHOLD" /> struct is blittable.</summary>

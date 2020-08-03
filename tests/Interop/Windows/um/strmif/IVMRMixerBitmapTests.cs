@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IVMRMixerBitmap" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="IVMRMixerBitmap" /> struct.</summary>
     public static unsafe class IVMRMixerBitmapTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IVMRMixerBitmap" /> struct is correct.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="APP_LOCAL_DEVICE_ID" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="APP_LOCAL_DEVICE_ID" /> struct.</summary>
     public static unsafe class APP_LOCAL_DEVICE_IDTests
     {
         /// <summary>Validates that the <see cref="APP_LOCAL_DEVICE_ID" /> struct is blittable.</summary>

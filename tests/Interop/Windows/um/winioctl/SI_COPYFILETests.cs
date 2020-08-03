@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SI_COPYFILE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="SI_COPYFILE" /> struct.</summary>
     public static unsafe class SI_COPYFILETests
     {
         /// <summary>Validates that the <see cref="SI_COPYFILE" /> struct is blittable.</summary>

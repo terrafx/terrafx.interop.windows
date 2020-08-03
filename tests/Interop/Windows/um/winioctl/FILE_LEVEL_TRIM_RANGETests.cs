@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="FILE_LEVEL_TRIM_RANGE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="FILE_LEVEL_TRIM_RANGE" /> struct.</summary>
     public static unsafe class FILE_LEVEL_TRIM_RANGETests
     {
         /// <summary>Validates that the <see cref="FILE_LEVEL_TRIM_RANGE" /> struct is blittable.</summary>

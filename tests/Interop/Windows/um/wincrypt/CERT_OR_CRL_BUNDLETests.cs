@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CERT_OR_CRL_BUNDLE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CERT_OR_CRL_BUNDLE" /> struct.</summary>
     public static unsafe class CERT_OR_CRL_BUNDLETests
     {
         /// <summary>Validates that the <see cref="CERT_OR_CRL_BUNDLE" /> struct is blittable.</summary>

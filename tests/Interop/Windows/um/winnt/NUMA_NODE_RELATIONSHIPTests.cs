@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="NUMA_NODE_RELATIONSHIP" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="NUMA_NODE_RELATIONSHIP" /> struct.</summary>
     public static unsafe class NUMA_NODE_RELATIONSHIPTests
     {
         /// <summary>Validates that the <see cref="NUMA_NODE_RELATIONSHIP" /> struct is blittable.</summary>

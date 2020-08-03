@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="STORAGE_GET_BC_PROPERTIES_OUTPUT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="STORAGE_GET_BC_PROPERTIES_OUTPUT" /> struct.</summary>
     public static unsafe class STORAGE_GET_BC_PROPERTIES_OUTPUTTests
     {
         /// <summary>Validates that the <see cref="STORAGE_GET_BC_PROPERTIES_OUTPUT" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SCM_PD_FIRMWARE_DOWNLOAD" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="SCM_PD_FIRMWARE_DOWNLOAD" /> struct.</summary>
     public static unsafe class SCM_PD_FIRMWARE_DOWNLOADTests
     {
         /// <summary>Validates that the <see cref="SCM_PD_FIRMWARE_DOWNLOAD" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="STORAGE_ALLOCATE_BC_STREAM_INPUT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="STORAGE_ALLOCATE_BC_STREAM_INPUT" /> struct.</summary>
     public static unsafe class STORAGE_ALLOCATE_BC_STREAM_INPUTTests
     {
         /// <summary>Validates that the <see cref="STORAGE_ALLOCATE_BC_STREAM_INPUT" /> struct is blittable.</summary>

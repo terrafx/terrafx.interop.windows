@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D11_DOMAIN_SHADER_TRACE_DESC" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D11_DOMAIN_SHADER_TRACE_DESC" /> struct.</summary>
     public static unsafe class D3D11_DOMAIN_SHADER_TRACE_DESCTests
     {
         /// <summary>Validates that the <see cref="D3D11_DOMAIN_SHADER_TRACE_DESC" /> struct is blittable.</summary>

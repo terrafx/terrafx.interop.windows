@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="TAPE_WRITE_MARKS" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="TAPE_WRITE_MARKS" /> struct.</summary>
     public static unsafe class TAPE_WRITE_MARKSTests
     {
         /// <summary>Validates that the <see cref="TAPE_WRITE_MARKS" /> struct is blittable.</summary>

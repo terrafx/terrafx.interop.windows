@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D11_AES_CTR_IV" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D11_AES_CTR_IV" /> struct.</summary>
     public static unsafe class D3D11_AES_CTR_IVTests
     {
         /// <summary>Validates that the <see cref="D3D11_AES_CTR_IV" /> struct is blittable.</summary>

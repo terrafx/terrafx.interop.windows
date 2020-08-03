@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D2D1_SVG_PRESERVE_ASPECT_RATIO" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="D2D1_SVG_PRESERVE_ASPECT_RATIO" /> struct.</summary>
     public static unsafe class D2D1_SVG_PRESERVE_ASPECT_RATIOTests
     {
         /// <summary>Validates that the <see cref="D2D1_SVG_PRESERVE_ASPECT_RATIO" /> struct is blittable.</summary>

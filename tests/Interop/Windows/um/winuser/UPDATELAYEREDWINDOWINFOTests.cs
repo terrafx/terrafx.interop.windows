@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="UPDATELAYEREDWINDOWINFO" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="UPDATELAYEREDWINDOWINFO" /> struct.</summary>
     public static unsafe class UPDATELAYEREDWINDOWINFOTests
     {
         /// <summary>Validates that the <see cref="UPDATELAYEREDWINDOWINFO" /> struct is blittable.</summary>

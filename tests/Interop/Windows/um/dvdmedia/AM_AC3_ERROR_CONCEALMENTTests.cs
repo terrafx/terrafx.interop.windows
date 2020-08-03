@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="AM_AC3_ERROR_CONCEALMENT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="AM_AC3_ERROR_CONCEALMENT" /> struct.</summary>
     public static unsafe class AM_AC3_ERROR_CONCEALMENTTests
     {
         /// <summary>Validates that the <see cref="AM_AC3_ERROR_CONCEALMENT" /> struct is blittable.</summary>

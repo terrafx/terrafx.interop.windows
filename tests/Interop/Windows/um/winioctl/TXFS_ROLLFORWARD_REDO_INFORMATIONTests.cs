@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="TXFS_ROLLFORWARD_REDO_INFORMATION" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="TXFS_ROLLFORWARD_REDO_INFORMATION" /> struct.</summary>
     public static unsafe class TXFS_ROLLFORWARD_REDO_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="TXFS_ROLLFORWARD_REDO_INFORMATION" /> struct is blittable.</summary>

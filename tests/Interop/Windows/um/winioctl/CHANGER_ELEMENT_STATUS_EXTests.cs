@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CHANGER_ELEMENT_STATUS_EX" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CHANGER_ELEMENT_STATUS_EX" /> struct.</summary>
     public static unsafe class CHANGER_ELEMENT_STATUS_EXTests
     {
         /// <summary>Validates that the <see cref="CHANGER_ELEMENT_STATUS_EX" /> struct is blittable.</summary>

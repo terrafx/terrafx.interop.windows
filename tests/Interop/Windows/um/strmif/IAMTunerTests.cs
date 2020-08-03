@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IAMTuner" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="IAMTuner" /> struct.</summary>
     public static unsafe class IAMTunerTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAMTuner" /> struct is correct.</summary>

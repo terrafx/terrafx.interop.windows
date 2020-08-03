@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="FLOATING_SAVE_AREA" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="FLOATING_SAVE_AREA" /> struct.</summary>
     public static unsafe class FLOATING_SAVE_AREATests
     {
         /// <summary>Validates that the <see cref="FLOATING_SAVE_AREA" /> struct is blittable.</summary>

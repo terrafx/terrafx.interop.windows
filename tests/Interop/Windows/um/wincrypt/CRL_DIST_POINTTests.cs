@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CRL_DIST_POINT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CRL_DIST_POINT" /> struct.</summary>
     public static unsafe class CRL_DIST_POINTTests
     {
         /// <summary>Validates that the <see cref="CRL_DIST_POINT" /> struct is blittable.</summary>

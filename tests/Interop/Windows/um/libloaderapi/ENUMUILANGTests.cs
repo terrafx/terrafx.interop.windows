@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="ENUMUILANG" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="ENUMUILANG" /> struct.</summary>
     public static unsafe class ENUMUILANGTests
     {
         /// <summary>Validates that the <see cref="ENUMUILANG" /> struct is blittable.</summary>

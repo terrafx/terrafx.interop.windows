@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="AM_COPY_MACROVISION" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="AM_COPY_MACROVISION" /> struct.</summary>
     public static unsafe class AM_COPY_MACROVISIONTests
     {
         /// <summary>Validates that the <see cref="AM_COPY_MACROVISION" /> struct is blittable.</summary>

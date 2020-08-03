@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE" /> struct.</summary>
     public static unsafe class DISPLAYCONFIG_SET_ADVANCED_COLOR_STATETests
     {
         /// <summary>Validates that the <see cref="DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE" /> struct is blittable.</summary>

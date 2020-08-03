@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="FILE_NOTIFY_EXTENDED_INFORMATION" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="FILE_NOTIFY_EXTENDED_INFORMATION" /> struct.</summary>
     public static unsafe class FILE_NOTIFY_EXTENDED_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="FILE_NOTIFY_EXTENDED_INFORMATION" /> struct is blittable.</summary>

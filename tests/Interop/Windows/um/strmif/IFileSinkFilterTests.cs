@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IFileSinkFilter" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="IFileSinkFilter" /> struct.</summary>
     public static unsafe class IFileSinkFilterTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IFileSinkFilter" /> struct is correct.</summary>

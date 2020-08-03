@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="FILE_SET_SPARSE_BUFFER" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="FILE_SET_SPARSE_BUFFER" /> struct.</summary>
     public static unsafe class FILE_SET_SPARSE_BUFFERTests
     {
         /// <summary>Validates that the <see cref="FILE_SET_SPARSE_BUFFER" /> struct is blittable.</summary>

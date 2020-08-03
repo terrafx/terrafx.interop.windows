@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IWindowForBindingUI" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="IWindowForBindingUI" /> struct.</summary>
     public static unsafe class IWindowForBindingUITests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWindowForBindingUI" /> struct is correct.</summary>

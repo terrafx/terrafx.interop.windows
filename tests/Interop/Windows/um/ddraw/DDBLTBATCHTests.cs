@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DDBLTBATCH" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="DDBLTBATCH" /> struct.</summary>
     public static unsafe class DDBLTBATCHTests
     {
         /// <summary>Validates that the <see cref="DDBLTBATCH" /> struct is blittable.</summary>

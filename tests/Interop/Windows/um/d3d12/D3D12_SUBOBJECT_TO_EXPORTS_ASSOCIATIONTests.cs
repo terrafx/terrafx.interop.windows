@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D12_SUBOBJECT_TO_EXPORTS_ASSOCIATION" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D12_SUBOBJECT_TO_EXPORTS_ASSOCIATION" /> struct.</summary>
     public static unsafe class D3D12_SUBOBJECT_TO_EXPORTS_ASSOCIATIONTests
     {
         /// <summary>Validates that the <see cref="D3D12_SUBOBJECT_TO_EXPORTS_ASSOCIATION" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D12_VIDEO_DECODE_COMPRESSED_BITSTREAM" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D12_VIDEO_DECODE_COMPRESSED_BITSTREAM" /> struct.</summary>
     public static unsafe class D3D12_VIDEO_DECODE_COMPRESSED_BITSTREAMTests
     {
         /// <summary>Validates that the <see cref="D3D12_VIDEO_DECODE_COMPRESSED_BITSTREAM" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="TXFS_LIST_TRANSACTION_LOCKED_FILES" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="TXFS_LIST_TRANSACTION_LOCKED_FILES" /> struct.</summary>
     public static unsafe class TXFS_LIST_TRANSACTION_LOCKED_FILESTests
     {
         /// <summary>Validates that the <see cref="TXFS_LIST_TRANSACTION_LOCKED_FILES" /> struct is blittable.</summary>

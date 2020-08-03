@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="USN_RANGE_TRACK_OUTPUT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="USN_RANGE_TRACK_OUTPUT" /> struct.</summary>
     public static unsafe class USN_RANGE_TRACK_OUTPUTTests
     {
         /// <summary>Validates that the <see cref="USN_RANGE_TRACK_OUTPUT" /> struct is blittable.</summary>

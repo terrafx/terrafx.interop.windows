@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SPAUDIOBUFFERINFO" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="SPAUDIOBUFFERINFO" /> struct.</summary>
     public static unsafe class SPAUDIOBUFFERINFOTests
     {
         /// <summary>Validates that the <see cref="SPAUDIOBUFFERINFO" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CURSORSHAPE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CURSORSHAPE" /> struct.</summary>
     public static unsafe class CURSORSHAPETests
     {
         /// <summary>Validates that the <see cref="CURSORSHAPE" /> struct is blittable.</summary>

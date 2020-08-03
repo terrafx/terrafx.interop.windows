@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="COMMPROP" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="COMMPROP" /> struct.</summary>
     public static unsafe class COMMPROPTests
     {
         /// <summary>Validates that the <see cref="COMMPROP" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="FILE_REGION_OUTPUT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="FILE_REGION_OUTPUT" /> struct.</summary>
     public static unsafe class FILE_REGION_OUTPUTTests
     {
         /// <summary>Validates that the <see cref="FILE_REGION_OUTPUT" /> struct is blittable.</summary>

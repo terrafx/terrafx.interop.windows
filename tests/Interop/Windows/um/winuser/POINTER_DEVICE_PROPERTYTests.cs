@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="POINTER_DEVICE_PROPERTY" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="POINTER_DEVICE_PROPERTY" /> struct.</summary>
     public static unsafe class POINTER_DEVICE_PROPERTYTests
     {
         /// <summary>Validates that the <see cref="POINTER_DEVICE_PROPERTY" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="PRIVILEGE_SET" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="PRIVILEGE_SET" /> struct.</summary>
     public static unsafe class PRIVILEGE_SETTests
     {
         /// <summary>Validates that the <see cref="PRIVILEGE_SET" /> struct is blittable.</summary>

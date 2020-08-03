@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="KERNINGPAIR" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="KERNINGPAIR" /> struct.</summary>
     public static unsafe class KERNINGPAIRTests
     {
         /// <summary>Validates that the <see cref="KERNINGPAIR" /> struct is blittable.</summary>

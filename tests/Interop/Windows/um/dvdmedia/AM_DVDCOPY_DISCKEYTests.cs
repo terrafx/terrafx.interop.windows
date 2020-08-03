@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="AM_DVDCOPY_DISCKEY" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="AM_DVDCOPY_DISCKEY" /> struct.</summary>
     public static unsafe class AM_DVDCOPY_DISCKEYTests
     {
         /// <summary>Validates that the <see cref="AM_DVDCOPY_DISCKEY" /> struct is blittable.</summary>

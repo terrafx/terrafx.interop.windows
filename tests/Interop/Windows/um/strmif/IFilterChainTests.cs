@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IFilterChain" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="IFilterChain" /> struct.</summary>
     public static unsafe class IFilterChainTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IFilterChain" /> struct is correct.</summary>

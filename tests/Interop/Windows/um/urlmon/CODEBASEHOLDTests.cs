@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CODEBASEHOLD" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CODEBASEHOLD" /> struct.</summary>
     public static unsafe class CODEBASEHOLDTests
     {
         /// <summary>Validates that the <see cref="CODEBASEHOLD" /> struct is blittable.</summary>

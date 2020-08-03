@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IMFLocalMFTRegistration" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="IMFLocalMFTRegistration" /> struct.</summary>
     public static unsafe class IMFLocalMFTRegistrationTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFLocalMFTRegistration" /> struct is correct.</summary>

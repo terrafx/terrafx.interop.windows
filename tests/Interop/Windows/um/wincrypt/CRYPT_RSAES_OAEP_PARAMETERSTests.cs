@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CRYPT_RSAES_OAEP_PARAMETERS" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CRYPT_RSAES_OAEP_PARAMETERS" /> struct.</summary>
     public static unsafe class CRYPT_RSAES_OAEP_PARAMETERSTests
     {
         /// <summary>Validates that the <see cref="CRYPT_RSAES_OAEP_PARAMETERS" /> struct is blittable.</summary>

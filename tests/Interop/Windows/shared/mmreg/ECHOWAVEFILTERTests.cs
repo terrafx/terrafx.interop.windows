@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="ECHOWAVEFILTER" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="ECHOWAVEFILTER" /> struct.</summary>
     public static unsafe class ECHOWAVEFILTERTests
     {
         /// <summary>Validates that the <see cref="ECHOWAVEFILTER" /> struct is blittable.</summary>

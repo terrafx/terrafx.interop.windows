@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="tag_s_RIFFWAVE_inst" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="tag_s_RIFFWAVE_inst" /> struct.</summary>
     public static unsafe class tag_s_RIFFWAVE_instTests
     {
         /// <summary>Validates that the <see cref="tag_s_RIFFWAVE_inst" /> struct is blittable.</summary>

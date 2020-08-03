@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="TP_POOL_STACK_INFORMATION" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="TP_POOL_STACK_INFORMATION" /> struct.</summary>
     public static unsafe class TP_POOL_STACK_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="TP_POOL_STACK_INFORMATION" /> struct is blittable.</summary>

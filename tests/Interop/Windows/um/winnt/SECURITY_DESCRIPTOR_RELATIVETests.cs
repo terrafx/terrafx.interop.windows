@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SECURITY_DESCRIPTOR_RELATIVE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="SECURITY_DESCRIPTOR_RELATIVE" /> struct.</summary>
     public static unsafe class SECURITY_DESCRIPTOR_RELATIVETests
     {
         /// <summary>Validates that the <see cref="SECURITY_DESCRIPTOR_RELATIVE" /> struct is blittable.</summary>

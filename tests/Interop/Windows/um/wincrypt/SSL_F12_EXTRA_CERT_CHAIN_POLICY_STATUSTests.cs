@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS" /> struct.</summary>
     public static unsafe class SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUSTests
     {
         /// <summary>Validates that the <see cref="SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS" /> struct is blittable.</summary>

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SOUNDSENTRYW" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="SOUNDSENTRYW" /> struct.</summary>
     public static unsafe class SOUNDSENTRYWTests
     {
         /// <summary>Validates that the <see cref="SOUNDSENTRYW" /> struct is blittable.</summary>

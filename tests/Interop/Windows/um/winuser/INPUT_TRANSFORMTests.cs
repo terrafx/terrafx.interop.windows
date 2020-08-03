@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="INPUT_TRANSFORM" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="INPUT_TRANSFORM" /> struct.</summary>
     public static unsafe class INPUT_TRANSFORMTests
     {
         /// <summary>Validates that the <see cref="INPUT_TRANSFORM" /> struct is blittable.</summary>

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="RTL_CONDITION_VARIABLE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="RTL_CONDITION_VARIABLE" /> struct.</summary>
     public static unsafe class RTL_CONDITION_VARIABLETests
     {
         /// <summary>Validates that the <see cref="RTL_CONDITION_VARIABLE" /> struct is blittable.</summary>

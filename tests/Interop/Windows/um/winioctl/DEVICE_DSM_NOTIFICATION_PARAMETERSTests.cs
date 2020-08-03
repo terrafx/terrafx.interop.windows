@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DEVICE_DSM_NOTIFICATION_PARAMETERS" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="DEVICE_DSM_NOTIFICATION_PARAMETERS" /> struct.</summary>
     public static unsafe class DEVICE_DSM_NOTIFICATION_PARAMETERSTests
     {
         /// <summary>Validates that the <see cref="DEVICE_DSM_NOTIFICATION_PARAMETERS" /> struct is blittable.</summary>

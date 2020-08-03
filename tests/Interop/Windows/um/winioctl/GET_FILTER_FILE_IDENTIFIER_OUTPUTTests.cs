@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="GET_FILTER_FILE_IDENTIFIER_OUTPUT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="GET_FILTER_FILE_IDENTIFIER_OUTPUT" /> struct.</summary>
     public static unsafe class GET_FILTER_FILE_IDENTIFIER_OUTPUTTests
     {
         /// <summary>Validates that the <see cref="GET_FILTER_FILE_IDENTIFIER_OUTPUT" /> struct is blittable.</summary>

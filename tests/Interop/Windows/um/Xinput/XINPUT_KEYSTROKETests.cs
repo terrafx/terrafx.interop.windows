@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="XINPUT_KEYSTROKE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="XINPUT_KEYSTROKE" /> struct.</summary>
     public static unsafe class XINPUT_KEYSTROKETests
     {
         /// <summary>Validates that the <see cref="XINPUT_KEYSTROKE" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DISK_CONTROLLER_NUMBER" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="DISK_CONTROLLER_NUMBER" /> struct.</summary>
     public static unsafe class DISK_CONTROLLER_NUMBERTests
     {
         /// <summary>Validates that the <see cref="DISK_CONTROLLER_NUMBER" /> struct is blittable.</summary>

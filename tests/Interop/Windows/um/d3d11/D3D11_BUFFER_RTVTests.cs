@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D11_BUFFER_RTV" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D11_BUFFER_RTV" /> struct.</summary>
     public static unsafe class D3D11_BUFFER_RTVTests
     {
         /// <summary>Validates that the <see cref="D3D11_BUFFER_RTV" /> struct is blittable.</summary>

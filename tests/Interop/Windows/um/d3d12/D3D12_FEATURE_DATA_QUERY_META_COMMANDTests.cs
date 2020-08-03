@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D12_FEATURE_DATA_QUERY_META_COMMAND" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D12_FEATURE_DATA_QUERY_META_COMMAND" /> struct.</summary>
     public static unsafe class D3D12_FEATURE_DATA_QUERY_META_COMMANDTests
     {
         /// <summary>Validates that the <see cref="D3D12_FEATURE_DATA_QUERY_META_COMMAND" /> struct is blittable.</summary>

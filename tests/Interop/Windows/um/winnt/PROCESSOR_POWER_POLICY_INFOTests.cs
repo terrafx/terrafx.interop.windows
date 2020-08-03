@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="PROCESSOR_POWER_POLICY_INFO" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="PROCESSOR_POWER_POLICY_INFO" /> struct.</summary>
     public static unsafe class PROCESSOR_POWER_POLICY_INFOTests
     {
         /// <summary>Validates that the <see cref="PROCESSOR_POWER_POLICY_INFO" /> struct is blittable.</summary>

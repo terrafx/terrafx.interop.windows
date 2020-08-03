@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="GET_DEVICE_INTERNAL_STATUS_DATA_REQUEST" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="GET_DEVICE_INTERNAL_STATUS_DATA_REQUEST" /> struct.</summary>
     public static unsafe class GET_DEVICE_INTERNAL_STATUS_DATA_REQUESTTests
     {
         /// <summary>Validates that the <see cref="GET_DEVICE_INTERNAL_STATUS_DATA_REQUEST" /> struct is blittable.</summary>

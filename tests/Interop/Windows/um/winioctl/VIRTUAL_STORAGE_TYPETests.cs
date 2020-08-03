@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="VIRTUAL_STORAGE_TYPE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="VIRTUAL_STORAGE_TYPE" /> struct.</summary>
     public static unsafe class VIRTUAL_STORAGE_TYPETests
     {
         /// <summary>Validates that the <see cref="VIRTUAL_STORAGE_TYPE" /> struct is blittable.</summary>

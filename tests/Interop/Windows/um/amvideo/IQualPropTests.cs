@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IQualProp" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="IQualProp" /> struct.</summary>
     public static unsafe class IQualPropTests
     {
         /// <summary>Validates that the <see cref="IQualProp" /> struct is blittable.</summary>

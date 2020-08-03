@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DWRITE_UNDERLINE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="DWRITE_UNDERLINE" /> struct.</summary>
     public static unsafe class DWRITE_UNDERLINETests
     {
         /// <summary>Validates that the <see cref="DWRITE_UNDERLINE" /> struct is blittable.</summary>

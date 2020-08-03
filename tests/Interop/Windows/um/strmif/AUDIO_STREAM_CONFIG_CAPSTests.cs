@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="AUDIO_STREAM_CONFIG_CAPS" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="AUDIO_STREAM_CONFIG_CAPS" /> struct.</summary>
     public static unsafe class AUDIO_STREAM_CONFIG_CAPSTests
     {
         /// <summary>Validates that the <see cref="AUDIO_STREAM_CONFIG_CAPS" /> struct is blittable.</summary>

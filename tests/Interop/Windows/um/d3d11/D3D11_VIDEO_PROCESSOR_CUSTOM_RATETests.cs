@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D11_VIDEO_PROCESSOR_CUSTOM_RATE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D11_VIDEO_PROCESSOR_CUSTOM_RATE" /> struct.</summary>
     public static unsafe class D3D11_VIDEO_PROCESSOR_CUSTOM_RATETests
     {
         /// <summary>Validates that the <see cref="D3D11_VIDEO_PROCESSOR_CUSTOM_RATE" /> struct is blittable.</summary>

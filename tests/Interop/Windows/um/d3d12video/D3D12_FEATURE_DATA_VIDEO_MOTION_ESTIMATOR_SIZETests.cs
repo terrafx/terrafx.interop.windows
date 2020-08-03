@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D12_FEATURE_DATA_VIDEO_MOTION_ESTIMATOR_SIZE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D12_FEATURE_DATA_VIDEO_MOTION_ESTIMATOR_SIZE" /> struct.</summary>
     public static unsafe class D3D12_FEATURE_DATA_VIDEO_MOTION_ESTIMATOR_SIZETests
     {
         /// <summary>Validates that the <see cref="D3D12_FEATURE_DATA_VIDEO_MOTION_ESTIMATOR_SIZE" /> struct is blittable.</summary>

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CERT_GENERAL_SUBTREE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CERT_GENERAL_SUBTREE" /> struct.</summary>
     public static unsafe class CERT_GENERAL_SUBTREETests
     {
         /// <summary>Validates that the <see cref="CERT_GENERAL_SUBTREE" /> struct is blittable.</summary>

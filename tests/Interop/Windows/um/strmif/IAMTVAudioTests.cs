@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IAMTVAudio" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="IAMTVAudio" /> struct.</summary>
     public static unsafe class IAMTVAudioTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAMTVAudio" /> struct is correct.</summary>

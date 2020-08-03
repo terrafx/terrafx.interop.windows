@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DWRITE_HIT_TEST_METRICS" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="DWRITE_HIT_TEST_METRICS" /> struct.</summary>
     public static unsafe class DWRITE_HIT_TEST_METRICSTests
     {
         /// <summary>Validates that the <see cref="DWRITE_HIT_TEST_METRICS" /> struct is blittable.</summary>

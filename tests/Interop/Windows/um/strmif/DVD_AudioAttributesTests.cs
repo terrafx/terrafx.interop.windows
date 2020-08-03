@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DVD_AudioAttributes" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="DVD_AudioAttributes" /> struct.</summary>
     public static unsafe class DVD_AudioAttributesTests
     {
         /// <summary>Validates that the <see cref="DVD_AudioAttributes" /> struct is blittable.</summary>

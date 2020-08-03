@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="OSVERSIONINFOEXW" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="OSVERSIONINFOEXW" /> struct.</summary>
     public static unsafe class OSVERSIONINFOEXWTests
     {
         /// <summary>Validates that the <see cref="OSVERSIONINFOEXW" /> struct is blittable.</summary>

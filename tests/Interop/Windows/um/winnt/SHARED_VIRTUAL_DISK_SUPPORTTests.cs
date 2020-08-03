@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SHARED_VIRTUAL_DISK_SUPPORT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="SHARED_VIRTUAL_DISK_SUPPORT" /> struct.</summary>
     public static unsafe class SHARED_VIRTUAL_DISK_SUPPORTTests
     {
         /// <summary>Validates that the <see cref="SHARED_VIRTUAL_DISK_SUPPORT" /> struct is blittable.</summary>

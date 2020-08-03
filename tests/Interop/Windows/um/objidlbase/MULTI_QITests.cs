@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MULTI_QI" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="MULTI_QI" /> struct.</summary>
     public static unsafe class MULTI_QITests
     {
         /// <summary>Validates that the <see cref="MULTI_QI" /> struct is blittable.</summary>

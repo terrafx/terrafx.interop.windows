@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="STREAMS_QUERY_ID_OUTPUT_BUFFER" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="STREAMS_QUERY_ID_OUTPUT_BUFFER" /> struct.</summary>
     public static unsafe class STREAMS_QUERY_ID_OUTPUT_BUFFERTests
     {
         /// <summary>Validates that the <see cref="STREAMS_QUERY_ID_OUTPUT_BUFFER" /> struct is blittable.</summary>

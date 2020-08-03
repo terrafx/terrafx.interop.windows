@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MFRR_COMPONENT_HASH_INFO" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="MFRR_COMPONENT_HASH_INFO" /> struct.</summary>
     public static unsafe class MFRR_COMPONENT_HASH_INFOTests
     {
         /// <summary>Validates that the <see cref="MFRR_COMPONENT_HASH_INFO" /> struct is blittable.</summary>

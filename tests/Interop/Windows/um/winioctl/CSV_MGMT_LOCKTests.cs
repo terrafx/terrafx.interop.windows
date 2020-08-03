@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CSV_MGMT_LOCK" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CSV_MGMT_LOCK" /> struct.</summary>
     public static unsafe class CSV_MGMT_LOCKTests
     {
         /// <summary>Validates that the <see cref="CSV_MGMT_LOCK" /> struct is blittable.</summary>

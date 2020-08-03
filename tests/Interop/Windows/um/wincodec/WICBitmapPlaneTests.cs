@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="WICBitmapPlane" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="WICBitmapPlane" /> struct.</summary>
     public static unsafe class WICBitmapPlaneTests
     {
         /// <summary>Validates that the <see cref="WICBitmapPlane" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="JOBOBJECT_BASIC_ACCOUNTING_INFORMATION" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="JOBOBJECT_BASIC_ACCOUNTING_INFORMATION" /> struct.</summary>
     public static unsafe class JOBOBJECT_BASIC_ACCOUNTING_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="JOBOBJECT_BASIC_ACCOUNTING_INFORMATION" /> struct is blittable.</summary>

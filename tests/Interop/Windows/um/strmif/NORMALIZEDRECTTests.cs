@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="NORMALIZEDRECT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="NORMALIZEDRECT" /> struct.</summary>
     public static unsafe class NORMALIZEDRECTTests
     {
         /// <summary>Validates that the <see cref="NORMALIZEDRECT" /> struct is blittable.</summary>

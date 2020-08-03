@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="EXCEPTION_RECORD64" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="EXCEPTION_RECORD64" /> struct.</summary>
     public static unsafe class EXCEPTION_RECORD64Tests
     {
         /// <summary>Validates that the <see cref="EXCEPTION_RECORD64" /> struct is blittable.</summary>

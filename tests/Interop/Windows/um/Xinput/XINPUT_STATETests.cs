@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="XINPUT_STATE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="XINPUT_STATE" /> struct.</summary>
     public static unsafe class XINPUT_STATETests
     {
         /// <summary>Validates that the <see cref="XINPUT_STATE" /> struct is blittable.</summary>

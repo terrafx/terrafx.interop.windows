@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SET_PARTITION_INFORMATION_EX" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="SET_PARTITION_INFORMATION_EX" /> struct.</summary>
     public static unsafe class SET_PARTITION_INFORMATION_EXTests
     {
         /// <summary>Validates that the <see cref="SET_PARTITION_INFORMATION_EX" /> struct is blittable.</summary>

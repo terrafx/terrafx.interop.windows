@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="JOBOBJECT_BASIC_PROCESS_ID_LIST" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="JOBOBJECT_BASIC_PROCESS_ID_LIST" /> struct.</summary>
     public static unsafe class JOBOBJECT_BASIC_PROCESS_ID_LISTTests
     {
         /// <summary>Validates that the <see cref="JOBOBJECT_BASIC_PROCESS_ID_LIST" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SCHANNEL_ALG" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="SCHANNEL_ALG" /> struct.</summary>
     public static unsafe class SCHANNEL_ALGTests
     {
         /// <summary>Validates that the <see cref="SCHANNEL_ALG" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="AMCOPPStatusOutput" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="AMCOPPStatusOutput" /> struct.</summary>
     public static unsafe class AMCOPPStatusOutputTests
     {
         /// <summary>Validates that the <see cref="AMCOPPStatusOutput" /> struct is blittable.</summary>

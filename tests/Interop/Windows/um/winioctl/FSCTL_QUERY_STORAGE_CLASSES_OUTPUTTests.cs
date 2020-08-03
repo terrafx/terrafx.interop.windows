@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="FSCTL_QUERY_STORAGE_CLASSES_OUTPUT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="FSCTL_QUERY_STORAGE_CLASSES_OUTPUT" /> struct.</summary>
     public static unsafe class FSCTL_QUERY_STORAGE_CLASSES_OUTPUTTests
     {
         /// <summary>Validates that the <see cref="FSCTL_QUERY_STORAGE_CLASSES_OUTPUT" /> struct is blittable.</summary>

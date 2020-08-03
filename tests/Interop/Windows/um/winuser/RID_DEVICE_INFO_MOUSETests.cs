@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="RID_DEVICE_INFO_MOUSE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="RID_DEVICE_INFO_MOUSE" /> struct.</summary>
     public static unsafe class RID_DEVICE_INFO_MOUSETests
     {
         /// <summary>Validates that the <see cref="RID_DEVICE_INFO_MOUSE" /> struct is blittable.</summary>

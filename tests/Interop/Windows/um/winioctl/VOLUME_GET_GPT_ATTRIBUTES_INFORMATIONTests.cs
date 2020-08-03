@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="VOLUME_GET_GPT_ATTRIBUTES_INFORMATION" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="VOLUME_GET_GPT_ATTRIBUTES_INFORMATION" /> struct.</summary>
     public static unsafe class VOLUME_GET_GPT_ATTRIBUTES_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="VOLUME_GET_GPT_ATTRIBUTES_INFORMATION" /> struct is blittable.</summary>

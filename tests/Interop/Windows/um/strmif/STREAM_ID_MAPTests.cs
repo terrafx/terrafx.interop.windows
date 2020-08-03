@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="STREAM_ID_MAP" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="STREAM_ID_MAP" /> struct.</summary>
     public static unsafe class STREAM_ID_MAPTests
     {
         /// <summary>Validates that the <see cref="STREAM_ID_MAP" /> struct is blittable.</summary>

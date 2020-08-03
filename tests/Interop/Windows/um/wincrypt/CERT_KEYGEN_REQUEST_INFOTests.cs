@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CERT_KEYGEN_REQUEST_INFO" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CERT_KEYGEN_REQUEST_INFO" /> struct.</summary>
     public static unsafe class CERT_KEYGEN_REQUEST_INFOTests
     {
         /// <summary>Validates that the <see cref="CERT_KEYGEN_REQUEST_INFO" /> struct is blittable.</summary>

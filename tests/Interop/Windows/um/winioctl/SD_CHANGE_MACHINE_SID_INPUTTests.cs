@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SD_CHANGE_MACHINE_SID_INPUT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="SD_CHANGE_MACHINE_SID_INPUT" /> struct.</summary>
     public static unsafe class SD_CHANGE_MACHINE_SID_INPUTTests
     {
         /// <summary>Validates that the <see cref="SD_CHANGE_MACHINE_SID_INPUT" /> struct is blittable.</summary>

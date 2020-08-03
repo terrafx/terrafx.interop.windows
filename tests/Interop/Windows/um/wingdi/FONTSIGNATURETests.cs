@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="FONTSIGNATURE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="FONTSIGNATURE" /> struct.</summary>
     public static unsafe class FONTSIGNATURETests
     {
         /// <summary>Validates that the <see cref="FONTSIGNATURE" /> struct is blittable.</summary>

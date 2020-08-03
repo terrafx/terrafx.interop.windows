@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DDDEVICEIDENTIFIER" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="DDDEVICEIDENTIFIER" /> struct.</summary>
     public static unsafe class DDDEVICEIDENTIFIERTests
     {
         /// <summary>Validates that the <see cref="DDDEVICEIDENTIFIER" /> struct is blittable.</summary>

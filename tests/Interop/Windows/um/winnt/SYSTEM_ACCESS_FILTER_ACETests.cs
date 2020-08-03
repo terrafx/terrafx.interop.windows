@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SYSTEM_ACCESS_FILTER_ACE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="SYSTEM_ACCESS_FILTER_ACE" /> struct.</summary>
     public static unsafe class SYSTEM_ACCESS_FILTER_ACETests
     {
         /// <summary>Validates that the <see cref="SYSTEM_ACCESS_FILTER_ACE" /> struct is blittable.</summary>

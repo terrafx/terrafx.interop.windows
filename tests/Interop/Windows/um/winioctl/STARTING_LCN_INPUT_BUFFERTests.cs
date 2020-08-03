@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="STARTING_LCN_INPUT_BUFFER" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="STARTING_LCN_INPUT_BUFFER" /> struct.</summary>
     public static unsafe class STARTING_LCN_INPUT_BUFFERTests
     {
         /// <summary>Validates that the <see cref="STARTING_LCN_INPUT_BUFFER" /> struct is blittable.</summary>

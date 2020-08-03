@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="TXFS_READ_BACKUP_INFORMATION_OUT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="TXFS_READ_BACKUP_INFORMATION_OUT" /> struct.</summary>
     public static unsafe class TXFS_READ_BACKUP_INFORMATION_OUTTests
     {
         /// <summary>Validates that the <see cref="TXFS_READ_BACKUP_INFORMATION_OUT" /> struct is blittable.</summary>

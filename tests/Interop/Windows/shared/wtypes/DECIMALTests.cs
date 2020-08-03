@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DECIMAL" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="DECIMAL" /> struct.</summary>
     public static unsafe class DECIMALTests
     {
         /// <summary>Validates that the <see cref="DECIMAL" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D12_PLACED_SUBRESOURCE_FOOTPRINT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D12_PLACED_SUBRESOURCE_FOOTPRINT" /> struct.</summary>
     public static unsafe class D3D12_PLACED_SUBRESOURCE_FOOTPRINTTests
     {
         /// <summary>Validates that the <see cref="D3D12_PLACED_SUBRESOURCE_FOOTPRINT" /> struct is blittable.</summary>

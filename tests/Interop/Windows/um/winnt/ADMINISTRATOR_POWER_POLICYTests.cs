@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="ADMINISTRATOR_POWER_POLICY" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="ADMINISTRATOR_POWER_POLICY" /> struct.</summary>
     public static unsafe class ADMINISTRATOR_POWER_POLICYTests
     {
         /// <summary>Validates that the <see cref="ADMINISTRATOR_POWER_POLICY" /> struct is blittable.</summary>

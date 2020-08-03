@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="REFS_VOLUME_DATA_BUFFER" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="REFS_VOLUME_DATA_BUFFER" /> struct.</summary>
     public static unsafe class REFS_VOLUME_DATA_BUFFERTests
     {
         /// <summary>Validates that the <see cref="REFS_VOLUME_DATA_BUFFER" /> struct is blittable.</summary>

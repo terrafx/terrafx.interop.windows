@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DML_FEATURE_QUERY_FEATURE_LEVELS" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="DML_FEATURE_QUERY_FEATURE_LEVELS" /> struct.</summary>
     public static unsafe class DML_FEATURE_QUERY_FEATURE_LEVELSTests
     {
         /// <summary>Validates that the <see cref="DML_FEATURE_QUERY_FEATURE_LEVELS" /> struct is blittable.</summary>

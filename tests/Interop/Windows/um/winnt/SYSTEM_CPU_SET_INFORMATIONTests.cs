@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SYSTEM_CPU_SET_INFORMATION" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="SYSTEM_CPU_SET_INFORMATION" /> struct.</summary>
     public static unsafe class SYSTEM_CPU_SET_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="SYSTEM_CPU_SET_INFORMATION" /> struct is blittable.</summary>

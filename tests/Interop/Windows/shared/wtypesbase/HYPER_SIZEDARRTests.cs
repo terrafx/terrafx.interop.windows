@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="HYPER_SIZEDARR" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="HYPER_SIZEDARR" /> struct.</summary>
     public static unsafe class HYPER_SIZEDARRTests
     {
         /// <summary>Validates that the <see cref="HYPER_SIZEDARR" /> struct is blittable.</summary>

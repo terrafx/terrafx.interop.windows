@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="PHYSICAL_ELEMENT_STATUS_DESCRIPTOR" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="PHYSICAL_ELEMENT_STATUS_DESCRIPTOR" /> struct.</summary>
     public static unsafe class PHYSICAL_ELEMENT_STATUS_DESCRIPTORTests
     {
         /// <summary>Validates that the <see cref="PHYSICAL_ELEMENT_STATUS_DESCRIPTOR" /> struct is blittable.</summary>

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CWPSTRUCT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CWPSTRUCT" /> struct.</summary>
     public static unsafe class CWPSTRUCTTests
     {
         /// <summary>Validates that the <see cref="CWPSTRUCT" /> struct is blittable.</summary>

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="NMHDR" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="NMHDR" /> struct.</summary>
     public static unsafe class NMHDRTests
     {
         /// <summary>Validates that the <see cref="NMHDR" /> struct is blittable.</summary>

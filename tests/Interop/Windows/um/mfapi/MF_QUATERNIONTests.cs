@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MF_QUATERNION" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="MF_QUATERNION" /> struct.</summary>
     public static unsafe class MF_QUATERNIONTests
     {
         /// <summary>Validates that the <see cref="MF_QUATERNION" /> struct is blittable.</summary>

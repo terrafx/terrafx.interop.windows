@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="BIND_OPTS" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="BIND_OPTS" /> struct.</summary>
     public static unsafe class BIND_OPTSTests
     {
         /// <summary>Validates that the <see cref="BIND_OPTS" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D12_FEATURE_DATA_ARCHITECTURE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D12_FEATURE_DATA_ARCHITECTURE" /> struct.</summary>
     public static unsafe class D3D12_FEATURE_DATA_ARCHITECTURETests
     {
         /// <summary>Validates that the <see cref="D3D12_FEATURE_DATA_ARCHITECTURE" /> struct is blittable.</summary>

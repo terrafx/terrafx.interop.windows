@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="RATE_QUOTA_LIMIT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="RATE_QUOTA_LIMIT" /> struct.</summary>
     public static unsafe class RATE_QUOTA_LIMITTests
     {
         /// <summary>Validates that the <see cref="RATE_QUOTA_LIMIT" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="FILE_PREFETCH_EX" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="FILE_PREFETCH_EX" /> struct.</summary>
     public static unsafe class FILE_PREFETCH_EXTests
     {
         /// <summary>Validates that the <see cref="FILE_PREFETCH_EX" /> struct is blittable.</summary>

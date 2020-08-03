@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SPC_PE_IMAGE_DATA" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="SPC_PE_IMAGE_DATA" /> struct.</summary>
     public static unsafe class SPC_PE_IMAGE_DATATests
     {
         /// <summary>Validates that the <see cref="SPC_PE_IMAGE_DATA" /> struct is blittable.</summary>

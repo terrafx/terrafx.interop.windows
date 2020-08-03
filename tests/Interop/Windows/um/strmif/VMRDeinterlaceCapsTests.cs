@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="VMRDeinterlaceCaps" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="VMRDeinterlaceCaps" /> struct.</summary>
     public static unsafe class VMRDeinterlaceCapsTests
     {
         /// <summary>Validates that the <see cref="VMRDeinterlaceCaps" /> struct is blittable.</summary>

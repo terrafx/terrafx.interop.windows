@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="PKCS12_PBES2_EXPORT_PARAMS" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="PKCS12_PBES2_EXPORT_PARAMS" /> struct.</summary>
     public static unsafe class PKCS12_PBES2_EXPORT_PARAMSTests
     {
         /// <summary>Validates that the <see cref="PKCS12_PBES2_EXPORT_PARAMS" /> struct is blittable.</summary>

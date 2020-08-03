@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SPBINARYGRAMMAR" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="SPBINARYGRAMMAR" /> struct.</summary>
     public static unsafe class SPBINARYGRAMMARTests
     {
         /// <summary>Validates that the <see cref="SPBINARYGRAMMAR" /> struct is blittable.</summary>

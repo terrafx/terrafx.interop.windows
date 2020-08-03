@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CRYPT_PROVIDER_SIGSTATE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CRYPT_PROVIDER_SIGSTATE" /> struct.</summary>
     public static unsafe class CRYPT_PROVIDER_SIGSTATETests
     {
         /// <summary>Validates that the <see cref="CRYPT_PROVIDER_SIGSTATE" /> struct is blittable.</summary>

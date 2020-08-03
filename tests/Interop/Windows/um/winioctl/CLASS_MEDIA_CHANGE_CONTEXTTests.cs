@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CLASS_MEDIA_CHANGE_CONTEXT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CLASS_MEDIA_CHANGE_CONTEXT" /> struct.</summary>
     public static unsafe class CLASS_MEDIA_CHANGE_CONTEXTTests
     {
         /// <summary>Validates that the <see cref="CLASS_MEDIA_CHANGE_CONTEXT" /> struct is blittable.</summary>

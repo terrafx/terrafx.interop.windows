@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="TXFS_CREATE_MINIVERSION_INFO" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="TXFS_CREATE_MINIVERSION_INFO" /> struct.</summary>
     public static unsafe class TXFS_CREATE_MINIVERSION_INFOTests
     {
         /// <summary>Validates that the <see cref="TXFS_CREATE_MINIVERSION_INFO" /> struct is blittable.</summary>

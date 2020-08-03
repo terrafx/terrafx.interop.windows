@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IInitializeWithFile" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="IInitializeWithFile" /> struct.</summary>
     public static unsafe class IInitializeWithFileTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IInitializeWithFile" /> struct is correct.</summary>

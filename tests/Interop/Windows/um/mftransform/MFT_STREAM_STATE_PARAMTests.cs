@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MFT_STREAM_STATE_PARAM" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="MFT_STREAM_STATE_PARAM" /> struct.</summary>
     public static unsafe class MFT_STREAM_STATE_PARAMTests
     {
         /// <summary>Validates that the <see cref="MFT_STREAM_STATE_PARAM" /> struct is blittable.</summary>

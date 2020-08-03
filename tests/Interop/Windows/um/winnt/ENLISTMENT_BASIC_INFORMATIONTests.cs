@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="ENLISTMENT_BASIC_INFORMATION" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="ENLISTMENT_BASIC_INFORMATION" /> struct.</summary>
     public static unsafe class ENLISTMENT_BASIC_INFORMATIONTests
     {
         /// <summary>Validates that the <see cref="ENLISTMENT_BASIC_INFORMATION" /> struct is blittable.</summary>

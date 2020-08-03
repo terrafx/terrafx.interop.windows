@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="STORAGE_PRIORITY_HINT_SUPPORT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="STORAGE_PRIORITY_HINT_SUPPORT" /> struct.</summary>
     public static unsafe class STORAGE_PRIORITY_HINT_SUPPORTTests
     {
         /// <summary>Validates that the <see cref="STORAGE_PRIORITY_HINT_SUPPORT" /> struct is blittable.</summary>

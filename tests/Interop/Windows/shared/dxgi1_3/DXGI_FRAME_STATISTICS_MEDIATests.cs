@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DXGI_FRAME_STATISTICS_MEDIA" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="DXGI_FRAME_STATISTICS_MEDIA" /> struct.</summary>
     public static unsafe class DXGI_FRAME_STATISTICS_MEDIATests
     {
         /// <summary>Validates that the <see cref="DXGI_FRAME_STATISTICS_MEDIA" /> struct is blittable.</summary>

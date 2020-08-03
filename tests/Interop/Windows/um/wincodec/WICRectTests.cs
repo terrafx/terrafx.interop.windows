@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="WICRect" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="WICRect" /> struct.</summary>
     public static unsafe class WICRectTests
     {
         /// <summary>Validates that the <see cref="WICRect" /> struct is blittable.</summary>

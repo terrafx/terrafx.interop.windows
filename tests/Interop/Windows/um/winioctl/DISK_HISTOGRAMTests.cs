@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DISK_HISTOGRAM" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="DISK_HISTOGRAM" /> struct.</summary>
     public static unsafe class DISK_HISTOGRAMTests
     {
         /// <summary>Validates that the <see cref="DISK_HISTOGRAM" /> struct is blittable.</summary>

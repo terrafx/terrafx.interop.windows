@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IAMAnalogVideoEncoder" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="IAMAnalogVideoEncoder" /> struct.</summary>
     public static unsafe class IAMAnalogVideoEncoderTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAMAnalogVideoEncoder" /> struct is correct.</summary>

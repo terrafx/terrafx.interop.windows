@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IMAGE_SEPARATE_DEBUG_HEADER" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="IMAGE_SEPARATE_DEBUG_HEADER" /> struct.</summary>
     public static unsafe class IMAGE_SEPARATE_DEBUG_HEADERTests
     {
         /// <summary>Validates that the <see cref="IMAGE_SEPARATE_DEBUG_HEADER" /> struct is blittable.</summary>

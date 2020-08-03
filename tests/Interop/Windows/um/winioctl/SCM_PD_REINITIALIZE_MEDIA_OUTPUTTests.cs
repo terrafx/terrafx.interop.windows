@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SCM_PD_REINITIALIZE_MEDIA_OUTPUT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="SCM_PD_REINITIALIZE_MEDIA_OUTPUT" /> struct.</summary>
     public static unsafe class SCM_PD_REINITIALIZE_MEDIA_OUTPUTTests
     {
         /// <summary>Validates that the <see cref="SCM_PD_REINITIALIZE_MEDIA_OUTPUT" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IMAGE_ENCLAVE_CONFIG32" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="IMAGE_ENCLAVE_CONFIG32" /> struct.</summary>
     public static unsafe class IMAGE_ENCLAVE_CONFIG32Tests
     {
         /// <summary>Validates that the <see cref="IMAGE_ENCLAVE_CONFIG32" /> struct is blittable.</summary>

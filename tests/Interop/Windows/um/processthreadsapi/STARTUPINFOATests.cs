@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="STARTUPINFOA" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="STARTUPINFOA" /> struct.</summary>
     public static unsafe class STARTUPINFOATests
     {
         /// <summary>Validates that the <see cref="STARTUPINFOA" /> struct is blittable.</summary>

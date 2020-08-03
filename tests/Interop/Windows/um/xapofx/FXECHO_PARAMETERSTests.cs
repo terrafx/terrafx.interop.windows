@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="FXECHO_PARAMETERS" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="FXECHO_PARAMETERS" /> struct.</summary>
     public static unsafe class FXECHO_PARAMETERSTests
     {
         /// <summary>Validates that the <see cref="FXECHO_PARAMETERS" /> struct is blittable.</summary>

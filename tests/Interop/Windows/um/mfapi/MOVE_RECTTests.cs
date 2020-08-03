@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="MOVE_RECT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="MOVE_RECT" /> struct.</summary>
     public static unsafe class MOVE_RECTTests
     {
         /// <summary>Validates that the <see cref="MOVE_RECT" /> struct is blittable.</summary>

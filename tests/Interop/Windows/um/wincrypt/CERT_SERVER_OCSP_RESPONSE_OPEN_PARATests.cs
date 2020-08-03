@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CERT_SERVER_OCSP_RESPONSE_OPEN_PARA" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CERT_SERVER_OCSP_RESPONSE_OPEN_PARA" /> struct.</summary>
     public static unsafe class CERT_SERVER_OCSP_RESPONSE_OPEN_PARATests
     {
         /// <summary>Validates that the <see cref="CERT_SERVER_OCSP_RESPONSE_OPEN_PARA" /> struct is blittable.</summary>

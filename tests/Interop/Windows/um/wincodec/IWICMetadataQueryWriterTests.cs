@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IWICMetadataQueryWriter" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="IWICMetadataQueryWriter" /> struct.</summary>
     public static unsafe class IWICMetadataQueryWriterTests
     {
         /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWICMetadataQueryWriter" /> struct is correct.</summary>

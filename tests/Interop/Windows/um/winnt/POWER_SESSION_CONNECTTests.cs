@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="POWER_SESSION_CONNECT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="POWER_SESSION_CONNECT" /> struct.</summary>
     public static unsafe class POWER_SESSION_CONNECTTests
     {
         /// <summary>Validates that the <see cref="POWER_SESSION_CONNECT" /> struct is blittable.</summary>

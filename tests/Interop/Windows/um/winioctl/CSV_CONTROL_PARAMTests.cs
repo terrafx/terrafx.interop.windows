@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CSV_CONTROL_PARAM" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CSV_CONTROL_PARAM" /> struct.</summary>
     public static unsafe class CSV_CONTROL_PARAMTests
     {
         /// <summary>Validates that the <see cref="CSV_CONTROL_PARAM" /> struct is blittable.</summary>

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D3D11_MAPPED_SUBRESOURCE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="D3D11_MAPPED_SUBRESOURCE" /> struct.</summary>
     public static unsafe class D3D11_MAPPED_SUBRESOURCETests
     {
         /// <summary>Validates that the <see cref="D3D11_MAPPED_SUBRESOURCE" /> struct is blittable.</summary>

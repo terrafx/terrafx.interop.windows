@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="IDEREGS" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="IDEREGS" /> struct.</summary>
     public static unsafe class IDEREGSTests
     {
         /// <summary>Validates that the <see cref="IDEREGS" /> struct is blittable.</summary>

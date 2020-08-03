@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="HEAP_SUMMARY" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="HEAP_SUMMARY" /> struct.</summary>
     public static unsafe class HEAP_SUMMARYTests
     {
         /// <summary>Validates that the <see cref="HEAP_SUMMARY" /> struct is blittable.</summary>

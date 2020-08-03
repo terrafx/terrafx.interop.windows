@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CADATE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CADATE" /> struct.</summary>
     public static unsafe class CADATETests
     {
         /// <summary>Validates that the <see cref="CADATE" /> struct is blittable.</summary>

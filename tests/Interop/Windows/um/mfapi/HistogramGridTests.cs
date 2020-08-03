@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="HistogramGrid" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="HistogramGrid" /> struct.</summary>
     public static unsafe class HistogramGridTests
     {
         /// <summary>Validates that the <see cref="HistogramGrid" /> struct is blittable.</summary>

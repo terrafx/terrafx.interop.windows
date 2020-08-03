@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CodecAPIEventData" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CodecAPIEventData" /> struct.</summary>
     public static unsafe class CodecAPIEventDataTests
     {
         /// <summary>Validates that the <see cref="CodecAPIEventData" /> struct is blittable.</summary>

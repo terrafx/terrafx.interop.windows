@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DUPLICATE_EXTENTS_DATA_EX" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="DUPLICATE_EXTENTS_DATA_EX" /> struct.</summary>
     public static unsafe class DUPLICATE_EXTENTS_DATA_EXTests
     {
         /// <summary>Validates that the <see cref="DUPLICATE_EXTENTS_DATA_EX" /> struct is blittable.</summary>

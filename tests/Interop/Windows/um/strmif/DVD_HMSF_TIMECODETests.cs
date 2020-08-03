@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="DVD_HMSF_TIMECODE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="DVD_HMSF_TIMECODE" /> struct.</summary>
     public static unsafe class DVD_HMSF_TIMECODETests
     {
         /// <summary>Validates that the <see cref="DVD_HMSF_TIMECODE" /> struct is blittable.</summary>

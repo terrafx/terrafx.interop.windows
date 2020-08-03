@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="WOW64_DESCRIPTOR_TABLE_ENTRY" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="WOW64_DESCRIPTOR_TABLE_ENTRY" /> struct.</summary>
     public static unsafe class WOW64_DESCRIPTOR_TABLE_ENTRYTests
     {
         /// <summary>Validates that the <see cref="WOW64_DESCRIPTOR_TABLE_ENTRY" /> struct is blittable.</summary>

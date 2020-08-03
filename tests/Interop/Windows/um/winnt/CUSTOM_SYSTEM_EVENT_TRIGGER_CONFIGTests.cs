@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="CUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="CUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG" /> struct.</summary>
     public static unsafe class CUSTOM_SYSTEM_EVENT_TRIGGER_CONFIGTests
     {
         /// <summary>Validates that the <see cref="CUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG" /> struct is blittable.</summary>

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="ACCESSTIMEOUT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="ACCESSTIMEOUT" /> struct.</summary>
     public static unsafe class ACCESSTIMEOUTTests
     {
         /// <summary>Validates that the <see cref="ACCESSTIMEOUT" /> struct is blittable.</summary>

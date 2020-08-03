@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="wireVARIANT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="wireVARIANT" /> struct.</summary>
     public static unsafe class wireVARIANTTests
     {
         /// <summary>Validates that the <see cref="wireVARIANT" /> struct is blittable.</summary>

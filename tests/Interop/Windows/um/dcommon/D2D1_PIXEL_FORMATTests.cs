@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="D2D1_PIXEL_FORMAT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="D2D1_PIXEL_FORMAT" /> struct.</summary>
     public static unsafe class D2D1_PIXEL_FORMATTests
     {
         /// <summary>Validates that the <see cref="D2D1_PIXEL_FORMAT" /> struct is blittable.</summary>

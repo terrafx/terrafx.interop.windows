@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="REPAIR_COPIES_INPUT" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="REPAIR_COPIES_INPUT" /> struct.</summary>
     public static unsafe class REPAIR_COPIES_INPUTTests
     {
         /// <summary>Validates that the <see cref="REPAIR_COPIES_INPUT" /> struct is blittable.</summary>

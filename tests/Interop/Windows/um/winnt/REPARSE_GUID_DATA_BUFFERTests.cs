@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="REPARSE_GUID_DATA_BUFFER" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="REPARSE_GUID_DATA_BUFFER" /> struct.</summary>
     public static unsafe class REPARSE_GUID_DATA_BUFFERTests
     {
         /// <summary>Validates that the <see cref="REPARSE_GUID_DATA_BUFFER" /> struct is blittable.</summary>

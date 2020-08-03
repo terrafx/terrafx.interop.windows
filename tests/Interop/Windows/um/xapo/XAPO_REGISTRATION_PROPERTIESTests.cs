@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="XAPO_REGISTRATION_PROPERTIES" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="XAPO_REGISTRATION_PROPERTIES" /> struct.</summary>
     public static unsafe class XAPO_REGISTRATION_PROPERTIESTests
     {
         /// <summary>Validates that the <see cref="XAPO_REGISTRATION_PROPERTIES" /> struct is blittable.</summary>

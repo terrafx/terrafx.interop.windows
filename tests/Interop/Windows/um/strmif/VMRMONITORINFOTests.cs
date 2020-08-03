@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="VMRMONITORINFO" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="VMRMONITORINFO" /> struct.</summary>
     public static unsafe class VMRMONITORINFOTests
     {
         /// <summary>Validates that the <see cref="VMRMONITORINFO" /> struct is blittable.</summary>

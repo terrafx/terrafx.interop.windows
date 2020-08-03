@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="SCM_LOGICAL_DEVICE_INSTANCE" />struct.</summary>
+    /// <summary>Provides validation of the <see cref="SCM_LOGICAL_DEVICE_INSTANCE" /> struct.</summary>
     public static unsafe class SCM_LOGICAL_DEVICE_INSTANCETests
     {
         /// <summary>Validates that the <see cref="SCM_LOGICAL_DEVICE_INSTANCE" /> struct is blittable.</summary>
