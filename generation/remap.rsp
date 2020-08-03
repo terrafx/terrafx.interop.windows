@@ -1,4 +1,9 @@
 --remap
+ABI::Windows::UI::Composition::ICompositionSurface**=void**
+ABI::Windows::UI::Composition::ICompositionGraphicsDevice**=void**
+ABI::Windows::UI::Composition::ICompositionCapabilities**=void**
+ABI::Windows::UI::Composition::Desktop::IDesktopWindowTarget**=void**
+ABI::Windows::UI::Composition::ICompositor*=void*
 AM_SEEKING_SeekingFlags=AM_SEEKING_SEEKING_FLAGS
 AM_SEEKING_SeekingCapabilities=AM_SEEKING_SEEKING_CAPABILITIES
 adpcmcoef_tag=ADPCMCOEFSET
