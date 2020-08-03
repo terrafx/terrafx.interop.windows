@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_HIGHLIGHTSANDSHADOWS_PROP : uint
     {
         D2D1_HIGHLIGHTSANDSHADOWS_PROP_HIGHLIGHTS = 0,

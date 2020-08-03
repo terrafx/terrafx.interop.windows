@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_FIGURE_BEGIN : uint
     {
         D2D1_FIGURE_BEGIN_FILLED = 0,

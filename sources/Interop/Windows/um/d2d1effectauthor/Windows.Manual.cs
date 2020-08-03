@@ -9,8 +9,6 @@ namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public const uint D2D1_APPEND_ALIGNED_ELEMENT = 0xFFFFFFFF;
-
         public static readonly Guid IID_ID2D1VertexBuffer = new Guid(0x9B8B1336, 0x00A5, 0x4668, 0x92, 0xB7, 0xCE, 0xD5, 0xD8, 0xBF, 0x9B, 0x7B);
 
         public static readonly Guid IID_ID2D1ResourceTexture = new Guid(0x688D15C3, 0x02B0, 0x438D, 0xB1, 0x3A, 0xD1, 0xB4, 0x4C, 0x32, 0xC3, 0x9A);

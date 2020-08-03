@@ -10,7 +10,7 @@ namespace TerraFX.Interop
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public partial struct IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION
     {
-        internal uint _bitfield;
+        public uint _bitfield;
 
         [NativeTypeName("DWORD : 12")]
         public uint PageRelativeOffset

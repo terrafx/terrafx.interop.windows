@@ -18,7 +18,7 @@ namespace TerraFX.Interop
 
         public partial struct _Blocks_e__FixedBuffer
         {
-            internal MESSAGE_RESOURCE_BLOCK e0;
+            public MESSAGE_RESOURCE_BLOCK e0;
 
             public ref MESSAGE_RESOURCE_BLOCK this[int index] => ref AsSpan(int.MaxValue)[index];
 

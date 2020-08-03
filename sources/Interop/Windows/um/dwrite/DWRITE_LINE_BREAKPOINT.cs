@@ -7,7 +7,7 @@ namespace TerraFX.Interop
 {
     public partial struct DWRITE_LINE_BREAKPOINT
     {
-        internal byte _bitfield;
+        public byte _bitfield;
 
         [NativeTypeName("UINT8 : 2")]
         public byte breakConditionBefore

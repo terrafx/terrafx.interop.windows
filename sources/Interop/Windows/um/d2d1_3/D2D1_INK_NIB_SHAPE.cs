@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_INK_NIB_SHAPE : uint
     {
         D2D1_INK_NIB_SHAPE_ROUND = 0,

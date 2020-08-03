@@ -104,22 +104,22 @@ namespace TerraFX.Interop
         [StructLayout(LayoutKind.Sequential, Pack = 4)]
         public partial struct _DataDirectory_e__FixedBuffer
         {
-            internal IMAGE_DATA_DIRECTORY e0;
-            internal IMAGE_DATA_DIRECTORY e1;
-            internal IMAGE_DATA_DIRECTORY e2;
-            internal IMAGE_DATA_DIRECTORY e3;
-            internal IMAGE_DATA_DIRECTORY e4;
-            internal IMAGE_DATA_DIRECTORY e5;
-            internal IMAGE_DATA_DIRECTORY e6;
-            internal IMAGE_DATA_DIRECTORY e7;
-            internal IMAGE_DATA_DIRECTORY e8;
-            internal IMAGE_DATA_DIRECTORY e9;
-            internal IMAGE_DATA_DIRECTORY e10;
-            internal IMAGE_DATA_DIRECTORY e11;
-            internal IMAGE_DATA_DIRECTORY e12;
-            internal IMAGE_DATA_DIRECTORY e13;
-            internal IMAGE_DATA_DIRECTORY e14;
-            internal IMAGE_DATA_DIRECTORY e15;
+            public IMAGE_DATA_DIRECTORY e0;
+            public IMAGE_DATA_DIRECTORY e1;
+            public IMAGE_DATA_DIRECTORY e2;
+            public IMAGE_DATA_DIRECTORY e3;
+            public IMAGE_DATA_DIRECTORY e4;
+            public IMAGE_DATA_DIRECTORY e5;
+            public IMAGE_DATA_DIRECTORY e6;
+            public IMAGE_DATA_DIRECTORY e7;
+            public IMAGE_DATA_DIRECTORY e8;
+            public IMAGE_DATA_DIRECTORY e9;
+            public IMAGE_DATA_DIRECTORY e10;
+            public IMAGE_DATA_DIRECTORY e11;
+            public IMAGE_DATA_DIRECTORY e12;
+            public IMAGE_DATA_DIRECTORY e13;
+            public IMAGE_DATA_DIRECTORY e14;
+            public IMAGE_DATA_DIRECTORY e15;
 
             public ref IMAGE_DATA_DIRECTORY this[int index] => ref AsSpan()[index];
 

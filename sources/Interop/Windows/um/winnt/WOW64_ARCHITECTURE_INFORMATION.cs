@@ -7,7 +7,7 @@ namespace TerraFX.Interop
 {
     public partial struct WOW64_ARCHITECTURE_INFORMATION
     {
-        internal uint _bitfield;
+        public uint _bitfield;
 
         [NativeTypeName("DWORD : 16")]
         public uint Machine

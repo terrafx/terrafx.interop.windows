@@ -219,7 +219,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetObjectA([NativeTypeName("IUnknown **")] IUnknown** ppObject)
+        public int GetObject([NativeTypeName("IUnknown **")] IUnknown** ppObject)
         {
             return ((delegate* stdcall<IMFTopologyNode*, IUnknown**, int>)(lpVtbl[34]))((IMFTopologyNode*)Unsafe.AsPointer(ref this), ppObject);
         }

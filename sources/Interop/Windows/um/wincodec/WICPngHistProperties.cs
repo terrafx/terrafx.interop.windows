@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public enum WICPngHistProperties
+    public enum WICPngHistProperties : uint
     {
         WICPngHistFrequencies = 0x1,
         WICPngHistProperties_FORCE_DWORD = 0x7fffffff,

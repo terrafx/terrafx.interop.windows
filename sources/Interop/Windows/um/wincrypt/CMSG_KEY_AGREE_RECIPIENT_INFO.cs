@@ -18,6 +18,10 @@ namespace TerraFX.Interop
         [NativeTypeName("_CMSG_KEY_AGREE_RECIPIENT_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:7799:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref CERT_ID OriginatorCertId => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.OriginatorCertId, 1));
+
+        public ref CERT_PUBLIC_KEY_INFO OriginatorPublicKeyInfo => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.OriginatorPublicKeyInfo, 1));
+
         [NativeTypeName("CRYPT_DATA_BLOB")]
         public CRYPTOAPI_BLOB UserKeyingMaterial;
 

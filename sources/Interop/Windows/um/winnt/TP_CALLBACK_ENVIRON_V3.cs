@@ -52,7 +52,7 @@ namespace TerraFX.Interop
 
             public partial struct _s_e__Struct
             {
-                internal uint _bitfield;
+                public uint _bitfield;
 
                 [NativeTypeName("DWORD : 1")]
                 public uint LongFunction

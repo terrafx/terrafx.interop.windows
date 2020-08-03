@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public enum WICGifLogicalScreenDescriptorProperties
+    public enum WICGifLogicalScreenDescriptorProperties : uint
     {
         WICGifLogicalScreenSignature = 0x1,
         WICGifLogicalScreenDescriptorWidth = 0x2,

@@ -8,28 +8,28 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="OleMenuGroupWidths" /> struct.</summary>
-    public static unsafe class OleMenuGroupWidthsTests
+    /// <summary>Provides validation of the <see cref="OLEMENUGROUPWIDTHS" /> struct.</summary>
+    public static unsafe class OLEMENUGROUPWIDTHSTests
     {
-        /// <summary>Validates that the <see cref="OleMenuGroupWidths" /> struct is blittable.</summary>
+        /// <summary>Validates that the <see cref="OLEMENUGROUPWIDTHS" /> struct is blittable.</summary>
         [Test]
         public static void IsBlittableTest()
         {
-            Assert.That(Marshal.SizeOf<OleMenuGroupWidths>(), Is.EqualTo(sizeof(OleMenuGroupWidths)));
+            Assert.That(Marshal.SizeOf<OLEMENUGROUPWIDTHS>(), Is.EqualTo(sizeof(OLEMENUGROUPWIDTHS)));
         }
 
-        /// <summary>Validates that the <see cref="OleMenuGroupWidths" /> struct has the right <see cref="LayoutKind" />.</summary>
+        /// <summary>Validates that the <see cref="OLEMENUGROUPWIDTHS" /> struct has the right <see cref="LayoutKind" />.</summary>
         [Test]
         public static void IsLayoutSequentialTest()
         {
-            Assert.That(typeof(OleMenuGroupWidths).IsLayoutSequential, Is.True);
+            Assert.That(typeof(OLEMENUGROUPWIDTHS).IsLayoutSequential, Is.True);
         }
 
-        /// <summary>Validates that the <see cref="OleMenuGroupWidths" /> struct has the correct size.</summary>
+        /// <summary>Validates that the <see cref="OLEMENUGROUPWIDTHS" /> struct has the correct size.</summary>
         [Test]
         public static void SizeOfTest()
         {
-            Assert.That(sizeof(OleMenuGroupWidths), Is.EqualTo(24));
+            Assert.That(sizeof(OLEMENUGROUPWIDTHS), Is.EqualTo(24));
         }
     }
 }

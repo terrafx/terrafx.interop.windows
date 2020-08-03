@@ -16,6 +16,22 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D11_RENDER_TARGET_VIEW_DESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11.h:3803:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref D3D11_BUFFER_RTV Buffer => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Buffer, 1));
+
+        public ref D3D11_TEX1D_RTV Texture1D => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Texture1D, 1));
+
+        public ref D3D11_TEX1D_ARRAY_RTV Texture1DArray => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Texture1DArray, 1));
+
+        public ref D3D11_TEX2D_RTV Texture2D => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Texture2D, 1));
+
+        public ref D3D11_TEX2D_ARRAY_RTV Texture2DArray => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Texture2DArray, 1));
+
+        public ref D3D11_TEX2DMS_RTV Texture2DMS => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Texture2DMS, 1));
+
+        public ref D3D11_TEX2DMS_ARRAY_RTV Texture2DMSArray => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Texture2DMSArray, 1));
+
+        public ref D3D11_TEX3D_RTV Texture3D => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Texture3D, 1));
+
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {

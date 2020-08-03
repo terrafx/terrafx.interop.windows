@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public enum WICJpegScanType
+    public enum WICJpegScanType : uint
     {
         WICJpegScanTypeInterleaved = 0,
         WICJpegScanTypePlanarComponents = 0x1,

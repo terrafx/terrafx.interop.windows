@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_TURBULENCE_NOISE : uint
     {
         D2D1_TURBULENCE_NOISE_FRACTAL_SUM = 0,

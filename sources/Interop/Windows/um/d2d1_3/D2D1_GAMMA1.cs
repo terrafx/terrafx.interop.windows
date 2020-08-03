@@ -7,7 +7,6 @@ using static TerraFX.Interop.D2D1_GAMMA;
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_GAMMA1 : uint
     {
         D2D1_GAMMA1_G22 = D2D1_GAMMA_2_2,

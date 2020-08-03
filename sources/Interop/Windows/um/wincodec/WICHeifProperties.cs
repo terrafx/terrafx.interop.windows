@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public enum WICHeifProperties
+    public enum WICHeifProperties : uint
     {
         WICHeifOrientation = 0x1,
         WICHeifProperties_FORCE_DWORD = 0x7fffffff,

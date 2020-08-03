@@ -36,22 +36,22 @@ namespace TerraFX.Interop
 
         public partial struct _IdleTimeBuckets_e__FixedBuffer
         {
-            internal PPM_IDLE_STATE_BUCKET_EX e0;
-            internal PPM_IDLE_STATE_BUCKET_EX e1;
-            internal PPM_IDLE_STATE_BUCKET_EX e2;
-            internal PPM_IDLE_STATE_BUCKET_EX e3;
-            internal PPM_IDLE_STATE_BUCKET_EX e4;
-            internal PPM_IDLE_STATE_BUCKET_EX e5;
-            internal PPM_IDLE_STATE_BUCKET_EX e6;
-            internal PPM_IDLE_STATE_BUCKET_EX e7;
-            internal PPM_IDLE_STATE_BUCKET_EX e8;
-            internal PPM_IDLE_STATE_BUCKET_EX e9;
-            internal PPM_IDLE_STATE_BUCKET_EX e10;
-            internal PPM_IDLE_STATE_BUCKET_EX e11;
-            internal PPM_IDLE_STATE_BUCKET_EX e12;
-            internal PPM_IDLE_STATE_BUCKET_EX e13;
-            internal PPM_IDLE_STATE_BUCKET_EX e14;
-            internal PPM_IDLE_STATE_BUCKET_EX e15;
+            public PPM_IDLE_STATE_BUCKET_EX e0;
+            public PPM_IDLE_STATE_BUCKET_EX e1;
+            public PPM_IDLE_STATE_BUCKET_EX e2;
+            public PPM_IDLE_STATE_BUCKET_EX e3;
+            public PPM_IDLE_STATE_BUCKET_EX e4;
+            public PPM_IDLE_STATE_BUCKET_EX e5;
+            public PPM_IDLE_STATE_BUCKET_EX e6;
+            public PPM_IDLE_STATE_BUCKET_EX e7;
+            public PPM_IDLE_STATE_BUCKET_EX e8;
+            public PPM_IDLE_STATE_BUCKET_EX e9;
+            public PPM_IDLE_STATE_BUCKET_EX e10;
+            public PPM_IDLE_STATE_BUCKET_EX e11;
+            public PPM_IDLE_STATE_BUCKET_EX e12;
+            public PPM_IDLE_STATE_BUCKET_EX e13;
+            public PPM_IDLE_STATE_BUCKET_EX e14;
+            public PPM_IDLE_STATE_BUCKET_EX e15;
 
             public ref PPM_IDLE_STATE_BUCKET_EX this[int index] => ref AsSpan()[index];
 

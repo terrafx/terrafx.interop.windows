@@ -7,13 +7,24 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public partial struct CMC_TAGGED_REQUEST
+    public unsafe partial struct CMC_TAGGED_REQUEST
     {
         [NativeTypeName("DWORD")]
         public uint dwTaggedRequestChoice;
 
         [NativeTypeName("_CMC_TAGGED_REQUEST::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:5231:5)")]
         public _Anonymous_e__Union Anonymous;
+
+        public ref CMC_TAGGED_CERT_REQUEST* pTaggedCertRequest
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->pTaggedCertRequest;
+                }
+            }
+        }
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union

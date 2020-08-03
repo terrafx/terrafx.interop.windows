@@ -1,10 +1,5 @@
 @../../settings.rsp
 @../../remap.rsp
---exclude
-HSTRING_UserFree
-HSTRING_UserMarshal
-HSTRING_UserSize
-HSTRING_UserUnmarshal
 --file
 winrt-winstring.h
 --output

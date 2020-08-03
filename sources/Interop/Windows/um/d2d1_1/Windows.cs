@@ -31,5 +31,8 @@ namespace TerraFX.Interop
         [DllImport("d2d1", EntryPoint = "D2D1Vec3Length", ExactSpelling = true)]
         [return: NativeTypeName("FLOAT")]
         public static extern float D2D1Vec3Length([NativeTypeName("FLOAT")] float x, [NativeTypeName("FLOAT")] float y, [NativeTypeName("FLOAT")] float z);
+
+        [NativeTypeName("#define D2D1_INVALID_PROPERTY_INDEX UINT_MAX")]
+        public const uint D2D1_INVALID_PROPERTY_INDEX = 0xffffffff;
     }
 }

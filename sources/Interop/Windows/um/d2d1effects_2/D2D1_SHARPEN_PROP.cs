@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_SHARPEN_PROP : uint
     {
         D2D1_SHARPEN_PROP_SHARPNESS = 0,

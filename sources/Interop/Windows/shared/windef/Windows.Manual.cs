@@ -7,10 +7,6 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        public const nuint HFILE_ERROR = unchecked((nuint)(-1));
-
-        public const int APP_LOCAL_DEVICE_ID_SIZE = 32;
-
         public const nuint DPI_AWARENESS_CONTEXT_UNAWARE = unchecked((nuint)(-1));
 
         public const nuint DPI_AWARENESS_CONTEXT_SYSTEM_AWARE = unchecked((nuint)(-2));

@@ -9,14 +9,6 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        public const uint DML_TENSOR_DIMENSION_COUNT_MAX = 5;
-
-        public const uint DML_TEMPORARY_BUFFER_ALIGNMENT = 256;
-
-        public const uint DML_PERSISTENT_BUFFER_ALIGNMENT = 256;
-
-        public const uint DML_MINIMUM_BUFFER_TENSOR_ALIGNMENT = 16;
-
         public static readonly Guid IID_IDMLObject = new Guid(0xC8263AAC, 0x9E0C, 0x4A2D, 0x9B, 0x8E, 0x00, 0x75, 0x21, 0xA3, 0x31, 0x7C);
 
         public static readonly Guid IID_IDMLDevice = new Guid(0x6DBD6437, 0x96FD, 0x423F, 0xA9, 0x8C, 0xAE, 0x5E, 0x7C, 0x2A, 0x57, 0x3F);

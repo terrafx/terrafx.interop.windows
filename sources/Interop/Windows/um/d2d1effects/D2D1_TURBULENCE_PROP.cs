@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_TURBULENCE_PROP : uint
     {
         D2D1_TURBULENCE_PROP_OFFSET = 0,

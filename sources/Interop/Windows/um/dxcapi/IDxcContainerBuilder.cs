@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    [Guid("334b1f50-2292-4b35-99a1-25588d8c17fe")]
+    [Guid("334B1F50-2292-4B35-99A1-25588D8C17FE")]
     public unsafe partial struct IDxcContainerBuilder
     {
         public void** lpVtbl;

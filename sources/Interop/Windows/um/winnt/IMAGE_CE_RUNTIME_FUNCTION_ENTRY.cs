@@ -10,7 +10,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint FuncStart;
 
-        internal uint _bitfield;
+        public uint _bitfield;
 
         [NativeTypeName("DWORD : 8")]
         public uint PrologLen

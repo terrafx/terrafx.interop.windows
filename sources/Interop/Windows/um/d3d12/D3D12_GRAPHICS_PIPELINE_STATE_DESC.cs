@@ -59,14 +59,14 @@ namespace TerraFX.Interop
 
         public partial struct _RTVFormats_e__FixedBuffer
         {
-            internal DXGI_FORMAT e0;
-            internal DXGI_FORMAT e1;
-            internal DXGI_FORMAT e2;
-            internal DXGI_FORMAT e3;
-            internal DXGI_FORMAT e4;
-            internal DXGI_FORMAT e5;
-            internal DXGI_FORMAT e6;
-            internal DXGI_FORMAT e7;
+            public DXGI_FORMAT e0;
+            public DXGI_FORMAT e1;
+            public DXGI_FORMAT e2;
+            public DXGI_FORMAT e3;
+            public DXGI_FORMAT e4;
+            public DXGI_FORMAT e5;
+            public DXGI_FORMAT e6;
+            public DXGI_FORMAT e7;
 
             public ref DXGI_FORMAT this[int index] => ref AsSpan()[index];
 

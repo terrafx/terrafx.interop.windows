@@ -7,7 +7,7 @@ namespace TerraFX.Interop
 {
     public partial struct DWRITE_SHAPING_TEXT_PROPERTIES
     {
-        internal ushort _bitfield;
+        public ushort _bitfield;
 
         [NativeTypeName("UINT16 : 1")]
         public ushort isShapedAlone

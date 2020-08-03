@@ -46,7 +46,7 @@ namespace TerraFX.Interop
 
             public partial struct _Bits_e__Struct
             {
-                internal uint _bitfield;
+                public uint _bitfield;
 
                 [NativeTypeName("DWORD : 8")]
                 public uint BaseMid

@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_PATCH_EDGE_MODE : uint
     {
         D2D1_PATCH_EDGE_MODE_ALIASED = 0,

@@ -17,7 +17,7 @@ namespace TerraFX.Interop
 
         public partial struct _bmiColors_e__FixedBuffer
         {
-            internal RGBQUAD e0;
+            public RGBQUAD e0;
 
             public ref RGBQUAD this[int index] => ref AsSpan(int.MaxValue)[index];
 

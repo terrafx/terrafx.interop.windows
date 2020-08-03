@@ -1,7 +1,5 @@
 @../../settings.rsp
 @../../remap.rsp
---define-macro
-NOSYSPARAMSINFO
 --file
 shared-tvout.h
 --output

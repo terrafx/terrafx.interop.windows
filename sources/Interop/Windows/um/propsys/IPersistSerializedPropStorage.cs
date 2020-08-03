@@ -39,15 +39,15 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int SetPropertyStorage([NativeTypeName("PCUSERIALIZEDPROPSTORAGE")] SERIALIZEDPROPSTORAGE* psps, [NativeTypeName("DWORD")] uint cb)
+        public int SetPropertyStorage([NativeTypeName("PCUSERIALIZEDPROPSTORAGE")] IntPtr psps, [NativeTypeName("DWORD")] uint cb)
         {
-            return ((delegate* stdcall<IPersistSerializedPropStorage*, SERIALIZEDPROPSTORAGE*, uint, int>)(lpVtbl[4]))((IPersistSerializedPropStorage*)Unsafe.AsPointer(ref this), psps, cb);
+            return ((delegate* stdcall<IPersistSerializedPropStorage*, IntPtr, uint, int>)(lpVtbl[4]))((IPersistSerializedPropStorage*)Unsafe.AsPointer(ref this), psps, cb);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetPropertyStorage([NativeTypeName("SERIALIZEDPROPSTORAGE **")] SERIALIZEDPROPSTORAGE** ppsps, [NativeTypeName("DWORD *")] uint* pcb)
+        public int GetPropertyStorage([NativeTypeName("SERIALIZEDPROPSTORAGE **")] IntPtr* ppsps, [NativeTypeName("DWORD *")] uint* pcb)
         {
-            return ((delegate* stdcall<IPersistSerializedPropStorage*, SERIALIZEDPROPSTORAGE**, uint*, int>)(lpVtbl[5]))((IPersistSerializedPropStorage*)Unsafe.AsPointer(ref this), ppsps, pcb);
+            return ((delegate* stdcall<IPersistSerializedPropStorage*, IntPtr*, uint*, int>)(lpVtbl[5]))((IPersistSerializedPropStorage*)Unsafe.AsPointer(ref this), ppsps, pcb);
         }
     }
 }

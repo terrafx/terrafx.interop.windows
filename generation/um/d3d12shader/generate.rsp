@@ -1,19 +1,19 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-ID3D12LibraryReflection.QueryInterface(const IID &, LPVOID *):HRESULT nothrow
-ID3D12LibraryReflection.AddRef():ULONG nothrow
-ID3D12LibraryReflection.Release():ULONG nothrow
-ID3D12ShaderReflection.QueryInterface(const IID &, LPVOID *):HRESULT nothrow
-ID3D12ShaderReflection.AddRef():ULONG nothrow
-ID3D12ShaderReflection.Release():ULONG nothrow
-IID_ID3D12ShaderReflectionType
-IID_ID3D12ShaderReflectionVariable
-IID_ID3D12ShaderReflectionConstantBuffer
-IID_ID3D12ShaderReflection
-IID_ID3D12LibraryReflection
-IID_ID3D12FunctionReflection
-IID_ID3D12FunctionParameterReflection
+D3D12_SHVER_GET_MAJOR
+D3D12_SHVER_GET_MINOR
+D3D12_SHVER_GET_TYPE
+D3D_RETURN_PARAMETER_INDEX
+D3D_SHADER_REQUIRES_11_1_DOUBLE_EXTENSIONS
+D3D_SHADER_REQUIRES_11_1_SHADER_EXTENSIONS
+D3D_SHADER_REQUIRES_64_UAVS
+D3D_SHADER_REQUIRES_DOUBLES
+D3D_SHADER_REQUIRES_EARLY_DEPTH_STENCIL
+D3D_SHADER_REQUIRES_LEVEL_9_COMPARISON_FILTERING
+D3D_SHADER_REQUIRES_MINIMUM_PRECISION
+D3D_SHADER_REQUIRES_TILED_RESOURCES
+D3D_SHADER_REQUIRES_UAVS_AT_EVERY_STAGE
 --file
 um-d3d12shader.h
 --output

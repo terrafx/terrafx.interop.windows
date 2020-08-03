@@ -87,10 +87,10 @@ namespace TerraFX.Interop
 
         public partial struct _DischargePolicy_e__FixedBuffer
         {
-            internal SYSTEM_POWER_LEVEL e0;
-            internal SYSTEM_POWER_LEVEL e1;
-            internal SYSTEM_POWER_LEVEL e2;
-            internal SYSTEM_POWER_LEVEL e3;
+            public SYSTEM_POWER_LEVEL e0;
+            public SYSTEM_POWER_LEVEL e1;
+            public SYSTEM_POWER_LEVEL e2;
+            public SYSTEM_POWER_LEVEL e3;
 
             public ref SYSTEM_POWER_LEVEL this[int index] => ref AsSpan()[index];
 

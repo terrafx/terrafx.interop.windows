@@ -25,6 +25,19 @@ namespace TerraFX.Interop
         [NativeTypeName("_PROPSHEETHEADERW_V1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:520:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
+        public ref IntPtr hIcon => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.hIcon, 1));
+
+        public ref ushort* pszIcon
+        {
+            get
+            {
+                fixed (_Anonymous1_e__Union* pField = &Anonymous1)
+                {
+                    return ref pField->pszIcon;
+                }
+            }
+        }
+
         [NativeTypeName("LPCWSTR")]
         public ushort* pszCaption;
 
@@ -34,8 +47,43 @@ namespace TerraFX.Interop
         [NativeTypeName("_PROPSHEETHEADERW_V1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:520:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
+        public ref uint nStartPage => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.nStartPage, 1));
+
+        public ref ushort* pStartPage
+        {
+            get
+            {
+                fixed (_Anonymous2_e__Union* pField = &Anonymous2)
+                {
+                    return ref pField->pStartPage;
+                }
+            }
+        }
+
         [NativeTypeName("_PROPSHEETHEADERW_V1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:520:5)")]
         public _Anonymous3_e__Union Anonymous3;
+
+        public ref PROPSHEETPAGEW* ppsp
+        {
+            get
+            {
+                fixed (_Anonymous3_e__Union* pField = &Anonymous3)
+                {
+                    return ref pField->ppsp;
+                }
+            }
+        }
+
+        public ref IntPtr* phpage
+        {
+            get
+            {
+                fixed (_Anonymous3_e__Union* pField = &Anonymous3)
+                {
+                    return ref pField->phpage;
+                }
+            }
+        }
 
         [NativeTypeName("PFNPROPSHEETCALLBACK")]
         public delegate* stdcall<IntPtr, uint, nint, int> pfnCallback;

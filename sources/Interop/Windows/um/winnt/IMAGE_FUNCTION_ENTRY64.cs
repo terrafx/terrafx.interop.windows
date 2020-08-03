@@ -19,6 +19,10 @@ namespace TerraFX.Interop
         [NativeTypeName("_IMAGE_FUNCTION_ENTRY64::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:19009:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref ulong EndOfPrologue => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.EndOfPrologue, 1));
+
+        public ref ulong UnwindInfoAddress => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.UnwindInfoAddress, 1));
+
         [StructLayout(LayoutKind.Explicit, Pack = 4)]
         public partial struct _Anonymous_e__Union
         {

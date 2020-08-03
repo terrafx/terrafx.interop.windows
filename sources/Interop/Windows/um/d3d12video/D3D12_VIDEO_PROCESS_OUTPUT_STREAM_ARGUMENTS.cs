@@ -18,8 +18,8 @@ namespace TerraFX.Interop
 
         public partial struct _OutputStream_e__FixedBuffer
         {
-            internal D3D12_VIDEO_PROCESS_OUTPUT_STREAM e0;
-            internal D3D12_VIDEO_PROCESS_OUTPUT_STREAM e1;
+            public D3D12_VIDEO_PROCESS_OUTPUT_STREAM e0;
+            public D3D12_VIDEO_PROCESS_OUTPUT_STREAM e1;
 
             public ref D3D12_VIDEO_PROCESS_OUTPUT_STREAM this[int index] => ref AsSpan()[index];
 

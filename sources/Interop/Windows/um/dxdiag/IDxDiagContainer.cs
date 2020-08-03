@@ -63,7 +63,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetPropA([NativeTypeName("LPCWSTR")] ushort* pwszPropName, [NativeTypeName("VARIANT *")] VARIANT* pvarProp)
+        public int GetProp([NativeTypeName("LPCWSTR")] ushort* pwszPropName, [NativeTypeName("VARIANT *")] VARIANT* pvarProp)
         {
             return ((delegate* stdcall<IDxDiagContainer*, ushort*, VARIANT*, int>)(lpVtbl[8]))((IDxDiagContainer*)Unsafe.AsPointer(ref this), pwszPropName, pvarProp);
         }

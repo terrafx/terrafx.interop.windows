@@ -8,8 +8,7 @@ using System;
 namespace TerraFX.Interop
 {
     [Flags]
-    [NativeTypeName("int")]
-    public enum PUAFOUT : uint
+    public enum PUAFOUT
     {
         PUAFOUT_DEFAULT = 0,
         PUAFOUT_ISLOCKZONEPOLICY = 0x1,

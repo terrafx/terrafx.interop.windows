@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public enum WICJpegIndexingOptions
+    public enum WICJpegIndexingOptions : uint
     {
         WICJpegIndexingOptionsGenerateOnDemand = 0,
         WICJpegIndexingOptionsGenerateOnLoad = 0x1,

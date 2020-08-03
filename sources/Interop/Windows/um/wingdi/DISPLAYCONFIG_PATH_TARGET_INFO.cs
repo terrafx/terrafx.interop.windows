@@ -17,6 +17,34 @@ namespace TerraFX.Interop
         [NativeTypeName("DISPLAYCONFIG_PATH_TARGET_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wingdi.h:2973:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref uint modeInfoIdx => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.modeInfoIdx, 1));
+
+        public uint desktopModeInfoIdx
+        {
+            get
+            {
+                return Anonymous.Anonymous.desktopModeInfoIdx;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.desktopModeInfoIdx = value;
+            }
+        }
+
+        public uint targetModeInfoIdx
+        {
+            get
+            {
+                return Anonymous.Anonymous.targetModeInfoIdx;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.targetModeInfoIdx = value;
+            }
+        }
+
         public DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY outputTechnology;
 
         public DISPLAYCONFIG_ROTATION rotation;
@@ -46,7 +74,7 @@ namespace TerraFX.Interop
 
             public partial struct _Anonymous_e__Struct
             {
-                internal uint _bitfield;
+                public uint _bitfield;
 
                 [NativeTypeName("UINT32 : 16")]
                 public uint desktopModeInfoIdx

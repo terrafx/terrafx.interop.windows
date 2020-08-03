@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_CONTRAST_PROP : uint
     {
         D2D1_CONTRAST_PROP_CONTRAST = 0,

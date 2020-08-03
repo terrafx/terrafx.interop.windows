@@ -8,6 +8,6 @@ namespace TerraFX.Interop
     public partial struct FILE_DISPOSITION_INFO
     {
         [NativeTypeName("BOOLEAN")]
-        public byte DeleteFileA;
+        public byte DeleteFile;
     }
 }

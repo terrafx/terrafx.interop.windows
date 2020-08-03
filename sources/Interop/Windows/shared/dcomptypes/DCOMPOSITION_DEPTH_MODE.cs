@@ -10,6 +10,6 @@ namespace TerraFX.Interop
         DCOMPOSITION_DEPTH_MODE_TREE = 0,
         DCOMPOSITION_DEPTH_MODE_SPATIAL = 1,
         DCOMPOSITION_DEPTH_MODE_SORTED = 3,
-        DCOMPOSITION_DEPTH_MODE_INHERIT = unchecked((int)0xffffffff),
+        DCOMPOSITION_DEPTH_MODE_INHERIT = unchecked((int)(0xffffffff)),
     }
 }

@@ -33,9 +33,9 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateInstance([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("IPlayToControl *")] IPlayToControl* pControl, [NativeTypeName("IInspectable **")] IUnknown** ppSource)
+        public int CreateInstance([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("IPlayToControl *")] IPlayToControl* pControl, [NativeTypeName("IInspectable **")] void** ppSource)
         {
-            return ((delegate* stdcall<IPlayToSourceClassFactory*, uint, IPlayToControl*, IUnknown**, int>)(lpVtbl[3]))((IPlayToSourceClassFactory*)Unsafe.AsPointer(ref this), dwFlags, pControl, ppSource);
+            return ((delegate* stdcall<IPlayToSourceClassFactory*, uint, IPlayToControl*, void**, int>)(lpVtbl[3]))((IPlayToSourceClassFactory*)Unsafe.AsPointer(ref this), dwFlags, pControl, ppSource);
         }
     }
 }

@@ -21,6 +21,12 @@ namespace TerraFX.Interop
         [NativeTypeName("_MFTOPONODE_ATTRIBUTE_UPDATE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mfidl.h:10826:36)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref uint u32 => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.u32, 1));
+
+        public ref ulong u64 => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.u64, 1));
+
+        public ref double d => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.d, 1));
+
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {

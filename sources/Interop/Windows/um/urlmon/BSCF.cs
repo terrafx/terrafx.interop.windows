@@ -8,8 +8,7 @@ using System;
 namespace TerraFX.Interop
 {
     [Flags]
-    [NativeTypeName("int")]
-    public enum BSCF : uint
+    public enum BSCF
     {
         BSCF_FIRSTDATANOTIFICATION = 0x1,
         BSCF_INTERMEDIATEDATANOTIFICATION = 0x2,

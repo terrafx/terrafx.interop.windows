@@ -18,7 +18,7 @@ namespace TerraFX.Interop
 
         public partial struct _aPoints_e__FixedBuffer
         {
-            internal WICRawToneCurvePoint e0;
+            public WICRawToneCurvePoint e0;
 
             public ref WICRawToneCurvePoint this[int index] => ref AsSpan(int.MaxValue)[index];
 

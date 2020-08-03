@@ -1,9 +1,9 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-SIP_DISPATCH_INFO_
-SIP_INDIRECT_DATA_
-SIP_SUBJECTINFO_
+WVT_ISINSTRUCT
+WVT_IS_CBSTRUCT_GT_MEMBEROFFSET
+WVT_OFFSETOF
 --file
 um-WinTrust.h
 --output

@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_CROSSFADE_PROP : uint
     {
         D2D1_CROSSFADE_PROP_WEIGHT = 0,

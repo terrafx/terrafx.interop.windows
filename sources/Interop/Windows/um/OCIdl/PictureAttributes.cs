@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public enum PictureAttributes
+    public enum PICTUREATTRIBUTES
     {
         PICTURE_SCALABLE = 0x1,
         PICTURE_TRANSPARENT = 0x2,

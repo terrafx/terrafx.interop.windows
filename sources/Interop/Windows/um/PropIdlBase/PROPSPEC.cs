@@ -7,13 +7,26 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public partial struct PROPSPEC
+    public unsafe partial struct PROPSPEC
     {
         [NativeTypeName("ULONG")]
         public uint ulKind;
 
         [NativeTypeName("tagPROPSPEC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/PropIdlBase.h:444:43)")]
         public _Anonymous_e__Union Anonymous;
+
+        public ref uint propid => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.propid, 1));
+
+        public ref ushort* lpwstr
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->lpwstr;
+                }
+            }
+        }
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union

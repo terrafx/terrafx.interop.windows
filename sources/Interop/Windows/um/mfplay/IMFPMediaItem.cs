@@ -45,7 +45,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetObjectA([NativeTypeName("IUnknown **")] IUnknown** ppIUnknown)
+        public int GetObject([NativeTypeName("IUnknown **")] IUnknown** ppIUnknown)
         {
             return ((delegate* stdcall<IMFPMediaItem*, IUnknown**, int>)(lpVtbl[5]))((IMFPMediaItem*)Unsafe.AsPointer(ref this), ppIUnknown);
         }

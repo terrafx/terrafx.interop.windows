@@ -8,3 +8,12 @@ um-SpatialAudioClient.h
 ../../../tests/Interop/Windows/um/SpatialAudioClient
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/SpatialAudioClient.h
+--with-attribute
+AudioObjectType=Flags
+IAudioFormatEnumerator=Guid("DCDAA858-895A-4A22-A5EB-67BDA506096D")
+ISpatialAudioClient=Guid("BBF8E066-AAAA-49BE-9A4D-FD2A858EA27F")
+ISpatialAudioObject=Guid("DDE28967-521B-46E5-8F00-BD6F2BC8AB1D")
+ISpatialAudioObjectBase=Guid("CCE0B8F2-8D4D-4EFB-A8CF-3D6ECF1C30E0")
+ISpatialAudioObjectRenderStream=Guid("BAB5F473-B423-477B-85F5-B5A332A04153")
+ISpatialAudioObjectRenderStreamBase=Guid("FEAAF403-C1D8-450D-AA05-E0CCEE7502A8")
+ISpatialAudioObjectRenderStreamNotify=Guid("DDDF83E6-68D7-4C70-883F-A1836AFB4A50")

@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_RENDERING_PRIORITY : uint
     {
         D2D1_RENDERING_PRIORITY_NORMAL = 0,

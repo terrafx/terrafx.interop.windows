@@ -31,7 +31,7 @@ namespace TerraFX.Interop
 
         public partial struct _aemrtext_e__FixedBuffer
         {
-            internal EMRTEXT e0;
+            public EMRTEXT e0;
 
             public ref EMRTEXT this[int index] => ref AsSpan(int.MaxValue)[index];
 

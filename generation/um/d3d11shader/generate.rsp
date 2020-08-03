@@ -1,39 +1,9 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-ID3D11FunctionLinkingGraph.QueryInterface(const IID &, LPVOID *):HRESULT nothrow
-ID3D11FunctionLinkingGraph.AddRef():ULONG nothrow
-ID3D11FunctionLinkingGraph.Release():ULONG nothrow
-ID3D11LibraryReflection.QueryInterface(const IID &, LPVOID *):HRESULT nothrow
-ID3D11LibraryReflection.AddRef():ULONG nothrow
-ID3D11LibraryReflection.Release():ULONG nothrow
-ID3D11Linker.QueryInterface(const IID &, LPVOID *):HRESULT nothrow
-ID3D11Linker.AddRef():ULONG nothrow
-ID3D11Linker.Release():ULONG nothrow
-ID3D11LinkingNode.QueryInterface(const IID &, LPVOID *):HRESULT nothrow
-ID3D11LinkingNode.AddRef():ULONG nothrow
-ID3D11LinkingNode.Release():ULONG nothrow
-ID3D11Module.QueryInterface(const IID &, LPVOID *):HRESULT nothrow
-ID3D11Module.AddRef():ULONG nothrow
-ID3D11Module.Release():ULONG nothrow
-ID3D11ModuleInstance.QueryInterface(const IID &, LPVOID *):HRESULT nothrow
-ID3D11ModuleInstance.AddRef():ULONG nothrow
-ID3D11ModuleInstance.Release():ULONG nothrow
-ID3D11ShaderReflection.QueryInterface(const IID &, LPVOID *):HRESULT nothrow
-ID3D11ShaderReflection.AddRef():ULONG nothrow
-ID3D11ShaderReflection.Release():ULONG nothrow
-IID_ID3D11FunctionLinkingGraph
-IID_ID3D11FunctionParameterReflection
-IID_ID3D11FunctionReflection
-IID_ID3D11LibraryReflection
-IID_ID3D11Linker
-IID_ID3D11LinkingNode
-IID_ID3D11Module
-IID_ID3D11ModuleInstance
-IID_ID3D11ShaderReflection
-IID_ID3D11ShaderReflectionConstantBuffer
-IID_ID3D11ShaderReflectionType
-IID_ID3D11ShaderReflectionVariable
+D3D11_SHVER_GET_MAJOR
+D3D11_SHVER_GET_MINOR
+D3D11_SHVER_GET_TYPE
 --file
 um-d3d11shader.h
 --output

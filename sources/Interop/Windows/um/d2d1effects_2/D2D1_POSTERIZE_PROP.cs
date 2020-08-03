@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_POSTERIZE_PROP : uint
     {
         D2D1_POSTERIZE_PROP_RED_VALUE_COUNT = 0,

@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_DISPLACEMENTMAP_PROP : uint
     {
         D2D1_DISPLACEMENTMAP_PROP_SCALE = 0,

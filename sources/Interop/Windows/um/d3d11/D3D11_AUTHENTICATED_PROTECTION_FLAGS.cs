@@ -20,7 +20,7 @@ namespace TerraFX.Interop
 
         public partial struct _Flags_e__Struct
         {
-            internal uint _bitfield;
+            public uint _bitfield;
 
             [NativeTypeName("UINT : 1")]
             public uint ProtectionEnabled

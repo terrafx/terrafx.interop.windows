@@ -17,6 +17,8 @@ namespace TerraFX.Interop
         [NativeTypeName("_SYSTEM_CPU_SET_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12584:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref _Anonymous_e__Union._CpuSet_e__Struct CpuSet => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.CpuSet, 1));
+
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {
@@ -50,8 +52,79 @@ namespace TerraFX.Interop
                 [NativeTypeName("_SYSTEM_CPU_SET_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12593:13)")]
                 public _Anonymous1_e__Union Anonymous1;
 
+                public ref byte AllFlags => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.AllFlags, 1));
+
+                public byte Parked
+                {
+                    get
+                    {
+                        return Anonymous1.Anonymous.Parked;
+                    }
+
+                    set
+                    {
+                        Anonymous1.Anonymous.Parked = value;
+                    }
+                }
+
+                public byte Allocated
+                {
+                    get
+                    {
+                        return Anonymous1.Anonymous.Allocated;
+                    }
+
+                    set
+                    {
+                        Anonymous1.Anonymous.Allocated = value;
+                    }
+                }
+
+                public byte AllocatedToTargetProcess
+                {
+                    get
+                    {
+                        return Anonymous1.Anonymous.AllocatedToTargetProcess;
+                    }
+
+                    set
+                    {
+                        Anonymous1.Anonymous.AllocatedToTargetProcess = value;
+                    }
+                }
+
+                public byte RealTime
+                {
+                    get
+                    {
+                        return Anonymous1.Anonymous.RealTime;
+                    }
+
+                    set
+                    {
+                        Anonymous1.Anonymous.RealTime = value;
+                    }
+                }
+
+                public byte ReservedFlags
+                {
+                    get
+                    {
+                        return Anonymous1.Anonymous.ReservedFlags;
+                    }
+
+                    set
+                    {
+                        Anonymous1.Anonymous.ReservedFlags = value;
+                    }
+                }
+
                 [NativeTypeName("_SYSTEM_CPU_SET_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12610:13)")]
                 public _Anonymous2_e__Union Anonymous2;
+
+                public ref uint Reserved => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.Reserved, 1));
+
+                public ref byte SchedulingClass => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.SchedulingClass, 1));
 
                 [NativeTypeName("DWORD64")]
                 public ulong AllocationTag;
@@ -69,7 +142,7 @@ namespace TerraFX.Interop
 
                     public partial struct _Anonymous_e__Struct
                     {
-                        internal byte _bitfield;
+                        public byte _bitfield;
 
                         [NativeTypeName("BYTE : 1")]
                         public byte Parked

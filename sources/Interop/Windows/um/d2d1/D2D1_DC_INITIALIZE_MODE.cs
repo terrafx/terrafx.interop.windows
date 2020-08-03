@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_DC_INITIALIZE_MODE : uint
     {
         D2D1_DC_INITIALIZE_MODE_COPY = 0,

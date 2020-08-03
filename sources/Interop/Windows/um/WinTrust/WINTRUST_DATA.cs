@@ -31,6 +31,61 @@ namespace TerraFX.Interop
         [NativeTypeName("_WINTRUST_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinTrust.h:116:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref WINTRUST_FILE_INFO* pFile
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->pFile;
+                }
+            }
+        }
+
+        public ref WINTRUST_CATALOG_INFO* pCatalog
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->pCatalog;
+                }
+            }
+        }
+
+        public ref WINTRUST_BLOB_INFO* pBlob
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->pBlob;
+                }
+            }
+        }
+
+        public ref WINTRUST_SGNR_INFO* pSgnr
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->pSgnr;
+                }
+            }
+        }
+
+        public ref WINTRUST_CERT_INFO* pCert
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->pCert;
+                }
+            }
+        }
+
         [NativeTypeName("DWORD")]
         public uint dwStateAction;
 

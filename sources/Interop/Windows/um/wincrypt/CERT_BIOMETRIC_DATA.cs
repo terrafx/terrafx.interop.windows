@@ -7,13 +7,26 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public partial struct CERT_BIOMETRIC_DATA
+    public unsafe partial struct CERT_BIOMETRIC_DATA
     {
         [NativeTypeName("DWORD")]
         public uint dwTypeOfBiometricDataChoice;
 
         [NativeTypeName("_CERT_BIOMETRIC_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:5553:5)")]
         public _Anonymous_e__Union Anonymous;
+
+        public ref uint dwPredefined => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwPredefined, 1));
+
+        public ref sbyte* pszObjId
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->pszObjId;
+                }
+            }
+        }
 
         public CERT_HASHED_URL HashedUrl;
 

@@ -12,6 +12,86 @@ namespace TerraFX.Interop
         [NativeTypeName("_PROCESS_MITIGATION_IMAGE_LOAD_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11803:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref uint Flags => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
+
+        public uint NoRemoteImages
+        {
+            get
+            {
+                return Anonymous.Anonymous.NoRemoteImages;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.NoRemoteImages = value;
+            }
+        }
+
+        public uint NoLowMandatoryLabelImages
+        {
+            get
+            {
+                return Anonymous.Anonymous.NoLowMandatoryLabelImages;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.NoLowMandatoryLabelImages = value;
+            }
+        }
+
+        public uint PreferSystem32Images
+        {
+            get
+            {
+                return Anonymous.Anonymous.PreferSystem32Images;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.PreferSystem32Images = value;
+            }
+        }
+
+        public uint AuditNoRemoteImages
+        {
+            get
+            {
+                return Anonymous.Anonymous.AuditNoRemoteImages;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.AuditNoRemoteImages = value;
+            }
+        }
+
+        public uint AuditNoLowMandatoryLabelImages
+        {
+            get
+            {
+                return Anonymous.Anonymous.AuditNoLowMandatoryLabelImages;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.AuditNoLowMandatoryLabelImages = value;
+            }
+        }
+
+        public uint ReservedFlags
+        {
+            get
+            {
+                return Anonymous.Anonymous.ReservedFlags;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.ReservedFlags = value;
+            }
+        }
+
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {
@@ -25,7 +105,7 @@ namespace TerraFX.Interop
 
             public partial struct _Anonymous_e__Struct
             {
-                internal uint _bitfield;
+                public uint _bitfield;
 
                 [NativeTypeName("DWORD : 1")]
                 public uint NoRemoteImages

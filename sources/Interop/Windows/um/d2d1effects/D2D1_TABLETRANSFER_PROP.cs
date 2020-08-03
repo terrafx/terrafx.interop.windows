@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_TABLETRANSFER_PROP : uint
     {
         D2D1_TABLETRANSFER_PROP_RED_TABLE = 0,

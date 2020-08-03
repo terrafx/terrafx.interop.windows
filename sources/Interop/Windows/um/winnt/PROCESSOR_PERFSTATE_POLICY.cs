@@ -24,6 +24,10 @@ namespace TerraFX.Interop
         [NativeTypeName("PROCESSOR_PERFSTATE_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:16660:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref byte Spare => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Spare, 1));
+
+        public ref _Anonymous_e__Union._Flags_e__Union Flags => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
+
         [NativeTypeName("DWORD")]
         public uint TimeCheck;
 
@@ -61,9 +65,61 @@ namespace TerraFX.Interop
                 [NativeTypeName("PROCESSOR_PERFSTATE_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:16664:13)")]
                 public _Anonymous_e__Struct Anonymous;
 
+                public byte NoDomainAccounting
+                {
+                    get
+                    {
+                        return Anonymous.NoDomainAccounting;
+                    }
+
+                    set
+                    {
+                        Anonymous.NoDomainAccounting = value;
+                    }
+                }
+
+                public byte IncreasePolicy
+                {
+                    get
+                    {
+                        return Anonymous.IncreasePolicy;
+                    }
+
+                    set
+                    {
+                        Anonymous.IncreasePolicy = value;
+                    }
+                }
+
+                public byte DecreasePolicy
+                {
+                    get
+                    {
+                        return Anonymous.DecreasePolicy;
+                    }
+
+                    set
+                    {
+                        Anonymous.DecreasePolicy = value;
+                    }
+                }
+
+                public byte Reserved
+                {
+                    get
+                    {
+                        return Anonymous.Reserved;
+                    }
+
+                    set
+                    {
+                        Anonymous.Reserved = value;
+                    }
+                }
+
                 public partial struct _Anonymous_e__Struct
                 {
-                    internal byte _bitfield;
+                    public byte _bitfield;
 
                     [NativeTypeName("BYTE : 1")]
                     public byte NoDomainAccounting

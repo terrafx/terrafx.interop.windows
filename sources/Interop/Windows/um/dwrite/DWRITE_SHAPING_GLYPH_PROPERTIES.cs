@@ -7,7 +7,7 @@ namespace TerraFX.Interop
 {
     public partial struct DWRITE_SHAPING_GLYPH_PROPERTIES
     {
-        internal ushort _bitfield;
+        public ushort _bitfield;
 
         [NativeTypeName("UINT16 : 4")]
         public ushort justification

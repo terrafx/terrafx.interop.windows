@@ -1,7 +1,5 @@
 @../../settings.rsp
 @../../remap.rsp
---exclude
-_HIDP_PREPARSED_DATA
 --file
 shared-hidsdi.h
 --output

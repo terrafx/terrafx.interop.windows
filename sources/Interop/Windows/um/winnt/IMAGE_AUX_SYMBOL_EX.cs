@@ -3,12 +3,13 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     [StructLayout(LayoutKind.Explicit)]
-    public partial struct IMAGE_AUX_SYMBOL_EX
+    public unsafe partial struct IMAGE_AUX_SYMBOL_EX
     {
         [FieldOffset(0)]
         [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17565:5)")]
@@ -25,6 +26,10 @@ namespace TerraFX.Interop
         [FieldOffset(0)]
         [NativeTypeName("_IMAGE_AUX_SYMBOL_EX::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17584:5)")]
         public _Anonymous_e__Struct Anonymous;
+
+        public ref IMAGE_AUX_SYMBOL_TOKEN_DEF TokenDef => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.TokenDef, 1));
+
+        public Span<byte> rgbReserved => MemoryMarshal.CreateSpan(ref Anonymous.rgbReserved[0], 2);
 
         [FieldOffset(0)]
         [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17588:5)")]

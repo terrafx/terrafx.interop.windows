@@ -3,8 +3,11 @@
 // Ported from um/propsys.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop
 {
+    [Flags]
     public enum PROPDESC_TYPE_FLAGS
     {
         PDTF_DEFAULT = 0,
@@ -21,7 +24,7 @@ namespace TerraFX.Interop
         PDTF_SEARCHRAWVALUE = 0x400,
         PDTF_DONTCOERCEEMPTYSTRINGS = 0x800,
         PDTF_ALWAYSINSUPPLEMENTALSTORE = 0x1000,
-        PDTF_ISSYSTEMPROPERTY = unchecked((int)0x80000000),
-        PDTF_MASK_ALL = unchecked((int)0x80001fff),
+        PDTF_ISSYSTEMPROPERTY = unchecked((int)(0x80000000)),
+        PDTF_MASK_ALL = unchecked((int)(0x80001fff)),
     }
 }

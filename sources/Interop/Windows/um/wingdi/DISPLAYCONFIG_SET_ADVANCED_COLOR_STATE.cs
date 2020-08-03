@@ -14,6 +14,34 @@ namespace TerraFX.Interop
         [NativeTypeName("_DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wingdi.h:3180:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public uint enableAdvancedColor
+        {
+            get
+            {
+                return Anonymous.Anonymous.enableAdvancedColor;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.enableAdvancedColor = value;
+            }
+        }
+
+        public uint reserved
+        {
+            get
+            {
+                return Anonymous.Anonymous.reserved;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.reserved = value;
+            }
+        }
+
+        public ref uint value => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.value, 1));
+
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {
@@ -27,7 +55,7 @@ namespace TerraFX.Interop
 
             public partial struct _Anonymous_e__Struct
             {
-                internal uint _bitfield;
+                public uint _bitfield;
 
                 [NativeTypeName("UINT32 : 1")]
                 public uint enableAdvancedColor

@@ -28,6 +28,47 @@ namespace TerraFX.Interop
         [NativeTypeName("_IMAGE_TLS_DIRECTORY64::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18196:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref uint Characteristics => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Characteristics, 1));
+
+        public uint Reserved0
+        {
+            get
+            {
+                return Anonymous.Anonymous.Reserved0;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.Reserved0 = value;
+            }
+        }
+
+        public uint Alignment
+        {
+            get
+            {
+                return Anonymous.Anonymous.Alignment;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.Alignment = value;
+            }
+        }
+
+        public uint Reserved1
+        {
+            get
+            {
+                return Anonymous.Anonymous.Reserved1;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.Reserved1 = value;
+            }
+        }
+
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {
@@ -41,7 +82,7 @@ namespace TerraFX.Interop
 
             public partial struct _Anonymous_e__Struct
             {
-                internal uint _bitfield;
+                public uint _bitfield;
 
                 [NativeTypeName("DWORD : 20")]
                 public uint Reserved0

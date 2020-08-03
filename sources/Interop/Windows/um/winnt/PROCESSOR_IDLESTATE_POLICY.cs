@@ -33,9 +33,48 @@ namespace TerraFX.Interop
             [NativeTypeName("PROCESSOR_IDLESTATE_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:16588:9)")]
             public _Anonymous_e__Struct Anonymous;
 
+            public ushort AllowScaling
+            {
+                get
+                {
+                    return Anonymous.AllowScaling;
+                }
+
+                set
+                {
+                    Anonymous.AllowScaling = value;
+                }
+            }
+
+            public ushort Disabled
+            {
+                get
+                {
+                    return Anonymous.Disabled;
+                }
+
+                set
+                {
+                    Anonymous.Disabled = value;
+                }
+            }
+
+            public ushort Reserved
+            {
+                get
+                {
+                    return Anonymous.Reserved;
+                }
+
+                set
+                {
+                    Anonymous.Reserved = value;
+                }
+            }
+
             public partial struct _Anonymous_e__Struct
             {
-                internal ushort _bitfield;
+                public ushort _bitfield;
 
                 [NativeTypeName("WORD : 1")]
                 public ushort AllowScaling
@@ -83,9 +122,9 @@ namespace TerraFX.Interop
 
         public partial struct _Policy_e__FixedBuffer
         {
-            internal PROCESSOR_IDLESTATE_INFO e0;
-            internal PROCESSOR_IDLESTATE_INFO e1;
-            internal PROCESSOR_IDLESTATE_INFO e2;
+            public PROCESSOR_IDLESTATE_INFO e0;
+            public PROCESSOR_IDLESTATE_INFO e1;
+            public PROCESSOR_IDLESTATE_INFO e2;
 
             public ref PROCESSOR_IDLESTATE_INFO this[int index] => ref AsSpan()[index];
 

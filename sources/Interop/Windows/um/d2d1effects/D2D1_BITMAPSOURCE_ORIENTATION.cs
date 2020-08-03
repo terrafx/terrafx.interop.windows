@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_BITMAPSOURCE_ORIENTATION : uint
     {
         D2D1_BITMAPSOURCE_ORIENTATION_DEFAULT = 1,

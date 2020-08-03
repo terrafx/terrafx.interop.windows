@@ -1,30 +1,5 @@
 @../../settings.rsp
 @../../remap.rsp
---exclude
-DXGI_DEBUG_D3D11
-IID_ID3D11Debug
-IID_ID3D11InfoQueue
-IID_ID3D11RefDefaultTrackingOptions
-IID_ID3D11RefTrackingOptions
-IID_ID3D11SwitchToRef
-IID_ID3D11TracingDevice
-operator&(D3D11_RLDO_FLAGS, D3D11_RLDO_FLAGS):D3D11_RLDO_FLAGS
-operator&=(D3D11_RLDO_FLAGS &, D3D11_RLDO_FLAGS):D3D11_RLDO_FLAGS &
-operator^(D3D11_RLDO_FLAGS, D3D11_RLDO_FLAGS):D3D11_RLDO_FLAGS
-operator^=(D3D11_RLDO_FLAGS &, D3D11_RLDO_FLAGS):D3D11_RLDO_FLAGS &
-operator|(D3D11_RLDO_FLAGS, D3D11_RLDO_FLAGS):D3D11_RLDO_FLAGS
-operator|=(D3D11_RLDO_FLAGS &, D3D11_RLDO_FLAGS):D3D11_RLDO_FLAGS &
-operator~(D3D11_RLDO_FLAGS):D3D11_RLDO_FLAGS
-__MIDL_itf_d3d11sdklayers_0000_0000_v0_0_c_ifspec
-__MIDL_itf_d3d11sdklayers_0000_0000_v0_0_s_ifspec
-__MIDL_itf_d3d11sdklayers_0000_0001_v0_0_c_ifspec
-__MIDL_itf_d3d11sdklayers_0000_0001_v0_0_s_ifspec
-__MIDL_itf_d3d11sdklayers_0000_0002_v0_0_c_ifspec
-__MIDL_itf_d3d11sdklayers_0000_0002_v0_0_s_ifspec
-__MIDL_itf_d3d11sdklayers_0000_0005_v0_0_c_ifspec
-__MIDL_itf_d3d11sdklayers_0000_0005_v0_0_s_ifspec
-__MIDL_itf_d3d11sdklayers_0000_0006_v0_0_c_ifspec
-__MIDL_itf_d3d11sdklayers_0000_0006_v0_0_s_ifspec
 --file
 um-d3d11sdklayers.h
 --output
@@ -35,7 +10,7 @@ um-d3d11sdklayers.h
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11sdklayers.h
 --with-attribute
 D3D11_RLDO_FLAGS=Flags
-D3D11_SHADER_TRACKING_OPTION=Flags
+D3D11_SHADER_TRACKING_OPTIONS=Flags
 ID3D11Debug=Guid("79CF2233-7536-4948-9D36-1E4692DC5760")
 ID3D11InfoQueue=Guid("6543DBB6-1B48-42F5-AB82-E97EC74326F6")
 ID3D11RefDefaultTrackingOptions=Guid("03916615-C644-418C-9BF4-75DB5BE63CA0")

@@ -5,8 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
-    public enum D3D11_BUS_TYPE : uint
+    public enum D3D11_BUS_TYPE
     {
         D3D11_BUS_TYPE_OTHER = 0,
         D3D11_BUS_TYPE_PCI = 0x1,
@@ -18,6 +17,6 @@ namespace TerraFX.Interop
         D3D11_BUS_IMPL_MODIFIER_TRACKS_ON_MOTHER_BOARD_TO_SOCKET = 0x30000,
         D3D11_BUS_IMPL_MODIFIER_DAUGHTER_BOARD_CONNECTOR = 0x40000,
         D3D11_BUS_IMPL_MODIFIER_DAUGHTER_BOARD_CONNECTOR_INSIDE_OF_NUAE = 0x50000,
-        D3D11_BUS_IMPL_MODIFIER_NON_STANDARD = 0x80000000,
+        D3D11_BUS_IMPL_MODIFIER_NON_STANDARD = unchecked((int)(0x80000000)),
     }
 }

@@ -15,7 +15,7 @@ namespace TerraFX.Interop
 
         public partial struct _objectHandle_e__FixedBuffer
         {
-            internal IntPtr e0;
+            public IntPtr e0;
 
             public ref IntPtr this[int index] => ref AsSpan(int.MaxValue)[index];
 

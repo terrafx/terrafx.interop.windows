@@ -8,8 +8,7 @@ using System;
 namespace TerraFX.Interop
 {
     [Flags]
-    [NativeTypeName("int")]
-    public enum AUTHENTICATEF : uint
+    public enum AUTHENTICATEF
     {
         AUTHENTICATEF_PROXY = 0x1,
         AUTHENTICATEF_BASIC = 0x2,

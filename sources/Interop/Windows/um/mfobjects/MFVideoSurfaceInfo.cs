@@ -21,7 +21,7 @@ namespace TerraFX.Interop
 
         public partial struct _Palette_e__FixedBuffer
         {
-            internal MFPaletteEntry e0;
+            public MFPaletteEntry e0;
 
             public ref MFPaletteEntry this[int index] => ref AsSpan(int.MaxValue)[index];
 

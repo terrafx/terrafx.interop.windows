@@ -18,7 +18,7 @@ namespace TerraFX.Interop
 
         public partial struct _IntrinsicModels_e__FixedBuffer
         {
-            internal MFPinholeCameraIntrinsic_IntrinsicModel e0;
+            public MFPinholeCameraIntrinsic_IntrinsicModel e0;
 
             public ref MFPinholeCameraIntrinsic_IntrinsicModel this[int index] => ref AsSpan(int.MaxValue)[index];
 

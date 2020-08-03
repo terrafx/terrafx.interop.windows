@@ -39,22 +39,22 @@ namespace TerraFX.Interop
 
         public partial struct _HwCounters_e__FixedBuffer
         {
-            internal HARDWARE_COUNTER_DATA e0;
-            internal HARDWARE_COUNTER_DATA e1;
-            internal HARDWARE_COUNTER_DATA e2;
-            internal HARDWARE_COUNTER_DATA e3;
-            internal HARDWARE_COUNTER_DATA e4;
-            internal HARDWARE_COUNTER_DATA e5;
-            internal HARDWARE_COUNTER_DATA e6;
-            internal HARDWARE_COUNTER_DATA e7;
-            internal HARDWARE_COUNTER_DATA e8;
-            internal HARDWARE_COUNTER_DATA e9;
-            internal HARDWARE_COUNTER_DATA e10;
-            internal HARDWARE_COUNTER_DATA e11;
-            internal HARDWARE_COUNTER_DATA e12;
-            internal HARDWARE_COUNTER_DATA e13;
-            internal HARDWARE_COUNTER_DATA e14;
-            internal HARDWARE_COUNTER_DATA e15;
+            public HARDWARE_COUNTER_DATA e0;
+            public HARDWARE_COUNTER_DATA e1;
+            public HARDWARE_COUNTER_DATA e2;
+            public HARDWARE_COUNTER_DATA e3;
+            public HARDWARE_COUNTER_DATA e4;
+            public HARDWARE_COUNTER_DATA e5;
+            public HARDWARE_COUNTER_DATA e6;
+            public HARDWARE_COUNTER_DATA e7;
+            public HARDWARE_COUNTER_DATA e8;
+            public HARDWARE_COUNTER_DATA e9;
+            public HARDWARE_COUNTER_DATA e10;
+            public HARDWARE_COUNTER_DATA e11;
+            public HARDWARE_COUNTER_DATA e12;
+            public HARDWARE_COUNTER_DATA e13;
+            public HARDWARE_COUNTER_DATA e14;
+            public HARDWARE_COUNTER_DATA e15;
 
             public ref HARDWARE_COUNTER_DATA this[int index] => ref AsSpan()[index];
 

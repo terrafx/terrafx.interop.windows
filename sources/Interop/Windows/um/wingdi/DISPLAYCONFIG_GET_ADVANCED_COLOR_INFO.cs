@@ -14,6 +14,73 @@ namespace TerraFX.Interop
         [NativeTypeName("_DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wingdi.h:3159:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public uint advancedColorSupported
+        {
+            get
+            {
+                return Anonymous.Anonymous.advancedColorSupported;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.advancedColorSupported = value;
+            }
+        }
+
+        public uint advancedColorEnabled
+        {
+            get
+            {
+                return Anonymous.Anonymous.advancedColorEnabled;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.advancedColorEnabled = value;
+            }
+        }
+
+        public uint wideColorEnforced
+        {
+            get
+            {
+                return Anonymous.Anonymous.wideColorEnforced;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.wideColorEnforced = value;
+            }
+        }
+
+        public uint advancedColorForceDisabled
+        {
+            get
+            {
+                return Anonymous.Anonymous.advancedColorForceDisabled;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.advancedColorForceDisabled = value;
+            }
+        }
+
+        public uint reserved
+        {
+            get
+            {
+                return Anonymous.Anonymous.reserved;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.reserved = value;
+            }
+        }
+
+        public ref uint value => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.value, 1));
+
         public DISPLAYCONFIG_COLOR_ENCODING colorEncoding;
 
         [NativeTypeName("UINT32")]
@@ -32,7 +99,7 @@ namespace TerraFX.Interop
 
             public partial struct _Anonymous_e__Struct
             {
-                internal uint _bitfield;
+                public uint _bitfield;
 
                 [NativeTypeName("UINT32 : 1")]
                 public uint advancedColorSupported

@@ -8,8 +8,7 @@ using System;
 namespace TerraFX.Interop
 {
     [Flags]
-    [NativeTypeName("int")]
-    public enum SZM_FLAGS : uint
+    public enum SZM_FLAGS
     {
         SZM_CREATE = 0,
         SZM_DELETE = 0x1,

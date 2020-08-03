@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_SVG_OVERFLOW : uint
     {
         D2D1_SVG_OVERFLOW_VISIBLE = 0,

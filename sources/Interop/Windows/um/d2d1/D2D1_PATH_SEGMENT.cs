@@ -8,7 +8,6 @@ using System;
 namespace TerraFX.Interop
 {
     [Flags]
-    [NativeTypeName("int")]
     public enum D2D1_PATH_SEGMENT : uint
     {
         D2D1_PATH_SEGMENT_NONE = 0x00000000,

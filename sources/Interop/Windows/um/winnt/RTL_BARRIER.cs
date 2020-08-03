@@ -27,8 +27,8 @@ namespace TerraFX.Interop
 
         public partial struct _Reserved3_e__FixedBuffer
         {
-            internal nuint e0;
-            internal nuint e1;
+            public nuint e0;
+            public nuint e1;
 
             public ref nuint this[int index] => ref AsSpan()[index];
 

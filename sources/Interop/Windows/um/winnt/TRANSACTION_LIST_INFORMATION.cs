@@ -18,7 +18,7 @@ namespace TerraFX.Interop
 
         public partial struct _TransactionInformation_e__FixedBuffer
         {
-            internal TRANSACTION_LIST_ENTRY e0;
+            public TRANSACTION_LIST_ENTRY e0;
 
             public ref TRANSACTION_LIST_ENTRY this[int index] => ref AsSpan(int.MaxValue)[index];
 

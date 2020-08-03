@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_PROPERTY_TYPE : uint
     {
         D2D1_PROPERTY_TYPE_UNKNOWN = 0,

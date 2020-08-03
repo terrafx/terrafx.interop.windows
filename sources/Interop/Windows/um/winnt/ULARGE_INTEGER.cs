@@ -14,6 +14,10 @@ namespace TerraFX.Interop
         [NativeTypeName("_ULARGE_INTEGER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:871:5)")]
         public _Anonymous_e__Struct Anonymous;
 
+        public ref uint LowPart => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.LowPart, 1));
+
+        public ref uint HighPart => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.HighPart, 1));
+
         [FieldOffset(0)]
         [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:875:5)")]
         public _u_e__Struct u;

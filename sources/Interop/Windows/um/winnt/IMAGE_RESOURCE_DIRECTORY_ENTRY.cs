@@ -12,8 +12,66 @@ namespace TerraFX.Interop
         [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18348:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
+        public uint NameOffset
+        {
+            get
+            {
+                return Anonymous1.Anonymous.NameOffset;
+            }
+
+            set
+            {
+                Anonymous1.Anonymous.NameOffset = value;
+            }
+        }
+
+        public uint NameIsString
+        {
+            get
+            {
+                return Anonymous1.Anonymous.NameIsString;
+            }
+
+            set
+            {
+                Anonymous1.Anonymous.NameIsString = value;
+            }
+        }
+
+        public ref uint Name => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Name, 1));
+
+        public ref ushort Id => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Id, 1));
+
         [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18356:5)")]
         public _Anonymous2_e__Union Anonymous2;
+
+        public ref uint OffsetToData => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.OffsetToData, 1));
+
+        public uint OffsetToDirectory
+        {
+            get
+            {
+                return Anonymous2.Anonymous.OffsetToDirectory;
+            }
+
+            set
+            {
+                Anonymous2.Anonymous.OffsetToDirectory = value;
+            }
+        }
+
+        public uint DataIsDirectory
+        {
+            get
+            {
+                return Anonymous2.Anonymous.DataIsDirectory;
+            }
+
+            set
+            {
+                Anonymous2.Anonymous.DataIsDirectory = value;
+            }
+        }
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous1_e__Union
@@ -32,7 +90,7 @@ namespace TerraFX.Interop
 
             public partial struct _Anonymous_e__Struct
             {
-                internal uint _bitfield;
+                public uint _bitfield;
 
                 [NativeTypeName("DWORD : 31")]
                 public uint NameOffset
@@ -77,7 +135,7 @@ namespace TerraFX.Interop
 
             public partial struct _Anonymous_e__Struct
             {
-                internal uint _bitfield;
+                public uint _bitfield;
 
                 [NativeTypeName("DWORD : 31")]
                 public uint OffsetToDirectory

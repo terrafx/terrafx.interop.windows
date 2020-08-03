@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_DIRECTIONALBLUR_PROP : uint
     {
         D2D1_DIRECTIONALBLUR_PROP_STANDARD_DEVIATION = 0,

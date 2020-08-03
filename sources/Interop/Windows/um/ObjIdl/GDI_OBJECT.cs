@@ -13,10 +13,10 @@ namespace TerraFX.Interop
         public uint ObjectType;
 
         [NativeTypeName("union __MIDL_IAdviseSink_0002")]
-        public _u_e__Struct u;
+        public _u_e__Union u;
 
         [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _u_e__Struct
+        public unsafe partial struct _u_e__Union
         {
             [FieldOffset(0)]
             [NativeTypeName("wireHBITMAP")]

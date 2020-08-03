@@ -1,21 +1,28 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-IBaseVideoMixer.AddRef():ULONG nothrow
-IBaseVideoMixer.QueryInterface(const IID &, LPVOID *):HRESULT nothrow
-IBaseVideoMixer.Release():ULONG nothrow
-IDirectDrawVideo.AddRef():ULONG nothrow
-IDirectDrawVideo.QueryInterface(const IID &, LPVOID *):HRESULT nothrow
-IDirectDrawVideo.Release():ULONG nothrow
-IFullScreenVideo.AddRef():ULONG nothrow
-IFullScreenVideo.QueryInterface(const IID &, LPVOID *):HRESULT nothrow
-IFullScreenVideo.Release():ULONG nothrow
-IFullScreenVideoEx.AddRef():ULONG nothrow
-IFullScreenVideoEx.QueryInterface(const IID &, LPVOID *):HRESULT nothrow
-IFullScreenVideoEx.Release():ULONG nothrow
-IQualProp.AddRef():ULONG nothrow
-IQualProp.QueryInterface(const IID &, LPVOID *):HRESULT nothrow
-IQualProp.Release():ULONG nothrow
+BITMASKS
+BIT_MASKS_MATCH
+COLORS
+DIBSIZE
+DIBWIDTHBYTES
+HEADER
+MPEG1_SEQUENCE_INFO
+PALETTE_ENTRIES
+PALETTISED
+RAWSIZE
+RAWWIDTHBYTES
+RESET_HEADER
+RESET_MASKS
+RESET_PALETTE
+SIZE_MPEG1VIDEOINFO
+SIZE_PREHEADER
+SIZE_VIDEOHEADER
+TRUECOLOR
+WIDTHBYTES
+WIDTHBYTES_RAW
+_DIBSIZE
+_RAWSIZE
 --file
 um-amvideo.h
 --output

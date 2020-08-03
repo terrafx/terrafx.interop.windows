@@ -8,8 +8,7 @@ using System;
 namespace TerraFX.Interop
 {
     [Flags]
-    [NativeTypeName("int")]
-    public enum PUAF : uint
+    public enum PUAF
     {
         PUAF_DEFAULT = 0,
         PUAF_NOUI = 0x1,

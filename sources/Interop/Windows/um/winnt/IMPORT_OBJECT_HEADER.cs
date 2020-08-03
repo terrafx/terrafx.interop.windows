@@ -30,7 +30,11 @@ namespace TerraFX.Interop
         [NativeTypeName("IMPORT_OBJECT_HEADER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:19120:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        internal ushort _bitfield;
+        public ref ushort Ordinal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Ordinal, 1));
+
+        public ref ushort Hint => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Hint, 1));
+
+        public ushort _bitfield;
 
         [NativeTypeName("WORD : 2")]
         public ushort Type

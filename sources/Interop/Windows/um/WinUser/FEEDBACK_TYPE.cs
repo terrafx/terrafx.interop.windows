@@ -5,8 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
-    public enum FEEDBACK_TYPE : uint
+    public enum FEEDBACK_TYPE
     {
         FEEDBACK_TOUCH_CONTACTVISUALIZATION = 1,
         FEEDBACK_PEN_BARRELVISUALIZATION = 2,
@@ -19,6 +18,6 @@ namespace TerraFX.Interop
         FEEDBACK_TOUCH_PRESSANDHOLD = 9,
         FEEDBACK_TOUCH_RIGHTTAP = 10,
         FEEDBACK_GESTURE_PRESSANDTAP = 11,
-        FEEDBACK_MAX = 0xFFFFFFFF,
+        FEEDBACK_MAX = unchecked((int)(0xFFFFFFFF)),
     }
 }

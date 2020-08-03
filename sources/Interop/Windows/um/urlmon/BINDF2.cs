@@ -8,8 +8,7 @@ using System;
 namespace TerraFX.Interop
 {
     [Flags]
-    [NativeTypeName("int")]
-    public enum BINDF2 : uint
+    public enum BINDF2
     {
         BINDF2_DISABLEBASICOVERHTTP = 0x1,
         BINDF2_DISABLEAUTOCOOKIEHANDLING = 0x2,
@@ -41,6 +40,6 @@ namespace TerraFX.Interop
         BINDF2_RESERVED_4 = 0x10000000,
         BINDF2_RESERVED_3 = 0x20000000,
         BINDF2_RESERVED_2 = 0x40000000,
-        BINDF2_RESERVED_1 = 0x80000000,
+        BINDF2_RESERVED_1 = unchecked((int)(0x80000000)),
     }
 }

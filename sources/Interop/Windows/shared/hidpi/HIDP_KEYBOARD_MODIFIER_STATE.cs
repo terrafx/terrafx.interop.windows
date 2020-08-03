@@ -12,6 +12,164 @@ namespace TerraFX.Interop
         [NativeTypeName("_HIDP_KEYBOARD_MODIFIER_STATE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/hidpi.h:1728:4)")]
         public _Anonymous_e__Union Anonymous;
 
+        public uint LeftControl
+        {
+            get
+            {
+                return Anonymous.Anonymous.LeftControl;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.LeftControl = value;
+            }
+        }
+
+        public uint LeftShift
+        {
+            get
+            {
+                return Anonymous.Anonymous.LeftShift;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.LeftShift = value;
+            }
+        }
+
+        public uint LeftAlt
+        {
+            get
+            {
+                return Anonymous.Anonymous.LeftAlt;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.LeftAlt = value;
+            }
+        }
+
+        public uint LeftGUI
+        {
+            get
+            {
+                return Anonymous.Anonymous.LeftGUI;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.LeftGUI = value;
+            }
+        }
+
+        public uint RightControl
+        {
+            get
+            {
+                return Anonymous.Anonymous.RightControl;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.RightControl = value;
+            }
+        }
+
+        public uint RightShift
+        {
+            get
+            {
+                return Anonymous.Anonymous.RightShift;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.RightShift = value;
+            }
+        }
+
+        public uint RightAlt
+        {
+            get
+            {
+                return Anonymous.Anonymous.RightAlt;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.RightAlt = value;
+            }
+        }
+
+        public uint RigthGUI
+        {
+            get
+            {
+                return Anonymous.Anonymous.RigthGUI;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.RigthGUI = value;
+            }
+        }
+
+        public uint CapsLock
+        {
+            get
+            {
+                return Anonymous.Anonymous.CapsLock;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.CapsLock = value;
+            }
+        }
+
+        public uint ScollLock
+        {
+            get
+            {
+                return Anonymous.Anonymous.ScollLock;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.ScollLock = value;
+            }
+        }
+
+        public uint NumLock
+        {
+            get
+            {
+                return Anonymous.Anonymous.NumLock;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.NumLock = value;
+            }
+        }
+
+        public uint Reserved
+        {
+            get
+            {
+                return Anonymous.Anonymous.Reserved;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.Reserved = value;
+            }
+        }
+
+        public ref uint ul => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ul, 1));
+
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {
@@ -25,7 +183,7 @@ namespace TerraFX.Interop
 
             public partial struct _Anonymous_e__Struct
             {
-                internal uint _bitfield;
+                public uint _bitfield;
 
                 [NativeTypeName("ULONG : 1")]
                 public uint LeftControl

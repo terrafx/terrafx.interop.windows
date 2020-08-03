@@ -1,116 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-BSTR_UserFree(unsigned long *, BSTR *):void
-BSTR_UserFree64(unsigned long *, BSTR *):void
-BSTR_UserMarshal(unsigned long *, unsigned char *, BSTR *):unsigned char *
-BSTR_UserMarshal64(unsigned long *, unsigned char *, BSTR *):unsigned char *
-BSTR_UserSize(unsigned long *, unsigned long, BSTR *):unsigned long
-BSTR_UserSize64(unsigned long *, unsigned long, BSTR *):unsigned long
-BSTR_UserUnmarshal(unsigned long *, unsigned char *, BSTR *):unsigned char *
-BSTR_UserUnmarshal64(unsigned long *, unsigned char *, BSTR *):unsigned char *
-CLSID_InMemoryPropertyStore
-CLSID_InMemoryPropertyStoreMarshalByValue
-CLSID_PropertySystem
-IID_ICreateObject
-IID_IDelayedPropertyStoreFactory
-IID_IInitializeWithFile
-IID_IInitializeWithStream
-IID_INamedPropertyStore
-IID_IObjectWithPropertyKey
-IID_IPersistSerializedPropStorage
-IID_IPersistSerializedPropStorage2
-IID_IPropertyChange
-IID_IPropertyChangeArray
-IID_IPropertyDescription
-IID_IPropertyDescription2
-IID_IPropertyDescriptionAliasInfo
-IID_IPropertyDescriptionList
-IID_IPropertyDescriptionRelatedPropertyInfo
-IID_IPropertyDescriptionSearchInfo
-IID_IPropertyEnumType
-IID_IPropertyEnumType2
-IID_IPropertyEnumTypeList
-IID_IPropertyStore
-IID_IPropertyStoreCache
-IID_IPropertyStoreCapabilities
-IID_IPropertyStoreFactory
-IID_IPropertySystem
-IID_IPropertySystemChangeNotify
-IInitializeWithStream_Initialize_Proxy(IInitializeWithStream *, IStream *, DWORD):HRESULT
-IInitializeWithStream_Initialize_Stub(IInitializeWithStream *, IStream *, DWORD):HRESULT
-IInitializeWithStream_RemoteInitialize_Proxy(IInitializeWithStream *, IStream *, DWORD):HRESULT
-IInitializeWithStream_RemoteInitialize_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
-InMemoryPropertyStore
-InMemoryPropertyStoreMarshalByValue
-IPropertyDescription_CoerceToCanonicalValue_Proxy(IPropertyDescription *, PROPVARIANT *):HRESULT
-IPropertyDescription_CoerceToCanonicalValue_Stub(IPropertyDescription *, const PROPVARIANT &, PROPVARIANT *):HRESULT
-IPropertyDescription_RemoteCoerceToCanonicalValue_Proxy(IPropertyDescription *, const PROPVARIANT &, PROPVARIANT *):HRESULT
-IPropertyDescription_RemoteCoerceToCanonicalValue_Stub(IRpcStubBuffer *, IRpcChannelBuffer *, PRPC_MESSAGE, DWORD *):void
-LIBID_PropSysObjects
-LPSAFEARRAY_UserFree(unsigned long *, LPSAFEARRAY *):void
-LPSAFEARRAY_UserFree64(unsigned long *, LPSAFEARRAY *):void
-LPSAFEARRAY_UserMarshal(unsigned long *, unsigned char *, LPSAFEARRAY *):unsigned char *
-LPSAFEARRAY_UserMarshal64(unsigned long *, unsigned char *, LPSAFEARRAY *):unsigned char *
-LPSAFEARRAY_UserSize(unsigned long *, unsigned long, LPSAFEARRAY *):unsigned long
-LPSAFEARRAY_UserSize64(unsigned long *, unsigned long, LPSAFEARRAY *):unsigned long
-LPSAFEARRAY_UserUnmarshal(unsigned long *, unsigned char *, LPSAFEARRAY *):unsigned char *
-LPSAFEARRAY_UserUnmarshal64(unsigned long *, unsigned char *, LPSAFEARRAY *):unsigned char *
-operator&(GETPROPERTYSTOREFLAGS, GETPROPERTYSTOREFLAGS):GETPROPERTYSTOREFLAGS
-operator&(PROPDESC_FORMAT_FLAGS, PROPDESC_FORMAT_FLAGS):PROPDESC_FORMAT_FLAGS
-operator&(PROPDESC_SEARCHINFO_FLAGS, PROPDESC_SEARCHINFO_FLAGS):PROPDESC_SEARCHINFO_FLAGS
-operator&(PROPDESC_TYPE_FLAGS, PROPDESC_TYPE_FLAGS):PROPDESC_TYPE_FLAGS
-operator&(PROPDESC_VIEW_FLAGS, PROPDESC_VIEW_FLAGS):PROPDESC_VIEW_FLAGS
-operator&=(GETPROPERTYSTOREFLAGS &, GETPROPERTYSTOREFLAGS):GETPROPERTYSTOREFLAGS &
-operator&=(PROPDESC_FORMAT_FLAGS &, PROPDESC_FORMAT_FLAGS):PROPDESC_FORMAT_FLAGS &
-operator&=(PROPDESC_SEARCHINFO_FLAGS &, PROPDESC_SEARCHINFO_FLAGS):PROPDESC_SEARCHINFO_FLAGS &
-operator&=(PROPDESC_TYPE_FLAGS &, PROPDESC_TYPE_FLAGS):PROPDESC_TYPE_FLAGS &
-operator&=(PROPDESC_VIEW_FLAGS &, PROPDESC_VIEW_FLAGS):PROPDESC_VIEW_FLAGS &
-operator^(GETPROPERTYSTOREFLAGS, GETPROPERTYSTOREFLAGS):GETPROPERTYSTOREFLAGS
-operator^(PROPDESC_FORMAT_FLAGS, PROPDESC_FORMAT_FLAGS):PROPDESC_FORMAT_FLAGS
-operator^(PROPDESC_SEARCHINFO_FLAGS, PROPDESC_SEARCHINFO_FLAGS):PROPDESC_SEARCHINFO_FLAGS
-operator^(PROPDESC_TYPE_FLAGS, PROPDESC_TYPE_FLAGS):PROPDESC_TYPE_FLAGS
-operator^(PROPDESC_VIEW_FLAGS, PROPDESC_VIEW_FLAGS):PROPDESC_VIEW_FLAGS
-operator^=(GETPROPERTYSTOREFLAGS &, GETPROPERTYSTOREFLAGS):GETPROPERTYSTOREFLAGS &
-operator^=(PROPDESC_FORMAT_FLAGS &, PROPDESC_FORMAT_FLAGS):PROPDESC_FORMAT_FLAGS &
-operator^=(PROPDESC_SEARCHINFO_FLAGS &, PROPDESC_SEARCHINFO_FLAGS):PROPDESC_SEARCHINFO_FLAGS &
-operator^=(PROPDESC_TYPE_FLAGS &, PROPDESC_TYPE_FLAGS):PROPDESC_TYPE_FLAGS &
-operator^=(PROPDESC_VIEW_FLAGS &, PROPDESC_VIEW_FLAGS):PROPDESC_VIEW_FLAGS &
-operator|(GETPROPERTYSTOREFLAGS, GETPROPERTYSTOREFLAGS):GETPROPERTYSTOREFLAGS
-operator|(PROPDESC_FORMAT_FLAGS, PROPDESC_FORMAT_FLAGS):PROPDESC_FORMAT_FLAGS
-operator|(PROPDESC_SEARCHINFO_FLAGS, PROPDESC_SEARCHINFO_FLAGS):PROPDESC_SEARCHINFO_FLAGS
-operator|(PROPDESC_TYPE_FLAGS, PROPDESC_TYPE_FLAGS):PROPDESC_TYPE_FLAGS
-operator|(PROPDESC_VIEW_FLAGS, PROPDESC_VIEW_FLAGS):PROPDESC_VIEW_FLAGS
-operator|=(GETPROPERTYSTOREFLAGS &, GETPROPERTYSTOREFLAGS):GETPROPERTYSTOREFLAGS &
-operator|=(PROPDESC_FORMAT_FLAGS &, PROPDESC_FORMAT_FLAGS):PROPDESC_FORMAT_FLAGS &
-operator|=(PROPDESC_SEARCHINFO_FLAGS &, PROPDESC_SEARCHINFO_FLAGS):PROPDESC_SEARCHINFO_FLAGS &
-operator|=(PROPDESC_TYPE_FLAGS &, PROPDESC_TYPE_FLAGS):PROPDESC_TYPE_FLAGS &
-operator|=(PROPDESC_VIEW_FLAGS &, PROPDESC_VIEW_FLAGS):PROPDESC_VIEW_FLAGS &
-operator~(GETPROPERTYSTOREFLAGS):GETPROPERTYSTOREFLAGS
-operator~(PROPDESC_FORMAT_FLAGS):PROPDESC_FORMAT_FLAGS
-operator~(PROPDESC_SEARCHINFO_FLAGS):PROPDESC_SEARCHINFO_FLAGS
-operator~(PROPDESC_TYPE_FLAGS):PROPDESC_TYPE_FLAGS
-operator~(PROPDESC_VIEW_FLAGS):PROPDESC_VIEW_FLAGS
-PropertySystem
-SERIALIZEDPROPSTORAGE
-__MIDL_itf_propsys_0000_0000_v0_0_c_ifspec
-__MIDL_itf_propsys_0000_0000_v0_0_s_ifspec
-__MIDL_itf_propsys_0000_0002_v0_0_c_ifspec
-__MIDL_itf_propsys_0000_0002_v0_0_s_ifspec
-__MIDL_itf_propsys_0000_0003_v0_0_c_ifspec
-__MIDL_itf_propsys_0000_0003_v0_0_s_ifspec
-__MIDL_itf_propsys_0000_0004_v0_0_c_ifspec
-__MIDL_itf_propsys_0000_0004_v0_0_s_ifspec
-__MIDL_itf_propsys_0000_0005_v0_0_c_ifspec
-__MIDL_itf_propsys_0000_0005_v0_0_s_ifspec
-__MIDL_itf_propsys_0000_0017_v0_0_c_ifspec
-__MIDL_itf_propsys_0000_0017_v0_0_s_ifspec
-__MIDL_itf_propsys_0000_0021_v0_0_c_ifspec
-__MIDL_itf_propsys_0000_0021_v0_0_s_ifspec
-__MIDL_itf_propsys_0000_0025_v0_0_c_ifspec
-__MIDL_itf_propsys_0000_0025_v0_0_s_ifspec
-__MIDL_itf_propsys_0000_0026_v0_0_c_ifspec
-__MIDL_itf_propsys_0000_0026_v0_0_s_ifspec
+PSSTDAPI_
 --file
 um-propsys.h
 --output
@@ -120,6 +11,7 @@ um-propsys.h
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/propsys.h
 --with-attribute
+GETPROPERTYSTOREFLAGS=Flags
 IInitializeWithFile=Guid("B7D14566-0509-4CCE-A71F-0A554233BD9B")
 IInitializeWithStream=Guid("B824B49D-22AC-4161-AC8A-9916E8FA3F7F")
 IPropertyStore=Guid("886D8EEB-8CF2-4446-8D02-CDBA1DBDCF99")
@@ -145,5 +37,9 @@ IPersistSerializedPropStorage=Guid("E318AD57-0AA0-450F-ACA5-6FAB7103D917")
 IPersistSerializedPropStorage2=Guid("77EFFA68-4F98-4366-BA72-573B3D880571")
 IPropertySystemChangeNotify=Guid("FA955FD9-38BE-4879-A6CE-824CF52D609F")
 ICreateObject=Guid("75121952-E0D0-43E5-9380-1D80483ACF72")
+PROPDESC_FORMAT_FLAGS=Flags
+PROPDESC_SEARCHINFO_FLAGS=Flags
+PROPDESC_TYPE_FLAGS=Flags
+PROPDESC_VIEW_FLAGS=Flags
 --with-librarypath
 *=propsys

@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_CONVOLVEMATRIX_PROP : uint
     {
         D2D1_CONVOLVEMATRIX_PROP_KERNEL_UNIT_LENGTH = 0,

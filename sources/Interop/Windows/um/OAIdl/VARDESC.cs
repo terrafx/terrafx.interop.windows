@@ -18,6 +18,19 @@ namespace TerraFX.Interop
         [NativeTypeName("tagVARDESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/OAIdl.h:872:36)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref uint oInst => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.oInst, 1));
+
+        public ref VARIANT* lpvarValue
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->lpvarValue;
+                }
+            }
+        }
+
         public ELEMDESC elemdescVar;
 
         [NativeTypeName("WORD")]

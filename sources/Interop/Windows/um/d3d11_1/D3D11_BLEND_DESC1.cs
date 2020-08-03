@@ -21,14 +21,14 @@ namespace TerraFX.Interop
 
         public partial struct _RenderTarget_e__FixedBuffer
         {
-            internal D3D11_RENDER_TARGET_BLEND_DESC1 e0;
-            internal D3D11_RENDER_TARGET_BLEND_DESC1 e1;
-            internal D3D11_RENDER_TARGET_BLEND_DESC1 e2;
-            internal D3D11_RENDER_TARGET_BLEND_DESC1 e3;
-            internal D3D11_RENDER_TARGET_BLEND_DESC1 e4;
-            internal D3D11_RENDER_TARGET_BLEND_DESC1 e5;
-            internal D3D11_RENDER_TARGET_BLEND_DESC1 e6;
-            internal D3D11_RENDER_TARGET_BLEND_DESC1 e7;
+            public D3D11_RENDER_TARGET_BLEND_DESC1 e0;
+            public D3D11_RENDER_TARGET_BLEND_DESC1 e1;
+            public D3D11_RENDER_TARGET_BLEND_DESC1 e2;
+            public D3D11_RENDER_TARGET_BLEND_DESC1 e3;
+            public D3D11_RENDER_TARGET_BLEND_DESC1 e4;
+            public D3D11_RENDER_TARGET_BLEND_DESC1 e5;
+            public D3D11_RENDER_TARGET_BLEND_DESC1 e6;
+            public D3D11_RENDER_TARGET_BLEND_DESC1 e7;
 
             public ref D3D11_RENDER_TARGET_BLEND_DESC1 this[int index] => ref AsSpan()[index];
 

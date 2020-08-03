@@ -8,8 +8,7 @@ using System;
 namespace TerraFX.Interop
 {
     [Flags]
-    [NativeTypeName("int")]
-    public enum BINDINFO_OPTIONS : uint
+    public enum BINDINFO_OPTIONS
     {
         BINDINFO_OPTIONS_WININETFLAG = 0x10000,
         BINDINFO_OPTIONS_ENABLE_UTF8 = 0x20000,
@@ -25,6 +24,6 @@ namespace TerraFX.Interop
         BINDINFO_WPC_LOGGING_ENABLED = 0x10000000,
         BINDINFO_OPTIONS_ALLOWCONNECTDATA = 0x20000000,
         BINDINFO_OPTIONS_DISABLEAUTOREDIRECTS = 0x40000000,
-        BINDINFO_OPTIONS_SHDOCVW_NAVIGATE = 0x80000000,
+        BINDINFO_OPTIONS_SHDOCVW_NAVIGATE = unchecked((int)((int)(0x80000000))),
     }
 }

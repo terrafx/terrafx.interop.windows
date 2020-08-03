@@ -3,7 +3,7 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using static TerraFX.Interop.SPDISPLYATTRIBUTES;
+using static TerraFX.Interop.SPDISPLAYATTRIBUTES;
 
 namespace TerraFX.Interop
 {

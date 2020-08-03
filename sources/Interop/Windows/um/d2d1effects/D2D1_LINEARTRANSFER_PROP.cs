@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_LINEARTRANSFER_PROP : uint
     {
         D2D1_LINEARTRANSFER_PROP_RED_Y_INTERCEPT = 0,

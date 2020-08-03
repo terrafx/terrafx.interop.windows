@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_HUEROTATION_PROP : uint
     {
         D2D1_HUEROTATION_PROP_ANGLE = 0,

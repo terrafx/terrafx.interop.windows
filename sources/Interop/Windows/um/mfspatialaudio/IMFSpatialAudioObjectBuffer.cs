@@ -87,9 +87,9 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetMetadataItems([NativeTypeName("ISpatialAudioMetadataItems **")] IUnknown** ppMetadataItems)
+        public int GetMetadataItems([NativeTypeName("ISpatialAudioMetadataItems **")] ISpatialAudioMetadataItems** ppMetadataItems)
         {
-            return ((delegate* stdcall<IMFSpatialAudioObjectBuffer*, IUnknown**, int>)(lpVtbl[12]))((IMFSpatialAudioObjectBuffer*)Unsafe.AsPointer(ref this), ppMetadataItems);
+            return ((delegate* stdcall<IMFSpatialAudioObjectBuffer*, ISpatialAudioMetadataItems**, int>)(lpVtbl[12]))((IMFSpatialAudioObjectBuffer*)Unsafe.AsPointer(ref this), ppMetadataItems);
         }
     }
 }

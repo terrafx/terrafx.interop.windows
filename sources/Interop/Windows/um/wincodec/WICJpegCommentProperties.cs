@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public enum WICJpegCommentProperties
+    public enum WICJpegCommentProperties : uint
     {
         WICJpegCommentText = 0x1,
         WICJpegCommentProperties_FORCE_DWORD = 0x7fffffff,

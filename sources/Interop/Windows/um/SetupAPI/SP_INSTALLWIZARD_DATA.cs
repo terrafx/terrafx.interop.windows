@@ -37,26 +37,26 @@ namespace TerraFX.Interop
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
         public partial struct _DynamicPages_e__FixedBuffer
         {
-            internal IntPtr e0;
-            internal IntPtr e1;
-            internal IntPtr e2;
-            internal IntPtr e3;
-            internal IntPtr e4;
-            internal IntPtr e5;
-            internal IntPtr e6;
-            internal IntPtr e7;
-            internal IntPtr e8;
-            internal IntPtr e9;
-            internal IntPtr e10;
-            internal IntPtr e11;
-            internal IntPtr e12;
-            internal IntPtr e13;
-            internal IntPtr e14;
-            internal IntPtr e15;
-            internal IntPtr e16;
-            internal IntPtr e17;
-            internal IntPtr e18;
-            internal IntPtr e19;
+            public IntPtr e0;
+            public IntPtr e1;
+            public IntPtr e2;
+            public IntPtr e3;
+            public IntPtr e4;
+            public IntPtr e5;
+            public IntPtr e6;
+            public IntPtr e7;
+            public IntPtr e8;
+            public IntPtr e9;
+            public IntPtr e10;
+            public IntPtr e11;
+            public IntPtr e12;
+            public IntPtr e13;
+            public IntPtr e14;
+            public IntPtr e15;
+            public IntPtr e16;
+            public IntPtr e17;
+            public IntPtr e18;
+            public IntPtr e19;
 
             public ref IntPtr this[int index] => ref AsSpan()[index];
 

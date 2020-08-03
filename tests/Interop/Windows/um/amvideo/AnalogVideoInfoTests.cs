@@ -8,28 +8,28 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="AnalogVideoInfo" /> struct.</summary>
-    public static unsafe class AnalogVideoInfoTests
+    /// <summary>Provides validation of the <see cref="ANALOGVIDEOINFO" /> struct.</summary>
+    public static unsafe class ANALOGVIDEOINFOTests
     {
-        /// <summary>Validates that the <see cref="AnalogVideoInfo" /> struct is blittable.</summary>
+        /// <summary>Validates that the <see cref="ANALOGVIDEOINFO" /> struct is blittable.</summary>
         [Test]
         public static void IsBlittableTest()
         {
-            Assert.That(Marshal.SizeOf<AnalogVideoInfo>(), Is.EqualTo(sizeof(AnalogVideoInfo)));
+            Assert.That(Marshal.SizeOf<ANALOGVIDEOINFO>(), Is.EqualTo(sizeof(ANALOGVIDEOINFO)));
         }
 
-        /// <summary>Validates that the <see cref="AnalogVideoInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
+        /// <summary>Validates that the <see cref="ANALOGVIDEOINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
         [Test]
         public static void IsLayoutSequentialTest()
         {
-            Assert.That(typeof(AnalogVideoInfo).IsLayoutSequential, Is.True);
+            Assert.That(typeof(ANALOGVIDEOINFO).IsLayoutSequential, Is.True);
         }
 
-        /// <summary>Validates that the <see cref="AnalogVideoInfo" /> struct has the correct size.</summary>
+        /// <summary>Validates that the <see cref="ANALOGVIDEOINFO" /> struct has the correct size.</summary>
         [Test]
         public static void SizeOfTest()
         {
-            Assert.That(sizeof(AnalogVideoInfo), Is.EqualTo(48));
+            Assert.That(sizeof(ANALOGVIDEOINFO), Is.EqualTo(48));
         }
     }
 }

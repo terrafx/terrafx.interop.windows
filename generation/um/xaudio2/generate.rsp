@@ -1,71 +1,9 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-IID_IXAudio2
-IID_IXAudio2Extension
-IXAudio2.AddRef():ULONG nothrow
-IXAudio2.QueryInterface(const IID &, void **):HRESULT nothrow
-IXAudio2.Release():ULONG nothrow
-IXAudio2Extension.AddRef():ULONG nothrow
-IXAudio2Extension.QueryInterface(const IID &, void **):HRESULT nothrow
-IXAudio2Extension.Release():ULONG nothrow
-IXAudio2MasteringVoice.DestroyVoice():void nothrow
-IXAudio2MasteringVoice.DisableEffect(UINT32, UINT32):HRESULT nothrow
-IXAudio2MasteringVoice.EnableEffect(UINT32, UINT32):HRESULT nothrow
-IXAudio2MasteringVoice.GetChannelVolumes(UINT32, float *):void nothrow
-IXAudio2MasteringVoice.GetEffectParameters(UINT32, void *, UINT32):HRESULT nothrow
-IXAudio2MasteringVoice.GetEffectState(UINT32, BOOL *):void nothrow
-IXAudio2MasteringVoice.GetFilterParameters(XAUDIO2_FILTER_PARAMETERS *):void nothrow
-IXAudio2MasteringVoice.GetOutputFilterParameters(IXAudio2Voice *, XAUDIO2_FILTER_PARAMETERS *):void nothrow
-IXAudio2MasteringVoice.GetOutputMatrix(IXAudio2Voice *, UINT32, UINT32, float *):void nothrow
-IXAudio2MasteringVoice.GetVoiceDetails(XAUDIO2_VOICE_DETAILS *):void nothrow
-IXAudio2MasteringVoice.GetVolume(float *):void nothrow
-IXAudio2MasteringVoice.SetChannelVolumes(UINT32, const float *, UINT32):HRESULT nothrow
-IXAudio2MasteringVoice.SetEffectChain(const XAUDIO2_EFFECT_CHAIN *):HRESULT nothrow
-IXAudio2MasteringVoice.SetEffectParameters(UINT32, const void *, UINT32, UINT32):HRESULT nothrow
-IXAudio2MasteringVoice.SetFilterParameters(const XAUDIO2_FILTER_PARAMETERS *, UINT32):HRESULT nothrow
-IXAudio2MasteringVoice.SetOutputFilterParameters(IXAudio2Voice *, const XAUDIO2_FILTER_PARAMETERS *, UINT32):HRESULT nothrow
-IXAudio2MasteringVoice.SetOutputMatrix(IXAudio2Voice *, UINT32, UINT32, const float *, UINT32):HRESULT nothrow
-IXAudio2MasteringVoice.SetOutputVoices(const XAUDIO2_VOICE_SENDS *):HRESULT nothrow
-IXAudio2MasteringVoice.SetVolume(float, UINT32):HRESULT nothrow
-IXAudio2SourceVoice.DestroyVoice():void nothrow
-IXAudio2SourceVoice.DisableEffect(UINT32, UINT32):HRESULT nothrow
-IXAudio2SourceVoice.EnableEffect(UINT32, UINT32):HRESULT nothrow
-IXAudio2SourceVoice.GetChannelVolumes(UINT32, float *):void nothrow
-IXAudio2SourceVoice.GetEffectParameters(UINT32, void *, UINT32):HRESULT nothrow
-IXAudio2SourceVoice.GetEffectState(UINT32, BOOL *):void nothrow
-IXAudio2SourceVoice.GetFilterParameters(XAUDIO2_FILTER_PARAMETERS *):void nothrow
-IXAudio2SourceVoice.GetOutputFilterParameters(IXAudio2Voice *, XAUDIO2_FILTER_PARAMETERS *):void nothrow
-IXAudio2SourceVoice.GetOutputMatrix(IXAudio2Voice *, UINT32, UINT32, float *):void nothrow
-IXAudio2SourceVoice.GetVoiceDetails(XAUDIO2_VOICE_DETAILS *):void nothrow
-IXAudio2SourceVoice.GetVolume(float *):void nothrow
-IXAudio2SourceVoice.SetChannelVolumes(UINT32, const float *, UINT32):HRESULT nothrow
-IXAudio2SourceVoice.SetEffectChain(const XAUDIO2_EFFECT_CHAIN *):HRESULT nothrow
-IXAudio2SourceVoice.SetEffectParameters(UINT32, const void *, UINT32, UINT32):HRESULT nothrow
-IXAudio2SourceVoice.SetFilterParameters(const XAUDIO2_FILTER_PARAMETERS *, UINT32):HRESULT nothrow
-IXAudio2SourceVoice.SetOutputFilterParameters(IXAudio2Voice *, const XAUDIO2_FILTER_PARAMETERS *, UINT32):HRESULT nothrow
-IXAudio2SourceVoice.SetOutputMatrix(IXAudio2Voice *, UINT32, UINT32, const float *, UINT32):HRESULT nothrow
-IXAudio2SourceVoice.SetOutputVoices(const XAUDIO2_VOICE_SENDS *):HRESULT nothrow
-IXAudio2SourceVoice.SetVolume(float, UINT32):HRESULT nothrow
-IXAudio2SubmixVoice.DestroyVoice():void nothrow
-IXAudio2SubmixVoice.DisableEffect(UINT32, UINT32):HRESULT nothrow
-IXAudio2SubmixVoice.EnableEffect(UINT32, UINT32):HRESULT nothrow
-IXAudio2SubmixVoice.GetChannelVolumes(UINT32, float *):void nothrow
-IXAudio2SubmixVoice.GetEffectParameters(UINT32, void *, UINT32):HRESULT nothrow
-IXAudio2SubmixVoice.GetEffectState(UINT32, BOOL *):void nothrow
-IXAudio2SubmixVoice.GetFilterParameters(XAUDIO2_FILTER_PARAMETERS *):void nothrow
-IXAudio2SubmixVoice.GetOutputFilterParameters(IXAudio2Voice *, XAUDIO2_FILTER_PARAMETERS *):void nothrow
-IXAudio2SubmixVoice.GetOutputMatrix(IXAudio2Voice *, UINT32, UINT32, float *):void nothrow
-IXAudio2SubmixVoice.GetVoiceDetails(XAUDIO2_VOICE_DETAILS *):void nothrow
-IXAudio2SubmixVoice.GetVolume(float *):void nothrow
-IXAudio2SubmixVoice.SetChannelVolumes(UINT32, const float *, UINT32):HRESULT nothrow
-IXAudio2SubmixVoice.SetEffectChain(const XAUDIO2_EFFECT_CHAIN *):HRESULT nothrow
-IXAudio2SubmixVoice.SetEffectParameters(UINT32, const void *, UINT32, UINT32):HRESULT nothrow
-IXAudio2SubmixVoice.SetFilterParameters(const XAUDIO2_FILTER_PARAMETERS *, UINT32):HRESULT nothrow
-IXAudio2SubmixVoice.SetOutputFilterParameters(IXAudio2Voice *, const XAUDIO2_FILTER_PARAMETERS *, UINT32):HRESULT nothrow
-IXAudio2SubmixVoice.SetOutputMatrix(IXAudio2Voice *, UINT32, UINT32, const float *, UINT32):HRESULT nothrow
-IXAudio2SubmixVoice.SetOutputVoices(const XAUDIO2_VOICE_SENDS *):HRESULT nothrow
-IXAudio2SubmixVoice.SetVolume(float, UINT32):HRESULT nothrow
+Declare_IXAudio2Voice_Methods
+FWD_DECLARE
+X2DEFAULT
 XAudio2Create(IXAudio2 **, UINT32, XAUDIO2_PROCESSOR):HRESULT
 --file
 um-xaudio2.h
@@ -78,7 +16,5 @@ C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/xaudio2.h
 --with-attribute
 IXAudio2=Guid("2B02E3CF-2E0B-4ec3-BE45-1B2A3FE7210D")
 IXAudio2Extension=Guid("84AC29BB-D619-44D2-B197-E4ACF7DF3ED6")
---with-using
-IXAudio2=static TerraFX.Interop.AUDIO_STREAM_CATEGORY
 --with-librarypath
 *=XAudio2_9

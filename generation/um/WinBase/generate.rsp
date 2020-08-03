@@ -1,11 +1,28 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
+CaptureStackBackTrace
+DefineHandleTable
 DestroyThreadpoolEnvironment(PTP_CALLBACK_ENVIRON):void
+FreeModule
+FreeProcInstance
+GetCurrentTime
+GetFreeSpace
+GlobalDiscard
+GlobalLRUNewest
+GlobalLRUOldest
+HasOverlappedIoCompleted
 InitializeThreadpoolEnvironment(PTP_CALLBACK_ENVIRON):void
 InterlockedExchangeSubtract(volatile unsigned int *, unsigned int):unsigned int
 InterlockedExchangeSubtract(volatile unsigned long *, unsigned long):unsigned long
 InterlockedExchangeSubtract(volatile unsigned long long *, unsigned long long):unsigned long long
+LimitEmsPages
+LockSegment
+MAKEINTATOM
+MakeProcInstance
+ProcThreadAttributeValue
+SecureZeroMemory
+SetSwapAreaSize
 SetThreadpoolCallbackCleanupGroup(PTP_CALLBACK_ENVIRON, PTP_CLEANUP_GROUP, PTP_CLEANUP_GROUP_CANCEL_CALLBACK):void
 SetThreadpoolCallbackLibrary(PTP_CALLBACK_ENVIRON, PVOID):void
 SetThreadpoolCallbackPersistent(PTP_CALLBACK_ENVIRON):void
@@ -13,6 +30,9 @@ SetThreadpoolCallbackPool(PTP_CALLBACK_ENVIRON, PTP_POOL):void
 SetThreadpoolCallbackPriority(PTP_CALLBACK_ENVIRON, TP_CALLBACK_PRIORITY):void
 SetThreadpoolCallbackRunsLong(PTP_CALLBACK_ENVIRON):void
 SignalObjectAndWait(HANDLE, HANDLE, DWORD, BOOL):DWORD
+UnlockResource
+UnlockSegment
+Yield
 _InterlockedAnd(volatile unsigned long long *, unsigned long long):unsigned long long
 _InterlockedCompareExchange(volatile unsigned int *, unsigned int, unsigned int):unsigned int
 _InterlockedCompareExchange(volatile unsigned long *, unsigned long, unsigned long):unsigned long
@@ -62,7 +82,8 @@ GetEventLogInformation=advapi32
 GetFileSecurity=advapi32
 GetNumberOfEventLogRecords=advapi32
 GetOldestEventLogRecord=advapi32
-GetUserName=advapi32
+GetUserNameA=advapi32
+GetUserNameW=advapi32
 IsTextUnicode=advapi32
 LogonUser=advapi32
 LogonUserEx=advapi32
@@ -246,7 +267,8 @@ GetSystemRegistryQuota
 GetTempFileName
 GetThreadSelectorEntry
 GetUmsCompletionListEvent
-GetUserName
+GetUserNameA
+GetUserNameW
 GetVolumeNameForVolumeMountPoint
 GetVolumePathName
 GetVolumePathNamesForVolumeName

@@ -7,10 +7,34 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public partial struct TYPEDESC
+    public unsafe partial struct TYPEDESC
     {
         [NativeTypeName("tagTYPEDESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/OAIdl.h:645:36)")]
         public _Anonymous_e__Union Anonymous;
+
+        public ref TYPEDESC* lptdesc
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->lptdesc;
+                }
+            }
+        }
+
+        public ref ARRAYDESC* lpadesc
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->lpadesc;
+                }
+            }
+        }
+
+        public ref uint hreftype => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hreftype, 1));
 
         [NativeTypeName("VARTYPE")]
         public ushort vt;

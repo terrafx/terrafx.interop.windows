@@ -21,7 +21,7 @@ namespace TerraFX.Interop
 
         public partial struct _Privilege_e__FixedBuffer
         {
-            internal LUID_AND_ATTRIBUTES e0;
+            public LUID_AND_ATTRIBUTES e0;
 
             public ref LUID_AND_ATTRIBUTES this[int index] => ref AsSpan(int.MaxValue)[index];
 

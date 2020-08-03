@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_COLORMANAGEMENT_PROP : uint
     {
         D2D1_COLORMANAGEMENT_PROP_SOURCE_COLOR_CONTEXT = 0,

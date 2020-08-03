@@ -22,8 +22,43 @@ namespace TerraFX.Interop
         [NativeTypeName("_PROPSHEETPAGEW_V3::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:259:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
+        public ref ushort* pszTemplate
+        {
+            get
+            {
+                fixed (_Anonymous1_e__Union* pField = &Anonymous1)
+                {
+                    return ref pField->pszTemplate;
+                }
+            }
+        }
+
+        public ref DLGTEMPLATE* pResource
+        {
+            get
+            {
+                fixed (_Anonymous1_e__Union* pField = &Anonymous1)
+                {
+                    return ref pField->pResource;
+                }
+            }
+        }
+
         [NativeTypeName("_PROPSHEETPAGEW_V3::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:259:5)")]
         public _Anonymous2_e__Union Anonymous2;
+
+        public ref IntPtr hIcon => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.hIcon, 1));
+
+        public ref ushort* pszIcon
+        {
+            get
+            {
+                fixed (_Anonymous2_e__Union* pField = &Anonymous2)
+                {
+                    return ref pField->pszIcon;
+                }
+            }
+        }
 
         [NativeTypeName("LPCWSTR")]
         public ushort* pszTitle;

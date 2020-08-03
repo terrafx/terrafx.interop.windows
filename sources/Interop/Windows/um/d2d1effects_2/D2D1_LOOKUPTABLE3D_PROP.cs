@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_LOOKUPTABLE3D_PROP : uint
     {
         D2D1_LOOKUPTABLE3D_PROP_LUT = 0,

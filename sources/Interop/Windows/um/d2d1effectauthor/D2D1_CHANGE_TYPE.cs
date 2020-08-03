@@ -8,7 +8,6 @@ using System;
 namespace TerraFX.Interop
 {
     [Flags]
-    [NativeTypeName("int")]
     public enum D2D1_CHANGE_TYPE : uint
     {
         D2D1_CHANGE_TYPE_NONE = 0,
