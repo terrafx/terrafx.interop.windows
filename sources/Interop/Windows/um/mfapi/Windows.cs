@@ -1854,5 +1854,188 @@ namespace TerraFX.Interop
         [DllImport("mfplat", EntryPoint = "MFSplitSample", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MFSplitSample([NativeTypeName("IMFSample *")] IMFSample* pSample, [NativeTypeName("IMFSample **")] IMFSample** pOutputSamples, [NativeTypeName("DWORD")] uint dwOutputSampleMaxCount, [NativeTypeName("DWORD *")] uint* pdwOutputSampleCount);
+
+        [NativeTypeName("#define MF_SDK_VERSION 0x0002")]
+        public const int MF_SDK_VERSION = 0x0002;
+
+        [NativeTypeName("#define MF_API_VERSION 0x0070")]
+        public const int MF_API_VERSION = 0x0070;
+
+        [NativeTypeName("#define MF_VERSION (MF_SDK_VERSION << 16 | MF_API_VERSION)")]
+        public const int MF_VERSION = (0x0002 << 16 | 0x0070);
+
+        [NativeTypeName("#define MFSTARTUP_NOSOCKET 0x1")]
+        public const int MFSTARTUP_NOSOCKET = 0x1;
+
+        [NativeTypeName("#define MFSTARTUP_LITE (MFSTARTUP_NOSOCKET)")]
+        public const int MFSTARTUP_LITE = (0x1);
+
+        [NativeTypeName("#define MFSTARTUP_FULL 0")]
+        public const int MFSTARTUP_FULL = 0;
+
+        [NativeTypeName("#define MF_E_DXGI_DEVICE_NOT_INITIALIZED ((HRESULT)0x80041000L)")]
+        public const int MF_E_DXGI_DEVICE_NOT_INITIALIZED = unchecked((int)(0x80041000));
+
+        [NativeTypeName("#define MF_E_DXGI_NEW_VIDEO_DEVICE ((HRESULT)0x80041001L)")]
+        public const int MF_E_DXGI_NEW_VIDEO_DEVICE = unchecked((int)(0x80041001));
+
+        [NativeTypeName("#define MF_E_DXGI_VIDEO_DEVICE_LOCKED ((HRESULT)0x80041002L)")]
+        public const int MF_E_DXGI_VIDEO_DEVICE_LOCKED = unchecked((int)(0x80041002));
+
+        [NativeTypeName("#define MF_1_BYTE_ALIGNMENT 0x00000000")]
+        public const int MF_1_BYTE_ALIGNMENT = 0x00000000;
+
+        [NativeTypeName("#define MF_2_BYTE_ALIGNMENT 0x00000001")]
+        public const int MF_2_BYTE_ALIGNMENT = 0x00000001;
+
+        [NativeTypeName("#define MF_4_BYTE_ALIGNMENT 0x00000003")]
+        public const int MF_4_BYTE_ALIGNMENT = 0x00000003;
+
+        [NativeTypeName("#define MF_8_BYTE_ALIGNMENT 0x00000007")]
+        public const int MF_8_BYTE_ALIGNMENT = 0x00000007;
+
+        [NativeTypeName("#define MF_16_BYTE_ALIGNMENT 0x0000000f")]
+        public const int MF_16_BYTE_ALIGNMENT = 0x0000000f;
+
+        [NativeTypeName("#define MF_32_BYTE_ALIGNMENT 0x0000001f")]
+        public const int MF_32_BYTE_ALIGNMENT = 0x0000001f;
+
+        [NativeTypeName("#define MF_64_BYTE_ALIGNMENT 0x0000003f")]
+        public const int MF_64_BYTE_ALIGNMENT = 0x0000003f;
+
+        [NativeTypeName("#define MF_128_BYTE_ALIGNMENT 0x0000007f")]
+        public const int MF_128_BYTE_ALIGNMENT = 0x0000007f;
+
+        [NativeTypeName("#define MF_256_BYTE_ALIGNMENT 0x000000ff")]
+        public const int MF_256_BYTE_ALIGNMENT = 0x000000ff;
+
+        [NativeTypeName("#define MF_512_BYTE_ALIGNMENT 0x000001ff")]
+        public const int MF_512_BYTE_ALIGNMENT = 0x000001ff;
+
+        [NativeTypeName("#define MF_1024_BYTE_ALIGNMENT 0x000003ff")]
+        public const int MF_1024_BYTE_ALIGNMENT = 0x000003ff;
+
+        [NativeTypeName("#define MF_2048_BYTE_ALIGNMENT 0x000007ff")]
+        public const int MF_2048_BYTE_ALIGNMENT = 0x000007ff;
+
+        [NativeTypeName("#define MF_4096_BYTE_ALIGNMENT 0x00000fff")]
+        public const int MF_4096_BYTE_ALIGNMENT = 0x00000fff;
+
+        [NativeTypeName("#define MF_8192_BYTE_ALIGNMENT 0x00001fff")]
+        public const int MF_8192_BYTE_ALIGNMENT = 0x00001fff;
+
+        [NativeTypeName("#define MFSESSIONCAP_START 0x00000001")]
+        public const int MFSESSIONCAP_START = 0x00000001;
+
+        [NativeTypeName("#define MFSESSIONCAP_SEEK 0x00000002")]
+        public const int MFSESSIONCAP_SEEK = 0x00000002;
+
+        [NativeTypeName("#define MFSESSIONCAP_PAUSE 0x00000004")]
+        public const int MFSESSIONCAP_PAUSE = 0x00000004;
+
+        [NativeTypeName("#define MFSESSIONCAP_RATE_FORWARD 0x00000010")]
+        public const int MFSESSIONCAP_RATE_FORWARD = 0x00000010;
+
+        [NativeTypeName("#define MFSESSIONCAP_RATE_REVERSE 0x00000020")]
+        public const int MFSESSIONCAP_RATE_REVERSE = 0x00000020;
+
+        [NativeTypeName("#define MFSESSIONCAP_DOES_NOT_USE_NETWORK 0x00000040")]
+        public const int MFSESSIONCAP_DOES_NOT_USE_NETWORK = 0x00000040;
+
+        [NativeTypeName("#define MFSampleExtension_ClosedCaption_CEA708_MAX_SIZE 256")]
+        public const int MFSampleExtension_ClosedCaption_CEA708_MAX_SIZE = 256;
+
+        [NativeTypeName("#define MACROBLOCK_FLAG_SKIP 0x00000001")]
+        public const int MACROBLOCK_FLAG_SKIP = 0x00000001;
+
+        [NativeTypeName("#define MACROBLOCK_FLAG_DIRTY 0x00000002")]
+        public const int MACROBLOCK_FLAG_DIRTY = 0x00000002;
+
+        [NativeTypeName("#define MACROBLOCK_FLAG_MOTION 0x00000004")]
+        public const int MACROBLOCK_FLAG_MOTION = 0x00000004;
+
+        [NativeTypeName("#define MACROBLOCK_FLAG_VIDEO 0x00000008")]
+        public const int MACROBLOCK_FLAG_VIDEO = 0x00000008;
+
+        [NativeTypeName("#define MACROBLOCK_FLAG_HAS_MOTION_VECTOR 0x00000010")]
+        public const int MACROBLOCK_FLAG_HAS_MOTION_VECTOR = 0x00000010;
+
+        [NativeTypeName("#define MACROBLOCK_FLAG_HAS_QP 0x00000020")]
+        public const int MACROBLOCK_FLAG_HAS_QP = 0x00000020;
+
+        [NativeTypeName("#define MFCAPTURE_METADATA_SCAN_RIGHT_LEFT 0x00000001")]
+        public const int MFCAPTURE_METADATA_SCAN_RIGHT_LEFT = 0x00000001;
+
+        [NativeTypeName("#define MFCAPTURE_METADATA_SCAN_BOTTOM_TOP 0x00000002")]
+        public const int MFCAPTURE_METADATA_SCAN_BOTTOM_TOP = 0x00000002;
+
+        [NativeTypeName("#define MFCAPTURE_METADATA_SCANLINE_VERTICAL 0x00000004")]
+        public const int MFCAPTURE_METADATA_SCANLINE_VERTICAL = 0x00000004;
+
+        [NativeTypeName("#define MF_METADATAFACIALEXPRESSION_SMILE 0x00000001")]
+        public const int MF_METADATAFACIALEXPRESSION_SMILE = 0x00000001;
+
+        [NativeTypeName("#define MF_METADATATIMESTAMPS_DEVICE 0x00000001")]
+        public const int MF_METADATATIMESTAMPS_DEVICE = 0x00000001;
+
+        [NativeTypeName("#define MF_METADATATIMESTAMPS_PRESENTATION 0x00000002")]
+        public const int MF_METADATATIMESTAMPS_PRESENTATION = 0x00000002;
+
+        [NativeTypeName("#define MF_HISTOGRAM_CHANNEL_Y 0x00000001")]
+        public const int MF_HISTOGRAM_CHANNEL_Y = 0x00000001;
+
+        [NativeTypeName("#define MF_HISTOGRAM_CHANNEL_R 0x00000002")]
+        public const int MF_HISTOGRAM_CHANNEL_R = 0x00000002;
+
+        [NativeTypeName("#define MF_HISTOGRAM_CHANNEL_G 0x00000004")]
+        public const int MF_HISTOGRAM_CHANNEL_G = 0x00000004;
+
+        [NativeTypeName("#define MF_HISTOGRAM_CHANNEL_B 0x00000008")]
+        public const int MF_HISTOGRAM_CHANNEL_B = 0x00000008;
+
+        [NativeTypeName("#define MF_HISTOGRAM_CHANNEL_Cb 0x00000010")]
+        public const int MF_HISTOGRAM_CHANNEL_Cb = 0x00000010;
+
+        [NativeTypeName("#define MF_HISTOGRAM_CHANNEL_Cr 0x00000020")]
+        public const int MF_HISTOGRAM_CHANNEL_Cr = 0x00000020;
+
+        [NativeTypeName("#define D3DFMT_R8G8B8 20")]
+        public const int D3DFMT_R8G8B8 = 20;
+
+        [NativeTypeName("#define D3DFMT_A8R8G8B8 21")]
+        public const int D3DFMT_A8R8G8B8 = 21;
+
+        [NativeTypeName("#define D3DFMT_X8R8G8B8 22")]
+        public const int D3DFMT_X8R8G8B8 = 22;
+
+        [NativeTypeName("#define D3DFMT_R5G6B5 23")]
+        public const int D3DFMT_R5G6B5 = 23;
+
+        [NativeTypeName("#define D3DFMT_X1R5G5B5 24")]
+        public const int D3DFMT_X1R5G5B5 = 24;
+
+        [NativeTypeName("#define D3DFMT_A2B10G10R10 31")]
+        public const int D3DFMT_A2B10G10R10 = 31;
+
+        [NativeTypeName("#define D3DFMT_P8 41")]
+        public const int D3DFMT_P8 = 41;
+
+        [NativeTypeName("#define D3DFMT_L8 50")]
+        public const int D3DFMT_L8 = 50;
+
+        [NativeTypeName("#define D3DFMT_D16 80")]
+        public const int D3DFMT_D16 = 80;
+
+        [NativeTypeName("#define D3DFMT_L16 81")]
+        public const int D3DFMT_L16 = 81;
+
+        [NativeTypeName("#define D3DFMT_A16B16G16R16F 113")]
+        public const int D3DFMT_A16B16G16R16F = 113;
+
+        [NativeTypeName("#define LOCAL_D3DFMT_DEFINES 1")]
+        public const int LOCAL_D3DFMT_DEFINES = 1;
+
+        [NativeTypeName("#define MFVideoFormat_MPG2 MFVideoFormat_MPEG2")]
+        public static readonly Guid MFVideoFormat_MPG2 = MFVideoFormat_MPEG2;
     }
 }

@@ -5,6 +5,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.CLSCTX;
 
 namespace TerraFX.Interop
 {
@@ -356,5 +357,41 @@ namespace TerraFX.Interop
         [DllImport("Ole32", EntryPoint = "CoRevokeDeviceCatalog", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CoRevokeDeviceCatalog([NativeTypeName("CO_DEVICE_CATALOG_COOKIE")] IntPtr cookie);
+
+        [NativeTypeName("#define CLSCTX_INPROC (CLSCTX_INPROC_SERVER|CLSCTX_INPROC_HANDLER)")]
+        public const int CLSCTX_INPROC = ((int)(CLSCTX_INPROC_SERVER) | (int)(CLSCTX_INPROC_HANDLER));
+
+        [NativeTypeName("#define CLSCTX_ALL (CLSCTX_INPROC_SERVER| \\\r\n                                 CLSCTX_INPROC_HANDLER| \\\r\n                                 CLSCTX_LOCAL_SERVER| \\\r\n                                 CLSCTX_REMOTE_SERVER)")]
+        public const int CLSCTX_ALL = ((int)(CLSCTX_INPROC_SERVER) | (int)(CLSCTX_INPROC_HANDLER) | (int)(CLSCTX_LOCAL_SERVER) | (int)(CLSCTX_REMOTE_SERVER));
+
+        [NativeTypeName("#define CLSCTX_SERVER (CLSCTX_INPROC_SERVER|CLSCTX_LOCAL_SERVER|CLSCTX_REMOTE_SERVER)")]
+        public const int CLSCTX_SERVER = ((int)(CLSCTX_INPROC_SERVER) | (int)(CLSCTX_LOCAL_SERVER) | (int)(CLSCTX_REMOTE_SERVER));
+
+        [NativeTypeName("#define _CRT_INTERNAL_COMBASE_SYMBOL_PREFIX \"_\"")]
+        public static ReadOnlySpan<byte> _CRT_INTERNAL_COMBASE_SYMBOL_PREFIX => new byte[] { 0x5F, 0x00 };
+
+        [NativeTypeName("#define COM_RIGHTS_EXECUTE 1")]
+        public const int COM_RIGHTS_EXECUTE = 1;
+
+        [NativeTypeName("#define COM_RIGHTS_EXECUTE_LOCAL 2")]
+        public const int COM_RIGHTS_EXECUTE_LOCAL = 2;
+
+        [NativeTypeName("#define COM_RIGHTS_EXECUTE_REMOTE 4")]
+        public const int COM_RIGHTS_EXECUTE_REMOTE = 4;
+
+        [NativeTypeName("#define COM_RIGHTS_ACTIVATE_LOCAL 8")]
+        public const int COM_RIGHTS_ACTIVATE_LOCAL = 8;
+
+        [NativeTypeName("#define COM_RIGHTS_ACTIVATE_REMOTE 16")]
+        public const int COM_RIGHTS_ACTIVATE_REMOTE = 16;
+
+        [NativeTypeName("#define COM_RIGHTS_RESERVED1 32")]
+        public const int COM_RIGHTS_RESERVED1 = 32;
+
+        [NativeTypeName("#define COM_RIGHTS_RESERVED2 64")]
+        public const int COM_RIGHTS_RESERVED2 = 64;
+
+        [NativeTypeName("#define CWMO_MAX_HANDLES 56")]
+        public const int CWMO_MAX_HANDLES = 56;
     }
 }

@@ -9,46 +9,6 @@ namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public const uint UPDFCACHE_NODATACACHE = 0x1;
-
-        public const uint UPDFCACHE_ONSAVECACHE = 0x2;
-
-        public const uint UPDFCACHE_ONSTOPCACHE = 0x4;
-
-        public const uint UPDFCACHE_NORMALCACHE = 0x8;
-
-        public const uint UPDFCACHE_IFBLANK = 0x10;
-
-        public const uint UPDFCACHE_ONLYIFBLANK = 0x80000000;
-
-        public const uint UPDFCACHE_IFBLANKORONSAVECACHE = (UPDFCACHE_IFBLANK | UPDFCACHE_ONSAVECACHE);
-
-        public const uint UPDFCACHE_ALL = ~UPDFCACHE_ONLYIFBLANK;
-
-        public const uint UPDFCACHE_ALLBUTNODATACACHE = (UPDFCACHE_ALL & ~UPDFCACHE_NODATACACHE);
-
-        public const int MK_ALT = 0x20;
-
-        public const int DROPEFFECT_NONE = 0;
-
-        public const int DROPEFFECT_COPY = 1;
-
-        public const int DROPEFFECT_MOVE = 2;
-
-        public const int DROPEFFECT_LINK = 4;
-
-        public const int DROPEFFECT_SCROLL = unchecked((int)0x80000000);
-
-        public const int DD_DEFSCROLLINSET = 11;
-
-        public const int DD_DEFSCROLLDELAY = 50;
-
-        public const int DD_DEFSCROLLINTERVAL = 50;
-
-        public const int DD_DEFDRAGDELAY = 200;
-
-        public const int DD_DEFDRAGMINDIST = 2;
-
         public static readonly Guid IID_IContinue = new Guid(0x0000012A, 0x0000, 0x0000, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 
         public static readonly Guid IID_IDropSource = new Guid(0x00000121, 0x0000, 0x0000, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);

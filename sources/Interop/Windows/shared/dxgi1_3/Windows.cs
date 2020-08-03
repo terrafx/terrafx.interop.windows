@@ -41,5 +41,8 @@ namespace TerraFX.Interop
 
         [NativeTypeName("const GUID")]
         public static readonly Guid IID_IDXGIOutput3 = new Guid(0x8a6bb301, 0x7e7e, 0x41F4, 0xa8, 0xe0, 0x5b, 0x32, 0xf7, 0xf9, 0x9b, 0x18);
+
+        [NativeTypeName("#define DXGI_CREATE_FACTORY_DEBUG 0x1")]
+        public const int DXGI_CREATE_FACTORY_DEBUG = 0x1;
     }
 }

@@ -14,5 +14,8 @@ namespace TerraFX.Interop
 
         [NativeTypeName("const GUID")]
         public static readonly Guid IID_ID3D11Device2 = new Guid(0x9d06dffa, 0xd1e5, 0x4d07, 0x83, 0xa8, 0x1b, 0xb1, 0x23, 0xf2, 0xf8, 0x41);
+
+        [NativeTypeName("#define D3D11_PACKED_TILE ( 0xffffffff )")]
+        public const uint D3D11_PACKED_TILE = (0xffffffff);
     }
 }

@@ -188,5 +188,14 @@ namespace TerraFX.Interop
 
         [NativeTypeName("const GUID")]
         public static readonly Guid MFT_USING_HARDWARE_DRM = new Guid(0x34faa77d, 0xd79e, 0x4957, 0xb8, 0xce, 0x36, 0x2b, 0x26, 0x84, 0x99, 0x6c);
+
+        [NativeTypeName("#define MFT_STREAMS_UNLIMITED 0xFFFFFFFF")]
+        public const uint MFT_STREAMS_UNLIMITED = 0xFFFFFFFF;
+
+        [NativeTypeName("#define MFT_OUTPUT_BOUND_LOWER_UNBOUNDED MINLONGLONG")]
+        public const long MFT_OUTPUT_BOUND_LOWER_UNBOUNDED = ((long)(~(0x7fffffffffffffff)));
+
+        [NativeTypeName("#define MFT_OUTPUT_BOUND_UPPER_UNBOUNDED MAXLONGLONG")]
+        public const long MFT_OUTPUT_BOUND_UPPER_UNBOUNDED = (0x7fffffffffffffff);
     }
 }

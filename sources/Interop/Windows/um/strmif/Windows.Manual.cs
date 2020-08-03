@@ -9,6 +9,18 @@ namespace TerraFX.Interop
 {
     public static partial class Windows
     {
+        public const int ADVISE_NONE = 0;
+
+        public const int ADVISE_CLIPPING = 0x1;
+
+        public const int ADVISE_PALETTE = 0x2;
+
+        public const int ADVISE_COLORKEY = 0x4;
+
+        public const int ADVISE_POSITION = 0x8;
+
+        public const int ADVISE_DISPLAY_CHANGE = 0x10;
+
         public static readonly Guid IID_ICreateDevEnum = new Guid(0x29840822, 0x5B84, 0x11D0, 0xBD, 0x3B, 0x00, 0xA0, 0xC9, 0x11, 0xCE, 0x86);
 
         public static readonly Guid IID_IPin = new Guid(0x56A86891, 0x0AD4, 0x11CE, 0xB0, 0x3A, 0x00, 0x20, 0xAF, 0x0B, 0xA7, 0x70);

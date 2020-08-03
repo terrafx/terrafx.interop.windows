@@ -35,5 +35,17 @@ namespace TerraFX.Interop
 
         [NativeTypeName("const GUID")]
         public static readonly Guid IID_IDXGIOutput1 = new Guid(0x00cddea8, 0x939b, 0x4b83, 0xa3, 0x40, 0xa6, 0x85, 0x22, 0x66, 0x66, 0xcc);
+
+        [NativeTypeName("#define DXGI_ENUM_MODES_STEREO ( 4UL )")]
+        public const uint DXGI_ENUM_MODES_STEREO = (4U);
+
+        [NativeTypeName("#define DXGI_ENUM_MODES_DISABLED_STEREO ( 8UL )")]
+        public const uint DXGI_ENUM_MODES_DISABLED_STEREO = (8U);
+
+        [NativeTypeName("#define DXGI_SHARED_RESOURCE_READ ( 0x80000000L )")]
+        public const uint DXGI_SHARED_RESOURCE_READ = (0x80000000);
+
+        [NativeTypeName("#define DXGI_SHARED_RESOURCE_WRITE ( 1 )")]
+        public const int DXGI_SHARED_RESOURCE_WRITE = (1);
     }
 }

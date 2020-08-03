@@ -187,5 +187,41 @@ namespace TerraFX.Interop
         [DllImport("kernel32", EntryPoint = "SetComputerNameExA", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SetComputerNameExA(COMPUTER_NAME_FORMAT NameType, [NativeTypeName("LPCSTR")] sbyte* lpBuffer);
+
+        [NativeTypeName("#define USER_CET_ENVIRONMENT_WIN32_PROCESS 0x00000000")]
+        public const int USER_CET_ENVIRONMENT_WIN32_PROCESS = 0x00000000;
+
+        [NativeTypeName("#define USER_CET_ENVIRONMENT_SGX2_ENCLAVE 0x00000002")]
+        public const int USER_CET_ENVIRONMENT_SGX2_ENCLAVE = 0x00000002;
+
+        [NativeTypeName("#define USER_CET_ENVIRONMENT_VBS_BASIC_ENCLAVE 0x00000011")]
+        public const int USER_CET_ENVIRONMENT_VBS_BASIC_ENCLAVE = 0x00000011;
+
+        [NativeTypeName("#define GetSystemDirectory GetSystemDirectoryW")]
+        public static readonly delegate*<ushort*, uint, uint> GetSystemDirectory = &GetSystemDirectoryW;
+
+        [NativeTypeName("#define GetWindowsDirectory GetWindowsDirectoryW")]
+        public static readonly delegate*<ushort*, uint, uint> GetWindowsDirectory = &GetWindowsDirectoryW;
+
+        [NativeTypeName("#define GetSystemWindowsDirectory GetSystemWindowsDirectoryW")]
+        public static readonly delegate*<ushort*, uint, uint> GetSystemWindowsDirectory = &GetSystemWindowsDirectoryW;
+
+        [NativeTypeName("#define GetComputerNameEx GetComputerNameExW")]
+        public static readonly delegate*<COMPUTER_NAME_FORMAT, ushort*, uint*, int> GetComputerNameEx = &GetComputerNameExW;
+
+        [NativeTypeName("#define SetComputerNameEx SetComputerNameExW")]
+        public static readonly delegate*<COMPUTER_NAME_FORMAT, ushort*, int> SetComputerNameEx = &SetComputerNameExW;
+
+        [NativeTypeName("#define GetVersionEx GetVersionExW")]
+        public static readonly delegate*<OSVERSIONINFOW*, int> GetVersionEx = &GetVersionExW;
+
+        [NativeTypeName("#define SCEX2_ALT_NETBIOS_NAME 0x00000001")]
+        public const int SCEX2_ALT_NETBIOS_NAME = 0x00000001;
+
+        [NativeTypeName("#define SetComputerNameEx2 SetComputerNameEx2W")]
+        public static readonly delegate*<COMPUTER_NAME_FORMAT, uint, ushort*, int> SetComputerNameEx2 = &SetComputerNameEx2W;
+
+        [NativeTypeName("#define SetComputerName SetComputerNameW")]
+        public static readonly delegate*<ushort*, int> SetComputerName = &SetComputerNameW;
     }
 }

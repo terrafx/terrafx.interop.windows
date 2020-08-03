@@ -10,6 +10,7 @@
 exclude-com-proxies
 exclude-empty-records
 exclude-enum-operators
+generate-macro-bindings
 generate-tests-nunit
 multi-file
 preview-codegen-fnptr

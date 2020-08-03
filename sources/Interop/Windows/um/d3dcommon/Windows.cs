@@ -26,5 +26,65 @@ namespace TerraFX.Interop
 
         [NativeTypeName("const GUID")]
         public static readonly Guid D3D_TEXTURE_LAYOUT_64KB_STANDARD_SWIZZLE = new Guid(0x4c0f29e3, 0x3f5f, 0x4d35, 0x84, 0xc9, 0xbc, 0x09, 0x83, 0xb6, 0x2c, 0x28);
+
+        [NativeTypeName("#define D3D_FL9_1_REQ_TEXTURE1D_U_DIMENSION 2048")]
+        public const int D3D_FL9_1_REQ_TEXTURE1D_U_DIMENSION = 2048;
+
+        [NativeTypeName("#define D3D_FL9_3_REQ_TEXTURE1D_U_DIMENSION 4096")]
+        public const int D3D_FL9_3_REQ_TEXTURE1D_U_DIMENSION = 4096;
+
+        [NativeTypeName("#define D3D_FL9_1_REQ_TEXTURE2D_U_OR_V_DIMENSION 2048")]
+        public const int D3D_FL9_1_REQ_TEXTURE2D_U_OR_V_DIMENSION = 2048;
+
+        [NativeTypeName("#define D3D_FL9_3_REQ_TEXTURE2D_U_OR_V_DIMENSION 4096")]
+        public const int D3D_FL9_3_REQ_TEXTURE2D_U_OR_V_DIMENSION = 4096;
+
+        [NativeTypeName("#define D3D_FL9_1_REQ_TEXTURECUBE_DIMENSION 512")]
+        public const int D3D_FL9_1_REQ_TEXTURECUBE_DIMENSION = 512;
+
+        [NativeTypeName("#define D3D_FL9_3_REQ_TEXTURECUBE_DIMENSION 4096")]
+        public const int D3D_FL9_3_REQ_TEXTURECUBE_DIMENSION = 4096;
+
+        [NativeTypeName("#define D3D_FL9_1_REQ_TEXTURE3D_U_V_OR_W_DIMENSION 256")]
+        public const int D3D_FL9_1_REQ_TEXTURE3D_U_V_OR_W_DIMENSION = 256;
+
+        [NativeTypeName("#define D3D_FL9_1_DEFAULT_MAX_ANISOTROPY 2")]
+        public const int D3D_FL9_1_DEFAULT_MAX_ANISOTROPY = 2;
+
+        [NativeTypeName("#define D3D_FL9_1_IA_PRIMITIVE_MAX_COUNT 65535")]
+        public const int D3D_FL9_1_IA_PRIMITIVE_MAX_COUNT = 65535;
+
+        [NativeTypeName("#define D3D_FL9_2_IA_PRIMITIVE_MAX_COUNT 1048575")]
+        public const int D3D_FL9_2_IA_PRIMITIVE_MAX_COUNT = 1048575;
+
+        [NativeTypeName("#define D3D_FL9_1_SIMULTANEOUS_RENDER_TARGET_COUNT 1")]
+        public const int D3D_FL9_1_SIMULTANEOUS_RENDER_TARGET_COUNT = 1;
+
+        [NativeTypeName("#define D3D_FL9_3_SIMULTANEOUS_RENDER_TARGET_COUNT 4")]
+        public const int D3D_FL9_3_SIMULTANEOUS_RENDER_TARGET_COUNT = 4;
+
+        [NativeTypeName("#define D3D_FL9_1_MAX_TEXTURE_REPEAT 128")]
+        public const int D3D_FL9_1_MAX_TEXTURE_REPEAT = 128;
+
+        [NativeTypeName("#define D3D_FL9_2_MAX_TEXTURE_REPEAT 2048")]
+        public const int D3D_FL9_2_MAX_TEXTURE_REPEAT = 2048;
+
+        [NativeTypeName("#define D3D_FL9_3_MAX_TEXTURE_REPEAT 8192")]
+        public const int D3D_FL9_3_MAX_TEXTURE_REPEAT = 8192;
+
+        [NativeTypeName("#define IID_ID3DBlob IID_ID3D10Blob")]
+        public static readonly Guid IID_ID3DBlob = IID_ID3D10Blob;
+
+        [NativeTypeName("#define D3D_COMPONENT_MASK_X 1")]
+        public const int D3D_COMPONENT_MASK_X = 1;
+
+        [NativeTypeName("#define D3D_COMPONENT_MASK_Y 2")]
+        public const int D3D_COMPONENT_MASK_Y = 2;
+
+        [NativeTypeName("#define D3D_COMPONENT_MASK_Z 4")]
+        public const int D3D_COMPONENT_MASK_Z = 4;
+
+        [NativeTypeName("#define D3D_COMPONENT_MASK_W 8")]
+        public const int D3D_COMPONENT_MASK_W = 8;
     }
 }

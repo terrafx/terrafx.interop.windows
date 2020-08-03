@@ -77,5 +77,8 @@ namespace TerraFX.Interop
 
         [NativeTypeName("const GUID")]
         public static readonly Guid CLSID_D2D1HdrToneMap = new Guid(0x7b0b748d, 0x4610, 0x4486, 0xa9, 0x0c, 0x99, 0x9d, 0x9a, 0x2e, 0x2b, 0x11);
+
+        [NativeTypeName("#define D2D1_SCENE_REFERRED_SDR_WHITE_LEVEL 80.0f")]
+        public const float D2D1_SCENE_REFERRED_SDR_WHITE_LEVEL = 80.0f;
     }
 }

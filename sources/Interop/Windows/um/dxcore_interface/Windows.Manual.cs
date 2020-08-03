@@ -9,8 +9,6 @@ namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public const int _FACDXCORE = 0x880;
-
         public static int MAKE_DXCORE_HRESULT(int code)
         {
             return MAKE_HRESULT(1, _FACDXCORE, code);

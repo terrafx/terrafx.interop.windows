@@ -237,5 +237,86 @@ namespace TerraFX.Interop
         [DllImport("kernel32", EntryPoint = "CreateWaitableTimerW", ExactSpelling = true)]
         [return: NativeTypeName("HANDLE")]
         public static extern IntPtr CreateWaitableTimerW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpTimerAttributes, [NativeTypeName("BOOL")] int bManualReset, [NativeTypeName("LPCWSTR")] ushort* lpTimerName);
+
+        [NativeTypeName("#define INIT_ONCE_CHECK_ONLY RTL_RUN_ONCE_CHECK_ONLY")]
+        public const uint INIT_ONCE_CHECK_ONLY = 0x00000001U;
+
+        [NativeTypeName("#define INIT_ONCE_ASYNC RTL_RUN_ONCE_ASYNC")]
+        public const uint INIT_ONCE_ASYNC = 0x00000002U;
+
+        [NativeTypeName("#define INIT_ONCE_INIT_FAILED RTL_RUN_ONCE_INIT_FAILED")]
+        public const uint INIT_ONCE_INIT_FAILED = 0x00000004U;
+
+        [NativeTypeName("#define INIT_ONCE_CTX_RESERVED_BITS RTL_RUN_ONCE_CTX_RESERVED_BITS")]
+        public const int INIT_ONCE_CTX_RESERVED_BITS = 2;
+
+        [NativeTypeName("#define CONDITION_VARIABLE_LOCKMODE_SHARED RTL_CONDITION_VARIABLE_LOCKMODE_SHARED")]
+        public const int CONDITION_VARIABLE_LOCKMODE_SHARED = 0x1;
+
+        [NativeTypeName("#define MUTEX_MODIFY_STATE MUTANT_QUERY_STATE")]
+        public const int MUTEX_MODIFY_STATE = 0x0001;
+
+        [NativeTypeName("#define MUTEX_ALL_ACCESS MUTANT_ALL_ACCESS")]
+        public const int MUTEX_ALL_ACCESS = ((0x000F0000) | (0x00100000) | 0x0001);
+
+        [NativeTypeName("#define CreateMutex CreateMutexW")]
+        public static readonly delegate*<SECURITY_ATTRIBUTES*, int, ushort*, IntPtr> CreateMutex = &CreateMutexW;
+
+        [NativeTypeName("#define OpenMutex OpenMutexW")]
+        public static readonly delegate*<uint, int, ushort*, IntPtr> OpenMutex = &OpenMutexW;
+
+        [NativeTypeName("#define CreateEvent CreateEventW")]
+        public static readonly delegate*<SECURITY_ATTRIBUTES*, int, int, ushort*, IntPtr> CreateEvent = &CreateEventW;
+
+        [NativeTypeName("#define OpenEvent OpenEventW")]
+        public static readonly delegate*<uint, int, ushort*, IntPtr> OpenEvent = &OpenEventW;
+
+        [NativeTypeName("#define OpenSemaphore OpenSemaphoreW")]
+        public static readonly delegate*<uint, int, ushort*, IntPtr> OpenSemaphore = &OpenSemaphoreW;
+
+        [NativeTypeName("#define OpenWaitableTimer OpenWaitableTimerW")]
+        public static readonly delegate*<uint, int, ushort*, IntPtr> OpenWaitableTimer = &OpenWaitableTimerW;
+
+        [NativeTypeName("#define CREATE_MUTEX_INITIAL_OWNER 0x00000001")]
+        public const int CREATE_MUTEX_INITIAL_OWNER = 0x00000001;
+
+        [NativeTypeName("#define CreateMutexEx CreateMutexExW")]
+        public static readonly delegate*<SECURITY_ATTRIBUTES*, ushort*, uint, uint, IntPtr> CreateMutexEx = &CreateMutexExW;
+
+        [NativeTypeName("#define CREATE_EVENT_MANUAL_RESET 0x00000001")]
+        public const int CREATE_EVENT_MANUAL_RESET = 0x00000001;
+
+        [NativeTypeName("#define CREATE_EVENT_INITIAL_SET 0x00000002")]
+        public const int CREATE_EVENT_INITIAL_SET = 0x00000002;
+
+        [NativeTypeName("#define CreateEventEx CreateEventExW")]
+        public static readonly delegate*<SECURITY_ATTRIBUTES*, ushort*, uint, uint, IntPtr> CreateEventEx = &CreateEventExW;
+
+        [NativeTypeName("#define CreateSemaphoreEx CreateSemaphoreExW")]
+        public static readonly delegate*<SECURITY_ATTRIBUTES*, int, int, ushort*, uint, uint, IntPtr> CreateSemaphoreEx = &CreateSemaphoreExW;
+
+        [NativeTypeName("#define CREATE_WAITABLE_TIMER_MANUAL_RESET 0x00000001")]
+        public const int CREATE_WAITABLE_TIMER_MANUAL_RESET = 0x00000001;
+
+        [NativeTypeName("#define CREATE_WAITABLE_TIMER_HIGH_RESOLUTION 0x00000002")]
+        public const int CREATE_WAITABLE_TIMER_HIGH_RESOLUTION = 0x00000002;
+
+        [NativeTypeName("#define CreateWaitableTimerEx CreateWaitableTimerExW")]
+        public static readonly delegate*<SECURITY_ATTRIBUTES*, ushort*, uint, uint, IntPtr> CreateWaitableTimerEx = &CreateWaitableTimerExW;
+
+        [NativeTypeName("#define SYNCHRONIZATION_BARRIER_FLAGS_SPIN_ONLY 0x01")]
+        public const int SYNCHRONIZATION_BARRIER_FLAGS_SPIN_ONLY = 0x01;
+
+        [NativeTypeName("#define SYNCHRONIZATION_BARRIER_FLAGS_BLOCK_ONLY 0x02")]
+        public const int SYNCHRONIZATION_BARRIER_FLAGS_BLOCK_ONLY = 0x02;
+
+        [NativeTypeName("#define SYNCHRONIZATION_BARRIER_FLAGS_NO_DELETE 0x04")]
+        public const int SYNCHRONIZATION_BARRIER_FLAGS_NO_DELETE = 0x04;
+
+        [NativeTypeName("#define CreateSemaphore CreateSemaphoreW")]
+        public static readonly delegate*<SECURITY_ATTRIBUTES*, int, int, ushort*, IntPtr> CreateSemaphore = &CreateSemaphoreW;
+
+        [NativeTypeName("#define CreateWaitableTimer CreateWaitableTimerW")]
+        public static readonly delegate*<SECURITY_ATTRIBUTES*, int, ushort*, IntPtr> CreateWaitableTimer = &CreateWaitableTimerW;
     }
 }

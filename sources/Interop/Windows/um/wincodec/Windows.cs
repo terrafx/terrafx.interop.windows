@@ -453,5 +453,119 @@ namespace TerraFX.Interop
         [DllImport("WindowsCodecs", EntryPoint = "WICMapSchemaToName", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int WICMapSchemaToName([NativeTypeName("const GUID &")] Guid* guidMetadataFormat, [NativeTypeName("LPWSTR")] ushort* pwzSchema, [NativeTypeName("UINT")] uint cchName, [NativeTypeName("WCHAR *")] ushort* wzName, [NativeTypeName("UINT *")] uint* pcchActual);
+
+        [NativeTypeName("#define WINCODEC_SDK_VERSION1 0x0236")]
+        public const int WINCODEC_SDK_VERSION1 = 0x0236;
+
+        [NativeTypeName("#define WINCODEC_SDK_VERSION2 0x0237")]
+        public const int WINCODEC_SDK_VERSION2 = 0x0237;
+
+        [NativeTypeName("#define WINCODEC_SDK_VERSION WINCODEC_SDK_VERSION2")]
+        public const int WINCODEC_SDK_VERSION = 0x0237;
+
+        [NativeTypeName("#define WIC_JPEG_MAX_COMPONENT_COUNT ( 4 )")]
+        public const int WIC_JPEG_MAX_COMPONENT_COUNT = (4);
+
+        [NativeTypeName("#define WIC_JPEG_MAX_TABLE_INDEX ( 3 )")]
+        public const int WIC_JPEG_MAX_TABLE_INDEX = (3);
+
+        [NativeTypeName("#define WIC_JPEG_SAMPLE_FACTORS_ONE ( 0x11 )")]
+        public const int WIC_JPEG_SAMPLE_FACTORS_ONE = (0x11);
+
+        [NativeTypeName("#define WIC_JPEG_SAMPLE_FACTORS_THREE_420 ( 0x111122 )")]
+        public const int WIC_JPEG_SAMPLE_FACTORS_THREE_420 = (0x111122);
+
+        [NativeTypeName("#define WIC_JPEG_SAMPLE_FACTORS_THREE_422 ( 0x111121 )")]
+        public const int WIC_JPEG_SAMPLE_FACTORS_THREE_422 = (0x111121);
+
+        [NativeTypeName("#define WIC_JPEG_SAMPLE_FACTORS_THREE_440 ( 0x111112 )")]
+        public const int WIC_JPEG_SAMPLE_FACTORS_THREE_440 = (0x111112);
+
+        [NativeTypeName("#define WIC_JPEG_SAMPLE_FACTORS_THREE_444 ( 0x111111 )")]
+        public const int WIC_JPEG_SAMPLE_FACTORS_THREE_444 = (0x111111);
+
+        [NativeTypeName("#define WIC_JPEG_QUANTIZATION_BASELINE_ONE ( 0 )")]
+        public const int WIC_JPEG_QUANTIZATION_BASELINE_ONE = (0);
+
+        [NativeTypeName("#define WIC_JPEG_QUANTIZATION_BASELINE_THREE ( 0x10100 )")]
+        public const int WIC_JPEG_QUANTIZATION_BASELINE_THREE = (0x10100);
+
+        [NativeTypeName("#define WIC_JPEG_HUFFMAN_BASELINE_ONE ( 0 )")]
+        public const int WIC_JPEG_HUFFMAN_BASELINE_ONE = (0);
+
+        [NativeTypeName("#define WIC_JPEG_HUFFMAN_BASELINE_THREE ( 0x111100 )")]
+        public const int WIC_JPEG_HUFFMAN_BASELINE_THREE = (0x111100);
+
+        [NativeTypeName("#define GUID_WICPixelFormatUndefined GUID_WICPixelFormatDontCare")]
+        public static readonly Guid GUID_WICPixelFormatUndefined = GUID_WICPixelFormatDontCare;
+
+        [NativeTypeName("#define FACILITY_WINCODEC_ERR 0x898")]
+        public const int FACILITY_WINCODEC_ERR = 0x898;
+
+        [NativeTypeName("#define WINCODEC_ERR_BASE 0x2000")]
+        public const int WINCODEC_ERR_BASE = 0x2000;
+
+        [NativeTypeName("#define WINCODEC_ERR_GENERIC_ERROR E_FAIL")]
+        public const int WINCODEC_ERR_GENERIC_ERROR = unchecked((int)(0x80004005));
+
+        [NativeTypeName("#define WINCODEC_ERR_INVALIDPARAMETER E_INVALIDARG")]
+        public const int WINCODEC_ERR_INVALIDPARAMETER = unchecked((int)(0x80070057));
+
+        [NativeTypeName("#define WINCODEC_ERR_OUTOFMEMORY E_OUTOFMEMORY")]
+        public const int WINCODEC_ERR_OUTOFMEMORY = unchecked((int)(0x8007000E));
+
+        [NativeTypeName("#define WINCODEC_ERR_NOTIMPLEMENTED E_NOTIMPL")]
+        public const int WINCODEC_ERR_NOTIMPLEMENTED = unchecked((int)(0x80004001));
+
+        [NativeTypeName("#define WINCODEC_ERR_ABORTED E_ABORT")]
+        public const int WINCODEC_ERR_ABORTED = unchecked((int)(0x80004004));
+
+        [NativeTypeName("#define WINCODEC_ERR_ACCESSDENIED E_ACCESSDENIED")]
+        public const int WINCODEC_ERR_ACCESSDENIED = unchecked((int)(0x80070005));
+
+        [NativeTypeName("#define WINCODEC_ERR_VALUEOVERFLOW INTSAFE_E_ARITHMETIC_OVERFLOW")]
+        public const int WINCODEC_ERR_VALUEOVERFLOW = unchecked((int)(0x80070216));
+
+        [NativeTypeName("#define WICRawChangeNotification_ExposureCompensation 0x00000001")]
+        public const int WICRawChangeNotification_ExposureCompensation = 0x00000001;
+
+        [NativeTypeName("#define WICRawChangeNotification_NamedWhitePoint 0x00000002")]
+        public const int WICRawChangeNotification_NamedWhitePoint = 0x00000002;
+
+        [NativeTypeName("#define WICRawChangeNotification_KelvinWhitePoint 0x00000004")]
+        public const int WICRawChangeNotification_KelvinWhitePoint = 0x00000004;
+
+        [NativeTypeName("#define WICRawChangeNotification_RGBWhitePoint 0x00000008")]
+        public const int WICRawChangeNotification_RGBWhitePoint = 0x00000008;
+
+        [NativeTypeName("#define WICRawChangeNotification_Contrast 0x00000010")]
+        public const int WICRawChangeNotification_Contrast = 0x00000010;
+
+        [NativeTypeName("#define WICRawChangeNotification_Gamma 0x00000020")]
+        public const int WICRawChangeNotification_Gamma = 0x00000020;
+
+        [NativeTypeName("#define WICRawChangeNotification_Sharpness 0x00000040")]
+        public const int WICRawChangeNotification_Sharpness = 0x00000040;
+
+        [NativeTypeName("#define WICRawChangeNotification_Saturation 0x00000080")]
+        public const int WICRawChangeNotification_Saturation = 0x00000080;
+
+        [NativeTypeName("#define WICRawChangeNotification_Tint 0x00000100")]
+        public const int WICRawChangeNotification_Tint = 0x00000100;
+
+        [NativeTypeName("#define WICRawChangeNotification_NoiseReduction 0x00000200")]
+        public const int WICRawChangeNotification_NoiseReduction = 0x00000200;
+
+        [NativeTypeName("#define WICRawChangeNotification_DestinationColorContext 0x00000400")]
+        public const int WICRawChangeNotification_DestinationColorContext = 0x00000400;
+
+        [NativeTypeName("#define WICRawChangeNotification_ToneCurve 0x00000800")]
+        public const int WICRawChangeNotification_ToneCurve = 0x00000800;
+
+        [NativeTypeName("#define WICRawChangeNotification_Rotation 0x00001000")]
+        public const int WICRawChangeNotification_Rotation = 0x00001000;
+
+        [NativeTypeName("#define WICRawChangeNotification_RenderMode 0x00002000")]
+        public const int WICRawChangeNotification_RenderMode = 0x00002000;
     }
 }

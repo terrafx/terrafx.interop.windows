@@ -11,8 +11,6 @@ namespace TerraFX.Interop
     {
         public const ulong D2D1_INVALID_TAG = ULONGLONG_MAX;
 
-        public const float D2D1_DEFAULT_FLATTENING_TOLERANCE = 0.25f;
-
         public const uint D2D1_INTERPOLATION_MODE_DEFINITION_NEAREST_NEIGHBOR = 0;
 
         public const uint D2D1_INTERPOLATION_MODE_DEFINITION_LINEAR = 1;

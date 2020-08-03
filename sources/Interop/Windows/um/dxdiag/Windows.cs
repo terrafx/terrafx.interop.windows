@@ -17,5 +17,11 @@ namespace TerraFX.Interop
 
         [NativeTypeName("const GUID")]
         public static readonly Guid IID_IDxDiagContainer = new Guid(0x7D0F462F, 0x4064, 0x4862, 0xBC, 0x7F, 0x93, 0x3E, 0x50, 0x58, 0xC1, 0x0F);
+
+        [NativeTypeName("#define DXDIAG_DX9_SDK_VERSION 111")]
+        public const int DXDIAG_DX9_SDK_VERSION = 111;
+
+        [NativeTypeName("#define DXDIAG_E_INSUFFICIENT_BUFFER ((HRESULT)0x8007007AL)")]
+        public const int DXDIAG_E_INSUFFICIENT_BUFFER = unchecked((int)(0x8007007A));
     }
 }

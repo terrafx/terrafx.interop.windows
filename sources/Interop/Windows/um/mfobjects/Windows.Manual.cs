@@ -250,68 +250,6 @@ namespace TerraFX.Interop
 
         public const int MEReservedMax = 10000;
 
-        public const int MF_MEDIATYPE_EQUAL_MAJOR_TYPES = 0x00000001;
-
-        public const int MF_MEDIATYPE_EQUAL_FORMAT_TYPES = 0x00000002;
-
-        public const int MF_MEDIATYPE_EQUAL_FORMAT_DATA = 0x00000004;
-
-        public const int MF_MEDIATYPE_EQUAL_FORMAT_USER_DATA = 0x00000008;
-
-        public const MFVideoInterlaceMode MFVideoInterlace_FieldSingleUpperFirst = MFVideoInterlace_FieldSingleUpper;
-
-        public const MFVideoInterlaceMode MFVideoInterlace_FieldSingleLowerFirst = MFVideoInterlace_FieldSingleLower;
-
-        public const int MFASYNC_FAST_IO_PROCESSING_CALLBACK = 0x00000001;
-
-        public const int MFASYNC_SIGNAL_CALLBACK = 0x00000002;
-
-        public const int MFASYNC_BLOCKING_CALLBACK = 0x00000004;
-
-        public const int MFASYNC_REPLY_CALLBACK = 0x00000008;
-
-        public const int MFASYNC_LOCALIZE_REMOTE_CALLBACK = 0x00000010;
-
-        public const uint MFASYNC_CALLBACK_QUEUE_UNDEFINED = 0x00000000;
-
-        public const uint MFASYNC_CALLBACK_QUEUE_STANDARD = 0x00000001;
-
-        public const uint MFASYNC_CALLBACK_QUEUE_RT = 0x00000002;
-
-        public const uint MFASYNC_CALLBACK_QUEUE_IO = 0x00000003;
-
-        public const uint MFASYNC_CALLBACK_QUEUE_TIMER = 0x00000004;
-
-        public const uint MFASYNC_CALLBACK_QUEUE_MULTITHREADED = 0x00000005;
-
-        public const uint MFASYNC_CALLBACK_QUEUE_LONG_FUNCTION = 0x00000007;
-
-        public const uint MFASYNC_CALLBACK_QUEUE_PRIVATE_MASK = 0xFFFF0000;
-
-        public const uint MFASYNC_CALLBACK_QUEUE_ALL = 0xFFFFFFFF;
-
-        public const int MF_EVENT_FLAG_NO_WAIT = 0x00000001;
-
-        public const int MFBYTESTREAM_IS_READABLE = 0x00000001;
-
-        public const int MFBYTESTREAM_IS_WRITABLE = 0x00000002;
-
-        public const int MFBYTESTREAM_IS_SEEKABLE = 0x00000004;
-
-        public const int MFBYTESTREAM_IS_REMOTE = 0x00000008;
-
-        public const int MFBYTESTREAM_IS_DIRECTORY = 0x00000080;
-
-        public const int MFBYTESTREAM_HAS_SLOW_SEEK = 0x00000100;
-
-        public const int MFBYTESTREAM_IS_PARTIALLY_DOWNLOADED = 0x00000200;
-
-        public const int MFBYTESTREAM_SHARE_WRITE = 0x00000400;
-
-        public const int MFBYTESTREAM_DOES_NOT_USE_NETWORK = 0x00000800;
-
-        public const int MFBYTESTREAM_SEEK_FLAG_CANCEL_PENDING_IO = 0x00000001;
-
         public static readonly Guid IID_IMFAttributes = new Guid(0x2CD2D921, 0xC447, 0x44A7, 0xA1, 0x3C, 0x4A, 0xDA, 0xBF, 0xC2, 0x47, 0xE3);
 
         public static readonly Guid IID_IMFMediaBuffer = new Guid(0x045FA593, 0x8799, 0x42B8, 0xBC, 0x8D, 0x89, 0x68, 0xC6, 0x45, 0x35, 0x07);

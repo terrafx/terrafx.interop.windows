@@ -9,8 +9,6 @@ namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public const ulong MF_INVALID_PRESENTATION_TIME = 0x8000000000000000;
-
         public static readonly Guid IID_IMFMediaError = new Guid(0xFC0E10D2, 0xAB2A, 0x4501, 0xA9, 0x51, 0x06, 0xBB, 0x10, 0x75, 0x18, 0x4C);
 
         public static readonly Guid IID_IMFMediaTimeRange = new Guid(0xDB71A2FC, 0x078A, 0x414E, 0x9D, 0xF9, 0x8C, 0x25, 0x31, 0xB0, 0xAA, 0x6C);

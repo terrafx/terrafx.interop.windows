@@ -29,5 +29,20 @@ namespace TerraFX.Interop
 
         [NativeTypeName("const GUID")]
         public static readonly Guid IID_ID3D12FunctionParameterReflection = new Guid(0xec25f42d, 0x7006, 0x4f2b, 0xb3, 0x3e, 0x2, 0xcc, 0x33, 0x75, 0x73, 0x3f);
+
+        [NativeTypeName("#define D3D_SHADER_REQUIRES_STENCIL_REF 0x00000200")]
+        public const int D3D_SHADER_REQUIRES_STENCIL_REF = 0x00000200;
+
+        [NativeTypeName("#define D3D_SHADER_REQUIRES_INNER_COVERAGE 0x00000400")]
+        public const int D3D_SHADER_REQUIRES_INNER_COVERAGE = 0x00000400;
+
+        [NativeTypeName("#define D3D_SHADER_REQUIRES_TYPED_UAV_LOAD_ADDITIONAL_FORMATS 0x00000800")]
+        public const int D3D_SHADER_REQUIRES_TYPED_UAV_LOAD_ADDITIONAL_FORMATS = 0x00000800;
+
+        [NativeTypeName("#define D3D_SHADER_REQUIRES_ROVS 0x00001000")]
+        public const int D3D_SHADER_REQUIRES_ROVS = 0x00001000;
+
+        [NativeTypeName("#define D3D_SHADER_REQUIRES_VIEWPORT_AND_RT_ARRAY_INDEX_FROM_ANY_SHADER_FEEDING_RASTERIZER 0x00002000")]
+        public const int D3D_SHADER_REQUIRES_VIEWPORT_AND_RT_ARRAY_INDEX_FROM_ANY_SHADER_FEEDING_RASTERIZER = 0x00002000;
     }
 }

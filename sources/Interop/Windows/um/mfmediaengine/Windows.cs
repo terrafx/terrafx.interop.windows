@@ -193,5 +193,8 @@ namespace TerraFX.Interop
             fmtid = new Guid(0xf795841e, 0x99f9, 0x44d7, 0xaf, 0xc0, 0xd3, 0x09, 0xc0, 0x4c, 0x94, 0xab),
             pid = (0x2) + 0x00000002,
         };
+
+        [NativeTypeName("#define MF_INVALID_PRESENTATION_TIME 0x8000000000000000")]
+        public const ulong MF_INVALID_PRESENTATION_TIME = 0x8000000000000000;
     }
 }

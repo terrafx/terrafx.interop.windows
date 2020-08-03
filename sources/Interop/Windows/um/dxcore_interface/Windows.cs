@@ -26,5 +26,8 @@ namespace TerraFX.Interop
 
         [NativeTypeName("const GUID")]
         public static readonly Guid DXCORE_ADAPTER_ATTRIBUTE_D3D12_CORE_COMPUTE = new Guid(0x248e2800, 0xa793, 0x4724, 0xab, 0xaa, 0x23, 0xa6, 0xde, 0x1b, 0xe0, 0x90);
+
+        [NativeTypeName("#define _FACDXCORE 0x880")]
+        public const int _FACDXCORE = 0x880;
     }
 }

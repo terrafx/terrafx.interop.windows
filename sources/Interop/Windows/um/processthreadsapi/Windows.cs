@@ -341,5 +341,56 @@ namespace TerraFX.Interop
         [DllImport("kernel32", EntryPoint = "GetThreadDescription", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int GetThreadDescription([NativeTypeName("HANDLE")] IntPtr hThread, [NativeTypeName("PWSTR *")] ushort** ppszThreadDescription);
+
+        [NativeTypeName("#define TLS_OUT_OF_INDEXES ((DWORD)0xFFFFFFFF)")]
+        public const uint TLS_OUT_OF_INDEXES = ((uint)(0xFFFFFFFF));
+
+        [NativeTypeName("#define CreateProcess CreateProcessW")]
+        public static readonly delegate*<ushort*, ushort*, SECURITY_ATTRIBUTES*, SECURITY_ATTRIBUTES*, int, uint, void*, ushort*, STARTUPINFOW*, PROCESS_INFORMATION*, int> CreateProcess = &CreateProcessW;
+
+        [NativeTypeName("#define GetStartupInfo GetStartupInfoW")]
+        public static readonly delegate*<STARTUPINFOW*, void> GetStartupInfo = &GetStartupInfoW;
+
+        [NativeTypeName("#define CreateProcessAsUser CreateProcessAsUserW")]
+        public static readonly delegate*<IntPtr, ushort*, ushort*, SECURITY_ATTRIBUTES*, SECURITY_ATTRIBUTES*, int, uint, void*, ushort*, STARTUPINFOW*, PROCESS_INFORMATION*, int> CreateProcessAsUser = &CreateProcessAsUserW;
+
+        [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_REPLACE_VALUE 0x00000001")]
+        public const int PROC_THREAD_ATTRIBUTE_REPLACE_VALUE = 0x00000001;
+
+        [NativeTypeName("#define PROCESS_AFFINITY_ENABLE_AUTO_UPDATE 0x00000001UL")]
+        public const uint PROCESS_AFFINITY_ENABLE_AUTO_UPDATE = 0x00000001U;
+
+        [NativeTypeName("#define THREAD_POWER_THROTTLING_CURRENT_VERSION 1")]
+        public const int THREAD_POWER_THROTTLING_CURRENT_VERSION = 1;
+
+        [NativeTypeName("#define THREAD_POWER_THROTTLING_EXECUTION_SPEED 0x1")]
+        public const int THREAD_POWER_THROTTLING_EXECUTION_SPEED = 0x1;
+
+        [NativeTypeName("#define THREAD_POWER_THROTTLING_VALID_FLAGS (THREAD_POWER_THROTTLING_EXECUTION_SPEED)")]
+        public const int THREAD_POWER_THROTTLING_VALID_FLAGS = (0x1);
+
+        [NativeTypeName("#define PME_CURRENT_VERSION 1")]
+        public const int PME_CURRENT_VERSION = 1;
+
+        [NativeTypeName("#define PME_FAILFAST_ON_COMMIT_FAIL_DISABLE 0x0")]
+        public const int PME_FAILFAST_ON_COMMIT_FAIL_DISABLE = 0x0;
+
+        [NativeTypeName("#define PME_FAILFAST_ON_COMMIT_FAIL_ENABLE 0x1")]
+        public const int PME_FAILFAST_ON_COMMIT_FAIL_ENABLE = 0x1;
+
+        [NativeTypeName("#define PROCESS_POWER_THROTTLING_CURRENT_VERSION 1")]
+        public const int PROCESS_POWER_THROTTLING_CURRENT_VERSION = 1;
+
+        [NativeTypeName("#define PROCESS_POWER_THROTTLING_EXECUTION_SPEED 0x1")]
+        public const int PROCESS_POWER_THROTTLING_EXECUTION_SPEED = 0x1;
+
+        [NativeTypeName("#define PROCESS_POWER_THROTTLING_VALID_FLAGS (PROCESS_POWER_THROTTLING_EXECUTION_SPEED)")]
+        public const int PROCESS_POWER_THROTTLING_VALID_FLAGS = (0x1);
+
+        [NativeTypeName("#define PROCESS_LEAP_SECOND_INFO_FLAG_ENABLE_SIXTY_SECOND 0x1")]
+        public const int PROCESS_LEAP_SECOND_INFO_FLAG_ENABLE_SIXTY_SECOND = 0x1;
+
+        [NativeTypeName("#define PROCESS_LEAP_SECOND_INFO_VALID_FLAGS (PROCESS_LEAP_SECOND_INFO_FLAG_ENABLE_SIXTY_SECOND)")]
+        public const int PROCESS_LEAP_SECOND_INFO_VALID_FLAGS = (0x1);
     }
 }

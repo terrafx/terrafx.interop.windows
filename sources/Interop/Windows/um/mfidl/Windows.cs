@@ -1486,5 +1486,134 @@ namespace TerraFX.Interop
         [DllImport("mf", EntryPoint = "MFCreateRelativePanelWatcher", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MFCreateRelativePanelWatcher([NativeTypeName("PCWSTR")] ushort* videoDeviceId, [NativeTypeName("PCWSTR")] ushort* displayMonitorDeviceId, [NativeTypeName("IMFRelativePanelWatcher **")] IMFRelativePanelWatcher** ppRelativePanelWatcher);
+
+        [NativeTypeName("#define MEDIASINK_FIXED_STREAMS 0x00000001")]
+        public const int MEDIASINK_FIXED_STREAMS = 0x00000001;
+
+        [NativeTypeName("#define MEDIASINK_CANNOT_MATCH_CLOCK 0x00000002")]
+        public const int MEDIASINK_CANNOT_MATCH_CLOCK = 0x00000002;
+
+        [NativeTypeName("#define MEDIASINK_RATELESS 0x00000004")]
+        public const int MEDIASINK_RATELESS = 0x00000004;
+
+        [NativeTypeName("#define MEDIASINK_CLOCK_REQUIRED 0x00000008")]
+        public const int MEDIASINK_CLOCK_REQUIRED = 0x00000008;
+
+        [NativeTypeName("#define MEDIASINK_CAN_PREROLL 0x00000010")]
+        public const int MEDIASINK_CAN_PREROLL = 0x00000010;
+
+        [NativeTypeName("#define MEDIASINK_REQUIRE_REFERENCE_MEDIATYPE 0x00000020")]
+        public const int MEDIASINK_REQUIRE_REFERENCE_MEDIATYPE = 0x00000020;
+
+        [NativeTypeName("#define MFCLOCK_FREQUENCY_HNS 10000000")]
+        public const int MFCLOCK_FREQUENCY_HNS = 10000000;
+
+        [NativeTypeName("#define MFCLOCK_TOLERANCE_UNKNOWN 50000")]
+        public const int MFCLOCK_TOLERANCE_UNKNOWN = 50000;
+
+        [NativeTypeName("#define MFCLOCK_JITTER_ISR 1000")]
+        public const int MFCLOCK_JITTER_ISR = 1000;
+
+        [NativeTypeName("#define MFCLOCK_JITTER_DPC 4000")]
+        public const int MFCLOCK_JITTER_DPC = 4000;
+
+        [NativeTypeName("#define MFCLOCK_JITTER_PASSIVE 10000")]
+        public const int MFCLOCK_JITTER_PASSIVE = 10000;
+
+        [NativeTypeName("#define PRESENTATION_CURRENT_POSITION 0x7fffffffffffffff")]
+        public const long PRESENTATION_CURRENT_POSITION = 0x7fffffffffffffff;
+
+        [NativeTypeName("#define MF_AUDIO_RENDERER_ATTRIBUTE_FLAGS_CROSSPROCESS 0x00000001")]
+        public const int MF_AUDIO_RENDERER_ATTRIBUTE_FLAGS_CROSSPROCESS = 0x00000001;
+
+        [NativeTypeName("#define MF_AUDIO_RENDERER_ATTRIBUTE_FLAGS_NOPERSIST 0x00000002")]
+        public const int MF_AUDIO_RENDERER_ATTRIBUTE_FLAGS_NOPERSIST = 0x00000002;
+
+        [NativeTypeName("#define MF_AUDIO_RENDERER_ATTRIBUTE_FLAGS_DONT_ALLOW_FORMAT_CHANGES 0x00000004")]
+        public const int MF_AUDIO_RENDERER_ATTRIBUTE_FLAGS_DONT_ALLOW_FORMAT_CHANGES = 0x00000004;
+
+        [NativeTypeName("#define MFRR_INFO_VERSION 0")]
+        public const int MFRR_INFO_VERSION = 0;
+
+        [NativeTypeName("#define MF_USER_MODE_COMPONENT_LOAD 0x00000001")]
+        public const int MF_USER_MODE_COMPONENT_LOAD = 0x00000001;
+
+        [NativeTypeName("#define MF_KERNEL_MODE_COMPONENT_LOAD 0x00000002")]
+        public const int MF_KERNEL_MODE_COMPONENT_LOAD = 0x00000002;
+
+        [NativeTypeName("#define MF_GRL_LOAD_FAILED 0x00000010")]
+        public const int MF_GRL_LOAD_FAILED = 0x00000010;
+
+        [NativeTypeName("#define MF_INVALID_GRL_SIGNATURE 0x00000020")]
+        public const int MF_INVALID_GRL_SIGNATURE = 0x00000020;
+
+        [NativeTypeName("#define MF_GRL_ABSENT 0x00001000")]
+        public const int MF_GRL_ABSENT = 0x00001000;
+
+        [NativeTypeName("#define MF_COMPONENT_REVOKED 0x00002000")]
+        public const int MF_COMPONENT_REVOKED = 0x00002000;
+
+        [NativeTypeName("#define MF_COMPONENT_INVALID_EKU 0x00004000")]
+        public const int MF_COMPONENT_INVALID_EKU = 0x00004000;
+
+        [NativeTypeName("#define MF_COMPONENT_CERT_REVOKED 0x00008000")]
+        public const int MF_COMPONENT_CERT_REVOKED = 0x00008000;
+
+        [NativeTypeName("#define MF_COMPONENT_INVALID_ROOT 0x00010000")]
+        public const int MF_COMPONENT_INVALID_ROOT = 0x00010000;
+
+        [NativeTypeName("#define MF_COMPONENT_HS_CERT_REVOKED 0x00020000")]
+        public const int MF_COMPONENT_HS_CERT_REVOKED = 0x00020000;
+
+        [NativeTypeName("#define MF_COMPONENT_LS_CERT_REVOKED 0x00040000")]
+        public const int MF_COMPONENT_LS_CERT_REVOKED = 0x00040000;
+
+        [NativeTypeName("#define MF_BOOT_DRIVER_VERIFICATION_FAILED 0x00100000")]
+        public const int MF_BOOT_DRIVER_VERIFICATION_FAILED = 0x00100000;
+
+        [NativeTypeName("#define MF_TEST_SIGNED_COMPONENT_LOADING 0x01000000")]
+        public const int MF_TEST_SIGNED_COMPONENT_LOADING = 0x01000000;
+
+        [NativeTypeName("#define MF_MINCRYPT_FAILURE 0x10000000")]
+        public const int MF_MINCRYPT_FAILURE = 0x10000000;
+
+        [NativeTypeName("#define SHA_HASH_LEN 20")]
+        public const int SHA_HASH_LEN = 20;
+
+        [NativeTypeName("#define STR_HASH_LEN (SHA_HASH_LEN*2 + 3)")]
+        public const int STR_HASH_LEN = (20 * 2 + 3);
+
+        [NativeTypeName("#define MFSEQUENCER_INVALID_ELEMENT_ID ( 0xffffffff )")]
+        public const uint MFSEQUENCER_INVALID_ELEMENT_ID = (0xffffffff);
+
+        [NativeTypeName("#define MFOUTPUTATTRIBUTE_DIGITAL ((DWORD) 0x00000001)")]
+        public const uint MFOUTPUTATTRIBUTE_DIGITAL = ((uint)(0x00000001));
+
+        [NativeTypeName("#define MFOUTPUTATTRIBUTE_NONSTANDARDIMPLEMENTATION ((DWORD) 0x00000002)")]
+        public const uint MFOUTPUTATTRIBUTE_NONSTANDARDIMPLEMENTATION = ((uint)(0x00000002));
+
+        [NativeTypeName("#define MFOUTPUTATTRIBUTE_VIDEO ((DWORD) 0x00000004)")]
+        public const uint MFOUTPUTATTRIBUTE_VIDEO = ((uint)(0x00000004));
+
+        [NativeTypeName("#define MFOUTPUTATTRIBUTE_COMPRESSED ((DWORD) 0x00000008)")]
+        public const uint MFOUTPUTATTRIBUTE_COMPRESSED = ((uint)(0x00000008));
+
+        [NativeTypeName("#define MFOUTPUTATTRIBUTE_SOFTWARE ((DWORD) 0x00000010)")]
+        public const uint MFOUTPUTATTRIBUTE_SOFTWARE = ((uint)(0x00000010));
+
+        [NativeTypeName("#define MFOUTPUTATTRIBUTE_BUS ((DWORD) 0x00000020)")]
+        public const uint MFOUTPUTATTRIBUTE_BUS = ((uint)(0x00000020));
+
+        [NativeTypeName("#define MFOUTPUTATTRIBUTE_BUSIMPLEMENTATION ((DWORD) 0x0000FF00)")]
+        public const uint MFOUTPUTATTRIBUTE_BUSIMPLEMENTATION = ((uint)(0x0000FF00));
+
+        [NativeTypeName("#define MFCONTENTPROTECTIONDEVICE_FUNCTIONID_START 0x04000000")]
+        public const int MFCONTENTPROTECTIONDEVICE_FUNCTIONID_START = 0x04000000;
+
+        [NativeTypeName("#define MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA_FUNCTIONID MFCONTENTPROTECTIONDEVICE_FUNCTIONID_START")]
+        public const int MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA_FUNCTIONID = 0x04000000;
+
+        [NativeTypeName("#define MF_UNKNOWN_DURATION 0")]
+        public const int MF_UNKNOWN_DURATION = 0;
     }
 }
