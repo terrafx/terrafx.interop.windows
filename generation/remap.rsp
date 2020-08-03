@@ -102,7 +102,6 @@ ID3D12InfoQueue.GetMessageW=GetMessage
 IDWriteFontFace.GetGlyphIndicesW=GetGlyphIndices
 IDxDiagContainer.GetPropW=GetProp
 IDXGIInfoQueue.GetMessageW=GetMessage
-IInspectable*=void*
 ima_adpcmwaveformat_tag=IMAADPCMWAVEFORMAT
 IMediaSeeking.GetTimeFormatW=GetTimeFormat
 IMFAsyncResult.GetObjectW=GetObject
