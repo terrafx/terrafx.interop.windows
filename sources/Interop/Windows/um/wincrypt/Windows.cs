@@ -6712,7 +6712,7 @@ namespace TerraFX.Interop
         public const uint CTL_FIND_NO_LIST_ID_CBDATA = 0xFFFFFFFF;
 
         [NativeTypeName("#define CTL_FIND_NO_SIGNER_PTR ((PCERT_INFO) -1)")]
-        public static readonly CERT_INFO* CTL_FIND_NO_SIGNER_PTR = ((CERT_INFO*)(-1));
+        public static readonly CERT_INFO* CTL_FIND_NO_SIGNER_PTR = unchecked((CERT_INFO*)(-1));
 
         [NativeTypeName("#define CTL_FIND_SAME_USAGE_FLAG 0x1")]
         public const int CTL_FIND_SAME_USAGE_FLAG = 0x1;

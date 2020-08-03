@@ -339,7 +339,7 @@ namespace TerraFX.Interop
         public const BINDF BINDF_NOCOPYDATA = BINDF_PULLDATA;
 
         [NativeTypeName("#define INVALID_P_ROOT_SECURITY_ID ((BYTE*)-1)")]
-        public static readonly byte* INVALID_P_ROOT_SECURITY_ID = ((byte*)(-1));
+        public static readonly byte* INVALID_P_ROOT_SECURITY_ID = unchecked((byte*)(-1));
 
         [NativeTypeName("#define PI_DOCFILECLSIDLOOKUP PI_CLSIDLOOKUP")]
         public const PI_FLAGS PI_DOCFILECLSIDLOOKUP = PI_CLSIDLOOKUP;

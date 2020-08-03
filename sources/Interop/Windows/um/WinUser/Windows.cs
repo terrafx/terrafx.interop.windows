@@ -2752,7 +2752,7 @@ namespace TerraFX.Interop
         public static readonly delegate*<ushort*, ushort*, int> wsprintf = &wsprintfW;
 
         [NativeTypeName("#define SETWALLPAPER_DEFAULT ((LPWSTR)-1)")]
-        public static readonly ushort* SETWALLPAPER_DEFAULT = ((ushort*)(-1));
+        public static readonly ushort* SETWALLPAPER_DEFAULT = unchecked((ushort*)(-1));
 
         [NativeTypeName("#define SB_HORZ 0")]
         public const int SB_HORZ = 0;
