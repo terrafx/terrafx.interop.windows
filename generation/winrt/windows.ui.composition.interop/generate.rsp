@@ -1,0 +1,21 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+winrt-windows.ui.composition.interop.h
+--output
+../../../sources/Interop/Windows/winrt/windows.ui.composition.interop
+--test-output
+../../../tests/Interop/Windows/winrt/windows.ui.composition.interop
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/winrt/windows.ui.composition.interop.h
+--with-attribute
+ICompositionCapabilitiesInteropFactory=Guid("2C9DB356-E70D-4642-8298-BC4AA5B4865C")
+ICompositionDrawingSurfaceInterop=Guid("FD04E6E3-FE0C-4C3C-AB19-A07601A576EE")
+ICompositionDrawingSurfaceInterop2=Guid("41E64AAE-98C0-4239-8E95-A330DD6AA18B")
+ICompositionGraphicsDeviceInterop=Guid("A116FF71-F8BF-4C8A-9C98-70779A32A9C8")
+ICompositorDesktopInterop=Guid("29E691FA-4567-4DCA-B319-D0F207EB6807")
+ICompositorInterop=Guid("25297D5C-3AD4-4C9C-B5CF-E36A38512330")
+IDesktopWindowContentBridgeInterop=Guid("37642806-F421-4FD0-9F82-23AE7C776182")
+IDesktopWindowTargetInterop=Guid("35DBF59E-E3F9-45B0-81E7-FE75F4145DC9")
+ISwapChainInterop=Guid("26F496A0-7F38-45FB-88F7-FAAABE67DD59")
+IVisualInteractionSourceInterop=Guid("11F62CD1-2F9D-42D3-B05F-D6790D9E9F8E")
