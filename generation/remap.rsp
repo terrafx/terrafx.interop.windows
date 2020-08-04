@@ -1,7 +1,4 @@
 --remap
-ABI::Windows::Foundation::IPropertyValue*=void*
-ABI::Windows::Graphics::Effects::IGraphicsEffectSource*=void*
-ABI::Windows::Graphics::Effects::GRAPHICS_EFFECT_PROPERTY_MAPPING=GRAPHICS_EFFECT_PROPERTY_MAPPING
 AM_SEEKING_SeekingFlags=AM_SEEKING_SEEKING_FLAGS
 AM_SEEKING_SeekingCapabilities=AM_SEEKING_SEEKING_CAPABILITIES
 adpcmcoef_tag=ADPCMCOEFSET
@@ -105,6 +102,7 @@ ID3D12InfoQueue.GetMessageW=GetMessage
 IDWriteFontFace.GetGlyphIndicesW=GetGlyphIndices
 IDxDiagContainer.GetPropW=GetProp
 IDXGIInfoQueue.GetMessageW=GetMessage
+IGraphicsEffectSource*=void*
 IInspectable*=void*
 ima_adpcmwaveformat_tag=IMAADPCMWAVEFORMAT
 IMediaSeeking.GetTimeFormatW=GetTimeFormat
@@ -118,6 +116,7 @@ IOleInPlaceFrame.TranslateAcceleratorW=TranslateAccelerator
 IOleItemContainer.GetObjectW=GetObject
 IPropertyPage.TranslateAcceleratorW=TranslateAccelerator
 IPropertyPageSite.TranslateAcceleratorW=TranslateAccelerator
+IPropertyValue*=void*
 IProvideClassInfo.GetClassInfoW=GetClassInfo
 IRunningObjectTable.GetObjectW=GetObject
 ISpResourceManager.GetObjectW=GetObject
