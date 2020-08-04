@@ -1,6 +1,5 @@
 @../../settings.rsp
 @../../remap.rsp
---log-exclusions=true
 --exclude
 AUDCLNT_ERR
 AUDCLNT_SUCCESS

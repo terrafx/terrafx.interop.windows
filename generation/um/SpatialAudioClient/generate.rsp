@@ -1,13 +1,5 @@
 @../../settings.rsp
 @../../remap.rsp
---exclude
-operator|(AudioObjectType, AudioObjectType):AudioObjectType
-operator|=(AudioObjectType &, AudioObjectType):AudioObjectType &
-operator&(AudioObjectType, AudioObjectType):AudioObjectType
-operator&=(AudioObjectType &, AudioObjectType):AudioObjectType &
-operator~(AudioObjectType):AudioObjectType
-operator^(AudioObjectType, AudioObjectType):AudioObjectType
-operator^=(AudioObjectType &, AudioObjectType):AudioObjectType &
 --file
 um-SpatialAudioClient.h
 --output
