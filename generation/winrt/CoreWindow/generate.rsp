@@ -1,14 +1,5 @@
 @../../settings.rsp
 @../../remap.rsp
---exclude
-HWND_UserFree
-HWND_UserFree64
-HWND_UserMarshal
-HWND_UserMarshal64
-HWND_UserSize
-HWND_UserSize64
-HWND_UserUnmarshal
-HWND_UserUnmarshal64
 --file
 winrt-CoreWindow.h
 --output
