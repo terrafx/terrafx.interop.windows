@@ -6,6 +6,7 @@
 -Wno-nonportable-include-path
 -Wno-pragma-pack
 -Wno-macro-redefined
+-Wno-extra-tokens
 -Wno-extern-initializer
 --config
 exclude-com-proxies

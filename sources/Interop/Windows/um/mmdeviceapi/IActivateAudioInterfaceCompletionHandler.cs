@@ -1,0 +1,41 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from um/mmdeviceapi.h in the Windows SDK for Windows 10.0.19041.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+namespace TerraFX.Interop
+{
+    [Guid("41D949AB-9862-444A-80F6-C261334DA5EB")]
+    public unsafe partial struct IActivateAudioInterfaceCompletionHandler
+    {
+        public void** lpVtbl;
+
+        [return: NativeTypeName("HRESULT")]
+        public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
+        {
+            return ((delegate* stdcall<IActivateAudioInterfaceCompletionHandler*, Guid*, void**, int>)(lpVtbl[0]))((IActivateAudioInterfaceCompletionHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        }
+
+        [return: NativeTypeName("ULONG")]
+        public uint AddRef()
+        {
+            return ((delegate* stdcall<IActivateAudioInterfaceCompletionHandler*, uint>)(lpVtbl[1]))((IActivateAudioInterfaceCompletionHandler*)Unsafe.AsPointer(ref this));
+        }
+
+        [return: NativeTypeName("ULONG")]
+        public uint Release()
+        {
+            return ((delegate* stdcall<IActivateAudioInterfaceCompletionHandler*, uint>)(lpVtbl[2]))((IActivateAudioInterfaceCompletionHandler*)Unsafe.AsPointer(ref this));
+        }
+
+        [return: NativeTypeName("HRESULT")]
+        public int ActivateCompleted([NativeTypeName("IActivateAudioInterfaceAsyncOperation *")] IActivateAudioInterfaceAsyncOperation* activateOperation)
+        {
+            return ((delegate* stdcall<IActivateAudioInterfaceCompletionHandler*, IActivateAudioInterfaceAsyncOperation*, int>)(lpVtbl[3]))((IActivateAudioInterfaceCompletionHandler*)Unsafe.AsPointer(ref this), activateOperation);
+        }
+    }
+}
