@@ -9,6 +9,6 @@ namespace TerraFX.Interop
     {
         DCOMPOSITION_OPACITY_MODE_LAYER = 0,
         DCOMPOSITION_OPACITY_MODE_MULTIPLY = 1,
-        DCOMPOSITION_OPACITY_MODE_INHERIT = unchecked((int)0xffffffff),
+        DCOMPOSITION_OPACITY_MODE_INHERIT = unchecked((int)(0xffffffff)),
     }
 }

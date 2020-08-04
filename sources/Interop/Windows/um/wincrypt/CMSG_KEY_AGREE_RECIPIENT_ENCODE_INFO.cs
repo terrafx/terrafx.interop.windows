@@ -34,6 +34,28 @@ namespace TerraFX.Interop
         [NativeTypeName("_CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:6946:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref CRYPT_ALGORITHM_IDENTIFIER* pEphemeralAlgorithm
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->pEphemeralAlgorithm;
+                }
+            }
+        }
+
+        public ref CERT_ID* pSenderId
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->pSenderId;
+                }
+            }
+        }
+
         [NativeTypeName("CRYPT_DATA_BLOB")]
         public CRYPTOAPI_BLOB UserKeyingMaterial;
 

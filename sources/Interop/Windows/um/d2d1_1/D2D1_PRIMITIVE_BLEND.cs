@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_PRIMITIVE_BLEND : uint
     {
         D2D1_PRIMITIVE_BLEND_SOURCE_OVER = 0,

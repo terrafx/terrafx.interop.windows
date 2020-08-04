@@ -25,7 +25,7 @@ namespace TerraFX.Interop
         [NativeTypeName("USHORT")]
         public ushort FirstChild;
 
-        internal uint _bitfield;
+        public uint _bitfield;
 
         [NativeTypeName("ULONG : 8")]
         public uint CollectionType

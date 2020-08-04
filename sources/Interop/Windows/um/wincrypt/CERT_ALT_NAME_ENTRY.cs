@@ -7,13 +7,72 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public partial struct CERT_ALT_NAME_ENTRY
+    public unsafe partial struct CERT_ALT_NAME_ENTRY
     {
         [NativeTypeName("DWORD")]
         public uint dwAltNameChoice;
 
         [NativeTypeName("_CERT_ALT_NAME_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:3957:5)")]
         public _Anonymous_e__Union Anonymous;
+
+        public ref CERT_OTHER_NAME* pOtherName
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->pOtherName;
+                }
+            }
+        }
+
+        public ref ushort* pwszRfc822Name
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->pwszRfc822Name;
+                }
+            }
+        }
+
+        public ref ushort* pwszDNSName
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->pwszDNSName;
+                }
+            }
+        }
+
+        public ref CRYPTOAPI_BLOB DirectoryName => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.DirectoryName, 1));
+
+        public ref ushort* pwszURL
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->pwszURL;
+                }
+            }
+        }
+
+        public ref CRYPTOAPI_BLOB IPAddress => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.IPAddress, 1));
+
+        public ref sbyte* pszRegisteredID
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->pszRegisteredID;
+                }
+            }
+        }
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union

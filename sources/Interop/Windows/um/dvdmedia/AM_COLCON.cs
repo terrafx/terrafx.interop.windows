@@ -7,7 +7,7 @@ namespace TerraFX.Interop
 {
     public partial struct AM_COLCON
     {
-        internal byte _bitfield1;
+        public byte _bitfield1;
 
         [NativeTypeName("UCHAR : 4")]
         public byte emph1col
@@ -37,7 +37,7 @@ namespace TerraFX.Interop
             }
         }
 
-        internal byte _bitfield2;
+        public byte _bitfield2;
 
         [NativeTypeName("UCHAR : 4")]
         public byte backcol
@@ -67,7 +67,7 @@ namespace TerraFX.Interop
             }
         }
 
-        internal byte _bitfield3;
+        public byte _bitfield3;
 
         [NativeTypeName("UCHAR : 4")]
         public byte emph1con
@@ -97,7 +97,7 @@ namespace TerraFX.Interop
             }
         }
 
-        internal byte _bitfield4;
+        public byte _bitfield4;
 
         [NativeTypeName("UCHAR : 4")]
         public byte backcon

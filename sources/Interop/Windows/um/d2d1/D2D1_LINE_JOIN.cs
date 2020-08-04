@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_LINE_JOIN : uint
     {
         D2D1_LINE_JOIN_MITER = 0,

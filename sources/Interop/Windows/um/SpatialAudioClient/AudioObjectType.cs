@@ -7,6 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
+    [Flags]
     public enum AudioObjectType
     {
         AudioObjectType_None = 0,

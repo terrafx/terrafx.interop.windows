@@ -1,8 +1,5 @@
 @../../settings.rsp
 @../../remap.rsp
---exclude
-IID_ID2D1EffectContext1
-IID_ID2D1EffectContext2
 --file
 um-d2d1effectauthor_1.h
 --output

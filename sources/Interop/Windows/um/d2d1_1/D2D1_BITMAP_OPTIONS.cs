@@ -8,7 +8,6 @@ using System;
 namespace TerraFX.Interop
 {
     [Flags]
-    [NativeTypeName("int")]
     public enum D2D1_BITMAP_OPTIONS : uint
     {
         D2D1_BITMAP_OPTIONS_NONE = 0x00000000,

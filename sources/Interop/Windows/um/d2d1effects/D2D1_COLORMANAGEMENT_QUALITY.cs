@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_COLORMANAGEMENT_QUALITY : uint
     {
         D2D1_COLORMANAGEMENT_QUALITY_PROOF = 0,

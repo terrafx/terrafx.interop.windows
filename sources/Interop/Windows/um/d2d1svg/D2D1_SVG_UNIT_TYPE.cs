@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_SVG_UNIT_TYPE : uint
     {
         D2D1_SVG_UNIT_TYPE_USER_SPACE_ON_USE = 0,

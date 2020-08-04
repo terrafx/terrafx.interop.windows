@@ -141,7 +141,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetUserNameA([NativeTypeName("BSTR *")] ushort** pbstrUserName)
+        public int GetUserName([NativeTypeName("BSTR *")] ushort** pbstrUserName)
         {
             return ((delegate* stdcall<IUri*, ushort**, int>)(lpVtbl[21]))((IUri*)Unsafe.AsPointer(ref this), pbstrUserName);
         }

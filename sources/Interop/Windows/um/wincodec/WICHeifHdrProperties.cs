@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public enum WICHeifHdrProperties
+    public enum WICHeifHdrProperties : uint
     {
         WICHeifHdrMaximumLuminanceLevel = 0x1,
         WICHeifHdrMaximumFrameAverageLuminanceLevel = 0x2,

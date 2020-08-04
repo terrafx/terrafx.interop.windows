@@ -7,7 +7,7 @@ namespace TerraFX.Interop
 {
     public partial struct SPSERIALIZEDEVENT64
     {
-        internal int _bitfield;
+        public int _bitfield;
 
         [NativeTypeName("SPEVENTENUM : 16")]
         public SPEVENTENUM eEventId
@@ -19,7 +19,7 @@ namespace TerraFX.Interop
 
             set
             {
-                _bitfield = (_bitfield & ~0xFFFF) | ((int)value & 0xFFFF);
+                _bitfield = (_bitfield & ~0xFFFF) | ((int)(value) & 0xFFFF);
             }
         }
 
@@ -33,7 +33,7 @@ namespace TerraFX.Interop
 
             set
             {
-                _bitfield = (_bitfield & ~(0xFFFF << 16)) | (((int)value & 0xFFFF) << 16);
+                _bitfield = (_bitfield & ~(0xFFFF << 16)) | (((int)(value) & 0xFFFF) << 16);
             }
         }
 

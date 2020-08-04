@@ -60,14 +60,14 @@ namespace TerraFX.Interop
 
         public partial struct _FloatRegisters_e__FixedBuffer
         {
-            internal M128A e0;
-            internal M128A e1;
-            internal M128A e2;
-            internal M128A e3;
-            internal M128A e4;
-            internal M128A e5;
-            internal M128A e6;
-            internal M128A e7;
+            public M128A e0;
+            public M128A e1;
+            public M128A e2;
+            public M128A e3;
+            public M128A e4;
+            public M128A e5;
+            public M128A e6;
+            public M128A e7;
 
             public ref M128A this[int index] => ref AsSpan()[index];
 
@@ -76,14 +76,14 @@ namespace TerraFX.Interop
 
         public partial struct _XmmRegisters_e__FixedBuffer
         {
-            internal M128A e0;
-            internal M128A e1;
-            internal M128A e2;
-            internal M128A e3;
-            internal M128A e4;
-            internal M128A e5;
-            internal M128A e6;
-            internal M128A e7;
+            public M128A e0;
+            public M128A e1;
+            public M128A e2;
+            public M128A e3;
+            public M128A e4;
+            public M128A e5;
+            public M128A e6;
+            public M128A e7;
 
             public ref M128A this[int index] => ref AsSpan()[index];
 

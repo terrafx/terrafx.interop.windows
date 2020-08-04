@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public enum WICJpegLuminanceProperties
+    public enum WICJpegLuminanceProperties : uint
     {
         WICJpegLuminanceTable = 0x1,
         WICJpegLuminanceProperties_FORCE_DWORD = 0x7fffffff,

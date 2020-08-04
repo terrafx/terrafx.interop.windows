@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public enum WICPngBkgdProperties
+    public enum WICPngBkgdProperties : uint
     {
         WICPngBkgdBackgroundColor = 0x1,
         WICPngBkgdProperties_FORCE_DWORD = 0x7fffffff,

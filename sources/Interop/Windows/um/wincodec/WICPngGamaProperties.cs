@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public enum WICPngGamaProperties
+    public enum WICPngGamaProperties : uint
     {
         WICPngGamaGamma = 0x1,
         WICPngGamaProperties_FORCE_DWORD = 0x7fffffff,

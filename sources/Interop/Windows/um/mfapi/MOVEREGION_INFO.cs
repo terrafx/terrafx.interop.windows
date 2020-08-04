@@ -21,7 +21,7 @@ namespace TerraFX.Interop
 
         public partial struct _MoveRegions_e__FixedBuffer
         {
-            internal MOVE_RECT e0;
+            public MOVE_RECT e0;
 
             public ref MOVE_RECT this[int index] => ref AsSpan(int.MaxValue)[index];
 

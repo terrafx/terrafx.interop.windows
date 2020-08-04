@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_COLORMANAGEMENT_RENDERING_INTENT : uint
     {
         D2D1_COLORMANAGEMENT_RENDERING_INTENT_PERCEPTUAL = 0,

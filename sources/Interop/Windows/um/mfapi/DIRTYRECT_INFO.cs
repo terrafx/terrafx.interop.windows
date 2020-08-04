@@ -21,7 +21,7 @@ namespace TerraFX.Interop
 
         public partial struct _DirtyRects_e__FixedBuffer
         {
-            internal RECT e0;
+            public RECT e0;
 
             public ref RECT this[int index] => ref AsSpan(int.MaxValue)[index];
 

@@ -9,12 +9,6 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        public const uint DWRITE_ALPHA_MAX = 255;
-
-        public const int FACILITY_DWRITE = 0x898;
-
-        public const int DWRITE_ERR_BASE = 0x5000;
-
         public static readonly Guid IID_IDWriteFontFileLoader = new Guid(0x727CAD4E, 0xD6AF, 0x4C9E, 0x8A, 0x08, 0xD6, 0x95, 0xB1, 0x1C, 0xAA, 0x49);
 
         public static readonly Guid IID_IDWriteLocalFontFileLoader = new Guid(0xB2D9F3EC, 0xC9FE, 0x4A11, 0xA2, 0xEC, 0xD8, 0x62, 0x08, 0xF7, 0xC0, 0xA2);

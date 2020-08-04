@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_COMPOSITE_MODE : uint
     {
         D2D1_COMPOSITE_MODE_SOURCE_OVER = 0,

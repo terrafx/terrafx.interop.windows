@@ -12,6 +12,10 @@ namespace TerraFX.Interop
         [NativeTypeName("_IMAGE_IMPORT_DESCRIPTOR::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18247:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref uint Characteristics => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Characteristics, 1));
+
+        public ref uint OriginalFirstThunk => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.OriginalFirstThunk, 1));
+
         [NativeTypeName("DWORD")]
         public uint TimeDateStamp;
 

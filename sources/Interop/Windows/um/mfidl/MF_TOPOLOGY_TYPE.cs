@@ -11,6 +11,6 @@ namespace TerraFX.Interop
         MF_TOPOLOGY_SOURCESTREAM_NODE = (MF_TOPOLOGY_OUTPUT_NODE + 1),
         MF_TOPOLOGY_TRANSFORM_NODE = (MF_TOPOLOGY_SOURCESTREAM_NODE + 1),
         MF_TOPOLOGY_TEE_NODE = (MF_TOPOLOGY_TRANSFORM_NODE + 1),
-        MF_TOPOLOGY_MAX = unchecked((int)0xffffffff),
+        MF_TOPOLOGY_MAX = unchecked((int)(0xffffffff)),
     }
 }

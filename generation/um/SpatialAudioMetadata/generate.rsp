@@ -8,3 +8,13 @@ um-SpatialAudioMetadata.h
 ../../../tests/Interop/Windows/um/SpatialAudioMetadata
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/SpatialAudioMetadata.h
+--with-attribute
+ISpatialAudioMetadataClient=Guid("777D4A3B-F6FF-4A26-85DC-68D7CDEDA1D4")
+ISpatialAudioMetadataCopier=Guid("D224B233-E251-4FD0-9CA2-D5ECF9A68404")
+ISpatialAudioMetadataItems=Guid("BCD7C78F-3098-4F22-B547-A2F25A381269")
+ISpatialAudioMetadataItemsBuffer=Guid("42640A16-E1BD-42D9-9FF6-031AB71A2DBA")
+ISpatialAudioMetadataReader=Guid("B78E86A2-31D9-4C32-94D2-7DF40FC7EBEC")
+ISpatialAudioMetadataWriter=Guid("1B17CA01-2955-444D-A430-537DC589A844")
+ISpatialAudioObjectForMetadataCommands=Guid("0DF2C94B-F5F9-472D-AF6B-C46E0AC9CD05")
+ISpatialAudioObjectForMetadataItems=Guid("DDEA49FF-3BC0-4377-8AAD-9FBCFD808566")
+ISpatialAudioObjectRenderStreamForMetadata=Guid("BBC9C907-48D5-4A2E-A0C7-F7F0D67C1FB1")

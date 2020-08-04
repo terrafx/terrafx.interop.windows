@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_SVG_ASPECT_ALIGN : uint
     {
         D2D1_SVG_ASPECT_ALIGN_NONE = 0,

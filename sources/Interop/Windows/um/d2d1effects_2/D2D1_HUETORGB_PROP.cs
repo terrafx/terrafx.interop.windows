@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_HUETORGB_PROP : uint
     {
         D2D1_HUETORGB_PROP_INPUT_COLOR_SPACE = 0,

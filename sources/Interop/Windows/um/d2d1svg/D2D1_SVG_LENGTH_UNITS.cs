@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_SVG_LENGTH_UNITS : uint
     {
         D2D1_SVG_LENGTH_UNITS_NUMBER = 0,

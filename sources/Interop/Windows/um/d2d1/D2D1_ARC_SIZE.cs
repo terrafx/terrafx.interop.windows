@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_ARC_SIZE : uint
     {
         D2D1_ARC_SIZE_SMALL = 0,

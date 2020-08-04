@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_FILTER : uint
     {
         D2D1_FILTER_MIN_MAG_MIP_POINT = 0x00,

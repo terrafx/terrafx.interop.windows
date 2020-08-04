@@ -1,5 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
+--exclude
+LocalDiscard
 --file
 um-minwinbase.h
 --output

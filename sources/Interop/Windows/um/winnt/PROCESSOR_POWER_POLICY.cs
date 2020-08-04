@@ -19,7 +19,7 @@ namespace TerraFX.Interop
         [NativeTypeName("BYTE [3]")]
         public fixed byte Spare[3];
 
-        internal uint _bitfield;
+        public uint _bitfield;
 
         [NativeTypeName("DWORD : 1")]
         public uint DisableCStates
@@ -57,9 +57,9 @@ namespace TerraFX.Interop
 
         public partial struct _Policy_e__FixedBuffer
         {
-            internal PROCESSOR_POWER_POLICY_INFO e0;
-            internal PROCESSOR_POWER_POLICY_INFO e1;
-            internal PROCESSOR_POWER_POLICY_INFO e2;
+            public PROCESSOR_POWER_POLICY_INFO e0;
+            public PROCESSOR_POWER_POLICY_INFO e1;
+            public PROCESSOR_POWER_POLICY_INFO e2;
 
             public ref PROCESSOR_POWER_POLICY_INFO this[int index] => ref AsSpan()[index];
 

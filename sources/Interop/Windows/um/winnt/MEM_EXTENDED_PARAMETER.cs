@@ -8,17 +8,62 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public partial struct MEM_EXTENDED_PARAMETER
+    public unsafe partial struct MEM_EXTENDED_PARAMETER
     {
         [NativeTypeName("MEM_EXTENDED_PARAMETER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:13032:5)")]
         public _Anonymous1_e__Struct Anonymous1;
 
+        public ulong Type
+        {
+            get
+            {
+                return Anonymous1.Type;
+            }
+
+            set
+            {
+                Anonymous1.Type = value;
+            }
+        }
+
+        public ulong Reserved
+        {
+            get
+            {
+                return Anonymous1.Reserved;
+            }
+
+            set
+            {
+                Anonymous1.Reserved = value;
+            }
+        }
+
         [NativeTypeName("MEM_EXTENDED_PARAMETER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:13037:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
+        public ref ulong ULong64 => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.ULong64, 1));
+
+        public ref void* Pointer
+        {
+            get
+            {
+                fixed (_Anonymous2_e__Union* pField = &Anonymous2)
+                {
+                    return ref pField->Pointer;
+                }
+            }
+        }
+
+        public ref nuint Size => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.Size, 1));
+
+        public ref IntPtr Handle => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.Handle, 1));
+
+        public ref uint ULong => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.ULong, 1));
+
         public partial struct _Anonymous1_e__Struct
         {
-            internal ulong _bitfield;
+            public ulong _bitfield;
 
             [NativeTypeName("DWORD64 : 8")]
             public ulong Type

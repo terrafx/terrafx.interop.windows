@@ -9,16 +9,6 @@ namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        public const int MULTICLASSINFO_GETTYPEINFO = 0x00000001;
-
-        public const int MULTICLASSINFO_GETNUMRESERVEDDISPIDS = 0x00000002;
-
-        public const int MULTICLASSINFO_GETIIDPRIMARY = 0x00000004;
-
-        public const int MULTICLASSINFO_GETIIDSOURCE = 0x00000008;
-
-        public const int TIFLAGS_EXTENDDISPATCHONLY = 0x00000001;
-
         public static readonly Guid IID_IAdviseSinkEx = new Guid(0x3AF24290, 0x0C96, 0x11CE, 0xA0, 0xCF, 0x00, 0xAA, 0x00, 0x60, 0x0A, 0xB8);
 
         public static readonly Guid IID_IClassFactory2 = new Guid(0xB196B28F, 0xBAB4, 0x101A, 0xB6, 0x9C, 0x00, 0xAA, 0x00, 0x34, 0x1D, 0x07);

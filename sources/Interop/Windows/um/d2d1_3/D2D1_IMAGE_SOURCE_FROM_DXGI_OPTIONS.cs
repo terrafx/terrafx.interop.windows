@@ -8,7 +8,6 @@ using System;
 namespace TerraFX.Interop
 {
     [Flags]
-    [NativeTypeName("int")]
     public enum D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS : uint
     {
         D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS_NONE = 0,

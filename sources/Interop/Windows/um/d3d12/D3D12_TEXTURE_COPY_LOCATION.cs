@@ -17,6 +17,10 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D12_TEXTURE_COPY_LOCATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12.h:2788:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref D3D12_PLACED_SUBRESOURCE_FOOTPRINT PlacedFootprint => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.PlacedFootprint, 1));
+
+        public ref uint SubresourceIndex => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.SubresourceIndex, 1));
+
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {

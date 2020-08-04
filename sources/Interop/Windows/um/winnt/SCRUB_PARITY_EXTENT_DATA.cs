@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public partial struct _ParityExtents_e__FixedBuffer
         {
-            internal SCRUB_PARITY_EXTENT e0;
+            public SCRUB_PARITY_EXTENT e0;
 
             public ref SCRUB_PARITY_EXTENT this[int index] => ref AsSpan(int.MaxValue)[index];
 

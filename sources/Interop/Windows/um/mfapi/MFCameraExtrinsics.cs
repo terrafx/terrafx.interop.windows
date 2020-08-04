@@ -18,7 +18,7 @@ namespace TerraFX.Interop
 
         public partial struct _CalibratedTransforms_e__FixedBuffer
         {
-            internal MFCameraExtrinsic_CalibratedTransform e0;
+            public MFCameraExtrinsic_CalibratedTransform e0;
 
             public ref MFCameraExtrinsic_CalibratedTransform this[int index] => ref AsSpan(int.MaxValue)[index];
 

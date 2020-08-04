@@ -8,7 +8,6 @@ using System;
 namespace TerraFX.Interop
 {
     [Flags]
-    [NativeTypeName("int")]
     public enum D2D1_RENDER_TARGET_USAGE : uint
     {
         D2D1_RENDER_TARGET_USAGE_NONE = 0x00000000,

@@ -19,7 +19,7 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT32")]
         public uint justificationCharacter;
 
-        internal uint _bitfield;
+        public uint _bitfield;
 
         [NativeTypeName("UINT32 : 1")]
         public uint restrictCaretToClusters

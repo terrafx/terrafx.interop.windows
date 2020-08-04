@@ -57,7 +57,7 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int TranslateAcceleratorA([NativeTypeName("MSG *")] MSG* pMsg, [NativeTypeName("DWORD")] uint grfModifiers)
+        public int TranslateAccelerator([NativeTypeName("MSG *")] MSG* pMsg, [NativeTypeName("DWORD")] uint grfModifiers)
         {
             return ((delegate* stdcall<IOleControlSite*, MSG*, uint, int>)(lpVtbl[7]))((IOleControlSite*)Unsafe.AsPointer(ref this), pMsg, grfModifiers);
         }

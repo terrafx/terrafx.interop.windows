@@ -15,22 +15,22 @@ namespace TerraFX.Interop
 
         public partial struct _sppal_e__FixedBuffer
         {
-            internal AM_DVD_YUV e0;
-            internal AM_DVD_YUV e1;
-            internal AM_DVD_YUV e2;
-            internal AM_DVD_YUV e3;
-            internal AM_DVD_YUV e4;
-            internal AM_DVD_YUV e5;
-            internal AM_DVD_YUV e6;
-            internal AM_DVD_YUV e7;
-            internal AM_DVD_YUV e8;
-            internal AM_DVD_YUV e9;
-            internal AM_DVD_YUV e10;
-            internal AM_DVD_YUV e11;
-            internal AM_DVD_YUV e12;
-            internal AM_DVD_YUV e13;
-            internal AM_DVD_YUV e14;
-            internal AM_DVD_YUV e15;
+            public AM_DVD_YUV e0;
+            public AM_DVD_YUV e1;
+            public AM_DVD_YUV e2;
+            public AM_DVD_YUV e3;
+            public AM_DVD_YUV e4;
+            public AM_DVD_YUV e5;
+            public AM_DVD_YUV e6;
+            public AM_DVD_YUV e7;
+            public AM_DVD_YUV e8;
+            public AM_DVD_YUV e9;
+            public AM_DVD_YUV e10;
+            public AM_DVD_YUV e11;
+            public AM_DVD_YUV e12;
+            public AM_DVD_YUV e13;
+            public AM_DVD_YUV e14;
+            public AM_DVD_YUV e15;
 
             public ref AM_DVD_YUV this[int index] => ref AsSpan()[index];
 

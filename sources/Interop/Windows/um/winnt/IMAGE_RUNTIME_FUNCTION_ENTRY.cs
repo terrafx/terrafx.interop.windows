@@ -18,6 +18,10 @@ namespace TerraFX.Interop
         [NativeTypeName("_IMAGE_RUNTIME_FUNCTION_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18807:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref uint UnwindInfoAddress => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.UnwindInfoAddress, 1));
+
+        public ref uint UnwindData => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.UnwindData, 1));
+
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {

@@ -27,7 +27,7 @@ namespace TerraFX.Interop
 
         public partial struct _ranges_e__FixedBuffer
         {
-            internal WCRANGE e0;
+            public WCRANGE e0;
 
             public ref WCRANGE this[int index] => ref AsSpan(int.MaxValue)[index];
 

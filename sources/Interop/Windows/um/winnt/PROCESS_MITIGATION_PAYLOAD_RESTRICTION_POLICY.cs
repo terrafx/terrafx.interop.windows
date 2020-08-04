@@ -12,6 +12,177 @@ namespace TerraFX.Interop
         [NativeTypeName("_PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11827:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref uint Flags => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
+
+        public uint EnableExportAddressFilter
+        {
+            get
+            {
+                return Anonymous.Anonymous.EnableExportAddressFilter;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.EnableExportAddressFilter = value;
+            }
+        }
+
+        public uint AuditExportAddressFilter
+        {
+            get
+            {
+                return Anonymous.Anonymous.AuditExportAddressFilter;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.AuditExportAddressFilter = value;
+            }
+        }
+
+        public uint EnableExportAddressFilterPlus
+        {
+            get
+            {
+                return Anonymous.Anonymous.EnableExportAddressFilterPlus;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.EnableExportAddressFilterPlus = value;
+            }
+        }
+
+        public uint AuditExportAddressFilterPlus
+        {
+            get
+            {
+                return Anonymous.Anonymous.AuditExportAddressFilterPlus;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.AuditExportAddressFilterPlus = value;
+            }
+        }
+
+        public uint EnableImportAddressFilter
+        {
+            get
+            {
+                return Anonymous.Anonymous.EnableImportAddressFilter;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.EnableImportAddressFilter = value;
+            }
+        }
+
+        public uint AuditImportAddressFilter
+        {
+            get
+            {
+                return Anonymous.Anonymous.AuditImportAddressFilter;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.AuditImportAddressFilter = value;
+            }
+        }
+
+        public uint EnableRopStackPivot
+        {
+            get
+            {
+                return Anonymous.Anonymous.EnableRopStackPivot;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.EnableRopStackPivot = value;
+            }
+        }
+
+        public uint AuditRopStackPivot
+        {
+            get
+            {
+                return Anonymous.Anonymous.AuditRopStackPivot;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.AuditRopStackPivot = value;
+            }
+        }
+
+        public uint EnableRopCallerCheck
+        {
+            get
+            {
+                return Anonymous.Anonymous.EnableRopCallerCheck;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.EnableRopCallerCheck = value;
+            }
+        }
+
+        public uint AuditRopCallerCheck
+        {
+            get
+            {
+                return Anonymous.Anonymous.AuditRopCallerCheck;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.AuditRopCallerCheck = value;
+            }
+        }
+
+        public uint EnableRopSimExec
+        {
+            get
+            {
+                return Anonymous.Anonymous.EnableRopSimExec;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.EnableRopSimExec = value;
+            }
+        }
+
+        public uint AuditRopSimExec
+        {
+            get
+            {
+                return Anonymous.Anonymous.AuditRopSimExec;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.AuditRopSimExec = value;
+            }
+        }
+
+        public uint ReservedFlags
+        {
+            get
+            {
+                return Anonymous.Anonymous.ReservedFlags;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.ReservedFlags = value;
+            }
+        }
+
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {
@@ -25,7 +196,7 @@ namespace TerraFX.Interop
 
             public partial struct _Anonymous_e__Struct
             {
-                internal uint _bitfield;
+                public uint _bitfield;
 
                 [NativeTypeName("DWORD : 1")]
                 public uint EnableExportAddressFilter

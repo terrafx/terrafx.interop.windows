@@ -18,7 +18,7 @@ namespace TerraFX.Interop
 
         public partial struct _EnlistmentPair_e__FixedBuffer
         {
-            internal TRANSACTION_ENLISTMENT_PAIR e0;
+            public TRANSACTION_ENLISTMENT_PAIR e0;
 
             public ref TRANSACTION_ENLISTMENT_PAIR this[int index] => ref AsSpan(int.MaxValue)[index];
 

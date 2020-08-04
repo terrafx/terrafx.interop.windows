@@ -18,6 +18,12 @@ namespace TerraFX.Interop
         [NativeTypeName("_SLIST_HEADER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:19893:5)")]
         public _Anonymous_e__Struct Anonymous;
 
+        public ref SINGLE_LIST_ENTRY Next => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Next, 1));
+
+        public ref ushort Depth => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Depth, 1));
+
+        public ref ushort CpuId => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.CpuId, 1));
+
         public partial struct _Anonymous_e__Struct
         {
             [NativeTypeName("SLIST_ENTRY")]

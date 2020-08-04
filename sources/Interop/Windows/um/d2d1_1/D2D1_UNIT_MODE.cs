@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_UNIT_MODE : uint
     {
         D2D1_UNIT_MODE_DIPS = 0,

@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_COLORMANAGEMENT_ALPHA_MODE : uint
     {
         D2D1_COLORMANAGEMENT_ALPHA_MODE_PREMULTIPLIED = 1,

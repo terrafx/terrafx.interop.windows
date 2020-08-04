@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_PRINT_FONT_SUBSET_MODE : uint
     {
         D2D1_PRINT_FONT_SUBSET_MODE_DEFAULT = 0,

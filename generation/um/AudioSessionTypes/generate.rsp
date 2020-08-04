@@ -1,5 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
+--exclude
+MIDL_SIZE_IS
 --file
 um-AudioSessionTypes.h
 --output

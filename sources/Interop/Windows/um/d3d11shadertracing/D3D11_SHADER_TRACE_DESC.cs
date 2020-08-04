@@ -17,6 +17,18 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D11_SHADER_TRACE_DESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11shadertracing.h:126:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref D3D11_VERTEX_SHADER_TRACE_DESC VertexShaderTraceDesc => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.VertexShaderTraceDesc, 1));
+
+        public ref D3D11_HULL_SHADER_TRACE_DESC HullShaderTraceDesc => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.HullShaderTraceDesc, 1));
+
+        public ref D3D11_DOMAIN_SHADER_TRACE_DESC DomainShaderTraceDesc => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.DomainShaderTraceDesc, 1));
+
+        public ref D3D11_GEOMETRY_SHADER_TRACE_DESC GeometryShaderTraceDesc => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.GeometryShaderTraceDesc, 1));
+
+        public ref D3D11_PIXEL_SHADER_TRACE_DESC PixelShaderTraceDesc => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.PixelShaderTraceDesc, 1));
+
+        public ref D3D11_COMPUTE_SHADER_TRACE_DESC ComputeShaderTraceDesc => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ComputeShaderTraceDesc, 1));
+
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {

@@ -16,7 +16,7 @@ namespace TerraFX.Interop
         [NativeTypeName("FLOAT")]
         public float compressionMaximum;
 
-        internal uint _bitfield;
+        public uint _bitfield;
 
         [NativeTypeName("UINT32 : 8")]
         public uint expansionPriority

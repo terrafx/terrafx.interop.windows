@@ -60,6 +60,39 @@ namespace TerraFX.Interop
         [NativeTypeName("SIP_SUBJECTINFO_::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mssip.h:114:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref MS_ADDINFO_FLAT* psFlat
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->psFlat;
+                }
+            }
+        }
+
+        public ref MS_ADDINFO_CATALOGMEMBER* psCatMember
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->psCatMember;
+                }
+            }
+        }
+
+        public ref MS_ADDINFO_BLOB* psBlob
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->psBlob;
+                }
+            }
+        }
+
         [NativeTypeName("LPVOID")]
         public void* pClientData;
 

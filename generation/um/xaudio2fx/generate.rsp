@@ -1,10 +1,9 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-AudioReverb
-AudioVolumeMeter
 CLSID_AudioReverb
 CLSID_AudioVolumeMeter
+DEFAULT
 ReverbConvertI3DL2ToNative(const XAUDIO2FX_REVERB_I3DL2_PARAMETERS *, XAUDIO2FX_REVERB_PARAMETERS *, BOOL):void
 XAudio2CreateReverb(IUnknown **, UINT32):HRESULT
 XAudio2CreateVolumeMeter(IUnknown **, UINT32):HRESULT

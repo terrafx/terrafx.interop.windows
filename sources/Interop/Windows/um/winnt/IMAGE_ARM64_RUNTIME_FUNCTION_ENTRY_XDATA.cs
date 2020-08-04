@@ -18,9 +18,87 @@ namespace TerraFX.Interop
         [NativeTypeName("IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18778:5)")]
         public _Anonymous_e__Struct Anonymous;
 
+        public uint FunctionLength
+        {
+            get
+            {
+                return Anonymous.FunctionLength;
+            }
+
+            set
+            {
+                Anonymous.FunctionLength = value;
+            }
+        }
+
+        public uint Version
+        {
+            get
+            {
+                return Anonymous.Version;
+            }
+
+            set
+            {
+                Anonymous.Version = value;
+            }
+        }
+
+        public uint ExceptionDataPresent
+        {
+            get
+            {
+                return Anonymous.ExceptionDataPresent;
+            }
+
+            set
+            {
+                Anonymous.ExceptionDataPresent = value;
+            }
+        }
+
+        public uint EpilogInHeader
+        {
+            get
+            {
+                return Anonymous.EpilogInHeader;
+            }
+
+            set
+            {
+                Anonymous.EpilogInHeader = value;
+            }
+        }
+
+        public uint EpilogCount
+        {
+            get
+            {
+                return Anonymous.EpilogCount;
+            }
+
+            set
+            {
+                Anonymous.EpilogCount = value;
+            }
+        }
+
+        public uint CodeWords
+        {
+            get
+            {
+                return Anonymous.CodeWords;
+            }
+
+            set
+            {
+                Anonymous.CodeWords = value;
+            }
+        }
+
         public partial struct _Anonymous_e__Struct
         {
-            internal uint _bitfield;
+            public uint _bitfield;
 
             [NativeTypeName("DWORD : 18")]
             public uint FunctionLength

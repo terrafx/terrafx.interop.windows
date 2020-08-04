@@ -1,8 +1,8 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-HDRVR__
 LPDRVCALLBACK
+MAKEFOURCC
 PDRVCALLBACK
 --file
 um-mmsyscom.h

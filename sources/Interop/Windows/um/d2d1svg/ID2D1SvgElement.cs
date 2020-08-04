@@ -30,13 +30,13 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("const D2D1_COLOR_F &")] DXGI_RGBA* value)
         {
-            return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_COLOR, value, (uint)sizeof(DXGI_RGBA));
+            return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_COLOR, value, (uint)(sizeof(DXGI_RGBA)));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("D2D1_COLOR_F *")] DXGI_RGBA* value)
         {
-            return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_COLOR, value, (uint)sizeof(DXGI_RGBA));
+            return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_COLOR, value, (uint)(sizeof(DXGI_RGBA)));
         }
 
         [return: NativeTypeName("HRESULT")]
@@ -114,13 +114,13 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("const D2D1_MATRIX_3X2_F &")] D2D_MATRIX_3X2_F* value)
         {
-            return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_MATRIX, value, (uint)sizeof(D2D_MATRIX_3X2_F));
+            return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_MATRIX, value, (uint)(sizeof(D2D_MATRIX_3X2_F)));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* value)
         {
-            return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_MATRIX, value, (uint)sizeof(D2D_MATRIX_3X2_F));
+            return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_MATRIX, value, (uint)(sizeof(D2D_MATRIX_3X2_F)));
         }
 
         [return: NativeTypeName("HRESULT")]
@@ -150,25 +150,25 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("const D2D1_SVG_PRESERVE_ASPECT_RATIO &")] D2D1_SVG_PRESERVE_ASPECT_RATIO* value)
         {
-            return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_PRESERVE_ASPECT_RATIO, value, (uint)sizeof(D2D1_SVG_PRESERVE_ASPECT_RATIO));
+            return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_PRESERVE_ASPECT_RATIO, value, (uint)(sizeof(D2D1_SVG_PRESERVE_ASPECT_RATIO)));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("D2D1_SVG_PRESERVE_ASPECT_RATIO *")] D2D1_SVG_PRESERVE_ASPECT_RATIO* value)
         {
-            return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_PRESERVE_ASPECT_RATIO, value, (uint)sizeof(D2D1_SVG_PRESERVE_ASPECT_RATIO));
+            return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_PRESERVE_ASPECT_RATIO, value, (uint)(sizeof(D2D1_SVG_PRESERVE_ASPECT_RATIO)));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("const D2D1_SVG_LENGTH &")] D2D1_SVG_LENGTH* value)
         {
-            return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_LENGTH, value, (uint)sizeof(D2D1_SVG_LENGTH));
+            return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_LENGTH, value, (uint)(sizeof(D2D1_SVG_LENGTH)));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("D2D1_SVG_LENGTH *")] D2D1_SVG_LENGTH* value)
         {
-            return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_LENGTH, value, (uint)sizeof(D2D1_SVG_LENGTH));
+            return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_LENGTH, value, (uint)(sizeof(D2D1_SVG_LENGTH)));
         }
 
         [return: NativeTypeName("HRESULT")]

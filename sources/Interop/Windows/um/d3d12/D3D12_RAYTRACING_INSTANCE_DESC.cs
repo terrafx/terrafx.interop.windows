@@ -10,7 +10,7 @@ namespace TerraFX.Interop
         [NativeTypeName("FLOAT [3][4]")]
         public fixed float Transform[3 * 4];
 
-        internal uint _bitfield1;
+        public uint _bitfield1;
 
         [NativeTypeName("UINT : 24")]
         public uint InstanceID
@@ -40,7 +40,7 @@ namespace TerraFX.Interop
             }
         }
 
-        internal uint _bitfield2;
+        public uint _bitfield2;
 
         [NativeTypeName("UINT : 24")]
         public uint InstanceContributionToHitGroupIndex

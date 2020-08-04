@@ -19,7 +19,7 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD")]
         public ushort cdwParams;
 
-        internal ushort _bitfield;
+        public ushort _bitfield;
 
         [NativeTypeName("WORD : 8")]
         public ushort cbProlog

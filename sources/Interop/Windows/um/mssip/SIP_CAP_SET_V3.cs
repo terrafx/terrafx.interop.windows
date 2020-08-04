@@ -21,6 +21,10 @@ namespace TerraFX.Interop
         [NativeTypeName("_SIP_CAP_SET_V3::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mssip.h:193:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref uint dwFlags => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwFlags, 1));
+
+        public ref uint dwReserved => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwReserved, 1));
+
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {

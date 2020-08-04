@@ -9,6 +9,6 @@ namespace TerraFX.Interop
     {
         DCOMPOSITION_BACKFACE_VISIBILITY_VISIBLE = 0,
         DCOMPOSITION_BACKFACE_VISIBILITY_HIDDEN = 1,
-        DCOMPOSITION_BACKFACE_VISIBILITY_INHERIT = unchecked((int)0xffffffff),
+        DCOMPOSITION_BACKFACE_VISIBILITY_INHERIT = unchecked((int)(0xffffffff)),
     }
 }

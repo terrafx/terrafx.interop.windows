@@ -4,7 +4,6 @@
 GetCurrentProcessToken():HANDLE
 GetCurrentThreadEffectiveToken():HANDLE
 GetCurrentThreadToken():HANDLE
-_PROC_THREAD_ATTRIBUTE_LIST
 --file
 um-processthreadsapi.h
 --output

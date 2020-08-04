@@ -7,13 +7,35 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public partial struct CERT_LOGOTYPE_INFO
+    public unsafe partial struct CERT_LOGOTYPE_INFO
     {
         [NativeTypeName("DWORD")]
         public uint dwLogotypeInfoChoice;
 
         [NativeTypeName("_CERT_LOGOTYPE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:5512:5)")]
         public _Anonymous_e__Union Anonymous;
+
+        public ref CERT_LOGOTYPE_DATA* pLogotypeDirectInfo
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->pLogotypeDirectInfo;
+                }
+            }
+        }
+
+        public ref CERT_LOGOTYPE_REFERENCE* pLogotypeIndirectInfo
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->pLogotypeIndirectInfo;
+                }
+            }
+        }
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union

@@ -13,7 +13,7 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD")]
         public uint BaudRate;
 
-        internal uint _bitfield;
+        public uint _bitfield;
 
         [NativeTypeName("DWORD : 1")]
         public uint fBinary

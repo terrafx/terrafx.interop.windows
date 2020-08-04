@@ -12,6 +12,34 @@ namespace TerraFX.Interop
         [NativeTypeName("_PROCESS_MITIGATION_SYSTEM_CALL_FILTER_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11817:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref uint Flags => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
+
+        public uint FilterId
+        {
+            get
+            {
+                return Anonymous.Anonymous.FilterId;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.FilterId = value;
+            }
+        }
+
+        public uint ReservedFlags
+        {
+            get
+            {
+                return Anonymous.Anonymous.ReservedFlags;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.ReservedFlags = value;
+            }
+        }
+
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {
@@ -25,7 +53,7 @@ namespace TerraFX.Interop
 
             public partial struct _Anonymous_e__Struct
             {
-                internal uint _bitfield;
+                public uint _bitfield;
 
                 [NativeTypeName("DWORD : 4")]
                 public uint FilterId

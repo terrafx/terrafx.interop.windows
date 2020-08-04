@@ -30,7 +30,7 @@ namespace TerraFX.Interop
 
         public partial struct _rgsabound_e__FixedBuffer
         {
-            internal SAFEARRAYBOUND e0;
+            public SAFEARRAYBOUND e0;
 
             public ref SAFEARRAYBOUND this[int index] => ref AsSpan(int.MaxValue)[index];
 

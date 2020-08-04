@@ -39,39 +39,39 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetRule([NativeTypeName("LPCWSTR")] ushort* pszRuleName, [NativeTypeName("DWORD")] uint dwRuleId, [NativeTypeName("DWORD")] uint dwAttributes, [NativeTypeName("BOOL")] int fCreateIfNotExist, [NativeTypeName("SPSTATEHANDLE *")] SPSTATEHANDLE__** phInitialState)
+        public int GetRule([NativeTypeName("LPCWSTR")] ushort* pszRuleName, [NativeTypeName("DWORD")] uint dwRuleId, [NativeTypeName("DWORD")] uint dwAttributes, [NativeTypeName("BOOL")] int fCreateIfNotExist, [NativeTypeName("SPSTATEHANDLE *")] IntPtr* phInitialState)
         {
-            return ((delegate* stdcall<ISpRecoGrammar*, ushort*, uint, uint, int, SPSTATEHANDLE__**, int>)(lpVtbl[4]))((ISpRecoGrammar*)Unsafe.AsPointer(ref this), pszRuleName, dwRuleId, dwAttributes, fCreateIfNotExist, phInitialState);
+            return ((delegate* stdcall<ISpRecoGrammar*, ushort*, uint, uint, int, IntPtr*, int>)(lpVtbl[4]))((ISpRecoGrammar*)Unsafe.AsPointer(ref this), pszRuleName, dwRuleId, dwAttributes, fCreateIfNotExist, phInitialState);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int ClearRule([NativeTypeName("SPSTATEHANDLE")] SPSTATEHANDLE__* hState)
+        public int ClearRule([NativeTypeName("SPSTATEHANDLE")] IntPtr hState)
         {
-            return ((delegate* stdcall<ISpRecoGrammar*, SPSTATEHANDLE__*, int>)(lpVtbl[5]))((ISpRecoGrammar*)Unsafe.AsPointer(ref this), hState);
+            return ((delegate* stdcall<ISpRecoGrammar*, IntPtr, int>)(lpVtbl[5]))((ISpRecoGrammar*)Unsafe.AsPointer(ref this), hState);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateNewState([NativeTypeName("SPSTATEHANDLE")] SPSTATEHANDLE__* hState, [NativeTypeName("SPSTATEHANDLE *")] SPSTATEHANDLE__** phState)
+        public int CreateNewState([NativeTypeName("SPSTATEHANDLE")] IntPtr hState, [NativeTypeName("SPSTATEHANDLE *")] IntPtr* phState)
         {
-            return ((delegate* stdcall<ISpRecoGrammar*, SPSTATEHANDLE__*, SPSTATEHANDLE__**, int>)(lpVtbl[6]))((ISpRecoGrammar*)Unsafe.AsPointer(ref this), hState, phState);
+            return ((delegate* stdcall<ISpRecoGrammar*, IntPtr, IntPtr*, int>)(lpVtbl[6]))((ISpRecoGrammar*)Unsafe.AsPointer(ref this), hState, phState);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int AddWordTransition([NativeTypeName("SPSTATEHANDLE")] SPSTATEHANDLE__* hFromState, [NativeTypeName("SPSTATEHANDLE")] SPSTATEHANDLE__* hToState, [NativeTypeName("LPCWSTR")] ushort* psz, [NativeTypeName("LPCWSTR")] ushort* pszSeparators, SPGRAMMARWORDTYPE eWordType, float Weight, [NativeTypeName("const SPPROPERTYINFO *")] SPPROPERTYINFO* pPropInfo)
+        public int AddWordTransition([NativeTypeName("SPSTATEHANDLE")] IntPtr hFromState, [NativeTypeName("SPSTATEHANDLE")] IntPtr hToState, [NativeTypeName("LPCWSTR")] ushort* psz, [NativeTypeName("LPCWSTR")] ushort* pszSeparators, SPGRAMMARWORDTYPE eWordType, float Weight, [NativeTypeName("const SPPROPERTYINFO *")] SPPROPERTYINFO* pPropInfo)
         {
-            return ((delegate* stdcall<ISpRecoGrammar*, SPSTATEHANDLE__*, SPSTATEHANDLE__*, ushort*, ushort*, SPGRAMMARWORDTYPE, float, SPPROPERTYINFO*, int>)(lpVtbl[7]))((ISpRecoGrammar*)Unsafe.AsPointer(ref this), hFromState, hToState, psz, pszSeparators, eWordType, Weight, pPropInfo);
+            return ((delegate* stdcall<ISpRecoGrammar*, IntPtr, IntPtr, ushort*, ushort*, SPGRAMMARWORDTYPE, float, SPPROPERTYINFO*, int>)(lpVtbl[7]))((ISpRecoGrammar*)Unsafe.AsPointer(ref this), hFromState, hToState, psz, pszSeparators, eWordType, Weight, pPropInfo);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int AddRuleTransition([NativeTypeName("SPSTATEHANDLE")] SPSTATEHANDLE__* hFromState, [NativeTypeName("SPSTATEHANDLE")] SPSTATEHANDLE__* hToState, [NativeTypeName("SPSTATEHANDLE")] SPSTATEHANDLE__* hRule, float Weight, [NativeTypeName("const SPPROPERTYINFO *")] SPPROPERTYINFO* pPropInfo)
+        public int AddRuleTransition([NativeTypeName("SPSTATEHANDLE")] IntPtr hFromState, [NativeTypeName("SPSTATEHANDLE")] IntPtr hToState, [NativeTypeName("SPSTATEHANDLE")] IntPtr hRule, float Weight, [NativeTypeName("const SPPROPERTYINFO *")] SPPROPERTYINFO* pPropInfo)
         {
-            return ((delegate* stdcall<ISpRecoGrammar*, SPSTATEHANDLE__*, SPSTATEHANDLE__*, SPSTATEHANDLE__*, float, SPPROPERTYINFO*, int>)(lpVtbl[8]))((ISpRecoGrammar*)Unsafe.AsPointer(ref this), hFromState, hToState, hRule, Weight, pPropInfo);
+            return ((delegate* stdcall<ISpRecoGrammar*, IntPtr, IntPtr, IntPtr, float, SPPROPERTYINFO*, int>)(lpVtbl[8]))((ISpRecoGrammar*)Unsafe.AsPointer(ref this), hFromState, hToState, hRule, Weight, pPropInfo);
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int AddResource([NativeTypeName("SPSTATEHANDLE")] SPSTATEHANDLE__* hRuleState, [NativeTypeName("LPCWSTR")] ushort* pszResourceName, [NativeTypeName("LPCWSTR")] ushort* pszResourceValue)
+        public int AddResource([NativeTypeName("SPSTATEHANDLE")] IntPtr hRuleState, [NativeTypeName("LPCWSTR")] ushort* pszResourceName, [NativeTypeName("LPCWSTR")] ushort* pszResourceValue)
         {
-            return ((delegate* stdcall<ISpRecoGrammar*, SPSTATEHANDLE__*, ushort*, ushort*, int>)(lpVtbl[9]))((ISpRecoGrammar*)Unsafe.AsPointer(ref this), hRuleState, pszResourceName, pszResourceValue);
+            return ((delegate* stdcall<ISpRecoGrammar*, IntPtr, ushort*, ushort*, int>)(lpVtbl[9]))((ISpRecoGrammar*)Unsafe.AsPointer(ref this), hRuleState, pszResourceName, pszResourceValue);
         }
 
         [return: NativeTypeName("HRESULT")]

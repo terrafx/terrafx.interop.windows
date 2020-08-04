@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_RENDER_TARGET_TYPE : uint
     {
         D2D1_RENDER_TARGET_TYPE_DEFAULT = 0,

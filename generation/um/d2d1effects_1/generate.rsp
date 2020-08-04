@@ -1,7 +1,5 @@
 @../../settings.rsp
 @../../remap.rsp
---exclude
-CLSID_D2D1YCbCr
 --file
 um-d2d1effects_1.h
 --output
@@ -10,7 +8,3 @@ um-d2d1effects_1.h
 ../../../tests/Interop/Windows/um/d2d1effects_1
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1effects_1.h
---with-type
-D2D1_YCBCR_CHROMA_SUBSAMPLING=uint
-D2D1_YCBCR_INTERPOLATION_MODE=uint
-D2D1_YCBCR_PROP=uint

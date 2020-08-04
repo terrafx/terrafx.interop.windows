@@ -9,54 +9,6 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [NativeTypeName("const UINT32")]
-        public const uint DxcValidatorFlags_Default = 0;
-
-        [NativeTypeName("const UINT32")]
-        public const uint DxcValidatorFlags_InPlaceEdit = 1;
-
-        [NativeTypeName("const UINT32")]
-        public const uint DxcValidatorFlags_RootSignatureOnly = 2;
-
-        [NativeTypeName("const UINT32")]
-        public const uint DxcValidatorFlags_ModuleOnly = 4;
-
-        [NativeTypeName("const UINT32")]
-        public const uint DxcValidatorFlags_ValidMask = 0x7;
-
-        [NativeTypeName("const UINT32")]
-        public const uint DxcVersionInfoFlags_None = 0;
-
-        [NativeTypeName("const UINT32")]
-        public const uint DxcVersionInfoFlags_Debug = 1;
-
-        [NativeTypeName("const UINT32")]
-        public const uint DxcVersionInfoFlags_Internal = 2;
-
-        [NativeTypeName("const CLSID")]
-        public static readonly Guid CLSID_DxcCompiler = new Guid(0X73E22D93, 0XE6CE, 0X47F3, 0XB5, 0XBF, 0XF0, 0X66, 0X4F, 0X39, 0XC1, 0XB0);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_DxcLinker = new Guid(0XEF6A8087, 0XB0EA, 0X4D56, 0X9E, 0X45, 0XD0, 0X7E, 0X1A, 0X8B, 0X78, 0X6);
-
-        [NativeTypeName("const CLSID")]
-        public static readonly Guid CLSID_DxcDiaDataSource = new Guid(0XCD1F6B73, 0X2AB0, 0X484D, 0X8E, 0XDC, 0XEB, 0XE7, 0XA4, 0X3C, 0XA0, 0X9F);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_DxcValidator = new Guid(0X8CA3E215, 0XF728, 0X4CF3, 0X8C, 0XDD, 0X88, 0XAF, 0X91, 0X75, 0X87, 0XA1);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_DxcAssembler = new Guid(0XD728DB68, 0XF903, 0X4F80, 0X94, 0XCD, 0XDC, 0XCF, 0X76, 0XEC, 0X71, 0X51);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_DxcContainerReflection = new Guid(0XB9F54489, 0X55B8, 0X400C, 0XBA, 0X3A, 0X16, 0X75, 0XE4, 0X72, 0X8B, 0X91);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_DxcOptimizer = new Guid(0XAE2CD79F, 0XCC22, 0X453F, 0X9B, 0X6B, 0XB1, 0X24, 0XE7, 0XA5, 0X20, 0X4C);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_DxcContainerBuilder = new Guid(0X94134294, 0X411F, 0X4574, 0XB4, 0XD0, 0X87, 0X41, 0XE2, 0X52, 0X40, 0XD2);
-
         public static readonly Guid IID_IDxcAssembly = new Guid(0X091F7A26, 0X1C1F, 0X4948, 0X90, 0X4B, 0XE6, 0XE3, 0XA8, 0XA7, 0X71, 0XD5);
 
         public static readonly Guid IID_IDxcBlob = new Guid(0X8BA5FB08, 0X5195, 0X40E2, 0XAC, 0X58, 0X0D, 0X98, 0X9C, 0X3A, 0X01, 0X02);

@@ -3,16 +3,21 @@
 // Ported from um/d3d12.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public partial struct D3D12_CLEAR_VALUE
+    public unsafe partial struct D3D12_CLEAR_VALUE
     {
         public DXGI_FORMAT Format;
 
         [NativeTypeName("D3D12_CLEAR_VALUE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12.h:2582:5)")]
         public _Anonymous_e__Union Anonymous;
+
+        public Span<float> Color => MemoryMarshal.CreateSpan(ref Anonymous.Color[0], 4);
+
+        public ref D3D12_DEPTH_STENCIL_VALUE DepthStencil => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.DepthStencil, 1));
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union

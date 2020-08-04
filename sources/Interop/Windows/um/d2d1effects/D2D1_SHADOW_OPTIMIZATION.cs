@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_SHADOW_OPTIMIZATION : uint
     {
         D2D1_SHADOW_OPTIMIZATION_SPEED = 0,

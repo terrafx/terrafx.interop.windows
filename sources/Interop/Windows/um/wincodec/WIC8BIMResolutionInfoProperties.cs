@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public enum WIC8BIMResolutionInfoProperties
+    public enum WIC8BIMResolutionInfoProperties : uint
     {
         WIC8BIMResolutionInfoPString = 0x1,
         WIC8BIMResolutionInfoHResolution = 0x2,

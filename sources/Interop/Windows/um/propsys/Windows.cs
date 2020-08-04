@@ -140,11 +140,11 @@ namespace TerraFX.Interop
 
         [DllImport("propsys", EntryPoint = "PSGetPropertyFromPropertyStorage", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int PSGetPropertyFromPropertyStorage([NativeTypeName("PCUSERIALIZEDPROPSTORAGE")] SERIALIZEDPROPSTORAGE* psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* rpkey, [NativeTypeName("PROPVARIANT *")] PROPVARIANT* ppropvar);
+        public static extern int PSGetPropertyFromPropertyStorage([NativeTypeName("PCUSERIALIZEDPROPSTORAGE")] IntPtr psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* rpkey, [NativeTypeName("PROPVARIANT *")] PROPVARIANT* ppropvar);
 
         [DllImport("propsys", EntryPoint = "PSGetNamedPropertyFromPropertyStorage", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int PSGetNamedPropertyFromPropertyStorage([NativeTypeName("PCUSERIALIZEDPROPSTORAGE")] SERIALIZEDPROPSTORAGE* psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("PROPVARIANT *")] PROPVARIANT* ppropvar);
+        public static extern int PSGetNamedPropertyFromPropertyStorage([NativeTypeName("PCUSERIALIZEDPROPSTORAGE")] IntPtr psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("PROPVARIANT *")] PROPVARIANT* ppropvar);
 
         [DllImport("propsys", EntryPoint = "PSPropertyBag_ReadType", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
@@ -277,5 +277,17 @@ namespace TerraFX.Interop
         [DllImport("propsys", EntryPoint = "PSPropertyBag_WritePropertyKey", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int PSPropertyBag_WritePropertyKey([NativeTypeName("IPropertyBag *")] IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* value);
+
+        [NativeTypeName("#define PDFF_PREFERFRIENDLY static_cast<PROPDESC_FORMAT_FLAGS>(0x10000000)")]
+        public const PROPDESC_FORMAT_FLAGS PDFF_PREFERFRIENDLY = (PROPDESC_FORMAT_FLAGS)(0x10000000);
+
+        [NativeTypeName("#define PKEY_PIDSTR_MAX 10")]
+        public const int PKEY_PIDSTR_MAX = 10;
+
+        [NativeTypeName("#define GUIDSTRING_MAX (1 + 8 + 1 + 4 + 1 + 4 + 1 + 4 + 1 + 12 + 1 + 1)")]
+        public const int GUIDSTRING_MAX = (1 + 8 + 1 + 4 + 1 + 4 + 1 + 4 + 1 + 12 + 1 + 1);
+
+        [NativeTypeName("#define PKEYSTR_MAX (GUIDSTRING_MAX + 1 + PKEY_PIDSTR_MAX)")]
+        public const int PKEYSTR_MAX = ((1 + 8 + 1 + 4 + 1 + 4 + 1 + 4 + 1 + 12 + 1 + 1) + 1 + 10);
     }
 }

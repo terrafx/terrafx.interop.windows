@@ -3,14 +3,41 @@
 // Ported from um/dcommon.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public partial struct D2D_MATRIX_3X2_F
+    public unsafe partial struct D2D_MATRIX_3X2_F
     {
         [NativeTypeName("D2D_MATRIX_3X2_F::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dcommon.h:277:5)")]
         public _Anonymous_e__Union Anonymous;
+
+        public ref float m11 => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous1.m11, 1));
+
+        public ref float m12 => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous1.m12, 1));
+
+        public ref float m21 => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous1.m21, 1));
+
+        public ref float m22 => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous1.m22, 1));
+
+        public ref float dx => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous1.dx, 1));
+
+        public ref float dy => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous1.dy, 1));
+
+        public ref float _11 => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous2._11, 1));
+
+        public ref float _12 => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous2._12, 1));
+
+        public ref float _21 => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous2._21, 1));
+
+        public ref float _22 => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous2._22, 1));
+
+        public ref float _31 => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous2._31, 1));
+
+        public ref float _32 => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous2._32, 1));
+
+        public Span<float> m => MemoryMarshal.CreateSpan(ref Anonymous.m[0], 3);
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union

@@ -25,7 +25,7 @@ namespace TerraFX.Interop
 
         public partial struct _apts_e__FixedBuffer
         {
-            internal POINTS e0;
+            public POINTS e0;
 
             public ref POINTS this[int index] => ref AsSpan(int.MaxValue)[index];
 

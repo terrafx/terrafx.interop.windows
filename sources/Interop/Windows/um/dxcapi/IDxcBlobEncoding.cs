@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    [Guid("7241d424-2646-4191-97c0-98e96e42fc68")]
+    [Guid("7241D424-2646-4191-97C0-98E96E42FC68")]
     public unsafe partial struct IDxcBlobEncoding
     {
         public void** lpVtbl;

@@ -1,9 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-DXCORE_ADAPTER_ATTRIBUTE_D3D11_GRAPHICS
-DXCORE_ADAPTER_ATTRIBUTE_D3D12_CORE_COMPUTE
-DXCORE_ADAPTER_ATTRIBUTE_D3D12_GRAPHICS
+MAKE_DXCORE_HRESULT
 IDXCoreAdapter.GetFactory<T>(T **):HRESULT
 IDXCoreAdapter.GetProperty<T>(DXCoreAdapterProperty, T *):HRESULT
 IDXCoreAdapter.QueryState<T1, T2>(DXCoreAdapterState, const T1 *, T2 *):HRESULT
@@ -13,9 +11,6 @@ IDXCoreAdapterFactory.CreateAdapterList<T>(uint32_t, const GUID *, T **):HRESULT
 IDXCoreAdapterFactory.GetAdapterByLuid<T>(const LUID &, T **):HRESULT
 IDXCoreAdapterList.GetAdapter<T>(uint32_t, T **):HRESULT
 IDXCoreAdapterList.GetFactory<T>(T **):HRESULT
-IID_IDXCoreAdapter
-IID_IDXCoreAdapterFactory
-IID_IDXCoreAdapterList
 --file
 um-dxcore_interface.h
 --output

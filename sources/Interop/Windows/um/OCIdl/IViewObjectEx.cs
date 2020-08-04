@@ -99,9 +99,9 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int GetNaturalExtent([NativeTypeName("DWORD")] uint dwAspect, [NativeTypeName("LONG")] int lindex, [NativeTypeName("DVTARGETDEVICE *")] DVTARGETDEVICE* ptd, [NativeTypeName("HDC")] IntPtr hicTargetDev, [NativeTypeName("DVEXTENTINFO *")] ExtentInfo* pExtentInfo, [NativeTypeName("LPSIZEL")] SIZE* pSizel)
+        public int GetNaturalExtent([NativeTypeName("DWORD")] uint dwAspect, [NativeTypeName("LONG")] int lindex, [NativeTypeName("DVTARGETDEVICE *")] DVTARGETDEVICE* ptd, [NativeTypeName("HDC")] IntPtr hicTargetDev, [NativeTypeName("DVEXTENTINFO *")] DVEXTENTINFO* pExtentInfo, [NativeTypeName("LPSIZEL")] SIZE* pSizel)
         {
-            return ((delegate* stdcall<IViewObjectEx*, uint, int, DVTARGETDEVICE*, IntPtr, ExtentInfo*, SIZE*, int>)(lpVtbl[14]))((IViewObjectEx*)Unsafe.AsPointer(ref this), dwAspect, lindex, ptd, hicTargetDev, pExtentInfo, pSizel);
+            return ((delegate* stdcall<IViewObjectEx*, uint, int, DVTARGETDEVICE*, IntPtr, DVEXTENTINFO*, SIZE*, int>)(lpVtbl[14]))((IViewObjectEx*)Unsafe.AsPointer(ref this), dwAspect, lindex, ptd, hicTargetDev, pExtentInfo, pSizel);
         }
     }
 }

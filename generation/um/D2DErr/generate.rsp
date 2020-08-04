@@ -1,5 +1,8 @@
 @../../settings.rsp
 @../../remap.rsp
+--exclude
+MAKE_D2DHR
+MAKE_D2DHR_ERR
 --file
 um-D2DErr.h
 --output

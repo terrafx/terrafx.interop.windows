@@ -15,6 +15,8 @@ namespace TerraFX.Interop
         [NativeTypeName("_CRL_DIST_POINT_NAME::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:4429:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref CERT_ALT_NAME_INFO FullName => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.FullName, 1));
+
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {

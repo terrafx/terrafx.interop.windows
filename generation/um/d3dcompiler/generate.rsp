@@ -2,7 +2,6 @@
 @../../remap.rsp
 --exclude
 D3DDisassemble10Effect(struct ID3D10Effect *, UINT, ID3DBlob **):HRESULT
-ID3D10Effect
 --file
 um-d3dcompiler.h
 --output

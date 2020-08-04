@@ -18,7 +18,7 @@ namespace TerraFX.Interop
 
         public partial struct _Groups_e__FixedBuffer
         {
-            internal SID_AND_ATTRIBUTES e0;
+            public SID_AND_ATTRIBUTES e0;
 
             public ref SID_AND_ATTRIBUTES this[int index] => ref AsSpan(int.MaxValue)[index];
 

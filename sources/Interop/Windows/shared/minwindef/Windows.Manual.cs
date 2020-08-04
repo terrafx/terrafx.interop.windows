@@ -9,13 +9,7 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        public const int MAX_PATH = 260;
-
         public const int NULL = 0;
-
-        public const int FALSE = 0;
-
-        public const int TRUE = 1;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("WORD")]

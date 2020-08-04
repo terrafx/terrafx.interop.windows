@@ -1,0 +1,24 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+DEFINE_PROPERTYKEY
+MMDeviceEnumerator
+--file
+um-mmdeviceapi.h
+--output
+../../../sources/Interop/Windows/um/mmdeviceapi
+--test-output
+../../../tests/Interop/Windows/um/mmdeviceapi
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mmdeviceapi.h
+--with-attribute
+IActivateAudioInterfaceAsyncOperation=Guid("72A22D78-CDE4-431D-B8CC-843A71199B6D")
+IActivateAudioInterfaceCompletionHandler=Guid("41D949AB-9862-444A-80F6-C261334DA5EB")
+IMMDevice=Guid("D666063F-1587-4E43-81F1-B948E807363F")
+IMMDeviceActivator=Guid("3B0D0EA4-D0A9-4B0E-935B-09516746FAC0")
+IMMDeviceCollection=Guid("0BD7A1BE-7A1A-44DB-8397-CC5392387B5E")
+IMMDeviceEnumerator=Guid("A95664D2-9614-4F35-A746-DE8DB63617E6")
+IMMEndpoint=Guid("1BE09788-6894-4089-8586-9A2A6C265AC5")
+IMMNotificationClient=Guid("7991EEC9-7E89-4D85-8390-6C703CEC60C0")
+--with-librarypath
+*=mmdevapi

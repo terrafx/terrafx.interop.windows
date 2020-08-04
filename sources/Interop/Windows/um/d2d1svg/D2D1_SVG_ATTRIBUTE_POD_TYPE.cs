@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_SVG_ATTRIBUTE_POD_TYPE : uint
     {
         D2D1_SVG_ATTRIBUTE_POD_TYPE_FLOAT = 0,

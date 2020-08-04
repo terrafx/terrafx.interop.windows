@@ -12,6 +12,73 @@ namespace TerraFX.Interop
         [NativeTypeName("_PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11866:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref uint Flags => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
+
+        public uint SmtBranchTargetIsolation
+        {
+            get
+            {
+                return Anonymous.Anonymous.SmtBranchTargetIsolation;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.SmtBranchTargetIsolation = value;
+            }
+        }
+
+        public uint IsolateSecurityDomain
+        {
+            get
+            {
+                return Anonymous.Anonymous.IsolateSecurityDomain;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.IsolateSecurityDomain = value;
+            }
+        }
+
+        public uint DisablePageCombine
+        {
+            get
+            {
+                return Anonymous.Anonymous.DisablePageCombine;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.DisablePageCombine = value;
+            }
+        }
+
+        public uint SpeculativeStoreBypassDisable
+        {
+            get
+            {
+                return Anonymous.Anonymous.SpeculativeStoreBypassDisable;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.SpeculativeStoreBypassDisable = value;
+            }
+        }
+
+        public uint ReservedFlags
+        {
+            get
+            {
+                return Anonymous.Anonymous.ReservedFlags;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.ReservedFlags = value;
+            }
+        }
+
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
         {
@@ -25,7 +92,7 @@ namespace TerraFX.Interop
 
             public partial struct _Anonymous_e__Struct
             {
-                internal uint _bitfield;
+                public uint _bitfield;
 
                 [NativeTypeName("DWORD : 1")]
                 public uint SmtBranchTargetIsolation

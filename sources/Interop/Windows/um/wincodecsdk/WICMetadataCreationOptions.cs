@@ -5,12 +5,11 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
-    public enum WICMetadataCreationOptions : uint
+    public enum WICMetadataCreationOptions
     {
         WICMetadataCreationDefault = 0,
         WICMetadataCreationAllowUnknown = WICMetadataCreationDefault,
         WICMetadataCreationFailUnknown = 0x10000,
-        WICMetadataCreationMask = 0xffff0000,
+        WICMetadataCreationMask = unchecked((int)(0xffff0000)),
     }
 }

@@ -1,15 +1,20 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-CLSID_DxDiagProvider
-IID_IDxDiagProvider
-IID_IDxDiagContainer
-IDxDiagProvider.AddRef():ULONG nothrow
-IDxDiagContainer.Release():ULONG nothrow
-IDxDiagProvider.QueryInterface(const IID &, LPVOID *):HRESULT nothrow
-IDxDiagContainer.AddRef():ULONG nothrow
-IDxDiagProvider.Release():ULONG nothrow
-IDxDiagContainer.QueryInterface(const IID &, LPVOID *):HRESULT nothrow
+IDxDiagContainer_AddRef
+IDxDiagContainer_EnumChildContainerNames
+IDxDiagContainer_EnumProps
+IDxDiagContainer_GetChildContainer
+IDxDiagContainer_GetNumberOfChildContainers
+IDxDiagContainer_GetNumberOfProps
+IDxDiagContainer_GetProp
+IDxDiagContainer_QueryInterface
+IDxDiagContainer_Release
+IDxDiagProvider_AddRef
+IDxDiagProvider_GetRootContainer
+IDxDiagProvider_Initialize
+IDxDiagProvider_QueryInterface
+IDxDiagProvider_Release
 --file
 um-dxdiag.h
 --output

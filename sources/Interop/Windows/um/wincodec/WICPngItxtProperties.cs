@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public enum WICPngItxtProperties
+    public enum WICPngItxtProperties : uint
     {
         WICPngItxtKeyword = 0x1,
         WICPngItxtCompressionFlag = 0x2,

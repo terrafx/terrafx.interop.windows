@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_OPACITY_PROP : uint
     {
         D2D1_OPACITY_PROP_OPACITY = 0,

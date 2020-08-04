@@ -30,21 +30,21 @@ namespace TerraFX.Interop
 
         public partial struct _ExceptionInformation_e__FixedBuffer
         {
-            internal nuint e0;
-            internal nuint e1;
-            internal nuint e2;
-            internal nuint e3;
-            internal nuint e4;
-            internal nuint e5;
-            internal nuint e6;
-            internal nuint e7;
-            internal nuint e8;
-            internal nuint e9;
-            internal nuint e10;
-            internal nuint e11;
-            internal nuint e12;
-            internal nuint e13;
-            internal nuint e14;
+            public nuint e0;
+            public nuint e1;
+            public nuint e2;
+            public nuint e3;
+            public nuint e4;
+            public nuint e5;
+            public nuint e6;
+            public nuint e7;
+            public nuint e8;
+            public nuint e9;
+            public nuint e10;
+            public nuint e11;
+            public nuint e12;
+            public nuint e13;
+            public nuint e14;
 
             public ref nuint this[int index] => ref AsSpan()[index];
 

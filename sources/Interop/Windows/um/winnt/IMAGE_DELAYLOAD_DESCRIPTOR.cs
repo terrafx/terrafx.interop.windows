@@ -44,9 +44,35 @@ namespace TerraFX.Interop
             [NativeTypeName("_IMAGE_DELAYLOAD_DESCRIPTOR::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:18282:9)")]
             public _Anonymous_e__Struct Anonymous;
 
+            public uint RvaBased
+            {
+                get
+                {
+                    return Anonymous.RvaBased;
+                }
+
+                set
+                {
+                    Anonymous.RvaBased = value;
+                }
+            }
+
+            public uint ReservedAttributes
+            {
+                get
+                {
+                    return Anonymous.ReservedAttributes;
+                }
+
+                set
+                {
+                    Anonymous.ReservedAttributes = value;
+                }
+            }
+
             public partial struct _Anonymous_e__Struct
             {
-                internal uint _bitfield;
+                public uint _bitfield;
 
                 [NativeTypeName("DWORD : 1")]
                 public uint RvaBased

@@ -14,10 +14,10 @@ namespace TerraFX.Interop
         public uint tyspec;
 
         [NativeTypeName("union __MIDL___MIDL_itf_wtypes_0000_0001_0005")]
-        public _tagged_union_e__Struct tagged_union;
+        public _tagged_union_e__Union tagged_union;
 
         [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _tagged_union_e__Struct
+        public unsafe partial struct _tagged_union_e__Union
         {
             [FieldOffset(0)]
             [NativeTypeName("CLSID")]

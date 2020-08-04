@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public enum WICPngSrgbProperties
+    public enum WICPngSrgbProperties : uint
     {
         WICPngSrgbRenderingIntent = 0x1,
         WICPngSrgbProperties_FORCE_DWORD = 0x7fffffff,

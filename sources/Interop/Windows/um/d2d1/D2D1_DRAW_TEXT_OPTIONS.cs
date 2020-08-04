@@ -8,7 +8,6 @@ using System;
 namespace TerraFX.Interop
 {
     [Flags]
-    [NativeTypeName("int")]
     public enum D2D1_DRAW_TEXT_OPTIONS : uint
     {
         D2D1_DRAW_TEXT_OPTIONS_NO_SNAP = 0x00000001,

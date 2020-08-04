@@ -7,13 +7,46 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public partial struct CMSG_RECIPIENT_ENCODE_INFO
+    public unsafe partial struct CMSG_RECIPIENT_ENCODE_INFO
     {
         [NativeTypeName("DWORD")]
         public uint dwRecipientChoice;
 
         [NativeTypeName("_CMSG_RECIPIENT_ENCODE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:7013:5)")]
         public _Anonymous_e__Union Anonymous;
+
+        public ref CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO* pKeyTrans
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->pKeyTrans;
+                }
+            }
+        }
+
+        public ref CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO* pKeyAgree
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->pKeyAgree;
+                }
+            }
+        }
+
+        public ref CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO* pMailList
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->pMailList;
+                }
+            }
+        }
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union

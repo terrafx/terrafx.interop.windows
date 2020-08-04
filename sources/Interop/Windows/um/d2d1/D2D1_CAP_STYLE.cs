@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_CAP_STYLE : uint
     {
         D2D1_CAP_STYLE_FLAT = 0,

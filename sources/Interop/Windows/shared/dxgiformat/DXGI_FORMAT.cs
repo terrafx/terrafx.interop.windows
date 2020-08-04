@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum DXGI_FORMAT : uint
     {
         DXGI_FORMAT_UNKNOWN = 0,

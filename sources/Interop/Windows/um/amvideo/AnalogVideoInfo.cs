@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop
 {
-    public partial struct AnalogVideoInfo
+    public partial struct ANALOGVIDEOINFO
     {
         public RECT rcSource;
 

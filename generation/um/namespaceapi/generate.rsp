@@ -1,0 +1,15 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+um-namespaceapi.h
+--output
+../../../sources/Interop/Windows/um/namespaceapi
+--test-output
+../../../tests/Interop/Windows/um/namespaceapi
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/namespaceapi.h
+--with-librarypath
+*=Kernel32
+--with-setlasterror
+AddSIDToBoundaryDescriptor
+ClosePrivateNamespace

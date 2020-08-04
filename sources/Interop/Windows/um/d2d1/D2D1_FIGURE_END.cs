@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_FIGURE_END : uint
     {
         D2D1_FIGURE_END_OPEN = 0,

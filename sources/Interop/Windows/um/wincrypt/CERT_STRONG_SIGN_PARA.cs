@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public partial struct CERT_STRONG_SIGN_PARA
+    public unsafe partial struct CERT_STRONG_SIGN_PARA
     {
         [NativeTypeName("DWORD")]
         public uint cbSize;
@@ -17,6 +17,39 @@ namespace TerraFX.Interop
 
         [NativeTypeName("_CERT_STRONG_SIGN_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:6533:5)")]
         public _Anonymous_e__Union Anonymous;
+
+        public ref void* pvInfo
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->pvInfo;
+                }
+            }
+        }
+
+        public ref CERT_STRONG_SIGN_SERIALIZED_INFO* pSerializedInfo
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->pSerializedInfo;
+                }
+            }
+        }
+
+        public ref sbyte* pszOID
+        {
+            get
+            {
+                fixed (_Anonymous_e__Union* pField = &Anonymous)
+                {
+                    return ref pField->pszOID;
+                }
+            }
+        }
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union

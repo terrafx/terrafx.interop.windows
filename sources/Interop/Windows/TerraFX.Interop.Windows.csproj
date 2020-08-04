@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="um\SpatialAudioMetadata\" />
+    <Folder Include="um\Mferror\" />
   </ItemGroup>
 
 </Project>

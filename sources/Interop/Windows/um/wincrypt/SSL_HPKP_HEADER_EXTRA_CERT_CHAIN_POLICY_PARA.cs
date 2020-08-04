@@ -3,9 +3,6 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-using System.Runtime.InteropServices;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA
@@ -22,14 +19,21 @@ namespace TerraFX.Interop
         [NativeTypeName("LPSTR [2]")]
         public _rgpszHpkpValue_e__FixedBuffer rgpszHpkpValue;
 
-        public partial struct _rgpszHpkpValue_e__FixedBuffer
+        public unsafe partial struct _rgpszHpkpValue_e__FixedBuffer
         {
-            internal IntPtr e0;
-            internal IntPtr e1;
+            public sbyte* e0;
+            public sbyte* e1;
 
-            public ref IntPtr this[int index] => ref AsSpan()[index];
-
-            public Span<IntPtr> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
+            public ref sbyte* this[int index]
+            {
+                get
+                {
+                    fixed (sbyte** pThis = &e0)
+                    {
+                        return ref pThis[index];
+                    }
+                }
+            }
         }
     }
 }

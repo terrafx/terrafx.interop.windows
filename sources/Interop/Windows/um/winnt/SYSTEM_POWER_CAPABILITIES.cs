@@ -106,9 +106,9 @@ namespace TerraFX.Interop
 
         public partial struct _BatteryScale_e__FixedBuffer
         {
-            internal BATTERY_REPORTING_SCALE e0;
-            internal BATTERY_REPORTING_SCALE e1;
-            internal BATTERY_REPORTING_SCALE e2;
+            public BATTERY_REPORTING_SCALE e0;
+            public BATTERY_REPORTING_SCALE e1;
+            public BATTERY_REPORTING_SCALE e2;
 
             public ref BATTERY_REPORTING_SCALE this[int index] => ref AsSpan()[index];
 

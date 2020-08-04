@@ -1,9 +1,10 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
-GUID_DEVINTERFACE_HID
-GUID_HID_INTERFACE_NOTIFY
-GUID_HID_INTERFACE_HIDPARSE
+HID_BUFFER_CTL_CODE
+HID_CTL_CODE
+HID_IN_CTL_CODE
+HID_OUT_CTL_CODE
 --file
 shared-hidclass.h
 --output

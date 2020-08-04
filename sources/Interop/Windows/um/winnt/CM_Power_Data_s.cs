@@ -34,13 +34,13 @@ namespace TerraFX.Interop
 
         public partial struct _PD_PowerStateMapping_e__FixedBuffer
         {
-            internal DEVICE_POWER_STATE e0;
-            internal DEVICE_POWER_STATE e1;
-            internal DEVICE_POWER_STATE e2;
-            internal DEVICE_POWER_STATE e3;
-            internal DEVICE_POWER_STATE e4;
-            internal DEVICE_POWER_STATE e5;
-            internal DEVICE_POWER_STATE e6;
+            public DEVICE_POWER_STATE e0;
+            public DEVICE_POWER_STATE e1;
+            public DEVICE_POWER_STATE e2;
+            public DEVICE_POWER_STATE e3;
+            public DEVICE_POWER_STATE e4;
+            public DEVICE_POWER_STATE e5;
+            public DEVICE_POWER_STATE e6;
 
             public ref DEVICE_POWER_STATE this[int index] => ref AsSpan()[index];
 

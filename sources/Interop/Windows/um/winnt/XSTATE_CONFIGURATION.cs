@@ -22,6 +22,34 @@ namespace TerraFX.Interop
         [NativeTypeName("_XSTATE_CONFIGURATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12817:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref uint ControlFlags => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ControlFlags, 1));
+
+        public uint OptimizedSave
+        {
+            get
+            {
+                return Anonymous.Anonymous.OptimizedSave;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.OptimizedSave = value;
+            }
+        }
+
+        public uint CompactionEnabled
+        {
+            get
+            {
+                return Anonymous.Anonymous.CompactionEnabled;
+            }
+
+            set
+            {
+                Anonymous.Anonymous.CompactionEnabled = value;
+            }
+        }
+
         [NativeTypeName("XSTATE_FEATURE [64]")]
         public _Features_e__FixedBuffer Features;
 
@@ -53,7 +81,7 @@ namespace TerraFX.Interop
 
             public partial struct _Anonymous_e__Struct
             {
-                internal uint _bitfield;
+                public uint _bitfield;
 
                 [NativeTypeName("DWORD : 1")]
                 public uint OptimizedSave
@@ -87,70 +115,70 @@ namespace TerraFX.Interop
 
         public partial struct _Features_e__FixedBuffer
         {
-            internal XSTATE_FEATURE e0;
-            internal XSTATE_FEATURE e1;
-            internal XSTATE_FEATURE e2;
-            internal XSTATE_FEATURE e3;
-            internal XSTATE_FEATURE e4;
-            internal XSTATE_FEATURE e5;
-            internal XSTATE_FEATURE e6;
-            internal XSTATE_FEATURE e7;
-            internal XSTATE_FEATURE e8;
-            internal XSTATE_FEATURE e9;
-            internal XSTATE_FEATURE e10;
-            internal XSTATE_FEATURE e11;
-            internal XSTATE_FEATURE e12;
-            internal XSTATE_FEATURE e13;
-            internal XSTATE_FEATURE e14;
-            internal XSTATE_FEATURE e15;
-            internal XSTATE_FEATURE e16;
-            internal XSTATE_FEATURE e17;
-            internal XSTATE_FEATURE e18;
-            internal XSTATE_FEATURE e19;
-            internal XSTATE_FEATURE e20;
-            internal XSTATE_FEATURE e21;
-            internal XSTATE_FEATURE e22;
-            internal XSTATE_FEATURE e23;
-            internal XSTATE_FEATURE e24;
-            internal XSTATE_FEATURE e25;
-            internal XSTATE_FEATURE e26;
-            internal XSTATE_FEATURE e27;
-            internal XSTATE_FEATURE e28;
-            internal XSTATE_FEATURE e29;
-            internal XSTATE_FEATURE e30;
-            internal XSTATE_FEATURE e31;
-            internal XSTATE_FEATURE e32;
-            internal XSTATE_FEATURE e33;
-            internal XSTATE_FEATURE e34;
-            internal XSTATE_FEATURE e35;
-            internal XSTATE_FEATURE e36;
-            internal XSTATE_FEATURE e37;
-            internal XSTATE_FEATURE e38;
-            internal XSTATE_FEATURE e39;
-            internal XSTATE_FEATURE e40;
-            internal XSTATE_FEATURE e41;
-            internal XSTATE_FEATURE e42;
-            internal XSTATE_FEATURE e43;
-            internal XSTATE_FEATURE e44;
-            internal XSTATE_FEATURE e45;
-            internal XSTATE_FEATURE e46;
-            internal XSTATE_FEATURE e47;
-            internal XSTATE_FEATURE e48;
-            internal XSTATE_FEATURE e49;
-            internal XSTATE_FEATURE e50;
-            internal XSTATE_FEATURE e51;
-            internal XSTATE_FEATURE e52;
-            internal XSTATE_FEATURE e53;
-            internal XSTATE_FEATURE e54;
-            internal XSTATE_FEATURE e55;
-            internal XSTATE_FEATURE e56;
-            internal XSTATE_FEATURE e57;
-            internal XSTATE_FEATURE e58;
-            internal XSTATE_FEATURE e59;
-            internal XSTATE_FEATURE e60;
-            internal XSTATE_FEATURE e61;
-            internal XSTATE_FEATURE e62;
-            internal XSTATE_FEATURE e63;
+            public XSTATE_FEATURE e0;
+            public XSTATE_FEATURE e1;
+            public XSTATE_FEATURE e2;
+            public XSTATE_FEATURE e3;
+            public XSTATE_FEATURE e4;
+            public XSTATE_FEATURE e5;
+            public XSTATE_FEATURE e6;
+            public XSTATE_FEATURE e7;
+            public XSTATE_FEATURE e8;
+            public XSTATE_FEATURE e9;
+            public XSTATE_FEATURE e10;
+            public XSTATE_FEATURE e11;
+            public XSTATE_FEATURE e12;
+            public XSTATE_FEATURE e13;
+            public XSTATE_FEATURE e14;
+            public XSTATE_FEATURE e15;
+            public XSTATE_FEATURE e16;
+            public XSTATE_FEATURE e17;
+            public XSTATE_FEATURE e18;
+            public XSTATE_FEATURE e19;
+            public XSTATE_FEATURE e20;
+            public XSTATE_FEATURE e21;
+            public XSTATE_FEATURE e22;
+            public XSTATE_FEATURE e23;
+            public XSTATE_FEATURE e24;
+            public XSTATE_FEATURE e25;
+            public XSTATE_FEATURE e26;
+            public XSTATE_FEATURE e27;
+            public XSTATE_FEATURE e28;
+            public XSTATE_FEATURE e29;
+            public XSTATE_FEATURE e30;
+            public XSTATE_FEATURE e31;
+            public XSTATE_FEATURE e32;
+            public XSTATE_FEATURE e33;
+            public XSTATE_FEATURE e34;
+            public XSTATE_FEATURE e35;
+            public XSTATE_FEATURE e36;
+            public XSTATE_FEATURE e37;
+            public XSTATE_FEATURE e38;
+            public XSTATE_FEATURE e39;
+            public XSTATE_FEATURE e40;
+            public XSTATE_FEATURE e41;
+            public XSTATE_FEATURE e42;
+            public XSTATE_FEATURE e43;
+            public XSTATE_FEATURE e44;
+            public XSTATE_FEATURE e45;
+            public XSTATE_FEATURE e46;
+            public XSTATE_FEATURE e47;
+            public XSTATE_FEATURE e48;
+            public XSTATE_FEATURE e49;
+            public XSTATE_FEATURE e50;
+            public XSTATE_FEATURE e51;
+            public XSTATE_FEATURE e52;
+            public XSTATE_FEATURE e53;
+            public XSTATE_FEATURE e54;
+            public XSTATE_FEATURE e55;
+            public XSTATE_FEATURE e56;
+            public XSTATE_FEATURE e57;
+            public XSTATE_FEATURE e58;
+            public XSTATE_FEATURE e59;
+            public XSTATE_FEATURE e60;
+            public XSTATE_FEATURE e61;
+            public XSTATE_FEATURE e62;
+            public XSTATE_FEATURE e63;
 
             public ref XSTATE_FEATURE this[int index] => ref AsSpan()[index];
 

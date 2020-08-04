@@ -9,6 +9,6 @@ namespace TerraFX.Interop
     {
         DCOMPOSITION_BORDER_MODE_SOFT = 0,
         DCOMPOSITION_BORDER_MODE_HARD = 1,
-        DCOMPOSITION_BORDER_MODE_INHERIT = unchecked((int)0xffffffff),
+        DCOMPOSITION_BORDER_MODE_INHERIT = unchecked((int)(0xffffffff)),
     }
 }

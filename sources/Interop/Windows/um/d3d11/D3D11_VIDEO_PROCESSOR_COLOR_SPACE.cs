@@ -7,7 +7,7 @@ namespace TerraFX.Interop
 {
     public partial struct D3D11_VIDEO_PROCESSOR_COLOR_SPACE
     {
-        internal uint _bitfield;
+        public uint _bitfield;
 
         [NativeTypeName("UINT : 1")]
         public uint Usage

@@ -7,7 +7,6 @@ using static TerraFX.Interop.D3D_FEATURE_LEVEL;
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_FEATURE_LEVEL : uint
     {
         D2D1_FEATURE_LEVEL_DEFAULT = 0,

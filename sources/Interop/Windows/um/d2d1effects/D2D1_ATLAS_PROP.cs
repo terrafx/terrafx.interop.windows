@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_ATLAS_PROP : uint
     {
         D2D1_ATLAS_PROP_INPUT_RECT = 0,

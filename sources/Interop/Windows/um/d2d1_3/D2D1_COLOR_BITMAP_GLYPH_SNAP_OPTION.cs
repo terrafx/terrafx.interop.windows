@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION : uint
     {
         D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION_DEFAULT = 0,

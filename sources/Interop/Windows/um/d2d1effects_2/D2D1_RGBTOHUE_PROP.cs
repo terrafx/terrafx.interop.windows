@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_RGBTOHUE_PROP : uint
     {
         D2D1_RGBTOHUE_PROP_OUTPUT_COLOR_SPACE = 0,

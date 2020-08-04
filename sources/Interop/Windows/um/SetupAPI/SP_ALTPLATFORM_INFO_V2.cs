@@ -28,6 +28,10 @@ namespace TerraFX.Interop
         [NativeTypeName("_SP_ALTPLATFORM_INFO_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/SetupAPI.h:221:5)")]
         public _Anonymous_e__Union Anonymous;
 
+        public ref ushort Reserved => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Reserved, 1));
+
+        public ref ushort Flags => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
+
         [NativeTypeName("DWORD")]
         public uint FirstValidatedMajorVersion;
 

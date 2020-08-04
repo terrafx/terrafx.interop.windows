@@ -5,7 +5,6 @@
 
 namespace TerraFX.Interop
 {
-    [NativeTypeName("int")]
     public enum D2D1_SVG_PATH_COMMAND : uint
     {
         D2D1_SVG_PATH_COMMAND_CLOSE_PATH = 0,
