@@ -1,9 +1,4 @@
 --remap
-ABI::Windows::UI::Composition::ICompositionSurface**=void**
-ABI::Windows::UI::Composition::ICompositionGraphicsDevice**=void**
-ABI::Windows::UI::Composition::ICompositionCapabilities**=void**
-ABI::Windows::UI::Composition::Desktop::IDesktopWindowTarget**=void**
-ABI::Windows::UI::Composition::ICompositor*=void*
 AM_SEEKING_SeekingFlags=AM_SEEKING_SEEKING_FLAGS
 AM_SEEKING_SeekingCapabilities=AM_SEEKING_SEEKING_CAPABILITIES
 adpcmcoef_tag=ADPCMCOEFSET
@@ -99,11 +94,16 @@ HWINEVENTHOOK=IntPtr
 HWINSTA=IntPtr
 HWND=IntPtr
 HWND__*=IntPtr
+ICompositionSurface**=void**
+ICompositionGraphicsDevice**=void**
+ICompositionCapabilities**=void**
+ICompositor*=void*
 ID2D1DeviceContext4.DrawTextW=DrawText
 ID2D1RenderTarget.DrawTextW=DrawText
 ID3D10Blob=ID3DBlob
 ID3D11InfoQueue.GetMessageW=GetMessage
 ID3D12InfoQueue.GetMessageW=GetMessage
+IDesktopWindowTarget**=void**
 IDWriteFontFace.GetGlyphIndicesW=GetGlyphIndices
 IDxDiagContainer.GetPropW=GetProp
 IDXGIInfoQueue.GetMessageW=GetMessage

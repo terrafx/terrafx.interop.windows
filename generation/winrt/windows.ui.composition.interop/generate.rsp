@@ -1,7 +1,5 @@
 @../../settings.rsp
 @../../remap.rsp
---exclude
-IDesktopWindowTarget
 --file
 winrt-windows.ui.composition.interop.h
 --output
