@@ -18,11 +18,11 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HANDLE")]
         public static extern IntPtr GetStdHandle([NativeTypeName("DWORD")] uint nStdHandle);
 
-        [DllImport("kernel32", EntryPoint = "SetStdHandle", ExactSpelling = true)]
+        [DllImport("kernel32", EntryPoint = "SetStdHandle", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SetStdHandle([NativeTypeName("DWORD")] uint nStdHandle, [NativeTypeName("HANDLE")] IntPtr hHandle);
 
-        [DllImport("kernel32", EntryPoint = "SetStdHandleEx", ExactSpelling = true)]
+        [DllImport("kernel32", EntryPoint = "SetStdHandleEx", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SetStdHandleEx([NativeTypeName("DWORD")] uint nStdHandle, [NativeTypeName("HANDLE")] IntPtr hHandle, [NativeTypeName("PHANDLE")] IntPtr* phPrevValue);
 
@@ -36,7 +36,7 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", EntryPoint = "GetEnvironmentStrings", ExactSpelling = true)]
         [return: NativeTypeName("LPCH")]
-        public static extern sbyte* GetEnvironmentStrings();
+        public static extern sbyte* GetEnvironmentStringsA();
 
         [DllImport("kernel32", EntryPoint = "GetEnvironmentStringsW", ExactSpelling = true)]
         [return: NativeTypeName("LPWCH")]
@@ -105,5 +105,38 @@ namespace TerraFX.Interop
         [DllImport("kernel32", EntryPoint = "NeedCurrentDirectoryForExePathW", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int NeedCurrentDirectoryForExePathW([NativeTypeName("LPCWSTR")] ushort* ExeName);
+
+        [NativeTypeName("#define SetEnvironmentStrings SetEnvironmentStringsW")]
+        public static readonly delegate*<ushort*, int> SetEnvironmentStrings = &SetEnvironmentStringsW;
+
+        [NativeTypeName("#define GetCommandLine GetCommandLineW")]
+        public static readonly delegate*<ushort*> GetCommandLine = &GetCommandLineW;
+
+        [NativeTypeName("#define GetEnvironmentStrings GetEnvironmentStringsW")]
+        public static readonly delegate*<ushort*> GetEnvironmentStrings = &GetEnvironmentStringsW;
+
+        [NativeTypeName("#define FreeEnvironmentStrings FreeEnvironmentStringsW")]
+        public static readonly delegate*<ushort*, int> FreeEnvironmentStrings = &FreeEnvironmentStringsW;
+
+        [NativeTypeName("#define GetEnvironmentVariable GetEnvironmentVariableW")]
+        public static readonly delegate*<ushort*, ushort*, uint, uint> GetEnvironmentVariable = &GetEnvironmentVariableW;
+
+        [NativeTypeName("#define SetEnvironmentVariable SetEnvironmentVariableW")]
+        public static readonly delegate*<ushort*, ushort*, int> SetEnvironmentVariable = &SetEnvironmentVariableW;
+
+        [NativeTypeName("#define ExpandEnvironmentStrings ExpandEnvironmentStringsW")]
+        public static readonly delegate*<ushort*, ushort*, uint, uint> ExpandEnvironmentStrings = &ExpandEnvironmentStringsW;
+
+        [NativeTypeName("#define SetCurrentDirectory SetCurrentDirectoryW")]
+        public static readonly delegate*<ushort*, int> SetCurrentDirectory = &SetCurrentDirectoryW;
+
+        [NativeTypeName("#define GetCurrentDirectory GetCurrentDirectoryW")]
+        public static readonly delegate*<uint, ushort*, uint> GetCurrentDirectory = &GetCurrentDirectoryW;
+
+        [NativeTypeName("#define SearchPath SearchPathW")]
+        public static readonly delegate*<ushort*, ushort*, ushort*, uint, ushort*, ushort**, uint> SearchPath = &SearchPathW;
+
+        [NativeTypeName("#define NeedCurrentDirectoryForExePath NeedCurrentDirectoryForExePathW")]
+        public static readonly delegate*<ushort*, int> NeedCurrentDirectoryForExePath = &NeedCurrentDirectoryForExePathW;
     }
 }

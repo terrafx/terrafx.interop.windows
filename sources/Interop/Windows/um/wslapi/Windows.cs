@@ -5,6 +5,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.WSL_DISTRIBUTION_FLAGS;
 
 namespace TerraFX.Interop
 {
@@ -37,5 +38,11 @@ namespace TerraFX.Interop
         [DllImport("wslapi", EntryPoint = "WslLaunch", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int WslLaunch([NativeTypeName("PCWSTR")] ushort* distributionName, [NativeTypeName("PCWSTR")] ushort* command, [NativeTypeName("BOOL")] int useCurrentWorkingDirectory, [NativeTypeName("HANDLE")] IntPtr stdIn, [NativeTypeName("HANDLE")] IntPtr stdOut, [NativeTypeName("HANDLE")] IntPtr stdErr, [NativeTypeName("HANDLE *")] IntPtr* process);
+
+        [NativeTypeName("#define WSL_DISTRIBUTION_FLAGS_VALID (WSL_DISTRIBUTION_FLAGS_ENABLE_INTEROP | WSL_DISTRIBUTION_FLAGS_APPEND_NT_PATH | WSL_DISTRIBUTION_FLAGS_ENABLE_DRIVE_MOUNTING)")]
+        public const WSL_DISTRIBUTION_FLAGS WSL_DISTRIBUTION_FLAGS_VALID = WSL_DISTRIBUTION_FLAGS_ENABLE_INTEROP | WSL_DISTRIBUTION_FLAGS_APPEND_NT_PATH | WSL_DISTRIBUTION_FLAGS_ENABLE_DRIVE_MOUNTING;
+
+        [NativeTypeName("#define WSL_DISTRIBUTION_FLAGS_DEFAULT (WSL_DISTRIBUTION_FLAGS_ENABLE_INTEROP | WSL_DISTRIBUTION_FLAGS_APPEND_NT_PATH | WSL_DISTRIBUTION_FLAGS_ENABLE_DRIVE_MOUNTING)")]
+        public const WSL_DISTRIBUTION_FLAGS WSL_DISTRIBUTION_FLAGS_DEFAULT = WSL_DISTRIBUTION_FLAGS_ENABLE_INTEROP |  WSL_DISTRIBUTION_FLAGS_APPEND_NT_PATH | WSL_DISTRIBUTION_FLAGS_ENABLE_DRIVE_MOUNTING;
     }
 }

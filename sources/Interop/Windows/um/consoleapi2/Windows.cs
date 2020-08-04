@@ -164,5 +164,83 @@ namespace TerraFX.Interop
         [DllImport("kernel32", EntryPoint = "SetConsoleTitleW", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int SetConsoleTitleW([NativeTypeName("LPCWSTR")] ushort* lpConsoleTitle);
+
+        [NativeTypeName("#define FOREGROUND_BLUE 0x0001")]
+        public const int FOREGROUND_BLUE = 0x0001;
+
+        [NativeTypeName("#define FOREGROUND_GREEN 0x0002")]
+        public const int FOREGROUND_GREEN = 0x0002;
+
+        [NativeTypeName("#define FOREGROUND_RED 0x0004")]
+        public const int FOREGROUND_RED = 0x0004;
+
+        [NativeTypeName("#define FOREGROUND_INTENSITY 0x0008")]
+        public const int FOREGROUND_INTENSITY = 0x0008;
+
+        [NativeTypeName("#define BACKGROUND_BLUE 0x0010")]
+        public const int BACKGROUND_BLUE = 0x0010;
+
+        [NativeTypeName("#define BACKGROUND_GREEN 0x0020")]
+        public const int BACKGROUND_GREEN = 0x0020;
+
+        [NativeTypeName("#define BACKGROUND_RED 0x0040")]
+        public const int BACKGROUND_RED = 0x0040;
+
+        [NativeTypeName("#define BACKGROUND_INTENSITY 0x0080")]
+        public const int BACKGROUND_INTENSITY = 0x0080;
+
+        [NativeTypeName("#define COMMON_LVB_LEADING_BYTE 0x0100")]
+        public const int COMMON_LVB_LEADING_BYTE = 0x0100;
+
+        [NativeTypeName("#define COMMON_LVB_TRAILING_BYTE 0x0200")]
+        public const int COMMON_LVB_TRAILING_BYTE = 0x0200;
+
+        [NativeTypeName("#define COMMON_LVB_GRID_HORIZONTAL 0x0400")]
+        public const int COMMON_LVB_GRID_HORIZONTAL = 0x0400;
+
+        [NativeTypeName("#define COMMON_LVB_GRID_LVERTICAL 0x0800")]
+        public const int COMMON_LVB_GRID_LVERTICAL = 0x0800;
+
+        [NativeTypeName("#define COMMON_LVB_GRID_RVERTICAL 0x1000")]
+        public const int COMMON_LVB_GRID_RVERTICAL = 0x1000;
+
+        [NativeTypeName("#define COMMON_LVB_REVERSE_VIDEO 0x4000")]
+        public const int COMMON_LVB_REVERSE_VIDEO = 0x4000;
+
+        [NativeTypeName("#define COMMON_LVB_UNDERSCORE 0x8000")]
+        public const int COMMON_LVB_UNDERSCORE = 0x8000;
+
+        [NativeTypeName("#define COMMON_LVB_SBCSDBCS 0x0300")]
+        public const int COMMON_LVB_SBCSDBCS = 0x0300;
+
+        [NativeTypeName("#define FillConsoleOutputCharacter FillConsoleOutputCharacterW")]
+        public static readonly delegate*<IntPtr, ushort, uint, COORD, uint*, int> FillConsoleOutputCharacter = &FillConsoleOutputCharacterW;
+
+        [NativeTypeName("#define WriteConsoleOutputCharacter WriteConsoleOutputCharacterW")]
+        public static readonly delegate*<IntPtr, ushort*, uint, COORD, uint*, int> WriteConsoleOutputCharacter = &WriteConsoleOutputCharacterW;
+
+        [NativeTypeName("#define ReadConsoleOutputCharacter ReadConsoleOutputCharacterW")]
+        public static readonly delegate*<IntPtr, ushort*, uint, COORD, uint*, int> ReadConsoleOutputCharacter = &ReadConsoleOutputCharacterW;
+
+        [NativeTypeName("#define WriteConsoleInput WriteConsoleInputW")]
+        public static readonly delegate*<IntPtr, INPUT_RECORD*, uint, uint*, int> WriteConsoleInput = &WriteConsoleInputW;
+
+        [NativeTypeName("#define ScrollConsoleScreenBuffer ScrollConsoleScreenBufferW")]
+        public static readonly delegate*<IntPtr, SMALL_RECT*, SMALL_RECT*, COORD, CHAR_INFO*, int> ScrollConsoleScreenBuffer = &ScrollConsoleScreenBufferW;
+
+        [NativeTypeName("#define WriteConsoleOutput WriteConsoleOutputW")]
+        public static readonly delegate*<IntPtr, CHAR_INFO*, COORD, COORD, SMALL_RECT*, int> WriteConsoleOutput = &WriteConsoleOutputW;
+
+        [NativeTypeName("#define ReadConsoleOutput ReadConsoleOutputW")]
+        public static readonly delegate*<IntPtr, CHAR_INFO*, COORD, COORD, SMALL_RECT*, int> ReadConsoleOutput = &ReadConsoleOutputW;
+
+        [NativeTypeName("#define GetConsoleTitle GetConsoleTitleW")]
+        public static readonly delegate*<ushort*, uint, uint> GetConsoleTitle = &GetConsoleTitleW;
+
+        [NativeTypeName("#define GetConsoleOriginalTitle GetConsoleOriginalTitleW")]
+        public static readonly delegate*<ushort*, uint, uint> GetConsoleOriginalTitle = &GetConsoleOriginalTitleW;
+
+        [NativeTypeName("#define SetConsoleTitle SetConsoleTitleW")]
+        public static readonly delegate*<ushort*, int> SetConsoleTitle = &SetConsoleTitleW;
     }
 }

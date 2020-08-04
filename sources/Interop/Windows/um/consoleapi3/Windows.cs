@@ -134,5 +134,65 @@ namespace TerraFX.Interop
         [DllImport("kernel32", EntryPoint = "GetConsoleProcessList", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("DWORD")]
         public static extern uint GetConsoleProcessList([NativeTypeName("LPDWORD")] uint* lpdwProcessList, [NativeTypeName("DWORD")] uint dwProcessCount);
+
+        [NativeTypeName("#define CONSOLE_NO_SELECTION 0x0000")]
+        public const int CONSOLE_NO_SELECTION = 0x0000;
+
+        [NativeTypeName("#define CONSOLE_SELECTION_IN_PROGRESS 0x0001")]
+        public const int CONSOLE_SELECTION_IN_PROGRESS = 0x0001;
+
+        [NativeTypeName("#define CONSOLE_SELECTION_NOT_EMPTY 0x0002")]
+        public const int CONSOLE_SELECTION_NOT_EMPTY = 0x0002;
+
+        [NativeTypeName("#define CONSOLE_MOUSE_SELECTION 0x0004")]
+        public const int CONSOLE_MOUSE_SELECTION = 0x0004;
+
+        [NativeTypeName("#define CONSOLE_MOUSE_DOWN 0x0008")]
+        public const int CONSOLE_MOUSE_DOWN = 0x0008;
+
+        [NativeTypeName("#define HISTORY_NO_DUP_FLAG 0x1")]
+        public const int HISTORY_NO_DUP_FLAG = 0x1;
+
+        [NativeTypeName("#define CONSOLE_FULLSCREEN 1")]
+        public const int CONSOLE_FULLSCREEN = 1;
+
+        [NativeTypeName("#define CONSOLE_FULLSCREEN_HARDWARE 2")]
+        public const int CONSOLE_FULLSCREEN_HARDWARE = 2;
+
+        [NativeTypeName("#define CONSOLE_FULLSCREEN_MODE 1")]
+        public const int CONSOLE_FULLSCREEN_MODE = 1;
+
+        [NativeTypeName("#define CONSOLE_WINDOWED_MODE 2")]
+        public const int CONSOLE_WINDOWED_MODE = 2;
+
+        [NativeTypeName("#define AddConsoleAlias AddConsoleAliasW")]
+        public static readonly delegate*<ushort*, ushort*, ushort*, int> AddConsoleAlias = &AddConsoleAliasW;
+
+        [NativeTypeName("#define GetConsoleAlias GetConsoleAliasW")]
+        public static readonly delegate*<ushort*, ushort*, uint, ushort*, uint> GetConsoleAlias = &GetConsoleAliasW;
+
+        [NativeTypeName("#define GetConsoleAliasesLength GetConsoleAliasesLengthW")]
+        public static readonly delegate*<ushort*, uint> GetConsoleAliasesLength = &GetConsoleAliasesLengthW;
+
+        [NativeTypeName("#define GetConsoleAliasExesLength GetConsoleAliasExesLengthW")]
+        public static readonly delegate*<uint> GetConsoleAliasExesLength = &GetConsoleAliasExesLengthW;
+
+        [NativeTypeName("#define GetConsoleAliases GetConsoleAliasesW")]
+        public static readonly delegate*<ushort*, uint, ushort*, uint> GetConsoleAliases = &GetConsoleAliasesW;
+
+        [NativeTypeName("#define GetConsoleAliasExes GetConsoleAliasExesW")]
+        public static readonly delegate*<ushort*, uint, uint> GetConsoleAliasExes = &GetConsoleAliasExesW;
+
+        [NativeTypeName("#define ExpungeConsoleCommandHistory ExpungeConsoleCommandHistoryW")]
+        public static readonly delegate*<ushort*, void> ExpungeConsoleCommandHistory = &ExpungeConsoleCommandHistoryW;
+
+        [NativeTypeName("#define SetConsoleNumberOfCommands SetConsoleNumberOfCommandsW")]
+        public static readonly delegate*<uint, ushort*, int> SetConsoleNumberOfCommands = &SetConsoleNumberOfCommandsW;
+
+        [NativeTypeName("#define GetConsoleCommandHistoryLength GetConsoleCommandHistoryLengthW")]
+        public static readonly delegate*<ushort*, uint> GetConsoleCommandHistoryLength = &GetConsoleCommandHistoryLengthW;
+
+        [NativeTypeName("#define GetConsoleCommandHistory GetConsoleCommandHistoryW")]
+        public static readonly delegate*<ushort*, uint, ushort*, uint> GetConsoleCommandHistory = &GetConsoleCommandHistoryW;
     }
 }

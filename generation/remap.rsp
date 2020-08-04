@@ -38,6 +38,7 @@ echosc1waveformat_tag=ECHOSC1WAVEFORMAT
 fmtowns_snd_waveformat_tag=FMTOWNS_SND_WAVEFORMAT
 g721_adpcmwaveformat_tag=G721_ADPCMWAVEFORMAT
 g723_adpcmwaveformat_tag=G723_ADPCMWAVEFORMAT
+GetEnvironmentStrings():LPCH=GetEnvironmentStringsA
 gsm610waveformat_tag=GSM610WAVEFORMAT
 HACCEL=IntPtr
 HALF_PTR=HALF_PTR
