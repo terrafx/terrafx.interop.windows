@@ -1,6 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
+DEFINE_PROPERTYKEY
 MMDeviceEnumerator
 --file
 um-mmdeviceapi.h

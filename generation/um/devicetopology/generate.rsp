@@ -2,6 +2,7 @@
 @../../remap.rsp
 --exclude
 DeviceTopology
+E_NOTFOUND
 --file
 um-devicetopology.h
 --output

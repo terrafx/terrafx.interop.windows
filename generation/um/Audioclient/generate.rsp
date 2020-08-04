@@ -1,13 +1,9 @@
 @../../settings.rsp
 @../../remap.rsp
+--log-exclusions=true
 --exclude
-operator^
-operator^=
-operator&
-operator&=
-operator|
-operator|=
-operator~
+AUDCLNT_ERR
+AUDCLNT_SUCCESS
 --file
 um-Audioclient.h
 --output
