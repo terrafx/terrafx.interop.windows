@@ -1,0 +1,13 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+um-windows.graphics.imaging.interop.h
+--output
+../../../sources/Interop/Windows/um/windows.graphics.imaging.interop
+--test-output
+../../../tests/Interop/Windows/um/windows.graphics.imaging.interop
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/windows.graphics.imaging.interop.h
+--with-attribute
+ISoftwareBitmapNative=Guid("94BC8415-04EA-4B2E-AF13-4DE95AA898EB")
+ISoftwareBitmapNativeFactory=Guid("C3C181EC-2914-4791-AF02-02D224A10B43")
