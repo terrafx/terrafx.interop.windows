@@ -1277,6 +1277,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "devicetopology", "devicetop
 		generation\um\devicetopology\generate.rsp = generation\um\devicetopology\generate.rsp
 		generation\um\devicetopology\header.txt = generation\um\devicetopology\header.txt
 		generation\um\devicetopology\um-devicetopology.h = generation\um\devicetopology\um-devicetopology.h
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.graphics.holographic.interop", "windows.graphics.holographic.interop", "{2491bc5c-def9-4e68-ac7b-b53b53caf7eb}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\windows.graphics.holographic.interop\generate.rsp = generation\um\windows.graphics.holographic.interop\generate.rsp
+		generation\um\jobapi2\header.txt = generation\um\windows.graphics.holographic.interop\header.txt
+		generation\um\windows.graphics.holographic.interop\uum-windows.graphics.holographic.interop.h = generation\um\windows.graphics.holographic.interop\um-windows.graphics.holographic.interop.h
 	EndProjectSection
 EndProject
 Global
