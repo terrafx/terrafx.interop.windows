@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("2DD74950-A890-11D1-ABE8-00A0C905F375")]
+    [NativeTypeName("struct IAMFilterMiscFlags : IUnknown")]
     public unsafe partial struct IAMFilterMiscFlags
     {
         public void** lpVtbl;

@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("969DC708-5C76-11D1-8D86-0000F804B057")]
+    [NativeTypeName("struct IThumbnailExtractor : IUnknown")]
     public unsafe partial struct IThumbnailExtractor
     {
         public void** lpVtbl;

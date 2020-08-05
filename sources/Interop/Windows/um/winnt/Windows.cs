@@ -651,7 +651,7 @@ namespace TerraFX.Interop
         public const int ANYSIZE_ARRAY = 1;
 
         [NativeTypeName("#define MAX_NATURAL_ALIGNMENT sizeof(DWORD)")]
-        public const uint MAX_NATURAL_ALIGNMENT = 4;
+        public const uint MAX_NATURAL_ALIGNMENT = unchecked(4);
 
         [NativeTypeName("#define MEMORY_ALLOCATION_ALIGNMENT 8")]
         public const int MEMORY_ALLOCATION_ALIGNMENT = 8;
@@ -2502,10 +2502,10 @@ namespace TerraFX.Interop
         public const int LOCALE_NAME_MAX_LENGTH = 85;
 
         [NativeTypeName("#define LANG_SYSTEM_DEFAULT (MAKELANGID(LANG_NEUTRAL, SUBLANG_SYS_DEFAULT))")]
-        public const int LANG_SYSTEM_DEFAULT = (((((ushort)(0x02)) << 10) | (ushort)(0x00)));
+        public const int LANG_SYSTEM_DEFAULT = unchecked(((((ushort)(0x02)) << 10) | (ushort)(0x00)));
 
         [NativeTypeName("#define LANG_USER_DEFAULT (MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT))")]
-        public const int LANG_USER_DEFAULT = (((((ushort)(0x01)) << 10) | (ushort)(0x00)));
+        public const int LANG_USER_DEFAULT = unchecked(((((ushort)(0x01)) << 10) | (ushort)(0x00)));
 
         [NativeTypeName("#define LOCALE_SYSTEM_DEFAULT (MAKELCID(LANG_SYSTEM_DEFAULT, SORT_DEFAULT))")]
         public const uint LOCALE_SYSTEM_DEFAULT = (((uint)((((uint)((ushort)(0x0))) << 16) | ((uint)((ushort)((((((ushort)(0x02)) << 10) | (ushort)(0x00)))))))));
@@ -2964,7 +2964,7 @@ namespace TerraFX.Interop
         public const int SID_RECOMMENDED_SUB_AUTHORITIES = (1);
 
         [NativeTypeName("#define SECURITY_MAX_SID_SIZE (sizeof(SID) - sizeof(DWORD) + (SID_MAX_SUB_AUTHORITIES * sizeof(DWORD)))")]
-        public const uint SECURITY_MAX_SID_SIZE = (12 - 4 + ((15) * 4));
+        public const uint SECURITY_MAX_SID_SIZE = unchecked(12 - 4 + ((15) * 4));
 
         [NativeTypeName("#define SECURITY_MAX_SID_STRING_CHARACTERS (2 + 4 + 15 + (11 * SID_MAX_SUB_AUTHORITIES) + 1)")]
         public const int SECURITY_MAX_SID_STRING_CHARACTERS = (2 + 4 + 15 + (11 * (15)) + 1);
@@ -5238,7 +5238,7 @@ namespace TerraFX.Interop
         public const int MEM_EXTENDED_PARAMETER_SOFT_FAULT_PAGES = 0x00000020;
 
         [NativeTypeName("#define MEM_EXTENDED_PARAMETER_NUMA_NODE_MANDATORY MINLONG64")]
-        public const long MEM_EXTENDED_PARAMETER_NUMA_NODE_MANDATORY = ((long)(~((long)(((ulong)(~((ulong)(0)))) >> 1))));
+        public const long MEM_EXTENDED_PARAMETER_NUMA_NODE_MANDATORY = unchecked((long)(~((long)(((ulong)(~((ulong)(0)))) >> 1))));
 
         [NativeTypeName("#define MEM_EXTENDED_PARAMETER_TYPE_BITS 8")]
         public const int MEM_EXTENDED_PARAMETER_TYPE_BITS = 8;
@@ -8703,7 +8703,7 @@ namespace TerraFX.Interop
         public const uint RTL_CRITICAL_SECTION_ALL_FLAG_BITS = 0xFF000000;
 
         [NativeTypeName("#define RTL_CRITICAL_SECTION_FLAG_RESERVED (RTL_CRITICAL_SECTION_ALL_FLAG_BITS & (~(RTL_CRITICAL_SECTION_FLAG_NO_DEBUG_INFO | RTL_CRITICAL_SECTION_FLAG_DYNAMIC_SPIN | RTL_CRITICAL_SECTION_FLAG_STATIC_INIT | RTL_CRITICAL_SECTION_FLAG_RESOURCE_TYPE | RTL_CRITICAL_SECTION_FLAG_FORCE_DEBUG_INFO)))")]
-        public const uint RTL_CRITICAL_SECTION_FLAG_RESERVED = (0xFF000000u & unchecked((uint)(~(0x01000000 | 0x02000000 | 0x04000000 | 0x08000000 | 0x10000000))));
+        public const uint RTL_CRITICAL_SECTION_FLAG_RESERVED = unchecked(0xFF000000 & (uint)(~(0x01000000 | 0x02000000 | 0x04000000 | 0x08000000 | 0x10000000)));
 
         [NativeTypeName("#define RTL_CRITICAL_SECTION_DEBUG_FLAG_STATIC_INIT 0x00000001")]
         public const int RTL_CRITICAL_SECTION_DEBUG_FLAG_STATIC_INIT = 0x00000001;

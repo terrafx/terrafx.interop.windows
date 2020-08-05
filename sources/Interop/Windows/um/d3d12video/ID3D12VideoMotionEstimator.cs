@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("33FDAE0E-098B-428F-87BB-34B695DE08F8")]
+    [NativeTypeName("struct ID3D12VideoMotionEstimator : ID3D12Pageable")]
     public unsafe partial struct ID3D12VideoMotionEstimator
     {
         public void** lpVtbl;

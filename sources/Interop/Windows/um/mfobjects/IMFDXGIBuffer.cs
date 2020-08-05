@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("E7174CFA-1C9E-48B1-8866-626226BFC258")]
+    [NativeTypeName("struct IMFDXGIBuffer : IUnknown")]
     public unsafe partial struct IMFDXGIBuffer
     {
         public void** lpVtbl;

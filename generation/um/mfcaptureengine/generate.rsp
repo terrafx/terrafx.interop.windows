@@ -11,15 +11,3 @@ um-mfcaptureengine.h
 ../../../tests/Interop/Windows/um/mfcaptureengine
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mfcaptureengine.h
---with-attribute
-IMFCaptureEngine=Guid("A6BBA433-176B-48B2-B375-53AA03473207")
-IMFCaptureEngineClassFactory=Guid("8F02D140-56FC-4302-A705-3A97C78BE779")
-IMFCaptureEngineOnEventCallback=Guid("AEDA51C0-9025-4983-9012-DE597B88B089")
-IMFCaptureEngineOnSampleCallback=Guid("52150B82-AB39-4467-980F-E48BF0822ECD")
-IMFCaptureEngineOnSampleCallback2=Guid("E37CEED7-340F-4514-9F4D-9C2AE026100B")
-IMFCapturePhotoSink=Guid("D2D43CC8-48BB-4AA7-95DB-10C06977E777")
-IMFCapturePreviewSink=Guid("77346CFD-5B49-4D73-ACE0-5B52A859F2E0")
-IMFCaptureRecordSink=Guid("3323B55A-F92A-4FE2-8EDC-E9BFC0634D77")
-IMFCaptureSink=Guid("72D6135B-35E9-412C-B926-FD5265F2A885")
-IMFCaptureSink2=Guid("F9E4219E-6197-4B5E-B888-BEE310AB2C59")
-IMFCaptureSource=Guid("439A42A8-0D2C-4505-BE83-F79B2A05D5C4")

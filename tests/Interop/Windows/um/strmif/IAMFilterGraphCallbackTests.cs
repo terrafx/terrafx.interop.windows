@@ -6,20 +6,12 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IAMFilterGraphCallback" /> struct.</summary>
     public static unsafe class IAMFilterGraphCallbackTests
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAMFilterGraphCallback" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IAMFilterGraphCallback).GUID, Is.EqualTo(IID_IAMFilterGraphCallback));
-        }
-
         /// <summary>Validates that the <see cref="IAMFilterGraphCallback" /> struct is blittable.</summary>
         [Test]
         public static void IsBlittableTest()

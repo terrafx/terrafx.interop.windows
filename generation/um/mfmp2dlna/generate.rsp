@@ -8,5 +8,3 @@ um-mfmp2dlna.h
 ../../../tests/Interop/Windows/um/mfmp2dlna
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mfmp2dlna.h
---with-attribute
-IMFDLNASinkInit=Guid("0C012799-1B61-4C10-BDA9-04445BE5F561")

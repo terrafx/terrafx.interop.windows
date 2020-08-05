@@ -3,17 +3,18 @@
 // Ported from um/xaudio2fx.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("Windows.Media.Audio", EntryPoint = "CreateAudioVolumeMeter", ExactSpelling = true)]
+        [DllImport("Windows.Media.Audio", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CreateAudioVolumeMeter([NativeTypeName("IUnknown **")] IUnknown** ppApo);
 
-        [DllImport("Windows.Media.Audio", EntryPoint = "CreateAudioReverb", ExactSpelling = true)]
+        [DllImport("Windows.Media.Audio", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CreateAudioReverb([NativeTypeName("IUnknown **")] IUnknown** ppApo);
 
@@ -208,5 +209,9 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define XAUDIO2FX_REVERB_DEFAULT_DISABLE_LATE_FIELD FALSE")]
         public const int XAUDIO2FX_REVERB_DEFAULT_DISABLE_LATE_FIELD = 0;
+
+        public static readonly Guid CLSID_AudioVolumeMeter = new Guid(0x4FC3B166, 0x972A, 0x40CF, 0xBC, 0x37, 0x7D, 0xB0, 0x3D, 0xB2, 0xFB, 0xA3);
+
+        public static readonly Guid CLSID_AudioReverb = new Guid(0xC2633B16, 0x471B, 0x4498, 0xB8, 0xC5, 0x4F, 0x09, 0x59, 0xE2, 0xEC, 0x09);
     }
 }

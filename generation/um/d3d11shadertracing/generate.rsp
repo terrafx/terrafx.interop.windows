@@ -8,8 +8,5 @@ um-d3d11shadertracing.h
 ../../../tests/Interop/Windows/um/d3d11shadertracing
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11shadertracing.h
---with-attribute
-ID3D11ShaderTrace=Guid("36B013E6-2811-4845-BAA7-D623FE0DF104")
-ID3D11ShaderTraceFactory=Guid("1FBAD429-66AB-41CC-9617-667AC10E4459")
 --with-librarypath
 *=d3d11sdklayers

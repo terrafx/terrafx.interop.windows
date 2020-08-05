@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("791E8298-3EF3-4230-9880-C9BDECC42064")]
+    [NativeTypeName("struct IDWriteBitmapRenderTarget1 : IDWriteBitmapRenderTarget")]
     public unsafe partial struct IDWriteBitmapRenderTarget1
     {
         public void** lpVtbl;

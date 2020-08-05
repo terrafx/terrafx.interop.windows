@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("10A72A66-E91C-43F4-993F-DDF4B82B0B4A")]
+    [NativeTypeName("struct ID2D1StrokeStyle1 : ID2D1StrokeStyle")]
     public unsafe partial struct ID2D1StrokeStyle1
     {
         public void** lpVtbl;

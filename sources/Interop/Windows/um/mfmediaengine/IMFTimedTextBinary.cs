@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("4AE3A412-0545-43C4-BF6F-6B97A5C6C432")]
+    [NativeTypeName("struct IMFTimedTextBinary : IUnknown")]
     public unsafe partial struct IMFTimedTextBinary
     {
         public void** lpVtbl;

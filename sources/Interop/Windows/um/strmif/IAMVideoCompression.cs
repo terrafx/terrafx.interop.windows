@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("C6E13343-30AC-11D0-A18C-00A0C9118956")]
+    [NativeTypeName("struct IAMVideoCompression : IUnknown")]
     public unsafe partial struct IAMVideoCompression
     {
         public void** lpVtbl;

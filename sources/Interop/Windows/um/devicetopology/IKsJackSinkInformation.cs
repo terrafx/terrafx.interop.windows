@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("D9BD72ED-290F-4581-9FF3-61027A8FE532")]
+    [NativeTypeName("struct IKsJackSinkInformation : IUnknown")]
     public unsafe partial struct IKsJackSinkInformation
     {
         public void** lpVtbl;

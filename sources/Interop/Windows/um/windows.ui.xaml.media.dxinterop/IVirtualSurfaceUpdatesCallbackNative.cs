@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("DBF2E947-8E6C-4254-9EEE-7738F71386C9")]
+    [NativeTypeName("struct IVirtualSurfaceUpdatesCallbackNative : IUnknown")]
     public unsafe partial struct IVirtualSurfaceUpdatesCallbackNative
     {
         public void** lpVtbl;

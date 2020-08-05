@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("BC0BF6AE-8878-11D1-83E9-00C04FC2C6D4")]
+    [NativeTypeName("struct ITimeAndNoticeControl : IUnknown")]
     public unsafe partial struct ITimeAndNoticeControl
     {
         public void** lpVtbl;

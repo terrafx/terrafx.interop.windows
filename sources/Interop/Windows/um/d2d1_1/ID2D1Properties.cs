@@ -11,6 +11,7 @@ using static TerraFX.Interop.D2D1_PROPERTY_TYPE;
 namespace TerraFX.Interop
 {
     [Guid("483473D7-CD46-4F9D-9D3A-3112AA80159D")]
+    [NativeTypeName("struct ID2D1Properties : IUnknown")]
     public unsafe partial struct ID2D1Properties
     {
         public void** lpVtbl;

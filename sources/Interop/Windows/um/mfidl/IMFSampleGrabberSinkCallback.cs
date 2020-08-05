@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("8C7B80BF-EE42-4B59-B1DF-55668E1BDCA8")]
+    [NativeTypeName("struct IMFSampleGrabberSinkCallback : IMFClockStateSink")]
     public unsafe partial struct IMFSampleGrabberSinkCallback
     {
         public void** lpVtbl;

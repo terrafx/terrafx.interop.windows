@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("DDDF83E6-68D7-4C70-883F-A1836AFB4A50")]
+    [NativeTypeName("struct ISpatialAudioObjectRenderStreamNotify : IUnknown")]
     public unsafe partial struct ISpatialAudioObjectRenderStreamNotify
     {
         public void** lpVtbl;

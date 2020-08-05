@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("3323B55A-F92A-4FE2-8EDC-E9BFC0634D77")]
+    [NativeTypeName("struct IMFCaptureRecordSink : IMFCaptureSink")]
     public unsafe partial struct IMFCaptureRecordSink
     {
         public void** lpVtbl;

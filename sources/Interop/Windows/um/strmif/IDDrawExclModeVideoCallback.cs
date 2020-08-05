@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("913C24A0-20AB-11D2-9038-00A0C9697298")]
+    [NativeTypeName("struct IDDrawExclModeVideoCallback : IUnknown")]
     public unsafe partial struct IDDrawExclModeVideoCallback
     {
         public void** lpVtbl;

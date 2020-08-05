@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("25483823-CD46-4C7D-86CA-47AA95B837BD")]
+    [NativeTypeName("struct IDXGIFactory3 : IDXGIFactory2")]
     public unsafe partial struct IDXGIFactory3
     {
         public void** lpVtbl;

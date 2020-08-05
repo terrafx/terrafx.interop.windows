@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("C6E133B0-30AC-11D0-A18C-00A0C9118956")]
+    [NativeTypeName("struct IAMAnalogVideoEncoder : IUnknown")]
     public unsafe partial struct IAMAnalogVideoEncoder
     {
         public void** lpVtbl;

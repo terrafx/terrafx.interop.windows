@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("F5042EA4-7A96-4A75-AA7B-2BE1EF7F88D5")]
+    [NativeTypeName("struct IMFByteStreamCacheControl : IUnknown")]
     public unsafe partial struct IMFByteStreamCacheControl
     {
         public void** lpVtbl;

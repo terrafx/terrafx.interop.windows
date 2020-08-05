@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("379A0CF0-C1DE-11D2-ABF5-00A0C905F375")]
+    [NativeTypeName("struct IMemAllocatorCallbackTemp : IMemAllocator")]
     public unsafe partial struct IMemAllocatorCallbackTemp
     {
         public void** lpVtbl;

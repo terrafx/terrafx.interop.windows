@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("680EFA10-D535-11D1-87C8-00A0C9223196")]
+    [NativeTypeName("struct IOverlayNotify2 : IOverlayNotify")]
     public unsafe partial struct IOverlayNotify2
     {
         public void** lpVtbl;

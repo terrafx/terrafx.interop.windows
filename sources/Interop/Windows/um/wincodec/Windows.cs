@@ -430,27 +430,27 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static readonly Guid GUID_WICPixelFormat16bppCrQuantizedDctCoefficients = new Guid(0x2FE354F0, 0x1680, 0x42D8, 0x92, 0x31, 0xE7, 0x3C, 0x05, 0x65, 0xBF, 0xC1);
 
-        [DllImport("WindowsCodecs", EntryPoint = "WICConvertBitmapSource", ExactSpelling = true)]
+        [DllImport("WindowsCodecs", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int WICConvertBitmapSource([NativeTypeName("REFWICPixelFormatGUID")] Guid* dstFormat, [NativeTypeName("IWICBitmapSource *")] IWICBitmapSource* pISrc, [NativeTypeName("IWICBitmapSource **")] IWICBitmapSource** ppIDst);
 
-        [DllImport("WindowsCodecs", EntryPoint = "WICCreateBitmapFromSection", ExactSpelling = true)]
+        [DllImport("WindowsCodecs", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int WICCreateBitmapFromSection([NativeTypeName("UINT")] uint width, [NativeTypeName("UINT")] uint height, [NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat, [NativeTypeName("HANDLE")] IntPtr hSection, [NativeTypeName("UINT")] uint stride, [NativeTypeName("UINT")] uint offset, [NativeTypeName("IWICBitmap **")] IWICBitmap** ppIBitmap);
 
-        [DllImport("WindowsCodecs", EntryPoint = "WICCreateBitmapFromSectionEx", ExactSpelling = true)]
+        [DllImport("WindowsCodecs", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int WICCreateBitmapFromSectionEx([NativeTypeName("UINT")] uint width, [NativeTypeName("UINT")] uint height, [NativeTypeName("REFWICPixelFormatGUID")] Guid* pixelFormat, [NativeTypeName("HANDLE")] IntPtr hSection, [NativeTypeName("UINT")] uint stride, [NativeTypeName("UINT")] uint offset, WICSectionAccessLevel desiredAccessLevel, [NativeTypeName("IWICBitmap **")] IWICBitmap** ppIBitmap);
 
-        [DllImport("WindowsCodecs", EntryPoint = "WICMapGuidToShortName", ExactSpelling = true)]
+        [DllImport("WindowsCodecs", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int WICMapGuidToShortName([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT")] uint cchName, [NativeTypeName("WCHAR *")] ushort* wzName, [NativeTypeName("UINT *")] uint* pcchActual);
 
-        [DllImport("WindowsCodecs", EntryPoint = "WICMapShortNameToGuid", ExactSpelling = true)]
+        [DllImport("WindowsCodecs", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int WICMapShortNameToGuid([NativeTypeName("PCWSTR")] ushort* wzName, [NativeTypeName("GUID *")] Guid* pguid);
 
-        [DllImport("WindowsCodecs", EntryPoint = "WICMapSchemaToName", ExactSpelling = true)]
+        [DllImport("WindowsCodecs", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int WICMapSchemaToName([NativeTypeName("const GUID &")] Guid* guidMetadataFormat, [NativeTypeName("LPWSTR")] ushort* pwzSchema, [NativeTypeName("UINT")] uint cchName, [NativeTypeName("WCHAR *")] ushort* wzName, [NativeTypeName("UINT *")] uint* pcchActual);
 
@@ -567,5 +567,91 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define WICRawChangeNotification_RenderMode 0x00002000")]
         public const int WICRawChangeNotification_RenderMode = 0x00002000;
+
+        public static readonly Guid IID_IWICPalette = new Guid(0x00000040, 0xA8F2, 0x4877, 0xBA, 0x0A, 0xFD, 0x2B, 0x66, 0x45, 0xFB, 0x94);
+
+        public static readonly Guid IID_IWICBitmapSource = new Guid(0x00000120, 0xA8F2, 0x4877, 0xBA, 0x0A, 0xFD, 0x2B, 0x66, 0x45, 0xFB, 0x94);
+
+        public static readonly Guid IID_IWICFormatConverter = new Guid(0x00000301, 0xA8F2, 0x4877, 0xBA, 0x0A, 0xFD, 0x2B, 0x66, 0x45, 0xFB, 0x94);
+
+        public static readonly Guid IID_IWICPlanarFormatConverter = new Guid(0xBEBEE9CB, 0x83B0, 0x4DCC, 0x81, 0x32, 0xB0, 0xAA, 0xA5, 0x5E, 0xAC, 0x96);
+
+        public static readonly Guid IID_IWICBitmapScaler = new Guid(0x00000302, 0xA8F2, 0x4877, 0xBA, 0x0A, 0xFD, 0x2B, 0x66, 0x45, 0xFB, 0x94);
+
+        public static readonly Guid IID_IWICBitmapClipper = new Guid(0xE4FBCF03, 0x223D, 0x4E81, 0x93, 0x33, 0xD6, 0x35, 0x55, 0x6D, 0xD1, 0xB5);
+
+        public static readonly Guid IID_IWICBitmapFlipRotator = new Guid(0x5009834F, 0x2D6A, 0x41CE, 0x9E, 0x1B, 0x17, 0xC5, 0xAF, 0xF7, 0xA7, 0x82);
+
+        public static readonly Guid IID_IWICBitmapLock = new Guid(0x00000123, 0xA8F2, 0x4877, 0xBA, 0x0A, 0xFD, 0x2B, 0x66, 0x45, 0xFB, 0x94);
+
+        public static readonly Guid IID_IWICBitmap = new Guid(0x00000121, 0xA8F2, 0x4877, 0xBA, 0x0A, 0xFD, 0x2B, 0x66, 0x45, 0xFB, 0x94);
+
+        public static readonly Guid IID_IWICColorContext = new Guid(0x3C613A02, 0x34B2, 0x44EA, 0x9A, 0x7C, 0x45, 0xAE, 0xA9, 0xC6, 0xFD, 0x6D);
+
+        public static readonly Guid IID_IWICColorTransform = new Guid(0xB66F034F, 0xD0E2, 0x40AB, 0xB4, 0x36, 0x6D, 0xE3, 0x9E, 0x32, 0x1A, 0x94);
+
+        public static readonly Guid IID_IWICFastMetadataEncoder = new Guid(0xB84E2C09, 0x78C9, 0x4AC4, 0x8B, 0xD3, 0x52, 0x4A, 0xE1, 0x66, 0x3A, 0x2F);
+
+        public static readonly Guid IID_IWICStream = new Guid(0x135FF860, 0x22B7, 0x4DDF, 0xB0, 0xF6, 0x21, 0x8F, 0x4F, 0x29, 0x9A, 0x43);
+
+        public static readonly Guid IID_IWICEnumMetadataItem = new Guid(0xDC2BB46D, 0x3F07, 0x481E, 0x86, 0x25, 0x22, 0x0C, 0x4A, 0xED, 0xBB, 0x33);
+
+        public static readonly Guid IID_IWICMetadataQueryReader = new Guid(0x30989668, 0xE1C9, 0x4597, 0xB3, 0x95, 0x45, 0x8E, 0xED, 0xB8, 0x08, 0xDF);
+
+        public static readonly Guid IID_IWICMetadataQueryWriter = new Guid(0xA721791A, 0x0DEF, 0x4D06, 0xBD, 0x91, 0x21, 0x18, 0xBF, 0x1D, 0xB1, 0x0B);
+
+        public static readonly Guid IID_IWICBitmapEncoder = new Guid(0x00000103, 0xA8F2, 0x4877, 0xBA, 0x0A, 0xFD, 0x2B, 0x66, 0x45, 0xFB, 0x94);
+
+        public static readonly Guid IID_IWICBitmapFrameEncode = new Guid(0x00000105, 0xA8F2, 0x4877, 0xBA, 0x0A, 0xFD, 0x2B, 0x66, 0x45, 0xFB, 0x94);
+
+        public static readonly Guid IID_IWICPlanarBitmapFrameEncode = new Guid(0xF928B7B8, 0x2221, 0x40C1, 0xB7, 0x2E, 0x7E, 0x82, 0xF1, 0x97, 0x4D, 0x1A);
+
+        public static readonly Guid IID_IWICImageEncoder = new Guid(0x04C75BF8, 0x3CE1, 0x473B, 0xAC, 0xC5, 0x3C, 0xC4, 0xF5, 0xE9, 0x49, 0x99);
+
+        public static readonly Guid IID_IWICBitmapDecoder = new Guid(0x9EDDE9E7, 0x8DEE, 0x47EA, 0x99, 0xDF, 0xE6, 0xFA, 0xF2, 0xED, 0x44, 0xBF);
+
+        public static readonly Guid IID_IWICBitmapSourceTransform = new Guid(0x3B16811B, 0x6A43, 0x4EC9, 0xB7, 0x13, 0x3D, 0x5A, 0x0C, 0x13, 0xB9, 0x40);
+
+        public static readonly Guid IID_IWICPlanarBitmapSourceTransform = new Guid(0x3AFF9CCE, 0xBE95, 0x4303, 0xB9, 0x27, 0xE7, 0xD1, 0x6F, 0xF4, 0xA6, 0x13);
+
+        public static readonly Guid IID_IWICBitmapFrameDecode = new Guid(0x3B16811B, 0x6A43, 0x4EC9, 0xA8, 0x13, 0x3D, 0x93, 0x0C, 0x13, 0xB9, 0x40);
+
+        public static readonly Guid IID_IWICProgressiveLevelControl = new Guid(0xDAAC296F, 0x7AA5, 0x4DBF, 0x8D, 0x15, 0x22, 0x5C, 0x59, 0x76, 0xF8, 0x91);
+
+        public static readonly Guid IID_IWICProgressCallback = new Guid(0x4776F9CD, 0x9517, 0x45FA, 0xBF, 0x24, 0xE8, 0x9C, 0x5E, 0xC5, 0xC6, 0x0C);
+
+        public static readonly Guid IID_IWICBitmapCodecProgressNotification = new Guid(0x64C1024E, 0xC3CF, 0x4462, 0x80, 0x78, 0x88, 0xC2, 0xB1, 0x1C, 0x46, 0xD9);
+
+        public static readonly Guid IID_IWICComponentInfo = new Guid(0x23BC3F0A, 0x698B, 0x4357, 0x88, 0x6B, 0xF2, 0x4D, 0x50, 0x67, 0x13, 0x34);
+
+        public static readonly Guid IID_IWICFormatConverterInfo = new Guid(0x9F34FB65, 0x13F4, 0x4F15, 0xBC, 0x57, 0x37, 0x26, 0xB5, 0xE5, 0x3D, 0x9F);
+
+        public static readonly Guid IID_IWICBitmapCodecInfo = new Guid(0xE87A44C4, 0xB76E, 0x4C47, 0x8B, 0x09, 0x29, 0x8E, 0xB1, 0x2A, 0x27, 0x14);
+
+        public static readonly Guid IID_IWICBitmapEncoderInfo = new Guid(0x94C9B4EE, 0xA09F, 0x4F92, 0x8A, 0x1E, 0x4A, 0x9B, 0xCE, 0x7E, 0x76, 0xFB);
+
+        public static readonly Guid IID_IWICBitmapDecoderInfo = new Guid(0xD8CD007F, 0xD08F, 0x4191, 0x9B, 0xFC, 0x23, 0x6E, 0xA7, 0xF0, 0xE4, 0xB5);
+
+        public static readonly Guid IID_IWICPixelFormatInfo = new Guid(0xE8EDA601, 0x3D48, 0x431A, 0xAB, 0x44, 0x69, 0x05, 0x9B, 0xE8, 0x8B, 0xBE);
+
+        public static readonly Guid IID_IWICPixelFormatInfo2 = new Guid(0xA9DB33A2, 0xAF5F, 0x43C7, 0xB6, 0x79, 0x74, 0xF5, 0x98, 0x4B, 0x5A, 0xA4);
+
+        public static readonly Guid IID_IWICImagingFactory = new Guid(0xEC5EC8A9, 0xC395, 0x4314, 0x9C, 0x77, 0x54, 0xD7, 0xA9, 0x35, 0xFF, 0x70);
+
+        public static readonly Guid IID_IWICImagingFactory2 = new Guid(0x7B816B45, 0x1996, 0x4476, 0xB1, 0x32, 0xDE, 0x9E, 0x24, 0x7C, 0x8A, 0xF0);
+
+        public static readonly Guid IID_IWICDevelopRawNotificationCallback = new Guid(0x95C75A6E, 0x3E8C, 0x4EC2, 0x85, 0xA8, 0xAE, 0xBC, 0xC5, 0x51, 0xE5, 0x9B);
+
+        public static readonly Guid IID_IWICDevelopRaw = new Guid(0xFBEC5E44, 0xF7BE, 0x4B65, 0xB7, 0xF8, 0xC0, 0xC8, 0x1F, 0xEF, 0x02, 0x6D);
+
+        public static readonly Guid IID_IWICDdsDecoder = new Guid(0x409CD537, 0x8532, 0x40CB, 0x97, 0x74, 0xE2, 0xFE, 0xB2, 0xDF, 0x4E, 0x9C);
+
+        public static readonly Guid IID_IWICDdsEncoder = new Guid(0x5CACDB4C, 0x407E, 0x41B3, 0xB9, 0x36, 0xD0, 0xF0, 0x10, 0xCD, 0x67, 0x32);
+
+        public static readonly Guid IID_IWICDdsFrameDecode = new Guid(0x3D4C0C61, 0x18A4, 0x41E4, 0xBD, 0x80, 0x48, 0x1A, 0x4F, 0xC9, 0xF4, 0x64);
+
+        public static readonly Guid IID_IWICJpegFrameDecode = new Guid(0x8939F66E, 0xC46A, 0x4C21, 0xA9, 0xD1, 0x98, 0xB3, 0x27, 0xCE, 0x16, 0x79);
+
+        public static readonly Guid IID_IWICJpegFrameEncode = new Guid(0x2F0C601F, 0xD2C6, 0x468C, 0xAB, 0xFA, 0x49, 0x49, 0x5D, 0x98, 0x3E, 0xD1);
     }
 }

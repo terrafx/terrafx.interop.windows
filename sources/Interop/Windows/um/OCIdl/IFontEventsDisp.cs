@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("4EF6100A-AF88-11D0-9846-00C04FC29993")]
+    [NativeTypeName("struct IFontEventsDisp : IDispatch")]
     public unsafe partial struct IFontEventsDisp
     {
         public void** lpVtbl;

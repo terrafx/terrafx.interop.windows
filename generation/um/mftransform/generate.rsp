@@ -8,9 +8,5 @@ um-mftransform.h
 ../../../tests/Interop/Windows/um/mftransform
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mftransform.h
---with-attribute
-IMFDeviceTransform=Guid("D818FBD8-FC46-42F2-87AC-1EA2D1F9BF32")
-IMFDeviceTransformCallback=Guid("6D5CB646-29EC-41FB-8179-8C4C6D750811")
-IMFTransform=Guid("BF94C121-5B05-4E6F-8000-BA598961414D")
 --with-librarypath
 *=mfplat

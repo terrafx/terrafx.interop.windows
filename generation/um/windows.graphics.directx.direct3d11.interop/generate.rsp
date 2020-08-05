@@ -8,7 +8,5 @@ um-windows.graphics.directx.direct3d11.interop.h
 ../../../tests/Interop/Windows/um/windows.graphics.directx.direct3d11.interop
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/windows.graphics.directx.direct3d11.interop.h
---with-attribute
-IDirect3DDxgiInterfaceAccess=Guid("A9B3D012-3DF2-4EE3-B8D1-8695F457D3C1")
 --with-librarypath
 *=d3d11

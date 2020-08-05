@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("00000151-0000-0000-C000-000000000046")]
+    [NativeTypeName("struct AsyncIAdviseSink2 : AsyncIAdviseSink")]
     public unsafe partial struct AsyncIAdviseSink2
     {
         public void** lpVtbl;

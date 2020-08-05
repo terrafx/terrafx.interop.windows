@@ -6,20 +6,12 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="IDirectDrawClipper" /> struct.</summary>
     public static unsafe class IDirectDrawClipperTests
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDirectDrawClipper" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDirectDrawClipper).GUID, Is.EqualTo(IID_IDirectDrawClipper));
-        }
-
         /// <summary>Validates that the <see cref="IDirectDrawClipper" /> struct is blittable.</summary>
         [Test]
         public static void IsBlittableTest()

@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("8E1C39A1-DE53-11CF-AA63-0080C744528D")]
+    [NativeTypeName("struct IAMOpenProgress : IUnknown")]
     public unsafe partial struct IAMOpenProgress
     {
         public void** lpVtbl;

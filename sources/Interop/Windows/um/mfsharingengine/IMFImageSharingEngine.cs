@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("CFA0AE8E-7E1C-44D2-AE68-FC4C148A6354")]
+    [NativeTypeName("struct IMFImageSharingEngine : IUnknown")]
     public unsafe partial struct IMFImageSharingEngine
     {
         public void** lpVtbl;

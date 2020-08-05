@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("B8E8BD60-0BFE-11D0-AF91-00AA00B67A42")]
+    [NativeTypeName("struct IIPDVDec : IUnknown")]
     public unsafe partial struct IIPDVDec
     {
         public void** lpVtbl;

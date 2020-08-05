@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("7FF12CCE-F76F-41C2-863B-1666C8E5E139")]
+    [NativeTypeName("struct IMFPresentationTimeSource : IMFClock")]
     public unsafe partial struct IMFPresentationTimeSource
     {
         public void** lpVtbl;

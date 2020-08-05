@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("A2104830-7C70-11CF-8BCE-00AA00A3F1A6")]
+    [NativeTypeName("struct IFileSinkFilter : IUnknown")]
     public unsafe partial struct IFileSinkFilter
     {
         public void** lpVtbl;

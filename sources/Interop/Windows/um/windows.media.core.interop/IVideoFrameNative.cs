@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("26BA702B-314A-4620-AAF6-7A51AA58FA18")]
+    [NativeTypeName("struct IVideoFrameNative : IInspectable")]
     public unsafe partial struct IVideoFrameNative
     {
         public void** lpVtbl;

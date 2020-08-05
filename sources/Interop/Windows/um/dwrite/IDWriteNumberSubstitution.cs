@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("14885CC9-BAB0-4F90-B6ED-5C366A2CD03D")]
+    [NativeTypeName("struct IDWriteNumberSubstitution : IUnknown")]
     public unsafe partial struct IDWriteNumberSubstitution
     {
         public void** lpVtbl;

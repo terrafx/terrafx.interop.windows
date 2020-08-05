@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("B196B288-BAB4-101A-B69C-00AA00341D07")]
+    [NativeTypeName("struct IOleControl : IUnknown")]
     public unsafe partial struct IOleControl
     {
         public void** lpVtbl;

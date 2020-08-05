@@ -11,6 +11,7 @@ using static TerraFX.Interop.SpeechStreamFileMode;
 namespace TerraFX.Interop
 {
     [Guid("AF67F125-AB39-4E93-B4A2-CC2E66E182A7")]
+    [NativeTypeName("struct ISpeechFileStream : ISpeechBaseStream")]
     public unsafe partial struct ISpeechFileStream
     {
         public void** lpVtbl;

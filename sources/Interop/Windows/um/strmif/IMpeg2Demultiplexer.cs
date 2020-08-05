@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("436EEE9C-264F-4242-90E1-4E330C107512")]
+    [NativeTypeName("struct IMpeg2Demultiplexer : IUnknown")]
     public unsafe partial struct IMpeg2Demultiplexer
     {
         public void** lpVtbl;

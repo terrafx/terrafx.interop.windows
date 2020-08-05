@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("2AD1EDAF-D83D-48B5-9ADF-03DBE19F53BD")]
+    [NativeTypeName("struct IAuthenticateEx : IAuthenticate")]
     public unsafe partial struct IAuthenticateEx
     {
         public void** lpVtbl;

@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("BFF9E781-53EC-484E-BB8A-0E1B5551E35C")]
+    [NativeTypeName("struct ISpeechRecognizerStatus : IDispatch")]
     public unsafe partial struct ISpeechRecognizerStatus
     {
         public void** lpVtbl;

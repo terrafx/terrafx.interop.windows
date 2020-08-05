@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("AA9DD80F-C50A-4220-91C1-332287F82A34")]
+    [NativeTypeName("struct IPlayToControlWithCapabilities : IPlayToControl")]
     public unsafe partial struct IPlayToControlWithCapabilities
     {
         public void** lpVtbl;

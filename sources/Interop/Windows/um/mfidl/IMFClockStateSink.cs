@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("F6696E82-74F7-4F3D-A178-8A5E09C3659F")]
+    [NativeTypeName("struct IMFClockStateSink : IUnknown")]
     public unsafe partial struct IMFClockStateSink
     {
         public void** lpVtbl;

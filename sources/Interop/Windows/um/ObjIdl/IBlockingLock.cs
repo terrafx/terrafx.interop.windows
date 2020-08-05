@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("30F3D47A-6447-11D1-8E3C-00C04FB9386D")]
+    [NativeTypeName("struct IBlockingLock : IUnknown")]
     public unsafe partial struct IBlockingLock
     {
         public void** lpVtbl;

@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("9E5530C5-7034-48B4-BB46-0B8A6EFC8E36")]
+    [NativeTypeName("struct IVMRFilterConfig : IUnknown")]
     public unsafe partial struct IVMRFilterConfig
     {
         public void** lpVtbl;

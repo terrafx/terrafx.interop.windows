@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("6F49FF73-6727-49AC-A008-D98CF5E70048")]
+    [NativeTypeName("struct IAudioClock2 : IUnknown")]
     public unsafe partial struct IAudioClock2
     {
         public void** lpVtbl;

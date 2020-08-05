@@ -9,7 +9,8 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    [Guid("0FC988D4-C935-4b97-A973-46282EA175C8")]
+    [Guid("0FC988D4-C935-4B97-A973-46282EA175C8")]
+    [NativeTypeName("struct ICondition : IPersistStream")]
     public unsafe partial struct ICondition
     {
         public void** lpVtbl;

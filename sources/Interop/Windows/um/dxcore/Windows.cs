@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("DXCore", EntryPoint = "DXCoreCreateAdapterFactory", ExactSpelling = true)]
+        [DllImport("DXCore", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int DXCoreCreateAdapterFactory([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvFactory);
     }

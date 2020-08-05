@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("9B496CE1-811B-11CF-8C77-00AA006B6814")]
+    [NativeTypeName("struct IAMTimecodeReader : IUnknown")]
     public unsafe partial struct IAMTimecodeReader
     {
         public void** lpVtbl;

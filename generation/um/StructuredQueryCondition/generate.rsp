@@ -8,7 +8,3 @@ um-StructuredQueryCondition.h
 ../../../tests/Interop/Windows/um/StructuredQueryCondition
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/StructuredQueryCondition.h
---with-attribute
-IRichChunk=Guid("4FDEF69C-DBC9-454e-9910-B34F3C64B510")
-ICondition=Guid("0FC988D4-C935-4b97-A973-46282EA175C8")
-ICondition2=Guid("0DB8851D-2E5B-47eb-9208-D28C325A01D7")

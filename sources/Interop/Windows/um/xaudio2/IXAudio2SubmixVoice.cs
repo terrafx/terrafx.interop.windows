@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("struct IXAudio2SubmixVoice : IXAudio2Voice")]
     public unsafe partial struct IXAudio2SubmixVoice
     {
         public void** lpVtbl;

@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("72380D55-8D2B-43A3-8513-2B6EF31434E9")]
+    [NativeTypeName("struct IProcessInitControl : IUnknown")]
     public unsafe partial struct IProcessInitControl
     {
         public void** lpVtbl;

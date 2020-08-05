@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("AD128745-211B-40A0-9981-FE65F166D0FD")]
+    [NativeTypeName("struct IMFTimedTextCueList : IUnknown")]
     public unsafe partial struct IMFTimedTextCueList
     {
         public void** lpVtbl;

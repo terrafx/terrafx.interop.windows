@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("BD1AE5E0-A6AE-11CE-BD37-504200C10000")]
+    [NativeTypeName("struct IPersistMemory : IPersist")]
     public unsafe partial struct IPersistMemory
     {
         public void** lpVtbl;

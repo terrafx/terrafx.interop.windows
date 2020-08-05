@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("DE5072EE-DBE3-46DC-8A87-B6F631194751")]
+    [NativeTypeName("struct IMFSensorActivitiesReportCallback : IUnknown")]
     public unsafe partial struct IMFSensorActivitiesReportCallback
     {
         public void** lpVtbl;

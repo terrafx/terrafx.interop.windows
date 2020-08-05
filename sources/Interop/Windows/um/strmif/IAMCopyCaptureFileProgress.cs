@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("670D1D20-A068-11D0-B3F0-00AA003761C5")]
+    [NativeTypeName("struct IAMCopyCaptureFileProgress : IUnknown")]
     public unsafe partial struct IAMCopyCaptureFileProgress
     {
         public void** lpVtbl;

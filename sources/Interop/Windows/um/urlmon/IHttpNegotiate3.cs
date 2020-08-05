@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("57B6C80A-34C2-4602-BC26-66A02FC57153")]
+    [NativeTypeName("struct IHttpNegotiate3 : IHttpNegotiate2")]
     public unsafe partial struct IHttpNegotiate3
     {
         public void** lpVtbl;

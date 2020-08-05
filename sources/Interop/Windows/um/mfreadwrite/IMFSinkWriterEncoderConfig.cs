@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("17C3779E-3CDE-4EDE-8C60-3899F5F53AD6")]
+    [NativeTypeName("struct IMFSinkWriterEncoderConfig : IUnknown")]
     public unsafe partial struct IMFSinkWriterEncoderConfig
     {
         public void** lpVtbl;

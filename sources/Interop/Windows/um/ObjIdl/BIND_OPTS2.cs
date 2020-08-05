@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("struct tagBIND_OPTS2 : tagBIND_OPTS")]
     public unsafe partial struct BIND_OPTS2
     {
         public BIND_OPTS Base;

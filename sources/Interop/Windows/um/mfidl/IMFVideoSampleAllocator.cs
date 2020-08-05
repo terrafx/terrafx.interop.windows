@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("86CBC910-E533-4751-8E3B-F19B5B806A03")]
+    [NativeTypeName("struct IMFVideoSampleAllocator : IUnknown")]
     public unsafe partial struct IMFVideoSampleAllocator
     {
         public void** lpVtbl;

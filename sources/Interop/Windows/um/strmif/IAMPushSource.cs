@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("F185FE76-E64E-11D2-B76E-00C04FB6BD3D")]
+    [NativeTypeName("struct IAMPushSource : IAMLatency")]
     public unsafe partial struct IAMPushSource
     {
         public void** lpVtbl;

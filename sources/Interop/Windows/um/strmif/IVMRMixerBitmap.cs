@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("1E673275-0257-40AA-AF20-7C608D4A0428")]
+    [NativeTypeName("struct IVMRMixerBitmap : IUnknown")]
     public unsafe partial struct IVMRMixerBitmap
     {
         public void** lpVtbl;

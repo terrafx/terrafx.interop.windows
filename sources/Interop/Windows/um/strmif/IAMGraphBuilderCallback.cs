@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("4995F511-9DDB-4F12-BD3B-F04611807B79")]
+    [NativeTypeName("struct IAMGraphBuilderCallback : IUnknown")]
     public unsafe partial struct IAMGraphBuilderCallback
     {
         public void** lpVtbl;

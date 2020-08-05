@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("56A8689D-0AD4-11CE-B03A-0020AF0BA770")]
+    [NativeTypeName("struct IMemInputPin : IUnknown")]
     public unsafe partial struct IMemInputPin
     {
         public void** lpVtbl;

@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("88DDCD21-03C3-4275-91ED-55EE3929328F")]
+    [NativeTypeName("struct IMFRateControl : IUnknown")]
     public unsafe partial struct IMFRateControl
     {
         public void** lpVtbl;

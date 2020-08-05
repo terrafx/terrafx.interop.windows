@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("D224B233-E251-4FD0-9CA2-D5ECF9A68404")]
+    [NativeTypeName("struct ISpatialAudioMetadataCopier : IUnknown")]
     public unsafe partial struct ISpatialAudioMetadataCopier
     {
         public void** lpVtbl;

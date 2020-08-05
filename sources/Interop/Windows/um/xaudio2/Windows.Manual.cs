@@ -61,7 +61,7 @@ namespace TerraFX.Interop
             return (1.0f - MathF.Pow(1.0f - 2.0f * CutoffFrequency / SampleRate, 2.0f));
         }
 
-        [DllImport("XAudio2_9", EntryPoint = "XAudio2Create", ExactSpelling = true)]
+        [DllImport("XAudio2_9", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int XAudio2Create([NativeTypeName("IXAudio2 **")] IXAudio2** ppXAudio2, [NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("XAUDIO2_PROCESSOR")] uint XAudio2Processor = XAUDIO2_DEFAULT_PROCESSOR);
     }

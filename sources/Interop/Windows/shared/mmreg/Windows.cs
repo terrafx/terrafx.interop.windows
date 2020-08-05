@@ -3,6 +3,8 @@
 // Ported from shared/mmreg.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop
 {
     public static partial class Windows
@@ -4603,86 +4605,86 @@ namespace TerraFX.Interop
         [NativeTypeName("#define MM_ALGOVISION_VB80AUX2 5")]
         public const int MM_ALGOVISION_VB80AUX2 = 5;
 
-        [NativeTypeName("#define RIFFINFO_IARL mmioFOURCC (\'I\', \'A\', \'R\', \'L\')")]
-        public const uint RIFFINFO_IARL = unchecked((uint)(byte)((byte)('I')) | ((uint)(byte)((byte)('A')) << 8) | ((uint)(byte)((byte)('R')) << 16) | ((uint)(byte)((byte)('L')) << 24));
+        [NativeTypeName("#define RIFFINFO_IARL mmioFOURCC ('I', 'A', 'R', 'L')")]
+        public const uint RIFFINFO_IARL = ((uint)((byte)('I')) | ((uint)((byte)('A')) << 8) | ((uint)((byte)('R')) << 16) | ((uint)((byte)('L')) << 24));
 
-        [NativeTypeName("#define RIFFINFO_IART mmioFOURCC (\'I\', \'A\', \'R\', \'T\')")]
-        public const uint RIFFINFO_IART = unchecked((uint)(byte)((byte)('I')) | ((uint)(byte)((byte)('A')) << 8) | ((uint)(byte)((byte)('R')) << 16) | ((uint)(byte)((byte)('T')) << 24));
+        [NativeTypeName("#define RIFFINFO_IART mmioFOURCC ('I', 'A', 'R', 'T')")]
+        public const uint RIFFINFO_IART = ((uint)((byte)('I')) | ((uint)((byte)('A')) << 8) | ((uint)((byte)('R')) << 16) | ((uint)((byte)('T')) << 24));
 
-        [NativeTypeName("#define RIFFINFO_ICMS mmioFOURCC (\'I\', \'C\', \'M\', \'S\')")]
-        public const uint RIFFINFO_ICMS = unchecked((uint)(byte)((byte)('I')) | ((uint)(byte)((byte)('C')) << 8) | ((uint)(byte)((byte)('M')) << 16) | ((uint)(byte)((byte)('S')) << 24));
+        [NativeTypeName("#define RIFFINFO_ICMS mmioFOURCC ('I', 'C', 'M', 'S')")]
+        public const uint RIFFINFO_ICMS = ((uint)((byte)('I')) | ((uint)((byte)('C')) << 8) | ((uint)((byte)('M')) << 16) | ((uint)((byte)('S')) << 24));
 
-        [NativeTypeName("#define RIFFINFO_ICMT mmioFOURCC (\'I\', \'C\', \'M\', \'T\')")]
-        public const uint RIFFINFO_ICMT = unchecked((uint)(byte)((byte)('I')) | ((uint)(byte)((byte)('C')) << 8) | ((uint)(byte)((byte)('M')) << 16) | ((uint)(byte)((byte)('T')) << 24));
+        [NativeTypeName("#define RIFFINFO_ICMT mmioFOURCC ('I', 'C', 'M', 'T')")]
+        public const uint RIFFINFO_ICMT = ((uint)((byte)('I')) | ((uint)((byte)('C')) << 8) | ((uint)((byte)('M')) << 16) | ((uint)((byte)('T')) << 24));
 
-        [NativeTypeName("#define RIFFINFO_ICOP mmioFOURCC (\'I\', \'C\', \'O\', \'P\')")]
-        public const uint RIFFINFO_ICOP = unchecked((uint)(byte)((byte)('I')) | ((uint)(byte)((byte)('C')) << 8) | ((uint)(byte)((byte)('O')) << 16) | ((uint)(byte)((byte)('P')) << 24));
+        [NativeTypeName("#define RIFFINFO_ICOP mmioFOURCC ('I', 'C', 'O', 'P')")]
+        public const uint RIFFINFO_ICOP = ((uint)((byte)('I')) | ((uint)((byte)('C')) << 8) | ((uint)((byte)('O')) << 16) | ((uint)((byte)('P')) << 24));
 
-        [NativeTypeName("#define RIFFINFO_ICRD mmioFOURCC (\'I\', \'C\', \'R\', \'D\')")]
-        public const uint RIFFINFO_ICRD = unchecked((uint)(byte)((byte)('I')) | ((uint)(byte)((byte)('C')) << 8) | ((uint)(byte)((byte)('R')) << 16) | ((uint)(byte)((byte)('D')) << 24));
+        [NativeTypeName("#define RIFFINFO_ICRD mmioFOURCC ('I', 'C', 'R', 'D')")]
+        public const uint RIFFINFO_ICRD = ((uint)((byte)('I')) | ((uint)((byte)('C')) << 8) | ((uint)((byte)('R')) << 16) | ((uint)((byte)('D')) << 24));
 
-        [NativeTypeName("#define RIFFINFO_ICRP mmioFOURCC (\'I\', \'C\', \'R\', \'P\')")]
-        public const uint RIFFINFO_ICRP = unchecked((uint)(byte)((byte)('I')) | ((uint)(byte)((byte)('C')) << 8) | ((uint)(byte)((byte)('R')) << 16) | ((uint)(byte)((byte)('P')) << 24));
+        [NativeTypeName("#define RIFFINFO_ICRP mmioFOURCC ('I', 'C', 'R', 'P')")]
+        public const uint RIFFINFO_ICRP = ((uint)((byte)('I')) | ((uint)((byte)('C')) << 8) | ((uint)((byte)('R')) << 16) | ((uint)((byte)('P')) << 24));
 
-        [NativeTypeName("#define RIFFINFO_IDIM mmioFOURCC (\'I\', \'D\', \'I\', \'M\')")]
-        public const uint RIFFINFO_IDIM = unchecked((uint)(byte)((byte)('I')) | ((uint)(byte)((byte)('D')) << 8) | ((uint)(byte)((byte)('I')) << 16) | ((uint)(byte)((byte)('M')) << 24));
+        [NativeTypeName("#define RIFFINFO_IDIM mmioFOURCC ('I', 'D', 'I', 'M')")]
+        public const uint RIFFINFO_IDIM = ((uint)((byte)('I')) | ((uint)((byte)('D')) << 8) | ((uint)((byte)('I')) << 16) | ((uint)((byte)('M')) << 24));
 
-        [NativeTypeName("#define RIFFINFO_IDPI mmioFOURCC (\'I\', \'D\', \'P\', \'I\')")]
-        public const uint RIFFINFO_IDPI = unchecked((uint)(byte)((byte)('I')) | ((uint)(byte)((byte)('D')) << 8) | ((uint)(byte)((byte)('P')) << 16) | ((uint)(byte)((byte)('I')) << 24));
+        [NativeTypeName("#define RIFFINFO_IDPI mmioFOURCC ('I', 'D', 'P', 'I')")]
+        public const uint RIFFINFO_IDPI = ((uint)((byte)('I')) | ((uint)((byte)('D')) << 8) | ((uint)((byte)('P')) << 16) | ((uint)((byte)('I')) << 24));
 
-        [NativeTypeName("#define RIFFINFO_IENG mmioFOURCC (\'I\', \'E\', \'N\', \'G\')")]
-        public const uint RIFFINFO_IENG = unchecked((uint)(byte)((byte)('I')) | ((uint)(byte)((byte)('E')) << 8) | ((uint)(byte)((byte)('N')) << 16) | ((uint)(byte)((byte)('G')) << 24));
+        [NativeTypeName("#define RIFFINFO_IENG mmioFOURCC ('I', 'E', 'N', 'G')")]
+        public const uint RIFFINFO_IENG = ((uint)((byte)('I')) | ((uint)((byte)('E')) << 8) | ((uint)((byte)('N')) << 16) | ((uint)((byte)('G')) << 24));
 
-        [NativeTypeName("#define RIFFINFO_IGNR mmioFOURCC (\'I\', \'G\', \'N\', \'R\')")]
-        public const uint RIFFINFO_IGNR = unchecked((uint)(byte)((byte)('I')) | ((uint)(byte)((byte)('G')) << 8) | ((uint)(byte)((byte)('N')) << 16) | ((uint)(byte)((byte)('R')) << 24));
+        [NativeTypeName("#define RIFFINFO_IGNR mmioFOURCC ('I', 'G', 'N', 'R')")]
+        public const uint RIFFINFO_IGNR = ((uint)((byte)('I')) | ((uint)((byte)('G')) << 8) | ((uint)((byte)('N')) << 16) | ((uint)((byte)('R')) << 24));
 
-        [NativeTypeName("#define RIFFINFO_IKEY mmioFOURCC (\'I\', \'K\', \'E\', \'Y\')")]
-        public const uint RIFFINFO_IKEY = unchecked((uint)(byte)((byte)('I')) | ((uint)(byte)((byte)('K')) << 8) | ((uint)(byte)((byte)('E')) << 16) | ((uint)(byte)((byte)('Y')) << 24));
+        [NativeTypeName("#define RIFFINFO_IKEY mmioFOURCC ('I', 'K', 'E', 'Y')")]
+        public const uint RIFFINFO_IKEY = ((uint)((byte)('I')) | ((uint)((byte)('K')) << 8) | ((uint)((byte)('E')) << 16) | ((uint)((byte)('Y')) << 24));
 
-        [NativeTypeName("#define RIFFINFO_ILGT mmioFOURCC (\'I\', \'L\', \'G\', \'T\')")]
-        public const uint RIFFINFO_ILGT = unchecked((uint)(byte)((byte)('I')) | ((uint)(byte)((byte)('L')) << 8) | ((uint)(byte)((byte)('G')) << 16) | ((uint)(byte)((byte)('T')) << 24));
+        [NativeTypeName("#define RIFFINFO_ILGT mmioFOURCC ('I', 'L', 'G', 'T')")]
+        public const uint RIFFINFO_ILGT = ((uint)((byte)('I')) | ((uint)((byte)('L')) << 8) | ((uint)((byte)('G')) << 16) | ((uint)((byte)('T')) << 24));
 
-        [NativeTypeName("#define RIFFINFO_IMED mmioFOURCC (\'I\', \'M\', \'E\', \'D\')")]
-        public const uint RIFFINFO_IMED = unchecked((uint)(byte)((byte)('I')) | ((uint)(byte)((byte)('M')) << 8) | ((uint)(byte)((byte)('E')) << 16) | ((uint)(byte)((byte)('D')) << 24));
+        [NativeTypeName("#define RIFFINFO_IMED mmioFOURCC ('I', 'M', 'E', 'D')")]
+        public const uint RIFFINFO_IMED = ((uint)((byte)('I')) | ((uint)((byte)('M')) << 8) | ((uint)((byte)('E')) << 16) | ((uint)((byte)('D')) << 24));
 
-        [NativeTypeName("#define RIFFINFO_INAM mmioFOURCC (\'I\', \'N\', \'A\', \'M\')")]
-        public const uint RIFFINFO_INAM = unchecked((uint)(byte)((byte)('I')) | ((uint)(byte)((byte)('N')) << 8) | ((uint)(byte)((byte)('A')) << 16) | ((uint)(byte)((byte)('M')) << 24));
+        [NativeTypeName("#define RIFFINFO_INAM mmioFOURCC ('I', 'N', 'A', 'M')")]
+        public const uint RIFFINFO_INAM = ((uint)((byte)('I')) | ((uint)((byte)('N')) << 8) | ((uint)((byte)('A')) << 16) | ((uint)((byte)('M')) << 24));
 
-        [NativeTypeName("#define RIFFINFO_IPLT mmioFOURCC (\'I\', \'P\', \'L\', \'T\')")]
-        public const uint RIFFINFO_IPLT = unchecked((uint)(byte)((byte)('I')) | ((uint)(byte)((byte)('P')) << 8) | ((uint)(byte)((byte)('L')) << 16) | ((uint)(byte)((byte)('T')) << 24));
+        [NativeTypeName("#define RIFFINFO_IPLT mmioFOURCC ('I', 'P', 'L', 'T')")]
+        public const uint RIFFINFO_IPLT = ((uint)((byte)('I')) | ((uint)((byte)('P')) << 8) | ((uint)((byte)('L')) << 16) | ((uint)((byte)('T')) << 24));
 
-        [NativeTypeName("#define RIFFINFO_IPRD mmioFOURCC (\'I\', \'P\', \'R\', \'D\')")]
-        public const uint RIFFINFO_IPRD = unchecked((uint)(byte)((byte)('I')) | ((uint)(byte)((byte)('P')) << 8) | ((uint)(byte)((byte)('R')) << 16) | ((uint)(byte)((byte)('D')) << 24));
+        [NativeTypeName("#define RIFFINFO_IPRD mmioFOURCC ('I', 'P', 'R', 'D')")]
+        public const uint RIFFINFO_IPRD = ((uint)((byte)('I')) | ((uint)((byte)('P')) << 8) | ((uint)((byte)('R')) << 16) | ((uint)((byte)('D')) << 24));
 
-        [NativeTypeName("#define RIFFINFO_ISBJ mmioFOURCC (\'I\', \'S\', \'B\', \'J\')")]
-        public const uint RIFFINFO_ISBJ = unchecked((uint)(byte)((byte)('I')) | ((uint)(byte)((byte)('S')) << 8) | ((uint)(byte)((byte)('B')) << 16) | ((uint)(byte)((byte)('J')) << 24));
+        [NativeTypeName("#define RIFFINFO_ISBJ mmioFOURCC ('I', 'S', 'B', 'J')")]
+        public const uint RIFFINFO_ISBJ = ((uint)((byte)('I')) | ((uint)((byte)('S')) << 8) | ((uint)((byte)('B')) << 16) | ((uint)((byte)('J')) << 24));
 
-        [NativeTypeName("#define RIFFINFO_ISFT mmioFOURCC (\'I\', \'S\', \'F\', \'T\')")]
-        public const uint RIFFINFO_ISFT = unchecked((uint)(byte)((byte)('I')) | ((uint)(byte)((byte)('S')) << 8) | ((uint)(byte)((byte)('F')) << 16) | ((uint)(byte)((byte)('T')) << 24));
+        [NativeTypeName("#define RIFFINFO_ISFT mmioFOURCC ('I', 'S', 'F', 'T')")]
+        public const uint RIFFINFO_ISFT = ((uint)((byte)('I')) | ((uint)((byte)('S')) << 8) | ((uint)((byte)('F')) << 16) | ((uint)((byte)('T')) << 24));
 
-        [NativeTypeName("#define RIFFINFO_ISHP mmioFOURCC (\'I\', \'S\', \'H\', \'P\')")]
-        public const uint RIFFINFO_ISHP = unchecked((uint)(byte)((byte)('I')) | ((uint)(byte)((byte)('S')) << 8) | ((uint)(byte)((byte)('H')) << 16) | ((uint)(byte)((byte)('P')) << 24));
+        [NativeTypeName("#define RIFFINFO_ISHP mmioFOURCC ('I', 'S', 'H', 'P')")]
+        public const uint RIFFINFO_ISHP = ((uint)((byte)('I')) | ((uint)((byte)('S')) << 8) | ((uint)((byte)('H')) << 16) | ((uint)((byte)('P')) << 24));
 
-        [NativeTypeName("#define RIFFINFO_ISRC mmioFOURCC (\'I\', \'S\', \'R\', \'C\')")]
-        public const uint RIFFINFO_ISRC = unchecked((uint)(byte)((byte)('I')) | ((uint)(byte)((byte)('S')) << 8) | ((uint)(byte)((byte)('R')) << 16) | ((uint)(byte)((byte)('C')) << 24));
+        [NativeTypeName("#define RIFFINFO_ISRC mmioFOURCC ('I', 'S', 'R', 'C')")]
+        public const uint RIFFINFO_ISRC = ((uint)((byte)('I')) | ((uint)((byte)('S')) << 8) | ((uint)((byte)('R')) << 16) | ((uint)((byte)('C')) << 24));
 
-        [NativeTypeName("#define RIFFINFO_ISRF mmioFOURCC (\'I\', \'S\', \'R\', \'F\')")]
-        public const uint RIFFINFO_ISRF = unchecked((uint)(byte)((byte)('I')) | ((uint)(byte)((byte)('S')) << 8) | ((uint)(byte)((byte)('R')) << 16) | ((uint)(byte)((byte)('F')) << 24));
+        [NativeTypeName("#define RIFFINFO_ISRF mmioFOURCC ('I', 'S', 'R', 'F')")]
+        public const uint RIFFINFO_ISRF = ((uint)((byte)('I')) | ((uint)((byte)('S')) << 8) | ((uint)((byte)('R')) << 16) | ((uint)((byte)('F')) << 24));
 
-        [NativeTypeName("#define RIFFINFO_ITCH mmioFOURCC (\'I\', \'T\', \'C\', \'H\')")]
-        public const uint RIFFINFO_ITCH = unchecked((uint)(byte)((byte)('I')) | ((uint)(byte)((byte)('T')) << 8) | ((uint)(byte)((byte)('C')) << 16) | ((uint)(byte)((byte)('H')) << 24));
+        [NativeTypeName("#define RIFFINFO_ITCH mmioFOURCC ('I', 'T', 'C', 'H')")]
+        public const uint RIFFINFO_ITCH = ((uint)((byte)('I')) | ((uint)((byte)('T')) << 8) | ((uint)((byte)('C')) << 16) | ((uint)((byte)('H')) << 24));
 
-        [NativeTypeName("#define RIFFINFO_ISMP mmioFOURCC (\'I\', \'S\', \'M\', \'P\')")]
-        public const uint RIFFINFO_ISMP = unchecked((uint)(byte)((byte)('I')) | ((uint)(byte)((byte)('S')) << 8) | ((uint)(byte)((byte)('M')) << 16) | ((uint)(byte)((byte)('P')) << 24));
+        [NativeTypeName("#define RIFFINFO_ISMP mmioFOURCC ('I', 'S', 'M', 'P')")]
+        public const uint RIFFINFO_ISMP = ((uint)((byte)('I')) | ((uint)((byte)('S')) << 8) | ((uint)((byte)('M')) << 16) | ((uint)((byte)('P')) << 24));
 
-        [NativeTypeName("#define RIFFINFO_IDIT mmioFOURCC (\'I\', \'D\', \'I\', \'T\')")]
-        public const uint RIFFINFO_IDIT = unchecked((uint)(byte)((byte)('I')) | ((uint)(byte)((byte)('D')) << 8) | ((uint)(byte)((byte)('I')) << 16) | ((uint)(byte)((byte)('T')) << 24));
+        [NativeTypeName("#define RIFFINFO_IDIT mmioFOURCC ('I', 'D', 'I', 'T')")]
+        public const uint RIFFINFO_IDIT = ((uint)((byte)('I')) | ((uint)((byte)('D')) << 8) | ((uint)((byte)('I')) << 16) | ((uint)((byte)('T')) << 24));
 
-        [NativeTypeName("#define RIFFINFO_ITRK mmioFOURCC (\'I\', \'T\', \'R\', \'K\')")]
-        public const uint RIFFINFO_ITRK = unchecked((uint)(byte)((byte)('I')) | ((uint)(byte)((byte)('T')) << 8) | ((uint)(byte)((byte)('R')) << 16) | ((uint)(byte)((byte)('K')) << 24));
+        [NativeTypeName("#define RIFFINFO_ITRK mmioFOURCC ('I', 'T', 'R', 'K')")]
+        public const uint RIFFINFO_ITRK = ((uint)((byte)('I')) | ((uint)((byte)('T')) << 8) | ((uint)((byte)('R')) << 16) | ((uint)((byte)('K')) << 24));
 
-        [NativeTypeName("#define RIFFINFO_ITOC mmioFOURCC (\'I\', \'T\', \'O\', \'C\')")]
-        public const uint RIFFINFO_ITOC = unchecked((uint)(byte)((byte)('I')) | ((uint)(byte)((byte)('T')) << 8) | ((uint)(byte)((byte)('O')) << 16) | ((uint)(byte)((byte)('C')) << 24));
+        [NativeTypeName("#define RIFFINFO_ITOC mmioFOURCC ('I', 'T', 'O', 'C')")]
+        public const uint RIFFINFO_ITOC = ((uint)((byte)('I')) | ((uint)((byte)('T')) << 8) | ((uint)((byte)('O')) << 16) | ((uint)((byte)('C')) << 24));
 
         [NativeTypeName("#define WAVE_FORMAT_UNKNOWN 0x0000")]
         public const int WAVE_FORMAT_UNKNOWN = 0x0000;
@@ -5485,15 +5487,6 @@ namespace TerraFX.Interop
         [NativeTypeName("#define WAVE_FORMAT_DEVELOPMENT (0xFFFF)")]
         public const int WAVE_FORMAT_DEVELOPMENT = (0xFFFF);
 
-        [NativeTypeName("#define STATIC_KSDATAFORMAT_SUBTYPE_PCM DEFINE_WAVEFORMATEX_GUID(WAVE_FORMAT_PCM)")]
-        public const ushort STATIC_KSDATAFORMAT_SUBTYPE_PCM = (ushort)(1);
-
-        [NativeTypeName("#define STATIC_KSDATAFORMAT_SUBTYPE_IEEE_FLOAT DEFINE_WAVEFORMATEX_GUID(WAVE_FORMAT_IEEE_FLOAT)")]
-        public const ushort STATIC_KSDATAFORMAT_SUBTYPE_IEEE_FLOAT = (ushort)(0x0003);
-
-        [NativeTypeName("#define STATIC_KSDATAFORMAT_SUBTYPE_WAVEFORMATEX 0x00000000L")]
-        public const int STATIC_KSDATAFORMAT_SUBTYPE_WAVEFORMATEX = 0x00000000;
-
         [NativeTypeName("#define SPEAKER_FRONT_LEFT 0x1")]
         public const int SPEAKER_FRONT_LEFT = 0x1;
 
@@ -5650,68 +5643,68 @@ namespace TerraFX.Interop
         [NativeTypeName("#define WAVE_FILTER_ECHO 0x0002")]
         public const int WAVE_FILTER_ECHO = 0x0002;
 
-        [NativeTypeName("#define RIFFWAVE_inst mmioFOURCC(\'i\',\'n\',\'s\',\'t\')")]
-        public const uint RIFFWAVE_inst = unchecked((uint)(byte)((byte)('i')) | ((uint)(byte)((byte)('n')) << 8) | ((uint)(byte)((byte)('s')) << 16) | ((uint)(byte)((byte)('t')) << 24));
+        [NativeTypeName("#define RIFFWAVE_inst mmioFOURCC('i','n','s','t')")]
+        public const uint RIFFWAVE_inst = ((uint)((byte)('i')) | ((uint)((byte)('n')) << 8) | ((uint)((byte)('s')) << 16) | ((uint)((byte)('t')) << 24));
 
-        [NativeTypeName("#define RIFFCPPO mmioFOURCC(\'C\',\'P\',\'P\',\'O\')")]
-        public const uint RIFFCPPO = unchecked((uint)(byte)((byte)('C')) | ((uint)(byte)((byte)('P')) << 8) | ((uint)(byte)((byte)('P')) << 16) | ((uint)(byte)((byte)('O')) << 24));
+        [NativeTypeName("#define RIFFCPPO mmioFOURCC('C','P','P','O')")]
+        public const uint RIFFCPPO = ((uint)((byte)('C')) | ((uint)((byte)('P')) << 8) | ((uint)((byte)('P')) << 16) | ((uint)((byte)('O')) << 24));
 
-        [NativeTypeName("#define RIFFCPPO_objr mmioFOURCC(\'o\',\'b\',\'j\',\'r\')")]
-        public const uint RIFFCPPO_objr = unchecked((uint)(byte)((byte)('o')) | ((uint)(byte)((byte)('b')) << 8) | ((uint)(byte)((byte)('j')) << 16) | ((uint)(byte)((byte)('r')) << 24));
+        [NativeTypeName("#define RIFFCPPO_objr mmioFOURCC('o','b','j','r')")]
+        public const uint RIFFCPPO_objr = ((uint)((byte)('o')) | ((uint)((byte)('b')) << 8) | ((uint)((byte)('j')) << 16) | ((uint)((byte)('r')) << 24));
 
-        [NativeTypeName("#define RIFFCPPO_obji mmioFOURCC(\'o\',\'b\',\'j\',\'i\')")]
-        public const uint RIFFCPPO_obji = unchecked((uint)(byte)((byte)('o')) | ((uint)(byte)((byte)('b')) << 8) | ((uint)(byte)((byte)('j')) << 16) | ((uint)(byte)((byte)('i')) << 24));
+        [NativeTypeName("#define RIFFCPPO_obji mmioFOURCC('o','b','j','i')")]
+        public const uint RIFFCPPO_obji = ((uint)((byte)('o')) | ((uint)((byte)('b')) << 8) | ((uint)((byte)('j')) << 16) | ((uint)((byte)('i')) << 24));
 
-        [NativeTypeName("#define RIFFCPPO_clsr mmioFOURCC(\'c\',\'l\',\'s\',\'r\')")]
-        public const uint RIFFCPPO_clsr = unchecked((uint)(byte)((byte)('c')) | ((uint)(byte)((byte)('l')) << 8) | ((uint)(byte)((byte)('s')) << 16) | ((uint)(byte)((byte)('r')) << 24));
+        [NativeTypeName("#define RIFFCPPO_clsr mmioFOURCC('c','l','s','r')")]
+        public const uint RIFFCPPO_clsr = ((uint)((byte)('c')) | ((uint)((byte)('l')) << 8) | ((uint)((byte)('s')) << 16) | ((uint)((byte)('r')) << 24));
 
-        [NativeTypeName("#define RIFFCPPO_clsi mmioFOURCC(\'c\',\'l\',\'s\',\'i\')")]
-        public const uint RIFFCPPO_clsi = unchecked((uint)(byte)((byte)('c')) | ((uint)(byte)((byte)('l')) << 8) | ((uint)(byte)((byte)('s')) << 16) | ((uint)(byte)((byte)('i')) << 24));
+        [NativeTypeName("#define RIFFCPPO_clsi mmioFOURCC('c','l','s','i')")]
+        public const uint RIFFCPPO_clsi = ((uint)((byte)('c')) | ((uint)((byte)('l')) << 8) | ((uint)((byte)('s')) << 16) | ((uint)((byte)('i')) << 24));
 
-        [NativeTypeName("#define RIFFCPPO_mbr mmioFOURCC(\'m\',\'b\',\'r\',\' \')")]
-        public const uint RIFFCPPO_mbr = unchecked((uint)(byte)((byte)('m')) | ((uint)(byte)((byte)('b')) << 8) | ((uint)(byte)((byte)('r')) << 16) | ((uint)(byte)((byte)(' ')) << 24));
+        [NativeTypeName("#define RIFFCPPO_mbr mmioFOURCC('m','b','r',' ')")]
+        public const uint RIFFCPPO_mbr = ((uint)((byte)('m')) | ((uint)((byte)('b')) << 8) | ((uint)((byte)('r')) << 16) | ((uint)((byte)(' ')) << 24));
 
-        [NativeTypeName("#define RIFFCPPO_char mmioFOURCC(\'c\',\'h\',\'a\',\'r\')")]
-        public const uint RIFFCPPO_char = unchecked((uint)(byte)((byte)('c')) | ((uint)(byte)((byte)('h')) << 8) | ((uint)(byte)((byte)('a')) << 16) | ((uint)(byte)((byte)('r')) << 24));
+        [NativeTypeName("#define RIFFCPPO_char mmioFOURCC('c','h','a','r')")]
+        public const uint RIFFCPPO_char = ((uint)((byte)('c')) | ((uint)((byte)('h')) << 8) | ((uint)((byte)('a')) << 16) | ((uint)((byte)('r')) << 24));
 
-        [NativeTypeName("#define RIFFCPPO_byte mmioFOURCC(\'b\',\'y\',\'t\',\'e\')")]
-        public const uint RIFFCPPO_byte = unchecked((uint)(byte)((byte)('b')) | ((uint)(byte)((byte)('y')) << 8) | ((uint)(byte)((byte)('t')) << 16) | ((uint)(byte)((byte)('e')) << 24));
+        [NativeTypeName("#define RIFFCPPO_byte mmioFOURCC('b','y','t','e')")]
+        public const uint RIFFCPPO_byte = ((uint)((byte)('b')) | ((uint)((byte)('y')) << 8) | ((uint)((byte)('t')) << 16) | ((uint)((byte)('e')) << 24));
 
-        [NativeTypeName("#define RIFFCPPO_int mmioFOURCC(\'i\',\'n\',\'t\',\' \')")]
-        public const uint RIFFCPPO_int = unchecked((uint)(byte)((byte)('i')) | ((uint)(byte)((byte)('n')) << 8) | ((uint)(byte)((byte)('t')) << 16) | ((uint)(byte)((byte)(' ')) << 24));
+        [NativeTypeName("#define RIFFCPPO_int mmioFOURCC('i','n','t',' ')")]
+        public const uint RIFFCPPO_int = ((uint)((byte)('i')) | ((uint)((byte)('n')) << 8) | ((uint)((byte)('t')) << 16) | ((uint)((byte)(' ')) << 24));
 
-        [NativeTypeName("#define RIFFCPPO_word mmioFOURCC(\'w\',\'o\',\'r\',\'d\')")]
-        public const uint RIFFCPPO_word = unchecked((uint)(byte)((byte)('w')) | ((uint)(byte)((byte)('o')) << 8) | ((uint)(byte)((byte)('r')) << 16) | ((uint)(byte)((byte)('d')) << 24));
+        [NativeTypeName("#define RIFFCPPO_word mmioFOURCC('w','o','r','d')")]
+        public const uint RIFFCPPO_word = ((uint)((byte)('w')) | ((uint)((byte)('o')) << 8) | ((uint)((byte)('r')) << 16) | ((uint)((byte)('d')) << 24));
 
-        [NativeTypeName("#define RIFFCPPO_long mmioFOURCC(\'l\',\'o\',\'n\',\'g\')")]
-        public const uint RIFFCPPO_long = unchecked((uint)(byte)((byte)('l')) | ((uint)(byte)((byte)('o')) << 8) | ((uint)(byte)((byte)('n')) << 16) | ((uint)(byte)((byte)('g')) << 24));
+        [NativeTypeName("#define RIFFCPPO_long mmioFOURCC('l','o','n','g')")]
+        public const uint RIFFCPPO_long = ((uint)((byte)('l')) | ((uint)((byte)('o')) << 8) | ((uint)((byte)('n')) << 16) | ((uint)((byte)('g')) << 24));
 
-        [NativeTypeName("#define RIFFCPPO_dwrd mmioFOURCC(\'d\',\'w\',\'r\',\'d\')")]
-        public const uint RIFFCPPO_dwrd = unchecked((uint)(byte)((byte)('d')) | ((uint)(byte)((byte)('w')) << 8) | ((uint)(byte)((byte)('r')) << 16) | ((uint)(byte)((byte)('d')) << 24));
+        [NativeTypeName("#define RIFFCPPO_dwrd mmioFOURCC('d','w','r','d')")]
+        public const uint RIFFCPPO_dwrd = ((uint)((byte)('d')) | ((uint)((byte)('w')) << 8) | ((uint)((byte)('r')) << 16) | ((uint)((byte)('d')) << 24));
 
-        [NativeTypeName("#define RIFFCPPO_flt mmioFOURCC(\'f\',\'l\',\'t\',\' \')")]
-        public const uint RIFFCPPO_flt = unchecked((uint)(byte)((byte)('f')) | ((uint)(byte)((byte)('l')) << 8) | ((uint)(byte)((byte)('t')) << 16) | ((uint)(byte)((byte)(' ')) << 24));
+        [NativeTypeName("#define RIFFCPPO_flt mmioFOURCC('f','l','t',' ')")]
+        public const uint RIFFCPPO_flt = ((uint)((byte)('f')) | ((uint)((byte)('l')) << 8) | ((uint)((byte)('t')) << 16) | ((uint)((byte)(' ')) << 24));
 
-        [NativeTypeName("#define RIFFCPPO_dbl mmioFOURCC(\'d\',\'b\',\'l\',\' \')")]
-        public const uint RIFFCPPO_dbl = unchecked((uint)(byte)((byte)('d')) | ((uint)(byte)((byte)('b')) << 8) | ((uint)(byte)((byte)('l')) << 16) | ((uint)(byte)((byte)(' ')) << 24));
+        [NativeTypeName("#define RIFFCPPO_dbl mmioFOURCC('d','b','l',' ')")]
+        public const uint RIFFCPPO_dbl = ((uint)((byte)('d')) | ((uint)((byte)('b')) << 8) | ((uint)((byte)('l')) << 16) | ((uint)((byte)(' ')) << 24));
 
-        [NativeTypeName("#define RIFFCPPO_str mmioFOURCC(\'s\',\'t\',\'r\',\' \')")]
-        public const uint RIFFCPPO_str = unchecked((uint)(byte)((byte)('s')) | ((uint)(byte)((byte)('t')) << 8) | ((uint)(byte)((byte)('r')) << 16) | ((uint)(byte)((byte)(' ')) << 24));
+        [NativeTypeName("#define RIFFCPPO_str mmioFOURCC('s','t','r',' ')")]
+        public const uint RIFFCPPO_str = ((uint)((byte)('s')) | ((uint)((byte)('t')) << 8) | ((uint)((byte)('r')) << 16) | ((uint)((byte)(' ')) << 24));
 
-        [NativeTypeName("#define BICOMP_IBMULTIMOTION mmioFOURCC(\'U\', \'L\', \'T\', \'I\')")]
-        public const uint BICOMP_IBMULTIMOTION = unchecked((uint)(byte)((byte)('U')) | ((uint)(byte)((byte)('L')) << 8) | ((uint)(byte)((byte)('T')) << 16) | ((uint)(byte)((byte)('I')) << 24));
+        [NativeTypeName("#define BICOMP_IBMULTIMOTION mmioFOURCC('U', 'L', 'T', 'I')")]
+        public const uint BICOMP_IBMULTIMOTION = ((uint)((byte)('U')) | ((uint)((byte)('L')) << 8) | ((uint)((byte)('T')) << 16) | ((uint)((byte)('I')) << 24));
 
-        [NativeTypeName("#define BICOMP_IBMPHOTOMOTION mmioFOURCC(\'P\', \'H\', \'M\', \'O\')")]
-        public const uint BICOMP_IBMPHOTOMOTION = unchecked((uint)(byte)((byte)('P')) | ((uint)(byte)((byte)('H')) << 8) | ((uint)(byte)((byte)('M')) << 16) | ((uint)(byte)((byte)('O')) << 24));
+        [NativeTypeName("#define BICOMP_IBMPHOTOMOTION mmioFOURCC('P', 'H', 'M', 'O')")]
+        public const uint BICOMP_IBMPHOTOMOTION = ((uint)((byte)('P')) | ((uint)((byte)('H')) << 8) | ((uint)((byte)('M')) << 16) | ((uint)((byte)('O')) << 24));
 
-        [NativeTypeName("#define BICOMP_CREATIVEYUV mmioFOURCC(\'c\', \'y\', \'u\', \'v\')")]
-        public const uint BICOMP_CREATIVEYUV = unchecked((uint)(byte)((byte)('c')) | ((uint)(byte)((byte)('y')) << 8) | ((uint)(byte)((byte)('u')) << 16) | ((uint)(byte)((byte)('v')) << 24));
+        [NativeTypeName("#define BICOMP_CREATIVEYUV mmioFOURCC('c', 'y', 'u', 'v')")]
+        public const uint BICOMP_CREATIVEYUV = ((uint)((byte)('c')) | ((uint)((byte)('y')) << 8) | ((uint)((byte)('u')) << 16) | ((uint)((byte)('v')) << 24));
 
-        [NativeTypeName("#define JPEG_DIB mmioFOURCC(\'J\',\'P\',\'E\',\'G\')")]
-        public const uint JPEG_DIB = unchecked((uint)(byte)((byte)('J')) | ((uint)(byte)((byte)('P')) << 8) | ((uint)(byte)((byte)('E')) << 16) | ((uint)(byte)((byte)('G')) << 24));
+        [NativeTypeName("#define JPEG_DIB mmioFOURCC('J','P','E','G')")]
+        public const uint JPEG_DIB = ((uint)((byte)('J')) | ((uint)((byte)('P')) << 8) | ((uint)((byte)('E')) << 16) | ((uint)((byte)('G')) << 24));
 
-        [NativeTypeName("#define MJPG_DIB mmioFOURCC(\'M\',\'J\',\'P\',\'G\')")]
-        public const uint MJPG_DIB = unchecked((uint)(byte)((byte)('M')) | ((uint)(byte)((byte)('J')) << 8) | ((uint)(byte)((byte)('P')) << 16) | ((uint)(byte)((byte)('G')) << 24));
+        [NativeTypeName("#define MJPG_DIB mmioFOURCC('M','J','P','G')")]
+        public const uint MJPG_DIB = ((uint)((byte)('M')) | ((uint)((byte)('J')) << 8) | ((uint)((byte)('P')) << 16) | ((uint)((byte)('G')) << 24));
 
         [NativeTypeName("#define JPEG_PROCESS_BASELINE 0")]
         public const int JPEG_PROCESS_BASELINE = 0;
@@ -5905,14 +5898,14 @@ namespace TerraFX.Interop
         [NativeTypeName("#define JPEG_RGB 3")]
         public const int JPEG_RGB = 3;
 
-        [NativeTypeName("#define ICTYPE_VIDEO mmioFOURCC(\'v\', \'i\', \'d\', \'c\')")]
-        public const uint ICTYPE_VIDEO = unchecked((uint)(byte)((byte)('v')) | ((uint)(byte)((byte)('i')) << 8) | ((uint)(byte)((byte)('d')) << 16) | ((uint)(byte)((byte)('c')) << 24));
+        [NativeTypeName("#define ICTYPE_VIDEO mmioFOURCC('v', 'i', 'd', 'c')")]
+        public const uint ICTYPE_VIDEO = ((uint)((byte)('v')) | ((uint)((byte)('i')) << 8) | ((uint)((byte)('d')) << 16) | ((uint)((byte)('c')) << 24));
 
-        [NativeTypeName("#define ICTYPE_AUDIO mmioFOURCC(\'a\', \'u\', \'d\', \'c\')")]
-        public const uint ICTYPE_AUDIO = unchecked((uint)(byte)((byte)('a')) | ((uint)(byte)((byte)('u')) << 8) | ((uint)(byte)((byte)('d')) << 16) | ((uint)(byte)((byte)('c')) << 24));
+        [NativeTypeName("#define ICTYPE_AUDIO mmioFOURCC('a', 'u', 'd', 'c')")]
+        public const uint ICTYPE_AUDIO = ((uint)((byte)('a')) | ((uint)((byte)('u')) << 8) | ((uint)((byte)('d')) << 16) | ((uint)((byte)('c')) << 24));
 
-        [NativeTypeName("#define FOURCC_RDSP mmioFOURCC(\'R\', \'D\', \'S\', \'P\')")]
-        public const uint FOURCC_RDSP = unchecked((uint)(byte)((byte)('R')) | ((uint)(byte)((byte)('D')) << 8) | ((uint)(byte)((byte)('S')) << 16) | ((uint)(byte)((byte)('P')) << 24));
+        [NativeTypeName("#define FOURCC_RDSP mmioFOURCC('R', 'D', 'S', 'P')")]
+        public const uint FOURCC_RDSP = ((uint)((byte)('R')) | ((uint)((byte)('D')) << 8) | ((uint)((byte)('S')) << 16) | ((uint)((byte)('P')) << 24));
 
         [NativeTypeName("#define MIXERCONTROL_CONTROLTYPE_SRS_MTS (MIXERCONTROL_CONTROLTYPE_BOOLEAN + 6)")]
         public const int MIXERCONTROL_CONTROLTYPE_SRS_MTS = ((0x20000000 | 0x00000000 | 0x00010000) + 6);
@@ -5922,5 +5915,11 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define MIXERCONTROL_CONTROLTYPE_SRS_SYNTHSELECT (MIXERCONTROL_CONTROLTYPE_BOOLEAN + 8)")]
         public const int MIXERCONTROL_CONTROLTYPE_SRS_SYNTHSELECT = ((0x20000000 | 0x00000000 | 0x00010000) + 8);
+
+        public static readonly Guid STATIC_KSDATAFORMAT_SUBTYPE_PCM = new Guid(0x00000001, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xAA, 0x00, 0x38, 0x9B, 0x71);
+
+        public static readonly Guid STATIC_KSDATAFORMAT_SUBTYPE_IEEE_FLOAT = new Guid(0x00000003, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xAA, 0x00, 0x38, 0x9B, 0x71);
+
+        public static readonly Guid STATIC_KSDATAFORMAT_SUBTYPE_WAVEFORMATEX = new Guid(0x00000000, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xAA, 0x00, 0x38, 0x9B, 0x71);
     }
 }

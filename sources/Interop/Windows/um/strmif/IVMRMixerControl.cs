@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("1C1A17B0-BED0-415D-974B-DC6696131599")]
+    [NativeTypeName("struct IVMRMixerControl : IUnknown")]
     public unsafe partial struct IVMRMixerControl
     {
         public void** lpVtbl;

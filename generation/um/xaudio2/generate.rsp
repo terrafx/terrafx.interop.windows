@@ -13,8 +13,5 @@ um-xaudio2.h
 ../../../tests/Interop/Windows/um/xaudio2
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/xaudio2.h
---with-attribute
-IXAudio2=Guid("2B02E3CF-2E0B-4ec3-BE45-1B2A3FE7210D")
-IXAudio2Extension=Guid("84AC29BB-D619-44D2-B197-E4ACF7DF3ED6")
 --with-librarypath
 *=XAudio2_9

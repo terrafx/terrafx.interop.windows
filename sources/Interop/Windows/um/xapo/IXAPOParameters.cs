@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("26D95C66-80F2-499A-AD54-5AE7F01C6D98")]
+    [NativeTypeName("struct IXAPOParameters : IUnknown")]
     public unsafe partial struct IXAPOParameters
     {
         public void** lpVtbl;

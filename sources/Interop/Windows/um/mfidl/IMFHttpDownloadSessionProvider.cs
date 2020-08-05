@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("1B4CF4B9-3A16-4115-839D-03CC5C99DF01")]
+    [NativeTypeName("struct IMFHttpDownloadSessionProvider : IUnknown")]
     public unsafe partial struct IMFHttpDownloadSessionProvider
     {
         public void** lpVtbl;

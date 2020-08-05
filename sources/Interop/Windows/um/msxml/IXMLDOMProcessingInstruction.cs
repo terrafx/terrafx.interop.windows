@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("2933BF89-7B36-11D2-B20E-00C04F983E60")]
+    [NativeTypeName("struct IXMLDOMProcessingInstruction : IXMLDOMNode")]
     public unsafe partial struct IXMLDOMProcessingInstruction
     {
         public void** lpVtbl;

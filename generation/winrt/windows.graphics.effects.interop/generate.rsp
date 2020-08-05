@@ -8,5 +8,3 @@ winrt-windows.graphics.effects.interop.h
 ../../../tests/Interop/Windows/winrt/windows.graphics.effects.interop
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/winrt/windows.graphics.effects.interop.h
---with-attribute
-IGraphicsEffectD2D1Interop=Guid("2FC57384-A068-44D7-A331-30982FCF7177")

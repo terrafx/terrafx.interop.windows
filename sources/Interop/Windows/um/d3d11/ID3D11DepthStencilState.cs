@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("03823EFB-8D8F-4E1C-9AA2-F64BB2CBFDF1")]
+    [NativeTypeName("struct ID3D11DepthStencilState : ID3D11DeviceChild")]
     public unsafe partial struct ID3D11DepthStencilState
     {
         public void** lpVtbl;

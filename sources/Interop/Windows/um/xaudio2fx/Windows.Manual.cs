@@ -9,12 +9,6 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_AudioVolumeMeter = new Guid(0x4FC3B166, 0x972A, 0x40CF, 0xBC, 0x37, 0x7D, 0xB0, 0x3D, 0xB2, 0xFB, 0xA3);
-
-        [NativeTypeName("const GUID")]
-        public static readonly Guid CLSID_AudioReverb = new Guid(0xC2633B16, 0x471B, 0x4498, 0xB8, 0xC5, 0x4F, 0x09, 0x59, 0xE2, 0xEC, 0x09);
-
         public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_DEFAULT = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -10000, RoomHF = 0, RoomRolloffFactor = 0.0f, DecayTime = 1.00f, DecayHFRatio = 0.50f, Reflections = -10000, ReflectionsDelay = 0.020f, Reverb = -10000, ReverbDelay = 0.040f, Diffusion = 100.0f, Density = 100.0f, HFReference = 5000.0f };
 
         public static readonly XAUDIO2FX_REVERB_I3DL2_PARAMETERS XAUDIO2FX_I3DL2_PRESET_GENERIC = new XAUDIO2FX_REVERB_I3DL2_PARAMETERS { WetDryMix = 100, Room = -1000, RoomHF = -100, RoomRolloffFactor = 0.0f, DecayTime = 1.49f, DecayHFRatio = 0.83f, Reflections = -2602, ReflectionsDelay = 0.007f, Reverb = 200, ReverbDelay = 0.011f, Diffusion = 100.0f, Density = 100.0f, HFReference = 5000.0f };

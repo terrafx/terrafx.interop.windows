@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("D2959BF7-B31B-4A3D-9600-712EB1335BA4")]
+    [NativeTypeName("struct IPrintDocumentPackageTargetFactory : IUnknown")]
     public unsafe partial struct IPrintDocumentPackageTargetFactory
     {
         public void** lpVtbl;

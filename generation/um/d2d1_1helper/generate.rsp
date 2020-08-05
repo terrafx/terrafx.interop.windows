@@ -1,5 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
+--exclude
+D2D1
 --file
 um-d2d1_1helper.h
 --output

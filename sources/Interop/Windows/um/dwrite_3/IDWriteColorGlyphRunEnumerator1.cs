@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("7C5F86DA-C7A1-4F05-B8E1-55A179FE5A35")]
+    [NativeTypeName("struct IDWriteColorGlyphRunEnumerator1 : IDWriteColorGlyphRunEnumerator")]
     public unsafe partial struct IDWriteColorGlyphRunEnumerator1
     {
         public void** lpVtbl;

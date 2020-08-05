@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("F25362EA-2C0E-447F-81E2-755914CDC0C3")]
+    [NativeTypeName("struct IMFRelativePanelReport : IUnknown")]
     public unsafe partial struct IMFRelativePanelReport
     {
         public void** lpVtbl;

@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("0A97B3CF-8E7C-4A3D-8F8C-0C843DC247FB")]
+    [NativeTypeName("struct IMFStreamSink : IMFMediaEventGenerator")]
     public unsafe partial struct IMFStreamSink
     {
         public void** lpVtbl;

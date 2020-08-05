@@ -10,8 +10,5 @@ um-dxgidebug.h
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dxgidebug.h
 --with-attribute
 DXGI_DEBUG_RLO_FLAGS=Flags
-IDXGIDebug=Guid("119E7452-DE9E-40FE-8806-88F90C12B441")
-IDXGIDebug1=Guid("C5A05F0C-16F2-4ADF-9F4D-A8C4D58AC550")
-IDXGIInfoQueue=Guid("D67441C7-672A-476F-9E82-CD55B44949CE")
 --with-librarypath
 *=DXGIDebug

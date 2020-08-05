@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("3EFAA426-272F-11D2-836F-0000F87A7782")]
+    [NativeTypeName("struct IXMLDOMParseError : IDispatch")]
     public unsafe partial struct IXMLDOMParseError
     {
         public void** lpVtbl;

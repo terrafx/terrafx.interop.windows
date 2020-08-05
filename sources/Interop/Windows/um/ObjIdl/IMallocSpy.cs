@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("0000001D-0000-0000-C000-000000000046")]
+    [NativeTypeName("struct IMallocSpy : IUnknown")]
     public unsafe partial struct IMallocSpy
     {
         public void** lpVtbl;

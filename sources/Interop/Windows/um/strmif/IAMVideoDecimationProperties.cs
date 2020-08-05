@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("60D32930-13DA-11D3-9EC6-C4FCAEF5C7BE")]
+    [NativeTypeName("struct IAMVideoDecimationProperties : IUnknown")]
     public unsafe partial struct IAMVideoDecimationProperties
     {
         public void** lpVtbl;

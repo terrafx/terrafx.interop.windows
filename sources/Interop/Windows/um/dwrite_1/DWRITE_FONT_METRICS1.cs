@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("struct DWRITE_FONT_METRICS1 : DWRITE_FONT_METRICS")]
     public partial struct DWRITE_FONT_METRICS1
     {
         public DWRITE_FONT_METRICS Base;

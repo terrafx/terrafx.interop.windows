@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("8445C581-0CAC-4A38-ABFE-9B2CE2826455")]
+    [NativeTypeName("struct ISpPhoneConverter : ISpObjectWithToken")]
     public unsafe partial struct ISpPhoneConverter
     {
         public void** lpVtbl;

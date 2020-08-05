@@ -10,7 +10,8 @@ using static TerraFX.Interop.AUDIO_STREAM_CATEGORY;
 
 namespace TerraFX.Interop
 {
-    [Guid("2B02E3CF-2E0B-4ec3-BE45-1B2A3FE7210D")]
+    [Guid("2B02E3CF-2E0B-4EC3-BE45-1B2A3FE7210D")]
+    [NativeTypeName("struct IXAudio2 : IUnknown")]
     public unsafe partial struct IXAudio2
     {
         public void** lpVtbl;

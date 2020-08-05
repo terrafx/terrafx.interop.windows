@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("9842AD7D-D9CF-4908-AED7-48B51DA5E7C2")]
+    [NativeTypeName("struct IDCompositionRectangleClip : IDCompositionClip")]
     public unsafe partial struct IDCompositionRectangleClip
     {
         public void** lpVtbl;

@@ -8,11 +8,5 @@ um-d2d1_2.h
 ../../../tests/Interop/Windows/um/d2d1_2
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1_2.h
---with-attribute
-ID2D1CommandSink1=Guid("9EB767FD-4269-4467-B8C2-EB30CB305743")
-ID2D1Device1=Guid("D21768E1-23A4-4823-A14B-7C3EBA85D658")
-ID2D1DeviceContext1=Guid("D37F57E4-6908-459F-A199-E72F24F79987")
-ID2D1Factory2=Guid("94F81A73-9212-4376-9C58-B16A3A0D3992")
-ID2D1GeometryRealization=Guid("A16907D7-BC02-4801-99E8-8CF7F485F774")
 --with-librarypath
 *=d2d1

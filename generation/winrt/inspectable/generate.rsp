@@ -1,5 +1,8 @@
 @../../settings.rsp
 @../../remap.rsp
+--exclude
+IID_INS_ARGS
+IID_INS_ARGS_Helper<T>(T **):void **
 --file
 winrt-inspectable.h
 --output
@@ -8,7 +11,5 @@ winrt-inspectable.h
 ../../../tests/Interop/Windows/winrt/inspectable
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/winrt/inspectable.h
---with-attribute
-IInspectable=Guid("AF86E2E0-B12D-4C6A-9C5A-D7AA65101E90")
 --with-librarypath
 *=ComBase

@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("F286FA56-C1FD-4270-8E67-B3EB790A81E8")]
+    [NativeTypeName("struct IWinInetHttpTimeouts : IUnknown")]
     public unsafe partial struct IWinInetHttpTimeouts
     {
         public void** lpVtbl;

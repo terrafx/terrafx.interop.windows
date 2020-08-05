@@ -5,11 +5,10 @@
 
 using System;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    [Guid("56A868FD-0AD4-11CE-B0A3-0020AF0BA770")]
+    [NativeTypeName("struct IAMFilterGraphCallback : IUnknown")]
     public unsafe partial struct IAMFilterGraphCallback
     {
         public void** lpVtbl;

@@ -187,11 +187,11 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static readonly Guid D3D11_KEY_EXCHANGE_RSAES_OAEP = new Guid(0xc1949895, 0xd72a, 0x4a1d, 0x8e, 0x5d, 0xed, 0x85, 0x7d, 0x17, 0x15, 0x20);
 
-        [DllImport("d3d11", EntryPoint = "D3D11CreateDevice", ExactSpelling = true)]
+        [DllImport("d3d11", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3D11CreateDevice([NativeTypeName("IDXGIAdapter *")] IDXGIAdapter* pAdapter, D3D_DRIVER_TYPE DriverType, [NativeTypeName("HMODULE")] IntPtr Software, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("const D3D_FEATURE_LEVEL *")] D3D_FEATURE_LEVEL* pFeatureLevels, [NativeTypeName("UINT")] uint FeatureLevels, [NativeTypeName("UINT")] uint SDKVersion, [NativeTypeName("ID3D11Device **")] ID3D11Device** ppDevice, [NativeTypeName("D3D_FEATURE_LEVEL *")] D3D_FEATURE_LEVEL* pFeatureLevel, [NativeTypeName("ID3D11DeviceContext **")] ID3D11DeviceContext** ppImmediateContext);
 
-        [DllImport("d3d11", EntryPoint = "D3D11CreateDeviceAndSwapChain", ExactSpelling = true)]
+        [DllImport("d3d11", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3D11CreateDeviceAndSwapChain([NativeTypeName("IDXGIAdapter *")] IDXGIAdapter* pAdapter, D3D_DRIVER_TYPE DriverType, [NativeTypeName("HMODULE")] IntPtr Software, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("const D3D_FEATURE_LEVEL *")] D3D_FEATURE_LEVEL* pFeatureLevels, [NativeTypeName("UINT")] uint FeatureLevels, [NativeTypeName("UINT")] uint SDKVersion, [NativeTypeName("const DXGI_SWAP_CHAIN_DESC *")] DXGI_SWAP_CHAIN_DESC* pSwapChainDesc, [NativeTypeName("IDXGISwapChain **")] IDXGISwapChain** ppSwapChain, [NativeTypeName("ID3D11Device **")] ID3D11Device** ppDevice, [NativeTypeName("D3D_FEATURE_LEVEL *")] D3D_FEATURE_LEVEL* pFeatureLevel, [NativeTypeName("ID3D11DeviceContext **")] ID3D11DeviceContext** ppImmediateContext);
 

@@ -10,34 +10,34 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("D3D12", EntryPoint = "D3D12SerializeRootSignature", ExactSpelling = true)]
+        [DllImport("D3D12", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3D12SerializeRootSignature([NativeTypeName("const D3D12_ROOT_SIGNATURE_DESC *")] D3D12_ROOT_SIGNATURE_DESC* pRootSignature, D3D_ROOT_SIGNATURE_VERSION Version, [NativeTypeName("ID3DBlob **")] ID3DBlob** ppBlob, [NativeTypeName("ID3DBlob **")] ID3DBlob** ppErrorBlob);
 
-        [DllImport("D3D12", EntryPoint = "D3D12CreateRootSignatureDeserializer", ExactSpelling = true)]
+        [DllImport("D3D12", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3D12CreateRootSignatureDeserializer([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSizeInBytes, [NativeTypeName("const IID &")] Guid* pRootSignatureDeserializerInterface, [NativeTypeName("void **")] void** ppRootSignatureDeserializer);
 
-        [DllImport("D3D12", EntryPoint = "D3D12SerializeVersionedRootSignature", ExactSpelling = true)]
+        [DllImport("D3D12", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3D12SerializeVersionedRootSignature([NativeTypeName("const D3D12_VERSIONED_ROOT_SIGNATURE_DESC *")] D3D12_VERSIONED_ROOT_SIGNATURE_DESC* pRootSignature, [NativeTypeName("ID3DBlob **")] ID3DBlob** ppBlob, [NativeTypeName("ID3DBlob **")] ID3DBlob** ppErrorBlob);
 
-        [DllImport("D3D12", EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer", ExactSpelling = true)]
+        [DllImport("D3D12", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3D12CreateVersionedRootSignatureDeserializer([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSizeInBytes, [NativeTypeName("const IID &")] Guid* pRootSignatureDeserializerInterface, [NativeTypeName("void **")] void** ppRootSignatureDeserializer);
 
         [NativeTypeName("const GUID")]
         public static readonly Guid D3D12_PROTECTED_RESOURCES_SESSION_HARDWARE_PROTECTED = new Guid(0x62B0084E, 0xC70E, 0x4DAA, 0xA1, 0x09, 0x30, 0xFF, 0x8D, 0x5A, 0x04, 0x82);
 
-        [DllImport("D3D12", EntryPoint = "D3D12CreateDevice", ExactSpelling = true)]
+        [DllImport("D3D12", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3D12CreateDevice([NativeTypeName("IUnknown *")] IUnknown* pAdapter, D3D_FEATURE_LEVEL MinimumFeatureLevel, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppDevice);
 
-        [DllImport("D3D12", EntryPoint = "D3D12GetDebugInterface", ExactSpelling = true)]
+        [DllImport("D3D12", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3D12GetDebugInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvDebug);
 
-        [DllImport("D3D12", EntryPoint = "D3D12EnableExperimentalFeatures", ExactSpelling = true)]
+        [DllImport("D3D12", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int D3D12EnableExperimentalFeatures([NativeTypeName("UINT")] uint NumFeatures, [NativeTypeName("const IID *")] Guid* pIIDs, [NativeTypeName("void *")] void* pConfigurationStructs, [NativeTypeName("UINT *")] uint* pConfigurationStructSizes);
 

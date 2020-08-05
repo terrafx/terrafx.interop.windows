@@ -8,5 +8,3 @@ um-dcompanimation.h
 ../../../tests/Interop/Windows/um/dcompanimation
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dcompanimation.h
---with-attribute
-IDCompositionAnimation=Guid("CBFD91D9-51B2-45e4-B3DE-D19CCFB863C5")

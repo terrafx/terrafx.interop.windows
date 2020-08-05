@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("F7836E16-3BE0-470B-86BB-160D0AECD7DE")]
+    [NativeTypeName("struct IWICMetadataWriter : IWICMetadataReader")]
     public unsafe partial struct IWICMetadataWriter
     {
         public void** lpVtbl;

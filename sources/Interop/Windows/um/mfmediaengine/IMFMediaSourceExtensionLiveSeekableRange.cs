@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("5D1ABFD6-450A-4D92-9EFC-D6B6CBC1F4DA")]
+    [NativeTypeName("struct IMFMediaSourceExtensionLiveSeekableRange : IUnknown")]
     public unsafe partial struct IMFMediaSourceExtensionLiveSeekableRange
     {
         public void** lpVtbl;

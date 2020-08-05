@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("BE8F4F4E-5B16-4D29-B350-7F6B5D9298AC")]
+    [NativeTypeName("struct IDMOVideoOutputOptimizations : IUnknown")]
     public unsafe partial struct IDMOVideoOutputOptimizations
     {
         public void** lpVtbl;

@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("35DBF59E-E3F9-45B0-81E7-FE75F4145DC9")]
+    [NativeTypeName("struct IDesktopWindowTargetInterop : IUnknown")]
     public unsafe partial struct IDesktopWindowTargetInterop
     {
         public void** lpVtbl;

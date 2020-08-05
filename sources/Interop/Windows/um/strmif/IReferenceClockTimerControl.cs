@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("EBEC459C-2ECA-4D42-A8AF-30DF557614B8")]
+    [NativeTypeName("struct IReferenceClockTimerControl : IUnknown")]
     public unsafe partial struct IReferenceClockTimerControl
     {
         public void** lpVtbl;

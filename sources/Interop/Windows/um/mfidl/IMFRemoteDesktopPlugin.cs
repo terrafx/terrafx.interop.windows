@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("1CDE6309-CAE0-4940-907E-C1EC9C3D1D4A")]
+    [NativeTypeName("struct IMFRemoteDesktopPlugin : IUnknown")]
     public unsafe partial struct IMFRemoteDesktopPlugin
     {
         public void** lpVtbl;

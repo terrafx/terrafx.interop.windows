@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("0EB1088C-4DCD-46F0-878F-39DAE86A51B7")]
+    [NativeTypeName("struct IVMRWindowlessControl : IUnknown")]
     public unsafe partial struct IVMRWindowlessControl
     {
         public void** lpVtbl;

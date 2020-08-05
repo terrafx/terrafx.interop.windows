@@ -8,11 +8,5 @@ um-mfcontentdecryptionmodule.h
 ../../../tests/Interop/Windows/um/mfcontentdecryptionmodule
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mfcontentdecryptionmodule.h
---with-attribute
-IMFContentDecryptionModuleSession=Guid("4E233EFD-1DD2-49E8-B577-D63EEE4C0D33")
-IMFContentDecryptionModuleSessionCallbacks=Guid("3F96EE40-AD81-4096-8470-59A4B770F89A")
-IMFContentDecryptionModule=Guid("87BE986C-10BE-4943-BF48-4B54CE1983A2")
-IMFContentDecryptionModuleAccess=Guid("A853D1F4-E2A0-4303-9EDC-F1A68EE43136")
-IMFContentDecryptionModuleFactory=Guid("7D5ABF16-4CBB-4E08-B977-9BA59049943E")
 --with-librarypath
 *=mf

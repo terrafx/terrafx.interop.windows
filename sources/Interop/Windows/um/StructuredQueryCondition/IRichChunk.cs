@@ -9,7 +9,8 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    [Guid("4FDEF69C-DBC9-454e-9910-B34F3C64B510")]
+    [Guid("4FDEF69C-DBC9-454E-9910-B34F3C64B510")]
+    [NativeTypeName("struct IRichChunk : IUnknown")]
     public unsafe partial struct IRichChunk
     {
         public void** lpVtbl;

@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("DB2F3ACA-2F86-11D1-8E04-00C04FB9989A")]
+    [NativeTypeName("struct IPipeByte : IUnknown")]
     public unsafe partial struct IPipeByte
     {
         public void** lpVtbl;

@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("A5CA5F7F-1847-4D87-9C5B-918509F7511D")]
+    [NativeTypeName("struct IMonikerProp : IUnknown")]
     public unsafe partial struct IMonikerProp
     {
         public void** lpVtbl;

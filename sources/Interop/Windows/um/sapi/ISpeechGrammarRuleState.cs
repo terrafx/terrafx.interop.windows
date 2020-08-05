@@ -11,6 +11,7 @@ using static TerraFX.Interop.SpeechGrammarWordType;
 namespace TerraFX.Interop
 {
     [Guid("D4286F2C-EE67-45AE-B928-28D695362EDA")]
+    [NativeTypeName("struct ISpeechGrammarRuleState : IDispatch")]
     public unsafe partial struct ISpeechGrammarRuleState
     {
         public void** lpVtbl;

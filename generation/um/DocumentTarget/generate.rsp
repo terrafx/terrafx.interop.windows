@@ -8,7 +8,3 @@ um-DocumentTarget.h
 ../../../tests/Interop/Windows/um/DocumentTarget
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/DocumentTarget.h
---with-attribute
-IPrintDocumentPackageTarget=Guid("1B8EFEC4-3019-4C27-964E-367202156906")
-IPrintDocumentPackageStatusEvent=Guid("ED90C8AD-5C34-4D05-A1EC-0E8A9B3AD7AF")
-IPrintDocumentPackageTargetFactory=Guid("D2959BF7-B31B-4A3D-9600-712EB1335BA4")

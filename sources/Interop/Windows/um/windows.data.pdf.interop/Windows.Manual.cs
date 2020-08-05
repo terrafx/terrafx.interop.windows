@@ -22,7 +22,5 @@ namespace TerraFX.Interop
 
             return p;
         }
-
-        public static readonly Guid IID_IPdfRendererNative = new Guid(0x7D9DCD91, 0xD277, 0x4947, 0x85, 0x27, 0x07, 0xA0, 0xDA, 0xED, 0xA9, 0x4A);
     }
 }

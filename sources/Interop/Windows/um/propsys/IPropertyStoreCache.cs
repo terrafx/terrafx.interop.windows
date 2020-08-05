@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("3017056D-9A91-4E90-937D-746C72ABBF4F")]
+    [NativeTypeName("struct IPropertyStoreCache : IPropertyStore")]
     public unsafe partial struct IPropertyStoreCache
     {
         public void** lpVtbl;

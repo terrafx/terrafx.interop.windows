@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("554E41E8-AE8E-4A8C-B7D2-5B4F274A30E4")]
+    [NativeTypeName("struct ID3D12VideoExtensionCommand : ID3D12Pageable")]
     public unsafe partial struct ID3D12VideoExtensionCommand
     {
         public void** lpVtbl;

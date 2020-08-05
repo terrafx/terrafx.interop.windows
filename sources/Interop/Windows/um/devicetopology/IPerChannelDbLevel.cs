@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("C2F8E001-F205-4BC9-99BC-C13B1E048CCB")]
+    [NativeTypeName("struct IPerChannelDbLevel : IUnknown")]
     public unsafe partial struct IPerChannelDbLevel
     {
         public void** lpVtbl;

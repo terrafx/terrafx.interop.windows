@@ -1088,6 +1088,197 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "jobapi2", "jobapi2", "{2811
 		generation\um\jobapi2\um-jobapi2.h = generation\um\jobapi2\um-jobapi2.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "winrt", "winrt", "{030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CoreWindow", "CoreWindow", "{45973C8A-D63B-4DB8-9077-619835EA502E}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\CoreWindow\generate.rsp = generation\winrt\CoreWindow\generate.rsp
+		generation\winrt\CoreWindow\header.txt = generation\winrt\CoreWindow\header.txt
+		generation\winrt\CoreWindow\winrt-CoreWindow.h = generation\winrt\CoreWindow\winrt-CoreWindow.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "hstring", "hstring", "{00939372-1E68-4990-B4ED-F7C02486F2DB}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\hstring\generate.rsp = generation\winrt\hstring\generate.rsp
+		generation\winrt\hstring\header.txt = generation\winrt\hstring\header.txt
+		generation\winrt\hstring\winrt-hstring.h = generation\winrt\hstring\winrt-hstring.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "inspectable", "inspectable", "{EE11AAC4-C3E3-44AC-B229-56B7E40E263C}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\inspectable\generate.rsp = generation\winrt\inspectable\generate.rsp
+		generation\winrt\inspectable\header.txt = generation\winrt\inspectable\header.txt
+		generation\winrt\inspectable\winrt-inspectable.h = generation\winrt\inspectable\winrt-inspectable.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MemoryBuffer", "MemoryBuffer", "{9081B07F-E3A7-45F3-AAD6-35F133551C5A}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\MemoryBuffer\generate.rsp = generation\winrt\MemoryBuffer\generate.rsp
+		generation\winrt\MemoryBuffer\header.txt = generation\winrt\MemoryBuffer\header.txt
+		generation\winrt\MemoryBuffer\winrt-MemoryBuffer.h = generation\winrt\MemoryBuffer\winrt-MemoryBuffer.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "robuffer", "robuffer", "{193F805E-BBF6-4005-931E-A81CE7BF0BF9}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\robuffer\generate.rsp = generation\winrt\robuffer\generate.rsp
+		generation\winrt\robuffer\header.txt = generation\winrt\robuffer\header.txt
+		generation\winrt\robuffer\winrt-robuffer.h = generation\winrt\robuffer\winrt-robuffer.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.graphics.effects.interop", "windows.graphics.effects.interop", "{57FFC7C2-B25A-415D-B320-656D0D7E49E7}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\windows.graphics.effects.interop\generate.rsp = generation\winrt\windows.graphics.effects.interop\generate.rsp
+		generation\winrt\windows.graphics.effects.interop\header.txt = generation\winrt\windows.graphics.effects.interop\header.txt
+		generation\winrt\windows.graphics.effects.interop\winrt-windows.graphics.effects.interop.h = generation\winrt\windows.graphics.effects.interop\winrt-windows.graphics.effects.interop.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.ui.composition.interop", "windows.ui.composition.interop", "{14A03FCE-43A7-4BFD-82C4-DD67945B416C}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\windows.ui.composition.interop\generate.rsp = generation\winrt\windows.ui.composition.interop\generate.rsp
+		generation\winrt\windows.ui.composition.interop\header.txt = generation\winrt\windows.ui.composition.interop\header.txt
+		generation\winrt\windows.ui.composition.interop\winrt-windows.ui.composition.interop.h = generation\winrt\windows.ui.composition.interop\winrt-windows.ui.composition.interop.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "winstring", "winstring", "{174306D1-D943-4D1A-8A32-D18AA35EF4C8}"
+	ProjectSection(SolutionItems) = preProject
+		generation\winrt\winstring\generate.rsp = generation\winrt\winstring\generate.rsp
+		generation\winrt\winstring\header.txt = generation\winrt\winstring\header.txt
+		generation\winrt\winstring\winrt-winstring.h = generation\winrt\winstring\winrt-winstring.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.graphics.directx.direct3d11.interop", "windows.graphics.directx.direct3d11.interop", "{EBB143C1-C32F-4DAE-A223-0C2018C7987B}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\windows.graphics.directx.direct3d11.interop\generate.rsp = generation\um\windows.graphics.directx.direct3d11.interop\generate.rsp
+		generation\um\windows.graphics.directx.direct3d11.interop\header.txt = generation\um\windows.graphics.directx.direct3d11.interop\header.txt
+		generation\um\windows.graphics.directx.direct3d11.interop\um-windows.graphics.directx.direct3d11.interop.h = generation\um\windows.graphics.directx.direct3d11.interop\um-windows.graphics.directx.direct3d11.interop.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.data.pdf.interop", "windows.data.pdf.interop", "{0F1B04E9-D94F-408A-9C98-DBD54AE7C82A}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\windows.data.pdf.interop\generate.rsp = generation\um\windows.data.pdf.interop\generate.rsp
+		generation\um\windows.data.pdf.interop\header.txt = generation\um\windows.data.pdf.interop\header.txt
+		generation\um\windows.data.pdf.interop\um-windows.data.pdf.interop.h = generation\um\windows.data.pdf.interop\um-windows.data.pdf.interop.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.graphics.imaging.interop", "windows.graphics.imaging.interop", "{63BA5F93-AAC3-4C25-9F02-DAB741FA6B3A}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\windows.graphics.imaging.interop\generate.rsp = generation\um\windows.graphics.imaging.interop\generate.rsp
+		generation\um\windows.graphics.imaging.interop\header.txt = generation\um\windows.graphics.imaging.interop\header.txt
+		generation\um\windows.graphics.imaging.interop\um-windows.graphics.imaging.interop.h = generation\um\windows.graphics.imaging.interop\um-windows.graphics.imaging.interop.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.media.core.interop", "windows.media.core.interop", "{A1246EEC-FB79-4390-89FC-E49E2D165919}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\windows.media.core.interop\generate.rsp = generation\um\windows.media.core.interop\generate.rsp
+		generation\um\windows.media.core.interop\header.txt = generation\um\windows.media.core.interop\header.txt
+		generation\um\windows.media.core.interop\um-windows.media.core.interop.h = generation\um\windows.media.core.interop\um-windows.media.core.interop.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.ui.xaml.media.dxinterop", "windows.ui.xaml.media.dxinterop", "{BB41E050-56A6-4E22-BE14-5FF092DDAF87}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\windows.ui.xaml.media.dxinterop\generate.rsp = generation\um\windows.ui.xaml.media.dxinterop\generate.rsp
+		generation\um\windows.ui.xaml.media.dxinterop\header.txt = generation\um\windows.ui.xaml.media.dxinterop\header.txt
+		generation\um\windows.ui.xaml.media.dxinterop\um-windows.ui.xaml.media.dxinterop.h = generation\um\windows.ui.xaml.media.dxinterop\um-windows.ui.xaml.media.dxinterop.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Audioclient", "Audioclient", "{9B76042F-829E-4569-9A7E-E326E18C5774}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\Audioclient\generate.rsp = generation\um\Audioclient\generate.rsp
+		generation\um\Audioclient\header.txt = generation\um\Audioclient\header.txt
+		generation\um\Audioclient\um-Audioclient.h = generation\um\Audioclient\um-Audioclient.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "audiopolicy", "audiopolicy", "{4F854DCB-18BF-46EC-98BB-192216F7E67E}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\audiopolicy\generate.rsp = generation\um\audiopolicy\generate.rsp
+		generation\um\audiopolicy\header.txt = generation\um\audiopolicy\header.txt
+		generation\um\audiopolicy\um-audiopolicy.h = generation\um\audiopolicy\um-audiopolicy.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "consoleapi", "consoleapi", "{FB8209E1-C765-40FB-A8CF-4A1BB4A60DF4}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\consoleapi\generate.rsp = generation\um\consoleapi\generate.rsp
+		generation\um\consoleapi\header.txt = generation\um\consoleapi\header.txt
+		generation\um\consoleapi\um-consoleapi.h = generation\um\consoleapi\um-consoleapi.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "consoleapi2", "consoleapi2", "{C85A7CE1-25ED-4148-B03E-A5776C077A96}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\consoleapi2\generate.rsp = generation\um\consoleapi2\generate.rsp
+		generation\um\consoleapi2\header.txt = generation\um\consoleapi2\header.txt
+		generation\um\consoleapi2\um-consoleapi2.h = generation\um\consoleapi2\um-consoleapi2.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "consoleapi3", "consoleapi3", "{B6BE2EE4-5D90-4805-96A5-90E28E9A9F30}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\consoleapi3\generate.rsp = generation\um\consoleapi3\generate.rsp
+		generation\um\consoleapi3\header.txt = generation\um\consoleapi3\header.txt
+		generation\um\consoleapi3\um-consoleapi3.h = generation\um\consoleapi3\um-consoleapi3.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d2d1helper", "d2d1helper", "{0455F42E-703C-449F-988D-05C1736A3B6E}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\d2d1helper\generate.rsp = generation\um\d2d1helper\generate.rsp
+		generation\um\d2d1helper\header.txt = generation\um\d2d1helper\header.txt
+		generation\um\d2d1helper\um-d2d1helper.h = generation\um\d2d1helper\um-d2d1helper.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DXProgrammableCapture", "DXProgrammableCapture", "{1D8C9103-83D5-43FB-B149-425B58DC3DC0}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\DXProgrammableCapture\generate.rsp = generation\um\DXProgrammableCapture\generate.rsp
+		generation\um\DXProgrammableCapture\header.txt = generation\um\DXProgrammableCapture\header.txt
+		generation\um\DXProgrammableCapture\um-dxprogrammablecapture.h = generation\um\DXProgrammableCapture\um-dxprogrammablecapture.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "endpointvolume", "endpointvolume", "{4DD093DF-B91C-45A5-9175-3E5528E871DA}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\endpointvolume\generate.rsp = generation\um\endpointvolume\generate.rsp
+		generation\um\endpointvolume\header.txt = generation\um\endpointvolume\header.txt
+		generation\um\endpointvolume\um-endpointvolume.h = generation\um\endpointvolume\um-endpointvolume.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mmdeviceapi", "mmdeviceapi", "{1DB9058F-9333-4C9A-AFBB-07256BEE3A88}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\mmdeviceapi\generate.rsp = generation\um\mmdeviceapi\generate.rsp
+		generation\um\mmdeviceapi\header.txt = generation\um\mmdeviceapi\header.txt
+		generation\um\mmdeviceapi\um-mmdeviceapi.h = generation\um\mmdeviceapi\um-mmdeviceapi.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "processenv", "processenv", "{F7493C31-0CFF-4170-B578-1D0872576CAD}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\processenv\generate.rsp = generation\um\processenv\generate.rsp
+		generation\um\processenv\header.txt = generation\um\processenv\header.txt
+		generation\um\processenv\um-processenv.h = generation\um\processenv\um-processenv.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SpatialAudioHrtf", "SpatialAudioHrtf", "{EDE53C01-0508-4711-ADBC-72E38DF577FA}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\SpatialAudioHrtf\generate.rsp = generation\um\SpatialAudioHrtf\generate.rsp
+		generation\um\SpatialAudioHrtf\header.txt = generation\um\SpatialAudioHrtf\header.txt
+		generation\um\SpatialAudioHrtf\um-SpatialAudioHrtf.h = generation\um\SpatialAudioHrtf\um-SpatialAudioHrtf.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wincontypes", "wincontypes", "{62072728-90CD-44EA-9A0E-7E35D1275105}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\wincontypes\generate.rsp = generation\um\wincontypes\generate.rsp
+		generation\um\wincontypes\header.txt = generation\um\wincontypes\header.txt
+		generation\um\wincontypes\um-wincontypes.h = generation\um\wincontypes\um-wincontypes.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wslapi", "wslapi", "{F725268B-0460-4AA3-B4DB-4117B8F8D0D4}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\wslapi\generate.rsp = generation\um\wslapi\generate.rsp
+		generation\um\wslapi\header.txt = generation\um\wslapi\header.txt
+		generation\um\wslapi\um-wslapi.h = generation\um\wslapi\um-wslapi.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "devicetopology", "devicetopology", "{20CF1C32-1F5E-43B3-AE1F-22A826E5BB9C}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\devicetopology\generate.rsp = generation\um\devicetopology\generate.rsp
+		generation\um\devicetopology\header.txt = generation\um\devicetopology\header.txt
+		generation\um\devicetopology\um-devicetopology.h = generation\um\devicetopology\um-devicetopology.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1264,6 +1455,34 @@ Global
 		{FCCFAB49-A9AD-453C-85C0-61A9D4E57CEE} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{DEF9E803-525D-418D-9555-3B77E2F709E6} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{28118A2A-5A04-472D-A003-A4F2E00E2727} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{030D5AC2-A56E-4C79-AD45-5BD6093C8D9A} = {D9638FEE-50A4-44FF-B1F6-72E59548490B}
+		{45973C8A-D63B-4DB8-9077-619835EA502E} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{00939372-1E68-4990-B4ED-F7C02486F2DB} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{EE11AAC4-C3E3-44AC-B229-56B7E40E263C} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{9081B07F-E3A7-45F3-AAD6-35F133551C5A} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{193F805E-BBF6-4005-931E-A81CE7BF0BF9} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{57FFC7C2-B25A-415D-B320-656D0D7E49E7} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{14A03FCE-43A7-4BFD-82C4-DD67945B416C} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{174306D1-D943-4D1A-8A32-D18AA35EF4C8} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{EBB143C1-C32F-4DAE-A223-0C2018C7987B} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{0F1B04E9-D94F-408A-9C98-DBD54AE7C82A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{63BA5F93-AAC3-4C25-9F02-DAB741FA6B3A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{A1246EEC-FB79-4390-89FC-E49E2D165919} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{BB41E050-56A6-4E22-BE14-5FF092DDAF87} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{9B76042F-829E-4569-9A7E-E326E18C5774} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{4F854DCB-18BF-46EC-98BB-192216F7E67E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{FB8209E1-C765-40FB-A8CF-4A1BB4A60DF4} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{C85A7CE1-25ED-4148-B03E-A5776C077A96} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{B6BE2EE4-5D90-4805-96A5-90E28E9A9F30} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{0455F42E-703C-449F-988D-05C1736A3B6E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{1D8C9103-83D5-43FB-B149-425B58DC3DC0} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{4DD093DF-B91C-45A5-9175-3E5528E871DA} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{1DB9058F-9333-4C9A-AFBB-07256BEE3A88} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{F7493C31-0CFF-4170-B578-1D0872576CAD} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{EDE53C01-0508-4711-ADBC-72E38DF577FA} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{62072728-90CD-44EA-9A0E-7E35D1275105} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{F725268B-0460-4AA3-B4DB-4117B8F8D0D4} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{20CF1C32-1F5E-43B3-AE1F-22A826E5BB9C} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}

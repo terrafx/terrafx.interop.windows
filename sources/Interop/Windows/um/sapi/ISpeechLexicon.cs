@@ -11,6 +11,7 @@ using static TerraFX.Interop.SpeechPartOfSpeech;
 namespace TerraFX.Interop
 {
     [Guid("3DA7627A-C7AE-4B23-8708-638C50362C25")]
+    [NativeTypeName("struct ISpeechLexicon : IDispatch")]
     public unsafe partial struct ISpeechLexicon
     {
         public void** lpVtbl;

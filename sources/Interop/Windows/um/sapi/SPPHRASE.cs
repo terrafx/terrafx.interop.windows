@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("struct SPPHRASE : SPPHRASE_53")]
     public partial struct SPPHRASE
     {
         public SPPHRASE_53 __AnonymousBase_sapi_L5576_C34;

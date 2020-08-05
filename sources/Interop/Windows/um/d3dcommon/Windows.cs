@@ -86,5 +86,7 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define D3D_COMPONENT_MASK_W 8")]
         public const int D3D_COMPONENT_MASK_W = 8;
+
+        public static readonly Guid IID_ID3DDestructionNotifier = new Guid(0xA06EB39A, 0x50DA, 0x425B, 0x8C, 0x31, 0x4E, 0xEC, 0xD6, 0xC2, 0x70, 0xF3);
     }
 }
