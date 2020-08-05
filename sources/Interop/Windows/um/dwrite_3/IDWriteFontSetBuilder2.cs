@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("EE5BA612-B131-463C-8F4F-3189B9401E45")]
+    [NativeTypeName("struct IDWriteFontSetBuilder2 : IDWriteFontSetBuilder1")]
     public unsafe partial struct IDWriteFontSetBuilder2
     {
         public void** lpVtbl;

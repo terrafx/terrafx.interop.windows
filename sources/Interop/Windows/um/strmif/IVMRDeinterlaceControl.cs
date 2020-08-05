@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("BB057577-0DB8-4E6A-87A7-1A8C9A505A0F")]
+    [NativeTypeName("struct IVMRDeinterlaceControl : IUnknown")]
     public unsafe partial struct IVMRDeinterlaceControl
     {
         public void** lpVtbl;

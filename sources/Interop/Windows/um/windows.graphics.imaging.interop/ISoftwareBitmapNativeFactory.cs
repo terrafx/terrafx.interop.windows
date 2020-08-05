@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("C3C181EC-2914-4791-AF02-02D224A10B43")]
+    [NativeTypeName("struct ISoftwareBitmapNativeFactory : IInspectable")]
     public unsafe partial struct ISoftwareBitmapNativeFactory
     {
         public void** lpVtbl;

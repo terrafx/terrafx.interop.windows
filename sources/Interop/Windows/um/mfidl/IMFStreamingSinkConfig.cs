@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("9DB7AA41-3CC5-40D4-8509-555804AD34CC")]
+    [NativeTypeName("struct IMFStreamingSinkConfig : IUnknown")]
     public unsafe partial struct IMFStreamingSinkConfig
     {
         public void** lpVtbl;

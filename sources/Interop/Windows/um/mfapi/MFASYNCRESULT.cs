@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("struct tagMFASYNCRESULT : IMFAsyncResult")]
     public unsafe partial struct MFASYNCRESULT
     {
         public void** lpVtbl;

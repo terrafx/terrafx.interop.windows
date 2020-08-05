@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("AADA05A8-5A4E-4729-AF0B-CEA27AED51E2")]
+    [NativeTypeName("struct IVMRSurfaceAllocatorNotify : IUnknown")]
     public unsafe partial struct IVMRSurfaceAllocatorNotify
     {
         public void** lpVtbl;

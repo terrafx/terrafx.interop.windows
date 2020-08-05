@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("EDC17559-DD5D-4846-8EEF-8BECBA5A4ABF")]
+    [NativeTypeName("struct IInternetZoneManagerEx2 : IInternetZoneManagerEx")]
     public unsafe partial struct IInternetZoneManagerEx2
     {
         public void** lpVtbl;

@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("3EFAA427-272F-11D2-836F-0000F87A7782")]
+    [NativeTypeName("struct XMLDOMDocumentEvents : IDispatch")]
     public unsafe partial struct XMLDOMDocumentEvents
     {
         public void** lpVtbl;

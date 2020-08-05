@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("947990DE-CC28-11D2-A0F7-00805F858FB1")]
+    [NativeTypeName("struct IDummyHICONIncluder : IUnknown")]
     public unsafe partial struct IDummyHICONIncluder
     {
         public void** lpVtbl;

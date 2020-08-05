@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("F928B7B8-2221-40C1-B72E-7E82F1974D1A")]
+    [NativeTypeName("struct IWICPlanarBitmapFrameEncode : IUnknown")]
     public unsafe partial struct IWICPlanarBitmapFrameEncode
     {
         public void** lpVtbl;

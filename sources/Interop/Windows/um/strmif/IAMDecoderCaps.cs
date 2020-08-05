@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("C0DFF467-D499-4986-972B-E1D9090FA941")]
+    [NativeTypeName("struct IAMDecoderCaps : IUnknown")]
     public unsafe partial struct IAMDecoderCaps
     {
         public void** lpVtbl;

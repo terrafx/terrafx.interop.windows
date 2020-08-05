@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("79EAC9C9-BAF9-11CE-8C82-00AA004BA90B")]
+    [NativeTypeName("struct IPersistMoniker : IUnknown")]
     public unsafe partial struct IPersistMoniker
     {
         public void** lpVtbl;

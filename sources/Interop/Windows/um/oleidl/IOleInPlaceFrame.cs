@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("00000116-0000-0000-C000-000000000046")]
+    [NativeTypeName("struct IOleInPlaceFrame : IOleInPlaceUIWindow")]
     public unsafe partial struct IOleInPlaceFrame
     {
         public void** lpVtbl;

@@ -32,7 +32,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("DWORD")]
         public static uint DeviceDsmGetInputLength([NativeTypeName("PDEVICE_DSM_DEFINITION")] DEVICE_DSM_DEFINITION* Definition, [NativeTypeName("DWORD")] uint ParameterBlockLength, [NativeTypeName("DWORD")] uint NumberOfDataSetRanges)
         {
-            uint Bytes = 28;
+            uint Bytes = unchecked(28);
 
             if (ParameterBlockLength != 0)
             {
@@ -52,7 +52,7 @@ namespace TerraFX.Interop
         [return: NativeTypeName("DWORD")]
         public static uint DeviceDsmGetNumberOfDataSetRanges([NativeTypeName("PDEVICE_DSM_DEFINITION")] DEVICE_DSM_DEFINITION* Definition, [NativeTypeName("DWORD")] uint InputLength, [NativeTypeName("DWORD")] uint ParameterBlockLength)
         {
-            uint Bytes = 28;
+            uint Bytes = unchecked(28);
 
             if (ParameterBlockLength != 0)
             {
@@ -67,7 +67,7 @@ namespace TerraFX.Interop
 
         public static void DeviceDsmInitializeInput([NativeTypeName("PDEVICE_DSM_DEFINITION")] DEVICE_DSM_DEFINITION* Definition, [NativeTypeName("PDEVICE_DSM_INPUT")] DEVICE_MANAGE_DATA_SET_ATTRIBUTES* Input, [NativeTypeName("DWORD")] uint InputLength, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PVOID")] void* Parameters, [NativeTypeName("DWORD")] uint ParameterBlockLength)
         {
-            uint Bytes = 28;
+            uint Bytes = unchecked(28);
 
             Unsafe.InitBlockUnaligned((Input), 0, (InputLength));
             Input->Size = Bytes;
@@ -122,7 +122,7 @@ namespace TerraFX.Interop
                 Bytes = Input->DataSetRangesOffset + Input->DataSetRangesLength;
             }
 
-            if ((InputLength - Bytes) < (uint)(sizeof(DEVICE_DATA_SET_RANGE)))
+            if ((InputLength - Bytes) < sizeof(DEVICE_DATA_SET_RANGE))
             {
                 goto Cleanup;
             }
@@ -275,7 +275,7 @@ namespace TerraFX.Interop
 
         public static void DeviceDsmInitializeOutput([NativeTypeName("PDEVICE_DSM_DEFINITION")] DEVICE_DSM_DEFINITION* Definition, [NativeTypeName("PDEVICE_DSM_OUTPUT")] DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT* Output, [NativeTypeName("DWORD")] uint OutputLength, [NativeTypeName("DWORD")] uint Flags)
         {
-            uint Bytes = 36;
+            uint Bytes = unchecked(36);
 
             Unsafe.InitBlockUnaligned((Output), 0, (OutputLength));
             Output->Size = Bytes;
@@ -989,10 +989,10 @@ namespace TerraFX.Interop
         public const int STORAGE_ADAPTER_SERIAL_NUMBER_V1_MAX_LENGTH = (128);
 
         [NativeTypeName("#define STORAGE_ADAPTER_SERIAL_NUMBER_V1_VERSION (sizeof(STORAGE_ADAPTER_SERIAL_NUMBER))")]
-        public const uint STORAGE_ADAPTER_SERIAL_NUMBER_V1_VERSION = (264);
+        public const uint STORAGE_ADAPTER_SERIAL_NUMBER_V1_VERSION = unchecked(264);
 
         [NativeTypeName("#define STORAGE_ADAPTER_SERIAL_NUMBER_V1_SIZE (sizeof(STORAGE_ADAPTER_SERIAL_NUMBER))")]
-        public const uint STORAGE_ADAPTER_SERIAL_NUMBER_V1_SIZE = (264);
+        public const uint STORAGE_ADAPTER_SERIAL_NUMBER_V1_SIZE = unchecked(264);
 
         [NativeTypeName("#define STORAGE_DEVICE_NUMA_NODE_UNKNOWN MAXDWORD")]
         public const uint STORAGE_DEVICE_NUMA_NODE_UNKNOWN = 0xffffffff;
@@ -1133,16 +1133,16 @@ namespace TerraFX.Interop
         public const int DEVICE_DATA_SET_LBP_STATE_PARAMETERS_VERSION_V1 = 1;
 
         [NativeTypeName("#define DEVICE_DSM_ALLOCATION_OUTPUT_V1 (sizeof(DEVICE_DSM_ALLOCATION_OUTPUT))")]
-        public const uint DEVICE_DSM_ALLOCATION_OUTPUT_V1 = (32);
+        public const uint DEVICE_DSM_ALLOCATION_OUTPUT_V1 = unchecked(32);
 
         [NativeTypeName("#define DEVICE_DATA_SET_LB_PROVISIONING_STATE_VERSION_V1 DEVICE_DSM_ALLOCATION_OUTPUT_V1")]
-        public const uint DEVICE_DATA_SET_LB_PROVISIONING_STATE_VERSION_V1 = (32);
+        public const uint DEVICE_DATA_SET_LB_PROVISIONING_STATE_VERSION_V1 = unchecked(32);
 
         [NativeTypeName("#define DEVICE_DSM_ALLOCATION_OUTPUT_V2 (sizeof(DEVICE_DSM_ALLOCATION_OUTPUT2))")]
-        public const uint DEVICE_DSM_ALLOCATION_OUTPUT_V2 = (40);
+        public const uint DEVICE_DSM_ALLOCATION_OUTPUT_V2 = unchecked(40);
 
         [NativeTypeName("#define DEVICE_DATA_SET_LB_PROVISIONING_STATE_VERSION_V2 DEVICE_DSM_ALLOCATION_OUTPUT_V2")]
-        public const uint DEVICE_DATA_SET_LB_PROVISIONING_STATE_VERSION_V2 = (40);
+        public const uint DEVICE_DATA_SET_LB_PROVISIONING_STATE_VERSION_V2 = unchecked(40);
 
         [NativeTypeName("#define DEVICE_DSM_FLAG_REPAIR_INPUT_TOPOLOGY_ID_PRESENT 0x40000000")]
         public const int DEVICE_DSM_FLAG_REPAIR_INPUT_TOPOLOGY_ID_PRESENT = 0x40000000;
@@ -1268,7 +1268,7 @@ namespace TerraFX.Interop
         public const int READ_COPY_NUMBER_BYPASS_CACHE_FLAG = 0x00000100;
 
         [NativeTypeName("#define STORAGE_COUNTERS_VERSION_V1 sizeof(STORAGE_COUNTERS)")]
-        public const uint STORAGE_COUNTERS_VERSION_V1 = 32;
+        public const uint STORAGE_COUNTERS_VERSION_V1 = unchecked(32);
 
         [NativeTypeName("#define STORAGE_HW_FIRMWARE_REQUEST_FLAG_CONTROLLER 0x00000001")]
         public const int STORAGE_HW_FIRMWARE_REQUEST_FLAG_CONTROLLER = 0x00000001;
@@ -1679,10 +1679,10 @@ namespace TerraFX.Interop
         public const int HIST_NO_OF_BUCKETS = 24;
 
         [NativeTypeName("#define HISTOGRAM_BUCKET_SIZE sizeof(HISTOGRAM_BUCKET)")]
-        public const uint HISTOGRAM_BUCKET_SIZE = 8;
+        public const uint HISTOGRAM_BUCKET_SIZE = unchecked(8);
 
         [NativeTypeName("#define DISK_HISTOGRAM_SIZE sizeof(DISK_HISTOGRAM)")]
-        public const uint DISK_HISTOGRAM_SIZE = 72;
+        public const uint DISK_HISTOGRAM_SIZE = unchecked(72);
 
         [NativeTypeName("#define DISK_LOGGING_START 0")]
         public const int DISK_LOGGING_START = 0;
@@ -3428,7 +3428,7 @@ namespace TerraFX.Interop
         public const int CSV_MGMTLOCK_CHECK_VOLUME_REDIRECTED = 0x00000001;
 
         [NativeTypeName("#define CSV_NAMESPACE_INFO_V1 (sizeof(CSV_NAMESPACE_INFO))")]
-        public const uint CSV_NAMESPACE_INFO_V1 = (24);
+        public const uint CSV_NAMESPACE_INFO_V1 = unchecked(24);
 
         [NativeTypeName("#define CSV_INVALID_DEVICE_NUMBER 0xFFFFFFFF")]
         public const uint CSV_INVALID_DEVICE_NUMBER = 0xFFFFFFFF;
@@ -3602,7 +3602,7 @@ namespace TerraFX.Interop
         public const int QUERY_STORAGE_CLASSES_FLAGS_NO_DEFRAG_VOLUME = 0x20000000;
 
         [NativeTypeName("#define FSCTL_QUERY_STORAGE_CLASSES_OUTPUT_VERSION sizeof(FSCTL_QUERY_STORAGE_CLASSES_OUTPUT)")]
-        public const uint FSCTL_QUERY_STORAGE_CLASSES_OUTPUT_VERSION = 1088;
+        public const uint FSCTL_QUERY_STORAGE_CLASSES_OUTPUT_VERSION = unchecked(1088);
 
         [NativeTypeName("#define QUERY_FILE_LAYOUT_REPARSE_DATA_INVALID (0x0001)")]
         public const int QUERY_FILE_LAYOUT_REPARSE_DATA_INVALID = (0x0001);
@@ -3611,10 +3611,10 @@ namespace TerraFX.Interop
         public const int QUERY_FILE_LAYOUT_REPARSE_TAG_INVALID = (0x0002);
 
         [NativeTypeName("#define FSCTL_QUERY_REGION_INFO_INPUT_VERSION sizeof(FSCTL_QUERY_REGION_INFO_INPUT)")]
-        public const uint FSCTL_QUERY_REGION_INFO_INPUT_VERSION = 32;
+        public const uint FSCTL_QUERY_REGION_INFO_INPUT_VERSION = unchecked(32);
 
         [NativeTypeName("#define FSCTL_QUERY_REGION_INFO_OUTPUT_VERSION sizeof(FSCTL_QUERY_REGION_INFO_OUTPUT)")]
-        public const uint FSCTL_QUERY_REGION_INFO_OUTPUT_VERSION = 64;
+        public const uint FSCTL_QUERY_REGION_INFO_OUTPUT_VERSION = unchecked(64);
 
         [NativeTypeName("#define DUPLICATE_EXTENTS_DATA_EX_SOURCE_ATOMIC 0x00000001")]
         public const int DUPLICATE_EXTENTS_DATA_EX_SOURCE_ATOMIC = 0x00000001;
@@ -3754,7 +3754,7 @@ namespace TerraFX.Interop
         [NativeTypeName("#define IOCTL_VOLUME_GET_GPT_ATTRIBUTES CTL_CODE(IOCTL_VOLUME_BASE, 14, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
         public const int IOCTL_VOLUME_GET_GPT_ATTRIBUTES = (((0x00000056) << 16) | ((0) << 14) | ((14) << 2) | (0));
 
-        [NativeTypeName("#define IRP_EXT_TRACK_OFFSET_HEADER_VALIDATION_VALUE \'TO\'")]
+        [NativeTypeName("#define IRP_EXT_TRACK_OFFSET_HEADER_VALIDATION_VALUE 'TO'")]
         public const int IRP_EXT_TRACK_OFFSET_HEADER_VALIDATION_VALUE = 0x544F;
 
         [NativeTypeName("#define EFS_TRACKED_OFFSET_HEADER_FLAG 0x0001")]

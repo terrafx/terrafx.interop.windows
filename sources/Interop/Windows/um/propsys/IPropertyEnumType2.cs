@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("9B6E051C-5DDD-4321-9070-FE2ACB55E794")]
+    [NativeTypeName("struct IPropertyEnumType2 : IPropertyEnumType")]
     public unsafe partial struct IPropertyEnumType2
     {
         public void** lpVtbl;

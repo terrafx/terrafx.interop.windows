@@ -176,7 +176,7 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static readonly Guid MFT_ENUM_TRANSCODE_ONLY_ATTRIBUTE = new Guid(0x111ea8cd, 0xb62a, 0x4bdb, 0x89, 0xf6, 0x67, 0xff, 0xcd, 0xc2, 0x45, 0x8b);
 
-        [DllImport("mfplat", EntryPoint = "MFCreateTransformActivate", ExactSpelling = true)]
+        [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MFCreateTransformActivate([NativeTypeName("IMFActivate **")] IMFActivate** ppActivate);
 
@@ -197,5 +197,11 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define MFT_OUTPUT_BOUND_UPPER_UNBOUNDED MAXLONGLONG")]
         public const long MFT_OUTPUT_BOUND_UPPER_UNBOUNDED = (0x7fffffffffffffff);
+
+        public static readonly Guid IID_IMFTransform = new Guid(0xBF94C121, 0x5B05, 0x4E6F, 0x80, 0x00, 0xBA, 0x59, 0x89, 0x61, 0x41, 0x4D);
+
+        public static readonly Guid IID_IMFDeviceTransform = new Guid(0xD818FBD8, 0xFC46, 0x42F2, 0x87, 0xAC, 0x1E, 0xA2, 0xD1, 0xF9, 0xBF, 0x32);
+
+        public static readonly Guid IID_IMFDeviceTransformCallback = new Guid(0x6D5CB646, 0x29EC, 0x41FB, 0x81, 0x79, 0x8C, 0x4C, 0x6D, 0x75, 0x08, 0x11);
     }
 }

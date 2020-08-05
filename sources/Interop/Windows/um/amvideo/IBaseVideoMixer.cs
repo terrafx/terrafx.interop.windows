@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("struct IBaseVideoMixer : IUnknown")]
     public unsafe partial struct IBaseVideoMixer
     {
         public void** lpVtbl;

@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("EDE80B5C-BAD6-4623-B537-65586C9F8DFD")]
+    [NativeTypeName("struct IVMRAspectRatioControl : IUnknown")]
     public unsafe partial struct IVMRAspectRatioControl
     {
         public void** lpVtbl;

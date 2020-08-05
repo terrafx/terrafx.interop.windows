@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("B91EBFEE-CA03-4AF4-8A82-A31752F4A0FC")]
+    [NativeTypeName("struct IMFExtendedCameraController : IUnknown")]
     public unsafe partial struct IMFExtendedCameraController
     {
         public void** lpVtbl;

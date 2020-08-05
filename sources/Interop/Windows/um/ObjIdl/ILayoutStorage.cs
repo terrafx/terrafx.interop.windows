@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("0E6D4D90-6738-11CF-9608-00AA00680DB4")]
+    [NativeTypeName("struct ILayoutStorage : IUnknown")]
     public unsafe partial struct ILayoutStorage
     {
         public void** lpVtbl;

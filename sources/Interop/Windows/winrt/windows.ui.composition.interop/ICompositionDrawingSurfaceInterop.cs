@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("FD04E6E3-FE0C-4C3C-AB19-A07601A576EE")]
+    [NativeTypeName("struct ICompositionDrawingSurfaceInterop : IUnknown")]
     public unsafe partial struct ICompositionDrawingSurfaceInterop
     {
         public void** lpVtbl;

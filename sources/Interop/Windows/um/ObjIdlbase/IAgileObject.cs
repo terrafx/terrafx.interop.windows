@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("94EA2B94-E9CC-49E0-C0FF-EE64CA8F5B90")]
+    [NativeTypeName("struct IAgileObject : IUnknown")]
     public unsafe partial struct IAgileObject
     {
         public void** lpVtbl;

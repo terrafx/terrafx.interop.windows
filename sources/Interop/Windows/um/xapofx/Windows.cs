@@ -10,7 +10,7 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("Windows.Media.Audio", EntryPoint = "CreateFX", ExactSpelling = true)]
+        [DllImport("Windows.Media.Audio", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CreateFX([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("IUnknown **")] IUnknown** pEffect, [NativeTypeName("const void *")] void* pInitDat = null, [NativeTypeName("UINT32")] uint InitDataByteSize = 0);
 
@@ -124,5 +124,13 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define FXECHO_DEFAULT_DELAY 500.0f")]
         public const float FXECHO_DEFAULT_DELAY = 500.0f;
+
+        public static readonly Guid CLSID_FXEQ = new Guid(0xF5E01117, 0xD6C4, 0x485A, 0xA3, 0xF5, 0x69, 0x51, 0x96, 0xF3, 0xDB, 0xFA);
+
+        public static readonly Guid CLSID_FXMasteringLimiter = new Guid(0xC4137916, 0x2BE1, 0x46FD, 0x85, 0x99, 0x44, 0x15, 0x36, 0xF4, 0x98, 0x56);
+
+        public static readonly Guid CLSID_FXReverb = new Guid(0x7D9ACA56, 0xCB68, 0x4807, 0xB6, 0x32, 0xB1, 0x37, 0x35, 0x2E, 0x85, 0x96);
+
+        public static readonly Guid CLSID_FXEcho = new Guid(0x5039D740, 0xF736, 0x449A, 0x84, 0xD3, 0xA5, 0x62, 0x02, 0x55, 0x7B, 0x87);
     }
 }

@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("00000032-0000-0000-C000-000000000046")]
+    [NativeTypeName("struct ISynchronizeEvent : ISynchronizeHandle")]
     public unsafe partial struct ISynchronizeEvent
     {
         public void** lpVtbl;

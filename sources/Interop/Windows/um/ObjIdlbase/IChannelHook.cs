@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("1008C4A0-7613-11CF-9AF1-0020AF6E72F4")]
+    [NativeTypeName("struct IChannelHook : IUnknown")]
     public unsafe partial struct IChannelHook
     {
         public void** lpVtbl;

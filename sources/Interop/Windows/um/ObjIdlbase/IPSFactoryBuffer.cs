@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("D5F569D0-593B-101A-B569-08002B2DBF7A")]
+    [NativeTypeName("struct IPSFactoryBuffer : IUnknown")]
     public unsafe partial struct IPSFactoryBuffer
     {
         public void** lpVtbl;

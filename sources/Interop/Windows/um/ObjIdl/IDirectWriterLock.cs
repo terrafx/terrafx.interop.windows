@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("0E6D4D92-6738-11CF-9608-00AA00680DB4")]
+    [NativeTypeName("struct IDirectWriterLock : IUnknown")]
     public unsafe partial struct IDirectWriterLock
     {
         public void** lpVtbl;

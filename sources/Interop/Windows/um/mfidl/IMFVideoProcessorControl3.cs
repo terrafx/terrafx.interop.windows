@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("2424B3F2-EB23-40F1-91AA-74BDDEEA0883")]
+    [NativeTypeName("struct IMFVideoProcessorControl3 : IMFVideoProcessorControl2")]
     public unsafe partial struct IMFVideoProcessorControl3
     {
         public void** lpVtbl;

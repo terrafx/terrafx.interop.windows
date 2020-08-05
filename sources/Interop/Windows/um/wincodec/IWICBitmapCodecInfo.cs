@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("E87A44C4-B76E-4C47-8B09-298EB12A2714")]
+    [NativeTypeName("struct IWICBitmapCodecInfo : IWICComponentInfo")]
     public unsafe partial struct IWICBitmapCodecInfo
     {
         public void** lpVtbl;

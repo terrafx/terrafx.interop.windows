@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("BEE3D220-157B-11D0-BD23-00A0C911CE86")]
+    [NativeTypeName("struct IConfigInterleaving : IUnknown")]
     public unsafe partial struct IConfigInterleaving
     {
         public void** lpVtbl;

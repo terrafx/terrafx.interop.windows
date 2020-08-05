@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("struct IQualProp : IUnknown")]
     public unsafe partial struct IQualProp
     {
         public void** lpVtbl;

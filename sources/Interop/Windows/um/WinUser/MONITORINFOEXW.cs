@@ -5,6 +5,7 @@
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("struct tagMONITORINFOEXW : tagMONITORINFO")]
     public unsafe partial struct MONITORINFOEXW
     {
         public MONITORINFO Base;

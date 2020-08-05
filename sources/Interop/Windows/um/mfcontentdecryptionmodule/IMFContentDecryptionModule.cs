@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("87BE986C-10BE-4943-BF48-4B54CE1983A2")]
+    [NativeTypeName("struct IMFContentDecryptionModule : IUnknown")]
     public unsafe partial struct IMFContentDecryptionModule
     {
         public void** lpVtbl;

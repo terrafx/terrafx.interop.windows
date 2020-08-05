@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("5009834F-2D6A-41CE-9E1B-17C5AFF7A782")]
+    [NativeTypeName("struct IWICBitmapFlipRotator : IWICBitmapSource")]
     public unsafe partial struct IWICBitmapFlipRotator
     {
         public void** lpVtbl;

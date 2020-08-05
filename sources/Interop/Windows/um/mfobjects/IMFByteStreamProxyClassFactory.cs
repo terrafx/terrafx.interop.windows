@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("A6B43F84-5C0A-42E8-A44D-B1857A76992F")]
+    [NativeTypeName("struct IMFByteStreamProxyClassFactory : IUnknown")]
     public unsafe partial struct IMFByteStreamProxyClassFactory
     {
         public void** lpVtbl;

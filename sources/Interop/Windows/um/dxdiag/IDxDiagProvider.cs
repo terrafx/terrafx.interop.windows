@@ -5,11 +5,10 @@
 
 using System;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    [Guid("9C6B4CB0-23F8-49CC-A3ED-45A55000A6D2")]
+    [NativeTypeName("struct IDxDiagProvider : IUnknown")]
     public unsafe partial struct IDxDiagProvider
     {
         public void** lpVtbl;

@@ -10,8 +10,6 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        public static readonly Guid IID_IDirect3DDxgiInterfaceAccess = new Guid(0xA9B3D012, 0x3DF2, 0x4EE3, 0xB8, 0xD1, 0x86, 0x95, 0xF4, 0x57, 0xD3, 0xC1);
-    
         public static IInspectable* CreateDirect3DDevice(IDXGISurface* dxgiSurface)
         {
             IInspectable* inspectableSurface;

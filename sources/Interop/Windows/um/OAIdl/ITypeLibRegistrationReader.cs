@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("ED6A8A2A-B160-4E77-8F73-AA7435CD5C27")]
+    [NativeTypeName("struct ITypeLibRegistrationReader : IUnknown")]
     public unsafe partial struct ITypeLibRegistrationReader
     {
         public void** lpVtbl;

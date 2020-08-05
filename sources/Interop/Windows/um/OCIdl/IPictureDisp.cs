@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("7BF80981-BF32-101A-8BBB-00AA00300CAB")]
+    [NativeTypeName("struct IPictureDisp : IDispatch")]
     public unsafe partial struct IPictureDisp
     {
         public void** lpVtbl;

@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("79EAC9E4-BAF9-11CE-8C82-00AA004BA90B")]
+    [NativeTypeName("struct IInternetProtocol : IInternetProtocolRoot")]
     public unsafe partial struct IInternetProtocol
     {
         public void** lpVtbl;

@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("4776F9CD-9517-45FA-BF24-E89C5EC5C60C")]
+    [NativeTypeName("struct IWICProgressCallback : IUnknown")]
     public unsafe partial struct IWICProgressCallback
     {
         public void** lpVtbl;

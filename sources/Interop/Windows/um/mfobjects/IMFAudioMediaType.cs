@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("26A0ADC3-CE26-4672-9304-69552EDD3FAF")]
+    [NativeTypeName("struct IMFAudioMediaType : IMFMediaType")]
     public unsafe partial struct IMFAudioMediaType
     {
         public void** lpVtbl;

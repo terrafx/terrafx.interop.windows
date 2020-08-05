@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("CF51ED10-62FE-11CF-BF86-00A0C9034836")]
+    [NativeTypeName("struct IQuickActivate : IUnknown")]
     public unsafe partial struct IQuickActivate
     {
         public void** lpVtbl;

@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("CF7B26FC-9A00-485B-8147-3E789D5E8F67")]
+    [NativeTypeName("struct IAMAsyncReaderTimestampScaling : IUnknown")]
     public unsafe partial struct IAMAsyncReaderTimestampScaling
     {
         public void** lpVtbl;

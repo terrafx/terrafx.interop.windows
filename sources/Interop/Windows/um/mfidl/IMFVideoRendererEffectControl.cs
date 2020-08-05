@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("604D33D7-CF23-41D5-8224-5BBBB1A87475")]
+    [NativeTypeName("struct IMFVideoRendererEffectControl : IUnknown")]
     public unsafe partial struct IMFVideoRendererEffectControl
     {
         public void** lpVtbl;

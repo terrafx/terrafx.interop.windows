@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("AAA74EF9-8EE7-4659-88D9-F8C504DA73CC")]
+    [NativeTypeName("struct IBindStatusCallbackEx : IBindStatusCallback")]
     public unsafe partial struct IBindStatusCallbackEx
     {
         public void** lpVtbl;

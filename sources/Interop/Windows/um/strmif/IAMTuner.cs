@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("211A8761-03AC-11D1-8D13-00AA00BD8339")]
+    [NativeTypeName("struct IAMTuner : IUnknown")]
     public unsafe partial struct IAMTuner
     {
         public void** lpVtbl;

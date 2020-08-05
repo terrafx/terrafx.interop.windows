@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("EFA008F9-F7A1-48BF-B05C-F224713CC0FF")]
+    [NativeTypeName("struct IDWriteFontFallback : IUnknown")]
     public unsafe partial struct IDWriteFontFallback
     {
         public void** lpVtbl;

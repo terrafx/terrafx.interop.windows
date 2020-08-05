@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("A9D758A0-4617-11CF-95FC-00AA00680DB4")]
+    [NativeTypeName("struct IProgressNotify : IUnknown")]
     public unsafe partial struct IProgressNotify
     {
         public void** lpVtbl;

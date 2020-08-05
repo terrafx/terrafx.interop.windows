@@ -11,6 +11,7 @@ using static TerraFX.Interop.SpeechLoadOption;
 namespace TerraFX.Interop
 {
     [Guid("B6D6F79F-2158-4E50-B5BC-9A9CCD852A09")]
+    [NativeTypeName("struct ISpeechRecoGrammar : IDispatch")]
     public unsafe partial struct ISpeechRecoGrammar
     {
         public void** lpVtbl;

@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("3CB4A69D-BB6F-4D2B-95B7-452D2C155DB5")]
+    [NativeTypeName("struct IKsFormatSupport : IUnknown")]
     public unsafe partial struct IKsFormatSupport
     {
         public void** lpVtbl;

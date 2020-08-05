@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("6027496E-CB3A-49AB-934F-D798DA4F7DA6")]
+    [NativeTypeName("struct IDCompositionBrightnessEffect : IDCompositionFilterEffect")]
     public unsafe partial struct IDCompositionBrightnessEffect
     {
         public void** lpVtbl;

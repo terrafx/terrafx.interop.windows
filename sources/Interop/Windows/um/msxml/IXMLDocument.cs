@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("F52E2B61-18A1-11D1-B105-00805F49916B")]
+    [NativeTypeName("struct IXMLDocument : IDispatch")]
     public unsafe partial struct IXMLDocument
     {
         public void** lpVtbl;

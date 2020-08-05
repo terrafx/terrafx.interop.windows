@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("95C75A6E-3E8C-4EC2-85A8-AEBCC551E59B")]
+    [NativeTypeName("struct IWICDevelopRawNotificationCallback : IUnknown")]
     public unsafe partial struct IWICDevelopRawNotificationCallback
     {
         public void** lpVtbl;

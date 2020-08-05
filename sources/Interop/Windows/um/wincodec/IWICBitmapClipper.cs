@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("E4FBCF03-223D-4E81-9333-D635556DD1B5")]
+    [NativeTypeName("struct IWICBitmapClipper : IWICBitmapSource")]
     public unsafe partial struct IWICBitmapClipper
     {
         public void** lpVtbl;

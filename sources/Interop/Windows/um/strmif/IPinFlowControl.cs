@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("C56E9858-DBF3-4F6B-8119-384AF2060DEB")]
+    [NativeTypeName("struct IPinFlowControl : IUnknown")]
     public unsafe partial struct IPinFlowControl
     {
         public void** lpVtbl;

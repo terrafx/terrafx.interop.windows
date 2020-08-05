@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("B8AAB0CF-346F-49D8-9499-C8B03F161D51")]
+    [NativeTypeName("struct ISpObjectTokenInit : ISpObjectToken")]
     public unsafe partial struct ISpObjectTokenInit
     {
         public void** lpVtbl;

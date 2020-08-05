@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("BF87B6E0-8C27-11D0-B3F0-00AA003761C5")]
+    [NativeTypeName("struct ICaptureGraphBuilder : IUnknown")]
     public unsafe partial struct ICaptureGraphBuilder
     {
         public void** lpVtbl;

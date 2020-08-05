@@ -3,13 +3,14 @@
 // Ported from um/windows.data.pdf.interop.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("Windows.Data.Pdf", EntryPoint = "PdfCreateRenderer", ExactSpelling = true)]
+        [DllImport("Windows.Data.Pdf", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int PdfCreateRenderer([NativeTypeName("IDXGIDevice *")] IDXGIDevice* pDevice, [NativeTypeName("IPdfRendererNative **")] IPdfRendererNative** ppRenderer);
 
@@ -30,5 +31,7 @@ namespace TerraFX.Interop
             b = 1.0f,
             a = 1.0f,
         };
+
+        public static readonly Guid IID_IPdfRendererNative = new Guid(0x7D9DCD91, 0xD277, 0x4947, 0x85, 0x27, 0x07, 0xA0, 0xDA, 0xED, 0xA9, 0x4A);
     }
 }

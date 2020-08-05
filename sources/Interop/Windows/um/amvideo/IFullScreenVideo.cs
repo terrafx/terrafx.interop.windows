@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("struct IFullScreenVideo : IUnknown")]
     public unsafe partial struct IFullScreenVideo
     {
         public void** lpVtbl;

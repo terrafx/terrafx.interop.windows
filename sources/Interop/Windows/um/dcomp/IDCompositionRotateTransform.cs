@@ -9,7 +9,8 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    [Guid("641ED83C-AE96-46c5-90DC-32774CC5C6D5")]
+    [Guid("641ED83C-AE96-46C5-90DC-32774CC5C6D5")]
+    [NativeTypeName("struct IDCompositionRotateTransform : IDCompositionTransform")]
     public unsafe partial struct IDCompositionRotateTransform
     {
         public void** lpVtbl;

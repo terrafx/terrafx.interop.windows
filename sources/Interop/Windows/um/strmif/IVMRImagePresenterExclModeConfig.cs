@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("E6F7CE40-4673-44F1-8F77-5499D68CB4EA")]
+    [NativeTypeName("struct IVMRImagePresenterExclModeConfig : IVMRImagePresenterConfig")]
     public unsafe partial struct IVMRImagePresenterExclModeConfig
     {
         public void** lpVtbl;

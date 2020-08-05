@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("ED8C108D-4349-11D2-91A4-00C04F7969E8")]
+    [NativeTypeName("struct IXMLHttpRequest : IDispatch")]
     public unsafe partial struct IXMLHttpRequest
     {
         public void** lpVtbl;

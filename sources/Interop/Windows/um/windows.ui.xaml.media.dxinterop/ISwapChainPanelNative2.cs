@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("D5A2F60C-37B2-44A2-937B-8D8EB9726821")]
+    [NativeTypeName("struct ISwapChainPanelNative2 : ISwapChainPanelNative")]
     public unsafe partial struct ISwapChainPanelNative2
     {
         public void** lpVtbl;

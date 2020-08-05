@@ -11,6 +11,7 @@ using static TerraFX.Interop.D2D1_SVG_ATTRIBUTE_POD_TYPE;
 namespace TerraFX.Interop
 {
     [Guid("AC7B67A6-183E-49C1-A823-0EBE40B0DB29")]
+    [NativeTypeName("struct ID2D1SvgElement : ID2D1Resource")]
     public unsafe partial struct ID2D1SvgElement
     {
         public void** lpVtbl;

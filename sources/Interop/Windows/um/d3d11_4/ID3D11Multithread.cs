@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("9B7E4E00-342C-4106-A19F-4F2704F689F0")]
+    [NativeTypeName("struct ID3D11Multithread : IUnknown")]
     public unsafe partial struct ID3D11Multithread
     {
         public void** lpVtbl;

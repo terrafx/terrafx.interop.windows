@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("D8D715A3-6E5E-11D0-B3F0-00AA003761C5")]
+    [NativeTypeName("struct IAMVfwCompressDialogs : IUnknown")]
     public unsafe partial struct IAMVfwCompressDialogs
     {
         public void** lpVtbl;

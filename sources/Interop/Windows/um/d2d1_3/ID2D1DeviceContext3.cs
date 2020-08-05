@@ -21,6 +21,7 @@ using static TerraFX.Interop.DWRITE_MEASURING_MODE;
 namespace TerraFX.Interop
 {
     [Guid("235A7496-8351-414C-BCD4-6672AB2D8E00")]
+    [NativeTypeName("struct ID2D1DeviceContext3 : ID2D1DeviceContext2")]
     public unsafe partial struct ID2D1DeviceContext3
     {
         public void** lpVtbl;

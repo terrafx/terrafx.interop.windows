@@ -58,31 +58,31 @@ namespace TerraFX.Interop
         [NativeTypeName("const GUID")]
         public static readonly Guid IID_IDirectDrawGammaControl = new Guid(0x69C11C3E, 0xB46B, 0x11D1, 0xAD, 0x7A, 0x00, 0xC0, 0x4F, 0xC2, 0x9B, 0x4E);
 
-        [DllImport("ddraw", EntryPoint = "DirectDrawEnumerateW", ExactSpelling = true)]
+        [DllImport("ddraw", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int DirectDrawEnumerateW([NativeTypeName("LPDDENUMCALLBACKW")] delegate* stdcall<Guid*, ushort*, ushort*, void*, int> lpCallback, [NativeTypeName("LPVOID")] void* lpContext);
 
-        [DllImport("ddraw", EntryPoint = "DirectDrawEnumerateA", ExactSpelling = true)]
+        [DllImport("ddraw", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int DirectDrawEnumerateA([NativeTypeName("LPDDENUMCALLBACKA")] delegate* stdcall<Guid*, sbyte*, sbyte*, void*, int> lpCallback, [NativeTypeName("LPVOID")] void* lpContext);
 
-        [DllImport("ddraw", EntryPoint = "DirectDrawEnumerateExW", ExactSpelling = true)]
+        [DllImport("ddraw", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int DirectDrawEnumerateExW([NativeTypeName("LPDDENUMCALLBACKEXW")] delegate* stdcall<Guid*, ushort*, ushort*, void*, IntPtr, int> lpCallback, [NativeTypeName("LPVOID")] void* lpContext, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("ddraw", EntryPoint = "DirectDrawEnumerateExA", ExactSpelling = true)]
+        [DllImport("ddraw", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int DirectDrawEnumerateExA([NativeTypeName("LPDDENUMCALLBACKEXA")] delegate* stdcall<Guid*, sbyte*, sbyte*, void*, IntPtr, int> lpCallback, [NativeTypeName("LPVOID")] void* lpContext, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("ddraw", EntryPoint = "DirectDrawCreate", ExactSpelling = true)]
+        [DllImport("ddraw", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int DirectDrawCreate([NativeTypeName("GUID *")] Guid* lpGUID, [NativeTypeName("LPDIRECTDRAW *")] IDirectDraw** lplpDD, [NativeTypeName("IUnknown *")] IUnknown* pUnkOuter);
 
-        [DllImport("ddraw", EntryPoint = "DirectDrawCreateEx", ExactSpelling = true)]
+        [DllImport("ddraw", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int DirectDrawCreateEx([NativeTypeName("GUID *")] Guid* lpGuid, [NativeTypeName("LPVOID *")] void** lplpDD, [NativeTypeName("const IID &")] Guid* iid, [NativeTypeName("IUnknown *")] IUnknown* pUnkOuter);
 
-        [DllImport("ddraw", EntryPoint = "DirectDrawCreateClipper", ExactSpelling = true)]
+        [DllImport("ddraw", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int DirectDrawCreateClipper([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPDIRECTDRAWCLIPPER *")] IDirectDrawClipper** lplpDDClipper, [NativeTypeName("IUnknown *")] IUnknown* pUnkOuter);
 
@@ -92,20 +92,20 @@ namespace TerraFX.Interop
         [NativeTypeName("#define _FACDD 0x876")]
         public const int _FACDD = 0x876;
 
-        [NativeTypeName("#define FOURCC_DXT1 (MAKEFOURCC(\'D\',\'X\',\'T\',\'1\'))")]
-        public const uint FOURCC_DXT1 = unchecked(((uint)(byte)((byte)('D')) | ((uint)(byte)((byte)('X')) << 8) | ((uint)(byte)((byte)('T')) << 16) | ((uint)(byte)((byte)('1')) << 24)));
+        [NativeTypeName("#define FOURCC_DXT1 (MAKEFOURCC('D','X','T','1'))")]
+        public const uint FOURCC_DXT1 = (((uint)((byte)('D')) | ((uint)((byte)('X')) << 8) | ((uint)((byte)('T')) << 16) | ((uint)((byte)('1')) << 24)));
 
-        [NativeTypeName("#define FOURCC_DXT2 (MAKEFOURCC(\'D\',\'X\',\'T\',\'2\'))")]
-        public const uint FOURCC_DXT2 = unchecked(((uint)(byte)((byte)('D')) | ((uint)(byte)((byte)('X')) << 8) | ((uint)(byte)((byte)('T')) << 16) | ((uint)(byte)((byte)('2')) << 24)));
+        [NativeTypeName("#define FOURCC_DXT2 (MAKEFOURCC('D','X','T','2'))")]
+        public const uint FOURCC_DXT2 = (((uint)((byte)('D')) | ((uint)((byte)('X')) << 8) | ((uint)((byte)('T')) << 16) | ((uint)((byte)('2')) << 24)));
 
-        [NativeTypeName("#define FOURCC_DXT3 (MAKEFOURCC(\'D\',\'X\',\'T\',\'3\'))")]
-        public const uint FOURCC_DXT3 = unchecked(((uint)(byte)((byte)('D')) | ((uint)(byte)((byte)('X')) << 8) | ((uint)(byte)((byte)('T')) << 16) | ((uint)(byte)((byte)('3')) << 24)));
+        [NativeTypeName("#define FOURCC_DXT3 (MAKEFOURCC('D','X','T','3'))")]
+        public const uint FOURCC_DXT3 = (((uint)((byte)('D')) | ((uint)((byte)('X')) << 8) | ((uint)((byte)('T')) << 16) | ((uint)((byte)('3')) << 24)));
 
-        [NativeTypeName("#define FOURCC_DXT4 (MAKEFOURCC(\'D\',\'X\',\'T\',\'4\'))")]
-        public const uint FOURCC_DXT4 = unchecked(((uint)(byte)((byte)('D')) | ((uint)(byte)((byte)('X')) << 8) | ((uint)(byte)((byte)('T')) << 16) | ((uint)(byte)((byte)('4')) << 24)));
+        [NativeTypeName("#define FOURCC_DXT4 (MAKEFOURCC('D','X','T','4'))")]
+        public const uint FOURCC_DXT4 = (((uint)((byte)('D')) | ((uint)((byte)('X')) << 8) | ((uint)((byte)('T')) << 16) | ((uint)((byte)('4')) << 24)));
 
-        [NativeTypeName("#define FOURCC_DXT5 (MAKEFOURCC(\'D\',\'X\',\'T\',\'5\'))")]
-        public const uint FOURCC_DXT5 = unchecked(((uint)(byte)((byte)('D')) | ((uint)(byte)((byte)('X')) << 8) | ((uint)(byte)((byte)('T')) << 16) | ((uint)(byte)((byte)('5')) << 24)));
+        [NativeTypeName("#define FOURCC_DXT5 (MAKEFOURCC('D','X','T','5'))")]
+        public const uint FOURCC_DXT5 = (((uint)((byte)('D')) | ((uint)((byte)('X')) << 8) | ((uint)((byte)('T')) << 16) | ((uint)((byte)('5')) << 24)));
 
         [NativeTypeName("#define DirectDrawEnumerate DirectDrawEnumerateW")]
         public static readonly delegate*<delegate* stdcall<Guid*, ushort*, ushort*, void*, int>, void*, int> DirectDrawEnumerate = &DirectDrawEnumerateW;

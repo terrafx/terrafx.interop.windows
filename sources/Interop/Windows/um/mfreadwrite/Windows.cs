@@ -16,15 +16,15 @@ namespace TerraFX.Interop
         [NativeTypeName("const IID")]
         public static readonly Guid CLSID_MFSourceReader = new Guid(0x1777133c, 0x0881, 0x411b, 0xa5, 0x77, 0xad, 0x54, 0x5f, 0x07, 0x14, 0xc4);
 
-        [DllImport("mfreadwrite", EntryPoint = "MFCreateSourceReaderFromURL", ExactSpelling = true)]
+        [DllImport("mfreadwrite", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MFCreateSourceReaderFromURL([NativeTypeName("LPCWSTR")] ushort* pwszURL, [NativeTypeName("IMFAttributes *")] IMFAttributes* pAttributes, [NativeTypeName("IMFSourceReader **")] IMFSourceReader** ppSourceReader);
 
-        [DllImport("mfreadwrite", EntryPoint = "MFCreateSourceReaderFromByteStream", ExactSpelling = true)]
+        [DllImport("mfreadwrite", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MFCreateSourceReaderFromByteStream([NativeTypeName("IMFByteStream *")] IMFByteStream* pByteStream, [NativeTypeName("IMFAttributes *")] IMFAttributes* pAttributes, [NativeTypeName("IMFSourceReader **")] IMFSourceReader** ppSourceReader);
 
-        [DllImport("mfreadwrite", EntryPoint = "MFCreateSourceReaderFromMediaSource", ExactSpelling = true)]
+        [DllImport("mfreadwrite", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MFCreateSourceReaderFromMediaSource([NativeTypeName("IMFMediaSource *")] IMFMediaSource* pMediaSource, [NativeTypeName("IMFAttributes *")] IMFAttributes* pAttributes, [NativeTypeName("IMFSourceReader **")] IMFSourceReader** ppSourceReader);
 
@@ -64,11 +64,11 @@ namespace TerraFX.Interop
         [NativeTypeName("const IID")]
         public static readonly Guid CLSID_MFSinkWriter = new Guid(0xa3bbfb17, 0x8273, 0x4e52, 0x9e, 0x0e, 0x97, 0x39, 0xdc, 0x88, 0x79, 0x90);
 
-        [DllImport("mfreadwrite", EntryPoint = "MFCreateSinkWriterFromURL", ExactSpelling = true)]
+        [DllImport("mfreadwrite", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MFCreateSinkWriterFromURL([NativeTypeName("LPCWSTR")] ushort* pwszOutputURL, [NativeTypeName("IMFByteStream *")] IMFByteStream* pByteStream, [NativeTypeName("IMFAttributes *")] IMFAttributes* pAttributes, [NativeTypeName("IMFSinkWriter **")] IMFSinkWriter** ppSinkWriter);
 
-        [DllImport("mfreadwrite", EntryPoint = "MFCreateSinkWriterFromMediaSink", ExactSpelling = true)]
+        [DllImport("mfreadwrite", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MFCreateSinkWriterFromMediaSink([NativeTypeName("IMFMediaSink *")] IMFMediaSink* pMediaSink, [NativeTypeName("IMFAttributes *")] IMFAttributes* pAttributes, [NativeTypeName("IMFSinkWriter **")] IMFSinkWriter** ppSinkWriter);
 
@@ -113,5 +113,25 @@ namespace TerraFX.Interop
 
         [NativeTypeName("const IID")]
         public static readonly Guid MF_READWRITE_ENABLE_AUTOFINALIZE = new Guid(0xdd7ca129, 0x8cd1, 0x4dc5, 0x9d, 0xde, 0xce, 0x16, 0x86, 0x75, 0xde, 0x61);
+
+        public static readonly Guid IID_IMFReadWriteClassFactory = new Guid(0xE7FE2E12, 0x661C, 0x40DA, 0x92, 0xF9, 0x4F, 0x00, 0x2A, 0xB6, 0x76, 0x27);
+
+        public static readonly Guid IID_IMFSourceReader = new Guid(0x70AE66F2, 0xC809, 0x4E4F, 0x89, 0x15, 0xBD, 0xCB, 0x40, 0x6B, 0x79, 0x93);
+
+        public static readonly Guid IID_IMFSourceReaderEx = new Guid(0x7B981CF0, 0x560E, 0x4116, 0x98, 0x75, 0xB0, 0x99, 0x89, 0x5F, 0x23, 0xD7);
+
+        public static readonly Guid IID_IMFSourceReaderCallback = new Guid(0xDEEC8D99, 0xFA1D, 0x4D82, 0x84, 0xC2, 0x2C, 0x89, 0x69, 0x94, 0x48, 0x67);
+
+        public static readonly Guid IID_IMFSourceReaderCallback2 = new Guid(0xCF839FE6, 0x8C2A, 0x4DD2, 0xB6, 0xEA, 0xC2, 0x2D, 0x69, 0x61, 0xAF, 0x05);
+
+        public static readonly Guid IID_IMFSinkWriter = new Guid(0x3137F1CD, 0xFE5E, 0x4805, 0xA5, 0xD8, 0xFB, 0x47, 0x74, 0x48, 0xCB, 0x3D);
+
+        public static readonly Guid IID_IMFSinkWriterEx = new Guid(0x588D72AB, 0x5BC1, 0x496A, 0x87, 0x14, 0xB7, 0x06, 0x17, 0x14, 0x1B, 0x25);
+
+        public static readonly Guid IID_IMFSinkWriterEncoderConfig = new Guid(0x17C3779E, 0x3CDE, 0x4EDE, 0x8C, 0x60, 0x38, 0x99, 0xF5, 0xF5, 0x3A, 0xD6);
+
+        public static readonly Guid IID_IMFSinkWriterCallback = new Guid(0x666F76DE, 0x33D2, 0x41B9, 0xA4, 0x58, 0x29, 0xED, 0x0A, 0x97, 0x2C, 0x58);
+
+        public static readonly Guid IID_IMFSinkWriterCallback2 = new Guid(0x2456BD58, 0xC067, 0x4513, 0x84, 0xFE, 0x8D, 0x0C, 0x88, 0xFF, 0xDC, 0x61);
     }
 }

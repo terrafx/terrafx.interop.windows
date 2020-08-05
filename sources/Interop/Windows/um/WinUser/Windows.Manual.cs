@@ -973,7 +973,7 @@ namespace TerraFX.Interop
             }
             else
             {
-                [DllImport("user32", CallingConvention = CallingConvention.Winapi, EntryPoint = "GetWindowLongPtrA", ExactSpelling = true)]
+                [DllImport("user32", EntryPoint = "GetWindowLongPtrA", ExactSpelling = true)]
                 [return: NativeTypeName("LONG_PTR")]
                 static extern nint _GetWindowLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex);
 
@@ -990,7 +990,7 @@ namespace TerraFX.Interop
             }
             else
             {
-                [DllImport("user32", CallingConvention = CallingConvention.Winapi, EntryPoint = "GetWindowLongPtrW", ExactSpelling = true)]
+                [DllImport("user32", EntryPoint = "GetWindowLongPtrW", ExactSpelling = true)]
                 [return: NativeTypeName("LONG_PTR")]
                 static extern nint _GetWindowLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex);
 
@@ -1010,7 +1010,7 @@ namespace TerraFX.Interop
             }
             else
             {
-                [DllImport("user32", CallingConvention = CallingConvention.Winapi, EntryPoint = "SetWindowLongPtrA", ExactSpelling = true)]
+                [DllImport("user32", EntryPoint = "SetWindowLongPtrA", ExactSpelling = true)]
                 [return: NativeTypeName("LONG_PTR")]
                 static extern nint _SetWindowLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] nint dwNewLong);
 
@@ -1027,7 +1027,7 @@ namespace TerraFX.Interop
             }
             else
             {
-                [DllImport("user32", CallingConvention = CallingConvention.Winapi, EntryPoint = "SetWindowLongPtrW", ExactSpelling = true)]
+                [DllImport("user32", EntryPoint = "SetWindowLongPtrW", ExactSpelling = true)]
                 [return: NativeTypeName("LONG_PTR")]
                 static extern nint _SetWindowLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] nint dwNewLong);
 
@@ -1047,7 +1047,7 @@ namespace TerraFX.Interop
             }
             else
             {
-                [DllImport("user32", CallingConvention = CallingConvention.Winapi, EntryPoint = "GetClassLongPtrA", ExactSpelling = true)]
+                [DllImport("user32", EntryPoint = "GetClassLongPtrA", ExactSpelling = true)]
                 [return: NativeTypeName("ULONG_PTR")]
                 static extern nuint _GetClassLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex);
 
@@ -1064,7 +1064,7 @@ namespace TerraFX.Interop
             }
             else
             {
-                [DllImport("user32", CallingConvention = CallingConvention.Winapi, EntryPoint = "GetClassLongPtrW", ExactSpelling = true)]
+                [DllImport("user32", EntryPoint = "GetClassLongPtrW", ExactSpelling = true)]
                 [return: NativeTypeName("ULONG_PTR")]
                 static extern nuint _GetClassLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex);
 
@@ -1084,7 +1084,7 @@ namespace TerraFX.Interop
             }
             else
             {
-                [DllImport("user32", CallingConvention = CallingConvention.Winapi, EntryPoint = "SetClassLongPtrA", ExactSpelling = true)]
+                [DllImport("user32", EntryPoint = "SetClassLongPtrA", ExactSpelling = true)]
                 [return: NativeTypeName("ULONG_PTR")]
                 static extern nuint _SetClassLongPtrA([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] nint dwNewLong);
 
@@ -1101,7 +1101,7 @@ namespace TerraFX.Interop
             }
             else
             {
-                [DllImport("user32", CallingConvention = CallingConvention.Winapi, EntryPoint = "SetClassLongPtrW", ExactSpelling = true)]
+                [DllImport("user32", EntryPoint = "SetClassLongPtrW", ExactSpelling = true)]
                 [return: NativeTypeName("ULONG_PTR")]
                 static extern nuint _SetClassLongPtrW([NativeTypeName("HWND")] IntPtr hWnd, int nIndex, [NativeTypeName("LONG_PTR")] nint dwNewLong);
 

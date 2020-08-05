@@ -10,78 +10,78 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("hid", EntryPoint = "HidD_GetAttributes", ExactSpelling = true)]
+        [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
         public static extern byte HidD_GetAttributes([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("PHIDD_ATTRIBUTES")] HIDD_ATTRIBUTES* Attributes);
 
-        [DllImport("hid", EntryPoint = "HidD_GetHidGuid", ExactSpelling = true)]
+        [DllImport("hid", ExactSpelling = true)]
         public static extern void HidD_GetHidGuid([NativeTypeName("LPGUID")] Guid* HidGuid);
 
-        [DllImport("hid", EntryPoint = "HidD_GetPreparsedData", ExactSpelling = true)]
+        [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
         public static extern byte HidD_GetPreparsedData([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("PHIDP_PREPARSED_DATA *")] IntPtr* PreparsedData);
 
-        [DllImport("hid", EntryPoint = "HidD_FreePreparsedData", ExactSpelling = true)]
+        [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
         public static extern byte HidD_FreePreparsedData([NativeTypeName("PHIDP_PREPARSED_DATA")] IntPtr PreparsedData);
 
-        [DllImport("hid", EntryPoint = "HidD_FlushQueue", ExactSpelling = true)]
+        [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
         public static extern byte HidD_FlushQueue([NativeTypeName("HANDLE")] IntPtr HidDeviceObject);
 
-        [DllImport("hid", EntryPoint = "HidD_GetConfiguration", ExactSpelling = true)]
+        [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
         public static extern byte HidD_GetConfiguration([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("PHIDD_CONFIGURATION")] HIDD_CONFIGURATION* Configuration, [NativeTypeName("ULONG")] uint ConfigurationLength);
 
-        [DllImport("hid", EntryPoint = "HidD_SetConfiguration", ExactSpelling = true)]
+        [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
         public static extern byte HidD_SetConfiguration([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("PHIDD_CONFIGURATION")] HIDD_CONFIGURATION* Configuration, [NativeTypeName("ULONG")] uint ConfigurationLength);
 
-        [DllImport("hid", EntryPoint = "HidD_GetFeature", ExactSpelling = true)]
+        [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
         public static extern byte HidD_GetFeature([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("PVOID")] void* ReportBuffer, [NativeTypeName("ULONG")] uint ReportBufferLength);
 
-        [DllImport("hid", EntryPoint = "HidD_SetFeature", ExactSpelling = true)]
+        [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
         public static extern byte HidD_SetFeature([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("PVOID")] void* ReportBuffer, [NativeTypeName("ULONG")] uint ReportBufferLength);
 
-        [DllImport("hid", EntryPoint = "HidD_GetInputReport", ExactSpelling = true)]
+        [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
         public static extern byte HidD_GetInputReport([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("PVOID")] void* ReportBuffer, [NativeTypeName("ULONG")] uint ReportBufferLength);
 
-        [DllImport("hid", EntryPoint = "HidD_SetOutputReport", ExactSpelling = true)]
+        [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
         public static extern byte HidD_SetOutputReport([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("PVOID")] void* ReportBuffer, [NativeTypeName("ULONG")] uint ReportBufferLength);
 
-        [DllImport("hid", EntryPoint = "HidD_GetNumInputBuffers", ExactSpelling = true)]
+        [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
         public static extern byte HidD_GetNumInputBuffers([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("PULONG")] uint* NumberBuffers);
 
-        [DllImport("hid", EntryPoint = "HidD_SetNumInputBuffers", ExactSpelling = true)]
+        [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
         public static extern byte HidD_SetNumInputBuffers([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("ULONG")] uint NumberBuffers);
 
-        [DllImport("hid", EntryPoint = "HidD_GetPhysicalDescriptor", ExactSpelling = true)]
+        [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
         public static extern byte HidD_GetPhysicalDescriptor([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("ULONG")] uint BufferLength);
 
-        [DllImport("hid", EntryPoint = "HidD_GetManufacturerString", ExactSpelling = true)]
+        [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
         public static extern byte HidD_GetManufacturerString([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("ULONG")] uint BufferLength);
 
-        [DllImport("hid", EntryPoint = "HidD_GetProductString", ExactSpelling = true)]
+        [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
         public static extern byte HidD_GetProductString([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("ULONG")] uint BufferLength);
 
-        [DllImport("hid", EntryPoint = "HidD_GetIndexedString", ExactSpelling = true)]
+        [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
         public static extern byte HidD_GetIndexedString([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("ULONG")] uint StringIndex, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("ULONG")] uint BufferLength);
 
-        [DllImport("hid", EntryPoint = "HidD_GetSerialNumberString", ExactSpelling = true)]
+        [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
         public static extern byte HidD_GetSerialNumberString([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("ULONG")] uint BufferLength);
 
-        [DllImport("hid", EntryPoint = "HidD_GetMsGenreDescriptor", ExactSpelling = true)]
+        [DllImport("hid", ExactSpelling = true)]
         [return: NativeTypeName("BOOLEAN")]
         public static extern byte HidD_GetMsGenreDescriptor([NativeTypeName("HANDLE")] IntPtr HidDeviceObject, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("ULONG")] uint BufferLength);
     }

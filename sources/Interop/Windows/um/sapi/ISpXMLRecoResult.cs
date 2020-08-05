@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("AE39362B-45A8-4074-9B9E-CCF49AA2D0B6")]
+    [NativeTypeName("struct ISpXMLRecoResult : ISpRecoResult")]
     public unsafe partial struct ISpXMLRecoResult
     {
         public void** lpVtbl;

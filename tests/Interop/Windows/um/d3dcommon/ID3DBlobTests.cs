@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(ID3DBlob).GUID, Is.EqualTo(IID_ID3DBlob));
+            Assert.That(typeof(ID3DBlob).GUID, Is.EqualTo(IID_ID3D10Blob));
         }
 
         /// <summary>Validates that the <see cref="ID3DBlob" /> struct is blittable.</summary>

@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("594F31D0-7F19-11D0-B194-00A0C90DC8BF")]
+    [NativeTypeName("struct IRpcChannelBuffer2 : IRpcChannelBuffer")]
     public unsafe partial struct IRpcChannelBuffer2
     {
         public void** lpVtbl;

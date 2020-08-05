@@ -7,6 +7,7 @@ using System;
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("struct tagMOUSEHOOKSTRUCTEX : tagMOUSEHOOKSTRUCT")]
     public partial struct MOUSEHOOKSTRUCTEX
     {
         public MOUSEHOOKSTRUCT Base;

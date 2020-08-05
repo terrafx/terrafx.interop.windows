@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("842B32A3-9B9B-4D1C-B3F3-49193248A554")]
+    [NativeTypeName("struct IPlayToSourceClassFactory : IUnknown")]
     public unsafe partial struct IPlayToSourceClassFactory
     {
         public void** lpVtbl;
@@ -33,9 +34,9 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("HRESULT")]
-        public int CreateInstance([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("IPlayToControl *")] IPlayToControl* pControl, [NativeTypeName("IInspectable **")] void** ppSource)
+        public int CreateInstance([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("IPlayToControl *")] IPlayToControl* pControl, [NativeTypeName("IInspectable **")] IInspectable** ppSource)
         {
-            return ((delegate* stdcall<IPlayToSourceClassFactory*, uint, IPlayToControl*, void**, int>)(lpVtbl[3]))((IPlayToSourceClassFactory*)Unsafe.AsPointer(ref this), dwFlags, pControl, ppSource);
+            return ((delegate* stdcall<IPlayToSourceClassFactory*, uint, IPlayToControl*, IInspectable**, int>)(lpVtbl[3]))((IPlayToSourceClassFactory*)Unsafe.AsPointer(ref this), dwFlags, pControl, ppSource);
         }
     }
 }

@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("7D9DCD91-D277-4947-8527-07A0DAEDA94A")]
+    [NativeTypeName("struct IPdfRendererNative : IUnknown")]
     public unsafe partial struct IPdfRendererNative
     {
         public void** lpVtbl;

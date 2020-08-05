@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
+    [NativeTypeName("struct IDirectDrawVideo : IUnknown")]
     public unsafe partial struct IDirectDrawVideo
     {
         public void** lpVtbl;

@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("7FD52380-4E07-101B-AE2D-08002B2EC713")]
+    [NativeTypeName("struct IPersistStreamInit : IPersist")]
     public unsafe partial struct IPersistStreamInit
     {
         public void** lpVtbl;

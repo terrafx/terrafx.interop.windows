@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("F292E401-C050-4CDE-83D7-04962D3B23C2")]
+    [NativeTypeName("struct ID2D1GradientMesh : ID2D1Resource")]
     public unsafe partial struct ID2D1GradientMesh
     {
         public void** lpVtbl;

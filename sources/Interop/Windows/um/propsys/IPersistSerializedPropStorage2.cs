@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("77EFFA68-4F98-4366-BA72-573B3D880571")]
+    [NativeTypeName("struct IPersistSerializedPropStorage2 : IPersistSerializedPropStorage")]
     public unsafe partial struct IPersistSerializedPropStorage2
     {
         public void** lpVtbl;

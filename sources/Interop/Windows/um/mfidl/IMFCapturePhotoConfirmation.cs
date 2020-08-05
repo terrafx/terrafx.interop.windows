@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("19F68549-CA8A-4706-A4EF-481DBC95E12C")]
+    [NativeTypeName("struct IMFCapturePhotoConfirmation : IUnknown")]
     public unsafe partial struct IMFCapturePhotoConfirmation
     {
         public void** lpVtbl;

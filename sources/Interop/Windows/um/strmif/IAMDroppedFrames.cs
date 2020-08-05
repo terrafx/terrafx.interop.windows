@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("C6E13344-30AC-11D0-A18C-00A0C9118956")]
+    [NativeTypeName("struct IAMDroppedFrames : IUnknown")]
     public unsafe partial struct IAMDroppedFrames
     {
         public void** lpVtbl;

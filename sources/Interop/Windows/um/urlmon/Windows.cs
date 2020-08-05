@@ -14,318 +14,318 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Windows
     {
-        [DllImport("urlmon", EntryPoint = "CreateURLMoniker", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CreateURLMoniker([NativeTypeName("LPMONIKER")] IMoniker* pMkCtx, [NativeTypeName("LPCWSTR")] ushort* szURL, [NativeTypeName("LPMONIKER *")] IMoniker** ppmk);
 
-        [DllImport("urlmon", EntryPoint = "CreateURLMonikerEx", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CreateURLMonikerEx([NativeTypeName("LPMONIKER")] IMoniker* pMkCtx, [NativeTypeName("LPCWSTR")] ushort* szURL, [NativeTypeName("LPMONIKER *")] IMoniker** ppmk, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("urlmon", EntryPoint = "GetClassURL", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int GetClassURL([NativeTypeName("LPCWSTR")] ushort* szURL, [NativeTypeName("CLSID *")] Guid* pClsID);
 
-        [DllImport("urlmon", EntryPoint = "CreateAsyncBindCtx", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CreateAsyncBindCtx([NativeTypeName("DWORD")] uint reserved, [NativeTypeName("IBindStatusCallback *")] IBindStatusCallback* pBSCb, [NativeTypeName("IEnumFORMATETC *")] IEnumFORMATETC* pEFetc, [NativeTypeName("IBindCtx **")] IBindCtx** ppBC);
 
-        [DllImport("urlmon", EntryPoint = "CreateURLMonikerEx2", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CreateURLMonikerEx2([NativeTypeName("LPMONIKER")] IMoniker* pMkCtx, [NativeTypeName("IUri *")] IUri* pUri, [NativeTypeName("LPMONIKER *")] IMoniker** ppmk, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("urlmon", EntryPoint = "CreateAsyncBindCtxEx", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CreateAsyncBindCtxEx([NativeTypeName("IBindCtx *")] IBindCtx* pbc, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("IBindStatusCallback *")] IBindStatusCallback* pBSCb, [NativeTypeName("IEnumFORMATETC *")] IEnumFORMATETC* pEnum, [NativeTypeName("IBindCtx **")] IBindCtx** ppBC, [NativeTypeName("DWORD")] uint reserved);
 
-        [DllImport("urlmon", EntryPoint = "MkParseDisplayNameEx", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int MkParseDisplayNameEx([NativeTypeName("IBindCtx *")] IBindCtx* pbc, [NativeTypeName("LPCWSTR")] ushort* szDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, [NativeTypeName("LPMONIKER *")] IMoniker** ppmk);
 
-        [DllImport("urlmon", EntryPoint = "RegisterBindStatusCallback", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int RegisterBindStatusCallback([NativeTypeName("LPBC")] IBindCtx* pBC, [NativeTypeName("IBindStatusCallback *")] IBindStatusCallback* pBSCb, [NativeTypeName("IBindStatusCallback **")] IBindStatusCallback** ppBSCBPrev, [NativeTypeName("DWORD")] uint dwReserved);
 
-        [DllImport("urlmon", EntryPoint = "RevokeBindStatusCallback", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int RevokeBindStatusCallback([NativeTypeName("LPBC")] IBindCtx* pBC, [NativeTypeName("IBindStatusCallback *")] IBindStatusCallback* pBSCb);
 
-        [DllImport("urlmon", EntryPoint = "GetClassFileOrMime", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int GetClassFileOrMime([NativeTypeName("LPBC")] IBindCtx* pBC, [NativeTypeName("LPCWSTR")] ushort* szFilename, [NativeTypeName("LPVOID")] void* pBuffer, [NativeTypeName("DWORD")] uint cbSize, [NativeTypeName("LPCWSTR")] ushort* szMime, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("CLSID *")] Guid* pclsid);
 
-        [DllImport("urlmon", EntryPoint = "IsValidURL", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int IsValidURL([NativeTypeName("LPBC")] IBindCtx* pBC, [NativeTypeName("LPCWSTR")] ushort* szURL, [NativeTypeName("DWORD")] uint dwReserved);
 
-        [DllImport("urlmon", EntryPoint = "CoGetClassObjectFromURL", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CoGetClassObjectFromURL([NativeTypeName("const IID &")] Guid* rCLASSID, [NativeTypeName("LPCWSTR")] ushort* szCODE, [NativeTypeName("DWORD")] uint dwFileVersionMS, [NativeTypeName("DWORD")] uint dwFileVersionLS, [NativeTypeName("LPCWSTR")] ushort* szTYPE, [NativeTypeName("LPBINDCTX")] IBindCtx* pBindCtx, [NativeTypeName("DWORD")] uint dwClsContext, [NativeTypeName("LPVOID")] void* pvReserved, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv);
 
-        [DllImport("urlmon", EntryPoint = "IEInstallScope", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int IEInstallScope([NativeTypeName("LPDWORD")] uint* pdwScope);
 
-        [DllImport("urlmon", EntryPoint = "FaultInIEFeature", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int FaultInIEFeature([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("uCLSSPEC *")] uCLSSPEC* pClassSpec, [NativeTypeName("QUERYCONTEXT *")] QUERYCONTEXT* pQuery, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("urlmon", EntryPoint = "GetComponentIDFromCLSSPEC", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int GetComponentIDFromCLSSPEC([NativeTypeName("uCLSSPEC *")] uCLSSPEC* pClassspec, [NativeTypeName("LPSTR *")] sbyte** ppszComponentID);
 
-        [DllImport("urlmon", EntryPoint = "IsAsyncMoniker", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int IsAsyncMoniker([NativeTypeName("IMoniker *")] IMoniker* pmk);
 
-        [DllImport("urlmon", EntryPoint = "CreateURLBinding", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CreateURLBinding([NativeTypeName("LPCWSTR")] ushort* lpszUrl, [NativeTypeName("IBindCtx *")] IBindCtx* pbc, [NativeTypeName("IBinding **")] IBinding** ppBdg);
 
-        [DllImport("urlmon", EntryPoint = "RegisterMediaTypes", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int RegisterMediaTypes([NativeTypeName("UINT")] uint ctypes, [NativeTypeName("const LPCSTR *")] sbyte** rgszTypes, [NativeTypeName("CLIPFORMAT *")] ushort* rgcfTypes);
 
-        [DllImport("urlmon", EntryPoint = "FindMediaType", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int FindMediaType([NativeTypeName("LPCSTR")] sbyte* rgszTypes, [NativeTypeName("CLIPFORMAT *")] ushort* rgcfTypes);
 
-        [DllImport("urlmon", EntryPoint = "CreateFormatEnumerator", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CreateFormatEnumerator([NativeTypeName("UINT")] uint cfmtetc, [NativeTypeName("FORMATETC *")] FORMATETC* rgfmtetc, [NativeTypeName("IEnumFORMATETC **")] IEnumFORMATETC** ppenumfmtetc);
 
-        [DllImport("urlmon", EntryPoint = "RegisterFormatEnumerator", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int RegisterFormatEnumerator([NativeTypeName("LPBC")] IBindCtx* pBC, [NativeTypeName("IEnumFORMATETC *")] IEnumFORMATETC* pEFetc, [NativeTypeName("DWORD")] uint reserved);
 
-        [DllImport("urlmon", EntryPoint = "RevokeFormatEnumerator", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int RevokeFormatEnumerator([NativeTypeName("LPBC")] IBindCtx* pBC, [NativeTypeName("IEnumFORMATETC *")] IEnumFORMATETC* pEFetc);
 
-        [DllImport("urlmon", EntryPoint = "RegisterMediaTypeClass", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int RegisterMediaTypeClass([NativeTypeName("LPBC")] IBindCtx* pBC, [NativeTypeName("UINT")] uint ctypes, [NativeTypeName("const LPCSTR *")] sbyte** rgszTypes, [NativeTypeName("CLSID *")] Guid* rgclsID, [NativeTypeName("DWORD")] uint reserved);
 
-        [DllImport("urlmon", EntryPoint = "FindMediaTypeClass", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int FindMediaTypeClass([NativeTypeName("LPBC")] IBindCtx* pBC, [NativeTypeName("LPCSTR")] sbyte* szType, [NativeTypeName("CLSID *")] Guid* pclsID, [NativeTypeName("DWORD")] uint reserved);
 
-        [DllImport("urlmon", EntryPoint = "UrlMkSetSessionOption", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int UrlMkSetSessionOption([NativeTypeName("DWORD")] uint dwOption, [NativeTypeName("LPVOID")] void* pBuffer, [NativeTypeName("DWORD")] uint dwBufferLength, [NativeTypeName("DWORD")] uint dwReserved);
 
-        [DllImport("urlmon", EntryPoint = "UrlMkGetSessionOption", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int UrlMkGetSessionOption([NativeTypeName("DWORD")] uint dwOption, [NativeTypeName("LPVOID")] void* pBuffer, [NativeTypeName("DWORD")] uint dwBufferLength, [NativeTypeName("DWORD *")] uint* pdwBufferLengthOut, [NativeTypeName("DWORD")] uint dwReserved);
 
-        [DllImport("urlmon", EntryPoint = "FindMimeFromData", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int FindMimeFromData([NativeTypeName("LPBC")] IBindCtx* pBC, [NativeTypeName("LPCWSTR")] ushort* pwzUrl, [NativeTypeName("LPVOID")] void* pBuffer, [NativeTypeName("DWORD")] uint cbSize, [NativeTypeName("LPCWSTR")] ushort* pwzMimeProposed, [NativeTypeName("DWORD")] uint dwMimeFlags, [NativeTypeName("LPWSTR *")] ushort** ppwzMimeOut, [NativeTypeName("DWORD")] uint dwReserved);
 
-        [DllImport("urlmon", EntryPoint = "ObtainUserAgentString", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int ObtainUserAgentString([NativeTypeName("DWORD")] uint dwOption, [NativeTypeName("LPSTR")] sbyte* pszUAOut, [NativeTypeName("DWORD *")] uint* cbSize);
 
-        [DllImport("urlmon", EntryPoint = "CompareSecurityIds", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CompareSecurityIds([NativeTypeName("BYTE *")] byte* pbSecurityId1, [NativeTypeName("DWORD")] uint dwLen1, [NativeTypeName("BYTE *")] byte* pbSecurityId2, [NativeTypeName("DWORD")] uint dwLen2, [NativeTypeName("DWORD")] uint dwReserved);
 
-        [DllImport("urlmon", EntryPoint = "CompatFlagsFromClsid", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CompatFlagsFromClsid([NativeTypeName("CLSID *")] Guid* pclsid, [NativeTypeName("LPDWORD")] uint* pdwCompatFlags, [NativeTypeName("LPDWORD")] uint* pdwMiscStatusFlags);
 
-        [DllImport("urlmon", EntryPoint = "SetAccessForIEAppContainer", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int SetAccessForIEAppContainer([NativeTypeName("HANDLE")] IntPtr hObject, IEObjectType ieObjectType, [NativeTypeName("DWORD")] uint dwAccessMask);
 
-        [DllImport("urlmon", EntryPoint = "CreateUri", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CreateUri([NativeTypeName("LPCWSTR")] ushort* pwzURI, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved, [NativeTypeName("IUri **")] IUri** ppURI);
 
-        [DllImport("urlmon", EntryPoint = "CreateUriWithFragment", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CreateUriWithFragment([NativeTypeName("LPCWSTR")] ushort* pwzURI, [NativeTypeName("LPCWSTR")] ushort* pwzFragment, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved, [NativeTypeName("IUri **")] IUri** ppURI);
 
-        [DllImport("urlmon", EntryPoint = "CreateUriFromMultiByteString", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CreateUriFromMultiByteString([NativeTypeName("LPCSTR")] sbyte* pszANSIInputUri, [NativeTypeName("DWORD")] uint dwEncodingFlags, [NativeTypeName("DWORD")] uint dwCodePage, [NativeTypeName("DWORD")] uint dwCreateFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved, [NativeTypeName("IUri **")] IUri** ppUri);
 
-        [DllImport("urlmon", EntryPoint = "CreateIUriBuilder", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CreateIUriBuilder([NativeTypeName("IUri *")] IUri* pIUri, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved, [NativeTypeName("IUriBuilder **")] IUriBuilder** ppIUriBuilder);
 
-        [DllImport("urlmon", EntryPoint = "HlinkSimpleNavigateToString", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkSimpleNavigateToString([NativeTypeName("LPCWSTR")] ushort* szTarget, [NativeTypeName("LPCWSTR")] ushort* szLocation, [NativeTypeName("LPCWSTR")] ushort* szTargetFrameName, [NativeTypeName("IUnknown *")] IUnknown* pUnk, [NativeTypeName("IBindCtx *")] IBindCtx* pbc, [NativeTypeName("IBindStatusCallback *")] IBindStatusCallback* param5, [NativeTypeName("DWORD")] uint grfHLNF, [NativeTypeName("DWORD")] uint dwReserved);
 
-        [DllImport("urlmon", EntryPoint = "HlinkSimpleNavigateToMoniker", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkSimpleNavigateToMoniker([NativeTypeName("IMoniker *")] IMoniker* pmkTarget, [NativeTypeName("LPCWSTR")] ushort* szLocation, [NativeTypeName("LPCWSTR")] ushort* szTargetFrameName, [NativeTypeName("IUnknown *")] IUnknown* pUnk, [NativeTypeName("IBindCtx *")] IBindCtx* pbc, [NativeTypeName("IBindStatusCallback *")] IBindStatusCallback* param5, [NativeTypeName("DWORD")] uint grfHLNF, [NativeTypeName("DWORD")] uint dwReserved);
 
-        [DllImport("urlmon", EntryPoint = "URLOpenStreamA", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int URLOpenStreamA([NativeTypeName("LPUNKNOWN")] IUnknown* param0, [NativeTypeName("LPCSTR")] sbyte* param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPBINDSTATUSCALLBACK")] IBindStatusCallback* param3);
 
-        [DllImport("urlmon", EntryPoint = "URLOpenStreamW", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int URLOpenStreamW([NativeTypeName("LPUNKNOWN")] IUnknown* param0, [NativeTypeName("LPCWSTR")] ushort* param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPBINDSTATUSCALLBACK")] IBindStatusCallback* param3);
 
-        [DllImport("urlmon", EntryPoint = "URLOpenPullStreamA", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int URLOpenPullStreamA([NativeTypeName("LPUNKNOWN")] IUnknown* param0, [NativeTypeName("LPCSTR")] sbyte* param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPBINDSTATUSCALLBACK")] IBindStatusCallback* param3);
 
-        [DllImport("urlmon", EntryPoint = "URLOpenPullStreamW", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int URLOpenPullStreamW([NativeTypeName("LPUNKNOWN")] IUnknown* param0, [NativeTypeName("LPCWSTR")] ushort* param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPBINDSTATUSCALLBACK")] IBindStatusCallback* param3);
 
-        [DllImport("urlmon", EntryPoint = "URLDownloadToFileA", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int URLDownloadToFileA([NativeTypeName("LPUNKNOWN")] IUnknown* param0, [NativeTypeName("LPCSTR")] sbyte* param1, [NativeTypeName("LPCSTR")] sbyte* param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPBINDSTATUSCALLBACK")] IBindStatusCallback* param4);
 
-        [DllImport("urlmon", EntryPoint = "URLDownloadToFileW", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int URLDownloadToFileW([NativeTypeName("LPUNKNOWN")] IUnknown* param0, [NativeTypeName("LPCWSTR")] ushort* param1, [NativeTypeName("LPCWSTR")] ushort* param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPBINDSTATUSCALLBACK")] IBindStatusCallback* param4);
 
-        [DllImport("urlmon", EntryPoint = "URLDownloadToCacheFileA", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int URLDownloadToCacheFileA([NativeTypeName("LPUNKNOWN")] IUnknown* param0, [NativeTypeName("LPCSTR")] sbyte* param1, [NativeTypeName("LPSTR")] sbyte* param2, [NativeTypeName("DWORD")] uint cchFileName, [NativeTypeName("DWORD")] uint param4, [NativeTypeName("LPBINDSTATUSCALLBACK")] IBindStatusCallback* param5);
 
-        [DllImport("urlmon", EntryPoint = "URLDownloadToCacheFileW", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int URLDownloadToCacheFileW([NativeTypeName("LPUNKNOWN")] IUnknown* param0, [NativeTypeName("LPCWSTR")] ushort* param1, [NativeTypeName("LPWSTR")] ushort* param2, [NativeTypeName("DWORD")] uint cchFileName, [NativeTypeName("DWORD")] uint param4, [NativeTypeName("LPBINDSTATUSCALLBACK")] IBindStatusCallback* param5);
 
-        [DllImport("urlmon", EntryPoint = "URLOpenBlockingStreamA", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int URLOpenBlockingStreamA([NativeTypeName("LPUNKNOWN")] IUnknown* param0, [NativeTypeName("LPCSTR")] sbyte* param1, [NativeTypeName("LPSTREAM *")] IStream** param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPBINDSTATUSCALLBACK")] IBindStatusCallback* param4);
 
-        [DllImport("urlmon", EntryPoint = "URLOpenBlockingStreamW", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int URLOpenBlockingStreamW([NativeTypeName("LPUNKNOWN")] IUnknown* param0, [NativeTypeName("LPCWSTR")] ushort* param1, [NativeTypeName("LPSTREAM *")] IStream** param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPBINDSTATUSCALLBACK")] IBindStatusCallback* param4);
 
-        [DllImport("urlmon", EntryPoint = "HlinkGoBack", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkGoBack([NativeTypeName("IUnknown *")] IUnknown* pUnk);
 
-        [DllImport("urlmon", EntryPoint = "HlinkGoForward", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkGoForward([NativeTypeName("IUnknown *")] IUnknown* pUnk);
 
-        [DllImport("urlmon", EntryPoint = "HlinkNavigateString", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkNavigateString([NativeTypeName("IUnknown *")] IUnknown* pUnk, [NativeTypeName("LPCWSTR")] ushort* szTarget);
 
-        [DllImport("urlmon", EntryPoint = "HlinkNavigateMoniker", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int HlinkNavigateMoniker([NativeTypeName("IUnknown *")] IUnknown* pUnk, [NativeTypeName("IMoniker *")] IMoniker* pmkTarget);
 
-        [DllImport("urlmon", EntryPoint = "CoInternetParseUrl", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CoInternetParseUrl([NativeTypeName("LPCWSTR")] ushort* pwzUrl, PARSEACTION ParseAction, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] ushort* pszResult, [NativeTypeName("DWORD")] uint cchResult, [NativeTypeName("DWORD *")] uint* pcchResult, [NativeTypeName("DWORD")] uint dwReserved);
 
-        [DllImport("urlmon", EntryPoint = "CoInternetParseIUri", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CoInternetParseIUri([NativeTypeName("IUri *")] IUri* pIUri, PARSEACTION ParseAction, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] ushort* pwzResult, [NativeTypeName("DWORD")] uint cchResult, [NativeTypeName("DWORD *")] uint* pcchResult, [NativeTypeName("DWORD_PTR")] nuint dwReserved);
 
-        [DllImport("urlmon", EntryPoint = "CoInternetCombineUrl", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CoInternetCombineUrl([NativeTypeName("LPCWSTR")] ushort* pwzBaseUrl, [NativeTypeName("LPCWSTR")] ushort* pwzRelativeUrl, [NativeTypeName("DWORD")] uint dwCombineFlags, [NativeTypeName("LPWSTR")] ushort* pszResult, [NativeTypeName("DWORD")] uint cchResult, [NativeTypeName("DWORD *")] uint* pcchResult, [NativeTypeName("DWORD")] uint dwReserved);
 
-        [DllImport("urlmon", EntryPoint = "CoInternetCombineUrlEx", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CoInternetCombineUrlEx([NativeTypeName("IUri *")] IUri* pBaseUri, [NativeTypeName("LPCWSTR")] ushort* pwzRelativeUrl, [NativeTypeName("DWORD")] uint dwCombineFlags, [NativeTypeName("IUri **")] IUri** ppCombinedUri, [NativeTypeName("DWORD_PTR")] nuint dwReserved);
 
-        [DllImport("urlmon", EntryPoint = "CoInternetCombineIUri", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CoInternetCombineIUri([NativeTypeName("IUri *")] IUri* pBaseUri, [NativeTypeName("IUri *")] IUri* pRelativeUri, [NativeTypeName("DWORD")] uint dwCombineFlags, [NativeTypeName("IUri **")] IUri** ppCombinedUri, [NativeTypeName("DWORD_PTR")] nuint dwReserved);
 
-        [DllImport("urlmon", EntryPoint = "CoInternetCompareUrl", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CoInternetCompareUrl([NativeTypeName("LPCWSTR")] ushort* pwzUrl1, [NativeTypeName("LPCWSTR")] ushort* pwzUrl2, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("urlmon", EntryPoint = "CoInternetGetProtocolFlags", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CoInternetGetProtocolFlags([NativeTypeName("LPCWSTR")] ushort* pwzUrl, [NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("DWORD")] uint dwReserved);
 
-        [DllImport("urlmon", EntryPoint = "CoInternetQueryInfo", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CoInternetQueryInfo([NativeTypeName("LPCWSTR")] ushort* pwzUrl, QUERYOPTION QueryOptions, [NativeTypeName("DWORD")] uint dwQueryFlags, [NativeTypeName("LPVOID")] void* pvBuffer, [NativeTypeName("DWORD")] uint cbBuffer, [NativeTypeName("DWORD *")] uint* pcbBuffer, [NativeTypeName("DWORD")] uint dwReserved);
 
-        [DllImport("urlmon", EntryPoint = "CoInternetGetSession", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CoInternetGetSession([NativeTypeName("DWORD")] uint dwSessionMode, [NativeTypeName("IInternetSession **")] IInternetSession** ppIInternetSession, [NativeTypeName("DWORD")] uint dwReserved);
 
-        [DllImport("urlmon", EntryPoint = "CoInternetGetSecurityUrl", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CoInternetGetSecurityUrl([NativeTypeName("LPCWSTR")] ushort* pwszUrl, [NativeTypeName("LPWSTR *")] ushort** ppwszSecUrl, PSUACTION psuAction, [NativeTypeName("DWORD")] uint dwReserved);
 
-        [DllImport("urlmon", EntryPoint = "AsyncInstallDistributionUnit", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int AsyncInstallDistributionUnit([NativeTypeName("LPCWSTR")] ushort* szDistUnit, [NativeTypeName("LPCWSTR")] ushort* szTYPE, [NativeTypeName("LPCWSTR")] ushort* szExt, [NativeTypeName("DWORD")] uint dwFileVersionMS, [NativeTypeName("DWORD")] uint dwFileVersionLS, [NativeTypeName("LPCWSTR")] ushort* szURL, [NativeTypeName("IBindCtx *")] IBindCtx* pbc, [NativeTypeName("LPVOID")] void* pvReserved, [NativeTypeName("DWORD")] uint flags);
 
-        [DllImport("urlmon", EntryPoint = "CoInternetGetSecurityUrlEx", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CoInternetGetSecurityUrlEx([NativeTypeName("IUri *")] IUri* pUri, [NativeTypeName("IUri **")] IUri** ppSecUri, PSUACTION psuAction, [NativeTypeName("DWORD_PTR")] nuint dwReserved);
 
-        [DllImport("urlmon", EntryPoint = "CoInternetSetFeatureEnabled", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CoInternetSetFeatureEnabled(INTERNETFEATURELIST FeatureEntry, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("BOOL")] int fEnable);
 
-        [DllImport("urlmon", EntryPoint = "CoInternetIsFeatureEnabled", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CoInternetIsFeatureEnabled(INTERNETFEATURELIST FeatureEntry, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("urlmon", EntryPoint = "CoInternetIsFeatureEnabledForUrl", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CoInternetIsFeatureEnabledForUrl(INTERNETFEATURELIST FeatureEntry, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* szURL, [NativeTypeName("IInternetSecurityManager *")] IInternetSecurityManager* pSecMgr);
 
-        [DllImport("urlmon", EntryPoint = "CoInternetIsFeatureEnabledForIUri", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CoInternetIsFeatureEnabledForIUri(INTERNETFEATURELIST FeatureEntry, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("IUri *")] IUri* pIUri, [NativeTypeName("IInternetSecurityManagerEx2 *")] IInternetSecurityManagerEx2* pSecMgr);
 
-        [DllImport("urlmon", EntryPoint = "CoInternetIsFeatureZoneElevationEnabled", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CoInternetIsFeatureZoneElevationEnabled([NativeTypeName("LPCWSTR")] ushort* szFromURL, [NativeTypeName("LPCWSTR")] ushort* szToURL, [NativeTypeName("IInternetSecurityManager *")] IInternetSecurityManager* pSecMgr, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [DllImport("urlmon", EntryPoint = "CopyStgMedium", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CopyStgMedium([NativeTypeName("const STGMEDIUM *")] STGMEDIUM* pcstgmedSrc, [NativeTypeName("STGMEDIUM *")] STGMEDIUM* pstgmedDest);
 
-        [DllImport("urlmon", EntryPoint = "CopyBindInfo", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CopyBindInfo([NativeTypeName("const BINDINFO *")] BINDINFO* pcbiSrc, [NativeTypeName("BINDINFO *")] BINDINFO* pbiDest);
 
-        [DllImport("urlmon", EntryPoint = "ReleaseBindInfo", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         public static extern void ReleaseBindInfo([NativeTypeName("BINDINFO *")] BINDINFO* pbindinfo);
 
-        [DllImport("urlmon", EntryPoint = "IEGetUserPrivateNamespaceName", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("PWSTR")]
         public static extern ushort* IEGetUserPrivateNamespaceName();
 
-        [DllImport("urlmon", EntryPoint = "CoInternetCreateSecurityManager", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CoInternetCreateSecurityManager([NativeTypeName("IServiceProvider *")] IServiceProvider* pSP, [NativeTypeName("IInternetSecurityManager **")] IInternetSecurityManager** ppSM, [NativeTypeName("DWORD")] uint dwReserved);
 
-        [DllImport("urlmon", EntryPoint = "CoInternetCreateZoneManager", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int CoInternetCreateZoneManager([NativeTypeName("IServiceProvider *")] IServiceProvider* pSP, [NativeTypeName("IInternetZoneManager **")] IInternetZoneManager** ppZM, [NativeTypeName("DWORD")] uint dwReserved);
 
-        [DllImport("urlmon", EntryPoint = "GetSoftwareUpdateInfo", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int GetSoftwareUpdateInfo([NativeTypeName("LPCWSTR")] ushort* szDistUnit, [NativeTypeName("LPSOFTDISTINFO")] SOFTDISTINFO* psdi);
 
-        [DllImport("urlmon", EntryPoint = "SetSoftwareUpdateAdvertisementState", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int SetSoftwareUpdateAdvertisementState([NativeTypeName("LPCWSTR")] ushort* szDistUnit, [NativeTypeName("DWORD")] uint dwAdState, [NativeTypeName("DWORD")] uint dwAdvertisedVersionMS, [NativeTypeName("DWORD")] uint dwAdvertisedVersionLS);
 
-        [DllImport("urlmon", EntryPoint = "IsLoggingEnabledA", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int IsLoggingEnabledA([NativeTypeName("LPCSTR")] sbyte* pszUrl);
 
-        [DllImport("urlmon", EntryPoint = "IsLoggingEnabledW", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int IsLoggingEnabledW([NativeTypeName("LPCWSTR")] ushort* pwszUrl);
 
-        [DllImport("urlmon", EntryPoint = "WriteHitLogging", ExactSpelling = true)]
+        [DllImport("urlmon", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
         public static extern int WriteHitLogging([NativeTypeName("LPHIT_LOGGING_INFO")] HIT_LOGGING_INFO* lpLogginginfo);
 
@@ -1597,5 +1597,115 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define CONFIRMSAFETYACTION_LOADOBJECT 0x00000001")]
         public const int CONFIRMSAFETYACTION_LOADOBJECT = 0x00000001;
+
+        public static readonly Guid IID_IPersistMoniker = new Guid(0x79EAC9C9, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+
+        public static readonly Guid IID_IMonikerProp = new Guid(0xA5CA5F7F, 0x1847, 0x4D87, 0x9C, 0x5B, 0x91, 0x85, 0x09, 0xF7, 0x51, 0x1D);
+
+        public static readonly Guid IID_IBindProtocol = new Guid(0x79EAC9CD, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+
+        public static readonly Guid IID_IBinding = new Guid(0x79EAC9C0, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+
+        public static readonly Guid IID_IBindStatusCallback = new Guid(0x79EAC9C1, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+
+        public static readonly Guid IID_IBindStatusCallbackEx = new Guid(0xAAA74EF9, 0x8EE7, 0x4659, 0x88, 0xD9, 0xF8, 0xC5, 0x04, 0xDA, 0x73, 0xCC);
+
+        public static readonly Guid IID_IAuthenticate = new Guid(0x79EAC9D0, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+
+        public static readonly Guid IID_IAuthenticateEx = new Guid(0x2AD1EDAF, 0xD83D, 0x48B5, 0x9A, 0xDF, 0x03, 0xDB, 0xE1, 0x9F, 0x53, 0xBD);
+
+        public static readonly Guid IID_IHttpNegotiate = new Guid(0x79EAC9D2, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+
+        public static readonly Guid IID_IHttpNegotiate2 = new Guid(0x4F9F9FCB, 0xE0F4, 0x48EB, 0xB7, 0xAB, 0xFA, 0x2E, 0xA9, 0x36, 0x5C, 0xB4);
+
+        public static readonly Guid IID_IHttpNegotiate3 = new Guid(0x57B6C80A, 0x34C2, 0x4602, 0xBC, 0x26, 0x66, 0xA0, 0x2F, 0xC5, 0x71, 0x53);
+
+        public static readonly Guid IID_IWinInetFileStream = new Guid(0xF134C4B7, 0xB1F8, 0x4E75, 0xB8, 0x86, 0x74, 0xB9, 0x09, 0x43, 0xBE, 0xCB);
+
+        public static readonly Guid IID_IWindowForBindingUI = new Guid(0x79EAC9D5, 0xBAFA, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+
+        public static readonly Guid IID_ICodeInstall = new Guid(0x79EAC9D1, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+
+        public static readonly Guid IID_IUri = new Guid(0xA39EE748, 0x6A27, 0x4817, 0xA6, 0xF2, 0x13, 0x91, 0x4B, 0xEF, 0x58, 0x90);
+
+        public static readonly Guid IID_IUriContainer = new Guid(0xA158A630, 0xED6F, 0x45FB, 0xB9, 0x87, 0xF6, 0x86, 0x76, 0xF5, 0x77, 0x52);
+
+        public static readonly Guid IID_IUriBuilder = new Guid(0x4221B2E1, 0x8955, 0x46C0, 0xBD, 0x5B, 0xDE, 0x98, 0x97, 0x56, 0x5D, 0xE7);
+
+        public static readonly Guid IID_IUriBuilderFactory = new Guid(0xE982CE48, 0x0B96, 0x440C, 0xBC, 0x37, 0x0C, 0x86, 0x9B, 0x27, 0xA2, 0x9E);
+
+        public static readonly Guid IID_IWinInetInfo = new Guid(0x79EAC9D6, 0xBAFA, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+
+        public static readonly Guid IID_IHttpSecurity = new Guid(0x79EAC9D7, 0xBAFA, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+
+        public static readonly Guid IID_IWinInetHttpInfo = new Guid(0x79EAC9D8, 0xBAFA, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+
+        public static readonly Guid IID_IWinInetHttpTimeouts = new Guid(0xF286FA56, 0xC1FD, 0x4270, 0x8E, 0x67, 0xB3, 0xEB, 0x79, 0x0A, 0x81, 0xE8);
+
+        public static readonly Guid IID_IWinInetCacheHints = new Guid(0xDD1EC3B3, 0x8391, 0x4FDB, 0xA9, 0xE6, 0x34, 0x7C, 0x3C, 0xAA, 0xA7, 0xDD);
+
+        public static readonly Guid IID_IWinInetCacheHints2 = new Guid(0x7857AEAC, 0xD31F, 0x49BF, 0x88, 0x4E, 0xDD, 0x46, 0xDF, 0x36, 0x78, 0x0A);
+
+        public static readonly Guid IID_IBindHost = new Guid(0xFC4801A1, 0x2BA9, 0x11CF, 0xA2, 0x29, 0x00, 0xAA, 0x00, 0x3D, 0x73, 0x52);
+
+        public static readonly Guid IID_IInternet = new Guid(0x79EAC9E0, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+
+        public static readonly Guid IID_IInternetBindInfo = new Guid(0x79EAC9E1, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+
+        public static readonly Guid IID_IInternetBindInfoEx = new Guid(0xA3E015B7, 0xA82C, 0x4DCD, 0xA1, 0x50, 0x56, 0x9A, 0xEE, 0xED, 0x36, 0xAB);
+
+        public static readonly Guid IID_IInternetProtocolRoot = new Guid(0x79EAC9E3, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+
+        public static readonly Guid IID_IInternetProtocol = new Guid(0x79EAC9E4, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+
+        public static readonly Guid IID_IInternetProtocolEx = new Guid(0xC7A98E66, 0x1010, 0x492C, 0xA1, 0xC8, 0xC8, 0x09, 0xE1, 0xF7, 0x59, 0x05);
+
+        public static readonly Guid IID_IInternetProtocolSink = new Guid(0x79EAC9E5, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+
+        public static readonly Guid IID_IInternetProtocolSinkStackable = new Guid(0x79EAC9F0, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+
+        public static readonly Guid IID_IInternetSession = new Guid(0x79EAC9E7, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+
+        public static readonly Guid IID_IInternetThreadSwitch = new Guid(0x79EAC9E8, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+
+        public static readonly Guid IID_IInternetPriority = new Guid(0x79EAC9EB, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+
+        public static readonly Guid IID_IInternetProtocolInfo = new Guid(0x79EAC9EC, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+
+        public static readonly Guid IID_IInternetSecurityMgrSite = new Guid(0x79EAC9ED, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+
+        public static readonly Guid IID_IInternetSecurityManager = new Guid(0x79EAC9EE, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+
+        public static readonly Guid IID_IInternetSecurityManagerEx = new Guid(0xF164EDF1, 0xCC7C, 0x4F0D, 0x9A, 0x94, 0x34, 0x22, 0x26, 0x25, 0xC3, 0x93);
+
+        public static readonly Guid IID_IInternetSecurityManagerEx2 = new Guid(0xF1E50292, 0xA795, 0x4117, 0x8E, 0x09, 0x2B, 0x56, 0x0A, 0x72, 0xAC, 0x60);
+
+        public static readonly Guid IID_IZoneIdentifier = new Guid(0xCD45F185, 0x1B21, 0x48E2, 0x96, 0x7B, 0xEA, 0xD7, 0x43, 0xA8, 0x91, 0x4E);
+
+        public static readonly Guid IID_IZoneIdentifier2 = new Guid(0xEB5E760C, 0x09EF, 0x45C0, 0xB5, 0x10, 0x70, 0x83, 0x0C, 0xE3, 0x1E, 0x6A);
+
+        public static readonly Guid IID_IInternetHostSecurityManager = new Guid(0x3AF280B6, 0xCB3F, 0x11D0, 0x89, 0x1E, 0x00, 0xC0, 0x4F, 0xB6, 0xBF, 0xC4);
+
+        public static readonly Guid IID_IInternetZoneManager = new Guid(0x79EAC9EF, 0xBAF9, 0x11CE, 0x8C, 0x82, 0x00, 0xAA, 0x00, 0x4B, 0xA9, 0x0B);
+
+        public static readonly Guid IID_IInternetZoneManagerEx = new Guid(0xA4C23339, 0x8E06, 0x431E, 0x9B, 0xF4, 0x7E, 0x71, 0x1C, 0x08, 0x56, 0x48);
+
+        public static readonly Guid IID_IInternetZoneManagerEx2 = new Guid(0xEDC17559, 0xDD5D, 0x4846, 0x8E, 0xEF, 0x8B, 0xEC, 0xBA, 0x5A, 0x4A, 0xBF);
+
+        public static readonly Guid IID_ISoftDistExt = new Guid(0xB15B8DC1, 0xC7E1, 0x11D0, 0x86, 0x80, 0x00, 0xAA, 0x00, 0xBD, 0xCB, 0x71);
+
+        public static readonly Guid IID_ICatalogFileInfo = new Guid(0x711C7600, 0x6B48, 0x11D1, 0xB4, 0x03, 0x00, 0xAA, 0x00, 0xB9, 0x2A, 0xF1);
+
+        public static readonly Guid IID_IDataFilter = new Guid(0x69D14C80, 0xC18E, 0x11D0, 0xA9, 0xCE, 0x00, 0x60, 0x97, 0x94, 0x23, 0x11);
+
+        public static readonly Guid IID_IEncodingFilterFactory = new Guid(0x70BDDE00, 0xC18E, 0x11D0, 0xA9, 0xCE, 0x00, 0x60, 0x97, 0x94, 0x23, 0x11);
+
+        public static readonly Guid IID_IWrappedProtocol = new Guid(0x53C84785, 0x8425, 0x4DC5, 0x97, 0x1B, 0xE5, 0x8D, 0x9C, 0x19, 0xF9, 0xB6);
+
+        public static readonly Guid IID_IGetBindHandle = new Guid(0xAF0FF408, 0x129D, 0x4B20, 0x91, 0xF0, 0x02, 0xBD, 0x23, 0xD8, 0x83, 0x52);
+
+        public static readonly Guid IID_IBindCallbackRedirect = new Guid(0x11C81BC2, 0x121E, 0x4ED5, 0xB9, 0xC4, 0xB4, 0x30, 0xBD, 0x54, 0xF2, 0xC0);
+
+        public static readonly Guid IID_IBindHttpSecurity = new Guid(0xA9EDA967, 0xF50E, 0x4A33, 0xB3, 0x58, 0x20, 0x6F, 0x6E, 0xF3, 0x08, 0x6D);
     }
 }

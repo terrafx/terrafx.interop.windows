@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("E9550983-360B-4F53-B391-AFD695078691")]
+    [NativeTypeName("struct IVirtualSurfaceImageSourceNative : ISurfaceImageSourceNative")]
     public unsafe partial struct IVirtualSurfaceImageSourceNative
     {
         public void** lpVtbl;

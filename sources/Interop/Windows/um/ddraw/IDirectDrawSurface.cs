@@ -5,11 +5,10 @@
 
 using System;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    [Guid("6C14DB81-A733-11CE-A521-0020AF0BE560")]
+    [NativeTypeName("struct IDirectDrawSurface : IUnknown")]
     public unsafe partial struct IDirectDrawSurface
     {
         public void** lpVtbl;

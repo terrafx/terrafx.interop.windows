@@ -9,7 +9,8 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    [Guid("0DB8851D-2E5B-47eb-9208-D28C325A01D7")]
+    [Guid("0DB8851D-2E5B-47EB-9208-D28C325A01D7")]
+    [NativeTypeName("struct ICondition2 : ICondition")]
     public unsafe partial struct ICondition2
     {
         public void** lpVtbl;

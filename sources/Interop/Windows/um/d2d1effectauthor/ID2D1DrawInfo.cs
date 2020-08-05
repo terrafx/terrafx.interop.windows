@@ -11,6 +11,7 @@ using static TerraFX.Interop.D2D1_PIXEL_OPTIONS;
 namespace TerraFX.Interop
 {
     [Guid("693CE632-7F2F-45DE-93FE-18D88B37AA21")]
+    [NativeTypeName("struct ID2D1DrawInfo : ID2D1RenderInfo")]
     public unsafe partial struct ID2D1DrawInfo
     {
         public void** lpVtbl;

@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [Guid("F938C991-3029-11CF-8C44-00AA006B6814")]
+    [NativeTypeName("struct IAMPhysicalPinInfo : IUnknown")]
     public unsafe partial struct IAMPhysicalPinInfo
     {
         public void** lpVtbl;
