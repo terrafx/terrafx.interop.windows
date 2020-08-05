@@ -1278,10 +1278,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "devicetopology", "devicetop
 		generation\um\devicetopology\header.txt = generation\um\devicetopology\header.txt
 		generation\um\devicetopology\um-devicetopology.h = generation\um\devicetopology\um-devicetopology.h
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.graphics.holographic.interop", "windows.graphics.holographic.interop", "{2491bc5c-def9-4e68-ac7b-b53b53caf7eb}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.graphics.holographic.interop", "windows.graphics.holographic.interop", "{2491BC5C-DEF9-4E68-AC7B-B53B53CAF7EB}"
 	ProjectSection(SolutionItems) = preProject
 		generation\um\windows.graphics.holographic.interop\generate.rsp = generation\um\windows.graphics.holographic.interop\generate.rsp
-		generation\um\jobapi2\header.txt = generation\um\windows.graphics.holographic.interop\header.txt
-		generation\um\windows.graphics.holographic.interop\uum-windows.graphics.holographic.interop.h = generation\um\windows.graphics.holographic.interop\um-windows.graphics.holographic.interop.h
+		generation\um\windows.graphics.holographic.interop\header.txt = generation\um\windows.graphics.holographic.interop\header.txt
+		generation\um\windows.graphics.holographic.interop\um-windows.graphics.holographic.interop.h = generation\um\windows.graphics.holographic.interop\um-windows.graphics.holographic.interop.h
 	EndProjectSection
 EndProject
 Global
@@ -1488,6 +1489,7 @@ Global
 		{62072728-90CD-44EA-9A0E-7E35D1275105} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{F725268B-0460-4AA3-B4DB-4117B8F8D0D4} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{20CF1C32-1F5E-43B3-AE1F-22A826E5BB9C} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{2491BC5C-DEF9-4E68-AC7B-B53B53CAF7EB} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
