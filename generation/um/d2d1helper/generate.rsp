@@ -1,0 +1,15 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+D2D1
+operator*(const D2D1_MATRIX_3X2_F &, const D2D1_MATRIX_3X2_F &):D2D1_MATRIX_3X2_F nothrow
+operator==(const D2D1_SIZE_U &, const D2D1_SIZE_U &):bool nothrow
+operator==(const D2D1_RECT_U &, const D2D1_RECT_U &):bool nothrow
+--file
+um-d2d1helper.h
+--output
+../../../sources/Interop/Windows/um/d2d1helper
+--test-output
+../../../tests/Interop/Windows/um/d2d1helper
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1helper.h

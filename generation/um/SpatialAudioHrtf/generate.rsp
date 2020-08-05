@@ -11,6 +11,3 @@ um-SpatialAudioHrtf.h
 ../../../tests/Interop/Windows/um/SpatialAudioHrtf
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/SpatialAudioHrtf.h
---with-attribute
-ISpatialAudioObjectForHrtf=Guid("D7436ADE-1978-4E14-ABA0-555BD8EB83B4")
-ISpatialAudioObjectRenderStreamForHrtf=Guid("E08DEEF9-5363-406E-9FDC-080EE247BBE0")

@@ -10,5 +10,3 @@ um-servprov.h
 ../../../tests/Interop/Windows/um/servprov
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/servprov.h
---with-attribute
-IServiceProvider=Guid("6D5140C1-7436-11CE-8034-00AA006009FA")

@@ -8,8 +8,3 @@ um-windows.media.core.interop.h
 ../../../tests/Interop/Windows/um/windows.media.core.interop
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/windows.media.core.interop.h
---with-attribute
-IAudioFrameNative=Guid("20BE1E2E-930F-4746-9335-3C332F255093")
-IVideoFrameNative=Guid("26BA702B-314A-4620-AAF6-7A51AA58FA18")
-IAudioFrameNativeFactory=Guid("7BD67CF8-BF7D-43E6-AF8D-B170EE0C0110")
-IVideoFrameNativeFactory=Guid("69E3693E-8E1E-4E63-AC4C-7FDC21D9731D")

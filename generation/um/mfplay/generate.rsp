@@ -23,9 +23,5 @@ um-mfplay.h
 ../../../tests/Interop/Windows/um/mfplay
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mfplay.h
---with-attribute
-IMFPMediaPlayer         =Guid("A714590A-58AF-430A-85BF-44F5EC838D85")
-IMFPMediaPlayerCallback =Guid("766C8FFB-5FDB-4FEA-A28D-B912996F51BD")
-IMFPMediaItem           =Guid("90EB3E6B-ECBF-45CC-B1DA-C6FE3EA70D57")
 --with-librarypath
 *=mfplat

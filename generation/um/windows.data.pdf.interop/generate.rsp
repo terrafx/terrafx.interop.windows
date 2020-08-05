@@ -10,7 +10,5 @@ um-windows.data.pdf.interop.h
 ../../../tests/Interop/Windows/um/windows.data.pdf.interop
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/windows.data.pdf.interop.h
---with-attribute
-IPdfRendererNative=Guid("7D9DCD91-D277-4947-8527-07A0DAEDA94A")
 --with-librarypath
 *=Windows.Data.Pdf

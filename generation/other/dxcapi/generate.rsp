@@ -50,13 +50,6 @@ other-dxcapi.h
 ../../../../tests/Interop/Windows/other/dxcapi
 --traverse
 dxcapi.h
---with-attribute
-IDxcBlobUtf16=Guid("A3F84EAB-0FAA-497E-A39C-EE6ED60B2D84")
-IDxcBlobUtf8=Guid("3DA636C9-BA71-4024-A301-30CBF125305B")
-IDxcCompiler3=Guid("228B4687-5A6A-4730-900C-9702B2203F54")
-IDxcCompilerArgs=Guid("73EFFE2A-70DC-45F8-9690-EFF64C02429D")
-IDxcResult=Guid("58346CDA-DDE7-4497-9461-6F87AF5E0659")
-IDxcUtils=Guid("4605C4CB-2019-492A-ADA4-65F20BB7D67F")
 --with-librarypath
 *=dxcompiler
 --with-type

@@ -12,8 +12,3 @@ um-PropIdlBase.h
 ../../../tests/Interop/Windows/um/PropIdlBase
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/PropIdlBase.h
---with-attribute
-IEnumSTATPROPSETSTG=Guid("0000013B-0000-0000-C000-000000000046")
-IEnumSTATPROPSTG=Guid("00000139-0000-0000-C000-000000000046")
-IPropertySetStorage=Guid("0000013A-0000-0000-C000-000000000046")
-IPropertyStorage=Guid("00000138-0000-0000-C000-000000000046")

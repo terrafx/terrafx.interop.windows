@@ -8,5 +8,3 @@ um-DXProgrammableCapture.h
 ../../../tests/Interop/Windows/um/DXProgrammableCapture
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/DXProgrammableCapture.h
---with-attribute
-IDXGraphicsAnalysis=Guid("9F251514-9D4D-4902-9D60-18988AB7D4B5")

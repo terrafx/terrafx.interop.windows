@@ -22,11 +22,3 @@ um-d3d12shader.h
 ../../../tests/Interop/Windows/um/d3d12shader
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12shader.h
---with-attribute
-ID3D12FunctionParameterReflection=Guid("EC25F42D-7006-4F2B-B33E-02CC3375733F")
-ID3D12FunctionReflection=Guid("1108795C-2772-4BA9-B2A8-D464DC7E2799")
-ID3D12LibraryReflection=Guid("8E349D19-54DB-4A56-9DC9-119D87BDB804")
-ID3D12ShaderReflection=Guid("5A58797D-A72C-478D-8BA2-EFC6B0EFE88E")
-ID3D12ShaderReflectionConstantBuffer=Guid("C59598B4-48B3-4869-B9B1-B1618B14A8B7")
-ID3D12ShaderReflectionType=Guid("E913C351-783D-48CA-A1D1-4F306284AD56")
-ID3D12ShaderReflectionVariable=Guid("8337A8A6-A216-444A-B2F4-314733A73AEA")

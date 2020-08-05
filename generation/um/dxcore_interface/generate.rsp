@@ -19,7 +19,3 @@ um-dxcore_interface.h
 ../../../tests/Interop/Windows/um/dxcore_interface
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dxcore_interface.h
---with-attribute
-IDXCoreAdapter=Guid("F0DB4C7F-FE5A-42A2-BD62-F2A6CF6FC83E")
-IDXCoreAdapterFactory=Guid("78EE5945-C36E-4B13-A669-005DD11C0F06")
-IDXCoreAdapterList=Guid("526C7776-40E9-459B-B711-F32AD76DFC28")

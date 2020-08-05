@@ -8,6 +8,3 @@ um-d2d1effectauthor_1.h
 ../../../tests/Interop/Windows/um/d2d1effectauthor_1
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1effectauthor_1.h
---with-attribute
-ID2D1EffectContext1=Guid("84AB595A-FC81-4546-BACD-E8EF4D8ABE7A")
-ID2D1EffectContext2=Guid("577AD2A0-9FC7-4DDA-8B18-DAB810140052")

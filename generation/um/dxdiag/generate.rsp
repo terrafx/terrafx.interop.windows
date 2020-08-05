@@ -23,8 +23,5 @@ um-dxdiag.h
 ../../../tests/Interop/Windows/um/dxdiag
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dxdiag.h
---with-attribute
-IDxDiagProvider=Guid("9C6B4CB0-23F8-49CC-A3ED-45A55000A6D2")
-IDxDiagContainer=Guid("7D0F462F-4064-4862-BC7F-933E5058C10F")
 --with-librarypath
 *=dxdiag
