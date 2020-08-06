@@ -62,4 +62,4 @@ jobs:
       with:
         dotnet-version: '3.1.x'
         source-url: https://nuget.pkg.github.com/terrafx/index.json
-    - run: dotnet nuget push ./artifacts/pkg/release/*.nupkg
+    - run: dotnet nuget push ./artifacts/pkg/Release/*.nupkg
