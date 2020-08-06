@@ -59,7 +59,7 @@ jobs:
           ./artifacts/pkg/**/*
           ./artifacts/tst/**/*
         if-no-files-found: error
-  publish:
+  publishAz:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'push' }}
     needs: [ windows, unix ]
@@ -72,6 +72,22 @@ jobs:
       with:
         dotnet-version: '3.1.x'
         source-url: https://pkgs.terrafx.dev/index.json
+      env:
+        NUGET_AUTH_TOKEN: ${{ secrets.AZURE_DEVOPS_PAT }}
+    - run: dotnet nuget push ./artifacts/pkg/Release/*.nupkg
+  publishGH:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' }}
+    needs: [ windows, unix ]
+    steps:
+    - uses: actions/download-artifact@v2
+      with:
+        name: windows_release_x64
+        path: ./artifacts
+    - uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '3.1.x'
+        source-url: https://nuget.pkg.github.com/terrafx/index.json
       env:
         NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - run: dotnet nuget push ./artifacts/pkg/Release/*.nupkg
