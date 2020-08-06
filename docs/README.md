@@ -5,6 +5,8 @@ Interop bindings for Windows.
 ![ci](https://github.com/terrafx/terrafx.interop.windows/workflows/ci/badge.svg?branch=main&event=push)
 [![Discord](https://img.shields.io/discord/593547387457372212.svg?label=Discord&style=plastic)](https://discord.terrafx.dev/)
 
+Packages are available at: https://github.com/orgs/terrafx/packages or via the NuGet Feed URL: https://pkgs.terrafx.dev/index.json
+
 ## Table of Contents
 
 * [Code of Conduct](#code-of-conduct)

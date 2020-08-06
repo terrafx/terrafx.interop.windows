@@ -66,7 +66,7 @@
     <RepositoryType>git</RepositoryType>
     <RestoreSources>
       https://api.nuget.org/v3/index.json;
-      https://pkgs.terrafx.dev/nuget/v3/index.json;
+      https://pkgs.terrafx.dev/index.json;
     </RestoreSources>
     <UseSharedCompilation>true</UseSharedCompilation>
   </PropertyGroup>
