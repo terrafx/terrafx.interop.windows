@@ -2,13 +2,7 @@
 
 Interop bindings for Windows.
 
-| Job | Debug Status | Release Status |
-| --- | ------------ | -------------- |
-| Windows x86 | [![Build Status](https://ci.terrafx.dev/_apis/build/status/terrafx.terrafx.interop.windows-ci?branchName=master&jobName=windows_debug_x86)](https://ci.terrafx.dev/_build/latest?definitionId=12&branchName=master) | [![Build Status](https://ci.terrafx.dev/_apis/build/status/terrafx.terrafx.interop.windows-ci?branchName=master&jobName=windows_release_x86)](https://ci.terrafx.dev/_build/latest?definitionId=12&branchName=master) |
-| Windows x64 | [![Build Status](https://ci.terrafx.dev/_apis/build/status/terrafx.terrafx.interop.windows-ci?branchName=master&jobName=windows_debug_x64)](https://ci.terrafx.dev/_build/latest?definitionId=12&branchName=master) | [![Build Status](https://ci.terrafx.dev/_apis/build/status/terrafx.terrafx.interop.windows-ci?branchName=master&jobName=windows_release_x64)](https://ci.terrafx.dev/_build/latest?definitionId=12&branchName=master) |
-| Ubuntu x64 | [![Build Status](https://ci.terrafx.dev/_apis/build/status/terrafx.terrafx.interop.windows-ci?branchName=master&jobName=ubuntu_debug_x64)](https://ci.terrafx.dev/_build/latest?definitionId=12&branchName=master) | [![Build Status](https://ci.terrafx.dev/_apis/build/status/terrafx.terrafx.interop.windows-ci?branchName=master&jobName=ubuntu_release_x64)](https://ci.terrafx.dev/_build/latest?definitionId=12&branchName=master) |
-| MacOS x64 | [![Build Status](https://ci.terrafx.dev/_apis/build/status/terrafx.terrafx.interop.windows-ci?branchName=master&jobName=macos_debug_x64)](https://ci.terrafx.dev/_build/latest?definitionId=12&branchName=master) | [![Build Status](https://ci.terrafx.dev/_apis/build/status/terrafx.terrafx.interop.windows-ci?branchName=master&jobName=macos_release_x64)](https://ci.terrafx.dev/_build/latest?definitionId=12&branchName=master) |
-
+![ci](https://github.com/terrafx/terrafx.interop.windows/workflows/ci/badge.svg?branch=main&event=push)
 [![Discord](https://img.shields.io/discord/593547387457372212.svg?label=Discord&style=plastic)](https://discord.terrafx.dev/)
 
 ## Table of Contents

@@ -57,6 +57,7 @@ jobs:
     - uses: actions/download-artifact@v2
       with:
         name: windows_release_x64
+        path: ./artifacts
     - uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '3.1.x'
