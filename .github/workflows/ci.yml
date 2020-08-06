@@ -59,7 +59,7 @@ jobs:
     - uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '3.1.x'
-        source-url: https://nuget.pkg.github.com/terrafx/index.json
+        source-url: https://pkgs.terrafx.dev/index.json
       env:
         NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - run: dotnet nuget push ./artifacts/pkg/Release/*.nupkg
