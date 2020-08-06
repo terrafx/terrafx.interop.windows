@@ -43,7 +43,7 @@
     <Product>TerraFX.Interop.Windows</Product>
     <VersionPrefix>10.0.19041</VersionPrefix>
     <VersionSuffix>alpha</VersionSuffix>
-    <VersionSuffix Condition="'$(SYSTEM_PULLREQUEST_PULLREQUESTNUMBER)' != ''">pr$(SYSTEM_PULLREQUEST_PULLREQUESTNUMBER)</VersionSuffix>
+    <VersionSuffix Condition="'$(GITHUB_EVENT_NAME)' == 'pull_request'">pr</VersionSuffix>
   </PropertyGroup>
 
   <!-- Default settings that are otherwise undefined -->

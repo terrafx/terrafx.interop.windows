@@ -1,7 +1,0 @@
-pr:
-- main
-
-jobs:
-- template: azure-pipelines.yml
-  parameters:
-    ci: false
