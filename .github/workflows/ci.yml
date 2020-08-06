@@ -1,0 +1,64 @@
+name: ci
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  windows:
+    runs-on: ${{ matrix.os }}-latest
+    strategy:
+      matrix:
+        architecture: [ x86, x64 ]
+        configuration: [ debug, release ]
+        os: [ windows ]
+    steps:
+    - uses: actions/checkout@v2
+    - run: ./scripts/cibuild.cmd -configuration ${{ matrix.configuration }} -architecture ${{ matrix.architecture }}
+      shell: cmd
+    - uses: actions/upload-artifact@v2
+      with:
+        name: ${{ matrix.os }}_${{ matrix.configuration }}_${{ matrix.architecture }}
+        path: |
+          ./artifacts/bin/**/*
+          ./artifacts/log/**/*
+          ./artifacts/pkg/**/*
+          ./artifacts/tst/**/*
+        if-no-files-found: error
+  unix:
+    runs-on: ${{ matrix.os }}-latest
+    strategy:
+      matrix:
+        architecture: [ x64 ]
+        configuration: [ debug, release ]
+        os: [ macos, ubuntu ]
+    steps:
+    - uses: actions/checkout@v2
+    - run: ./scripts/cibuild.sh --configuration ${{ matrix.configuration }} --architecture ${{ matrix.architecture }}
+      shell: bash
+    - uses: actions/upload-artifact@v2
+      with:
+        name: ${{ matrix.os }}_${{ matrix.configuration }}_${{ matrix.architecture }}
+        path: |
+          ./artifacts/bin/**/*
+          ./artifacts/log/**/*
+          ./artifacts/pkg/**/*
+          ./artifacts/tst/**/*
+        if-no-files-found: error
+  publish:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' }}
+    needs: [ windows, unix ]
+    env:
+      NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+    - uses: actions/download-artifact@v2
+      with:
+        name: windows_release_x64
+    - uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '3.1.x'
+        source-url: https://nuget.pkg.github.com/terrafx/index.json
+    - run: dotnet nuget push ./artifacts/pkg/release/*.nupkg
