@@ -4,9 +4,11 @@
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
 using System;
-using System.Runtime.CompilerServices;
+using System.Drawing;
+using System.Numerics;
 using System.Runtime.InteropServices;
 using TerraFX.Interop;
+using static TerraFX.Interop.DXGI_FORMAT;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Samples.DirectX
@@ -19,11 +21,20 @@ namespace TerraFX.Samples.DirectX
 
         public static int Run(DXSample pSample, HINSTANCE hInstance, int nCmdShow)
         {
+            var useWarpDevice = false;
+
             // Parse the command line parameters
-            pSample.ParseCommandLineArgs(Environment.GetCommandLineArgs());
+            foreach (var arg in Environment.GetCommandLineArgs())
+            {
+                if (Program.Matches(arg, "warp"))
+                {
+                    useWarpDevice = true;
+                    continue;
+                }
+            }
 
             fixed (char* lpszClassName = "DXSampleClass")
-            fixed (char* lpWindowName = pSample.Title)
+            fixed (char* lpWindowName = pSample.Name)
             {
                 // Requires an explicit cast until C# handles UnmanagedCallersOnly
                 var wndProc = (delegate* stdcall<IntPtr, uint, nuint, nint, nint>)(delegate* managed<IntPtr, uint, nuint, nint, nint>)&WindowProc;
@@ -39,12 +50,6 @@ namespace TerraFX.Samples.DirectX
                 };
                 _ = RegisterClassExW(&windowClass);
 
-                var windowRect = new RECT {
-                    right = unchecked((int)pSample.Width),
-                    bottom = unchecked((int)pSample.Height)
-                };
-                _ = AdjustWindowRect(&windowRect, WS_OVERLAPPEDWINDOW, FALSE);
-
                 // Create the window and store a handle to it.
                 s_hwnd = CreateWindowExW(
                     0,
@@ -53,8 +58,8 @@ namespace TerraFX.Samples.DirectX
                     WS_OVERLAPPEDWINDOW,
                     CW_USEDEFAULT,
                     CW_USEDEFAULT,
-                    windowRect.right - windowRect.left,
-                    windowRect.bottom - windowRect.top,
+                    CW_USEDEFAULT,
+                    CW_USEDEFAULT,
                     HWND.NULL,                              // We have no parent window.
                     HMENU.NULL,                             // We aren't using menus.
                     hInstance,
@@ -62,8 +67,14 @@ namespace TerraFX.Samples.DirectX
                 );
             }
 
+            RECT windowRect;
+            _ = GetClientRect(s_hwnd, &windowRect);
+
             // Initialize the sample. OnInit is defined in each child-implementation of DXSample.
-            pSample.OnInit();
+            var backgroundColor = new Vector4(0.0f, 0.2f, 0.4f, 1.0f);
+
+            var size = new Size((windowRect.right - windowRect.left), (windowRect.bottom - windowRect.top));
+            pSample.OnInit(DXGI_FORMAT_UNKNOWN, backgroundColor, DXGI_FORMAT_UNKNOWN, 1.0f, 2, s_hwnd, true, size, useWarpDevice);
 
             _ = ShowWindow(s_hwnd, nCmdShow);
 
@@ -101,18 +112,22 @@ namespace TerraFX.Samples.DirectX
                     // Save the DXSample* passed in to CreateWindow.
                     var pCreateStruct = (CREATESTRUCTW*)lParam;
                     _ = SetWindowLongPtrW(hWnd, GWLP_USERDATA, (IntPtr)pCreateStruct->lpCreateParams);
-                }
-                return IntPtr.Zero;
-
-                case WM_KEYDOWN:
-                {
-                    pSample?.OnKeyDown((byte)wParam);
                     return IntPtr.Zero;
                 }
 
-                case WM_KEYUP:
+                case WM_DESTROY:
                 {
-                    pSample?.OnKeyUp((byte)wParam);
+                    PostQuitMessage(0);
+                    return IntPtr.Zero;
+                }
+
+                case WM_SIZE:
+                {
+                    if (pSample != null)
+                    {
+                        var size = new Size(LOWORD(lParam), HIWORD(lParam));
+                        pSample.OnWindowSizeChanged(size);
+                    }
                     return IntPtr.Zero;
                 }
 
@@ -126,15 +141,23 @@ namespace TerraFX.Samples.DirectX
                     return IntPtr.Zero;
                 }
 
-                case WM_DESTROY:
+                case WM_KEYDOWN:
                 {
-                    PostQuitMessage(0);
+                    pSample?.OnKeyDown((byte)wParam);
                     return IntPtr.Zero;
                 }
-            }
 
-            // Handle any messages the switch statement didn't.
-            return DefWindowProcW(hWnd, message, wParam, lParam);
+                case WM_KEYUP:
+                {
+                    pSample?.OnKeyUp((byte)wParam);
+                    return IntPtr.Zero;
+                }
+
+                default:
+                {
+                    return DefWindowProcW(hWnd, message, wParam, lParam);
+                }
+            }
         }
     }
 }

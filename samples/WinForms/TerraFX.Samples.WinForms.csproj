@@ -3,26 +3,13 @@
 <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
+    <OutputType>WinExe</OutputType>
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="..\DirectX\Shared\DXSampleHelper.cs" Link="DXSampleHelper.cs" />
+    <ProjectReference Include="..\DirectX\TerraFX.Samples.DirectX.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\sources\Interop\Windows\TerraFX.Interop.Windows.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Assets\Shaders\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="..\DirectX\D3D12\Assets\Shaders\HelloTriangle.hlsl" Link="Assets\Shaders\HelloTriangle.hlsl" CopyToOutputDirectory="PreserveNewest" />
-  </ItemGroup>
-
 
 </Project>

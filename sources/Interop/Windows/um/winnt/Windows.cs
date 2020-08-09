@@ -8628,7 +8628,7 @@ namespace TerraFX.Interop
         public const int FLUSH_NV_MEMORY_IN_FLAG_NO_DRAIN = (0x00000001);
 
         [NativeTypeName("#define FLUSH_NV_MEMORY_DEFAULT_TOKEN (ULONG_PTR)(-1)")]
-        public const nuint FLUSH_NV_MEMORY_DEFAULT_TOKEN = unchecked((nuint)(-1));
+        public static readonly nuint FLUSH_NV_MEMORY_DEFAULT_TOKEN = unchecked((nuint)(-1));
 
         [NativeTypeName("#define WRITE_NV_MEMORY_FLAG_FLUSH (0x00000001)")]
         public const int WRITE_NV_MEMORY_FLAG_FLUSH = (0x00000001);
