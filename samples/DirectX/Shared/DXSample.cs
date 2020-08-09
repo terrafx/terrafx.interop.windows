@@ -153,6 +153,11 @@ namespace TerraFX.Samples.DirectX
             _isWindowVisible = isVisible;
         }
 
+        public override string ToString()
+        {
+            return Name;
+        }
+
         protected abstract void CreateDeviceDependentResources();
 
         protected abstract void CreateWindowSizeDependentResources();
