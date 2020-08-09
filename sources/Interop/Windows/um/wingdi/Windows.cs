@@ -1499,7 +1499,7 @@ namespace TerraFX.Interop
         public const uint GDI_ERROR = (0xFFFFFFFF);
 
         [NativeTypeName("#define HGDI_ERROR (LongToHandle(0xFFFFFFFFL))")]
-        public static readonly IntPtr HGDI_ERROR = (((IntPtr)((nint)(0xFFFFFFFF))));
+        public static readonly IntPtr HGDI_ERROR = unchecked(((IntPtr)((nint)(0xFFFFFFFF))));
 
         [NativeTypeName("#define ERROR 0")]
         public const int ERROR = 0;

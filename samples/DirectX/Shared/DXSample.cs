@@ -4,9 +4,14 @@
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
 using System;
+using System.Drawing;
 using System.IO;
+using System.Numerics;
 using TerraFX.Interop;
+using TerraFX.Samples.DirectX.D3D11;
+using TerraFX.Samples.DirectX.D3D12;
 using static TerraFX.Interop.DXGI_ADAPTER_FLAG;
+using static TerraFX.Interop.DXGI_FORMAT;
 using static TerraFX.Interop.Windows;
 using static TerraFX.Samples.DirectX.DXSampleHelper;
 
@@ -14,29 +19,34 @@ namespace TerraFX.Samples.DirectX
 {
     public abstract unsafe class DXSample : IDisposable
     {
-        // Viewport dimensions
-        private uint _width;
+        public static readonly DXSample[] Samples = {
+            new HelloWindow11("D3D11.HelloWindow"),
+            new HelloTriangle11("D3D11.HelloTriangle"),
+            new HelloWindow12("D3D12.HelloWindow"),
+            new HelloTriangle12("D3D12.HelloTriangle"),
+            new HelloConstBuffer12("D3D12.HelloConstBuffer"),
+            new HelloTexture12("D3D12.HelloTexture"),
+            new HelloBundles12("D3D12.HelloBundles"),
+            new HelloMultiSampling12("D3D12.HelloMultiSampling"),
+        };
 
-        private uint _height;
-
-        private float _aspectRatio;
-
-        // Adapter info
+        private readonly string _assetsPath;
+        private readonly string _name;
+        private DXGI_FORMAT _backBufferFormat;
+        private Vector4 _backgroundColor;
+        private DXGI_FORMAT _depthBufferFormat;
+        private float _dpi;
+        private uint _frameCount;
+        private uint _frameIndex;
+        private IntPtr _hwnd;
+        private bool _isWindowVisible;
+        private Size _size;
         private bool _useWarpDevice;
 
-        // Root assets path
-        private readonly string _assetsPath;
-
-        // Window title
-        private string _title;
-
-        protected DXSample(uint width, uint height, string name)
+        protected DXSample(string name)
         {
-            _width = width;
-            _height = height;
-            _title = name;
             _assetsPath = GetAssetsPath();
-            _aspectRatio = width / ((float)height);
+            _name = name;
         }
 
         ~DXSample()
@@ -44,17 +54,42 @@ namespace TerraFX.Samples.DirectX
             Dispose(isDisposing: false);
         }
 
-        public uint Width => _width;
-
-        public uint Height => _height;
-
-        public float AspectRatio => _aspectRatio;
-
-        public bool UseWarpDevice => _useWarpDevice;
+        public float AspectRatio => Size.Width / ((float)Size.Height);
 
         public string AssetsPath => _assetsPath;
 
-        public string Title => _title;
+        public DXGI_FORMAT BackBufferFormat => _backBufferFormat;
+
+        public Vector4 BackgroundColor
+        {
+            get
+            {
+                return _backgroundColor;
+            }
+
+            set
+            {
+                _backgroundColor = value;
+            }
+        }
+
+        public DXGI_FORMAT DepthBufferFormat => _depthBufferFormat;
+
+        public float Dpi => _dpi;
+
+        public uint FrameCount => _frameCount;
+
+        public ref uint FrameIndex => ref _frameIndex;
+
+        public IntPtr Hwnd => _hwnd;
+
+        public bool IsWindowVisible => _isWindowVisible;
+
+        public string Name => _name;
+
+        public Size Size => _size;
+
+        public bool UseWarpDevice => _useWarpDevice;
 
         public void Dispose()
         {
@@ -62,53 +97,78 @@ namespace TerraFX.Samples.DirectX
             GC.SuppressFinalize(this);
         }
 
-        public virtual void OnResize(uint width, uint height)
+        public virtual void OnDestroy()
         {
-            _width = width;
-            _height = height;
-            _aspectRatio = width / ((float)height);
+            DestroyWindowSizeDependentResources();
+            DestroyDeviceDependentResources();
         }
 
-        public abstract void OnInit();
+        public void OnInit(DXGI_FORMAT backBufferFormat, Vector4 backgroundColor, DXGI_FORMAT depthBufferFormat, float dpi, uint frameCount, IntPtr hwnd, bool isWindowVisible, Size size, bool useWarpDevice)
+        {
+            _backBufferFormat = (backBufferFormat != DXGI_FORMAT_UNKNOWN) ? backBufferFormat : DXGI_FORMAT_R8G8B8A8_UNORM;
+            _backgroundColor = backgroundColor;
+            _depthBufferFormat = (depthBufferFormat != DXGI_FORMAT_UNKNOWN) ? depthBufferFormat : DXGI_FORMAT_D32_FLOAT;
+            _dpi = dpi;
+            _frameCount = Math.Max(frameCount, 1);
+            _hwnd = hwnd;
+            _isWindowVisible = isWindowVisible;
+            _size = size;
+            _useWarpDevice = useWarpDevice;
 
-        public abstract void OnUpdate();
+            CreateDeviceDependentResources();
+            CreateWindowSizeDependentResources();
+        }
+
+        public virtual void OnKeyDown(int key)
+        {
+        }
+
+        public virtual void OnKeyUp(int key)
+        {
+        }
 
         public abstract void OnRender();
 
-        public abstract void OnDestroy();
-
-        // Samples override the event handlers to handle specific messages
-        public virtual void OnKeyDown(byte key)
+        public void OnDpiChanged(float dpi)
         {
+            _dpi = dpi;
+            OnWindowSizeChanged(Size);
         }
 
-        public virtual void OnKeyUp(byte key)
+        public void OnWindowSizeChanged(Size size)
         {
-        }
-
-        // Helper function for parsing any supplied command line args.
-        public void ParseCommandLineArgs(string[] args)
-        {
-            foreach (var arg in args)
+            if (size != _size)
             {
-                if (Program.Matches(arg, "warp"))
-                {
-                    _useWarpDevice = true;
-                    _title += " (WARP)";
-                }
+                _size = size;
+
+                DestroyWindowSizeDependentResources();
+                CreateWindowSizeDependentResources();
             }
         }
 
-        protected virtual void Dispose(bool isDisposing)
+        public abstract void OnUpdate();
+
+        public void OnVisibilityChanged(bool isVisible)
         {
+            _isWindowVisible = isVisible;
         }
+
+        protected abstract void CreateDeviceDependentResources();
+
+        protected abstract void CreateWindowSizeDependentResources();
+
+        protected abstract void DestroyDeviceDependentResources();
+
+        protected abstract void DestroyWindowSizeDependentResources();
+
+        protected virtual void Dispose(bool isDisposing) => OnDestroy();
 
         // Helper function for resolving the full path of assets
         protected string GetAssetFullPath(string assetName) => Path.Combine(AssetsPath, assetName);
 
         // Helper function for acquiring the first available hardware adapter that supports the required Direct3D version.
         // If no such adapter can be found, returns null.
-        protected IDXGIAdapter* GetHardwareAdapter(IDXGIFactory1* pFactory)
+        protected IDXGIAdapter1* GetHardwareAdapter(IDXGIFactory1* pFactory)
         {
             IDXGIAdapter1* adapter;
 
@@ -132,18 +192,9 @@ namespace TerraFX.Samples.DirectX
                 }
             }
 
-            return (IDXGIAdapter*)adapter;
+            return adapter;
         }
 
         protected abstract bool SupportsRequiredDirect3DVersion(IDXGIAdapter1* adapter);
-
-        // Helper function for setting the window's title text.
-        protected void SetCustomWindowText(string text)
-        {
-            fixed (char* windowText = $"{_title}: {text}")
-            {
-                _ = SetWindowTextW(Win32Application.Hwnd, (ushort*)windowText);
-            }
-        }
     }
 }

@@ -26,6 +26,16 @@ namespace TerraFX.Interop
             InternalAddRef();
         }
 
+        public static implicit operator ComPtr<T>(T* other)
+        {
+            return new ComPtr<T>(other);
+        }
+
+        public static implicit operator T*(ComPtr<T> other)
+        {
+            return other.Get();
+        }
+
         public readonly int As<U>(ComPtr<U>* p)
             where U : unmanaged
         {
@@ -84,7 +94,7 @@ namespace TerraFX.Interop
             return ptr_;
         }
 
-        public T** GetAddressOf()
+        public readonly T** GetAddressOf()
         {
             fixed (T** ptr = &ptr_)
             {
@@ -92,7 +102,7 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref T* GetPinnableReference()
+        public readonly ref T* GetPinnableReference()
         {
             fixed (T** ptr = &ptr_)
             {
@@ -134,7 +144,7 @@ namespace TerraFX.Interop
             if (temp != null)
             {
                 ptr_ = null;
-                @ref = ((IUnknown*)(ptr_))->Release();
+                @ref = ((IUnknown*)(temp))->Release();
             }
 
             return @ref;
