@@ -1279,6 +1279,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "devicetopology", "devicetop
 		generation\um\devicetopology\um-devicetopology.h = generation\um\devicetopology\um-devicetopology.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DispatcherQueue", "DispatcherQueue", "{9CC7B81D-B969-4262-922E-37CF05B0C40A}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\DispatcherQueue\generate.rsp = generation\um\DispatcherQueue\generate.rsp
+		generation\um\DispatcherQueue\header.txt = generation\um\DispatcherQueue\header.txt
+		generation\um\DispatcherQueue\um-DispatcherQueue.h = generation\um\DispatcherQueue\um-DispatcherQueue.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1483,6 +1490,7 @@ Global
 		{62072728-90CD-44EA-9A0E-7E35D1275105} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{F725268B-0460-4AA3-B4DB-4117B8F8D0D4} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{20CF1C32-1F5E-43B3-AE1F-22A826E5BB9C} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{9CC7B81D-B969-4262-922E-37CF05B0C40A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
