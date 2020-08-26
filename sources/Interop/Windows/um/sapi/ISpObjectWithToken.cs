@@ -15,30 +15,35 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<ISpObjectWithToken*, Guid*, void**, int>)(lpVtbl[0]))((ISpObjectWithToken*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<ISpObjectWithToken*, uint>)(lpVtbl[1]))((ISpObjectWithToken*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<ISpObjectWithToken*, uint>)(lpVtbl[2]))((ISpObjectWithToken*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetObjectToken([NativeTypeName("ISpObjectToken *")] ISpObjectToken* pToken)
         {
             return ((delegate* stdcall<ISpObjectWithToken*, ISpObjectToken*, int>)(lpVtbl[3]))((ISpObjectWithToken*)Unsafe.AsPointer(ref this), pToken);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetObjectToken([NativeTypeName("ISpObjectToken **")] ISpObjectToken** ppToken)
         {

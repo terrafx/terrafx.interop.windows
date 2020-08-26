@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -49,8 +50,16 @@ namespace TerraFX.Interop
             public SCM_PD_OPERATIONAL_STATUS e14;
             public SCM_PD_OPERATIONAL_STATUS e15;
 
-            public ref SCM_PD_OPERATIONAL_STATUS this[int index] => ref AsSpan()[index];
+            public ref SCM_PD_OPERATIONAL_STATUS this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan()[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<SCM_PD_OPERATIONAL_STATUS> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
         }
 
@@ -58,8 +67,16 @@ namespace TerraFX.Interop
         {
             public SCM_PD_OPERATIONAL_STATUS_REASON e0;
 
-            public ref SCM_PD_OPERATIONAL_STATUS_REASON this[int index] => ref AsSpan(int.MaxValue)[index];
+            public ref SCM_PD_OPERATIONAL_STATUS_REASON this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan(int.MaxValue)[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<SCM_PD_OPERATIONAL_STATUS_REASON> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
     }

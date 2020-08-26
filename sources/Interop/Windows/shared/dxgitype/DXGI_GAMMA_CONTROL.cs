@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -1045,8 +1046,16 @@ namespace TerraFX.Interop
             public DXGI_RGB e1023;
             public DXGI_RGB e1024;
 
-            public ref DXGI_RGB this[int index] => ref AsSpan()[index];
+            public ref DXGI_RGB this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan()[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<DXGI_RGB> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 1025);
         }
     }

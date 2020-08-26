@@ -3,6 +3,7 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -15,15 +16,24 @@ namespace TerraFX.Interop
         [NativeTypeName("_DEVICE_STORAGE_RANGE_ATTRIBUTES::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:4326:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint AllFlags => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.AllFlags, 1));
+        public ref uint AllFlags
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.AllFlags, 1));
+            }
+        }
 
         public uint IsRangeBad
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return Anonymous.Anonymous.IsRangeBad;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 Anonymous.Anonymous.IsRangeBad = value;
@@ -51,11 +61,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD : 1")]
                 public uint IsRangeBad
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return _bitfield & 0x1u;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);

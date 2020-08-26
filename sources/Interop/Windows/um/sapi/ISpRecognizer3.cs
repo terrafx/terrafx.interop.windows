@@ -15,36 +15,42 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<ISpRecognizer3*, Guid*, void**, int>)(lpVtbl[0]))((ISpRecognizer3*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<ISpRecognizer3*, uint>)(lpVtbl[1]))((ISpRecognizer3*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<ISpRecognizer3*, uint>)(lpVtbl[2]))((ISpRecognizer3*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetCategory(SPCATEGORYTYPE categoryType, [NativeTypeName("ISpRecoCategory **")] ISpRecoCategory** ppCategory)
         {
             return ((delegate* stdcall<ISpRecognizer3*, SPCATEGORYTYPE, ISpRecoCategory**, int>)(lpVtbl[3]))((ISpRecognizer3*)Unsafe.AsPointer(ref this), categoryType, ppCategory);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetActiveCategory([NativeTypeName("ISpRecoCategory *")] ISpRecoCategory* pCategory)
         {
             return ((delegate* stdcall<ISpRecognizer3*, ISpRecoCategory*, int>)(lpVtbl[4]))((ISpRecognizer3*)Unsafe.AsPointer(ref this), pCategory);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetActiveCategory([NativeTypeName("ISpRecoCategory **")] ISpRecoCategory** ppCategory)
         {

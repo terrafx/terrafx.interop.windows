@@ -15,30 +15,35 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<ICoreInputInterop*, Guid*, void**, int>)(lpVtbl[0]))((ICoreInputInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<ICoreInputInterop*, uint>)(lpVtbl[1]))((ICoreInputInterop*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<ICoreInputInterop*, uint>)(lpVtbl[2]))((ICoreInputInterop*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetInputSource([NativeTypeName("IUnknown *")] IUnknown* value)
         {
             return ((delegate* stdcall<ICoreInputInterop*, IUnknown*, int>)(lpVtbl[3]))((ICoreInputInterop*)Unsafe.AsPointer(ref this), value);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int put_MessageHandled([NativeTypeName("boolean")] byte value)
         {

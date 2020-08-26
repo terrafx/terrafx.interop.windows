@@ -15,30 +15,35 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IMFContentProtectionManager*, Guid*, void**, int>)(lpVtbl[0]))((IMFContentProtectionManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IMFContentProtectionManager*, uint>)(lpVtbl[1]))((IMFContentProtectionManager*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IMFContentProtectionManager*, uint>)(lpVtbl[2]))((IMFContentProtectionManager*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int BeginEnableContent([NativeTypeName("IMFActivate *")] IMFActivate* pEnablerActivate, [NativeTypeName("IMFTopology *")] IMFTopology* pTopo, [NativeTypeName("IMFAsyncCallback *")] IMFAsyncCallback* pCallback, [NativeTypeName("IUnknown *")] IUnknown* punkState)
         {
             return ((delegate* stdcall<IMFContentProtectionManager*, IMFActivate*, IMFTopology*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[3]))((IMFContentProtectionManager*)Unsafe.AsPointer(ref this), pEnablerActivate, pTopo, pCallback, punkState);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int EndEnableContent([NativeTypeName("IMFAsyncResult *")] IMFAsyncResult* pResult)
         {

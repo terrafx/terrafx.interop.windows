@@ -15,48 +15,56 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IAudioStreamVolume*, Guid*, void**, int>)(lpVtbl[0]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IAudioStreamVolume*, uint>)(lpVtbl[1]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IAudioStreamVolume*, uint>)(lpVtbl[2]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetChannelCount([NativeTypeName("UINT32 *")] uint* pdwCount)
         {
             return ((delegate* stdcall<IAudioStreamVolume*, uint*, int>)(lpVtbl[3]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this), pdwCount);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetChannelVolume([NativeTypeName("UINT32")] uint dwIndex, [NativeTypeName("const float")] float fLevel)
         {
             return ((delegate* stdcall<IAudioStreamVolume*, uint, float, int>)(lpVtbl[4]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this), dwIndex, fLevel);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetChannelVolume([NativeTypeName("UINT32")] uint dwIndex, [NativeTypeName("float *")] float* pfLevel)
         {
             return ((delegate* stdcall<IAudioStreamVolume*, uint, float*, int>)(lpVtbl[5]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this), dwIndex, pfLevel);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetAllVolumes([NativeTypeName("UINT32")] uint dwCount, [NativeTypeName("const float *")] float* pfVolumes)
         {
             return ((delegate* stdcall<IAudioStreamVolume*, uint, float*, int>)(lpVtbl[6]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this), dwCount, pfVolumes);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetAllVolumes([NativeTypeName("UINT32")] uint dwCount, [NativeTypeName("float *")] float* pfVolumes)
         {

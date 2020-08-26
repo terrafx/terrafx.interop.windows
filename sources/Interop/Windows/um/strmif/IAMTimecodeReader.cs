@@ -15,48 +15,56 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IAMTimecodeReader*, Guid*, void**, int>)(lpVtbl[0]))((IAMTimecodeReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IAMTimecodeReader*, uint>)(lpVtbl[1]))((IAMTimecodeReader*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IAMTimecodeReader*, uint>)(lpVtbl[2]))((IAMTimecodeReader*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetTCRMode([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue)
         {
             return ((delegate* stdcall<IAMTimecodeReader*, int, int*, int>)(lpVtbl[3]))((IAMTimecodeReader*)Unsafe.AsPointer(ref this), Param, pValue);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetTCRMode([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value)
         {
             return ((delegate* stdcall<IAMTimecodeReader*, int, int, int>)(lpVtbl[4]))((IAMTimecodeReader*)Unsafe.AsPointer(ref this), Param, Value);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int put_VITCLine([NativeTypeName("long")] int Line)
         {
             return ((delegate* stdcall<IAMTimecodeReader*, int, int>)(lpVtbl[5]))((IAMTimecodeReader*)Unsafe.AsPointer(ref this), Line);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int get_VITCLine([NativeTypeName("long *")] int* pLine)
         {
             return ((delegate* stdcall<IAMTimecodeReader*, int*, int>)(lpVtbl[6]))((IAMTimecodeReader*)Unsafe.AsPointer(ref this), pLine);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetTimecode([NativeTypeName("PTIMECODE_SAMPLE")] TIMECODE_SAMPLE* pTimecodeSample)
         {

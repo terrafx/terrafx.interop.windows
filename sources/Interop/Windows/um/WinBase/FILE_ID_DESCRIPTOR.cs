@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -18,11 +19,32 @@ namespace TerraFX.Interop
         [NativeTypeName("FILE_ID_DESCRIPTOR::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WinBase.h:9069:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref LARGE_INTEGER FileId => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.FileId, 1));
+        public ref LARGE_INTEGER FileId
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.FileId, 1));
+            }
+        }
 
-        public ref Guid ObjectId => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ObjectId, 1));
+        public ref Guid ObjectId
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ObjectId, 1));
+            }
+        }
 
-        public ref FILE_ID_128 ExtendedFileId => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ExtendedFileId, 1));
+        public ref FILE_ID_128 ExtendedFileId
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ExtendedFileId, 1));
+            }
+        }
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

@@ -15,54 +15,63 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IMFInputTrustAuthority*, Guid*, void**, int>)(lpVtbl[0]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IMFInputTrustAuthority*, uint>)(lpVtbl[1]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IMFInputTrustAuthority*, uint>)(lpVtbl[2]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetDecrypter([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppv)
         {
             return ((delegate* stdcall<IMFInputTrustAuthority*, Guid*, void**, int>)(lpVtbl[3]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this), riid, ppv);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int RequestAccess(MFPOLICYMANAGER_ACTION Action, [NativeTypeName("IMFActivate **")] IMFActivate** ppContentEnablerActivate)
         {
             return ((delegate* stdcall<IMFInputTrustAuthority*, MFPOLICYMANAGER_ACTION, IMFActivate**, int>)(lpVtbl[4]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this), Action, ppContentEnablerActivate);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetPolicy(MFPOLICYMANAGER_ACTION Action, [NativeTypeName("IMFOutputPolicy **")] IMFOutputPolicy** ppPolicy)
         {
             return ((delegate* stdcall<IMFInputTrustAuthority*, MFPOLICYMANAGER_ACTION, IMFOutputPolicy**, int>)(lpVtbl[5]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this), Action, ppPolicy);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int BindAccess([NativeTypeName("MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS *")] MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS* pParam)
         {
             return ((delegate* stdcall<IMFInputTrustAuthority*, MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS*, int>)(lpVtbl[6]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this), pParam);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int UpdateAccess([NativeTypeName("MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS *")] MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS* pParam)
         {
             return ((delegate* stdcall<IMFInputTrustAuthority*, MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS*, int>)(lpVtbl[7]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this), pParam);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Reset()
         {

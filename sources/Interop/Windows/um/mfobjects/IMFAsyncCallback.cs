@@ -15,30 +15,35 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IMFAsyncCallback*, Guid*, void**, int>)(lpVtbl[0]))((IMFAsyncCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IMFAsyncCallback*, uint>)(lpVtbl[1]))((IMFAsyncCallback*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IMFAsyncCallback*, uint>)(lpVtbl[2]))((IMFAsyncCallback*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetParameters([NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("DWORD *")] uint* pdwQueue)
         {
             return ((delegate* stdcall<IMFAsyncCallback*, uint*, uint*, int>)(lpVtbl[3]))((IMFAsyncCallback*)Unsafe.AsPointer(ref this), pdwFlags, pdwQueue);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Invoke([NativeTypeName("IMFAsyncResult *")] IMFAsyncResult* pAsyncResult)
         {

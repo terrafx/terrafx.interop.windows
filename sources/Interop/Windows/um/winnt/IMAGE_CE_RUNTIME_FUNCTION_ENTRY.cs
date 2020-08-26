@@ -3,6 +3,8 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop
 {
     public partial struct IMAGE_CE_RUNTIME_FUNCTION_ENTRY
@@ -15,11 +17,13 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD : 8")]
         public uint PrologLen
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return _bitfield & 0xFFu;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (_bitfield & ~0xFFu) | (value & 0xFFu);
@@ -29,11 +33,13 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD : 22")]
         public uint FuncLen
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (_bitfield >> 8) & 0x3FFFFFu;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (_bitfield & ~(0x3FFFFFu << 8)) | ((value & 0x3FFFFFu) << 8);
@@ -43,11 +49,13 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD : 1")]
         public uint ThirtyTwoBit
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (_bitfield >> 30) & 0x1u;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (_bitfield & ~(0x1u << 30)) | ((value & 0x1u) << 30);
@@ -57,11 +65,13 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD : 1")]
         public uint ExceptionFlag
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (_bitfield >> 31) & 0x1u;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (_bitfield & ~(0x1u << 31)) | ((value & 0x1u) << 31);

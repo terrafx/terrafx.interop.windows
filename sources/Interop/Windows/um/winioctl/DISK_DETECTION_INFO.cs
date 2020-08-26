@@ -3,6 +3,7 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -17,9 +18,23 @@ namespace TerraFX.Interop
         [NativeTypeName("_DISK_DETECTION_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:8627:9)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref DISK_INT13_INFO Int13 => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Int13, 1));
+        public ref DISK_INT13_INFO Int13
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.Int13, 1));
+            }
+        }
 
-        public ref DISK_EX_INT13_INFO ExInt13 => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.ExInt13, 1));
+        public ref DISK_EX_INT13_INFO ExInt13
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.ExInt13, 1));
+            }
+        }
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

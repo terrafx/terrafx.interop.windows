@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -21,11 +22,13 @@ namespace TerraFX.Interop
         [NativeTypeName("BYTE : 1")]
         public byte SupportUpgrade
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (byte)(_bitfield & 0x1u);
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (byte)((_bitfield & ~0x1u) | (value & 0x1u));
@@ -35,11 +38,13 @@ namespace TerraFX.Interop
         [NativeTypeName("BYTE : 7")]
         public byte Reserved0
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (byte)((_bitfield >> 1) & 0x7Fu);
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (byte)((_bitfield & ~(0x7Fu << 1)) | ((value & 0x7Fu) << 1));
@@ -74,8 +79,16 @@ namespace TerraFX.Interop
         {
             public STORAGE_HW_FIRMWARE_SLOT_INFO e0;
 
-            public ref STORAGE_HW_FIRMWARE_SLOT_INFO this[int index] => ref AsSpan(int.MaxValue)[index];
+            public ref STORAGE_HW_FIRMWARE_SLOT_INFO this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan(int.MaxValue)[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<STORAGE_HW_FIRMWARE_SLOT_INFO> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
     }

@@ -15,36 +15,42 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IGlobalInterfaceTable*, Guid*, void**, int>)(lpVtbl[0]))((IGlobalInterfaceTable*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IGlobalInterfaceTable*, uint>)(lpVtbl[1]))((IGlobalInterfaceTable*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IGlobalInterfaceTable*, uint>)(lpVtbl[2]))((IGlobalInterfaceTable*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int RegisterInterfaceInGlobal([NativeTypeName("IUnknown *")] IUnknown* pUnk, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("DWORD *")] uint* pdwCookie)
         {
             return ((delegate* stdcall<IGlobalInterfaceTable*, IUnknown*, Guid*, uint*, int>)(lpVtbl[3]))((IGlobalInterfaceTable*)Unsafe.AsPointer(ref this), pUnk, riid, pdwCookie);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int RevokeInterfaceFromGlobal([NativeTypeName("DWORD")] uint dwCookie)
         {
             return ((delegate* stdcall<IGlobalInterfaceTable*, uint, int>)(lpVtbl[4]))((IGlobalInterfaceTable*)Unsafe.AsPointer(ref this), dwCookie);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetInterfaceFromGlobal([NativeTypeName("DWORD")] uint dwCookie, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppv)
         {

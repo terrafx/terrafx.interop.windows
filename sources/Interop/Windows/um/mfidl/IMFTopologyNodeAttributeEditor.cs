@@ -15,24 +15,28 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IMFTopologyNodeAttributeEditor*, Guid*, void**, int>)(lpVtbl[0]))((IMFTopologyNodeAttributeEditor*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IMFTopologyNodeAttributeEditor*, uint>)(lpVtbl[1]))((IMFTopologyNodeAttributeEditor*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IMFTopologyNodeAttributeEditor*, uint>)(lpVtbl[2]))((IMFTopologyNodeAttributeEditor*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int UpdateNodeAttributes([NativeTypeName("TOPOID")] ulong TopoId, [NativeTypeName("DWORD")] uint cUpdates, [NativeTypeName("MFTOPONODE_ATTRIBUTE_UPDATE *")] MFTOPONODE_ATTRIBUTE_UPDATE* pUpdates)
         {

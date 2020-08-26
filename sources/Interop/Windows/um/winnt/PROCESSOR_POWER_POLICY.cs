@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -24,11 +25,13 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD : 1")]
         public uint DisableCStates
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return _bitfield & 0x1u;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
@@ -38,11 +41,13 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD : 31")]
         public uint Reserved
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (_bitfield >> 1) & 0x7FFFFFFFu;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (_bitfield & ~(0x7FFFFFFFu << 1)) | ((value & 0x7FFFFFFFu) << 1);
@@ -61,8 +66,16 @@ namespace TerraFX.Interop
             public PROCESSOR_POWER_POLICY_INFO e1;
             public PROCESSOR_POWER_POLICY_INFO e2;
 
-            public ref PROCESSOR_POWER_POLICY_INFO this[int index] => ref AsSpan()[index];
+            public ref PROCESSOR_POWER_POLICY_INFO this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan()[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<PROCESSOR_POWER_POLICY_INFO> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 3);
         }
     }

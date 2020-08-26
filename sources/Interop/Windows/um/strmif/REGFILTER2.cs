@@ -3,6 +3,7 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -18,10 +19,18 @@ namespace TerraFX.Interop
         [NativeTypeName("REGFILTER2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/strmif.h:5070:36)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint cPins => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous1.cPins, 1));
+        public ref uint cPins
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous1.cPins, 1));
+            }
+        }
 
         public ref REGFILTERPINS* rgPins
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union._Anonymous1_e__Struct* pField = &Anonymous.Anonymous1)
@@ -31,10 +40,18 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref uint cPins2 => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous2.cPins2, 1));
+        public ref uint cPins2
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous2.cPins2, 1));
+            }
+        }
 
         public ref REGFILTERPINS2* rgPins2
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union._Anonymous2_e__Struct* pField = &Anonymous.Anonymous2)
