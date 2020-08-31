@@ -3,6 +3,7 @@
 // Ported from um/OAIdl.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -30,28 +31,99 @@ namespace TerraFX.Interop
         [NativeTypeName("_wireVARIANT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/OAIdl.h:573:36)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref long llVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.llVal, 1));
+        public ref long llVal
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.llVal, 1));
+            }
+        }
 
-        public ref int lVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.lVal, 1));
+        public ref int lVal
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.lVal, 1));
+            }
+        }
 
-        public ref byte bVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.bVal, 1));
+        public ref byte bVal
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.bVal, 1));
+            }
+        }
 
-        public ref short iVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.iVal, 1));
+        public ref short iVal
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.iVal, 1));
+            }
+        }
 
-        public ref float fltVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.fltVal, 1));
+        public ref float fltVal
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.fltVal, 1));
+            }
+        }
 
-        public ref double dblVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dblVal, 1));
+        public ref double dblVal
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dblVal, 1));
+            }
+        }
 
-        public ref short boolVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.boolVal, 1));
+        public ref short boolVal
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.boolVal, 1));
+            }
+        }
 
-        public ref int scode => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.scode, 1));
+        public ref int scode
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.scode, 1));
+            }
+        }
 
-        public ref CY cyVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.cyVal, 1));
+        public ref CY cyVal
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.cyVal, 1));
+            }
+        }
 
-        public ref double date => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.date, 1));
+        public ref double date
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.date, 1));
+            }
+        }
 
         public ref FLAGGED_WORD_BLOB* bstrVal
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -63,6 +135,7 @@ namespace TerraFX.Interop
 
         public ref IUnknown* punkVal
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -74,6 +147,7 @@ namespace TerraFX.Interop
 
         public ref IDispatch* pdispVal
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -85,6 +159,7 @@ namespace TerraFX.Interop
 
         public ref wireSAFEARRAY** parray
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -96,6 +171,7 @@ namespace TerraFX.Interop
 
         public ref wireBRECORD* brecVal
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -107,6 +183,7 @@ namespace TerraFX.Interop
 
         public ref byte* pbVal
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -118,6 +195,7 @@ namespace TerraFX.Interop
 
         public ref short* piVal
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -129,6 +207,7 @@ namespace TerraFX.Interop
 
         public ref int* plVal
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -140,6 +219,7 @@ namespace TerraFX.Interop
 
         public ref long* pllVal
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -151,6 +231,7 @@ namespace TerraFX.Interop
 
         public ref float* pfltVal
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -162,6 +243,7 @@ namespace TerraFX.Interop
 
         public ref double* pdblVal
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -173,6 +255,7 @@ namespace TerraFX.Interop
 
         public ref short* pboolVal
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -184,6 +267,7 @@ namespace TerraFX.Interop
 
         public ref int* pscode
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -195,6 +279,7 @@ namespace TerraFX.Interop
 
         public ref CY* pcyVal
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -206,6 +291,7 @@ namespace TerraFX.Interop
 
         public ref double* pdate
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -217,6 +303,7 @@ namespace TerraFX.Interop
 
         public ref FLAGGED_WORD_BLOB** pbstrVal
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -228,6 +315,7 @@ namespace TerraFX.Interop
 
         public ref IUnknown** ppunkVal
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -239,6 +327,7 @@ namespace TerraFX.Interop
 
         public ref IDispatch** ppdispVal
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -250,6 +339,7 @@ namespace TerraFX.Interop
 
         public ref wireSAFEARRAY*** pparray
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -261,6 +351,7 @@ namespace TerraFX.Interop
 
         public ref wireVARIANT** pvarVal
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -270,22 +361,72 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref sbyte cVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.cVal, 1));
+        public ref sbyte cVal
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.cVal, 1));
+            }
+        }
 
-        public ref ushort uiVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.uiVal, 1));
+        public ref ushort uiVal
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.uiVal, 1));
+            }
+        }
 
-        public ref uint ulVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ulVal, 1));
+        public ref uint ulVal
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ulVal, 1));
+            }
+        }
 
-        public ref ulong ullVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ullVal, 1));
+        public ref ulong ullVal
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ullVal, 1));
+            }
+        }
 
-        public ref int intVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.intVal, 1));
+        public ref int intVal
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.intVal, 1));
+            }
+        }
 
-        public ref uint uintVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.uintVal, 1));
+        public ref uint uintVal
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.uintVal, 1));
+            }
+        }
 
-        public ref DECIMAL decVal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.decVal, 1));
+        public ref DECIMAL decVal
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.decVal, 1));
+            }
+        }
 
         public ref DECIMAL* pdecVal
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -297,6 +438,7 @@ namespace TerraFX.Interop
 
         public ref sbyte* pcVal
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -308,6 +450,7 @@ namespace TerraFX.Interop
 
         public ref ushort* puiVal
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -319,6 +462,7 @@ namespace TerraFX.Interop
 
         public ref uint* pulVal
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -330,6 +474,7 @@ namespace TerraFX.Interop
 
         public ref ulong* pullVal
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -341,6 +486,7 @@ namespace TerraFX.Interop
 
         public ref int* pintVal
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -352,6 +498,7 @@ namespace TerraFX.Interop
 
         public ref uint* puintVal
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)

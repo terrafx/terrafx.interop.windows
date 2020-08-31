@@ -13,30 +13,35 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IDirectDrawColorControl*, Guid*, void**, int>)(lpVtbl[0]))((IDirectDrawColorControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IDirectDrawColorControl*, uint>)(lpVtbl[1]))((IDirectDrawColorControl*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IDirectDrawColorControl*, uint>)(lpVtbl[2]))((IDirectDrawColorControl*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetColorControls([NativeTypeName("LPDDCOLORCONTROL")] DDCOLORCONTROL* param0)
         {
             return ((delegate* stdcall<IDirectDrawColorControl*, DDCOLORCONTROL*, int>)(lpVtbl[3]))((IDirectDrawColorControl*)Unsafe.AsPointer(ref this), param0);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetColorControls([NativeTypeName("LPDDCOLORCONTROL")] DDCOLORCONTROL* param0)
         {

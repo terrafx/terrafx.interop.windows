@@ -15,24 +15,28 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IAudioSourceProvider*, Guid*, void**, int>)(lpVtbl[0]))((IAudioSourceProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IAudioSourceProvider*, uint>)(lpVtbl[1]))((IAudioSourceProvider*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IAudioSourceProvider*, uint>)(lpVtbl[2]))((IAudioSourceProvider*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int ProvideInput([NativeTypeName("DWORD")] uint dwSampleCount, [NativeTypeName("DWORD *")] uint* pdwChannelCount, [NativeTypeName("float *")] float* pInterleavedAudioData)
         {

@@ -15,24 +15,28 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IVirtualSurfaceUpdatesCallbackNative*, Guid*, void**, int>)(lpVtbl[0]))((IVirtualSurfaceUpdatesCallbackNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IVirtualSurfaceUpdatesCallbackNative*, uint>)(lpVtbl[1]))((IVirtualSurfaceUpdatesCallbackNative*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IVirtualSurfaceUpdatesCallbackNative*, uint>)(lpVtbl[2]))((IVirtualSurfaceUpdatesCallbackNative*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int UpdatesNeeded()
         {

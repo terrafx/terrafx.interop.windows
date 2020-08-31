@@ -15,48 +15,56 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IPersistStream*, Guid*, void**, int>)(lpVtbl[0]))((IPersistStream*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IPersistStream*, uint>)(lpVtbl[1]))((IPersistStream*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IPersistStream*, uint>)(lpVtbl[2]))((IPersistStream*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
         {
             return ((delegate* stdcall<IPersistStream*, Guid*, int>)(lpVtbl[3]))((IPersistStream*)Unsafe.AsPointer(ref this), pClassID);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int IsDirty()
         {
             return ((delegate* stdcall<IPersistStream*, int>)(lpVtbl[4]))((IPersistStream*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Load([NativeTypeName("IStream *")] IStream* pStm)
         {
             return ((delegate* stdcall<IPersistStream*, IStream*, int>)(lpVtbl[5]))((IPersistStream*)Unsafe.AsPointer(ref this), pStm);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Save([NativeTypeName("IStream *")] IStream* pStm, [NativeTypeName("BOOL")] int fClearDirty)
         {
             return ((delegate* stdcall<IPersistStream*, IStream*, int, int>)(lpVtbl[6]))((IPersistStream*)Unsafe.AsPointer(ref this), pStm, fClearDirty);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetSizeMax([NativeTypeName("ULARGE_INTEGER *")] ULARGE_INTEGER* pcbSize)
         {

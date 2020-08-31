@@ -15,42 +15,49 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IMFDXGIBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IMFDXGIBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IMFDXGIBuffer*, uint>)(lpVtbl[1]))((IMFDXGIBuffer*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IMFDXGIBuffer*, uint>)(lpVtbl[2]))((IMFDXGIBuffer*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetResource([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject)
         {
             return ((delegate* stdcall<IMFDXGIBuffer*, Guid*, void**, int>)(lpVtbl[3]))((IMFDXGIBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetSubresourceIndex([NativeTypeName("UINT *")] uint* puSubresource)
         {
             return ((delegate* stdcall<IMFDXGIBuffer*, uint*, int>)(lpVtbl[4]))((IMFDXGIBuffer*)Unsafe.AsPointer(ref this), puSubresource);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetUnknown([NativeTypeName("const IID &")] Guid* guid, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject)
         {
             return ((delegate* stdcall<IMFDXGIBuffer*, Guid*, Guid*, void**, int>)(lpVtbl[5]))((IMFDXGIBuffer*)Unsafe.AsPointer(ref this), guid, riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetUnknown([NativeTypeName("const IID &")] Guid* guid, [NativeTypeName("IUnknown *")] IUnknown* pUnkData)
         {

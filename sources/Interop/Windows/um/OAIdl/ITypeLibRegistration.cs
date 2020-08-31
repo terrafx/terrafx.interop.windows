@@ -15,66 +15,77 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<ITypeLibRegistration*, Guid*, void**, int>)(lpVtbl[0]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<ITypeLibRegistration*, uint>)(lpVtbl[1]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<ITypeLibRegistration*, uint>)(lpVtbl[2]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetGuid([NativeTypeName("GUID *")] Guid* pGuid)
         {
             return ((delegate* stdcall<ITypeLibRegistration*, Guid*, int>)(lpVtbl[3]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pGuid);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetVersion([NativeTypeName("BSTR *")] ushort** pVersion)
         {
             return ((delegate* stdcall<ITypeLibRegistration*, ushort**, int>)(lpVtbl[4]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pVersion);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetLcid([NativeTypeName("LCID *")] uint* pLcid)
         {
             return ((delegate* stdcall<ITypeLibRegistration*, uint*, int>)(lpVtbl[5]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pLcid);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetWin32Path([NativeTypeName("BSTR *")] ushort** pWin32Path)
         {
             return ((delegate* stdcall<ITypeLibRegistration*, ushort**, int>)(lpVtbl[6]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pWin32Path);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetWin64Path([NativeTypeName("BSTR *")] ushort** pWin64Path)
         {
             return ((delegate* stdcall<ITypeLibRegistration*, ushort**, int>)(lpVtbl[7]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pWin64Path);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetDisplayName([NativeTypeName("BSTR *")] ushort** pDisplayName)
         {
             return ((delegate* stdcall<ITypeLibRegistration*, ushort**, int>)(lpVtbl[8]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pDisplayName);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetFlags([NativeTypeName("DWORD *")] uint* pFlags)
         {
             return ((delegate* stdcall<ITypeLibRegistration*, uint*, int>)(lpVtbl[9]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pFlags);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetHelpDir([NativeTypeName("BSTR *")] ushort** pHelpDir)
         {

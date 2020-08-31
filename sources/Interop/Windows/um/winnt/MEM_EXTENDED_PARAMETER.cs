@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -15,11 +16,13 @@ namespace TerraFX.Interop
 
         public ulong Type
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return Anonymous1.Type;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 Anonymous1.Type = value;
@@ -28,11 +31,13 @@ namespace TerraFX.Interop
 
         public ulong Reserved
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return Anonymous1.Reserved;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 Anonymous1.Reserved = value;
@@ -42,10 +47,18 @@ namespace TerraFX.Interop
         [NativeTypeName("MEM_EXTENDED_PARAMETER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:13037:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
-        public ref ulong ULong64 => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.ULong64, 1));
+        public ref ulong ULong64
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.ULong64, 1));
+            }
+        }
 
         public ref void* Pointer
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous2_e__Union* pField = &Anonymous2)
@@ -55,11 +68,32 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref nuint Size => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.Size, 1));
+        public ref nuint Size
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.Size, 1));
+            }
+        }
 
-        public ref IntPtr Handle => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.Handle, 1));
+        public ref IntPtr Handle
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.Handle, 1));
+            }
+        }
 
-        public ref uint ULong => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.ULong, 1));
+        public ref uint ULong
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.ULong, 1));
+            }
+        }
 
         public partial struct _Anonymous1_e__Struct
         {
@@ -68,11 +102,13 @@ namespace TerraFX.Interop
             [NativeTypeName("DWORD64 : 8")]
             public ulong Type
             {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
                 {
                     return _bitfield & 0xFFUL;
                 }
 
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 set
                 {
                     _bitfield = (_bitfield & ~0xFFUL) | (value & 0xFFUL);
@@ -82,11 +118,13 @@ namespace TerraFX.Interop
             [NativeTypeName("DWORD64 : 56")]
             public ulong Reserved
             {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
                 {
                     return (_bitfield >> 8) & 0xFFFFFFUL;
                 }
 
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 set
                 {
                     _bitfield = (_bitfield & ~(0xFFFFFFUL << 8)) | ((value & 0xFFFFFFUL) << 8);

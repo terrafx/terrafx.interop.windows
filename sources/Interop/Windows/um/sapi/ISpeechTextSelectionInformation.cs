@@ -15,90 +15,105 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<ISpeechTextSelectionInformation*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<ISpeechTextSelectionInformation*, uint>)(lpVtbl[1]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<ISpeechTextSelectionInformation*, uint>)(lpVtbl[2]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetTypeInfoCount([NativeTypeName("UINT *")] uint* pctinfo)
         {
             return ((delegate* stdcall<ISpeechTextSelectionInformation*, uint*, int>)(lpVtbl[3]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), pctinfo);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetTypeInfo([NativeTypeName("UINT")] uint iTInfo, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("ITypeInfo **")] ITypeInfo** ppTInfo)
         {
             return ((delegate* stdcall<ISpeechTextSelectionInformation*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, [NativeTypeName("UINT")] uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
         {
             return ((delegate* stdcall<ISpeechTextSelectionInformation*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, [NativeTypeName("DISPPARAMS *")] DISPPARAMS* pDispParams, [NativeTypeName("VARIANT *")] VARIANT* pVarResult, [NativeTypeName("EXCEPINFO *")] EXCEPINFO* pExcepInfo, [NativeTypeName("UINT *")] uint* puArgErr)
         {
             return ((delegate* stdcall<ISpeechTextSelectionInformation*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int put_ActiveOffset([NativeTypeName("long")] int ActiveOffset)
         {
             return ((delegate* stdcall<ISpeechTextSelectionInformation*, int, int>)(lpVtbl[7]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), ActiveOffset);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int get_ActiveOffset([NativeTypeName("long *")] int* ActiveOffset)
         {
             return ((delegate* stdcall<ISpeechTextSelectionInformation*, int*, int>)(lpVtbl[8]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), ActiveOffset);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int put_ActiveLength([NativeTypeName("long")] int ActiveLength)
         {
             return ((delegate* stdcall<ISpeechTextSelectionInformation*, int, int>)(lpVtbl[9]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), ActiveLength);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int get_ActiveLength([NativeTypeName("long *")] int* ActiveLength)
         {
             return ((delegate* stdcall<ISpeechTextSelectionInformation*, int*, int>)(lpVtbl[10]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), ActiveLength);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int put_SelectionOffset([NativeTypeName("long")] int SelectionOffset)
         {
             return ((delegate* stdcall<ISpeechTextSelectionInformation*, int, int>)(lpVtbl[11]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), SelectionOffset);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int get_SelectionOffset([NativeTypeName("long *")] int* SelectionOffset)
         {
             return ((delegate* stdcall<ISpeechTextSelectionInformation*, int*, int>)(lpVtbl[12]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), SelectionOffset);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int put_SelectionLength([NativeTypeName("long")] int SelectionLength)
         {
             return ((delegate* stdcall<ISpeechTextSelectionInformation*, int, int>)(lpVtbl[13]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), SelectionLength);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int get_SelectionLength([NativeTypeName("long *")] int* SelectionLength)
         {

@@ -15,30 +15,35 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IConnectionPointContainer*, Guid*, void**, int>)(lpVtbl[0]))((IConnectionPointContainer*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IConnectionPointContainer*, uint>)(lpVtbl[1]))((IConnectionPointContainer*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IConnectionPointContainer*, uint>)(lpVtbl[2]))((IConnectionPointContainer*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int EnumConnectionPoints([NativeTypeName("IEnumConnectionPoints **")] IEnumConnectionPoints** ppEnum)
         {
             return ((delegate* stdcall<IConnectionPointContainer*, IEnumConnectionPoints**, int>)(lpVtbl[3]))((IConnectionPointContainer*)Unsafe.AsPointer(ref this), ppEnum);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int FindConnectionPoint([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("IConnectionPoint **")] IConnectionPoint** ppCP)
         {

@@ -15,36 +15,42 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IMFContentDecryptionModuleAccess*, Guid*, void**, int>)(lpVtbl[0]))((IMFContentDecryptionModuleAccess*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IMFContentDecryptionModuleAccess*, uint>)(lpVtbl[1]))((IMFContentDecryptionModuleAccess*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IMFContentDecryptionModuleAccess*, uint>)(lpVtbl[2]))((IMFContentDecryptionModuleAccess*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int CreateContentDecryptionModule([NativeTypeName("IPropertyStore *")] IPropertyStore* contentDecryptionModuleProperties, [NativeTypeName("IMFContentDecryptionModule **")] IMFContentDecryptionModule** contentDecryptionModule)
         {
             return ((delegate* stdcall<IMFContentDecryptionModuleAccess*, IPropertyStore*, IMFContentDecryptionModule**, int>)(lpVtbl[3]))((IMFContentDecryptionModuleAccess*)Unsafe.AsPointer(ref this), contentDecryptionModuleProperties, contentDecryptionModule);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetConfiguration([NativeTypeName("IPropertyStore **")] IPropertyStore** configuration)
         {
             return ((delegate* stdcall<IMFContentDecryptionModuleAccess*, IPropertyStore**, int>)(lpVtbl[4]))((IMFContentDecryptionModuleAccess*)Unsafe.AsPointer(ref this), configuration);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetKeySystem([NativeTypeName("LPWSTR *")] ushort** keySystem)
         {

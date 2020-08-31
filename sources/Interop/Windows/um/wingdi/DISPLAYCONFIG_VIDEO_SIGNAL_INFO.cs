@@ -3,6 +3,7 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -23,9 +24,23 @@ namespace TerraFX.Interop
         [NativeTypeName("DISPLAYCONFIG_VIDEO_SIGNAL_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wingdi.h:2850:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref _Anonymous_e__Union._AdditionalSignalInfo_e__Struct AdditionalSignalInfo => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.AdditionalSignalInfo, 1));
+        public ref _Anonymous_e__Union._AdditionalSignalInfo_e__Struct AdditionalSignalInfo
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.AdditionalSignalInfo, 1));
+            }
+        }
 
-        public ref uint videoStandard => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.videoStandard, 1));
+        public ref uint videoStandard
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.videoStandard, 1));
+            }
+        }
 
         public DISPLAYCONFIG_SCANLINE_ORDERING scanLineOrdering;
 
@@ -47,11 +62,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("UINT32 : 16")]
                 public uint videoStandard
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return _bitfield & 0xFFFFu;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~0xFFFFu) | (value & 0xFFFFu);
@@ -61,11 +78,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("UINT32 : 6")]
                 public uint vSyncFreqDivider
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (_bitfield >> 16) & 0x3Fu;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~(0x3Fu << 16)) | ((value & 0x3Fu) << 16);
@@ -75,11 +94,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("UINT32 : 10")]
                 public uint reserved
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (_bitfield >> 22) & 0x3FFu;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~(0x3FFu << 22)) | ((value & 0x3FFu) << 22);

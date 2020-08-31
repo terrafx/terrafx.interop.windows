@@ -15,30 +15,35 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IDecimateVideoImage*, Guid*, void**, int>)(lpVtbl[0]))((IDecimateVideoImage*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IDecimateVideoImage*, uint>)(lpVtbl[1]))((IDecimateVideoImage*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IDecimateVideoImage*, uint>)(lpVtbl[2]))((IDecimateVideoImage*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetDecimationImageSize([NativeTypeName("long")] int lWidth, [NativeTypeName("long")] int lHeight)
         {
             return ((delegate* stdcall<IDecimateVideoImage*, int, int, int>)(lpVtbl[3]))((IDecimateVideoImage*)Unsafe.AsPointer(ref this), lWidth, lHeight);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int ResetDecimationImageSize()
         {

@@ -15,30 +15,35 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IMFSourceBufferList*, Guid*, void**, int>)(lpVtbl[0]))((IMFSourceBufferList*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IMFSourceBufferList*, uint>)(lpVtbl[1]))((IMFSourceBufferList*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IMFSourceBufferList*, uint>)(lpVtbl[2]))((IMFSourceBufferList*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("DWORD")]
         public uint GetLength()
         {
             return ((delegate* stdcall<IMFSourceBufferList*, uint>)(lpVtbl[3]))((IMFSourceBufferList*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("IMFSourceBuffer *")]
         public IMFSourceBuffer* GetSourceBuffer([NativeTypeName("DWORD")] uint index)
         {

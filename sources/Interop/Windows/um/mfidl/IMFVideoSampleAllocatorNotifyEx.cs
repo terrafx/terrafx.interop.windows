@@ -15,30 +15,35 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IMFVideoSampleAllocatorNotifyEx*, Guid*, void**, int>)(lpVtbl[0]))((IMFVideoSampleAllocatorNotifyEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IMFVideoSampleAllocatorNotifyEx*, uint>)(lpVtbl[1]))((IMFVideoSampleAllocatorNotifyEx*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IMFVideoSampleAllocatorNotifyEx*, uint>)(lpVtbl[2]))((IMFVideoSampleAllocatorNotifyEx*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int NotifyRelease()
         {
             return ((delegate* stdcall<IMFVideoSampleAllocatorNotifyEx*, int>)(lpVtbl[3]))((IMFVideoSampleAllocatorNotifyEx*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int NotifyPrune([NativeTypeName("IMFSample *")] IMFSample* __MIDL__IMFVideoSampleAllocatorNotifyEx0000)
         {

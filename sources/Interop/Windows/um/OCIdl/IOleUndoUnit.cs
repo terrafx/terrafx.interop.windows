@@ -15,42 +15,49 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IOleUndoUnit*, Guid*, void**, int>)(lpVtbl[0]))((IOleUndoUnit*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IOleUndoUnit*, uint>)(lpVtbl[1]))((IOleUndoUnit*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IOleUndoUnit*, uint>)(lpVtbl[2]))((IOleUndoUnit*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Do([NativeTypeName("IOleUndoManager *")] IOleUndoManager* pUndoManager)
         {
             return ((delegate* stdcall<IOleUndoUnit*, IOleUndoManager*, int>)(lpVtbl[3]))((IOleUndoUnit*)Unsafe.AsPointer(ref this), pUndoManager);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetDescription([NativeTypeName("BSTR *")] ushort** pBstr)
         {
             return ((delegate* stdcall<IOleUndoUnit*, ushort**, int>)(lpVtbl[4]))((IOleUndoUnit*)Unsafe.AsPointer(ref this), pBstr);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetUnitType([NativeTypeName("CLSID *")] Guid* pClsid, [NativeTypeName("LONG *")] int* plID)
         {
             return ((delegate* stdcall<IOleUndoUnit*, Guid*, int*, int>)(lpVtbl[5]))((IOleUndoUnit*)Unsafe.AsPointer(ref this), pClsid, plID);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OnNextAdd()
         {

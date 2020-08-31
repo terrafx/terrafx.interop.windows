@@ -3,6 +3,7 @@
 // Ported from shared/wtypes.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -15,11 +16,32 @@ namespace TerraFX.Interop
         [NativeTypeName("tagDEC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/wtypes.h:697:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
-        public ref byte scale => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous.scale, 1));
+        public ref byte scale
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous.scale, 1));
+            }
+        }
 
-        public ref byte sign => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous.sign, 1));
+        public ref byte sign
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Anonymous.sign, 1));
+            }
+        }
 
-        public ref ushort signscale => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.signscale, 1));
+        public ref ushort signscale
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.signscale, 1));
+            }
+        }
 
         [NativeTypeName("ULONG")]
         public uint Hi32;
@@ -27,11 +49,32 @@ namespace TerraFX.Interop
         [NativeTypeName("tagDEC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/wtypes.h:705:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
-        public ref uint Lo32 => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.Anonymous.Lo32, 1));
+        public ref uint Lo32
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.Anonymous.Lo32, 1));
+            }
+        }
 
-        public ref uint Mid32 => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.Anonymous.Mid32, 1));
+        public ref uint Mid32
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.Anonymous.Mid32, 1));
+            }
+        }
 
-        public ref ulong Lo64 => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.Lo64, 1));
+        public ref ulong Lo64
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.Lo64, 1));
+            }
+        }
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous1_e__Union

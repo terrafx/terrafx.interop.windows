@@ -15,36 +15,42 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IWICDdsFrameDecode*, Guid*, void**, int>)(lpVtbl[0]))((IWICDdsFrameDecode*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IWICDdsFrameDecode*, uint>)(lpVtbl[1]))((IWICDdsFrameDecode*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IWICDdsFrameDecode*, uint>)(lpVtbl[2]))((IWICDdsFrameDecode*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetSizeInBlocks([NativeTypeName("UINT *")] uint* pWidthInBlocks, [NativeTypeName("UINT *")] uint* pHeightInBlocks)
         {
             return ((delegate* stdcall<IWICDdsFrameDecode*, uint*, uint*, int>)(lpVtbl[3]))((IWICDdsFrameDecode*)Unsafe.AsPointer(ref this), pWidthInBlocks, pHeightInBlocks);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetFormatInfo([NativeTypeName("WICDdsFormatInfo *")] WICDdsFormatInfo* pFormatInfo)
         {
             return ((delegate* stdcall<IWICDdsFrameDecode*, WICDdsFormatInfo*, int>)(lpVtbl[4]))((IWICDdsFrameDecode*)Unsafe.AsPointer(ref this), pFormatInfo);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int CopyBlocks([NativeTypeName("const WICRect *")] WICRect* prcBoundsInBlocks, [NativeTypeName("UINT")] uint cbStride, [NativeTypeName("UINT")] uint cbBufferSize, [NativeTypeName("BYTE *")] byte* pbBuffer)
         {

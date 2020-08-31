@@ -15,30 +15,35 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IVMRAspectRatioControl*, Guid*, void**, int>)(lpVtbl[0]))((IVMRAspectRatioControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IVMRAspectRatioControl*, uint>)(lpVtbl[1]))((IVMRAspectRatioControl*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IVMRAspectRatioControl*, uint>)(lpVtbl[2]))((IVMRAspectRatioControl*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetAspectRatioMode([NativeTypeName("LPDWORD")] uint* lpdwARMode)
         {
             return ((delegate* stdcall<IVMRAspectRatioControl*, uint*, int>)(lpVtbl[3]))((IVMRAspectRatioControl*)Unsafe.AsPointer(ref this), lpdwARMode);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetAspectRatioMode([NativeTypeName("DWORD")] uint dwARMode)
         {

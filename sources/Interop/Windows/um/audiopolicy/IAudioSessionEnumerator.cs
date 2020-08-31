@@ -15,30 +15,35 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IAudioSessionEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAudioSessionEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IAudioSessionEnumerator*, uint>)(lpVtbl[1]))((IAudioSessionEnumerator*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IAudioSessionEnumerator*, uint>)(lpVtbl[2]))((IAudioSessionEnumerator*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetCount([NativeTypeName("int *")] int* SessionCount)
         {
             return ((delegate* stdcall<IAudioSessionEnumerator*, int*, int>)(lpVtbl[3]))((IAudioSessionEnumerator*)Unsafe.AsPointer(ref this), SessionCount);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetSession(int SessionCount, [NativeTypeName("IAudioSessionControl **")] IAudioSessionControl** Session)
         {

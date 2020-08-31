@@ -3,6 +3,7 @@
 // Ported from um/OAIdl.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -14,6 +15,7 @@ namespace TerraFX.Interop
 
         public ref TYPEDESC* lptdesc
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -25,6 +27,7 @@ namespace TerraFX.Interop
 
         public ref ARRAYDESC* lpadesc
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -34,7 +37,14 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref uint hreftype => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hreftype, 1));
+        public ref uint hreftype
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hreftype, 1));
+            }
+        }
 
         [NativeTypeName("VARTYPE")]
         public ushort vt;

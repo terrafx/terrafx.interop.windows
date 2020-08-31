@@ -15,36 +15,42 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IAudioCaptureClient*, Guid*, void**, int>)(lpVtbl[0]))((IAudioCaptureClient*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IAudioCaptureClient*, uint>)(lpVtbl[1]))((IAudioCaptureClient*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IAudioCaptureClient*, uint>)(lpVtbl[2]))((IAudioCaptureClient*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetBuffer([NativeTypeName("BYTE **")] byte** ppData, [NativeTypeName("UINT32 *")] uint* pNumFramesToRead, [NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("UINT64 *")] ulong* pu64DevicePosition, [NativeTypeName("UINT64 *")] ulong* pu64QPCPosition)
         {
             return ((delegate* stdcall<IAudioCaptureClient*, byte**, uint*, uint*, ulong*, ulong*, int>)(lpVtbl[3]))((IAudioCaptureClient*)Unsafe.AsPointer(ref this), ppData, pNumFramesToRead, pdwFlags, pu64DevicePosition, pu64QPCPosition);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int ReleaseBuffer([NativeTypeName("UINT32")] uint NumFramesRead)
         {
             return ((delegate* stdcall<IAudioCaptureClient*, uint, int>)(lpVtbl[4]))((IAudioCaptureClient*)Unsafe.AsPointer(ref this), NumFramesRead);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetNextPacketSize([NativeTypeName("UINT32 *")] uint* pNumFramesInNextPacket)
         {

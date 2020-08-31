@@ -15,30 +15,35 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IMFMediaEngineAudioEndpointId*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineAudioEndpointId*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IMFMediaEngineAudioEndpointId*, uint>)(lpVtbl[1]))((IMFMediaEngineAudioEndpointId*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IMFMediaEngineAudioEndpointId*, uint>)(lpVtbl[2]))((IMFMediaEngineAudioEndpointId*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetAudioEndpointId([NativeTypeName("LPCWSTR")] ushort* pszEndpointId)
         {
             return ((delegate* stdcall<IMFMediaEngineAudioEndpointId*, ushort*, int>)(lpVtbl[3]))((IMFMediaEngineAudioEndpointId*)Unsafe.AsPointer(ref this), pszEndpointId);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetAudioEndpointId([NativeTypeName("LPWSTR *")] ushort** ppszEndpointId)
         {

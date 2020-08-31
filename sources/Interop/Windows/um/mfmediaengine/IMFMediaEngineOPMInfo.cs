@@ -15,24 +15,28 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IMFMediaEngineOPMInfo*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineOPMInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IMFMediaEngineOPMInfo*, uint>)(lpVtbl[1]))((IMFMediaEngineOPMInfo*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IMFMediaEngineOPMInfo*, uint>)(lpVtbl[2]))((IMFMediaEngineOPMInfo*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetOPMInfo([NativeTypeName("MF_MEDIA_ENGINE_OPM_STATUS *")] MF_MEDIA_ENGINE_OPM_STATUS* pStatus, [NativeTypeName("BOOL *")] int* pConstricted)
         {

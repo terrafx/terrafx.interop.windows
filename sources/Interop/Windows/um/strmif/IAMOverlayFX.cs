@@ -15,36 +15,42 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IAMOverlayFX*, Guid*, void**, int>)(lpVtbl[0]))((IAMOverlayFX*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IAMOverlayFX*, uint>)(lpVtbl[1]))((IAMOverlayFX*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IAMOverlayFX*, uint>)(lpVtbl[2]))((IAMOverlayFX*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryOverlayFXCaps([NativeTypeName("DWORD *")] uint* lpdwOverlayFXCaps)
         {
             return ((delegate* stdcall<IAMOverlayFX*, uint*, int>)(lpVtbl[3]))((IAMOverlayFX*)Unsafe.AsPointer(ref this), lpdwOverlayFXCaps);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetOverlayFX([NativeTypeName("DWORD")] uint dwOverlayFX)
         {
             return ((delegate* stdcall<IAMOverlayFX*, uint, int>)(lpVtbl[4]))((IAMOverlayFX*)Unsafe.AsPointer(ref this), dwOverlayFX);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetOverlayFX([NativeTypeName("DWORD *")] uint* lpdwOverlayFX)
         {

@@ -15,30 +15,35 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IAudioRenderClient*, Guid*, void**, int>)(lpVtbl[0]))((IAudioRenderClient*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IAudioRenderClient*, uint>)(lpVtbl[1]))((IAudioRenderClient*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IAudioRenderClient*, uint>)(lpVtbl[2]))((IAudioRenderClient*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetBuffer([NativeTypeName("UINT32")] uint NumFramesRequested, [NativeTypeName("BYTE **")] byte** ppData)
         {
             return ((delegate* stdcall<IAudioRenderClient*, uint, byte**, int>)(lpVtbl[3]))((IAudioRenderClient*)Unsafe.AsPointer(ref this), NumFramesRequested, ppData);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int ReleaseBuffer([NativeTypeName("UINT32")] uint NumFramesWritten, [NativeTypeName("DWORD")] uint dwFlags)
         {

@@ -3,6 +3,7 @@
 // Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -17,6 +18,7 @@ namespace TerraFX.Interop
 
         public ref ushort* pwszUrl
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -26,10 +28,18 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref SPC_SERIALIZED_OBJECT Moniker => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Moniker, 1));
+        public ref SPC_SERIALIZED_OBJECT Moniker
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Moniker, 1));
+            }
+        }
 
         public ref ushort* pwszFile
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)

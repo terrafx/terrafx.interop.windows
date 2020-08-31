@@ -15,48 +15,56 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<ISpatialAudioMetadataItems*, Guid*, void**, int>)(lpVtbl[0]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<ISpatialAudioMetadataItems*, uint>)(lpVtbl[1]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<ISpatialAudioMetadataItems*, uint>)(lpVtbl[2]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetFrameCount([NativeTypeName("UINT16 *")] ushort* frameCount)
         {
             return ((delegate* stdcall<ISpatialAudioMetadataItems*, ushort*, int>)(lpVtbl[3]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this), frameCount);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetItemCount([NativeTypeName("UINT16 *")] ushort* itemCount)
         {
             return ((delegate* stdcall<ISpatialAudioMetadataItems*, ushort*, int>)(lpVtbl[4]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this), itemCount);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetMaxItemCount([NativeTypeName("UINT16 *")] ushort* maxItemCount)
         {
             return ((delegate* stdcall<ISpatialAudioMetadataItems*, ushort*, int>)(lpVtbl[5]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this), maxItemCount);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetMaxValueBufferLength([NativeTypeName("UINT32 *")] uint* maxValueBufferLength)
         {
             return ((delegate* stdcall<ISpatialAudioMetadataItems*, uint*, int>)(lpVtbl[6]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this), maxValueBufferLength);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetInfo([NativeTypeName("SpatialAudioMetadataItemsInfo *")] SpatialAudioMetadataItemsInfo* info)
         {

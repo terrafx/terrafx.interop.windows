@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -13,9 +14,23 @@ namespace TerraFX.Interop
         [NativeTypeName("tagDVD_TitleMainAttributes::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/strmif.h:21262:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref DVD_TITLE_APPMODE AppMode => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.AppMode, 1));
+        public ref DVD_TITLE_APPMODE AppMode
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.AppMode, 1));
+            }
+        }
 
-        public ref DVD_HMSF_TIMECODE TitleLength => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.TitleLength, 1));
+        public ref DVD_HMSF_TIMECODE TitleLength
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.TitleLength, 1));
+            }
+        }
 
         public DVD_VideoAttributes VideoAttributes;
 
@@ -55,8 +70,16 @@ namespace TerraFX.Interop
             public DVD_AudioAttributes e6;
             public DVD_AudioAttributes e7;
 
-            public ref DVD_AudioAttributes this[int index] => ref AsSpan()[index];
+            public ref DVD_AudioAttributes this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan()[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<DVD_AudioAttributes> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
         }
 
@@ -71,8 +94,16 @@ namespace TerraFX.Interop
             public DVD_MultichannelAudioAttributes e6;
             public DVD_MultichannelAudioAttributes e7;
 
-            public ref DVD_MultichannelAudioAttributes this[int index] => ref AsSpan()[index];
+            public ref DVD_MultichannelAudioAttributes this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan()[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<DVD_MultichannelAudioAttributes> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
         }
 
@@ -111,8 +142,16 @@ namespace TerraFX.Interop
             public DVD_SubpictureAttributes e30;
             public DVD_SubpictureAttributes e31;
 
-            public ref DVD_SubpictureAttributes this[int index] => ref AsSpan()[index];
+            public ref DVD_SubpictureAttributes this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan()[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<DVD_SubpictureAttributes> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 32);
         }
     }

@@ -3,6 +3,8 @@
 // Ported from um/dwrite.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop
 {
     public partial struct DWRITE_SHAPING_TEXT_PROPERTIES
@@ -12,11 +14,13 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT16 : 1")]
         public ushort isShapedAlone
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (ushort)(_bitfield & 0x1u);
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (ushort)((_bitfield & ~0x1u) | (value & 0x1u));
@@ -26,11 +30,13 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT16 : 1")]
         public ushort reserved1
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (ushort)((_bitfield >> 1) & 0x1u);
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (ushort)((_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1));
@@ -40,11 +46,13 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT16 : 1")]
         public ushort canBreakShapingAfter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (ushort)((_bitfield >> 2) & 0x1u);
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (ushort)((_bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2));
@@ -54,11 +62,13 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT16 : 13")]
         public ushort reserved
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (ushort)((_bitfield >> 3) & 0x1FFFu);
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (ushort)((_bitfield & ~(0x1FFFu << 3)) | ((value & 0x1FFFu) << 3));

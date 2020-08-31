@@ -15,30 +15,35 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IVPManager*, Guid*, void**, int>)(lpVtbl[0]))((IVPManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IVPManager*, uint>)(lpVtbl[1]))((IVPManager*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IVPManager*, uint>)(lpVtbl[2]))((IVPManager*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetVideoPortIndex([NativeTypeName("DWORD")] uint dwVideoPortIndex)
         {
             return ((delegate* stdcall<IVPManager*, uint, int>)(lpVtbl[3]))((IVPManager*)Unsafe.AsPointer(ref this), dwVideoPortIndex);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetVideoPortIndex([NativeTypeName("DWORD *")] uint* pdwVideoPortIndex)
         {

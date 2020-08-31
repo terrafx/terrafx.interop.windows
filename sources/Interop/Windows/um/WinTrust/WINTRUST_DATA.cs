@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -33,6 +34,7 @@ namespace TerraFX.Interop
 
         public ref WINTRUST_FILE_INFO* pFile
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -44,6 +46,7 @@ namespace TerraFX.Interop
 
         public ref WINTRUST_CATALOG_INFO* pCatalog
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -55,6 +58,7 @@ namespace TerraFX.Interop
 
         public ref WINTRUST_BLOB_INFO* pBlob
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -66,6 +70,7 @@ namespace TerraFX.Interop
 
         public ref WINTRUST_SGNR_INFO* pSgnr
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -77,6 +82,7 @@ namespace TerraFX.Interop
 
         public ref WINTRUST_CERT_INFO* pCert
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)

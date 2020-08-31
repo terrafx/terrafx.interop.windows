@@ -15,24 +15,28 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<ID3D11ShaderTraceFactory*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11ShaderTraceFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<ID3D11ShaderTraceFactory*, uint>)(lpVtbl[1]))((ID3D11ShaderTraceFactory*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<ID3D11ShaderTraceFactory*, uint>)(lpVtbl[2]))((ID3D11ShaderTraceFactory*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int CreateShaderTrace([NativeTypeName("IUnknown *")] IUnknown* pShader, [NativeTypeName("D3D11_SHADER_TRACE_DESC *")] D3D11_SHADER_TRACE_DESC* pTraceDesc, [NativeTypeName("ID3D11ShaderTrace **")] ID3D11ShaderTrace** ppShaderTrace)
         {

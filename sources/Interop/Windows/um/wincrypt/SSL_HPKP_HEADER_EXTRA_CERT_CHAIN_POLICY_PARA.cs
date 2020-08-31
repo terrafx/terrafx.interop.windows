@@ -3,6 +3,8 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop
 {
     public unsafe partial struct SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA
@@ -26,6 +28,7 @@ namespace TerraFX.Interop
 
             public ref sbyte* this[int index]
             {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
                 {
                     fixed (sbyte** pThis = &e0)

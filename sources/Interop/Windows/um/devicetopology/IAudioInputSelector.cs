@@ -15,30 +15,35 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IAudioInputSelector*, Guid*, void**, int>)(lpVtbl[0]))((IAudioInputSelector*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IAudioInputSelector*, uint>)(lpVtbl[1]))((IAudioInputSelector*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IAudioInputSelector*, uint>)(lpVtbl[2]))((IAudioInputSelector*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetSelection([NativeTypeName("UINT *")] uint* pnIdSelected)
         {
             return ((delegate* stdcall<IAudioInputSelector*, uint*, int>)(lpVtbl[3]))((IAudioInputSelector*)Unsafe.AsPointer(ref this), pnIdSelected);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetSelection([NativeTypeName("UINT")] uint nIdSelect, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
         {

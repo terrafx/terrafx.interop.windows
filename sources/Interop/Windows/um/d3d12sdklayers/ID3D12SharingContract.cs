@@ -15,39 +15,46 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<ID3D12SharingContract*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<ID3D12SharingContract*, uint>)(lpVtbl[1]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<ID3D12SharingContract*, uint>)(lpVtbl[2]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Present([NativeTypeName("ID3D12Resource *")] ID3D12Resource* pResource, [NativeTypeName("UINT")] uint Subresource, [NativeTypeName("HWND")] IntPtr window)
         {
             ((delegate* stdcall<ID3D12SharingContract*, ID3D12Resource*, uint, IntPtr, void>)(lpVtbl[3]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this), pResource, Subresource, window);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void SharedFenceSignal([NativeTypeName("ID3D12Fence *")] ID3D12Fence* pFence, [NativeTypeName("UINT64")] ulong FenceValue)
         {
             ((delegate* stdcall<ID3D12SharingContract*, ID3D12Fence*, ulong, void>)(lpVtbl[4]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this), pFence, FenceValue);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void BeginCapturableWork([NativeTypeName("const GUID &")] Guid* guid)
         {
             ((delegate* stdcall<ID3D12SharingContract*, Guid*, void>)(lpVtbl[5]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this), guid);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void EndCapturableWork([NativeTypeName("const GUID &")] Guid* guid)
         {
             ((delegate* stdcall<ID3D12SharingContract*, Guid*, void>)(lpVtbl[6]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this), guid);

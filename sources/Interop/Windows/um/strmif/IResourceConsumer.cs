@@ -15,30 +15,35 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IResourceConsumer*, Guid*, void**, int>)(lpVtbl[0]))((IResourceConsumer*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IResourceConsumer*, uint>)(lpVtbl[1]))((IResourceConsumer*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IResourceConsumer*, uint>)(lpVtbl[2]))((IResourceConsumer*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int AcquireResource([NativeTypeName("LONG")] int idResource)
         {
             return ((delegate* stdcall<IResourceConsumer*, int, int>)(lpVtbl[3]))((IResourceConsumer*)Unsafe.AsPointer(ref this), idResource);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int ReleaseResource([NativeTypeName("LONG")] int idResource)
         {

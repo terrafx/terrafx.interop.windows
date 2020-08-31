@@ -15,54 +15,63 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IOleInPlaceObject*, Guid*, void**, int>)(lpVtbl[0]))((IOleInPlaceObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IOleInPlaceObject*, uint>)(lpVtbl[1]))((IOleInPlaceObject*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IOleInPlaceObject*, uint>)(lpVtbl[2]))((IOleInPlaceObject*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetWindow([NativeTypeName("HWND *")] IntPtr* phwnd)
         {
             return ((delegate* stdcall<IOleInPlaceObject*, IntPtr*, int>)(lpVtbl[3]))((IOleInPlaceObject*)Unsafe.AsPointer(ref this), phwnd);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int ContextSensitiveHelp([NativeTypeName("BOOL")] int fEnterMode)
         {
             return ((delegate* stdcall<IOleInPlaceObject*, int, int>)(lpVtbl[4]))((IOleInPlaceObject*)Unsafe.AsPointer(ref this), fEnterMode);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int InPlaceDeactivate()
         {
             return ((delegate* stdcall<IOleInPlaceObject*, int>)(lpVtbl[5]))((IOleInPlaceObject*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int UIDeactivate()
         {
             return ((delegate* stdcall<IOleInPlaceObject*, int>)(lpVtbl[6]))((IOleInPlaceObject*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetObjectRects([NativeTypeName("LPCRECT")] RECT* lprcPosRect, [NativeTypeName("LPCRECT")] RECT* lprcClipRect)
         {
             return ((delegate* stdcall<IOleInPlaceObject*, RECT*, RECT*, int>)(lpVtbl[7]))((IOleInPlaceObject*)Unsafe.AsPointer(ref this), lprcPosRect, lprcClipRect);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int ReactivateAndUndo()
         {

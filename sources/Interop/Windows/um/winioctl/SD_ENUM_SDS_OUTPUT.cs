@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -26,8 +27,16 @@ namespace TerraFX.Interop
         {
             public SD_ENUM_SDS_ENTRY e0;
 
-            public ref SD_ENUM_SDS_ENTRY this[int index] => ref AsSpan(int.MaxValue)[index];
+            public ref SD_ENUM_SDS_ENTRY this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan(int.MaxValue)[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<SD_ENUM_SDS_ENTRY> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
     }

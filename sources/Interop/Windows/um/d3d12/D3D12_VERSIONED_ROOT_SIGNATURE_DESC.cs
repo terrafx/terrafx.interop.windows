@@ -3,6 +3,7 @@
 // Ported from um/d3d12.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -14,9 +15,23 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D12_VERSIONED_ROOT_SIGNATURE_DESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12.h:3580:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref D3D12_ROOT_SIGNATURE_DESC Desc_1_0 => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Desc_1_0, 1));
+        public ref D3D12_ROOT_SIGNATURE_DESC Desc_1_0
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Desc_1_0, 1));
+            }
+        }
 
-        public ref D3D12_ROOT_SIGNATURE_DESC1 Desc_1_1 => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Desc_1_1, 1));
+        public ref D3D12_ROOT_SIGNATURE_DESC1 Desc_1_1
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Desc_1_1, 1));
+            }
+        }
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

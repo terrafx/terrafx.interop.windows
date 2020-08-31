@@ -3,6 +3,7 @@
 // Ported from um/d3d11.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -25,11 +26,13 @@ namespace TerraFX.Interop
             [NativeTypeName("UINT : 1")]
             public uint ProtectionEnabled
             {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
                 {
                     return _bitfield & 0x1u;
                 }
 
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 set
                 {
                     _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
@@ -39,11 +42,13 @@ namespace TerraFX.Interop
             [NativeTypeName("UINT : 1")]
             public uint OverlayOrFullscreenRequired
             {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
                 {
                     return (_bitfield >> 1) & 0x1u;
                 }
 
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 set
                 {
                     _bitfield = (_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1);
@@ -53,11 +58,13 @@ namespace TerraFX.Interop
             [NativeTypeName("UINT : 30")]
             public uint Reserved
             {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
                 {
                     return (_bitfield >> 2) & 0x3FFFFFFFu;
                 }
 
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 set
                 {
                     _bitfield = (_bitfield & ~(0x3FFFFFFFu << 2)) | ((value & 0x3FFFFFFFu) << 2);

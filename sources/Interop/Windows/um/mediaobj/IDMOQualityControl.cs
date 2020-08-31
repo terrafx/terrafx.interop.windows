@@ -15,36 +15,42 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IDMOQualityControl*, Guid*, void**, int>)(lpVtbl[0]))((IDMOQualityControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IDMOQualityControl*, uint>)(lpVtbl[1]))((IDMOQualityControl*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IDMOQualityControl*, uint>)(lpVtbl[2]))((IDMOQualityControl*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetNow([NativeTypeName("REFERENCE_TIME")] long rtNow)
         {
             return ((delegate* stdcall<IDMOQualityControl*, long, int>)(lpVtbl[3]))((IDMOQualityControl*)Unsafe.AsPointer(ref this), rtNow);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetStatus([NativeTypeName("DWORD")] uint dwFlags)
         {
             return ((delegate* stdcall<IDMOQualityControl*, uint, int>)(lpVtbl[4]))((IDMOQualityControl*)Unsafe.AsPointer(ref this), dwFlags);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetStatus([NativeTypeName("DWORD *")] uint* pdwFlags)
         {

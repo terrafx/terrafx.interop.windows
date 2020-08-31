@@ -15,30 +15,35 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IMFRateControl*, Guid*, void**, int>)(lpVtbl[0]))((IMFRateControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IMFRateControl*, uint>)(lpVtbl[1]))((IMFRateControl*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IMFRateControl*, uint>)(lpVtbl[2]))((IMFRateControl*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetRate([NativeTypeName("BOOL")] int fThin, float flRate)
         {
             return ((delegate* stdcall<IMFRateControl*, int, float, int>)(lpVtbl[3]))((IMFRateControl*)Unsafe.AsPointer(ref this), fThin, flRate);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetRate([NativeTypeName("BOOL *")] int* pfThin, [NativeTypeName("float *")] float* pflRate)
         {

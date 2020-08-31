@@ -15,36 +15,42 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IMFRateSupport*, Guid*, void**, int>)(lpVtbl[0]))((IMFRateSupport*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IMFRateSupport*, uint>)(lpVtbl[1]))((IMFRateSupport*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IMFRateSupport*, uint>)(lpVtbl[2]))((IMFRateSupport*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetSlowestRate(MFRATE_DIRECTION eDirection, [NativeTypeName("BOOL")] int fThin, [NativeTypeName("float *")] float* pflRate)
         {
             return ((delegate* stdcall<IMFRateSupport*, MFRATE_DIRECTION, int, float*, int>)(lpVtbl[3]))((IMFRateSupport*)Unsafe.AsPointer(ref this), eDirection, fThin, pflRate);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetFastestRate(MFRATE_DIRECTION eDirection, [NativeTypeName("BOOL")] int fThin, [NativeTypeName("float *")] float* pflRate)
         {
             return ((delegate* stdcall<IMFRateSupport*, MFRATE_DIRECTION, int, float*, int>)(lpVtbl[4]))((IMFRateSupport*)Unsafe.AsPointer(ref this), eDirection, fThin, pflRate);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int IsRateSupported([NativeTypeName("BOOL")] int fThin, float flRate, [NativeTypeName("float *")] float* pflNearestSupportedRate)
         {

@@ -3,6 +3,7 @@
 // Ported from um/mmeapi.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -19,9 +20,23 @@ namespace TerraFX.Interop
         [NativeTypeName("tagMIXERLINECONTROLSW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mmeapi.h:2266:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint dwControlID => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwControlID, 1));
+        public ref uint dwControlID
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwControlID, 1));
+            }
+        }
 
-        public ref uint dwControlType => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwControlType, 1));
+        public ref uint dwControlType
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwControlType, 1));
+            }
+        }
 
         [NativeTypeName("DWORD")]
         public uint cControls;

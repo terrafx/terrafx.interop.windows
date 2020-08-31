@@ -15,42 +15,49 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<AsyncIPipeDouble*, Guid*, void**, int>)(lpVtbl[0]))((AsyncIPipeDouble*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<AsyncIPipeDouble*, uint>)(lpVtbl[1]))((AsyncIPipeDouble*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<AsyncIPipeDouble*, uint>)(lpVtbl[2]))((AsyncIPipeDouble*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Begin_Pull([NativeTypeName("ULONG")] uint cRequest)
         {
             return ((delegate* stdcall<AsyncIPipeDouble*, uint, int>)(lpVtbl[3]))((AsyncIPipeDouble*)Unsafe.AsPointer(ref this), cRequest);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Finish_Pull([NativeTypeName("DOUBLE *")] double* buf, [NativeTypeName("ULONG *")] uint* pcReturned)
         {
             return ((delegate* stdcall<AsyncIPipeDouble*, double*, uint*, int>)(lpVtbl[4]))((AsyncIPipeDouble*)Unsafe.AsPointer(ref this), buf, pcReturned);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Begin_Push([NativeTypeName("DOUBLE *")] double* buf, [NativeTypeName("ULONG")] uint cSent)
         {
             return ((delegate* stdcall<AsyncIPipeDouble*, double*, uint, int>)(lpVtbl[5]))((AsyncIPipeDouble*)Unsafe.AsPointer(ref this), buf, cSent);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Finish_Push()
         {

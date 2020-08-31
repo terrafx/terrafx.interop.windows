@@ -3,6 +3,7 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -15,11 +16,13 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD : 12")]
         public uint PageRelativeOffset
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return _bitfield & 0xFFFu;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (_bitfield & ~0xFFFu) | (value & 0xFFFu);
@@ -29,11 +32,13 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD : 1")]
         public uint IndirectCall
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (_bitfield >> 12) & 0x1u;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (_bitfield & ~(0x1u << 12)) | ((value & 0x1u) << 12);
@@ -43,11 +48,13 @@ namespace TerraFX.Interop
         [NativeTypeName("DWORD : 19")]
         public uint IATIndex
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (_bitfield >> 13) & 0x7FFFFu;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (_bitfield & ~(0x7FFFFu << 13)) | ((value & 0x7FFFFu) << 13);

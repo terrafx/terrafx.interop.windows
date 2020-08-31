@@ -15,48 +15,56 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IDXGIDeviceSubObject*, Guid*, void**, int>)(lpVtbl[0]))((IDXGIDeviceSubObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IDXGIDeviceSubObject*, uint>)(lpVtbl[1]))((IDXGIDeviceSubObject*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IDXGIDeviceSubObject*, uint>)(lpVtbl[2]))((IDXGIDeviceSubObject*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData)
         {
             return ((delegate* stdcall<IDXGIDeviceSubObject*, Guid*, uint, void*, int>)(lpVtbl[3]))((IDXGIDeviceSubObject*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("const IUnknown *")] IUnknown* pUnknown)
         {
             return ((delegate* stdcall<IDXGIDeviceSubObject*, Guid*, IUnknown*, int>)(lpVtbl[4]))((IDXGIDeviceSubObject*)Unsafe.AsPointer(ref this), Name, pUnknown);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetPrivateData([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData)
         {
             return ((delegate* stdcall<IDXGIDeviceSubObject*, Guid*, uint*, void*, int>)(lpVtbl[5]))((IDXGIDeviceSubObject*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetParent([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppParent)
         {
             return ((delegate* stdcall<IDXGIDeviceSubObject*, Guid*, void**, int>)(lpVtbl[6]))((IDXGIDeviceSubObject*)Unsafe.AsPointer(ref this), riid, ppParent);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetDevice([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppDevice)
         {

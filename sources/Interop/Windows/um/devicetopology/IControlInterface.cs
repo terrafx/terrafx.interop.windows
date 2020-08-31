@@ -15,30 +15,35 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IControlInterface*, Guid*, void**, int>)(lpVtbl[0]))((IControlInterface*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IControlInterface*, uint>)(lpVtbl[1]))((IControlInterface*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IControlInterface*, uint>)(lpVtbl[2]))((IControlInterface*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetName([NativeTypeName("LPWSTR *")] ushort** ppwstrName)
         {
             return ((delegate* stdcall<IControlInterface*, ushort**, int>)(lpVtbl[3]))((IControlInterface*)Unsafe.AsPointer(ref this), ppwstrName);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetIID([NativeTypeName("GUID *")] Guid* pIID)
         {

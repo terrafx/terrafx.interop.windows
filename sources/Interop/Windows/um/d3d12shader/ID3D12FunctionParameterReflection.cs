@@ -13,6 +13,7 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetDesc([NativeTypeName("D3D12_PARAMETER_DESC *")] D3D12_PARAMETER_DESC* pDesc)
         {

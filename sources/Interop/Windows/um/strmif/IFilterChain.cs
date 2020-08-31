@@ -15,42 +15,49 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
             return ((delegate* stdcall<IFilterChain*, Guid*, void**, int>)(lpVtbl[0]))((IFilterChain*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
             return ((delegate* stdcall<IFilterChain*, uint>)(lpVtbl[1]))((IFilterChain*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
             return ((delegate* stdcall<IFilterChain*, uint>)(lpVtbl[2]))((IFilterChain*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int StartChain([NativeTypeName("IBaseFilter *")] IBaseFilter* pStartFilter, [NativeTypeName("IBaseFilter *")] IBaseFilter* pEndFilter)
         {
             return ((delegate* stdcall<IFilterChain*, IBaseFilter*, IBaseFilter*, int>)(lpVtbl[3]))((IFilterChain*)Unsafe.AsPointer(ref this), pStartFilter, pEndFilter);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int PauseChain([NativeTypeName("IBaseFilter *")] IBaseFilter* pStartFilter, [NativeTypeName("IBaseFilter *")] IBaseFilter* pEndFilter)
         {
             return ((delegate* stdcall<IFilterChain*, IBaseFilter*, IBaseFilter*, int>)(lpVtbl[4]))((IFilterChain*)Unsafe.AsPointer(ref this), pStartFilter, pEndFilter);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int StopChain([NativeTypeName("IBaseFilter *")] IBaseFilter* pStartFilter, [NativeTypeName("IBaseFilter *")] IBaseFilter* pEndFilter)
         {
             return ((delegate* stdcall<IFilterChain*, IBaseFilter*, IBaseFilter*, int>)(lpVtbl[5]))((IFilterChain*)Unsafe.AsPointer(ref this), pStartFilter, pEndFilter);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int RemoveChain([NativeTypeName("IBaseFilter *")] IBaseFilter* pStartFilter, [NativeTypeName("IBaseFilter *")] IBaseFilter* pEndFilter)
         {
