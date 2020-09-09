@@ -1286,6 +1286,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DispatcherQueue", "Dispatch
 		generation\um\DispatcherQueue\um-DispatcherQueue.h = generation\um\DispatcherQueue\um-DispatcherQueue.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InteractionContext", "InteractionContext", "{BF8FA043-B447-43AA-A0FF-72943293010A}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\InteractionContext\generate.rsp = generation\um\InteractionContext\generate.rsp
+		generation\um\InteractionContext\header.txt = generation\um\InteractionContext\header.txt
+		generation\um\InteractionContext\um-InteractionContext.h = generation\um\InteractionContext\um-InteractionContext.h
+	EndProjectSection
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "directmanipulation", "directmanipulation", "{90EB0F1E-3DE0-4A44-A2AB-C0EF7C5633E0}"
 	ProjectSection(SolutionItems) = preProject
 		generation\um\directmanipulation\directmanipulation.h = generation\um\directmanipulation\directmanipulation.h
@@ -1498,6 +1505,7 @@ Global
 		{F725268B-0460-4AA3-B4DB-4117B8F8D0D4} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{20CF1C32-1F5E-43B3-AE1F-22A826E5BB9C} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{9CC7B81D-B969-4262-922E-37CF05B0C40A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{BF8FA043-B447-43AA-A0FF-72943293010A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{90EB0F1E-3DE0-4A44-A2AB-C0EF7C5633E0} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
