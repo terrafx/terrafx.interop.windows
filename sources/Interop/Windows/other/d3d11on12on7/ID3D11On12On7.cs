@@ -48,9 +48,9 @@ namespace TerraFX.Interop
         }
 
         [return: NativeTypeName("ID3D11On12On7Resource *")]
-        public ID3D11On12On7Resource* GetThreadLastCreatedResource()
+        public void* GetThreadLastCreatedResource()
         {
-            return ((delegate* stdcall<ID3D11On12On7*, ID3D11On12On7Resource*>)(lpVtbl[6]))((ID3D11On12On7*)Unsafe.AsPointer(ref this));
+            return ((delegate* stdcall<ID3D11On12On7*, void*>)(lpVtbl[6]))((ID3D11On12On7*)Unsafe.AsPointer(ref this));
         }
     }
 }
