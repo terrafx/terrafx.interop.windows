@@ -101,6 +101,7 @@ ID2D1DeviceContext4.DrawTextW=DrawText
 ID2D1RenderTarget.DrawTextW=DrawText
 ID3D10Blob=ID3DBlob
 ID3D11InfoQueue.GetMessageW=GetMessage
+ID3D11On12On7Resource*=void*
 ID3D12InfoQueue.GetMessageW=GetMessage
 IDesktopWindowTarget**=void**
 IDWriteFontFace.GetGlyphIndicesW=GetGlyphIndices
