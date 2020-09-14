@@ -3,8 +3,11 @@
 // Ported from um/schannel.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop
 {
+    [Flags]
     public enum SchGetExtensionsOptions
     {
         SCH_EXTENSIONS_OPTIONS_NONE = 0x0,
