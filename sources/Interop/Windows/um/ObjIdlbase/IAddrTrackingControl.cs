@@ -19,35 +19,35 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IAddrTrackingControl*, Guid*, void**, int>)(lpVtbl[0]))((IAddrTrackingControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IAddrTrackingControl*, Guid*, void**, int>)(lpVtbl[0]))((IAddrTrackingControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IAddrTrackingControl*, uint>)(lpVtbl[1]))((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IAddrTrackingControl*, uint>)(lpVtbl[1]))((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IAddrTrackingControl*, uint>)(lpVtbl[2]))((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IAddrTrackingControl*, uint>)(lpVtbl[2]))((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int EnableCOMDynamicAddrTracking()
         {
-            return ((delegate* stdcall<IAddrTrackingControl*, int>)(lpVtbl[3]))((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IAddrTrackingControl*, int>)(lpVtbl[3]))((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int DisableCOMDynamicAddrTracking()
         {
-            return ((delegate* stdcall<IAddrTrackingControl*, int>)(lpVtbl[4]))((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IAddrTrackingControl*, int>)(lpVtbl[4]))((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
         }
     }
 }

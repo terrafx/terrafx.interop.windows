@@ -19,70 +19,70 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<ILockBytes*, Guid*, void**, int>)(lpVtbl[0]))((ILockBytes*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<ILockBytes*, Guid*, void**, int>)(lpVtbl[0]))((ILockBytes*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<ILockBytes*, uint>)(lpVtbl[1]))((ILockBytes*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ILockBytes*, uint>)(lpVtbl[1]))((ILockBytes*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<ILockBytes*, uint>)(lpVtbl[2]))((ILockBytes*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ILockBytes*, uint>)(lpVtbl[2]))((ILockBytes*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int ReadAt(ULARGE_INTEGER ulOffset, [NativeTypeName("void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead)
         {
-            return ((delegate* stdcall<ILockBytes*, ULARGE_INTEGER, void*, uint, uint*, int>)(lpVtbl[3]))((ILockBytes*)Unsafe.AsPointer(ref this), ulOffset, pv, cb, pcbRead);
+            return ((delegate* unmanaged<ILockBytes*, ULARGE_INTEGER, void*, uint, uint*, int>)(lpVtbl[3]))((ILockBytes*)Unsafe.AsPointer(ref this), ulOffset, pv, cb, pcbRead);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int WriteAt(ULARGE_INTEGER ulOffset, [NativeTypeName("const void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbWritten)
         {
-            return ((delegate* stdcall<ILockBytes*, ULARGE_INTEGER, void*, uint, uint*, int>)(lpVtbl[4]))((ILockBytes*)Unsafe.AsPointer(ref this), ulOffset, pv, cb, pcbWritten);
+            return ((delegate* unmanaged<ILockBytes*, ULARGE_INTEGER, void*, uint, uint*, int>)(lpVtbl[4]))((ILockBytes*)Unsafe.AsPointer(ref this), ulOffset, pv, cb, pcbWritten);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Flush()
         {
-            return ((delegate* stdcall<ILockBytes*, int>)(lpVtbl[5]))((ILockBytes*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ILockBytes*, int>)(lpVtbl[5]))((ILockBytes*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetSize(ULARGE_INTEGER cb)
         {
-            return ((delegate* stdcall<ILockBytes*, ULARGE_INTEGER, int>)(lpVtbl[6]))((ILockBytes*)Unsafe.AsPointer(ref this), cb);
+            return ((delegate* unmanaged<ILockBytes*, ULARGE_INTEGER, int>)(lpVtbl[6]))((ILockBytes*)Unsafe.AsPointer(ref this), cb);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int LockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType)
         {
-            return ((delegate* stdcall<ILockBytes*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int>)(lpVtbl[7]))((ILockBytes*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
+            return ((delegate* unmanaged<ILockBytes*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int>)(lpVtbl[7]))((ILockBytes*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int UnlockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType)
         {
-            return ((delegate* stdcall<ILockBytes*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int>)(lpVtbl[8]))((ILockBytes*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
+            return ((delegate* unmanaged<ILockBytes*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int>)(lpVtbl[8]))((ILockBytes*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Stat([NativeTypeName("STATSTG *")] STATSTG* pstatstg, [NativeTypeName("DWORD")] uint grfStatFlag)
         {
-            return ((delegate* stdcall<ILockBytes*, STATSTG*, uint, int>)(lpVtbl[9]))((ILockBytes*)Unsafe.AsPointer(ref this), pstatstg, grfStatFlag);
+            return ((delegate* unmanaged<ILockBytes*, STATSTG*, uint, int>)(lpVtbl[9]))((ILockBytes*)Unsafe.AsPointer(ref this), pstatstg, grfStatFlag);
         }
     }
 }

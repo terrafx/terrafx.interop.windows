@@ -16,18 +16,18 @@ namespace TerraFX.Interop
         public IntPtr hSIP;
 
         [NativeTypeName("pCryptSIPGetSignedDataMsg")]
-        public delegate* stdcall<SIP_SUBJECTINFO*, uint*, uint, uint*, byte*, int> pfGet;
+        public delegate* unmanaged<SIP_SUBJECTINFO*, uint*, uint, uint*, byte*, int> pfGet;
 
         [NativeTypeName("pCryptSIPPutSignedDataMsg")]
-        public delegate* stdcall<SIP_SUBJECTINFO*, uint, uint*, uint, byte*, int> pfPut;
+        public delegate* unmanaged<SIP_SUBJECTINFO*, uint, uint*, uint, byte*, int> pfPut;
 
         [NativeTypeName("pCryptSIPCreateIndirectData")]
-        public delegate* stdcall<SIP_SUBJECTINFO*, uint*, SIP_INDIRECT_DATA*, int> pfCreate;
+        public delegate* unmanaged<SIP_SUBJECTINFO*, uint*, SIP_INDIRECT_DATA*, int> pfCreate;
 
         [NativeTypeName("pCryptSIPVerifyIndirectData")]
-        public delegate* stdcall<SIP_SUBJECTINFO*, SIP_INDIRECT_DATA*, int> pfVerify;
+        public delegate* unmanaged<SIP_SUBJECTINFO*, SIP_INDIRECT_DATA*, int> pfVerify;
 
         [NativeTypeName("pCryptSIPRemoveSignedDataMsg")]
-        public delegate* stdcall<SIP_SUBJECTINFO*, uint, int> pfRemove;
+        public delegate* unmanaged<SIP_SUBJECTINFO*, uint, int> pfRemove;
     }
 }

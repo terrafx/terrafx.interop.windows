@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMFByteStreamCacheControl*, Guid*, void**, int>)(lpVtbl[0]))((IMFByteStreamCacheControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMFByteStreamCacheControl*, Guid*, void**, int>)(lpVtbl[0]))((IMFByteStreamCacheControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMFByteStreamCacheControl*, uint>)(lpVtbl[1]))((IMFByteStreamCacheControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFByteStreamCacheControl*, uint>)(lpVtbl[1]))((IMFByteStreamCacheControl*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMFByteStreamCacheControl*, uint>)(lpVtbl[2]))((IMFByteStreamCacheControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFByteStreamCacheControl*, uint>)(lpVtbl[2]))((IMFByteStreamCacheControl*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int StopBackgroundTransfer()
         {
-            return ((delegate* stdcall<IMFByteStreamCacheControl*, int>)(lpVtbl[3]))((IMFByteStreamCacheControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFByteStreamCacheControl*, int>)(lpVtbl[3]))((IMFByteStreamCacheControl*)Unsafe.AsPointer(ref this));
         }
     }
 }

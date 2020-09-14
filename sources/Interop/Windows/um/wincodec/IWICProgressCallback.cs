@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IWICProgressCallback*, Guid*, void**, int>)(lpVtbl[0]))((IWICProgressCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IWICProgressCallback*, Guid*, void**, int>)(lpVtbl[0]))((IWICProgressCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IWICProgressCallback*, uint>)(lpVtbl[1]))((IWICProgressCallback*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IWICProgressCallback*, uint>)(lpVtbl[1]))((IWICProgressCallback*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IWICProgressCallback*, uint>)(lpVtbl[2]))((IWICProgressCallback*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IWICProgressCallback*, uint>)(lpVtbl[2]))((IWICProgressCallback*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Notify([NativeTypeName("ULONG")] uint uFrameNum, WICProgressOperation operation, double dblProgress)
         {
-            return ((delegate* stdcall<IWICProgressCallback*, uint, WICProgressOperation, double, int>)(lpVtbl[3]))((IWICProgressCallback*)Unsafe.AsPointer(ref this), uFrameNum, operation, dblProgress);
+            return ((delegate* unmanaged<IWICProgressCallback*, uint, WICProgressOperation, double, int>)(lpVtbl[3]))((IWICProgressCallback*)Unsafe.AsPointer(ref this), uFrameNum, operation, dblProgress);
         }
     }
 }

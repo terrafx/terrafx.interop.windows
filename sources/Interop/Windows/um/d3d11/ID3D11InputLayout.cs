@@ -19,48 +19,48 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<ID3D11InputLayout*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11InputLayout*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<ID3D11InputLayout*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11InputLayout*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<ID3D11InputLayout*, uint>)(lpVtbl[1]))((ID3D11InputLayout*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ID3D11InputLayout*, uint>)(lpVtbl[1]))((ID3D11InputLayout*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<ID3D11InputLayout*, uint>)(lpVtbl[2]))((ID3D11InputLayout*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ID3D11InputLayout*, uint>)(lpVtbl[2]))((ID3D11InputLayout*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void GetDevice([NativeTypeName("ID3D11Device **")] ID3D11Device** ppDevice)
         {
-            ((delegate* stdcall<ID3D11InputLayout*, ID3D11Device**, void>)(lpVtbl[3]))((ID3D11InputLayout*)Unsafe.AsPointer(ref this), ppDevice);
+            ((delegate* unmanaged<ID3D11InputLayout*, ID3D11Device**, void>)(lpVtbl[3]))((ID3D11InputLayout*)Unsafe.AsPointer(ref this), ppDevice);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData)
         {
-            return ((delegate* stdcall<ID3D11InputLayout*, Guid*, uint*, void*, int>)(lpVtbl[4]))((ID3D11InputLayout*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
+            return ((delegate* unmanaged<ID3D11InputLayout*, Guid*, uint*, void*, int>)(lpVtbl[4]))((ID3D11InputLayout*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData)
         {
-            return ((delegate* stdcall<ID3D11InputLayout*, Guid*, uint, void*, int>)(lpVtbl[5]))((ID3D11InputLayout*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
+            return ((delegate* unmanaged<ID3D11InputLayout*, Guid*, uint, void*, int>)(lpVtbl[5]))((ID3D11InputLayout*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
         {
-            return ((delegate* stdcall<ID3D11InputLayout*, Guid*, IUnknown*, int>)(lpVtbl[6]))((ID3D11InputLayout*)Unsafe.AsPointer(ref this), guid, pData);
+            return ((delegate* unmanaged<ID3D11InputLayout*, Guid*, IUnknown*, int>)(lpVtbl[6]))((ID3D11InputLayout*)Unsafe.AsPointer(ref this), guid, pData);
         }
     }
 }

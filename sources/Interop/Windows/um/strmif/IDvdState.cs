@@ -19,35 +19,35 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IDvdState*, Guid*, void**, int>)(lpVtbl[0]))((IDvdState*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IDvdState*, Guid*, void**, int>)(lpVtbl[0]))((IDvdState*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IDvdState*, uint>)(lpVtbl[1]))((IDvdState*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDvdState*, uint>)(lpVtbl[1]))((IDvdState*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IDvdState*, uint>)(lpVtbl[2]))((IDvdState*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDvdState*, uint>)(lpVtbl[2]))((IDvdState*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetDiscID([NativeTypeName("ULONGLONG *")] ulong* pullUniqueID)
         {
-            return ((delegate* stdcall<IDvdState*, ulong*, int>)(lpVtbl[3]))((IDvdState*)Unsafe.AsPointer(ref this), pullUniqueID);
+            return ((delegate* unmanaged<IDvdState*, ulong*, int>)(lpVtbl[3]))((IDvdState*)Unsafe.AsPointer(ref this), pullUniqueID);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetParentalLevel([NativeTypeName("ULONG *")] uint* pulParentalLevel)
         {
-            return ((delegate* stdcall<IDvdState*, uint*, int>)(lpVtbl[4]))((IDvdState*)Unsafe.AsPointer(ref this), pulParentalLevel);
+            return ((delegate* unmanaged<IDvdState*, uint*, int>)(lpVtbl[4]))((IDvdState*)Unsafe.AsPointer(ref this), pulParentalLevel);
         }
     }
 }

@@ -19,35 +19,35 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<ISpPhoneticAlphabetSelection*, Guid*, void**, int>)(lpVtbl[0]))((ISpPhoneticAlphabetSelection*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<ISpPhoneticAlphabetSelection*, Guid*, void**, int>)(lpVtbl[0]))((ISpPhoneticAlphabetSelection*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<ISpPhoneticAlphabetSelection*, uint>)(lpVtbl[1]))((ISpPhoneticAlphabetSelection*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ISpPhoneticAlphabetSelection*, uint>)(lpVtbl[1]))((ISpPhoneticAlphabetSelection*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<ISpPhoneticAlphabetSelection*, uint>)(lpVtbl[2]))((ISpPhoneticAlphabetSelection*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ISpPhoneticAlphabetSelection*, uint>)(lpVtbl[2]))((ISpPhoneticAlphabetSelection*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int IsAlphabetUPS([NativeTypeName("BOOL *")] int* pfIsUPS)
         {
-            return ((delegate* stdcall<ISpPhoneticAlphabetSelection*, int*, int>)(lpVtbl[3]))((ISpPhoneticAlphabetSelection*)Unsafe.AsPointer(ref this), pfIsUPS);
+            return ((delegate* unmanaged<ISpPhoneticAlphabetSelection*, int*, int>)(lpVtbl[3]))((ISpPhoneticAlphabetSelection*)Unsafe.AsPointer(ref this), pfIsUPS);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetAlphabetToUPS([NativeTypeName("BOOL")] int fForceUPS)
         {
-            return ((delegate* stdcall<ISpPhoneticAlphabetSelection*, int, int>)(lpVtbl[4]))((ISpPhoneticAlphabetSelection*)Unsafe.AsPointer(ref this), fForceUPS);
+            return ((delegate* unmanaged<ISpPhoneticAlphabetSelection*, int, int>)(lpVtbl[4]))((ISpPhoneticAlphabetSelection*)Unsafe.AsPointer(ref this), fForceUPS);
         }
     }
 }

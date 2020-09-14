@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMFNetProxyLocatorFactory*, Guid*, void**, int>)(lpVtbl[0]))((IMFNetProxyLocatorFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMFNetProxyLocatorFactory*, Guid*, void**, int>)(lpVtbl[0]))((IMFNetProxyLocatorFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMFNetProxyLocatorFactory*, uint>)(lpVtbl[1]))((IMFNetProxyLocatorFactory*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFNetProxyLocatorFactory*, uint>)(lpVtbl[1]))((IMFNetProxyLocatorFactory*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMFNetProxyLocatorFactory*, uint>)(lpVtbl[2]))((IMFNetProxyLocatorFactory*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFNetProxyLocatorFactory*, uint>)(lpVtbl[2]))((IMFNetProxyLocatorFactory*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int CreateProxyLocator([NativeTypeName("LPCWSTR")] ushort* pszProtocol, [NativeTypeName("IMFNetProxyLocator **")] IMFNetProxyLocator** ppProxyLocator)
         {
-            return ((delegate* stdcall<IMFNetProxyLocatorFactory*, ushort*, IMFNetProxyLocator**, int>)(lpVtbl[3]))((IMFNetProxyLocatorFactory*)Unsafe.AsPointer(ref this), pszProtocol, ppProxyLocator);
+            return ((delegate* unmanaged<IMFNetProxyLocatorFactory*, ushort*, IMFNetProxyLocator**, int>)(lpVtbl[3]))((IMFNetProxyLocatorFactory*)Unsafe.AsPointer(ref this), pszProtocol, ppProxyLocator);
         }
     }
 }

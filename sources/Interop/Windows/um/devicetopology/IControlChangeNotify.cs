@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IControlChangeNotify*, Guid*, void**, int>)(lpVtbl[0]))((IControlChangeNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IControlChangeNotify*, Guid*, void**, int>)(lpVtbl[0]))((IControlChangeNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IControlChangeNotify*, uint>)(lpVtbl[1]))((IControlChangeNotify*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IControlChangeNotify*, uint>)(lpVtbl[1]))((IControlChangeNotify*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IControlChangeNotify*, uint>)(lpVtbl[2]))((IControlChangeNotify*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IControlChangeNotify*, uint>)(lpVtbl[2]))((IControlChangeNotify*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OnNotify([NativeTypeName("DWORD")] uint dwSenderProcessId, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
         {
-            return ((delegate* stdcall<IControlChangeNotify*, uint, Guid*, int>)(lpVtbl[3]))((IControlChangeNotify*)Unsafe.AsPointer(ref this), dwSenderProcessId, pguidEventContext);
+            return ((delegate* unmanaged<IControlChangeNotify*, uint, Guid*, int>)(lpVtbl[3]))((IControlChangeNotify*)Unsafe.AsPointer(ref this), dwSenderProcessId, pguidEventContext);
         }
     }
 }

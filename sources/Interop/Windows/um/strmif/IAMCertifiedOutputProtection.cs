@@ -19,49 +19,49 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IAMCertifiedOutputProtection*, Guid*, void**, int>)(lpVtbl[0]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IAMCertifiedOutputProtection*, Guid*, void**, int>)(lpVtbl[0]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IAMCertifiedOutputProtection*, uint>)(lpVtbl[1]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IAMCertifiedOutputProtection*, uint>)(lpVtbl[1]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IAMCertifiedOutputProtection*, uint>)(lpVtbl[2]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IAMCertifiedOutputProtection*, uint>)(lpVtbl[2]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int KeyExchange([NativeTypeName("GUID *")] Guid* pRandom, [NativeTypeName("BYTE **")] byte** VarLenCertGH, [NativeTypeName("DWORD *")] uint* pdwLengthCertGH)
         {
-            return ((delegate* stdcall<IAMCertifiedOutputProtection*, Guid*, byte**, uint*, int>)(lpVtbl[3]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this), pRandom, VarLenCertGH, pdwLengthCertGH);
+            return ((delegate* unmanaged<IAMCertifiedOutputProtection*, Guid*, byte**, uint*, int>)(lpVtbl[3]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this), pRandom, VarLenCertGH, pdwLengthCertGH);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SessionSequenceStart([NativeTypeName("AMCOPPSignature *")] AMCOPPSignature* pSig)
         {
-            return ((delegate* stdcall<IAMCertifiedOutputProtection*, AMCOPPSignature*, int>)(lpVtbl[4]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this), pSig);
+            return ((delegate* unmanaged<IAMCertifiedOutputProtection*, AMCOPPSignature*, int>)(lpVtbl[4]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this), pSig);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int ProtectionCommand([NativeTypeName("const AMCOPPCommand *")] AMCOPPCommand* cmd)
         {
-            return ((delegate* stdcall<IAMCertifiedOutputProtection*, AMCOPPCommand*, int>)(lpVtbl[5]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this), cmd);
+            return ((delegate* unmanaged<IAMCertifiedOutputProtection*, AMCOPPCommand*, int>)(lpVtbl[5]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this), cmd);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int ProtectionStatus([NativeTypeName("const AMCOPPStatusInput *")] AMCOPPStatusInput* pStatusInput, [NativeTypeName("AMCOPPStatusOutput *")] AMCOPPStatusOutput* pStatusOutput)
         {
-            return ((delegate* stdcall<IAMCertifiedOutputProtection*, AMCOPPStatusInput*, AMCOPPStatusOutput*, int>)(lpVtbl[6]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this), pStatusInput, pStatusOutput);
+            return ((delegate* unmanaged<IAMCertifiedOutputProtection*, AMCOPPStatusInput*, AMCOPPStatusOutput*, int>)(lpVtbl[6]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this), pStatusInput, pStatusOutput);
         }
     }
 }

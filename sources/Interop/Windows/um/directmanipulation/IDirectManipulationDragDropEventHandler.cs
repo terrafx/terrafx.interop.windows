@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IDirectManipulationDragDropEventHandler*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationDragDropEventHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IDirectManipulationDragDropEventHandler*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationDragDropEventHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IDirectManipulationDragDropEventHandler*, uint>)(lpVtbl[1]))((IDirectManipulationDragDropEventHandler*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDirectManipulationDragDropEventHandler*, uint>)(lpVtbl[1]))((IDirectManipulationDragDropEventHandler*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IDirectManipulationDragDropEventHandler*, uint>)(lpVtbl[2]))((IDirectManipulationDragDropEventHandler*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDirectManipulationDragDropEventHandler*, uint>)(lpVtbl[2]))((IDirectManipulationDragDropEventHandler*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OnDragDropStatusChange([NativeTypeName("IDirectManipulationViewport2 *")] IDirectManipulationViewport2* viewport, DIRECTMANIPULATION_DRAG_DROP_STATUS current, DIRECTMANIPULATION_DRAG_DROP_STATUS previous)
         {
-            return ((delegate* stdcall<IDirectManipulationDragDropEventHandler*, IDirectManipulationViewport2*, DIRECTMANIPULATION_DRAG_DROP_STATUS, DIRECTMANIPULATION_DRAG_DROP_STATUS, int>)(lpVtbl[3]))((IDirectManipulationDragDropEventHandler*)Unsafe.AsPointer(ref this), viewport, current, previous);
+            return ((delegate* unmanaged<IDirectManipulationDragDropEventHandler*, IDirectManipulationViewport2*, DIRECTMANIPULATION_DRAG_DROP_STATUS, DIRECTMANIPULATION_DRAG_DROP_STATUS, int>)(lpVtbl[3]))((IDirectManipulationDragDropEventHandler*)Unsafe.AsPointer(ref this), viewport, current, previous);
         }
     }
 }

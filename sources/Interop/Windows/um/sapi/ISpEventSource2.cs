@@ -19,98 +19,98 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<ISpEventSource2*, Guid*, void**, int>)(lpVtbl[0]))((ISpEventSource2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<ISpEventSource2*, Guid*, void**, int>)(lpVtbl[0]))((ISpEventSource2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<ISpEventSource2*, uint>)(lpVtbl[1]))((ISpEventSource2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ISpEventSource2*, uint>)(lpVtbl[1]))((ISpEventSource2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<ISpEventSource2*, uint>)(lpVtbl[2]))((ISpEventSource2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ISpEventSource2*, uint>)(lpVtbl[2]))((ISpEventSource2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetNotifySink([NativeTypeName("ISpNotifySink *")] ISpNotifySink* pNotifySink)
         {
-            return ((delegate* stdcall<ISpEventSource2*, ISpNotifySink*, int>)(lpVtbl[3]))((ISpEventSource2*)Unsafe.AsPointer(ref this), pNotifySink);
+            return ((delegate* unmanaged<ISpEventSource2*, ISpNotifySink*, int>)(lpVtbl[3]))((ISpEventSource2*)Unsafe.AsPointer(ref this), pNotifySink);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetNotifyWindowMessage([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
         {
-            return ((delegate* stdcall<ISpEventSource2*, IntPtr, uint, nuint, nint, int>)(lpVtbl[4]))((ISpEventSource2*)Unsafe.AsPointer(ref this), hWnd, Msg, wParam, lParam);
+            return ((delegate* unmanaged<ISpEventSource2*, IntPtr, uint, nuint, nint, int>)(lpVtbl[4]))((ISpEventSource2*)Unsafe.AsPointer(ref this), hWnd, Msg, wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
-        public int SetNotifyCallbackFunction([NativeTypeName("SPNOTIFYCALLBACK *")] delegate* stdcall<nuint, nint, void>* pfnCallback, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
+        public int SetNotifyCallbackFunction([NativeTypeName("SPNOTIFYCALLBACK *")] delegate* unmanaged<nuint, nint, void>* pfnCallback, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
         {
-            return ((delegate* stdcall<ISpEventSource2*, delegate* stdcall<nuint, nint, void>*, nuint, nint, int>)(lpVtbl[5]))((ISpEventSource2*)Unsafe.AsPointer(ref this), pfnCallback, wParam, lParam);
+            return ((delegate* unmanaged<ISpEventSource2*, delegate* unmanaged<nuint, nint, void>*, nuint, nint, int>)(lpVtbl[5]))((ISpEventSource2*)Unsafe.AsPointer(ref this), pfnCallback, wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetNotifyCallbackInterface([NativeTypeName("ISpNotifyCallback *")] ISpNotifyCallback* pSpCallback, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam)
         {
-            return ((delegate* stdcall<ISpEventSource2*, ISpNotifyCallback*, nuint, nint, int>)(lpVtbl[6]))((ISpEventSource2*)Unsafe.AsPointer(ref this), pSpCallback, wParam, lParam);
+            return ((delegate* unmanaged<ISpEventSource2*, ISpNotifyCallback*, nuint, nint, int>)(lpVtbl[6]))((ISpEventSource2*)Unsafe.AsPointer(ref this), pSpCallback, wParam, lParam);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetNotifyWin32Event()
         {
-            return ((delegate* stdcall<ISpEventSource2*, int>)(lpVtbl[7]))((ISpEventSource2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ISpEventSource2*, int>)(lpVtbl[7]))((ISpEventSource2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int WaitForNotifyEvent([NativeTypeName("DWORD")] uint dwMilliseconds)
         {
-            return ((delegate* stdcall<ISpEventSource2*, uint, int>)(lpVtbl[8]))((ISpEventSource2*)Unsafe.AsPointer(ref this), dwMilliseconds);
+            return ((delegate* unmanaged<ISpEventSource2*, uint, int>)(lpVtbl[8]))((ISpEventSource2*)Unsafe.AsPointer(ref this), dwMilliseconds);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HANDLE")]
         public IntPtr GetNotifyEventHandle()
         {
-            return ((delegate* stdcall<ISpEventSource2*, IntPtr>)(lpVtbl[9]))((ISpEventSource2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ISpEventSource2*, IntPtr>)(lpVtbl[9]))((ISpEventSource2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetInterest([NativeTypeName("ULONGLONG")] ulong ullEventInterest, [NativeTypeName("ULONGLONG")] ulong ullQueuedInterest)
         {
-            return ((delegate* stdcall<ISpEventSource2*, ulong, ulong, int>)(lpVtbl[10]))((ISpEventSource2*)Unsafe.AsPointer(ref this), ullEventInterest, ullQueuedInterest);
+            return ((delegate* unmanaged<ISpEventSource2*, ulong, ulong, int>)(lpVtbl[10]))((ISpEventSource2*)Unsafe.AsPointer(ref this), ullEventInterest, ullQueuedInterest);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetEvents([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("SPEVENT *")] SPEVENT* pEventArray, [NativeTypeName("ULONG *")] uint* pulFetched)
         {
-            return ((delegate* stdcall<ISpEventSource2*, uint, SPEVENT*, uint*, int>)(lpVtbl[11]))((ISpEventSource2*)Unsafe.AsPointer(ref this), ulCount, pEventArray, pulFetched);
+            return ((delegate* unmanaged<ISpEventSource2*, uint, SPEVENT*, uint*, int>)(lpVtbl[11]))((ISpEventSource2*)Unsafe.AsPointer(ref this), ulCount, pEventArray, pulFetched);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetInfo([NativeTypeName("SPEVENTSOURCEINFO *")] SPEVENTSOURCEINFO* pInfo)
         {
-            return ((delegate* stdcall<ISpEventSource2*, SPEVENTSOURCEINFO*, int>)(lpVtbl[12]))((ISpEventSource2*)Unsafe.AsPointer(ref this), pInfo);
+            return ((delegate* unmanaged<ISpEventSource2*, SPEVENTSOURCEINFO*, int>)(lpVtbl[12]))((ISpEventSource2*)Unsafe.AsPointer(ref this), pInfo);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetEventsEx([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("SPEVENTEX *")] SPEVENTEX* pEventArray, [NativeTypeName("ULONG *")] uint* pulFetched)
         {
-            return ((delegate* stdcall<ISpEventSource2*, uint, SPEVENTEX*, uint*, int>)(lpVtbl[13]))((ISpEventSource2*)Unsafe.AsPointer(ref this), ulCount, pEventArray, pulFetched);
+            return ((delegate* unmanaged<ISpEventSource2*, uint, SPEVENTEX*, uint*, int>)(lpVtbl[13]))((ISpEventSource2*)Unsafe.AsPointer(ref this), ulCount, pEventArray, pulFetched);
         }
     }
 }

@@ -19,35 +19,35 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IExternalConnection*, Guid*, void**, int>)(lpVtbl[0]))((IExternalConnection*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IExternalConnection*, Guid*, void**, int>)(lpVtbl[0]))((IExternalConnection*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IExternalConnection*, uint>)(lpVtbl[1]))((IExternalConnection*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IExternalConnection*, uint>)(lpVtbl[1]))((IExternalConnection*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IExternalConnection*, uint>)(lpVtbl[2]))((IExternalConnection*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IExternalConnection*, uint>)(lpVtbl[2]))((IExternalConnection*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("DWORD")]
         public uint AddConnection([NativeTypeName("DWORD")] uint extconn, [NativeTypeName("DWORD")] uint reserved)
         {
-            return ((delegate* stdcall<IExternalConnection*, uint, uint, uint>)(lpVtbl[3]))((IExternalConnection*)Unsafe.AsPointer(ref this), extconn, reserved);
+            return ((delegate* unmanaged<IExternalConnection*, uint, uint, uint>)(lpVtbl[3]))((IExternalConnection*)Unsafe.AsPointer(ref this), extconn, reserved);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("DWORD")]
         public uint ReleaseConnection([NativeTypeName("DWORD")] uint extconn, [NativeTypeName("DWORD")] uint reserved, [NativeTypeName("BOOL")] int fLastReleaseCloses)
         {
-            return ((delegate* stdcall<IExternalConnection*, uint, uint, int, uint>)(lpVtbl[4]))((IExternalConnection*)Unsafe.AsPointer(ref this), extconn, reserved, fLastReleaseCloses);
+            return ((delegate* unmanaged<IExternalConnection*, uint, uint, int, uint>)(lpVtbl[4]))((IExternalConnection*)Unsafe.AsPointer(ref this), extconn, reserved, fLastReleaseCloses);
         }
     }
 }

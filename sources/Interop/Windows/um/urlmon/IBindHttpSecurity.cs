@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IBindHttpSecurity*, Guid*, void**, int>)(lpVtbl[0]))((IBindHttpSecurity*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IBindHttpSecurity*, Guid*, void**, int>)(lpVtbl[0]))((IBindHttpSecurity*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IBindHttpSecurity*, uint>)(lpVtbl[1]))((IBindHttpSecurity*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IBindHttpSecurity*, uint>)(lpVtbl[1]))((IBindHttpSecurity*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IBindHttpSecurity*, uint>)(lpVtbl[2]))((IBindHttpSecurity*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IBindHttpSecurity*, uint>)(lpVtbl[2]))((IBindHttpSecurity*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetIgnoreCertMask([NativeTypeName("DWORD *")] uint* pdwIgnoreCertMask)
         {
-            return ((delegate* stdcall<IBindHttpSecurity*, uint*, int>)(lpVtbl[3]))((IBindHttpSecurity*)Unsafe.AsPointer(ref this), pdwIgnoreCertMask);
+            return ((delegate* unmanaged<IBindHttpSecurity*, uint*, int>)(lpVtbl[3]))((IBindHttpSecurity*)Unsafe.AsPointer(ref this), pdwIgnoreCertMask);
         }
     }
 }

@@ -19,70 +19,70 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMF2DBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMF2DBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMF2DBuffer*, uint>)(lpVtbl[1]))((IMF2DBuffer*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMF2DBuffer*, uint>)(lpVtbl[1]))((IMF2DBuffer*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMF2DBuffer*, uint>)(lpVtbl[2]))((IMF2DBuffer*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMF2DBuffer*, uint>)(lpVtbl[2]))((IMF2DBuffer*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Lock2D([NativeTypeName("BYTE **")] byte** ppbScanline0, [NativeTypeName("LONG *")] int* plPitch)
         {
-            return ((delegate* stdcall<IMF2DBuffer*, byte**, int*, int>)(lpVtbl[3]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), ppbScanline0, plPitch);
+            return ((delegate* unmanaged<IMF2DBuffer*, byte**, int*, int>)(lpVtbl[3]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), ppbScanline0, plPitch);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Unlock2D()
         {
-            return ((delegate* stdcall<IMF2DBuffer*, int>)(lpVtbl[4]))((IMF2DBuffer*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMF2DBuffer*, int>)(lpVtbl[4]))((IMF2DBuffer*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetScanline0AndPitch([NativeTypeName("BYTE **")] byte** pbScanline0, [NativeTypeName("LONG *")] int* plPitch)
         {
-            return ((delegate* stdcall<IMF2DBuffer*, byte**, int*, int>)(lpVtbl[5]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), pbScanline0, plPitch);
+            return ((delegate* unmanaged<IMF2DBuffer*, byte**, int*, int>)(lpVtbl[5]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), pbScanline0, plPitch);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int IsContiguousFormat([NativeTypeName("BOOL *")] int* pfIsContiguous)
         {
-            return ((delegate* stdcall<IMF2DBuffer*, int*, int>)(lpVtbl[6]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), pfIsContiguous);
+            return ((delegate* unmanaged<IMF2DBuffer*, int*, int>)(lpVtbl[6]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), pfIsContiguous);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetContiguousLength([NativeTypeName("DWORD *")] uint* pcbLength)
         {
-            return ((delegate* stdcall<IMF2DBuffer*, uint*, int>)(lpVtbl[7]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), pcbLength);
+            return ((delegate* unmanaged<IMF2DBuffer*, uint*, int>)(lpVtbl[7]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), pcbLength);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int ContiguousCopyTo([NativeTypeName("BYTE *")] byte* pbDestBuffer, [NativeTypeName("DWORD")] uint cbDestBuffer)
         {
-            return ((delegate* stdcall<IMF2DBuffer*, byte*, uint, int>)(lpVtbl[8]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), pbDestBuffer, cbDestBuffer);
+            return ((delegate* unmanaged<IMF2DBuffer*, byte*, uint, int>)(lpVtbl[8]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), pbDestBuffer, cbDestBuffer);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int ContiguousCopyFrom([NativeTypeName("const BYTE *")] byte* pbSrcBuffer, [NativeTypeName("DWORD")] uint cbSrcBuffer)
         {
-            return ((delegate* stdcall<IMF2DBuffer*, byte*, uint, int>)(lpVtbl[9]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), pbSrcBuffer, cbSrcBuffer);
+            return ((delegate* unmanaged<IMF2DBuffer*, byte*, uint, int>)(lpVtbl[9]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), pbSrcBuffer, cbSrcBuffer);
         }
     }
 }

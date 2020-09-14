@@ -19,86 +19,86 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IDXCoreAdapter*, Guid*, void**, int>)(lpVtbl[0]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IDXCoreAdapter*, Guid*, void**, int>)(lpVtbl[0]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IDXCoreAdapter*, uint>)(lpVtbl[1]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDXCoreAdapter*, uint>)(lpVtbl[1]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IDXCoreAdapter*, uint>)(lpVtbl[2]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDXCoreAdapter*, uint>)(lpVtbl[2]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool IsValid()
         {
-            return ((delegate* stdcall<IDXCoreAdapter*, byte>)(lpVtbl[3]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this)) != 0;
+            return ((delegate* unmanaged<IDXCoreAdapter*, byte>)(lpVtbl[3]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this)) != 0;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool IsAttributeSupported([NativeTypeName("const GUID &")] Guid* attributeGUID)
         {
-            return ((delegate* stdcall<IDXCoreAdapter*, Guid*, byte>)(lpVtbl[4]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), attributeGUID) != 0;
+            return ((delegate* unmanaged<IDXCoreAdapter*, Guid*, byte>)(lpVtbl[4]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), attributeGUID) != 0;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool IsPropertySupported(DXCoreAdapterProperty property)
         {
-            return ((delegate* stdcall<IDXCoreAdapter*, DXCoreAdapterProperty, byte>)(lpVtbl[5]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property) != 0;
+            return ((delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterProperty, byte>)(lpVtbl[5]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property) != 0;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetProperty(DXCoreAdapterProperty property, [NativeTypeName("size_t")] nuint bufferSize, [NativeTypeName("void *")] void* propertyData)
         {
-            return ((delegate* stdcall<IDXCoreAdapter*, DXCoreAdapterProperty, nuint, void*, int>)(lpVtbl[6]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property, bufferSize, propertyData);
+            return ((delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterProperty, nuint, void*, int>)(lpVtbl[6]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property, bufferSize, propertyData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetPropertySize(DXCoreAdapterProperty property, [NativeTypeName("size_t *")] nuint* bufferSize)
         {
-            return ((delegate* stdcall<IDXCoreAdapter*, DXCoreAdapterProperty, nuint*, int>)(lpVtbl[7]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property, bufferSize);
+            return ((delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterProperty, nuint*, int>)(lpVtbl[7]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property, bufferSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool IsQueryStateSupported(DXCoreAdapterState property)
         {
-            return ((delegate* stdcall<IDXCoreAdapter*, DXCoreAdapterState, byte>)(lpVtbl[8]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property) != 0;
+            return ((delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterState, byte>)(lpVtbl[8]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property) != 0;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryState(DXCoreAdapterState state, [NativeTypeName("size_t")] nuint inputStateDetailsSize, [NativeTypeName("const void *")] void* inputStateDetails, [NativeTypeName("size_t")] nuint outputBufferSize, [NativeTypeName("void *")] void* outputBuffer)
         {
-            return ((delegate* stdcall<IDXCoreAdapter*, DXCoreAdapterState, nuint, void*, nuint, void*, int>)(lpVtbl[9]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), state, inputStateDetailsSize, inputStateDetails, outputBufferSize, outputBuffer);
+            return ((delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterState, nuint, void*, nuint, void*, int>)(lpVtbl[9]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), state, inputStateDetailsSize, inputStateDetails, outputBufferSize, outputBuffer);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool IsSetStateSupported(DXCoreAdapterState property)
         {
-            return ((delegate* stdcall<IDXCoreAdapter*, DXCoreAdapterState, byte>)(lpVtbl[10]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property) != 0;
+            return ((delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterState, byte>)(lpVtbl[10]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property) != 0;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetState(DXCoreAdapterState state, [NativeTypeName("size_t")] nuint inputStateDetailsSize, [NativeTypeName("const void *")] void* inputStateDetails, [NativeTypeName("size_t")] nuint inputDataSize, [NativeTypeName("const void *")] void* inputData)
         {
-            return ((delegate* stdcall<IDXCoreAdapter*, DXCoreAdapterState, nuint, void*, nuint, void*, int>)(lpVtbl[11]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), state, inputStateDetailsSize, inputStateDetails, inputDataSize, inputData);
+            return ((delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterState, nuint, void*, nuint, void*, int>)(lpVtbl[11]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), state, inputStateDetailsSize, inputStateDetails, inputDataSize, inputData);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetFactory([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvFactory)
         {
-            return ((delegate* stdcall<IDXCoreAdapter*, Guid*, void**, int>)(lpVtbl[12]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), riid, ppvFactory);
+            return ((delegate* unmanaged<IDXCoreAdapter*, Guid*, void**, int>)(lpVtbl[12]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), riid, ppvFactory);
         }
     }
 }

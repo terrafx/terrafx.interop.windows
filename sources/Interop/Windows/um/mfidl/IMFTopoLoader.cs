@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMFTopoLoader*, Guid*, void**, int>)(lpVtbl[0]))((IMFTopoLoader*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMFTopoLoader*, Guid*, void**, int>)(lpVtbl[0]))((IMFTopoLoader*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMFTopoLoader*, uint>)(lpVtbl[1]))((IMFTopoLoader*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFTopoLoader*, uint>)(lpVtbl[1]))((IMFTopoLoader*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMFTopoLoader*, uint>)(lpVtbl[2]))((IMFTopoLoader*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFTopoLoader*, uint>)(lpVtbl[2]))((IMFTopoLoader*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Load([NativeTypeName("IMFTopology *")] IMFTopology* pInputTopo, [NativeTypeName("IMFTopology **")] IMFTopology** ppOutputTopo, [NativeTypeName("IMFTopology *")] IMFTopology* pCurrentTopo)
         {
-            return ((delegate* stdcall<IMFTopoLoader*, IMFTopology*, IMFTopology**, IMFTopology*, int>)(lpVtbl[3]))((IMFTopoLoader*)Unsafe.AsPointer(ref this), pInputTopo, ppOutputTopo, pCurrentTopo);
+            return ((delegate* unmanaged<IMFTopoLoader*, IMFTopology*, IMFTopology**, IMFTopology*, int>)(lpVtbl[3]))((IMFTopoLoader*)Unsafe.AsPointer(ref this), pInputTopo, ppOutputTopo, pCurrentTopo);
         }
     }
 }

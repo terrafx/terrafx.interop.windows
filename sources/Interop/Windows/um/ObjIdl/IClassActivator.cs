@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IClassActivator*, Guid*, void**, int>)(lpVtbl[0]))((IClassActivator*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IClassActivator*, Guid*, void**, int>)(lpVtbl[0]))((IClassActivator*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IClassActivator*, uint>)(lpVtbl[1]))((IClassActivator*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IClassActivator*, uint>)(lpVtbl[1]))((IClassActivator*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IClassActivator*, uint>)(lpVtbl[2]))((IClassActivator*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IClassActivator*, uint>)(lpVtbl[2]))((IClassActivator*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetClassObject([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("DWORD")] uint dwClassContext, [NativeTypeName("LCID")] uint locale, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppv)
         {
-            return ((delegate* stdcall<IClassActivator*, Guid*, uint, uint, Guid*, void**, int>)(lpVtbl[3]))((IClassActivator*)Unsafe.AsPointer(ref this), rclsid, dwClassContext, locale, riid, ppv);
+            return ((delegate* unmanaged<IClassActivator*, Guid*, uint, uint, Guid*, void**, int>)(lpVtbl[3]))((IClassActivator*)Unsafe.AsPointer(ref this), rclsid, dwClassContext, locale, riid, ppv);
         }
     }
 }

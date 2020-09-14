@@ -17,49 +17,49 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int GetDesc([NativeTypeName("D3D12_FUNCTION_DESC *")] D3D12_FUNCTION_DESC* pDesc)
         {
-            return ((delegate* stdcall<ID3D12FunctionReflection*, D3D12_FUNCTION_DESC*, int>)(lpVtbl[0]))((ID3D12FunctionReflection*)Unsafe.AsPointer(ref this), pDesc);
+            return ((delegate* unmanaged<ID3D12FunctionReflection*, D3D12_FUNCTION_DESC*, int>)(lpVtbl[0]))((ID3D12FunctionReflection*)Unsafe.AsPointer(ref this), pDesc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ID3D12ShaderReflectionConstantBuffer *")]
         public ID3D12ShaderReflectionConstantBuffer* GetConstantBufferByIndex([NativeTypeName("UINT")] uint BufferIndex)
         {
-            return ((delegate* stdcall<ID3D12FunctionReflection*, uint, ID3D12ShaderReflectionConstantBuffer*>)(lpVtbl[1]))((ID3D12FunctionReflection*)Unsafe.AsPointer(ref this), BufferIndex);
+            return ((delegate* unmanaged<ID3D12FunctionReflection*, uint, ID3D12ShaderReflectionConstantBuffer*>)(lpVtbl[1]))((ID3D12FunctionReflection*)Unsafe.AsPointer(ref this), BufferIndex);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ID3D12ShaderReflectionConstantBuffer *")]
         public ID3D12ShaderReflectionConstantBuffer* GetConstantBufferByName([NativeTypeName("LPCSTR")] sbyte* Name)
         {
-            return ((delegate* stdcall<ID3D12FunctionReflection*, sbyte*, ID3D12ShaderReflectionConstantBuffer*>)(lpVtbl[2]))((ID3D12FunctionReflection*)Unsafe.AsPointer(ref this), Name);
+            return ((delegate* unmanaged<ID3D12FunctionReflection*, sbyte*, ID3D12ShaderReflectionConstantBuffer*>)(lpVtbl[2]))((ID3D12FunctionReflection*)Unsafe.AsPointer(ref this), Name);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetResourceBindingDesc([NativeTypeName("UINT")] uint ResourceIndex, [NativeTypeName("D3D12_SHADER_INPUT_BIND_DESC *")] D3D12_SHADER_INPUT_BIND_DESC* pDesc)
         {
-            return ((delegate* stdcall<ID3D12FunctionReflection*, uint, D3D12_SHADER_INPUT_BIND_DESC*, int>)(lpVtbl[3]))((ID3D12FunctionReflection*)Unsafe.AsPointer(ref this), ResourceIndex, pDesc);
+            return ((delegate* unmanaged<ID3D12FunctionReflection*, uint, D3D12_SHADER_INPUT_BIND_DESC*, int>)(lpVtbl[3]))((ID3D12FunctionReflection*)Unsafe.AsPointer(ref this), ResourceIndex, pDesc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ID3D12ShaderReflectionVariable *")]
         public ID3D12ShaderReflectionVariable* GetVariableByName([NativeTypeName("LPCSTR")] sbyte* Name)
         {
-            return ((delegate* stdcall<ID3D12FunctionReflection*, sbyte*, ID3D12ShaderReflectionVariable*>)(lpVtbl[4]))((ID3D12FunctionReflection*)Unsafe.AsPointer(ref this), Name);
+            return ((delegate* unmanaged<ID3D12FunctionReflection*, sbyte*, ID3D12ShaderReflectionVariable*>)(lpVtbl[4]))((ID3D12FunctionReflection*)Unsafe.AsPointer(ref this), Name);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetResourceBindingDescByName([NativeTypeName("LPCSTR")] sbyte* Name, [NativeTypeName("D3D12_SHADER_INPUT_BIND_DESC *")] D3D12_SHADER_INPUT_BIND_DESC* pDesc)
         {
-            return ((delegate* stdcall<ID3D12FunctionReflection*, sbyte*, D3D12_SHADER_INPUT_BIND_DESC*, int>)(lpVtbl[5]))((ID3D12FunctionReflection*)Unsafe.AsPointer(ref this), Name, pDesc);
+            return ((delegate* unmanaged<ID3D12FunctionReflection*, sbyte*, D3D12_SHADER_INPUT_BIND_DESC*, int>)(lpVtbl[5]))((ID3D12FunctionReflection*)Unsafe.AsPointer(ref this), Name, pDesc);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ID3D12FunctionParameterReflection *")]
         public ID3D12FunctionParameterReflection* GetFunctionParameter([NativeTypeName("INT")] int ParameterIndex)
         {
-            return ((delegate* stdcall<ID3D12FunctionReflection*, int, ID3D12FunctionParameterReflection*>)(lpVtbl[6]))((ID3D12FunctionReflection*)Unsafe.AsPointer(ref this), ParameterIndex);
+            return ((delegate* unmanaged<ID3D12FunctionReflection*, int, ID3D12FunctionParameterReflection*>)(lpVtbl[6]))((ID3D12FunctionReflection*)Unsafe.AsPointer(ref this), ParameterIndex);
         }
     }
 }

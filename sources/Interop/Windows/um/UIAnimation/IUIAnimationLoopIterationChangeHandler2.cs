@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IUIAnimationLoopIterationChangeHandler2*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationLoopIterationChangeHandler2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IUIAnimationLoopIterationChangeHandler2*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationLoopIterationChangeHandler2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IUIAnimationLoopIterationChangeHandler2*, uint>)(lpVtbl[1]))((IUIAnimationLoopIterationChangeHandler2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IUIAnimationLoopIterationChangeHandler2*, uint>)(lpVtbl[1]))((IUIAnimationLoopIterationChangeHandler2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IUIAnimationLoopIterationChangeHandler2*, uint>)(lpVtbl[2]))((IUIAnimationLoopIterationChangeHandler2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IUIAnimationLoopIterationChangeHandler2*, uint>)(lpVtbl[2]))((IUIAnimationLoopIterationChangeHandler2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OnLoopIterationChanged([NativeTypeName("IUIAnimationStoryboard2 *")] IUIAnimationStoryboard2* storyboard, [NativeTypeName("UINT_PTR")] nuint id, [NativeTypeName("UINT32")] uint newIterationCount, [NativeTypeName("UINT32")] uint oldIterationCount)
         {
-            return ((delegate* stdcall<IUIAnimationLoopIterationChangeHandler2*, IUIAnimationStoryboard2*, nuint, uint, uint, int>)(lpVtbl[3]))((IUIAnimationLoopIterationChangeHandler2*)Unsafe.AsPointer(ref this), storyboard, id, newIterationCount, oldIterationCount);
+            return ((delegate* unmanaged<IUIAnimationLoopIterationChangeHandler2*, IUIAnimationStoryboard2*, nuint, uint, uint, int>)(lpVtbl[3]))((IUIAnimationLoopIterationChangeHandler2*)Unsafe.AsPointer(ref this), storyboard, id, newIterationCount, oldIterationCount);
         }
     }
 }

@@ -19,70 +19,70 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IUIAnimationTransition2*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IUIAnimationTransition2*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IUIAnimationTransition2*, uint>)(lpVtbl[1]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IUIAnimationTransition2*, uint>)(lpVtbl[1]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IUIAnimationTransition2*, uint>)(lpVtbl[2]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IUIAnimationTransition2*, uint>)(lpVtbl[2]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetDimension([NativeTypeName("UINT *")] uint* dimension)
         {
-            return ((delegate* stdcall<IUIAnimationTransition2*, uint*, int>)(lpVtbl[3]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this), dimension);
+            return ((delegate* unmanaged<IUIAnimationTransition2*, uint*, int>)(lpVtbl[3]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this), dimension);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetInitialValue([NativeTypeName("DOUBLE")] double value)
         {
-            return ((delegate* stdcall<IUIAnimationTransition2*, double, int>)(lpVtbl[4]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this), value);
+            return ((delegate* unmanaged<IUIAnimationTransition2*, double, int>)(lpVtbl[4]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this), value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetInitialVectorValue([NativeTypeName("const DOUBLE *")] double* value, [NativeTypeName("UINT")] uint cDimension)
         {
-            return ((delegate* stdcall<IUIAnimationTransition2*, double*, uint, int>)(lpVtbl[5]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this), value, cDimension);
+            return ((delegate* unmanaged<IUIAnimationTransition2*, double*, uint, int>)(lpVtbl[5]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this), value, cDimension);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetInitialVelocity([NativeTypeName("DOUBLE")] double velocity)
         {
-            return ((delegate* stdcall<IUIAnimationTransition2*, double, int>)(lpVtbl[6]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this), velocity);
+            return ((delegate* unmanaged<IUIAnimationTransition2*, double, int>)(lpVtbl[6]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this), velocity);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetInitialVectorVelocity([NativeTypeName("const DOUBLE *")] double* velocity, [NativeTypeName("UINT")] uint cDimension)
         {
-            return ((delegate* stdcall<IUIAnimationTransition2*, double*, uint, int>)(lpVtbl[7]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this), velocity, cDimension);
+            return ((delegate* unmanaged<IUIAnimationTransition2*, double*, uint, int>)(lpVtbl[7]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this), velocity, cDimension);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int IsDurationKnown()
         {
-            return ((delegate* stdcall<IUIAnimationTransition2*, int>)(lpVtbl[8]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IUIAnimationTransition2*, int>)(lpVtbl[8]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetDuration([NativeTypeName("UI_ANIMATION_SECONDS *")] double* duration)
         {
-            return ((delegate* stdcall<IUIAnimationTransition2*, double*, int>)(lpVtbl[9]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this), duration);
+            return ((delegate* unmanaged<IUIAnimationTransition2*, double*, int>)(lpVtbl[9]))((IUIAnimationTransition2*)Unsafe.AsPointer(ref this), duration);
         }
     }
 }

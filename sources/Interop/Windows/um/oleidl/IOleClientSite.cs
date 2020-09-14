@@ -19,63 +19,63 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IOleClientSite*, Guid*, void**, int>)(lpVtbl[0]))((IOleClientSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IOleClientSite*, Guid*, void**, int>)(lpVtbl[0]))((IOleClientSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IOleClientSite*, uint>)(lpVtbl[1]))((IOleClientSite*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IOleClientSite*, uint>)(lpVtbl[1]))((IOleClientSite*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IOleClientSite*, uint>)(lpVtbl[2]))((IOleClientSite*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IOleClientSite*, uint>)(lpVtbl[2]))((IOleClientSite*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SaveObject()
         {
-            return ((delegate* stdcall<IOleClientSite*, int>)(lpVtbl[3]))((IOleClientSite*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IOleClientSite*, int>)(lpVtbl[3]))((IOleClientSite*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetMoniker([NativeTypeName("DWORD")] uint dwAssign, [NativeTypeName("DWORD")] uint dwWhichMoniker, [NativeTypeName("IMoniker **")] IMoniker** ppmk)
         {
-            return ((delegate* stdcall<IOleClientSite*, uint, uint, IMoniker**, int>)(lpVtbl[4]))((IOleClientSite*)Unsafe.AsPointer(ref this), dwAssign, dwWhichMoniker, ppmk);
+            return ((delegate* unmanaged<IOleClientSite*, uint, uint, IMoniker**, int>)(lpVtbl[4]))((IOleClientSite*)Unsafe.AsPointer(ref this), dwAssign, dwWhichMoniker, ppmk);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetContainer([NativeTypeName("IOleContainer **")] IOleContainer** ppContainer)
         {
-            return ((delegate* stdcall<IOleClientSite*, IOleContainer**, int>)(lpVtbl[5]))((IOleClientSite*)Unsafe.AsPointer(ref this), ppContainer);
+            return ((delegate* unmanaged<IOleClientSite*, IOleContainer**, int>)(lpVtbl[5]))((IOleClientSite*)Unsafe.AsPointer(ref this), ppContainer);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int ShowObject()
         {
-            return ((delegate* stdcall<IOleClientSite*, int>)(lpVtbl[6]))((IOleClientSite*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IOleClientSite*, int>)(lpVtbl[6]))((IOleClientSite*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OnShowWindow([NativeTypeName("BOOL")] int fShow)
         {
-            return ((delegate* stdcall<IOleClientSite*, int, int>)(lpVtbl[7]))((IOleClientSite*)Unsafe.AsPointer(ref this), fShow);
+            return ((delegate* unmanaged<IOleClientSite*, int, int>)(lpVtbl[7]))((IOleClientSite*)Unsafe.AsPointer(ref this), fShow);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int RequestNewObjectLayout()
         {
-            return ((delegate* stdcall<IOleClientSite*, int>)(lpVtbl[8]))((IOleClientSite*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IOleClientSite*, int>)(lpVtbl[8]))((IOleClientSite*)Unsafe.AsPointer(ref this));
         }
     }
 }

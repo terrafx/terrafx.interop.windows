@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<ID2D1ResourceTexture*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1ResourceTexture*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<ID2D1ResourceTexture*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1ResourceTexture*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<ID2D1ResourceTexture*, uint>)(lpVtbl[1]))((ID2D1ResourceTexture*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ID2D1ResourceTexture*, uint>)(lpVtbl[1]))((ID2D1ResourceTexture*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<ID2D1ResourceTexture*, uint>)(lpVtbl[2]))((ID2D1ResourceTexture*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ID2D1ResourceTexture*, uint>)(lpVtbl[2]))((ID2D1ResourceTexture*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Update([NativeTypeName("const UINT32 *")] uint* minimumExtents, [NativeTypeName("const UINT32 *")] uint* maximimumExtents, [NativeTypeName("const UINT32 *")] uint* strides, [NativeTypeName("UINT32")] uint dimensions, [NativeTypeName("const BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataCount)
         {
-            return ((delegate* stdcall<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)(lpVtbl[3]))((ID2D1ResourceTexture*)Unsafe.AsPointer(ref this), minimumExtents, maximimumExtents, strides, dimensions, data, dataCount);
+            return ((delegate* unmanaged<ID2D1ResourceTexture*, uint*, uint*, uint*, uint, byte*, uint, int>)(lpVtbl[3]))((ID2D1ResourceTexture*)Unsafe.AsPointer(ref this), minimumExtents, maximimumExtents, strides, dimensions, data, dataCount);
         }
     }
 }

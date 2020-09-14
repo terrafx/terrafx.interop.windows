@@ -19,63 +19,63 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMFExtendedCameraIntrinsics*, Guid*, void**, int>)(lpVtbl[0]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMFExtendedCameraIntrinsics*, Guid*, void**, int>)(lpVtbl[0]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMFExtendedCameraIntrinsics*, uint>)(lpVtbl[1]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFExtendedCameraIntrinsics*, uint>)(lpVtbl[1]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMFExtendedCameraIntrinsics*, uint>)(lpVtbl[2]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFExtendedCameraIntrinsics*, uint>)(lpVtbl[2]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int InitializeFromBuffer([NativeTypeName("BYTE *")] byte* pbBuffer, [NativeTypeName("DWORD")] uint dwBufferSize)
         {
-            return ((delegate* stdcall<IMFExtendedCameraIntrinsics*, byte*, uint, int>)(lpVtbl[3]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this), pbBuffer, dwBufferSize);
+            return ((delegate* unmanaged<IMFExtendedCameraIntrinsics*, byte*, uint, int>)(lpVtbl[3]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this), pbBuffer, dwBufferSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetBufferSize([NativeTypeName("DWORD *")] uint* pdwBufferSize)
         {
-            return ((delegate* stdcall<IMFExtendedCameraIntrinsics*, uint*, int>)(lpVtbl[4]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this), pdwBufferSize);
+            return ((delegate* unmanaged<IMFExtendedCameraIntrinsics*, uint*, int>)(lpVtbl[4]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this), pdwBufferSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SerializeToBuffer([NativeTypeName("BYTE *")] byte* pbBuffer, [NativeTypeName("DWORD *")] uint* pdwBufferSize)
         {
-            return ((delegate* stdcall<IMFExtendedCameraIntrinsics*, byte*, uint*, int>)(lpVtbl[5]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this), pbBuffer, pdwBufferSize);
+            return ((delegate* unmanaged<IMFExtendedCameraIntrinsics*, byte*, uint*, int>)(lpVtbl[5]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this), pbBuffer, pdwBufferSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetIntrinsicModelCount([NativeTypeName("DWORD *")] uint* pdwCount)
         {
-            return ((delegate* stdcall<IMFExtendedCameraIntrinsics*, uint*, int>)(lpVtbl[6]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this), pdwCount);
+            return ((delegate* unmanaged<IMFExtendedCameraIntrinsics*, uint*, int>)(lpVtbl[6]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this), pdwCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetIntrinsicModelByIndex([NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("IMFExtendedCameraIntrinsicModel **")] IMFExtendedCameraIntrinsicModel** ppIntrinsicModel)
         {
-            return ((delegate* stdcall<IMFExtendedCameraIntrinsics*, uint, IMFExtendedCameraIntrinsicModel**, int>)(lpVtbl[7]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this), dwIndex, ppIntrinsicModel);
+            return ((delegate* unmanaged<IMFExtendedCameraIntrinsics*, uint, IMFExtendedCameraIntrinsicModel**, int>)(lpVtbl[7]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this), dwIndex, ppIntrinsicModel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int AddIntrinsicModel([NativeTypeName("IMFExtendedCameraIntrinsicModel *")] IMFExtendedCameraIntrinsicModel* pIntrinsicModel)
         {
-            return ((delegate* stdcall<IMFExtendedCameraIntrinsics*, IMFExtendedCameraIntrinsicModel*, int>)(lpVtbl[8]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this), pIntrinsicModel);
+            return ((delegate* unmanaged<IMFExtendedCameraIntrinsics*, IMFExtendedCameraIntrinsicModel*, int>)(lpVtbl[8]))((IMFExtendedCameraIntrinsics*)Unsafe.AsPointer(ref this), pIntrinsicModel);
         }
     }
 }

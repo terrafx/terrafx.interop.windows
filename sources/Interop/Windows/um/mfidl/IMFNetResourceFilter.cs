@@ -19,35 +19,35 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMFNetResourceFilter*, Guid*, void**, int>)(lpVtbl[0]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMFNetResourceFilter*, Guid*, void**, int>)(lpVtbl[0]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMFNetResourceFilter*, uint>)(lpVtbl[1]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFNetResourceFilter*, uint>)(lpVtbl[1]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMFNetResourceFilter*, uint>)(lpVtbl[2]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFNetResourceFilter*, uint>)(lpVtbl[2]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OnRedirect([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("VARIANT_BOOL *")] short* pvbCancel)
         {
-            return ((delegate* stdcall<IMFNetResourceFilter*, ushort*, short*, int>)(lpVtbl[3]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this), pszUrl, pvbCancel);
+            return ((delegate* unmanaged<IMFNetResourceFilter*, ushort*, short*, int>)(lpVtbl[3]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this), pszUrl, pvbCancel);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OnSendingRequest([NativeTypeName("LPCWSTR")] ushort* pszUrl)
         {
-            return ((delegate* stdcall<IMFNetResourceFilter*, ushort*, int>)(lpVtbl[4]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this), pszUrl);
+            return ((delegate* unmanaged<IMFNetResourceFilter*, ushort*, int>)(lpVtbl[4]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this), pszUrl);
         }
     }
 }

@@ -19,56 +19,56 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IPersistSerializedPropStorage2*, Guid*, void**, int>)(lpVtbl[0]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IPersistSerializedPropStorage2*, Guid*, void**, int>)(lpVtbl[0]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IPersistSerializedPropStorage2*, uint>)(lpVtbl[1]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IPersistSerializedPropStorage2*, uint>)(lpVtbl[1]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IPersistSerializedPropStorage2*, uint>)(lpVtbl[2]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IPersistSerializedPropStorage2*, uint>)(lpVtbl[2]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetFlags([NativeTypeName("PERSIST_SPROPSTORE_FLAGS")] int flags)
         {
-            return ((delegate* stdcall<IPersistSerializedPropStorage2*, int, int>)(lpVtbl[3]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this), flags);
+            return ((delegate* unmanaged<IPersistSerializedPropStorage2*, int, int>)(lpVtbl[3]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this), flags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetPropertyStorage([NativeTypeName("PCUSERIALIZEDPROPSTORAGE")] IntPtr psps, [NativeTypeName("DWORD")] uint cb)
         {
-            return ((delegate* stdcall<IPersistSerializedPropStorage2*, IntPtr, uint, int>)(lpVtbl[4]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this), psps, cb);
+            return ((delegate* unmanaged<IPersistSerializedPropStorage2*, IntPtr, uint, int>)(lpVtbl[4]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this), psps, cb);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetPropertyStorage([NativeTypeName("SERIALIZEDPROPSTORAGE **")] IntPtr* ppsps, [NativeTypeName("DWORD *")] uint* pcb)
         {
-            return ((delegate* stdcall<IPersistSerializedPropStorage2*, IntPtr*, uint*, int>)(lpVtbl[5]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this), ppsps, pcb);
+            return ((delegate* unmanaged<IPersistSerializedPropStorage2*, IntPtr*, uint*, int>)(lpVtbl[5]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this), ppsps, pcb);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetPropertyStorageSize([NativeTypeName("DWORD *")] uint* pcb)
         {
-            return ((delegate* stdcall<IPersistSerializedPropStorage2*, uint*, int>)(lpVtbl[6]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this), pcb);
+            return ((delegate* unmanaged<IPersistSerializedPropStorage2*, uint*, int>)(lpVtbl[6]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this), pcb);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetPropertyStorageBuffer([NativeTypeName("SERIALIZEDPROPSTORAGE *")] IntPtr psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("DWORD *")] uint* pcbWritten)
         {
-            return ((delegate* stdcall<IPersistSerializedPropStorage2*, IntPtr, uint, uint*, int>)(lpVtbl[7]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this), psps, cb, pcbWritten);
+            return ((delegate* unmanaged<IPersistSerializedPropStorage2*, IntPtr, uint, uint*, int>)(lpVtbl[7]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this), psps, cb, pcbWritten);
         }
     }
 }

@@ -19,35 +19,35 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IPlayToControl*, Guid*, void**, int>)(lpVtbl[0]))((IPlayToControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IPlayToControl*, Guid*, void**, int>)(lpVtbl[0]))((IPlayToControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IPlayToControl*, uint>)(lpVtbl[1]))((IPlayToControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IPlayToControl*, uint>)(lpVtbl[1]))((IPlayToControl*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IPlayToControl*, uint>)(lpVtbl[2]))((IPlayToControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IPlayToControl*, uint>)(lpVtbl[2]))((IPlayToControl*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Connect([NativeTypeName("IMFSharingEngineClassFactory *")] IMFSharingEngineClassFactory* pFactory)
         {
-            return ((delegate* stdcall<IPlayToControl*, IMFSharingEngineClassFactory*, int>)(lpVtbl[3]))((IPlayToControl*)Unsafe.AsPointer(ref this), pFactory);
+            return ((delegate* unmanaged<IPlayToControl*, IMFSharingEngineClassFactory*, int>)(lpVtbl[3]))((IPlayToControl*)Unsafe.AsPointer(ref this), pFactory);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Disconnect()
         {
-            return ((delegate* stdcall<IPlayToControl*, int>)(lpVtbl[4]))((IPlayToControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IPlayToControl*, int>)(lpVtbl[4]))((IPlayToControl*)Unsafe.AsPointer(ref this));
         }
     }
 }

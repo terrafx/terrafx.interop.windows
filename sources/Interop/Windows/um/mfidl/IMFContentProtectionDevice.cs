@@ -19,35 +19,35 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMFContentProtectionDevice*, Guid*, void**, int>)(lpVtbl[0]))((IMFContentProtectionDevice*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMFContentProtectionDevice*, Guid*, void**, int>)(lpVtbl[0]))((IMFContentProtectionDevice*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMFContentProtectionDevice*, uint>)(lpVtbl[1]))((IMFContentProtectionDevice*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFContentProtectionDevice*, uint>)(lpVtbl[1]))((IMFContentProtectionDevice*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMFContentProtectionDevice*, uint>)(lpVtbl[2]))((IMFContentProtectionDevice*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFContentProtectionDevice*, uint>)(lpVtbl[2]))((IMFContentProtectionDevice*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int InvokeFunction([NativeTypeName("DWORD")] uint FunctionId, [NativeTypeName("DWORD")] uint InputBufferByteCount, [NativeTypeName("const BYTE *")] byte* InputBuffer, [NativeTypeName("DWORD *")] uint* OutputBufferByteCount, [NativeTypeName("BYTE *")] byte* OutputBuffer)
         {
-            return ((delegate* stdcall<IMFContentProtectionDevice*, uint, uint, byte*, uint*, byte*, int>)(lpVtbl[3]))((IMFContentProtectionDevice*)Unsafe.AsPointer(ref this), FunctionId, InputBufferByteCount, InputBuffer, OutputBufferByteCount, OutputBuffer);
+            return ((delegate* unmanaged<IMFContentProtectionDevice*, uint, uint, byte*, uint*, byte*, int>)(lpVtbl[3]))((IMFContentProtectionDevice*)Unsafe.AsPointer(ref this), FunctionId, InputBufferByteCount, InputBuffer, OutputBufferByteCount, OutputBuffer);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetPrivateDataByteCount([NativeTypeName("DWORD *")] uint* PrivateInputByteCount, [NativeTypeName("DWORD *")] uint* PrivateOutputByteCount)
         {
-            return ((delegate* stdcall<IMFContentProtectionDevice*, uint*, uint*, int>)(lpVtbl[4]))((IMFContentProtectionDevice*)Unsafe.AsPointer(ref this), PrivateInputByteCount, PrivateOutputByteCount);
+            return ((delegate* unmanaged<IMFContentProtectionDevice*, uint*, uint*, int>)(lpVtbl[4]))((IMFContentProtectionDevice*)Unsafe.AsPointer(ref this), PrivateInputByteCount, PrivateOutputByteCount);
         }
     }
 }

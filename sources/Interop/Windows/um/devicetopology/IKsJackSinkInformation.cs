@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IKsJackSinkInformation*, Guid*, void**, int>)(lpVtbl[0]))((IKsJackSinkInformation*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IKsJackSinkInformation*, Guid*, void**, int>)(lpVtbl[0]))((IKsJackSinkInformation*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IKsJackSinkInformation*, uint>)(lpVtbl[1]))((IKsJackSinkInformation*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IKsJackSinkInformation*, uint>)(lpVtbl[1]))((IKsJackSinkInformation*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IKsJackSinkInformation*, uint>)(lpVtbl[2]))((IKsJackSinkInformation*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IKsJackSinkInformation*, uint>)(lpVtbl[2]))((IKsJackSinkInformation*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetJackSinkInformation([NativeTypeName("KSJACK_SINK_INFORMATION *")] KSJACK_SINK_INFORMATION* pJackSinkInformation)
         {
-            return ((delegate* stdcall<IKsJackSinkInformation*, KSJACK_SINK_INFORMATION*, int>)(lpVtbl[3]))((IKsJackSinkInformation*)Unsafe.AsPointer(ref this), pJackSinkInformation);
+            return ((delegate* unmanaged<IKsJackSinkInformation*, KSJACK_SINK_INFORMATION*, int>)(lpVtbl[3]))((IKsJackSinkInformation*)Unsafe.AsPointer(ref this), pJackSinkInformation);
         }
     }
 }

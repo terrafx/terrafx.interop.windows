@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IParseDisplayName*, Guid*, void**, int>)(lpVtbl[0]))((IParseDisplayName*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IParseDisplayName*, Guid*, void**, int>)(lpVtbl[0]))((IParseDisplayName*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IParseDisplayName*, uint>)(lpVtbl[1]))((IParseDisplayName*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IParseDisplayName*, uint>)(lpVtbl[1]))((IParseDisplayName*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IParseDisplayName*, uint>)(lpVtbl[2]))((IParseDisplayName*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IParseDisplayName*, uint>)(lpVtbl[2]))((IParseDisplayName*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int ParseDisplayName([NativeTypeName("IBindCtx *")] IBindCtx* pbc, [NativeTypeName("LPOLESTR")] ushort* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, [NativeTypeName("IMoniker **")] IMoniker** ppmkOut)
         {
-            return ((delegate* stdcall<IParseDisplayName*, IBindCtx*, ushort*, uint*, IMoniker**, int>)(lpVtbl[3]))((IParseDisplayName*)Unsafe.AsPointer(ref this), pbc, pszDisplayName, pchEaten, ppmkOut);
+            return ((delegate* unmanaged<IParseDisplayName*, IBindCtx*, ushort*, uint*, IMoniker**, int>)(lpVtbl[3]))((IParseDisplayName*)Unsafe.AsPointer(ref this), pbc, pszDisplayName, pchEaten, ppmkOut);
         }
     }
 }

@@ -2,7 +2,6 @@
 @../../remap.rsp
 --exclude
 SpatialAudioHrtfActivationParams
-ISpatialAudioObjectForHrtf.SetOrientation(const SpatialAudioHrtfOrientation *):HRESULT
 --file
 um-SpatialAudioHrtf.h
 --output

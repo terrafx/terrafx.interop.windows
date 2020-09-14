@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMFMediaEngineClassFactory4*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineClassFactory4*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMFMediaEngineClassFactory4*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineClassFactory4*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMFMediaEngineClassFactory4*, uint>)(lpVtbl[1]))((IMFMediaEngineClassFactory4*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFMediaEngineClassFactory4*, uint>)(lpVtbl[1]))((IMFMediaEngineClassFactory4*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMFMediaEngineClassFactory4*, uint>)(lpVtbl[2]))((IMFMediaEngineClassFactory4*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFMediaEngineClassFactory4*, uint>)(lpVtbl[2]))((IMFMediaEngineClassFactory4*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int CreateContentDecryptionModuleFactory([NativeTypeName("LPCWSTR")] ushort* keySystem, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMFMediaEngineClassFactory4*, ushort*, Guid*, void**, int>)(lpVtbl[3]))((IMFMediaEngineClassFactory4*)Unsafe.AsPointer(ref this), keySystem, riid, ppvObject);
+            return ((delegate* unmanaged<IMFMediaEngineClassFactory4*, ushort*, Guid*, void**, int>)(lpVtbl[3]))((IMFMediaEngineClassFactory4*)Unsafe.AsPointer(ref this), keySystem, riid, ppvObject);
         }
     }
 }

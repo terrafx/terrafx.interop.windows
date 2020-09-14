@@ -19,42 +19,42 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IUIAnimationTimerEventHandler*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IUIAnimationTimerEventHandler*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IUIAnimationTimerEventHandler*, uint>)(lpVtbl[1]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IUIAnimationTimerEventHandler*, uint>)(lpVtbl[1]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IUIAnimationTimerEventHandler*, uint>)(lpVtbl[2]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IUIAnimationTimerEventHandler*, uint>)(lpVtbl[2]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OnPreUpdate()
         {
-            return ((delegate* stdcall<IUIAnimationTimerEventHandler*, int>)(lpVtbl[3]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IUIAnimationTimerEventHandler*, int>)(lpVtbl[3]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OnPostUpdate()
         {
-            return ((delegate* stdcall<IUIAnimationTimerEventHandler*, int>)(lpVtbl[4]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IUIAnimationTimerEventHandler*, int>)(lpVtbl[4]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OnRenderingTooSlow([NativeTypeName("UINT32")] uint framesPerSecond)
         {
-            return ((delegate* stdcall<IUIAnimationTimerEventHandler*, uint, int>)(lpVtbl[5]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this), framesPerSecond);
+            return ((delegate* unmanaged<IUIAnimationTimerEventHandler*, uint, int>)(lpVtbl[5]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this), framesPerSecond);
         }
     }
 }

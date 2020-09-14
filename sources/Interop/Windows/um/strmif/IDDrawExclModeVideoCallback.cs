@@ -19,42 +19,42 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IDDrawExclModeVideoCallback*, Guid*, void**, int>)(lpVtbl[0]))((IDDrawExclModeVideoCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IDDrawExclModeVideoCallback*, Guid*, void**, int>)(lpVtbl[0]))((IDDrawExclModeVideoCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IDDrawExclModeVideoCallback*, uint>)(lpVtbl[1]))((IDDrawExclModeVideoCallback*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDDrawExclModeVideoCallback*, uint>)(lpVtbl[1]))((IDDrawExclModeVideoCallback*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IDDrawExclModeVideoCallback*, uint>)(lpVtbl[2]))((IDDrawExclModeVideoCallback*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDDrawExclModeVideoCallback*, uint>)(lpVtbl[2]))((IDDrawExclModeVideoCallback*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OnUpdateOverlay([NativeTypeName("BOOL")] int bBefore, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("BOOL")] int bOldVisible, [NativeTypeName("const RECT *")] RECT* prcOldSrc, [NativeTypeName("const RECT *")] RECT* prcOldDest, [NativeTypeName("BOOL")] int bNewVisible, [NativeTypeName("const RECT *")] RECT* prcNewSrc, [NativeTypeName("const RECT *")] RECT* prcNewDest)
         {
-            return ((delegate* stdcall<IDDrawExclModeVideoCallback*, int, uint, int, RECT*, RECT*, int, RECT*, RECT*, int>)(lpVtbl[3]))((IDDrawExclModeVideoCallback*)Unsafe.AsPointer(ref this), bBefore, dwFlags, bOldVisible, prcOldSrc, prcOldDest, bNewVisible, prcNewSrc, prcNewDest);
+            return ((delegate* unmanaged<IDDrawExclModeVideoCallback*, int, uint, int, RECT*, RECT*, int, RECT*, RECT*, int>)(lpVtbl[3]))((IDDrawExclModeVideoCallback*)Unsafe.AsPointer(ref this), bBefore, dwFlags, bOldVisible, prcOldSrc, prcOldDest, bNewVisible, prcNewSrc, prcNewDest);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OnUpdateColorKey([NativeTypeName("const COLORKEY *")] COLORKEY* pKey, [NativeTypeName("DWORD")] uint dwColor)
         {
-            return ((delegate* stdcall<IDDrawExclModeVideoCallback*, COLORKEY*, uint, int>)(lpVtbl[4]))((IDDrawExclModeVideoCallback*)Unsafe.AsPointer(ref this), pKey, dwColor);
+            return ((delegate* unmanaged<IDDrawExclModeVideoCallback*, COLORKEY*, uint, int>)(lpVtbl[4]))((IDDrawExclModeVideoCallback*)Unsafe.AsPointer(ref this), pKey, dwColor);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OnUpdateSize([NativeTypeName("DWORD")] uint dwWidth, [NativeTypeName("DWORD")] uint dwHeight, [NativeTypeName("DWORD")] uint dwARWidth, [NativeTypeName("DWORD")] uint dwARHeight)
         {
-            return ((delegate* stdcall<IDDrawExclModeVideoCallback*, uint, uint, uint, uint, int>)(lpVtbl[5]))((IDDrawExclModeVideoCallback*)Unsafe.AsPointer(ref this), dwWidth, dwHeight, dwARWidth, dwARHeight);
+            return ((delegate* unmanaged<IDDrawExclModeVideoCallback*, uint, uint, uint, uint, int>)(lpVtbl[5]))((IDDrawExclModeVideoCallback*)Unsafe.AsPointer(ref this), dwWidth, dwHeight, dwARWidth, dwARHeight);
         }
     }
 }

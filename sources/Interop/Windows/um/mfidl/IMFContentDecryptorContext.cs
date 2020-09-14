@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMFContentDecryptorContext*, Guid*, void**, int>)(lpVtbl[0]))((IMFContentDecryptorContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMFContentDecryptorContext*, Guid*, void**, int>)(lpVtbl[0]))((IMFContentDecryptorContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMFContentDecryptorContext*, uint>)(lpVtbl[1]))((IMFContentDecryptorContext*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFContentDecryptorContext*, uint>)(lpVtbl[1]))((IMFContentDecryptorContext*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMFContentDecryptorContext*, uint>)(lpVtbl[2]))((IMFContentDecryptorContext*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFContentDecryptorContext*, uint>)(lpVtbl[2]))((IMFContentDecryptorContext*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int InitializeHardwareKey([NativeTypeName("UINT")] uint InputPrivateDataByteCount, [NativeTypeName("const void *")] void* InputPrivateData, [NativeTypeName("UINT64 *")] ulong* OutputPrivateData)
         {
-            return ((delegate* stdcall<IMFContentDecryptorContext*, uint, void*, ulong*, int>)(lpVtbl[3]))((IMFContentDecryptorContext*)Unsafe.AsPointer(ref this), InputPrivateDataByteCount, InputPrivateData, OutputPrivateData);
+            return ((delegate* unmanaged<IMFContentDecryptorContext*, uint, void*, ulong*, int>)(lpVtbl[3]))((IMFContentDecryptorContext*)Unsafe.AsPointer(ref this), InputPrivateDataByteCount, InputPrivateData, OutputPrivateData);
         }
     }
 }
