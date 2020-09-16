@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IAMResourceControl*, Guid*, void**, int>)(lpVtbl[0]))((IAMResourceControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IAMResourceControl*, Guid*, void**, int>)(lpVtbl[0]))((IAMResourceControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IAMResourceControl*, uint>)(lpVtbl[1]))((IAMResourceControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IAMResourceControl*, uint>)(lpVtbl[1]))((IAMResourceControl*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IAMResourceControl*, uint>)(lpVtbl[2]))((IAMResourceControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IAMResourceControl*, uint>)(lpVtbl[2]))((IAMResourceControl*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Reserve([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PVOID")] void* pvReserved)
         {
-            return ((delegate* stdcall<IAMResourceControl*, uint, void*, int>)(lpVtbl[3]))((IAMResourceControl*)Unsafe.AsPointer(ref this), dwFlags, pvReserved);
+            return ((delegate* unmanaged<IAMResourceControl*, uint, void*, int>)(lpVtbl[3]))((IAMResourceControl*)Unsafe.AsPointer(ref this), dwFlags, pvReserved);
         }
     }
 }

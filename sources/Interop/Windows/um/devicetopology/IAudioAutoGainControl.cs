@@ -19,35 +19,35 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IAudioAutoGainControl*, Guid*, void**, int>)(lpVtbl[0]))((IAudioAutoGainControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IAudioAutoGainControl*, Guid*, void**, int>)(lpVtbl[0]))((IAudioAutoGainControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IAudioAutoGainControl*, uint>)(lpVtbl[1]))((IAudioAutoGainControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IAudioAutoGainControl*, uint>)(lpVtbl[1]))((IAudioAutoGainControl*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IAudioAutoGainControl*, uint>)(lpVtbl[2]))((IAudioAutoGainControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IAudioAutoGainControl*, uint>)(lpVtbl[2]))((IAudioAutoGainControl*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetEnabled([NativeTypeName("BOOL *")] int* pbEnabled)
         {
-            return ((delegate* stdcall<IAudioAutoGainControl*, int*, int>)(lpVtbl[3]))((IAudioAutoGainControl*)Unsafe.AsPointer(ref this), pbEnabled);
+            return ((delegate* unmanaged<IAudioAutoGainControl*, int*, int>)(lpVtbl[3]))((IAudioAutoGainControl*)Unsafe.AsPointer(ref this), pbEnabled);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetEnabled([NativeTypeName("BOOL")] int bEnable, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
         {
-            return ((delegate* stdcall<IAudioAutoGainControl*, int, Guid*, int>)(lpVtbl[4]))((IAudioAutoGainControl*)Unsafe.AsPointer(ref this), bEnable, pguidEventContext);
+            return ((delegate* unmanaged<IAudioAutoGainControl*, int, Guid*, int>)(lpVtbl[4]))((IAudioAutoGainControl*)Unsafe.AsPointer(ref this), bEnable, pguidEventContext);
         }
     }
 }

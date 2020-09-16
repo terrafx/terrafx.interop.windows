@@ -19,35 +19,35 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMFMediaEngineEME*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineEME*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMFMediaEngineEME*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineEME*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMFMediaEngineEME*, uint>)(lpVtbl[1]))((IMFMediaEngineEME*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFMediaEngineEME*, uint>)(lpVtbl[1]))((IMFMediaEngineEME*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMFMediaEngineEME*, uint>)(lpVtbl[2]))((IMFMediaEngineEME*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFMediaEngineEME*, uint>)(lpVtbl[2]))((IMFMediaEngineEME*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int get_Keys([NativeTypeName("IMFMediaKeys **")] IMFMediaKeys** keys)
         {
-            return ((delegate* stdcall<IMFMediaEngineEME*, IMFMediaKeys**, int>)(lpVtbl[3]))((IMFMediaEngineEME*)Unsafe.AsPointer(ref this), keys);
+            return ((delegate* unmanaged<IMFMediaEngineEME*, IMFMediaKeys**, int>)(lpVtbl[3]))((IMFMediaEngineEME*)Unsafe.AsPointer(ref this), keys);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetMediaKeys([NativeTypeName("IMFMediaKeys *")] IMFMediaKeys* keys)
         {
-            return ((delegate* stdcall<IMFMediaEngineEME*, IMFMediaKeys*, int>)(lpVtbl[4]))((IMFMediaEngineEME*)Unsafe.AsPointer(ref this), keys);
+            return ((delegate* unmanaged<IMFMediaEngineEME*, IMFMediaKeys*, int>)(lpVtbl[4]))((IMFMediaEngineEME*)Unsafe.AsPointer(ref this), keys);
         }
     }
 }

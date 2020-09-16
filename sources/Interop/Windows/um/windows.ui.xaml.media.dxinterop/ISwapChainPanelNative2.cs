@@ -19,35 +19,35 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<ISwapChainPanelNative2*, Guid*, void**, int>)(lpVtbl[0]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<ISwapChainPanelNative2*, Guid*, void**, int>)(lpVtbl[0]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<ISwapChainPanelNative2*, uint>)(lpVtbl[1]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ISwapChainPanelNative2*, uint>)(lpVtbl[1]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<ISwapChainPanelNative2*, uint>)(lpVtbl[2]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ISwapChainPanelNative2*, uint>)(lpVtbl[2]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetSwapChain([NativeTypeName("IDXGISwapChain *")] IDXGISwapChain* swapChain)
         {
-            return ((delegate* stdcall<ISwapChainPanelNative2*, IDXGISwapChain*, int>)(lpVtbl[3]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this), swapChain);
+            return ((delegate* unmanaged<ISwapChainPanelNative2*, IDXGISwapChain*, int>)(lpVtbl[3]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this), swapChain);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetSwapChainHandle([NativeTypeName("HANDLE")] IntPtr swapChainHandle)
         {
-            return ((delegate* stdcall<ISwapChainPanelNative2*, IntPtr, int>)(lpVtbl[4]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this), swapChainHandle);
+            return ((delegate* unmanaged<ISwapChainPanelNative2*, IntPtr, int>)(lpVtbl[4]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this), swapChainHandle);
         }
     }
 }

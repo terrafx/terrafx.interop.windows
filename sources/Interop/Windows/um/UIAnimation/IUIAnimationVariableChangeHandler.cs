@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IUIAnimationVariableChangeHandler*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationVariableChangeHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IUIAnimationVariableChangeHandler*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationVariableChangeHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IUIAnimationVariableChangeHandler*, uint>)(lpVtbl[1]))((IUIAnimationVariableChangeHandler*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IUIAnimationVariableChangeHandler*, uint>)(lpVtbl[1]))((IUIAnimationVariableChangeHandler*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IUIAnimationVariableChangeHandler*, uint>)(lpVtbl[2]))((IUIAnimationVariableChangeHandler*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IUIAnimationVariableChangeHandler*, uint>)(lpVtbl[2]))((IUIAnimationVariableChangeHandler*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OnValueChanged([NativeTypeName("IUIAnimationStoryboard *")] IUIAnimationStoryboard* storyboard, [NativeTypeName("IUIAnimationVariable *")] IUIAnimationVariable* variable, [NativeTypeName("DOUBLE")] double newValue, [NativeTypeName("DOUBLE")] double previousValue)
         {
-            return ((delegate* stdcall<IUIAnimationVariableChangeHandler*, IUIAnimationStoryboard*, IUIAnimationVariable*, double, double, int>)(lpVtbl[3]))((IUIAnimationVariableChangeHandler*)Unsafe.AsPointer(ref this), storyboard, variable, newValue, previousValue);
+            return ((delegate* unmanaged<IUIAnimationVariableChangeHandler*, IUIAnimationStoryboard*, IUIAnimationVariable*, double, double, int>)(lpVtbl[3]))((IUIAnimationVariableChangeHandler*)Unsafe.AsPointer(ref this), storyboard, variable, newValue, previousValue);
         }
     }
 }

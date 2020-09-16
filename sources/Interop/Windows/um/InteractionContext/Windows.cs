@@ -20,11 +20,11 @@ namespace TerraFX.Interop
 
         [DllImport("ninput", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int RegisterOutputCallbackInteractionContext([NativeTypeName("HINTERACTIONCONTEXT")] IntPtr interactionContext, [NativeTypeName("INTERACTION_CONTEXT_OUTPUT_CALLBACK")] delegate* stdcall<void*, INTERACTION_CONTEXT_OUTPUT*, void> outputCallback, [NativeTypeName("void *")] void* clientData);
+        public static extern int RegisterOutputCallbackInteractionContext([NativeTypeName("HINTERACTIONCONTEXT")] IntPtr interactionContext, [NativeTypeName("INTERACTION_CONTEXT_OUTPUT_CALLBACK")] delegate* unmanaged<void*, INTERACTION_CONTEXT_OUTPUT*, void> outputCallback, [NativeTypeName("void *")] void* clientData);
 
         [DllImport("ninput", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int RegisterOutputCallbackInteractionContext2([NativeTypeName("HINTERACTIONCONTEXT")] IntPtr interactionContext, [NativeTypeName("INTERACTION_CONTEXT_OUTPUT_CALLBACK2")] delegate* stdcall<void*, INTERACTION_CONTEXT_OUTPUT2*, void> outputCallback, [NativeTypeName("void *")] void* clientData);
+        public static extern int RegisterOutputCallbackInteractionContext2([NativeTypeName("HINTERACTIONCONTEXT")] IntPtr interactionContext, [NativeTypeName("INTERACTION_CONTEXT_OUTPUT_CALLBACK2")] delegate* unmanaged<void*, INTERACTION_CONTEXT_OUTPUT2*, void> outputCallback, [NativeTypeName("void *")] void* clientData);
 
         [DllImport("ninput", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

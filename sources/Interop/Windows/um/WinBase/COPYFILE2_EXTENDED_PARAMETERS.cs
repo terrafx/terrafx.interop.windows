@@ -17,7 +17,7 @@ namespace TerraFX.Interop
         public int* pfCancel;
 
         [NativeTypeName("PCOPYFILE2_PROGRESS_ROUTINE")]
-        public delegate* stdcall<COPYFILE2_MESSAGE*, void*, COPYFILE2_MESSAGE_ACTION> pProgressRoutine;
+        public delegate* unmanaged<COPYFILE2_MESSAGE*, void*, COPYFILE2_MESSAGE_ACTION> pProgressRoutine;
 
         [NativeTypeName("PVOID")]
         public void* pvCallbackContext;

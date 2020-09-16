@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IUIAnimationVariableCurveChangeHandler2*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationVariableCurveChangeHandler2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IUIAnimationVariableCurveChangeHandler2*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationVariableCurveChangeHandler2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IUIAnimationVariableCurveChangeHandler2*, uint>)(lpVtbl[1]))((IUIAnimationVariableCurveChangeHandler2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IUIAnimationVariableCurveChangeHandler2*, uint>)(lpVtbl[1]))((IUIAnimationVariableCurveChangeHandler2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IUIAnimationVariableCurveChangeHandler2*, uint>)(lpVtbl[2]))((IUIAnimationVariableCurveChangeHandler2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IUIAnimationVariableCurveChangeHandler2*, uint>)(lpVtbl[2]))((IUIAnimationVariableCurveChangeHandler2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OnCurveChanged([NativeTypeName("IUIAnimationVariable2 *")] IUIAnimationVariable2* variable)
         {
-            return ((delegate* stdcall<IUIAnimationVariableCurveChangeHandler2*, IUIAnimationVariable2*, int>)(lpVtbl[3]))((IUIAnimationVariableCurveChangeHandler2*)Unsafe.AsPointer(ref this), variable);
+            return ((delegate* unmanaged<IUIAnimationVariableCurveChangeHandler2*, IUIAnimationVariable2*, int>)(lpVtbl[3]))((IUIAnimationVariableCurveChangeHandler2*)Unsafe.AsPointer(ref this), variable);
         }
     }
 }

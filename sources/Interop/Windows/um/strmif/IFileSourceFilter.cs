@@ -19,35 +19,35 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IFileSourceFilter*, Guid*, void**, int>)(lpVtbl[0]))((IFileSourceFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IFileSourceFilter*, Guid*, void**, int>)(lpVtbl[0]))((IFileSourceFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IFileSourceFilter*, uint>)(lpVtbl[1]))((IFileSourceFilter*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IFileSourceFilter*, uint>)(lpVtbl[1]))((IFileSourceFilter*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IFileSourceFilter*, uint>)(lpVtbl[2]))((IFileSourceFilter*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IFileSourceFilter*, uint>)(lpVtbl[2]))((IFileSourceFilter*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Load([NativeTypeName("LPCOLESTR")] ushort* pszFileName, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt)
         {
-            return ((delegate* stdcall<IFileSourceFilter*, ushort*, AM_MEDIA_TYPE*, int>)(lpVtbl[3]))((IFileSourceFilter*)Unsafe.AsPointer(ref this), pszFileName, pmt);
+            return ((delegate* unmanaged<IFileSourceFilter*, ushort*, AM_MEDIA_TYPE*, int>)(lpVtbl[3]))((IFileSourceFilter*)Unsafe.AsPointer(ref this), pszFileName, pmt);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetCurFile([NativeTypeName("LPOLESTR *")] ushort** ppszFileName, [NativeTypeName("AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt)
         {
-            return ((delegate* stdcall<IFileSourceFilter*, ushort**, AM_MEDIA_TYPE*, int>)(lpVtbl[4]))((IFileSourceFilter*)Unsafe.AsPointer(ref this), ppszFileName, pmt);
+            return ((delegate* unmanaged<IFileSourceFilter*, ushort**, AM_MEDIA_TYPE*, int>)(lpVtbl[4]))((IFileSourceFilter*)Unsafe.AsPointer(ref this), ppszFileName, pmt);
         }
     }
 }

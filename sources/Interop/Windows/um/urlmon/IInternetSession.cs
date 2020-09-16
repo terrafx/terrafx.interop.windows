@@ -19,70 +19,70 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IInternetSession*, Guid*, void**, int>)(lpVtbl[0]))((IInternetSession*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IInternetSession*, Guid*, void**, int>)(lpVtbl[0]))((IInternetSession*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IInternetSession*, uint>)(lpVtbl[1]))((IInternetSession*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IInternetSession*, uint>)(lpVtbl[1]))((IInternetSession*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IInternetSession*, uint>)(lpVtbl[2]))((IInternetSession*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IInternetSession*, uint>)(lpVtbl[2]))((IInternetSession*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int RegisterNameSpace([NativeTypeName("IClassFactory *")] IClassFactory* pCF, [NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LPCWSTR")] ushort* pwzProtocol, [NativeTypeName("ULONG")] uint cPatterns, [NativeTypeName("const LPCWSTR *")] ushort** ppwzPatterns, [NativeTypeName("DWORD")] uint dwReserved)
         {
-            return ((delegate* stdcall<IInternetSession*, IClassFactory*, Guid*, ushort*, uint, ushort**, uint, int>)(lpVtbl[3]))((IInternetSession*)Unsafe.AsPointer(ref this), pCF, rclsid, pwzProtocol, cPatterns, ppwzPatterns, dwReserved);
+            return ((delegate* unmanaged<IInternetSession*, IClassFactory*, Guid*, ushort*, uint, ushort**, uint, int>)(lpVtbl[3]))((IInternetSession*)Unsafe.AsPointer(ref this), pCF, rclsid, pwzProtocol, cPatterns, ppwzPatterns, dwReserved);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int UnregisterNameSpace([NativeTypeName("IClassFactory *")] IClassFactory* pCF, [NativeTypeName("LPCWSTR")] ushort* pszProtocol)
         {
-            return ((delegate* stdcall<IInternetSession*, IClassFactory*, ushort*, int>)(lpVtbl[4]))((IInternetSession*)Unsafe.AsPointer(ref this), pCF, pszProtocol);
+            return ((delegate* unmanaged<IInternetSession*, IClassFactory*, ushort*, int>)(lpVtbl[4]))((IInternetSession*)Unsafe.AsPointer(ref this), pCF, pszProtocol);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int RegisterMimeFilter([NativeTypeName("IClassFactory *")] IClassFactory* pCF, [NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LPCWSTR")] ushort* pwzType)
         {
-            return ((delegate* stdcall<IInternetSession*, IClassFactory*, Guid*, ushort*, int>)(lpVtbl[5]))((IInternetSession*)Unsafe.AsPointer(ref this), pCF, rclsid, pwzType);
+            return ((delegate* unmanaged<IInternetSession*, IClassFactory*, Guid*, ushort*, int>)(lpVtbl[5]))((IInternetSession*)Unsafe.AsPointer(ref this), pCF, rclsid, pwzType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int UnregisterMimeFilter([NativeTypeName("IClassFactory *")] IClassFactory* pCF, [NativeTypeName("LPCWSTR")] ushort* pwzType)
         {
-            return ((delegate* stdcall<IInternetSession*, IClassFactory*, ushort*, int>)(lpVtbl[6]))((IInternetSession*)Unsafe.AsPointer(ref this), pCF, pwzType);
+            return ((delegate* unmanaged<IInternetSession*, IClassFactory*, ushort*, int>)(lpVtbl[6]))((IInternetSession*)Unsafe.AsPointer(ref this), pCF, pwzType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int CreateBinding([NativeTypeName("LPBC")] IBindCtx* pBC, [NativeTypeName("LPCWSTR")] ushort* szUrl, [NativeTypeName("IUnknown *")] IUnknown* pUnkOuter, [NativeTypeName("IUnknown **")] IUnknown** ppUnk, [NativeTypeName("IInternetProtocol **")] IInternetProtocol** ppOInetProt, [NativeTypeName("DWORD")] uint dwOption)
         {
-            return ((delegate* stdcall<IInternetSession*, IBindCtx*, ushort*, IUnknown*, IUnknown**, IInternetProtocol**, uint, int>)(lpVtbl[7]))((IInternetSession*)Unsafe.AsPointer(ref this), pBC, szUrl, pUnkOuter, ppUnk, ppOInetProt, dwOption);
+            return ((delegate* unmanaged<IInternetSession*, IBindCtx*, ushort*, IUnknown*, IUnknown**, IInternetProtocol**, uint, int>)(lpVtbl[7]))((IInternetSession*)Unsafe.AsPointer(ref this), pBC, szUrl, pUnkOuter, ppUnk, ppOInetProt, dwOption);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetSessionOption([NativeTypeName("DWORD")] uint dwOption, [NativeTypeName("LPVOID")] void* pBuffer, [NativeTypeName("DWORD")] uint dwBufferLength, [NativeTypeName("DWORD")] uint dwReserved)
         {
-            return ((delegate* stdcall<IInternetSession*, uint, void*, uint, uint, int>)(lpVtbl[8]))((IInternetSession*)Unsafe.AsPointer(ref this), dwOption, pBuffer, dwBufferLength, dwReserved);
+            return ((delegate* unmanaged<IInternetSession*, uint, void*, uint, uint, int>)(lpVtbl[8]))((IInternetSession*)Unsafe.AsPointer(ref this), dwOption, pBuffer, dwBufferLength, dwReserved);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetSessionOption([NativeTypeName("DWORD")] uint dwOption, [NativeTypeName("LPVOID")] void* pBuffer, [NativeTypeName("DWORD *")] uint* pdwBufferLength, [NativeTypeName("DWORD")] uint dwReserved)
         {
-            return ((delegate* stdcall<IInternetSession*, uint, void*, uint*, uint, int>)(lpVtbl[9]))((IInternetSession*)Unsafe.AsPointer(ref this), dwOption, pBuffer, pdwBufferLength, dwReserved);
+            return ((delegate* unmanaged<IInternetSession*, uint, void*, uint*, uint, int>)(lpVtbl[9]))((IInternetSession*)Unsafe.AsPointer(ref this), dwOption, pBuffer, pdwBufferLength, dwReserved);
         }
     }
 }

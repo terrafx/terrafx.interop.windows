@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMFRemoteAsyncCallback*, Guid*, void**, int>)(lpVtbl[0]))((IMFRemoteAsyncCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMFRemoteAsyncCallback*, Guid*, void**, int>)(lpVtbl[0]))((IMFRemoteAsyncCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMFRemoteAsyncCallback*, uint>)(lpVtbl[1]))((IMFRemoteAsyncCallback*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFRemoteAsyncCallback*, uint>)(lpVtbl[1]))((IMFRemoteAsyncCallback*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMFRemoteAsyncCallback*, uint>)(lpVtbl[2]))((IMFRemoteAsyncCallback*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFRemoteAsyncCallback*, uint>)(lpVtbl[2]))((IMFRemoteAsyncCallback*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Invoke([NativeTypeName("HRESULT")] int hr, [NativeTypeName("IUnknown *")] IUnknown* pRemoteResult)
         {
-            return ((delegate* stdcall<IMFRemoteAsyncCallback*, int, IUnknown*, int>)(lpVtbl[3]))((IMFRemoteAsyncCallback*)Unsafe.AsPointer(ref this), hr, pRemoteResult);
+            return ((delegate* unmanaged<IMFRemoteAsyncCallback*, int, IUnknown*, int>)(lpVtbl[3]))((IMFRemoteAsyncCallback*)Unsafe.AsPointer(ref this), hr, pRemoteResult);
         }
     }
 }

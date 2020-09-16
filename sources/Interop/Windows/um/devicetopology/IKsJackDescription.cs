@@ -19,35 +19,35 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IKsJackDescription*, Guid*, void**, int>)(lpVtbl[0]))((IKsJackDescription*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IKsJackDescription*, Guid*, void**, int>)(lpVtbl[0]))((IKsJackDescription*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IKsJackDescription*, uint>)(lpVtbl[1]))((IKsJackDescription*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IKsJackDescription*, uint>)(lpVtbl[1]))((IKsJackDescription*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IKsJackDescription*, uint>)(lpVtbl[2]))((IKsJackDescription*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IKsJackDescription*, uint>)(lpVtbl[2]))((IKsJackDescription*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetJackCount([NativeTypeName("UINT *")] uint* pcJacks)
         {
-            return ((delegate* stdcall<IKsJackDescription*, uint*, int>)(lpVtbl[3]))((IKsJackDescription*)Unsafe.AsPointer(ref this), pcJacks);
+            return ((delegate* unmanaged<IKsJackDescription*, uint*, int>)(lpVtbl[3]))((IKsJackDescription*)Unsafe.AsPointer(ref this), pcJacks);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetJackDescription([NativeTypeName("UINT")] uint nJack, [NativeTypeName("KSJACK_DESCRIPTION *")] KSJACK_DESCRIPTION* pDescription)
         {
-            return ((delegate* stdcall<IKsJackDescription*, uint, KSJACK_DESCRIPTION*, int>)(lpVtbl[4]))((IKsJackDescription*)Unsafe.AsPointer(ref this), nJack, pDescription);
+            return ((delegate* unmanaged<IKsJackDescription*, uint, KSJACK_DESCRIPTION*, int>)(lpVtbl[4]))((IKsJackDescription*)Unsafe.AsPointer(ref this), nJack, pDescription);
         }
     }
 }

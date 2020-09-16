@@ -19,105 +19,105 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<ICondition*, Guid*, void**, int>)(lpVtbl[0]))((ICondition*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<ICondition*, Guid*, void**, int>)(lpVtbl[0]))((ICondition*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<ICondition*, uint>)(lpVtbl[1]))((ICondition*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ICondition*, uint>)(lpVtbl[1]))((ICondition*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<ICondition*, uint>)(lpVtbl[2]))((ICondition*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ICondition*, uint>)(lpVtbl[2]))((ICondition*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
         {
-            return ((delegate* stdcall<ICondition*, Guid*, int>)(lpVtbl[3]))((ICondition*)Unsafe.AsPointer(ref this), pClassID);
+            return ((delegate* unmanaged<ICondition*, Guid*, int>)(lpVtbl[3]))((ICondition*)Unsafe.AsPointer(ref this), pClassID);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int IsDirty()
         {
-            return ((delegate* stdcall<ICondition*, int>)(lpVtbl[4]))((ICondition*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ICondition*, int>)(lpVtbl[4]))((ICondition*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Load([NativeTypeName("IStream *")] IStream* pStm)
         {
-            return ((delegate* stdcall<ICondition*, IStream*, int>)(lpVtbl[5]))((ICondition*)Unsafe.AsPointer(ref this), pStm);
+            return ((delegate* unmanaged<ICondition*, IStream*, int>)(lpVtbl[5]))((ICondition*)Unsafe.AsPointer(ref this), pStm);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Save([NativeTypeName("IStream *")] IStream* pStm, [NativeTypeName("BOOL")] int fClearDirty)
         {
-            return ((delegate* stdcall<ICondition*, IStream*, int, int>)(lpVtbl[6]))((ICondition*)Unsafe.AsPointer(ref this), pStm, fClearDirty);
+            return ((delegate* unmanaged<ICondition*, IStream*, int, int>)(lpVtbl[6]))((ICondition*)Unsafe.AsPointer(ref this), pStm, fClearDirty);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetSizeMax([NativeTypeName("ULARGE_INTEGER *")] ULARGE_INTEGER* pcbSize)
         {
-            return ((delegate* stdcall<ICondition*, ULARGE_INTEGER*, int>)(lpVtbl[7]))((ICondition*)Unsafe.AsPointer(ref this), pcbSize);
+            return ((delegate* unmanaged<ICondition*, ULARGE_INTEGER*, int>)(lpVtbl[7]))((ICondition*)Unsafe.AsPointer(ref this), pcbSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetConditionType([NativeTypeName("CONDITION_TYPE *")] CONDITION_TYPE* pNodeType)
         {
-            return ((delegate* stdcall<ICondition*, CONDITION_TYPE*, int>)(lpVtbl[8]))((ICondition*)Unsafe.AsPointer(ref this), pNodeType);
+            return ((delegate* unmanaged<ICondition*, CONDITION_TYPE*, int>)(lpVtbl[8]))((ICondition*)Unsafe.AsPointer(ref this), pNodeType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetSubConditions([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppv)
         {
-            return ((delegate* stdcall<ICondition*, Guid*, void**, int>)(lpVtbl[9]))((ICondition*)Unsafe.AsPointer(ref this), riid, ppv);
+            return ((delegate* unmanaged<ICondition*, Guid*, void**, int>)(lpVtbl[9]))((ICondition*)Unsafe.AsPointer(ref this), riid, ppv);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetComparisonInfo([NativeTypeName("LPWSTR *")] ushort** ppszPropertyName, [NativeTypeName("CONDITION_OPERATION *")] CONDITION_OPERATION* pcop, [NativeTypeName("PROPVARIANT *")] PROPVARIANT* ppropvar)
         {
-            return ((delegate* stdcall<ICondition*, ushort**, CONDITION_OPERATION*, PROPVARIANT*, int>)(lpVtbl[10]))((ICondition*)Unsafe.AsPointer(ref this), ppszPropertyName, pcop, ppropvar);
+            return ((delegate* unmanaged<ICondition*, ushort**, CONDITION_OPERATION*, PROPVARIANT*, int>)(lpVtbl[10]))((ICondition*)Unsafe.AsPointer(ref this), ppszPropertyName, pcop, ppropvar);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetValueType([NativeTypeName("LPWSTR *")] ushort** ppszValueTypeName)
         {
-            return ((delegate* stdcall<ICondition*, ushort**, int>)(lpVtbl[11]))((ICondition*)Unsafe.AsPointer(ref this), ppszValueTypeName);
+            return ((delegate* unmanaged<ICondition*, ushort**, int>)(lpVtbl[11]))((ICondition*)Unsafe.AsPointer(ref this), ppszValueTypeName);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetValueNormalization([NativeTypeName("LPWSTR *")] ushort** ppszNormalization)
         {
-            return ((delegate* stdcall<ICondition*, ushort**, int>)(lpVtbl[12]))((ICondition*)Unsafe.AsPointer(ref this), ppszNormalization);
+            return ((delegate* unmanaged<ICondition*, ushort**, int>)(lpVtbl[12]))((ICondition*)Unsafe.AsPointer(ref this), ppszNormalization);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetInputTerms([NativeTypeName("IRichChunk **")] IRichChunk** ppPropertyTerm, [NativeTypeName("IRichChunk **")] IRichChunk** ppOperationTerm, [NativeTypeName("IRichChunk **")] IRichChunk** ppValueTerm)
         {
-            return ((delegate* stdcall<ICondition*, IRichChunk**, IRichChunk**, IRichChunk**, int>)(lpVtbl[13]))((ICondition*)Unsafe.AsPointer(ref this), ppPropertyTerm, ppOperationTerm, ppValueTerm);
+            return ((delegate* unmanaged<ICondition*, IRichChunk**, IRichChunk**, IRichChunk**, int>)(lpVtbl[13]))((ICondition*)Unsafe.AsPointer(ref this), ppPropertyTerm, ppOperationTerm, ppValueTerm);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Clone([NativeTypeName("ICondition **")] ICondition** ppc)
         {
-            return ((delegate* stdcall<ICondition*, ICondition**, int>)(lpVtbl[14]))((ICondition*)Unsafe.AsPointer(ref this), ppc);
+            return ((delegate* unmanaged<ICondition*, ICondition**, int>)(lpVtbl[14]))((ICondition*)Unsafe.AsPointer(ref this), ppc);
         }
     }
 }

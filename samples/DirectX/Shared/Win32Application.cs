@@ -37,7 +37,7 @@ namespace TerraFX.Samples.DirectX
             fixed (char* lpWindowName = pSample.Name)
             {
                 // Requires an explicit cast until C# handles UnmanagedCallersOnly
-                var wndProc = (delegate* stdcall<IntPtr, uint, nuint, nint, nint>)(delegate* managed<IntPtr, uint, nuint, nint, nint>)&WindowProc;
+                var wndProc = (delegate* unmanaged<IntPtr, uint, nuint, nint, nint>)(delegate* managed<IntPtr, uint, nuint, nint, nint>)&WindowProc;
 
                 // Initialize the window class.
                 var windowClass = new WNDCLASSEXW {

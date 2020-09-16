@@ -19,35 +19,35 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMFCaptureEngineOnSampleCallback2*, Guid*, void**, int>)(lpVtbl[0]))((IMFCaptureEngineOnSampleCallback2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMFCaptureEngineOnSampleCallback2*, Guid*, void**, int>)(lpVtbl[0]))((IMFCaptureEngineOnSampleCallback2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMFCaptureEngineOnSampleCallback2*, uint>)(lpVtbl[1]))((IMFCaptureEngineOnSampleCallback2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFCaptureEngineOnSampleCallback2*, uint>)(lpVtbl[1]))((IMFCaptureEngineOnSampleCallback2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMFCaptureEngineOnSampleCallback2*, uint>)(lpVtbl[2]))((IMFCaptureEngineOnSampleCallback2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFCaptureEngineOnSampleCallback2*, uint>)(lpVtbl[2]))((IMFCaptureEngineOnSampleCallback2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OnSample([NativeTypeName("IMFSample *")] IMFSample* pSample)
         {
-            return ((delegate* stdcall<IMFCaptureEngineOnSampleCallback2*, IMFSample*, int>)(lpVtbl[3]))((IMFCaptureEngineOnSampleCallback2*)Unsafe.AsPointer(ref this), pSample);
+            return ((delegate* unmanaged<IMFCaptureEngineOnSampleCallback2*, IMFSample*, int>)(lpVtbl[3]))((IMFCaptureEngineOnSampleCallback2*)Unsafe.AsPointer(ref this), pSample);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OnSynchronizedEvent([NativeTypeName("IMFMediaEvent *")] IMFMediaEvent* pEvent)
         {
-            return ((delegate* stdcall<IMFCaptureEngineOnSampleCallback2*, IMFMediaEvent*, int>)(lpVtbl[4]))((IMFCaptureEngineOnSampleCallback2*)Unsafe.AsPointer(ref this), pEvent);
+            return ((delegate* unmanaged<IMFCaptureEngineOnSampleCallback2*, IMFMediaEvent*, int>)(lpVtbl[4]))((IMFCaptureEngineOnSampleCallback2*)Unsafe.AsPointer(ref this), pEvent);
         }
     }
 }

@@ -8,7 +8,7 @@ namespace TerraFX.Interop
     public unsafe partial struct CRYPT_ASYNC_RETRIEVAL_COMPLETION
     {
         [NativeTypeName("PFN_CRYPT_ASYNC_RETRIEVAL_COMPLETION_FUNC")]
-        public delegate* stdcall<void*, uint, sbyte*, sbyte*, void*, void> pfnCompletion;
+        public delegate* unmanaged<void*, uint, sbyte*, sbyte*, void*, void> pfnCompletion;
 
         [NativeTypeName("LPVOID")]
         public void* pvCompletion;

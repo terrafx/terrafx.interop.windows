@@ -28,10 +28,10 @@ namespace TerraFX.Interop
         public CMSG_RECIPIENT_ENCODE_INFO* rgCmsRecipients;
 
         [NativeTypeName("PFN_CMSG_ALLOC")]
-        public delegate* stdcall<nuint, void*> pfnAlloc;
+        public delegate* unmanaged<nuint, void*> pfnAlloc;
 
         [NativeTypeName("PFN_CMSG_FREE")]
-        public delegate* stdcall<void*, void> pfnFree;
+        public delegate* unmanaged<void*, void> pfnFree;
 
         [NativeTypeName("DWORD")]
         public uint dwEncryptFlags;

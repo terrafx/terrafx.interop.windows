@@ -19,35 +19,35 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IWinInetHttpInfo*, Guid*, void**, int>)(lpVtbl[0]))((IWinInetHttpInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IWinInetHttpInfo*, Guid*, void**, int>)(lpVtbl[0]))((IWinInetHttpInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IWinInetHttpInfo*, uint>)(lpVtbl[1]))((IWinInetHttpInfo*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IWinInetHttpInfo*, uint>)(lpVtbl[1]))((IWinInetHttpInfo*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IWinInetHttpInfo*, uint>)(lpVtbl[2]))((IWinInetHttpInfo*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IWinInetHttpInfo*, uint>)(lpVtbl[2]))((IWinInetHttpInfo*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryOption([NativeTypeName("DWORD")] uint dwOption, [NativeTypeName("LPVOID")] void* pBuffer, [NativeTypeName("DWORD *")] uint* pcbBuf)
         {
-            return ((delegate* stdcall<IWinInetHttpInfo*, uint, void*, uint*, int>)(lpVtbl[3]))((IWinInetHttpInfo*)Unsafe.AsPointer(ref this), dwOption, pBuffer, pcbBuf);
+            return ((delegate* unmanaged<IWinInetHttpInfo*, uint, void*, uint*, int>)(lpVtbl[3]))((IWinInetHttpInfo*)Unsafe.AsPointer(ref this), dwOption, pBuffer, pcbBuf);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInfo([NativeTypeName("DWORD")] uint dwOption, [NativeTypeName("LPVOID")] void* pBuffer, [NativeTypeName("DWORD *")] uint* pcbBuf, [NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("DWORD *")] uint* pdwReserved)
         {
-            return ((delegate* stdcall<IWinInetHttpInfo*, uint, void*, uint*, uint*, uint*, int>)(lpVtbl[4]))((IWinInetHttpInfo*)Unsafe.AsPointer(ref this), dwOption, pBuffer, pcbBuf, pdwFlags, pdwReserved);
+            return ((delegate* unmanaged<IWinInetHttpInfo*, uint, void*, uint*, uint*, uint*, int>)(lpVtbl[4]))((IWinInetHttpInfo*)Unsafe.AsPointer(ref this), dwOption, pBuffer, pcbBuf, pdwFlags, pdwReserved);
         }
     }
 }

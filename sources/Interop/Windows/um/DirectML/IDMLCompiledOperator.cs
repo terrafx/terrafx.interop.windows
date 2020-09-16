@@ -19,63 +19,63 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IDMLCompiledOperator*, Guid*, void**, int>)(lpVtbl[0]))((IDMLCompiledOperator*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IDMLCompiledOperator*, Guid*, void**, int>)(lpVtbl[0]))((IDMLCompiledOperator*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IDMLCompiledOperator*, uint>)(lpVtbl[1]))((IDMLCompiledOperator*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDMLCompiledOperator*, uint>)(lpVtbl[1]))((IDMLCompiledOperator*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IDMLCompiledOperator*, uint>)(lpVtbl[2]))((IDMLCompiledOperator*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDMLCompiledOperator*, uint>)(lpVtbl[2]))((IDMLCompiledOperator*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* dataSize, [NativeTypeName("void *")] void* data)
         {
-            return ((delegate* stdcall<IDMLCompiledOperator*, Guid*, uint*, void*, int>)(lpVtbl[3]))((IDMLCompiledOperator*)Unsafe.AsPointer(ref this), guid, dataSize, data);
+            return ((delegate* unmanaged<IDMLCompiledOperator*, Guid*, uint*, void*, int>)(lpVtbl[3]))((IDMLCompiledOperator*)Unsafe.AsPointer(ref this), guid, dataSize, data);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT")] uint dataSize, [NativeTypeName("const void *")] void* data)
         {
-            return ((delegate* stdcall<IDMLCompiledOperator*, Guid*, uint, void*, int>)(lpVtbl[4]))((IDMLCompiledOperator*)Unsafe.AsPointer(ref this), guid, dataSize, data);
+            return ((delegate* unmanaged<IDMLCompiledOperator*, Guid*, uint, void*, int>)(lpVtbl[4]))((IDMLCompiledOperator*)Unsafe.AsPointer(ref this), guid, dataSize, data);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("IUnknown *")] IUnknown* data)
         {
-            return ((delegate* stdcall<IDMLCompiledOperator*, Guid*, IUnknown*, int>)(lpVtbl[5]))((IDMLCompiledOperator*)Unsafe.AsPointer(ref this), guid, data);
+            return ((delegate* unmanaged<IDMLCompiledOperator*, Guid*, IUnknown*, int>)(lpVtbl[5]))((IDMLCompiledOperator*)Unsafe.AsPointer(ref this), guid, data);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetName([NativeTypeName("PCWSTR")] ushort* name)
         {
-            return ((delegate* stdcall<IDMLCompiledOperator*, ushort*, int>)(lpVtbl[6]))((IDMLCompiledOperator*)Unsafe.AsPointer(ref this), name);
+            return ((delegate* unmanaged<IDMLCompiledOperator*, ushort*, int>)(lpVtbl[6]))((IDMLCompiledOperator*)Unsafe.AsPointer(ref this), name);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetDevice([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppv)
         {
-            return ((delegate* stdcall<IDMLCompiledOperator*, Guid*, void**, int>)(lpVtbl[7]))((IDMLCompiledOperator*)Unsafe.AsPointer(ref this), riid, ppv);
+            return ((delegate* unmanaged<IDMLCompiledOperator*, Guid*, void**, int>)(lpVtbl[7]))((IDMLCompiledOperator*)Unsafe.AsPointer(ref this), riid, ppv);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public DML_BINDING_PROPERTIES GetBindingProperties()
         {
             DML_BINDING_PROPERTIES result;
-            return *((delegate* stdcall<IDMLCompiledOperator*, DML_BINDING_PROPERTIES*, DML_BINDING_PROPERTIES*>)(lpVtbl[8]))((IDMLCompiledOperator*)Unsafe.AsPointer(ref this), &result);
+            return *((delegate* unmanaged<IDMLCompiledOperator*, DML_BINDING_PROPERTIES*, DML_BINDING_PROPERTIES*>)(lpVtbl[8]))((IDMLCompiledOperator*)Unsafe.AsPointer(ref this), &result);
         }
     }
 }

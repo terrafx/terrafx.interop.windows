@@ -19,35 +19,35 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IAMClockSlave*, Guid*, void**, int>)(lpVtbl[0]))((IAMClockSlave*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IAMClockSlave*, Guid*, void**, int>)(lpVtbl[0]))((IAMClockSlave*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IAMClockSlave*, uint>)(lpVtbl[1]))((IAMClockSlave*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IAMClockSlave*, uint>)(lpVtbl[1]))((IAMClockSlave*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IAMClockSlave*, uint>)(lpVtbl[2]))((IAMClockSlave*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IAMClockSlave*, uint>)(lpVtbl[2]))((IAMClockSlave*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetErrorTolerance([NativeTypeName("DWORD")] uint dwTolerance)
         {
-            return ((delegate* stdcall<IAMClockSlave*, uint, int>)(lpVtbl[3]))((IAMClockSlave*)Unsafe.AsPointer(ref this), dwTolerance);
+            return ((delegate* unmanaged<IAMClockSlave*, uint, int>)(lpVtbl[3]))((IAMClockSlave*)Unsafe.AsPointer(ref this), dwTolerance);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetErrorTolerance([NativeTypeName("DWORD *")] uint* pdwTolerance)
         {
-            return ((delegate* stdcall<IAMClockSlave*, uint*, int>)(lpVtbl[4]))((IAMClockSlave*)Unsafe.AsPointer(ref this), pdwTolerance);
+            return ((delegate* unmanaged<IAMClockSlave*, uint*, int>)(lpVtbl[4]))((IAMClockSlave*)Unsafe.AsPointer(ref this), pdwTolerance);
         }
     }
 }

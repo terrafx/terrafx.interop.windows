@@ -105,7 +105,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("PFNPROPSHEETCALLBACK")]
-        public delegate* stdcall<IntPtr, uint, nint, int> pfnCallback;
+        public delegate* unmanaged<IntPtr, uint, nint, int> pfnCallback;
 
         [NativeTypeName("_PROPSHEETHEADERW_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:527:5)")]
         public _Anonymous4_e__Union Anonymous4;

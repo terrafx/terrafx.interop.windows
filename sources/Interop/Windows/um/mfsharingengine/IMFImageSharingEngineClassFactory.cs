@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMFImageSharingEngineClassFactory*, Guid*, void**, int>)(lpVtbl[0]))((IMFImageSharingEngineClassFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMFImageSharingEngineClassFactory*, Guid*, void**, int>)(lpVtbl[0]))((IMFImageSharingEngineClassFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMFImageSharingEngineClassFactory*, uint>)(lpVtbl[1]))((IMFImageSharingEngineClassFactory*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFImageSharingEngineClassFactory*, uint>)(lpVtbl[1]))((IMFImageSharingEngineClassFactory*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMFImageSharingEngineClassFactory*, uint>)(lpVtbl[2]))((IMFImageSharingEngineClassFactory*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFImageSharingEngineClassFactory*, uint>)(lpVtbl[2]))((IMFImageSharingEngineClassFactory*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int CreateInstanceFromUDN([NativeTypeName("BSTR")] ushort* pUniqueDeviceName, [NativeTypeName("IMFImageSharingEngine **")] IMFImageSharingEngine** ppEngine)
         {
-            return ((delegate* stdcall<IMFImageSharingEngineClassFactory*, ushort*, IMFImageSharingEngine**, int>)(lpVtbl[3]))((IMFImageSharingEngineClassFactory*)Unsafe.AsPointer(ref this), pUniqueDeviceName, ppEngine);
+            return ((delegate* unmanaged<IMFImageSharingEngineClassFactory*, ushort*, IMFImageSharingEngine**, int>)(lpVtbl[3]))((IMFImageSharingEngineClassFactory*)Unsafe.AsPointer(ref this), pUniqueDeviceName, ppEngine);
         }
     }
 }

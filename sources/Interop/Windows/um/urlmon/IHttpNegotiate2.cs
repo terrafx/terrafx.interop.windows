@@ -19,42 +19,42 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IHttpNegotiate2*, Guid*, void**, int>)(lpVtbl[0]))((IHttpNegotiate2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IHttpNegotiate2*, Guid*, void**, int>)(lpVtbl[0]))((IHttpNegotiate2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IHttpNegotiate2*, uint>)(lpVtbl[1]))((IHttpNegotiate2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IHttpNegotiate2*, uint>)(lpVtbl[1]))((IHttpNegotiate2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IHttpNegotiate2*, uint>)(lpVtbl[2]))((IHttpNegotiate2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IHttpNegotiate2*, uint>)(lpVtbl[2]))((IHttpNegotiate2*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int BeginningTransaction([NativeTypeName("LPCWSTR")] ushort* szURL, [NativeTypeName("LPCWSTR")] ushort* szHeaders, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("LPWSTR *")] ushort** pszAdditionalHeaders)
         {
-            return ((delegate* stdcall<IHttpNegotiate2*, ushort*, ushort*, uint, ushort**, int>)(lpVtbl[3]))((IHttpNegotiate2*)Unsafe.AsPointer(ref this), szURL, szHeaders, dwReserved, pszAdditionalHeaders);
+            return ((delegate* unmanaged<IHttpNegotiate2*, ushort*, ushort*, uint, ushort**, int>)(lpVtbl[3]))((IHttpNegotiate2*)Unsafe.AsPointer(ref this), szURL, szHeaders, dwReserved, pszAdditionalHeaders);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OnResponse([NativeTypeName("DWORD")] uint dwResponseCode, [NativeTypeName("LPCWSTR")] ushort* szResponseHeaders, [NativeTypeName("LPCWSTR")] ushort* szRequestHeaders, [NativeTypeName("LPWSTR *")] ushort** pszAdditionalRequestHeaders)
         {
-            return ((delegate* stdcall<IHttpNegotiate2*, uint, ushort*, ushort*, ushort**, int>)(lpVtbl[4]))((IHttpNegotiate2*)Unsafe.AsPointer(ref this), dwResponseCode, szResponseHeaders, szRequestHeaders, pszAdditionalRequestHeaders);
+            return ((delegate* unmanaged<IHttpNegotiate2*, uint, ushort*, ushort*, ushort**, int>)(lpVtbl[4]))((IHttpNegotiate2*)Unsafe.AsPointer(ref this), dwResponseCode, szResponseHeaders, szRequestHeaders, pszAdditionalRequestHeaders);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetRootSecurityId([NativeTypeName("BYTE *")] byte* pbSecurityId, [NativeTypeName("DWORD *")] uint* pcbSecurityId, [NativeTypeName("DWORD_PTR")] nuint dwReserved)
         {
-            return ((delegate* stdcall<IHttpNegotiate2*, byte*, uint*, nuint, int>)(lpVtbl[5]))((IHttpNegotiate2*)Unsafe.AsPointer(ref this), pbSecurityId, pcbSecurityId, dwReserved);
+            return ((delegate* unmanaged<IHttpNegotiate2*, byte*, uint*, nuint, int>)(lpVtbl[5]))((IHttpNegotiate2*)Unsafe.AsPointer(ref this), pbSecurityId, pcbSecurityId, dwReserved);
         }
     }
 }

@@ -19,49 +19,49 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IEnumOLEVERB*, Guid*, void**, int>)(lpVtbl[0]))((IEnumOLEVERB*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IEnumOLEVERB*, Guid*, void**, int>)(lpVtbl[0]))((IEnumOLEVERB*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IEnumOLEVERB*, uint>)(lpVtbl[1]))((IEnumOLEVERB*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IEnumOLEVERB*, uint>)(lpVtbl[1]))((IEnumOLEVERB*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IEnumOLEVERB*, uint>)(lpVtbl[2]))((IEnumOLEVERB*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IEnumOLEVERB*, uint>)(lpVtbl[2]))((IEnumOLEVERB*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("LPOLEVERB")] OLEVERB* rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
         {
-            return ((delegate* stdcall<IEnumOLEVERB*, uint, OLEVERB*, uint*, int>)(lpVtbl[3]))((IEnumOLEVERB*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
+            return ((delegate* unmanaged<IEnumOLEVERB*, uint, OLEVERB*, uint*, int>)(lpVtbl[3]))((IEnumOLEVERB*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Skip([NativeTypeName("ULONG")] uint celt)
         {
-            return ((delegate* stdcall<IEnumOLEVERB*, uint, int>)(lpVtbl[4]))((IEnumOLEVERB*)Unsafe.AsPointer(ref this), celt);
+            return ((delegate* unmanaged<IEnumOLEVERB*, uint, int>)(lpVtbl[4]))((IEnumOLEVERB*)Unsafe.AsPointer(ref this), celt);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Reset()
         {
-            return ((delegate* stdcall<IEnumOLEVERB*, int>)(lpVtbl[5]))((IEnumOLEVERB*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IEnumOLEVERB*, int>)(lpVtbl[5]))((IEnumOLEVERB*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Clone([NativeTypeName("IEnumOLEVERB **")] IEnumOLEVERB** ppenum)
         {
-            return ((delegate* stdcall<IEnumOLEVERB*, IEnumOLEVERB**, int>)(lpVtbl[6]))((IEnumOLEVERB*)Unsafe.AsPointer(ref this), ppenum);
+            return ((delegate* unmanaged<IEnumOLEVERB*, IEnumOLEVERB**, int>)(lpVtbl[6]))((IEnumOLEVERB*)Unsafe.AsPointer(ref this), ppenum);
         }
     }
 }

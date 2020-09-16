@@ -11,13 +11,13 @@ namespace TerraFX.Interop
         public CRYPTOAPI_BLOB PrivateKey;
 
         [NativeTypeName("PCRYPT_RESOLVE_HCRYPTPROV_FUNC")]
-        public delegate* stdcall<CRYPT_PRIVATE_KEY_INFO*, nuint*, void*, int> pResolvehCryptProvFunc;
+        public delegate* unmanaged<CRYPT_PRIVATE_KEY_INFO*, nuint*, void*, int> pResolvehCryptProvFunc;
 
         [NativeTypeName("LPVOID")]
         public void* pVoidResolveFunc;
 
         [NativeTypeName("PCRYPT_DECRYPT_PRIVATE_KEY_FUNC")]
-        public delegate* stdcall<CRYPT_ALGORITHM_IDENTIFIER, CRYPTOAPI_BLOB, byte*, uint*, void*, int> pDecryptPrivateKeyFunc;
+        public delegate* unmanaged<CRYPT_ALGORITHM_IDENTIFIER, CRYPTOAPI_BLOB, byte*, uint*, void*, int> pDecryptPrivateKeyFunc;
 
         [NativeTypeName("LPVOID")]
         public void* pVoidDecryptFunc;

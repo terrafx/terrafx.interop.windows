@@ -19,350 +19,350 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, void**, int>)(lpVtbl[0]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, Guid*, void**, int>)(lpVtbl[0]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, uint>)(lpVtbl[1]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, uint>)(lpVtbl[1]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, uint>)(lpVtbl[2]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, uint>)(lpVtbl[2]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetItem([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("PROPVARIANT *")] PROPVARIANT* pValue)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, PROPVARIANT*, int>)(lpVtbl[3]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pValue);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, Guid*, PROPVARIANT*, int>)(lpVtbl[3]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetItemType([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("MF_ATTRIBUTE_TYPE *")] MF_ATTRIBUTE_TYPE* pType)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, MF_ATTRIBUTE_TYPE*, int>)(lpVtbl[4]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pType);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, Guid*, MF_ATTRIBUTE_TYPE*, int>)(lpVtbl[4]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pType);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int CompareItem([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* Value, [NativeTypeName("BOOL *")] int* pbResult)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, PROPVARIANT*, int*, int>)(lpVtbl[5]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, Value, pbResult);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, Guid*, PROPVARIANT*, int*, int>)(lpVtbl[5]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, Value, pbResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Compare([NativeTypeName("IMFAttributes *")] IMFAttributes* pTheirs, MF_ATTRIBUTES_MATCH_TYPE MatchType, [NativeTypeName("BOOL *")] int* pbResult)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, IMFAttributes*, MF_ATTRIBUTES_MATCH_TYPE, int*, int>)(lpVtbl[6]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pTheirs, MatchType, pbResult);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, IMFAttributes*, MF_ATTRIBUTES_MATCH_TYPE, int*, int>)(lpVtbl[6]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pTheirs, MatchType, pbResult);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetUINT32([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32 *")] uint* punValue)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, uint*, int>)(lpVtbl[7]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, punValue);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, Guid*, uint*, int>)(lpVtbl[7]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, punValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetUINT64([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT64 *")] ulong* punValue)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, ulong*, int>)(lpVtbl[8]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, punValue);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, Guid*, ulong*, int>)(lpVtbl[8]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, punValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetDouble([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("double *")] double* pfValue)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, double*, int>)(lpVtbl[9]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pfValue);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, Guid*, double*, int>)(lpVtbl[9]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pfValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetGUID([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("GUID *")] Guid* pguidValue)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, Guid*, int>)(lpVtbl[10]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pguidValue);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, Guid*, Guid*, int>)(lpVtbl[10]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pguidValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetStringLength([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32 *")] uint* pcchLength)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, uint*, int>)(lpVtbl[11]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pcchLength);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, Guid*, uint*, int>)(lpVtbl[11]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pcchLength);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetString([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("LPWSTR")] ushort* pwszValue, [NativeTypeName("UINT32")] uint cchBufSize, [NativeTypeName("UINT32 *")] uint* pcchLength)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, ushort*, uint, uint*, int>)(lpVtbl[12]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pwszValue, cchBufSize, pcchLength);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, Guid*, ushort*, uint, uint*, int>)(lpVtbl[12]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pwszValue, cchBufSize, pcchLength);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetAllocatedString([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("LPWSTR *")] ushort** ppwszValue, [NativeTypeName("UINT32 *")] uint* pcchLength)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, ushort**, uint*, int>)(lpVtbl[13]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, ppwszValue, pcchLength);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, Guid*, ushort**, uint*, int>)(lpVtbl[13]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, ppwszValue, pcchLength);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetBlobSize([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32 *")] uint* pcbBlobSize)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, uint*, int>)(lpVtbl[14]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pcbBlobSize);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, Guid*, uint*, int>)(lpVtbl[14]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pcbBlobSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetBlob([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT8 *")] byte* pBuf, [NativeTypeName("UINT32")] uint cbBufSize, [NativeTypeName("UINT32 *")] uint* pcbBlobSize)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, byte*, uint, uint*, int>)(lpVtbl[15]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pBuf, cbBufSize, pcbBlobSize);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, Guid*, byte*, uint, uint*, int>)(lpVtbl[15]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pBuf, cbBufSize, pcbBlobSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetAllocatedBlob([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT8 **")] byte** ppBuf, [NativeTypeName("UINT32 *")] uint* pcbSize)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, byte**, uint*, int>)(lpVtbl[16]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, ppBuf, pcbSize);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, Guid*, byte**, uint*, int>)(lpVtbl[16]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, ppBuf, pcbSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetUnknown([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, Guid*, void**, int>)(lpVtbl[17]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, riid, ppv);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, Guid*, Guid*, void**, int>)(lpVtbl[17]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, riid, ppv);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetItem([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* Value)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, PROPVARIANT*, int>)(lpVtbl[18]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, Value);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, Guid*, PROPVARIANT*, int>)(lpVtbl[18]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, Value);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int DeleteItem([NativeTypeName("const GUID &")] Guid* guidKey)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, int>)(lpVtbl[19]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, Guid*, int>)(lpVtbl[19]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int DeleteAllItems()
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, int>)(lpVtbl[20]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, int>)(lpVtbl[20]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetUINT32([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32")] uint unValue)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, uint, int>)(lpVtbl[21]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, unValue);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, Guid*, uint, int>)(lpVtbl[21]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, unValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetUINT64([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT64")] ulong unValue)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, ulong, int>)(lpVtbl[22]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, unValue);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, Guid*, ulong, int>)(lpVtbl[22]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, unValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetDouble([NativeTypeName("const GUID &")] Guid* guidKey, double fValue)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, double, int>)(lpVtbl[23]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, fValue);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, Guid*, double, int>)(lpVtbl[23]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, fValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetGUID([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const GUID &")] Guid* guidValue)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, Guid*, int>)(lpVtbl[24]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, guidValue);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, Guid*, Guid*, int>)(lpVtbl[24]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, guidValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetString([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("LPCWSTR")] ushort* wszValue)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, ushort*, int>)(lpVtbl[25]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, wszValue);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, Guid*, ushort*, int>)(lpVtbl[25]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, wszValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetBlob([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const UINT8 *")] byte* pBuf, [NativeTypeName("UINT32")] uint cbBufSize)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, byte*, uint, int>)(lpVtbl[26]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pBuf, cbBufSize);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, Guid*, byte*, uint, int>)(lpVtbl[26]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pBuf, cbBufSize);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetUnknown([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("IUnknown *")] IUnknown* pUnknown)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, Guid*, IUnknown*, int>)(lpVtbl[27]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pUnknown);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, Guid*, IUnknown*, int>)(lpVtbl[27]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), guidKey, pUnknown);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int LockStore()
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, int>)(lpVtbl[28]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, int>)(lpVtbl[28]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int UnlockStore()
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, int>)(lpVtbl[29]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, int>)(lpVtbl[29]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetCount([NativeTypeName("UINT32 *")] uint* pcItems)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, uint*, int>)(lpVtbl[30]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pcItems);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, uint*, int>)(lpVtbl[30]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pcItems);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetItemByIndex([NativeTypeName("UINT32")] uint unIndex, [NativeTypeName("GUID *")] Guid* pguidKey, [NativeTypeName("PROPVARIANT *")] PROPVARIANT* pValue)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, uint, Guid*, PROPVARIANT*, int>)(lpVtbl[31]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), unIndex, pguidKey, pValue);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, uint, Guid*, PROPVARIANT*, int>)(lpVtbl[31]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), unIndex, pguidKey, pValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int CopyAllItems([NativeTypeName("IMFAttributes *")] IMFAttributes* pDest)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, IMFAttributes*, int>)(lpVtbl[32]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pDest);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, IMFAttributes*, int>)(lpVtbl[32]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pDest);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetSampleFlags([NativeTypeName("DWORD *")] uint* pdwSampleFlags)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, uint*, int>)(lpVtbl[33]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pdwSampleFlags);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, uint*, int>)(lpVtbl[33]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pdwSampleFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetSampleFlags([NativeTypeName("DWORD")] uint dwSampleFlags)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, uint, int>)(lpVtbl[34]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), dwSampleFlags);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, uint, int>)(lpVtbl[34]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), dwSampleFlags);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetSampleTime([NativeTypeName("LONGLONG *")] long* phnsSampleTime)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, long*, int>)(lpVtbl[35]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), phnsSampleTime);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, long*, int>)(lpVtbl[35]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), phnsSampleTime);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetSampleTime([NativeTypeName("LONGLONG")] long hnsSampleTime)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, long, int>)(lpVtbl[36]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), hnsSampleTime);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, long, int>)(lpVtbl[36]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), hnsSampleTime);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetSampleDuration([NativeTypeName("LONGLONG *")] long* phnsSampleDuration)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, long*, int>)(lpVtbl[37]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), phnsSampleDuration);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, long*, int>)(lpVtbl[37]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), phnsSampleDuration);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetSampleDuration([NativeTypeName("LONGLONG")] long hnsSampleDuration)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, long, int>)(lpVtbl[38]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), hnsSampleDuration);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, long, int>)(lpVtbl[38]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), hnsSampleDuration);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetBufferCount([NativeTypeName("DWORD *")] uint* pdwBufferCount)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, uint*, int>)(lpVtbl[39]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pdwBufferCount);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, uint*, int>)(lpVtbl[39]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pdwBufferCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetBufferByIndex([NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("IMFMediaBuffer **")] IMFMediaBuffer** ppBuffer)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, uint, IMFMediaBuffer**, int>)(lpVtbl[40]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), dwIndex, ppBuffer);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, uint, IMFMediaBuffer**, int>)(lpVtbl[40]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), dwIndex, ppBuffer);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int ConvertToContiguousBuffer([NativeTypeName("IMFMediaBuffer **")] IMFMediaBuffer** ppBuffer)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, IMFMediaBuffer**, int>)(lpVtbl[41]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), ppBuffer);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, IMFMediaBuffer**, int>)(lpVtbl[41]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), ppBuffer);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int AddBuffer([NativeTypeName("IMFMediaBuffer *")] IMFMediaBuffer* pBuffer)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, IMFMediaBuffer*, int>)(lpVtbl[42]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pBuffer);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, IMFMediaBuffer*, int>)(lpVtbl[42]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pBuffer);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int RemoveBufferByIndex([NativeTypeName("DWORD")] uint dwIndex)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, uint, int>)(lpVtbl[43]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), dwIndex);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, uint, int>)(lpVtbl[43]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), dwIndex);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int RemoveAllBuffers()
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, int>)(lpVtbl[44]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, int>)(lpVtbl[44]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetTotalLength([NativeTypeName("DWORD *")] uint* pcbTotalLength)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, uint*, int>)(lpVtbl[45]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pcbTotalLength);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, uint*, int>)(lpVtbl[45]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pcbTotalLength);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int CopyToBuffer([NativeTypeName("IMFMediaBuffer *")] IMFMediaBuffer* pBuffer)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, IMFMediaBuffer*, int>)(lpVtbl[46]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pBuffer);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, IMFMediaBuffer*, int>)(lpVtbl[46]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pBuffer);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetObjectCount([NativeTypeName("DWORD *")] uint* pdwObjectCount)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, uint*, int>)(lpVtbl[47]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pdwObjectCount);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, uint*, int>)(lpVtbl[47]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pdwObjectCount);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int AddSpatialAudioObject([NativeTypeName("IMFSpatialAudioObjectBuffer *")] IMFSpatialAudioObjectBuffer* pAudioObjBuffer)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, IMFSpatialAudioObjectBuffer*, int>)(lpVtbl[48]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pAudioObjBuffer);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, IMFSpatialAudioObjectBuffer*, int>)(lpVtbl[48]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), pAudioObjBuffer);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetSpatialAudioObjectByIndex([NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("IMFSpatialAudioObjectBuffer **")] IMFSpatialAudioObjectBuffer** ppAudioObjBuffer)
         {
-            return ((delegate* stdcall<IMFSpatialAudioSample*, uint, IMFSpatialAudioObjectBuffer**, int>)(lpVtbl[49]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), dwIndex, ppAudioObjBuffer);
+            return ((delegate* unmanaged<IMFSpatialAudioSample*, uint, IMFSpatialAudioObjectBuffer**, int>)(lpVtbl[49]))((IMFSpatialAudioSample*)Unsafe.AsPointer(ref this), dwIndex, ppAudioObjBuffer);
         }
     }
 }

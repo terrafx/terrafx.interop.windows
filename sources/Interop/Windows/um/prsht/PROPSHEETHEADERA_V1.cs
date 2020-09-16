@@ -105,7 +105,7 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("PFNPROPSHEETCALLBACK")]
-        public delegate* stdcall<IntPtr, uint, nint, int> pfnCallback;
+        public delegate* unmanaged<IntPtr, uint, nint, int> pfnCallback;
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous1_e__Union

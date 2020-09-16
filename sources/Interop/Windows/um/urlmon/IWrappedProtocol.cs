@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IWrappedProtocol*, Guid*, void**, int>)(lpVtbl[0]))((IWrappedProtocol*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IWrappedProtocol*, Guid*, void**, int>)(lpVtbl[0]))((IWrappedProtocol*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IWrappedProtocol*, uint>)(lpVtbl[1]))((IWrappedProtocol*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IWrappedProtocol*, uint>)(lpVtbl[1]))((IWrappedProtocol*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IWrappedProtocol*, uint>)(lpVtbl[2]))((IWrappedProtocol*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IWrappedProtocol*, uint>)(lpVtbl[2]))((IWrappedProtocol*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetWrapperCode([NativeTypeName("LONG *")] int* pnCode, [NativeTypeName("DWORD_PTR")] nuint dwReserved)
         {
-            return ((delegate* stdcall<IWrappedProtocol*, int*, nuint, int>)(lpVtbl[3]))((IWrappedProtocol*)Unsafe.AsPointer(ref this), pnCode, dwReserved);
+            return ((delegate* unmanaged<IWrappedProtocol*, int*, nuint, int>)(lpVtbl[3]))((IWrappedProtocol*)Unsafe.AsPointer(ref this), pnCode, dwReserved);
         }
     }
 }

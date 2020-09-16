@@ -11,18 +11,18 @@ namespace TerraFX.Interop
         public uint cbSize;
 
         [NativeTypeName("PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_GET")]
-        public delegate* stdcall<void*, CRYPTOAPI_BLOB*, uint, CRYPTOAPI_BLOB*, byte**, uint*, ushort**, CRYPTOAPI_BLOB**, int> pfnGet;
+        public delegate* unmanaged<void*, CRYPTOAPI_BLOB*, uint, CRYPTOAPI_BLOB*, byte**, uint*, ushort**, CRYPTOAPI_BLOB**, int> pfnGet;
 
         [NativeTypeName("PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_RELEASE")]
-        public delegate* stdcall<uint, void*, void> pfnRelease;
+        public delegate* unmanaged<uint, void*, void> pfnRelease;
 
         [NativeTypeName("PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE_PASSWORD")]
-        public delegate* stdcall<void*, ushort*, void> pfnFreePassword;
+        public delegate* unmanaged<void*, ushort*, void> pfnFreePassword;
 
         [NativeTypeName("PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE")]
-        public delegate* stdcall<void*, byte*, void> pfnFree;
+        public delegate* unmanaged<void*, byte*, void> pfnFree;
 
         [NativeTypeName("PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE_IDENTIFIER")]
-        public delegate* stdcall<void*, CRYPTOAPI_BLOB*, void> pfnFreeIdentifier;
+        public delegate* unmanaged<void*, CRYPTOAPI_BLOB*, void> pfnFreeIdentifier;
     }
 }

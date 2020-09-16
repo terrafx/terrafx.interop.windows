@@ -75,13 +75,13 @@ namespace TerraFX.Interop
         public sbyte* pszTitle;
 
         [NativeTypeName("DLGPROC")]
-        public delegate* stdcall<IntPtr, uint, nuint, nint, nint> pfnDlgProc;
+        public delegate* unmanaged<IntPtr, uint, nuint, nint, nint> pfnDlgProc;
 
         [NativeTypeName("LPARAM")]
         public nint lParam;
 
         [NativeTypeName("LPFNPSPCALLBACKA")]
-        public delegate* stdcall<IntPtr, uint, PROPSHEETPAGEA*, uint> pfnCallback;
+        public delegate* unmanaged<IntPtr, uint, PROPSHEETPAGEA*, uint> pfnCallback;
 
         [NativeTypeName("UINT *")]
         public uint* pcRefParent;

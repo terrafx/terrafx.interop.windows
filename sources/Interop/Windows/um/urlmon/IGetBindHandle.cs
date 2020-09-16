@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IGetBindHandle*, Guid*, void**, int>)(lpVtbl[0]))((IGetBindHandle*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IGetBindHandle*, Guid*, void**, int>)(lpVtbl[0]))((IGetBindHandle*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IGetBindHandle*, uint>)(lpVtbl[1]))((IGetBindHandle*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IGetBindHandle*, uint>)(lpVtbl[1]))((IGetBindHandle*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IGetBindHandle*, uint>)(lpVtbl[2]))((IGetBindHandle*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IGetBindHandle*, uint>)(lpVtbl[2]))((IGetBindHandle*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetBindHandle(BINDHANDLETYPES enumRequestedHandle, [NativeTypeName("HANDLE *")] IntPtr* pRetHandle)
         {
-            return ((delegate* stdcall<IGetBindHandle*, BINDHANDLETYPES, IntPtr*, int>)(lpVtbl[3]))((IGetBindHandle*)Unsafe.AsPointer(ref this), enumRequestedHandle, pRetHandle);
+            return ((delegate* unmanaged<IGetBindHandle*, BINDHANDLETYPES, IntPtr*, int>)(lpVtbl[3]))((IGetBindHandle*)Unsafe.AsPointer(ref this), enumRequestedHandle, pRetHandle);
         }
     }
 }
