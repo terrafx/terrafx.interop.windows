@@ -106,7 +106,7 @@ jobs:
   publishGH:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'push' }}
-    needs: [ windows, unix ]
+    needs: [ windows-x64, windows-x86, linux-x64, macos-x64 ]
     steps:
     - uses: actions/download-artifact@v2
       with:
