@@ -1307,6 +1307,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "schannel", "schannel", "{F5
 		generation\um\schannel\generate.rsp = generation\um\schannel\generate.rsp
 		generation\um\schannel\header.txt = generation\um\schannel\header.txt
 		generation\um\schannel\um-schannel.h = generation\um\schannel\um-schannel.h
+  EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "inkrenderer", "inkrenderer", "{2A8EEC11-DBF5-4DB8-B6E8-C2F39D5F9A8D}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\inkrenderer\generate.rsp = generation\um\inkrenderer\generate.rsp
+		generation\um\inkrenderer\header.txt = generation\um\inkrenderer\header.txt
+		generation\um\inkrenderer\um-inkrenderer.h = generation\um\inkrenderer\um-inkrenderer.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InkPresenterDesktop", "InkPresenterDesktop", "{AA6790EB-6512-4F6B-AAC8-45BBCE856B30}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\InkPresenterDesktop\generate.rsp = generation\um\InkPresenterDesktop\generate.rsp
+		generation\um\InkPresenterDesktop\header.txt = generation\um\InkPresenterDesktop\header.txt
+		generation\um\InkPresenterDesktop\um-InkPresenterDesktop.h = generation\um\InkPresenterDesktop\um-InkPresenterDesktop.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{3BDDFFAD-B31F-4930-B557-E8486D23C67A}"
@@ -1526,6 +1540,8 @@ Global
 		{CA909B8B-167B-43AC-AD0A-DDA43CB73F36} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{FB6EFA8D-C412-4ECA-A424-2D0E44399A11} = {3BDDFFAD-B31F-4930-B557-E8486D23C67A}
 		{F5516159-8310-4397-B511-8750488D0261} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{2A8EEC11-DBF5-4DB8-B6E8-C2F39D5F9A8D} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{AA6790EB-6512-4F6B-AAC8-45BBCE856B30} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
