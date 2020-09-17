@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IInkHostWorkItem*, Guid*, void**, int>)(lpVtbl[0]))((IInkHostWorkItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IInkHostWorkItem*, Guid*, void**, int>)(lpVtbl[0]))((IInkHostWorkItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IInkHostWorkItem*, uint>)(lpVtbl[1]))((IInkHostWorkItem*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IInkHostWorkItem*, uint>)(lpVtbl[1]))((IInkHostWorkItem*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IInkHostWorkItem*, uint>)(lpVtbl[2]))((IInkHostWorkItem*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IInkHostWorkItem*, uint>)(lpVtbl[2]))((IInkHostWorkItem*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Invoke()
         {
-            return ((delegate* stdcall<IInkHostWorkItem*, int>)(lpVtbl[3]))((IInkHostWorkItem*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IInkHostWorkItem*, int>)(lpVtbl[3]))((IInkHostWorkItem*)Unsafe.AsPointer(ref this));
         }
     }
 }

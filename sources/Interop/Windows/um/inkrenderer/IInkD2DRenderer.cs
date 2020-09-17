@@ -19,28 +19,28 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IInkD2DRenderer*, Guid*, void**, int>)(lpVtbl[0]))((IInkD2DRenderer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IInkD2DRenderer*, Guid*, void**, int>)(lpVtbl[0]))((IInkD2DRenderer*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IInkD2DRenderer*, uint>)(lpVtbl[1]))((IInkD2DRenderer*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IInkD2DRenderer*, uint>)(lpVtbl[1]))((IInkD2DRenderer*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IInkD2DRenderer*, uint>)(lpVtbl[2]))((IInkD2DRenderer*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IInkD2DRenderer*, uint>)(lpVtbl[2]))((IInkD2DRenderer*)Unsafe.AsPointer(ref this));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Draw([NativeTypeName("IUnknown *")] IUnknown* pD2D1DeviceContext, [NativeTypeName("IUnknown *")] IUnknown* pInkStrokeIterable, [NativeTypeName("BOOL")] int fHighContrast)
         {
-            return ((delegate* stdcall<IInkD2DRenderer*, IUnknown*, IUnknown*, int, int>)(lpVtbl[3]))((IInkD2DRenderer*)Unsafe.AsPointer(ref this), pD2D1DeviceContext, pInkStrokeIterable, fHighContrast);
+            return ((delegate* unmanaged<IInkD2DRenderer*, IUnknown*, IUnknown*, int, int>)(lpVtbl[3]))((IInkD2DRenderer*)Unsafe.AsPointer(ref this), pD2D1DeviceContext, pInkStrokeIterable, fHighContrast);
         }
     }
 }

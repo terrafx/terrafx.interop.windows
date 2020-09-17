@@ -17,7 +17,7 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void GuidOfTest()
         {
-            Assert.That(typeof(InkDesktopHost).GUID, Is.EqualTo(IID_InkDesktopHost));
+            Assert.That(typeof(InkDesktopHost).GUID, Is.EqualTo(CLSID_InkDesktopHost));
         }
 
         /// <summary>Validates that the <see cref="InkDesktopHost" /> struct is blittable.</summary>
