@@ -1470,6 +1470,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dragdropinterop", "dragdrop
 		generation\um\dragdropinterop\um-dragdropinterop.h = generation\um\dragdropinterop\um-dragdropinterop.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "appserviceinterop", "appserviceinterop", "{CD7FBCD8-0D9D-4452-9059-A882209D9903}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\appserviceinterop\generate.rsp = generation\um\appserviceinterop\generate.rsp
+		generation\um\appserviceinterop\header.txt = generation\um\appserviceinterop\header.txt
+		generation\um\appserviceinterop\um-appserviceinterop.h = generation\um\appserviceinterop\um-appserviceinterop.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1702,6 +1709,7 @@ Global
 		{5E6BF298-F552-4844-8D97-7542D12D5602} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{B269955C-B08B-41F1-B299-292FC63820D2} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{8A99FF33-1ACF-4304-85E7-D4994DDB70EF} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{CD7FBCD8-0D9D-4452-9059-A882209D9903} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
