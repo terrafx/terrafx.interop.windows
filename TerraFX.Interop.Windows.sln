@@ -1442,6 +1442,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserConsentVerifierInterop"
 		generation\um\UserConsentVerifierInterop\um-UserConsentVerifierInterop.h = generation\um\UserConsentVerifierInterop\um-UserConsentVerifierInterop.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SpatialInteractionManagerInterop", "SpatialInteractionManagerInterop", "{83265220-D2EA-41B1-9070-BE8B0FAC057B}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\SpatialInteractionManagerInterop\generate.rsp = generation\um\SpatialInteractionManagerInterop\generate.rsp
+		generation\um\SpatialInteractionManagerInterop\header.txt = generation\um\SpatialInteractionManagerInterop\header.txt
+		generation\um\SpatialInteractionManagerInterop\um-SpatialInteractionManagerInterop.h = generation\um\SpatialInteractionManagerInterop\um-SpatialInteractionManagerInterop.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1670,6 +1677,7 @@ Global
 		{38537C10-5F03-48A7-8954-46D60E02F7A6} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{351FAB7E-63E2-40CC-90C5-4FA71F8D4515} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{3A3689A4-6139-480D-B856-91C0FFF58DB6} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{83265220-D2EA-41B1-9070-BE8B0FAC057B} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
