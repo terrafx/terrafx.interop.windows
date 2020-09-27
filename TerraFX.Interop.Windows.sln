@@ -1393,6 +1393,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RemoteSystemsInterop", "Rem
 		generation\um\RemoteSystemsInterop\um-RemoteSystemsInterop.h = generation\um\RemoteSystemsInterop\um-RemoteSystemsInterop.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebAuthenticationCoreManagerInterop", "WebAuthenticationCoreManagerInterop", "{1239793D-E8BE-4350-9392-BB88D78E0D6E}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\WebAuthenticationCoreManagerInterop\generate.rsp = generation\um\WebAuthenticationCoreManagerInterop\generate.rsp
+		generation\um\WebAuthenticationCoreManagerInterop\header.txt = generation\um\WebAuthenticationCoreManagerInterop\header.txt
+		generation\um\WebAuthenticationCoreManagerInterop\um-WebAuthenticationCoreManagerInterop.h = generation\um\WebAuthenticationCoreManagerInterop\um-WebAuthenticationCoreManagerInterop.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1614,6 +1621,7 @@ Global
 		{163B6E05-B1B1-468C-AACA-761B9C75A833} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{0E059E07-8732-495D-8503-161ECCB6E344} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{AE92327C-303A-4D01-9887-964D56B188EE} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{1239793D-E8BE-4350-9392-BB88D78E0D6E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
