@@ -1484,6 +1484,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "useractivityinterop", "user
 		generation\um\useractivityinterop\um-useractivityinterop.h = generation\um\useractivityinterop\um-useractivityinterop.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "accountssettingspaneinterop", "accountssettingspaneinterop", "{8132BF5E-738F-458B-9778-23C3737547C6}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\accountssettingspaneinterop\generate.rsp = generation\um\accountssettingspaneinterop\generate.rsp
+		generation\um\accountssettingspaneinterop\header.txt = generation\um\accountssettingspaneinterop\header.txt
+		generation\um\accountssettingspaneinterop\um-accountssettingspaneinterop.h = generation\um\accountssettingspaneinterop\um-accountssettingspaneinterop.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1718,6 +1725,7 @@ Global
 		{8A99FF33-1ACF-4304-85E7-D4994DDB70EF} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{CD7FBCD8-0D9D-4452-9059-A882209D9903} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{95CB59A8-9E9C-483B-B5A7-0A19EE6B8734} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{8132BF5E-738F-458B-9778-23C3737547C6} = {D9638FEE-50A4-44FF-B1F6-72E59548490B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
