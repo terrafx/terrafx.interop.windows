@@ -1400,6 +1400,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebAuthenticationCoreManage
 		generation\um\WebAuthenticationCoreManagerInterop\um-WebAuthenticationCoreManagerInterop.h = generation\um\WebAuthenticationCoreManagerInterop\um-WebAuthenticationCoreManagerInterop.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows.Graphics.Capture.Interop", "Windows.Graphics.Capture.Interop", "{B7C02BDE-CBF4-4636-AD6E-698868684179}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\Windows.Graphics.Capture.Interop\generate.rsp = generation\um\Windows.Graphics.Capture.Interop\generate.rsp
+		generation\um\Windows.Graphics.Capture.Interop\header.txt = generation\um\Windows.Graphics.Capture.Interop\header.txt
+		generation\um\Windows.Graphics.Capture.Interop\um-Windows.Graphics.Capture.Interop.h = generation\um\Windows.Graphics.Capture.Interop\um-Windows.Graphics.Capture.Interop.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1622,6 +1629,7 @@ Global
 		{0E059E07-8732-495D-8503-161ECCB6E344} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{AE92327C-303A-4D01-9887-964D56B188EE} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{1239793D-E8BE-4350-9392-BB88D78E0D6E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{B7C02BDE-CBF4-4636-AD6E-698868684179} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
