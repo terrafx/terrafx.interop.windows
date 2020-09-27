@@ -1358,6 +1358,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "uuids", "uuids", "{FAC93A2C
 		generation\shared\uuids\shared-uuids.h = generation\shared\uuids\shared-uuids.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "inputpaneinterop", "inputpaneinterop", "{503E9930-C718-4453-86BA-D56D4D4A3C5A}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\inputpaneinterop\generate.rsp = generation\um\inputpaneinterop\generate.rsp
+		generation\um\inputpaneinterop\header.txt = generation\um\inputpaneinterop\header.txt
+		generation\um\inputpaneinterop\um-inputpaneinterop.h = generation\um\inputpaneinterop\um-inputpaneinterop.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1574,6 +1581,7 @@ Global
 		{4AE3D7A2-B327-4C8F-B417-93F695C595B7} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{76F42C09-F092-4E69-AF05-76C93E92DF51} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{FAC93A2C-2D6B-4055-8C7E-955E581288C0} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{503E9930-C718-4453-86BA-D56D4D4A3C5A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
