@@ -1421,6 +1421,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UIViewSettingsInterop", "UI
 		generation\um\UIViewSettingsInterop\um-UIViewSettingsInterop.h = generation\um\UIViewSettingsInterop\um-UIViewSettingsInterop.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HolographicSpaceInterop", "HolographicSpaceInterop", "{38537C10-5F03-48A7-8954-46D60E02F7A6}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\HolographicSpaceInterop\generate.rsp = generation\um\HolographicSpaceInterop\generate.rsp
+		generation\um\HolographicSpaceInterop\header.txt = generation\um\HolographicSpaceInterop\header.txt
+		generation\um\HolographicSpaceInterop\um-HolographicSpaceInterop.h = generation\um\HolographicSpaceInterop\um-HolographicSpaceInterop.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1646,6 +1653,7 @@ Global
 		{B7C02BDE-CBF4-4636-AD6E-698868684179} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{EB34A9E0-960B-4DE9-8972-176A8E68EDB4} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{BE044B47-35EF-4C44-823A-0ECDA4E13F21} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{38537C10-5F03-48A7-8954-46D60E02F7A6} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
