@@ -3,8 +3,11 @@
 // Ported from um/MLOperatorAuthor.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop
 {
+    [Flags]
     [NativeTypeName("uint32_t")]
     public enum MLOperatorKernelOptions : uint
     {
