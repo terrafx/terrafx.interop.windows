@@ -1358,6 +1358,146 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "uuids", "uuids", "{FAC93A2C
 		generation\shared\uuids\shared-uuids.h = generation\shared\uuids\shared-uuids.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "inputpaneinterop", "inputpaneinterop", "{503E9930-C718-4453-86BA-D56D4D4A3C5A}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\inputpaneinterop\generate.rsp = generation\um\inputpaneinterop\generate.rsp
+		generation\um\inputpaneinterop\header.txt = generation\um\inputpaneinterop\header.txt
+		generation\um\inputpaneinterop\um-inputpaneinterop.h = generation\um\inputpaneinterop\um-inputpaneinterop.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PlayToManagerInterop", "PlayToManagerInterop", "{38DC4FDF-3CD5-4CFC-A503-D6B583589C1B}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\PlayToManagerInterop\generate.rsp = generation\um\PlayToManagerInterop\generate.rsp
+		generation\um\PlayToManagerInterop\header.txt = generation\um\PlayToManagerInterop\header.txt
+		generation\um\PlayToManagerInterop\um-PlayToManagerInterop.h = generation\um\PlayToManagerInterop\um-PlayToManagerInterop.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PrintManagerInterop", "PrintManagerInterop", "{163B6E05-B1B1-468C-AACA-761B9C75A833}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\PrintManagerInterop\generate.rsp = generation\um\PrintManagerInterop\generate.rsp
+		generation\um\PrintManagerInterop\header.txt = generation\um\PrintManagerInterop\header.txt
+		generation\um\PrintManagerInterop\um-PrintManagerInterop.h = generation\um\PrintManagerInterop\um-PrintManagerInterop.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "remotesystemadditionalinfo", "remotesystemadditionalinfo", "{0E059E07-8732-495D-8503-161ECCB6E344}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\remotesystemadditionalinfo\generate.rsp = generation\um\remotesystemadditionalinfo\generate.rsp
+		generation\um\remotesystemadditionalinfo\header.txt = generation\um\remotesystemadditionalinfo\header.txt
+		generation\um\remotesystemadditionalinfo\um-remotesystemadditionalinfo.h = generation\um\remotesystemadditionalinfo\um-remotesystemadditionalinfo.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RemoteSystemsInterop", "RemoteSystemsInterop", "{AE92327C-303A-4D01-9887-964D56B188EE}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\RemoteSystemsInterop\generate.rsp = generation\um\RemoteSystemsInterop\generate.rsp
+		generation\um\RemoteSystemsInterop\header.txt = generation\um\RemoteSystemsInterop\header.txt
+		generation\um\RemoteSystemsInterop\um-RemoteSystemsInterop.h = generation\um\RemoteSystemsInterop\um-RemoteSystemsInterop.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebAuthenticationCoreManagerInterop", "WebAuthenticationCoreManagerInterop", "{1239793D-E8BE-4350-9392-BB88D78E0D6E}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\WebAuthenticationCoreManagerInterop\generate.rsp = generation\um\WebAuthenticationCoreManagerInterop\generate.rsp
+		generation\um\WebAuthenticationCoreManagerInterop\header.txt = generation\um\WebAuthenticationCoreManagerInterop\header.txt
+		generation\um\WebAuthenticationCoreManagerInterop\um-WebAuthenticationCoreManagerInterop.h = generation\um\WebAuthenticationCoreManagerInterop\um-WebAuthenticationCoreManagerInterop.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows.Graphics.Capture.Interop", "Windows.Graphics.Capture.Interop", "{B7C02BDE-CBF4-4636-AD6E-698868684179}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\Windows.Graphics.Capture.Interop\generate.rsp = generation\um\Windows.Graphics.Capture.Interop\generate.rsp
+		generation\um\Windows.Graphics.Capture.Interop\header.txt = generation\um\Windows.Graphics.Capture.Interop\header.txt
+		generation\um\Windows.Graphics.Capture.Interop\um-Windows.Graphics.Capture.Interop.h = generation\um\Windows.Graphics.Capture.Interop\um-Windows.Graphics.Capture.Interop.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Print3DManagerInterop", "Print3DManagerInterop", "{EB34A9E0-960B-4DE9-8972-176A8E68EDB4}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\Print3DManagerInterop\generate.rsp = generation\um\Print3DManagerInterop\generate.rsp
+		generation\um\Print3DManagerInterop\header.txt = generation\um\Print3DManagerInterop\header.txt
+		generation\um\Print3DManagerInterop\um-Print3DManagerInterop.h = generation\um\Print3DManagerInterop\um-Print3DManagerInterop.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UIViewSettingsInterop", "UIViewSettingsInterop", "{BE044B47-35EF-4C44-823A-0ECDA4E13F21}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\UIViewSettingsInterop\generate.rsp = generation\um\UIViewSettingsInterop\generate.rsp
+		generation\um\UIViewSettingsInterop\header.txt = generation\um\UIViewSettingsInterop\header.txt
+		generation\um\UIViewSettingsInterop\um-UIViewSettingsInterop.h = generation\um\UIViewSettingsInterop\um-UIViewSettingsInterop.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HolographicSpaceInterop", "HolographicSpaceInterop", "{38537C10-5F03-48A7-8954-46D60E02F7A6}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\HolographicSpaceInterop\generate.rsp = generation\um\HolographicSpaceInterop\generate.rsp
+		generation\um\HolographicSpaceInterop\header.txt = generation\um\HolographicSpaceInterop\header.txt
+		generation\um\HolographicSpaceInterop\um-HolographicSpaceInterop.h = generation\um\HolographicSpaceInterop\um-HolographicSpaceInterop.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RadialControllerInterop", "RadialControllerInterop", "{351FAB7E-63E2-40CC-90C5-4FA71F8D4515}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\RadialControllerInterop\generate.rsp = generation\um\RadialControllerInterop\generate.rsp
+		generation\um\RadialControllerInterop\header.txt = generation\um\RadialControllerInterop\header.txt
+		generation\um\RadialControllerInterop\um-RadialControllerInterop.h = generation\um\RadialControllerInterop\um-RadialControllerInterop.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserConsentVerifierInterop", "UserConsentVerifierInterop", "{3A3689A4-6139-480D-B856-91C0FFF58DB6}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\UserConsentVerifierInterop\generate.rsp = generation\um\UserConsentVerifierInterop\generate.rsp
+		generation\um\UserConsentVerifierInterop\header.txt = generation\um\UserConsentVerifierInterop\header.txt
+		generation\um\UserConsentVerifierInterop\um-UserConsentVerifierInterop.h = generation\um\UserConsentVerifierInterop\um-UserConsentVerifierInterop.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SpatialInteractionManagerInterop", "SpatialInteractionManagerInterop", "{83265220-D2EA-41B1-9070-BE8B0FAC057B}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\SpatialInteractionManagerInterop\generate.rsp = generation\um\SpatialInteractionManagerInterop\generate.rsp
+		generation\um\SpatialInteractionManagerInterop\header.txt = generation\um\SpatialInteractionManagerInterop\header.txt
+		generation\um\SpatialInteractionManagerInterop\um-SpatialInteractionManagerInterop.h = generation\um\SpatialInteractionManagerInterop\um-SpatialInteractionManagerInterop.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SystemMediaTransportControlsInterop", "SystemMediaTransportControlsInterop", "{5E6BF298-F552-4844-8D97-7542D12D5602}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\SystemMediaTransportControlsInterop\generate.rsp = generation\um\SystemMediaTransportControlsInterop\generate.rsp
+		generation\um\SystemMediaTransportControlsInterop\header.txt = generation\um\SystemMediaTransportControlsInterop\header.txt
+		generation\um\SystemMediaTransportControlsInterop\um-SystemMediaTransportControlsInterop.h = generation\um\SystemMediaTransportControlsInterop\um-SystemMediaTransportControlsInterop.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "efswrtinterop", "efswrtinterop", "{B269955C-B08B-41F1-B299-292FC63820D2}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\efswrtinterop\generate.rsp = generation\um\efswrtinterop\generate.rsp
+		generation\um\efswrtinterop\header.txt = generation\um\efswrtinterop\header.txt
+		generation\um\efswrtinterop\um-efswrtinterop.h = generation\um\efswrtinterop\um-efswrtinterop.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dragdropinterop", "dragdropinterop", "{8A99FF33-1ACF-4304-85E7-D4994DDB70EF}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\dragdropinterop\generate.rsp = generation\um\dragdropinterop\generate.rsp
+		generation\um\dragdropinterop\header.txt = generation\um\dragdropinterop\header.txt
+		generation\um\dragdropinterop\um-dragdropinterop.h = generation\um\dragdropinterop\um-dragdropinterop.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "appserviceinterop", "appserviceinterop", "{CD7FBCD8-0D9D-4452-9059-A882209D9903}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\appserviceinterop\generate.rsp = generation\um\appserviceinterop\generate.rsp
+		generation\um\appserviceinterop\header.txt = generation\um\appserviceinterop\header.txt
+		generation\um\appserviceinterop\um-appserviceinterop.h = generation\um\appserviceinterop\um-appserviceinterop.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "useractivityinterop", "useractivityinterop", "{95CB59A8-9E9C-483B-B5A7-0A19EE6B8734}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\useractivityinterop\generate.rsp = generation\um\useractivityinterop\generate.rsp
+		generation\um\useractivityinterop\header.txt = generation\um\useractivityinterop\header.txt
+		generation\um\useractivityinterop\um-useractivityinterop.h = generation\um\useractivityinterop\um-useractivityinterop.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "accountssettingspaneinterop", "accountssettingspaneinterop", "{8132BF5E-738F-458B-9778-23C3737547C6}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\accountssettingspaneinterop\generate.rsp = generation\um\accountssettingspaneinterop\generate.rsp
+		generation\um\accountssettingspaneinterop\header.txt = generation\um\accountssettingspaneinterop\header.txt
+		generation\um\accountssettingspaneinterop\um-accountssettingspaneinterop.h = generation\um\accountssettingspaneinterop\um-accountssettingspaneinterop.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.ui.xaml.hosting.desktopwindowxamlsource", "windows.ui.xaml.hosting.desktopwindowxamlsource", "{AD0959E5-765F-4670-BD34-3D03C72813C7}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\windows.ui.xaml.hosting.desktopwindowxamlsource\generate.rsp = generation\um\windows.ui.xaml.hosting.desktopwindowxamlsource\generate.rsp
+		generation\um\windows.ui.xaml.hosting.desktopwindowxamlsource\header.txt = generation\um\windows.ui.xaml.hosting.desktopwindowxamlsource\header.txt
+		generation\um\windows.ui.xaml.hosting.desktopwindowxamlsource\um-windows.ui.xaml.hosting.desktopwindowxamlsource.h = generation\um\windows.ui.xaml.hosting.desktopwindowxamlsource\um-windows.ui.xaml.hosting.desktopwindowxamlsource.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1574,6 +1714,26 @@ Global
 		{4AE3D7A2-B327-4C8F-B417-93F695C595B7} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{76F42C09-F092-4E69-AF05-76C93E92DF51} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{FAC93A2C-2D6B-4055-8C7E-955E581288C0} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{503E9930-C718-4453-86BA-D56D4D4A3C5A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{38DC4FDF-3CD5-4CFC-A503-D6B583589C1B} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{163B6E05-B1B1-468C-AACA-761B9C75A833} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{0E059E07-8732-495D-8503-161ECCB6E344} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{AE92327C-303A-4D01-9887-964D56B188EE} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{1239793D-E8BE-4350-9392-BB88D78E0D6E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{B7C02BDE-CBF4-4636-AD6E-698868684179} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{EB34A9E0-960B-4DE9-8972-176A8E68EDB4} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{BE044B47-35EF-4C44-823A-0ECDA4E13F21} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{38537C10-5F03-48A7-8954-46D60E02F7A6} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{351FAB7E-63E2-40CC-90C5-4FA71F8D4515} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{3A3689A4-6139-480D-B856-91C0FFF58DB6} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{83265220-D2EA-41B1-9070-BE8B0FAC057B} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{5E6BF298-F552-4844-8D97-7542D12D5602} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{B269955C-B08B-41F1-B299-292FC63820D2} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{8A99FF33-1ACF-4304-85E7-D4994DDB70EF} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{CD7FBCD8-0D9D-4452-9059-A882209D9903} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{95CB59A8-9E9C-483B-B5A7-0A19EE6B8734} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{8132BF5E-738F-458B-9778-23C3737547C6} = {D9638FEE-50A4-44FF-B1F6-72E59548490B}
+		{AD0959E5-765F-4670-BD34-3D03C72813C7} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
