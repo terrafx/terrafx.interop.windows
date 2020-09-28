@@ -1505,6 +1505,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MLOperatorAuthor", "MLOpera
 		generation\um\MLOperatorAuthor\um-MLOperatorAuthor.h = generation\um\MLOperatorAuthor\um-MLOperatorAuthor.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.ai.machinelearning.native", "windows.ai.machinelearning.native", "{CBCCB0D7-2657-42CB-8819-0AD46B1C6346}"
+	ProjectSection(SolutionItems) = preProject
+		generation\um\windows.ai.machinelearning.native\generate.rsp = generation\um\windows.ai.machinelearning.native\generate.rsp
+		generation\um\windows.ai.machinelearning.native\header.txt = generation\um\windows.ai.machinelearning.native\header.txt
+		generation\um\windows.ai.machinelearning.native\um-windows.ai.machinelearning.native.h = generation\um\windows.ai.machinelearning.native\um-windows.ai.machinelearning.native.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1742,6 +1749,7 @@ Global
 		{8132BF5E-738F-458B-9778-23C3737547C6} = {D9638FEE-50A4-44FF-B1F6-72E59548490B}
 		{AD0959E5-765F-4670-BD34-3D03C72813C7} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{E2054468-470F-46E2-AEF9-4FC6A41228EA} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{CBCCB0D7-2657-42CB-8819-0AD46B1C6346} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
