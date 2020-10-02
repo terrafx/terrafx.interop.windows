@@ -18,25 +18,25 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<ID3D12DeviceDownlevel*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12DeviceDownlevel*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<ID3D12DeviceDownlevel*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12DeviceDownlevel*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<ID3D12DeviceDownlevel*, uint>)(lpVtbl[1]))((ID3D12DeviceDownlevel*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ID3D12DeviceDownlevel*, uint>)(lpVtbl[1]))((ID3D12DeviceDownlevel*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<ID3D12DeviceDownlevel*, uint>)(lpVtbl[2]))((ID3D12DeviceDownlevel*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ID3D12DeviceDownlevel*, uint>)(lpVtbl[2]))((ID3D12DeviceDownlevel*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int QueryVideoMemoryInfo([NativeTypeName("UINT")] uint NodeIndex, DXGI_MEMORY_SEGMENT_GROUP MemorySegmentGroup, [NativeTypeName("DXGI_QUERY_VIDEO_MEMORY_INFO *")] DXGI_QUERY_VIDEO_MEMORY_INFO* pVideoMemoryInfo)
         {
-            return ((delegate* stdcall<ID3D12DeviceDownlevel*, uint, DXGI_MEMORY_SEGMENT_GROUP, DXGI_QUERY_VIDEO_MEMORY_INFO*, int>)(lpVtbl[3]))((ID3D12DeviceDownlevel*)Unsafe.AsPointer(ref this), NodeIndex, MemorySegmentGroup, pVideoMemoryInfo);
+            return ((delegate* unmanaged<ID3D12DeviceDownlevel*, uint, DXGI_MEMORY_SEGMENT_GROUP, DXGI_QUERY_VIDEO_MEMORY_INFO*, int>)(lpVtbl[3]))((ID3D12DeviceDownlevel*)Unsafe.AsPointer(ref this), NodeIndex, MemorySegmentGroup, pVideoMemoryInfo);
         }
     }
 }

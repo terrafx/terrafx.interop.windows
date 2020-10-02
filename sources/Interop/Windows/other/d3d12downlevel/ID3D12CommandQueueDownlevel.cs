@@ -18,25 +18,25 @@ namespace TerraFX.Interop
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<ID3D12CommandQueueDownlevel*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12CommandQueueDownlevel*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<ID3D12CommandQueueDownlevel*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12CommandQueueDownlevel*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<ID3D12CommandQueueDownlevel*, uint>)(lpVtbl[1]))((ID3D12CommandQueueDownlevel*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ID3D12CommandQueueDownlevel*, uint>)(lpVtbl[1]))((ID3D12CommandQueueDownlevel*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<ID3D12CommandQueueDownlevel*, uint>)(lpVtbl[2]))((ID3D12CommandQueueDownlevel*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ID3D12CommandQueueDownlevel*, uint>)(lpVtbl[2]))((ID3D12CommandQueueDownlevel*)Unsafe.AsPointer(ref this));
         }
 
         [return: NativeTypeName("HRESULT")]
         public int Present([NativeTypeName("ID3D12GraphicsCommandList *")] ID3D12GraphicsCommandList* pOpenCommandList, [NativeTypeName("ID3D12Resource *")] ID3D12Resource* pSourceTex2D, [NativeTypeName("HWND")] IntPtr hWindow, D3D12_DOWNLEVEL_PRESENT_FLAGS Flags)
         {
-            return ((delegate* stdcall<ID3D12CommandQueueDownlevel*, ID3D12GraphicsCommandList*, ID3D12Resource*, IntPtr, D3D12_DOWNLEVEL_PRESENT_FLAGS, int>)(lpVtbl[3]))((ID3D12CommandQueueDownlevel*)Unsafe.AsPointer(ref this), pOpenCommandList, pSourceTex2D, hWindow, Flags);
+            return ((delegate* unmanaged<ID3D12CommandQueueDownlevel*, ID3D12GraphicsCommandList*, ID3D12Resource*, IntPtr, D3D12_DOWNLEVEL_PRESENT_FLAGS, int>)(lpVtbl[3]))((ID3D12CommandQueueDownlevel*)Unsafe.AsPointer(ref this), pOpenCommandList, pSourceTex2D, hWindow, Flags);
         }
     }
 }
