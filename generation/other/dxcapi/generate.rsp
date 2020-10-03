@@ -1,5 +1,5 @@
-@../../../settings.rsp
-@../../../remap.rsp
+@../../settings.rsp
+@../../remap.rsp
 --exclude
 CLSID_DxcAssembler
 CLSID_DxcCompiler
@@ -45,9 +45,9 @@ IDxcVersionInfo2
 --file
 other-dxcapi.h
 --output
-../../../../sources/Interop/Windows/other/dxcapi
+../../../sources/Interop/Windows/other/dxcapi
 --test-output
-../../../../tests/Interop/Windows/other/dxcapi
+../../../tests/Interop/Windows/other/dxcapi
 --traverse
 dxcapi.h
 --with-librarypath

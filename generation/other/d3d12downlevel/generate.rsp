@@ -1,0 +1,14 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+other-d3d12downlevel.h
+--output
+../../../sources/Interop/Windows/other/d3d12downlevel
+--test-output
+../../../tests/Interop/Windows/other/d3d12downlevel
+--traverse
+d3d12downlevel.h
+--with-librarypath
+*=d3d12
+--with-attribute
+D3D12_DOWNLEVEL_PRESENT_FLAGS=Flags
