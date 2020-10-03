@@ -1,0 +1,22 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+WS_STRING_VALUE
+WS_XML_STRING_DICTIONARY_VALUE
+WS_XML_STRING_VALUE
+WsCountOf
+WsOffsetOf
+--file
+um-WebServices.h
+--output
+../../../sources/Interop/Windows/um/WebServices
+--test-output
+../../../tests/Interop/Windows/um/WebServices
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/WebServices.h
+--with-attribute
+WS_CHANNEL_TYPE=Flags
+WS_SECURE_PROTOCOL=Flags
+WS_TRANSFER_MODE=Flags
+--with-librarypath
+*=WebServices

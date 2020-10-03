@@ -15,46 +15,53 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMFSensorProcessActivity*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMFSensorProcessActivity*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMFSensorProcessActivity*, uint>)(lpVtbl[1]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFSensorProcessActivity*, uint>)(lpVtbl[1]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMFSensorProcessActivity*, uint>)(lpVtbl[2]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFSensorProcessActivity*, uint>)(lpVtbl[2]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetProcessId([NativeTypeName("ULONG *")] uint* pPID)
         {
-            return ((delegate* stdcall<IMFSensorProcessActivity*, uint*, int>)(lpVtbl[3]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this), pPID);
+            return ((delegate* unmanaged<IMFSensorProcessActivity*, uint*, int>)(lpVtbl[3]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this), pPID);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetStreamingState([NativeTypeName("BOOL *")] int* pfStreaming)
         {
-            return ((delegate* stdcall<IMFSensorProcessActivity*, int*, int>)(lpVtbl[4]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this), pfStreaming);
+            return ((delegate* unmanaged<IMFSensorProcessActivity*, int*, int>)(lpVtbl[4]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this), pfStreaming);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetStreamingMode([NativeTypeName("MFSensorDeviceMode *")] MFSensorDeviceMode* pMode)
         {
-            return ((delegate* stdcall<IMFSensorProcessActivity*, MFSensorDeviceMode*, int>)(lpVtbl[5]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this), pMode);
+            return ((delegate* unmanaged<IMFSensorProcessActivity*, MFSensorDeviceMode*, int>)(lpVtbl[5]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this), pMode);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetReportTime([NativeTypeName("FILETIME *")] FILETIME* pft)
         {
-            return ((delegate* stdcall<IMFSensorProcessActivity*, FILETIME*, int>)(lpVtbl[6]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this), pft);
+            return ((delegate* unmanaged<IMFSensorProcessActivity*, FILETIME*, int>)(lpVtbl[6]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this), pft);
         }
     }
 }

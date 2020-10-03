@@ -89,15 +89,15 @@ namespace TerraFX.Interop
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumDesktopsA([NativeTypeName("HWINSTA")] IntPtr hwinsta, [NativeTypeName("DESKTOPENUMPROCA")] delegate* stdcall<sbyte*, nint, int> lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumDesktopsA([NativeTypeName("HWINSTA")] IntPtr hwinsta, [NativeTypeName("DESKTOPENUMPROCA")] delegate* unmanaged<sbyte*, nint, int> lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumDesktopsW([NativeTypeName("HWINSTA")] IntPtr hwinsta, [NativeTypeName("DESKTOPENUMPROCW")] delegate* stdcall<ushort*, nint, int> lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumDesktopsW([NativeTypeName("HWINSTA")] IntPtr hwinsta, [NativeTypeName("DESKTOPENUMPROCW")] delegate* unmanaged<ushort*, nint, int> lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumDesktopWindows([NativeTypeName("HDESK")] IntPtr hDesktop, [NativeTypeName("WNDENUMPROC")] delegate* stdcall<IntPtr, nint, int> lpfn, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumDesktopWindows([NativeTypeName("HDESK")] IntPtr hDesktop, [NativeTypeName("WNDENUMPROC")] delegate* unmanaged<IntPtr, nint, int> lpfn, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
@@ -133,11 +133,11 @@ namespace TerraFX.Interop
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumWindowStationsA([NativeTypeName("WINSTAENUMPROCA")] delegate* stdcall<sbyte*, nint, int> lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumWindowStationsA([NativeTypeName("WINSTAENUMPROCA")] delegate* unmanaged<sbyte*, nint, int> lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumWindowStationsW([NativeTypeName("WINSTAENUMPROCW")] delegate* stdcall<ushort*, nint, int> lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumWindowStationsW([NativeTypeName("WINSTAENUMPROCW")] delegate* unmanaged<ushort*, nint, int> lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
@@ -308,11 +308,11 @@ namespace TerraFX.Interop
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SendMessageCallbackA([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("SENDASYNCPROC")] delegate* stdcall<IntPtr, uint, nuint, nint, void> lpResultCallBack, [NativeTypeName("ULONG_PTR")] nuint dwData);
+        public static extern int SendMessageCallbackA([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("SENDASYNCPROC")] delegate* unmanaged<IntPtr, uint, nuint, nint, void> lpResultCallBack, [NativeTypeName("ULONG_PTR")] nuint dwData);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SendMessageCallbackW([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("SENDASYNCPROC")] delegate* stdcall<IntPtr, uint, nuint, nint, void> lpResultCallBack, [NativeTypeName("ULONG_PTR")] nuint dwData);
+        public static extern int SendMessageCallbackW([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("SENDASYNCPROC")] delegate* unmanaged<IntPtr, uint, nuint, nint, void> lpResultCallBack, [NativeTypeName("ULONG_PTR")] nuint dwData);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("long")]
@@ -403,11 +403,11 @@ namespace TerraFX.Interop
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("LRESULT")]
-        public static extern nint CallWindowProcA([NativeTypeName("WNDPROC")] delegate* stdcall<IntPtr, uint, nuint, nint, nint> lpPrevWndFunc, [NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern nint CallWindowProcA([NativeTypeName("WNDPROC")] delegate* unmanaged<IntPtr, uint, nuint, nint, nint> lpPrevWndFunc, [NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("LRESULT")]
-        public static extern nint CallWindowProcW([NativeTypeName("WNDPROC")] delegate* stdcall<IntPtr, uint, nuint, nint, nint> lpPrevWndFunc, [NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern nint CallWindowProcW([NativeTypeName("WNDPROC")] delegate* unmanaged<IntPtr, uint, nuint, nint, nint> lpPrevWndFunc, [NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT")] uint Msg, [NativeTypeName("WPARAM")] nuint wParam, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -599,35 +599,35 @@ namespace TerraFX.Interop
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("HWND")]
-        public static extern IntPtr CreateDialogParamA([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCSTR")] sbyte* lpTemplateName, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* stdcall<IntPtr, uint, nuint, nint, nint> lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
+        public static extern IntPtr CreateDialogParamA([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCSTR")] sbyte* lpTemplateName, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<IntPtr, uint, nuint, nint, nint> lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("HWND")]
-        public static extern IntPtr CreateDialogParamW([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCWSTR")] ushort* lpTemplateName, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* stdcall<IntPtr, uint, nuint, nint, nint> lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
+        public static extern IntPtr CreateDialogParamW([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCWSTR")] ushort* lpTemplateName, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<IntPtr, uint, nuint, nint, nint> lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("HWND")]
-        public static extern IntPtr CreateDialogIndirectParamA([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCDLGTEMPLATEA")] DLGTEMPLATE* lpTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* stdcall<IntPtr, uint, nuint, nint, nint> lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
+        public static extern IntPtr CreateDialogIndirectParamA([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCDLGTEMPLATEA")] DLGTEMPLATE* lpTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<IntPtr, uint, nuint, nint, nint> lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("HWND")]
-        public static extern IntPtr CreateDialogIndirectParamW([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* lpTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* stdcall<IntPtr, uint, nuint, nint, nint> lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
+        public static extern IntPtr CreateDialogIndirectParamW([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* lpTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<IntPtr, uint, nuint, nint, nint> lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("INT_PTR")]
-        public static extern nint DialogBoxParamA([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCSTR")] sbyte* lpTemplateName, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* stdcall<IntPtr, uint, nuint, nint, nint> lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
+        public static extern nint DialogBoxParamA([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCSTR")] sbyte* lpTemplateName, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<IntPtr, uint, nuint, nint, nint> lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("INT_PTR")]
-        public static extern nint DialogBoxParamW([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCWSTR")] ushort* lpTemplateName, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* stdcall<IntPtr, uint, nuint, nint, nint> lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
+        public static extern nint DialogBoxParamW([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCWSTR")] ushort* lpTemplateName, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<IntPtr, uint, nuint, nint, nint> lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("INT_PTR")]
-        public static extern nint DialogBoxIndirectParamA([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCDLGTEMPLATEA")] DLGTEMPLATE* hDialogTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* stdcall<IntPtr, uint, nuint, nint, nint> lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
+        public static extern nint DialogBoxIndirectParamA([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCDLGTEMPLATEA")] DLGTEMPLATE* hDialogTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<IntPtr, uint, nuint, nint, nint> lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("INT_PTR")]
-        public static extern nint DialogBoxIndirectParamW([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* hDialogTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* stdcall<IntPtr, uint, nuint, nint, nint> lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
+        public static extern nint DialogBoxIndirectParamW([NativeTypeName("HINSTANCE")] IntPtr hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* hDialogTemplate, [NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<IntPtr, uint, nuint, nint, nint> lpDialogFunc, [NativeTypeName("LPARAM")] nint dwInitParam);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
@@ -1215,11 +1215,11 @@ namespace TerraFX.Interop
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("UINT_PTR")]
-        public static extern nuint SetTimer([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT_PTR")] nuint nIDEvent, [NativeTypeName("UINT")] uint uElapse, [NativeTypeName("TIMERPROC")] delegate* stdcall<IntPtr, uint, nuint, uint, void> lpTimerFunc);
+        public static extern nuint SetTimer([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT_PTR")] nuint nIDEvent, [NativeTypeName("UINT")] uint uElapse, [NativeTypeName("TIMERPROC")] delegate* unmanaged<IntPtr, uint, nuint, uint, void> lpTimerFunc);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("UINT_PTR")]
-        public static extern nuint SetCoalescableTimer([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT_PTR")] nuint nIDEvent, [NativeTypeName("UINT")] uint uElapse, [NativeTypeName("TIMERPROC")] delegate* stdcall<IntPtr, uint, nuint, uint, void> lpTimerFunc, [NativeTypeName("ULONG")] uint uToleranceDelay);
+        public static extern nuint SetCoalescableTimer([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("UINT_PTR")] nuint nIDEvent, [NativeTypeName("UINT")] uint uElapse, [NativeTypeName("TIMERPROC")] delegate* unmanaged<IntPtr, uint, nuint, uint, void> lpTimerFunc, [NativeTypeName("ULONG")] uint uToleranceDelay);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
@@ -1489,19 +1489,19 @@ namespace TerraFX.Interop
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int GrayStringA([NativeTypeName("HDC")] IntPtr hDC, [NativeTypeName("HBRUSH")] IntPtr hBrush, [NativeTypeName("GRAYSTRINGPROC")] delegate* stdcall<IntPtr, nint, int, int> lpOutputFunc, [NativeTypeName("LPARAM")] nint lpData, int nCount, int X, int Y, int nWidth, int nHeight);
+        public static extern int GrayStringA([NativeTypeName("HDC")] IntPtr hDC, [NativeTypeName("HBRUSH")] IntPtr hBrush, [NativeTypeName("GRAYSTRINGPROC")] delegate* unmanaged<IntPtr, nint, int, int> lpOutputFunc, [NativeTypeName("LPARAM")] nint lpData, int nCount, int X, int Y, int nWidth, int nHeight);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int GrayStringW([NativeTypeName("HDC")] IntPtr hDC, [NativeTypeName("HBRUSH")] IntPtr hBrush, [NativeTypeName("GRAYSTRINGPROC")] delegate* stdcall<IntPtr, nint, int, int> lpOutputFunc, [NativeTypeName("LPARAM")] nint lpData, int nCount, int X, int Y, int nWidth, int nHeight);
+        public static extern int GrayStringW([NativeTypeName("HDC")] IntPtr hDC, [NativeTypeName("HBRUSH")] IntPtr hBrush, [NativeTypeName("GRAYSTRINGPROC")] delegate* unmanaged<IntPtr, nint, int, int> lpOutputFunc, [NativeTypeName("LPARAM")] nint lpData, int nCount, int X, int Y, int nWidth, int nHeight);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int DrawStateA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HBRUSH")] IntPtr hbrFore, [NativeTypeName("DRAWSTATEPROC")] delegate* stdcall<IntPtr, nint, nuint, int, int, int> qfnCallBack, [NativeTypeName("LPARAM")] nint lData, [NativeTypeName("WPARAM")] nuint wData, int x, int y, int cx, int cy, [NativeTypeName("UINT")] uint uFlags);
+        public static extern int DrawStateA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HBRUSH")] IntPtr hbrFore, [NativeTypeName("DRAWSTATEPROC")] delegate* unmanaged<IntPtr, nint, nuint, int, int, int> qfnCallBack, [NativeTypeName("LPARAM")] nint lData, [NativeTypeName("WPARAM")] nuint wData, int x, int y, int cx, int cy, [NativeTypeName("UINT")] uint uFlags);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int DrawStateW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HBRUSH")] IntPtr hbrFore, [NativeTypeName("DRAWSTATEPROC")] delegate* stdcall<IntPtr, nint, nuint, int, int, int> qfnCallBack, [NativeTypeName("LPARAM")] nint lData, [NativeTypeName("WPARAM")] nuint wData, int x, int y, int cx, int cy, [NativeTypeName("UINT")] uint uFlags);
+        public static extern int DrawStateW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HBRUSH")] IntPtr hbrFore, [NativeTypeName("DRAWSTATEPROC")] delegate* unmanaged<IntPtr, nint, nuint, int, int, int> qfnCallBack, [NativeTypeName("LPARAM")] nint lData, [NativeTypeName("WPARAM")] nuint wData, int x, int y, int cx, int cy, [NativeTypeName("UINT")] uint uFlags);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("LONG")]
@@ -1678,16 +1678,16 @@ namespace TerraFX.Interop
         public static extern IntPtr RemovePropW([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("LPCWSTR")] ushort* lpString);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern int EnumPropsExA([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("PROPENUMPROCEXA")] delegate* stdcall<IntPtr, sbyte*, IntPtr, nuint, int> lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumPropsExA([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("PROPENUMPROCEXA")] delegate* unmanaged<IntPtr, sbyte*, IntPtr, nuint, int> lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern int EnumPropsExW([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("PROPENUMPROCEXW")] delegate* stdcall<IntPtr, ushort*, IntPtr, nuint, int> lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumPropsExW([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("PROPENUMPROCEXW")] delegate* unmanaged<IntPtr, ushort*, IntPtr, nuint, int> lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern int EnumPropsA([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("PROPENUMPROCA")] delegate* stdcall<IntPtr, sbyte*, IntPtr, int> lpEnumFunc);
+        public static extern int EnumPropsA([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("PROPENUMPROCA")] delegate* unmanaged<IntPtr, sbyte*, IntPtr, int> lpEnumFunc);
 
         [DllImport("user32", ExactSpelling = true)]
-        public static extern int EnumPropsW([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("PROPENUMPROCW")] delegate* stdcall<IntPtr, ushort*, IntPtr, int> lpEnumFunc);
+        public static extern int EnumPropsW([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("PROPENUMPROCW")] delegate* unmanaged<IntPtr, ushort*, IntPtr, int> lpEnumFunc);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -2017,7 +2017,7 @@ namespace TerraFX.Interop
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumChildWindows([NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("WNDENUMPROC")] delegate* stdcall<IntPtr, nint, int> lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumChildWindows([NativeTypeName("HWND")] IntPtr hWndParent, [NativeTypeName("WNDENUMPROC")] delegate* unmanaged<IntPtr, nint, int> lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("HWND")]
@@ -2049,11 +2049,11 @@ namespace TerraFX.Interop
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumWindows([NativeTypeName("WNDENUMPROC")] delegate* stdcall<IntPtr, nint, int> lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumWindows([NativeTypeName("WNDENUMPROC")] delegate* unmanaged<IntPtr, nint, int> lpEnumFunc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumThreadWindows([NativeTypeName("DWORD")] uint dwThreadId, [NativeTypeName("WNDENUMPROC")] delegate* stdcall<IntPtr, nint, int> lpfn, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumThreadWindows([NativeTypeName("DWORD")] uint dwThreadId, [NativeTypeName("WNDENUMPROC")] delegate* unmanaged<IntPtr, nint, int> lpfn, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern int GetClassNameA([NativeTypeName("HWND")] IntPtr hWnd, [NativeTypeName("LPSTR")] sbyte* lpClassName, int nMaxCount);
@@ -2083,23 +2083,23 @@ namespace TerraFX.Interop
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("HHOOK")]
-        public static extern IntPtr SetWindowsHookA(int nFilterType, [NativeTypeName("HOOKPROC")] delegate* stdcall<int, nuint, nint, nint> pfnFilterProc);
+        public static extern IntPtr SetWindowsHookA(int nFilterType, [NativeTypeName("HOOKPROC")] delegate* unmanaged<int, nuint, nint, nint> pfnFilterProc);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("HHOOK")]
-        public static extern IntPtr SetWindowsHookW(int nFilterType, [NativeTypeName("HOOKPROC")] delegate* stdcall<int, nuint, nint, nint> pfnFilterProc);
+        public static extern IntPtr SetWindowsHookW(int nFilterType, [NativeTypeName("HOOKPROC")] delegate* unmanaged<int, nuint, nint, nint> pfnFilterProc);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int UnhookWindowsHook(int nCode, [NativeTypeName("HOOKPROC")] delegate* stdcall<int, nuint, nint, nint> pfnFilterProc);
+        public static extern int UnhookWindowsHook(int nCode, [NativeTypeName("HOOKPROC")] delegate* unmanaged<int, nuint, nint, nint> pfnFilterProc);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("HHOOK")]
-        public static extern IntPtr SetWindowsHookExA(int idHook, [NativeTypeName("HOOKPROC")] delegate* stdcall<int, nuint, nint, nint> lpfn, [NativeTypeName("HINSTANCE")] IntPtr hmod, [NativeTypeName("DWORD")] uint dwThreadId);
+        public static extern IntPtr SetWindowsHookExA(int idHook, [NativeTypeName("HOOKPROC")] delegate* unmanaged<int, nuint, nint, nint> lpfn, [NativeTypeName("HINSTANCE")] IntPtr hmod, [NativeTypeName("DWORD")] uint dwThreadId);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("HHOOK")]
-        public static extern IntPtr SetWindowsHookExW(int idHook, [NativeTypeName("HOOKPROC")] delegate* stdcall<int, nuint, nint, nint> lpfn, [NativeTypeName("HINSTANCE")] IntPtr hmod, [NativeTypeName("DWORD")] uint dwThreadId);
+        public static extern IntPtr SetWindowsHookExW(int idHook, [NativeTypeName("HOOKPROC")] delegate* unmanaged<int, nuint, nint, nint> lpfn, [NativeTypeName("HINSTANCE")] IntPtr hmod, [NativeTypeName("DWORD")] uint dwThreadId);
 
         [DllImport("user32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
@@ -2361,14 +2361,14 @@ namespace TerraFX.Interop
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumDisplayMonitors([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCRECT")] RECT* lprcClip, [NativeTypeName("MONITORENUMPROC")] delegate* stdcall<IntPtr, IntPtr, RECT*, nint, int> lpfnEnum, [NativeTypeName("LPARAM")] nint dwData);
+        public static extern int EnumDisplayMonitors([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCRECT")] RECT* lprcClip, [NativeTypeName("MONITORENUMPROC")] delegate* unmanaged<IntPtr, IntPtr, RECT*, nint, int> lpfnEnum, [NativeTypeName("LPARAM")] nint dwData);
 
         [DllImport("user32", ExactSpelling = true)]
         public static extern void NotifyWinEvent([NativeTypeName("DWORD")] uint @event, [NativeTypeName("HWND")] IntPtr hwnd, [NativeTypeName("LONG")] int idObject, [NativeTypeName("LONG")] int idChild);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("HWINEVENTHOOK")]
-        public static extern IntPtr SetWinEventHook([NativeTypeName("DWORD")] uint eventMin, [NativeTypeName("DWORD")] uint eventMax, [NativeTypeName("HMODULE")] IntPtr hmodWinEventProc, [NativeTypeName("WINEVENTPROC")] delegate* stdcall<IntPtr, uint, IntPtr, int, int, uint, uint, void> pfnWinEventProc, [NativeTypeName("DWORD")] uint idProcess, [NativeTypeName("DWORD")] uint idThread, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern IntPtr SetWinEventHook([NativeTypeName("DWORD")] uint eventMin, [NativeTypeName("DWORD")] uint eventMax, [NativeTypeName("HMODULE")] IntPtr hmodWinEventProc, [NativeTypeName("WINEVENTPROC")] delegate* unmanaged<IntPtr, uint, IntPtr, int, int, uint, uint, void> pfnWinEventProc, [NativeTypeName("DWORD")] uint idProcess, [NativeTypeName("DWORD")] uint idThread, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("user32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -2659,91 +2659,91 @@ namespace TerraFX.Interop
         public static extern int SetProcessRestrictionExemption([NativeTypeName("BOOL")] int fEnableExemption);
 
         [NativeTypeName("#define RT_CURSOR MAKEINTRESOURCE(1)")]
-        public static readonly ushort* RT_CURSOR = unchecked((ushort*)((nuint)((ushort)(1))));
+        public static readonly ushort* RT_CURSOR = ((ushort*)((nuint)((ushort)(1))));
 
         [NativeTypeName("#define RT_BITMAP MAKEINTRESOURCE(2)")]
-        public static readonly ushort* RT_BITMAP = unchecked((ushort*)((nuint)((ushort)(2))));
+        public static readonly ushort* RT_BITMAP = ((ushort*)((nuint)((ushort)(2))));
 
         [NativeTypeName("#define RT_ICON MAKEINTRESOURCE(3)")]
-        public static readonly ushort* RT_ICON = unchecked((ushort*)((nuint)((ushort)(3))));
+        public static readonly ushort* RT_ICON = ((ushort*)((nuint)((ushort)(3))));
 
         [NativeTypeName("#define RT_MENU MAKEINTRESOURCE(4)")]
-        public static readonly ushort* RT_MENU = unchecked((ushort*)((nuint)((ushort)(4))));
+        public static readonly ushort* RT_MENU = ((ushort*)((nuint)((ushort)(4))));
 
         [NativeTypeName("#define RT_DIALOG MAKEINTRESOURCE(5)")]
-        public static readonly ushort* RT_DIALOG = unchecked((ushort*)((nuint)((ushort)(5))));
+        public static readonly ushort* RT_DIALOG = ((ushort*)((nuint)((ushort)(5))));
 
         [NativeTypeName("#define RT_STRING MAKEINTRESOURCE(6)")]
-        public static readonly ushort* RT_STRING = unchecked((ushort*)((nuint)((ushort)(6))));
+        public static readonly ushort* RT_STRING = ((ushort*)((nuint)((ushort)(6))));
 
         [NativeTypeName("#define RT_FONTDIR MAKEINTRESOURCE(7)")]
-        public static readonly ushort* RT_FONTDIR = unchecked((ushort*)((nuint)((ushort)(7))));
+        public static readonly ushort* RT_FONTDIR = ((ushort*)((nuint)((ushort)(7))));
 
         [NativeTypeName("#define RT_FONT MAKEINTRESOURCE(8)")]
-        public static readonly ushort* RT_FONT = unchecked((ushort*)((nuint)((ushort)(8))));
+        public static readonly ushort* RT_FONT = ((ushort*)((nuint)((ushort)(8))));
 
         [NativeTypeName("#define RT_ACCELERATOR MAKEINTRESOURCE(9)")]
-        public static readonly ushort* RT_ACCELERATOR = unchecked((ushort*)((nuint)((ushort)(9))));
+        public static readonly ushort* RT_ACCELERATOR = ((ushort*)((nuint)((ushort)(9))));
 
         [NativeTypeName("#define RT_RCDATA MAKEINTRESOURCE(10)")]
-        public static readonly ushort* RT_RCDATA = unchecked((ushort*)((nuint)((ushort)(10))));
+        public static readonly ushort* RT_RCDATA = ((ushort*)((nuint)((ushort)(10))));
 
         [NativeTypeName("#define RT_MESSAGETABLE MAKEINTRESOURCE(11)")]
-        public static readonly ushort* RT_MESSAGETABLE = unchecked((ushort*)((nuint)((ushort)(11))));
+        public static readonly ushort* RT_MESSAGETABLE = ((ushort*)((nuint)((ushort)(11))));
 
         [NativeTypeName("#define DIFFERENCE 11")]
         public const int DIFFERENCE = 11;
 
         [NativeTypeName("#define RT_GROUP_CURSOR MAKEINTRESOURCE((ULONG_PTR)(RT_CURSOR) + DIFFERENCE)")]
-        public static readonly ushort* RT_GROUP_CURSOR = unchecked((ushort*)((nuint)((ushort)((nuint)(((ushort*)((nuint)((ushort)(1))))) + 11))));
+        public static readonly ushort* RT_GROUP_CURSOR = ((ushort*)((nuint)((ushort)((nuint)(((ushort*)((nuint)((ushort)(1))))) + 11))));
 
         [NativeTypeName("#define RT_GROUP_ICON MAKEINTRESOURCE((ULONG_PTR)(RT_ICON) + DIFFERENCE)")]
-        public static readonly ushort* RT_GROUP_ICON = unchecked((ushort*)((nuint)((ushort)((nuint)(((ushort*)((nuint)((ushort)(3))))) + 11))));
+        public static readonly ushort* RT_GROUP_ICON = ((ushort*)((nuint)((ushort)((nuint)(((ushort*)((nuint)((ushort)(3))))) + 11))));
 
         [NativeTypeName("#define RT_VERSION MAKEINTRESOURCE(16)")]
-        public static readonly ushort* RT_VERSION = unchecked((ushort*)((nuint)((ushort)(16))));
+        public static readonly ushort* RT_VERSION = ((ushort*)((nuint)((ushort)(16))));
 
         [NativeTypeName("#define RT_DLGINCLUDE MAKEINTRESOURCE(17)")]
-        public static readonly ushort* RT_DLGINCLUDE = unchecked((ushort*)((nuint)((ushort)(17))));
+        public static readonly ushort* RT_DLGINCLUDE = ((ushort*)((nuint)((ushort)(17))));
 
         [NativeTypeName("#define RT_PLUGPLAY MAKEINTRESOURCE(19)")]
-        public static readonly ushort* RT_PLUGPLAY = unchecked((ushort*)((nuint)((ushort)(19))));
+        public static readonly ushort* RT_PLUGPLAY = ((ushort*)((nuint)((ushort)(19))));
 
         [NativeTypeName("#define RT_VXD MAKEINTRESOURCE(20)")]
-        public static readonly ushort* RT_VXD = unchecked((ushort*)((nuint)((ushort)(20))));
+        public static readonly ushort* RT_VXD = ((ushort*)((nuint)((ushort)(20))));
 
         [NativeTypeName("#define RT_ANICURSOR MAKEINTRESOURCE(21)")]
-        public static readonly ushort* RT_ANICURSOR = unchecked((ushort*)((nuint)((ushort)(21))));
+        public static readonly ushort* RT_ANICURSOR = ((ushort*)((nuint)((ushort)(21))));
 
         [NativeTypeName("#define RT_ANIICON MAKEINTRESOURCE(22)")]
-        public static readonly ushort* RT_ANIICON = unchecked((ushort*)((nuint)((ushort)(22))));
+        public static readonly ushort* RT_ANIICON = ((ushort*)((nuint)((ushort)(22))));
 
         [NativeTypeName("#define RT_HTML MAKEINTRESOURCE(23)")]
-        public static readonly ushort* RT_HTML = unchecked((ushort*)((nuint)((ushort)(23))));
+        public static readonly ushort* RT_HTML = ((ushort*)((nuint)((ushort)(23))));
 
         [NativeTypeName("#define RT_MANIFEST MAKEINTRESOURCE(24)")]
-        public static readonly ushort* RT_MANIFEST = unchecked((ushort*)((nuint)((ushort)(24))));
+        public static readonly ushort* RT_MANIFEST = ((ushort*)((nuint)((ushort)(24))));
 
         [NativeTypeName("#define CREATEPROCESS_MANIFEST_RESOURCE_ID MAKEINTRESOURCE( 1)")]
-        public static readonly ushort* CREATEPROCESS_MANIFEST_RESOURCE_ID = unchecked((ushort*)((nuint)((ushort)(1))));
+        public static readonly ushort* CREATEPROCESS_MANIFEST_RESOURCE_ID = ((ushort*)((nuint)((ushort)(1))));
 
         [NativeTypeName("#define ISOLATIONAWARE_MANIFEST_RESOURCE_ID MAKEINTRESOURCE(2)")]
-        public static readonly ushort* ISOLATIONAWARE_MANIFEST_RESOURCE_ID = unchecked((ushort*)((nuint)((ushort)(2))));
+        public static readonly ushort* ISOLATIONAWARE_MANIFEST_RESOURCE_ID = ((ushort*)((nuint)((ushort)(2))));
 
         [NativeTypeName("#define ISOLATIONAWARE_NOSTATICIMPORT_MANIFEST_RESOURCE_ID MAKEINTRESOURCE(3)")]
-        public static readonly ushort* ISOLATIONAWARE_NOSTATICIMPORT_MANIFEST_RESOURCE_ID = unchecked((ushort*)((nuint)((ushort)(3))));
+        public static readonly ushort* ISOLATIONAWARE_NOSTATICIMPORT_MANIFEST_RESOURCE_ID = ((ushort*)((nuint)((ushort)(3))));
 
         [NativeTypeName("#define ISOLATIONPOLICY_MANIFEST_RESOURCE_ID MAKEINTRESOURCE(4)")]
-        public static readonly ushort* ISOLATIONPOLICY_MANIFEST_RESOURCE_ID = unchecked((ushort*)((nuint)((ushort)(4))));
+        public static readonly ushort* ISOLATIONPOLICY_MANIFEST_RESOURCE_ID = ((ushort*)((nuint)((ushort)(4))));
 
         [NativeTypeName("#define ISOLATIONPOLICY_BROWSER_MANIFEST_RESOURCE_ID MAKEINTRESOURCE(5)")]
-        public static readonly ushort* ISOLATIONPOLICY_BROWSER_MANIFEST_RESOURCE_ID = unchecked((ushort*)((nuint)((ushort)(5))));
+        public static readonly ushort* ISOLATIONPOLICY_BROWSER_MANIFEST_RESOURCE_ID = ((ushort*)((nuint)((ushort)(5))));
 
         [NativeTypeName("#define MINIMUM_RESERVED_MANIFEST_RESOURCE_ID MAKEINTRESOURCE( 1 /*inclusive*/)")]
-        public static readonly ushort* MINIMUM_RESERVED_MANIFEST_RESOURCE_ID = unchecked((ushort*)((nuint)((ushort)(1))));
+        public static readonly ushort* MINIMUM_RESERVED_MANIFEST_RESOURCE_ID = ((ushort*)((nuint)((ushort)(1))));
 
         [NativeTypeName("#define MAXIMUM_RESERVED_MANIFEST_RESOURCE_ID MAKEINTRESOURCE(16 /*inclusive*/)")]
-        public static readonly ushort* MAXIMUM_RESERVED_MANIFEST_RESOURCE_ID = unchecked((ushort*)((nuint)((ushort)(16))));
+        public static readonly ushort* MAXIMUM_RESERVED_MANIFEST_RESOURCE_ID = ((ushort*)((nuint)((ushort)(16))));
 
         [NativeTypeName("#define wvsprintf wvsprintfW")]
         public static readonly delegate*<ushort*, ushort*, sbyte*, int> wvsprintf = &wvsprintfW;
@@ -4009,7 +4009,7 @@ namespace TerraFX.Interop
         public static readonly delegate*<ushort*, uint, int, uint, IntPtr> OpenDesktop = &OpenDesktopW;
 
         [NativeTypeName("#define EnumDesktops EnumDesktopsW")]
-        public static readonly delegate*<IntPtr, delegate* stdcall<ushort*, nint, int>, nint, int> EnumDesktops = &EnumDesktopsW;
+        public static readonly delegate*<IntPtr, delegate* unmanaged<ushort*, nint, int>, nint, int> EnumDesktops = &EnumDesktopsW;
 
         [NativeTypeName("#define WINSTA_ENUMDESKTOPS 0x0001L")]
         public const int WINSTA_ENUMDESKTOPS = 0x0001;
@@ -4054,7 +4054,7 @@ namespace TerraFX.Interop
         public static readonly delegate*<ushort*, int, uint, IntPtr> OpenWindowStation = &OpenWindowStationW;
 
         [NativeTypeName("#define EnumWindowStations EnumWindowStationsW")]
-        public static readonly delegate*<delegate* stdcall<ushort*, nint, int>, nint, int> EnumWindowStations = &EnumWindowStationsW;
+        public static readonly delegate*<delegate* unmanaged<ushort*, nint, int>, nint, int> EnumWindowStations = &EnumWindowStationsW;
 
         [NativeTypeName("#define UOI_FLAGS 1")]
         public const int UOI_FLAGS = 1;
@@ -6013,7 +6013,7 @@ namespace TerraFX.Interop
         public static readonly delegate*<IntPtr, uint, nuint, nint, int> SendNotifyMessage = &SendNotifyMessageW;
 
         [NativeTypeName("#define SendMessageCallback SendMessageCallbackW")]
-        public static readonly delegate*<IntPtr, uint, nuint, nint, delegate* stdcall<IntPtr, uint, nuint, nint, void>, nuint, int> SendMessageCallback = &SendMessageCallbackW;
+        public static readonly delegate*<IntPtr, uint, nuint, nint, delegate* unmanaged<IntPtr, uint, nuint, nint, void>, nuint, int> SendMessageCallback = &SendMessageCallbackW;
 
         [NativeTypeName("#define BroadcastSystemMessageEx BroadcastSystemMessageExW")]
         public static readonly delegate*<uint, uint*, uint, nuint, nint, BSMINFO*, int> BroadcastSystemMessageEx = &BroadcastSystemMessageExW;
@@ -6103,7 +6103,7 @@ namespace TerraFX.Interop
         public static readonly delegate*<IntPtr, uint, nuint, nint, nint> DefWindowProc = &DefWindowProcW;
 
         [NativeTypeName("#define CallWindowProc CallWindowProcW")]
-        public static readonly delegate*<delegate* stdcall<IntPtr, uint, nuint, nint, nint>, IntPtr, uint, nuint, nint, nint> CallWindowProc = &CallWindowProcW;
+        public static readonly delegate*<delegate* unmanaged<IntPtr, uint, nuint, nint, nint>, IntPtr, uint, nuint, nint, nint> CallWindowProc = &CallWindowProcW;
 
         [NativeTypeName("#define ISMEX_NOSEND 0x00000000")]
         public const int ISMEX_NOSEND = 0x00000000;
@@ -6253,16 +6253,16 @@ namespace TerraFX.Interop
         public static readonly IntPtr HWND_NOTOPMOST = ((IntPtr)(-2));
 
         [NativeTypeName("#define CreateDialogParam CreateDialogParamW")]
-        public static readonly delegate*<IntPtr, ushort*, IntPtr, delegate* stdcall<IntPtr, uint, nuint, nint, nint>, nint, IntPtr> CreateDialogParam = &CreateDialogParamW;
+        public static readonly delegate*<IntPtr, ushort*, IntPtr, delegate* unmanaged<IntPtr, uint, nuint, nint, nint>, nint, IntPtr> CreateDialogParam = &CreateDialogParamW;
 
         [NativeTypeName("#define CreateDialogIndirectParam CreateDialogIndirectParamW")]
-        public static readonly delegate*<IntPtr, DLGTEMPLATE*, IntPtr, delegate* stdcall<IntPtr, uint, nuint, nint, nint>, nint, IntPtr> CreateDialogIndirectParam = &CreateDialogIndirectParamW;
+        public static readonly delegate*<IntPtr, DLGTEMPLATE*, IntPtr, delegate* unmanaged<IntPtr, uint, nuint, nint, nint>, nint, IntPtr> CreateDialogIndirectParam = &CreateDialogIndirectParamW;
 
         [NativeTypeName("#define DialogBoxParam DialogBoxParamW")]
-        public static readonly delegate*<IntPtr, ushort*, IntPtr, delegate* stdcall<IntPtr, uint, nuint, nint, nint>, nint, nint> DialogBoxParam = &DialogBoxParamW;
+        public static readonly delegate*<IntPtr, ushort*, IntPtr, delegate* unmanaged<IntPtr, uint, nuint, nint, nint>, nint, nint> DialogBoxParam = &DialogBoxParamW;
 
         [NativeTypeName("#define DialogBoxIndirectParam DialogBoxIndirectParamW")]
-        public static readonly delegate*<IntPtr, DLGTEMPLATE*, IntPtr, delegate* stdcall<IntPtr, uint, nuint, nint, nint>, nint, nint> DialogBoxIndirectParam = &DialogBoxIndirectParamW;
+        public static readonly delegate*<IntPtr, DLGTEMPLATE*, IntPtr, delegate* unmanaged<IntPtr, uint, nuint, nint, nint>, nint, nint> DialogBoxIndirectParam = &DialogBoxIndirectParamW;
 
         [NativeTypeName("#define SetDlgItemText SetDlgItemTextW")]
         public static readonly delegate*<IntPtr, int, ushort*, int> SetDlgItemText = &SetDlgItemTextW;
@@ -7384,7 +7384,7 @@ namespace TerraFX.Interop
         public static readonly delegate*<IntPtr, ushort*, int, RECT*, uint, DRAWTEXTPARAMS*, int> DrawTextEx = &DrawTextExW;
 
         [NativeTypeName("#define GrayString GrayStringW")]
-        public static readonly delegate*<IntPtr, IntPtr, delegate* stdcall<IntPtr, nint, int, int>, nint, int, int, int, int, int, int> GrayString = &GrayStringW;
+        public static readonly delegate*<IntPtr, IntPtr, delegate* unmanaged<IntPtr, nint, int, int>, nint, int, int, int, int, int, int> GrayString = &GrayStringW;
 
         [NativeTypeName("#define DST_COMPLEX 0x0000")]
         public const int DST_COMPLEX = 0x0000;
@@ -7423,7 +7423,7 @@ namespace TerraFX.Interop
         public const int DSS_RIGHT = 0x8000;
 
         [NativeTypeName("#define DrawState DrawStateW")]
-        public static readonly delegate*<IntPtr, IntPtr, delegate* stdcall<IntPtr, nint, nuint, int, int, int>, nint, nuint, int, int, int, int, uint, int> DrawState = &DrawStateW;
+        public static readonly delegate*<IntPtr, IntPtr, delegate* unmanaged<IntPtr, nint, nuint, int, int, int>, nint, nuint, int, int, int, int, uint, int> DrawState = &DrawStateW;
 
         [NativeTypeName("#define TabbedTextOut TabbedTextOutW")]
         public static readonly delegate*<IntPtr, int, int, ushort*, int, int, int*, int, int> TabbedTextOut = &TabbedTextOutW;
@@ -7558,10 +7558,10 @@ namespace TerraFX.Interop
         public static readonly delegate*<IntPtr, ushort*, IntPtr> RemoveProp = &RemovePropW;
 
         [NativeTypeName("#define EnumPropsEx EnumPropsExW")]
-        public static readonly delegate*<IntPtr, delegate* stdcall<IntPtr, ushort*, IntPtr, nuint, int>, nint, int> EnumPropsEx = &EnumPropsExW;
+        public static readonly delegate*<IntPtr, delegate* unmanaged<IntPtr, ushort*, IntPtr, nuint, int>, nint, int> EnumPropsEx = &EnumPropsExW;
 
         [NativeTypeName("#define EnumProps EnumPropsW")]
-        public static readonly delegate*<IntPtr, delegate* stdcall<IntPtr, ushort*, IntPtr, int>, int> EnumProps = &EnumPropsW;
+        public static readonly delegate*<IntPtr, delegate* unmanaged<IntPtr, ushort*, IntPtr, int>, int> EnumProps = &EnumPropsW;
 
         [NativeTypeName("#define SetWindowText SetWindowTextW")]
         public static readonly delegate*<IntPtr, ushort*, int> SetWindowText = &SetWindowTextW;
@@ -7888,10 +7888,10 @@ namespace TerraFX.Interop
         public const int GW_MAX = 6;
 
         [NativeTypeName("#define SetWindowsHook SetWindowsHookW")]
-        public static readonly delegate*<int, delegate* stdcall<int, nuint, nint, nint>, IntPtr> SetWindowsHook = &SetWindowsHookW;
+        public static readonly delegate*<int, delegate* unmanaged<int, nuint, nint, nint>, IntPtr> SetWindowsHook = &SetWindowsHookW;
 
         [NativeTypeName("#define SetWindowsHookEx SetWindowsHookExW")]
-        public static readonly delegate*<int, delegate* stdcall<int, nuint, nint, nint>, IntPtr, uint, IntPtr> SetWindowsHookEx = &SetWindowsHookExW;
+        public static readonly delegate*<int, delegate* unmanaged<int, nuint, nint, nint>, IntPtr, uint, IntPtr> SetWindowsHookEx = &SetWindowsHookExW;
 
         [NativeTypeName("#define MF_INSERT 0x00000000L")]
         public const int MF_INSERT = 0x00000000;
@@ -8107,58 +8107,58 @@ namespace TerraFX.Interop
         public static readonly delegate*<ushort*, IntPtr> LoadCursorFromFile = &LoadCursorFromFileW;
 
         [NativeTypeName("#define IDC_ARROW MAKEINTRESOURCE(32512)")]
-        public static readonly ushort* IDC_ARROW = unchecked((ushort*)((nuint)((ushort)(32512))));
+        public static readonly ushort* IDC_ARROW = ((ushort*)((nuint)((ushort)(32512))));
 
         [NativeTypeName("#define IDC_IBEAM MAKEINTRESOURCE(32513)")]
-        public static readonly ushort* IDC_IBEAM = unchecked((ushort*)((nuint)((ushort)(32513))));
+        public static readonly ushort* IDC_IBEAM = ((ushort*)((nuint)((ushort)(32513))));
 
         [NativeTypeName("#define IDC_WAIT MAKEINTRESOURCE(32514)")]
-        public static readonly ushort* IDC_WAIT = unchecked((ushort*)((nuint)((ushort)(32514))));
+        public static readonly ushort* IDC_WAIT = ((ushort*)((nuint)((ushort)(32514))));
 
         [NativeTypeName("#define IDC_CROSS MAKEINTRESOURCE(32515)")]
-        public static readonly ushort* IDC_CROSS = unchecked((ushort*)((nuint)((ushort)(32515))));
+        public static readonly ushort* IDC_CROSS = ((ushort*)((nuint)((ushort)(32515))));
 
         [NativeTypeName("#define IDC_UPARROW MAKEINTRESOURCE(32516)")]
-        public static readonly ushort* IDC_UPARROW = unchecked((ushort*)((nuint)((ushort)(32516))));
+        public static readonly ushort* IDC_UPARROW = ((ushort*)((nuint)((ushort)(32516))));
 
         [NativeTypeName("#define IDC_SIZE MAKEINTRESOURCE(32640)")]
-        public static readonly ushort* IDC_SIZE = unchecked((ushort*)((nuint)((ushort)(32640))));
+        public static readonly ushort* IDC_SIZE = ((ushort*)((nuint)((ushort)(32640))));
 
         [NativeTypeName("#define IDC_ICON MAKEINTRESOURCE(32641)")]
-        public static readonly ushort* IDC_ICON = unchecked((ushort*)((nuint)((ushort)(32641))));
+        public static readonly ushort* IDC_ICON = ((ushort*)((nuint)((ushort)(32641))));
 
         [NativeTypeName("#define IDC_SIZENWSE MAKEINTRESOURCE(32642)")]
-        public static readonly ushort* IDC_SIZENWSE = unchecked((ushort*)((nuint)((ushort)(32642))));
+        public static readonly ushort* IDC_SIZENWSE = ((ushort*)((nuint)((ushort)(32642))));
 
         [NativeTypeName("#define IDC_SIZENESW MAKEINTRESOURCE(32643)")]
-        public static readonly ushort* IDC_SIZENESW = unchecked((ushort*)((nuint)((ushort)(32643))));
+        public static readonly ushort* IDC_SIZENESW = ((ushort*)((nuint)((ushort)(32643))));
 
         [NativeTypeName("#define IDC_SIZEWE MAKEINTRESOURCE(32644)")]
-        public static readonly ushort* IDC_SIZEWE = unchecked((ushort*)((nuint)((ushort)(32644))));
+        public static readonly ushort* IDC_SIZEWE = ((ushort*)((nuint)((ushort)(32644))));
 
         [NativeTypeName("#define IDC_SIZENS MAKEINTRESOURCE(32645)")]
-        public static readonly ushort* IDC_SIZENS = unchecked((ushort*)((nuint)((ushort)(32645))));
+        public static readonly ushort* IDC_SIZENS = ((ushort*)((nuint)((ushort)(32645))));
 
         [NativeTypeName("#define IDC_SIZEALL MAKEINTRESOURCE(32646)")]
-        public static readonly ushort* IDC_SIZEALL = unchecked((ushort*)((nuint)((ushort)(32646))));
+        public static readonly ushort* IDC_SIZEALL = ((ushort*)((nuint)((ushort)(32646))));
 
         [NativeTypeName("#define IDC_NO MAKEINTRESOURCE(32648)")]
-        public static readonly ushort* IDC_NO = unchecked((ushort*)((nuint)((ushort)(32648))));
+        public static readonly ushort* IDC_NO = ((ushort*)((nuint)((ushort)(32648))));
 
         [NativeTypeName("#define IDC_HAND MAKEINTRESOURCE(32649)")]
-        public static readonly ushort* IDC_HAND = unchecked((ushort*)((nuint)((ushort)(32649))));
+        public static readonly ushort* IDC_HAND = ((ushort*)((nuint)((ushort)(32649))));
 
         [NativeTypeName("#define IDC_APPSTARTING MAKEINTRESOURCE(32650)")]
-        public static readonly ushort* IDC_APPSTARTING = unchecked((ushort*)((nuint)((ushort)(32650))));
+        public static readonly ushort* IDC_APPSTARTING = ((ushort*)((nuint)((ushort)(32650))));
 
         [NativeTypeName("#define IDC_HELP MAKEINTRESOURCE(32651)")]
-        public static readonly ushort* IDC_HELP = unchecked((ushort*)((nuint)((ushort)(32651))));
+        public static readonly ushort* IDC_HELP = ((ushort*)((nuint)((ushort)(32651))));
 
         [NativeTypeName("#define IDC_PIN MAKEINTRESOURCE(32671)")]
-        public static readonly ushort* IDC_PIN = unchecked((ushort*)((nuint)((ushort)(32671))));
+        public static readonly ushort* IDC_PIN = ((ushort*)((nuint)((ushort)(32671))));
 
         [NativeTypeName("#define IDC_PERSON MAKEINTRESOURCE(32672)")]
-        public static readonly ushort* IDC_PERSON = unchecked((ushort*)((nuint)((ushort)(32672))));
+        public static readonly ushort* IDC_PERSON = ((ushort*)((nuint)((ushort)(32672))));
 
         [NativeTypeName("#define LoadIcon LoadIconW")]
         public static readonly delegate*<IntPtr, ushort*, IntPtr> LoadIcon = &LoadIconW;
@@ -8251,34 +8251,34 @@ namespace TerraFX.Interop
         public const int ORD_LANGDRIVER = 1;
 
         [NativeTypeName("#define IDI_APPLICATION MAKEINTRESOURCE(32512)")]
-        public static readonly ushort* IDI_APPLICATION = unchecked((ushort*)((nuint)((ushort)(32512))));
+        public static readonly ushort* IDI_APPLICATION = ((ushort*)((nuint)((ushort)(32512))));
 
         [NativeTypeName("#define IDI_HAND MAKEINTRESOURCE(32513)")]
-        public static readonly ushort* IDI_HAND = unchecked((ushort*)((nuint)((ushort)(32513))));
+        public static readonly ushort* IDI_HAND = ((ushort*)((nuint)((ushort)(32513))));
 
         [NativeTypeName("#define IDI_QUESTION MAKEINTRESOURCE(32514)")]
-        public static readonly ushort* IDI_QUESTION = unchecked((ushort*)((nuint)((ushort)(32514))));
+        public static readonly ushort* IDI_QUESTION = ((ushort*)((nuint)((ushort)(32514))));
 
         [NativeTypeName("#define IDI_EXCLAMATION MAKEINTRESOURCE(32515)")]
-        public static readonly ushort* IDI_EXCLAMATION = unchecked((ushort*)((nuint)((ushort)(32515))));
+        public static readonly ushort* IDI_EXCLAMATION = ((ushort*)((nuint)((ushort)(32515))));
 
         [NativeTypeName("#define IDI_ASTERISK MAKEINTRESOURCE(32516)")]
-        public static readonly ushort* IDI_ASTERISK = unchecked((ushort*)((nuint)((ushort)(32516))));
+        public static readonly ushort* IDI_ASTERISK = ((ushort*)((nuint)((ushort)(32516))));
 
         [NativeTypeName("#define IDI_WINLOGO MAKEINTRESOURCE(32517)")]
-        public static readonly ushort* IDI_WINLOGO = unchecked((ushort*)((nuint)((ushort)(32517))));
+        public static readonly ushort* IDI_WINLOGO = ((ushort*)((nuint)((ushort)(32517))));
 
         [NativeTypeName("#define IDI_SHIELD MAKEINTRESOURCE(32518)")]
-        public static readonly ushort* IDI_SHIELD = unchecked((ushort*)((nuint)((ushort)(32518))));
+        public static readonly ushort* IDI_SHIELD = ((ushort*)((nuint)((ushort)(32518))));
 
         [NativeTypeName("#define IDI_WARNING IDI_EXCLAMATION")]
-        public static readonly ushort* IDI_WARNING = unchecked((ushort*)((nuint)((ushort)(32515))));
+        public static readonly ushort* IDI_WARNING = ((ushort*)((nuint)((ushort)(32515))));
 
         [NativeTypeName("#define IDI_ERROR IDI_HAND")]
-        public static readonly ushort* IDI_ERROR = unchecked((ushort*)((nuint)((ushort)(32513))));
+        public static readonly ushort* IDI_ERROR = ((ushort*)((nuint)((ushort)(32513))));
 
         [NativeTypeName("#define IDI_INFORMATION IDI_ASTERISK")]
-        public static readonly ushort* IDI_INFORMATION = unchecked((ushort*)((nuint)((ushort)(32516))));
+        public static readonly ushort* IDI_INFORMATION = ((ushort*)((nuint)((ushort)(32516))));
 
         [NativeTypeName("#define IDOK 1")]
         public const int IDOK = 1;
@@ -8827,7 +8827,7 @@ namespace TerraFX.Interop
         public const int STM_MSGMAX = 0x0174;
 
         [NativeTypeName("#define WC_DIALOG (MAKEINTATOM(0x8002))")]
-        public static readonly ushort* WC_DIALOG = unchecked((ushort*)((nuint)((ushort)(0x8002))));
+        public static readonly ushort* WC_DIALOG = ((ushort*)((nuint)((ushort)(0x8002))));
 
         [NativeTypeName("#define DWL_MSGRESULT 0")]
         public const int DWL_MSGRESULT = 0;
@@ -8845,7 +8845,7 @@ namespace TerraFX.Interop
         public static readonly uint DWLP_DLGPROC = unchecked(0 + (uint)(sizeof(nint)));
 
         [NativeTypeName("#define DWLP_USER DWLP_DLGPROC + sizeof(DLGPROC)")]
-        public static readonly uint DWLP_USER = unchecked(0 + (uint)(sizeof(nint)) + (uint)(sizeof(delegate* stdcall<IntPtr, uint, nuint, nint, nint>)));
+        public static readonly uint DWLP_USER = unchecked(0 + (uint)(sizeof(nint)) + (uint)(sizeof(delegate* unmanaged<IntPtr, uint, nuint, nint, nint>)));
 
         [NativeTypeName("#define IsDialogMessage IsDialogMessageW")]
         public static readonly delegate*<IntPtr, MSG*, int> IsDialogMessage = &IsDialogMessageW;

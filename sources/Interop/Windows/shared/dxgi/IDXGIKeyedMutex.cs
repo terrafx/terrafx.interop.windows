@@ -15,64 +15,74 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IDXGIKeyedMutex*, Guid*, void**, int>)(lpVtbl[0]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IDXGIKeyedMutex*, Guid*, void**, int>)(lpVtbl[0]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IDXGIKeyedMutex*, uint>)(lpVtbl[1]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDXGIKeyedMutex*, uint>)(lpVtbl[1]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IDXGIKeyedMutex*, uint>)(lpVtbl[2]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDXGIKeyedMutex*, uint>)(lpVtbl[2]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("UINT")] uint DataSize, [NativeTypeName("const void *")] void* pData)
         {
-            return ((delegate* stdcall<IDXGIKeyedMutex*, Guid*, uint, void*, int>)(lpVtbl[3]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
+            return ((delegate* unmanaged<IDXGIKeyedMutex*, Guid*, uint, void*, int>)(lpVtbl[3]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("const IUnknown *")] IUnknown* pUnknown)
         {
-            return ((delegate* stdcall<IDXGIKeyedMutex*, Guid*, IUnknown*, int>)(lpVtbl[4]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), Name, pUnknown);
+            return ((delegate* unmanaged<IDXGIKeyedMutex*, Guid*, IUnknown*, int>)(lpVtbl[4]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), Name, pUnknown);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetPrivateData([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("UINT *")] uint* pDataSize, [NativeTypeName("void *")] void* pData)
         {
-            return ((delegate* stdcall<IDXGIKeyedMutex*, Guid*, uint*, void*, int>)(lpVtbl[5]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
+            return ((delegate* unmanaged<IDXGIKeyedMutex*, Guid*, uint*, void*, int>)(lpVtbl[5]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetParent([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppParent)
         {
-            return ((delegate* stdcall<IDXGIKeyedMutex*, Guid*, void**, int>)(lpVtbl[6]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), riid, ppParent);
+            return ((delegate* unmanaged<IDXGIKeyedMutex*, Guid*, void**, int>)(lpVtbl[6]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), riid, ppParent);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetDevice([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppDevice)
         {
-            return ((delegate* stdcall<IDXGIKeyedMutex*, Guid*, void**, int>)(lpVtbl[7]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), riid, ppDevice);
+            return ((delegate* unmanaged<IDXGIKeyedMutex*, Guid*, void**, int>)(lpVtbl[7]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), riid, ppDevice);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int AcquireSync([NativeTypeName("UINT64")] ulong Key, [NativeTypeName("DWORD")] uint dwMilliseconds)
         {
-            return ((delegate* stdcall<IDXGIKeyedMutex*, ulong, uint, int>)(lpVtbl[8]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), Key, dwMilliseconds);
+            return ((delegate* unmanaged<IDXGIKeyedMutex*, ulong, uint, int>)(lpVtbl[8]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), Key, dwMilliseconds);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int ReleaseSync([NativeTypeName("UINT64")] ulong Key)
         {
-            return ((delegate* stdcall<IDXGIKeyedMutex*, ulong, int>)(lpVtbl[9]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), Key);
+            return ((delegate* unmanaged<IDXGIKeyedMutex*, ulong, int>)(lpVtbl[9]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), Key);
         }
     }
 }

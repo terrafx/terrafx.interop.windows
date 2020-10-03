@@ -14,15 +14,20 @@
   <PropertyGroup>
     <DefineConstants>$(DefineConstants);$(OS)</DefineConstants>
     <NoWarn>$(NoWarn);NU5105</NoWarn>
-    <PackageVersion Condition="'$(GITHUB_RUN_ID)' != ''">$(Version)-$(GITHUB_RUN_ID)</PackageVersion>
+  </PropertyGroup>
+
+  <!-- Settings that are only set for CI builds -->
+  <PropertyGroup Condition="'$(GITHUB_RUN_ID)' != ''">
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    <PackageVersion>$(Version)-$(GITHUB_RUN_ID)</PackageVersion>
   </PropertyGroup>
 
   <!-- Package versions for package references across all projects -->
   <ItemGroup>
-    <PackageReference Update="Microsoft.NET.Test.Sdk" Version="16.6.1" />
+    <PackageReference Update="Microsoft.NET.Test.Sdk" Version="16.8.0-preview-20200812-03" />
     <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.0.0" />
     <PackageReference Update="NUnit" Version="3.12.0" />
-    <PackageReference Update="NUnit3TestAdapter" Version="3.16.1" />
+    <PackageReference Update="NUnit3TestAdapter" Version="3.17.0" />
   </ItemGroup>
 
 </Project>

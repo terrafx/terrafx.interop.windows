@@ -17,7 +17,7 @@ namespace TerraFX.Interop
         public sbyte* pszPrivateKeyObjId;
 
         [NativeTypeName("PCRYPT_ENCRYPT_PRIVATE_KEY_FUNC")]
-        public delegate* stdcall<CRYPT_ALGORITHM_IDENTIFIER*, CRYPTOAPI_BLOB*, byte*, uint*, void*, int> pEncryptPrivateKeyFunc;
+        public delegate* unmanaged<CRYPT_ALGORITHM_IDENTIFIER*, CRYPTOAPI_BLOB*, byte*, uint*, void*, int> pEncryptPrivateKeyFunc;
 
         [NativeTypeName("LPVOID")]
         public void* pVoidEncryptFunc;

@@ -15,28 +15,32 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMFPMPClientApp*, Guid*, void**, int>)(lpVtbl[0]))((IMFPMPClientApp*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMFPMPClientApp*, Guid*, void**, int>)(lpVtbl[0]))((IMFPMPClientApp*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMFPMPClientApp*, uint>)(lpVtbl[1]))((IMFPMPClientApp*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFPMPClientApp*, uint>)(lpVtbl[1]))((IMFPMPClientApp*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMFPMPClientApp*, uint>)(lpVtbl[2]))((IMFPMPClientApp*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFPMPClientApp*, uint>)(lpVtbl[2]))((IMFPMPClientApp*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetPMPHost([NativeTypeName("IMFPMPHostApp *")] IMFPMPHostApp* pPMPHost)
         {
-            return ((delegate* stdcall<IMFPMPClientApp*, IMFPMPHostApp*, int>)(lpVtbl[3]))((IMFPMPClientApp*)Unsafe.AsPointer(ref this), pPMPHost);
+            return ((delegate* unmanaged<IMFPMPClientApp*, IMFPMPHostApp*, int>)(lpVtbl[3]))((IMFPMPClientApp*)Unsafe.AsPointer(ref this), pPMPHost);
         }
     }
 }

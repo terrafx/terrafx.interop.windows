@@ -3,6 +3,8 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop
 {
     public partial struct DVD_TIMECODE
@@ -12,11 +14,13 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG : 4")]
         public uint Hours1
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return _bitfield & 0xFu;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (_bitfield & ~0xFu) | (value & 0xFu);
@@ -26,11 +30,13 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG : 4")]
         public uint Hours10
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (_bitfield >> 4) & 0xFu;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (_bitfield & ~(0xFu << 4)) | ((value & 0xFu) << 4);
@@ -40,11 +46,13 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG : 4")]
         public uint Minutes1
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (_bitfield >> 8) & 0xFu;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (_bitfield & ~(0xFu << 8)) | ((value & 0xFu) << 8);
@@ -54,11 +62,13 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG : 4")]
         public uint Minutes10
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (_bitfield >> 12) & 0xFu;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (_bitfield & ~(0xFu << 12)) | ((value & 0xFu) << 12);
@@ -68,11 +78,13 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG : 4")]
         public uint Seconds1
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (_bitfield >> 16) & 0xFu;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (_bitfield & ~(0xFu << 16)) | ((value & 0xFu) << 16);
@@ -82,11 +94,13 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG : 4")]
         public uint Seconds10
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (_bitfield >> 20) & 0xFu;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (_bitfield & ~(0xFu << 20)) | ((value & 0xFu) << 20);
@@ -96,11 +110,13 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG : 4")]
         public uint Frames1
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (_bitfield >> 24) & 0xFu;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (_bitfield & ~(0xFu << 24)) | ((value & 0xFu) << 24);
@@ -110,11 +126,13 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG : 2")]
         public uint Frames10
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (_bitfield >> 28) & 0x3u;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (_bitfield & ~(0x3u << 28)) | ((value & 0x3u) << 28);
@@ -124,11 +142,13 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG : 2")]
         public uint FrameRateCode
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (_bitfield >> 30) & 0x3u;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (_bitfield & ~(0x3u << 30)) | ((value & 0x3u) << 30);

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -16,10 +17,18 @@ namespace TerraFX.Interop
         [NativeTypeName("tagSTGMEDIUM::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ObjIdl.h:11272:36)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref IntPtr hBitmap => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hBitmap, 1));
+        public ref IntPtr hBitmap
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hBitmap, 1));
+            }
+        }
 
         public ref void* hMetaFilePict
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -29,12 +38,27 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref IntPtr hEnhMetaFile => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hEnhMetaFile, 1));
+        public ref IntPtr hEnhMetaFile
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hEnhMetaFile, 1));
+            }
+        }
 
-        public ref IntPtr hGlobal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hGlobal, 1));
+        public ref IntPtr hGlobal
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hGlobal, 1));
+            }
+        }
 
         public ref ushort* lpszFileName
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -46,6 +70,7 @@ namespace TerraFX.Interop
 
         public ref IStream* pstm
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -57,6 +82,7 @@ namespace TerraFX.Interop
 
         public ref IStorage* pstg
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)

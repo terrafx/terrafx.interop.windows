@@ -15,40 +15,46 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IWICImageEncoder*, Guid*, void**, int>)(lpVtbl[0]))((IWICImageEncoder*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IWICImageEncoder*, Guid*, void**, int>)(lpVtbl[0]))((IWICImageEncoder*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IWICImageEncoder*, uint>)(lpVtbl[1]))((IWICImageEncoder*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IWICImageEncoder*, uint>)(lpVtbl[1]))((IWICImageEncoder*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IWICImageEncoder*, uint>)(lpVtbl[2]))((IWICImageEncoder*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IWICImageEncoder*, uint>)(lpVtbl[2]))((IWICImageEncoder*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int WriteFrame([NativeTypeName("ID2D1Image *")] ID2D1Image* pImage, [NativeTypeName("IWICBitmapFrameEncode *")] IWICBitmapFrameEncode* pFrameEncode, [NativeTypeName("const WICImageParameters *")] WICImageParameters* pImageParameters)
         {
-            return ((delegate* stdcall<IWICImageEncoder*, ID2D1Image*, IWICBitmapFrameEncode*, WICImageParameters*, int>)(lpVtbl[3]))((IWICImageEncoder*)Unsafe.AsPointer(ref this), pImage, pFrameEncode, pImageParameters);
+            return ((delegate* unmanaged<IWICImageEncoder*, ID2D1Image*, IWICBitmapFrameEncode*, WICImageParameters*, int>)(lpVtbl[3]))((IWICImageEncoder*)Unsafe.AsPointer(ref this), pImage, pFrameEncode, pImageParameters);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int WriteFrameThumbnail([NativeTypeName("ID2D1Image *")] ID2D1Image* pImage, [NativeTypeName("IWICBitmapFrameEncode *")] IWICBitmapFrameEncode* pFrameEncode, [NativeTypeName("const WICImageParameters *")] WICImageParameters* pImageParameters)
         {
-            return ((delegate* stdcall<IWICImageEncoder*, ID2D1Image*, IWICBitmapFrameEncode*, WICImageParameters*, int>)(lpVtbl[4]))((IWICImageEncoder*)Unsafe.AsPointer(ref this), pImage, pFrameEncode, pImageParameters);
+            return ((delegate* unmanaged<IWICImageEncoder*, ID2D1Image*, IWICBitmapFrameEncode*, WICImageParameters*, int>)(lpVtbl[4]))((IWICImageEncoder*)Unsafe.AsPointer(ref this), pImage, pFrameEncode, pImageParameters);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int WriteThumbnail([NativeTypeName("ID2D1Image *")] ID2D1Image* pImage, [NativeTypeName("IWICBitmapEncoder *")] IWICBitmapEncoder* pEncoder, [NativeTypeName("const WICImageParameters *")] WICImageParameters* pImageParameters)
         {
-            return ((delegate* stdcall<IWICImageEncoder*, ID2D1Image*, IWICBitmapEncoder*, WICImageParameters*, int>)(lpVtbl[5]))((IWICImageEncoder*)Unsafe.AsPointer(ref this), pImage, pEncoder, pImageParameters);
+            return ((delegate* unmanaged<IWICImageEncoder*, ID2D1Image*, IWICBitmapEncoder*, WICImageParameters*, int>)(lpVtbl[5]))((IWICImageEncoder*)Unsafe.AsPointer(ref this), pImage, pEncoder, pImageParameters);
         }
     }
 }

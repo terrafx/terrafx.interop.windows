@@ -15,46 +15,53 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IOleControl*, Guid*, void**, int>)(lpVtbl[0]))((IOleControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IOleControl*, Guid*, void**, int>)(lpVtbl[0]))((IOleControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IOleControl*, uint>)(lpVtbl[1]))((IOleControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IOleControl*, uint>)(lpVtbl[1]))((IOleControl*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IOleControl*, uint>)(lpVtbl[2]))((IOleControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IOleControl*, uint>)(lpVtbl[2]))((IOleControl*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetControlInfo([NativeTypeName("CONTROLINFO *")] CONTROLINFO* pCI)
         {
-            return ((delegate* stdcall<IOleControl*, CONTROLINFO*, int>)(lpVtbl[3]))((IOleControl*)Unsafe.AsPointer(ref this), pCI);
+            return ((delegate* unmanaged<IOleControl*, CONTROLINFO*, int>)(lpVtbl[3]))((IOleControl*)Unsafe.AsPointer(ref this), pCI);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OnMnemonic([NativeTypeName("MSG *")] MSG* pMsg)
         {
-            return ((delegate* stdcall<IOleControl*, MSG*, int>)(lpVtbl[4]))((IOleControl*)Unsafe.AsPointer(ref this), pMsg);
+            return ((delegate* unmanaged<IOleControl*, MSG*, int>)(lpVtbl[4]))((IOleControl*)Unsafe.AsPointer(ref this), pMsg);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OnAmbientPropertyChange([NativeTypeName("DISPID")] int dispID)
         {
-            return ((delegate* stdcall<IOleControl*, int, int>)(lpVtbl[5]))((IOleControl*)Unsafe.AsPointer(ref this), dispID);
+            return ((delegate* unmanaged<IOleControl*, int, int>)(lpVtbl[5]))((IOleControl*)Unsafe.AsPointer(ref this), dispID);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int FreezeEvents([NativeTypeName("BOOL")] int bFreeze)
         {
-            return ((delegate* stdcall<IOleControl*, int, int>)(lpVtbl[6]))((IOleControl*)Unsafe.AsPointer(ref this), bFreeze);
+            return ((delegate* unmanaged<IOleControl*, int, int>)(lpVtbl[6]))((IOleControl*)Unsafe.AsPointer(ref this), bFreeze);
         }
     }
 }

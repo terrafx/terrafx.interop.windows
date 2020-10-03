@@ -3,6 +3,8 @@
 // Ported from shared/hidpi.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop
 {
     public unsafe partial struct HIDP_LINK_COLLECTION_NODE
@@ -30,11 +32,13 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG : 8")]
         public uint CollectionType
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return _bitfield & 0xFFu;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (_bitfield & ~0xFFu) | (value & 0xFFu);
@@ -44,11 +48,13 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG : 1")]
         public uint IsAlias
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (_bitfield >> 8) & 0x1u;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (_bitfield & ~(0x1u << 8)) | ((value & 0x1u) << 8);
@@ -58,11 +64,13 @@ namespace TerraFX.Interop
         [NativeTypeName("ULONG : 23")]
         public uint Reserved
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (_bitfield >> 9) & 0x7FFFFFu;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (_bitfield & ~(0x7FFFFFu << 9)) | ((value & 0x7FFFFFu) << 9);

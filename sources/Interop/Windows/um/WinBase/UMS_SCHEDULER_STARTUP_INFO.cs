@@ -14,7 +14,7 @@ namespace TerraFX.Interop
         public void* CompletionList;
 
         [NativeTypeName("PUMS_SCHEDULER_ENTRY_POINT")]
-        public delegate* stdcall<RTL_UMS_SCHEDULER_REASON, nuint, void*, void>* SchedulerProc;
+        public delegate* unmanaged<RTL_UMS_SCHEDULER_REASON, nuint, void*, void>* SchedulerProc;
 
         [NativeTypeName("PVOID")]
         public void* SchedulerParam;

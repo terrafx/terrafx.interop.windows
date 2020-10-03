@@ -15,76 +15,88 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IDataObject*, Guid*, void**, int>)(lpVtbl[0]))((IDataObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IDataObject*, Guid*, void**, int>)(lpVtbl[0]))((IDataObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IDataObject*, uint>)(lpVtbl[1]))((IDataObject*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDataObject*, uint>)(lpVtbl[1]))((IDataObject*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IDataObject*, uint>)(lpVtbl[2]))((IDataObject*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDataObject*, uint>)(lpVtbl[2]))((IDataObject*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetData([NativeTypeName("FORMATETC *")] FORMATETC* pformatetcIn, [NativeTypeName("STGMEDIUM *")] STGMEDIUM* pmedium)
         {
-            return ((delegate* stdcall<IDataObject*, FORMATETC*, STGMEDIUM*, int>)(lpVtbl[3]))((IDataObject*)Unsafe.AsPointer(ref this), pformatetcIn, pmedium);
+            return ((delegate* unmanaged<IDataObject*, FORMATETC*, STGMEDIUM*, int>)(lpVtbl[3]))((IDataObject*)Unsafe.AsPointer(ref this), pformatetcIn, pmedium);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetDataHere([NativeTypeName("FORMATETC *")] FORMATETC* pformatetc, [NativeTypeName("STGMEDIUM *")] STGMEDIUM* pmedium)
         {
-            return ((delegate* stdcall<IDataObject*, FORMATETC*, STGMEDIUM*, int>)(lpVtbl[4]))((IDataObject*)Unsafe.AsPointer(ref this), pformatetc, pmedium);
+            return ((delegate* unmanaged<IDataObject*, FORMATETC*, STGMEDIUM*, int>)(lpVtbl[4]))((IDataObject*)Unsafe.AsPointer(ref this), pformatetc, pmedium);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryGetData([NativeTypeName("FORMATETC *")] FORMATETC* pformatetc)
         {
-            return ((delegate* stdcall<IDataObject*, FORMATETC*, int>)(lpVtbl[5]))((IDataObject*)Unsafe.AsPointer(ref this), pformatetc);
+            return ((delegate* unmanaged<IDataObject*, FORMATETC*, int>)(lpVtbl[5]))((IDataObject*)Unsafe.AsPointer(ref this), pformatetc);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetCanonicalFormatEtc([NativeTypeName("FORMATETC *")] FORMATETC* pformatectIn, [NativeTypeName("FORMATETC *")] FORMATETC* pformatetcOut)
         {
-            return ((delegate* stdcall<IDataObject*, FORMATETC*, FORMATETC*, int>)(lpVtbl[6]))((IDataObject*)Unsafe.AsPointer(ref this), pformatectIn, pformatetcOut);
+            return ((delegate* unmanaged<IDataObject*, FORMATETC*, FORMATETC*, int>)(lpVtbl[6]))((IDataObject*)Unsafe.AsPointer(ref this), pformatectIn, pformatetcOut);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetData([NativeTypeName("FORMATETC *")] FORMATETC* pformatetc, [NativeTypeName("STGMEDIUM *")] STGMEDIUM* pmedium, [NativeTypeName("BOOL")] int fRelease)
         {
-            return ((delegate* stdcall<IDataObject*, FORMATETC*, STGMEDIUM*, int, int>)(lpVtbl[7]))((IDataObject*)Unsafe.AsPointer(ref this), pformatetc, pmedium, fRelease);
+            return ((delegate* unmanaged<IDataObject*, FORMATETC*, STGMEDIUM*, int, int>)(lpVtbl[7]))((IDataObject*)Unsafe.AsPointer(ref this), pformatetc, pmedium, fRelease);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int EnumFormatEtc([NativeTypeName("DWORD")] uint dwDirection, [NativeTypeName("IEnumFORMATETC **")] IEnumFORMATETC** ppenumFormatEtc)
         {
-            return ((delegate* stdcall<IDataObject*, uint, IEnumFORMATETC**, int>)(lpVtbl[8]))((IDataObject*)Unsafe.AsPointer(ref this), dwDirection, ppenumFormatEtc);
+            return ((delegate* unmanaged<IDataObject*, uint, IEnumFORMATETC**, int>)(lpVtbl[8]))((IDataObject*)Unsafe.AsPointer(ref this), dwDirection, ppenumFormatEtc);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int DAdvise([NativeTypeName("FORMATETC *")] FORMATETC* pformatetc, [NativeTypeName("DWORD")] uint advf, [NativeTypeName("IAdviseSink *")] IAdviseSink* pAdvSink, [NativeTypeName("DWORD *")] uint* pdwConnection)
         {
-            return ((delegate* stdcall<IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)(lpVtbl[9]))((IDataObject*)Unsafe.AsPointer(ref this), pformatetc, advf, pAdvSink, pdwConnection);
+            return ((delegate* unmanaged<IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)(lpVtbl[9]))((IDataObject*)Unsafe.AsPointer(ref this), pformatetc, advf, pAdvSink, pdwConnection);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int DUnadvise([NativeTypeName("DWORD")] uint dwConnection)
         {
-            return ((delegate* stdcall<IDataObject*, uint, int>)(lpVtbl[10]))((IDataObject*)Unsafe.AsPointer(ref this), dwConnection);
+            return ((delegate* unmanaged<IDataObject*, uint, int>)(lpVtbl[10]))((IDataObject*)Unsafe.AsPointer(ref this), dwConnection);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int EnumDAdvise([NativeTypeName("IEnumSTATDATA **")] IEnumSTATDATA** ppenumAdvise)
         {
-            return ((delegate* stdcall<IDataObject*, IEnumSTATDATA**, int>)(lpVtbl[11]))((IDataObject*)Unsafe.AsPointer(ref this), ppenumAdvise);
+            return ((delegate* unmanaged<IDataObject*, IEnumSTATDATA**, int>)(lpVtbl[11]))((IDataObject*)Unsafe.AsPointer(ref this), ppenumAdvise);
         }
     }
 }

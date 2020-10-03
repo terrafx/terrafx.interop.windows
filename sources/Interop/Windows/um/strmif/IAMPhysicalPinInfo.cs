@@ -15,28 +15,32 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IAMPhysicalPinInfo*, Guid*, void**, int>)(lpVtbl[0]))((IAMPhysicalPinInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IAMPhysicalPinInfo*, Guid*, void**, int>)(lpVtbl[0]))((IAMPhysicalPinInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IAMPhysicalPinInfo*, uint>)(lpVtbl[1]))((IAMPhysicalPinInfo*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IAMPhysicalPinInfo*, uint>)(lpVtbl[1]))((IAMPhysicalPinInfo*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IAMPhysicalPinInfo*, uint>)(lpVtbl[2]))((IAMPhysicalPinInfo*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IAMPhysicalPinInfo*, uint>)(lpVtbl[2]))((IAMPhysicalPinInfo*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetPhysicalType([NativeTypeName("long *")] int* pType, [NativeTypeName("LPOLESTR *")] ushort** ppszType)
         {
-            return ((delegate* stdcall<IAMPhysicalPinInfo*, int*, ushort**, int>)(lpVtbl[3]))((IAMPhysicalPinInfo*)Unsafe.AsPointer(ref this), pType, ppszType);
+            return ((delegate* unmanaged<IAMPhysicalPinInfo*, int*, ushort**, int>)(lpVtbl[3]))((IAMPhysicalPinInfo*)Unsafe.AsPointer(ref this), pType, ppszType);
         }
     }
 }

@@ -15,34 +15,39 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IDropSourceNotify*, Guid*, void**, int>)(lpVtbl[0]))((IDropSourceNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IDropSourceNotify*, Guid*, void**, int>)(lpVtbl[0]))((IDropSourceNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IDropSourceNotify*, uint>)(lpVtbl[1]))((IDropSourceNotify*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDropSourceNotify*, uint>)(lpVtbl[1]))((IDropSourceNotify*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IDropSourceNotify*, uint>)(lpVtbl[2]))((IDropSourceNotify*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDropSourceNotify*, uint>)(lpVtbl[2]))((IDropSourceNotify*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int DragEnterTarget([NativeTypeName("HWND")] IntPtr hwndTarget)
         {
-            return ((delegate* stdcall<IDropSourceNotify*, IntPtr, int>)(lpVtbl[3]))((IDropSourceNotify*)Unsafe.AsPointer(ref this), hwndTarget);
+            return ((delegate* unmanaged<IDropSourceNotify*, IntPtr, int>)(lpVtbl[3]))((IDropSourceNotify*)Unsafe.AsPointer(ref this), hwndTarget);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int DragLeaveTarget()
         {
-            return ((delegate* stdcall<IDropSourceNotify*, int>)(lpVtbl[4]))((IDropSourceNotify*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDropSourceNotify*, int>)(lpVtbl[4]))((IDropSourceNotify*)Unsafe.AsPointer(ref this));
         }
     }
 }

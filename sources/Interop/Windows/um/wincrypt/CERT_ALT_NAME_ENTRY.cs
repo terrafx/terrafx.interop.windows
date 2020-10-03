@@ -3,6 +3,7 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -17,6 +18,7 @@ namespace TerraFX.Interop
 
         public ref CERT_OTHER_NAME* pOtherName
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -28,6 +30,7 @@ namespace TerraFX.Interop
 
         public ref ushort* pwszRfc822Name
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -39,6 +42,7 @@ namespace TerraFX.Interop
 
         public ref ushort* pwszDNSName
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -48,10 +52,18 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref CRYPTOAPI_BLOB DirectoryName => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.DirectoryName, 1));
+        public ref CRYPTOAPI_BLOB DirectoryName
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.DirectoryName, 1));
+            }
+        }
 
         public ref ushort* pwszURL
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -61,10 +73,18 @@ namespace TerraFX.Interop
             }
         }
 
-        public ref CRYPTOAPI_BLOB IPAddress => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.IPAddress, 1));
+        public ref CRYPTOAPI_BLOB IPAddress
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.IPAddress, 1));
+            }
+        }
 
         public ref sbyte* pszRegisteredID
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)

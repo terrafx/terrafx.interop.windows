@@ -11,9 +11,9 @@ namespace TerraFX.Interop
         public ushort* propertyName;
 
         [NativeTypeName("PD2D1_PROPERTY_SET_FUNCTION")]
-        public delegate* stdcall<IUnknown*, byte*, uint, int> setFunction;
+        public delegate* unmanaged<IUnknown*, byte*, uint, int> setFunction;
 
         [NativeTypeName("PD2D1_PROPERTY_GET_FUNCTION")]
-        public delegate* stdcall<IUnknown*, byte*, uint, uint*, int> getFunction;
+        public delegate* unmanaged<IUnknown*, byte*, uint, uint*, int> getFunction;
     }
 }

@@ -3,6 +3,7 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -12,15 +13,24 @@ namespace TerraFX.Interop
         [NativeTypeName("_PROCESS_MITIGATION_IMAGE_LOAD_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:11803:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint Flags => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
+        public ref uint Flags
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
+            }
+        }
 
         public uint NoRemoteImages
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return Anonymous.Anonymous.NoRemoteImages;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 Anonymous.Anonymous.NoRemoteImages = value;
@@ -29,11 +39,13 @@ namespace TerraFX.Interop
 
         public uint NoLowMandatoryLabelImages
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return Anonymous.Anonymous.NoLowMandatoryLabelImages;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 Anonymous.Anonymous.NoLowMandatoryLabelImages = value;
@@ -42,11 +54,13 @@ namespace TerraFX.Interop
 
         public uint PreferSystem32Images
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return Anonymous.Anonymous.PreferSystem32Images;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 Anonymous.Anonymous.PreferSystem32Images = value;
@@ -55,11 +69,13 @@ namespace TerraFX.Interop
 
         public uint AuditNoRemoteImages
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return Anonymous.Anonymous.AuditNoRemoteImages;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 Anonymous.Anonymous.AuditNoRemoteImages = value;
@@ -68,11 +84,13 @@ namespace TerraFX.Interop
 
         public uint AuditNoLowMandatoryLabelImages
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return Anonymous.Anonymous.AuditNoLowMandatoryLabelImages;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 Anonymous.Anonymous.AuditNoLowMandatoryLabelImages = value;
@@ -81,11 +99,13 @@ namespace TerraFX.Interop
 
         public uint ReservedFlags
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return Anonymous.Anonymous.ReservedFlags;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 Anonymous.Anonymous.ReservedFlags = value;
@@ -110,11 +130,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD : 1")]
                 public uint NoRemoteImages
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return _bitfield & 0x1u;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
@@ -124,11 +146,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD : 1")]
                 public uint NoLowMandatoryLabelImages
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (_bitfield >> 1) & 0x1u;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1);
@@ -138,11 +162,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD : 1")]
                 public uint PreferSystem32Images
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (_bitfield >> 2) & 0x1u;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2);
@@ -152,11 +178,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD : 1")]
                 public uint AuditNoRemoteImages
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (_bitfield >> 3) & 0x1u;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~(0x1u << 3)) | ((value & 0x1u) << 3);
@@ -166,11 +194,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD : 1")]
                 public uint AuditNoLowMandatoryLabelImages
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (_bitfield >> 4) & 0x1u;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~(0x1u << 4)) | ((value & 0x1u) << 4);
@@ -180,11 +210,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD : 27")]
                 public uint ReservedFlags
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (_bitfield >> 5) & 0x7FFFFFFu;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~(0x7FFFFFFu << 5)) | ((value & 0x7FFFFFFu) << 5);

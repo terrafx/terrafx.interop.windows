@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -35,11 +36,13 @@ namespace TerraFX.Interop
 
             public ushort AllowScaling
             {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
                 {
                     return Anonymous.AllowScaling;
                 }
 
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 set
                 {
                     Anonymous.AllowScaling = value;
@@ -48,11 +51,13 @@ namespace TerraFX.Interop
 
             public ushort Disabled
             {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
                 {
                     return Anonymous.Disabled;
                 }
 
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 set
                 {
                     Anonymous.Disabled = value;
@@ -61,11 +66,13 @@ namespace TerraFX.Interop
 
             public ushort Reserved
             {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
                 {
                     return Anonymous.Reserved;
                 }
 
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 set
                 {
                     Anonymous.Reserved = value;
@@ -79,11 +86,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("WORD : 1")]
                 public ushort AllowScaling
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (ushort)(_bitfield & 0x1u);
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (ushort)((_bitfield & ~0x1u) | (value & 0x1u));
@@ -93,11 +102,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("WORD : 1")]
                 public ushort Disabled
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (ushort)((_bitfield >> 1) & 0x1u);
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (ushort)((_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1));
@@ -107,11 +118,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("WORD : 14")]
                 public ushort Reserved
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (ushort)((_bitfield >> 2) & 0x3FFFu);
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (ushort)((_bitfield & ~(0x3FFFu << 2)) | ((value & 0x3FFFu) << 2));
@@ -126,8 +139,16 @@ namespace TerraFX.Interop
             public PROCESSOR_IDLESTATE_INFO e1;
             public PROCESSOR_IDLESTATE_INFO e2;
 
-            public ref PROCESSOR_IDLESTATE_INFO this[int index] => ref AsSpan()[index];
+            public ref PROCESSOR_IDLESTATE_INFO this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan()[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<PROCESSOR_IDLESTATE_INFO> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 3);
         }
     }

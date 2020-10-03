@@ -15,46 +15,53 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMFSimpleAudioVolume*, Guid*, void**, int>)(lpVtbl[0]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMFSimpleAudioVolume*, Guid*, void**, int>)(lpVtbl[0]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMFSimpleAudioVolume*, uint>)(lpVtbl[1]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFSimpleAudioVolume*, uint>)(lpVtbl[1]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMFSimpleAudioVolume*, uint>)(lpVtbl[2]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFSimpleAudioVolume*, uint>)(lpVtbl[2]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetMasterVolume(float fLevel)
         {
-            return ((delegate* stdcall<IMFSimpleAudioVolume*, float, int>)(lpVtbl[3]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), fLevel);
+            return ((delegate* unmanaged<IMFSimpleAudioVolume*, float, int>)(lpVtbl[3]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), fLevel);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetMasterVolume([NativeTypeName("float *")] float* pfLevel)
         {
-            return ((delegate* stdcall<IMFSimpleAudioVolume*, float*, int>)(lpVtbl[4]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), pfLevel);
+            return ((delegate* unmanaged<IMFSimpleAudioVolume*, float*, int>)(lpVtbl[4]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), pfLevel);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetMute([NativeTypeName("const BOOL")] int bMute)
         {
-            return ((delegate* stdcall<IMFSimpleAudioVolume*, int, int>)(lpVtbl[5]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), bMute);
+            return ((delegate* unmanaged<IMFSimpleAudioVolume*, int, int>)(lpVtbl[5]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), bMute);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetMute([NativeTypeName("BOOL *")] int* pbMute)
         {
-            return ((delegate* stdcall<IMFSimpleAudioVolume*, int*, int>)(lpVtbl[6]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), pbMute);
+            return ((delegate* unmanaged<IMFSimpleAudioVolume*, int*, int>)(lpVtbl[6]))((IMFSimpleAudioVolume*)Unsafe.AsPointer(ref this), pbMute);
         }
     }
 }

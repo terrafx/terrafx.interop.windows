@@ -3,6 +3,7 @@
 // Ported from shared/hidpi.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -78,9 +79,23 @@ namespace TerraFX.Interop
         [NativeTypeName("_HIDP_VALUE_CAPS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/hidpi.h:134:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref _Anonymous_e__Union._Range_e__Struct Range => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Range, 1));
+        public ref _Anonymous_e__Union._Range_e__Struct Range
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Range, 1));
+            }
+        }
 
-        public ref _Anonymous_e__Union._NotRange_e__Struct NotRange => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.NotRange, 1));
+        public ref _Anonymous_e__Union._NotRange_e__Struct NotRange
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.NotRange, 1));
+            }
+        }
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -13,9 +14,23 @@ namespace TerraFX.Interop
         [NativeTypeName("_QUERY_FILE_LAYOUT_INPUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:14318:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint FilterEntryCount => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.FilterEntryCount, 1));
+        public ref uint FilterEntryCount
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.FilterEntryCount, 1));
+            }
+        }
 
-        public ref uint NumberOfPairs => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.NumberOfPairs, 1));
+        public ref uint NumberOfPairs
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.NumberOfPairs, 1));
+            }
+        }
 
         [NativeTypeName("DWORD")]
         public uint Flags;
@@ -59,8 +74,16 @@ namespace TerraFX.Interop
             {
                 public CLUSTER_RANGE e0;
 
-                public ref CLUSTER_RANGE this[int index] => ref AsSpan(int.MaxValue)[index];
+                public ref CLUSTER_RANGE this[int index]
+                {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    get
+                    {
+                        return ref AsSpan(int.MaxValue)[index];
+                    }
+                }
 
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 public Span<CLUSTER_RANGE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
             }
 
@@ -68,8 +91,16 @@ namespace TerraFX.Interop
             {
                 public FILE_REFERENCE_RANGE e0;
 
-                public ref FILE_REFERENCE_RANGE this[int index] => ref AsSpan(int.MaxValue)[index];
+                public ref FILE_REFERENCE_RANGE this[int index]
+                {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    get
+                    {
+                        return ref AsSpan(int.MaxValue)[index];
+                    }
+                }
 
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 public Span<FILE_REFERENCE_RANGE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
             }
 
@@ -77,8 +108,16 @@ namespace TerraFX.Interop
             {
                 public STORAGE_RESERVE_ID e0;
 
-                public ref STORAGE_RESERVE_ID this[int index] => ref AsSpan(int.MaxValue)[index];
+                public ref STORAGE_RESERVE_ID this[int index]
+                {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    get
+                    {
+                        return ref AsSpan(int.MaxValue)[index];
+                    }
+                }
 
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 public Span<STORAGE_RESERVE_ID> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
             }
         }

@@ -252,7 +252,7 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int ReadFileEx([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint nNumberOfBytesToRead, [NativeTypeName("LPOVERLAPPED")] OVERLAPPED* lpOverlapped, [NativeTypeName("LPOVERLAPPED_COMPLETION_ROUTINE")] delegate* stdcall<uint, uint, OVERLAPPED*, void> lpCompletionRoutine);
+        public static extern int ReadFileEx([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint nNumberOfBytesToRead, [NativeTypeName("LPOVERLAPPED")] OVERLAPPED* lpOverlapped, [NativeTypeName("LPOVERLAPPED_COMPLETION_ROUTINE")] delegate* unmanaged<uint, uint, OVERLAPPED*, void> lpCompletionRoutine);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
@@ -312,7 +312,7 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int WriteFileEx([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPCVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint nNumberOfBytesToWrite, [NativeTypeName("LPOVERLAPPED")] OVERLAPPED* lpOverlapped, [NativeTypeName("LPOVERLAPPED_COMPLETION_ROUTINE")] delegate* stdcall<uint, uint, OVERLAPPED*, void> lpCompletionRoutine);
+        public static extern int WriteFileEx([NativeTypeName("HANDLE")] IntPtr hFile, [NativeTypeName("LPCVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint nNumberOfBytesToWrite, [NativeTypeName("LPOVERLAPPED")] OVERLAPPED* lpOverlapped, [NativeTypeName("LPOVERLAPPED_COMPLETION_ROUTINE")] delegate* unmanaged<uint, uint, OVERLAPPED*, void> lpCompletionRoutine);
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]

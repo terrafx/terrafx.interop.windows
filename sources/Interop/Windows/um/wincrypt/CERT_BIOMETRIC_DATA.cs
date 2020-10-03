@@ -3,6 +3,7 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -15,10 +16,18 @@ namespace TerraFX.Interop
         [NativeTypeName("_CERT_BIOMETRIC_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:5553:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint dwPredefined => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwPredefined, 1));
+        public ref uint dwPredefined
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwPredefined, 1));
+            }
+        }
 
         public ref sbyte* pszObjId
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)

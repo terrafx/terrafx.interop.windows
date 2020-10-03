@@ -15,28 +15,32 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMFSecureBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IMFSecureBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMFSecureBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IMFSecureBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMFSecureBuffer*, uint>)(lpVtbl[1]))((IMFSecureBuffer*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFSecureBuffer*, uint>)(lpVtbl[1]))((IMFSecureBuffer*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMFSecureBuffer*, uint>)(lpVtbl[2]))((IMFSecureBuffer*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFSecureBuffer*, uint>)(lpVtbl[2]))((IMFSecureBuffer*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetIdentifier([NativeTypeName("GUID *")] Guid* pGuidIdentifier)
         {
-            return ((delegate* stdcall<IMFSecureBuffer*, Guid*, int>)(lpVtbl[3]))((IMFSecureBuffer*)Unsafe.AsPointer(ref this), pGuidIdentifier);
+            return ((delegate* unmanaged<IMFSecureBuffer*, Guid*, int>)(lpVtbl[3]))((IMFSecureBuffer*)Unsafe.AsPointer(ref this), pGuidIdentifier);
         }
     }
 }

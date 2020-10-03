@@ -3,6 +3,7 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -24,13 +25,41 @@ namespace TerraFX.Interop
         [NativeTypeName("_DEVICE_LOCATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:2922:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint Channel => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous1.Channel, 1));
+        public ref uint Channel
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous1.Channel, 1));
+            }
+        }
 
-        public ref uint Device => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous1.Device, 1));
+        public ref uint Device
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous1.Device, 1));
+            }
+        }
 
-        public ref uint Target => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous2.Target, 1));
+        public ref uint Target
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous2.Target, 1));
+            }
+        }
 
-        public ref uint Lun => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous2.Lun, 1));
+        public ref uint Lun
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous2.Lun, 1));
+            }
+        }
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

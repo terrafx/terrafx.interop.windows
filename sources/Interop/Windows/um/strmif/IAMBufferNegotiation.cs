@@ -15,34 +15,39 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IAMBufferNegotiation*, Guid*, void**, int>)(lpVtbl[0]))((IAMBufferNegotiation*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IAMBufferNegotiation*, Guid*, void**, int>)(lpVtbl[0]))((IAMBufferNegotiation*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IAMBufferNegotiation*, uint>)(lpVtbl[1]))((IAMBufferNegotiation*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IAMBufferNegotiation*, uint>)(lpVtbl[1]))((IAMBufferNegotiation*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IAMBufferNegotiation*, uint>)(lpVtbl[2]))((IAMBufferNegotiation*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IAMBufferNegotiation*, uint>)(lpVtbl[2]))((IAMBufferNegotiation*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SuggestAllocatorProperties([NativeTypeName("const ALLOCATOR_PROPERTIES *")] ALLOCATOR_PROPERTIES* pprop)
         {
-            return ((delegate* stdcall<IAMBufferNegotiation*, ALLOCATOR_PROPERTIES*, int>)(lpVtbl[3]))((IAMBufferNegotiation*)Unsafe.AsPointer(ref this), pprop);
+            return ((delegate* unmanaged<IAMBufferNegotiation*, ALLOCATOR_PROPERTIES*, int>)(lpVtbl[3]))((IAMBufferNegotiation*)Unsafe.AsPointer(ref this), pprop);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetAllocatorProperties([NativeTypeName("ALLOCATOR_PROPERTIES *")] ALLOCATOR_PROPERTIES* pprop)
         {
-            return ((delegate* stdcall<IAMBufferNegotiation*, ALLOCATOR_PROPERTIES*, int>)(lpVtbl[4]))((IAMBufferNegotiation*)Unsafe.AsPointer(ref this), pprop);
+            return ((delegate* unmanaged<IAMBufferNegotiation*, ALLOCATOR_PROPERTIES*, int>)(lpVtbl[4]))((IAMBufferNegotiation*)Unsafe.AsPointer(ref this), pprop);
         }
     }
 }

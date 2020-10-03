@@ -15,32 +15,37 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IXAPOParameters*, Guid*, void**, int>)(lpVtbl[0]))((IXAPOParameters*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IXAPOParameters*, Guid*, void**, int>)(lpVtbl[0]))((IXAPOParameters*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IXAPOParameters*, uint>)(lpVtbl[1]))((IXAPOParameters*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IXAPOParameters*, uint>)(lpVtbl[1]))((IXAPOParameters*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IXAPOParameters*, uint>)(lpVtbl[2]))((IXAPOParameters*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IXAPOParameters*, uint>)(lpVtbl[2]))((IXAPOParameters*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void SetParameters([NativeTypeName("const void *")] void* pParameters, [NativeTypeName("UINT32")] uint ParameterByteSize)
         {
-            ((delegate* stdcall<IXAPOParameters*, void*, uint, void>)(lpVtbl[3]))((IXAPOParameters*)Unsafe.AsPointer(ref this), pParameters, ParameterByteSize);
+            ((delegate* unmanaged<IXAPOParameters*, void*, uint, void>)(lpVtbl[3]))((IXAPOParameters*)Unsafe.AsPointer(ref this), pParameters, ParameterByteSize);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void GetParameters([NativeTypeName("void *")] void* pParameters, [NativeTypeName("UINT32")] uint ParameterByteSize)
         {
-            ((delegate* stdcall<IXAPOParameters*, void*, uint, void>)(lpVtbl[4]))((IXAPOParameters*)Unsafe.AsPointer(ref this), pParameters, ParameterByteSize);
+            ((delegate* unmanaged<IXAPOParameters*, void*, uint, void>)(lpVtbl[4]))((IXAPOParameters*)Unsafe.AsPointer(ref this), pParameters, ParameterByteSize);
         }
     }
 }

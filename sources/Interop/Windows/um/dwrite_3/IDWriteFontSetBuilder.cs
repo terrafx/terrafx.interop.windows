@@ -15,46 +15,53 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IDWriteFontSetBuilder*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteFontSetBuilder*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IDWriteFontSetBuilder*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteFontSetBuilder*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IDWriteFontSetBuilder*, uint>)(lpVtbl[1]))((IDWriteFontSetBuilder*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDWriteFontSetBuilder*, uint>)(lpVtbl[1]))((IDWriteFontSetBuilder*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IDWriteFontSetBuilder*, uint>)(lpVtbl[2]))((IDWriteFontSetBuilder*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDWriteFontSetBuilder*, uint>)(lpVtbl[2]))((IDWriteFontSetBuilder*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int AddFontFaceReference([NativeTypeName("IDWriteFontFaceReference *")] IDWriteFontFaceReference* fontFaceReference)
         {
-            return ((delegate* stdcall<IDWriteFontSetBuilder*, IDWriteFontFaceReference*, int>)(lpVtbl[3]))((IDWriteFontSetBuilder*)Unsafe.AsPointer(ref this), fontFaceReference);
+            return ((delegate* unmanaged<IDWriteFontSetBuilder*, IDWriteFontFaceReference*, int>)(lpVtbl[3]))((IDWriteFontSetBuilder*)Unsafe.AsPointer(ref this), fontFaceReference);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int AddFontFaceReference([NativeTypeName("IDWriteFontFaceReference *")] IDWriteFontFaceReference* fontFaceReference, [NativeTypeName("const DWRITE_FONT_PROPERTY *")] DWRITE_FONT_PROPERTY* properties, [NativeTypeName("UINT32")] uint propertyCount)
         {
-            return ((delegate* stdcall<IDWriteFontSetBuilder*, IDWriteFontFaceReference*, DWRITE_FONT_PROPERTY*, uint, int>)(lpVtbl[4]))((IDWriteFontSetBuilder*)Unsafe.AsPointer(ref this), fontFaceReference, properties, propertyCount);
+            return ((delegate* unmanaged<IDWriteFontSetBuilder*, IDWriteFontFaceReference*, DWRITE_FONT_PROPERTY*, uint, int>)(lpVtbl[4]))((IDWriteFontSetBuilder*)Unsafe.AsPointer(ref this), fontFaceReference, properties, propertyCount);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int AddFontSet([NativeTypeName("IDWriteFontSet *")] IDWriteFontSet* fontSet)
         {
-            return ((delegate* stdcall<IDWriteFontSetBuilder*, IDWriteFontSet*, int>)(lpVtbl[5]))((IDWriteFontSetBuilder*)Unsafe.AsPointer(ref this), fontSet);
+            return ((delegate* unmanaged<IDWriteFontSetBuilder*, IDWriteFontSet*, int>)(lpVtbl[5]))((IDWriteFontSetBuilder*)Unsafe.AsPointer(ref this), fontSet);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int CreateFontSet([NativeTypeName("IDWriteFontSet **")] IDWriteFontSet** fontSet)
         {
-            return ((delegate* stdcall<IDWriteFontSetBuilder*, IDWriteFontSet**, int>)(lpVtbl[6]))((IDWriteFontSetBuilder*)Unsafe.AsPointer(ref this), fontSet);
+            return ((delegate* unmanaged<IDWriteFontSetBuilder*, IDWriteFontSet**, int>)(lpVtbl[6]))((IDWriteFontSetBuilder*)Unsafe.AsPointer(ref this), fontSet);
         }
     }
 }

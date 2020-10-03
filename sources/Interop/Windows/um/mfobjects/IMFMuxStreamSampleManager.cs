@@ -15,40 +15,46 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMFMuxStreamSampleManager*, Guid*, void**, int>)(lpVtbl[0]))((IMFMuxStreamSampleManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMFMuxStreamSampleManager*, Guid*, void**, int>)(lpVtbl[0]))((IMFMuxStreamSampleManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMFMuxStreamSampleManager*, uint>)(lpVtbl[1]))((IMFMuxStreamSampleManager*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFMuxStreamSampleManager*, uint>)(lpVtbl[1]))((IMFMuxStreamSampleManager*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMFMuxStreamSampleManager*, uint>)(lpVtbl[2]))((IMFMuxStreamSampleManager*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFMuxStreamSampleManager*, uint>)(lpVtbl[2]))((IMFMuxStreamSampleManager*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetStreamCount([NativeTypeName("DWORD *")] uint* pdwMuxStreamCount)
         {
-            return ((delegate* stdcall<IMFMuxStreamSampleManager*, uint*, int>)(lpVtbl[3]))((IMFMuxStreamSampleManager*)Unsafe.AsPointer(ref this), pdwMuxStreamCount);
+            return ((delegate* unmanaged<IMFMuxStreamSampleManager*, uint*, int>)(lpVtbl[3]))((IMFMuxStreamSampleManager*)Unsafe.AsPointer(ref this), pdwMuxStreamCount);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetSample([NativeTypeName("DWORD")] uint dwMuxStreamIndex, [NativeTypeName("IMFSample **")] IMFSample** ppSample)
         {
-            return ((delegate* stdcall<IMFMuxStreamSampleManager*, uint, IMFSample**, int>)(lpVtbl[4]))((IMFMuxStreamSampleManager*)Unsafe.AsPointer(ref this), dwMuxStreamIndex, ppSample);
+            return ((delegate* unmanaged<IMFMuxStreamSampleManager*, uint, IMFSample**, int>)(lpVtbl[4]))((IMFMuxStreamSampleManager*)Unsafe.AsPointer(ref this), dwMuxStreamIndex, ppSample);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONGLONG")]
         public ulong GetStreamConfiguration()
         {
-            return ((delegate* stdcall<IMFMuxStreamSampleManager*, ulong>)(lpVtbl[5]))((IMFMuxStreamSampleManager*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFMuxStreamSampleManager*, ulong>)(lpVtbl[5]))((IMFMuxStreamSampleManager*)Unsafe.AsPointer(ref this));
         }
     }
 }

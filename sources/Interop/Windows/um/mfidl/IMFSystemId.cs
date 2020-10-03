@@ -15,34 +15,39 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMFSystemId*, Guid*, void**, int>)(lpVtbl[0]))((IMFSystemId*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMFSystemId*, Guid*, void**, int>)(lpVtbl[0]))((IMFSystemId*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMFSystemId*, uint>)(lpVtbl[1]))((IMFSystemId*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFSystemId*, uint>)(lpVtbl[1]))((IMFSystemId*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMFSystemId*, uint>)(lpVtbl[2]))((IMFSystemId*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFSystemId*, uint>)(lpVtbl[2]))((IMFSystemId*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetData([NativeTypeName("UINT32 *")] uint* size, [NativeTypeName("BYTE **")] byte** data)
         {
-            return ((delegate* stdcall<IMFSystemId*, uint*, byte**, int>)(lpVtbl[3]))((IMFSystemId*)Unsafe.AsPointer(ref this), size, data);
+            return ((delegate* unmanaged<IMFSystemId*, uint*, byte**, int>)(lpVtbl[3]))((IMFSystemId*)Unsafe.AsPointer(ref this), size, data);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Setup([NativeTypeName("UINT32")] uint stage, [NativeTypeName("UINT32")] uint cbIn, [NativeTypeName("const BYTE *")] byte* pbIn, [NativeTypeName("UINT32 *")] uint* pcbOut, [NativeTypeName("BYTE **")] byte** ppbOut)
         {
-            return ((delegate* stdcall<IMFSystemId*, uint, uint, byte*, uint*, byte**, int>)(lpVtbl[4]))((IMFSystemId*)Unsafe.AsPointer(ref this), stage, cbIn, pbIn, pcbOut, ppbOut);
+            return ((delegate* unmanaged<IMFSystemId*, uint, uint, byte*, uint*, byte**, int>)(lpVtbl[4]))((IMFSystemId*)Unsafe.AsPointer(ref this), stage, cbIn, pbIn, pcbOut, ppbOut);
         }
     }
 }

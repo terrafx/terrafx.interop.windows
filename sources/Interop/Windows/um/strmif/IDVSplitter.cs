@@ -15,28 +15,32 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IDVSplitter*, Guid*, void**, int>)(lpVtbl[0]))((IDVSplitter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IDVSplitter*, Guid*, void**, int>)(lpVtbl[0]))((IDVSplitter*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IDVSplitter*, uint>)(lpVtbl[1]))((IDVSplitter*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDVSplitter*, uint>)(lpVtbl[1]))((IDVSplitter*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IDVSplitter*, uint>)(lpVtbl[2]))((IDVSplitter*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDVSplitter*, uint>)(lpVtbl[2]))((IDVSplitter*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int DiscardAlternateVideoFrames(int nDiscard)
         {
-            return ((delegate* stdcall<IDVSplitter*, int, int>)(lpVtbl[3]))((IDVSplitter*)Unsafe.AsPointer(ref this), nDiscard);
+            return ((delegate* unmanaged<IDVSplitter*, int, int>)(lpVtbl[3]))((IDVSplitter*)Unsafe.AsPointer(ref this), nDiscard);
         }
     }
 }

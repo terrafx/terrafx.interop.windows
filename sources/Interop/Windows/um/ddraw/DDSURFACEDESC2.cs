@@ -3,6 +3,7 @@
 // Ported from um/ddraw.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -24,25 +25,74 @@ namespace TerraFX.Interop
         [NativeTypeName("_DDSURFACEDESC2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:2268:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
-        public ref int lPitch => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.lPitch, 1));
+        public ref int lPitch
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.lPitch, 1));
+            }
+        }
 
-        public ref uint dwLinearSize => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.dwLinearSize, 1));
+        public ref uint dwLinearSize
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.dwLinearSize, 1));
+            }
+        }
 
         [NativeTypeName("_DDSURFACEDESC2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:2273:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
-        public ref uint dwBackBufferCount => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dwBackBufferCount, 1));
+        public ref uint dwBackBufferCount
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dwBackBufferCount, 1));
+            }
+        }
 
-        public ref uint dwDepth => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dwDepth, 1));
+        public ref uint dwDepth
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.dwDepth, 1));
+            }
+        }
 
         [NativeTypeName("_DDSURFACEDESC2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:2278:5)")]
         public _Anonymous3_e__Union Anonymous3;
 
-        public ref uint dwMipMapCount => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous3.dwMipMapCount, 1));
+        public ref uint dwMipMapCount
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous3.dwMipMapCount, 1));
+            }
+        }
 
-        public ref uint dwRefreshRate => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous3.dwRefreshRate, 1));
+        public ref uint dwRefreshRate
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous3.dwRefreshRate, 1));
+            }
+        }
 
-        public ref uint dwSrcVBHandle => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous3.dwSrcVBHandle, 1));
+        public ref uint dwSrcVBHandle
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous3.dwSrcVBHandle, 1));
+            }
+        }
 
         [NativeTypeName("DWORD")]
         public uint dwAlphaBitDepth;
@@ -56,9 +106,23 @@ namespace TerraFX.Interop
         [NativeTypeName("_DDSURFACEDESC2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:2288:5)")]
         public _Anonymous4_e__Union Anonymous4;
 
-        public ref DDCOLORKEY ddckCKDestOverlay => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous4.ddckCKDestOverlay, 1));
+        public ref DDCOLORKEY ddckCKDestOverlay
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous4.ddckCKDestOverlay, 1));
+            }
+        }
 
-        public ref uint dwEmptyFaceColor => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous4.dwEmptyFaceColor, 1));
+        public ref uint dwEmptyFaceColor
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous4.dwEmptyFaceColor, 1));
+            }
+        }
 
         public DDCOLORKEY ddckCKDestBlt;
 
@@ -69,9 +133,23 @@ namespace TerraFX.Interop
         [NativeTypeName("_DDSURFACEDESC2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/ddraw.h:2296:5)")]
         public _Anonymous5_e__Union Anonymous5;
 
-        public ref DDPIXELFORMAT ddpfPixelFormat => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous5.ddpfPixelFormat, 1));
+        public ref DDPIXELFORMAT ddpfPixelFormat
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous5.ddpfPixelFormat, 1));
+            }
+        }
 
-        public ref uint dwFVF => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous5.dwFVF, 1));
+        public ref uint dwFVF
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous5.dwFVF, 1));
+            }
+        }
 
         public DDSCAPS2 ddsCaps;
 

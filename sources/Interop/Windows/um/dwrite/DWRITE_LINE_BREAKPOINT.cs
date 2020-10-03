@@ -3,6 +3,8 @@
 // Ported from um/dwrite.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop
 {
     public partial struct DWRITE_LINE_BREAKPOINT
@@ -12,11 +14,13 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT8 : 2")]
         public byte breakConditionBefore
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (byte)(_bitfield & 0x3u);
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (byte)((_bitfield & ~0x3u) | (value & 0x3u));
@@ -26,11 +30,13 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT8 : 2")]
         public byte breakConditionAfter
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (byte)((_bitfield >> 2) & 0x3u);
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (byte)((_bitfield & ~(0x3u << 2)) | ((value & 0x3u) << 2));
@@ -40,11 +46,13 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT8 : 1")]
         public byte isWhitespace
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (byte)((_bitfield >> 4) & 0x1u);
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (byte)((_bitfield & ~(0x1u << 4)) | ((value & 0x1u) << 4));
@@ -54,11 +62,13 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT8 : 1")]
         public byte isSoftHyphen
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (byte)((_bitfield >> 5) & 0x1u);
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (byte)((_bitfield & ~(0x1u << 5)) | ((value & 0x1u) << 5));
@@ -68,11 +78,13 @@ namespace TerraFX.Interop
         [NativeTypeName("UINT8 : 2")]
         public byte padding
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (byte)((_bitfield >> 6) & 0x3u);
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (byte)((_bitfield & ~(0x3u << 6)) | ((value & 0x3u) << 6));

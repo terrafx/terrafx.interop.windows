@@ -69,7 +69,7 @@ namespace TerraFX.Interop
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int MFAddPeriodicCallback([NativeTypeName("MFPERIODICCALLBACK")] delegate* stdcall<IUnknown*, void> Callback, [NativeTypeName("IUnknown *")] IUnknown* pContext, [NativeTypeName("DWORD *")] uint* pdwKey);
+        public static extern int MFAddPeriodicCallback([NativeTypeName("MFPERIODICCALLBACK")] delegate* unmanaged<IUnknown*, void> Callback, [NativeTypeName("IUnknown *")] IUnknown* pContext, [NativeTypeName("DWORD *")] uint* pdwKey);
 
         [DllImport("mfplat", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

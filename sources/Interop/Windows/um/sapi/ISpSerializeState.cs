@@ -15,34 +15,39 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<ISpSerializeState*, Guid*, void**, int>)(lpVtbl[0]))((ISpSerializeState*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<ISpSerializeState*, Guid*, void**, int>)(lpVtbl[0]))((ISpSerializeState*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<ISpSerializeState*, uint>)(lpVtbl[1]))((ISpSerializeState*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ISpSerializeState*, uint>)(lpVtbl[1]))((ISpSerializeState*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<ISpSerializeState*, uint>)(lpVtbl[2]))((ISpSerializeState*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ISpSerializeState*, uint>)(lpVtbl[2]))((ISpSerializeState*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetSerializedState([NativeTypeName("BYTE **")] byte** ppbData, [NativeTypeName("ULONG *")] uint* pulSize, [NativeTypeName("DWORD")] uint dwReserved)
         {
-            return ((delegate* stdcall<ISpSerializeState*, byte**, uint*, uint, int>)(lpVtbl[3]))((ISpSerializeState*)Unsafe.AsPointer(ref this), ppbData, pulSize, dwReserved);
+            return ((delegate* unmanaged<ISpSerializeState*, byte**, uint*, uint, int>)(lpVtbl[3]))((ISpSerializeState*)Unsafe.AsPointer(ref this), ppbData, pulSize, dwReserved);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetSerializedState([NativeTypeName("BYTE *")] byte* pbData, [NativeTypeName("ULONG")] uint ulSize, [NativeTypeName("DWORD")] uint dwReserved)
         {
-            return ((delegate* stdcall<ISpSerializeState*, byte*, uint, uint, int>)(lpVtbl[4]))((ISpSerializeState*)Unsafe.AsPointer(ref this), pbData, ulSize, dwReserved);
+            return ((delegate* unmanaged<ISpSerializeState*, byte*, uint, uint, int>)(lpVtbl[4]))((ISpSerializeState*)Unsafe.AsPointer(ref this), pbData, ulSize, dwReserved);
         }
     }
 }

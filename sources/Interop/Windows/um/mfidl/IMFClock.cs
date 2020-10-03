@@ -15,52 +15,60 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMFClock*, Guid*, void**, int>)(lpVtbl[0]))((IMFClock*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMFClock*, Guid*, void**, int>)(lpVtbl[0]))((IMFClock*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMFClock*, uint>)(lpVtbl[1]))((IMFClock*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFClock*, uint>)(lpVtbl[1]))((IMFClock*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMFClock*, uint>)(lpVtbl[2]))((IMFClock*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFClock*, uint>)(lpVtbl[2]))((IMFClock*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetClockCharacteristics([NativeTypeName("DWORD *")] uint* pdwCharacteristics)
         {
-            return ((delegate* stdcall<IMFClock*, uint*, int>)(lpVtbl[3]))((IMFClock*)Unsafe.AsPointer(ref this), pdwCharacteristics);
+            return ((delegate* unmanaged<IMFClock*, uint*, int>)(lpVtbl[3]))((IMFClock*)Unsafe.AsPointer(ref this), pdwCharacteristics);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetCorrelatedTime([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("LONGLONG *")] long* pllClockTime, [NativeTypeName("MFTIME *")] long* phnsSystemTime)
         {
-            return ((delegate* stdcall<IMFClock*, uint, long*, long*, int>)(lpVtbl[4]))((IMFClock*)Unsafe.AsPointer(ref this), dwReserved, pllClockTime, phnsSystemTime);
+            return ((delegate* unmanaged<IMFClock*, uint, long*, long*, int>)(lpVtbl[4]))((IMFClock*)Unsafe.AsPointer(ref this), dwReserved, pllClockTime, phnsSystemTime);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetContinuityKey([NativeTypeName("DWORD *")] uint* pdwContinuityKey)
         {
-            return ((delegate* stdcall<IMFClock*, uint*, int>)(lpVtbl[5]))((IMFClock*)Unsafe.AsPointer(ref this), pdwContinuityKey);
+            return ((delegate* unmanaged<IMFClock*, uint*, int>)(lpVtbl[5]))((IMFClock*)Unsafe.AsPointer(ref this), pdwContinuityKey);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetState([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("MFCLOCK_STATE *")] MFCLOCK_STATE* peClockState)
         {
-            return ((delegate* stdcall<IMFClock*, uint, MFCLOCK_STATE*, int>)(lpVtbl[6]))((IMFClock*)Unsafe.AsPointer(ref this), dwReserved, peClockState);
+            return ((delegate* unmanaged<IMFClock*, uint, MFCLOCK_STATE*, int>)(lpVtbl[6]))((IMFClock*)Unsafe.AsPointer(ref this), dwReserved, peClockState);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetProperties([NativeTypeName("MFCLOCK_PROPERTIES *")] MFCLOCK_PROPERTIES* pClockProperties)
         {
-            return ((delegate* stdcall<IMFClock*, MFCLOCK_PROPERTIES*, int>)(lpVtbl[7]))((IMFClock*)Unsafe.AsPointer(ref this), pClockProperties);
+            return ((delegate* unmanaged<IMFClock*, MFCLOCK_PROPERTIES*, int>)(lpVtbl[7]))((IMFClock*)Unsafe.AsPointer(ref this), pClockProperties);
         }
     }
 }

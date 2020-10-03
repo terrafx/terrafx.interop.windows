@@ -15,28 +15,32 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IAudioSessionNotification*, Guid*, void**, int>)(lpVtbl[0]))((IAudioSessionNotification*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IAudioSessionNotification*, Guid*, void**, int>)(lpVtbl[0]))((IAudioSessionNotification*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IAudioSessionNotification*, uint>)(lpVtbl[1]))((IAudioSessionNotification*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IAudioSessionNotification*, uint>)(lpVtbl[1]))((IAudioSessionNotification*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IAudioSessionNotification*, uint>)(lpVtbl[2]))((IAudioSessionNotification*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IAudioSessionNotification*, uint>)(lpVtbl[2]))((IAudioSessionNotification*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OnSessionCreated([NativeTypeName("IAudioSessionControl *")] IAudioSessionControl* NewSession)
         {
-            return ((delegate* stdcall<IAudioSessionNotification*, IAudioSessionControl*, int>)(lpVtbl[3]))((IAudioSessionNotification*)Unsafe.AsPointer(ref this), NewSession);
+            return ((delegate* unmanaged<IAudioSessionNotification*, IAudioSessionControl*, int>)(lpVtbl[3]))((IAudioSessionNotification*)Unsafe.AsPointer(ref this), NewSession);
         }
     }
 }

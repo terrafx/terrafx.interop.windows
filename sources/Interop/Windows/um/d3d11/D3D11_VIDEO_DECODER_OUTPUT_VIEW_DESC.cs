@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -18,7 +19,14 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11.h:11210:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref D3D11_TEX2D_VDOV Texture2D => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Texture2D, 1));
+        public ref D3D11_TEX2D_VDOV Texture2D
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Texture2D, 1));
+            }
+        }
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union

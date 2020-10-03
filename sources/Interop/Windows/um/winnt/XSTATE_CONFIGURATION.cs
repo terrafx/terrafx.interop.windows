@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -22,15 +23,24 @@ namespace TerraFX.Interop
         [NativeTypeName("_XSTATE_CONFIGURATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12817:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint ControlFlags => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ControlFlags, 1));
+        public ref uint ControlFlags
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ControlFlags, 1));
+            }
+        }
 
         public uint OptimizedSave
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return Anonymous.Anonymous.OptimizedSave;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 Anonymous.Anonymous.OptimizedSave = value;
@@ -39,11 +49,13 @@ namespace TerraFX.Interop
 
         public uint CompactionEnabled
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return Anonymous.Anonymous.CompactionEnabled;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 Anonymous.Anonymous.CompactionEnabled = value;
@@ -86,11 +98,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD : 1")]
                 public uint OptimizedSave
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return _bitfield & 0x1u;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
@@ -100,11 +114,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD : 1")]
                 public uint CompactionEnabled
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (_bitfield >> 1) & 0x1u;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1);
@@ -180,8 +196,16 @@ namespace TerraFX.Interop
             public XSTATE_FEATURE e62;
             public XSTATE_FEATURE e63;
 
-            public ref XSTATE_FEATURE this[int index] => ref AsSpan()[index];
+            public ref XSTATE_FEATURE this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan()[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<XSTATE_FEATURE> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 64);
         }
     }

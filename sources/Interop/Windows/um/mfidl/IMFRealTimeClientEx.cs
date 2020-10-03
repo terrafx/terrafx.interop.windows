@@ -15,40 +15,46 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMFRealTimeClientEx*, Guid*, void**, int>)(lpVtbl[0]))((IMFRealTimeClientEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMFRealTimeClientEx*, Guid*, void**, int>)(lpVtbl[0]))((IMFRealTimeClientEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMFRealTimeClientEx*, uint>)(lpVtbl[1]))((IMFRealTimeClientEx*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFRealTimeClientEx*, uint>)(lpVtbl[1]))((IMFRealTimeClientEx*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMFRealTimeClientEx*, uint>)(lpVtbl[2]))((IMFRealTimeClientEx*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFRealTimeClientEx*, uint>)(lpVtbl[2]))((IMFRealTimeClientEx*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int RegisterThreadsEx([NativeTypeName("DWORD *")] uint* pdwTaskIndex, [NativeTypeName("LPCWSTR")] ushort* wszClassName, [NativeTypeName("LONG")] int lBasePriority)
         {
-            return ((delegate* stdcall<IMFRealTimeClientEx*, uint*, ushort*, int, int>)(lpVtbl[3]))((IMFRealTimeClientEx*)Unsafe.AsPointer(ref this), pdwTaskIndex, wszClassName, lBasePriority);
+            return ((delegate* unmanaged<IMFRealTimeClientEx*, uint*, ushort*, int, int>)(lpVtbl[3]))((IMFRealTimeClientEx*)Unsafe.AsPointer(ref this), pdwTaskIndex, wszClassName, lBasePriority);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int UnregisterThreads()
         {
-            return ((delegate* stdcall<IMFRealTimeClientEx*, int>)(lpVtbl[4]))((IMFRealTimeClientEx*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFRealTimeClientEx*, int>)(lpVtbl[4]))((IMFRealTimeClientEx*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetWorkQueueEx([NativeTypeName("DWORD")] uint dwMultithreadedWorkQueueId, [NativeTypeName("LONG")] int lWorkItemBasePriority)
         {
-            return ((delegate* stdcall<IMFRealTimeClientEx*, uint, int, int>)(lpVtbl[5]))((IMFRealTimeClientEx*)Unsafe.AsPointer(ref this), dwMultithreadedWorkQueueId, lWorkItemBasePriority);
+            return ((delegate* unmanaged<IMFRealTimeClientEx*, uint, int, int>)(lpVtbl[5]))((IMFRealTimeClientEx*)Unsafe.AsPointer(ref this), dwMultithreadedWorkQueueId, lWorkItemBasePriority);
         }
     }
 }

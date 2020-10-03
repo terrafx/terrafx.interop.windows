@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -23,9 +24,23 @@ namespace TerraFX.Interop
         [NativeTypeName("tMIXERCONTROLDETAILS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/mmeapi.h:2341:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref IntPtr hwndOwner => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hwndOwner, 1));
+        public ref IntPtr hwndOwner
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hwndOwner, 1));
+            }
+        }
 
-        public ref uint cMultipleItems => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.cMultipleItems, 1));
+        public ref uint cMultipleItems
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.cMultipleItems, 1));
+            }
+        }
 
         [NativeTypeName("DWORD")]
         public uint cbDetails;

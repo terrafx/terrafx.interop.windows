@@ -3,6 +3,7 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -27,10 +28,10 @@ namespace TerraFX.Interop
         public CMSG_RECIPIENT_ENCODE_INFO* rgCmsRecipients;
 
         [NativeTypeName("PFN_CMSG_ALLOC")]
-        public delegate* stdcall<nuint, void*> pfnAlloc;
+        public delegate* unmanaged<nuint, void*> pfnAlloc;
 
         [NativeTypeName("PFN_CMSG_FREE")]
-        public delegate* stdcall<void*, void> pfnFree;
+        public delegate* unmanaged<void*, void> pfnFree;
 
         [NativeTypeName("DWORD")]
         public uint dwEncryptFlags;
@@ -38,10 +39,18 @@ namespace TerraFX.Interop
         [NativeTypeName("_CMSG_CONTENT_ENCRYPT_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:8442:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref nuint hContentEncryptKey => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hContentEncryptKey, 1));
+        public ref nuint hContentEncryptKey
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hContentEncryptKey, 1));
+            }
+        }
 
         public ref void* hCNGContentEncryptKey
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)

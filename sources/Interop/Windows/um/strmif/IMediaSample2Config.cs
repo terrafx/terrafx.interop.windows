@@ -15,28 +15,32 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMediaSample2Config*, Guid*, void**, int>)(lpVtbl[0]))((IMediaSample2Config*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMediaSample2Config*, Guid*, void**, int>)(lpVtbl[0]))((IMediaSample2Config*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMediaSample2Config*, uint>)(lpVtbl[1]))((IMediaSample2Config*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMediaSample2Config*, uint>)(lpVtbl[1]))((IMediaSample2Config*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMediaSample2Config*, uint>)(lpVtbl[2]))((IMediaSample2Config*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMediaSample2Config*, uint>)(lpVtbl[2]))((IMediaSample2Config*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetSurface([NativeTypeName("IUnknown **")] IUnknown** ppDirect3DSurface9)
         {
-            return ((delegate* stdcall<IMediaSample2Config*, IUnknown**, int>)(lpVtbl[3]))((IMediaSample2Config*)Unsafe.AsPointer(ref this), ppDirect3DSurface9);
+            return ((delegate* unmanaged<IMediaSample2Config*, IUnknown**, int>)(lpVtbl[3]))((IMediaSample2Config*)Unsafe.AsPointer(ref this), ppDirect3DSurface9);
         }
     }
 }

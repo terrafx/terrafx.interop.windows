@@ -15,34 +15,39 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IProcessLock*, Guid*, void**, int>)(lpVtbl[0]))((IProcessLock*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IProcessLock*, Guid*, void**, int>)(lpVtbl[0]))((IProcessLock*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IProcessLock*, uint>)(lpVtbl[1]))((IProcessLock*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IProcessLock*, uint>)(lpVtbl[1]))((IProcessLock*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IProcessLock*, uint>)(lpVtbl[2]))((IProcessLock*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IProcessLock*, uint>)(lpVtbl[2]))((IProcessLock*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRefOnProcess()
         {
-            return ((delegate* stdcall<IProcessLock*, uint>)(lpVtbl[3]))((IProcessLock*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IProcessLock*, uint>)(lpVtbl[3]))((IProcessLock*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint ReleaseRefOnProcess()
         {
-            return ((delegate* stdcall<IProcessLock*, uint>)(lpVtbl[4]))((IProcessLock*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IProcessLock*, uint>)(lpVtbl[4]))((IProcessLock*)Unsafe.AsPointer(ref this));
         }
     }
 }

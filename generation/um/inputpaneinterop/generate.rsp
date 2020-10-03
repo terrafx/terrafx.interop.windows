@@ -1,0 +1,10 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+um-inputpaneinterop.h
+--output
+../../../sources/Interop/Windows/um/inputpaneinterop
+--test-output
+../../../tests/Interop/Windows/um/inputpaneinterop
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/inputpaneinterop.h

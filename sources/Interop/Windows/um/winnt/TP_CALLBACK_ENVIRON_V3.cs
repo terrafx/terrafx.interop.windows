@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -20,7 +21,7 @@ namespace TerraFX.Interop
         public IntPtr CleanupGroup;
 
         [NativeTypeName("PTP_CLEANUP_GROUP_CANCEL_CALLBACK")]
-        public delegate* stdcall<void*, void*, void> CleanupGroupCancelCallback;
+        public delegate* unmanaged<void*, void*, void> CleanupGroupCancelCallback;
 
         [NativeTypeName("PVOID")]
         public void* RaceDll;
@@ -29,7 +30,7 @@ namespace TerraFX.Interop
         public IntPtr ActivationContext;
 
         [NativeTypeName("PTP_SIMPLE_CALLBACK")]
-        public delegate* stdcall<IntPtr, void*, void> FinalizationCallback;
+        public delegate* unmanaged<IntPtr, void*, void> FinalizationCallback;
 
         [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:22629:5)")]
         public _u_e__Union u;
@@ -57,11 +58,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD : 1")]
                 public uint LongFunction
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return _bitfield & 0x1u;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
@@ -71,11 +74,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD : 1")]
                 public uint Persistent
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (_bitfield >> 1) & 0x1u;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1);
@@ -85,11 +90,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD : 30")]
                 public uint Private
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (_bitfield >> 2) & 0x3FFFFFFFu;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~(0x3FFFFFFFu << 2)) | ((value & 0x3FFFFFFFu) << 2);

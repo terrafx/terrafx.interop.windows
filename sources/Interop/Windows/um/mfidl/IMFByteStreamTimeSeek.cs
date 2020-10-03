@@ -15,40 +15,46 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMFByteStreamTimeSeek*, Guid*, void**, int>)(lpVtbl[0]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMFByteStreamTimeSeek*, Guid*, void**, int>)(lpVtbl[0]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMFByteStreamTimeSeek*, uint>)(lpVtbl[1]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFByteStreamTimeSeek*, uint>)(lpVtbl[1]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMFByteStreamTimeSeek*, uint>)(lpVtbl[2]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFByteStreamTimeSeek*, uint>)(lpVtbl[2]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int IsTimeSeekSupported([NativeTypeName("BOOL *")] int* pfTimeSeekIsSupported)
         {
-            return ((delegate* stdcall<IMFByteStreamTimeSeek*, int*, int>)(lpVtbl[3]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this), pfTimeSeekIsSupported);
+            return ((delegate* unmanaged<IMFByteStreamTimeSeek*, int*, int>)(lpVtbl[3]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this), pfTimeSeekIsSupported);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int TimeSeek([NativeTypeName("QWORD")] ulong qwTimePosition)
         {
-            return ((delegate* stdcall<IMFByteStreamTimeSeek*, ulong, int>)(lpVtbl[4]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this), qwTimePosition);
+            return ((delegate* unmanaged<IMFByteStreamTimeSeek*, ulong, int>)(lpVtbl[4]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this), qwTimePosition);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetTimeSeekResult([NativeTypeName("QWORD *")] ulong* pqwStartTime, [NativeTypeName("QWORD *")] ulong* pqwStopTime, [NativeTypeName("QWORD *")] ulong* pqwDuration)
         {
-            return ((delegate* stdcall<IMFByteStreamTimeSeek*, ulong*, ulong*, ulong*, int>)(lpVtbl[5]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this), pqwStartTime, pqwStopTime, pqwDuration);
+            return ((delegate* unmanaged<IMFByteStreamTimeSeek*, ulong*, ulong*, ulong*, int>)(lpVtbl[5]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this), pqwStartTime, pqwStopTime, pqwDuration);
         }
     }
 }

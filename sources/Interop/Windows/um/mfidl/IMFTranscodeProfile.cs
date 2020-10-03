@@ -15,58 +15,67 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMFTranscodeProfile*, Guid*, void**, int>)(lpVtbl[0]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMFTranscodeProfile*, Guid*, void**, int>)(lpVtbl[0]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMFTranscodeProfile*, uint>)(lpVtbl[1]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFTranscodeProfile*, uint>)(lpVtbl[1]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMFTranscodeProfile*, uint>)(lpVtbl[2]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFTranscodeProfile*, uint>)(lpVtbl[2]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetAudioAttributes([NativeTypeName("IMFAttributes *")] IMFAttributes* pAttrs)
         {
-            return ((delegate* stdcall<IMFTranscodeProfile*, IMFAttributes*, int>)(lpVtbl[3]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), pAttrs);
+            return ((delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes*, int>)(lpVtbl[3]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), pAttrs);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetAudioAttributes([NativeTypeName("IMFAttributes **")] IMFAttributes** ppAttrs)
         {
-            return ((delegate* stdcall<IMFTranscodeProfile*, IMFAttributes**, int>)(lpVtbl[4]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), ppAttrs);
+            return ((delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes**, int>)(lpVtbl[4]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), ppAttrs);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetVideoAttributes([NativeTypeName("IMFAttributes *")] IMFAttributes* pAttrs)
         {
-            return ((delegate* stdcall<IMFTranscodeProfile*, IMFAttributes*, int>)(lpVtbl[5]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), pAttrs);
+            return ((delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes*, int>)(lpVtbl[5]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), pAttrs);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetVideoAttributes([NativeTypeName("IMFAttributes **")] IMFAttributes** ppAttrs)
         {
-            return ((delegate* stdcall<IMFTranscodeProfile*, IMFAttributes**, int>)(lpVtbl[6]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), ppAttrs);
+            return ((delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes**, int>)(lpVtbl[6]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), ppAttrs);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetContainerAttributes([NativeTypeName("IMFAttributes *")] IMFAttributes* pAttrs)
         {
-            return ((delegate* stdcall<IMFTranscodeProfile*, IMFAttributes*, int>)(lpVtbl[7]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), pAttrs);
+            return ((delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes*, int>)(lpVtbl[7]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), pAttrs);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetContainerAttributes([NativeTypeName("IMFAttributes **")] IMFAttributes** ppAttrs)
         {
-            return ((delegate* stdcall<IMFTranscodeProfile*, IMFAttributes**, int>)(lpVtbl[8]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), ppAttrs);
+            return ((delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes**, int>)(lpVtbl[8]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), ppAttrs);
         }
     }
 }

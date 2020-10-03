@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
 {
@@ -25,11 +26,13 @@ namespace TerraFX.Interop
         [NativeTypeName("BOOL : 1")]
         public int fBarFocused
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return _bitfield & 0x1;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (_bitfield & ~0x1) | (value & 0x1);
@@ -39,11 +42,13 @@ namespace TerraFX.Interop
         [NativeTypeName("BOOL : 1")]
         public int fFocused
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (_bitfield >> 1) & 0x1;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (_bitfield & ~(0x1 << 1)) | ((value & 0x1) << 1);

@@ -15,40 +15,46 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IDvdGraphBuilder*, Guid*, void**, int>)(lpVtbl[0]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IDvdGraphBuilder*, Guid*, void**, int>)(lpVtbl[0]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IDvdGraphBuilder*, uint>)(lpVtbl[1]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDvdGraphBuilder*, uint>)(lpVtbl[1]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IDvdGraphBuilder*, uint>)(lpVtbl[2]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDvdGraphBuilder*, uint>)(lpVtbl[2]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetFiltergraph([NativeTypeName("IGraphBuilder **")] IGraphBuilder** ppGB)
         {
-            return ((delegate* stdcall<IDvdGraphBuilder*, IGraphBuilder**, int>)(lpVtbl[3]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this), ppGB);
+            return ((delegate* unmanaged<IDvdGraphBuilder*, IGraphBuilder**, int>)(lpVtbl[3]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this), ppGB);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetDvdInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvIF)
         {
-            return ((delegate* stdcall<IDvdGraphBuilder*, Guid*, void**, int>)(lpVtbl[4]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this), riid, ppvIF);
+            return ((delegate* unmanaged<IDvdGraphBuilder*, Guid*, void**, int>)(lpVtbl[4]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this), riid, ppvIF);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int RenderDvdVideoVolume([NativeTypeName("LPCWSTR")] ushort* lpcwszPathName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("AM_DVD_RENDERSTATUS *")] AM_DVD_RENDERSTATUS* pStatus)
         {
-            return ((delegate* stdcall<IDvdGraphBuilder*, ushort*, uint, AM_DVD_RENDERSTATUS*, int>)(lpVtbl[5]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this), lpcwszPathName, dwFlags, pStatus);
+            return ((delegate* unmanaged<IDvdGraphBuilder*, ushort*, uint, AM_DVD_RENDERSTATUS*, int>)(lpVtbl[5]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this), lpcwszPathName, dwFlags, pStatus);
         }
     }
 }

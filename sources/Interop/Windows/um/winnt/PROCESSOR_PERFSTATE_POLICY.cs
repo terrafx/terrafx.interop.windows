@@ -3,6 +3,7 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -24,9 +25,23 @@ namespace TerraFX.Interop
         [NativeTypeName("PROCESSOR_PERFSTATE_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:16660:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref byte Spare => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Spare, 1));
+        public ref byte Spare
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Spare, 1));
+            }
+        }
 
-        public ref _Anonymous_e__Union._Flags_e__Union Flags => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
+        public ref _Anonymous_e__Union._Flags_e__Union Flags
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
+            }
+        }
 
         [NativeTypeName("DWORD")]
         public uint TimeCheck;
@@ -67,11 +82,13 @@ namespace TerraFX.Interop
 
                 public byte NoDomainAccounting
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return Anonymous.NoDomainAccounting;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         Anonymous.NoDomainAccounting = value;
@@ -80,11 +97,13 @@ namespace TerraFX.Interop
 
                 public byte IncreasePolicy
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return Anonymous.IncreasePolicy;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         Anonymous.IncreasePolicy = value;
@@ -93,11 +112,13 @@ namespace TerraFX.Interop
 
                 public byte DecreasePolicy
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return Anonymous.DecreasePolicy;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         Anonymous.DecreasePolicy = value;
@@ -106,11 +127,13 @@ namespace TerraFX.Interop
 
                 public byte Reserved
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return Anonymous.Reserved;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         Anonymous.Reserved = value;
@@ -124,11 +147,13 @@ namespace TerraFX.Interop
                     [NativeTypeName("BYTE : 1")]
                     public byte NoDomainAccounting
                     {
+                        [MethodImpl(MethodImplOptions.AggressiveInlining)]
                         get
                         {
                             return (byte)(_bitfield & 0x1u);
                         }
 
+                        [MethodImpl(MethodImplOptions.AggressiveInlining)]
                         set
                         {
                             _bitfield = (byte)((_bitfield & ~0x1u) | (value & 0x1u));
@@ -138,11 +163,13 @@ namespace TerraFX.Interop
                     [NativeTypeName("BYTE : 2")]
                     public byte IncreasePolicy
                     {
+                        [MethodImpl(MethodImplOptions.AggressiveInlining)]
                         get
                         {
                             return (byte)((_bitfield >> 1) & 0x3u);
                         }
 
+                        [MethodImpl(MethodImplOptions.AggressiveInlining)]
                         set
                         {
                             _bitfield = (byte)((_bitfield & ~(0x3u << 1)) | ((value & 0x3u) << 1));
@@ -152,11 +179,13 @@ namespace TerraFX.Interop
                     [NativeTypeName("BYTE : 2")]
                     public byte DecreasePolicy
                     {
+                        [MethodImpl(MethodImplOptions.AggressiveInlining)]
                         get
                         {
                             return (byte)((_bitfield >> 3) & 0x3u);
                         }
 
+                        [MethodImpl(MethodImplOptions.AggressiveInlining)]
                         set
                         {
                             _bitfield = (byte)((_bitfield & ~(0x3u << 3)) | ((value & 0x3u) << 3));
@@ -166,11 +195,13 @@ namespace TerraFX.Interop
                     [NativeTypeName("BYTE : 3")]
                     public byte Reserved
                     {
+                        [MethodImpl(MethodImplOptions.AggressiveInlining)]
                         get
                         {
                             return (byte)((_bitfield >> 5) & 0x7u);
                         }
 
+                        [MethodImpl(MethodImplOptions.AggressiveInlining)]
                         set
                         {
                             _bitfield = (byte)((_bitfield & ~(0x7u << 5)) | ((value & 0x7u) << 5));

@@ -15,28 +15,32 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IAMLatency*, Guid*, void**, int>)(lpVtbl[0]))((IAMLatency*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IAMLatency*, Guid*, void**, int>)(lpVtbl[0]))((IAMLatency*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IAMLatency*, uint>)(lpVtbl[1]))((IAMLatency*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IAMLatency*, uint>)(lpVtbl[1]))((IAMLatency*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IAMLatency*, uint>)(lpVtbl[2]))((IAMLatency*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IAMLatency*, uint>)(lpVtbl[2]))((IAMLatency*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetLatency([NativeTypeName("REFERENCE_TIME *")] long* prtLatency)
         {
-            return ((delegate* stdcall<IAMLatency*, long*, int>)(lpVtbl[3]))((IAMLatency*)Unsafe.AsPointer(ref this), prtLatency);
+            return ((delegate* unmanaged<IAMLatency*, long*, int>)(lpVtbl[3]))((IAMLatency*)Unsafe.AsPointer(ref this), prtLatency);
         }
     }
 }

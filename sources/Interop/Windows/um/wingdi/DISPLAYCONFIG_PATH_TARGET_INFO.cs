@@ -3,6 +3,7 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -17,15 +18,24 @@ namespace TerraFX.Interop
         [NativeTypeName("DISPLAYCONFIG_PATH_TARGET_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wingdi.h:2973:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint modeInfoIdx => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.modeInfoIdx, 1));
+        public ref uint modeInfoIdx
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.modeInfoIdx, 1));
+            }
+        }
 
         public uint desktopModeInfoIdx
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return Anonymous.Anonymous.desktopModeInfoIdx;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 Anonymous.Anonymous.desktopModeInfoIdx = value;
@@ -34,11 +44,13 @@ namespace TerraFX.Interop
 
         public uint targetModeInfoIdx
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return Anonymous.Anonymous.targetModeInfoIdx;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 Anonymous.Anonymous.targetModeInfoIdx = value;
@@ -79,11 +91,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("UINT32 : 16")]
                 public uint desktopModeInfoIdx
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return _bitfield & 0xFFFFu;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~0xFFFFu) | (value & 0xFFFFu);
@@ -93,11 +107,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("UINT32 : 16")]
                 public uint targetModeInfoIdx
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (_bitfield >> 16) & 0xFFFFu;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~(0xFFFFu << 16)) | ((value & 0xFFFFu) << 16);

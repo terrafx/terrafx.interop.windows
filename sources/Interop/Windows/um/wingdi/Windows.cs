@@ -215,25 +215,25 @@ namespace TerraFX.Interop
         public static extern int Ellipse([NativeTypeName("HDC")] IntPtr hdc, int left, int top, int right, int bottom);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EnumFontFamiliesExA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPLOGFONTA")] LOGFONTA* lpLogfont, [NativeTypeName("FONTENUMPROCA")] delegate* stdcall<LOGFONTA*, TEXTMETRICA*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern int EnumFontFamiliesExA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPLOGFONTA")] LOGFONTA* lpLogfont, [NativeTypeName("FONTENUMPROCA")] delegate* unmanaged<LOGFONTA*, TEXTMETRICA*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EnumFontFamiliesExW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPLOGFONTW")] LOGFONTW* lpLogfont, [NativeTypeName("FONTENUMPROCW")] delegate* stdcall<LOGFONTW*, TEXTMETRICW*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags);
+        public static extern int EnumFontFamiliesExW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPLOGFONTW")] LOGFONTW* lpLogfont, [NativeTypeName("FONTENUMPROCW")] delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EnumFontFamiliesA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCSTR")] sbyte* lpLogfont, [NativeTypeName("FONTENUMPROCA")] delegate* stdcall<LOGFONTA*, TEXTMETRICA*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumFontFamiliesA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCSTR")] sbyte* lpLogfont, [NativeTypeName("FONTENUMPROCA")] delegate* unmanaged<LOGFONTA*, TEXTMETRICA*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EnumFontFamiliesW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpLogfont, [NativeTypeName("FONTENUMPROCW")] delegate* stdcall<LOGFONTW*, TEXTMETRICW*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumFontFamiliesW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpLogfont, [NativeTypeName("FONTENUMPROCW")] delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EnumFontsA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCSTR")] sbyte* lpLogfont, [NativeTypeName("FONTENUMPROCA")] delegate* stdcall<LOGFONTA*, TEXTMETRICA*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumFontsA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCSTR")] sbyte* lpLogfont, [NativeTypeName("FONTENUMPROCA")] delegate* unmanaged<LOGFONTA*, TEXTMETRICA*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EnumFontsW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpLogfont, [NativeTypeName("FONTENUMPROCW")] delegate* stdcall<LOGFONTW*, TEXTMETRICW*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumFontsW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("LPCWSTR")] ushort* lpLogfont, [NativeTypeName("FONTENUMPROCW")] delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int> lpProc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EnumObjects([NativeTypeName("HDC")] IntPtr hdc, int nType, [NativeTypeName("GOBJENUMPROC")] delegate* stdcall<void*, nint, int> lpFunc, [NativeTypeName("LPARAM")] nint lParam);
+        public static extern int EnumObjects([NativeTypeName("HDC")] IntPtr hdc, int nType, [NativeTypeName("GOBJENUMPROC")] delegate* unmanaged<void*, nint, int> lpFunc, [NativeTypeName("LPARAM")] nint lParam);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -602,7 +602,7 @@ namespace TerraFX.Interop
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int LineDDA(int xStart, int yStart, int xEnd, int yEnd, [NativeTypeName("LINEDDAPROC")] delegate* stdcall<int, int, nint, void> lpProc, [NativeTypeName("LPARAM")] nint data);
+        public static extern int LineDDA(int xStart, int yStart, int xEnd, int yEnd, [NativeTypeName("LINEDDAPROC")] delegate* unmanaged<int, int, nint, void> lpProc, [NativeTypeName("LPARAM")] nint data);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -854,7 +854,7 @@ namespace TerraFX.Interop
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumMetaFile([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HMETAFILE")] IntPtr hmf, [NativeTypeName("MFENUMPROC")] delegate* stdcall<IntPtr, HANDLETABLE*, METARECORD*, int, nint, int> proc, [NativeTypeName("LPARAM")] nint param3);
+        public static extern int EnumMetaFile([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HMETAFILE")] IntPtr hmf, [NativeTypeName("MFENUMPROC")] delegate* unmanaged<IntPtr, HANDLETABLE*, METARECORD*, int, nint, int> proc, [NativeTypeName("LPARAM")] nint param3);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("HENHMETAFILE")]
@@ -882,7 +882,7 @@ namespace TerraFX.Interop
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumEnhMetaFile([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HENHMETAFILE")] IntPtr hmf, [NativeTypeName("ENHMFENUMPROC")] delegate* stdcall<IntPtr, HANDLETABLE*, ENHMETARECORD*, int, nint, int> proc, [NativeTypeName("LPVOID")] void* param3, [NativeTypeName("const RECT *")] RECT* lpRect);
+        public static extern int EnumEnhMetaFile([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HENHMETAFILE")] IntPtr hmf, [NativeTypeName("ENHMFENUMPROC")] delegate* unmanaged<IntPtr, HANDLETABLE*, ENHMETARECORD*, int, nint, int> proc, [NativeTypeName("LPVOID")] void* param3, [NativeTypeName("const RECT *")] RECT* lpRect);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("HENHMETAFILE")]
@@ -1015,7 +1015,7 @@ namespace TerraFX.Interop
         public static extern int AbortDoc([NativeTypeName("HDC")] IntPtr hdc);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int SetAbortProc([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("ABORTPROC")] delegate* stdcall<IntPtr, int, int> proc);
+        public static extern int SetAbortProc([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("ABORTPROC")] delegate* unmanaged<IntPtr, int, int> proc);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -1298,10 +1298,10 @@ namespace TerraFX.Interop
         public static extern int ColorMatchToTarget([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("HDC")] IntPtr hdcTarget, [NativeTypeName("DWORD")] uint action);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EnumICMProfilesA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("ICMENUMPROCA")] delegate* stdcall<sbyte*, nint, int> proc, [NativeTypeName("LPARAM")] nint param2);
+        public static extern int EnumICMProfilesA([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("ICMENUMPROCA")] delegate* unmanaged<sbyte*, nint, int> proc, [NativeTypeName("LPARAM")] nint param2);
 
         [DllImport("gdi32", ExactSpelling = true)]
-        public static extern int EnumICMProfilesW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("ICMENUMPROCW")] delegate* stdcall<ushort*, nint, int> proc, [NativeTypeName("LPARAM")] nint param2);
+        public static extern int EnumICMProfilesW([NativeTypeName("HDC")] IntPtr hdc, [NativeTypeName("ICMENUMPROCW")] delegate* unmanaged<ushort*, nint, int> proc, [NativeTypeName("LPARAM")] nint param2);
 
         [DllImport("gdi32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -1341,7 +1341,7 @@ namespace TerraFX.Interop
 
         [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("PROC")]
-        public static extern delegate* stdcall<int> wglGetProcAddress([NativeTypeName("LPCSTR")] sbyte* param0);
+        public static extern delegate* unmanaged<int> wglGetProcAddress([NativeTypeName("LPCSTR")] sbyte* param0);
 
         [DllImport("opengl32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
@@ -5054,13 +5054,13 @@ namespace TerraFX.Interop
         public static readonly delegate*<ushort*, ushort*, ushort, ushort*, DEVMODEW*, int> DeviceCapabilities = &DeviceCapabilitiesW;
 
         [NativeTypeName("#define EnumFontFamiliesEx EnumFontFamiliesExW")]
-        public static readonly delegate*<IntPtr, LOGFONTW*, delegate* stdcall<LOGFONTW*, TEXTMETRICW*, uint, nint, int>, nint, uint, int> EnumFontFamiliesEx = &EnumFontFamiliesExW;
+        public static readonly delegate*<IntPtr, LOGFONTW*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int>, nint, uint, int> EnumFontFamiliesEx = &EnumFontFamiliesExW;
 
         [NativeTypeName("#define EnumFontFamilies EnumFontFamiliesW")]
-        public static readonly delegate*<IntPtr, ushort*, delegate* stdcall<LOGFONTW*, TEXTMETRICW*, uint, nint, int>, nint, int> EnumFontFamilies = &EnumFontFamiliesW;
+        public static readonly delegate*<IntPtr, ushort*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int>, nint, int> EnumFontFamilies = &EnumFontFamiliesW;
 
         [NativeTypeName("#define EnumFonts EnumFontsW")]
-        public static readonly delegate*<IntPtr, ushort*, delegate* stdcall<LOGFONTW*, TEXTMETRICW*, uint, nint, int>, nint, int> EnumFonts = &EnumFontsW;
+        public static readonly delegate*<IntPtr, ushort*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, nint, int>, nint, int> EnumFonts = &EnumFontsW;
 
         [NativeTypeName("#define GetCharWidth GetCharWidthW")]
         public static readonly delegate*<IntPtr, uint, uint, int*, int> GetCharWidth = &GetCharWidthW;
@@ -5306,7 +5306,7 @@ namespace TerraFX.Interop
         public static readonly delegate*<IntPtr, ushort*, int> SetICMProfile = &SetICMProfileW;
 
         [NativeTypeName("#define EnumICMProfiles EnumICMProfilesW")]
-        public static readonly delegate*<IntPtr, delegate* stdcall<ushort*, nint, int>, nint, int> EnumICMProfiles = &EnumICMProfilesW;
+        public static readonly delegate*<IntPtr, delegate* unmanaged<ushort*, nint, int>, nint, int> EnumICMProfiles = &EnumICMProfilesW;
 
         [NativeTypeName("#define UpdateICMRegKey UpdateICMRegKeyW")]
         public static readonly delegate*<uint, ushort*, ushort*, uint, int> UpdateICMRegKey = &UpdateICMRegKeyW;

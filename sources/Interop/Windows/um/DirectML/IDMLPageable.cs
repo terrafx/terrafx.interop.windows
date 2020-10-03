@@ -15,52 +15,60 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IDMLPageable*, Guid*, void**, int>)(lpVtbl[0]))((IDMLPageable*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IDMLPageable*, Guid*, void**, int>)(lpVtbl[0]))((IDMLPageable*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IDMLPageable*, uint>)(lpVtbl[1]))((IDMLPageable*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDMLPageable*, uint>)(lpVtbl[1]))((IDMLPageable*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IDMLPageable*, uint>)(lpVtbl[2]))((IDMLPageable*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDMLPageable*, uint>)(lpVtbl[2]))((IDMLPageable*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT *")] uint* dataSize, [NativeTypeName("void *")] void* data)
         {
-            return ((delegate* stdcall<IDMLPageable*, Guid*, uint*, void*, int>)(lpVtbl[3]))((IDMLPageable*)Unsafe.AsPointer(ref this), guid, dataSize, data);
+            return ((delegate* unmanaged<IDMLPageable*, Guid*, uint*, void*, int>)(lpVtbl[3]))((IDMLPageable*)Unsafe.AsPointer(ref this), guid, dataSize, data);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("UINT")] uint dataSize, [NativeTypeName("const void *")] void* data)
         {
-            return ((delegate* stdcall<IDMLPageable*, Guid*, uint, void*, int>)(lpVtbl[4]))((IDMLPageable*)Unsafe.AsPointer(ref this), guid, dataSize, data);
+            return ((delegate* unmanaged<IDMLPageable*, Guid*, uint, void*, int>)(lpVtbl[4]))((IDMLPageable*)Unsafe.AsPointer(ref this), guid, dataSize, data);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("IUnknown *")] IUnknown* data)
         {
-            return ((delegate* stdcall<IDMLPageable*, Guid*, IUnknown*, int>)(lpVtbl[5]))((IDMLPageable*)Unsafe.AsPointer(ref this), guid, data);
+            return ((delegate* unmanaged<IDMLPageable*, Guid*, IUnknown*, int>)(lpVtbl[5]))((IDMLPageable*)Unsafe.AsPointer(ref this), guid, data);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SetName([NativeTypeName("PCWSTR")] ushort* name)
         {
-            return ((delegate* stdcall<IDMLPageable*, ushort*, int>)(lpVtbl[6]))((IDMLPageable*)Unsafe.AsPointer(ref this), name);
+            return ((delegate* unmanaged<IDMLPageable*, ushort*, int>)(lpVtbl[6]))((IDMLPageable*)Unsafe.AsPointer(ref this), name);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetDevice([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppv)
         {
-            return ((delegate* stdcall<IDMLPageable*, Guid*, void**, int>)(lpVtbl[7]))((IDMLPageable*)Unsafe.AsPointer(ref this), riid, ppv);
+            return ((delegate* unmanaged<IDMLPageable*, Guid*, void**, int>)(lpVtbl[7]))((IDMLPageable*)Unsafe.AsPointer(ref this), riid, ppv);
         }
     }
 }

@@ -3,6 +3,7 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -14,11 +15,13 @@ namespace TerraFX.Interop
 
         public uint friendlyNameFromEdid
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return Anonymous.Anonymous.friendlyNameFromEdid;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 Anonymous.Anonymous.friendlyNameFromEdid = value;
@@ -27,11 +30,13 @@ namespace TerraFX.Interop
 
         public uint friendlyNameForced
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return Anonymous.Anonymous.friendlyNameForced;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 Anonymous.Anonymous.friendlyNameForced = value;
@@ -40,11 +45,13 @@ namespace TerraFX.Interop
 
         public uint edidIdsValid
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return Anonymous.Anonymous.edidIdsValid;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 Anonymous.Anonymous.edidIdsValid = value;
@@ -53,18 +60,27 @@ namespace TerraFX.Interop
 
         public uint reserved
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return Anonymous.Anonymous.reserved;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 Anonymous.Anonymous.reserved = value;
             }
         }
 
-        public ref uint value => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.value, 1));
+        public ref uint value
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.value, 1));
+            }
+        }
 
         [StructLayout(LayoutKind.Explicit)]
         public partial struct _Anonymous_e__Union
@@ -84,11 +100,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("UINT32 : 1")]
                 public uint friendlyNameFromEdid
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return _bitfield & 0x1u;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
@@ -98,11 +116,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("UINT32 : 1")]
                 public uint friendlyNameForced
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (_bitfield >> 1) & 0x1u;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1);
@@ -112,11 +132,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("UINT32 : 1")]
                 public uint edidIdsValid
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (_bitfield >> 2) & 0x1u;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2);
@@ -126,11 +148,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("UINT32 : 29")]
                 public uint reserved
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (_bitfield >> 3) & 0x1FFFFFFFu;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~(0x1FFFFFFFu << 3)) | ((value & 0x1FFFFFFFu) << 3);

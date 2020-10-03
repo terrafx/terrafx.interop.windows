@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -28,8 +29,16 @@ namespace TerraFX.Interop
             public D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM e2;
             public D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM e3;
 
-            public ref D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM this[int index] => ref AsSpan()[index];
+            public ref D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan()[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 4);
         }
     }

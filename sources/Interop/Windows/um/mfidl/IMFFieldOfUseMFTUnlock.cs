@@ -15,28 +15,32 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMFFieldOfUseMFTUnlock*, Guid*, void**, int>)(lpVtbl[0]))((IMFFieldOfUseMFTUnlock*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMFFieldOfUseMFTUnlock*, Guid*, void**, int>)(lpVtbl[0]))((IMFFieldOfUseMFTUnlock*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMFFieldOfUseMFTUnlock*, uint>)(lpVtbl[1]))((IMFFieldOfUseMFTUnlock*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFFieldOfUseMFTUnlock*, uint>)(lpVtbl[1]))((IMFFieldOfUseMFTUnlock*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMFFieldOfUseMFTUnlock*, uint>)(lpVtbl[2]))((IMFFieldOfUseMFTUnlock*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFFieldOfUseMFTUnlock*, uint>)(lpVtbl[2]))((IMFFieldOfUseMFTUnlock*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Unlock([NativeTypeName("IUnknown *")] IUnknown* pUnkMFT)
         {
-            return ((delegate* stdcall<IMFFieldOfUseMFTUnlock*, IUnknown*, int>)(lpVtbl[3]))((IMFFieldOfUseMFTUnlock*)Unsafe.AsPointer(ref this), pUnkMFT);
+            return ((delegate* unmanaged<IMFFieldOfUseMFTUnlock*, IUnknown*, int>)(lpVtbl[3]))((IMFFieldOfUseMFTUnlock*)Unsafe.AsPointer(ref this), pUnkMFT);
         }
     }
 }

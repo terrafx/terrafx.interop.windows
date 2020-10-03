@@ -58,7 +58,7 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("FARPROC")]
-        public static extern delegate* stdcall<int> GetProcAddress([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCSTR")] sbyte* lpProcName);
+        public static extern delegate* unmanaged<int> GetProcAddress([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCSTR")] sbyte* lpProcName);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("HMODULE")]
@@ -100,27 +100,27 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumResourceLanguagesExA([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCSTR")] sbyte* lpType, [NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("ENUMRESLANGPROCA")] delegate* stdcall<IntPtr, sbyte*, sbyte*, ushort, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
+        public static extern int EnumResourceLanguagesExA([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCSTR")] sbyte* lpType, [NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("ENUMRESLANGPROCA")] delegate* unmanaged<IntPtr, sbyte*, sbyte*, ushort, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumResourceLanguagesExW([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCWSTR")] ushort* lpType, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("ENUMRESLANGPROCW")] delegate* stdcall<IntPtr, ushort*, ushort*, ushort, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
+        public static extern int EnumResourceLanguagesExW([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCWSTR")] ushort* lpType, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("ENUMRESLANGPROCW")] delegate* unmanaged<IntPtr, ushort*, ushort*, ushort, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumResourceNamesExA([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCSTR")] sbyte* lpType, [NativeTypeName("ENUMRESNAMEPROCA")] delegate* stdcall<IntPtr, sbyte*, sbyte*, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
+        public static extern int EnumResourceNamesExA([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCSTR")] sbyte* lpType, [NativeTypeName("ENUMRESNAMEPROCA")] delegate* unmanaged<IntPtr, sbyte*, sbyte*, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumResourceNamesExW([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCWSTR")] ushort* lpType, [NativeTypeName("ENUMRESNAMEPROCW")] delegate* stdcall<IntPtr, ushort*, ushort*, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
+        public static extern int EnumResourceNamesExW([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCWSTR")] ushort* lpType, [NativeTypeName("ENUMRESNAMEPROCW")] delegate* unmanaged<IntPtr, ushort*, ushort*, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumResourceTypesExA([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("ENUMRESTYPEPROCA")] delegate* stdcall<IntPtr, sbyte*, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
+        public static extern int EnumResourceTypesExA([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("ENUMRESTYPEPROCA")] delegate* unmanaged<IntPtr, sbyte*, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumResourceTypesExW([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("ENUMRESTYPEPROCW")] delegate* stdcall<IntPtr, ushort*, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
+        public static extern int EnumResourceTypesExW([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("ENUMRESTYPEPROCW")] delegate* unmanaged<IntPtr, ushort*, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LANGID")] ushort LangId);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("HRSRC")]
@@ -136,7 +136,7 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int EnumResourceNamesW([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCWSTR")] ushort* lpType, [NativeTypeName("ENUMRESNAMEPROCW")] delegate* stdcall<IntPtr, ushort*, ushort*, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam);
+        public static extern int EnumResourceNamesW([NativeTypeName("HMODULE")] IntPtr hModule, [NativeTypeName("LPCWSTR")] ushort* lpType, [NativeTypeName("ENUMRESNAMEPROCW")] delegate* unmanaged<IntPtr, ushort*, ushort*, nint, int> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam);
 
         [NativeTypeName("#define FIND_RESOURCE_DIRECTORY_TYPES (0x0100)")]
         public const int FIND_RESOURCE_DIRECTORY_TYPES = (0x0100);
@@ -241,13 +241,13 @@ namespace TerraFX.Interop
         public static readonly delegate*<IntPtr, uint, ushort*, int, int> LoadString = &LoadStringW;
 
         [NativeTypeName("#define EnumResourceLanguagesEx EnumResourceLanguagesExW")]
-        public static readonly delegate*<IntPtr, ushort*, ushort*, delegate* stdcall<IntPtr, ushort*, ushort*, ushort, nint, int>, nint, uint, ushort, int> EnumResourceLanguagesEx = &EnumResourceLanguagesExW;
+        public static readonly delegate*<IntPtr, ushort*, ushort*, delegate* unmanaged<IntPtr, ushort*, ushort*, ushort, nint, int>, nint, uint, ushort, int> EnumResourceLanguagesEx = &EnumResourceLanguagesExW;
 
         [NativeTypeName("#define EnumResourceNamesEx EnumResourceNamesExW")]
-        public static readonly delegate*<IntPtr, ushort*, delegate* stdcall<IntPtr, ushort*, ushort*, nint, int>, nint, uint, ushort, int> EnumResourceNamesEx = &EnumResourceNamesExW;
+        public static readonly delegate*<IntPtr, ushort*, delegate* unmanaged<IntPtr, ushort*, ushort*, nint, int>, nint, uint, ushort, int> EnumResourceNamesEx = &EnumResourceNamesExW;
 
         [NativeTypeName("#define EnumResourceTypesEx EnumResourceTypesExW")]
-        public static readonly delegate*<IntPtr, delegate* stdcall<IntPtr, ushort*, nint, int>, nint, uint, ushort, int> EnumResourceTypesEx = &EnumResourceTypesExW;
+        public static readonly delegate*<IntPtr, delegate* unmanaged<IntPtr, ushort*, nint, int>, nint, uint, ushort, int> EnumResourceTypesEx = &EnumResourceTypesExW;
 
         [NativeTypeName("#define FindResource FindResourceW")]
         public static readonly delegate*<IntPtr, ushort*, ushort*, IntPtr> FindResource = &FindResourceW;
@@ -256,6 +256,6 @@ namespace TerraFX.Interop
         public static readonly delegate*<ushort*, IntPtr> LoadLibrary = &LoadLibraryW;
 
         [NativeTypeName("#define EnumResourceNames EnumResourceNamesW")]
-        public static readonly delegate*<IntPtr, ushort*, delegate* stdcall<IntPtr, ushort*, ushort*, nint, int>, nint, int> EnumResourceNames = &EnumResourceNamesW;
+        public static readonly delegate*<IntPtr, ushort*, delegate* unmanaged<IntPtr, ushort*, ushort*, nint, int>, nint, int> EnumResourceNames = &EnumResourceNamesW;
     }
 }

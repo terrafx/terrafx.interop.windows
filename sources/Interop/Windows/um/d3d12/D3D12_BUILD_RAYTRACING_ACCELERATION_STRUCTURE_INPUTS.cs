@@ -3,6 +3,7 @@
 // Ported from um/d3d12.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -21,10 +22,18 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_INPUTS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12.h:12497:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref ulong InstanceDescs => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.InstanceDescs, 1));
+        public ref ulong InstanceDescs
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.InstanceDescs, 1));
+            }
+        }
 
         public ref D3D12_RAYTRACING_GEOMETRY_DESC* pGeometryDescs
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
@@ -36,6 +45,7 @@ namespace TerraFX.Interop
 
         public ref D3D12_RAYTRACING_GEOMETRY_DESC** ppGeometryDescs
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)

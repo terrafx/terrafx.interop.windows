@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -30,8 +31,16 @@ namespace TerraFX.Interop
             public RECT e4;
             public RECT e5;
 
-            public ref RECT this[int index] => ref AsSpan()[index];
+            public ref RECT this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan()[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<RECT> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 6);
         }
     }

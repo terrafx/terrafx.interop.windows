@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -27,9 +28,23 @@ namespace TerraFX.Interop
         [NativeTypeName("_IMAGE_AUX_SYMBOL_EX::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17584:5)")]
         public _Anonymous_e__Struct Anonymous;
 
-        public ref IMAGE_AUX_SYMBOL_TOKEN_DEF TokenDef => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.TokenDef, 1));
+        public ref IMAGE_AUX_SYMBOL_TOKEN_DEF TokenDef
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.TokenDef, 1));
+            }
+        }
 
-        public Span<byte> rgbReserved => MemoryMarshal.CreateSpan(ref Anonymous.rgbReserved[0], 2);
+        public Span<byte> rgbReserved
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return MemoryMarshal.CreateSpan(ref Anonymous.rgbReserved[0], 2);
+            }
+        }
 
         [FieldOffset(0)]
         [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:17588:5)")]

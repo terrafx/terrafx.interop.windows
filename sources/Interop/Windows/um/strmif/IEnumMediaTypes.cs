@@ -15,46 +15,53 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IEnumMediaTypes*, Guid*, void**, int>)(lpVtbl[0]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IEnumMediaTypes*, Guid*, void**, int>)(lpVtbl[0]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IEnumMediaTypes*, uint>)(lpVtbl[1]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IEnumMediaTypes*, uint>)(lpVtbl[1]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IEnumMediaTypes*, uint>)(lpVtbl[2]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IEnumMediaTypes*, uint>)(lpVtbl[2]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Next([NativeTypeName("ULONG")] uint cMediaTypes, [NativeTypeName("AM_MEDIA_TYPE **")] AM_MEDIA_TYPE** ppMediaTypes, [NativeTypeName("ULONG *")] uint* pcFetched)
         {
-            return ((delegate* stdcall<IEnumMediaTypes*, uint, AM_MEDIA_TYPE**, uint*, int>)(lpVtbl[3]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this), cMediaTypes, ppMediaTypes, pcFetched);
+            return ((delegate* unmanaged<IEnumMediaTypes*, uint, AM_MEDIA_TYPE**, uint*, int>)(lpVtbl[3]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this), cMediaTypes, ppMediaTypes, pcFetched);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Skip([NativeTypeName("ULONG")] uint cMediaTypes)
         {
-            return ((delegate* stdcall<IEnumMediaTypes*, uint, int>)(lpVtbl[4]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this), cMediaTypes);
+            return ((delegate* unmanaged<IEnumMediaTypes*, uint, int>)(lpVtbl[4]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this), cMediaTypes);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Reset()
         {
-            return ((delegate* stdcall<IEnumMediaTypes*, int>)(lpVtbl[5]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IEnumMediaTypes*, int>)(lpVtbl[5]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Clone([NativeTypeName("IEnumMediaTypes **")] IEnumMediaTypes** ppEnum)
         {
-            return ((delegate* stdcall<IEnumMediaTypes*, IEnumMediaTypes**, int>)(lpVtbl[6]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this), ppEnum);
+            return ((delegate* unmanaged<IEnumMediaTypes*, IEnumMediaTypes**, int>)(lpVtbl[6]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this), ppEnum);
         }
     }
 }

@@ -3,6 +3,7 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -18,9 +19,23 @@ namespace TerraFX.Interop
         [NativeTypeName("_OCSP_BASIC_RESPONSE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:5706:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref CRYPTOAPI_BLOB ByNameResponderId => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ByNameResponderId, 1));
+        public ref CRYPTOAPI_BLOB ByNameResponderId
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ByNameResponderId, 1));
+            }
+        }
 
-        public ref CRYPTOAPI_BLOB ByKeyResponderId => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ByKeyResponderId, 1));
+        public ref CRYPTOAPI_BLOB ByKeyResponderId
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ByKeyResponderId, 1));
+            }
+        }
 
         public FILETIME ProducedAt;
 

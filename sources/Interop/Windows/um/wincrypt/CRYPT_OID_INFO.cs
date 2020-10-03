@@ -3,6 +3,7 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -24,11 +25,32 @@ namespace TerraFX.Interop
         [NativeTypeName("_CRYPT_OID_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/wincrypt.h:6206:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint dwValue => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwValue, 1));
+        public ref uint dwValue
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwValue, 1));
+            }
+        }
 
-        public ref uint Algid => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Algid, 1));
+        public ref uint Algid
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Algid, 1));
+            }
+        }
 
-        public ref uint dwLength => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwLength, 1));
+        public ref uint dwLength
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwLength, 1));
+            }
+        }
 
         [NativeTypeName("CRYPT_DATA_BLOB")]
         public CRYPTOAPI_BLOB ExtraInfo;
