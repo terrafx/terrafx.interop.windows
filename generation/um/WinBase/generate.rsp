@@ -1,5 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
+--define-macro
+MICROSOFT_WINDOWS_WINBASE_H_DEFINE_INTERLOCKED_CPLUSPLUS_OVERLOADS=1
 --exclude
 CaptureStackBackTrace
 DefineHandleTable
