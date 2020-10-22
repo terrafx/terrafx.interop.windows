@@ -1,7 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
 --file
-directmanipulation.h
+um-directmanipulation.h
 --output
 ../../../sources/Interop/Windows/um/directmanipulation
 --test-output
