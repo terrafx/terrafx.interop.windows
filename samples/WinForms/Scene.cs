@@ -705,7 +705,7 @@ namespace TerraFX.Samples.WinForms
                 var bufferDesc = D3D12_RESOURCE_DESC.Buffer(vertexBufferSize);
 
                 var iid = IID_ID3D12Resource;
-                ThrowIfFailed(nameof(ID3D12Device._CreateCommittedResource), _device->CreateCommittedResource(
+                ThrowIfFailed(nameof(ID3D12Device.CreateCommittedResource), _device->CreateCommittedResource(
                     &heapProperties,
                     D3D12_HEAP_FLAG_NONE,
                     &bufferDesc,
@@ -761,7 +761,7 @@ namespace TerraFX.Samples.WinForms
                 var bufferDesc = D3D12_RESOURCE_DESC.Buffer(vertexBufferSize);
 
                 var iid = IID_ID3D12Resource;
-                ThrowIfFailed(nameof(ID3D12Device._CreateCommittedResource), _device->CreateCommittedResource(
+                ThrowIfFailed(nameof(ID3D12Device.CreateCommittedResource), _device->CreateCommittedResource(
                     &heapProperties,
                     D3D12_HEAP_FLAG_NONE,
                     &bufferDesc,
@@ -814,7 +814,7 @@ namespace TerraFX.Samples.WinForms
                 {
                     var heapProperties = new D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_DEFAULT);
                     var iid = IID_ID3D12Resource;
-                    ThrowIfFailed(nameof(ID3D12Device._CreateCommittedResource), _device->CreateCommittedResource(
+                    ThrowIfFailed(nameof(ID3D12Device.CreateCommittedResource), _device->CreateCommittedResource(
                         &heapProperties,
                         D3D12_HEAP_FLAG_NONE,
                         &textureDesc,
@@ -829,7 +829,7 @@ namespace TerraFX.Samples.WinForms
                     // Create the GPU upload buffer.
                     heapProperties = new D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD);
                     var bufferDesc = D3D12_RESOURCE_DESC.Buffer(uploadBufferSize);
-                    ThrowIfFailed(nameof(ID3D12Device._CreateCommittedResource), _device->CreateCommittedResource(
+                    ThrowIfFailed(nameof(ID3D12Device.CreateCommittedResource), _device->CreateCommittedResource(
                         &heapProperties,
                         D3D12_HEAP_FLAG_NONE,
                         &bufferDesc,
