@@ -28,6 +28,7 @@ namespace TerraFX.Samples.DirectX
             new HelloTexture12("D3D12.HelloTexture"),
             new HelloBundles12("D3D12.HelloBundles"),
             new HelloMultiSampling12("D3D12.HelloMultiSampling"),
+            new HelloCombined12("D3D12.HelloCombined"),
         };
 
         private readonly string _assetsPath;
