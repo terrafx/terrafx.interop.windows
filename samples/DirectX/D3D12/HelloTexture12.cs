@@ -35,6 +35,7 @@ namespace TerraFX.Samples.DirectX.D3D12
     {
         private const uint TextureWidth = 256;
         private const uint TextureHeight = 256;
+        private const ushort TextureDepth = 256;
         private const uint TexturePixelSize = 4;
 
         private ID3D12DescriptorHeap* _srvHeap;
@@ -60,12 +61,12 @@ namespace TerraFX.Samples.DirectX.D3D12
                     Width = TextureWidth,
                     Height = TextureHeight,
                     Flags = D3D12_RESOURCE_FLAG_NONE,
-                    DepthOrArraySize = 1,
+                    DepthOrArraySize = TextureDepth,
                     SampleDesc = new DXGI_SAMPLE_DESC {
                         Count = 1,
                         Quality = 0,
                     },
-                    Dimension = D3D12_RESOURCE_DIMENSION_TEXTURE2D,
+                    Dimension = D3D12_RESOURCE_DIMENSION_TEXTURE3D,
                 };
 
                 ID3D12Resource* texture;
@@ -131,34 +132,25 @@ namespace TerraFX.Samples.DirectX.D3D12
             byte[] GenerateTextureData()
             {
                 const uint RowPitch = TextureWidth * TexturePixelSize;
-                const uint CellPitch = RowPitch >> 3;        // The width of a cell in the checkboard texture.
-                const uint CellHeight = TextureWidth >> 3;    // The height of a cell in the checkerboard texture.
-                const uint TextureSize = RowPitch * TextureHeight;
+                const uint SlicePitch = TextureHeight * RowPitch;
+                const uint TextureSize = RowPitch * TextureHeight * TextureDepth;
 
                 var data = new byte[TextureSize];
                 fixed (byte* pData = &data[0])
                 {
                     for (uint n = 0; n < TextureSize; n += TexturePixelSize)
                     {
-                        var x = n % RowPitch;
-                        var y = n / RowPitch;
-                        var i = x / CellPitch;
-                        var j = y / CellHeight;
+                        const uint dy = RowPitch / TexturePixelSize;
+                        const uint dz = SlicePitch / TexturePixelSize;
+                        uint k = n / TexturePixelSize;
+                        var x = k % dy;
+                        var y = (k % dz) / dy;
+                        var z = k / dz;
 
-                        if (i % 2 == j % 2)
-                        {
-                            pData[n] = 0x00;        // R
-                            pData[n + 1] = 0x00;    // G
-                            pData[n + 2] = 0x00;    // B
-                            pData[n + 3] = 0xff;    // A
-                        }
-                        else
-                        {
-                            pData[n] = 0xff;        // R
-                            pData[n + 1] = 0xff;    // G
-                            pData[n + 2] = 0xff;    // B
-                            pData[n + 3] = 0xff;    // A
-                        }
+                        pData[n + 0] = (byte)x; // R
+                        pData[n + 1] = (byte)y; // G
+                        pData[n + 2] = (byte)z; // B
+                        pData[n + 3] = 0xff;    // A
                     }
                 }
 
