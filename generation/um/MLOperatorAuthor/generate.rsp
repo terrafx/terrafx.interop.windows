@@ -1,0 +1,17 @@
+@../../settings.rsp
+@../../remap.rsp
+--exclude
+MLOperatorEdgeTypeConstrant
+--file
+um-MLOperatorAuthor.h
+--output
+../../../sources/Interop/Windows/um/MLOperatorAuthor
+--test-output
+../../../tests/Interop/Windows/um/MLOperatorAuthor
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/MLOperatorAuthor.h
+--with-attribute
+MLOperatorKernelOptions=Flags
+MLOperatorParameterOptions=Flags
+--with-librarypath
+*=Windows.AI.MachineLearning.dll
