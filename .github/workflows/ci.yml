@@ -87,10 +87,27 @@ jobs:
           ./artifacts/pkg/**/*
           ./artifacts/tst/**/*
         if-no-files-found: error
-  publishAz:
+  build-nuget:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: ./scripts/cibuild.cmd -configuration release -architecture x64
+      shell: cmd
+      env:
+        EXCLUDE_RUN_ID_FROM_PACKAGE: true
+    - uses: actions/upload-artifact@v2
+      with:
+        name: nuget
+        path: |
+          ./artifacts/bin/**/*
+          ./artifacts/log/**/*
+          ./artifacts/pkg/**/*
+          ./artifacts/tst/**/*
+        if-no-files-found: error
+  publish-nightlies:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'push' }}
-    needs: [ windows-x64, windows-x86, linux-x64, macos-x64 ]
+    needs: [ windows-x64, windows-x86, linux-x64, macos-x64, build-nuget ]
     steps:
     - uses: actions/download-artifact@v2
       with:
@@ -98,8 +115,8 @@ jobs:
         path: ./artifacts
     - uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '3.1.x'
+        dotnet-version: '5.0.x'
         source-url: https://pkgs.terrafx.dev/index.json
       env:
         NUGET_AUTH_TOKEN: ${{ secrets.AZURE_DEVOPS_PAT }}
-    - run: dotnet nuget push ./artifacts/pkg/Release/*.nupkg --api-key AzureDevOps
+    - run: dotnet nuget push "./artifacts/pkg/Release/*.nupkg" --api-key AzureDevOps
