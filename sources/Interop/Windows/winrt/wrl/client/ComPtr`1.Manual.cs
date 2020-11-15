@@ -199,10 +199,7 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public readonly T** GetAddressOf()
         {
-            fixed (T** ptr = &this.pointer)
-            {
-                return ptr;
-            }
+            return (T**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
         }
 
         /// <summary>
@@ -214,10 +211,7 @@ namespace TerraFX.Interop
         [EditorBrowsable(EditorBrowsableState.Never)]
         public readonly ref T* GetPinnableReference()
         {
-            fixed (T** ptr = &this.pointer)
-            {
-                return ref *ptr;
-            }
+            return ref *(T**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
         }
 
         /// <summary>
