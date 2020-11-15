@@ -28,6 +28,12 @@ namespace TerraFX.Interop
         private T* pointer;
 
         /// <summary>
+        /// Gets a pointer to the <see cref="Guid"/> value for the current type.
+        /// </summary>
+        /// <remarks>The target memory area should never be written to.</remarks>
+        public static readonly Guid* RIID = CreateRIID();
+
+        /// <summary>
         /// Creates a new <see cref="ComPtr{T}"/> instance from a raw pointer and increments the ref count.
         /// </summary>
         /// <param name="other">The raw pointer to wrap.</param>
@@ -79,9 +85,7 @@ namespace TerraFX.Interop
         public readonly int As<U>(ComPtr<U>* p)
             where U : unmanaged
         {
-            var iid = typeof(U).GUID;
-
-            return ((IUnknown*)this.pointer)->QueryInterface(&iid, (void**)p->ReleaseAndGetAddressOf());
+            return ((IUnknown*)this.pointer)->QueryInterface(ComPtr<U>.RIID, (void**)p->ReleaseAndGetAddressOf());
         }
 
         /// <summary>
@@ -149,9 +153,7 @@ namespace TerraFX.Interop
         public readonly int CopyTo<U>(U** ptr)
             where U : unmanaged
         {
-            var iid = typeof(U).GUID;
-
-            return ((IUnknown*)this.pointer)->QueryInterface(&iid, (void**)ptr);
+            return ((IUnknown*)this.pointer)->QueryInterface(ComPtr<U>.RIID, (void**)ptr);
         }
 
         /// <summary>
@@ -281,6 +283,19 @@ namespace TerraFX.Interop
             }
 
             return referenceCount;
+        }
+
+        /// <summary>
+        /// Allocates memory for a <see cref="Guid"/> value and initializes it.
+        /// </summary>
+        /// <returns>A pointer to memory holding the <see cref="Guid"/> value for the current type.</returns>
+        private static Guid* CreateRIID()
+        {
+            Guid* p = (Guid*)RuntimeHelpers.AllocateTypeAssociatedMemory(typeof(T), sizeof(Guid));
+
+            *p = typeof(T).GUID;
+
+            return p;
         }
     }
 }
