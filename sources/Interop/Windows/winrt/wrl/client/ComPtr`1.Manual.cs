@@ -354,13 +354,27 @@ namespace TerraFX.Interop
         /// </summary>
         /// <param name="r">The target <see cref="ComPtr{T}"/> instance to swap with the current one.</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void Swap(ref ComPtr<T> r)
+        public void Swap(ComPtr<T>* r)
         {
             T* temp = this.pointer;
 
-            this.pointer = r.pointer;
+            this.pointer = r->pointer;
 
-            r.pointer = temp;
+            r->pointer = temp;
+        }
+
+        /// <summary>
+        /// Swaps the current COM object reference with that of a given <see cref="ComPtr{T}"/> instance.
+        /// </summary>
+        /// <param name="other">The target <see cref="ComPtr{T}"/> instance to swap with the current one.</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public void Swap(ref ComPtr<T> other)
+        {
+            T* temp = this.pointer;
+
+            this.pointer = other.pointer;
+
+            other.pointer = temp;
         }
 
         // Increments the reference count for the current COM object, if any
