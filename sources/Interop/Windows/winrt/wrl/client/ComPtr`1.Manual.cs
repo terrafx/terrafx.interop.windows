@@ -95,11 +95,9 @@ namespace TerraFX.Interop
         /// <param name="other">A reference to the target <see cref="ComPtr{T}"/> value to write to.</param>
         /// <returns>The result of <see cref="IUnknown.QueryInterface"/> for the target type <typeparamref name="U"/>.</returns>
         /// <remarks>This method will automatically release the target COM object pointed to by <paramref name="other"/>, if any.</remarks>
-        public readonly int As<U>(out ComPtr<U> other)
+        public readonly int As<U>(ref ComPtr<U> other)
             where U : unmanaged
         {
-            Unsafe.SkipInit(out other);
-
             fixed (ComPtr<U>* p = &other)
             {
                 return ((IUnknown*)this.pointer)->QueryInterface(ComPtr<U>.RIID, (void**)p->ReleaseAndGetAddressOf());
@@ -125,10 +123,8 @@ namespace TerraFX.Interop
         /// <param name="other">A reference to the target <see cref="ComPtr{T}"/> value to write to.</param>
         /// <returns>The result of <see cref="IUnknown.QueryInterface"/> for the target IID.</returns>
         /// <remarks>This method will automatically release the target COM object pointed to by <paramref name="other"/>, if any.</remarks>
-        public readonly int AsIID(Guid* riid, out ComPtr<IUnknown> other)
+        public readonly int AsIID(Guid* riid, ref ComPtr<IUnknown> other)
         {
-            Unsafe.SkipInit(out other);
-
             fixed (ComPtr<IUnknown>* p = &other)
             {
                 return ((IUnknown*)this.pointer)->QueryInterface(riid, (void**)p->ReleaseAndGetAddressOf());
@@ -199,11 +195,9 @@ namespace TerraFX.Interop
         /// </summary>
         /// <param name="other">The target reference to copy the address of the current COM object to.</param>
         /// <returns>This method always returns <see cref="S_OK"/>.</returns>
-        public readonly int CopyTo(out ComPtr<T> other)
+        public readonly int CopyTo(ref ComPtr<T> other)
         {
             InternalAddRef();
-
-            Unsafe.SkipInit(out other);
 
             fixed (ComPtr<T>* p = &other)
             {
@@ -240,11 +234,9 @@ namespace TerraFX.Interop
         /// </summary>
         /// <param name="other">The target reference to copy the address of the current COM object to.</param>
         /// <returns>The result of <see cref="IUnknown.QueryInterface"/> for the target type <typeparamref name="U"/>.</returns>
-        public readonly int CopyTo<U>(out ComPtr<U> other)
+        public readonly int CopyTo<U>(ref ComPtr<U> other)
             where U : unmanaged
         {
-            Unsafe.SkipInit(out other);
-
             fixed (ComPtr<U>* p = &other)
             {
                 return ((IUnknown*)this.pointer)->QueryInterface(ComPtr<U>.RIID, (void**)p->ReleaseAndGetAddressOf());
@@ -279,10 +271,8 @@ namespace TerraFX.Interop
         /// <param name="riid">The IID indicating the interface type to convert the COM object reference to.</param>
         /// <param name="other">The target reference to copy the address of the current COM object to.</param>
         /// <returns>The result of <see cref="IUnknown.QueryInterface"/> for the target IID.</returns>
-        public readonly int CopyTo(Guid* riid, out ComPtr<IUnknown> other)
+        public readonly int CopyTo(Guid* riid, ref ComPtr<IUnknown> other)
         {
-            Unsafe.SkipInit(out other);
-
             fixed (ComPtr<IUnknown>* p = &other)
             {
                 return ((IUnknown*)this.pointer)->QueryInterface(riid, (void**)p->ReleaseAndGetAddressOf());
