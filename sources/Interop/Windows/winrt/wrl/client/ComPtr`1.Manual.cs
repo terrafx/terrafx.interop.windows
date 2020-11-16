@@ -318,12 +318,14 @@ namespace TerraFX.Interop
         /// Gets the address of the current <see cref="ComPtr{T}"/> instance as a raw <typeparamref name="T"/> double pointer.
         /// </summary>
         /// <returns>The raw pointer to the current <see cref="ComPtr{T}"/> instance.</returns>
-        /// <remarks>This method is only valid when the current <see cref="ComPtr{T}"/> instance is on the stack or pinned.</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         public readonly ref T* GetPinnableReference()
         {
-            return ref *(T**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (T** p = &this.pointer)
+            {
+                return ref *p;
+            }
         }
 
         /// <summary>
