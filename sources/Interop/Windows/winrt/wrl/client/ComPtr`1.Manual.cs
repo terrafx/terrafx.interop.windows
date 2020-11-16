@@ -305,9 +305,9 @@ namespace TerraFX.Interop
 
         /// <summary>
         /// Gets the address of the current <see cref="ComPtr{T}"/> instance as a raw <typeparamref name="T"/> double pointer.
+        /// This method is only valid when the current <see cref="ComPtr{T}"/> instance is on the stack or pinned.
         /// </summary>
         /// <returns>The raw pointer to the current <see cref="ComPtr{T}"/> instance.</returns>
-        /// <remarks>This method is only valid when the current <see cref="ComPtr{T}"/> instance is on the stack or pinned.</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public readonly T** GetAddressOf()
         {
@@ -330,9 +330,9 @@ namespace TerraFX.Interop
 
         /// <summary>
         /// Releases the current COM object in use and gets the address of the <see cref="ComPtr{T}"/> instance as a raw <typeparamref name="T"/> double pointer.
+        /// This method is only valid when the current <see cref="ComPtr{T}"/> instance is on the stack or pinned.
         /// </summary>
         /// <returns>The raw pointer to the current <see cref="ComPtr{T}"/> instance.</returns>
-        /// <remarks>This method is only valid when the current <see cref="ComPtr{T}"/> instance is on the stack or pinned.</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public T** ReleaseAndGetAddressOf()
         {
