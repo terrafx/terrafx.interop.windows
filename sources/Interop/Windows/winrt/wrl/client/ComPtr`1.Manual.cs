@@ -89,15 +89,50 @@ namespace TerraFX.Interop
         }
 
         /// <summary>
+        /// Converts the current object reference to type <typeparamref name="U"/> and assigns that to a target <see cref="ComPtr{T}"/> value.
+        /// </summary>
+        /// <typeparam name="U">The interface type to use to try casting the current COM object.</typeparam>
+        /// <param name="other">A reference to the target <see cref="ComPtr{T}"/> value to write to.</param>
+        /// <returns>The result of <see cref="IUnknown.QueryInterface"/> for the target type <typeparamref name="U"/>.</returns>
+        /// <remarks>This method will automatically release the target COM object pointed to by <paramref name="other"/>, if any.</remarks>
+        public readonly int As<U>(out ComPtr<U> other)
+            where U : unmanaged
+        {
+            Unsafe.SkipInit(out other);
+
+            fixed (ComPtr<U>* p = &other)
+            {
+                return ((IUnknown*)this.pointer)->QueryInterface(ComPtr<U>.RIID, (void**)p->ReleaseAndGetAddressOf());
+            }
+        }
+
+        /// <summary>
         /// Converts the current object reference to a type indicated by the given IID and assigns that to a target <see cref="ComPtr{T}"/> value.
         /// </summary>
         /// <param name="riid">The IID indicating the interface type to convert the COM object reference to.</param>
-        /// <param name="p">A raw pointer to the target <see cref="ComPtr{T}"/> value to write to.</param>
+        /// <param name="other">A raw pointer to the target <see cref="ComPtr{T}"/> value to write to.</param>
         /// <returns>The result of <see cref="IUnknown.QueryInterface"/> for the target IID.</returns>
-        /// <remarks>This method will automatically release the target COM object pointed to by <paramref name="p"/>, if any.</remarks>
-        public readonly int AsIID(Guid* riid, ComPtr<IUnknown>* p)
+        /// <remarks>This method will automatically release the target COM object pointed to by <paramref name="other"/>, if any.</remarks>
+        public readonly int AsIID(Guid* riid, ComPtr<IUnknown>* other)
         {
-            return ((IUnknown*)this.pointer)->QueryInterface(riid, (void**)p->ReleaseAndGetAddressOf());
+            return ((IUnknown*)this.pointer)->QueryInterface(riid, (void**)other->ReleaseAndGetAddressOf());
+        }
+
+        /// <summary>
+        /// Converts the current object reference to a type indicated by the given IID and assigns that to a target <see cref="ComPtr{T}"/> value.
+        /// </summary>
+        /// <param name="riid">The IID indicating the interface type to convert the COM object reference to.</param>
+        /// <param name="other">A reference to the target <see cref="ComPtr{T}"/> value to write to.</param>
+        /// <returns>The result of <see cref="IUnknown.QueryInterface"/> for the target IID.</returns>
+        /// <remarks>This method will automatically release the target COM object pointed to by <paramref name="other"/>, if any.</remarks>
+        public readonly int AsIID(Guid* riid, out ComPtr<IUnknown> other)
+        {
+            Unsafe.SkipInit(out other);
+
+            fixed (ComPtr<IUnknown>* p = &other)
+            {
+                return ((IUnknown*)this.pointer)->QueryInterface(riid, (void**)p->ReleaseAndGetAddressOf());
+            }
         }
 
         /// <summary>
@@ -146,6 +181,39 @@ namespace TerraFX.Interop
         }
 
         /// <summary>
+        /// Increments the reference count for the current COM object, if any, and copies its address to a target <see cref="ComPtr{T}"/>.
+        /// </summary>
+        /// <param name="p">The target raw pointer to copy the address of the current COM object to.</param>
+        /// <returns>This method always returns <see cref="S_OK"/>.</returns>
+        public readonly int CopyTo(ComPtr<T>* p)
+        {
+            InternalAddRef();
+
+            *p->ReleaseAndGetAddressOf() = this.pointer;
+
+            return S_OK;
+        }
+
+        /// <summary>
+        /// Increments the reference count for the current COM object, if any, and copies its address to a target <see cref="ComPtr{T}"/>.
+        /// </summary>
+        /// <param name="other">The target reference to copy the address of the current COM object to.</param>
+        /// <returns>This method always returns <see cref="S_OK"/>.</returns>
+        public readonly int CopyTo(out ComPtr<T> other)
+        {
+            InternalAddRef();
+
+            Unsafe.SkipInit(out other);
+
+            fixed (ComPtr<T>* p = &other)
+            {
+                *p->ReleaseAndGetAddressOf() = this.pointer;
+            }
+
+            return S_OK;
+        }
+
+        /// <summary>
         /// Converts the current COM object reference to a given interface type and assigns that to a target raw pointer.
         /// </summary>
         /// <param name="ptr">The target raw pointer to copy the address of the current COM object to.</param>
@@ -157,7 +225,34 @@ namespace TerraFX.Interop
         }
 
         /// <summary>
-        /// Converts the current object reference to a type indicated by the given IID and assigns that to a target <see cref="ComPtr{T}"/> value.
+        /// Converts the current COM object reference to a given interface type and assigns that to a target <see cref="ComPtr{T}"/>.
+        /// </summary>
+        /// <param name="p">The target raw pointer to copy the address of the current COM object to.</param>
+        /// <returns>The result of <see cref="IUnknown.QueryInterface"/> for the target type <typeparamref name="U"/>.</returns>
+        public readonly int CopyTo<U>(ComPtr<U>* p)
+            where U : unmanaged
+        {
+            return ((IUnknown*)this.pointer)->QueryInterface(ComPtr<U>.RIID, (void**)p->ReleaseAndGetAddressOf());
+        }
+
+        /// <summary>
+        /// Converts the current COM object reference to a given interface type and assigns that to a target <see cref="ComPtr{T}"/>.
+        /// </summary>
+        /// <param name="other">The target reference to copy the address of the current COM object to.</param>
+        /// <returns>The result of <see cref="IUnknown.QueryInterface"/> for the target type <typeparamref name="U"/>.</returns>
+        public readonly int CopyTo<U>(out ComPtr<U> other)
+            where U : unmanaged
+        {
+            Unsafe.SkipInit(out other);
+
+            fixed (ComPtr<U>* p = &other)
+            {
+                return ((IUnknown*)this.pointer)->QueryInterface(ComPtr<U>.RIID, (void**)p->ReleaseAndGetAddressOf());
+            }
+        }
+
+        /// <summary>
+        /// Converts the current object reference to a type indicated by the given IID and assigns that to a target address.
         /// </summary>
         /// <param name="riid">The IID indicating the interface type to convert the COM object reference to.</param>
         /// <param name="ptr">The target raw pointer to copy the address of the current COM object to.</param>
@@ -165,6 +260,33 @@ namespace TerraFX.Interop
         public readonly int CopyTo(Guid* riid, void** ptr)
         {
             return ((IUnknown*)this.pointer)->QueryInterface(riid, ptr);
+        }
+
+        /// <summary>
+        /// Converts the current object reference to a type indicated by the given IID and assigns that to a target <see cref="ComPtr{T}"/> value.
+        /// </summary>
+        /// <param name="riid">The IID indicating the interface type to convert the COM object reference to.</param>
+        /// <param name="p">The target raw pointer to copy the address of the current COM object to.</param>
+        /// <returns>The result of <see cref="IUnknown.QueryInterface"/> for the target IID.</returns>
+        public readonly int CopyTo(Guid* riid, ComPtr<IUnknown>* p)
+        {
+            return ((IUnknown*)this.pointer)->QueryInterface(riid, (void**)p->ReleaseAndGetAddressOf());
+        }
+
+        /// <summary>
+        /// Converts the current object reference to a type indicated by the given IID and assigns that to a target <see cref="ComPtr{T}"/> value.
+        /// </summary>
+        /// <param name="riid">The IID indicating the interface type to convert the COM object reference to.</param>
+        /// <param name="other">The target reference to copy the address of the current COM object to.</param>
+        /// <returns>The result of <see cref="IUnknown.QueryInterface"/> for the target IID.</returns>
+        public readonly int CopyTo(Guid* riid, out ComPtr<IUnknown> other)
+        {
+            Unsafe.SkipInit(out other);
+
+            fixed (ComPtr<IUnknown>* p = &other)
+            {
+                return ((IUnknown*)this.pointer)->QueryInterface(riid, (void**)p->ReleaseAndGetAddressOf());
+            }
         }
 
         /// <inheritdoc/>
