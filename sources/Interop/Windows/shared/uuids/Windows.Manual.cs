@@ -5,7 +5,6 @@
 
 using System;
 using System.ComponentModel;
-using System.Diagnostics.Contracts;
 using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop
@@ -21,7 +20,6 @@ namespace TerraFX.Interop
         /// input type. This value can be either converted to a <see cref="Guid"/>
         /// pointer, or implicitly assigned to a <see cref="Guid"/> value.
         /// </returns>
-        [Pure]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static unsafe GUID __uuidof<T>()
             where T : unmanaged
