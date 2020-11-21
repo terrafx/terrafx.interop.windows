@@ -13,12 +13,12 @@ namespace TerraFX.Interop
     {
         /// <summary>Retrieves the GUID of of a specified type.</summary>
         /// <typeparam name="T">The type to retrieve the GUID for.</typeparam>
-        /// <returns>A <see cref="GUID"/> value wrapping a pointer to the GUID data for the input type. This value can be either converted to a <see cref="Guid"/> pointer, or implicitly assigned to a <see cref="Guid"/> value.</returns>
+        /// <returns>A <see cref="UuidOfType"/> value wrapping a pointer to the GUID data for the input type. This value can be either converted to a <see cref="Guid"/> pointer, or implicitly assigned to a <see cref="Guid"/> value.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static unsafe GUID __uuidof<T>()
+        public static unsafe UuidOfType __uuidof<T>()
             where T : unmanaged
         {
-            return new GUID(UUID<T>.RIID);
+            return new UuidOfType(UUID<T>.RIID);
         }
 
         /// <summary>
@@ -26,29 +26,29 @@ namespace TerraFX.Interop
         /// converted to and assigned to <see cref="Guid"/>* or <see cref="Guid"/> parameters.
         /// </summary>
         [EditorBrowsable(EditorBrowsableState.Never)]
-        public readonly unsafe ref struct GUID
+        public readonly unsafe ref struct UuidOfType
         {
             private readonly Guid* riid;
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            internal GUID(Guid* riid)
+            internal UuidOfType(Guid* riid)
             {
                 this.riid = riid;
             }
 
             /// <summary>
-            /// Reads a <see cref="Guid"/> value from the GUID buffer for a given <see cref="GUID"/> instance.
+            /// Reads a <see cref="Guid"/> value from the GUID buffer for a given <see cref="UuidOfType"/> instance.
             /// </summary>
-            /// <param name="guid">The input <see cref="GUID"/> instance to read data for.</param>
+            /// <param name="guid">The input <see cref="UuidOfType"/> instance to read data for.</param>
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public static implicit operator Guid(GUID guid) => *guid.riid;
+            public static implicit operator Guid(UuidOfType guid) => *guid.riid;
 
             /// <summary>
-            /// Returns the <see cref="Guid"/>* pointer to the GUID buffer for a given <see cref="GUID"/> instance.
+            /// Returns the <see cref="Guid"/>* pointer to the GUID buffer for a given <see cref="UuidOfType"/> instance.
             /// </summary>
-            /// <param name="guid">The input <see cref="GUID"/> instance to read data for.</param>
+            /// <param name="guid">The input <see cref="UuidOfType"/> instance to read data for.</param>
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public static implicit operator Guid*(GUID guid) => guid.riid;
+            public static implicit operator Guid*(UuidOfType guid) => guid.riid;
         }
 
         /// <summary>
