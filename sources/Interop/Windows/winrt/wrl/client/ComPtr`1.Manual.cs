@@ -56,7 +56,7 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator ComPtr<T>(T* other)
         {
-            return new(other);
+            return new ComPtr<T>(other);
         }
 
         /// <summary>

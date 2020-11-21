@@ -24,7 +24,7 @@ namespace TerraFX.Interop
         public static unsafe GUID __uuidof<T>()
             where T : unmanaged
         {
-            return new(UUID<T>.RIID);
+            return new GUID(UUID<T>.RIID);
         }
 
         /// <summary>
