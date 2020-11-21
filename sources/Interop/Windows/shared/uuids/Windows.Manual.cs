@@ -11,15 +11,9 @@ namespace TerraFX.Interop
 {
     public static partial class Windows
     {
-        /// <summary>
-        /// Retrieves the GUID of of a specified type.
-        /// </summary>
+        /// <summary>Retrieves the GUID of of a specified type.</summary>
         /// <typeparam name="T">The type to retrieve the GUID for.</typeparam>
-        /// <returns>
-        /// A <see cref="GUID"/> value wrapping a pointer to the GUID data for the
-        /// input type. This value can be either converted to a <see cref="Guid"/>
-        /// pointer, or implicitly assigned to a <see cref="Guid"/> value.
-        /// </returns>
+        /// <returns>A <see cref="GUID"/> value wrapping a pointer to the GUID data for the input type. This value can be either converted to a <see cref="Guid"/> pointer, or implicitly assigned to a <see cref="Guid"/> value.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static unsafe GUID __uuidof<T>()
             where T : unmanaged
