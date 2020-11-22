@@ -27,7 +27,6 @@ namespace TerraFX.Interop
         {
             private readonly Guid* riid;
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             internal UuidOfType(Guid* riid)
             {
                 this.riid = riid;
@@ -35,12 +34,10 @@ namespace TerraFX.Interop
 
             /// <summary>Reads a <see cref="Guid"/> value from the GUID buffer for a given <see cref="UuidOfType"/> instance.</summary>
             /// <param name="guid">The input <see cref="UuidOfType"/> instance to read data for.</param>
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public static implicit operator Guid(UuidOfType guid) => *guid.riid;
 
             /// <summary>Returns the <see cref="Guid"/>* pointer to the GUID buffer for a given <see cref="UuidOfType"/> instance.</summary>
             /// <param name="guid">The input <see cref="UuidOfType"/> instance to read data for.</param>
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public static implicit operator Guid*(UuidOfType guid) => guid.riid;
         }
 
