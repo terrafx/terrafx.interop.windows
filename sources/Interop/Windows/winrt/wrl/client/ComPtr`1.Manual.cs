@@ -252,9 +252,9 @@ namespace TerraFX.Interop
         [EditorBrowsable(EditorBrowsableState.Never)]
         public readonly ref T* GetPinnableReference()
         {
-            fixed (T** p = &ptr_)
+            fixed (T** ptr = &ptr_)
             {
-                return ref *p;
+                return ref *ptr;
             }
         }
 
@@ -280,9 +280,9 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Swap(ComPtr<T>* r)
         {
-            T* temp = ptr_;
+            T* tmp = ptr_;
             ptr_ = r->ptr_;
-            r->ptr_ = temp;
+            r->ptr_ = tmp;
         }
 
         /// <summary>Swaps the current COM object reference with that of a given <see cref="ComPtr{T}"/> instance.</summary>
@@ -290,32 +290,35 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Swap(ref ComPtr<T> other)
         {
-            T* temp = ptr_;
+            T* tmp = ptr_;
             ptr_ = other.ptr_;
-            other.ptr_ = temp;
+            other.ptr_ = tmp;
         }
 
         // Increments the reference count for the current COM object, if any
         private readonly void InternalAddRef()
         {
-            T* pointer = ptr_;
-            if (pointer != null)
+            T* temp = ptr_;
+
+            if (temp != null)
             {
-                ((IUnknown*)pointer)->AddRef();
+                ((IUnknown*)temp)->AddRef();
             }
         }
 
         // Decrements the reference count for the current COM object, if any
         private uint InternalRelease()
         {
-            uint referenceCount = 0;
+            uint @ref = 0;
             T* temp = ptr_;
+
             if (temp != null)
             {
                 ptr_ = null;
-                referenceCount = ((IUnknown*)temp)->Release();
+                @ref = ((IUnknown*)temp)->Release();
             }
-            return referenceCount;
+
+            return @ref;
         }
     }
 }
