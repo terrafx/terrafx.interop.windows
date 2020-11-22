@@ -21,10 +21,7 @@ namespace TerraFX.Interop
             return new UuidOfType(UUID<T>.RIID);
         }
 
-        /// <summary>
-        /// A proxy type that wraps a pointer to GUID data. Values of this type can be implicitly
-        /// converted to and assigned to <see cref="Guid"/>* or <see cref="Guid"/> parameters.
-        /// </summary>
+        /// <summary>A proxy type that wraps a pointer to GUID data. Values of this type can be implicitly converted to and assigned to <see cref="Guid"/>* or <see cref="Guid"/> parameters.</summary>
         [EditorBrowsable(EditorBrowsableState.Never)]
         public readonly unsafe ref struct UuidOfType
         {
@@ -36,37 +33,27 @@ namespace TerraFX.Interop
                 this.riid = riid;
             }
 
-            /// <summary>
-            /// Reads a <see cref="Guid"/> value from the GUID buffer for a given <see cref="UuidOfType"/> instance.
-            /// </summary>
+            /// <summary>Reads a <see cref="Guid"/> value from the GUID buffer for a given <see cref="UuidOfType"/> instance.</summary>
             /// <param name="guid">The input <see cref="UuidOfType"/> instance to read data for.</param>
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public static implicit operator Guid(UuidOfType guid) => *guid.riid;
 
-            /// <summary>
-            /// Returns the <see cref="Guid"/>* pointer to the GUID buffer for a given <see cref="UuidOfType"/> instance.
-            /// </summary>
+            /// <summary>Returns the <see cref="Guid"/>* pointer to the GUID buffer for a given <see cref="UuidOfType"/> instance.</summary>
             /// <param name="guid">The input <see cref="UuidOfType"/> instance to read data for.</param>
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public static implicit operator Guid*(UuidOfType guid) => guid.riid;
         }
 
-        /// <summary>
-        /// A helper type to provide static GUID buffers for specific types.
-        /// </summary>
+        /// <summary>A helper type to provide static GUID buffers for specific types.</summary>
         /// <typeparam name="T">The type to allocate a GUID buffer for.</typeparam>
         private static unsafe class UUID<T>
             where T : unmanaged
         {
-            /// <summary>
-            /// The pointer to the <see cref="Guid"/> value for the current type.
-            /// </summary>
+            /// <summary>The pointer to the <see cref="Guid"/> value for the current type.</summary>
             /// <remarks>The target memory area should never be written to.</remarks>
             public static readonly Guid* RIID = CreateRIID();
 
-            /// <summary>
-            /// Allocates memory for a <see cref="Guid"/> value and initializes it.
-            /// </summary>
+            /// <summary>Allocates memory for a <see cref="Guid"/> value and initializes it.</summary>
             /// <returns>A pointer to memory holding the <see cref="Guid"/> value for the current type.</returns>
             private static Guid* CreateRIID()
             {
