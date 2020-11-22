@@ -25,7 +25,6 @@ namespace TerraFX.Interop
         public ComPtr(T* other)
         {
             ptr_ = other;
-
             InternalAddRef();
         }
 
@@ -34,7 +33,6 @@ namespace TerraFX.Interop
         public ComPtr(ComPtr<T> other)
         {
             ptr_ = other.ptr_;
-
             InternalAddRef();
         }
 
@@ -110,10 +108,8 @@ namespace TerraFX.Interop
             if (ptr_ != null)
             {
                 var @ref = ((IUnknown*)ptr_)->Release();
-
                 Debug.Assert((@ref != 0) || (ptr_ != other));
             }
-
             ptr_ = other;
         }
 
@@ -123,9 +119,7 @@ namespace TerraFX.Interop
         public T* Detach()
         {
             T* ptr = ptr_;
-
             ptr_ = null;
-
             return ptr;
         }
 
@@ -135,9 +129,7 @@ namespace TerraFX.Interop
         public readonly int CopyTo(T** ptr)
         {
             InternalAddRef();
-
             *ptr = ptr_;
-
             return S_OK;
         }
 
@@ -147,9 +139,7 @@ namespace TerraFX.Interop
         public readonly int CopyTo(ComPtr<T>* p)
         {
             InternalAddRef();
-
             *p->ReleaseAndGetAddressOf() = ptr_;
-
             return S_OK;
         }
 
@@ -159,12 +149,10 @@ namespace TerraFX.Interop
         public readonly int CopyTo(ref ComPtr<T> other)
         {
             InternalAddRef();
-
             fixed (ComPtr<T>* p = &other)
             {
                 *p->ReleaseAndGetAddressOf() = ptr_;
             }
-
             return S_OK;
         }
 
@@ -233,7 +221,6 @@ namespace TerraFX.Interop
         public void Dispose()
         {
             T* pointer = ptr_;
-
             if (pointer != null)
             {
                 ptr_ = null;
@@ -277,7 +264,6 @@ namespace TerraFX.Interop
         public T** ReleaseAndGetAddressOf()
         {
             InternalRelease();
-
             return GetAddressOf();
         }
 
@@ -295,9 +281,7 @@ namespace TerraFX.Interop
         public void Swap(ComPtr<T>* r)
         {
             T* temp = ptr_;
-
             ptr_ = r->ptr_;
-
             r->ptr_ = temp;
         }
 
@@ -307,9 +291,7 @@ namespace TerraFX.Interop
         public void Swap(ref ComPtr<T> other)
         {
             T* temp = ptr_;
-
             ptr_ = other.ptr_;
-
             other.ptr_ = temp;
         }
 
@@ -317,7 +299,6 @@ namespace TerraFX.Interop
         private readonly void InternalAddRef()
         {
             T* pointer = ptr_;
-
             if (pointer != null)
             {
                 ((IUnknown*)pointer)->AddRef();
@@ -328,16 +309,12 @@ namespace TerraFX.Interop
         private uint InternalRelease()
         {
             uint referenceCount = 0;
-
             T* temp = ptr_;
-
             if (temp != null)
             {
                 ptr_ = null;
-
                 referenceCount = ((IUnknown*)temp)->Release();
             }
-
             return referenceCount;
         }
     }
