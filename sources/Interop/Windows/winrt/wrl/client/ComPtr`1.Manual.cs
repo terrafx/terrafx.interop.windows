@@ -71,10 +71,11 @@ namespace TerraFX.Interop
         public readonly int As<U>(ref ComPtr<U> other)
             where U : unmanaged
         {
-            fixed (ComPtr<U>* p = &other)
-            {
-                return ((IUnknown*)ptr_)->QueryInterface(__uuidof<U>(), (void**)p->ReleaseAndGetAddressOf());
-            }
+            U* ptr;
+            int result = ((IUnknown*)ptr_)->QueryInterface(__uuidof<U>(), (void**)&ptr);
+
+            other.Attach(ptr);
+            return result;
         }
 
         /// <summary>Converts the current object reference to a type indicated by the given IID and assigns that to a target <see cref="ComPtr{T}"/> value.</summary>
@@ -94,10 +95,11 @@ namespace TerraFX.Interop
         /// <remarks>This method will automatically release the target COM object pointed to by <paramref name="other"/>, if any.</remarks>
         public readonly int AsIID(Guid* riid, ref ComPtr<IUnknown> other)
         {
-            fixed (ComPtr<IUnknown>* p = &other)
-            {
-                return ((IUnknown*)ptr_)->QueryInterface(riid, (void**)p->ReleaseAndGetAddressOf());
-            }
+            IUnknown* ptr;
+            int result = ((IUnknown*)ptr_)->QueryInterface(riid, (void**)&ptr);
+
+            other.Attach(ptr);
+            return result;
         }
 
         /// <summary>Releases the current COM object, if any, and replaces the internal pointer with an input raw pointer.</summary>
@@ -149,10 +151,7 @@ namespace TerraFX.Interop
         public readonly int CopyTo(ref ComPtr<T> other)
         {
             InternalAddRef();
-            fixed (ComPtr<T>* p = &other)
-            {
-                *p->ReleaseAndGetAddressOf() = ptr_;
-            }
+            other.Attach(ptr_);
             return S_OK;
         }
 
@@ -180,10 +179,11 @@ namespace TerraFX.Interop
         public readonly int CopyTo<U>(ref ComPtr<U> other)
             where U : unmanaged
         {
-            fixed (ComPtr<U>* p = &other)
-            {
-                return ((IUnknown*)ptr_)->QueryInterface(__uuidof<U>(), (void**)p->ReleaseAndGetAddressOf());
-            }
+            U* ptr;
+            int result = ((IUnknown*)ptr_)->QueryInterface(__uuidof<U>(), (void**)&ptr);
+
+            other.Attach(ptr);
+            return result;
         }
 
         /// <summary>Converts the current object reference to a type indicated by the given IID and assigns that to a target address.</summary>
@@ -210,10 +210,11 @@ namespace TerraFX.Interop
         /// <returns>The result of <see cref="IUnknown.QueryInterface"/> for the target IID.</returns>
         public readonly int CopyTo(Guid* riid, ref ComPtr<IUnknown> other)
         {
-            fixed (ComPtr<IUnknown>* p = &other)
-            {
-                return ((IUnknown*)ptr_)->QueryInterface(riid, (void**)p->ReleaseAndGetAddressOf());
-            }
+            IUnknown* ptr;
+            int result = ((IUnknown*)ptr_)->QueryInterface(riid, (void**)&ptr);
+
+            other.Attach(ptr);
+            return result;
         }
 
         /// <inheritdoc/>
