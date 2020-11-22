@@ -25,7 +25,7 @@ namespace TerraFX.Interop
         /// <summary>
         /// The raw pointer to a COM object, if existing.
         /// </summary>
-        private T* _ptr;
+        private T* ptr_;
 
         /// <summary>
         /// Creates a new <see cref="ComPtr{T}"/> instance from a raw pointer and increments the ref count.
@@ -33,7 +33,7 @@ namespace TerraFX.Interop
         /// <param name="other">The raw pointer to wrap.</param>
         public ComPtr(T* other)
         {
-            _ptr = other;
+            ptr_ = other;
 
             InternalAddRef();
         }
@@ -44,7 +44,7 @@ namespace TerraFX.Interop
         /// <param name="other">The other <see cref="ComPtr{T}"/> instance to copy.</param>
         public ComPtr(ComPtr<T> other)
         {
-            _ptr = other._ptr;
+            ptr_ = other.ptr_;
 
             InternalAddRef();
         }
@@ -79,7 +79,7 @@ namespace TerraFX.Interop
         public readonly int As<U>(ComPtr<U>* p)
             where U : unmanaged
         {
-            return ((IUnknown*)_ptr)->QueryInterface(__uuidof<U>(), (void**)p->ReleaseAndGetAddressOf());
+            return ((IUnknown*)ptr_)->QueryInterface(__uuidof<U>(), (void**)p->ReleaseAndGetAddressOf());
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace TerraFX.Interop
         {
             fixed (ComPtr<U>* p = &other)
             {
-                return ((IUnknown*)_ptr)->QueryInterface(__uuidof<U>(), (void**)p->ReleaseAndGetAddressOf());
+                return ((IUnknown*)ptr_)->QueryInterface(__uuidof<U>(), (void**)p->ReleaseAndGetAddressOf());
             }
         }
 
@@ -107,7 +107,7 @@ namespace TerraFX.Interop
         /// <remarks>This method will automatically release the target COM object pointed to by <paramref name="other"/>, if any.</remarks>
         public readonly int AsIID(Guid* riid, ComPtr<IUnknown>* other)
         {
-            return ((IUnknown*)_ptr)->QueryInterface(riid, (void**)other->ReleaseAndGetAddressOf());
+            return ((IUnknown*)ptr_)->QueryInterface(riid, (void**)other->ReleaseAndGetAddressOf());
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace TerraFX.Interop
         {
             fixed (ComPtr<IUnknown>* p = &other)
             {
-                return ((IUnknown*)_ptr)->QueryInterface(riid, (void**)p->ReleaseAndGetAddressOf());
+                return ((IUnknown*)ptr_)->QueryInterface(riid, (void**)p->ReleaseAndGetAddressOf());
             }
         }
 
@@ -132,14 +132,14 @@ namespace TerraFX.Interop
         /// <remarks>This method will release the current raw pointer, if any, but it will not increment the references for <paramref name="other"/>.</remarks>
         public void Attach(T* other)
         {
-            if (_ptr != null)
+            if (ptr_ != null)
             {
-                var @ref = ((IUnknown*)_ptr)->Release();
+                var @ref = ((IUnknown*)ptr_)->Release();
 
-                Debug.Assert((@ref != 0) || (_ptr != other));
+                Debug.Assert((@ref != 0) || (ptr_ != other));
             }
 
-            _ptr = other;
+            ptr_ = other;
         }
 
         /// <summary>
@@ -149,9 +149,9 @@ namespace TerraFX.Interop
         /// <remarks>This method will not change the reference count for the COM object in use.</remarks>
         public T* Detach()
         {
-            T* ptr = _ptr;
+            T* ptr = ptr_;
 
-            _ptr = null;
+            ptr_ = null;
 
             return ptr;
         }
@@ -165,7 +165,7 @@ namespace TerraFX.Interop
         {
             InternalAddRef();
 
-            *ptr = _ptr;
+            *ptr = ptr_;
 
             return S_OK;
         }
@@ -179,7 +179,7 @@ namespace TerraFX.Interop
         {
             InternalAddRef();
 
-            *p->ReleaseAndGetAddressOf() = _ptr;
+            *p->ReleaseAndGetAddressOf() = ptr_;
 
             return S_OK;
         }
@@ -195,7 +195,7 @@ namespace TerraFX.Interop
 
             fixed (ComPtr<T>* p = &other)
             {
-                *p->ReleaseAndGetAddressOf() = _ptr;
+                *p->ReleaseAndGetAddressOf() = ptr_;
             }
 
             return S_OK;
@@ -209,7 +209,7 @@ namespace TerraFX.Interop
         public readonly int CopyTo<U>(U** ptr)
             where U : unmanaged
         {
-            return ((IUnknown*)_ptr)->QueryInterface(__uuidof<U>(), (void**)ptr);
+            return ((IUnknown*)ptr_)->QueryInterface(__uuidof<U>(), (void**)ptr);
         }
 
         /// <summary>
@@ -220,7 +220,7 @@ namespace TerraFX.Interop
         public readonly int CopyTo<U>(ComPtr<U>* p)
             where U : unmanaged
         {
-            return ((IUnknown*)_ptr)->QueryInterface(__uuidof<U>(), (void**)p->ReleaseAndGetAddressOf());
+            return ((IUnknown*)ptr_)->QueryInterface(__uuidof<U>(), (void**)p->ReleaseAndGetAddressOf());
         }
 
         /// <summary>
@@ -233,7 +233,7 @@ namespace TerraFX.Interop
         {
             fixed (ComPtr<U>* p = &other)
             {
-                return ((IUnknown*)_ptr)->QueryInterface(__uuidof<U>(), (void**)p->ReleaseAndGetAddressOf());
+                return ((IUnknown*)ptr_)->QueryInterface(__uuidof<U>(), (void**)p->ReleaseAndGetAddressOf());
             }
         }
 
@@ -245,7 +245,7 @@ namespace TerraFX.Interop
         /// <returns>The result of <see cref="IUnknown.QueryInterface"/> for the target IID.</returns>
         public readonly int CopyTo(Guid* riid, void** ptr)
         {
-            return ((IUnknown*)_ptr)->QueryInterface(riid, ptr);
+            return ((IUnknown*)ptr_)->QueryInterface(riid, ptr);
         }
 
         /// <summary>
@@ -256,7 +256,7 @@ namespace TerraFX.Interop
         /// <returns>The result of <see cref="IUnknown.QueryInterface"/> for the target IID.</returns>
         public readonly int CopyTo(Guid* riid, ComPtr<IUnknown>* p)
         {
-            return ((IUnknown*)_ptr)->QueryInterface(riid, (void**)p->ReleaseAndGetAddressOf());
+            return ((IUnknown*)ptr_)->QueryInterface(riid, (void**)p->ReleaseAndGetAddressOf());
         }
 
         /// <summary>
@@ -269,7 +269,7 @@ namespace TerraFX.Interop
         {
             fixed (ComPtr<IUnknown>* p = &other)
             {
-                return ((IUnknown*)_ptr)->QueryInterface(riid, (void**)p->ReleaseAndGetAddressOf());
+                return ((IUnknown*)ptr_)->QueryInterface(riid, (void**)p->ReleaseAndGetAddressOf());
             }
         }
 
@@ -277,11 +277,11 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Dispose()
         {
-            T* pointer = _ptr;
+            T* pointer = ptr_;
 
             if (pointer != null)
             {
-                _ptr = null;
+                ptr_ = null;
 
                 _ = ((IUnknown*)pointer)->Release();
             }
@@ -294,7 +294,7 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public readonly T* Get()
         {
-            return _ptr;
+            return ptr_;
         }
 
         /// <summary>
@@ -316,7 +316,7 @@ namespace TerraFX.Interop
         [EditorBrowsable(EditorBrowsableState.Never)]
         public readonly ref T* GetPinnableReference()
         {
-            fixed (T** p = &_ptr)
+            fixed (T** p = &ptr_)
             {
                 return ref *p;
             }
@@ -352,11 +352,11 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Swap(ComPtr<T>* r)
         {
-            T* temp = _ptr;
+            T* temp = ptr_;
 
-            _ptr = r->_ptr;
+            ptr_ = r->ptr_;
 
-            r->_ptr = temp;
+            r->ptr_ = temp;
         }
 
         /// <summary>
@@ -366,17 +366,17 @@ namespace TerraFX.Interop
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Swap(ref ComPtr<T> other)
         {
-            T* temp = _ptr;
+            T* temp = ptr_;
 
-            _ptr = other._ptr;
+            ptr_ = other.ptr_;
 
-            other._ptr = temp;
+            other.ptr_ = temp;
         }
 
         // Increments the reference count for the current COM object, if any
         private readonly void InternalAddRef()
         {
-            T* pointer = _ptr;
+            T* pointer = ptr_;
 
             if (pointer != null)
             {
@@ -389,11 +389,11 @@ namespace TerraFX.Interop
         {
             uint referenceCount = 0;
 
-            T* temp = _ptr;
+            T* temp = ptr_;
 
             if (temp != null)
             {
-                _ptr = null;
+                ptr_ = null;
 
                 referenceCount = ((IUnknown*)temp)->Release();
             }
