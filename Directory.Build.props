@@ -39,6 +39,7 @@
     <Authors>Tanner Gooding and Contributors</Authors>
     <BaseOutputPath>$(BaseArtifactsPath)bin/$(BaseArtifactsPathSuffix)/</BaseOutputPath>
     <Company>TerraFX</Company>
+    <ContinuousIntegrationBuild Condition="'$(GITHUB_RUN_ID)' != ''">true</ContinuousIntegrationBuild>
     <PackageOutputPath>$(BaseArtifactsPath)pkg/$(Configuration)/</PackageOutputPath>
     <Product>TerraFX.Interop.Windows</Product>
     <VersionPrefix>10.0.19041</VersionPrefix>
