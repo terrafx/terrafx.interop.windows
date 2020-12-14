@@ -15,28 +15,32 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<ITimeAndNoticeControl*, Guid*, void**, int>)(lpVtbl[0]))((ITimeAndNoticeControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<ITimeAndNoticeControl*, Guid*, void**, int>)(lpVtbl[0]))((ITimeAndNoticeControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<ITimeAndNoticeControl*, uint>)(lpVtbl[1]))((ITimeAndNoticeControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ITimeAndNoticeControl*, uint>)(lpVtbl[1]))((ITimeAndNoticeControl*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<ITimeAndNoticeControl*, uint>)(lpVtbl[2]))((ITimeAndNoticeControl*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ITimeAndNoticeControl*, uint>)(lpVtbl[2]))((ITimeAndNoticeControl*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int SuppressChanges([NativeTypeName("DWORD")] uint res1, [NativeTypeName("DWORD")] uint res2)
         {
-            return ((delegate* stdcall<ITimeAndNoticeControl*, uint, uint, int>)(lpVtbl[3]))((ITimeAndNoticeControl*)Unsafe.AsPointer(ref this), res1, res2);
+            return ((delegate* unmanaged<ITimeAndNoticeControl*, uint, uint, int>)(lpVtbl[3]))((ITimeAndNoticeControl*)Unsafe.AsPointer(ref this), res1, res2);
         }
     }
 }

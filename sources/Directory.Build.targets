@@ -35,7 +35,7 @@
   </PropertyGroup>
 
   <Target Name="GenerateSkipLocalsInit"
-          BeforeTargets="CoreCompile"
+          BeforeTargets="BeforeCompile;CoreCompile"
           DependsOnTargets="PrepareForBuild"
           Condition="'$(Language)' == 'C#'"
           Inputs="$(MSBuildAllProjects)"

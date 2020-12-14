@@ -13,10 +13,10 @@ namespace TerraFX.Interop
         public CRYPT_ALGORITHM_IDENTIFIER ContentEncryptionAlgorithm;
 
         [NativeTypeName("PFN_CMSG_ALLOC")]
-        public delegate* stdcall<nuint, void*> pfnAlloc;
+        public delegate* unmanaged<nuint, void*> pfnAlloc;
 
         [NativeTypeName("PFN_CMSG_FREE")]
-        public delegate* stdcall<void*, void> pfnFree;
+        public delegate* unmanaged<void*, void> pfnFree;
 
         [NativeTypeName("NCRYPT_KEY_HANDLE")]
         public nuint hNCryptKey;

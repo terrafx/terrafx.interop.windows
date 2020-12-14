@@ -15,52 +15,60 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IOverlayNotify2*, Guid*, void**, int>)(lpVtbl[0]))((IOverlayNotify2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IOverlayNotify2*, Guid*, void**, int>)(lpVtbl[0]))((IOverlayNotify2*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IOverlayNotify2*, uint>)(lpVtbl[1]))((IOverlayNotify2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IOverlayNotify2*, uint>)(lpVtbl[1]))((IOverlayNotify2*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IOverlayNotify2*, uint>)(lpVtbl[2]))((IOverlayNotify2*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IOverlayNotify2*, uint>)(lpVtbl[2]))((IOverlayNotify2*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OnPaletteChange([NativeTypeName("DWORD")] uint dwColors, [NativeTypeName("const PALETTEENTRY *")] PALETTEENTRY* pPalette)
         {
-            return ((delegate* stdcall<IOverlayNotify2*, uint, PALETTEENTRY*, int>)(lpVtbl[3]))((IOverlayNotify2*)Unsafe.AsPointer(ref this), dwColors, pPalette);
+            return ((delegate* unmanaged<IOverlayNotify2*, uint, PALETTEENTRY*, int>)(lpVtbl[3]))((IOverlayNotify2*)Unsafe.AsPointer(ref this), dwColors, pPalette);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OnClipChange([NativeTypeName("const RECT *")] RECT* pSourceRect, [NativeTypeName("const RECT *")] RECT* pDestinationRect, [NativeTypeName("const RGNDATA *")] RGNDATA* pRgnData)
         {
-            return ((delegate* stdcall<IOverlayNotify2*, RECT*, RECT*, RGNDATA*, int>)(lpVtbl[4]))((IOverlayNotify2*)Unsafe.AsPointer(ref this), pSourceRect, pDestinationRect, pRgnData);
+            return ((delegate* unmanaged<IOverlayNotify2*, RECT*, RECT*, RGNDATA*, int>)(lpVtbl[4]))((IOverlayNotify2*)Unsafe.AsPointer(ref this), pSourceRect, pDestinationRect, pRgnData);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OnColorKeyChange([NativeTypeName("const COLORKEY *")] COLORKEY* pColorKey)
         {
-            return ((delegate* stdcall<IOverlayNotify2*, COLORKEY*, int>)(lpVtbl[5]))((IOverlayNotify2*)Unsafe.AsPointer(ref this), pColorKey);
+            return ((delegate* unmanaged<IOverlayNotify2*, COLORKEY*, int>)(lpVtbl[5]))((IOverlayNotify2*)Unsafe.AsPointer(ref this), pColorKey);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OnPositionChange([NativeTypeName("const RECT *")] RECT* pSourceRect, [NativeTypeName("const RECT *")] RECT* pDestinationRect)
         {
-            return ((delegate* stdcall<IOverlayNotify2*, RECT*, RECT*, int>)(lpVtbl[6]))((IOverlayNotify2*)Unsafe.AsPointer(ref this), pSourceRect, pDestinationRect);
+            return ((delegate* unmanaged<IOverlayNotify2*, RECT*, RECT*, int>)(lpVtbl[6]))((IOverlayNotify2*)Unsafe.AsPointer(ref this), pSourceRect, pDestinationRect);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OnDisplayChange([NativeTypeName("HMONITOR")] IntPtr hMonitor)
         {
-            return ((delegate* stdcall<IOverlayNotify2*, IntPtr, int>)(lpVtbl[7]))((IOverlayNotify2*)Unsafe.AsPointer(ref this), hMonitor);
+            return ((delegate* unmanaged<IOverlayNotify2*, IntPtr, int>)(lpVtbl[7]))((IOverlayNotify2*)Unsafe.AsPointer(ref this), hMonitor);
         }
     }
 }

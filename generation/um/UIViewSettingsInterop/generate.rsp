@@ -1,0 +1,10 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+um-UIViewSettingsInterop.h
+--output
+../../../sources/Interop/Windows/um/UIViewSettingsInterop
+--test-output
+../../../tests/Interop/Windows/um/UIViewSettingsInterop
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/UIViewSettingsInterop.h

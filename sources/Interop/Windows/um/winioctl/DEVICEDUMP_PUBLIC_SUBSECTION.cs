@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -43,8 +44,16 @@ namespace TerraFX.Interop
             public GP_LOG_PAGE_DESCRIPTOR e14;
             public GP_LOG_PAGE_DESCRIPTOR e15;
 
-            public ref GP_LOG_PAGE_DESCRIPTOR this[int index] => ref AsSpan()[index];
+            public ref GP_LOG_PAGE_DESCRIPTOR this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan()[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<GP_LOG_PAGE_DESCRIPTOR> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
         }
     }

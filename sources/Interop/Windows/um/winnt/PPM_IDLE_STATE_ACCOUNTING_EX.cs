@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -53,8 +54,16 @@ namespace TerraFX.Interop
             public PPM_IDLE_STATE_BUCKET_EX e14;
             public PPM_IDLE_STATE_BUCKET_EX e15;
 
-            public ref PPM_IDLE_STATE_BUCKET_EX this[int index] => ref AsSpan()[index];
+            public ref PPM_IDLE_STATE_BUCKET_EX this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan()[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<PPM_IDLE_STATE_BUCKET_EX> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
         }
     }

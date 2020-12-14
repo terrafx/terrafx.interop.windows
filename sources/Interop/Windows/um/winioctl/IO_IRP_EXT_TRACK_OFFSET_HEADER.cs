@@ -14,6 +14,6 @@ namespace TerraFX.Interop
         public ushort Flags;
 
         [NativeTypeName("PIO_IRP_EXT_PROCESS_TRACKED_OFFSET_CALLBACK")]
-        public delegate* stdcall<IO_IRP_EXT_TRACK_OFFSET_HEADER*, IO_IRP_EXT_TRACK_OFFSET_HEADER*, long, void> TrackedOffsetCallback;
+        public delegate* unmanaged<IO_IRP_EXT_TRACK_OFFSET_HEADER*, IO_IRP_EXT_TRACK_OFFSET_HEADER*, long, void> TrackedOffsetCallback;
     }
 }

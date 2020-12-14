@@ -15,40 +15,46 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IDirectWriterLock*, Guid*, void**, int>)(lpVtbl[0]))((IDirectWriterLock*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IDirectWriterLock*, Guid*, void**, int>)(lpVtbl[0]))((IDirectWriterLock*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IDirectWriterLock*, uint>)(lpVtbl[1]))((IDirectWriterLock*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDirectWriterLock*, uint>)(lpVtbl[1]))((IDirectWriterLock*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IDirectWriterLock*, uint>)(lpVtbl[2]))((IDirectWriterLock*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDirectWriterLock*, uint>)(lpVtbl[2]))((IDirectWriterLock*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int WaitForWriteAccess([NativeTypeName("DWORD")] uint dwTimeout)
         {
-            return ((delegate* stdcall<IDirectWriterLock*, uint, int>)(lpVtbl[3]))((IDirectWriterLock*)Unsafe.AsPointer(ref this), dwTimeout);
+            return ((delegate* unmanaged<IDirectWriterLock*, uint, int>)(lpVtbl[3]))((IDirectWriterLock*)Unsafe.AsPointer(ref this), dwTimeout);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int ReleaseWriteAccess()
         {
-            return ((delegate* stdcall<IDirectWriterLock*, int>)(lpVtbl[4]))((IDirectWriterLock*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDirectWriterLock*, int>)(lpVtbl[4]))((IDirectWriterLock*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int HaveWriteAccess()
         {
-            return ((delegate* stdcall<IDirectWriterLock*, int>)(lpVtbl[5]))((IDirectWriterLock*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IDirectWriterLock*, int>)(lpVtbl[5]))((IDirectWriterLock*)Unsafe.AsPointer(ref this));
         }
     }
 }

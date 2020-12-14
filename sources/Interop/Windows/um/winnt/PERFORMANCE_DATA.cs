@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -56,8 +57,16 @@ namespace TerraFX.Interop
             public HARDWARE_COUNTER_DATA e14;
             public HARDWARE_COUNTER_DATA e15;
 
-            public ref HARDWARE_COUNTER_DATA this[int index] => ref AsSpan()[index];
+            public ref HARDWARE_COUNTER_DATA this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan()[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<HARDWARE_COUNTER_DATA> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
         }
     }

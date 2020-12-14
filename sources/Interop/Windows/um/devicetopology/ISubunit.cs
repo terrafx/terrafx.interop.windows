@@ -15,22 +15,25 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<ISubunit*, Guid*, void**, int>)(lpVtbl[0]))((ISubunit*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<ISubunit*, Guid*, void**, int>)(lpVtbl[0]))((ISubunit*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<ISubunit*, uint>)(lpVtbl[1]))((ISubunit*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ISubunit*, uint>)(lpVtbl[1]))((ISubunit*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<ISubunit*, uint>)(lpVtbl[2]))((ISubunit*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ISubunit*, uint>)(lpVtbl[2]))((ISubunit*)Unsafe.AsPointer(ref this));
         }
     }
 }

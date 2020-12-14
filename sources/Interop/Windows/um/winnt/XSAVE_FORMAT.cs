@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -69,8 +70,16 @@ namespace TerraFX.Interop
             public M128A e6;
             public M128A e7;
 
-            public ref M128A this[int index] => ref AsSpan()[index];
+            public ref M128A this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan()[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<M128A> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
         }
 
@@ -85,8 +94,16 @@ namespace TerraFX.Interop
             public M128A e6;
             public M128A e7;
 
-            public ref M128A this[int index] => ref AsSpan()[index];
+            public ref M128A this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan()[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<M128A> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
         }
     }

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -28,11 +29,32 @@ namespace TerraFX.Interop
         [NativeTypeName("tagVIDEOINFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/amvideo.h:319:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public Span<RGBQUAD> bmiColors => Anonymous.bmiColors.AsSpan();
+        public Span<RGBQUAD> bmiColors
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return Anonymous.bmiColors.AsSpan();
+            }
+        }
 
-        public Span<uint> dwBitMasks => MemoryMarshal.CreateSpan(ref Anonymous.dwBitMasks[0], 3);
+        public Span<uint> dwBitMasks
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return MemoryMarshal.CreateSpan(ref Anonymous.dwBitMasks[0], 3);
+            }
+        }
 
-        public ref TRUECOLORINFO TrueColorInfo => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.TrueColorInfo, 1));
+        public ref TRUECOLORINFO TrueColorInfo
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.TrueColorInfo, 1));
+            }
+        }
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union
@@ -307,8 +329,16 @@ namespace TerraFX.Interop
                 public RGBQUAD e254;
                 public RGBQUAD e255;
 
-                public ref RGBQUAD this[int index] => ref AsSpan()[index];
+                public ref RGBQUAD this[int index]
+                {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    get
+                    {
+                        return ref AsSpan()[index];
+                    }
+                }
 
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 public Span<RGBQUAD> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 256);
             }
         }

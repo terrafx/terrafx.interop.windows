@@ -3,6 +3,8 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop
 {
     public unsafe partial struct STORAGE_HW_FIRMWARE_SLOT_INFO
@@ -21,11 +23,13 @@ namespace TerraFX.Interop
         [NativeTypeName("BYTE : 1")]
         public byte ReadOnly
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (byte)(_bitfield & 0x1u);
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (byte)((_bitfield & ~0x1u) | (value & 0x1u));
@@ -35,11 +39,13 @@ namespace TerraFX.Interop
         [NativeTypeName("BYTE : 7")]
         public byte Reserved0
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (byte)((_bitfield >> 1) & 0x7Fu);
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (byte)((_bitfield & ~(0x7Fu << 1)) | ((value & 0x7Fu) << 1));

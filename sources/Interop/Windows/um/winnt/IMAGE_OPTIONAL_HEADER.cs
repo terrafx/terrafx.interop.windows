@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -122,8 +123,16 @@ namespace TerraFX.Interop
             public IMAGE_DATA_DIRECTORY e14;
             public IMAGE_DATA_DIRECTORY e15;
 
-            public ref IMAGE_DATA_DIRECTORY this[int index] => ref AsSpan()[index];
+            public ref IMAGE_DATA_DIRECTORY this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan()[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<IMAGE_DATA_DIRECTORY> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
         }
     }

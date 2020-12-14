@@ -76,7 +76,7 @@ namespace TerraFX.Interop
 
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetConsoleCtrlHandler([NativeTypeName("PHANDLER_ROUTINE")] delegate* stdcall<uint, int> HandlerRoutine, [NativeTypeName("BOOL")] int Add);
+        public static extern int SetConsoleCtrlHandler([NativeTypeName("PHANDLER_ROUTINE")] delegate* unmanaged<uint, int> HandlerRoutine, [NativeTypeName("BOOL")] int Add);
 
         [DllImport("kernel32", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]

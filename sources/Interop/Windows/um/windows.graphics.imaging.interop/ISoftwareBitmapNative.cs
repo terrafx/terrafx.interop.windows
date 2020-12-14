@@ -15,46 +15,53 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<ISoftwareBitmapNative*, Guid*, void**, int>)(lpVtbl[0]))((ISoftwareBitmapNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<ISoftwareBitmapNative*, Guid*, void**, int>)(lpVtbl[0]))((ISoftwareBitmapNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<ISoftwareBitmapNative*, uint>)(lpVtbl[1]))((ISoftwareBitmapNative*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ISoftwareBitmapNative*, uint>)(lpVtbl[1]))((ISoftwareBitmapNative*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<ISoftwareBitmapNative*, uint>)(lpVtbl[2]))((ISoftwareBitmapNative*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ISoftwareBitmapNative*, uint>)(lpVtbl[2]))((ISoftwareBitmapNative*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
         {
-            return ((delegate* stdcall<ISoftwareBitmapNative*, uint*, Guid**, int>)(lpVtbl[3]))((ISoftwareBitmapNative*)Unsafe.AsPointer(ref this), iidCount, iids);
+            return ((delegate* unmanaged<ISoftwareBitmapNative*, uint*, Guid**, int>)(lpVtbl[3]))((ISoftwareBitmapNative*)Unsafe.AsPointer(ref this), iidCount, iids);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetRuntimeClassName([NativeTypeName("HSTRING *")] IntPtr* className)
         {
-            return ((delegate* stdcall<ISoftwareBitmapNative*, IntPtr*, int>)(lpVtbl[4]))((ISoftwareBitmapNative*)Unsafe.AsPointer(ref this), className);
+            return ((delegate* unmanaged<ISoftwareBitmapNative*, IntPtr*, int>)(lpVtbl[4]))((ISoftwareBitmapNative*)Unsafe.AsPointer(ref this), className);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetTrustLevel([NativeTypeName("TrustLevel *")] TrustLevel* trustLevel)
         {
-            return ((delegate* stdcall<ISoftwareBitmapNative*, TrustLevel*, int>)(lpVtbl[5]))((ISoftwareBitmapNative*)Unsafe.AsPointer(ref this), trustLevel);
+            return ((delegate* unmanaged<ISoftwareBitmapNative*, TrustLevel*, int>)(lpVtbl[5]))((ISoftwareBitmapNative*)Unsafe.AsPointer(ref this), trustLevel);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetData([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv)
         {
-            return ((delegate* stdcall<ISoftwareBitmapNative*, Guid*, void**, int>)(lpVtbl[6]))((ISoftwareBitmapNative*)Unsafe.AsPointer(ref this), riid, ppv);
+            return ((delegate* unmanaged<ISoftwareBitmapNative*, Guid*, void**, int>)(lpVtbl[6]))((ISoftwareBitmapNative*)Unsafe.AsPointer(ref this), riid, ppv);
         }
     }
 }

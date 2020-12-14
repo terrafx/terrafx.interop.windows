@@ -15,34 +15,39 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IOleWindow*, Guid*, void**, int>)(lpVtbl[0]))((IOleWindow*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IOleWindow*, Guid*, void**, int>)(lpVtbl[0]))((IOleWindow*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IOleWindow*, uint>)(lpVtbl[1]))((IOleWindow*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IOleWindow*, uint>)(lpVtbl[1]))((IOleWindow*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IOleWindow*, uint>)(lpVtbl[2]))((IOleWindow*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IOleWindow*, uint>)(lpVtbl[2]))((IOleWindow*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetWindow([NativeTypeName("HWND *")] IntPtr* phwnd)
         {
-            return ((delegate* stdcall<IOleWindow*, IntPtr*, int>)(lpVtbl[3]))((IOleWindow*)Unsafe.AsPointer(ref this), phwnd);
+            return ((delegate* unmanaged<IOleWindow*, IntPtr*, int>)(lpVtbl[3]))((IOleWindow*)Unsafe.AsPointer(ref this), phwnd);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int ContextSensitiveHelp([NativeTypeName("BOOL")] int fEnterMode)
         {
-            return ((delegate* stdcall<IOleWindow*, int, int>)(lpVtbl[4]))((IOleWindow*)Unsafe.AsPointer(ref this), fEnterMode);
+            return ((delegate* unmanaged<IOleWindow*, int, int>)(lpVtbl[4]))((IOleWindow*)Unsafe.AsPointer(ref this), fEnterMode);
         }
     }
 }

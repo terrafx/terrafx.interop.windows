@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -25,10 +26,18 @@ namespace TerraFX.Interop
         [NativeTypeName("_PROPSHEETHEADERA_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:479:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
-        public ref IntPtr hIcon => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.hIcon, 1));
+        public ref IntPtr hIcon
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.hIcon, 1));
+            }
+        }
 
         public ref sbyte* pszIcon
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous1_e__Union* pField = &Anonymous1)
@@ -47,10 +56,18 @@ namespace TerraFX.Interop
         [NativeTypeName("_PROPSHEETHEADERA_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:479:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
-        public ref uint nStartPage => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.nStartPage, 1));
+        public ref uint nStartPage
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.nStartPage, 1));
+            }
+        }
 
         public ref sbyte* pStartPage
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous2_e__Union* pField = &Anonymous2)
@@ -65,6 +82,7 @@ namespace TerraFX.Interop
 
         public ref PROPSHEETPAGEA* ppsp
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous3_e__Union* pField = &Anonymous3)
@@ -76,6 +94,7 @@ namespace TerraFX.Interop
 
         public ref IntPtr* phpage
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous3_e__Union* pField = &Anonymous3)
@@ -86,15 +105,23 @@ namespace TerraFX.Interop
         }
 
         [NativeTypeName("PFNPROPSHEETCALLBACK")]
-        public delegate* stdcall<IntPtr, uint, nint, int> pfnCallback;
+        public delegate* unmanaged<IntPtr, uint, nint, int> pfnCallback;
 
         [NativeTypeName("_PROPSHEETHEADERA_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:480:5)")]
         public _Anonymous4_e__Union Anonymous4;
 
-        public ref IntPtr hbmWatermark => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous4.hbmWatermark, 1));
+        public ref IntPtr hbmWatermark
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous4.hbmWatermark, 1));
+            }
+        }
 
         public ref sbyte* pszbmWatermark
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous4_e__Union* pField = &Anonymous4)
@@ -110,10 +137,18 @@ namespace TerraFX.Interop
         [NativeTypeName("_PROPSHEETHEADERA_V2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:486:5)")]
         public _Anonymous5_e__Union Anonymous5;
 
-        public ref IntPtr hbmHeader => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous5.hbmHeader, 1));
+        public ref IntPtr hbmHeader
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous5.hbmHeader, 1));
+            }
+        }
 
         public ref sbyte* pszbmHeader
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous5_e__Union* pField = &Anonymous5)

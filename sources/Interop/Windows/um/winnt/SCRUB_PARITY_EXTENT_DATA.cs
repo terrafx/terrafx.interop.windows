@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -29,8 +30,16 @@ namespace TerraFX.Interop
         {
             public SCRUB_PARITY_EXTENT e0;
 
-            public ref SCRUB_PARITY_EXTENT this[int index] => ref AsSpan(int.MaxValue)[index];
+            public ref SCRUB_PARITY_EXTENT this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan(int.MaxValue)[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<SCRUB_PARITY_EXTENT> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
     }

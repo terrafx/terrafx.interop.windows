@@ -17,7 +17,7 @@ namespace TerraFX.Interop
         public nuint hCryptProv;
 
         [NativeTypeName("PFN_CRYPT_GET_SIGNER_CERTIFICATE")]
-        public delegate* stdcall<void*, uint, CERT_INFO*, void*, CERT_CONTEXT*> pfnGetSignerCertificate;
+        public delegate* unmanaged<void*, uint, CERT_INFO*, void*, CERT_CONTEXT*> pfnGetSignerCertificate;
 
         [NativeTypeName("void *")]
         public void* pvGetArg;

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -64,8 +65,16 @@ namespace TerraFX.Interop
             public LARGE_INTEGER e7;
             public LARGE_INTEGER e8;
 
-            public ref LARGE_INTEGER this[int index] => ref AsSpan()[index];
+            public ref LARGE_INTEGER this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan()[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<LARGE_INTEGER> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 9);
         }
     }

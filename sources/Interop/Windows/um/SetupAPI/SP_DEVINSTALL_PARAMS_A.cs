@@ -24,7 +24,7 @@ namespace TerraFX.Interop
         public IntPtr hwndParent;
 
         [NativeTypeName("PSP_FILE_CALLBACK_W")]
-        public delegate* stdcall<void*, uint, nuint, nuint, uint> InstallMsgHandler;
+        public delegate* unmanaged<void*, uint, nuint, nuint, uint> InstallMsgHandler;
 
         [NativeTypeName("PVOID")]
         public void* InstallMsgHandlerContext;

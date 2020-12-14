@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -35,8 +36,16 @@ namespace TerraFX.Interop
         {
             public PHYSICAL_ELEMENT_STATUS_DESCRIPTOR e0;
 
-            public ref PHYSICAL_ELEMENT_STATUS_DESCRIPTOR this[int index] => ref AsSpan(int.MaxValue)[index];
+            public ref PHYSICAL_ELEMENT_STATUS_DESCRIPTOR this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan(int.MaxValue)[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<PHYSICAL_ELEMENT_STATUS_DESCRIPTOR> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
     }

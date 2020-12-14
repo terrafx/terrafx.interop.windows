@@ -84,10 +84,10 @@ namespace TerraFX.Interop
 
         [DllImport("ComBase", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WindowsInspectString([NativeTypeName("UINT_PTR")] nuint targetHString, [NativeTypeName("USHORT")] ushort machine, [NativeTypeName("PINSPECT_HSTRING_CALLBACK")] delegate* stdcall<void*, nuint, uint, byte*, int> callback, [NativeTypeName("void *")] void* context, [NativeTypeName("UINT32 *")] uint* length, [NativeTypeName("UINT_PTR *")] nuint* targetStringAddress);
+        public static extern int WindowsInspectString([NativeTypeName("UINT_PTR")] nuint targetHString, [NativeTypeName("USHORT")] ushort machine, [NativeTypeName("PINSPECT_HSTRING_CALLBACK")] delegate* unmanaged<void*, nuint, uint, byte*, int> callback, [NativeTypeName("void *")] void* context, [NativeTypeName("UINT32 *")] uint* length, [NativeTypeName("UINT_PTR *")] nuint* targetStringAddress);
 
         [DllImport("ComBase", ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
-        public static extern int WindowsInspectString2([NativeTypeName("UINT64")] ulong targetHString, [NativeTypeName("USHORT")] ushort machine, [NativeTypeName("PINSPECT_HSTRING_CALLBACK2")] delegate* stdcall<void*, ulong, uint, byte*, int> callback, [NativeTypeName("void *")] void* context, [NativeTypeName("UINT32 *")] uint* length, [NativeTypeName("UINT64 *")] ulong* targetStringAddress);
+        public static extern int WindowsInspectString2([NativeTypeName("UINT64")] ulong targetHString, [NativeTypeName("USHORT")] ushort machine, [NativeTypeName("PINSPECT_HSTRING_CALLBACK2")] delegate* unmanaged<void*, ulong, uint, byte*, int> callback, [NativeTypeName("void *")] void* context, [NativeTypeName("UINT32 *")] uint* length, [NativeTypeName("UINT64 *")] ulong* targetStringAddress);
     }
 }

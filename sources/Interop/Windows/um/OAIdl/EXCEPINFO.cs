@@ -29,7 +29,7 @@ namespace TerraFX.Interop
         public void* pvReserved;
 
         [NativeTypeName("HRESULT (*)(struct tagEXCEPINFO *) __attribute__((stdcall))")]
-        public delegate* stdcall<EXCEPINFO*, int> pfnDeferredFillIn;
+        public delegate* unmanaged<EXCEPINFO*, int> pfnDeferredFillIn;
 
         [NativeTypeName("SCODE")]
         public int scode;

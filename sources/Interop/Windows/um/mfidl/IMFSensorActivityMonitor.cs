@@ -15,34 +15,39 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMFSensorActivityMonitor*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorActivityMonitor*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMFSensorActivityMonitor*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorActivityMonitor*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMFSensorActivityMonitor*, uint>)(lpVtbl[1]))((IMFSensorActivityMonitor*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFSensorActivityMonitor*, uint>)(lpVtbl[1]))((IMFSensorActivityMonitor*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMFSensorActivityMonitor*, uint>)(lpVtbl[2]))((IMFSensorActivityMonitor*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFSensorActivityMonitor*, uint>)(lpVtbl[2]))((IMFSensorActivityMonitor*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Start()
         {
-            return ((delegate* stdcall<IMFSensorActivityMonitor*, int>)(lpVtbl[3]))((IMFSensorActivityMonitor*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFSensorActivityMonitor*, int>)(lpVtbl[3]))((IMFSensorActivityMonitor*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Stop()
         {
-            return ((delegate* stdcall<IMFSensorActivityMonitor*, int>)(lpVtbl[4]))((IMFSensorActivityMonitor*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFSensorActivityMonitor*, int>)(lpVtbl[4]))((IMFSensorActivityMonitor*)Unsafe.AsPointer(ref this));
         }
     }
 }

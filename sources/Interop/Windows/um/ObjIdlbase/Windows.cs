@@ -10,10 +10,10 @@ namespace TerraFX.Interop
     public static unsafe partial class Windows
     {
         [NativeTypeName("#define COLE_DEFAULT_PRINCIPAL ( ( OLECHAR * )( INT_PTR  )-1 )")]
-        public static readonly ushort* COLE_DEFAULT_PRINCIPAL = ((ushort*)((nint)(-1)));
+        public static readonly ushort* COLE_DEFAULT_PRINCIPAL = unchecked((ushort*)((nint)(-1)));
 
         [NativeTypeName("#define COLE_DEFAULT_AUTHINFO ( ( void * )( INT_PTR  )-1 )")]
-        public static readonly void* COLE_DEFAULT_AUTHINFO = ((void*)((nint)(-1)));
+        public static readonly void* COLE_DEFAULT_AUTHINFO = unchecked((void*)((nint)(-1)));
 
         public static readonly Guid IID_IMarshal = new Guid(0x00000003, 0x0000, 0x0000, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
 

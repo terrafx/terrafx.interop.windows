@@ -240,7 +240,7 @@ namespace TerraFX.Interop
 
         [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int CryptEnumOIDFunction([NativeTypeName("DWORD")] uint dwEncodingType, [NativeTypeName("LPCSTR")] sbyte* pszFuncName, [NativeTypeName("LPCSTR")] sbyte* pszOID, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("void *")] void* pvArg, [NativeTypeName("PFN_CRYPT_ENUM_OID_FUNC")] delegate* stdcall<uint, sbyte*, sbyte*, uint, uint*, ushort**, byte**, uint*, void*, int> pfnEnumOIDFunc);
+        public static extern int CryptEnumOIDFunction([NativeTypeName("DWORD")] uint dwEncodingType, [NativeTypeName("LPCSTR")] sbyte* pszFuncName, [NativeTypeName("LPCSTR")] sbyte* pszOID, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("void *")] void* pvArg, [NativeTypeName("PFN_CRYPT_ENUM_OID_FUNC")] delegate* unmanaged<uint, sbyte*, sbyte*, uint, uint*, ushort**, byte**, uint*, void*, int> pfnEnumOIDFunc);
 
         [DllImport("crypt32", ExactSpelling = true)]
         [return: NativeTypeName("PCCRYPT_OID_INFO")]
@@ -256,7 +256,7 @@ namespace TerraFX.Interop
 
         [DllImport("crypt32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int CryptEnumOIDInfo([NativeTypeName("DWORD")] uint dwGroupId, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("void *")] void* pvArg, [NativeTypeName("PFN_CRYPT_ENUM_OID_INFO")] delegate* stdcall<CRYPT_OID_INFO*, void*, int> pfnEnumOIDInfo);
+        public static extern int CryptEnumOIDInfo([NativeTypeName("DWORD")] uint dwGroupId, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("void *")] void* pvArg, [NativeTypeName("PFN_CRYPT_ENUM_OID_INFO")] delegate* unmanaged<CRYPT_OID_INFO*, void*, int> pfnEnumOIDInfo);
 
         [DllImport("crypt32", ExactSpelling = true)]
         [return: NativeTypeName("LPCWSTR")]
@@ -563,15 +563,15 @@ namespace TerraFX.Interop
 
         [DllImport("crypt32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int CertEnumSystemStoreLocation([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("void *")] void* pvArg, [NativeTypeName("PFN_CERT_ENUM_SYSTEM_STORE_LOCATION")] delegate* stdcall<ushort*, uint, void*, void*, int> pfnEnum);
+        public static extern int CertEnumSystemStoreLocation([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("void *")] void* pvArg, [NativeTypeName("PFN_CERT_ENUM_SYSTEM_STORE_LOCATION")] delegate* unmanaged<ushort*, uint, void*, void*, int> pfnEnum);
 
         [DllImport("crypt32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int CertEnumSystemStore([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("void *")] void* pvSystemStoreLocationPara, [NativeTypeName("void *")] void* pvArg, [NativeTypeName("PFN_CERT_ENUM_SYSTEM_STORE")] delegate* stdcall<void*, uint, CERT_SYSTEM_STORE_INFO*, void*, void*, int> pfnEnum);
+        public static extern int CertEnumSystemStore([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("void *")] void* pvSystemStoreLocationPara, [NativeTypeName("void *")] void* pvArg, [NativeTypeName("PFN_CERT_ENUM_SYSTEM_STORE")] delegate* unmanaged<void*, uint, CERT_SYSTEM_STORE_INFO*, void*, void*, int> pfnEnum);
 
         [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int CertEnumPhysicalStore([NativeTypeName("const void *")] void* pvSystemStore, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("void *")] void* pvArg, [NativeTypeName("PFN_CERT_ENUM_PHYSICAL_STORE")] delegate* stdcall<void*, uint, ushort*, CERT_PHYSICAL_STORE_INFO*, void*, void*, int> pfnEnum);
+        public static extern int CertEnumPhysicalStore([NativeTypeName("const void *")] void* pvSystemStore, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("void *")] void* pvArg, [NativeTypeName("PFN_CERT_ENUM_PHYSICAL_STORE")] delegate* unmanaged<void*, uint, ushort*, CERT_PHYSICAL_STORE_INFO*, void*, void*, int> pfnEnum);
 
         [DllImport("crypt32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -906,11 +906,11 @@ namespace TerraFX.Interop
 
         [DllImport("crypt32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int CryptSetAsyncParam([NativeTypeName("HCRYPTASYNC")] IntPtr hAsync, [NativeTypeName("LPSTR")] sbyte* pszParamOid, [NativeTypeName("LPVOID")] void* pvParam, [NativeTypeName("PFN_CRYPT_ASYNC_PARAM_FREE_FUNC")] delegate* stdcall<sbyte*, void*, void> pfnFree);
+        public static extern int CryptSetAsyncParam([NativeTypeName("HCRYPTASYNC")] IntPtr hAsync, [NativeTypeName("LPSTR")] sbyte* pszParamOid, [NativeTypeName("LPVOID")] void* pvParam, [NativeTypeName("PFN_CRYPT_ASYNC_PARAM_FREE_FUNC")] delegate* unmanaged<sbyte*, void*, void> pfnFree);
 
         [DllImport("crypt32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int CryptGetAsyncParam([NativeTypeName("HCRYPTASYNC")] IntPtr hAsync, [NativeTypeName("LPSTR")] sbyte* pszParamOid, [NativeTypeName("LPVOID *")] void** ppvParam, [NativeTypeName("PFN_CRYPT_ASYNC_PARAM_FREE_FUNC *")] delegate* stdcall<sbyte*, void*, void>* ppfnFree);
+        public static extern int CryptGetAsyncParam([NativeTypeName("HCRYPTASYNC")] IntPtr hAsync, [NativeTypeName("LPSTR")] sbyte* pszParamOid, [NativeTypeName("LPVOID *")] void** ppvParam, [NativeTypeName("PFN_CRYPT_ASYNC_PARAM_FREE_FUNC *")] delegate* unmanaged<sbyte*, void*, void>* ppfnFree);
 
         [DllImport("crypt32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -926,7 +926,7 @@ namespace TerraFX.Interop
 
         [DllImport("crypt32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int CryptInstallCancelRetrieval([NativeTypeName("PFN_CRYPT_CANCEL_RETRIEVAL")] delegate* stdcall<uint, void*, int> pfnCancel, [NativeTypeName("const void *")] void* pvArg, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("void *")] void* pvReserved);
+        public static extern int CryptInstallCancelRetrieval([NativeTypeName("PFN_CRYPT_CANCEL_RETRIEVAL")] delegate* unmanaged<uint, void*, int> pfnCancel, [NativeTypeName("const void *")] void* pvArg, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("void *")] void* pvReserved);
 
         [DllImport("crypt32", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -962,7 +962,7 @@ namespace TerraFX.Interop
 
         [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int CryptEnumKeyIdentifierProperties([NativeTypeName("const CRYPT_HASH_BLOB *")] CRYPTOAPI_BLOB* pKeyIdentifier, [NativeTypeName("DWORD")] uint dwPropId, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* pwszComputerName, [NativeTypeName("void *")] void* pvReserved, [NativeTypeName("void *")] void* pvArg, [NativeTypeName("PFN_CRYPT_ENUM_KEYID_PROP")] delegate* stdcall<CRYPTOAPI_BLOB*, uint, void*, void*, uint, uint*, void**, uint*, int> pfnEnum);
+        public static extern int CryptEnumKeyIdentifierProperties([NativeTypeName("const CRYPT_HASH_BLOB *")] CRYPTOAPI_BLOB* pKeyIdentifier, [NativeTypeName("DWORD")] uint dwPropId, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* pwszComputerName, [NativeTypeName("void *")] void* pvReserved, [NativeTypeName("void *")] void* pvArg, [NativeTypeName("PFN_CRYPT_ENUM_KEYID_PROP")] delegate* unmanaged<CRYPTOAPI_BLOB*, uint, void*, void*, uint, uint*, void**, uint*, int> pfnEnum);
 
         [DllImport("crypt32", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]

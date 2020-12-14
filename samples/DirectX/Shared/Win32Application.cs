@@ -36,14 +36,11 @@ namespace TerraFX.Samples.DirectX
             fixed (char* lpszClassName = "DXSampleClass")
             fixed (char* lpWindowName = pSample.Name)
             {
-                // Requires an explicit cast until C# handles UnmanagedCallersOnly
-                var wndProc = (delegate* stdcall<IntPtr, uint, nuint, nint, nint>)(delegate* managed<IntPtr, uint, nuint, nint, nint>)&WindowProc;
-
                 // Initialize the window class.
                 var windowClass = new WNDCLASSEXW {
                     cbSize = (uint)sizeof(WNDCLASSEXW),
                     style = CS_HREDRAW | CS_VREDRAW,
-                    lpfnWndProc = wndProc,
+                    lpfnWndProc = &WindowProc,
                     hInstance = hInstance,
                     hCursor = LoadCursorW(IntPtr.Zero, (ushort*)IDC_ARROW),
                     lpszClassName = (ushort*)lpszClassName

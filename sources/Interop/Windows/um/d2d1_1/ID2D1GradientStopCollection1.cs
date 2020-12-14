@@ -15,73 +15,86 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<ID2D1GradientStopCollection1*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<ID2D1GradientStopCollection1*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<ID2D1GradientStopCollection1*, uint>)(lpVtbl[1]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ID2D1GradientStopCollection1*, uint>)(lpVtbl[1]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<ID2D1GradientStopCollection1*, uint>)(lpVtbl[2]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ID2D1GradientStopCollection1*, uint>)(lpVtbl[2]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void GetFactory([NativeTypeName("ID2D1Factory **")] ID2D1Factory** factory)
         {
-            ((delegate* stdcall<ID2D1GradientStopCollection1*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this), factory);
+            ((delegate* unmanaged<ID2D1GradientStopCollection1*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this), factory);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("UINT32")]
         public uint GetGradientStopCount()
         {
-            return ((delegate* stdcall<ID2D1GradientStopCollection1*, uint>)(lpVtbl[4]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ID2D1GradientStopCollection1*, uint>)(lpVtbl[4]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void GetGradientStops([NativeTypeName("D2D1_GRADIENT_STOP *")] D2D1_GRADIENT_STOP* gradientStops, [NativeTypeName("UINT32")] uint gradientStopsCount)
         {
-            ((delegate* stdcall<ID2D1GradientStopCollection1*, D2D1_GRADIENT_STOP*, uint, void>)(lpVtbl[5]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this), gradientStops, gradientStopsCount);
+            ((delegate* unmanaged<ID2D1GradientStopCollection1*, D2D1_GRADIENT_STOP*, uint, void>)(lpVtbl[5]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this), gradientStops, gradientStopsCount);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public D2D1_GAMMA GetColorInterpolationGamma()
         {
-            return ((delegate* stdcall<ID2D1GradientStopCollection1*, D2D1_GAMMA>)(lpVtbl[6]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ID2D1GradientStopCollection1*, D2D1_GAMMA>)(lpVtbl[6]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public D2D1_EXTEND_MODE GetExtendMode()
         {
-            return ((delegate* stdcall<ID2D1GradientStopCollection1*, D2D1_EXTEND_MODE>)(lpVtbl[7]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ID2D1GradientStopCollection1*, D2D1_EXTEND_MODE>)(lpVtbl[7]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void GetGradientStops1([NativeTypeName("D2D1_GRADIENT_STOP *")] D2D1_GRADIENT_STOP* gradientStops, [NativeTypeName("UINT32")] uint gradientStopsCount)
         {
-            ((delegate* stdcall<ID2D1GradientStopCollection1*, D2D1_GRADIENT_STOP*, uint, void>)(lpVtbl[8]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this), gradientStops, gradientStopsCount);
+            ((delegate* unmanaged<ID2D1GradientStopCollection1*, D2D1_GRADIENT_STOP*, uint, void>)(lpVtbl[8]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this), gradientStops, gradientStopsCount);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public D2D1_COLOR_SPACE GetPreInterpolationSpace()
         {
-            return ((delegate* stdcall<ID2D1GradientStopCollection1*, D2D1_COLOR_SPACE>)(lpVtbl[9]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ID2D1GradientStopCollection1*, D2D1_COLOR_SPACE>)(lpVtbl[9]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public D2D1_COLOR_SPACE GetPostInterpolationSpace()
         {
-            return ((delegate* stdcall<ID2D1GradientStopCollection1*, D2D1_COLOR_SPACE>)(lpVtbl[10]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ID2D1GradientStopCollection1*, D2D1_COLOR_SPACE>)(lpVtbl[10]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public D2D1_BUFFER_PRECISION GetBufferPrecision()
         {
-            return ((delegate* stdcall<ID2D1GradientStopCollection1*, D2D1_BUFFER_PRECISION>)(lpVtbl[11]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ID2D1GradientStopCollection1*, D2D1_BUFFER_PRECISION>)(lpVtbl[11]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public D2D1_COLOR_INTERPOLATION_MODE GetColorInterpolationMode()
         {
-            return ((delegate* stdcall<ID2D1GradientStopCollection1*, D2D1_COLOR_INTERPOLATION_MODE>)(lpVtbl[12]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ID2D1GradientStopCollection1*, D2D1_COLOR_INTERPOLATION_MODE>)(lpVtbl[12]))((ID2D1GradientStopCollection1*)Unsafe.AsPointer(ref this));
         }
     }
 }
