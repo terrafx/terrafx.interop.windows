@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -22,9 +23,23 @@ namespace TerraFX.Interop
         [NativeTypeName("_STORAGE_OFFLOAD_TOKEN::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:3330:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref _Anonymous_e__Union._StorageOffloadZeroDataToken_e__Struct StorageOffloadZeroDataToken => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.StorageOffloadZeroDataToken, 1));
+        public ref _Anonymous_e__Union._StorageOffloadZeroDataToken_e__Struct StorageOffloadZeroDataToken
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.StorageOffloadZeroDataToken, 1));
+            }
+        }
 
-        public Span<byte> Token => MemoryMarshal.CreateSpan(ref Anonymous.Token[0], 504);
+        public Span<byte> Token
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return MemoryMarshal.CreateSpan(ref Anonymous.Token[0], 504);
+            }
+        }
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union

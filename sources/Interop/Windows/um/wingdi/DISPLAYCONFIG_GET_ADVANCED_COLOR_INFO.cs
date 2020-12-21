@@ -3,6 +3,7 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -16,11 +17,13 @@ namespace TerraFX.Interop
 
         public uint advancedColorSupported
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return Anonymous.Anonymous.advancedColorSupported;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 Anonymous.Anonymous.advancedColorSupported = value;
@@ -29,11 +32,13 @@ namespace TerraFX.Interop
 
         public uint advancedColorEnabled
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return Anonymous.Anonymous.advancedColorEnabled;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 Anonymous.Anonymous.advancedColorEnabled = value;
@@ -42,11 +47,13 @@ namespace TerraFX.Interop
 
         public uint wideColorEnforced
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return Anonymous.Anonymous.wideColorEnforced;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 Anonymous.Anonymous.wideColorEnforced = value;
@@ -55,11 +62,13 @@ namespace TerraFX.Interop
 
         public uint advancedColorForceDisabled
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return Anonymous.Anonymous.advancedColorForceDisabled;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 Anonymous.Anonymous.advancedColorForceDisabled = value;
@@ -68,18 +77,27 @@ namespace TerraFX.Interop
 
         public uint reserved
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return Anonymous.Anonymous.reserved;
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 Anonymous.Anonymous.reserved = value;
             }
         }
 
-        public ref uint value => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.value, 1));
+        public ref uint value
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.value, 1));
+            }
+        }
 
         public DISPLAYCONFIG_COLOR_ENCODING colorEncoding;
 
@@ -104,11 +122,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("UINT32 : 1")]
                 public uint advancedColorSupported
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return _bitfield & 0x1u;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
@@ -118,11 +138,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("UINT32 : 1")]
                 public uint advancedColorEnabled
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (_bitfield >> 1) & 0x1u;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1);
@@ -132,11 +154,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("UINT32 : 1")]
                 public uint wideColorEnforced
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (_bitfield >> 2) & 0x1u;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2);
@@ -146,11 +170,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("UINT32 : 1")]
                 public uint advancedColorForceDisabled
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (_bitfield >> 3) & 0x1u;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~(0x1u << 3)) | ((value & 0x1u) << 3);
@@ -160,11 +186,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("UINT32 : 28")]
                 public uint reserved
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (_bitfield >> 4) & 0xFFFFFFFu;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~(0xFFFFFFFu << 4)) | ((value & 0xFFFFFFFu) << 4);

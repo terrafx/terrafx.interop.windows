@@ -15,34 +15,39 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMFShutdown*, Guid*, void**, int>)(lpVtbl[0]))((IMFShutdown*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMFShutdown*, Guid*, void**, int>)(lpVtbl[0]))((IMFShutdown*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMFShutdown*, uint>)(lpVtbl[1]))((IMFShutdown*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFShutdown*, uint>)(lpVtbl[1]))((IMFShutdown*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMFShutdown*, uint>)(lpVtbl[2]))((IMFShutdown*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFShutdown*, uint>)(lpVtbl[2]))((IMFShutdown*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int Shutdown()
         {
-            return ((delegate* stdcall<IMFShutdown*, int>)(lpVtbl[3]))((IMFShutdown*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFShutdown*, int>)(lpVtbl[3]))((IMFShutdown*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int GetShutdownStatus([NativeTypeName("MFSHUTDOWN_STATUS *")] MFSHUTDOWN_STATUS* pStatus)
         {
-            return ((delegate* stdcall<IMFShutdown*, MFSHUTDOWN_STATUS*, int>)(lpVtbl[4]))((IMFShutdown*)Unsafe.AsPointer(ref this), pStatus);
+            return ((delegate* unmanaged<IMFShutdown*, MFSHUTDOWN_STATUS*, int>)(lpVtbl[4]))((IMFShutdown*)Unsafe.AsPointer(ref this), pStatus);
         }
     }
 }

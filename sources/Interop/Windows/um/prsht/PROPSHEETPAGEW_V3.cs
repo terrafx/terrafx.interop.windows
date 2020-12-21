@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -24,6 +25,7 @@ namespace TerraFX.Interop
 
         public ref ushort* pszTemplate
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous1_e__Union* pField = &Anonymous1)
@@ -35,6 +37,7 @@ namespace TerraFX.Interop
 
         public ref DLGTEMPLATE* pResource
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous1_e__Union* pField = &Anonymous1)
@@ -47,10 +50,18 @@ namespace TerraFX.Interop
         [NativeTypeName("_PROPSHEETPAGEW_V3::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/prsht.h:259:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
-        public ref IntPtr hIcon => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.hIcon, 1));
+        public ref IntPtr hIcon
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.hIcon, 1));
+            }
+        }
 
         public ref ushort* pszIcon
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous2_e__Union* pField = &Anonymous2)
@@ -64,13 +75,13 @@ namespace TerraFX.Interop
         public ushort* pszTitle;
 
         [NativeTypeName("DLGPROC")]
-        public delegate* stdcall<IntPtr, uint, nuint, nint, nint> pfnDlgProc;
+        public delegate* unmanaged<IntPtr, uint, nuint, nint, nint> pfnDlgProc;
 
         [NativeTypeName("LPARAM")]
         public nint lParam;
 
         [NativeTypeName("LPFNPSPCALLBACKW")]
-        public delegate* stdcall<IntPtr, uint, PROPSHEETPAGEW*, uint> pfnCallback;
+        public delegate* unmanaged<IntPtr, uint, PROPSHEETPAGEW*, uint> pfnCallback;
 
         [NativeTypeName("UINT *")]
         public uint* pcRefParent;

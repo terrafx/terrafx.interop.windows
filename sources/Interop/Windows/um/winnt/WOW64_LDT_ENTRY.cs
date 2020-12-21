@@ -3,6 +3,7 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -51,11 +52,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD : 8")]
                 public uint BaseMid
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return _bitfield & 0xFFu;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~0xFFu) | (value & 0xFFu);
@@ -65,11 +68,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD : 5")]
                 public uint Type
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (_bitfield >> 8) & 0x1Fu;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~(0x1Fu << 8)) | ((value & 0x1Fu) << 8);
@@ -79,11 +84,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD : 2")]
                 public uint Dpl
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (_bitfield >> 13) & 0x3u;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~(0x3u << 13)) | ((value & 0x3u) << 13);
@@ -93,11 +100,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD : 1")]
                 public uint Pres
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (_bitfield >> 15) & 0x1u;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~(0x1u << 15)) | ((value & 0x1u) << 15);
@@ -107,11 +116,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD : 4")]
                 public uint LimitHi
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (_bitfield >> 16) & 0xFu;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~(0xFu << 16)) | ((value & 0xFu) << 16);
@@ -121,11 +132,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD : 1")]
                 public uint Sys
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (_bitfield >> 20) & 0x1u;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~(0x1u << 20)) | ((value & 0x1u) << 20);
@@ -135,11 +148,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD : 1")]
                 public uint Reserved_0
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (_bitfield >> 21) & 0x1u;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~(0x1u << 21)) | ((value & 0x1u) << 21);
@@ -149,11 +164,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD : 1")]
                 public uint Default_Big
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (_bitfield >> 22) & 0x1u;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~(0x1u << 22)) | ((value & 0x1u) << 22);
@@ -163,11 +180,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD : 1")]
                 public uint Granularity
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (_bitfield >> 23) & 0x1u;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~(0x1u << 23)) | ((value & 0x1u) << 23);
@@ -177,11 +196,13 @@ namespace TerraFX.Interop
                 [NativeTypeName("DWORD : 8")]
                 public uint BaseHi
                 {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     get
                     {
                         return (_bitfield >> 24) & 0xFFu;
                     }
 
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
                     set
                     {
                         _bitfield = (_bitfield & ~(0xFFu << 24)) | ((value & 0xFFu) << 24);

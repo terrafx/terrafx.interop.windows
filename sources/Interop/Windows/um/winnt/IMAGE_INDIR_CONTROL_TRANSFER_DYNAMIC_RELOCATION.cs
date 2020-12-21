@@ -3,6 +3,7 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -15,11 +16,13 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD : 12")]
         public ushort PageRelativeOffset
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (ushort)(_bitfield & 0xFFFu);
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (ushort)((_bitfield & ~0xFFFu) | (value & 0xFFFu));
@@ -29,11 +32,13 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD : 1")]
         public ushort IndirectCall
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (ushort)((_bitfield >> 12) & 0x1u);
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (ushort)((_bitfield & ~(0x1u << 12)) | ((value & 0x1u) << 12));
@@ -43,11 +48,13 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD : 1")]
         public ushort RexWPrefix
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (ushort)((_bitfield >> 13) & 0x1u);
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (ushort)((_bitfield & ~(0x1u << 13)) | ((value & 0x1u) << 13));
@@ -57,11 +64,13 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD : 1")]
         public ushort CfgCheck
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (ushort)((_bitfield >> 14) & 0x1u);
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (ushort)((_bitfield & ~(0x1u << 14)) | ((value & 0x1u) << 14));
@@ -71,11 +80,13 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD : 1")]
         public ushort Reserved
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (ushort)((_bitfield >> 15) & 0x1u);
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (ushort)((_bitfield & ~(0x1u << 15)) | ((value & 0x1u) << 15));

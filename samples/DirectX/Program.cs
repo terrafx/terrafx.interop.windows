@@ -2,25 +2,12 @@
 
 using System;
 using System.Linq;
-using TerraFX.Samples.DirectX.D3D11;
-using TerraFX.Samples.DirectX.D3D12;
 using static TerraFX.Interop.Windows;
 
 namespace TerraFX.Samples.DirectX
 {
     public static unsafe class Program
     {
-        private static readonly DXSample[] Samples = {
-            new HelloWindow11(1280, 720, "D3D11.HelloWindow"),
-            new HelloTriangle11(1280, 720, "D3D11.HelloTriangle"),
-            new HelloWindow12(1280, 720, "D3D12.HelloWindow"),
-            new HelloTriangle12(1280, 720, "D3D12.HelloTriangle"),
-            new HelloConstBuffer12(1280, 720, "D3D12.HelloConstBuffer"),
-            new HelloTexture12(1280, 720, "D3D12.HelloTexture"),
-            new HelloBundles12(1280, 720, "D3D12.HelloBundles"),
-            new HelloMultiSampling12(1280, 720, "D3D12.HelloMultiSampling"),
-        };
-
         public static void Main(string[] args)
         {
             if ((args.Length == 0) || args.Any((arg) => Matches(arg, "?", "h", "help")))
@@ -48,9 +35,9 @@ namespace TerraFX.Samples.DirectX
 
             Console.WriteLine("Available Samples - Can specify multiple");
 
-            foreach (var sample in Samples)
+            foreach (var sample in DXSample.Samples)
             {
-                Console.WriteLine($"    {sample.Title}");
+                Console.WriteLine($"    {sample.Name}");
             }
         }
 
@@ -66,7 +53,7 @@ namespace TerraFX.Samples.DirectX
 
             if (args.Any((arg) => Matches(arg, "all")))
             {
-                foreach (var sample in Samples)
+                foreach (var sample in DXSample.Samples)
                 {
                     RunSample(sample);
                     ranAnySamples = true;
@@ -75,7 +62,7 @@ namespace TerraFX.Samples.DirectX
 
             foreach (var arg in args)
             {
-                foreach (var sample in Samples.Where((sample) => arg.Equals(sample.Title, StringComparison.OrdinalIgnoreCase)))
+                foreach (var sample in DXSample.Samples.Where((sample) => arg.Equals(sample.Name, StringComparison.OrdinalIgnoreCase)))
                 {
                     RunSample(sample);
                     ranAnySamples = true;
@@ -90,7 +77,7 @@ namespace TerraFX.Samples.DirectX
 
         private static void RunSample(DXSample sample)
         {
-            Console.WriteLine($"Running: {sample.Title}");
+            Console.WriteLine($"Running: {sample.Name}");
             var exitCode = Run(sample);
             Console.WriteLine($"    Completed with exit code: {exitCode}");
         }

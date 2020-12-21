@@ -15,28 +15,32 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IForegroundTransfer*, Guid*, void**, int>)(lpVtbl[0]))((IForegroundTransfer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IForegroundTransfer*, Guid*, void**, int>)(lpVtbl[0]))((IForegroundTransfer*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IForegroundTransfer*, uint>)(lpVtbl[1]))((IForegroundTransfer*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IForegroundTransfer*, uint>)(lpVtbl[1]))((IForegroundTransfer*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IForegroundTransfer*, uint>)(lpVtbl[2]))((IForegroundTransfer*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IForegroundTransfer*, uint>)(lpVtbl[2]))((IForegroundTransfer*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int AllowForegroundTransfer([NativeTypeName("void *")] void* lpvReserved)
         {
-            return ((delegate* stdcall<IForegroundTransfer*, void*, int>)(lpVtbl[3]))((IForegroundTransfer*)Unsafe.AsPointer(ref this), lpvReserved);
+            return ((delegate* unmanaged<IForegroundTransfer*, void*, int>)(lpVtbl[3]))((IForegroundTransfer*)Unsafe.AsPointer(ref this), lpvReserved);
         }
     }
 }

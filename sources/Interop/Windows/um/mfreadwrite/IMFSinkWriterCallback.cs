@@ -15,34 +15,39 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IMFSinkWriterCallback*, Guid*, void**, int>)(lpVtbl[0]))((IMFSinkWriterCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IMFSinkWriterCallback*, Guid*, void**, int>)(lpVtbl[0]))((IMFSinkWriterCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IMFSinkWriterCallback*, uint>)(lpVtbl[1]))((IMFSinkWriterCallback*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFSinkWriterCallback*, uint>)(lpVtbl[1]))((IMFSinkWriterCallback*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IMFSinkWriterCallback*, uint>)(lpVtbl[2]))((IMFSinkWriterCallback*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IMFSinkWriterCallback*, uint>)(lpVtbl[2]))((IMFSinkWriterCallback*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OnFinalize([NativeTypeName("HRESULT")] int hrStatus)
         {
-            return ((delegate* stdcall<IMFSinkWriterCallback*, int, int>)(lpVtbl[3]))((IMFSinkWriterCallback*)Unsafe.AsPointer(ref this), hrStatus);
+            return ((delegate* unmanaged<IMFSinkWriterCallback*, int, int>)(lpVtbl[3]))((IMFSinkWriterCallback*)Unsafe.AsPointer(ref this), hrStatus);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OnMarker([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("LPVOID")] void* pvContext)
         {
-            return ((delegate* stdcall<IMFSinkWriterCallback*, uint, void*, int>)(lpVtbl[4]))((IMFSinkWriterCallback*)Unsafe.AsPointer(ref this), dwStreamIndex, pvContext);
+            return ((delegate* unmanaged<IMFSinkWriterCallback*, uint, void*, int>)(lpVtbl[4]))((IMFSinkWriterCallback*)Unsafe.AsPointer(ref this), dwStreamIndex, pvContext);
         }
     }
 }

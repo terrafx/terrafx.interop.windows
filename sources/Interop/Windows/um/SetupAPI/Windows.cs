@@ -319,19 +319,19 @@ namespace TerraFX.Interop
 
         [DllImport("setupapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetupInstallFileA([NativeTypeName("HINF")] void* InfHandle, [NativeTypeName("PINFCONTEXT")] INFCONTEXT* InfContext, [NativeTypeName("PCSTR")] sbyte* SourceFile, [NativeTypeName("PCSTR")] sbyte* SourcePathRoot, [NativeTypeName("PCSTR")] sbyte* DestinationName, [NativeTypeName("DWORD")] uint CopyStyle, [NativeTypeName("PSP_FILE_CALLBACK_A")] delegate* stdcall<void*, uint, nuint, nuint, uint> CopyMsgHandler, [NativeTypeName("PVOID")] void* Context);
+        public static extern int SetupInstallFileA([NativeTypeName("HINF")] void* InfHandle, [NativeTypeName("PINFCONTEXT")] INFCONTEXT* InfContext, [NativeTypeName("PCSTR")] sbyte* SourceFile, [NativeTypeName("PCSTR")] sbyte* SourcePathRoot, [NativeTypeName("PCSTR")] sbyte* DestinationName, [NativeTypeName("DWORD")] uint CopyStyle, [NativeTypeName("PSP_FILE_CALLBACK_A")] delegate* unmanaged<void*, uint, nuint, nuint, uint> CopyMsgHandler, [NativeTypeName("PVOID")] void* Context);
 
         [DllImport("setupapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetupInstallFileW([NativeTypeName("HINF")] void* InfHandle, [NativeTypeName("PINFCONTEXT")] INFCONTEXT* InfContext, [NativeTypeName("PCWSTR")] ushort* SourceFile, [NativeTypeName("PCWSTR")] ushort* SourcePathRoot, [NativeTypeName("PCWSTR")] ushort* DestinationName, [NativeTypeName("DWORD")] uint CopyStyle, [NativeTypeName("PSP_FILE_CALLBACK_W")] delegate* stdcall<void*, uint, nuint, nuint, uint> CopyMsgHandler, [NativeTypeName("PVOID")] void* Context);
+        public static extern int SetupInstallFileW([NativeTypeName("HINF")] void* InfHandle, [NativeTypeName("PINFCONTEXT")] INFCONTEXT* InfContext, [NativeTypeName("PCWSTR")] ushort* SourceFile, [NativeTypeName("PCWSTR")] ushort* SourcePathRoot, [NativeTypeName("PCWSTR")] ushort* DestinationName, [NativeTypeName("DWORD")] uint CopyStyle, [NativeTypeName("PSP_FILE_CALLBACK_W")] delegate* unmanaged<void*, uint, nuint, nuint, uint> CopyMsgHandler, [NativeTypeName("PVOID")] void* Context);
 
         [DllImport("setupapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetupInstallFileExA([NativeTypeName("HINF")] void* InfHandle, [NativeTypeName("PINFCONTEXT")] INFCONTEXT* InfContext, [NativeTypeName("PCSTR")] sbyte* SourceFile, [NativeTypeName("PCSTR")] sbyte* SourcePathRoot, [NativeTypeName("PCSTR")] sbyte* DestinationName, [NativeTypeName("DWORD")] uint CopyStyle, [NativeTypeName("PSP_FILE_CALLBACK_A")] delegate* stdcall<void*, uint, nuint, nuint, uint> CopyMsgHandler, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("PBOOL")] int* FileWasInUse);
+        public static extern int SetupInstallFileExA([NativeTypeName("HINF")] void* InfHandle, [NativeTypeName("PINFCONTEXT")] INFCONTEXT* InfContext, [NativeTypeName("PCSTR")] sbyte* SourceFile, [NativeTypeName("PCSTR")] sbyte* SourcePathRoot, [NativeTypeName("PCSTR")] sbyte* DestinationName, [NativeTypeName("DWORD")] uint CopyStyle, [NativeTypeName("PSP_FILE_CALLBACK_A")] delegate* unmanaged<void*, uint, nuint, nuint, uint> CopyMsgHandler, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("PBOOL")] int* FileWasInUse);
 
         [DllImport("setupapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetupInstallFileExW([NativeTypeName("HINF")] void* InfHandle, [NativeTypeName("PINFCONTEXT")] INFCONTEXT* InfContext, [NativeTypeName("PCWSTR")] ushort* SourceFile, [NativeTypeName("PCWSTR")] ushort* SourcePathRoot, [NativeTypeName("PCWSTR")] ushort* DestinationName, [NativeTypeName("DWORD")] uint CopyStyle, [NativeTypeName("PSP_FILE_CALLBACK_W")] delegate* stdcall<void*, uint, nuint, nuint, uint> CopyMsgHandler, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("PBOOL")] int* FileWasInUse);
+        public static extern int SetupInstallFileExW([NativeTypeName("HINF")] void* InfHandle, [NativeTypeName("PINFCONTEXT")] INFCONTEXT* InfContext, [NativeTypeName("PCWSTR")] ushort* SourceFile, [NativeTypeName("PCWSTR")] ushort* SourcePathRoot, [NativeTypeName("PCWSTR")] ushort* DestinationName, [NativeTypeName("DWORD")] uint CopyStyle, [NativeTypeName("PSP_FILE_CALLBACK_W")] delegate* unmanaged<void*, uint, nuint, nuint, uint> CopyMsgHandler, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("PBOOL")] int* FileWasInUse);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("HSPFILEQ")]
@@ -423,19 +423,19 @@ namespace TerraFX.Interop
 
         [DllImport("setupapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetupCommitFileQueueA([NativeTypeName("HWND")] IntPtr Owner, [NativeTypeName("HSPFILEQ")] void* QueueHandle, [NativeTypeName("PSP_FILE_CALLBACK_A")] delegate* stdcall<void*, uint, nuint, nuint, uint> MsgHandler, [NativeTypeName("PVOID")] void* Context);
+        public static extern int SetupCommitFileQueueA([NativeTypeName("HWND")] IntPtr Owner, [NativeTypeName("HSPFILEQ")] void* QueueHandle, [NativeTypeName("PSP_FILE_CALLBACK_A")] delegate* unmanaged<void*, uint, nuint, nuint, uint> MsgHandler, [NativeTypeName("PVOID")] void* Context);
 
         [DllImport("setupapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetupCommitFileQueueW([NativeTypeName("HWND")] IntPtr Owner, [NativeTypeName("HSPFILEQ")] void* QueueHandle, [NativeTypeName("PSP_FILE_CALLBACK_W")] delegate* stdcall<void*, uint, nuint, nuint, uint> MsgHandler, [NativeTypeName("PVOID")] void* Context);
+        public static extern int SetupCommitFileQueueW([NativeTypeName("HWND")] IntPtr Owner, [NativeTypeName("HSPFILEQ")] void* QueueHandle, [NativeTypeName("PSP_FILE_CALLBACK_W")] delegate* unmanaged<void*, uint, nuint, nuint, uint> MsgHandler, [NativeTypeName("PVOID")] void* Context);
 
         [DllImport("setupapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetupScanFileQueueA([NativeTypeName("HSPFILEQ")] void* FileQueue, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("HWND")] IntPtr Window, [NativeTypeName("PSP_FILE_CALLBACK_A")] delegate* stdcall<void*, uint, nuint, nuint, uint> CallbackRoutine, [NativeTypeName("PVOID")] void* CallbackContext, [NativeTypeName("PDWORD")] uint* Result);
+        public static extern int SetupScanFileQueueA([NativeTypeName("HSPFILEQ")] void* FileQueue, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("HWND")] IntPtr Window, [NativeTypeName("PSP_FILE_CALLBACK_A")] delegate* unmanaged<void*, uint, nuint, nuint, uint> CallbackRoutine, [NativeTypeName("PVOID")] void* CallbackContext, [NativeTypeName("PDWORD")] uint* Result);
 
         [DllImport("setupapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetupScanFileQueueW([NativeTypeName("HSPFILEQ")] void* FileQueue, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("HWND")] IntPtr Window, [NativeTypeName("PSP_FILE_CALLBACK_W")] delegate* stdcall<void*, uint, nuint, nuint, uint> CallbackRoutine, [NativeTypeName("PVOID")] void* CallbackContext, [NativeTypeName("PDWORD")] uint* Result);
+        public static extern int SetupScanFileQueueW([NativeTypeName("HSPFILEQ")] void* FileQueue, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("HWND")] IntPtr Window, [NativeTypeName("PSP_FILE_CALLBACK_W")] delegate* unmanaged<void*, uint, nuint, nuint, uint> CallbackRoutine, [NativeTypeName("PVOID")] void* CallbackContext, [NativeTypeName("PDWORD")] uint* Result);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
@@ -563,11 +563,11 @@ namespace TerraFX.Interop
 
         [DllImport("setupapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetupIterateCabinetA([NativeTypeName("PCSTR")] sbyte* CabinetFile, [NativeTypeName("DWORD")] uint Reserved, [NativeTypeName("PSP_FILE_CALLBACK_A")] delegate* stdcall<void*, uint, nuint, nuint, uint> MsgHandler, [NativeTypeName("PVOID")] void* Context);
+        public static extern int SetupIterateCabinetA([NativeTypeName("PCSTR")] sbyte* CabinetFile, [NativeTypeName("DWORD")] uint Reserved, [NativeTypeName("PSP_FILE_CALLBACK_A")] delegate* unmanaged<void*, uint, nuint, nuint, uint> MsgHandler, [NativeTypeName("PVOID")] void* Context);
 
         [DllImport("setupapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetupIterateCabinetW([NativeTypeName("PCWSTR")] ushort* CabinetFile, [NativeTypeName("DWORD")] uint Reserved, [NativeTypeName("PSP_FILE_CALLBACK_W")] delegate* stdcall<void*, uint, nuint, nuint, uint> MsgHandler, [NativeTypeName("PVOID")] void* Context);
+        public static extern int SetupIterateCabinetW([NativeTypeName("PCWSTR")] ushort* CabinetFile, [NativeTypeName("DWORD")] uint Reserved, [NativeTypeName("PSP_FILE_CALLBACK_W")] delegate* unmanaged<void*, uint, nuint, nuint, uint> MsgHandler, [NativeTypeName("PVOID")] void* Context);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("INT")]
@@ -594,11 +594,11 @@ namespace TerraFX.Interop
 
         [DllImport("setupapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetupInstallFromInfSectionA([NativeTypeName("HWND")] IntPtr Owner, [NativeTypeName("HINF")] void* InfHandle, [NativeTypeName("PCSTR")] sbyte* SectionName, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("HKEY")] IntPtr RelativeKeyRoot, [NativeTypeName("PCSTR")] sbyte* SourceRootPath, [NativeTypeName("UINT")] uint CopyFlags, [NativeTypeName("PSP_FILE_CALLBACK_A")] delegate* stdcall<void*, uint, nuint, nuint, uint> MsgHandler, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("HDEVINFO")] void* DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData);
+        public static extern int SetupInstallFromInfSectionA([NativeTypeName("HWND")] IntPtr Owner, [NativeTypeName("HINF")] void* InfHandle, [NativeTypeName("PCSTR")] sbyte* SectionName, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("HKEY")] IntPtr RelativeKeyRoot, [NativeTypeName("PCSTR")] sbyte* SourceRootPath, [NativeTypeName("UINT")] uint CopyFlags, [NativeTypeName("PSP_FILE_CALLBACK_A")] delegate* unmanaged<void*, uint, nuint, nuint, uint> MsgHandler, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("HDEVINFO")] void* DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetupInstallFromInfSectionW([NativeTypeName("HWND")] IntPtr Owner, [NativeTypeName("HINF")] void* InfHandle, [NativeTypeName("PCWSTR")] ushort* SectionName, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("HKEY")] IntPtr RelativeKeyRoot, [NativeTypeName("PCWSTR")] ushort* SourceRootPath, [NativeTypeName("UINT")] uint CopyFlags, [NativeTypeName("PSP_FILE_CALLBACK_W")] delegate* stdcall<void*, uint, nuint, nuint, uint> MsgHandler, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("HDEVINFO")] void* DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData);
+        public static extern int SetupInstallFromInfSectionW([NativeTypeName("HWND")] IntPtr Owner, [NativeTypeName("HINF")] void* InfHandle, [NativeTypeName("PCWSTR")] ushort* SectionName, [NativeTypeName("UINT")] uint Flags, [NativeTypeName("HKEY")] IntPtr RelativeKeyRoot, [NativeTypeName("PCWSTR")] ushort* SourceRootPath, [NativeTypeName("UINT")] uint CopyFlags, [NativeTypeName("PSP_FILE_CALLBACK_W")] delegate* unmanaged<void*, uint, nuint, nuint, uint> MsgHandler, [NativeTypeName("PVOID")] void* Context, [NativeTypeName("HDEVINFO")] void* DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
@@ -831,7 +831,7 @@ namespace TerraFX.Interop
 
         [DllImport("setupapi", ExactSpelling = true)]
         [return: NativeTypeName("BOOL")]
-        public static extern int SetupDiRegisterDeviceInfo([NativeTypeName("HDEVINFO")] void* DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PSP_DETSIG_CMPPROC")] delegate* stdcall<void*, SP_DEVINFO_DATA*, SP_DEVINFO_DATA*, void*, uint> CompareProc, [NativeTypeName("PVOID")] void* CompareContext, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DupDeviceInfoData);
+        public static extern int SetupDiRegisterDeviceInfo([NativeTypeName("HDEVINFO")] void* DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PSP_DETSIG_CMPPROC")] delegate* unmanaged<void*, SP_DEVINFO_DATA*, SP_DEVINFO_DATA*, void*, uint> CompareProc, [NativeTypeName("PVOID")] void* CompareContext, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DupDeviceInfoData);
 
         [DllImport("setupapi", ExactSpelling = true, SetLastError = true)]
         [return: NativeTypeName("BOOL")]
@@ -2787,10 +2787,10 @@ namespace TerraFX.Interop
         public const int SRC_FLAGS_CABFILE = (0x0010);
 
         [NativeTypeName("#define SetupInstallFile SetupInstallFileW")]
-        public static readonly delegate*<void*, INFCONTEXT*, ushort*, ushort*, ushort*, uint, delegate* stdcall<void*, uint, nuint, nuint, uint>, void*, int> SetupInstallFile = &SetupInstallFileW;
+        public static readonly delegate*<void*, INFCONTEXT*, ushort*, ushort*, ushort*, uint, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, int> SetupInstallFile = &SetupInstallFileW;
 
         [NativeTypeName("#define SetupInstallFileEx SetupInstallFileExW")]
-        public static readonly delegate*<void*, INFCONTEXT*, ushort*, ushort*, ushort*, uint, delegate* stdcall<void*, uint, nuint, nuint, uint>, void*, int*, int> SetupInstallFileEx = &SetupInstallFileExW;
+        public static readonly delegate*<void*, INFCONTEXT*, ushort*, ushort*, ushort*, uint, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, int*, int> SetupInstallFileEx = &SetupInstallFileExW;
 
         [NativeTypeName("#define SP_COPY_DELETESOURCE 0x0000001")]
         public const int SP_COPY_DELETESOURCE = 0x0000001;
@@ -2922,10 +2922,10 @@ namespace TerraFX.Interop
         public static readonly delegate*<void*, void*, void*, ushort*, int> SetupQueueRenameSection = &SetupQueueRenameSectionW;
 
         [NativeTypeName("#define SetupCommitFileQueue SetupCommitFileQueueW")]
-        public static readonly delegate*<IntPtr, void*, delegate* stdcall<void*, uint, nuint, nuint, uint>, void*, int> SetupCommitFileQueue = &SetupCommitFileQueueW;
+        public static readonly delegate*<IntPtr, void*, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, int> SetupCommitFileQueue = &SetupCommitFileQueueW;
 
         [NativeTypeName("#define SetupScanFileQueue SetupScanFileQueueW")]
-        public static readonly delegate*<void*, uint, IntPtr, delegate* stdcall<void*, uint, nuint, nuint, uint>, void*, uint*, int> SetupScanFileQueue = &SetupScanFileQueueW;
+        public static readonly delegate*<void*, uint, IntPtr, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, uint*, int> SetupScanFileQueue = &SetupScanFileQueueW;
 
         [NativeTypeName("#define SPQ_SCAN_FILE_PRESENCE 0x00000001")]
         public const int SPQ_SCAN_FILE_PRESENCE = 0x00000001;
@@ -3042,7 +3042,7 @@ namespace TerraFX.Interop
         public static readonly delegate*<void*, void*, void*, ushort*, void*, uint, int> SetupRemoveInstallSectionFromDiskSpaceList = &SetupRemoveInstallSectionFromDiskSpaceListW;
 
         [NativeTypeName("#define SetupIterateCabinet SetupIterateCabinetW")]
-        public static readonly delegate*<ushort*, uint, delegate* stdcall<void*, uint, nuint, nuint, uint>, void*, int> SetupIterateCabinet = &SetupIterateCabinetW;
+        public static readonly delegate*<ushort*, uint, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, int> SetupIterateCabinet = &SetupIterateCabinetW;
 
         [NativeTypeName("#define SPFILEQ_FILE_IN_USE 0x00000001")]
         public const int SPFILEQ_FILE_IN_USE = 0x00000001;
@@ -3207,7 +3207,7 @@ namespace TerraFX.Interop
         public const int FLG_DELPROPERTY_MULTI_SZ_DELSTRING = (0x00000001);
 
         [NativeTypeName("#define SetupInstallFromInfSection SetupInstallFromInfSectionW")]
-        public static readonly delegate*<IntPtr, void*, ushort*, uint, IntPtr, ushort*, uint, delegate* stdcall<void*, uint, nuint, nuint, uint>, void*, void*, SP_DEVINFO_DATA*, int> SetupInstallFromInfSection = &SetupInstallFromInfSectionW;
+        public static readonly delegate*<IntPtr, void*, ushort*, uint, IntPtr, ushort*, uint, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, void*, SP_DEVINFO_DATA*, int> SetupInstallFromInfSection = &SetupInstallFromInfSectionW;
 
         [NativeTypeName("#define SPINST_LOGCONFIG 0x00000001")]
         public const int SPINST_LOGCONFIG = 0x00000001;

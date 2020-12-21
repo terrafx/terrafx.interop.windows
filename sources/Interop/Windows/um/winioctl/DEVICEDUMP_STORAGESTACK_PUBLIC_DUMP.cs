@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -30,8 +31,16 @@ namespace TerraFX.Interop
         {
             public DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD e0;
 
-            public ref DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD this[int index] => ref AsSpan(int.MaxValue)[index];
+            public ref DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan(int.MaxValue)[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
     }

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -20,8 +21,16 @@ namespace TerraFX.Interop
         {
             public MFPinholeCameraIntrinsic_IntrinsicModel e0;
 
-            public ref MFPinholeCameraIntrinsic_IntrinsicModel this[int index] => ref AsSpan(int.MaxValue)[index];
+            public ref MFPinholeCameraIntrinsic_IntrinsicModel this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan(int.MaxValue)[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<MFPinholeCameraIntrinsic_IntrinsicModel> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
     }

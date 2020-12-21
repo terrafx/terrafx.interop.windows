@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -15,9 +16,23 @@ namespace TerraFX.Interop
         [NativeTypeName("D3D11_TRACE_REGISTER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11shadertracing.h:226:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref ushort Index1D => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Index1D, 1));
+        public ref ushort Index1D
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Index1D, 1));
+            }
+        }
 
-        public Span<ushort> Index2D => MemoryMarshal.CreateSpan(ref Anonymous.Index2D[0], 2);
+        public Span<ushort> Index2D
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return MemoryMarshal.CreateSpan(ref Anonymous.Index2D[0], 2);
+            }
+        }
 
         [NativeTypeName("UINT8")]
         public byte OperandIndex;

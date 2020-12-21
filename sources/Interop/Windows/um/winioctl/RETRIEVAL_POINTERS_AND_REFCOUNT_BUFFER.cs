@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -32,8 +33,16 @@ namespace TerraFX.Interop
         {
             public _Anonymous_e__Struct e0;
 
-            public ref _Anonymous_e__Struct this[int index] => ref AsSpan(int.MaxValue)[index];
+            public ref _Anonymous_e__Struct this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan(int.MaxValue)[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<_Anonymous_e__Struct> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
     }

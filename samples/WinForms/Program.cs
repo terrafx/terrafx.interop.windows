@@ -4,20 +4,17 @@ using System;
 using System.Windows.Forms;
 using TerraFX.Samples.WinForms;
 
-namespace WinFormsDx12
+namespace TerraFX.Samples.WinForms
 {
     public static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         public static void Main()
         {
             _ = Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainFormWinFormsDX12());
+            Application.Run(new MainForm());
         }
     }
 }

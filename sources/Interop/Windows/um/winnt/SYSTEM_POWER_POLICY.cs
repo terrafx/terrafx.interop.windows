@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -92,8 +93,16 @@ namespace TerraFX.Interop
             public SYSTEM_POWER_LEVEL e2;
             public SYSTEM_POWER_LEVEL e3;
 
-            public ref SYSTEM_POWER_LEVEL this[int index] => ref AsSpan()[index];
+            public ref SYSTEM_POWER_LEVEL this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan()[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<SYSTEM_POWER_LEVEL> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 4);
         }
     }

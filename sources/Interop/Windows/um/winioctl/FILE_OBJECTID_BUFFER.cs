@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -16,13 +17,41 @@ namespace TerraFX.Interop
         [NativeTypeName("_FILE_OBJECTID_BUFFER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winioctl.h:11649:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public Span<byte> BirthVolumeId => MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.BirthVolumeId[0], 16);
+        public Span<byte> BirthVolumeId
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.BirthVolumeId[0], 16);
+            }
+        }
 
-        public Span<byte> BirthObjectId => MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.BirthObjectId[0], 16);
+        public Span<byte> BirthObjectId
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.BirthObjectId[0], 16);
+            }
+        }
 
-        public Span<byte> DomainId => MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.DomainId[0], 16);
+        public Span<byte> DomainId
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.DomainId[0], 16);
+            }
+        }
 
-        public Span<byte> ExtendedInfo => MemoryMarshal.CreateSpan(ref Anonymous.ExtendedInfo[0], 48);
+        public Span<byte> ExtendedInfo
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return MemoryMarshal.CreateSpan(ref Anonymous.ExtendedInfo[0], 48);
+            }
+        }
 
         [StructLayout(LayoutKind.Explicit)]
         public unsafe partial struct _Anonymous_e__Union

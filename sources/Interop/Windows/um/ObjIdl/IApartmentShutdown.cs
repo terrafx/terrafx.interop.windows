@@ -15,27 +15,31 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IApartmentShutdown*, Guid*, void**, int>)(lpVtbl[0]))((IApartmentShutdown*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IApartmentShutdown*, Guid*, void**, int>)(lpVtbl[0]))((IApartmentShutdown*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IApartmentShutdown*, uint>)(lpVtbl[1]))((IApartmentShutdown*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IApartmentShutdown*, uint>)(lpVtbl[1]))((IApartmentShutdown*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IApartmentShutdown*, uint>)(lpVtbl[2]))((IApartmentShutdown*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IApartmentShutdown*, uint>)(lpVtbl[2]))((IApartmentShutdown*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void OnUninitialize([NativeTypeName("UINT64")] ulong ui64ApartmentIdentifier)
         {
-            ((delegate* stdcall<IApartmentShutdown*, ulong, void>)(lpVtbl[3]))((IApartmentShutdown*)Unsafe.AsPointer(ref this), ui64ApartmentIdentifier);
+            ((delegate* unmanaged<IApartmentShutdown*, ulong, void>)(lpVtbl[3]))((IApartmentShutdown*)Unsafe.AsPointer(ref this), ui64ApartmentIdentifier);
         }
     }
 }

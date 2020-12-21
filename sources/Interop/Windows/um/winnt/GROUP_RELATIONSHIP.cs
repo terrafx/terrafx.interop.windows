@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -26,8 +27,16 @@ namespace TerraFX.Interop
         {
             public PROCESSOR_GROUP_INFO e0;
 
-            public ref PROCESSOR_GROUP_INFO this[int index] => ref AsSpan(int.MaxValue)[index];
+            public ref PROCESSOR_GROUP_INFO this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan(int.MaxValue)[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<PROCESSOR_GROUP_INFO> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
     }

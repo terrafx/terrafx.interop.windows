@@ -15,28 +15,32 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IServiceProvider*, Guid*, void**, int>)(lpVtbl[0]))((IServiceProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IServiceProvider*, Guid*, void**, int>)(lpVtbl[0]))((IServiceProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IServiceProvider*, uint>)(lpVtbl[1]))((IServiceProvider*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IServiceProvider*, uint>)(lpVtbl[1]))((IServiceProvider*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IServiceProvider*, uint>)(lpVtbl[2]))((IServiceProvider*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IServiceProvider*, uint>)(lpVtbl[2]))((IServiceProvider*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryService([NativeTypeName("const GUID &")] Guid* guidService, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IServiceProvider*, Guid*, Guid*, void**, int>)(lpVtbl[3]))((IServiceProvider*)Unsafe.AsPointer(ref this), guidService, riid, ppvObject);
+            return ((delegate* unmanaged<IServiceProvider*, Guid*, Guid*, void**, int>)(lpVtbl[3]))((IServiceProvider*)Unsafe.AsPointer(ref this), guidService, riid, ppvObject);
         }
     }
 }

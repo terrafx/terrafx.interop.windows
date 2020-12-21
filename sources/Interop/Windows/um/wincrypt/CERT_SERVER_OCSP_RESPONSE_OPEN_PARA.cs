@@ -20,7 +20,7 @@ namespace TerraFX.Interop
         public ushort* pwszOcspDirectory;
 
         [NativeTypeName("PFN_CERT_SERVER_OCSP_RESPONSE_UPDATE_CALLBACK")]
-        public delegate* stdcall<CERT_CHAIN_CONTEXT*, CERT_SERVER_OCSP_RESPONSE_CONTEXT*, CRL_CONTEXT*, CRL_CONTEXT*, void*, uint, void> pfnUpdateCallback;
+        public delegate* unmanaged<CERT_CHAIN_CONTEXT*, CERT_SERVER_OCSP_RESPONSE_CONTEXT*, CRL_CONTEXT*, CRL_CONTEXT*, void*, uint, void> pfnUpdateCallback;
 
         [NativeTypeName("PVOID")]
         public void* pvUpdateCallbackArg;

@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -110,8 +111,16 @@ namespace TerraFX.Interop
             public BATTERY_REPORTING_SCALE e1;
             public BATTERY_REPORTING_SCALE e2;
 
-            public ref BATTERY_REPORTING_SCALE this[int index] => ref AsSpan()[index];
+            public ref BATTERY_REPORTING_SCALE this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan()[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<BATTERY_REPORTING_SCALE> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 3);
         }
     }

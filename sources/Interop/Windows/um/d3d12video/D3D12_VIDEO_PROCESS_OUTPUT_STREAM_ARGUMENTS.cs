@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -21,8 +22,16 @@ namespace TerraFX.Interop
             public D3D12_VIDEO_PROCESS_OUTPUT_STREAM e0;
             public D3D12_VIDEO_PROCESS_OUTPUT_STREAM e1;
 
-            public ref D3D12_VIDEO_PROCESS_OUTPUT_STREAM this[int index] => ref AsSpan()[index];
+            public ref D3D12_VIDEO_PROCESS_OUTPUT_STREAM this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan()[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<D3D12_VIDEO_PROCESS_OUTPUT_STREAM> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
         }
     }

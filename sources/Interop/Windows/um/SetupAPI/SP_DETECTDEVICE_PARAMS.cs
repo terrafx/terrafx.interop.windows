@@ -13,7 +13,7 @@ namespace TerraFX.Interop
         public SP_CLASSINSTALL_HEADER ClassInstallHeader;
 
         [NativeTypeName("PDETECT_PROGRESS_NOTIFY")]
-        public delegate* stdcall<void*, uint, int> DetectProgressNotify;
+        public delegate* unmanaged<void*, uint, int> DetectProgressNotify;
 
         [NativeTypeName("PVOID")]
         public void* ProgressNotifyParam;

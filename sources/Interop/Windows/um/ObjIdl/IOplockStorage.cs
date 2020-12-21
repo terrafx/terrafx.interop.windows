@@ -15,34 +15,39 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IOplockStorage*, Guid*, void**, int>)(lpVtbl[0]))((IOplockStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IOplockStorage*, Guid*, void**, int>)(lpVtbl[0]))((IOplockStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IOplockStorage*, uint>)(lpVtbl[1]))((IOplockStorage*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IOplockStorage*, uint>)(lpVtbl[1]))((IOplockStorage*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IOplockStorage*, uint>)(lpVtbl[2]))((IOplockStorage*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IOplockStorage*, uint>)(lpVtbl[2]))((IOplockStorage*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int CreateStorageEx([NativeTypeName("LPCWSTR")] ushort* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint stgfmt, [NativeTypeName("DWORD")] uint grfAttrs, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppstgOpen)
         {
-            return ((delegate* stdcall<IOplockStorage*, ushort*, uint, uint, uint, Guid*, void**, int>)(lpVtbl[3]))((IOplockStorage*)Unsafe.AsPointer(ref this), pwcsName, grfMode, stgfmt, grfAttrs, riid, ppstgOpen);
+            return ((delegate* unmanaged<IOplockStorage*, ushort*, uint, uint, uint, Guid*, void**, int>)(lpVtbl[3]))((IOplockStorage*)Unsafe.AsPointer(ref this), pwcsName, grfMode, stgfmt, grfAttrs, riid, ppstgOpen);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int OpenStorageEx([NativeTypeName("LPCWSTR")] ushort* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint stgfmt, [NativeTypeName("DWORD")] uint grfAttrs, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppstgOpen)
         {
-            return ((delegate* stdcall<IOplockStorage*, ushort*, uint, uint, uint, Guid*, void**, int>)(lpVtbl[4]))((IOplockStorage*)Unsafe.AsPointer(ref this), pwcsName, grfMode, stgfmt, grfAttrs, riid, ppstgOpen);
+            return ((delegate* unmanaged<IOplockStorage*, ushort*, uint, uint, uint, Guid*, void**, int>)(lpVtbl[4]))((IOplockStorage*)Unsafe.AsPointer(ref this), pwcsName, grfMode, stgfmt, grfAttrs, riid, ppstgOpen);
         }
     }
 }

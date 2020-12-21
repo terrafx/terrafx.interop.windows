@@ -34,7 +34,7 @@ namespace TerraFX.Interop
         public nuint dwContextHelpId;
 
         [NativeTypeName("MSGBOXCALLBACK")]
-        public delegate* stdcall<HELPINFO*, void> lpfnMsgBoxCallback;
+        public delegate* unmanaged<HELPINFO*, void> lpfnMsgBoxCallback;
 
         [NativeTypeName("DWORD")]
         public uint dwLanguageId;

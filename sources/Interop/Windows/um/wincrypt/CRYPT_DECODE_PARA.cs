@@ -11,9 +11,9 @@ namespace TerraFX.Interop
         public uint cbSize;
 
         [NativeTypeName("PFN_CRYPT_ALLOC")]
-        public delegate* stdcall<nuint, void*> pfnAlloc;
+        public delegate* unmanaged<nuint, void*> pfnAlloc;
 
         [NativeTypeName("PFN_CRYPT_FREE")]
-        public delegate* stdcall<void*, void> pfnFree;
+        public delegate* unmanaged<void*, void> pfnFree;
     }
 }

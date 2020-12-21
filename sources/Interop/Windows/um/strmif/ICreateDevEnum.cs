@@ -15,28 +15,32 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<ICreateDevEnum*, Guid*, void**, int>)(lpVtbl[0]))((ICreateDevEnum*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<ICreateDevEnum*, Guid*, void**, int>)(lpVtbl[0]))((ICreateDevEnum*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<ICreateDevEnum*, uint>)(lpVtbl[1]))((ICreateDevEnum*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ICreateDevEnum*, uint>)(lpVtbl[1]))((ICreateDevEnum*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<ICreateDevEnum*, uint>)(lpVtbl[2]))((ICreateDevEnum*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ICreateDevEnum*, uint>)(lpVtbl[2]))((ICreateDevEnum*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int CreateClassEnumerator([NativeTypeName("const IID &")] Guid* clsidDeviceClass, [NativeTypeName("IEnumMoniker **")] IEnumMoniker** ppEnumMoniker, [NativeTypeName("DWORD")] uint dwFlags)
         {
-            return ((delegate* stdcall<ICreateDevEnum*, Guid*, IEnumMoniker**, uint, int>)(lpVtbl[3]))((ICreateDevEnum*)Unsafe.AsPointer(ref this), clsidDeviceClass, ppEnumMoniker, dwFlags);
+            return ((delegate* unmanaged<ICreateDevEnum*, Guid*, IEnumMoniker**, uint, int>)(lpVtbl[3]))((ICreateDevEnum*)Unsafe.AsPointer(ref this), clsidDeviceClass, ppEnumMoniker, dwFlags);
         }
     }
 }

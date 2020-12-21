@@ -3,6 +3,8 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop
 {
     public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
@@ -18,11 +20,13 @@ namespace TerraFX.Interop
         [NativeTypeName("BYTE : 1")]
         public byte ThinProvisioningEnabled
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (byte)(_bitfield & 0x1u);
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (byte)((_bitfield & ~0x1u) | (value & 0x1u));
@@ -32,11 +36,13 @@ namespace TerraFX.Interop
         [NativeTypeName("BYTE : 1")]
         public byte ThinProvisioningReadZeros
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (byte)((_bitfield >> 1) & 0x1u);
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (byte)((_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1));
@@ -46,11 +52,13 @@ namespace TerraFX.Interop
         [NativeTypeName("BYTE : 3")]
         public byte AnchorSupported
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (byte)((_bitfield >> 2) & 0x7u);
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (byte)((_bitfield & ~(0x7u << 2)) | ((value & 0x7u) << 2));
@@ -60,11 +68,13 @@ namespace TerraFX.Interop
         [NativeTypeName("BYTE : 1")]
         public byte UnmapGranularityAlignmentValid
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (byte)((_bitfield >> 5) & 0x1u);
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (byte)((_bitfield & ~(0x1u << 5)) | ((value & 0x1u) << 5));
@@ -74,11 +84,13 @@ namespace TerraFX.Interop
         [NativeTypeName("BYTE : 2")]
         public byte Reserved0
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (byte)((_bitfield >> 6) & 0x3u);
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (byte)((_bitfield & ~(0x3u << 6)) | ((value & 0x3u) << 6));

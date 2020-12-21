@@ -3,6 +3,7 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -37,23 +38,65 @@ namespace TerraFX.Interop
         [NativeTypeName("JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12073:5)")]
         public _Anonymous1_e__Union Anonymous1;
 
-        public ref ulong JobHighMemoryLimit => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.JobHighMemoryLimit, 1));
+        public ref ulong JobHighMemoryLimit
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.JobHighMemoryLimit, 1));
+            }
+        }
 
-        public ref ulong JobMemoryLimit => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.JobMemoryLimit, 1));
+        public ref ulong JobMemoryLimit
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.JobMemoryLimit, 1));
+            }
+        }
 
         [NativeTypeName("JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12078:5)")]
         public _Anonymous2_e__Union Anonymous2;
 
-        public ref JOBOBJECT_RATE_CONTROL_TOLERANCE RateControlTolerance => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.RateControlTolerance, 1));
+        public ref JOBOBJECT_RATE_CONTROL_TOLERANCE RateControlTolerance
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.RateControlTolerance, 1));
+            }
+        }
 
-        public ref JOBOBJECT_RATE_CONTROL_TOLERANCE CpuRateControlTolerance => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.CpuRateControlTolerance, 1));
+        public ref JOBOBJECT_RATE_CONTROL_TOLERANCE CpuRateControlTolerance
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.CpuRateControlTolerance, 1));
+            }
+        }
 
         [NativeTypeName("JOBOBJECT_LIMIT_VIOLATION_INFORMATION_2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:12083:5)")]
         public _Anonymous3_e__Union Anonymous3;
 
-        public ref JOBOBJECT_RATE_CONTROL_TOLERANCE RateControlToleranceLimit => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous3.RateControlToleranceLimit, 1));
+        public ref JOBOBJECT_RATE_CONTROL_TOLERANCE RateControlToleranceLimit
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous3.RateControlToleranceLimit, 1));
+            }
+        }
 
-        public ref JOBOBJECT_RATE_CONTROL_TOLERANCE CpuRateControlToleranceLimit => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous3.CpuRateControlToleranceLimit, 1));
+        public ref JOBOBJECT_RATE_CONTROL_TOLERANCE CpuRateControlToleranceLimit
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous3.CpuRateControlToleranceLimit, 1));
+            }
+        }
 
         [NativeTypeName("DWORD64")]
         public ulong JobLowMemoryLimit;

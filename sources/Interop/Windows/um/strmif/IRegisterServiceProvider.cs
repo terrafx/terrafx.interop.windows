@@ -15,28 +15,32 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<IRegisterServiceProvider*, Guid*, void**, int>)(lpVtbl[0]))((IRegisterServiceProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<IRegisterServiceProvider*, Guid*, void**, int>)(lpVtbl[0]))((IRegisterServiceProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<IRegisterServiceProvider*, uint>)(lpVtbl[1]))((IRegisterServiceProvider*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IRegisterServiceProvider*, uint>)(lpVtbl[1]))((IRegisterServiceProvider*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<IRegisterServiceProvider*, uint>)(lpVtbl[2]))((IRegisterServiceProvider*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<IRegisterServiceProvider*, uint>)(lpVtbl[2]))((IRegisterServiceProvider*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int RegisterService([NativeTypeName("const GUID &")] Guid* guidService, [NativeTypeName("IUnknown *")] IUnknown* pUnkObject)
         {
-            return ((delegate* stdcall<IRegisterServiceProvider*, Guid*, IUnknown*, int>)(lpVtbl[3]))((IRegisterServiceProvider*)Unsafe.AsPointer(ref this), guidService, pUnkObject);
+            return ((delegate* unmanaged<IRegisterServiceProvider*, Guid*, IUnknown*, int>)(lpVtbl[3]))((IRegisterServiceProvider*)Unsafe.AsPointer(ref this), guidService, pUnkObject);
         }
     }
 }

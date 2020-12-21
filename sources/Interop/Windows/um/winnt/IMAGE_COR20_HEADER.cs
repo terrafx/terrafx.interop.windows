@@ -3,6 +3,7 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -26,9 +27,23 @@ namespace TerraFX.Interop
         [NativeTypeName("IMAGE_COR20_HEADER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:19208:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint EntryPointToken => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.EntryPointToken, 1));
+        public ref uint EntryPointToken
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.EntryPointToken, 1));
+            }
+        }
 
-        public ref uint EntryPointRVA => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.EntryPointRVA, 1));
+        public ref uint EntryPointRVA
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.EntryPointRVA, 1));
+            }
+        }
 
         public IMAGE_DATA_DIRECTORY Resources;
 

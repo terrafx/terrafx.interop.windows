@@ -3,6 +3,7 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -30,20 +31,36 @@ namespace TerraFX.Interop
         [NativeTypeName("IMPORT_OBJECT_HEADER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h:19120:5)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref ushort Ordinal => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Ordinal, 1));
+        public ref ushort Ordinal
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Ordinal, 1));
+            }
+        }
 
-        public ref ushort Hint => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Hint, 1));
+        public ref ushort Hint
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Hint, 1));
+            }
+        }
 
         public ushort _bitfield;
 
         [NativeTypeName("WORD : 2")]
         public ushort Type
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (ushort)(_bitfield & 0x3u);
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (ushort)((_bitfield & ~0x3u) | (value & 0x3u));
@@ -53,11 +70,13 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD : 3")]
         public ushort NameType
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (ushort)((_bitfield >> 2) & 0x7u);
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (ushort)((_bitfield & ~(0x7u << 2)) | ((value & 0x7u) << 2));
@@ -67,11 +86,13 @@ namespace TerraFX.Interop
         [NativeTypeName("WORD : 11")]
         public ushort Reserved
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 return (ushort)((_bitfield >> 5) & 0x7FFu);
             }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _bitfield = (ushort)((_bitfield & ~(0x7FFu << 5)) | ((value & 0x7FFu) << 5));

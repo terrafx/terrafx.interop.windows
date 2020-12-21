@@ -15,37 +15,43 @@ namespace TerraFX.Interop
     {
         public void** lpVtbl;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("HRESULT")]
         public int QueryInterface([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("void **")] void** ppvObject)
         {
-            return ((delegate* stdcall<ID2D1TransformedImageSource*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
+            return ((delegate* unmanaged<ID2D1TransformedImageSource*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint AddRef()
         {
-            return ((delegate* stdcall<ID2D1TransformedImageSource*, uint>)(lpVtbl[1]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ID2D1TransformedImageSource*, uint>)(lpVtbl[1]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [return: NativeTypeName("ULONG")]
         public uint Release()
         {
-            return ((delegate* stdcall<ID2D1TransformedImageSource*, uint>)(lpVtbl[2]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(ref this));
+            return ((delegate* unmanaged<ID2D1TransformedImageSource*, uint>)(lpVtbl[2]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(ref this));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void GetFactory([NativeTypeName("ID2D1Factory **")] ID2D1Factory** factory)
         {
-            ((delegate* stdcall<ID2D1TransformedImageSource*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(ref this), factory);
+            ((delegate* unmanaged<ID2D1TransformedImageSource*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(ref this), factory);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void GetSource([NativeTypeName("ID2D1ImageSource **")] ID2D1ImageSource** imageSource)
         {
-            ((delegate* stdcall<ID2D1TransformedImageSource*, ID2D1ImageSource**, void>)(lpVtbl[4]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(ref this), imageSource);
+            ((delegate* unmanaged<ID2D1TransformedImageSource*, ID2D1ImageSource**, void>)(lpVtbl[4]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(ref this), imageSource);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void GetProperties([NativeTypeName("D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES *")] D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES* properties)
         {
-            ((delegate* stdcall<ID2D1TransformedImageSource*, D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES*, void>)(lpVtbl[5]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(ref this), properties);
+            ((delegate* unmanaged<ID2D1TransformedImageSource*, D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES*, void>)(lpVtbl[5]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(ref this), properties);
         }
     }
 }

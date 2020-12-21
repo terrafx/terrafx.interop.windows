@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -38,8 +39,16 @@ namespace TerraFX.Interop
         {
             public MFINPUTTRUSTAUTHORITY_ACCESS_ACTION e0;
 
-            public ref MFINPUTTRUSTAUTHORITY_ACCESS_ACTION this[int index] => ref AsSpan(int.MaxValue)[index];
+            public ref MFINPUTTRUSTAUTHORITY_ACCESS_ACTION this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan(int.MaxValue)[index];
+                }
+            }
 
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public Span<MFINPUTTRUSTAUTHORITY_ACCESS_ACTION> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
     }

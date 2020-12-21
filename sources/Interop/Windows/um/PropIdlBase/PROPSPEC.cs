@@ -3,6 +3,7 @@
 // Ported from um/PropIdlBase.h in the Windows SDK for Windows 10.0.19041.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -15,10 +16,18 @@ namespace TerraFX.Interop
         [NativeTypeName("tagPROPSPEC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/PropIdlBase.h:444:43)")]
         public _Anonymous_e__Union Anonymous;
 
-        public ref uint propid => ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.propid, 1));
+        public ref uint propid
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.propid, 1));
+            }
+        }
 
         public ref ushort* lpwstr
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 fixed (_Anonymous_e__Union* pField = &Anonymous)
